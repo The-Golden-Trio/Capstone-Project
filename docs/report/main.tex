@@ -1,0 +1,391 @@
+\documentclass[a4paper]{article}
+\usepackage{import}
+%\usepackage[english,vietnam]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[francais]{babel}
+\usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
+\usepackage[normalem]{ulem}
+%\usepackage{soul}
+\usepackage{listings}
+\usepackage{colortbl}
+\usepackage[makeroom]{cancel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol,longtable,amscd}
+\usepackage{diagbox}%Make diagonal lines in tables
+\usepackage{booktabs}
+\usepackage{alltt}
+\usepackage[framemethod=tikz]{mdframed}% For highlighting paragraph backgrounds
+\usepackage{caption,subcaption}
+
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+\usemintedstyle{emacs}
+\usepackage{tikz}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage[unicode]{hyperref}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=black,
+    citecolor=black,
+    colorlinks=true,
+    pdfpagemode=FullScreen,
+    pdftitle={Compass AI: An AI-Powered Career Orientation Platform for Vietnamese High School Students},
+    } 
+%\usepackage{pstcol} 								% PSTricks with the standard color package
+%\usepackage{background}
+%\backgroundsetup{contents=\includegraphics{Images/hcmut.png}, scale=0.5, opacity=0.25, angle = 0}
+\usepackage[normalem]{ulem}
+
+\def\thesislayout{	% A4: 210 × 297
+	\geometry{
+		a4paper,
+		total={160mm,240mm},  % fix over page
+		left=30mm,
+		top=30mm,
+	}
+}
+\thesislayout
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+ \begin{tabular}{rl}
+    \begin{picture}(25,15)(0,0)
+    \put(0,-8){\includegraphics[width=8mm, height=8mm]{Images/hcmut.png}}
+    %\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+   \end{picture}&
+	%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+	\begin{tabular}{l}
+		\textbf{\textcolor{blue}{\bf \ttfamily Ho Chi Minh City University of Technology}}\\
+		\textbf{\textcolor{blue}{\bf \ttfamily Faculty of Computer Science and Engineering}}
+	\end{tabular} 	
+ \end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf 
+	\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\scriptsize \ttfamily Compass AI - Project Report}
+\fancyfoot[R]{\scriptsize \ttfamily Page {\thepage}/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+
+%%%
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\sloppy
+\captionsetup[figure]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=-9pt}
+%space remove between caption, figure, and text
+\captionsetup[table]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=7pt}
+%space remove between caption, table, and text
+
+%\floatplacement{figure}{H}%forced here float placement automatically for figures
+%\floatplacement{table}{H}%forced here float placement automatically for table
+%the following settings (11 lines) are to remove white space before or after the figures and tables
+%\setcounter{topnumber}{2}
+%\setcounter{bottomnumber}{2}
+%\setcounter{totalnumber}{4}
+%\renewcommand{\topfraction}{0.85}
+%\renewcommand{\bottomfraction}{0.85}
+%\renewcommand{\textfraction}{0.15}
+%\renewcommand{\floatpagefraction}{0.8}
+%\renewcommand{\textfraction}{0.1}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+\thesislayout
+
+
+
+\begin{document}
+\begin{titlepage}
+% \begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+%      \draw[blue!70!black,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+
+%      \draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+%      ([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+
+
+%      \draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+%      ([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+%    \end{tikzpicture}
+
+
+\begin{center}
+\textbf{\Large VIETNAM NATIONAL UNIVERSITY HO CHI MINH CITY} \\
+
+\vspace{7pt}
+\textbf{\Large HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY} \\
+
+\vspace{7pt}
+\textbf{\Large FACULTY OF COMPUTER SCIENCE AND ENGINEERING}
+\end{center}
+
+\vspace{1cm}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=3cm]{Images/hcmut.png}
+\end{center}
+\end{figure}
+
+\vspace{1cm}
+
+
+\begin{center}
+\begin{tabular}{ccc}
+	\multicolumn{3}{l}{\textbf{{\Large \textcolor{blue}{SPECIALIZED PROJECT}}}}\\
+	~~\\
+	\arrayrulecolor{blue}\hline
+	\\
+	\multicolumn{3}{l}{\textbf{{\Large \textcolor{blue}{Project Report} }}}\\
+	\\
+
+	\multicolumn{3}{c}{\textbf{{\huge \textcolor{blue}{Compass AI: An AI-Powered Career Orientation Platform for Vietnamese High School Students}}}}\\
+	\\
+
+	\arrayrulecolor{blue}\hline \\ \\
+
+\end{tabular}
+\end{center}
+
+\vspace{1cm}
+
+
+\begin{center}
+{\textbf{\Large Ho Chi Minh City, 7/2026}}
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+\setcounter{page}{0}
+\newpage
+\tableofcontents
+\newpage
+
+%\thispagestyle{empty}
+
+\section{Career Orientation and Related Fields}
+
+Career orientation is the process by which an individual explores, evaluates, and chooses a
+direction of study or work that fits their interests, abilities, and circumstances, and is
+typically supported by assessment tools, mentorship, and labor-market information rather than
+left to guesswork. Designing a system in this space requires drawing on several related fields:
+
+\begin{itemize}
+    \item \textbf{Vocational and educational psychology} — personality/interest frameworks such
+    as Holland's RIASEC model and multiple-intelligences theory, used to characterize a
+    student's aptitudes and preferences.
+    \item \textbf{Labor-market data and economics} — salary, demand, and growth-trend data by
+    sector, which grounds career recommendations in real market conditions rather than
+    abstract interest matching.
+    \item \textbf{Vietnam's education system} — the 2018 General Education Program
+    (chương trình GDPT 2018), the standard subject combinations (tổ hợp môn, e.g. A00, A01,
+    B00, C00, D01, D07) used for university admission, and the admission mechanisms
+    (xét điểm thi tốt nghiệp THPT, xét học bạ) that determine which majors a student can
+    realistically pursue.
+    \item \textbf{Recommendation systems and AI} — techniques for adaptive questionnaires,
+    fit-scoring, and data aggregation that allow a platform to personalize guidance and keep
+    market data current at scale.
+\end{itemize}
+
+\section{Career Orientation Problems in the Market}
+
+Career orientation in Vietnam faces a significant mismatch between demand and effective
+guidance:
+
+\begin{itemize}
+    \item Vietnam has over 1 million high school graduates per year; more than 80\% aspire to
+    attend university, yet only around 50\% actually enroll.
+    \item Roughly 50\% of students feel that their initial choice of major was unsuitable, 36\%
+    want to change majors, and about 15\% actually switch majors within their first year.
+    \item About 70\% of young workers lack the skills expected of them upon entering the
+    workforce, suggesting that career and subject-combination decisions made in high school
+    are often poorly informed.
+\end{itemize}
+
+These figures point to a systemic gap: students are choosing subject combinations, majors, and
+career directions without adequate, personalized, and up-to-date guidance.
+
+\section{Comparison of Existing Market Solutions}
+
+Several types of career-orientation solutions currently exist in the Vietnamese market, but each
+has notable gaps. The comparison below is left as a structural outline to be completed with
+further detail.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{2.6cm}|p{2.2cm}|p{2.2cm}|p{2.6cm}|p{3.2cm}|}
+\hline
+\textbf{Solution} & \textbf{Target Audience} & \textbf{Personalization} & \textbf{Vietnam-specific Data} & \textbf{Limitations} \\
+\hline
+Manual teacher-led surveys (Google Forms, Holland/MI/SWOT tests) & & & & \\
+\hline
+Vinschool in-house program & & & & \\
+\hline
+One-off career fairs & & & & \\
+\hline
+VietCareer & & & & \\
+\hline
+\end{tabular}
+\caption{Comparison of existing career-orientation solutions (to be completed).}
+\end{table}
+
+\section{Pain Points and Proposed Remedies}
+
+\begin{itemize}
+    \item \textbf{Pain point:} Existing tools rely almost entirely on self-reported
+    questionnaires, with no signal from how a student actually performs on career-relevant
+    tasks.\\
+    \textbf{Remedy:} Introduce short, simulated micro-tasks per career field and derive a
+    fit score from actual task performance, not just self-rating.
+
+    \item \textbf{Pain point:} Most personality/interest frameworks in use are generic and
+    international, disconnected from Vietnam's own curriculum and admission system.\\
+    \textbf{Remedy:} Ground the platform in the 2018 General Education Program and the
+    standard subject combinations (tổ hợp môn), directly mapping them to eligible majors.
+
+    \item \textbf{Pain point:} Labor-market and admission-cutoff data referenced by existing
+    tools is static and updated infrequently, quickly going out of date.\\
+    \textbf{Remedy:} Use AI-driven scraping/aggregation to keep salary, demand, and
+    admission-cutoff data continuously refreshed from public sources.
+
+    \item \textbf{Pain point:} Students cannot easily see the consequence of changing their
+    subject combination on which majors and careers remain open to them.\\
+    \textbf{Remedy:} Provide a "what-if" simulator that shows, in real time, which majors and
+    careers open or close as a student changes their subject combination.
+
+    \item \textbf{Pain point:} Existing solutions are fragmented — a survey here, a career fair
+    there — with no single, ongoing journey from assessment to decision.\\
+    \textbf{Remedy:} Offer one platform spanning assessment, exploration, pathway planning,
+    and mentorship, so guidance persists throughout a student's high school years.
+\end{itemize}
+
+\section{Proposed System Features}
+
+The proposed system, Compass AI, is organized around four pillars plus shared
+cross-cutting infrastructure:
+
+\begin{enumerate}
+    \item \textbf{Adaptive survey and academic profile} — a branching onboarding survey,
+    academic-record import aligned with the GDPT 2018 curriculum, and a real-time
+    "capability portrait" combining Holland RIASEC type, multiple intelligences, and academic
+    strengths, with periodic re-assessment to track how interests evolve.
+    \item \textbf{Micro-task exploration loop} — a library of short simulated career scenarios
+    across multiple fields, with performance-based fit scoring, a smart task queue that nudges
+    students toward unexplored fields, and gamified badges for exploration breadth.
+    \item \textbf{Visual pathway and market analytics} — an interactive map from subject
+    combination to university major to career, admission-cutoff lookup and comparison across
+    universities, labor-demand trend charts, a what-if simulator, and a multi-year personal
+    roadmap builder.
+    \item \textbf{Mentor and alumni insights space} — a topic-based forum for students, alumni,
+    and professionals, moderated direct messaging, and "a day in my life as X" story content
+    from alumni.
+\end{enumerate}
+
+Cross-cutting infrastructure includes multi-role accounts (student, parent, consultant, admin),
+notifications, privacy controls compliant with Vietnam's Decree 13/2023/NĐ-CP on personal data
+protection, a counselor console for class-wide trend views, and unified exportable reports.
+
+The Semester 1 (MVP) scope prioritizes Pillars 1 and 2, the static portion of Pillar 3
+(pathway map and admission-cutoff lookup), and the shared cross-cutting infrastructure; the
+forum/messaging space, large-scale automated data pipelines, and school-record import are
+treated as higher-risk items to be prototyped or designed first.
+
+\section{Datasource and Expected Result}
+
+\subsection{Datasource}
+
+\begin{itemize}
+    \item \textbf{Academic and admission data} — the GDPT 2018 curriculum structure, standard
+    subject combinations and their mapping to eligible majors, and university admission-cutoff
+    scores, sourced from the Ministry of Education and Training (\url{https://moet.gov.vn}) and
+    individual university admission portals.
+    \item \textbf{Labor-market data} — sector-level labor demand and growth trends from the
+    Ministry of Labor, Invalids and Social Affairs and the General Statistics Office
+    (\url{https://www.gso.gov.vn}), plus salary and hiring-demand data scraped and aggregated
+    from job sites such as VietnamWorks (\url{https://www.vietnamworks.com}) and TopCV
+    (\url{https://www.topcv.vn}).
+    \item \textbf{Student personal academic data} — grades and subject combinations entered
+    directly by students, since no unified format exists across school record systems such as
+    VNEdu or SMAS.
+    \item \textbf{Platform-generated data} — micro-task content authored by the content team,
+    alumni-submitted "day in the life" stories, and forum posts/ratings contributed by users.
+    \item \textbf{Legal framework} — Decree 13/2023/NĐ-CP on personal data protection, a binding
+    constraint (not a data source) on how student data, including that of minors, is collected
+    and processed.
+\end{itemize}
+
+\subsection{Expected Result}
+
+The expected outcome is an AI-powered career orientation platform for Vietnamese high school
+students, built around the four pillars above, serving students, parents, counselors, and
+alumni/mentors. Compared to existing solutions, the platform is expected to differentiate
+itself through performance-based personalization, alignment with Vietnam's own education and
+admission system, a what-if subject-combination simulator, and continuously refreshed
+labor-market data maintained through automated aggregation rather than manual updates.
+
+\begin{thebibliography}{80}
+
+\bibitem{init}
+Ministry of Education and Training of Vietnam,
+``\textbf{https://moet.gov.vn}'',
+\textit{Official education and admission portal}.
+
+\bibitem{gso}
+General Statistics Office of Vietnam,
+``\textbf{https://www.gso.gov.vn}'',
+\textit{Labor-market statistics and reports}.
+
+\bibitem{vietnamworks}
+VietnamWorks,
+``\textbf{https://www.vietnamworks.com}'',
+\textit{Job listings and salary data}.
+
+\bibitem{topcv}
+TopCV,
+``\textbf{https://www.topcv.vn}'',
+\textit{Job listings and salary data}.
+
+\bibitem{decree13}
+Government of Vietnam,
+``\textbf{Nghị định 13/2023/NĐ-CP}'',
+\textit{Decree on personal data protection}.
+
+\end{thebibliography}
+\end{document}
