@@ -21,9 +21,7 @@
 - Real-time "capability portrait" dashboard — radar/spider chart combining personality type (Holland RIASEC), multiple intelligences, and academic strengths
 - Periodic re-assessment prompts — short retake surveys each semester to track how interests evolve over time
 - Interest-shift tracking — flag when a student's profile changes significantly between assessments
-- Peer/cohort benchmarking — anonymized comparison against classmates or grade-level averages
 - Exportable profile report (PDF) — summary for parents/counselors
-- Admin: question-bank & branching-logic editor for counselors/content team to update survey content without code changes
 
 ## 2. Micro-Task Exploration Loop
 - Career-field catalog (start with a curated set, e.g. 15–25 fields for MVP, expandable later)
@@ -34,21 +32,16 @@
 - Bookmark/favorite career paths for deeper follow-up
 - Badges/achievements for exploration breadth (gamification to encourage trying many fields, not settling early)
 - "Students like you also excelled at…" pattern surfacing
-- Admin: task-authoring tool, task versioning, and a task-analytics dashboard (which tasks are too easy/hard/frequently skipped)
 
 ## 3. Visual Pathway & Market Analytics
 - Interactive pathway map — Tổ hợp môn → Ngành học (Vietnamese university major) → Career (node-graph or Sankey-style visualization)
 - Search/filter by interest, current subject combination, or region within Vietnam (e.g. Hà Nội, TP.HCM, Đà Nẵng, and other provinces)
-- Salary-range charts in VND by industry/role, sourced from Vietnamese labor-market data (e.g. VietnamWorks, TopCV, GSO reports)
 - Labor-demand/growth trend charts by sector, based on Vietnamese labor-market reports (e.g. Bộ LĐTB&XH / GSO)
 - University admission cutoff-score (điểm chuẩn) lookup and comparison across Vietnamese universities and years, covering both xét điểm thi THPT and xét học bạ methods
 - "What-if" simulator — change subject combination, see which Vietnamese university majors/careers open or close off
 - Side-by-side career comparison (salary in VND, demand, years of study, personality fit) — limited to careers/majors available within Vietnam
 - Personal roadmap builder — student saves a multi-year plan (this semester's subjects → target Vietnamese university major → target job)
-- Community advice, ratings & comments per career/job — students, alumni, and professionals can rate and leave qualitative advice on a given job/career page (e.g. day-to-day reality, pros/cons, honest tips), visible alongside the salary/demand charts
 - Job/industry news feed — surfaces recent news relevant to careers a student has bookmarked or explored, so pathway pages stay current rather than static
-- Admin: dataset import/refresh tool for salary, demand, and admission-cutoff data sourced from Vietnamese public/official sources (real hidden-scope item — needs a data-sourcing strategy specific to Vietnam, since no unified public API exists for this data today)
-- Admin: moderation queue for community ratings/comments on job/career pages
 
 ## 4. Mentor & Alumni Insights Space (Community Forum)
 - Topic-based forum structure — organized by field/specialization (e.g. Computer Science, DevOps, MLOps, Business, Medicine, Design...), not 1:1 matching
@@ -59,11 +52,9 @@
 - In-app direct messaging — 1:1 messaging between users (student-to-alumni, student-to-student), separate from the public forum; includes reporting/moderation given the user base includes minors
 - "A day in my life as X" story library — alumni-submitted blog-style posts (lower-effort content than live mentoring, good for cold-start), can live as pinned posts within relevant topics
 - Search across all forum topics/posts
-- Admin: content-moderation queue, topic-creation/management tools, contributor role verification (student/alumni/professional)
 
 ## Cross-Cutting Platform Features (needed by every subsystem)
-- Multi-role accounts: Student, Parent (view-only dashboard), Counselor/Teacher (manage a class cohort, view aggregate trends), Mentor/Alumni, Admin
-- Auth & consent: student sign-up (school-code verification tied to Vietnamese schools), parental-consent flow — important given the user base is minors
+- Multi-role accounts: User(Student or Parent), Consultant(Mentor/Alumni/Counselor), Admin
 - Notifications: survey/task reminders, new mentor session, new pathway recommendation
 - Privacy & data controls: clear consent screens, parental visibility into activity, no public exposure of raw personal survey data, compliant with Vietnam's Personal Data Protection Decree (Nghị định 13/2023/NĐ-CP) requirements around processing minors' data
 - Home dashboard: profile completeness, recommended next action, recent activity feed
@@ -87,3 +78,13 @@
 - How to solve the forum's cold-start problem (Pillar 4) within one semester — e.g. seeding initial topics/threads yourself or recruiting an initial contributor base from your own university's community first?
 - How deep should the "AI Layer" go in Semester 1 — rule-based stand-ins vs. real ML, and should any AI component (e.g. a career Q&A assistant) be trained/prompted specifically in Vietnamese?
 - How will parental-consent and minor-data-handling flows be implemented to align with Vietnam's Nghị định 13/2023/NĐ-CP?
+
+## Reconsideration
+- Salary-range charts in VND by industry/role, sourced from Vietnamese labor-market data (e.g. VietnamWorks, TopCV, GSO reports)
+- Community advice, ratings & comments per career/job — students, alumni, and professionals can rate and leave qualitative advice on a given job/career page (e.g. day-to-day reality, pros/cons, honest tips), visible alongside the salary/demand charts
+
+- Admin: question-bank & branching-logic editor for counselors/content team to update survey content without code changes
+- Admin: task-authoring tool, task versioning
+- Admin: dataset import/refresh tool for salary, demand, and admission-cutoff data sourced from Vietnamese public/official sources (real hidden-scope item — needs a data-sourcing strategy specific to Vietnam, since no unified public API exists for this data today)
+- Admin: moderation queue for community ratings/comments on job/career pages
+- Admin: content-moderation queue, topic-creation/management tools, contributor role verification (student/alumni/professional)
