@@ -253,59 +253,264 @@ Beyond Vietnam-specific concerns, career orientation faces structural limitation
     \item \textbf{AI-based recommendations introduce additional risks.} Career and job recommenders trained on historical data can reproduce gender and other social biases. Complex models may also provide insufficiently transparent explanations for their recommendations, potentially undermining student trust and making bias more difficult to identify and correct.
 \end{itemize}
 
-\section{Comparison of Existing Market Solutions}
+\section{Comparison of Existing Solutions}
 
-Several types of career-orientation solutions currently exist in the Vietnamese market, but each
-has notable gaps. The comparison below is left as a structural outline to be completed with
-further detail.
+Career-orientation solutions have evolved through roughly four generations, from
+paper-and-pencil quizzes to AI assistants. This section defines each type, weighs its
+advantages and disadvantages across both the Vietnamese and international landscape, and
+consolidates everything into a rating matrix. The four generations are not mutually
+exclusive — in practice, a Vietnamese student today moves through all of them at once,
+cobbling together a journey that no single tool completes.
 
-\begin{table}[h!]
+\subsection{Generation 1 --- Traditional Self-Assessment (``Quizzing'')}
+
+\begin{enumerate}[a.]
+    \item \textbf{Free-standing personality/interest tests.} The most common entry point
+    worldwide: a student answers a fixed questionnaire and receives a type or code. The
+    dominant instruments differ sharply in scientific quality.
+    \textit{MBTI/16Personalities} is a 16-type model, by far the most popular format among
+    Vietnamese teenagers, offered free by portals such as HOCMAI Hướng nghiệp, CareerViet, and
+    university career hubs. \textbf{Advantage:} engaging and memorable, lowering the barrier to
+    self-reflection. \textbf{Disadvantage:} weak reliability --- an estimated 39--76\% of
+    people are classified into a different four-letter type on retest after just five weeks
+    (Pittenger, 2005). This specifically measures whole-type reclassification (requiring all
+    four letters to match) rather than scale-level consistency, which is somewhat higher, but
+    the practical result is the same: MBTI type does not map cleanly onto stable job fit.
+    \textit{Holland Code (RIASEC)} uses six interest types and is the best-suited model for
+    career matching, since it links interests directly to occupational environments; it is
+    embedded in the free O*NET Interest Profiler (US Department of Labor) and used piecemeal
+    in Vietnam (HOCMAI, JobWay). \textbf{Advantage:} scientifically defensible and job-relevant.
+    \textbf{Disadvantage:} delivered as one-off quizzes with no bridge to a concrete Vietnamese
+    major or school. \textit{Big Five (OCEAN)} is the academic ``gold standard'' for
+    personality measurement, with strong reported test-retest reliability.
+    \textbf{Advantage:} strongest validity. \textbf{Disadvantage:} its spectrum-style output is
+    harder for teenagers to act on and lacks a catchy label, so it is rarely used in Vietnamese
+    school practice. Across this category the pattern is consistent: free (or near-free),
+    instant, and scalable, but one-off and self-report only, with no follow-up, and --- in
+    isolation --- producing only a label with no path to a specific major or university.
+
+    \item \textbf{Pseudo-scientific paid assessments (a Vietnam-specific distortion).} Where
+    the international market fills the self-discovery step with free public tools, a notable
+    slice of the Vietnamese market is captured by paid services with no scientific basis:
+    fingerprint biometrics (DMIT / sinh trắc vân tay), priced from roughly 1.3--3.5 million VND
+    per report and marketed with self-declared ``90--95\% accuracy'' claims that lack
+    independent scientific backing, and numerology/fortune-telling (Nhân số học, tử vi), widely
+    consumed especially by parents and functioning essentially as cold reading.
+    \textbf{Advantage:} strong marketing, a polished printed ``report,'' and cultural
+    familiarity. \textbf{Disadvantage:} costly, misleading, and capable of actively steering a
+    student toward the wrong choice --- the opposite of what career orientation is for. (Note:
+    the specific pricing figures above are drawn from market reporting and should be
+    spot-checked against current vendor listings before citing precise numbers in the final
+    thesis.)
+\end{enumerate}
+
+\subsection{Generation 2 --- Traditional Human Consulting}
+
+\begin{enumerate}[a.]
+    \item \textbf{School counselors / guidance teachers.} The backbone of career guidance
+    internationally, and a significant structural gap in Vietnam. The American School
+    Counselor Association recommends a 250:1 student-to-counselor ratio; the actual US national
+    average was 376:1 for the 2023--24 school year (ASCA/US Department of Education data),
+    confirming that even a well-resourced system falls well short of its own target. In
+    Vietnam, dedicated career-counseling staff are uncommon at the school level, with most
+    guidance handled informally by subject teachers; exact national coverage figures are not
+    consistently published and should be sourced directly from MOET before being cited
+    precisely. \textbf{Advantage:} human, contextual, trusted, and adaptable to the individual.
+    \textbf{Disadvantage:} does not scale, and quality varies widely.
+
+    \item \textbf{Comprehensive in-house school programs (Vinschool).} A small number of
+    well-resourced private schools run a genuinely continuous, end-to-end program: multi-year
+    self-assessment, industry exposure and job-shadowing placements, and dedicated academic
+    advisors guiding students from subject-combination choice through university application.
+    \textbf{Advantage:} the closest existing model to true end-to-end, hands-on career
+    orientation. \textbf{Disadvantage:} exclusive to fee-paying private-school students,
+    entirely dependent on in-person staff, and structurally unable to scale to the mass
+    public-school population. (Note: program specifics should be verified against the school's
+    own published materials before citing details precisely in the final thesis.)
+
+    \item \textbf{Career fairs and one-off events.} Mass events (e.g., the Tuổi Trẻ/Thanh Niên
+    ``ngày hội tư vấn tuyển sinh'') where students meet universities directly.
+    \textbf{Advantage:} motivational, free to attend, and offers direct contact with real
+    schools. \textbf{Disadvantage:} episodic and usually aimed at grade 12 --- too late for the
+    grade-10 subject-combination decision --- and information-dense rather than personalized.
+
+    \item \textbf{Private coaching / consulting centers.} Fee-based one-on-one guidance,
+    ranging from reputable outfits (e.g., Hướng nghiệp Sông An) to the pseudo-scientific centers
+    described above; internationally this parallels private ``independent educational
+    consultants.'' \textbf{Advantage:} in-depth and personalized. \textbf{Disadvantage:}
+    expensive, inaccessible to most families, and uneven in credibility.
+\end{enumerate}
+
+\subsection{Generation 3 --- Modern Digital Platforms (Self-Service, Largely Rule-Based)}
+
+\begin{enumerate}[a.]
+    \item \textbf{Domestic career-test + job-info apps.} Vietnamese products that bundle a test
+    with occupational descriptions --- notably \textbf{JobWay}, Vietnam's first digitized
+    career app (founded by psychologist Dr.\ Đào Lê Hòa An), combining Holland/MBTI-style
+    assessment with roughly 300 ILO-referenced occupation profiles, entirely free.
+    \textbf{Advantage:} free, expert-backed, and links interest to occupation.
+    \textbf{Disadvantage:} occupation data is qualitative, thin on real Vietnamese salaries,
+    with no live admission-score data.
+
+    \item \textbf{Domestic admissions/score-lookup portals.} A different set of players (e.g.,
+    tuyensinhso.vn, diemthi.tuyensinh247.com) offering multi-year điểm chuẩn lookups and
+    admit-probability estimates. \textbf{Advantage:} genuinely useful, Vietnam-specific
+    admissions data --- the local moat. \textbf{Disadvantage:} no self-discovery layer at all;
+    they assume the student already knows the major.
+
+    \item \textbf{International integrated CCR (College \& Career Readiness) platforms.} The
+    mature reference points, mostly US/UK, mostly sold to schools per seat --- O*NET
+    OnLine/My Next Move (free, RIASEC-linked to 900+ occupations), YouScience (aptitude +
+    interest matching), Naviance (the US default, widely deployed across US high schools),
+    Xello/SchooLinks (K-12 pathway platforms), and Unifrog (the UK default, comparing
+    universities and apprenticeships with entry requirements). \textbf{Advantage:} genuinely
+    end-to-end (self $\rightarrow$ major $\rightarrow$ school), with rich localized
+    labor-market and outcome data. \textbf{Disadvantage --- the key opening for this project:}
+    none carries Vietnamese admission data (điểm chuẩn, tổ hợp môn, THPT methods), pricing is
+    school-district-scale, and content/language is not built for the Vietnamese system. (Note:
+    specific enrollment/pricing figures for these platforms are drawn from public marketing
+    materials and should be re-verified against current vendor sources before final citation.)
+\end{enumerate}
+
+\subsection{Generation 4 --- AI-Integrated Systems}
+
+\begin{enumerate}[a.]
+    \item \textbf{AI career advisors.} Systems using ML/LLMs to personalize recommendations
+    rather than return a fixed lookup. Domestically, \textbf{aihuongnghiep.com} markets itself
+    as an AI career platform combining personality assessment with AI-suggested majors --- the
+    closest competitor to this project's concept and worth watching closely. Internationally,
+    incumbents such as Naviance and SchooLinks are adding AI-assistant layers on top of their
+    existing platforms. \textbf{Advantage:} adaptive, conversational, and personalized at
+    scale. \textbf{Disadvantage:} ``black-box'' recommendations that can reproduce bias (e.g.,
+    gender-skewed STEM suggestions) and are hard to audit --- a live risk this project must
+    design against.
+
+    \item \textbf{University AI admissions chatbots (single-school, non-neutral).} A 2025--26
+    trend in Vietnam: several universities (e.g., UEH, HUIT) have launched LLM-based admissions
+    chatbots answering questions instantly, often via Zalo/Messenger. \textbf{Advantage:} fast,
+    always-on, and accurate for their own school's data. \textbf{Disadvantage --- structural:}
+    each serves only its own university, so it is inherently non-neutral; a student comparing
+    ten schools would need ten chatbots. There is no neutral, cross-school AI advisor.
+\end{enumerate}
+
+\subsection{Summary Rating Matrix}
+
+Solutions are rated on seven criteria most relevant to a student's full journey and to this
+project's positioning. Scale: $\bullet\bullet\bullet$ strong, $\bullet\bullet$ moderate,
+$\bullet$ weak, $\circ$ none/not applicable. The proposed platform's row reflects
+\textit{design intent}, not proven performance --- scored conservatively where the claim is
+still unvalidated.
+
+\begin{sidewaystable}
 \centering
-\begin{tabular}{|p{2.6cm}|p{2.2cm}|p{2.2cm}|p{2.6cm}|p{3.2cm}|}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.8cm}|*{7}{>{\centering\arraybackslash}p{1.95cm}|}}
 \hline
-\textbf{Solution} & \textbf{Target Audience} & \textbf{Personalization} & \textbf{Vietnam-specific Data} & \textbf{Limitations} \\
+\textbf{Solution (type)} & \textbf{Sci.\ validity} & \textbf{Self-under.\ depth} &
+\textbf{Career/major expl.} & \textbf{VN admission data} & \textbf{End-to-end journey} &
+\textbf{Neutrality} & \textbf{Free \& scalable} \\
 \hline
-Manual teacher-led surveys (Google Forms, Holland/MI/SWOT tests) & & & & \\
+Free personality quizzes (MBTI/Holland/Big Five) & $\bullet\bullet$* & $\bullet\bullet$ & $\bullet$ & $\circ$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ \\
 \hline
-Vinschool in-house program & & & & \\
+DMIT / numerology (VN) & $\circ$ & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ \\
 \hline
-One-off career fairs & & & & \\
+School counselors & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ (VN: limited) \\
 \hline
-VietCareer & & & & \\
+Vinschool-style in-house programs & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ & $\circ$ (exclusive) \\
+\hline
+Career fairs \& events & $\bullet$ & $\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ \\
+\hline
+Private coaching centers & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet$ \\
+\hline
+Domestic career-test apps (JobWay) & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ \\
+\hline
+Domestic admissions portals & $\circ$ & $\circ$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ \\
+\hline
+International CCR platforms & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ & $\circ$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ (mostly paid) \\
+\hline
+AI career advisors (domestic \& int'l) & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ \\
+\hline
+University AI admissions chatbots & $\circ$ & $\circ$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ & $\circ$ & $\bullet\bullet\bullet$ \\
+\hline
+\textbf{Proposed platform (this project)} & \textbf{$\bullet\bullet$} & \textbf{$\bullet\bullet$} & \textbf{$\bullet\bullet\bullet$} & \textbf{$\bullet\bullet\bullet$} & \textbf{$\bullet\bullet\bullet$} & \textbf{$\bullet\bullet\bullet$} & \textbf{$\bullet\bullet$} \\
 \hline
 \end{tabular}
-\caption{Comparison of existing career-orientation solutions (to be completed).}
-\end{table}
+\caption{Comparison of existing career-orientation solutions against the proposed platform.}
+\end{sidewaystable}
 
-\section{Pain Points and Proposed Remedies}
+\noindent
+* RIASEC and Big Five score $\bullet\bullet\bullet$ on validity individually; MBTI pulls the
+blended row down to $\bullet\bullet$.
 
-\begin{itemize}
-    \item \textbf{Pain point:} Existing tools rely almost entirely on self-reported
-    questionnaires, with no signal from how a student actually performs on career-relevant
-    tasks.\\
-    \textbf{Remedy:} Introduce short, simulated micro-tasks per career field and derive a
-    fit score from actual task performance, not just self-rating.
+\subsection{Conclusion --- The Identified Gap}
 
-    \item \textbf{Pain point:} Most personality/interest frameworks in use are generic and
-    international, disconnected from Vietnam's own curriculum and admission system.\\
-    \textbf{Remedy:} Ground the platform in the 2018 General Education Program and the
-    standard subject combinations (tổ hợp môn), directly mapping them to eligible majors.
+Reading the matrix by column, no existing solution is strong across all seven criteria at once
+--- and the two columns most solutions fail \textit{together} are ``VN admission data'' and
+``end-to-end journey integration.'' International platforms excel at scientific self-discovery
+and full-journey integration but carry zero Vietnamese admission data; Vietnamese admissions
+portals own that data but have no self-discovery layer; domestic test apps and AI advisors
+bridge self-discovery to occupations but stop short of live admission data; AI admissions
+chatbots are fast but locked to a single school; and Vinschool-style programs achieve genuine
+end-to-end quality but only for the small, fee-paying slice of students who can access them.
 
-    \item \textbf{Pain point:} Labor-market and admission-cutoff data referenced by existing
-    tools is static and updated infrequently, quickly going out of date.\\
-    \textbf{Remedy:} Use AI-driven scraping/aggregation to keep salary, demand, and
-    admission-cutoff data continuously refreshed from public sources.
+In short: \textbf{no solution --- domestic or international --- combines
+scientifically-grounded, continuous self-assessment with hands-on exploration, Vietnamese
+admission data, and neutral cross-school coverage in one place, at a scale accessible to the
+mass public-school population.} That intersection is the gap this project targets. Two data
+points remain unverified against a primary source and should be checked before final
+submission: Vietnam's exact rate of school-level dedicated career-counseling staff, and the
+specific pricing/enrollment figures cited for pseudo-scientific assessments and international
+CCR platforms.
 
-    \item \textbf{Pain point:} Students cannot easily see the consequence of changing their
-    subject combination on which majors and careers remain open to them.\\
-    \textbf{Remedy:} Provide a "what-if" simulator that shows, in real time, which majors and
-    careers open or close as a student changes their subject combination.
+\section{Pain Points --- Gaps Left Uncovered by Existing Solutions}
 
-    \item \textbf{Pain point:} Existing solutions are fragmented — a survey here, a career fair
-    there — with no single, ongoing journey from assessment to decision.\\
-    \textbf{Remedy:} Offer one platform spanning assessment, exploration, pathway planning,
-    and mentorship, so guidance persists throughout a student's high school years.
-\end{itemize}
+Sections 2 and 3 together showed that today's career-orientation problems are only partly
+addressed by what already exists. This section narrows in on what remains unresolved --- the
+specific shortcomings no current solution, domestic or international, manages to close.
+
+\begin{enumerate}
+    \item \textbf{No solution offers performance-based fit testing.} Every option reviewed ---
+    quizzes, counselors, coaching centers, domestic apps, AI advisors --- relies on self-report.
+    None tests whether a student can actually perform well in a field; they only ask whether
+    the student \textit{thinks} they would be interested.
+
+    \item \textbf{No solution combines self-discovery with Vietnamese admission data in one
+    place.} International CCR platforms (O*NET, YouScience, Naviance, Unifrog) have strong
+    self-assessment but zero điểm-chuẩn/tổ-hợp-môn data; Vietnamese admissions portals have that
+    data but no self-discovery layer at all.
+
+    \item \textbf{No solution is both genuinely end-to-end and accessible to the mass
+    public-school student.} The one program that is comprehensive and continuous (Vinschool) is
+    exclusive to fee-paying private students; the free, scalable options (quizzes, JobWay) stop
+    at self-discovery or a generic occupation label.
+
+    \item \textbf{No solution offers real hands-on career exploration at scale.} Vinschool's
+    job-shadowing provides this but only to its own students; every digital option reviewed
+    (quizzes, domestic apps, AI advisors) is text/quiz-based, with nothing equivalent to
+    actually trying a field before choosing it.
+
+    \item \textbf{No solution offers a neutral, cross-school AI advisor.} University AI
+    admissions chatbots (UEH, HUIT) are fast and accurate but locked to a single institution ---
+    a student comparing multiple schools has no single neutral AI resource to use.
+
+    \item \textbf{No solution provides a peer/field-specific community channel.} None of the ten
+    solution types reviewed in Section 3 --- quizzes, counselors, fairs, coaching, domestic
+    apps, admissions portals, international platforms, AI advisors, or admissions chatbots ---
+    give students a space to hear directly from current students or working professionals in a
+    specific field.
+
+    \item \textbf{No free, scalable option is trusted/credible enough to compete with
+    pseudo-scientific alternatives.} DMIT and numerology capture real market share through
+    confident, polished paid reports; the scientifically credible free tools that exist
+    (RIASEC, JobWay) lack the same trust signals and marketing reach.
+
+    \item \textbf{Existing AI-based advisors offer no transparency into their recommendations.}
+    Tools such as aihuongnghiep.com generate suggestions without explaining the reasoning
+    behind them --- the general ``black-box'' problem documented for AI career-recommendation
+    systems, unresolved by any current Vietnamese solution.
+\end{enumerate}
 
 \section{Proposed System Features}
 
