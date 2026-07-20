@@ -71,15 +71,68 @@ Beyond Vietnam-specific statistics, career orientation faces structural limitati
 | No authentic peer/field-specific insight | Topic-based community forum (CS, DevOps, MLOps, etc.) |
 
 ## 5. Proposed system features (summary)
-1. **Dynamic Survey & Academic Engine** — adaptive personality/interest assessment (RIASEC-based) + tổ hợp môn academic profile tracking, producing a continuously updated capability portrait.
-2. **Micro-Task Exploration Loop** — short, realistic task simulations per career field, scored by actual performance, guiding students toward unexplored fields.
-3. **Visual Pathway & Market Analytics** — Subject Combination → Major → Career pathway map with salary (VND), labor-demand trends, admission cutoff-score lookup, community ratings/comments per career, and a relevant job-news feed.
-4. **Community Forum** — topic-based discussion boards (by field, e.g. Computer Science, DevOps, MLOps), threaded posts/replies, upvoting, and in-app messaging.
 
-*(Full detailed feature list available separately if needed.)*
+The proposed platform is organized around six functional areas.
+
+### 5.1 Dynamic Survey & Academic Engine (Personalization)
+- Adaptive onboarding survey with branching questions based on prior answers, rather than a fixed static form
+- Academic profile import — subject grades/transcript per the GDPT 2018 curriculum, entered manually or imported from Vietnamese school record formats
+- Subject-combination (tổ hợp môn) tracking — mapped to Vietnam's standard combinations (A00, A01, B00, C00, D01, D07, etc.) and their eligible university majors
+- Real-time "capability portrait" dashboard — a radar chart combining Holland RIASEC personality typing, multiple intelligences, and academic strengths
+- Periodic re-assessment each semester, with interest-shift tracking to flag significant profile changes over time
+- Exportable PDF profile report for parents/counselors
+
+### 5.2 Micro-Task Exploration Loop
+- Curated career-field catalog (an initial set of roughly 15–25 fields for the MVP, expandable later)
+- Micro-task library per field — short simulated scenarios (e.g., triaging a mock patient, pricing a tour package, debugging a snippet, writing a product pitch)
+- Multiple task formats — scenario multiple-choice, short written response, drag-and-drop simulation, timed challenge
+- Performance-based fit scoring, derived from how a student actually performs rather than self-rating alone
+- Smart task queue that nudges students toward unexplored fields
+- Bookmarking of career paths, badges/achievements for exploration breadth, and pattern surfacing (e.g., "students like you also excelled at…")
+
+### 5.3 Visual Pathway & Market Analytics
+- Interactive pathway map — Subject Combination → Major → Career, as a node-graph or Sankey-style visualization
+- Search/filtering by interest, current subject combination, or region within Vietnam
+- Labor-demand and growth-trend charts by sector, based on Vietnamese labor-market reports
+- University admission cutoff-score (điểm chuẩn) lookup and comparison across universities and years, covering both the THPT exam-score and transcript-based (xét học bạ) admission routes
+- "What-if" simulator showing which majors/careers open or close as a student changes subject combination
+- Side-by-side career comparison (salary in VND, demand, years of study, personality fit)
+- Personal roadmap builder for saving a multi-year plan, and a job/industry news feed for bookmarked or explored careers
+
+### 5.4 Mentor & Alumni Insights Space (Community Forum)
+- Topic-based forum structure organized by field/specialization (e.g., Computer Science, DevOps, MLOps, Business, Medicine, Design)
+- Post-and-reply threads, topic follow/subscribe, and upvoting/helpful-marking of replies
+- Contributor profiles with role badges (current student, alumni, working professional) and field tags
+- In-app direct messaging between users, separate from the public forum and subject to reporting/moderation given that the user base includes minors
+- "A day in my life as X" story library of alumni-submitted posts, and search across all forum topics and posts
+
+### 5.5 Cross-Cutting Platform Features
+- Multi-role accounts (student or parent, consultant/mentor/alumnus/counselor, administrator)
+- Notifications for survey/task reminders, new mentor activity, and new pathway recommendations
+- Privacy and data controls, including consent screens and parental visibility into activity
+- Home dashboard showing profile completeness, recommended next actions, and recent activity
+- Counselor console with class-wide trend views (e.g., "60% of Grade 11 leaning STEM") and the ability to assign tasks to a whole class
+- Unified export/report combining survey results, top pathway recommendations, and suggested mentors, shareable with parents
+- Global search/filtering across careers, majors, and universities, plus platform-wide moderation and reporting tools
+
+### 5.6 AI Layer
+- Adaptive next-question selection in the survey, starting rule-based with a later upgrade path to machine learning
+- Fit-score ranking model combining survey and micro-task performance
+- Freeform-text topic/thread recommendation, surfacing relevant forum discussions based on a student's profile or recent activity
+- Career Q&A chat assistant grounded in the platform's own market data (retrieval-augmented generation over the salary/demand dataset)
+- Disengagement/dropout-risk flagging for counselors
+
+*This layer is treated as a bonus scope, to be built last and refined after the other five areas are in place.*
 
 ## 6. Data sources and expected results
-**Data sources:** salary/demand data (ITviec, TopDev, TopCV, VietnamWorks reports) and admission cutoff scores are publicly readable but **fragmented, with no public API** — realistic approach is manual aggregation of a curated snapshot, not real-time integration. Labor-market trend reports (World Bank, ILO, GSO) are freely available for static content.
+**Data sources.** The platform draws on four categories of data:
+
+1. **Academic and admission data** — the GDPT 2018 curriculum structure, the standard Vietnamese university-admission subject combinations (A00, A01, B00, C00, D01, D07, etc.) and their mapping to eligible majors, and university admission cutoff scores (điểm chuẩn), covering both the national THPT exam and transcript-based admission routes. Sourced from MOET and individual university websites; these are publicly readable but fragmented, with no public API, so manual aggregation or per-university scraping is required.
+2. **Labor-market data** — sector-level labor demand and growth trend reports from MOLISA and the General Statistics Office (GSO), plus salary and hiring-demand data from job platforms such as VietnamWorks and TopCV. The intended collection method is automated, periodic scraping and aggregation by an AI/agent process rather than manual entry, so that salary, demand, and cutoff-score data stay continuously up to date with the real market.
+3. **Personal student data** — grades, transcripts, and subject-combination choices entered directly by students while using the platform. This is not integrated with school transcript management systems (e.g., VNEdu, SMAS), since no unified data format currently exists across schools and departments.
+4. **Platform-generated data** — micro-task simulation content authored by the platform's content team, "a day in the life of X" articles contributed by alumni and working professionals, forum posts and discussions, and community ratings/comments on career pages. This data is generated internally by users and staff, with no external source.
+
+*Note:* the reference links associated with these sources point to the official homepage/domain of each source, which are believed to be accurate; deep links to specific reports or data pages may change over time and should be re-verified at implementation time rather than hard-coded.
 
 **Expected results / evaluation criteria for this semester:**
 - A working prototype demonstrating one full pillar end-to-end (proposed: Micro-Task Exploration Loop + Market Analytics, as the most novel and differentiated features).

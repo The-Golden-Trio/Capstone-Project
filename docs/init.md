@@ -53,7 +53,7 @@
 - "A day in my life as X" story library — alumni-submitted blog-style posts (lower-effort content than live mentoring, good for cold-start), can live as pinned posts within relevant topics
 - Search across all forum topics/posts
 
-## Cross-Cutting Platform Features (needed by every subsystem)
+## 5. Cross-Cutting Platform Features (needed by every subsystem)
 - Multi-role accounts: User(Student or Parent), Consultant(Mentor/Alumni/Counselor), Admin
 - Notifications: survey/task reminders, new mentor session, new pathway recommendation
 - Privacy & data controls: clear consent screens, parental visibility into activity, no public exposure of raw personal survey data, compliant with Vietnam's Personal Data Protection Decree (Nghị định 13/2023/NĐ-CP) requirements around processing minors' data
@@ -63,7 +63,7 @@
 - Global search/filter across careers, majors, universities
 - Moderation & reporting tools, platform-wide
 
-## AI Layer (bonus — scope separately, build last)
+## 6. AI Layer (bonus — scope separately, build last)
 - Adaptive next-question selection in the survey (start rule-based, upgrade to ML later)
 - Fit-score ranking model combining survey + micro-task performance
 - Freeform-text topic/thread recommendation (surface relevant forum discussions based on a student's profile or recent activity)
