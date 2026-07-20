@@ -298,34 +298,102 @@ VietCareer & & & & \\
 
 \section{Proposed System Features}
 
-The proposed system, Compass AI, is organized around four pillars plus shared
-cross-cutting infrastructure:
+The proposed system, Compass AI, is organized around six functional areas.
 
-\begin{enumerate}
-    \item \textbf{Adaptive survey and academic profile} — a branching onboarding survey,
-    academic-record import aligned with the GDPT 2018 curriculum, and a real-time
-    "capability portrait" combining Holland RIASEC type, multiple intelligences, and academic
-    strengths, with periodic re-assessment to track how interests evolve.
-    \item \textbf{Micro-task exploration loop} — a library of short simulated career scenarios
-    across multiple fields, with performance-based fit scoring, a smart task queue that nudges
-    students toward unexplored fields, and gamified badges for exploration breadth.
-    \item \textbf{Visual pathway and market analytics} — an interactive map from subject
-    combination to university major to career, admission-cutoff lookup and comparison across
-    universities, labor-demand trend charts, a what-if simulator, and a multi-year personal
-    roadmap builder.
-    \item \textbf{Mentor and alumni insights space} — a topic-based forum for students, alumni,
-    and professionals, moderated direct messaging, and "a day in my life as X" story content
-    from alumni.
-\end{enumerate}
+\subsection{Dynamic Survey \& Academic Engine (Personalization)}
+\begin{itemize}
+    \item Adaptive onboarding survey with branching questions based on prior answers, rather
+    than a fixed static form.
+    \item Academic profile import — subject grades/transcript per the GDPT 2018 curriculum,
+    entered manually or imported from Vietnamese school record formats.
+    \item Subject-combination (tổ hợp môn) tracking — mapped to Vietnam's standard combinations
+    (A00, A01, B00, C00, D01, D07, etc.) and their eligible university majors.
+    \item Real-time "capability portrait" dashboard — a radar chart combining Holland RIASEC
+    personality typing, multiple intelligences, and academic strengths.
+    \item Periodic re-assessment each semester, with interest-shift tracking to flag significant
+    profile changes over time.
+    \item Exportable PDF profile report for parents/counselors.
+\end{itemize}
 
-Cross-cutting infrastructure includes multi-role accounts (student, parent, consultant, admin),
-notifications, privacy controls compliant with Vietnam's Decree 13/2023/NĐ-CP on personal data
-protection, a counselor console for class-wide trend views, and unified exportable reports.
+\subsection{Micro-Task Exploration Loop}
+\begin{itemize}
+    \item Curated career-field catalog (an initial set of roughly 15–25 fields for the MVP,
+    expandable later).
+    \item Micro-task library per field — short simulated scenarios (e.g., triaging a mock
+    patient, pricing a tour package, debugging a snippet, writing a product pitch).
+    \item Multiple task formats — scenario multiple-choice, short written response,
+    drag-and-drop simulation, timed challenge.
+    \item Performance-based fit scoring, derived from how a student actually performs rather
+    than self-rating alone.
+    \item Smart task queue that nudges students toward unexplored fields.
+    \item Bookmarking of career paths, badges/achievements for exploration breadth, and pattern
+    surfacing (e.g., "students like you also excelled at…").
+\end{itemize}
 
-The Semester 1 (MVP) scope prioritizes Pillars 1 and 2, the static portion of Pillar 3
-(pathway map and admission-cutoff lookup), and the shared cross-cutting infrastructure; the
-forum/messaging space, large-scale automated data pipelines, and school-record import are
-treated as higher-risk items to be prototyped or designed first.
+\subsection{Visual Pathway \& Market Analytics}
+\begin{itemize}
+    \item Interactive pathway map — Subject Combination $\rightarrow$ Major $\rightarrow$
+    Career, as a node-graph or Sankey-style visualization.
+    \item Search/filtering by interest, current subject combination, or region within Vietnam.
+    \item Labor-demand and growth-trend charts by sector, based on Vietnamese labor-market
+    reports.
+    \item University admission cutoff-score (điểm chuẩn) lookup and comparison across
+    universities and years, covering both the THPT exam-score and transcript-based
+    (xét học bạ) admission routes.
+    \item "What-if" simulator showing which majors/careers open or close as a student changes
+    subject combination.
+    \item Side-by-side career comparison (salary in VND, demand, years of study, personality
+    fit).
+    \item Personal roadmap builder for saving a multi-year plan, and a job/industry news feed
+    for bookmarked or explored careers.
+\end{itemize}
+
+\subsection{Mentor \& Alumni Insights Space (Community Forum)}
+\begin{itemize}
+    \item Topic-based forum structure organized by field/specialization (e.g., Computer
+    Science, DevOps, MLOps, Business, Medicine, Design).
+    \item Post-and-reply threads, topic follow/subscribe, and upvoting/helpful-marking of
+    replies.
+    \item Contributor profiles with role badges (current student, alumni, working
+    professional) and field tags.
+    \item In-app direct messaging between users, separate from the public forum and subject to
+    reporting/moderation given that the user base includes minors.
+    \item "A day in my life as X" story library of alumni-submitted posts, and search across
+    all forum topics and posts.
+\end{itemize}
+
+\subsection{Cross-Cutting Platform Features}
+\begin{itemize}
+    \item Multi-role accounts (student or parent, consultant/mentor/alumnus/counselor,
+    administrator).
+    \item Notifications for survey/task reminders, new mentor activity, and new pathway
+    recommendations.
+    \item Privacy and data controls, including consent screens and parental visibility into
+    activity.
+    \item Home dashboard showing profile completeness, recommended next actions, and recent
+    activity.
+    \item Counselor console with class-wide trend views (e.g., "60\% of Grade 11 leaning
+    STEM") and the ability to assign tasks to a whole class.
+    \item Unified export/report combining survey results, top pathway recommendations, and
+    suggested mentors, shareable with parents.
+    \item Global search/filtering across careers, majors, and universities, plus
+    platform-wide moderation and reporting tools.
+\end{itemize}
+
+\subsection{AI Layer}
+\begin{itemize}
+    \item Adaptive next-question selection in the survey, starting rule-based with a later
+    upgrade path to machine learning.
+    \item Fit-score ranking model combining survey and micro-task performance.
+    \item Freeform-text topic/thread recommendation, surfacing relevant forum discussions
+    based on a student's profile or recent activity.
+    \item Career Q\&A chat assistant grounded in the platform's own market data
+    (retrieval-augmented generation over the salary/demand dataset).
+    \item Disengagement/dropout-risk flagging for counselors.
+\end{itemize}
+
+This layer is treated as a bonus scope, to be built last and refined after the other five
+areas are in place.
 
 \section{Datasource and Expected Result}
 
@@ -346,9 +414,6 @@ treated as higher-risk items to be prototyped or designed first.
     VNEdu or SMAS.
     \item \textbf{Platform-generated data} — micro-task content authored by the content team,
     alumni-submitted "day in the life" stories, and forum posts/ratings contributed by users.
-    \item \textbf{Legal framework} — Decree 13/2023/NĐ-CP on personal data protection, a binding
-    constraint (not a data source) on how student data, including that of minors, is collected
-    and processed.
 \end{itemize}
 
 \subsection{Expected Result}
