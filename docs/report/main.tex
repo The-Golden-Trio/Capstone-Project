@@ -2,6 +2,7 @@
 \usepackage{import}
 %\usepackage[english,vietnam]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc} % Vietnamese character support for pdfLaTeX
 %\usepackage[utf8]{inputenc}
 %\usepackage[francais]{babel}
 \usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
@@ -168,15 +169,15 @@
 
 
 \begin{center}
-\begin{tabular}{ccc}
-	\multicolumn{3}{l}{\textbf{{\Large \textcolor{blue}{SPECIALIZED PROJECT}}}}\\
+\begin{tabular}{@{}p{\textwidth}@{}}
+	\textbf{{\Large \textcolor{blue}{SPECIALIZED PROJECT}}}\\
 	~~\\
 	\arrayrulecolor{blue}\hline
 	\\
-	\multicolumn{3}{l}{\textbf{{\Large \textcolor{blue}{Project Report} }}}\\
+	\textbf{{\Large \textcolor{blue}{Project Report}}}\\
 	\\
 
-	\multicolumn{3}{c}{\textbf{{\huge \textcolor{blue}{Compass AI: An AI-Powered Career Orientation Platform for Vietnamese High School Students}}}}\\
+	{\centering\textbf{{\huge \textcolor{blue}{Compass AI: An AI-Powered Career Orientation Platform for Vietnamese High School Students}}}\par}\\
 	\\
 
 	\arrayrulecolor{blue}\hline \\ \\
@@ -202,45 +203,55 @@
 
 \section{Career Orientation and Related Fields}
 
-Career orientation is the process by which an individual explores, evaluates, and chooses a
-direction of study or work that fits their interests, abilities, and circumstances, and is
-typically supported by assessment tools, mentorship, and labor-market information rather than
-left to guesswork. Designing a system in this space requires drawing on several related fields:
+\textbf{Definition.} Career orientation is the process of helping individuals understand their interests, personality, strengths, and values and connect that self-understanding to suitable educational and career paths (OECD, 2004; UNESCO-UNEVOC). This approach can be traced back to Frank Parsons (1909), who framed sound career choice as a three-step process: (1) understanding oneself, (2) understanding the world of work, and (3) reasoning about the relationship between the two.
 
+\textbf{General steps in career orientation.} In practice, this process is usually divided into four stages that a human counselor or digital platform should support:
+\begin{enumerate}
+    \item \textbf{Self-assessment} — understanding one's interests, personality, strengths, and values. This psychology-based stage draws on frameworks such as RIASEC and SCCT.
+    \item \textbf{Exploration} — actively investigating potentially suitable educational and career options, ideally through practical exposure rather than only reading abstract job descriptions.
+    \item \textbf{Decision-making} — comparing self-assessment and exploration results with real-world information, such as labor demand, admission requirements, and salary levels, to narrow the available options.
+    \item \textbf{Planning and review} — turning a decision into a concrete action plan, such as selecting a subject combination or target university, and reviewing it periodically. In Super's theory, a person's self-concept and circumstances continue to evolve.
+\end{enumerate}
+
+\textbf{Related fields to review:}
+
+\begin{enumerate}[a.]
+    \item \textbf{Educational and career psychology.} This field explains \textit{how} a person's characteristics---including interests, personality, cognitive strengths, self-efficacy, and values---relate to career fit. It provides the theoretical basis for the platform's self-assessment engine, drawing mainly on Holland's RIASEC model (person--environment fit), Social Cognitive Career Theory (self-efficacy and outcome expectations), Vietnam's "Career Tree" framework, and Super's Life-Span theory. Because an adolescent's self-concept is still evolving, assessment results should be treated as an exploratory snapshot rather than a fixed label.
+    \item \textbf{Labor market information systems (LMIS).} This field examines how salary, labor-demand, and industry-growth data are collected, structured, and published. In Vietnam, relevant information is provided by government labor agencies and the General Statistics Office. LMIS supports the platform's market-analytics module and connects to SCCT's concept of outcome expectations: reliable market data allows students to compare their expectations with evidence rather than relying on rumor.
+    \item \textbf{HCI and EdTech design for teenagers.} This field examines how technology should be designed specifically for adolescent users and is sometimes called Teen--Computer Interaction (TeenCI). Teenagers are a diverse, dynamic, and technologically aware user group; therefore, interfaces should reflect their developmental stage rather than simply reuse adult-oriented designs. The way a 16-year-old interprets a question, maintains motivation, or develops trust in a recommendation may differ from that of an adult. Consequently, the wording and pacing of an assessment are psychological design choices as well as user-interface choices.
+    \item \textbf{Recommender systems.} This computer-science field develops methods for suggesting suitable options from user data. In this project, such methods are applied to careers and university majors. Knowledge-based and hybrid recommenders are particularly relevant to career guidance, although combining personal characteristics from field (a) with current labor-market information from field (b) remains challenging. The project's Visual Pathway \& Market Analytics module is intended to address this gap.
+    \item \textbf{Vietnam's education policy framework.} The GDPT 2018 curriculum, the tổ hợp môn (subject-combination) system, and university-admission processes form the institutional context within which the platform must operate. A student's psychological profile becomes actionable only when it is mapped to actual subject combinations, majors, and admission options.
+\end{enumerate}
+
+\textbf{The common thread.} Psychology is not separate from the other related fields; it is integrated with all of them. LMIS grounds outcome expectations in evidence, TeenCI applies psychology to interface design, recommender systems combine psychological and market data, and Vietnam's policy framework turns a psychological profile into an actionable educational or career decision.
+
+\section{Problems in career orientation}
+
+This section outlines the problems that career orientation must address. These include evidence of student--major mismatch and skills gaps in Vietnam, as well as broader limitations involving assessment validity, labor-market uncertainty, limited resources, adolescent development, family pressure, inequitable access, and algorithmic risk.
+
+\subsection{Market-level problems in Vietnam}
 \begin{itemize}
-    \item \textbf{Vocational and educational psychology} — personality/interest frameworks such
-    as Holland's RIASEC model and multiple-intelligences theory, used to characterize a
-    student's aptitudes and preferences.
-    \item \textbf{Labor-market data and economics} — salary, demand, and growth-trend data by
-    sector, which grounds career recommendations in real market conditions rather than
-    abstract interest matching.
-    \item \textbf{Vietnam's education system} — the 2018 General Education Program
-    (chương trình GDPT 2018), the standard subject combinations (tổ hợp môn, e.g. A00, A01,
-    B00, C00, D01, D07) used for university admission, and the admission mechanisms
-    (xét điểm thi tốt nghiệp THPT, xét học bạ) that determine which majors a student can
-    realistically pursue.
-    \item \textbf{Recommendation systems and AI} — techniques for adaptive questionnaires,
-    fit-scoring, and data aggregation that allow a platform to personalize guidance and keep
-    market data current at scale.
+    \item Recent THPT examination cohorts have included approximately 1.07--1.17 million students per year, while approximately 65--68\% have pursued university education. Consequently, guidance focused exclusively on university admission may not serve a substantial proportion of students.
+    \item Widely cited, press-reported FALMI estimates suggest that approximately 60\% of students choose an unsuitable major and that approximately 75\% do not adequately understand their chosen field. These figures can be traced to statements reported in 2013 and 2019 rather than to a formally published study and should therefore be interpreted cautiously.
+    \item A 2026 survey attributed to Đại Nam University and Soha ($n \approx 9{,}200$ across 10 universities) reported that approximately 20\% of respondents had no clear career direction when entering university and that approximately 33--41\% would consider choosing a different major. The original survey should be cited before these figures are used as evidence.
+    \item MOET Circular 01/2024 includes a 15\% threshold related to student attrition. This quality-assurance threshold should not be presented as the observed national first-year dropout rate or as direct evidence of student--major mismatch.
+    \item Employer-reported skills gaps are documented by organizations such as the World Bank, ILO, and Vietnamese labor agencies. The General Statistics Office estimated that 29.2\% of workers held degrees or certificates in 2025.
+    \item Reports also describe students choosing fields \textit{theo cảm tính} (based on feelings), peer influence, or expected income rather than on informed self-knowledge and labor-market evidence.
 \end{itemize}
 
-\section{Career Orientation Problems in the Market}
+\subsection{Problems inherent to career orientation as a practice (independent of Vietnam)}
 
-Career orientation in Vietnam faces a significant mismatch between demand and effective
-guidance:
+Beyond Vietnam-specific concerns, career orientation faces structural limitations regardless of whether it is provided by a human counselor or an AI-based system:
 
 \begin{itemize}
-    \item Vietnam has over 1 million high school graduates per year; more than 80\% aspire to
-    attend university, yet only around 50\% actually enroll.
-    \item Roughly 50\% of students feel that their initial choice of major was unsuitable, 36\%
-    want to change majors, and about 15\% actually switch majors within their first year.
-    \item About 70\% of young workers lack the skills expected of them upon entering the
-    workforce, suggesting that career and subject-combination decisions made in high school
-    are often poorly informed.
+    \item \textbf{Assessment tools have important limitations.} Holland's RIASEC framework may oversimplify individuals when its results are reduced to a three-letter code. Research generally finds only modest relationships between person--environment fit and outcomes such as satisfaction, and the framework's cross-cultural validity requires careful evaluation outside the populations in which it was developed. Self-report tools are also vulnerable to social-desirability bias: students may provide answers they consider desirable rather than answers that accurately reflect their views.
+    \item \textbf{Career decisions are made under uncertainty.} Labor markets can change faster than school curricula or guidance systems, and AI and automation continue to reshape skill requirements and job roles. No guidance system can predict with certainty which fields will be in demand when today's students graduate from university.
+    \item \textbf{Career guidance is under-resourced in many countries.} OECD research based on PISA data identifies substantial career uncertainty among students and misalignment between occupational expectations and labor-market demand. Counselor shortages and unequal access to guidance are therefore broader structural problems rather than issues unique to Vietnam.
+    \item \textbf{Teenagers have limited real-world exposure.} Students can report informed interest only in fields they have encountered. Assessments may therefore overlook careers to which a student has not been exposed, even when those careers could be suitable.
+    \item \textbf{Family and cultural pressures can outweigh a student's psychological profile.} In some Confucian-influenced East Asian contexts, parental expectations and filial obligations are associated with career decisions, sometimes independently of a student's interests or aptitudes. Thus, even an accurate assessment may not determine the student's eventual choice.
+    \item \textbf{Equity and access gaps affect who benefits from guidance.} Rural and lower-income students often have less access to high-quality educational and career guidance than their urban and higher-income peers. This pattern is found in many countries and is not unique to Vietnam.
+    \item \textbf{AI-based recommendations introduce additional risks.} Career and job recommenders trained on historical data can reproduce gender and other social biases. Complex models may also provide insufficiently transparent explanations for their recommendations, potentially undermining student trust and making bias more difficult to identify and correct.
 \end{itemize}
-
-These figures point to a systemic gap: students are choosing subject combinations, majors, and
-career directions without adequate, personalized, and up-to-date guidance.
 
 \section{Comparison of Existing Market Solutions}
 
