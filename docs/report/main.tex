@@ -560,11 +560,14 @@ The proposed system, Compass AI, is organized around six functional areas.
     subject combination.
     \item Side-by-side career comparison (salary in VND, demand, years of study, personality
     fit).
+    \item \textbf{Community ratings and comments per career/job} — students, alumni, and
+    professionals can rate and leave firsthand advice on a career page, giving students a trust
+    signal that pseudo-scientific competitors do not offer.
     \item Personal roadmap builder for saving a multi-year plan, and a job/industry news feed
     for bookmarked or explored careers.
 \end{itemize}
 
-\subsection{Mentor \& Alumni Insights Space (Community Forum)}
+\subsection{Community Forum}
 \begin{itemize}
     \item Topic-based forum structure organized by field/specialization (e.g., Computer
     Science, DevOps, MLOps, Business, Medicine, Design).
@@ -580,18 +583,20 @@ The proposed system, Compass AI, is organized around six functional areas.
 
 \subsection{Cross-Cutting Platform Features}
 \begin{itemize}
-    \item Multi-role accounts (student or parent, consultant/mentor/alumnus/counselor,
+    \item Multi-role accounts (student, parent, contributor [alumnus/professional], counselor,
     administrator).
-    \item Notifications for survey/task reminders, new mentor activity, and new pathway
-    recommendations.
-    \item Privacy and data controls, including consent screens and parental visibility into
-    activity.
+    \item Notifications for survey/task reminders, new forum activity in followed topics, and
+    new pathway recommendations.
+    \item Privacy and data controls, including school-code-verified signup, a parental-consent
+    flow, and parental visibility into activity --- compliant with Vietnam's Personal Data
+    Protection Decree (Nghị định 13/2023/NĐ-CP \cite{decree13}) given the user base includes
+    minors.
     \item Home dashboard showing profile completeness, recommended next actions, and recent
     activity.
     \item Counselor console with class-wide trend views (e.g., "60\% of Grade 11 leaning
     STEM") and the ability to assign tasks to a whole class.
-    \item Unified export/report combining survey results, top pathway recommendations, and
-    suggested mentors, shareable with parents.
+    \item Unified export/report combining survey results and top pathway recommendations,
+    shareable with parents.
     \item Global search/filtering across careers, majors, and universities, plus
     platform-wide moderation and reporting tools.
 \end{itemize}
@@ -601,6 +606,10 @@ The proposed system, Compass AI, is organized around six functional areas.
     \item Adaptive next-question selection in the survey, starting rule-based with a later
     upgrade path to machine learning.
     \item Fit-score ranking model combining survey and micro-task performance.
+    \item \textbf{Explainable recommendations} — every suggested career/major displays the
+    specific inputs behind it (e.g., "suggested because of your Investigative interest score
+    and strong performance on the Data Analysis micro-task"), directly addressing the black-box
+    trust problem documented in existing AI advisors (Section~4, pain point 8).
     \item Freeform-text topic/thread recommendation, surfacing relevant forum discussions
     based on a student's profile or recent activity.
     \item Career Q\&A chat assistant grounded in the platform's own market data
@@ -615,31 +624,67 @@ areas are in place.
 
 \subsection{Datasource}
 
+\begin{enumerate}
+    \item \textbf{Academic and admission data} — the GDPT 2018 curriculum structure, the
+    standard Vietnamese university-admission subject combinations (A00, A01, B00, C00, D01, D07,
+    etc.) and their mapping to eligible majors, and university admission cutoff scores (điểm
+    chuẩn), covering both the national THPT exam and transcript-based (xét học bạ) admission
+    routes --- matching the two routes referenced in Section~5.3. Sourced from the Ministry of
+    Education and Training (\url{https://moet.gov.vn}) and individual university websites; these
+    are publicly readable but fragmented, with no public API, consistent with the feasibility
+    conclusion already reached in this section and in Section~3's competitor review (domestic
+    admissions portals hold this data but do not expose it as a service). Realistic approach:
+    manual aggregation and per-university scraping (subject to each site's Terms of Service)
+    into a curated, periodically refreshed snapshot --- not a real-time feed.
+    \item \textbf{Labor-market data} — sector-level labor-demand and growth-trend reports from
+    the Ministry of Labor, Invalids and Social Affairs and the General Statistics Office
+    (\url{https://www.gso.gov.vn}), plus salary and hiring-demand data from job platforms such as
+    VietnamWorks (\url{https://www.vietnamworks.com}), ITviec, TopDev, and TopCV
+    (\url{https://www.topcv.vn}), feeding Section~5.3's demand charts and career comparison view.
+    As with admission data, none of these sources offers a public API --- collection is
+    realistically a \textbf{semi-automated pipeline}: scraping where a source's structure and
+    Terms of Service allow it, manual entry/verification where they do not, refreshed on a
+    periodic (e.g., semesterly) cadence rather than continuously. A fully autonomous,
+    always-current scraping agent is a reasonable stretch goal for a later iteration, but should
+    not be assumed as the semester-1 baseline given the fragmentation already documented above.
+    \item \textbf{Personal student data} — grades, transcripts, and subject-combination choices
+    entered directly by students while using the platform (feeding Section~5.1's academic
+    profile). This is \textbf{not} integrated with school transcript management systems (e.g.,
+    VNEdu, SMAS), since no unified data format currently exists across schools and departments
+    --- students self-enter this data.
+    \item \textbf{Platform-generated data} — micro-task simulation content authored by the
+    platform's content team (Section~5.2), "a day in the life of X" articles and forum
+    discussions contributed by alumni/professionals (Section~5.4), and community
+    ratings/comments on career pages (Section~5.3). This data is generated internally by users
+    and staff, with no external source, and depends on the same cold-start seeding challenge
+    already noted for the community forum.
+\end{enumerate}
+
+\noindent
+\textit{Note:} the specific organizations and platforms named above are believed accurate as of
+this research, but deep links to individual reports or data pages change over time and should be
+re-verified at implementation time rather than hard-coded.
+
+\subsection{Expected Results and Evaluation Criteria}
+
+Expected results / evaluation criteria for this semester:
 \begin{itemize}
-    \item \textbf{Academic and admission data} — the GDPT 2018 curriculum structure, standard
-    subject combinations and their mapping to eligible majors, and university admission-cutoff
-    scores, sourced from the Ministry of Education and Training (\url{https://moet.gov.vn}) and
-    individual university admission portals.
-    \item \textbf{Labor-market data} — sector-level labor demand and growth trends from the
-    Ministry of Labor, Invalids and Social Affairs and the General Statistics Office
-    (\url{https://www.gso.gov.vn}), plus salary and hiring-demand data scraped and aggregated
-    from job sites such as VietnamWorks (\url{https://www.vietnamworks.com}) and TopCV
-    (\url{https://www.topcv.vn}).
-    \item \textbf{Student personal academic data} — grades and subject combinations entered
-    directly by students, since no unified format exists across school record systems such as
-    VNEdu or SMAS.
-    \item \textbf{Platform-generated data} — micro-task content authored by the content team,
-    alumni-submitted "day in the life" stories, and forum posts/ratings contributed by users.
+    \item A working prototype demonstrating one full pillar end-to-end (proposed: Micro-Task
+    Exploration Loop + Visual Pathway \& Market Analytics, as the most novel and differentiated
+    features, consistent with Section~4's pain points 1, 2, and 4).
+    \item Data accuracy of the curated market-data snapshot, cross-checked against its original
+    sources.
+    \item A small usability test with real high-school students (survey/task completion rate,
+    qualitative feedback).
+    \item Basic performance benchmarks (load/response time).
 \end{itemize}
 
-\subsection{Expected Result}
-
-The expected outcome is an AI-powered career orientation platform for Vietnamese high school
-students, built around the four pillars above, serving students, parents, counselors, and
-alumni/mentors. Compared to existing solutions, the platform is expected to differentiate
-itself through performance-based personalization, alignment with Vietnam's own education and
-admission system, a what-if subject-combination simulator, and continuously refreshed
-labor-market data maintained through automated aggregation rather than manual updates.
+\section{Open Items to Confirm with Advisor}
+\begin{itemize}
+    \item Which pillar(s) to build as a working prototype this semester vs. propose only.
+    \item Feasibility/access plan for salary and điểm chuẩn data given no public API exists.
+    \item Usability-test method (sample size, target school/grade).
+\end{itemize}
 
 \begin{thebibliography}{80}
 
