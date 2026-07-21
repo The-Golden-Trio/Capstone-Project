@@ -129,10 +129,10 @@ Sections 2 and 3 together showed that today's career-orientation problems are on
 7. **No free, scalable option is trusted/credible enough to compete with pseudo-scientific alternatives.** DMIT and numerology capture real market share through confident, polished paid reports; the scientifically credible free tools that exist (RIASEC, JobWay) lack the same trust signals and marketing reach.
 8. **Existing AI-based advisors offer no transparency into their recommendations.** Tools like aihuongnghiep.com generate suggestions without explaining the reasoning behind them — the general "black-box" problem documented for AI career-recommendation systems, unresolved by any current Vietnamese solution.
 
-## 5. Proposed system features (summary)
-
+## 5. Proposed system features
+ 
 The proposed platform is organized around six functional areas.
-
+ 
 ### 5.1 Dynamic Survey & Academic Engine (Personalization)
 - Adaptive onboarding survey with branching questions based on prior answers, rather than a fixed static form
 - Academic profile import — subject grades/transcript per the GDPT 2018 curriculum, entered manually or imported from Vietnamese school record formats
@@ -140,7 +140,6 @@ The proposed platform is organized around six functional areas.
 - Real-time "capability portrait" dashboard — a radar chart combining Holland RIASEC personality typing, multiple intelligences, and academic strengths
 - Periodic re-assessment each semester, with interest-shift tracking to flag significant profile changes over time
 - Exportable PDF profile report for parents/counselors
-
 ### 5.2 Micro-Task Exploration Loop
 - Curated career-field catalog (an initial set of roughly 15–25 fields for the MVP, expandable later)
 - Micro-task library per field — short simulated scenarios (e.g., triaging a mock patient, pricing a tour package, debugging a snippet, writing a product pitch)
@@ -148,7 +147,6 @@ The proposed platform is organized around six functional areas.
 - Performance-based fit scoring, derived from how a student actually performs rather than self-rating alone
 - Smart task queue that nudges students toward unexplored fields
 - Bookmarking of career paths, badges/achievements for exploration breadth, and pattern surfacing (e.g., "students like you also excelled at…")
-
 ### 5.3 Visual Pathway & Market Analytics
 - Interactive pathway map — Subject Combination → Major → Career, as a node-graph or Sankey-style visualization
 - Search/filtering by interest, current subject combination, or region within Vietnam
@@ -156,46 +154,44 @@ The proposed platform is organized around six functional areas.
 - University admission cutoff-score (điểm chuẩn) lookup and comparison across universities and years, covering both the THPT exam-score and transcript-based (xét học bạ) admission routes
 - "What-if" simulator showing which majors/careers open or close as a student changes subject combination
 - Side-by-side career comparison (salary in VND, demand, years of study, personality fit)
+- **Community ratings and comments per career/job** — students, alumni, and professionals can rate and leave firsthand advice on a career page, giving students a trust signal that pseudo-scientific competitors don't offer
 - Personal roadmap builder for saving a multi-year plan, and a job/industry news feed for bookmarked or explored careers
-
-### 5.4 Mentor & Alumni Insights Space (Community Forum)
+### 5.4 Community Forum
 - Topic-based forum structure organized by field/specialization (e.g., Computer Science, DevOps, MLOps, Business, Medicine, Design)
 - Post-and-reply threads, topic follow/subscribe, and upvoting/helpful-marking of replies
 - Contributor profiles with role badges (current student, alumni, working professional) and field tags
 - In-app direct messaging between users, separate from the public forum and subject to reporting/moderation given that the user base includes minors
 - "A day in my life as X" story library of alumni-submitted posts, and search across all forum topics and posts
-
 ### 5.5 Cross-Cutting Platform Features
-- Multi-role accounts (student or parent, consultant/mentor/alumnus/counselor, administrator)
-- Notifications for survey/task reminders, new mentor activity, and new pathway recommendations
-- Privacy and data controls, including consent screens and parental visibility into activity
+- Multi-role accounts (student, parent, contributor [alumnus/professional], counselor, administrator)
+- Notifications for survey/task reminders, new forum activity in followed topics, and new pathway recommendations
+- Privacy and data controls, including school-code-verified signup, a parental-consent flow, and parental visibility into activity — compliant with Vietnam's Personal Data Protection Decree (Nghị định 13/2023/NĐ-CP) given the user base includes minors
 - Home dashboard showing profile completeness, recommended next actions, and recent activity
 - Counselor console with class-wide trend views (e.g., "60% of Grade 11 leaning STEM") and the ability to assign tasks to a whole class
-- Unified export/report combining survey results, top pathway recommendations, and suggested mentors, shareable with parents
+- Unified export/report combining survey results and top pathway recommendations, shareable with parents
 - Global search/filtering across careers, majors, and universities, plus platform-wide moderation and reporting tools
-
 ### 5.6 AI Layer
 - Adaptive next-question selection in the survey, starting rule-based with a later upgrade path to machine learning
 - Fit-score ranking model combining survey and micro-task performance
+- **Explainable recommendations** — every suggested career/major displays the specific inputs behind it (e.g., "suggested because of your Investigative interest score and strong performance on the Data Analysis micro-task"), directly addressing the black-box trust problem documented in existing AI advisors (Section 4, pain point 8)
 - Freeform-text topic/thread recommendation, surfacing relevant forum discussions based on a student's profile or recent activity
 - Career Q&A chat assistant grounded in the platform's own market data (retrieval-augmented generation over the salary/demand dataset)
 - Disengagement/dropout-risk flagging for counselors
-
 *This layer is treated as a bonus scope, to be built last and refined after the other five areas are in place.*
 
 ## 6. Data sources and expected results
+ 
 **Data sources.** The platform draws on four categories of data:
-
-1. **Academic and admission data** — the GDPT 2018 curriculum structure, the standard Vietnamese university-admission subject combinations (A00, A01, B00, C00, D01, D07, etc.) and their mapping to eligible majors, and university admission cutoff scores (điểm chuẩn), covering both the national THPT exam and transcript-based admission routes. Sourced from MOET and individual university websites; these are publicly readable but fragmented, with no public API, so manual aggregation or per-university scraping is required.
-2. **Labor-market data** — sector-level labor demand and growth trend reports from MOLISA and the General Statistics Office (GSO), plus salary and hiring-demand data from job platforms such as VietnamWorks and TopCV. The intended collection method is automated, periodic scraping and aggregation by an AI/agent process rather than manual entry, so that salary, demand, and cutoff-score data stay continuously up to date with the real market.
-3. **Personal student data** — grades, transcripts, and subject-combination choices entered directly by students while using the platform. This is not integrated with school transcript management systems (e.g., VNEdu, SMAS), since no unified data format currently exists across schools and departments.
-4. **Platform-generated data** — micro-task simulation content authored by the platform's content team, "a day in the life of X" articles contributed by alumni and working professionals, forum posts and discussions, and community ratings/comments on career pages. This data is generated internally by users and staff, with no external source.
-
-*Note:* the reference links associated with these sources point to the official homepage/domain of each source, which are believed to be accurate; deep links to specific reports or data pages may change over time and should be re-verified at implementation time rather than hard-coded.
-
+ 
+1. **Academic and admission data** — the GDPT 2018 curriculum structure, the standard Vietnamese university-admission subject combinations (A00, A01, B00, C00, D01, D07, etc.) and their mapping to eligible majors, and university admission cutoff scores (điểm chuẩn), covering both the national THPT exam and transcript-based (xét học bạ) admission routes — matching the two routes referenced in Section 5.3. Sourced from MOET and individual university websites; these are publicly readable but fragmented, with no public API, consistent with the feasibility conclusion already reached in this section and in Section 3's competitor review (domestic admissions portals hold this data but don't expose it as a service). Realistic approach: manual aggregation and per-university scraping (subject to each site's Terms of Service) into a curated, periodically refreshed snapshot — not a real-time feed.
+2. **Labor-market data** — sector-level labor demand and growth-trend reports from MOLISA and the General Statistics Office (GSO), plus salary and hiring-demand data from job platforms such as VietnamWorks, ITviec, TopDev, and TopCV, feeding Section 5.3's demand charts and career comparison view. As with admission data, none of these sources offers a public API — collection is realistically a **semi-automated pipeline**: scraping where a source's structure and Terms of Service allow it, manual entry/verification where they don't, refreshed on a periodic (e.g., semesterly) cadence rather than continuously. A fully autonomous, always-current scraping agent is a reasonable stretch goal for a later iteration, but shouldn't be assumed as the semester-1 baseline given the fragmentation already documented above.
+3. **Personal student data** — grades, transcripts, and subject-combination choices entered directly by students while using the platform (feeding Section 5.1's academic profile). This is **not** integrated with school transcript management systems (e.g., VNEdu, SMAS), since no unified data format currently exists across schools and departments — students self-enter this data.
+4. **Platform-generated data** — micro-task simulation content authored by the platform's content team (Section 5.2), "a day in the life of X" articles and forum discussions contributed by alumni/professionals (Section 5.4), and community ratings/comments on career pages (Section 5.3). This data is generated internally by users and staff, with no external source, and depends on the same cold-start seeding challenge already noted for the community forum.
+*Note:* the specific organizations and platforms named above are believed accurate as of this research, but deep links to individual reports or data pages change over time and should be re-verified at implementation time rather than hard-coded.
+ 
 **Expected results / evaluation criteria for this semester:**
-- A working prototype demonstrating one full pillar end-to-end (proposed: Micro-Task Exploration Loop + Market Analytics, as the most novel and differentiated features).
-- Data accuracy of curated market data, cross-checked against sources.
+- A working prototype demonstrating one full pillar end-to-end (proposed: Micro-Task Exploration Loop + Visual Pathway & Market Analytics, as the most novel and differentiated features, consistent with Section 4's pain points 1, 2, and 4).
+- Data accuracy of the curated market-data snapshot, cross-checked against its original sources.
 - A small usability test with real high-school students (survey/task completion rate, qualitative feedback).
 - Basic performance benchmarks (load/response time).
 
