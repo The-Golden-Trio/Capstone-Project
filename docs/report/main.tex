@@ -1,0 +1,800 @@
+\documentclass[a4paper]{article}
+\usepackage{import}
+%\usepackage[english,vietnam]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc} % Vietnamese character support for pdfLaTeX
+%\usepackage[utf8]{inputenc}
+%\usepackage[francais]{babel}
+\usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
+\usepackage[normalem]{ulem}
+%\usepackage{soul}
+\usepackage{listings}
+\usepackage{colortbl}
+\usepackage[makeroom]{cancel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol,longtable,amscd}
+\usepackage{diagbox}%Make diagonal lines in tables
+\usepackage{booktabs}
+\usepackage{alltt}
+\usepackage[framemethod=tikz]{mdframed}% For highlighting paragraph backgrounds
+\usepackage{caption,subcaption}
+
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+\usemintedstyle{emacs}
+\usepackage{tikz}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage[unicode]{hyperref}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=black,
+    citecolor=black,
+    colorlinks=true,
+    pdfpagemode=FullScreen,
+    pdftitle={An AI-Powered Career Orientation Platform for Vietnamese High School Students},
+    } 
+%\usepackage{pstcol} 								% PSTricks with the standard color package
+%\usepackage{background}
+%\backgroundsetup{contents=\includegraphics{Images/hcmut.png}, scale=0.5, opacity=0.25, angle = 0}
+\usepackage[normalem]{ulem}
+
+\def\thesislayout{	% A4: 210 × 297
+	\geometry{
+		a4paper,
+		total={160mm,240mm},  % fix over page
+		left=30mm,
+		top=30mm,
+	}
+}
+\thesislayout
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+ \begin{tabular}{rl}
+    \begin{picture}(25,15)(0,0)
+    \put(0,-8){\includegraphics[width=8mm, height=8mm]{Images/hcmut.png}}
+    %\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+   \end{picture}&
+	%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+	\begin{tabular}{l}
+		\textbf{\textcolor{blue}{\bf \ttfamily Ho Chi Minh City University of Technology}}\\
+		\textbf{\textcolor{blue}{\bf \ttfamily Faculty of Computer Science and Engineering}}
+	\end{tabular} 	
+ \end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf 
+	\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\scriptsize \ttfamily Project Report}
+\fancyfoot[R]{\scriptsize \ttfamily Page {\thepage}/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+
+%%%
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\sloppy
+% Use one consistent paragraph style throughout the report.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em plus 0.1em minus 0.1em}
+\captionsetup[figure]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=-9pt}
+%space remove between caption, figure, and text
+\captionsetup[table]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=7pt}
+%space remove between caption, table, and text
+
+%\floatplacement{figure}{H}%forced here float placement automatically for figures
+%\floatplacement{table}{H}%forced here float placement automatically for table
+%the following settings (11 lines) are to remove white space before or after the figures and tables
+%\setcounter{topnumber}{2}
+%\setcounter{bottomnumber}{2}
+%\setcounter{totalnumber}{4}
+%\renewcommand{\topfraction}{0.85}
+%\renewcommand{\bottomfraction}{0.85}
+%\renewcommand{\textfraction}{0.15}
+%\renewcommand{\floatpagefraction}{0.8}
+%\renewcommand{\textfraction}{0.1}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+\thesislayout
+
+
+
+\begin{document}
+\begin{titlepage}
+% \begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+%      \draw[blue!70!black,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+
+%      \draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+%      ([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+
+
+%      \draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+%      ([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+%    \end{tikzpicture}
+
+
+\begin{center}
+\textbf{\Large VIETNAM NATIONAL UNIVERSITY HO CHI MINH CITY} \\
+
+\vspace{7pt}
+\textbf{\Large HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY} \\
+
+\vspace{7pt}
+\textbf{\Large FACULTY OF COMPUTER SCIENCE AND ENGINEERING}
+\end{center}
+
+\vspace{1cm}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=6cm]{Images/hcmut.png}
+\end{center}
+\end{figure}
+
+\vspace{1cm}
+
+
+\begin{center}
+\begin{tabular}{@{}p{\textwidth}@{}}
+	\textbf{{\Large \textcolor{blue}{SPECIALIZED PROJECT}}}\\
+	~~\\
+	\arrayrulecolor{blue}\hline
+	\\
+	\textbf{{\Large \textcolor{blue}{Project Report}}}\\
+	\\
+
+	{\centering\textbf{{\huge \textcolor{blue}{An AI-Powered Career Orientation Platform\\[8pt]
+	for Vietnamese High School Students}}}\par}\\
+	\\
+
+	\arrayrulecolor{blue}\hline \\ \\
+
+\end{tabular}
+\end{center}
+
+\vspace{6cm}
+
+
+\begin{center}
+{\textbf{\Large Ho Chi Minh City, 7/2026}}
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+\setcounter{page}{0}
+\newpage
+\tableofcontents
+\newpage
+
+%\thispagestyle{empty}
+
+\section*{Executive Summary}
+
+Vietnamese high-school students consistently choose majors without real self-knowledge or
+labor-market grounding --- evidenced by widely-cited estimates that a majority misjudge their
+fit and a documented gap between graduate skills and employer needs (Section~2). A review of
+eleven existing solution types, from personality quizzes to university AI chatbots (Section~3),
+shows none combines scientifically-grounded self-assessment, hands-on exploration, Vietnamese
+admission data, and neutral cross-school coverage at a scale accessible to the mass
+public-school population --- the gap this project targets (Section~3.6). Section~4 distills
+this into eight specific, unaddressed pain points; Section~5 proposes a four-pillar platform
+(adaptive self-assessment, performance-based micro-tasks, market/pathway analytics, and a
+community forum) directly mapped to close them. Section~6 covers data feasibility --- no
+source offers a public API, so a curated/semi-automated data pipeline is proposed --- and
+defines success for the full project (all eight pain points addressed, a complete
+self-assessment-to-decision journey, an active community, and validated impact on student
+career clarity).
+
+\section{Career Orientation and Related Fields}
+
+\textbf{Definition.} Career orientation is the process of helping individuals understand their interests, personality, strengths, and values and connect that self-understanding to suitable educational and career paths (OECD, 2004; UNESCO-UNEVOC). This approach can be traced back to Frank Parsons (1909), who framed sound career choice as a three-step process: (1) understanding oneself, (2) understanding the world of work, and (3) reasoning about the relationship between the two.
+
+\textbf{General steps in career orientation.} In practice, this process is usually divided into four stages that a human counselor or digital platform should support:
+\begin{enumerate}
+    \item \textbf{Self-assessment} — understanding one's interests, personality, strengths, and values. This psychology-based stage draws on frameworks such as RIASEC and SCCT.
+    \item \textbf{Exploration} — actively investigating potentially suitable educational and career options, ideally through practical exposure rather than only reading abstract job descriptions.
+    \item \textbf{Decision-making} — comparing self-assessment and exploration results with real-world information, such as labor demand, admission requirements, and salary levels, to narrow the available options.
+    \item \textbf{Planning and review} — turning a decision into a concrete action plan, such as selecting a subject combination or target university, and reviewing it periodically. In Super's theory, a person's self-concept and circumstances continue to evolve.
+\end{enumerate}
+
+\textbf{Related fields to review:}
+
+\begin{enumerate}[a.]
+    \item \textbf{Educational and career psychology.} This field explains \textit{how} a person's characteristics---including interests, personality, cognitive strengths, self-efficacy, and values---relate to career fit. It provides the theoretical basis for the platform's self-assessment engine, drawing mainly on Holland's RIASEC model (person--environment fit), Social Cognitive Career Theory (self-efficacy and outcome expectations), Vietnam's "Career Tree" framework, and Super's Life-Span theory. Because an adolescent's self-concept is still evolving, assessment results should be treated as an exploratory snapshot rather than a fixed label.
+    \item \textbf{Labor market information systems (LMIS).} This field examines how salary, labor-demand, and industry-growth data are collected, structured, and published. In Vietnam, relevant information is provided by government labor agencies and the General Statistics Office. LMIS supports the platform's market-analytics module and connects to SCCT's concept of outcome expectations: reliable market data allows students to compare their expectations with evidence rather than relying on rumor.
+    \item \textbf{HCI and EdTech design for teenagers.} This field examines how technology should be designed specifically for adolescent users and is sometimes called Teen--Computer Interaction (TeenCI). Teenagers are a diverse, dynamic, and technologically aware user group; therefore, interfaces should reflect their developmental stage rather than simply reuse adult-oriented designs. The way a 16-year-old interprets a question, maintains motivation, or develops trust in a recommendation may differ from that of an adult. Consequently, the wording and pacing of an assessment are psychological design choices as well as user-interface choices.
+    \item \textbf{Recommender systems.} This computer-science field develops methods for suggesting suitable options from user data. In this project, such methods are applied to careers and university majors. Knowledge-based and hybrid recommenders are particularly relevant to career guidance, although combining personal characteristics from field (a) with current labor-market information from field (b) remains challenging. The project's Visual Pathway \& Market Analytics module is intended to address this gap.
+    \item \textbf{Vietnam's education policy framework.} The GDPT 2018 curriculum, the tổ hợp môn (subject-combination) system, and university-admission processes form the institutional context within which the platform must operate. A student's psychological profile becomes actionable only when it is mapped to actual subject combinations, majors, and admission options.
+\end{enumerate}
+
+\textbf{The common thread.} Psychology is not separate from the other related fields; it is integrated with all of them. LMIS grounds outcome expectations in evidence, TeenCI applies psychology to interface design, recommender systems combine psychological and market data, and Vietnam's policy framework turns a psychological profile into an actionable educational or career decision.
+
+\section{Problems in career orientation}
+
+This section outlines the problems that career orientation must address. These include evidence of student--major mismatch and skills gaps in Vietnam, as well as broader limitations involving assessment validity, labor-market uncertainty, limited resources, adolescent development, family pressure, inequitable access, and algorithmic risk.
+
+\subsection{Market-level problems in Vietnam}
+\begin{itemize}
+    \item Recent THPT examination cohorts have included approximately 1.07--1.17 million students per year, while approximately 65--68\% have pursued university education. Consequently, guidance focused exclusively on university admission may not serve a substantial proportion of students.
+    \item Widely cited, press-reported FALMI estimates suggest that approximately 60\% of students choose an unsuitable major and that approximately 75\% do not adequately understand their chosen field. These figures can be traced to statements reported in 2013 and 2019 rather than to a formally published study and should therefore be interpreted cautiously.
+    \item A 2026 survey attributed to Đại Nam University and Soha ($n \approx 9{,}200$ across 10 universities) reported that approximately 20\% of respondents had no clear career direction when entering university and that approximately 33--41\% would consider choosing a different major. The original survey should be cited before these figures are used as evidence.
+    \item MOET Circular 01/2024 includes a 15\% threshold related to student attrition. This quality-assurance threshold should not be presented as the observed national first-year dropout rate or as direct evidence of student--major mismatch.
+    \item Employer-reported skills gaps are documented by organizations such as the World Bank, ILO, and Vietnamese labor agencies. The General Statistics Office estimated that 29.2\% of workers held degrees or certificates in 2025.
+    \item Reports also describe students choosing fields \textit{theo cảm tính} (based on feelings), peer influence, or expected income rather than on informed self-knowledge and labor-market evidence.
+\end{itemize}
+
+\subsection{Problems inherent to career orientation as a practice (independent of Vietnam)}
+
+Beyond Vietnam-specific concerns, career orientation faces structural limitations regardless of whether it is provided by a human counselor or an AI-based system:
+
+\begin{itemize}
+    \item \textbf{Assessment tools have important limitations.} Holland's RIASEC framework may oversimplify individuals when its results are reduced to a three-letter code. Research generally finds only modest relationships between person--environment fit and outcomes such as satisfaction, and the framework's cross-cultural validity requires careful evaluation outside the populations in which it was developed. Self-report tools are also vulnerable to social-desirability bias: students may provide answers they consider desirable rather than answers that accurately reflect their views.
+    \item \textbf{Career decisions are made under uncertainty.} Labor markets can change faster than school curricula or guidance systems, and AI and automation continue to reshape skill requirements and job roles. No guidance system can predict with certainty which fields will be in demand when today's students graduate from university.
+    \item \textbf{Career guidance is under-resourced in many countries.} OECD research based on PISA data identifies substantial career uncertainty among students and misalignment between occupational expectations and labor-market demand. Counselor shortages and unequal access to guidance are therefore broader structural problems rather than issues unique to Vietnam.
+    \item \textbf{Teenagers have limited real-world exposure.} Students can report informed interest only in fields they have encountered. Assessments may therefore overlook careers to which a student has not been exposed, even when those careers could be suitable.
+    \item \textbf{Family and cultural pressures can outweigh a student's psychological profile.} In some Confucian-influenced East Asian contexts, parental expectations and filial obligations are associated with career decisions, sometimes independently of a student's interests or aptitudes. Thus, even an accurate assessment may not determine the student's eventual choice.
+    \item \textbf{Equity and access gaps affect who benefits from guidance.} Rural and lower-income students often have less access to high-quality educational and career guidance than their urban and higher-income peers. This pattern is found in many countries and is not unique to Vietnam.
+    \item \textbf{AI-based recommendations introduce additional risks.} Career and job recommenders trained on historical data can reproduce gender and other social biases. Complex models may also provide insufficiently transparent explanations for their recommendations, potentially undermining student trust and making bias more difficult to identify and correct.
+\end{itemize}
+
+\section{Comparison of Existing Solutions}
+
+Career-orientation solutions have evolved through roughly four generations, from
+paper-and-pencil quizzes to AI assistants. This section defines each type, weighs its
+advantages and disadvantages across both the Vietnamese and international landscape, and
+consolidates everything into a rating matrix. The four generations are not mutually
+exclusive — in practice, a Vietnamese student today moves through all of them at once,
+cobbling together a journey that no single tool completes.
+
+\subsection{Generation 1 --- Traditional Self-Assessment (``Quizzing'')}
+
+\begin{enumerate}[a.]
+    \setlength{\itemsep}{1em}
+    \item \textbf{Free-standing personality/interest tests.} The most common entry point
+    worldwide: a student answers a fixed questionnaire and receives a type or code. The
+    dominant instruments differ sharply in scientific quality.
+
+    \par\smallskip
+    \textit{MBTI/16Personalities} is a 16-type model, by far the most popular format among
+    Vietnamese teenagers, offered free by portals such as HOCMAI Hướng nghiệp, CareerViet, and
+    university career hubs.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} engaging and memorable, lowering the barrier to self-reflection.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} weak reliability --- an estimated 39--76\% of
+    people are classified into a different four-letter type on retest after just five weeks
+    (Pittenger, 2005). This specifically measures whole-type reclassification (requiring all
+    four letters to match) rather than scale-level consistency, which is somewhat higher, but
+    the practical result is the same: MBTI type does not map cleanly onto stable job fit.
+
+    \par\smallskip
+    \textit{Holland Code (RIASEC)} uses six interest types and is the best-suited model for
+    career matching, since it links interests directly to occupational environments; it is
+    embedded in the free O*NET Interest Profiler (US Department of Labor) and used piecemeal
+    in Vietnam (HOCMAI, JobWay).
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} scientifically defensible and job-relevant.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} delivered as one-off quizzes with no bridge to a concrete Vietnamese
+    major or school.
+
+    \par\smallskip
+    \textit{Big Five (OCEAN)} is the academic ``gold standard'' for
+    personality measurement, with strong reported test-retest reliability.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} strongest validity.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} its spectrum-style output is
+    harder for teenagers to act on and lacks a catchy label, so it is rarely used in Vietnamese
+    school practice.
+
+    \par\smallskip
+    Across this category the pattern is consistent: free (or near-free),
+    instant, and scalable, but one-off and self-report only, with no follow-up, and --- in
+    isolation --- producing only a label with no path to a specific major or university.
+
+    \item \textbf{Pseudo-scientific paid assessments (a Vietnam-specific distortion).} Where
+    the international market fills the self-discovery step with free public tools, a notable
+    slice of the Vietnamese market is captured by paid services with no scientific basis:
+    fingerprint biometrics (DMIT / sinh trắc vân tay), priced from roughly 1.3--3.5 million VND
+    per report and marketed with self-declared ``90--95\% accuracy'' claims that lack
+    independent scientific backing, and numerology/fortune-telling (Nhân số học, tử vi), widely
+    consumed especially by parents and functioning essentially as cold reading.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} strong marketing, a polished printed ``report,'' and cultural
+    familiarity.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} costly, misleading, and capable of actively steering a
+    student toward the wrong choice --- the opposite of what career orientation is for. (Note:
+    the specific pricing figures above are drawn from market reporting and should be
+    spot-checked against current vendor listings before citing precise numbers in the final
+    thesis.)
+\end{enumerate}
+
+\subsection{Generation 2 --- Traditional Human Consulting}
+
+\begin{enumerate}[a.]
+    \setlength{\itemsep}{1em}
+    \item \textbf{School counselors / guidance teachers.} The backbone of career guidance
+    internationally, and a significant structural gap in Vietnam. The American School
+    Counselor Association recommends a 250:1 student-to-counselor ratio; the actual US national
+    average was 376:1 for the 2023--24 school year (ASCA/US Department of Education data),
+    confirming that even a well-resourced system falls well short of its own target. In
+    Vietnam, dedicated career-counseling staff are uncommon at the school level, with most
+    guidance handled informally by subject teachers; exact national coverage figures are not
+    consistently published and should be sourced directly from MOET before being cited
+    precisely.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} human, contextual, trusted, and adaptable to the individual.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} does not scale, and quality varies widely.
+
+    \item \textbf{Comprehensive in-house school programs (Vinschool).} A small number of
+    well-resourced private schools run a genuinely continuous, end-to-end program: multi-year
+    self-assessment, industry exposure and job-shadowing placements, and dedicated academic
+    advisors guiding students from subject-combination choice through university application.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} the closest existing model to true end-to-end, hands-on career
+    orientation.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} exclusive to fee-paying private-school students,
+    entirely dependent on in-person staff, and structurally unable to scale to the mass
+    public-school population. (Note: program specifics should be verified against the school's
+    own published materials before citing details precisely in the final thesis.)
+
+    \item \textbf{Career fairs and one-off events.} Mass events (e.g., the Tuổi Trẻ/Thanh Niên
+    ``ngày hội tư vấn tuyển sinh'') where students meet universities directly.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} motivational, free to attend, and offers direct contact with real
+    schools.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} episodic and usually aimed at grade 12 --- too late for the
+    grade-10 subject-combination decision --- and information-dense rather than personalized.
+
+    \item \textbf{Private coaching / consulting centers.} Fee-based one-on-one guidance,
+    ranging from reputable outfits (e.g., Hướng nghiệp Sông An) to the pseudo-scientific centers
+    described above; internationally this parallels private ``independent educational
+    consultants.''
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} in-depth and personalized.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:}
+    expensive, inaccessible to most families, and uneven in credibility.
+\end{enumerate}
+
+\subsection{Generation 3 --- Modern Digital Platforms (Self-Service, Largely Rule-Based)}
+
+\begin{enumerate}[a.]
+    \setlength{\itemsep}{1em}
+    \item \textbf{Domestic career-test + job-info apps.} Vietnamese products that bundle a test
+    with occupational descriptions --- notably \textbf{JobWay}, Vietnam's first digitized
+    career app (founded by psychologist Dr.\ Đào Lê Hòa An), combining Holland/MBTI-style
+    assessment with roughly 300 ILO-referenced occupation profiles, entirely free.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} free, expert-backed, and links interest to occupation.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} occupation data is qualitative, thin on real Vietnamese salaries,
+    with no live admission-score data.
+
+    \item \textbf{Domestic admissions/score-lookup portals.} A different set of players (e.g.,
+    tuyensinhso.vn, diemthi.tuyensinh247.com) offering multi-year điểm chuẩn lookups and
+    admit-probability estimates.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} genuinely useful, Vietnam-specific
+    admissions data --- the local moat.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} no self-discovery layer at all;
+    they assume the student already knows the major.
+
+    \item \textbf{International integrated CCR (College \& Career Readiness) platforms.} The
+    mature reference points, mostly US/UK, mostly sold to schools per seat --- O*NET
+    OnLine/My Next Move (free, RIASEC-linked to 900+ occupations), YouScience (aptitude +
+    interest matching), Naviance (the US default, widely deployed across US high schools),
+    Xello/SchooLinks (K-12 pathway platforms), and Unifrog (the UK default, comparing
+    universities and apprenticeships with entry requirements).
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} genuinely
+    end-to-end (self $\rightarrow$ major $\rightarrow$ school), with rich localized
+    labor-market and outcome data.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage --- the key opening for this project:}
+    none carries Vietnamese admission data (điểm chuẩn, tổ hợp môn, THPT methods), pricing is
+    school-district-scale, and content/language is not built for the Vietnamese system. (Note:
+    specific enrollment/pricing figures for these platforms are drawn from public marketing
+    materials and should be re-verified against current vendor sources before final citation.)
+\end{enumerate}
+
+\subsection{Generation 4 --- AI-Integrated Systems}
+
+\begin{enumerate}[a.]
+    \setlength{\itemsep}{1em}
+    \item \textbf{AI career advisors.} Systems using ML/LLMs to personalize recommendations
+    rather than return a fixed lookup. Domestically, \textbf{aihuongnghiep.com} markets itself
+    as an AI career platform combining personality assessment with AI-suggested majors --- the
+    closest competitor to this project's concept and worth watching closely. Internationally,
+    incumbents such as Naviance and SchooLinks are adding AI-assistant layers on top of their
+    existing platforms.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} adaptive, conversational, and personalized at
+    scale.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage:} ``black-box'' recommendations that can reproduce bias (e.g.,
+    gender-skewed STEM suggestions) and are hard to audit --- a live risk this project must
+    design against.
+
+    \item \textbf{University AI admissions chatbots (single-school, non-neutral).} A 2025--26
+    trend in Vietnam: several universities (e.g., UEH, HUIT) have launched LLM-based admissions
+    chatbots answering questions instantly, often via Zalo/Messenger.
+
+    \par\smallskip\noindent
+    \textbf{Advantage:} fast,
+    always-on, and accurate for their own school's data.
+
+    \par\smallskip\noindent
+    \textbf{Disadvantage --- structural:}
+    each serves only its own university, so it is inherently non-neutral; a student comparing
+    ten schools would need ten chatbots. There is no neutral, cross-school AI advisor.
+\end{enumerate}
+
+\subsection{Summary Rating Matrix}
+
+Solutions are rated on seven criteria most relevant to a student's full journey and to this
+project's positioning. Scale: $\bullet\bullet\bullet$ strong, $\bullet\bullet$ moderate,
+$\bullet$ weak, $\circ$ none/not applicable. The proposed platform's row reflects
+\textit{design intent}, not proven performance --- scored conservatively where the claim is
+still unvalidated.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.3}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.8cm}|*{7}{>{\centering\arraybackslash}p{1.95cm}|}}
+\hline
+\textbf{Solution (type)} & \textbf{Sci.\ validity} & \textbf{Self-under.\ depth} &
+\textbf{Career/major expl.} & \textbf{VN admission data} & \textbf{End-to-end journey} &
+\textbf{Neutrality} & \textbf{Free \& scalable} \\
+\hline
+Free personality quizzes (MBTI/Holland/Big Five) & $\bullet\bullet$* & $\bullet\bullet$ & $\bullet$ & $\circ$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ \\
+\hline
+DMIT / numerology (VN) & $\circ$ & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ \\
+\hline
+School counselors & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ (VN: limited) \\
+\hline
+Vinschool-style in-house programs & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ & $\circ$ (exclusive) \\
+\hline
+Career fairs \& events & $\bullet$ & $\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ \\
+\hline
+Private coaching centers & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet$ \\
+\hline
+Domestic career-test apps (JobWay) & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ & $\circ$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ \\
+\hline
+Domestic admissions portals & $\circ$ & $\circ$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ \\
+\hline
+International CCR platforms & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ & $\circ$ & $\bullet\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ (mostly paid) \\
+\hline
+AI career advisors (domestic \& int'l) & $\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ & $\bullet\bullet\bullet$ & $\bullet\bullet$ & $\bullet\bullet$ \\
+\hline
+University AI admissions chatbots & $\circ$ & $\circ$ & $\bullet\bullet$ & $\bullet\bullet\bullet$ & $\bullet$ & $\circ$ & $\bullet\bullet\bullet$ \\
+\hline
+\textbf{Proposed platform (this project)} & \textbf{$\bullet\bullet$} & \textbf{$\bullet\bullet$} & \textbf{$\bullet\bullet\bullet$} & \textbf{$\bullet\bullet\bullet$} & \textbf{$\bullet\bullet\bullet$} & \textbf{$\bullet\bullet\bullet$} & \textbf{$\bullet\bullet$} \\
+\hline
+\end{tabular}
+}
+\caption{Comparison of existing career-orientation solutions against the proposed platform.}
+\end{table}
+
+\noindent
+* RIASEC and Big Five score $\bullet\bullet\bullet$ on validity individually; MBTI pulls the
+blended row down to $\bullet\bullet$.
+
+\subsection{Conclusion --- The Identified Gap}
+
+Reading the matrix by column, no existing solution is strong across all seven criteria at once
+--- and the two columns most solutions fail \textit{together} are ``VN admission data'' and
+``end-to-end journey integration.'' International platforms excel at scientific self-discovery
+and full-journey integration but carry zero Vietnamese admission data; Vietnamese admissions
+portals own that data but have no self-discovery layer; domestic test apps and AI advisors
+bridge self-discovery to occupations but stop short of live admission data; AI admissions
+chatbots are fast but locked to a single school; and Vinschool-style programs achieve genuine
+end-to-end quality but only for the small, fee-paying slice of students who can access them.
+
+In short: \textbf{no solution --- domestic or international --- combines
+scientifically-grounded, continuous self-assessment with hands-on exploration, Vietnamese
+admission data, and neutral cross-school coverage in one place, at a scale accessible to the
+mass public-school population.} That intersection is the gap this project targets. Two data
+points remain unverified against a primary source and should be checked before final
+submission: Vietnam's exact rate of school-level dedicated career-counseling staff, and the
+specific pricing/enrollment figures cited for pseudo-scientific assessments and international
+CCR platforms.
+
+\section{Pain Points --- Gaps Left Uncovered by Existing Solutions}
+
+Sections 2 and 3 together showed that today's career-orientation problems are only partly
+addressed by what already exists. This section narrows in on what remains unresolved --- the
+specific shortcomings no current solution, domestic or international, manages to close.
+
+\begin{enumerate}
+    \item \textbf{No solution offers performance-based fit testing.} Every option reviewed ---
+    quizzes, counselors, coaching centers, domestic apps, AI advisors --- relies on self-report.
+    None tests whether a student can actually perform well in a field; they only ask whether
+    the student \textit{thinks} they would be interested.
+
+    \item \textbf{No solution combines self-discovery with Vietnamese admission data in one
+    place.} International CCR platforms (O*NET, YouScience, Naviance, Unifrog) have strong
+    self-assessment but zero điểm-chuẩn/tổ-hợp-môn data; Vietnamese admissions portals have that
+    data but no self-discovery layer at all.
+
+    \item \textbf{No solution is both genuinely end-to-end and accessible to the mass
+    public-school student.} The one program that is comprehensive and continuous (Vinschool) is
+    exclusive to fee-paying private students; the free, scalable options (quizzes, JobWay) stop
+    at self-discovery or a generic occupation label.
+
+    \item \textbf{No solution offers real hands-on career exploration at scale.} Vinschool's
+    job-shadowing provides this but only to its own students; every digital option reviewed
+    (quizzes, domestic apps, AI advisors) is text/quiz-based, with nothing equivalent to
+    actually trying a field before choosing it.
+
+    \item \textbf{No solution offers a neutral, cross-school AI advisor.} University AI
+    admissions chatbots (UEH, HUIT) are fast and accurate but locked to a single institution ---
+    a student comparing multiple schools has no single neutral AI resource to use.
+
+    \item \textbf{No solution provides a peer/field-specific community channel.} None of the
+    eleven solution types reviewed in Section 3 --- quizzes, DMIT/numerology, counselors,
+    Vinschool-style programs, fairs, coaching, domestic apps, admissions portals, international
+    platforms, AI advisors, or admissions chatbots --- give students a space to hear directly
+    from current students or working professionals in a specific field.
+
+    \item \textbf{No free, scalable option is trusted/credible enough to compete with
+    pseudo-scientific alternatives.} DMIT and numerology capture real market share through
+    confident, polished paid reports; the scientifically credible free tools that exist
+    (RIASEC, JobWay) lack the same trust signals and marketing reach.
+
+    \item \textbf{Existing AI-based advisors offer no transparency into their recommendations.}
+    Tools such as aihuongnghiep.com generate suggestions without explaining the reasoning
+    behind them --- the general ``black-box'' problem documented for AI career-recommendation
+    systems, unresolved by any current Vietnamese solution.
+\end{enumerate}
+
+\section{Proposed System Features}
+
+The proposed system is organized around six functional areas.
+
+\subsection{Dynamic Survey \& Academic Engine (Personalization)}
+\begin{itemize}
+    \item Adaptive onboarding survey with branching questions based on prior answers, rather
+    than a fixed static form.
+    \item Academic profile import — subject grades/transcript per the GDPT 2018 curriculum,
+    entered manually or imported from Vietnamese school record formats.
+    \item Subject-combination (tổ hợp môn) tracking — mapped to Vietnam's standard combinations
+    (A00, A01, B00, C00, D01, D07, etc.) and their eligible university majors.
+    \item Real-time "capability portrait" dashboard — a radar chart combining Holland RIASEC
+    personality typing, multiple intelligences, and academic strengths.
+    \item Periodic re-assessment each semester, with interest-shift tracking to flag significant
+    profile changes over time.
+    \item Exportable PDF profile report for parents/counselors.
+\end{itemize}
+
+\subsection{Micro-Task Exploration Loop}
+\begin{itemize}
+    \item Curated career-field catalog (an initial set of roughly 15–25 fields for the MVP,
+    expandable later).
+    \item Micro-task library per field — short simulated scenarios (e.g., triaging a mock
+    patient, pricing a tour package, debugging a snippet, writing a product pitch).
+    \item Multiple task formats — scenario multiple-choice, short written response,
+    drag-and-drop simulation, timed challenge.
+    \item Performance-based fit scoring, derived from how a student actually performs rather
+    than self-rating alone.
+    \item Smart task queue that nudges students toward unexplored fields.
+    \item Bookmarking of career paths, badges/achievements for exploration breadth, and pattern
+    surfacing (e.g., "students like you also excelled at…").
+\end{itemize}
+
+\subsection{Visual Pathway \& Market Analytics}
+\begin{itemize}
+    \item Interactive pathway map — Subject Combination $\rightarrow$ Major $\rightarrow$
+    Career, as a node-graph or Sankey-style visualization.
+    \item Search/filtering by interest, current subject combination, or region within Vietnam.
+    \item Labor-demand and growth-trend charts by sector, based on Vietnamese labor-market
+    reports.
+    \item University admission cutoff-score (điểm chuẩn) lookup and comparison across
+    universities and years, covering both the THPT exam-score and transcript-based
+    (xét học bạ) admission routes.
+    \item "What-if" simulator showing which majors/careers open or close as a student changes
+    subject combination.
+    \item Side-by-side career comparison (salary in VND, demand, years of study, personality
+    fit).
+    \item \textbf{Community ratings and comments per career/job} — students and Contributors
+    (alumni/counselors) can rate and leave firsthand advice on a career page, giving students a
+    trust signal that pseudo-scientific competitors do not offer.
+    \item Personal roadmap builder for saving a multi-year plan, and a job/industry news feed
+    for bookmarked or explored careers.
+\end{itemize}
+
+\subsection{Community Forum}
+\begin{itemize}
+    \item Topic-based forum structure organized by field/specialization (e.g., Computer
+    Science, DevOps, MLOps, Business, Medicine, Design).
+    \item Post-and-reply threads, topic follow/subscribe, and upvoting/helpful-marking of
+    replies.
+    \item Contributor profiles with role badges (alumni or counselor) and field tags,
+    distinguishing verified Contributor posts from regular User posts.
+    \item In-app direct messaging between users, separate from the public forum and subject to
+    reporting/moderation given that the user base includes minors.
+    \item "A day in my life as X" story library of alumni-submitted posts, and search across
+    all forum topics and posts.
+\end{itemize}
+
+\subsection{Cross-Cutting Platform Features}
+\begin{itemize}
+    \item Three account roles: User (student or parent), Contributor (alumni or counselor), and
+    Admin.
+    \item Notifications for survey/task reminders, new forum activity in followed topics, and
+    new pathway recommendations.
+    \item Privacy and data controls, including school-code-verified signup, a parental-consent
+    flow, and parental visibility into activity --- compliant with Vietnam's Personal Data
+    Protection Decree (Nghị định 13/2023/NĐ-CP) given the user base includes
+    minors.
+    \item Home dashboard showing profile completeness, recommended next actions, and recent
+    activity.
+    \item Unified export/report combining survey results and top pathway recommendations,
+    shareable with parents.
+    \item Global search/filtering across careers, majors, and universities, plus
+    platform-wide moderation and reporting tools.
+\end{itemize}
+
+\subsection{AI Layer}
+\begin{itemize}
+    \item Adaptive next-question selection in the survey, starting rule-based with a later
+    upgrade path to machine learning.
+    \item Fit-score ranking model combining survey and micro-task performance.
+    \item \textbf{Explainable recommendations} — every suggested career/major displays the
+    specific inputs behind it (e.g., "suggested because of your Investigative interest score
+    and strong performance on the Data Analysis micro-task"), directly addressing the black-box
+    trust problem documented in existing AI advisors (Section~4, pain point 8).
+    \item Freeform-text topic/thread recommendation, surfacing relevant forum discussions
+    based on a student's profile or recent activity.
+    \item Career Q\&A chat assistant grounded in the platform's own market data
+    (retrieval-augmented generation over the salary/demand dataset).
+    \item Disengagement/dropout-risk flagging for counselors.
+\end{itemize}
+
+\section{Datasource and Expected Result}
+
+\subsection{Datasource}
+
+\begin{enumerate}
+    \item \textbf{Academic and admission data} — the GDPT 2018 curriculum structure, the
+    standard Vietnamese university-admission subject combinations (A00, A01, B00, C00, D01, D07,
+    etc.) and their mapping to eligible majors, and university admission cutoff scores (điểm
+    chuẩn), covering both the national THPT exam and transcript-based (xét học bạ) admission
+    routes --- matching the two routes referenced in Section~5.3. Sourced from the Ministry of
+    Education and Training (\url{https://moet.gov.vn}) and individual university websites; these
+    are publicly readable but fragmented, with no public API, consistent with the feasibility
+    conclusion already reached in this section and in Section~3's competitor review (domestic
+    admissions portals hold this data but do not expose it as a service). Realistic approach:
+    manual aggregation and per-university scraping (subject to each site's Terms of Service)
+    into a curated, periodically refreshed snapshot --- not a real-time feed.
+    \item \textbf{Labor-market data} — sector-level labor-demand and growth-trend reports from
+    the Ministry of Labor, Invalids and Social Affairs and the General Statistics Office
+    (\url{https://www.gso.gov.vn}), plus salary and hiring-demand data from job platforms such as
+    VietnamWorks (\url{https://www.vietnamworks.com}), ITviec, TopDev, and TopCV
+    (\url{https://www.topcv.vn}), feeding Section~5.3's demand charts and career comparison view.
+    As with admission data, none of these sources offers a public API --- collection is
+    realistically a \textbf{semi-automated pipeline}: scraping where a source's structure and
+    Terms of Service allow it, manual entry/verification where they do not, refreshed on a
+    periodic (e.g., semesterly) cadence rather than continuously. A fully autonomous,
+    always-current scraping agent is a reasonable stretch goal for a later iteration, but should
+    not be assumed as the semester-1 baseline given the fragmentation already documented above.
+    \item \textbf{Personal student data} — grades, transcripts, and subject-combination choices
+    entered directly by students while using the platform (feeding Section~5.1's academic
+    profile). This is \textbf{not} integrated with school transcript management systems (e.g.,
+    VNEdu, SMAS), since no unified data format currently exists across schools and departments
+    --- students self-enter this data.
+    \item \textbf{Platform-generated data} — micro-task simulation content authored by the
+    platform's content team (Section~5.2), "a day in the life of X" articles and forum
+    discussions contributed by Contributors (alumni/counselors) (Section~5.4), and community
+    ratings/comments on career pages (Section~5.3). This data is generated internally by users
+    and staff, with no external source, and depends on the same cold-start seeding challenge
+    already noted for the community forum.
+\end{enumerate}
+
+\noindent
+\textit{Note:} the specific organizations and platforms named above are believed accurate as of
+this research, but deep links to individual reports or data pages change over time and should be
+re-verified at implementation time rather than hard-coded.
+
+\subsection{Expected Results and Evaluation Criteria}
+
+\textbf{Expected results --- full project scope.} Measured against the complete proposal in
+Section~5, success means:
+
+\begin{itemize}
+    \item \textbf{All eight pain points from Section~4 demonstrably addressed} by the
+    corresponding features in Section~5 --- not just described, but functioning and testable.
+    \item \textbf{A complete self-assessment-to-decision journey}: a student can go from the
+    Dynamic Survey (5.1) through Micro-Task exploration (5.2) to a Visual Pathway
+    recommendation grounded in real Vietnamese admission and market data (5.3), with the
+    reasoning behind each recommendation visible to them (5.6's explainability).
+    \item \textbf{An active, self-sustaining Community Forum} (5.4) with genuine participation
+    from both Users (students) and Contributors (alumni/counselors) --- not just a built
+    feature, but one with real usage and content past the cold-start stage.
+    \item \textbf{Data pipelines for admission, labor-market, and academic data (Section~6,
+    categories 1--3)} running on an established refresh cadence, verified for accuracy against
+    original sources.
+    \item \textbf{Validated impact}, not just usability: ideally a before/after or comparison
+    study showing the platform improves students' self-reported career clarity and confidence
+    relative to a one-off assessment baseline (per Section~2.2's observation that career
+    maturity, not just information access, is the real target).
+    \item \textbf{A neutral, cross-school position maintained} --- the platform should still
+    carry data and recommendations spanning multiple universities, not drift toward favoring
+    any single partner institution, preserving the differentiator identified in Section~3.6.
+\end{itemize}
+
+Evaluated overall on: data accuracy of the market and admission data against original sources,
+usability with real high-school students (completion rate, qualitative feedback), and basic
+performance benchmarks (load/response time).
+
+\end{document}

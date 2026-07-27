@@ -1,0 +1,59 @@
+services:
+    sharelatex:
+        restart: always
+        image: sharelatex/sharelatex:6.1.0-RC1
+        container_name: sharelatex
+        depends_on:
+            mongo:
+                condition: service_healthy
+            redis:
+                condition: service_started
+        ports:
+            - 80:80
+        stop_grace_period: 60s
+        volumes:
+            - ~/sharelatex_data:/var/lib/overleaf
+        environment:
+            OVERLEAF_APP_NAME: Overleaf Community Edition
+            OVERLEAF_MONGO_URL: mongodb://mongo/sharelatex
+            OVERLEAF_REDIS_HOST: redis
+            REDIS_HOST: redis
+            ENABLED_LINKED_FILE_TYPES: 'project_file,project_output_file'
+            ENABLE_CONVERSIONS: 'true'
+            EMAIL_CONFIRMATION_DISABLED: 'true'
+ 
+            # --- VITAL FIX: DISABLE SERVER PRO FEATURES ---
+            # These must be FALSE or removed for Community Edition
+            SANDBOXED_COMPILES: 'false'
+    # SANDBOXED_COMPILES_HOST_DIR_COMPILES: ...
+    # SANDBOXED_COMPILES_HOST_DIR_OUTPUT: ...
+    # DOCKER_RUNNER: 'true'
+    # SANDBOXED_COMPILES_SIBLING_CONTAINERS: 'true'
+    # -----------------------------------------------
+
+    mongo:
+        restart: always
+        image: mongo:8.0
+        container_name: mongo
+        # Overleaf requires a Replica Set to function correctly
+        command: '--replSet overleaf'
+        volumes:
+            - ~/mongo_data:/data/db
+            # NOTE: If you do not have this file locally, see the step below
+            - ./bin/shared/mongodb-init-replica-set.js:/docker-entrypoint-initdb.d/mongodb-init-replica-set.js
+        environment:
+            MONGO_INITDB_DATABASE: sharelatex
+        extra_hosts:
+            - mongo:127.0.0.1
+        healthcheck:
+            test: echo 'db.stats().ok' | mongosh localhost:27017/test --quiet
+            interval: 10s
+            timeout: 10s
+            retries: 5
+
+    redis:
+        restart: always
+        image: redis:6.2
+        container_name: redis
+        volumes:
+            - ~/redis_data:/data
