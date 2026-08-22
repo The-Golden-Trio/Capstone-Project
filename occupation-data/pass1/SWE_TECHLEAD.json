@@ -1,0 +1,152 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A)",
+      "golden/SWE_ARCH_ENT.json v2 (archetype C)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "trung bình",
+    "anchor_note": "Neo vào band L6 của golden_SWE_FRONTEND.json (Lead Frontend Engineer, dựng từ JD NAB HICAPS: 8+ năm frontend kèm 2+ năm ở vai trò dẫn dắt). Neo này đến từ MỘT nhánh chuyên môn (frontend) và MỘT công ty, nên chỉ dùng để hiệu chỉnh số năm và ranh giới quyền quyết định, không dùng để suy ra nội dung công việc của Tech Lead ở các nhánh khác."
+  },
+  "role_code": "SWE_TECHLEAD",
+  "role_name": "Tech Lead",
+  "role_name_vn": "Trưởng nhóm kỹ thuật",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "C",
+  "archetype_reasoning": "Tech Lead là một cấp bậc chứ không phải một lộ trình: thị trường VN không tuyển Intern/Fresher/Junior Tech Lead, người ta đi lên từ Senior của một nhánh chuyên môn cụ thể. Bằng chứng gián tiếp trong bộ JD đã thu thập: ANDPAD yêu cầu ứng viên Principal Frontend phải từng 'có kinh nghiệm ở vai trò technical lead trọn vòng đời dự án' — tức Tech Lead được coi là một chặng đã đi qua, không phải điểm khởi đầu.",
+  "occupied_bands": [
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đi lên từ Senior (L5) của một nhánh chuyên môn. Trong golden archetype A, mốc quan sát được là 8+ năm kinh nghiệm chuyên môn kèm tối thiểu 2 năm đã dẫn dắt một đội kỹ sư.",
+  "destination_profile": {
+    "band_range": "L6 - L7",
+    "min_years_experience": "6-10 (kèm tối thiểu 2 năm đã dẫn dắt đội)",
+    "years_band_check": "Sàn 6 = sàn của L6 theo thang toàn cục. Trần 10 nằm trong khoảng L7 (8-12). Đã hiệu chỉnh theo golden A: bản Pass 1 trước ghi 4-8 năm, thấp hơn bằng chứng thật khoảng 3 năm.",
+    "core_output": "Chịu trách nhiệm kỹ thuật cho phần việc của một đội: tự quyết kiến trúc và cách hiện thực ở phạm vi component hoặc module mà đội đang phụ trách, trong khi kiến trúc tổng thể do cấp trên đưa xuống; đồng thời review code, gỡ các blocker kỹ thuật khó nhất và kèm cặp thành viên — nhưng chưa có quyền đánh giá hiệu suất hay quyết định nhân sự.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "Đây là nấc ĐẦU TIÊN của vùng rẽ nhánh, không phải một ngã ba dứt khoát. Golden archetype A cho thấy điểm rẽ IC/Management ở thị trường VN diễn ra qua nhiều nấc: L6 đã coaching một đội nhưng chưa line management; phải tới band cao hơn mới có 1:1, kế hoạch phát triển và đánh giá hiệu suất. Tech Lead nằm đúng ở nấc đầu đó.",
+  "internal_variants": [
+    {
+      "variant_name": "Hands-on Tech Lead",
+      "focus": "Vẫn trực tiếp viết code phần lớn thời gian, dẫn dắt bằng chuyên môn thay vì bằng quy trình.",
+      "evidence_level": "C_INFERRED"
+    },
+    {
+      "variant_name": "Chapter / Discipline Lead",
+      "focus": "Định chuẩn kỹ thuật cho một nhánh chuyên môn xuyên nhiều squad, thay vì phụ trách một squad.",
+      "evidence_level": "C_INFERRED",
+      "note": "Chưa có JD nào trong bộ đã thu thập dùng title này."
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L5",
+        "note": "Cửa vào phổ biến nhất theo suy luận; chưa có JD xác nhận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_FRONTEND",
+        "role_name": "Front-end Developer",
+        "from_band": "L5",
+        "note": "Có neo: golden archetype A dựng được nấc L5 → L6 cho nhánh frontend từ JD thật.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_FULLSTACK",
+        "role_name": "Full-stack Developer",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "SWE_EM",
+        "role_name": "Engineering Manager",
+        "note": "Sang nhánh Management. Golden A cho thấy bước này KHÔNG đồng nghĩa với ngừng viết code ngay.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect",
+        "note": "Ở lại nhánh IC, đi sâu vào thiết kế phần mềm.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect",
+        "note": "Chuyển từ phạm vi một đội sang phạm vi một giải pháp hoặc một dự án.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_EM",
+        "reason": "Ranh giới nằm ở quyền đánh giá hiệu suất và quản lý trực tiếp, không nằm ở việc có còn code hay không.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_PL",
+        "reason": "Ở công ty outsourcing VN, Tech Lead và Project Leader hay bị gộp. Chưa có JD xác nhận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU — chưa thu thập JD Tech Lead ở nhóm này.",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "Có neo gián tiếp từ golden A: JD Lead Frontend của NAB ghi tường minh ranh giới quyền quyết định — tự quyết ở cấp component, kiến trúc tổng thể do cấp trên đưa xuống. Cần JD Tech Lead thuần để xác nhận pattern này ngoài nhánh frontend.",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [
+    {
+      "id": "VF-C1-01",
+      "severity": "trung bình",
+      "flag": "Toàn bộ hiệu chỉnh số năm và ranh giới quyền quyết định của role này đến từ JD frontend của một công ty (NAB). Chưa biết Tech Lead ở nhánh backend, mobile hay data có cùng mốc không.",
+      "action": "Pass 2: ưu tiên tìm JD có title 'Tech Lead' hoặc 'Technical Lead' ngoài nhánh frontend."
+    }
+  ],
+  "confidence_overall": "low",
+  "unknowns": [
+    "Bộ JD đã thu thập chỉ phủ frontend và kiến trúc doanh nghiệp theo đúng kế hoạch Bước B — CHƯA thu thập JD nào có title Tech Lead. Mọi nội dung ở đây là suy luận cộng với hiệu chỉnh từ band L6 của golden frontend.",
+    "Chưa xác định được Tech Lead tại VN có tham gia đánh giá hiệu suất hay không; golden A cho thấy ở NAB thì band tương đương L6 chưa có, nhưng một công ty không đủ để kết luận.",
+    "Chưa rõ tỷ lệ thời gian thực sự viết code của Tech Lead, và tỷ lệ này có khác nhau giữa L6 và L7 không.",
+    "Chưa rõ 'Chapter Lead' có tồn tại như một title riêng ở VN hay chỉ là cách gọi nội bộ của vài công ty."
+  ]
+}

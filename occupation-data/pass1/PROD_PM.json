@@ -1,0 +1,209 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "D-HYBRID1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)",
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "PROD_PM",
+  "role_name": "Product Manager",
+  "role_name_vn": "Quản lý sản phẩm / Product Manager",
+  "role_group": "Product & Project Management",
+  "archetype": "D",
+  "archetype_reasoning": "Xếp D theo roles.csv: HYBRID rõ nhất trong toàn bộ dataset — vừa có Associate PM (entry-level thật, giống ladder A/B) vừa là điểm đến của Business Analyst/Developer chuyển hướng (giống destination C), với khoảng band rộng nhất (L3-L9).",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7",
+    "L8",
+    "L9"
+  ],
+  "entry_note": "Có cửa vào Associate Product Manager thật ở một số công ty product lớn (entry-level, dù hẹp hơn nhiều so với SWE_BACKEND), SONG SONG đó phần lớn Product Manager tại VN là điểm đến của Business Analyst hoặc Developer chuyển hướng sang sau nhiều năm. Từ band L7, role hội tụ thành vị trí lãnh đạo sản phẩm cấp cao (Head of Product/Group PM) gần với đích đến điều hành — xem destination_profile.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "Associate Product Manager",
+      "title_aliases": [],
+      "years_experience": "1-2 (hiếm, chủ yếu công ty product lớn)",
+      "core_output": "Hỗ trợ quản lý một phần backlog/tính năng dưới sự hướng dẫn sát của PM senior, viết user story và thu thập phản hồi người dùng theo khuôn mẫu, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Product Manager (Middle)",
+      "title_aliases": [],
+      "years_experience": "2-4 (hoặc chuyển ngang từ BA/Dev)",
+      "core_output": "Chịu trách nhiệm một tính năng/mảng sản phẩm nhỏ: viết PRD, làm việc với đội kỹ thuật và thiết kế, đo lường kết quả sau khi ra mắt, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Product Manager",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ định nghĩa chiến lược cho một sản phẩm/dòng sản phẩm, ưu tiên hoá roadmap dựa trên dữ liệu và mục tiêu kinh doanh, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead / Group Product Manager",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt nhiều PM cho một nhóm sản phẩm liên quan, định chuẩn quy trình phát triển sản phẩm cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật/chuyên môn cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "destination_profile": {
+    "band_range": "L7 - L9",
+    "min_years_experience": "8-15",
+    "years_band_check": "Sàn 8 = sàn của L7. Trần 15 = trần của L8; L9 theo thang là 12+ nên nằm trong khoảng.",
+    "core_output": "Chịu trách nhiệm chiến lược sản phẩm ở cấp cao nhất trước khi tới C-level: quản lý danh mục nhiều sản phẩm/dòng sản phẩm, quản lý trực tiếp nhiều Product Manager/Group PM, làm việc chặt với các lãnh đạo kỹ thuật và kinh doanh về định hướng công ty — khác Group Product Manager (L6, vẫn còn hands-on với một nhóm sản phẩm cụ thể) ở chỗ đây đã là quản lý cấp cao thuần chiến lược, chuẩn bị cho bước tiến lên CPO.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "N/A — ở band cao PM đã là nhánh quản lý, không còn track IC riêng biệt trong taxonomy này.",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "EXEC_CPO",
+        "from_band": "L6",
+        "note": "Suy luận — Head of Product là bước đệm tự nhiên trước khi lên CPO."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst",
+        "from_band": "L4",
+        "note": "Suy luận — route lateral phổ biến nhất.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "EXEC_CPO",
+        "role_name": "Chief Product Officer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "PROD_PO",
+        "role_name": "Product Owner",
+        "note": "roles.csv ghi 'PO ≈ BA cấp cao' ở VN — PM là vai trò rộng hơn PO.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_PM",
+        "role_name": "Data Product Manager",
+        "note": "Suy luận — chuyên biệt hoá sang sản phẩm dữ liệu.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "PROD_PO",
+        "reason": "roles.csv ghi rõ nghi vấn PO ≈ BA cấp cao tại VN — PM là vai trò có phạm vi chiến lược rộng hơn PO rõ rệt.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_BA",
+        "reason": "Ở band thấp, ranh giới PM mới vào nghề và BA senior có tư duy sản phẩm khá mờ tại VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Tỷ lệ Associate PM thật (entry-level) so với PM là điểm đến của BA/Dev chuyển hướng chưa có số liệu — đây là bản chất HYBRID rộng nhất trong 78 role, cần Pass 2 làm rõ tỷ lệ.",
+    "Điểm chia giữa levels[] (L3-L6) và destination_profile (L7-L9) là suy luận, chưa có JD xác nhận đúng ở L7."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

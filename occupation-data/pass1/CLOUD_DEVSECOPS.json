@@ -1,0 +1,197 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-CLOUD1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "CLOUD_DEVSECOPS",
+  "role_name": "DevSecOps Engineer",
+  "role_name_vn": "Kỹ sư DevSecOps",
+  "role_group": "Cloud, DevOps & SRE",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: vào từ DevOps hoặc AppSec, không có cửa vào entry-level.",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher. Vào từ DevOps Engineer bổ sung chuyên môn bảo mật, hoặc từ AppSec Engineer bổ sung kỹ năng vận hành. Sàn hợp lý là L4.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "DevSecOps Engineer (Middle)",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền DevOps hoặc AppSec)",
+      "core_output": "Tích hợp công cụ quét bảo mật (SAST/SCA) vào pipeline CI/CD có sẵn, xử lý false positive cơ bản, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior DevSecOps Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự thiết kế security gate cho pipeline CI/CD của một hệ thống, làm việc với đội dev để khắc phục lỗ hổng theo SLA, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "DevSecOps Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật DevSecOps cho tổ chức, định chuẩn shift-left security, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal DevSecOps Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chiến lược bảo mật trong vòng đời phát triển phần mềm xuyên toàn tổ chức, tương ứng vai trò chịu trách nhiệm cross-team.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal DevSecOps Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "CLOUD_LEAD",
+        "from_band": "L6",
+        "note": "Suy luận — có thể cũng hợp lệ nếu neo vào SEC_ISM, cần Pass 2 xác nhận nhánh nào phổ biến hơn tại VN."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_APPSEC",
+        "role_name": "Application Security Engineer",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "CLOUD_LEAD",
+        "role_name": "DevOps / Platform Lead",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_ISM",
+        "role_name": "Information Security Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_APPSEC",
+        "role_name": "Application Security Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "reason": "Ranh giới nằm ở trọng tâm bảo mật so với vận hành nói chung.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_APPSEC",
+        "reason": "Cả hai đều làm bảo mật trong SDLC; khác biệt là DevSecOps thiên về pipeline/hạ tầng, AppSec thiên về code.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ DevSecOps Engineer tại VN báo cáo về đội DevOps hay đội Security — ảnh hưởng tới nhánh quản lý thật.",
+    "Ranh giới với SEC_APPSEC và CLOUD_DEVOPS chưa có quy tắc phân định rõ."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

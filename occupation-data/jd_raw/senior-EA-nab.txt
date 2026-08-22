@@ -1,0 +1,66 @@
+https://www.linkedin.com/jobs/view/senior-enterprise-architecture-operations-at-nab-innovation-centre-vietnam-4278740147/
+
+Senior Enterprise Architecture Operations 
+About the job
+ABOUT THE JOB:
+We are seeking a candidate to fill an Architecture Practice role who will play a pivotal part in delivering, maintaining, and advancing architecture services and practices within the Strategy & Architecture (S&A) function. This role directly supports S&A practitioners, Leadership Team members and executives in driving consistent, scalable, and high-impact architectural outcomes.
+A key focus of this position will be to support, maintain and enhance the operational integrity and maturity of a model that monitors the modernisation of the Technology estate at NAB. This model is implemented within ServiceNow based on CMDB data, you’re your responsibility will be to ensure this model is operating correctly by Architecture practitioners, including its data, controls, processes, and governance.
+The successful candidate will help ensure that the model continues to serve as a reliable and strategic lens through which we measure and drive technology modernisation across the enterprise.
+While supporting and operating this model, you will be providing training and support to architecture practitioners for their day-to-day activities, which includes architects that are co-located with you in the Vietnam offices.
+Main Responsibilities:
+Supporting the operation of the technology modernisation model. This has been implemented using ServiceNow, leveraging the CMDB as the system of record of underlying data, controls and processes.
+The creation, prioritisation, testing & delivery of features within ServiceNow to support the model and related processes;
+Identify areas for improvement within Architecture processes and policies, working with stakeholders to identify and document requirements to enable architects to deliver architecture services faster and with better data.
+Assist with Internal and External Audits
+The maintenance of architecture artefacts, guidance and knowledgebase articles and documentation
+Provide training, answering queries & supporting Architecture practitioners with the delivery of all Architecture services.
+Fulfil other tasks as assigned by your People Leader and/or authorized representative of NAB Vietnam from time to time.
+
+You will bring the following skills and experience:
+10+ years experience in the Technology industry, including in both operational & delivery roles.
+2+ years Architecture or Design Experience desirable with developing or running agile practices in large organisations with regulatory and legacy constraints.
+Experience with features / functions of ServiceNow (APM, Enterprise Architecture), Sharepoint Online (O365), Confluence and Rally;
+Experience with producing reporting via Excel (pivot tables, moderate skills of using functions, macros etc…)
+Strong data analytical and reporting skills with the ability to investigate and determine root cause and / or surface insights from data;
+Ability to write user-stories for feature development in Rally;
+Strong written and verbal communication skills
+Critical thinking and curiosity to understand problems and determine solutions.
+Ability to work in a complex environment and manage and prioritise competing streams of work
+
+Other capabilities (technical)
+Clarity and Signavio skills desirable but not essential.
+Experience with Source code control technologies – GitHub etc.
+Experience with enterprise-grade reporting tools (ie. Power BI etc..)
+Exposure to cloud technologies (Azure, AWS).
+Cloud certifications desirable but not essential.
+
+THE BENEFITS AND PERKSWe appreciate and reward our colleagues who do great work every day – from excelling for our customers, to taking ownership of an issue to get it resolved. Here’s how we support our people with a range of exclusive benefits.
+1. Generous compensation and benefit package
+Attractive salary
+20-day paid annual leave and 7-day paid sick leave
+13th month salary and Annual Performance Bonus
+Premium healthcare for yourself and family members
+Monthly allowance for team activities
+Premium welcome kit and occasional gifts of appreciation
+Extra benefits on your work anniversary
+
+2. Exciting career and development opportunities
+Large scale products with modern technologies in banking domain
+Clear roadmap for career advancement in both technical and leadership pathways
+Access to digital learning platform such as Udemy
+Consistent and high-quality leadership training through the Distinctive Leadership program (DLP)
+Specialist capabilities and accreditations in key skill areas such as Cloud Engineering, Digital, Data, Security and SREs (Site reliability engineers)
+Sponsored English course with native teachers
+Opportunity for training in Australia
+
+3. Professional and engaging working environment
+Hybrid working model and excellent work-life balance
+State-of-the-art & modern Agile office
+Food and beverages in the office pantry
+Employee Assistance Program to improve your physical and mental health
+Annual team activities and company events
+A solid and talented team behind you – great people who love what they do
+
+A DIVERSE AND INCLUSIVE WORKPLACE WORKS BETTER FOR EVERYONEWe know that our people make us who we are. That's why we have built a culture of respect – where everyone feels valued and appreciated for being their true authentic selves at NAB. With our focus on inclusion and diversity, and in partnership with our Employee Resource Groups, NAB is a place where First Nations colleagues, colleagues of all genders, sexualities and ages, carers and colleagues with disability, and colleagues from all cultures, races and religions have the opportunity to thrive, connect and grow.We are intent on providing an environment where you can work your way. Ask about our many flexible work options and please let us know if we can provide any adjustments throughout the recruitment process.
+CLOUD-FIRSTNAB is undergoing an exciting "Cloud First" technology transformation by taking advantage of the latest tools and techniques used by leading technology and digital companies globally. But it’s not just about the Tech, we are also investing heavily in our people, so if you have an appetite to learn, grow and elevate others around you, this is the place for you!
+If this excites you, let's have a chat over a cup of coffee!

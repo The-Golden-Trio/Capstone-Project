@@ -1,0 +1,222 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-2",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "SWE_FULLSTACK",
+  "role_name": "Full-stack Developer",
+  "role_name_vn": "Lập trình viên Full-stack",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "A",
+  "archetype_reasoning": "Có cửa vào entry-level, đặc biệt ở product/startup VN nơi team nhỏ cần một người làm cả hai đầu. Ít phổ biến hơn ở outsourcing lớn (roles.csv ghi nhận điều này ở Pass 0).",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Cửa vào có thật nhưng hẹp hơn Backend/Frontend thuần — tập trung ở startup và product nhỏ. golden A ghi nhận gián tiếp: NAVER Vietnam đăng tin 'Fullstack Engineer (Intern Level)' nhưng nội dung thực chất là frontend, và Binance 'Junior Software Engineer' yêu cầu cả frontend+backend+AI — gợi ý rằng ở band thấp, 'fullstack' có thể là nhãn cho 'chưa chuyên biệt hoá' hơn là một chuyên môn kép thật sự.",
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Fullstack Engineer Intern",
+      "title_aliases": [
+        "Software Engineer Intern (Fullstack)"
+      ],
+      "years_experience": "0",
+      "core_output": "Hiện thực tính năng nhỏ ở cả hai đầu — giao diện đơn giản và API tương ứng — dưới sự giám sát sát sao, thường thiên về một đầu nhiều hơn tuỳ đội.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null,
+      "calibration_note": "Có neo gián tiếp: FE02 (NAVER) trong golden A, title Fullstack Intern nhưng nội dung nghiêng hẳn về frontend."
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Fullstack Engineer",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự hoàn thành một tính năng nhỏ end-to-end (UI đơn giản + API + truy vấn CSDL cơ bản) trong phạm vi được giao rõ ràng.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Fullstack Engineer",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự triển khai một luồng tính năng hoàn chỉnh từ giao diện tới cơ sở dữ liệu, chịu trách nhiệm về chất lượng trong phạm vi tính năng đó — như golden A ghi nhận ở JD Nexlab 'own an entire small-to-mid-scale web product'.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Fullstack Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm một module hoàn chỉnh cả hai đầu, tự quyết cách chia tách frontend/backend cho module đó, review code đồng nghiệp.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Fullstack Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ kiến trúc cho một sản phẩm nhỏ hoặc một nhóm tính năng lớn xuyên cả hai đầu, mentor kỹ sư cấp dưới, thường là người duy nhất hiểu toàn bộ luồng end-to-end của phần mình phụ trách.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead Fullstack Engineer",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật cho một sản phẩm nhỏ hoặc một đội đa năng, tự quyết kiến trúc tổng thể cả hai đầu trong ngân sách kỹ thuật được giao.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal Fullstack Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chuẩn kỹ thuật xuyên sản phẩm cho cả tầng frontend và backend, vai trò hiếm gặp ở VN vì tới band này kỹ sư thường đã chuyên biệt hoá rõ.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận, chưa có JD.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal Fullstack Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Suy luận."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "note": "Suy luận, chuyên biệt hoá một đầu.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_FRONTEND",
+        "role_name": "Front-end Developer",
+        "note": "Suy luận, chuyên biệt hoá một đầu.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_BACKEND",
+        "reason": "Nhiều JD Backend ở outsourcing yêu cầu kiến thức frontend cơ bản, ranh giới mờ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này.",
+    "Nghi ngờ 'Fullstack' ở band thấp (L1-L3) tại VN là nhãn cho 'chưa chuyên biệt hoá' chứ không phải chuyên môn kép thật — cần JD để kiểm chứng, xem calibration_note ở L1.",
+    "Chưa rõ tỷ lệ FE/BE thực tế thay đổi thế nào theo band — có thể L1-L3 nghiêng hẳn một bên, L4+ mới thật sự cân bằng."
+  ]
+}

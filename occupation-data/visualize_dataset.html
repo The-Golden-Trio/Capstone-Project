@@ -1,0 +1,1585 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Occupation Dataset Viewer</title>
+    <style>
+      :root {
+        --bg: #eef2f7;
+        --panel: #ffffff;
+        --panel-soft: #f1f4f8;
+        --text: #18212f;
+        --muted: #657084;
+        --line: #d9e0ea;
+        --blue: #2f6fed;
+        --teal: #168276;
+        --amber: #b86e00;
+        --rose: #c4425a;
+        --violet: #6b55cc;
+        --green: #277a42;
+        --ink: #22324a;
+        --shadow: 0 10px 24px rgba(32, 42, 62, 0.07);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        background: linear-gradient(180deg, #f8fafc 0, var(--bg) 260px);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        letter-spacing: 0;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #e8edf4;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #aeb8c7;
+        border: 2px solid #e8edf4;
+        border-radius: 999px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8d9aab;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      .app {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 318px minmax(0, 1fr);
+      }
+
+      .sidebar {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid var(--line);
+        background: rgba(251, 252, 254, 0.96);
+        overflow: hidden;
+        box-shadow: 8px 0 22px rgba(32, 42, 62, 0.04);
+      }
+
+      .brand {
+        padding: 20px 18px 14px;
+        border-bottom: 1px solid var(--line);
+        background: #ffffff;
+      }
+
+      .brand h1 {
+        margin: 0 0 6px;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .brand p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .controls {
+        padding: 14px 14px 12px;
+        display: grid;
+        gap: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .segmented {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        padding: 4px;
+        background: var(--panel-soft);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+
+      .segmented button {
+        min-height: 34px;
+        border: 0;
+        border-radius: 6px;
+        color: var(--muted);
+        background: transparent;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 650;
+      }
+
+      .segmented button.active {
+        color: var(--text);
+        background: var(--panel);
+        box-shadow: 0 1px 5px rgba(28, 39, 58, 0.1);
+      }
+
+      .search {
+        width: 100%;
+        min-height: 40px;
+        padding: 0 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--text);
+      }
+
+      .filter-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      select {
+        width: 100%;
+        min-height: 38px;
+        padding: 0 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--text);
+        font-size: 13px;
+      }
+
+      .role-count {
+        padding: 0 2px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .role-list {
+        flex: 1;
+        overflow: auto;
+        padding: 10px;
+        scrollbar-gutter: stable;
+      }
+
+      .role-item {
+        width: 100%;
+        display: grid;
+        gap: 5px;
+        padding: 12px 11px;
+        margin-bottom: 8px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        text-align: left;
+        color: var(--text);
+        cursor: pointer;
+        box-shadow: 0 1px 0 rgba(32, 42, 62, 0.03);
+      }
+
+      .role-item:hover {
+        background: #f0f5ff;
+      }
+
+      .role-item.active {
+        border-color: rgba(47, 111, 237, 0.45);
+        background: #edf4ff;
+        box-shadow: inset 3px 0 0 var(--blue);
+      }
+
+      .role-title {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 0;
+        font-size: 14px;
+        font-weight: 750;
+      }
+
+      .role-title span:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .role-meta {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 21px;
+        padding: 2px 7px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--panel);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 650;
+        white-space: nowrap;
+      }
+
+      .badge.a {
+        color: var(--green);
+        border-color: rgba(39, 122, 66, 0.35);
+        background: #effaf2;
+      }
+      .badge.b {
+        color: var(--blue);
+        border-color: rgba(47, 111, 237, 0.35);
+        background: #edf3ff;
+      }
+      .badge.c {
+        color: var(--amber);
+        border-color: rgba(184, 110, 0, 0.35);
+        background: #fff6e6;
+      }
+      .badge.d {
+        color: var(--rose);
+        border-color: rgba(196, 66, 90, 0.35);
+        background: #fff0f3;
+      }
+
+      .main {
+        min-width: 0;
+        padding: 24px;
+      }
+
+      .toolbar {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 16px;
+      }
+
+      .toolbar h2 {
+        margin: 0 0 6px;
+        font-size: 25px;
+        line-height: 1.2;
+      }
+
+      .toolbar p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .copy-btn {
+        min-height: 38px;
+        padding: 0 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--text);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .copy-btn:hover {
+        border-color: rgba(47, 111, 237, 0.45);
+        color: var(--blue);
+      }
+
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .kpi,
+      .panel,
+      .detail-card,
+      .level-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .kpi {
+        padding: 14px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .kpi::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--teal);
+      }
+
+      .kpi:nth-child(2)::before {
+        background: var(--blue);
+      }
+      .kpi:nth-child(3)::before {
+        background: var(--amber);
+      }
+      .kpi:nth-child(4)::before {
+        background: var(--rose);
+      }
+
+      .kpi:nth-child(2) .kpi-value {
+        color: var(--blue);
+      }
+      .kpi:nth-child(3) .kpi-value {
+        color: var(--amber);
+      }
+      .kpi:nth-child(4) .kpi-value {
+        color: var(--rose);
+      }
+      .kpi:first-child .kpi-value {
+        color: var(--teal);
+      }
+
+      .overview-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+        gap: 14px;
+        align-items: start;
+        margin-bottom: 16px;
+      }
+
+      .panel {
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .kpi-label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .kpi-value {
+        margin-top: 7px;
+        font-size: 28px;
+        line-height: 1;
+        font-weight: 800;
+      }
+
+      .panel-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 14px 14px 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .panel-header h3 {
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .panel-header span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .chart-stack {
+        padding: 12px 14px 14px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: minmax(110px, 170px) minmax(0, 1fr) 36px;
+        gap: 10px;
+        align-items: center;
+        font-size: 13px;
+      }
+
+      .bar-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #303a4c;
+      }
+
+      .bar-track {
+        height: 12px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: var(--panel-soft);
+      }
+
+      .bar-fill {
+        height: 100%;
+        width: 0;
+        border-radius: inherit;
+        background: var(--blue);
+      }
+
+      .bar-fill.teal {
+        background: var(--teal);
+      }
+      .bar-fill.amber {
+        background: var(--amber);
+      }
+      .bar-fill.rose {
+        background: var(--rose);
+      }
+      .bar-fill.violet {
+        background: var(--violet);
+      }
+
+      .bar-value {
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+      }
+
+      .matrix {
+        padding: 14px;
+        overflow: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      th,
+      td {
+        padding: 9px 8px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 750;
+        text-transform: uppercase;
+        background: #fbfcfe;
+      }
+
+      .detail {
+        display: grid;
+        gap: 14px;
+      }
+
+      .detail-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 0.72fr);
+        gap: 14px;
+        align-items: start;
+      }
+
+      .detail-card {
+        overflow: hidden;
+      }
+
+      .detail-hero {
+        padding: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .detail-hero h2 {
+        margin: 0 0 5px;
+        font-size: 24px;
+        line-height: 1.2;
+      }
+
+      .detail-hero p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+      }
+
+      .fact {
+        padding: 13px 16px;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        min-width: 0;
+      }
+
+      .fact:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .fact-label {
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 750;
+        text-transform: uppercase;
+      }
+
+      .fact-value {
+        overflow-wrap: anywhere;
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 700;
+      }
+
+      .body-section {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .body-section:last-child {
+        border-bottom: 0;
+      }
+
+      .body-section h3,
+      .levels h3 {
+        margin: 0 0 9px;
+        font-size: 15px;
+      }
+
+      .body-section p {
+        margin: 0;
+        color: #303a4c;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .levels {
+        display: grid;
+        gap: 10px;
+      }
+
+      .level-card {
+        padding: 13px 14px;
+      }
+
+      .level-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+
+      .level-head h4 {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .level-card p {
+        margin: 0 0 10px;
+        color: #303a4c;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .mini-list {
+        display: grid;
+        gap: 6px;
+        margin-top: 9px;
+      }
+
+      .mini-list div {
+        color: #303a4c;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .relationship-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .relationship-head {
+        padding: 14px 16px 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .relationship-head h3 {
+        margin: 0 0 5px;
+        font-size: 15px;
+      }
+
+      .relationship-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .relationship-map {
+        padding: 14px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .rel-flow {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 34px minmax(0, 1fr) 34px minmax(
+            0,
+            1fr
+          );
+        gap: 8px;
+        align-items: center;
+      }
+
+      .rel-column {
+        min-width: 0;
+        display: grid;
+        gap: 7px;
+        align-content: start;
+      }
+
+      .rel-column-title {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .rel-arrow {
+        color: #9aa7b8;
+        font-size: 22px;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .rel-node {
+        width: 100%;
+        min-height: 36px;
+        padding: 8px 9px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f8fafc;
+        color: var(--ink);
+        text-align: left;
+        font-size: 12px;
+        font-weight: 750;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+      }
+
+      .rel-node[data-code] {
+        cursor: pointer;
+      }
+
+      .rel-node[data-code]:hover {
+        border-color: rgba(47, 111, 237, 0.45);
+        background: #edf4ff;
+        color: var(--blue);
+      }
+
+      .rel-node.current {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #ffffff;
+        box-shadow: 0 8px 20px rgba(34, 50, 74, 0.18);
+      }
+
+      .rel-node.feeder {
+        border-left: 4px solid var(--green);
+      }
+      .rel-node.next {
+        border-left: 4px solid var(--blue);
+      }
+      .rel-node.lateral {
+        border-left: 4px solid var(--violet);
+      }
+      .rel-node.confused {
+        border-left: 4px solid var(--amber);
+      }
+
+      .rel-secondary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding-top: 3px;
+      }
+
+      .empty {
+        padding: 20px;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+      }
+
+      @media (max-width: 1100px) {
+        .app {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: relative;
+          height: auto;
+          max-height: 78vh;
+        }
+
+        .overview-grid,
+        .kpis {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .detail,
+        .detail-layout {
+          grid-column: 1 / -1;
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .main {
+          padding: 14px;
+        }
+
+        .toolbar {
+          display: grid;
+        }
+
+        .kpis,
+        .overview-grid,
+        .detail-grid,
+        .filter-grid,
+        .rel-flow,
+        .rel-secondary {
+          grid-template-columns: 1fr;
+        }
+
+        .rel-arrow {
+          display: none;
+        }
+
+        .fact,
+        .fact:nth-child(2n) {
+          border-right: 0;
+        }
+
+        .bar-row {
+          grid-template-columns: minmax(85px, 120px) minmax(0, 1fr) 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <h1>IT Occupation Map</h1>
+          <p id="dataset-subtitle">Đang tải dữ liệu...</p>
+        </div>
+
+        <div class="controls">
+          <div class="segmented" id="dataset-tabs">
+            <button
+              type="button"
+              class="active"
+              data-file="dataset_final_merged.json"
+            >
+              78 roles
+            </button>
+            <button type="button" data-file="9_roles_tier1_pass2.json">
+              Tier 1
+            </button>
+          </div>
+          <input
+            class="search"
+            id="search"
+            type="search"
+            placeholder="Tìm role, nhóm, skill..."
+          />
+          <div class="filter-grid">
+            <select id="group-filter" aria-label="Lọc nhóm nghề"></select>
+            <select id="archetype-filter" aria-label="Lọc archetype"></select>
+          </div>
+          <div class="role-count" id="role-count"></div>
+        </div>
+
+        <div class="role-list" id="role-list"></div>
+      </aside>
+
+      <main class="main">
+        <div class="toolbar">
+          <div>
+            <h2 id="page-title">Dataset Overview</h2>
+            <p id="page-note">
+              Bản đồ nghề IT Việt Nam theo role, level, kỹ năng, thị trường và
+              quan hệ chuyển nghề.
+            </p>
+          </div>
+          <button type="button" class="copy-btn" id="copy-summary">
+            Copy summary
+          </button>
+        </div>
+
+        <section class="kpis" id="kpis"></section>
+
+        <section class="overview-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Phân bố nhóm nghề</h3>
+              <span id="group-total"></span>
+            </div>
+            <div class="chart-stack" id="group-chart"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Archetype</h3>
+              <span>A: entry, C: destination</span>
+            </div>
+            <div class="chart-stack" id="archetype-chart"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Group x Archetype</h3>
+              <span>Ma trận đọc nhanh</span>
+            </div>
+            <div class="matrix" id="matrix"></div>
+          </div>
+        </section>
+
+        <section class="detail" id="detail"></section>
+      </main>
+    </div>
+
+    <script>
+      const DATASETS = {
+        "dataset_final_merged.json": "Master dataset",
+        "9_roles_tier1_pass2.json": "Tier 1 verified sample",
+      };
+
+      const state = {
+        source: "dataset_final_merged.json",
+        data: [],
+        filtered: [],
+        selectedCode: null,
+        query: "",
+        group: "all",
+        archetype: "all",
+      };
+
+      const els = {
+        subtitle: document.getElementById("dataset-subtitle"),
+        datasetTabs: document.getElementById("dataset-tabs"),
+        search: document.getElementById("search"),
+        groupFilter: document.getElementById("group-filter"),
+        archetypeFilter: document.getElementById("archetype-filter"),
+        roleCount: document.getElementById("role-count"),
+        roleList: document.getElementById("role-list"),
+        pageTitle: document.getElementById("page-title"),
+        pageNote: document.getElementById("page-note"),
+        copySummary: document.getElementById("copy-summary"),
+        kpis: document.getElementById("kpis"),
+        groupTotal: document.getElementById("group-total"),
+        groupChart: document.getElementById("group-chart"),
+        archetypeChart: document.getElementById("archetype-chart"),
+        matrix: document.getElementById("matrix"),
+        detail: document.getElementById("detail"),
+      };
+
+      const archetypeText = {
+        A: "Entry ladder",
+        B: "Transfer path",
+        C: "Destination",
+        D: "Hybrid",
+      };
+
+      const archetypeClass = {
+        A: "a",
+        B: "b",
+        C: "c",
+        D: "d",
+      };
+
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function countBy(records, getter) {
+        return records.reduce((acc, item) => {
+          const key = getter(item) || "Chưa rõ";
+          acc[key] = (acc[key] || 0) + 1;
+          return acc;
+        }, {});
+      }
+
+      function sortedEntries(counts) {
+        return Object.entries(counts).sort(
+          (a, b) => b[1] - a[1] || a[0].localeCompare(b[0]),
+        );
+      }
+
+      function bandNumber(band) {
+        const match = String(band || "").match(/\d+/);
+        return match ? Number(match[0]) : 99;
+      }
+
+      function getEvidenceLevel(role) {
+        const levels = Array.isArray(role.levels) ? role.levels : [];
+        if (levels.some((level) => level.evidence_level === "A_VERIFIED"))
+          return "A_VERIFIED";
+        if (role.destination_profile?.evidence_level)
+          return role.destination_profile.evidence_level;
+        if (levels.some((level) => level.evidence_level))
+          return levels.find((level) => level.evidence_level)?.evidence_level;
+        return "Chưa gắn";
+      }
+
+      function getOpenPostings(role) {
+        return Number(role.job_outlook?.itviec_open_postings || 0);
+      }
+
+      function searchBlob(role) {
+        const skillText = (role.levels || [])
+          .flatMap((level) => [
+            ...(level.tasks || []),
+            ...(level.skills_soft || []),
+            ...(level.skills_hard || []).map((skill) => skill.skill || skill),
+          ])
+          .join(" ");
+
+        return [
+          role.role_code,
+          role.role_name,
+          role.role_name_vn,
+          role.role_group,
+          role.archetype,
+          role.education_path_primary,
+          role.work_environment_primary,
+          skillText,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+      }
+
+      async function loadDataset(file) {
+        state.source = file;
+        state.selectedCode = null;
+        els.subtitle.textContent = "Đang tải dữ liệu...";
+
+        const response = await fetch(file, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Không đọc được ${file}`);
+        }
+
+        state.data = await response.json();
+        state.filtered = state.data.slice();
+        populateFilters();
+        applyFilters();
+      }
+
+      function populateFilters() {
+        const groups = [
+          "all",
+          ...Object.keys(countBy(state.data, (role) => role.role_group)).sort(),
+        ];
+        const archetypes = [
+          "all",
+          ...Object.keys(countBy(state.data, (role) => role.archetype)).sort(),
+        ];
+
+        els.groupFilter.innerHTML = groups
+          .map((group) => {
+            const label = group === "all" ? "Tất cả nhóm" : group;
+            return `<option value="${escapeHtml(group)}">${escapeHtml(label)}</option>`;
+          })
+          .join("");
+
+        els.archetypeFilter.innerHTML = archetypes
+          .map((type) => {
+            const label =
+              type === "all"
+                ? "Tất cả archetype"
+                : `${type} - ${archetypeText[type] || ""}`;
+            return `<option value="${escapeHtml(type)}">${escapeHtml(label)}</option>`;
+          })
+          .join("");
+
+        state.group = "all";
+        state.archetype = "all";
+        els.groupFilter.value = "all";
+        els.archetypeFilter.value = "all";
+        els.search.value = state.query;
+      }
+
+      function applyFilters() {
+        const query = state.query.trim().toLowerCase();
+        state.filtered = state.data.filter((role) => {
+          const matchQuery = !query || searchBlob(role).includes(query);
+          const matchGroup =
+            state.group === "all" || role.role_group === state.group;
+          const matchType =
+            state.archetype === "all" || role.archetype === state.archetype;
+          return matchQuery && matchGroup && matchType;
+        });
+
+        if (
+          !state.filtered.some((role) => role.role_code === state.selectedCode)
+        ) {
+          state.selectedCode = state.filtered[0]?.role_code || null;
+        }
+
+        render();
+      }
+
+      function render() {
+        const selected =
+          state.data.find((role) => role.role_code === state.selectedCode) ||
+          state.filtered[0];
+        renderOverview();
+        renderRoleList();
+        renderDetail(selected);
+      }
+
+      function renderOverview() {
+        const total = state.data.length;
+        const filtered = state.filtered.length;
+        const groups = Object.keys(
+          countBy(state.data, (role) => role.role_group),
+        ).length;
+        const verified = state.data.filter(
+          (role) => getEvidenceLevel(role) === "A_VERIFIED",
+        ).length;
+        const postings = state.data.reduce(
+          (sum, role) => sum + getOpenPostings(role),
+          0,
+        );
+
+        els.subtitle.textContent = `${DATASETS[state.source]} - ${total} roles`;
+        els.pageTitle.textContent = DATASETS[state.source];
+        els.pageNote.textContent = `${filtered}/${total} roles đang hiển thị. Dữ liệu gốc vẫn nằm trong ${state.source}.`;
+        els.roleCount.textContent = `${filtered} role phù hợp bộ lọc`;
+
+        els.kpis.innerHTML = [
+          ["Roles", total],
+          ["Nhóm nghề", groups],
+          ["Có A_VERIFIED", verified],
+          ["ITviec postings", postings],
+        ]
+          .map(
+            ([label, value]) => `
+        <article class="kpi">
+          <div class="kpi-label">${escapeHtml(label)}</div>
+          <div class="kpi-value">${escapeHtml(value)}</div>
+        </article>
+      `,
+          )
+          .join("");
+
+        renderBarChart(
+          els.groupChart,
+          countBy(state.filtered, (role) => role.role_group),
+          ["teal", "", "amber", "rose", "violet"],
+        );
+        renderBarChart(
+          els.archetypeChart,
+          countBy(state.filtered, (role) => role.archetype),
+          ["", "teal", "amber", "rose"],
+        );
+        els.groupTotal.textContent = `${Object.keys(countBy(state.filtered, (role) => role.role_group)).length} nhóm`;
+        renderMatrix();
+      }
+
+      function renderBarChart(container, counts, colors) {
+        const entries = sortedEntries(counts);
+        const max = Math.max(1, ...entries.map((entry) => entry[1]));
+
+        if (!entries.length) {
+          container.innerHTML = `<div class="empty">Không có dữ liệu.</div>`;
+          return;
+        }
+
+        container.innerHTML = entries
+          .map(
+            ([label, value], index) => `
+        <div class="bar-row">
+          <div class="bar-label" title="${escapeHtml(label)}">${escapeHtml(label)}</div>
+          <div class="bar-track">
+            <div class="bar-fill ${colors[index % colors.length]}" style="width: ${(value / max) * 100}%"></div>
+          </div>
+          <div class="bar-value">${value}</div>
+        </div>
+      `,
+          )
+          .join("");
+      }
+
+      function renderMatrix() {
+        const groups = Object.keys(
+          countBy(state.filtered, (role) => role.role_group),
+        ).sort();
+        const types = ["A", "B", "C", "D"].filter((type) =>
+          state.filtered.some((role) => role.archetype === type),
+        );
+
+        if (!groups.length || !types.length) {
+          els.matrix.innerHTML = `<div class="empty">Không có dữ liệu.</div>`;
+          return;
+        }
+
+        const rows = groups
+          .map((group) => {
+            const cells = types.map(
+              (type) =>
+                state.filtered.filter(
+                  (role) =>
+                    role.role_group === group && role.archetype === type,
+                ).length,
+            );
+            return `<tr><td>${escapeHtml(group)}</td>${cells.map((count) => `<td>${count || ""}</td>`).join("")}</tr>`;
+          })
+          .join("");
+
+        els.matrix.innerHTML = `
+        <table>
+          <thead>
+            <tr><th>Nhóm nghề</th>${types.map((type) => `<th>${type}</th>`).join("")}</tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+      }
+
+      function renderRoleList() {
+        if (!state.filtered.length) {
+          els.roleList.innerHTML = `<div class="empty">Không có role phù hợp.</div>`;
+          return;
+        }
+
+        els.roleList.innerHTML = state.filtered
+          .map((role) => {
+            const active =
+              role.role_code === state.selectedCode ? "active" : "";
+            const klass = archetypeClass[role.archetype] || "";
+            const bands = Array.isArray(role.occupied_bands)
+              ? role.occupied_bands.join("-")
+              : "Chưa rõ";
+            return `
+          <button type="button" class="role-item ${active}" data-code="${escapeHtml(role.role_code)}">
+            <div class="role-title">
+              <span>${escapeHtml(role.role_name)}</span>
+              <span class="badge ${klass}">${escapeHtml(role.archetype || "?")}</span>
+            </div>
+            <div class="role-meta">
+              <span>${escapeHtml(role.role_code)}</span>
+              <span>${escapeHtml(bands)}</span>
+            </div>
+            <div class="role-meta">${escapeHtml(role.role_name_vn || role.role_group || "")}</div>
+          </button>
+        `;
+          })
+          .join("");
+      }
+
+      function renderDetail(role) {
+        if (!role) {
+          els.detail.innerHTML = `<div class="detail-card"><div class="empty">Chọn bộ lọc khác để xem dữ liệu.</div></div>`;
+          return;
+        }
+
+        const bands = Array.isArray(role.occupied_bands)
+          ? role.occupied_bands.join(", ")
+          : "Chưa rõ";
+        const levels = Array.isArray(role.levels)
+          ? role.levels
+              .slice()
+              .sort((a, b) => bandNumber(a.band) - bandNumber(b.band))
+          : [];
+        const destination = role.destination_profile;
+        const variants = Array.isArray(role.internal_variants)
+          ? role.internal_variants
+          : [];
+
+        els.detail.innerHTML = `
+        <div class="detail-layout">
+          <article class="detail-card">
+            <div class="detail-hero">
+              <div class="pill-row" style="margin-bottom: 9px;">
+                <span class="badge ${archetypeClass[role.archetype] || ""}">${escapeHtml(role.archetype || "?")} - ${escapeHtml(archetypeText[role.archetype] || "Unknown")}</span>
+                <span class="badge">${escapeHtml(getEvidenceLevel(role))}</span>
+              </div>
+              <h2>${escapeHtml(role.role_name)}</h2>
+              <p>${escapeHtml(role.role_name_vn || "")} · ${escapeHtml(role.role_code)}</p>
+            </div>
+
+            <div class="detail-grid">
+              ${fact("Nhóm nghề", role.role_group)}
+              ${fact("Level", bands)}
+              ${fact("Job outlook", formatOutlook(role))}
+              ${fact("Confidence", role.confidence_overall || "Chưa rõ")}
+              ${fact("Education", role.education_path_primary || "Chưa gắn")}
+              ${fact("Work environment", role.work_environment_primary || "Chưa gắn")}
+            </div>
+
+            ${section("Vai trò", role.archetype_reasoning || role.entry_note || destination?.core_output)}
+            ${section("Ghi chú dữ liệu", role._meta?.anchor_note || role.confidence_note)}
+            ${variants.length ? section("Biến thể nội bộ", variants.map((item) => `${item.variant_name}: ${item.focus}`).join(" ")) : ""}
+          </article>
+
+          ${renderRelationshipGraph(role)}
+        </div>
+
+        <div class="levels">
+          <h3>${levels.length ? "Level ladder" : "Destination profile"}</h3>
+          ${levels.length ? renderLevels(levels) : renderDestination(destination)}
+        </div>
+      `;
+      }
+
+      function fact(label, value) {
+        return `
+        <div class="fact">
+          <div class="fact-label">${escapeHtml(label)}</div>
+          <div class="fact-value">${escapeHtml(value || "Chưa rõ")}</div>
+        </div>
+      `;
+      }
+
+      function section(title, content) {
+        if (!content) return "";
+        return `
+        <div class="body-section">
+          <h3>${escapeHtml(title)}</h3>
+          <p>${escapeHtml(content)}</p>
+        </div>
+      `;
+      }
+
+      function formatOutlook(role) {
+        const outlook = role.job_outlook;
+        if (!outlook) return "Chưa có";
+        const postings = outlook.itviec_open_postings;
+        const date = outlook.measured_at
+          ? `, đo ngày ${outlook.measured_at}`
+          : "";
+        return postings == null
+          ? `Có outlook, chưa có count${date}`
+          : `${postings} ITviec postings${date}`;
+      }
+
+      function findRole(code) {
+        return state.data.find((role) => role.role_code === code);
+      }
+
+      function normalizeRelationshipItems(items) {
+        return Array.isArray(items) ? items.filter(Boolean) : [];
+      }
+
+      function relationshipNode(item, type) {
+        const code = item.role_code || "";
+        const role = code ? findRole(code) : null;
+        const label =
+          item.role_name || role?.role_name || code || item.reason || "Unknown";
+        const title = [code, item.note, item.reason, item.evidence_level]
+          .filter(Boolean)
+          .join(" | ");
+        const data = role ? ` data-code="${escapeHtml(code)}"` : "";
+        return `
+        <button type="button" class="rel-node ${type}"${data} title="${escapeHtml(title || label)}">
+          ${escapeHtml(code ? `${code} · ${label}` : label)}
+        </button>
+      `;
+      }
+
+      function relationshipColumn(title, items, type, emptyText) {
+        const nodes = normalizeRelationshipItems(items);
+        return `
+        <div class="rel-column">
+          <div class="rel-column-title">${escapeHtml(title)}</div>
+          ${nodes.length ? nodes.map((item) => relationshipNode(item, type)).join("") : `<div class="rel-node">${escapeHtml(emptyText)}</div>`}
+        </div>
+      `;
+      }
+
+      function renderRelationshipGraph(role) {
+        const related = role.related_roles || {};
+        const feeder = normalizeRelationshipItems(related.feeder_roles);
+        const next = normalizeRelationshipItems(related.next_steps);
+        const lateral = normalizeRelationshipItems(related.lateral_moves);
+        const confused = normalizeRelationshipItems(
+          related.often_confused_with,
+        );
+        const hasAny =
+          feeder.length || next.length || lateral.length || confused.length;
+
+        if (!hasAny) {
+          return `
+          <article class="relationship-card">
+            <div class="relationship-head">
+              <h3>Relationship graph</h3>
+              <p>Role này chưa có relationship được gắn trong dataset.</p>
+            </div>
+            <div class="relationship-map">
+              <button type="button" class="rel-node current">${escapeHtml(role.role_code)} · ${escapeHtml(role.role_name)}</button>
+            </div>
+          </article>
+        `;
+        }
+
+        return `
+        <article class="relationship-card">
+          <div class="relationship-head">
+            <h3>Relationship graph</h3>
+            <p>Feeder là đầu vào, next là bước đi tiếp, lateral là chuyển ngang, confused là role dễ nhầm.</p>
+          </div>
+          <div class="relationship-map">
+            <div class="rel-flow">
+              ${relationshipColumn("Feeder roles", feeder, "feeder", "Không có feeder")}
+              <div class="rel-arrow">→</div>
+              <div class="rel-column">
+                <div class="rel-column-title">Current role</div>
+                <button type="button" class="rel-node current">${escapeHtml(role.role_code)} · ${escapeHtml(role.role_name)}</button>
+              </div>
+              <div class="rel-arrow">→</div>
+              ${relationshipColumn("Next steps", next, "next", "Chưa có next step")}
+            </div>
+            <div class="rel-secondary">
+              ${relationshipColumn("Lateral moves", lateral, "lateral", "Không có lateral move")}
+              ${relationshipColumn("Often confused with", confused, "confused", "Không có role dễ nhầm")}
+            </div>
+          </div>
+        </article>
+      `;
+      }
+
+      function renderLevels(levels) {
+        return levels
+          .map(
+            (level) => `
+        <article class="level-card">
+          <div class="level-head">
+            <div>
+              <h4>${escapeHtml(level.band || "")} · ${escapeHtml(level.title_vn || "Chưa có title")}</h4>
+              <div class="role-meta">${escapeHtml(level.years_experience || "Chưa rõ năm kinh nghiệm")}</div>
+            </div>
+            <span class="badge">${escapeHtml(level.evidence_level || "No evidence")}</span>
+          </div>
+          <p>${escapeHtml(level.core_output || "Chưa có mô tả output.")}</p>
+          ${renderPills("Tasks", level.tasks)}
+          ${renderSkills(level.skills_hard)}
+          ${renderPills("Soft skills", level.skills_soft)}
+        </article>
+      `,
+          )
+          .join("");
+      }
+
+      function renderDestination(destination) {
+        if (!destination) {
+          return `<article class="level-card"><p>Role này chưa có level ladder hoặc destination profile.</p></article>`;
+        }
+
+        return `
+        <article class="level-card">
+          <div class="level-head">
+            <div>
+              <h4>${escapeHtml(destination.band_range || "Destination")}</h4>
+              <div class="role-meta">${escapeHtml(destination.min_years_experience || "Chưa rõ năm kinh nghiệm")}</div>
+            </div>
+            <span class="badge">${escapeHtml(destination.evidence_level || "No evidence")}</span>
+          </div>
+          <p>${escapeHtml(destination.core_output || "Chưa có mô tả output.")}</p>
+          ${renderPills("Tasks", destination.tasks)}
+          ${renderSkills(destination.skills_hard)}
+          ${renderPills("Soft skills", destination.skills_soft)}
+        </article>
+      `;
+      }
+
+      function renderPills(label, items) {
+        if (!Array.isArray(items) || !items.length) return "";
+
+        return `
+    <div class="mini-list">
+      <div><strong>${escapeHtml(label)}:</strong></div>
+      <div class="pill-row">
+        ${items
+          .slice(0, 8)
+          .map((item) => {
+            const text =
+              typeof item === "string"
+                ? item
+                : item?.skill ||
+                  item?.name ||
+                  item?.label ||
+                  JSON.stringify(item);
+
+            return `<span class="badge">${escapeHtml(text)}</span>`;
+          })
+          .join("")}
+      </div>
+    </div>
+  `;
+      }
+
+      function renderSkills(skills) {
+        if (!Array.isArray(skills) || !skills.length) return "";
+        return `
+        <div class="mini-list">
+          <div><strong>Hard skills:</strong></div>
+          <div class="pill-row">
+            ${skills
+              .slice(0, 10)
+              .map((item) => {
+                const label =
+                  typeof item === "string"
+                    ? item
+                    : `${item.skill}${item.level ? ` · ${item.level}` : ""}`;
+                return `<span class="badge">${escapeHtml(label)}</span>`;
+              })
+              .join("")}
+          </div>
+        </div>
+      `;
+      }
+
+      function currentSummary() {
+        const selected = state.data.find(
+          (role) => role.role_code === state.selectedCode,
+        );
+        const total = state.data.length;
+        const groups = Object.keys(
+          countBy(state.data, (role) => role.role_group),
+        ).length;
+        const archetypes = sortedEntries(
+          countBy(state.data, (role) => role.archetype),
+        )
+          .map(([key, value]) => `${key}: ${value}`)
+          .join(", ");
+
+        if (!selected) {
+          return `${DATASETS[state.source]}: ${total} roles, ${groups} nhóm nghề. Archetype: ${archetypes}.`;
+        }
+
+        const bands = Array.isArray(selected.occupied_bands)
+          ? selected.occupied_bands.join("/")
+          : "chưa rõ";
+        return [
+          `${DATASETS[state.source]}: ${total} roles, ${groups} nhóm nghề.`,
+          `Archetype: ${archetypes}.`,
+          `Role đang chọn: ${selected.role_code} - ${selected.role_name} (${selected.role_name_vn || "VN name missing"}), nhóm ${selected.role_group}, archetype ${selected.archetype}, level ${bands}.`,
+          `Job outlook: ${formatOutlook(selected)}.`,
+        ].join("\n");
+      }
+
+      els.datasetTabs.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-file]");
+        if (!button) return;
+        els.datasetTabs
+          .querySelectorAll("button")
+          .forEach((item) => item.classList.toggle("active", item === button));
+        loadDataset(button.dataset.file).catch(showError);
+      });
+
+      els.search.addEventListener("input", () => {
+        state.query = els.search.value;
+        applyFilters();
+      });
+
+      els.groupFilter.addEventListener("change", () => {
+        state.group = els.groupFilter.value;
+        applyFilters();
+      });
+
+      els.archetypeFilter.addEventListener("change", () => {
+        state.archetype = els.archetypeFilter.value;
+        applyFilters();
+      });
+
+      els.roleList.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-code]");
+        if (!button) return;
+        state.selectedCode = button.dataset.code;
+        render();
+      });
+
+      els.detail.addEventListener("click", (event) => {
+        const button = event.target.closest(".rel-node[data-code]");
+        if (!button) return;
+        state.selectedCode = button.dataset.code;
+        const selected = findRole(state.selectedCode);
+        if (selected) {
+          state.query = "";
+          state.group = "all";
+          state.archetype = "all";
+          els.search.value = "";
+          els.groupFilter.value = "all";
+          els.archetypeFilter.value = "all";
+          applyFilters();
+          document
+            .getElementById("detail")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+
+      els.copySummary.addEventListener("click", async () => {
+        const text = currentSummary();
+        try {
+          await navigator.clipboard.writeText(text);
+          els.copySummary.textContent = "Copied";
+          setTimeout(() => {
+            els.copySummary.textContent = "Copy summary";
+          }, 1200);
+        } catch {
+          window.prompt("Summary", text);
+        }
+      });
+
+      function showError(error) {
+        els.subtitle.textContent = "Không tải được dữ liệu";
+        els.detail.innerHTML = `<div class="detail-card"><div class="empty">${escapeHtml(error.message)}</div></div>`;
+      }
+
+      loadDataset(state.source).catch(showError);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-SEC1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SEC_IR",
+  "role_name": "Incident Response / DFIR Specialist",
+  "role_name_vn": "Chuyên viên ứng cứu sự cố & điều tra số",
+  "role_group": "Cyber Security",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: vào từ SOC Analyst đã đạt tier cao nhất (SOC L3 nội bộ), không có cửa vào entry-level.",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher. Vào từ SOC Analyst đã đạt tier cao nhất nội bộ (SOC L3 nội bộ — KHÔNG nhầm với band toàn cục), theo roles.csv. Sàn hợp lý là L4.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "Incident Response Specialist (Middle)",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền SOC L3 nội bộ)",
+      "core_output": "Tham gia xử lý sự cố bảo mật theo playbook có sẵn dưới hướng dẫn của chuyên gia senior, thu thập log/artifact ban đầu, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior DFIR Specialist",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ điều tra và xử lý một sự cố bảo mật từ đầu tới cuối (containment, eradication, recovery), viết báo cáo điều tra số (forensics), tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "IR / DFIR Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật đội ứng cứu sự cố, xây dựng playbook và diễn tập (tabletop exercise) cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal DFIR / Threat Hunter",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chiến lược ứng cứu sự cố xuyên tổ chức, là đầu mối kỹ thuật cao nhất khi có sự cố nghiêm trọng (crisis lead), tương ứng vai trò chịu trách nhiệm cross-team.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal DFIR / Threat Hunter",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SEC_ISM",
+        "from_band": "L6",
+        "note": "Suy luận — chưa có JD xác nhận."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SEC_SOC",
+        "role_name": "SOC Analyst",
+        "from_band": "L5",
+        "note": "Đường vào chính — vào từ tier cao nhất nội bộ của SOC (không nhầm với band toàn cục).",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "SEC_ISM",
+        "role_name": "Information Security Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SEC_ENG",
+        "role_name": "Cybersecurity / Security Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SEC_SOC",
+        "reason": "SOC thiên giám sát/phát hiện liên tục, IR/DFIR thiên xử lý sâu khi sự cố đã xảy ra.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_ENG",
+        "reason": "Ranh giới nằm ở phản ứng sự cố so với thiết kế/triển khai phòng vệ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ tỷ lệ vị trí IR/DFIR toàn thời gian tách biệt tại VN so với việc SOC senior kiêm nhiệm.",
+    "Sàn L4 là suy luận từ việc phải qua SOC tier cao nhất trước — chưa có JD xác nhận mốc năm quy đổi thật."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

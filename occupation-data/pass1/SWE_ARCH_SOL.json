@@ -1,0 +1,204 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A)",
+      "golden/SWE_ARCH_ENT.json v2 (archetype C)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "trung bình — CÓ MÂU THUẪN CHƯA GIẢI QUYẾT",
+    "anchor_note": "Neo vào golden/SWE_ARCH_ENT.json v2, trong đó có 3 JD mang title Solution Architect. Nhưng chính golden đó ghi flag VF-02: tồn tại tin tuyển 'Cloud Solution Architect (Senior, Junior)' ở mức 1-5 năm, mâu thuẫn với việc xếp role này là destination node."
+  },
+  "role_code": "SWE_ARCH_SOL",
+  "role_name": "Solution Architect",
+  "role_name_vn": "Kiến trúc sư giải pháp",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "D",
+  "archetype_reasoning": "SỬA 2026-08-22 (đã xác minh, không còn 'chưa chốt'): xác nhận qua web search có hai quần thể tách bạch. Nhóm ngân hàng/enterprise (NAB, ACB): destination node thật, sàn 8-10+ năm, không có entry-level. Nhóm cloud reseller/presales (MEGAZONE, Noventiq, KDDI, SMARTOSC, TechX): có ladder riêng, đăng tin 'Cloud Solution Architect (Senior, Junior)' sàn chỉ 3+ năm, và ít nhất một tin ghi rõ 'trainee dưới sự hướng dẫn của senior architect' — tức có cửa vào thấp hơn nhiều so với nhóm ngân hàng. Đây là archetype D (hybrid), không phải C thuần.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7",
+    "L8"
+  ],
+  "entry_note": "CÓ cửa vào, nhưng CHỈ ở phân khúc cloud reseller/presales (MEGAZONE, Noventiq, KDDI, SMARTOSC...), sàn quan sát được qua web search là 3+ năm kinh nghiệm, có cả nhánh Junior. Ở phân khúc ngân hàng/enterprise (NAB, ACB) HOÀN TOÀN không có entry — sàn 8-10+ năm. Hai phân khúc này không đi cùng một ladder.",
+  "destination_profile": {
+    "band_range": "L6 - L8",
+    "min_years_experience": "8-15",
+    "years_band_check": "Sàn 8 nằm trong khoảng L6-L7. Lưu ý: KHÔNG có JD nào hỗ trợ band L6 (sàn 6 năm) — mọi JD Solution Architect thu thập được đều từ 8 năm trở lên. roles.csv có thể đang để band thấp hơn thực tế.",
+    "core_output": "Thiết kế kiến trúc giải pháp đầu-cuối cho một dự án hoặc một phân vùng nghiệp vụ, và chủ trì phân tích phương án: so sánh sản phẩm đóng gói với tự phát triển, chọn cách chia microservice, chọn dịch vụ cloud — cân bằng giữa tốc độ ra giá trị, chi phí, bảo mật và độ khớp với kiến trúc mục tiêu do cấp Enterprise Architect đặt ra.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — role này đã nằm trên nhánh IC, sau điểm rẽ. Không JD nào trong bộ mô tả điểm rẽ nằm ở band nào.",
+  "internal_variants": [
+    {
+      "variant_name": "Domain Solution Architect",
+      "focus": "Gắn với một phân vùng nghiệp vụ cụ thể; title thường kèm tên domain.",
+      "evidence_level": "C_INFERRED",
+      "anchor": "golden C: NAB 'BTB - Transaction Banking', NAB 'Merchant Service'"
+    },
+    {
+      "variant_name": "Presales / Client-facing Solution Architect",
+      "focus": "Thiết kế giải pháp cho khách hàng doanh nghiệp kèm trách nhiệm presales, đề xuất và trả lời RFP. Đặc trưng của công ty dịch vụ, không xuất hiện ở JD ngân hàng nào.",
+      "evidence_level": "C_INFERRED",
+      "anchor": "golden C: SoftwareOne, MEGAZONE"
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_TECHLEAD",
+        "role_name": "Tech Lead",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L5-L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "INFRA_SYSENG",
+        "role_name": "Systems Engineer",
+        "from_band": "L5-L6",
+        "note": "Có neo: golden C ghi nhận TPBank chấp nhận nền tảng Infrastructure/Cloud/Platform Engineering thay cho nền phát triển phần mềm — tức có đường vào kiến trúc KHÔNG đi qua nghề lập trình.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "SWE_ARCH_ENT",
+        "role_name": "Enterprise Architect",
+        "note": "Có neo mạnh: 4 JD trong golden C viết yêu cầu dưới dạng 'Solution / Enterprise architecture' như một khối kinh nghiệm liền.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect",
+        "note": "Chồng lấn thật, có neo từ golden C.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_ARCH_ENT",
+        "reason": "Có bằng chứng trực tiếp: NAB dùng chung nguyên văn khối yêu cầu cho hai title, và phần mô tả của tin Enterprise Architect mở đầu bằng 'A solution Architect at NAB sets the technical direction'. Ở VN có thể đây không phải hai role tách bạch.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_ARCH",
+        "reason": "Ở đại lý cloud, title 'Cloud Solution Architect' được dùng ở mức 1-5 năm và mang nghĩa presales, không mang nghĩa cấp bậc cao.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "Có neo từ golden C: trọng tâm là hướng khách hàng, presales, đề xuất và trả lời RFP — phần việc không xuất hiện trong bất kỳ JD ngân hàng nào.",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "Có neo từ golden C: gắn với hội đồng thẩm định kiến trúc, phối hợp với Enterprise/Security/Data Architect, và nghiệp vụ ngân hàng là yêu cầu bắt buộc chứ không phải điểm cộng.",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": 14,
+    "itviec_slug_used": "solution-architect",
+    "topdev_open_postings": null,
+    "measured_at": "2026-08-22",
+    "confidence": "medium",
+    "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [
+    {
+      "id": "VF-C1-04",
+      "severity": "đã giải quyết",
+      "flag": "ARCHETYPE CHƯA CHỐT. roles.csv xếp C (destination node), nhưng có tin tuyển 'Cloud Solution Architect (AWS/Azure) (Senior, Junior)' ở mức 1-5 năm với nhánh Junior tường minh. Nếu title Solution Architect tồn tại ở mức dưới 5 năm trong phân khúc presales cloud thì role này không phải destination node thuần. | CẬP NHẬT: đã xác nhận archetype D qua web search (xem archetype_reasoning). Đã sửa roles.csv và file này.",
+      "action": "Còn lại: Pass 2 cần mở JD đầy đủ (không chỉ snippet search) của MEGAZONE/Noventiq/KDDI để nâng evidence_level của band L3 lên A_VERIFIED, và tìm JD thật cho band L5 (hiện chỉ suy luận nội suy)."
+    },
+    {
+      "id": "VF-C1-05",
+      "severity": "trung bình",
+      "flag": "Band L6 trong roles.csv không có JD nào hỗ trợ; mọi JD Solution Architect thu thập được đều từ 8 năm trở lên, tức L7 trở lên.",
+      "action": "Cân nhắc thu hẹp roles.csv về L7-L8, hoặc giữ L6 và ghi rõ nó chỉ áp dụng cho phân khúc presales."
+    }
+  ],
+  "confidence_overall": "medium (đã xác nhận archetype, chưa xác nhận đầy đủ nội dung band thấp)",
+  "unknowns": [
+    "Band L3 và L5 của nhánh presales/cloud-reseller mới có bằng chứng từ SNIPPET tìm kiếm, chưa mở JD đầy đủ — cần Pass 2 xác nhận bằng A_VERIFIED thật.",
+    "Ranh giới Solution Architect và Enterprise Architect không xác định được từ JD: NAB dùng chung nội dung cho hai title.",
+    "Band L6 không có bằng chứng.",
+    "Chưa thu thập JD Solution Architect nào từ công ty product Việt Nam hoặc bigtech FDI."
+  ],
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "Cloud Solution Architect (Junior)",
+      "title_aliases": [
+        "Junior Solution Architect",
+        "Cloud Solution Architect (AWS/Azure) - Junior"
+      ],
+      "years_experience": "3+ (theo tin tuyển của MEGAZONE, Noventiq)",
+      "core_output": "Hỗ trợ thiết kế giải pháp cloud cho khách hàng dưới sự hướng dẫn của kiến trúc sư senior, tham gia migration assessment và demo kỹ thuật ở quy mô nhỏ, chưa tự chủ trong việc chốt phương án cho khách hàng lớn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "B_TITLE_SEEN",
+      "evidence_company": "MEGAZONE; Noventiq; KDDI; SMARTOSC (qua web search, chưa mở JD đầy đủ)",
+      "evidence_title_observed": "Cloud Solution Architect (AWS) (Senior, Junior)",
+      "source_url": null,
+      "evidence_note": "Nguồn từ snippet kết quả tìm kiếm, KHÔNG phải JD đầy đủ đã mở và đọc — cần Pass 2 mở JD thật để nâng lên A_VERIFIED."
+    },
+    {
+      "band": "L5",
+      "title_vn": "Cloud Solution Architect (Senior)",
+      "title_aliases": [
+        "Senior Cloud Solution Architect",
+        "Technical Architect (AWS focus)"
+      ],
+      "years_experience": "5-8 (suy luận, chưa có JD đầy đủ xác nhận mốc chính xác)",
+      "core_output": "Tự chủ dẫn dắt migration assessment và deal technical strategy cho khách hàng doanh nghiệp cỡ vừa, làm việc trực tiếp với account manager, chưa ở tầm cố vấn chiến lược cấp C-level như phân khúc ngân hàng.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null,
+      "evidence_note": "Suy luận nội suy giữa band L3 (Junior, có neo) và L7 (ngân hàng, có neo) — CHƯA có JD trực tiếp cho band này."
+    }
+  ]
+}

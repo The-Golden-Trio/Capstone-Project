@@ -1,0 +1,180 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-INFRA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "INFRA_SYSENG",
+  "role_name": "Systems Engineer",
+  "role_name_vn": "Kỹ sư hệ thống",
+  "role_group": "IT Infrastructure & Enterprise Systems",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: vào từ SysAdmin, không có cửa vào entry-level.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher thuần. Vào từ System Administrator có kinh nghiệm, theo roles.csv. Sàn hợp lý là L3.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "Systems Engineer (mới chuyển ngang)",
+      "title_aliases": [],
+      "years_experience": "1-3 (kèm nền SysAdmin)",
+      "core_output": "Triển khai và cấu hình hệ thống máy chủ/ảo hoá theo thiết kế có sẵn, hỗ trợ vận hành, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Systems Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Tự chủ thiết kế và triển khai một hệ thống máy chủ/ảo hoá mới cho một mảng hạ tầng, tương ứng vai trò tự chủ trong phạm vi một module.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Systems Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ kiến trúc hệ thống cho cả một trung tâm dữ liệu/tổ chức, chịu trách nhiệm về hiệu năng và độ sẵn sàng, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Systems Engineering Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật đội Systems Engineering, định chuẩn kiến trúc hệ thống cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [],
+    "management_track": [
+      {
+        "role_code": "INFRA_ITMANAGER",
+        "from_band": "L6",
+        "note": "Suy luận — chưa có JD xác nhận."
+      }
+    ],
+    "ic_track_note": "Không quan sát được band IC nào cao hơn L6 cho role này trong roles.csv hiện tại — người muốn tiếp tục leo cao thường CHUYỂN SANG role khác (xem management_track hoặc related_roles.next_steps) chứ không có nấc Principal riêng trong chính title này."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "INFRA_SYSADMIN",
+        "role_name": "System Administrator",
+        "from_band": "L3",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "INFRA_ITMANAGER",
+        "role_name": "IT Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "INFRA_ITOPS",
+        "role_name": "IT Operations / Infrastructure Engineer",
+        "note": "Chồng lấn mạnh.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "INFRA_ITOPS",
+        "reason": "Ranh giới nằm ở thiết kế hệ thống mới (Systems Engineer) so với vận hành hàng ngày (IT Operations) — mờ tại nhiều công ty VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa có quy tắc phân định rõ với INFRA_ITOPS.",
+    "Trần L6 là suy luận, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

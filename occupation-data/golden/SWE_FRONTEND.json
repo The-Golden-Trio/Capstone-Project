@@ -1,0 +1,1165 @@
+{
+  "_meta": {
+    "status": "HOAN_CHINH",
+    "jd_count": 40,
+    "bands_covered": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7",
+      "L8 (nhánh Management)"
+    ],
+    "bands_thin": [
+      "L3",
+      "L6"
+    ],
+    "bands_missing": [],
+    "note": "40 JD thật, phủ đủ 7 band IC + 2 nấc nhánh Management, đủ 4 loại công ty. Sẵn sàng dùng làm golden role cho Pass 1. Điểm yếu còn lại: L6 chỉ 1 JD hợp lệ; cả 3 JD nhánh Management đều từ một công ty (NAB).",
+    "capture_sheet": "jd_capture_SWE_FRONTEND.csv"
+  },
+  "role_code": "SWE_FRONTEND",
+  "role_name": "Front-end Developer",
+  "role_name_vn": "Lập trình viên Front-end",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "A",
+  "archetype_reasoning": "Tìm được tin tuyển Intern/entry ở cả 3 loại công ty: outsourcing (CODE LEAP), product Việt (Holistics, FireGroup), bigtech FDI (NAVER, Axon). Cửa vào entry-level có thật và rộng. Ladder trải liên tục từ L1 tới L7 với JD thật ở mỗi mốc trừ L6.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7",
+    "L8"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Frontend Engineer Intern",
+      "years_experience": "0",
+      "title_aliases": [
+        "Frontend Engineer (ReactJS) Intern",
+        "Software Engineering Intern",
+        "Fullstack Engineer (Intern Level)"
+      ],
+      "core_output": "Hiện thực component giao diện và tính năng nhỏ bằng React hoặc Vue dưới sự kèm cặp trực tiếp của kỹ sư có kinh nghiệm, tham gia code review với vai trò người học, và chưa chịu trách nhiệm về chất lượng sản phẩm cuối.",
+      "tasks": [
+        "Hiện thực và bảo trì component giao diện theo coding standard có sẵn",
+        "Viết và kiểm thử tính năng mới trong phạm vi task được giao",
+        "Hỗ trợ debug và tinh chỉnh hoạt động của ứng dụng",
+        "Chuyển wireframe và bản thiết kế thành prototype chạy được",
+        "Tham gia buổi thiết kế và code review với vai trò quan sát, đóng góp ý kiến",
+        "Dựng nhanh prototype để thử ý tưởng và thu phản hồi người dùng"
+      ],
+      "skills_hard": [
+        {
+          "skill": "ReactJS hoặc Vue.js",
+          "level": "familiar",
+          "seen_in": [
+            "FE01",
+            "FE02",
+            "FE04"
+          ]
+        },
+        {
+          "skill": "JavaScript / TypeScript",
+          "level": "familiar",
+          "seen_in": [
+            "FE01",
+            "FE02",
+            "FE04"
+          ]
+        },
+        {
+          "skill": "HTML/CSS",
+          "level": "familiar",
+          "seen_in": [
+            "FE02",
+            "FE04"
+          ]
+        },
+        {
+          "skill": "Git",
+          "level": "familiar",
+          "seen_in": [
+            "FE01"
+          ]
+        },
+        {
+          "skill": "Cấu trúc dữ liệu & giải thuật",
+          "level": "familiar",
+          "seen_in": [
+            "FE01",
+            "FE02",
+            "FE03",
+            "FE04"
+          ]
+        }
+      ],
+      "skills_soft": [
+        {
+          "skill": "Chủ động hỏi và tìm người hỗ trợ",
+          "seen_in": [
+            "FE01"
+          ]
+        },
+        {
+          "skill": "Kỹ năng giải quyết vấn đề",
+          "seen_in": [
+            "FE01",
+            "FE04"
+          ]
+        }
+      ],
+      "evidence_level": "A_VERIFIED",
+      "evidence_company": "CODE LEAP; NAVER Vietnam; Axon; Holistics; NVIDIA",
+      "evidence_jd_ids": [
+        "FE01",
+        "FE02",
+        "FE03",
+        "FE04",
+        "FE33"
+      ],
+      "source_url": "https://careers.holistics.io/job-openings/software-engineering-intern",
+      "evidence_note": "5 JD, phủ cả 3 loại công ty. FE33 (NVIDIA) là JD intern frontend thuần chi tiết nhất — làm trên ứng dụng production thật."
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Frontend Engineer",
+      "years_experience": "0-1",
+      "title_aliases": [
+        "Tech Fresher (Client Engineering track)",
+        "Junior Fullstack Engineer (AI-First)"
+      ],
+      "core_output": "Được phân vào một đội thật và làm tính năng có người dùng dưới sự kèm cặp sát của mentor được chỉ định, tự hoàn thành được phạm vi nhỏ đã giao và biết escalate sớm khi vượt tầm, nhưng chưa tự chịu trách nhiệm về kết quả cuối.",
+      "tasks": [
+        "Xây ứng dụng hướng người dùng trên nền React trong phạm vi tính năng được giao",
+        "Hiện thực giao diện, tạo component tái sử dụng, xử lý trạng thái loading/empty/error",
+        "Viết kiểm thử tự động cho luồng nghiệp vụ quan trọng",
+        "Tham gia đẩy sản phẩm lên staging và production, theo dõi log"
+      ],
+      "skills_hard": [
+        {
+          "skill": "React",
+          "level": "familiar",
+          "seen_in": [
+            "FE05",
+            "FE37"
+          ]
+        },
+        {
+          "skill": "TypeScript/JavaScript ES6+",
+          "level": "familiar",
+          "seen_in": [
+            "FE05"
+          ]
+        },
+        {
+          "skill": "Cấu trúc dữ liệu & giải thuật",
+          "level": "familiar",
+          "seen_in": [
+            "FE37"
+          ]
+        },
+        {
+          "skill": "REST API + SQL cơ bản",
+          "level": "familiar",
+          "seen_in": [
+            "FE05"
+          ]
+        }
+      ],
+      "skills_soft": [
+        {
+          "skill": "Tự thúc đẩy, học nhanh",
+          "seen_in": [
+            "FE37"
+          ]
+        },
+        {
+          "skill": "Escalate sớm khi bị chặn",
+          "seen_in": [
+            "FE05"
+          ]
+        },
+        {
+          "skill": "Không nộp code không giải thích được",
+          "seen_in": [
+            "FE05"
+          ]
+        }
+      ],
+      "evidence_level": "A_VERIFIED",
+      "evidence_company": "Zalo (VNG); Nexlab Technology",
+      "evidence_jd_ids": [
+        "FE05",
+        "FE37"
+      ],
+      "source_url": "https://www.linkedin.com/jobs/view/zalo-tech-fresher-2026-at-zalo-4410541085/",
+      "evidence_note": "FE37 là chương trình Fresher thật (12 tuần, có mentor chỉ định). Xác nhận band L2 tồn tại tại VN dưới dạng chương trình tuyển tập trung, không phải title tuyển lẻ.",
+      "academic_gate": "FE37 (Zalo) yêu cầu GPA tối thiểu 7.5/10 hoặc 3.0/4 — ngưỡng học lực duy nhất trong toàn bộ 37 JD. Xuất hiện đúng ở band này, nơi ứng viên chưa có kinh nghiệm để thay thế bằng chứng năng lực."
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Frontend Engineer",
+      "years_experience": "1-3",
+      "title_aliases": [
+        "Frontend Software Engineer I",
+        "Junior Software Engineer",
+        "Frontend Engineer (Junior/Middle)"
+      ],
+      "core_output": "Tự hiện thực trọn vẹn một tính năng frontend trong phạm vi đã được xác định bằng ReactJS hoặc Vue, tham gia code review hai chiều với đồng nghiệp, nhưng quyết định về kiến trúc và lựa chọn thư viện vẫn do người khác đưa ra.",
+      "tasks": [
+        "Hiện thực end-to-end một tính năng giao diện, phối hợp trực tiếp với Product và Design",
+        "Tham gia code review và buổi thiết kế kiến trúc",
+        "Tích hợp API, quản lý state, xử lý debug trên trình duyệt",
+        "Đảm bảo code đạt chuẩn chất lượng và hiệu năng của team"
+      ],
+      "skills_hard": [
+        {
+          "skill": "ReactJS",
+          "level": "proficient",
+          "seen_in": [
+            "FE06",
+            "FE09"
+          ]
+        },
+        {
+          "skill": "Vue.js 3 + TypeScript",
+          "level": "proficient",
+          "seen_in": [
+            "FE10"
+          ]
+        },
+        {
+          "skill": "JavaScript",
+          "level": "proficient",
+          "seen_in": [
+            "FE06",
+            "FE09"
+          ]
+        },
+        {
+          "skill": "Component design & state management",
+          "level": "proficient",
+          "seen_in": [
+            "FE09"
+          ]
+        },
+        {
+          "skill": "Tích hợp LLM/AI vào sản phẩm",
+          "level": "familiar",
+          "seen_in": [
+            "FE09"
+          ]
+        }
+      ],
+      "skills_soft": [
+        {
+          "skill": "Giao tiếp tiếng Anh rõ ràng",
+          "seen_in": [
+            "FE06"
+          ]
+        },
+        {
+          "skill": "Ownership, làm được với yêu cầu chưa rõ ràng",
+          "seen_in": [
+            "FE09"
+          ]
+        }
+      ],
+      "evidence_level": "A_VERIFIED",
+      "evidence_company": "Axon; Binance; Holistics",
+      "evidence_jd_ids": [
+        "FE06",
+        "FE09",
+        "FE10"
+      ],
+      "source_url": "https://www.linkedin.com/jobs/view/frontend-software-engineer-i-at-axon-4402682882/",
+      "evidence_note": "FE11 (FireGroup 'Junior Frontend Engineer', 1+ năm) về title và số năm thuộc band này, nhưng phần trách nhiệm được viết ở mức L5-L6. Xem verification_flags."
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Frontend Engineer",
+      "years_experience": "3-5",
+      "title_aliases": [
+        "Frontend Software Engineer I/II",
+        "Middle Frontend Engineer",
+        "Frontend Developer (Middle/Senior)",
+        "Frontend Engineer (Intermediate)",
+        "Fullstack Engineer, ReactJS"
+      ],
+      "core_output": "Chịu trách nhiệm end-to-end một luồng tính năng frontend, tự quyết định cách hiện thực và cấu trúc component trong khung kiến trúc tổng thể do người khác đặt ra, review code cho đồng nghiệp và tối ưu hiệu năng ứng dụng.",
+      "tasks": [
+        "Thiết kế và xây dựng dịch vụ frontend cho sản phẩm, viết code tối ưu và tái sử dụng được",
+        "Review code và đưa phản hồi về vấn đề tiềm ẩn cho đồng nghiệp",
+        "Phân tích, debug và xử lý lỗi phức tạp",
+        "Tối ưu ứng dụng về tốc độ và khả năng mở rộng",
+        "Ra quyết định kiến trúc ở cấp component, dựa trên kiến trúc tổng thể đã được cung cấp",
+        "Viết tài liệu kỹ thuật",
+        "Hướng dẫn kỹ sư cấp dưới trong squad",
+        "Đào tạo lập trình viên fresher/junior trong đội"
+      ],
+      "skills_hard": [
+        {
+          "skill": "ReactJS / Vue.js + Nuxt",
+          "level": "proficient",
+          "seen_in": [
+            "FE07",
+            "FE12",
+            "FE13",
+            "FE14",
+            "FE15",
+            "FE19"
+          ]
+        },
+        {
+          "skill": "TypeScript",
+          "level": "proficient",
+          "seen_in": [
+            "FE12",
+            "FE13",
+            "FE14",
+            "FE15",
+            "FE19"
+          ]
+        },
+        {
+          "skill": "Rendering strategies (CSR/SSR)",
+          "level": "proficient",
+          "seen_in": [
+            "FE13",
+            "FE14"
+          ]
+        },
+        {
+          "skill": "Next.js",
+          "level": "proficient",
+          "seen_in": [
+            "FE19"
+          ]
+        },
+        {
+          "skill": "State management (Redux/TanStack Query)",
+          "level": "proficient",
+          "seen_in": [
+            "FE14",
+            "FE15"
+          ]
+        },
+        {
+          "skill": "Build tools (Webpack/Vite/Rollup)",
+          "level": "proficient",
+          "seen_in": [
+            "FE15"
+          ]
+        },
+        {
+          "skill": "Unit + E2E testing (Jest/RTL/Playwright/Cypress)",
+          "level": "proficient",
+          "seen_in": [
+            "FE12",
+            "FE14"
+          ]
+        },
+        {
+          "skill": "CI/CD",
+          "level": "familiar",
+          "seen_in": [
+            "FE12",
+            "FE15"
+          ]
+        },
+        {
+          "skill": "Cloud (AWS/Azure)",
+          "level": "familiar",
+          "seen_in": [
+            "FE12",
+            "FE13"
+          ]
+        },
+        {
+          "skill": "Figma (design-to-code)",
+          "level": "proficient",
+          "seen_in": [
+            "FE13"
+          ]
+        },
+        {
+          "skill": "Micro-frontend (Single-Spa, SystemJS)",
+          "level": "familiar",
+          "seen_in": [
+            "FE23"
+          ]
+        }
+      ],
+      "skills_soft": [
+        {
+          "skill": "Tiếng Anh thành thạo, viết và nói",
+          "seen_in": [
+            "FE12",
+            "FE13",
+            "FE14",
+            "FE15",
+            "FE19"
+          ]
+        },
+        {
+          "skill": "Chủ động, không đợi được giao việc",
+          "seen_in": [
+            "FE13",
+            "FE14"
+          ]
+        },
+        {
+          "skill": "Thoải mái với sự mơ hồ và thay đổi nhanh",
+          "seen_in": [
+            "FE14"
+          ]
+        }
+      ],
+      "evidence_level": "A_VERIFIED",
+      "evidence_company": "Axon; CODE LEAP; DXC; Employment Hero; CMC Global; VNG; Workday; One Mount",
+      "evidence_jd_ids": [
+        "FE07",
+        "FE12",
+        "FE13",
+        "FE14",
+        "FE15",
+        "FE19",
+        "FE23",
+        "FE24",
+        "FE34"
+      ],
+      "source_url": "https://www.linkedin.com/jobs/view/middle-frontend-engineer-vue-js-at-code-leap-4433182712/",
+      "evidence_note": "Band nhiều bằng chứng nhất: 9 JD, phủ đủ 4 loại công ty. Mốc năm tập trung ở 3-4 năm."
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Frontend Engineer",
+      "years_experience": "3-8 (rất phân tán: FinX 3+, NAB 4+ và 5+, Xenith 5+, DataXight 5+, Employment Hero 5+)",
+      "title_aliases": [
+        "Senior Frontend Engineer",
+        "Senior Frontend Engineer (UI Engineer)",
+        "Frontend Engineer (5+ years)"
+      ],
+      "core_output": "Định hình chuẩn kỹ thuật frontend cho cả một sản phẩm — design system, kiến trúc component, chiến lược kiểm thử — và mentor kỹ sư cấp dưới thông qua code review, nhưng không quản lý con người.",
+      "tasks": [
+        "Định hình chuẩn UI, hệ thống component và thực hành kỹ thuật frontend của tổ chức",
+        "Chịu trách nhiệm thiết kế kỹ thuật và tối ưu hiệu năng cho sản phẩm của team",
+        "Xây dựng và đóng góp vào design system dùng chung",
+        "Hiện thực giao diện phức tạp hướng dữ liệu: dashboard, công cụ trực quan hoá",
+        "Tối ưu hiệu năng với tập dữ liệu lớn",
+        "Mentor kỹ sư cấp dưới qua code review và chia sẻ kiến thức, không quản lý trực tiếp",
+        "Phối hợp với PM ở khâu nghiên cứu và cải thiện UX/UI"
+      ],
+      "skills_hard": [
+        {
+          "skill": "React + modern state management",
+          "level": "expert",
+          "seen_in": [
+            "FE16",
+            "FE17",
+            "FE18"
+          ]
+        },
+        {
+          "skill": "TypeScript",
+          "level": "expert",
+          "seen_in": [
+            "FE16",
+            "FE17",
+            "FE18"
+          ]
+        },
+        {
+          "skill": "Design system & component architecture",
+          "level": "expert",
+          "seen_in": [
+            "FE18"
+          ]
+        },
+        {
+          "skill": "Cơ chế build tool (webpack/babel/eslint), không chỉ cấu hình",
+          "level": "expert",
+          "seen_in": [
+            "FE17"
+          ]
+        },
+        {
+          "skill": "Bảo mật web (XSS, CSRF, cookie, http protocol)",
+          "level": "proficient",
+          "seen_in": [
+            "FE17"
+          ]
+        },
+        {
+          "skill": "Testing unit/integration/E2E",
+          "level": "proficient",
+          "seen_in": [
+            "FE16",
+            "FE18"
+          ]
+        },
+        {
+          "skill": "Web performance optimization",
+          "level": "expert",
+          "seen_in": [
+            "FE16",
+            "FE17",
+            "FE18"
+          ]
+        },
+        {
+          "skill": "Data visualization (D3.js, SVG rendering)",
+          "level": "familiar",
+          "seen_in": [
+            "FE18"
+          ]
+        },
+        {
+          "skill": "Micro Frontend (Module Federation/single-spa) — module boundary, shared state, versioning",
+          "level": "proficient",
+          "seen_in": [
+            "FE25"
+          ]
+        },
+        {
+          "skill": "Angular (change detection, RxJS, signals, DI) — thay cho React ở một số nơi",
+          "level": "expert",
+          "seen_in": [
+            "FE36"
+          ]
+        }
+      ],
+      "skills_soft": [
+        {
+          "skill": "Tiếng Anh chuyên nghiệp cho phối hợp toàn cầu",
+          "seen_in": [
+            "FE16",
+            "FE18"
+          ]
+        },
+        {
+          "skill": "Diễn đạt điều chỉnh theo đối tượng nghe",
+          "seen_in": [
+            "FE18"
+          ]
+        },
+        {
+          "skill": "Tư duy AI-first, dùng AI/agentic để tăng tốc",
+          "seen_in": [
+            "FE16",
+            "FE17"
+          ]
+        }
+      ],
+      "evidence_level": "A_VERIFIED",
+      "evidence_company": "DataXight; Binance; Employment Hero; FinX; Moatable; NAB (x3); what3words; Xenith",
+      "evidence_jd_ids": [
+        "FE16",
+        "FE17",
+        "FE18",
+        "FE25",
+        "FE27",
+        "FE28",
+        "FE29",
+        "FE30",
+        "FE35",
+        "FE36"
+      ],
+      "source_url": "https://www.linkedin.com/jobs/view/4454971451/",
+      "evidence_note": "Band đông thứ nhì (10 JD) nhưng ngưỡng năm kinh nghiệm phân tán nhất — từ 3+ tới 5+ cho cùng title Senior, kể cả trong cùng một công ty (NAB dùng cả 4+ và 5+).",
+      "salary_observed": "FE35 (what3words): 3.000-3.500 USD/tháng, khoảng 76-89 triệu VND. Đây là JD DUY NHẤT trong 37 mẫu công bố lương."
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead Frontend Engineer",
+      "years_experience": "7-10 (kèm 2+ năm ở vai trò dẫn dắt)",
+      "title_aliases": [
+        "Lead Frontend Engineer",
+        "Lead Frontend Engineer (Fullstack)",
+        "Frontend Tech Lead"
+      ],
+      "core_output": "Tự do ra quyết định kiến trúc và code ở phạm vi component mình phụ trách trong khung kiến trúc giải pháp do cấp trên đưa xuống, phản biện được quyết định của kỹ sư khác qua peer review, và đã từng dẫn dắt cùng coaching ít nhất một đội kỹ sư.",
+      "tasks": [
+        "Phối hợp với các technology leader để cải thiện và hiện thực định hướng kỹ thuật của tổ chức",
+        "Thiết kế, phát triển, review và quản lý code frontend cho môi trường production",
+        "Thiết kế và quản lý continuous integration, build management và deployment script",
+        "Ra quyết định kiến trúc và code ở cấp component mình phụ trách",
+        "Peer review code của người khác, đề xuất thay đổi và phản biện quyết định",
+        "Dẫn dắt và coaching một đội kỹ sư phần mềm qua nhiều dự án"
+      ],
+      "skills_hard": [
+        {
+          "skill": "ES6/TypeScript + React.js",
+          "level": "expert",
+          "seen_in": [
+            "FE32"
+          ]
+        },
+        {
+          "skill": "Ít nhất một ngôn ngữ backend (Java/Node.js/.NET)",
+          "level": "proficient",
+          "seen_in": [
+            "FE32"
+          ]
+        },
+        {
+          "skill": "AWS Serverless + Containers (ECS, K8s, Docker) + Lambda",
+          "level": "proficient",
+          "seen_in": [
+            "FE32"
+          ]
+        },
+        {
+          "skill": "RESTful/GraphQL + kiến trúc microservices",
+          "level": "proficient",
+          "seen_in": [
+            "FE32"
+          ]
+        },
+        {
+          "skill": "CI/CD pipeline và developer tooling",
+          "level": "proficient",
+          "seen_in": [
+            "FE32"
+          ]
+        },
+        {
+          "skill": "Accessibility và bảo mật web",
+          "level": "proficient",
+          "seen_in": [
+            "FE32"
+          ]
+        }
+      ],
+      "skills_soft": [
+        {
+          "skill": "Tiếng Anh tốt trong môi trường phát triển toàn cầu",
+          "seen_in": [
+            "FE32"
+          ]
+        },
+        {
+          "skill": "Kinh nghiệm dẫn dắt và coaching một đội kỹ sư",
+          "seen_in": [
+            "FE32"
+          ]
+        }
+      ],
+      "evidence_level": "A_VERIFIED",
+      "evidence_company": "NAB Innovation Centre Vietnam (HICAPS)",
+      "evidence_jd_ids": [
+        "FE32"
+      ],
+      "source_url": "https://www.linkedin.com/jobs/view/lead-frontend-engineer-fullstack-hicaps-at-nab-innovation-centre-vietnam-4379004018/",
+      "evidence_note": "CHI 1 JD hợp lệ. FE31 cũng mang title Lead Frontend Engineer tại cùng công ty nhưng nội dung trùng nguyên văn với JD Senior (FE28) nên không dùng làm bằng chứng. Band mỏng nhất trong bộ."
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal Frontend Engineer",
+      "years_experience": "5-12 (ANDPAD 8+, Money Forward 5+ kèm 2+ năm leadership, Axon 10+)",
+      "title_aliases": [
+        "Principal Frontend Engineer (ReactJS/VueJS)",
+        "Staff Engineer",
+        "Staff / Principal Software Engineer"
+      ],
+      "core_output": "Đặt định hướng kỹ thuật frontend xuyên nhiều đội, review thiết kế và code của kỹ sư khác, và tham gia định nghĩa yêu cầu cùng product manager thay vì chỉ hiện thực yêu cầu đã có.",
+      "tasks": [
+        "Thiết kế và hiện thực phần chức năng phụ trách của sản phẩm bằng ReactJS",
+        "Định nghĩa yêu cầu và đặc tả kỹ thuật cùng product manager và designer",
+        "Review thiết kế và code của các kỹ sư khác trong tổ chức",
+        "Đặt và duy trì chuẩn kỹ thuật cao thông qua architecture design review",
+        "Mentor kỹ sư senior ở nhiều đội khác nhau",
+        "Xây dựng chuẩn phát triển cho toàn công ty và thực hiện technical audit định kỳ",
+        "Kiến trúc và phát triển thư viện dùng chung xử lý thiết kế và tương tác phức tạp"
+      ],
+      "skills_hard": [
+        {
+          "skill": "TypeScript",
+          "level": "expert",
+          "seen_in": [
+            "FE20"
+          ]
+        },
+        {
+          "skill": "ReactJS + VueJS + NextJS + NuxtJS",
+          "level": "expert",
+          "seen_in": [
+            "FE20"
+          ]
+        },
+        {
+          "skill": "Giải thích được nguyên lý hoạt động web và khác biệt giữa các trình duyệt",
+          "level": "expert",
+          "seen_in": [
+            "FE20"
+          ]
+        },
+        {
+          "skill": "AWS/GCP",
+          "level": "proficient",
+          "seen_in": [
+            "FE20"
+          ]
+        },
+        {
+          "skill": "CI/CD (CircleCI, GitHub Actions)",
+          "level": "proficient",
+          "seen_in": [
+            "FE20"
+          ]
+        },
+        {
+          "skill": "Frontend microservices / micro-frontend",
+          "level": "familiar",
+          "seen_in": [
+            "FE20"
+          ]
+        },
+        {
+          "skill": "Kinh nghiệm technical lead trọn vòng đời dự án",
+          "level": "expert",
+          "seen_in": [
+            "FE20"
+          ]
+        }
+      ],
+      "skills_soft": [
+        {
+          "skill": "Giao tiếp tiếng Anh tốt",
+          "seen_in": [
+            "FE20"
+          ]
+        }
+      ],
+      "evidence_level": "A_VERIFIED",
+      "evidence_company": "ANDPAD Vietnam; Money Forward Vietnam; Axon",
+      "evidence_jd_ids": [
+        "FE20",
+        "FE21",
+        "FE22",
+        "FE26"
+      ],
+      "source_url": "https://jobs.vn.indeed.com/viewjob?jk=82a642f42a8c41b4",
+      "evidence_note": "2 JD Principal frontend thuần (FE20 ANDPAD, FE26 Money Forward) + 2 JD generic SWE (FE21, FE22 Axon). Ngưỡng 'Principal' chênh lệch lớn: 5+ năm ở Money Forward so với 8+ năm ở ANDPAD."
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6-L7",
+    "branch_point_note": "Điểm rẽ nhánh KHÔNG sắc mà diễn ra qua hai nấc. Bằng chứng theo band: L5 vẫn thuần IC (FE18 ghi rõ 'no direct management'; FE29 mô tả mentor hai chiều). L6 Lead coaching một đội nhưng vẫn tự ra quyết định kiến trúc cấp component, không có line management (FE32). L7 nhánh Management (FE38) VẪN yêu cầu 5+ năm hands-on React/React Native — đây là 'quản lý vẫn còn code'. Chỉ tới L8 (FE40) thì yêu cầu hands-on mới biến mất và thay bằng line management đầy đủ: họp 1:1, kế hoạch phát triển cá nhân, lộ trình nghề nghiệp, đánh giá thử việc và đánh giá hiệu suất. Với sản phẩm hướng nghiệp: người chuyển sang quản lý KHÔNG ngừng viết code ngay, ít nhất ở nấc đầu tiên.",
+    "explicit_dual_track_evidence": [
+      {
+        "jd_id": "FE34",
+        "company": "One Mount",
+        "note": "Phúc lợi ghi lộ trình nghề nghiệp gồm hai hướng Management hoặc Expert, kèm luân chuyển chức năng"
+      },
+      {
+        "jd_id": "FE28",
+        "company": "NAB",
+        "note": "Ghi rõ có lộ trình thăng tiến theo cả hướng kỹ thuật lẫn hướng lãnh đạo (xuất hiện ở toàn bộ 8 JD của NAB)"
+      }
+    ],
+    "ic_track": [
+      {
+        "band": "L6",
+        "title_vn": "Lead Frontend Engineer",
+        "years_experience": "7-10 (kèm 2+ năm dẫn dắt)",
+        "evidence_jd_ids": [
+          "FE32"
+        ],
+        "note": "Vẫn viết code và tự quyết kiến trúc cấp component; coaching một đội nhưng KHÔNG có line management"
+      },
+      {
+        "band": "L7",
+        "title_vn": "Principal Frontend Engineer",
+        "years_experience": "5-12",
+        "evidence_jd_ids": [
+          "FE20",
+          "FE26"
+        ],
+        "note": "Thuần IC: thiết kế và hiện thực, review thiết kế người khác, xây chuẩn toàn công ty, không có direct report"
+      },
+      {
+        "band": "L7-L8",
+        "title_vn": "Staff / Principal Software Engineer",
+        "years_experience": "10+",
+        "evidence_jd_ids": [
+          "FE21",
+          "FE22"
+        ],
+        "note": "Generic SWE. Axon gộp Staff và Principal thành một title"
+      }
+    ],
+    "management_track": [
+      {
+        "band": "L7",
+        "title_vn": "Engineering Manager (hands-on)",
+        "years_experience": "5+ hands-on frontend/mobile",
+        "title_aliases": [
+          "Engineering Manager (Frontend/Mobile)"
+        ],
+        "core_output": "Dẫn dắt và trực tiếp tham gia xử lý sự cố production nghiêm trọng cho các hệ thống frontend và mobile, nâng năng lực đội kỹ sư cùng đội hỗ trợ vận hành, và giao tiếp với stakeholder khi có sự cố hoặc phải escalate rủi ro — nhưng vẫn giữ năng lực kỹ thuật trực tiếp trên React và React Native.",
+        "tasks": [
+          "Dẫn dắt và trực tiếp tham gia xử lý sự cố Sev1/Sev2 trong môi trường high-availability",
+          "Hướng dẫn và nâng năng lực kỹ sư cùng production support analyst trong mô hình đội hỗn hợp",
+          "Định nghĩa và nâng cấp framework observability để phát hiện sớm sự cố",
+          "Dẫn dắt BAU delivery: ưu tiên backlog, xử lý defect, cải tiến nhỏ, nâng cấp theo quy định",
+          "Thúc đẩy tự động hoá để giảm thao tác thủ công và sự cố lặp lại",
+          "Giao tiếp với stakeholder khi có sự cố và khi escalate rủi ro"
+        ],
+        "skills_hard": [
+          {
+            "skill": "React JS + React Native",
+            "level": "expert",
+            "seen_in": [
+              "FE38"
+            ]
+          },
+          {
+            "skill": "API / BFF / microservices (Node.js)",
+            "level": "proficient",
+            "seen_in": [
+              "FE38"
+            ]
+          },
+          {
+            "skill": "Observability (Splunk, AppDynamics, OpenSearch, Grafana)",
+            "level": "proficient",
+            "seen_in": [
+              "FE38"
+            ]
+          },
+          {
+            "skill": "AWS + CI/CD (Jenkins, Harness)",
+            "level": "proficient",
+            "seen_in": [
+              "FE38"
+            ]
+          },
+          {
+            "skill": "Quản lý sự cố Sev1/Sev2 và root cause analysis",
+            "level": "expert",
+            "seen_in": [
+              "FE38"
+            ]
+          }
+        ],
+        "skills_soft": [
+          {
+            "skill": "Giao tiếp stakeholder trong lúc có sự cố",
+            "seen_in": [
+              "FE38"
+            ]
+          },
+          {
+            "skill": "Phân biệt nguyên nhân gốc và triệu chứng",
+            "seen_in": [
+              "FE38"
+            ]
+          }
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "NAB Innovation Centre Vietnam",
+        "evidence_jd_ids": [
+          "FE38"
+        ],
+        "source_url": "https://vn.indeed.com/viewjob?jk=721e526904d83676",
+        "evidence_note": "JD Engineering Manager DUY NHẤT gắn với frontend trong cả bộ 40 mẫu."
+      },
+      {
+        "band": "L7-L8",
+        "title_vn": "Engineering Manager (squad)",
+        "years_experience": "KHONG_NHAC",
+        "title_aliases": [
+          "Engineering Manager (AI)"
+        ],
+        "core_output": "Chịu trách nhiệm dẫn dắt một hoặc nhiều squad kỹ sư đưa giải pháp cấp doanh nghiệp lên production, đảm bảo kỷ luật kỹ thuật về bảo mật, khả năng kiểm toán và tuân thủ chuẩn tổ chức, và xây dựng quan hệ với stakeholder cấp cao trong một tổ chức lớn phức tạp.",
+        "tasks": [
+          "Dẫn dắt một hoặc nhiều squad kỹ sư lập kế hoạch, bàn giao và vận hành giải pháp công nghệ",
+          "Phối hợp với Delivery Manager và stakeholder để biến cơ hội thành giải pháp chạy được ở production",
+          "Đảm bảo thiết kế bảo mật, khả năng kiểm toán, khả năng kiểm thử và tuân thủ chuẩn tổ chức",
+          "Xây dựng văn hoá cải tiến liên tục trong squad"
+        ],
+        "skills_hard": [
+          {
+            "skill": "CI/CD, testing, security, auditability",
+            "level": "proficient",
+            "seen_in": [
+              "FE39"
+            ]
+          },
+          {
+            "skill": "Tích hợp năng lực AI vào hệ thống sẵn có",
+            "level": "proficient",
+            "seen_in": [
+              "FE39"
+            ]
+          },
+          {
+            "skill": "Project management / agile tooling",
+            "level": "proficient",
+            "seen_in": [
+              "FE39"
+            ]
+          }
+        ],
+        "skills_soft": [
+          {
+            "skill": "People leadership, xây đội hiệu suất cao",
+            "seen_in": [
+              "FE39"
+            ]
+          },
+          {
+            "skill": "Điều hướng tổ chức lớn, quan hệ với stakeholder cấp cao",
+            "seen_in": [
+              "FE39"
+            ]
+          },
+          {
+            "skill": "Change management",
+            "seen_in": [
+              "FE39"
+            ]
+          }
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "NAB Innovation Centre Vietnam",
+        "evidence_jd_ids": [
+          "FE39"
+        ],
+        "source_url": "https://www.linkedin.com/jobs/view/engineering-manager-ai-at-nab-innovation-centre-vietnam-4425578566/",
+        "evidence_note": "Nấc trung gian: đã bỏ yêu cầu hands-on coding nhưng chưa có line management tường minh."
+      },
+      {
+        "band": "L8",
+        "title_vn": "Engineering Manager (line management)",
+        "years_experience": "10+ (kèm 5+ năm dẫn dắt đội Agile)",
+        "title_aliases": [
+          "Engineering Manager",
+          "Manager, Engineer"
+        ],
+        "core_output": "Chịu trách nhiệm về con người và kết quả bàn giao của nhiều đội Agile: đặt chuẩn kỹ thuật, quản lý cột mốc và rủi ro, và thực hiện đầy đủ vai trò quản lý trực tiếp gồm họp 1:1, kế hoạch phát triển cá nhân, lộ trình nghề nghiệp và đánh giá hiệu suất — không còn yêu cầu đóng góp kỹ thuật trực tiếp.",
+        "tasks": [
+          "Quản lý nhiều đội Agile về chuẩn kỹ thuật, sprint backlog, trách nhiệm và hiệu suất kỹ sư, chất lượng code",
+          "Quản lý cột mốc, sản phẩm bàn giao, rủi ro và phụ thuộc giữa các đội",
+          "Line management: họp 1:1, kế hoạch phát triển cá nhân, lộ trình nghề nghiệp, đánh giá thử việc và đánh giá hiệu suất",
+          "Đảm bảo phát hành lên production tuân thủ khung quản trị rủi ro của tổ chức",
+          "Coach đội áp dụng Scrum và DevOps, thúc đẩy mô hình làm việc T-shaped",
+          "Cân bằng giữa tốc độ và chất lượng khi ra quyết định"
+        ],
+        "skills_hard": [
+          {
+            "skill": "SDLC (Scrum, Kanban, Waterfall) ở quy mô lớn",
+            "level": "expert",
+            "seen_in": [
+              "FE40"
+            ]
+          },
+          {
+            "skill": "IT Service Management / Release Management (ServiceNow)",
+            "level": "proficient",
+            "seen_in": [
+              "FE40"
+            ]
+          },
+          {
+            "skill": "Hiểu môi trường kỹ thuật (microservices, ReactJS, AWS/Azure, Jenkins/SonarQube) ở mức đủ để ra quyết định, không hands-on",
+            "level": "proficient",
+            "seen_in": [
+              "FE40"
+            ]
+          },
+          {
+            "skill": "Quản lý code và change management process",
+            "level": "proficient",
+            "seen_in": [
+              "FE40"
+            ]
+          }
+        ],
+        "skills_soft": [
+          {
+            "skill": "People leadership, team building, motivation, coaching",
+            "seen_in": [
+              "FE40"
+            ]
+          },
+          {
+            "skill": "Stakeholder management",
+            "seen_in": [
+              "FE40"
+            ]
+          },
+          {
+            "skill": "Giao tiếp ở cả cấp chiến lược lẫn vận hành",
+            "seen_in": [
+              "FE40"
+            ]
+          },
+          {
+            "skill": "Tiếng Anh thành thạo",
+            "seen_in": [
+              "FE40"
+            ]
+          }
+        ],
+        "certifications": [
+          {
+            "cert": "Certified Scrum Master",
+            "required": false,
+            "seen_in": [
+              "FE40"
+            ]
+          }
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "NAB Innovation Centre Vietnam",
+        "evidence_jd_ids": [
+          "FE40"
+        ],
+        "source_url": "https://www.linkedin.com/jobs/view/engineering-manager-ho-chi-minh-at-nab-innovation-centre-vietnam-4118339816/",
+        "evidence_note": "Bằng chứng nhánh Management rõ nhất bộ. Công nghệ chỉ liệt kê như 'môi trường kỹ thuật', không phải yêu cầu năng lực."
+      }
+    ]
+  },
+  "work_environment_ids": [
+    "WE_PROJECT_OUTSOURCING",
+    "WE_HYBRID_PRODUCT",
+    "WE_REMOTE_GLOBAL",
+    "WE_ONSITE_ENTERPRISE"
+  ],
+  "work_environment_primary": "WE_HYBRID_PRODUCT",
+  "work_environment_note": "Hybrid chiếm ưu thế rõ rệt: Axon (onsite T3-T6, remote T2), NAB (toàn bộ 5 JD ghi hybrid working model), Holistics, ANDPAD, what3words (tối đa 2 ngày WFH + 6 tuần làm việc từ bất kỳ đâu mỗi năm), Workday (Flex Work tính 50% theo quý thay vì ngày/tuần). Remote hoàn toàn chỉ ở Employment Hero và Binance, cả hai đều là công ty nước ngoài và đều ở band L5+. Onsite 100%: Nexlab, Axon SWE II, FireGroup, FinX, Moatable (có on-site bonus 2,5 triệu/tháng), One Mount. KHÔNG có JD nào trong 37 mẫu nhắc tới ca kíp, on-call hay công tác tới site khách hàng — WE_SHIFT_24_7 và WE_FIELD_CLIENT không áp dụng cho role này. ĐÍNH CHÍNH so với bản trước: FE38 (Engineering Manager Frontend/Mobile) mô tả mô hình 'You Build It, You Run It' cùng trách nhiệm xử lý sự cố Sev1/Sev2 — hàm ý có trực sự cố. Đây là JD DUY NHẤT trong 40 mẫu có yếu tố vận hành production, và nó xuất hiện ở nhánh Management chứ không phải ở các band IC. Kết luận 'role này không có on-call' chỉ đúng với nhánh IC.",
+  "education_path_ids": [
+    "EDU_CS_PREFERRED"
+  ],
+  "education_path_primary": "EDU_CS_PREFERRED",
+  "education_path_note": "Trên 37 JD: khoảng một nửa không nhắc bằng cấp. Bằng cấp được nới rõ ràng — FE15 ghi bằng CS là nice-to-have; FE18 và FE25 ghi 'or equivalent practical experience'; FE05 thay bằng cấp bằng yêu cầu có sản phẩm đã deploy; FE03 chấp nhận bootcamp ngang đại học. Yêu cầu bằng cứng tập trung ở nhóm outsourcing và enterprise (FE12 DXC, FE19 CMC, FE08/FE09), cộng FE23 (VNG). Ngoại lệ đáng chú ý: FE37 (Zalo Fresher) đặt ngưỡng GPA 7.5/10 — ngưỡng học lực duy nhất trong bộ, và xuất hiện đúng ở band entry nơi ứng viên chưa có gì khác để chứng minh năng lực.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": 19,
+    "itviec_slug_used": "frontend-developer",
+    "topdev_open_postings": null,
+    "measured_at": "2026-08-22",
+    "confidence": "medium",
+    "method_note": "Đếm qua trang category cố định ITviec, render server-side."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "note": "Chưa join. 21/22 JD không công bố số. Chỉ FE19 (CMC Global) ghi 'Negotiable' kèm 14th-month salary và gói 16 triệu/năm."
+  },
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Nhánh Management. FE38 cho thấy nấc đầu vẫn yêu cầu 5+ năm hands-on React/React Native"
+      },
+      {
+        "role_code": "SWE_TECHLEAD",
+        "from_band": "L5",
+        "note": "Nhánh IC, xác nhận qua FE32"
+      },
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "from_band": "L7",
+        "note": "CHUA_XAC_MINH — chưa có JD nào trong bộ nối L7 frontend sang vai trò kiến trúc"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_FULLSTACK",
+        "note": "FE16 ghi 'open to expanding beyond frontend towards Fullstack' ở band L5; FE05, FE09, FE12 đều là title Fullstack nhưng nội dung frontend-heavy"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_FULLSTACK",
+        "note": "4/22 JD đặt title Fullstack cho công việc chủ yếu là frontend"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CODE LEAP, DXC, CMC Global. Mô tả công việc dài và có cấu trúc, nêu rõ mức độ giám sát. Tiếng Anh là yêu cầu cứng ở MỌI band, kể cả L1 (FE01 đòi IELTS 6.5). Có cơ hội onsite nước ngoài (CMC: US/EU; DXC: overseas assignment). Bằng cấp được yêu cầu chặt hơn.",
+    "product_local": "Holistics, FireGroup, VNG, Zalo, One Mount. Nhóm duy nhất có chương trình fresher tuyển tập trung (Zalo, 12 tuần). Holistics tuyển theo nền tảng chứ không theo công nghệ; VNG ngược lại đặt rào cản công nghệ rất cụ thể (phải có app React Native đã lên store). One Mount tuyên bố hai nhánh nghề nghiệp Management/Expert rõ ràng nhất bộ. Phần lớn onsite.",
+    "enterprise_bank": "NAB (5 JD) và FinX/Galaxy (1 JD). Đặc điểm rõ nhất: mô tả công việc bám quy trình delivery (CI/CD, build management, deployment script) và nhấn mạnh phối hợp với đội quốc tế. Ranh giới quyền quyết định được viết TƯỜNG MINH nhất trong cả bộ — FE32 ghi rõ tự quyết ở cấp component còn kiến trúc tổng thể do cấp trên cung cấp. Phúc lợi gắn với phát triển nghề nghiệp dài hạn (khoá tiếng Anh bản ngữ, training tại Úc, chứng chỉ nghiệp vụ ngân hàng CQiB) và nêu rõ có hai nhánh thăng tiến. Tất cả đều hybrid. Mặt trái: NAB dùng lại nguyên văn một JD cho hai title khác nhau (Senior và Lead).",
+    "bigtech_fdi": "Axon, NAVER, Binance, Employment Hero, DataXight, ANDPAD. Dùng thang cấp bậc đánh số rõ ràng (Engineer I / II / Staff / Principal). Nhiều nơi KHÔNG yêu cầu bằng cấp. Là nhóm duy nhất có remote hoàn toàn, và cũng là nhóm duy nhất có band L7. Axon dùng chung một template mô tả công việc cho nhiều band."
+  },
+  "verification_flags": [
+    {
+      "jd_id": "FE11",
+      "company": "FireGroup Technology",
+      "issue": "Title 'Junior Frontend Engineer' và yêu cầu 1+ năm, nhưng phần trách nhiệm gồm dẫn dắt thảo luận kỹ thuật, mentor kỹ sư junior/mid, thiết kế kiến trúc frontend cho hệ thống quy mô lớn, đề xuất micro-frontend. Đây là trách nhiệm mức L5-L6.",
+      "action": "Đã xếp band_final=L3 theo title và số năm, và KHÔNG dùng JD này cho tasks/skills của bất kỳ band nào."
+    },
+    {
+      "jd_id": "FE19",
+      "company": "CMC Global",
+      "issue": "Title ghi 'Middle/Senior' và yêu cầu 4+ năm, nhưng danh sách công việc không có bất kỳ tín hiệu senior nào — không mentor, không review, không kiến trúc.",
+      "action": "Xếp L4 theo nội dung thay vì theo title."
+    },
+    {
+      "jd_id": "FE03/FE06/FE07/FE08",
+      "company": "Axon",
+      "issue": "Mục 'What You'll Do' TRÙNG NGUYÊN VĂN giữa Intern, Frontend SWE I, Frontend SWE I/II và SWE II. Cả bốn đều ghi 'owning and driving end-to-end features' và 'coach and mentor junior team members'.",
+      "action": "Với các JD Axon, chỉ dùng years_required và title để phân band; KHÔNG dùng scope_signals."
+    },
+    {
+      "jd_id": "FE02",
+      "company": "NAVER Vietnam",
+      "issue": "Title ghi Fullstack nhưng nội dung là frontend.",
+      "action": "Xếp vào SWE_FRONTEND theo nội dung. Ảnh hưởng tới Bước F: đếm theo từ khoá 'Frontend' sẽ bỏ sót JD loại này."
+    },
+    {
+      "jd_id": "FE31 vs FE28",
+      "company": "NAB Innovation Centre Vietnam",
+      "issue": "JD 'Lead Frontend Engineer (ReactJS)' và JD 'Senior Frontend Engineer (ReactJS)' TRÙNG NGUYÊN VĂN toàn bộ phần trách nhiệm và yêu cầu, kể cả mốc 5+ năm. Title khác nhau, nội dung y hệt.",
+      "action": "Loại FE31 khỏi bằng chứng của L6. L6 chỉ dựa vào FE32 (HICAPS) — JD có nội dung khác biệt thật."
+    },
+    {
+      "jd_id": "FE26 vs FE20",
+      "company": "Money Forward vs ANDPAD",
+      "issue": "Cùng title 'Principal Frontend Engineer' nhưng Money Forward yêu cầu 5+ năm còn ANDPAD yêu cầu 8+ năm — chênh 3 năm cho cùng một cấp bậc.",
+      "action": "Giữ cả hai ở L7 nhưng ghi khoảng năm là 5-12 thay vì một mốc. Cho thấy title Principal tại VN chưa được chuẩn hoá."
+    },
+    {
+      "jd_id": "FE25",
+      "company": "FinX (Galaxy)",
+      "issue": "Title '(Senior) Frontend Developer' nhưng chỉ yêu cầu 3+ năm — thấp hơn mọi JD Senior khác trong bộ (4-5+).",
+      "action": "Giữ L5 vì nội dung công việc (dẫn dắt kiến trúc, mentor, product mindset) đúng mức Senior. Ghi vào phần phân tán ngưỡng năm."
+    },
+    {
+      "jd_id": "FE23",
+      "company": "VNG",
+      "issue": "Bạn xếp L3, mình xếp L4. JD yêu cầu 3+ năm, micro-frontend, và phải có app React Native đã ship production — nhưng vẫn ghi 'learn and grow with mentorship from teammates'.",
+      "action": "Xếp L4 theo số năm và độ khó kỹ thuật. Đây là ca ranh giới, bạn nên tự quyết."
+    },
+    {
+      "jd_id": "FE38/FE39/FE40",
+      "company": "NAB Innovation Centre Vietnam",
+      "issue": "Cả 3 JD của nhánh Management đều từ MỘT công ty duy nhất, và là một ngân hàng. Ba nấc L7 → L7-L8 → L8 có thể phản ánh cấu trúc cấp bậc nội bộ của NAB hơn là chuẩn thị trường VN.",
+      "action": "Giữ nguyên nhưng đánh dấu độ tin cậy nhánh Management thấp hơn nhánh IC. Cần JD Engineering Manager từ công ty product hoặc outsourcing để đối chiếu."
+    }
+  ],
+  "confidence_overall": "high (nhánh IC) / medium (nhánh Management)",
+  "unknowns": [
+    "Cả 3 JD nhánh Management đều từ NAB. Ba nấc L7/L7-L8/L8 có thể là cấu trúc nội bộ của một ngân hàng chứ không phải chuẩn thị trường.",
+    "Band L6 chỉ có 1 JD hợp lệ (FE32). JD Lead thứ hai của cùng công ty (FE31) trùng nguyên văn với JD Senior nên không dùng được.",
+    "Ngưỡng năm kinh nghiệm cho cùng title dao động mạnh: Senior 3+ tới 5+, Principal 5+ tới 8+. Ngay trong NAB cũng có cả 4+ và 5+ cho Senior. Map title sang band luôn có sai số.",
+    "Chỉ 1/40 JD công bố lương (FE35, what3words, 3.000-3.500 USD/tháng cho L5). Không đủ để kiểm chứng chéo band bằng lương.",
+    "Hai công ty dùng lại template JD giữa các band: Axon (Intern tới SWE II) và NAB (Senior với Lead). Nếu phổ biến thì scope_signals có giới hạn hệ thống ở các công ty lớn.",
+    "Mẫu lệch về bigtech_fdi (19/40) và NAB (8/40). Nhóm outsourcing chỉ 5 JD và không có JD nào từ L5 trở lên — chưa rõ ladder outsourcing có trần thấp hơn thật hay do mẫu thiếu.",
+    "Yêu cầu về AI xuất hiện ở 12/40 JD, trải từ L1 tới L8. Chưa rõ là chuẩn mới của thị trường hay đặc thù nhóm công ty nước ngoài chiếm đa số trong mẫu.",
+    "Angular chỉ xuất hiện ở 1/40 JD (FE36) như công nghệ chính. Chưa đủ kết luận về mức độ thống trị của React.",
+    "Chưa có JD nào nối band L7 frontend sang vai trò kiến trúc (SWE_ARCH_SOL/SWE_ARCH_SW), nên trường next_steps ở nhánh IC còn giả định."
+  ]
+}

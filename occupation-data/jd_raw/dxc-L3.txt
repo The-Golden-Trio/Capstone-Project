@@ -1,0 +1,66 @@
+https://www.linkedin.com/jobs/view/4448822901/
+
+About the job
+We are looking for a Fullstack Engineer, ReactJS to join our exciting team. The successful candidate will work on technology solutions in the banking and financial services domain, focusing on building scalable, secure, and user-friendly applications.This role will be part of an innovation-focused engineering team, working on modern technology topics such as generative AI, digital banking, open banking, digital assets, climate innovation, and new forms of payments. The engineer will help develop small-scale, time-bound production incubations by leveraging existing technology platforms and components.
+Job Responsibilities
+Design, develop, review, implement, and maintain React.js application code and related services for production and pre-release environments.
+Participate in Agile software development, prototyping, and code review with international development teams.
+Build scalable, maintainable, and secure microservices-based products.
+Understand business and customer requirements, then translate them into effective technical solutions.
+Work closely with delivery teams to support successful development using CI/CD and DevOps practices, processes, and tools.
+Apply robust coding practices, unit/component testing, and debugging to ensure high-quality deliverables.
+Make architectural and code-level decisions for assigned components, based on provided high-level solution architecture.
+Conduct peer code reviews and provide constructive recommendations for improvement.
+Collaborate with technology leaders and team members to improve technical direction and delivery quality.
+Fulfil other tasks as assigned by the People Leader and/or authorized representative from time to time.
+
+Job RequirementsTo be a successful candidate for this role, you have:
+Bachelor’s degree or higher in Computer Science, Information Technology, Information Systems, Software Engineering, or related fields.
+Minimum 3+ years of experience in Software Development / Fullstack Engineering.
+Solid experience with JavaScript ES6 / TypeScript.
+Strong hands-on experience with React.js or similar front-end technologies such as Angular.js or Vue.js.
+Strong foundation in Computer Science, especially in building scalable and maintainable systems.
+Good knowledge of web development technologies, including HTML5, CSS3, Bootstrap, Foundation, jQuery, and JSON.
+Good understanding of web accessibility, security concerns, and responsive design.
+Ability to design React applications using layout management.
+Experience with developer tooling and CI/CD pipelines to deploy artefacts.
+Ability to build BFF components using Node.js.
+Experience with cloud computing, preferably Amazon Web Services, AWS.
+Strong understanding of RESTful API design; GraphQL experience is a plus.
+Good understanding of microservices-based systems.
+Strong understanding of standard Software Engineering processes, Testing, and Agile methodology.
+Ability to write structured, well-documented, maintainable, and clean code.
+Strong English communication skills, both verbal and written, especially in a global software development environment.
+Experience with front-end testing tools and test runners such as Selenium, Mocha, Chai, or Jest.
+
+Nice to Have
+Experience in backend development with Java 8+.
+Experience in designing and developing RESTful APIs.
+Experience in complex microservices-based systems, including troubleshooting and debugging.
+Experience working in the banking, financial services, fintech, or digital payment domain.
+
+About DXC TechnologyDXC Technology (NYSE: DXC) is a leading independent IT services company serving nearly 6,000 clients in 70 countries, delivering end-to-end, next-generation solutions through global expertise and strong partnerships.DXC Vietnam, part of DXC Technology (Fortune 500), has nearly 30 years of presence with about 1,300 engineers, providing high‑quality, cost‑effective technology services to global and local clients. Our expertise covers AI, RPA, ServiceNow, SAP, Mobility, and application development.
+EMPLOYEE BENEFITS AND PERKS
+Attractive and competitive salary package.
+Full salary-based contributions to Social Insurance, Health Insurance, and Unemployment Insurance in accordance with Social Security Law.
+13th-month salary (guaranteed).
+Generous leave policy: 12 annual leave days, 6 personal leave days, 1 volunteer leave day, plus sick leave, maternity/paternity leave, and childcare leave.
+Premium Healthcare Insurance (1+1 for employees and dependents).
+Employee Assistance Program (EAP) with 1:1 confidential consultation to support physical and mental well-being.
+Opportunities to access the Well-being Hub with programs focused on health, mental wellness, and financial planning.
+Learning & development support, including access to training resources and voucher sponsorship for professional certification exams.
+Opportunities to work on global projects, collaborate with international teams, and potentially overseas assignments or relocation.
+Special allowances and gifts: English and Japanese language allowances, wedding gifts, newborn gifts, and more.
+Support with a company‑provided laptop.
+Annual team activities and company events.
+Collaborative and inclusive international working environment that fosters teamwork, knowledge sharing, and continuous growth.
+
+Benefits found in job post
+
+Paid paternity leave, Medical insurance
+
+Requirements added by the job poster
+
+• 3+ years of work experience with JavaScript
+
+• 3+ years of work experience with React.js

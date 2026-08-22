@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-7",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "QA_MANUAL",
+  "role_name": "Manual Tester / QC",
+  "role_name_vn": "Kiểm thử viên (Manual)",
+  "role_group": "Quality Assurance & Testing",
+  "archetype": "A",
+  "archetype_reasoning": "Cửa vào IT lớn nhất tại VN. Trần thấp (L5) — đây chính là điểm đáng chú ý nhất của role này với sản phẩm hướng nghiệp: giá trị của QA_MANUAL nằm ở việc làm BÀN ĐẠP, không phải một sự nghiệp trọn đời.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "QA/Tester Intern",
+      "title_aliases": [],
+      "years_experience": "0",
+      "core_output": "Thực thi test case có sẵn dưới sự hướng dẫn, học cách viết bug report.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Tester",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự thực thi bộ test case cho một tính năng, viết bug report đạt chuẩn, chưa tự thiết kế test case.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior QC/Tester",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự thiết kế test case cho một tính năng từ yêu cầu có sẵn, thực hiện test theo nhiều kỹ thuật cơ bản (boundary, equivalence).",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle QC/Tester",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm test plan cho cả một module, tự xác định phạm vi và độ ưu tiên test, review test case của junior.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior QC/Tester",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ chiến lược test cho cả một sản phẩm, mentor đội test — đây gần như là TRẦN của title Manual Tester thuần tại VN; band cao hơn hầu như luôn đi kèm chuyển sang QA_AUTO hoặc QA_LEAD.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": "N/A — role dừng ở L5. Đây KHÔNG phải thiếu sót của dataset, mà phản ánh đúng thực tế: Manual Tester tại VN gần như luôn chuyển hướng (lên QA_LEAD, hoặc học thêm code để sang QA_AUTO/QA_SDET, hoặc chuyển hẳn sang BA) trước khi chạm trần này.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "QA_AUTO",
+        "role_name": "Automation QA Engineer",
+        "note": "Con đường thăng tiến phổ biến nhất theo hiểu biết chung ngành — chưa có JD xác nhận tỷ lệ.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "QA_LEAD",
+        "role_name": "QA/QC Lead",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst",
+        "note": "Suy luận — chuyển hướng nghiệp vụ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [],
+    "often_confused_with": []
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này.",
+    "Tỷ lệ thực tế Manual Tester chuyển sang QA_AUTO so với chuyển sang BA hay ở lại QC lâu dài là suy luận từ hiểu biết chung ngành, KHÔNG có số liệu — đây là chỗ Bước F (đếm tin) hoặc khảo sát riêng mới trả lời được, không phải JD."
+  ]
+}

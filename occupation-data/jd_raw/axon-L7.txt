@@ -1,0 +1,79 @@
+https://www.linkedin.com/jobs/view/staff-software-engineer-at-axon-4377101704/
+
+Axon
+
+
+Staff Software Engineer 
+
+About the job
+Join Axon and be a Force for Good.
+
+At Axon, we’re on a mission to Protect Life. We’re explorers, pursuing society’s most critical safety and justice issues with our ecosystem of devices and cloud software. Like our products, we work better together. We connect with candor and care, seeking out diverse perspectives from our customers, communities and each other.
+
+Life at Axon is fast-paced, challenging and meaningful. Here, you’ll take ownership and drive real change. Constantly grow as you work hard for a mission that matters at a company where you matter.
+
+Your impact
+
+You are a Staff Software Engineer who defines the long-term technical vision for a broad domain and aligns multiple teams around durable, business-driven solutions. You own architecture and technical strategy for your group, and you apply deep domain expertise and business acumen to shape investment decisions and roadmap priorities across teams. You operate primarily at the systemic and strategic level, but roll up your sleeves to unblock critical work, accelerate prototyping, or resolve hard technical problems when it matters. You are a culture champion for engineering excellence, and you develop the next generation of technical leaders by mentoring engineers toward broader scope and influence.
+
+As a senior technical contributor, you have a passion for technology, and keep abreast of the latest trends, frameworks, and tools. As a technical leader, you advise our director of engineering on technical strategy for the org, while balancing our business and engineering priorities to help determine the right long-term initiatives and investments.
+
+Come work in an exciting environment where you use your passion, experience, and analytical skills to help bring new solutions to public safety, and leave a positive impact on the world!
+
+Work Location: This role is based out of our Ho Chi Minh City office and follows a hybrid schedule. We rely on in-person collaboration and ask that team members work onsite Tuesdays through Fridays, with the flexibility to work remotely on Mondays, unless there is an approved workplace accommodation. We believe that connection fuels innovation, and our in-office culture is designed to foster meaningful teamwork, mentorship, and shared success.
+
+What You'll Do
+
+
+Set a high technical bar for the team through deep technical insights and architecture design reviews
+Set group-level AI engineering strategy, aligning tool adoption and platform investments with long-term technical vision and business objectives.
+Define and enforce governance for AI-assisted development, including security, compliance, IP, and quality verification standards.
+Mentor software senior engineers across multiple teams
+Work across teams with Product, Design, and Engineering to solve some of our biggest technical challenges within our stack for our customers
+Drive quality, operational readiness, and engineering excellence standards across the group, and define governance and review protocols for major technical decisions.
+Build services that adhere to our high bar on availability, performance, and security in this mission-critical space
+
+What You Bring
+
+
+10+ years of experience in software engineering
+Experience building and scaling complex and impactful software products in a team environment
+Deep skill in driving technical solutions across multiple teams
+Experience designing and delivering high-availability, scalable cloud-based systems
+You engage directly in technical work when it accelerates critical outcomes, and you hold strong standards for code quality, system design, and architectural decision-making across the group.
+You have a track record of setting the technical and organizational direction for a growing engineering team across multiple global locations
+Demonstrated ability to mentor engineers toward promotion readiness, conduct calibrated interviews for senior candidates, and partner with leadership on hiring strategy and talent gaps.
+
+Benefits That Benefit You
+
+
+Medical, Dental and Vision Insurance
+Robust Paid Time Off policy
+Bonuses
+Lunch allowance
+Cell phone stipend
+Free LinkedIn Learning account or Udemy account
+Access to 24/7 online emotional and mental support
+Gym membership
+Free parking
+Stocked fridges and pantries - free coffee, cold beverages, snacks
+Annual Company Outing Trip
+Monthly team social activities
+
+Don’t meet every single requirement? That's ok. At Axon, we Aim Far. We think big with a long-term view because we want to reinvent the world to be a safer, better place. We are also committed to building diverse teams that reflect the communities we serve.
+
+Studies have shown that women and people of color are less likely to apply to jobs unless they check every box in the job description. If you’re excited about this role and our mission to Protect Life but your experience doesn’t align perfectly with every qualification listed here, we encourage you to apply anyways. You may be just the right candidate for this or other roles.
+
+Important Notes
+
+The above job description is not intended as, nor should it be construed as, exhaustive of all duties, responsibilities, skills, efforts, or working conditions associated with this job. The job description may change or be supplemented at any time in accordance with business needs and conditions.
+
+Some roles may also require legal eligibility to work in a firearms environment.
+
+We collect personal information from applicants to evaluate candidates for employment. You may request access, deletion, or exercise other CCPA rights at axongreenhousesupport@axon.com or via our Axon Privacy Web Form. For more information, please see the Your California Privacy Rights section of our Applicant and Candidate Privacy Notice.
+
+Axon’s mission is to Protect Life and is committed to the well-being and safety of its employees as well as Axon’s impact on the environment. All Axon employees must be aware of and committed to the appropriate environmental, health, and safety regulations, policies, and procedures. Axon employees are empowered to report safety concerns as they arise and activities potentially impacting the environment.
+
+We are an equal opportunity employer that promotes justice, advances equity, values diversity and fosters inclusion. We’re committed to hiring the best talent — regardless of race, creed, color, ancestry, religion, sex (including pregnancy), national origin, sexual orientation, age, citizenship status, marital status, disability, gender identity, genetic information, veteran status, or any other characteristic protected by applicable laws, regulations and ordinances — and empowering all of our employees so they can do their best work. If you have a disability or special need that requires assistance or accommodation during the application or the recruiting process, please email recruitingops@axon.com.  Please note that this email address is for accommodation purposes only. Axon will not respond to inquiries for other purposes.
+
+Phishing alert: Axon will never ask you to pay for any part of the hiring process, including training, equipment, or background checks. We do not make job offers via text message, WhatsApp, or instant messaging platforms without a formal interview process. All legitimate job openings are listed on our official careers page at https://www.axon.com/careers. If you receive a suspicious offer or outreach from an email address that is not @axon.com, or if you are asked for sensitive personal information (bank details, Social Security Number) prematurely, please ignore the message and report it to recruitingops@axon.com.

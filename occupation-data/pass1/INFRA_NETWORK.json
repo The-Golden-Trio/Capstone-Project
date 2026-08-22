@@ -1,0 +1,219 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "A-FINAL1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "INFRA_NETWORK",
+  "role_name": "Network Engineer",
+  "role_name_vn": "Kỹ sư hệ thống mạng",
+  "role_group": "IT Infrastructure & Enterprise Systems",
+  "archetype": "A",
+  "archetype_reasoning": "Xếp A theo roles.csv: ladder đầy đủ, cửa vào entry-level, nhưng roles.csv ghi rõ ladder này đi 'theo chứng chỉ (CCNA→CCNP→CCIE), không theo band phần mềm' — tức số năm kinh nghiệm có thể ít phản ánh năng lực thật bằng chứng chỉ đạt được.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Network Engineer Intern",
+      "title_aliases": [],
+      "years_experience": "0",
+      "core_output": "Hỗ trợ cấu hình thiết bị mạng cơ bản (switch/router) theo hướng dẫn sát, đang học chứng chỉ CCNA, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Network Engineer",
+      "title_aliases": [],
+      "years_experience": "0-1 (thường có CCNA)",
+      "core_output": "Tự cấu hình một thiết bị mạng đơn lẻ theo runbook có sẵn, giám sát mạng cơ bản, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Network Engineer",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự triển khai và cấu hình một mảng mạng nhỏ (VLAN, routing cơ bản) đã xác định rõ, xử lý sự cố mạng đơn giản, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Network Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4 (thường có CCNP)",
+      "core_output": "Chịu trách nhiệm vận hành một hệ thống mạng hoàn chỉnh (LAN/WAN của một chi nhánh/tổ chức vừa), thiết kế mở rộng mạng theo yêu cầu, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Network Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ thiết kế kiến trúc mạng cho cả một tổ chức (routing/switching phức tạp, redundancy, bảo mật mạng), xử lý sự cố mạng nghiêm trọng, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Network Engineering Lead",
+      "title_aliases": [],
+      "years_experience": "6-9 (thường có hoặc đang theo CCIE)",
+      "core_output": "Dẫn dắt kỹ thuật đội Network, đặt chuẩn kiến trúc và chính sách mạng cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal Network Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12 (thường có CCIE)",
+      "core_output": "Đặt chiến lược hạ tầng mạng xuyên toàn tổ chức/nhiều chi nhánh, là chuyên gia kỹ thuật mạng cấp cao nhất, thường tư vấn cho các dự án lớn, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal Network Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "INFRA_ITMANAGER",
+        "from_band": "L6",
+        "note": "Suy luận — chưa có JD xác nhận."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "SEC_ENG",
+        "role_name": "Cybersecurity / Security Engineer",
+        "note": "Suy luận — Network Engineer là feeder phổ biến của Security Engineer, xem pass1_new/SEC_ENG.json.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "INFRA_SYSENG",
+        "role_name": "Systems Engineer",
+        "note": "Chồng lấn ở phần hạ tầng hệ thống.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "INFRA_SYSENG",
+        "reason": "Ranh giới nằm ở chuyên môn hoá: Network Engineer tập trung thiết bị/giao thức mạng, Systems Engineer tập trung máy chủ/ảo hoá — có thể chồng lấn ở công ty nhỏ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Ladder theo chứng chỉ (CCNA→CCNP→CCIE) theo roles.csv khiến 'năm kinh nghiệm' có thể không phản ánh đúng năng lực bằng chứng chỉ đạt được — số năm ở trên là suy luận gộp chung theo thang toàn cục, chưa tách riêng theo lộ trình chứng chỉ.",
+    "Chưa rõ điểm rẽ nhánh quản lý (sang INFRA_ITMANAGER) có đúng ở L6 hay Network Engineer VN thường ở lại thuần kỹ thuật lâu hơn do gắn chặt với hệ thống chứng chỉ chuyên môn quốc tế."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

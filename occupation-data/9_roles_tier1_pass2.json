@@ -1,0 +1,2531 @@
+[
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-9",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "CLOUD_DEVOPS",
+    "role_name": "DevOps Engineer",
+    "role_name_vn": "Kỹ sư DevOps",
+    "role_group": "Cloud, DevOps & SRE",
+    "archetype": "B",
+    "archetype_reasoning": "Ca kinh điển của lateral-entry tại VN: gần như không có tin tuyển Intern/Fresher DevOps. Người ta CHUYỂN NGANG vào role này từ SysAdmin hoặc Backend Developer ở mức Middle trở lên, sau khi đã tích luỹ kinh nghiệm vận hành hệ thống hoặc viết code.",
+    "occupied_bands": [
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "entry_note": "KHÔNG có cửa vào Intern/Fresher/Junior thuần. Sàn thấp nhất quan sát được trên thị trường (theo hiểu biết chung ngành, CHƯA có JD xác nhận trong Pass 1 này) là tương đương L3-L4 — tức người đã có 1-3 năm kinh nghiệm Backend hoặc SysAdmin trước khi chuyển sang DevOps. Đây là điểm khác biệt cốt lõi so với 8 role archetype A còn lại trong Tier 1: học sinh cấp 3 KHÔNG thể chọn 'học DevOps ngay từ đầu' theo nghĩa tuyển dụng thực tế tại VN.",
+    "levels": [
+      {
+        "band": "L3",
+        "title_vn": "DevOps Engineer (mới chuyển ngang)",
+        "title_aliases": [],
+        "years_experience": "1-3 (thường kèm nền tảng Backend hoặc SysAdmin trước đó)",
+        "core_output": "Tự vận hành pipeline CI/CD có sẵn, viết script tự động hoá cho tác vụ lặp lại, học cách quản lý hạ tầng cloud dưới sự hướng dẫn của kỹ sư senior hơn.",
+        "tasks": [
+          "Bảo trì và chạy các pipeline CI/CD hiện có",
+          "Triển khai mã nguồn lên môi trường test",
+          "Giám sát tài nguyên server cơ bản"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Linux/Bash",
+            "level": "proficient"
+          },
+          {
+            "skill": "Jenkins/GitLab CI",
+            "level": "familiar"
+          },
+          {
+            "skill": "Docker",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Làm việc nhóm",
+          "Cẩn thận với production"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "KMS Technology",
+        "evidence_title_observed": "DevOps Engineer",
+        "source_url": "https://itviec.com/companies/kms-technology"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Middle DevOps Engineer",
+        "title_aliases": [],
+        "years_experience": "3-5",
+        "core_output": "Chịu trách nhiệm một phần hạ tầng (một môi trường hoặc một cụm dịch vụ), tự thiết kế pipeline CI/CD mới, xử lý sự cố vận hành ở mức trung bình.",
+        "tasks": [
+          "Viết script Infrastructure as Code (Terraform)",
+          "Cấu hình cụm Kubernetes cho microservices",
+          "Thiết lập hệ thống logging/monitoring"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Kubernetes",
+            "level": "proficient"
+          },
+          {
+            "skill": "Terraform/Ansible",
+            "level": "proficient"
+          },
+          {
+            "skill": "Prometheus/Grafana",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Chủ động",
+          "Giải quyết sự cố (Troubleshooting)"
+        ],
+        "certifications": [
+          "AWS SAA"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Zalo",
+        "evidence_title_observed": "Middle DevOps Engineer",
+        "source_url": "https://careers.zalo.me/"
+      },
+      {
+        "band": "L5",
+        "title_vn": "Senior DevOps Engineer",
+        "title_aliases": [],
+        "years_experience": "5-8",
+        "core_output": "Tự chủ kiến trúc hạ tầng cho cả một hệ thống, thiết lập chuẩn Infrastructure as Code, chịu trách nhiệm chính khi có sự cố production nghiêm trọng, mentor kỹ sư cấp dưới.",
+        "tasks": [
+          "Thiết kế kiến trúc hạ tầng Cloud đảm bảo High Availability",
+          "Tối ưu chi phí hạ tầng (FinOps)",
+          "Xử lý sự cố production nghiêm trọng (On-call)"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Cloud Architecture (AWS/GCP)",
+            "level": "expert"
+          },
+          {
+            "skill": "Security & Networking in Cloud",
+            "level": "proficient"
+          },
+          {
+            "skill": "SRE Practices",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Lãnh đạo kỹ thuật",
+          "Bình tĩnh dưới áp lực"
+        ],
+        "certifications": [
+          "AWS SAP",
+          "CKA"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Trusting Social",
+        "evidence_title_observed": "Senior DevOps / Platform Engineer",
+        "source_url": "https://itviec.com/companies/trusting-social"
+      },
+      {
+        "band": "L6",
+        "title_vn": "DevOps Lead / Platform Lead",
+        "title_aliases": [],
+        "years_experience": "7-10",
+        "core_output": "Dẫn dắt đội DevOps/Platform, đặt chiến lược hạ tầng và công cụ cho toàn tổ chức, coaching đội.",
+        "tasks": [
+          "Xây dựng nền tảng Platform Engineering nội bộ",
+          "Dẫn dắt các Cloud/DevOps engineer khác",
+          "Quy hoạch hạ tầng mạng và an ninh Cloud"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Platform Engineering",
+            "level": "expert"
+          },
+          {
+            "skill": "Cloud Architecture",
+            "level": "expert"
+          }
+        ],
+        "skills_soft": [
+          "Leadership"
+        ],
+        "certifications": [
+          "AWS Solutions Architect Professional"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "VNG Corporation",
+        "evidence_title_observed": "DevOps Lead",
+        "source_url": "https://careers.vng.com.vn/"
+      },
+      {
+        "band": "L7",
+        "title_vn": "Principal DevOps Engineer / Head of Infrastructure",
+        "title_aliases": [],
+        "years_experience": "8-12",
+        "core_output": "Đặt định hướng hạ tầng và vận hành xuyên tổ chức, thường là người quyết định chiến lược cloud/multi-cloud cấp cao nhất về mặt kỹ thuật.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      }
+    ],
+    "branching": {
+      "branch_point_band": "L6",
+      "branch_point_note": "Suy luận.",
+      "ic_track": [
+        {
+          "band": "L7",
+          "title_vn": "Principal DevOps Engineer",
+          "note": "Suy luận."
+        }
+      ],
+      "management_track": [
+        {
+          "role_code": "CLOUD_LEAD",
+          "from_band": "L6",
+          "note": "Suy luận — có thể trùng với CLOUD_LEAD (cũng archetype C trong roles.csv), cần đối chiếu ở Pass 2."
+        }
+      ]
+    },
+    "internal_variants": [
+      {
+        "variant_name": "Platform Engineer",
+        "focus": "Xây nền tảng nội bộ cho các đội dev tự phục vụ (self-service).",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "variant_name": "Cloud Infrastructure Engineer",
+        "focus": "Thiên về thiết kế và vận hành hạ tầng cloud hơn CI/CD.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "related_roles": {
+      "feeder_roles": [
+        {
+          "role_code": "INFRA_SYSADMIN",
+          "role_name": "System Administrator",
+          "from_band": "L3-L4 (nội bộ role đó)",
+          "note": "Đường vào phổ biến nhất theo hiểu biết chung ngành.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "SWE_BACKEND",
+          "role_name": "Back-end Developer",
+          "from_band": "L4-L5 (nội bộ role đó)",
+          "note": "Đường vào phổ biến thứ nhì — kỹ sư backend quan tâm tới vận hành.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "next_steps": [
+        {
+          "role_code": "CLOUD_ARCH",
+          "role_name": "Cloud Architect",
+          "note": "Suy luận.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "CLOUD_SRE",
+          "role_name": "Site Reliability Engineer",
+          "note": "Chồng lấn mạnh, có thể là lateral hơn là next step.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [
+        {
+          "role_code": "CLOUD_SRE",
+          "role_name": "Site Reliability Engineer",
+          "note": "Ranh giới rất mờ tại VN.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "often_confused_with": [
+        {
+          "role_code": "CLOUD_SRE",
+          "reason": "Tại VN hai title này thường được dùng thay thế nhau, không tách bạch rõ như ở big tech quốc tế.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "INFRA_ITOPS",
+          "reason": "Chồng lấn ở phần vận hành hệ thống.",
+          "evidence_level": "C_INFERRED"
+        }
+      ]
+    },
+    "company_type_variance": {
+      "outsourcing": "Tư vấn cấu hình CI/CD cho dự án",
+      "product_local": "Core team vận hành production",
+      "enterprise_bank": "On-premise kết hợp Private Cloud",
+      "bigtech_fdi": "Hệ thống CI/CD khổng lồ, IaC toàn phần"
+    },
+    "work_environment_ids": [
+      "WE_HYBRID_PRODUCT",
+      "WE_REMOTE_GLOBAL"
+    ],
+    "work_environment_primary": "WE_HYBRID_PRODUCT",
+    "work_environment_note": "Thường xuyên có trực On-call.",
+    "education_path_ids": [
+      "EDU_CS_REQUIRED",
+      "EDU_CERT_DRIVEN"
+    ],
+    "education_path_primary": "EDU_CERT_DRIVEN",
+    "education_path_note": "Chứng chỉ AWS/Azure/GCP và CKA rất có trọng lượng.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": 77,
+      "itviec_slug_used": "devops-engineer",
+      "topdev_open_postings": null,
+      "measured_at": "2026-08-22",
+      "confidence": "medium",
+      "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [
+      {
+        "id": "VF-T1-03",
+        "severity": "trung bình",
+        "flag": "Đây là role B duy nhất trong Tier 1 — cấu trúc archetype B khác hẳn 8 role A còn lại (không có ladder từ đầu), cần Pass 2 xác nhận sớm để không lan sai sang các role B khác cùng batch sau này (SEC_ENG, DATA_DE...).",
+        "action": "Ưu tiên Pass 2 cho role này ngay sau SWE_BACKEND, vì nó là mẫu đại diện cho toàn bộ 34 role archetype B còn lại."
+      }
+    ],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Có thực sự tồn tại Junior DevOps tuyển thẳng từ trường đại học tại VN không, hay 100% là chuyển ngang?",
+      "Ranh giới thực tế giữa DevOps và SRE tại các startup VN."
+    ]
+  },
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-4",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "DATA_DA",
+    "role_name": "Data Analyst",
+    "role_name_vn": "Chuyên viên Phân tích Dữ liệu",
+    "role_group": "Data, AI & Machine Learning",
+    "archetype": "A",
+    "archetype_reasoning": "Cửa vào phổ biến nhất của domain Data tại VN — không đòi hỏi nền tảng lập trình sâu như DE/DS/ML, nhiều JD chấp nhận trái ngành có nền Excel/SQL/thống kê vững.",
+    "occupied_bands": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6"
+    ],
+    "entry_note": null,
+    "levels": [
+      {
+        "band": "L1",
+        "title_vn": "Data Analyst Intern",
+        "title_aliases": [
+          "Business Intelligence Intern"
+        ],
+        "years_experience": "0",
+        "core_output": "Làm sạch dữ liệu và tạo báo cáo/dashboard đơn giản theo template có sẵn dưới sự hướng dẫn trực tiếp, chưa tự đề xuất chỉ số hay cách phân tích.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L2",
+        "title_vn": "Fresher Data Analyst",
+        "title_aliases": [],
+        "years_experience": "0-1",
+        "core_output": "Tự viết được truy vấn SQL cho yêu cầu báo cáo rõ ràng, tạo dashboard cơ bản trên công cụ BI (Power BI/Tableau/Looker), mọi kết luận phân tích đều cần review.",
+        "tasks": [
+          "Trích xuất dữ liệu bằng SQL cơ bản",
+          "Hỗ trợ chuẩn bị báo cáo định kỳ trên Excel/Power BI",
+          "Làm sạch dữ liệu lỗi"
+        ],
+        "skills_hard": [
+          {
+            "skill": "SQL",
+            "level": "familiar"
+          },
+          {
+            "skill": "Excel",
+            "level": "proficient"
+          },
+          {
+            "skill": "Data Visualization (PowerBI/Tableau)",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Cẩn thận",
+          "Tư duy logic"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Techcombank",
+        "evidence_title_observed": "Data Analyst (Fresher)",
+        "source_url": "https://techcombank.com/tuyen-dung"
+      },
+      {
+        "band": "L3",
+        "title_vn": "Junior Data Analyst",
+        "title_aliases": [],
+        "years_experience": "1-2",
+        "core_output": "Tự thực hiện một phân tích trọn vẹn từ truy vấn dữ liệu tới trình bày kết luận cho một câu hỏi nghiệp vụ cụ thể đã được xác định sẵn.",
+        "tasks": [
+          "Xây dựng các dashboard tự động hóa",
+          "Phân tích nguyên nhân biến động các chỉ số kinh doanh",
+          "Trình bày insight cho stakeholders"
+        ],
+        "skills_hard": [
+          {
+            "skill": "SQL (Advanced)",
+            "level": "proficient"
+          },
+          {
+            "skill": "PowerBI/Tableau",
+            "level": "proficient"
+          },
+          {
+            "skill": "Python/R (Basic)",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Thuyết trình",
+          "Giao tiếp với nghiệp vụ"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "MoMo",
+        "evidence_title_observed": "Data Analyst",
+        "source_url": "https://itviec.com/companies/momo"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Middle Data Analyst",
+        "title_aliases": [],
+        "years_experience": "2-4",
+        "core_output": "Tự đề xuất chỉ số và cách đo lường cho một mảng nghiệp vụ, xây dashboard tự phục vụ (self-service) cho stakeholder, làm việc trực tiếp với phòng ban nghiệp vụ.",
+        "tasks": [
+          "Thiết kế mô hình dữ liệu cho phòng ban",
+          "Đề xuất chiến lược kinh doanh/sản phẩm dựa trên dữ liệu",
+          "Định hướng và chuẩn hóa metric toàn công ty"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Data Modeling",
+            "level": "proficient"
+          },
+          {
+            "skill": "A/B Testing",
+            "level": "proficient"
+          },
+          {
+            "skill": "Business Acumen",
+            "level": "expert"
+          }
+        ],
+        "skills_soft": [
+          "Tư duy chiến lược",
+          "Gây ảnh hưởng (Influencing)"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "VNG Corporation",
+        "evidence_title_observed": "Senior Data Analyst",
+        "source_url": "https://careers.vng.com.vn/"
+      },
+      {
+        "band": "L5",
+        "title_vn": "Senior Data Analyst",
+        "title_aliases": [],
+        "years_experience": "4-7",
+        "core_output": "Tự chủ toàn bộ khung phân tích cho một domain nghiệp vụ lớn, tư vấn quyết định kinh doanh dựa trên dữ liệu, mentor DA cấp dưới, làm việc trực tiếp với lãnh đạo phòng ban.",
+        "tasks": [
+          "Dẫn dắt dự án phân tích dữ liệu rủi ro thẻ",
+          "Xây dựng mô hình dữ liệu quy mô lớn",
+          "Mentorship các bạn DA Junior"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Advanced SQL",
+            "level": "expert"
+          },
+          {
+            "skill": "Business Acumen",
+            "level": "expert"
+          }
+        ],
+        "skills_soft": [
+          "Trình bày với C-level"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Techcombank",
+        "evidence_title_observed": "Senior Data Analyst",
+        "source_url": "https://techcombank.com/tuyen-dung"
+      },
+      {
+        "band": "L6",
+        "title_vn": "Lead / Principal Data Analyst",
+        "title_aliases": [],
+        "years_experience": "6-10",
+        "core_output": "Đặt chuẩn phân tích và công cụ BI cho toàn tổ chức, dẫn dắt đội DA — đây gần như là trần của title DA thuần tại VN; band cao hơn thường đổi sang DATA_PM hoặc DATA_GOV.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      }
+    ],
+    "branching": "N/A — role dừng ở L6, không có nhánh IC/Management riêng trong ladder DA. Kỹ sư muốn tiến xa hơn thường CHUYỂN ROLE (xem next_steps) chứ không thăng tiến tiếp trong title DA.",
+    "internal_variants": [
+      {
+        "variant_name": "Business/Product Data Analyst",
+        "focus": "Gắn với một mảng sản phẩm hoặc nghiệp vụ cụ thể.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "variant_name": "Financial/Risk Data Analyst",
+        "focus": "Đặc thù ngân hàng — phân tích rủi ro tín dụng, gian lận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "related_roles": {
+      "feeder_roles": [],
+      "next_steps": [
+        {
+          "role_code": "DATA_DE",
+          "role_name": "Data Engineer",
+          "note": "Suy luận — chuyển hướng kỹ thuật hơn.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "DATA_BI",
+          "role_name": "BI Developer",
+          "note": "Suy luận.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "DATA_PM",
+          "role_name": "Data Product Manager",
+          "note": "Suy luận — chuyển hướng nghiệp vụ hơn.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [
+        {
+          "role_code": "PROD_BA",
+          "role_name": "Business Analyst",
+          "note": "Ranh giới mờ, đặc biệt ở ngân hàng.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "often_confused_with": [
+        {
+          "role_code": "DATA_BI",
+          "reason": "Nhiều công ty VN gộp DA và BI Developer thành một vị trí.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "PROD_BA",
+          "reason": "Cả hai đều làm cầu nối dữ liệu/nghiệp vụ, ranh giới do từng công ty tự định nghĩa.",
+          "evidence_level": "C_INFERRED"
+        }
+      ]
+    },
+    "company_type_variance": {
+      "outsourcing": "Ít gặp, chủ yếu ở các dự án cần làm report",
+      "product_local": "Rất phổ biến, làm việc với đội Product/Marketing",
+      "enterprise_bank": "Nhu cầu cực cao (Phân tích rủi ro, vận hành, thẻ)",
+      "bigtech_fdi": "Phân tích sản phẩm chuyên sâu (Product Analytics)"
+    },
+    "work_environment_ids": [
+      "WE_ONSITE_ENTERPRISE",
+      "WE_HYBRID_PRODUCT"
+    ],
+    "work_environment_primary": "WE_HYBRID_PRODUCT",
+    "work_environment_note": "Ngân hàng yêu cầu bảo mật cao nên thường làm onsite.",
+    "education_path_ids": [
+      "EDU_ANY_PLUS_TRAINING",
+      "EDU_DOMAIN_PLUS_IT"
+    ],
+    "education_path_primary": "EDU_DOMAIN_PLUS_IT",
+    "education_path_note": "Rất chuộng khối kinh tế, tài chính, toán học.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": null,
+      "topdev_open_postings": null,
+      "measured_at": null,
+      "confidence": "low",
+      "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Chưa rõ trần thăng tiến thực tế (Lead DA) hay phần lớn đổi sang DE/PM.",
+      "Mức độ sử dụng Python thực tế so với JD yêu cầu."
+    ]
+  },
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-8",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "INFRA_HELPDESK",
+    "role_name": "IT Helpdesk / IT Support",
+    "role_name_vn": "Nhân viên Hỗ trợ IT",
+    "role_group": "IT Infrastructure & Enterprise Systems",
+    "archetype": "A",
+    "archetype_reasoning": "Trần thấp nhất trong toàn bộ 78 role (L4). Giá trị chính là FEEDER cho SysAdmin và SOC — gần như không ai coi đây là điểm đến sự nghiệp.",
+    "occupied_bands": [
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+    ],
+    "entry_note": null,
+    "levels": [
+      {
+        "band": "L1",
+        "title_vn": "Helpdesk Intern",
+        "title_aliases": [],
+        "years_experience": "0",
+        "core_output": "Hỗ trợ ghi nhận ticket và xử lý các vấn đề đơn giản nhất (reset mật khẩu, cài phần mềm cơ bản) dưới hướng dẫn trực tiếp.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L2",
+        "title_vn": "Fresher IT Support",
+        "title_aliases": [],
+        "years_experience": "0-1",
+        "core_output": "Tự xử lý ticket mức độ đơn giản-trung bình theo quy trình có sẵn, escalate khi vượt phạm vi.",
+        "tasks": [
+          "Tiếp nhận yêu cầu qua tổng đài hoặc ticket",
+          "Cài đặt Windows, phần mềm văn phòng, máy in",
+          "Xử lý lỗi mạng cơ bản (LAN/Wifi)"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Windows OS",
+            "level": "proficient"
+          },
+          {
+            "skill": "Basic Networking",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Thái độ phục vụ",
+          "Kiên nhẫn"
+        ],
+        "certifications": [
+          "CompTIA A+"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "VIB",
+        "evidence_title_observed": "IT Helpdesk",
+        "source_url": "https://tuyendung.vib.com.vn/"
+      },
+      {
+        "band": "L3",
+        "title_vn": "IT Support / Helpdesk",
+        "title_aliases": [],
+        "years_experience": "1-2",
+        "core_output": "Tự xử lý phần lớn ticket, bắt đầu tham gia các việc mang tính hệ thống hơn (quản lý tài sản IT, cấu hình mạng cơ bản).",
+        "tasks": [
+          "Quản lý tài khoản Active Directory và Office 365",
+          "Xử lý các sự cố phần cứng phức tạp",
+          "Quản lý tài sản IT"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Active Directory",
+            "level": "proficient"
+          },
+          {
+            "skill": "O365 Admin",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Quản lý thời gian",
+          "Giao tiếp rõ ràng"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "FPT IS",
+        "evidence_title_observed": "IT Support Specialist",
+        "source_url": "https://itviec.com/companies/fpt-is"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Senior IT Support / Helpdesk Lead",
+        "title_aliases": [],
+        "years_experience": "2-4",
+        "core_output": "Xử lý ticket phức tạp nhất, đào tạo nhân viên helpdesk mới, thường là bước đệm ngay trước khi chuyển hẳn sang SysAdmin hoặc SOC — đây là TRẦN thực tế của title Helpdesk.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      }
+    ],
+    "branching": "N/A — role dừng ở L4, thấp nhất trong dataset. Không có nhánh IC/Management vì bản thân role đã ở dưới ngưỡng đó rất xa.",
+    "internal_variants": [],
+    "related_roles": {
+      "feeder_roles": [],
+      "next_steps": [
+        {
+          "role_code": "INFRA_SYSADMIN",
+          "role_name": "System Administrator",
+          "note": "Con đường phổ biến nhất theo hiểu biết chung ngành.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "SEC_SOC",
+          "role_name": "SOC Analyst",
+          "note": "Suy luận — cả hai đều là cửa vào rộng, dễ chuyển ngang.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [],
+      "often_confused_with": []
+    },
+    "company_type_variance": {
+      "outsourcing": "Hỗ trợ nội bộ nhân viên",
+      "product_local": "IT Support nội bộ",
+      "enterprise_bank": "Đội ngũ đông đảo chia cấp L1, L2",
+      "bigtech_fdi": "Có quy trình chuẩn hóa cao (ITSM)"
+    },
+    "work_environment_ids": [
+      "WE_ONSITE_ENTERPRISE",
+      "WE_SHIFT_24_7"
+    ],
+    "work_environment_primary": "WE_ONSITE_ENTERPRISE",
+    "work_environment_note": "Phải có mặt tại văn phòng để hỗ trợ phần cứng.",
+    "education_path_ids": [
+      "EDU_ANY_PLUS_TRAINING"
+    ],
+    "education_path_primary": "EDU_ANY_PLUS_TRAINING",
+    "education_path_note": "Không nhất thiết cần bằng đại học CS.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": null,
+      "topdev_open_postings": null,
+      "measured_at": null,
+      "confidence": "low",
+      "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Tỷ lệ thăng tiến lên SysAdmin so với bị kẹt lại ở Helpdesk L3.",
+      "Đo lường chính xác tác động của việc AI thay thế Helpdesk L1."
+    ]
+  },
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-6",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "PROD_BA",
+    "role_name": "Business Analyst",
+    "role_name_vn": "Chuyên viên Phân tích Nghiệp vụ",
+    "role_group": "Product & Project Management",
+    "archetype": "A",
+    "archetype_reasoning": "Ladder đầy đủ, cửa vào lớn thứ nhì thị trường IT VN sau QA_MANUAL — đặc biệt mạnh ở ngân hàng và outsourcing, nơi BA là cầu nối bắt buộc giữa khách hàng/nghiệp vụ và đội kỹ thuật.",
+    "occupied_bands": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "entry_note": "Cửa vào rộng cho người TRÁI NGÀNH — có neo gián tiếp: golden PROD_PO (4 JD NAB) cho thấy PO cấp cao không đòi bằng CNTT ('tertiary qualified, preferably business/commerce/economics'), và BA thường là cửa vào còn dễ tiếp cận hơn PO.",
+    "levels": [
+      {
+        "band": "L1",
+        "title_vn": "Business Analyst Intern",
+        "title_aliases": [],
+        "years_experience": "0",
+        "core_output": "Hỗ trợ thu thập yêu cầu và viết tài liệu dưới sự hướng dẫn trực tiếp, chưa tự làm việc với stakeholder.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L2",
+        "title_vn": "Fresher Business Analyst",
+        "title_aliases": [],
+        "years_experience": "0-1",
+        "core_output": "Viết user story/use case cho yêu cầu đã được làm rõ, tham gia họp với vai trò ghi chép và hỗ trợ.",
+        "tasks": [
+          "Tham gia các buổi họp lấy yêu cầu và ghi biên bản",
+          "Viết tài liệu User Story cơ bản",
+          "Cập nhật Jira tickets"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Requirement Gathering",
+            "level": "familiar"
+          },
+          {
+            "skill": "UML/BPMN (Basic)",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Lắng nghe",
+          "Giao tiếp rõ ràng"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "KMS Technology",
+        "evidence_title_observed": "Fresher Business Analyst",
+        "source_url": "https://itviec.com/companies/kms-technology"
+      },
+      {
+        "band": "L3",
+        "title_vn": "Junior Business Analyst",
+        "title_aliases": [],
+        "years_experience": "1-2",
+        "core_output": "Tự thu thập và tài liệu hoá yêu cầu cho một tính năng cụ thể, làm việc trực tiếp với stakeholder cấp thực thi, vẫn cần review trước khi chuyển cho đội kỹ thuật.",
+        "tasks": [
+          "Phân tích yêu cầu và vẽ luồng nghiệp vụ",
+          "Tạo mockup/wireframe mức cơ bản",
+          "Giải đáp thắc mắc nghiệp vụ cho đội dev"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Business Process Modeling",
+            "level": "proficient"
+          },
+          {
+            "skill": "Wireframing (Balsamiq/Figma)",
+            "level": "familiar"
+          },
+          {
+            "skill": "SQL (Basic)",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Thuyết phục",
+          "Tiếng Anh tốt (outsourcing)"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "FPT Software",
+        "evidence_title_observed": "Business Analyst",
+        "source_url": "https://itviec.com/companies/fpt-software"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Middle Business Analyst",
+        "title_aliases": [],
+        "years_experience": "2-4",
+        "core_output": "Chịu trách nhiệm phân tích nghiệp vụ cho một module hoặc một luồng quy trình, tự quyết cách mô hình hoá yêu cầu (BPMN, wireframe), làm việc với cả stakeholder và kỹ thuật.",
+        "tasks": [
+          "Tư vấn giải pháp quy trình cho phòng ban nghiệp vụ",
+          "Kiểm soát thay đổi yêu cầu (Change Management)",
+          "Đào tạo BA junior"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Domain Knowledge (Banking)",
+            "level": "expert"
+          },
+          {
+            "skill": "Stakeholder Management",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Thương lượng",
+          "Quản lý kỳ vọng"
+        ],
+        "certifications": [
+          "IIBA CCBA / CBAP"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "VPBank",
+        "evidence_title_observed": "Senior Business Analyst",
+        "source_url": "https://tuyendung.vpbank.com.vn/"
+      },
+      {
+        "band": "L5",
+        "title_vn": "Senior Business Analyst",
+        "title_aliases": [],
+        "years_experience": "4-7",
+        "core_output": "Tự chủ phân tích cho cả một dự án hoặc một domain nghiệp vụ lớn, tư vấn giải pháp thay vì chỉ ghi nhận yêu cầu, mentor BA cấp dưới.",
+        "tasks": [
+          "Tư vấn giải pháp thanh toán liên ngân hàng",
+          "Làm việc với đối tác quốc tế để lấy yêu cầu",
+          "Thiết kế luồng thanh toán ví điện tử"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Payment Gateway Knowledge",
+            "level": "expert"
+          },
+          {
+            "skill": "UML/BPMN",
+            "level": "expert"
+          }
+        ],
+        "skills_soft": [
+          "Thuyết trình tiếng Anh",
+          "Đàm phán"
+        ],
+        "certifications": [
+          "CBAP"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "VNPay",
+        "evidence_title_observed": "Senior Business Analyst",
+        "source_url": "https://vnpay.vn/tuyen-dung"
+      },
+      {
+        "band": "L6",
+        "title_vn": "Lead Business Analyst",
+        "title_aliases": [],
+        "years_experience": "6-9",
+        "core_output": "Dẫn dắt đội BA cho một chương trình/nhiều dự án song song, chuẩn hoá quy trình phân tích nghiệp vụ cho tổ chức.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L7",
+        "title_vn": "Principal BA / BA Manager",
+        "title_aliases": [],
+        "years_experience": "8-12",
+        "core_output": "Đặt chiến lược phân tích nghiệp vụ cấp doanh nghiệp, tư vấn cấp lãnh đạo — vai trò gần với Domain Architect hơn là BA thực thi.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      }
+    ],
+    "branching": {
+      "branch_point_band": "L6",
+      "branch_point_note": "Suy luận.",
+      "ic_track": [
+        {
+          "band": "L7",
+          "title_vn": "Principal BA",
+          "note": "Suy luận."
+        }
+      ],
+      "management_track": [
+        {
+          "role_code": "PROD_PM",
+          "from_band": "L5-L6",
+          "note": "Suy luận — BA giỏi thường được đôn lên PM/PO."
+        }
+      ]
+    },
+    "internal_variants": [],
+    "related_roles": {
+      "feeder_roles": [],
+      "next_steps": [
+        {
+          "role_code": "PROD_PO",
+          "role_name": "Product Owner",
+          "note": "Có neo: golden PROD_PO ghi PO đòi hiểu nghiệp vụ sâu, gần với BA senior.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "PROD_PM",
+          "role_name": "Product Manager",
+          "note": "Suy luận.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "SWE_ARCH_SOL",
+          "role_name": "Solution Architect",
+          "note": "Ít gặp hơn, đòi thêm nền tảng kỹ thuật.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [
+        {
+          "role_code": "DATA_DA",
+          "role_name": "Data Analyst",
+          "note": "Ranh giới mờ ở một số công ty.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "often_confused_with": [
+        {
+          "role_code": "PROD_PO",
+          "reason": "Ở nhiều công ty VN, PO thực chất là BA cấp cao — có neo từ ghi chú Pass 0 gốc.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "DATA_DA",
+          "reason": "Cả hai đều là cầu nối dữ liệu/nghiệp vụ.",
+          "evidence_level": "C_INFERRED"
+        }
+      ]
+    },
+    "company_type_variance": {
+      "outsourcing": "Rất đông, viết requirement và giao tiếp khách hàng",
+      "product_local": "Cạnh tranh vị trí với Product Owner",
+      "enterprise_bank": "Cầu nối hệ thống IT cũ và nghiệp vụ ngân hàng",
+      "bigtech_fdi": "Ít gặp title BA thuần, thường là PM"
+    },
+    "work_environment_ids": [
+      "WE_ONSITE_ENTERPRISE",
+      "WE_PROJECT_OUTSOURCING"
+    ],
+    "work_environment_primary": "WE_PROJECT_OUTSOURCING",
+    "work_environment_note": "Phụ thuộc vào khách hàng.",
+    "education_path_ids": [
+      "EDU_DOMAIN_PLUS_IT",
+      "EDU_ANY_PLUS_TRAINING"
+    ],
+    "education_path_primary": "EDU_DOMAIN_PLUS_IT",
+    "education_path_note": "Học tài chính, quản trị kinh doanh cực kỳ có lợi.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": 51,
+      "itviec_slug_used": "business-analyst",
+      "topdev_open_postings": null,
+      "measured_at": "2026-08-22",
+      "confidence": "medium",
+      "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Sự phân định mờ nhạt giữa BA và PO ở công ty Việt Nam.",
+      "Mức độ cần thiết của kỹ năng SQL cho BA outsourcing so với product."
+    ]
+  },
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-7",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "QA_MANUAL",
+    "role_name": "Manual Tester / QC",
+    "role_name_vn": "Kiểm thử viên (Manual)",
+    "role_group": "Quality Assurance & Testing",
+    "archetype": "A",
+    "archetype_reasoning": "Cửa vào IT lớn nhất tại VN. Trần thấp (L5) — đây chính là điểm đáng chú ý nhất của role này với sản phẩm hướng nghiệp: giá trị của QA_MANUAL nằm ở việc làm BÀN ĐẠP, không phải một sự nghiệp trọn đời.",
+    "occupied_bands": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5"
+    ],
+    "entry_note": null,
+    "levels": [
+      {
+        "band": "L1",
+        "title_vn": "QA/Tester Intern",
+        "title_aliases": [],
+        "years_experience": "0",
+        "core_output": "Thực thi test case có sẵn dưới sự hướng dẫn, học cách viết bug report.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L2",
+        "title_vn": "Fresher Tester",
+        "title_aliases": [],
+        "years_experience": "0-1",
+        "core_output": "Tự thực thi bộ test case cho một tính năng, viết bug report đạt chuẩn, chưa tự thiết kế test case.",
+        "tasks": [
+          "Thực thi test case có sẵn",
+          "Log bug lên hệ thống quản lý lỗi",
+          "Verify các bug đã được fix"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Black-box Testing",
+            "level": "familiar"
+          },
+          {
+            "skill": "Bug Tracking (Jira)",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Cẩn thận",
+          "Chi tiết"
+        ],
+        "certifications": [
+          "ISTQB Foundation"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "TMA Solutions",
+        "evidence_title_observed": "Fresher Tester/QC",
+        "source_url": "https://itviec.com/companies/tma-solutions"
+      },
+      {
+        "band": "L3",
+        "title_vn": "Junior QC/Tester",
+        "title_aliases": [],
+        "years_experience": "1-2",
+        "core_output": "Tự thiết kế test case cho một tính năng từ yêu cầu có sẵn, thực hiện test theo nhiều kỹ thuật cơ bản (boundary, equivalence).",
+        "tasks": [
+          "Viết test case và test plan cho module",
+          "Phối hợp với BA để làm rõ yêu cầu chưa đầy đủ",
+          "Thực hiện API testing cơ bản"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Test Design Techniques",
+            "level": "proficient"
+          },
+          {
+            "skill": "API Testing (Postman)",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Tư duy phản biện",
+          "Làm việc nhóm"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "NashTech",
+        "evidence_title_observed": "QA Engineer (Manual)",
+        "source_url": "https://careers.nashtechglobal.com/"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Middle QC/Tester",
+        "title_aliases": [],
+        "years_experience": "2-4",
+        "core_output": "Chịu trách nhiệm test plan cho cả một module, tự xác định phạm vi và độ ưu tiên test, review test case của junior.",
+        "tasks": [
+          "Lên chiến lược test tổng thể",
+          "Review test case của team",
+          "Đánh giá rủi ro release"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Test Strategy",
+            "level": "proficient"
+          },
+          {
+            "skill": "Agile Testing",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Mentor",
+          "Quản lý rủi ro"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "VNG Corporation",
+        "evidence_title_observed": "Senior QC Engineer",
+        "source_url": "https://careers.vng.com.vn/"
+      },
+      {
+        "band": "L5",
+        "title_vn": "Senior QC/Tester",
+        "title_aliases": [],
+        "years_experience": "4-7",
+        "core_output": "Tự chủ chiến lược test cho cả một sản phẩm, mentor đội test — đây gần như là TRẦN của title Manual Tester thuần tại VN; band cao hơn hầu như luôn đi kèm chuyển sang QA_AUTO hoặc QA_LEAD.",
+        "tasks": [
+          "Xây dựng Test Strategy cho các dự án lớn",
+          "Quản lý và điều phối nguồn lực QA Manual",
+          "Audit quy trình QC"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Test Strategy",
+            "level": "expert"
+          },
+          {
+            "skill": "Quality Audit",
+            "level": "expert"
+          }
+        ],
+        "skills_soft": [
+          "Lãnh đạo",
+          "Thương lượng"
+        ],
+        "certifications": [
+          "ISTQB Advanced Level"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "KMS Technology",
+        "evidence_title_observed": "QA Manager / Lead QA",
+        "source_url": "https://itviec.com/companies/kms-technology"
+      }
+    ],
+    "branching": "N/A — role dừng ở L5. Đây KHÔNG phải thiếu sót của dataset, mà phản ánh đúng thực tế: Manual Tester tại VN gần như luôn chuyển hướng (lên QA_LEAD, hoặc học thêm code để sang QA_AUTO/QA_SDET, hoặc chuyển hẳn sang BA) trước khi chạm trần này.",
+    "internal_variants": [],
+    "related_roles": {
+      "feeder_roles": [],
+      "next_steps": [
+        {
+          "role_code": "QA_AUTO",
+          "role_name": "Automation QA Engineer",
+          "note": "Con đường thăng tiến phổ biến nhất theo hiểu biết chung ngành — chưa có JD xác nhận tỷ lệ.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "QA_LEAD",
+          "role_name": "QA/QC Lead",
+          "note": "Suy luận.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "PROD_BA",
+          "role_name": "Business Analyst",
+          "note": "Suy luận — chuyển hướng nghiệp vụ.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [],
+      "often_confused_with": []
+    },
+    "company_type_variance": {
+      "outsourcing": "Rất phổ biến, test theo spec",
+      "product_local": "Tham gia sâu vào UX và chất lượng tổng thể",
+      "enterprise_bank": "Test UAT nặng về nghiệp vụ",
+      "bigtech_fdi": "Xu hướng giảm QA manual, tăng QA Automation"
+    },
+    "work_environment_ids": [
+      "WE_PROJECT_OUTSOURCING",
+      "WE_HYBRID_PRODUCT"
+    ],
+    "work_environment_primary": "WE_PROJECT_OUTSOURCING",
+    "work_environment_note": "Dễ làm remote nhưng do yếu tố bảo mật thường phải tới văn phòng ở dự án outsource.",
+    "education_path_ids": [
+      "EDU_ANY_PLUS_TRAINING"
+    ],
+    "education_path_primary": "EDU_ANY_PLUS_TRAINING",
+    "education_path_note": "Trung tâm đào tạo tester là bệ phóng lớn.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": 74,
+      "itviec_slug_used": "manual-tester",
+      "topdev_open_postings": null,
+      "measured_at": "2026-08-22",
+      "confidence": "medium",
+      "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Khả năng tồn tại của 'Senior Manual QA thuần' khi thị trường ép chuyển sang Automation.",
+      "Bao nhiêu phần trăm Manual QA chuyển hướng thành công sang BA."
+    ]
+  },
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-5",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "SEC_SOC",
+    "role_name": "SOC Analyst",
+    "role_name_vn": "Chuyên viên Giám sát An ninh (SOC)",
+    "role_group": "Cyber Security",
+    "archetype": "A",
+    "archetype_reasoning": "Cửa vào entry-level DUY NHẤT của domain Security tại VN. Đặc thù quan trọng: có hệ thống tier NỘI BỘ (SOC Tier 1/2/3) — KHÔNG được nhầm với thang band toàn cục L1-L10 của dataset này.",
+    "occupied_bands": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6"
+    ],
+    "entry_note": "⚠ CẢNH BÁO NHẦM LẪN THUẬT NGỮ: ngành security dùng 'SOC Tier 1/2/3' để chỉ mức độ phức tạp của việc xử lý cảnh báo (Tier 1 = lọc và phân loại alert, Tier 2 = điều tra sâu, Tier 3 = threat hunting/xử lý sự cố phức tạp) — đây KHÔNG map 1-1 với band L1/L2/L3 toàn cục của dataset. Một người ở 'SOC Tier 1' có thể đã ở band L2-L3 toàn cục (không phải L1). Trường 'internal_variants' bên dưới ghi rõ ánh xạ suy luận này.",
+    "levels": [
+      {
+        "band": "L1",
+        "title_vn": "SOC Analyst Intern",
+        "title_aliases": [],
+        "years_experience": "0",
+        "core_output": "Theo dõi dashboard giám sát và học cách phân loại alert dưới sự kèm cặp trực tiếp, chưa tự xử lý sự cố nào.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L2",
+        "title_vn": "SOC Analyst (Tier 1)",
+        "title_aliases": [
+          "Fresher SOC Analyst"
+        ],
+        "years_experience": "0-1",
+        "core_output": "Tự phân loại và lọc cảnh báo bảo mật theo quy trình (playbook) có sẵn, escalate lên Tier 2 khi vượt phạm vi, thường làm việc theo ca.",
+        "tasks": [
+          "Giám sát hệ thống SIEM 24/7",
+          "Phân loại (triage) các cảnh báo bảo mật ban đầu",
+          "Leo thang (escalate) cảnh báo nghiêm trọng cho L2"
+        ],
+        "skills_hard": [
+          {
+            "skill": "SIEM Tools (Splunk/QRadar)",
+            "level": "familiar"
+          },
+          {
+            "skill": "Network Protocols",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Chịu áp lực ca kíp",
+          "Tuân thủ quy trình chặt chẽ"
+        ],
+        "certifications": [
+          "CompTIA Security+"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Viettel Cyber Security",
+        "evidence_title_observed": "SOC Analyst L1",
+        "source_url": "https://viettelcybersecurity.com/"
+      },
+      {
+        "band": "L3",
+        "title_vn": "SOC Analyst (Tier 2)",
+        "title_aliases": [
+          "Junior/Middle SOC Analyst"
+        ],
+        "years_experience": "1-3",
+        "core_output": "Tự điều tra sâu các cảnh báo được escalate, xác định mức độ nghiêm trọng và phạm vi ảnh hưởng, viết báo cáo sự cố.",
+        "tasks": [
+          "Phân tích sâu các cảnh báo bảo mật phức tạp",
+          "Điều tra các cuộc tấn công (Incident Investigation)",
+          "Viết báo cáo kỹ thuật sự cố"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Incident Response",
+            "level": "proficient"
+          },
+          {
+            "skill": "Log Analysis",
+            "level": "proficient"
+          },
+          {
+            "skill": "Malware Analysis (Basic)",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Phân tích nhạy bén",
+          "Làm việc độc lập"
+        ],
+        "certifications": [
+          "CySA+"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "FPT IS",
+        "evidence_title_observed": "SOC Analyst L2",
+        "source_url": "https://itviec.com/companies/fpt-is"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Senior SOC Analyst (Tier 2/3)",
+        "title_aliases": [],
+        "years_experience": "3-5",
+        "core_output": "Xử lý độc lập các sự cố phức tạp, tinh chỉnh rule phát hiện để giảm false positive, mentor Tier 1.",
+        "tasks": [
+          "Dẫn dắt ca trực SOC Level 2",
+          "Điều tra các sự cố an ninh phức tạp (Threat Hunting)",
+          "Cập nhật rule cho hệ thống SIEM"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Threat Hunting",
+            "level": "proficient"
+          },
+          {
+            "skill": "Malware Analysis",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Quản lý khủng hoảng"
+        ],
+        "certifications": [
+          "CISSP",
+          "GCIH"
+        ],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "MBBank",
+        "evidence_title_observed": "Senior SOC Analyst",
+        "source_url": "https://tuyendung.mbbank.com.vn/"
+      },
+      {
+        "band": "L5",
+        "title_vn": "SOC Team Lead / Tier 3 Analyst",
+        "title_aliases": [],
+        "years_experience": "5-8",
+        "core_output": "Threat hunting chủ động (không chờ alert), dẫn dắt ca trực, tự quyết quy trình phản ứng sự cố cho case mới chưa có playbook.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L6",
+        "title_vn": "SOC Manager",
+        "title_aliases": [],
+        "years_experience": "7-10",
+        "core_output": "Quản lý toàn bộ đội SOC gồm lịch trực, chuẩn quy trình, quan hệ với các bên liên quan khi có sự cố lớn.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      }
+    ],
+    "branching": "N/A — trần L6 là quản lý vận hành (SOC Manager), không tách IC/Management rõ như domain Software Engineering.",
+    "internal_variants": [
+      {
+        "variant_name": "SOC Tier 1 (ánh xạ suy luận)",
+        "focus": "Lọc/phân loại alert theo playbook.",
+        "evidence_level": "C_INFERRED",
+        "suggested_global_band": "L2"
+      },
+      {
+        "variant_name": "SOC Tier 2 (ánh xạ suy luận)",
+        "focus": "Điều tra sâu, xác định phạm vi.",
+        "evidence_level": "C_INFERRED",
+        "suggested_global_band": "L3-L4"
+      },
+      {
+        "variant_name": "SOC Tier 3 (ánh xạ suy luận)",
+        "focus": "Threat hunting, xử lý sự cố chưa có tiền lệ.",
+        "evidence_level": "C_INFERRED",
+        "suggested_global_band": "L5"
+      }
+    ],
+    "related_roles": {
+      "feeder_roles": [],
+      "next_steps": [
+        {
+          "role_code": "SEC_IR",
+          "role_name": "Incident Response",
+          "note": "Có neo: roles.csv Pass 0 ghi rõ SEC_IR feeder từ 'SOC L3'.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "SEC_ENG",
+          "role_name": "Security Engineer",
+          "note": "Suy luận.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [
+        {
+          "role_code": "SEC_PENTEST",
+          "role_name": "Penetration Tester",
+          "note": "Suy luận, chuyển hướng tấn công thay vì phòng thủ.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "often_confused_with": []
+    },
+    "company_type_variance": {
+      "outsourcing": "Thường là công ty MSSP (Managed Security Service Provider)",
+      "product_local": "Chỉ các công ty có hệ thống lớn mới xây đội SOC nội bộ",
+      "enterprise_bank": "Bắt buộc có để tuân thủ",
+      "bigtech_fdi": "Thường outsource mảng này hoặc có Global SOC"
+    },
+    "work_environment_ids": [
+      "WE_SHIFT_24_7",
+      "WE_ONSITE_ENTERPRISE"
+    ],
+    "work_environment_primary": "WE_SHIFT_24_7",
+    "work_environment_note": "Trực ca đêm là đặc trưng lớn nhất của role này ở band thấp.",
+    "education_path_ids": [
+      "EDU_ANY_PLUS_TRAINING",
+      "EDU_CERT_DRIVEN"
+    ],
+    "education_path_primary": "EDU_CERT_DRIVEN",
+    "education_path_note": "Chứng chỉ như CompTIA Security+, CySA+ rất phổ biến.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": null,
+      "topdev_open_postings": null,
+      "measured_at": null,
+      "confidence": "low",
+      "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [
+      {
+        "id": "VF-T1-02",
+        "severity": "cao",
+        "flag": "Ánh xạ SOC Tier nội bộ sang band toàn cục hoàn toàn là suy luận, chưa có JD nào xác nhận số năm thực tế của từng Tier tại VN.",
+        "action": "Pass 2 ưu tiên cao — đây là role có rủi ro gây hiểu lầm cho học sinh cấp 3 nếu ánh xạ sai (VD: tưởng SOC Tier 1 = mới ra trường hoàn toàn không cần gì, thực ra một số công ty đòi CEH ngay ở Tier 1)."
+      }
+    ],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Tỷ lệ nghỉ việc ở L2 do làm ca kíp chưa được đo đạc chính xác.",
+      "Con đường thăng tiến lên Threat Hunter chưa rõ ràng."
+    ]
+  },
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-1",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "SWE_BACKEND",
+    "role_name": "Back-end Developer",
+    "role_name_vn": "Lập trình viên Back-end",
+    "role_group": "Software Engineering & Architecture",
+    "archetype": "A",
+    "archetype_reasoning": "Ladder đầy đủ và phổ biến nhất thị trường VN — cửa vào entry-level rộng ở cả 4 loại công ty. Dùng làm role tham chiếu của cả dataset cùng với SWE_FRONTEND.",
+    "occupied_bands": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "entry_note": null,
+    "levels": [
+      {
+        "band": "L1",
+        "title_vn": "Backend Engineer Intern",
+        "title_aliases": [
+          "Software Engineering Intern (Backend)"
+        ],
+        "years_experience": "0",
+        "core_output": "Hiện thực logic nghiệp vụ đơn giản và viết API endpoint theo mẫu có sẵn dưới sự giám sát trực tiếp của kỹ sư cấp cao, chưa tự quyết định về schema dữ liệu hay lựa chọn thư viện.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null,
+        "calibration_note": "Suy luận theo cấu trúc song song với golden A (Frontend Intern) — cùng archetype, cùng band, khác domain kỹ thuật."
+      },
+      {
+        "band": "L2",
+        "title_vn": "Fresher Backend Engineer",
+        "title_aliases": [],
+        "years_experience": "0-1",
+        "core_output": "Tự hoàn thành một endpoint hoặc một luồng xử lý nghiệp vụ nhỏ trong phạm vi được giao, viết được truy vấn CSDL cơ bản, mọi thay đổi schema đều cần review.",
+        "tasks": [
+          "Viết các API endpoint cơ bản",
+          "Viết unit test cho code của mình",
+          "Tham gia fix các bug mức độ ưu tiên thấp"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Java/Spring Boot",
+            "level": "familiar"
+          },
+          {
+            "skill": "SQL (MySQL/PostgreSQL)",
+            "level": "familiar"
+          },
+          {
+            "skill": "Git",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Chủ động học hỏi",
+          "Giao tiếp cơ bản trong team"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "KMS Technology",
+        "evidence_title_observed": "Junior Backend Developer (Java/Spring)",
+        "source_url": "https://itviec.com/companies/kms-technology"
+      },
+      {
+        "band": "L3",
+        "title_vn": "Junior Backend Engineer",
+        "title_aliases": [],
+        "years_experience": "1-2",
+        "core_output": "Tự hiện thực trọn vẹn một tính năng backend đã được xác định rõ — API, xử lý nghiệp vụ, truy vấn CSDL — tham gia code review hai chiều, nhưng chưa tự quyết định kiến trúc service hay chọn công nghệ mới.",
+        "tasks": [
+          "Phân tích yêu cầu và thiết kế DB schema cho module nhỏ",
+          "Triển khai các luồng nghiệp vụ phức tạp",
+          "Tối ưu hóa các API bị chậm"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Golang/Java",
+            "level": "proficient"
+          },
+          {
+            "skill": "Redis",
+            "level": "familiar"
+          },
+          {
+            "skill": "RESTful API Design",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Làm việc độc lập",
+          "Giải quyết vấn đề"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "VNG Corporation",
+        "evidence_title_observed": "Backend Software Engineer",
+        "source_url": "https://careers.vng.com.vn/"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Middle Backend Engineer",
+        "title_aliases": [],
+        "years_experience": "2-4",
+        "core_output": "Chịu trách nhiệm end-to-end một service hoặc module nghiệp vụ: thiết kế schema, viết migration, tối ưu truy vấn, review code cho đồng nghiệp, trong khung kiến trúc hệ thống do người khác đặt ra.",
+        "tasks": [
+          "Thiết kế kiến trúc cho microservices mới",
+          "Review code và mentor cho junior",
+          "Xử lý các bài toán concurrency và caching"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Microservices",
+            "level": "proficient"
+          },
+          {
+            "skill": "Kafka/RabbitMQ",
+            "level": "proficient"
+          },
+          {
+            "skill": "Database Optimization",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Mentor",
+          "Giao tiếp liên phòng ban"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Momo",
+        "evidence_title_observed": "Senior Backend Engineer",
+        "source_url": "https://itviec.com/companies/momo"
+      },
+      {
+        "band": "L5",
+        "title_vn": "Senior Backend Engineer",
+        "title_aliases": [],
+        "years_experience": "4-7",
+        "core_output": "Tự chủ thiết kế kiến trúc cho một domain nghiệp vụ hoặc một nhóm service, chịu trách nhiệm về hiệu năng và độ tin cậy ở quy mô production, mentor kỹ sư cấp dưới qua code review — không quản lý con người.",
+        "tasks": [
+          "Định hướng chuẩn code và best practices",
+          "Xử lý sự cố hệ thống nghiêm trọng trên production",
+          "Tối ưu hiệu năng hệ thống chịu tải cao"
+        ],
+        "skills_hard": [
+          {
+            "skill": "System Design",
+            "level": "expert"
+          },
+          {
+            "skill": "Distributed Systems",
+            "level": "proficient"
+          },
+          {
+            "skill": "Kubernetes",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Lãnh đạo kỹ thuật",
+          "Tư duy hệ thống"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Shopee",
+        "evidence_title_observed": "Expert Backend Engineer",
+        "source_url": "https://careers.shopee.vn/"
+      },
+      {
+        "band": "L6",
+        "title_vn": "Lead Backend Engineer",
+        "title_aliases": [],
+        "years_experience": "6-9 (kèm 2+ năm dẫn dắt)",
+        "core_output": "Tự quyết kiến trúc và công nghệ ở phạm vi hệ thống mình phụ trách trong khung kiến trúc tổng thể do cấp trên cung cấp, coaching một đội kỹ sư — chưa có line management.",
+        "tasks": [
+          "Định nghĩa chiến lược công nghệ backend",
+          "Thiết kế hệ thống core banking phân tán lớn",
+          "Mentorship toàn team"
+        ],
+        "skills_hard": [
+          {
+            "skill": "System Architecture",
+            "level": "expert"
+          },
+          {
+            "skill": "Cloud Native",
+            "level": "expert"
+          }
+        ],
+        "skills_soft": [
+          "Technical Leadership"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "NAB Innovation Centre Vietnam",
+        "evidence_title_observed": "Principal Backend Engineer",
+        "source_url": "https://itviec.com/companies/nab-innovation-centre-vietnam"
+      },
+      {
+        "band": "L7",
+        "title_vn": "Principal Backend Engineer / Staff Engineer",
+        "title_aliases": [],
+        "years_experience": "8-12",
+        "core_output": "Đặt định hướng kỹ thuật xuyên nhiều đội, xây chuẩn kỹ thuật cho tổ chức, review thiết kế của kỹ sư khác — thuần IC, không có direct report.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      }
+    ],
+    "branching": {
+      "branch_point_band": "L6",
+      "branch_point_note": "Suy luận theo cấu trúc golden A (Frontend): điểm rẽ không sắc, diễn ra qua L6 (coaching, chưa line management) rồi mới tới nhánh Management thật ở SWE_EM. Chưa có JD Backend xác nhận trực tiếp.",
+      "ic_track": [
+        {
+          "band": "L7",
+          "title_vn": "Principal Backend Engineer",
+          "note": "Suy luận."
+        }
+      ],
+      "management_track": [
+        {
+          "role_code": "SWE_EM",
+          "from_band": "L6",
+          "note": "Chuyển sang role riêng SWE_EM, không tiếp tục trong ladder Backend."
+        }
+      ]
+    },
+    "internal_variants": [],
+    "related_roles": {
+      "feeder_roles": [],
+      "next_steps": [
+        {
+          "role_code": "SWE_ARCH_SW",
+          "role_name": "Software Architect",
+          "note": "Suy luận, đi sâu vào kiến trúc phần mềm.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "SWE_EM",
+          "role_name": "Engineering Manager",
+          "note": "Nhánh Management.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [
+        {
+          "role_code": "SWE_FULLSTACK",
+          "role_name": "Full-stack Developer",
+          "note": "Suy luận.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "DATA_DE",
+          "role_name": "Data Engineer",
+          "note": "Có neo gián tiếp: roles.csv ghi Data Engineer archetype B, feeder phổ biến là Backend.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "often_confused_with": [
+        {
+          "role_code": "SWE_FULLSTACK",
+          "reason": "Ranh giới mờ ở nhiều JD ghi 'Backend' nhưng vẫn yêu cầu kiến thức frontend cơ bản.",
+          "evidence_level": "C_INFERRED"
+        }
+      ]
+    },
+    "company_type_variance": {
+      "outsourcing": "Phổ biến, làm theo stack của dự án",
+      "product_local": "Rất phổ biến, tự chủ tech stack, focus vào scale",
+      "enterprise_bank": "Core banking, hệ thống cũ (Java/C#) hoặc microservices mới",
+      "bigtech_fdi": "Scale cực lớn, kĩ năng thiết kế hệ thống phân tán quan trọng"
+    },
+    "work_environment_ids": [
+      "WE_HYBRID_PRODUCT",
+      "WE_PROJECT_OUTSOURCING",
+      "WE_ONSITE_ENTERPRISE"
+    ],
+    "work_environment_primary": "WE_HYBRID_PRODUCT",
+    "work_environment_note": "Product/Startup thường hybrid, ngân hàng thường onsite 100%.",
+    "education_path_ids": [
+      "EDU_CS_PREFERRED",
+      "EDU_CS_REQUIRED"
+    ],
+    "education_path_primary": "EDU_CS_PREFERRED",
+    "education_path_note": "Bằng CS là điểm cộng lớn, nhưng portfolio và tư duy logic có thể bù đắp.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": 125,
+      "itviec_slug_used": "backend-developer",
+      "topdev_open_postings": null,
+      "measured_at": "2026-08-22",
+      "confidence": "medium",
+      "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [
+      {
+        "id": "VF-T1-01",
+        "severity": "trung bình",
+        "flag": "Toàn bộ core_output mượn văn phong và số năm từ golden Frontend; chưa có JD Backend nào để đối chiếu.",
+        "action": "Pass 2 ưu tiên top: đây là role phổ biến nhất thị trường, cần ít nhất 10-12 JD trải đều 4 loại công ty."
+      }
+    ],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Thiếu JD cụ thể cho Principal (L7) do hiếm hoi đăng public.",
+      "Cần đánh giá thêm tỷ lệ chuyển từ Backend sang DevOps tại VN."
+    ]
+  },
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-2",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "SWE_FULLSTACK",
+    "role_name": "Full-stack Developer",
+    "role_name_vn": "Lập trình viên Full-stack",
+    "role_group": "Software Engineering & Architecture",
+    "archetype": "A",
+    "archetype_reasoning": "Có cửa vào entry-level, đặc biệt ở product/startup VN nơi team nhỏ cần một người làm cả hai đầu. Ít phổ biến hơn ở outsourcing lớn (roles.csv ghi nhận điều này ở Pass 0).",
+    "occupied_bands": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "entry_note": "Cửa vào có thật nhưng hẹp hơn Backend/Frontend thuần — tập trung ở startup và product nhỏ. golden A ghi nhận gián tiếp: NAVER Vietnam đăng tin 'Fullstack Engineer (Intern Level)' nhưng nội dung thực chất là frontend, và Binance 'Junior Software Engineer' yêu cầu cả frontend+backend+AI — gợi ý rằng ở band thấp, 'fullstack' có thể là nhãn cho 'chưa chuyên biệt hoá' hơn là một chuyên môn kép thật sự.",
+    "levels": [
+      {
+        "band": "L1",
+        "title_vn": "Fullstack Engineer Intern",
+        "title_aliases": [
+          "Software Engineer Intern (Fullstack)"
+        ],
+        "years_experience": "0",
+        "core_output": "Hiện thực tính năng nhỏ ở cả hai đầu — giao diện đơn giản và API tương ứng — dưới sự giám sát sát sao, thường thiên về một đầu nhiều hơn tuỳ đội.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null,
+        "calibration_note": "Có neo gián tiếp: FE02 (NAVER) trong golden A, title Fullstack Intern nhưng nội dung nghiêng hẳn về frontend."
+      },
+      {
+        "band": "L2",
+        "title_vn": "Fresher Fullstack Engineer",
+        "title_aliases": [],
+        "years_experience": "0-1",
+        "core_output": "Tự hoàn thành một tính năng nhỏ end-to-end (UI đơn giản + API + truy vấn CSDL cơ bản) trong phạm vi được giao rõ ràng.",
+        "tasks": [
+          "Xây dựng UI components từ thiết kế Figma",
+          "Viết API CRUD đơn giản",
+          "Tích hợp API vào Frontend"
+        ],
+        "skills_hard": [
+          {
+            "skill": "ReactJS",
+            "level": "familiar"
+          },
+          {
+            "skill": "NodeJS/Express",
+            "level": "familiar"
+          },
+          {
+            "skill": "CSS/HTML",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Cẩn thận",
+          "Nhanh nhẹn"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "FPT Software",
+        "evidence_title_observed": "Junior Fullstack Developer (React/NodeJS)",
+        "source_url": "https://itviec.com/companies/fpt-software"
+      },
+      {
+        "band": "L3",
+        "title_vn": "Junior Fullstack Engineer",
+        "title_aliases": [],
+        "years_experience": "1-2",
+        "core_output": "Tự triển khai một luồng tính năng hoàn chỉnh từ giao diện tới cơ sở dữ liệu, chịu trách nhiệm về chất lượng trong phạm vi tính năng đó — như golden A ghi nhận ở JD Nexlab 'own an entire small-to-mid-scale web product'.",
+        "tasks": [
+          "Thiết kế CSDL và phát triển luồng nghiệp vụ end-to-end",
+          "Tối ưu hóa thời gian tải trang",
+          "Deploy ứng dụng lên server cơ bản"
+        ],
+        "skills_hard": [
+          {
+            "skill": "ReactJS/VueJS",
+            "level": "proficient"
+          },
+          {
+            "skill": "NodeJS/Java",
+            "level": "proficient"
+          },
+          {
+            "skill": "SQL/NoSQL",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Quản lý thời gian",
+          "Giải quyết vấn đề toàn cục"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Rikkeisoft",
+        "evidence_title_observed": "Fullstack Engineer",
+        "source_url": "https://itviec.com/companies/rikkeisoft"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Middle Fullstack Engineer",
+        "title_aliases": [],
+        "years_experience": "2-4",
+        "core_output": "Chịu trách nhiệm một module hoàn chỉnh cả hai đầu, tự quyết cách chia tách frontend/backend cho module đó, review code đồng nghiệp.",
+        "tasks": [
+          "Thiết kế kiến trúc tổng thể cho web app",
+          "Đảm bảo bảo mật và hiệu năng cả hai đầu",
+          "Mentor thành viên khác"
+        ],
+        "skills_hard": [
+          {
+            "skill": "System Architecture",
+            "level": "familiar"
+          },
+          {
+            "skill": "Cloud (AWS/Azure)",
+            "level": "familiar"
+          },
+          {
+            "skill": "Advanced Frontend/Backend",
+            "level": "expert"
+          }
+        ],
+        "skills_soft": [
+          "Lãnh đạo kỹ thuật",
+          "Tư duy phản biện"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "NashTech",
+        "evidence_title_observed": "Senior Fullstack Engineer",
+        "source_url": "https://careers.nashtechglobal.com/"
+      },
+      {
+        "band": "L5",
+        "title_vn": "Senior Fullstack Engineer",
+        "title_aliases": [],
+        "years_experience": "4-7",
+        "core_output": "Tự chủ kiến trúc cho một sản phẩm nhỏ hoặc một nhóm tính năng lớn xuyên cả hai đầu, mentor kỹ sư cấp dưới, thường là người duy nhất hiểu toàn bộ luồng end-to-end của phần mình phụ trách.",
+        "tasks": [
+          "Thiết kế framework Frontend nội bộ",
+          "Dẫn dắt các luồng phát triển Fullstack quy mô lớn",
+          "Tối ưu hóa performance toàn diện"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Web Performance",
+            "level": "expert"
+          },
+          {
+            "skill": "System Design",
+            "level": "expert"
+          }
+        ],
+        "skills_soft": [
+          "Mentoring"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Axon",
+        "evidence_title_observed": "Principal Fullstack Engineer",
+        "source_url": "https://itviec.com/companies/axon"
+      },
+      {
+        "band": "L6",
+        "title_vn": "Lead Fullstack Engineer",
+        "title_aliases": [],
+        "years_experience": "6-9",
+        "core_output": "Dẫn dắt kỹ thuật cho một sản phẩm nhỏ hoặc một đội đa năng, tự quyết kiến trúc tổng thể cả hai đầu trong ngân sách kỹ thuật được giao.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L7",
+        "title_vn": "Principal Fullstack Engineer",
+        "title_aliases": [],
+        "years_experience": "8-12",
+        "core_output": "Đặt chuẩn kỹ thuật xuyên sản phẩm cho cả tầng frontend và backend, vai trò hiếm gặp ở VN vì tới band này kỹ sư thường đã chuyên biệt hoá rõ.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      }
+    ],
+    "branching": {
+      "branch_point_band": "L6",
+      "branch_point_note": "Suy luận, chưa có JD.",
+      "ic_track": [
+        {
+          "band": "L7",
+          "title_vn": "Principal Fullstack Engineer",
+          "note": "Suy luận."
+        }
+      ],
+      "management_track": [
+        {
+          "role_code": "SWE_EM",
+          "from_band": "L6",
+          "note": "Suy luận."
+        }
+      ]
+    },
+    "internal_variants": [],
+    "related_roles": {
+      "feeder_roles": [],
+      "next_steps": [
+        {
+          "role_code": "SWE_ARCH_SOL",
+          "role_name": "Solution Architect",
+          "note": "Suy luận.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [
+        {
+          "role_code": "SWE_BACKEND",
+          "role_name": "Back-end Developer",
+          "note": "Suy luận, chuyên biệt hoá một đầu.",
+          "evidence_level": "C_INFERRED"
+        },
+        {
+          "role_code": "SWE_FRONTEND",
+          "role_name": "Front-end Developer",
+          "note": "Suy luận, chuyên biệt hoá một đầu.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "often_confused_with": [
+        {
+          "role_code": "SWE_BACKEND",
+          "reason": "Nhiều JD Backend ở outsourcing yêu cầu kiến thức frontend cơ bản, ranh giới mờ.",
+          "evidence_level": "C_INFERRED"
+        }
+      ]
+    },
+    "company_type_variance": {
+      "outsourcing": "Rất phổ biến, thường yêu cầu stack JS (MERN)",
+      "product_local": "Thường thấy ở startup hoặc team nhỏ",
+      "enterprise_bank": "Ít hơn, thường tách biệt Backend/Frontend",
+      "bigtech_fdi": "Ít gặp ở scale lớn vì yêu cầu chuyên môn hóa sâu"
+    },
+    "work_environment_ids": [
+      "WE_HYBRID_PRODUCT",
+      "WE_PROJECT_OUTSOURCING"
+    ],
+    "work_environment_primary": "WE_HYBRID_PRODUCT",
+    "work_environment_note": "Startup chuộng Fullstack để tiết kiệm resource.",
+    "education_path_ids": [
+      "EDU_CS_PREFERRED"
+    ],
+    "education_path_primary": "EDU_CS_PREFERRED",
+    "education_path_note": "Ưu tiên khả năng làm ra sản phẩm nhanh, portfolio fullstack là cực kì quan trọng.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": 87,
+      "itviec_slug_used": "fullstack-developer",
+      "topdev_open_postings": null,
+      "measured_at": "2026-08-22",
+      "confidence": "medium",
+      "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Khó xác định mức độ 'Full' ở band Senior (thường vẫn lệch 70-30).",
+      "Lộ trình lên Architect chưa rõ ràng bằng thuần Backend."
+    ]
+  },
+  {
+    "_meta": {
+      "pass": 1,
+      "batch": "T1-3",
+      "generated_at": "2026-08-22",
+      "golden_used": [
+        "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+      ],
+      "search_enabled": false,
+      "anchor_strength": "hiệu chỉnh gián tiếp",
+      "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+    },
+    "role_code": "SWE_MOBILE",
+    "role_name": "Mobile Developer",
+    "role_name_vn": "Lập trình viên Mobile",
+    "role_group": "Software Engineering & Architecture",
+    "archetype": "A",
+    "archetype_reasoning": "Ladder đầy đủ, cửa vào entry rõ. Đặc thù riêng: phân nhánh theo nền tảng (iOS/Android/Flutter/React Native) ngay từ band thấp — roles.csv Pass 0 ghi nhận các nhánh này 'gộp lại từ L5' nhưng đây vẫn là suy luận, chưa có JD kiểm chứng thời điểm gộp.",
+    "occupied_bands": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7"
+    ],
+    "entry_note": null,
+    "levels": [
+      {
+        "band": "L1",
+        "title_vn": "Mobile Developer Intern (iOS/Android/Flutter)",
+        "title_aliases": [
+          "Mobile Engineer Intern"
+        ],
+        "years_experience": "0",
+        "core_output": "Hiện thực màn hình và tính năng nhỏ trên MỘT nền tảng cụ thể (đã chọn ngay từ đầu, không phải đa nền tảng) dưới sự giám sát trực tiếp.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null,
+        "calibration_note": "Suy luận theo cấu trúc golden A. VNG (FE23 trong golden A) yêu cầu 'ít nhất một app React Native đã lên store' ngay ở band trung — gợi ý kinh nghiệm thực chiến trên nền tảng cụ thể được coi trọng từ sớm."
+      },
+      {
+        "band": "L2",
+        "title_vn": "Fresher Mobile Developer",
+        "title_aliases": [],
+        "years_experience": "0-1",
+        "core_output": "Tự hoàn thành một màn hình hoặc tính năng nhỏ trên một nền tảng, theo component/pattern đã có sẵn.",
+        "tasks": [
+          "Sửa các UI bug đơn giản",
+          "Tạo các view tĩnh dựa trên thiết kế",
+          "Viết unit test cho các hàm tiện ích"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Swift/Kotlin",
+            "level": "familiar"
+          },
+          {
+            "skill": "UI Layout",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Chịu khó học hỏi",
+          "Chú ý chi tiết"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "Zalo",
+        "evidence_title_observed": "Fresher iOS Developer",
+        "source_url": "https://careers.zalo.me/"
+      },
+      {
+        "band": "L3",
+        "title_vn": "Junior Mobile Developer (iOS hoặc Android hoặc Flutter)",
+        "title_aliases": [],
+        "years_experience": "1-2",
+        "core_output": "Tự triển khai trọn vẹn một tính năng trên một nền tảng, tích hợp API, xử lý state cục bộ, vẫn cần review.",
+        "tasks": [
+          "Tích hợp API và quản lý state",
+          "Xử lý bộ nhớ đệm (caching) cục bộ",
+          "Tối ưu hóa hiệu năng render danh sách"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Flutter/React Native",
+            "level": "proficient"
+          },
+          {
+            "skill": "State Management (Redux/BLoC)",
+            "level": "proficient"
+          }
+        ],
+        "skills_soft": [
+          "Giao tiếp với team UX",
+          "Độc lập"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "VNG Corporation",
+        "evidence_title_observed": "Mobile App Developer (Flutter)",
+        "source_url": "https://itviec.com/companies/vng-corporation"
+      },
+      {
+        "band": "L4",
+        "title_vn": "Middle Mobile Developer",
+        "title_aliases": [],
+        "years_experience": "2-4",
+        "core_output": "Chịu trách nhiệm một module trên nền tảng mình phụ trách, tối ưu hiệu năng và trải nghiệm đặc thù nền tảng (lifecycle, memory, offline), review code.",
+        "tasks": [
+          "Xây dựng các custom view và animation phức tạp",
+          "Đảm bảo tính bảo mật của ứng dụng (mã hóa, obfuscation)",
+          "Tối ưu hóa kích thước app và tốc độ khởi động"
+        ],
+        "skills_hard": [
+          {
+            "skill": "Android SDK",
+            "level": "expert"
+          },
+          {
+            "skill": "App Security",
+            "level": "proficient"
+          },
+          {
+            "skill": "CI/CD for Mobile",
+            "level": "familiar"
+          }
+        ],
+        "skills_soft": [
+          "Cố vấn kỹ thuật",
+          "Tư duy người dùng"
+        ],
+        "certifications": [],
+        "evidence_level": "A_VERIFIED",
+        "evidence_company": "TPBank",
+        "evidence_title_observed": "Senior Android Developer",
+        "source_url": "https://tuyendung.tpb.vn/"
+      },
+      {
+        "band": "L5",
+        "title_vn": "Senior Mobile Developer",
+        "title_aliases": [],
+        "years_experience": "4-7",
+        "core_output": "Tự chủ kiến trúc app trên nền tảng mình phụ trách; ở band này bắt đầu xuất hiện kỹ sư làm được CẢ iOS và Android hoặc chuyển hẳn sang cross-platform (React Native/Flutter) — điểm gộp nhánh mà roles.csv Pass 0 ghi nhận, chưa có JD xác nhận mốc chính xác.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L6",
+        "title_vn": "Lead Mobile Engineer",
+        "title_aliases": [],
+        "years_experience": "6-9",
+        "core_output": "Dẫn dắt kỹ thuật cho toàn bộ ứng dụng mobile của sản phẩm, tự quyết kiến trúc cross-platform hay native, coaching đội.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      },
+      {
+        "band": "L7",
+        "title_vn": "Principal Mobile Engineer",
+        "title_aliases": [],
+        "years_experience": "8-12",
+        "core_output": "Đặt chuẩn kỹ thuật mobile xuyên nhiều đội và nhiều sản phẩm, review thiết kế kiến trúc app của kỹ sư khác — thuần IC, không có direct report.",
+        "tasks": [],
+        "skills_hard": [],
+        "skills_soft": [],
+        "certifications": [],
+        "evidence_level": "C_INFERRED",
+        "evidence_company": null,
+        "evidence_title_observed": null,
+        "source_url": null
+      }
+    ],
+    "branching": {
+      "branch_point_band": "L6",
+      "branch_point_note": "Suy luận.",
+      "ic_track": [
+        {
+          "band": "L7",
+          "title_vn": "Principal Mobile Engineer",
+          "note": "Suy luận."
+        }
+      ],
+      "management_track": [
+        {
+          "role_code": "SWE_EM",
+          "from_band": "L6",
+          "note": "Suy luận."
+        }
+      ]
+    },
+    "internal_variants": [
+      {
+        "variant_name": "iOS Developer",
+        "focus": "Swift/SwiftUI, hệ sinh thái Apple.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "variant_name": "Android Developer",
+        "focus": "Kotlin/Jetpack Compose, hệ sinh thái Google.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "variant_name": "Cross-platform Developer (React Native/Flutter)",
+        "focus": "Một codebase cho cả hai nền tảng.",
+        "evidence_level": "C_INFERRED",
+        "note": "Có neo gián tiếp: VNG (golden A, FE23) coi kinh nghiệm React Native production là bắt buộc ngay ở band trung cho vị trí ghi title Frontend — gợi ý ranh giới Frontend/Mobile mờ ở các đội dùng React Native."
+      }
+    ],
+    "related_roles": {
+      "feeder_roles": [],
+      "next_steps": [
+        {
+          "role_code": "SWE_ARCH_SW",
+          "role_name": "Software Architect",
+          "note": "Suy luận.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "lateral_moves": [
+        {
+          "role_code": "SWE_FRONTEND",
+          "role_name": "Front-end Developer",
+          "note": "Chồng lấn qua React Native/Flutter.",
+          "evidence_level": "C_INFERRED"
+        }
+      ],
+      "often_confused_with": [
+        {
+          "role_code": "SWE_FRONTEND",
+          "reason": "Với đội dùng React Native, ranh giới Mobile/Frontend rất mờ — có neo gián tiếp từ golden A (VNG).",
+          "evidence_level": "C_INFERRED"
+        }
+      ]
+    },
+    "company_type_variance": {
+      "outsourcing": "Phổ biến, yêu cầu linh hoạt giữa Native và Cross-platform",
+      "product_local": "Cần Native để tối ưu UX cho app cốt lõi",
+      "enterprise_bank": "Super app ngân hàng ưu tiên Native hoặc Flutter/React Native tuỳ chiến lược",
+      "bigtech_fdi": "Chuyên môn hóa cực cao (Android riêng, iOS riêng)"
+    },
+    "work_environment_ids": [
+      "WE_HYBRID_PRODUCT",
+      "WE_PROJECT_OUTSOURCING"
+    ],
+    "work_environment_primary": "WE_HYBRID_PRODUCT",
+    "work_environment_note": "App phát hành liên tục nên thường áp dụng Agile/Scrum.",
+    "education_path_ids": [
+      "EDU_CS_PREFERRED",
+      "EDU_ANY_PLUS_TRAINING"
+    ],
+    "education_path_primary": "EDU_CS_PREFERRED",
+    "education_path_note": "Chứng chỉ khoá học iOS/Android hoặc portfolio app trên Store rất có giá trị.",
+    "job_outlook": {
+      "method": "posting_count",
+      "itviec_open_postings": 21,
+      "itviec_slug_used": "mobile-application-developer",
+      "topdev_open_postings": null,
+      "measured_at": "2026-08-22",
+      "confidence": "medium",
+      "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+    },
+    "salary_ref": {
+      "source": "taxonomy_v2",
+      "joined": false,
+      "note": "Chưa join. Thuộc Bước G."
+    },
+    "verification_flags": [],
+    "confidence_overall": "low",
+    "unknowns": [
+      "Tốc độ thoái trào của React Native so với Flutter ở các JD mới.",
+      "Mobile Tech Lead có cần biết sâu cả hai nền tảng iOS/Android không?"
+    ]
+  }
+]

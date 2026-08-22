@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-EXEC1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "EXEC_CTO",
+  "role_name": "Chief Technology Officer",
+  "role_name_vn": "Giám đốc Công nghệ (CTO)",
+  "role_group": "Executive Technology Layer",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: destination node cấp điều hành. LƯU Ý: tại startup VN, CTO có thể xuất hiện ở band thấp hơn nhiều (L7) so với enterprise — roles.csv yêu cầu ghi rõ biến thiên theo quy mô công ty. Giữ occupied_bands đúng theo roles.csv (L9-L10) cho vai trò CTO 'chuẩn' cấp điều hành; biến thể startup L7 được ghi ở entry_note/internal_variants/verification_flags thay vì đổi occupied_bands, để không tự ý sửa dữ liệu gốc của roles.csv ngoài phạm vi Pass 1.",
+  "occupied_bands": [
+    "L9",
+    "L10"
+  ],
+  "entry_note": "Không có cửa vào entry-level cho vai trò CTO 'chuẩn' (L9-L10) — đi lên từ VP of Engineering hoặc Engineering Manager senior. LƯU Ý QUAN TRỌNG: tại startup VN, người mang title CTO có thể là đồng sáng lập kỹ thuật ở mức năng lực tương đương L7 (chưa có đội lớn, vẫn hands-on) — roles.csv yêu cầu ghi rõ biến thiên này. Đây là HAI THỰC TẾ KHÁC NHAU dùng chung một title, không phải cùng một cấp bậc.",
+  "destination_profile": {
+    "band_range": "L9 - L10",
+    "min_years_experience": "12-20",
+    "years_band_check": "Sàn 12 = sàn của L9. Lấy trọn khoảng L9-L10 theo thang toàn cục vì không có bằng chứng để thu hẹp. Đây là band_range cho CTO 'chuẩn' cấp điều hành — biến thể CTO-startup (tương đương L7, 8+ năm) được ghi riêng ở entry_note/internal_variants vì nó lệch hẳn khỏi occupied_bands roles.csv, không gộp vào con số ở đây để tránh làm loãng dữ liệu.",
+    "core_output": "Đặt chiến lược công nghệ tổng thể cho công ty, quyết định kiến trúc hệ thống lớn và lựa chọn công nghệ nền tảng dài hạn, quản lý toàn bộ tổ chức kỹ thuật (qua các VP/Director cấp dưới ở enterprise, hoặc trực tiếp ở startup), và là đại diện kỹ thuật cao nhất trước hội đồng quản trị/nhà đầu tư — QUY MÔ CÔNG TY QUYẾT ĐỊNH RẤT LỚN tới nội dung công việc thật: CTO startup vẫn có thể trực tiếp code và tuyển dụng từng người, CTO enterprise gần như thuần chiến lược và quản lý qua nhiều lớp.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — đỉnh của nhánh Management/kỹ thuật. Không có bước tiếp theo trong taxonomy nội bộ công ty (có thể là board member, founder công ty khác, hoặc CTO công ty lớn hơn — ngoài phạm vi roles.csv).",
+  "internal_variants": [
+    {
+      "variant_name": "Founder/CTO startup",
+      "focus": "Đồng sáng lập kỹ thuật, vẫn hands-on code, đội kỹ thuật nhỏ (dưới 20 người).",
+      "evidence_level": "C_INFERRED",
+      "note": "roles.csv ghi rõ đây là biến thiên quan trọng cần lưu ý."
+    },
+    {
+      "variant_name": "CTO enterprise/tập đoàn",
+      "focus": "Thuần chiến lược, quản lý qua nhiều lớp VP/Director, ít hoặc không còn hands-on.",
+      "evidence_level": "C_INFERRED"
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "EXEC_VPOE",
+        "role_name": "VP of Engineering",
+        "from_band": "L9",
+        "note": "Suy luận — đường vào ở enterprise.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_EM",
+        "role_name": "Engineering Manager",
+        "from_band": "L7",
+        "note": "Suy luận — đường vào ở startup (founder/CTO sớm).",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [],
+    "lateral_moves": [
+      {
+        "role_code": "EXEC_CIO",
+        "role_name": "Chief Information Officer",
+        "note": "Suy luận — ở một số công ty hai vai trò gộp làm một.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "EXEC_CPO",
+        "role_name": "Chief Product Officer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "EXEC_VPOE",
+        "reason": "Ranh giới nằm ở phạm vi trách nhiệm: CTO thường bao gồm cả chiến lược công nghệ dài hạn và quan hệ nhà đầu tư, VPOE tập trung vận hành tổ chức kỹ thuật.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "verification_flags": [
+    {
+      "id": "VF-C-CTO-01",
+      "severity": "cao",
+      "flag": "roles.csv ghi rõ 'tại startup VN, CTO có thể xuất hiện ở L7' — mâu thuẫn trực tiếp với occupied_bands L9-L10 dùng cho vai trò CTO 'chuẩn'. Đã CHỌN giữ occupied_bands = L9-L10 theo roles.csv và ghi biến thể startup riêng ở entry_note/internal_variants thay vì đổi occupied_bands, để không tự sửa dữ liệu gốc ngoài phạm vi Pass 1 — nhưng điều này có nghĩa là một bộ phận CTO thật tại VN (founder/CTO startup) không được occupied_bands ở trên phản ánh đúng.",
+      "action": "Pass 2: thu thập JD CTO từ ít nhất 2-3 startup VN quy mô khác nhau; cân nhắc tách thành hai profile riêng (CTO-founder vs CTO-enterprise) hoặc mở rộng occupied_bands trong bản taxonomy kế tiếp sau khi có JD xác nhận."
+    }
+  ],
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Biến thiên band theo quy mô công ty (L7 startup so với L9-L10 enterprise) là khác biệt LỚN NHẤT trong toàn bộ 6 role EXEC — occupied_bands ở đây đã điều chỉnh phản ánh điều này, khác các role EXEC khác.",
+    "Chưa rõ tỷ lệ CTO tại VN là founder/đồng sáng lập so với được thuê vào sau."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "confidence_overall": "low"
+}

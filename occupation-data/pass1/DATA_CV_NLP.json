@@ -1,0 +1,202 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-DATA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "DATA_CV_NLP",
+  "role_name": "Computer Vision / NLP Engineer",
+  "role_name_vn": "Kỹ sư thị giác máy tính / xử lý ngôn ngữ",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: gắn với viện nghiên cứu/VinAI/FPT AI, cửa vào thường qua thực tập nghiên cứu hoặc sau đại học chuyên ngành chứ không phải fresher lập trình đại trà.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Gắn nhiều với viện nghiên cứu và các trung tâm AI (VinAI, FPT AI, Zalo AI) hơn công ty thường — theo roles.csv. Sàn thấp nhất hợp lý là L3, thường xuất phát từ thực tập nghiên cứu hoặc theo học sau đại học chuyên ngành, không phải fresher lập trình thông thường.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "CV/NLP Engineer (mới, thường từ thực tập nghiên cứu)",
+      "title_aliases": [],
+      "years_experience": "1-3",
+      "core_output": "Hỗ trợ huấn luyện lại model CV/NLP có sẵn trên tập dữ liệu mới, đánh giá kết quả theo hướng dẫn của kỹ sư senior hoặc researcher, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle CV/NLP Engineer",
+      "title_aliases": [],
+      "years_experience": "2-5",
+      "core_output": "Tự huấn luyện và tinh chỉnh model CV/NLP cho một bài toán cụ thể (nhận diện, phân loại, trích xuất thông tin), triển khai lên production ở mức cơ bản, tương ứng vai trò tự chủ trong phạm vi một module.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior CV/NLP Engineer",
+      "title_aliases": [],
+      "years_experience": "4-8",
+      "core_output": "Tự chủ nghiên cứu và phát triển giải pháp CV/NLP cho một domain sản phẩm, tối ưu độ chính xác và tốc độ suy luận, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "CV/NLP Engineering Lead",
+      "title_aliases": [],
+      "years_experience": "7-10",
+      "core_output": "Dẫn dắt kỹ thuật cho một team CV/NLP, định hướng nghiên cứu áp dụng vào sản phẩm, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal CV/NLP Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chiến lược R&D CV/NLP xuyên nhiều đội, đại diện kỹ thuật khi hợp tác với viện nghiên cứu/đại học, tương ứng vai trò chịu trách nhiệm cross-team.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal CV/NLP Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Suy luận dùng chung SWE_EM do chưa có Research Engineering Manager riêng trong taxonomy."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "DATA_ML",
+        "role_name": "Machine Learning Engineer",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": null,
+        "role_name": "Nghiên cứu sinh / thực tập viện nghiên cứu AI (ngoài ngành IT thuần)",
+        "from_band": "L3",
+        "note": "Chưa map được vào role_code, giữ null theo quy tắc.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_ML",
+        "role_name": "Machine Learning Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_AI",
+        "role_name": "AI Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_ML",
+        "reason": "Ranh giới nằm ở chuyên môn hoá theo loại dữ liệu (ảnh/văn bản) so với ML tổng quát.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ tỷ lệ vị trí CV/NLP Engineer tại công ty thường (ngoài viện nghiên cứu/trung tâm AI) so với tại VinAI/FPT AI/Zalo AI.",
+    "Sàn L3 dựa trên suy luận về đường vào qua nghiên cứu — chưa có JD xác nhận mốc năm."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

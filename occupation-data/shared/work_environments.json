@@ -1,0 +1,270 @@
+{
+  "_meta": {
+    "file": "shared/work_environments.json",
+    "version": "0.1-draft",
+    "status": "CHUA_VERIFY",
+    "note": "Bản nháp. Mọi mô tả là suy luận từ hiểu biết thị trường VN, chưa đối chiếu JD. Duyệt và sửa trước khi dùng ở Pass 2.",
+    "usage": "Role file trỏ vào đây bằng work_environment_ids[] và work_environment_primary. Không copy nội dung sang role file.",
+    "assignment_rule": "Mỗi role gán 1-3 ID. Căn cứ khi đọc JD: có nhắc ca kíp / on-call / onsite bắt buộc / remote / công tác không.",
+    "company_type_note": "4 nhóm company_type: outsourcing / product_local / enterprise_bank / bigtech_fdi. Đây là trục quy mô-nguồn gốc. Trục mô hình kinh doanh (product_inhouse vs outsourcing) là trục ĐỘC LẬP, ghi ở cột business_model của capture sheet."
+  },
+  "environments": [
+    {
+      "id": "WE_ONSITE_ENTERPRISE",
+      "name_vn": "Onsite doanh nghiệp lớn / ngân hàng",
+      "name_en": "Onsite Enterprise",
+      "summary": "Làm việc tại văn phòng theo giờ hành chính cố định, hệ thống chạy on-premise, mọi thay đổi phải qua quy trình phê duyệt. Nhịp làm việc chậm và có kỷ luật, đổi lại tính ổn định cao.",
+      "attributes": {
+        "location": "onsite",
+        "hours": "giờ hành chính cố định (thường 8:00-17:00)",
+        "schedule_type": "regular",
+        "flexibility": "thấp",
+        "dress_code": "công sở, một số nơi bắt buộc đồng phục",
+        "on_call": "hiếm, trừ đội vận hành",
+        "travel": "ít",
+        "pace": "chậm, theo quy trình",
+        "release_cadence": "theo đợt, có change window cuối tuần hoặc ban đêm"
+      },
+      "typical_company_types": [
+        "Ngân hàng",
+        "Bảo hiểm",
+        "Tập đoàn nhà nước",
+        "Viễn thông"
+      ],
+      "typical_role_codes": [
+        "PROD_BA",
+        "SEC_GRC",
+        "DATA_GOV",
+        "INFRA_DBA",
+        "SWE_ARCH_ENT",
+        "INFRA_ITMANAGER"
+      ],
+      "pros": [
+        "Ổn định, ít rủi ro mất việc",
+        "Phúc lợi và bảo hiểm tốt, thưởng theo quý/năm rõ ràng",
+        "Được tiếp xúc hệ thống quy mô lớn và nghiệp vụ phức tạp"
+      ],
+      "cons": [
+        "Công nghệ thường cũ hơn thị trường vài năm",
+        "Quy trình nhiều, tốc độ ra quyết định chậm",
+        "Ít tự do lựa chọn công cụ"
+      ],
+      "note_for_students": "Môi trường phù hợp nếu bạn coi trọng ổn định hơn tốc độ học công nghệ mới. Đây cũng là nơi nghiệp vụ (tài chính, thanh toán) quan trọng ngang hoặc hơn kỹ thuật.",
+      "confidence": "high"
+    },
+    {
+      "id": "WE_HYBRID_PRODUCT",
+      "name_vn": "Hybrid tại công ty làm product in-house",
+      "name_en": "Hybrid Product",
+      "summary": "Kết hợp onsite và làm việc từ xa, tổ chức theo squad tự chủ, deploy liên tục. Giờ giấc linh hoạt nhưng áp lực đến từ mục tiêu sản phẩm chứ không từ giờ công.",
+      "attributes": {
+        "location": "hybrid",
+        "hours": "linh hoạt, thường có core hours",
+        "schedule_type": "regular",
+        "flexibility": "cao",
+        "dress_code": "tự do",
+        "on_call": "có với đội backend/hạ tầng, xoay vòng theo tuần",
+        "travel": "ít",
+        "pace": "nhanh, ưu tiên thay đổi",
+        "release_cadence": "liên tục, nhiều lần mỗi tuần"
+      },
+      "typical_company_types": [
+        "Product Việt Nam",
+        "Startup",
+        "Fintech",
+        "FDI/bigtech có R&D tại VN"
+      ],
+      "typical_role_codes": [
+        "SWE_FRONTEND",
+        "SWE_BACKEND",
+        "SWE_FULLSTACK",
+        "PROD_PM",
+        "SWE_UIUX",
+        "DATA_DA"
+      ],
+      "pros": [
+        "Công nghệ mới, được quyết định nhiều về kỹ thuật",
+        "Thấy tác động của việc mình làm lên sản phẩm thật",
+        "Thăng tiến nhanh nếu công ty tăng trưởng"
+      ],
+      "cons": [
+        "Rủi ro theo tình hình gọi vốn của công ty",
+        "Phạm vi công việc hay thay đổi, phải kiêm nhiệm",
+        "Ranh giới giờ làm việc dễ bị mờ"
+      ],
+      "note_for_students": "Phù hợp nếu bạn thích tự chủ và chịu được sự mơ hồ. Đổi lại, ít có người kèm bài bản như ở outsourcing lớn.",
+      "confidence": "high",
+      "note_vn": "Áp dụng cho mọi công ty làm sản phẩm của chính mình, bất kể quy mô — từ startup Việt tới trung tâm R&D của tập đoàn nước ngoài."
+    },
+    {
+      "id": "WE_PROJECT_OUTSOURCING",
+      "name_vn": "Theo dự án tại công ty outsourcing",
+      "name_en": "Project-based Outsourcing",
+      "summary": "Làm theo dự án cho khách hàng nước ngoài, giờ giấc và quy trình bám theo khách. Được luân chuyển qua nhiều dự án và nhiều công nghệ, nhưng ít quyết định về hướng sản phẩm.",
+      "attributes": {
+        "location": "onsite hoặc hybrid tuỳ dự án",
+        "hours": "lệch theo múi giờ khách (Nhật/Hàn thường sớm, Mỹ/EU thường muộn)",
+        "schedule_type": "regular",
+        "flexibility": "trung bình, phụ thuộc khách hàng",
+        "dress_code": "công sở nhẹ, chỉnh tề hơn khi có khách sang",
+        "on_call": "ít, trừ giai đoạn go-live",
+        "travel": "có thể onsite tại nước khách hàng vài tuần đến vài tháng",
+        "pace": "theo mốc release của khách, có OT dồn vào cuối giai đoạn",
+        "release_cadence": "theo hợp đồng và milestone"
+      },
+      "typical_company_types": [
+        "FPT Software",
+        "KMS Technology",
+        "NashTech",
+        "Rikkeisoft",
+        "TMA",
+        "Axon"
+      ],
+      "typical_role_codes": [
+        "SWE_BRSE",
+        "QA_MANUAL",
+        "SWE_BACKEND",
+        "PROD_PL",
+        "PROD_DM",
+        "QA_AUTO"
+      ],
+      "pros": [
+        "Lộ trình đào tạo bài bản nhất thị trường, tốt cho người mới",
+        "Cửa vào rộng — tuyển fresher với số lượng lớn",
+        "Cơ hội onsite nước ngoài và học ngoại ngữ"
+      ],
+      "cons": [
+        "Ít quyết định về sản phẩm, chủ yếu hiện thực theo yêu cầu",
+        "Công nghệ phụ thuộc dự án, có thể phải làm hệ thống cũ",
+        "OT tập trung vào các mốc bàn giao"
+      ],
+      "note_for_students": "Đây là cửa vào ngành dễ tiếp cận nhất với sinh viên mới ra trường tại VN, đặc biệt nếu bạn có tiếng Nhật hoặc tiếng Anh.",
+      "confidence": "high"
+    },
+    {
+      "id": "WE_SHIFT_24_7",
+      "name_vn": "Ca kíp trực 24/7",
+      "name_en": "24/7 Shift Operations",
+      "summary": "Hệ thống phải được giám sát liên tục nên nhân sự làm theo ca xoay vòng, bao gồm ca đêm, cuối tuần và ngày lễ. Công việc gắn với SLA và quy trình xử lý sự cố.",
+      "attributes": {
+        "location": "onsite (nhiều nơi bắt buộc, vì lý do bảo mật)",
+        "hours": "ca xoay vòng, thường 3 ca hoặc 2 ca 12 tiếng",
+        "schedule_type": "shift",
+        "flexibility": "rất thấp",
+        "dress_code": "tuỳ nơi",
+        "on_call": "có, là một phần cốt lõi của công việc",
+        "travel": "ít",
+        "pace": "bình thường khi yên, cực căng khi có sự cố",
+        "release_cadence": "không áp dụng — vận hành, không phát triển"
+      },
+      "typical_company_types": [
+        "Ngân hàng",
+        "Viễn thông",
+        "Nhà cung cấp dịch vụ bảo mật",
+        "Datacenter",
+        "Fintech quy mô lớn"
+      ],
+      "typical_role_codes": [
+        "SEC_SOC",
+        "INFRA_ITOPS",
+        "INFRA_HELPDESK",
+        "CLOUD_SRE",
+        "SEC_IR"
+      ],
+      "pros": [
+        "Cửa vào ngành với yêu cầu đầu vào thấp hơn nhiều role khác",
+        "Có phụ cấp ca đêm và ngày lễ",
+        "Học phản xạ xử lý sự cố rất nhanh trong 1-2 năm đầu"
+      ],
+      "cons": [
+        "Ảnh hưởng tới nhịp sinh hoạt và đời sống xã hội",
+        "Khó duy trì lâu dài — nhiều người chuyển sang role giờ hành chính sau 2-4 năm",
+        "Công việc ở band thấp mang tính lặp lại theo quy trình"
+      ],
+      "note_for_students": "Đây là thông tin quan trọng nhất trong bảng này với người chọn nghề. Nhiều bạn chọn an ninh mạng mà không biết cửa vào phổ biến nhất (SOC Analyst L1) là trực ca đêm xoay vòng. Không phải điều xấu, nhưng cần biết trước.",
+      "confidence": "high"
+    },
+    {
+      "id": "WE_FIELD_CLIENT",
+      "name_vn": "Làm tại site khách hàng",
+      "name_en": "Field / Client Site",
+      "summary": "Phải có mặt tại địa điểm của khách hàng — datacenter, nhà máy, chi nhánh — để triển khai hoặc xử lý sự cố. Có thể phải công tác tỉnh.",
+      "attributes": {
+        "location": "onsite tại khách hàng, thay đổi theo dự án",
+        "hours": "giờ hành chính, nhưng cắt chuyển hệ thống thường vào đêm hoặc cuối tuần",
+        "schedule_type": "regular_with_windows",
+        "flexibility": "thấp",
+        "dress_code": "công sở, một số nơi cần đồ bảo hộ",
+        "on_call": "có trong giai đoạn triển khai",
+        "travel": "cao — đây là đặc trưng phân biệt của archetype này",
+        "pace": "theo tiến độ triển khai",
+        "release_cadence": "theo giai đoạn dự án"
+      },
+      "typical_company_types": [
+        "System Integrator",
+        "Nhà phân phối thiết bị",
+        "Đối tác triển khai ERP/CRM",
+        "Nhà thầu hạ tầng"
+      ],
+      "typical_role_codes": [
+        "INFRA_NETWORK",
+        "INFRA_ERP",
+        "INFRA_CRM",
+        "INFRA_SAPBASIS"
+      ],
+      "pros": [
+        "Tiếp xúc trực tiếp với khách hàng và nghiệp vụ thật",
+        "Kỹ năng khó bị thay thế bằng tự động hoá",
+        "Có phụ cấp công tác"
+      ],
+      "cons": [
+        "Di chuyển nhiều, khó cân bằng cuộc sống",
+        "Công việc chuyển hệ thống thường rơi vào đêm hoặc cuối tuần"
+      ],
+      "note_for_students": "Ít người biết tới nhóm này khi chọn nghề, dù nhu cầu tuyển khá đều và cạnh tranh thấp hơn nhóm phát triển phần mềm.",
+      "confidence": "low",
+      "verification_needed": "CẦN BẠN KIỂM. Mình không chắc mức độ đi site còn phổ biến ở VN sau 2021 hay đã chuyển remote phần lớn, đặc biệt với INFRA_ERP và INFRA_CRM. Mở 2-3 JD ERP/Salesforce trên ITviec xem có yêu cầu công tác không. Nếu không còn, gộp INFRA_ERP và INFRA_CRM vào WE_ONSITE_ENTERPRISE và giữ archetype này chỉ cho INFRA_NETWORK."
+    },
+    {
+      "id": "WE_REMOTE_GLOBAL",
+      "name_vn": "Remote cho tổ chức toàn cầu",
+      "name_en": "Remote / Global-first",
+      "summary": "Làm từ xa cho công ty hoặc khách hàng nước ngoài, phối hợp bất đồng bộ qua tài liệu, họp lệch múi giờ. Tự chủ cao nhưng đòi hỏi kỷ luật và khả năng viết tốt.",
+      "attributes": {
+        "location": "remote",
+        "hours": "linh hoạt, có overlap bắt buộc với múi giờ đội ngũ",
+        "schedule_type": "regular",
+        "flexibility": "rất cao",
+        "dress_code": "không áp dụng",
+        "on_call": "tuỳ role",
+        "travel": "hiếm, có thể có offsite 1-2 lần/năm",
+        "pace": "tuỳ tổ chức",
+        "release_cadence": "tuỳ tổ chức"
+      },
+      "typical_company_types": [
+        "FDI",
+        "Công ty nước ngoài không có văn phòng VN",
+        "Hợp đồng freelance quốc tế"
+      ],
+      "typical_role_codes": [
+        "DATA_ML",
+        "DATA_GENAI",
+        "SWE_BACKEND",
+        "CLOUD_DEVOPS",
+        "SWE_UIUX"
+      ],
+      "pros": [
+        "Mức lương thường cao hơn mặt bằng trong nước",
+        "Tiết kiệm thời gian di chuyển",
+        "Tiếp cận cách làm việc và tiêu chuẩn quốc tế"
+      ],
+      "cons": [
+        "Yêu cầu tiếng Anh viết tốt là bắt buộc, không phải lợi thế",
+        "Ít được kèm cặp — gần như không phù hợp với người mới vào nghề",
+        "Vấn đề hợp đồng, thuế và bảo hiểm phức tạp hơn"
+      ],
+      "note_for_students": "Gần như không có cửa cho người mới ra trường. Đây là lựa chọn sau khi đã có 3-5 năm kinh nghiệm và tiếng Anh vững.",
+      "confidence": "medium"
+    }
+  ]
+}

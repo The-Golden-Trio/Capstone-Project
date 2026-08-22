@@ -1,0 +1,54 @@
+About NAVER Corp and NAVER Vietnam:
+
+NAVER Corp
+
+NAVER Corp is South Korea’s leading technology company, best known for the NAVER search engine, LINE messenger (200M+ users), SNOW app, and NAVER WEBTOON. In 2018, NAVER was ranked 9th most innovative company globally by Forbes and listed in Fortune's top 6 Future 50.
+With its vision to build an ecosystem that connects people, technology, and knowledge, NAVER continues to pioneer advancements in AI, cloud computing, digital content, and the metaverse - driving the future of digital experiences worldwide.
+
+NAVER Vietnam
+
+In 2021, NAVER expanded into Vietnam to tap into the country's growing Information Technology market by initially partnering with two leading universities in Hanoi. Later that year, the NAVER Vietnam Development Center (NVDC) was established in two major cities: Ho Chi Minh City and Hanoi.
+
+With rapid growth, NAVER Vietnam is currently delivering a range of large-scale services, including NAVER Financial (Npay), NAVER Clip, Weverse, NAVER WORKS, and other Global NAVER platforms. Upholding the core values of "Autonomy - Challenge - Teamwork", the company is committed to becoming one of Asia’s most advanced development centers.
+
+In both 2023 and 2025, NAVER Vietnam was honored as the Best IT Company in Viet Nam by ITViec.com - a remarkable milestone that reflects its rapid growth and innovation.
+
+NAVER Vietnam Visual Experience (VVE)
+
+The Vietnam Visual Experience represents NAVER Vietnam’s strategic expansion into the field of next-generation media and production technology. 
+As part of NAVER’s global vision to redefine storytelling through technology, the Visual Experience team - known as Real-Time Engine Studio - combines production technology and artificial intelligence (AI) to build the next-generation content container for NAVER’s platforms.
+
+We provide cutting-edge media technologies for NAVER’s diverse storytelling products, including CHZZK, Virtual YouTuber, K-POP, and Drama, enabling creators to deliver richer, more immersive visual experiences to users.
+
+With a strong focus on AI-driven real-time rendering, virtual production, and visual computing, the Vietnam Visual Experience Center aims to become a global innovation center - bridging creativity, technology, and storytelling to shape the future of visual content within NAVER’s ecosystem.
+
+Learn more about us: https://navercorp.vn/
+
+We are looking for Fullstack Engineers (Intern Level).
+
+Your daily task:
+
+Develop Visual Dashboard using AI.
+Develop Automation QA Framework using AI.
+Your background:
+
+Pursuing a Bachelor's degree with a focus on subjects in software development or other technical related fields.
+Experience in HTML, CSS, JS.
+Experience in React, Next.js
+Familiar with Data Structures, Algorithms.
+It's a big plus if you:
+
+A strong plus, experience in AI, MCP.
+From solid welfare programs to autonomy over working time and place, we create the culture in which we work. By joining NAVER VIETNAM, you will be involved in:
+Competitive income package: Comprehensive package with full salary insurance, 13th month salary, annual performance appraisals, and incentive bonuses. 
+Learning and development opportunities: Monthly book allowance and an annual budget for online/offline courses (Udemy, Coursera, etc.) in tech, languages, and soft skills,...
+Protecting and enhancing healthcare plan for you and your family: Premium insurance for employees and 2 family members, plus annual health check-ups.
+Employee's engagement activities: Respectful, engaging culture with monthly team budgets, social clubs, and celebration gifts.
+Working environment: Driven by "Autonomy –  Challenge – Teamwork" values, with talented colleagues, supportive leaders, and modern devices supported.
+Dedication bonus: Recognizing your commitment and contributions with special bonuses and benefits at key work milestones.
+Other benefits: Home office setup allowance, happy hours, attractive referral bonus, and more!
+By applying to NAVER Vietnam, the candidate confirms that all information provided is true and correct. Any false or misleading information may result in disqualification from the recruitment process or termination of employment if discovered later.
+
+By clicking “Submit Application,” you agree to allow NAVER Vietnam to process your personal data in accordance with our Data Policy. This includes storing, reviewing, and sharing your information with relevant parties involved in the recruitment process.
+
+Please use a real personal photo (not an AI-generated one) throughout the recruitment process.

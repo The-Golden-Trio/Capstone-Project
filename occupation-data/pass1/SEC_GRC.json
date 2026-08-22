@@ -1,0 +1,208 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-SEC1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SEC_GRC",
+  "role_name": "GRC Analyst",
+  "role_name_vn": "Chuyên viên tuân thủ & quản trị rủi ro",
+  "role_group": "Cyber Security",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv (đánh dấu ⚑ — phân vân nhất): có thể có cửa vào entry-level qua ngả audit/compliance nền phi kỹ thuật, khác với các role Security khác vốn cần nền hạ tầng trước — nhưng đây CHƯA CHẮC CHẮN, cần Pass 2 xác minh.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Có thể có cửa vào entry-level qua ngả audit/compliance nền phi kỹ thuật (roles.csv đánh dấu ⚑ — chưa chắc chắn), khác với phần lớn role Security khác vốn cần nền kỹ thuật hạ tầng trước. Sàn tạm lấy L3 nhưng đây là điểm CẦN Pass 2 xác minh sớm.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "GRC Analyst (Junior)",
+      "title_aliases": [],
+      "years_experience": "1-3 (có thể từ nền audit/compliance phi kỹ thuật)",
+      "core_output": "Hỗ trợ thu thập bằng chứng tuân thủ (audit evidence) và cập nhật tài liệu chính sách bảo mật theo checklist có sẵn, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle GRC Analyst",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Tự thực hiện đánh giá rủi ro cho một hệ thống/quy trình cụ thể, soạn thảo chính sách theo chuẩn (ISO 27001, PCI-DSS) dưới review của cấp trên, tương ứng vai trò tự chủ trong phạm vi một module.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior GRC Analyst",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ dẫn dắt một chương trình tuân thủ/đánh giá rủi ro cho cả tổ chức hoặc một mảng nghiệp vụ, làm việc trực tiếp với kiểm toán ngoài, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "GRC Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật/chuyên môn cho đội GRC, định chuẩn khung quản trị rủi ro bảo mật, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal GRC Analyst / Head of Compliance (bảo mật)",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chiến lược GRC xuyên tổ chức, báo cáo trực tiếp cấp điều hành về rủi ro bảo mật, tương ứng vai trò chịu trách nhiệm cross-team.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal GRC Analyst",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SEC_ISM",
+        "from_band": "L6",
+        "note": "Suy luận — chưa có JD xác nhận."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SEC_SOC",
+        "role_name": "SOC Analyst",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": null,
+        "role_name": "Kiểm toán nội bộ / Compliance (ngoài ngành IT)",
+        "from_band": "L3",
+        "note": "Chưa map được vào role_code trong roles.csv, giữ null theo quy tắc — đây chính là ngả entry phi kỹ thuật roles.csv nhắc tới.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "SEC_ISM",
+        "role_name": "Information Security Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_GOV",
+        "role_name": "Data Governance Specialist",
+        "note": "Chồng lấn ở phần chính sách/tuân thủ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_GOV",
+        "reason": "Cả hai làm chính sách/tuân thủ; khác biệt là SEC_GRC bao quát RỦI RO BẢO MẬT nói chung còn DATA_GOV tập trung DỮ LIỆU.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_ISM",
+        "reason": "Ở tổ chức nhỏ, GRC Lead và ISM có thể là cùng một người.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "verification_flags": [
+    {
+      "id": "VF-B-GRC-01",
+      "severity": "trung bình",
+      "flag": "roles.csv tự đánh dấu ⚑ (phân vân nhất) cho khả năng có entry qua audit/compliance nền phi kỹ thuật — đây là điểm khác biệt lớn so với các role Security khác trong batch này.",
+      "action": "Pass 2 ưu tiên: xác nhận có/không JD GRC Analyst yêu cầu dưới 2 năm kinh nghiệm và không đòi nền tảng kỹ thuật hạ tầng."
+    }
+  ],
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Sàn entry qua ngả audit/compliance phi kỹ thuật CHƯA được xác nhận — đây là nghi vấn chính roles.csv nêu (đánh dấu ⚑).",
+    "Ranh giới với DATA_GOV chưa có quy tắc phân định rõ."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "confidence_overall": "low"
+}

@@ -1,0 +1,210 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-5",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "SEC_SOC",
+  "role_name": "SOC Analyst",
+  "role_name_vn": "Chuyên viên Giám sát An ninh (SOC)",
+  "role_group": "Cyber Security",
+  "archetype": "A",
+  "archetype_reasoning": "Cửa vào entry-level DUY NHẤT của domain Security tại VN. Đặc thù quan trọng: có hệ thống tier NỘI BỘ (SOC Tier 1/2/3) — KHÔNG được nhầm với thang band toàn cục L1-L10 của dataset này.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": "⚠ CẢNH BÁO NHẦM LẪN THUẬT NGỮ: ngành security dùng 'SOC Tier 1/2/3' để chỉ mức độ phức tạp của việc xử lý cảnh báo (Tier 1 = lọc và phân loại alert, Tier 2 = điều tra sâu, Tier 3 = threat hunting/xử lý sự cố phức tạp) — đây KHÔNG map 1-1 với band L1/L2/L3 toàn cục của dataset. Một người ở 'SOC Tier 1' có thể đã ở band L2-L3 toàn cục (không phải L1). Trường 'internal_variants' bên dưới ghi rõ ánh xạ suy luận này.",
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "SOC Analyst Intern",
+      "title_aliases": [],
+      "years_experience": "0",
+      "core_output": "Theo dõi dashboard giám sát và học cách phân loại alert dưới sự kèm cặp trực tiếp, chưa tự xử lý sự cố nào.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "SOC Analyst (Tier 1)",
+      "title_aliases": [
+        "Fresher SOC Analyst"
+      ],
+      "years_experience": "0-1",
+      "core_output": "Tự phân loại và lọc cảnh báo bảo mật theo quy trình (playbook) có sẵn, escalate lên Tier 2 khi vượt phạm vi, thường làm việc theo ca.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "SOC Analyst (Tier 2)",
+      "title_aliases": [
+        "Junior/Middle SOC Analyst"
+      ],
+      "years_experience": "1-3",
+      "core_output": "Tự điều tra sâu các cảnh báo được escalate, xác định mức độ nghiêm trọng và phạm vi ảnh hưởng, viết báo cáo sự cố.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Senior SOC Analyst (Tier 2/3)",
+      "title_aliases": [],
+      "years_experience": "3-5",
+      "core_output": "Xử lý độc lập các sự cố phức tạp, tinh chỉnh rule phát hiện để giảm false positive, mentor Tier 1.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "SOC Team Lead / Tier 3 Analyst",
+      "title_aliases": [],
+      "years_experience": "5-8",
+      "core_output": "Threat hunting chủ động (không chờ alert), dẫn dắt ca trực, tự quyết quy trình phản ứng sự cố cho case mới chưa có playbook.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "SOC Manager",
+      "title_aliases": [],
+      "years_experience": "7-10",
+      "core_output": "Quản lý toàn bộ đội SOC gồm lịch trực, chuẩn quy trình, quan hệ với các bên liên quan khi có sự cố lớn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": "N/A — trần L6 là quản lý vận hành (SOC Manager), không tách IC/Management rõ như domain Software Engineering.",
+  "internal_variants": [
+    {
+      "variant_name": "SOC Tier 1 (ánh xạ suy luận)",
+      "focus": "Lọc/phân loại alert theo playbook.",
+      "evidence_level": "C_INFERRED",
+      "suggested_global_band": "L2"
+    },
+    {
+      "variant_name": "SOC Tier 2 (ánh xạ suy luận)",
+      "focus": "Điều tra sâu, xác định phạm vi.",
+      "evidence_level": "C_INFERRED",
+      "suggested_global_band": "L3-L4"
+    },
+    {
+      "variant_name": "SOC Tier 3 (ánh xạ suy luận)",
+      "focus": "Threat hunting, xử lý sự cố chưa có tiền lệ.",
+      "evidence_level": "C_INFERRED",
+      "suggested_global_band": "L5"
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "SEC_IR",
+        "role_name": "Incident Response",
+        "note": "Có neo: roles.csv Pass 0 ghi rõ SEC_IR feeder từ 'SOC L3'.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_ENG",
+        "role_name": "Security Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SEC_PENTEST",
+        "role_name": "Penetration Tester",
+        "note": "Suy luận, chuyển hướng tấn công thay vì phòng thủ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": []
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [
+    {
+      "id": "VF-T1-02",
+      "severity": "cao",
+      "flag": "Ánh xạ SOC Tier nội bộ sang band toàn cục hoàn toàn là suy luận, chưa có JD nào xác nhận số năm thực tế của từng Tier tại VN.",
+      "action": "Pass 2 ưu tiên cao — đây là role có rủi ro gây hiểu lầm cho học sinh cấp 3 nếu ánh xạ sai (VD: tưởng SOC Tier 1 = mới ra trường hoàn toàn không cần gì, thực ra một số công ty đòi CEH ngay ở Tier 1)."
+    }
+  ],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này.",
+    "Ánh xạ Tier nội bộ (1/2/3) sang band toàn cục (L2/L3-4/L5) là SUY LUẬN THUẦN của Pass 1 này, mức độ tin cậy thấp nhất trong cả batch Tier 1 — cần verify gấp ở Pass 2 vì nếu sai sẽ gây nhầm lẫn nghiêm trọng cho người dùng cuối.",
+    "Chưa biết SOC Manager (L6) có phổ biến như một title riêng tại VN hay công việc này thường do Security Manager kiêm nhiệm."
+  ]
+}

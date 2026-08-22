@@ -1,0 +1,68 @@
+https://vn.indeed.com/viewjob?jk=721e526904d83676
+
+Engineering Manager (Frontend/Mobile)
+Job description
+Strong hands-on engineering capability across modern digital platforms, including Web (React JS) and Mobile (Mobile development, preferably React Native), with deep understanding of APIs, BFF, and microservices architecture
+Proven ability to lead and actively contribute to complex incident management, including triage, troubleshooting, and resolution of Sev1/Sev2 incidents in high-availability environments
+Strong DevOps mindset with working knowledge of CI/CD, release automation, and deployment practices
+Ability to drive continuous improvement through automation, reducing manual effort and recurring incidents
+Demonstrated leadership capability to guide, mentor, and uplift engineers and production support analysts in a blended team model
+Advanced problem-solving capability with strong focus on distinguishing root cause vs symptoms and implementing sustainable fixes
+Strong expertise in production support practices, including monitoring, alerting, observability, and operational readiness
+Ability to define and uplift observability frameworks (alerts, dashboards, thresholds) to improve early detection and system visibility
+Solid understanding of end-to-end system architecture, including dependencies, integrations, and failure points across distributed systems
+Experience driving BAU delivery, including backlog prioritisation, defect resolution, small enhancements, and regulatory uplift
+Strong stakeholder communication skills, particularly during incidents, delivery execution, and risk escalation
+Ability to leverage AI-assisted development tools (e.g. code assistants, automation tools) to:
+Improve development productivity
+Accelerate debugging and root cause analysis
+Support documentation and test generation
+
+Ability to contribute effectively within cross-functional squads (Product, Design, Engineering)
+Focus on engineering quality, reuse, and “configuration over customisation” principles
+Strong communication and collaboration skills with business and technical stakeholders
+Your skills and experience
+
+Proven experience in Engineering Manager / Technical Lead roles with hands-on technical contribution, particularly in digital platforms
+Proven experience in web and mobile engineering roles delivering enhancements at scale
+Extensive experience across both Production Support and BAU delivery models, operating in a “You Build It, You Run It” environment
+Hands-on experience with:
+5+ years experience in Mobile Development (Native or React Native) or React JS
+5+ APIs, microservices, and BFF layers (Node.js desirable)
+3+ Cloud platforms (AWS preferred)
+3+ CI/CD tooling (e.g. Jenkins, Harness CI/CD or equivalent)
+
+Experience using observability and monitoring tools (e.g. Splunk, AppDynamics, OpenSearch, Grafana) for diagnosis and decision-making
+Experience using AI-assisted engineering tools (e.g. Copilot, Cursor, automation tooling) to:
+Accelerate code development and refactoring
+Improve test coverage and code quality
+Support engineering documentation and knowledge sharing
+
+Exposure to data-driven decision making, including use of logs/metrics to guide improvements
+Experience working in Agile, squad-based delivery environments
+Experience balancing BAU run and continuous change delivery
+Why you'll love working here
+THE BENEFITS AND PERKS
+1. Generous compensation and benefit package
+Attractive salary and benefits
+20-day annual leave and 7-day sick leave, etc.
+13th month salary and Annual Performance Bonus
+Premium healthcare for yourself and family members
+Monthly allowance for team activities
+Premium welcome kit and frequent appreciation gifts
+Extra benefits for long-term employees
+2. Exciting career and development opportunities
+Large scale products with modern technologies in banking domain
+Clear roadmap for career advancement in both technical and leadership pathways
+Well-structured learning and development programs (technical and soft skills)
+Sponsored certificates in both IT and banking/finance
+Premium account on Udemy
+English learning with native teachers
+Opportunity for traveling & training in Australia
+3. Professional and engaging working environment
+Hybrid working model and good work-life balance
+Well-equipped & modern Agile office with fully stocked pantry
+Special programs to improve your physical and mental health
+Annual company trip and events
+A solid talented team behind you – great people who love what they do
+If this excites you, let's have a chat over a cup of coffee!

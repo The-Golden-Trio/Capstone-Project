@@ -1,0 +1,32 @@
+https://www.linkedin.com/jobs/view/4438577154/
+
+(Senior) Frontend Developer
+About the job
+ABOUT THE ROLE:FinX aims to build a digital bank that will deliver on the promise of simplicity, technological advancement, superior customer products & services.
+Job Description:
+Build custom UI components and implement business logic with React/Next.js.
+Own features end-to-end (design discussion, implementation, testing, and rollout) with a product mindset — understand the “why” behind a feature, not just the “what”.
+Drive improvements in UX, system performance, and front-end architecture (including Micro Frontend adoption where it makes sense).
+Collaborate with Product, Design, and Operations to gather feedback and turn it into actionable improvements.
+Propose solutions that improve business and operations performance, not just ship what’s requested.
+Explore and apply AI-assisted tools (e.g. AI coding assistants, LLM-powered features) to speed up development and/or enrich the product experience.
+Mentor and support teammates to help the team deliver as a whole.
+
+Your skill and experience:
+3+ years of relevant experience with a bachelor’s degree in Computer Science or equivalent practical experience.
+Strong hands-on experience with React and Next.js, and a solid command of modern JavaScript/TypeScript, HTML, and CSS — including deep understanding of the underlying design philosophy of these frameworks.
+Experience building and maintaining large-scale web applications, with a track record of optimizing end-user experience, rendering performance, stability, scalability, and code modularity (Caching/CDN/Service Worker, code-splitting, SSR/ISR, etc.).
+Experience working with Micro Frontend architecture (e.g. Module Federation, single-spa, or similar) — able to reason about module boundaries, shared state, versioning, and independent deployability across teams.
+Product-oriented mindset: comfortable evaluating trade-offs between engineering effort and business/user value, and proactively suggesting improvements rather than only executing tickets.
+Practical experience working with AI tools in the development workflow — e.g. AI coding assistants (Claude Code, Copilot, Cursor, etc.), and/or integrating LLM/AI-powered features into products.
+Experience with API integration (REST/JSON, and ideally GraphQL or WebSocket for real-time use cases).
+Good understanding of SOLID principles and common design patterns.
+Understanding of banking and financial services regulations and compliance requirements is a plus.
+
+Nice to have:
+ Experience with design systems / component libraries used across multiple products.
+Familiarity with performance monitoring and observability tools (Lighthouse, Web Vitals, Sentry, etc.).
+Exposure to Low-Code/No-Code platform development.
+
+Why join FinX:At FinX, you’ll shape the infrastructure backbone of a fast-scaling digital bank – where innovation meets reliability. You’ll work at the intersection of Product, Engineering, and AI, driving automation, resilience, and a great user experience in everything you build.
+Location: PV Gas Tower, 673 Nguyen Huu Tho, Phuoc Kien Ward, Nha Be District, HCMC, Vietnam

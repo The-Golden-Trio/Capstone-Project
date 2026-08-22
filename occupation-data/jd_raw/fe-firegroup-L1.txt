@@ -1,0 +1,131 @@
+https://www.linkedin.com/jobs/view/4448116165/
+
+Junior Frontend Engineer
+
+About the job
+Apply Now
+
+Ho Chi Minh
+
+Full-time
+
+03/04/2026
+
+FIREGROUP AT A GLANCE
+
+Founded in 2016 in Vietnam, FireGroup Technology is committed to building world-class SaaS products that make a global impact on e-commerce. From the outset, we envisioned a world where running an online business is easy, effective, and sustainable, and we have been bringing that vision to life for nearly a decade.
+
+Our portfolio includes TrueProfit, Transcy, OneMobile, OneLoyalty, Zopi, Promer, Ali Reviews. Trusted by more than 450,000 merchants in over 175 countries and recognized by global leaders such as Shopify, Google, Meta, TikTok, and Amazon, FireGroup is proud to elevate Vietnamese innovation onto the world stage.
+
+Why build your career with FireGroup
+
+Make a Global Impact: Contribute to products trusted by merchants worldwide and help solve real challenges that transform e-commerce.
+Build with an AI-first Mindset: Use AI as your daily co-pilot to make smarter decisions and accelerate problem-solving at scale.
+Unleash Your Potential: Fast-track your growth with career mobility, diverse learning resources, and an agile environment that empowers bold thinkers.
+
+In a Culture That Connects Us As a Whole
+
+What truly defines us is not only our technology but also our people, guided by our seven core values of Courage, Creativity, Growth, Teamwork, Ownership, Trust, and Empathy. At FireGroup, work is more than a job; it is a legacy in the making. We move with speed to solve meaningful challenges, and every Firer is encouraged to dream boldly, lead with courage, and create impact that endures.
+
+Discover how our values come to life in every team and product we build on our culture page.
+
+Responsibilities
+
+ AI-Augmented Development
+Use AI tools such as Copilot, Cursor, ChatGPT, etc. to: accelerate development, refactor and optimize code, generate tests and documentation.
+Apply an AI-first development mindset to improve productivity.
+ Development & Delivery
+Build complex, production-ready features with high quality.
+Ensure the product is: aligned with business requirements, optimized for performance, easy to maintain and scale.
+Proactively propose technical solutions and product improvements.
+ Production & Monitoring
+Monitor and resolve production issues.
+Investigate root causes and improve system stability.
+Work with logging and monitoring tools such as Sentry and Grafana.
+ Collaboration
+Lead technical discussions within the team.
+Perform code reviews and mentor junior / mid-level engineers.
+Collaborate closely with: Backend, Product, Design teams to deliver end-to-end product quality.
+ System Design & Architecture
+Design frontend architecture for complex features and large-scale systems.
+Build and maintain component architecture to ensure scalability and reusability.
+Contribute to and evolve shared design systems / UI libraries.
+Propose and implement solutions such as micro-frontend architecture when needed.
+ Code Quality & Maintainability
+Maintain high code quality standards: clean code, conventions, and linting.
+Conduct code reviews with strong attention to: performance, security, maintainability.
+Proactively refactor code and reduce technical debt.
+ Performance Optimization
+Analyze and optimize frontend performance, including: rendering performance, bundle size optimization, code splitting, and lazy loading.
+Use tools such as Lighthouse and Chrome DevTools to identify bottlenecks.
+Ensure smooth user experience across devices.
+ Security
+Apply frontend security best practices, including: XSS prevention, CSRF protection, secure token handling.
+Ensure frontend development follows OWASP principles and standards.
+ API Integration & Data Handling
+Work with REST APIs / GraphQL.
+Design and manage efficient data flow.
+Handle: error states, loading states, caching strategies using tools such as React Query or SWR.
+ Testing & Reliability
+Write unit tests and component tests.
+Improve product reliability and reduce production bugs.
+Develop appropriate testing strategies based on project needs.
+
+Qualifications
+
+Experience & Background:
+1+ years of experience in frontend development.
+College or University degree in Computer Science, Software Engineering, or a related field.
+ AI Tools:
+Experience using AI tools in development workflows.
+Ability to write effective prompts and validate AI-generated output.
+ Technical Skills:
+Strong proficiency in JavaScript / TypeScript.
+Hands-on experience with ReactJS or VueJS.
+Strong understanding of: event loop, async/await, rendering lifecycle, state management
+ System Design:
+Ability to design frontend architecture for large-scale systems.
+Experience building reusable and scalable components.
+Good understanding of modular architecture.
+ Performance:
+Hands-on experience optimizing frontend performance.
+Solid understanding of: lazy loading, code splitting, memoization
+ Security:
+Good understanding of frontend security principles, including: XSS, CSRF
+Ability to apply OWASP-based best practices.
+ API & Data:
+Experience working with REST APIs / GraphQL.
+Good understanding of data flow and state management.
+ Tools & DevOps:
+Strong Git skills, including branching strategy, rebase, squash.
+Experience with: Webpack / Vite / Rollup, CI/CD pipelines
+ Soft Skills:
+Strong system thinking and problem-solving skills.
+Good teamwork and communication skills.
+High level of ownership and responsibility.
+Ability to mentor and support team members.
+
+Job Benefits
+
+We believe that motivation & personality of the employees are the only shortcut to the promotion of the corporate and contributions to the society. We will try our best to create a corporate environment where all employees can realize their dreams and goals.
+
+Featured Benefits Include
+
+Have opportunity to work with global merchants and join the dynamic, young and friendly project team; stable career path;
+Attractive salary based on skills and experience; 13th month salary & seniority bonus; Employee’s marriage, maternity bonus; Birthday voucher gift;
+Annual salary review;
+Premium Healthcare, annual health check;
+Regular technical seminar & external/ internal training courses;
+Providing free coffee, tea & snack;
+Internal engagement events: Teambuilding; Town-hall, birthday gift voucher, mid-autumn, new year and kick-off parties, yearly company trip;
+FireGroup Sports Clubs: Running, Football, Badminton, etc;
+Laptop/ PC/ Monitor are provided
+
+Contacts
+
+Should you need more information about this job, reach out to us at:
+
+Talent Acquistion team
+
+FireGroup’s Linkedin fanpage
+

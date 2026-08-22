@@ -1,0 +1,170 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-DATA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "DATA_ANALYTICSENG",
+  "role_name": "Analytics Engineer",
+  "role_name_vn": "Kỹ sư phân tích dữ liệu",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: title còn hiếm tại VN, thường là Data Engineer hoặc Data Analyst làm kiêm chứ chưa tách thành vị trí riêng — nên xếp lateral-entry với trần thấp (L6) chứ không phải full ladder.",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher — title còn hiếm tại VN, phần lớn công việc này do Data Engineer hoặc Data Analyst kiêm nhiệm chứ chưa tách thành vị trí riêng (theo roles.csv). Sàn hợp lý là L4.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "Analytics Engineer (Middle)",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền DA hoặc DE)",
+      "core_output": "Xây dựng và duy trì lớp transform dữ liệu (mô hình dbt hoặc tương đương) cho một domain báo cáo cụ thể, theo chuẩn đã có, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Analytics Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ thiết kế mô hình dữ liệu phân tích cho cả một domain nghiệp vụ, đảm bảo chất lượng và tính nhất quán số liệu giữa các báo cáo, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Analytics Engineering Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật cho việc chuẩn hoá tầng dữ liệu phân tích của tổ chức, định chuẩn quy trình kiểm tra chất lượng dữ liệu, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Suy luận — không có Analytics Engineering Manager riêng trong taxonomy."
+      }
+    ],
+    "ic_track_note": "Không quan sát được band IC nào cao hơn L6 cho role này trong roles.csv hiện tại — người muốn tiếp tục leo cao thường CHUYỂN SANG role khác (xem management_track hoặc related_roles.next_steps) chứ không có nấc Principal riêng trong chính title này."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_DE",
+        "role_name": "Data Engineer",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "DATA_DE",
+        "role_name": "Data Engineer",
+        "note": "Suy luận — nhiều người dần trở thành Data Engineer trọn vẹn.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_DE",
+        "role_name": "Data Engineer",
+        "note": "Chồng lấn mạnh theo roles.csv.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_DE",
+        "reason": "roles.csv ghi rõ 'thường là DE hoặc DA làm kiêm' — có thể không phải role tách biệt.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_DA",
+        "reason": "Chồng lấn ở phần chuẩn hoá số liệu báo cáo.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ đây có phải chức danh tuyển dụng độc lập tại VN hay chỉ là mô tả một phần việc của DE/DA.",
+    "Trần L6 là suy luận lấy theo roles.csv, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

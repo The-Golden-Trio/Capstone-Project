@@ -1,0 +1,233 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-3",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "SWE_MOBILE",
+  "role_name": "Mobile Developer",
+  "role_name_vn": "Lập trình viên Mobile",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "A",
+  "archetype_reasoning": "Ladder đầy đủ, cửa vào entry rõ. Đặc thù riêng: phân nhánh theo nền tảng (iOS/Android/Flutter/React Native) ngay từ band thấp — roles.csv Pass 0 ghi nhận các nhánh này 'gộp lại từ L5' nhưng đây vẫn là suy luận, chưa có JD kiểm chứng thời điểm gộp.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Mobile Developer Intern (iOS/Android/Flutter)",
+      "title_aliases": [
+        "Mobile Engineer Intern"
+      ],
+      "years_experience": "0",
+      "core_output": "Hiện thực màn hình và tính năng nhỏ trên MỘT nền tảng cụ thể (đã chọn ngay từ đầu, không phải đa nền tảng) dưới sự giám sát trực tiếp.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null,
+      "calibration_note": "Suy luận theo cấu trúc golden A. VNG (FE23 trong golden A) yêu cầu 'ít nhất một app React Native đã lên store' ngay ở band trung — gợi ý kinh nghiệm thực chiến trên nền tảng cụ thể được coi trọng từ sớm."
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Mobile Developer",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự hoàn thành một màn hình hoặc tính năng nhỏ trên một nền tảng, theo component/pattern đã có sẵn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Mobile Developer (iOS hoặc Android hoặc Flutter)",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự triển khai trọn vẹn một tính năng trên một nền tảng, tích hợp API, xử lý state cục bộ, vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Mobile Developer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm một module trên nền tảng mình phụ trách, tối ưu hiệu năng và trải nghiệm đặc thù nền tảng (lifecycle, memory, offline), review code.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Mobile Developer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ kiến trúc app trên nền tảng mình phụ trách; ở band này bắt đầu xuất hiện kỹ sư làm được CẢ iOS và Android hoặc chuyển hẳn sang cross-platform (React Native/Flutter) — điểm gộp nhánh mà roles.csv Pass 0 ghi nhận, chưa có JD xác nhận mốc chính xác.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead Mobile Engineer",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật cho toàn bộ ứng dụng mobile của sản phẩm, tự quyết kiến trúc cross-platform hay native, coaching đội.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal Mobile Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chuẩn kỹ thuật mobile xuyên nhiều đội và nhiều sản phẩm, review thiết kế kiến trúc app của kỹ sư khác — thuần IC, không có direct report.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal Mobile Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Suy luận."
+      }
+    ]
+  },
+  "internal_variants": [
+    {
+      "variant_name": "iOS Developer",
+      "focus": "Swift/SwiftUI, hệ sinh thái Apple.",
+      "evidence_level": "C_INFERRED"
+    },
+    {
+      "variant_name": "Android Developer",
+      "focus": "Kotlin/Jetpack Compose, hệ sinh thái Google.",
+      "evidence_level": "C_INFERRED"
+    },
+    {
+      "variant_name": "Cross-platform Developer (React Native/Flutter)",
+      "focus": "Một codebase cho cả hai nền tảng.",
+      "evidence_level": "C_INFERRED",
+      "note": "Có neo gián tiếp: VNG (golden A, FE23) coi kinh nghiệm React Native production là bắt buộc ngay ở band trung cho vị trí ghi title Frontend — gợi ý ranh giới Frontend/Mobile mờ ở các đội dùng React Native."
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_FRONTEND",
+        "role_name": "Front-end Developer",
+        "note": "Chồng lấn qua React Native/Flutter.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_FRONTEND",
+        "reason": "Với đội dùng React Native, ranh giới Mobile/Frontend rất mờ — có neo gián tiếp từ golden A (VNG).",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này.",
+    "Mốc band gộp nhánh iOS/Android (roles.csv ghi 'từ L5') là suy luận thuần, chưa có JD nào xác nhận số năm cụ thể.",
+    "Chưa rõ tại VN, đội mobile có xu hướng native-first hay cross-platform-first — ảnh hưởng trực tiếp tới internal_variants nào phổ biến hơn."
+  ]
+}

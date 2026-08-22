@@ -1,0 +1,426 @@
+{
+  "_meta": {
+    "status": "HOAN_CHINH",
+    "version": "2.0",
+    "archetype": "C",
+    "jd_count": 10,
+    "jd_used_for_band": 7,
+    "jd_excluded": 3,
+    "target_roles_covered": ["SWE_ARCH_ENT"],
+    "capture_sheet": "jd_capture_ARCH.csv",
+    "built_at": "2026-08-22",
+    "note": "Dung lai tu 10 JD thuc te tai VN. MOI truong noi dung deu truy nguoc duoc ve mot jd_id trong capture sheet; khong co noi dung nao suy dien tu kien thuc chung. 3 JD bi loai khoi viec xac dinh band: ARCH04 va ARCH05 (Enterprise Architecture Operations - la role van hanh cong cu, khong phai kien truc su) va ARCH10 (Cloud Solution Architect 1-5 nam - thuoc nhom presales cloud, ghi lai o often_confused_with).",
+    "changes_from_v1": [
+      "Bo SWE_ARCH_SOL khoi target_roles_covered - can file rieng, va archetype cua no dang bi nghi ngo (xem verification_flags VF-02).",
+      "Bo toan bo noi dung khong xuat hien trong JD nao: Zachman, FEAF, BACS, Open Banking, Zero Trust, PCI-DSS, Event-Driven/EDA, API Gateway, Sparx EA.",
+      "Bo cac ten cong ty khong co JD kien truc trong mau: FPT Software, KMS, VNG, MoMo, Grab, Axon.",
+      "Bo con so '>60% nguon tuyen' - khong co nguon.",
+      "Bo L9 khoi occupied_bands - bang chung cho thay EA bao cao LEN Director/Head, tuc L9 la next_step chu khong phai band cua role nay.",
+      "Them day du 4 truong evidence cho moi khoi noi dung.",
+      "Them job_outlook, salary_ref, related_roles, verification_flags cho khop schema voi golden_SWE_FRONTEND.json.",
+      "Sua feeder/next/lateral de moi role_code deu ton tai trong roles.csv."
+    ]
+  },
+
+  "role_code": "SWE_ARCH_ENT",
+  "role_name": "Enterprise Architect",
+  "role_name_vn": "Kiến trúc sư doanh nghiệp",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "C",
+
+  "archetype_reasoning": "Cả 7 JD kiến trúc hợp lệ trong mẫu đều yêu cầu tối thiểu 8 năm kinh nghiệm CNTT tổng thể (Techcombank 8+, ACB 8+, NAB 10+, TPBank 10+, HDBank 12-15), và 4/7 JD yêu cầu thêm 3-5 năm đã ở vai trò Architect. Không có JD nào trong mẫu tuyển Intern/Fresher/Junior/Middle cho vị trí Enterprise Architect. Đây là điểm đến (destination node), không phải một lộ trình có cửa vào riêng. Lưu ý phạm vi: kết luận này áp dụng cho title Enterprise Architect; title 'Solution Architect' thì KHÔNG chắc như vậy — xem verification_flags VF-02.",
+
+  "occupied_bands": ["L7", "L8"],
+  "occupied_bands_note": "L7 là band có bằng chứng trực tiếp mạnh nhất (5/7 JD). L8 dựa vào HDBank (12-15 năm, phụ trách kiến trúc xuyên các công ty thành viên của tập đoàn). L9 đã bị LOẠI khỏi role này: Techcombank ghi rõ EA báo cáo cho 'Director, Enterprise Architecture' và HDBank nhắc 'cấp Director/Head' như một cấp cao hơn — nghĩa là L9 thuộc về Head/Director of Architecture, là next_step chứ không phải band của EA.",
+
+  "entry_note": "Không tồn tại cấp bậc Intern, Fresher, Junior hay Middle cho vị trí này tại VN trong mẫu 10 JD thu thập ngày 22/08/2026. Ngưỡng thấp nhất quan sát được là 8 năm kinh nghiệm CNTT tổng thể (Techcombank, ACB).",
+
+  "destination_profile": {
+    "band_range": "L7 - L8",
+    "years_total_observed": {
+      "min": "8 năm (Techcombank, ACB)",
+      "max": "12-15 năm (HDBank)",
+      "typical": "10 năm (NAB, TPBank)",
+      "note": "1/7 JD không ghi số năm (SoftwareOne)."
+    },
+    "years_architecture_specific": {
+      "observed": "3-5 năm trở lên",
+      "detail": "TPBank 3-5 năm ở vai trò Architect/EA; NAB 5+ năm Solution/Enterprise architecture; HDBank tối thiểu 5 năm SA/EA; Techcombank và ACB không tách riêng.",
+      "seen_in": ["ARCH02", "ARCH03", "ARCH08", "ARCH09"]
+    },
+
+    "core_output": "Xây dựng và ban hành khung kiến trúc tổng thể, tiêu chuẩn công nghệ và kiến trúc mục tiêu (as-is / to-be) áp dụng cho toàn tổ chức, rồi thẩm định và phê duyệt thiết kế giải pháp của các đội dự án trước khi triển khai — tức là người đặt ra ràng buộc kỹ thuật cho người khác làm theo, đồng thời tư vấn Ban lãnh đạo về lựa chọn công nghệ và định hướng đầu tư CNTT.",
+    "core_output_axes": {
+      "role_axis": "khung kiến trúc doanh nghiệp, tiêu chuẩn công nghệ, kiến trúc mục tiêu as-is/to-be, thẩm định thiết kế trước go-live",
+      "band_axis": "phạm vi toàn tổ chức thay vì một dự án; phê duyệt thiết kế của người khác; đối thoại trực tiếp với Ban lãnh đạo",
+      "seen_in": ["ARCH01", "ARCH02", "ARCH06", "ARCH09"]
+    },
+
+    "tasks": [
+      {
+        "task": "Xây dựng và duy trì khung kiến trúc doanh nghiệp toàn tổ chức, gồm cả trạng thái hiện tại (as-is) và trạng thái mục tiêu (to-be)",
+        "seen_in": ["ARCH01", "ARCH09"]
+      },
+      {
+        "task": "Ban hành tiêu chuẩn công nghệ, nguyên tắc và mô hình kiến trúc tham chiếu áp dụng cho toàn bộ đơn vị",
+        "seen_in": ["ARCH01", "ARCH09"]
+      },
+      {
+        "task": "Thẩm định và phê duyệt thiết kế kiến trúc của các dự án trước khi go-live, đánh giá mức độ tuân thủ tiêu chuẩn",
+        "seen_in": ["ARCH01", "ARCH02", "ARCH06", "ARCH09"]
+      },
+      {
+        "task": "Phân tích phương án kiến trúc (option analysis) và đưa khuyến nghị cân bằng giữa tốc độ ra giá trị, chi phí, bảo mật và độ khớp với kiến trúc mục tiêu; bao gồm đánh giá sản phẩm đóng gói (COTS) và lựa chọn dịch vụ public cloud",
+        "seen_in": ["ARCH03", "ARCH08"]
+      },
+      {
+        "task": "Tư vấn công nghệ cho Ban lãnh đạo / Ban Chỉ đạo về chiến lược công nghệ và định hướng đầu tư CNTT",
+        "seen_in": ["ARCH02", "ARCH09"]
+      },
+      {
+        "task": "Đảm bảo tính nhất quán và khả năng tích hợp giữa các dự án hoặc các công ty thành viên, tránh đầu tư trùng lặp hệ thống",
+        "seen_in": ["ARCH02"]
+      },
+      {
+        "task": "Định hướng loại bỏ công nghệ lỗi thời và xử lý rủi ro kỹ thuật kèm theo",
+        "seen_in": ["ARCH01", "ARCH09"]
+      },
+      {
+        "task": "Phản biện và xác minh đề xuất của đối tác, nhà cung cấp và đơn vị tích hợp hệ thống",
+        "seen_in": ["ARCH06"]
+      }
+    ],
+
+    "skills_hard": [
+      {
+        "skill": "Enterprise Architecture framework và Architecture Governance",
+        "level": "expert",
+        "seen_in": ["ARCH01", "ARCH02", "ARCH06", "ARCH09"],
+        "evidence_note": "Techcombank: xây EA framework toàn ngân hàng. ACB: 5+ năm Architecture Governance (tag của nhà tuyển dụng). TPBank: Architecture Governance."
+      },
+      {
+        "skill": "Solution Architecture và thiết kế hệ thống end-to-end",
+        "level": "expert",
+        "seen_in": ["ARCH02", "ARCH03", "ARCH06", "ARCH07", "ARCH08"]
+      },
+      {
+        "skill": "Cloud Architecture (AWS / Azure / GCP)",
+        "level": "expert",
+        "seen_in": ["ARCH01", "ARCH02", "ARCH03", "ARCH07", "ARCH08", "ARCH09"]
+      },
+      {
+        "skill": "Microservices và tích hợp hệ thống",
+        "level": "proficient",
+        "seen_in": ["ARCH03", "ARCH06", "ARCH08"],
+        "evidence_note": "ACB còn ghi thêm DDD và API. Techcombank ghi SOA (không phải microservices)."
+      },
+      {
+        "skill": "Đánh giá và lựa chọn sản phẩm đóng gói (COTS) so với tự phát triển",
+        "level": "proficient",
+        "seen_in": ["ARCH03", "ARCH08"]
+      },
+      {
+        "skill": "Nghiệp vụ ngân hàng (core banking, thanh toán, thẻ, cho vay, internet banking, data warehouse)",
+        "level": "expert",
+        "seen_in": ["ARCH01", "ARCH02", "ARCH03", "ARCH06", "ARCH08"],
+        "evidence_note": "Xuất hiện ở 5/7 JD — nhưng cả 5 đều là ngân hàng, nên đây có thể là đặc trưng của mẫu chứ không phải của nghề. Xem VF-04."
+      },
+      {
+        "skill": "Kiến trúc hạ tầng: Hybrid Cloud, Multi-DC, High Availability, Disaster Recovery, Business Continuity",
+        "level": "expert",
+        "seen_in": ["ARCH09"],
+        "evidence_note": "Chỉ 1 JD. Đây là biến thể theo domain hạ tầng, không phải yêu cầu chung của mọi EA."
+      },
+      {
+        "skill": "Kiến trúc dữ liệu và data governance trên nền cloud",
+        "level": "expert",
+        "seen_in": ["ARCH07"],
+        "evidence_note": "Chỉ 1 JD. Biến thể theo domain dữ liệu."
+      }
+    ],
+
+    "skills_soft": [
+      {
+        "skill": "Tư vấn và gây ảnh hưởng ở cấp lãnh đạo (C-level / Ban Chỉ đạo / Ban lãnh đạo)",
+        "seen_in": ["ARCH02", "ARCH09"]
+      },
+      {
+        "skill": "Đàm phán và gây ảnh hưởng để định hình chiến lược kinh doanh và công nghệ",
+        "seen_in": ["ARCH03", "ARCH08"]
+      },
+      {
+        "skill": "Cân bằng trade-off: chấp nhận giải pháp tạm thời lệch kiến trúc mục tiêu để đáp ứng yêu cầu pháp lý đúng hạn",
+        "seen_in": ["ARCH03", "ARCH08"],
+        "evidence_note": "Đây là ví dụ NAB viết ra nguyên văn, và là mô tả cụ thể nhất trong cả bộ về cách EA ra quyết định."
+      },
+      {
+        "skill": "Phản biện xây dựng trước đề xuất của vendor và đơn vị tích hợp hệ thống",
+        "seen_in": ["ARCH06"]
+      },
+      {
+        "skill": "Hướng dẫn người khác về nguyên lý kiến trúc: roadmap, tiêu chuẩn kỹ thuật, yêu cầu phi chức năng, cách vẽ và viết tài liệu giải pháp",
+        "seen_in": ["ARCH01"]
+      },
+      {
+        "skill": "Tiếng Anh đọc hiểu tài liệu kỹ thuật và làm việc trực tiếp với vendor quốc tế",
+        "seen_in": ["ARCH02", "ARCH03", "ARCH08"]
+      }
+    ],
+
+    "certifications": [
+      {
+        "cert": "TOGAF 9 / TOGAF 10",
+        "required": "conditional",
+        "seen_in": ["ARCH02", "ARCH06"],
+        "evidence_note": "HDBank ghi 'bắt buộc hoặc ưu tiên cao' — bản thân JD cũng không dứt khoát. ACB không ghi ở phần yêu cầu chính nhưng nhà tuyển dụng gắn tag '5+ years TOGAF'. 5/7 JD KHÔNG nhắc TOGAF."
+      },
+      {
+        "cert": "AWS / Azure / GCP Solutions Architect – Professional",
+        "required": false,
+        "seen_in": ["ARCH02"]
+      },
+      {
+        "cert": "ArchiMate, ITIL 4",
+        "required": false,
+        "seen_in": ["ARCH02"]
+      },
+      {
+        "cert": "BIAN (Banking Industry Architecture Network)",
+        "required": false,
+        "seen_in": ["ARCH02", "ARCH06"],
+        "evidence_note": "HDBank: 'là lợi thế lớn'. ACB: nằm trong danh sách kiến thức cần có."
+      },
+      {
+        "cert": "Chứng chỉ kiến trúc/cloud nói chung",
+        "required": false,
+        "seen_in": ["ARCH03", "ARCH08"],
+        "evidence_note": "NAB chỉ ghi 'will be an advantage'."
+      }
+    ],
+
+    "evidence_level": "A_VERIFIED",
+    "evidence_company": "Techcombank; HDBank; ACB; NAB Innovation Centre Vietnam; TPBank; SoftwareOne",
+    "evidence_title_observed": "Enterprise Architect (40001081); CHUYÊN GIA ARCHITECTURE (Kiến trúc giải pháp & Hệ thống); Enterprise Architect - Merchant Service; Senior Solution Architect; Enterprise Architect (Infrastructure, Cloud); Senior Enterprise Solution Architect - Data; Solution Architect - BTB",
+    "source_url": "https://itviec.com/it-jobs/enterprise-architect-infrastructure-cloud-ngan-hang-tmcp-tien-phong-tpbank-3844"
+  },
+
+  "branching": "N/A — role này đã nằm sau điểm rẽ nhánh, trên nhánh IC. Bằng chứng gián tiếp: NAB ghi trong phần phúc lợi rằng có lộ trình thăng tiến cho cả hai hướng kỹ thuật và lãnh đạo (ARCH03, ARCH08), nhưng KHÔNG JD nào trong mẫu mô tả điểm rẽ nhánh nằm ở band nào. Việc đặt điểm rẽ ở L5/L6 là suy luận, chưa có JD xác nhận.",
+
+  "internal_variants": [
+    {
+      "variant_name": "Domain / Segment Architect",
+      "focus": "Enterprise Architect gắn với một phân vùng nghiệp vụ hoặc một tầng công nghệ cụ thể, thay vì toàn tổ chức.",
+      "evidence": "Xuất hiện ngay trong title của 4/7 JD: 'Merchant Service' (NAB), 'BTB - Transaction Banking' (NAB), 'Infrastructure, Cloud' (TPBank), '- Data' (SoftwareOne).",
+      "seen_in": ["ARCH03", "ARCH07", "ARCH08", "ARCH09"],
+      "evidence_level": "A_VERIFIED"
+    },
+    {
+      "variant_name": "Enterprise Solution Architect (ESA) — hướng khách hàng",
+      "focus": "Vị trí lai giữa EA và SA tại công ty dịch vụ/tích hợp hệ thống: thiết kế kiến trúc cho khách hàng doanh nghiệp, kèm trách nhiệm presales, đề xuất và thuyết trình kỹ thuật.",
+      "evidence": "SoftwareOne — 'Support presales activities, including solution design, proposals, and technical presentations'. Đây là điểm khác biệt lớn nhất so với nhóm ngân hàng: EA ở ngân hàng không có trách nhiệm presales trong bất kỳ JD nào.",
+      "seen_in": ["ARCH07"],
+      "evidence_level": "A_VERIFIED"
+    },
+    {
+      "variant_name": "Enterprise Architecture Operations / Practice Analyst",
+      "focus": "Vận hành bộ công cụ quản trị kiến trúc (ServiceNow APM, CMDB, Confluence, Rally), duy trì chất lượng dữ liệu kiến trúc, đào tạo và hỗ trợ kiến trúc sư.",
+      "is_architect_role": false,
+      "evidence": "NAB có 2 tin: 'Enterprise Architecture Operations' (5+ năm) và 'Senior Enterprise Architecture Operations' (10+ năm). Cả hai chỉ ghi kinh nghiệm kiến trúc là 'desirable' chứ không bắt buộc, và công việc thực tế là viết user story trên Rally, chạy test script, mở incident khi công cụ hỏng, xử lý yêu cầu cấp quyền.",
+      "warning": "ĐÂY KHÔNG PHẢI ROLE KIẾN TRÚC. Chỉ trùng chữ trong title. Không được dùng để xác định band hay số năm của Enterprise Architect. Nếu sản phẩm hướng nghiệp hiển thị chung, người dùng sẽ hiểu sai rằng có cửa vào EA ở mức 5 năm.",
+      "seen_in": ["ARCH04", "ARCH05"],
+      "evidence_level": "A_VERIFIED"
+    },
+    {
+      "variant_name": "Head / Director of Enterprise Architecture",
+      "focus": "Cấp quản lý phía trên Enterprise Architect.",
+      "evidence": "Bằng chứng GIÁN TIẾP: Techcombank ghi 'Direct Manager: Director, Enterprise Architecture'; HDBank ghi 'ưu tiên có bằng Thạc sĩ/MBA đối với cấp Director/Head'. Không có JD nào cho chính vị trí này trong mẫu.",
+      "seen_in": ["ARCH01", "ARCH02"],
+      "evidence_level": "B_TITLE_SEEN"
+    }
+  ],
+
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect",
+        "from_band": "L6-L7",
+        "note": "Đường vào có bằng chứng mạnh nhất: 3/7 JD viết yêu cầu dưới dạng 'Solution / Enterprise architecture' như một khối kinh nghiệm liền, và ACB gộp 'Enterprise Architecture, Solution Architecture, Digital Transformation' vào cùng một dòng 8+ năm.",
+        "seen_in": ["ARCH02", "ARCH03", "ARCH06", "ARCH08"],
+        "evidence_level": "A_VERIFIED"
+      },
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect",
+        "from_band": "L6-L7",
+        "note": "Suy luận từ việc Techcombank yêu cầu kinh nghiệm SDLC, SOA và design patterns — nhưng không JD nào nêu tên role nguồn.",
+        "seen_in": [],
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "INFRA_SYSENG",
+        "role_name": "Systems Engineer",
+        "from_band": "L5-L6",
+        "note": "Chỉ áp dụng cho biến thể hạ tầng. TPBank chấp nhận nền tảng 'Infrastructure, Cloud hoặc Platform Engineering' thay cho nền phát triển phần mềm — đây là cửa vào EA KHÔNG đi qua nghề lập trình, và là phát hiện đáng đưa vào sản phẩm hướng nghiệp.",
+        "seen_in": ["ARCH09"],
+        "evidence_level": "A_VERIFIED"
+      },
+      {
+        "role_code": null,
+        "role_name": "Chuyên gia tư vấn từ hãng giải pháp hoặc công ty tư vấn lớn",
+        "from_band": null,
+        "note": "HDBank ghi rõ ưu tiên ứng viên đã làm tại 'công ty tư vấn công nghệ/đối tác giải pháp lớn (Big4, Temenos, FIS, Oracle, SAP...)'. Không map được vào role_code nào trong taxonomy 78 role — đây là cửa vào NGOÀI ngành IT VN thuần, cần quyết định có thêm role hay ghi vào caveats.",
+        "seen_in": ["ARCH02"],
+        "evidence_level": "A_VERIFIED"
+      }
+    ],
+
+    "next_steps": [
+      {
+        "role_code": null,
+        "role_name": "Head / Director of Enterprise Architecture",
+        "note": "Techcombank ghi EA báo cáo cho 'Director, Enterprise Architecture'. Vị trí này KHÔNG có trong roles.csv — cần bổ sung hoặc gộp vào INFRA_ITMANAGER, bạn quyết định.",
+        "seen_in": ["ARCH01", "ARCH02"],
+        "evidence_level": "B_TITLE_SEEN"
+      },
+      {
+        "role_code": "EXEC_CTO",
+        "role_name": "Chief Technology Officer",
+        "note": "Không JD nào trong mẫu xác nhận đường đi này. Suy luận từ chuẩn ngành.",
+        "seen_in": [],
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "EXEC_CIO",
+        "role_name": "Chief Information Officer",
+        "note": "Không JD nào trong mẫu xác nhận. Suy luận từ chuẩn ngành.",
+        "seen_in": [],
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+
+    "lateral_moves": [
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect",
+        "note": "Chồng lấn thật, có bằng chứng: TPBank đặt EA trong phạm vi hạ tầng và cloud; MEGAZONE dùng title 'Cloud Solution Architect'. Ranh giới EA / Cloud Architect tại VN không rõ.",
+        "seen_in": ["ARCH09", "ARCH10"],
+        "evidence_level": "A_VERIFIED"
+      },
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "note": "SoftwareOne cho thấy tồn tại nhánh kiến trúc chuyên dữ liệu ở cùng cấp bậc.",
+        "seen_in": ["ARCH07"],
+        "evidence_level": "B_TITLE_SEEN"
+      }
+    ],
+
+    "often_confused_with": [
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "reason": "NAB dùng CHUNG NGUYÊN VĂN khối yêu cầu cho 'Enterprise Architect - Merchant Service' và 'Solution Architect - BTB' (cùng 5 gạch đầu dòng: 10+ năm công nghệ, 5+ năm kiến trúc, tiếng Anh, đàm phán, ví dụ trade-off nền tảng tạm thời, kinh nghiệm end-to-end). Nặng hơn: phần mô tả của JD Enterprise Architect mở đầu bằng 'A solution Architect at NAB sets the technical direction'. Tại NAB, EA và SA là cùng một tin tuyển với hai nhãn khác nhau.",
+        "seen_in": ["ARCH03", "ARCH08"],
+        "evidence_level": "A_VERIFIED"
+      },
+      {
+        "role_code": "CLOUD_ARCH",
+        "reason": "MEGAZONE tuyển 'Cloud Solution Architect (AWS/Azure) (Senior, Junior)' ở mức 1-5 năm, có cả nhánh Junior. Chữ 'Architect' ở phân khúc đại lý cloud/presales KHÔNG mang nghĩa cấp bậc cao. Nếu đếm tin theo từ khoá 'Architect' để đo Job Outlook, nhóm này sẽ làm nhiễu con số.",
+        "seen_in": ["ARCH10"],
+        "evidence_level": "A_VERIFIED"
+      },
+      {
+        "role_code": null,
+        "role_name_observed": "Enterprise Architecture Operations",
+        "reason": "Trùng chữ trong title nhưng là công việc vận hành công cụ, yêu cầu 5+ năm và kinh nghiệm kiến trúc chỉ 'desirable'. Xem internal_variants.",
+        "seen_in": ["ARCH04", "ARCH05"],
+        "evidence_level": "A_VERIFIED"
+      }
+    ]
+  },
+
+  "company_type_variance": {
+    "enterprise_bank": "8/10 JD trong mẫu (Techcombank, HDBank, ACB, TPBank, NAB×4). Đặc trưng: gắn với hội đồng thẩm định kiến trúc và quy trình phê duyệt trước go-live; nghiệp vụ ngân hàng (core banking, thanh toán, thẻ, cho vay) là yêu cầu bắt buộc chứ không phải điểm cộng; có tiếp xúc với cơ quan quản lý nhà nước (Techcombank nêu SBV là external stakeholder); có phân tầng nội bộ theo domain nghiệp vụ hoặc theo tầng công nghệ.",
+    "outsourcing": "2/10 JD (SoftwareOne, MEGAZONE). Đặc trưng: hướng khách hàng, có trách nhiệm presales, đề xuất và trả lời RFP — không JD ngân hàng nào có phần này. MEGAZONE còn cho thấy chữ 'Architect' được dùng ở mức 1-5 năm trong phân khúc đại lý cloud.",
+    "product_local": "CHUA_CO_DU_LIEU — không tìm được JD Enterprise Architect nào từ công ty product Việt Nam trong đợt thu thập 22/08/2026, kể cả khi tìm trên ITviec (chỉ 5 tin gắn thẻ 'enterprise architecture' toàn thị trường).",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU — không có JD nào trong mẫu."
+  },
+
+  "work_environment_ids": ["WE_ONSITE_ENTERPRISE"],
+  "work_environment_primary": "WE_ONSITE_ENTERPRISE",
+  "work_environment_note": "Techcombank, HDBank, TPBank, MEGAZONE đều ghi 'At office'; TPBank ghi thêm chính sách No OT. HDBank là ngoại lệ đáng ghi: mô hình 'SWAT Team, cường độ cao trong giai đoạn triển khai trọng điểm' — mâu thuẫn với hình dung 'ngân hàng thì nhàn'. NAB ghi hybrid, nhưng KHÔNG archetype nào trong work_environments.json mô tả 'hybrid tại doanh nghiệp lớn' — WE_HYBRID_PRODUCT được định nghĩa cho công ty làm product in-house. Xem VF-05.",
+
+  "education_path_ids": ["EDU_CS_REQUIRED"],
+  "education_path_primary": "EDU_CS_REQUIRED",
+  "education_path_note": "Chỉ 3/10 JD nhắc bằng cấp. HDBank: bắt buộc bằng Đại học CNTT/KHMT/HTTT, ưu tiên Thạc sĩ/MBA cho cấp Director/Head. MEGAZONE: 'BS degree in Computer Science or equivalent practical experience'. Techcombank: 'Graduated in Information Technology OR BANKING' — chấp nhận bằng ngành ngân hàng cho một vị trí kiến trúc, đây là điểm đáng lưu ý với sản phẩm hướng nghiệp. 7/10 JD không nhắc bằng cấp, nhiều khả năng vì ở mức 10+ năm kinh nghiệm thì bằng cấp không còn là tiêu chí sàng lọc.",
+
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": 5,
+    "itviec_query": "thẻ kỹ năng 'enterprise architecture' tại https://itviec.com/it-jobs/enterprise-architecture",
+    "topdev_open_postings": null,
+    "measured_at": "2026-08-22",
+    "confidence": "medium",
+    "method_note": "5 tin gắn thẻ, nhưng chỉ 3 thực sự là vị trí kiến trúc doanh nghiệp (HDBank, TPBank, FPT Software AI Solution Expert); 2 tin còn lại là IT Helpdesk và ServiceNow Platform Architect chỉ trùng thẻ. Con số thật gần với 3. Đây là mức thấp nhất trong các role đã đo — bản thân nó là dữ liệu về độ hiếm của nghề."
+  },
+
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "postings_with_salary": "0/10",
+    "note": "Không JD nào công bố con số. Dữ liệu lương duy nhất là cơ cấu thu nhập của TPBank: 'thu nhập khoảng 15-17 tháng/năm', tức có thưởng tương đương 3-5 tháng lương ngoài 12 tháng cơ bản. Tỷ lệ 0/10 tin công bố lương tự nó là một phát hiện về độ minh bạch lương ở band cao — so với 1/37 ở nhóm frontend."
+  },
+
+  "verification_flags": [
+    {
+      "id": "VF-01",
+      "severity": "cao",
+      "flag": "NAB dùng chung JD giữa Enterprise Architect và Solution Architect. Đây là instance thứ hai của hiện tượng tái sử dụng JD tại NAB (instance thứ nhất: Senior Frontend Engineer và Lead Frontend Engineer trong golden_SWE_FRONTEND.json, ghi ở FE28/FE31). Cộng với Axon dùng chung template giữa 3 band frontend, đây phải được nâng từ 'ngoại lệ' lên GIỚI HẠN HỆ THỐNG của phương pháp: tại công ty lớn, nội dung JD không phân biệt được cấp bậc, chỉ title và số năm mới phân biệt được.",
+      "action": "Ghi vào phần hạn chế phương pháp của báo cáo capstone."
+    },
+    {
+      "id": "VF-02",
+      "severity": "cao",
+      "flag": "roles.csv đang xếp SWE_ARCH_SOL là archetype C, bands L6-L8. Bằng chứng mới mâu thuẫn: MEGAZONE tuyển 'Cloud Solution Architect (AWS/Azure) (Senior, Junior)' với yêu cầu 1-5 năm, có cả nhánh Junior. Nếu title Solution Architect tồn tại ở mức 1-5 năm trong phân khúc đại lý cloud/presales, thì SWE_ARCH_SOL không phải destination node thuần.",
+      "action": "Cần 2-3 JD Solution Architect nữa từ nhóm ngoài ngân hàng trước khi chốt archetype cho SWE_ARCH_SOL. KHÔNG chạy Pass 1 cho role đó bằng golden này."
+    },
+    {
+      "id": "VF-03",
+      "severity": "trung bình",
+      "flag": "Bản golden v1 gán bằng chứng (seen_in) cho các skill không xuất hiện trong bất kỳ JD nào: Zachman, FEAF, BACS, Open Banking, Zero Trust, PCI-DSS, Event-Driven/EDA, API Gateway, Sparx EA. Đồng thời mô tả company_type_variance cho FPT Software, KMS, VNG, MoMo, Grab, Axon dù không có JD kiến trúc nào từ các công ty này.",
+      "action": "Đã loại bỏ toàn bộ ở v2. Nếu file v1 đã được dùng làm input cho batch Pass 1 nào thì phải chạy lại batch đó."
+    },
+    {
+      "id": "VF-04",
+      "severity": "trung bình",
+      "flag": "8/10 JD đến từ ngân hàng. Mọi kết luận về nghiệp vụ (BIAN, core banking, thanh toán, SBV) nhiều khả năng là đặc trưng của MẪU chứ không phải của NGHỀ. Chỉ SoftwareOne và MEGAZONE nằm ngoài nhóm ngân hàng, và cả hai đều là công ty dịch vụ.",
+      "action": "confidence_overall để 'medium'. Nếu tìm được 2 JD EA ngoài ngân hàng và ngoài công ty dịch vụ thì nâng lên high."
+    },
+    {
+      "id": "VF-05",
+      "severity": "thấp",
+      "flag": "NAB ghi mô hình hybrid nhưng shared/work_environments.json không có archetype nào cho 'hybrid tại doanh nghiệp lớn / ngân hàng'. WE_ONSITE_ENTERPRISE giả định giờ hành chính onsite; WE_HYBRID_PRODUCT được định nghĩa cho công ty làm product in-house.",
+      "action": "Cần bổ sung archetype thứ 7, hoặc nới định nghĩa WE_ONSITE_ENTERPRISE. Đây là lỗi ở bảng dùng chung nên sẽ lan ra mọi role có mặt ở ngân hàng."
+    },
+    {
+      "id": "VF-06",
+      "severity": "thấp",
+      "flag": "Hai role_code cần trong feeder_roles và next_steps không tồn tại trong roles.csv 78 dòng: 'Head/Director of Enterprise Architecture' và 'chuyên gia tư vấn từ hãng giải pháp/Big4'. Sanity check số 3 của runbook yêu cầu mọi role B/C phải trỏ về role có thật.",
+      "action": "Quyết định bổ sung role hay ghi vào caveats. Ở v2 mình để role_code = null kèm role_name để không tạo mã giả."
+    }
+  ],
+
+  "confidence_overall": "medium",
+  "confidence_note": "high cho phần band/số năm và tasks (7 JD nhất quán, đều là bằng chứng trực tiếp). medium cho company_type_variance (2/4 nhóm trống) và cho mọi kết luận về nghiệp vụ (mẫu lệch ngân hàng 8/10). low cho branching và next_steps (không có JD nào xác nhận).",
+
+  "unknowns": [
+    "8/10 JD đến từ ngân hàng. Không rõ Enterprise Architect ở công ty product Việt Nam hay bigtech FDI trông như thế nào — hoặc có tồn tại hay không.",
+    "Chỉ có 5 tin gắn thẻ 'enterprise architecture' trên ITviec ngày 22/08/2026, và chỉ khoảng 3 tin thực sự là vị trí kiến trúc. Cỡ mẫu công khai của cả thị trường quá nhỏ để kết luận chắc chắn về bất kỳ đặc trưng nào.",
+    "TOGAF: 5/7 JD không nhắc tới, và JD duy nhất nói rõ nhất (HDBank) cũng chỉ ghi 'bắt buộc HOẶC ưu tiên cao'. Không xác định được TOGAF có thực sự là điều kiện sàng lọc hay chỉ là dòng viết cho đẹp.",
+    "Không JD nào mô tả điểm rẽ nhánh IC/Management nằm ở band nào. Việc đặt điểm rẽ ở L5/L6 hiện là suy luận.",
+    "Không có JD nào cho chính vị trí Head/Director of Enterprise Architecture, dù 2 JD xác nhận cấp này tồn tại. Ranh giới trên của role bị bỏ ngỏ.",
+    "0/10 JD công bố lương. Band L7-L8 không có tham chiếu lương công khai nào tại VN.",
+    "Ranh giới Enterprise Architect / Solution Architect không xác định được từ JD: NAB dùng chung nội dung, HDBank đặt title 'Enterprise / Solution Architect Expert', ACB đặt title Solution Architect nhưng nội dung là governance cấp enterprise. Có khả năng ở VN đây không phải hai role tách bạch.",
+    "Không rõ ARCH07 (SoftwareOne) yêu cầu bao nhiêu năm — JD duy nhất trong mẫu không ghi số năm, nên phần biến thể 'công ty dịch vụ' không có mốc kinh nghiệm."
+  ]
+}

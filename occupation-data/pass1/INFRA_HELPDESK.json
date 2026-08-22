@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-8",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "INFRA_HELPDESK",
+  "role_name": "IT Helpdesk / IT Support",
+  "role_name_vn": "Nhân viên Hỗ trợ IT",
+  "role_group": "IT Infrastructure & Enterprise Systems",
+  "archetype": "A",
+  "archetype_reasoning": "Trần thấp nhất trong toàn bộ 78 role (L4). Giá trị chính là FEEDER cho SysAdmin và SOC — gần như không ai coi đây là điểm đến sự nghiệp.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Helpdesk Intern",
+      "title_aliases": [],
+      "years_experience": "0",
+      "core_output": "Hỗ trợ ghi nhận ticket và xử lý các vấn đề đơn giản nhất (reset mật khẩu, cài phần mềm cơ bản) dưới hướng dẫn trực tiếp.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher IT Support",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự xử lý ticket mức độ đơn giản-trung bình theo quy trình có sẵn, escalate khi vượt phạm vi.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "IT Support / Helpdesk",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự xử lý phần lớn ticket, bắt đầu tham gia các việc mang tính hệ thống hơn (quản lý tài sản IT, cấu hình mạng cơ bản).",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Senior IT Support / Helpdesk Lead",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Xử lý ticket phức tạp nhất, đào tạo nhân viên helpdesk mới, thường là bước đệm ngay trước khi chuyển hẳn sang SysAdmin hoặc SOC — đây là TRẦN thực tế của title Helpdesk.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": "N/A — role dừng ở L4, thấp nhất trong dataset. Không có nhánh IC/Management vì bản thân role đã ở dưới ngưỡng đó rất xa.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "INFRA_SYSADMIN",
+        "role_name": "System Administrator",
+        "note": "Con đường phổ biến nhất theo hiểu biết chung ngành.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_SOC",
+        "role_name": "SOC Analyst",
+        "note": "Suy luận — cả hai đều là cửa vào rộng, dễ chuyển ngang.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [],
+    "often_confused_with": []
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này.",
+    "Đây là role có trần thấp nhất dataset — giá trị thật của nó (làm bàn đạp) chỉ đo được qua tỷ lệ chuyển đổi sang role khác, dữ liệu này JD không cung cấp được, cần nguồn khác (khảo sát, LinkedIn career path)."
+  ]
+}

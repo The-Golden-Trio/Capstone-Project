@@ -1,0 +1,169 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "D-HYBRID1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)",
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "DATA_BI",
+  "role_name": "Business Intelligence Analyst",
+  "role_name_vn": "Chuyên viên BI",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "D",
+  "archetype_reasoning": "Xếp D theo roles.csv: HYBRID — có tuyển fresher thật (đặc biệt ngân hàng, retail — giống ladder A/B) nhưng cũng nhiều người chuyển từ Data Analyst sang (lateral), và ở band cao role hội tụ thành vị trí lead/manager BI gần với đích đến (giống C).",
+  "occupied_bands": [
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": "Có cửa vào Fresher thật, đặc biệt ở ngân hàng và retail (roles.csv xác nhận) — khác với phần lớn role Data khác trong batch B vốn không có fresher. Song song đó, nhiều BI Analyst là Data Analyst chuyển sang. Từ band L5, role hội tụ thành vị trí lead/manager gần với đích đến — xem destination_profile.",
+  "levels": [
+    {
+      "band": "L2",
+      "title_vn": "Fresher BI Analyst",
+      "title_aliases": [],
+      "years_experience": "0-1 (đặc biệt ngân hàng, retail)",
+      "core_output": "Xây dựng báo cáo/dashboard theo mẫu và yêu cầu có sẵn dưới hướng dẫn sát, học cách dùng công cụ BI (Power BI/Tableau), tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior BI Analyst",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự xây dựng một báo cáo/dashboard trọn vẹn từ yêu cầu nghiệp vụ rõ ràng, viết truy vấn SQL cơ bản, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle BI Analyst",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm hệ thống báo cáo cho một mảng nghiệp vụ, tự thiết kế mô hình dữ liệu cho dashboard, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "destination_profile": {
+    "band_range": "L5 - L6",
+    "min_years_experience": "4-9",
+    "years_band_check": "Sàn 4 = sàn của L5. Trần 9 = trần của L6. Lấy trọn khoảng vì không có bằng chứng để thu hẹp.",
+    "core_output": "Dẫn dắt kỹ thuật/chuyên môn cho toàn bộ hệ thống BI của tổ chức: chuẩn hoá mô hình dữ liệu báo cáo, định chuẩn công cụ và quy trình BI, làm cầu nối giữa yêu cầu lãnh đạo và năng lực dữ liệu — ở band này BI Analyst thường là người duy nhất/số ít phụ trách toàn bộ mảng BI của công ty, nên gần với một đích đến chuyên môn hơn là một nấc ladder bình thường.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [],
+    "management_track": [
+      {
+        "role_code": "DATA_PM",
+        "from_band": "L6",
+        "note": "Suy luận — BI Lead phát triển lên thành Data Product Manager khi phạm vi trách nhiệm mở rộng ra cả roadmap dữ liệu, không chỉ báo cáo."
+      }
+    ],
+    "ic_track_note": "Không quan sát được band IC nào cao hơn L6 cho role này trong roles.csv hiện tại — người muốn tiếp tục leo cao thường CHUYỂN SANG role khác (xem management_track hoặc related_roles.next_steps) chứ không có nấc Principal riêng trong chính title này."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst",
+        "from_band": "L4",
+        "note": "Suy luận — route lateral phổ biến.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "DATA_PM",
+        "role_name": "Data Product Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst",
+        "note": "Ranh giới mờ ở band thấp.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_DA",
+        "reason": "Ranh giới nằm ở trọng tâm: BI thiên xây dashboard/báo cáo trực quan, DA thiên phân tích sâu và trả lời câu hỏi ad-hoc — mờ tại nhiều công ty VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Tỷ lệ Fresher BI Analyst thật so với chuyển từ DA sang chưa có số liệu — roles.csv chỉ ghi định tính.",
+    "Điểm chia giữa levels[] và destination_profile ở L5 là suy luận, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

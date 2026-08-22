@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-DEST1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "CLOUD_ARCH",
+  "role_name": "Cloud Architect",
+  "role_name_vn": "Kiến trúc sư đám mây",
+  "role_group": "Cloud, DevOps & SRE",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: destination node, đi lên từ DevOps/SRE/Platform Engineer senior.",
+  "occupied_bands": [
+    "L6",
+    "L7",
+    "L8"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Suy luận: đi lên từ DevOps Engineer, SRE hoặc Platform Engineer đã có nhiều năm kinh nghiệm thiết kế hạ tầng cloud quy mô lớn. Chưa có JD xác nhận mốc năm cụ thể.",
+  "destination_profile": {
+    "band_range": "L6 - L8",
+    "min_years_experience": "6-15",
+    "years_band_check": "Lấy trọn khoảng L6-L8 theo thang toàn cục vì không có bằng chứng để thu hẹp. Khoảng rộng là biểu hiện trung thực của việc thiếu dữ liệu, không phải sự cẩu thả.",
+    "core_output": "Thiết kế kiến trúc hạ tầng cloud (multi-cloud/hybrid-cloud) cho toàn tổ chức: chọn nhà cung cấp và dịch vụ, đặt chuẩn bảo mật/chi phí/khả năng mở rộng, và làm cầu nối giữa chiến lược kinh doanh với năng lực kỹ thuật hạ tầng — khác với DevOps/Platform Engineer vốn hiện thực và vận hành theo kiến trúc đã có.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — suy luận rằng role này nằm trên nhánh IC. Chưa có JD xác nhận.",
+  "internal_variants": [
+    {
+      "variant_name": "Multi-cloud Architect",
+      "focus": "Thiết kế kiến trúc trải nhiều nhà cung cấp cloud (AWS/Azure/GCP) đồng thời.",
+      "evidence_level": "C_INFERRED",
+      "note": "Chưa có JD."
+    },
+    {
+      "variant_name": "Presales Cloud Architect",
+      "focus": "Thiết kế giải pháp cloud cho khách hàng kèm trách nhiệm presales, phổ biến ở đại lý cloud (MEGAZONE, Noventiq...).",
+      "evidence_level": "C_INFERRED",
+      "note": "Có neo gián tiếp: pass1/SWE_ARCH_SOL.json ghi nhận nhóm đại lý cloud có title Solution Architect ở mức thấp hơn destination node — hiện tượng tương tự có thể xảy ra với Cloud Architect."
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_SRE",
+        "role_name": "Site Reliability Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_PLATFORM",
+        "role_name": "Platform Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "EXEC_CTO",
+        "role_name": "Chief Technology Officer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect",
+        "note": "Chồng lấn thật — có neo từ pass1/SWE_ARCH_SOL.json.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "reason": "pass1/SWE_ARCH_SOL.json ghi nhận Cloud Architect là lateral move của Solution Architect — ranh giới mờ, đặc biệt ở đại lý cloud.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_LEAD",
+        "reason": "Cloud Architect thiên thiết kế, CLOUD_LEAD thiên quản lý đội — có thể trùng người ở tổ chức nhỏ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Ranh giới với SWE_ARCH_SOL (Solution Architect) chưa rõ — pass1/SWE_ARCH_SOL.json đã ghi nhận sự chồng lấn này nhưng chưa giải quyết.",
+    "Chưa rõ liệu Cloud Architect ở phân khúc đại lý cloud (presales) có band thấp hơn destination node hay không, tương tự phát hiện ở Solution Architect."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

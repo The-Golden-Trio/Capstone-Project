@@ -1,0 +1,159 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-PRODQA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "QA_ANALYST",
+  "role_name": "QA Analyst / Auditor",
+  "role_name_vn": "Chuyên viên đảm bảo quy trình chất lượng",
+  "role_group": "Quality Assurance & Testing",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: ranh giới với QA_LEAD mờ tại VN, không có cửa vào entry-level. Đây là vai trò đánh giá QUY TRÌNH chất lượng, khác với QA_MANUAL vốn thực thi test case.",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher thuần. Ranh giới với QA_LEAD khá mờ tại VN theo roles.csv — nhiều nơi không tách bạch hai vai trò. Sàn hợp lý là L4, chuyển lên từ Manual Tester hoặc BA có kinh nghiệm quy trình.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "QA Analyst (Middle)",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền QA_MANUAL hoặc BA)",
+      "core_output": "Kiểm tra tuân thủ quy trình QA cho một dự án theo checklist có sẵn, ghi nhận và báo cáo sai lệch, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior QA Analyst / Auditor",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ đánh giá và cải tiến quy trình chất lượng cho nhiều dự án, đề xuất chuẩn quy trình mới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "QA Analyst Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt chương trình đảm bảo chất lượng cho tổ chức, đào tạo và audit nhiều đội QA, tương ứng vai trò dẫn dắt kỹ thuật/chuyên môn cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [],
+    "management_track": [
+      {
+        "role_code": "QA_LEAD",
+        "from_band": "L6",
+        "note": "roles.csv ghi rõ ranh giới hai role này mờ tại VN — nhiều khả năng đây gần như là cùng một vị trí ở phần lớn công ty."
+      }
+    ],
+    "ic_track_note": "Không quan sát được band IC nào cao hơn L6 cho role này trong roles.csv hiện tại — người muốn tiếp tục leo cao thường CHUYỂN SANG role khác (xem management_track hoặc related_roles.next_steps) chứ không có nấc Principal riêng trong chính title này."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "QA_MANUAL",
+        "role_name": "Manual Tester / QC",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "QA_LEAD",
+        "role_name": "QA/QC Lead / Test Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "QA_MANUAL",
+        "role_name": "Manual Tester / QC",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "QA_LEAD",
+        "reason": "roles.csv ghi rõ 'ranh giới với QA_LEAD mờ tại VN' — cần Pass 2 xác định đây có phải hai role tách biệt hay một.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ QA Analyst/Auditor có tồn tại như một chức danh tuyển dụng tách biệt khỏi QA_LEAD tại VN hay không.",
+    "Trần L6 là suy luận, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

@@ -1,0 +1,197 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "D-HYBRID1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)",
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SWE_BRSE",
+  "role_name": "Bridge Software Engineer (BrSE)",
+  "role_name_vn": "Kỹ sư cầu nối",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "D",
+  "archetype_reasoning": "Xếp D theo roles.csv: HYBRID thật — vừa có route riêng đi từ comtor/phiên dịch kỹ thuật (tiếng Nhật N2+) học thêm kỹ năng dev/quản lý dự án (giống ladder A/B từ band thấp), vừa là điểm đến của developer giỏi tiếng Nhật chuyển sang (giống lateral/destination C ở band cao).",
+  "occupied_bands": [
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Có HAI route riêng biệt: (1) Comtor/phiên dịch kỹ thuật (N2+ tiếng Nhật) học thêm kỹ năng dev/quản lý dự án — route này có thể bắt đầu từ band thấp (L2-L3); (2) Developer đã giỏi tiếng Nhật chuyển ngang sang làm cầu nối — route này thường vào từ L4 trở lên. Từ band L6, role hội tụ thành vị trí quản lý cầu nối/quan hệ khách hàng Nhật hiếm, gần với đích đến hơn ladder thông thường — xem destination_profile.",
+  "levels": [
+    {
+      "band": "L2",
+      "title_vn": "BrSE mới vào nghề (route comtor)",
+      "title_aliases": [],
+      "years_experience": "0-1 (kèm N2+ tiếng Nhật)",
+      "core_output": "Hỗ trợ dịch tài liệu kỹ thuật và giao tiếp cơ bản giữa đội VN và khách hàng Nhật dưới sự giám sát trực tiếp, chưa tự quyết định nội dung kỹ thuật, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior BrSE",
+      "title_aliases": [],
+      "years_experience": "1-2 (comtor lên, hoặc dev N2+ mới chuyển)",
+      "core_output": "Tự truyền đạt yêu cầu kỹ thuật rõ ràng giữa hai bên cho một tính năng cụ thể, bắt đầu tham gia estimate và báo cáo tiến độ, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle BrSE",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm cầu nối cho một module/một phần dự án: dịch yêu cầu thành spec kỹ thuật, điều phối giữa đội dev VN và khách hàng Nhật, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior BrSE",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ quản lý quan hệ kỹ thuật với khách hàng Nhật cho cả một dự án, chủ trì họp yêu cầu và đàm phán phạm vi, mentor BrSE cấp dưới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "destination_profile": {
+    "band_range": "L6 - L7",
+    "min_years_experience": "6-12",
+    "years_band_check": "Sàn 6 = sàn của L6. Trần 12 = trần của L7. Lấy trọn khoảng vì không có bằng chứng để thu hẹp.",
+    "core_output": "Quản lý quan hệ với khách hàng/đối tác Nhật ở cấp chiến lược cho nhiều dự án cùng lúc, thường kiêm vai trò tư vấn kỹ thuật cấp cao và đào tạo đội BrSE — ở band này, năng lực tiếng Nhật + kỹ thuật + quan hệ khách hàng hiếm gặp cùng lúc khiến vai trò gần với một đích đến chuyên gia/quản lý tài khoản hơn là một nấc ladder bình thường.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal BrSE / BrSE Manager",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "PROD_DM",
+        "from_band": "L6",
+        "note": "Suy luận — ở công ty outsourcing hướng Nhật, BrSE senior thường tiến lên vai trò quản lý tài khoản/bàn giao (Delivery Manager) do đã có quan hệ khách hàng sẵn."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": null,
+        "role_name": "Comtor / Phiên dịch kỹ thuật (N2+ tiếng Nhật, ngoài ngành dev thuần)",
+        "from_band": "L2",
+        "note": "Route riêng — chưa map được vào role_code trong roles.csv, giữ null theo quy tắc.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L4",
+        "note": "Route lateral — dev giỏi tiếng Nhật chuyển sang.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "PROD_DM",
+        "role_name": "Delivery Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "PROD_PJM",
+        "role_name": "Project Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "PROD_PJM",
+        "reason": "BrSE nhấn mạnh cầu nối ngôn ngữ/văn hoá Nhật, PM nhấn mạnh quản lý dự án tổng thể — có thể chồng lấn ở outsourcing hướng Nhật.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Tỷ lệ BrSE vào từ route comtor (band thấp) so với route dev chuyển ngang (band cao) chưa có số liệu.",
+    "Điểm chia giữa levels[] và destination_profile ở L6 là suy luận, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

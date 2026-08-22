@@ -1,0 +1,81 @@
+https://careers.holistics.io/job-openings/software-engineering-intern
+
+Software Engineering Intern
+HCMC, Vietnam
+Internship
+We’re the team behind projects like BI tool Holistics, database diagram tool dbdiagram.io, and open-source project dbml.org. We’re looking for another software engineer to help us build more awesome tools for data teams and developers.
+
+This is a position based in Ho Chi Minh City with flexible, hybrid WFH/WFO setup.
+
+Our application’s architecture
+To get a taste of how working with us is like, here are some insights into how our application has been built so far.
+
+The Holistics app works by allowing data analysts to connect to their data warehouses and develop reusable "data models". This allows non-technical users to use a friendly drag-and-drop interface to explore the data and build dashboards, without the need to bother their technical colleagues.
+
+On the backend side, Holistics is built using Ruby on Rails as the main web framework. Unlike the standard Rails project structure, we **modularize the code base into local gems and **engines to improve maintainability and extensibility, following modular monolith pattern. This also follows the pattern of "Functional core, imperative shell" with the gems being mostly functional/stateless code and engines handle the imperative/stateful part of the app.
+
+By using Sorbet to add static typing on top of Ruby, we ensure that most of our Ruby code has annotated type signature. This not only reduces a whole swath of common bugs that plagues Ruby codebases but also significantly improves developer productivity through IDE/editor integrations.
+
+We use PostgreSQL for our main production database due to its reliability and rich feature-set. We have built a custom job queue system on top of Postgres, which is then executed using Sidekiq on top of Redis.
+
+Vue.js 3.0 with TypeScript is our framework of choice for front-end development. To deal with displaying a huge amount of data, we build sophisticated, custom Vue components that lazily render the data. Since many complex computations are done on the front-end, we also use Web workers to decouple those computations from the main rendering thread. This enables smoother user experience while also decoupling computation from rendering logic.
+
+Job Scope
+You’ll be working on all aspects of our products, for example: front-end & backend development, implementing new features, website development, customer support...
+
+Implement necessary back-end features & APIs to extend the platform’s functionality
+Build complex and interactive data analysis interface using HTML5, JavaScript (AngularJS); build reusable front-end JS/HTML components.
+Translate wireframes and sketches into working prototypes and features.
+Develop and improve our website experience.
+Build and maintain front-end/back-end libraries and frameworks.
+Support our customers with trouble shootings.
+The way we work
+We follow Spotify squad model. Our team is split into 4 squads, each (5-7 members) consists of engineers, product managers & designers working closely together.
+
+How we work on a new feature:
+
+Product & Design Team spends time research the problem, talk to customers and prepare Product Discovery Doc (PDD) and Product Requirement Doc (PRD).
+Engineering Team then performs a Technical Research. When we have a fairly good picture of the complexity and impact, we’ll start with the implementation.
+We **avoid being a **feature factory. We’re aware more features do not equal better product.
+
+We do not compromise product and code quality for artificial deadline. We refactor and think about code optimization regularly. We understand the good and bad of technical debt and use them to our advantages.
+
+We employ “pair programming” practices regularly where two team members work on a task together in one workstation. This brings a great deal of benefits, among which are faster knowledge transfer, reduced bus factor, better team cohesion and improved code quality.
+
+We have a strong writing culture: Almost everything is communicated through written documents. Just as our developers write reusable codes, we write evergreen notes.
+
+We maintain a problem-solving culture. Everyone is strongly encouraged to have rigorous understanding of a problem, separating Problem Space vs Solution Space as well as using Eigenquestions to find the most important dimensions of a problem. Solutions are deliberated over with trade-offs explicitly listed in discussion documentation. Watch this talk about problem-solving for engineers that our cofounder gave (in Vietnamese)
+
+Our culture stimulates continuous learning:
+
+We let team members rotate every 3-6 months. This allows them to try new things and learn different aspects of the business.
+We have a weekly TED talk program where team members present topics they are interested in.
+Engineering Team organizes weekly technical talks as well as monthly technical workshops.
+Product Team has regular AMA events with external product experts
+Requirements
+Strong problem solving (most important)
+Currently pursuing Computer Science or related fields in Universities in Vietnam/overseas.
+What We Look For In You
+Problem Solving: You don’t just write code based on requirements, you debate the requirements with us.
+Coding: You write good code, you’ve written code that handles a lot of loads, and you enjoy optimizing and refactoring your code to make it faster
+Culture & Mindset: You’re a team player; you understand how it’s like working for a startup – doing anything and everything needed (from writing blog posts, to help customers with their data problem)
+Tech Stack: we use Ruby, PostgreSQL, Redis, Vue.js, ES6 and a lot of SQLs. It’s great if you know these, but it’s not a big deal. We’re confident you’ll pick these up quickly on the job.
+Basically you will not just implement features based on a task list. We need your original ideas, creativity, and critical thinking skills to help us build a great data platform.
+
+Interview Process
+Round 1: Technical interview with the Engineering team
+Round 2: Pair-coding Interview
+Round 3: Culture & Behavior Interview
+Why You'll Love Working
+💕 Benefits:
+
+Flexible Working Arrangement: Hybrid work (WFO + WFH) policies.
+Leave Allowance: 1 intern paid leave day per month, 1 sick leave for entire internship period.
+Company Culture: Weekly happy hours and exciting company-organized events.
+🏢 Workstations provided for maximum productivity
+
+Mechanical Keyboard + Mouse
+Big-screen monitor(s)
+🌐 Working time: From Monday – Friday, from 9.00 a.m. to 6.00 p.m.
+
+🌐 Work location: 457-459 Nguyen Dinh Chieu street, MDA Building, Ban Co Ward, Ho Chi Minh City, Vietnam.

@@ -1,0 +1,198 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-DATA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SWE_AIFIRST",
+  "role_name": "AI-First Software Engineer",
+  "role_name_vn": "Kỹ sư phần mềm AI-First",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: không có cửa vào Intern/Fresher riêng — đây là một PHONG CÁCH làm việc (dùng AI-assisted coding và tích hợp mô hình ngôn ngữ vào sản phẩm) mà kỹ sư Backend/Full-stack đã có nền tảng áp dụng thêm, không phải một ngành nghề tách biệt ngay từ đầu. roles.csv ghi rõ nhãn này 'mới nổi, chưa chắc là role độc lập tại VN — cân nhắc gộp vào SWE_FULLSTACK'.",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher. Suy luận: người làm role này gần như luôn là kỹ sư Backend hoặc Full-stack ở mức Middle trở lên đã áp dụng thêm công cụ AI-assisted coding và tích hợp LLM vào công việc hàng ngày. Sàn thấp nhất hợp lý là L4.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "AI-First Software Engineer (Middle)",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền Backend/Full-stack)",
+      "core_output": "Dùng công cụ AI-assisted coding (Copilot, Cursor...) và gọi API mô hình ngôn ngữ để hiện thực một tính năng sản phẩm có sẵn thiết kế, tương ứng vai trò tự chủ trong phạm vi một module hoặc một mảng việc, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior AI-First Software Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự thiết kế luồng tích hợp LLM/agent trọn vẹn cho một tính năng (RAG, tool-calling), chịu trách nhiệm về chất lượng đầu ra và chi phí gọi mô hình, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn, đồng thời review công việc của người khác.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "AI-First Engineering Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Định chuẩn cách dùng AI trong quy trình phát triển của cả đội (prompt pattern, đánh giá chất lượng, kiểm soát chi phí), tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc một hệ thống, chịu trách nhiệm về kết quả của cả nhóm.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal AI-First Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt định hướng kiến trúc AI-first xuyên nhiều đội, quyết định khi nào dùng AI thay vì logic truyền thống, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal AI-First Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Không có Engineering Manager chuyên biệt cho AI-First trong taxonomy — suy luận dùng chung nhánh quản lý kỹ thuật SWE_EM."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L4",
+        "note": "Đường vào phổ biến nhất theo suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_FULLSTACK",
+        "role_name": "Full-stack Developer",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "DATA_GENAI",
+        "role_name": "Generative AI / LLM Engineer",
+        "note": "Suy luận — có thể là cùng một role với tên gọi khác.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_GENAI",
+        "role_name": "Generative AI / LLM Engineer",
+        "note": "Ranh giới rất mờ, xem often_confused_with.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_GENAI",
+        "reason": "Cả hai đều làm việc với LLM trong sản phẩm; khác biệt (nếu có) là AI-First nhấn mạnh PHONG CÁCH phát triển còn GenAI Engineer nhấn mạnh CHUYÊN MÔN xây hệ thống AI — ranh giới này CHƯA kiểm chứng tại VN.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_FULLSTACK",
+        "reason": "roles.csv gợi ý cân nhắc gộp hẳn hai role này.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "verification_flags": [
+    {
+      "id": "VF-B-SWEAI-01",
+      "severity": "cao",
+      "flag": "roles.csv nghi ngờ đây KHÔNG PHẢI role độc lập tại VN mà chỉ là cách mô tả phong cách làm việc, có thể nên gộp vào SWE_FULLSTACK.",
+      "action": "Pass 2: tìm JD dùng đúng cụm 'AI-First Engineer' tại VN trước khi tin vào ladder riêng này."
+    }
+  ],
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ 'AI-First Software Engineer' có phải chức danh tuyển dụng độc lập tại VN hay chỉ là mô tả phong cách làm việc — roles.csv gợi ý cân nhắc gộp vào SWE_FULLSTACK.",
+    "Ranh giới với DATA_GENAI (Generative AI/LLM Engineer) chưa rõ, có thể là cùng một role với hai tên gọi khác nhau."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "confidence_overall": "low"
+}

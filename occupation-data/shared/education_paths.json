@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "file": "shared/education_paths.json",
+    "version": "0.1-draft",
+    "status": "CHUA_VERIFY",
+    "note": "Bản nháp. Mọi mô tả là suy luận từ hiểu biết thị trường VN, chưa đối chiếu JD. Duyệt và sửa trước khi dùng ở Pass 2.",
+    "schema_change": "Ở occupation-profile-v3 mình viết education_path_id (số ít). Đổi thành education_path_ids[] + education_path_primary, giống cách làm với work_environment — vì cùng một role ở loại công ty khác nhau có yêu cầu học vấn khác nhau (ví dụ DATA_DS ở ngân hàng khác ở viện nghiên cứu).",
+    "assignment_rule": "Gán 1-2 ID cho mỗi role. Căn cứ khi đọc JD: mục 'Yêu cầu' có ghi bằng cấp bắt buộc, ghi 'hoặc kinh nghiệm tương đương', hay chỉ liệt kê chứng chỉ."
+  },
+
+  "education_paths": [
+    {
+      "id": "EDU_CS_REQUIRED",
+      "name_vn": "Bắt buộc bằng CNTT hoặc ngành gần",
+      "name_en": "CS Degree Required",
+      "summary": "JD ghi rõ yêu cầu bằng đại học chuyên ngành, và trên thực tế hồ sơ không có bằng gần như bị loại ở vòng sàng lọc.",
+      "degree_requirement": "required",
+      "typical_majors": ["Khoa học Máy tính", "Kỹ thuật Máy tính", "Công nghệ Thông tin", "Điện tử - Viễn thông", "Toán - Tin"],
+      "alternative_paths_accepted": false,
+      "certifications_weight": "thấp — bằng cấp quan trọng hơn",
+      "advanced_degree_value": "có lợi thế ở một số role nghiên cứu",
+      "typical_role_codes": ["SWE_EMBEDDED", "DATA_CV_NLP", "SWE_ARCH_ENT", "SWE_ARCH_SW", "SWE_ARCH_SOL"],
+      "note_vn": "Phổ biến nhất ở FDI Nhật/Hàn/Đức và ở các vị trí kiến trúc tại ngân hàng. Nhóm nhúng còn hay yêu cầu học lực và bảng điểm.",
+      "note_for_students": "Nếu bạn nhắm nhóm này thì việc chọn đúng ngành ở đại học là bắt buộc, không thể bù bằng khoá học ngắn hạn.",
+      "confidence": "medium"
+    },
+
+    {
+      "id": "EDU_CS_PREFERRED",
+      "name_vn": "Ưu tiên bằng CNTT, portfolio thay thế được",
+      "name_en": "CS Degree Preferred",
+      "summary": "JD ghi ưu tiên bằng chuyên ngành nhưng kèm cụm 'hoặc kinh nghiệm tương đương'. Sản phẩm thật và GitHub có thể bù cho việc thiếu bằng.",
+      "degree_requirement": "preferred",
+      "typical_majors": ["Khoa học Máy tính", "Kỹ thuật Phần mềm", "Công nghệ Thông tin", "Hệ thống Thông tin"],
+      "alternative_paths_accepted": true,
+      "alternative_paths": ["Portfolio dự án cá nhân", "Đóng góp mã nguồn mở", "Kinh nghiệm freelance có sản phẩm thật"],
+      "certifications_weight": "thấp",
+      "advanced_degree_value": "gần như không ảnh hưởng",
+      "typical_role_codes": ["SWE_FRONTEND", "SWE_BACKEND", "SWE_FULLSTACK", "SWE_MOBILE", "SWE_WEB", "SWE_GAME"],
+      "note_vn": "Đây là pattern phổ biến nhất trong nhóm phát triển phần mềm tại VN, đặc biệt ở công ty product và startup.",
+      "note_for_students": "Bằng cấp giúp qua vòng hồ sơ, nhưng từ vòng phỏng vấn trở đi thì sản phẩm bạn từng làm mới quyết định.",
+      "confidence": "high"
+    },
+
+    {
+      "id": "EDU_ANY_PLUS_TRAINING",
+      "name_vn": "Bằng nào cũng được, cộng khoá đào tạo ngắn hạn",
+      "name_en": "Any Degree + Training",
+      "summary": "Thị trường chấp nhận người trái ngành. Cửa vào thông qua trung tâm đào tạo, khoá bootcamp, hoặc chương trình fresher của chính công ty.",
+      "degree_requirement": "any",
+      "typical_majors": ["Bất kỳ ngành nào", "Kinh tế", "Ngoại ngữ", "Sư phạm"],
+      "alternative_paths_accepted": true,
+      "alternative_paths": ["Trung tâm đào tạo tester/BA", "Chương trình Fresher của FPT, KMS, Rikkei", "Tự học + chứng chỉ nền tảng (ISTQB, IIBA ECBA)"],
+      "certifications_weight": "trung bình — ISTQB có giá trị thật với QA",
+      "advanced_degree_value": "không ảnh hưởng",
+      "typical_role_codes": ["QA_MANUAL", "INFRA_HELPDESK", "DATA_DA", "SEC_SOC"],
+      "note_vn": "Đây chính là 4 cửa vào ngành IT rộng nhất tại VN. Cũng là nhóm có trần lương thấp nhất nếu không chuyển tiếp sang role khác.",
+      "note_for_students": "Cửa vào dễ không có nghĩa là đường đi dễ. Giá trị lớn nhất của nhóm này là làm bàn đạp — vào ngành trước, rồi chuyển sang QA_AUTO, DATA_DE, SEC_ENG sau 2-3 năm.",
+      "confidence": "high"
+    },
+
+    {
+      "id": "EDU_DOMAIN_PLUS_IT",
+      "name_vn": "Bằng chuyên ngành nghiệp vụ, cộng hiểu biết IT",
+      "name_en": "Domain Degree + IT Literacy",
+      "summary": "Nền tảng nghiệp vụ quan trọng ngang hoặc hơn nền tảng kỹ thuật. Người học tài chính, kế toán, kiểm toán có lợi thế rõ rệt.",
+      "degree_requirement": "domain_specific",
+      "typical_majors": ["Tài chính - Ngân hàng", "Kế toán - Kiểm toán", "Quản trị Kinh doanh", "Hệ thống Thông tin Quản lý", "Luật"],
+      "alternative_paths_accepted": true,
+      "alternative_paths": ["Chuyển từ vị trí nghiệp vụ sang IT trong cùng công ty", "Chứng chỉ nghiệp vụ + kinh nghiệm dự án"],
+      "certifications_weight": "cao — ISO 27001, CISA, PMP, IIBA tuỳ role",
+      "advanced_degree_value": "có lợi thế ở GRC và tư vấn",
+      "typical_role_codes": ["PROD_BA", "SEC_GRC", "INFRA_ERP", "DATA_GOV"],
+      "note_vn": "Ngân hàng và công ty tư vấn tuyển nhóm này rất đều. Một BA hiểu quy trình thanh toán liên ngân hàng có giá trị hơn một BA giỏi vẽ sơ đồ.",
+      "note_for_students": "Đây là con đường vào IT dành cho người không học CNTT mà vẫn giữ được lợi thế chuyên môn gốc, thay vì phải bắt đầu lại từ đầu.",
+      "confidence": "high"
+    },
+
+    {
+      "id": "EDU_CERT_DRIVEN",
+      "name_vn": "Chứng chỉ quan trọng hơn bằng cấp",
+      "name_en": "Certification-driven",
+      "summary": "Thang tiến bộ nghề nghiệp gắn với chứng chỉ quốc tế, và JD thường liệt kê chứng chỉ cụ thể ở mục yêu cầu bắt buộc.",
+      "degree_requirement": "preferred_but_secondary",
+      "typical_majors": ["Công nghệ Thông tin", "Điện tử - Viễn thông", "An toàn Thông tin"],
+      "alternative_paths_accepted": true,
+      "alternative_paths": ["Cao đẳng nghề + chứng chỉ", "Tự học + thi chứng chỉ", "CTF và bug bounty với nhóm pentest"],
+      "certifications_weight": "rất cao — là tiêu chí sàng lọc chính",
+      "certification_examples": {
+        "network": ["CCNA", "CCNP", "CCIE"],
+        "security": ["CEH", "OSCP", "CISSP", "CISM"],
+        "cloud": ["AWS SAA", "AWS SAP", "Azure AZ-104", "Azure AZ-305", "GCP ACE"]
+      },
+      "advanced_degree_value": "thấp",
+      "typical_role_codes": ["INFRA_NETWORK", "SEC_PENTEST", "SEC_ENG", "CLOUD_ENG", "CLOUD_ARCH", "SEC_ISM"],
+      "note_vn": "Nhiều công ty VN trả thưởng hoặc tăng lương theo chứng chỉ đạt được. Đây là nhóm mà lộ trình học có thể lượng hoá rõ ràng nhất.",
+      "note_for_students": "Điểm hấp dẫn với người tự học: chi phí và thời gian để lấy chứng chỉ là biết trước, khác hẳn việc học đại học 4 năm.",
+      "confidence": "high"
+    },
+
+    {
+      "id": "EDU_ADVANCED_PREFERRED",
+      "name_vn": "Thạc sĩ hoặc Tiến sĩ là lợi thế rõ rệt",
+      "name_en": "Advanced Degree Preferred",
+      "summary": "Bằng sau đại học không bắt buộc nhưng tạo khác biệt thật trong tuyển dụng, đặc biệt với các vị trí gắn nghiên cứu.",
+      "degree_requirement": "required",
+      "typical_majors": ["Khoa học Máy tính", "Toán ứng dụng", "Thống kê", "Trí tuệ Nhân tạo", "Khoa học Dữ liệu"],
+      "alternative_paths_accepted": true,
+      "alternative_paths": ["Công bố khoa học", "Thành tích Kaggle hoặc cuộc thi quốc tế", "Kinh nghiệm nghiên cứu tại lab"],
+      "certifications_weight": "thấp",
+      "advanced_degree_value": "cao — đây là đặc trưng của nhóm",
+      "typical_role_codes": ["DATA_DS", "DATA_ML", "DATA_CV_NLP", "DATA_AIARCH"],
+      "note_vn": "Tập trung ở VinAI, FPT AI, Zalo AI, các viện nghiên cứu và một số fintech. Số lượng vị trí ít hơn nhiều so với nhóm phát triển phần mềm.",
+      "note_for_students": "Nếu bạn nhắm nhóm này thì nên tính tới học tiếp sau đại học từ sớm. Đây cũng là nhóm mà số vị trí tuyển ít nhất trong toàn ngành — cần cân nhắc giữa đam mê và cơ hội việc làm.",
+      "confidence": "medium"
+    }
+  ]
+}

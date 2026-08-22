@@ -1,0 +1,230 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-6",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "PROD_BA",
+  "role_name": "Business Analyst",
+  "role_name_vn": "Chuyên viên Phân tích Nghiệp vụ",
+  "role_group": "Product & Project Management",
+  "archetype": "A",
+  "archetype_reasoning": "Ladder đầy đủ, cửa vào lớn thứ nhì thị trường IT VN sau QA_MANUAL — đặc biệt mạnh ở ngân hàng và outsourcing, nơi BA là cầu nối bắt buộc giữa khách hàng/nghiệp vụ và đội kỹ thuật.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Cửa vào rộng cho người TRÁI NGÀNH — có neo gián tiếp: golden PROD_PO (4 JD NAB) cho thấy PO cấp cao không đòi bằng CNTT ('tertiary qualified, preferably business/commerce/economics'), và BA thường là cửa vào còn dễ tiếp cận hơn PO.",
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Business Analyst Intern",
+      "title_aliases": [],
+      "years_experience": "0",
+      "core_output": "Hỗ trợ thu thập yêu cầu và viết tài liệu dưới sự hướng dẫn trực tiếp, chưa tự làm việc với stakeholder.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Business Analyst",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Viết user story/use case cho yêu cầu đã được làm rõ, tham gia họp với vai trò ghi chép và hỗ trợ.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Business Analyst",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự thu thập và tài liệu hoá yêu cầu cho một tính năng cụ thể, làm việc trực tiếp với stakeholder cấp thực thi, vẫn cần review trước khi chuyển cho đội kỹ thuật.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Business Analyst",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm phân tích nghiệp vụ cho một module hoặc một luồng quy trình, tự quyết cách mô hình hoá yêu cầu (BPMN, wireframe), làm việc với cả stakeholder và kỹ thuật.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Business Analyst",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ phân tích cho cả một dự án hoặc một domain nghiệp vụ lớn, tư vấn giải pháp thay vì chỉ ghi nhận yêu cầu, mentor BA cấp dưới.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead Business Analyst",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt đội BA cho một chương trình/nhiều dự án song song, chuẩn hoá quy trình phân tích nghiệp vụ cho tổ chức.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal BA / BA Manager",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chiến lược phân tích nghiệp vụ cấp doanh nghiệp, tư vấn cấp lãnh đạo — vai trò gần với Domain Architect hơn là BA thực thi.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal BA",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "PROD_PM",
+        "from_band": "L5-L6",
+        "note": "Suy luận — BA giỏi thường được đôn lên PM/PO."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "PROD_PO",
+        "role_name": "Product Owner",
+        "note": "Có neo: golden PROD_PO ghi PO đòi hiểu nghiệp vụ sâu, gần với BA senior.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_PM",
+        "role_name": "Product Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect",
+        "note": "Ít gặp hơn, đòi thêm nền tảng kỹ thuật.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst",
+        "note": "Ranh giới mờ ở một số công ty.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "PROD_PO",
+        "reason": "Ở nhiều công ty VN, PO thực chất là BA cấp cao — có neo từ ghi chú Pass 0 gốc.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_DA",
+        "reason": "Cả hai đều là cầu nối dữ liệu/nghiệp vụ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này (dù đã có 4 JD cho PROD_PO — chưa đủ để suy ngược sang BA).",
+    "Ranh giới BA/PO là điểm mờ nhất trong toàn bộ domain Product tại VN theo ghi chú Pass 0 — Pass 1 này chưa giải quyết được, vẫn để nguyên trong often_confused_with.",
+    "Chưa rõ BA ở ngân hàng (nghiệp vụ nặng, ít kỹ thuật) có cùng ladder năm với BA ở outsourcing (thiên về đặc tả kỹ thuật) hay không."
+  ]
+}

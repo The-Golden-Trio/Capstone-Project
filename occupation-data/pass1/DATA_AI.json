@@ -1,0 +1,219 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-DATA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "DATA_AI",
+  "role_name": "AI Engineer",
+  "role_name_vn": "Kỹ sư trí tuệ nhân tạo",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: gần như không có Intern/Fresher AI Engineer thuần tại VN — người vào role này thường có nền lập trình (chủ yếu Backend) cộng thêm kiến thức AI. Ranh giới với DATA_ML mờ, theo ghi chú roles.csv 'xem mục 3 của taxonomy'.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Gần như không có Intern/Fresher AI Engineer thuần. Sàn thấp nhất hợp lý là L3 — người có nền lập trình cơ bản (thường từ Backend) cộng thêm kiến thức AI tự học hoặc khoá ngắn hạn.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "AI Engineer (mới chuyển ngang)",
+      "title_aliases": [],
+      "years_experience": "1-2 (kèm nền lập trình)",
+      "core_output": "Tích hợp API mô hình AI có sẵn (OpenAI, HuggingFace...) vào một tính năng cụ thể theo thiết kế đã có, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review trước khi merge/áp dụng.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle AI Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Tự triển khai một pipeline AI trọn vẹn cho một tính năng, từ dữ liệu đầu vào tới kết quả trả về, tinh chỉnh model có sẵn ở mức cơ bản, tương ứng vai trò tự chủ trong phạm vi một module hoặc một mảng việc, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior AI Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ thiết kế giải pháp AI cho một domain sản phẩm, đánh giá và chọn model phù hợp, tối ưu chi phí/độ trễ khi đưa vào production, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn, đồng thời review công việc của người khác.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "AI Engineering Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật AI cho một team, đặt chuẩn đánh giá chất lượng model và quy trình MLOps cơ bản, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc một hệ thống, chịu trách nhiệm về kết quả của cả nhóm.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal AI Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt định hướng ứng dụng AI xuyên nhiều sản phẩm, quyết định build-vs-buy cho năng lực AI, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal AI Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Không có Engineering Manager chuyên biệt cho AI trong taxonomy — suy luận dùng chung SWE_EM."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L3",
+        "note": "Đường vào phổ biến nhất.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_DS",
+        "role_name": "Data Scientist",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "DATA_ML",
+        "role_name": "Machine Learning Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_ML",
+        "role_name": "Machine Learning Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_GENAI",
+        "role_name": "Generative AI / LLM Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_CV_NLP",
+        "role_name": "Computer Vision / NLP Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_ML",
+        "reason": "Ranh giới mờ — roles.csv ghi rõ cần xem mục 3 của taxonomy để phân định.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_GENAI",
+        "reason": "Chồng lấn ở phần tích hợp mô hình vào sản phẩm.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Ranh giới DATA_AI / DATA_ML chưa rõ tại VN — cả hai có thể là cùng một vị trí tuyển dụng với hai tên gọi.",
+    "Chưa rõ sàn năm kinh nghiệm thật; L3 là suy luận, có thể thực tế cao hơn (giống DATA_GENAI/DATA_ML)."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

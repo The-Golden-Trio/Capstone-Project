@@ -1,0 +1,225 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-9",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "CLOUD_DEVOPS",
+  "role_name": "DevOps Engineer",
+  "role_name_vn": "Kỹ sư DevOps",
+  "role_group": "Cloud, DevOps & SRE",
+  "archetype": "B",
+  "archetype_reasoning": "Ca kinh điển của lateral-entry tại VN: gần như không có tin tuyển Intern/Fresher DevOps. Người ta CHUYỂN NGANG vào role này từ SysAdmin hoặc Backend Developer ở mức Middle trở lên, sau khi đã tích luỹ kinh nghiệm vận hành hệ thống hoặc viết code.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "KHÔNG có cửa vào Intern/Fresher/Junior thuần. Sàn thấp nhất quan sát được trên thị trường (theo hiểu biết chung ngành, CHƯA có JD xác nhận trong Pass 1 này) là tương đương L3-L4 — tức người đã có 1-3 năm kinh nghiệm Backend hoặc SysAdmin trước khi chuyển sang DevOps. Đây là điểm khác biệt cốt lõi so với 8 role archetype A còn lại trong Tier 1: học sinh cấp 3 KHÔNG thể chọn 'học DevOps ngay từ đầu' theo nghĩa tuyển dụng thực tế tại VN.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "DevOps Engineer (mới chuyển ngang)",
+      "title_aliases": [],
+      "years_experience": "1-3 (thường kèm nền tảng Backend hoặc SysAdmin trước đó)",
+      "core_output": "Tự vận hành pipeline CI/CD có sẵn, viết script tự động hoá cho tác vụ lặp lại, học cách quản lý hạ tầng cloud dưới sự hướng dẫn của kỹ sư senior hơn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle DevOps Engineer",
+      "title_aliases": [],
+      "years_experience": "3-5",
+      "core_output": "Chịu trách nhiệm một phần hạ tầng (một môi trường hoặc một cụm dịch vụ), tự thiết kế pipeline CI/CD mới, xử lý sự cố vận hành ở mức trung bình.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior DevOps Engineer",
+      "title_aliases": [],
+      "years_experience": "5-8",
+      "core_output": "Tự chủ kiến trúc hạ tầng cho cả một hệ thống, thiết lập chuẩn Infrastructure as Code, chịu trách nhiệm chính khi có sự cố production nghiêm trọng, mentor kỹ sư cấp dưới.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "DevOps Lead / Platform Lead",
+      "title_aliases": [],
+      "years_experience": "7-10",
+      "core_output": "Dẫn dắt đội DevOps/Platform, đặt chiến lược hạ tầng và công cụ cho toàn tổ chức, coaching đội.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal DevOps Engineer / Head of Infrastructure",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt định hướng hạ tầng và vận hành xuyên tổ chức, thường là người quyết định chiến lược cloud/multi-cloud cấp cao nhất về mặt kỹ thuật.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal DevOps Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "CLOUD_LEAD",
+        "from_band": "L6",
+        "note": "Suy luận — có thể trùng với CLOUD_LEAD (cũng archetype C trong roles.csv), cần đối chiếu ở Pass 2."
+      }
+    ]
+  },
+  "internal_variants": [
+    {
+      "variant_name": "Platform Engineer",
+      "focus": "Xây nền tảng nội bộ cho các đội dev tự phục vụ (self-service).",
+      "evidence_level": "C_INFERRED"
+    },
+    {
+      "variant_name": "Cloud Infrastructure Engineer",
+      "focus": "Thiên về thiết kế và vận hành hạ tầng cloud hơn CI/CD.",
+      "evidence_level": "C_INFERRED"
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "INFRA_SYSADMIN",
+        "role_name": "System Administrator",
+        "from_band": "L3-L4 (nội bộ role đó)",
+        "note": "Đường vào phổ biến nhất theo hiểu biết chung ngành.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L4-L5 (nội bộ role đó)",
+        "note": "Đường vào phổ biến thứ nhì — kỹ sư backend quan tâm tới vận hành.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_SRE",
+        "role_name": "Site Reliability Engineer",
+        "note": "Chồng lấn mạnh, có thể là lateral hơn là next step.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "CLOUD_SRE",
+        "role_name": "Site Reliability Engineer",
+        "note": "Ranh giới rất mờ tại VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "CLOUD_SRE",
+        "reason": "Tại VN hai title này thường được dùng thay thế nhau, không tách bạch rõ như ở big tech quốc tế.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "INFRA_ITOPS",
+        "reason": "Chồng lấn ở phần vận hành hệ thống.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [
+    {
+      "id": "VF-T1-03",
+      "severity": "trung bình",
+      "flag": "Đây là role B duy nhất trong Tier 1 — cấu trúc archetype B khác hẳn 8 role A còn lại (không có ladder từ đầu), cần Pass 2 xác nhận sớm để không lan sai sang các role B khác cùng batch sau này (SEC_ENG, DATA_DE...).",
+      "action": "Ưu tiên Pass 2 cho role này ngay sau SWE_BACKEND, vì nó là mẫu đại diện cho toàn bộ 34 role archetype B còn lại."
+    }
+  ],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — đây là role ĐẦU TIÊN trong Tier 1 thuộc archetype B, cần JD gấp để xác nhận feeder_roles và sàn năm kinh nghiệm thật.",
+    "Ranh giới CLOUD_DEVOPS / CLOUD_SRE / INFRA_ITOPS tại VN chưa rõ — cả ba có thể chồng lấn nhiều hơn taxonomy gốc giả định.",
+    "Chưa rõ liệu có công ty nào tại VN thực sự tuyển 'Junior DevOps' hay hoàn toàn không — nếu có dù hiếm, entry_note cần sửa lại."
+  ]
+}

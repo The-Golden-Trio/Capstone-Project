@@ -1,0 +1,165 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-CLOUD1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "CLOUD_FINOPS",
+  "role_name": "FinOps Specialist",
+  "role_name_vn": "Chuyên viên tối ưu chi phí đám mây",
+  "role_group": "Cloud, DevOps & SRE",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: rất hiếm là vị trí toàn thời gian, thường do DevOps/Cloud Engineer kiêm nhiệm — không có cửa vào entry-level, trần thấp (L6).",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher. Rất hiếm là vị trí toàn thời gian tại VN — theo roles.csv, thường do DevOps/Cloud Engineer kiêm nhiệm. Sàn hợp lý là L4.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "FinOps Specialist (Middle)",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền DevOps/Cloud)",
+      "core_output": "Theo dõi và báo cáo chi phí cloud theo dashboard có sẵn, đề xuất tối ưu ở mức tài nguyên đơn lẻ (rightsizing), tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior FinOps Specialist",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ xây dựng chiến lược tối ưu chi phí cho cả một hệ thống/tổ chức (reserved instance, chargeback), làm việc với nhiều team kỹ thuật, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "FinOps Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt chương trình FinOps cho tổ chức, định chuẩn quy trình quản trị chi phí cloud, tương ứng vai trò dẫn dắt kỹ thuật/chuyên môn cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [],
+    "management_track": [
+      {
+        "role_code": "CLOUD_LEAD",
+        "from_band": "L6",
+        "note": "Suy luận — chưa có JD xác nhận."
+      }
+    ],
+    "ic_track_note": "Không quan sát được band IC nào cao hơn L6 cho role này trong roles.csv hiện tại — người muốn tiếp tục leo cao thường CHUYỂN SANG role khác (xem management_track hoặc related_roles.next_steps) chứ không có nấc Principal riêng trong chính title này."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": null,
+        "role_name": "Kế toán/Tài chính CNTT (kiêm nhiệm)",
+        "from_band": "L4",
+        "note": "Chưa map được vào role_code, giữ null theo quy tắc.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "CLOUD_LEAD",
+        "role_name": "DevOps / Platform Lead",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_PLATFORM",
+        "role_name": "Platform Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "reason": "roles.csv ghi rõ vị trí này 'rất hiếm là role toàn thời gian; thường kiêm nhiệm' bởi chính DevOps Engineer.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ có công ty VN nào tuyển FinOps Specialist toàn thời gian độc lập hay 100% là kiêm nhiệm.",
+    "Trần L6 là suy luận, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

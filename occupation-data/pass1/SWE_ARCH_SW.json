@@ -1,0 +1,142 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A)",
+      "golden/SWE_ARCH_ENT.json v2 (archetype C)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "KHÔNG có JD nào trong bộ đã thu thập mang title này. Bộ JD hiện chỉ phủ frontend và kiến trúc doanh nghiệp theo đúng kế hoạch Bước B, nên đây là khoảng trống lấy mẫu chứ KHÔNG phải bằng chứng rằng title này không tồn tại tại VN. Toàn bộ nội dung dưới đây là suy luận từ chuẩn ngành, chỉ mượn golden để giữ độ chi tiết đồng đều."
+  },
+  "role_code": "SWE_ARCH_SW",
+  "role_name": "Software Architect",
+  "role_name_vn": "Kiến trúc sư phần mềm",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv đã verify: Software Architect được hiểu là một cấp bậc mà kỹ sư đi tới sau nhiều năm, không phải lộ trình có cửa vào riêng. LƯU Ý: chưa có JD nào xác nhận title này tồn tại độc lập tại VN, và có khả năng thật là nó bị gộp vào Solution Architect, Tech Lead hoặc Principal Engineer.",
+  "occupied_bands": [
+    "L6",
+    "L7",
+    "L8"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Suy luận: đi lên từ Senior hoặc Tech Lead của một nhánh chuyên môn sau nhiều năm hands-on. Chưa có JD xác nhận mốc năm cụ thể.",
+  "destination_profile": {
+    "band_range": "L6 - L8",
+    "min_years_experience": "6-15",
+    "years_band_check": "Lấy trọn khoảng L6-L8 theo thang toàn cục vì KHÔNG có bằng chứng để thu hẹp. Khoảng rộng ở đây là biểu hiện trung thực của việc thiếu dữ liệu, không phải sự cẩu thả.",
+    "core_output": "Định hình cấu trúc bên trong của một hệ thống phần mềm: chọn kiểu kiến trúc và design pattern cho các module lõi, đặt ràng buộc về ranh giới module và phụ thuộc giữa các thành phần, và chịu trách nhiệm về các thuộc tính phi chức năng như khả năng bảo trì, khả năng kiểm thử và khả năng mở rộng của chính mã nguồn — khác với Solution Architect vốn làm việc ở tầng tích hợp giữa các hệ thống.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — suy luận rằng role này nằm trên nhánh IC. Chưa có JD xác nhận.",
+  "internal_variants": [
+    {
+      "variant_name": "Backend Architect",
+      "focus": "Kiến trúc tầng backend và xử lý nghiệp vụ lõi.",
+      "evidence_level": "C_INFERRED",
+      "note": "Chưa có JD."
+    },
+    {
+      "variant_name": "Frontend Architect",
+      "focus": "Micro-frontend, design system, quản lý state cho ứng dụng client lớn.",
+      "evidence_level": "C_INFERRED",
+      "note": "Chưa có JD mang title này, nhưng golden A cho thấy phần việc tương ứng xuất hiện ở band L7 Principal Frontend — có thể ở VN nó được gọi là Principal chứ không phải Architect."
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_TECHLEAD",
+        "role_name": "Tech Lead",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L5-L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect",
+        "note": "Suy luận: mở rộng từ bên trong một hệ thống ra tầng tích hợp nhiều hệ thống.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_EM",
+        "role_name": "Engineering Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "reason": "Suy luận: khác nhau ở tầng làm việc — bên trong một hệ thống so với giữa nhiều hệ thống. Chưa kiểm chứng được tại VN.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_TECHLEAD",
+        "reason": "Nghi ngờ hai title này bị gộp ở phần lớn công ty VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": 19,
+    "itviec_slug_used": "software-technical-architect",
+    "topdev_open_postings": null,
+    "measured_at": "2026-08-22",
+    "confidence": "medium",
+    "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [
+    {
+      "id": "VF-C1-06",
+      "severity": "trung bình (hạ từ cao — có bằng chứng gián tiếp title tồn tại)",
+      "flag": "0 JD. Không có bất kỳ neo thực nghiệm nào cho role này. Mọi trường đều là suy luận từ chuẩn ngành quốc tế, chưa đối chiếu thị trường VN.",
+      "action": "Trước khi làm Pass 2, kiểm tra xem title này có tồn tại độc lập tại VN không. Nếu tìm 15 phút trên ITviec/TopDev/LinkedIn không ra tin nào thì bản thân đó là kết quả — cân nhắc gộp vào SWE_ARCH_SOL hoặc SWE_TECHLEAD và ghi vào caveats của báo cáo."
+    }
+  ],
+  "confidence_overall": "low-medium (nâng nhẹ nhờ job_outlook, vẫn chưa có JD đọc trực tiếp)",
+  "unknowns": [
+    "CẬP NHẬT 2026-08-22: job_outlook đo được 19 tin trên ITviec (slug software-technical-architect) — mâu thuẫn với giả định trước đó (0 JD hand-collected, nghi ngờ title không tồn tại độc lập). 19 tin là bằng chứng gián tiếp title CÓ tồn tại ở quy mô nhất định, dù chưa mở JD nào để đọc nội dung thật. Nguyên nhân: đợt thu thập JD tay trước đó chỉ nhắm EA/SA, bỏ sót nhóm Software Architect. Cần Pass 2 mở vài JD trong 19 tin này để xác nhận nội dung công việc thật.",
+    "Chưa biết title 'Software Architect' có tồn tại độc lập tại VN hay bị gộp vào Solution Architect / Tech Lead / Principal Engineer.",
+    "Khoảng năm kinh nghiệm 6-15 là lấy trọn thang band vì không có dữ liệu để thu hẹp.",
+    "Chưa biết role này còn hands-on tới mức nào, và mức đó có khác nhau giữa L6 và L8 không."
+  ]
+}
