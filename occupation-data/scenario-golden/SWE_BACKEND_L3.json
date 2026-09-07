@@ -1,0 +1,304 @@
+{
+  "_meta": {
+    "spec_version": "scenario-2.0",
+    "generated_at": "2026-08-29",
+    "source_dataset": "9_roles_tier1_pass2.json",
+    "fallback_tier": 1,
+    "golden_used": [],
+    "note": "Golden anchor cho spec-scenario-KHOI1.md. Chọn SWE_BACKEND L3 vì level này là A_VERIFIED (task/skill lấy từ JD thật), nằm giữa thang nên thể hiện rõ cả trục ROLE lẫn trục BAND, và là role có nhiều tin tuyển nhất theo outlook/posting_counts.csv."
+  },
+
+  "job": {
+    "role_code": "SWE_BACKEND",
+    "role_name_vn": "Lập trình viên Back-end",
+    "band": "L3",
+    "title_vn": "Junior Backend Engineer",
+    "years_experience": "1-2",
+    "user_context": "Bạn vào công ty được 8 tháng. Đã tự sửa vài bug production dưới sự kèm cặp của An, nhưng chưa lần nào tự dẫn một sự cố từ đầu tới cuối. Endpoint /orders/history là tính năng đầu tiên bạn viết trọn vẹn một mình.",
+    "core_output": "Tự hiện thực trọn vẹn một tính năng backend đã được xác định rõ — API, xử lý nghiệp vụ, truy vấn CSDL — tham gia code review hai chiều, nhưng chưa tự quyết định kiến trúc service hay chọn công nghệ mới."
+  },
+
+  "context": {
+    "scenario_archetype": "S_INCIDENT",
+    "task": "Tối ưu hóa các API bị chậm",
+    "skills_hard": ["Redis", "RESTful API Design"],
+    "skills_soft": ["Giải quyết vấn đề", "Làm việc độc lập"],
+    "company_type": "product_local",
+    "work_environment_id": "WE_HYBRID_PRODUCT",
+    "situation": "9:40 sáng thứ Ba, tại một công ty product tầm trung. API /orders/history trả về chậm hẳn từ 8:00, p95 nhảy từ 200ms lên 4.2s. Chưa sập, nhưng app mobile đang hiện spinner rất lâu và bộ phận support bắt đầu nhận phàn nàn. Bạn là người viết endpoint này ba tuần trước.",
+    "stakes": "Chưa mất tiền, nhưng nếu tới trưa chưa xử lý thì lượt đặt hàng giờ cao điểm sẽ rơi.",
+    "time_pressure": "Trong buổi sáng",
+    "estimated_minutes": 13
+  },
+
+  "cast": [
+    {
+      "npc_id": "an",
+      "role_in_scene": "Senior Backend, reviewer của bạn",
+      "pressure": "Đang bận release một module khác, sẵn sàng giúp nhưng không muốn bị hỏi những thứ bạn tự tra được",
+      "voice": "Ngắn gọn, hay hỏi ngược lại kiểu 'em đã xem log chưa?'"
+    },
+    {
+      "npc_id": "linh",
+      "role_in_scene": "Team Lead",
+      "pressure": "Đang bị support hỏi, cần một mốc thời gian để trả lời họ",
+      "voice": "Bình tĩnh, không đổ lỗi, nhưng hỏi rất cụ thể"
+    }
+  ],
+
+  "beats": [
+    {
+      "beat_id": "b1",
+      "type": "CHOICE",
+      "choice_reason": "Khoảnh khắc vừa nhận ra sự cố. Ngoài đời người ta phản xạ trong vài giây rồi mới nghĩ — không ai ngồi viết một đoạn giải thích trước khi mở log. Cho gõ tự do ở đây là đo sai thứ cần đo.",
+      "summary": "Phát hiện sự cố, chọn nước đi đầu tiên",
+      "isOrigin": true,
+      "forward_to": "b2",
+
+      "setup": "Bạn mở dashboard, thấy p95 dựng đứng lúc 8:03. Không có deploy nào sáng nay.",
+      "npc_line": null,
+      "options": [
+        "Xem lại query plan của endpoint và log DB quanh mốc 8:03",
+        "Nhắn An ngay: 'anh ơi API /orders/history chậm, anh xem giúp em với'",
+        "Restart service, xem có hết không rồi tính tiếp"
+      ],
+      "input_prompt": null,
+
+      "quick_action": true,
+      "time_limit_seconds": 30,
+
+      "hints": [],
+      "limitFollowup": 0,
+      "followup_goal": null,
+      "closing_prompt": "Màn hình log bắt đầu chạy. Bạn kéo xuống mốc 8:00.",
+
+      "observes": [
+        {
+          "skill_type": "soft",
+          "skill": "Làm việc độc lập",
+          "anchors": {
+            "+2": "Tự khoanh vùng bằng dữ liệu (log, query plan) trước khi gọi người khác",
+            "0": "Restart để thử — có lý nhưng không thu được thông tin gì về nguyên nhân",
+            "-1": "Ném vấn đề sang senior khi chưa tự xem gì, hoặc để hết giờ không làm gì"
+          }
+        }
+      ]
+    },
+
+    {
+      "beat_id": "b2",
+      "type": "FREETEXT",
+      "choice_reason": null,
+      "summary": "Chẩn đoán N+1 và đề xuất cách sửa",
+      "isOrigin": false,
+      "forward_to": "b3",
+
+      "setup": "Log cho thấy mỗi request /orders/history đang bắn 1 query lấy danh sách đơn, rồi N query lấy chi tiết từng đơn. Sáng nay có một khách sỉ với 900 đơn trong lịch sử.",
+      "npc_line": "An: 'Ừ nhìn giống N+1 đấy. Em định xử thế nào? Nói anh nghe cách trước khi code.'",
+      "options": null,
+      "input_prompt": "Trả lời An: bạn chẩn đoán vấn đề là gì và định sửa ra sao?",
+
+      "quick_action": false,
+      "time_limit_seconds": null,
+
+      "hints": [
+        {
+          "text": "An: 'Em thử đếm xem một request đang chạm DB bao nhiêu lần, rồi nhìn lại con số 900 kia xem.'",
+          "costs_ceiling": true
+        }
+      ],
+      "limitFollowup": 2,
+      "followup_goal": "Đào sâu chỗ người chơi hay bỏ qua: endpoint có nên giới hạn dữ liệu trả về cho tài khoản nhiều đơn không. Hỏi khi họ chỉ nói tới tầng truy vấn mà không đụng gì tới hợp đồng API.",
+      "closing_prompt": "An: 'Ok, anh hiểu rồi. Em làm đi, xong ping anh nhé.'",
+
+      "observes": [
+        {
+          "skill_type": "soft",
+          "skill": "Giải quyết vấn đề",
+          "anchors": {
+            "+2": "Gọi đúng tên N+1, nêu cách sửa cụ thể (join / batch load / eager load), và giải thích được vì sao hôm nay mới bung ra",
+            "0": "Nhận ra là query quá nhiều nhưng đề xuất chung chung kiểu 'tối ưu lại query'",
+            "-1": "Đề xuất tăng cấu hình DB hoặc nới timeout — chữa triệu chứng, không chạm nguyên nhân"
+          }
+        },
+        {
+          "skill_type": "hard",
+          "skill": "RESTful API Design",
+          "anchors": {
+            "+2": "Có nhắc tới phân trang hoặc giới hạn dữ liệu trả về cho tài khoản có nhiều đơn",
+            "0": "Chỉ sửa tầng truy vấn, không đụng gì tới hợp đồng API",
+            "-1": "Đề xuất trả toàn bộ lịch sử đơn trong một response"
+          }
+        }
+      ]
+    },
+
+    {
+      "beat_id": "b3",
+      "type": "FREETEXT",
+      "choice_reason": null,
+      "summary": "Quyết định có cache hay không, và vì sao",
+      "isOrigin": false,
+      "forward_to": "b4",
+
+      "setup": "Bạn sửa xong phần batch load, đo ở local còn 180ms. An gợi ý thêm: lịch sử đơn đã đóng thì gần như không đổi, cache được.",
+      "npc_line": "An: 'Em thấy sao? Có cache không hay để vậy đã? Nói anh nghe lý do, đừng chỉ nói có hay không.'",
+      "options": null,
+      "input_prompt": "Trả lời An về chuyện cache.",
+
+      "quick_action": false,
+      "time_limit_seconds": null,
+
+      "hints": [
+        {
+          "text": "An: 'Em nghĩ xem trong cái response đó, phần nào thì không bao giờ đổi nữa, phần nào thì vẫn có thể đổi.'",
+          "costs_ceiling": true
+        }
+      ],
+      "limitFollowup": 1,
+      "followup_goal": "Nếu người chơi chọn cache mà không phân biệt được phần lịch sử đã đóng với đơn đang chạy, hỏi lại đúng chỗ đó. Nếu người chơi chọn không cache, hỏi họ ngưỡng nào thì sẽ cần cache.",
+      "closing_prompt": "An: 'Ừ, hợp lý. Em ghi lại vào PR description nhé.'",
+
+      "observes": [
+        {
+          "skill_type": "hard",
+          "skill": "Redis",
+          "anchors": {
+            "+2": "Nêu được ranh giới dữ liệu nào bất biến (lịch sử đã đóng) và đánh đổi kèm theo, dù chọn cache hay chưa cache",
+            "0": "Chốt có hoặc không cache nhưng không nêu được lý do gắn với dữ liệu",
+            "-1": "Đề xuất cache toàn bộ response gồm cả đơn đang chạy — dữ liệu sẽ cũ ngay"
+          }
+        }
+      ],
+
+      "band_note": "Trục BAND: L3 KHÔNG tự quyết chiến lược cache cho toàn hệ thống. Ở beat này An là người gợi ý, người chơi chỉ quyết trong phạm vi endpoint của chính mình. Skill Redis ở L3 là mức 'familiar' nên mốc +2 chỉ đòi hiểu đúng chỗ dùng, không đòi thiết kế phương án cache."
+    },
+
+    {
+      "beat_id": "b4",
+      "type": "FREETEXT",
+      "choice_reason": null,
+      "summary": "Báo cáo tình hình cho Team Lead",
+      "isOrigin": false,
+      "forward_to": "END",
+
+      "setup": "11:15. Fix đã lên staging, p95 về 210ms. Linh nhắn trong nhóm.",
+      "npc_line": "Linh: 'Support đang hỏi anh. Em tóm tắt giúp anh: nguyên nhân là gì, đã xử tới đâu, bao giờ lên prod được?'",
+      "options": null,
+      "input_prompt": "Nhắn lại cho Linh.",
+
+      "quick_action": false,
+      "time_limit_seconds": null,
+
+      "hints": [
+        {
+          "text": "Linh: 'Em cứ viết như đang nói với người không rành kỹ thuật nhé, support họ đọc lại cho khách.'",
+          "costs_ceiling": true
+        }
+      ],
+      "limitFollowup": 0,
+      "followup_goal": null,
+      "closing_prompt": "Linh: 'Rõ rồi. Anh trả lời support đây.'",
+
+      "observes": [
+        {
+          "skill_type": "soft",
+          "skill": "Giải quyết vấn đề",
+          "anchors": {
+            "+2": "Nêu đủ nguyên nhân, trạng thái hiện tại và mốc thời gian, có nói rõ điều gì còn chưa chắc",
+            "0": "Nói đã sửa xong nhưng thiếu mốc thời gian hoặc thiếu nguyên nhân",
+            "-1": "Trả lời 'em sửa xong rồi ạ' và hết"
+          }
+        }
+      ]
+    }
+  ],
+
+  "random_events": [
+    {
+      "event_id": "re_second_complaint",
+      "chance": 0.3,
+      "after_beat": "b2",
+      "condition": null,
+      "text": "Linh forward vào nhóm một phàn nàn nữa, lần này từ khách khác: 'app quay mãi không vào được lịch sử đơn'. Trong hai phút có thêm ba tin nhắn tương tự.",
+      "outcome": "DIVERT",
+      "divert_note": "An trấn: 'Cùng một nguyên nhân thôi, chưa phải chuyện mới. Em cứ làm nốt phần đang dở, đừng nhảy sang cái khác.' Kéo người chơi về b3 mà không mở nhánh điều tra mới.",
+      "early_ending_id": null
+    },
+    {
+      "event_id": "re_escalate",
+      "chance": 0.35,
+      "after_beat": "b3",
+      "condition": { "min_plus2": null, "max_minus1": null, "min_minus1": 2 },
+      "text": "10:50. Service thanh toán bắt đầu timeout theo, vì nó gọi sang chính endpoint này. Incident được nâng cấp lên mức toàn hệ thống. An mở laptop, không nói gì thêm, và bắt đầu tự đọc log.",
+      "outcome": "EARLY_END",
+      "divert_note": null,
+      "early_ending_id": "e_bad"
+    }
+  ],
+
+  "endings": [
+    {
+      "ending_id": "e_root_cause",
+      "type": "SECRET",
+      "priority": 1,
+      "condition": {
+        "min_plus2": 2,
+        "max_minus1": 0,
+        "extra": "Người chơi tự nêu ra rằng endpoint này không có giới hạn dữ liệu đầu vào, nên bất kỳ tài khoản nào tích đủ đơn cũng sẽ gây lại sự cố — tức nhìn ra đây là lỗi thiết kế chờ sẵn chứ không phải sự cố của riêng sáng nay. Nêu ở b2, b3 hoặc b4 đều tính, kể cả khi nêu trong một lượt follow-up."
+      },
+      "text": "Fix lên prod lúc 11:40. Chiều đó Linh nhắn riêng: 'Cái ý em nói về việc không giới hạn dữ liệu ấy, anh nghĩ đúng. Em mở giúp anh một ticket, tuần sau mình bàn.' Ba tuần sau, một khách sỉ khác có 2000 đơn — và lần này không ai phải sửa gì cả.",
+      "reveals": "Sự cố hôm nay không phải là vấn đề. Nó là triệu chứng của một quyết định thiết kế từ ba tuần trước. Người làm nghề lâu năm khác người mới ở chỗ họ hỏi 'còn ai nữa sẽ dính?' trong khi việc đang cháy.",
+      "reachable_by_event": false
+    },
+    {
+      "ending_id": "e_good",
+      "type": "GOOD",
+      "priority": 2,
+      "condition": { "min_plus2": 3, "max_minus1": 0, "extra": null },
+      "text": "Fix lên prod trước giờ cao điểm. Linh trả lời support được bằng chính lời tóm tắt của bạn. An ghi chú lại case này cho buổi retro.",
+      "reveals": null,
+      "reachable_by_event": false
+    },
+    {
+      "ending_id": "e_partial_slow",
+      "type": "PARTIAL",
+      "priority": 3,
+      "condition": { "min_plus2": 2, "max_minus1": 1, "extra": null },
+      "text": "Fix kịp, nhưng tới 12:30 mới xong. Support đã phải gửi lời xin lỗi tới vài khách. Không ai trách bạn — Linh chỉ hỏi một câu ở retro: 'lần sau mình biết sớm hơn bằng cách nào?' và câu đó dành cho cả team, không riêng bạn.",
+      "reveals": null,
+      "reachable_by_event": false
+    },
+    {
+      "ending_id": "e_partial_borrowed",
+      "type": "PARTIAL",
+      "priority": 4,
+      "condition": { "min_plus2": 1, "max_minus1": null, "extra": null },
+      "text": "Việc xong, nhưng phần lớn là An làm. Bạn hiểu vấn đề sau khi An chỉ ra, không phải trước đó. Trong retro tên bạn được nhắc tới như người báo sự cố, chứ không phải người xử lý nó.",
+      "reveals": null,
+      "reachable_by_event": false
+    },
+    {
+      "ending_id": "e_bad",
+      "type": "BAD",
+      "priority": 5,
+      "condition": { "min_plus2": null, "max_minus1": null, "extra": null },
+      "text": "An tiếp quản và xử lý nốt. Câu trả lời gửi cho support là của An chứ không phải của bạn. Không ai nói gì nặng, nhưng buổi chiều đó bạn ngồi đọc lại đúng đoạn log mà lẽ ra nên đọc lúc 9:40.",
+      "reveals": null,
+      "reachable_by_event": true
+    }
+  ],
+
+  "evidence_level": "A_VERIFIED",
+  "coverage_note": "Fallback tier 1. Neo trực tiếp vào tasks[2] ('Tối ưu hóa các API bị chậm') và skills của chính band L3 trong 9_roles_tier1_pass2.json, không mượn band nào khác. Level gốc là A_VERIFIED (evidence_company: VNG Corporation, evidence_title_observed: Backend Software Engineer). Phủ toàn bộ skills_soft[] của level ('Giải quyết vấn đề', 'Làm việc độc lập') và cả 2 skills_hard đã khai ('RESTful API Design', 'Redis'). Bộ scenario đầy đủ của job này gồm 3 archetype đang mở ở L3 (S_EXEC, S_AMBIG, S_INCIDENT); file này là S_INCIDENT. Ngân sách A7: 1 CHOICE + 3 FREETEXT + 3 follow-up = 1 + 6 + 4.5 + 2 = 13.5 phút, ghi 13.",
+  "unknowns": [
+    "Không có JD nào nói rõ junior backend tại VN có được tự quyết định thêm cache hay không. Beat b3 đặt An làm người gợi ý để tránh đẩy quyền quyết định vượt band; nếu thu thập được JD nói khác thì phải chỉnh lại beat này.",
+    "Các con số p95 200ms/4.2s, 900 đơn, 180ms, 210ms là minh hoạ hợp lý về mặt kỹ thuật, KHÔNG lấy từ dữ liệu vận hành của bất kỳ công ty thật nào.",
+    "Hệ số ngân sách thời lượng (FREETEXT 2 phút / CHOICE 1 phút / follow-up 1.5 phút / +2 phút đọc) là ước lượng chưa đo trên người chơi thật. estimated_minutes: 13 cần được kiểm lại bằng bấm giờ thực tế.",
+    "Ngưỡng min_plus2 của các ending (3 cho GOOD, 2 cho PARTIAL) đặt theo cảm tính trên tổng 4 mốc khả dĩ. Ngưỡng 3 khá sát trần: người chơi phải đạt +2 ở 3 trong 4 chỗ quan sát mới vào được GOOD, và ai dùng hint ở hai beat trở lên thì gần như không thể đạt vì hint hạ trần beat đó xuống 0. Cần hiệu chỉnh sau khi có phân bố thật.",
+    "Chưa rõ tỉ lệ người chơi L3 thật sự nhìn ra được điều kiện của ending SECRET, nhất là khi nó phụ thuộc vào việc follow-up của b2 có được kích hoạt hay không.",
+    "30 giây của beat quick_action b1 là ước lượng. Nếu tỉ lệ timeout vượt khoảng 15% khi có người chơi thật thì phải nới, vì lúc đó đồng hồ đang phạt người đọc chậm chứ không phạt người thiếu phản xạ.",
+    "Xác suất 0.3 và 0.35 của hai random event đặt theo cảm tính. Chưa rõ tần suất này khiến lượt chơi thấy sống động hay thấy nhiễu.",
+    "job.user_context là bối cảnh TĨNH viết sẵn trong file, chưa nối với lịch sử chơi thật của người dùng. Phần động đã được hoãn — xem mục CÒN THIẾU của spec."
+  ]
+}
