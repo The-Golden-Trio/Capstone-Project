@@ -1,0 +1,516 @@
+[
+  {
+    "stt": 1,
+    "role_code": "SWE_FRONTEND",
+    "role_name": "Frontend Developer",
+    "role_name_vn": "Lập trình viên Front-end",
+    "roleplay_experience": "Dựng giao diện, thấy kết quả ngay trên màn hình",
+    "similar_roles": [
+      {
+        "role_code": "SWE_WEB",
+        "role_name": "Web Developer",
+        "role_name_vn": "Lập trình viên Web"
+      }
+    ],
+    "career_destinations": [],
+    "archetype": "A",
+    "bands": "L1-L7",
+    "role_group": "Software Engineering & Architecture"
+  },
+  {
+    "stt": 2,
+    "role_code": "SWE_BACKEND",
+    "role_name": "Backend Developer",
+    "role_name_vn": "Lập trình viên Back-end / Kỹ sư Back-end",
+    "roleplay_experience": "Logic nghiệp vụ, dữ liệu, thứ người dùng không thấy",
+    "similar_roles": [
+      {
+        "role_code": "SWE_FULLSTACK",
+        "role_name": "Full-stack Developer",
+        "role_name_vn": "Lập trình viên Full-stack"
+      },
+      {
+        "role_code": "SWE_AIFIRST",
+        "role_name": "AI-First Software Engineer",
+        "role_name_vn": "Kỹ sư phần mềm AI-First"
+      },
+      {
+        "role_code": "SWE_BRSE",
+        "role_name": "Bridge Software Engineer (BrSE)",
+        "role_name_vn": "Kỹ sư cầu nối"
+      },
+      {
+        "role_code": "SWE_BLOCKCHAIN",
+        "role_name": "Blockchain Engineer",
+        "role_name_vn": "Kỹ sư Blockchain"
+      }
+    ],
+    "career_destinations": [
+      {
+        "role_code": "SWE_TECHLEAD",
+        "role_name": "Tech Lead"
+      },
+      {
+        "role_code": "SWE_EM",
+        "role_name": "Engineering Manager"
+      },
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect"
+      },
+      {
+        "role_code": "SWE_ARCH_ENT",
+        "role_name": "Enterprise Architect"
+      },
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect"
+      },
+      {
+        "role_code": "EXEC_CTO",
+        "role_name": "Chief Technology Officer"
+      },
+      {
+        "role_code": "EXEC_VPOE",
+        "role_name": "VP of Engineering"
+      }
+    ],
+    "archetype": "A",
+    "bands": "L1-L7",
+    "role_group": "Software Engineering & Architecture"
+  },
+  {
+    "stt": 3,
+    "role_code": "SWE_MOBILE",
+    "role_name": "Mobile Developer",
+    "role_name_vn": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
+    "roleplay_experience": "Làm app chạy trên điện thoại của chính mình",
+    "similar_roles": [],
+    "career_destinations": [],
+    "archetype": "A",
+    "bands": "L1-L7",
+    "role_group": "Software Engineering & Architecture"
+  },
+  {
+    "stt": 4,
+    "role_code": "SWE_GAME",
+    "role_name": "Game Developer",
+    "role_name_vn": "Lập trình viên Game",
+    "roleplay_experience": "Làm game — sức hút lớn nhất với lứa tuổi này",
+    "similar_roles": [],
+    "career_destinations": [],
+    "archetype": "A",
+    "bands": "L1-L7",
+    "role_group": "Software Engineering & Architecture"
+  },
+  {
+    "stt": 5,
+    "role_code": "SWE_UIUX",
+    "role_name": "UI/UX Designer",
+    "role_name_vn": "Chuyên viên thiết kế UI/UX",
+    "roleplay_experience": "Sáng tạo thị giác, không cần code",
+    "similar_roles": [],
+    "career_destinations": [],
+    "archetype": "A",
+    "bands": "L1-L7",
+    "role_group": "Software Engineering & Architecture"
+  },
+  {
+    "stt": 6,
+    "role_code": "SWE_EMBEDDED",
+    "role_name": "Embedded Engineer",
+    "role_name_vn": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+    "roleplay_experience": "Lập trình chạm vào phần cứng, thiết bị thật",
+    "similar_roles": [],
+    "career_destinations": [],
+    "archetype": "A",
+    "bands": "L1-L7",
+    "role_group": "Software Engineering & Architecture"
+  },
+  {
+    "stt": 7,
+    "role_code": "QA_MANUAL",
+    "role_name": "Manual Tester / QC",
+    "role_name_vn": "Kỹ sư kiểm thử thủ công / Tester",
+    "roleplay_experience": "Tìm lỗi, tỉ mỉ, phá sản phẩm có hệ thống",
+    "similar_roles": [
+      {
+        "role_code": "QA_ANALYST",
+        "role_name": "QA Analyst / Auditor",
+        "role_name_vn": "Chuyên viên đảm bảo quy trình chất lượng"
+      }
+    ],
+    "career_destinations": [
+      {
+        "role_code": "QA_LEAD",
+        "role_name": "QA/QC Lead / Test Manager"
+      }
+    ],
+    "archetype": "A",
+    "bands": "L1-L5",
+    "role_group": "Quality Assurance & Testing"
+  },
+  {
+    "stt": 8,
+    "role_code": "QA_AUTO",
+    "role_name": "Automation QA",
+    "role_name_vn": "Kỹ sư kiểm thử tự động",
+    "roleplay_experience": "Viết code để máy tự kiểm thử",
+    "similar_roles": [
+      {
+        "role_code": "QA_SDET",
+        "role_name": "SDET",
+        "role_name_vn": "Kỹ sư phát triển công cụ và kiểm thử"
+      },
+      {
+        "role_code": "QA_PERF",
+        "role_name": "Performance Test Engineer",
+        "role_name_vn": "Kỹ sư kiểm thử hiệu năng"
+      }
+    ],
+    "career_destinations": [],
+    "archetype": "D",
+    "bands": "L3-L7",
+    "role_group": "Quality Assurance & Testing"
+  },
+  {
+    "stt": 9,
+    "role_code": "DATA_DA",
+    "role_name": "Data Analyst",
+    "role_name_vn": "Chuyên viên phân tích dữ liệu",
+    "roleplay_experience": "Đọc số liệu, tìm ra câu chuyện đằng sau",
+    "similar_roles": [
+      {
+        "role_code": "DATA_BI",
+        "role_name": "Business Intelligence Analyst",
+        "role_name_vn": "Chuyên viên BI"
+      }
+    ],
+    "career_destinations": [
+      {
+        "role_code": "DATA_PM",
+        "role_name": "Data Product Manager"
+      },
+      {
+        "role_code": "EXEC_CDO",
+        "role_name": "Chief Data / AI Officer"
+      }
+    ],
+    "archetype": "A",
+    "bands": "L1-L6",
+    "role_group": "Data, AI & Machine Learning"
+  },
+  {
+    "stt": 10,
+    "role_code": "DATA_ML",
+    "role_name": "Machine Learning Engineer",
+    "role_name_vn": "Kỹ sư học máy",
+    "roleplay_experience": "Dạy máy học — gộp cả Data Scientist",
+    "similar_roles": [
+      {
+        "role_code": "DATA_AI",
+        "role_name": "AI Engineer",
+        "role_name_vn": "Kỹ sư trí tuệ nhân tạo"
+      },
+      {
+        "role_code": "DATA_DS",
+        "role_name": "Data Scientist",
+        "role_name_vn": "Nhà khoa học dữ liệu"
+      },
+      {
+        "role_code": "DATA_GENAI",
+        "role_name": "Generative AI / LLM Engineer",
+        "role_name_vn": "Kỹ sư AI tạo sinh / Kỹ sư LLM"
+      },
+      {
+        "role_code": "DATA_CV_NLP",
+        "role_name": "Computer Vision / NLP Engineer",
+        "role_name_vn": "Kỹ sư thị giác máy tính / xử lý ngôn ngữ"
+      },
+      {
+        "role_code": "DATA_PROMPT",
+        "role_name": "Prompt Engineer",
+        "role_name_vn": "Kỹ sư thiết kế câu lệnh"
+      },
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "role_name_vn": "Kiến trúc sư giải pháp AI"
+      }
+    ],
+    "career_destinations": [],
+    "archetype": "B",
+    "bands": "L3-L7",
+    "role_group": "Data, AI & Machine Learning"
+  },
+  {
+    "stt": 11,
+    "role_code": "DATA_DE",
+    "role_name": "Data Engineer",
+    "role_name_vn": "Kỹ sư dữ liệu",
+    "roleplay_experience": "Xây đường ống đưa dữ liệu về một chỗ",
+    "similar_roles": [
+      {
+        "role_code": "DATA_ANALYTICSENG",
+        "role_name": "Analytics Engineer",
+        "role_name_vn": "Kỹ sư phân tích dữ liệu"
+      },
+      {
+        "role_code": "DATA_GOV",
+        "role_name": "Data Governance Specialist",
+        "role_name_vn": "Chuyên viên quản trị dữ liệu"
+      }
+    ],
+    "career_destinations": [],
+    "archetype": "B",
+    "bands": "L3-L7",
+    "role_group": "Data, AI & Machine Learning"
+  },
+  {
+    "stt": 12,
+    "role_code": "CLOUD_DEVOPS",
+    "role_name": "DevOps Engineer",
+    "role_name_vn": "Kỹ sư DevOps",
+    "roleplay_experience": "Tự động hoá, đưa sản phẩm lên chạy thật",
+    "similar_roles": [
+      {
+        "role_code": "CLOUD_AUTO",
+        "role_name": "Automation / CI-CD Engineer",
+        "role_name_vn": "Kỹ sư tự động hóa"
+      },
+      {
+        "role_code": "CLOUD_PLATFORM",
+        "role_name": "Platform Engineer",
+        "role_name_vn": "Kỹ sư nền tảng"
+      },
+      {
+        "role_code": "CLOUD_DEVSECOPS",
+        "role_name": "DevSecOps Engineer",
+        "role_name_vn": "Kỹ sư DevSecOps"
+      },
+      {
+        "role_code": "CLOUD_FINOPS",
+        "role_name": "FinOps Specialist",
+        "role_name_vn": "Chuyên viên tối ưu chi phí đám mây"
+      },
+      {
+        "role_code": "CLOUD_SRE",
+        "role_name": "Site Reliability Engineer",
+        "role_name_vn": "Kỹ sư tin cậy hệ thống / SRE"
+      },
+      {
+        "role_code": "DATA_MLOPS",
+        "role_name": "MLOps Engineer",
+        "role_name_vn": "Kỹ sư MLOps / Kỹ sư vận hành hệ thống AI"
+      },
+      {
+        "role_code": "INFRA_ITOPS",
+        "role_name": "IT Operations / Infrastructure Engineer",
+        "role_name_vn": "Kỹ sư vận hành hạ tầng"
+      }
+    ],
+    "career_destinations": [
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect"
+      },
+      {
+        "role_code": "CLOUD_LEAD",
+        "role_name": "DevOps / Platform Lead"
+      }
+    ],
+    "archetype": "B",
+    "bands": "L3-L7",
+    "role_group": "Cloud, DevOps & SRE"
+  },
+  {
+    "stt": 13,
+    "role_code": "CLOUD_ENG",
+    "role_name": "Cloud Engineer",
+    "role_name_vn": "Kỹ sư điện toán đám mây",
+    "roleplay_experience": "Hạ tầng trên mây, cửa vào dễ tiếp cận",
+    "similar_roles": [],
+    "career_destinations": [],
+    "archetype": "D",
+    "bands": "L2-L6",
+    "role_group": "Cloud, DevOps & SRE"
+  },
+  {
+    "stt": 14,
+    "role_code": "SEC_SOC",
+    "role_name": "SOC Analyst",
+    "role_name_vn": "Chuyên viên giám sát an ninh (SOC)",
+    "roleplay_experience": "Trực giám sát, điều tra cảnh báo — có ca đêm",
+    "similar_roles": [
+      {
+        "role_code": "SEC_IR",
+        "role_name": "Incident Response / DFIR Specialist",
+        "role_name_vn": "Chuyên viên ứng cứu sự cố & điều tra số"
+      },
+      {
+        "role_code": "SEC_ENG",
+        "role_name": "Cybersecurity / Security Engineer",
+        "role_name_vn": "Kỹ sư an ninh mạng / Kỹ sư bảo mật"
+      },
+      {
+        "role_code": "SEC_GRC",
+        "role_name": "GRC Analyst",
+        "role_name_vn": "Chuyên viên tuân thủ & quản trị rủi ro"
+      }
+    ],
+    "career_destinations": [
+      {
+        "role_code": "SEC_ISM",
+        "role_name": "Information Security Manager"
+      },
+      {
+        "role_code": "EXEC_CISO",
+        "role_name": "Chief Information Security Officer"
+      }
+    ],
+    "archetype": "A",
+    "bands": "L1-L6",
+    "role_group": "Cyber Security"
+  },
+  {
+    "stt": 15,
+    "role_code": "SEC_PENTEST",
+    "role_name": "Penetration Tester",
+    "role_name_vn": "Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng",
+    "roleplay_experience": "Tấn công thử để tìm lỗ hổng — sức hút lớn",
+    "similar_roles": [
+      {
+        "role_code": "QA_SECTEST",
+        "role_name": "Security Tester",
+        "role_name_vn": "Kỹ sư kiểm thử bảo mật"
+      },
+      {
+        "role_code": "SEC_APPSEC",
+        "role_name": "Application Security Engineer",
+        "role_name_vn": "Kỹ sư bảo mật ứng dụng (AppSec)"
+      },
+      {
+        "role_code": "SEC_AISEC",
+        "role_name": "AI Security Engineer",
+        "role_name_vn": "Chuyên viên bảo mật AI"
+      }
+    ],
+    "career_destinations": [],
+    "archetype": "B",
+    "bands": "L3-L7",
+    "role_group": "Cyber Security"
+  },
+  {
+    "stt": 16,
+    "role_code": "PROD_BA",
+    "role_name": "Business Analyst",
+    "role_name_vn": "Chuyên viên phân tích nghiệp vụ / BA",
+    "roleplay_experience": "Cầu nối nghiệp vụ, giao tiếp, ít code",
+    "similar_roles": [],
+    "career_destinations": [],
+    "archetype": "A",
+    "bands": "L1-L7",
+    "role_group": "Product & Project Management"
+  },
+  {
+    "stt": 17,
+    "role_code": "PROD_PM",
+    "role_name": "Product Manager",
+    "role_name_vn": "Quản lý sản phẩm / Product Manager",
+    "roleplay_experience": "Quyết định làm gì trước, làm gì sau",
+    "similar_roles": [
+      {
+        "role_code": "PROD_PO",
+        "role_name": "Product Owner",
+        "role_name_vn": "Chủ sở hữu sản phẩm / Product Owner"
+      },
+      {
+        "role_code": "PROD_SM",
+        "role_name": "Scrum Master",
+        "role_name_vn": "Scrum Master / Điều phối viên Scrum"
+      }
+    ],
+    "career_destinations": [
+      {
+        "role_code": "PROD_PJM",
+        "role_name": "Project Manager"
+      },
+      {
+        "role_code": "PROD_PL",
+        "role_name": "Project Leader"
+      },
+      {
+        "role_code": "PROD_DM",
+        "role_name": "Delivery Manager"
+      },
+      {
+        "role_code": "PROD_AGILE",
+        "role_name": "Agile Coach"
+      },
+      {
+        "role_code": "EXEC_CPO",
+        "role_name": "Chief Product Officer"
+      }
+    ],
+    "archetype": "D",
+    "bands": "L3-L9",
+    "role_group": "Product & Project Management"
+  },
+  {
+    "stt": 18,
+    "role_code": "INFRA_HELPDESK",
+    "role_name": "IT Helpdesk",
+    "role_name_vn": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+    "roleplay_experience": "Hỗ trợ người dùng, xử lý sự cố trực tiếp",
+    "similar_roles": [
+      {
+        "role_code": "INFRA_SYSADMIN",
+        "role_name": "System Administrator",
+        "role_name_vn": "Quản trị viên hệ thống"
+      },
+      {
+        "role_code": "INFRA_SYSENG",
+        "role_name": "Systems Engineer",
+        "role_name_vn": "Kỹ sư hệ thống"
+      },
+      {
+        "role_code": "INFRA_DBA",
+        "role_name": "Database Administrator",
+        "role_name_vn": "Quản trị viên cơ sở dữ liệu / DBA"
+      },
+      {
+        "role_code": "INFRA_ERP",
+        "role_name": "ERP Consultant / Engineer",
+        "role_name_vn": "Chuyên viên tư vấn giải pháp ERP"
+      },
+      {
+        "role_code": "INFRA_CRM",
+        "role_name": "Salesforce / CRM Consultant",
+        "role_name_vn": "Chuyên viên tư vấn giải pháp CRM"
+      },
+      {
+        "role_code": "INFRA_SAPBASIS",
+        "role_name": "SAP Basis Administrator",
+        "role_name_vn": "Quản trị SAP Basis"
+      },
+      {
+        "role_code": "INFRA_NETWORK",
+        "role_name": "Network Engineer",
+        "role_name_vn": "Kỹ sư hệ thống mạng"
+      }
+    ],
+    "career_destinations": [
+      {
+        "role_code": "INFRA_ITMANAGER",
+        "role_name": "IT Manager"
+      },
+      {
+        "role_code": "EXEC_CIO",
+        "role_name": "Chief Information Officer"
+      }
+    ],
+    "archetype": "A",
+    "bands": "L1-L4",
+    "role_group": "IT Infrastructure & Enterprise Systems"
+  }
+]

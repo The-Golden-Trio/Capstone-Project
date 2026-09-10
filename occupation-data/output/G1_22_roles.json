@@ -1,0 +1,638 @@
+[
+  {
+    "stt": 1,
+    "role_code": "SWE_FRONTEND",
+    "role_name": "Frontend Developer",
+    "role_name_vn": "Lập trình viên Front-end",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Dựng giao diện, thấy kết quả ngay trên màn hình",
+    "similar_roles": [
+      {
+        "role_code": "SWE_WEB",
+        "role_name": "Web Developer",
+        "role_name_vn": "Lập trình viên Web",
+        "merge_reason": "Trùng gần hoàn toàn với Frontend"
+      }
+    ],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L7"
+  },
+  {
+    "stt": 2,
+    "role_code": "SWE_BACKEND",
+    "role_name": "Backend Developer",
+    "role_name_vn": "Lập trình viên Back-end / Kỹ sư Back-end",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Viết logic nghiệp vụ và xử lý dữ liệu — phần người dùng không nhìn thấy",
+    "similar_roles": [
+      {
+        "role_code": "SWE_FULLSTACK",
+        "role_name": "Full-stack Developer",
+        "role_name_vn": "Lập trình viên Full-stack",
+        "merge_reason": "Là Frontend + Backend, không phải trải nghiệm thứ ba"
+      }
+    ],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L7"
+  },
+  {
+    "stt": 3,
+    "role_code": "SWE_MOBILE",
+    "role_name": "Mobile Developer",
+    "role_name_vn": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Làm app chạy trên chính chiếc điện thoại của mình",
+    "similar_roles": [],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L7"
+  },
+  {
+    "stt": 4,
+    "role_code": "SWE_GAME",
+    "role_name": "Game Developer",
+    "role_name_vn": "Lập trình viên Game",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Làm game: đồ hoạ, gameplay, cảm giác chơi",
+    "similar_roles": [],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L7"
+  },
+  {
+    "stt": 5,
+    "role_code": "SWE_UIUX",
+    "role_name": "UI/UX Designer",
+    "role_name_vn": "Chuyên viên thiết kế UI/UX",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Sáng tạo thị giác và trải nghiệm — KHÔNG cần code",
+    "similar_roles": [],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L7"
+  },
+  {
+    "stt": 6,
+    "role_code": "SWE_EMBEDDED",
+    "role_name": "Embedded Engineer",
+    "role_name_vn": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Lập trình điều khiển thiết bị phần cứng thật",
+    "similar_roles": [],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L7"
+  },
+  {
+    "stt": 7,
+    "role_code": "SWE_ARCH_SOL",
+    "role_name": "Solution Architect",
+    "role_name_vn": "Kiến trúc sư giải pháp",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Thiết kế kiến trúc tổng thể cho cả hệ thống, chọn công nghệ và cân đối đánh đổi",
+    "similar_roles": [
+      {
+        "role_code": "SWE_ARCH_ENT",
+        "role_name": "Enterprise Architect",
+        "role_name_vn": "Kiến trúc sư doanh nghiệp",
+        "merge_reason": "Solution Architect là tên phổ biến hơn; Enterprise Architect là biến thể phạm vi rộng hơn"
+      },
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect",
+        "role_name_vn": "Kiến trúc sư phần mềm",
+        "merge_reason": "Solution Architect phổ biến hơn; Software Architect hẹp hơn về phạm vi"
+      },
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect",
+        "role_name_vn": "Kiến trúc sư đám mây",
+        "merge_reason": "Kiến trúc sư chuyên mảng cloud — cùng họ Architect"
+      },
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "role_name_vn": "Kiến trúc sư giải pháp AI",
+        "merge_reason": "Kiến trúc sư chuyên mảng AI — cùng họ Architect, nhất quán với cách gộp Enterprise/Software/Cloud Architect"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Backend Developer"
+      },
+      {
+        "role_code": "SWE_FRONTEND",
+        "role_name": "Frontend Developer"
+      },
+      {
+        "role_code": "SWE_TECHLEAD",
+        "role_name": "Tech Lead"
+      },
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer"
+      }
+    ],
+    "archetype": "D",
+    "bands": "L6-L8"
+  },
+  {
+    "stt": 8,
+    "role_code": "SWE_TECHLEAD",
+    "role_name": "Tech Lead",
+    "role_name_vn": "Trưởng nhóm kỹ thuật",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Dẫn dắt kỹ thuật một đội, vẫn code nhưng quyết định hướng đi",
+    "similar_roles": [],
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Backend Developer"
+      },
+      {
+        "role_code": "SWE_FRONTEND",
+        "role_name": "Frontend Developer"
+      },
+      {
+        "role_code": "SWE_MOBILE",
+        "role_name": "Mobile Developer"
+      }
+    ],
+    "archetype": "C",
+    "bands": "L6-L7"
+  },
+  {
+    "stt": 9,
+    "role_code": "SWE_EM",
+    "role_name": "Engineering Manager",
+    "role_name_vn": "Trưởng phòng Kỹ thuật",
+    "role_group": "Software Engineering & Architecture",
+    "roleplay_experience": "Chịu trách nhiệm về con người: tuyển, đánh giá hiệu suất, phát triển đội",
+    "similar_roles": [
+      {
+        "role_code": "CLOUD_LEAD",
+        "role_name": "DevOps / Platform Lead",
+        "role_name_vn": "Trưởng nhóm DevOps",
+        "merge_reason": "Quản lý đội hạ tầng — cùng bản chất quản lý người"
+      },
+      {
+        "role_code": "SEC_ISM",
+        "role_name": "Information Security Manager",
+        "role_name_vn": "Quản lý an toàn thông tin / Trưởng phòng bảo mật",
+        "merge_reason": "Quản lý an toàn thông tin — cùng bản chất quản lý người"
+      },
+      {
+        "role_code": "INFRA_ITMANAGER",
+        "role_name": "IT Manager",
+        "role_name_vn": "Quản lý CNTT / Trưởng phòng CNTT",
+        "merge_reason": "Quản lý bộ phận IT — cùng bản chất quản lý người"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "SWE_TECHLEAD",
+        "role_name": "Tech Lead"
+      },
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect"
+      }
+    ],
+    "archetype": "C",
+    "bands": "L7-L9"
+  },
+  {
+    "stt": 10,
+    "role_code": "QA_MANUAL",
+    "role_name": "Quality Engineer",
+    "role_name_vn": "Kỹ sư kiểm thử thủ công / Tester",
+    "role_group": "Quality Assurance & Testing",
+    "roleplay_experience": "Tìm lỗi có hệ thống, tỉ mỉ từng chi tiết — bắt đầu từ kiểm thử thủ công, tiến dần sang viết code tự động hoá",
+    "similar_roles": [
+      {
+        "role_code": "QA_AUTO",
+        "role_name": "Automation QA Engineer",
+        "role_name_vn": "Kỹ sư kiểm thử tự động",
+        "merge_reason": "Thị trường VN ngày càng tuyển chung dưới title QA Engineer; automation là bước tiến của cùng một nghề"
+      },
+      {
+        "role_code": "QA_ANALYST",
+        "role_name": "QA Analyst / Auditor",
+        "role_name_vn": "Chuyên viên đảm bảo quy trình chất lượng",
+        "merge_reason": "Ranh giới với QC rất mờ tại VN"
+      },
+      {
+        "role_code": "QA_LEAD",
+        "role_name": "QA/QC Lead / Test Manager",
+        "role_name_vn": "Trưởng nhóm QA/QC / Quản lý kiểm thử",
+        "merge_reason": "Cấp cao hơn trong cùng nhánh kiểm thử"
+      },
+      {
+        "role_code": "QA_SDET",
+        "role_name": "SDET",
+        "role_name_vn": "Kỹ sư phát triển công cụ và kiểm thử",
+        "merge_reason": "Kiểm thử tự động ở mức lập trình sâu — vẫn là nghề QA"
+      },
+      {
+        "role_code": "QA_PERF",
+        "role_name": "Performance Test Engineer",
+        "role_name_vn": "Kỹ sư kiểm thử hiệu năng",
+        "merge_reason": "Chuyên môn hẹp trong kiểm thử"
+      }
+    ],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L5"
+  },
+  {
+    "stt": 11,
+    "role_code": "DATA_DA",
+    "role_name": "Data Analyst",
+    "role_name_vn": "Chuyên viên phân tích dữ liệu",
+    "role_group": "Data, AI & Machine Learning",
+    "roleplay_experience": "Đọc số liệu, tìm câu chuyện đằng sau con số — ít code, nhiều giao tiếp với phòng ban",
+    "similar_roles": [
+      {
+        "role_code": "DATA_BI",
+        "role_name": "Business Intelligence Analyst",
+        "role_name_vn": "Chuyên viên BI",
+        "merge_reason": "Nhiều công ty VN gộp hai vị trí này làm một"
+      }
+    ],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L6"
+  },
+  {
+    "stt": 12,
+    "role_code": "DATA_AI",
+    "role_name": "AI Engineer",
+    "role_name_vn": "Kỹ sư trí tuệ nhân tạo",
+    "role_group": "Data, AI & Machine Learning",
+    "roleplay_experience": "Xây hệ thống thông minh: mô hình học máy, LLM, thị giác máy tính",
+    "similar_roles": [
+      {
+        "role_code": "DATA_ML",
+        "role_name": "Machine Learning Engineer",
+        "role_name_vn": "Kỹ sư học máy",
+        "merge_reason": "AI Engineer là tên chung và phổ biến hơn"
+      },
+      {
+        "role_code": "DATA_DS",
+        "role_name": "Data Scientist",
+        "role_name_vn": "Nhà khoa học dữ liệu",
+        "merge_reason": "Data Scientist thiên nghiên cứu — cùng nhóm trải nghiệm"
+      },
+      {
+        "role_code": "DATA_GENAI",
+        "role_name": "Generative AI / LLM Engineer",
+        "role_name_vn": "Kỹ sư AI tạo sinh / Kỹ sư LLM",
+        "merge_reason": "Chuyên môn LLM trong AI Engineer"
+      },
+      {
+        "role_code": "DATA_CV_NLP",
+        "role_name": "Computer Vision / NLP Engineer",
+        "role_name_vn": "Kỹ sư thị giác máy tính / xử lý ngôn ngữ",
+        "merge_reason": "Chuyên môn thị giác máy tính / NLP"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst"
+      },
+      {
+        "role_code": "DATA_DE",
+        "role_name": "Data Engineer"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Backend Developer"
+      }
+    ],
+    "archetype": "B",
+    "bands": "L3-L7"
+  },
+  {
+    "stt": 13,
+    "role_code": "DATA_DE",
+    "role_name": "Data Engineer",
+    "role_name_vn": "Kỹ sư dữ liệu",
+    "role_group": "Data, AI & Machine Learning",
+    "roleplay_experience": "Xây đường ống đưa dữ liệu từ nhiều nguồn về một chỗ — nặng về kỹ thuật",
+    "similar_roles": [
+      {
+        "role_code": "DATA_ANALYTICSENG",
+        "role_name": "Analytics Engineer",
+        "role_name_vn": "Kỹ sư phân tích dữ liệu",
+        "merge_reason": "Title hiếm tại VN, thường do Data Engineer kiêm"
+      },
+      {
+        "role_code": "INFRA_DBA",
+        "role_name": "Database Administrator",
+        "role_name_vn": "Quản trị viên cơ sở dữ liệu / DBA",
+        "merge_reason": "Quản trị CSDL gần nhánh dữ liệu hơn nhánh hỗ trợ IT"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Backend Developer"
+      },
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst"
+      }
+    ],
+    "archetype": "B",
+    "bands": "L3-L7"
+  },
+  {
+    "stt": 14,
+    "role_code": "CLOUD_DEVOPS",
+    "role_name": "DevOps Engineer",
+    "role_name_vn": "Kỹ sư DevOps",
+    "role_group": "Cloud, DevOps & SRE",
+    "roleplay_experience": "Tự động hoá, đưa sản phẩm lên chạy thật, giữ hệ thống không sập",
+    "similar_roles": [
+      {
+        "role_code": "DATA_MLOPS",
+        "role_name": "MLOps Engineer",
+        "role_name_vn": "Kỹ sư MLOps / Kỹ sư vận hành hệ thống AI",
+        "merge_reason": "DevOps áp dụng cho mô hình ML"
+      },
+      {
+        "role_code": "CLOUD_SRE",
+        "role_name": "Site Reliability Engineer",
+        "role_name_vn": "Kỹ sư tin cậy hệ thống / SRE",
+        "merge_reason": "Tại VN hai title này thường dùng thay thế nhau"
+      },
+      {
+        "role_code": "CLOUD_AUTO",
+        "role_name": "Automation / CI-CD Engineer",
+        "role_name_vn": "Kỹ sư tự động hóa",
+        "merge_reason": "Tự động hoá là phần việc lõi của DevOps"
+      },
+      {
+        "role_code": "CLOUD_PLATFORM",
+        "role_name": "Platform Engineer",
+        "role_name_vn": "Kỹ sư nền tảng",
+        "merge_reason": "Title mới, nội dung trùng DevOps"
+      },
+      {
+        "role_code": "CLOUD_DEVSECOPS",
+        "role_name": "DevSecOps Engineer",
+        "role_name_vn": "Kỹ sư DevSecOps",
+        "merge_reason": "DevOps có thêm mảng bảo mật"
+      },
+      {
+        "role_code": "INFRA_ITOPS",
+        "role_name": "IT Operations / Infrastructure Engineer",
+        "role_name_vn": "Kỹ sư vận hành hạ tầng",
+        "merge_reason": "Vận hành hạ tầng — chồng lấn với DevOps"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Backend Developer"
+      },
+      {
+        "role_code": "INFRA_HELPDESK",
+        "role_name": "IT Helpdesk"
+      }
+    ],
+    "archetype": "B",
+    "bands": "L3-L7"
+  },
+  {
+    "stt": 15,
+    "role_code": "CLOUD_ENG",
+    "role_name": "Cloud Engineer",
+    "role_name_vn": "Kỹ sư điện toán đám mây",
+    "role_group": "Cloud, DevOps & SRE",
+    "roleplay_experience": "Xây và vận hành hạ tầng trên nền tảng đám mây",
+    "similar_roles": [],
+    "feeder_roles": [
+      {
+        "role_code": "INFRA_HELPDESK",
+        "role_name": "IT Helpdesk"
+      }
+    ],
+    "archetype": "D",
+    "bands": "L2-L6"
+  },
+  {
+    "stt": 16,
+    "role_code": "SEC_ENG",
+    "role_name": "Cybersecurity Engineer",
+    "role_name_vn": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
+    "role_group": "Cyber Security",
+    "roleplay_experience": "Bảo vệ hệ thống: giám sát và điều tra cảnh báo tấn công (giai đoạn đầu thường TRỰC CA, có ca đêm), viết rule phát hiện trên SIEM, triển khai firewall/IDS/EDR",
+    "similar_roles": [
+      {
+        "role_code": "SEC_SOC",
+        "role_name": "SOC Analyst",
+        "role_name_vn": "Chuyên viên giám sát an ninh (SOC)",
+        "merge_reason": "JD thật cho thấy trùng lặp lớn: Security Engineer cũng viết rule/parser trên SIEM và giám sát sự kiện. Cybersecurity Engineer là tên chung và dễ nhận biết hơn"
+      },
+      {
+        "role_code": "SEC_IR",
+        "role_name": "Incident Response / DFIR Specialist",
+        "role_name_vn": "Chuyên viên ứng cứu sự cố & điều tra số",
+        "merge_reason": "Xử lý sự cố là một phần của công việc bảo mật phòng thủ"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "INFRA_HELPDESK",
+        "role_name": "IT Helpdesk"
+      },
+      {
+        "role_code": "INFRA_NETWORK",
+        "role_name": "Network Engineer"
+      },
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer"
+      }
+    ],
+    "archetype": "B",
+    "bands": "L3-L7"
+  },
+  {
+    "stt": 17,
+    "role_code": "SEC_PENTEST",
+    "role_name": "Penetration Tester",
+    "role_name_vn": "Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng",
+    "role_group": "Cyber Security",
+    "roleplay_experience": "Tấn công thử vào hệ thống để tìm lỗ hổng trước kẻ xấu",
+    "similar_roles": [
+      {
+        "role_code": "QA_SECTEST",
+        "role_name": "Security Tester",
+        "role_name_vn": "Kỹ sư kiểm thử bảo mật",
+        "merge_reason": "Cùng là kiểm thử bảo mật"
+      },
+      {
+        "role_code": "SEC_APPSEC",
+        "role_name": "Application Security Engineer",
+        "role_name_vn": "Kỹ sư bảo mật ứng dụng (AppSec)",
+        "merge_reason": "Cùng hướng tìm lỗ hổng, tập trung tầng ứng dụng"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "SEC_ENG",
+        "role_name": "Cybersecurity Engineer"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Backend Developer"
+      }
+    ],
+    "archetype": "B",
+    "bands": "L3-L7"
+  },
+  {
+    "stt": 18,
+    "role_code": "PROD_BA",
+    "role_name": "Business Analyst",
+    "role_name_vn": "Chuyên viên phân tích nghiệp vụ / BA",
+    "role_group": "Product & Project Management",
+    "roleplay_experience": "Cầu nối giữa nghiệp vụ và kỹ thuật — giao tiếp nhiều, ÍT code",
+    "similar_roles": [],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L7"
+  },
+  {
+    "stt": 19,
+    "role_code": "PROD_PM",
+    "role_name": "Product Manager",
+    "role_name_vn": "Quản lý sản phẩm / Product Manager",
+    "role_group": "Product & Project Management",
+    "roleplay_experience": "Quyết định sản phẩm làm gì trước, làm gì sau và vì sao",
+    "similar_roles": [
+      {
+        "role_code": "PROD_PO",
+        "role_name": "Product Owner",
+        "role_name_vn": "Chủ sở hữu sản phẩm / Product Owner",
+        "merge_reason": "Tại VN, Product Owner và Product Manager thường không tách bạch"
+      },
+      {
+        "role_code": "PROD_SM",
+        "role_name": "Scrum Master",
+        "role_name_vn": "Scrum Master / Điều phối viên Scrum",
+        "merge_reason": "Scrum Master thường là vai trò kiêm nhiệm"
+      },
+      {
+        "role_code": "PROD_PJM",
+        "role_name": "Project Manager",
+        "role_name_vn": "Quản lý dự án",
+        "merge_reason": "Quản lý dự án — cùng bản chất điều phối và ưu tiên"
+      },
+      {
+        "role_code": "DATA_PM",
+        "role_name": "Data Product Manager",
+        "role_name_vn": "Quản lý sản phẩm dữ liệu",
+        "merge_reason": "Product Manager chuyên mảng dữ liệu"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Backend Developer"
+      },
+      {
+        "role_code": "SWE_UIUX",
+        "role_name": "UI/UX Designer"
+      }
+    ],
+    "archetype": "D",
+    "bands": "L3-L9"
+  },
+  {
+    "stt": 20,
+    "role_code": "INFRA_ERP",
+    "role_name": "ERP / CRM Consultant",
+    "role_name_vn": "Chuyên viên tư vấn giải pháp ERP",
+    "role_group": "IT Infrastructure & Enterprise Systems",
+    "roleplay_experience": "Cấu hình hệ thống quản trị doanh nghiệp (SAP, Oracle, Salesforce) theo quy trình của khách hàng — ít code, nhiều nghiệp vụ và làm việc trực tiếp với khách",
+    "similar_roles": [
+      {
+        "role_code": "INFRA_CRM",
+        "role_name": "Salesforce / CRM Consultant",
+        "role_name_vn": "Chuyên viên tư vấn giải pháp CRM",
+        "merge_reason": "Cùng bản chất tư vấn cấu hình hệ thống doanh nghiệp; Salesforce là một nền tảng cụ thể trong nhóm này (ITviec chỉ có 4 tin riêng cho Salesforce)"
+      },
+      {
+        "role_code": "INFRA_SAPBASIS",
+        "role_name": "SAP Basis Administrator",
+        "role_name_vn": "Quản trị SAP Basis",
+        "merge_reason": "Là mảng kỹ thuật hạ tầng của hệ SAP — thuộc cùng hệ sinh thái ERP"
+      }
+    ],
+    "feeder_roles": [
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst"
+      },
+      {
+        "role_code": "INFRA_HELPDESK",
+        "role_name": "IT Helpdesk"
+      }
+    ],
+    "archetype": "B",
+    "bands": "L3-L7"
+  },
+  {
+    "stt": 21,
+    "role_code": "INFRA_HELPDESK",
+    "role_name": "IT Helpdesk",
+    "role_name_vn": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+    "role_group": "IT Infrastructure & Enterprise Systems",
+    "roleplay_experience": "Hỗ trợ người dùng và xử lý sự cố trực tiếp — cửa vào ngành dễ tiếp cận nhất",
+    "similar_roles": [
+      {
+        "role_code": "INFRA_SYSADMIN",
+        "role_name": "System Administrator",
+        "role_name_vn": "Quản trị viên hệ thống",
+        "merge_reason": "Cùng nhánh vận hành và hỗ trợ hệ thống nội bộ"
+      },
+      {
+        "role_code": "INFRA_SYSENG",
+        "role_name": "Systems Engineer",
+        "role_name_vn": "Kỹ sư hệ thống",
+        "merge_reason": "Chồng lấn gần hoàn toàn với System Administrator"
+      }
+    ],
+    "feeder_roles": [],
+    "archetype": "A",
+    "bands": "L1-L4"
+  },
+  {
+    "stt": 22,
+    "role_code": "INFRA_NETWORK",
+    "role_name": "Network Engineer",
+    "role_name_vn": "Kỹ sư hệ thống mạng",
+    "role_group": "IT Infrastructure & Enterprise Systems",
+    "roleplay_experience": "Thiết kế và vận hành hệ thống mạng — lộ trình theo chứng chỉ CCNA/CCNP",
+    "similar_roles": [],
+    "feeder_roles": [
+      {
+        "role_code": "INFRA_HELPDESK",
+        "role_name": "IT Helpdesk"
+      }
+    ],
+    "archetype": "A",
+    "bands": "L1-L7"
+  }
+]
