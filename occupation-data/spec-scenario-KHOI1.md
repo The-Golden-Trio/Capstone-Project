@@ -1,6 +1,8 @@
 # KHỐI 1 — SPEC KHUNG KỊCH BẢN (SCENARIO SKELETON)
 
-> **Phiên bản `scenario-2.0`.** Đổi so với `1.0`: beat tách hai tầng cố định/follow-up · `FREETEXT` thành mặc định · thêm hint, câu chốt, quick action, random event · gộp `grounded_in` vào `context` · thêm `debrief`. File sinh theo `1.0` không tương thích và phải sinh lại.
+> **Phiên bản `scenario-2.2`.** Đổi so với `2.1`: thêm hai loại activity đóng `ORDERING` và `PRIORITIZING` · trần activity đóng đổi theo band thay vì cố định 1 · bổ sung hệ số ngân sách cho hai loại mới.
+
+> **Phiên bản `scenario-2.1`.** Đổi so với `2.0`: `beats[]` → `activities[]`, mỗi activity có khối `context` riêng · task trở thành tiêu đề scenario (`scenario_title`) · số scenario tính theo số task, archetype thành thuộc tính · luật chống trùng task thành luật chính thức. File sinh theo `2.0` phải đổi tên trường và bổ sung `context` cho từng activity.
 
 > Dùng cho lớp mô phỏng nghề: biến `tasks[]` / `skills_hard[]` / `skills_soft[]` của một job thành tình huống công việc chơi được.
 > Quan hệ với `spec-pass1-KHOI1-fixed.md`: file đó sinh **dữ liệu nghề**, file này tiêu thụ dữ liệu đó để sinh **tình huống**. Mọi quy ước về `role_code`, thang L1–L10, nhãn độ tin cậy, bốn nhóm `company_type` đều kế thừa nguyên vẹn, không định nghĩa lại.
@@ -32,27 +34,38 @@ Một **job** = một cặp `(role_code, band)`.
 
 ```
 job  (role_code + band)
- └── nhiều scenario
-      └── mỗi scenario neo vào ĐÚNG MỘT task
-           └── task triển khai thành nhiều beat
+ └── MỖI TASK trong tasks[] là MỘT scenario
+      └── tên scenario = chuỗi task, chép nguyên văn
+           └── scenario chia thành 3-4 ACTIVITY
+                └── mỗi activity có thể sinh thêm follow-up
 ```
 
-Một scenario là tình huống công việc **tự chứa**, 3–4 beat cố định, **10–15 phút**.
+Một scenario là tình huống công việc **tự chứa**, 3–4 activity cố định, **10–15 phút**.
 
 - KHÔNG phải một ngày làm việc. KHÔNG phải một sprint. Không có trạng thái mang sang phiên sau.
-- Mỗi scenario neo vào **đúng một** phần tử `tasks[]` của chính level đó, chép nguyên văn vào `context.task`. Một task, không nhiều hơn — nhiều task trong một tình huống thì không biết bằng chứng thu được thuộc về task nào.
 - `context.estimated_minutes` phải nằm trong **[10, 15]**.
 
-### Hai tầng beat
+### Task là tiêu đề scenario
+
+Chuỗi task được chép nguyên văn vào **hai** chỗ:
+
+| Trường | Vai trò |
+|---|---|
+| `scenario_title` | Thứ hiển thị cho người chơi |
+| `context.task` | Dây neo về dataset, để máy kiểm |
+
+Hai trường này phải **bằng nhau tuyệt đối**. Trùng lặp là có chủ đích: một cái để đọc, một cái để đối chiếu. Lệch nhau là lỗi.
+
+### Hai tầng activity
 
 | Tầng | Ai viết | Số lượng |
 |---|---|---|
-| **Beat cố định** | Viết sẵn trong file skeleton | 3–4 |
-| **Follow-up** | Runtime AI tự sinh | Theo trần khai ở beat cố định |
+| **Activity cố định** | Viết sẵn trong file skeleton | 3–4 |
+| **Follow-up** | Runtime AI tự sinh | Theo trần khai ở activity cố định |
 
-Beat cố định là xương sống, cố định giữa mọi lượt chơi. Follow-up là câu đào sâu, sinh ra từ chính chữ người chơi vừa gõ nên **không viết sẵn được** — skeleton chỉ khai *trần* và *mục tiêu*.
+Activity cố định là xương sống, cố định giữa mọi lượt chơi. Follow-up là câu đào sâu, sinh ra từ chính chữ người chơi vừa gõ nên **không viết sẵn được** — skeleton chỉ khai *trần* và *mục tiêu*.
 
-> Lý do khoá ở 10–15 phút: đây là đơn vị đo. Tình huống ngắn hơn không đủ beat để quan sát một kỹ năng mềm; dài hơn thì người chơi bỏ giữa chừng và bằng chứng thu được bị cụt.
+> Lý do khoá ở 10–15 phút: đây là đơn vị đo. Tình huống ngắn hơn không đủ activity để quan sát một kỹ năng mềm; dài hơn thì người chơi bỏ giữa chừng và bằng chứng thu được bị cụt.
 
 ## A3. Sáu archetype scenario, mở khoá theo band
 
@@ -67,9 +80,31 @@ Beat cố định là xương sống, cố định giữa mọi lượt chơi. F
 | `S_REVIEW` | Review / mentor người khác | L4+ |
 | `S_DECISION` | Đánh đổi kiến trúc, ngân sách, cross-team | L6+ |
 
-Mỗi job sinh **một scenario cho mỗi archetype đang mở** ở band đó. L1 sinh 1 scenario, L3 sinh 3, L7 sinh 6.
+### Archetype là thuộc tính, không phải bộ nhân
 
-**CẤM** sinh archetype chưa mở khoá. L1 không có `S_DECISION` — một intern không đứng trước quyết định ngân sách, và dựng ra tình huống đó là dạy sai về nghề.
+Số scenario của một job = **số phần tử trong `tasks[]`** của level đó. Level có 3 task → 3 scenario. Không hơn, không kém.
+
+Mỗi scenario chọn **một** archetype:
+
+- Chọn theo **nội dung của chính task đó**. Task nói về sự cố thì là `S_INCIDENT`, task nói về review thì là `S_REVIEW`.
+- Archetype đã chọn **bắt buộc nằm trong nhóm đã mở** ở band đó theo bảng trên.
+- Nếu nội dung task gợi tới một archetype chưa mở khoá, chọn archetype gần nhất đang mở và ghi lý do vào `coverage_note`.
+
+Ví dụ `SWE_BACKEND` L3 — ba task, ba scenario:
+
+| Task (cũng là `scenario_title`) | Archetype |
+|---|---|
+| Phân tích yêu cầu và thiết kế DB schema cho module nhỏ | `S_EXEC` |
+| Triển khai các luồng nghiệp vụ phức tạp | `S_AMBIG` |
+| Tối ưu hóa các API bị chậm | `S_INCIDENT` |
+
+### Hai luật cứng
+
+**CẤM sinh archetype chưa mở khoá.** L1 không có `S_DECISION` — một intern không đứng trước quyết định ngân sách, và dựng ra tình huống đó là dạy sai về nghề.
+
+**CẤM hai scenario cùng job neo vào cùng một task.** Một task một scenario. Trùng task nghĩa là trùng `scenario_title`, và người chơi sẽ thấy hai thẻ giống hệt nhau trong danh sách.
+
+> **Có archetype không được dùng, và đó là kết quả ĐÚNG.** Ở L6 có 6 archetype mở nhưng level thường chỉ 3 task, nên 3 archetype sẽ không xuất hiện ở job đó. Đừng nhồi thêm scenario cho đủ archetype — làm vậy là quay lại chỗ hai scenario dùng chung một task.
 
 ## A4. Hai trục bắt buộc
 
@@ -92,8 +127,9 @@ Trục BAND thể hiện ở bốn chỗ trong scenario:
 | Chỗ | Thể hiện |
 |---|---|
 | `context.situation` | Đề bài rõ hay mơ hồ |
-| `beats[].input_prompt` | Được tự quyết hay chỉ xử lý trong phạm vi đã giới hạn |
-| `beats[].limitFollowup` | Bao nhiêu tầng đào sâu — band cao thì nhiều tầng hơn (A7) |
+| `activities[].context.job_scope` | **Chỗ rõ nhất** — được và không được quyết gì ở từng nhịp |
+| `activities[].input_prompt` | Được tự quyết hay chỉ xử lý trong phạm vi đã giới hạn |
+| `activities[].limitFollowup` | Bao nhiêu tầng đào sâu — band cao thì nhiều tầng hơn (A7) |
 | `endings[]` | Hậu quả lan tới đâu |
 
 ## A5. Chuỗi fallback khi thiếu dữ liệu
@@ -137,42 +173,115 @@ Công ty trong scenario là **hư cấu và vô danh**: `"một ngân hàng tron
 
 > Lý do: người chơi sẽ kể lại tình huống cho bạn bè. Gắn tên thật vào một sự cố hư cấu là tạo ra tin đồn về một công ty có thật.
 
-## A7. Beat cố định và follow-up
+## A7. Activity cố định và follow-up
 
-### Số beat cố định: 3–4 ở mọi band
+### Số activity cố định: 3–4 ở mọi band
 
-### Beat nối nhau bằng con trỏ, không bằng thứ tự mảng
+### Activity nối nhau bằng con trỏ, không bằng thứ tự mảng
 
-Mỗi beat khai `forward_to` trỏ tới `beat_id` kế tiếp, hoặc chuỗi `"END"`. Đúng **một** beat có `isOrigin: true` — đó là chỗ bắt đầu.
+Mỗi activity khai `forward_to` trỏ tới `activity_id` kế tiếp, hoặc chuỗi `"END"`. Đúng **một** activity có `isOrigin: true` — đó là chỗ bắt đầu.
 
 ```jsonc
 "isOrigin": true,
-"forward_to": "b2"
+"forward_to": "a2"
 ```
 
 Ba luật:
 
-- Đúng 1 beat có `isOrigin: true`. Không có hoặc có nhiều hơn một đều hỏng.
-- Mọi `forward_to` phải trỏ tới `beat_id` **có thật** trong `beats[]`, hoặc `"END"`.
-- Đúng 1 beat có `forward_to: "END"`, và **mọi beat phải tới được từ beat gốc**. Beat không ai trỏ tới là beat chết.
+- Đúng 1 activity có `isOrigin: true`. Không có hoặc có nhiều hơn một đều hỏng.
+- Mọi `forward_to` phải trỏ tới `activity_id` **có thật** trong `activities[]`, hoặc `"END"`.
+- Đúng 1 activity có `forward_to: "END"`, và **mọi activity phải tới được từ activity gốc**. Activity không ai trỏ tới là activity chết.
 
 > Vì sao dùng con trỏ thay vì thứ tự mảng: `random_events` có thể đẩy người chơi đi đường khác (A12). Thứ tự mảng ngầm định chỉ mô tả được một đường thẳng; con trỏ mô tả được đồ thị, nên khi thêm nhánh không phải đổi lại schema.
 
-### Nhãn beat
+### Nhãn activity
 
-`summary` là nhãn ngắn một dòng cho beat — dùng cho UI, log và lúc rà soát. Không hiển thị cho người chơi.
+`summary` là nhãn ngắn một dòng cho activity — dùng cho UI, log và lúc rà soát. Không hiển thị cho người chơi.
 
-### `FREETEXT` là mặc định, `CHOICE` là ngoại lệ
+### Mỗi activity mang context riêng
 
-Mọi beat cố định mặc định `input_type: "FREETEXT"`.
+Ngoài context ở cấp scenario (A6), **từng activity** khai thêm khối context của chính nó:
 
-`CHOICE` chỉ dùng khi tình huống **thực sự không cho phép gõ tự do** — điển hình là khoảnh khắc phản xạ tức thời, không kịp viết một câu. Ràng buộc:
+```jsonc
+"context": {
+  "skills_in_play": ["..."],   // tập con của context.skills_hard + skills_soft cấp scenario
+  "company_flavour": "...",    // activity này khác gì ở loại công ty đã chốt
+  "job_scope": "..."           // ở band này, người chơi ĐƯỢC và KHÔNG ĐƯỢC quyết gì tại đây
+}
+```
 
-- **Tối đa 1 beat `CHOICE` mỗi scenario.**
-- Bắt buộc khai `choice_reason` giải thích vì sao beat này không thể là `FREETEXT`.
-- Đúng 3 phương án. **CẤM phương án ngu ngốc hiển nhiên** — cả ba đều phải là lựa chọn một người thật ở band đó có thể chọn.
+Ba luật:
 
-> Lý do đảo mặc định: chọn đáp án chỉ đo được việc nhận ra phương án đúng. Gõ tự do đo được cách người ta *diễn đạt* suy nghĩ — thứ chiếm phần lớn công việc thật và cũng là thứ khó giả vờ. Mỗi beat `CHOICE` là một beat đánh mất cơ hội quan sát.
+- **`skills_in_play` phải khớp đúng tập `observes[].skill`** của chính activity đó. Không thừa, không thiếu. Lệch là lỗi — vì khi đó thứ khai ra và thứ thực sự đo được không còn là một.
+- **`company_flavour` bám `company_type_variance`** của role. Không bịa thêm màu sắc công ty ngoài những gì dataset đã ghi. Không có dữ liệu thì để `null`.
+- **`job_scope` là chỗ trục BAND hiện rõ nhất.** Viết cả hai vế: được quyết gì, và không được quyết gì. Chỉ viết vế đầu là mất nửa thông tin.
+
+Ví dụ `job_scope` ở một activity bàn chuyện cache tại L3:
+
+> "L3 KHÔNG tự quyết chiến lược cache cho toàn hệ thống. Ở đây An là người gợi ý, người chơi chỉ quyết trong phạm vi endpoint của chính mình."
+
+> Vì sao tách context xuống tận activity: cùng một scenario nhưng activity mở màn và activity báo cáo cho lead đòi hỏi những thứ rất khác nhau. Gộp hết vào một khối ở cấp scenario thì runtime phải tự đoán phần nào áp cho nhịp nào.
+
+### `FREETEXT` là mặc định, ba loại đóng là ngoại lệ
+
+Mọi activity cố định mặc định `type: "FREETEXT"`. Ba loại còn lại là **loại đóng** — người chơi chọn hoặc sắp xếp trong phạm vi cho sẵn, không tự viết:
+
+| Loại | Người chơi làm gì | Hợp với tình huống nào |
+|---|---|---|
+| `CHOICE` | Chọn 1 trong 3 phương án | Khoảnh khắc phản xạ, không kịp viết một câu |
+| `ORDERING` | Sắp xếp các bước theo đúng thứ tự | Quy trình có thứ tự đúng — kể lại được chưa chắc làm đúng |
+| `PRIORITIZING` | Chọn N việc làm trước trong một danh sách | Nhận nhiều việc cùng lúc, phải tự xếp thứ tự |
+
+Mọi loại đóng **bắt buộc khai `choice_reason`** giải thích vì sao activity này không thể là `FREETEXT`.
+
+### Trần activity đóng theo band
+
+Đây là chỗ thứ hai trục BAND hiện ra, sau trần follow-up:
+
+| Band | Tối đa activity đóng | Vì sao |
+|---|---|---|
+| L1–L2 | 3 | Việc đã chia sẵn. Phần lớn quyết định là chọn và sắp xếp trong phạm vi đã giới hạn |
+| L3–L5 | 1 | Bắt đầu tự chủ. Phải diễn đạt được suy nghĩ, không chỉ nhận ra đáp án |
+| L6+ | 0 | Không còn ai cho sẵn phương án |
+
+Thêm một luật: **mỗi loại đóng tối đa 1 lần mỗi scenario**. Ba `CHOICE` liên tiếp là bài trắc nghiệm, không phải mô phỏng.
+
+> Vì sao đảo mặc định sang `FREETEXT`: chọn đáp án chỉ đo được việc *nhận ra* phương án đúng. Gõ tự do đo được cách người ta **diễn đạt** suy nghĩ — thứ chiếm phần lớn công việc thật và khó giả vờ hơn. Nhưng ở L1 thì điều đó chưa đúng: intern chưa được giao việc mở, nên bắt họ viết một đoạn phân tích là dựng sai nghề.
+
+### Luật riêng của từng loại đóng
+
+**`CHOICE`** — đúng 3 phương án. **CẤM phương án ngu ngốc hiển nhiên**: cả ba đều phải là lựa chọn một người thật ở band đó có thể chọn.
+
+```jsonc
+"options": ["...", "...", "..."],
+"optionGrade": ["+2", "-1", "0"],     // mốc cho từng phương án, cùng thứ tự
+"optionWhy": ["...", "...", "..."]    // lý do, dùng cho debrief
+```
+
+**`ORDERING`** — 4–6 bước. Mọi bước phải **thật sự có thứ tự đúng**; nếu hai bước đổi chỗ được mà vẫn đúng thì đó không phải bài sắp xếp.
+
+```jsonc
+"items": [ { "item_id": "s1", "text": "..." } ],
+"correct_order": ["s1", "s2", "s3", "s4", "s5"]
+```
+
+Chấm theo **số cặp đảo** so với thứ tự đúng: 0 cặp → `+2` · 1–2 cặp → `0` · từ 3 cặp → `-1`.
+
+**`PRIORITIZING`** — 4–6 lựa chọn, chọn 2–3.
+
+```jsonc
+"items": [ { "item_id": "i1", "text": "...", "note": "..." } ],
+"pick_count": 2,
+"must_pick": ["i2"],        // thiếu là không thể +2
+"should_pick": ["i3"],      // có thì tốt
+"must_not_pick": ["i5"]     // chọn là -1
+```
+
+Chấm: chạm `must_not_pick` → `-1` · thiếu `must_pick` → `-1` · đủ `must_pick` và có `should_pick` → `+2` · đủ `must_pick` nhưng thiếu `should_pick` → `0`.
+
+**`note` của mỗi lựa chọn là thứ đáng giá nhất ở `PRIORITIZING`.** Nó chứa manh mối để phân biệt việc gấp với việc dễ thấy. Không có `note` thì bài chọn thành bài đoán.
+
+> Lý do đảo mặc định: chọn đáp án chỉ đo được việc nhận ra phương án đúng. Gõ tự do đo được cách người ta *diễn đạt* suy nghĩ — thứ chiếm phần lớn công việc thật và cũng là thứ khó giả vờ. Mỗi activity `CHOICE` là một activity đánh mất cơ hội quan sát.
 
 > Lý do cấm phương án ngu ngốc: nó không đo được gì. Người chơi loại nó trong nửa giây rồi câu hỏi tụt xuống còn hai lựa chọn — nhưng rubric vẫn tính như thể có ba.
 
@@ -186,22 +295,24 @@ Mọi beat cố định mặc định `input_type: "FREETEXT"`.
 | L3–L5 | ≤ 3 | Có chỗ hỏi lại, làm rõ |
 | L6+ | ≤ 4 | Nhiều tầng đánh đổi |
 
-Mỗi beat cố định khai hai trường:
+Mỗi activity cố định khai hai trường:
 
 ```jsonc
-"limitFollowup": 2,          // tối đa 2 mỗi beat
+"limitFollowup": 2,          // tối đa 2 mỗi activity
 "followup_goal": "..."       // runtime đào sâu về cái gì. null khi limitFollowup = 0
 ```
 
 Tổng `limitFollowup` của cả scenario **không được vượt trần band**. `followup_goal` là chỉ dẫn cho runtime, không phải câu hỏi viết sẵn — câu hỏi thật sinh ra từ chính chữ người chơi vừa gõ.
 
-Beat `CHOICE` và beat `quick_action` **luôn có `limitFollowup: 0`**.
+Activity `CHOICE` và activity `quick_action` **luôn có `limitFollowup: 0`**.
 
 ### Ngân sách thời lượng
 
 ```
-estimated_minutes = 2   × (số beat FREETEXT cố định)
-                  + 1   × (số beat CHOICE cố định)
+estimated_minutes = 2   × (số activity FREETEXT)
+                  + 1   × (số activity CHOICE)
+                  + 1.5 × (số activity PRIORITIZING)
+                  + 2   × (số activity ORDERING)
                   + 1.5 × (tổng limitFollowup đã khai)
                   + 2
                     ↑ đọc situation + ending
@@ -215,13 +326,13 @@ Kết quả phải rơi vào **[10, 15]** và ghi vào `context.estimated_minute
 | L3 — 1 `CHOICE` + 2 `FREETEXT`, 3 follow-up | 1 + 4 + 4.5 + 2 = **11.5** | hợp lệ |
 | L1 — 3 `FREETEXT`, 2 follow-up | 6 + 3 + 2 = **11** | hợp lệ |
 | L6 — 3 `FREETEXT`, 4 follow-up | 6 + 6 + 2 = **14** | hợp lệ |
-| L6 — 4 `FREETEXT`, 4 follow-up | 8 + 6 + 2 = **16** | **vượt trần, bớt 1 beat cố định** |
+| L6 — 4 `FREETEXT`, 4 follow-up | 8 + 6 + 2 = **16** | **vượt trần, bớt 1 activity cố định** |
 
-Vượt trần thì **bớt beat cố định, không bớt follow-up** — follow-up mới là chỗ đo được chiều sâu, còn beat cố định chỉ là khung.
+Vượt trần thì **bớt activity cố định, không bớt follow-up** — follow-up mới là chỗ đo được chiều sâu, còn activity cố định chỉ là khung.
 
 ## A8. Rubric ECD
 
-Mỗi beat khai `observes[]`. Mỗi mục gồm:
+Mỗi activity khai `observes[]`. Mỗi mục gồm:
 
 - `skill_type`: `soft` | `hard`
 - `skill`: **chuỗi trích NGUYÊN VĂN từ dataset** — copy đúng ký tự từ `skills_hard[].skill` hoặc `skills_soft[]` của level.
@@ -238,7 +349,7 @@ Skeleton **chỉ mô tả bằng chứng, không cộng điểm**. Không có `t
 
 ## A9. Hint
 
-Chỉ beat cố định `FREETEXT` được có hint. Beat `CHOICE`, beat `quick_action`, và follow-up **không có hint**.
+Chỉ activity cố định `FREETEXT` được có hint. Activity `CHOICE`, activity `quick_action`, và follow-up **không có hint**.
 
 ```jsonc
 "hints": [
@@ -249,7 +360,7 @@ Chỉ beat cố định `FREETEXT` được có hint. Beat `CHOICE`, beat `quick
 ]
 ```
 
-`hints` là mảng, **tối đa 1 phần tử ở phiên bản `2.0`**. Beat không có hint để `"hints": []`.
+`hints` là mảng, **tối đa 1 phần tử ở phiên bản `2.1`**. Activity không có hint để `"hints": []`.
 
 > Vì sao dùng mảng cho một phần tử: để dành chỗ cho hint nhiều tầng sau này (gợi ý nhẹ trước, gợi ý rõ sau, mỗi tầng hạ trần sâu hơn) mà không phải đổi schema. Phiên bản này chưa mở tầng thứ hai.
 
@@ -257,7 +368,7 @@ Chỉ beat cố định `FREETEXT` được có hint. Beat `CHOICE`, beat `quick
 
 **1. Người chơi phải chủ động bấm xem.** Hint không tự bung sau X giây. Hạ trần chỉ công bằng khi người chơi tự chọn đánh đổi.
 
-**2. Dùng hint thì beat đó tối đa mốc `0`.** Runtime không được phát `+2` cho beat đã xem hint, kể cả khi câu trả lời xuất sắc. Ghi `hint_used: true` vào evidence.
+**2. Dùng hint thì activity đó tối đa mốc `0`.** Runtime không được phát `+2` cho activity đã xem hint, kể cả khi câu trả lời xuất sắc. Ghi `hint_used: true` vào evidence.
 
 **3. Hint chỉ ra hướng, không đưa đáp án.**
 
@@ -266,13 +377,13 @@ Chỉ beat cố định `FREETEXT` được có hint. Beat `CHOICE`, beat `quick
 | ✅ Đúng | "An: 'em xem log DB quanh mốc đó chưa?'" |
 | ❌ Sai | "An: 'đây là N+1 query đấy'" |
 
-Câu sai ở trên đưa thẳng thứ đang được đo. Sau khi đọc nó, người chơi nào cũng trả lời được, và beat mất hết giá trị quan sát — kể cả khi đã hạ trần.
+Câu sai ở trên đưa thẳng thứ đang được đo. Sau khi đọc nó, người chơi nào cũng trả lời được, và activity mất hết giá trị quan sát — kể cả khi đã hạ trần.
 
 > Vì sao follow-up không cần hint: tới lượt follow-up thì runtime đã có intent của người chơi từ câu trả lời trước. Nó hỏi tiếp dựa trên chính chữ người chơi vừa gõ, nên bản thân câu hỏi đã là dẫn dắt rồi.
 
 ## A10. Câu chốt
 
-Mỗi beat cố định khai `closing_prompt`: câu NPC nói để đóng mạch trước khi sang beat kế, hoặc trước ending nếu là beat cuối.
+Mỗi activity cố định khai `closing_prompt`: câu NPC nói để đóng mạch trước khi sang activity kế, hoặc trước ending nếu là activity cuối.
 
 ```jsonc
 "closing_prompt": "An: 'Ok, anh hiểu rồi. Em làm đi, xong ping anh nhé.'"
@@ -281,13 +392,13 @@ Mỗi beat cố định khai `closing_prompt`: câu NPC nói để đóng mạch
 Hai luật:
 
 - **Câu chốt KHÔNG phát bằng chứng mới.** Nó không có `observes[]`. Người chơi có thể trả lời hoặc không, không ảnh hưởng điểm.
-- **Bắt buộc có ở mọi beat cố định**, kể cả beat cuối. Ở beat cuối, câu chốt là cầu nối sang ending.
+- **Bắt buộc có ở mọi activity cố định**, kể cả activity cuối. Ở activity cuối, câu chốt là cầu nối sang ending.
 
-> Lý do: không có câu chốt thì chuyển beat đột ngột — người chơi vừa viết một đoạn dài xong thì cảnh nhảy sang chỗ khác, không ai phản hồi gì. Cảm giác nói vào khoảng không đó phá trải nghiệm nhanh hơn bất kỳ lỗi nội dung nào.
+> Lý do: không có câu chốt thì chuyển activity đột ngột — người chơi vừa viết một đoạn dài xong thì cảnh nhảy sang chỗ khác, không ai phản hồi gì. Cảm giác nói vào khoảng không đó phá trải nghiệm nhanh hơn bất kỳ lỗi nội dung nào.
 
 ## A11. Quick action
 
-Beat gấp, có đồng hồ đếm ngược **cưỡng chế**.
+Activity gấp, có đồng hồ đếm ngược **cưỡng chế**.
 
 ```jsonc
 "quick_action": true,
@@ -296,11 +407,11 @@ Beat gấp, có đồng hồ đếm ngược **cưỡng chế**.
 
 Luật:
 
-- **Tối đa 1 beat quick action mỗi scenario.**
-- Chỉ đánh dấu beat **thực sự gấp** trong tình huống — thường là khoảnh khắc đầu của `S_INCIDENT`. Không dùng để tạo áp lực giả.
-- Beat quick action **không có hint** và **không có follow-up** (`limitFollowup: 0`).
+- **Tối đa 1 activity quick action mỗi scenario.**
+- Chỉ đánh dấu activity **thực sự gấp** trong tình huống — thường là khoảnh khắc đầu của `S_INCIDENT`. Không dùng để tạo áp lực giả.
+- Activity quick action **không có hint** và **không có follow-up** (`limitFollowup: 0`).
 - `time_limit_seconds` trong khoảng **[20, 60]**.
-- Hết giờ = **không hành động**: runtime ghi `anchor_hit: "-1"`, `quote: null`, `timeout: true`, rồi chuyển beat.
+- Hết giờ = **không hành động**: runtime ghi `anchor_hit: "-1"`, `quote: null`, `timeout: true`, rồi chuyển activity.
 
 > ⚠️ **Đây là ngoại lệ DUY NHẤT của luật "quote bắt buộc" ở B3.** Hết giờ thì người chơi không gõ gì, nên không có chữ nào để trích. Mọi trường hợp khác mà `quote` là `null` đều là lỗi.
 
@@ -313,7 +424,7 @@ Sự kiện xen vào giữa mạch, gieo theo xác suất mỗi lượt chơi.
   {
     "event_id": "...",
     "chance": 0.25,              // [0.1, 0.4]
-    "after_beat": "b2",          // xen vào sau beat cố định nào
+    "after_activity": "a2",          // xen vào sau activity cố định nào
     "condition": null,           // null = chỉ cần gieo trúng. Xem "Hai cổng" bên dưới
     "text": "...",               // sự kiện, kể trong bối cảnh sẵn có
     "outcome": "DIVERT",         // DIVERT | EARLY_END
@@ -342,12 +453,12 @@ Sự kiện nổ khi **gieo trúng `chance`** VÀ **`condition` khớp**. `condi
 - **Tối đa 2 sự kiện mỗi scenario.** `chance` trong khoảng 0.1–0.4.
 - **Sự kiện bám vào bối cảnh sẵn có, không mở tình huống mới.** Nó đổi *đường đi*, không đổi *đề bài*. Một sự cố khác hoàn toàn ập tới giữa chừng là scenario thứ hai bị nhét vào, không phải sự kiện.
 - **CẤM đổi `observes[]`.** Sự kiện đổi nhịp kể, không đổi thứ đang đo.
-- `DIVERT` — sau sự kiện, NPC kéo người chơi về beat cố định kế tiếp. `divert_note` mô tả cách kéo về.
+- `DIVERT` — sau sự kiện, NPC kéo người chơi về activity cố định kế tiếp. `divert_note` mô tả cách kéo về.
 - `EARLY_END` — **bắt buộc trỏ thẳng một `ending_id` có thật**, bỏ qua toàn bộ luật ngưỡng ở A13.
 
-> **Vì sao `EARLY_END` phải trỏ thẳng:** kết thúc sớm nghĩa là vài beat không bao giờ chạy, nên số mốc `+2` khả dĩ tụt xuống và các ngưỡng `min_plus2` trở thành không đạt được. Nếu vẫn duyệt theo ngưỡng thì người chơi luôn rơi vào ending vét — kể cả khi họ đang làm tốt và chỉ xui gặp sự kiện.
+> **Vì sao `EARLY_END` phải trỏ thẳng:** kết thúc sớm nghĩa là vài activity không bao giờ chạy, nên số mốc `+2` khả dĩ tụt xuống và các ngưỡng `min_plus2` trở thành không đạt được. Nếu vẫn duyệt theo ngưỡng thì người chơi luôn rơi vào ending vét — kể cả khi họ đang làm tốt và chỉ xui gặp sự kiện.
 
-> **Sự kiện tiêu cực nên dẫn `EARLY_END`.** Khi người chơi đã lệch hẳn, kéo họ lê hết beat còn lại không dạy được gì thêm, chỉ kéo dài cảm giác thất bại. Cắt sớm và cho họ chơi lại tốt hơn.
+> **Sự kiện tiêu cực nên dẫn `EARLY_END`.** Khi người chơi đã lệch hẳn, kéo họ lê hết activity còn lại không dạy được gì thêm, chỉ kéo dài cảm giác thất bại. Cắt sớm và cho họ chơi lại tốt hơn.
 
 ## A13. Kết cục
 
@@ -387,7 +498,7 @@ Cờ này không đổi luật chọn — nó để người rà soát biết en
 
 Ba luật:
 
-- `extra` phải mô tả hành vi **thực hiện được trong chính scenario này** — phải tồn tại một beat mà người chơi có cơ hội làm điều đó. Đòi hỏi một hành vi không beat nào cho phép = kết cục không bao giờ đạt được.
+- `extra` phải mô tả hành vi **thực hiện được trong chính scenario này** — phải tồn tại một activity mà người chơi có cơ hội làm điều đó. Đòi hỏi một hành vi không activity nào cho phép = kết cục không bao giờ đạt được.
 - **CẤM** biến nó thành trò đoán chữ. Không có mật khẩu, không có câu thần chú. Người chơi đạt được vì hiểu nghề, không vì mò đúng từ khoá.
 - `reveals` bắt buộc khác `null`: ghi rõ người chơi học được gì. Không nói được thì đó không phải secret, chỉ là một `GOOD` khác.
 
@@ -402,12 +513,15 @@ Trường không áp dụng → `null` hoặc mảng rỗng. **KHÔNG xoá key.*
 ```jsonc
 {
   "_meta": {
-    "spec_version": "scenario-2.0",
+    "spec_version": "scenario-2.2",
     "generated_at": "<YYYY-MM-DD>",
     "source_dataset": "<tên file dataset đã đọc>",
     "fallback_tier": 1,                  // 1..3 theo bảng A5
-    "golden_used": []                    // ["scenario-golden/SWE_BACKEND_L3.json"] nếu có neo
+    "golden_used": [],                   // ["scenario-golden/SWE_BACKEND_L3.json"] nếu có neo
+    "note": null                         // ghi chú tự do cho người rà soát, hoặc null
   },
+
+  "scenario_title": "...",               // BẰNG ĐÚNG context.task (A2)
 
   "job": {
     "role_code": "...",                  // phải có trong roles.csv
@@ -445,28 +559,35 @@ Trường không áp dụng → `null` hoặc mảng rỗng. **KHÔNG xoá key.*
     }
   ],
 
-  "beats": [                             // 3-4 BEAT CỐ ĐỊNH. Follow-up runtime tự sinh
+  "activities": [                        // 3-4 ACTIVITY CỐ ĐỊNH. Follow-up runtime tự sinh
     {
-      "beat_id": "b1",
-      "type": "FREETEXT",                // mặc định. CHOICE là ngoại lệ, tối đa 1/scenario
-      "choice_reason": null,             // BẮT BUỘC khi type = CHOICE
-      "summary": "...",                  // nhãn ngắn của beat, cho UI và debug
+      "activity_id": "a1",
+      "type": "FREETEXT",                // FREETEXT | CHOICE | ORDERING | PRIORITIZING
+      "choice_reason": null,             // BẮT BUỘC với mọi loại đóng
+      "summary": "...",                  // nhãn ngắn của activity, cho UI và debug
 
-      "isOrigin": true,                  // đúng MỘT beat trong scenario có isOrigin: true
-      "forward_to": "b2",                // beat_id kế tiếp, hoặc "END"
+      "isOrigin": true,                  // đúng MỘT activity trong scenario có isOrigin: true
+      "forward_to": "a2",                // activity_id kế tiếp, hoặc "END"
+
+      "context": {                       // A7 — context riêng của activity này
+        "skills_in_play": [],            // PHẢI khớp đúng tập observes[].skill
+        "company_flavour": "...",        // bám company_type_variance, hoặc null
+        "job_scope": "..."               // ĐƯỢC và KHÔNG ĐƯỢC quyết gì tại đây
+      },
 
       "setup": "...",
-      "npc_line": null,                  // hoặc lời NPC mở beat
-      "options": null,                   // CHOICE: đúng 3. FREETEXT: null
-      "input_prompt": "...",             // FREETEXT: câu hỏi. CHOICE: null
+      "npc_line": null,                  // hoặc lời NPC mở activity
+      "options": null,                   // CHOICE: đúng 3, kèm optionGrade[] + optionWhy[]
+      "items": null,                     // ORDERING / PRIORITIZING: 4-6 mục. Xem A7
+      "input_prompt": "...",             // câu hỏi hiển thị cho người chơi
 
       "quick_action": false,             // A11
       "time_limit_seconds": null,        // [20,60] khi quick_action = true
 
-      "hints": [],                       // A9 — tối đa 1, chỉ beat FREETEXT thường
+      "hints": [],                       // A9 — tối đa 1, chỉ activity FREETEXT thường
       "limitFollowup": 1,                // A7 — CHOICE/quick_action luôn 0
       "followup_goal": "...",            // null khi limitFollowup = 0
-      "closing_prompt": "...",           // A10 — BẮT BUỘC ở mọi beat cố định
+      "closing_prompt": "...",           // A10 — BẮT BUỘC ở mọi activity cố định
 
       "observes": [
         {
@@ -486,7 +607,7 @@ Trường không áp dụng → `null` hoặc mảng rỗng. **KHÔNG xoá key.*
     {
       "event_id": "...",
       "chance": 0.25,                    // [0.1, 0.4]
-      "after_beat": "b2",
+      "after_activity": "a2",
       "condition": null,                 // BẮT BUỘC khác null khi outcome = EARLY_END
       "text": "...",
       "outcome": "DIVERT",               // DIVERT | EARLY_END
@@ -517,25 +638,30 @@ Trường không áp dụng → `null` hoặc mảng rỗng. **KHÔNG xoá key.*
 }
 ```
 
-## A15. Mười lăm lỗi hay gặp — tự kiểm trước khi trả kết quả
+## A15. Hai mươi lỗi hay gặp — tự kiểm trước khi trả kết quả
 
 1. **Scenario dán được sang band khác** → thiếu trục BAND. Đây là lỗi phổ biến nhất và cũng phá giá trị sản phẩm nhiều nhất: nếu L1 và L7 chơi giống nhau thì cả thang L1–L10 trở thành trang trí.
-2. **Beat `CHOICE` có một phương án hiển nhiên sai** → beat đó không đo được gì.
+2. **Activity `CHOICE` có một phương án hiển nhiên sai** → activity đó không đo được gì.
 3. **`observes[].skill` viết lại theo ý mình** thay vì trích nguyên văn → vỡ liên kết với dataset, không tổng hợp được.
 4. **`company_type` là nhóm đang `CHUA_CO_DU_LIEU`** trong role file → bối cảnh bịa.
 5. **`unknowns` rỗng hoặc chỉ 1 mục** → dấu hiệu tự tin giả. Bắt buộc ≥ 2.
 6. **Sinh archetype chưa mở khoá** ở band đó.
 7. **`anchors` viết bằng tính từ** (`"tốt"`, `"chủ động"`, `"rõ ràng"`) thay vì hành vi → runtime không chấm nhất quán được, hai lượt giống nhau ra hai kết quả khác nhau.
 8. **`endings[]` không có phần tử catch-all** ở `priority` lớn nhất → có lượt chơi kết thúc mà không khớp kết cục nào.
-9. **`SECRET.condition.extra` đòi hành vi mà không beat nào cho phép làm** → kết cục chết, tồn tại trên giấy nhưng không ai chạm tới được. Rà ngược từng beat xem người chơi có cửa nào làm điều đó không.
-10. **Nhiều hơn 1 beat `CHOICE`**, hoặc `CHOICE` không khai `choice_reason` → đang lười, chọn hình thức dễ viết thay vì hình thức đo được nhiều hơn.
+9. **`SECRET.condition.extra` đòi hành vi mà không activity nào cho phép làm** → kết cục chết, tồn tại trên giấy nhưng không ai chạm tới được. Rà ngược từng activity xem người chơi có cửa nào làm điều đó không.
+10. **Vượt trần activity đóng của band**, dùng một loại đóng hai lần, hoặc loại đóng không khai `choice_reason` → đang lười, chọn hình thức dễ viết thay vì hình thức đo được nhiều hơn.
 11. **Tổng `limitFollowup` vượt trần band** → phá ngân sách thời lượng, và xoá mất cách trục BAND thể hiện.
-12. **Hint đưa thẳng đáp án** thay vì chỉ hướng → beat mất giá trị quan sát kể cả khi đã hạ trần.
+12. **Hint đưa thẳng đáp án** thay vì chỉ hướng → activity mất giá trị quan sát kể cả khi đã hạ trần.
 13. **`EARLY_END` không trỏ `ending_id`, trỏ tới id không tồn tại, hoặc để `condition: null`** → lượt chơi kết thúc mà không có cảnh kết, hoặc cắt oan người đang chơi tốt.
-14. **Beat `quick_action` có hint hoặc có follow-up** → mâu thuẫn: beat gấp mà lại cho thời gian đọc gợi ý và hỏi đi hỏi lại.
-15. **`isOrigin` không đúng một beat**, `forward_to` trỏ tới id không tồn tại, hoặc có beat không ai trỏ tới → luồng gãy, beat chết.
+14. **Activity `quick_action` có hint hoặc có follow-up** → mâu thuẫn: activity gấp mà lại cho thời gian đọc gợi ý và hỏi đi hỏi lại.
+15. **`ORDERING` có hai bước đổi chỗ được mà vẫn đúng**, hoặc **`PRIORITIZING` thiếu `note`** → bài sắp xếp thành bài đoán.
+16. **`isOrigin` không đúng một activity**, `forward_to` trỏ tới id không tồn tại, hoặc có activity không ai trỏ tới → luồng gãy, activity chết.
+17. **`scenario_title` khác `context.task`** → thứ người chơi đọc và thứ máy đối chiếu không còn là một.
+18. **`skills_in_play` của activity lệch tập `observes[].skill`** → khai một đằng đo một nẻo. Đây là lỗi âm thầm nhất vì file vẫn chạy được, chỉ có bằng chứng thu về là sai chỗ.
+19. **Hai scenario cùng job neo vào cùng một task** → trùng `scenario_title`, người chơi thấy hai thẻ giống hệt nhau.
+20. **`job_scope` chỉ viết vế "được quyết"** mà bỏ vế "không được quyết" → mất nửa thông tin, và runtime sẽ không biết chặn ở đâu.
 
-Ngoài ra rà nhanh ba thứ máy kiểm được nhưng hay sót: mọi beat cố định có `closing_prompt` chưa · `skill` trong `observes[]` có nằm trong `context.skills_*` không · công thức ngân sách có ra đúng `estimated_minutes` không.
+Ngoài ra rà nhanh ba thứ máy kiểm được nhưng hay sót: mọi activity cố định có `closing_prompt` chưa · `skill` trong `observes[]` có nằm trong `context.skills_*` không · công thức ngân sách có ra đúng `estimated_minutes` không.
 
 ---
 
@@ -543,7 +669,7 @@ Ngoài ra rà nhanh ba thứ máy kiểm được nhưng hay sót: mọi beat c�
 
 ## B1. Input
 
-AI nhận đúng **một** scenario skeleton JSON + trạng thái phiên (beat hiện tại, lịch sử lượt). Không nhận dataset, không nhận KHỐI A, không nhận scenario khác.
+AI nhận đúng **một** scenario skeleton JSON + trạng thái phiên (activity hiện tại, lịch sử lượt). Không nhận dataset, không nhận KHỐI A, không nhận scenario khác.
 
 ## B2. Được phép / bị cấm
 
@@ -560,8 +686,8 @@ AI nhận đúng **một** scenario skeleton JSON + trạng thái phiên (beat h
 - Nâng hoặc hạ phạm vi hậu quả khỏi trục BAND của `job.band`.
 - Bịa số liệu mới, tên công ty thật, URL, tên sản phẩm thật.
 - **Tiết lộ rubric cho người chơi** — không nói "câu trả lời này được +2", không gợi ý đang chấm kỹ năng gì.
-- **Vượt trần `limitFollowup`** của beat, hoặc hỏi follow-up ở beat `CHOICE` / `quick_action`.
-- **Phát `+2` cho beat người chơi đã xem hint** — trần của beat đó tụt xuống `0`.
+- **Vượt trần `limitFollowup`** của activity, hoặc hỏi follow-up ở activity `CHOICE` / `quick_action`.
+- **Phát `+2` cho activity người chơi đã xem hint** — trần của activity đó tụt xuống `0`.
 - **Đổi `observes[]` khi sự kiện ngẫu nhiên nổ.** Sự kiện đổi đường đi, không đổi thứ đang đo.
 
 ## B3. Giao thức lượt
@@ -574,15 +700,15 @@ Mỗi lượt trả về DUY NHẤT JSON:
   "npc_lines": [ { "npc_id": "...", "line": "..." } ],
 
   "turn_kind": "FIXED",                 // FIXED | FOLLOWUP | CLOSING | EVENT
-  "followup_used": 0,                   // đã dùng mấy follow-up trên beat hiện tại
+  "followup_used": 0,                   // đã dùng mấy follow-up trên activity hiện tại
 
-  "options": null,                      // nếu beat kế là CHOICE, ngược lại null
-  "input_prompt": "...",                // nếu beat kế là FREETEXT
-  "next": "b3",                         // beat_id kế tiếp, hoặc "END"
+  "options": null,                      // nếu activity kế là CHOICE, ngược lại null
+  "input_prompt": "...",                // nếu activity kế là FREETEXT
+  "next": "a3",                         // activity_id kế tiếp, hoặc "END"
 
   "evidence_emitted": [
     {
-      "beat_id": "b2",
+      "activity_id": "a2",
       "skill": "...",                   // đúng chuỗi trong observes[]
       "anchor_hit": "+2",               // "+2" | "0" | "-1"
       "quote": "...",                   // TRÍCH ĐÚNG chữ người chơi đã gõ
@@ -600,24 +726,24 @@ Mỗi lượt trả về DUY NHẤT JSON:
 
 | `turn_kind` | Khi nào | Phát evidence |
 |---|---|---|
-| `FIXED` | Mở một beat cố định | Có |
+| `FIXED` | Mở một activity cố định | Có |
 | `FOLLOWUP` | Đào sâu câu trả lời vừa rồi | Có |
-| `CLOSING` | Câu chốt trước khi chuyển beat (A10) | **Không** |
+| `CLOSING` | Câu chốt trước khi chuyển activity (A10) | **Không** |
 | `EVENT` | Sự kiện ngẫu nhiên nổ (A12) | **Không** |
 
 ### Luật `quote`
 
 `quote` là bắt buộc và phải là **chuỗi con có thật** trong lượt người chơi vừa nhập. Không có chỗ nào trích được → không phát evidence cho mục đó.
 
-**Ngoại lệ duy nhất:** `timeout: true` ở beat `quick_action`. Hết giờ thì người chơi không gõ gì, nên `quote: null` là hợp lệ và `anchor_hit` là `"-1"`.
+**Ngoại lệ duy nhất:** `timeout: true` ở activity `quick_action`. Hết giờ thì người chơi không gõ gì, nên `quote: null` là hợp lệ và `anchor_hit` là `"-1"`.
 
 > Lý do: `quote` là thứ duy nhất khiến điểm số kiểm tra lại được. Không có nó thì mọi con số ở tầng trên là lời khẳng định không có bằng chứng.
 
 ## B4. Người chơi đi lạc
 
-- **Hỏi ngoài phạm vi** (hỏi về công ty, về lương, về chuyện riêng NPC): NPC trả lời ngắn **trong vai**, rồi kéo về beat hiện tại. Không phát evidence.
+- **Hỏi ngoài phạm vi** (hỏi về công ty, về lương, về chuyện riêng NPC): NPC trả lời ngắn **trong vai**, rồi kéo về activity hiện tại. Không phát evidence.
 - **Cố ý phá** (trả lời bậy, spam): nếu đúng skill đang quan sát thì ghi `anchor_hit: "-1"`; không thì bỏ qua, không phát evidence.
-- **Ba lượt lạc liên tiếp**: NPC ép quyết định ("anh cần câu trả lời bây giờ"), chuyển beat.
+- **Ba lượt lạc liên tiếp**: NPC ép quyết định ("anh cần câu trả lời bây giờ"), chuyển activity.
 - **Người chơi đòi làm việc vượt quyền của band**: NPC **chặn lại trong vai** — đây không phải lỗi người chơi, mà là cơ hội dạy về phạm vi quyền của level đó.
 
 ## B5. Kết thúc
@@ -708,8 +834,8 @@ Runtime AI **không** thu phần này — nó là form của tầng ứng dụng
 2. Lộ rubric, hoặc nói bóng gió rằng vừa chấm điểm.
 3. Để người chơi ở band thấp ra quyết định vượt quyền mà không NPC nào chặn.
 4. `evidence_emitted[].quote` không trích đúng chữ người chơi, mà là lời AI diễn giải lại.
-5. Hỏi follow-up quá trần `limitFollowup`, hoặc hỏi ở beat `CHOICE` / `quick_action`.
-6. Phát `+2` cho beat người chơi đã xem hint.
+5. Hỏi follow-up quá trần `limitFollowup`, hoặc hỏi ở activity `CHOICE` / `quick_action`.
+6. Phát `+2` cho activity người chơi đã xem hint.
 7. `debrief` gọi tên kỹ năng thay vì tên hành vi.
 
 ---
@@ -730,6 +856,8 @@ Là **logic tầng ứng dụng**, không thuộc file scenario. Spec cố ý kh
 
 Khi làm, cần chốt trước ba điều mà spec này không trả lời được: bao nhiêu scenario thì đầy thanh · chơi lại có tính không · có tụt band không.
 
-### 3. Chống trùng giữa các scenario cùng job
+### 3. ~~Chống trùng giữa các scenario cùng job~~ — ĐÃ VÁ ở `2.1`
 
-KHỐI A được viết để sinh **cả bộ của một job trong một lượt**, nên chưa có điều khoản cấm hai scenario cùng job neo vào cùng một task hoặc dựng cùng một cảnh. Khi sinh lẻ từng cái, phải tự chặn bằng tay — xem mục 4 của `HUONG-DAN-SINH-SCENARIO.md`.
+Luật "một task một scenario" ở A3 khiến trùng task trở thành bất hợp lệ theo định nghĩa. Không cần chặn tay nữa.
+
+Còn lại một phần nhỏ chưa phủ: hai scenario **khác task** vẫn có thể vô tình dựng cùng một cảnh (cùng NPC, cùng khung giờ, cùng sự cố). Máy không bắt được, phải đọc bằng mắt khi rà soát cả bộ của một job.

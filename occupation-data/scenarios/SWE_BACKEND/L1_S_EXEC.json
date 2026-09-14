@@ -1,0 +1,297 @@
+{
+  "_meta": {
+    "spec_version": "scenario-2.2",
+    "generated_at": "2026-09-14",
+    "source_dataset": "9_roles_tier1_pass2.json",
+    "fallback_tier": 2,
+    "golden_used": ["scenario-golden/SWE_BACKEND_L3.json"],
+    "note": "Kịch bản mở màn của nghề Back-end. Cố ý phủ cả bốn loại activity (PRIORITIZING, CHOICE, ORDERING, FREETEXT) vì L1 là chỗ các loại đóng hợp lý nhất — intern nhận việc đã chia sẵn, phần lớn quyết định là chọn và sắp xếp trong phạm vi đã giới hạn."
+  },
+  "scenario_title": "Tham gia fix các bug mức độ ưu tiên thấp",
+  "job": {
+    "role_code": "SWE_BACKEND",
+    "role_name_vn": "Lập trình viên Back-end",
+    "band": "L1",
+    "title_vn": "Backend Engineer Intern",
+    "years_experience": "0",
+    "user_context": "Bạn thực tập được ba tuần. Đã merge hai PR nhỏ, cả hai đều do An sửa lại kha khá trước khi duyệt. Hôm nay là lần đầu bạn được giao nguyên một nhóm bug để tự xử.",
+    "core_output": "Hiện thực logic nghiệp vụ đơn giản và viết API endpoint theo mẫu có sẵn dưới sự giám sát trực tiếp của kỹ sư cấp cao, chưa tự quyết định về schema dữ liệu hay lựa chọn thư viện."
+  },
+  "context": {
+    "scenario_archetype": "S_EXEC",
+    "task": "Tham gia fix các bug mức độ ưu tiên thấp",
+    "skills_hard": ["SQL (MySQL/PostgreSQL)", "Git"],
+    "skills_soft": ["Chủ động học hỏi", "Giao tiếp cơ bản trong team"],
+    "company_type": "product_local",
+    "work_environment_id": "WE_HYBRID_PRODUCT",
+    "situation": "8:50 sáng thứ Hai, tại một công ty product tầm trung. Hà bên QA vừa gán cho bạn năm bug mức thấp còn tồn từ tuần trước. An — người kèm bạn — đang họp sprint planning tới 10 giờ. Sprint này bạn được giao đúng nhóm bug đó, không có việc nào khác.",
+    "stakes": "Không có gì sập. Nhưng đây là lần đầu bạn tự chọn thứ tự làm việc, và An sẽ nhìn vào đó để biết có thể giao thêm cho bạn hay chưa.",
+    "time_pressure": "Cả buổi sáng",
+    "estimated_minutes": 10
+  },
+  "cast": [
+    {
+      "npc_id": "an",
+      "role_in_scene": "Senior Backend, người kèm bạn",
+      "pressure": "Đang họp sprint planning tới 10 giờ, chỉ trả lời tin nhắn giữa hai phiên họp",
+      "voice": "Ngắn gọn, hay hỏi ngược lại kiểu 'em đã thử chưa?'"
+    },
+    {
+      "npc_id": "ha",
+      "role_in_scene": "QA, người tìm ra nhóm bug này",
+      "pressure": "Cần biết bug nào được sửa trong sprint này để lên kế hoạch test lại",
+      "voice": "Thẳng thắn, mô tả bug rất chi tiết, không ngại nhắc lại"
+    }
+  ],
+  "activities": [
+    {
+      "activity_id": "a1",
+      "type": "PRIORITIZING",
+      "choice_reason": "Việc đầu tiên của buổi là chọn làm gì trước. Ngoài đời đây là một thao tác trên bảng ticket — kéo hai cái lên đầu — chứ không phải viết một đoạn giải thích. Cho gõ tự do ở đây là đo sai thứ cần đo.",
+      "summary": "Chọn hai bug làm trước trong năm bug được giao",
+      "isOrigin": true,
+      "forward_to": "a2",
+      "context": {
+        "skills_in_play": ["Chủ động học hỏi"],
+        "company_flavour": "Công ty product không có quy trình phân loại mức độ nghiêm trọng chính thức — mọi bug đều gắn nhãn 'thấp', người làm phải tự đọc mô tả để biết cái nào thật sự chạm tới người dùng.",
+        "job_scope": "L1 ĐƯỢC tự chọn thứ tự làm trong đúng nhóm bug đã được giao. KHÔNG ĐƯỢC tự nhận thêm việc ngoài nhóm này, cũng không được tự ý refactor code không nằm trong bug nào."
+      },
+      "setup": "Bảng ticket của bạn sáng nay có năm dòng. Tất cả đều gắn nhãn 'ưu tiên thấp', nhưng nhãn đó do hệ thống tự gán khi Hà tạo hàng loạt chứ không phải Hà cân nhắc từng cái.",
+      "npc_line": "Hà: 'Em xem qua rồi làm cái nào trước cũng được nhé, chị chỉ cần biết sprint này em đụng tới cái nào để chị xếp lịch test lại.'",
+      "input_prompt": "Chọn hai bug bạn sẽ làm trước sáng nay.",
+      "options": null,
+      "items": [
+        { "item_id": "i1", "text": "Nút 'Xuất Excel' lệch 2px trên Safari", "note": "Chỉ lệch trên một trình duyệt, không ai báo" },
+        { "item_id": "i2", "text": "API /profile trả lỗi 500 khi tài khoản chưa có ảnh đại diện", "note": "Hà ghi: gặp ở 3 tài khoản test, app mobile hiện màn hình trắng" },
+        { "item_id": "i3", "text": "Sai chính tả 'Đăng nhâp' ở màn hình đăng nhập", "note": "Hà ghi: sửa 5 phút, ai mở app cũng thấy" },
+        { "item_id": "i4", "text": "Log ghi trùng hai dòng mỗi request", "note": "Gây nhiễu khi đọc log, không ảnh hưởng người dùng" },
+        { "item_id": "i5", "text": "Gộp lại class UserMapper cho gọn", "note": "Không phải bug. Một bạn trong team ghi chú lại từ tháng trước" }
+      ],
+      "pick_count": 2,
+      "must_pick": ["i2"],
+      "should_pick": ["i3"],
+      "must_not_pick": ["i5"],
+      "quick_action": false,
+      "time_limit_seconds": null,
+      "hints": [
+        {
+          "text": "Hà: 'Chị ghi chú khá kỹ ở từng cái đấy, em đọc phần ghi chú trước khi chọn nhé.'",
+          "costs_ceiling": true
+        }
+      ],
+      "limitFollowup": 0,
+      "followup_goal": null,
+      "closing_prompt": "Bạn kéo hai ticket lên đầu bảng. Hà thả tim vào tin nhắn.",
+      "observes": [
+        {
+          "skill_type": "soft",
+          "skill": "Chủ động học hỏi",
+          "anchors": {
+            "+2": "Tự đọc ghi chú để nhận ra cái nào thật sự chạm tới người dùng, thay vì làm theo thứ tự danh sách",
+            "0": "Chọn được cái gây lỗi cho người dùng nhưng cái còn lại là việc ít ai thấy",
+            "-1": "Bỏ qua cái gây lỗi 500, hoặc tự nhận việc gộp class vốn không phải bug và không được giao"
+          }
+        }
+      ]
+    },
+
+    {
+      "activity_id": "a2",
+      "type": "CHOICE",
+      "choice_reason": "Khoảnh khắc nhìn thấy dòng query và phải chọn hướng sửa. Đây là một quyết định kỹ thuật nhỏ có sẵn vài phương án chuẩn, không phải chỗ để diễn đạt suy nghĩ dài.",
+      "summary": "Chọn cách sửa lỗi 500 khi ảnh đại diện rỗng",
+      "isOrigin": false,
+      "forward_to": "a3",
+      "context": {
+        "skills_in_play": ["SQL (MySQL/PostgreSQL)"],
+        "company_flavour": "Tự chủ tech stack nên không có chuẩn code cứng cho việc xử lý giá trị rỗng — mỗi người làm một kiểu, và đó chính là lý do bug này tồn tại.",
+        "job_scope": "L1 ĐƯỢC sửa câu truy vấn và code xử lý trong đúng endpoint được giao. KHÔNG ĐƯỢC đổi schema bảng hay thêm ràng buộc mới — theo core_output, quyết định về schema chưa thuộc về bạn."
+      },
+      "setup": "Bạn mở /profile. Câu truy vấn nối bảng users với bảng avatars bằng INNER JOIN. Tài khoản nào chưa upload ảnh thì không có dòng nào bên avatars, câu truy vấn trả về rỗng, và đoạn code phía sau gọi thẳng vào kết quả rỗng đó rồi văng lỗi.",
+      "npc_line": null,
+      "input_prompt": null,
+      "options": [
+        "Đổi INNER JOIN thành LEFT JOIN, và xử lý trường hợp ảnh rỗng ở tầng code",
+        "Thêm một dòng ảnh mặc định vào bảng avatars cho mọi tài khoản đang thiếu",
+        "Bọc đoạn gọi đó trong try-catch, lỗi thì trả về ảnh mặc định"
+      ],
+      "optionGrade": ["+2", "-1", "0"],
+      "optionWhy": [
+        "Sửa đúng nguyên nhân: quan hệ giữa hai bảng vốn là tùy chọn, nên phép nối cũng phải là tùy chọn",
+        "Đụng vào dữ liệu của bảng khác để lách một lỗi code — vượt phạm vi của L1 và để lại dữ liệu rác",
+        "Chặn được lỗi văng ra nhưng nguyên nhân vẫn còn, và try-catch sẽ nuốt luôn những lỗi khác chưa biết"
+      ],
+      "quick_action": false,
+      "time_limit_seconds": null,
+      "hints": [],
+      "limitFollowup": 0,
+      "followup_goal": null,
+      "closing_prompt": "Bạn sửa xong, chạy thử với một tài khoản chưa có ảnh. Lần này trả về bình thường.",
+      "observes": [
+        {
+          "skill_type": "hard",
+          "skill": "SQL (MySQL/PostgreSQL)",
+          "anchors": {
+            "+2": "Nhận ra quan hệ giữa hai bảng là tùy chọn nên phải dùng phép nối tùy chọn",
+            "0": "Chặn được lỗi văng ra nhưng không chạm tới nguyên nhân ở câu truy vấn",
+            "-1": "Sửa bằng cách chèn thêm dữ liệu vào bảng khác thay vì sửa câu truy vấn"
+          }
+        }
+      ]
+    },
+
+    {
+      "activity_id": "a3",
+      "type": "ORDERING",
+      "choice_reason": "Quy trình đưa một thay đổi lên nhánh chính là một chuỗi thao tác có thứ tự đúng. Hỏi bằng lời thì người chơi kể lại được mà chưa chắc làm đúng; bắt sắp xếp thì thấy ngay ai nhớ bước nào đứng trước bước nào.",
+      "summary": "Sắp xếp các bước đưa bản sửa lên nhánh chính",
+      "isOrigin": false,
+      "forward_to": "a4",
+      "context": {
+        "skills_in_play": ["Git"],
+        "company_flavour": "Nhánh chính khoá lại, mọi thay đổi đều phải qua pull request và ít nhất một người duyệt — kể cả sửa một dòng.",
+        "job_scope": "L1 ĐƯỢC tự tạo nhánh, commit và mở pull request. KHÔNG ĐƯỢC tự merge vào nhánh chính — luôn cần An duyệt trước."
+      },
+      "setup": "Code đã sửa xong trên máy bạn. Giờ là phần đưa nó lên. Team có quy ước rõ ràng cho việc này, An đã dặn từ tuần đầu.",
+      "npc_line": "An: 'Anh ra khỏi phòng họp 5 phút. Em cứ làm theo quy trình như anh dặn nhé, xong ping anh.'",
+      "input_prompt": "Sắp xếp các bước theo đúng thứ tự bạn sẽ làm.",
+      "options": null,
+      "items": [
+        { "item_id": "s1", "text": "Tạo nhánh mới từ nhánh chính đã cập nhật" },
+        { "item_id": "s2", "text": "Viết một unit test tái hiện đúng lỗi 500" },
+        { "item_id": "s3", "text": "Sửa câu truy vấn và code xử lý" },
+        { "item_id": "s4", "text": "Chạy lại toàn bộ test, thấy test vừa viết đã qua" },
+        { "item_id": "s5", "text": "Commit và đẩy nhánh lên, mở pull request gán cho An" }
+      ],
+      "correct_order": ["s1", "s2", "s3", "s4", "s5"],
+      "quick_action": false,
+      "time_limit_seconds": null,
+      "hints": [
+        {
+          "text": "An: 'Nhớ là mình viết test trước khi sửa nhé — có thế mới biết chắc là test bắt được đúng cái lỗi đó.'",
+          "costs_ceiling": true
+        }
+      ],
+      "limitFollowup": 0,
+      "followup_goal": null,
+      "closing_prompt": "Pull request đã mở. An được gán làm người duyệt.",
+      "observes": [
+        {
+          "skill_type": "hard",
+          "skill": "Git",
+          "anchors": {
+            "+2": "Đúng toàn bộ thứ tự: tách nhánh từ bản mới nhất, viết test tái hiện lỗi trước khi sửa, chạy lại test rồi mới mở pull request",
+            "0": "Thứ tự gần đúng nhưng đảo một hai chỗ, ví dụ sửa code xong mới viết test",
+            "-1": "Sai thứ tự ở nhiều chỗ, hoặc mở pull request trước khi chạy test"
+          }
+        }
+      ]
+    },
+
+    {
+      "activity_id": "a4",
+      "type": "FREETEXT",
+      "choice_reason": null,
+      "summary": "Nhắn An sau khi mở pull request",
+      "isOrigin": false,
+      "forward_to": "END",
+      "context": {
+        "skills_in_play": ["Giao tiếp cơ bản trong team"],
+        "company_flavour": "Không có mẫu báo cáo nào cả — một tin nhắn trong nhóm là toàn bộ thủ tục bàn giao.",
+        "job_scope": "L1 ĐƯỢC tự viết tin nhắn và tự nêu chỗ mình chưa chắc. KHÔNG ĐƯỢC tự quyết bao giờ merge — đó là việc của An."
+      },
+      "setup": "9:55. Pull request đã mở. An sắp ra khỏi phòng họp.",
+      "npc_line": "An: 'Anh xong họp rồi. Em làm tới đâu rồi, có gì cần anh xem không?'",
+      "input_prompt": "Nhắn lại cho An.",
+      "options": null,
+      "quick_action": false,
+      "time_limit_seconds": null,
+      "hints": [
+        {
+          "text": "An: 'Em cứ nói cả chỗ nào em chưa chắc nhé, hỏi sớm đỡ mất công sửa lại.'",
+          "costs_ceiling": true
+        }
+      ],
+      "limitFollowup": 1,
+      "followup_goal": "Nếu người chơi chỉ báo đã xong mà không nêu chỗ nào mình chưa chắc, hoặc không nói mình đã sửa bug nào trong năm cái, hỏi lại đúng chỗ thiếu đó.",
+      "closing_prompt": "An: 'Ok, để anh xem. Chiều mình nói chuyện về mấy cái còn lại nhé.'",
+      "observes": [
+        {
+          "skill_type": "soft",
+          "skill": "Giao tiếp cơ bản trong team",
+          "anchors": {
+            "+2": "Nói rõ đã làm bug nào, cách sửa ra sao, và chủ động nêu ít nhất một chỗ mình chưa chắc",
+            "0": "Báo được là đã xong nhưng thiếu cách sửa hoặc không nêu chỗ nào cần hỏi",
+            "-1": "Chỉ nhắn 'em xong rồi ạ' mà không cho An biết gì thêm"
+          }
+        }
+      ]
+    }
+  ],
+
+  "random_events": [
+    {
+      "event_id": "re_ha_them_bug",
+      "chance": 0.3,
+      "after_activity": "a2",
+      "condition": null,
+      "text": "Hà nhắn riêng: 'Em ơi chị vừa tìm thêm một cái nữa, màn hình đơn hàng cũng trắng y hệt. Em xem luôn được không?'",
+      "outcome": "DIVERT",
+      "divert_note": "An vừa liếc thấy tin nhắn, trả lời thay: 'Hà để anh xếp vào sprint sau nhé, hôm nay em ấy làm nốt phần đang dở đã.' Kéo người chơi về a3 mà không mở nhánh việc mới — đồng thời cho thấy ở L1 việc chặn phạm vi là của mentor, không phải của người chơi.",
+      "early_ending_id": null
+    }
+  ],
+
+  "endings": [
+    {
+      "ending_id": "e_pattern",
+      "type": "SECRET",
+      "priority": 1,
+      "condition": {
+        "min_plus2": 2,
+        "max_minus1": 0,
+        "extra": "Người chơi tự nêu ra rằng lỗi ảnh đại diện rỗng có thể còn ở những endpoint khác cùng kiểu, và hỏi An xem có nên rà thêm không — tức nhìn ra đây là một kiểu sai lặp lại chứ không phải một bug lẻ. Nêu ở a4 hoặc trong lượt đào sâu đều tính."
+      },
+      "text": "An đọc tin nhắn, dừng lại một lúc rồi trả lời: 'Ừ… em hỏi câu đấy hay đấy. Để chiều anh với em cùng rà xem còn chỗ nào nối bảng kiểu đấy nữa không.' Chiều hôm đó hai anh em tìm thêm được bốn chỗ. Cuối sprint, An đề xuất đưa việc rà soát đó thành một ticket riêng và ghi tên bạn vào.",
+      "reveals": "Một bug lẻ thì sửa xong là hết. Một kiểu sai lặp lại thì sửa một chỗ chỉ là dọn phần nổi. Người mới thường dừng ở chỗ 'đã hết lỗi'; thứ khiến An chú ý là câu hỏi 'chỗ khác có bị giống thế không?'.",
+      "reachable_by_event": false
+    },
+    {
+      "ending_id": "e_good",
+      "type": "GOOD",
+      "priority": 2,
+      "condition": { "min_plus2": 3, "max_minus1": 0, "extra": null },
+      "text": "An duyệt pull request trong buổi chiều, chỉ sửa lại đúng một dòng đặt tên biến. Đây là PR đầu tiên của bạn gần như không phải làm lại. Cuối tuần An giao cho bạn thêm hai bug nữa, lần này không dặn gì thêm.",
+      "reveals": null,
+      "reachable_by_event": false
+    },
+    {
+      "ending_id": "e_partial",
+      "type": "PARTIAL",
+      "priority": 3,
+      "condition": { "min_plus2": 1, "max_minus1": 1, "extra": null },
+      "text": "Pull request được duyệt sau hai vòng sửa. An không nói gì nặng, chỉ để lại vài bình luận về chỗ nên viết test trước khi sửa. Bug đã hết, nhưng buổi chiều bạn ngồi đọc lại phần bình luận đó khá lâu.",
+      "reveals": null,
+      "reachable_by_event": false
+    },
+    {
+      "ending_id": "e_bad",
+      "type": "BAD",
+      "priority": 4,
+      "condition": { "min_plus2": null, "max_minus1": null, "extra": null },
+      "text": "An mở pull request ra, im lặng một lúc, rồi gọi bạn sang bàn. Hai anh em sửa lại cùng nhau trong bốn mươi phút. Cuối buổi An nói: 'Không sao, lần đầu mà. Nhưng lần sau em ping anh sớm hơn nhé, đừng đợi tới lúc mở PR.'",
+      "reveals": null,
+      "reachable_by_event": false
+    }
+  ],
+
+  "evidence_level": "B_TITLE_SEEN",
+  "coverage_note": "Fallback tier 2. Band L1 của SWE_BACKEND có tasks[] rỗng trong 9_roles_tier1_pass2.json, nên mượn từ band liền kề L2 (A_VERIFIED): task 'Tham gia fix các bug mức độ ưu tiên thấp', skills_hard 'SQL (MySQL/PostgreSQL)' và 'Git', skills_soft 'Chủ động học hỏi' và 'Giao tiếp cơ bản trong team'. Đã hiệu chỉnh phạm vi hậu quả xuống đúng L1 theo bảng A4: không có gì sập, mọi thay đổi đều qua An duyệt, và job_scope của cả bốn activity đều ghi rõ giới hạn 'chưa tự quyết định schema' lấy từ core_output của chính L1. Phủ toàn bộ skills_soft và cả hai skills_hard đã khai. Ngân sách A7: 1 PRIORITIZING + 1 CHOICE + 1 ORDERING + 1 FREETEXT + 1 follow-up = 1.5 + 1 + 2 + 2 + 1.5 + 2 = 10 phút.",
+  "unknowns": [
+    "Toàn bộ task và skill của kịch bản này mượn từ band L2. Nếu sau này thu thập được JD thật cho vị trí thực tập backend tại VN thì phải sinh lại, vì công việc thực tập có thể khác hẳn công việc fresher.",
+    "Chưa rõ một người chưa từng dùng Git có sắp đúng thứ tự năm bước ở a3 hay không. Nếu tỉ lệ sai quá cao thì mốc hành vi ở đó đang đòi mức 'proficient' trong khi người chơi L1 mới ở mức tập làm quen.",
+    "Ngưỡng min_plus2 = 3 cho kết cục tốt đặt trên tổng 4 mốc khả dĩ, chưa hiệu chỉnh trên người chơi thật. Ai bấm gợi ý ở hai activity trở lên thì gần như không đạt được.",
+    "Luật 'tối đa 3 activity đóng ở L1–L2' là mới ở bản 2.2, chưa kiểm chứng trên nhiều kịch bản. Có thể ba loại đóng liên tiếp khiến lượt chơi thấy giống bài trắc nghiệm hơn là mô phỏng công việc.",
+    "Bộ năm bug ở a1 là tình huống minh hoạ, không lấy từ backlog thật của công ty nào."
+  ]
+}
