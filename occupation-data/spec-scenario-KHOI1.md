@@ -861,3 +861,22 @@ Khi làm, cần chốt trước ba điều mà spec này không trả lời đư
 Luật "một task một scenario" ở A3 khiến trùng task trở thành bất hợp lệ theo định nghĩa. Không cần chặn tay nữa.
 
 Còn lại một phần nhỏ chưa phủ: hai scenario **khác task** vẫn có thể vô tình dựng cùng một cảnh (cùng NPC, cùng khung giờ, cùng sự cố). Máy không bắt được, phải đọc bằng mắt khi rà soát cả bộ của một job.
+
+### 4. Lớp sự kiện chưa được spec hoá
+
+`dataset_22_roles_enriched_v3.json` mang một hệ nội dung **thứ hai** mà spec này chưa định nghĩa: **97 sự kiện role-play**, mỗi cái một màn với 3 lựa chọn, và mỗi lựa chọn phát `signal` trên 8 chiều `fit_dimensions` (`DEEP_WORK`, `PRESSURE`, `PEOPLE`…).
+
+Hai hệ đo hai thứ khác nhau và **không thay thế nhau được**:
+
+| | Kịch bản (spec này) | Sự kiện (dataset 22 role) |
+|---|---|---|
+| Đo | Kỹ năng có tên, mốc `+2/0/-1` | 8 chiều hợp nghề, `signal` −2…+2 |
+| Trả lời câu | *Làm việc này giỏi tới đâu* | *Nghề này có hợp tính không* |
+| Độ phủ | 2 file, 1 nghề | 97 sự kiện, 22 nghề |
+| Chi phí | Soạn tay từng cái | Đã có sẵn |
+
+`docs/prototype.html` đang tiêu thụ sự kiện **nguyên trạng**, không qua spec. Việc hợp nhất — hoặc ít nhất viết một khối quy tắc riêng cho sự kiện — là đợt sau. Ba câu cần trả lời trước khi làm:
+
+1. Sự kiện có cần `job_scope` theo band như activity không, hay `band_range` sẵn có là đủ?
+2. Một lựa chọn có được phát **cả** `signal` hợp nghề lẫn mốc kỹ năng không, hay phải chọn một?
+3. 81/97 sự kiện là `C_INFERRED` — ngưỡng nào thì đủ tin để đưa vào phần đánh giá của luận văn?
