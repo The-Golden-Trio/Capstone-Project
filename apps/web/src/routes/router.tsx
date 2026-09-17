@@ -1,7 +1,12 @@
 import { createBrowserRouter, type RouteObject } from 'react-router-dom';
-import { findRole, findScenarioByKey, roleName } from '../data/indexes';
-import { shortName } from '../domain/format';
+import {
+  findRole,
+  findScenarioByKey,
+  roleName,
+  shortName,
+} from '@datn/game-core';
 import type { CrumbHandle } from '../hooks/useBreadcrumbs';
+import { AccountPage } from './AccountPage';
 import { DashboardPage } from './DashboardPage';
 import { ErrorPage } from './ErrorPage';
 import { EventPage } from './EventPage';
@@ -10,8 +15,10 @@ import { JobsMapPage } from './JobsMapPage';
 import { ProfilePage } from './ProfilePage';
 import { QuizPage } from './QuizPage';
 import { QuizResultPage } from './QuizResultPage';
-import { RequireProfile } from './RequireProfile';
-import { SignupPage } from './SignupPage';
+import { RequireAuth } from './RequireAuth';
+import { ConsentPage } from './auth/ConsentPage';
+import { LoginPage } from './auth/LoginPage';
+import { RegisterPage } from './auth/RegisterPage';
 import { JobPage } from './job/JobPage';
 import { EndingPage } from './play/EndingPage';
 import { PlayPage } from './play/PlayPage';
@@ -30,15 +37,18 @@ const roleCrumbs: CrumbHandle['crumbs'] = ({ roleCode, band }) => {
 };
 
 const routes: RouteObject[] = [
+  // Ngoài cổng: chưa cần phiên đăng nhập.
+  { path: '/login', element: <LoginPage />, errorElement: <ErrorPage /> },
+  { path: '/register', element: <RegisterPage />, errorElement: <ErrorPage /> },
+
   {
-    path: '/signup',
-    element: <SignupPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    element: <RequireProfile />,
+    element: <RequireAuth />,
     errorElement: <ErrorPage />,
     children: [
+      // Trong cổng nhưng ngoài luồng chơi: tài khoản dưới 16 tuổi dừng ở đây
+      // cho tới khi có người giám hộ đồng ý.
+      { path: 'consent', element: <ConsentPage /> },
+
       {
         index: true,
         element: <DashboardPage />,
@@ -86,7 +96,9 @@ const routes: RouteObject[] = [
         path: 'play/:scenarioKey',
         handle: {
           crumbs: ({ scenarioKey }) => {
-            const entry = scenarioKey ? findScenarioByKey(scenarioKey) : undefined;
+            const entry = scenarioKey
+              ? findScenarioByKey(scenarioKey)
+              : undefined;
             if (!entry) return [{ label: 'Màn chơi' }];
             const { role_code, band } = entry.scenario.job;
             return [
@@ -109,6 +121,13 @@ const routes: RouteObject[] = [
         element: <ProfilePage />,
         handle: {
           crumbs: () => [{ label: 'Hành trang' }],
+        } satisfies CrumbHandle,
+      },
+      {
+        path: 'account',
+        element: <AccountPage />,
+        handle: {
+          crumbs: () => [{ label: 'Tài khoản' }],
         } satisfies CrumbHandle,
       },
       { path: '*', element: <ErrorPage /> },

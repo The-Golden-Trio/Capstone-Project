@@ -1,137 +1,90 @@
 /**
- * Hồ sơ người chơi — lưu trên máy, không gửi đi đâu cả.
+ * Hồ sơ người chơi, nay lấy từ máy chủ.
  *
- * Giữ nguyên khoá `vaonghe.v1` và hình dạng của prototype, nên bản lưu cũ
- * mở bằng app này vẫn đọc được. Persist tự động: không còn `save()` rải rác
- * để quên như ở prototype.
+ * Trước đây store này vừa giữ chân dung vừa giữ điểm kỹ năng, và tự lưu tất
+ * cả vào localStorage. Điểm kỹ năng đã chuyển sang `progressStore` — máy chủ
+ * chấm, máy chủ giữ — vì nó quyết định cấp bậc nào mở được. Còn lại ở đây là
+ * chân dung tính cách và các mốc đã qua: không mở khoá gì, nên đọc-ghi thẳng
+ * qua API là đủ.
  */
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
-import type { Signal } from '../data/schema';
-import { applySignal, blankFit, type FitVector } from '../domain/fit';
-import { taskKey } from '../domain/format';
+import { blankFit, type FitVector } from '@datn/game-core';
+import { profileApi } from '../api/endpoints';
 
-export const PROFILE_STORAGE_KEY = 'vaonghe.v1';
+/** Khoá bản lưu cũ của prototype, chỉ còn dùng để nhập một lần rồi xoá. */
+export const LEGACY_STORAGE_KEY = 'vaonghe.v1';
 
-export interface ProfileState {
-  name: string | null;
+interface ProfileStore {
   fit: FitVector;
   quizDone: boolean;
-  /** role_code -> band -> điểm kỹ năng. */
-  skill: Record<string, Record<string, number>>;
-  /** Khoá "role:band:taskId" của những việc đã hoàn thành. */
-  doneTasks: string[];
   eventsPlayed: number;
-}
+  doneEventIds: string[];
+  loaded: boolean;
 
-export interface ProfileActions {
-  signUp: (name: string) => void;
-  reset: () => void;
-  applyFit: (signal: Signal) => void;
-  setQuizDone: () => void;
-  addSkill: (roleCode: string, band: string, points: number) => void;
-  /** Đánh dấu đã xong; trả `true` nếu đây là lần đầu. */
-  completeTask: (
+  load: () => Promise<void>;
+  submitQuiz: (
+    answers: Array<{ questionId: string; optionId: string }>,
+  ) => Promise<void>;
+  /** Trả về diễn biến do máy chủ tra từ bộ dữ liệu. */
+  answerEvent: (
+    eventId: string,
     roleCode: string,
     band: string,
-    taskId: string,
-    options?: { countsAsEvent?: boolean },
-  ) => boolean;
+    choiceIndex: number,
+  ) => Promise<string>;
+  importLegacy: (legacy: {
+    fit?: Record<string, number>;
+    quizDone?: boolean;
+    eventsPlayed?: number;
+  }) => Promise<void>;
+  reset: () => void;
 }
 
-const blankProfile = (): ProfileState => ({
-  name: null,
+const blank = {
   fit: blankFit(),
   quizDone: false,
-  skill: {},
-  doneTasks: [],
   eventsPlayed: 0,
-});
+  doneEventIds: [] as string[],
+  loaded: false,
+};
 
-export const useProfileStore = create<ProfileState & ProfileActions>()(
-  persist(
-    (set, get) => ({
-      ...blankProfile(),
+export const useProfileStore = create<ProfileStore>()((set) => ({
+  ...blank,
 
-      signUp: (name) => set({ name: name.trim().slice(0, 24) }),
+  load: async () => {
+    const profile = await profileApi.get();
+    set({ ...profile, loaded: true });
+  },
 
-      reset: () => set(blankProfile()),
+  submitQuiz: async (answers) => {
+    const profile = await profileApi.submitQuiz(answers);
+    set({ ...profile, loaded: true });
+  },
 
-      applyFit: (signal) => set((s) => ({ fit: applySignal(s.fit, signal) })),
+  answerEvent: async (eventId, roleCode, band, choiceIndex) => {
+    const result = await profileApi.answerEvent(eventId, {
+      roleCode,
+      band,
+      choiceIndex,
+    });
+    set({
+      fit: result.fit,
+      quizDone: result.quizDone,
+      eventsPlayed: result.eventsPlayed,
+      doneEventIds: result.doneEventIds,
+      loaded: true,
+    });
+    return result.outcome;
+  },
 
-      setQuizDone: () => set({ quizDone: true }),
+  importLegacy: async (legacy) => {
+    const profile = await profileApi.importLegacy(legacy);
+    set({ ...profile, loaded: true });
+  },
 
-      addSkill: (roleCode, band, points) =>
-        set((s) => ({
-          skill: {
-            ...s.skill,
-            [roleCode]: {
-              ...s.skill[roleCode],
-              [band]: (s.skill[roleCode]?.[band] ?? 0) + points,
-            },
-          },
-        })),
+  reset: () => set(blank),
+}));
 
-      completeTask: (roleCode, band, taskId, options) => {
-        const key = taskKey(roleCode, band, taskId);
-        if (get().doneTasks.includes(key)) return false;
-        set((s) => ({
-          doneTasks: [...s.doneTasks, key],
-          eventsPlayed: s.eventsPlayed + (options?.countsAsEvent ? 1 : 0),
-        }));
-        return true;
-      },
-    }),
-    {
-      name: PROFILE_STORAGE_KEY,
-      // Chỉ lưu dữ liệu, không lưu hàm.
-      partialize: ({ name, fit, quizDone, skill, doneTasks, eventsPlayed }) => ({
-        name,
-        fit,
-        quizDone,
-        skill,
-        doneTasks,
-        eventsPlayed,
-      }),
-      merge: (persisted, current) => ({
-        ...current,
-        ...(persisted as Partial<ProfileState>),
-        // Bản lưu cũ có thể thiếu chiều mới thêm vào dataset.
-        fit: {
-          ...blankFit(),
-          ...((persisted as Partial<ProfileState>)?.fit ?? {}),
-        },
-      }),
-    },
-  ),
-);
-
-/* ── Selector ──────────────────────────────────────────────────────── */
-
-export const skillPointsAt = (
-  profile: Pick<ProfileState, 'skill'>,
-  roleCode: string,
-  band: string,
-): number => profile.skill[roleCode]?.[band] ?? 0;
-
-export const totalSkillPoints = (profile: Pick<ProfileState, 'skill'>): number =>
-  Object.values(profile.skill).reduce(
-    (sum, bands) => sum + Object.values(bands).reduce((n, v) => n + v, 0),
-    0,
-  );
-
-export const isTaskDone = (
-  profile: Pick<ProfileState, 'doneTasks'>,
-  roleCode: string,
-  band: string,
-  taskId: string,
-): boolean => profile.doneTasks.includes(taskKey(roleCode, band, taskId));
-
-/** Số hành tinh đã đặt chân tới. */
-export const visitedRoleCount = (
-  profile: Pick<ProfileState, 'skill' | 'doneTasks'>,
-): number =>
-  new Set([
-    ...Object.keys(profile.skill),
-    ...profile.doneTasks.map((k) => k.split(':')[0]),
-  ]).size;
+/** Sự kiện phụ này đã chơi chưa. */
+export const isEventDone = (doneEventIds: string[], eventId: string): boolean =>
+  doneEventIds.includes(eventId);

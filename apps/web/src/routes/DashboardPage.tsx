@@ -1,9 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { GAME } from '../data/gameData';
-import { findRole } from '../data/indexes';
-import { bandLabel } from '../domain/bands';
-import { hasFit, rankRoles } from '../domain/fit';
-import { shortRoleName } from '../domain/format';
+import { GAME, bandLabel, findRole, hasFit, rankRoles, shortRoleName } from '@datn/game-core';
 import { Planet } from '../components/game/Planet';
 import { StarMap } from '../components/game/StarMap';
 import { PageHeader } from '../components/layout/PageHeader';
@@ -12,16 +8,16 @@ import { Card, CardBody, CardHeader } from '../components/ui/Card';
 import { EmptyState } from '../components/ui/EmptyState';
 import { Pill } from '../components/ui/Pill';
 import { Stat, StatGrid } from '../components/ui/Stat';
+import { useAuthStore } from '../store/authStore';
 import { useJourneyStore } from '../store/journeyStore';
-import {
-  totalSkillPoints,
-  useProfileStore,
-  visitedRoleCount,
-} from '../store/profileStore';
+import { useProfileStore } from '../store/profileStore';
+import { useProgressStore } from '../store/progressStore';
 
 export function DashboardPage() {
   const navigate = useNavigate();
+  const user = useAuthStore((s) => s.user);
   const profile = useProfileStore();
+  const summary = useProgressStore((s) => s.summary);
   const { roleCode, band } = useJourneyStore();
   const role = findRole(roleCode);
 
@@ -29,16 +25,11 @@ export function DashboardPage() {
   const topRoles = known ? rankRoles(profile.fit).slice(0, 3) : [];
 
   // Cấp bậc cao nhất đã chạm tới, đo bằng điểm kỹ năng chứ không phải thứ tự.
-  const bestSkill = Object.entries(profile.skill)
-    .flatMap(([code, bands]) =>
-      Object.entries(bands).map(([b, points]) => ({ code, band: b, points })),
+  const best = (summary?.roles ?? [])
+    .flatMap((r) =>
+      r.bands.map((b) => ({ roleName: r.roleName, band: b.band, points: b.points })),
     )
     .sort((a, b) => b.points - a.points)[0];
-
-  const bestRole = bestSkill ? findRole(bestSkill.code) : undefined;
-  const bestRoleLabel = bestSkill
-    ? (bestRole ? shortRoleName(bestRole) : bestSkill.code)
-    : 'chưa có';
 
   const goToRole = (code: string) => {
     const target = findRole(code);
@@ -47,7 +38,7 @@ export function DashboardPage() {
 
   return (
     <>
-      <PageHeader title={`Chào ${profile.name ?? 'bạn'}`}>
+      <PageHeader title={`Chào ${user?.displayName ?? 'bạn'}`}>
         Chọn một hành tinh, làm vài nhiệm vụ, rồi xem chân dung của bạn dần hiện
         ra.
       </PageHeader>
@@ -55,12 +46,12 @@ export function DashboardPage() {
       <StatGrid className="mb-[22px]">
         <Stat
           label="Đã ghé"
-          value={visitedRoleCount(profile)}
+          value={summary?.roles.length ?? 0}
           hint={`trên ${GAME.roles.length} hành tinh`}
         />
         <Stat
           label="Điểm kỹ năng"
-          value={totalSkillPoints(profile)}
+          value={summary?.totalPoints ?? 0}
           hint="từ nhiệm vụ chính"
           gold
         />
@@ -75,8 +66,8 @@ export function DashboardPage() {
         />
         <Stat
           label="Cấp bậc cao nhất"
-          value={bestSkill?.band ?? '—'}
-          hint={bestRoleLabel}
+          value={best?.band ?? '—'}
+          hint={best?.roleName ?? 'chưa có'}
         />
       </StatGrid>
 

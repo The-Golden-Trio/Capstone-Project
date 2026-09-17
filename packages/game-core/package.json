@@ -1,0 +1,52 @@
+{
+  "name": "@datn/game-core",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@datn/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "nx": {
+    "name": "game-core",
+    "targets": {
+      "build-data": {
+        "executor": "nx:run-commands",
+        "cache": true,
+        "inputs": [
+          "{workspaceRoot}/docs/data/build.mjs",
+          "{workspaceRoot}/occupation-data/**/*.json"
+        ],
+        "outputs": [
+          "{projectRoot}/src/data/game-data.json",
+          "{workspaceRoot}/docs/data/game-data.js"
+        ],
+        "options": {
+          "command": "node docs/data/build.mjs",
+          "cwd": "{workspaceRoot}"
+        }
+      },
+      "build": {
+        "dependsOn": ["build-data"]
+      },
+      "typecheck": {
+        "dependsOn": ["build-data"]
+      },
+      "test": {
+        "dependsOn": ["build-data"]
+      }
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "zod": "^4.6.5"
+  }
+}

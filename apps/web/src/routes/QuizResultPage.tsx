@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { findRole } from '../data/indexes';
-import { rankRoles } from '../domain/fit';
+import { findRole, rankRoles } from '@datn/game-core';
 import { FitRadar } from '../components/game/FitRadar';
 import { StarMap } from '../components/game/StarMap';
 import { PageHeader } from '../components/layout/PageHeader';

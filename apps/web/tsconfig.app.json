@@ -41,5 +41,10 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.json"
+  ],
+  "references": [
+    {
+      "path": "../../packages/game-core/tsconfig.lib.json"
+    }
   ]
 }

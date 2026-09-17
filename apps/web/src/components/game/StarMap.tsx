@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import type { RankedRole } from '../../domain/fit';
+import type { RankedRole } from '@datn/game-core';
 import { useConstellationLines } from '../../hooks/useConstellationLines';
 import { cx } from '../../lib/cx';
 import { PlanetOrb } from './PlanetOrb';

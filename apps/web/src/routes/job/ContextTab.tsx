@@ -1,7 +1,4 @@
-import { findScenario } from '../../data/indexes';
-import type { Role } from '../../data/schema';
-import { bandLabel } from '../../domain/bands';
-import { formatVnd, initials } from '../../domain/format';
+import { bandLabel, findScenario, formatVnd, initials, type Role } from '@datn/game-core';
 import { Button } from '../../components/ui/Button';
 import { Card, CardBody, CardHeader } from '../../components/ui/Card';
 import { Note } from '../../components/ui/Note';

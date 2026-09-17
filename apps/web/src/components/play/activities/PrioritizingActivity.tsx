@@ -1,4 +1,4 @@
-import type { Activity } from '../../../data/schema';
+import type { Activity } from '@datn/game-core';
 import { cx } from '../../../lib/cx';
 import { Button } from '../../ui/Button';
 

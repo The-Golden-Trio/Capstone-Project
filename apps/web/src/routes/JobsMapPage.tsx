@@ -1,8 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { GAME } from '../data/gameData';
-import { findRole } from '../data/indexes';
-import { roleHasAnyScenario } from '../domain/bands';
-import { hasFit, rankRoles } from '../domain/fit';
+import { GAME, findRole, hasFit, rankRoles, roleHasAnyScenario } from '@datn/game-core';
 import { StarMap } from '../components/game/StarMap';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SourceNote } from '../components/ui/Note';

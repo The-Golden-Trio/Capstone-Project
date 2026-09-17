@@ -1,14 +1,10 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { eventsForRole, findRole, findScenario } from '../../data/indexes';
-import { shortRoleName } from '../../domain/format';
+import { GAME, eventsForRole, findRole, findScenario, shortRoleName } from '@datn/game-core';
+import { useAuthStore } from '../../store/authStore';
 import { useJourneyStore } from '../../store/journeyStore';
-import {
-  totalSkillPoints,
-  useProfileStore,
-  type ProfileState,
-} from '../../store/profileStore';
+import { useProfileStore } from '../../store/profileStore';
+import { useProgressStore } from '../../store/progressStore';
 import { cx } from '../../lib/cx';
-import { GAME } from '../../data/gameData';
 import { Icon, type IconName } from './icons';
 import { Logo } from './Logo';
 
@@ -79,25 +75,38 @@ function SectionTitle({ children }: { children: string }) {
   );
 }
 
-/** Số việc còn lại ở nơi người chơi đang đứng. */
+/**
+ * Số việc còn lại ở nơi người chơi đang đứng.
+ *
+ * Nhiệm vụ phụ tính theo `doneEventIds`; nhiệm vụ chính tính theo lịch sử
+ * lượt chơi máy chủ trả về — hai nguồn khác nhau vì hai loại việc được ghi
+ * nhận ở hai chỗ khác nhau.
+ */
 function remainingTasks(
-  profile: ProfileState,
+  doneEventIds: string[],
+  playedScenarioKeys: Set<string>,
   roleCode: string,
   band: string,
 ): number {
   const role = findRole(roleCode);
   if (!role) return 0;
-  const total = (findScenario(roleCode, band) ? 1 : 0) + eventsForRole(role).length;
-  const done = profile.doneTasks.filter((k) =>
-    k.startsWith(`${roleCode}:${band}:`),
+
+  const scenario = findScenario(roleCode, band);
+  const mainLeft = scenario && !playedScenarioKeys.has(scenario.key) ? 1 : 0;
+  const sideLeft = eventsForRole(role).filter(
+    (event) => !doneEventIds.includes(event.event_id),
   ).length;
-  return total - done;
+
+  return mainLeft + sideLeft;
 }
 
 export function Rail({ onNavigate }: { onNavigate: () => void }) {
+  const user = useAuthStore((s) => s.user);
   const profile = useProfileStore();
+  const { summary, runs } = useProgressStore();
   const { roleCode, band } = useJourneyStore();
   const role = findRole(roleCode);
+  const playedScenarioKeys = new Set(runs.map((r) => r.scenarioKey));
 
   return (
     <div className="flex h-full flex-col">
@@ -134,7 +143,14 @@ export function Rail({ onNavigate }: { onNavigate: () => void }) {
               to={`/jobs/${role.role_code}/${band}`}
               icon="book"
               label={shortRoleName(role)}
-              count={remainingTasks(profile, role.role_code, band) || null}
+              count={
+                remainingTasks(
+                  profile.doneEventIds,
+                  playedScenarioKeys,
+                  role.role_code,
+                  band,
+                ) || null
+              }
               matchPrefix={`/jobs/${role.role_code}/${band}`}
               onNavigate={onNavigate}
             />
@@ -146,24 +162,35 @@ export function Rail({ onNavigate }: { onNavigate: () => void }) {
           to="/profile"
           icon="chart"
           label="Hành trang"
+          count={summary?.totalPoints || null}
+          onNavigate={onNavigate}
+        />
+        <NavItem
+          to="/account"
+          icon="user"
+          label="Tài khoản"
           onNavigate={onNavigate}
         />
       </nav>
 
       <div className="border-t border-line-2 px-3.5 py-3">
-        <div className="flex items-center gap-2.5">
+        <NavLink
+          to="/account"
+          onClick={onNavigate}
+          className="flex items-center gap-2.5 rounded-[7px] p-1 transition-colors hover:bg-panel"
+        >
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-[13px] font-bold text-rail">
-            {(profile.name ?? '?')[0].toUpperCase()}
+            {(user?.displayName ?? '?')[0].toUpperCase()}
           </span>
-          <div>
-            <div className="text-[13px] font-semibold leading-tight">
-              {profile.name ?? 'Khách'}
+          <div className="min-w-0">
+            <div className="truncate text-[13px] font-semibold leading-tight">
+              {user?.displayName ?? 'Khách'}
             </div>
             <div className="font-mono text-[10px] text-muted">
-              {totalSkillPoints(profile)} điểm · {profile.eventsPlayed} nhiệm vụ
+              {summary?.totalPoints ?? 0} điểm · {profile.eventsPlayed} nhiệm vụ
             </div>
           </div>
-        </div>
+        </NavLink>
       </div>
     </div>
   );

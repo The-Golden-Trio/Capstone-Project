@@ -1,6 +1,4 @@
-import { roleHasAnyScenario } from '../../domain/bands';
-import { formatVnd, shortRoleName } from '../../domain/format';
-import type { Role } from '../../data/schema';
+import { formatVnd, roleHasAnyScenario, shortRoleName, type Role } from '@datn/game-core';
 import { cx } from '../../lib/cx';
 import { Planet } from './Planet';
 

@@ -1,36 +1,41 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GAME } from '../data/gameData';
-import { hasScenario } from '../data/indexes';
-import {
-  bandLabel,
-  bandsOf,
-  isBandOpen,
-  previousBand,
-  UNLOCK_AT,
-} from '../domain/bands';
-import { hasFit } from '../domain/fit';
-import { shortRoleName } from '../domain/format';
+import { hasFit } from '@datn/game-core';
 import { FitRadar } from '../components/game/FitRadar';
 import { PageHeader } from '../components/layout/PageHeader';
+import { BandRoadmap } from '../components/profile/BandRoadmap';
+import { LegacyImportBanner } from '../components/profile/LegacyImportBanner';
+import { ProgressChart } from '../components/profile/ProgressChart';
+import { RunHistory } from '../components/profile/RunHistory';
+import { SkillBreakdown } from '../components/profile/SkillBreakdown';
 import { Button } from '../components/ui/Button';
 import { Card, CardBody, CardHeader } from '../components/ui/Card';
 import { EmptyState } from '../components/ui/EmptyState';
 import { Pill } from '../components/ui/Pill';
 import { Stat, StatGrid } from '../components/ui/Stat';
-import { cx } from '../lib/cx';
 import { useJourneyStore } from '../store/journeyStore';
-import {
-  skillPointsAt,
-  totalSkillPoints,
-  useProfileStore,
-} from '../store/profileStore';
+import { useProfileStore } from '../store/profileStore';
+import { useProgressStore } from '../store/progressStore';
 
+/**
+ * "Hành trang" — tất cả xoay quanh điểm kỹ năng, vì đó là thứ vận hành cả hệ
+ * thống: nó quyết định cấp bậc nào mở ra.
+ *
+ * Bốn cách nhìn cùng một con số, mỗi cách trả lời một câu khác nhau:
+ *   cấp bậc     — đi được tới đâu
+ *   kỹ năng     — giỏi cái gì
+ *   theo ngày   — tiến bộ ra sao
+ *   lịch sử     — vì sao lại được chừng đó điểm
+ */
 export function ProfilePage() {
   const navigate = useNavigate();
   const profile = useProfileStore();
+  const { summary, runs, load } = useProgressStore();
   const currentBand = useJourneyStore((s) => s.band);
 
-  const rolesWithSkill = GAME.roles.filter((r) => profile.skill[r.role_code]);
+  useEffect(() => {
+    void load();
+  }, [load]);
 
   return (
     <>
@@ -39,22 +44,24 @@ export function ProfilePage() {
         chỉ hướng hành tinh nên ghé.
       </PageHeader>
 
+      <LegacyImportBanner />
+
       <StatGrid className="mb-[22px]">
         <Stat
           label="Điểm kỹ năng"
-          value={totalSkillPoints(profile)}
-          hint="từ kịch bản sâu"
+          value={summary?.totalPoints ?? 0}
+          hint="do máy chủ chấm"
           gold
         />
         <Stat
-          label="Sự kiện"
-          value={profile.eventsPlayed}
-          hint="vẽ nên chân dung"
+          label="Nhiệm vụ chính"
+          value={summary?.runsCompleted ?? 0}
+          hint="đã hoàn thành"
         />
         <Stat
-          label="Đã hoàn thành"
-          value={profile.doneTasks.length}
-          hint="chính và phụ"
+          label="Nhiệm vụ phụ"
+          value={profile.eventsPlayed}
+          hint="vẽ nên chân dung"
         />
         <Stat
           label="Đã tự vấn"
@@ -63,70 +70,40 @@ export function ProfilePage() {
         />
       </StatGrid>
 
-      {rolesWithSkill.length > 0 ? (
-        rolesWithSkill.map((role) => (
-          <Card key={role.role_code} className="mb-4">
-            <CardHeader title={shortRoleName(role)}>
-              <Pill tone="gold">hành trình</Pill>
+      <div className="mb-4 grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
+        <Card>
+          <CardHeader title="Mạnh ở đâu">
+            <Pill tone="gold">theo kỹ năng</Pill>
+          </CardHeader>
+          <CardBody>
+            <SkillBreakdown skills={summary?.skills ?? []} />
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader title="Tiến bộ theo thời gian">
+            <Pill>cộng dồn</Pill>
+          </CardHeader>
+          <CardBody>
+            <ProgressChart timeline={summary?.timeline ?? []} />
+          </CardBody>
+        </Card>
+      </div>
+
+      {summary && summary.roles.length > 0 ? (
+        summary.roles.map((role) => (
+          <Card key={role.roleCode} className="mb-4">
+            <CardHeader title={role.roleName}>
+              <Pill tone="gold">{role.totalPoints} điểm</Pill>
             </CardHeader>
             <CardBody>
-              <div className="roadmap">
-                {bandsOf(role).map((band) => {
-                  const open = isBandOpen(role, band, (b) =>
-                    skillPointsAt(profile, role.role_code, b),
-                  );
-                  const points = skillPointsAt(profile, role.role_code, band);
-                  const built = hasScenario(role.role_code, band);
-                  const previous = previousBand(role, band);
-
-                  return (
-                    <div
-                      key={band}
-                      className={cx(
-                        'roadmap-stop relative mb-2.5 grid items-center gap-3 rounded-[10px] border px-[15px] py-[11px] [grid-template-columns:1fr_auto]',
-                        open
-                          ? 'open border-gold bg-gold-soft'
-                          : 'border-line-2 bg-panel',
-                        band === currentBand && 'current',
-                      )}
-                    >
-                      <div>
-                        <div className="flex flex-wrap items-baseline gap-2.5">
-                          <span
-                            className={cx(
-                              'font-mono text-[13px] font-bold',
-                              open ? 'text-gold-2' : 'text-muted',
-                            )}
-                          >
-                            {band}
-                          </span>
-                          <span className="text-[12.5px] text-ink-2">
-                            {bandLabel(band)}
-                          </span>
-                        </div>
-                        {!built && (
-                          <div className="mt-[3px] font-mono text-[10.5px] text-muted">
-                            chưa dựng nhiệm vụ
-                          </div>
-                        )}
-                      </div>
-                      <span className="whitespace-nowrap font-mono text-[10.5px] text-muted">
-                        {open
-                          ? points
-                            ? `${points} điểm`
-                            : 'đã tới'
-                          : `cần ${UNLOCK_AT} điểm ở ${previous}`}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
+              <BandRoadmap role={role} currentBand={currentBand} />
             </CardBody>
           </Card>
         ))
       ) : (
         <EmptyState
-          className="mb-[22px]"
+          className="mb-4"
           action={
             <Button variant="primary" onClick={() => navigate('/jobs')}>
               Mở bản đồ
@@ -138,6 +115,15 @@ export function ProfilePage() {
         </EmptyState>
       )}
 
+      <Card className="mb-4">
+        <CardHeader title="Những lượt đã chơi">
+          <Pill>{runs.length}</Pill>
+        </CardHeader>
+        <CardBody>
+          <RunHistory runs={runs} />
+        </CardBody>
+      </Card>
+
       <Card>
         <CardHeader title="Chân dung của bạn">
           <Pill>cộng dồn từ mọi lựa chọn</Pill>
@@ -148,7 +134,9 @@ export function ProfilePage() {
           ) : (
             <EmptyState
               icon="?"
-              action={<Button onClick={() => navigate('/quiz')}>Trả lời 6 câu</Button>}
+              action={
+                <Button onClick={() => navigate('/quiz')}>Trả lời 6 câu</Button>
+              }
             >
               Chưa có nét nào. Làm vài nhiệm vụ phụ hoặc trả lời 6 câu tự vấn.
             </EmptyState>

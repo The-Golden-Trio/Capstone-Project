@@ -1,5 +1,4 @@
-import { stripNpcPrefix } from '../../domain/format';
-import type { ChatLine } from '../../domain/scenarioEngine';
+import { stripNpcPrefix, type ChatLine } from '@datn/game-core';
 
 /** Một bong bóng thoại của NPC. */
 export function NpcBubble({ name, text }: { name: string; text: string }) {

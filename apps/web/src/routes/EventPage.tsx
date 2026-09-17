@@ -1,18 +1,25 @@
+import { useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { findEvent, findRole } from '../data/indexes';
+import { findEvent, findRole } from '@datn/game-core';
 import { Card, CardBody, CardHeader } from '../components/ui/Card';
+import { Note, SectionLabel } from '../components/ui/Note';
 import { Pill } from '../components/ui/Pill';
-import { SectionLabel } from '../components/ui/Note';
 import { useProfileStore } from '../store/profileStore';
 
 const OPTION_KEYS = 'ABCDE';
 
-/** Nhiệm vụ phụ: một tình huống ngắn, ba lựa chọn, không chấm điểm kỹ năng. */
+/**
+ * Nhiệm vụ phụ: một tình huống ngắn, vài lựa chọn.
+ *
+ * Máy khách chỉ gửi lên "đã chọn phương án số mấy"; diễn biến và tín hiệu
+ * tính cách do máy chủ tra từ bộ dữ liệu.
+ */
 export function EventPage() {
   const { roleCode = '', band = '', eventId = '' } = useParams();
   const navigate = useNavigate();
-  const applyFit = useProfileStore((s) => s.applyFit);
-  const completeTask = useProfileStore((s) => s.completeTask);
+  const answerEvent = useProfileStore((s) => s.answerEvent);
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
 
   const role = findRole(roleCode);
   const event = role ? findEvent(role, eventId) : undefined;
@@ -20,12 +27,19 @@ export function EventPage() {
   if (!role) return <Navigate to="/jobs" replace />;
   if (!event) return <Navigate to={`/jobs/${roleCode}/${band}/tasks`} replace />;
 
-  const choose = (index: number) => {
-    applyFit(event.choices[index].signal);
-    completeTask(role.role_code, band, event.event_id, { countsAsEvent: true });
-    navigate(
-      `/jobs/${role.role_code}/${band}/events/${event.event_id}/result?choice=${index}`,
-    );
+  const choose = async (index: number) => {
+    setBusy(true);
+    setError(null);
+    try {
+      await answerEvent(event.event_id, role.role_code, band, index);
+      navigate(
+        `/jobs/${role.role_code}/${band}/events/${event.event_id}/result?choice=${index}`,
+      );
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Không ghi nhận được');
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
@@ -36,6 +50,12 @@ export function EventPage() {
         ))}
       </CardHeader>
       <CardBody>
+        {error && (
+          <Note tone="warn" className="mb-3.5">
+            {error}
+          </Note>
+        )}
+
         <div className="mb-3.5 rounded-[9px] bg-panel p-[15px] text-[14px] leading-relaxed text-ink-2">
           {event.setup}
         </div>
@@ -46,8 +66,9 @@ export function EventPage() {
             <button
               key={choice.text}
               type="button"
-              onClick={() => choose(index)}
-              className="flex w-full gap-[11px] rounded-[9px] border border-line bg-surf px-[15px] py-[13px] text-left text-[13.5px] leading-normal text-ink transition-colors hover:border-gold"
+              disabled={busy}
+              onClick={() => void choose(index)}
+              className="flex w-full gap-[11px] rounded-[9px] border border-line bg-surf px-[15px] py-[13px] text-left text-[13.5px] leading-normal text-ink transition-colors hover:border-gold disabled:opacity-50"
             >
               <span className="shrink-0 font-mono text-[11px] text-muted">
                 {OPTION_KEYS[index]}

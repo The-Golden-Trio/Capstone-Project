@@ -1,20 +1,15 @@
 import { useNavigate } from 'react-router-dom';
-import { eventsForRole, findScenario } from '../../data/indexes';
-import type { Role } from '../../data/schema';
-import {
-  isBandOpen,
-  nextBand,
-  UNLOCK_AT,
-} from '../../domain/bands';
+import { UNLOCK_AT, eventsForRole, findScenario, nextBand, type Role } from '@datn/game-core';
 import { Note, SectionLabel } from '../../components/ui/Note';
 import { Pill } from '../../components/ui/Pill';
 import { XpBar } from '../../components/ui/Progress';
 import { cx } from '../../lib/cx';
+import { isEventDone, useProfileStore } from '../../store/profileStore';
 import {
-  isTaskDone,
-  skillPointsAt,
-  useProfileStore,
-} from '../../store/profileStore';
+  bandPoints,
+  isBandUnlocked,
+  useProgressStore,
+} from '../../store/progressStore';
 
 interface QuestCardProps {
   main?: boolean;
@@ -46,14 +41,19 @@ function QuestCard({ main, done, tags, title, meta, onClick }: QuestCardProps) {
 }
 
 /** "Nhiệm vụ": một nhiệm vụ chính (nếu đã dựng) và các nhiệm vụ phụ. */
+/** "Nhiệm vụ": một nhiệm vụ chính (nếu đã dựng) và các nhiệm vụ phụ. */
 export function TasksTab({ role, band }: { role: Role; band: string }) {
   const navigate = useNavigate();
   const profile = useProfileStore();
+  const { summary, runs } = useProgressStore();
 
   const entry = findScenario(role.role_code, band);
   const events = eventsForRole(role);
-  const points = skillPointsAt(profile, role.role_code, band);
+  const points = bandPoints(summary, role.role_code, band);
   const next = nextBand(role, band);
+
+  // Nhiệm vụ chính coi là đã chơi khi máy chủ có lượt chơi hoàn thành cho nó.
+  const playedScenario = new Set(runs.map((r) => r.scenarioKey));
 
   return (
     <>
@@ -72,9 +72,7 @@ export function TasksTab({ role, band }: { role: Role; band: string }) {
             to={next}
             points={points}
             goal={UNLOCK_AT}
-            unlocked={isBandOpen(role, next, (b) =>
-              skillPointsAt(profile, role.role_code, b),
-            )}
+            unlocked={isBandUnlocked(summary, role.role_code, next)}
           />
         </div>
       )}
@@ -84,12 +82,12 @@ export function TasksTab({ role, band }: { role: Role; band: string }) {
           <SectionLabel>Nhiệm vụ chính — mang lại điểm kỹ năng</SectionLabel>
           <QuestCard
             main
-            done={isTaskDone(profile, role.role_code, band, entry.key)}
+            done={playedScenario.has(entry.key)}
             tags={
               <>
                 <Pill tone="gold">NHIỆM VỤ CHÍNH</Pill>
                 <Pill>{entry.scenario.context.scenario_archetype}</Pill>
-                {isTaskDone(profile, role.role_code, band, entry.key) && (
+                {playedScenario.has(entry.key) && (
                   <Pill tone="good">đã chơi</Pill>
                 )}
               </>
@@ -111,14 +109,14 @@ export function TasksTab({ role, band }: { role: Role; band: string }) {
       {events.map((event) => (
         <QuestCard
           key={event.event_id}
-          done={isTaskDone(profile, role.role_code, band, event.event_id)}
+          done={isEventDone(profile.doneEventIds, event.event_id)}
           tags={
             <>
               {event.measures.map((m) => (
                 <Pill key={m}>{m}</Pill>
               ))}
               {!event.role_code && <Pill>mọi nghề</Pill>}
-              {isTaskDone(profile, role.role_code, band, event.event_id) && (
+              {isEventDone(profile.doneEventIds, event.event_id) && (
                 <Pill tone="good">đã chơi</Pill>
               )}
             </>

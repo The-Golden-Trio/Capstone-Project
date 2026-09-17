@@ -1,5 +1,4 @@
-import { DIMENSIONS, GAME } from '../../data/gameData';
-import type { FitVector } from '../../domain/fit';
+import { DIMENSIONS, GAME, type FitVector } from '@datn/game-core';
 import { cx } from '../../lib/cx';
 
 interface FitRadarProps {

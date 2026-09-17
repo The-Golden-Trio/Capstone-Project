@@ -1,6 +1,4 @@
-import type { Role } from '../../data/schema';
-import { bandLabel } from '../../domain/bands';
-import { formatVnd } from '../../domain/format';
+import { bandLabel, formatVnd, type Role } from '@datn/game-core';
 import { Card, CardBody, CardHeader } from '../../components/ui/Card';
 import { Note, SourceNote } from '../../components/ui/Note';
 import { Pill } from '../../components/ui/Pill';

@@ -1,10 +1,12 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { totalSkillPoints, useProfileStore } from '../../store/profileStore';
+import { useProfileStore } from '../../store/profileStore';
+import { useProgressStore } from '../../store/progressStore';
 import { useBreadcrumbs } from '../../hooks/useBreadcrumbs';
 
 export function Topbar({ onOpenNav }: { onOpenNav: () => void }) {
   const profile = useProfileStore();
+  const summary = useProgressStore((s) => s.summary);
   const crumbs = useBreadcrumbs();
 
   return (
@@ -36,7 +38,7 @@ export function Topbar({ onOpenNav }: { onOpenNav: () => void }) {
       <span className="flex-1" />
 
       <span className="flex items-center gap-1.5 whitespace-nowrap rounded-full border border-line-2 bg-inset px-2.5 py-[5px] font-mono text-[11px] text-muted max-[900px]:hidden">
-        điểm kỹ năng <b className="font-semibold text-gold-2">{totalSkillPoints(profile)}</b>
+        điểm kỹ năng <b className="font-semibold text-gold-2">{summary?.totalPoints ?? 0}</b>
       </span>
       <span className="flex items-center gap-1.5 whitespace-nowrap rounded-full border border-line-2 bg-inset px-2.5 py-[5px] font-mono text-[11px] text-muted max-[900px]:hidden">
         nhiệm vụ <b className="font-semibold text-gold-2">{profile.eventsPlayed}</b>

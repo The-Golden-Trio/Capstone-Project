@@ -1,8 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { findRole, roleName } from '../../data/indexes';
-import type { Role } from '../../data/schema';
-import { adjacentRoles } from '../../domain/fit';
-import { shortName } from '../../domain/format';
+import { adjacentRoles, findRole, roleName, shortName, type Role } from '@datn/game-core';
 import { Planet } from '../../components/game/Planet';
 import { Button } from '../../components/ui/Button';
 import { Note, SourceNote } from '../../components/ui/Note';

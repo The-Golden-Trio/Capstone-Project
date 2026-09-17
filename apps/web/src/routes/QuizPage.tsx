@@ -1,36 +1,55 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GAME } from '../data/gameData';
+import { GAME } from '@datn/game-core';
 import { PageHeader } from '../components/layout/PageHeader';
 import { Button } from '../components/ui/Button';
 import { Card, CardBody } from '../components/ui/Card';
+import { Note } from '../components/ui/Note';
 import { ProgressDots } from '../components/ui/Progress';
 import { useProfileStore } from '../store/profileStore';
 
+/**
+ * Sáu câu tự vấn.
+ *
+ * Câu trả lời gom lại rồi gửi một lần khi xong: máy chủ tra tín hiệu của từng
+ * lựa chọn từ bộ câu hỏi và tự cộng, nên chân dung là suy ra được chứ không
+ * phải con số máy khách gửi lên.
+ */
 export function QuizPage() {
   const navigate = useNavigate();
-  const applyFit = useProfileStore((s) => s.applyFit);
-  const setQuizDone = useProfileStore((s) => s.setQuizDone);
+  const submitQuiz = useProfileStore((s) => s.submitQuiz);
+
   const [index, setIndex] = useState(0);
+  const [answers, setAnswers] = useState<
+    Array<{ questionId: string; optionId: string }>
+  >([]);
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
 
   const questions = GAME.quiz.questions;
   const question = questions[index];
 
-  const answer = (optionId: string) => {
-    const option = question.options.find((o) => o.option_id === optionId);
-    if (option) applyFit(option.signal);
-
-    if (index + 1 >= questions.length) {
-      setQuizDone();
-      navigate('/quiz/result');
-    } else {
-      setIndex(index + 1);
+  const send = async (
+    all: Array<{ questionId: string; optionId: string }>,
+    next: string,
+  ) => {
+    setBusy(true);
+    setError(null);
+    try {
+      await submitQuiz(all);
+      navigate(next);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Không lưu được kết quả');
+    } finally {
+      setBusy(false);
     }
   };
 
-  const skip = () => {
-    setQuizDone();
-    navigate('/jobs');
+  const answer = (optionId: string) => {
+    const all = [...answers, { questionId: question.question_id, optionId }];
+    setAnswers(all);
+    if (index + 1 >= questions.length) void send(all, '/quiz/result');
+    else setIndex(index + 1);
   };
 
   return (
@@ -39,6 +58,12 @@ export function QuizPage() {
         Sáu câu, không có đáp án đúng. Kết quả dùng để chỉ hướng trên bản đồ,
         không phải để chấm bạn.
       </PageHeader>
+
+      {error && (
+        <Note tone="warn" className="mb-4 max-w-[640px]">
+          {error}
+        </Note>
+      )}
 
       <Card className="max-w-[640px]">
         <CardBody>
@@ -56,8 +81,9 @@ export function QuizPage() {
               <button
                 key={option.option_id}
                 type="button"
+                disabled={busy}
                 onClick={() => answer(option.option_id)}
-                className="w-full rounded-[10px] border border-line bg-surf px-[17px] py-[15px] text-left text-[14px] leading-normal text-ink transition-colors hover:border-gold hover:bg-gold-soft"
+                className="w-full rounded-[10px] border border-line bg-surf px-[17px] py-[15px] text-left text-[14px] leading-normal text-ink transition-colors hover:border-gold hover:bg-gold-soft disabled:opacity-50"
               >
                 {option.text}
               </button>
@@ -65,7 +91,9 @@ export function QuizPage() {
           </div>
 
           <div className="mt-[18px] flex flex-wrap items-center gap-2.5">
-            <Button onClick={skip}>Bỏ qua phần này</Button>
+            <Button onClick={() => void send(answers, '/jobs')} disabled={busy}>
+              Bỏ qua phần này
+            </Button>
           </div>
         </CardBody>
       </Card>

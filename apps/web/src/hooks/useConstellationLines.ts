@@ -1,5 +1,5 @@
 import { useCallback, useLayoutEffect, useState, type RefObject } from 'react';
-import { CONSTELLATION_EDGES, type EdgeKind } from '../data/indexes';
+import { CONSTELLATION_EDGES, type EdgeKind } from '@datn/game-core';
 
 export interface ConstellationLine {
   key: string;

@@ -1,12 +1,10 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { findRole, findScenarioByKey } from '../../data/indexes';
-import { isBandOpen, nextBand, UNLOCK_AT } from '../../domain/bands';
-import { pointsEarned, type Evidence } from '../../domain/scenarioEngine';
+import { UNLOCK_AT, findScenarioByKey } from '@datn/game-core';
 import { Button } from '../../components/ui/Button';
 import { Card, CardBody } from '../../components/ui/Card';
 import { Note } from '../../components/ui/Note';
 import { cx } from '../../lib/cx';
-import { skillPointsAt, useProfileStore } from '../../store/profileStore';
+import type { EvidenceView } from '../../api/schemas';
 import { useRunStore } from '../../store/runStore';
 
 const ENDING_STYLE: Record<string, string> = {
@@ -16,7 +14,7 @@ const ENDING_STYLE: Record<string, string> = {
   SECRET: 'border-gold bg-gold-soft',
 };
 
-function EvidenceRow({ evidence }: { evidence: Evidence }) {
+function EvidenceRow({ evidence }: { evidence: EvidenceView }) {
   return (
     <div className="mb-3">
       <div className="text-[13.5px] leading-relaxed text-ink-2">
@@ -32,37 +30,56 @@ function EvidenceRow({ evidence }: { evidence: Evidence }) {
   );
 }
 
-/** Tổng kết màn chơi: kết cục, bằng chứng, điểm, và một câu hỏi ngược lại. */
+/**
+ * Tổng kết màn chơi — đọc từ kết quả MÁY CHỦ trả về, không phải từ lượt chơi
+ * trong bộ nhớ trình duyệt.
+ *
+ * Máy khách có bản chấm của riêng nó để phản hồi tức thì lúc chơi, nhưng con
+ * số hiện ở đây là con số đã vào cơ sở dữ liệu.
+ */
 export function EndingPage() {
   const { scenarioKey = '' } = useParams();
   const navigate = useNavigate();
 
-  const run = useRunStore((s) => s.run);
-  const rating = useRunStore((s) => s.rating);
-  const setRating = useRunStore((s) => s.setRating);
-  const start = useRunStore((s) => s.start);
-
-  const profile = useProfileStore();
+  const { result, submitting, error, rating, setRating, start } = useRunStore();
   const entry = findScenarioByKey(scenarioKey);
 
   if (!entry) return <Navigate to="/jobs" replace />;
-  // Không có lượt chơi trong bộ nhớ (ví dụ mở thẳng URL) thì quay về nhiệm vụ.
-  if (!run || run.scenarioKey !== scenarioKey || !run.ending)
-    return <Navigate to={`/play/${scenarioKey}`} replace />;
 
+  if (submitting || (!result && !error)) {
+    return (
+      <Card className="max-w-[640px]">
+        <CardBody>
+          <p className="m-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+            Đang chấm ở máy chủ…
+          </p>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  if (!result) {
+    return (
+      <Card className="max-w-[640px]">
+        <CardBody>
+          <Note tone="warn" className="mb-4">
+            {error ?? 'Không nhận được kết quả từ máy chủ.'}
+          </Note>
+          <Button variant="primary" onClick={() => navigate('/jobs')}>
+            Về bản đồ
+          </Button>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  const ending = entry.scenario.endings.find(
+    (e) => e.ending_id === result.endingId,
+  );
   const { role_code, band } = entry.scenario.job;
-  const role = findRole(role_code);
-  const ending = run.ending;
 
-  const good = run.evidence.filter((e) => e.anchor === '+2');
-  const bad = run.evidence.filter((e) => e.anchor !== '+2').slice(0, 2);
-  const gained = pointsEarned(run);
-  const points = skillPointsAt(profile, role_code, band);
-  const next = role ? nextBand(role, band) : undefined;
-  const unlocked =
-    role && next
-      ? isBandOpen(role, next, (b) => skillPointsAt(profile, role_code, b))
-      : false;
+  const good = result.evidence.filter((e) => e.anchor === '+2');
+  const bad = result.evidence.filter((e) => e.anchor !== '+2').slice(0, 2);
 
   return (
     <Card className="max-w-[640px]">
@@ -70,13 +87,13 @@ export function EndingPage() {
         <div
           className={cx(
             'mb-[18px] rounded-[11px] border-[1.5px] p-[18px]',
-            ENDING_STYLE[ending.type] ?? ENDING_STYLE.GOOD,
+            ENDING_STYLE[result.endingType] ?? ENDING_STYLE.GOOD,
           )}
         >
           <p className="m-0 font-display text-[16.5px] leading-relaxed text-ink-2">
-            {ending.text}
+            {ending?.text ?? 'Màn chơi kết thúc.'}
           </p>
-          {ending.reveals && (
+          {ending?.reveals && (
             <p className="mt-[13px] border-t border-white/15 pt-[13px] text-[13px] italic leading-relaxed text-ink-2">
               {ending.reveals}
             </p>
@@ -106,19 +123,25 @@ export function EndingPage() {
         )}
 
         <Note className="mb-4">
-          <b>+{gained} điểm kỹ năng</b> ở {band}. Tổng đang có: <b>{points}</b>.
-          {next &&
-            (unlocked ? (
-              <>
-                {' '}
-                Đủ để mở <b className="text-good">{next}</b>.
-              </>
-            ) : (
-              <>
-                {' '}
-                Cần <b>{UNLOCK_AT}</b> để mở {next}.
-              </>
-            ))}
+          {result.alreadyScored ? (
+            <>
+              Lượt chơi lại nên <b>không cộng điểm</b>. Tổng ở {band} vẫn là{' '}
+              <b>{result.bandPoints}</b>.
+            </>
+          ) : (
+            <>
+              <b>+{result.pointsAwarded} điểm kỹ năng</b> ở {band}. Tổng đang có:{' '}
+              <b>{result.bandPoints}</b>.
+              {result.unlockedBand ? (
+                <>
+                  {' '}
+                  Đủ để mở <b className="text-good">{result.unlockedBand}</b>.
+                </>
+              ) : (
+                <> Cần <b>{UNLOCK_AT}</b> để mở cấp bậc kế.</>
+              )}
+            </>
+          )}
         </Note>
 
         <div className="mt-1 border-t border-line-2 pt-[18px]">
@@ -144,8 +167,8 @@ export function EndingPage() {
           </div>
           {rating > 0 && (
             <p className="m-0 mt-2.5 text-[12.5px] text-muted">
-              Cảm ơn bạn. Đánh giá này dùng để lọc tình huống dở, không ảnh hưởng
-              tới kết quả của bạn.
+              Cảm ơn bạn. Đánh giá này dùng để lọc tình huống dở, không ảnh
+              hưởng tới kết quả của bạn.
             </p>
           )}
         </div>
@@ -154,19 +177,14 @@ export function EndingPage() {
           <Button variant="primary" onClick={() => navigate('/profile')}>
             Xem hành trang
           </Button>
-          <Button
-            onClick={() =>
-              navigate(
-                role ? `/jobs/${role_code}/${band}/tasks` : '/jobs',
-              )
-            }
-          >
+          <Button onClick={() => navigate(`/jobs/${role_code}/${band}/tasks`)}>
             Nhiệm vụ khác
           </Button>
           <Button
             onClick={() => {
-              start(scenarioKey);
-              navigate(`/play/${scenarioKey}`);
+              void start(scenarioKey).then((ok) => {
+                if (ok) navigate(`/play/${scenarioKey}`);
+              });
             }}
           >
             Chơi lại

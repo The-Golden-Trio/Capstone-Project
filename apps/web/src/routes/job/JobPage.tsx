@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { findRole } from '../../data/indexes';
-import { bandLabel, bandsOf } from '../../domain/bands';
-import { shortRoleName } from '../../domain/format';
+import { bandLabel, bandsOf, findRole, shortRoleName } from '@datn/game-core';
 import { Planet } from '../../components/game/Planet';
 import { Pill } from '../../components/ui/Pill';
 import { cx } from '../../lib/cx';

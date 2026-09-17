@@ -4,7 +4,7 @@ import {
   useParams,
   useSearchParams,
 } from 'react-router-dom';
-import { findEvent, findRole } from '../data/indexes';
+import { findEvent, findRole } from '@datn/game-core';
 import { SignalList } from '../components/game/FitRadar';
 import { Button } from '../components/ui/Button';
 import { Card, CardBody } from '../components/ui/Card';

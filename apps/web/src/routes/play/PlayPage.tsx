@@ -1,14 +1,6 @@
 import { useEffect } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { findScenarioByKey } from '../../data/indexes';
-import { findFollowupLine } from '../../domain/followups';
-import { stripNpcPrefix } from '../../domain/format';
-import {
-  activityIndex,
-  currentActivity,
-  npcShortName,
-  scenarioOf,
-} from '../../domain/scenarioEngine';
+import { activityIndex, currentActivity, findFollowupLine, findScenarioByKey, npcShortName, scenarioOf, stripNpcPrefix } from '@datn/game-core';
 import { ChatLog, NpcBubble } from '../../components/play/ChatLog';
 import { CountdownBar } from '../../components/play/CountdownBar';
 import { ChoiceActivity } from '../../components/play/activities/ChoiceActivity';
@@ -16,6 +8,7 @@ import { FreetextActivity } from '../../components/play/activities/FreetextActiv
 import { OrderingActivity } from '../../components/play/activities/OrderingActivity';
 import { PrioritizingActivity } from '../../components/play/activities/PrioritizingActivity';
 import { Button } from '../../components/ui/Button';
+import { Note } from '../../components/ui/Note';
 import { Card, CardBody, CardHeader } from '../../components/ui/Card';
 import { Pill } from '../../components/ui/Pill';
 import { ProgressDots } from '../../components/ui/Progress';
@@ -27,21 +20,51 @@ export function PlayPage() {
   const navigate = useNavigate();
 
   const run = useRunStore((s) => s.run);
+  const starting = useRunStore((s) => s.starting);
+  const error = useRunStore((s) => s.error);
   const start = useRunStore((s) => s.start);
   const dispatch = useRunStore((s) => s.dispatch);
 
   const entry = findScenarioByKey(scenarioKey);
 
-  // Vào thẳng URL này (hoặc bấm "chơi lại") thì mở màn mới.
+  // Mở màn qua máy chủ: nó kiểm cấp bậc đã mở chưa rồi mới phát hạt giống.
   useEffect(() => {
-    if (entry && run?.scenarioKey !== scenarioKey) start(scenarioKey);
-  }, [entry, run?.scenarioKey, scenarioKey, start]);
+    if (entry && run?.scenarioKey !== scenarioKey && !starting && !error) {
+      void start(scenarioKey);
+    }
+  }, [entry, run?.scenarioKey, scenarioKey, start, starting, error]);
 
   const deadline = run?.phase === 'main' ? (run.deadline ?? null) : null;
   const secondsLeft = useCountdown(deadline, () => dispatch({ type: 'TIMEOUT' }));
 
   if (!entry) return <Navigate to="/jobs" replace />;
-  if (!run || run.scenarioKey !== scenarioKey) return null;
+
+  if (error) {
+    return (
+      <Card className="max-w-[640px]">
+        <CardBody>
+          <Note tone="warn" className="mb-4">
+            {error}
+          </Note>
+          <Button variant="primary" onClick={() => navigate('/jobs')}>
+            Về bản đồ
+          </Button>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  if (!run || run.scenarioKey !== scenarioKey) {
+    return (
+      <Card className="max-w-[640px]">
+        <CardBody>
+          <p className="m-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+            Đang mở màn chơi…
+          </p>
+        </CardBody>
+      </Card>
+    );
+  }
   if (run.phase === 'ended') return <Navigate to={`/play/${scenarioKey}/end`} replace />;
 
   const scenario = scenarioOf(run);

@@ -1,0 +1,203 @@
+// Lược đồ cơ sở dữ liệu của Vào Nghề.
+//
+// Sinh client:  pnpm exec nx run @datn/api:prisma-generate
+// Tạo migration: pnpm exec prisma migrate dev --schema apps/api/prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+// Prisma 7 không nhận chuỗi kết nối trong file lược đồ nữa:
+//   - migrate/introspect đọc `datasource.url` trong apps/api/prisma.config.ts
+//     (DIRECT_URL, cổng 5432 — chế độ session, vì chế độ transaction không
+//     giữ được prepared statement nên không migrate được)
+//   - lúc chạy, PrismaService dựng client với adapter pg trỏ vào DATABASE_URL
+//     (cổng 6543 — pooler, chịu được nhiều kết nối ngắn)
+datasource db {
+  provider = "postgresql"
+}
+
+/// Ba vai trò theo docs/report.md §5.5.
+enum Role {
+  USER // học sinh hoặc phụ huynh
+  CONTRIBUTOR // cựu sinh viên hoặc cố vấn
+  ADMIN
+}
+
+enum ConsentMethod {
+  GUARDIAN_EMAIL
+}
+
+// ══ Danh tính ══════════════════════════════════════════════════════════
+
+model User {
+  id           String    @id @default(cuid())
+  username     String    @unique
+  /// Có thể rỗng: tài khoản chỉ dùng tên đăng nhập thì chưa cần email.
+  email        String?   @unique
+  displayName  String
+  /// Rỗng với tài khoản chỉ đăng nhập bằng Google.
+  passwordHash String?
+  role         Role      @default(USER)
+  /// Dùng để tính xem có cần người giám hộ đồng ý không.
+  dateOfBirth  DateTime? @db.Date
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  oauthAccounts  OAuthAccount[]
+  refreshTokens  RefreshToken[]
+  consent        ParentalConsent?
+  gameProfile    GameProfile?
+  runs           ScenarioRun[]
+  bandSkills     UserBandSkill[]
+  eventAnswers   EventAnswer[]
+}
+
+/// Liên kết nhà cung cấp đăng nhập. Bảng riêng thay vì cột `googleId` để
+/// thêm nhà cung cấp thứ hai chỉ là thêm dòng, và một người có thể vừa có
+/// mật khẩu vừa có liên kết Google.
+model OAuthAccount {
+  id                String   @id @default(cuid())
+  userId            String
+  provider          String
+  providerAccountId String
+  createdAt         DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+/// Token làm mới, lưu dạng băm và xoay vòng mỗi lần dùng.
+///
+/// `replacedById` nối các token thành một chuỗi. Nếu một token đã thu hồi
+/// lại được đem ra dùng, nghĩa là nó đã bị lộ — thu hồi cả chuỗi.
+model RefreshToken {
+  id           String    @id @default(cuid())
+  userId       String
+  tokenHash    String    @unique
+  expiresAt    DateTime
+  revokedAt    DateTime?
+  replacedById String?
+  userAgent    String?
+  createdAt    DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+/// Đồng ý của người giám hộ cho tài khoản dưới 16 tuổi (Nghị định 13/2023/NĐ-CP).
+/// Bản đồ án ghi nhận chứ chưa xác minh — giao diện nói rõ điều đó.
+model ParentalConsent {
+  id            String        @id @default(cuid())
+  userId        String        @unique
+  guardianName  String
+  guardianEmail String
+  method        ConsentMethod @default(GUARDIAN_EMAIL)
+  consentedAt   DateTime      @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ══ Tiến trình chơi ════════════════════════════════════════════════════
+
+/// Phần hồ sơ không mở khoá gì cả: chân dung tính cách và các mốc đã qua.
+model GameProfile {
+  userId       String   @id
+  /// CHỈ phần chân dung đến từ bài tự vấn.
+  ///
+  /// Phần đến từ nhiệm vụ phụ không lưu ở đây mà cộng lại từ bảng EventAnswer
+  /// mỗi lần đọc. Giữ một nguồn cho mỗi thứ thì không bao giờ có chuyện tổng
+  /// và các phần cộng lại ra hai số khác nhau.
+  quizFit      Json     @default("{}")
+  quizDone     Boolean  @default(false)
+  eventsPlayed Int      @default(0)
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+/// Một lượt chơi kịch bản sâu.
+///
+/// `seed` do máy chủ phát lúc mở màn; `actions` là chuỗi hành động máy khách
+/// gửi lên khi kết thúc. Giữ cả hai nghĩa là mọi điểm đã trao đều tái dựng
+/// lại được — không phải tin, mà kiểm được.
+model ScenarioRun {
+  id            String    @id @default(cuid())
+  userId        String
+  scenarioKey   String
+  roleCode      String
+  band          String
+  seed          BigInt
+  actions       Json?
+  startedAt     DateTime  @default(now())
+  completedAt   DateTime?
+  endingId      String?
+  endingType    String?
+  pointsAwarded Int       @default(0)
+  /// Người chơi chấm tình huống có giống thực tế không (1–5 sao).
+  rating        Int?
+
+  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  evidence RunEvidence[]
+
+  @@index([userId, completedAt])
+  @@index([userId, scenarioKey])
+}
+
+/// Bằng chứng do máy chủ chấm lại, không phải điều máy khách khai.
+model RunEvidence {
+  id         String  @id @default(cuid())
+  runId      String
+  activityId String
+  skill      String
+  /// "+2" | "0" | "-1"
+  anchor     String
+  /// Đã bị hạ trần vì người chơi xem gợi ý.
+  capped     Boolean @default(false)
+  why        String
+  quote      String?
+  timeout    Boolean @default(false)
+
+  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([runId])
+}
+
+/// Tổng điểm kỹ năng theo (người chơi, nghề, cấp bậc).
+///
+/// Suy ra được từ RunEvidence, nhưng giữ sẵn ở đây vì đây là số được đọc mỗi
+/// lần kiểm "cấp bậc này đã mở chưa" — một lần đọc có chỉ mục thay vì gộp
+/// toàn bộ bằng chứng.
+model UserBandSkill {
+  id       String @id @default(cuid())
+  userId   String
+  roleCode String
+  band     String
+  points   Int    @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roleCode, band])
+  @@index([userId])
+}
+
+/// Một lựa chọn ở nhiệm vụ phụ. Máy chủ tra tín hiệu từ bộ dữ liệu rồi cộng
+/// vào chân dung, nên vector tính cách cũng là suy ra chứ không phải gửi lên.
+model EventAnswer {
+  id          String   @id @default(cuid())
+  userId      String
+  eventId     String
+  roleCode    String
+  band        String
+  choiceIndex Int
+  answeredAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+  @@index([userId])
+}
