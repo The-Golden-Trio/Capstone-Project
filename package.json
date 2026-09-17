@@ -2,7 +2,20 @@
   "name": "@datn/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run-many -t dev serve --projects=@datn/web,@datn/api",
+    "start:web": "nx run @datn/web:dev",
+    "start:api": "nx run @datn/api:serve",
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "lint": "nx run-many -t lint",
+    "typecheck": "nx run-many -t typecheck",
+    "check": "nx run-many -t lint typecheck build test",
+    "db:generate": "prisma generate --config apps/api/prisma.config.ts",
+    "db:migrate": "prisma migrate dev --config apps/api/prisma.config.ts",
+    "db:studio": "prisma studio --config apps/api/prisma.config.ts",
+    "data:build": "node docs/data/build.mjs"
+  },
   "private": true,
   "packageManager": "pnpm@10.28.2",
   "devDependencies": {
