@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { bandLabel, bandsOf, findRole, shortRoleName } from '@datn/game-core';
 import { Planet } from '../../components/game/Planet';
+import { RoleTheme } from '../../components/game/RoleTheme';
 import { Pill } from '../../components/ui/Pill';
 import { cx } from '../../lib/cx';
 import { useJourneyStore } from '../../store/journeyStore';
@@ -45,7 +46,7 @@ export function JobPage() {
     navigate(`/jobs/${role.role_code}/${band}/${next}`);
 
   return (
-    <>
+    <RoleTheme roleCode={role.role_code}>
       <div className="mb-6 flex flex-wrap items-center gap-[22px]">
         <Planet roleCode={role.role_code} size={118} />
         <div className="min-w-[230px] flex-1">
@@ -56,9 +57,9 @@ export function JobPage() {
             {role.experience}
           </p>
           <div className="flex flex-wrap items-center gap-2.5">
-            <Pill tone="gold">
+            <span className="rounded-full bg-[var(--accent-soft)] px-2.5 py-[3px] font-mono text-[9.5px] tracking-[0.05em] text-[var(--accent)]">
               {band} · {bandLabel(band)}
-            </Pill>
+            </span>
             <Pill>thang {role.bands}</Pill>
           </div>
         </div>
@@ -78,7 +79,7 @@ export function JobPage() {
             className={cx(
               '-mb-px whitespace-nowrap border-b-2 px-3.5 py-2.5 text-[13.5px] transition-colors',
               tab === key
-                ? 'border-gold font-semibold text-gold-2'
+                ? 'border-[var(--accent)] font-semibold text-[var(--accent)]'
                 : 'border-transparent text-muted hover:text-ink-2',
             )}
           >
@@ -91,6 +92,6 @@ export function JobPage() {
       {tab === 'tasks' && <TasksTab role={role} band={band} />}
       {tab === 'pay' && <PayTab role={role} band={band} />}
       {tab === 'near' && <NearbyTab role={role} />}
-    </>
+    </RoleTheme>
   );
 }

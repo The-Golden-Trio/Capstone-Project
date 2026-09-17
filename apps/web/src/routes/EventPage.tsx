@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { findEvent, findRole } from '@datn/game-core';
+import { RoleTheme } from '../components/game/RoleTheme';
 import { Card, CardBody, CardHeader } from '../components/ui/Card';
 import { Note, SectionLabel } from '../components/ui/Note';
 import { Pill } from '../components/ui/Pill';
@@ -43,6 +44,7 @@ export function EventPage() {
   };
 
   return (
+    <RoleTheme roleCode={role.role_code}>
     <Card className="max-w-[640px]">
       <CardHeader title={event.title}>
         {event.measures.map((m) => (
@@ -68,9 +70,9 @@ export function EventPage() {
               type="button"
               disabled={busy}
               onClick={() => void choose(index)}
-              className="flex w-full gap-[11px] rounded-[9px] border border-line bg-surf px-[15px] py-[13px] text-left text-[13.5px] leading-normal text-ink transition-colors hover:border-gold disabled:opacity-50"
+              className="action-card flex w-full items-start gap-3 rounded-[10px] border border-line bg-surf px-4 py-3.5 text-left text-[13.5px] leading-normal text-ink disabled:opacity-50"
             >
-              <span className="shrink-0 font-mono text-[11px] text-muted">
+              <span className="keycap mt-px font-mono text-[10px] text-muted">
                 {OPTION_KEYS[index]}
               </span>
               <span>{choice.text}</span>
@@ -79,5 +81,6 @@ export function EventPage() {
         </div>
       </CardBody>
     </Card>
+    </RoleTheme>
   );
 }

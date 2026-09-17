@@ -37,14 +37,18 @@ export function PrioritizingActivity({
               disabled={!on && full}
               onClick={() => onToggle(item.item_id)}
               className={cx(
-                'flex w-full items-start gap-3 rounded-[9px] border bg-surf px-[15px] py-[13px] text-left text-ink transition-colors disabled:cursor-not-allowed disabled:opacity-40',
-                on ? 'border-gold bg-gold-soft' : 'border-line hover:not-disabled:border-gold',
+                'action-card flex w-full items-start gap-3 rounded-[10px] border bg-surf px-4 py-3.5 text-left text-ink disabled:cursor-not-allowed disabled:opacity-40',
+                on
+                  ? 'border-[var(--accent)] bg-[var(--accent-soft)]'
+                  : 'border-line',
               )}
             >
               <span
                 className={cx(
-                  'mt-px flex h-[19px] w-[19px] shrink-0 items-center justify-center rounded-[5px] border-[1.5px] text-[11px] text-bg',
-                  on ? 'border-gold bg-gold' : 'border-line',
+                  'mt-px flex h-[19px] w-[19px] shrink-0 items-center justify-center rounded-[5px] border-[1.5px] text-[11px] text-bg transition-colors',
+                  on
+                    ? 'border-[var(--accent)] bg-[var(--accent)]'
+                    : 'border-line',
                 )}
                 aria-hidden="true"
               >

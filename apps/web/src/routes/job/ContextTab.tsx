@@ -1,4 +1,5 @@
-import { bandLabel, findScenario, formatVnd, initials, type Role } from '@datn/game-core';
+import { bandLabel, findScenario, formatVnd, type Role } from '@datn/game-core';
+import { Crest } from '../../components/game/Crest';
 import { Button } from '../../components/ui/Button';
 import { Card, CardBody, CardHeader } from '../../components/ui/Card';
 import { Note } from '../../components/ui/Note';
@@ -34,15 +35,13 @@ export function ContextTab({ role, band, onGoToTasks }: ContextTabProps) {
 
       {entry ? (
         <Card className="mb-4">
-          <CardHeader title="Bạn sẽ làm việc với">
+          <CardHeader title="Những người bạn sẽ gặp">
             <Pill>{entry.scenario.cast.length} người</Pill>
           </CardHeader>
           <CardBody>
             {entry.scenario.cast.map((member) => (
               <div key={member.npc_id} className="mb-3 flex gap-[11px]">
-                <span className="flex h-[33px] w-[33px] shrink-0 items-center justify-center rounded-full bg-chip text-[12px] font-semibold text-gold-2">
-                  {initials(member.role_in_scene)}
-                </span>
+                <Crest seed={member.npc_id} size={34} />
                 <div className="flex-1">
                   <div className="text-[13.5px] font-semibold">
                     {member.role_in_scene}

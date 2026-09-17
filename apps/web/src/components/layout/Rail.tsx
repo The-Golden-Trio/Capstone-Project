@@ -1,10 +1,10 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { GAME, eventsForRole, findRole, findScenario, shortRoleName } from '@datn/game-core';
-import { useAuthStore } from '../../store/authStore';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProfileStore } from '../../store/profileStore';
 import { useProgressStore } from '../../store/progressStore';
 import { cx } from '../../lib/cx';
+import { CharacterPanel } from './CharacterPanel';
 import { Icon, type IconName } from './icons';
 import { Logo } from './Logo';
 
@@ -101,7 +101,6 @@ function remainingTasks(
 }
 
 export function Rail({ onNavigate }: { onNavigate: () => void }) {
-  const user = useAuthStore((s) => s.user);
   const profile = useProfileStore();
   const { summary, runs } = useProgressStore();
   const { roleCode, band } = useJourneyStore();
@@ -173,25 +172,7 @@ export function Rail({ onNavigate }: { onNavigate: () => void }) {
         />
       </nav>
 
-      <div className="border-t border-line-2 px-3.5 py-3">
-        <NavLink
-          to="/account"
-          onClick={onNavigate}
-          className="flex items-center gap-2.5 rounded-[7px] p-1 transition-colors hover:bg-panel"
-        >
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-[13px] font-bold text-rail">
-            {(user?.displayName ?? '?')[0].toUpperCase()}
-          </span>
-          <div className="min-w-0">
-            <div className="truncate text-[13px] font-semibold leading-tight">
-              {user?.displayName ?? 'Khách'}
-            </div>
-            <div className="font-mono text-[10px] text-muted">
-              {summary?.totalPoints ?? 0} điểm · {profile.eventsPlayed} nhiệm vụ
-            </div>
-          </div>
-        </NavLink>
-      </div>
+      <CharacterPanel onNavigate={onNavigate} />
     </div>
   );
 }

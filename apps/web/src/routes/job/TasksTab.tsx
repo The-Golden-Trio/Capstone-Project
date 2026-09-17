@@ -26,8 +26,8 @@ function QuestCard({ main, done, tags, title, meta, onClick }: QuestCardProps) {
       type="button"
       onClick={onClick}
       className={cx(
-        'mb-2.5 block w-full rounded-[10px] border border-l-[3px] border-line bg-surf px-4 py-3.5 text-left text-ink transition-colors hover:border-gold hover:border-l-gold',
-        main ? 'border-l-gold' : 'border-l-line',
+        'action-card mb-2.5 block w-full rounded-[10px] border border-line bg-surf px-4 py-3.5 text-left text-ink',
+        main && 'border-[var(--accent)]/40',
         done && 'opacity-50',
       )}
     >
@@ -79,13 +79,13 @@ export function TasksTab({ role, band }: { role: Role; band: string }) {
 
       {entry && (
         <>
-          <SectionLabel>Nhiệm vụ chính — mang lại điểm kỹ năng</SectionLabel>
+          <SectionLabel>Nhiệm vụ chính — nơi duy nhất có điểm kỹ năng</SectionLabel>
           <QuestCard
             main
             done={playedScenario.has(entry.key)}
             tags={
               <>
-                <Pill tone="gold">NHIỆM VỤ CHÍNH</Pill>
+                <span className="rounded-full bg-[var(--accent-soft)] px-2 py-[3px] font-mono text-[9.5px] tracking-[0.05em] text-[var(--accent)]">NHIỆM VỤ CHÍNH</span>
                 <Pill>{entry.scenario.context.scenario_archetype}</Pill>
                 {playedScenario.has(entry.key) && (
                   <Pill tone="good">đã chơi</Pill>

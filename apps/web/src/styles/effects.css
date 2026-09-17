@@ -197,3 +197,131 @@
     }
   }
 }
+
+/* ═══ Chất game ═══
+   Chuyển động ở đây đều ngắn và có lý do: cho người chơi thấy hành động của
+   mình có tác dụng. Khối `prefers-reduced-motion: reduce` ở styles.css tắt
+   toàn bộ transition lẫn animation, nên không chỗ nào phải tự nhớ điều đó. */
+
+/* ── Thẻ hành động ──
+   Lựa chọn trong màn chơi là hành động, nên phải bấm được như một cái nút
+   thật: nhấc lên khi rê, lún xuống khi bấm. */
+.action-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.14s ease,
+    border-color 0.14s ease,
+    box-shadow 0.14s ease;
+}
+.action-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent, var(--color-gold));
+  opacity: 0;
+  transition: opacity 0.14s ease;
+}
+.action-card:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--accent, var(--color-gold));
+  box-shadow: 0 10px 22px -16px var(--accent-glow, rgba(212, 176, 106, 0.45));
+}
+.action-card:hover:not(:disabled)::before,
+.action-card[aria-pressed='true']::before {
+  opacity: 1;
+}
+.action-card:active:not(:disabled) {
+  transform: translateY(0) scale(0.995);
+}
+
+/* phím tắt hiện trên thẻ hành động */
+.keycap {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  border: 1px solid var(--color-line);
+  background: var(--color-inset);
+  box-shadow: 0 2px 0 var(--color-line-2);
+}
+
+/* ── Huy hiệu nhân vật đang nói ── */
+.crest-active {
+  filter: drop-shadow(0 0 7px var(--accent-glow, rgba(212, 176, 106, 0.45)));
+}
+
+/* ── Hiện dần từng dòng ──
+   Bằng chứng ở màn tổng kết hiện lần lượt, để người chơi đọc kịp thay vì bị
+   dội cả bảng điểm vào mặt. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal 0.32s ease-out backwards;
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* ── Mở cấp bậc ──
+     Khoảnh khắc đáng ăn mừng duy nhất của cả màn chơi. */
+  .level-up {
+    animation: level-up 0.9s ease-out;
+  }
+  @keyframes level-up {
+    0% {
+      transform: scale(0.94);
+      box-shadow: 0 0 0 0 var(--color-good);
+    }
+    45% {
+      transform: scale(1.02);
+      box-shadow: 0 0 34px -6px var(--color-good);
+    }
+    100% {
+      transform: none;
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+
+  /* ── Nhịp đập của dải khẩn cấp ── */
+  .pulse-stakes {
+    animation: pulse-stakes 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse-stakes {
+    0%,
+    100% {
+      border-color: var(--color-stakes);
+    }
+    50% {
+      border-color: rgba(224, 138, 91, 0.35);
+    }
+  }
+}
+
+/* ── Thanh tiến trình cảnh ── */
+.scene-step {
+  height: 3px;
+  flex: 1;
+  border-radius: 2px;
+  background: var(--color-line);
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3s ease;
+}
+.scene-step.done {
+  background: var(--accent, var(--color-gold));
+}
+.scene-step.now {
+  background: var(--accent, var(--color-gold));
+  opacity: 0.45;
+}

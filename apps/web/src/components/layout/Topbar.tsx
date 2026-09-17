@@ -37,11 +37,21 @@ export function Topbar({ onOpenNav }: { onOpenNav: () => void }) {
 
       <span className="flex-1" />
 
-      <span className="flex items-center gap-1.5 whitespace-nowrap rounded-full border border-line-2 bg-inset px-2.5 py-[5px] font-mono text-[11px] text-muted max-[900px]:hidden">
-        điểm kỹ năng <b className="font-semibold text-gold-2">{summary?.totalPoints ?? 0}</b>
-      </span>
-      <span className="flex items-center gap-1.5 whitespace-nowrap rounded-full border border-line-2 bg-inset px-2.5 py-[5px] font-mono text-[11px] text-muted max-[900px]:hidden">
-        nhiệm vụ <b className="font-semibold text-gold-2">{profile.eventsPlayed}</b>
+      {/* Một chỉ báo gọn thay cho hai ô số liệu rời: điểm kỹ năng là thứ
+          vận hành cả hệ thống, nên nó đứng trước và được tô màu. */}
+      <span className="flex items-center gap-2 whitespace-nowrap rounded-full border border-line-2 bg-inset px-3 py-[5px] font-mono text-[11px] text-muted max-[900px]:hidden">
+        <span className="text-gold" aria-hidden="true">
+          ◆
+        </span>
+        <b className="font-semibold tabular-nums text-gold-2">
+          {summary?.totalPoints ?? 0}
+        </b>
+        điểm kỹ năng
+        <span className="text-line">·</span>
+        <b className="font-semibold tabular-nums text-ink-2">
+          {profile.eventsPlayed}
+        </b>
+        nhiệm vụ phụ
       </span>
     </header>
   );

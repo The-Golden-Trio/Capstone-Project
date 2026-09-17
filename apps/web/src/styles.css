@@ -25,6 +25,19 @@
   --color-signal: #e07a6b;
   --color-signal-soft: rgba(224, 122, 107, 0.14);
 
+  /* ── Màu mang nghĩa ──
+     Ba thứ dữ liệu có nói mà giao diện cũ chưa nói được. */
+
+  /* kỹ năng cứng và kỹ năng mềm — dataset đã gắn nhãn `skill_type` */
+  --color-skill-hard: #6fc9c9;
+  --color-skill-soft: #d89bd2;
+  --color-skill-hard-soft: rgba(111, 201, 201, 0.13);
+  --color-skill-soft-soft: rgba(216, 155, 210, 0.13);
+
+  /* mức độ khẩn — dải "chuyện gì mất nếu không xong" */
+  --color-stakes: #e08a5b;
+  --color-stakes-soft: rgba(224, 138, 91, 0.13);
+
   --font-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'Montserrat', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;

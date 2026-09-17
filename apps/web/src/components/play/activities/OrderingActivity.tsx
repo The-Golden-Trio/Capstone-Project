@@ -24,9 +24,9 @@ export function OrderingActivity({
         {order.map((itemId, index) => (
           <div
             key={itemId}
-            className="flex items-stretch gap-[9px] overflow-hidden rounded-[9px] border border-line bg-surf"
+            className="action-card flex items-stretch gap-[9px] overflow-hidden rounded-[10px] border border-line bg-surf"
           >
-            <span className="flex w-8 shrink-0 items-center justify-center bg-chip font-mono text-[12px] font-bold text-gold-2">
+            <span className="flex w-9 shrink-0 items-center justify-center bg-[var(--accent-soft)] font-mono text-[13px] font-bold text-[var(--accent)]">
               {index + 1}
             </span>
             <span className="flex-1 self-center py-3 pl-0.5 pr-1 text-[13.5px] leading-snug">
@@ -38,7 +38,7 @@ export function OrderingActivity({
                 onClick={() => onMove(index, -1)}
                 disabled={index === 0}
                 aria-label={`Đưa "${textOf(itemId)}" lên trên`}
-                className="w-9 flex-1 border-b border-line-2 text-[12px] text-muted hover:not-disabled:bg-chip hover:not-disabled:text-gold-2 disabled:cursor-not-allowed disabled:opacity-25"
+                className="w-9 flex-1 border-b border-line-2 text-[12px] text-muted transition-colors hover:not-disabled:bg-chip hover:not-disabled:text-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-25"
               >
                 ▲
               </button>
@@ -47,7 +47,7 @@ export function OrderingActivity({
                 onClick={() => onMove(index, 1)}
                 disabled={index === order.length - 1}
                 aria-label={`Đưa "${textOf(itemId)}" xuống dưới`}
-                className="w-9 flex-1 text-[12px] text-muted hover:not-disabled:bg-chip hover:not-disabled:text-gold-2 disabled:cursor-not-allowed disabled:opacity-25"
+                className="w-9 flex-1 text-[12px] text-muted transition-colors hover:not-disabled:bg-chip hover:not-disabled:text-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-25"
               >
                 ▼
               </button>
