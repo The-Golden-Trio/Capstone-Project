@@ -1,6 +1,4 @@
-/* SINH TU DONG — dung sua tay. Sinh lai: node docs/data/build.mjs */
-
-window.GAME = {
+{
   "_meta": {
     "generated_at": "2026-09-17",
     "source_dataset": "occupation-data/dataset_22_roles_enriched_v3.json",
@@ -3793,4 +3791,4 @@ window.GAME = {
       ]
     }
   }
-};
+}

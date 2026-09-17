@@ -12,9 +12,10 @@
 
 import fs from 'fs';
 
-const DATASET = 'occupation-data/dataset_22_roles_enriched_v3.json';
-const QUIZ    = 'occupation-data/shared/fit_quiz.json';
-const GROUP   = 'Software Engineering & Architecture';
+const DATASET  = 'occupation-data/dataset_22_roles_enriched_v3.json';
+const QUIZ     = 'occupation-data/shared/fit_quiz.json';
+const GROUP    = 'Software Engineering & Architecture';
+const JSON_OUT = 'apps/web/src/data/game-data.json';
 
 const SCENARIOS = [
   ['SWE_BACKEND_L1_S_EXEC',     'occupation-data/scenarios/SWE_BACKEND/L1_S_EXEC.json'],
@@ -86,9 +87,16 @@ const out = {
   scenarios: Object.fromEntries(SCENARIOS.map(([k, p]) => [k, read(p)])),
 };
 
+const json = JSON.stringify(out, null, 2);
+
+// Mot nguon, hai dau ra:
+//   .json  — app React import truc tiep (apps/web)
+//   .js    — docs/prototype.html mo bang file://, khong fetch() duoc vi CORS
+fs.mkdirSync('apps/web/src/data', { recursive: true });
+fs.writeFileSync(JSON_OUT, json + '\n');
 fs.writeFileSync('docs/data/game-data.js',
   `/* SINH TU DONG — dung sua tay. Sinh lai: node docs/data/build.mjs */\n\n` +
-  `window.GAME = ${JSON.stringify(out, null, 2)};\n`);
+  `window.GAME = ${json};\n`);
 
 /* ── kiem ngay luc sinh ─────────────────────────────────────────────── */
 const codes = new Set(roles.map(r => r.role_code));
@@ -103,7 +111,7 @@ for (const [k, s] of Object.entries(out.scenarios))
   if (!codes.has(s.job.role_code)) prob.push(`${k}: role_code ngoai nhom ${GROUP}`);
 
 const evCount = roles.reduce((n, r) => n + r.events.length, 0);
-console.log(`docs/data/game-data.js da sinh:`);
+console.log(`${JSON_OUT} + docs/data/game-data.js da sinh:`);
 console.log(`  ${roles.length} nghe | ${evCount} su kien rieng + ${out.shared_events.length} dung chung`);
 console.log(`  ${Object.keys(out.scenarios).length} kich ban | ${quiz.questions.length} cau hoi`);
 console.log(`  cap bac mo dau: ${roles.map(r => r.role_code + '=' + r.band_start).join(', ')}`);

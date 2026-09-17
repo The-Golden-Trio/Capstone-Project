@@ -1,5 +1,34 @@
 {
   "name": "@datn/web",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "nx": {
+    "targets": {
+      "build-data": {
+        "executor": "nx:run-commands",
+        "cache": true,
+        "inputs": [
+          "{workspaceRoot}/docs/data/build.mjs",
+          "{workspaceRoot}/occupation-data/**/*.json"
+        ],
+        "outputs": [
+          "{projectRoot}/src/data/game-data.json",
+          "{workspaceRoot}/docs/data/game-data.js"
+        ],
+        "options": {
+          "command": "node docs/data/build.mjs",
+          "cwd": "{workspaceRoot}"
+        }
+      },
+      "build": {
+        "dependsOn": ["build-data"]
+      },
+      "dev": {
+        "dependsOn": ["build-data"]
+      },
+      "typecheck": {
+        "dependsOn": ["build-data"]
+      }
+    }
+  }
 }

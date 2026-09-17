@@ -1,0 +1,199 @@
+/* ═══ Hiệu ứng không viết được bằng utility ═══
+   Ba thứ ở đây cần gradient nhiều lớp, inset shadow và pseudo-element —
+   viết bằng class tay rõ hơn nhiều so với nhồi vào thuộc tính style.
+   Mọi thứ còn lại của app dùng Tailwind. */
+
+/* ── Hành tinh ──
+   Màu và góc nghiêng do `domain/planet.ts` quyết định, truyền vào bằng
+   ba biến CSS: --p1 (lõi), --p2 (được chiếu), --pa (góc dải mây). */
+.planet {
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(
+    circle at 32% 26%,
+    var(--p2),
+    var(--p1) 58%,
+    #05091a 100%
+  );
+  box-shadow:
+    inset -9px -11px 26px rgba(0, 0, 0, 0.6),
+    inset 5px 6px 18px rgba(255, 255, 255, 0.07),
+    0 0 34px -8px var(--p2);
+}
+
+/* dải mây ngang thân hành tinh */
+.planet::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0.5;
+  background: repeating-linear-gradient(
+    var(--pa),
+    transparent 0 7%,
+    rgba(0, 0, 0, 0.28) 7% 11%,
+    transparent 11% 19%,
+    rgba(255, 255, 255, 0.05) 19% 22%
+  );
+}
+
+.planet-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.planet-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 2px solid var(--p2);
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%) rotate(-19deg) scaleY(0.26);
+  pointer-events: none;
+}
+
+.planet-moon {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--p2);
+  opacity: 0.8;
+  box-shadow: 0 0 10px -2px var(--p2);
+}
+
+.orb .planet-wrap {
+  transition: transform 0.18s;
+}
+.orb:hover .planet-wrap {
+  transform: translateY(-5px) scale(1.05);
+}
+.orb:hover .planet {
+  box-shadow:
+    inset -9px -11px 26px rgba(0, 0, 0, 0.6),
+    inset 5px 6px 18px rgba(255, 255, 255, 0.09),
+    0 0 46px -4px var(--p2);
+}
+.orb.dim .planet {
+  filter: saturate(0.35) brightness(0.6);
+}
+
+/* so le các hành tinh trên bản đồ cho khỏi thẳng hàng như bảng tính */
+.starmap .orb:nth-child(4n + 1) {
+  margin-top: 4px;
+}
+.starmap .orb:nth-child(4n + 2) {
+  margin-top: 26px;
+}
+.starmap .orb:nth-child(4n + 3) {
+  margin-top: 12px;
+}
+.starmap .orb:nth-child(4n) {
+  margin-top: 34px;
+}
+
+/* ── Nền sao ──
+   Các lớp radial-gradient lát nền. Thuần CSS — không JS, không canvas,
+   nên không có gì để hỏng. Mỗi lớp một cỡ lát khác nhau nên mắt không
+   bắt được quy luật lặp. */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+      1.4px 1.4px at 23% 17%,
+      rgba(200, 215, 235, 0.5),
+      transparent 62%
+    ),
+    radial-gradient(1.1px 1.1px at 71% 44%, rgba(240, 215, 154, 0.44), transparent 62%),
+    radial-gradient(1px 1px at 46% 78%, rgba(200, 215, 235, 0.36), transparent 62%),
+    radial-gradient(1.6px 1.6px at 88% 12%, rgba(200, 215, 235, 0.3), transparent 62%),
+    radial-gradient(1px 1px at 12% 61%, rgba(240, 215, 154, 0.28), transparent 62%),
+    radial-gradient(1.2px 1.2px at 57% 29%, rgba(200, 215, 235, 0.34), transparent 62%),
+    radial-gradient(1px 1px at 34% 91%, rgba(200, 215, 235, 0.26), transparent 62%);
+  background-size: 347px 311px, 269px 241px, 419px 383px, 233px 287px,
+    311px 199px, 179px 263px, 397px 331px;
+  background-repeat: repeat;
+}
+
+/* ── Chòm sao: đường nối giữa các hành tinh ── */
+.constellation-line {
+  stroke-linecap: round;
+}
+.constellation-line.sim {
+  stroke: var(--color-blue);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 6;
+  opacity: 0.42;
+}
+.constellation-line.up {
+  stroke: var(--color-gold);
+  stroke-width: 1.5;
+  opacity: 0.42;
+}
+.constellation-line.hot {
+  opacity: 0.9;
+}
+.constellation-line.up.hot {
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 5px var(--color-gold));
+}
+
+/* ── Hành trình cấp bậc: đường dọc nối các chặng ── */
+.roadmap {
+  position: relative;
+  padding-left: 30px;
+}
+.roadmap::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: linear-gradient(var(--color-gold), var(--color-line) 60%);
+}
+.roadmap-stop::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-line);
+  transform: translateY(-50%);
+}
+.roadmap-stop.open::before {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 12px -1px var(--color-gold);
+}
+.roadmap-stop.current::before {
+  width: 17px;
+  height: 17px;
+  left: -28px;
+}
+
+/* ── Thông báo nổi ── */
+@media (prefers-reduced-motion: no-preference) {
+  .toast-pop {
+    animation: toast-pop 0.22s ease-out;
+  }
+  @keyframes toast-pop {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

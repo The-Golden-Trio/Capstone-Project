@@ -1,1 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+@import './styles/effects.css';
+
+/* ═══ Celestial Night ═══
+   Bảng màu cam kết một thế giới tối, không có biến thể sáng.
+   Mọi màu sơn tường minh — không dùng `dark:` ở đâu cả. */
+@theme {
+  --color-bg: #0a1026; /* Deep Space */
+  --color-rail: #080d1f; /* sidebar, tối hơn nội dung */
+  --color-surf: #142b52; /* Midnight Blue */
+  --color-panel: #101f3d;
+  --color-inset: #0d1f3f;
+  --color-chip: #1f3e68;
+  --color-line: #254a7a; /* Constellation */
+  --color-line-2: #1c3862;
+  --color-blue: #5d7ea8; /* Moonlight */
+  --color-ink: #f8f6ee; /* Ivory White */
+  --color-ink-2: #c7d2e0;
+  --color-muted: #8fa6c4;
+  --color-gold: #d4b06a; /* Starlight Gold */
+  --color-gold-2: #f0d79a; /* Soft Gold */
+  --color-gold-soft: rgba(212, 176, 106, 0.13);
+  --color-good: #74c69d;
+  --color-good-soft: rgba(116, 198, 157, 0.12);
+  --color-signal: #e07a6b;
+  --color-signal-soft: rgba(224, 122, 107, 0.14);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --shadow-lift:
+    0 1px 2px rgba(0, 0, 0, 0.5), 0 18px 44px -24px rgba(0, 0, 0, 0.95);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    margin: 0;
+  }
+
+  button,
+  input,
+  textarea {
+    font-family: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  [tabindex]:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
