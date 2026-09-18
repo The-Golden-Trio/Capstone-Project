@@ -11,7 +11,13 @@ export interface FollowupLine {
   text: string;
 }
 
-const FOLLOWUP_LINES: Record<string, FollowupLine> = {
+/**
+ * Khoá là `"<scenarioKey>:<activityId>"`.
+ *
+ * Xuất ra ngoài để script seed đọc được — đây là nội dung, không phải luật,
+ * nên nó đang trên đường chuyển vào database cùng với kịch bản.
+ */
+export const FOLLOWUP_LINES: Record<string, FollowupLine> = {
   'SWE_BACKEND_L3_S_INCIDENT:a2': {
     who: 'an',
     text: 'Chuẩn. Thế còn cái endpoint này — nó có giới hạn số đơn trả về không? Anh hỏi thật đấy.',

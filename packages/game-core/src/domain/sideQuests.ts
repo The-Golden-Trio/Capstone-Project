@@ -14,7 +14,7 @@
  * đúng những nhiệm vụ ấy.
  */
 import type { GameEvent, Role } from '../data/schema.js';
-import { eventsForRole } from '../data/indexes.js';
+import type { GameIndex } from '../data/indexes.js';
 import { BANDS, UNLOCK_AT, SIDE_QUEST_POINTS } from './bands.js';
 
 /** Mỗi đảo bày ra từng này nhiệm vụ phụ. */
@@ -70,8 +70,12 @@ export function sideQuestCount(roleCode: string, band: string): number {
  * thêm theo thứ tự gần nhất. Trộn có hạt giống để hai chặng liền nhau không
  * ra cùng một danh sách dù cùng đủ điều kiện.
  */
-export function sideQuestsFor(role: Role, band: string): GameEvent[] {
-  const all = eventsForRole(role);
+export function sideQuestsFor(
+  role: Role,
+  band: string,
+  index: GameIndex,
+): GameEvent[] {
+  const all = index.eventsForRole(role);
   const want = sideQuestCount(role.role_code, band);
 
   const ranked = [...all].sort((a, b) => {
@@ -100,8 +104,15 @@ export function sideQuestsFor(role: Role, band: string): GameEvent[] {
  * Máy chủ cũng gọi hàm này để biết một nhiệm vụ đang hỏi theo kiểu nào — nhờ
  * vậy không ai gửi thẳng số thứ tự phương án cho một câu lẽ ra phải tự viết.
  */
-export function questKind(role: Role, band: string, eventId: string): QuestKind {
-  const at = sideQuestsFor(role, band).findIndex((e) => e.event_id === eventId);
+export function questKind(
+  role: Role,
+  band: string,
+  eventId: string,
+  index: GameIndex,
+): QuestKind {
+  const at = sideQuestsFor(role, band, index).findIndex(
+    (e) => e.event_id === eventId,
+  );
   if (at < 0) return 'CHOICE';
 
   const start = hash(`${role.role_code}:${band}:kind`);

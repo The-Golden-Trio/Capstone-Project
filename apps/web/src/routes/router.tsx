@@ -1,13 +1,9 @@
 import { Suspense, lazy } from 'react';
 import { Navigate, createBrowserRouter, type RouteObject } from 'react-router-dom';
-import {
-  findRole,
-  findScenarioByKey,
-  roleName,
-  shortName,
-} from '@datn/game-core';
+import { shortName } from '@datn/game-core';
 import type { CrumbHandle } from '../hooks/useBreadcrumbs';
 import type { FullBleedHandle } from '../components/layout/AppShell';
+import { getContentIndex } from '../store/contentStore';
 import { AccountPage } from './AccountPage';
 import { ErrorPage } from './ErrorPage';
 import { ProfilePage } from './ProfilePage';
@@ -39,7 +35,9 @@ const GalaxyFallback = () => (
 
 /** Mẩu bánh mì "Bản đồ nghề / <tên nghề>" dùng lại ở mọi route con của một nghề. */
 const roleCrumbs: CrumbHandle['crumbs'] = ({ roleCode, band }) => {
-  const role = findRole(roleCode);
+  // Callback này chạy ngoài React nên lấy bảng tra qua store; tới lúc nó chạy
+  // thì cổng `RequireAuth` đã nạp xong nội dung.
+  const role = getContentIndex()?.findRole(roleCode);
   if (!role || !band) return [{ label: 'Bản đồ nghề', to: '/jobs' }];
   return [
     { label: 'Bản đồ nghề', to: '/jobs' },
@@ -120,15 +118,17 @@ const routes: RouteObject[] = [
         path: 'play/:scenarioKey',
         handle: {
           crumbs: ({ scenarioKey }) => {
-            const entry = scenarioKey
-              ? findScenarioByKey(scenarioKey)
-              : undefined;
-            if (!entry) return [{ label: 'Màn chơi' }];
+            const content = getContentIndex();
+            const entry =
+              scenarioKey && content
+                ? content.findScenarioByKey(scenarioKey)
+                : undefined;
+            if (!entry || !content) return [{ label: 'Màn chơi' }];
             const { role_code, band } = entry.scenario.job;
             return [
               { label: 'Bản đồ nghề', to: '/jobs' },
               {
-                label: shortName(roleName(role_code)),
+                label: shortName(content.roleName(role_code)),
                 to: `/jobs/${role_code}/${band}`,
               },
               { label: entry.scenario.scenario_title },

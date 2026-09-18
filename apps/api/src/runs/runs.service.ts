@@ -5,20 +5,20 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import {
-  findRole,
-  findScenarioByKey,
   keywordGrader,
   mulberry32,
   newSeed,
   pointsEarned,
   runReducer,
-  skillTypeOf,
   startRun,
   type EngineDeps,
+  type FollowupLine,
+  type Scenario,
   type RunAction,
   type RunState,
   type SkillType,
 } from '@datn/game-core';
+import { ContentService } from '../content/content.service';
 import { PrismaService } from '../prisma/prisma.service';
 import { ProgressService } from '../progress/progress.service';
 import type { CompleteRunDto } from './dto/run.dto';
@@ -69,10 +69,24 @@ export class RunsService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly progress: ProgressService,
+    private readonly content: ContentService,
   ) {}
 
-  private deps(seed: number): EngineDeps {
+  /**
+   * Phụ thuộc cho một lần chạy lại.
+   *
+   * Kịch bản được đưa vào chứ engine không tự đi tìm. Nhờ vậy chỗ này sẽ là
+   * nơi duy nhất cần đổi khi nội dung chuyển hẳn sang database: chạy lại bằng
+   * đúng bản đã ghim cho lượt chơi ấy, không phải bản mới nhất.
+   */
+  private deps(
+    scenario: Scenario,
+    followupLine: (activityId: string) => FollowupLine | undefined,
+    seed: number,
+  ): EngineDeps {
     return {
+      scenario,
+      followupLine,
       grader: keywordGrader,
       rng: mulberry32(seed),
       // Hết giờ là do máy khách gửi hành động TIMEOUT; máy chủ không đếm giờ hộ.
@@ -83,11 +97,16 @@ export class RunsService {
   /* ── Mở màn ──────────────────────────────────────────────────────── */
 
   async start(userId: string, scenarioKey: string): Promise<StartedRun> {
-    const entry = findScenarioByKey(scenarioKey);
+    // Ghim phiên bản nội dung ngay lúc mở màn: từ giây này lượt chơi là bất
+    // biến, nội dung có được seed bản mới thì lượt đang dở vẫn chấm đúng.
+    const contentVersion = await this.content.activeVersion();
+    const index = await this.content.indexAt(contentVersion);
+
+    const entry = index.findScenarioByKey(scenarioKey);
     if (!entry) throw new NotFoundException('Không có kịch bản này');
 
     const { role_code: roleCode, band } = entry.scenario.job;
-    const role = findRole(roleCode);
+    const role = index.findRole(roleCode);
     if (!role) throw new NotFoundException('Không có nghề này');
 
     // Chỗ cấm cửa thật: chưa đủ điểm ở cấp trước thì không mở được màn này.
@@ -106,6 +125,7 @@ export class RunsService {
         roleCode,
         band,
         seed: BigInt(seed),
+        contentVersion,
       },
     });
 
@@ -129,8 +149,13 @@ export class RunsService {
       throw new BadRequestException('Lượt chơi này đã được chấm rồi');
     }
 
-    const final = this.replay(
+    // Cùng một bảng tra cho cả việc chạy lại lẫn việc gắn loại kỹ năng vào
+    // bằng chứng: đúng phiên bản nội dung mà lượt chơi này đã ghim.
+    const playedIndex = await this.content.indexAt(run.contentVersion);
+
+    const final = await this.replay(
       run.scenarioKey,
+      run.contentVersion,
       Number(run.seed),
       dto.actions as RunAction[],
     );
@@ -211,8 +236,14 @@ export class RunsService {
         run.band,
       ),
       alreadyScored: Boolean(previouslyScored),
-      // Bảng RunEvidence chỉ giữ tên kỹ năng; loại tra từ dataset, như `history()`.
-      evidence: evidence.map((e) => ({ ...e, skillType: skillTypeOf(e.skill) })),
+      // Bảng RunEvidence chỉ giữ tên kỹ năng; loại tra từ nội dung. Tra ở
+      // ĐÚNG phiên bản lượt chơi đã ghim, cùng bản vừa dùng để chạy lại — nếu
+      // không, bảng tổng kết có thể nói một kỹ năng là "mềm" trong khi lúc
+      // chơi nó được chấm như "cứng".
+      evidence: evidence.map((e) => ({
+        ...e,
+        skillType: playedIndex.skillTypeOf(e.skill),
+      })),
     };
   }
 
@@ -222,12 +253,23 @@ export class RunsService {
    * Tách riêng ra vì đây là phần đáng kiểm nhất của cả hệ thống, và vì máy
    * chủ phải chạy nó y hệt cách máy khách đã chạy.
    */
-  private replay(
+  private async replay(
     scenarioKey: string,
+    contentVersion: number,
     seed: number,
     actions: RunAction[],
-  ): RunState {
-    const deps = this.deps(seed);
+  ): Promise<RunState> {
+    // Đúng phiên bản đã ghim, không phải bản mới nhất. Đây là điều khiến việc
+    // chấm bằng chạy lại còn đúng sau khi nội dung đổi.
+    const index = await this.content.indexAt(contentVersion);
+    const entry = index.findScenarioByKey(scenarioKey);
+    if (!entry) throw new NotFoundException('Không có kịch bản này');
+
+    const followupLine = await this.content.followupLookup(
+      contentVersion,
+      scenarioKey,
+    );
+    const deps = this.deps(entry.scenario, followupLine, seed);
     let state: RunState;
     try {
       state = startRun(scenarioKey, deps);
@@ -257,11 +299,15 @@ export class RunsService {
       take: 50,
     });
 
+    // Nhan đề lấy theo bản đang phục vụ chứ không theo bản đã ghim: đây chỉ là
+    // nhãn cho danh sách lịch sử, còn bản đã ghim thì dành cho việc chấm.
+    const index = await this.content.index();
+
     return runs.map((run) => ({
       id: run.id,
       scenarioKey: run.scenarioKey,
       scenarioTitle:
-        findScenarioByKey(run.scenarioKey)?.scenario.scenario_title ??
+        index.findScenarioByKey(run.scenarioKey)?.scenario.scenario_title ??
         run.scenarioKey,
       roleCode: run.roleCode,
       band: run.band,
@@ -273,7 +319,7 @@ export class RunsService {
       evidence: run.evidence.map((e) => ({
         activityId: e.activityId,
         skill: e.skill,
-        skillType: skillTypeOf(e.skill),
+        skillType: index.skillTypeOf(e.skill),
         anchor: e.anchor,
         capped: e.capped,
         why: e.why,

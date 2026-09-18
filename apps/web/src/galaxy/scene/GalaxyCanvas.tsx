@@ -8,7 +8,7 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, EffectComposer, Vignette } from '@react-three/postprocessing';
-import { GALAXY, edgeBetween, isPlayable } from '../galaxy';
+import { galaxyData, edgeBetween, isPlayable } from '../galaxy';
 import { useGalaxyUiStore } from '../galaxyStore';
 import { Background } from './Background';
 import { CameraRig } from './CameraRig';
@@ -45,11 +45,11 @@ export function GalaxyCanvas({ current, unlocked }: GalaxyCanvasProps) {
       <Suspense fallback={null}>
         <ambientLight intensity={0.35} />
         <Background />
-        {GALAXY.groups.map((group) => (
+        {galaxyData().groups.map((group) => (
           <Sun key={group.short} group={group} />
         ))}
         <Routes current={current} unlocked={unlocked} />
-        {GALAXY.nodes.map((node) => (
+        {galaxyData().nodes.map((node) => (
           <Planet
             key={node.roleCode}
             node={node}

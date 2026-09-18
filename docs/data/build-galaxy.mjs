@@ -1,4 +1,4 @@
-// Sinh apps/web/src/galaxy/galaxy-data.ts — du lieu cho "Dai ngan ha nghe nghiep" (ban do 3D).
+// Sinh packages/game-core/data/galaxy-data.json — du lieu cho "Dai ngan ha nghe nghiep" (ban do 3D).
 // Chay:  node docs/data/build-galaxy.mjs
 //
 // Nguon:
@@ -17,7 +17,6 @@ import fs from 'fs';
 const GRAPH   = 'occupation-data/output/role_graph.json';
 const DATASET = 'occupation-data/dataset_22_roles_enriched_v3.json';
 const MERGED  = 'occupation-data/output/dataset_final_merged.json';
-const TS_OUT  = 'apps/web/src/galaxy/galaxy-data.ts';
 
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 const graph  = read(GRAPH);
@@ -323,10 +322,10 @@ const out = {
   edges: outEdges,
 };
 
-fs.mkdirSync('apps/web/src/galaxy', { recursive: true });
-fs.writeFileSync(TS_OUT,
-  `/* SINH TU DONG — dung sua tay. Sinh lai: node docs/data/build-galaxy.mjs */\n\n` +
-  `export const RAW_GALAXY_DATA: unknown = ${JSON.stringify(out, null, 2)};\n`);
+// Du lieu vao database qua script seed; web lay qua API.
+fs.mkdirSync('packages/game-core/data', { recursive: true });
+fs.writeFileSync('packages/game-core/data/galaxy-data.json',
+  `${JSON.stringify(out, null, 2)}\n`);
 
 /* ── kiem ngay luc sinh ───────────────────────────────────────────────── */
 let minPair = Infinity, minNames = '';
@@ -338,7 +337,7 @@ for (let i = 0; i < outNodes.length; i++) for (let j = i + 1; j < outNodes.lengt
 const radius = Math.max(...outNodes.map(n => Math.hypot(n.position[0], n.position[2])));
 const noHard = outNodes.filter(n => !n.hardSkills.length).map(n => n.roleCode);
 const noSoft = outNodes.filter(n => !n.softSkills.length).map(n => n.roleCode);
-console.log(`${TS_OUT} da sinh:`);
+console.log(`packages/game-core/data/galaxy-data.json da sinh:`);
 console.log(`  ${outNodes.length} hanh tinh | ${outEdges.length} canh | ${groups.length} he mat troi (vong thien ha r=${ringRadius.toFixed(0)}, thu tu: ${bestOrder.map(gi => GROUPS[gi].short).join(' → ')})`);
 for (const sys of systems) console.log(`    ${GROUPS[sys.gi].short.padEnd(6)} ${sys.orbits.map((o, i) => o.length ? `vong${i}[${o.map(m => m.code).join(',')}]` : '').filter(Boolean).join(' ')}`);
 console.log(`  ban kinh thien ha ~${radius.toFixed(0)} | cap gan nhat ${minPair.toFixed(1)} (${minNames})`);

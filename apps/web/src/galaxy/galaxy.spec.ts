@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { edgeBetween, isPlayable, neighborsOf, playPath, shortestPath, findPlanet } from './galaxy';
+import { fixtureIndex } from '@datn/game-core/testing';
+import { useContentStore } from '../store/contentStore';
+import { loadGalaxyFixture } from './galaxy.fixture';
+
+loadGalaxyFixture();
+// `isPlayable` hỏi bảng tra nghề, mà bảng ấy nay tới từ máy chủ — trong app
+// thật thì `RequireAuth` nạp trước khi vẽ, ở đây thì đặt thẳng vào store.
+useContentStore.setState({ index: fixtureIndex(), version: 1 });
 
 describe('neighborsOf', () => {
   it('xếp gần trước xa sau, không lặp', () => {

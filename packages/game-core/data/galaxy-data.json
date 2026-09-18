@@ -1,6 +1,4 @@
-/* SINH TU DONG — dung sua tay. Sinh lai: node docs/data/build-galaxy.mjs */
-
-export const RAW_GALAXY_DATA: unknown = {
+{
   "_meta": {
     "generated_at": "2026-09-18",
     "sources": [
@@ -2877,4 +2875,4 @@ export const RAW_GALAXY_DATA: unknown = {
       "sharedSkills": []
     }
   ]
-};
+}

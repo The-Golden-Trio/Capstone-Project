@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { findRole, rankRoles } from '@datn/game-core';
+import { rankRoles } from '@datn/game-core';
 import { FitRadar } from '../components/game/FitRadar';
 import { StarMap } from '../components/game/StarMap';
 import { PageHeader } from '../components/layout/PageHeader';
@@ -9,15 +9,17 @@ import { Note } from '../components/ui/Note';
 import { Pill } from '../components/ui/Pill';
 import { useProfileStore } from '../store/profileStore';
 import { useT } from '../i18n/useT';
+import { useGameIndex } from '../store/contentStore';
 
 export function QuizResultPage() {
   const navigate = useNavigate();
   const t = useT();
   const fit = useProfileStore((s) => s.fit);
-  const top = rankRoles(fit).slice(0, 3);
+  const content = useGameIndex();
+  const top = rankRoles(fit, content).slice(0, 3);
 
   const goToRole = (code: string) => {
-    const role = findRole(code);
+    const role = content.findRole(code);
     if (role) navigate(`/jobs/${code}/${role.band_start}`);
   };
 

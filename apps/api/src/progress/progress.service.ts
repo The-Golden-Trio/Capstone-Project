@@ -4,21 +4,19 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import {
-  GAME,
   POINTS,
   UNLOCK_AT,
   bandLabel,
   bandsOf,
-  findRole,
-  hasScenario,
   isBandOpen,
   pointsByType,
   shortRoleName,
-  skillTypeOf,
   type Anchor,
+  type GameIndex,
   type Role,
   type SkillType,
 } from '@datn/game-core';
+import { ContentService } from '../content/content.service';
 import { PrismaService } from '../prisma/prisma.service';
 
 export interface BandProgress {
@@ -85,7 +83,10 @@ export interface ProgressSummary {
  */
 @Injectable()
 export class ProgressService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly content: ContentService,
+  ) {}
 
   /** Bảng tra (nghề, cấp bậc) -> điểm, cho một người chơi. */
   private async skillMap(userId: string): Promise<Map<string, number>> {
@@ -135,7 +136,8 @@ export class ProgressService {
     roleCode: string,
     band: string,
   ): Promise<string | null> {
-    const role = findRole(roleCode);
+    const index = await this.content.index();
+    const role = index.findRole(roleCode);
     if (!role) return null;
 
     const list = bandsOf(role);
@@ -173,7 +175,8 @@ export class ProgressService {
     userId: string,
     roleCode: string,
   ): Promise<RoleProgress | null> {
-    const role = findRole(roleCode);
+    const index = await this.content.index();
+    const role = index.findRole(roleCode);
     if (!role) return null;
 
     const [skills, enrolledKeys, completedKeys] = await Promise.all([
@@ -182,7 +185,7 @@ export class ProgressService {
       this.completedKeys(userId),
     ]);
 
-    return buildRoleProgress(role, {
+    return buildRoleProgress(role, index, {
       pointsAt: (b) => this.pointsAt(skills, roleCode, b),
       enrolledKeys,
       completedKeys,
@@ -197,7 +200,7 @@ export class ProgressService {
    * thừa.
    */
   async enroll(userId: string, roleCode: string, band: string): Promise<void> {
-    const role = findRole(roleCode);
+    const role = (await this.content.index()).findRole(roleCode);
     if (!role) throw new NotFoundException('Không có nghề này');
     if (!bandsOf(role).includes(band)) {
       throw new NotFoundException('Nghề này không có cấp bậc đó');
@@ -249,11 +252,12 @@ export class ProgressService {
       seenScenario.add(run.scenarioKey);
       scoredRunIds.add(run.id);
     }
+    const index = await this.content.index();
     const scored = evidence
       .filter((row) => scoredRunIds.has(row.runId))
       .map((row) => ({
         skill: row.skill,
-        skillType: skillTypeOf(row.skill),
+        skillType: index.skillTypeOf(row.skill),
         anchor: row.anchor as Anchor,
       }));
     const byType = pointsByType(scored);
@@ -268,10 +272,10 @@ export class ProgressService {
       this.completedKeys(userId),
     ]);
 
-    const roles: RoleProgress[] = GAME.roles
+    const roles: RoleProgress[] = index.data.roles
       .filter((role) => touched.has(role.role_code))
       .map((role) =>
-        buildRoleProgress(role, {
+        buildRoleProgress(role, index, {
           pointsAt: (b) => this.pointsAt(skills, role.role_code, b),
           enrolledKeys,
           completedKeys,
@@ -348,6 +352,7 @@ function buildTimeline(
  */
 function buildRoleProgress(
   role: Role,
+  index: GameIndex,
   ctx: {
     pointsAt: (band: string) => number;
     enrolledKeys: Set<string>;
@@ -356,15 +361,15 @@ function buildRoleProgress(
 ): RoleProgress {
   const list = bandsOf(role);
 
-  const bands: BandProgress[] = list.map((band, index) => {
-    const previous = index > 0 ? list[index - 1] : null;
+  const bands: BandProgress[] = list.map((band, at) => {
+    const previous = at > 0 ? list[at - 1] : null;
     const key = `${role.role_code}:${band}`;
     return {
       band,
       label: bandLabel(band),
       points: ctx.pointsAt(band),
       unlocked: isBandOpen(role, band, ctx.pointsAt),
-      hasScenario: hasScenario(role.role_code, band),
+      hasScenario: index.hasScenario(role.role_code, band),
       pointsToUnlock: previous
         ? Math.max(0, UNLOCK_AT - ctx.pointsAt(previous))
         : 0,

@@ -61,7 +61,15 @@ export const ModelName = {
   UserBandSkill: 'UserBandSkill',
   EventAnswer: 'EventAnswer',
   EventAward: 'EventAward',
-  Enrollment: 'Enrollment'
+  Enrollment: 'Enrollment',
+  ContentRelease: 'ContentRelease',
+  RoleDoc: 'RoleDoc',
+  ScenarioDoc: 'ScenarioDoc',
+  SharedEventDoc: 'SharedEventDoc',
+  QuizQuestionDoc: 'QuizQuestionDoc',
+  FollowupDoc: 'FollowupDoc',
+  GalaxyDoc: 'GalaxyDoc',
+  MetaDoc: 'MetaDoc'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -150,6 +158,7 @@ export const ScenarioRunScalarFieldEnum = {
   roleCode: 'roleCode',
   band: 'band',
   seed: 'seed',
+  contentVersion: 'contentVersion',
   actions: 'actions',
   startedAt: 'startedAt',
   completedAt: 'completedAt',
@@ -223,6 +232,92 @@ export const EnrollmentScalarFieldEnum = {
 } as const
 
 export type EnrollmentScalarFieldEnum = (typeof EnrollmentScalarFieldEnum)[keyof typeof EnrollmentScalarFieldEnum]
+
+
+export const ContentReleaseScalarFieldEnum = {
+  version: 'version',
+  seededAt: 'seededAt',
+  source: 'source',
+  active: 'active'
+} as const
+
+export type ContentReleaseScalarFieldEnum = (typeof ContentReleaseScalarFieldEnum)[keyof typeof ContentReleaseScalarFieldEnum]
+
+
+export const RoleDocScalarFieldEnum = {
+  version: 'version',
+  roleCode: 'roleCode',
+  nameVn: 'nameVn',
+  roleGroup: 'roleGroup',
+  bandStart: 'bandStart',
+  bandEnd: 'bandEnd',
+  body: 'body'
+} as const
+
+export type RoleDocScalarFieldEnum = (typeof RoleDocScalarFieldEnum)[keyof typeof RoleDocScalarFieldEnum]
+
+
+export const ScenarioDocScalarFieldEnum = {
+  version: 'version',
+  key: 'key',
+  roleCode: 'roleCode',
+  band: 'band',
+  title: 'title',
+  shortname: 'shortname',
+  body: 'body'
+} as const
+
+export type ScenarioDocScalarFieldEnum = (typeof ScenarioDocScalarFieldEnum)[keyof typeof ScenarioDocScalarFieldEnum]
+
+
+export const SharedEventDocScalarFieldEnum = {
+  version: 'version',
+  eventId: 'eventId',
+  title: 'title',
+  body: 'body'
+} as const
+
+export type SharedEventDocScalarFieldEnum = (typeof SharedEventDocScalarFieldEnum)[keyof typeof SharedEventDocScalarFieldEnum]
+
+
+export const QuizQuestionDocScalarFieldEnum = {
+  version: 'version',
+  questionId: 'questionId',
+  ordinal: 'ordinal',
+  body: 'body'
+} as const
+
+export type QuizQuestionDocScalarFieldEnum = (typeof QuizQuestionDocScalarFieldEnum)[keyof typeof QuizQuestionDocScalarFieldEnum]
+
+
+export const FollowupDocScalarFieldEnum = {
+  version: 'version',
+  scenarioKey: 'scenarioKey',
+  activityId: 'activityId',
+  who: 'who',
+  text: 'text'
+} as const
+
+export type FollowupDocScalarFieldEnum = (typeof FollowupDocScalarFieldEnum)[keyof typeof FollowupDocScalarFieldEnum]
+
+
+export const GalaxyDocScalarFieldEnum = {
+  version: 'version',
+  kind: 'kind',
+  key: 'key',
+  body: 'body'
+} as const
+
+export type GalaxyDocScalarFieldEnum = (typeof GalaxyDocScalarFieldEnum)[keyof typeof GalaxyDocScalarFieldEnum]
+
+
+export const MetaDocScalarFieldEnum = {
+  version: 'version',
+  key: 'key',
+  body: 'body'
+} as const
+
+export type MetaDocScalarFieldEnum = (typeof MetaDocScalarFieldEnum)[keyof typeof MetaDocScalarFieldEnum]
 
 
 export const SortOrder = {

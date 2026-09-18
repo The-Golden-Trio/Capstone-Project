@@ -1,6 +1,7 @@
 /** Hình dạng phản hồi của API, kiểm ở ranh giới mạng. */
 import { z } from 'zod';
 import { SkillTypeSchema } from '@datn/game-core';
+import { GameDataSchema, ScenarioSchema } from '@datn/game-core';
 
 export const ConsentStatusSchema = z.enum([
   'not_required',
@@ -153,3 +154,43 @@ export const RunHistoryItemSchema = z.object({
 export type RunHistoryItem = z.infer<typeof RunHistoryItemSchema>;
 
 export const RunHistorySchema = z.array(RunHistoryItemSchema);
+
+/* ── Nội dung game ─────────────────────────────────────────────────── */
+
+/**
+ * Nội dung kiểm lại ở đây, bằng đúng Zod schema mà máy chủ đã kiểm lúc seed.
+ *
+ * Kiểm hai lần không thừa: máy chủ và máy khách nay là hai tiến trình khác
+ * nhau đọc cùng một database, và nếu một ngày nào đó chúng lệch phiên bản
+ * schema thì lỗi phải nổ ngay ở ranh giới mạng chứ không phải giữa màn chơi.
+ */
+export const ContentBootstrapSchema = z.object({
+  version: z.number(),
+  data: GameDataSchema,
+  /** Khoá là `"<scenarioKey>:<activityId>"`. */
+  followups: z.record(
+    z.string(),
+    z.object({ who: z.string(), text: z.string() }),
+  ),
+});
+export type ContentBootstrap = z.infer<typeof ContentBootstrapSchema>;
+
+export const GalaxyContentSchema = z.object({
+  version: z.number(),
+  groups: z.array(z.unknown()),
+  nodes: z.array(z.unknown()),
+  edges: z.unknown(),
+});
+export type GalaxyContent = z.infer<typeof GalaxyContentSchema>;
+
+export const ScenarioContentSchema = z.object({
+  version: z.number(),
+  key: z.string(),
+  scenario: ScenarioSchema,
+  /** Khoá là `activity_id`, không phải khoá đầy đủ như trong database. */
+  followups: z.record(
+    z.string(),
+    z.object({ who: z.string(), text: z.string() }),
+  ),
+});
+export type ScenarioContent = z.infer<typeof ScenarioContentSchema>;

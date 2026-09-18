@@ -4,23 +4,21 @@ import {
   Injectable,
 } from '@nestjs/common';
 import {
-  GAME,
+  MIN_ANSWER_LENGTH,
   SIDE_QUEST_POINTS,
   applySignal,
   bandsOf,
   blankFit,
-  eventsForRole,
-  MIN_ANSWER_LENGTH,
-  findEvent,
-  findRole,
   matchChoice,
   questKind,
   sideQuestsFor,
   type FitVector,
   type GameEvent,
+  type GameIndex,
   type QuestKind,
   type Role,
 } from '@datn/game-core';
+import { ContentService } from '../content/content.service';
 import { PrismaService } from '../prisma/prisma.service';
 import { ProgressService } from '../progress/progress.service';
 
@@ -62,6 +60,7 @@ export class ProfileService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly progress: ProgressService,
+    private readonly content: ContentService,
   ) {}
 
   private ensureProfile(userId: string) {
@@ -73,13 +72,14 @@ export class ProfileService {
   }
 
   async get(userId: string): Promise<GameProfileView> {
-    const [profile, answers] = await Promise.all([
+    const [profile, answers, index] = await Promise.all([
       this.ensureProfile(userId),
       this.prisma.eventAnswer.findMany({ where: { userId } }),
+      this.content.index(),
     ]);
 
     return {
-      fit: addFit(readFit(profile.quizFit), fitFromAnswers(answers)),
+      fit: addFit(readFit(profile.quizFit), fitFromAnswers(answers, index)),
       quizDone: profile.quizDone,
       eventsPlayed: profile.eventsPlayed,
       doneEventIds: answers.map((a) => a.eventId),
@@ -91,10 +91,11 @@ export class ProfileService {
     userId: string,
     answers: Array<{ questionId: string; optionId: string }>,
   ): Promise<GameProfileView> {
+    const { quiz } = (await this.content.index()).data;
     let quizFit = blankFit();
 
     for (const answer of answers) {
-      const question = GAME.quiz.questions.find(
+      const question = quiz.questions.find(
         (q) => q.question_id === answer.questionId,
       );
       const option = question?.options.find(
@@ -139,10 +140,11 @@ export class ProfileService {
     eventId: string,
     input: { answer?: string; choiceIndex?: number },
   ): Promise<EventAnswerResult> {
-    const role = findRole(roleCode);
+    const index = await this.content.index();
+    const role = index.findRole(roleCode);
     if (!role) throw new BadRequestException('Không có nghề này');
 
-    const event = findEvent(role, eventId);
+    const event = index.findEvent(role, eventId);
     if (!event) throw new BadRequestException('Không có sự kiện này');
 
     if (!bandsOf(role).includes(band)) {
@@ -152,7 +154,9 @@ export class ProfileService {
     // khách nộp được cả 11 nhiệm vụ của nghề vào cùng một cấp bậc và gom gấp
     // ba số điểm lẽ ra có. Danh sách sinh bằng hàm thuần nên hai bên luôn
     // đồng ý với nhau về việc cấp bậc này có những nhiệm vụ nào.
-    if (!sideQuestsFor(role, band).some((e) => e.event_id === eventId)) {
+    if (
+      !sideQuestsFor(role, band, index).some((e) => e.event_id === eventId)
+    ) {
       throw new BadRequestException(
         `Nhiệm vụ này không thuộc cấp bậc ${band}`,
       );
@@ -167,7 +171,7 @@ export class ProfileService {
     // Kiểu hỏi quyết định dạng trả lời được nhận. Không kiểm thì một câu tự
     // luận vẫn nộp được bằng số thứ tự phương án, tức là bỏ qua đúng phần
     // bắt người chơi phải tự nghĩ.
-    const choiceIndex = resolveChoice(role, band, event, input);
+    const choiceIndex = resolveChoice(role, band, event, input, index);
     const choice = event.choices[choiceIndex];
 
     const [existingAnswer, existingAward] = await Promise.all([
@@ -272,8 +276,9 @@ function resolveChoice(
   band: string,
   event: GameEvent,
   input: { answer?: string; choiceIndex?: number },
+  index: GameIndex,
 ): number {
-  const kind: QuestKind = questKind(role, band, event.event_id);
+  const kind: QuestKind = questKind(role, band, event.event_id, index);
 
   if (kind === 'WRITE') {
     if (input.answer === undefined) {
@@ -323,12 +328,13 @@ const addFit = (a: FitVector, b: FitVector): FitVector => {
 
 const fitFromAnswers = (
   answers: Array<{ roleCode: string; eventId: string; choiceIndex: number }>,
+  index: GameIndex,
 ): FitVector => {
   let fit = blankFit();
   for (const answer of answers) {
-    const role = findRole(answer.roleCode);
+    const role = index.findRole(answer.roleCode);
     if (!role) continue;
-    const event = eventsForRole(role).find((e) => e.event_id === answer.eventId);
+    const event = index.eventsForRole(role).find((e) => e.event_id === answer.eventId);
     const choice = event?.choices[answer.choiceIndex];
     if (choice) fit = applySignal(fit, choice.signal);
   }

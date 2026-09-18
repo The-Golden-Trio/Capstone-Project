@@ -6,7 +6,6 @@
  * không gọi `Math.random` trực tiếp (rng được tiêm vào) — nên một lượt chơi
  * sai có thể tái hiện lại nguyên vẹn mà không cần trình duyệt.
  */
-import { findScenarioByKey } from '../data/indexes.js';
 import type {
   Activity,
   Anchor,
@@ -17,7 +16,7 @@ import type {
   SkillType,
 } from '../data/schema.js';
 import { POINTS } from './bands.js';
-import { followupCap, findFollowupLine } from './followups.js';
+import { followupCap, type FollowupLine } from './followups.js';
 import { defaultTextGrader } from './grading/keywordGrader.js';
 import {
   gradeChoice,
@@ -97,29 +96,45 @@ export type RunAction =
   | { type: 'TIMEOUT' }
   | { type: 'CONTINUE' };
 
+/**
+ * Mọi thứ engine cần từ bên ngoài, kể cả chính kịch bản.
+ *
+ * Trước đây engine tự tra kịch bản từ bộ dữ liệu nạp sẵn trong mã. Nội dung
+ * giờ nằm trong database, nên nó phải được ĐƯA VÀO chứ không đi tìm — và đó
+ * cũng là điều mà cơ chế chấm điểm bằng chạy lại vốn cần: máy chủ chạy lại
+ * một lượt chơi bằng đúng bản kịch bản đã ghim cho lượt ấy, không phải bản
+ * mới nhất.
+ */
 export interface EngineDeps {
+  /** Kịch bản của lượt chơi này. */
+  scenario: Scenario;
+  /** Lời NPC cho lượt đào sâu; có lời mới được mở lượt đào sâu. */
+  followupLine: (activityId: string) => FollowupLine | undefined;
   grader: TextGrader;
   /** Trả số trong [0,1). Tiêm vào để lượt chơi tái hiện được. */
   rng: () => number;
   now: () => number;
 }
 
-export const defaultDeps: EngineDeps = {
+/** Bộ phụ thuộc mặc định cho một kịch bản, cho phép đè từng phần. */
+export const makeDeps = (
+  scenario: Scenario,
+  over: Partial<Omit<EngineDeps, 'scenario'>> = {},
+): EngineDeps => ({
+  scenario,
+  followupLine: () => undefined,
   grader: defaultTextGrader,
   rng: Math.random,
   now: Date.now,
-};
+  ...over,
+});
 
 /* ── Truy cập kịch bản ─────────────────────────────────────────────── */
 
-export function scenarioOf(state: RunState): Scenario {
-  const entry = findScenarioByKey(state.scenarioKey);
-  if (!entry) throw new Error(`Không có kịch bản "${state.scenarioKey}"`);
-  return entry.scenario;
-}
-
-export function currentActivity(state: RunState): Activity {
-  const scenario = scenarioOf(state);
+export function currentActivity(
+  state: RunState,
+  scenario: Scenario,
+): Activity {
   const activity = scenario.activities.find(
     (a) => a.activity_id === state.activityId,
   );
@@ -130,10 +145,8 @@ export function currentActivity(state: RunState): Activity {
   return activity;
 }
 
-export const activityIndex = (state: RunState): number =>
-  scenarioOf(state).activities.findIndex(
-    (a) => a.activity_id === state.activityId,
-  );
+export const activityIndex = (state: RunState, scenario: Scenario): number =>
+  scenario.activities.findIndex((a) => a.activity_id === state.activityId);
 
 /** Tên ngắn của một NPC, để hiện trên avatar. */
 export function npcShortName(scenario: Scenario, npcId: string): string {
@@ -188,7 +201,7 @@ function enterActivity(
     picked: null,
     deadline: null,
   };
-  const activity = currentActivity(next);
+  const activity = currentActivity(next, deps.scenario);
 
   if (activity.type === 'ORDERING') next.order = shuffledOrder(activity);
   if (activity.type === 'PRIORITIZING') next.picked = [];
@@ -198,16 +211,10 @@ function enterActivity(
   return next;
 }
 
-export function startRun(
-  scenarioKey: string,
-  deps: EngineDeps = defaultDeps,
-): RunState {
-  const entry = findScenarioByKey(scenarioKey);
-  if (!entry) throw new Error(`Không có kịch bản "${scenarioKey}"`);
-
+export function startRun(scenarioKey: string, deps: EngineDeps): RunState {
   const origin =
-    entry.scenario.activities.find((a) => a.isOrigin) ??
-    entry.scenario.activities[0];
+    deps.scenario.activities.find((a) => a.isOrigin) ??
+    deps.scenario.activities[0];
 
   const blank: RunState = {
     scenarioKey,
@@ -283,8 +290,12 @@ const toClosing = (state: RunState): RunState => ({
 
 /* ── Trả lời ───────────────────────────────────────────────────────── */
 
-function answerChoice(state: RunState, optionIndex: number): RunState {
-  const activity = currentActivity(state);
+function answerChoice(
+  state: RunState,
+  optionIndex: number,
+  scenario: Scenario,
+): RunState {
+  const activity = currentActivity(state, scenario);
   const { anchor, why } = gradeChoice(activity, optionIndex);
   const quote = activity.options?.[optionIndex] ?? '';
 
@@ -298,8 +309,8 @@ function answerChoice(state: RunState, optionIndex: number): RunState {
   return toClosing(next);
 }
 
-function answerOrdering(state: RunState): RunState {
-  const activity = currentActivity(state);
+function answerOrdering(state: RunState, scenario: Scenario): RunState {
+  const activity = currentActivity(state, scenario);
   const order = state.order ?? [];
   const { anchor, why } = gradeOrdering(activity, order);
   const quote = order
@@ -316,8 +327,8 @@ function answerOrdering(state: RunState): RunState {
   return toClosing(next);
 }
 
-function answerPrioritizing(state: RunState): RunState {
-  const activity = currentActivity(state);
+function answerPrioritizing(state: RunState, scenario: Scenario): RunState {
+  const activity = currentActivity(state, scenario);
   const picked = state.picked ?? [];
   const { anchor, why } = gradePrioritizing(activity, picked);
   const quote = picked
@@ -341,7 +352,7 @@ function answerPrioritizing(state: RunState): RunState {
  * chơi có cơ hội nói rõ ý, không phải để bị phạt hai lần.
  */
 function answerText(state: RunState, text: string, deps: EngineDeps): RunState {
-  const activity = currentActivity(state);
+  const activity = currentActivity(state, deps.scenario);
   const isFollowup = state.phase === 'followup';
 
   let next = withPlayerLine(state, text);
@@ -393,9 +404,9 @@ function answerText(state: RunState, text: string, deps: EngineDeps): RunState {
   const canFollowup =
     !isFollowup &&
     missedSkill !== null &&
-    Boolean(findFollowupLine(state.scenarioKey, activity.activity_id)) &&
+    Boolean(deps.followupLine(activity.activity_id)) &&
     next.followupUsed < activity.limitFollowup &&
-    next.followupTotal < followupCap(scenarioOf(state).job.band);
+    next.followupTotal < followupCap(deps.scenario.job.band);
 
   if (canFollowup) {
     return {
@@ -410,8 +421,8 @@ function answerText(state: RunState, text: string, deps: EngineDeps): RunState {
   return toClosing(next);
 }
 
-function timeout(state: RunState): RunState {
-  const activity = currentActivity(state);
+function timeout(state: RunState, scenario: Scenario): RunState {
+  const activity = currentActivity(state, scenario);
   let next = emit(state, {
     observe: activity.observes[0],
     anchor: '-1',
@@ -422,8 +433,8 @@ function timeout(state: RunState): RunState {
   return toClosing(next);
 }
 
-function applyHint(state: RunState): RunState {
-  const activity = currentActivity(state);
+function applyHint(state: RunState, scenario: Scenario): RunState {
+  const activity = currentActivity(state, scenario);
   const hint = activity.hints[0];
   if (!hint || state.hintsUsed.includes(state.activityId)) return state;
 
@@ -446,8 +457,7 @@ const stripSpeaker = (line: string): string =>
  * Chọn kết cục: xét theo `priority` tăng dần, lấy cái đầu tiên thoả điều kiện.
  * `extra` nghĩa là kết cục chỉ mở khi người chơi tự chạm "bí mật".
  */
-export function pickEnding(state: RunState): Ending {
-  const scenario = scenarioOf(state);
+export function pickEnding(state: RunState, scenario: Scenario): Ending {
   const found = [...scenario.endings]
     .sort((a, b) => a.priority - b.priority)
     .find((ending) => {
@@ -470,14 +480,15 @@ const finish = (state: RunState, ending: Ending): RunState => ({
 });
 
 function advance(state: RunState, deps: EngineDeps): RunState {
-  const activity = currentActivity(state);
-  if (activity.forward_to === 'END') return finish(state, pickEnding(state));
+  const activity = currentActivity(state, deps.scenario);
+  if (activity.forward_to === 'END')
+    return finish(state, pickEnding(state, deps.scenario));
   return enterActivity(state, activity.forward_to, deps);
 }
 
 /** Hết lời kết: gieo xem có chuyện xen ngang không, rồi mới đi tiếp. */
 function afterClosing(state: RunState, deps: EngineDeps): RunState {
-  const scenario = scenarioOf(state);
+  const scenario = deps.scenario;
   const candidate = scenario.random_events.find(
     (e) =>
       e.after_activity === state.activityId &&
@@ -510,10 +521,10 @@ function afterEvent(state: RunState, deps: EngineDeps): RunState {
   if (!event) return advance(cleared, deps);
 
   if (event.outcome === 'EARLY_END') {
-    const scenario = scenarioOf(state);
+    const scenario = deps.scenario;
     const ending =
       scenario.endings.find((e) => e.ending_id === event.early_ending_id) ??
-      pickEnding(cleared);
+      pickEnding(cleared, scenario);
     return finish(cleared, ending);
   }
 
@@ -525,12 +536,12 @@ function afterEvent(state: RunState, deps: EngineDeps): RunState {
 export function runReducer(
   state: RunState,
   action: RunAction,
-  deps: EngineDeps = defaultDeps,
+  deps: EngineDeps,
 ): RunState {
   switch (action.type) {
     case 'ANSWER_CHOICE':
       if (state.phase !== 'main') return state;
-      return answerChoice(state, action.optionIndex);
+      return answerChoice(state, action.optionIndex, deps.scenario);
 
     case 'ANSWER_TEXT':
       if (state.phase !== 'main' && state.phase !== 'followup') return state;
@@ -538,11 +549,11 @@ export function runReducer(
 
     case 'ANSWER_ORDERING':
       if (state.phase !== 'main') return state;
-      return answerOrdering(state);
+      return answerOrdering(state, deps.scenario);
 
     case 'ANSWER_PRIORITIZING':
       if (state.phase !== 'main') return state;
-      return answerPrioritizing(state);
+      return answerPrioritizing(state, deps.scenario);
 
     case 'MOVE_ITEM': {
       if (!state.order) return state;
@@ -555,7 +566,7 @@ export function runReducer(
 
     case 'TOGGLE_PICK': {
       if (!state.picked) return state;
-      const limit = currentActivity(state).pick_count ?? 0;
+      const limit = currentActivity(state, deps.scenario).pick_count ?? 0;
       if (state.picked.includes(action.itemId))
         return {
           ...state,
@@ -566,11 +577,11 @@ export function runReducer(
     }
 
     case 'USE_HINT':
-      return applyHint(state);
+      return applyHint(state, deps.scenario);
 
     case 'TIMEOUT':
       if (state.phase !== 'main') return state;
-      return timeout(state);
+      return timeout(state, deps.scenario);
 
     case 'CONTINUE':
       if (state.phase === 'event') return afterEvent(state, deps);

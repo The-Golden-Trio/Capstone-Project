@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GAME } from '@datn/game-core';
 import { PageHeader } from '../components/layout/PageHeader';
 import { Button } from '../components/ui/Button';
 import { Card, CardBody } from '../components/ui/Card';
 import { Note } from '../components/ui/Note';
 import { ProgressDots } from '../components/ui/Progress';
 import { useGameText, useT } from '../i18n/useT';
+import { useGameIndex } from '../store/contentStore';
 import { useProfileStore } from '../store/profileStore';
 
 /**
@@ -24,6 +24,7 @@ export function QuizPage() {
   const navigate = useNavigate();
   const t = useT();
   const game = useGameText();
+  const content = useGameIndex();
   const submitQuiz = useProfileStore((s) => s.submitQuiz);
   const quizDone = useProfileStore((s) => s.quizDone);
 
@@ -34,7 +35,7 @@ export function QuizPage() {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
-  const questions = GAME.quiz.questions;
+  const questions = content.data.quiz.questions;
   const question = questions[index];
 
   const send = async (

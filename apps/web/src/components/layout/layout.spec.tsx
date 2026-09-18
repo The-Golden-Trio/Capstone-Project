@@ -7,7 +7,7 @@
  */
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { eventsForRole, findRole } from '@datn/game-core';
+import { fixtureIndex } from '@datn/game-core/testing';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { CharacterPanel } from './CharacterPanel';
 import { CurrentPlaceToggle } from './CurrentPlaceToggle';
@@ -15,7 +15,10 @@ import { roleTheme } from '../../domain/roleTheme';
 import { useAuthStore } from '../../store/authStore';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProfileStore } from '../../store/profileStore';
+import { useContentStore } from '../../store/contentStore';
 import { useProgressStore } from '../../store/progressStore';
+
+const game = fixtureIndex();
 
 const ROLE = 'SWE_BACKEND';
 const BAND = 'L1';
@@ -86,6 +89,9 @@ const renderIn = (ui: React.ReactElement) =>
   render(<MemoryRouter>{ui}</MemoryRouter>);
 
 beforeEach(() => {
+  // Nội dung game nay tới từ máy chủ; trong app thật thì `RequireAuth` nạp nó
+  // trước khi vẽ, còn ở đây thì đặt thẳng vào store.
+  useContentStore.setState({ index: game, version: 1 });
   useJourneyStore.getState().clear();
   useProfileStore.getState().reset();
   useProgressStore.getState().reset();
@@ -141,9 +147,9 @@ describe('"Đang ở" trên thanh đầu trang', () => {
     unmount();
 
     // Lấy đúng danh sách sự kiện của nghề này từ bộ dữ liệu, thay vì đoán mã.
-    const role = findRole(ROLE);
+    const role = game.findRole(ROLE);
     if (!role) throw new Error('thiếu nghề để kiểm');
-    const allEvents = eventsForRole(role).map((e) => e.event_id);
+    const allEvents = game.eventsForRole(role).map((e) => e.event_id);
 
     // đã làm hết mọi việc → thôi nhấp nháy, và không còn phù hiệu đếm
     seed({ doneEventIds: allEvents, playedScenario: true });

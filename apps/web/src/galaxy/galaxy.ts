@@ -10,8 +10,7 @@
  * biết ngay lúc khởi động, không phải `undefined` nổ trong shader.
  */
 import { z } from 'zod';
-import { findRole } from '@datn/game-core';
-import { RAW_GALAXY_DATA } from './galaxy-data';
+import { getContentIndex } from '../store/contentStore';
 
 const Vec3Schema = z.tuple([z.number(), z.number(), z.number()]);
 
@@ -97,8 +96,53 @@ export type GalaxyNode = z.infer<typeof NodeSchema>;
 export type GalaxyEdge = z.infer<typeof EdgeSchema>;
 export type EdgeType = z.infer<typeof EdgeTypeSchema>;
 export type EntryEvent = z.infer<typeof EntryEventSchema>;
+export type Galaxy = z.infer<typeof GalaxySchema>;
 
-export const GALAXY = GalaxySchema.parse(RAW_GALAXY_DATA);
+/**
+ * Bản đồ ngân hà, nạp từ máy chủ.
+ *
+ * Trước đây dữ liệu nằm trong `galaxy-data.ts` (100 KB) và được phân tích ngay
+ * lúc nạp module, nên `GALAXY` lúc nào cũng có sẵn. Giờ nó ở trong database:
+ * `initGalaxy` được gọi một lần sau khi tải về, còn mọi chỗ khác đọc qua
+ * `galaxyData()`.
+ *
+ * Giữ nguyên cách bày các hàm tra bên dưới — chúng vẫn thuần và vẫn tra bằng
+ * Map dựng sẵn, chỉ khác là bảng được dựng lúc nạp dữ liệu thay vì lúc nạp
+ * module.
+ */
+let loaded: Galaxy | null = null;
+let nodeMap = new Map<string, GalaxyNode>();
+let groupMap = new Map<string, GalaxyGroup>();
+let edgesByNode = new Map<string, GalaxyEdge[]>();
+
+export function initGalaxy(raw: unknown): Galaxy {
+  const parsed = GalaxySchema.parse(raw);
+
+  nodeMap = new Map(parsed.nodes.map((n) => [n.roleCode, n]));
+  groupMap = new Map(parsed.groups.map((g) => [g.short, g]));
+
+  edgesByNode = new Map<string, GalaxyEdge[]>();
+  for (const edge of parsed.edges) {
+    for (const end of [edge.from, edge.to]) {
+      const list = edgesByNode.get(end) ?? [];
+      list.push(edge);
+      edgesByNode.set(end, list);
+    }
+  }
+
+  loaded = parsed;
+  return parsed;
+}
+
+/** Đã nạp xong dữ liệu ngân hà chưa. */
+export const galaxyReady = (): boolean => loaded !== null;
+
+export function galaxyData(): Galaxy {
+  if (!loaded) {
+    throw new Error('Chưa nạp dữ liệu ngân hà — gọi initGalaxy trước.');
+  }
+  return loaded;
+}
 
 /* ── Hệ mặt trời ──────────────────────────────────────────────────────── */
 
@@ -129,9 +173,6 @@ export function orbitPoints(group: GalaxyGroup, radius: number, segments = 128):
 
 /* ── Bảng tra ─────────────────────────────────────────────────────────── */
 
-const nodeMap = new Map(GALAXY.nodes.map((n) => [n.roleCode, n]));
-const groupMap = new Map(GALAXY.groups.map((g) => [g.short, g]));
-
 export const findPlanet = (roleCode: string | null | undefined): GalaxyNode | undefined =>
   roleCode ? nodeMap.get(roleCode) : undefined;
 
@@ -144,14 +185,6 @@ export const groupOf = (node: GalaxyNode): GalaxyGroup => {
 export const colorOf = (node: GalaxyNode): string => groupOf(node).color;
 
 /** Cạnh chạm một hành tinh, bất kể chiều. */
-const edgesByNode = new Map<string, GalaxyEdge[]>();
-for (const edge of GALAXY.edges) {
-  for (const end of [edge.from, edge.to]) {
-    const list = edgesByNode.get(end) ?? [];
-    list.push(edge);
-    edgesByNode.set(end, list);
-  }
-}
 export const edgesOf = (roleCode: string): GalaxyEdge[] => edgesByNode.get(roleCode) ?? [];
 
 /** Đầu kia của cạnh nhìn từ `roleCode`. */
@@ -199,11 +232,12 @@ export function neighborsOf(roleCode: string): Neighbor[] {
 /* ── Chơi được không ──────────────────────────────────────────────────── */
 
 /** Nghề đã dựng trong `@datn/game-core` thì bấm "Trải nghiệm" là vào chơi được. */
-export const isPlayable = (roleCode: string): boolean => findRole(roleCode) !== undefined;
+export const isPlayable = (roleCode: string): boolean =>
+  getContentIndex()?.findRole(roleCode) !== undefined;
 
 /** Đường vào màn chơi của một hành tinh, hoặc `null` nếu chưa dựng. */
 export const playPath = (node: GalaxyNode): string | null => {
-  const role = findRole(node.roleCode);
+  const role = getContentIndex()?.findRole(node.roleCode);
   // Tới lộ trình của nghề chứ không nhảy thẳng vào một cấp bậc: phải thấy
   // con đường trước thì mới biết mình đang leo về đâu.
   return role ? `/jobs/${role.role_code}` : null;

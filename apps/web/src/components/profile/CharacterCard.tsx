@@ -1,11 +1,12 @@
 import type { CSSProperties } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UNLOCK_AT, bandLabel, roleName, shortName } from '@datn/game-core';
+import { UNLOCK_AT, bandLabel, shortName } from '@datn/game-core';
 import type { ProgressSummary } from '../../api/schemas';
 import { DEFAULT_THEME, roleTheme, themeVars } from '../../domain/roleTheme';
 import { useT } from '../../i18n/useT';
 import { cx } from '../../lib/cx';
 import { useAuthStore } from '../../store/authStore';
+import { useGameIndex } from '../../store/contentStore';
 import { useJourneyStore } from '../../store/journeyStore';
 import { Crest } from '../game/Crest';
 
@@ -78,6 +79,7 @@ export function CharacterCard({
   const t = useT();
   const navigate = useNavigate();
   const user = useAuthStore((s) => s.user);
+  const content = useGameIndex();
   const journey = useJourneyStore();
 
   // "Đang ở" ưu tiên nơi vừa ghé trên bản đồ; chưa ghé đâu (tải lại trang,
@@ -168,7 +170,7 @@ export function CharacterCard({
               {roleCode && band ? (
                 <span className="text-ink-2">
                   <b className="font-semibold text-[var(--accent)]">
-                    {shortName(roleName(roleCode))}
+                    {shortName(content.roleName(roleCode))}
                   </b>
                   <span className="text-muted"> · </span>
                   <span className="font-mono">{band}</span> {bandLabel(band)}

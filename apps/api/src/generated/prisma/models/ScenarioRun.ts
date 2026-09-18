@@ -32,12 +32,14 @@ export type AggregateScenarioRun = {
 
 export type ScenarioRunAvgAggregateOutputType = {
   seed: number | null
+  contentVersion: number | null
   pointsAwarded: number | null
   rating: number | null
 }
 
 export type ScenarioRunSumAggregateOutputType = {
   seed: bigint | null
+  contentVersion: number | null
   pointsAwarded: number | null
   rating: number | null
 }
@@ -49,6 +51,7 @@ export type ScenarioRunMinAggregateOutputType = {
   roleCode: string | null
   band: string | null
   seed: bigint | null
+  contentVersion: number | null
   startedAt: Date | null
   completedAt: Date | null
   endingId: string | null
@@ -64,6 +67,7 @@ export type ScenarioRunMaxAggregateOutputType = {
   roleCode: string | null
   band: string | null
   seed: bigint | null
+  contentVersion: number | null
   startedAt: Date | null
   completedAt: Date | null
   endingId: string | null
@@ -79,6 +83,7 @@ export type ScenarioRunCountAggregateOutputType = {
   roleCode: number
   band: number
   seed: number
+  contentVersion: number
   actions: number
   startedAt: number
   completedAt: number
@@ -92,12 +97,14 @@ export type ScenarioRunCountAggregateOutputType = {
 
 export type ScenarioRunAvgAggregateInputType = {
   seed?: true
+  contentVersion?: true
   pointsAwarded?: true
   rating?: true
 }
 
 export type ScenarioRunSumAggregateInputType = {
   seed?: true
+  contentVersion?: true
   pointsAwarded?: true
   rating?: true
 }
@@ -109,6 +116,7 @@ export type ScenarioRunMinAggregateInputType = {
   roleCode?: true
   band?: true
   seed?: true
+  contentVersion?: true
   startedAt?: true
   completedAt?: true
   endingId?: true
@@ -124,6 +132,7 @@ export type ScenarioRunMaxAggregateInputType = {
   roleCode?: true
   band?: true
   seed?: true
+  contentVersion?: true
   startedAt?: true
   completedAt?: true
   endingId?: true
@@ -139,6 +148,7 @@ export type ScenarioRunCountAggregateInputType = {
   roleCode?: true
   band?: true
   seed?: true
+  contentVersion?: true
   actions?: true
   startedAt?: true
   completedAt?: true
@@ -242,6 +252,7 @@ export type ScenarioRunGroupByOutputType = {
   roleCode: string
   band: string
   seed: bigint
+  contentVersion: number
   actions: runtime.JsonValue | null
   startedAt: Date
   completedAt: Date | null
@@ -281,6 +292,7 @@ export type ScenarioRunWhereInput = {
   roleCode?: Prisma.StringFilter<"ScenarioRun"> | string
   band?: Prisma.StringFilter<"ScenarioRun"> | string
   seed?: Prisma.BigIntFilter<"ScenarioRun"> | bigint | number
+  contentVersion?: Prisma.IntFilter<"ScenarioRun"> | number
   actions?: Prisma.JsonNullableFilter<"ScenarioRun">
   startedAt?: Prisma.DateTimeFilter<"ScenarioRun"> | Date | string
   completedAt?: Prisma.DateTimeNullableFilter<"ScenarioRun"> | Date | string | null
@@ -299,6 +311,7 @@ export type ScenarioRunOrderByWithRelationInput = {
   roleCode?: Prisma.SortOrder
   band?: Prisma.SortOrder
   seed?: Prisma.SortOrder
+  contentVersion?: Prisma.SortOrder
   actions?: Prisma.SortOrderInput | Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -320,6 +333,7 @@ export type ScenarioRunWhereUniqueInput = Prisma.AtLeast<{
   roleCode?: Prisma.StringFilter<"ScenarioRun"> | string
   band?: Prisma.StringFilter<"ScenarioRun"> | string
   seed?: Prisma.BigIntFilter<"ScenarioRun"> | bigint | number
+  contentVersion?: Prisma.IntFilter<"ScenarioRun"> | number
   actions?: Prisma.JsonNullableFilter<"ScenarioRun">
   startedAt?: Prisma.DateTimeFilter<"ScenarioRun"> | Date | string
   completedAt?: Prisma.DateTimeNullableFilter<"ScenarioRun"> | Date | string | null
@@ -338,6 +352,7 @@ export type ScenarioRunOrderByWithAggregationInput = {
   roleCode?: Prisma.SortOrder
   band?: Prisma.SortOrder
   seed?: Prisma.SortOrder
+  contentVersion?: Prisma.SortOrder
   actions?: Prisma.SortOrderInput | Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -362,6 +377,7 @@ export type ScenarioRunScalarWhereWithAggregatesInput = {
   roleCode?: Prisma.StringWithAggregatesFilter<"ScenarioRun"> | string
   band?: Prisma.StringWithAggregatesFilter<"ScenarioRun"> | string
   seed?: Prisma.BigIntWithAggregatesFilter<"ScenarioRun"> | bigint | number
+  contentVersion?: Prisma.IntWithAggregatesFilter<"ScenarioRun"> | number
   actions?: Prisma.JsonNullableWithAggregatesFilter<"ScenarioRun">
   startedAt?: Prisma.DateTimeWithAggregatesFilter<"ScenarioRun"> | Date | string
   completedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ScenarioRun"> | Date | string | null
@@ -377,6 +393,7 @@ export type ScenarioRunCreateInput = {
   roleCode: string
   band: string
   seed: bigint | number
+  contentVersion?: number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -395,6 +412,7 @@ export type ScenarioRunUncheckedCreateInput = {
   roleCode: string
   band: string
   seed: bigint | number
+  contentVersion?: number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -411,6 +429,7 @@ export type ScenarioRunUpdateInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -429,6 +448,7 @@ export type ScenarioRunUncheckedUpdateInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -446,6 +466,7 @@ export type ScenarioRunCreateManyInput = {
   roleCode: string
   band: string
   seed: bigint | number
+  contentVersion?: number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -461,6 +482,7 @@ export type ScenarioRunUpdateManyMutationInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -477,6 +499,7 @@ export type ScenarioRunUncheckedUpdateManyInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -503,6 +526,7 @@ export type ScenarioRunCountOrderByAggregateInput = {
   roleCode?: Prisma.SortOrder
   band?: Prisma.SortOrder
   seed?: Prisma.SortOrder
+  contentVersion?: Prisma.SortOrder
   actions?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
@@ -514,6 +538,7 @@ export type ScenarioRunCountOrderByAggregateInput = {
 
 export type ScenarioRunAvgOrderByAggregateInput = {
   seed?: Prisma.SortOrder
+  contentVersion?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
 }
@@ -525,6 +550,7 @@ export type ScenarioRunMaxOrderByAggregateInput = {
   roleCode?: Prisma.SortOrder
   band?: Prisma.SortOrder
   seed?: Prisma.SortOrder
+  contentVersion?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
   endingId?: Prisma.SortOrder
@@ -540,6 +566,7 @@ export type ScenarioRunMinOrderByAggregateInput = {
   roleCode?: Prisma.SortOrder
   band?: Prisma.SortOrder
   seed?: Prisma.SortOrder
+  contentVersion?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
   endingId?: Prisma.SortOrder
@@ -550,6 +577,7 @@ export type ScenarioRunMinOrderByAggregateInput = {
 
 export type ScenarioRunSumOrderByAggregateInput = {
   seed?: Prisma.SortOrder
+  contentVersion?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
 }
@@ -637,6 +665,7 @@ export type ScenarioRunCreateWithoutUserInput = {
   roleCode: string
   band: string
   seed: bigint | number
+  contentVersion?: number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -653,6 +682,7 @@ export type ScenarioRunUncheckedCreateWithoutUserInput = {
   roleCode: string
   band: string
   seed: bigint | number
+  contentVersion?: number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -699,6 +729,7 @@ export type ScenarioRunScalarWhereInput = {
   roleCode?: Prisma.StringFilter<"ScenarioRun"> | string
   band?: Prisma.StringFilter<"ScenarioRun"> | string
   seed?: Prisma.BigIntFilter<"ScenarioRun"> | bigint | number
+  contentVersion?: Prisma.IntFilter<"ScenarioRun"> | number
   actions?: Prisma.JsonNullableFilter<"ScenarioRun">
   startedAt?: Prisma.DateTimeFilter<"ScenarioRun"> | Date | string
   completedAt?: Prisma.DateTimeNullableFilter<"ScenarioRun"> | Date | string | null
@@ -714,6 +745,7 @@ export type ScenarioRunCreateWithoutEvidenceInput = {
   roleCode: string
   band: string
   seed: bigint | number
+  contentVersion?: number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -731,6 +763,7 @@ export type ScenarioRunUncheckedCreateWithoutEvidenceInput = {
   roleCode: string
   band: string
   seed: bigint | number
+  contentVersion?: number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -762,6 +795,7 @@ export type ScenarioRunUpdateWithoutEvidenceInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -779,6 +813,7 @@ export type ScenarioRunUncheckedUpdateWithoutEvidenceInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -794,6 +829,7 @@ export type ScenarioRunCreateManyUserInput = {
   roleCode: string
   band: string
   seed: bigint | number
+  contentVersion?: number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -809,6 +845,7 @@ export type ScenarioRunUpdateWithoutUserInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -825,6 +862,7 @@ export type ScenarioRunUncheckedUpdateWithoutUserInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -841,6 +879,7 @@ export type ScenarioRunUncheckedUpdateManyWithoutUserInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
   actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -888,6 +927,7 @@ export type ScenarioRunSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   roleCode?: boolean
   band?: boolean
   seed?: boolean
+  contentVersion?: boolean
   actions?: boolean
   startedAt?: boolean
   completedAt?: boolean
@@ -907,6 +947,7 @@ export type ScenarioRunSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   roleCode?: boolean
   band?: boolean
   seed?: boolean
+  contentVersion?: boolean
   actions?: boolean
   startedAt?: boolean
   completedAt?: boolean
@@ -924,6 +965,7 @@ export type ScenarioRunSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   roleCode?: boolean
   band?: boolean
   seed?: boolean
+  contentVersion?: boolean
   actions?: boolean
   startedAt?: boolean
   completedAt?: boolean
@@ -941,6 +983,7 @@ export type ScenarioRunSelectScalar = {
   roleCode?: boolean
   band?: boolean
   seed?: boolean
+  contentVersion?: boolean
   actions?: boolean
   startedAt?: boolean
   completedAt?: boolean
@@ -950,7 +993,7 @@ export type ScenarioRunSelectScalar = {
   rating?: boolean
 }
 
-export type ScenarioRunOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "scenarioKey" | "roleCode" | "band" | "seed" | "actions" | "startedAt" | "completedAt" | "endingId" | "endingType" | "pointsAwarded" | "rating", ExtArgs["result"]["scenarioRun"]>
+export type ScenarioRunOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "scenarioKey" | "roleCode" | "band" | "seed" | "contentVersion" | "actions" | "startedAt" | "completedAt" | "endingId" | "endingType" | "pointsAwarded" | "rating", ExtArgs["result"]["scenarioRun"]>
 export type ScenarioRunInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   evidence?: boolean | Prisma.ScenarioRun$evidenceArgs<ExtArgs>
@@ -976,6 +1019,15 @@ export type $ScenarioRunPayload<ExtArgs extends runtime.Types.Extensions.Interna
     roleCode: string
     band: string
     seed: bigint
+    /**
+     * Phiên bản nội dung đã ghim cho lượt này.
+     * 
+     * Máy chủ chấm điểm bằng cách CHẠY LẠI lượt chơi. Nội dung nay nằm trong
+     * database nên có thể đổi giữa chừng; đổi rồi mà chạy lại bằng bản mới thì
+     * lượt chơi rẽ nhánh khác và điểm ra sai. Ghim số này lúc mở màn khiến một
+     * lượt đang dở trở thành bất biến.
+     */
+    contentVersion: number
     actions: runtime.JsonValue | null
     startedAt: Date
     completedAt: Date | null
@@ -1417,6 +1469,7 @@ export interface ScenarioRunFieldRefs {
   readonly roleCode: Prisma.FieldRef<"ScenarioRun", 'String'>
   readonly band: Prisma.FieldRef<"ScenarioRun", 'String'>
   readonly seed: Prisma.FieldRef<"ScenarioRun", 'BigInt'>
+  readonly contentVersion: Prisma.FieldRef<"ScenarioRun", 'Int'>
   readonly actions: Prisma.FieldRef<"ScenarioRun", 'Json'>
   readonly startedAt: Prisma.FieldRef<"ScenarioRun", 'DateTime'>
   readonly completedAt: Prisma.FieldRef<"ScenarioRun", 'DateTime'>

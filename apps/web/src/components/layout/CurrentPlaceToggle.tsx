@@ -1,15 +1,10 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  bandLabel,
-  eventsForRole,
-  findRole,
-  findScenario,
-  shortRoleName,
-} from '@datn/game-core';
+import { bandLabel, shortRoleName } from '@datn/game-core';
 import { Crest } from '../game/Crest';
 import { roleTheme, themeVars } from '../../domain/roleTheme';
 import { cx } from '../../lib/cx';
+import { useGameIndex } from '../../store/contentStore';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProfileStore } from '../../store/profileStore';
 import { useProgressStore } from '../../store/progressStore';
@@ -29,6 +24,7 @@ export function CurrentPlaceToggle() {
   const { roleCode, band } = useJourneyStore();
   const doneEventIds = useProfileStore((s) => s.doneEventIds);
   const runs = useProgressStore((s) => s.runs);
+  const content = useGameIndex();
 
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -50,15 +46,15 @@ export function CurrentPlaceToggle() {
     };
   }, [open]);
 
-  const role = findRole(roleCode);
+  const role = content.findRole(roleCode);
   if (!role || !band) return null;
 
   const theme = roleTheme(role.role_code);
-  const scenario = findScenario(role.role_code, band);
+  const scenario = content.findScenario(role.role_code, band);
   const played = new Set(runs.map((r) => r.scenarioKey));
 
   const mainLeft = scenario && !played.has(scenario.key) ? 1 : 0;
-  const sideLeft = eventsForRole(role).filter(
+  const sideLeft = content.eventsForRole(role).filter(
     (event) => !doneEventIds.includes(event.event_id),
   ).length;
   const left = mainLeft + sideLeft;

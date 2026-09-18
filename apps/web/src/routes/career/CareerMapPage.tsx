@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import {
-  findRole,
-  findScenario,
   shortRoleName,
   sideQuestsFor,
 } from '@datn/game-core';
@@ -19,6 +17,7 @@ import { LevelPanel } from './LevelPanel';
 import { PaperMap } from './PaperMap';
 import { QuestBox } from './QuestBox';
 import type { Anchor } from './mapGeometry';
+import { useGameIndex } from '../../store/contentStore';
 
 /** Ba cảnh của màn này. */
 type Stage = 'sea' | 'sailing' | 'paper';
@@ -38,6 +37,7 @@ const SAILING_MS = 1400;
  * hòn đảo cụ thể.
  */
 export function CareerMapPage() {
+  const game = useGameIndex();
   const { roleCode = '', band: openBand = null } = useParams();
   const navigate = useNavigate();
   const t = useT();
@@ -57,7 +57,7 @@ export function CareerMapPage() {
   const [error, setError] = useState<string | null>(null);
 
   const firstLoad = useRef(true);
-  const role = findRole(roleCode);
+  const role = game.findRole(roleCode);
 
   /**
    * Tải lại lộ trình của nghề.
@@ -128,7 +128,7 @@ export function CareerMapPage() {
   /** Các nhiệm vụ của hòn đảo đang mở. */
   const points = useMemo(() => {
     if (!role || !openBand) return [];
-    const entry = findScenario(role.role_code, openBand);
+    const entry = game.findScenario(role.role_code, openBand);
     const main = entry
       ? [
           {
@@ -141,14 +141,14 @@ export function CareerMapPage() {
         ]
       : [];
     // Mỗi đảo một nhóm nhiệm vụ phụ riêng, lọc theo `band_range` của dữ liệu.
-    const sides = sideQuestsFor(role, openBand).map((event) => ({
+    const sides = sideQuestsFor(role, openBand, game).map((event) => ({
       id: `event:${event.event_id}`,
       label: event.title,
       kind: 'side' as const,
       done: doneEventIds.includes(event.event_id),
     }));
     return [...main, ...sides];
-  }, [role, openBand, bands, doneEventIds]);
+  }, [role, openBand, bands, doneEventIds, game]);
 
   if (!role) return <Navigate to="/jobs" replace />;
   // Gõ thẳng đường dẫn không được đi vòng qua cửa ghi danh: cấp bậc không có

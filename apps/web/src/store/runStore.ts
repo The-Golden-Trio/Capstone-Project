@@ -24,6 +24,7 @@ import {
 } from '@datn/game-core';
 import { runsApi } from '../api/endpoints';
 import type { CompletedRun } from '../api/schemas';
+import { getContentIndex, getFollowupLine } from './contentStore';
 import { useProgressStore } from './progressStore';
 
 /**
@@ -34,11 +35,23 @@ import { useProgressStore } from './progressStore';
  * `rng` có trạng thái ở máy khách sẽ làm hai bên lệch nhau ngay khi có sự
  * kiện xen ngang.
  */
-const buildDeps = (seed: number): EngineDeps => ({
-  grader: defaultTextGrader,
-  rng: mulberry32(seed),
-  now: Date.now,
-});
+const buildDeps = (scenarioKey: string, seed: number): EngineDeps => {
+  // Ngoài React nên không dùng hook được; cổng `RequireAuth` đã bảo đảm nội
+  // dung có mặt trước khi vào được bất kỳ màn chơi nào.
+  const content = getContentIndex();
+  if (!content) throw new Error('Chưa nạp nội dung game');
+
+  const entry = content.findScenarioByKey(scenarioKey);
+  if (!entry) throw new Error(`Không có kịch bản "${scenarioKey}"`);
+
+  return {
+    scenario: entry.scenario,
+    followupLine: (activityId) => getFollowupLine(scenarioKey, activityId),
+    grader: defaultTextGrader,
+    rng: mulberry32(seed),
+    now: Date.now,
+  };
+};
 
 interface RunStore {
   run: RunState | null;
@@ -79,7 +92,7 @@ export const useRunStore = create<RunStore>()((set, get) => ({
     try {
       const started = await runsApi.start(scenarioKey);
       set({
-        run: startRun(scenarioKey, buildDeps(started.seed)),
+        run: startRun(scenarioKey, buildDeps(scenarioKey, started.seed)),
         runId: started.runId,
         seed: started.seed,
         actions: [],
@@ -100,7 +113,7 @@ export const useRunStore = create<RunStore>()((set, get) => ({
     const { run, seed, actions, runId } = get();
     if (!run || seed === null || run.phase === 'ended') return;
 
-    const next = runReducer(run, action, buildDeps(seed));
+    const next = runReducer(run, action, buildDeps(run.scenarioKey, seed));
     // Hành động không đổi được gì (bấm quá số mục cho phép chẳng hạn) thì
     // không ghi vào nhật ký — lượt chạy lại ở máy chủ phải khớp từng bước.
     if (next === run) return;

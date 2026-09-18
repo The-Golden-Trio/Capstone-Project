@@ -106,6 +106,17 @@
         "dependsOn": [
           "prisma-generate"
         ]
+      },
+      "seed-content": {
+        "executor": "nx:run-commands",
+        "dependsOn": [
+          "^build",
+          "prisma-generate"
+        ],
+        "options": {
+          "command": "esbuild apps/api/src/scripts/seed-content.ts --bundle --platform=node --format=esm --packages=external --outfile=apps/api/dist/seed-content.mjs && node apps/api/dist/seed-content.mjs",
+          "cwd": "{workspaceRoot}"
+        }
       }
     }
   },

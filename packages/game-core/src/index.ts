@@ -8,18 +8,10 @@
  */
 
 /* ── Dữ liệu ── */
-export { GAME, DIMENSIONS } from './data/gameData.js';
 export * from './data/schema.js';
 export {
-  findRole,
-  roleName,
-  findScenario,
-  hasScenario,
-  findScenarioByKey,
-  eventsForRole,
-  findEvent,
-  skillTypeOf,
-  CONSTELLATION_EDGES,
+  createGameIndex,
+  type GameIndex,
   type ScenarioEntry,
   type ConstellationEdge,
   type EdgeKind,

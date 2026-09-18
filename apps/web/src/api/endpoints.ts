@@ -3,6 +3,9 @@ import type { RunAction } from '@datn/game-core';
 import { api } from './client';
 import {
   CompletedRunSchema,
+  ContentBootstrapSchema,
+  GalaxyContentSchema,
+  ScenarioContentSchema,
   EventAnswerResultSchema,
   GameProfileSchema,
   OkSchema,
@@ -12,6 +15,9 @@ import {
   SessionUserSchema,
   StartedRunSchema,
   type CompletedRun,
+  type ContentBootstrap,
+  type GalaxyContent,
+  type ScenarioContent,
   type EventAnswerResult,
   type GameProfileView,
   type ProgressSummary,
@@ -20,6 +26,22 @@ import {
   type SessionUser,
   type StartedRun,
 } from './schemas';
+
+/* ── Nội dung game ─────────────────────────────────────────────────── */
+
+export const contentApi = {
+  /** Nghề, sự kiện chung, bài tự vấn — tải một lần lúc vào app. */
+  bootstrap: (): Promise<ContentBootstrap> =>
+    api('/content/bootstrap', ContentBootstrapSchema),
+
+  /** Bản đồ ngân hà 3D — chỉ trang bản đồ cần. */
+  galaxy: (): Promise<GalaxyContent> =>
+    api('/content/galaxy', GalaxyContentSchema),
+
+  /** Một kịch bản kèm lời đào sâu của nó — chỉ cần lúc mở màn chơi. */
+  scenario: (key: string): Promise<ScenarioContent> =>
+    api(`/content/scenarios/${key}`, ScenarioContentSchema),
+};
 
 /* ── Xác thực ──────────────────────────────────────────────────────── */
 

@@ -13,7 +13,9 @@ import { LanguageToggle } from '../components/layout/LanguageToggle';
 import { MESSAGES, translate, type MessageKey } from './messages';
 import { useLanguageStore } from './useT';
 import { DIMENSION_EN, QUIZ_OPTION_EN, QUIZ_PROMPT_EN } from './gameContent';
-import { GAME } from '@datn/game-core';
+import { fixtureIndex } from '@datn/game-core/testing';
+
+const game = fixtureIndex();
 
 beforeEach(() => {
   useLanguageStore.setState({ language: 'vi' });
@@ -42,13 +44,13 @@ describe('từ điển', () => {
 
 describe('nội dung lấy từ bộ dữ liệu', () => {
   it('có bản tiếng Anh cho cả 8 chiều tính cách', () => {
-    for (const key of Object.keys(GAME.fit_dimensions)) {
+    for (const key of Object.keys(game.data.fit_dimensions)) {
       expect(DIMENSION_EN[key], `thiếu bản dịch chiều ${key}`).toBeTruthy();
     }
   });
 
   it('có bản tiếng Anh cho mọi câu hỏi và mọi lựa chọn', () => {
-    for (const question of GAME.quiz.questions) {
+    for (const question of game.data.quiz.questions) {
       expect(
         QUIZ_PROMPT_EN[question.question_id],
         `thiếu câu ${question.question_id}`,

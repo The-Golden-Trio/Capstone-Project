@@ -2,9 +2,6 @@ import { useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   MIN_ANSWER_LENGTH,
-  findEvent,
-  findRole,
-  findScenarioByKey,
   questKind,
   type GameEvent,
   type QuestKind,
@@ -12,6 +9,7 @@ import {
 import { Button } from '../../components/ui/Button';
 import { Note, SectionLabel, SourceNote } from '../../components/ui/Note';
 import { Pill } from '../../components/ui/Pill';
+import { useGameIndex } from '../../store/contentStore';
 import { useProfileStore } from '../../store/profileStore';
 import type { EventAnswerResult } from '../../api/schemas';
 import type { Anchor } from './mapGeometry';
@@ -111,12 +109,14 @@ export function QuestBox({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const content = useGameIndex();
+
   const [kind, value] = markId.split(/:(.+)/);
-  const role = findRole(roleCode);
+  const role = content.findRole(roleCode);
 
   /* ── Nhiệm vụ chính: tóm tắt rồi mở màn chơi ── */
   if (kind === 'scenario') {
-    const entry = findScenarioByKey(value);
+    const entry = content.findScenarioByKey(value);
     if (!entry) return null;
     const { scenario } = entry;
 
@@ -151,11 +151,11 @@ export function QuestBox({
 
   /* ── Nhiệm vụ phụ: hỏi và đáp ngay tại chỗ ── */
   if (!role) return null;
-  const event = findEvent(role, value);
+  const event = content.findEvent(role, value);
   if (!event) return null;
 
   // `kind` ở trên đã là loại ký hiệu (chính/phụ); đây là kiểu hỏi.
-  const askKind = questKind(role, band, event.event_id);
+  const askKind = questKind(role, band, event.event_id, content);
 
   const send = async (reply: { answer?: string; choiceIndex?: number }) => {
     setBusy(true);

@@ -7,10 +7,11 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useContentStore } from '../store/contentStore';
 import { useProgressStore } from '../store/progressStore';
 import { GalaxyCanvas } from './scene/GalaxyCanvas';
 import {
-  GALAXY,
+  galaxyData,
   edgeBetween,
   findPlanet,
   neighborsOf,
@@ -27,7 +28,54 @@ import { PlanetPanel } from './ui/PlanetPanel';
 
 const TOAST_MS = 3600;
 
+/**
+ * Cổng chờ dữ liệu ngân hà.
+ *
+ * 100 KB toạ độ hành tinh nay nằm trong database và tải riêng — chỉ trang này
+ * cần chúng, nên không bắt mọi màn khác trả giá. `GalaxyScene` bên dưới đọc
+ * `galaxyData()` ngay từ dòng đầu, nên phải chắc chắn dữ liệu đã về mới dựng
+ * nó.
+ */
 export function GalaxyPage() {
+  const ready = useContentStore((s) => s.galaxyReady);
+  const error = useContentStore((s) => s.galaxyError);
+  const loadGalaxy = useContentStore((s) => s.loadGalaxy);
+
+  useEffect(() => {
+    void loadGalaxy();
+  }, [loadGalaxy]);
+
+  if (error) {
+    return (
+      <div className="grid h-full place-items-center px-6 text-center">
+        <div>
+          <p className="m-0 mb-3 text-[14px] text-ink-2">{error}</p>
+          <button
+            type="button"
+            onClick={() => void loadGalaxy()}
+            className="rounded-[9px] border border-line bg-surf px-4 py-2 text-[13px] text-ink"
+          >
+            Thử lại
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!ready) {
+    return (
+      <div className="grid h-full place-items-center">
+        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+          Đang mở bản đồ ngân hà…
+        </p>
+      </div>
+    );
+  }
+
+  return <GalaxyScene />;
+}
+
+function GalaxyScene() {
   const currentCode = useGalaxyStore((s) => s.currentRoleCode);
   const passport = useGalaxyStore((s) => s.passport);
   const grantSkills = useGalaxyStore((s) => s.grantSkills);
@@ -49,7 +97,7 @@ export function GalaxyPage() {
   const [toast, setToast] = useState<string | null>(null);
 
   // store đã lọc mã lạ lúc nạp, nhưng vẫn phòng hờ: không bao giờ để trang trắng vì thiếu hành tinh
-  const current = findPlanet(currentCode) ?? GALAXY.nodes[0];
+  const current = findPlanet(currentCode) ?? galaxyData().nodes[0];
 
   /* ── kỹ năng người chơi đang có: máy chủ đã chấm + visa từ bài kiểm tra ── */
   const owned = useMemo(() => {

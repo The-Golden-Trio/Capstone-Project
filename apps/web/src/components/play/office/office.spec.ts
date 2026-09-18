@@ -5,7 +5,7 @@
  * ra khi chơi tới đúng chỗ — nên kiểm ở đây.
  */
 import { describe, expect, it } from 'vitest';
-import { findScenarioByKey } from '@datn/game-core';
+import { fixtureIndex } from '@datn/game-core/testing';
 import { CHARACTERS, SPRITE_H, SPRITE_W, frameFor } from './sprites';
 import { OFFICE_STAGES, type Placement } from './stage';
 import {
@@ -17,6 +17,7 @@ import {
   routeThrough,
   stepAlongRoute,
   tileCenter,
+  type Walker,
   withinReach,
   type Point,
   type Tile,
@@ -95,9 +96,9 @@ describe('thế giới', () => {
   });
 
   it('đi hết lộ trình thì báo tới nơi đúng một lần', () => {
-    let walker = {
+    let walker: Walker = {
       pos: tileCenter({ col: 5, row: 7 }),
-      facing: 'down' as const,
+      facing: 'down',
       route: routeThrough([{ col: 5, row: 9 }, { col: 7, row: 9 }]),
     };
     let arrivals = 0;
@@ -121,7 +122,9 @@ describe('thế giới', () => {
 describe('sân khấu L1', () => {
   const stage = OFFICE_STAGES.SWE_BACKEND_L1_S_EXEC;
   const world = parseWorld(stage.map);
-  const scenario = findScenarioByKey('SWE_BACKEND_L1_S_EXEC')?.scenario;
+  const scenario = fixtureIndex().findScenarioByKey(
+    'SWE_BACKEND_L1_S_EXEC',
+  )?.scenario;
 
   it('mỗi hoạt động của kịch bản có đúng một bước', () => {
     if (!scenario) throw new Error('thiếu kịch bản L1');

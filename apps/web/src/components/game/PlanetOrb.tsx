@@ -1,5 +1,6 @@
 import { formatVnd, roleHasAnyScenario, shortRoleName, type Role } from '@datn/game-core';
 import { cx } from '../../lib/cx';
+import { useGameIndex } from '../../store/contentStore';
 import { Planet } from './Planet';
 
 interface PlanetOrbProps {
@@ -17,10 +18,11 @@ export function PlanetOrb({
   size = 96,
   onSelect,
 }: PlanetOrbProps) {
+  const content = useGameIndex();
   const startSalary = role.salary_by_band.find(
     (b) => b.band === role.band_start,
   )?.salary_avg;
-  const explored = roleHasAnyScenario(role);
+  const explored = roleHasAnyScenario(role, content);
 
   return (
     <button

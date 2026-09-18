@@ -1,5 +1,5 @@
 /** Thang cấp bậc L1–L10 và luật mở khoá. Thuần, không phụ thuộc React. */
-import { hasScenario } from '../data/indexes.js';
+import type { GameIndex } from '../data/indexes.js';
 import type { Anchor, Role } from '../data/schema.js';
 
 export const BANDS = [
@@ -84,5 +84,5 @@ export function isBandOpen(
 }
 
 /** Nghề này có chỗ nào đã dựng nhiệm vụ chính chưa. */
-export const roleHasAnyScenario = (role: Role): boolean =>
-  bandsOf(role).some((band) => hasScenario(role.role_code, band));
+export const roleHasAnyScenario = (role: Role, index: GameIndex): boolean =>
+  bandsOf(role).some((band) => index.hasScenario(role.role_code, band));

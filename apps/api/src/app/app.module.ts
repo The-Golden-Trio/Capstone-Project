@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from '../auth/auth.module';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
+import { ContentModule } from '../content/content.module';
 import { loadEnv } from '../config/env';
 import { PrismaModule } from '../prisma/prisma.module';
 import { ProfileModule } from '../profile/profile.module';
@@ -20,6 +21,7 @@ import { RunsModule } from '../runs/runs.module';
       validate: loadEnv,
     }),
     PrismaModule,
+    ContentModule,
     AuthModule,
     RunsModule,
     ProfileModule,

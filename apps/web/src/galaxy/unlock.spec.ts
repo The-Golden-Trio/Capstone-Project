@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { GALAXY, findPlanet, edgeBetween } from './galaxy';
+import { galaxyData, findPlanet, edgeBetween } from './galaxy';
 import { computeUnlock, hasSkill, normalizeSkill, ownedSkillSet } from './unlock';
+import { loadGalaxyFixture } from './galaxy.fixture';
+
+loadGalaxyFixture();
 
 describe('normalizeSkill', () => {
   it('bỏ dấu, hạ chữ, bỏ phần trong ngoặc', () => {
@@ -63,19 +66,19 @@ describe('computeUnlock', () => {
 
 describe('dữ liệu ngân hà', () => {
   it('có đủ 22 hành tinh, cạnh nào cũng nối hai hành tinh có thật', () => {
-    expect(GALAXY.nodes).toHaveLength(22);
-    const codes = new Set(GALAXY.nodes.map((n) => n.roleCode));
-    for (const e of GALAXY.edges) {
+    expect(galaxyData().nodes).toHaveLength(22);
+    const codes = new Set(galaxyData().nodes.map((n) => n.roleCode));
+    for (const e of galaxyData().edges) {
       expect(codes.has(e.from)).toBe(true);
       expect(codes.has(e.to)).toBe(true);
     }
   });
 
   it('không hành tinh nào chồng lên nhau', () => {
-    for (let i = 0; i < GALAXY.nodes.length; i++)
-      for (let j = i + 1; j < GALAXY.nodes.length; j++) {
-        const a = GALAXY.nodes[i];
-        const b = GALAXY.nodes[j];
+    for (let i = 0; i < galaxyData().nodes.length; i++)
+      for (let j = i + 1; j < galaxyData().nodes.length; j++) {
+        const a = galaxyData().nodes[i];
+        const b = galaxyData().nodes[j];
         const d = Math.hypot(
           a.position[0] - b.position[0],
           a.position[1] - b.position[1],

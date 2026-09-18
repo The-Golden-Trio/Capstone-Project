@@ -3,10 +3,7 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import {
   activityIndex,
   currentActivity,
-  findFollowupLine,
-  findScenarioByKey,
   npcShortName,
-  scenarioOf,
   stripNpcPrefix,
 } from '@datn/game-core';
 import { CastRail } from '../../components/play/CastRail';
@@ -29,6 +26,7 @@ import { Note } from '../../components/ui/Note';
 import { useCountdown } from '../../hooks/useCountdown';
 import { useAuthStore } from '../../store/authStore';
 import { useRunStore } from '../../store/runStore';
+import { getFollowupLine, useGameIndex } from '../../store/contentStore';
 
 /**
  * Một cảnh trong màn chơi.
@@ -44,6 +42,7 @@ import { useRunStore } from '../../store/runStore';
  * đi lại được thay cho khung chat; engine và các thẻ hành động dùng chung.
  */
 export function PlayPage() {
+  const game = useGameIndex();
   const { scenarioKey = '' } = useParams();
   const navigate = useNavigate();
 
@@ -54,7 +53,7 @@ export function PlayPage() {
   const dispatch = useRunStore((s) => s.dispatch);
   const playerSeed = useAuthStore((s) => s.user?.id ?? 'khach');
 
-  const entry = findScenarioByKey(scenarioKey);
+  const entry = game.findScenarioByKey(scenarioKey);
 
   // Mở màn qua máy chủ: nó kiểm cấp bậc đã mở chưa rồi mới phát hạt giống.
   useEffect(() => {
@@ -99,12 +98,13 @@ export function PlayPage() {
     return <Navigate to={`/play/${scenarioKey}/end`} replace />;
   }
 
-  const scenario = scenarioOf(run);
-  const activity = currentActivity(run);
-  const index = activityIndex(run);
+  // Kịch bản lấy từ chỗ tra dữ liệu chứ engine không tự đi tìm nữa.
+  const scenario = entry.scenario;
+  const activity = currentActivity(run, scenario);
+  const index = activityIndex(run, scenario);
   const isFollowup = run.phase === 'followup';
   const hintUsed = run.hintsUsed.includes(run.activityId);
-  const followupLine = findFollowupLine(scenarioKey, activity.activity_id);
+  const followupLine = getFollowupLine(scenarioKey, activity.activity_id);
 
   /* ── Cảnh văn phòng: tự lo hội thoại, chuyện xen ngang và hoạt động ── */
   const stage = stageFor(scenarioKey);

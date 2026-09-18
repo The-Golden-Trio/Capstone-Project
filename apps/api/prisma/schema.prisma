@@ -134,6 +134,13 @@ model ScenarioRun {
   roleCode      String
   band          String
   seed          BigInt
+  /// Phiên bản nội dung đã ghim cho lượt này.
+  ///
+  /// Máy chủ chấm điểm bằng cách CHẠY LẠI lượt chơi. Nội dung nay nằm trong
+  /// database nên có thể đổi giữa chừng; đổi rồi mà chạy lại bằng bản mới thì
+  /// lượt chơi rẽ nhánh khác và điểm ra sai. Ghim số này lúc mở màn khiến một
+  /// lượt đang dở trở thành bất biến.
+  contentVersion Int      @default(0)
   actions       Json?
   startedAt     DateTime  @default(now())
   completedAt   DateTime?
@@ -242,4 +249,106 @@ model Enrollment {
 
   @@unique([userId, roleCode, band])
   @@index([userId])
+}
+
+/* ══ Nội dung game ═══════════════════════════════════════════════════════
+   Trước đây toàn bộ nội dung nằm trong mã (`packages/game-core/src/data`),
+   nên sửa một câu thoại là phải build lại cả hai ứng dụng, và trình duyệt
+   tải về 193 KB dữ liệu ở mỗi lần mở trang.
+
+   Mỗi thực thể một dòng: vài cột để tra cứu, cộng một cột `body` giữ nguyên
+   hình dạng mà Zod schema trong `game-core` đã định nghĩa — hợp đồng dữ liệu
+   không đổi, chỉ đổi chỗ cất.
+
+   Mọi bảng đều có `version`: cùng một `version` là một ảnh chụp nhất quán của
+   cả bộ dữ liệu. Chỉ script seed ghi vào những bảng này; API không có đường
+   ghi nào. */
+
+/// Phiên bản nội dung đang được phục vụ.
+model ContentRelease {
+  version  Int      @id
+  seededAt DateTime @default(now())
+  /// `_meta.source_dataset` của bộ sinh, để truy ngược về nguồn.
+  source   String
+  active   Boolean  @default(false)
+
+  @@index([active])
+}
+
+/// Một nghề chơi được, kèm sự kiện riêng và thang lương trong `body`.
+model RoleDoc {
+  version   Int
+  roleCode  String
+  nameVn    String
+  roleGroup String
+  bandStart String
+  bandEnd   String
+  body      Json
+
+  @@id([version, roleCode])
+}
+
+/// Kịch bản sâu — thứ duy nhất được chạy lại khi chấm điểm.
+model ScenarioDoc {
+  version   Int
+  key       String
+  roleCode  String
+  band      String
+  title     String
+  shortname String?
+  body      Json
+
+  @@id([version, key])
+  @@index([version, roleCode, band])
+}
+
+/// Sự kiện phụ dùng chung cho mọi nghề. Sự kiện riêng nằm trong RoleDoc.body.
+model SharedEventDoc {
+  version Int
+  eventId String
+  title   String
+  body    Json
+
+  @@id([version, eventId])
+}
+
+model QuizQuestionDoc {
+  version    Int
+  questionId String
+  /// Giữ thứ tự câu hỏi như trong bộ dữ liệu gốc.
+  ordinal    Int
+  body       Json
+
+  @@id([version, questionId])
+}
+
+/// Lời NPC cho lượt đào sâu. Có lời mới được mở lượt đào sâu, nên đây vừa là
+/// nội dung vừa là điều kiện của luật chơi.
+model FollowupDoc {
+  version    Int
+  scenarioKey String
+  activityId String
+  who        String
+  text       String
+
+  @@id([version, scenarioKey, activityId])
+}
+
+/// Bản đồ ngân hà 3D: nhóm, hành tinh, đường nối. Thuần trình bày.
+model GalaxyDoc {
+  version Int
+  kind    String
+  key     String
+  body    Json
+
+  @@id([version, kind, key])
+}
+
+/// Hai bảng tra nhỏ không đáng dựng bảng riêng: `all_roles`, `fit_dimensions`.
+model MetaDoc {
+  version Int
+  key     String
+  body    Json
+
+  @@id([version, key])
 }

@@ -97,3 +97,44 @@ export type EventAward = Prisma.EventAwardModel
  * ở đâu" — câu đó phải đúng cả khi mở máy khác.
  */
 export type Enrollment = Prisma.EnrollmentModel
+/**
+ * Model ContentRelease
+ * Phiên bản nội dung đang được phục vụ.
+ */
+export type ContentRelease = Prisma.ContentReleaseModel
+/**
+ * Model RoleDoc
+ * Một nghề chơi được, kèm sự kiện riêng và thang lương trong `body`.
+ */
+export type RoleDoc = Prisma.RoleDocModel
+/**
+ * Model ScenarioDoc
+ * Kịch bản sâu — thứ duy nhất được chạy lại khi chấm điểm.
+ */
+export type ScenarioDoc = Prisma.ScenarioDocModel
+/**
+ * Model SharedEventDoc
+ * Sự kiện phụ dùng chung cho mọi nghề. Sự kiện riêng nằm trong RoleDoc.body.
+ */
+export type SharedEventDoc = Prisma.SharedEventDocModel
+/**
+ * Model QuizQuestionDoc
+ * 
+ */
+export type QuizQuestionDoc = Prisma.QuizQuestionDocModel
+/**
+ * Model FollowupDoc
+ * Lời NPC cho lượt đào sâu. Có lời mới được mở lượt đào sâu, nên đây vừa là
+ * nội dung vừa là điều kiện của luật chơi.
+ */
+export type FollowupDoc = Prisma.FollowupDocModel
+/**
+ * Model GalaxyDoc
+ * Bản đồ ngân hà 3D: nhóm, hành tinh, đường nối. Thuần trình bày.
+ */
+export type GalaxyDoc = Prisma.GalaxyDocModel
+/**
+ * Model MetaDoc
+ * Hai bảng tra nhỏ không đáng dựng bảng riêng: `all_roles`, `fit_dimensions`.
+ */
+export type MetaDoc = Prisma.MetaDocModel

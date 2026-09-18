@@ -6,14 +6,15 @@
  * lại rõ hơn.
  */
 import { describe, expect, it } from 'vitest';
-import { GAME } from '../data/gameData.js';
-import { eventsForRole } from '../data/indexes.js';
+import { fixtureIndex } from '../testing/fixture.js';
 import { MIN_ANSWER_LENGTH, keywords, matchChoice } from './sideQuestGrader.js';
 
-const backend = GAME.roles.find((r) => r.role_code === 'SWE_BACKEND');
+const game = fixtureIndex();
+
+const backend = game.data.roles.find((r) => r.role_code === 'SWE_BACKEND');
 if (!backend) throw new Error('Bộ dữ liệu không còn SWE_BACKEND');
 
-const events = eventsForRole(backend);
+const events = game.eventsForRole(backend);
 const event = events[0];
 
 describe('rút từ khoá', () => {
@@ -68,8 +69,8 @@ describe('đọc ra hướng xử lý', () => {
   it('MỌI HƯỚNG ĐỀU CÓ TỪ KHOÁ ĐỂ CHẤM ĐƯỢC', () => {
     // Một hướng mà lời mô tả toàn hư từ thì không người chơi nào chạm tới
     // được — họ viết gì cũng sẽ bị đẩy sang hướng khác.
-    for (const role of GAME.roles) {
-      for (const e of eventsForRole(role)) {
+    for (const role of game.data.roles) {
+      for (const e of game.eventsForRole(role)) {
         for (const choice of e.choices) {
           expect(keywords(choice.text).length).toBeGreaterThan(0);
         }
@@ -78,8 +79,8 @@ describe('đọc ra hướng xử lý', () => {
   });
 
   it('nhắc lại lời của một hướng (đủ dài) thì ra đúng hướng ấy', () => {
-    for (const role of GAME.roles) {
-      for (const e of eventsForRole(role)) {
+    for (const role of game.data.roles) {
+      for (const e of game.eventsForRole(role)) {
         for (const choice of e.choices) {
           // Có hướng viết rất ngắn ("Làm theo ý sếp", 14 ký tự) nên tự nó đã
           // dưới ngưỡng tối thiểu; thêm một câu giải thích cho đúng cách người

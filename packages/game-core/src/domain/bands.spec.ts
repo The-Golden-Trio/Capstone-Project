@@ -7,8 +7,9 @@
  * tới lúc ngồi bấm thử.
  */
 import { describe, expect, it } from 'vitest';
-import { GAME } from '../data/gameData.js';
-import { eventsForRole, hasScenario } from '../data/indexes.js';
+import { fixtureIndex } from '../testing/fixture.js';
+
+const game = fixtureIndex();
 import {
   SIDE_QUEST_POINTS,
   UNLOCK_AT,
@@ -18,12 +19,12 @@ import {
   previousBand,
 } from './bands.js';
 
-const backend = GAME.roles.find((r) => r.role_code === 'SWE_BACKEND');
+const backend = game.data.roles.find((r) => r.role_code === 'SWE_BACKEND');
 if (!backend) throw new Error('Bộ dữ liệu không còn SWE_BACKEND');
 
 describe('mở khoá cấp bậc', () => {
   it('cấp bậc đầu luôn mở', () => {
-    for (const role of GAME.roles) {
+    for (const role of game.data.roles) {
       expect(isBandOpen(role, bandsOf(role)[0], () => 0)).toBe(true);
     }
   });
@@ -40,9 +41,9 @@ describe('mở khoá cấp bậc', () => {
 
 describe('đi hết một nghề chỉ bằng nhiệm vụ phụ', () => {
   it('có đủ nhiệm vụ phụ để mở cấp kế ở MỌI cấp bậc', () => {
-    for (const role of GAME.roles) {
+    for (const role of game.data.roles) {
       const needed = Math.ceil(UNLOCK_AT / SIDE_QUEST_POINTS);
-      expect(eventsForRole(role).length).toBeGreaterThanOrEqual(needed);
+      expect(game.eventsForRole(role).length).toBeGreaterThanOrEqual(needed);
     }
   });
 
@@ -64,7 +65,7 @@ describe('đi hết một nghề chỉ bằng nhiệm vụ phụ', () => {
   it('và đó là con đường DUY NHẤT: phần lớn chặng chưa có nhiệm vụ chính', () => {
     const role = backend;
     const withScenario = bandsOf(role).filter((b) =>
-      hasScenario(role.role_code, b),
+      game.hasScenario(role.role_code, b),
     );
     // Nếu ngày nào đó dựng đủ kịch bản cho cả bảy chặng thì test này đỏ —
     // lúc ấy hãy xoá nó đi, vì nó chỉ tồn tại để ghi nhận chỗ thiếu.

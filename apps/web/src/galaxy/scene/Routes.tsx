@@ -11,7 +11,7 @@ import { useMemo, useRef, type ComponentRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Line } from '@react-three/drei';
 import * as THREE from 'three';
-import { GALAXY, type GalaxyEdge } from '../galaxy';
+import { galaxyData, type GalaxyEdge } from '../galaxy';
 import { useGalaxyUiStore } from '../galaxyStore';
 import { routeCurve } from './routeCurve';
 
@@ -134,7 +134,7 @@ function Route({ edge, current, unlocked }: { edge: GalaxyEdge; current: string;
 export function Routes({ current, unlocked }: RoutesProps) {
   return (
     <group>
-      {GALAXY.edges.map((edge) => (
+      {galaxyData().edges.map((edge) => (
         <Route key={edge.id} edge={edge} current={current} unlocked={unlocked} />
       ))}
     </group>

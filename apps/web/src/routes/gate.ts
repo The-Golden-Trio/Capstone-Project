@@ -15,6 +15,15 @@ export interface GateInput {
   consentStatus: ConsentStatus | null;
   /** Đã nạp xong hồ sơ chơi chưa — chưa xong thì chưa kết luận gì. */
   profileLoaded: boolean;
+  /**
+   * Đã nạp xong nội dung game chưa.
+   *
+   * Nội dung nay nằm trong database, nên nó tới sau một vòng mạng chứ không
+   * có sẵn lúc nạp mã như trước. Không chờ ở đây thì mọi màn bên trong phải
+   * tự chịu trạng thái "chưa có dữ liệu" — chờ một chỗ rẻ hơn nhiều so với
+   * rải `if (!index)` khắp nơi.
+   */
+  contentLoaded: boolean;
   quizDone: boolean;
   pathname: string;
 }
@@ -34,6 +43,11 @@ export function decideGate(input: GateInput): GateDecision {
   if (input.consentStatus === 'pending' && input.pathname !== '/consent') {
     return { kind: 'redirect', to: '/consent' };
   }
+
+  // Chưa có nội dung thì chưa vẽ gì được: bản đồ nghề, các đảo, màn chơi đều
+  // đọc từ đó. Đứng sau cửa đồng ý của người giám hộ vì đó là ràng buộc pháp
+  // lý, phải xét trước mọi thứ khác.
+  if (!input.contentLoaded) return { kind: 'wait' };
 
   // Lần đầu vào thì mời tự vấn trước: bản đồ nghề chỉ có nghĩa khi hệ thống
   // biết đôi chút về người chơi. Bấm "bỏ qua" cũng đặt `quizDone`, nên đây là

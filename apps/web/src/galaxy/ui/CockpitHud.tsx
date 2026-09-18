@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '../../components/ui/Button';
-import { GALAXY, colorOf, playPath, shortPlanetName, type GalaxyNode } from '../galaxy';
+import { galaxyData, colorOf, playPath, shortPlanetName, type GalaxyNode } from '../galaxy';
 import { useGalaxyStore, useGalaxyUiStore } from '../galaxyStore';
 
 interface CockpitHudProps {
@@ -63,7 +63,7 @@ export function CockpitHud({ current, fuel, ownedCount }: CockpitHudProps) {
           <dt className="uppercase tracking-[0.08em]">Đã ghé</dt>
           <dd className="m-0 text-[15px] font-semibold tabular-nums text-ink">
             {visited.length}
-            <span className="text-[11px] font-normal text-muted">/{GALAXY.nodes.length}</span>
+            <span className="text-[11px] font-normal text-muted">/{galaxyData().nodes.length}</span>
           </dd>
         </div>
       </dl>

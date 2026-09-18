@@ -1,5 +1,6 @@
 import { useCallback, useLayoutEffect, useState, type RefObject } from 'react';
-import { CONSTELLATION_EDGES, type EdgeKind } from '@datn/game-core';
+import type { EdgeKind } from '@datn/game-core';
+import { useGameIndex } from '../store/contentStore';
 
 export interface ConstellationLine {
   key: string;
@@ -29,6 +30,7 @@ export function useConstellationLines(
   wrapRef: RefObject<HTMLElement | null>,
   activeRoleCode: string | null,
 ): ConstellationBox {
+  const content = useGameIndex();
   const [box, setBox] = useState<ConstellationBox>({
     width: 0,
     height: 0,
@@ -53,7 +55,7 @@ export function useConstellationLines(
     };
 
     const lines: ConstellationLine[] = [];
-    for (const edge of CONSTELLATION_EDGES) {
+    for (const edge of content.constellationEdges) {
       const from = centerOf(edge.a);
       const to = centerOf(edge.b);
       if (!from || !to) continue;
@@ -69,7 +71,7 @@ export function useConstellationLines(
     }
 
     setBox({ width: bounds.width, height: bounds.height, lines });
-  }, [wrapRef, activeRoleCode]);
+  }, [wrapRef, activeRoleCode, content.constellationEdges]);
 
   useLayoutEffect(() => {
     measure();

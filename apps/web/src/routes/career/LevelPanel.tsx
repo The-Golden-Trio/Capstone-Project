@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   UNLOCK_AT,
-  findScenario,
   formatVnd,
   sideQuestsFor,
   type Role,
@@ -14,6 +13,7 @@ import { Button } from '../../components/ui/Button';
 import { Note, SourceNote } from '../../components/ui/Note';
 import { Pill } from '../../components/ui/Pill';
 import { cx } from '../../lib/cx';
+import { useGameIndex } from '../../store/contentStore';
 
 /**
  * Bảng thông tin một chặng, mở ra khi bấm vào nút trên con đường.
@@ -36,12 +36,13 @@ export function LevelPanel({
   onClose: () => void;
 }) {
   const navigate = useNavigate();
+  const content = useGameIndex();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const entry = findScenario(role.role_code, band.band);
+  const entry = content.findScenario(role.role_code, band.band);
   const salary = role.salary_by_band.find((s) => s.band === band.band);
-  const sideQuests = sideQuestsFor(role, band.band).length;
+  const sideQuests = sideQuestsFor(role, band.band, content).length;
   const previous = progress.bands[progress.bands.findIndex((b) => b.band === band.band) - 1];
 
   /** Vào chặng này là mở bản đồ địa điểm của nó. */

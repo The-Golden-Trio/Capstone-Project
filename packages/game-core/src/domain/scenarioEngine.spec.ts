@@ -9,13 +9,16 @@
  *      rồi chấm, thay vì tin vào điểm máy khách gửi lên.
  */
 import { describe, expect, it } from 'vitest';
-import { findScenario } from '../data/indexes.js';
+import { fixtureIndex } from '../testing/fixture.js';
+import { findFollowupLine } from './followups.js';
 import { keywordGrader } from './grading/keywordGrader.js';
 import {
   gradeOrdering,
   gradePrioritizing,
 } from './grading/structuredGrading.js';
 import { mulberry32 } from './rng.js';
+
+const game = fixtureIndex();
 import {
   currentActivity,
   pointsByType,
@@ -27,7 +30,16 @@ import {
   type RunState,
 } from './scenarioEngine.js';
 
-const depsWith = (seed: number): EngineDeps => ({
+/** Kịch bản giờ được đưa vào engine chứ engine không tự đi tìm. */
+function scenarioFor(scenarioKey: string) {
+  const entry = game.findScenarioByKey(scenarioKey);
+  if (!entry) throw new Error(`thiếu kịch bản ${scenarioKey}`);
+  return entry.scenario;
+}
+
+const depsWith = (scenarioKey: string, seed: number): EngineDeps => ({
+  scenario: scenarioFor(scenarioKey),
+  followupLine: (activityId) => findFollowupLine(scenarioKey, activityId),
   grader: keywordGrader,
   rng: mulberry32(seed),
   now: () => 1_000_000,
@@ -39,7 +51,7 @@ function replay(
   actions: RunAction[],
   seed: number,
 ): RunState {
-  const deps = depsWith(seed);
+  const deps = depsWith(scenarioKey, seed);
   let state = startRun(scenarioKey, deps);
   for (const action of actions) state = runReducer(state, action, deps);
   return state;
@@ -49,7 +61,7 @@ const L1 = 'SWE_BACKEND_L1_S_EXEC';
 const L3 = 'SWE_BACKEND_L3_S_INCIDENT';
 
 describe('chấm các hoạt động có đáp án cấu trúc', () => {
-  const entry = findScenario('SWE_BACKEND', 'L1');
+  const entry = game.findScenario('SWE_BACKEND', 'L1');
   const ordering = entry?.scenario.activities.find((a) => a.type === 'ORDERING');
   const prioritizing = entry?.scenario.activities.find(
     (a) => a.type === 'PRIORITIZING',
@@ -84,7 +96,7 @@ describe('một lượt chơi trọn vẹn', () => {
   ];
 
   it('chọn quá số lượng cho phép thì bị bỏ qua', () => {
-    const deps = depsWith(1);
+    const deps = depsWith(L1, 1);
     let s = startRun(L1, deps);
     s = runReducer(s, { type: 'TOGGLE_PICK', itemId: 'i2' }, deps);
     s = runReducer(s, { type: 'TOGGLE_PICK', itemId: 'i3' }, deps);
@@ -93,7 +105,7 @@ describe('một lượt chơi trọn vẹn', () => {
   });
 
   it('xem gợi ý thì hạ trần +2 xuống 0', () => {
-    const deps = depsWith(1);
+    const deps = depsWith(L1, 1);
     let s = startRun(L1, deps);
     s = runReducer(s, { type: 'USE_HINT' }, deps);
     s = runReducer(s, { type: 'TOGGLE_PICK', itemId: 'i2' }, deps);
@@ -129,9 +141,9 @@ describe('một lượt chơi trọn vẹn', () => {
   });
 
   it('hết giờ ở hoạt động có đếm ngược thì ghi -1', () => {
-    const deps = depsWith(1);
+    const deps = depsWith(L3, 1);
     let s = startRun(L3, deps);
-    const activity = currentActivity(s);
+    const activity = currentActivity(s, deps.scenario);
     if (activity.quick_action) {
       expect(s.deadline).toBe(
         1_000_000 + (activity.time_limit_seconds ?? 0) * 1000,
@@ -144,11 +156,11 @@ describe('một lượt chơi trọn vẹn', () => {
   });
 
   it('trả lời tệ thì ra kết cục xấu, không chạm bí mật', () => {
-    const deps = depsWith(7);
+    const deps = depsWith(L3, 7);
     let s = startRun(L3, deps);
     let guard = 0;
     while (s.phase !== 'ended' && guard++ < 40) {
-      const a = currentActivity(s);
+      const a = currentActivity(s, deps.scenario);
       if (s.phase === 'main' && a.type === 'CHOICE')
         s = runReducer(
           s,
@@ -167,26 +179,30 @@ describe('một lượt chơi trọn vẹn', () => {
 
 describe('kỹ năng cứng / mềm — hồ sơ tách được hai nhóm', () => {
   it('mỗi mẩu bằng chứng mang đúng loại của mốc quan sát đã sinh ra nó', () => {
-    const deps = depsWith(1);
+    const deps = depsWith(L1, 1);
     let s = startRun(L1, deps);
     s = runReducer(s, { type: 'TOGGLE_PICK', itemId: 'i2' }, deps);
     s = runReducer(s, { type: 'TOGGLE_PICK', itemId: 'i3' }, deps);
     s = runReducer(s, { type: 'ANSWER_PRIORITIZING' }, deps);
 
-    const activity = findScenario('SWE_BACKEND', 'L1')?.scenario.activities.find(
-      (a) => a.activity_id === s.evidence[0].activityId,
+    const activity = game
+      .findScenario('SWE_BACKEND', 'L1')
+      ?.scenario.activities.find(
+        (a) => a.activity_id === s.evidence[0].activityId,
+      );
+    const observe = activity?.observes.find(
+      (o) => o.skill === s.evidence[0].skill,
     );
-    const observe = activity?.observes.find((o) => o.skill === s.evidence[0].skill);
     expect(observe).toBeDefined();
     expect(s.evidence[0].skillType).toBe(observe?.skill_type);
   });
 
   it('điểm cứng + điểm mềm luôn bằng tổng điểm', () => {
-    const deps = depsWith(1);
+    const deps = depsWith(L1, 1);
     let s = startRun(L1, deps);
     let guard = 0;
     while (s.phase !== 'ended' && guard++ < 40) {
-      const a = currentActivity(s);
+      const a = currentActivity(s, deps.scenario);
       if (s.phase === 'main' && a.type === 'CHOICE')
         s = runReducer(s, { type: 'ANSWER_CHOICE', optionIndex: 0 }, deps);
       else if (s.phase === 'main' && a.type === 'PRIORITIZING')
@@ -258,13 +274,13 @@ describe('tính tất định — nền tảng của việc máy chủ chấm l�
     // Chạy L3 với nhiều hạt giống; sự kiện có xác suất nên phải có lượt gặp,
     // có lượt không — nếu mọi hạt giống cho cùng kết quả thì rng không được dùng.
     const sawEvent = (seed: number) => {
-      const deps = depsWith(seed);
+      const deps = depsWith(L3, seed);
       let s = startRun(L3, deps);
       let seen = false;
       let guard = 0;
       while (s.phase !== 'ended' && guard++ < 40) {
         if (s.phase === 'event') seen = true;
-        const a = currentActivity(s);
+        const a = currentActivity(s, deps.scenario);
         if (s.phase === 'main' && a.type === 'CHOICE')
           s = runReducer(s, { type: 'ANSWER_CHOICE', optionIndex: 0 }, deps);
         else if (s.phase === 'main' || s.phase === 'followup')

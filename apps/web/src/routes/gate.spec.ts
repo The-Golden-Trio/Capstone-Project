@@ -12,6 +12,7 @@ const at = (patch: Partial<GateInput> = {}): GateInput => ({
   status: 'authed',
   consentStatus: 'not_required',
   profileLoaded: true,
+  contentLoaded: true,
   quizDone: true,
   pathname: '/',
   ...patch,
@@ -79,5 +80,17 @@ describe('đồng ý của người giám hộ đứng trước', () => {
     expect(decideGate(at({ consentStatus: 'granted', quizDone: false }))).toEqual(
       { kind: 'redirect', to: '/quiz' },
     );
+  });
+
+  it('chưa có nội dung game thì chờ, chưa vẽ gì', () => {
+    expect(decideGate(at({ contentLoaded: false }))).toEqual({ kind: 'wait' });
+  });
+
+  it('nhưng cửa đồng ý của người giám hộ vẫn đứng trước cửa nội dung', () => {
+    // Ràng buộc pháp lý phải xét trước mọi thứ khác, kể cả trước khi có dữ
+    // liệu để vẽ.
+    expect(
+      decideGate(at({ contentLoaded: false, consentStatus: 'pending' })),
+    ).toEqual({ kind: 'redirect', to: '/consent' });
   });
 });

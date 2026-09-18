@@ -5,9 +5,31 @@
  *   - điểm kỹ năng  -> mở cấp bậc kế (xem `bands.ts`)
  *   - hồ sơ 8 chiều -> chỉ hướng hành tinh nên ghé (file này)
  */
-import { DIMENSIONS, GAME } from '../data/gameData.js';
-import { findRole } from '../data/indexes.js';
+import type { GameIndex } from '../data/indexes.js';
 import type { Role, Signal } from '../data/schema.js';
+
+/**
+ * Tám chiều của chân dung nghề nghiệp.
+ *
+ * Đây là KHOÁ chứ không phải nội dung: chúng định hình vector tính cách mà cả
+ * luật chấm lẫn phép so khớp nghề đều dựa vào, nên chúng ở lại cùng luật chơi.
+ * Phần mô tả tiếng Việt của từng chiều mới là nội dung, và nó nằm trong
+ * database (`fit_dimensions`).
+ *
+ * Thứ tự phải trùng với `fit_dimensions` trong bộ dữ liệu — có test giữ điều
+ * đó, vì lệch nhau thì `blankFit()` tạo ra vector thiếu chiều và mọi tín hiệu
+ * rơi vào chiều ấy sẽ bị `applySignal` lặng lẽ bỏ qua.
+ */
+export const DIMENSIONS: readonly string[] = [
+  'INTERRUPT',
+  'DEEP_WORK',
+  'AMBIGUITY',
+  'DETAIL',
+  'PEOPLE',
+  'VISIBLE',
+  'REPETITION',
+  'PRESSURE',
+];
 
 export type FitVector = Record<string, number>;
 
@@ -48,9 +70,10 @@ export interface RankedRole {
   score: number | null;
 }
 
-export function rankRoles(fit: FitVector): RankedRole[] {
-  if (!hasFit(fit)) return GAME.roles.map((role) => ({ role, score: null }));
-  return GAME.roles
+export function rankRoles(fit: FitVector, index: GameIndex): RankedRole[] {
+  const roles = index.data.roles;
+  if (!hasFit(fit)) return roles.map((role) => ({ role, score: null }));
+  return roles
     .map((role) => ({ role, score: cosine(fit, role.fit_profile) }))
     .sort((x, y) => (y.score ?? 0) - (x.score ?? 0));
 }
@@ -70,14 +93,15 @@ export interface AdjacentRole {
 export function adjacentRoles(
   roleCode: string,
   playerFit: FitVector,
+  index: GameIndex,
 ): AdjacentRole[] {
-  const role = findRole(roleCode);
+  const role = index.findRole(roleCode);
   if (!role) return [];
   const known = hasFit(playerFit);
 
   return role.similar_ranked
     .map((similar) => {
-      const target = findRole(similar.role_code);
+      const target = index.findRole(similar.role_code);
       const fit = target && known ? cosine(playerFit, target.fit_profile) : null;
       return {
         role_code: similar.role_code,

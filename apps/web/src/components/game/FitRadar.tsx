@@ -1,6 +1,7 @@
-import { DIMENSIONS, GAME, type FitVector } from '@datn/game-core';
+import type { FitVector } from '@datn/game-core';
 import { cx } from '../../lib/cx';
 import { useGameText } from '../../i18n/useT';
+import { useGameIndex } from '../../store/contentStore';
 
 interface FitRadarProps {
   fit: FitVector;
@@ -14,11 +15,15 @@ interface FitRadarProps {
  */
 export function FitRadar({ fit, describe = false }: FitRadarProps) {
   const game = useGameText();
-  const max = Math.max(1, ...DIMENSIONS.map((d) => Math.abs(fit[d] ?? 0)));
+  const content = useGameIndex();
+  const max = Math.max(
+    1,
+    ...content.dimensions.map((d) => Math.abs(fit[d] ?? 0)),
+  );
 
   return (
     <div className="flex flex-col gap-[7px]">
-      {DIMENSIONS.map((dimension) => {
+      {content.dimensions.map((dimension) => {
         const value = fit[dimension] ?? 0;
         const pct = Math.round((Math.abs(value) / max) * 100);
         return (
@@ -31,7 +36,7 @@ export function FitRadar({ fit, describe = false }: FitRadarProps) {
             </span>
             {describe ? (
               <span className="text-[12.5px] text-ink-2">
-                {game.dimension(dimension, GAME.fit_dimensions[dimension])}
+                {game.dimension(dimension, content.data.fit_dimensions[dimension])}
               </span>
             ) : (
               <span className="h-[7px] overflow-hidden rounded-sm bg-inset">
@@ -58,6 +63,7 @@ export function FitRadar({ fit, describe = false }: FitRadarProps) {
 /** Danh sách tín hiệu của một lựa chọn: chiều nào tăng, chiều nào giảm. */
 export function SignalList({ signal }: { signal: Record<string, number> }) {
   const game = useGameText();
+  const content = useGameIndex();
   const entries = Object.entries(signal);
   if (entries.length === 0) {
     return (
@@ -78,7 +84,7 @@ export function SignalList({ signal }: { signal: Record<string, number> }) {
             {dimension}
           </span>
           <span className="text-[12.5px] text-ink-2">
-            {game.dimension(dimension, GAME.fit_dimensions[dimension] ?? '')}
+            {game.dimension(dimension, content.data.fit_dimensions[dimension] ?? '')}
           </span>
           <span
             className={cx(

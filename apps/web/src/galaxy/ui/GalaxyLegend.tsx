@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GALAXY } from '../galaxy';
+import { galaxyData } from '../galaxy';
 import { cx } from '../../lib/cx';
 
 /** Chú giải góc trên-trái: màu hệ sao và ý nghĩa đường bay. Gập được. */
@@ -21,7 +21,7 @@ export function GalaxyLegend() {
       {open && (
         <div className="galaxy-rise mt-2.5">
           <ul className="m-0 grid list-none gap-[5px] p-0">
-            {GALAXY.groups.map((g) => (
+            {galaxyData().groups.map((g) => (
               <li key={g.short} className="flex items-center gap-2 text-ink-2">
                 <span
                   className="h-[9px] w-[9px] shrink-0 rounded-full"

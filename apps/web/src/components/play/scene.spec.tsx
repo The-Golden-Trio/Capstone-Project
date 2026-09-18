@@ -12,11 +12,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import {
   defaultTextGrader,
-  findScenarioByKey,
   mulberry32,
   startRun,
+  type EngineDeps,
 } from '@datn/game-core';
 import { describe, expect, it } from 'vitest';
+import { FOLLOWUP_LINES } from '@datn/game-core';
+import { fixtureIndex } from '@datn/game-core/testing';
 import { Crest } from '../game/Crest';
 import { RoleTheme } from '../game/RoleTheme';
 import { crest } from '../../domain/crest';
@@ -29,7 +31,9 @@ import { SkillChips } from './SkillChips';
 import { StakesBar } from './StakesBar';
 import { ChoiceActivity } from './activities/ChoiceActivity';
 
-const entry = findScenarioByKey('SWE_BACKEND_L3_S_INCIDENT');
+const game = fixtureIndex();
+
+const entry = game.findScenarioByKey('SWE_BACKEND_L3_S_INCIDENT');
 if (!entry) throw new Error('thiếu kịch bản để kiểm');
 const scenario = entry.scenario;
 
@@ -146,9 +150,27 @@ describe('cảnh hiện ra dữ liệu trước đây bị bỏ phí', () => {
   });
 });
 
+/** Engine nhận kịch bản từ ngoài, nên test cũng phải đưa vào. */
+function depsFor(
+  scenarioKey: string,
+  rng: () => number,
+  now: () => number,
+): EngineDeps {
+  const entry = game.findScenarioByKey(scenarioKey);
+  if (!entry) throw new Error(`thiếu kịch bản ${scenarioKey}`);
+  return {
+    scenario: entry.scenario,
+    followupLine: (activityId) =>
+      FOLLOWUP_LINES[`${scenarioKey}:${activityId}`],
+    grader: defaultTextGrader,
+    rng,
+    now,
+  };
+}
+
 describe('lựa chọn là thẻ hành động', () => {
   it('mỗi lựa chọn là một thẻ bấm được, có phím tắt', () => {
-    const deps = { grader: defaultTextGrader, rng: mulberry32(1), now: Date.now };
+    const deps = depsFor('SWE_BACKEND_L3_S_INCIDENT', mulberry32(1), Date.now);
     const run = startRun('SWE_BACKEND_L3_S_INCIDENT', deps);
     const activity = scenario.activities.find(
       (a) => a.activity_id === run.activityId,
@@ -174,11 +196,10 @@ describe('lựa chọn là thẻ hành động', () => {
 describe('giao diện không đụng tới luật chơi', () => {
   it('cùng hạt giống vẫn cho cùng trạng thái mở màn', () => {
     const make = () =>
-      startRun('SWE_BACKEND_L1_S_EXEC', {
-        grader: defaultTextGrader,
-        rng: mulberry32(42),
-        now: () => 1000,
-      });
+      startRun(
+        'SWE_BACKEND_L1_S_EXEC',
+        depsFor('SWE_BACKEND_L1_S_EXEC', mulberry32(42), () => 1000),
+      );
     expect(make()).toEqual(make());
   });
 });

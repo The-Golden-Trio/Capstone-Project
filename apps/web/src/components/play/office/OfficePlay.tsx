@@ -2,13 +2,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   activityIndex,
   currentActivity,
-  findFollowupLine,
   stripNpcPrefix,
   type RunAction,
   type RunState,
   type Scenario,
 } from '@datn/game-core';
 import { cx } from '../../../lib/cx';
+import { getFollowupLine } from '../../../store/contentStore';
 import { Button } from '../../ui/Button';
 import { NpcBubble } from '../ChatLog';
 import { CountdownBar } from '../CountdownBar';
@@ -169,12 +169,12 @@ export function OfficePlay({
   /** Với trigger `reach`: đã chạm điểm chưa, NPC đã tới chưa. */
   const [reach, setReach] = useState<'pending' | 'walking' | 'done'>('pending');
 
-  const activity = currentActivity(run);
+  const activity = currentActivity(run, scenario);
   const step = stage.steps[run.activityId];
   const trigger = step?.trigger ?? null;
   const isFollowup = run.phase === 'followup';
   const hintUsed = run.hintsUsed.includes(run.activityId);
-  const followupLine = findFollowupLine(scenarioKey, activity.activity_id);
+  const followupLine = getFollowupLine(scenarioKey, activity.activity_id);
 
   /* ── Bắt đầu một bước: NPC vào vị trí, người chơi đi tìm ── */
   useEffect(() => {
@@ -313,7 +313,7 @@ export function OfficePlay({
     return () => window.removeEventListener('keydown', onKey);
   }, [mode.kind]);
 
-  const index = activityIndex(run);
+  const index = activityIndex(run, scenario);
   const hint = activity.hints[0];
 
   return (

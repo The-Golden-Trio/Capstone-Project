@@ -13,6 +13,12 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./testing": {
+      "@datn/source": "./src/testing/fixture.ts",
+      "types": "./dist/testing/fixture.d.ts",
+      "import": "./dist/testing/fixture.js",
+      "default": "./dist/testing/fixture.js"
     }
   },
   "nx": {
@@ -35,13 +41,19 @@
         }
       },
       "build": {
-        "dependsOn": ["build-data"]
+        "dependsOn": [
+          "build-data"
+        ]
       },
       "typecheck": {
-        "dependsOn": ["build-data"]
+        "dependsOn": [
+          "build-data"
+        ]
       },
       "test": {
-        "dependsOn": ["build-data"]
+        "dependsOn": [
+          "build-data"
+        ]
       }
     }
   },
