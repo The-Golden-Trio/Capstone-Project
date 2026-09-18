@@ -12,10 +12,12 @@ import {
   newSeed,
   pointsEarned,
   runReducer,
+  skillTypeOf,
   startRun,
   type EngineDeps,
   type RunAction,
   type RunState,
+  type SkillType,
 } from '@datn/game-core';
 import { PrismaService } from '../prisma/prisma.service';
 import { ProgressService } from '../progress/progress.service';
@@ -44,6 +46,7 @@ export interface CompletedRun {
   evidence: Array<{
     activityId: string;
     skill: string;
+    skillType: SkillType;
     anchor: string;
     capped: boolean;
     why: string;
@@ -208,7 +211,8 @@ export class RunsService {
         run.band,
       ),
       alreadyScored: Boolean(previouslyScored),
-      evidence,
+      // Bảng RunEvidence chỉ giữ tên kỹ năng; loại tra từ dataset, như `history()`.
+      evidence: evidence.map((e) => ({ ...e, skillType: skillTypeOf(e.skill) })),
     };
   }
 
@@ -269,6 +273,7 @@ export class RunsService {
       evidence: run.evidence.map((e) => ({
         activityId: e.activityId,
         skill: e.skill,
+        skillType: skillTypeOf(e.skill),
         anchor: e.anchor,
         capped: e.capped,
         why: e.why,

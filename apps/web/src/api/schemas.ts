@@ -1,5 +1,6 @@
 /** Hình dạng phản hồi của API, kiểm ở ranh giới mạng. */
 import { z } from 'zod';
+import { SkillTypeSchema } from '@datn/game-core';
 
 export const ConsentStatusSchema = z.enum([
   'not_required',
@@ -71,6 +72,7 @@ export type RoleProgress = z.infer<typeof RoleProgressSchema>;
 
 export const SkillBreakdownSchema = z.object({
   skill: z.string(),
+  skillType: SkillTypeSchema,
   points: z.number(),
   plus2: z.number(),
   neutral: z.number(),
@@ -87,6 +89,9 @@ export type TimelinePoint = z.infer<typeof TimelinePointSchema>;
 
 export const ProgressSummarySchema = z.object({
   totalPoints: z.number(),
+  /** Hai phần của `totalPoints`, tách theo kỹ năng cứng / mềm. */
+  hardPoints: z.number(),
+  softPoints: z.number(),
   runsCompleted: z.number(),
   eventsPlayed: z.number(),
   quizDone: z.boolean(),
@@ -101,6 +106,7 @@ export type ProgressSummary = z.infer<typeof ProgressSummarySchema>;
 export const EvidenceSchema = z.object({
   activityId: z.string(),
   skill: z.string(),
+  skillType: SkillTypeSchema,
   anchor: z.enum(['+2', '0', '-1']),
   capped: z.boolean(),
   why: z.string(),

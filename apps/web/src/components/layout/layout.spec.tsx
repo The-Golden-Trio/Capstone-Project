@@ -41,6 +41,8 @@ function seed({ doneEventIds = [] as string[], playedScenario = false } = {}) {
   useProgressStore.setState({
     summary: {
       totalPoints: 4,
+      hardPoints: 2,
+      softPoints: 2,
       runsCompleted: playedScenario ? 1 : 0,
       eventsPlayed: doneEventIds.length,
       quizDone: true,

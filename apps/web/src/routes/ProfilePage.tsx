@@ -25,7 +25,7 @@ import { useProgressStore } from '../store/progressStore';
  *
  * Bốn cách nhìn cùng một con số, mỗi cách trả lời một câu khác nhau:
  *   cấp bậc     — đi được tới đâu
- *   kỹ năng     — giỏi cái gì
+ *   kỹ năng     — giỏi cái gì (tách cứng / mềm — hai chuyện khác nhau khi kể về mình)
  *   theo ngày   — tiến bộ ra sao
  *   lịch sử     — vì sao lại được chừng đó điểm
  */
@@ -91,6 +91,16 @@ export function ProfilePage() {
           value={summary?.totalPoints ?? 0}
           hint={t('profile.serverScored')}
           gold
+        />
+        <Stat
+          label={t('profile.hardSkills')}
+          value={<span className="text-skill-hard">{summary?.hardPoints ?? 0}</span>}
+          hint={t('profile.hardHint')}
+        />
+        <Stat
+          label={t('profile.softSkills')}
+          value={<span className="text-skill-soft">{summary?.softPoints ?? 0}</span>}
+          hint={t('profile.softHint')}
         />
         <Stat
           label={t('profile.mainQuests')}

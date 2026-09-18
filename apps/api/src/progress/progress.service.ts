@@ -5,14 +5,19 @@ import {
 } from '@nestjs/common';
 import {
   GAME,
+  POINTS,
   UNLOCK_AT,
   bandLabel,
   bandsOf,
   findRole,
   hasScenario,
   isBandOpen,
+  pointsByType,
   shortRoleName,
+  skillTypeOf,
+  type Anchor,
   type Role,
+  type SkillType,
 } from '@datn/game-core';
 import { PrismaService } from '../prisma/prisma.service';
 
@@ -41,6 +46,7 @@ export interface RoleProgress {
 
 export interface SkillBreakdown {
   skill: string;
+  skillType: SkillType;
   points: number;
   plus2: number;
   neutral: number;
@@ -55,6 +61,9 @@ export interface TimelinePoint {
 
 export interface ProgressSummary {
   totalPoints: number;
+  /** Hai phần của `totalPoints`: kỹ thuật và cách làm việc với người. */
+  hardPoints: number;
+  softPoints: number;
   runsCompleted: number;
   eventsPlayed: number;
   quizDone: boolean;
@@ -208,14 +217,38 @@ export class ProgressService {
       this.prisma.gameProfile.findUnique({ where: { userId } }),
       this.prisma.scenarioRun.findMany({
         where: { userId, NOT: { completedAt: null } },
-        select: { completedAt: true, pointsAwarded: true },
+        select: {
+          id: true,
+          scenarioKey: true,
+          completedAt: true,
+          pointsAwarded: true,
+        },
         orderBy: { completedAt: 'asc' },
       }),
       this.prisma.runEvidence.findMany({
         where: { run: { userId, NOT: { completedAt: null } } },
-        select: { skill: true, anchor: true },
+        select: { runId: true, skill: true, anchor: true },
       }),
     ]);
+
+    // Chỉ lần chơi đầu của mỗi kịch bản được cộng điểm (xem RunsService), nên
+    // thống kê kỹ năng cũng chỉ đếm bằng chứng của đúng những lượt đó — để
+    // "cứng + mềm" bằng đúng `totalPoints`, và chơi lại không làm bảng phình ra.
+    const scoredRunIds = new Set<string>();
+    const seenScenario = new Set<string>();
+    for (const run of runs) {
+      if (seenScenario.has(run.scenarioKey)) continue;
+      seenScenario.add(run.scenarioKey);
+      scoredRunIds.add(run.id);
+    }
+    const scored = evidence
+      .filter((row) => scoredRunIds.has(row.runId))
+      .map((row) => ({
+        skill: row.skill,
+        skillType: skillTypeOf(row.skill),
+        anchor: row.anchor as Anchor,
+      }));
+    const byType = pointsByType(scored);
 
     // Chỉ liệt kê nghề người chơi đã chạm tới — bản đồ đầy đủ nằm ở trang khác.
     const touched = new Set(
@@ -239,11 +272,13 @@ export class ProgressService {
 
     return {
       totalPoints: [...skills.values()].reduce((sum, n) => sum + n, 0),
+      hardPoints: byType.hard,
+      softPoints: byType.soft,
       runsCompleted: runs.length,
       eventsPlayed: profile?.eventsPlayed ?? 0,
       quizDone: profile?.quizDone ?? false,
       roles,
-      skills: summariseSkills(evidence),
+      skills: summariseSkills(scored),
       timeline: buildTimeline(runs),
     };
   }
@@ -251,20 +286,20 @@ export class ProgressService {
 
 /** Điểm theo từng kỹ năng có tên — "mình thật ra giỏi cái gì". */
 function summariseSkills(
-  evidence: Array<{ skill: string; anchor: string }>,
+  evidence: Array<{ skill: string; skillType: SkillType; anchor: Anchor }>,
 ): SkillBreakdown[] {
   const bySkill = new Map<string, SkillBreakdown>();
-  const POINTS: Record<string, number> = { '+2': 2, '0': 1, '-1': 0 };
 
   for (const row of evidence) {
     const entry = bySkill.get(row.skill) ?? {
       skill: row.skill,
+      skillType: row.skillType,
       points: 0,
       plus2: 0,
       neutral: 0,
       minus1: 0,
     };
-    entry.points += POINTS[row.anchor] ?? 0;
+    entry.points += POINTS[row.anchor];
     if (row.anchor === '+2') entry.plus2 += 1;
     else if (row.anchor === '0') entry.neutral += 1;
     else entry.minus1 += 1;

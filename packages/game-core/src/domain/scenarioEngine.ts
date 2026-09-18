@@ -11,8 +11,10 @@ import type {
   Activity,
   Anchor,
   Ending,
+  Observe,
   RandomEvent,
   Scenario,
+  SkillType,
 } from '../data/schema.js';
 import { POINTS } from './bands.js';
 import { followupCap, findFollowupLine } from './followups.js';
@@ -41,6 +43,8 @@ export type RunPhase =
 export interface Evidence {
   activityId: string;
   skill: string;
+  /** Cứng hay mềm — chép từ mốc quan sát, để tổng kết tách được hai nhóm. */
+  skillType: SkillType;
   anchor: Anchor;
   /** `true` khi mốc +2 bị hạ xuống 0 vì người chơi đã xem gợi ý. */
   capped: boolean;
@@ -142,6 +146,23 @@ export function npcShortName(scenario: Scenario, npcId: string): string {
 export const pointsEarned = (state: RunState): number =>
   state.evidence.reduce((sum, e) => sum + POINTS[e.anchor], 0);
 
+/**
+ * Điểm tách theo kỹ năng cứng / mềm.
+ *
+ * Nhận mảng bằng chứng thay vì `RunState` để máy chủ dùng được với hàng đã
+ * lưu trong cơ sở dữ liệu — cùng một phép cộng cho màn tổng kết và hồ sơ.
+ */
+export const pointsByType = (
+  evidence: ReadonlyArray<Pick<Evidence, 'anchor' | 'skillType'>>,
+): Record<SkillType, number> =>
+  evidence.reduce(
+    (sum, e) => {
+      sum[e.skillType] += POINTS[e.anchor];
+      return sum;
+    },
+    { hard: 0, soft: 0 } as Record<SkillType, number>,
+  );
+
 /* ── Khởi tạo ──────────────────────────────────────────────────────── */
 
 /** Xáo cố định, không random: cùng một hoạt động luôn mở ra cùng thứ tự. */
@@ -214,7 +235,7 @@ export function startRun(
 /* ── Ghi nhận bằng chứng ───────────────────────────────────────────── */
 
 interface EmitInput {
-  skill: string;
+  observe: Observe;
   anchor: Anchor;
   why: string;
   quote?: string | null;
@@ -237,7 +258,8 @@ function emit(state: RunState, input: EmitInput): RunState {
       ...state.evidence,
       {
         activityId: state.activityId,
-        skill: input.skill,
+        skill: input.observe.skill,
+        skillType: input.observe.skill_type,
         anchor,
         capped,
         why: input.why,
@@ -267,7 +289,7 @@ function answerChoice(state: RunState, optionIndex: number): RunState {
   const quote = activity.options?.[optionIndex] ?? '';
 
   let next = emit(state, {
-    skill: activity.observes[0].skill,
+    observe: activity.observes[0],
     anchor,
     why,
     quote,
@@ -285,7 +307,7 @@ function answerOrdering(state: RunState): RunState {
     .join(' · ');
 
   let next = emit(state, {
-    skill: activity.observes[0].skill,
+    observe: activity.observes[0],
     anchor,
     why,
     quote,
@@ -303,7 +325,7 @@ function answerPrioritizing(state: RunState): RunState {
     .join(' · ');
 
   let next = emit(state, {
-    skill: activity.observes[0].skill,
+    observe: activity.observes[0],
     anchor,
     why,
     quote,
@@ -359,12 +381,12 @@ function answerText(state: RunState, text: string, deps: EngineDeps): RunState {
           minus1: next.minus1 - (previous.anchor === '-1' ? 1 : 0),
           evidence: next.evidence.filter((e) => e !== previous),
         };
-        next = emit(next, { skill: observe.skill, anchor, why, quote: text });
+        next = emit(next, { observe, anchor, why, quote: text });
       }
       continue;
     }
 
-    next = emit(next, { skill: observe.skill, anchor, why, quote: text });
+    next = emit(next, { observe, anchor, why, quote: text });
     if (anchor !== '+2' && !missedSkill) missedSkill = observe.skill;
   }
 
@@ -391,7 +413,7 @@ function answerText(state: RunState, text: string, deps: EngineDeps): RunState {
 function timeout(state: RunState): RunState {
   const activity = currentActivity(state);
   let next = emit(state, {
-    skill: activity.observes[0].skill,
+    observe: activity.observes[0],
     anchor: '-1',
     why: 'Hết giờ mà chưa hành động — sự cố không tự đợi',
     timeout: true,

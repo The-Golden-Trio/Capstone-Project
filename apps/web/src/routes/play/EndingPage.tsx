@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { UNLOCK_AT, findScenarioByKey } from '@datn/game-core';
+import {
+  UNLOCK_AT,
+  findScenarioByKey,
+  pointsByType,
+  type SkillType,
+} from '@datn/game-core';
 import { RoleTheme } from '../../components/game/RoleTheme';
 import { Button } from '../../components/ui/Button';
 import { Card, CardBody } from '../../components/ui/Card';
@@ -25,6 +30,12 @@ const ANCHOR_TONE: Record<string, string> = {
   '-1': 'text-signal',
 };
 
+/** Cùng bộ màu với `SkillChips` lúc đang chơi — nhìn là biết cứng hay mềm. */
+const SKILL_TONE: Record<SkillType, string> = {
+  hard: 'text-skill-hard',
+  soft: 'text-skill-soft',
+};
+
 function EvidenceRow({
   evidence,
   delayMs,
@@ -43,7 +54,9 @@ function EvidenceRow({
         >
           {evidence.anchor}
         </span>
-        <span className="font-mono text-[10.5px] text-muted">{evidence.skill}</span>
+        <span className={cx('font-mono text-[10.5px]', SKILL_TONE[evidence.skillType])}>
+          {evidence.skill}
+        </span>
       </div>
       <div className="text-[13.5px] leading-relaxed text-ink-2">{evidence.why}.</div>
       {evidence.quote && (
@@ -115,6 +128,8 @@ export function EndingPage() {
 
   const good = result.evidence.filter((e) => e.anchor === '+2');
   const bad = result.evidence.filter((e) => e.anchor !== '+2').slice(0, 2);
+  // Điểm lượt này tách cứng / mềm. Lượt chơi lại không cộng gì nên không tách.
+  const byType = result.alreadyScored ? null : pointsByType(result.evidence);
 
   return (
     <RoleTheme roleCode={role_code}>
@@ -155,6 +170,13 @@ export function EndingPage() {
             <span className="block font-display text-[34px] font-bold leading-none tabular-nums text-[var(--accent)]">
               {result.alreadyScored ? '0' : `+${points}`}
             </span>
+            {byType && (
+              <span className="mt-1.5 block font-mono text-[10.5px] tabular-nums">
+                <span className={SKILL_TONE.hard}>+{byType.hard} cứng</span>
+                <span className="text-muted"> · </span>
+                <span className={SKILL_TONE.soft}>+{byType.soft} mềm</span>
+              </span>
+            )}
           </div>
 
           <div className="min-w-0 flex-1 text-[13px] leading-relaxed text-ink-2">

@@ -107,8 +107,11 @@ export const RoleSchema = z.object({
 
 /* ── Kịch bản sâu ──────────────────────────────────────────────────── */
 
+/** Kỹ năng cứng (kỹ thuật) hay mềm (cách làm việc với người). */
+export const SkillTypeSchema = z.enum(['hard', 'soft']);
+
 const ObserveSchema = z.object({
-  skill_type: z.string(),
+  skill_type: SkillTypeSchema,
   skill: z.string(),
   anchors: AnchorTextSchema,
 });
@@ -292,6 +295,7 @@ export const GameDataSchema = z.object({
 });
 
 export type Anchor = z.infer<typeof AnchorSchema>;
+export type SkillType = z.infer<typeof SkillTypeSchema>;
 export type Signal = z.infer<typeof SignalSchema>;
 export type SalaryBand = z.infer<typeof SalaryBandSchema>;
 export type SimilarRole = z.infer<typeof SimilarRoleSchema>;

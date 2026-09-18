@@ -18,6 +18,7 @@ import {
 import { mulberry32 } from './rng.js';
 import {
   currentActivity,
+  pointsByType,
   pointsEarned,
   runReducer,
   startRun,
@@ -161,6 +162,59 @@ describe('một lượt chơi trọn vẹn', () => {
     expect(s.phase).toBe('ended');
     expect(s.secret).toBe(false);
     expect(s.ending?.type).toBe('BAD');
+  });
+});
+
+describe('kỹ năng cứng / mềm — hồ sơ tách được hai nhóm', () => {
+  it('mỗi mẩu bằng chứng mang đúng loại của mốc quan sát đã sinh ra nó', () => {
+    const deps = depsWith(1);
+    let s = startRun(L1, deps);
+    s = runReducer(s, { type: 'TOGGLE_PICK', itemId: 'i2' }, deps);
+    s = runReducer(s, { type: 'TOGGLE_PICK', itemId: 'i3' }, deps);
+    s = runReducer(s, { type: 'ANSWER_PRIORITIZING' }, deps);
+
+    const activity = findScenario('SWE_BACKEND', 'L1')?.scenario.activities.find(
+      (a) => a.activity_id === s.evidence[0].activityId,
+    );
+    const observe = activity?.observes.find((o) => o.skill === s.evidence[0].skill);
+    expect(observe).toBeDefined();
+    expect(s.evidence[0].skillType).toBe(observe?.skill_type);
+  });
+
+  it('điểm cứng + điểm mềm luôn bằng tổng điểm', () => {
+    const deps = depsWith(1);
+    let s = startRun(L1, deps);
+    let guard = 0;
+    while (s.phase !== 'ended' && guard++ < 40) {
+      const a = currentActivity(s);
+      if (s.phase === 'main' && a.type === 'CHOICE')
+        s = runReducer(s, { type: 'ANSWER_CHOICE', optionIndex: 0 }, deps);
+      else if (s.phase === 'main' && a.type === 'PRIORITIZING')
+        s = runReducer(s, { type: 'ANSWER_PRIORITIZING' }, deps);
+      else if (s.phase === 'main' && a.type === 'ORDERING')
+        s = runReducer(s, { type: 'ANSWER_ORDERING' }, deps);
+      else if (s.phase === 'main' || s.phase === 'followup')
+        s = runReducer(s, { type: 'ANSWER_TEXT', text: 'hỏi An rồi tự tra Git log' }, deps);
+      else s = runReducer(s, { type: 'CONTINUE' }, deps);
+    }
+
+    const { hard, soft } = pointsByType(s.evidence);
+    expect(hard + soft).toBe(pointsEarned(s));
+    // L1 quan sát cả hai loại, nên không nhóm nào được phép trống.
+    const types = new Set(s.evidence.map((e) => e.skillType));
+    expect(types).toEqual(new Set(['hard', 'soft']));
+  });
+
+  it('pointsByType: +2 → 2, 0 → 1, −1 → 0, cộng theo từng nhóm', () => {
+    expect(
+      pointsByType([
+        { skillType: 'hard', anchor: '+2' },
+        { skillType: 'hard', anchor: '-1' },
+        { skillType: 'soft', anchor: '0' },
+        { skillType: 'soft', anchor: '+2' },
+      ]),
+    ).toEqual({ hard: 2, soft: 3 });
+    expect(pointsByType([])).toEqual({ hard: 0, soft: 0 });
   });
 });
 

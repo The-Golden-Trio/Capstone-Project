@@ -18,6 +18,7 @@ export {
   findScenarioByKey,
   eventsForRole,
   findEvent,
+  skillTypeOf,
   CONSTELLATION_EDGES,
   type ScenarioEntry,
   type ConstellationEdge,

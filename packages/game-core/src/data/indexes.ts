@@ -5,7 +5,7 @@
  * mảng, `EDGES` dựng lại IIFE). Ở đây tính một lần rồi tra bằng Map.
  */
 import { GAME } from './gameData.js';
-import type { GameEvent, Role, Scenario } from './schema.js';
+import type { GameEvent, Role, Scenario, SkillType } from './schema.js';
 
 const roleMap = new Map<string, Role>(GAME.roles.map((r) => [r.role_code, r]));
 
@@ -56,6 +56,28 @@ export const findEvent = (
   eventId: string,
 ): GameEvent | undefined =>
   eventsForRole(role).find((e) => e.event_id === eventId);
+
+/* ── Kỹ năng cứng / mềm ────────────────────────────────────────────── */
+
+/**
+ * Tên kỹ năng -> loại, gom từ mọi mốc quan sát trong mọi kịch bản.
+ *
+ * Bằng chứng đã lưu chỉ mang tên kỹ năng; loại của nó tra ở đây thay vì lưu
+ * kèm — dataset là nguồn duy nhất nói "Git là kỹ năng cứng", nên hồ sơ cũ
+ * không bao giờ lệch với dataset mới.
+ */
+const skillTypeMap = new Map<string, SkillType>();
+for (const scenario of Object.values(GAME.scenarios)) {
+  for (const activity of scenario.activities) {
+    for (const observe of activity.observes) {
+      skillTypeMap.set(observe.skill, observe.skill_type);
+    }
+  }
+}
+
+/** Kỹ năng này cứng hay mềm. Tên lạ (dataset đã đổi tên) coi là mềm. */
+export const skillTypeOf = (skill: string): SkillType =>
+  skillTypeMap.get(skill) ?? 'soft';
 
 /* ── Chòm sao: cạnh nối giữa các hành tinh ─────────────────────────── */
 
