@@ -20,6 +20,8 @@ import { ChoiceActivity } from '../../components/play/activities/ChoiceActivity'
 import { FreetextActivity } from '../../components/play/activities/FreetextActivity';
 import { OrderingActivity } from '../../components/play/activities/OrderingActivity';
 import { PrioritizingActivity } from '../../components/play/activities/PrioritizingActivity';
+import { OfficePlay } from '../../components/play/office/OfficePlay';
+import { stageFor } from '../../components/play/office/stage';
 import { RoleTheme } from '../../components/game/RoleTheme';
 import { Button } from '../../components/ui/Button';
 import { Card, CardBody } from '../../components/ui/Card';
@@ -37,6 +39,9 @@ import { useRunStore } from '../../store/runStore';
  * và các thẻ hành động.
  *
  * Không đụng gì tới `scenarioEngine` — mọi thứ dưới đây chỉ là cách bày ra.
+ *
+ * Kịch bản đã dựng sân khấu (xem `office/stage.ts`) thì bày thành văn phòng
+ * đi lại được thay cho khung chat; engine và các thẻ hành động dùng chung.
  */
 export function PlayPage() {
   const { scenarioKey = '' } = useParams();
@@ -100,6 +105,24 @@ export function PlayPage() {
   const isFollowup = run.phase === 'followup';
   const hintUsed = run.hintsUsed.includes(run.activityId);
   const followupLine = findFollowupLine(scenarioKey, activity.activity_id);
+
+  /* ── Cảnh văn phòng: tự lo hội thoại, chuyện xen ngang và hoạt động ── */
+  const stage = stageFor(scenarioKey);
+  if (stage) {
+    return (
+      <RoleTheme roleCode={scenario.job.role_code}>
+        <OfficePlay
+          scenarioKey={scenarioKey}
+          stage={stage}
+          run={run}
+          scenario={scenario}
+          dispatch={dispatch}
+          secondsLeft={secondsLeft}
+          onLeave={() => navigate(-1)}
+        />
+      </RoleTheme>
+    );
+  }
 
   /* ── Chuyện xen ngang ── */
   if (run.phase === 'event' && run.pendingEvent) {
