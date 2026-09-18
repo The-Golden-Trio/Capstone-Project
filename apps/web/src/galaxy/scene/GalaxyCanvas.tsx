@@ -37,7 +37,7 @@ export function GalaxyCanvas({ current, unlocked }: GalaxyCanvasProps) {
     <Canvas
       dpr={[1, 1.6]}
       gl={{ antialias: false, powerPreference: 'high-performance', alpha: false }}
-      camera={{ fov: 50, near: 0.5, far: 5000, position: [120, 260, 640] }}
+      camera={{ fov: 50, near: 0.5, far: 6000, position: [160, 340, 820] }}
       onPointerMissed={() => select(null)}
       onCreated={({ gl }) => gl.setClearColor(BG)}
       style={{ background: BG }}

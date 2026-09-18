@@ -8,7 +8,8 @@
 import { useMemo, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { SKY_FRAG, SKY_VERT, STARS_FRAG, STARS_VERT } from './shaders';
+import { Billboard } from '@react-three/drei';
+import { GLOW_FRAG, GLOW_VERT, SKY_FRAG, SKY_VERT, STARS_FRAG, STARS_VERT } from './shaders';
 
 /** PRNG có seed — trùng với script build để cùng một "seed" ra cùng kết quả. */
 function rng(seed: number) {
@@ -53,7 +54,7 @@ function StarLayer({ count, seed, shell, size, opacity, attenuate, disk = false,
         const rad = shell[0] + Math.sqrt(r()) * (shell[1] - shell[0]);
         const a = r() * Math.PI * 2;
         pos[i * 3] = Math.cos(a) * rad;
-        pos[i * 3 + 1] = (r() - 0.5) * 90;
+        pos[i * 3 + 1] = (r() - 0.5) * Math.min(110, shell[1] * 0.5);
         pos[i * 3 + 2] = Math.sin(a) * rad;
       } else {
         const rad = shell[0] + r() * (shell[1] - shell[0]);
@@ -113,7 +114,7 @@ function NebulaSky() {
     uniforms.uTime.value = state.clock.elapsedTime;
   });
   return (
-    <mesh scale={1600} renderOrder={-10}>
+    <mesh scale={2200} renderOrder={-10}>
       <sphereGeometry args={[1, 48, 32]} />
       <shaderMaterial
         vertexShader={SKY_VERT}
@@ -126,16 +127,47 @@ function NebulaSky() {
   );
 }
 
+/**
+ * Lõi thiên hà ở gốc toạ độ: quầng sáng vàng nhạt rất loãng + một đám sao dày
+ * — neo bố cục, để 7 hệ mặt trời trông như đang quay quanh một tâm chung.
+ */
+function GalacticCore() {
+  const uniforms = useMemo(
+    () => ({ uColor: { value: new THREE.Color('#e8c98a') }, uIntensity: { value: 0.11 } }),
+    [],
+  );
+  return (
+    <group>
+      <Billboard>
+        <mesh>
+          <planeGeometry args={[440, 440]} />
+          <shaderMaterial
+            vertexShader={GLOW_VERT}
+            fragmentShader={GLOW_FRAG}
+            uniforms={uniforms}
+            transparent
+            blending={THREE.AdditiveBlending}
+            depthWrite={false}
+            toneMapped={false}
+          />
+        </mesh>
+      </Billboard>
+      <StarLayer count={900} seed={53} shell={[4, 120]} size={[2, 6]} opacity={0.55} attenuate={1} disk drift={0.01} />
+    </group>
+  );
+}
+
 export function Background() {
   return (
     <>
       <NebulaSky />
+      <GalacticCore />
       {/* sao xa: nhiều, nhỏ, cỡ cố định — nhấp nháy nhẹ */}
-      <StarLayer count={4200} seed={11} shell={[900, 1400]} size={[1.1, 2.6]} opacity={0.85} attenuate={0} />
+      <StarLayer count={4200} seed={11} shell={[1200, 1800]} size={[1.1, 2.6]} opacity={0.85} attenuate={0} />
       {/* sao sáng: ít, to hơn, có sắc — điểm nhấn */}
-      <StarLayer count={260} seed={23} shell={[850, 1300]} size={[3, 5.5]} opacity={1} attenuate={0} />
-      {/* bụi giữa các hành tinh: to, mờ, trôi chậm — tạo chiều sâu khi xoay */}
-      <StarLayer count={700} seed={37} shell={[20, 420]} size={[4, 11]} opacity={0.32} attenuate={1} disk drift={0.006} />
+      <StarLayer count={260} seed={23} shell={[1150, 1700]} size={[3, 5.5]} opacity={1} attenuate={0} />
+      {/* bụi giữa các hệ: to, mờ, trôi chậm — tạo chiều sâu khi xoay */}
+      <StarLayer count={900} seed={37} shell={[30, 560]} size={[4, 11]} opacity={0.3} attenuate={1} disk drift={0.005} />
     </>
   );
 }

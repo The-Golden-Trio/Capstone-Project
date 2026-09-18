@@ -46,8 +46,8 @@ export function GalaxyLegend() {
             <p className="m-0">
               <span className="text-signal">━━━</span> còn thiếu kỹ năng
             </p>
-            <p className={cx('m-0 mt-1 text-[10px] opacity-75')}>
-              Hành tinh càng gần = nghề càng giống.
+            <p className={cx('m-0 mt-1 text-[10px] leading-snug opacity-75')}>
+              Mỗi hệ mặt trời = một nhóm nghề. Vòng trong = nghề vào từ đầu, càng ra xa càng senior.
             </p>
           </div>
         </div>

@@ -17,9 +17,17 @@ export const RAW_GALAXY_DATA: unknown = {
       "label": "Kỹ thuật phần mềm",
       "color": "#5b9cf5",
       "sun": [
-        8.7,
-        18,
-        -93.8
+        0,
+        -16.4,
+        274.1
+      ],
+      "tilt": [
+        -0.023,
+        0.043
+      ],
+      "orbits": [
+        46,
+        74
       ]
     },
     {
@@ -28,9 +36,16 @@ export const RAW_GALAXY_DATA: unknown = {
       "label": "Kiểm thử",
       "color": "#f2c94c",
       "sun": [
-        96.2,
-        59.7,
-        33
+        122.5,
+        -12.3,
+        -245.2
+      ],
+      "tilt": [
+        0.011,
+        -0.069
+      ],
+      "orbits": [
+        46
       ]
     },
     {
@@ -39,9 +54,17 @@ export const RAW_GALAXY_DATA: unknown = {
       "label": "Hạ tầng & Hệ thống",
       "color": "#f0925a",
       "sun": [
-        93.2,
-        -7.4,
-        107.7
+        -263.2,
+        -16.5,
+        -76.5
+      ],
+      "tilt": [
+        -0.029,
+        0.059
+      ],
+      "orbits": [
+        46,
+        74
       ]
     },
     {
@@ -50,9 +73,17 @@ export const RAW_GALAXY_DATA: unknown = {
       "label": "An ninh mạng",
       "color": "#ef6b6b",
       "sun": [
-        71.3,
-        63.5,
-        117
+        -96.9,
+        15.6,
+        -256.4
+      ],
+      "tilt": [
+        0.089,
+        0.1
+      ],
+      "orbits": [
+        46,
+        74
       ]
     },
     {
@@ -61,9 +92,17 @@ export const RAW_GALAXY_DATA: unknown = {
       "label": "Cloud & DevOps",
       "color": "#3dd9c1",
       "sun": [
-        -16.5,
-        -4.2,
-        91.5
+        -219.2,
+        16.6,
+        164.6
+      ],
+      "tilt": [
+        -0.035,
+        -0.059
+      ],
+      "orbits": [
+        46,
+        74
       ]
     },
     {
@@ -72,9 +111,17 @@ export const RAW_GALAXY_DATA: unknown = {
       "label": "Dữ liệu & AI",
       "color": "#a97cff",
       "sun": [
-        -117.9,
-        30,
-        84
+        219.2,
+        -13.6,
+        164.6
+      ],
+      "tilt": [
+        0.027,
+        -0.002
+      ],
+      "orbits": [
+        46,
+        74
       ]
     },
     {
@@ -83,9 +130,17 @@ export const RAW_GALAXY_DATA: unknown = {
       "label": "Sản phẩm & Dự án",
       "color": "#f27bb5",
       "sun": [
-        -72.4,
-        -0.3,
-        -27
+        263.2,
+        17.5,
+        -76.5
+      ],
+      "tilt": [
+        0.061,
+        0.04
+      ],
+      "orbits": [
+        46,
+        74
       ]
     }
   ],
@@ -178,18 +233,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -24.8,
-        -31,
-        117.2
+        -237.7,
+        15.2,
+        92.9
       ],
+      "orbit": 1,
       "look": {
         "kind": "cloud",
-        "seed": 37.58,
-        "radius": 7.06,
+        "seed": 38.97,
+        "radius": 8.39,
         "ring": false,
         "moons": 0,
-        "tilt": 0.083,
-        "spin": 0.149
+        "tilt": 0.26,
+        "spin": 0.073
       }
     },
     {
@@ -264,18 +320,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        18.7,
-        -20.6,
-        68.8
+        -207.6,
+        17.4,
+        209.1
       ],
+      "orbit": 0,
       "look": {
-        "kind": "cloud",
-        "seed": 76.64,
-        "radius": 6.33,
-        "ring": true,
-        "moons": 1,
-        "tilt": -0.338,
-        "spin": 0.058
+        "kind": "terra",
+        "seed": 15,
+        "radius": 7.33,
+        "ring": false,
+        "moons": 2,
+        "tilt": -0.397,
+        "spin": 0.148
       }
     },
     {
@@ -350,18 +407,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -145.4,
-        11.6,
-        11.4
+        250.1,
+        -11.8,
+        97.3
       ],
+      "orbit": 1,
       "look": {
         "kind": "gas",
-        "seed": 47.51,
-        "radius": 7.83,
-        "ring": true,
-        "moons": 1,
-        "tilt": -0.349,
-        "spin": 0.112
+        "seed": 74.05,
+        "radius": 6.8,
+        "ring": false,
+        "moons": 2,
+        "tilt": 0.013,
+        "spin": 0.07
       }
     },
     {
@@ -452,18 +510,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -127.4,
-        6.1,
-        132.3
+        261,
+        -14.2,
+        183.8
       ],
+      "orbit": 0,
       "look": {
-        "kind": "gas",
-        "seed": 67.56,
-        "radius": 7.67,
-        "ring": false,
+        "kind": "pastel",
+        "seed": 52.26,
+        "radius": 7.24,
+        "ring": true,
         "moons": 1,
-        "tilt": -0.152,
-        "spin": 0.091
+        "tilt": -0.303,
+        "spin": 0.117
       }
     },
     {
@@ -547,18 +606,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -71.2,
-        30.3,
-        84.7
+        188.2,
+        -15.3,
+        231.8
       ],
+      "orbit": 1,
       "look": {
         "kind": "gas",
-        "seed": 55.51,
-        "radius": 7.17,
+        "seed": 44.31,
+        "radius": 8.06,
         "ring": false,
         "moons": 0,
-        "tilt": 0.261,
-        "spin": 0.071
+        "tilt": -0.262,
+        "spin": 0.169
       }
     },
     {
@@ -642,18 +702,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        24,
-        -14.1,
-        124.9
+        -266.9,
+        -18.9,
+        -150.3
       ],
+      "orbit": 1,
       "look": {
         "kind": "desert",
-        "seed": 28.72,
-        "radius": 7.66,
+        "seed": 66.58,
+        "radius": 8.32,
         "ring": false,
         "moons": 0,
-        "tilt": 0.078,
-        "spin": 0.114
+        "tilt": 0.024,
+        "spin": 0.063
       }
     },
     {
@@ -738,18 +799,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        135.6,
-        -20.7,
-        140.1
+        -309,
+        -19.2,
+        -74.1
       ],
+      "orbit": 0,
       "look": {
         "kind": "desert",
-        "seed": 22.87,
-        "radius": 6.76,
-        "ring": true,
-        "moons": 0,
-        "tilt": -0.368,
-        "spin": 0.118
+        "seed": 25.45,
+        "radius": 6.31,
+        "ring": false,
+        "moons": 1,
+        "tilt": -0.237,
+        "spin": 0.158
       }
     },
     {
@@ -824,18 +886,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        116.7,
-        -29.5,
-        35.2
+        -217.3,
+        -13.9,
+        -78.9
       ],
+      "orbit": 0,
       "look": {
-        "kind": "desert",
-        "seed": 61.84,
-        "radius": 6.3,
+        "kind": "terra",
+        "seed": 4.56,
+        "radius": 7.6,
         "ring": true,
         "moons": 0,
-        "tilt": -0.161,
-        "spin": 0.13
+        "tilt": 0.347,
+        "spin": 0.118
       }
     },
     {
@@ -926,18 +989,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -54.6,
-        -13.6,
-        35.3
+        259.1,
+        14.5,
+        -30.7
       ],
+      "orbit": 0,
       "look": {
-        "kind": "pastel",
-        "seed": 95.62,
-        "radius": 7.92,
+        "kind": "gas",
+        "seed": 9.79,
+        "radius": 6.44,
         "ring": true,
-        "moons": 1,
-        "tilt": -0.348,
-        "spin": 0.073
+        "moons": 2,
+        "tilt": -0.264,
+        "spin": 0.142
       }
     },
     {
@@ -1021,18 +1085,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -108.3,
-        -15,
-        -59.9
+        269.7,
+        22.3,
+        -150
       ],
+      "orbit": 1,
       "look": {
         "kind": "pastel",
-        "seed": 26.69,
-        "radius": 6.84,
+        "seed": 28.87,
+        "radius": 6.75,
         "ring": true,
         "moons": 2,
-        "tilt": -0.383,
-        "spin": 0.055
+        "tilt": -0.367,
+        "spin": 0.079
       }
     },
     {
@@ -1122,18 +1187,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        95.7,
-        21.7,
-        31
+        77.3,
+        -9.1,
+        -253
       ],
+      "orbit": 0,
       "look": {
         "kind": "ice",
-        "seed": 25.4,
-        "radius": 7.46,
+        "seed": 57.1,
+        "radius": 7.7,
         "ring": false,
         "moons": 0,
-        "tilt": 0.166,
-        "spin": 0.101
+        "tilt": -0.058,
+        "spin": 0.052
       }
     },
     {
@@ -1208,16 +1274,17 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        50.8,
-        48.1,
-        89
+        -137.8,
+        9.7,
+        -236.2
       ],
+      "orbit": 0,
       "look": {
         "kind": "lava",
-        "seed": 23.73,
-        "radius": 6.45,
+        "seed": 11.2,
+        "radius": 6.55,
         "ring": true,
-        "moons": 1,
+        "moons": 0,
         "tilt": -0.009,
         "spin": 0.148
       }
@@ -1294,18 +1361,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        87.9,
-        12.7,
-        166.8
+        -31.1,
+        25.2,
+        -288.9
       ],
+      "orbit": 1,
       "look": {
         "kind": "lava",
-        "seed": 37.49,
-        "radius": 7.07,
+        "seed": 39.67,
+        "radius": 6.58,
         "ring": true,
         "moons": 2,
-        "tilt": -0.181,
-        "spin": 0.067
+        "tilt": -0.284,
+        "spin": 0.128
       }
     },
     {
@@ -1389,18 +1457,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -40.5,
-        -18.7,
-        -55.6
+        -70.1,
+        -19.9,
+        250.7
       ],
+      "orbit": 1,
       "look": {
-        "kind": "terra",
-        "seed": 85.67,
-        "radius": 7.04,
+        "kind": "cloud",
+        "seed": 41.96,
+        "radius": 7.99,
         "ring": false,
-        "moons": 0,
-        "tilt": 0.053,
-        "spin": 0.094
+        "moons": 1,
+        "tilt": -0.052,
+        "spin": 0.142
       }
     },
     {
@@ -1491,16 +1560,17 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -7,
-        -6.5,
-        -7.8
+        14.6,
+        -16.7,
+        230.4
       ],
+      "orbit": 0,
       "look": {
         "kind": "terra",
-        "seed": 14.4,
-        "radius": 6.94,
-        "ring": false,
-        "moons": 1,
+        "seed": 33.68,
+        "radius": 7.68,
+        "ring": true,
+        "moons": 0,
         "tilt": 0.293,
         "spin": 0.155
       }
@@ -1586,18 +1656,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -23.8,
-        -15.4,
-        -160.1
+        55.4,
+        -15.1,
+        225
       ],
+      "orbit": 1,
       "look": {
-        "kind": "terra",
-        "seed": 77.79,
-        "radius": 6.67,
+        "kind": "cloud",
+        "seed": 50.24,
+        "radius": 7.55,
         "ring": false,
-        "moons": 0,
-        "tilt": 0.188,
-        "spin": 0.095
+        "moons": 1,
+        "tilt": 0.218,
+        "spin": 0.073
       }
     },
     {
@@ -1681,18 +1752,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        126.1,
-        -15.4,
-        -99.6
+        -30.5,
+        -18.5,
+        239.7
       ],
+      "orbit": 0,
       "look": {
-        "kind": "terra",
-        "seed": 72.77,
-        "radius": 7.61,
-        "ring": true,
-        "moons": 0,
-        "tilt": 0.387,
-        "spin": 0.088
+        "kind": "ice",
+        "seed": 24.09,
+        "radius": 8.07,
+        "ring": false,
+        "moons": 2,
+        "tilt": 0.173,
+        "spin": 0.13
       }
     },
     {
@@ -1783,18 +1855,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        25.1,
-        -12,
-        -157.9
+        30.5,
+        -14.2,
+        308.5
       ],
+      "orbit": 0,
       "look": {
-        "kind": "terra",
-        "seed": 91.57,
-        "radius": 7.18,
-        "ring": false,
-        "moons": 0,
-        "tilt": -0.391,
-        "spin": 0.103
+        "kind": "cloud",
+        "seed": 85.54,
+        "radius": 8.35,
+        "ring": true,
+        "moons": 2,
+        "tilt": -0.343,
+        "spin": 0.067
       }
     },
     {
@@ -1878,18 +1951,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        10.5,
-        -15.7,
-        -111.3
+        -45,
+        -18.1,
+        283.3
       ],
+      "orbit": 0,
       "look": {
-        "kind": "terra",
-        "seed": 84.67,
-        "radius": 8.26,
+        "kind": "ice",
+        "seed": 73.35,
+        "radius": 8.01,
         "ring": false,
-        "moons": 0,
-        "tilt": 0.122,
-        "spin": 0.072
+        "moons": 1,
+        "tilt": 0.18,
+        "spin": 0.118
       }
     },
     {
@@ -1979,16 +2053,17 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -68.6,
-        -13.4,
-        -116.6
+        45,
+        -14.6,
+        264.8
       ],
+      "orbit": 0,
       "look": {
         "kind": "terra",
-        "seed": 16.14,
-        "radius": 6.97,
-        "ring": false,
-        "moons": 1,
+        "seed": 35.12,
+        "radius": 7.77,
+        "ring": true,
+        "moons": 0,
         "tilt": -0.133,
         "spin": 0.096
       }
@@ -2074,18 +2149,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        51.8,
-        -15.1,
-        -78.6
+        14.7,
+        -14,
+        346.5
       ],
+      "orbit": 1,
       "look": {
-        "kind": "terra",
-        "seed": 67.16,
-        "radius": 7.4,
-        "ring": true,
-        "moons": 1,
-        "tilt": 0.252,
-        "spin": 0.12
+        "kind": "ice",
+        "seed": 20.22,
+        "radius": 6.74,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.067,
+        "spin": 0.149
       }
     },
     {
@@ -2160,18 +2236,19 @@ export const RAW_GALAXY_DATA: unknown = {
         }
       ],
       "position": [
-        -71.4,
-        -13.9,
-        -189.2
+        -14.6,
+        -16,
+        317.7
       ],
+      "orbit": 0,
       "look": {
         "kind": "terra",
-        "seed": 55.23,
-        "radius": 8.04,
+        "seed": 83.51,
+        "radius": 8.08,
         "ring": false,
         "moons": 0,
-        "tilt": 0.058,
-        "spin": 0.068
+        "tilt": -0.283,
+        "spin": 0.13
       }
     }
   ],

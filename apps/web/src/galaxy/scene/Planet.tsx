@@ -137,11 +137,15 @@ export function Planet({ node, status, unlocked, playable }: PlanetProps) {
       haloRef.current.visible = haloMat.current.opacity > 0.01;
     }
     if (labelRef.current) {
-      const want = status === 'far' && !hovered && !selected ? 0.5 : 1;
+      const dist = state.camera.position.distanceTo(_world.set(...node.position));
+      const focus = status === 'current' || hovered || selected;
+      // toàn cảnh (camera rất xa): chỉ giữ nhãn hệ mặt trời + hành tinh đang đứng/chọn,
+      // 22 tên nghề chồng lên nhau chỉ thành một đám chữ
+      const farAway = dist > 520 && !focus;
+      const want = farAway ? 0 : status === 'far' && !focus ? 0.5 : 1;
       const cur = Number(labelRef.current.style.opacity || 1);
       labelRef.current.style.opacity = damp(cur, want, dt, 5).toFixed(3);
-      // camera càng lùi xa nhãn càng nhỏ (có sàn), để toàn cảnh không thành một đám chữ
-      const dist = state.camera.position.distanceTo(_world.set(...node.position));
+      // camera càng lùi xa nhãn càng nhỏ (có sàn)
       const scale = THREE.MathUtils.clamp(120 / dist, 0.5, 1.05);
       labelRef.current.style.transform = `scale(${scale.toFixed(3)})`;
       labelRef.current.dataset.far = scale < 0.7 ? 'true' : 'false';

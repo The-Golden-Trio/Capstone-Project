@@ -11,7 +11,7 @@ import { useEffect, useRef, type ComponentRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
-import { findPlanet, type GalaxyNode } from '../galaxy';
+import { findPlanet, groupOf, type GalaxyNode } from '../galaxy';
 import { useGalaxyStore, useGalaxyUiStore } from '../galaxyStore';
 import { shipWorldPos } from './sceneRefs';
 
@@ -33,20 +33,26 @@ const _dir = new THREE.Vector3();
 const _pos = new THREE.Vector3();
 const _tgt = new THREE.Vector3();
 
-/** Góc nhìn "đứng ngoài rìa ngân hà nhìn vào" cho một hành tinh. */
+/**
+ * Góc nhìn cho một hành tinh: đứng phía ngoài hệ mặt trời của nó, hơi chếch
+ * sang một bên (~40°) để mặt trời nằm lệch chứ không chói ngay sau lưng hành
+ * tinh, và cao hơn mặt phẳng quỹ đạo để thấy các vòng.
+ */
 function planetView(node: GalaxyNode): { pos: THREE.Vector3; target: THREE.Vector3 } {
   const target = new THREE.Vector3(...node.position);
-  const out = new THREE.Vector3(node.position[0], 0, node.position[2]);
+  const sun = groupOf(node).sun;
+  const out = new THREE.Vector3(node.position[0] - sun[0], 0, node.position[2] - sun[2]);
+  if (out.lengthSq() < 1) out.set(node.position[0], 0, node.position[2]);
   if (out.lengthSq() < 1) out.set(0, 0, 1);
-  out.normalize();
-  const pos = target.clone().addScaledVector(out, 118).add(new THREE.Vector3(0, 42, 0));
+  out.normalize().applyAxisAngle(new THREE.Vector3(0, 1, 0), 0.7);
+  const pos = target.clone().addScaledVector(out, 112).add(new THREE.Vector3(0, 46, 0));
   return { pos, target };
 }
 
 /** Toàn cảnh: nhìn cả dải ngân hà từ trên chếch xuống. */
 const OVERVIEW = {
-  pos: new THREE.Vector3(60, 270, 400),
-  target: new THREE.Vector3(0, -10, 0),
+  pos: new THREE.Vector3(30, 700, 700),
+  target: new THREE.Vector3(0, -10, 100),
 };
 
 export function CameraRig() {
@@ -80,7 +86,7 @@ export function CameraRig() {
     const c = controls.current;
     if (!node || !c) return;
     const view = planetView(node);
-    camera.position.copy(view.target).add(new THREE.Vector3(120, 260, 640));
+    camera.position.copy(view.target).add(new THREE.Vector3(160, 340, 820));
     c.target.copy(view.target);
     c.update();
     flyTo(view.pos, view.target, 3400);
@@ -182,7 +188,7 @@ export function CameraRig() {
       dampingFactor={0.07}
       enablePan={false}
       minDistance={28}
-      maxDistance={900}
+      maxDistance={1700}
       rotateSpeed={0.55}
       zoomSpeed={0.8}
       autoRotateSpeed={0.22}

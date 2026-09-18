@@ -30,7 +30,12 @@ const GroupSchema = z.object({
   short: z.string(),
   label: z.string(),
   color: z.string(),
+  /** Tâm hệ mặt trời — mặt trời đặt ở đây. */
   sun: Vec3Schema,
+  /** Mặt phẳng quỹ đạo nghiêng: [quanh trục X, quanh trục Z], radian. */
+  tilt: z.tuple([z.number(), z.number()]),
+  /** Bán kính các vòng quỹ đạo có hành tinh, tính từ mặt trời. */
+  orbits: z.array(z.number()),
 });
 
 const EntryEventSchema = z.object({
@@ -54,6 +59,8 @@ const NodeSchema = z.object({
   softSkills: z.array(z.string()),
   events: z.array(EntryEventSchema),
   position: Vec3Schema,
+  /** Vòng quỹ đạo (0 = sát mặt trời = nghề vào từ L1–L2; xa hơn = senior hơn). */
+  orbit: z.number().int().min(0),
   look: z.object({
     kind: PlanetKindSchema,
     seed: z.number(),
@@ -92,6 +99,33 @@ export type EdgeType = z.infer<typeof EdgeTypeSchema>;
 export type EntryEvent = z.infer<typeof EntryEventSchema>;
 
 export const GALAXY = GalaxySchema.parse(RAW_GALAXY_DATA);
+
+/* ── Hệ mặt trời ──────────────────────────────────────────────────────── */
+
+/**
+ * Toạ độ cục bộ trong mặt phẳng quỹ đạo của một hệ → toạ độ thế giới.
+ * Xoay quanh Z rồi quanh X, cộng tâm hệ — PHẢI trùng với `rotX(rotZ(...))`
+ * trong `docs/data/build-galaxy.mjs`, vì vị trí hành tinh đã tính sẵn ở đó
+ * còn vòng quỹ đạo thì vẽ lúc chạy; lệch nhau là hành tinh trượt khỏi vòng.
+ */
+export function systemToWorld(group: GalaxyGroup, local: [number, number, number]): [number, number, number] {
+  const [rx, rz] = group.tilt;
+  const [x0, y0, z0] = local;
+  const x1 = x0 * Math.cos(rz) - y0 * Math.sin(rz);
+  const y1 = x0 * Math.sin(rz) + y0 * Math.cos(rz);
+  const z1 = z0;
+  const y2 = y1 * Math.cos(rx) - z1 * Math.sin(rx);
+  const z2 = y1 * Math.sin(rx) + z1 * Math.cos(rx);
+  return [group.sun[0] + x1, group.sun[1] + y2, group.sun[2] + z2];
+}
+
+/** Điểm trên vòng quỹ đạo bán kính `radius` của một hệ, để vẽ vòng. */
+export function orbitPoints(group: GalaxyGroup, radius: number, segments = 128): [number, number, number][] {
+  return Array.from({ length: segments + 1 }, (_, i) => {
+    const a = (i / segments) * Math.PI * 2;
+    return systemToWorld(group, [Math.cos(a) * radius, 0, Math.sin(a) * radius]);
+  });
+}
 
 /* ── Bảng tra ─────────────────────────────────────────────────────────── */
 
