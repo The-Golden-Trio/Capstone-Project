@@ -1,9 +1,14 @@
-import { Injectable } from '@nestjs/common';
+import {
+  ForbiddenException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import {
   GAME,
   UNLOCK_AT,
   bandLabel,
   bandsOf,
+  findRole,
   hasScenario,
   isBandOpen,
   shortRoleName,
@@ -21,6 +26,10 @@ export interface BandProgress {
   hasScenario: boolean;
   /** Còn thiếu bao nhiêu điểm ở cấp trước để mở cấp này. */
   pointsToUnlock: number;
+  /** Người chơi đã bấm "vào học" cấp bậc này chưa. */
+  enrolled: boolean;
+  /** Đã hoàn thành nhiệm vụ chính ở cấp bậc này chưa. */
+  completed: boolean;
 }
 
 export interface RoleProgress {
@@ -94,6 +103,76 @@ export class ProgressService {
     );
   }
 
+  /** Khoá "nghề:cấp" của những cấp bậc đã ghi danh. */
+  private async enrolledKeys(userId: string): Promise<Set<string>> {
+    const rows = await this.prisma.enrollment.findMany({
+      where: { userId },
+      select: { roleCode: true, band: true },
+    });
+    return new Set(rows.map((r) => `${r.roleCode}:${r.band}`));
+  }
+
+  /** Khoá "nghề:cấp" của những cấp bậc đã chơi xong nhiệm vụ chính. */
+  private async completedKeys(userId: string): Promise<Set<string>> {
+    const rows = await this.prisma.scenarioRun.findMany({
+      where: { userId, NOT: { completedAt: null } },
+      select: { roleCode: true, band: true },
+    });
+    return new Set(rows.map((r) => `${r.roleCode}:${r.band}`));
+  }
+
+  /**
+   * Tiến trình của đúng một nghề — kể cả nghề chưa từng chạm tới.
+   *
+   * `summary()` chỉ liệt kê nghề đã có điểm, nên roadmap không dùng được: nó
+   * phải vẽ được cả lộ trình của một nghề hoàn toàn mới.
+   */
+  async roleProgress(
+    userId: string,
+    roleCode: string,
+  ): Promise<RoleProgress | null> {
+    const role = findRole(roleCode);
+    if (!role) return null;
+
+    const [skills, enrolledKeys, completedKeys] = await Promise.all([
+      this.skillMap(userId),
+      this.enrolledKeys(userId),
+      this.completedKeys(userId),
+    ]);
+
+    return buildRoleProgress(role, {
+      pointsAt: (b) => this.pointsAt(skills, roleCode, b),
+      enrolledKeys,
+      completedKeys,
+    });
+  }
+
+  /**
+   * Ghi danh một cấp bậc.
+   *
+   * Vẫn kiểm cấp bậc đã mở chưa: ghi danh là cửa của giao diện, còn cửa thật
+   * vẫn là điểm kỹ năng. Ghi danh lại lần nữa thì không sao, không tạo bản ghi
+   * thừa.
+   */
+  async enroll(userId: string, roleCode: string, band: string): Promise<void> {
+    const role = findRole(roleCode);
+    if (!role) throw new NotFoundException('Không có nghề này');
+    if (!bandsOf(role).includes(band)) {
+      throw new NotFoundException('Nghề này không có cấp bậc đó');
+    }
+    if (!(await this.isUnlocked(userId, role, band))) {
+      throw new ForbiddenException(
+        `Cấp bậc ${band} chưa mở. Hãy hoàn thành cấp bậc trước đó.`,
+      );
+    }
+
+    await this.prisma.enrollment.upsert({
+      where: { userId_roleCode_band: { userId, roleCode, band } },
+      create: { userId, roleCode, band },
+      update: {},
+    });
+  }
+
   async summary(userId: string): Promise<ProgressSummary> {
     const [skills, profile, runs, evidence] = await Promise.all([
       this.skillMap(userId),
@@ -114,36 +193,20 @@ export class ProgressService {
       [...skills.keys()].map((key) => key.split(':')[0]),
     );
 
+    const [enrolledKeys, completedKeys] = await Promise.all([
+      this.enrolledKeys(userId),
+      this.completedKeys(userId),
+    ]);
+
     const roles: RoleProgress[] = GAME.roles
       .filter((role) => touched.has(role.role_code))
-      .map((role) => {
-        const list = bandsOf(role);
-        const bands: BandProgress[] = list.map((band, index) => {
-          const previous = index > 0 ? list[index - 1] : null;
-          const previousPoints = previous
-            ? this.pointsAt(skills, role.role_code, previous)
-            : 0;
-          return {
-            band,
-            label: bandLabel(band),
-            points: this.pointsAt(skills, role.role_code, band),
-            unlocked: isBandOpen(role, band, (b) =>
-              this.pointsAt(skills, role.role_code, b),
-            ),
-            hasScenario: hasScenario(role.role_code, band),
-            pointsToUnlock: previous
-              ? Math.max(0, UNLOCK_AT - previousPoints)
-              : 0,
-          };
-        });
-
-        return {
-          roleCode: role.role_code,
-          roleName: shortRoleName(role),
-          bands,
-          totalPoints: bands.reduce((sum, b) => sum + b.points, 0),
-        };
-      });
+      .map((role) =>
+        buildRoleProgress(role, {
+          pointsAt: (b) => this.pointsAt(skills, role.role_code, b),
+          enrolledKeys,
+          completedKeys,
+        }),
+      );
 
     return {
       totalPoints: [...skills.values()].reduce((sum, n) => sum + n, 0),
@@ -200,4 +263,47 @@ function buildTimeline(
       cumulative += points;
       return { date, points, cumulative };
     });
+}
+
+
+/**
+ * Dựng lộ trình cấp bậc của một nghề.
+ *
+ * Tách thành hàm thuần vì cả `summary()` lẫn `roleProgress()` đều cần đúng
+ * phép tính này — để hai chỗ tự tính riêng là kiểu sai chỉ lộ ra khi hai màn
+ * hình nói hai điều khác nhau về cùng một cấp bậc.
+ */
+function buildRoleProgress(
+  role: Role,
+  ctx: {
+    pointsAt: (band: string) => number;
+    enrolledKeys: Set<string>;
+    completedKeys: Set<string>;
+  },
+): RoleProgress {
+  const list = bandsOf(role);
+
+  const bands: BandProgress[] = list.map((band, index) => {
+    const previous = index > 0 ? list[index - 1] : null;
+    const key = `${role.role_code}:${band}`;
+    return {
+      band,
+      label: bandLabel(band),
+      points: ctx.pointsAt(band),
+      unlocked: isBandOpen(role, band, ctx.pointsAt),
+      hasScenario: hasScenario(role.role_code, band),
+      pointsToUnlock: previous
+        ? Math.max(0, UNLOCK_AT - ctx.pointsAt(previous))
+        : 0,
+      enrolled: ctx.enrolledKeys.has(key),
+      completed: ctx.completedKeys.has(key),
+    };
+  });
+
+  return {
+    roleCode: role.role_code,
+    roleName: shortRoleName(role),
+    bands,
+    totalPoints: bands.reduce((sum, b) => sum + b.points, 0),
+  };
 }

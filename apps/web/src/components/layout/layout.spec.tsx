@@ -52,8 +52,8 @@ function seed({ doneEventIds = [] as string[], playedScenario = false } = {}) {
           roleName: 'Lập trình viên Back-end',
           totalPoints: 4,
           bands: [
-            { band: 'L1', label: 'Thực tập sinh', points: 4, unlocked: true, hasScenario: true, pointsToUnlock: 0 },
-            { band: 'L2', label: 'Mới ra trường', points: 0, unlocked: false, hasScenario: false, pointsToUnlock: 2 },
+            { band: 'L1', label: 'Thực tập sinh', points: 4, unlocked: true, hasScenario: true, pointsToUnlock: 0, enrolled: true, completed: false },
+            { band: 'L2', label: 'Mới ra trường', points: 0, unlocked: false, hasScenario: false, pointsToUnlock: 2, enrolled: false, completed: false },
           ],
         },
       ],

@@ -410,3 +410,562 @@
     }
   }
 }
+
+
+/* ═══ Bản đồ nghề ═══
+   Hai chất liệu tách bạch: mặt biển (quần đảo, tông xanh đêm) và tờ bản đồ
+   giấy bên trong một hòn đảo (giấy ngả vàng, nét mực). Ghim và nhãn ngoài
+   biển được chống-phóng trong IslandsView (scale 1/zoom) nên mọi cỡ chữ ở
+   đây là cỡ thật trên màn hình, không đổi theo mức phóng. */
+
+/* ── Cảnh: mặt biển nhường chỗ cho tờ giấy ── */
+
+.stage-shown,
+.stage-dimmed {
+  position: absolute;
+  inset: 0;
+  transition:
+    opacity 0.5s ease,
+    filter 0.5s ease;
+}
+
+/* Mặt biển lùi lại chứ không tắt hẳn: còn thấy mình vừa cập bến hòn nào. */
+.stage-dimmed {
+  opacity: 0.2;
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.paper-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 3vw, 40px);
+  /* Bóng tối quanh tờ giấy — cảm giác đang cầm bản đồ trên tay. */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(4, 8, 20, 0.55),
+    rgba(4, 8, 20, 0.9) 78%
+  );
+  animation: stage-dim 0.5s ease-out;
+}
+
+@keyframes stage-dim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Mặt biển ── */
+
+.sea-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sea-view {
+  transform-origin: 0 0;
+  transition: transform 0.85s cubic-bezier(0.32, 0.72, 0.24, 1);
+}
+
+.sea-route path {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.4;
+  stroke-dasharray: 3 12;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
+.sea-grid line {
+  stroke: rgba(141, 178, 222, 0.09);
+  stroke-width: 1;
+}
+
+.sea-coord text {
+  fill: rgba(141, 178, 222, 0.22);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-anchor: middle;
+  user-select: none;
+}
+
+/* ── Hòn đảo ── */
+
+.isle {
+  cursor: pointer;
+  transition:
+    opacity 0.45s ease,
+    filter 0.25s ease;
+}
+
+.isle:focus {
+  outline: none;
+}
+
+.isle:focus-visible .isle-land {
+  stroke: var(--color-gold-2);
+  stroke-width: 3;
+}
+
+.isle:hover {
+  filter: drop-shadow(0 0 16px var(--accent-glow, rgba(212, 176, 106, 0.4)));
+}
+
+.isle.is-dimmed {
+  opacity: 0.16;
+}
+
+/* vòng sóng ôm quanh bờ */
+.isle-surf {
+  fill: none;
+  stroke: rgba(160, 208, 255, 0.28);
+  stroke-width: 9;
+  stroke-linejoin: round;
+}
+
+.isle-land {
+  fill: var(--accent-soft, #2c4a74);
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.isle.is-done .isle-land {
+  fill: var(--color-good-soft);
+  stroke: var(--color-good);
+}
+
+.isle.is-locked .isle-land {
+  fill: #16294a;
+  stroke: var(--color-line-2);
+}
+
+.isle.is-locked .isle-surf {
+  stroke: rgba(141, 178, 222, 0.12);
+}
+
+.isle.is-selected .isle-land {
+  stroke-width: 3;
+}
+
+.isle-rock {
+  fill: rgba(255, 255, 255, 0.07);
+}
+
+/* ghim: cỡ cố định, không đổi theo mức phóng */
+.isle-pin-shadow {
+  fill: rgba(0, 0, 0, 0.42);
+}
+
+.isle-pin {
+  fill: var(--accent, var(--color-gold));
+  stroke: #0a1026;
+  stroke-width: 1.2;
+}
+
+.isle.is-done .isle-pin {
+  fill: var(--color-good);
+}
+
+.isle.is-locked .isle-pin {
+  fill: #4a5f80;
+}
+
+.isle-pin-dot {
+  fill: #0a1026;
+}
+
+.isle-label {
+  fill: var(--color-ink);
+  font-family: var(--font-display, serif);
+  font-size: 15px;
+  font-weight: 600;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: #081d35;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  user-select: none;
+}
+
+.isle-sub {
+  fill: var(--color-ink-2);
+  font-size: 11.5px;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: #081d35;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  user-select: none;
+}
+
+.isle.is-locked .isle-label,
+.isle.is-locked .isle-sub {
+  fill: var(--color-muted);
+}
+
+/* ── Tờ bản đồ giấy ──
+   Vẫn là bản đồ kho báu về bố cục và nét vẽ, nhưng lấy màu của nghề: nền
+   trời đêm, mực là màu nhấn. Một tờ giấy ố vàng đặt giữa giao diện xanh đêm
+   thì đẹp riêng nó mà rời khỏi phần còn lại. */
+
+.paper-map {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 26px 46px rgba(0, 0, 0, 0.75));
+  transition: filter 0.3s ease;
+}
+
+.paper-tint-in {
+  stop-color: var(--color-surf);
+}
+
+.paper-tint-out {
+  stop-color: #0b1832;
+}
+
+.paper-body {
+  transition: opacity 0.3s ease;
+}
+
+.paper-map.is-dimmed .paper-body {
+  opacity: 0.4;
+}
+
+.paper-grid-line {
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1;
+  opacity: 0.13;
+}
+
+/* mép giấy rách, và khung kẻ hai nét bên trong */
+.paper-edge {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 2.4;
+  stroke-linejoin: round;
+  opacity: 0.6;
+}
+
+.paper-frame rect {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.2;
+  opacity: 0.28;
+}
+
+/* đất liền: sáng hơn mặt nước một bậc, viền bằng nét mực màu nhấn */
+.paper-sand {
+  fill: color-mix(in srgb, var(--accent, #d4b06a) 17%, var(--color-panel));
+}
+
+.paper-coast-soft {
+  fill: none;
+  stroke: var(--accent-glow, rgba(212, 176, 106, 0.45));
+  stroke-width: 7;
+  stroke-linejoin: round;
+}
+
+.paper-coast {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+}
+
+.paper-terrain {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.5;
+}
+
+.paper-compass-ring {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.6;
+  opacity: 0.5;
+}
+
+.paper-compass-needle {
+  fill: var(--color-gold);
+  opacity: 0.85;
+}
+
+.paper-compass-tail {
+  fill: var(--accent, var(--color-gold));
+  opacity: 0.45;
+}
+
+.paper-compass-text {
+  fill: var(--color-ink-2);
+  font-family: var(--font-display, serif);
+  font-size: 13px;
+  font-weight: 700;
+  text-anchor: middle;
+  user-select: none;
+}
+
+/* ── Ký hiệu địa điểm trên giấy ── */
+
+.paper-mark {
+  cursor: pointer;
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease;
+}
+
+.paper-mark:focus {
+  outline: none;
+}
+
+.paper-mark:focus-visible .paper-mark-halo {
+  stroke: var(--color-gold-2);
+  stroke-width: 2.4;
+  opacity: 1;
+}
+
+.paper-mark.is-faded {
+  opacity: 0.28;
+}
+
+.paper-mark-halo {
+  fill: rgba(8, 16, 36, 0.55);
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.1;
+  stroke-dasharray: 4 5;
+  opacity: 0.65;
+}
+
+.paper-mark:hover .paper-mark-halo {
+  fill: rgba(8, 16, 36, 0.8);
+  opacity: 1;
+}
+
+.paper-mark-body {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.paper-mark-line {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.75;
+}
+
+/* Viên ngọc của nhiệm vụ chính là thứ duy nhất được tô đầy — trên bản đồ kho
+   báu, chỗ đáng đi tìm chỉ có một. */
+.paper-mark.is-main .paper-mark-body {
+  fill: var(--color-gold-soft);
+  stroke: var(--color-gold);
+  stroke-width: 2.6;
+}
+
+.paper-mark.is-main .paper-mark-line {
+  stroke: var(--color-gold);
+}
+
+.paper-mark.is-done .paper-mark-body,
+.paper-mark.is-done .paper-mark-line {
+  stroke: var(--color-good);
+  fill: none;
+}
+
+.paper-mark.is-done .paper-mark-halo {
+  stroke: var(--color-good);
+}
+
+.paper-mark-label {
+  fill: var(--color-ink);
+  font-family: var(--font-display, serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: #0b1832;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  user-select: none;
+}
+
+.paper-mark.is-done .paper-mark-label {
+  fill: var(--color-good);
+}
+
+
+/* ── Hộp câu hỏi, neo cạnh ký hiệu vừa bấm ── */
+
+.quest-box {
+  position: fixed;
+  z-index: 40;
+  width: min(360px, calc(100vw - 24px));
+  max-height: min(560px, calc(100vh - 24px));
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surf);
+  padding: 16px;
+  color: var(--color-ink);
+  box-shadow: 0 22px 50px -18px rgba(0, 0, 0, 0.8);
+}
+
+/* ── Nút nổi trên bản đồ ── */
+
+.map-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: rgba(16, 31, 61, 0.88);
+  padding: 6px 13px;
+  font-size: 12.5px;
+  color: var(--color-ink-2);
+  backdrop-filter: blur(6px);
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.map-chip:hover:not(.is-plain) {
+  border-color: var(--accent, var(--color-gold));
+  color: var(--color-ink);
+}
+
+.map-chip.is-plain {
+  cursor: default;
+  color: var(--color-ink);
+}
+
+.map-chip.is-accent {
+  border-color: var(--accent, var(--color-gold));
+  color: var(--color-gold-2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .isle.is-current .isle-pin {
+    animation: pin-breathe 2.6s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center bottom;
+  }
+  @keyframes pin-breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.12);
+    }
+  }
+
+  .paper-map {
+    animation: paper-unfurl 0.5s cubic-bezier(0.32, 0.72, 0.24, 1) backwards;
+  }
+  @keyframes paper-unfurl {
+    from {
+      opacity: 0;
+      transform: scale(0.94) rotate(-0.6deg);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .quest-box {
+    animation: quest-in 0.24s ease-out;
+  }
+  @keyframes quest-in {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* ── Nút phóng to / thu nhỏ ── */
+.map-zoom {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 9px;
+  border: 1px solid var(--color-line);
+  background: rgba(10, 16, 38, 0.9);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-lift);
+}
+.map-zoom button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: none;
+  color: var(--color-ink-2);
+  font-family: var(--font-mono);
+  font-size: 17px;
+  line-height: 1;
+  transition: background-color 0.15s ease;
+}
+.map-zoom button:hover:not(:disabled) {
+  background: var(--color-panel);
+  color: var(--color-ink);
+}
+.map-zoom button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.map-zoom button + button {
+  border-top: 1px solid var(--color-line-2);
+}
+
+/* ── Bảng thông tin nổi trên bản đồ ── */
+.map-overlay {
+  position: absolute;
+  z-index: 10;
+  width: min(380px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  overflow-y: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .map-overlay {
+    animation: overlay-in 0.28s ease-out;
+  }
+  @keyframes overlay-in {
+    from {
+      opacity: 0;
+      transform: translateX(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

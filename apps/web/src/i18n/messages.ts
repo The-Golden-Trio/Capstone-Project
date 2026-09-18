@@ -28,6 +28,9 @@ export const MESSAGES = {
   'nav.account': { vi: 'Tài khoản', en: 'Account' },
   'nav.mainNav': { vi: 'Điều hướng chính', en: 'Main navigation' },
   'nav.openMenu': { vi: 'Mở menu', en: 'Open menu' },
+  'nav.collapse': { vi: 'Thu gọn thanh bên', en: 'Collapse sidebar' },
+  'nav.expand': { vi: 'Mở rộng thanh bên', en: 'Expand sidebar' },
+  'nav.backToMap': { vi: 'Về bản đồ nghề', en: 'Back to the career map' },
 
   /* ── Thanh đầu trang ── */
   'top.skillPoints': { vi: 'điểm kỹ năng', en: 'skill points' },
@@ -178,6 +181,14 @@ export const MESSAGES = {
   'common.signOut': { vi: 'Đăng xuất', en: 'Sign out' },
 
   /* ── Ghi chú về ngôn ngữ của nội dung ── */
+  'career.tabRoadmap': { vi: 'Lộ trình', en: 'Roadmap' },
+  'career.tabRelated': { vi: 'Nghề lân cận', en: 'Related' },
+  'career.stagesDone': { vi: '{done}/{total} chặng đã qua', en: '{done}/{total} stages done' },
+  'career.pickStage': {
+    vi: 'Bấm vào một chặng trên con đường để xem trong đó có gì.',
+    en: 'Pick a stage on the path to see what is inside.',
+  },
+
   'lang.contentVietnamese': {
     vi: 'Nội dung kịch bản nghề hiện chỉ có tiếng Việt.',
     en: 'Career scenarios are currently available in Vietnamese only.',

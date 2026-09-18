@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { hasFit } from '@datn/game-core';
 import { FitRadar } from '../components/game/FitRadar';
+import { CharacterPanel } from '../components/layout/CharacterPanel';
 import { PageHeader } from '../components/layout/PageHeader';
 import { BandRoadmap } from '../components/profile/BandRoadmap';
 import { LegacyImportBanner } from '../components/profile/LegacyImportBanner';
@@ -44,6 +45,45 @@ export function ProfilePage() {
       <PageHeader title={t('profile.title')}>{t('profile.lead')}</PageHeader>
 
       <LegacyImportBanner />
+
+      {/* Thanh bên đã bỏ, nên hồ sơ nhân vật và các đường dẫn còn lại về đây. */}
+      <div className="mb-[22px] grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+        <div className="rounded-[11px] border border-line bg-surf">
+          <CharacterPanel onNavigate={() => undefined} />
+        </div>
+
+        <button
+          type="button"
+          onClick={() => navigate('/quiz')}
+          className="action-card flex items-center gap-3 rounded-[11px] border border-line bg-surf px-4 py-3.5 text-left"
+        >
+          <span aria-hidden="true" className="text-[20px]">◑</span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-[13.5px] font-semibold text-ink">
+              {t('nav.quiz')}
+            </span>
+            <span className="block font-mono text-[10.5px] text-muted">
+              {profile.quizDone ? t('profile.done') : t('profile.notDone')}
+            </span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => navigate('/account')}
+          className="action-card flex items-center gap-3 rounded-[11px] border border-line bg-surf px-4 py-3.5 text-left"
+        >
+          <span aria-hidden="true" className="text-[20px]">⚙</span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-[13.5px] font-semibold text-ink">
+              {t('nav.account')}
+            </span>
+            <span className="block font-mono text-[10.5px] text-muted">
+              {t('common.signOut')}
+            </span>
+          </span>
+        </button>
+      </div>
 
       <StatGrid className="mb-[22px]">
         <Stat

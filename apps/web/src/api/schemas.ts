@@ -50,6 +50,8 @@ export const BandProgressSchema = z.object({
   unlocked: z.boolean(),
   hasScenario: z.boolean(),
   pointsToUnlock: z.number(),
+  enrolled: z.boolean(),
+  completed: z.boolean(),
 });
 export type BandProgress = z.infer<typeof BandProgressSchema>;
 

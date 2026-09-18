@@ -204,7 +204,9 @@ export const isPlayable = (roleCode: string): boolean => findRole(roleCode) !== 
 /** Đường vào màn chơi của một hành tinh, hoặc `null` nếu chưa dựng. */
 export const playPath = (node: GalaxyNode): string | null => {
   const role = findRole(node.roleCode);
-  return role ? `/jobs/${role.role_code}/${role.band_start}` : null;
+  // Tới lộ trình của nghề chứ không nhảy thẳng vào một cấp bậc: phải thấy
+  // con đường trước thì mới biết mình đang leo về đâu.
+  return role ? `/jobs/${role.role_code}` : null;
 };
 
 /**

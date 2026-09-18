@@ -59,7 +59,8 @@ export const ModelName = {
   ScenarioRun: 'ScenarioRun',
   RunEvidence: 'RunEvidence',
   UserBandSkill: 'UserBandSkill',
-  EventAnswer: 'EventAnswer'
+  EventAnswer: 'EventAnswer',
+  Enrollment: 'Enrollment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -197,6 +198,17 @@ export const EventAnswerScalarFieldEnum = {
 } as const
 
 export type EventAnswerScalarFieldEnum = (typeof EventAnswerScalarFieldEnum)[keyof typeof EventAnswerScalarFieldEnum]
+
+
+export const EnrollmentScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  roleCode: 'roleCode',
+  band: 'band',
+  enrolledAt: 'enrolledAt'
+} as const
+
+export type EnrollmentScalarFieldEnum = (typeof EnrollmentScalarFieldEnum)[keyof typeof EnrollmentScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -77,3 +77,12 @@ export type UserBandSkill = Prisma.UserBandSkillModel
  * vào chân dung, nên vector tính cách cũng là suy ra chứ không phải gửi lên.
  */
 export type EventAnswer = Prisma.EventAnswerModel
+/**
+ * Model Enrollment
+ * Ghi danh một cấp bậc của một nghề.
+ * 
+ * Người chơi phải bấm "vào học" trước khi làm kịch bản của cấp bậc đó. Lưu
+ * lại chứ không để trong bộ nhớ trình duyệt vì nó trả lời câu "mình đang dở
+ * ở đâu" — câu đó phải đúng cả khi mở máy khác.
+ */
+export type Enrollment = Prisma.EnrollmentModel

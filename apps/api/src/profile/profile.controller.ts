@@ -1,4 +1,12 @@
-import { Body, Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  NotFoundException,
+  Param,
+  Post,
+} from '@nestjs/common';
 import { ZodValidationPipe } from '../common/zod-validation.pipe';
 import {
   CurrentUser,
@@ -7,14 +15,17 @@ import {
 import {
   ProgressService,
   type ProgressSummary,
+  type RoleProgress,
 } from '../progress/progress.service';
 import { RunsService } from '../runs/runs.service';
 import { ProfileService, type GameProfileView } from './profile.service';
 import {
   AnswerEventSchema,
+  EnrollSchema,
   ImportLegacySchema,
   SubmitQuizSchema,
   type AnswerEventDto,
+  type EnrollDto,
   type ImportLegacyDto,
   type SubmitQuizDto,
 } from './dto/profile.dto';
@@ -37,6 +48,31 @@ export class ProfileController {
   @Get('progress')
   progressSummary(@CurrentUser() user: AuthUser): Promise<ProgressSummary> {
     return this.progress.summary(user.id);
+  }
+
+  /** Lộ trình cấp bậc của một nghề — dùng cho màn roadmap. */
+  @Get('roles/:roleCode')
+  async roleProgress(
+    @CurrentUser() user: AuthUser,
+    @Param('roleCode') roleCode: string,
+  ): Promise<RoleProgress> {
+    const progress = await this.progress.roleProgress(user.id, roleCode);
+    if (!progress) throw new NotFoundException('Không có nghề này');
+    return progress;
+  }
+
+  /** Ghi danh một cấp bậc trước khi làm kịch bản của nó. */
+  @HttpCode(200)
+  @Post('roles/:roleCode/enroll')
+  async enroll(
+    @CurrentUser() user: AuthUser,
+    @Param('roleCode') roleCode: string,
+    @Body(new ZodValidationPipe(EnrollSchema)) dto: EnrollDto,
+  ): Promise<RoleProgress> {
+    await this.progress.enroll(user.id, roleCode, dto.band);
+    const progress = await this.progress.roleProgress(user.id, roleCode);
+    if (!progress) throw new NotFoundException('Không có nghề này');
+    return progress;
   }
 
   /** Lịch sử các lượt chơi đã hoàn thành, kèm bằng chứng máy chủ đã chấm. */

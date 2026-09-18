@@ -7,6 +7,7 @@ import {
   GameProfileSchema,
   OkSchema,
   ProgressSummarySchema,
+  RoleProgressSchema,
   RunHistorySchema,
   SessionUserSchema,
   StartedRunSchema,
@@ -14,6 +15,7 @@ import {
   type EventAnswerResult,
   type GameProfileView,
   type ProgressSummary,
+  type RoleProgress,
   type RunHistoryItem,
   type SessionUser,
   type StartedRun,
@@ -82,6 +84,17 @@ export const profileApi = {
     api('/profile/progress', ProgressSummarySchema),
 
   runs: (): Promise<RunHistoryItem[]> => api('/profile/runs', RunHistorySchema),
+
+  /** Lộ trình cấp bậc của một nghề — kể cả nghề chưa từng chạm tới. */
+  role: (roleCode: string): Promise<RoleProgress> =>
+    api(`/profile/roles/${roleCode}`, RoleProgressSchema),
+
+  /** Ghi danh một cấp bậc; trả về lộ trình đã cập nhật. */
+  enroll: (roleCode: string, band: string): Promise<RoleProgress> =>
+    api(`/profile/roles/${roleCode}/enroll`, RoleProgressSchema, {
+      method: 'POST',
+      body: { band },
+    }),
 
   submitQuiz: (
     answers: Array<{ questionId: string; optionId: string }>,

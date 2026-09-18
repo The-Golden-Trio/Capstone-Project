@@ -20,6 +20,7 @@ export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
   const user = useAuthStore((s) => s.user);
   const summary = useProgressStore((s) => s.summary);
   const { roleCode, band } = useJourneyStore();
+  const collapsed = false;
 
   // Cấp bậc đang đứng, và còn thiếu bao nhiêu điểm để mở cấp kế.
   const roleProgress = summary?.roles.find((r) => r.roleCode === roleCode);
@@ -33,15 +34,20 @@ export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
   const pct = Math.min(100, (points / UNLOCK_AT) * 100);
 
   return (
-    <div className="border-t border-line-2 px-3 py-3">
+    <div className={collapsed ? 'border-t border-line-2 px-2 py-3' : 'border-t border-line-2 px-3 py-3'}>
       <NavLink
         to="/account"
         onClick={onNavigate}
-        className="flex items-center gap-2.5 rounded-[9px] border border-line-2 bg-panel p-2.5 transition-colors hover:border-line"
+        title={collapsed ? (user?.displayName ?? t('hud.guest')) : undefined}
+        className={
+          collapsed
+            ? 'flex justify-center rounded-[9px] border border-line-2 bg-panel p-2 transition-colors hover:border-line'
+            : 'flex items-center gap-2.5 rounded-[9px] border border-line-2 bg-panel p-2.5 transition-colors hover:border-line'
+        }
       >
-        <Crest seed={user?.id ?? 'khach'} size={38} />
+        <Crest seed={user?.id ?? 'khach'} size={collapsed ? 30 : 38} />
 
-        <div className="min-w-0 flex-1">
+        <div className={collapsed ? 'hidden' : 'min-w-0 flex-1'}>
           <div className="truncate text-[13px] font-semibold leading-tight text-ink">
             {user?.displayName ?? t('hud.guest')}
           </div>
@@ -55,7 +61,7 @@ export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
 
       {/* Thanh tiến tới cấp bậc kế — chỉ hiện khi đang đứng ở một nghề.
           Lấy màu của chính nghề đó, nên thanh này đổi màu theo nơi bạn đang ở. */}
-      {current && next && (
+      {!collapsed && current && next && (
         <div className="mt-2.5 px-0.5" style={themeVars(theme) as CSSProperties}>
           <div className="mb-1.5 flex items-baseline justify-between gap-2">
             <span className="font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">

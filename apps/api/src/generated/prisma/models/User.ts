@@ -221,6 +221,7 @@ export type UserWhereInput = {
   runs?: Prisma.ScenarioRunListRelationFilter
   bandSkills?: Prisma.UserBandSkillListRelationFilter
   eventAnswers?: Prisma.EventAnswerListRelationFilter
+  enrollments?: Prisma.EnrollmentListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -240,6 +241,7 @@ export type UserOrderByWithRelationInput = {
   runs?: Prisma.ScenarioRunOrderByRelationAggregateInput
   bandSkills?: Prisma.UserBandSkillOrderByRelationAggregateInput
   eventAnswers?: Prisma.EventAnswerOrderByRelationAggregateInput
+  enrollments?: Prisma.EnrollmentOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -262,6 +264,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   runs?: Prisma.ScenarioRunListRelationFilter
   bandSkills?: Prisma.UserBandSkillListRelationFilter
   eventAnswers?: Prisma.EventAnswerListRelationFilter
+  enrollments?: Prisma.EnrollmentListRelationFilter
 }, "id" | "username" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -311,6 +314,7 @@ export type UserCreateInput = {
   runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -330,6 +334,7 @@ export type UserUncheckedCreateInput = {
   runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -349,6 +354,7 @@ export type UserUpdateInput = {
   runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -368,6 +374,7 @@ export type UserUncheckedUpdateInput = {
   runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -565,6 +572,20 @@ export type UserUpdateOneRequiredWithoutEventAnswersNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutEventAnswersInput, Prisma.UserUpdateWithoutEventAnswersInput>, Prisma.UserUncheckedUpdateWithoutEventAnswersInput>
 }
 
+export type UserCreateNestedOneWithoutEnrollmentsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutEnrollmentsInput, Prisma.UserUncheckedCreateWithoutEnrollmentsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutEnrollmentsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutEnrollmentsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutEnrollmentsInput, Prisma.UserUncheckedCreateWithoutEnrollmentsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutEnrollmentsInput
+  upsert?: Prisma.UserUpsertWithoutEnrollmentsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutEnrollmentsInput, Prisma.UserUpdateWithoutEnrollmentsInput>, Prisma.UserUncheckedUpdateWithoutEnrollmentsInput>
+}
+
 export type UserCreateWithoutOauthAccountsInput = {
   id?: string
   username: string
@@ -581,6 +602,7 @@ export type UserCreateWithoutOauthAccountsInput = {
   runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutOauthAccountsInput = {
@@ -599,6 +621,7 @@ export type UserUncheckedCreateWithoutOauthAccountsInput = {
   runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutOauthAccountsInput = {
@@ -633,6 +656,7 @@ export type UserUpdateWithoutOauthAccountsInput = {
   runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOauthAccountsInput = {
@@ -651,6 +675,7 @@ export type UserUncheckedUpdateWithoutOauthAccountsInput = {
   runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutRefreshTokensInput = {
@@ -669,6 +694,7 @@ export type UserCreateWithoutRefreshTokensInput = {
   runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutRefreshTokensInput = {
@@ -687,6 +713,7 @@ export type UserUncheckedCreateWithoutRefreshTokensInput = {
   runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutRefreshTokensInput = {
@@ -721,6 +748,7 @@ export type UserUpdateWithoutRefreshTokensInput = {
   runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRefreshTokensInput = {
@@ -739,6 +767,7 @@ export type UserUncheckedUpdateWithoutRefreshTokensInput = {
   runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutConsentInput = {
@@ -757,6 +786,7 @@ export type UserCreateWithoutConsentInput = {
   runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutConsentInput = {
@@ -775,6 +805,7 @@ export type UserUncheckedCreateWithoutConsentInput = {
   runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutConsentInput = {
@@ -809,6 +840,7 @@ export type UserUpdateWithoutConsentInput = {
   runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConsentInput = {
@@ -827,6 +859,7 @@ export type UserUncheckedUpdateWithoutConsentInput = {
   runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutGameProfileInput = {
@@ -845,6 +878,7 @@ export type UserCreateWithoutGameProfileInput = {
   runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutGameProfileInput = {
@@ -863,6 +897,7 @@ export type UserUncheckedCreateWithoutGameProfileInput = {
   runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutGameProfileInput = {
@@ -897,6 +932,7 @@ export type UserUpdateWithoutGameProfileInput = {
   runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutGameProfileInput = {
@@ -915,6 +951,7 @@ export type UserUncheckedUpdateWithoutGameProfileInput = {
   runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutRunsInput = {
@@ -933,6 +970,7 @@ export type UserCreateWithoutRunsInput = {
   gameProfile?: Prisma.GameProfileCreateNestedOneWithoutUserInput
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutRunsInput = {
@@ -951,6 +989,7 @@ export type UserUncheckedCreateWithoutRunsInput = {
   gameProfile?: Prisma.GameProfileUncheckedCreateNestedOneWithoutUserInput
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutRunsInput = {
@@ -985,6 +1024,7 @@ export type UserUpdateWithoutRunsInput = {
   gameProfile?: Prisma.GameProfileUpdateOneWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRunsInput = {
@@ -1003,6 +1043,7 @@ export type UserUncheckedUpdateWithoutRunsInput = {
   gameProfile?: Prisma.GameProfileUncheckedUpdateOneWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutBandSkillsInput = {
@@ -1021,6 +1062,7 @@ export type UserCreateWithoutBandSkillsInput = {
   gameProfile?: Prisma.GameProfileCreateNestedOneWithoutUserInput
   runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutBandSkillsInput = {
@@ -1039,6 +1081,7 @@ export type UserUncheckedCreateWithoutBandSkillsInput = {
   gameProfile?: Prisma.GameProfileUncheckedCreateNestedOneWithoutUserInput
   runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutBandSkillsInput = {
@@ -1073,6 +1116,7 @@ export type UserUpdateWithoutBandSkillsInput = {
   gameProfile?: Prisma.GameProfileUpdateOneWithoutUserNestedInput
   runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBandSkillsInput = {
@@ -1091,6 +1135,7 @@ export type UserUncheckedUpdateWithoutBandSkillsInput = {
   gameProfile?: Prisma.GameProfileUncheckedUpdateOneWithoutUserNestedInput
   runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutEventAnswersInput = {
@@ -1109,6 +1154,7 @@ export type UserCreateWithoutEventAnswersInput = {
   gameProfile?: Prisma.GameProfileCreateNestedOneWithoutUserInput
   runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutEventAnswersInput = {
@@ -1127,6 +1173,7 @@ export type UserUncheckedCreateWithoutEventAnswersInput = {
   gameProfile?: Prisma.GameProfileUncheckedCreateNestedOneWithoutUserInput
   runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutEventAnswersInput = {
@@ -1161,6 +1208,7 @@ export type UserUpdateWithoutEventAnswersInput = {
   gameProfile?: Prisma.GameProfileUpdateOneWithoutUserNestedInput
   runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutEventAnswersInput = {
@@ -1179,6 +1227,99 @@ export type UserUncheckedUpdateWithoutEventAnswersInput = {
   gameProfile?: Prisma.GameProfileUncheckedUpdateOneWithoutUserNestedInput
   runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutEnrollmentsInput = {
+  id?: string
+  username: string
+  email?: string | null
+  displayName: string
+  passwordHash?: string | null
+  role?: $Enums.Role
+  dateOfBirth?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  oauthAccounts?: Prisma.OAuthAccountCreateNestedManyWithoutUserInput
+  refreshTokens?: Prisma.RefreshTokenCreateNestedManyWithoutUserInput
+  consent?: Prisma.ParentalConsentCreateNestedOneWithoutUserInput
+  gameProfile?: Prisma.GameProfileCreateNestedOneWithoutUserInput
+  runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
+  bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
+  eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutEnrollmentsInput = {
+  id?: string
+  username: string
+  email?: string | null
+  displayName: string
+  passwordHash?: string | null
+  role?: $Enums.Role
+  dateOfBirth?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  oauthAccounts?: Prisma.OAuthAccountUncheckedCreateNestedManyWithoutUserInput
+  refreshTokens?: Prisma.RefreshTokenUncheckedCreateNestedManyWithoutUserInput
+  consent?: Prisma.ParentalConsentUncheckedCreateNestedOneWithoutUserInput
+  gameProfile?: Prisma.GameProfileUncheckedCreateNestedOneWithoutUserInput
+  runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
+  bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
+  eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutEnrollmentsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutEnrollmentsInput, Prisma.UserUncheckedCreateWithoutEnrollmentsInput>
+}
+
+export type UserUpsertWithoutEnrollmentsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutEnrollmentsInput, Prisma.UserUncheckedUpdateWithoutEnrollmentsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutEnrollmentsInput, Prisma.UserUncheckedCreateWithoutEnrollmentsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutEnrollmentsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutEnrollmentsInput, Prisma.UserUncheckedUpdateWithoutEnrollmentsInput>
+}
+
+export type UserUpdateWithoutEnrollmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  displayName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  oauthAccounts?: Prisma.OAuthAccountUpdateManyWithoutUserNestedInput
+  refreshTokens?: Prisma.RefreshTokenUpdateManyWithoutUserNestedInput
+  consent?: Prisma.ParentalConsentUpdateOneWithoutUserNestedInput
+  gameProfile?: Prisma.GameProfileUpdateOneWithoutUserNestedInput
+  runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
+  bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
+  eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutEnrollmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  displayName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  oauthAccounts?: Prisma.OAuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  refreshTokens?: Prisma.RefreshTokenUncheckedUpdateManyWithoutUserNestedInput
+  consent?: Prisma.ParentalConsentUncheckedUpdateOneWithoutUserNestedInput
+  gameProfile?: Prisma.GameProfileUncheckedUpdateOneWithoutUserNestedInput
+  runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
+  bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
+  eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -1192,6 +1333,7 @@ export type UserCountOutputType = {
   runs: number
   bandSkills: number
   eventAnswers: number
+  enrollments: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1200,6 +1342,7 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   runs?: boolean | UserCountOutputTypeCountRunsArgs
   bandSkills?: boolean | UserCountOutputTypeCountBandSkillsArgs
   eventAnswers?: boolean | UserCountOutputTypeCountEventAnswersArgs
+  enrollments?: boolean | UserCountOutputTypeCountEnrollmentsArgs
 }
 
 /**
@@ -1247,6 +1390,13 @@ export type UserCountOutputTypeCountEventAnswersArgs<ExtArgs extends runtime.Typ
   where?: Prisma.EventAnswerWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountEnrollmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EnrollmentWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1265,6 +1415,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   runs?: boolean | Prisma.User$runsArgs<ExtArgs>
   bandSkills?: boolean | Prisma.User$bandSkillsArgs<ExtArgs>
   eventAnswers?: boolean | Prisma.User$eventAnswersArgs<ExtArgs>
+  enrollments?: boolean | Prisma.User$enrollmentsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -1313,6 +1464,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   runs?: boolean | Prisma.User$runsArgs<ExtArgs>
   bandSkills?: boolean | Prisma.User$bandSkillsArgs<ExtArgs>
   eventAnswers?: boolean | Prisma.User$eventAnswersArgs<ExtArgs>
+  enrollments?: boolean | Prisma.User$enrollmentsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1328,6 +1480,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     runs: Prisma.$ScenarioRunPayload<ExtArgs>[]
     bandSkills: Prisma.$UserBandSkillPayload<ExtArgs>[]
     eventAnswers: Prisma.$EventAnswerPayload<ExtArgs>[]
+    enrollments: Prisma.$EnrollmentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1749,6 +1902,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   runs<T extends Prisma.User$runsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$runsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ScenarioRunPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   bandSkills<T extends Prisma.User$bandSkillsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$bandSkillsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserBandSkillPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   eventAnswers<T extends Prisma.User$eventAnswersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$eventAnswersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EventAnswerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  enrollments<T extends Prisma.User$enrollmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$enrollmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EnrollmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2335,6 +2489,30 @@ export type User$eventAnswersArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.EventAnswerScalarFieldEnum | Prisma.EventAnswerScalarFieldEnum[]
+}
+
+/**
+ * User.enrollments
+ */
+export type User$enrollmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Enrollment
+   */
+  select?: Prisma.EnrollmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Enrollment
+   */
+  omit?: Prisma.EnrollmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.EnrollmentInclude<ExtArgs> | null
+  where?: Prisma.EnrollmentWhereInput
+  orderBy?: Prisma.EnrollmentOrderByWithRelationInput | Prisma.EnrollmentOrderByWithRelationInput[]
+  cursor?: Prisma.EnrollmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.EnrollmentScalarFieldEnum | Prisma.EnrollmentScalarFieldEnum[]
 }
 
 /**

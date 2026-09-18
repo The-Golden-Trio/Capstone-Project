@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { createBrowserRouter, type RouteObject } from 'react-router-dom';
+import { Navigate, createBrowserRouter, type RouteObject } from 'react-router-dom';
 import {
   findRole,
   findScenarioByKey,
@@ -9,7 +9,6 @@ import {
 import type { CrumbHandle } from '../hooks/useBreadcrumbs';
 import type { FullBleedHandle } from '../components/layout/AppShell';
 import { AccountPage } from './AccountPage';
-import { DashboardPage } from './DashboardPage';
 import { ErrorPage } from './ErrorPage';
 import { EventPage } from './EventPage';
 import { EventResultPage } from './EventResultPage';
@@ -20,6 +19,7 @@ import { RequireAuth } from './RequireAuth';
 import { ConsentPage } from './auth/ConsentPage';
 import { LoginPage } from './auth/LoginPage';
 import { RegisterPage } from './auth/RegisterPage';
+import { CareerMapPage } from './career/CareerMapPage';
 import { JobPage } from './job/JobPage';
 import { EndingPage } from './play/EndingPage';
 import { PlayPage } from './play/PlayPage';
@@ -66,11 +66,8 @@ const routes: RouteObject[] = [
       // cho tới khi có người giám hộ đồng ý.
       { path: 'consent', element: <ConsentPage /> },
 
-      {
-        index: true,
-        element: <DashboardPage />,
-        handle: { crumbs: () => [{ label: 'Tổng quan' }] } satisfies CrumbHandle,
-      },
+      // Không còn trang Tổng quan: bản đồ ngân hà chính là nơi bắt đầu.
+      { index: true, element: <Navigate to="/jobs" replace /> },
       {
         path: 'quiz',
         handle: {
@@ -104,10 +101,23 @@ const routes: RouteObject[] = [
             } satisfies CrumbHandle & FullBleedHandle,
           },
           {
+            path: ':roleCode',
+            element: <CareerMapPage />,
+            // Bản đồ nghề cũng chiếm cả khung hình như bản đồ ngân hà.
+            handle: { fullBleed: true } satisfies FullBleedHandle,
+          },
+          {
             path: ':roleCode/:band',
             handle: { crumbs: roleCrumbs } satisfies CrumbHandle,
             children: [
-              { index: true, element: <JobPage /> },
+              // `/jobs/BACKEND/L1` là hòn đảo L1 đang mở trên bản đồ nghề.
+              // Chỗ này trước đây chỉ là một trạm chuyển hướng sang tab `ctx`,
+              // còn các tab của JobPage vẫn nằm nguyên ở tầng dưới.
+              {
+                index: true,
+                element: <CareerMapPage />,
+                handle: { fullBleed: true } satisfies FullBleedHandle,
+              },
               { path: 'events/:eventId', element: <EventPage /> },
               { path: 'events/:eventId/result', element: <EventResultPage /> },
               { path: ':tab', element: <JobPage /> },

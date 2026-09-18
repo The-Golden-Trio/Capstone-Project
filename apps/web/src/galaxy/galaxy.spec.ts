@@ -41,7 +41,9 @@ describe('shortestPath', () => {
 describe('chơi được', () => {
   it('nghề trong game-core có đường vào màn chơi, nghề ngoài thì không', () => {
     expect(isPlayable('SWE_FRONTEND')).toBe(true);
-    expect(playPath(findPlanet('SWE_FRONTEND')!)).toBe('/jobs/SWE_FRONTEND/L1');
+    // Dẫn tới lộ trình của nghề, không nhảy thẳng vào cấp bậc mở đầu: người
+    // chơi phải thấy con đường trước rồi mới chọn chặng để vào học.
+    expect(playPath(findPlanet('SWE_FRONTEND')!)).toBe('/jobs/SWE_FRONTEND');
     expect(isPlayable('PROD_BA')).toBe(false);
     expect(playPath(findPlanet('PROD_BA')!)).toBeNull();
   });

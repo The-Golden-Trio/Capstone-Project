@@ -31,3 +31,8 @@ export const ImportLegacySchema = z.object({
   eventsPlayed: z.number().int().min(0).max(10_000).optional(),
 });
 export type ImportLegacyDto = z.infer<typeof ImportLegacySchema>;
+
+export const EnrollSchema = z.object({
+  band: z.string().min(1).max(8),
+});
+export type EnrollDto = z.infer<typeof EnrollSchema>;
