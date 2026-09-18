@@ -9,9 +9,11 @@ import {
 import { Button } from '../../components/ui/Button';
 import { Note } from '../../components/ui/Note';
 import { useAuthStore } from '../../store/authStore';
+import { useT } from '../../i18n/useT';
 
 export function LoginPage() {
   const location = useLocation();
+  const t = useT();
   const status = useAuthStore((s) => s.status);
   const setUser = useAuthStore((s) => s.setUser);
 
@@ -34,14 +36,14 @@ export function LoginPage() {
     try {
       setUser(await authApi.login({ identifier, password }));
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Đăng nhập không thành công');
+      setError(err instanceof Error ? err.message : t('auth.loginFailed'));
     } finally {
       setBusy(false);
     }
   };
 
   return (
-    <AuthShell title="Đăng nhập" subtitle="Vào Nghề">
+    <AuthShell title={t('auth.login')} subtitle="Vào Nghề">
       {error && (
         <Note tone="warn" className="mb-4">
           {error}
@@ -50,7 +52,7 @@ export function LoginPage() {
 
       <form onSubmit={submit}>
         <Field
-          label="Tên đăng nhập hoặc email"
+          label={t('auth.identifier')}
           name="identifier"
           value={identifier}
           onChange={(e) => setIdentifier(e.target.value)}
@@ -58,7 +60,7 @@ export function LoginPage() {
           autoFocus
         />
         <Field
-          label="Mật khẩu"
+          label={t('auth.password')}
           name="password"
           type="password"
           value={password}
@@ -71,7 +73,7 @@ export function LoginPage() {
           className="w-full"
           disabled={busy || !identifier || !password}
         >
-          {busy ? 'Đang vào…' : 'Vào Nghề'}
+          {busy ? t('auth.loggingIn') : t('auth.loginCta')}
         </Button>
       </form>
 
@@ -79,9 +81,9 @@ export function LoginPage() {
       <GoogleButton onError={setError} />
 
       <p className="mt-5 text-center text-[13px] text-muted">
-        Chưa có tài khoản?{' '}
+        {t('auth.noAccount')}{' '}
         <Link to="/register" className="text-gold-2 hover:underline">
-          Đăng ký
+          {t('auth.register')}
         </Link>
       </p>
     </AuthShell>

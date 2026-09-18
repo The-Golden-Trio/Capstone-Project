@@ -1,5 +1,6 @@
 import { DIMENSIONS, GAME, type FitVector } from '@datn/game-core';
 import { cx } from '../../lib/cx';
+import { useGameText } from '../../i18n/useT';
 
 interface FitRadarProps {
   fit: FitVector;
@@ -12,6 +13,7 @@ interface FitRadarProps {
  * hình dáng tương đối ngay cả khi tổng điểm còn nhỏ.
  */
 export function FitRadar({ fit, describe = false }: FitRadarProps) {
+  const game = useGameText();
   const max = Math.max(1, ...DIMENSIONS.map((d) => Math.abs(fit[d] ?? 0)));
 
   return (
@@ -29,7 +31,7 @@ export function FitRadar({ fit, describe = false }: FitRadarProps) {
             </span>
             {describe ? (
               <span className="text-[12.5px] text-ink-2">
-                {GAME.fit_dimensions[dimension]}
+                {game.dimension(dimension, GAME.fit_dimensions[dimension])}
               </span>
             ) : (
               <span className="h-[7px] overflow-hidden rounded-sm bg-inset">
@@ -55,6 +57,7 @@ export function FitRadar({ fit, describe = false }: FitRadarProps) {
 
 /** Danh sách tín hiệu của một lựa chọn: chiều nào tăng, chiều nào giảm. */
 export function SignalList({ signal }: { signal: Record<string, number> }) {
+  const game = useGameText();
   const entries = Object.entries(signal);
   if (entries.length === 0) {
     return (
@@ -75,7 +78,7 @@ export function SignalList({ signal }: { signal: Record<string, number> }) {
             {dimension}
           </span>
           <span className="text-[12.5px] text-ink-2">
-            {GAME.fit_dimensions[dimension] ?? ''}
+            {game.dimension(dimension, GAME.fit_dimensions[dimension] ?? '')}
           </span>
           <span
             className={cx(

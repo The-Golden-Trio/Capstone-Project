@@ -3,6 +3,7 @@ import { eventsForRole, findRole, findScenario, shortRoleName } from '@datn/game
 import { GALAXY } from '../../galaxy/galaxy';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProfileStore } from '../../store/profileStore';
+import { useT } from '../../i18n/useT';
 import { useProgressStore } from '../../store/progressStore';
 import { cx } from '../../lib/cx';
 import { CharacterPanel } from './CharacterPanel';
@@ -76,37 +77,10 @@ function SectionTitle({ children }: { children: string }) {
   );
 }
 
-/**
- * Số việc còn lại ở nơi người chơi đang đứng.
- *
- * Nhiệm vụ phụ tính theo `doneEventIds`; nhiệm vụ chính tính theo lịch sử
- * lượt chơi máy chủ trả về — hai nguồn khác nhau vì hai loại việc được ghi
- * nhận ở hai chỗ khác nhau.
- */
-function remainingTasks(
-  doneEventIds: string[],
-  playedScenarioKeys: Set<string>,
-  roleCode: string,
-  band: string,
-): number {
-  const role = findRole(roleCode);
-  if (!role) return 0;
-
-  const scenario = findScenario(roleCode, band);
-  const mainLeft = scenario && !playedScenarioKeys.has(scenario.key) ? 1 : 0;
-  const sideLeft = eventsForRole(role).filter(
-    (event) => !doneEventIds.includes(event.event_id),
-  ).length;
-
-  return mainLeft + sideLeft;
-}
-
 export function Rail({ onNavigate }: { onNavigate: () => void }) {
-  const profile = useProfileStore();
-  const { summary, runs } = useProgressStore();
-  const { roleCode, band } = useJourneyStore();
-  const role = findRole(roleCode);
-  const playedScenarioKeys = new Set(runs.map((r) => r.scenarioKey));
+  const t = useT();
+  const summary = useProgressStore((s) => s.summary);
+  const quizDone = useProfileStore((s) => s.quizDone);
 
   return (
     <div className="flex h-full flex-col">
@@ -117,9 +91,9 @@ export function Rail({ onNavigate }: { onNavigate: () => void }) {
         </div>
       </div>
 
-      <nav className="flex-1 px-2.5 py-1" aria-label="Điều hướng chính">
-        <SectionTitle>Khám phá</SectionTitle>
-        <NavItem to="/" icon="home" label="Tổng quan" onNavigate={onNavigate} />
+      <nav className="flex-1 px-2.5 py-1" aria-label={t('nav.mainNav')}>
+        <SectionTitle>{t('nav.explore')}</SectionTitle>
+        <NavItem to="/" icon="home" label={t('nav.overview')} onNavigate={onNavigate} />
         <NavItem
           to="/jobs"
           icon="grid"
@@ -130,45 +104,25 @@ export function Rail({ onNavigate }: { onNavigate: () => void }) {
         <NavItem
           to="/quiz"
           icon="user"
-          label="Tự vấn"
-          count={profile.quizDone ? '✓' : null}
+          label={t('nav.quiz')}
+          count={quizDone ? '✓' : null}
           matchPrefix="/quiz"
           onNavigate={onNavigate}
         />
 
-        {role && band && (
-          <>
-            <SectionTitle>Đang ở</SectionTitle>
-            <NavItem
-              to={`/jobs/${role.role_code}/${band}`}
-              icon="book"
-              label={shortRoleName(role)}
-              count={
-                remainingTasks(
-                  profile.doneEventIds,
-                  playedScenarioKeys,
-                  role.role_code,
-                  band,
-                ) || null
-              }
-              matchPrefix={`/jobs/${role.role_code}/${band}`}
-              onNavigate={onNavigate}
-            />
-          </>
-        )}
 
-        <SectionTitle>Của tôi</SectionTitle>
+        <SectionTitle>{t('nav.mine')}</SectionTitle>
         <NavItem
           to="/profile"
           icon="chart"
-          label="Hành trang"
+          label={t('nav.profile')}
           count={summary?.totalPoints || null}
           onNavigate={onNavigate}
         />
         <NavItem
           to="/account"
           icon="user"
-          label="Tài khoản"
+          label={t('nav.account')}
           onNavigate={onNavigate}
         />
       </nav>

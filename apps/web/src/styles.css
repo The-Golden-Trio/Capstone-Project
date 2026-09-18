@@ -39,7 +39,10 @@
   --color-stakes: #e08a5b;
   --color-stakes-soft: rgba(224, 138, 91, 0.13);
 
-  --font-display: 'Playfair Display', Georgia, serif;
+  /* Cùng bộ chữ với trang landing page: Cinzel cho tiêu đề, Montserrat cho
+     nội dung. JetBrains Mono giữ lại cho số liệu và nhãn kỹ thuật — landing
+     page không có chữ đơn cách nên không có gì để đồng bộ ở đó. */
+  --font-display: 'Cinzel', Georgia, serif;
   --font-sans: 'Montserrat', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 

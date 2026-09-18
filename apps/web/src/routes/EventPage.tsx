@@ -45,7 +45,7 @@ export function EventPage() {
 
   return (
     <RoleTheme roleCode={role.role_code}>
-    <Card className="max-w-[640px]">
+    <Card className="mx-auto max-w-[640px]">
       <CardHeader title={event.title}>
         {event.measures.map((m) => (
           <Pill key={m}>{m}</Pill>

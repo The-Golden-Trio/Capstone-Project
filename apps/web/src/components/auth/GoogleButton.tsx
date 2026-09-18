@@ -1,6 +1,7 @@
 import { GoogleLogin } from '@react-oauth/google';
 import { authApi } from '../../api/endpoints';
 import { useAuthStore } from '../../store/authStore';
+import { useT } from '../../i18n/useT';
 
 /**
  * Nút đăng nhập Google.
@@ -15,6 +16,7 @@ export function GoogleButton({
   onError: (message: string) => void;
 }) {
   const setUser = useAuthStore((s) => s.setUser);
+  const t = useT();
 
   return (
     <div className="flex justify-center [color-scheme:light]">
@@ -24,7 +26,7 @@ export function GoogleButton({
         text="continue_with"
         onSuccess={(response) => {
           if (!response.credential) {
-            onError('Google không trả về thông tin đăng nhập');
+            onError(t('auth.googleNoCredential'));
             return;
           }
           void authApi
@@ -34,11 +36,11 @@ export function GoogleButton({
               onError(
                 error instanceof Error
                   ? error.message
-                  : 'Đăng nhập bằng Google không thành công',
+                  : t('auth.googleFailed'),
               ),
             );
         }}
-        onError={() => onError('Đăng nhập bằng Google không thành công')}
+        onError={() => onError(t('auth.googleFailed'))}
       />
     </div>
   );
@@ -46,11 +48,12 @@ export function GoogleButton({
 
 /** Vạch ngăn "hoặc" giữa hai cách đăng nhập. */
 export function OrDivider() {
+  const t = useT();
   return (
     <div className="my-4 flex items-center gap-3">
       <span className="h-px flex-1 bg-line-2" />
       <span className="font-mono text-[10px] uppercase tracking-[0.11em] text-muted">
-        hoặc
+        {t('auth.or')}
       </span>
       <span className="h-px flex-1 bg-line-2" />
     </div>

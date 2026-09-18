@@ -30,7 +30,7 @@ export function ErrorPage() {
     <>
       <StarField />
       <div className="relative z-1 grid min-h-screen place-items-center p-6">
-        <Card className="w-full max-w-[560px]">
+        <Card className="w-full mx-auto max-w-[560px]">
           <CardBody className="p-[30px]">
             <h1 className="mb-3 font-display text-[24px] font-semibold">
               {title}

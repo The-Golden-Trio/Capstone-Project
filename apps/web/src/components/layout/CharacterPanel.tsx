@@ -1,9 +1,12 @@
+import type { CSSProperties } from 'react';
 import { NavLink } from 'react-router-dom';
 import { UNLOCK_AT, bandLabel } from '@datn/game-core';
 import { Crest } from '../game/Crest';
 import { useAuthStore } from '../../store/authStore';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProgressStore } from '../../store/progressStore';
+import { useT } from '../../i18n/useT';
+import { DEFAULT_THEME, roleTheme, themeVars } from '../../domain/roleTheme';
 
 /**
  * Bảng nhân vật, luôn ở chân thanh bên.
@@ -13,6 +16,7 @@ import { useProgressStore } from '../../store/progressStore';
  * liệu thì `progressStore` đã có sẵn, chỉ là chưa ai bày ra.
  */
 export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
+  const t = useT();
   const user = useAuthStore((s) => s.user);
   const summary = useProgressStore((s) => s.summary);
   const { roleCode, band } = useJourneyStore();
@@ -24,6 +28,7 @@ export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
   const current = currentIndex >= 0 ? bands[currentIndex] : null;
   const next = currentIndex >= 0 ? bands[currentIndex + 1] : null;
 
+  const theme = roleCode ? roleTheme(roleCode) : DEFAULT_THEME;
   const points = current?.points ?? 0;
   const pct = Math.min(100, (points / UNLOCK_AT) * 100);
 
@@ -38,30 +43,33 @@ export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
 
         <div className="min-w-0 flex-1">
           <div className="truncate text-[13px] font-semibold leading-tight text-ink">
-            {user?.displayName ?? 'Khách'}
+            {user?.displayName ?? t('hud.guest')}
           </div>
           <div className="truncate font-mono text-[10px] text-muted">
             {current
               ? `${current.band} · ${bandLabel(current.band)}`
-              : `${summary?.totalPoints ?? 0} điểm kỹ năng`}
+              : t('hud.skillPoints', { count: summary?.totalPoints ?? 0 })}
           </div>
         </div>
       </NavLink>
 
-      {/* Thanh tiến tới cấp bậc kế — chỉ hiện khi đang đứng ở một nghề. */}
+      {/* Thanh tiến tới cấp bậc kế — chỉ hiện khi đang đứng ở một nghề.
+          Lấy màu của chính nghề đó, nên thanh này đổi màu theo nơi bạn đang ở. */}
       {current && next && (
-        <div className="mt-2 px-0.5">
-          <div className="mb-1 flex items-baseline justify-between font-mono text-[9.5px] text-muted">
-            <span>tới {next.band}</span>
-            <span className="tabular-nums">
-              {points}/{UNLOCK_AT}
+        <div className="mt-2.5 px-0.5" style={themeVars(theme) as CSSProperties}>
+          <div className="mb-1.5 flex items-baseline justify-between gap-2">
+            <span className="font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+              {t('hud.toward')}{' '}
+              <b className="font-semibold text-[var(--accent)]">{next.band}</b>
+            </span>
+            <span className="font-mono text-[10px] font-semibold tabular-nums text-ink-2">
+              {points}
+              <span className="text-muted">/{UNLOCK_AT}</span>
             </span>
           </div>
-          <div className="h-[6px] overflow-hidden rounded-[3px] border border-line-2 bg-inset">
-            <i
-              className="block h-full rounded-[3px] bg-linear-to-r from-gold to-gold-2 transition-[width] duration-500"
-              style={{ width: `${pct}%` }}
-            />
+
+          <div className="xp-track">
+            <i className="xp-fill" style={{ width: `${pct}%` }} />
           </div>
         </div>
       )}

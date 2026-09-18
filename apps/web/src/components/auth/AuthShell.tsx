@@ -3,6 +3,7 @@ import { Card, CardBody } from '../ui/Card';
 import { Logo } from '../layout/Logo';
 import { StarField } from '../layout/StarField';
 import { SectionLabel } from '../ui/Note';
+import { LanguageToggle } from '../layout/LanguageToggle';
 
 /** Khung chung của các màn đăng nhập, đăng ký, đồng ý — cùng một bầu trời sao. */
 export function AuthShell({
@@ -17,6 +18,9 @@ export function AuthShell({
   return (
     <>
       <StarField />
+      <div className="absolute right-5 top-5 z-2">
+        <LanguageToggle />
+      </div>
       <div className="relative z-1 grid min-h-screen place-items-center p-6">
         <Card className="w-full max-w-[420px]">
           <CardBody className="p-[30px]">

@@ -325,3 +325,88 @@
   background: var(--accent, var(--color-gold));
   opacity: 0.45;
 }
+
+/* ── Thanh kinh nghiệm ──
+   Không chỉ là một khối màu đặc: có chiều sâu ở rãnh, chuyển sắc dọc theo
+   thanh, một vệt sáng ở mép trên cho ra chất thuỷ tinh, và quầng sáng hắt ra
+   theo màu của nghề đang chơi. Đây là con số quan trọng nhất của cả hệ thống
+   nên nó đáng được nhìn cho ra tấm ra món. */
+.xp-track {
+  position: relative;
+  height: 9px;
+  border-radius: 5px;
+  border: 1px solid var(--color-line-2);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    var(--color-inset)
+  );
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.xp-fill {
+  /* Vệt sáng bên dưới định vị theo phần đã đầy, nên phần đã đầy phải là gốc
+     toạ độ — thiếu dòng này thì vệt sáng chạy hết cả rãnh. */
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--accent, #d4b06a) 70%, #000) 0%,
+    var(--accent, #d4b06a) 55%,
+    color-mix(in oklab, var(--accent, #d4b06a) 55%, #fff) 100%
+  );
+  box-shadow:
+    0 0 10px -2px var(--accent-glow, rgba(212, 176, 106, 0.45)),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* vệt sáng chạy qua, để thanh không đứng chết một chỗ */
+@media (prefers-reduced-motion: no-preference) {
+  .xp-fill::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background: linear-gradient(
+      100deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.22) 50%,
+      transparent 80%
+    );
+    background-size: 220% 100%;
+    animation: xp-sheen 3.4s ease-in-out infinite;
+  }
+  @keyframes xp-sheen {
+    0%,
+    62% {
+      background-position: 120% 0;
+    }
+    100% {
+      background-position: -120% 0;
+    }
+  }
+}
+
+/* ── Nút "Đang ở" trên thanh đầu trang ──
+   Còn việc dở thì thở nhẹ một nhịp: đủ để mắt bắt được khi lướt qua, không
+   tới mức giật liên tục làm khó chịu khi ngồi lâu. */
+@media (prefers-reduced-motion: no-preference) {
+  .here-chip-calling {
+    animation: here-calling 2.8s ease-in-out infinite;
+  }
+  @keyframes here-calling {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+      border-color: var(--color-line-2);
+    }
+    50% {
+      box-shadow: 0 0 14px -3px var(--accent-glow, rgba(212, 176, 106, 0.45));
+      border-color: var(--accent, var(--color-gold));
+    }
+  }
+}

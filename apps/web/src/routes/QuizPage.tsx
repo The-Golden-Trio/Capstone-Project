@@ -6,18 +6,26 @@ import { Button } from '../components/ui/Button';
 import { Card, CardBody } from '../components/ui/Card';
 import { Note } from '../components/ui/Note';
 import { ProgressDots } from '../components/ui/Progress';
+import { useGameText, useT } from '../i18n/useT';
 import { useProfileStore } from '../store/profileStore';
 
 /**
- * Sáu câu tự vấn.
+ * "Get to Know Me" — sáu câu tự vấn.
  *
  * Câu trả lời gom lại rồi gửi một lần khi xong: máy chủ tra tín hiệu của từng
  * lựa chọn từ bộ câu hỏi và tự cộng, nên chân dung là suy ra được chứ không
  * phải con số máy khách gửi lên.
+ *
+ * Người mới đăng nhập lần đầu được dẫn thẳng vào đây (xem `RequireAuth`), còn
+ * sau đó thì vào lại lúc nào cũng được từ thanh bên — tính cách người ta có
+ * đổi, và làm lại thì thay hẳn phần đóng góp của bài này.
  */
 export function QuizPage() {
   const navigate = useNavigate();
+  const t = useT();
+  const game = useGameText();
   const submitQuiz = useProfileStore((s) => s.submitQuiz);
+  const quizDone = useProfileStore((s) => s.quizDone);
 
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<
@@ -39,7 +47,7 @@ export function QuizPage() {
       await submitQuiz(all);
       navigate(next);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Không lưu được kết quả');
+      setError(err instanceof Error ? err.message : t('quiz.saveFailed'));
     } finally {
       setBusy(false);
     }
@@ -54,10 +62,12 @@ export function QuizPage() {
 
   return (
     <>
-      <PageHeader title="Tự vấn">
-        Sáu câu, không có đáp án đúng. Kết quả dùng để chỉ hướng trên bản đồ,
-        không phải để chấm bạn.
-      </PageHeader>
+      <PageHeader title={t('quiz.title')}>{t('quiz.lead')}</PageHeader>
+
+      {/* Lần đầu thì chào một câu; lần sau thì không cần nhắc lại. */}
+      {!quizDone && (
+        <Note className="mb-4 max-w-[640px]">{t('quiz.welcome')}</Note>
+      )}
 
       {error && (
         <Note tone="warn" className="mb-4 max-w-[640px]">
@@ -65,15 +75,15 @@ export function QuizPage() {
         </Note>
       )}
 
-      <Card className="max-w-[640px]">
+      <Card className="mx-auto max-w-[640px]">
         <CardBody>
           <ProgressDots total={questions.length} current={index} />
 
           <p className="m-0 mb-2.5 font-mono text-[10px] tracking-[0.11em] text-gold">
-            CÂU {index + 1}/{questions.length}
+            {t('quiz.question', { current: index + 1, total: questions.length })}
           </p>
           <p className="m-0 mb-[18px] font-display text-[21px] font-semibold leading-snug">
-            {question.prompt}
+            {game.quizPrompt(question.question_id, question.prompt)}
           </p>
 
           <div className="flex flex-col gap-2.5">
@@ -83,16 +93,16 @@ export function QuizPage() {
                 type="button"
                 disabled={busy}
                 onClick={() => answer(option.option_id)}
-                className="w-full rounded-[10px] border border-line bg-surf px-[17px] py-[15px] text-left text-[14px] leading-normal text-ink transition-colors hover:border-gold hover:bg-gold-soft disabled:opacity-50"
+                className="action-card w-full rounded-[10px] border border-line bg-surf px-4 py-3.5 text-left text-[14px] leading-normal text-ink disabled:opacity-50"
               >
-                {option.text}
+                {game.quizOption(option.option_id, option.text)}
               </button>
             ))}
           </div>
 
           <div className="mt-[18px] flex flex-wrap items-center gap-2.5">
             <Button onClick={() => void send(answers, '/jobs')} disabled={busy}>
-              Bỏ qua phần này
+              {t('quiz.skip')}
             </Button>
           </div>
         </CardBody>

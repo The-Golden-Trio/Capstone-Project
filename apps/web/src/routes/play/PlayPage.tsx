@@ -65,7 +65,7 @@ export function PlayPage() {
 
   if (error) {
     return (
-      <Card className="max-w-[720px]">
+      <Card className="mx-auto max-w-[720px]">
         <CardBody>
           <Note tone="warn" className="mb-4">
             {error}
@@ -80,7 +80,7 @@ export function PlayPage() {
 
   if (!run || run.scenarioKey !== scenarioKey) {
     return (
-      <Card className="max-w-[720px]">
+      <Card className="mx-auto max-w-[720px]">
         <CardBody>
           <p className="m-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
             Đang mở màn chơi…
@@ -106,7 +106,7 @@ export function PlayPage() {
     const event = run.pendingEvent;
     return (
       <RoleTheme roleCode={scenario.job.role_code}>
-        <Card className="max-w-[720px]">
+        <Card className="mx-auto max-w-[720px]">
           <CardBody>
             <div className="reveal mb-4 rounded-[10px] border-[1.5px] border-signal bg-signal-soft p-4">
               <p className="m-0 mb-2 font-mono text-[10px] uppercase tracking-[0.11em] text-signal">
@@ -136,7 +136,7 @@ export function PlayPage() {
 
   return (
     <RoleTheme roleCode={scenario.job.role_code}>
-      <div className="max-w-[720px]">
+      <div className="mx-auto max-w-[720px]">
         <SceneHeader scenario={scenario} />
         <StakesBar scenario={scenario} />
         <CastRail scenario={scenario} speakingNpcId={speakingNpcId} />

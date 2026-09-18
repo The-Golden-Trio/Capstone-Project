@@ -74,7 +74,7 @@ export function EndingPage() {
 
   if (submitting || (!result && !error)) {
     return (
-      <Card className="max-w-[720px]">
+      <Card className="mx-auto max-w-[720px]">
         <CardBody>
           <p className="m-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
             Đang chấm ở máy chủ…
@@ -86,7 +86,7 @@ export function EndingPage() {
 
   if (!result) {
     return (
-      <Card className="max-w-[720px]">
+      <Card className="mx-auto max-w-[720px]">
         <CardBody>
           <Note tone="warn" className="mb-4">
             {error ?? 'Không nhận được kết quả từ máy chủ.'}
@@ -108,7 +108,7 @@ export function EndingPage() {
 
   return (
     <RoleTheme roleCode={role_code}>
-      <div className="max-w-[720px]">
+      <div className="mx-auto max-w-[720px]">
         {/* ── Kết cục ── */}
         <div className={cx('reveal mb-4 rounded-[12px] border-[1.5px] p-5', style.frame)}>
           <p

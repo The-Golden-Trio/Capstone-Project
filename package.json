@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx run-many -t dev serve --projects=@datn/web,@datn/api",
-    "start:web": "nx run @datn/web:dev",
+    "start": "nx run-many -t serve --projects=@datn/web,@datn/api",
+    "start:web": "nx run @datn/web:serve",
     "start:api": "nx run @datn/api:serve",
+    "build:web": "nx run -t build @datn/web",
+    "build:api": "nx run -t build @datn/api",
     "build": "nx run-many -t build",
     "test": "nx run-many -t test",
     "lint": "nx run-many -t lint",

@@ -29,7 +29,7 @@ export function EventResultPage() {
     return <Navigate to={`/jobs/${roleCode}/${band}/tasks`} replace />;
 
   return (
-    <Card className="max-w-[640px]">
+    <Card className="mx-auto max-w-[640px]">
       <CardBody>
         <h2 className="mb-3.5 font-display text-[19px] font-semibold">
           {event.title}

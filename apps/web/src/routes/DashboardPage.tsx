@@ -4,6 +4,7 @@ import { Planet } from '../components/game/Planet';
 import { StarMap } from '../components/game/StarMap';
 import { PageHeader } from '../components/layout/PageHeader';
 import { Button } from '../components/ui/Button';
+import { useT } from '../i18n/useT';
 import { Card, CardBody, CardHeader } from '../components/ui/Card';
 import { EmptyState } from '../components/ui/EmptyState';
 import { Pill } from '../components/ui/Pill';
@@ -15,6 +16,7 @@ import { useProgressStore } from '../store/progressStore';
 
 export function DashboardPage() {
   const navigate = useNavigate();
+  const t = useT();
   const user = useAuthStore((s) => s.user);
   const profile = useProfileStore();
   const summary = useProgressStore((s) => s.summary);
@@ -38,25 +40,24 @@ export function DashboardPage() {
 
   return (
     <>
-      <PageHeader title={`Chào ${user?.displayName ?? 'bạn'}`}>
-        Chọn một hành tinh, làm vài nhiệm vụ, rồi xem chân dung của bạn dần hiện
-        ra.
+      <PageHeader title={t('dash.greeting', { name: user?.displayName ?? '' })}>
+        {t('dash.lead')}
       </PageHeader>
 
       <StatGrid className="mb-[22px]">
         <Stat
-          label="Đã ghé"
+          label={t('dash.visited')}
           value={summary?.roles.length ?? 0}
-          hint={`trên ${GAME.roles.length} hành tinh`}
+          hint={t('dash.ofPlanets', { total: GAME.roles.length })}
         />
         <Stat
-          label="Điểm kỹ năng"
+          label={t('dash.skillPoints')}
           value={summary?.totalPoints ?? 0}
-          hint="từ nhiệm vụ chính"
+          hint={t('dash.fromMainQuests')}
           gold
         />
         <Stat
-          label="Nhiệm vụ phụ"
+          label={t('dash.sideQuests')}
           value={profile.eventsPlayed}
           hint={
             profile.eventsPlayed >= 5
@@ -65,15 +66,15 @@ export function DashboardPage() {
           }
         />
         <Stat
-          label="Cấp bậc cao nhất"
+          label={t('dash.highestBand')}
           value={best?.band ?? '—'}
-          hint={best?.roleName ?? 'chưa có'}
+          hint={best?.roleName ?? t('dash.none')}
         />
       </StatGrid>
 
       <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(290px,1fr))]">
         <Card>
-          <CardHeader title={role ? 'Đang ở' : 'Khởi hành từ đâu'} />
+          <CardHeader title={role ? t('dash.whereNow') : t('dash.whereStart')} />
           <CardBody>
             {role && band ? (
               <>
@@ -92,7 +93,7 @@ export function DashboardPage() {
                   variant="primary"
                   onClick={() => navigate(`/jobs/${role.role_code}/${band}`)}
                 >
-                  Tiếp tục hành trình
+                  {t('dash.continue')}
                 </Button>
               </>
             ) : (
@@ -102,7 +103,7 @@ export function DashboardPage() {
                     variant="primary"
                     onClick={() => navigate(profile.quizDone ? '/jobs' : '/quiz')}
                   >
-                    {profile.quizDone ? 'Mở bản đồ' : 'Bắt đầu'}
+                    {profile.quizDone ? t('dash.openMap') : t('dash.start')}
                   </Button>
                 }
               >
@@ -116,8 +117,8 @@ export function DashboardPage() {
         </Card>
 
         <Card>
-          <CardHeader title="Hành tinh hợp với bạn">
-            {known && <Pill tone="gold">theo hồ sơ</Pill>}
+          <CardHeader title={t('dash.suitedPlanets')}>
+            {known && <Pill tone="gold">{t('dash.byProfile')}</Pill>}
           </CardHeader>
           <CardBody>
             {topRoles.length > 0 ? (
@@ -130,7 +131,7 @@ export function DashboardPage() {
             ) : (
               <EmptyState
                 icon="?"
-                action={<Button onClick={() => navigate('/quiz')}>Trả lời 6 câu</Button>}
+                action={<Button onClick={() => navigate('/quiz')}>{t('dash.answerSix')}</Button>}
               >
                 Chưa có hồ sơ tính cách. Làm 6 câu hoặc chơi vài sự kiện để hệ
                 thống hiểu bạn.

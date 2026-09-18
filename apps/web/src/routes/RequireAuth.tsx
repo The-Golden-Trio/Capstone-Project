@@ -5,6 +5,9 @@ import { StarField } from '../components/layout/StarField';
 import { useAuthStore } from '../store/authStore';
 import { useProfileStore } from '../store/profileStore';
 import { useProgressStore } from '../store/progressStore';
+import { translate } from '../i18n/messages';
+import { useLanguage } from '../i18n/useT';
+import { decideGate } from './gate';
 
 /**
  * Cổng vào của toàn bộ phần đã đăng nhập.
@@ -16,8 +19,10 @@ import { useProgressStore } from '../store/progressStore';
 export function RequireAuth() {
   const { status, user } = useAuthStore();
   const location = useLocation();
+  const language = useLanguage();
 
   const loadProfile = useProfileStore((s) => s.load);
+  const quizDone = useProfileStore((s) => s.quizDone);
   const profileLoaded = useProfileStore((s) => s.loaded);
   const loadProgress = useProgressStore((s) => s.load);
 
@@ -27,27 +32,31 @@ export function RequireAuth() {
     void loadProgress();
   }, [status, profileLoaded, loadProfile, loadProgress]);
 
-  if (status === 'loading') {
+  const decision = decideGate({
+    status,
+    consentStatus: user?.consentStatus ?? null,
+    profileLoaded,
+    quizDone,
+    pathname: location.pathname,
+  });
+
+  if (decision.kind === 'wait' || (status === 'authed' && !user)) {
     return (
       <>
         <StarField />
         <div className="relative z-1 grid min-h-screen place-items-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
-            Đang mở cổng…
+            {translate('auth.opening', language)}
           </p>
         </div>
       </>
     );
   }
 
-  if (status === 'anon' || !user) {
+  if (decision.kind === 'redirect') {
     // Nhớ chỗ định tới để đăng nhập xong quay lại đúng đó.
-    return <Navigate to="/login" replace state={{ from: location }} />;
-  }
-
-  // Dưới 16 tuổi mà chưa có người giám hộ đồng ý thì mọi đường đều dẫn về đây.
-  if (user.consentStatus === 'pending' && location.pathname !== '/consent') {
-    return <Navigate to="/consent" replace />;
+    const state = decision.to === '/login' ? { from: location } : undefined;
+    return <Navigate to={decision.to} replace state={state} />;
   }
 
   return <AppShell />;

@@ -74,7 +74,7 @@ const routes: RouteObject[] = [
       {
         path: 'quiz',
         handle: {
-          crumbs: () => [{ label: 'Tự vấn', to: '/quiz' }],
+          crumbs: () => [{ label: 'Get to Know Me', to: '/quiz' }],
         } satisfies CrumbHandle,
         children: [
           { index: true, element: <QuizPage /> },
