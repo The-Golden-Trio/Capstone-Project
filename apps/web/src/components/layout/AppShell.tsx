@@ -1,9 +1,19 @@
 import { useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useMatches } from 'react-router-dom';
 import { cx } from '../../lib/cx';
 import { Rail } from './Rail';
 import { StarField } from './StarField';
 import { Topbar } from './Topbar';
+
+/** Route khai `handle.fullBleed` thì nội dung tràn hết vùng, không lề, không footer. */
+export interface FullBleedHandle {
+  fullBleed: boolean;
+}
+
+const isFullBleed = (handle: unknown): boolean =>
+  typeof handle === 'object' &&
+  handle !== null &&
+  (handle as Partial<FullBleedHandle>).fullBleed === true;
 
 /**
  * Khung ứng dụng: nền sao, sidebar, topbar, vùng nội dung.
@@ -15,6 +25,8 @@ import { Topbar } from './Topbar';
 export function AppShell() {
   const [navOpen, setNavOpen] = useState(false);
   const { pathname } = useLocation();
+  // Bản đồ ngân hà 3D cần cả khung hình: bỏ lề, bỏ giới hạn bề ngang, bỏ footer.
+  const fullBleed = useMatches().some((m) => isFullBleed(m.handle));
 
   // Đổi trang thì đóng ngăn kéo — nếu không nó che mất màn mới trên điện thoại.
   useEffect(() => setNavOpen(false), [pathname]);
@@ -51,9 +63,16 @@ export function AppShell() {
 
         <div className="flex min-w-0 flex-col">
           <Topbar onOpenNav={() => setNavOpen(true)} />
+          {fullBleed ? (
+            <div className="min-h-0 w-full flex-1">
+              <Outlet />
+            </div>
+          ) : (
           <div className="w-full max-w-[1100px] p-[26px] max-[900px]:p-[18px]">
             <Outlet />
           </div>
+          )}
+          {!fullBleed && (
           <footer className="mt-auto border-t border-line-2 px-[26px] py-5 text-[12px] leading-relaxed text-muted">
             Dữ liệu sinh từ{' '}
             <code className="font-mono text-[11px]">
@@ -66,6 +85,7 @@ export function AppShell() {
             bằng <code className="font-mono text-[11px]">node docs/data/build.mjs</code>.
             Chấm câu gõ tự do hiện dùng so khớp từ khoá, chưa gọi AI.
           </footer>
+          )}
         </div>
       </div>
     </>

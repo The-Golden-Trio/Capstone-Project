@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react';
 import { createBrowserRouter, type RouteObject } from 'react-router-dom';
 import {
   findRole,
@@ -6,12 +7,12 @@ import {
   shortName,
 } from '@datn/game-core';
 import type { CrumbHandle } from '../hooks/useBreadcrumbs';
+import type { FullBleedHandle } from '../components/layout/AppShell';
 import { AccountPage } from './AccountPage';
 import { DashboardPage } from './DashboardPage';
 import { ErrorPage } from './ErrorPage';
 import { EventPage } from './EventPage';
 import { EventResultPage } from './EventResultPage';
-import { JobsMapPage } from './JobsMapPage';
 import { ProfilePage } from './ProfilePage';
 import { QuizPage } from './QuizPage';
 import { QuizResultPage } from './QuizResultPage';
@@ -22,6 +23,22 @@ import { RegisterPage } from './auth/RegisterPage';
 import { JobPage } from './job/JobPage';
 import { EndingPage } from './play/EndingPage';
 import { PlayPage } from './play/PlayPage';
+
+/**
+ * Bản đồ ngân hà kéo theo three.js (~1 MB) — tải riêng khi vào `/jobs`, các
+ * màn khác không phải trả giá cho nó.
+ */
+const GalaxyPage = lazy(() =>
+  import('../galaxy/GalaxyPage').then((m) => ({ default: m.GalaxyPage })),
+);
+
+const GalaxyFallback = () => (
+  <div className="grid h-[calc(100dvh-57px)] place-items-center">
+    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+      Đang mở bản đồ ngân hà…
+    </p>
+  </div>
+);
 
 /** Mẩu bánh mì "Bản đồ nghề / <tên nghề>" dùng lại ở mọi route con của một nghề. */
 const roleCrumbs: CrumbHandle['crumbs'] = ({ roleCode, band }) => {
@@ -75,10 +92,16 @@ const routes: RouteObject[] = [
         children: [
           {
             index: true,
-            element: <JobsMapPage />,
+            element: (
+              <Suspense fallback={<GalaxyFallback />}>
+                <GalaxyPage />
+              </Suspense>
+            ),
+            // cảnh 3D chiếm trọn vùng nội dung, không lề, không footer
             handle: {
               crumbs: () => [{ label: 'Bản đồ nghề' }],
-            } satisfies CrumbHandle,
+              fullBleed: true,
+            } satisfies CrumbHandle & FullBleedHandle,
           },
           {
             path: ':roleCode/:band',

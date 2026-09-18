@@ -1,0 +1,2803 @@
+/* SINH TU DONG — dung sua tay. Sinh lai: node docs/data/build-galaxy.mjs */
+
+export const RAW_GALAXY_DATA: unknown = {
+  "_meta": {
+    "generated_at": "2026-09-18",
+    "sources": [
+      "occupation-data/output/role_graph.json",
+      "occupation-data/dataset_22_roles_enriched_v3.json",
+      "occupation-data/output/dataset_final_merged.json"
+    ],
+    "note": "SINH TU DONG. Sinh lai: node docs/data/build-galaxy.mjs"
+  },
+  "groups": [
+    {
+      "name": "Software Engineering & Architecture",
+      "short": "SWE",
+      "label": "Kỹ thuật phần mềm",
+      "color": "#5b9cf5",
+      "sun": [
+        8.7,
+        18,
+        -93.8
+      ]
+    },
+    {
+      "name": "Quality Assurance & Testing",
+      "short": "QA",
+      "label": "Kiểm thử",
+      "color": "#f2c94c",
+      "sun": [
+        96.2,
+        59.7,
+        33
+      ]
+    },
+    {
+      "name": "IT Infrastructure & Enterprise Systems",
+      "short": "INFRA",
+      "label": "Hạ tầng & Hệ thống",
+      "color": "#f0925a",
+      "sun": [
+        93.2,
+        -7.4,
+        107.7
+      ]
+    },
+    {
+      "name": "Cyber Security",
+      "short": "SEC",
+      "label": "An ninh mạng",
+      "color": "#ef6b6b",
+      "sun": [
+        71.3,
+        63.5,
+        117
+      ]
+    },
+    {
+      "name": "Cloud, DevOps & SRE",
+      "short": "CLOUD",
+      "label": "Cloud & DevOps",
+      "color": "#3dd9c1",
+      "sun": [
+        -16.5,
+        -4.2,
+        91.5
+      ]
+    },
+    {
+      "name": "Data, AI & Machine Learning",
+      "short": "DATA",
+      "label": "Dữ liệu & AI",
+      "color": "#a97cff",
+      "sun": [
+        -117.9,
+        30,
+        84
+      ]
+    },
+    {
+      "name": "Product & Project Management",
+      "short": "PROD",
+      "label": "Sản phẩm & Dự án",
+      "color": "#f27bb5",
+      "sun": [
+        -72.4,
+        -0.3,
+        -27
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "roleCode": "CLOUD_DEVOPS",
+      "nameVn": "Kỹ sư DevOps",
+      "nameEn": "DevOps Engineer",
+      "group": "CLOUD",
+      "bands": "L3-L7",
+      "bandStart": "L3",
+      "bandEnd": "L7",
+      "experience": "Tự động hoá, đưa sản phẩm lên chạy thật, giữ hệ thống không sập",
+      "hardSkills": [
+        "Linux/Bash",
+        "Jenkins/GitLab CI",
+        "Docker",
+        "Kubernetes",
+        "Terraform/Ansible",
+        "Prometheus/Grafana",
+        "Cloud Architecture (AWS/GCP)",
+        "Security & Networking in Cloud"
+      ],
+      "hardSkillSource": "dataset_merged",
+      "softSkills": [
+        "Làm việc nhóm",
+        "Cẩn thận với production",
+        "Chủ động",
+        "Giải quyết sự cố (Troubleshooting)",
+        "Lãnh đạo kỹ thuật",
+        "Bình tĩnh dưới áp lực"
+      ],
+      "events": [
+        {
+          "id": "CLOUD_DEVOPS_01",
+          "title": "2 giờ sáng, điện thoại reo",
+          "setup": "Hệ thống thanh toán ngừng hoạt động. Bạn đang trong ca trực.",
+          "choices": [
+            {
+              "text": "Dậy ngay, mở laptop xử lý",
+              "outcome": "Khôi phục sau 40 phút. Sáng hôm sau bạn ngủ gật trong họp."
+            },
+            {
+              "text": "Nhắn đồng nghiệp nhờ xử lý hộ",
+              "outcome": "Xử lý được, nhưng lần sau tới lượt bạn và bạn nợ họ một lần."
+            },
+            {
+              "text": "Xem log qua điện thoại, thấy hệ thống tự phục hồi, ngủ tiếp",
+              "outcome": "Sáng ra mới biết mất 1.200 giao dịch. Bạn phải giải trình."
+            }
+          ]
+        },
+        {
+          "id": "CLOUD_DEVOPS_02",
+          "title": "Deploy lúc 5 giờ chiều thứ Sáu",
+          "setup": "Tính năng đã xong, PM muốn lên production hôm nay. Bạn biết cuối tuần không ai trực.",
+          "choices": [
+            {
+              "text": "Từ chối, hẹn deploy sáng thứ Hai",
+              "outcome": "PM không vui nhưng chấp nhận. Cuối tuần yên ổn."
+            },
+            {
+              "text": "Deploy nhưng bật cơ chế quay lui tự động",
+              "outcome": "Lên được, có sự cố nhỏ lúc 8 giờ tối nhưng hệ thống tự quay lui. Bạn vẫn phải kiểm tra."
+            },
+            {
+              "text": "Deploy luôn cho xong",
+              "outcome": "Chạy ổn. Nhưng ba tuần sau đúng kiểu deploy này gây sự cố lớn."
+            }
+          ]
+        },
+        {
+          "id": "CLOUD_DEVOPS_03",
+          "title": "Chi phí cloud tháng này tăng gấp đôi",
+          "setup": "Kế toán gửi hoá đơn AWS tăng từ 8.000 lên 16.000 USD. Không ai biết vì sao.",
+          "choices": [
+            {
+              "text": "Dành 2 ngày rà soát từng dịch vụ",
+              "outcome": "Tìm ra một cụm test quên tắt từ tháng trước. Tiết kiệm được 6.000 USD/tháng."
+            },
+            {
+              "text": "Đặt cảnh báo ngân sách rồi xử lý dần",
+              "outcome": "Ngăn được lần sau, nhưng tháng này vẫn mất tiền."
+            },
+            {
+              "text": "Báo lên quản lý để có người khác lo",
+              "outcome": "Vấn đề được giải quyết chậm hơn, và bạn mất cơ hội hiểu hệ thống sâu hơn."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -24.8,
+        -31,
+        117.2
+      ],
+      "look": {
+        "kind": "cloud",
+        "seed": 37.58,
+        "radius": 7.06,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.083,
+        "spin": 0.149
+      }
+    },
+    {
+      "roleCode": "CLOUD_ENG",
+      "nameVn": "Kỹ sư điện toán đám mây",
+      "nameEn": "Cloud Engineer",
+      "group": "CLOUD",
+      "bands": "L2-L6",
+      "bandStart": "L2",
+      "bandEnd": "L6",
+      "experience": "Xây và vận hành hạ tầng trên nền tảng đám mây",
+      "hardSkills": [],
+      "hardSkillSource": null,
+      "softSkills": [],
+      "events": [
+        {
+          "id": "CLOUD_ENG_01",
+          "title": "Khách hàng muốn chuyển toàn bộ hệ thống lên cloud trong 2 tháng",
+          "setup": "Hệ thống 12 năm tuổi, chạy trên máy chủ vật lý, không có tài liệu.",
+          "choices": [
+            {
+              "text": "Đề xuất chuyển từng phần, bắt đầu từ phần ít rủi ro nhất",
+              "outcome": "Mất 5 tháng nhưng không có sự cố nào. Khách hàng hài lòng."
+            },
+            {
+              "text": "Chuyển nguyên trạng lên máy ảo trước, tối ưu sau",
+              "outcome": "Kịp 2 tháng. Nhưng chi phí cloud cao gấp 3 vì chưa tối ưu."
+            },
+            {
+              "text": "Nhận làm đúng 2 tháng theo yêu cầu",
+              "outcome": "Tháng thứ 3 hệ thống sập 6 tiếng trong giờ cao điểm."
+            }
+          ]
+        },
+        {
+          "id": "CLOUD_ENG_02",
+          "title": "Tài khoản cloud bị lộ khoá truy cập",
+          "setup": "Một lập trình viên vô tình đẩy khoá AWS lên GitHub công khai. 20 phút sau có người đào tiền ảo.",
+          "choices": [
+            {
+              "text": "Vô hiệu hoá khoá ngay, rà soát toàn bộ tài nguyên lạ",
+              "outcome": "Thiệt hại 12 triệu tiền máy chủ. Sau đó bạn thiết lập quét khoá tự động."
+            },
+            {
+              "text": "Đổi khoá và theo dõi thêm",
+              "outcome": "Ngăn được, nhưng không biết kẻ tấn công đã lấy dữ liệu gì."
+            },
+            {
+              "text": "Chờ hết giờ làm rồi xử lý",
+              "outcome": "Hoá đơn tháng đó tăng 180 triệu."
+            }
+          ]
+        },
+        {
+          "id": "CLOUD_ENG_03",
+          "title": "Chọn giữa ba dịch vụ cloud cho cùng một bài toán",
+          "setup": "AWS, Azure và GCP đều làm được. Mỗi bên có ưu nhược khác nhau và giá khác nhau.",
+          "choices": [
+            {
+              "text": "Làm bảng so sánh có tính chi phí 3 năm và khả năng chuyển đổi",
+              "outcome": "Chọn được phương án rẻ hơn 40% và không bị khoá vào một nhà cung cấp."
+            },
+            {
+              "text": "Chọn theo cái đội đã quen dùng",
+              "outcome": "An toàn, triển khai nhanh. Nhưng bỏ lỡ giải pháp phù hợp hơn."
+            },
+            {
+              "text": "Chọn cái mới nhất, nhiều tính năng nhất",
+              "outcome": "Ba tháng sau phát hiện dịch vụ đó chưa có ở vùng Singapore, độ trễ cao."
+            }
+          ]
+        }
+      ],
+      "position": [
+        18.7,
+        -20.6,
+        68.8
+      ],
+      "look": {
+        "kind": "cloud",
+        "seed": 76.64,
+        "radius": 6.33,
+        "ring": true,
+        "moons": 1,
+        "tilt": -0.338,
+        "spin": 0.058
+      }
+    },
+    {
+      "roleCode": "DATA_AI",
+      "nameVn": "Kỹ sư trí tuệ nhân tạo",
+      "nameEn": "AI Engineer",
+      "group": "DATA",
+      "bands": "L3-L7",
+      "bandStart": "L3",
+      "bandEnd": "L7",
+      "experience": "Xây hệ thống thông minh: mô hình học máy, LLM, thị giác máy tính",
+      "hardSkills": [],
+      "hardSkillSource": null,
+      "softSkills": [],
+      "events": [
+        {
+          "id": "DATA_AI_01",
+          "title": "Mô hình đạt 95% trên tập test, sai bét khi chạy thật",
+          "setup": "Mô hình phân loại của bạn rất tốt trong phòng thí nghiệm. Dữ liệu thật thì khác hẳn.",
+          "choices": [
+            {
+              "text": "Phân tích chênh lệch phân phối dữ liệu, thu thập thêm dữ liệu thật",
+              "outcome": "Mất 3 tuần nhưng mô hình đạt 88% ổn định trên thực tế. Con số thấp hơn nhưng dùng được."
+            },
+            {
+              "text": "Huấn luyện lại với dữ liệu mới nhất",
+              "outcome": "Cải thiện lên 80%. Vẫn cần theo dõi thêm."
+            },
+            {
+              "text": "Báo cáo con số 95% cho sếp",
+              "outcome": "Sản phẩm ra mắt và bị người dùng phàn nàn ngay tuần đầu."
+            }
+          ]
+        },
+        {
+          "id": "DATA_AI_02",
+          "title": "Sếp muốn 'thêm AI vào sản phẩm' nhưng không rõ để làm gì",
+          "setup": "Sếp đọc tin về AI và muốn công ty có. Không có bài toán cụ thể nào.",
+          "choices": [
+            {
+              "text": "Đi tìm bài toán thật từ đội vận hành trước khi làm mô hình",
+              "outcome": "Tìm ra việc phân loại phiếu hỗ trợ đang tốn 4 giờ/ngày. Tự động hoá được 70%."
+            },
+            {
+              "text": "Làm chatbot demo cho sếp xem",
+              "outcome": "Sếp thích, nhưng không ai dùng vì không giải quyết vấn đề gì."
+            },
+            {
+              "text": "Giải thích rằng AI không phải giải pháp cho mọi thứ",
+              "outcome": "Đúng nhưng sếp thất vọng và giao việc cho người khác."
+            }
+          ]
+        },
+        {
+          "id": "DATA_AI_03",
+          "title": "Mô hình đưa ra kết quả không giải thích được vì sao",
+          "setup": "Ngân hàng hỏi vì sao mô hình từ chối khoản vay của khách hàng này. Bạn không biết.",
+          "choices": [
+            {
+              "text": "Chuyển sang mô hình đơn giản hơn nhưng giải thích được",
+              "outcome": "Độ chính xác giảm 4% nhưng đáp ứng yêu cầu pháp lý và khách hàng tin tưởng hơn."
+            },
+            {
+              "text": "Thêm công cụ giải thích cho mô hình hiện tại",
+              "outcome": "Giải thích được phần nào, đủ để qua vòng kiểm tra tuân thủ."
+            },
+            {
+              "text": "Trả lời rằng mô hình là hộp đen",
+              "outcome": "Không được chấp nhận. Dự án bị dừng."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -145.4,
+        11.6,
+        11.4
+      ],
+      "look": {
+        "kind": "gas",
+        "seed": 47.51,
+        "radius": 7.83,
+        "ring": true,
+        "moons": 1,
+        "tilt": -0.349,
+        "spin": 0.112
+      }
+    },
+    {
+      "roleCode": "DATA_DA",
+      "nameVn": "Chuyên viên phân tích dữ liệu",
+      "nameEn": "Data Analyst",
+      "group": "DATA",
+      "bands": "L1-L6",
+      "bandStart": "L1",
+      "bandEnd": "L6",
+      "experience": "Đọc số liệu, tìm câu chuyện đằng sau con số — ít code, nhiều giao tiếp với phòng ban",
+      "hardSkills": [
+        "SQL",
+        "Excel",
+        "Data Visualization (PowerBI/Tableau)",
+        "SQL (Advanced)",
+        "PowerBI/Tableau",
+        "Python/R (Basic)",
+        "Data Modeling",
+        "A/B Testing"
+      ],
+      "hardSkillSource": "dataset_merged",
+      "softSkills": [
+        "Cẩn thận",
+        "Tư duy logic",
+        "Thuyết trình",
+        "Giao tiếp với nghiệp vụ",
+        "Tư duy chiến lược",
+        "Gây ảnh hưởng (Influencing)"
+      ],
+      "events": [
+        {
+          "id": "DATA_DA_01",
+          "title": "Sếp muốn số liệu chứng minh điều sếp đã tin sẵn",
+          "setup": "Sếp tin chiến dịch quảng cáo hiệu quả. Dữ liệu của bạn cho thấy ngược lại.",
+          "choices": [
+            {
+              "text": "Trình bày trung thực kèm giải thích vì sao",
+              "outcome": "Sếp không vui lúc đầu, nhưng dừng chiến dịch và tiết kiệm 400 triệu."
+            },
+            {
+              "text": "Trình bày dữ liệu, thêm phần 'nếu nhìn ở góc độ khác'",
+              "outcome": "Sếp giữ chiến dịch thêm 1 tháng rồi tự nhận ra. Bạn giữ được quan hệ."
+            },
+            {
+              "text": "Chọn cách cắt dữ liệu làm con số đẹp hơn",
+              "outcome": "Sếp hài lòng. Ba tháng sau thất bại rõ ràng và bạn bị hỏi vì sao báo cáo sai."
+            }
+          ]
+        },
+        {
+          "id": "DATA_DA_02",
+          "title": "Dữ liệu bẩn, 30% bản ghi thiếu trường quan trọng",
+          "setup": "Bạn cần phân tích gấp nhưng nguồn dữ liệu không đầy đủ.",
+          "choices": [
+            {
+              "text": "Truy ngược tìm nguyên nhân với đội kỹ thuật",
+              "outcome": "Tìm ra lỗi ở form đăng ký. Sửa xong dữ liệu sạch từ đó."
+            },
+            {
+              "text": "Loại bỏ bản ghi thiếu, ghi rõ giới hạn trong báo cáo",
+              "outcome": "Phân tích được, và người đọc biết độ tin cậy tới đâu."
+            },
+            {
+              "text": "Điền giá trị trung bình vào chỗ thiếu",
+              "outcome": "Báo cáo trông đầy đủ nhưng kết luận lệch mà không ai biết."
+            }
+          ]
+        },
+        {
+          "id": "DATA_DA_03",
+          "title": "Ba phòng ban đưa ba con số doanh thu khác nhau",
+          "setup": "Kế toán nói 12 tỷ, kinh doanh nói 14 tỷ, hệ thống nói 13,2 tỷ. Ai cũng chắc mình đúng.",
+          "choices": [
+            {
+              "text": "Ngồi với từng phòng làm rõ định nghĩa 'doanh thu'",
+              "outcome": "Ra được rằng mỗi bên tính thời điểm ghi nhận khác nhau. Thống nhất được một định nghĩa chung."
+            },
+            {
+              "text": "Chọn số của hệ thống vì khách quan nhất",
+              "outcome": "Báo cáo có số, nhưng hai phòng kia không công nhận."
+            },
+            {
+              "text": "Báo cáo cả ba con số kèm ghi chú",
+              "outcome": "Trung thực nhưng người đọc bối rối không biết dùng số nào."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -127.4,
+        6.1,
+        132.3
+      ],
+      "look": {
+        "kind": "gas",
+        "seed": 67.56,
+        "radius": 7.67,
+        "ring": false,
+        "moons": 1,
+        "tilt": -0.152,
+        "spin": 0.091
+      }
+    },
+    {
+      "roleCode": "DATA_DE",
+      "nameVn": "Kỹ sư dữ liệu",
+      "nameEn": "Data Engineer",
+      "group": "DATA",
+      "bands": "L3-L7",
+      "bandStart": "L3",
+      "bandEnd": "L7",
+      "experience": "Xây đường ống đưa dữ liệu từ nhiều nguồn về một chỗ — nặng về kỹ thuật",
+      "hardSkills": [
+        "Python",
+        "Apache Spark",
+        "JavaScript",
+        "Apache Kafka",
+        "SQL",
+        "NumPy",
+        "Pandas",
+        "FastAPI"
+      ],
+      "hardSkillSource": "itviec_report",
+      "softSkills": [],
+      "events": [
+        {
+          "id": "DATA_DE_01",
+          "title": "Pipeline chạy lỗi lúc 3 giờ sáng, báo cáo sáng không có dữ liệu",
+          "setup": "Đội kinh doanh 8 giờ sáng cần báo cáo. Bạn phát hiện lúc 7 giờ 30.",
+          "choices": [
+            {
+              "text": "Chạy tay gấp phần thiếu, kịp 8 giờ 15",
+              "outcome": "Trễ 15 phút, không ai phàn nàn. Chiều đó bạn thêm cảnh báo tự động."
+            },
+            {
+              "text": "Báo đội kinh doanh dữ liệu sẽ có lúc 10 giờ",
+              "outcome": "Họ hoãn cuộc họp. Bạn có thời gian sửa gốc vấn đề."
+            },
+            {
+              "text": "Dùng dữ liệu hôm qua cho báo cáo hôm nay",
+              "outcome": "Không ai phát hiện. Nhưng một quyết định sai được đưa ra dựa trên số cũ."
+            }
+          ]
+        },
+        {
+          "id": "DATA_DE_02",
+          "title": "Nguồn dữ liệu đổi định dạng mà không báo trước",
+          "setup": "Đối tác đổi tên cột trong file gửi hàng ngày. Pipeline gãy toàn bộ.",
+          "choices": [
+            {
+              "text": "Viết lớp kiểm tra định dạng, cảnh báo sớm khi có thay đổi",
+              "outcome": "Mất 2 ngày nhưng từ đó phát hiện được ngay khi nguồn đổi."
+            },
+            {
+              "text": "Sửa pipeline theo định dạng mới",
+              "outcome": "Xong trong 2 tiếng. Nhưng tháng sau họ lại đổi lần nữa."
+            },
+            {
+              "text": "Liên hệ đối tác yêu cầu báo trước khi đổi",
+              "outcome": "Họ đồng ý nhưng vẫn quên 2 lần trong năm."
+            }
+          ]
+        },
+        {
+          "id": "DATA_DE_03",
+          "title": "Bảng dữ liệu 8 tỷ dòng, truy vấn tốn 400 nghìn mỗi lần",
+          "setup": "Đội phân tích chạy 30 truy vấn/ngày. Hoá đơn cuối tháng 360 triệu.",
+          "choices": [
+            {
+              "text": "Thiết kế lại bảng theo phân vùng, tạo bảng tổng hợp sẵn",
+              "outcome": "Chi phí xuống còn 40 triệu/tháng. Truy vấn nhanh hơn 20 lần."
+            },
+            {
+              "text": "Giới hạn quyền truy vấn của đội phân tích",
+              "outcome": "Chi phí giảm nhưng đội phân tích bị chậm việc và không hài lòng."
+            },
+            {
+              "text": "Báo lên để xin thêm ngân sách",
+              "outcome": "Được duyệt, nhưng vấn đề gốc vẫn còn và sẽ tăng tiếp."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -71.2,
+        30.3,
+        84.7
+      ],
+      "look": {
+        "kind": "gas",
+        "seed": 55.51,
+        "radius": 7.17,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.261,
+        "spin": 0.071
+      }
+    },
+    {
+      "roleCode": "INFRA_ERP",
+      "nameVn": "Chuyên viên tư vấn giải pháp ERP",
+      "nameEn": "ERP / CRM Consultant",
+      "group": "INFRA",
+      "bands": "L3-L7",
+      "bandStart": "L3",
+      "bandEnd": "L7",
+      "experience": "Cấu hình hệ thống quản trị doanh nghiệp (SAP, Oracle, Salesforce) theo quy trình của khách hàng — ít code, nhiều nghiệp vụ và làm việc trực tiếp với khách",
+      "hardSkills": [
+        "SQL",
+        ".NET",
+        "C#",
+        "ASP.NET Core",
+        "Python",
+        "Flutter",
+        "JavaScript",
+        "ASP.NET"
+      ],
+      "hardSkillSource": "itviec_report",
+      "softSkills": [],
+      "events": [
+        {
+          "id": "INFRA_ERP_01",
+          "title": "Khách hàng muốn phần mềm chạy theo quy trình cũ đã lỗi thời",
+          "setup": "Quy trình duyệt của họ có 9 bước, 3 bước đã không còn cần thiết. Nhưng họ muốn giữ nguyên.",
+          "choices": [
+            {
+              "text": "Chỉ ra 3 bước thừa bằng số liệu thời gian xử lý",
+              "outcome": "Khách hàng đồng ý bỏ 2 bước. Quy trình nhanh hơn 40%."
+            },
+            {
+              "text": "Cấu hình đúng theo quy trình cũ",
+              "outcome": "Khách hàng hài lòng vì không phải thay đổi. Nhưng hệ thống mới không mang lại cải thiện gì."
+            },
+            {
+              "text": "Tự bỏ 3 bước vì thấy vô lý",
+              "outcome": "Khách hàng phát hiện lúc nghiệm thu và yêu cầu làm lại từ đầu."
+            }
+          ]
+        },
+        {
+          "id": "INFRA_ERP_02",
+          "title": "Đi công tác tỉnh 2 tuần để triển khai tại nhà máy",
+          "setup": "Nhà máy ở Bình Dương, phải ở lại. Gia đình bạn ở TP.HCM.",
+          "choices": [
+            {
+              "text": "Đi, tận dụng thời gian hiểu sâu vận hành thực tế",
+              "outcome": "Hiểu nghiệp vụ hơn hẳn đọc tài liệu. Trở thành người am hiểu nhất dự án."
+            },
+            {
+              "text": "Đề xuất đi 1 tuần, phần còn lại làm từ xa",
+              "outcome": "Được chấp nhận. Hiệu quả thấp hơn một chút nhưng cân bằng được."
+            },
+            {
+              "text": "Từ chối, đề nghị đồng nghiệp khác đi",
+              "outcome": "Được, nhưng cơ hội dẫn dắt dự án chuyển sang người đó."
+            }
+          ]
+        },
+        {
+          "id": "INFRA_ERP_03",
+          "title": "Người dùng cuối không chịu dùng hệ thống mới",
+          "setup": "Sau 3 tháng triển khai, 60% nhân viên vẫn dùng Excel như cũ.",
+          "choices": [
+            {
+              "text": "Ngồi cùng họ 1 tuần xem vì sao, phát hiện thiếu 2 tính năng nhỏ",
+              "outcome": "Bổ sung xong tỷ lệ dùng lên 90%. Hoá ra vấn đề rất nhỏ."
+            },
+            {
+              "text": "Tổ chức thêm buổi đào tạo",
+              "outcome": "Tăng lên 75%. Còn một nhóm vẫn chống đối."
+            },
+            {
+              "text": "Đề nghị lãnh đạo ra chỉ thị bắt buộc dùng",
+              "outcome": "Tỷ lệ lên 100% trên giấy tờ. Nhưng dữ liệu nhập ẩu và không tin được."
+            }
+          ]
+        }
+      ],
+      "position": [
+        24,
+        -14.1,
+        124.9
+      ],
+      "look": {
+        "kind": "desert",
+        "seed": 28.72,
+        "radius": 7.66,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.078,
+        "spin": 0.114
+      }
+    },
+    {
+      "roleCode": "INFRA_HELPDESK",
+      "nameVn": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+      "nameEn": "IT Helpdesk",
+      "group": "INFRA",
+      "bands": "L1-L4",
+      "bandStart": "L1",
+      "bandEnd": "L4",
+      "experience": "Hỗ trợ người dùng và xử lý sự cố trực tiếp — cửa vào ngành dễ tiếp cận nhất",
+      "hardSkills": [
+        "Windows OS",
+        "Basic Networking",
+        "Active Directory",
+        "O365 Admin"
+      ],
+      "hardSkillSource": "dataset_merged",
+      "softSkills": [
+        "Thái độ phục vụ",
+        "Kiên nhẫn",
+        "Quản lý thời gian",
+        "Giao tiếp rõ ràng"
+      ],
+      "events": [
+        {
+          "id": "INFRA_HELPDESK_01",
+          "title": "Cùng một câu hỏi được hỏi lần thứ 15 trong tuần",
+          "setup": "'Máy in không in được'. Lần nào cũng là do chọn nhầm máy in mặc định.",
+          "choices": [
+            {
+              "text": "Viết hướng dẫn có hình, gửi toàn công ty và dán cạnh máy in",
+              "outcome": "Số phiếu về máy in giảm 80%. Bạn có thời gian làm việc khác."
+            },
+            {
+              "text": "Kiên nhẫn hướng dẫn từng người",
+              "outcome": "Ai cũng quý bạn. Nhưng bạn mất 5 tiếng mỗi tuần cho việc này."
+            },
+            {
+              "text": "Trả lời cộc lốc cho nhanh",
+              "outcome": "Người dùng ngại hỏi, tự mò và làm hỏng cấu hình nặng hơn."
+            }
+          ]
+        },
+        {
+          "id": "INFRA_HELPDESK_02",
+          "title": "Giám đốc gọi lúc 9 giờ tối vì không mở được file",
+          "setup": "Ông ấy đang chuẩn bị họp sáng mai với đối tác. File bị lỗi định dạng.",
+          "choices": [
+            {
+              "text": "Hỗ trợ ngay qua điện thoại, mất 40 phút",
+              "outcome": "Giải quyết được. Giám đốc nhớ tên bạn và khen trong họp giao ban."
+            },
+            {
+              "text": "Hướng dẫn cách tự khắc phục qua tin nhắn",
+              "outcome": "Ông ấy làm được sau 15 phút. Bạn không phải mở máy."
+            },
+            {
+              "text": "Hẹn sáng mai xử lý sớm",
+              "outcome": "Cuộc họp bị hoãn 30 phút. Bạn bị nhắc nhở về tinh thần hỗ trợ."
+            }
+          ]
+        },
+        {
+          "id": "INFRA_HELPDESK_03",
+          "title": "Người dùng khẳng định 'tôi không làm gì cả'",
+          "setup": "Máy nhiễm mã độc. Lịch sử trình duyệt cho thấy họ tải phần mềm lậu.",
+          "choices": [
+            {
+              "text": "Xử lý máy trước, sau đó trao đổi riêng về rủi ro",
+              "outcome": "Máy sạch, người dùng hiểu ra và không tái phạm."
+            },
+            {
+              "text": "Báo cáo lên quản lý theo quy định",
+              "outcome": "Đúng quy trình. Nhưng người dùng đó không bao giờ báo sự cố cho bạn nữa."
+            },
+            {
+              "text": "Sửa máy, không nói gì",
+              "outcome": "Ba tuần sau máy nhiễm lại."
+            }
+          ]
+        }
+      ],
+      "position": [
+        135.6,
+        -20.7,
+        140.1
+      ],
+      "look": {
+        "kind": "desert",
+        "seed": 22.87,
+        "radius": 6.76,
+        "ring": true,
+        "moons": 0,
+        "tilt": -0.368,
+        "spin": 0.118
+      }
+    },
+    {
+      "roleCode": "INFRA_NETWORK",
+      "nameVn": "Kỹ sư hệ thống mạng",
+      "nameEn": "Network Engineer",
+      "group": "INFRA",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Thiết kế và vận hành hệ thống mạng — lộ trình theo chứng chỉ CCNA/CCNP",
+      "hardSkills": [],
+      "hardSkillSource": null,
+      "softSkills": [],
+      "events": [
+        {
+          "id": "INFRA_NETWORK_01",
+          "title": "Mạng cả toà nhà sập lúc 8 giờ sáng",
+          "setup": "300 người không làm việc được. Chưa biết nguyên nhân. Điện thoại reo liên tục.",
+          "choices": [
+            {
+              "text": "Cô lập từng phân đoạn để tìm điểm hỏng",
+              "outcome": "Sau 35 phút tìm ra một switch bị lỗi. Thay xong mạng chạy lại."
+            },
+            {
+              "text": "Khởi động lại toàn bộ thiết bị mạng",
+              "outcome": "Mạng lên lại sau 10 phút. Nhưng không biết nguyên nhân, tuần sau lặp lại."
+            },
+            {
+              "text": "Gọi nhà cung cấp dịch vụ",
+              "outcome": "Họ tới sau 3 tiếng và phát hiện lỗi nằm ở thiết bị nội bộ."
+            }
+          ]
+        },
+        {
+          "id": "INFRA_NETWORK_02",
+          "title": "Phải cắt mạng để nâng cấp, chỉ được làm ngoài giờ",
+          "setup": "Việc nâng cấp mất 4 tiếng. Chỉ có thể làm từ 11 giờ đêm thứ Bảy.",
+          "choices": [
+            {
+              "text": "Lên kế hoạch chi tiết, làm đúng cửa sổ bảo trì",
+              "outcome": "Xong lúc 3 giờ sáng, mọi thứ chạy tốt. Chủ Nhật bạn ngủ bù."
+            },
+            {
+              "text": "Chuẩn bị sẵn phương án quay lui trước khi bắt đầu",
+              "outcome": "Gặp sự cố lúc 1 giờ sáng nhưng quay lui được trong 20 phút. Thử lại tuần sau."
+            },
+            {
+              "text": "Làm nhanh trong giờ hành chính lúc ít người dùng",
+              "outcome": "Cắt mạng 25 phút giữa giờ làm. Bị khiếu nại từ 4 phòng ban."
+            }
+          ]
+        },
+        {
+          "id": "INFRA_NETWORK_03",
+          "title": "Cần thi CCNP nhưng phải tự học ngoài giờ",
+          "setup": "Chứng chỉ này sẽ mở đường lên vị trí cao hơn. Học mất khoảng 6 tháng buổi tối.",
+          "choices": [
+            {
+              "text": "Học đều 1,5 tiếng mỗi tối, thi sau 6 tháng",
+              "outcome": "Đỗ. Lương tăng 30% và có thêm lựa chọn công việc."
+            },
+            {
+              "text": "Học dồn vào cuối tuần",
+              "outcome": "Tiến độ chậm hơn, thi sau 10 tháng nhưng vẫn đỗ."
+            },
+            {
+              "text": "Dựa vào kinh nghiệm thực tế thay vì chứng chỉ",
+              "outcome": "Làm việc tốt. Nhưng khi ứng tuyển chỗ mới thì hồ sơ bị loại từ vòng lọc."
+            }
+          ]
+        }
+      ],
+      "position": [
+        116.7,
+        -29.5,
+        35.2
+      ],
+      "look": {
+        "kind": "desert",
+        "seed": 61.84,
+        "radius": 6.3,
+        "ring": true,
+        "moons": 0,
+        "tilt": -0.161,
+        "spin": 0.13
+      }
+    },
+    {
+      "roleCode": "PROD_BA",
+      "nameVn": "Chuyên viên phân tích nghiệp vụ / BA",
+      "nameEn": "Business Analyst",
+      "group": "PROD",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Cầu nối giữa nghiệp vụ và kỹ thuật — giao tiếp nhiều, ÍT code",
+      "hardSkills": [
+        "Requirement Gathering",
+        "UML/BPMN (Basic)",
+        "Business Process Modeling",
+        "Wireframing (Balsamiq/Figma)",
+        "SQL (Basic)",
+        "Domain Knowledge (Banking)",
+        "Stakeholder Management",
+        "Payment Gateway Knowledge"
+      ],
+      "hardSkillSource": "dataset_merged",
+      "softSkills": [
+        "Lắng nghe",
+        "Giao tiếp rõ ràng",
+        "Thuyết phục",
+        "Tiếng Anh tốt (outsourcing)",
+        "Thương lượng",
+        "Quản lý kỳ vọng"
+      ],
+      "events": [
+        {
+          "id": "PROD_BA_01",
+          "title": "Khách hàng đổi yêu cầu lần thứ tư",
+          "setup": "Tài liệu đã ký. Đội đã code 60%. Khách hàng nói 'thực ra ý tôi là...'",
+          "choices": [
+            {
+              "text": "Làm rõ bằng bản vẽ luồng, xác nhận lại từng bước trước khi đội làm tiếp",
+              "outcome": "Mất 2 ngày nhưng từ đó không đổi nữa. Đội biết ơn bạn."
+            },
+            {
+              "text": "Chấp nhận thay đổi, đàm phán dời deadline",
+              "outcome": "Khách hàng đồng ý dời 2 tuần. Đội không phải làm ẩu."
+            },
+            {
+              "text": "Chuyển yêu cầu mới cho đội và giữ nguyên deadline",
+              "outcome": "Đội làm thêm giờ, chất lượng giảm, hai người bắt đầu tìm việc mới."
+            }
+          ]
+        },
+        {
+          "id": "PROD_BA_02",
+          "title": "Hai phòng ban muốn hai thứ trái ngược nhau",
+          "setup": "Phòng kinh doanh muốn quy trình duyệt nhanh. Phòng rủi ro muốn thêm 3 bước kiểm tra.",
+          "choices": [
+            {
+              "text": "Tổ chức họp chung, đưa ra phương án duyệt theo mức rủi ro",
+              "outcome": "Cả hai chấp nhận: đơn nhỏ duyệt tự động, đơn lớn qua đủ bước."
+            },
+            {
+              "text": "Đưa lên cấp trên quyết định",
+              "outcome": "Có quyết định nhưng bên thua cuộc không hợp tác trong lúc triển khai."
+            },
+            {
+              "text": "Làm theo phòng có tiếng nói mạnh hơn",
+              "outcome": "Triển khai nhanh. Sáu tháng sau xảy ra sự cố đúng phần bị bỏ qua."
+            }
+          ]
+        },
+        {
+          "id": "PROD_BA_03",
+          "title": "Dev nói tài liệu của bạn thiếu quá nhiều trường hợp",
+          "setup": "Bạn viết 15 trang đặc tả. Dev liệt kê 12 tình huống bạn chưa nghĩ tới.",
+          "choices": [
+            {
+              "text": "Ngồi cùng dev bổ sung, học cách nghĩ về trường hợp biên",
+              "outcome": "Tài liệu sau đó tốt hơn hẳn. Dev bắt đầu tin tưởng bạn."
+            },
+            {
+              "text": "Bổ sung 12 trường hợp dev nêu",
+              "outcome": "Đủ cho lần này. Nhưng lần sau vẫn thiếu."
+            },
+            {
+              "text": "Nói rằng dev nên tự xử lý các trường hợp kỹ thuật",
+              "outcome": "Dev tự quyết định, ra kết quả không đúng ý nghiệp vụ."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -54.6,
+        -13.6,
+        35.3
+      ],
+      "look": {
+        "kind": "pastel",
+        "seed": 95.62,
+        "radius": 7.92,
+        "ring": true,
+        "moons": 1,
+        "tilt": -0.348,
+        "spin": 0.073
+      }
+    },
+    {
+      "roleCode": "PROD_PM",
+      "nameVn": "Quản lý sản phẩm / Product Manager",
+      "nameEn": "Product Manager",
+      "group": "PROD",
+      "bands": "L3-L9",
+      "bandStart": "L3",
+      "bandEnd": "L9",
+      "experience": "Quyết định sản phẩm làm gì trước, làm gì sau và vì sao",
+      "hardSkills": [
+        "Java",
+        ".NET",
+        "Python",
+        "ASP.NET",
+        "C#",
+        "Node.js",
+        "PHP",
+        "Apache Spark"
+      ],
+      "hardSkillSource": "itviec_report",
+      "softSkills": [],
+      "events": [
+        {
+          "id": "PROD_PM_01",
+          "title": "Bốn tính năng đều 'ưu tiên cao nhất'",
+          "setup": "Kinh doanh, khách hàng lớn, kỹ thuật và CEO mỗi bên đòi một tính năng khác nhau.",
+          "choices": [
+            {
+              "text": "Dùng dữ liệu doanh thu và số người dùng ảnh hưởng để xếp hạng",
+              "outcome": "Có căn cứ khách quan. Ba bên chấp nhận, bên còn lại được hẹn sprint sau."
+            },
+            {
+              "text": "Chia nhỏ, làm một phần của cả bốn",
+              "outcome": "Ai cũng thấy được quan tâm. Nhưng không tính năng nào hoàn chỉnh trong sprint này."
+            },
+            {
+              "text": "Làm cái CEO muốn trước",
+              "outcome": "An toàn cho bạn. Nhưng đội mất niềm tin vào cách ưu tiên."
+            }
+          ]
+        },
+        {
+          "id": "PROD_PM_02",
+          "title": "Tính năng bạn đấu tranh 3 tháng để làm, không ai dùng",
+          "setup": "Ra mắt 6 tuần, tỷ lệ sử dụng 2%. Bạn từng rất tin vào nó.",
+          "choices": [
+            {
+              "text": "Phân tích vì sao thất bại, chia sẻ bài học với đội",
+              "outcome": "Đội học được cách kiểm chứng trước khi làm. Bạn được tôn trọng hơn."
+            },
+            {
+              "text": "Thử cải thiện trải nghiệm rồi đo lại",
+              "outcome": "Tăng lên 6%. Vẫn thấp nhưng bạn hiểu vấn đề hơn."
+            },
+            {
+              "text": "Cho rằng do marketing chưa truyền thông tốt",
+              "outcome": "Vấn đề không được giải quyết. Tính năng bị gỡ sau 6 tháng."
+            }
+          ]
+        },
+        {
+          "id": "PROD_PM_03",
+          "title": "Đội nói tính năng cần 6 tuần, khách hàng đã hứa 2 tuần",
+          "setup": "Bộ phận kinh doanh đã cam kết với khách hàng mà không hỏi bạn.",
+          "choices": [
+            {
+              "text": "Đàm phán phạm vi: giao phần lõi trong 2 tuần, phần còn lại sau",
+              "outcome": "Khách hàng chấp nhận. Không ai phải làm ẩu."
+            },
+            {
+              "text": "Nói thẳng với khách hàng rằng cam kết đó không khả thi",
+              "outcome": "Khách hàng không vui nhưng tôn trọng sự trung thực. Quan hệ với kinh doanh căng."
+            },
+            {
+              "text": "Ép đội làm trong 2 tuần",
+              "outcome": "Kịp. Chất lượng kém, mất 4 tuần sau đó sửa lỗi."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -108.3,
+        -15,
+        -59.9
+      ],
+      "look": {
+        "kind": "pastel",
+        "seed": 26.69,
+        "radius": 6.84,
+        "ring": true,
+        "moons": 2,
+        "tilt": -0.383,
+        "spin": 0.055
+      }
+    },
+    {
+      "roleCode": "QA_MANUAL",
+      "nameVn": "Kỹ sư kiểm thử thủ công / Tester",
+      "nameEn": "Quality Engineer",
+      "group": "QA",
+      "bands": "L1-L5",
+      "bandStart": "L1",
+      "bandEnd": "L5",
+      "experience": "Tìm lỗi có hệ thống, tỉ mỉ từng chi tiết — bắt đầu từ kiểm thử thủ công, tiến dần sang viết code tự động hoá",
+      "hardSkills": [
+        "Black-box Testing",
+        "Bug Tracking (Jira)",
+        "Test Design Techniques",
+        "API Testing (Postman)",
+        "Test Strategy",
+        "Agile Testing",
+        "Quality Audit"
+      ],
+      "hardSkillSource": "dataset_merged",
+      "softSkills": [
+        "Cẩn thận",
+        "Chi tiết",
+        "Tư duy phản biện",
+        "Làm việc nhóm",
+        "Mentor",
+        "Quản lý rủi ro"
+      ],
+      "events": [
+        {
+          "id": "QA_MANUAL_01",
+          "title": "Tìm ra lỗi nghiêm trọng 1 tiếng trước giờ phát hành",
+          "setup": "Bạn phát hiện luồng thanh toán sai số tiền trong một trường hợp hiếm. Cả đội đã sẵn sàng release.",
+          "choices": [
+            {
+              "text": "Báo ngay và đề nghị hoãn phát hành",
+              "outcome": "Hoãn 1 ngày. PM khó chịu nhưng tuần sau cảm ơn bạn vì đã tránh được sự cố tiền bạc."
+            },
+            {
+              "text": "Báo nhưng để đội quyết",
+              "outcome": "Đội chọn phát hành. Lỗi xảy ra với 12 khách hàng, phải hoàn tiền."
+            },
+            {
+              "text": "Ghi vào backlog, để bản sau sửa",
+              "outcome": "Ba tuần sau khách hàng phát hiện. Bạn bị hỏi vì sao biết mà không chặn."
+            }
+          ]
+        },
+        {
+          "id": "QA_MANUAL_02",
+          "title": "Chạy lại 200 test case cho lần thứ tư trong tuần",
+          "setup": "Dev sửa lỗi xong, bạn phải chạy lại toàn bộ bộ kiểm thử. Lần này là lần thứ tư.",
+          "choices": [
+            {
+              "text": "Chạy đủ, không bỏ sót case nào",
+              "outcome": "Tìm thêm 2 lỗi mới phát sinh. Mất 4 tiếng nhưng đáng."
+            },
+            {
+              "text": "Chỉ chạy các case liên quan phần vừa sửa",
+              "outcome": "Nhanh hơn nhiều. Nhưng bỏ sót một lỗi ở module khác bị ảnh hưởng gián tiếp."
+            },
+            {
+              "text": "Đề xuất viết script tự động hoá bộ này",
+              "outcome": "Mất 3 ngày viết, nhưng từ lần sau chỉ tốn 10 phút. Đây là bước chuyển sang Automation QA."
+            }
+          ]
+        },
+        {
+          "id": "QA_MANUAL_03",
+          "title": "Dev bảo 'trên máy tôi chạy bình thường'",
+          "setup": "Bạn báo lỗi, dev thử lại không tái hiện được và cho rằng bạn thao tác sai.",
+          "choices": [
+            {
+              "text": "Quay video màn hình và ghi lại từng bước tái hiện",
+              "outcome": "Dev xem xong nhận ra vấn đề nằm ở cấu hình môi trường. Lỗi được sửa."
+            },
+            {
+              "text": "Nhờ đồng nghiệp thử lại để xác nhận",
+              "outcome": "Xác nhận được, nhưng mất thêm nửa ngày."
+            },
+            {
+              "text": "Chấp nhận đóng lỗi",
+              "outcome": "Khách hàng gặp đúng lỗi đó hai tuần sau."
+            }
+          ]
+        }
+      ],
+      "position": [
+        95.7,
+        21.7,
+        31
+      ],
+      "look": {
+        "kind": "ice",
+        "seed": 25.4,
+        "radius": 7.46,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.166,
+        "spin": 0.101
+      }
+    },
+    {
+      "roleCode": "SEC_ENG",
+      "nameVn": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
+      "nameEn": "Cybersecurity Engineer",
+      "group": "SEC",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Bảo vệ hệ thống: giám sát và điều tra cảnh báo tấn công (giai đoạn đầu thường TRỰC CA, có ca đêm), viết rule phát hiện trên SIEM, triển khai firewall/IDS/EDR",
+      "hardSkills": [],
+      "hardSkillSource": null,
+      "softSkills": [],
+      "events": [
+        {
+          "id": "SEC_ENG_01",
+          "title": "Ca trực đêm: 200 cảnh báo, 199 là báo động giả",
+          "setup": "Từ 10 giờ tối tới 6 giờ sáng, màn hình liên tục báo. Hầu hết là nhiễu.",
+          "choices": [
+            {
+              "text": "Kiểm tra từng cảnh báo theo quy trình, không bỏ sót",
+              "outcome": "Tới 4 giờ sáng bạn tìm ra cái thứ 187 là tấn công thật. Chặn kịp."
+            },
+            {
+              "text": "Tinh chỉnh rule để giảm báo động giả",
+              "outcome": "Mất 2 tiếng nhưng đêm sau chỉ còn 40 cảnh báo. Đồng nghiệp biết ơn."
+            },
+            {
+              "text": "Chỉ xem cảnh báo mức cao, bỏ qua mức thấp",
+              "outcome": "Ngủ được 3 tiếng. Nhưng một tấn công thật được xếp mức trung bình đã lọt qua."
+            }
+          ]
+        },
+        {
+          "id": "SEC_ENG_02",
+          "title": "Phát hiện dấu hiệu xâm nhập lúc 2 giờ sáng thứ Bảy",
+          "setup": "Có truy cập bất thường vào máy chủ cơ sở dữ liệu khách hàng. Sếp đang đi công tác.",
+          "choices": [
+            {
+              "text": "Cô lập máy chủ ngay rồi báo cáo",
+              "outcome": "Dịch vụ gián đoạn 40 phút nhưng chặn được rò rỉ dữ liệu 200.000 khách hàng."
+            },
+            {
+              "text": "Theo dõi thêm để thu thập bằng chứng trước khi chặn",
+              "outcome": "Có đủ bằng chứng để truy vết. Nhưng kẻ tấn công lấy thêm được dữ liệu trong 2 tiếng đó."
+            },
+            {
+              "text": "Chờ tới sáng thứ Hai để báo cáo đầy đủ",
+              "outcome": "Dữ liệu bị bán trên chợ đen trước khi công ty biết."
+            }
+          ]
+        },
+        {
+          "id": "SEC_ENG_03",
+          "title": "Đội phát triển phàn nàn quy định bảo mật làm chậm việc",
+          "setup": "Bạn yêu cầu quét lỗ hổng trước mỗi lần phát hành. Đội dev nói mất thêm 2 tiếng mỗi lần.",
+          "choices": [
+            {
+              "text": "Tự động hoá quét vào pipeline, chỉ chặn lỗi nghiêm trọng",
+              "outcome": "Còn 5 phút mỗi lần. Đội dev chấp nhận, bảo mật vẫn đảm bảo."
+            },
+            {
+              "text": "Giữ nguyên quy trình, giải thích rủi ro",
+              "outcome": "Đội dev tuân thủ miễn cưỡng và tìm cách lách khi gấp."
+            },
+            {
+              "text": "Nới lỏng cho các thay đổi nhỏ",
+              "outcome": "Nhanh hơn. Ba tháng sau một thay đổi 'nhỏ' mở ra lỗ hổng."
+            }
+          ]
+        }
+      ],
+      "position": [
+        50.8,
+        48.1,
+        89
+      ],
+      "look": {
+        "kind": "lava",
+        "seed": 23.73,
+        "radius": 6.45,
+        "ring": true,
+        "moons": 1,
+        "tilt": -0.009,
+        "spin": 0.148
+      }
+    },
+    {
+      "roleCode": "SEC_PENTEST",
+      "nameVn": "Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng",
+      "nameEn": "Penetration Tester",
+      "group": "SEC",
+      "bands": "L3-L7",
+      "bandStart": "L3",
+      "bandEnd": "L7",
+      "experience": "Tấn công thử vào hệ thống để tìm lỗ hổng trước kẻ xấu",
+      "hardSkills": [],
+      "hardSkillSource": null,
+      "softSkills": [],
+      "events": [
+        {
+          "id": "SEC_PENTEST_01",
+          "title": "Tìm ra lỗ hổng cho phép chiếm quyền toàn hệ thống",
+          "setup": "Bạn đang kiểm thử theo hợp đồng. Lỗ hổng này nghiêm trọng hơn mọi thứ trong phạm vi.",
+          "choices": [
+            {
+              "text": "Dừng lại ngay, báo khách hàng trước khi khai thác sâu hơn",
+              "outcome": "Khách hàng vá trong 24 giờ. Bạn được đánh giá là chuyên nghiệp."
+            },
+            {
+              "text": "Khai thác tới cùng để chứng minh mức độ nghiêm trọng",
+              "outcome": "Báo cáo rất thuyết phục. Nhưng bạn đã vượt phạm vi hợp đồng."
+            },
+            {
+              "text": "Ghi vào báo cáo cuối kỳ như các lỗi khác",
+              "outcome": "Khách hàng đọc sau 2 tuần. Trong thời gian đó lỗ hổng vẫn mở."
+            }
+          ]
+        },
+        {
+          "id": "SEC_PENTEST_02",
+          "title": "Khách hàng không muốn nghe kết quả xấu",
+          "setup": "Bạn tìm ra 23 lỗ hổng. Khách hàng cần chứng chỉ bảo mật để ký hợp đồng lớn tuần sau.",
+          "choices": [
+            {
+              "text": "Báo cáo đầy đủ, đề xuất lộ trình vá theo mức ưu tiên",
+              "outcome": "Hợp đồng bị hoãn 1 tháng. Khách hàng ban đầu bực nhưng sau cảm ơn."
+            },
+            {
+              "text": "Báo cáo đầy đủ nhưng giúp họ vá 5 lỗi nghiêm trọng nhất gấp",
+              "outcome": "Kịp ký hợp đồng với rủi ro chấp nhận được. Cả hai bên hài lòng."
+            },
+            {
+              "text": "Chỉ ghi các lỗi nhẹ để họ qua được",
+              "outcome": "Sáu tháng sau họ bị tấn công. Uy tín của bạn và công ty bị ảnh hưởng nặng."
+            }
+          ]
+        },
+        {
+          "id": "SEC_PENTEST_03",
+          "title": "Ba ngày liền không tìm được lỗ hổng nào",
+          "setup": "Hệ thống của khách hàng làm khá tốt. Hợp đồng còn 2 ngày.",
+          "choices": [
+            {
+              "text": "Đổi hướng tiếp cận sang yếu tố con người và cấu hình",
+              "outcome": "Tìm ra tài khoản mặc định chưa đổi mật khẩu ở một máy chủ phụ."
+            },
+            {
+              "text": "Báo cáo trung thực rằng hệ thống an toàn ở mức tốt",
+              "outcome": "Khách hàng hài lòng vì có bằng chứng khách quan. Bạn được thuê lại năm sau."
+            },
+            {
+              "text": "Liệt kê các lỗi rất nhỏ cho báo cáo trông có giá trị",
+              "outcome": "Khách hàng nhận ra đây là lỗi vặt và không thuê lại."
+            }
+          ]
+        }
+      ],
+      "position": [
+        87.9,
+        12.7,
+        166.8
+      ],
+      "look": {
+        "kind": "lava",
+        "seed": 37.49,
+        "radius": 7.07,
+        "ring": true,
+        "moons": 2,
+        "tilt": -0.181,
+        "spin": 0.067
+      }
+    },
+    {
+      "roleCode": "SWE_ARCH_SOL",
+      "nameVn": "Kiến trúc sư giải pháp",
+      "nameEn": "Solution Architect",
+      "group": "SWE",
+      "bands": "L6-L8",
+      "bandStart": "L6",
+      "bandEnd": "L8",
+      "experience": "Thiết kế kiến trúc tổng thể cho cả hệ thống, chọn công nghệ và cân đối đánh đổi",
+      "hardSkills": [
+        "Java",
+        ".NET",
+        "C#",
+        "Node.js",
+        "Python",
+        "ASP.NET Core",
+        "C++",
+        "jQuery"
+      ],
+      "hardSkillSource": "itviec_report",
+      "softSkills": [],
+      "events": [
+        {
+          "id": "SWE_ARCH_SOL_01",
+          "title": "Chọn giữa giải pháp mua sẵn và tự phát triển",
+          "setup": "Mua thì nhanh 3 tháng nhưng phụ thuộc nhà cung cấp. Tự làm mất 9 tháng nhưng chủ động.",
+          "choices": [
+            {
+              "text": "Tính tổng chi phí sở hữu 5 năm cho cả hai, kèm rủi ro",
+              "outcome": "Chọn được phương án có căn cứ rõ ràng và bảo vệ được trước ban lãnh đạo."
+            },
+            {
+              "text": "Đề xuất mua trước để ra thị trường sớm, tự làm sau",
+              "outcome": "Cân bằng được tốc độ và chủ động. Nhưng phải làm việc gấp đôi."
+            },
+            {
+              "text": "Chọn tự làm vì đội muốn thử công nghệ mới",
+              "outcome": "Dự án trễ 6 tháng. Bài học đắt về việc để sở thích kỹ thuật dẫn dắt quyết định."
+            }
+          ]
+        },
+        {
+          "id": "SWE_ARCH_SOL_02",
+          "title": "Kiến trúc bạn thiết kế bị đội phát triển phàn nàn là quá phức tạp",
+          "setup": "Bạn thiết kế cho quy mô 5 năm tới. Đội nói hiện tại chỉ cần 1/10 mức đó.",
+          "choices": [
+            {
+              "text": "Đơn giản hoá phần lõi, giữ khả năng mở rộng ở điểm nối",
+              "outcome": "Đội làm nhanh hơn mà vẫn không bị khoá đường. Cả hai bên hài lòng."
+            },
+            {
+              "text": "Giải thích tầm nhìn dài hạn và giữ nguyên thiết kế",
+              "outcome": "Đội làm theo nhưng chậm hơn 40%. Ba năm sau mới thấy giá trị."
+            },
+            {
+              "text": "Bỏ hẳn phần mở rộng, làm đơn giản nhất",
+              "outcome": "Nhanh. Nhưng 18 tháng sau phải viết lại toàn bộ."
+            }
+          ]
+        },
+        {
+          "id": "SWE_ARCH_SOL_03",
+          "title": "Phải trình bày kiến trúc cho ban lãnh đạo không có nền kỹ thuật",
+          "setup": "Bạn có 15 phút để giải thích vì sao cần đầu tư 4 tỷ vào hạ tầng.",
+          "choices": [
+            {
+              "text": "Trình bày bằng rủi ro kinh doanh và chi phí nếu không làm",
+              "outcome": "Được duyệt ngay. Bạn học được ngôn ngữ của ban lãnh đạo."
+            },
+            {
+              "text": "Vẽ sơ đồ đơn giản kèm ví dụ tương tự dễ hiểu",
+              "outcome": "Được duyệt một phần. Cần thêm một buổi nữa để duyệt hết."
+            },
+            {
+              "text": "Trình bày chi tiết kỹ thuật đầy đủ",
+              "outcome": "Ban lãnh đạo không theo kịp và hoãn quyết định 2 tháng."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -40.5,
+        -18.7,
+        -55.6
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 85.67,
+        "radius": 7.04,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.053,
+        "spin": 0.094
+      }
+    },
+    {
+      "roleCode": "SWE_BACKEND",
+      "nameVn": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "nameEn": "Backend Developer",
+      "group": "SWE",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Viết logic nghiệp vụ và xử lý dữ liệu — phần người dùng không nhìn thấy",
+      "hardSkills": [
+        "Java/Spring Boot",
+        "SQL (MySQL/PostgreSQL)",
+        "Git",
+        "Golang/Java",
+        "Redis",
+        "RESTful API Design",
+        "Microservices",
+        "Kafka/RabbitMQ"
+      ],
+      "hardSkillSource": "dataset_merged",
+      "softSkills": [
+        "Chủ động học hỏi",
+        "Giao tiếp cơ bản trong team",
+        "Làm việc độc lập",
+        "Giải quyết vấn đề",
+        "Mentor",
+        "Giao tiếp liên phòng ban"
+      ],
+      "events": [
+        {
+          "id": "SWE_BACKEND_01",
+          "title": "Truy vấn chạy 30 giây trên dữ liệu thật",
+          "setup": "Trên môi trường test với 1.000 bản ghi thì nhanh. Production có 8 triệu bản ghi.",
+          "choices": [
+            {
+              "text": "Phân tích kế hoạch truy vấn, thêm chỉ mục phù hợp",
+              "outcome": "Xuống còn 200ms. Bạn hiểu sâu hơn về cơ sở dữ liệu."
+            },
+            {
+              "text": "Thêm bộ nhớ đệm để tránh truy vấn lại",
+              "outcome": "Nhanh với dữ liệu cũ, nhưng người dùng thấy số liệu trễ 5 phút."
+            },
+            {
+              "text": "Tăng cấu hình máy chủ",
+              "outcome": "Nhanh hơn được 2 tháng rồi lại chậm, và chi phí tăng gấp đôi."
+            }
+          ]
+        },
+        {
+          "id": "SWE_BACKEND_02",
+          "title": "Hệ thống cũ không có tài liệu, người viết đã nghỉ",
+          "setup": "Bạn phải sửa một module 4.000 dòng, không comment, không test, không ai hiểu.",
+          "choices": [
+            {
+              "text": "Đọc kỹ, viết test bao quanh trước khi sửa",
+              "outcome": "Mất 1 tuần nhưng sửa an toàn và để lại tài liệu cho người sau."
+            },
+            {
+              "text": "Sửa đúng chỗ cần, không động vào phần khác",
+              "outcome": "Xong nhanh. Nhưng gây lỗi phụ ở một luồng không ai ngờ tới."
+            },
+            {
+              "text": "Đề xuất viết lại toàn bộ module",
+              "outcome": "Quản lý từ chối vì không có thời gian. Bạn vẫn phải sửa theo cách cũ."
+            }
+          ]
+        },
+        {
+          "id": "SWE_BACKEND_03",
+          "title": "API của bạn làm sập ứng dụng mobile",
+          "setup": "Bạn đổi tên một trường trong phản hồi. App mobile crash với 40.000 người dùng.",
+          "choices": [
+            {
+              "text": "Quay lui ngay, xin lỗi đội mobile, lập quy trình versioning",
+              "outcome": "Khôi phục sau 15 phút. Từ đó có quy trình thông báo thay đổi API."
+            },
+            {
+              "text": "Yêu cầu đội mobile phát hành bản vá gấp",
+              "outcome": "Mất 6 tiếng chờ duyệt trên store. Quan hệ hai đội căng thẳng."
+            },
+            {
+              "text": "Giữ cả trường cũ và trường mới",
+              "outcome": "Sửa nhanh, nhưng code tích tụ thêm một chỗ rác."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -7,
+        -6.5,
+        -7.8
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 14.4,
+        "radius": 6.94,
+        "ring": false,
+        "moons": 1,
+        "tilt": 0.293,
+        "spin": 0.155
+      }
+    },
+    {
+      "roleCode": "SWE_EM",
+      "nameVn": "Trưởng phòng Kỹ thuật",
+      "nameEn": "Engineering Manager",
+      "group": "SWE",
+      "bands": "L7-L9",
+      "bandStart": "L7",
+      "bandEnd": "L9",
+      "experience": "Chịu trách nhiệm về con người: tuyển, đánh giá hiệu suất, phát triển đội",
+      "hardSkills": [
+        "C#",
+        ".NET",
+        "Python",
+        "JavaScript",
+        "ASP.NET",
+        "PHP",
+        "ASP.NET Core",
+        "VBA"
+      ],
+      "hardSkillSource": "itviec_report",
+      "softSkills": [],
+      "events": [
+        {
+          "id": "SWE_EM_01",
+          "title": "Phải đánh giá hiệu suất thấp cho một người bạn quý",
+          "setup": "Bạn ấy cố gắng nhưng kết quả không đạt. Đây là kỳ đánh giá thứ hai liên tiếp.",
+          "choices": [
+            {
+              "text": "Trao đổi thẳng thắn kèm kế hoạch cải thiện cụ thể 3 tháng",
+              "outcome": "Bạn ấy tiến bộ rõ và cảm ơn bạn sau đó. Đây là phần khó nhất của nghề quản lý."
+            },
+            {
+              "text": "Đánh giá đúng nhưng không nói rõ vấn đề",
+              "outcome": "Bạn ấy bất ngờ và tổn thương. Quan hệ xấu đi."
+            },
+            {
+              "text": "Nâng đánh giá lên mức đạt để giữ hoà khí",
+              "outcome": "Vấn đề kéo dài. Các thành viên khác thấy bất công."
+            }
+          ]
+        },
+        {
+          "id": "SWE_EM_02",
+          "title": "Công ty cắt 20% ngân sách, bạn phải chọn ai nghỉ",
+          "setup": "Đội 10 người, phải giảm 2. Ai cũng có đóng góp.",
+          "choices": [
+            {
+              "text": "Đánh giá theo tiêu chí rõ ràng, trao đổi riêng với từng người",
+              "outcome": "Quyết định khó nhưng minh bạch. Người ở lại vẫn tin tưởng bạn."
+            },
+            {
+              "text": "Đề xuất giảm giờ làm toàn đội thay vì cắt người",
+              "outcome": "Được chấp nhận. Đội trải qua 6 tháng khó khăn nhưng không ai mất việc."
+            },
+            {
+              "text": "Để cấp trên quyết định",
+              "outcome": "Tránh được trách nhiệm. Nhưng đội thấy bạn không bảo vệ họ."
+            }
+          ]
+        },
+        {
+          "id": "SWE_EM_03",
+          "title": "Bạn không còn hiểu chi tiết kỹ thuật đội đang làm",
+          "setup": "Đã 2 năm bạn không code. Trong họp kỹ thuật bạn bắt đầu không theo kịp.",
+          "choices": [
+            {
+              "text": "Thừa nhận và hỏi đội giải thích, tập trung vào quyết định cấp cao",
+              "outcome": "Đội đánh giá cao sự trung thực. Bạn quyết định tốt hơn nhờ hỏi đúng câu hỏi."
+            },
+            {
+              "text": "Dành mỗi tuần vài giờ đọc code và học lại",
+              "outcome": "Giữ được cảm giác kỹ thuật. Nhưng thời gian quản lý bị ảnh hưởng."
+            },
+            {
+              "text": "Giả vờ hiểu để giữ uy tín",
+              "outcome": "Đội nhận ra và bắt đầu không tham vấn bạn về kỹ thuật nữa."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -23.8,
+        -15.4,
+        -160.1
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 77.79,
+        "radius": 6.67,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.188,
+        "spin": 0.095
+      }
+    },
+    {
+      "roleCode": "SWE_EMBEDDED",
+      "nameVn": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+      "nameEn": "Embedded Engineer",
+      "group": "SWE",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Lập trình điều khiển thiết bị phần cứng thật",
+      "hardSkills": [
+        "C++",
+        "NumPy",
+        "Bash/Shell",
+        "Qt",
+        "C#",
+        "Pandas",
+        "COBOL",
+        "TensorFlow"
+      ],
+      "hardSkillSource": "itviec_report",
+      "softSkills": [],
+      "events": [
+        {
+          "id": "SWE_EMBEDDED_01",
+          "title": "Lỗi chỉ xuất hiện sau 6 tiếng chạy liên tục",
+          "setup": "Thiết bị chạy ổn trong test 1 tiếng. Khách hàng báo treo sau nửa ngày.",
+          "choices": [
+            {
+              "text": "Chạy test dài, ghi log bộ nhớ từng phút",
+              "outcome": "Sau 3 ngày tìm ra rò rỉ bộ nhớ 4 byte mỗi vòng lặp. Sửa 1 dòng."
+            },
+            {
+              "text": "Thêm cơ chế tự khởi động lại mỗi 4 tiếng",
+              "outcome": "Che được triệu chứng. Khách hàng chấp nhận nhưng đây không phải giải pháp."
+            },
+            {
+              "text": "Đổ lỗi cho phần cứng",
+              "outcome": "Bộ phận phần cứng kiểm tra 2 tuần rồi chứng minh không phải lỗi của họ."
+            }
+          ]
+        },
+        {
+          "id": "SWE_EMBEDDED_02",
+          "title": "Chỉ còn 2KB bộ nhớ, cần thêm một tính năng",
+          "setup": "Vi điều khiển đã dùng 62/64KB. Khách hàng muốn thêm chức năng ghi nhật ký.",
+          "choices": [
+            {
+              "text": "Tối ưu code cũ để lấy thêm 8KB",
+              "outcome": "Mất 1 tuần đọc lại toàn bộ, nhưng giải phóng đủ chỗ và code sạch hơn."
+            },
+            {
+              "text": "Đề xuất đổi sang chip có bộ nhớ lớn hơn",
+              "outcome": "Giải quyết triệt để nhưng đội phần cứng phải làm lại mạch, chi phí tăng."
+            },
+            {
+              "text": "Làm phiên bản rút gọn của tính năng",
+              "outcome": "Vừa đủ chỗ. Khách hàng chấp nhận nhưng không hài lòng lắm."
+            }
+          ]
+        },
+        {
+          "id": "SWE_EMBEDDED_03",
+          "title": "Phải nạp lại firmware cho 200 thiết bị đã bán",
+          "setup": "Phát hiện lỗi sau khi hàng đã ra thị trường. Thiết bị không hỗ trợ cập nhật từ xa.",
+          "choices": [
+            {
+              "text": "Tổ chức thu hồi, nạp lại từng máy",
+              "outcome": "Mất 3 tuần và nhiều công sức, nhưng khách hàng đánh giá cao sự trách nhiệm."
+            },
+            {
+              "text": "Chỉ nạp lại cho khách hàng gặp lỗi khi họ báo",
+              "outcome": "Rẻ hơn nhiều nhưng danh tiếng bị ảnh hưởng dần."
+            },
+            {
+              "text": "Đề xuất bổ sung cập nhật từ xa cho phiên bản sau",
+              "outcome": "Giải quyết cho tương lai, nhưng 200 máy hiện tại vẫn phải xử lý tay."
+            }
+          ]
+        }
+      ],
+      "position": [
+        126.1,
+        -15.4,
+        -99.6
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 72.77,
+        "radius": 7.61,
+        "ring": true,
+        "moons": 0,
+        "tilt": 0.387,
+        "spin": 0.088
+      }
+    },
+    {
+      "roleCode": "SWE_FRONTEND",
+      "nameVn": "Lập trình viên Front-end",
+      "nameEn": "Frontend Developer",
+      "group": "SWE",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Dựng giao diện, thấy kết quả ngay trên màn hình",
+      "hardSkills": [
+        "ReactJS hoặc Vue.js",
+        "JavaScript / TypeScript",
+        "HTML/CSS",
+        "Git",
+        "Cấu trúc dữ liệu & giải thuật",
+        "React",
+        "TypeScript/JavaScript ES6+",
+        "REST API + SQL cơ bản"
+      ],
+      "hardSkillSource": "dataset_merged",
+      "softSkills": [
+        "Chủ động hỏi và tìm người hỗ trợ",
+        "Kỹ năng giải quyết vấn đề",
+        "Tự thúc đẩy, học nhanh",
+        "Escalate sớm khi bị chặn",
+        "Không nộp code không giải thích được",
+        "Giao tiếp tiếng Anh rõ ràng"
+      ],
+      "events": [
+        {
+          "id": "SWE_FRONTEND_01",
+          "title": "Designer gửi bản thiết kế không thể hiện thực được",
+          "setup": "Bản Figma có hiệu ứng đổ bóng và animation mà trình duyệt không render mượt trên máy yếu.",
+          "choices": [
+            {
+              "text": "Ngồi cùng designer tìm phương án thay thế",
+              "outcome": "Ra được bản đơn giản hơn mà vẫn đẹp. Designer học được giới hạn kỹ thuật."
+            },
+            {
+              "text": "Cố làm đúng thiết kế bằng mọi giá",
+              "outcome": "Đẹp đúng ý nhưng trang tải chậm 2 giây trên điện thoại tầm trung."
+            },
+            {
+              "text": "Làm đơn giản hơn mà không báo designer",
+              "outcome": "Designer phát hiện lúc nghiệm thu và không hài lòng."
+            }
+          ]
+        },
+        {
+          "id": "SWE_FRONTEND_02",
+          "title": "Trang chạy chậm nhưng không rõ vì đâu",
+          "setup": "Người dùng phàn nàn trang tải lâu. Bạn mở DevTools và thấy hàng trăm request.",
+          "choices": [
+            {
+              "text": "Đo từng phần, tìm ra ảnh chưa nén là thủ phạm",
+              "outcome": "Giảm thời gian tải từ 6 giây xuống 1,8 giây. Chỉ số Core Web Vitals xanh hết."
+            },
+            {
+              "text": "Thêm màn hình chờ cho đỡ cảm giác chậm",
+              "outcome": "Người dùng bớt phàn nàn nhưng vấn đề gốc còn nguyên."
+            },
+            {
+              "text": "Báo backend rằng API chậm",
+              "outcome": "Backend kiểm tra và chứng minh API chỉ mất 200ms. Bạn mất uy tín một chút."
+            }
+          ]
+        },
+        {
+          "id": "SWE_FRONTEND_03",
+          "title": "Cùng một nút bấm, mỗi trang một kiểu",
+          "setup": "Codebase có 7 phiên bản nút 'Xác nhận' khác nhau do nhiều người viết ở nhiều thời điểm.",
+          "choices": [
+            {
+              "text": "Dựng design system chung, thay dần toàn bộ",
+              "outcome": "Mất 2 tuần nhưng từ đó mọi trang đồng nhất và code giảm 30%."
+            },
+            {
+              "text": "Chỉ sửa những chỗ khách hàng phàn nàn",
+              "outcome": "Nhanh, nhưng vấn đề quay lại sau 3 tháng."
+            },
+            {
+              "text": "Viết tài liệu quy chuẩn cho người sau",
+              "outcome": "Có tài liệu nhưng không ai đọc, code vẫn lệch."
+            }
+          ]
+        }
+      ],
+      "position": [
+        25.1,
+        -12,
+        -157.9
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 91.57,
+        "radius": 7.18,
+        "ring": false,
+        "moons": 0,
+        "tilt": -0.391,
+        "spin": 0.103
+      }
+    },
+    {
+      "roleCode": "SWE_GAME",
+      "nameVn": "Lập trình viên Game",
+      "nameEn": "Game Developer",
+      "group": "SWE",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Làm game: đồ hoạ, gameplay, cảm giác chơi",
+      "hardSkills": [
+        "C#",
+        ".NET",
+        "C++",
+        "Apache Kafka",
+        "JavaScript",
+        "Unity",
+        "Crystal",
+        "Vue.js"
+      ],
+      "hardSkillSource": "itviec_report",
+      "softSkills": [],
+      "events": [
+        {
+          "id": "SWE_GAME_01",
+          "title": "Game vui khi bạn chơi, người mới không hiểu gì",
+          "setup": "Buổi playtest đầu tiên: 8/10 người thử không qua nổi màn 1 và bỏ cuộc.",
+          "choices": [
+            {
+              "text": "Xem lại toàn bộ video playtest, thiết kế lại phần hướng dẫn",
+              "outcome": "Tỷ lệ qua màn 1 tăng lên 90%. Bạn học được rằng mình không phải người chơi."
+            },
+            {
+              "text": "Thêm bảng hướng dẫn chữ ở đầu game",
+              "outcome": "Tỷ lệ tăng lên 60%. Nhiều người vẫn bỏ qua không đọc."
+            },
+            {
+              "text": "Giảm độ khó màn 1 xuống thật thấp",
+              "outcome": "Qua được hết, nhưng người chơi thấy nhàm và bỏ ở màn 3."
+            }
+          ]
+        },
+        {
+          "id": "SWE_GAME_02",
+          "title": "Sếp muốn thêm cơ chế nạp tiền vào game",
+          "setup": "Bạn thấy nó sẽ phá vỡ cân bằng gameplay mình đã tinh chỉnh 3 tháng.",
+          "choices": [
+            {
+              "text": "Đề xuất mô hình chỉ bán vật phẩm trang trí",
+              "outcome": "Sếp chấp nhận. Doanh thu thấp hơn kỳ vọng nhưng người chơi ở lại lâu."
+            },
+            {
+              "text": "Làm theo yêu cầu",
+              "outcome": "Doanh thu tháng đầu tốt. Sau 3 tháng người chơi rời đi vì thấy bất công."
+            },
+            {
+              "text": "Phản đối gay gắt trong họp",
+              "outcome": "Bạn giữ được nguyên tắc nhưng bị xem là khó hợp tác."
+            }
+          ]
+        },
+        {
+          "id": "SWE_GAME_03",
+          "title": "Hiệu ứng đẹp nhưng làm game tụt xuống 20 khung hình/giây",
+          "setup": "Bạn vừa làm xong hệ thống hạt lửa rất đẹp. Máy tầm trung không chịu nổi.",
+          "choices": [
+            {
+              "text": "Tối ưu bằng cách gộp hiệu ứng, giảm số hạt",
+              "outcome": "Giữ được 80% độ đẹp, chạy 60 khung hình. Mất 2 ngày."
+            },
+            {
+              "text": "Thêm tuỳ chọn chất lượng đồ hoạ cho người chơi tự chọn",
+              "outcome": "Giải quyết được, nhưng phải làm và test 3 phiên bản."
+            },
+            {
+              "text": "Giữ nguyên, coi đây là game cho máy cấu hình cao",
+              "outcome": "Mất khoảng 40% thị trường người chơi Việt Nam."
+            }
+          ]
+        }
+      ],
+      "position": [
+        10.5,
+        -15.7,
+        -111.3
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 84.67,
+        "radius": 8.26,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.122,
+        "spin": 0.072
+      }
+    },
+    {
+      "roleCode": "SWE_MOBILE",
+      "nameVn": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
+      "nameEn": "Mobile Developer",
+      "group": "SWE",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Làm app chạy trên chính chiếc điện thoại của mình",
+      "hardSkills": [
+        "Swift/Kotlin",
+        "UI Layout",
+        "Flutter/React Native",
+        "State Management (Redux/BLoC)",
+        "Android SDK",
+        "App Security",
+        "CI/CD for Mobile"
+      ],
+      "hardSkillSource": "dataset_merged",
+      "softSkills": [
+        "Chịu khó học hỏi",
+        "Chú ý chi tiết",
+        "Giao tiếp với team UX",
+        "Độc lập",
+        "Cố vấn kỹ thuật",
+        "Tư duy người dùng"
+      ],
+      "events": [
+        {
+          "id": "SWE_MOBILE_01",
+          "title": "App bị Apple từ chối duyệt lần thứ ba",
+          "setup": "Lý do mơ hồ: 'không tuân thủ hướng dẫn 4.3'. Bản cập nhật đã trễ 2 tuần.",
+          "choices": [
+            {
+              "text": "Đọc kỹ guideline, viết thư giải trình chi tiết",
+              "outcome": "Được duyệt sau 3 ngày. Bạn hiểu quy trình duyệt sâu hơn hẳn."
+            },
+            {
+              "text": "Gỡ tính năng bị nghi ngờ rồi nộp lại",
+              "outcome": "Duyệt được ngay nhưng mất một tính năng đã làm 3 tuần."
+            },
+            {
+              "text": "Nộp lại y nguyên hy vọng gặp người duyệt khác",
+              "outcome": "Bị từ chối lần thứ tư. Mất thêm 1 tuần."
+            }
+          ]
+        },
+        {
+          "id": "SWE_MOBILE_02",
+          "title": "App chạy mượt trên máy bạn, giật trên máy người dùng",
+          "setup": "Bạn dùng iPhone đời mới. 60% người dùng dùng Android tầm trung 3 năm tuổi.",
+          "choices": [
+            {
+              "text": "Mượn máy cũ test thật, tối ưu theo đó",
+              "outcome": "Tìm ra vấn đề ở việc tải ảnh. Sửa xong app mượt trên cả máy yếu."
+            },
+            {
+              "text": "Dùng giả lập để test",
+              "outcome": "Phát hiện được một phần, còn sót vấn đề về nhiệt độ máy."
+            },
+            {
+              "text": "Ghi yêu cầu cấu hình tối thiểu trên store",
+              "outcome": "Người dùng máy yếu đánh giá 1 sao."
+            }
+          ]
+        },
+        {
+          "id": "SWE_MOBILE_03",
+          "title": "Người dùng đánh giá 1 sao vì lỗi bạn đã sửa",
+          "setup": "Bản vá đã phát hành nhưng nhiều người chưa cập nhật, vẫn đánh giá xấu.",
+          "choices": [
+            {
+              "text": "Trả lời từng đánh giá, hướng dẫn cập nhật",
+              "outcome": "Nhiều người sửa lại đánh giá. Điểm app tăng từ 3,2 lên 4,1."
+            },
+            {
+              "text": "Thêm cơ chế buộc cập nhật trong app",
+              "outcome": "Hiệu quả nhưng một số người thấy khó chịu vì bị ép."
+            },
+            {
+              "text": "Chờ tự nhiên người dùng cập nhật",
+              "outcome": "Mất 2 tháng điểm mới hồi phục."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -68.6,
+        -13.4,
+        -116.6
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 16.14,
+        "radius": 6.97,
+        "ring": false,
+        "moons": 1,
+        "tilt": -0.133,
+        "spin": 0.096
+      }
+    },
+    {
+      "roleCode": "SWE_TECHLEAD",
+      "nameVn": "Trưởng nhóm kỹ thuật",
+      "nameEn": "Tech Lead",
+      "group": "SWE",
+      "bands": "L6-L7",
+      "bandStart": "L6",
+      "bandEnd": "L7",
+      "experience": "Dẫn dắt kỹ thuật một đội, vẫn code nhưng quyết định hướng đi",
+      "hardSkills": [
+        "Java",
+        "React.js",
+        "C#",
+        "Spring",
+        "Python",
+        "Node.js",
+        "TypeScript",
+        ".NET"
+      ],
+      "hardSkillSource": "itviec_report",
+      "softSkills": [],
+      "events": [
+        {
+          "id": "SWE_TECHLEAD_01",
+          "title": "Hai thành viên trong đội bất đồng gay gắt về kiến trúc",
+          "setup": "Cuộc họp căng thẳng. Cả hai đều có lý và không ai nhường.",
+          "choices": [
+            {
+              "text": "Yêu cầu mỗi bên làm bản mẫu nhỏ trong 2 ngày rồi so sánh",
+              "outcome": "Có dữ liệu thật để quyết. Cả hai chấp nhận kết quả."
+            },
+            {
+              "text": "Quyết định theo hướng bạn thấy đúng, giải thích rõ lý do",
+              "outcome": "Đội tiếp tục được. Người thua hơi ấm ức nhưng tôn trọng quyết định."
+            },
+            {
+              "text": "Để hai người tự thống nhất",
+              "outcome": "Bốn ngày trôi qua, chưa ai nhường, sprint bị trễ."
+            }
+          ]
+        },
+        {
+          "id": "SWE_TECHLEAD_02",
+          "title": "Bạn không còn thời gian để code",
+          "setup": "Lịch họp kín tuần. Task kỹ thuật của bạn không ai làm.",
+          "choices": [
+            {
+              "text": "Giao task đó cho thành viên, dành thời gian review kỹ",
+              "outcome": "Đội học được, bạn tập trung dẫn dắt. Đây là chuyển đổi vai trò cần thiết."
+            },
+            {
+              "text": "Chặn 2 buổi sáng mỗi tuần không họp để code",
+              "outcome": "Giữ được cảm giác kỹ thuật. Nhưng vài cuộc họp phải dời."
+            },
+            {
+              "text": "Code buổi tối sau giờ làm",
+              "outcome": "Task xong. Nhưng bạn làm 55 giờ/tuần và bắt đầu kiệt sức."
+            }
+          ]
+        },
+        {
+          "id": "SWE_TECHLEAD_03",
+          "title": "Thành viên giỏi nhất đội xin nghỉ",
+          "setup": "Bạn ấy nhận offer lương cao hơn 40%. Đội đang giữa dự án quan trọng.",
+          "choices": [
+            {
+              "text": "Nói chuyện thẳng thắn tìm hiểu lý do thật",
+              "outcome": "Phát hiện lý do là thiếu cơ hội phát triển, không phải lương. Giữ được bằng lộ trình mới."
+            },
+            {
+              "text": "Đề xuất công ty tăng lương giữ chân",
+              "outcome": "Giữ được 6 tháng. Nhưng các thành viên khác biết và cũng đòi tăng."
+            },
+            {
+              "text": "Chấp nhận, lập kế hoạch bàn giao kiến thức gấp",
+              "outcome": "Mất người giỏi nhưng đội không bị hổng kiến thức."
+            }
+          ]
+        }
+      ],
+      "position": [
+        51.8,
+        -15.1,
+        -78.6
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 67.16,
+        "radius": 7.4,
+        "ring": true,
+        "moons": 1,
+        "tilt": 0.252,
+        "spin": 0.12
+      }
+    },
+    {
+      "roleCode": "SWE_UIUX",
+      "nameVn": "Chuyên viên thiết kế UI/UX",
+      "nameEn": "UI/UX Designer",
+      "group": "SWE",
+      "bands": "L1-L7",
+      "bandStart": "L1",
+      "bandEnd": "L7",
+      "experience": "Sáng tạo thị giác và trải nghiệm — KHÔNG cần code",
+      "hardSkills": [],
+      "hardSkillSource": null,
+      "softSkills": [],
+      "events": [
+        {
+          "id": "SWE_UIUX_01",
+          "title": "Sếp bảo 'làm cho nó đẹp hơn' mà không nói rõ là gì",
+          "setup": "Bạn đã sửa 4 lần, lần nào sếp cũng nói 'chưa đúng ý' nhưng không mô tả được ý là gì.",
+          "choices": [
+            {
+              "text": "Đưa 3 phương án khác hẳn nhau để sếp chọn hướng",
+              "outcome": "Sếp chỉ ngay được phương án 2. Từ đó bạn luôn làm cách này."
+            },
+            {
+              "text": "Hỏi sếp xem có sản phẩm nào sếp thấy đẹp không",
+              "outcome": "Sếp đưa 2 ví dụ. Bạn hiểu được gu và làm đúng ngay lần sau."
+            },
+            {
+              "text": "Sửa tiếp theo cảm nhận của mình",
+              "outcome": "Lần thứ 7 mới được duyệt. Mất 2 tuần cho một màn hình."
+            }
+          ]
+        },
+        {
+          "id": "SWE_UIUX_02",
+          "title": "Kết quả nghiên cứu người dùng trái với ý sếp",
+          "setup": "Bạn phỏng vấn 12 người dùng, tất cả đều thấy tính năng sếp muốn là không cần thiết.",
+          "choices": [
+            {
+              "text": "Trình bày dữ liệu phỏng vấn có trích dẫn cụ thể",
+              "outcome": "Sếp đổi ý sau khi nghe băng ghi âm người dùng. Tính năng được thiết kế lại."
+            },
+            {
+              "text": "Thiết kế cả hai, đề xuất thử nghiệm A/B",
+              "outcome": "Mất gấp đôi công sức nhưng có dữ liệu thuyết phục sau 1 tháng."
+            },
+            {
+              "text": "Làm theo ý sếp",
+              "outcome": "Tính năng ra mắt, tỷ lệ sử dụng 3%. Không ai nhắc lại chuyện này."
+            }
+          ]
+        },
+        {
+          "id": "SWE_UIUX_03",
+          "title": "Dev nói thiết kế của bạn mất 3 tuần để làm",
+          "setup": "Bạn nghĩ nó đơn giản. Dev giải thích phần animation cần viết lại toàn bộ hệ thống hiển thị.",
+          "choices": [
+            {
+              "text": "Ngồi cùng dev tìm phiên bản làm được trong 1 tuần",
+              "outcome": "Ra được bản gọn hơn, giữ 85% ý tưởng. Dev đánh giá cao bạn."
+            },
+            {
+              "text": "Học thêm về giới hạn kỹ thuật để thiết kế thực tế hơn",
+              "outcome": "Mất thời gian đầu tư nhưng các thiết kế sau đều khả thi."
+            },
+            {
+              "text": "Giữ nguyên thiết kế, để dev tự lo",
+              "outcome": "Dev làm một bản đơn giản hoá và bạn không hài lòng với kết quả."
+            }
+          ]
+        }
+      ],
+      "position": [
+        -71.4,
+        -13.9,
+        -189.2
+      ],
+      "look": {
+        "kind": "terra",
+        "seed": 55.23,
+        "radius": 8.04,
+        "ring": false,
+        "moons": 0,
+        "tilt": 0.058,
+        "spin": 0.068
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "PROGRESSES_TO:CLOUD_DEVOPS->SEC_ENG",
+      "from": "CLOUD_DEVOPS",
+      "to": "SEC_ENG",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "DevSecOps là vùng giao nhau",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:CLOUD_DEVOPS->SWE_ARCH_SOL",
+      "from": "CLOUD_DEVOPS",
+      "to": "SWE_ARCH_SOL",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:DATA_DA->DATA_AI",
+      "from": "DATA_DA",
+      "to": "DATA_AI",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "Cùng nền thống kê; AI đi sâu vào mô hình hoá",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:DATA_DA->DATA_DE",
+      "from": "DATA_DA",
+      "to": "DATA_DE",
+      "type": "PROGRESSES_TO",
+      "distance": 0.4375,
+      "why": "Cùng chuỗi dữ liệu: DA phân tích, DE xây đường ống",
+      "sharedSkills": [
+        "pandas",
+        "numpy",
+        "apache spark",
+        "hadoop",
+        "scikit-learn"
+      ]
+    },
+    {
+      "id": "PROGRESSES_TO:DATA_DE->DATA_AI",
+      "from": "DATA_DE",
+      "to": "DATA_AI",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "AI Engineer phụ thuộc dữ liệu do Data Engineer chuẩn bị",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->CLOUD_DEVOPS",
+      "from": "INFRA_HELPDESK",
+      "to": "CLOUD_DEVOPS",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->CLOUD_ENG",
+      "from": "INFRA_HELPDESK",
+      "to": "CLOUD_ENG",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "Helpdesk là một đường vào hạ tầng đám mây",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->INFRA_ERP",
+      "from": "INFRA_HELPDESK",
+      "to": "INFRA_ERP",
+      "type": "PROGRESSES_TO",
+      "distance": 0.4762,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->INFRA_NETWORK",
+      "from": "INFRA_HELPDESK",
+      "to": "INFRA_NETWORK",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "Cùng nhánh hạ tầng nội bộ; Helpdesk là cửa vào của Network",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->SEC_ENG",
+      "from": "INFRA_HELPDESK",
+      "to": "SEC_ENG",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "Helpdesk là cửa vào phổ biến của nghề bảo mật",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_NETWORK->SEC_ENG",
+      "from": "INFRA_NETWORK",
+      "to": "SEC_ENG",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "Bảo mật mạng là giao điểm hai nghề",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:PROD_BA->INFRA_ERP",
+      "from": "PROD_BA",
+      "to": "INFRA_ERP",
+      "type": "PROGRESSES_TO",
+      "distance": 0.45,
+      "why": "Cùng cầu nối nghiệp vụ - kỹ thuật; ERP thiên cấu hình hệ thống",
+      "sharedSkills": [
+        "asp.net",
+        "jquery"
+      ]
+    },
+    {
+      "id": "PROGRESSES_TO:PROD_BA->PROD_PM",
+      "from": "PROD_BA",
+      "to": "PROD_PM",
+      "type": "PROGRESSES_TO",
+      "distance": 0.48,
+      "why": "BA là đường vào phổ biến nhất của Product Manager",
+      "sharedSkills": [
+        "asp.net",
+        "html/css"
+      ]
+    },
+    {
+      "id": "PROGRESSES_TO:SEC_ENG->SEC_PENTEST",
+      "from": "SEC_ENG",
+      "to": "SEC_PENTEST",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "Hai mặt của bảo mật: phòng thủ và tấn công",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_ARCH_SOL->SWE_EM",
+      "from": "SWE_ARCH_SOL",
+      "to": "SWE_EM",
+      "type": "PROGRESSES_TO",
+      "distance": 0.5926,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->CLOUD_DEVOPS",
+      "from": "SWE_BACKEND",
+      "to": "CLOUD_DEVOPS",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "DevOps là hướng đi tự nhiên của Backend quan tâm vận hành",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->DATA_AI",
+      "from": "SWE_BACKEND",
+      "to": "DATA_AI",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "Đưa mô hình vào sản phẩm cần kỹ năng backend",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->DATA_DE",
+      "from": "SWE_BACKEND",
+      "to": "DATA_DE",
+      "type": "PROGRESSES_TO",
+      "distance": 0.8519,
+      "why": "Data Engineer phần lớn đi lên từ Backend, chia sẻ kỹ năng hệ thống",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->PROD_PM",
+      "from": "SWE_BACKEND",
+      "to": "PROD_PM",
+      "type": "PROGRESSES_TO",
+      "distance": 0.5,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->SEC_PENTEST",
+      "from": "SWE_BACKEND",
+      "to": "SEC_PENTEST",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->SWE_ARCH_SOL",
+      "from": "SWE_BACKEND",
+      "to": "SWE_ARCH_SOL",
+      "type": "PROGRESSES_TO",
+      "distance": 0.48,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->SWE_TECHLEAD",
+      "from": "SWE_BACKEND",
+      "to": "SWE_TECHLEAD",
+      "type": "PROGRESSES_TO",
+      "distance": 0.4167,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_FRONTEND->SWE_ARCH_SOL",
+      "from": "SWE_FRONTEND",
+      "to": "SWE_ARCH_SOL",
+      "type": "PROGRESSES_TO",
+      "distance": 0.5,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_FRONTEND->SWE_TECHLEAD",
+      "from": "SWE_FRONTEND",
+      "to": "SWE_TECHLEAD",
+      "type": "PROGRESSES_TO",
+      "distance": 0.6071,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_MOBILE->SWE_TECHLEAD",
+      "from": "SWE_MOBILE",
+      "to": "SWE_TECHLEAD",
+      "type": "PROGRESSES_TO",
+      "distance": 0.6897,
+      "why": null,
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_TECHLEAD->SWE_ARCH_SOL",
+      "from": "SWE_TECHLEAD",
+      "to": "SWE_ARCH_SOL",
+      "type": "PROGRESSES_TO",
+      "distance": 0.4167,
+      "why": "Cùng nhánh IC cấp cao, khác phạm vi: một đội và một hệ thống",
+      "sharedSkills": [
+        "spring",
+        "next.js"
+      ]
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_TECHLEAD->SWE_EM",
+      "from": "SWE_TECHLEAD",
+      "to": "SWE_EM",
+      "type": "PROGRESSES_TO",
+      "distance": 0.6897,
+      "why": "Điểm rẽ nhánh IC/Management — cùng xuất phát, khác hướng",
+      "sharedSkills": []
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_UIUX->PROD_PM",
+      "from": "SWE_UIUX",
+      "to": "PROD_PM",
+      "type": "PROGRESSES_TO",
+      "distance": 1,
+      "why": "Cùng tập trung vào trải nghiệm và nhu cầu người dùng",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:CLOUD_DEVOPS->CLOUD_ENG",
+      "from": "CLOUD_DEVOPS",
+      "to": "CLOUD_ENG",
+      "type": "SIMILAR",
+      "distance": 0.35,
+      "why": "Cùng làm hạ tầng: DevOps thiên tự động hoá, Cloud Engineer thiên nền tảng",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:CLOUD_DEVOPS->INFRA_NETWORK",
+      "from": "CLOUD_DEVOPS",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "Cùng vận hành hạ tầng, khác tầng mạng và tầng ứng dụng",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:CLOUD_DEVOPS->SEC_ENG",
+      "from": "CLOUD_DEVOPS",
+      "to": "SEC_ENG",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "DevSecOps là vùng giao nhau",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:CLOUD_ENG->INFRA_NETWORK",
+      "from": "CLOUD_ENG",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.6,
+      "why": "Cùng hạ tầng: một trên mây, một dưới đất",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:DATA_AI->DATA_DE",
+      "from": "DATA_AI",
+      "to": "DATA_DE",
+      "type": "SIMILAR",
+      "distance": 0.5,
+      "why": "AI Engineer phụ thuộc dữ liệu do Data Engineer chuẩn bị",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:DATA_AI->SWE_ARCH_SOL",
+      "from": "DATA_AI",
+      "to": "SWE_ARCH_SOL",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "Đưa AI vào production đòi hỏi tư duy kiến trúc",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:DATA_AI->SWE_BACKEND",
+      "from": "DATA_AI",
+      "to": "SWE_BACKEND",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "Đưa mô hình vào sản phẩm cần kỹ năng backend",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:DATA_DA->DATA_AI",
+      "from": "DATA_DA",
+      "to": "DATA_AI",
+      "type": "SIMILAR",
+      "distance": 0.55,
+      "why": "Cùng nền thống kê; AI đi sâu vào mô hình hoá",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:DATA_DA->DATA_DE",
+      "from": "DATA_DA",
+      "to": "DATA_DE",
+      "type": "SIMILAR",
+      "distance": 0.522,
+      "why": "Cùng chuỗi dữ liệu: DA phân tích, DE xây đường ống",
+      "sharedSkills": [
+        "pandas",
+        "numpy",
+        "apache spark",
+        "hadoop",
+        "scikit-learn"
+      ]
+    },
+    {
+      "id": "SIMILAR:DATA_DA->PROD_BA",
+      "from": "DATA_DA",
+      "to": "PROD_BA",
+      "type": "SIMILAR",
+      "distance": 0.595,
+      "why": "Cùng là cầu nối nghiệp vụ: DA làm với số liệu, BA làm với quy trình",
+      "sharedSkills": [
+        "html/css"
+      ]
+    },
+    {
+      "id": "SIMILAR:INFRA_ERP->DATA_DA",
+      "from": "INFRA_ERP",
+      "to": "DATA_DA",
+      "type": "SIMILAR",
+      "distance": 0.7,
+      "why": "Cùng làm việc với dữ liệu nghiệp vụ doanh nghiệp",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:INFRA_HELPDESK->CLOUD_ENG",
+      "from": "INFRA_HELPDESK",
+      "to": "CLOUD_ENG",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "Helpdesk là một đường vào hạ tầng đám mây",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:INFRA_HELPDESK->INFRA_NETWORK",
+      "from": "INFRA_HELPDESK",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.5,
+      "why": "Cùng nhánh hạ tầng nội bộ; Helpdesk là cửa vào của Network",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:INFRA_HELPDESK->SEC_ENG",
+      "from": "INFRA_HELPDESK",
+      "to": "SEC_ENG",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "Helpdesk là cửa vào phổ biến của nghề bảo mật",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:PROD_BA->INFRA_ERP",
+      "from": "PROD_BA",
+      "to": "INFRA_ERP",
+      "type": "SIMILAR",
+      "distance": 0.577,
+      "why": "Cùng cầu nối nghiệp vụ - kỹ thuật; ERP thiên cấu hình hệ thống",
+      "sharedSkills": [
+        "asp.net",
+        "jquery"
+      ]
+    },
+    {
+      "id": "SIMILAR:PROD_BA->PROD_PM",
+      "from": "PROD_BA",
+      "to": "PROD_PM",
+      "type": "SIMILAR",
+      "distance": 0.522,
+      "why": "BA là đường vào phổ biến nhất của Product Manager",
+      "sharedSkills": [
+        "asp.net",
+        "html/css"
+      ]
+    },
+    {
+      "id": "SIMILAR:PROD_PM->SWE_EM",
+      "from": "PROD_PM",
+      "to": "SWE_EM",
+      "type": "SIMILAR",
+      "distance": 0.723,
+      "why": "Cùng cấp quản lý: PM quản sản phẩm, EM quản con người",
+      "sharedSkills": [
+        "asp.net"
+      ]
+    },
+    {
+      "id": "SIMILAR:QA_MANUAL->PROD_BA",
+      "from": "QA_MANUAL",
+      "to": "PROD_BA",
+      "type": "SIMILAR",
+      "distance": 0.725,
+      "why": "Cùng phải hiểu sâu yêu cầu nghiệp vụ",
+      "sharedSkills": [
+        "html/css",
+        "react native"
+      ]
+    },
+    {
+      "id": "SIMILAR:QA_MANUAL->SEC_PENTEST",
+      "from": "QA_MANUAL",
+      "to": "SEC_PENTEST",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "Cùng bản chất tìm lỗi có hệ thống, khác mục tiêu",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:QA_MANUAL->SWE_BACKEND",
+      "from": "QA_MANUAL",
+      "to": "SWE_BACKEND",
+      "type": "SIMILAR",
+      "distance": 0.767,
+      "why": "Automation QA cần kỹ năng lập trình thật",
+      "sharedSkills": [
+        "spring",
+        "apl"
+      ]
+    },
+    {
+      "id": "SIMILAR:SEC_ENG->INFRA_NETWORK",
+      "from": "SEC_ENG",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.6,
+      "why": "Bảo mật mạng là giao điểm hai nghề",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SEC_ENG->SEC_PENTEST",
+      "from": "SEC_ENG",
+      "to": "SEC_PENTEST",
+      "type": "SIMILAR",
+      "distance": 0.4,
+      "why": "Hai mặt của bảo mật: phòng thủ và tấn công",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SEC_ENG->SWE_BACKEND",
+      "from": "SEC_ENG",
+      "to": "SWE_BACKEND",
+      "type": "SIMILAR",
+      "distance": 0.7,
+      "why": "Application Security cần đọc hiểu code để tìm lỗ hổng",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_ARCH_SOL->CLOUD_ENG",
+      "from": "SWE_ARCH_SOL",
+      "to": "CLOUD_ENG",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "Kiến trúc hệ thống hiện đại gắn chặt với hạ tầng đám mây",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_BACKEND->CLOUD_DEVOPS",
+      "from": "SWE_BACKEND",
+      "to": "CLOUD_DEVOPS",
+      "type": "SIMILAR",
+      "distance": 0.55,
+      "why": "DevOps là hướng đi tự nhiên của Backend quan tâm vận hành",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_BACKEND->DATA_DE",
+      "from": "SWE_BACKEND",
+      "to": "DATA_DE",
+      "type": "SIMILAR",
+      "distance": 0.55,
+      "why": "Data Engineer phần lớn đi lên từ Backend, chia sẻ kỹ năng hệ thống",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_BACKEND->SWE_MOBILE",
+      "from": "SWE_BACKEND",
+      "to": "SWE_MOBILE",
+      "type": "SIMILAR",
+      "distance": 0.7,
+      "why": "Mobile cần backend; chia sẻ tư duy API và dữ liệu",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_EMBEDDED->INFRA_NETWORK",
+      "from": "SWE_EMBEDDED",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.75,
+      "why": "Cùng làm việc với thiết bị phần cứng thật",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_FRONTEND->SWE_BACKEND",
+      "from": "SWE_FRONTEND",
+      "to": "SWE_BACKEND",
+      "type": "SIMILAR",
+      "distance": 0.716,
+      "why": "Hai nửa của một ứng dụng web, thường làm việc cặp với nhau",
+      "sharedSkills": [
+        "apl"
+      ]
+    },
+    {
+      "id": "SIMILAR:SWE_FRONTEND->SWE_MOBILE",
+      "from": "SWE_FRONTEND",
+      "to": "SWE_MOBILE",
+      "type": "SIMILAR",
+      "distance": 0.615,
+      "why": "Cùng làm giao diện; React Native khiến hai nghề chồng lấn mạnh",
+      "sharedSkills": [
+        "dart",
+        "react native"
+      ]
+    },
+    {
+      "id": "SIMILAR:SWE_GAME->SWE_EMBEDDED",
+      "from": "SWE_GAME",
+      "to": "SWE_EMBEDDED",
+      "type": "SIMILAR",
+      "distance": 0.752,
+      "why": "Cùng phải tối ưu hiệu năng sát phần cứng",
+      "sharedSkills": [
+        "pandas"
+      ]
+    },
+    {
+      "id": "SIMILAR:SWE_GAME->SWE_UIUX",
+      "from": "SWE_GAME",
+      "to": "SWE_UIUX",
+      "type": "SIMILAR",
+      "distance": 0.7,
+      "why": "Cùng quan tâm trải nghiệm và cảm giác người dùng",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_TECHLEAD->SWE_ARCH_SOL",
+      "from": "SWE_TECHLEAD",
+      "to": "SWE_ARCH_SOL",
+      "type": "SIMILAR",
+      "distance": 0.562,
+      "why": "Cùng nhánh IC cấp cao, khác phạm vi: một đội và một hệ thống",
+      "sharedSkills": [
+        "spring",
+        "next.js"
+      ]
+    },
+    {
+      "id": "SIMILAR:SWE_TECHLEAD->SWE_EM",
+      "from": "SWE_TECHLEAD",
+      "to": "SWE_EM",
+      "type": "SIMILAR",
+      "distance": 0.5,
+      "why": "Điểm rẽ nhánh IC/Management — cùng xuất phát, khác hướng",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_UIUX->PROD_PM",
+      "from": "SWE_UIUX",
+      "to": "PROD_PM",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "why": "Cùng tập trung vào trải nghiệm và nhu cầu người dùng",
+      "sharedSkills": []
+    },
+    {
+      "id": "SIMILAR:SWE_UIUX->SWE_FRONTEND",
+      "from": "SWE_UIUX",
+      "to": "SWE_FRONTEND",
+      "type": "SIMILAR",
+      "distance": 0.45,
+      "why": "Cùng làm phần người dùng nhìn thấy: UI/UX thiết kế, Frontend hiện thực",
+      "sharedSkills": []
+    }
+  ]
+};

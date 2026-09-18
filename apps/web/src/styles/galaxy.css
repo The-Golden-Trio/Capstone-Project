@@ -1,0 +1,120 @@
+/* ═══ Bản đồ ngân hà ═══
+   Nhãn trong cảnh 3D (drei <Html>) và vài chuyển động của lớp HUD.
+   Màu lấy từ theme Celestial Night ở styles.css. */
+
+/* ── Nhãn hành tinh: đứng trên đầu hành tinh, co theo khoảng cách camera ── */
+.galaxy-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+  text-align: center;
+  user-select: none;
+  transition: opacity 0.2s;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 14px rgba(5, 8, 26, 0.9);
+}
+.galaxy-label__name {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+.galaxy-label[data-status='current'] .galaxy-label__name {
+  color: var(--color-gold-2);
+  font-size: 16px;
+}
+.galaxy-label__tag {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+/* nhìn từ xa chỉ giữ tên, bỏ dòng mã nhóm cho thoáng */
+.galaxy-label[data-far='true'] .galaxy-label__tag {
+  opacity: 0;
+}
+.galaxy-label[data-far='true'][data-status='far'] .galaxy-label__name {
+  font-weight: 500;
+}
+
+/* ── Nhãn hệ sao: dưới mặt trời, mờ, in hoa ── */
+.galaxy-sun-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.7;
+  user-select: none;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
+}
+
+/* ── Lớp HUD ── */
+.galaxy-glass {
+  background: rgba(10, 16, 38, 0.72);
+  border: 1px solid rgba(37, 74, 122, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 18px 44px -24px rgba(0, 0, 0, 0.95);
+}
+
+/* thanh tiến độ chuyến bay: chạy đúng bằng thời gian bay */
+.galaxy-flight-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-gold), #8fd3ff);
+  transform-origin: left;
+  animation: galaxy-flight var(--flight-ms, 3200ms) linear forwards;
+}
+@keyframes galaxy-flight {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .galaxy-slide-in {
+    animation: galaxy-slide-in 0.26s ease-out;
+  }
+  @keyframes galaxy-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .galaxy-rise {
+    animation: galaxy-rise 0.3s ease-out;
+  }
+  @keyframes galaxy-rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* thanh cuộn ngang của dải hành tinh lân cận: mỏng, hợp nền tối */
+.galaxy-dock {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}

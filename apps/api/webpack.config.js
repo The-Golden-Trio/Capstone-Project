@@ -15,7 +15,16 @@ module.exports = {
       compiler: 'tsc',
       main: './src/main.ts',
       tsConfig: './tsconfig.app.json',
-      assets: ['./src/assets'],
+      assets: [
+        './src/assets',
+        // Data build từ occupation-data/build_skill_taxonomy.py + build_role_graph.py
+        // → dist/assets/data/*.json, load lúc bootstrap (xem shared/paths.ts resolveDataDir).
+        {
+          input: 'occupation-data/output',
+          glob: '{skills_taxonomy,role_graph}.json',
+          output: 'assets/data',
+        },
+      ],
       optimization: false,
       outputHashing: 'none',
       generatePackageJson: false,

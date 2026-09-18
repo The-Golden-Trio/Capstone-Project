@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { GAME, eventsForRole, findRole, findScenario, shortRoleName } from '@datn/game-core';
+import { eventsForRole, findRole, findScenario, shortRoleName } from '@datn/game-core';
+import { GALAXY } from '../../galaxy/galaxy';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProfileStore } from '../../store/profileStore';
 import { useProgressStore } from '../../store/progressStore';
@@ -123,7 +124,7 @@ export function Rail({ onNavigate }: { onNavigate: () => void }) {
           to="/jobs"
           icon="grid"
           label="Bản đồ nghề"
-          count={GAME.roles.length}
+          count={GALAXY.nodes.length}
           onNavigate={onNavigate}
         />
         <NavItem

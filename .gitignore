@@ -55,3 +55,6 @@ test-output
 .env
 .env.local
 .env.*.local
+
+# local JSON snapshot của in-memory repository (apps/api)
+apps/api/.data
