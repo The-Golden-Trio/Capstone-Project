@@ -61,9 +61,13 @@ export interface TimelinePoint {
 
 export interface ProgressSummary {
   totalPoints: number;
-  /** Hai phần của `totalPoints`: kỹ thuật và cách làm việc với người. */
+  /**
+   * Ba phần của `totalPoints`: kỹ năng cứng và mềm từ nhiệm vụ chính (có
+   * bằng chứng, có loại), cộng điểm đều từ nhiệm vụ phụ (không gắn kỹ năng).
+   */
   hardPoints: number;
   softPoints: number;
+  sideQuestPoints: number;
   runsCompleted: number;
   eventsPlayed: number;
   quizDone: boolean;
@@ -212,7 +216,7 @@ export class ProgressService {
   }
 
   async summary(userId: string): Promise<ProgressSummary> {
-    const [skills, profile, runs, evidence] = await Promise.all([
+    const [skills, profile, runs, evidence, sideQuests] = await Promise.all([
       this.skillMap(userId),
       this.prisma.gameProfile.findUnique({ where: { userId } }),
       this.prisma.scenarioRun.findMany({
@@ -228,6 +232,10 @@ export class ProgressService {
       this.prisma.runEvidence.findMany({
         where: { run: { userId, NOT: { completedAt: null } } },
         select: { runId: true, skill: true, anchor: true },
+      }),
+      this.prisma.eventAward.aggregate({
+        where: { userId },
+        _sum: { points: true },
       }),
     ]);
 
@@ -274,6 +282,7 @@ export class ProgressService {
       totalPoints: [...skills.values()].reduce((sum, n) => sum + n, 0),
       hardPoints: byType.hard,
       softPoints: byType.soft,
+      sideQuestPoints: sideQuests._sum.points ?? 0,
       runsCompleted: runs.length,
       eventsPlayed: profile?.eventsPlayed ?? 0,
       quizDone: profile?.quizDone ?? false,

@@ -89,9 +89,10 @@ export type TimelinePoint = z.infer<typeof TimelinePointSchema>;
 
 export const ProgressSummarySchema = z.object({
   totalPoints: z.number(),
-  /** Hai phần của `totalPoints`, tách theo kỹ năng cứng / mềm. */
+  /** Ba phần của `totalPoints`: cứng, mềm (nhiệm vụ chính) và nhiệm vụ phụ. */
   hardPoints: z.number(),
   softPoints: z.number(),
+  sideQuestPoints: z.number(),
   runsCompleted: z.number(),
   eventsPlayed: z.number(),
   quizDone: z.boolean(),

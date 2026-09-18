@@ -43,6 +43,7 @@ function seed({ doneEventIds = [] as string[], playedScenario = false } = {}) {
       totalPoints: 4,
       hardPoints: 2,
       softPoints: 2,
+      sideQuestPoints: 0,
       runsCompleted: playedScenario ? 1 : 0,
       eventsPlayed: doneEventIds.length,
       quizDone: true,
