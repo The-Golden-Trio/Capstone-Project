@@ -102,7 +102,7 @@ export class ProfileController {
       dto.roleCode,
       dto.band,
       eventId,
-      dto.choiceIndex,
+      dto,
     );
   }
 

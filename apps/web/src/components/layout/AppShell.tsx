@@ -2,6 +2,7 @@ import { useMatches } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { StarField } from './StarField';
 import { Topbar } from './Topbar';
+import { XpBar } from './XpBar';
 
 /** Route nào cần cả khung hình thì tự khai ở `handle`. */
 export interface FullBleedHandle {
@@ -28,17 +29,33 @@ export function AppShell() {
   return (
     <>
       <StarField />
-      <div className="relative z-1 flex min-h-screen flex-col">
+      {/*
+        Trang bản đồ khoá đúng chiều cao khung hình và không cuộn: trước đây
+        nó tự tính `100dvh - 57px` cho thanh đầu trang, và chỉ cần lệch một
+        hai pixel là trang tràn ra, thanh cuộn hiện lên, bề ngang hụt đi,
+        canvas đo lại — rồi lặp. Để bố cục co dãn quyết định thì không còn
+        con số nào để lệch.
+      */}
+      <div
+        className={
+          fullBleed
+            ? 'relative z-1 flex h-dvh flex-col overflow-hidden'
+            : 'relative z-1 flex min-h-screen flex-col'
+        }
+      >
         <Topbar />
         <main
           className={
             fullBleed
-              ? 'relative flex-1'
-              : 'w-full flex-1 px-6 py-6 max-[900px]:px-4'
+              ? 'relative min-h-0 flex-1 pb-[var(--xp-bar-h)]'
+              : 'w-full flex-1 px-6 pb-[calc(var(--xp-bar-h)+24px)] pt-6 max-[900px]:px-4'
           }
         >
           <Outlet />
         </main>
+
+        {/* Thanh kinh nghiệm bám đáy, có ở mọi trang trong app. */}
+        <XpBar />
       </div>
     </>
   );

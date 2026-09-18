@@ -103,6 +103,35 @@ export class ProgressService {
     );
   }
 
+  /** Người này đã bấm "vào học" cấp bậc đó chưa. */
+  async isEnrolled(
+    userId: string,
+    roleCode: string,
+    band: string,
+  ): Promise<boolean> {
+    const row = await this.prisma.enrollment.findUnique({
+      where: { userId_roleCode_band: { userId, roleCode, band } },
+      select: { id: true },
+    });
+    return row !== null;
+  }
+
+  /** Cấp bậc kế đã mở chưa sau khi cộng điểm — để giao diện báo mừng đúng lúc. */
+  async unlockedAfter(
+    userId: string,
+    roleCode: string,
+    band: string,
+  ): Promise<string | null> {
+    const role = findRole(roleCode);
+    if (!role) return null;
+
+    const list = bandsOf(role);
+    const next = list[list.indexOf(band) + 1];
+    if (!next) return null;
+
+    return (await this.isUnlocked(userId, role, next)) ? next : null;
+  }
+
   /** Khoá "nghề:cấp" của những cấp bậc đã ghi danh. */
   private async enrolledKeys(userId: string): Promise<Set<string>> {
     const rows = await this.prisma.enrollment.findMany({

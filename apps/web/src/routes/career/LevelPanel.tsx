@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   UNLOCK_AT,
-  eventsForRole,
   findScenario,
   formatVnd,
+  sideQuestsFor,
   type Role,
 } from '@datn/game-core';
 import type { BandProgress, RoleProgress } from '../../api/schemas';
@@ -41,17 +41,20 @@ export function LevelPanel({
 
   const entry = findScenario(role.role_code, band.band);
   const salary = role.salary_by_band.find((s) => s.band === band.band);
-  const sideQuests = eventsForRole(role).length;
+  const sideQuests = sideQuestsFor(role, band.band).length;
   const previous = progress.bands[progress.bands.findIndex((b) => b.band === band.band) - 1];
 
-  const tasksPath = `/jobs/${role.role_code}/${band.band}/tasks`;
+  /** Vào chặng này là mở bản đồ địa điểm của nó. */
+  const islandPath = `/jobs/${role.role_code}/${band.band}`;
 
   const enroll = async () => {
     setBusy(true);
     setError(null);
     try {
+      // Việc chuyển màn để cho `onEnrolled` lo: trang bản đồ còn phải cập
+      // nhật tiến trình trước đã, và trước đây hai chỗ cùng điều hướng nên
+      // cái sau đè lên cái trước.
       onEnrolled(await profileApi.enroll(role.role_code, band.band));
-      navigate(tasksPath);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Không ghi danh được');
       setBusy(false);
@@ -105,11 +108,10 @@ export function LevelPanel({
         </div>
         <div className="rounded-[9px] border border-line-2 bg-panel px-3 py-2.5">
           <dt className="font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
-            Điểm đã có
+            Điểm ở đảo này
           </dt>
           <dd className="m-0 mt-1 font-display text-[16px] font-bold text-[var(--accent)]">
             {band.points}
-            <span className="text-[12px] font-normal text-muted">/{UNLOCK_AT}</span>
           </dd>
         </div>
       </dl>
@@ -162,7 +164,7 @@ export function LevelPanel({
         <Button
           variant="primary"
           className={cx('w-full')}
-          onClick={() => navigate(tasksPath)}
+          onClick={() => navigate(islandPath)}
         >
           Tiếp tục học
         </Button>

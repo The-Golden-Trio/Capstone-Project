@@ -1,14 +1,28 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  Injectable,
+} from '@nestjs/common';
 import {
   GAME,
+  SIDE_QUEST_POINTS,
   applySignal,
+  bandsOf,
   blankFit,
   eventsForRole,
+  MIN_ANSWER_LENGTH,
   findEvent,
   findRole,
+  matchChoice,
+  questKind,
+  sideQuestsFor,
   type FitVector,
+  type GameEvent,
+  type QuestKind,
+  type Role,
 } from '@datn/game-core';
 import { PrismaService } from '../prisma/prisma.service';
+import { ProgressService } from '../progress/progress.service';
 
 export interface GameProfileView {
   /** Tổng chân dung: phần từ bài tự vấn cộng phần từ các nhiệm vụ phụ. */
@@ -16,6 +30,19 @@ export interface GameProfileView {
   quizDone: boolean;
   eventsPlayed: number;
   doneEventIds: string[];
+}
+
+/** Kết quả một lần trả lời nhiệm vụ phụ. */
+export interface EventAnswerResult extends GameProfileView {
+  outcome: string;
+  /** Điểm kỹ năng vừa trao — 0 nếu nhiệm vụ này đã tính ở cấp bậc này rồi. */
+  pointsAwarded: number;
+  /** Tổng điểm của cấp bậc sau khi cộng. */
+  bandPoints: number;
+  /** Cấp bậc kế vừa mở nhờ lần này, nếu có. */
+  unlockedBand: string | null;
+  /** Hướng xử lý mà máy chủ đọc ra từ câu trả lời — để nói lại cho người chơi. */
+  readAs: string;
 }
 
 /**
@@ -32,7 +59,10 @@ export interface GameProfileView {
  */
 @Injectable()
 export class ProfileService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly progress: ProgressService,
+  ) {}
 
   private ensureProfile(userId: string) {
     return this.prisma.gameProfile.upsert({
@@ -87,29 +117,73 @@ export class ProfileService {
     return this.get(userId);
   }
 
-  /** Trả lời một nhiệm vụ phụ. Trả lời lại thì thay lựa chọn, không cộng đôi. */
+  /**
+   * Trả lời một nhiệm vụ phụ.
+   *
+   * Hai sổ được ghi, vì chúng trả lời hai câu khác nhau:
+   *
+   *   • chân dung — mỗi nhiệm vụ chỉ nói một lần. Đổi lựa chọn thì thay, không
+   *     cộng đôi, nếu không vector tính cách phình theo số lần bấm.
+   *   • tiến trình — một điểm kỹ năng cho cấp bậc đang học, tính một lần cho
+   *     mỗi cặp (nhiệm vụ, cấp bậc). Đây là con đường duy nhất qua những cấp
+   *     bậc chưa dựng nhiệm vụ chính.
+   *
+   * `band` do máy khách gửi lên nên KHÔNG tin được: nó quyết định điểm rơi vào
+   * đâu, tức là quyết định mở khoá. Máy chủ kiểm lại cả ba điều — cấp bậc có
+   * thuộc nghề này không, đã mở chưa, và đã ghi danh chưa — trước khi cộng.
+   */
   async answerEvent(
     userId: string,
     roleCode: string,
     band: string,
     eventId: string,
-    choiceIndex: number,
-  ): Promise<GameProfileView & { outcome: string }> {
+    input: { answer?: string; choiceIndex?: number },
+  ): Promise<EventAnswerResult> {
     const role = findRole(roleCode);
     if (!role) throw new BadRequestException('Không có nghề này');
 
     const event = findEvent(role, eventId);
     if (!event) throw new BadRequestException('Không có sự kiện này');
 
+    if (!bandsOf(role).includes(band)) {
+      throw new BadRequestException('Nghề này không có cấp bậc đó');
+    }
+    // Mỗi cấp bậc chỉ bày ra 3–4 nhiệm vụ phụ. Không kiểm lại ở đây thì máy
+    // khách nộp được cả 11 nhiệm vụ của nghề vào cùng một cấp bậc và gom gấp
+    // ba số điểm lẽ ra có. Danh sách sinh bằng hàm thuần nên hai bên luôn
+    // đồng ý với nhau về việc cấp bậc này có những nhiệm vụ nào.
+    if (!sideQuestsFor(role, band).some((e) => e.event_id === eventId)) {
+      throw new BadRequestException(
+        `Nhiệm vụ này không thuộc cấp bậc ${band}`,
+      );
+    }
+    if (!(await this.progress.isUnlocked(userId, role, band))) {
+      throw new ForbiddenException(`Cấp bậc ${band} chưa mở`);
+    }
+    if (!(await this.progress.isEnrolled(userId, roleCode, band))) {
+      throw new ForbiddenException(`Chưa ghi danh cấp bậc ${band}`);
+    }
+
+    // Kiểu hỏi quyết định dạng trả lời được nhận. Không kiểm thì một câu tự
+    // luận vẫn nộp được bằng số thứ tự phương án, tức là bỏ qua đúng phần
+    // bắt người chơi phải tự nghĩ.
+    const choiceIndex = resolveChoice(role, band, event, input);
     const choice = event.choices[choiceIndex];
-    if (!choice) throw new BadRequestException('Lựa chọn không hợp lệ');
 
-    const existing = await this.prisma.eventAnswer.findUnique({
-      where: { userId_eventId: { userId, eventId } },
-      select: { id: true },
-    });
+    const [existingAnswer, existingAward] = await Promise.all([
+      this.prisma.eventAnswer.findUnique({
+        where: { userId_eventId: { userId, eventId } },
+        select: { id: true },
+      }),
+      this.prisma.eventAward.findUnique({
+        where: { userId_eventId_band: { userId, eventId, band } },
+        select: { id: true },
+      }),
+    ]);
 
-    await this.prisma.$transaction(async (tx) => {
+    const pointsAwarded = existingAward ? 0 : SIDE_QUEST_POINTS;
+
+    const bandPoints = await this.prisma.$transaction(async (tx) => {
       await tx.eventAnswer.upsert({
         where: { userId_eventId: { userId, eventId } },
         create: { userId, eventId, roleCode, band, choiceIndex },
@@ -117,15 +191,44 @@ export class ProfileService {
       });
 
       // `eventsPlayed` đếm số sự kiện khác nhau đã chơi, nên chỉ tăng lần đầu.
-      if (!existing) {
+      if (!existingAnswer) {
         await tx.gameProfile.update({
           where: { userId },
           data: { eventsPlayed: { increment: 1 } },
         });
       }
+
+      if (!pointsAwarded) {
+        const row = await tx.userBandSkill.findUnique({
+          where: { userId_roleCode_band: { userId, roleCode, band } },
+          select: { points: true },
+        });
+        return row?.points ?? 0;
+      }
+
+      await tx.eventAward.create({
+        data: { userId, roleCode, band, eventId, points: pointsAwarded },
+      });
+
+      const skill = await tx.userBandSkill.upsert({
+        where: { userId_roleCode_band: { userId, roleCode, band } },
+        create: { userId, roleCode, band, points: pointsAwarded },
+        update: { points: { increment: pointsAwarded } },
+        select: { points: true },
+      });
+      return skill.points;
     });
 
-    return { ...(await this.get(userId)), outcome: choice.outcome };
+    return {
+      ...(await this.get(userId)),
+      outcome: choice.outcome,
+      readAs: choice.text,
+      pointsAwarded,
+      bandPoints,
+      unlockedBand: pointsAwarded
+        ? await this.progress.unlockedAfter(userId, roleCode, band)
+        : null,
+    };
   }
 
   /**
@@ -156,6 +259,51 @@ export class ProfileService {
 }
 
 /* ── Hàm thuần ─────────────────────────────────────────────────────── */
+
+/**
+ * Quy câu trả lời về số thứ tự của một hướng, theo đúng kiểu mà nhiệm vụ hỏi.
+ *
+ * Câu tự luận thì máy chủ đọc; câu chọn hay xếp thứ tự thì máy khách đã quyết
+ * định và chỉ cần kiểm số có hợp lệ không. Hai đường đi, một kết quả — phần
+ * cộng điểm phía sau không cần biết người chơi đã tới đó bằng cách nào.
+ */
+function resolveChoice(
+  role: Role,
+  band: string,
+  event: GameEvent,
+  input: { answer?: string; choiceIndex?: number },
+): number {
+  const kind: QuestKind = questKind(role, band, event.event_id);
+
+  if (kind === 'WRITE') {
+    if (input.answer === undefined) {
+      throw new BadRequestException('Nhiệm vụ này phải tự viết câu trả lời');
+    }
+    if (input.answer.trim().length < MIN_ANSWER_LENGTH) {
+      throw new BadRequestException(
+        `Viết dài hơn một chút (ít nhất ${MIN_ANSWER_LENGTH} ký tự) để mình hiểu bạn định làm gì.`,
+      );
+    }
+
+    // Không đoán bừa: đọc không ra hướng nào thì mời viết rõ hơn, chứ chấm
+    // một người theo hướng họ không hề chọn thì còn tệ hơn là không chấm.
+    const match = matchChoice(event, input.answer);
+    if (!match) {
+      throw new BadRequestException(
+        'Chưa rõ bạn định làm gì. Viết cụ thể hơn: bạn sẽ làm gì trước, và vì sao.',
+      );
+    }
+    return match.choiceIndex;
+  }
+
+  if (input.choiceIndex === undefined) {
+    throw new BadRequestException('Nhiệm vụ này phải chọn một phương án');
+  }
+  if (!event.choices[input.choiceIndex]) {
+    throw new BadRequestException('Phương án không hợp lệ');
+  }
+  return input.choiceIndex;
+}
 
 const readFit = (value: unknown): FitVector => {
   const base = blankFit();

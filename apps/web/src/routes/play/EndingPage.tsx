@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { UNLOCK_AT, findScenarioByKey } from '@datn/game-core';
 import { RoleTheme } from '../../components/game/RoleTheme';
@@ -7,6 +8,7 @@ import { Note } from '../../components/ui/Note';
 import { cx } from '../../lib/cx';
 import type { EvidenceView } from '../../api/schemas';
 import { useCountUp } from '../../hooks/useCountUp';
+import { useProgressStore } from '../../store/progressStore';
 import { useRunStore } from '../../store/runStore';
 
 /** Kết cục nói bằng lời người chơi hiểu, thay cho GOOD / BAD / SECRET. */
@@ -67,6 +69,14 @@ export function EndingPage() {
   const navigate = useNavigate();
 
   const { result, submitting, error, rating, setRating, start } = useRunStore();
+  const loadProgress = useProgressStore((s) => s.load);
+
+  // Máy chủ vừa chấm xong: hỏi lại tiến trình để thanh kinh nghiệm dưới đáy
+  // nhích lên đúng lúc người chơi đang nhìn vào điểm mình vừa được.
+  const scored = result?.runId ?? null;
+  useEffect(() => {
+    if (scored) void loadProgress();
+  }, [scored, loadProgress]);
   const entry = findScenarioByKey(scenarioKey);
   const points = useCountUp(result?.pointsAwarded ?? 0);
 
@@ -234,7 +244,7 @@ export function EndingPage() {
           <Button variant="primary" onClick={() => navigate('/profile')}>
             Xem hành trang
           </Button>
-          <Button onClick={() => navigate(`/jobs/${role_code}/${band}/tasks`)}>
+          <Button onClick={() => navigate(`/jobs/${role_code}/${band}`)}>
             Nhiệm vụ khác
           </Button>
           <Button

@@ -10,8 +10,6 @@ import type { CrumbHandle } from '../hooks/useBreadcrumbs';
 import type { FullBleedHandle } from '../components/layout/AppShell';
 import { AccountPage } from './AccountPage';
 import { ErrorPage } from './ErrorPage';
-import { EventPage } from './EventPage';
-import { EventResultPage } from './EventResultPage';
 import { ProfilePage } from './ProfilePage';
 import { QuizPage } from './QuizPage';
 import { QuizResultPage } from './QuizResultPage';
@@ -20,7 +18,6 @@ import { ConsentPage } from './auth/ConsentPage';
 import { LoginPage } from './auth/LoginPage';
 import { RegisterPage } from './auth/RegisterPage';
 import { CareerMapPage } from './career/CareerMapPage';
-import { JobPage } from './job/JobPage';
 import { EndingPage } from './play/EndingPage';
 import { PlayPage } from './play/PlayPage';
 
@@ -33,7 +30,7 @@ const GalaxyPage = lazy(() =>
 );
 
 const GalaxyFallback = () => (
-  <div className="grid h-[calc(100dvh-57px)] place-items-center">
+  <div className="grid h-full place-items-center">
     <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
       Đang mở bản đồ ngân hà…
     </p>
@@ -100,6 +97,9 @@ const routes: RouteObject[] = [
               fullBleed: true,
             } satisfies CrumbHandle & FullBleedHandle,
           },
+          // Cả nghề chỉ còn hai màn: quần đảo, và một hòn đảo đang mở.
+          // Nhiệm vụ chính lẫn nhiệm vụ phụ đều nhận ngay trên bản đồ địa
+          // điểm, nên không còn trang tab liệt kê việc của từng chặng nữa.
           {
             path: ':roleCode',
             element: <CareerMapPage />,
@@ -108,20 +108,11 @@ const routes: RouteObject[] = [
           },
           {
             path: ':roleCode/:band',
-            handle: { crumbs: roleCrumbs } satisfies CrumbHandle,
-            children: [
-              // `/jobs/BACKEND/L1` là hòn đảo L1 đang mở trên bản đồ nghề.
-              // Chỗ này trước đây chỉ là một trạm chuyển hướng sang tab `ctx`,
-              // còn các tab của JobPage vẫn nằm nguyên ở tầng dưới.
-              {
-                index: true,
-                element: <CareerMapPage />,
-                handle: { fullBleed: true } satisfies FullBleedHandle,
-              },
-              { path: 'events/:eventId', element: <EventPage /> },
-              { path: 'events/:eventId/result', element: <EventResultPage /> },
-              { path: ':tab', element: <JobPage /> },
-            ],
+            element: <CareerMapPage />,
+            handle: {
+              crumbs: roleCrumbs,
+              fullBleed: true,
+            } satisfies CrumbHandle & FullBleedHandle,
           },
         ],
       },

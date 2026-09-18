@@ -207,6 +207,14 @@ export const EndingSchema = z.object({
 
 export const ScenarioSchema = z.object({
   scenario_title: z.string(),
+  /**
+   * Tên gọn để in trên bản đồ, cạnh ký hiệu địa điểm.
+   *
+   * Nhan đề đầy đủ là cả một câu nên không đặt cạnh ký hiệu được. Thiếu trường
+   * này thì giao diện tự rút gọn nhan đề, nhưng máy cắt bao giờ cũng thua
+   * người đặt tên.
+   */
+  shortname: z.string().nullish(),
   job: z.object({
     role_code: z.string(),
     role_name_vn: z.string(),

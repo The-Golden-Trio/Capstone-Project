@@ -38,6 +38,12 @@ export type GameProfileView = z.infer<typeof GameProfileSchema>;
 
 export const EventAnswerResultSchema = GameProfileSchema.extend({
   outcome: z.string(),
+  /** 0 nếu nhiệm vụ này đã tính điểm ở cấp bậc này rồi. */
+  pointsAwarded: z.number(),
+  bandPoints: z.number(),
+  unlockedBand: z.string().nullable(),
+  /** Hướng xử lý máy chủ đọc ra từ câu trả lời. */
+  readAs: z.string(),
 });
 export type EventAnswerResult = z.infer<typeof EventAnswerResultSchema>;
 

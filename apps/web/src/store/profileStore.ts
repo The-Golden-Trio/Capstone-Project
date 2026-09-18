@@ -10,6 +10,7 @@
 import { create } from 'zustand';
 import { blankFit, type FitVector } from '@datn/game-core';
 import { profileApi } from '../api/endpoints';
+import type { EventAnswerResult } from '../api/schemas';
 
 /** Khoá bản lưu cũ của prototype, chỉ còn dùng để nhập một lần rồi xoá. */
 export const LEGACY_STORAGE_KEY = 'vaonghe.v1';
@@ -26,12 +27,13 @@ interface ProfileStore {
     answers: Array<{ questionId: string; optionId: string }>,
   ) => Promise<void>;
   /** Trả về diễn biến do máy chủ tra từ bộ dữ liệu. */
+  /** Trả về cả diễn biến lẫn điểm kỹ năng vừa nhận, để giao diện báo lại. */
   answerEvent: (
     eventId: string,
     roleCode: string,
     band: string,
-    choiceIndex: number,
-  ) => Promise<string>;
+    reply: { answer?: string; choiceIndex?: number },
+  ) => Promise<EventAnswerResult>;
   importLegacy: (legacy: {
     fit?: Record<string, number>;
     quizDone?: boolean;
@@ -61,11 +63,11 @@ export const useProfileStore = create<ProfileStore>()((set) => ({
     set({ ...profile, loaded: true });
   },
 
-  answerEvent: async (eventId, roleCode, band, choiceIndex) => {
+  answerEvent: async (eventId, roleCode, band, reply) => {
     const result = await profileApi.answerEvent(eventId, {
       roleCode,
       band,
-      choiceIndex,
+      ...reply,
     });
     set({
       fit: result.fit,
@@ -74,7 +76,7 @@ export const useProfileStore = create<ProfileStore>()((set) => ({
       doneEventIds: result.doneEventIds,
       loaded: true,
     });
-    return result.outcome;
+    return result;
   },
 
   importLegacy: async (legacy) => {

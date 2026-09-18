@@ -15,9 +15,49 @@ import { hashCode } from '../../domain/roleTheme';
 export const MAP_W = 1600;
 export const MAP_H = 900;
 
-export const ZOOM_OVERVIEW = 1;
-export const ZOOM_MIN = 0.7;
-export const ZOOM_MAX = 3;
+/** Mức phóng khi cập bến một hòn đảo. Ngoài lúc đó, bản đồ luôn ở mức 1. */
+export const SAIL_ZOOM = 2.4;
+
+/** Cạnh một ô lưới toạ độ. */
+export const GRID_STEP = 100;
+
+/**
+ * Phần lưới vẽ lấn ra ngoài khung 1600×900.
+ *
+ * Khung nhìn của SVG co theo tỉ lệ để các đảo không bị méo hay bị cắt, nên
+ * màn hình rộng hơn tỉ lệ ấy thì thừa ra hai dải hai bên. Thứ nằm ngoài
+ * viewBox nhưng còn trong khung phần tử vẫn được vẽ, nên chỉ cần kéo dài nền
+ * và lưới ra là hai dải ấy được lấp — các đảo vẫn nằm yên trong 1600×900.
+ *
+ * 1200 phủ được màn hình tới khoảng 4,4:1 theo chiều ngang và 9:16 theo chiều
+ * dọc; quá đó thì lại thấy mép lưới, nhưng không màn hình nào như vậy.
+ */
+export const OVERSCAN = 1200;
+
+/** Các mốc lưới theo một chiều, kể cả phần lấn ra ngoài. */
+export function gridTicks(length: number): number[] {
+  const from = -Math.ceil(OVERSCAN / GRID_STEP) * GRID_STEP;
+  const to = length + Math.ceil(OVERSCAN / GRID_STEP) * GRID_STEP;
+  const out: number[] = [];
+  for (let at = from; at <= to; at += GRID_STEP) out.push(at);
+  return out;
+}
+
+/**
+ * Nhãn cột kiểu bảng tính: A…Z, AA, AB…
+ *
+ * Lưới chạy cả ra ngoài khung nên số cột vượt xa 26; hết bảng chữ cái thì
+ * quay vòng có tiền tố chứ không bỏ trống.
+ */
+export function columnLabel(index: number): string {
+  let out = '';
+  let n = index;
+  while (n >= 0) {
+    out = String.fromCharCode(65 + (n % 26)) + out;
+    n = Math.floor(n / 26) - 1;
+  }
+  return out;
+}
 
 export interface MapPoint {
   x: number;
@@ -309,8 +349,8 @@ export function paperCoast(roleCode: string, band: string): MapPoint[] {
 export function paperPoints(
   roleCode: string,
   band: string,
-  main: { id: string; label: string } | null,
-  sides: Array<{ id: string; label: string }>,
+  main: { id: string; label: string; short?: string } | null,
+  sides: Array<{ id: string; label: string; short?: string }>,
 ): PaperPoint[] {
   const rand = seeded(hashCode(`${roleCode}:${band}:points`));
   const cx = PAPER_W / 2;
@@ -321,7 +361,7 @@ export function paperPoints(
     out.push({
       ...main,
       kind: 'main',
-      short: shortLabel(main.label),
+      short: main.short?.trim() || shortLabel(main.label),
       symbol: 'gem',
       x: cx,
       y: cy - 20,
@@ -339,7 +379,7 @@ export function paperPoints(
     out.push({
       ...side,
       kind: 'side',
-      short: shortLabel(side.label),
+      short: side.short?.trim() || shortLabel(side.label),
       symbol: SIDE_SYMBOLS[hashCode(side.id) % SIDE_SYMBOLS.length],
       x: cx + Math.cos(angle) * distance * 1.25,
       y: cy + Math.sin(angle) * distance * 0.82,
@@ -350,57 +390,28 @@ export function paperPoints(
 }
 
 /**
- * Mép tờ giấy, rách nham nhở như bản đồ cũ.
+ * Đường bình độ trong lòng đảo.
  *
- * Đi vòng quanh chu vi và đẩy từng điểm ra vào một chút. Biên độ tính theo
- * cạnh ngắn nên mép trên và mép bên rách cùng một cỡ, không bên nào trông như
- * bị xé mạnh tay hơn.
+ * Thay cho mấy nét đồi, cây, gò rải rác trước đây: chúng vẽ tay nên mỗi nét
+ * một kiểu và cộng lại thành nhiễu. Bình độ là chính đường bờ biển thu nhỏ
+ * dần về phía trọng tâm — vẫn đọc ra địa hình, nhưng bằng đúng một hình lặp
+ * lại nên nhìn gọn.
  */
-export function paperEdge(roleCode: string, band: string): MapPoint[] {
-  const rand = seeded(hashCode(`${roleCode}:${band}:edge`));
-  const perSide = 14;
-  const depth = Math.min(PAPER_W, PAPER_H) * 0.022;
+export function paperContours(
+  coast: MapPoint[],
+  rings = 3,
+): MapPoint[][] {
+  if (coast.length === 0) return [];
 
-  const out: MapPoint[] = [];
-  const push = (x: number, y: number, nx: number, ny: number) => {
-    const bite = rand() * depth;
-    out.push({ x: x + nx * bite, y: y + ny * bite });
-  };
+  const cx = coast.reduce((sum, p) => sum + p.x, 0) / coast.length;
+  const cy = coast.reduce((sum, p) => sum + p.y, 0) / coast.length;
 
-  for (let i = 0; i < perSide; i += 1) {
-    push((i / perSide) * PAPER_W, 0, 0, 1);
-  }
-  for (let i = 0; i < perSide; i += 1) {
-    push(PAPER_W, (i / perSide) * PAPER_H, -1, 0);
-  }
-  for (let i = perSide; i > 0; i -= 1) {
-    push((i / perSide) * PAPER_W, PAPER_H, 0, -1);
-  }
-  for (let i = perSide; i > 0; i -= 1) {
-    push(0, (i / perSide) * PAPER_H, 1, 0);
-  }
-
-  return out;
-}
-
-/** Nét địa hình vẽ tay: đồi, rừng, gò — rải trong lòng đảo giấy. */
-export function paperTerrain(
-  roleCode: string,
-  band: string,
-  count = 12,
-): Array<MapPoint & { kind: 'hill' | 'tree' | 'dune'; size: number }> {
-  const rand = seeded(hashCode(`${roleCode}:${band}:terrain`));
-  const kinds: Array<'hill' | 'tree' | 'dune'> = ['hill', 'tree', 'dune'];
-
-  return Array.from({ length: count }, () => {
-    const angle = rand() * Math.PI * 2;
-    const distance = rand() * Math.min(PAPER_W, PAPER_H) * 0.32;
-    return {
-      x: PAPER_W / 2 + Math.cos(angle) * distance * 1.3,
-      y: PAPER_H / 2 + Math.sin(angle) * distance,
-      kind: kinds[Math.floor(rand() * kinds.length)],
-      size: 12 + rand() * 12,
-    };
+  return Array.from({ length: rings }, (_, i) => {
+    const k = 1 - (i + 1) * (0.7 / (rings + 1));
+    return coast.map((p) => ({
+      x: cx + (p.x - cx) * k,
+      y: cy + (p.y - cy) * k,
+    }));
   });
 }
 
@@ -416,9 +427,6 @@ export function focusTransform(
     y: MAP_H / 2 - at.y * zoom,
   };
 }
-
-export const clampZoom = (zoom: number): number =>
-  Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Number(zoom.toFixed(3))));
 
 /**
  * Chỗ đứng của một ký hiệu trên màn hình, tính bằng pixel của khung nhìn.

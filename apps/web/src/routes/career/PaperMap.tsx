@@ -1,42 +1,45 @@
 import { useMemo } from 'react';
 import { cx } from '../../lib/cx';
 import {
+  GRID_STEP,
+  OVERSCAN,
   PAPER_H,
   PAPER_W,
+  gridTicks,
+  paperContours,
   paperCoast,
-  paperEdge,
   paperPoints,
-  paperTerrain,
   type Anchor,
   type PaperPoint,
   type PaperSymbol,
 } from './mapGeometry';
 
+export interface MapPointInput {
+  id: string;
+  label: string;
+  /** Tên gọn do dữ liệu đặt; thiếu thì giao diện tự rút gọn nhan đề. */
+  short?: string;
+  kind: 'main' | 'side';
+  done: boolean;
+}
+
 interface PaperMapProps {
   roleCode: string;
   band: string;
   bandLabel: string;
-  points: Array<{ id: string; label: string; kind: 'main' | 'side'; done: boolean }>;
-  /** Địa điểm đang mở hộp câu hỏi — các thứ còn lại mờ đi. */
+  points: MapPointInput[];
+  /** Địa điểm đang mở hộp câu hỏi. */
   openId: string | null;
   onPick: (id: string, at: Anchor) => void;
 }
 
-/** Nét vẽ tay cho từng loại địa hình, trong hệ toạ độ quanh gốc. */
-const TERRAIN: Record<string, string> = {
-  hill: 'M-14 6c4-9 9-12 14-12s10 3 14 12',
-  tree: 'M0 8V-2M-7 2c3-6 4-9 7-13 3 4 4 7 7 13Z',
-  dune: 'M-15 4c5-4 9-4 14 0s10 4 15 0',
-};
-
 /**
- * Ký hiệu địa điểm, vẽ theo lối bản đồ kho báu cổ.
+ * Ký hiệu địa điểm.
  *
- * Mỗi hình gồm một nét thân và vài nét phụ, vẽ quanh gốc toạ độ. Viên ngọc
- * dành riêng cho nhiệm vụ chính — trên bản đồ kho báu, thứ đáng đi tìm chỉ có
- * một. Nhiệm vụ phụ thì mỗi nơi một dáng (núi, dừa, thuyền, hải đăng, khinh
- * khí cầu) nên nhìn lướt cũng phân biệt được chỗ nào đã ghé, khác màu chứ
- * không chỉ khác chữ.
+ * Nét thẳng, độ dày đều nhau, vẽ quanh gốc toạ độ — cùng ngôn ngữ với phần
+ * còn lại của giao diện chứ không phải nét vẽ tay. Viên ngọc dành riêng cho
+ * nhiệm vụ chính: trên một tấm bản đồ, thứ đáng đi tìm chỉ có một. Nhiệm vụ
+ * phụ mỗi nơi một dáng nên nhìn lướt cũng phân biệt được, không phải đọc chữ.
  */
 const SYMBOLS: Record<PaperSymbol, { body: string; lines?: string }> = {
   gem: {
@@ -67,12 +70,12 @@ const SYMBOLS: Record<PaperSymbol, { body: string; lines?: string }> = {
 };
 
 /**
- * Bản đồ giấy bên trong một hòn đảo.
+ * Tấm bản đồ của một hòn đảo.
  *
- * Vẽ như một tờ bản đồ kho báu — mép giấy rách, khung kẻ hai nét, bờ biển
- * bằng nét mực, địa hình phác tay — nhưng lấy màu của nghề chứ không lấy màu
- * giấy ố: cả ứng dụng đã là trời đêm, một tờ giấy vàng giữa đó thì đẹp riêng
- * nó mà lạc khỏi phần còn lại.
+ * Vẫn đúng bố cục bản đồ kho báu — bờ biển, địa hình, hoa gió, ký hiệu địa
+ * điểm — nhưng vẽ bằng nét thẳng và màu của nghề thay vì nét mực trên giấy ố:
+ * cả ứng dụng là một bảng điều khiển trên nền trời đêm, tấm bản đồ phải nói
+ * cùng thứ tiếng ấy.
  */
 export function PaperMap({
   roleCode,
@@ -83,23 +86,21 @@ export function PaperMap({
   onPick,
 }: PaperMapProps) {
   const coast = useMemo(() => paperCoast(roleCode, band), [roleCode, band]);
-  const terrain = useMemo(() => paperTerrain(roleCode, band), [roleCode, band]);
-  const edge = useMemo(() => paperEdge(roleCode, band), [roleCode, band]);
+  const contours = useMemo(() => paperContours(coast), [coast]);
+
+  const cols = gridTicks(PAPER_W);
+  const rows = gridTicks(PAPER_H);
+  const first = -Math.ceil(OVERSCAN / GRID_STEP) * GRID_STEP;
 
   const marks: PaperPoint[] = useMemo(() => {
     const main = points.find((p) => p.kind === 'main');
     const sides = points.filter((p) => p.kind === 'side');
-    return paperPoints(
-      roleCode,
-      band,
-      main ? { id: main.id, label: main.label } : null,
-      sides.map((s) => ({ id: s.id, label: s.label })),
-    );
+    return paperPoints(roleCode, band, main ?? null, sides);
   }, [roleCode, band, points]);
 
   const doneById = new Map(points.map((p) => [p.id, p.done]));
-  const coastPath = coast.map((p) => `${p.x},${p.y}`).join(' ');
-  const edgePath = edge.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+  const poly = (list: { x: number; y: number }[]) =>
+    list.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
 
   /**
    * Đo ngay trên vòng halo chứ không trên cả nhóm: nhóm còn ôm cả dòng nhãn
@@ -118,59 +119,58 @@ export function PaperMap({
   return (
     <svg
       viewBox={`0 0 ${PAPER_W} ${PAPER_H}`}
-      className={cx('paper-map', openId && 'is-dimmed')}
+      className="paper-map"
       role="group"
       aria-label={`Bản đồ ${band} · ${bandLabel}`}
-      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
-        <pattern id="paper-grid" width="52" height="52" patternUnits="userSpaceOnUse">
-          <path d="M52 0H0V52" fill="none" className="paper-grid-line" />
-        </pattern>
-        <radialGradient id="paper-tint" cx="50%" cy="45%" r="70%">
+        <linearGradient id="paper-tint" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" className="paper-tint-in" />
           <stop offset="100%" className="paper-tint-out" />
-        </radialGradient>
-        {/* Mọi thứ trên tờ giấy phải nằm trong mép rách, kể cả lưới kẻ. */}
-        <clipPath id="paper-clip">
-          <polygon points={edgePath} />
-        </clipPath>
+        </linearGradient>
       </defs>
 
-      <g clipPath="url(#paper-clip)">
-        <rect width={PAPER_W} height={PAPER_H} fill="url(#paper-tint)" />
-        <rect width={PAPER_W} height={PAPER_H} fill="url(#paper-grid)" />
-
-        {/* phần mờ đi khi đang mở một hộp câu hỏi */}
-        <g className="paper-body">
-          {/* bờ biển: hai nét, một nét mực đậm và một nét nhạt bên ngoài */}
-          <polygon points={coastPath} className="paper-sand" />
-          <polygon points={coastPath} className="paper-coast-soft" />
-          <polygon points={coastPath} className="paper-coast" />
-
-          {/* địa hình phác tay */}
-          {terrain.map((item, i) => (
-            <path
-              key={i}
-              d={TERRAIN[item.kind]}
-              className="paper-terrain"
-              transform={`translate(${item.x} ${item.y}) scale(${item.size / 14})`}
-            />
+      <g>
+        {/* Nền và lưới kéo ra ngoài khung để lấp hai dải thừa hai bên trên
+            màn hình rộng — xem OVERSCAN. */}
+        <rect
+          x={first}
+          y={first}
+          width={PAPER_W - first * 2}
+          height={PAPER_H - first * 2}
+          fill="url(#paper-tint)"
+        />
+        <g className="paper-grid" aria-hidden="true">
+          {cols.map((x) => (
+            <line key={`v${x}`} x1={x} y1={rows[0]} x2={x} y2={rows[rows.length - 1]} />
           ))}
-
-          {/* hoa gió */}
-          <g className="paper-compass" transform={`translate(${PAPER_W - 92} ${PAPER_H - 84})`}>
-            <circle r={34} className="paper-compass-ring" />
-            <path d="M0-30 7-6 0 2-7-6Z" className="paper-compass-needle" />
-            <path d="M0 30 7 6 0-2-7 6Z" className="paper-compass-tail" />
-            <text y={-38} className="paper-compass-text">N</text>
-          </g>
+          {rows.map((y) => (
+            <line key={`h${y}`} x1={cols[0]} y1={y} x2={cols[cols.length - 1]} y2={y} />
+          ))}
         </g>
 
-        {/* khung kẻ hai nét, chạy dọc mép giấy */}
-        <g className="paper-frame" aria-hidden="true">
-          <rect x={16} y={16} width={PAPER_W - 32} height={PAPER_H - 32} />
-          <rect x={23} y={23} width={PAPER_W - 46} height={PAPER_H - 46} />
+        {/* ── Đảo: một nét bờ, bên trong là đường bình độ ── */}
+        <g className="paper-land" aria-hidden="true">
+          <polygon points={poly(coast)} className="paper-sand" />
+          {contours.map((ring, i) => (
+            <polygon key={i} points={poly(ring)} className="paper-contour" />
+          ))}
+          <polygon points={poly(coast)} className="paper-coast" />
+        </g>
+
+        {/* ── Hoa gió, rút về một vòng ngắm ── */}
+        <g
+          className="paper-compass"
+          aria-hidden="true"
+          transform={`translate(${PAPER_W - 84} ${PAPER_H - 80})`}
+        >
+          <circle r={30} className="paper-compass-ring" />
+          <circle r={3} className="paper-compass-hub" />
+          <path d="M0-30V-18M0 30V18M-30 0h12M30 0h-12" className="paper-compass-tick" />
+          <path d="M0-24 5-6 0-10-5-6Z" className="paper-compass-needle" />
+          <text y={-36} className="paper-compass-text">
+            N
+          </text>
         </g>
 
         {/* ── Ký hiệu địa điểm ── */}
@@ -185,7 +185,6 @@ export function PaperMap({
                 'paper-mark',
                 mark.kind === 'main' && 'is-main',
                 doneById.get(mark.id) && 'is-done',
-                openId && !isOpen && 'is-faded',
                 isOpen && 'is-open',
               )}
               transform={`translate(${mark.x} ${mark.y})`}
@@ -207,7 +206,7 @@ export function PaperMap({
               <path d={art.body} className="paper-mark-body" />
               {art.lines && <path d={art.lines} className="paper-mark-line" />}
 
-              <text y={mark.kind === 'main' ? 44 : 40} className="paper-mark-label">
+              <text y={mark.kind === 'main' ? 46 : 41} className="paper-mark-label">
                 {mark.short}
               </text>
             </g>
@@ -215,8 +214,6 @@ export function PaperMap({
         })}
       </g>
 
-      {/* mép giấy rách, vẽ sau cùng để nét viền nằm trên mọi thứ */}
-      <polygon points={edgePath} className="paper-edge" />
     </svg>
   );
 }

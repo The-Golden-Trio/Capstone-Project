@@ -136,10 +136,27 @@ export function PlayPage() {
 
   return (
     <RoleTheme roleCode={scenario.job.role_code}>
-      <div className="mx-auto max-w-[720px]">
-        <SceneHeader scenario={scenario} />
-        <StakesBar scenario={scenario} />
-        <CastRail scenario={scenario} speakingNpcId={speakingNpcId} />
+      {/*
+        Hai cột: bối cảnh bên trái, cảnh đang diễn bên phải.
+
+        Xếp một cột thì bối cảnh trôi lên trên và biến mất ngay khi lời thoại
+        dài ra — mà "bạn là ai, mất gì nếu hỏng, ai đang ở đây" là thứ phải
+        thấy suốt lúc chọn. Cột trái dính theo màn hình vì lý do đó. Dưới
+        1100px thì xếp chồng lại, cột trái lên trên.
+      */}
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-5 min-[1100px]:grid-cols-[minmax(300px,360px)_1fr]">
+        <aside className="flex flex-col gap-0 min-[1100px]:sticky min-[1100px]:top-5">
+          <SceneHeader scenario={scenario} />
+          <StakesBar scenario={scenario} />
+          <CastRail scenario={scenario} speakingNpcId={speakingNpcId} />
+          <SkillChips scenario={scenario} />
+
+          <div className="mt-2">
+            <Button size="sm" onClick={() => navigate(-1)}>
+              Rời màn chơi
+            </Button>
+          </div>
+        </aside>
 
         <Card>
           <CardBody>
@@ -251,14 +268,6 @@ export function PlayPage() {
             )}
           </CardBody>
         </Card>
-
-        <SkillChips scenario={scenario} />
-
-        <div className="mt-2">
-          <Button size="sm" onClick={() => navigate(-1)}>
-            Rời màn chơi
-          </Button>
-        </div>
       </div>
     </RoleTheme>
   );

@@ -406,6 +406,7 @@ export const ModelName = {
   RunEvidence: 'RunEvidence',
   UserBandSkill: 'UserBandSkill',
   EventAnswer: 'EventAnswer',
+  EventAward: 'EventAward',
   Enrollment: 'Enrollment'
 } as const
 
@@ -422,7 +423,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "oAuthAccount" | "refreshToken" | "parentalConsent" | "gameProfile" | "scenarioRun" | "runEvidence" | "userBandSkill" | "eventAnswer" | "enrollment"
+    modelProps: "user" | "oAuthAccount" | "refreshToken" | "parentalConsent" | "gameProfile" | "scenarioRun" | "runEvidence" | "userBandSkill" | "eventAnswer" | "eventAward" | "enrollment"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1092,6 +1093,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    EventAward: {
+      payload: Prisma.$EventAwardPayload<ExtArgs>
+      fields: Prisma.EventAwardFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.EventAwardFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.EventAwardFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>
+        }
+        findFirst: {
+          args: Prisma.EventAwardFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.EventAwardFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>
+        }
+        findMany: {
+          args: Prisma.EventAwardFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>[]
+        }
+        create: {
+          args: Prisma.EventAwardCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>
+        }
+        createMany: {
+          args: Prisma.EventAwardCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.EventAwardCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>[]
+        }
+        delete: {
+          args: Prisma.EventAwardDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>
+        }
+        update: {
+          args: Prisma.EventAwardUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>
+        }
+        deleteMany: {
+          args: Prisma.EventAwardDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.EventAwardUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.EventAwardUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>[]
+        }
+        upsert: {
+          args: Prisma.EventAwardUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventAwardPayload>
+        }
+        aggregate: {
+          args: Prisma.EventAwardAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEventAward>
+        }
+        groupBy: {
+          args: Prisma.EventAwardGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EventAwardGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.EventAwardCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EventAwardCountAggregateOutputType> | number
+        }
+      }
+    }
     Enrollment: {
       payload: Prisma.$EnrollmentPayload<ExtArgs>
       fields: Prisma.EnrollmentFieldRefs
@@ -1324,6 +1399,19 @@ export const EventAnswerScalarFieldEnum = {
 } as const
 
 export type EventAnswerScalarFieldEnum = (typeof EventAnswerScalarFieldEnum)[keyof typeof EventAnswerScalarFieldEnum]
+
+
+export const EventAwardScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  roleCode: 'roleCode',
+  band: 'band',
+  eventId: 'eventId',
+  points: 'points',
+  awardedAt: 'awardedAt'
+} as const
+
+export type EventAwardScalarFieldEnum = (typeof EventAwardScalarFieldEnum)[keyof typeof EventAwardScalarFieldEnum]
 
 
 export const EnrollmentScalarFieldEnum = {
@@ -1669,6 +1757,7 @@ export type GlobalOmitConfig = {
   runEvidence?: Prisma.RunEvidenceOmit
   userBandSkill?: Prisma.UserBandSkillOmit
   eventAnswer?: Prisma.EventAnswerOmit
+  eventAward?: Prisma.EventAwardOmit
   enrollment?: Prisma.EnrollmentOmit
 }
 

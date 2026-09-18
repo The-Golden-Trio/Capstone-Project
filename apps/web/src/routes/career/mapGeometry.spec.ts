@@ -9,19 +9,19 @@
  */
 import { describe, expect, it } from 'vitest';
 import {
+  GRID_STEP,
   MAP_H,
   MAP_W,
+  OVERSCAN,
   PAPER_H,
   PAPER_W,
-  ZOOM_MAX,
-  ZOOM_MIN,
-  clampZoom,
+  columnLabel,
   focusTransform,
+  gridTicks,
   islands,
+  paperContours,
   paperCoast,
-  paperEdge,
   paperPoints,
-  paperTerrain,
   seaRoutes,
   shortLabel,
   type Island,
@@ -148,12 +148,9 @@ describe('bản đồ giấy', () => {
     }
   });
 
-  it('cùng đảo thì địa điểm và địa hình nằm cố định', () => {
+  it('cùng đảo thì địa điểm nằm cố định', () => {
     expect(paperPoints('SWE_BACKEND', 'L1', null, sides(4))).toEqual(
       paperPoints('SWE_BACKEND', 'L1', null, sides(4)),
-    );
-    expect(paperTerrain('SWE_BACKEND', 'L1')).toEqual(
-      paperTerrain('SWE_BACKEND', 'L1'),
     );
   });
 
@@ -176,10 +173,6 @@ describe('phóng và thu', () => {
     expect(island.y * view.scale + view.y).toBeCloseTo(MAP_H / 2);
   });
 
-  it('mức phóng bị chặn hai đầu', () => {
-    expect(clampZoom(99)).toBe(ZOOM_MAX);
-    expect(clampZoom(0.01)).toBe(ZOOM_MIN);
-  });
 });
 
 describe('hải trình nối các đảo', () => {
@@ -206,27 +199,69 @@ describe('hải trình nối các đảo', () => {
   });
 });
 
-describe('mép giấy rách', () => {
-  it('rách vào trong, không lấn ra ngoài khung', () => {
-    for (const code of CODES) {
-      for (const point of paperEdge(code, 'L1')) {
-        expect(point.x).toBeGreaterThanOrEqual(0);
-        expect(point.x).toBeLessThanOrEqual(PAPER_W);
-        expect(point.y).toBeGreaterThanOrEqual(0);
-        expect(point.y).toBeLessThanOrEqual(PAPER_H);
-      }
+describe('lưới toạ độ tràn ra ngoài khung', () => {
+  it('phủ kín cả phần lấn ra hai bên', () => {
+    const ticks = gridTicks(MAP_W);
+    expect(ticks[0]).toBeLessThanOrEqual(-OVERSCAN);
+    expect(ticks[ticks.length - 1]).toBeGreaterThanOrEqual(MAP_W + OVERSCAN);
+  });
+
+  it('các mốc cách đều nhau đúng một ô', () => {
+    const ticks = gridTicks(MAP_H);
+    for (let i = 1; i < ticks.length; i += 1) {
+      expect(ticks[i] - ticks[i - 1]).toBe(GRID_STEP);
     }
   });
 
-  it('thật sự nham nhở chứ không phải hình chữ nhật', () => {
-    const top = paperEdge('SWE_BACKEND', 'L1').slice(0, 14);
-    expect(new Set(top.map((p) => p.y.toFixed(3))).size).toBeGreaterThan(8);
+  it('vẫn đi qua đúng mép khung, để vùng có đảo trùng với lưới', () => {
+    const ticks = gridTicks(MAP_W);
+    expect(ticks).toContain(0);
+    expect(ticks).toContain(MAP_W);
+  });
+});
+
+describe('nhãn cột', () => {
+  it('chạy A, B, C… trong 26 cột đầu', () => {
+    expect(columnLabel(0)).toBe('A');
+    expect(columnLabel(25)).toBe('Z');
   });
 
-  it('cùng một đảo thì mép giấy không đổi', () => {
-    expect(paperEdge('SWE_BACKEND', 'L2')).toEqual(
-      paperEdge('SWE_BACKEND', 'L2'),
-    );
+  it('hết bảng chữ cái thì quay vòng có tiền tố, không bỏ trống', () => {
+    expect(columnLabel(26)).toBe('AA');
+    expect(columnLabel(27)).toBe('AB');
+    expect(columnLabel(51)).toBe('AZ');
+    expect(columnLabel(52)).toBe('BA');
+  });
+
+  it('mọi cột trên lưới đều có nhãn', () => {
+    for (let i = 0; i < gridTicks(MAP_W).length; i += 1) {
+      expect(columnLabel(i)).toMatch(/^[A-Z]+$/);
+    }
+  });
+});
+
+describe('đường bình độ', () => {
+  const coast = paperCoast('SWE_BACKEND', 'L1');
+
+  it('mỗi vòng có đúng số đỉnh như bờ biển', () => {
+    for (const ring of paperContours(coast)) {
+      expect(ring).toHaveLength(coast.length);
+    }
+  });
+
+  it('vòng trong nhỏ dần và luôn nằm trong vòng ngoài', () => {
+    const rings = [coast, ...paperContours(coast)];
+    const spread = (list: Array<{ x: number; y: number }>) =>
+      Math.max(...list.map((p) => p.x)) - Math.min(...list.map((p) => p.x));
+
+    for (let i = 1; i < rings.length; i += 1) {
+      expect(spread(rings[i])).toBeLessThan(spread(rings[i - 1]));
+      expect(spread(rings[i])).toBeGreaterThan(0);
+    }
+  });
+
+  it('đảo không có bờ thì không có bình độ', () => {
+    expect(paperContours([])).toEqual([]);
   });
 });
 
@@ -300,6 +335,30 @@ describe('ký hiệu địa điểm', () => {
         { id: 'event:x', label: 'Một tình huống' },
       ]);
     expect(build()[0].symbol).toBe(build()[0].symbol);
+  });
+
+  it('tên do dữ liệu đặt được dùng thay cho phép tự rút gọn', () => {
+    const [point] = paperPoints(
+      'SWE_BACKEND',
+      'L1',
+      {
+        id: 'scenario:a',
+        label: 'Tham gia fix các bug mức độ ưu tiên thấp',
+        short: 'Sửa bug nhỏ',
+      },
+      [],
+    );
+    expect(point.short).toBe('Sửa bug nhỏ');
+  });
+
+  it('tên rỗng trong dữ liệu thì quay về phép tự rút gọn', () => {
+    const [point] = paperPoints(
+      'SWE_BACKEND',
+      'L1',
+      { id: 'scenario:a', label: 'Tối ưu hóa các API bị chậm', short: '  ' },
+      [],
+    );
+    expect(point.short).toBe(shortLabel('Tối ưu hóa các API bị chậm'));
   });
 
   it('mọi địa điểm đều có tên ngắn để in ra', () => {

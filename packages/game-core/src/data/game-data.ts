@@ -3092,6 +3092,7 @@ export const RAW_GAME_DATA: unknown = {
         "note": "Kịch bản mở màn của nghề Back-end. Cố ý phủ cả bốn loại activity (PRIORITIZING, CHOICE, ORDERING, FREETEXT) vì L1 là chỗ các loại đóng hợp lý nhất — intern nhận việc đã chia sẵn, phần lớn quyết định là chọn và sắp xếp trong phạm vi đã giới hạn."
       },
       "scenario_title": "Tham gia fix các bug mức độ ưu tiên thấp",
+      "shortname": "Sửa bug nhỏ",
       "job": {
         "role_code": "SWE_BACKEND",
         "role_name_vn": "Lập trình viên Back-end",
@@ -3460,6 +3461,7 @@ export const RAW_GAME_DATA: unknown = {
         "note": "Golden anchor cho spec-scenario-KHOI1.md. Chọn SWE_BACKEND L3 vì level này là A_VERIFIED (task/skill lấy từ JD thật), nằm giữa thang nên thể hiện rõ cả trục ROLE lẫn trục BAND, và là role có nhiều tin tuyển nhất theo outlook/posting_counts.csv."
       },
       "scenario_title": "Tối ưu hóa các API bị chậm",
+      "shortname": "Tối ưu API",
       "job": {
         "role_code": "SWE_BACKEND",
         "role_name_vn": "Lập trình viên Back-end",

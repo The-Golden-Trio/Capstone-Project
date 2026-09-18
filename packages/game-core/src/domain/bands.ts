@@ -33,6 +33,18 @@ export const BAND_LABEL: Record<string, string> = {
 /** Điểm kỹ năng cần có ở một cấp bậc để mở cấp kế tiếp. */
 export const UNLOCK_AT = 6;
 
+/**
+ * Điểm kỹ năng cho mỗi nhiệm vụ phụ làm xong tại một cấp bậc.
+ *
+ * Nhiệm vụ phụ không có thang chấm như hoạt động trong kịch bản — dữ liệu chỉ
+ * có tín hiệu tính cách, không có mốc hành vi — nên trao đều.
+ *
+ * Con số 2 đi cùng với việc mỗi hòn đảo chỉ bày ra 3–4 nhiệm vụ: 3 × 2 = 6 =
+ * `UNLOCK_AT`, nên hòn đảo nghèo nhiệm vụ nhất vẫn đủ để mở cấp bậc kế. Đó là
+ * con đường duy nhất qua những cấp bậc chưa dựng nhiệm vụ chính.
+ */
+export const SIDE_QUEST_POINTS = 2;
+
 /** Mốc hành vi -> điểm kỹ năng. */
 export const POINTS: Record<Anchor, number> = { '+2': 2, '0': 1, '-1': 0 };
 

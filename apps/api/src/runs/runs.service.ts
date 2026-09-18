@@ -5,7 +5,6 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import {
-  bandsOf,
   findRole,
   findScenarioByKey,
   keywordGrader,
@@ -203,7 +202,11 @@ export class RunsService {
       endingType: ending.type,
       pointsAwarded: awards,
       bandPoints: bandSkill.points,
-      unlockedBand: await this.nextlyUnlockedBand(userId, run.roleCode, run.band),
+      unlockedBand: await this.progress.unlockedAfter(
+        userId,
+        run.roleCode,
+        run.band,
+      ),
       alreadyScored: Boolean(previouslyScored),
       evidence,
     };
@@ -238,22 +241,6 @@ export class RunsService {
       if (state.phase === 'ended') break;
     }
     return state;
-  }
-
-  /** Cấp bậc kế đã mở chưa sau khi cộng điểm — để giao diện báo mừng đúng lúc. */
-  private async nextlyUnlockedBand(
-    userId: string,
-    roleCode: string,
-    band: string,
-  ): Promise<string | null> {
-    const role = findRole(roleCode);
-    if (!role) return null;
-
-    const list = bandsOf(role);
-    const next = list[list.indexOf(band) + 1];
-    if (!next) return null;
-
-    return (await this.progress.isUnlocked(userId, role, next)) ? next : null;
   }
 
   /* ── Lịch sử ─────────────────────────────────────────────────────── */

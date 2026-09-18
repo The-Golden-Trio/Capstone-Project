@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import {
-  eventsForRole,
   findRole,
   findScenario,
   shortRoleName,
+  sideQuestsFor,
 } from '@datn/game-core';
 import { profileApi } from '../../api/endpoints';
 import type { RoleProgress } from '../../api/schemas';
@@ -13,17 +13,12 @@ import { Note } from '../../components/ui/Note';
 import { useT } from '../../i18n/useT';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProfileStore } from '../../store/profileStore';
+import { useProgressStore } from '../../store/progressStore';
 import { IslandsView } from './IslandsView';
 import { LevelPanel } from './LevelPanel';
 import { PaperMap } from './PaperMap';
 import { QuestBox } from './QuestBox';
-import {
-  ZOOM_MAX,
-  ZOOM_MIN,
-  ZOOM_OVERVIEW,
-  clampZoom,
-  type Anchor,
-} from './mapGeometry';
+import type { Anchor } from './mapGeometry';
 
 /** Ba cảnh của màn này. */
 type Stage = 'sea' | 'sailing' | 'paper';
@@ -47,6 +42,7 @@ export function CareerMapPage() {
   const navigate = useNavigate();
   const t = useT();
   const setLocation = useJourneyStore((s) => s.setLocation);
+  const loadProgress = useProgressStore((s) => s.load);
   const doneEventIds = useProfileStore((s) => s.doneEventIds);
 
   const [progress, setProgress] = useState<RoleProgress | null>(null);
@@ -58,19 +54,26 @@ export function CareerMapPage() {
     null,
   );
   const [panelOpen, setPanelOpen] = useState(true);
-  const [zoom, setZoom] = useState(ZOOM_OVERVIEW);
   const [error, setError] = useState<string | null>(null);
 
   const firstLoad = useRef(true);
   const role = findRole(roleCode);
 
-  useEffect(() => {
+  /**
+   * Tải lại lộ trình của nghề.
+   *
+   * Gọi lúc mở trang, và mỗi lần người chơi vừa được cộng điểm ở một nhiệm vụ
+   * phụ: điểm ấy có thể vừa mở hòn đảo kế, mà quần đảo thì vẽ từ đúng dữ liệu
+   * này.
+   */
+  const refreshProgress = useCallback(() => {
     if (!role) return;
-    let alive = true;
+    // Thanh kinh nghiệm dưới đáy đọc từ `progressStore`, nên phải nạp lại cả
+    // chỗ đó — nếu không, điểm vừa cộng chỉ hiện trong hộp câu hỏi.
+    void loadProgress();
     profileApi
       .role(role.role_code)
       .then((next) => {
-        if (!alive) return;
         setProgress(next);
         const current =
           next.bands.find((b) => b.unlocked && !b.completed) ?? next.bands[0];
@@ -80,10 +83,9 @@ export function CareerMapPage() {
       .catch((err: unknown) =>
         setError(err instanceof Error ? err.message : 'Không tải được bản đồ'),
       );
-    return () => {
-      alive = false;
-    };
-  }, [role, setLocation]);
+  }, [role, setLocation, loadProgress]);
+
+  useEffect(refreshProgress, [refreshProgress]);
 
   /**
    * Cảnh nào đang diễn là do đường dẫn quyết định.
@@ -100,7 +102,6 @@ export function CareerMapPage() {
 
     if (!openBand) {
       setStage('sea');
-      setZoom(ZOOM_OVERVIEW);
       return;
     }
 
@@ -133,12 +134,14 @@ export function CareerMapPage() {
           {
             id: `scenario:${entry.key}`,
             label: entry.scenario.scenario_title,
+            short: entry.scenario.shortname ?? undefined,
             kind: 'main' as const,
             done: bands.find((b) => b.band === openBand)?.completed ?? false,
           },
         ]
       : [];
-    const sides = eventsForRole(role).map((event) => ({
+    // Mỗi đảo một nhóm nhiệm vụ phụ riêng, lọc theo `band_range` của dữ liệu.
+    const sides = sideQuestsFor(role, openBand).map((event) => ({
       id: `event:${event.event_id}`,
       label: event.title,
       kind: 'side' as const,
@@ -155,11 +158,15 @@ export function CareerMapPage() {
     return <Navigate to={`/jobs/${roleCode}`} replace />;
   }
 
+  /**
+   * Bấm vào đảo chỉ mở bảng thông tin của chặng — muốn vào thì bấm nút trong
+   * bảng. Trước đây đảo đã ghi danh thì bấm một cái là đi luôn, nên cùng một
+   * cử chỉ cho hai kết quả khác nhau tuỳ trạng thái, và không xem lại được
+   * thông tin chặng mình đang học.
+   */
   const pickIsland = (band: string) => {
     setSelectedBand(band);
     setPanelOpen(true);
-    const target = bands.find((b) => b.band === band);
-    if (target?.enrolled) navigate(islandPath(band));
   };
 
   const backToSea = () => navigate(`/jobs/${roleCode}`);
@@ -174,7 +181,6 @@ export function CareerMapPage() {
           selectedBand={selectedBand}
           currentBand={currentBand}
           zoomingBand={stage === 'sailing' ? openBand : null}
-          zoom={zoom}
           onPickIsland={pickIsland}
         />
       </div>
@@ -182,6 +188,16 @@ export function CareerMapPage() {
       {/* ── Bản đồ giấy của hòn đảo ── */}
       {stage === 'paper' && opened && (
         <div className="paper-stage">
+          {/* Ngoặc bốn góc màn hình: dấu "đây là một tấm hiển thị". Đặt ở
+              mép khung chứ không vẽ trong SVG, vì bản đồ giờ tràn hết khung
+              nên không còn mép nào bên trong để bám vào. */}
+          <div className="map-corners" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+
           <PaperMap
             roleCode={role.role_code}
             band={opened.band}
@@ -198,6 +214,7 @@ export function CareerMapPage() {
               band={opened.band}
               markId={openMark.id}
               anchor={openMark.anchor}
+              onAwarded={refreshProgress}
               onClose={() => setOpenMark(null)}
             />
           )}
@@ -231,28 +248,6 @@ export function CareerMapPage() {
       {error && (
         <div className="absolute left-4 top-16 z-20 w-[min(380px,calc(100%-32px))]">
           <Note tone="warn">{error}</Note>
-        </div>
-      )}
-
-      {/* Nút phóng chỉ có nghĩa ở mặt biển; trên giấy thì tờ bản đồ vừa khung. */}
-      {stage === 'sea' && (
-        <div className="map-zoom">
-          <button
-            type="button"
-            onClick={() => setZoom((z) => clampZoom(z * 1.3))}
-            disabled={zoom >= ZOOM_MAX}
-            aria-label="Phóng to"
-          >
-            +
-          </button>
-          <button
-            type="button"
-            onClick={() => setZoom((z) => clampZoom(z / 1.3))}
-            disabled={zoom <= ZOOM_MIN}
-            aria-label="Thu nhỏ"
-          >
-            −
-          </button>
         </div>
       )}
 

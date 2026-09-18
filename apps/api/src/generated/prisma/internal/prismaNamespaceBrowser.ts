@@ -60,6 +60,7 @@ export const ModelName = {
   RunEvidence: 'RunEvidence',
   UserBandSkill: 'UserBandSkill',
   EventAnswer: 'EventAnswer',
+  EventAward: 'EventAward',
   Enrollment: 'Enrollment'
 } as const
 
@@ -198,6 +199,19 @@ export const EventAnswerScalarFieldEnum = {
 } as const
 
 export type EventAnswerScalarFieldEnum = (typeof EventAnswerScalarFieldEnum)[keyof typeof EventAnswerScalarFieldEnum]
+
+
+export const EventAwardScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  roleCode: 'roleCode',
+  band: 'band',
+  eventId: 'eventId',
+  points: 'points',
+  awardedAt: 'awardedAt'
+} as const
+
+export type EventAwardScalarFieldEnum = (typeof EventAwardScalarFieldEnum)[keyof typeof EventAwardScalarFieldEnum]
 
 
 export const EnrollmentScalarFieldEnum = {

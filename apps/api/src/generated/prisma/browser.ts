@@ -78,6 +78,17 @@ export type UserBandSkill = Prisma.UserBandSkillModel
  */
 export type EventAnswer = Prisma.EventAnswerModel
 /**
+ * Model EventAward
+ * Điểm kỹ năng đã trao cho một nhiệm vụ phụ, tại một cấp bậc.
+ * 
+ * Tách khỏi `EventAnswer` vì hai sổ trả lời hai câu khác nhau. `EventAnswer`
+ * là chân dung: mỗi nhiệm vụ chỉ được nói một lần, đổi lựa chọn thì thay chứ
+ * không cộng thêm, nếu không vector tính cách sẽ phình theo số lần bấm. Còn
+ * sổ này là tiến trình: cùng một nhiệm vụ làm ở cấp bậc khác thì là công
+ * khác, nhưng làm lại ở đúng cấp bậc cũ thì không được tính nữa.
+ */
+export type EventAward = Prisma.EventAwardModel
+/**
  * Model Enrollment
  * Ghi danh một cấp bậc của một nghề.
  * 

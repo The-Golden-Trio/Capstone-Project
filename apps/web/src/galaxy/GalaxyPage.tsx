@@ -142,7 +142,7 @@ export function GalaxyPage() {
   const flightTarget = flight ? findPlanet(flight.to) : undefined;
 
   return (
-    <div className="relative h-[calc(100dvh-57px)] w-full overflow-hidden bg-[#05081a]">
+    <div className="relative h-full w-full overflow-hidden bg-[#05081a]">
       <GalaxyCanvas current={current.roleCode} unlocked={unlockedSet} />
 
       {/* lớp HUD: mọi thứ mặc định không bắt chuột, chỉ từng khối tự bật lại.

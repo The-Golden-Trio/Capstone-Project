@@ -106,7 +106,13 @@ export const profileApi = {
 
   answerEvent: (
     eventId: string,
-    body: { roleCode: string; band: string; choiceIndex: number },
+    body: {
+      roleCode: string;
+      band: string;
+      /** Câu tự luận, hoặc số thứ tự phương án — đúng một trong hai. */
+      answer?: string;
+      choiceIndex?: number;
+    },
   ): Promise<EventAnswerResult> =>
     api(`/profile/events/${eventId}`, EventAnswerResultSchema, {
       method: 'POST',

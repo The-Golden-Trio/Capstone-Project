@@ -24,6 +24,21 @@ function rng(seed: number) {
 
 const STAR_TINTS = ['#ffffff', '#dfe8ff', '#ffe9c7', '#c8f5ff', '#ffd6e8', '#f0d79a'];
 
+/**
+ * Thông số từng lớp sao, để sẵn ở đây chứ không viết thẳng vào JSX.
+ *
+ * `shell` và `size` là mảng, mà `useMemo` dựng geometry lại so sánh chúng theo
+ * tham chiếu: viết thẳng trong JSX thì mỗi lần `Background` vẽ lại là có mảng
+ * mới, deps đổi, và cả 6.000 ngôi sao bị dựng lại từ đầu — thấy được bằng mắt,
+ * và bộ nhớ cũ thì không ai thu.
+ */
+const LAYERS = {
+  core: { count: 900, seed: 53, shell: [4, 120] as [number, number], size: [2, 6] as [number, number] },
+  far: { count: 4200, seed: 11, shell: [1200, 1800] as [number, number], size: [1.1, 2.6] as [number, number] },
+  bright: { count: 260, seed: 23, shell: [1150, 1700] as [number, number], size: [3, 5.5] as [number, number] },
+  dust: { count: 900, seed: 37, shell: [30, 560] as [number, number], size: [4, 11] as [number, number] },
+} as const;
+
 interface StarLayerProps {
   count: number;
   seed: number;
@@ -152,7 +167,7 @@ function GalacticCore() {
           />
         </mesh>
       </Billboard>
-      <StarLayer count={900} seed={53} shell={[4, 120]} size={[2, 6]} opacity={0.55} attenuate={1} disk drift={0.01} />
+      <StarLayer {...LAYERS.core} opacity={0.55} attenuate={1} disk drift={0.01} />
     </group>
   );
 }
@@ -163,11 +178,11 @@ export function Background() {
       <NebulaSky />
       <GalacticCore />
       {/* sao xa: nhiều, nhỏ, cỡ cố định — nhấp nháy nhẹ */}
-      <StarLayer count={4200} seed={11} shell={[1200, 1800]} size={[1.1, 2.6]} opacity={0.85} attenuate={0} />
+      <StarLayer {...LAYERS.far} opacity={0.85} attenuate={0} />
       {/* sao sáng: ít, to hơn, có sắc — điểm nhấn */}
-      <StarLayer count={260} seed={23} shell={[1150, 1700]} size={[3, 5.5]} opacity={1} attenuate={0} />
+      <StarLayer {...LAYERS.bright} opacity={1} attenuate={0} />
       {/* bụi giữa các hệ: to, mờ, trôi chậm — tạo chiều sâu khi xoay */}
-      <StarLayer count={900} seed={37} shell={[30, 560]} size={[4, 11]} opacity={0.3} attenuate={1} disk drift={0.005} />
+      <StarLayer {...LAYERS.dust} opacity={0.3} attenuate={1} disk drift={0.005} />
     </>
   );
 }

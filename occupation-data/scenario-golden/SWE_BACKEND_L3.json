@@ -8,6 +8,7 @@
     "note": "Golden anchor cho spec-scenario-KHOI1.md. Chọn SWE_BACKEND L3 vì level này là A_VERIFIED (task/skill lấy từ JD thật), nằm giữa thang nên thể hiện rõ cả trục ROLE lẫn trục BAND, và là role có nhiều tin tuyển nhất theo outlook/posting_counts.csv."
   },
   "scenario_title": "Tối ưu hóa các API bị chậm",
+  "shortname": "Tối ưu API",
   "job": {
     "role_code": "SWE_BACKEND",
     "role_name_vn": "Lập trình viên Back-end",

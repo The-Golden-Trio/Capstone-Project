@@ -129,7 +129,7 @@ export function CurrentPlaceToggle() {
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
-              onClick={() => go(`/jobs/${role.role_code}/${band}/tasks`)}
+              onClick={() => go(`/jobs/${role.role_code}/${band}`)}
               className="flex-1 rounded-[7px] border border-[var(--accent)] bg-[var(--accent-soft)] px-3 py-2 text-[12.5px] font-medium text-[var(--accent)] transition-colors hover:brightness-110"
             >
               {t('here.continue')}

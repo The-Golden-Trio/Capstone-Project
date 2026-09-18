@@ -2,9 +2,14 @@ import { useMemo } from 'react';
 import type { BandProgress } from '../../api/schemas';
 import { cx } from '../../lib/cx';
 import {
+  GRID_STEP,
   MAP_H,
   MAP_W,
+  OVERSCAN,
+  SAIL_ZOOM,
+  columnLabel,
   focusTransform,
+  gridTicks,
   islands as buildIslands,
   seaRoutes,
 } from './mapGeometry';
@@ -16,15 +21,11 @@ interface IslandsViewProps {
   currentBand: string | null;
   /** Đảo đang được phóng vào trước khi mở bản đồ giấy. */
   zoomingBand: string | null;
-  zoom: number;
   onPickIsland: (band: string) => void;
 }
 
 /** Ghim giọt nước, chân đúng ngay gốc toạ độ. */
 const PIN = 'M0 0c0-13-11-21-11-32a11 11 0 0 1 22 0c0 11-11 19-11 32Z';
-
-/** Nhãn cột A, B, C… và hàng 1, 2, 3… như lưới toạ độ trên hải đồ. */
-const COLUMN_LETTERS = 'ABCDEFGHIJKLMNOP';
 
 /**
  * Quần đảo của một nghề.
@@ -34,8 +35,8 @@ const COLUMN_LETTERS = 'ABCDEFGHIJKLMNOP';
  * chú ý với các đảo.
  *
  * Ghim và nhãn được chống-phóng (`scale(1/zoom)`) nên kích thước không đổi
- * theo mức phóng: nhóm ngoài mang phép zoom, thiếu lớp này thì chữ 13px ở
- * mức 3× hoá 39px và đè lên nhau.
+ * lúc phóng vào đảo: nhóm ngoài mang phép zoom, thiếu lớp này thì chữ 13px ở
+ * mức 2,4× hoá 31px và đè lên nhau.
  */
 export function IslandsView({
   roleCode,
@@ -43,7 +44,6 @@ export function IslandsView({
   selectedBand,
   currentBand,
   zoomingBand,
-  zoom,
   onPickIsland,
 }: IslandsViewProps) {
   const list = useMemo(
@@ -54,11 +54,12 @@ export function IslandsView({
   const routes = useMemo(() => seaRoutes(list), [list]);
 
   const focused = list.find((i) => i.band === zoomingBand) ?? null;
-  const view = focusTransform(focused, focused ? 2.4 : zoom);
+  const view = focusTransform(focused, focused ? SAIL_ZOOM : 1);
   const k = 1 / view.scale;
 
-  const gridCols = Math.round(MAP_W / 100);
-  const gridRows = Math.round(MAP_H / 100);
+  const cols = gridTicks(MAP_W);
+  const rows = gridTicks(MAP_H);
+  const first = -Math.ceil(OVERSCAN / GRID_STEP) * GRID_STEP;
 
   return (
     <svg
@@ -75,7 +76,15 @@ export function IslandsView({
         </radialGradient>
       </defs>
 
-      <rect width={MAP_W} height={MAP_H} fill="url(#sea-depth)" />
+      {/* Nền và lưới kéo ra ngoài khung 1600×900 để lấp hai dải thừa hai
+          bên trên màn hình rộng — xem OVERSCAN. */}
+      <rect
+        x={first}
+        y={first}
+        width={MAP_W - first * 2}
+        height={MAP_H - first * 2}
+        fill="url(#sea-depth)"
+      />
 
       <g
         className="sea-view"
@@ -85,24 +94,45 @@ export function IslandsView({
       >
         {/* ── Lưới toạ độ, cố ý để mờ ── */}
         <g className="sea-grid" aria-hidden="true">
-          {Array.from({ length: gridCols + 1 }, (_, i) => (
-            <line key={`v${i}`} x1={i * 100} y1={0} x2={i * 100} y2={MAP_H} />
+          {cols.map((x, i) => (
+            <line
+              key={`v${x}`}
+              className={i % 5 === 0 ? 'is-major' : undefined}
+              x1={x}
+              y1={rows[0]}
+              x2={x}
+              y2={rows[rows.length - 1]}
+            />
           ))}
-          {Array.from({ length: gridRows + 1 }, (_, i) => (
-            <line key={`h${i}`} x1={0} y1={i * 100} x2={MAP_W} y2={i * 100} />
+          {rows.map((y, i) => (
+            <line
+              key={`h${y}`}
+              className={i % 5 === 0 ? 'is-major' : undefined}
+              x1={cols[0]}
+              y1={y}
+              x2={cols[cols.length - 1]}
+              y2={y}
+            />
           ))}
         </g>
         <g className="sea-coord" aria-hidden="true">
-          {Array.from({ length: gridCols }, (_, i) => (
-            <text key={`c${i}`} x={i * 100 + 50} y={22}>
-              {COLUMN_LETTERS[i] ?? ''}
-            </text>
-          ))}
-          {Array.from({ length: gridRows }, (_, i) => (
-            <text key={`r${i}`} x={14} y={i * 100 + 56}>
-              {i + 1}
-            </text>
-          ))}
+          {/* Chỉ đánh toạ độ trong vùng 1600×900 — đó là vùng có đảo. Phần
+              lưới lấn ra ngoài chỉ để lấp màn hình, đánh số cả ra đó thì chữ
+              trôi ra giữa chỗ trống. */}
+          {cols
+            .filter((x) => x >= 0 && x < MAP_W)
+            .map((x) => (
+              <text key={`c${x}`} x={x + GRID_STEP / 2} y={22}>
+                {columnLabel(x / GRID_STEP)}
+              </text>
+            ))}
+          {rows
+            .filter((y) => y >= 0 && y < MAP_H)
+            .map((y) => (
+              <text key={`r${y}`} x={14} y={y + 56}>
+                {y / GRID_STEP + 1}
+              </text>
+            ))}
         </g>
 
         {/* ── Hải trình nối các đảo, vẽ dưới đảo ── */}
