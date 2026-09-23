@@ -43,7 +43,7 @@
 
 ### 23/7 — Phản hồi của cô qua mail về brief report (đề tài v1)
 - Cô hỏi 5 điểm: (i) team đã từng làm hướng nghiệp / tư vấn tuyển sinh chưa; (ii) có tiếp cận được chuyên gia hướng nghiệp không; (iii) hệ thống liên quan trong và ngoài nước; (iv) công trình khoa học liên quan; (v) kế hoạch đánh giá nếu làm.
-- Nhóm trả lời bằng `docs/progress/week-2/supplementary_report.md`.
+- Nhóm trả lời bằng `_archive/docs/progress/week-2/supplementary_report.md`.
 
 ### 5/7 → 11/7 — Chọn domain
 - Cô yêu cầu chọn 1 trong 5 domain. Nhóm gửi tóm tắt đề tài IELTS (9–10/7), **không được chấp nhận**.
@@ -55,15 +55,15 @@
 | Ngày | Hình thức | Nội dung / kết luận | Nguồn |
 |---|---|---|---|
 | 9/9 (T4) 21h30 | Meet | Tập thuyết trình cho buổi 10/9 | 💬 |
-| **8/9 (T3)** | Discord | **Minutes:** xem [06 · tuần 7–13/9](06-task-tuan.md#tuan-0709) | 🎮 #weekly-minutes |
+| **8/9 (T3)** | Discord | **Minutes:** kênh Discord `#weekly-minutes` | 🎮 #weekly-minutes |
 | 4/9 (T6) 21h | Discord | Chốt logo | 💬 |
 | 3/9 (T5) 22h | Discord, 30 phút | Demo landing page. Task: sửa responsive, mỗi người thêm 2 logo, Nam đọc từng section landing page (2–3 câu ý chính mỗi section) | 💬 |
 | 29/8 (T7) 11h–14h | Trực tiếp | Review task hạn T7. *Không có ghi chép* | 💬 |
-| **27/8 (T5) 7h30** | 1-1 Phúc × Brian | **Minutes:** xem [06 · tuần 24–30/8](06-task-tuan.md#tuan-2408) | 🎮 |
+| **27/8 (T5) 7h30** | 1-1 Phúc × Brian | **Minutes:** kênh Discord `#weekly-minutes` | 🎮 |
 | 26/8 (T4) 21h30 | 1-1 Phúc × Nam | Nhận xét phần scenario / follow-up (gộp chung vào minutes 27/8) | 💬 |
-| **23/8 (CN) 13h30** | Online | **Minutes:** xem [06 · tuần 24–30/8](06-task-tuan.md#tuan-2408) | 🎮 |
+| **23/8 (CN) 13h30** | Online | **Minutes:** kênh Discord `#weekly-minutes` | 🎮 |
 | 22/8 (T7) 11h | Trực tiếp, lầu 5 A4 | Phúc nhận xét buổi sáng (Brian định cải thiện occupation data theo nhận xét) | 💬 |
-| **18/8 (T3) 21h** | Meet | **Minutes:** xem [06 · tuần 17–23/8](06-task-tuan.md#tuan-1708) | 🎮 |
+| **18/8 (T3) 21h** | Meet | **Minutes:** kênh Discord `#weekly-minutes` | 🎮 |
 | 8/8 (T7) 13h | Trực tiếp, A4 | Phổ biến topic mới, lên kế hoạch phase đầu. 9/8 chốt 6 luật nhóm (bản ảnh) | 💬 |
 | 28/7 (T3) 21h45 | Meet | Mỗi người trình bày tài liệu đã tìm, lọc còn khoảng 10 bài báo | 💬 |
 | 19/7 (CN) 14h | Trực tiếp, A4 | Brainstorm hướng nghiệp, dàn ý báo cáo 6 phần: (1) hướng nghiệp là gì và các lĩnh vực liên quan (2) vấn đề trên thị trường (3) so sánh giải pháp hiện có (4) pain point và cách khắc phục (5) đề xuất tính năng (6) datasource và kết quả kỳ vọng | 💬🔀 |

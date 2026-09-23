@@ -19,9 +19,8 @@ Capstone-Project/
 │  ├─ data/build*.mjs      Script build game-data / galaxy-data từ occupation-data
 │  ├─ vao-nghe-flow.*      Sơ đồ màn hình (20/9)
 │  └─ (các file tháng 7)   Tài liệu đề tài v1, chỉ còn giá trị lịch sử — xem docs/README.md
-├─ infra/local/            docker-compose cho dev
-├─ plan.md                 Plan cài skill progression + graph 3D (18/9) — một phần đã lỗi thời
-└─ README.md               Hướng dẫn chạy — phần "Skill progression" đã lỗi thời (xem §6)
+├─ infra/local/            docker-compose chạy Overleaf (LaTeX) ở máy
+└─ _archive/               Tài liệu và dữ liệu cũ đã chuyển ra (21–23/9), giữ nguyên cấu trúc thư mục
 ```
 
 ## 2. Chạy thử
@@ -64,8 +63,8 @@ Sơ đồ đầy đủ: [`assets/vao-nghe-flow.png`](assets/vao-nghe-flow.png).
 ### Pipeline
 
 ```
-jd_raw/*.txt (JD thật) ──┐
-ITviec report 2025–26 ───┼─► pass0 (78 role, archetype) ─► pass1/*.json (78) ─► pass2 (9 role tier-1 A_VERIFIED)
+jd_raw/*.txt (JD thật, đã archive) ──┐
+ITviec report 2025–26 ───┼─► pass0 (78 role, archetype, đã archive) ─► pass1/*.json (76, đã archive) ─► pass2 (9 role tier-1 A_VERIFIED)
                          │         └─► output/dataset_final_merged.json (78 role master)
                          └─► dataset_22_roles_enriched_v3.json (22 role: skill, lương, graph, 97 sự kiện)
                                    └─► roles_18_playable.csv/json (18 role chơi được)
@@ -82,9 +81,9 @@ apps/api/src/scripts/seed-content.ts ─► PostgreSQL (bảng *Doc)
 
 | Dùng | Bỏ qua (bản cũ / trung gian) |
 |---|---|
-| `output/dataset_final_merged.json` (78 role) | `dataset_v1.json` |
-| `dataset_22_roles_enriched_v3.json` (22 role) | `dataset_22_roles_enriched.json`, `_v2.json` |
-| `roles_18_playable.*` | `_to_delete/pass1_new_62roles.zip` |
+| `output/dataset_final_merged.json` (78 role) | `dataset_v1.json`, `pass1/` (đã archive) |
+| `dataset_22_roles_enriched_v3.json` (22 role) | `dataset_22_roles_enriched.json`, `output/G1_22_roles.json` (đã archive) · `_v2.json` (còn giữ vì `patch_entry.py` đọc) |
+| `roles_18_playable.*` | `_to_delete/pass1_new_62roles.zip` (đã archive) |
 | `spec-scenario-KHOI1.md` **v2.2**, `HUONG-DAN-SINH-SCENARIO.md` | `docs/data/scenarios.js` (đã xoá ở `86878a2`) |
 | `scenario-golden/SWE_BACKEND_L3.json`, `scenarios/SWE_BACKEND/L1_S_EXEC.json` | |
 
@@ -106,11 +105,10 @@ apps/api/src/scripts/seed-content.ts ─► PostgreSQL (bảng *Doc)
 
 ## 7. Nợ kỹ thuật & dọn dẹp (chưa ai làm)
 
-1. **`README.md` lỗi thời:** phần "Skill progression + Career graph 3D" nhắc tới `/graph`, `/skills`, `/dev/simulate`, và các route đó không còn trong router.
+1. **Repo chưa có `README.md`:** bản cũ (nhắc tới `/graph`, `/skills`, `/dev/simulate` đã không còn) đã chuyển vào `_archive/` ngày 23/9. Cần viết bản mới (cách chạy ở §2).
 2. **Code chết:** `apps/api/src/app/skills/*`, `app/career-graph/*`, `app/persistence/*` (persistence in-memory + snapshot JSON, từ commit `83e8966`) **không được import trong `AppModule`**. Chúng đã bị thay bởi `profile`/`progress` dùng Prisma.
-3. `plan.md` viết cho hướng "không backend, chỉ localStorage". Code thực tế đã có backend, nên plan chỉ còn đúng phần công thức XP và unlock.
-4. `docs/prototype.html` (prototype HTML tĩnh 15–17/9) đã được thay bằng `apps/web`.
-5. `occupation-data/` có nhiều phiên bản dataset trùng nhau, một file zip trong `_to_delete/`, và `__pycache__` đã bị commit.
-6. Nhánh `feat/paper-links` (PR #1, 27/7) **chưa merge**. Có 2 stash cũ trên máy Brian.
-7. **Chưa commit:** `docs/vao-nghe-flow.*` và thay đổi ở `docs/data/game-data.js` + `packages/game-core/data/game-data.json`.
-8. **Source LaTeX của báo cáo Ch.1–5 không có trong repo.** `docs/report/main.tex` vẫn là báo cáo đề tài v1 (tháng 7).
+3. `docs/prototype.html` đã chuyển vào `_archive/` (23/9), nhưng `docs/data/build.mjs` vẫn ghi ra `docs/data/game-data.js` cho nó.
+4. `occupation-data/`: các bản dataset cũ, `pass1/` và file zip đã chuyển vào `_archive/` (23/9). `__pycache__` vẫn bị commit.
+5. Nhánh `feat/paper-links` (PR #1, 27/7) **chưa merge**. Có 2 stash cũ trên máy Brian.
+6. **Chưa commit:** `docs/vao-nghe-flow.*` và thay đổi ở `docs/data/game-data.js` + `packages/game-core/data/game-data.json`.
+7. **Source LaTeX của báo cáo Ch.1–5 không có trong repo.** `_archive/docs/report/main.tex` là báo cáo đề tài v1 (tháng 7).

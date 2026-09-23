@@ -14,7 +14,7 @@
 ## Nhận xét của cô (nếu có)
 1. …
 
-## Task giao (ghi thêm vào 06-task-tuan.md)
+## Task giao
 | Ai | Task | Hạn |
 |---|---|---|
 | | | |

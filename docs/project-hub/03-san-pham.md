@@ -28,7 +28,7 @@
 ## 4. Vòng chơi chính
 
 ```
-Đăng nhập ─► (Get-to-know-me ⚠️ bắt buộc hay tuỳ chọn?) ─► Chọn nghề trên bản đồ ngân hà
+Đăng nhập ─► (Get-to-know-me, tuỳ chọn) ─► Chọn nghề trên bản đồ ngân hà
    ─► Chọn cấp bậc (hòn đảo L1…L10) ─► Nhận vai, team, bối cảnh công ty
    ─► Làm nhiệm vụ (scenario: 3–4 activity + follow-up do AI sinh)
    ─► AI chấm → điểm + nhận xét + kỹ năng thể hiện được
@@ -68,14 +68,15 @@ Cách sinh scenario mới: xem `occupation-data/HUONG-DAN-SINH-SCENARIO.md`.
 
 - Mỗi lượt chơi ghi nhận **bằng chứng kỹ năng** (activity, kỹ năng, mốc, trích câu trả lời, có dùng hint không, có hết giờ không) rồi quy ra điểm.
 - Kỹ năng là **nhiên liệu** để lên cấp (BR-02) và sang nghề kề (BR-03). Cấp đầu của mọi nghề luôn mở (BR-01).
-- ⚠️ **Chưa chốt:** người chơi học cả hard lẫn soft skill, hay hard skill chỉ làm bối cảnh (D-32)? Điểm tính chung hay tách theo domain (D-35)?
+- Người chơi học **cả hard skill lẫn soft skill** (D-32).
+- ⚠️ **Chưa chốt:** điểm tính chung hay tách theo domain (D-35)?
 - Bản đồ hiện tại có **22 hành tinh / 7 nhóm nghề / 64 đường nối** (36 SIMILAR, 28 PROGRESSES_TO). 💡 Flow 20/9 đề xuất bỏ đường nối và tính toạ độ hành tinh từ skill.
 
 ## 7. Các lớp phụ
 
 | Lớp | Trạng thái |
 |---|---|
-| **Get-to-know-me** (6 câu, đo 8 chiều fit, có thể thêm tự luận) | Có trong code. ⚠️ Bắt buộc hay tuỳ chọn (D-29). Bộ câu hỏi tự soạn, **chưa kiểm định** |
+| **Get-to-know-me** (6 câu, đo 8 chiều fit, có thể thêm tự luận) | Có trong code. **Tuỳ chọn** (D-29). Bộ câu hỏi tự soạn, **chưa kiểm định** |
 | **Đánh giá nghề 5 tiêu chí** (lương, áp lực, độ khó, cân bằng, yêu thích) | Đã chốt (D-27). **Chưa có trong code**, màn tổng kết mới có "chấm sao độ thực tế" |
 | **Hành trang** (thẻ nhân vật, kỹ năng theo ngày, lộ trình L1→L10, lịch sử lượt chơi) | Có trong code |
 | **Sự kiện roguelike** | Có 43 sự kiện trong game data (7 chung + 36 riêng cho 9 nghề) |

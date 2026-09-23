@@ -1,5 +1,7 @@
 # 07 · Vấn đề mở, cần chốt
 
+> Đã chuyển sang [02](02-quyet-dinh.md) ngày 23/9: Get-to-know-me tuỳ chọn (D-29), học cả hard lẫn soft skill (D-32).
+
 > Danh sách việc **phải có người quyết định**. Chốt xong thì ghi vào [02](02-quyet-dinh.md) và đánh dấu ✅ ở đây kèm ngày.
 > Ưu tiên: 🔴 chặn báo cáo hoặc code tuần tới · 🟠 cần chốt trong tháng · ⚪ để sau cũng được
 
@@ -9,8 +11,6 @@
 
 | # | Ưu tiên | Vấn đề | Các phía đang nói gì | Cần ai chốt |
 |---|---|---|---|---|
-| A1 | 🔴 | **Get-to-know-me bắt buộc hay tuỳ chọn?** | Deck 7/9 và báo cáo 18/9 (UC-02, FR-11 Should): tuỳ chọn, "nếu bắt buộc thì hệ thống lại quay về làm trắc nghiệm". Nam 18/9: bắt buộc, có trắc nghiệm và tự luận. Cô 19/9: hỏi *vì sao bắt buộc*. Flow 20/9: (Optional). Code: cổng đẩy về `/quiz` nhưng có nút bỏ qua | Cả nhóm, rồi trả lời cô |
-| A2 | 🔴 | **Người chơi học hard skill hay chỉ soft skill?** | Minutes 23/8 và Nam 18/9: hard skill chỉ là bối cảnh, người chơi chỉ học soft skill, hard skill tổng quát hoá (database thay vì SQL). Deck 7/9: mỗi task trả cả soft và hard. Code 18/9: cộng điểm cả hai | Cả nhóm |
 | A3 | 🟠 | **Tên sản phẩm: JobQuest hay Vào Nghề?** | Mọi file nộp cô: JobQuest. App: "Vào Nghề" | Phúc |
 | A4 | 🟠 | **Bản đồ: giữ hệ sao và đường nối, hay bỏ?** | Code: 22 hành tinh, 64 đường nối. Nam 18/9: thiên hà → hệ sao → carousel hành tinh (tham khảo Plants vs Zombies). Nam 20/9: bỏ hệ sao và đường nối, toạ độ tính từ skill | Cả nhóm |
 | A5 | 🟠 | **Điểm tính chung, hay tách domain point / skill point?** | Code: một loại XP theo skill. Đề xuất 18/9 và 20/9: tách theo domain/career, thêm achievement | Cả nhóm |
@@ -27,7 +27,7 @@
 | B4 | 🟠 | Gati (1996) quá cũ → phân tích lại bối cảnh chọn nghề, thêm nguồn mới | Chương 1–2 |
 | B5 | 🟠 | Scope: chỉ nêu cái **trong** scope | Bỏ mục "Explicitly not" / non-goals |
 | B6 | 🟠 | Business rule đang là ràng buộc hệ thống → viết lại **gắn với người dùng** | §4.1.3 |
-| B7 | 🟠 | Giải thích vì sao Get-to-know-me bắt buộc | Phụ thuộc A1 |
+| B7 | 🟠 | Trả lời câu hỏi của cô về Get-to-know-me | Đã chốt là **tuỳ chọn** (D-29) → sửa báo cáo và slide cho khớp |
 | B8 | ⚪ | Cân nhắc **mức độ trưởng thành nghề nghiệp** để chia level | Tìm lý thuyết về career maturity (Super, Crites) |
 | B9 | ❓ | Ba câu hỏi xin cô quyết định (C1–C8, Must/Should, thiết kế đánh giá) | **Chưa có ghi chép cô trả lời** → ai dự buổi 19/9 bổ sung giúp |
 
@@ -56,4 +56,4 @@
 
 ## F. Dọn dẹp repo (xem [04 §7](04-hien-trang-code-data.md#7-nợ-kỹ-thuật--dọn-dẹp-chưa-ai-làm))
 
-- Sửa `README.md`, xoá code chết `apps/api/src/app/{skills,career-graph,persistence}`, quyết số phận PR #1, commit sơ đồ flow, đưa source LaTeX Ch.1–5 và landing page vào repo.
+- Viết `README.md` mới (bản cũ đã archive), xoá code chết `apps/api/src/app/{skills,career-graph,persistence}`, quyết số phận PR #1, commit sơ đồ flow, đưa source LaTeX Ch.1–5 và landing page vào repo.

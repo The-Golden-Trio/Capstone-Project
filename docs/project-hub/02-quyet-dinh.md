@@ -12,7 +12,7 @@
 |---|---|---|---|---|
 | D-01 | Làm **JobQuest: An AI-Native Experiential Career-Exploration Platform**, slogan *"Try the job before you pick the career"* | 3/9 | Kickoff slide 1 | ✅ |
 | D-02 | **Không hướng nghiệp, không phán "bạn hợp ngành X".** Cho người dùng trải nghiệm nghề càng thật càng tốt, rồi họ tự cảm nhận mình có hợp không. Định hướng nghề chỉ là module phụ | 7/9 → 18/9 | Deck 7/9 S5: *"Career orientation is a supporting module, not the core"*. Báo cáo §1.3: đánh giá tính cách/sở thích chỉ giữ ở vai trò hỗ trợ | ✅ |
-| D-03 | Cốt lõi là **"làm thử nghề"**, không phải trắc nghiệm tự khai. Trắc nghiệm dễ bị thiên lệch, còn làm nhiệm vụ thì lộ ra năng lực thật | 25/7 | 💬 Brian, `supplementary_report.md` | ✅ (ý gốc của D-02) |
+| D-03 | Cốt lõi là **"làm thử nghề"**, không phải trắc nghiệm tự khai. Trắc nghiệm dễ bị thiên lệch, còn làm nhiệm vụ thì lộ ra năng lực thật | 25/7 | 💬 Brian, `_archive/docs/progress/week-2/supplementary_report.md` | ✅ (ý gốc của D-02) |
 | D-04 | Đóng góp khoa học = **kết hợp và kiểm định** 3 kỹ thuật: sinh tình huống có ràng buộc, đánh giá năng lực qua hành vi, chấm câu trả lời mở bằng LLM. Có 5 vấn đề nghiên cứu RP-1…RP-5; **RP-1 và RP-2 quyết định đề tài** | 18/9 | Báo cáo §1.2, §4.2.2; deck 18/9 S22 | ✅ |
 | D-05 | Ba lớp trình bày: tiến trình kiểu **RPG**, cảnh kiểu **visual novel** phân nhánh, sự kiện kiểu **roguelike** (*"life is more than work"*) | 7/9 | Deck 7/9 S5; báo cáo §4.2.1 | ✅ |
 
@@ -23,7 +23,7 @@
 | Sàn chứng khoán có chatbot | 30/6 | Không đi tiếp. Cô yêu cầu chọn trong 5 domain |
 | Web luyện IELTS / Tiếng Anh 12 | 5–11/7 | Cô không đồng ý (**suy luận:** thiếu điểm nổi bật) |
 | Bách Khoa community (forum, marketplace…) | 15/7 | Chọn hướng nghiệp thay thế |
-| **v1: Nền tảng định hướng nghề bằng AI cho HS THPT**, 4 trụ cột: khảo sát, micro-task, bản đồ lộ trình + thị trường, diễn đàn | 15/7 – 7/8 | ♻️ Được thay bằng JobQuest. Tài liệu còn ở `docs/init*.md`, `report.md`, `report/main.tex`, `progress/week-2/` |
+| **v1: Nền tảng định hướng nghề bằng AI cho HS THPT**, 4 trụ cột: khảo sát, micro-task, bản đồ lộ trình + thị trường, diễn đàn | 15/7 – 7/8 | ♻️ Được thay bằng JobQuest. Tài liệu đã chuyển vào `_archive/docs/` (`init*.md`, `report.md`, `report/main.tex`, `progress/week-2/`) |
 | Workspace AI tổng hợp (Notion/ClickUp + AI orchestrator) | 5/8 – 14/8 | Topic thứ hai đem đi gặp cô. **Suy luận:** cô chọn hướng nghề nghiệp. Bản quyết định lưu ở [`archive/`](archive/) |
 
 ## B. Phạm vi & đối tượng
@@ -40,7 +40,7 @@
 
 | ID | Quyết định | Ngày | Nguồn | Trạng thái |
 |---|---|---|---|---|
-| D-20 | Thang cấp bậc toàn cục **L1 (intern) → L10 (C-level)**. Mỗi nghề chỉ chiếm các band có thật ở VN, **không bịa band** | 22/8 | `occupation-data/spec-pass1-KHOI1-fixed.md` | ✅ |
+| D-20 | Thang cấp bậc toàn cục **L1 (intern) → L10 (C-level)**. Mỗi nghề chỉ chiếm các band có thật ở VN, **không bịa band** | 22/8 | `_archive/occupation-data/spec-pass1-KHOI1-fixed.md` | ✅ |
 | D-21 | **job = (nghề, band)**. **Mỗi task của band = một scenario**, tên scenario chính là chuỗi task. Mỗi scenario có **3–4 activity cố định** cộng follow-up do AI sinh, dài **10–15 phút** | 23/8 → 7/9 | 🎮 minutes 23/8, 27/8, 8/9; `spec-scenario-KHOI1.md` v2.1 | ✅ (thay "beat" bằng "activity") |
 | D-22 | **6 archetype** mở dần theo band: S_EXEC (L1+), S_AMBIG (L2+), S_INCIDENT (L3+), S_CONFLICT và S_REVIEW (L4+), S_DECISION (L6+) | 7/9 | spec A3 | ✅ |
 | D-23 | **FREETEXT là mặc định.** CHOICE tối đa 1 lần mỗi scenario. Không dùng 4 lựa chọn cùng lúc với tự luận. Thêm ORDERING và PRIORITIZING (v2.2) | 27/8 → 7/9 | 🎮 minutes 27/8; spec A7 | ✅ |
@@ -49,7 +49,7 @@
 | D-26 | **Random event** chỉ rẽ hướng (DIVERT) hoặc kết thúc sớm (EARLY_END), vẫn bám luồng cũ. Chỉ để tạo đa dạng, **không gắn với phần thưởng** | 27/8 → 18/9 | 🎮 minutes 27/8; spec A12; báo cáo §4.2.1 | ✅ |
 | D-27 | Người chơi **đánh giá nghề sau khi xong cả nghề**, theo **5 tiêu chí: lương, áp lực, độ khó, cân bằng công việc – cuộc sống, mức yêu thích**. Chỉ công bố số tổng hợp | 7/9 → 18/9 | Deck 7/9 S10; BR-04, BR-08; FR-12 | ✅ (thay ý "review/rating sau mỗi task" ngày 27/8) |
 | D-28 | Mỗi nghề có **thanh tiến độ**: xong đủ scenario thì mở level tiếp | 27/8 | 🎮 minutes 27/8 | ⚠️ spec cố ý chưa chốt: bao nhiêu scenario thì đầy thanh? chơi lại có tính không? có tụt band không? |
-| D-29 | **Get-to-know-me** giúp người chưa biết bắt đầu từ đâu | 7/9 → 20/9 | Deck 7/9 và báo cáo: *tuỳ chọn* (FR-11 Should). Nam 18/9: *bắt buộc*. Cô 19/9 hỏi *vì sao bắt buộc*. Flow 20/9: *(Optional)*. Code: cổng đẩy về `/quiz`, có nút bỏ qua | ⚠️ |
+| D-29 | **Get-to-know-me là tuỳ chọn**, dành cho người chưa biết bắt đầu từ đâu | 7/9 → 23/9 | **Chốt 23/9 (Brian): tuỳ chọn.** Trước đó: deck 7/9, báo cáo 18/9 (FR-11 Should) và flow 20/9 ghi tuỳ chọn; ghi chú của Nam 18/9 ghi bắt buộc; cô 19/9 hỏi vì sao bắt buộc | ✅ (thay ghi chú "bắt buộc" 18/9) |
 
 ## D. Kỹ năng, tiến trình & bản đồ nghề
 
@@ -57,9 +57,9 @@
 |---|---|---|---|---|
 | D-30 | Người chơi **tích luỹ kỹ năng qua mỗi lượt chơi**. Kỹ năng là **"nhiên liệu"** để lên level và đi sang nghề khác | 8/9 | 🎮 minutes 8/9; deck 7/9 S12 | ✅ |
 | D-31 | Nghề = **hành tinh** trên bản đồ 3D, người chơi = tên lửa. Khoảng cách có trọng số giữa nghề tương tự và nghề thăng tiến | 8/9 | 🎮 minutes 8/9; code `/jobs` | ✅ (cách vẽ đang được bàn lại, xem D-35) |
-| D-32 | **Học hard skill hay chỉ soft skill?** Minutes 23/8: "giữ hard skill làm context". Nam 18/9: người chơi chỉ học soft skill, hard skill tổng quát hoá (database thay vì SQL). Nhưng deck 7/9: "mỗi task trả cả soft và hard". Code 18/9 vẫn cộng điểm cả hai | 23/8 → 18/9 | xem nguồn bên trái | ⚠️ |
+| D-32 | **Người chơi học cả hard skill lẫn soft skill.** Khớp với deck 7/9 ("mỗi task trả cả soft và hard") và code 18/9 | 23/9 | Chốt 23/9 (Brian) | ✅ (thay minutes 23/8 "giữ hard skill làm context" và ghi chú 18/9 "chỉ học soft skill") |
 | D-33 | Luật mở khoá: **cấp đầu mọi nghề mở tự do** (BR-01). Lên cấp cần đủ điểm năng lực (BR-02). Sang nghề kề cần năng lực trùng với yêu cầu đầu vào (BR-03) | 7/9 → 18/9 | Deck 7/9 S5 (*"bỏ 2 mode riêng"*); báo cáo §4.1.3 | ✅ (cần giải thích BR-01 vs BR-03, xem [07](07-van-de-mo.md)) |
-| D-34 | (Cài đặt) **Nhiên liệu là ngưỡng, không bị trừ khi bay.** Chỉ bay tới hành tinh kề (1-hop). Công thức: XP ≥ khoảng cách × 100 và mọi skill yêu cầu ≥ Lv1 | 18/9 | `docs/report-skill-graph-mvp.md` (Brian) | 💡 quyết định kỹ thuật, team chưa duyệt |
+| D-34 | (Cài đặt) **Nhiên liệu là ngưỡng, không bị trừ khi bay.** Chỉ bay tới hành tinh kề (1-hop). Công thức: XP ≥ khoảng cách × 100 và mọi skill yêu cầu ≥ Lv1 | 18/9 | `_archive/docs/report-skill-graph-mvp.md` (Brian) | 💡 quyết định kỹ thuật, team chưa duyệt |
 | D-35 | **Flow bản đồ mới:** thiên hà = domain, hành tinh = nghề. **Bỏ hệ sao và đường nối**, toạ độ hành tinh tính từ skill. Góc nhìn từ trục z. Profile = nhật ký trải nghiệm. Tách **domain point / skill point**, có achievement và biểu đồ thống kê | 18/9 → 20/9 | 🎮 Nam 18/9 23:36 và 20/9 13:41 | 💡 chưa chốt. Bản 18/9 còn "hệ sao → carousel hành tinh", bản 20/9 bỏ hệ sao |
 | D-36 | Cân nhắc **mức độ trưởng thành nghề nghiệp** (career maturity) để chia level cho game | 19/9 | 🎮 nhận xét của cô (Nam ghi 20/9) | 💡 |
 
@@ -78,20 +78,10 @@
 
 | ID | Quyết định | Ngày | Nguồn | Trạng thái |
 |---|---|---|---|---|
-| D-50 | Taxonomy **78 role IT / 6 domain**, xếp 4 archetype (A = có tuyển fresher, B = chuyển ngang, C = đích đến, D = lai). Nhãn tin cậy A_VERIFIED / B_TITLE_SEEN / C_INFERRED. **Thiếu dữ liệu thì ghi `unknowns`, không suy diễn** | 22/8 | `pass0-archetype-triage.md`, `spec-pass1-KHOI1-fixed.md`, `output/REPORT.md` | ✅ |
+| D-50 | Taxonomy **78 role IT / 6 domain**, xếp 4 archetype (A = có tuyển fresher, B = chuyển ngang, C = đích đến, D = lai). Nhãn tin cậy A_VERIFIED / B_TITLE_SEEN / C_INFERRED. **Thiếu dữ liệu thì ghi `unknowns`, không suy diễn** | 22/8 | `_archive/occupation-data/`: `pass0-archetype-triage.md`, `spec-pass1-KHOI1-fixed.md`, `output/REPORT.md` | ✅ |
 | D-51 | **Khử bias JD:** lấy skill và lương từ khảo sát tự khai của người làm nghề (**ITviec IT Salary Report 2025–26**, n = 1.839) thay vì từ JD công ty | 27/8 → 10/9 | 🎮 minutes 27/8 ("bias do đọc JD"); `README_DATASET.md` | ✅ |
 | D-52 | Lọc role phổ biến, gộp role ít khác biệt, **giữ cột similar role khi gộp** → **22 role** cho graph, **18 role chơi được** | 23/8 → 10/9 | 🎮 minutes 23/8; 💬 26/8; `roles_18_playable.csv` | ✅ |
 | D-53 | Có 97 sự kiện role-play (7 chung + 90 riêng), đo trên **8 chiều fit** (DEEP_WORK, PRESSURE, PEOPLE…). **Hệ sự kiện này và hệ kịch bản chưa được hợp nhất** | 10/9 | `README_DATASET.md`; spec "CÒN THIẾU #4" | ⚠️ |
-
-## G. Kỹ thuật
-
-| ID | Quyết định | Ngày | Nguồn | Trạng thái |
-|---|---|---|---|---|
-| D-60 | **Nx + pnpm monorepo:** `apps/web` (React + Vite), `apps/api` (NestJS), `packages/game-core` (logic game dùng chung) | 19/7 → 17/9 | 🔀 `83bb5e6`, `b9384ad` | ✅ |
-| D-61 | **Prisma + PostgreSQL** (connection pooler). Nội dung game (nghề, scenario, sự kiện, quiz, galaxy) **seed vào DB**, không nhúng trong code | 17–18/9 | 🔀 `b9384ad`, `19a9e93` | ✅ (thay persistence in-memory của `83e8966`) |
-| D-62 | Bắt buộc **tài khoản** (email/mật khẩu hoặc Google). **Dưới 16 tuổi cần người giám hộ đồng ý** (căn cứ NĐ 13/2023/NĐ-CP) | 7/9 → 17/9 | Deck 7/9 S9; FR-01; code `consent.ts`, `gate.ts` | ✅ (cần kiểm lại văn bản pháp lý hiện hành) |
-| D-63 | Giao diện **song ngữ VI/EN** (NFR-08) | 18/9 | 🔀 `ca7da28` | ✅ |
-| D-64 | Logic chấm là một interface `TextGrader`. **Bản hiện tại chấm bằng từ khoá**, sau này chỉ cần thay bằng `aiGrader.ts` | 17/9 | `packages/game-core/src/domain/grading/keywordGrader.ts` | ✅ (tạm thời) |
 
 ## H. Thương hiệu & cách làm việc
 

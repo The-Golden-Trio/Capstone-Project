@@ -6,8 +6,8 @@
 
 | Ngày | File | Nội dung | Trình bày |
 |---|---|---|---|
-| 22/7 | `../report.md`, `../report/main.tex` | Brief report đề tài v1 (hướng nghiệp cho HS THPT), 6 phần | Gửi mail |
-| 25/7 | `../progress/week-2/supplementary_report.md` | Trả lời 5 câu hỏi của cô (đề tài v1) | Gửi mail |
+| 22/7 | `_archive/docs/report.md`, `_archive/docs/report/main.tex` | Brief report đề tài v1 (hướng nghiệp cho HS THPT), 6 phần | Gửi mail |
+| 25/7 | `_archive/docs/progress/week-2/supplementary_report.md` | Trả lời 5 câu hỏi của cô (đề tài v1) | Gửi mail |
 | 26/8 | *(không có bản lưu)* | Tên đề tài và mô tả hệ thống (hạn T4 26/8) | Gửi mail |
 | 3/9 | `nop-co/2026-09-03_JobQuest_Kickoff_Slides.pdf` | Kickoff, 6 slide | 5/9, B4505 |
 | 7/9 | `nop-co/2026-09-07_JobQuest_Meeting_7Sep.pptx` | Báo cáo tiến độ, 14 slide, có ghi chú người nói | Gặp cô 10/9 |
@@ -43,8 +43,10 @@
 
 | Nhóm | File |
 |---|---|
-| **Hiện hành: sản phẩm & spec** | `occupation-data/spec-scenario-KHOI1.md` (v2.2) · `occupation-data/HUONG-DAN-SINH-SCENARIO.md` · `occupation-data/spec-pass1-KHOI1-fixed.md` · `occupation-data/pass0-archetype-triage.md` |
-| **Hiện hành: dữ liệu** | `occupation-data/README_DATASET.md` · `occupation-data/output/REPORT.md` · `occupation-data/output/Roles_Summary.md` |
-| **Hiện hành: kỹ thuật** | `README.md` (một phần lỗi thời) · `plan.md` (một phần lỗi thời) · `docs/report-skill-graph-mvp.md` · `docs/vao-nghe-flow.*` |
-| **Lịch sử: đề tài v1 (tháng 7)** | `docs/init.md`, `docs/init.vi.md`, `docs/steps.md`, `docs/market-research.md`, `docs/datasource.md`, `docs/result.md`, `docs/report.md`, `docs/report/main.tex`, `docs/progress/week-2/supplementary_report.md` |
+| **Hiện hành: sản phẩm & spec** | `occupation-data/spec-scenario-KHOI1.md` (v2.2) · `occupation-data/HUONG-DAN-SINH-SCENARIO.md` |
+| **Hiện hành: dữ liệu** | `occupation-data/README_DATASET.md` · `occupation-data/output/FILTERED_ROLES.csv` · `occupation-data/output/visualize_*.html` |
+| **Hiện hành: kỹ thuật** | `docs/vao-nghe-flow.*` · `infra/local/docker-compose.yml` (Overleaf) |
+| **Lịch sử: dữ liệu pass 0–1 (tháng 8)**, trong `_archive/occupation-data/` | `spec-pass1-KHOI1-fixed.md`, `pass0-archetype-triage.md`, `output/REPORT.md`, `output/Roles_Summary.md`, `output/education_paths.json`, `pass1/`, `golden/`, `capture/`, `jd_raw/`, `dataset_v1.json`, `dataset_22_roles_enriched.json`, `output/G1_22_roles.json` |
+| **Lịch sử: kỹ thuật**, trong `_archive/` | `README.md` (gốc repo), `docs/report-skill-graph-mvp.md`, `docs/prototype.html` |
+| **Lịch sử: đề tài v1 (tháng 7)**, trong `_archive/docs/` | `init.md`, `init.vi.md`, `steps.md`, `market-research.md`, `datasource.md`, `result.md`, `report.md`, `report/main.tex`, `progress/week-2/supplementary_report.md` |
 | **Lịch sử: topic workspace AI (tháng 8)** | `docs/project-hub/archive/2026-08-05_app-decisions-so-far_de-tai-workspace-AI.md` |
