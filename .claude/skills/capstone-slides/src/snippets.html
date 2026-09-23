@@ -1,0 +1,450 @@
+<!--@ cover | Bìa (Cover) | Slide 1 of every deck. Title ≤ 2 lines, last keyword highlighted blue. Meta = team, advisor, date. -->
+<section class="slide l-cover">
+  <div class="blk blue" style="left:0;top:0;height:270px"></div>
+  <h1 class="cv-title"><span>Hướng nghiệp</span><span>cùng <span class="hl">AI</span></span></h1>
+  <p class="cv-sub">Nền tảng trải nghiệm nghề cho học sinh THPT</p>
+  <p class="cv-meta"><b>Nhóm CAP-01</b> · GVHD: ThS. Nguyễn Văn A<br>Khoa KH&amp;KT Máy tính · HCMUT · 12/2026</p>
+</section>
+
+<!--@ toc | Mục lục (Table of contents) | Right after the cover. 4 items = 2×2 (default). 5–6 items: add class "rows-3" to .toc. -->
+<section class="slide l-toc">
+  <h2 class="title center">Nội dung</h2>
+  <div class="toc">
+    <div class="toc-item"><div class="toc-num">01</div><div><div class="h3">Vấn đề</div><p>Học sinh chọn ngành thiếu trải nghiệm thực tế</p></div></div>
+    <div class="toc-item"><div class="toc-num">02</div><div><div class="h3">Giải pháp</div><p>Mô phỏng công việc kết hợp gợi ý bằng AI</p></div></div>
+    <div class="toc-item"><div class="toc-num">03</div><div><div class="h3">Kiến trúc</div><p>Thiết kế hệ thống và công nghệ sử dụng</p></div></div>
+    <div class="toc-item"><div class="toc-num">04</div><div><div class="h3">Kết quả</div><p>Đánh giá, demo và hướng phát triển</p></div></div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!--@ section | Chương (Section header, right-aligned) | Opens each chapter listed in the TOC. Alternate with "section-alt" so consecutive chapters don't look identical. -->
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">01</div>
+    <div class="sec-title">Vấn đề</div>
+    <p class="sec-sub">Vì sao học sinh THPT chọn sai ngành?</p>
+  </div>
+</section>
+
+<!--@ section-alt | Chương – biến thể trái (Section header, left-aligned) | Same role as "section", mirrored. -->
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">02</div>
+    <div class="sec-title">Giải pháp</div>
+    <p class="sec-sub">Trải nghiệm nghề trước khi chọn ngành</p>
+  </div>
+</section>
+
+<!--@ intro | Giới thiệu (Title + paragraph, blocks right) | One idea explained in 2–5 sentences (≤ 60 words). -->
+<section class="slide l-intro">
+  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:834px;top:270px;height:270px"></div>
+  <div class="txt">
+    <div class="t">Bối cảnh</div>
+    <p>Mỗi năm hơn một triệu học sinh lớp 12 đăng ký xét tuyển đại học. Phần lớn chọn ngành dựa trên lời khuyên của gia đình hoặc xu hướng, trong khi rất ít em từng được tiếp xúc với công việc thực tế của ngành đó.</p>
+  </div>
+</section>
+
+<!--@ intro-alt | Giới thiệu – biến thể (blocks left, text right-aligned) | Same as "intro", mirrored. Good for "The problem". -->
+<section class="slide l-intro alt">
+  <div class="blk navy" style="left:0;top:270px;height:270px"></div>
+  <div class="blk blue" style="left:128px;top:130px;height:140px"></div>
+  <div class="txt">
+    <div class="t">Vấn đề cốt lõi</div>
+    <p>Các bài trắc nghiệm hướng nghiệp hiện nay chỉ đưa ra kết quả chung chung. Học sinh không biết một ngày làm việc của kỹ sư, bác sĩ hay nhà thiết kế thực sự trông như thế nào.</p>
+  </div>
+</section>
+
+<!--@ statement | Thông điệp lớn (Main point) | One punchline, ≤ 4 short words per line, ≤ 3 lines. Use class "big m" for longer lines. -->
+<section class="slide l-statement">
+  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:834px;top:270px;height:141px"></div>
+  <div class="big">Thử nghề trước, chọn ngành sau</div>
+</section>
+
+<!--@ text | Văn bản + gạch đầu dòng (Title + bullets) | Default content slide: 3–6 bullets, ≤ 12 words each. Add class "wide" and drop the block for full-width text. -->
+<section class="slide l-text">
+  <h2 class="title">Mục tiêu đề tài</h2>
+  <div class="body">
+    <p>Xây dựng nền tảng web giúp học sinh:</p>
+    <ul class="ul gap">
+      <li>Trải nghiệm <b>mô phỏng công việc</b> của 20+ nghề phổ biến</li>
+      <li>Nhận gợi ý ngành học được cá nhân hóa bằng AI</li>
+      <li>So sánh ngành theo kỹ năng, thu nhập và cơ hội việc làm
+        <ul><li>Dữ liệu từ nguồn O*NET và thị trường Việt Nam</li></ul>
+      </li>
+      <li>Chia sẻ kết quả với phụ huynh và giáo viên</li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+</section>
+
+<!--@ 2col | Hai cột (Two columns) | Compare / pair two ideas. Heading ≤ 4 words, text ≤ 40 words each. -->
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Giải pháp của nhóm</h2>
+  <div class="cols">
+    <div><div class="h3">Mô phỏng nghề</div><p>Học sinh hóa thân vào một ngày làm việc thông qua các nhiệm vụ ngắn, có phản hồi ngay.</p></div>
+    <div><div class="h3">Cố vấn AI</div><p>Mô hình ngôn ngữ phân tích lựa chọn của học sinh và đề xuất ngành học phù hợp.</p></div>
+  </div>
+</section>
+
+<!--@ 3col | Ba cột có icon (Three columns with icons) | Three parallel features / goals / pillars. Icon = inline SVG line icon, class "icon". -->
+<section class="slide l-3col">
+  <h2 class="title center">Tính năng chính</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      <div class="h3">Khám phá</div><p>Thư viện hơn 20 nghề với video và mô tả</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <div class="h3">Trải nghiệm</div><p>Nhiệm vụ mô phỏng công việc thực tế</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+      <div class="h3">Gợi ý</div><p>AI đề xuất ngành học phù hợp năng lực</p>
+    </div>
+  </div>
+  <div class="footbar rev"></div>
+</section>
+
+<!--@ grid6 | Lưới 6 ô (Six items, 3×2) | Six short items: requirements, modules, awards. Heading ≤ 3 words, text ≤ 15 words. -->
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Yêu cầu chức năng</h2>
+  <div class="grid">
+    <div><div class="h3">Tài khoản</div><p>Đăng ký, đăng nhập bằng Google</p></div>
+    <div><div class="h3">Hồ sơ</div><p>Lưu sở thích và điểm mạnh của học sinh</p></div>
+    <div><div class="h3">Mô phỏng</div><p>Chơi nhiệm vụ theo từng nghề</p></div>
+    <div><div class="h3">Gợi ý</div><p>Đề xuất ngành bằng AI kèm lý do</p></div>
+    <div><div class="h3">Báo cáo</div><p>Xuất kết quả cho phụ huynh</p></div>
+    <div><div class="h3">Quản trị</div><p>Quản lý nội dung nghề và nhiệm vụ</p></div>
+  </div>
+</section>
+
+<!--@ 4items | Bốn ý căn phải (Four items, 2×2, right-aligned) | Four partners / stakeholders / principles. -->
+<section class="slide l-4items">
+  <div class="blk gray" style="left:127px;top:111px;height:159px"></div>
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <h2 class="title right">Các bên liên quan</h2>
+  <div class="grid">
+    <div><div class="h3">Học sinh</div><p>Người dùng chính, lớp 10 đến lớp 12</p></div>
+    <div><div class="h3">Phụ huynh</div><p>Theo dõi kết quả và cùng định hướng</p></div>
+    <div><div class="h3">Giáo viên</div><p>Tư vấn dựa trên báo cáo của lớp</p></div>
+    <div><div class="h3">Nhà trường</div><p>Tích hợp vào hoạt động hướng nghiệp</p></div>
+  </div>
+</section>
+
+<!--@ quad | Ma trận 4 ô / SWOT (Quadrant) | SWOT, pros/cons × internal/external. 2 bullets per cell max. -->
+<section class="slide l-quad">
+  <h2 class="title center">Phân tích SWOT</h2>
+  <div class="quad">
+    <div class="side">Bên trong</div>
+    <div><div class="q-h">Điểm mạnh</div><div class="q-b"><ul class="ul"><li>Trải nghiệm tương tác</li><li>Cá nhân hóa bằng AI</li></ul></div></div>
+    <div><div class="q-h">Điểm yếu</div><div class="q-b"><ul class="ul"><li>Nội dung nghề còn ít</li><li>Chi phí gọi mô hình AI</li></ul></div></div>
+    <div class="side">Bên ngoài</div>
+    <div><div class="q-h">Cơ hội</div><div class="q-b"><ul class="ul"><li>Chương trình GDPT 2018</li><li>Nhu cầu hướng nghiệp cao</li></ul></div></div>
+    <div><div class="q-h">Thách thức</div><div class="q-b"><ul class="ul"><li>Đối thủ đã có thương hiệu</li><li>Độ tin cậy của AI</li></ul></div></div>
+  </div>
+</section>
+
+<!--@ rows | Hàng nhãn + ý (Labelled rows) | 2–4 rows × 2–3 short items. Layered architecture, tech stack, strategy map. -->
+<section class="slide l-rows">
+  <h2 class="title center">Công nghệ sử dụng</h2>
+  <div class="rows">
+    <div class="row"><div class="lab">Frontend</div><div class="its"><span>React 19</span><span>TypeScript</span><span>Tailwind CSS</span></div></div>
+    <div class="row"><div class="lab">Backend</div><div class="its"><span>NestJS</span><span>PostgreSQL</span><span>Redis</span></div></div>
+    <div class="row"><div class="lab">AI</div><div class="its"><span>LLM API</span><span>Embedding + RAG</span><span>Prompt templates</span></div></div>
+    <div class="row"><div class="lab">Hạ tầng</div><div class="its"><span>Docker</span><span>GitHub Actions</span><span>Nx monorepo</span></div></div>
+  </div>
+</section>
+
+<!--@ table | Bảng / so sánh (Table or maturity grid) | Feature comparison, test results. ≤ 6 rows × 6 cols. Use .dot for ratings. -->
+<section class="slide l-table">
+  <h2 class="title">So sánh giải pháp hiện có</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th></th><th>Trắc nghiệm</th><th>Tư vấn viên</th><th>Video nghề</th><th>Của nhóm</th></tr></thead>
+      <tbody>
+        <tr><td>Chi phí thấp</td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td><td><span class="dot navy"></span></td></tr>
+        <tr><td>Cá nhân hóa</td><td></td><td><span class="dot"></span></td><td></td><td><span class="dot navy"></span></td></tr>
+        <tr><td>Trải nghiệm thực tế</td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot navy"></span></td></tr>
+        <tr><td>Quy mô lớn</td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td><td><span class="dot navy"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!--@ process | Quy trình mũi tên (Process chevrons) | 3–4 sequential steps with ≤ 3 bullets under each. Set grid-template-columns of .notes to match step count. -->
+<section class="slide l-process">
+  <h2 class="title">Quy trình nghiên cứu</h2>
+  <div class="chev"><div>Khảo sát</div><div>Thiết kế</div><div>Kiểm thử</div></div>
+  <div class="notes" style="grid-template-columns:repeat(3,1fr)">
+    <ul class="ul"><li>Phỏng vấn 30 học sinh</li><li>Khảo sát 250 phiếu online</li></ul>
+    <ul class="ul"><li>Wireframe và prototype</li><li>Thiết kế hệ thống</li></ul>
+    <ul class="ul"><li>Usability test 12 người</li><li>Đo SUS và tỉ lệ hoàn thành</li></ul>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!--@ roadmap | Lộ trình bậc thang (Roadmap stairs) | Phases / milestones / sprints. Set --n on .stairs (3 or 4) and --i on each step (0,1,2…). -->
+<section class="slide l-roadmap">
+  <h2 class="title">Kế hoạch thực hiện</h2>
+  <div class="stairs" style="--n:3">
+    <div class="step" style="--i:0"><div class="h3">Giai đoạn 1</div><div class="line"></div><ul class="ul"><li>Khảo sát người dùng</li><li>Phân tích yêu cầu</li></ul></div>
+    <div class="step" style="--i:1"><div class="h3">Giai đoạn 2</div><div class="line"></div><ul class="ul"><li>Xây dựng MVP</li><li>Tích hợp AI</li></ul></div>
+    <div class="step" style="--i:2"><div class="h3">Giai đoạn 3</div><div class="line"></div><ul class="ul"><li>Thử nghiệm tại trường</li><li>Hoàn thiện báo cáo</li></ul></div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!--@ tree | Cây phân cấp (Hierarchy tree) | Module breakdown, goal tree, use-case groups. ≤ 3 levels, ≤ 6 leaves. -->
+<section class="slide l-tree">
+  <h2 class="title center">Phân rã chức năng</h2>
+  <div class="tree">
+    <ul><li><div class="node navy lv1">Hệ thống</div>
+      <ul>
+        <li><div class="node blue lv2">Học sinh</div>
+          <ul><li><div class="node outline lv3">Khám phá</div></li><li><div class="node outline lv3">Mô phỏng</div></li></ul>
+        </li>
+        <li><div class="node blue lv2">Quản trị</div>
+          <ul><li><div class="node outline lv3">Nội dung</div></li><li><div class="node outline lv3">Người dùng</div></li><li><div class="node outline lv3">Thống kê</div></li></ul>
+        </li>
+      </ul>
+    </li></ul>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!--@ breakdown | Phân tách trái → phải (Breakdown) | One root split into 2 groups × 2 leaves. Mark one leaf "blue" to highlight. -->
+<section class="slide l-breakdown">
+  <h2 class="title center">Cấu trúc chi phí vận hành</h2>
+  <div class="bd">
+    <div class="node navy root">Chi phí hằng tháng</div>
+    <div class="groups">
+      <div class="grp"><div class="node gray">Hạ tầng</div>
+        <div class="leaves"><div class="node gray">Máy chủ</div><div class="node blue">Gọi API mô hình AI</div></div></div>
+      <div class="grp"><div class="node gray">Vận hành</div>
+        <div class="leaves"><div class="node gray">Tên miền, email</div><div class="node gray">Giám sát, log</div></div></div>
+    </div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!--@ matrix | Ma trận 2×2 có trục (2×2 matrix with axes) | Positioning, prioritisation (impact × effort). Highlight one cell with "on". -->
+<section class="slide l-matrix">
+  <h2 class="title">Ưu tiên tính năng</h2>
+  <div class="mx">
+    <div></div><div></div><div class="axis" style="grid-column:3 / 5">Ma trận ưu tiên</div>
+    <div class="axis" style="grid-row:2 / 4;text-align:left">Giá trị</div>
+    <div class="tick y">Cao</div><div class="cell">Gợi ý bằng AI</div><div class="cell on">Mô phỏng nghề</div>
+    <div class="tick y">Thấp</div><div class="cell">Huy hiệu</div><div class="cell">Diễn đàn</div>
+    <div></div><div></div><div class="tick">Dễ</div><div class="tick">Khó</div>
+    <div></div><div></div><div class="axis" style="grid-column:3 / 5">Công sức</div>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!--@ cycle | Vòng lặp 4 phần (4-part cycle) | Iterative loop: sprint, feedback loop, data cycle. Exactly 4 labels. -->
+<section class="slide l-cycle">
+  <h2 class="title center">Vòng lặp trải nghiệm</h2>
+  <svg class="ring" viewBox="0 0 300 300">
+    <g fill="none" stroke-width="86">
+      <circle class="s-blue" cx="150" cy="150" r="107" pathLength="100" stroke-dasharray="23 77" transform="rotate(-86 150 150)"/>
+      <circle class="s-navy" cx="150" cy="150" r="107" pathLength="100" stroke-dasharray="23 77" transform="rotate(4 150 150)"/>
+      <circle class="s-blue" cx="150" cy="150" r="107" pathLength="100" stroke-dasharray="23 77" transform="rotate(94 150 150)"/>
+      <circle class="s-navy" cx="150" cy="150" r="107" pathLength="100" stroke-dasharray="23 77" transform="rotate(184 150 150)"/>
+    </g>
+  </svg>
+  <div class="lbl l navy" style="top:190px">Chọn nghề<i></i></div>
+  <div class="lbl l blue" style="top:340px">Nhận gợi ý<i></i></div>
+  <div class="lbl r blue" style="top:190px"><i></i>Làm nhiệm vụ</div>
+  <div class="lbl r navy" style="top:340px"><i></i>AI phân tích</div>
+  <div class="footbar"></div>
+</section>
+
+<!--@ diagram | Sơ đồ tự do (Free diagram canvas) | Venn, architecture, flows. Draw with inline SVG using .f-*/.s-* classes, or .node boxes. Title may be 2 lines (add class "two"). -->
+<section class="slide l-diagram">
+  <h2 class="title center two">Ba yếu tố của một lựa chọn ngành tốt</h2>
+  <div class="stage">
+    <svg width="810" height="330" viewBox="0 0 810 330">
+      <g class="f-blue"><circle cx="357" cy="100" r="80"/><circle cx="453" cy="100" r="80"/><circle cx="405" cy="190" r="80"/></g>
+      <g class="f-none s-navy" stroke-width="2"><circle cx="357" cy="100" r="80"/><circle cx="453" cy="100" r="80"/><circle cx="405" cy="190" r="80"/></g>
+      <path class="f-navy" d="M393 120 L417 120 L405 140 Z"/>
+      <path class="s-navy" stroke-width="2" d="M410 128 L545 200"/><circle class="f-navy" cx="545" cy="200" r="4"/>
+      <text x="255" y="74" text-anchor="end" class="f-blue" font-size="22">Sở thích</text>
+      <text x="555" y="74" class="f-blue" font-size="22">Năng lực</text>
+      <text x="300" y="208" text-anchor="end" class="f-blue" font-size="22">Nhu cầu xã hội</text>
+      <text x="557" y="208" class="f-navy" font-size="22" font-weight="700">Ngành phù hợp</text>
+    </svg>
+  </div>
+</section>
+
+<!--@ quote | Trích dẫn (Quote) | A quote from a user interview, expert or advisor. ≤ 25 words. -->
+<section class="slide l-quote">
+  <div class="blk blue" style="left:0;top:111px;height:159px"></div>
+  <div class="blk gray" style="left:128px;top:270px;height:270px"></div>
+  <blockquote class="q">“Em chọn ngành vì bạn bè chọn, đến năm hai mới biết mình không hợp.”</blockquote>
+  <p class="by">—Sinh viên năm 2, phỏng vấn người dùng</p>
+</section>
+
+<!--@ bignum | Con số lớn (Big number) | One headline metric + 1-line caption. ≤ 8 characters in the number. -->
+<section class="slide l-bignum">
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+  <div class="num">62%</div>
+  <p class="cap">học sinh được khảo sát không chắc chắn về ngành mình đã chọn</p>
+</section>
+
+<!--@ photo | Ảnh toàn trang (Full-bleed photo) | Emotional / context moment. Photo is grayscale and bright; keep .wash for readability. -->
+<section class="slide l-photo">
+  <div class="bg"><div class="ph photo" style="height:100%">[ẢNH: học sinh trong lớp, tông sáng]</div></div>
+  <div class="wash"></div>
+  <div class="head">Một lựa chọn, bốn năm đại học</div>
+  <div class="blk blue" style="left:127px;top:257px;height:141px"></div>
+  <div class="blk navy" style="left:0;top:398px;height:142px"></div>
+</section>
+
+<!--@ photoleft | Ảnh trái + chữ phải (Photo left, text right) | Illustrate a concept with a photo. Text right-aligned, ≤ 30 words. -->
+<section class="slide l-photoleft">
+  <div class="blk navy" style="left:221px;top:0;height:112px"></div>
+  <div class="pic"><div class="ph" style="width:100%;height:100%">[ẢNH 349×314, trắng đen]</div></div>
+  <div class="blk blue" style="left:0;top:426px;height:114px"></div>
+  <div class="txt">
+    <div class="t">Học qua trải nghiệm hiệu quả hơn đọc mô tả</div>
+    <p>Học sinh nhớ lâu hơn khi tự tay làm một nhiệm vụ của nghề thay vì chỉ đọc giới thiệu.</p>
+  </div>
+</section>
+
+<!--@ demo | Demo / ảnh chụp màn hình (Screenshot) | Show the product. Screenshot stays in color (class "shot"). 3–4 bullets on the left. -->
+<section class="slide l-demo">
+  <h2 class="title">Màn hình mô phỏng nghề</h2>
+  <div class="side">
+    <div class="h3">Luồng chính</div>
+    <ul class="ul gap"><li>Chọn nghề từ thư viện</li><li>Hoàn thành 3 nhiệm vụ ngắn</li><li>Nhận nhận xét từ AI</li></ul>
+  </div>
+  <div class="screen"><div class="ph" style="width:500px;height:312px">[SCREENSHOT 16:10 — dùng &lt;img class="shot"&gt;]</div></div>
+  <div class="edge-r"></div>
+</section>
+
+<!--@ bars | Thanh tỉ lệ (Stats bars) | Survey demographics, two groups of 2–3 bars + optional icon row. -->
+<section class="slide l-bars">
+  <h2 class="title center">Đối tượng khảo sát</h2>
+  <div class="grp l">
+    <div class="h3">Giới tính</div>
+    <div class="bar"><span class="v">54%</span><div class="track"><span style="width:54%"></span></div></div>
+    <div class="bar"><span class="v">46%</span><div class="track"><span style="width:46%"></span></div></div>
+  </div>
+  <div class="grp r">
+    <div class="h3">Khối lớp</div>
+    <div class="bar"><div class="track"><span style="width:70%"></span></div><span class="v">Lớp 12</span></div>
+    <div class="bar"><div class="track"><span style="width:30%"></span></div><span class="v">Lớp 11</span></div>
+  </div>
+  <div class="foot">
+    <div class="h3">Sở thích nổi bật</div>
+    <div class="icons">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+    </div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!--@ donuts | Phần trăm vòng tròn (Percent donuts) | 3 (or 4, set --n) percentages. Arc length = stroke-dasharray first value (0–100). -->
+<section class="slide l-donuts">
+  <h2 class="title center">Kết quả kiểm thử</h2>
+  <div class="cols" style="--n:3">
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="92 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">92%</div><p>hoàn thành nhiệm vụ mô phỏng</p>
+    </div>
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="78 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">78%</div><p>đồng ý với gợi ý ngành của AI</p>
+    </div>
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="81 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">81</div><p>điểm SUS trung bình</p>
+    </div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!--@ chart | Biểu đồ + KPI (Chart with KPI) | Real data: grouped bars (navy/blue) + share donut + one KPI box. Always inline SVG, palette only. -->
+<section class="slide l-chart">
+  <h2 class="title">Hiệu năng hệ thống</h2>
+  <div class="left">
+    <svg width="390" height="220" viewBox="0 0 390 220">
+      <g class="s-gray" stroke-width="1"><line x1="40" y1="20" x2="380" y2="20"/><line x1="40" y1="75" x2="380" y2="75"/><line x1="40" y1="130" x2="380" y2="130"/><line x1="40" y1="185" x2="380" y2="185"/></g>
+      <g class="f-ink" font-size="12"><text x="32" y="24" text-anchor="end">600</text><text x="32" y="79" text-anchor="end">400</text><text x="32" y="134" text-anchor="end">200</text><text x="32" y="189" text-anchor="end">0</text></g>
+      <g class="f-navy"><rect x="70" y="80" width="34" height="105"/><rect x="180" y="60" width="34" height="125"/><rect x="290" y="45" width="34" height="140"/></g>
+      <g class="f-blue"><rect x="106" y="120" width="34" height="65"/><rect x="216" y="110" width="34" height="75"/><rect x="326" y="100" width="34" height="85"/></g>
+      <g class="f-ink" font-size="13" text-anchor="middle"><text x="105" y="206">100 users</text><text x="215" y="206">500 users</text><text x="325" y="206">1000 users</text></g>
+      <g font-size="13"><rect class="f-navy" x="120" y="3" width="10" height="10"/><text class="f-ink" x="134" y="13">Trước tối ưu</text><rect class="f-blue" x="236" y="3" width="10" height="10"/><text class="f-ink" x="250" y="13">Sau tối ưu</text></g>
+    </svg>
+    <p class="sm" style="margin-top:14px">Thời gian phản hồi p95 (ms) khi tải tăng dần, đo bằng k6.</p>
+  </div>
+  <div class="right">
+    <svg width="390" height="200" viewBox="0 0 390 200">
+      <g fill="none" stroke-width="48" transform="rotate(-90 100 100)">
+        <circle class="s-gray" cx="100" cy="100" r="72"/>
+        <circle class="s-navy" cx="100" cy="100" r="72" pathLength="100" stroke-dasharray="23 100"/>
+        <circle class="s-blue" cx="100" cy="100" r="72" pathLength="100" stroke-dasharray="43 100" stroke-dashoffset="-23"/>
+      </g>
+      <g font-size="16" class="f-ink"><text x="330" y="64" text-anchor="end">API (23%)</text><text x="330" y="104" text-anchor="end">AI (43%)</text><text x="330" y="144" text-anchor="end">Khác (34%)</text></g>
+      <circle class="f-navy" cx="348" cy="58" r="7"/><circle class="f-blue" cx="348" cy="98" r="7"/><circle class="f-gray" cx="348" cy="138" r="7"/>
+    </svg>
+    <div class="kpi" style="width:300px;margin:18px 0 0 45px"><span class="v">1,2 giây</span><span class="l">Thời gian gợi ý trung bình</span></div>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!--@ team | Thành viên (Team) | 2–5 members. For 4–5 members set style="--w:150px;--d:130px;--gap:18px" on .grid. Photos grayscale, circular. -->
+<section class="slide l-team">
+  <div class="edge-l"></div>
+  <h2 class="title center">Thành viên nhóm</h2>
+  <div class="grid" style="--w:185px;--d:140px;--gap:16px">
+    <div class="m"><div class="face"><div class="ph" style="height:100%">[ẢNH]</div></div><div class="h3">Châu Anh Nhật</div><p>Trưởng nhóm, Backend</p></div>
+    <div class="m"><div class="face"><div class="ph" style="height:100%">[ẢNH]</div></div><div class="h3">Thành viên 2</div><p>Frontend</p></div>
+    <div class="m"><div class="face"><div class="ph" style="height:100%">[ẢNH]</div></div><div class="h3">Thành viên 3</div><p>AI, dữ liệu</p></div>
+    <div class="m"><div class="face"><div class="ph" style="height:100%">[ẢNH]</div></div><div class="h3">Thành viên 4</div><p>UI/UX, kiểm thử</p></div>
+  </div>
+</section>
+
+<!--@ testimonials | Phản hồi người dùng (Testimonials) | Two short quotes from users / testers with attribution. -->
+<section class="slide l-testi">
+  <h2 class="title">Phản hồi người dùng</h2>
+  <div class="list">
+    <div><p>“Lần đầu em biết kỹ sư phần mềm làm gì trong một ngày.”</p><div class="by">—Học sinh lớp 11</div></div>
+    <div><p>“Báo cáo giúp tôi trao đổi với con dễ hơn nhiều.”</p><div class="by">—Phụ huynh</div></div>
+  </div>
+  <div class="blk blue" style="left:568px;top:106px;height:164px"></div>
+  <div class="blk gray" style="left:696px;top:270px;height:270px"></div>
+</section>
+
+<!--@ thanks | Cảm ơn / Q&A (Closing) | Last slide. Contact + repo/demo links. -->
+<section class="slide l-thanks">
+  <div class="big">Cảm ơn!</div>
+  <div class="info">
+    <p>Thầy cô và các bạn có câu hỏi nào không?</p>
+    <p style="margin-top:14px">nhom-cap01@hcmut.edu.vn<br>github.com/nhom-cap01/career-ai<br>demo.career-ai.vn</p>
+    <div class="icons">
+      <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+    </div>
+  </div>
+  <div class="blk blue" style="left:704px;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+</section>
