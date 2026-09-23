@@ -48,16 +48,16 @@ Mỗi nghề có nhiều cấp, bắt đầu từ **L1 (intern)**. **Cấp cao n
 | [02 · Nhật ký quyết định](02-quyet-dinh.md) | **Đã chốt gì**, cái gì bị thay, cái gì đang mâu thuẫn |
 | [03 · Sản phẩm](03-san-pham.md) | JobQuest chơi thế nào, mô hình nội dung, luật, thuật ngữ |
 | [04 · Hiện trạng code & dữ liệu](04-hien-trang-code-data.md) | Repo có gì, chạy ra sao, cái gì thật và cái gì giả lập |
-| [05 · Biên bản họp](05-bien-ban-hop.md) | Các buổi gặp cô và họp nhóm (tái dựng) |
+| [05 · Meeting minutes](05-meeting-minutes.md) | Các buổi gặp cô và họp nhóm (tái dựng) |
 | [07 · Vấn đề mở](07-van-de-mo.md) | Việc cần quyết, nhận xét của cô chưa xử lý |
 | [08 · Nguồn](08-nguon.md) | Mọi tài liệu gốc nằm ở đâu |
 | `nop-co/` | Bản lưu mọi file đã nộp hoặc trình bày cho cô |
 | `archive/` | Tài liệu của hướng đề tài đã bỏ |
-| `templates/` | Mẫu biên bản họp |
+| `templates/` | Mẫu meeting minutes |
 
 ## Quy ước giữ single source of truth
 
-1. **Sau mỗi buổi họp** (kể cả họp trực tiếp): người ghi điền [`templates/bien-ban-hop.md`](templates/bien-ban-hop.md), thêm vào `05`, rồi cập nhật `02`, `07` nếu có thay đổi. Chat Discord chỉ để bàn, **kết luận phải về repo**.
+1. **Sau mỗi buổi họp** (kể cả họp trực tiếp): người ghi điền [`templates/meeting-minutes.md`](templates/meeting-minutes.md), thêm vào `05`, rồi cập nhật `02`, `07` nếu có thay đổi. Chat Discord chỉ để bàn, **kết luận phải về repo**.
 2. **Quyết định mới:** thêm dòng vào `02`. **Không xoá dòng cũ**, đổi trạng thái thành ♻️.
 3. **File nộp cô:** lưu bản cuối vào `nop-co/` với tên `yyyy-mm-dd_Tên.ext`.
 4. **Cập nhật file này** khi hiện trạng thay đổi đáng kể (mỗi tuần một lần là đủ).

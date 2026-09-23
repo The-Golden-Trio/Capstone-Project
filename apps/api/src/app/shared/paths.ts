@@ -32,19 +32,19 @@ export function resolveWorkspaceRoot(): string {
 
 /**
  * Thư mục chứa skills_taxonomy.json + role_graph.json.
- * Ưu tiên: env DATA_DIR → dist/assets/data (webpack copy) → occupation-data/output (dev/test).
+ * Ưu tiên: env DATA_DIR → dist/assets/data (webpack copy) → occupation-data/generated (dev/test).
  */
 export function resolveDataDir(): string {
   const candidates = [
     process.env['DATA_DIR'],
     join(__dirname, 'assets', 'data'),
-    join(resolveWorkspaceRoot(), 'occupation-data', 'output'),
+    join(resolveWorkspaceRoot(), 'occupation-data', 'generated'),
   ].filter((p): p is string => !!p);
   for (const c of candidates) {
     if (existsSync(join(c, 'skills_taxonomy.json'))) return c;
   }
   throw new Error(
-    `Không tìm thấy skills_taxonomy.json ở: ${candidates.join(', ')} — chạy occupation-data/build_skill_taxonomy.py trước.`,
+    `Không tìm thấy skills_taxonomy.json ở: ${candidates.join(', ')} — chạy occupation-data/scripts/build_skill_taxonomy.py trước.`,
   );
 }
 

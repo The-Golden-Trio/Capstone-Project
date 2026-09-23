@@ -1,10 +1,10 @@
 {
   "_meta": {
-    "generated_at": "2026-09-18",
+    "generated_at": "2026-09-23",
     "sources": [
-      "occupation-data/output/role_graph.json",
-      "occupation-data/dataset_22_roles_enriched_v3.json",
-      "occupation-data/output/dataset_final_merged.json"
+      "occupation-data/generated/role_graph.json",
+      "occupation-data/datasets/dataset_22_roles_enriched_v3.json",
+      "occupation-data/datasets/dataset_final_merged.json"
     ],
     "note": "SINH TU DONG. Sinh lai: node docs/data/build-galaxy.mjs"
   },

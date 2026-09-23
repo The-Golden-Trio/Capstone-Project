@@ -13,7 +13,7 @@ interface TaxonomyFile {
   }>;
 }
 
-/** Đọc occupation-data/output/skills_taxonomy.json (snake_case) → domain Skill[]. */
+/** Đọc occupation-data/generated/skills_taxonomy.json (snake_case) → domain Skill[]. */
 export function loadTaxonomy(dataDir = resolveDataDir()): Skill[] {
   const file = JSON.parse(readFileSync(join(dataDir, 'skills_taxonomy.json'), 'utf-8')) as TaxonomyFile;
   return file.skills.map((s) => ({
@@ -25,7 +25,7 @@ export function loadTaxonomy(dataDir = resolveDataDir()): Skill[] {
   }));
 }
 
-/** Đọc occupation-data/output/role_graph.json (đã camelCase sẵn). */
+/** Đọc occupation-data/generated/role_graph.json (đã camelCase sẵn). */
 export function loadRoleGraph(dataDir = resolveDataDir()): RoleGraph {
   const file = JSON.parse(readFileSync(join(dataDir, 'role_graph.json'), 'utf-8')) as RoleGraph;
   return { nodes: file.nodes, edges: file.edges, absorbed: file.absorbed ?? [] };

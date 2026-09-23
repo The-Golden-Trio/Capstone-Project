@@ -43,8 +43,8 @@
 
 | Nhóm | File |
 |---|---|
-| **Hiện hành: sản phẩm & spec** | `occupation-data/spec-scenario-KHOI1.md` (v2.2) · `occupation-data/HUONG-DAN-SINH-SCENARIO.md` |
-| **Hiện hành: dữ liệu** | `occupation-data/README_DATASET.md` · `occupation-data/output/FILTERED_ROLES.csv` · `occupation-data/output/visualize_*.html` |
+| **Hiện hành: sản phẩm & spec** | `occupation-data/specs/spec-scenario-KHOI1.md` (v2.2) · `occupation-data/specs/HUONG-DAN-SINH-SCENARIO.md` |
+| **Hiện hành: dữ liệu** | `occupation-data/README.md` (mục lục) · `occupation-data/datasets/` · `occupation-data/decisions/FILTERED_ROLES.csv` · `occupation-data/tools/visualize_*.html` |
 | **Hiện hành: kỹ thuật** | `docs/vao-nghe-flow.*` · `infra/local/docker-compose.yml` (Overleaf) |
 | **Lịch sử: dữ liệu pass 0–1 (tháng 8)**, trong `_archive/occupation-data/` | `spec-pass1-KHOI1-fixed.md`, `pass0-archetype-triage.md`, `output/REPORT.md`, `output/Roles_Summary.md`, `output/education_paths.json`, `pass1/`, `golden/`, `capture/`, `jd_raw/`, `dataset_v1.json`, `dataset_22_roles_enriched.json`, `output/G1_22_roles.json` |
 | **Lịch sử: kỹ thuật**, trong `_archive/` | `README.md` (gốc repo), `docs/report-skill-graph-mvp.md`, `docs/prototype.html` |

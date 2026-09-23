@@ -1,7 +1,7 @@
-# 05 · Biên bản họp (tái dựng)
+# 05 · Meeting minutes (tái dựng)
 
 > Nhóm chỉ ghi minutes thật sự ở kênh Discord `#weekly-minutes` (4 lần: 18/8, 23/8, 27/8, 8/9). Các buổi còn lại được **tái dựng từ chat trước và sau buổi họp**. Những gì nói trực tiếp mà không ai nhắn lại thì không có ở đây.
-> Từ nay dùng mẫu [`templates/bien-ban-hop.md`](templates/bien-ban-hop.md) và thêm buổi mới **lên đầu** mục tương ứng.
+> Từ nay dùng mẫu [`templates/meeting-minutes.md`](templates/meeting-minutes.md) và thêm buổi mới **lên đầu** mục tương ứng.
 
 ---
 

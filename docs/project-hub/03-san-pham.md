@@ -1,7 +1,7 @@
 # 03 · Sản phẩm: JobQuest là gì và chơi thế nào
 
 > Đây là mô tả sản phẩm **theo những gì đã chốt** (xem [02](02-quyet-dinh.md)). Chỗ nào còn tranh cãi thì có ghi chú ⚠️.
-> Nguồn chính: báo cáo Ch.1–5 (18/9), deck 7/9, `occupation-data/spec-scenario-KHOI1.md` v2.2 và code.
+> Nguồn chính: báo cáo Ch.1–5 (18/9), deck 7/9, `occupation-data/specs/spec-scenario-KHOI1.md` v2.2 và code.
 
 ## 1. Một câu
 
@@ -62,7 +62,7 @@ Domain (VD: Software Engineering)                    ← "thiên hà"
 | **Ending** | Mỗi scenario có 2–5 kết cục: GOOD / PARTIAL / BAD / SECRET |
 | **Nhiệm vụ phụ** | Hỏi nhanh ngay trên bản đồ đảo, cộng điểm (có trong code, chưa có trong spec) |
 
-Cách sinh scenario mới: xem `occupation-data/HUONG-DAN-SINH-SCENARIO.md`.
+Cách sinh scenario mới: xem `occupation-data/specs/HUONG-DAN-SINH-SCENARIO.md`.
 
 ## 6. Kỹ năng và bản đồ nghề
 

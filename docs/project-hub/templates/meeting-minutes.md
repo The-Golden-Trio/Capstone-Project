@@ -1,4 +1,4 @@
-# Biên bản họp: dd/mm/yyyy
+# Meeting minutes: dd/mm/yyyy
 
 - **Loại:** họp nhóm / gặp cô / 1-1
 - **Hình thức:** trực tiếp (phòng …) / Meet / Discord

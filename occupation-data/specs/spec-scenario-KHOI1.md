@@ -5,8 +5,8 @@
 > **Phiên bản `scenario-2.1`.** Đổi so với `2.0`: `beats[]` → `activities[]`, mỗi activity có khối `context` riêng · task trở thành tiêu đề scenario (`scenario_title`) · số scenario tính theo số task, archetype thành thuộc tính · luật chống trùng task thành luật chính thức. File sinh theo `2.0` phải đổi tên trường và bổ sung `context` cho từng activity.
 
 > Dùng cho lớp mô phỏng nghề: biến `tasks[]` / `skills_hard[]` / `skills_soft[]` của một job thành tình huống công việc chơi được.
-> Quan hệ với `spec-pass1-KHOI1-fixed.md`: file đó sinh **dữ liệu nghề**, file này tiêu thụ dữ liệu đó để sinh **tình huống**. Mọi quy ước về `role_code`, thang L1–L10, nhãn độ tin cậy, bốn nhóm `company_type` đều kế thừa nguyên vẹn, không định nghĩa lại.
-> Golden anchor: `scenario-golden/SWE_BACKEND_L3.json`.
+> Quan hệ với `spec-pass1-KHOI1-fixed.md` (đã chuyển vào `_archive/occupation-data/`): file đó sinh **dữ liệu nghề**, file này tiêu thụ dữ liệu đó để sinh **tình huống**. Mọi quy ước về `role_code`, thang L1–L10, nhãn độ tin cậy, bốn nhóm `company_type` đều kế thừa nguyên vẹn, không định nghĩa lại.
+> Golden anchor: `scenarios/SWE_BACKEND/L3_S_INCIDENT.json`.
 
 File có hai khối, dùng ở hai thời điểm khác nhau:
 
@@ -26,7 +26,7 @@ Một **job** = một cặp `(role_code, band)`.
 - Role archetype **A / B / D**: mỗi phần tử trong `levels[]` là một job.
 - Role archetype **C** (không có `levels[]`): job duy nhất, band lấy từ `destination_profile.band_range`.
 
-`role_code` **bắt buộc** tồn tại trong `roles.csv`. Không map được → dừng, không tạo mã giả.
+`role_code` **bắt buộc** tồn tại trong `datasets/roles.csv`. Không map được → dừng, không tạo mã giả.
 
 ## A2. Một scenario là gì
 
@@ -517,14 +517,14 @@ Trường không áp dụng → `null` hoặc mảng rỗng. **KHÔNG xoá key.*
     "generated_at": "<YYYY-MM-DD>",
     "source_dataset": "<tên file dataset đã đọc>",
     "fallback_tier": 1,                  // 1..3 theo bảng A5
-    "golden_used": [],                   // ["scenario-golden/SWE_BACKEND_L3.json"] nếu có neo
+    "golden_used": [],                   // ["scenarios/SWE_BACKEND/L3_S_INCIDENT.json"] nếu có neo
     "note": null                         // ghi chú tự do cho người rà soát, hoặc null
   },
 
   "scenario_title": "...",               // BẰNG ĐÚNG context.task (A2)
 
   "job": {
-    "role_code": "...",                  // phải có trong roles.csv
+    "role_code": "...",                  // phải có trong datasets/roles.csv
     "role_name_vn": "...",
     "band": "L3",                        // phải nằm trong occupied_bands của role
     "title_vn": "...",
@@ -543,7 +543,7 @@ Trường không áp dụng → `null` hoặc mảng rỗng. **KHÔNG xoá key.*
 
     // --- sân khấu ---
     "company_type": "...",               // 1 trong 4 nhóm, KHÔNG được là nhóm CHUA_CO_DU_LIEU
-    "work_environment_id": "...",        // id từ work_environments.json, không copy mô tả
+    "work_environment_id": "...",        // id từ datasets/work_environments.json, không copy mô tả
     "situation": "...",                  // đề bài. Độ mơ hồ phải khớp trục BAND
     "stakes": "...",                     // hỏng thì mất gì. Phạm vi phải khớp trục BAND
     "time_pressure": "...",
@@ -864,7 +864,7 @@ Còn lại một phần nhỏ chưa phủ: hai scenario **khác task** vẫn có
 
 ### 4. Lớp sự kiện chưa được spec hoá
 
-`dataset_22_roles_enriched_v3.json` mang một hệ nội dung **thứ hai** mà spec này chưa định nghĩa: **97 sự kiện role-play**, mỗi cái một màn với 3 lựa chọn, và mỗi lựa chọn phát `signal` trên 8 chiều `fit_dimensions` (`DEEP_WORK`, `PRESSURE`, `PEOPLE`…).
+`datasets/dataset_22_roles_enriched_v3.json` mang một hệ nội dung **thứ hai** mà spec này chưa định nghĩa: **97 sự kiện role-play**, mỗi cái một màn với 3 lựa chọn, và mỗi lựa chọn phát `signal` trên 8 chiều `fit_dimensions` (`DEEP_WORK`, `PRESSURE`, `PEOPLE`…).
 
 Hai hệ đo hai thứ khác nhau và **không thay thế nhau được**:
 

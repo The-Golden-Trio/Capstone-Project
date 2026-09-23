@@ -2,8 +2,8 @@
 // Chay:  node docs/data/build.mjs
 //
 // Nguon:
-//   occupation-data/dataset_22_roles_enriched_v3.json  — 22 role, su kien, luong, graph
-//   occupation-data/shared/fit_quiz.json               — 6 cau hoi buoc 2
+//   occupation-data/datasets/dataset_22_roles_enriched_v3.json  — 22 role, su kien, luong, graph
+//   occupation-data/datasets/fit_quiz.json               — 6 cau hoi buoc 2
 //   occupation-data/scenarios/**.json                  — kich ban sau
 //
 // Vi sao xuat .js chu khong de prototype fetch() cac file .json:
@@ -12,13 +12,13 @@
 
 import fs from 'fs';
 
-const DATASET  = 'occupation-data/dataset_22_roles_enriched_v3.json';
-const QUIZ     = 'occupation-data/shared/fit_quiz.json';
+const DATASET  = 'occupation-data/datasets/dataset_22_roles_enriched_v3.json';
+const QUIZ     = 'occupation-data/datasets/fit_quiz.json';
 const GROUP    = 'Software Engineering & Architecture';
 
 const SCENARIOS = [
   ['SWE_BACKEND_L1_S_EXEC',     'occupation-data/scenarios/SWE_BACKEND/L1_S_EXEC.json'],
-  ['SWE_BACKEND_L3_S_INCIDENT', 'occupation-data/scenario-golden/SWE_BACKEND_L3.json'],
+  ['SWE_BACKEND_L3_S_INCIDENT', 'occupation-data/scenarios/SWE_BACKEND/L3_S_INCIDENT.json'],
 ];
 
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));

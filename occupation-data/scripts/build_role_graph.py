@@ -3,8 +3,8 @@
 build_role_graph.py — Dựng dữ liệu graph 22 role cho màn "Planet Universe".
 
 Input:
-  dataset_22_roles_enriched_v3.json   (roles[] + graph_edges_full[])
-  output/skills_taxonomy.json         (từ build_skill_taxonomy.py — chạy TRƯỚC script này)
+  datasets/dataset_22_roles_enriched_v3.json   (roles[] + graph_edges_full[])
+  generated/skills_taxonomy.json      (từ build_skill_taxonomy.py — chạy TRƯỚC script này)
 
 Luật (theo plan mục 2.1):
   - Node = 1 role (không tính band). Skill set = union hard_skills_languages + hard_skills_frameworks
@@ -17,7 +17,7 @@ Luật (theo plan mục 2.1):
     Không thể tính Jaccard (không có skill data) → ghi riêng vào `absorbed[]` và gắn vào
     node.absorbedRoles; KHÔNG đưa vào `edges[]` để graph 22 node không có cạnh treo.
 
-Output: output/role_graph.json
+Output: generated/role_graph.json
   { _meta, nodes: [{roleCode, nameVn, roleGroup, skillIds, absorbedRoles}],
     edges: [{id, from, to, type, distance, distanceMethod, requiredSkills}],
     absorbed: [{parentRoleCode, roleCode, note}] }
@@ -30,10 +30,11 @@ import sys
 from collections import Counter
 from datetime import date
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-SRC_22 = os.path.join(HERE, "dataset_22_roles_enriched_v3.json")
-SRC_TAXONOMY = os.path.join(HERE, "output", "skills_taxonomy.json")
-OUT_PATH = os.path.join(HERE, "output", "role_graph.json")
+# Script nằm ở occupation-data/scripts/ — mọi đường dẫn tính từ occupation-data/.
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC_22 = os.path.join(HERE, "datasets", "dataset_22_roles_enriched_v3.json")
+SRC_TAXONOMY = os.path.join(HERE, "generated", "skills_taxonomy.json")
+OUT_PATH = os.path.join(HERE, "generated", "role_graph.json")
 
 MIN_DISTANCE = 0.05          # tránh 2 node chồng nhau khi Jaccard = 1
 JUNK_STRINGS = {"not using", "none", "n/a"}   # nhãn rác của báo cáo, cùng bộ với build_skill_taxonomy.py
@@ -174,8 +175,8 @@ def main() -> int:
     payload = {
         "_meta": {
             "generated_at": date.today().isoformat(),
-            "generator": "occupation-data/build_role_graph.py",
-            "source": "dataset_22_roles_enriched_v3.json + output/skills_taxonomy.json",
+            "generator": "occupation-data/scripts/build_role_graph.py",
+            "source": "datasets/dataset_22_roles_enriched_v3.json + generated/skills_taxonomy.json",
             "counts": {
                 "nodes": len(nodes),
                 "edges": len(edges),

@@ -2,8 +2,8 @@
 
 window.GAME = {
   "_meta": {
-    "generated_at": "2026-09-20",
-    "source_dataset": "occupation-data/dataset_22_roles_enriched_v3.json",
+    "generated_at": "2026-09-23",
+    "source_dataset": "occupation-data/datasets/dataset_22_roles_enriched_v3.json",
     "group": "Software Engineering & Architecture",
     "note": "SINH TU DONG. Sinh lai: node docs/data/build.mjs"
   },
@@ -3087,7 +3087,7 @@ window.GAME = {
         "source_dataset": "9_roles_tier1_pass2.json",
         "fallback_tier": 2,
         "golden_used": [
-          "scenario-golden/SWE_BACKEND_L3.json"
+          "scenarios/SWE_BACKEND/L3_S_INCIDENT.json"
         ],
         "note": "Kịch bản mở màn của nghề Back-end. Cố ý phủ cả bốn loại activity (PRIORITIZING, CHOICE, ORDERING, FREETEXT) vì L1 là chỗ các loại đóng hợp lý nhất — intern nhận việc đã chia sẵn, phần lớn quyết định là chọn và sắp xếp trong phạm vi đã giới hạn."
       },

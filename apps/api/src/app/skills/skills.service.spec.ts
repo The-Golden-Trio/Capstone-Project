@@ -10,7 +10,7 @@ import { loadTaxonomy } from '../persistence/data-files';
 import type { IngestEvidenceDto } from './dto/ingest-evidence.dto';
 import { SkillsService } from './skills.service';
 
-/** Fixture lấy từ scenario-golden/SWE_BACKEND_L3.json (context.skills_hard / skills_soft). */
+/** Fixture lấy từ occupation-data/scenarios/SWE_BACKEND/L3_S_INCIDENT.json (context.skills_hard / skills_soft). */
 const GOLDEN = {
   roleCode: 'SWE_BACKEND',
   band: 'L3',

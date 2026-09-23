@@ -79,9 +79,9 @@
 | ID | Quyết định | Ngày | Nguồn | Trạng thái |
 |---|---|---|---|---|
 | D-50 | Taxonomy **78 role IT / 6 domain**, xếp 4 archetype (A = có tuyển fresher, B = chuyển ngang, C = đích đến, D = lai). Nhãn tin cậy A_VERIFIED / B_TITLE_SEEN / C_INFERRED. **Thiếu dữ liệu thì ghi `unknowns`, không suy diễn** | 22/8 | `_archive/occupation-data/`: `pass0-archetype-triage.md`, `spec-pass1-KHOI1-fixed.md`, `output/REPORT.md` | ✅ |
-| D-51 | **Khử bias JD:** lấy skill và lương từ khảo sát tự khai của người làm nghề (**ITviec IT Salary Report 2025–26**, n = 1.839) thay vì từ JD công ty | 27/8 → 10/9 | 🎮 minutes 27/8 ("bias do đọc JD"); `README_DATASET.md` | ✅ |
+| D-51 | **Khử bias JD:** lấy skill và lương từ khảo sát tự khai của người làm nghề (**ITviec IT Salary Report 2025–26**, n = 1.839) thay vì từ JD công ty | 27/8 → 10/9 | 🎮 minutes 27/8 ("bias do đọc JD"); `README_DATASET.md` (đã xoá, còn trong commit `6652636`) | ✅ |
 | D-52 | Lọc role phổ biến, gộp role ít khác biệt, **giữ cột similar role khi gộp** → **22 role** cho graph, **18 role chơi được** | 23/8 → 10/9 | 🎮 minutes 23/8; 💬 26/8; `roles_18_playable.csv` | ✅ |
-| D-53 | Có 97 sự kiện role-play (7 chung + 90 riêng), đo trên **8 chiều fit** (DEEP_WORK, PRESSURE, PEOPLE…). **Hệ sự kiện này và hệ kịch bản chưa được hợp nhất** | 10/9 | `README_DATASET.md`; spec "CÒN THIẾU #4" | ⚠️ |
+| D-53 | Có 97 sự kiện role-play (7 chung + 90 riêng), đo trên **8 chiều fit** (DEEP_WORK, PRESSURE, PEOPLE…). **Hệ sự kiện này và hệ kịch bản chưa được hợp nhất** | 10/9 | `README_DATASET.md` (đã xoá, còn trong commit `6652636`); spec "CÒN THIẾU #4" | ⚠️ |
 
 ## H. Thương hiệu & cách làm việc
 

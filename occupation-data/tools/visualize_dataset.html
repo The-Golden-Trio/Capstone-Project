@@ -819,9 +819,6 @@
             >
               78 roles
             </button>
-            <button type="button" data-file="9_roles_tier1_pass2.json">
-              Tier 1
-            </button>
           </div>
           <input
             class="search"
@@ -888,7 +885,6 @@
     <script>
       const DATASETS = {
         "dataset_final_merged.json": "Master dataset",
-        "9_roles_tier1_pass2.json": "Tier 1 verified sample",
       };
 
       const state = {
@@ -1006,7 +1002,7 @@
         state.selectedCode = null;
         els.subtitle.textContent = "Đang tải dữ liệu...";
 
-        const response = await fetch(file, { cache: "no-store" });
+        const response = await fetch("../datasets/" + file, { cache: "no-store" });
         if (!response.ok) {
           throw new Error(`Không đọc được ${file}`);
         }

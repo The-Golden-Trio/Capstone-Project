@@ -7,10 +7,10 @@
 
 | File | Vai trò |
 |---|---|
-| `spec-scenario-KHOI1.md` | Bộ quy tắc. Bất biến, không sửa vì một kịch bản lẻ |
-| `scenario-golden/SWE_BACKEND_L3.json` | Kịch bản mẫu. Xem để hiểu, **không dán vào phiên sinh** |
-| `9_roles_tier1_pass2.json` | Dữ liệu 9 role đã xác minh |
-| `dataset_final_merged.json` | Dữ liệu đầy đủ 78 role |
+| `specs/spec-scenario-KHOI1.md` | Bộ quy tắc. Bất biến, không sửa vì một kịch bản lẻ |
+| `scenarios/SWE_BACKEND/L3_S_INCIDENT.json` | Kịch bản mẫu (golden anchor). Xem để hiểu, **không dán vào phiên sinh** |
+| `datasets/dataset_final_merged.json` | Dữ liệu đầy đủ 78 role (bản 9 role tier-1 `9_roles_tier1_pass2.json` đã bị xoá khỏi repo) |
+| `datasets/roles.csv` | Danh mục 78 `role_code` hợp lệ |
 
 ---
 
@@ -49,7 +49,7 @@ Chạy lệnh này để xem những job nào có đủ dữ liệu (fallback ti
 python3 - <<'PY'
 import json
 rows=[]
-for f in ("occupation-data/9_roles_tier1_pass2.json","occupation-data/dataset_final_merged.json"):
+for f in ("occupation-data/datasets/dataset_final_merged.json",):
     for r in json.load(open(f)):
         for l in (r.get('levels') or []):
             if l.get('tasks'):
@@ -81,7 +81,7 @@ Job không có trong danh sách vẫn sinh được, nhưng rơi vào tier 2 ho�
 python3 - <<'PY'
 import json
 ROLE, BAND = "QA_MANUAL", "L4"          # <<< DOI O DAY
-for f in ("occupation-data/9_roles_tier1_pass2.json","occupation-data/dataset_final_merged.json"):
+for f in ("occupation-data/datasets/dataset_final_merged.json",):
     d = json.load(open(f))
     r = next((x for x in d if x['role_code']==ROLE), None)
     if not r: continue
@@ -196,7 +196,7 @@ Role kiểu này (ví dụ `SWE_ARCH_ENT`) chỉ có `destination_profile`. Sinh
 python3 - <<'PY'
 import json
 ROLE = "SWE_ARCH_ENT"                    # <<< DOI O DAY
-d = json.load(open('occupation-data/dataset_final_merged.json'))
+d = json.load(open('occupation-data/datasets/dataset_final_merged.json'))
 r = next(x for x in d if x['role_code']==ROLE)
 print(json.dumps({
   "source_dataset":"dataset_final_merged.json",
@@ -225,7 +225,7 @@ occupation-data/scenarios/QA_MANUAL/L4_S_REVIEW.json
 occupation-data/scenarios/QA_MANUAL/L4_S_CONFLICT.json
 ```
 
-Thư mục `scenario-golden/` chỉ giữ 2–4 file làm mẫu — **đừng bỏ kịch bản thường vào đó**.
+Kịch bản mẫu (golden anchor) hiện là `scenarios/SWE_BACKEND/L3_S_INCIDENT.json`, nằm chung với kịch bản thường. Nếu thêm mẫu mới, ghi rõ trong `_meta.note` là golden anchor.
 
 Nhớ bỏ hết comment `//` nếu AI trả về dạng jsonc, vì JSON chuẩn không có comment.
 
@@ -245,10 +245,10 @@ P = "occupation-data/scenarios/QA_MANUAL/L4_S_REVIEW.json"   # <<< DOI O DAY
 s = json.load(open(P)); ok = lambda c: "OK  " if c else "FAIL"
 ctx, acts, ev, re_ = s['context'], s['activities'], s['endings'], s.get('random_events', [])
 bn = int(s['job']['band'].lstrip('L'))
-codes = {r['role_code'] for r in csv.DictReader(open('occupation-data/roles.csv', encoding='utf-8-sig'))}
+codes = {r['role_code'] for r in csv.DictReader(open('occupation-data/datasets/roles.csv', encoding='utf-8-sig'))}
 
 role = lv = None
-for f in ("occupation-data/9_roles_tier1_pass2.json","occupation-data/dataset_final_merged.json"):
+for f in ("occupation-data/datasets/dataset_final_merged.json",):
     for r in json.load(open(f)):
         if r['role_code']==s['job']['role_code']:
             role = role or r

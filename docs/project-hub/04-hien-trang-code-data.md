@@ -13,7 +13,7 @@ Capstone-Project/
 ├─ packages/
 │  └─ game-core/           Logic game dùng chung: scenarioEngine, chấm điểm, band, fit, side quest
 │     └─ data/             game-data.json · galaxy-data.json (SINH TỰ ĐỘNG, đừng sửa tay)
-├─ occupation-data/        Dữ liệu nghề IT: JD thô, pass 0/1/2, dataset 78 → 22 → 18 role, spec kịch bản, script Python
+├─ occupation-data/        Dữ liệu nghề IT: datasets/ · scenarios/ · generated/ · scripts/ · specs/ · decisions/ · tools/ (xem occupation-data/README.md)
 ├─ docs/
 │  ├─ project-hub/         ◄ SINGLE SOURCE OF TRUTH (thư mục này)
 │  ├─ data/build*.mjs      Script build game-data / galaxy-data từ occupation-data
@@ -63,14 +63,14 @@ Sơ đồ đầy đủ: [`assets/vao-nghe-flow.png`](assets/vao-nghe-flow.png).
 ### Pipeline
 
 ```
-jd_raw/*.txt (JD thật, đã archive) ──┐
-ITviec report 2025–26 ───┼─► pass0 (78 role, archetype, đã archive) ─► pass1/*.json (76, đã archive) ─► pass2 (9 role tier-1 A_VERIFIED)
-                         │         └─► output/dataset_final_merged.json (78 role master)
-                         └─► dataset_22_roles_enriched_v3.json (22 role: skill, lương, graph, 97 sự kiện)
-                                   └─► roles_18_playable.csv/json (18 role chơi được)
+(lịch sử, đã archive) JD thô → pass0 → pass1 (76 role) → pass2 (9 role tier-1)
+                         │
+occupation-data/datasets/dataset_final_merged.json          (78 role master)
+occupation-data/datasets/dataset_22_roles_enriched_v3.json  (22 role: skill, lương, graph, 97 sự kiện; nguồn ITviec 2025–26)
+occupation-data/decisions/roles_18_playable.json            (18 role chơi được)
 
-build_skill_taxonomy.py ─► output/skills_taxonomy.json (227 skill: 169 hard, 58 soft)
-build_role_graph.py     ─► output/role_graph.json      (22 node, 64 cạnh, 39 alias gộp)
+occupation-data/scripts/build_skill_taxonomy.py ─► occupation-data/generated/skills_taxonomy.json (227 skill: 169 hard, 58 soft)
+occupation-data/scripts/build_role_graph.py     ─► occupation-data/generated/role_graph.json      (22 node, 64 cạnh, 39 alias gộp)
 
 docs/data/build.mjs        ─► packages/game-core/data/game-data.json   (9 role nhóm Software, 2 scenario, 43 sự kiện, quiz)
 docs/data/build-galaxy.mjs ─► packages/game-core/data/galaxy-data.json (22 hành tinh, 7 nhóm)
@@ -79,13 +79,7 @@ apps/api/src/scripts/seed-content.ts ─► PostgreSQL (bảng *Doc)
 
 ### File nào là bản chính?
 
-| Dùng | Bỏ qua (bản cũ / trung gian) |
-|---|---|
-| `output/dataset_final_merged.json` (78 role) | `dataset_v1.json`, `pass1/` (đã archive) |
-| `dataset_22_roles_enriched_v3.json` (22 role) | `dataset_22_roles_enriched.json`, `output/G1_22_roles.json` (đã archive) · `_v2.json` (còn giữ vì `patch_entry.py` đọc) |
-| `roles_18_playable.*` | `_to_delete/pass1_new_62roles.zip` (đã archive) |
-| `spec-scenario-KHOI1.md` **v2.2**, `HUONG-DAN-SINH-SCENARIO.md` | `docs/data/scenarios.js` (đã xoá ở `86878a2`) |
-| `scenario-golden/SWE_BACKEND_L3.json`, `scenarios/SWE_BACKEND/L1_S_EXEC.json` | |
+Folder `occupation-data/` đã được sắp xếp lại ngày 23/9: chỉ còn bản đang dùng. Danh sách từng file và ai đọc nó nằm ở `occupation-data/README.md`. Các bản cũ (`dataset_v1.json`, `pass1/`, `dataset_22_roles_enriched.json`, `_v2.json`, `patch_entry.py`, `G1_22_roles.json`…) nằm ở `_archive/occupation-data/` hoặc đã bị xoá.
 
 ## 6. Cái gì là thật, cái gì là giả lập
 

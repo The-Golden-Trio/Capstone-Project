@@ -21,7 +21,7 @@
 
 | # | Ưu tiên | Việc | Gợi ý |
 |---|---|---|---|
-| B1 | 🔴 | Viết lại **Objectives** thành mục tiêu, không phải danh sách task | Dùng câu cô gợi ý (xem [05](05-bien-ban-hop.md#gap-co-199)) |
+| B1 | 🔴 | Viết lại **Objectives** thành mục tiêu, không phải danh sách task | Dùng câu cô gợi ý (xem [05](05-meeting-minutes.md#gap-co-199)) |
 | B2 | 🔴 | Phần solution phải **thể hiện được AI-native**, và so với các hệ thống AI-native hiện có | Gắn với việc AI sinh, dẫn truyện và chấm. Hiện code **chưa có AI** (xem C1) |
 | B3 | 🔴 | **Bối cảnh vận hành:** ai chạy, hạ tầng AI do ai cung cấp, doanh thu từ đâu, tìm domain expert ở đâu | Viết vào §4.1 báo cáo |
 | B4 | 🟠 | Gati (1996) quá cũ → phân tích lại bối cảnh chọn nghề, thêm nguồn mới | Chương 1–2 |
