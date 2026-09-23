@@ -12,7 +12,7 @@ Skill này giúp Claude (và AI khác) tạo slide HTML đúng phong cách của
 
 ### Cách 2 — Ứng dụng Claude (claude.ai, desktop, Cowork)
 1. Bật **Code execution** trong Settings → Capabilities.
-2. Vào **Customize → Skills → + → Create skill → Upload a skill**, chọn `capstone-slides.zip`.
+2. Vào **Customize → Skills → + → Create skill → Upload a skill**, chọn file `docs/capstone-slides.zip` trong repo (tải trực tiếp trên GitHub: mở file → Download raw file).
 3. Kiểm tra skill đang được bật trong danh sách Skills. Mỗi người tự upload vào tài khoản của mình.
 4. Khi skill có bản mới: upload lại file zip mới (nếu ứng dụng báo trùng tên thì xoá bản cũ trước).
 
@@ -47,3 +47,6 @@ src/build.py             sinh lại references/layouts.md và examples/showcase.
 2. Chạy `python3 src/build.py` để sinh lại danh mục và trang showcase.
 3. Chạy `python3 scripts/check_deck.py examples/showcase.html --render /tmp/check` rồi xem ảnh `contact-sheet.png`.
 4. Nếu thêm layout mới, nhớ thêm class `l-...` của nó vào `LAYOUTS` trong `scripts/check_deck.py`.
+
+> Mỗi khi sửa skill, nhớ tạo lại `docs/capstone-slides.zip` rồi commit cùng lúc, ví dụ:
+> `cd .claude/skills && zip -r ../../docs/capstone-slides.zip capstone-slides -x "*.DS_Store" "*__pycache__*"` (xoá file zip cũ trước).
