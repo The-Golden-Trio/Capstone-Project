@@ -1,0 +1,23 @@
+{
+  "_comment": "Map tác giả git / GitHub → người. Thêm email hoặc tên git mới khi collect_week.py báo 'Chưa map'. github: login GitHub (không bắt buộc, script tự học từ commit trong PR).",
+  "members": [
+    {
+      "name": "Nhật",
+      "emails": ["nhatchau.forwork@gmail.com"],
+      "git_names": ["Brian Chau"],
+      "github": []
+    },
+    {
+      "name": "Nam",
+      "emails": ["tgknam2005@gmail.com"],
+      "git_names": ["truongnam"],
+      "github": []
+    },
+    {
+      "name": "Phúc",
+      "emails": ["nguyenphuc102005@gmail.com"],
+      "git_names": ["GitGud031005"],
+      "github": []
+    }
+  ]
+}
