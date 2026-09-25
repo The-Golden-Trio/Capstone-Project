@@ -3,21 +3,21 @@
 build_skill_taxonomy.py — Xây skill taxonomy (nguồn thật duy nhất cho mọi skill_id).
 
 Quét toàn bộ chuỗi skill từ 4 nguồn:
-  1. output/dataset_final_merged.json      levels[].skills_hard[].skill, levels[].skills_soft[]
-  2. 9_roles_tier1_pass2.json              cùng shape (1)
-  3. dataset_22_roles_enriched_v3.json     skills_status.hard_skills_languages[].skill,
+  1. datasets/dataset_final_merged.json    levels[].skills_hard[].skill, levels[].skills_soft[]
+  2. 9_roles_tier1_pass2.json              cùng shape (1) — ĐÃ XOÁ khỏi repo, script tự bỏ qua
+  3. datasets/dataset_22_roles_enriched_v3.json skills_status.hard_skills_languages[].skill,
                                            skills_status.hard_skills_frameworks[].skill,
                                            graph_edges.similar_ranked[].shared_skills_top[]
-  4. scenario-golden/*.json + scenarios/**/*.json   context.skills_hard / context.skills_soft
+  4. scenarios/**/*.json                   context.skills_hard / context.skills_soft
 
 Chuẩn hoá: trim + casefold + alias map tay cho các biến thể RÕ RÀNG (React.js/ReactJS/React,
 Javascript/JavaScript ...). Còn lại giữ nguyên để người review gộp tiếp bằng tay.
 
-Output: output/skills_taxonomy.json
+Output: generated/skills_taxonomy.json
   [{ skill_id, name_vn, type: "hard"|"soft", category, aliases: [] }]
   category (hard) = language | framework | tool — theo nguồn gốc; soft = null ở MVP.
 
-Chạy:  python3 build_skill_taxonomy.py
+Chạy:  python3 occupation-data/scripts/build_skill_taxonomy.py
 Deterministic: chạy lại ra file y hệt (sort ổn định) — an toàn để commit.
 """
 from __future__ import annotations
@@ -31,14 +31,14 @@ import unicodedata
 from collections import OrderedDict
 from datetime import date
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-OUT_PATH = os.path.join(HERE, "output", "skills_taxonomy.json")
+# Script nằm ở occupation-data/scripts/ — mọi đường dẫn tính từ occupation-data/.
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT_PATH = os.path.join(HERE, "generated", "skills_taxonomy.json")
 
-SRC_MERGED_78 = os.path.join(HERE, "output", "dataset_final_merged.json")
+SRC_MERGED_78 = os.path.join(HERE, "datasets", "dataset_final_merged.json")
 SRC_TIER1_9 = os.path.join(HERE, "9_roles_tier1_pass2.json")
-SRC_22 = os.path.join(HERE, "dataset_22_roles_enriched_v3.json")
+SRC_22 = os.path.join(HERE, "datasets", "dataset_22_roles_enriched_v3.json")
 SRC_SCENARIO_GLOBS = [
-    os.path.join(HERE, "scenario-golden", "*.json"),
     os.path.join(HERE, "scenarios", "**", "*.json"),
 ]
 
@@ -268,9 +268,9 @@ def main() -> int:
     c9 = scan_levels_dataset(tax, SRC_TIER1_9, "9_roles_tier1_pass2")
     print(f"  9_roles_tier1_pass2.json          : {c9} chuỗi")
     c78 = scan_levels_dataset(tax, SRC_MERGED_78, "dataset_final_merged")
-    print(f"  output/dataset_final_merged.json  : {c78} chuỗi")
+    print(f"  datasets/dataset_final_merged.json: {c78} chuỗi")
     csc = scan_scenarios(tax, SRC_SCENARIO_GLOBS)
-    print(f"  scenario-golden + scenarios       : {csc} chuỗi")
+    print(f"  scenarios                         : {csc} chuỗi")
 
     rows = tax.finalize()
     hard = [r for r in rows if r["type"] == "hard"]
@@ -280,12 +280,11 @@ def main() -> int:
     payload = {
         "_meta": {
             "generated_at": date.today().isoformat(),
-            "generator": "occupation-data/build_skill_taxonomy.py",
+            "generator": "occupation-data/scripts/build_skill_taxonomy.py",
             "sources": [
-                "dataset_22_roles_enriched_v3.json",
+                "datasets/dataset_22_roles_enriched_v3.json",
                 "9_roles_tier1_pass2.json",
-                "output/dataset_final_merged.json",
-                "scenario-golden/*.json",
+                "datasets/dataset_final_merged.json",
                 "scenarios/**/*.json",
             ],
             "counts": {"total": len(rows), "hard": len(hard), "soft": len(soft), "with_aliases": len(merged)},
