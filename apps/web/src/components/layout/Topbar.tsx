@@ -1,12 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { Crest } from '../game/Crest';
-import { CurrentPlaceToggle } from './CurrentPlaceToggle';
 import { LanguageToggle } from './LanguageToggle';
 import { Logo } from './Logo';
 import { cx } from '../../lib/cx';
 import { useT } from '../../i18n/useT';
 import { useAuthStore } from '../../store/authStore';
-import { useProgressStore } from '../../store/progressStore';
 
 /**
  * Thanh đầu trang — nay là chỗ điều hướng duy nhất.
@@ -14,11 +12,14 @@ import { useProgressStore } from '../../store/progressStore';
  * Giữ ít mục nhất có thể: bản đồ nghề là nơi người chơi quay về nhiều nhất,
  * còn tự vấn và tài khoản nằm trong trang Hành trang, vào qua huy hiệu bên
  * phải. Header đông quá thì trên màn hẹp không còn chỗ cho cái gì cả.
+ *
+ * Điểm kỹ năng từng có một ô ở đây, nhưng thanh kinh nghiệm dưới đáy màn hình
+ * đã nói đúng con số ấy ở mọi trang — hai chỗ cùng nói một điều thì chỉ tổ
+ * chiếm chỗ và có ngày lệch nhau.
  */
 export function Topbar() {
   const t = useT();
   const user = useAuthStore((s) => s.user);
-  const summary = useProgressStore((s) => s.summary);
 
   const link = ({ isActive }: { isActive: boolean }) =>
     cx(
@@ -45,17 +46,6 @@ export function Topbar() {
 
       <span className="flex-1" />
 
-      <span className="flex items-center gap-2 whitespace-nowrap rounded-full border border-line-2 bg-inset px-3 py-[5px] font-mono text-[11px] text-muted max-[760px]:hidden">
-        <span className="text-gold" aria-hidden="true">
-          ◆
-        </span>
-        <b className="font-semibold tabular-nums text-gold-2">
-          {summary?.totalPoints ?? 0}
-        </b>
-        {t('top.skillPoints')}
-      </span>
-
-      <CurrentPlaceToggle />
       <LanguageToggle />
 
       {/* Huy hiệu là cửa vào Hành trang — nơi chứa tự vấn, tiến trình, tài khoản. */}

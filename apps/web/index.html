@@ -6,7 +6,11 @@
     <base href="/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Logo sản phẩm cũng là icon trên tab. Giữ .ico làm phương án dự phòng
+         cho trình duyệt cũ không nhận PNG. -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/logo.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
