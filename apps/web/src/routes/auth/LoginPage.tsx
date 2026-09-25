@@ -25,7 +25,7 @@ export function LoginPage() {
   // Nơi người dùng định tới trước khi bị chặn lại — RequireAuth đã gài sẵn.
   const from =
     (location.state as { from?: { pathname: string } } | null)?.from?.pathname ??
-    '/';
+    '/jobs';
 
   if (status === 'authed') return <Navigate to={from} replace />;
 

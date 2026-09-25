@@ -24,7 +24,7 @@ export function ConsentPage() {
   const [busy, setBusy] = useState(false);
 
   if (status === 'anon') return <Navigate to="/login" replace />;
-  if (user && user.consentStatus !== 'pending') return <Navigate to="/" replace />;
+  if (user && user.consentStatus !== 'pending') return <Navigate to="/jobs" replace />;
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
