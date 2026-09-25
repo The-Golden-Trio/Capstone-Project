@@ -1,0 +1,12 @@
+# Không commit thẳng lên main / production: làm trên branch rồi mở PR vào main.
+branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+if [ "$branch" = "main" ] || [ "$branch" = "production" ]; then
+  if [ "$ALLOW_MAIN_COMMIT" != "1" ]; then
+    echo ""
+    echo "✖ Không commit thẳng lên '$branch'. Tạo branch mới rồi commit lại:"
+    echo "    git switch -c feat/<tên-ngắn>"
+    echo "  Trường hợp đặc biệt (hotfix đã báo nhóm): ALLOW_MAIN_COMMIT=1 git commit ..."
+    echo ""
+    exit 1
+  fi
+fi
