@@ -3,7 +3,7 @@
 build_role_graph.py — Dựng dữ liệu graph 22 role cho màn "Planet Universe".
 
 Input:
-  datasets/dataset_22_roles_enriched_v3.json   (roles[] + graph_edges_full[])
+  datasets/final_22_roles.json   (roles[] + graph_edges_full[])
   generated/skills_taxonomy.json      (từ build_skill_taxonomy.py — chạy TRƯỚC script này)
 
 Luật (theo plan mục 2.1):
@@ -32,7 +32,7 @@ from datetime import date
 
 # Script nằm ở occupation-data/scripts/ — mọi đường dẫn tính từ occupation-data/.
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC_22 = os.path.join(HERE, "datasets", "dataset_22_roles_enriched_v3.json")
+SRC_22 = os.path.join(HERE, "datasets", "final_22_roles.json")
 SRC_TAXONOMY = os.path.join(HERE, "generated", "skills_taxonomy.json")
 OUT_PATH = os.path.join(HERE, "generated", "role_graph.json")
 
@@ -176,7 +176,7 @@ def main() -> int:
         "_meta": {
             "generated_at": date.today().isoformat(),
             "generator": "occupation-data/scripts/build_role_graph.py",
-            "source": "datasets/dataset_22_roles_enriched_v3.json + generated/skills_taxonomy.json",
+            "source": "datasets/final_22_roles.json + generated/skills_taxonomy.json",
             "counts": {
                 "nodes": len(nodes),
                 "edges": len(edges),

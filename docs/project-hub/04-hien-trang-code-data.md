@@ -68,8 +68,8 @@ Sơ đồ đầy đủ: [`assets/vao-nghe-flow.png`](assets/vao-nghe-flow.png).
 ```
 (lịch sử, đã archive) JD thô → pass0 → pass1 (76 role) → pass2 (9 role tier-1)
                          │
-occupation-data/datasets/dataset_final_merged.json          (78 role master)
-occupation-data/datasets/dataset_22_roles_enriched_v3.json  (22 role: skill, lương, graph, 97 sự kiện; nguồn ITviec 2025–26)
+occupation-data/datasets/78_roles_unmerged.json          (78 role master)
+occupation-data/datasets/final_22_roles.json  (22 role: skill, lương, graph, 97 sự kiện; nguồn ITviec 2025–26)
 occupation-data/decisions/roles_18_playable.json            (18 role chơi được)
 
 occupation-data/scripts/build_skill_taxonomy.py ─► occupation-data/generated/skills_taxonomy.json (227 skill: 169 hard, 58 soft)
