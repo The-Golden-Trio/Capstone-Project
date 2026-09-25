@@ -16,12 +16,13 @@
 | A5 | 🟠 | **Điểm tính chung, hay tách domain point / skill point?** | Code: một loại XP theo skill. Đề xuất 18/9 và 20/9: tách theo domain/career, thêm achievement | Cả nhóm |
 | A6 | 🟠 | **BR-01 và BR-03 nghe như mâu thuẫn** | BR-01: cấp đầu mọi nghề mở. BR-03: vào nghề kề cần năng lực trùng. Nếu ý là "BR-03 cho vào thẳng cấp cao hơn của nghề kề" thì phải ghi rõ trong báo cáo | Người viết Ch.4 |
 | A7 | ⚪ | **Đánh giá nghề sau mỗi task hay sau cả nghề?** | Minutes 27/8: sau mỗi task. Deck 7/9 và BR-04: sau khi xong cả nghề, 5 tiêu chí. Code: chấm sao độ thực tế sau mỗi màn | Đã nghiêng về "sau cả nghề", cần xác nhận |
+| A8 | 🟠 | **Domain expert có dùng hệ thống không?** | Báo cáo 18/9 (§4.2.1, UC-07 viết seed và rubric, UC-08 duyệt tình huống): domain expert thao tác trên hệ thống. Midweek 23/9 (D-15): chỉ tư vấn cho content admin. Cần đổi actor các UC này sang content admin, sửa `03` §3 và báo cáo Ch.4 | Người viết Ch.4 (liên quan T2009.4) |
 
 ## B. Nhận xét của cô 19/9 chưa xử lý
 
 | # | Ưu tiên | Việc | Gợi ý |
 |---|---|---|---|
-| B1 | 🔴 | Viết lại **Objectives** thành mục tiêu, không phải danh sách task | Dùng câu cô gợi ý (xem [05](05-meeting-minutes.md#gap-co-199)) |
+| B1 | 🔴 | Viết lại **Objectives** thành mục tiêu, không phải danh sách task | Dùng câu cô gợi ý (xem [minutes 19/9](tuan/2026-W39/2026-09-19_gap-co.md)) |
 | B2 | 🔴 | Phần solution phải **thể hiện được AI-native**, và so với các hệ thống AI-native hiện có | Gắn với việc AI sinh, dẫn truyện và chấm. Hiện code **chưa có AI** (xem C1) |
 | B3 | 🔴 | **Bối cảnh vận hành:** ai chạy, hạ tầng AI do ai cung cấp, doanh thu từ đâu, tìm domain expert ở đâu | Viết vào §4.1 báo cáo |
 | B4 | 🟠 | Gati (1996) quá cũ → phân tích lại bối cảnh chọn nghề, thêm nguồn mới | Chương 1–2 |
@@ -56,4 +57,4 @@
 
 ## F. Dọn dẹp repo (xem [04 §7](04-hien-trang-code-data.md#7-nợ-kỹ-thuật--dọn-dẹp-chưa-ai-làm))
 
-- Viết `README.md` mới (bản cũ đã archive), xoá code chết `apps/api/src/app/{skills,career-graph,persistence}`, quyết số phận PR #1, commit sơ đồ flow, đưa source LaTeX Ch.1–5 và landing page vào repo.
+- Viết `README.md` mới (bản cũ đã archive), xoá code chết `apps/api/src/app/{skills,career-graph,persistence}`, quyết số phận PR #1, commit sơ đồ flow, đưa source LaTeX Ch.1–5 vào `reports/` và landing page vào repo.
