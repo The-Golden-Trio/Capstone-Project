@@ -25,7 +25,7 @@ export function RegisterPage() {
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [busy, setBusy] = useState(false);
 
-  if (status === 'authed') return <Navigate to="/" replace />;
+  if (status === 'authed') return <Navigate to="/jobs" replace />;
 
   const update = (key: keyof typeof form) => (value: string) =>
     setForm((f) => ({ ...f, [key]: value }));

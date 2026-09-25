@@ -9,7 +9,7 @@
 |---|---|
 | `specs/spec-scenario-KHOI1.md` | Bộ quy tắc. Bất biến, không sửa vì một kịch bản lẻ |
 | `scenarios/SWE_BACKEND/L3_S_INCIDENT.json` | Kịch bản mẫu (golden anchor). Xem để hiểu, **không dán vào phiên sinh** |
-| `datasets/dataset_final_merged.json` | Dữ liệu đầy đủ 78 role (bản 9 role tier-1 `9_roles_tier1_pass2.json` đã bị xoá khỏi repo) |
+| `datasets/78_roles_unmerged.json` | Dữ liệu đầy đủ 78 role (bản 9 role tier-1 `9_roles_tier1_pass2.json` đã bị xoá khỏi repo) |
 | `datasets/roles.csv` | Danh mục 78 `role_code` hợp lệ |
 
 ---
@@ -49,7 +49,7 @@ Chạy lệnh này để xem những job nào có đủ dữ liệu (fallback ti
 python3 - <<'PY'
 import json
 rows=[]
-for f in ("occupation-data/datasets/dataset_final_merged.json",):
+for f in ("occupation-data/datasets/78_roles_unmerged.json",):
     for r in json.load(open(f)):
         for l in (r.get('levels') or []):
             if l.get('tasks'):
@@ -81,7 +81,7 @@ Job không có trong danh sách vẫn sinh được, nhưng rơi vào tier 2 ho�
 python3 - <<'PY'
 import json
 ROLE, BAND = "QA_MANUAL", "L4"          # <<< DOI O DAY
-for f in ("occupation-data/datasets/dataset_final_merged.json",):
+for f in ("occupation-data/datasets/78_roles_unmerged.json",):
     d = json.load(open(f))
     r = next((x for x in d if x['role_code']==ROLE), None)
     if not r: continue
@@ -196,10 +196,10 @@ Role kiểu này (ví dụ `SWE_ARCH_ENT`) chỉ có `destination_profile`. Sinh
 python3 - <<'PY'
 import json
 ROLE = "SWE_ARCH_ENT"                    # <<< DOI O DAY
-d = json.load(open('occupation-data/datasets/dataset_final_merged.json'))
+d = json.load(open('occupation-data/datasets/78_roles_unmerged.json'))
 r = next(x for x in d if x['role_code']==ROLE)
 print(json.dumps({
-  "source_dataset":"dataset_final_merged.json",
+  "source_dataset":"78_roles_unmerged.json",
   "role_code": r['role_code'], "role_name_vn": r['role_name_vn'],
   "role_group": r['role_group'], "archetype": r['archetype'],
   "occupied_bands": r['occupied_bands'],
@@ -248,7 +248,7 @@ bn = int(s['job']['band'].lstrip('L'))
 codes = {r['role_code'] for r in csv.DictReader(open('occupation-data/datasets/roles.csv', encoding='utf-8-sig'))}
 
 role = lv = None
-for f in ("occupation-data/datasets/dataset_final_merged.json",):
+for f in ("occupation-data/datasets/78_roles_unmerged.json",):
     for r in json.load(open(f)):
         if r['role_code']==s['job']['role_code']:
             role = role or r

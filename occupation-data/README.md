@@ -17,10 +17,10 @@ occupation-data/
 
 | File | Là gì | Ai đọc |
 |---|---|---|
-| `datasets/dataset_22_roles_enriched_v3.json` | 22 nghề: skill, lương, graph, sự kiện, 8 chiều fit | `docs/data/build.mjs`, `docs/data/build-galaxy.mjs`, 2 script Python |
-| `datasets/dataset_final_merged.json` | 78 nghề, task và skill theo từng cấp | `docs/data/build-galaxy.mjs`, `scripts/build_skill_taxonomy.py`, `tools/visualize_dataset.html` |
-| `datasets/fit_quiz.json` | 6 câu Get-to-know-me | `docs/data/build.mjs` |
-| `datasets/roles.csv` | Danh mục 78 `role_code` hợp lệ | Luật trong `specs/` (mọi `role_code` phải có ở đây) |
+| `datasets/final_22_roles.json` | 22 nghề: skill, lương, graph, sự kiện, 8 chiều fit | `docs/data/build.mjs`, `docs/data/build-galaxy.mjs`, 2 script Python |
+| `datasets/78_roles_unmerged.json` | 78 nghề, task và skill theo từng cấp | `docs/data/build-galaxy.mjs`, `scripts/build_skill_taxonomy.py`, `tools/visualize_dataset.html` |
+| `datasets/DRAFT_fit_quiz.json` | 6 câu Get-to-know-me | `docs/data/build.mjs` |
+| `_archive/occupation-data/roles.csv` | Danh mục 78 `role_code` hợp lệ, đã chuyển vào `_archive/` | Luật trong `specs/` vẫn trỏ `datasets/roles.csv` (xem `JSON_SCHEMA.md` §11) |
 | `datasets/work_environments.json` | 6 môi trường làm việc | Kịch bản trỏ `work_environment_id` vào đây |
 | `scenarios/SWE_BACKEND/L1_S_EXEC.json` | Kịch bản L1 "Tham gia fix các bug mức độ ưu tiên thấp" | `docs/data/build.mjs`, script taxonomy |
 | `scenarios/SWE_BACKEND/L3_S_INCIDENT.json` | Kịch bản L3 "Tối ưu hóa các API bị chậm" — **golden anchor** của spec | `docs/data/build.mjs`, script taxonomy |
@@ -28,7 +28,7 @@ occupation-data/
 | `generated/role_graph.json` | 22 hành tinh, 64 đường nối, 39 nghề gộp | `docs/data/build-galaxy.mjs`, webpack API, module API cũ |
 | `specs/spec-scenario-KHOI1.md` | Luật viết kịch bản v2.2 | Người viết kịch bản |
 | `specs/HUONG-DAN-SINH-SCENARIO.md` | Hướng dẫn từng bước sinh kịch bản | Người viết kịch bản |
-| `decisions/FILTERED_ROLES.csv` | 78 nghề: 22 giữ, 39 gộp, 17 loại, kèm lý do | Tài liệu (quyết định D-52) |
+| `decisions/78_to_22_roles.csv` | 78 nghề: 22 giữ, 39 gộp, 17 loại, kèm lý do | Tài liệu (quyết định D-52) |
 | `decisions/roles_18_playable.json` | 18 nghề chơi được | Tài liệu (quyết định D-52) |
 | `tools/visualize_*.html` | Trang xem dataset | Mở bằng trình duyệt |
 

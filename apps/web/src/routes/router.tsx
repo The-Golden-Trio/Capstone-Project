@@ -1,8 +1,9 @@
 import { Suspense, lazy } from 'react';
-import { Navigate, createBrowserRouter, type RouteObject } from 'react-router-dom';
+import { createBrowserRouter, type RouteObject } from 'react-router-dom';
 import { shortName } from '@datn/game-core';
 import type { CrumbHandle } from '../hooks/useBreadcrumbs';
 import type { FullBleedHandle } from '../components/layout/AppShell';
+import { LandingPage } from '../landing/LandingPage';
 import { getContentIndex } from '../store/contentStore';
 import { AccountPage } from './AccountPage';
 import { ErrorPage } from './ErrorPage';
@@ -50,6 +51,7 @@ const roleCrumbs: CrumbHandle['crumbs'] = ({ roleCode, band }) => {
 
 const routes: RouteObject[] = [
   // Ngoài cổng: chưa cần phiên đăng nhập.
+  { path: '/', element: <LandingPage />, errorElement: <ErrorPage /> },
   { path: '/login', element: <LoginPage />, errorElement: <ErrorPage /> },
   { path: '/register', element: <RegisterPage />, errorElement: <ErrorPage /> },
 
@@ -61,8 +63,6 @@ const routes: RouteObject[] = [
       // cho tới khi có người giám hộ đồng ý.
       { path: 'consent', element: <ConsentPage /> },
 
-      // Không còn trang Tổng quan: bản đồ ngân hà chính là nơi bắt đầu.
-      { index: true, element: <Navigate to="/jobs" replace /> },
       {
         path: 'quiz',
         handle: {

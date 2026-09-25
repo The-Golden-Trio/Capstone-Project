@@ -1,3 +1,17 @@
+# Quy tắc cho AI trong repo này
+
+## Không đọc `_archive/` trừ khi được yêu cầu
+
+`_archive/` chứa tài liệu và dữ liệu **đã hết hiệu lực** (đề tài v1 tháng 7, dữ liệu nghề pass 0–1, code và docs cũ). Đọc nó chỉ tốn token và dễ lẫn thông tin cũ với thông tin hiện hành.
+
+- **Không** mở, đọc, liệt kê, tìm kiếm hay trích dẫn bất kỳ file nào trong `_archive/`, kể cả `_archive/README.md`, trừ khi người dùng **nhắc rõ** `_archive` hoặc một file trong đó trong yêu cầu hiện tại.
+- Khi tìm kiếm cả repo (Grep, Glob, `rg`, `grep -r`, `find`), **luôn loại `_archive/`**, ví dụ `rg … --glob '!_archive/**'`, `grep -r --exclude-dir=_archive`, `find . -path ./_archive -prune -o …`.
+- Thông tin hiện hành nằm ở `docs/project-hub/` (single source of truth). Một file trong hub nhắc tới đường dẫn `_archive/...` (ví dụ `08-nguon.md`) chỉ là để ghi nguồn, **không** phải lời mời mở file đó.
+- Nếu thấy cần dữ liệu cũ để trả lời, hỏi người dùng trước, nói rõ sẽ đọc file nào và vì sao. Không tự mở.
+- Không sửa, di chuyển hay xoá gì trong `_archive/`, trừ khi được yêu cầu.
+
+`.claude/settings.json` đặt `Read` và `Edit` trong `_archive/` ở chế độ **ask**: Claude Code sẽ hỏi trước mỗi lần mở file ở đó.
+
 <!-- nx configuration start-->
 <!-- Leave the start & end comments to automatically receive updates. -->
 

@@ -3,9 +3,9 @@
 build_skill_taxonomy.py — Xây skill taxonomy (nguồn thật duy nhất cho mọi skill_id).
 
 Quét toàn bộ chuỗi skill từ 4 nguồn:
-  1. datasets/dataset_final_merged.json    levels[].skills_hard[].skill, levels[].skills_soft[]
+  1. datasets/78_roles_unmerged.json    levels[].skills_hard[].skill, levels[].skills_soft[]
   2. 9_roles_tier1_pass2.json              cùng shape (1) — ĐÃ XOÁ khỏi repo, script tự bỏ qua
-  3. datasets/dataset_22_roles_enriched_v3.json skills_status.hard_skills_languages[].skill,
+  3. datasets/final_22_roles.json skills_status.hard_skills_languages[].skill,
                                            skills_status.hard_skills_frameworks[].skill,
                                            graph_edges.similar_ranked[].shared_skills_top[]
   4. scenarios/**/*.json                   context.skills_hard / context.skills_soft
@@ -35,9 +35,9 @@ from datetime import date
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_PATH = os.path.join(HERE, "generated", "skills_taxonomy.json")
 
-SRC_MERGED_78 = os.path.join(HERE, "datasets", "dataset_final_merged.json")
+SRC_MERGED_78 = os.path.join(HERE, "datasets", "78_roles_unmerged.json")
 SRC_TIER1_9 = os.path.join(HERE, "9_roles_tier1_pass2.json")
-SRC_22 = os.path.join(HERE, "datasets", "dataset_22_roles_enriched_v3.json")
+SRC_22 = os.path.join(HERE, "datasets", "final_22_roles.json")
 SRC_SCENARIO_GLOBS = [
     os.path.join(HERE, "scenarios", "**", "*.json"),
 ]
@@ -263,12 +263,12 @@ def main() -> int:
     print("Quét nguồn skill:")
     # Thứ tự quét quyết định tên hiển thị khi KHÔNG có alias tay: quét dataset 22-role
     # trước vì casing ở đó là chuẩn báo cáo (React.js, Next.js ...).
-    c22 = scan_22_roles(tax, SRC_22, "dataset_22_roles_enriched_v3")
-    print(f"  dataset_22_roles_enriched_v3.json : {c22} chuỗi")
+    c22 = scan_22_roles(tax, SRC_22, "final_22_roles")
+    print(f"  final_22_roles.json : {c22} chuỗi")
     c9 = scan_levels_dataset(tax, SRC_TIER1_9, "9_roles_tier1_pass2")
     print(f"  9_roles_tier1_pass2.json          : {c9} chuỗi")
-    c78 = scan_levels_dataset(tax, SRC_MERGED_78, "dataset_final_merged")
-    print(f"  datasets/dataset_final_merged.json: {c78} chuỗi")
+    c78 = scan_levels_dataset(tax, SRC_MERGED_78, "78_roles_unmerged")
+    print(f"  datasets/78_roles_unmerged.json: {c78} chuỗi")
     csc = scan_scenarios(tax, SRC_SCENARIO_GLOBS)
     print(f"  scenarios                         : {csc} chuỗi")
 
@@ -282,9 +282,9 @@ def main() -> int:
             "generated_at": date.today().isoformat(),
             "generator": "occupation-data/scripts/build_skill_taxonomy.py",
             "sources": [
-                "datasets/dataset_22_roles_enriched_v3.json",
+                "datasets/final_22_roles.json",
                 "9_roles_tier1_pass2.json",
-                "datasets/dataset_final_merged.json",
+                "datasets/78_roles_unmerged.json",
                 "scenarios/**/*.json",
             ],
             "counts": {"total": len(rows), "hard": len(hard), "soft": len(soft), "with_aliases": len(merged)},

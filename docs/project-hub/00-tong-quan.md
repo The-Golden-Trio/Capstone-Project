@@ -48,16 +48,18 @@ Mỗi nghề có nhiều cấp, bắt đầu từ **L1 (intern)**. **Cấp cao n
 | [02 · Nhật ký quyết định](02-quyet-dinh.md) | **Đã chốt gì**, cái gì bị thay, cái gì đang mâu thuẫn |
 | [03 · Sản phẩm](03-san-pham.md) | JobQuest chơi thế nào, mô hình nội dung, luật, thuật ngữ |
 | [04 · Hiện trạng code & dữ liệu](04-hien-trang-code-data.md) | Repo có gì, chạy ra sao, cái gì thật và cái gì giả lập |
-| [05 · Meeting minutes](05-meeting-minutes.md) | Các buổi gặp cô và họp nhóm (tái dựng) |
+| [05 · Họp & tiến độ tuần](tuan/README.md) | Minutes gặp cô và họp nhóm, **task được giao và việc làm được** theo từng tuần (thư mục `tuan/`) |
 | [07 · Vấn đề mở](07-van-de-mo.md) | Việc cần quyết, nhận xét của cô chưa xử lý |
 | [08 · Nguồn](08-nguon.md) | Mọi tài liệu gốc nằm ở đâu |
-| `nop-co/` | Bản lưu mọi file đã nộp hoặc trình bày cho cô |
+| `submissions/` | Bản lưu mọi file đã nộp hoặc trình bày cho cô (PDF, PPTX) |
+| [`reports/`](../../reports/README.md) (gốc repo) | Source LaTeX các báo cáo nộp cô, mỗi lần nộp một folder, kèm nhật ký sync |
 | `archive/` | Tài liệu của hướng đề tài đã bỏ |
 | `templates/` | Mẫu meeting minutes |
 
 ## Quy ước giữ single source of truth
 
-1. **Sau mỗi buổi họp** (kể cả họp trực tiếp): người ghi điền [`templates/meeting-minutes.md`](templates/meeting-minutes.md), thêm vào `05`, rồi cập nhật `02`, `07` nếu có thay đổi. Chat Discord chỉ để bàn, **kết luận phải về repo**.
+1. **Sau mỗi buổi họp** (kể cả họp trực tiếp): chạy `/capstone-meeting-minutes` với ghi chú, tin nhắn Discord hoặc transcript. Skill tạo minutes theo [`templates/meeting-minutes.md`](templates/meeting-minutes.md) trong `tuan/<tuần>/`, giao task có ID, và cập nhật `02`, `07`. Chat Discord chỉ để bàn, **kết luận phải về repo**.
 2. **Quyết định mới:** thêm dòng vào `02`. **Không xoá dòng cũ**, đổi trạng thái thành ♻️.
-3. **File nộp cô:** lưu bản cuối vào `nop-co/` với tên `yyyy-mm-dd_Tên.ext`.
+3. **File nộp cô:** lưu bản cuối vào `submissions/` với tên `yyyy-mm-dd_Tên.ext`. Với báo cáo LaTeX, lưu thêm source vào `reports/yyyy-mm-dd_<slug>/` rồi chạy skill **`capstone-sync-report`** để cập nhật thư mục này (xem [`reports/README.md`](../../reports/README.md)).
 4. **Cập nhật file này** khi hiện trạng thay đổi đáng kể (mỗi tuần một lần là đủ).
+5. **Commit và PR** theo [`CONTRIBUTING.md`](../../CONTRIBUTING.md) (husky và check `pr-check` sẽ chặn nếu sai). Ghi `Task: T….` vào commit/PR làm task được giao. Chiều thứ 6 chạy `/capstone-weekly-progress` để đối chiếu task giao với việc làm được trong `tuan/<tuần>/tuan.md`.

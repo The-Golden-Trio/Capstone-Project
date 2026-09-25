@@ -39,7 +39,7 @@ export function ErrorPage() {
               {detail}
             </pre>
             <div className="flex flex-wrap gap-2.5">
-              <Button variant="primary" onClick={() => navigate('/')}>
+              <Button variant="primary" onClick={() => navigate('/jobs')}>
                 Về tổng quan
               </Button>
               <Button onClick={() => window.location.reload()}>Tải lại</Button>

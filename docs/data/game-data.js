@@ -2,8 +2,8 @@
 
 window.GAME = {
   "_meta": {
-    "generated_at": "2026-09-23",
-    "source_dataset": "occupation-data/datasets/dataset_22_roles_enriched_v3.json",
+    "generated_at": "2026-09-25",
+    "source_dataset": "occupation-data/datasets/final_22_roles.json",
     "group": "Software Engineering & Architecture",
     "note": "SINH TU DONG. Sinh lai: node docs/data/build.mjs"
   },

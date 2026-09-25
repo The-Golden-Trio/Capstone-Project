@@ -3,8 +3,8 @@
 //
 // Nguon:
 //   occupation-data/generated/role_graph.json                 — 22 hanh tinh + 64 canh (distance da tinh)
-//   occupation-data/datasets/dataset_22_roles_enriched_v3.json      — ten, nhom, bands, hard skill (bao cao ITviec), su kien
-//   occupation-data/datasets/dataset_final_merged.json       — hard/soft skill theo cap bac (chi co o 8/22 nghe)
+//   occupation-data/datasets/final_22_roles.json      — ten, nhom, bands, hard skill (bao cao ITviec), su kien
+//   occupation-data/datasets/78_roles_unmerged.json       — hard/soft skill theo cap bac (chi co o 8/22 nghe)
 //
 // Ngoai du lieu, script nay con TINH SAN VI TRI 3D cua tung hanh tinh (force layout co seed).
 // Tinh o build-time chu khong phai runtime vi:
@@ -15,8 +15,8 @@
 import fs from 'fs';
 
 const GRAPH   = 'occupation-data/generated/role_graph.json';
-const DATASET = 'occupation-data/datasets/dataset_22_roles_enriched_v3.json';
-const MERGED  = 'occupation-data/datasets/dataset_final_merged.json';
+const DATASET = 'occupation-data/datasets/final_22_roles.json';
+const MERGED  = 'occupation-data/datasets/78_roles_unmerged.json';
 
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 const graph  = read(GRAPH);

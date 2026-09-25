@@ -35,6 +35,7 @@
 | D-12 | **Không làm:** theo dõi kết quả nghề dài hạn, môi giới tuyển dụng, tuyên bố mô phỏng thay được đi làm thật | 18/9 | Báo cáo §1.3; deck 18/9 S6 | ✅ |
 | D-13 | Bốn nhóm người dùng: **Explorer**, **Domain expert**, **Content admin**, **System admin** | 18/9 | Báo cáo §4.2.1 (deck 7/9 mới có 3 nhóm) | ✅ |
 | D-14 | Ý cô (14/8): hướng tới sản phẩm thật như startup. **Benchmark và dữ liệu nghề có thể bỏ**, dữ liệu trường ĐH dùng demo cũng được. Đánh giá thiên về kỹ thuật | 14/8 | 💬 ghi chú Brian gửi 18/8 | ✅ (định hướng của cô) |
+| D-15 | **Domain expert chỉ tư vấn cho content admin**, không thao tác trực tiếp trên hệ thống | 23/9 | Phúc, [midweek 23/9](tuan/2026-W39/2026-09-23_hop-nhom.md) | ✅ (⚠️ lệch báo cáo 18/9: D-13, UC-07, UC-08; xem [07](07-van-de-mo.md) A8) |
 
 ## C. Cấu trúc nội dung & gameplay
 

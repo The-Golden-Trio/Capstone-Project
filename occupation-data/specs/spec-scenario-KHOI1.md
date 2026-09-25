@@ -864,7 +864,7 @@ Còn lại một phần nhỏ chưa phủ: hai scenario **khác task** vẫn có
 
 ### 4. Lớp sự kiện chưa được spec hoá
 
-`datasets/dataset_22_roles_enriched_v3.json` mang một hệ nội dung **thứ hai** mà spec này chưa định nghĩa: **97 sự kiện role-play**, mỗi cái một màn với 3 lựa chọn, và mỗi lựa chọn phát `signal` trên 8 chiều `fit_dimensions` (`DEEP_WORK`, `PRESSURE`, `PEOPLE`…).
+`datasets/final_22_roles.json` mang một hệ nội dung **thứ hai** mà spec này chưa định nghĩa: **97 sự kiện role-play**, mỗi cái một màn với 3 lựa chọn, và mỗi lựa chọn phát `signal` trên 8 chiều `fit_dimensions` (`DEEP_WORK`, `PRESSURE`, `PEOPLE`…).
 
 Hai hệ đo hai thứ khác nhau và **không thay thế nhau được**:
 

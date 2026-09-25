@@ -19,6 +19,9 @@ Capstone-Project/
 │  ├─ data/build*.mjs      Script build game-data / galaxy-data từ occupation-data
 │  ├─ vao-nghe-flow.*      Sơ đồ màn hình (20/9)
 │  └─ (các file tháng 7)   Tài liệu đề tài v1, chỉ còn giá trị lịch sử — xem docs/README.md
+├─ reports/                Source LaTeX các báo cáo nộp cô (mỗi lần nộp một folder) · sync vào project-hub bằng skill capstone-sync-report
+├─ .claude/skills/         Skill cho Claude Code: capstone-slides, capstone-sync-report, capstone-meeting-minutes, capstone-weekly-progress, capstone-commit-helper
+├─ tools/                  git/: quy ước commit + PR (husky, pr-check) · hub/tuan.py: tuần, ID task, mục lục cho project-hub/tuan/
 ├─ infra/local/            docker-compose chạy Overleaf (LaTeX) ở máy
 └─ _archive/               Tài liệu và dữ liệu cũ đã chuyển ra (21–23/9), giữ nguyên cấu trúc thư mục
 ```
@@ -65,8 +68,8 @@ Sơ đồ đầy đủ: [`assets/vao-nghe-flow.png`](assets/vao-nghe-flow.png).
 ```
 (lịch sử, đã archive) JD thô → pass0 → pass1 (76 role) → pass2 (9 role tier-1)
                          │
-occupation-data/datasets/dataset_final_merged.json          (78 role master)
-occupation-data/datasets/dataset_22_roles_enriched_v3.json  (22 role: skill, lương, graph, 97 sự kiện; nguồn ITviec 2025–26)
+occupation-data/datasets/78_roles_unmerged.json          (78 role master)
+occupation-data/datasets/final_22_roles.json  (22 role: skill, lương, graph, 97 sự kiện; nguồn ITviec 2025–26)
 occupation-data/decisions/roles_18_playable.json            (18 role chơi được)
 
 occupation-data/scripts/build_skill_taxonomy.py ─► occupation-data/generated/skills_taxonomy.json (227 skill: 169 hard, 58 soft)
@@ -105,4 +108,4 @@ Folder `occupation-data/` đã được sắp xếp lại ngày 23/9: chỉ còn
 4. `occupation-data/`: các bản dataset cũ, `pass1/` và file zip đã chuyển vào `_archive/` (23/9). `__pycache__` vẫn bị commit.
 5. Nhánh `feat/paper-links` (PR #1, 27/7) **chưa merge**. Có 2 stash cũ trên máy Brian.
 6. **Chưa commit:** `docs/vao-nghe-flow.*` và thay đổi ở `docs/data/game-data.js` + `packages/game-core/data/game-data.json`.
-7. **Source LaTeX của báo cáo Ch.1–5 không có trong repo.** `_archive/docs/report/main.tex` là báo cáo đề tài v1 (tháng 7).
+7. **Source LaTeX của báo cáo Ch.1–5 không có trong repo** (chỗ lưu: `reports/2026-09-18_ch1-5/`). `_archive/docs/report/main.tex` là báo cáo đề tài v1 (tháng 7).

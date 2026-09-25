@@ -2,8 +2,8 @@
 // Chay:  node docs/data/build.mjs
 //
 // Nguon:
-//   occupation-data/datasets/dataset_22_roles_enriched_v3.json  — 22 role, su kien, luong, graph
-//   occupation-data/datasets/fit_quiz.json               — 6 cau hoi buoc 2
+//   occupation-data/datasets/final_22_roles.json  — 22 role, su kien, luong, graph
+//   occupation-data/datasets/DRAFT_fit_quiz.json               — 6 cau hoi buoc 2
 //   occupation-data/scenarios/**.json                  — kich ban sau
 //
 // Vi sao xuat .js chu khong de prototype fetch() cac file .json:
@@ -12,8 +12,8 @@
 
 import fs from 'fs';
 
-const DATASET  = 'occupation-data/datasets/dataset_22_roles_enriched_v3.json';
-const QUIZ     = 'occupation-data/datasets/fit_quiz.json';
+const DATASET  = 'occupation-data/datasets/final_22_roles.json';
+const QUIZ     = 'occupation-data/datasets/DRAFT_fit_quiz.json';
 const GROUP    = 'Software Engineering & Architecture';
 
 const SCENARIOS = [
