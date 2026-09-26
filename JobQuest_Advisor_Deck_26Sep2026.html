@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobQuest Advisor Deck 26 Sep 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   CAPSTONE SLIDES — DESIGN SYSTEM v1
+   Source: "Management Consulting Toolkit" template, slides 1–35.
+   Canvas: 960 × 540 px (16:9). 1pt in the PPTX = 1.333px here.
+   DO NOT edit tokens per deck. Only add slide-specific rules at the bottom,
+   inside the marked "DECK-SPECIFIC" block, and only using the tokens.
+   ========================================================================== */
+:root{
+  /* ---- Color (the whole palette — nothing else is allowed) ---- */
+  --navy:  #003BA3;   /* primary: titles, headings, dark blocks, table headers */
+  --blue:  #4A8CFF;   /* accent: big numbers, highlights, icons, bullets, light blocks */
+  --gray:  #EFEFEF;   /* surfaces: cards, cells, tracks, neutral blocks */
+  --ink:   #000000;   /* body text */
+  --white: #FFFFFF;   /* background, text on navy/blue */
+
+  /* ---- Type ---- */
+  --font: 'Montserrat', Arial, Helvetica, sans-serif;
+  --fs-xs:   14.67px;  /* 11pt  credits, chart axis, footnotes */
+  --fs-sm:   16px;     /* 12pt  captions, dense body */
+  --fs-body: 18.67px;  /* 14pt  body text (default) */
+  --fs-lead: 21.33px;  /* 16pt  cover subtitle */
+  --fs-h3:   24px;     /* 18pt  item heading, card header */
+  --fs-stat: 32px;     /* 24pt  inline stat value */
+  --fs-h2:   37.33px;  /* 28pt  slide title */
+  --fs-h2l:  40px;     /* 30pt  percentage, image-slide title */
+  --fs-h1:   50.67px;  /* 38pt  photo-slide headline */
+  --fs-d4:   62.67px;  /* 47pt  section title */
+  --fs-d3:   70.67px;  /* 53pt  cover title */
+  --fs-d2:   93.33px;  /* 70-72pt  TOC numbers, section number, "Thanks" */
+  --fs-d1:   122.67px; /* 92pt  big number */
+  --lh-tight: 1.08;
+  --lh-title: 1.15;
+  --lh-body:  1.3;
+
+  /* ---- Grid ---- */
+  --W: 960px; --H: 540px;
+  --mx: 75px;          /* box edge; text sits 10px further in (PPTX inset) */
+  --inset: 10px;
+  --title-top: 40px;
+  --blk: 128px;        /* decorative block width (always) */
+  --mid: 270px;        /* horizontal midline — blocks meet here */
+  --bar: 32px;         /* footer bar / edge strip thickness */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000}
+body{font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
+
+/* ---------------- Slide canvas ---------------- */
+.deck{position:absolute;left:0;top:0;width:var(--W);height:var(--H);transform-origin:0 0}
+.slide{position:absolute;inset:0;width:var(--W);height:var(--H);overflow:hidden;background:var(--white);
+  color:var(--ink);font-family:var(--font);font-size:var(--fs-body);line-height:var(--lh-body);display:none}
+.slide.active{display:block}
+.slide *{font-family:inherit}
+
+/* ---------------- Text primitives ---------------- */
+.title{position:absolute;left:var(--mx);top:var(--title-top);width:810px;min-height:60px;padding:0 var(--inset);
+  display:flex;align-items:center;font-size:var(--fs-h2);font-weight:700;line-height:var(--lh-title);color:var(--navy)}
+.title.center{justify-content:center;text-align:center}
+.title.right{justify-content:flex-end;text-align:right}
+.h3{font-size:var(--fs-h3);font-weight:700;color:var(--navy);line-height:1.2}
+.p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.sm{font-size:var(--fs-sm)}
+.xs{font-size:var(--fs-xs)}
+.hl{color:var(--blue)}               /* highlight words inside navy text */
+.navy{color:var(--navy)} .blue{color:var(--blue)}
+b,strong{font-weight:700;color:var(--navy)}
+.center{text-align:center}.right{text-align:right}
+.ul{list-style:none}
+.ul li{position:relative;padding-left:1.55em;line-height:var(--lh-body)}
+.ul li::before{content:"";position:absolute;left:.35em;top:.5em;width:.36em;height:.36em;border-radius:50%;background:var(--blue)}
+.ul li li::before{background:transparent;border:1.5px solid var(--blue)}
+.ul li+li{margin-top:.12em}
+.ul ul{list-style:none;margin-top:.12em}
+.ul.gap li+li{margin-top:.5em}
+
+/* ---------------- Decorative system ---------------- */
+.blk{position:absolute;width:var(--blk)}          /* set left/top/height inline */
+.blk.navy{background:var(--navy)} .blk.blue{background:var(--blue)} .blk.gray{background:var(--gray)}
+.footbar{position:absolute;left:0;bottom:0;width:var(--W);height:var(--bar);background:linear-gradient(90deg,var(--navy) 50%,var(--blue) 50%)}
+.footbar.rev{background:linear-gradient(90deg,var(--blue) 50%,var(--navy) 50%)}
+.edge-r{position:absolute;right:0;top:60px;bottom:0;width:var(--bar);background:var(--blue)}
+.edge-l{position:absolute;left:0;top:0;height:470px;width:var(--bar);background:var(--blue)}
+
+/* ---------------- Components ---------------- */
+.photo{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.shot{display:block;max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--gray);background:var(--white)} /* product screenshots stay in color */
+.ph{background:var(--gray);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:var(--fs-sm);font-weight:600;text-align:center;padding:10px}
+.icon{width:44px;height:44px;stroke:var(--blue);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dot{display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--blue);vertical-align:middle}
+.dot.navy{background:var(--navy)} .dot.ink{background:var(--ink)} .dot.gray{background:var(--gray)}
+/* SVG paint helpers — never hard-code hex inside SVG, use these */
+.s-navy{stroke:var(--navy)} .s-blue{stroke:var(--blue)} .s-gray{stroke:var(--gray)} .s-white{stroke:var(--white)} .s-ink{stroke:var(--ink)}
+.f-navy{fill:var(--navy)} .f-blue{fill:var(--blue)} .f-gray{fill:var(--gray)} .f-white{fill:var(--white)} .f-ink{fill:var(--ink)} .f-none{fill:none}
+.node{display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 16px;font-size:var(--fs-body);line-height:1.2;min-height:41px}
+.node.navy{background:var(--navy);color:var(--white);font-weight:700}
+.node.blue{background:var(--blue);color:var(--white);font-weight:700}
+.node.gray{background:var(--gray);color:var(--ink)}
+.node.outline{background:var(--white);border:2px solid var(--blue);color:var(--navy)}
+.kpi{background:var(--navy);color:var(--white);text-align:center;padding:8px 18px;line-height:1.15}
+.kpi .v{font-size:var(--fs-h3);font-weight:700;display:block}
+.kpi .l{font-size:var(--fs-sm);font-weight:700;display:block}
+.tbl{border-collapse:collapse;width:100%}
+.tbl th{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-body);padding:9px 10px;text-align:center;line-height:1.15}
+.tbl td{padding:9px 10px;font-size:var(--fs-body);line-height:1.2;text-align:center;border-bottom:1px solid var(--gray)}
+.tbl td:first-child{text-align:left}
+.tbl th:first-child{background:transparent}
+.tbl.filled th:first-child{background:var(--navy);text-align:left}
+
+/* ===================== LAYOUTS ===================== */
+/* Absolute regions below mirror the PPTX placeholder boxes (px). */
+
+/* 01 cover */
+.l-cover .cv-title{position:absolute;left:172px;top:103px;width:710px;height:235px;padding:0 var(--inset);display:flex;flex-direction:column;justify-content:flex-end;text-align:right;font-size:var(--fs-d3);font-weight:700;line-height:var(--lh-tight);color:var(--navy)}
+.l-cover .cv-sub{position:absolute;left:172px;top:348px;width:710px;padding:0 var(--inset);text-align:right;font-size:var(--fs-lead)}
+.l-cover .cv-meta{position:absolute;right:86px;bottom:44px;text-align:right;font-size:var(--fs-sm);line-height:1.45}
+
+/* 02 toc */
+.l-toc .toc{position:absolute;left:85px;top:148px;width:820px;display:grid;grid-template-columns:417px 1fr;row-gap:28px}
+.l-toc .toc-item{display:grid;grid-template-columns:146px 1fr;column-gap:24px;align-items:start;min-height:122px}
+.l-toc .toc-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:.95;text-align:right}
+.l-toc .toc-item .h3{margin-top:2px;margin-bottom:8px}
+.l-toc .toc.rows-3{top:132px;row-gap:34px}
+.l-toc .toc.rows-3 .toc-item{min-height:0}
+.l-toc .toc.rows-3 .toc-num{font-size:var(--fs-d4)}
+
+/* 03 section (right-aligned) + .alt (left-aligned) */
+.l-section .sec{position:absolute;left:416px;top:120px;width:468px;padding:0 var(--inset);text-align:right}
+.l-section .sec-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:1}
+.l-section .sec-title{font-size:var(--fs-d4);font-weight:700;color:var(--navy);line-height:1.05;margin-top:8px}
+.l-section .sec-sub{font-size:var(--fs-body);margin-top:14px}
+.l-section.alt .sec{left:74px;text-align:left}
+
+/* 04 intro (text left, blocks right) + .alt (blocks left, text right) */
+.l-intro .txt{position:absolute;left:121px;top:140px;width:444px;padding:0 var(--inset)}
+.l-intro .txt .t{font-size:var(--fs-h2);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:14px}
+.l-intro.alt .txt{left:418px;top:150px;width:426px;text-align:right}
+
+/* 05 statement (one big line) */
+.l-statement .big{position:absolute;left:74px;top:110px;width:600px;height:320px;padding:0 var(--inset);display:flex;align-items:center;font-size:98.67px;font-weight:700;line-height:1;color:var(--navy)}
+.l-statement .big.m{font-size:var(--fs-d3)}
+
+/* 06 text (+ bullets) */
+.l-text .body{position:absolute;left:var(--mx);top:128px;width:560px;padding:0 var(--inset)}
+.l-text.wide .body{width:810px}
+.l-text .body > * + *{margin-top:14px}
+
+/* 07 two columns */
+.l-2col .cols{position:absolute;left:74px;top:200px;width:560px;display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding:0 var(--inset)}
+.l-2col .cols .h3{margin-bottom:12px}
+
+/* 08 three columns with icons */
+.l-3col .cols{position:absolute;left:82px;top:196px;width:796px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:42px;text-align:center}
+.l-3col .cols .icon{margin:0 auto 4px;display:block}
+.l-3col .cols .h3{margin:6px 0 8px}
+
+/* 09 six-grid (3 × 2) */
+.l-grid6 .grid{position:absolute;left:74px;top:150px;width:720px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:10px;row-gap:30px;padding:0 var(--inset)}
+.l-grid6 .grid .h3{margin-bottom:8px}
+
+/* 10 four items right-aligned (2 × 2) */
+.l-4items .grid{position:absolute;left:331px;top:160px;width:553px;display:grid;grid-template-columns:1fr 1fr;column-gap:34px;row-gap:34px;text-align:right;padding:0 var(--inset)}
+.l-4items .grid .h3{margin-bottom:8px}
+
+/* 11 quadrant / SWOT */
+.l-quad .quad{position:absolute;left:110px;top:130px;display:grid;grid-template-columns:42px 292px 292px;column-gap:20px;row-gap:20px}
+.l-quad .quad > :nth-child(3n){margin-left:50px}
+.l-quad .side{background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;height:153px}
+.l-quad .q-h{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);height:35px;padding:0 20px;display:flex;align-items:center}
+.l-quad .q-b{background:var(--gray);height:118px;padding:14px 20px}
+
+/* 12 rows (label + items) */
+.l-rows .rows{position:absolute;left:75px;top:124px;width:809px;display:flex;flex-direction:column;gap:10px}
+.l-rows .row{display:grid;grid-template-columns:199px 1fr;height:81px}
+.l-rows .row .lab{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);line-height:1.1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px}
+.l-rows .row .its{background:var(--gray);display:flex;align-items:center;justify-content:space-around;gap:20px;padding:0 24px}
+.l-rows .row .its > *{flex:1}
+
+/* 13 table / maturity */
+.l-table .tblwrap{position:absolute;left:85px;top:128px;width:810px}
+
+/* 14 process chevrons */
+.l-process .chev{position:absolute;left:75px;top:146px;width:808px;height:121px;display:flex}
+.l-process .chev > div{flex:1;background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 44px 0 50px;
+  clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,40px 50%)}
+.l-process .chev > div:first-child{clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%);padding-left:20px}
+.l-process .chev > div + div{margin-left:-36px}
+.l-process .notes{position:absolute;left:75px;top:286px;width:808px;display:grid;column-gap:14px}
+
+/* 15 roadmap stairs */
+.l-roadmap .stairs{position:absolute;left:75px;top:170px;width:809px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);align-items:start}
+.l-roadmap .step{margin-top:calc(var(--rise,33px) * (var(--n,3) - 1 - var(--i,0)))}
+.l-roadmap .step .h3{text-align:center;padding-bottom:10px}
+.l-roadmap .step .line{height:8px;background:var(--blue);position:relative}
+.l-roadmap .step + .step .line::before{content:"";position:absolute;left:0;bottom:0;width:8px;height:calc(var(--rise,33px) + 8px);background:var(--blue)}
+.l-roadmap .step .ul{padding:14px 10px 0 20px}
+
+/* 16 hierarchy tree (top-down) */
+.l-tree .tree{position:absolute;left:75px;top:120px;width:809px;display:flex;justify-content:center}
+.tree ul{display:flex;justify-content:center;padding-top:30px;position:relative;list-style:none}
+.tree > ul{padding-top:0}
+.tree li{position:relative;padding:30px 6px 0;display:flex;flex-direction:column;align-items:center}
+.tree > ul > li{padding-top:0}
+.tree li::before,.tree li::after{content:"";position:absolute;top:0;width:50%;height:30px;border-top:2px solid var(--blue)}
+.tree li::before{right:50%}
+.tree li::after{left:50%;border-left:2px solid var(--blue)}
+.tree li:only-child::before,.tree li:only-child::after{border-top:0}
+.tree li:first-child::before,.tree li:last-child::after{border-top:0}
+.tree li:last-child::before{border-right:2px solid var(--blue);width:calc(50% + 1px)}
+.tree li:last-child::before{right:calc(50% - 1px)}
+.tree li:last-child::after{border-left:0}
+.tree > ul > li::before,.tree > ul > li::after{display:none}
+.tree ul ul::before{content:"";position:absolute;top:0;left:50%;height:30px;border-left:2px solid var(--blue)}
+.tree .node{white-space:nowrap}
+.tree .lv1{min-width:161px;font-size:var(--fs-h3)}
+.tree .lv2{min-width:136px}
+.tree .lv3{min-width:78px;padding:6px 12px}
+
+/* 17 breakdown (left → right) */
+.l-breakdown .bd{position:absolute;left:170px;top:118px;height:380px;display:flex;align-items:center}
+.bd .root{width:128px;min-height:116px;font-size:var(--fs-h3);text-align:left;justify-content:flex-start;padding:10px 12px}
+.bd .groups{display:flex;flex-direction:column;gap:26px;margin-left:30px;position:relative;padding-left:0}
+.bd .groups::before{content:"";position:absolute;left:-16px;top:58px;bottom:58px;border-left:2px solid var(--blue)}
+.bd .grp{display:flex;align-items:center;position:relative}
+.bd .grp::before{content:"";position:absolute;left:-16px;top:50%;width:16px;border-top:2px solid var(--blue)}
+.bd .grp > .node{width:128px;min-height:116px;font-size:var(--fs-h3);font-weight:700;color:var(--navy);justify-content:flex-start;text-align:left}
+.bd .leaves{display:flex;flex-direction:column;justify-content:space-between;gap:10px;margin-left:36px;position:relative;align-self:stretch}
+.bd .leaves::before{content:"";position:absolute;left:-18px;top:20px;bottom:20px;border-left:2px solid var(--blue)}
+.bd .leaves::after{content:"";position:absolute;left:-36px;top:50%;width:18px;border-top:2px solid var(--blue)}
+.bd .leaves .node{position:relative;width:170px;min-height:38px;justify-content:flex-start;font-size:var(--fs-sm);text-align:left}
+.bd .leaves .node::before{content:"";position:absolute;left:-18px;top:50%;width:18px;border-top:2px solid var(--blue)}
+
+/* 18 matrix 2×2 */
+.l-matrix .mx{position:absolute;left:120px;top:118px;display:grid;grid-template-columns:150px 36px 216px 216px;grid-template-rows:42px 111px 111px 36px 40px;column-gap:10px;row-gap:5px;align-items:center}
+.l-matrix .mx .cell{height:111px;background:var(--gray);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 18px;line-height:1.2}
+.l-matrix .mx .cell.on{background:var(--navy);color:var(--white)}
+.l-matrix .mx .tick{color:var(--navy);text-align:center;font-size:var(--fs-body)}
+.l-matrix .mx .tick.y{writing-mode:vertical-rl;transform:rotate(180deg);justify-self:center}
+.l-matrix .mx .axis{font-weight:700;color:var(--navy);font-size:var(--fs-h3);text-align:center}
+
+/* 19 cycle (4-part ring) */
+.l-cycle .ring{position:absolute;left:330px;top:128px;width:300px;height:300px}
+.l-cycle .lbl{position:absolute;display:flex;align-items:center;gap:10px;font-size:var(--fs-body);white-space:nowrap}
+.l-cycle .lbl i{display:block;height:2px;width:36px}
+.l-cycle .lbl i::after{content:"";display:block;width:8px;height:8px;border-radius:50%;margin-top:-3px}
+.l-cycle .lbl.l{right:640px;flex-direction:row}
+.l-cycle .lbl.r{left:640px}
+.l-cycle .lbl.navy i,.l-cycle .lbl.navy i::after{background:var(--navy)}
+.l-cycle .lbl.blue i,.l-cycle .lbl.blue i::after{background:var(--blue)}
+.l-cycle .lbl.l i::after{margin-left:28px}
+.l-cycle .lbl.r i::after{margin-left:0}
+
+/* 20 diagram (free canvas) */
+.l-diagram .stage{position:absolute;left:var(--mx);top:128px;width:810px;height:370px;display:flex;align-items:center;justify-content:center}
+.l-diagram.has-bar .stage{height:340px}
+.l-diagram .title.two{min-height:98px}
+
+/* 21 quote */
+.l-quote .q{position:absolute;left:281px;top:110px;width:604px;height:214px;padding:0 var(--inset);display:flex;align-items:flex-end;justify-content:flex-end;text-align:right;font-size:var(--fs-h2);font-weight:600;line-height:1.2;color:var(--blue)}
+.l-quote .by{position:absolute;left:281px;top:346px;width:604px;padding:0 var(--inset);text-align:right;font-size:var(--fs-h3);font-weight:700;color:var(--navy)}
+
+/* 22 big number */
+.l-bignum .num{position:absolute;left:74px;top:148px;width:810px;height:174px;display:flex;align-items:flex-end;justify-content:center;font-size:var(--fs-d1);font-weight:700;color:var(--blue);line-height:1}
+.l-bignum .cap{position:absolute;left:74px;top:334px;width:810px;text-align:center}
+
+/* 23 photo full-bleed + headline */
+.l-photo .bg{position:absolute;inset:0}
+.l-photo .wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 70%)}
+.l-photo .head{position:absolute;left:74px;top:52px;width:480px;padding:0 var(--inset);font-size:var(--fs-h1);font-weight:700;line-height:1.12;color:var(--navy)}
+
+/* 24 photo left + text right */
+.l-photoleft .pic{position:absolute;left:0;top:112px;width:349px;height:314px}
+.l-photoleft .txt{position:absolute;left:391px;top:150px;width:493px;padding:0 var(--inset);text-align:right}
+.l-photoleft .txt .t{font-size:var(--fs-h2l);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:16px}
+
+/* 25 demo / screenshot */
+.l-demo .side{position:absolute;left:var(--mx);top:128px;width:300px;padding:0 var(--inset)}
+.l-demo .side .h3{margin-bottom:10px}
+.l-demo .screen{position:absolute;left:392px;top:120px;width:500px;height:380px;display:flex;align-items:center;justify-content:center}
+
+/* 26 stats bars */
+.l-bars .grp{position:absolute;top:140px;width:330px}
+.l-bars .grp.l{left:75px}
+.l-bars .grp.r{left:555px;text-align:right}
+.l-bars .grp .h3{margin-bottom:10px;padding:0 var(--inset)}
+.l-bars .bar{display:grid;grid-template-columns:90px 1fr;align-items:center;column-gap:8px;height:44px;padding:0 var(--inset)}
+.l-bars .grp.r .bar{grid-template-columns:1fr auto}
+.l-bars .bar .v{white-space:nowrap}
+.l-bars .bar .v{font-size:var(--fs-stat);font-weight:700;color:var(--navy);line-height:1}
+.l-bars .bar .track{height:12px;background:var(--gray);position:relative}
+.l-bars .bar .track span{position:absolute;top:0;bottom:0;left:0;background:var(--blue)}
+.l-bars .grp.r .bar .track span{left:auto;right:0}
+.l-bars .foot{position:absolute;left:75px;top:302px;width:809px;text-align:center}
+.l-bars .foot .icons{display:flex;justify-content:center;gap:22px;margin-top:18px}
+
+/* 27 donut percentages */
+.l-donuts .cols{position:absolute;left:78px;top:160px;width:801px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);column-gap:40px;text-align:center}
+.l-donuts .ring{width:120px;height:120px;margin:0 auto;display:block}
+.l-donuts .pct{font-size:var(--fs-h2l);font-weight:700;color:var(--blue);margin:14px 0 6px;line-height:1}
+
+/* 28 chart + KPI */
+.l-chart .left{position:absolute;left:85px;top:122px;width:390px}
+.l-chart .right{position:absolute;left:500px;top:122px;width:390px}
+.l-chart svg text{font-family:var(--font)}
+
+/* 29 team */
+.l-team .grid{position:absolute;left:75px;top:128px;width:809px;display:flex;justify-content:center;gap:var(--gap,90px)}
+.l-team .m{width:var(--w,237px);text-align:center}
+.l-team .m .face{width:var(--d,192px);height:var(--d,192px);border-radius:50%;overflow:hidden;margin:0 auto 18px;background:var(--gray)}
+.l-team .m .h3{margin-bottom:6px}
+
+/* 30 testimonials */
+.l-testi .list{position:absolute;left:115px;top:160px;width:320px;padding:0 var(--inset)}
+.l-testi .list .by{font-size:var(--fs-h3);font-weight:700;color:var(--navy);margin-top:6px}
+.l-testi .list > div + div{margin-top:34px}
+
+/* 31 thanks / closing */
+.l-thanks .big{position:absolute;left:74px;top:46px;width:560px;height:140px;padding:0 var(--inset);display:flex;align-items:flex-end;font-size:var(--fs-d2);font-weight:700;color:var(--navy);line-height:1}
+.l-thanks .info{position:absolute;left:74px;top:198px;width:480px;padding:0 var(--inset)}
+.l-thanks .info .icons{display:flex;gap:10px;margin-top:22px}
+
+/* ===================== DECK-SPECIFIC (keep tiny, tokens only) ===================== */
+/* Header pattern: kicker line (page number, category, status badge), title, one-line subtitle */
+.kick{position:absolute;left:85px;top:13px;display:flex;align-items:center;gap:10px;font-size:var(--fs-xs);font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;line-height:1.2;white-space:nowrap}
+.kick .pg{color:var(--blue)}
+.badge{display:inline-block;padding:2px 8px;font-size:var(--fs-xs);font-weight:700;letter-spacing:.06em;line-height:1.3;text-transform:uppercase}
+.badge.corr{background:var(--navy);color:var(--white)}
+.badge.new{background:var(--blue);color:var(--white)}
+.badge.rem{background:var(--gray);color:var(--navy)}
+.vfy{color:var(--blue);font-weight:700;letter-spacing:0;text-transform:none}
+.sub{position:absolute;left:var(--mx);top:99px;width:810px;padding:0 var(--inset);font-size:var(--fs-sm);line-height:1.3}
+.sub.center{text-align:center}
+.cv{position:absolute;left:85px;top:134px;width:790px}
+.cv.t2{top:128px}
+.cv.hi{top:108px}
+.rt{display:inline-block;width:16px;height:16px;border-radius:50%;border:2px solid var(--navy);vertical-align:middle}
+.rt.f{background:var(--navy)}
+.rt.p{background:linear-gradient(90deg,var(--navy) 50%,var(--white) 50%)}
+.row-n{display:flex;gap:8px;align-items:flex-start}
+.chg{position:absolute;left:var(--mx);bottom:12px;width:810px;background:var(--gray);padding:6px 10px;font-size:var(--fs-xs);line-height:1.3}
+.src{font-size:var(--fs-xs);line-height:1.3;margin-top:8px}
+/* Cards and grids */
+.card{background:var(--gray);padding:8px 12px;font-size:var(--fs-sm);line-height:1.3}
+.card.x{font-size:var(--fs-xs)}
+.card.navy{background:var(--navy);color:var(--white)}
+.card.navy b,.card.navy .hd{color:var(--white)}
+.card.blue{background:var(--blue);color:var(--white)}
+.card.blue b,.card.blue .hd{color:var(--white)}
+.card.line{background:var(--white);border:2px solid var(--blue)}
+.card .hd{font-size:var(--fs-body);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.card.x .hd{font-size:var(--fs-sm)}
+.card p + p,.card p + .ul,.card .ul + p{margin-top:5px}
+.n{display:inline-flex;align-items:center;justify-content:center;flex:none;width:24px;height:24px;border-radius:50%;background:var(--blue);color:var(--white);font-size:var(--fs-xs);font-weight:700;line-height:1}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stk > * + *{margin-top:10px}
+.stk.s > * + *{margin-top:6px}
+.strip{background:var(--navy);color:var(--white);padding:6px 10px;font-size:var(--fs-sm);line-height:1.3}
+.strip b{color:var(--white)}
+.strip.x{font-size:var(--fs-xs)}
+.lead{font-size:var(--fs-sm);line-height:1.3}
+.xs{font-size:var(--fs-xs)}
+.ul.x li{font-size:var(--fs-xs)}
+.ul.s li{font-size:var(--fs-sm)}
+.stat{font-size:var(--fs-stat);font-weight:700;color:var(--blue);line-height:1.05}
+.stat.h{font-size:var(--fs-h2l)}
+/* Dense tables (report tables) */
+.tbl.d th,.tbl.d td{font-size:var(--fs-sm);padding:6px 8px;text-align:left;line-height:1.25}
+.tbl.dd th,.tbl.dd td{font-size:var(--fs-xs);padding:4px 7px;text-align:left;line-height:1.25;vertical-align:top}
+.tbl.dd th{vertical-align:bottom}
+.tbl .c{text-align:center}
+.tbl tr.hi td{background:var(--gray)}
+.tbl tr.tot td{font-weight:700;color:var(--navy);border-top:2px solid var(--navy)}
+.tag{display:block;font-size:var(--fs-xs);font-weight:700;color:var(--blue);line-height:1.2}
+.chip{display:inline-block;padding:2px 10px;font-size:var(--fs-xs);font-weight:700;line-height:1.3;text-transform:uppercase;letter-spacing:.04em}
+.chip.hi{background:var(--navy);color:var(--white)}
+.chip.mo{background:var(--blue);color:var(--white)}
+.chip.pa{background:var(--gray);color:var(--navy)}
+.chip.lo{border:2px solid var(--blue);color:var(--navy);padding:0 8px}
+.chip.na{color:var(--ink);padding:2px 0;font-weight:400}
+.sym{color:var(--navy);font-size:var(--fs-h3);line-height:1}
+/* Flow diagrams (absolute nodes over an SVG of connectors) */
+.flow{position:relative}
+.flow svg{position:absolute;left:0;top:0}
+.flow .node{position:absolute;font-size:var(--fs-xs);min-height:0;padding:4px 8px;line-height:1.2}
+.flow .node.ext{background:var(--white);border:2px solid var(--blue);color:var(--navy)}
+.flow .lbl{position:absolute;font-size:var(--fs-xs);font-weight:700;color:var(--navy)}
+aside.notes{display:none}
+.tbl.tc th,.tbl.tc td{text-align:center}
+.tbl.tc th:first-child,.tbl.tc td:first-child{text-align:left}
+.refs{column-count:2;column-gap:24px;font-size:var(--fs-xs);line-height:1.25}
+.refs p{break-inside:avoid;margin:0 0 6px;padding-left:1em;text-indent:-1em}
+.refs i{font-style:normal}
+.ab{display:grid;grid-template-columns:140px 1fr;gap:10px;font-size:var(--fs-xs);line-height:1.25;padding:2px 0;border-bottom:1px solid var(--gray)}
+
+
+/* ===================== Presentation shell (not part of the look) ===================== */
+.hud{position:fixed;right:14px;bottom:12px;font:600 12px/1 var(--font);color:rgba(255,255,255,.55);letter-spacing:.04em;user-select:none;z-index:9}
+body.overview{overflow:auto;background:#000}
+body.overview .deck{position:static;transform:none!important;width:auto;height:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:18px}
+body.overview .slide{position:relative;display:block;zoom:.32;cursor:pointer;outline:0}
+body.overview .slide.active{outline:10px solid var(--blue)}
+
+.np{display:none;position:fixed;left:0;right:0;bottom:0;max-height:42vh;overflow:auto;background:rgba(0,0,0,.88);color:#fff;font:15px/1.5 var(--font);padding:14px 24px 18px;z-index:10}
+.np b{color:#fff}
+body.shownotes .np{display:block}
+@media print{
+  @page{size:960px 540px;margin:0}
+  html,body{background:#fff;overflow:visible;height:auto}
+  .deck{position:static;transform:none!important;width:auto;height:auto}
+  .slide{position:relative;display:block!important;break-after:page;page-break-after:always}
+  .hud{display:none}
+}
+.ucp{display:flex;gap:10px;align-items:stretch}
+.ucp .ucimg{height:100%;width:auto;display:block;cursor:zoom-in;border:1px solid var(--gray)}
+.ucp .card{flex:1;min-width:0}
+.zoom{position:fixed;inset:0;background:rgba(255,255,255,.97);display:none;align-items:center;justify-content:center;z-index:9999;cursor:zoom-out}
+.zoom.on{display:flex}
+.zoom img{max-height:96vh;max-width:96vw}
+@media print{.zoom{display:none!important}}
+</style>
+</head>
+<body>
+<main class="deck">
+<!-- ================= SLIDES START ================= -->
+<!-- 01 cover -->
+<section class="slide l-cover">
+  <div class="blk blue" style="left:0;top:0;height:270px"></div>
+  <h1 class="cv-title"><span>Job<span class="hl">Quest</span></span></h1>
+  <p class="cv-sub">An AI-native experiential career-exploration platform<br>“Try the job before you pick the career.”</p>
+  <p class="cv-meta"><b>Chapters 1–5.1 · Corrections and remaining work · 26 September 2026</b><br>Specialized Project (ĐACN) · HCMUT<br>Advisor: Assoc. Prof. Võ Thị Ngọc Châu · Team: Golden Trio</p>
+  <aside class="notes">Thank you for the time. Today has two jobs. First, we show again every slide we corrected after your comments on 18 September, so you can confirm each correction; each one carries a strip at the bottom stating exactly what changed. Second, we present the work we did not reach last time: the rest of Chapter 4, Chapter 5.1, and the research problems and evaluation, including answers to your four questions of 23 September. To fit the hour, we do not repeat the slides that are unchanged since 18 September; the traceability table is in the report. (Do not explain the tagline; it is on the slide.)</aside>
+</section>
+
+<!-- 02 agenda -->
+<section class="slide l-toc">
+  <h2 class="title center">Agenda</h2>
+  <p class="sub center">Five parts: corrections first, then the work not yet presented</p>
+  <div class="toc rows-3" style="row-gap:18px">
+    <div class="toc-item"><div class="toc-num">A</div><div><div class="h3">Chapters 1–3</div><p>Corrected since 18&nbsp;September</p></div></div>
+    <div class="toc-item"><div class="toc-num">B</div><div><div class="h3">Chapter 4</div><p>Corrections, new sections, remaining work</p></div></div>
+    <div class="toc-item"><div class="toc-num">C</div><div><div class="h3">Chapter 5.1</div><p>Analysis: process and use-case models</p></div></div>
+    <div class="toc-item"><div class="toc-num">D</div><div><div class="h3">Research</div><p>Research problems and evaluation</p></div></div>
+    <div class="toc-item"><div class="toc-num">E</div><div><div class="h3">Close</div><p>Summary and asks</p></div></div>
+    <div class="legend stk s">
+      <div class="xs"><span class="badge corr">Corrected</span> presented on 18 Sep, changed since</div>
+      <div class="xs"><span class="badge new">New</span> did not exist before</div>
+      <div class="xs"><span class="badge rem">Remaining</span> existed, not yet presented</div>
+      <div class="xs">Unchanged slides are not repeated</div>
+      <div class="xs"><b>This deck reports Chapters 1 to 5.1.</b></div>
+    </div>
+  </div>
+  <div class="footbar"></div>
+  <aside class="notes">Five parts. Part A repeats Chapters 1 to 3, but you only need to look closely at the slides with a badge: CORRECTED means you saw it on 18 September and it has changed since, and each of those has a strip at the bottom stating exactly what changed. NEW means it did not exist before. REMAINING means it was in the last deck but we did not reach it. Slides that are unchanged since 18 September are not repeated, and the traceability table is in the report. Parts B, C and D are mostly new or remaining, and Part E brings the asks together.</aside>
+</section>
+
+<!-- 03 changed -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">3</span><span>Progress</span><span class="badge new">New</span></div>
+  <h2 class="title ">What changed since 18 September</h2>
+  <p class="sub ">Every comment, where it is answered: the eight comments from the 18 September meeting</p>
+  <div class="cv"><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:250px"><col style="width:440px"><col style="width:100px"></colgroup><thead><tr><th>Feedback (18 Sep)</th><th>What we changed</th><th>Slide</th></tr></thead><tbody><tr><td>References too old</td><td>Foundational works kept, each paired with recent evidence; the MBTI claim corrected</td><td>6, 7</td></tr><tr><td>Remove out-of-scope</td><td>Scope stated positively; the exclusion list removed</td><td>9</td></tr><tr><td>Objectives must give value to users</td><td>One overall objective plus four specific ones, each stating the user benefit</td><td>8</td></tr><tr><td>Scientific significance: stress AI and edtech</td><td>Reframed around AI in education</td><td>10</td></tr><tr><td>Business model and context</td><td>Public-benefit model, starting point and roadmap, organisation</td><td>25–27</td></tr><tr><td>Business rules without system constraints</td><td>Twelve business rules; six design constraints kept separate</td><td>21–24</td></tr><tr><td>Social cognitive aspect?</td><td>Sources of self-efficacy; screen versus live comparison</td><td>13, 20</td></tr><tr><td>Trim the research problems</td><td>Two AI research problems; the other three relocated</td><td>39–40</td></tr></tbody></table></div>
+  
+  <aside class="notes">This is the map for the session. Each correction is shown on its own slide, with a strip at the bottom stating exactly what changed. This slide covers the eight comments from the meeting itself; the next slide covers the four questions from your email of 23 September.</aside>
+</section>
+
+<!-- 04 changed23 -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">4</span><span>Progress</span><span class="badge new">New</span></div>
+  <h2 class="title ">Your four questions of 23 September</h2>
+  <p class="sub ">Where each question is answered</p>
+  <div class="cv"><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:290px"><col style="width:390px"><col style="width:110px"></colgroup><thead><tr><th>Question (23 Sep)</th><th>What we changed</th><th>Slide</th></tr></thead><tbody><tr><td>Who are the experts, and how are they linked?</td><td>Expert standard; experts work in the system on the occupations assigned to them</td><td>17, 36, 44</td></tr><tr><td>Why Cohen’s κ, and what value is acceptable?</td><td>Quadratic weighted kappa with ETS acceptance thresholds</td><td>43</td></tr><tr><td>What does “task” include?</td><td>Nine formats and how each is scored</td><td>19</td></tr><tr><td>Is the evaluation feasible?</td><td>Two-stage evaluation, with sizing and workload</td><td>41–44</td></tr></tbody></table></div>
+  
+  <aside class="notes">Your four email questions. Each one changed the report, not only the slides: the expert model made each actor's responsibility for an occupation explicit, the kappa question changed the metric to quadratic weighted kappa with published acceptance thresholds, the task question produced a definition and nine scored formats, and the feasibility question produced the two-stage evaluation.</aside>
+</section>
+
+<!-- 05 secA -->
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec"><div class="sec-num">A</div><div class="sec-title">Chapters 1–3</div><p class="sec-sub">Problem, evidence base and related work, corrected since 18 September</p></div>
+  <aside class="notes">Part A. Chapters 1 to 3. We show only the slides that were corrected or are new. The slides that are unchanged since 18 September are not repeated. Their only change is citation style, which is now author–year throughout because the report has been renumbered.</aside>
+</section>
+
+<!-- 06 blind -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">6</span><span>The problem</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">The decision is made blind</h2>
+  <p class="sub ">People choose an occupation without knowing what the work is.</p>
+  <div class="cv" style="display:grid;grid-template-columns:1.2fr 1fr;gap:14px">
+  <div class="stk"><div class="card x"><div class="hd"><span class="n">1</span>The obstacle is informational</div><p>In Gati, Krausz and Osipow’s validated taxonomy, insufficient occupational information is a principal category of career decision difficulty, distinct from indecisiveness and from poor self-knowledge <b>(Gati, Krausz &amp; Osipow, 1996)</b>. Its structure was recently confirmed across 13 countries <b>(Levin et al., 2023)</b>.</p></div><div class="card x"><div class="hd"><span class="n">2</span>What guidance offers instead</div><p>Interest and personality inventories elicit what a person believes about themselves. They do not supply information about the work, so they cannot address that category of difficulty.</p></div></div>
+  <div class="stk">
+    <div class="card x"><div class="hd">The evidence on MBTI, both sides</div>
+      <div class="g2" style="gap:10px;margin-top:4px">
+        <div><div class="stat" style="font-size:var(--fs-h3)">Weeks</div><p>Early retest studies: many respondents re-typed within weeks <b>(Pittenger, 2005)</b></p></div>
+        <div><div class="stat" style="font-size:var(--fs-h3)">0.81–0.86</div><p>Publisher data: scale reliability <b>(Myers &amp; Briggs Foundation, 2023)</b></p></div>
+      </div>
+    </div>
+    <div class="strip x"><b>The real limit is what is measured:</b> a stable preference is still a preference, not information about the work.</div>
+    <p class="xs">Two implications: the deficit that most needs fixing is informational, and the dominant instruments are structurally unable to fix it.</p>
+  </div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> MBTI evidence presented on both sides; Gati now paired with the 2023 cross-country confirmation.</div>
+  <aside class="notes">The framing has not changed, but I state it precisely because everything downstream depends on it. Gati's taxonomy separates insufficient information about occupations from indecisiveness and from poor self-knowledge, and that distinction is the basis of the project. The taxonomy dates from 1996, but its structure was confirmed across 13 countries in 2023 (Levin et al.), so it is not an outdated source. On MBTI: last time we showed a single figure, 39 to 76 percent re-typed after five weeks, as if it were settled. That figure comes from retest studies of 1962 to 1979 and is disputed; the publisher reports scale reliability of 0.81 to 0.86. We now show both sides. More importantly, the argument no longer depends on MBTI being unreliable. Even a perfectly stable instrument measures a preference, and a preference is not information about the work, so it cannot address the informational difficulty Gati identifies.</aside>
+</section>
+
+<!-- 07 rjp -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">7</span><span>The alternative</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">Honest previews of a job improve fit</h2>
+  <p class="sub ">Established, not speculative: four decades of meta-analytic evidence.</p>
+  <div class="cv"><div class="g2"><div class="card "><div class="hd"><span class="n">1</span>Phillips, 1998: the effect</div><p>Meta-analysis of 40 studies. Realistic job previews reduce inflated expectations, increase self-selection, improve performance and lower voluntary turnover. Richer audiovisual previews outperform written ones <b>(Phillips, 1998)</b>.</p></div><div class="card "><div class="hd"><span class="n">2</span>Earnest et al., 2011: the mechanism</div><p>Meta-analytic path analysis over 52 studies and about 17,000 participants identifies perceived honesty as the mediating mechanism. The effect depends on candour, not on information volume <b>(Earnest, Allen &amp; Landis, 2011)</b>.</p><p><b>No meta-analysis has since superseded it.</b> The most recent umbrella review identifies it as the current synthesis <b>(Graef, 2020)</b>.</p></div></div><div class="strip" style="margin-top:12px"><b>The constraint was never evidence, it was delivery.</b> Previews required workplace exposure, or content authored one occupation at a time.</div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> shown that the 2011 meta-analysis is still the current synthesis; its age reflects the field, not an outdated choice.</div>
+  <aside class="notes">The realistic job preview literature is forty years old and consistent across four meta-analyses. Two findings matter for our design. Phillips found richer audiovisual previews more effective than written ones, which bears on why we deliver this as an interactive scene rather than a description. And Earnest and colleagues found the effect is mediated by perceived honesty: it depends on the preview's candour, not merely its informational content. That is why business rule BR-07 mandates that occupational representation include the unfavourable aspects of the work. On your comment about old references: the 2011 meta-analysis is still the current synthesis. The most recent umbrella review, Graef 2020, identifies it as such, and no newer meta-analysis has replaced it. Its age reflects the state of the field, not an outdated choice by us. The reason this approach has not been applied to career exploration is delivery cost, and that is the constraint generative models change.</aside>
+</section>
+
+<!-- 08 obj -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">8</span><span>Mandate</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">Objectives: value to the user</h2>
+  <p class="sub ">One objective stated as value to the user, four ways of reaching it</p>
+  <div class="cv">
+    <div class="card navy"><div class="hd">Overall objective</div><p>Enable a person facing an occupational decision to experience the work of an occupation, be assessed on how they performed it, and use that assessment to decide which occupations to explore next, before committing to one.</p></div>
+    <p class="xs" style="margin:8px 0 5px"><b>Four specific objectives:</b> the means, and the benefit to the user</p>
+    <div class="g2"><div class="card x row-n"><span class="n">1</span><p>Faithful occupational tasks, with AI generation constrained by expert-authored material → <b>accurate information about the work</b></p></div><div class="card x row-n"><span class="n">2</span><p>Validated automated assessment → <b>a result, feedback, and guidance the user can rely on</b></p></div><div class="card x row-n"><span class="n">3</span><p>Competence converted into guidance on adjacent occupations → <b>exploration that builds on demonstrated ability</b></p></div><div class="card x row-n"><span class="n">4</span><p>Free, expert-governed access → <b>access that does not depend on ability to pay</b></p></div></div>
+    <p class="src" style="margin-top:4px">1–2 are the research problems; 3–4 are realised through design and the business model.</p>
+  </div>
+  <div class="chg"><b>Changed since 18 Sep:</b> objectives rewritten around user value: one overall objective, four specific ones, each stating the user benefit.</div>
+  <aside class="notes">We rewrote the objectives around your comment that they must give value to users. The overall objective is now stated as the outcome for the user: to experience the work, be assessed on how they performed it, and use that to decide what to explore next, before committing. The four specific objectives each name the means and, after the arrow, the benefit to the user. The first two are our research problems; the third and fourth are delivered by design and by the business model. One distinction we now keep carefully: the objective is the direct outcome for the user; significance, two slides on, is why it matters beyond the user.</aside>
+</section>
+
+<!-- 09 scope -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">9</span><span>Mandate</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">Scope, stated positively</h2>
+  <p class="sub ">Complete in function; coverage bounded to the IT field.</p>
+  <div class="cv"><div class="g2" style="grid-template-columns:1fr 1.1fr"><div class="card "><div class="hd">Why IT</div><p>IT is the only field where we can build an expert reference set, so our claims can be tested.</p><p>The design is domain-agnostic; the evaluated instance is IT.</p></div><div class="card "><div class="hd">What the work comprises</div><ul class="ul s"><li>Expert knowledge elicitation and review</li><li>AI scenario generation</li><li>Automated assessment</li><li>Competence-based progression</li><li>Engagement design</li><li>Orientation conversation</li><li>Catalogue and model administration</li><li>Offline evaluation</li></ul></div></div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> the out-of-scope list removed; scope stated positively, as what the work comprises.</div>
+  <aside class="notes">You asked us to remove the out-of-scope list, and we have: there is no "explicitly not" box any more. Scope is stated positively. It is complete in function, meaning every part of the product is built, and bounded in coverage to IT, because IT is the only field where we can build an expert reference set and therefore test our claims. The right-hand list is what the work comprises, from expert knowledge elicitation to offline evaluation.</aside>
+</section>
+
+<!-- 10 sig -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">10</span><span>Significance</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">Why this is worth doing</h2>
+  <p class="sub ">Two kinds of significance, justifying two different things.</p>
+  <div class="cv"><div class="g2"><div class="card x"><div class="hd">Practical</div><p><b>Free, experiential occupational information before commitment,</b> for students, graduates, and career changers. It rests on three established findings:</p><ul class="ul x"><li>Honest previews improve fit <b>(Phillips, 1998; Earnest et al., 2011)</b></li><li>Missing occupational information is a principal decision difficulty <b>(Gati et al., 1996; Levin et al., 2023)</b></li><li>Authentic task performance is the strongest source of self-efficacy <b>(Lent et al., 1994; Byars-Winston et al., 2017)</b></li></ul><p>Offered free, through public education authorities: reach does not depend on ability to pay.</p></div><div class="card x"><div class="hd">Scientific: AI in education</div><div class="stk s"><div style="display:flex;gap:8px"><span class="n">1</span><p><b>Grounded generation of educational content:</b> expert-in-the-loop, evaluated against a domain reference set</p></div><div style="display:flex;gap:8px"><span class="n">2</span><p><b>Validated automated assessment:</b> chance-corrected, difficulty-stratified validation of LLM judging in a stealth-assessment setting</p></div><div style="display:flex;gap:8px"><span class="n">3</span><p><b>A new edtech application:</b> experiential career education, where existing systems are small-sample research prototypes</p></div></div></div></div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> scientific significance positioned in AI-in-education and edtech research; free access added to practical significance.</div>
+  <aside class="notes">Two kinds of significance. Practically, this is free, experiential occupational information before commitment, and it rests on three findings rather than on our optimism: honest previews work, missing information is the actual obstacle, and performing authentic tasks is the strongest source of self-efficacy. Free access through public education authorities is now part of the practical significance, because the users who most need this are the least able to pay. Scientifically, following your comment, we position the contribution in AI in education and edtech research: grounded generation of educational content with experts in the loop; validated automated assessment, meaning chance-corrected and difficulty-stratified validation of LLM judging in a stealth-assessment setting; and a new edtech application, experiential career education, where the existing systems are small-sample research prototypes.</aside>
+</section>
+
+<!-- 11 f2a -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">11</span><span>Foundation 2A</span><span class="badge new">New</span></div>
+  <h2 class="title ">Choices as trade-offs</h2>
+  <p class="sub ">Not right or wrong: situational judgment tests, the established method behind our choice tasks</p>
+  <div class="cv"><div class="g3"><div class="card "><div class="hd"><span class="n">1</span>What they are</div><p>Work situations with response options that differ in effectiveness: a “low-fidelity simulation” <b>(Motowidlo, Dunnette &amp; Carter, 1990)</b>.</p></div><div class="card "><div class="hd"><span class="n">2</span>The evidence</div><p>102 validity coefficients, 10,640 people: validly related to job performance, ρ = .34 <b>(McDaniel et al., 2001)</b>.</p><p>Items measure distinct constructs: interpersonal skill, teamwork, leadership <b>(Christian et al., 2010)</b>.</p></div><div class="card "><div class="hd"><span class="n">3</span>How they are built</div><p>Experts supply critical incidents <b>(Flanagan, 1954)</b> → options are written from real behaviour → a different group of experts rates each option’s effectiveness to form the key <b>(Whetzel et al., 2020)</b>.</p></div></div><div class="strip" style="margin-top:12px"><b>Design consequence:</b> each option carries an expert-rated effectiveness profile across competencies, so a choice can trade one skill against another.</div></div>
+  
+  <aside class="notes">This is new, and it answers a gap in how we described our choice tasks. Situational judgment tests are the established method for presenting work situations whose options differ in effectiveness rather than in right or wrong. Motowidlo called them low-fidelity simulations; McDaniel's meta-analysis of 102 coefficients shows they validly predict job performance; Christian showed items can target distinct constructs. The construction method is what we adopt: critical incidents from experts, options written from real behaviour, and a separate group of experts rating each option's effectiveness to form the key. One design choice to mention: the instruction matters. "What would you do?" relates more to personality; "what is most effective?" relates more to cognitive ability (McDaniel et al., 2007). Our narrative framing uses "what do you do?", which suits exploration.</aside>
+</section>
+
+<!-- 12 f2b -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">12</span><span>Foundation 2B</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">Career theory: fit is not a fixed verdict</h2>
+  <p class="sub ">Four traditions, and two of them say something most career systems ignore.</p>
+  <div class="cv t2"><div class="g2" style="gap:10px"><div class="card x"><div class="hd"><span class="n">1</span>Holland</div><p>Occupational choice as person–environment congruence. Underlies the interest inventories in widespread use, including the public-domain instrument distributed with O*NET <b>(Holland, 1997)</b>.</p></div><div class="card x"><div class="hd"><span class="n">2</span>Social cognitive career theory</div><p>Self-efficacy, built principally through mastery experience, determines interest formation and choice: accessible to a system where users perform tasks, inaccessible to one that only elicits self-description <b>(Lent et al., 1994)</b>. <b>→ How self-efficacy forms, and what we can build: next slide.</b></p></div><div class="card x"><div class="hd"><span class="n">3</span>Super</div><p>Vocational self-concept develops over time, so fit is changing rather than fixed <b>(Super, 1980)</b>.</p></div><div class="card x"><div class="hd"><span class="n">4</span>Krumboltz</div><p>Unplanned events are a normal and potentially productive part of career development, not disruption <b>(Krumboltz, 2009)</b>.</p></div></div><div class="strip x" style="margin-top:10px"><b>Consequence.</b> Super and Krumboltz jointly justify two features: probabilistic life events (FR-14), and treating work–life balance as an attribute of an occupation rather than an externality (the five-attribute rating, FR-11).</div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> the social cognitive mechanism is now analysed in full (slide 13).</div>
+  <aside class="notes">Four traditions inform this field, and I want to draw out the two that most systems ignore. Holland and social cognitive career theory are the familiar ones, and SCCT matters to us particularly, because mastery experience is a mechanism a performance-based system can reach and a questionnaire cannot. You asked whether there is a social cognitive aspect; the next slide analyses it in full. Super and Krumboltz jointly support a position career systems rarely represent: that a career decision sits inside a whole life. That is the theoretical justification for two features: our roguelike life events exist because Krumboltz says unplanned events are normal, and our five-attribute rating includes work–life balance because Super says fit changes over a life.</aside>
+</section>
+
+<!-- 13 f2c -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">13</span><span>Foundation 2C</span><span class="badge new">New</span></div>
+  <h2 class="title ">What we can build, and cannot</h2>
+  <p class="sub ">Social cognitive theory: answering “is there a social cognitive aspect?”</p>
+  <div class="cv">
+  <p class="xs" style="margin-bottom:6px">The four sources of self-efficacy <b>(Bandura, 1997)</b>, and how JobQuest supplies each:</p>
+  <div class="g4">
+    <div class="card x" style="text-align:center"><div class="stat">✓</div><div class="hd" style="justify-content:center">Mastery experience</div><p>Direct: the user performs the task</p></div>
+    <div class="card x" style="text-align:center"><div class="stat">◐</div><div class="hd" style="justify-content:center">Vicarious experience</div><p>Little: no peers to observe</p></div>
+    <div class="card x" style="text-align:center"><div class="stat">✓</div><div class="hd" style="justify-content:center">Persuasion / feedback</div><p>Through feedback and guidance</p></div>
+    <div class="card x" style="text-align:center"><div class="stat">✕</div><div class="hd" style="justify-content:center">Affective state</div><p>Not targeted</p></div>
+  </div>
+  <div class="g2" style="margin-top:12px"><div class="card x"><div class="hd">Evidence</div><p>Mastery is the strongest source: meta-analysis <b>(Byars-Winston et al., 2017)</b>; extended to career exploration <b>(Lent et al., 2017)</b>; confirmed in a three-wave study of 1,512 students <b>(Chang et al., 2025)</b>.</p></div><div class="card x"><div class="hd">Limit</div><p>Self-efficacy is task-specific. Interaction is text-based, so we build confidence for written analysis, prioritisation, and decisions, not for oral fluency or interviewing. <b>→ slide 20.</b></p></div></div></div>
+  
+  <aside class="notes">Your question was whether there is a social cognitive aspect. There is, and this is it. Bandura identifies four sources of self-efficacy. JobQuest supplies the strongest one, mastery experience, directly: the user performs the task. It supplies verbal persuasion through feedback and guidance. It supplies little vicarious experience, because there are no peers to observe, and it does not target affective state. The evidence that mastery is the strongest source comes from a meta-analysis, it has been extended to career exploration specifically, and a three-wave study of 1,512 students confirmed it in 2025. The limit matters as much: self-efficacy is task-specific, and our interaction is text-based, so the confidence we build is for written analysis, prioritisation and decisions, not for speaking or interviewing. Slide 20 makes that limit explicit.</aside>
+</section>
+
+<!-- 14 f3 -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">14</span><span>Foundation 3</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">Generation and judging</h2>
+  <p class="sub ">LLMs can judge open responses, but judging must be validated in four ways.</p>
+  <div class="cv"><div class="g3" style="grid-template-columns:1fr 1fr 1.35fr"><div class="card x"><div class="hd"><span class="n">1</span>Feasibility</div><p>Agreement with human preferences above 80%, comparable to inter-human agreement, while the same work documents position, verbosity and self-preference bias <b>(Zheng et al., 2023)</b>.</p></div><div class="card x"><div class="hd"><span class="n">2</span>Method</div><p>Structured chain-of-thought against an explicit rubric improves alignment, with a residual preference for model-generated text <b>(Liu et al., 2023)</b>.</p></div><div class="card x"><div class="hd"><span class="n">3</span>Validation</div><p>Raw agreement overstates chance-corrected performance: a ~41-point gap between exact-match agreement and kappa on one benchmark <b>(“Reliability without validity”, 2026)</b>. On difficult pairs with objective labels, the strongest evaluator reached ~64% <b>(Tan et al., 2025)</b>.</p></div></div>
+  <div class="card navy x" style="margin-top:10px"><div class="hd">The four requirements</div>
+  <div class="g2" style="gap:4px 20px">
+    <p>✓ Report chance-corrected agreement: quadratic weighted kappa (slide 43) <b>→ evaluation design</b></p>
+    <p>✓ Draw the evaluator from a different model family than the generator <b>→ DC-01</b></p>
+    <p>✓ Control option ordering and response length <b>→ assessment pipeline</b></p>
+    <p>✓ Report performance stratified by item difficulty <b>→ reference-set strata</b></p>
+  </div></div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> the generator/assessor separation is now design constraint DC-01; the agreement metric is QWK.</div>
+  <aside class="notes">This is where our methodological contribution sits, so I connect it forward. The literature on language models as judges has gone through three stages, and the third is the one most systems skip. Raw agreement systematically overstates chance-corrected performance, with a 41-point gap on one benchmark, and high test–retest consistency can coexist with severe position bias, so consistency is not evidence of validity. Four requirements follow, and each appears somewhere concrete in our specification. Chance-corrected reporting is in the evaluation design, and the metric is now quadratic weighted kappa, explained on slide 43. Cross-family evaluation was a business rule on 18 September; it is now design constraint DC-01, because it is a constraint on the implementation rather than a domain policy. Ordering and length control are in the assessment pipeline, and difficulty stratification is why the reference set has strata.</aside>
+</section>
+
+<!-- 15 secB -->
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec"><div class="sec-num">B</div><div class="sec-title">Chapter 4</div><p class="sec-sub">The proposed system: corrections, new sections, and the work not yet presented</p></div>
+  <aside class="notes">Part B, Chapter 4. The first slides are corrections to what you saw; then the new sections on experts, tasks, design constraints and the business model; then the requirements: a summary, then every functional, non-functional and data requirement, paraphrased. The responsibility section and the eight difficulties are in the report.</aside>
+</section>
+
+<!-- 16 system -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">16</span><span>The system</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">What JobQuest is, and who it serves</h2>
+  <p class="sub ">Occupations as performable tasks; competence assessed from the performance.</p>
+  <div class="cv" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+  <div class="card x"><div class="hd">Three presentation conventions, each chosen against evidence</div>
+    <div class="stk s">
+      <p><b>RPG progression.</b> Levels earned by demonstrated competence. Role-play shows the strongest genre-level association with skill acquisition: overall effect ≈ 0.82, largest on skill acquisition <b>(“Effectiveness of the role-play method”, 2025)</b>.</p>
+      <p><b>Visual-novel branching scenes.</b> Narrative is among the strongest moderators in the gamification meta-analyses.</p>
+      <p><b>Roguelike career and life events.</b> Narrative variety only: explicitly not coupled to any reward schedule or monetisation, per the harm evidence on randomised rewards <b>(“Randomized reward mechanisms”, 2023)</b>.</p>
+    </div></div>
+  <div class="stk s">
+    <div class="card x"><div class="hd">Four user groups</div>
+      <div class="stk s">
+        <p><b>Explorer.</b> The end user; everything else serves them.</p>
+        <p><b>Domain expert.</b> Senior practitioner on one or more occupations: co-authors content, play-tests, validates scenarios.</p>
+        <p><b>Content administrator (business administrator).</b> One per occupation: co-authors with its experts; publishes and retires it.</p>
+        <p><b>System administrator (IT administrator).</b> Creates occupations, assigns staff; models, coverage, cost.</p>
+      </div></div>
+    <div class="card line x"><p><b>Many-to-many:</b> an occupation can have several experts; an expert can serve several occupations.</p></div>
+  </div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> responsibility per occupation made explicit: exactly one content administrator and one or more domain experts, who co-author its content.</div>
+  <aside class="notes">Three conventions, each selected against evidence rather than by preference. Progression is competence-based because role-play carries the strongest genre-level evidence for skill acquisition. Scenes are branching narrative because narrative is the strongest moderator in the meta-analyses. Events are probabilistic, but that randomisation governs narrative variety only; it is not attached to any reward schedule, given the evidence linking randomised reward mechanisms to problem gambling. The correction is on the right. There are four user groups: the explorer, the domain expert, the content administrator, who is the business administrator, and the system administrator. What changed since 18 September is that responsibility for each occupation is now explicit. Every occupation has exactly one content administrator and one or more domain experts, and the relationship with experts is many-to-many: an occupation can draw on several experts, and an expert can support several occupations. The experts and the content administrator co-author the occupation's content inside the system. The next slide explains who the experts are and how they contribute.</aside>
+</section>
+
+<!-- 17 experts -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">17</span><span>Domain experts</span><span class="badge new">New</span></div>
+  <h2 class="title ">Domain experts and how they link</h2>
+  <p class="sub ">System users, assigned per occupation, working alongside its content administrator</p>
+  <div class="cv"><div class="g3"><div class="card x"><div class="hd"><span class="n">1</span>Who</div><ul class="ul x"><li>Senior or lead practitioners: about 5+ years in the role, experience supervising juniors</li><li>3–4 per role; 3 is the accepted minimum for content validation <b>(Lynn, 1986)</b></li><li>From at least two organisation types: product, outsourcing, startup, in-house</li><li>About 22 IT roles → 66–88 experts, reached progressively</li></ul></div><div class="card x"><div class="hd"><span class="n">2</span>How: the link</div><div class="stk s"><div class="node gray" style="font-size:var(--fs-xs);min-height:0;padding:5px 8px">Assigned to an occupation by the system administrator</div><div class="node gray" style="font-size:var(--fs-xs);min-height:0;padding:5px 8px">Co-author context and rules with its content administrator</div><div class="node gray" style="font-size:var(--fs-xs);min-height:0;padding:5px 8px">Play-test before review; practice runs excluded from metrics</div><div class="node navy" style="font-size:var(--fs-xs);min-height:0;padding:5px 8px">Validate generated scenarios: approve, reject or correct</div></div></div><div class="card x"><div class="hd"><span class="n">3</span>When</div><ul class="ul x"><li>Heaviest when seeds are first prepared, then annual revalidation</li><li>Part-time, through partner organisations</li><li><b>Present phase: none.</b> The team prepares provisional seeds from public sources under advisor guidance; these are not claimed as expert-validated</li><li>Stage 1: first panel of about 9 (3 pilot roles × 3)</li></ul></div></div><div class="strip x" style="margin-top:10px"><b>Independence rule:</b> a reviewer cannot approve content they initiated.</div></div>
+  
+  <aside class="notes">This answers your first two questions of 23 September: who the experts are, and how they are linked to the system. Who: senior or lead practitioners with about five or more years in the role and experience supervising juniors; three to four per role, three being the accepted minimum for content validation according to Lynn; drawn from at least two organisation types. With about 22 IT roles, that is 66 to 88 experts in total, reached progressively, not all at once. How: experts are system users. The system administrator assigns them to an occupation; an occupation can have several experts, and an expert can support several occupations. Each occupation also has exactly one content administrator. The experts co-author the scenario context and generation rules with that administrator, play-test generated scenarios before formal review, and then validate them: approve, reject or correct. Their play-test attempts never enter the metrics that describe real explorers. When: the load is heaviest when the context is first prepared, then at revalidation. We are honest about the present phase: we have no experts yet. The team prepares provisional content from public sources under your guidance, and we do not claim it as expert-validated. The first panel, about nine experts, comes in Stage 1. One independence rule: a reviewer cannot approve content they initiated.</aside>
+</section>
+
+<!-- 18 mission -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">18</span><span>Worked example</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">One mission, end to end</h2>
+  <p class="sub ">Experts and the content administrator author the context; the model expands it.</p>
+  <div class="cv"><div class="g2" style="align-items:start">
+  <div class="card x"><div class="stk"><div class="row-n"><span class="n">1</span><p><b>Role and context.</b> Backend Engineer, starter level. Your team, your stack, and tonight you are on call.</p></div><div class="row-n"><span class="n">2</span><p><b>Scenario context (co-authored by domain experts and the content administrator).</b> The incident skeleton, the required facts, the keyed options, the rubric.</p></div><div class="row-n"><span class="n">3</span><p><b>AI expands.</b> Specific symptoms, narrative and tone. Varied each run.</p></div><div class="row-n"><span class="n">4</span><p><b>Choice point.</b> “Payments are down at 2 a.m. Where do you look first?” Branches the story. Each option is keyed to an expert-rated effectiveness profile: a trade-off, not a right answer.</p></div></div></div>
+  <div class="stk s"><div class="card x"><div class="stk"><div class="row-n"><span class="n">5</span><p><b>Structured task.</b> Order the triage steps. Scored against the expert consensus ranking, with partial credit.</p></div><div class="row-n"><span class="n">6</span><p><b>Free-response task.</b> Write the incident summary for your team. Scored against the rubric by a panel of judging models.</p></div><div class="row-n"><span class="n">7</span><p><b>Result.</b> Score, response-specific feedback, competencies evidenced (debugging, communication), and credit toward the next level.</p></div></div></div>
+  <div class="card line x"><p><b>Hints available;</b> hint use and response time are recorded as evidence.</p></div>
+  <div class="strip x">Only the free-response step is a research risk. That is what research problem RP-2 is about.</div>
+  </div></div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> scoring now reflects trade-off keys and a judging panel; the context is co-authored by experts and the content administrator.</div>
+  <aside class="notes">The same worked example, corrected in four places. First, the scenario context: it is no longer something we author alone. It is co-authored in the system by the occupation's domain experts and its content administrator. Second, the choice point: each option is keyed to an expert-rated effectiveness profile, so a choice is a trade-off, not a right answer; that is the situational judgment method from slide 11. Third, the structured task is scored against the expert consensus ranking with partial credit, not deterministically against a single key. Fourth, the free response is scored against the rubric by a panel of judging models, not a single judge. Hints are available, and hint use and response time are recorded as evidence. Only the free-response step is a research risk, and that is research problem two.</aside>
+</section>
+
+<!-- 19 task -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">19</span><span>The task</span><span class="badge new">New</span></div>
+  <h2 class="title ">What a task includes</h2>
+  <p class="sub ">One scenario, one response, in one of nine formats</p>
+  <div class="cv" style="top:128px">
+  <p class="xs" style="margin-bottom:6px"><b>A task</b> is one scenario within an occupation level, with a role, team and context, asking for one response. Its seed declares the competencies it targets.</p><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:170px"><col style="width:440px"><col style="width:180px"></colgroup><thead><tr><th>Format</th><th>Scored by</th><th>In RP-2?</th></tr></thead><tbody><tr><td>Multiple choice</td><td>Expert effectiveness profile per option</td><td>No</td></tr><tr><td>Multiple selection</td><td>Sum of selected profiles; harmful combinations flagged</td><td>No</td></tr><tr><td>Ordering</td><td>Distance from the expert consensus ranking; partial credit</td><td>No</td></tr><tr><td>Matching</td><td>Answer key if factual, otherwise an effectiveness key</td><td>No</td></tr><tr><td>True / false</td><td>Answer key; used sparingly</td><td>No</td></tr><tr><td>Timed choice</td><td>Option profile, plus on-device response time</td><td>No</td></tr><tr class="hi"><td>Free text</td><td>Rubric, scored by the judging panel</td><td><b>Yes</b></td></tr><tr class="hi"><td>Simplified email</td><td>Rubric</td><td><b>Yes</b></td></tr><tr class="hi"><td>Simplified code</td><td>Tests (complete or debug) / rubric (explain or review)</td><td>Explanations and reviews only</td></tr></tbody></table><div class="strip x" style="margin-top:8px"><b>Every option must be:</b> grounded · plausible · intentional (a declared trade-off) · consistent with the scenario state · distinct. The model may rephrase an option but not change its keyed profile (DC-06).</div></div>
+  
+  <aside class="notes">This answers your question of 23 September: what does "task" include? A task is one scenario within an occupation level, with a role, a team and a context, asking for one response. Its seed declares which competencies it targets. The response comes in one of nine formats. The six structured formats are scored against expert effectiveness keys or, where the question is factual, an answer key. The three open formats, free text, simplified email and the explanation or review forms of simplified code, are scored against a rubric by the judging panel; those are the ones research problem two covers, tinted here. Response time is measured on the device, excluding network delay, so users on slow connections are not penalised. Every option must satisfy five properties, and the generator may rephrase an option but never change its keyed profile; that is design constraint DC-06.</aside>
+</section>
+
+<!-- 20 screen -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">20</span><span>Social cognitive limit</span><span class="badge new">New</span></div>
+  <h2 class="title ">What a screen task can represent</h2>
+  <p class="sub ">Functional task alignment matters more than realism (Hamstra et al., 2014)</p>
+  <div class="cv"><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:430px"><col style="width:360px"></colgroup><thead><tr><th>Competency</th><th>Alignment with live work</th></tr></thead><tbody><tr><td>Technical analysis</td><td><span class="chip hi">High</span></td></tr><tr><td>Written communication</td><td><span class="chip hi">High</span></td></tr><tr><td>Prioritisation and decisions</td><td><span class="chip mo">Moderate</span></td></tr><tr><td>Adaptability</td><td><span class="chip mo">Moderate</span></td></tr><tr><td>Collaboration</td><td><span class="chip pa">Partial</span></td></tr><tr><td>Time pressure and stress</td><td><span class="chip lo">Low</span></td></tr><tr><td>Oral communication and interviews</td><td><span class="chip na">Not addressed</span></td></tr><tr><td>Physical skill</td><td><span class="chip na">Not addressed</span></td></tr></tbody></table><div class="strip x" style="margin-top:10px">Alignment is highest for the core of IT work, which is itself screen-based: another reason for IT first. Results are never presented as readiness for unaligned competencies. Voice interaction is a candidate extension.</div></div>
+  
+  <aside class="notes">This is the second half of the answer to your social cognitive question, and it is report Table 4.5. Simulation research says what matters is functional task alignment, not physical realism (Hamstra et al., 2014). So for each competency we state how well a screen task aligns with the live work. Alignment is high for technical analysis and written communication, moderate for prioritisation and adaptability, partial for collaboration, low for time pressure, and we do not address oral communication or physical skill at all. The core of IT work is itself screen-based, which is another reason to start with IT. And the rule that follows: results are never presented as readiness for a competency the task does not align with.</aside>
+</section>
+
+<!-- 21 br -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">21</span><span>Rules, not preferences</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">Twelve business rules (1/3)</h2>
+  <p class="sub ">And where each comes from: several are Chapter 2 findings made operational (report Table 4.1).</p>
+  <div class="cv"><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:140px"><col style="width:400px"><col style="width:250px"></colgroup><thead><tr><th>ID</th><th>Rule</th><th>Origin</th></tr></thead><tbody><tr><td>BR-01<span class="tag">progression</span></td><td>The entry level of every occupation is accessible without prerequisite.</td><td>Exploration is the purpose; gating discovery defeats it</td></tr><tr><td>BR-02</td><td>Access to a higher level requires the competence credit specified for that level.</td><td>Competency-based progression (§2.2)</td></tr><tr><td>BR-03</td><td>Entry to an adjacent occupation requires demonstrated competencies overlapping that occupation’s entry requirements, determined from the occupational taxonomy.</td><td>§2.2, §2.6</td></tr><tr><td>BR-04<span class="tag">integrity</span></td><td>An occupation may be rated only by a user who has completed it in full.</td><td>Rating validity depends on exposure</td></tr></tbody></table></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> the assessor rule was a technical constraint and is now DC-01; four rules are new, BR-09 to BR-12 (slide 23).</div>
+  <aside class="notes">Twelve business rules now. Two changes since 18 September. First, you pointed out that business rules should not contain system constraints, and the rule we showed then as BR-09, that the assessor must come from a different model family than the generator, was exactly that: a constraint on the implementation. It is now design constraint DC-01. Second, four rules are new, now numbered BR-09 to BR-12, on slide 23. The first eight keep the report's Table 4.1 wording, and the right-hand column is the important one: several are Chapter 2 findings made operational. The progression rules keep discovery open and tie advancement to demonstrated competence, and a rating counts only once the whole occupation has been completed.</aside>
+</section>
+
+<!-- 22 br2 -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">22</span><span>Rules, not preferences</span><span class="badge corr">Corrected</span></div>
+  <h2 class="title ">Twelve business rules (2/3)</h2>
+  <p class="sub ">And where each comes from (report Table 4.1).</p>
+  <div class="cv"><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:140px"><col style="width:400px"><col style="width:250px"></colgroup><thead><tr><th>ID</th><th>Rule</th><th>Origin</th></tr></thead><tbody><tr><td>BR-05</td><td>No scenario context or grading criteria are published without domain-expert validation.</td><td>§2.5; accuracy of occupational representation</td></tr><tr><td>BR-06<span class="tag">ethics</span></td><td>Assessment results are formative. They are not transmitted to employers and do not determine access to any external opportunity.</td><td>§2.7; proportionality to assessment reliability</td></tr><tr><td>BR-07</td><td>Occupational representation must include the unfavourable aspects of the work.</td><td>Realistic job preview evidence (§2.1)</td></tr><tr><td>BR-08</td><td>Statistics derived from user performance are published only in aggregate form.</td><td>§2.7</td></tr></tbody></table><div class="strip x" style="margin-top:10px">Business rules are domain policies that hold whatever the technology. Implementation constraints are kept separately → slide 24.</div></div>
+  <div class="chg"><b>Changed since 18 Sep:</b> the assessor rule was a technical constraint and is now DC-01; four rules are new, BR-09 to BR-12 (slide 23).</div>
+  <aside class="notes">BR-07 exists because Earnest showed perceived honesty is the mediating mechanism, so a preview that hides the bad parts loses the effect. BR-06 exists because our assessment's reliability does not support consequential use, so we cap the consequences to match the reliability. BR-05 is where the expert model lives: no scenario context or grading criteria are published without domain-expert validation, and a reviewer cannot approve content they initiated. The four new rules follow on the next slide.</aside>
+</section>
+
+<!-- 23 br3 -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">23</span><span>Rules, not preferences</span><span class="badge new">New</span></div>
+  <h2 class="title ">Twelve business rules (3/3)</h2>
+  <p class="sub ">New since 18 Sep: responsibility per occupation, the replay cap, staff play-testing.</p>
+  <div class="cv"><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:120px"><col style="width:430px"><col style="width:240px"></colgroup><thead><tr><th>ID</th><th>Rule</th><th>Origin</th></tr></thead><tbody><tr><td>BR-09<span class="tag">new</span></td><td>Each occupation is managed by exactly one content administrator.</td><td>Clear accountability for catalogue content</td></tr><tr><td>BR-10<span class="tag">new</span></td><td>Each occupation may be supported by one or more domain experts; the relationship is many-to-many.</td><td>Complex occupations may need more than one expert’s judgment</td></tr><tr><td>BR-11<span class="tag">new</span></td><td>Within one scenario, the credit a user can gain toward a competency is capped; replaying cannot exceed the cap.</td><td>No unlimited progress from repeating one scenario</td></tr><tr><td>BR-12<span class="tag">new</span></td><td>Staff practice attempts made while testing a scenario before review are excluded from every explorer metric.</td><td>Keeps authoring-time testing out of real usage data</td></tr></tbody></table></div>
+  
+  <aside class="notes">The four new rules. BR-09 and BR-10 make responsibility for an occupation explicit: exactly one content administrator, and one or more domain experts, where one expert may also support several occupations. BR-11 caps the credit a user can gain toward a competency within one scenario, so replaying the same scenario cannot inflate progress; for example, with a cap of ten, eight points on the first attempt leaves at most two more. BR-12 keeps practice attempts by the content administrator or experts, made while testing a scenario before review, out of every metric that describes real explorers. The rule on the assessor's model family is design constraint DC-01, on the next slide.</aside>
+</section>
+
+<!-- 24 dc -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">24</span><span>Design constraints</span><span class="badge new">New</span></div>
+  <h2 class="title ">Six design constraints</h2>
+  <p class="sub ">The system-side limits, kept apart from business rules (report Table 4.8)</p>
+  <div class="cv"><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:130px"><col style="width:430px"><col style="width:230px"></colgroup><thead><tr><th>ID</th><th>Constraint</th><th>Rationale</th></tr></thead><tbody><tr class="hi"><td>DC-01<span class="tag">was a business rule</span></td><td>The assessor comes from a different model family than the generator</td><td>Self-preference bias</td></tr><tr><td>DC-02</td><td>Replaceable model provider</td><td>Portability</td></tr><tr><td>DC-03</td><td>Vietnamese personal data protection compliance, including minors</td><td>Legal obligation</td></tr><tr><td>DC-04</td><td>Enforced per-session cost ceiling</td><td>Non-revenue operation</td></tr><tr><td>DC-05</td><td>Browser-based, no installation</td><td>Universal access</td></tr><tr class="hi"><td>DC-06<span class="tag">new</span></td><td>The generator may rephrase an option but not change its keyed profile</td><td>Validity of situational judgment scoring</td></tr></tbody></table></div>
+  
+  <aside class="notes">Six design constraints, kept apart from the business rules. DC-01 is the assessor rule that was a business rule on 18 September. DC-02 keeps the model provider replaceable. DC-03 is legal compliance with Vietnamese personal data protection, including for minors. DC-04 is the per-session cost ceiling, which exists because the platform earns no revenue. DC-05 keeps it browser-based with no installation, for universal access. DC-06 is new: the generator may rephrase an option but may not change its keyed effectiveness profile, because otherwise the situational judgment scoring would no longer be valid.</aside>
+</section>
+
+<!-- 25 bm1 -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">25</span><span>Decision needed</span><span class="badge new">New</span></div>
+  <h2 class="title ">A public-benefit platform, free for all</h2>
+  <p class="sub ">Community first, and the absence of revenue protects honest previews</p>
+  <div class="cv"><div class="g3"><div class="card x"><div class="hd"><span class="n">1</span>Value</div><p>Free for every user; access gated by competence, never by payment.</p><p>The users who most need occupational information, students choosing under exam and family pressure, are the least able to pay.</p></div><div class="card x"><div class="hd"><span class="n">2</span>Partners and funders</div><p>The Ministry of Education and Training (after city departments) and edtech organisations can each be both partner and funder. Industry partners and associations supply experts; HCMUT hosts.</p><p><b>Safeguards for all:</b> no role in authoring, validating, or ranking content · aggregate data only · no charges, ads, or monetisation · all relationships disclosed.</p></div><div class="card x"><div class="hd"><span class="n">3</span>Costs</div><p><b>Variable:</b> model inference per session (NFR-11 monitored, DC-04 ceiling).</p><p><b>Fixed:</b> expert authoring per occupation, which is why coverage grows field by field.</p><p><b>Levers:</b> a cheaper panel of smaller judges <b>(Verga et al., 2024)</b>, batch-generated and pre-reviewed scenario pools, and provider portability.</p></div></div><div class="strip x" style="margin-top:10px">No commercial revenue means no incentive to portray jobs favourably: a safeguard, not just an access policy.</div></div>
+  
+  <aside class="notes">You asked for the business model and context. JobQuest is a public-benefit platform, free for every user. Access is gated by competence, never by payment, because the users who most need occupational information are students choosing under exam and family pressure, and they are the least able to pay. Partners and funders: the Ministry of Education and Training, after city departments, and edtech organisations can each be partner and funder; industry partners and associations supply experts; HCMUT hosts. Every partner accepts the same safeguards: no role in authoring, validating or ranking content, aggregate data only, no charges, ads or monetisation, and every relationship disclosed. Costs are variable inference per session, capped by DC-04, and the fixed cost of expert authoring per occupation. The point on the strip matters most: having no commercial revenue removes any incentive to portray jobs favourably, which protects the honest-preview effect. This is a decision we would like your view on.</aside>
+</section>
+
+<!-- 26 bm2 -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">26</span><span>Decision needed</span><span class="badge new">New</span></div>
+  <h2 class="title ">Where we start, and how we grow</h2>
+  <p class="sub ">Five stages, each unlocked by evidence</p>
+  <div class="cv" style="top:128px">
+  <p class="xs" style="margin-bottom:6px"><b>Policy context.</b> The national career-guidance scheme (Decision 522/QĐ-TTg) ran 2018–2025 and was reviewed in November 2025, with a successor decree in preparation; Ho Chi Minh City targets ≥35% of students in science, engineering, and technology by 2030.</p><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:290px"><col style="width:170px"><col style="width:330px"></colgroup><thead><tr><th>Stage</th><th>When</th><th>Gate</th></tr></thead><tbody><tr class="hi"><td><b>0</b> University project</td><td>Now to end of 2026</td><td>Working system + Stage A targets met</td></tr><tr><td><b>1</b> Capstone and first pilot</td><td>2027</td><td>RP-1 and RP-2 thresholds met on pilot roles</td></tr><tr><td><b>2</b> Incubation, multi-site pilot</td><td>2027–28</td><td>Multi-site evidence; expert coverage of IT roles</td></tr><tr><td><b>3</b> Public-sector partnership</td><td>2028–29</td><td>City department first, then the Ministry → a formal agreement</td></tr><tr><td><b>4</b> National public resource</td><td>2030+</td><td>Sustained operation</td></tr></tbody></table><div class="strip x" style="margin-top:8px"><b>Starting point:</b> a university-hosted project that needs no partner and no funding beyond model costs, exactly where we are now. The research thresholds are the evidence we bring to funders.</div></div>
+  
+  <aside class="notes">Where we start and how we grow, condensed from report Table 4.2. The policy context is real: the national career-guidance scheme, Decision 522, ran from 2018 to 2025 and was reviewed in November 2025, with a successor in preparation, and Ho Chi Minh City has a 2030 target for science, engineering and technology enrolment. Five stages, each unlocked by evidence rather than by date. Stage 0 is where we are: a university project that needs no partner and no funding beyond model costs. Why the city department before the Ministry: a city department can run a pilot within its own schools and gives us evidence at a scale a Ministry agreement would then require. Organisational form: university-hosted in Stages 0 and 1; a non-commercial entity, either a social enterprise or a university-affiliated centre, in Stage 2, with legal advice. The full table is report Table 4.2.</aside>
+</section>
+
+<!-- 27 bm3 -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">27</span><span>Organisation</span><span class="badge new">New</span></div>
+  <h2 class="title ">Who runs it: a staged organisation</h2>
+  <p class="sub ">The three of us now; five units later (report Table 4.3)</p>
+  <div class="cv" style="top:128px">
+  <p class="xs" style="margin-bottom:6px"><b>Now (Stages 0–1):</b> the team holds every role; the advisor provides academic oversight. <b>Later:</b> a steering committee (Ministry, university, funders, project lead) and an expert advisory board.</p><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:260px"><col style="width:280px"><col style="width:250px"></colgroup><thead><tr><th>Unit</th><th>Positions</th><th>Responsibility</th></tr></thead><tbody><tr><td>Product &amp; Engineering</td><td>5</td><td>Platform, AI models, cost, security</td></tr><tr><td>Content &amp; Occupational Expertise</td><td>Content lead, rubric specialist, part-time domain leads, external experts</td><td>Elicitation, review packages, revalidation</td></tr><tr><td>Research &amp; Evaluation</td><td>2</td><td>Reference set, evaluation</td></tr><tr><td>Partnerships &amp; Outreach</td><td>2</td><td>Ministry, schools, grants, expert recruitment</td></tr><tr><td>Data Protection &amp; Compliance</td><td>1</td><td>Consent, minors’ data</td></tr></tbody></table><div class="strip x" style="margin-top:8px">About 11 full-time positions, sized to grant funding. Content is governed per domain, each with a lead. IT domains: software engineering · data &amp; AI · networks &amp; infrastructure · information security · IT product &amp; business analysis.</div></div>
+  
+  <aside class="notes">The organisation is staged in the same way. Now, the three of us hold every role and you provide academic oversight. Later, from report Table 4.3, five units: product and engineering, content and occupational expertise, research and evaluation, partnerships and outreach, and data protection and compliance. That is about eleven full-time positions, sized to what grant funding can support, with a steering committee and an expert advisory board above them. Content is governed per domain, each domain with a lead; the five IT domains are on the strip.</aside>
+</section>
+
+<!-- 28 req -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">28</span><span>Decision needed</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">49 requirements, 6 constraints</h2>
+  <p class="sub ">Each requirement carries a business and a technical verification method.</p>
+  <div class="cv" style="display:grid;grid-template-columns:1fr 1.05fr;gap:16px">
+  <div><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:62px"><col style="width:52px"><col style="width:266px"></colgroup><thead><tr><th>Class</th><th>Total</th><th>Breakdown</th></tr></thead><tbody><tr><td>FR</td><td>24</td><td>Explorer 14 · expert 5 · content admin. 2 · system admin. 4</td></tr><tr><td>NFR</td><td>12</td><td>Performance, reliability, privacy, usability: 2 each · 4 others</td></tr><tr><td>DR</td><td>13</td><td>7 from the system · 6 from sources, experts, explorers</td></tr><tr class="tot"><td>Total</td><td>49</td><td>Paraphrased on slides 29–32</td></tr></tbody></table><div class="card x" style="margin-top:10px"><div class="hd">Where we think the risk concentrates</div>
+      <p><b>FR-04</b> generation keeps required facts · <b>FR-05</b> free-text scoring · <b>FR-07</b> capped competency recording · <b>FR-09</b> adjacency offers · <b>NFR-01/02</b> latency at the 95th percentile</p></div>
+  </div>
+  <div class="stk s">
+    <div class="card x"><div class="hd">One row, shown in full</div>
+      <p><b>FR-05</b> Score free-text responses on discrete anchor points (positive / neutral / negative), each supported by a quotation drawn from the response.</p>
+      <p><b>Business:</b> domain experts judge a sample of scored responses fair and well-evidenced.<br><b>Technical:</b> agreement with expert judgment on the reference set (quadratic weighted kappa, by difficulty); every quotation found verbatim in the response.</p></div>
+    <div class="strip x"><b>Ask.</b> Priorities are not yet assigned in the updated specification. Which requirements do you consider essential for this phase?</div>
+  </div></div>
+  
+  <aside class="notes">Forty-nine requirements in the updated specification: 24 functional, 12 non-functional and 13 data requirements, plus the six design constraints. The functional requirements are grouped by actor, and the domain expert now has five of them, because experts work in the system. Every requirement carries two verification methods: a business verification, how a stakeholder confirms it serves its purpose, and a technical verification, how we confirm the implementation behaves correctly. FR-05 is the example because the requirement and research problem two are the same thing: free-text responses are scored on anchor points, each backed by a quotation from the response, and the technical verification is agreement with expert judgment measured by quadratic weighted kappa, by difficulty. The next four slides paraphrase every requirement. Our ask: priorities are not yet assigned; which requirements do you consider essential for this phase?</aside>
+</section>
+
+<!-- 29 fr1 -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">29</span><span>Requirements · functional</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">Functional requirements (1/2)</h2>
+  <p class="sub ">FR-01 to FR-12, paraphrased from the updated specification; all are the explorer’s</p>
+  <div class="cv"><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:64px"><col style="width:566px"><col style="width:160px"></colgroup><thead><tr><th>ID</th><th>Functional requirement</th><th>Group</th></tr></thead><tbody><tr><td>FR-01</td><td>Sign up and sign in; minors need guardian consent</td><td>Explorer</td></tr><tr><td>FR-02</td><td>Open any published occupation’s entry level, no prerequisite</td><td>Explorer</td></tr><tr><td>FR-03</td><td>Show the role, team and context before every scenario</td><td>Explorer</td></tr><tr><td>FR-04</td><td>Generate scenarios from the authored context, keeping required facts</td><td>Explorer</td></tr><tr><td>FR-05</td><td>Score free text on anchor points, each backed by a quote</td><td>Explorer</td></tr><tr><td>FR-06</td><td>Give result, feedback and guidance as separate parts</td><td>Explorer</td></tr><tr><td>FR-07</td><td>Record competencies shown, capped per skill in a scenario</td><td>Explorer</td></tr><tr><td>FR-08</td><td>Award credit on level completion and unlock levels</td><td>Explorer</td></tr><tr><td>FR-09</td><td>Offer adjacent occupations when competence overlaps enough</td><td>Explorer</td></tr><tr><td>FR-10</td><td>Optional orientation quiz ranking five candidate occupations</td><td>Explorer</td></tr><tr><td>FR-11</td><td>Five-attribute rating after full completion; show the aggregate</td><td>Explorer</td></tr><tr><td>FR-12</td><td>Private record of occupations, competencies and awards</td><td>Explorer</td></tr></tbody></table></div>
+  
+  <aside class="notes">Functional requirements, paraphrased from the updated specification; the report gives each one a business and a technical verification. FR-01 to FR-12 all belong to the explorer: account and guardian consent, entry without prerequisite, context before every scenario, generation that keeps the required facts, free-text scoring on anchor points with a quotation as evidence, result, feedback and guidance kept separate, competency recording capped per skill within one scenario, credit and unlocking, adjacent occupations, the orientation quiz, the five-attribute rating, and the private record.</aside>
+</section>
+
+<!-- 30 fr2 -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">30</span><span>Requirements · functional</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">Functional requirements (2/2)</h2>
+  <p class="sub ">FR-13 to FR-24: explorer, domain expert, content and system administrators</p>
+  <div class="cv"><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:64px"><col style="width:566px"><col style="width:160px"></colgroup><thead><tr><th>ID</th><th>Functional requirement</th><th>Group</th></tr></thead><tbody><tr><td>FR-13</td><td>AI-written user profile and social-orientation index</td><td>Explorer</td></tr><tr><td>FR-14</td><td>Random career and life events that shape later play</td><td>Explorer</td></tr><tr><td>FR-15</td><td>Co-author context and generation rules with the content admin.</td><td>Domain expert</td></tr><tr><td>FR-16</td><td>Approve, reject or correct generated scenarios</td><td>Domain expert</td></tr><tr><td>FR-17</td><td>Report where automated and expert judgments disagree</td><td>Domain expert</td></tr><tr><td>FR-18</td><td>Play-test before review, outside explorer metrics</td><td>Expert, content admin.</td></tr><tr><td>FR-19</td><td>Write reference grading criteria with AI help, validated</td><td>Domain expert</td></tr><tr><td>FR-20</td><td>Take one’s occupation from draft to publication to retirement</td><td>Content admin.</td></tr><tr><td>FR-21</td><td>Create an occupation; assign one content admin. and ≥ 1 expert</td><td>System admin.</td></tr><tr><td>FR-22</td><td>Report catalogue coverage and last-validated dates</td><td>System admin.</td></tr><tr><td>FR-23</td><td>Configure generation and assessment models; they must differ</td><td>System admin.</td></tr><tr><td>FR-24</td><td>Monitor usage, cost and error rates</td><td>System admin.</td></tr></tbody></table></div>
+  
+  <aside class="notes">FR-13 and FR-14 finish the explorer's list: the AI-written profile and social-orientation index, and the life events. FR-15 to FR-19 belong to the domain expert: co-authoring with the content administrator, validating scenarios, reporting disagreements with the automated assessor, play-testing without touching explorer metrics, and writing reference items with AI assistance. FR-18, play-testing, is shared with the content administrator, whose own requirement is FR-20, the occupation lifecycle. FR-21 to FR-24 belong to the system administrator: creating occupations and assigning their staff, catalogue coverage, model configuration with generation and assessment kept on different providers, and monitoring.</aside>
+</section>
+
+<!-- 31 nfr -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">31</span><span>Requirements · non-functional</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">Non-functional requirements</h2>
+  <p class="sub ">Each with a measurable target where one applies</p>
+  <div class="cv"><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:80px"><col style="width:550px"><col style="width:160px"></colgroup><thead><tr><th>ID</th><th>Non-functional requirement</th><th>Category</th></tr></thead><tbody><tr><td>NFR-01</td><td>Generate a scenario in ≤ 5 s (95th pct.); show progress after 2 s</td><td>Performance</td></tr><tr><td>NFR-02</td><td>Assess a free-text response in ≤ 8 s (95th percentile)</td><td>Performance</td></tr><tr><td>NFR-03</td><td>Progress survives interruption and resumes without loss</td><td>Reliability</td></tr><tr><td>NFR-04</td><td>On provider failure: no progress lost, user told within 10 s</td><td>Reliability</td></tr><tr><td>NFR-05</td><td>Minimal personal data, stored encrypted, deletable on request</td><td>Privacy</td></tr><tr><td>NFR-06</td><td>Withhold aggregate statistics below a minimum population</td><td>Privacy</td></tr><tr><td>NFR-07</td><td>Tell users that scenarios and assessments are machine-made</td><td>Transparency</td></tr><tr><td>NFR-08</td><td>Interface and content in Vietnamese and English</td><td>Usability</td></tr><tr><td>NFR-09</td><td>≥ 80% of readers can state a task’s objective after reading it</td><td>Usability</td></tr><tr><td>NFR-10</td><td>Add a new occupation without changing code</td><td>Maintainability</td></tr><tr><td>NFR-11</td><td>Mean model cost per session under the ceiling; cost logged</td><td>Cost</td></tr><tr><td>NFR-12</td><td>Swap the model provider without editing authored content</td><td>Portability</td></tr></tbody></table></div>
+  
+  <aside class="notes">Twelve non-functional requirements. Performance: generation within 5 seconds and assessment within 8 seconds at the 95th percentile. Reliability: no progress lost on an interruption or a provider failure. Security and privacy: minimal, encrypted, deletable personal data, and aggregate statistics withheld when too few people contribute. Then transparency about machine-produced content, a bilingual interface, a comprehension target of 80 percent, adding occupations without code, the cost ceiling, and a replaceable model provider.</aside>
+</section>
+
+<!-- 32 dr -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">32</span><span>Requirements · data</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">Data requirements</h2>
+  <p class="sub ">Where each data set comes from</p>
+  <div class="cv"><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:64px"><col style="width:506px"><col style="width:220px"></colgroup><thead><tr><th>ID</th><th>Data requirement</th><th>Source</th></tr></thead><tbody><tr><td>DR-01</td><td>Occupations, tasks, work activities and skills</td><td>O*NET, ESCO (adapted)</td></tr><tr><td>DR-02</td><td>Competency taxonomy, soft and technical, with indicators</td><td>From DR-01</td></tr><tr><td>DR-03</td><td>Adjacency between occupations, with overlap scores</td><td>Computed from DR-01/02</td></tr><tr><td>DR-04</td><td>Scenario context: facts, competencies, skeleton, rules</td><td>Content admin. + experts</td></tr><tr><td>DR-05</td><td>Generated scenarios, traced to context and model version</td><td>System</td></tr><tr><td>DR-06</td><td>User profile and progress: credit, levels, history</td><td>System</td></tr><tr><td>DR-07</td><td>Assessment records: score, competencies, feedback, guidance</td><td>System</td></tr><tr><td>DR-08</td><td>Five-attribute ratings, only after full completion</td><td>Explorers</td></tr><tr><td>DR-09</td><td>Expert reference set, gold standard, stratified by difficulty</td><td>Domain experts</td></tr><tr><td>DR-10</td><td>Telemetry: latency, cost, errors, model versions</td><td>System</td></tr><tr><td>DR-11</td><td>Per-scenario credit cap for each user and competency</td><td>System</td></tr><tr><td>DR-12</td><td>Flag separating staff practice runs from real sessions</td><td>System</td></tr><tr><td>DR-13</td><td>AI-written user profile and social-orientation index</td><td>System</td></tr></tbody></table></div>
+  
+  <aside class="notes">Thirteen data requirements. The first three come from O*NET and ESCO, adapted by experts for Vietnamese practice: occupations, the competency taxonomy, and adjacency. DR-04, the scenario context, is authored jointly by the content administrator and the domain experts. DR-09, the expert reference set, is the research asset; it holds no personal data. DR-11 and DR-12 support two new rules: the credit cap per scenario, and keeping staff practice runs out of explorer metrics. The personal data in DR-06 to DR-08 and DR-11 to DR-13 follows the data-protection policy.</aside>
+</section>
+
+<!-- 33 secC -->
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec"><div class="sec-num">C</div><div class="sec-title">Chapter 5.1</div><p class="sec-sub">Analysis: the process models and the use cases</p></div>
+  <aside class="notes">Part C, Chapter 5.1. None of this was presented on 18 September. Two things changed since the report you read: the content lifecycle now shows the content administrator and the domain experts working together inside the system, and the use cases are drawn per actor, sixteen across four actors. The use-case exception flows and the traceability table are in the report.</aside>
+</section>
+
+<!-- 34 process -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">34</span><span>Chapter 5 · Figure 5.1</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">The exploration process</h2>
+  <p class="sub ">The primary user-facing process, with three decision points.</p>
+  <div class="cv"><div class="flow" style="width:790px;height:252px">
+  <svg width="790" height="252" viewBox="0 0 790 252"><defs><marker id="ahp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="f-blue" d="M0,0 L10,5 L0,10 z"/></marker></defs><g class="s-blue" stroke-width="2"><line x1="170" y1="29.0" x2="204" y2="29.0" marker-end="url(#ahp)"/><line x1="377" y1="29.0" x2="411" y2="29.0" marker-end="url(#ahp)"/><line x1="584" y1="29.0" x2="618" y2="29.0" marker-end="url(#ahp)"/><line x1="209" y1="125.0" x2="165" y2="125.0" marker-end="url(#ahp)"/><line x1="416" y1="125.0" x2="372" y2="125.0" marker-end="url(#ahp)"/><line x1="623" y1="125.0" x2="579" y2="125.0" marker-end="url(#ahp)"/><line x1="170" y1="221.0" x2="204" y2="221.0" marker-end="url(#ahp)"/><line x1="377" y1="221.0" x2="411" y2="221.0" marker-end="url(#ahp)"/><line x1="584" y1="221.0" x2="618" y2="221.0" marker-end="url(#ahp)"/><line x1="705.0" y1="60" x2="705.0" y2="93" marker-end="url(#ahp)"/><line x1="84.0" y1="156" x2="84.0" y2="189" marker-end="url(#ahp)"/></g></svg>
+  <div class="node gray" style="left:0px;top:0px;width:168px;height:58px">Sign in</div><div class="node navy" style="left:207px;top:0px;width:168px;height:58px">Optional orientation</div><div class="node gray" style="left:414px;top:0px;width:168px;height:58px">Select occupation and level</div><div class="node gray" style="left:621px;top:0px;width:168px;height:58px">Role, team and working context</div><div class="node gray" style="left:621px;top:96px;width:168px;height:58px">Task scenario</div><div class="node navy" style="left:414px;top:96px;width:168px;height:58px">Response in one of nine formats (hints available)</div><div class="node gray" style="left:207px;top:96px;width:168px;height:58px">Score</div><div class="node gray" style="left:0px;top:96px;width:168px;height:58px">Record competencies</div><div class="node gray" style="left:0px;top:192px;width:168px;height:58px">Result, feedback and guidance</div><div class="node gray" style="left:207px;top:192px;width:168px;height:58px">More tasks, or award credit</div><div class="node navy" style="left:414px;top:192px;width:168px;height:58px">Unlock evaluation</div><div class="node gray" style="left:621px;top:192px;width:168px;height:58px">Five-attribute rating → aggregate profile</div></div>
+  <div class="card x" style="margin-top:14px"><p>Navy boxes are the three decision points: the <b>optional orientation</b> (deliberately not a prerequisite, since making it one would turn us back into an assessment instrument), the <b>response format</b> (expert effectiveness key, answer key, or rubric), and the <b>unlock evaluation</b> (where BR-02 and BR-03 apply). Full diagram with every branch: report Figure 5.1.</p></div></div>
+  
+  <aside class="notes">The primary user-facing process, with three decision points. The first is the optional orientation: it exists for users who do not know where to start, and it is deliberately not a prerequisite, because making it one would turn us back into an assessment instrument. The second is the response: the task comes in one of nine formats, with hints available, and the format determines how it is scored, against an expert effectiveness key, an answer key, or a rubric. The third is the unlock evaluation, where BR-02 and BR-03 actually apply. The full diagram with every branch is in the report at Figure 5.1.</aside>
+</section>
+
+<!-- 35 lifecycle -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">35</span><span>Chapter 5 · Figure 5.2</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">The content lifecycle</h2>
+  <p class="sub ">Content administrator and domain experts co-author; experts validate: BR-05 made operational.</p>
+  <div class="cv" style="top:126px"><div class="flow" style="width:790px;height:292px">
+  <svg width="790" height="292" viewBox="0 0 790 292"><defs><marker id="ahl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="f-blue" d="M0,0 L10,5 L0,10 z"/></marker></defs><g class="s-blue" stroke-width="2"><line x1="172" y1="55.0" x2="194" y2="55.0" marker-end="url(#ahl)"/><line x1="386" y1="55.0" x2="409" y2="55.0" marker-end="url(#ahl)"/><line x1="584" y1="55.0" x2="616" y2="55.0" marker-end="url(#ahl)"/><line x1="704.0" y1="88" x2="704.0" y2="123" marker-end="url(#ahl)"/><line x1="617" y1="157.0" x2="592" y2="157.0" marker-end="url(#ahl)"/><line x1="402" y1="157.0" x2="379" y2="157.0" marker-end="url(#ahl)"/><line x1="204" y1="157.0" x2="173" y2="157.0" marker-end="url(#ahl)"/><path class="f-none" d="M85.0 124 L85.0 100 L291.0 100 L291.0 89" marker-end="url(#ahl)"/><path class="f-none" d="M291.0 190 L291.0 214 L85.0 214 L85.0 225" marker-end="url(#ahl)"/><line x1="172" y1="259.0" x2="203" y2="259.0" marker-end="url(#ahl)"/><line x1="378" y1="259.0" x2="409" y2="259.0" marker-end="url(#ahl)"/><line x1="584" y1="259.0" x2="616" y2="259.0" marker-end="url(#ahl)"/><line x1="704.0" y1="226" x2="704.0" y2="191" marker-end="url(#ahl)"/></g></svg>
+  <div class="node gray" style="left:0px;top:24px;width:170px;height:62px">System admin. creates occupation</div><div class="node ext" style="left:206px;top:24px;width:170px;height:62px">Content admin. and experts co-author context</div><div class="node gray" style="left:412px;top:24px;width:170px;height:62px">System generates candidates</div><div class="node gray" style="left:619px;top:24px;width:170px;height:62px">Staff play-test (kept out of metrics)</div><div class="node gray" style="left:619px;top:126px;width:170px;height:62px">Submitted for expert review</div><div class="node ext" style="left:412px;top:126px;width:170px;height:62px">Domain expert validates</div><div class="node navy" style="left:206px;top:126px;width:170px;height:62px">Accurate and eliciting?</div><div class="node gray" style="left:0px;top:126px;width:170px;height:62px">Reject or correct; revise context, regenerate</div><div class="node gray" style="left:0px;top:228px;width:170px;height:62px">Approve (reviewer ≠ initiator)</div><div class="node blue" style="left:206px;top:228px;width:170px;height:62px">Content admin. publishes</div><div class="node gray" style="left:412px;top:228px;width:170px;height:62px">Available to explorers</div><div class="node gray" style="left:619px;top:228px;width:170px;height:62px">Revalidation (date tracked)</div><div class="lbl" style="left:91.0px;top:104px">No</div><div class="lbl" style="left:297.0px;top:190px">Yes</div><div class="lbl" style="left:712px;top:200px;white-space:nowrap">loops back</div></div>
+  <div class="g2" style="margin-top:2px"><div class="card x"><p><b>The rejection path branches.</b> Experts may reject one scenario or correct the context; a corrected context regenerates every prior generation from it. Each decision is recorded with the reviewing expert.</p></div><div class="card x"><p><b>Where the expert constraint lives.</b> Experts co-author the context, play-test, validate scenarios, review assessment disagreements and author reference items. Their time is why phase 1 is one field.</p></div></div></div>
+  
+  <aside class="notes">This is the process that makes our accuracy claim true. The system administrator creates an occupation and assigns exactly one content administrator and one or more domain experts. The administrator and the experts co-author the scenario context and generation rules, and the system generates candidates. Staff play-test them before submission, and those practice runs never reach explorer metrics. A domain expert then validates each scenario. If it is accurate and elicits the target competency, the expert approves it, though never content they initiated, and the content administrator publishes it. If not, the expert rejects or corrects it, the context is revised, and generation runs again. Published occupations are revalidated, and the system administrator tracks the last-validated date of every occupation.</aside>
+</section>
+
+<!-- 36 uc1 -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">36</span><span>Chapter 5 · Use cases</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">Use cases (1/2)</h2>
+  <p class="sub ">Explorer and domain expert; the two use cases in bold carry the research.</p>
+  <div class="cv" style="top:126px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+  <div class="ucp" style="height:350px"><img class="ucimg" src="docs/project-hub/assets/explore_uc.png" alt="Explorer use-case diagram"><div class="card x"><div class="hd">Explorer</div><ul class="ul x"><li>UC-01 Explore the catalogue</li><li>UC-02 Orientation quiz</li><li><b>UC-03 Perform a task</b> (RP-2)</li><li>UC-04 Progress further</li><li>UC-05 Rate an occupation</li><li>UC-06 Personal record</li><li>Account management</li></ul></div></div>
+  <div class="ucp" style="height:350px"><img class="ucimg" src="docs/project-hub/assets/de_uc.png" alt="Domain expert use-case diagram"><div class="card x"><div class="hd">Domain expert</div><ul class="ul x"><li>UC-07 Author context and rules*</li><li><b>UC-08 Validate a scenario*</b> (RP-1)</li><li>UC-09 Review disagreements</li><li>UC-14 Test-play before review*</li><li>UC-15 AI-assisted reference item</li><li>Account management</li><li><span style="color:var(--blue)">* shared with content admin.</span></li></ul></div></div>
+  </div>
+  
+  <aside class="notes">The use cases are now drawn per actor, one diagram each. [Click a diagram to enlarge it; Esc or a click closes it.] Four actors, sixteen use cases, plus account management for everyone. The explorer's six are the exploration journey: explore the catalogue, take the optional orientation quiz, perform a task scenario, progress to a further level or an adjacent occupation, rate an occupation once it is completed, and review the personal record. UC-03, performing a task, is where research problem two lives. The domain expert works inside the system, on the occupations assigned to them: authoring the scenario context and rules with the content administrator, validating generated scenarios, reviewing where the automated assessor disagreed with experts, play-testing a scenario before submission, and authoring reference items with AI assistance. UC-08, validating a generated scenario, is where research problem one lives.</aside>
+</section>
+
+<!-- 37 uc2 -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">37</span><span>Chapter 5 · Use cases</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">Use cases (2/2)</h2>
+  <p class="sub ">Content administrator (one per occupation) and system administrator.</p>
+  <div class="cv" style="top:126px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+  <div class="ucp" style="height:300px"><img class="ucimg" src="docs/project-hub/assets/ca_uc.png" alt="Content administrator use-case diagram"><div class="card x"><div class="hd">Content administrator</div><ul class="ul x"><li>UC-07 Author context and rules*</li><li><b>UC-08 Validate a scenario*</b></li><li>UC-10 Occupation lifecycle</li><li>UC-14 Test-play before review*</li><li>Account management</li><li><span style="color:var(--blue)">* shared with experts</span></li></ul></div></div>
+  <div class="ucp" style="height:300px"><img class="ucimg" src="docs/project-hub/assets/sysops_uc.png" alt="System administrator use-case diagram"><div class="card x"><div class="hd">System administrator</div><ul class="ul x"><li>UC-11 Coverage and currency</li><li>UC-12 Configure models</li><li>UC-13 Operation and cost</li><li>UC-16 Create occupation, assign staff</li><li>Account management</li></ul></div></div>
+  </div>
+  <div class="strip x" style="margin-top:10px"><b>UC-08 exception:</b> a scenario that can be passed without its target competency sends the context back for revision, and a reviewer cannot approve content they initiated.</div></div>
+  
+  <aside class="notes">The content administrator shares three use cases with the experts, authoring the context, validating, and play-testing, and owns UC-10, the occupation lifecycle; there is exactly one content administrator per occupation. The system administrator creates occupations and assigns their staff, configures the generation and assessment models, which must come from different providers, and monitors catalogue coverage, operation and cost. The exception flow of UC-08 is where the evidence-centered design requirement becomes system behaviour: a scenario that can be passed without its target competency sends the context back for revision, and a reviewer cannot approve content they initiated. Play-test attempts by staff never enter explorer-facing metrics.</aside>
+</section>
+
+<!-- 38 secD -->
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec"><div class="sec-num">D</div><div class="sec-title">Research and evaluation</div><p class="sec-sub">Two research problems, and how we will answer them</p></div>
+  <aside class="notes">Part D. This is the part that changed most after your comments and your email: five research problems became two, Cohen's kappa became quadratic weighted kappa with published thresholds, and the evaluation became two stages, sized so you can judge whether it is feasible.</aside>
+</section>
+
+<!-- 39 rp -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">39</span><span>What we are researching</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">Two research problems</h2>
+  <p class="sub ">Both in AI applied to education; each passes three tests of what a research problem is</p>
+  <div class="cv">
+  <div class="strip x"><b>Three conditions:</b> the answer is not already known · it is knowledge that generalises beyond this system · our evaluation produces evidence that answers it.</div>
+  <div class="g2" style="margin-top:10px"><div class="card x"><div class="hd">RP-1: grounded generation</div><p>“When generation is constrained by an expert-authored seed specifying required facts and target competencies, what proportion of generated scenarios do domain experts judge to be occupationally accurate and to require the target competency, and how does this compare with generation from the same instructions without the seed?”</p><p><b>The comparison makes the answer knowledge.</b></p></div><div class="card x"><div class="hd">RP-2: validity of LLM stealth assessment</div><p>“To what extent does rubric-based automated judgment of task responses agree with domain-expert judgment of the same responses, measured by quadratic weighted kappa, relative to the agreement between experts themselves, and how does that agreement vary with item difficulty and across repeated runs?”</p><p><b>Expert–expert agreement is the ceiling.</b></p></div></div></div>
+  
+  <aside class="notes">Five research problems became two, following your comment to trim them, and both now sit in AI applied to education. We applied three tests: the answer is not already known, it is knowledge that generalises beyond our system, and our evaluation produces evidence that answers it. RP-1 used to be a design question, "how should generation be constrained". It is now measurable: the proportion of seeded scenarios experts judge accurate and eliciting, compared with generation from the same instructions without the seed. That comparison is what turns the answer into knowledge. RP-2's metric changed from Cohen's kappa to quadratic weighted kappa, and it is now judged relative to the agreement between experts themselves, which is the ceiling any automated judge can reach. Slide 43 explains why QWK.</aside>
+</section>
+
+<!-- 40 former -->
+<section class="slide l-table">
+  <div class="edge-r"></div>
+  <div class="kick"><span class="pg">40</span><span>Research problems</span><span class="badge new">New</span></div>
+  <h2 class="title ">Three former RPs, now in their place</h2>
+  <p class="sub ">Kept, but in their right place</p>
+  <div class="cv"><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:110px"><col style="width:250px"><col style="width:270px"><col style="width:160px"></colgroup><thead><tr><th>Former RP</th><th>What it asked</th><th>Why it is not a research problem</th><th>Now in</th></tr></thead><tbody><tr><td><b>RP-3</b></td><td>How to map demonstrated competence to occupational adjacency</td><td>A design decision based on taxonomies; no new knowledge</td><td>Chapter 5 design</td></tr><tr><td><b>RP-4</b></td><td>Which game mechanics sustain engagement without displacing learning</td><td>Answerable only by longitudinal user study</td><td>Future work</td></tr><tr><td><b>RP-5</b></td><td>How to build the expert reference set</td><td>The method for answering RP-1 and RP-2, not a problem</td><td>Chapter 7 evaluation</td></tr></tbody></table></div>
+  
+  <aside class="notes">The other three are not lost; they are in their right place. The former RP-3, mapping competence to adjacency, is a design decision grounded in the taxonomies; it produces no new knowledge, so it moves to the Chapter 5 design. RP-4, which mechanics sustain engagement, could only be answered by a longitudinal user study, so it moves to future work. RP-5, building the reference set, is the method for answering RP-1 and RP-2, not a problem in itself, so it moves to the Chapter 7 evaluation.</aside>
+</section>
+
+<!-- 41 eval -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">41</span><span>Evaluation</span><span class="badge rem">Remaining</span></div>
+  <h2 class="title ">How we will prove it: two stages</h2>
+  <p class="sub ">Two stages, because experts arrive in stages</p>
+  <div class="cv"><div class="g2"><div class="card "><div class="hd"><span class="n">A</span>Stage A: now (ĐACN)</div><ul class="ul s"><li>Synthetic, criterion-perturbed benchmark</li><li>Panel of judging models from different families</li><li>Tests sensitivity, robustness, consistency</li><li><b>Cannot</b> show agreement with experts on real responses, and we do not claim it</li></ul></div><div class="card "><div class="hd"><span class="n">B</span>Stage B: capstone (complete product)</div><ul class="ul s"><li>Real responses from consenting volunteer participants</li><li>Generated scenarios</li><li>Rated independently and blind by 3 experts per pilot role</li><li>Answers RP-1 and RP-2 in full</li></ul></div></div><div class="card navy x" style="margin-top:12px"><div class="hd">Why generation and assessment are reported separately</div><p>Three distinct failure modes: biased judgment, unstable judgment, and judgment failing selectively on hard items. Each is diagnosable only when reported separately; a single accuracy figure hides which one occurred.</p></div></div>
+  
+  <aside class="notes">This answers your question of whether the evaluation is feasible, and the answer is a design choice: two stages, because experts arrive in stages. Stage A happens now, in this specialized project, with no experts and no human responses: a synthetic benchmark in which we know the right score by construction, judged by a panel of models from different families. It tests whether the judging is sensitive, robust and consistent. It cannot show agreement with experts on real responses, and we do not claim that it does. Stage B happens in the capstone, on the complete product: real responses from consenting volunteers and generated scenarios, each rated independently and blind by three experts per pilot role. Stage B answers RP-1 and RP-2 in full. The principle from the last deck stays: generation and assessment are reported separately, because the three failure modes are only diagnosable that way.</aside>
+</section>
+
+<!-- 42 stageA -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">42</span><span>Stage A</span><span class="badge new">New</span></div>
+  <h2 class="title ">Stage A: the synthetic benchmark</h2>
+  <p class="sub ">Ground truth by construction, before any expert is available</p>
+  <div class="cv"><div class="g3"><div class="card x"><div class="hd"><span class="n">1</span>Perturbation</div><p>A strong reference response, plus variants that each degrade exactly one rubric criterion to a known level, negative to positive: ground truth by construction <b>(Sai et al., 2021)</b>.</p></div><div class="card x"><div class="hd"><span class="n">2</span>Judging panel</div><p>Several judges from different model families score independently and repeatedly. A panel of smaller diverse models outperformed a single large judge, with less self-bias and at lower cost <b>(Verga et al., 2024)</b>. Synthetic responses come from a family none of the judges belongs to.</p></div><div class="card x"><div class="hd"><span class="n">3</span>Guarding against circularity</div><ul class="ul x"><li>Bias probes (length padding, reformatting, reordering) should not change scores</li><li>The advisor checks the designed levels on a random ~20% sample</li></ul></div></div><div class="strip x" style="margin-top:10px"><b>Illustrative size:</b> 3 roles × 5 free-text tasks × 4 criteria × 4 levels ≈ 240 responses, plus bias probes (estimate).</div></div>
+  
+  <aside class="notes">Stage A in more detail. We write a strong reference response for each free-text task, then variants that each degrade exactly one rubric criterion to a known level. Because we built the degradation, we know the correct score: ground truth by construction, the perturbation method of Sai and colleagues. The judges are a panel from different model families, scoring independently and repeatedly; Verga and colleagues showed such a panel outperforms a single large judge with less self-bias and at lower cost. To avoid circularity, the synthetic responses come from a model family none of the judges belongs to, we add bias probes that should not change scores, and we would ask you to check the designed levels on a random sample of about twenty percent. The size is illustrative: about 240 responses plus probes.</aside>
+</section>
+
+<!-- 43 accept -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">43</span><span>Acceptance criteria</span><span class="badge new">New</span></div>
+  <h2 class="title ">What counts as success</h2>
+  <p class="sub ">Established thresholds, not ones we chose</p>
+  <div class="cv">
+  <div class="card navy x"><div class="hd">Why quadratic weighted kappa</div><p>Chance correction is why we use kappa at all: raw agreement overstates performance. Rubric scores are ordinal: plain Cohen’s κ treats a 1-point and a 3-point disagreement alike; QWK weights larger disagreements more.</p></div>
+  <div class="g2" style="margin-top:10px;align-items:start"><div><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:130px"><col style="width:255px"></colgroup><thead><tr><th>RP-1 criterion</th><th>Threshold</th></tr></thead><tbody><tr><td>Fact preservation</td><td>≥ 95% of seed-required facts (proposed target)</td></tr><tr><td>Content validity</td><td>I-CVI ≥ .78 per scenario; S-CVI/Ave ≥ .90 per role <b>(Polit, Beck &amp; Owen, 2007)</b></td></tr><tr><td>Seeded vs unseeded</td><td>Seeded &gt; unseeded, McNemar’s test p &lt; .05</td></tr><tr><td>Expert agreement</td><td>Krippendorff’s α ≥ .800 <b>(Krippendorff, 2004)</b></td></tr></tbody></table></div><div><table class="tbl filled dd" style="table-layout:fixed"><colgroup><col style="width:200px"><col style="width:185px"></colgroup><thead><tr><th>RP-2 criterion</th><th>Threshold</th></tr></thead><tbody><tr><td>QWK, automated vs human</td><td>≥ 0.70</td></tr><tr><td>Standardised mean difference</td><td>≤ 0.15</td></tr><tr><td>Degradation from human–human to automated–human agreement</td><td>≤ 0.10: exactly what RP-2 already asks</td></tr></tbody></table><p class="src">RP-2 thresholds: the ETS framework <b>(Williamson, Xi &amp; Breyer, 2012)</b>.</p></div></div>
+  <p class="src">Reported per role and per difficulty stratum; a failure on hard items is reported, not averaged away.</p></div>
+  
+  <aside class="notes">This answers your question: why Cohen's kappa, and what value is acceptable? We use kappa at all because of chance correction; raw agreement overstates performance, by 41 points on one benchmark. But our rubric scores are ordinal, and plain Cohen's kappa treats a one-point and a three-point disagreement as equally wrong. Quadratic weighted kappa weights larger disagreements more, so it is the right refinement. For acceptance we did not choose our own numbers. For RP-2 we adopt the ETS framework for automated scoring: QWK of at least 0.70 between automated and human scores, a standardised mean difference of at most 0.15, and a degradation of at most 0.10 from human–human to automated–human agreement, which is exactly what RP-2 already asks. For RP-1 we use content validity indices with Polit's thresholds, McNemar's test for seeded against unseeded, and Krippendorff's alpha of at least .800 for expert agreement. Fact preservation at 95 percent is our proposed target. Everything is reported per role and per difficulty stratum.</aside>
+</section>
+
+<!-- 44 feas -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">44</span><span>Feasibility</span><span class="badge new">New</span></div>
+  <h2 class="title ">Is the evaluation feasible?</h2>
+  <p class="sub ">Answering your question with numbers</p>
+  <div class="cv" style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;align-items:start">
+  <div><table class="tbl filled d" style="table-layout:fixed"><colgroup><col style="width:240px"><col style="width:120px"><col style="width:80px"></colgroup><thead><tr><th>Stage B, per expert (estimate)</th><th>Items</th><th>Time</th></tr></thead><tbody><tr><td>RP-1 scenario ratings</td><td>48 × ~4 min</td><td>~3.2 h</td></tr><tr><td>RP-2 response ratings</td><td>50 × ~4 min</td><td>~3.3 h</td></tr><tr><td>Option keying</td><td>40 × ~1 min</td><td>~0.7 h</td></tr><tr class="tot"><td>Total: about one working day</td><td></td><td>≈ 7 h</td></tr></tbody></table></div>
+  <div class="card x"><div class="hd">Stage B at a glance</div><ul class="ul x"><li>Panel: 3 pilot roles × 3 experts = 9</li><li>~144 scenarios (3 roles × 8 seeds × 2 conditions × 3 samples)</li><li>~150 real responses (3 roles × 50) from consenting HCMUT IT-student volunteers</li></ul></div>
+  </div>
+  <div class="cv" style="top:410px"><div class="strip x"><b>Where responses come from:</b> volunteers on the completed product, or participants reached through partner organisations. Until then, Stage A needs no human responses.</div></div>
+  
+  <aside class="notes">The feasibility question with numbers. Stage B needs nine experts: three pilot roles, three experts each. Each expert rates 48 scenarios for RP-1, which is three roles, eight seeds, seeded and unseeded, three samples each, about 144 in total, split across the panel for each role; 50 real responses for RP-2; and keys about 40 options. At roughly four minutes per rating and one minute per option, that is about seven hours per expert, about one working day. The responses come from about 150 consenting HCMUT IT-student volunteers using the completed product, or participants reached through partner organisations. And until then, Stage A needs no human responses at all. These are estimates, and we label them as such.</aside>
+</section>
+
+<!-- 45 summary -->
+<section class="slide l-diagram">
+  
+  <div class="kick"><span class="pg">45</span><span>Summary</span></div>
+  <h2 class="title ">Summary, next steps, and the asks</h2>
+  <p class="sub ">Chapters 1 through 5.1 are complete and internally consistent.</p>
+  <div class="cv"><div class="g3"><div class="card x"><div class="hd">Delivered</div><ul class="ul x"><li>Evidence base (Ch 2), now including situational judgment tests and measurement standards</li><li>Related work with derived criteria (Ch 3)</li><li>System specification: 12 business rules, 6 design constraints, 49 requirements, business model and roadmap (Ch 4)</li><li>Process models and 16 use cases across 4 actors (Ch 5.1)</li></ul></div><div class="card x"><div class="hd">Next</div><ul class="ul x"><li>Finalise the ~22 IT roles and choose the 3 pilot roles</li><li>Build the Stage A benchmark</li><li>Recruit the Stage 1 expert panel through partners</li><li>Implement seed entry and the review-package workflow</li><li>Complete Ch 5.2–5.3 (technology and design)</li><li>Re-verify the Vietnamese market claim close to submission</li></ul></div><div class="card navy x"><div class="hd">The asks</div><div class="stk s"><p><span class="n">1</span> Business context: starting point, roadmap, organisation (25–27)</p><p><span class="n">2</span> RP-1 and RP-2 with QWK and the acceptance criteria (39, 43)</p><p><span class="n">3</span> The expert model and evaluation feasibility (17, 44)</p><p><span class="n">4</span> Criteria set and ratings, if not yet confirmed (presented 18 Sep)</p><p><span class="n">5</span> Requirement priorities for this phase (28–32)</p></div></div></div><p class="lead" style="margin-top:12px;text-align:center;color:var(--navy);font-weight:700">“Try the job before you pick the career.”</p></div>
+  
+  <aside class="notes">To summarise: Chapters 1 through 5.1 are complete and internally consistent. Every business rule traces to evidence, every requirement carries a business and a technical verification, and every research problem to an evaluation with published acceptance thresholds. Next: finalise the IT roles and pick three pilot roles, build the Stage A benchmark, recruit the first expert panel through partners, implement seed entry and the review-package workflow, and complete the rest of Chapter 5. And the five things we would value from you today: your view on the business context; on the two research problems with QWK and the acceptance criteria; on the expert model and the evaluation's feasibility; the criteria set and ratings we presented on 18 September, if not yet confirmed; and which requirements are essential for this phase. Thank you; we are happy to take questions. [If an ask is still unanswered, ask it again here explicitly, one at a time.]</aside>
+</section>
+
+
+<!-- ================= SLIDES END ================= -->
+</main>
+<div class="hud" id="hud"></div>
+<script>
+/* Deck runtime: fit-to-window, ← → / Space / PgUp PgDn / Home End, F = fullscreen, O = overview, N = speaker notes, #n deep link, P = print */
+(function(){
+  const deck=document.querySelector('.deck'), slides=[...deck.querySelectorAll('.slide')], hud=document.getElementById('hud');
+  const np=document.createElement('div'); np.className='np'; document.body.appendChild(np);
+  let i=0; try{i=Math.min(Math.max((parseInt(location.hash.slice(1))||1)-1,0),slides.length-1)}catch(e){}
+  function fit(){ if(document.body.classList.contains('overview'))return;
+    const s=Math.min(innerWidth/960,innerHeight/540); deck.style.transform=`translate(${(innerWidth-960*s)/2}px,${(innerHeight-540*s)/2}px) scale(${s})`; }
+  function show(n){ i=Math.min(Math.max(n,0),slides.length-1); slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    hud.textContent=(i+1)+' / '+slides.length+'  ·  N = notes'; const a=slides[i].querySelector('aside.notes'); np.innerHTML='<b>Slide '+(i+1)+' notes.</b> '+(a?a.innerHTML:'—');
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){} }
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1)}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='f'||e.key==='F'){try{const r=document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();r&&r.catch&&r.catch(()=>{})}catch(e){}}
+    else if(e.key==='o'||e.key==='O'){document.body.classList.toggle('overview');fit();slides[i].scrollIntoView({block:'center'})}
+    else if(e.key==='n'||e.key==='N'){document.body.classList.toggle('shownotes')}
+    else if(e.key==='p'||e.key==='P'){print()}
+  });
+  slides.forEach((s,k)=>s.addEventListener('click',()=>{ if(document.body.classList.contains('overview')){document.body.classList.remove('overview');show(k);fit()} }));
+  addEventListener('resize',fit); fit(); show(i);
+})();
+</script>
+<script>
+/* Click a use-case diagram to enlarge it; click or any key closes it. */
+(function(){
+  const z=document.createElement('div'); z.className='zoom'; const im=document.createElement('img'); z.appendChild(im); document.body.appendChild(z);
+  document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('.ucimg'); if(t&&!document.body.classList.contains('overview')){e.stopPropagation(); im.src=t.src; im.alt=t.alt; z.classList.add('on')}},true);
+  z.addEventListener('click',()=>z.classList.remove('on'));
+  addEventListener('keydown',()=>z.classList.remove('on'),true);
+})();
+</script>
+</body>
+</html>
