@@ -13,6 +13,7 @@
 | 7/9 | `submissions/2026-09-07_JobQuest_Meeting_7Sep.pptx` | Báo cáo tiến độ, 14 slide, có ghi chú người nói | Gặp cô 10/9 |
 | 18/9 | `submissions/2026-09-18_JobQuest_Report_Ch1-5.pdf` | Báo cáo Chương 1–5.1, 48 trang | Gặp cô 19/9 |
 | 18/9 | `submissions/2026-09-18_JobQuest_Advisor_Deck.pdf` | Deck báo cáo Ch.1–5, 38 slide, 3 câu hỏi xin quyết định | Gặp cô 19/9 |
+| 26/9 | `JobQuest_Advisor_Deck_26Sep2026.html` (gốc repo; bản PDF 45 slide `JobQuest_Advisor_Deck_26_Sep_2026.pdf` chưa có trong repo) | Advisor deck 26/9, 45 slide, kèm sơ đồ use case theo từng tác nhân. Báo cáo Ch.1–5 đi kèm (`jobquest_report_ch1_5.md`) chưa thấy trong repo | Gặp cô 26/9, [minutes](tuan/2026-W40/2026-09-26_gap-co.md) |
 
 ## 2. Kênh trao đổi (không đưa bản export vào repo vì có thông tin cá nhân)
 

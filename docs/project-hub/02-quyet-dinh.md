@@ -35,7 +35,11 @@
 | D-12 | **Không làm:** theo dõi kết quả nghề dài hạn, môi giới tuyển dụng, tuyên bố mô phỏng thay được đi làm thật | 18/9 | Báo cáo §1.3; deck 18/9 S6 | ✅ |
 | D-13 | Bốn nhóm người dùng: **Explorer**, **Domain expert**, **Content admin**, **System admin** | 18/9 | Báo cáo §4.2.1 (deck 7/9 mới có 3 nhóm) | ✅ |
 | D-14 | Ý cô (14/8): hướng tới sản phẩm thật như startup. **Benchmark và dữ liệu nghề có thể bỏ**, dữ liệu trường ĐH dùng demo cũng được. Đánh giá thiên về kỹ thuật | 14/8 | 💬 ghi chú Brian gửi 18/8 | ✅ (định hướng của cô) |
-| D-15 | **Domain expert chỉ tư vấn cho content admin**, không thao tác trực tiếp trên hệ thống | 23/9 | Phúc, [midweek 23/9](tuan/2026-W39/2026-09-23_hop-nhom.md) | ✅ (⚠️ lệch báo cáo 18/9: D-13, UC-07, UC-08; xem [07](07-van-de-mo.md) A8) |
+| D-15 | **Domain expert chỉ tư vấn cho content admin**, không thao tác trực tiếp trên hệ thống | 23/9 | Phúc, [midweek 23/9](tuan/2026-W39/2026-09-23_hop-nhom.md) | ♻️ thay bởi D-16 (29/9) |
+| D-16 | **Phân vai theo cô 26/9, DE dùng hệ thống:** **Domain Expert** viết và sở hữu nội dung chuyên môn của scenario, thao tác trực tiếp trên hệ thống · **Content Admin** (không phải business admin) đưa nội dung lên màn chơi, lo layout, trình bày, quản lý và duyệt nghề, vận hành vòng đời nội dung · **System Admin** chỉ lo hệ thống (vận hành, model, tài khoản, system review) · **Explorer** là người dùng cuối | 26/9 → 29/9 | [Minutes 26/9](tuan/2026-W40/2026-09-26_gap-co.md): phân vai của cô; Phúc chốt DE dùng hệ thống 29/9 | ✅ (thay D-15; báo cáo 18/9 và `03` §3 cần sửa cho khớp) |
+| D-17 | **Giữ miễn phí.** Chừa chỗ cho **logo công ty tài trợ cho hệ thống** (không phải quảng cáo) và **ô quyên góp**. Nhà tài trợ không được viết hay duyệt nội dung; logo không nằm trong scenario, chấm điểm hay bảng xếp hạng | 26/9 → 29/9 | Cô gợi ý tài trợ và quyên góp 26/9; Phúc chốt 29/9, [minutes](tuan/2026-W40/2026-09-26_gap-co.md) | ✅ (thay ý "không quảng cáo, không kiếm tiền" trong §4.1.5 báo cáo). Pháp lý của logo nhà tài trợ **chưa kết luận**: thiết kế thuần ghi nhận, báo cáo ghi "cần rà soát pháp lý", hỏi pháp chế của trường trước khi logo lên thật. Tín hiệu uy tín (chốt 29/9): huy hiệu "chuyên gia đã kiểm định" chỉ trên scenario chuyên gia thật đã duyệt (từ Giai đoạn 1), công bố kết quả Giai đoạn A/B khi đã có và nêu rõ giai đoạn; bảo chứng của Bộ hoặc đối tác để Giai đoạn 3. Trước Giai đoạn 1 chỉ có logo và ô quyên góp |
+| D-18 | "Bỏ cardinality" chỉ áp cho **BR-09 và BR-10** (số BR của deck). Số chuyên gia trong bảng tổ chức và "ít nhất 3 chuyên gia" cho RP-1 được giữ | 29/9 | Phúc, [minutes 26/9](tuan/2026-W40/2026-09-26_gap-co.md) | ✅ (chú ý số BR của deck lệch hub, xem [07](07-van-de-mo.md) A13) |
+| D-19 | Mỗi **design constraint dẫn xuất từ ít nhất một NFR**; có thể thêm nguồn ngoài là **quy định pháp lý** khi đó là gốc thật (VD DC-03 về dữ liệu cá nhân). **Business rule không phải nguồn** (là chính sách nghiệp vụ; ràng buộc kiểu BR thực chất là NFR). Cột "Dẫn xuất từ": NFR ID (bắt buộc) + nguồn ngoài (tuỳ chọn) | 29/9 | Phúc, [Minutes 26/9](tuan/2026-W40/2026-09-26_gap-co.md) | ✅ (nhóm chốt; hỏi cô 3/10 để nói nốt "NFR và …", xem [07](07-van-de-mo.md) A10) |
 
 ## C. Cấu trúc nội dung & gameplay
 
@@ -63,6 +67,7 @@
 | D-34 | (Cài đặt) **Nhiên liệu là ngưỡng, không bị trừ khi bay.** Chỉ bay tới hành tinh kề (1-hop). Công thức: XP ≥ khoảng cách × 100 và mọi skill yêu cầu ≥ Lv1 | 18/9 | `_archive/docs/report-skill-graph-mvp.md` (Brian) | 💡 quyết định kỹ thuật, team chưa duyệt |
 | D-35 | **Flow bản đồ mới:** thiên hà = domain, hành tinh = nghề. **Bỏ hệ sao và đường nối**, toạ độ hành tinh tính từ skill. Góc nhìn từ trục z. Profile = nhật ký trải nghiệm. Tách **domain point / skill point**, có achievement và biểu đồ thống kê | 18/9 → 20/9 | 🎮 Nam 18/9 23:36 và 20/9 13:41 | 💡 chưa chốt. Bản 18/9 còn "hệ sao → carousel hành tinh", bản 20/9 bỏ hệ sao |
 | D-36 | Cân nhắc **mức độ trưởng thành nghề nghiệp** (career maturity) để chia level cho game | 19/9 | 🎮 nhận xét của cô (Nam ghi 20/9) | 💡 |
+| D-37 | **Viết lại BR-11** (trần điểm khi chơi lại), không bỏ: *"Chơi lại một scenario không thể nâng năng lực vượt quá mức điểm scenario đó có thể cho"*. Bảo vệ BR-02: không có trần thì chơi lại cũng mở được cấp | 29/9 | Cô 26/9 (khó hiểu), Phúc chốt 29/9, [Minutes 26/9](tuan/2026-W40/2026-09-26_gap-co.md) | ✅ (số BR-11 là của deck, xem [07](07-van-de-mo.md) A13) |
 
 ## E. AI & đánh giá
 
@@ -74,6 +79,7 @@
 | D-43 | **Mô hình chấm phải khác họ với mô hình sinh** (BR-09), để tránh model tự khen bài của chính nó | 18/9 | BR-09; FR-20 | ✅ |
 | D-44 | Đánh giá **offline** bằng **bộ chuẩn IT do chuyên gia duyệt**. Đo riêng 2 thứ: chất lượng sinh và độ khớp khi chấm (**Cohen's κ, chia theo độ khó**). Không làm user study lớn | 3/9 → 18/9 | Kickoff S6; deck 7/9 S13; deck 18/9 S28 | ✅ |
 | D-45 | Kết quả chấm **chỉ để người học tự tham khảo**: không gửi nhà tuyển dụng, không dùng quyết định cơ hội nào (BR-06). Phải thể hiện cả mặt xấu của nghề (BR-07) | 18/9 | BR-06, BR-07 | ✅ |
+| D-46 | **Bỏ BR-12** (lượt test của nhân sự) khỏi business rule, **giữ hành vi** bằng trường đánh dấu loại lượt chơi thêm vào DR-07: lượt chơi ở chế độ review hoặc test được đánh dấu, loại khỏi số liệu explorer và điểm đánh giá tổng hợp. Cần vì DE giờ chơi scenario khi duyệt | 29/9 | Cô 26/9 (*"chắc bỏ đi"*), Phúc chốt 29/9, [Minutes 26/9](tuan/2026-W40/2026-09-26_gap-co.md) | ✅ (số BR-12 là của deck; DR-07 có trong báo cáo, chưa có trường loại lượt chơi nên phải thêm; hub chưa có bảng DR) |
 
 ## F. Dữ liệu nghề
 
