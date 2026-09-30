@@ -49,6 +49,7 @@ Task tuần này được giao qua [bài phân task CN 20/9](2026-09-20_phan-tas
 ## Đã nộp / trình bày cho cô
 
 - T7 19/9: trình bày báo cáo Chương 1–5.1 và advisor deck (nộp 18/9, xem [W38](../2026-W38/tuan.md))
+- T4 23/9: Phúc email cô bản tóm tắt các chỗ sửa báo cáo sau 19/9, trích nguyên văn §1.2, §1.4, §4.1.3 và bảng DC. Cô trả lời cùng tối: chưa thấy báo cáo trên Drive; lưu ý điểm bắt đầu của business context; hỏi expert là ai và link vào hệ thống ra sao, vì sao Cohen's κ và ngưỡng nào, "task" gồm gì, evaluation có khả thi không. Deck 26/9 trả lời bốn câu này. Lưu ở [`submissions/2026-09-23_JobQuest_Mail_Sua_Bao_Cao.md`](../../submissions/2026-09-23_JobQuest_Mail_Sua_Bao_Cao.md) (thêm vào repo 30/9)
 
 ## Theo người
 
