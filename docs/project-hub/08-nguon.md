@@ -37,7 +37,7 @@
 | Ảnh logo (các bản thử + bản cuối) | AN, Phúc, knam, 4–8/9 | Nên đưa vào `project-hub/assets/` |
 | `occupation-data.zip` | AN, 7/9 | Có lẽ trùng với `occupation-data/` trong repo |
 | `JobQuest_Advisor_Deck_18Sep2026.pptx` (bản gốc có thể sửa của deck 18/9) + bản `_2` ngày 19/9 | knam | Repo chỉ có bản PDF |
-| Source LaTeX báo cáo Ch.1–5 (bản 18/9) | ? | **Không còn source LaTeX** (Nhật xác nhận 30/9; `docs/report/main.tex` trên nhánh `feat/paper-links` là brief report v1 ngày 22/7, không phải Ch.1–5). Bản Markdown 26/9 đã có lại ở `reports/2026-09-26_ch1-5/report.md` (30/9). Phần cần sửa tuần 40 được dựng lại ở [đối chiếu T2609.28](tuan/2026-W40/2026-09-30_doi-chieu-bao-cao-deck.md) |
+| Source LaTeX báo cáo Ch.1–5 (bản 18/9) | ? | **Không còn source LaTeX** (Nhật xác nhận 30/9; `docs/report/main.tex` trên nhánh `feat/paper-links` là brief report v1 ngày 22/7, không phải Ch.1–5). Bản Markdown 26/9 đã có lại ở `reports/2026-09-26_ch1-5/report.md` (30/9). Từ bản 2/10, LaTeX được sinh từ Markdown bằng `tools/report/md2tex.py` theo class `hcmut-report` (`reports/2026-10-02_ch1-5/latex/`, 1/10). Phần cần sửa tuần 40 được dựng lại ở [đối chiếu T2609.28](tuan/2026-W40/2026-09-30_doi-chieu-bao-cao-deck.md) |
 | Plan thuyết trình, metaphor, nội dung mới (Claude artifact công khai) | Phúc, 2/9 và 7/9 | Không đọc được từ đây. Kết quả cuối đã nằm trong các deck |
 | Script thuyết trình 19/9 | AN | Claude artifact "JobQuest – Script thuyết trình" |
 | Ảnh "6 luật nhóm" (9/8), ảnh giao task (8/9) | Phúc | Chỉ có dạng ảnh trong Messenger |

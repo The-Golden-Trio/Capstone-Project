@@ -252,7 +252,7 @@ Ratings use three levels, defined as follows. Full (●) indicates the attribute
 \begin{scriptsize}
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{@{}p{3.2cm} *{7}{p{2.65cm}}@{}}
+\begin{longtable}{@{}p{3.1cm} *{7}{p{2.55cm}}@{}}
 \caption{Comparison of system classes against the derived criteria.}\\
 \toprule
 \textbf{Attribute} & \textbf{Authored simulation (Forage)} & \textbf{Generated simulation (EntryLevel, Anthropos)} & \textbf{Interview practice (careersim.ai etc.)} & \textbf{Generative narrative games (Hidden Door etc.)} & \textbf{Assessment \& orientation (O\textasteriskcentered NET, VN market)} & \textbf{Research prototypes (CareerSim, CareerPooler)} & \textbf{Proposed system} \\

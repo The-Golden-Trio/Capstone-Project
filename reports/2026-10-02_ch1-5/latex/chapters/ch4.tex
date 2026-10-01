@@ -1,0 +1,356 @@
+\newpage
+\section{The Proposed System}
+
+\subsection{Business Context}
+
+\subsubsection{Application domain}
+
+The application domain is career guidance and exploration, situated at the intersection of educational technology and occupational information provision. Participants in this domain are individuals facing an occupational decision, institutions supporting them, and the bodies that publish occupational information. The domain's characteristic activity is the transfer of occupational information to a person who must act on it, and Chapter 1 established that this transfer is currently incomplete: guidance provision is dominated by instruments that elicit self-description rather than convey what work involves.
+
+The proposed system, JobQuest, addresses this by allowing a user to perform representative tasks of an occupation, receive an assessment of the competencies those tasks elicited, and use that assessment to determine which further occupations to explore. It is a platform for informed exploration rather than a placement, recruitment, or credentialing service, and this boundary determines several of the business rules below.
+
+\subsubsection{Business processes}
+
+Three processes constitute the operation of the platform. They are modelled formally in Section 5.1.1.
+
+The exploration process is the primary user-facing process. A registered user optionally completes an orientation conversation, which is provided for users who do not know which occupation to begin with and is not a prerequisite. The user selects an occupation and a level within it, is presented with the role, team, and working context before any task begins, and then works through the tasks comprising that level. Each task is a scenario drawn from the occupation and is answered in one of nine formats --- multiple choice, multiple selection, ordering, matching, true/false, timed choice, free text, simplified email, or simplified code --- with hints available throughout. Tasks ask what the user does in the situation, a behavioural-tendency instruction\cite{r28}, because how a user tends to act is itself information about fit; scoring uses expert effectiveness keys in either case. Each response option is of one of three types: correct, the most effective response; trade-off, effective for one competency at a cost to another; or wrong, ineffective or harmful. Options and rubric criteria are scored on a single ordinal scale per competency, from $-$1 (ineffective or harmful) through 0 and +1 to +2 (most effective), so that evidence from choices and from written responses accumulates in the same competence record and agreement with experts can be computed on an ordinal scale. Using a hint is recorded and lowers the weight of that response as evidence of independent competence without blocking progress; a timed task that expires is recorded as unanswered, with its response time, and carries no separate penalty. The system evaluates each response, records the competencies it evidences, and returns a result, feedback specific to the response, and guidance for improvement. Completing a level awards competence credit; accumulated credit unlocks higher levels of the same occupation or, where competencies overlap sufficiently, entry to an adjacent occupation above its entry level. On completing an occupation, the user may rate it on five attributes, which contribute to that occupation's aggregate profile.
+
+The content lifecycle process governs how occupations enter the catalogue, and it involves two roles with distinct responsibilities. Domain experts own the occupational content and author it in the system: for each scenario they enter the required facts, the competencies it must elicit, the critical incidents from which response options are drawn, the effectiveness of each option, and the rubric against which free responses are judged, which together form the scenario's seed. A seed is a template rather than a script: it fixes the canon events of a scenario --- the situations every run must pass through, at set points --- together with the keyed options and rubric attached to them, and leaves the narrative between those events to be developed by the model in response to the user's answers. Validation accordingly has two layers. In the first, the system generates a sample of scenarios from the seed, and experts other than the seed's authors review the seed and the sample in the system, judging their accuracy and returning approvals, rejections, or corrections, each recorded with the identity of the reviewing expert. In the second, every scenario generated at run time is checked automatically against its seed --- that it passes through every canon event, preserves the required facts, and leaves each option's keyed profile unchanged (DC-06) --- and one that fails is regenerated or replaced by an instance from the approved sample. The content administrator does not author occupational content. The administrator manages the occupation as an entry in the catalogue, arranges how approved content is laid out and presented in gameplay, reviews the occupation as a whole before release, publishes it, and operates its lifecycle thereafter. Published content is revalidated annually by the experts, since occupational practice changes. In the present phase, in which no industry experts are yet engaged, the project team performs the expert role on provisional seeds (Section 4.2.1).
+
+The evaluation process is internal and supports the research objectives. It proceeds in two stages (Section 4.2.2): a synthetic benchmark constructed by the project team, and a reference set of real responses and generated scenarios rated independently by domain experts, against which generation quality and assessment accuracy are measured offline as specified in Section 2.6.
+
+\subsubsection{Business rules}
+
+Business rules are stated here as policies and constraints of the domain that hold independently of any particular implementation. Constraints arising from implementation choices --- which models are used, how cost is bounded, where data is processed --- are recorded separately as design constraints in Section 4.3.2.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.573\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.319\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Business rules governing the proposed system.} \\
+\hline
+\textbf{ID} & \textbf{Rule} & \textbf{Origin} \\ \hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Rule} & \textbf{Origin} \\ \hline
+\endhead
+BR-01 & The entry level of every occupation is accessible without prerequisite. & Exploration is the purpose; gating discovery defeats it \\ \hline
+BR-02 & Access to a higher level requires the competence credit specified for that level. & Competency-based progression (Section 2.2) \\ \hline
+BR-03 & Demonstrated competencies that overlap an adjacent occupation's requirements, as determined from the occupational taxonomy, count towards that occupation's levels, so that a user may enter it above its entry level. & Sections 2.2, 2.6; a user exploring related work need not restart \\ \hline
+BR-04 & An occupation may be rated only by a user who has completed it. & Rating validity depends on exposure \\ \hline
+BR-05 & No scenario seed or rubric is published without domain-expert validation of the seed and of a sample of the scenarios generated from it. & Section 2.5; accuracy of occupational representation \\ \hline
+BR-06 & Assessment results are formative. They are not transmitted to employers and do not determine access to any external opportunity. & Section 2.7; proportionality to assessment reliability \\ \hline
+BR-07 & Occupational representation must include the unfavourable aspects of the work. & Realistic job preview evidence (Section 2.1) \\ \hline
+BR-11 & Replaying a scenario cannot raise a competency beyond the credit that scenario can award. & Keeps unlocks tied to demonstrated competence (BR-02) \\ \hline
+BR-13 & An occupation's content becomes available to explorers only when the content administrator publishes it, which requires approved seeds (BR-05). & Scenario lifecycle (Section 5.1.1) \\ \hline
+BR-14 & Revising a seed withdraws the scenarios generated from it until the revised seed is approved. & Scenario lifecycle; accuracy of occupational representation \\ \hline
+BR-15 & Published content is revalidated by domain experts every year. & Occupational practice changes \\ \hline
+BR-16 & A retired occupation remains in the records of users who attempted it but can no longer be started. & Scenario lifecycle; continuity of users' records \\ \hline
+\end{longtable}
+}
+
+BR-01 and BR-03 are complementary. BR-01 keeps discovery free: the entry level of any occupation can be tried without prerequisite. BR-03 concerns what earlier work is worth: competence already demonstrated in one occupation is credited towards an adjacent one, so that the user does not begin it again from the entry level.
+
+\subsubsection{Organisational policies and legal-ethical considerations}
+
+The platform processes personal data, including performance data, of users who may be minors, and is therefore subject to Vietnam's Law on Personal Data Protection and its implementing decree\cite{r99,r100} and to comparable frameworks for users in other jurisdictions. Three policies follow. Data minimisation limits collection to what the exploration and assessment functions require. Aggregate-only publication governs any statistic derived from user performance, with suppression thresholds applied so that small populations cannot be de-anonymised; as a privacy measure rather than a rule of the domain, it is specified as a non-functional requirement (NFR-06). Formative-use limitation (BR-06) prevents assessment output from acquiring consequences the method's reliability does not support.
+
+Two provisions of the law shape the design directly. A child's rights as a data subject are exercised by the child's legal representative; the platform therefore obtains guardian consent for users under sixteen, as a conservative practice. Sending a user's response to a model provider located abroad is a cross-border transfer of personal data, for which the law requires a transfer impact assessment to be filed with the competent authority within sixty days of the first transfer; responses are therefore stripped of identifying details before they leave the platform, since de-identified data is not personal data under the law, and the assessment is to be prepared before any deployment to real users. How these provisions apply to a university-hosted project, and whether behavioural logs fall within the decree's sensitive categories, are to be confirmed with the university's legal office.
+
+Two further policies concern the system's use of generative models. Provenance disclosure requires that users be informed that scenarios are machine-generated from expert-authored material and that assessments are machine-produced. Expert accountability assigns responsibility for the occupational accuracy of published content to the authoring and reviewing domain experts, as recorded in the system, rather than to the generating model. Under the intended partnership described in Section 4.1.5, data governance would additionally follow the requirements of the Ministry of Education and Training for systems serving students. Detailed processing policies, including third-party model providers, are specified in Section 5.3.10.
+
+\subsubsection{Business model and organisation}
+
+JobQuest is designed as a public-benefit platform rather than a commercial product, and its business model follows from that position and from the evidence on which the system rests.
+
+Value and beneficiaries. The platform offers learners experiential occupational information before commitment, and offers education authorities and institutions a scalable complement to limited counselling capacity. All content is available to all users without charge; access to levels and occupations is governed by demonstrated competence (BR-01 to BR-03) rather than by payment. The choice is deliberate: the users who most need occupational information --- secondary students choosing a field under examination and family pressure --- are those least able to pay for it, and the platform's effect depends on reaching them.
+
+Partners and funders. The Ministry of Education and Training and educational-technology organisations may each act both as partners and as funders. As a partner, the Ministry --- preceded by city-level education departments --- supplies distribution through schools, legitimacy with schools and families, and a governance framework for minors' data, while edtech organisations supply pilot hosting, distribution, and technical cooperation. As funders, both may provide programme funding, grants, or in-kind support such as cloud credits. Industry partners and professional associations supply and coordinate domain experts, and the host university provides academic oversight. One set of safeguards applies to every partner and funder, whatever its role: none authors, validates, or ranks occupational content; none receives identifiable user data, only aggregate statistics (NFR-06); none may introduce charges, promotional content, or monetisation of users; and every partnership and source of funding is disclosed on the platform.
+
+Funding and sustainability. Without user revenue, operation is funded through public and philanthropic support: grant funding sought from the Ministry and from educational-technology organisations; sponsorship from companies, which may contribute experts as well as funds; voluntary donations through a donation box on the platform; and in-kind contribution of expert consultation. The first expert panel, in Stage 1, contributes voluntarily; from Stage 2 an honorarium for experts is budgeted within grant funding. The cost structure determines how that funding must be managed. The dominant variable cost is language-model inference, incurred per session, which is why per-session cost is a monitored requirement (NFR-11). The system manages it by enforcing a configured ceiling on the model cost of each session, a cost-management mechanism specified with the design in Chapter 5. The dominant fixed cost is expert authoring, incurred per occupation, which is why coverage expands field by field rather than all at once. Model access is provider-portable (NFR-12, DC-02), so that inference can move to lower-cost or institutionally hosted models as funding conditions change. Two further levers reduce cost. A panel of smaller judging models from different families is less expensive than a single large judge\cite{r74}, and because a seed fixes a scenario's canon events, keyed options, and rubric in advance (BR-05), run-time generation is confined to the narrative between those events, which bounds the length and therefore the cost of each generation.
+
+Sponsorship and content integrity. A model in which employers paid to shape how occupations are portrayed would reward favourable portrayal, in direct conflict with the realistic job preview evidence (Section 2.1) and with BR-07. Sponsorship is therefore admitted only as acknowledgement. Sponsoring companies are named, with their logos, under a plain ``Supported by'' heading; the acknowledgement carries no slogans, product claims, or links to product pages, and it never appears within scenarios, assessments, or rankings. Sponsors do not author, approve, or rank content, and every sponsorship is disclosed. Whether such an acknowledgement falls within the advertising regulations is subject to legal review, to be settled with the university's legal or partnership office before any logo is displayed.
+
+Perception of a free service. A service offered without charge can be taken to be of low quality. The platform answers this with signals of credibility rather than with a price. Sponsor acknowledgements and the donation box are present from the outset. A badge marks scenarios validated by domain experts; it is shown only on scenarios that experts have actually approved, and therefore from Stage 1. Evaluation results are published once Stage A or Stage B has produced them, with the stage stated, since Stage A does not establish agreement with experts. Endorsement by the Ministry or by partner institutions is deferred to Stage 3. No paid tier is introduced.
+
+Starting point and growth roadmap. A public authority does not adopt an unproven platform, so the project begins where it stands and advances only as evidence accumulates. The policy direction supports the end goal: the national scheme on career guidance and student streaming in general education, approved by Decision 522/QĐ-TTg, covered the period 2018--2025\cite{r95}; its results were reviewed in November 2025, with a decree on career guidance and educational streaming in preparation\cite{r96}; and Ho Chi Minh City has set a 2030 target of at least 35\% of students in basic sciences, engineering, and technology\cite{r97}. Table 4.2 sets out the stages. Each has a gate --- the evidence required before the next begins --- and meeting the thresholds of the two research problems is the evidence that justifies approaching funders and authorities.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.301\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Staged roadmap from university project to national public resource.} \\
+\hline
+\textbf{Stage} & \textbf{Indicative period} & \textbf{Activities} & \textbf{Resources and funding} & \textbf{Gate to next stage} \\ \hline
+\endfirsthead
+\hline
+\textbf{Stage} & \textbf{Indicative period} & \textbf{Activities} & \textbf{Resources and funding} & \textbf{Gate to next stage} \\ \hline
+\endhead
+0. University project & Present phase, to the end of 2026 & Core system for the IT field; provisional seeds prepared by the team from authoritative public sources under advisor guidance; Stage A evaluation & Project team; advisor; host university; model costs self-funded or covered by cloud credits & Working system; Stage A targets met \\ \hline
+1. Capstone and first pilot & Capstone phase, 2027 & Complete product; first expert panel for three pilot roles (back-end engineering, DevOps and cloud engineering, and business analysis); pilot with volunteer IT students; Stage B evaluation & University research or innovation support; cloud credits; competitions; donations & RP-1 and RP-2 thresholds met for the pilot roles \\ \hline
+2. Incubation and multi-site pilot & 2027--2028 & Operating organisation established; expert panels extended through industry partners; pilots with partner schools and university career centres in Ho Chi Minh City & Edtech grants; company sponsorship; donations; in-kind expert consultation & Multi-site evidence of use and decision clarity; expert coverage of the IT roles \\ \hline
+3. Public-sector partnership & 2028--2029 & Evidence presented to the city Department of Education and Training, then to the Ministry; alignment with the successor to Scheme 522; a second occupational field begins & Public programme funding; edtech grants; company sponsorship; donations & A formal cooperation agreement \\ \hline
+4. National public resource & 2030 onward & Deployment through the public education system; further fields; annual expert revalidation & Public and philanthropic funding; company sponsorship; donations & Sustained operation \\ \hline
+\end{longtable}
+}
+
+The project remains university-hosted during Stages 0 and 1, which gives it institutional standing without a separate legal entity. The operating organisation formed in Stage 2 is to take a non-commercial form consistent with free access, such as a social enterprise or a university-affiliated centre, to be settled with legal advice at that stage.
+
+Organisational structure. The organisation is staged. During the present phase and the capstone phase, the three-member project team holds every operating role, one member holding several where necessary; domain experts join from the capstone phase; and the project advisor provides academic oversight. For sustained operation after the capstone phase, the proposed structure places a steering committee --- with representatives of the Ministry, the host university, funding organisations, and the project lead --- above five operating units, advised by an expert board of senior domain and assessment specialists. Table 4.3 sets out the units, their positions, and their responsibilities. The indicative core is about eleven full-time positions, with domain leads part-time and contributing experts engaged per occupation, a size chosen to remain sustainable on grant funding. The numbers of positions are indicative and the structure is not rigid: in the early stages one person may hold more than one position.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.182\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.271\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.338\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.204\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Proposed organisational structure for sustained operation.} \\
+\hline
+\textbf{Unit} & \textbf{Positions (indicative number)} & \textbf{Responsibilities} & \textbf{Corresponding user group or constraint} \\ \hline
+\endfirsthead
+\hline
+\textbf{Unit} & \textbf{Positions (indicative number)} & \textbf{Responsibilities} & \textbf{Corresponding user group or constraint} \\ \hline
+\endhead
+Product and Engineering & Engineering lead (1); full-stack engineers (2); AI engineer (1); DevOps and system administrator (1) & Platform development and operation; AI model integration, configuration, and cost control; infrastructure and security & System administrator; DC-01, DC-02, DC-05; NFR-11 \\ \hline
+Content and Occupational Expertise & Content lead (1); assessment and rubric specialist (1); domain leads, one per occupational domain (part-time); domain experts (part-time, three to four per role) & Occupation catalogue; authoring of seeds, rubrics, and keyed options by domain experts, and their review of generated scenarios; presentation, review, and publication of occupations; annual revalidation & Domain expert; content administrator; BR-05, BR-07 \\ \hline
+Research and Evaluation & Research lead (1); evaluation analyst (1) & Construction of the expert reference set; offline evaluation; subsequent user studies & Evaluation process; RP-1, RP-2 \\ \hline
+Partnerships and Outreach & Partnerships manager (1); school and institution outreach coordinator (1) & Liaison with the Ministry, schools, and universities; grant applications and reporting; recruitment of domain experts & --- \\ \hline
+Data Protection and Compliance & Data protection officer (1, part-time initially) & Consent and minors' data; data-subject requests; regulatory compliance & DC-03; policies in Section 4.1.4 \\ \hline
+\end{longtable}
+}
+
+Occupational domains are the unit of content governance: each has a domain lead accountable for its accuracy. Within the information technology field covered in the present phase, the proposed domains are software engineering; data and artificial intelligence; network and systems infrastructure; information security; and IT product and business analysis. Each further field is added as a new domain with its own lead, which is how coverage expands without restructuring the organisation.
+
+\subsection{System Description}
+
+\subsubsection{System overview}
+
+JobQuest is a web-based platform that presents occupations as sequences of performable tasks, assesses the competencies a user demonstrates while performing them, and uses those assessments to structure further exploration. Its purpose is to supply occupational information experientially, at a breadth that authored content cannot reach, to people who must choose or change an occupation.
+
+The experience is delivered through three presentation and progression conventions selected against the evidence in Section 2.3 rather than by preference. Progression follows a role-playing convention, in which levels and access to further occupations are earned through demonstrated competence rather than time spent, which the role-play evidence supports as the genre most associated with skill acquisition. Scenarios are presented in a branching narrative form comparable to a visual novel, the narrative moderator being among the strongest identified in the gamification meta-analyses. Career and life events are introduced probabilistically across sessions, a convention drawn from roguelike design, so that the circumstances bearing on occupational fit vary between runs; consistent with the harm evidence in Section 2.3, this randomisation governs narrative variety only and is not coupled to any reward schedule or monetisation. These conventions carry engagement; consistent with Section 2.8 they are not relied upon for competence development, which rests on task authenticity and assessment.
+
+The system serves four user groups: the explorer, the domain expert, the content administrator, and the system administrator.
+
+The explorer is the primary user: a student choosing a field of study, a graduate entering the labour market, or a worker considering transition. The explorer performs tasks, receives assessment and guidance, accumulates competence credit, and navigates among occupations. All other groups exist to make this possible.
+
+The content administrator manages the occupation catalogue and is responsible for how expert-authored content reaches explorers: arranging its layout and presentation in gameplay; creating, reviewing, and publishing occupations; and operating the content lifecycle, including monitoring coverage and currency across occupations and arranging revalidation. The content administrator does not author or alter occupational content, which belongs to the domain experts.
+
+The system administrator operates the platform: configuring and monitoring the generation and assessment models, managing capacity and cost, administering accounts and access, and overseeing data protection controls.
+
+Domain experts are senior or lead practitioners in an occupation, typically with around five or more years in the role and experience supervising junior staff, who therefore know what entry-level work demands and where newcomers typically fail. They use the system directly: they author and own the occupational content of scenarios --- the required facts, target competencies, response options and their effectiveness keys, and rubrics --- and they review the scenarios the system generates and the cases in which automated judgment departs from their own. Each role is served by three to four experts, three being the accepted minimum for content validation\cite{r69}, drawn from at least two types of organisation --- such as product, outsourcing, startup, and in-house enterprise IT --- because the same job title involves different work in different organisations; no expert reviews scenarios generated from a seed they helped prepare. Their involvement is heaviest when an occupation's seeds are first prepared and lighter thereafter, through annual revalidation, and is arranged part-time through partner organisations; the first panel is recruited through the advisor's and the university's alumni networks and contributes voluntarily. Across the approximately twenty-two IT roles in scope, the full network is some sixty-six to eighty-eight experts, reached progressively (Section 4.1.5). In the present phase the project team prepares provisional seeds from authoritative public sources under the advisor's guidance, and these are not presented as expert-validated. This group is the guarantor of the system's central claim, that its representations correspond to real work.
+
+\subsubsection{Research problems}
+
+In this report, a research problem is a question that meets three conditions: the answer is not established in the existing literature; the answer constitutes knowledge that generalises beyond this particular system; and the project's evaluation produces evidence that answers it. A question resolved by a design decision fails the second condition, and a question about how evidence is gathered concerns method rather than a problem. Two questions meet all three conditions, both in artificial intelligence applied to education, and they correspond to the first two specific objectives in Section 1.2.
+
+RP-1, grounded generation of occupational scenarios. The literature establishes that language models generate fluent instructional content but that fidelity to a specified domain requires explicit constraint (Section 2.5); it does not establish how accurate expert-seeded generation is for task-based occupational content, nor whether generated tasks preserve the competency they target (Section 2.2). The question is therefore: when generation is constrained by an expert-authored seed specifying required facts and target competencies, what proportion of generated scenarios do domain experts judge to be occupationally accurate and to require the target competency, and how does this compare with generation from the same instructions without the seed? The comparison is what makes the answer knowledge rather than description, since without it an accuracy figure cannot be attributed to the seeding.
+
+RP-2, validity of language-model stealth assessment. Reported agreement between automated judges and human raters is systematically optimistic, and chance-corrected, difficulty-stratified validation is rarely reported (Section 2.5); nor has such assessment been validated where the evidence of competence is the performance of a task rather than an answer to a test item (Section 2.2). The question is therefore: to what extent does rubric-based automated judgment of task responses agree with domain-expert judgment of the same responses, measured by quadratic weighted kappa, relative to the agreement between experts themselves, and how does that agreement vary with item difficulty and across repeated runs? Expert--expert agreement provides the ceiling against which the automated judge is interpreted.
+
+Both problems are evaluated in two stages, because the experts on whom they depend are engaged progressively (Section 4.2.1). In Stage A, during the present phase, the project team constructs a synthetic benchmark: for each free-text task, a strong reference response and variants that each degrade one rubric criterion to a known level, together with probes for length, format, and ordering bias, following the perturbation-checklist method\cite{r73}. A panel of judging models from different families, none of which produced the synthetic responses, scores them independently and repeatedly\cite{r74}, and the advisor confirms the designed levels on a random sample of about a fifth of the variants. Stage A establishes whether the judge is sensitive to each criterion, robust to known biases, and consistent across runs; it cannot establish agreement with experts on real responses, and is not presented as doing so. In Stage B, on the completed product, volunteer participants complete tasks with informed consent, and their responses, together with generated scenarios, are rated independently and blind by three experts per pilot role. RP-1 is then answered by content validity indices, with I-CVI of at least .78 and S-CVI/Ave of at least .90\cite{r70}, by a paired comparison of seeded and unseeded generation using McNemar's test on acceptability, and by a fact-preservation target of 95\% of seed-required facts. RP-2 is answered against the three acceptance criteria of Williamson, Xi and Breyer\cite{r71}, with agreement among experts measured by Krippendorff's alpha\cite{r72}.
+
+Three further questions arise in the project and are addressed, but they are not research problems under these conditions.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.358\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.471\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.167\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Questions addressed in the project but not treated as research problems.} \\
+\hline
+\textbf{Question} & \textbf{Condition not met} & \textbf{Where it is addressed} \\ \hline
+\endfirsthead
+\hline
+\textbf{Question} & \textbf{Condition not met} & \textbf{Where it is addressed} \\ \hline
+\endhead
+How should demonstrated competence determine access to adjacent occupations? & Resolved by a design decision based on occupational taxonomies; the project does not generate new knowledge about it & Design (Chapter 5) \\ \hline
+Does the engagement design sustain exploration without displacing learning? & Answerable only through longitudinal user study, which the offline evaluation does not provide & Subsequent work \\ \hline
+How should the expert reference set be constructed? & Concerns how evidence is gathered --- a matter of method rather than a problem & Evaluation (Chapter 7) \\ \hline
+\end{longtable}
+}
+
+\subsubsection{Challenges and difficulties}
+
+Generation fidelity is the principal technical difficulty. Occupational content is factual, and a scenario that is plausible but inaccurate is worse than no scenario, since it conveys a confident false impression of a real profession. Long-horizon consistency compounds this within multi-task levels.
+
+Assessment validity is the principal methodological difficulty. Section 2.5 indicates that agreement figures for automated judgment are frequently overstated and that performance degrades unevenly with difficulty; obtaining defensible figures requires a reference set that is stratified and expert-authored, which is expensive to produce.
+
+Expert availability constrains breadth. Each role requires three to four senior practitioners for authoring and review, whose time must be arranged through partner organisations; in Stage 1, an estimated seven hours per expert covers scenario ratings, response ratings, and option keying for a pilot role. The three pilot roles are back-end engineering, DevOps and cloud engineering, and business analysis, the last chosen so that assessment is also examined on work whose output is requirements and communication with stakeholders rather than code. Because experts are engaged progressively, the present phase relies on provisional seeds prepared from public sources, and occupational accuracy can be claimed only once the Stage 1 panel has reviewed them. This is the reason for restricting the first phase to a single field, and for treating expert authoring as a first-class activity of the system rather than an administrative convenience.
+
+Cold start affects the aggregate occupational profiles, which require a population of completions before they are informative. Until that population exists, profiles are absent or unreliable, and the interface must represent this honestly rather than display an unfounded figure.
+
+Evaluation without deployment limits what the project can establish. Offline benchmarking substantiates generation quality and assessment accuracy but cannot establish engagement retention or effects on career decisions, which require longitudinal study. The claims are bounded accordingly, consistent with Section 2.8.
+
+Operating without user revenue makes cost a design constraint rather than a commercial concern. Inference cost per session must remain within what grant funding can sustain, which constrains model choice, response length, and caching strategy.
+
+Interaction modality limits what the platform can represent, and the limit differs by competency. Hamstra et al.\cite{r98} argue that the realism of a simulation should be understood not as physical resemblance but as functional task alignment --- the correspondence between what a task demands and what the real situation demands --- noting that physical fidelity has been found largely independent of educational effectiveness. On this view the relevant question is not whether a screen-based task looks like a workplace but whether it demands what the work demands. Table 4.5 compares the competencies a JobQuest task can involve with their counterparts in a live work situation, rating alignment on four levels: high, moderate, partial, and low.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.267\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.338\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.231\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Alignment of competencies between screen-based tasks and live work situations.} \\
+\hline
+\textbf{Competency} & \textbf{In a JobQuest task} & \textbf{In a live work situation} & \textbf{Alignment} \\ \hline
+\endfirsthead
+\hline
+\textbf{Competency} & \textbf{In a JobQuest task} & \textbf{In a live work situation} & \textbf{Alignment} \\ \hline
+\endhead
+Technical analysis and problem-solving, such as diagnosing a failing service & Performed through the same text and code interfaces used in practice & Largely screen-based in IT roles & High \\ \hline
+Written communication, such as incident reports, documentation, and messages to colleagues & Produced and assessed as text & Produced as text & High \\ \hline
+Prioritisation and decision-making under constraints & Decisions made with consequences represented in the scenario & The same decisions, with real consequences for users and colleagues & Moderate: decision structure aligned, stakes attenuated \\ \hline
+Adaptability to changing requirements & Changes introduced as scenario events & Changes arrive unpredictably and compound & Moderate \\ \hline
+Collaboration and handling of stakeholders & Text interaction with AI-driven colleagues and clients & Real people with their own goals, relationships, and history & Partial: structure aligned, social dynamics simplified \\ \hline
+Working under time pressure and regulating stress & Time limits can be simulated, with low personal stakes & Sustained pressure with genuine stakes & Low \\ \hline
+Oral communication and presentation & Represented only through what is written; delivery, tone, and listening are not exercised & Central in many roles & Low \\ \hline
+Interviews & The content of answers can be rehearsed in text; live delivery under observation is not exercised & The gateway to most roles & Low \\ \hline
+Physical and manual skill & Procedures can be described and sequenced; manual execution is not exercised & Central in some occupations & Low \\ \hline
+\end{longtable}
+}
+
+Two consequences follow. Alignment is highest for the competencies at the core of information technology work, which is itself largely screen-mediated --- a further reason for the first phase's coverage. Conversely, competencies that depend on live interpersonal dynamics, genuine stakes, speech, or physical performance are attenuated: oral communication, interviewing, and physical skill are represented only through their written or procedural content, and alignment for them is low. Both the assessment and the self-efficacy the platform builds (Section 2.4) are therefore evidence about the well-aligned competencies only, and results must not be presented as indicating readiness for the others. Voice interaction could extend coverage to oral communication; genuine stakes and physical skill lie outside what any screen-based simulation can provide.
+
+Localisation presents a further difficulty: occupational taxonomies are authored in English for other labour markets, and their occupational structures do not map cleanly onto Vietnamese practice, requiring expert adaptation rather than translation.
+
+\subsection{User's Requirements}
+
+Requirements are expressed first as user stories per group, then analysed into functional, non-functional, and data requirements. Each requirement carries a priority (Must, Should, Could), an assessment of feasibility within the project's scope and schedule, and a statement of how it is to be verified.
+
+\subsubsection{Functional requirements}
+
+User stories --- explorer:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item As an explorer, I want to try the entry level of any occupation without prerequisite, so that I can survey possibilities before committing attention to one.
+  \item As an explorer, I want to be told my role, team, and working context before a task begins, so that my decisions are situated rather than abstract.
+  \item As an explorer, I want to perform tasks that practitioners would recognise, so that what I learn reflects the occupation.
+  \item As an explorer, I want to see the unfavourable aspects of an occupation, so that my impression is not a recruitment pitch.
+  \item As an explorer, I want my response assessed with a result, an explanation, and guidance, so that I understand both the judgment and how to improve.
+  \item As an explorer, I want competencies I have demonstrated to be recorded, so that my progress reflects what I can do rather than time spent.
+  \item As an explorer, I want to move to an adjacent occupation when my competencies qualify me, so that I need not restart when exploring related work.
+  \item As an explorer, I want to rate an occupation after completing it and see how others rated it, so that I can compare my impression with a broader one.
+  \item As an explorer, I want a private record of what I have attempted and demonstrated, so that my exploration accumulates.
+  \item As an explorer, I want hints when I am stuck, so that I can continue while still learning.
+\end{itemize}
+
+User stories --- domain expert:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item As a domain expert, I want to author a scenario's seed --- required facts, target competencies, keyed response options, and rubric --- with my authorship recorded, so that every seed's provenance is traceable.
+  \item As a domain expert, I want to review scenarios generated from seeds I did not author and record my approval, rejection, or correction, so that only content experts judge accurate is published.
+  \item As a domain expert, I want to see where the automated judge disagrees with expert judgments, so that the rubric can be refined.
+\end{itemize}
+
+User stories --- content administrator:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item As a content administrator, I want to arrange how approved content is laid out and presented in gameplay, so that explorers receive it in a coherent form.
+  \item As a content administrator, I want to add a new occupation, review it as a whole, and track its progress through authoring, review, and publication, so that catalogue growth is managed.
+  \item As a content administrator, I want to see coverage and last-validated dates across occupations, so that I can identify stale content.
+\end{itemize}
+
+User stories --- system administrator:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item As a system administrator, I want to configure which models perform generation and assessment, so that the separation required by DC-01 is enforced and providers can be changed.
+  \item As a system administrator, I want to monitor usage, cost, and failures, so that the service remains operable within budget.
+\end{itemize}
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.098\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.259\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.169\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.150\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Functional requirements with priority, feasibility, and verification method.} \\
+\hline
+\textbf{ID} & \textbf{Functional requirement} & \textbf{Group} & \textbf{Priority} & \textbf{Feasibility} & \textbf{Verification} \\ \hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Functional requirement} & \textbf{Group} & \textbf{Priority} & \textbf{Feasibility} & \textbf{Verification} \\ \hline
+\endhead
+FR-01 & Register and authenticate a user account & Explorer & Must & High & Account creation and sign-in succeed; unauthenticated access to progress is refused \\ \hline
+FR-02 & Present the entry level of any published occupation without prerequisite & Explorer & Must & High & Entry level reachable for a new account with zero credit \\ \hline
+FR-03 & Present role, team, and working context before the first task of a level & Explorer & Must & High & Context screen precedes first task in every level \\ \hline
+FR-04 & Generate a task scenario from a published seed, passing through its canon events and preserving its required facts and keyed option profiles; a generation that fails the automated check against the seed is not served & Explorer & Must & Medium & Expert review of sampled generations against the seed's fact list; injected violations are rejected by the automated check \\ \hline
+FR-05 & Accept structured responses --- multiple choice, multiple selection, ordering, matching, true/false, and timed choice --- and score them against expert-keyed effectiveness profiles on the scale of $-$1 to +2 per competency, or an answer key where the item is factual & Explorer & Must & High & Known-input tests produce the keyed scores \\ \hline
+FR-06 & Accept free-text responses, including simplified emails and explanations or reviews of code, and score them against the seed's rubric, on the same scale of $-$1 to +2 per criterion, with a panel of judging models & Explorer & Must & Medium & Agreement with expert judgment on the reference set, measured by quadratic weighted kappa \\ \hline
+FR-07 & Return result, response-specific feedback, and forward guidance as distinct elements & Explorer & Must & High & All three present and distinguishable for every assessed response \\ \hline
+FR-08 & Record competencies evidenced by each assessed response & Explorer & Must & Medium & Competence records correspond to rubric criteria for sampled sessions \\ \hline
+FR-09 & Award competence credit on level completion and unlock levels per BR-02 & Explorer & Must & High & Threshold boundary tests unlock at and only at the specified credit \\ \hline
+FR-10 & Offer entry to an adjacent occupation, at the level the credited competencies support, when overlap conditions are met per BR-03 & Explorer & Should & Medium & Offered set matches taxonomy-derived expectation for seeded profiles \\ \hline
+FR-11 & Conduct an optional orientation conversation producing candidate occupations & Explorer & Should & Medium & Conversation completes and yields a non-empty ranked candidate set \\ \hline
+FR-12 & Collect a five-attribute rating on completion and display aggregates & Explorer & Should & High & Rating accepted only after completion; aggregate updates; suppression below threshold \\ \hline
+FR-13 & Present a private record of attempted occupations, competencies, and awards & Explorer & Should & High & Record reflects session history for a seeded account \\ \hline
+FR-14 & Introduce probabilistic career and life events affecting subsequent exploration & Explorer & Could & Medium & Events occur within configured probability bounds across repeated runs \\ \hline
+FR-15 & Author and edit a seed --- required facts, target competencies, canon events, keyed response options, and rubric --- recording its authors & Domain expert & Must & High & Seed persists with all components and its author provenance \\ \hline
+FR-16 & Present a seed and a sample of its generated scenarios for expert review and record each expert's approval, rejection, or correction; an expert may not review a seed they authored & Domain expert & Must & High & No scenario is served from a seed without a recorded approval \\ \hline
+FR-17 & Report disagreements between automated and expert judgment for expert review & Domain expert & Should & Medium & Disagreement list matches recomputation over the reference set \\ \hline
+FR-18 & Manage occupation lifecycle: create, track status, publish, retire & Content administrator & Must & High & State transitions follow the defined lifecycle; publication requires completed review \\ \hline
+FR-19 & Report catalogue coverage and last-validated dates & Content administrator & Should & High & Report matches stored metadata \\ \hline
+FR-20 & Configure generation and assessment model providers, enforcing separation & System administrator & Must & Medium & Configuration rejects identical provider for both roles \\ \hline
+FR-21 & Monitor usage, cost, and error rates & System administrator & Should & High & Metrics present and consistent with generated load \\ \hline
+FR-22 & Record hint use and on-device response time as assessment evidence; hint use lowers the evidential weight of the response, and an expired timed task is recorded as unanswered & Explorer & Should & Medium & Evidence records carry hint and timing fields; timing excludes network delay; a response given with a hint contributes less credit than the same response without one \\ \hline
+\end{longtable}
+}
+
+\subsubsection{Non-functional requirements}
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.108\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.247\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.180\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.143\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.189\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Non-functional requirements with priority, feasibility, and verification method.} \\
+\hline
+\textbf{ID} & \textbf{Non-functional requirement} & \textbf{Category} & \textbf{Priority} & \textbf{Feasibility} & \textbf{Verification} \\ \hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Non-functional requirement} & \textbf{Category} & \textbf{Priority} & \textbf{Feasibility} & \textbf{Verification} \\ \hline
+\endhead
+NFR-01 & Scenario generation completes within 5 s at the 95th percentile; a progress indicator is shown beyond 2 s & Performance & Must & Medium & Latency distribution measured over at least 200 sampled generations \\ \hline
+NFR-02 & Assessment of a free-text response completes within 8 s at the 95th percentile & Performance & Must & Medium & Latency distribution measured over at least 200 sampled assessments \\ \hline
+NFR-03 & Session progress survives interruption and resumes without loss & Reliability & Must & High & Forced interruption tests resume at the recorded position \\ \hline
+NFR-04 & On model provider failure, no committed progress is lost and the user is notified within 10 s & Reliability & Should & Medium & Fault injection against the provider interface; zero progress-record loss across injected failures \\ \hline
+NFR-05 & Personal data is collected only as required, stored encrypted, and deletable on request & Security and privacy & Must & High & Data inventory review; deletion request removes records \\ \hline
+NFR-06 & Statistics derived from user performance are published only in aggregate form, with a minimum-population suppression threshold & Security and privacy & Must & High & No individual-level statistic is exposed; aggregates below threshold are withheld \\ \hline
+NFR-07 & Machine generation and machine assessment are disclosed to the user & Transparency & Must & High & Disclosure present at the point of use \\ \hline
+NFR-08 & Interface language and occupational content support Vietnamese and English & Usability & Should & Medium & Both locales render complete content \\ \hline
+NFR-09 & At least 80\% of representative readers correctly state a task's objective after reading its scenario & Usability & Should & Medium & Comprehension check with a minimum of 20 representative readers \\ \hline
+NFR-10 & Adding an occupation requires no code modification & Maintainability & Must & High & A new occupation is published through the authoring interface alone \\ \hline
+NFR-11 & Mean model cost per completed session remains within the configured ceiling, with per-session cost recorded & Cost & Must & Medium & Cost telemetry aggregated per session and compared against the configured ceiling \\ \hline
+NFR-12 & Model provider is replaceable without changes to seeds or rubrics & Portability & Should & Medium & Provider substitution test with unchanged content \\ \hline
+NFR-13 & Core exploration functions remain usable on mobile browsers and over low-bandwidth connections & Accessibility & Must & Medium & Complete task flow verified on a representative low-end mobile device over a throttled connection \\ \hline
+NFR-14 & Automated scoring of free-text responses meets the acceptance criteria against expert judgment: quadratic weighted kappa of at least 0.70, a standardised mean score difference of at most 0.15, and agreement no more than 0.10 below expert--expert agreement & Assessment validity & Must & Medium & Stage B evaluation against the expert reference set (DR-09), reported per role and per difficulty stratum \\ \hline
+NFR-15 & Generated scenarios preserve the required facts and keyed option profiles of their seed; proposed target, at least 95\% of required facts preserved & Content fidelity & Must & Medium & Automatic check of each required fact against the generated scenario, with experts confirming a sample \\ \hline
+\end{longtable}
+}
+
+Design constraints are recorded separately from business rules, since they arise from implementation choices rather than from the domain. Each derives from at least one non-functional requirement: the requirement states what must be achieved, and the constraint fixes or prohibits a design choice so that it can be.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.519\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.126\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.247\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Design constraints.} \\
+\hline
+\textbf{ID} & \textbf{Design constraint} & \textbf{Derived from} & \textbf{Rationale} \\ \hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Design constraint} & \textbf{Derived from} & \textbf{Rationale} \\ \hline
+\endhead
+DC-01 & The automated assessor is drawn from a different model family than the scenario generator. & NFR-14 & Self-preference bias in automated judgment (Section 2.5) \\ \hline
+DC-02 & Generation and assessment depend on third-party model providers, accessed through a replaceable interface. & NFR-12, NFR-04 & Provider dependency and portability \\ \hline
+DC-03 & Personal data is processed and stored in compliance with Vietnam's Law on Personal Data Protection and its implementing decree, including the provisions for minors and for cross-border transfer. & NFR-05, NFR-06 & Legal obligation (Sections 2.7, 4.1.4) \\ \hline
+DC-05 & The platform is delivered as a web application usable through standard browsers without installation. & NFR-13 & Universal access (Section 4.1.5) \\ \hline
+DC-06 & The generator may rephrase a keyed response option but may not alter its effectiveness profile. & NFR-15 & Validity of situational judgment scoring (Section 2.2) \\ \hline
+\end{longtable}
+}
+
+\subsubsection{Data requirements}
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.098\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.158\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.185\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Data requirements with source, priority, feasibility, and verification method.} \\
+\hline
+\textbf{ID} & \textbf{Data requirement} & \textbf{Source} & \textbf{Priority} & \textbf{Feasibility} & \textbf{Verification} \\ \hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Data requirement} & \textbf{Source} & \textbf{Priority} & \textbf{Feasibility} & \textbf{Verification} \\ \hline
+\endhead
+DR-01 & Occupational reference data: occupations, constituent tasks, work activities, and skills & O*NET and ESCO, adapted for Vietnamese practice by domain experts & Must & Medium & Imported records resolve against source identifiers \\ \hline
+DR-02 & Competency taxonomy with definitions and observable indicators, distinguishing soft and technical competencies & Derived from DR-01 under expert adaptation & Must & Medium & Every rubric criterion resolves to a taxonomy entry \\ \hline
+DR-03 & Occupational adjacency relations with overlap measures & Computed from DR-01/DR-02 & Should & Medium & Computed adjacency reviewed by experts for plausibility \\ \hline
+DR-04 & Scenario seeds: required facts, target competencies, narrative skeleton with its canon events, keyed response options, rubric, and expert provenance & Domain experts & Must & High & Seed schema validation; expert provenance recorded \\ \hline
+DR-05 & Generated scenario instances with provenance linking to seed and model version & System & Must & High & Every served scenario carries resolvable provenance \\ \hline
+DR-06 & User profile and progress: competence credit, unlocked levels, occupation history & System & Must & High & Progress reconstructs from stored records \\ \hline
+DR-07 & Assessment records: response, score, competencies evidenced, feedback, guidance, and attempt type (explorer, review, or test) & System & Must & High & Records complete for every assessed response; review and test attempts are excluded from explorer metrics and aggregate ratings \\ \hline
+DR-08 & Occupation ratings on five attributes, with completion precondition enforced & Explorers & Should & High & Ratings exist only for completed occupations \\ \hline
+DR-09 & Evaluation reference set: a synthetic criterion-perturbed benchmark (Stage A), and real responses and generated scenarios with independent expert ratings, stratified by difficulty (Stage B) & Project team (Stage A); domain experts (Stage B) & Must & Medium & Stage A levels sample-checked by the advisor; Stage B inter-expert agreement recorded \\ \hline
+DR-10 & Operational telemetry: latency, cost, error rates, model versions & System & Should & High & Telemetry present and queryable \\ \hline
+\end{longtable}
+}
+
+Personal data within DR-06, DR-07, and DR-08 is subject to the policies in Section 4.1.4. DR-09 contains no personal data and is retained as a research asset.
+
+\subsection{Summary}
+
+This chapter specified the proposed system against the domain established in Chapters 1 to 3. The business context identified three operating processes --- exploration, content lifecycle, and evaluation --- and twelve business rules, several of which derive from the evidence reviewed in Chapter 2 rather than from product preference: accessible entry levels, competence-gated progression, taxonomy-derived adjacency, mandatory expert validation, and formative-only assessment. It set out a public-benefit business model in which all content is free to users, operation is funded through grants, acknowledged sponsorship, donations, and an intended partnership with the Ministry of Education and Training, and sponsors are excluded from content so that the candour of occupational representation is protected, together with a five-stage roadmap in which each stage is gated by evidence, and a staged organisation of five operating units under a steering committee, with content governed by occupational domain. The system description identified four user groups --- explorers, domain experts, content administrators, and system administrators --- two research problems in AI applied to education --- grounded generation and the validity of stealth assessment, each stated with the comparison that makes its answer knowledge --- and the principal difficulties, the most consequential being generation fidelity, assessment validity, expert availability, cost sustainability without revenue, and the uneven alignment between screen-based tasks and live work. The requirements analysis produced twenty-two functional, fifteen non-functional, and ten data requirements, each prioritised, assessed for feasibility, and paired with a verification method, together with five design constraints, each derived from a non-functional requirement and recorded separately from the business rules. Chapter 5 models the processes and interactions these requirements imply.
