@@ -1,14 +1,32 @@
 import { z } from 'zod';
 
+/**
+ * Nộp bài Get to Know Me.
+ *
+ * Câu chọn gửi vế và mức (1 = rất đúng, 0.5 = hơi đúng); câu tự luận gửi
+ * chữ. Độ dài từng câu tự luận do tầng dịch vụ kiểm theo bộ câu hỏi — ở đây
+ * chỉ chặn trần cho khỏi nhận bài quá khổ. Bỏ ngang giữa chừng thì gửi phần
+ * đã làm, nên không bắt đủ mọi câu.
+ */
 export const SubmitQuizSchema = z.object({
   answers: z
     .array(
       z.object({
         questionId: z.string().min(1).max(64),
         optionId: z.string().min(1).max(64),
+        strength: z.union([z.literal(1), z.literal(0.5)]).optional(),
       }),
     )
     .max(50),
+  texts: z
+    .array(
+      z.object({
+        questionId: z.string().min(1).max(64),
+        text: z.string().max(1000),
+      }),
+    )
+    .max(10)
+    .default([]),
 });
 export type SubmitQuizDto = z.infer<typeof SubmitQuizSchema>;
 
@@ -50,3 +68,8 @@ export const EnrollSchema = z.object({
   band: z.string().min(1).max(8),
 });
 export type EnrollDto = z.infer<typeof EnrollSchema>;
+
+export const PortraitQuerySchema = z.object({
+  locale: z.enum(['vi', 'en']).default('vi'),
+});
+export type PortraitQueryDto = z.infer<typeof PortraitQuerySchema>;

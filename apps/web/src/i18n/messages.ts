@@ -99,10 +99,26 @@ export const MESSAGES = {
   /* ── Get to Know Me ── */
   'quiz.title': { vi: 'Get to Know Me', en: 'Get to Know Me' },
   'quiz.lead': {
-    vi: 'Sáu câu, không có đáp án đúng. Kết quả dùng để chỉ hướng trên bản đồ, không phải để chấm bạn.',
-    en: 'Six questions, no right answers. They point you across the map — they are not a score.',
+    vi: 'Khoảng năm phút: vài câu chọn nhanh và ba câu kể ngắn. Không có đáp án đúng — kết quả chỉ để gợi ý nên ghé đâu trên bản đồ.',
+    en: 'About five minutes: quick choices and three short stories. No right answers — the result only suggests where to look on the map.',
   },
   'quiz.question': { vi: 'CÂU {current}/{total}', en: 'QUESTION {current}/{total}' },
+  'quiz.stageTag': { vi: 'TRƯỚC KHI BẮT ĐẦU', en: 'BEFORE WE START' },
+  'quiz.storyTag': { vi: 'KỂ NGẮN', en: 'IN YOUR OWN WORDS' },
+  'quiz.strong': { vi: 'Rất giống mình', en: 'Very me' },
+  'quiz.lean': { vi: 'Hơi giống', en: 'Somewhat' },
+  'quiz.back': { vi: 'Câu trước', en: 'Previous' },
+  'quiz.next': { vi: 'Tiếp', en: 'Next' },
+  'quiz.finish': { vi: 'Xem chân dung', en: 'See my portrait' },
+  'quiz.chars': { vi: '{count}/{max} ký tự', en: '{count}/{max} characters' },
+  'quiz.minChars': {
+    vi: 'Viết thêm ít nhất {count} ký tự',
+    en: 'Write at least {count} more characters',
+  },
+  'quiz.aiReads': {
+    vi: 'AI đọc câu này để hiểu cách bạn làm việc và viết đoạn mô tả về bạn. Chỉ bạn thấy kết quả.',
+    en: 'AI reads this to understand how you like to work and to write a description of you. Only you see the result.',
+  },
   'quiz.skip': { vi: 'Bỏ qua phần này', en: 'Skip for now' },
   'quiz.saveFailed': {
     vi: 'Không lưu được kết quả',
@@ -113,21 +129,72 @@ export const MESSAGES = {
     en: 'Before you set off, tell us a little about yourself.',
   },
   'quiz.retake': { vi: 'Làm lại phần này', en: 'Take it again' },
-  'quiz.resultTitle': {
-    vi: 'Ba hành tinh gần bạn nhất',
-    en: 'The three planets closest to you',
-  },
+  'quiz.resultTitle': { vi: 'Chân dung của bạn', en: 'Your portrait' },
   'quiz.resultLead': {
+    vi: 'Năm hành tinh gần bạn nhất, một đoạn tả cách bạn làm việc, và bạn nghiêng về con người hay hệ thống.',
+    en: 'The five planets closest to you, a short description of how you work, and whether you lean towards people or systems.',
+  },
+  'quiz.topTitle': {
+    vi: 'Năm hành tinh gần bạn nhất',
+    en: 'The five planets closest to you',
+  },
+  'quiz.topLead': {
     vi: 'Tính bằng độ khớp giữa câu trả lời của bạn và tính chất của từng hành tinh.',
     en: 'Measured by how closely your answers match the character of each planet.',
   },
-  'quiz.portrait': { vi: 'Chân dung của bạn', en: 'Your portrait' },
+  'quiz.because': { vi: 'vì bạn {reasons}', en: 'because you {reasons}' },
+  'quiz.and': { vi: ' và ', en: ' and ' },
+  'quiz.aboutYou': { vi: 'Về bạn', en: 'About you' },
+  'quiz.aiWritten': { vi: 'AI viết · có thể chưa đúng', en: 'Written by AI · may be off' },
+  'quiz.templateWritten': { vi: 'Viết theo khuôn', en: 'Template' },
+  'quiz.textsPending': {
+    vi: 'Phần kể ngắn của bạn chưa được đọc. Chân dung lúc này chỉ dựa trên các câu chọn.',
+    en: 'Your written answers have not been read yet. For now the portrait is based on your choices only.',
+  },
+  'quiz.loading': { vi: 'Đang vẽ chân dung…', en: 'Drawing your portrait…' },
+  'quiz.loadFailed': { vi: 'Không tải được chân dung', en: 'Could not load your portrait' },
+  'quiz.empty': {
+    vi: 'Chưa có gì để vẽ. Làm bài tự vấn hoặc chơi vài nhiệm vụ phụ.',
+    en: 'Nothing to draw yet. Take the quiz or play a few side quests.',
+  },
+  'quiz.portrait': { vi: 'Tám chiều', en: 'Eight dimensions' },
   'quiz.dimensions': { vi: '8 chiều', en: '8 dimensions' },
+  'quiz.showDimensions': { vi: 'Xem 8 chiều', en: 'Show the 8 dimensions' },
   'quiz.openMap': { vi: 'Mở toàn bản đồ', en: 'Open the full map' },
   'quiz.caveat': {
-    vi: 'Sáu câu thì chưa đủ để kết luận về tính cách. Đây là gợi ý hướng khám phá, không phải kết quả đo.',
-    en: 'Six questions cannot conclude anything about your personality. Treat this as a direction to explore, not a measurement.',
+    vi: 'Bài này chưa được kiểm định, nên chưa đủ để kết luận về tính cách. Đây là gợi ý hướng khám phá, không phải kết quả đo.',
+    en: 'This quiz is not validated yet, so it cannot conclude anything about your personality. Treat it as a direction to explore, not a measurement.',
   },
+
+  /* ── Chỉ số xã hội ── */
+  'social.title': { vi: 'Chỉ số xã hội', en: 'Social index' },
+  'social.explain': {
+    vi: 'Bạn thích làm việc qua con người hay qua hệ thống, công cụ, dữ liệu. Không bên nào tốt hơn.',
+    en: 'Whether you prefer working through people or through systems, tools and data. Neither is better.',
+  },
+  'social.things': { vi: 'Hệ thống', en: 'Systems' },
+  'social.people': { vi: 'Con người', en: 'People' },
+  'social.label.things': { vi: 'Thiên về hệ thống', en: 'Leans towards systems' },
+  'social.label.balanced': { vi: 'Cân bằng', en: 'Balanced' },
+  'social.label.people': { vi: 'Thiên về con người', en: 'Leans towards people' },
+  'social.basis': {
+    vi: 'Từ {quiz} câu tự vấn và {play} lựa chọn khi chơi',
+    en: 'From {quiz} quiz answers and {play} choices in play',
+  },
+  'social.none': {
+    vi: 'Chưa có chỉ số. Làm bài tự vấn hoặc chơi vài nhiệm vụ phụ.',
+    en: 'No index yet. Take the quiz or play a few side quests.',
+  },
+
+  /* ── Tám chiều, dạng ngắn để ghép câu "vì bạn …" ── */
+  'dim.INTERRUPT': { vi: 'chịu được bị ngắt quãng', en: 'handle interruptions' },
+  'dim.DEEP_WORK': { vi: 'thích tập trung sâu', en: 'like deep focus' },
+  'dim.AMBIGUITY': { vi: 'không ngại việc mơ hồ', en: 'are fine with vague work' },
+  'dim.DETAIL': { vi: 'tỉ mỉ', en: 'are meticulous' },
+  'dim.PEOPLE': { vi: 'thích làm việc với người', en: 'like working with people' },
+  'dim.VISIBLE': { vi: 'thích thấy kết quả rõ', en: 'like visible results' },
+  'dim.REPETITION': { vi: 'chịu được việc lặp lại', en: 'tolerate repetition' },
+  'dim.PRESSURE': { vi: 'chịu được áp lực', en: 'handle pressure' },
 
   /* ── Tổng quan ── */
   'dash.greeting': { vi: 'Chào {name}', en: 'Hello {name}' },
@@ -152,7 +219,7 @@ export const MESSAGES = {
   'dash.byProfile': { vi: 'theo hồ sơ', en: 'by your profile' },
   'dash.openMap': { vi: 'Mở bản đồ', en: 'Open the map' },
   'dash.start': { vi: 'Bắt đầu', en: 'Start' },
-  'dash.answerSix': { vi: 'Trả lời 6 câu', en: 'Answer six questions' },
+  'dash.takeQuiz': { vi: 'Làm bài tự vấn', en: 'Take the quiz' },
 
   /* ── Hành trang ── */
   'profile.title': { vi: 'Hành trang', en: 'My journey' },

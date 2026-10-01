@@ -12,7 +12,12 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { LanguageToggle } from '../components/layout/LanguageToggle';
 import { MESSAGES, translate, type MessageKey } from './messages';
 import { useLanguageStore } from './useT';
-import { DIMENSION_EN, QUIZ_OPTION_EN, QUIZ_PROMPT_EN } from './gameContent';
+import {
+  DIMENSION_EN,
+  QUIZ_HINT_EN,
+  QUIZ_OPTION_EN,
+  QUIZ_PROMPT_EN,
+} from './gameContent';
 import { fixtureIndex } from '@datn/game-core/testing';
 
 const game = fixtureIndex();
@@ -61,6 +66,21 @@ describe('nội dung lấy từ bộ dữ liệu', () => {
           `thiếu lựa chọn ${option.option_id}`,
         ).toBeTruthy();
       }
+    }
+  });
+});
+
+describe('Get to Know Me', () => {
+  it('có bản tiếng Anh cho gợi ý của mọi câu tự luận', () => {
+    for (const question of game.data.quiz.questions) {
+      if (!question.hint) continue;
+      expect(QUIZ_HINT_EN[question.question_id], question.question_id).toBeTruthy();
+    }
+  });
+
+  it('có câu "vì bạn …" ngắn cho cả 8 chiều', () => {
+    for (const key of Object.keys(game.data.fit_dimensions)) {
+      expect(MESSAGES[`dim.${key}` as MessageKey], key).toBeTruthy();
     }
   });
 });

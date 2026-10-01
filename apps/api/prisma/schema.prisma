@@ -119,6 +119,29 @@ model GameProfile {
   eventsPlayed Int      @default(0)
   updatedAt    DateTime @updatedAt
 
+  /// Trục Người–Vật từ các câu chọn của bài tự vấn: tổng và số câu. Phần từ
+  /// nhiệm vụ phụ không lưu, cộng lại từ EventAnswer mỗi lần đọc — cùng luật
+  /// một nguồn như `quizFit`.
+  quizOrientationSum  Float     @default(0)
+  quizOrientationN    Int       @default(0)
+  /// `option_id` của câu giai đoạn (học sinh, sinh viên, đổi nghề…).
+  stage               String?
+  /// Câu tự luận, `{ questionId: text }`. Dữ liệu cá nhân: xoá theo tài khoản.
+  quizTexts           Json?
+  /// Tín hiệu đã qua `acceptTextReading`, và bằng chứng của nó
+  /// `{ signals: [...], orientation: [...] }` kèm trích dẫn. `quizTextReadAt`
+  /// rỗng nghĩa là chưa đọc được (chưa cấu hình AI hoặc lần gọi lỗi).
+  quizTextFit         Json?
+  quizTextEvidence    Json?
+  quizTextReadAt      DateTime?
+  /// Đoạn mô tả người chơi (FR-13). Chỉ viết lại khi `portraitBasis` đổi.
+  portraitText        String?
+  /// "llm" | "template"
+  portraitSource      String?
+  portraitModel       String?
+  portraitBasis       String?
+  portraitAt          DateTime?
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 

@@ -6,6 +6,9 @@
  */
 import { z } from 'zod';
 
+/** Dòng `KEY=` bỏ trống trong .env nghĩa là "không đặt", không phải chuỗi rỗng. */
+const emptyToUndefined = (value: unknown) => (value === '' ? undefined : value);
+
 const EnvSchema = z.object({
   NODE_ENV: z
     .enum(['development', 'test', 'production'])
@@ -26,6 +29,18 @@ const EnvSchema = z.object({
 
   /** Gốc của web app, dùng cho CORS khi chạy thật. Lúc dev có proxy nên không cần. */
   WEB_ORIGIN: z.string().default('http://localhost:4200'),
+
+  /**
+   * Khoá Claude cho phần Get to Know Me: đọc câu tự luận và viết đoạn mô tả
+   * người chơi. Không đặt thì hệ thống vẫn chạy: câu tự luận chờ đọc sau, đoạn
+   * mô tả viết bằng khuôn cố định.
+   */
+  ANTHROPIC_API_KEY: z.preprocess(emptyToUndefined, z.string().optional()),
+  /** Model cho phần trên. Đổi được mà không sửa mã (NFR-12). */
+  PORTRAIT_MODEL: z.preprocess(
+    emptyToUndefined,
+    z.string().default('claude-opus-5'),
+  ),
 });
 
 export type Env = z.infer<typeof EnvSchema>;

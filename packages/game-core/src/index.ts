@@ -22,6 +22,9 @@ export * from './domain/bands.js';
 export * from './domain/sideQuests.js';
 export * from './domain/sideQuestGrader.js';
 export * from './domain/fit.js';
+export * from './domain/quiz.js';
+export * from './domain/social.js';
+export * from './domain/textSignal.js';
 export * from './domain/format.js';
 export * from './domain/followups.js';
 export * from './domain/rng.js';
@@ -30,4 +33,7 @@ export * from './domain/scenarioEngine.js';
 /* ── Chấm điểm ── */
 export * from './domain/grading/types.js';
 export * from './domain/grading/structuredGrading.js';
-export { keywordGrader, defaultTextGrader } from './domain/grading/keywordGrader.js';
+export {
+  keywordGrader,
+  defaultTextGrader,
+} from './domain/grading/keywordGrader.js';

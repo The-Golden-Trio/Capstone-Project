@@ -1,26 +1,38 @@
 import {
   BadRequestException,
   ForbiddenException,
+  Inject,
   Injectable,
 } from '@nestjs/common';
 import {
   MIN_ANSWER_LENGTH,
+  QuizAnswerError,
   SIDE_QUEST_POINTS,
+  acceptTextReading,
+  addFits,
   applySignal,
   bandsOf,
   blankFit,
+  checkQuizTexts,
   matchChoice,
   questKind,
+  scoreQuizChoices,
   sideQuestsFor,
+  type AcceptedEvidence,
   type FitVector,
   type GameEvent,
   type GameIndex,
+  type OrientationTally,
   type QuestKind,
+  type QuizChoice,
+  type QuizTextAnswer,
   type Role,
 } from '@datn/game-core';
 import { ContentService } from '../content/content.service';
+import { Prisma, type GameProfile } from '../generated/prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 import { ProgressService } from '../progress/progress.service';
+import { PORTRAIT_AI, type PortraitAi } from './ai/portrait-ai';
 
 export interface GameProfileView {
   /** Tổng chân dung: phần từ bài tự vấn cộng phần từ các nhiệm vụ phụ. */
@@ -28,6 +40,20 @@ export interface GameProfileView {
   quizDone: boolean;
   eventsPlayed: number;
   doneEventIds: string[];
+}
+
+/** Hồ sơ thô cùng những gì cần để suy ra chân dung — cho `PortraitService`. */
+export interface ProfileState {
+  row: GameProfile;
+  eventAnswers: Array<{ roleCode: string; eventId: string; choiceIndex: number }>;
+  index: GameIndex;
+  view: GameProfileView;
+}
+
+/** Bằng chứng từ câu tự luận, như lưu trong `quizTextEvidence`. */
+export interface TextEvidence {
+  signals: Array<AcceptedEvidence & { questionId: string }>;
+  orientation: Array<{ questionId: string; value: number; quote: string }>;
 }
 
 /** Kết quả một lần trả lời nhiệm vụ phụ. */
@@ -61,6 +87,7 @@ export class ProfileService {
     private readonly prisma: PrismaService,
     private readonly progress: ProgressService,
     private readonly content: ContentService,
+    @Inject(PORTRAIT_AI) private readonly ai: PortraitAi | null,
   ) {}
 
   private ensureProfile(userId: string) {
@@ -72,50 +99,146 @@ export class ProfileService {
   }
 
   async get(userId: string): Promise<GameProfileView> {
-    const [profile, answers, index] = await Promise.all([
+    return (await this.state(userId)).view;
+  }
+
+  async state(userId: string): Promise<ProfileState> {
+    const [row, eventAnswers, index] = await Promise.all([
       this.ensureProfile(userId),
       this.prisma.eventAnswer.findMany({ where: { userId } }),
       this.content.index(),
     ]);
 
     return {
-      fit: addFit(readFit(profile.quizFit), fitFromAnswers(answers, index)),
-      quizDone: profile.quizDone,
-      eventsPlayed: profile.eventsPlayed,
-      doneEventIds: answers.map((a) => a.eventId),
+      row,
+      eventAnswers,
+      index,
+      view: {
+        fit: addFits(
+          readFit(row.quizFit),
+          readFit(row.quizTextFit),
+          fitFromAnswers(eventAnswers, index),
+        ),
+        quizDone: row.quizDone,
+        eventsPlayed: row.eventsPlayed,
+        doneEventIds: eventAnswers.map((a) => a.eventId),
+      },
     };
   }
 
-  /** Ghi kết quả bài tự vấn: tra tín hiệu của từng lựa chọn từ bộ câu hỏi. */
+  /**
+   * Ghi kết quả bài tự vấn.
+   *
+   * Câu chọn: tra tín hiệu từ bộ câu hỏi (`scoreQuizChoices`). Câu tự luận:
+   * AI đọc, rồi `acceptTextReading` bỏ mọi giá trị có trích dẫn bịa. AI trục
+   * trặc thì bài vẫn được lưu — câu tự luận nằm chờ, đọc lại khi xem chân dung.
+   *
+   * Làm lại thì thay hẳn phần đóng góp cũ, và xoá `portraitBasis` để đoạn mô
+   * tả được viết lại.
+   */
   async submitQuiz(
     userId: string,
-    answers: Array<{ questionId: string; optionId: string }>,
+    input: { answers: QuizChoice[]; texts: QuizTextAnswer[] },
   ): Promise<GameProfileView> {
-    const { quiz } = (await this.content.index()).data;
-    let quizFit = blankFit();
+    const index = await this.content.index();
+    const { quiz } = index.data;
 
-    for (const answer of answers) {
-      const question = quiz.questions.find(
-        (q) => q.question_id === answer.questionId,
-      );
-      const option = question?.options.find(
-        (o) => o.option_id === answer.optionId,
-      );
-      if (!option) {
-        throw new BadRequestException(
-          `Câu trả lời không hợp lệ: ${answer.questionId}/${answer.optionId}`,
-        );
+    let score: ReturnType<typeof scoreQuizChoices>;
+    let texts: QuizTextAnswer[];
+    try {
+      score = scoreQuizChoices(input.answers, quiz);
+      texts = checkQuizTexts(input.texts, quiz);
+    } catch (err) {
+      if (err instanceof QuizAnswerError) {
+        throw new BadRequestException(err.message);
       }
-      quizFit = applySignal(quizFit, option.signal);
+      throw err;
     }
+
+    const reading = texts.length ? await this.readTexts(texts, index) : null;
+    const data = {
+      quizFit: score.fit,
+      quizDone: true,
+      quizOrientationSum: score.orientation.sum,
+      quizOrientationN: score.orientation.n,
+      stage: score.stage,
+      quizTexts: texts.length
+        ? Object.fromEntries(texts.map((t) => [t.questionId, t.text]))
+        : Prisma.DbNull,
+      ...textColumns(reading),
+      portraitBasis: null,
+    };
 
     await this.prisma.gameProfile.upsert({
       where: { userId },
-      create: { userId, quizFit, quizDone: true },
-      update: { quizFit, quizDone: true },
+      create: { userId, ...data },
+      update: data,
     });
 
     return this.get(userId);
+  }
+
+  /**
+   * Đọc lại câu tự luận còn nằm chờ (lần trước chưa có AI hoặc AI lỗi).
+   * Trả `true` nếu lần này đọc được.
+   */
+  async retryTextReading(userId: string, row: GameProfile): Promise<boolean> {
+    if (!this.ai || row.quizTextReadAt || !row.quizTexts) return false;
+    const texts = Object.entries(readTexts(row.quizTexts)).map(
+      ([questionId, text]) => ({ questionId, text }),
+    );
+    if (texts.length === 0) return false;
+    const reading = await this.readTexts(texts, await this.content.index());
+    if (!reading) return false;
+    await this.prisma.gameProfile.update({
+      where: { userId },
+      data: textColumns(reading),
+    });
+    return true;
+  }
+
+  private async readTexts(
+    texts: QuizTextAnswer[],
+    index: GameIndex,
+  ): Promise<TextReading | null> {
+    if (!this.ai) return null;
+    const answers = texts.map((t) => {
+      const question = index.data.quiz.questions.find(
+        (q) => q.question_id === t.questionId,
+      );
+      return {
+        questionId: t.questionId,
+        prompt: question?.prompt ?? '',
+        probes: question?.probes ?? [],
+        text: t.text,
+      };
+    });
+
+    const raw = await this.ai.read({
+      dimensions: index.data.fit_dimensions,
+      answers,
+    });
+    if (!raw) return null;
+
+    let fit = blankFit();
+    const evidence: TextEvidence = { signals: [], orientation: [] };
+    for (const answer of answers) {
+      const reading = raw[answer.questionId];
+      if (!reading) continue;
+      const accepted = acceptTextReading(answer.text, reading, index.dimensions);
+      fit = applySignal(fit, accepted.signal);
+      evidence.signals.push(
+        ...accepted.evidence.map((e) => ({ questionId: answer.questionId, ...e })),
+      );
+      if (accepted.orientation !== null) {
+        evidence.orientation.push({
+          questionId: answer.questionId,
+          value: accepted.orientation,
+          quote: reading.orientation?.quote ?? '',
+        });
+      }
+    }
+    return { fit, evidence };
   }
 
   /**
@@ -319,6 +442,50 @@ const readFit = (value: unknown): FitVector => {
   }
   return base;
 };
+
+/** Câu tự luận đã đọc: tín hiệu và bằng chứng. */
+interface TextReading {
+  fit: FitVector;
+  evidence: TextEvidence;
+}
+
+/** Các cột câu tự luận: đọc được thì ghi kết quả, chưa thì để chờ. */
+const textColumns = (reading: TextReading | null) =>
+  reading
+    ? {
+        quizTextFit: reading.fit,
+        quizTextEvidence: reading.evidence as unknown as Prisma.InputJsonValue,
+        quizTextReadAt: new Date(),
+      }
+    : {
+        quizTextFit: Prisma.DbNull,
+        quizTextEvidence: Prisma.DbNull,
+        quizTextReadAt: null,
+      };
+
+const readTexts = (value: unknown): Record<string, string> =>
+  value && typeof value === 'object'
+    ? Object.fromEntries(
+        Object.entries(value as Record<string, unknown>).filter(
+          (entry): entry is [string, string] => typeof entry[1] === 'string',
+        ),
+      )
+    : {};
+
+/** Trục Người–Vật từ câu tự luận đã đọc. */
+export const textOrientation = (evidence: unknown): OrientationTally => {
+  const list = (evidence as Partial<TextEvidence> | null)?.orientation;
+  if (!Array.isArray(list)) return { sum: 0, n: 0 };
+  return list.reduce(
+    (tally, item) =>
+      typeof item?.value === 'number'
+        ? { sum: tally.sum + item.value, n: tally.n + 1 }
+        : tally,
+    { sum: 0, n: 0 },
+  );
+};
+
+export { readTexts as readQuizTexts };
 
 const addFit = (a: FitVector, b: FitVector): FitVector => {
   const out = blankFit();

@@ -60,7 +60,7 @@
 | C3 | 🟠 | Nội dung quá mỏng: 2 kịch bản, 1 nghề. Task 27/8 (DevOps, Solution Architect) chưa làm |
 | C4 | 🟠 | Chưa có công cụ viết seed và duyệt (FR-15, FR-16, NFR-10 đều Must) |
 | C5 | 🟠 | Chưa có đánh giá nghề 5 tiêu chí (FR-12) và random bối cảnh công ty |
-| C6 | ⚪ | Get-to-know-me 6 câu tự soạn, chưa kiểm định. 81/97 sự kiện là C_INFERRED |
+| C6 | ⚪ | Get-to-know-me v0.2 (14 câu hai vế + 3 câu kể) vẫn tự soạn, chưa kiểm định; giá trị Người–Vật của từng vế là suy luận của nhóm. `fit_profile` của nghề suy ra từ sự kiện, và mới có cho 9/22 nghề nên top 5 chỉ xếp trong nhóm Software (D-74). 81/97 sự kiện là C_INFERRED |
 
 ## D. Câu hỏi thiết kế còn treo từ spec kịch bản (`spec-scenario-KHOI1.md`, mục "CÒN THIẾU")
 

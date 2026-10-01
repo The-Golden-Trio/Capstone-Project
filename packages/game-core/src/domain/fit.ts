@@ -78,6 +78,49 @@ export function rankRoles(fit: FitVector, index: GameIndex): RankedRole[] {
     .sort((x, y) => (y.score ?? 0) - (x.score ?? 0));
 }
 
+export interface TopMatch extends RankedRole {
+  score: number;
+  /**
+   * Các chiều góp nhiều nhất vào độ khớp (tích hai vector theo từng chiều),
+   * mạnh nhất trước. Dùng để nói "vì bạn …" cạnh mỗi hành tinh.
+   */
+  reasons: string[];
+}
+
+/**
+ * `n` nghề hợp nhất (FR-10: đúng năm). Rỗng khi người chơi chưa có hồ sơ,
+ * vì lúc đó mọi xếp hạng đều vô nghĩa.
+ */
+export function topMatches(
+  fit: FitVector,
+  index: GameIndex,
+  n = 5,
+): TopMatch[] {
+  if (!hasFit(fit)) return [];
+  return rankRoles(fit, index)
+    .slice(0, n)
+    .map(({ role, score }) => ({
+      role,
+      score: score ?? 0,
+      reasons: DIMENSIONS.map(
+        (d) => [d, (fit[d] ?? 0) * (role.fit_profile[d] ?? 0)] as const,
+      )
+        .filter(([, contribution]) => contribution > 0)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 2)
+        .map(([d]) => d),
+    }));
+}
+
+/** Cộng nhiều vector chân dung. */
+export function addFits(...fits: FitVector[]): FitVector {
+  const out = blankFit();
+  for (const fit of fits) {
+    for (const d of DIMENSIONS) out[d] += fit[d] ?? 0;
+  }
+  return out;
+}
+
 export interface AdjacentRole {
   role_code: string;
   weight: number;

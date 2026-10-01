@@ -76,7 +76,7 @@ Cách sinh scenario mới: xem `occupation-data/specs/HUONG-DAN-SINH-SCENARIO.md
 
 | Lớp | Trạng thái |
 |---|---|
-| **Get-to-know-me** (6 câu, đo 8 chiều fit, có thể thêm tự luận) | Có trong code. **Tuỳ chọn** (D-29). Bộ câu hỏi tự soạn, **chưa kiểm định** |
+| **Get-to-know-me** (1 câu giai đoạn, 14 câu hai vế, 3 câu kể ngắn do AI đọc; đo 8 chiều fit và trục Người–Vật). Kết thúc bằng **Chân dung**: StarMap 5 nghề, đoạn mô tả do AI viết, chỉ số xã hội (D-74, [đặc tả](assets/jobquest-get-to-know-me.md)) | Có trong code. **Tuỳ chọn** (D-29). Bộ câu hỏi tự soạn, **chưa kiểm định** |
 | **Đánh giá nghề 5 tiêu chí** (lương, áp lực, độ khó, cân bằng, yêu thích) | Đã chốt (D-27). **Chưa có trong code**, màn tổng kết mới có "chấm sao độ thực tế" |
 | **Hành trang** (thẻ nhân vật, kỹ năng theo ngày, lộ trình L1→L10, lịch sử lượt chơi) | Có trong code |
 | **Sự kiện roguelike** | Có 43 sự kiện trong game data (7 chung + 36 riêng cho 9 nghề) |
@@ -120,7 +120,8 @@ Chương 5 còn lại và Chương 6–8 (cài đặt, kiểm thử, kết luậ
 | Hạt giống | Seed | skeleton scenario |
 | Nhiên liệu | Competence credit | XP / skill points |
 | Tự vấn · Get to Know Me | Orientation (UC-02) | `/quiz`, `fit_quiz.json` |
-| Chân dung | Quiz result | `/quiz/result` (StarMap, FitRadar) |
+| Chân dung | Quiz result / portrait | `/quiz/result`, `GET /profile/portrait` (StarMap 5 nghề, mô tả, chỉ số xã hội, FitRadar) |
+| Chỉ số xã hội | Social-orientation index (People–Things) | `socialIndex()` trong `game-core/domain/social.ts` |
 | Hành trang | Logbook / personal record | `/profile` |
 | Cổng | Gate | `RequireAuth`, `decideGate()` |
 

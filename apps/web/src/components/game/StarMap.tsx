@@ -5,7 +5,8 @@ import { cx } from '../../lib/cx';
 import { PlanetOrb } from './PlanetOrb';
 
 interface StarMapProps {
-  roles: RankedRole[];
+  /** `reason` là dòng "vì bạn …" — chỉ có ở màn chân dung. */
+  roles: Array<RankedRole & { reason?: string }>;
   /** Hành tinh đang ghé — các cạnh chạm nó sẽ sáng lên. */
   activeRoleCode?: string | null;
   size?: number;
@@ -61,11 +62,12 @@ export function StarMap({
           className,
         )}
       >
-        {roles.map(({ role, score }) => (
+        {roles.map(({ role, score, reason }) => (
           <PlanetOrb
             key={role.role_code}
             role={role}
             score={score}
+            reason={reason}
             size={size}
             onSelect={onSelect}
           />

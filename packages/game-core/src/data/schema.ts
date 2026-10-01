@@ -253,20 +253,63 @@ export const ScenarioSchema = z.object({
 
 /* ── Bộ câu hỏi tự vấn ─────────────────────────────────────────────── */
 
+/**
+ * Ba loại câu trong Get to Know Me:
+ *   - `stage`: người chơi đang ở giai đoạn nào. Không chấm, chỉ chỉnh giọng
+ *     văn của đoạn mô tả.
+ *   - `pair`: hai vế, chọn một vế và mức "rất đúng / hơi đúng".
+ *   - `text`: tự luận. AI đọc để suy ra tín hiệu, kèm trích dẫn nguyên văn.
+ *
+ * Mặc định `pair` để bộ câu hỏi cũ (chưa có `kind`) vẫn đọc được.
+ */
+export const QuizKindSchema = z.enum(['stage', 'pair', 'text']);
+
+export const QuizOptionSchema = z.object({
+  option_id: z.string(),
+  text: z.string(),
+  signal: SignalSchema.default({}),
+  /**
+   * Trục Người–Vật (People–Things của Prediger): dương là thiên về làm việc
+   * qua con người, âm là qua hệ thống, công cụ, dữ liệu. Thiếu nghĩa là câu
+   * này không nói gì về trục đó.
+   */
+  orientation: z.number().optional(),
+});
+
+export const QuizQuestionSchema = z.object({
+  question_id: z.string(),
+  kind: QuizKindSchema.default('pair'),
+  prompt: z.string(),
+  /** Gợi ý nhỏ dưới câu tự luận. */
+  hint: z.string().nullish(),
+  options: z.array(QuizOptionSchema).default([]),
+  min_length: z.number().int().nonnegative().optional(),
+  max_length: z.number().int().positive().optional(),
+  /** Các chiều mà câu tự luận được soạn để làm lộ ra — gợi ý cho AI đọc. */
+  probes: z.array(z.string()).default([]),
+});
+
 export const QuizSchema = z.object({
-  questions: z.array(
-    z.object({
-      question_id: z.string(),
-      prompt: z.string(),
-      options: z.array(
-        z.object({
-          option_id: z.string(),
-          text: z.string(),
-          signal: SignalSchema.default({}),
-        }),
-      ),
-    }),
-  ),
+  _meta: z.object({ version: z.string() }).loose().optional(),
+  questions: z.array(QuizQuestionSchema),
+});
+
+/**
+ * Thứ AI đọc ra từ một câu tự luận. Mỗi giá trị phải kèm một trích dẫn
+ * nguyên văn; máy chủ bỏ những giá trị có trích dẫn không tìm thấy (xem
+ * `acceptTextReading`).
+ */
+export const TextReadingSchema = z.object({
+  signals: z
+    .array(
+      z.object({
+        dimension: z.string(),
+        value: z.number(),
+        quote: z.string(),
+      }),
+    )
+    .default([]),
+  orientation: z.object({ value: z.number(), quote: z.string() }).nullish(),
 });
 
 /* ── Gói dữ liệu ───────────────────────────────────────────────────── */
@@ -308,3 +351,8 @@ export type RandomEvent = z.infer<typeof RandomEventSchema>;
 export type Ending = z.infer<typeof EndingSchema>;
 export type Scenario = z.infer<typeof ScenarioSchema>;
 export type GameData = z.infer<typeof GameDataSchema>;
+export type Quiz = z.infer<typeof QuizSchema>;
+export type QuizKind = z.infer<typeof QuizKindSchema>;
+export type QuizQuestion = z.infer<typeof QuizQuestionSchema>;
+export type QuizOption = z.infer<typeof QuizOptionSchema>;
+export type TextReading = z.infer<typeof TextReadingSchema>;

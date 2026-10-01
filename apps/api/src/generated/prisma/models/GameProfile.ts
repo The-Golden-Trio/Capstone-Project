@@ -28,10 +28,14 @@ export type AggregateGameProfile = {
 
 export type GameProfileAvgAggregateOutputType = {
   eventsPlayed: number | null
+  quizOrientationSum: number | null
+  quizOrientationN: number | null
 }
 
 export type GameProfileSumAggregateOutputType = {
   eventsPlayed: number | null
+  quizOrientationSum: number | null
+  quizOrientationN: number | null
 }
 
 export type GameProfileMinAggregateOutputType = {
@@ -39,6 +43,15 @@ export type GameProfileMinAggregateOutputType = {
   quizDone: boolean | null
   eventsPlayed: number | null
   updatedAt: Date | null
+  quizOrientationSum: number | null
+  quizOrientationN: number | null
+  stage: string | null
+  quizTextReadAt: Date | null
+  portraitText: string | null
+  portraitSource: string | null
+  portraitModel: string | null
+  portraitBasis: string | null
+  portraitAt: Date | null
 }
 
 export type GameProfileMaxAggregateOutputType = {
@@ -46,6 +59,15 @@ export type GameProfileMaxAggregateOutputType = {
   quizDone: boolean | null
   eventsPlayed: number | null
   updatedAt: Date | null
+  quizOrientationSum: number | null
+  quizOrientationN: number | null
+  stage: string | null
+  quizTextReadAt: Date | null
+  portraitText: string | null
+  portraitSource: string | null
+  portraitModel: string | null
+  portraitBasis: string | null
+  portraitAt: Date | null
 }
 
 export type GameProfileCountAggregateOutputType = {
@@ -54,16 +76,32 @@ export type GameProfileCountAggregateOutputType = {
   quizDone: number
   eventsPlayed: number
   updatedAt: number
+  quizOrientationSum: number
+  quizOrientationN: number
+  stage: number
+  quizTexts: number
+  quizTextFit: number
+  quizTextEvidence: number
+  quizTextReadAt: number
+  portraitText: number
+  portraitSource: number
+  portraitModel: number
+  portraitBasis: number
+  portraitAt: number
   _all: number
 }
 
 
 export type GameProfileAvgAggregateInputType = {
   eventsPlayed?: true
+  quizOrientationSum?: true
+  quizOrientationN?: true
 }
 
 export type GameProfileSumAggregateInputType = {
   eventsPlayed?: true
+  quizOrientationSum?: true
+  quizOrientationN?: true
 }
 
 export type GameProfileMinAggregateInputType = {
@@ -71,6 +109,15 @@ export type GameProfileMinAggregateInputType = {
   quizDone?: true
   eventsPlayed?: true
   updatedAt?: true
+  quizOrientationSum?: true
+  quizOrientationN?: true
+  stage?: true
+  quizTextReadAt?: true
+  portraitText?: true
+  portraitSource?: true
+  portraitModel?: true
+  portraitBasis?: true
+  portraitAt?: true
 }
 
 export type GameProfileMaxAggregateInputType = {
@@ -78,6 +125,15 @@ export type GameProfileMaxAggregateInputType = {
   quizDone?: true
   eventsPlayed?: true
   updatedAt?: true
+  quizOrientationSum?: true
+  quizOrientationN?: true
+  stage?: true
+  quizTextReadAt?: true
+  portraitText?: true
+  portraitSource?: true
+  portraitModel?: true
+  portraitBasis?: true
+  portraitAt?: true
 }
 
 export type GameProfileCountAggregateInputType = {
@@ -86,6 +142,18 @@ export type GameProfileCountAggregateInputType = {
   quizDone?: true
   eventsPlayed?: true
   updatedAt?: true
+  quizOrientationSum?: true
+  quizOrientationN?: true
+  stage?: true
+  quizTexts?: true
+  quizTextFit?: true
+  quizTextEvidence?: true
+  quizTextReadAt?: true
+  portraitText?: true
+  portraitSource?: true
+  portraitModel?: true
+  portraitBasis?: true
+  portraitAt?: true
   _all?: true
 }
 
@@ -181,6 +249,18 @@ export type GameProfileGroupByOutputType = {
   quizDone: boolean
   eventsPlayed: number
   updatedAt: Date
+  quizOrientationSum: number
+  quizOrientationN: number
+  stage: string | null
+  quizTexts: runtime.JsonValue | null
+  quizTextFit: runtime.JsonValue | null
+  quizTextEvidence: runtime.JsonValue | null
+  quizTextReadAt: Date | null
+  portraitText: string | null
+  portraitSource: string | null
+  portraitModel: string | null
+  portraitBasis: string | null
+  portraitAt: Date | null
   _count: GameProfileCountAggregateOutputType | null
   _avg: GameProfileAvgAggregateOutputType | null
   _sum: GameProfileSumAggregateOutputType | null
@@ -212,6 +292,18 @@ export type GameProfileWhereInput = {
   quizDone?: Prisma.BoolFilter<"GameProfile"> | boolean
   eventsPlayed?: Prisma.IntFilter<"GameProfile"> | number
   updatedAt?: Prisma.DateTimeFilter<"GameProfile"> | Date | string
+  quizOrientationSum?: Prisma.FloatFilter<"GameProfile"> | number
+  quizOrientationN?: Prisma.IntFilter<"GameProfile"> | number
+  stage?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  quizTexts?: Prisma.JsonNullableFilter<"GameProfile">
+  quizTextFit?: Prisma.JsonNullableFilter<"GameProfile">
+  quizTextEvidence?: Prisma.JsonNullableFilter<"GameProfile">
+  quizTextReadAt?: Prisma.DateTimeNullableFilter<"GameProfile"> | Date | string | null
+  portraitText?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  portraitSource?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  portraitModel?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  portraitBasis?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  portraitAt?: Prisma.DateTimeNullableFilter<"GameProfile"> | Date | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
 
@@ -221,6 +313,18 @@ export type GameProfileOrderByWithRelationInput = {
   quizDone?: Prisma.SortOrder
   eventsPlayed?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  quizOrientationSum?: Prisma.SortOrder
+  quizOrientationN?: Prisma.SortOrder
+  stage?: Prisma.SortOrderInput | Prisma.SortOrder
+  quizTexts?: Prisma.SortOrderInput | Prisma.SortOrder
+  quizTextFit?: Prisma.SortOrderInput | Prisma.SortOrder
+  quizTextEvidence?: Prisma.SortOrderInput | Prisma.SortOrder
+  quizTextReadAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitText?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitSource?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitModel?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitBasis?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitAt?: Prisma.SortOrderInput | Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
 }
 
@@ -233,6 +337,18 @@ export type GameProfileWhereUniqueInput = Prisma.AtLeast<{
   quizDone?: Prisma.BoolFilter<"GameProfile"> | boolean
   eventsPlayed?: Prisma.IntFilter<"GameProfile"> | number
   updatedAt?: Prisma.DateTimeFilter<"GameProfile"> | Date | string
+  quizOrientationSum?: Prisma.FloatFilter<"GameProfile"> | number
+  quizOrientationN?: Prisma.IntFilter<"GameProfile"> | number
+  stage?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  quizTexts?: Prisma.JsonNullableFilter<"GameProfile">
+  quizTextFit?: Prisma.JsonNullableFilter<"GameProfile">
+  quizTextEvidence?: Prisma.JsonNullableFilter<"GameProfile">
+  quizTextReadAt?: Prisma.DateTimeNullableFilter<"GameProfile"> | Date | string | null
+  portraitText?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  portraitSource?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  portraitModel?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  portraitBasis?: Prisma.StringNullableFilter<"GameProfile"> | string | null
+  portraitAt?: Prisma.DateTimeNullableFilter<"GameProfile"> | Date | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "userId">
 
@@ -242,6 +358,18 @@ export type GameProfileOrderByWithAggregationInput = {
   quizDone?: Prisma.SortOrder
   eventsPlayed?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  quizOrientationSum?: Prisma.SortOrder
+  quizOrientationN?: Prisma.SortOrder
+  stage?: Prisma.SortOrderInput | Prisma.SortOrder
+  quizTexts?: Prisma.SortOrderInput | Prisma.SortOrder
+  quizTextFit?: Prisma.SortOrderInput | Prisma.SortOrder
+  quizTextEvidence?: Prisma.SortOrderInput | Prisma.SortOrder
+  quizTextReadAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitText?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitSource?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitModel?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitBasis?: Prisma.SortOrderInput | Prisma.SortOrder
+  portraitAt?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.GameProfileCountOrderByAggregateInput
   _avg?: Prisma.GameProfileAvgOrderByAggregateInput
   _max?: Prisma.GameProfileMaxOrderByAggregateInput
@@ -258,6 +386,18 @@ export type GameProfileScalarWhereWithAggregatesInput = {
   quizDone?: Prisma.BoolWithAggregatesFilter<"GameProfile"> | boolean
   eventsPlayed?: Prisma.IntWithAggregatesFilter<"GameProfile"> | number
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"GameProfile"> | Date | string
+  quizOrientationSum?: Prisma.FloatWithAggregatesFilter<"GameProfile"> | number
+  quizOrientationN?: Prisma.IntWithAggregatesFilter<"GameProfile"> | number
+  stage?: Prisma.StringNullableWithAggregatesFilter<"GameProfile"> | string | null
+  quizTexts?: Prisma.JsonNullableWithAggregatesFilter<"GameProfile">
+  quizTextFit?: Prisma.JsonNullableWithAggregatesFilter<"GameProfile">
+  quizTextEvidence?: Prisma.JsonNullableWithAggregatesFilter<"GameProfile">
+  quizTextReadAt?: Prisma.DateTimeNullableWithAggregatesFilter<"GameProfile"> | Date | string | null
+  portraitText?: Prisma.StringNullableWithAggregatesFilter<"GameProfile"> | string | null
+  portraitSource?: Prisma.StringNullableWithAggregatesFilter<"GameProfile"> | string | null
+  portraitModel?: Prisma.StringNullableWithAggregatesFilter<"GameProfile"> | string | null
+  portraitBasis?: Prisma.StringNullableWithAggregatesFilter<"GameProfile"> | string | null
+  portraitAt?: Prisma.DateTimeNullableWithAggregatesFilter<"GameProfile"> | Date | string | null
 }
 
 export type GameProfileCreateInput = {
@@ -265,6 +405,18 @@ export type GameProfileCreateInput = {
   quizDone?: boolean
   eventsPlayed?: number
   updatedAt?: Date | string
+  quizOrientationSum?: number
+  quizOrientationN?: number
+  stage?: string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Date | string | null
+  portraitText?: string | null
+  portraitSource?: string | null
+  portraitModel?: string | null
+  portraitBasis?: string | null
+  portraitAt?: Date | string | null
   user: Prisma.UserCreateNestedOneWithoutGameProfileInput
 }
 
@@ -274,6 +426,18 @@ export type GameProfileUncheckedCreateInput = {
   quizDone?: boolean
   eventsPlayed?: number
   updatedAt?: Date | string
+  quizOrientationSum?: number
+  quizOrientationN?: number
+  stage?: string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Date | string | null
+  portraitText?: string | null
+  portraitSource?: string | null
+  portraitModel?: string | null
+  portraitBasis?: string | null
+  portraitAt?: Date | string | null
 }
 
 export type GameProfileUpdateInput = {
@@ -281,6 +445,18 @@ export type GameProfileUpdateInput = {
   quizDone?: Prisma.BoolFieldUpdateOperationsInput | boolean
   eventsPlayed?: Prisma.IntFieldUpdateOperationsInput | number
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  quizOrientationSum?: Prisma.FloatFieldUpdateOperationsInput | number
+  quizOrientationN?: Prisma.IntFieldUpdateOperationsInput | number
+  stage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  portraitText?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitModel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitBasis?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   user?: Prisma.UserUpdateOneRequiredWithoutGameProfileNestedInput
 }
 
@@ -290,6 +466,18 @@ export type GameProfileUncheckedUpdateInput = {
   quizDone?: Prisma.BoolFieldUpdateOperationsInput | boolean
   eventsPlayed?: Prisma.IntFieldUpdateOperationsInput | number
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  quizOrientationSum?: Prisma.FloatFieldUpdateOperationsInput | number
+  quizOrientationN?: Prisma.IntFieldUpdateOperationsInput | number
+  stage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  portraitText?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitModel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitBasis?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type GameProfileCreateManyInput = {
@@ -298,6 +486,18 @@ export type GameProfileCreateManyInput = {
   quizDone?: boolean
   eventsPlayed?: number
   updatedAt?: Date | string
+  quizOrientationSum?: number
+  quizOrientationN?: number
+  stage?: string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Date | string | null
+  portraitText?: string | null
+  portraitSource?: string | null
+  portraitModel?: string | null
+  portraitBasis?: string | null
+  portraitAt?: Date | string | null
 }
 
 export type GameProfileUpdateManyMutationInput = {
@@ -305,6 +505,18 @@ export type GameProfileUpdateManyMutationInput = {
   quizDone?: Prisma.BoolFieldUpdateOperationsInput | boolean
   eventsPlayed?: Prisma.IntFieldUpdateOperationsInput | number
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  quizOrientationSum?: Prisma.FloatFieldUpdateOperationsInput | number
+  quizOrientationN?: Prisma.IntFieldUpdateOperationsInput | number
+  stage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  portraitText?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitModel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitBasis?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type GameProfileUncheckedUpdateManyInput = {
@@ -313,6 +525,18 @@ export type GameProfileUncheckedUpdateManyInput = {
   quizDone?: Prisma.BoolFieldUpdateOperationsInput | boolean
   eventsPlayed?: Prisma.IntFieldUpdateOperationsInput | number
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  quizOrientationSum?: Prisma.FloatFieldUpdateOperationsInput | number
+  quizOrientationN?: Prisma.IntFieldUpdateOperationsInput | number
+  stage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  portraitText?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitModel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitBasis?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type GameProfileNullableScalarRelationFilter = {
@@ -326,10 +550,24 @@ export type GameProfileCountOrderByAggregateInput = {
   quizDone?: Prisma.SortOrder
   eventsPlayed?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  quizOrientationSum?: Prisma.SortOrder
+  quizOrientationN?: Prisma.SortOrder
+  stage?: Prisma.SortOrder
+  quizTexts?: Prisma.SortOrder
+  quizTextFit?: Prisma.SortOrder
+  quizTextEvidence?: Prisma.SortOrder
+  quizTextReadAt?: Prisma.SortOrder
+  portraitText?: Prisma.SortOrder
+  portraitSource?: Prisma.SortOrder
+  portraitModel?: Prisma.SortOrder
+  portraitBasis?: Prisma.SortOrder
+  portraitAt?: Prisma.SortOrder
 }
 
 export type GameProfileAvgOrderByAggregateInput = {
   eventsPlayed?: Prisma.SortOrder
+  quizOrientationSum?: Prisma.SortOrder
+  quizOrientationN?: Prisma.SortOrder
 }
 
 export type GameProfileMaxOrderByAggregateInput = {
@@ -337,6 +575,15 @@ export type GameProfileMaxOrderByAggregateInput = {
   quizDone?: Prisma.SortOrder
   eventsPlayed?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  quizOrientationSum?: Prisma.SortOrder
+  quizOrientationN?: Prisma.SortOrder
+  stage?: Prisma.SortOrder
+  quizTextReadAt?: Prisma.SortOrder
+  portraitText?: Prisma.SortOrder
+  portraitSource?: Prisma.SortOrder
+  portraitModel?: Prisma.SortOrder
+  portraitBasis?: Prisma.SortOrder
+  portraitAt?: Prisma.SortOrder
 }
 
 export type GameProfileMinOrderByAggregateInput = {
@@ -344,10 +591,21 @@ export type GameProfileMinOrderByAggregateInput = {
   quizDone?: Prisma.SortOrder
   eventsPlayed?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  quizOrientationSum?: Prisma.SortOrder
+  quizOrientationN?: Prisma.SortOrder
+  stage?: Prisma.SortOrder
+  quizTextReadAt?: Prisma.SortOrder
+  portraitText?: Prisma.SortOrder
+  portraitSource?: Prisma.SortOrder
+  portraitModel?: Prisma.SortOrder
+  portraitBasis?: Prisma.SortOrder
+  portraitAt?: Prisma.SortOrder
 }
 
 export type GameProfileSumOrderByAggregateInput = {
   eventsPlayed?: Prisma.SortOrder
+  quizOrientationSum?: Prisma.SortOrder
+  quizOrientationN?: Prisma.SortOrder
 }
 
 export type GameProfileCreateNestedOneWithoutUserInput = {
@@ -394,11 +652,31 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type FloatFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type GameProfileCreateWithoutUserInput = {
   quizFit?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   quizDone?: boolean
   eventsPlayed?: number
   updatedAt?: Date | string
+  quizOrientationSum?: number
+  quizOrientationN?: number
+  stage?: string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Date | string | null
+  portraitText?: string | null
+  portraitSource?: string | null
+  portraitModel?: string | null
+  portraitBasis?: string | null
+  portraitAt?: Date | string | null
 }
 
 export type GameProfileUncheckedCreateWithoutUserInput = {
@@ -406,6 +684,18 @@ export type GameProfileUncheckedCreateWithoutUserInput = {
   quizDone?: boolean
   eventsPlayed?: number
   updatedAt?: Date | string
+  quizOrientationSum?: number
+  quizOrientationN?: number
+  stage?: string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Date | string | null
+  portraitText?: string | null
+  portraitSource?: string | null
+  portraitModel?: string | null
+  portraitBasis?: string | null
+  portraitAt?: Date | string | null
 }
 
 export type GameProfileCreateOrConnectWithoutUserInput = {
@@ -429,6 +719,18 @@ export type GameProfileUpdateWithoutUserInput = {
   quizDone?: Prisma.BoolFieldUpdateOperationsInput | boolean
   eventsPlayed?: Prisma.IntFieldUpdateOperationsInput | number
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  quizOrientationSum?: Prisma.FloatFieldUpdateOperationsInput | number
+  quizOrientationN?: Prisma.IntFieldUpdateOperationsInput | number
+  stage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  portraitText?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitModel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitBasis?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type GameProfileUncheckedUpdateWithoutUserInput = {
@@ -436,6 +738,18 @@ export type GameProfileUncheckedUpdateWithoutUserInput = {
   quizDone?: Prisma.BoolFieldUpdateOperationsInput | boolean
   eventsPlayed?: Prisma.IntFieldUpdateOperationsInput | number
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  quizOrientationSum?: Prisma.FloatFieldUpdateOperationsInput | number
+  quizOrientationN?: Prisma.IntFieldUpdateOperationsInput | number
+  stage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quizTexts?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextFit?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextEvidence?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  quizTextReadAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  portraitText?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitSource?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitModel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitBasis?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  portraitAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 
@@ -446,6 +760,18 @@ export type GameProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   quizDone?: boolean
   eventsPlayed?: boolean
   updatedAt?: boolean
+  quizOrientationSum?: boolean
+  quizOrientationN?: boolean
+  stage?: boolean
+  quizTexts?: boolean
+  quizTextFit?: boolean
+  quizTextEvidence?: boolean
+  quizTextReadAt?: boolean
+  portraitText?: boolean
+  portraitSource?: boolean
+  portraitModel?: boolean
+  portraitBasis?: boolean
+  portraitAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["gameProfile"]>
 
@@ -455,6 +781,18 @@ export type GameProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   quizDone?: boolean
   eventsPlayed?: boolean
   updatedAt?: boolean
+  quizOrientationSum?: boolean
+  quizOrientationN?: boolean
+  stage?: boolean
+  quizTexts?: boolean
+  quizTextFit?: boolean
+  quizTextEvidence?: boolean
+  quizTextReadAt?: boolean
+  portraitText?: boolean
+  portraitSource?: boolean
+  portraitModel?: boolean
+  portraitBasis?: boolean
+  portraitAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["gameProfile"]>
 
@@ -464,6 +802,18 @@ export type GameProfileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   quizDone?: boolean
   eventsPlayed?: boolean
   updatedAt?: boolean
+  quizOrientationSum?: boolean
+  quizOrientationN?: boolean
+  stage?: boolean
+  quizTexts?: boolean
+  quizTextFit?: boolean
+  quizTextEvidence?: boolean
+  quizTextReadAt?: boolean
+  portraitText?: boolean
+  portraitSource?: boolean
+  portraitModel?: boolean
+  portraitBasis?: boolean
+  portraitAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["gameProfile"]>
 
@@ -473,9 +823,21 @@ export type GameProfileSelectScalar = {
   quizDone?: boolean
   eventsPlayed?: boolean
   updatedAt?: boolean
+  quizOrientationSum?: boolean
+  quizOrientationN?: boolean
+  stage?: boolean
+  quizTexts?: boolean
+  quizTextFit?: boolean
+  quizTextEvidence?: boolean
+  quizTextReadAt?: boolean
+  portraitText?: boolean
+  portraitSource?: boolean
+  portraitModel?: boolean
+  portraitBasis?: boolean
+  portraitAt?: boolean
 }
 
-export type GameProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"userId" | "quizFit" | "quizDone" | "eventsPlayed" | "updatedAt", ExtArgs["result"]["gameProfile"]>
+export type GameProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"userId" | "quizFit" | "quizDone" | "eventsPlayed" | "updatedAt" | "quizOrientationSum" | "quizOrientationN" | "stage" | "quizTexts" | "quizTextFit" | "quizTextEvidence" | "quizTextReadAt" | "portraitText" | "portraitSource" | "portraitModel" | "portraitBasis" | "portraitAt", ExtArgs["result"]["gameProfile"]>
 export type GameProfileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -504,6 +866,40 @@ export type $GameProfilePayload<ExtArgs extends runtime.Types.Extensions.Interna
     quizDone: boolean
     eventsPlayed: number
     updatedAt: Date
+    /**
+     * Trục Người–Vật từ các câu chọn của bài tự vấn: tổng và số câu. Phần từ
+     * nhiệm vụ phụ không lưu, cộng lại từ EventAnswer mỗi lần đọc — cùng luật
+     * một nguồn như `quizFit`.
+     */
+    quizOrientationSum: number
+    quizOrientationN: number
+    /**
+     * `option_id` của câu giai đoạn (học sinh, sinh viên, đổi nghề…).
+     */
+    stage: string | null
+    /**
+     * Câu tự luận, `{ questionId: text }`. Dữ liệu cá nhân: xoá theo tài khoản.
+     */
+    quizTexts: runtime.JsonValue | null
+    /**
+     * Tín hiệu đã qua `acceptTextReading`, và bằng chứng của nó
+     * `{ signals: [...], orientation: [...] }` kèm trích dẫn. `quizTextReadAt`
+     * rỗng nghĩa là chưa đọc được (chưa cấu hình AI hoặc lần gọi lỗi).
+     */
+    quizTextFit: runtime.JsonValue | null
+    quizTextEvidence: runtime.JsonValue | null
+    quizTextReadAt: Date | null
+    /**
+     * Đoạn mô tả người chơi (FR-13). Chỉ viết lại khi `portraitBasis` đổi.
+     */
+    portraitText: string | null
+    /**
+     * "llm" | "template"
+     */
+    portraitSource: string | null
+    portraitModel: string | null
+    portraitBasis: string | null
+    portraitAt: Date | null
   }, ExtArgs["result"]["gameProfile"]>
   composites: {}
 }
@@ -933,6 +1329,18 @@ export interface GameProfileFieldRefs {
   readonly quizDone: Prisma.FieldRef<"GameProfile", 'Boolean'>
   readonly eventsPlayed: Prisma.FieldRef<"GameProfile", 'Int'>
   readonly updatedAt: Prisma.FieldRef<"GameProfile", 'DateTime'>
+  readonly quizOrientationSum: Prisma.FieldRef<"GameProfile", 'Float'>
+  readonly quizOrientationN: Prisma.FieldRef<"GameProfile", 'Int'>
+  readonly stage: Prisma.FieldRef<"GameProfile", 'String'>
+  readonly quizTexts: Prisma.FieldRef<"GameProfile", 'Json'>
+  readonly quizTextFit: Prisma.FieldRef<"GameProfile", 'Json'>
+  readonly quizTextEvidence: Prisma.FieldRef<"GameProfile", 'Json'>
+  readonly quizTextReadAt: Prisma.FieldRef<"GameProfile", 'DateTime'>
+  readonly portraitText: Prisma.FieldRef<"GameProfile", 'String'>
+  readonly portraitSource: Prisma.FieldRef<"GameProfile", 'String'>
+  readonly portraitModel: Prisma.FieldRef<"GameProfile", 'String'>
+  readonly portraitBasis: Prisma.FieldRef<"GameProfile", 'String'>
+  readonly portraitAt: Prisma.FieldRef<"GameProfile", 'DateTime'>
 }
     
 

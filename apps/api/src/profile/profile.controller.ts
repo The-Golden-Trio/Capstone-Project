@@ -6,6 +6,7 @@ import {
   NotFoundException,
   Param,
   Post,
+  Query,
 } from '@nestjs/common';
 import { ZodValidationPipe } from '../common/zod-validation.pipe';
 import {
@@ -18,15 +19,18 @@ import {
   type RoleProgress,
 } from '../progress/progress.service';
 import { RunsService } from '../runs/runs.service';
+import { PortraitService, type PortraitView } from './portrait.service';
 import { ProfileService, type GameProfileView } from './profile.service';
 import {
   AnswerEventSchema,
   EnrollSchema,
   ImportLegacySchema,
+  PortraitQuerySchema,
   SubmitQuizSchema,
   type AnswerEventDto,
   type EnrollDto,
   type ImportLegacyDto,
+  type PortraitQueryDto,
   type SubmitQuizDto,
 } from './dto/profile.dto';
 
@@ -34,6 +38,7 @@ import {
 export class ProfileController {
   constructor(
     private readonly profile: ProfileService,
+    private readonly portrait: PortraitService,
     private readonly progress: ProgressService,
     private readonly runs: RunsService,
   ) {}
@@ -87,7 +92,16 @@ export class ProfileController {
     @CurrentUser() user: AuthUser,
     @Body(new ZodValidationPipe(SubmitQuizSchema)) dto: SubmitQuizDto,
   ): Promise<GameProfileView> {
-    return this.profile.submitQuiz(user.id, dto.answers);
+    return this.profile.submitQuiz(user.id, dto);
+  }
+
+  /** Chân dung: năm nghề hợp nhất, chỉ số xã hội, đoạn mô tả (FR-10, FR-13). */
+  @Get('portrait')
+  portraitView(
+    @CurrentUser() user: AuthUser,
+    @Query(new ZodValidationPipe(PortraitQuerySchema)) query: PortraitQueryDto,
+  ): Promise<PortraitView> {
+    return this.portrait.get(user.id, query.locale);
   }
 
   @HttpCode(200)

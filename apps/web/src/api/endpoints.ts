@@ -9,6 +9,7 @@ import {
   EventAnswerResultSchema,
   GameProfileSchema,
   OkSchema,
+  PortraitSchema,
   ProgressSummarySchema,
   RoleProgressSchema,
   RunHistorySchema,
@@ -20,6 +21,7 @@ import {
   type ScenarioContent,
   type EventAnswerResult,
   type GameProfileView,
+  type PortraitView,
   type ProgressSummary,
   type RoleProgress,
   type RunHistoryItem,
@@ -99,6 +101,12 @@ export const authApi = {
 
 /* ── Hồ sơ và tiến trình ───────────────────────────────────────────── */
 
+/** Bài Get to Know Me: câu chọn kèm mức (1 rất đúng, 0.5 hơi đúng), và câu tự luận. */
+export interface QuizSubmission {
+  answers: Array<{ questionId: string; optionId: string; strength?: 1 | 0.5 }>;
+  texts: Array<{ questionId: string; text: string }>;
+}
+
 export const profileApi = {
   get: (): Promise<GameProfileView> => api('/profile', GameProfileSchema),
 
@@ -118,13 +126,12 @@ export const profileApi = {
       body: { band },
     }),
 
-  submitQuiz: (
-    answers: Array<{ questionId: string; optionId: string }>,
-  ): Promise<GameProfileView> =>
-    api('/profile/quiz', GameProfileSchema, {
-      method: 'POST',
-      body: { answers },
-    }),
+  submitQuiz: (body: QuizSubmission): Promise<GameProfileView> =>
+    api('/profile/quiz', GameProfileSchema, { method: 'POST', body }),
+
+  /** Chân dung — đoạn mô tả viết bằng đúng ngôn ngữ đang chọn. */
+  portrait: (locale: 'vi' | 'en'): Promise<PortraitView> =>
+    api(`/profile/portrait?locale=${locale}`, PortraitSchema),
 
   answerEvent: (
     eventId: string,

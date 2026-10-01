@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { hasFit } from '@datn/game-core';
 import { FitRadar } from '../components/game/FitRadar';
+import { PortraitDescription } from '../components/game/PortraitDescription';
 import { PageHeader } from '../components/layout/PageHeader';
 import { BandRoadmap } from '../components/profile/BandRoadmap';
 import { CharacterCard } from '../components/profile/CharacterCard';
@@ -13,6 +14,7 @@ import { Button } from '../components/ui/Button';
 import { Card, CardBody, CardHeader } from '../components/ui/Card';
 import { EmptyState } from '../components/ui/EmptyState';
 import { Pill } from '../components/ui/Pill';
+import { usePortrait } from '../hooks/usePortrait';
 import { useT } from '../i18n/useT';
 import { useJourneyStore } from '../store/journeyStore';
 import { useProfileStore } from '../store/profileStore';
@@ -34,6 +36,8 @@ export function ProfilePage() {
   const profile = useProfileStore();
   const { summary, runs, load } = useProgressStore();
   const currentBand = useJourneyStore((s) => s.band);
+  // Chơi thêm nhiệm vụ phụ thì chỉ số xã hội dịch, nên tải lại theo số đó.
+  const { portrait } = usePortrait(profile.eventsPlayed);
 
   useEffect(() => {
     void load();
@@ -111,6 +115,12 @@ export function ProfilePage() {
         </CardBody>
       </Card>
 
+      {portrait && (
+        <div className="mb-4">
+          <PortraitDescription portrait={portrait} />
+        </div>
+      )}
+
       <div className="grid gap-4 lg:[grid-template-columns:minmax(0,3fr)_minmax(300px,2fr)]">
         <Card>
           <CardHeader title={t('profile.playedRuns')}>
@@ -132,10 +142,10 @@ export function ProfilePage() {
               <EmptyState
                 icon="?"
                 action={
-                  <Button onClick={() => navigate('/quiz')}>{t('dash.answerSix')}</Button>
+                  <Button onClick={() => navigate('/quiz')}>{t('dash.takeQuiz')}</Button>
                 }
               >
-                Chưa có nét nào. Làm vài nhiệm vụ phụ hoặc trả lời 6 câu tự vấn.
+                {t('quiz.empty')}
               </EmptyState>
             )}
           </CardBody>

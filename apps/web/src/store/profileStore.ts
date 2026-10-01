@@ -9,7 +9,7 @@
  */
 import { create } from 'zustand';
 import { blankFit, type FitVector } from '@datn/game-core';
-import { profileApi } from '../api/endpoints';
+import { profileApi, type QuizSubmission } from '../api/endpoints';
 import type { EventAnswerResult } from '../api/schemas';
 
 /** Khoá bản lưu cũ của prototype, chỉ còn dùng để nhập một lần rồi xoá. */
@@ -23,9 +23,7 @@ interface ProfileStore {
   loaded: boolean;
 
   load: () => Promise<void>;
-  submitQuiz: (
-    answers: Array<{ questionId: string; optionId: string }>,
-  ) => Promise<void>;
+  submitQuiz: (submission: QuizSubmission) => Promise<void>;
   /** Trả về diễn biến do máy chủ tra từ bộ dữ liệu. */
   /** Trả về cả diễn biến lẫn điểm kỹ năng vừa nhận, để giao diện báo lại. */
   answerEvent: (
@@ -58,8 +56,8 @@ export const useProfileStore = create<ProfileStore>()((set) => ({
     set({ ...profile, loaded: true });
   },
 
-  submitQuiz: async (answers) => {
-    const profile = await profileApi.submitQuiz(answers);
+  submitQuiz: async (submission) => {
+    const profile = await profileApi.submitQuiz(submission);
     set({ ...profile, loaded: true });
   },
 

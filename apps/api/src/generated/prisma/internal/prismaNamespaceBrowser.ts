@@ -145,7 +145,19 @@ export const GameProfileScalarFieldEnum = {
   quizFit: 'quizFit',
   quizDone: 'quizDone',
   eventsPlayed: 'eventsPlayed',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  quizOrientationSum: 'quizOrientationSum',
+  quizOrientationN: 'quizOrientationN',
+  stage: 'stage',
+  quizTexts: 'quizTexts',
+  quizTextFit: 'quizTextFit',
+  quizTextEvidence: 'quizTextEvidence',
+  quizTextReadAt: 'quizTextReadAt',
+  portraitText: 'portraitText',
+  portraitSource: 'portraitSource',
+  portraitModel: 'portraitModel',
+  portraitBasis: 'portraitBasis',
+  portraitAt: 'portraitAt'
 } as const
 
 export type GameProfileScalarFieldEnum = (typeof GameProfileScalarFieldEnum)[keyof typeof GameProfileScalarFieldEnum]

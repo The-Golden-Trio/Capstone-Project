@@ -1937,7 +1937,19 @@ export const GameProfileScalarFieldEnum = {
   quizFit: 'quizFit',
   quizDone: 'quizDone',
   eventsPlayed: 'eventsPlayed',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  quizOrientationSum: 'quizOrientationSum',
+  quizOrientationN: 'quizOrientationN',
+  stage: 'stage',
+  quizTexts: 'quizTexts',
+  quizTextFit: 'quizTextFit',
+  quizTextEvidence: 'quizTextEvidence',
+  quizTextReadAt: 'quizTextReadAt',
+  portraitText: 'portraitText',
+  portraitSource: 'portraitSource',
+  portraitModel: 'portraitModel',
+  portraitBasis: 'portraitBasis',
+  portraitAt: 'portraitAt'
 } as const
 
 export type GameProfileScalarFieldEnum = (typeof GameProfileScalarFieldEnum)[keyof typeof GameProfileScalarFieldEnum]
@@ -2258,20 +2270,6 @@ export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
 
 
 /**
- * Reference to a field of type 'BigInt'
- */
-export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
-    
-
-
-/**
- * Reference to a field of type 'BigInt[]'
- */
-export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
-    
-
-
-/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -2282,6 +2280,20 @@ export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, '
  * Reference to a field of type 'Float[]'
  */
 export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+/**
+ * Reference to a field of type 'BigInt'
+ */
+export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
+    
+
+
+/**
+ * Reference to a field of type 'BigInt[]'
+ */
+export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
     
 
 /**

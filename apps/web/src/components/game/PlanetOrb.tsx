@@ -8,6 +8,8 @@ interface PlanetOrbProps {
   /** Độ khớp 0–1, `null` khi chưa có hồ sơ người chơi. */
   score?: number | null;
   size?: number;
+  /** Một dòng "vì bạn …" dưới tên, khi hành tinh được gợi ý cho người chơi. */
+  reason?: string;
   onSelect: (roleCode: string) => void;
 }
 
@@ -16,6 +18,7 @@ export function PlanetOrb({
   role,
   score = null,
   size = 96,
+  reason,
   onSelect,
 }: PlanetOrbProps) {
   const content = useGameIndex();
@@ -45,6 +48,11 @@ export function PlanetOrb({
         <span>vào từ {role.band_start}</span>
         {startSalary ? <span>{formatVnd(startSalary)}</span> : null}
       </span>
+      {reason && (
+        <span className="text-balance text-center text-[11.5px] leading-snug text-ink-2">
+          {reason}
+        </span>
+      )}
     </button>
   );
 }

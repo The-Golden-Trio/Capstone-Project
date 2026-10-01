@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-09-25",
+    "generated_at": "2026-09-29",
     "source_dataset": "occupation-data/datasets/final_22_roles.json",
     "group": "Software Engineering & Architecture",
     "note": "SINH TU DONG. Sinh lai: node docs/data/build.mjs"
@@ -130,16 +130,16 @@
   "quiz": {
     "_meta": {
       "file": "shared/fit_quiz.json",
-      "version": "0.1-draft",
+      "version": "0.2-draft",
       "status": "CHUA_VERIFY",
       "evidence_level": "C_INFERRED",
-      "purpose": "Bộ câu hỏi cho bước 2 'Hiểu bản thân'. Đo người chơi trên 8 chiều fit_dimensions của dataset_22_roles_enriched_v3.json, rồi ghép với hồ sơ hợp nghề của từng nghề để gợi ý.",
+      "purpose": "Bộ câu hỏi Get to Know Me. Đo người chơi trên 8 chiều fit_dimensions và trục Người–Vật (social index), rồi ghép với hồ sơ hợp nghề để gợi ý 5 nghề. Đặc tả: docs/project-hub/assets/jobquest-get-to-know-me.md",
       "method_note": "Đây là câu tự soạn, KHÔNG lấy từ bộ đo tâm lý đã chuẩn hoá nào (không phải RIASEC, không phải Big Five). Chưa kiểm định độ tin cậy. Dùng để gợi ý hướng khám phá, KHÔNG dùng làm kết luận về tính cách.",
-      "scoring": "Mỗi vế cộng điểm cho 1-2 chiều. Cộng dồn thành vector 8 chiều, chuẩn hoá, rồi so cosine với hồ sơ nghề.",
-      "usage": "Bỏ qua được. Người chơi bỏ qua thì vào thẳng màn chọn nghề, không bị thiệt gì.",
+      "scoring": "stage: không chấm, chỉ chỉnh giọng văn mô tả. pair: người chơi chọn một vế và mức (rất đúng = 1.0, hơi đúng = 0.5); signal và orientation nhân với mức. text: AI đọc câu trả lời, trả tín hiệu −2..+2 cho từng chiều kèm trích nguyên văn; máy chủ bỏ mọi giá trị có trích dẫn không có trong câu trả lời và kẹp mỗi chiều về ±2. orientation: + là thiên về con người, − là thiên về hệ thống/vật (trục People–Things của Prediger).",
+      "usage": "Bỏ qua được (D-29). Người chơi bỏ qua thì vào thẳng màn chọn nghề, không bị thiệt gì. Câu tự luận bắt buộc nếu làm bài, vì đó là phần AI đọc để viết mô tả.",
       "unknowns": [
-        "Sáu câu là quá ít để đo tin cậy 8 chiều. Mỗi chiều chỉ được chạm 1-3 lần.",
-        "Chiều REPETITION và VISIBLE khó hỏi trực tiếp mà không lộ đáp án mong muốn — người chơi dễ chọn vế nghe hay hơn thay vì vế đúng với mình.",
+        "Vẫn là câu tự soạn, chưa kiểm định độ tin cậy. Mỗi chiều nay được chạm 3–6 lần qua câu chọn, cộng thêm câu tự luận.",
+        "orientation của câu chọn là suy luận của nhóm theo khái niệm People–Things, chưa đối chiếu với thang đo gốc.",
         "Chưa đối chiếu kết quả gợi ý với lựa chọn nghề thật của người chơi sau đó, nên chưa biết gợi ý có đúng không."
       ]
     },
@@ -155,7 +155,35 @@
     ],
     "questions": [
       {
+        "question_id": "stage",
+        "kind": "stage",
+        "prompt": "Bạn đang ở giai đoạn nào?",
+        "options": [
+          {
+            "option_id": "stage_student",
+            "text": "Học sinh, đang chọn ngành",
+            "signal": {}
+          },
+          {
+            "option_id": "stage_university",
+            "text": "Sinh viên hoặc mới ra trường",
+            "signal": {}
+          },
+          {
+            "option_id": "stage_switcher",
+            "text": "Đã đi làm, đang nghĩ chuyện đổi nghề",
+            "signal": {}
+          },
+          {
+            "option_id": "stage_curious",
+            "text": "Chỉ tò mò muốn thử",
+            "signal": {}
+          }
+        ]
+      },
+      {
         "question_id": "q1",
+        "kind": "pair",
         "prompt": "Một buổi chiều làm việc lý tưởng với bạn là",
         "options": [
           {
@@ -164,7 +192,8 @@
             "signal": {
               "DEEP_WORK": 2,
               "INTERRUPT": -1
-            }
+            },
+            "orientation": -1
           },
           {
             "option_id": "q1b",
@@ -172,12 +201,14 @@
             "signal": {
               "PEOPLE": 2,
               "INTERRUPT": 1
-            }
+            },
+            "orientation": 1
           }
         ]
       },
       {
         "question_id": "q2",
+        "kind": "pair",
         "prompt": "Bạn nhận một yêu cầu chỉ có đúng một câu, không rõ phải làm gì",
         "options": [
           {
@@ -189,7 +220,7 @@
           },
           {
             "option_id": "q2b",
-            "text": "Thấy khó chịu. Muốn có đề bài rõ rồi mới bắt đầu",
+            "text": "Hỏi lại cho rõ đầu vào, đầu ra rồi mới bắt tay làm",
             "signal": {
               "AMBIGUITY": -2,
               "DETAIL": 1
@@ -199,6 +230,7 @@
       },
       {
         "question_id": "q3",
+        "kind": "pair",
         "prompt": "Điện thoại reo lúc 10 giờ tối, hệ thống đang có chuyện",
         "options": [
           {
@@ -221,6 +253,7 @@
       },
       {
         "question_id": "q4",
+        "kind": "pair",
         "prompt": "Trong một bản báo cáo dài, bạn thường là người",
         "options": [
           {
@@ -242,7 +275,23 @@
         ]
       },
       {
+        "question_id": "t1",
+        "kind": "text",
+        "prompt": "Kể một lần bạn làm một việc mà quên cả giờ giấc. Bạn đang làm gì, một mình hay với ai?",
+        "hint": "Không cần là việc học hay đi làm. Chơi game, làm đồ án, tổ chức sự kiện… đều được.",
+        "min_length": 20,
+        "max_length": 400,
+        "probes": [
+          "DEEP_WORK",
+          "PEOPLE",
+          "VISIBLE",
+          "DETAIL"
+        ],
+        "options": []
+      },
+      {
         "question_id": "q5",
+        "kind": "pair",
         "prompt": "Sau một tuần làm việc, điều khiến bạn thấy đáng nhất là",
         "options": [
           {
@@ -264,6 +313,7 @@
       },
       {
         "question_id": "q6",
+        "kind": "pair",
         "prompt": "Một công việc phải lặp lại gần như y hệt mỗi tuần",
         "options": [
           {
@@ -283,6 +333,232 @@
             }
           }
         ]
+      },
+      {
+        "question_id": "q7",
+        "kind": "pair",
+        "prompt": "Trong một dự án nhóm, bạn thường nhận phần",
+        "options": [
+          {
+            "option_id": "q7a",
+            "text": "Đi hỏi người dùng và các bên xem họ thật sự cần gì",
+            "signal": {
+              "PEOPLE": 2,
+              "AMBIGUITY": 1
+            },
+            "orientation": 2
+          },
+          {
+            "option_id": "q7b",
+            "text": "Phần khó nhất về kỹ thuật, ít người khác làm được",
+            "signal": {
+              "DEEP_WORK": 2,
+              "PEOPLE": -1
+            },
+            "orientation": -2
+          }
+        ]
+      },
+      {
+        "question_id": "q8",
+        "kind": "pair",
+        "prompt": "Đồng đội kẹt ở một lỗi mà bạn từng gặp",
+        "options": [
+          {
+            "option_id": "q8a",
+            "text": "Kéo ghế ngồi cạnh, cùng dò cho tới khi hiểu",
+            "signal": {
+              "PEOPLE": 2,
+              "INTERRUPT": 1
+            },
+            "orientation": 2
+          },
+          {
+            "option_id": "q8b",
+            "text": "Gửi link tài liệu và cách sửa, rồi quay lại việc của mình",
+            "signal": {
+              "DEEP_WORK": 1,
+              "INTERRUPT": -1
+            },
+            "orientation": -1
+          }
+        ]
+      },
+      {
+        "question_id": "q9",
+        "kind": "pair",
+        "prompt": "Mai là hạn nộp, còn ba đầu việc chưa xong",
+        "options": [
+          {
+            "option_id": "q9a",
+            "text": "Tối nay dồn sức làm, áp lực thế này mình làm nhanh hơn",
+            "signal": {
+              "PRESSURE": 2,
+              "VISIBLE": 1
+            }
+          },
+          {
+            "option_id": "q9b",
+            "text": "Mình ghét cảnh này nên lẽ ra đã chia việc từ tuần trước",
+            "signal": {
+              "PRESSURE": -2,
+              "DETAIL": 1
+            }
+          }
+        ]
+      },
+      {
+        "question_id": "t2",
+        "kind": "text",
+        "prompt": "Kiểu công việc hay môi trường nào làm bạn kiệt sức nhất? Vì sao?",
+        "hint": "Càng cụ thể càng tốt: một tình huống, một cảm giác, một lý do.",
+        "min_length": 20,
+        "max_length": 400,
+        "probes": [
+          "PRESSURE",
+          "INTERRUPT",
+          "REPETITION",
+          "AMBIGUITY",
+          "PEOPLE"
+        ],
+        "options": []
+      },
+      {
+        "question_id": "q10",
+        "kind": "pair",
+        "prompt": "Tin nhắn công việc cứ đến liên tục trong lúc bạn đang làm",
+        "options": [
+          {
+            "option_id": "q10a",
+            "text": "Trả lời ngay khi có, để không ai phải chờ mình",
+            "signal": {
+              "INTERRUPT": 2,
+              "PEOPLE": 1
+            },
+            "orientation": 1
+          },
+          {
+            "option_id": "q10b",
+            "text": "Tắt thông báo, gom lại trả lời hai lần một ngày",
+            "signal": {
+              "INTERRUPT": -2,
+              "DEEP_WORK": 1
+            },
+            "orientation": -1
+          }
+        ]
+      },
+      {
+        "question_id": "q11",
+        "kind": "pair",
+        "prompt": "Được chọn một việc để sửa, bạn chọn",
+        "options": [
+          {
+            "option_id": "q11a",
+            "text": "Luồng thanh toán mà khách hàng phàn nàn là khó dùng",
+            "signal": {
+              "VISIBLE": 2,
+              "PEOPLE": 1
+            },
+            "orientation": 1
+          },
+          {
+            "option_id": "q11b",
+            "text": "Một câu truy vấn chậm không ai thấy nhưng đang tốn tiền",
+            "signal": {
+              "DETAIL": 2,
+              "VISIBLE": -1
+            },
+            "orientation": -1
+          }
+        ]
+      },
+      {
+        "question_id": "q12",
+        "kind": "pair",
+        "prompt": "Cùng một công việc, bạn muốn làm ở",
+        "options": [
+          {
+            "option_id": "q12a",
+            "text": "Một sản phẩm ổn định, nhịp việc đều và rõ ràng",
+            "signal": {
+              "REPETITION": 1,
+              "PRESSURE": -1
+            }
+          },
+          {
+            "option_id": "q12b",
+            "text": "Một startup mà ưu tiên có thể đổi mỗi tuần",
+            "signal": {
+              "AMBIGUITY": 2,
+              "PRESSURE": 1,
+              "REPETITION": -1
+            }
+          }
+        ]
+      },
+      {
+        "question_id": "q13",
+        "kind": "pair",
+        "prompt": "Bạn cần thuyết phục cả nhóm theo giải pháp của mình",
+        "options": [
+          {
+            "option_id": "q13a",
+            "text": "Trình bày trong buổi họp, trả lời thắc mắc tại chỗ",
+            "signal": {
+              "PEOPLE": 2,
+              "VISIBLE": 1
+            },
+            "orientation": 2
+          },
+          {
+            "option_id": "q13b",
+            "text": "Viết một tài liệu kỹ, có số liệu, để mọi người tự đọc",
+            "signal": {
+              "DETAIL": 2,
+              "DEEP_WORK": 1
+            },
+            "orientation": -2
+          }
+        ]
+      },
+      {
+        "question_id": "q14",
+        "kind": "pair",
+        "prompt": "Mỗi lần phát hành, quy trình kiểm tra của bạn là",
+        "options": [
+          {
+            "option_id": "q14a",
+            "text": "Một danh sách cố định, lần nào cũng làm đúng từng bước",
+            "signal": {
+              "REPETITION": 2,
+              "DETAIL": 1
+            }
+          },
+          {
+            "option_id": "q14b",
+            "text": "Mỗi lần mỗi khác, tuỳ lần này thay đổi những gì",
+            "signal": {
+              "REPETITION": -1,
+              "AMBIGUITY": 1
+            }
+          }
+        ]
+      },
+      {
+        "question_id": "t3",
+        "kind": "text",
+        "prompt": "Năm năm nữa, nếu có ai quay lại một ngày làm việc lý tưởng của bạn, người xem sẽ thấy bạn đang làm gì?",
+        "hint": "Tả cảnh: bạn ở đâu, làm gì, với ai. Chưa cần biết tên nghề.",
+        "min_length": 20,
+        "max_length": 400,
+        "probes": [
+          "PEOPLE",
+          "VISIBLE",
+          "DEEP_WORK",
+          "PRESSURE"
+        ],
+        "options": []
       }
     ]
   },

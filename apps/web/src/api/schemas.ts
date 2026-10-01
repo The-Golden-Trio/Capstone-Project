@@ -49,6 +49,37 @@ export const EventAnswerResultSchema = GameProfileSchema.extend({
 });
 export type EventAnswerResult = z.infer<typeof EventAnswerResultSchema>;
 
+/** Chân dung: năm nghề hợp nhất, chỉ số xã hội, đoạn mô tả (FR-10, FR-13). */
+export const PortraitSchema = z.object({
+  quizDone: z.boolean(),
+  top: z.array(
+    z.object({
+      roleCode: z.string(),
+      name: z.string(),
+      nameEn: z.string(),
+      bandStart: z.string(),
+      score: z.number(),
+      reasons: z.array(z.string()),
+    }),
+  ),
+  socialIndex: z
+    .object({
+      value: z.number(),
+      label: z.enum(['things', 'balanced', 'people']),
+      basis: z.object({ quizItems: z.number(), playChoices: z.number() }),
+    })
+    .nullable(),
+  description: z
+    .object({
+      text: z.string(),
+      source: z.enum(['llm', 'template']),
+      generatedAt: z.string(),
+    })
+    .nullable(),
+  textsPending: z.boolean(),
+});
+export type PortraitView = z.infer<typeof PortraitSchema>;
+
 /* ── Tiến trình ────────────────────────────────────────────────────── */
 
 export const BandProgressSchema = z.object({

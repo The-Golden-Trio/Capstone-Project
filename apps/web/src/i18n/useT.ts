@@ -8,6 +8,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import {
   DIMENSION_EN,
+  QUIZ_HINT_EN,
   QUIZ_OPTION_EN,
   QUIZ_PROMPT_EN,
 } from './gameContent';
@@ -59,6 +60,8 @@ export function useGameText() {
       pick(QUIZ_PROMPT_EN, questionId, fallback),
     quizOption: (optionId: string, fallback: string) =>
       pick(QUIZ_OPTION_EN, optionId, fallback),
+    quizHint: (questionId: string, fallback: string) =>
+      pick(QUIZ_HINT_EN, questionId, fallback),
     /** Nội dung kịch bản chưa có bản tiếng Anh — dùng để hiện ghi chú. */
     scenariosAreVietnameseOnly: language === 'en',
   };

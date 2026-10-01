@@ -44,7 +44,7 @@ pnpm start                                  # web :4200, api :3000/api
 | `/login`, `/register` | Đăng nhập / tạo tài khoản | Email + mật khẩu, nút Google, ngày sinh, đổi ngôn ngữ VI/EN |
 | (cổng) | `RequireAuth` + `decideGate()` | Chưa đăng nhập → `/login`. Dưới 16 tuổi chưa có đồng ý → `/consent`. Chưa tự vấn → `/quiz`. Qua hết → `/jobs` |
 | `/consent` | Người lớn đồng ý | Tên + email người giám hộ (chỉ ghi nhận) |
-| `/quiz` → `/quiz/result` | Get to Know Me → Chân dung | 6 câu, mỗi màn 1 câu, có nút bỏ qua. StarMap gợi ý 3 nghề, FitRadar 8 chiều, cảnh báo "chưa kiểm định" |
+| `/quiz` → `/quiz/result` | Get to Know Me → Chân dung | 1 câu giai đoạn, 14 câu hai vế (rất/hơi giống), 3 câu kể ngắn bắt buộc, có nút bỏ qua. Chân dung: StarMap **5 nghề** kèm lý do, đoạn mô tả **do Claude viết** (không có khoá thì viết theo khuôn), **chỉ số xã hội**, FitRadar gấp lại. Hành trang cũng hiện mô tả và chỉ số |
 | `/jobs` | **Bản đồ ngân hà 3D** | 22 hành tinh, đường bay, buồng lái (vị trí, điểm, nghề đã ghé), dock hành tinh lân cận, PlanetPanel (điều kiện nhập cảnh), bài kiểm tra nhập cảnh |
 | `/jobs/:role` | Quần đảo của nghề | Mỗi cấp L1…L10 là một đảo. LevelPanel: lương, điểm, nhân vật. Nút "Vào học / Tiếp tục học" (ghi danh) |
 | `/jobs/:role/:band` | Bản đồ giấy của đảo | Ngọc = nhiệm vụ chính, núi/rừng = nhiệm vụ phụ (hỏi nhanh tại chỗ, cộng điểm) |
@@ -57,7 +57,7 @@ Sơ đồ đầy đủ: [`assets/vao-nghe-flow.png`](assets/vao-nghe-flow.png).
 
 ## 4. Backend
 
-- **API** (prefix `/api`): `auth/*` (register, login, google, refresh, logout, me, account, consent) · `content/bootstrap`, `content/galaxy`, `content/scenarios/:key` · `profile`, `profile/progress`, `profile/roles/:role(/enroll)`, `profile/runs`, `profile/quiz`, `profile/events/:id`, `profile/import` · `runs`, `runs/:id/complete`
+- **API** (prefix `/api`): `auth/*` (register, login, google, refresh, logout, me, account, consent) · `content/bootstrap`, `content/galaxy`, `content/scenarios/:key` · `profile`, `profile/portrait`, `profile/progress`, `profile/roles/:role(/enroll)`, `profile/runs`, `profile/quiz`, `profile/events/:id`, `profile/import` · `runs`, `runs/:id/complete`
 - **DB (Prisma, 19 model):** User, OAuthAccount, RefreshToken, ParentalConsent, GameProfile, ScenarioRun, RunEvidence, UserBandSkill, EventAnswer, EventAward, Enrollment, cùng các bảng nội dung ContentRelease, RoleDoc, ScenarioDoc, SharedEventDoc, QuizQuestionDoc, FollowupDoc, GalaxyDoc, MetaDoc
 - **Test:** 19 file spec (game-core: engine, band, fit, side quest · web: gate, galaxy, unlock, layout, i18n, office, map geometry · api: xp, skills, career-graph)
 
@@ -94,7 +94,7 @@ Folder `occupation-data/` đã được sắp xếp lại ngày 23/9: chỉ còn
 | **AI sinh kịch bản** | ❌ **Chưa có.** Kịch bản do người viết sẵn |
 | **AI chấm tự luận** | ❌ **Chưa có.** Chấm bằng so khớp từ khoá (`keywordGrader.ts`). Sẵn interface để thay bằng `aiGrader.ts` |
 | AI sinh follow-up | ❌ Chưa có (follow-up lấy từ dữ liệu có sẵn) |
-| Get-to-know-me | ⚠️ Có, nhưng 6 câu tự soạn, **chưa kiểm định** |
+| Get-to-know-me | ⚠️ Có (v0.2, 18 câu, có câu kể do AI đọc), nhưng tự soạn, **chưa kiểm định**. Đọc câu kể và viết mô tả cần `ANTHROPIC_API_KEY`; chưa chạy thử với khoá thật |
 | Đánh giá nghề 5 tiêu chí | ❌ Chưa có |
 | Random bối cảnh công ty (OT, WFH…) | ❌ Chưa có (ý 3 trong task 8/9, được tách ra làm task riêng) |
 | Công cụ cho chuyên gia / admin (viết seed, duyệt, xuất bản) | ❌ Chưa có |
