@@ -57,6 +57,61 @@
 - T7 26/9: trình bày advisor deck 26/9 (45 slide, bản HTML [JobQuest_Advisor_Deck_26Sep2026.html](../../../../JobQuest_Advisor_Deck_26Sep2026.html) ở gốc repo) và báo cáo Chương 1–5. Xem [minutes 26/9](2026-09-26_gap-co.md)
 - 26/9: [Báo cáo Ch.1–5.1](../../../../reports/2026-09-26_ch1-5/report.md) (Markdown, sửa lần cuối 25/9), Chương 1 → 5.1, ~62 trang; kèm [block-resolutions](../../../../reports/2026-09-26_ch1-5/block-resolutions.md). Sync vào hub 30/9. Không task T2609 nào đóng được bằng bản này, vì task giao sau khi nộp
 
+## Cần báo cáo với cô 3/10
+
+> Ghi 1/10. Slide làm sau khi Nam và Nhật chốt phần của họ (T2609.30). Nguồn nội dung là [bản nháp báo cáo 2/10](../../../../reports/2026-10-02_ch1-5/report.md).
+
+### 1. Phần D của deck 26/9 chưa báo cáo: research problem và đánh giá
+
+Buổi 26/9 chưa trình bày tới [slide 38–44](../../submissions/2026-09-26_JobQuest_Advisor_Deck.pdf) (Phúc xác nhận 1/10). Tuần này báo cáo lại, có cập nhật:
+
+| Slide 26/9 | Nội dung | Cần cập nhật trước khi trình bày |
+|---|---|---|
+| 39 | Hai vấn đề nghiên cứu RP-1, RP-2 và ba điều kiện của một RP (D-06) | Giữ. Thêm ánh xạ với mục tiêu SMART 1 và 2 (§1.2) |
+| 40 | Ba RP cũ nay nằm ở đâu (thiết kế, hướng phát triển, phương pháp) | Giữ |
+| 41 | Đánh giá hai giai đoạn A và B (D-47) | Ghi rõ lớp kiểm tự động lúc chạy (D-88): RP-1 là bằng chứng cho lớp này |
+| 42 | Giai đoạn A: benchmark tổng hợp, panel judge khác họ (D-49) | Thêm giới hạn: kết quả panel của Verga et al. là cho chấm nhị phân và so cặp, chưa phải rubric thứ bậc (§2.6). Thang chấm là −1…+2 (D-87) |
+| 43 | Ngưỡng chấp nhận: QWK ≥ 0,70, SMD ≤ 0,15, giảm ≤ 0,10; I-CVI, S-CVI, McNemar, α (D-48) | Nay cũng là NFR-14 và NFR-15. Thêm bằng chứng về độ tin cậy của LLM judge (T2609.23, §2.5): đạt mức người chấm **có điều kiện** |
+| 44 | Tính khả thi: ~7 giờ mỗi chuyên gia, 9 chuyên gia, ~150 câu trả lời thật | Ghi 3 role pilot: Backend, DevOps/Cloud, Business Analyst (D-66); chuyên gia Giai đoạn 1 tự nguyện (D-68) |
+
+### 2. Phần của Phúc (đã có trong bản nháp báo cáo 2/10)
+
+| Nội dung | Mục báo cáo | Task |
+|---|---|---|
+| Bốn vai trò: DE soạn và duyệt trong hệ thống, CA trình bày và xuất bản, SA lo hệ thống | §1.3, §4.1.2, §4.2.1 | T2609.1, .3, .4 |
+| Business rule: BR-03 viết lại, BR-08 sang NFR-06, BR-11 trần điểm chơi lại, 4 luật vòng đời, BR-12 thành trường trong DR-07 | §4.1.3, §4.3 | T2609.5–.8, T0110.1 |
+| Design constraint dẫn xuất từ NFR; NFR-14, NFR-15; DC-04 thành cơ chế quản lý chi phí | §4.3.2 | T2609.9, .10, T0110.6 |
+| Task và chấm: ba loại lựa chọn, thang −1…+2, hint, hết giờ, câu "bạn làm gì?" | §2.2, §4.1.2 | T2609.18, T0110.2 |
+| Seed là khuôn các canon event; hai lớp duyệt | §4.1.2, BR-05 | T0110.3 |
+| Mục tiêu SMART và ánh xạ vào mục tiêu chung | §1.2 | T2609.20 |
+| Gati so với 5 khung khác; áp dụng cho Việt Nam | §2.4 | T2609.21, .22 |
+| Bằng chứng về độ tin cậy của LLM judge | §2.5, §2.6 | T2609.23 |
+| Bảng screen-vs-live: ba dòng Low, bỏ "Not addressed" | §4.2.3 | T2609.19 |
+| Miễn phí, logo nhà tài trợ, ô quyên góp, tín hiệu uy tín; tổ chức linh hoạt; role pilot và thù lao chuyên gia | §4.1.5 | T2609.24–.27, T0110.4 |
+| Căn cứ pháp lý mới: Luật 91/2025 và NĐ 356/2025; chuyển dữ liệu ra nước ngoài | §2.7, §4.1.4 | T0110.5 |
+| Slide xác nhận các quyết định nhóm tự chốt (4 mục) | deck | T2609.31 |
+
+### 3. Phần của Nam
+
+| Nội dung | Mục báo cáo | Task |
+|---|---|---|
+| DE là actor: use case soạn nội dung và duyệt scenario | §4.1.2, §4.2.1, §5.1.2 | T2609.2 |
+| User story theo bốn vai trò, rồi suy ra FR và NFR có truy vết | §4.3 | T2609.11 |
+| Đếm lại yêu cầu theo vai trò mới (bản nháp 2/10 đang là 22 FR, 15 NFR, 10 DR; thiếu FR cho layout và duyệt nghề của CA) | §4.3, §4.4 | T2609.12 |
+| Use case diagram chi tiết: boundary, package, include/extend | §5.1.2 | T2609.16 |
+| Bảng UC và ma trận truy vết theo diagram mới | §5.1.2 | T2609.17 |
+| Kế hoạch cập nhật deck từ báo cáo đã sửa | deck | T2609.30 |
+
+### 4. Phần của Nhật
+
+| Nội dung | Mục báo cáo | Task |
+|---|---|---|
+| Activity diagram hành trình Explorer có swimlane | §5.1.1 | T2609.13 |
+| Vòng đời scenario dạng state machine (đối chiếu với BR-13…BR-16) | §5.1.1 | T2609.14 |
+| Workflow của DE, CA, SA dạng swimlane, thay sơ đồ vòng đời | §5.1.1 | T2609.15 |
+| Đối chiếu báo cáo với deck, đưa báo cáo về nguồn chuẩn | toàn bộ | T2609.28 |
+| Đánh số lại BR, DC, trích dẫn [99]–[113]; lint; build PDF | toàn bộ | T2609.29 |
+
 ## Theo người
 
 <!-- capstone-weekly-progress: mỗi người 3–8 dòng, Đã xong / Đang làm / Quy ước. -->
