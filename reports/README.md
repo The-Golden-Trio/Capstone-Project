@@ -9,6 +9,21 @@ Mỗi lần nộp báo cáo cho cô, lưu **source LaTeX** vào đây rồi ch�
 - **Không sửa report cũ** sau khi đã nộp. Tuần sau nộp bản mới thì tạo folder mới, kể cả khi chỉ sửa vài chương.
 - **PDF bản cuối** vẫn lưu ở [`docs/project-hub/submissions/`](../docs/project-hub/submissions/) với tên `yyyy-mm-dd_JobQuest_<Tên>.pdf`.
 
+## Báo cáo viết bằng Markdown (từ 26/9)
+
+Từ bản 26/9, báo cáo được viết bằng **Markdown** (`report.md`), và LaTeX được **sinh ra** từ đó theo class `hcmut-report`:
+
+```
+python tools/report/md2tex.py reports/2026-10-02_ch1-5/report.md reports/2026-10-02_ch1-5/latex
+cd reports/2026-10-02_ch1-5/latex
+pdflatex main.tex    (chạy 3 lần để mục lục và số bảng ổn định)
+```
+
+- **Sửa nội dung ở `report.md`**, rồi chạy lại script. Không sửa tay `main.tex`, `chapters/*.tex`, `references.tex`: lần chạy sau sẽ ghi đè.
+- Sơ đồ Mermaid trong `report.md` không vẽ được trong LaTeX. Sơ đồ thứ n lấy ảnh `latex/figures/fig<n>.png`; đổi sơ đồ thì thay ảnh này.
+- Bìa (tên môn, GVHD, nhóm, sinh viên) nằm trong hằng `MAIN` của `tools/report/md2tex.py`.
+- Script tự kiểm số mục: nếu `## 4.3 …` trong Markdown lệch với số LaTeX sẽ đánh thì dừng và báo.
+
 ## Cách sync
 
 Trong Claude Code, gọi skill và chỉ file `.tex`:
@@ -26,3 +41,4 @@ Skill sẽ đọc report, tự chọn file cần sửa trong `docs/project-hub/`
 | Report | Ngày nộp | Sync ngày | Người chạy | File hub đã sửa | Ghi chú |
 |---|---|---|---|---|---|
 | *(chưa có source)* Ch.1–5 | 18/9 | 21/9 | — | 00, 02, 03, 07, 08 | Hub dựng từ bản PDF `submissions/2026-09-18_JobQuest_Report_Ch1-5.pdf`. Source LaTeX còn trên Overleaf, chưa tải về |
+| [2026-09-26_ch1-5](2026-09-26_ch1-5/report.md) Ch.1–5.1 | 26/9 | 30/9 | Phúc (Claude) | 00, 02, 03, 07, 08, tuan/2026-W40 | Source là **Markdown** dùng được với pandoc, không phải LaTeX, nên `extract_tex.py` chỉ trích được ID, không nhận heading. Kèm `block-resolutions.md`. Báo cáo có trước các quyết định 29/9 nên không ghi đè D-16, D-17. Thêm D-06, D-47…49, mục G (D-60…65), mục I (D-80…84) |

@@ -1,0 +1,44 @@
+% Sinh tự động từ report.md bằng tools/report/md2tex.py. Sửa report.md rồi chạy lại.
+% longtable v4.24 (10/2025) báo "Infinite glue shrinkage" ở mọi chỗ bảng ngắt trang; dùng bản v4.13 kèm sẵn.
+\makeatletter\declare@file@substitution{longtable.sty}{longtable-2020-01-07.sty}\makeatother
+\documentclass[twoside,final]{hcmut-report}
+\usepackage{pdflscape}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\emergencystretch}{3em}
+
+\coursename{Specialized Project}
+\reporttype{Report: Chapters 1 to 5.1}
+\title{JobQuest: An AI-Native Experiential Career-Exploration Platform}
+\advisor{& Assoc. Prof. Võ Thị Ngọc Châu &}
+\groupname{& Golden Trio &}
+% TODO: điền họ tên và MSSV của Nhật
+\stuname{%
+  & Nguyễn Hữu Phúc & 2352938 \\
+  & Trương Gia Kỳ Nam & 2352787 \\
+  & Nhật & (MSSV)
+}
+
+\begin{document}
+
+\coverpage%
+
+\input{chapters/00-abstract}
+\newpage
+\tableofcontents
+\newpage
+\input{chapters/00-list-of-abbreviations}
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{List of Figures}
+\listoftables
+\addcontentsline{toc}{section}{List of Tables}
+
+\input{chapters/ch1}
+\input{chapters/ch2}
+\input{chapters/ch3}
+\input{chapters/ch4}
+\input{chapters/ch5}
+
+\input{references}
+\end{document}

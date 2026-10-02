@@ -1,0 +1,187 @@
+\newpage
+\section{Analysis and Design}
+
+\subsection{Analysis}
+
+\subsubsection{Business process modelling}
+
+The three processes identified in Section 4.1.2 are modelled below. Diagram sources are given in a text notation for reproduction in the project's modelling tool.
+
+Exploration process. The process begins with authentication and ends either in occupation completion and rating or in the user selecting a different occupation. The decision points are the optional orientation, the response type within a task, and the unlock evaluation on level completion.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/fig1.png}
+\caption{Exploration process}
+\end{figure}
+
+Content lifecycle process. This process governs occupational accuracy and is the operational expression of BR-05. Domain experts author and review content in the system; the content administrator presents, publishes, and maintains it.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/fig2.png}
+\caption{Content lifecycle process}
+\end{figure}
+
+Evaluation process. This process is internal to the project and supports RP-1 and RP-2. Experts construct reference items stratified by difficulty; generation output and assessor output are compared against them; agreement is computed with chance correction and reported per stratum, together with test--retest consistency.
+
+\subsubsection{Use case modelling}
+
+Four actors correspond to the user groups in Section 4.2.1. Two external systems participate: the model provider, which performs generation and assessment, and the occupational data source, which supplies reference data.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/fig3.png}
+\caption{Use case diagram for the proposed system}
+\end{figure}
+
+Tabular descriptions of the key use cases follow. UC-03 and UC-08 are the use cases on which the project's research problems depend.
+
+UC-03 --- Perform a task scenario
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.802\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Use case UC-03, Perform a task scenario.} \\
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endfirsthead
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endhead
+Actor & Explorer (primary); model provider (supporting) \\ \hline
+Goal & Attempt a task representative of the occupation and receive an assessment of it \\ \hline
+Precondition & The user is authenticated and the level is accessible under BR-01 or BR-02 \\ \hline
+Trigger & The user selects a level and proceeds past the context screen \\ \hline
+Main flow & 1. System retrieves the published seed for the task. 2. System generates a scenario instance that passes through the seed's canon events and preserves its required facts, developing the narrative between those events from the user's responses. 3. System presents the scenario and the response affordance. 4. User submits a response. 5. System scores the response against the expert effectiveness key, the answer key, or the rubric, according to response format, recording hint use and response time. 6. System records the competencies evidenced. 7. System returns result, response-specific feedback, and forward guidance. 8. System advances to the next task or concludes the level. \\ \hline
+Alternative flow & 4a. User abandons the task: progress to that point is recorded and the session may be resumed (NFR-03). \\ \hline
+Exception flow & 2a. Generation fails, or fails the automated check against the seed: system retries, then serves an instance from the expert-approved sample rather than an unchecked one. 5a. Assessment fails: response is stored and queued; user is informed that assessment is pending. \\ \hline
+Postcondition & An assessment record exists (DR-07) and competence records are updated (DR-06) \\ \hline
+Business rules & BR-07 representation includes unfavourable aspects; design constraint DC-01 requires the assessor to differ from the generator \\ \hline
+Requirements & FR-03, FR-04, FR-05, FR-06, FR-07, FR-08, FR-22; NFR-01, NFR-02, NFR-07, NFR-14, NFR-15 \\ \hline
+\end{longtable}
+}
+
+UC-04 --- Progress to a further level or occupation
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.802\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Use case UC-04, Progress to a further level or occupation.} \\
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endfirsthead
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endhead
+Actor & Explorer (primary); occupational data source (supporting) \\ \hline
+Goal & Convert demonstrated competence into access to further exploration \\ \hline
+Precondition & A level has been completed and competence credit awarded \\ \hline
+Trigger & Level completion \\ \hline
+Main flow & 1. System computes accumulated competence against the next level's threshold. 2. If met, the next level is unlocked. 3. System computes overlap between demonstrated competencies and the entry requirements of adjacent occupations. 4. Occupations whose overlap conditions are satisfied are offered, each at the level the credited competencies support. 5. User selects a destination or returns to the catalogue. \\ \hline
+Alternative flow & 2a. Threshold not met: system indicates the competencies outstanding and suggests tasks that elicit them. \\ \hline
+Exception flow & 3a. Adjacency data unavailable: within-occupation progression is offered and the cross-occupation offer is suppressed rather than guessed. \\ \hline
+Postcondition & Accessible levels and offered occupations reflect demonstrated competence \\ \hline
+Business rules & BR-02, BR-03 \\ \hline
+Requirements & FR-09, FR-10; DR-02, DR-03 \\ \hline
+\end{longtable}
+}
+
+UC-08 --- Review generated scenarios
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.802\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Use case UC-08, Review generated scenarios.} \\
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endfirsthead
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endhead
+Actor & Domain expert (primary); model provider (supporting) \\ \hline
+Goal & Ensure only scenarios that experts judge occupationally accurate and competency-eliciting are published \\ \hline
+Precondition & A seed exists, a sample of scenarios has been generated from it, and the expert is not one of its authors \\ \hline
+Trigger & Generation completes, or annual revalidation falls due \\ \hline
+Main flow & 1. System presents the seed with a sample of scenarios generated from it, showing each scenario against the seed's required facts and target competencies. 2. The expert judges factual accuracy and whether each scenario necessarily elicits its target competencies. 3. The expert records an approval, rejection, or correction against the seed and each sampled scenario. 4. An approved seed becomes eligible for publication by the content administrator. \\ \hline
+Alternative flow & 3a. The expert rejects a scenario: it is withheld and regeneration is requested. 3b. The expert corrects the seed: its author revises it, and prior generations from that seed are invalidated and regenerated. \\ \hline
+Exception flow & 2a. The expert judges a scenario passable without the target competency: the seed is returned for revision, since the evidence model would otherwise be invalid (Section 2.2). 2b. The expert authored the seed: the system does not offer it to that expert for review. \\ \hline
+Postcondition & Only seeds with a recorded expert approval are servable, and only through scenarios that pass the automated check against them \\ \hline
+Business rules & BR-05, BR-07 \\ \hline
+Requirements & FR-15, FR-16; DR-04, DR-05 \\ \hline
+\end{longtable}
+}
+
+UC-07 --- Author a scenario seed
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.802\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Use case UC-07, Author a scenario seed.} \\
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endfirsthead
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endhead
+Actor & Domain expert (primary); occupational data source (supporting) \\ \hline
+Goal & Record expert knowledge as the material from which accurate scenarios are generated and responses judged \\ \hline
+Precondition & The content administrator has created the occupation, the expert is assigned to it, and reference data are available \\ \hline
+Trigger & The expert begins authoring a scenario for the occupation \\ \hline
+Main flow & 1. The expert selects the occupation and its tasks and skills from reference data. 2. The expert enters the required facts. 3. The expert enters target competencies, each resolving to the competency taxonomy. 4. The expert enters the narrative skeleton with its canon events, and the response options drawn from critical incidents, each with its effectiveness profile. 5. The expert enters the rubric, each criterion attributed to a target competency. 6. System records the authoring expert. 7. System validates the seed against its schema and rejects criteria or options not attributable to a competency. \\ \hline
+Exception flow & 7a. Unattributable criteria or options: the seed is rejected with the offending items identified. \\ \hline
+Postcondition & A schema-valid seed with author provenance exists and is eligible for generation and review \\ \hline
+Business rules & BR-05 \\ \hline
+Requirements & FR-15; DR-01, DR-02, DR-04 \\ \hline
+\end{longtable}
+}
+
+UC-05 --- Rate a completed occupation
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.243\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.752\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Use case UC-05, Rate a completed occupation.} \\
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endfirsthead
+\hline
+\textbf{Field} & \textbf{Content} \\ \hline
+\endhead
+Actor & Explorer \\ \hline
+Goal & Record an impression of the occupation and contribute to its aggregate profile \\ \hline
+Precondition & The user has completed the occupation (BR-04) \\ \hline
+Trigger & Occupation completion \\ \hline
+Main flow & 1. System presents the five rating attributes. 2. User submits ratings. 3. System records the rating and recomputes the aggregate profile. 4. System presents the aggregate alongside the user's own ratings. \\ \hline
+Alternative flow & 2a. User declines to rate: completion is recorded without a rating. \\ \hline
+Exception flow & 3a. Population below the suppression threshold: aggregate is withheld and the condition is stated rather than displaying an unfounded figure. \\ \hline
+Postcondition & Rating recorded; aggregate updated or suppressed \\ \hline
+Business rules & BR-04 \\ \hline
+Requirements & FR-12; NFR-06; DR-08 \\ \hline
+\end{longtable}
+}
+
+The remaining use cases --- catalogue exploration, orientation conversation, personal record review, disagreement review, lifecycle management, coverage monitoring, model configuration, and operational monitoring --- are specified in the same form in Appendix 1.
+
+The traceability matrix below traces every requirement to the use case realising it, so that no requirement is left unrealised and no use case introduces behaviour the requirements do not specify.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.379\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.196\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.229\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.190\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Traceability from requirements to use cases.} \\
+\hline
+\textbf{Use case} & \textbf{Functional} & \textbf{Non-functional} & \textbf{Data} \\ \hline
+\endfirsthead
+\hline
+\textbf{Use case} & \textbf{Functional} & \textbf{Non-functional} & \textbf{Data} \\ \hline
+\endhead
+UC-01 Explore catalogue & FR-02 & NFR-08, NFR-09, NFR-13 & DR-01 \\ \hline
+UC-02 Orientation conversation & FR-11 & NFR-01, NFR-07 & DR-01, DR-06 \\ \hline
+UC-03 Perform task scenario & FR-03, FR-04, FR-05, FR-06, FR-07, FR-08, FR-22 & NFR-01, NFR-02, NFR-03, NFR-04, NFR-07, NFR-13, NFR-14, NFR-15 & DR-04, DR-05, DR-07 \\ \hline
+UC-04 Progress further & FR-09, FR-10, FR-14 & --- & DR-02, DR-03, DR-06 \\ \hline
+UC-05 Rate occupation & FR-12 & NFR-06 & DR-08 \\ \hline
+UC-06 Review personal record & FR-13 & NFR-05 & DR-06, DR-07 \\ \hline
+UC-07 Author scenario seed & FR-15 & NFR-10 & DR-01, DR-02, DR-04 \\ \hline
+UC-08 Review generated scenarios & FR-16 & NFR-10, NFR-15 & DR-04, DR-05 \\ \hline
+UC-09 Review assessment disagreements & FR-17 & NFR-14 & DR-07, DR-09 \\ \hline
+UC-10 Manage lifecycle & FR-18 & NFR-10 & DR-04 \\ \hline
+UC-11 Monitor coverage & FR-19 & --- & DR-04 \\ \hline
+UC-12 Configure models & FR-20 & NFR-11, NFR-12 & DR-05 \\ \hline
+UC-13 Monitor operation & FR-21 & NFR-11 & DR-10 \\ \hline
+Account management & FR-01 & NFR-05 & DR-06 \\ \hline
+\end{longtable}
+}
