@@ -20,6 +20,7 @@
 | T0110.12 | ? | Sửa **spec kịch bản v2.2** cho khớp các quyết định 1/10: ánh xạ 4 loại activity sang 9 định dạng (D-85), thang chấm ở A8 (D-87), hint và đếm giờ ở A9, A11 (D-86), seed là khuôn canon event (D-67) | T6 9/10 | [07 A15–A17](../../07-van-de-mo.md) | ⏳ | |
 | T0110.13 | ? | **Prototype:** đổi tên app từ "Vào Nghề" sang JobQuest (D-74); sửa căn cứ pháp lý trong luồng đồng ý từ NĐ 13/2023 sang Luật 91/2025 (07 §E). Sau đó quay lại rà user requirement và các lược đồ theo prototype (mục 11 của cô) | T6 9/10 | [07 B24](../../07-van-de-mo.md), email cô 1/10 | ⏳ | |
 | T0110.14 | ? | **Hỏi pháp chế hoặc phòng hợp tác của trường:** luật dữ liệu cá nhân mới áp dụng thế nào cho dự án ở trường, log hành vi có phải dữ liệu nhạy cảm không, hồ sơ đánh giá tác động khi gọi LLM ở nước ngoài, và logo nhà tài trợ có bị coi là quảng cáo không | T6 9/10 | [07 §E, A12](../../07-van-de-mo.md) | ⏳ | |
+| T2309.3 | Nhật | File khuôn mô tả các cấu trúc data JSON: hoạt động thế nào, ý nghĩa ra sao | T6 9/10 | [23/9 midweek](../2026-W39/2026-09-23_hop-nhom.md) | ⏳ | Đã có `occupation-data/JSON_SCHEMA.md` (25/9, chưa commit). Dời từ tuần 40 (Nhật, 2/10) |
 
 ## Làm thêm ngoài task giao
 

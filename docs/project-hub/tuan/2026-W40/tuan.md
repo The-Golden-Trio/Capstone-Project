@@ -47,6 +47,7 @@
 | T0110.4 | Phúc | Ghi **3 role pilot** (Backend, DevOps/Cloud, và BA hoặc QA; D-66) và **chuyên gia Giai đoạn 1 đóng góp tự nguyện, từ Giai đoạn 2 có thù lao** (D-68). §4.1.5, §4.2.1, §4.2.3. Chọn BA hay QA | T6 2/10 | [07 G1, G3](../../07-van-de-mo.md), Phúc chốt 1/10 | ✅ | [bản nháp 2/10](../../../../reports/2026-10-02_ch1-5/report.md) §4.1.5 (Bảng 4.2, kinh phí), §4.2.1, §4.2.3. Role pilot thứ ba: **Business Analyst** (D-66). Chưa commit |
 | T0110.5 | Phúc | **Đổi căn cứ pháp lý:** NĐ 13/2023 đã hết hiệu lực; trích **Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15** và **NĐ 356/2025/NĐ-CP** ở §2.7, §4.1.4, DC-03 và danh mục tài liệu. Ghi rõ gọi LLM ở nước ngoài là **chuyển dữ liệu ra nước ngoài** (Đ.20: hồ sơ đánh giá tác động gửi A05 trong 60 ngày) và biện pháp ẩn danh câu trả lời trước khi gửi. Hỏi **pháp chế của trường** các điểm chưa kiểm được trong văn bản gốc (NĐ 356, dữ liệu hành vi có phải dữ liệu nhạy cảm không) | T6 2/10 | [07 §E](../../07-van-de-mo.md), tra 30/9 | ✅ | [bản nháp 2/10](../../../../reports/2026-10-02_ch1-5/report.md) §2.7, §4.1.4, DC-03, tài liệu [99], [100]. Việc hỏi pháp chế của trường chuyển sang 07 §E (điều kiện trước Giai đoạn 1). Đánh số lại trích dẫn ở T2609.29. Chưa commit |
 | T0110.6 | Phúc | Làm cùng T2609.10: **thêm 2 NFR còn thiếu** để mọi design constraint có NFR gốc. Cho DC-01: chấm tự động đạt tiêu chí chấp nhận so với chuyên gia (QWK ≥ 0,70, SMD ≤ 0,15, giảm ≤ 0,10; D-48). Cho DC-06: nội dung sinh giữ fact bắt buộc và profile lựa chọn của seed (**≥ 95%**, ghi là *proposed target*). Đếm lại ở T2609.12 | T6 2/10 | [07 G5](../../07-van-de-mo.md), handoff 29/9 (B6), Phúc chốt 1/10 | ✅ | [bản nháp 2/10](../../../../reports/2026-10-02_ch1-5/report.md) §4.3.2 (NFR-14, NFR-15), §4.4, ma trận truy vết. Chưa commit **Email cô 1/10** (07 B23): DC-01, DC-02 viết lại theo câu của cô; DC-06 chuyển vào FR-04; còn 4 DC |
+| T2309.3 | Nhật | File khuôn mô tả các cấu trúc data JSON: hoạt động thế nào, ý nghĩa ra sao | T7 26/9 | [23/9 midweek](../2026-W39/2026-09-23_hop-nhom.md) | ↪ | Đã có `occupation-data/JSON_SCHEMA.md` (25/9, chưa commit). **2/10:** Nhật dời sang [tuần 41](../2026-W41/tuan.md) |
 
 ## Làm thêm ngoài task giao
 
@@ -119,3 +120,5 @@ Buổi 26/9 chưa trình bày tới [slide 38–44](../../submissions/2026-09-26
 ## Chuyển sang tuần sau
 
 <!-- Task ↪ và việc cần để ý. -->
+
+- T2309.3 (Nhật, file mô tả cấu trúc data JSON) ↪ tuần 41, hạn T6 9/10.
