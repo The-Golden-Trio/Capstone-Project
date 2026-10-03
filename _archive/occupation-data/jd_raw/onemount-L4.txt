@@ -1,0 +1,56 @@
+https://www.linkedin.com/jobs/view/4446978789/
+
+Front End Developer (ReactJS)  
+One Mount 
+About the job
+MAIN RESPONSIBILITIES:
+Work with Product Managers and Designers to implement and design the next generation of products
+Build, and write unit test for new features
+Partner with backend teams to help shape API endpoints
+Work with UX teams to deliver important functionality to our flagship application
+Be a key member of a team of front end engineers
+Maintain excellent coding standards and practices
+Training for Fresher/Junior developer
+Design, develop, review, implement, and manage ReactJS application code for the production
+Understand the requirements of the business and utilize this knowledge to develop applications that are consistent with this
+Work with delivery teams to achieve success through development using CI/CD and DevOps practices, processes, and tooling
+
+REQUIRED EXPERIENCE AND SKILLS:
++4 years of experience working in Software Development (with 1+ year experience in leading or mentoring frontend engineers in an agile team for Lead position)
+Previous experience working as a ReactJS developer
+Strong Javascript/Typescript skills (ES6) and ReactJS
+Strong knowledge of development based on REST API.
+Hands-on experience with HTML5, CSS3, and responsive design including accessibility, SEO and security concerns
+Experience in SSR/SSG React-based frameworks like NextJS. Good knowledge about NextJS is big plus
+Experience in modern data-fetching library of Reactjs: React Query, or SWR (nice to have)
+Familiarity with utility-first CSS framework as Tailwind, and CSS module
+Solid experience in modern front-end build pipelines and tools (e.g. Git, Webpack, Gulp, NPM)
+Knowledge of testing frameworks like Jest, React Testing Library, MSW, faker…
+Excellent in problem-solving and analytical skills (must)
+Experience with clean code, SOLID, and Design pattern (Prototype, container/presentational, observer, module, High order component, render props…)
+Good experience in Agile (Scrum model) development environments (must)
+
+BENEFITS AND PERKSSalary & Allowances
+13-month salary with annual performance bonus, project incentives, sales incentives (based on position)
+Lunch allowance: 730.000 VND/month
+Special occasion bonus: 2.500.000VND/year
+Annual leaves: Up to 20 days/year (based on levels)
+Health: Social insurance, premium health insurance, yearly health check
+Laptop, screen and other needed facilities/accounts/tools for work
+Career Growth
+Yearly salary review and promotion
+Diverse career path: Management or Expert and functions rotation opportunity
+Free learning sources in Udemy, Coursera, O'Reilly platforms; internal workshop, certification sponsorship, and exclusive mentoring from C-levels
+Recognition and awards at team and organizational levels.
+Grow your career with opportunities across the dynamic ecosystem of Techcombank & Masterise Group.
+Access special loan offers with competitive interest rates and flexible grace period options tailored to your financial needs.
+Working Environment
+Open & collaborative working space fosters both individual focus and teamwork activities
+Young, dynamic, and collaborative working atmosphere
+Unwind zones: gaming, table tennis, yoga, gyms, bath rooms.
+Personal lockers with QR code access.
+Quarterly/yearly teambuilding & engaged internal events.
+
+Benefits found in job post
+
+Medical insurance

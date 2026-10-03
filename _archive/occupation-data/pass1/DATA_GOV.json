@@ -1,0 +1,180 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-DATA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "DATA_GOV",
+  "role_name": "Data Governance Specialist",
+  "role_name_vn": "Chuyên viên quản trị dữ liệu",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: ngân hàng là nơi tuyển chính (yêu cầu tuân thủ quy định), không có cửa vào entry-level — vào từ Data Analyst hoặc Business Analyst.",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher. Ngân hàng là nơi tuyển chính theo roles.csv — do yêu cầu tuân thủ quy định (an toàn dữ liệu khách hàng, các chuẩn kiểu ISO 27001/Basel). Vào từ Data Analyst hoặc Business Analyst có kinh nghiệm. Sàn hợp lý là L4.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "Data Governance Analyst",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền DA hoặc BA)",
+      "core_output": "Thực hiện kiểm tra chất lượng dữ liệu và cập nhật catalog/metadata theo quy trình có sẵn, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Data Governance Specialist",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ xây dựng chính sách quản trị dữ liệu cho một domain nghiệp vụ, làm việc với nhiều phòng ban để chuẩn hoá dữ liệu, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Data Governance Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt chương trình quản trị dữ liệu cho tổ chức, định chuẩn khung quản trị dữ liệu (data governance framework), tương ứng vai trò dẫn dắt kỹ thuật/chuyên môn cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal Data Governance / Head of Data Governance",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chiến lược quản trị dữ liệu xuyên toàn tổ chức, báo cáo trực tiếp cấp điều hành về rủi ro dữ liệu, tương ứng vai trò chịu trách nhiệm cross-team.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal Data Governance / Chief Data Steward",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SEC_ISM",
+        "from_band": "L6",
+        "note": "Suy luận — quản trị dữ liệu ở ngân hàng VN thường nằm trong khối tuân thủ/an ninh thông tin, nên nhánh quản lý neo vào SEC_ISM."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "DATA_PM",
+        "role_name": "Data Product Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SEC_GRC",
+        "role_name": "GRC Analyst",
+        "note": "Chồng lấn mạnh ở phần tuân thủ/chính sách.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SEC_GRC",
+        "reason": "Cả hai đều làm chính sách/tuân thủ; khác biệt là DATA_GOV tập trung vào DỮ LIỆU còn SEC_GRC tập trung vào RỦI RO BẢO MẬT nói chung — ranh giới mờ tại VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ Data Governance Specialist có tồn tại như vị trí toàn thời gian ngoài ngân hàng/tổ chức tài chính hay không.",
+    "Ranh giới với SEC_GRC chưa có quy tắc phân định rõ."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

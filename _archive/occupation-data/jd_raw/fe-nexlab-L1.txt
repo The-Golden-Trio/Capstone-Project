@@ -1,0 +1,76 @@
+https://www.linkedin.com/jobs/view/4456718146/
+
+Junior Fullstack Engineer (AI-First)
+About the job
+Nexlab Technology
+
+NexlabTechnology is a software company based in Ho Chi Minh City. We build products and solutions for enterprise clients across healthcare, education, manufacturing, tourism, and commerce.
+
+Our development process follows an AI-First, Spec-Driven Development model: specifications are the single source of truth, AI coding agents handle most of the building work, and engineers are responsible for directing the process, verifying output, and making quality decisions.
+
+About The Role
+
+As a Junior Fullstack Engineer, you own an entire small-to-mid-scale web product, from frontend down to backend and database, on projects where teams are not split by layer.
+
+You participate in the full development lifecycle: Specification, Design, AI-assisted Development, Testing, Deployment, and Monitoring. Rather than just picking up tasks and writing code, you are responsible for understanding the problem, providing precise instructions to an AI coding agent, verifying its output, and making sure the system works correctly in a real environment.
+
+Key Responsibilities
+
+Full-stack development with AI coding agents: read specifications and business requirements, translate them into prompts with proper context and constraints for the AI, and break large features into smaller tasks the AI can implement effectively. Maintain project context: architecture, conventions, design system, and database rules.
+
+Frontend: build web applications and business interfaces using HTML, CSS, JavaScript/TypeScript, and React. Create reusable components, integrate APIs, handle responsive layouts and loading/empty/error states. Track Core Web Vitals and bundle size.
+
+Backend, data, and integration: design RESTful APIs,build business logic, design database schemas and migrations. Write SQL with JOINs, handle indexes and transactions. Implement authentication and authorization. Integrate third-party systems, handle retry logic, idempotency, and error handling. Debug issues end-to-end from frontend through to the database.
+
+Testing: write automated tests for business-critical flows. Verify AI output and catch errors the AI commonly misses: incorrect business logic, security vulnerabilities, race conditions, N+1 queries, and incomplete error handling.
+
+Deployment: participate in pushing products to staging and production, work with existing CI/CD pipelines, monitor logs, and handle incidents within your assigned scope.
+
+‍
+
+Requirements
+
+Experience: under 2 years of software development experience, or no professional experience but you have built and deployed at least one product to a live environment. You should have a GitHub repository, live demo, or deployed product to discuss.
+
+Programming: solid fundamentals. Proficient in at least one language: TypeScript/JavaScript, C#, Java, Go, or equivalent. Able to pick up a new language or framework on your own.
+
+Frontend: solid grasp of HTML, CSS, and JavaScript ES6+. Experience with React or an equivalent frontend framework. Understand components, state, async operations, API integration, and responsive design.
+
+Backend: understand HTTP and REST APIs. Able to design a basic API on your own. Understand authentication and authorization. Experience with a backend framework or runtime.
+
+Database: experience with a relational database. Able to design tables and relationships. Write SQL with JOINs. Basic understanding of indexes and transactions.
+
+AI-FirstDevelopment: have used an AI coding agent or AI IDE (Claude Code, Cursor, GitHub Copilot, or equivalent) to write and modify real code.Able to write clear prompts and review AI-generated code. Can describe a specific case where you caught AI output that ran correctly but was fundamentally wrong.
+
+Software Engineering: understand Git workflows, can read and debug other people's code, basic understanding of testing, awareness of security and data privacy. Able to read technical documentation in English.
+
+Problem Solving: research before asking, escalate early when blocked, never submit code you cannot explain in a pull request. See problems from a business perspective, not just a technical one.
+
+Nice to have
+
+Experience with .NET/C#/ASP.NET Core or Next.js/Astro on real projects.
+
+Deployed to cloud(Azure, AWS, GCP) and set up CI/CD pipelines independently.
+
+Worked with Docker, caching, message queues, or background jobs.
+
+Integrated an LLM into a product: RAG, function calling, or processing pipelines.
+
+Built your own prompt pipelines, AI skills, or AI workflows.
+
+Experience with Enterprise CMS(Sitecore, Umbraco, CrafterCMS), Headless CMS, or GraphQL.
+
+Strong English communication skills.
+
+Open-source contributions or public technical writing.
+
+Benefits
+
+Competitive salary, bonuses, and benefits per company policy.
+Insurance as required by law and company policy.
+Professional, creative working environment.
+Weekly/monthly/quarterly team building activities and YEP.
+
+Office: 210 Hoang Hoa Tham, Ward 12, Tan Binh, Ho Chi Minh City
+
+Working hours: Monday – Friday, 09:00 – 18:00

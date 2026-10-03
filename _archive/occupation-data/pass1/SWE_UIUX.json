@@ -1,0 +1,208 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "A-FINAL1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SWE_UIUX",
+  "role_name": "UI/UX Designer",
+  "role_name_vn": "Chuyên viên thiết kế UI/UX",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "A",
+  "archetype_reasoning": "Xếp A theo roles.csv: ladder đầy đủ, cửa vào entry-level, nhưng roles.csv ghi rõ đây là 'ladder riêng, gần như không giao với ladder engineer' — tức feeder_roles/next_steps chủ yếu KHÔNG map vào các role kỹ thuật khác trong taxonomy.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "UI/UX Design Intern",
+      "title_aliases": [],
+      "years_experience": "0",
+      "core_output": "Vẽ lại (redesign) màn hình đơn giản theo design system có sẵn dưới hướng dẫn sát, chưa tự quyết định luồng UX, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher UI/UX Designer",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự thiết kế một màn hình/component UI nhỏ trong phạm vi được giao theo design system có sẵn, mọi thay đổi qua review, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior UI/UX Designer",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự thiết kế trọn vẹn một luồng UI cho một tính năng đã xác định rõ (wireframe, high-fidelity mockup), thực hiện usability test cơ bản dưới hướng dẫn, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle UI/UX Designer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm thiết kế UX cho một mảng sản phẩm: nghiên cứu người dùng cơ bản, thiết kế luồng tương tác, duy trì design system cho phần mình phụ trách, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior UI/UX Designer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ dẫn dắt thiết kế UX cho cả một sản phẩm, chủ trì nghiên cứu người dùng sâu, chịu trách nhiệm về trải nghiệm tổng thể, mentor designer cấp dưới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead UI/UX Designer",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật/chuyên môn cho một đội design, đặt chuẩn design system và quy trình UX research cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal UI/UX Designer / Head of Design",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt định hướng trải nghiệm người dùng xuyên nhiều sản phẩm, đại diện thiết kế cấp cao nhất khi làm việc với lãnh đạo sản phẩm/công nghệ, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật/chuyên môn một team theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal UI/UX Designer / Head of Design",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [],
+    "management_track_note": "KHÔNG có role Design Manager/Head of Design riêng trong danh sách 78 role của roles.csv — đây là một khoảng trống của bản thân taxonomy, không phải kết luận rằng vai trò quản lý thiết kế không tồn tại tại VN. Ở band cao, Principal/Head of Design (ghi trong ic_track) có thể đã bao hàm cả phần quản lý người, khác với các domain kỹ thuật khác nơi IC và Management tách bạch thành hai role riêng (SWE_TECHLEAD/SWE_ARCH_SW so với SWE_EM)."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "PROD_PM",
+        "role_name": "Product Manager",
+        "note": "Suy luận — một số Head of Design chuyển hướng sang quản lý sản phẩm.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_FRONTEND",
+        "role_name": "Front-end Developer",
+        "note": "Làm việc chặt với Frontend nhưng KHÔNG cùng ladder — roles.csv ghi rõ hai ladder gần như không giao nhau.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_FRONTEND",
+        "reason": "Cả hai cùng làm việc trên giao diện sản phẩm nhưng KHÔNG cùng ladder — Designer thiết kế trải nghiệm/giao diện, Frontend Developer hiện thực bằng code. roles.csv nhấn mạnh đây gần như không giao nhau dù hay bị nhầm.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "roles.csv ghi rõ ladder này 'gần như không giao với ladder engineer' — nhưng chính vì vậy taxonomy 78 role hiện KHÔNG có vị trí Design Manager/Head of Design tương ứng, khiến nhánh quản lý của UI/UX Designer chưa xác định rõ được (xem branching.management_track_note).",
+    "Chưa rõ tỷ lệ công ty VN tách UX Research và UI Design thành hai vị trí riêng biệt hay gộp làm một như ladder ở trên."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

@@ -1,0 +1,25 @@
+https://www.linkedin.com/jobs/view/4450050332/
+
+Senior Enterprise Solution Architect - Data
+
+About the job
+Do you enjoy solving complex data transformation challenges for large enterprises?Are you passionate about designing modern cloud data platforms and helping customers unlock the value of their data?Do you thrive in client-facing architecture roles where you can influence strategy, technology, and business outcomes? You will be part of our Cloud and Application Services team, working with customers, architects, consultants, and cloud specialists to design and deliver modern data platforms and transformation solutions. You'll play a key role in helping enterprise customers modernize legacy data environments and accelerate their cloud journey. As a Senior Enterprise Solution Architect – Data, you will lead the architecture and design of enterprise-scale data solutions for strategic customers. You will work closely with business and technical stakeholders to assess current environments, develop target-state architectures, and guide the delivery of modern cloud-based data platforms, with AWS as a primary focus.What You Will Be Doing
+Lead data architecture engagements from assessment and strategy through to solution design and implementation guidance. 
+Design modern cloud-based data platforms and migration approaches for enterprise customers. 
+Define data governance, security, resilience, and compliance principles across data environments. 
+Facilitate architecture workshops and provide trusted advisory support to customer stakeholders and leadership teams. 
+Support presales activities, including solution design, proposals, and technical presentations.
+Mentor delivery teams and provide architectural governance throughout project lifecycles.
+Job Requirements 
+Strong experience designing and delivering enterprise data and analytics solutions. 
+Deep understanding of modern cloud data platforms and data transformation strategies. 
+Experience working with AWS data services and cloud-native architectures.
+Knowledge of data governance, security, integration, and data management practices. 
+Strong stakeholder management and communication skills, with the ability to engage both technical and business audiences. 
+Experience supporting consulting, advisory, or presales engagements.
+Company description SoftwareOne is a global provider of software and cloud solutions. With a presence in over 70 countries and more than 12,000 professionals, we help organizations optimize software investments, modernize applications, and unlock the value of cloud, data, and AI. 
+
+Our people are at the core of everything we do. We enable collaboration across borders, continuous learning, and opportunities to grow in a fast-evolving technology landscape. Whether your focus is on technology, customer success, or business operations, your ideas matter, and your contributions make a difference. 
+
+Join a global team where you can build your skills, work with leading technologies, and make a real impact for our customers.
+

@@ -1,0 +1,192 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "D-HYBRID1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)",
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SWE_BLOCKCHAIN",
+  "role_name": "Blockchain Engineer",
+  "role_name_vn": "Kỹ sư Blockchain",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "D",
+  "archetype_reasoning": "Xếp D theo roles.csv: HYBRID thật — có tuyển fresher ở startup crypto (nên có levels[] từ band thấp như archetype A/B), nhưng phần lớn nhân sự chuyển ngang từ Backend Developer, và ở band cao (L6-L7) role hội tụ thành một vị trí chuyên gia hiếm gần như destination node (nên có thêm destination_profile) — không thuần A/B/C.",
+  "occupied_bands": [
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Có cửa vào Fresher ở một số startup crypto/Web3 (roles.csv xác nhận), nhưng đây là NGOẠI LỆ hẹp — phần lớn nhân sự Blockchain Engineer tại VN chuyển ngang từ Backend Developer đã học thêm Solidity/smart contract. Từ band L6 trở lên, số lượng vị trí tại VN rất nhỏ nên role hội tụ thành đích đến chuyên gia hơn là một nấc ladder bình thường — xem destination_profile.",
+  "levels": [
+    {
+      "band": "L2",
+      "title_vn": "Fresher Blockchain Engineer",
+      "title_aliases": [],
+      "years_experience": "0-1 (hiếm, chủ yếu startup crypto)",
+      "core_output": "Viết smart contract đơn giản theo mẫu có sẵn dưới hướng dẫn sát, học cách tương tác với blockchain testnet, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Blockchain Engineer",
+      "title_aliases": [],
+      "years_experience": "1-2 (thường kèm nền Backend)",
+      "core_output": "Tự hiện thực một smart contract hoặc một tích hợp on-chain/off-chain đã được xác định rõ, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Blockchain Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm một module dApp/smart contract hoàn chỉnh, viết test và audit sơ bộ cho contract của chính mình, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Blockchain Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ thiết kế kiến trúc smart contract cho một sản phẩm (tokenomics, bảo mật hợp đồng thông minh), chịu trách nhiệm về tính đúng đắn và an toàn khi contract chạm vào tài sản thật, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "destination_profile": {
+    "band_range": "L6 - L7",
+    "min_years_experience": "6-12",
+    "years_band_check": "Sàn 6 = sàn của L6. Trần 12 = trần của L7. Lấy trọn khoảng vì không có bằng chứng để thu hẹp.",
+    "core_output": "Dẫn dắt kỹ thuật/kiến trúc cho toàn bộ hệ thống blockchain của một sản phẩm (giao thức, bảo mật hợp đồng thông minh ở quy mô tổ chức, kiểm toán bảo mật thuê ngoài), đồng thời là chuyên gia hiếm mà tổ chức phải giữ lại — khác các band thấp hơn ở chỗ không còn nhiều 'đồng nghiệp cùng cấp' để so sánh tại VN (số lượng vị trí rất nhỏ), nên vai trò gần với một đích đến chuyên gia hơn là một nấc thăng tiến bình thường trong ladder.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Suy luận — số lượng đội blockchain tại VN thường quá nhỏ để có Engineering Manager chuyên biệt, nên nhánh quản lý (nếu có) neo vào SWE_EM chung."
+      }
+    ],
+    "ic_track_note": "Không quan sát được band IC nào cao hơn L6 cho role này trong roles.csv hiện tại — người muốn tiếp tục leo cao thường CHUYỂN SANG role khác (xem management_track hoặc related_roles.next_steps) chứ không có nấc Principal riêng trong chính title này."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L3",
+        "note": "Đường vào phổ biến nhất theo roles.csv.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect",
+        "note": "Suy luận — cho người muốn tổng quát hoá sang kiến trúc phần mềm nói chung.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_BACKEND",
+        "reason": "Ở band thấp, nhiều công ty coi Blockchain Engineer chỉ là Backend Developer chuyên biệt hoá công nghệ, không phải role tách biệt hoàn toàn.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "verification_flags": [
+    {
+      "id": "VF-D-BLOCKCHAIN-01",
+      "severity": "trung bình",
+      "flag": "roles.csv để mở '(A hay B) — bạn quyết' rồi chốt D. Bản Pass 1 này diễn giải D là: có ladder thật ở band thấp (giống A/B) NHƯNG band cao hội tụ thành đích đến hiếm (giống C) — cách chia levels[] (L2-L5) / destination_profile (L6-L7) là quyết định của người viết Pass 1, CHƯA có JD xác nhận điểm chia đúng ở L6.",
+      "action": "Pass 2: xác nhận điểm chia ladder/destination có đúng ở L6 không, và JD Fresher Blockchain có thực sự tồn tại ngoài 1-2 startup hay không."
+    }
+  ],
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Tỷ lệ Fresher Blockchain Engineer thật (qua ngả startup crypto) so với chuyển ngang từ Backend chưa có số liệu — roles.csv chỉ ghi định tính.",
+    "Điểm chia giữa levels[] (ladder) và destination_profile (đích đến chuyên gia) ở band L6 là suy luận của người viết Pass 1, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "confidence_overall": "low"
+}

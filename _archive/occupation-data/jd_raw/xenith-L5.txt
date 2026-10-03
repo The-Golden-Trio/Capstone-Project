@@ -1,0 +1,40 @@
+https://www.linkedin.com/jobs/view/4422480833/
+
+Senior Software Engineer, Frontend
+About the job
+What we're looking for
+
+We are seeking a talented, endlessly curious individual to join our team. You’ll be working closely with our group of companies in the fintech sector as part of the Engineering department. This company is a leading B2B fintech platform in its field, processing over US$2B across multiple currencies annually. We’re looking for individuals who are driven to create meaningful value, take full ownership of what they build, and thrive in a fast-paced, high-growth environment. If you’re motivated by impactful work and eager to be part of an innovative team, we’d love to hear from you.
+
+What You’ll Do
+
+Design, develop, and maintain scalable frontend applications using Angular and TypeScript, with a strong emphasis on code quality and maintainability
+Integrate with backend payment APIs and handle edge cases such as ambiguous or delayed responses
+Build and maintain component libraries and design systems, ensuring consistency, accessibility, and reusability
+Write robust unit, component, and end-to-end tests for all new features and ensure proper validation for critical payment UI flows
+Collaborate cross-functionally with backend, mobile, product, and design teams to define, design, and ship high-impact features
+Guide and mentor junior and mid-level engineers, providing technical leadership through code reviews, design discussions, and pairing sessions
+Lead by example in enforcing clean architecture, clear documentation, accessibility, and reliable observability practices
+Identify and resolve performance bottlenecks, improve system resilience, and optimise for correctness and user experience
+Stay up to date with emerging frontend technologies and propose improvements aligned with business goals
+Build software with security and compliance in mind, ensuring proper access control, secure handling of cardholder-facing surfaces, and PCI-DSS scope discipline
+Establish design systems, component libraries, and the visual quality bar across customer- and merchant-facing applications
+
+What you should have
+
+5+ years of experience in frontend development, with at least 2+ years in Angular
+Has led a major Angular version migration in production.
+Has owned a customer-facing payment or fintech products end to end
+Deep Angular — change detection, RxJS, standalone components, control flow, signals, dependency injection.
+Server-side rendering; hydration and performance budgets.
+Strong TypeScript fluency including strict-mode hygiene.
+Build tooling — esbuild and Vite on modern Angular; legacy Webpack on older surfaces.
+Hands-on with frontend security controls — content security policy, XSS mitigation, third-party SDK sandboxing, secure input.
+Testing strategy across unit, integration, and end-to-end (Cypress or Playwright).
+Strong design sensibility; translates Figma cleanly and proposes UX improvements.
+Clear technical communication in English; writes component-library documentation.
+Has owned frontend incidents end-to-end including post-mortem and follow-up.
+
+About Us
+
+Xenith is a B2B payment service provider focused on enabling seamless cross-border commerce. With an MSB license in Canada and PJP III license in Indonesia, we offer global merchants a one-stop solution to manage multi-currency payments - with a strong focus on alternative payment methods in emerging markets. Our deep regional expertise and strong partnerships with top local gateways, we simplify the complexity of fragmented payment landscapes, helping global merchants expand faster and more efficiently. At Xenith, we believe in building a culture where people feel empowered, trusted, and challenged to do their best work. Join us as we build the financial infrastructure of tomorrow!

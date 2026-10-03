@@ -1,0 +1,79 @@
+﻿run_order,role_code,role_name,role_name_vn,role_group,archetype,bands,tier,pass1_done,pass2_done,note
+8,CLOUD_ARCH,Cloud Architect,Kiến trúc sư đám mây,"Cloud, DevOps & SRE",C,L6-L8,2,,,Destination node.
+9,CLOUD_LEAD,DevOps / Platform Lead,Trưởng nhóm DevOps,"Cloud, DevOps & SRE",C,L6-L8,2,,,Destination node.
+48,CLOUD_AUTO,Automation / CI-CD Engineer,Kỹ sư tự động hóa,"Cloud, DevOps & SRE",B,L3-L6,3,,,Giao thoa với QA_AUTO và CLOUD_DEVOPS.
+49,CLOUD_DEVOPS,DevOps Engineer,Kỹ sư DevOps,"Cloud, DevOps & SRE",B,L3-L7,1,,,"Ca kinh điển của ""không có fresher"". Vào từ SysAdmin hoặc Backend."
+50,CLOUD_DEVSECOPS,DevSecOps Engineer,Kỹ sư DevSecOps,"Cloud, DevOps & SRE",B,L4-L7,2,,,Vào từ DevOps hoặc AppSec.
+51,CLOUD_FINOPS,FinOps Specialist,Chuyên viên tối ưu chi phí đám mây,"Cloud, DevOps & SRE",B,L4-L6,3,,,Rất hiếm là role toàn thời gian; thường kiêm nhiệm.
+52,CLOUD_PLATFORM,Platform Engineer,Kỹ sư nền tảng,"Cloud, DevOps & SRE",B,L4-L7,3,,,Title còn mới tại VN.
+53,CLOUD_SRE,Site Reliability Engineer,Kỹ sư tin cậy hệ thống / SRE,"Cloud, DevOps & SRE",B,L4-L7,2,,,Chủ yếu ở big tech/fintech; entry band cao.
+75,CLOUD_ENG,Cloud Engineer,Kỹ sư điện toán đám mây,"Cloud, DevOps & SRE",D,L2-L6,2,,,AWS/Azure partner tại VN CÓ tuyển fresher cloud. Đây là ngoại lệ trong domain.
+10,SEC_ISM,Information Security Manager,Quản lý an toàn thông tin / Trưởng phòng bảo mật,Cyber Security,C,L7-L9,2,,,Destination node.
+32,SEC_SOC,SOC Analyst,Chuyên viên giám sát an ninh (SOC),Cyber Security,A,L1-L6,1,,,Cửa vào entry-level duy nhất của domain SEC. Có tier L1/L2/L3 nội bộ — đừng nhầm với band toàn cục.
+54,SEC_AISEC,AI Security Engineer,Chuyên viên bảo mật AI,Cyber Security,B,L4-L7,3,,,Rất mới; verify sự tồn tại tại VN trước.
+55,SEC_APPSEC,Application Security Engineer,Kỹ sư bảo mật ứng dụng (AppSec),Cyber Security,B,L4-L7,2,,,Vào từ Dev hoặc Pentest.
+56,SEC_ENG,Cybersecurity / Security Engineer,Kỹ sư an ninh mạng / Kỹ sư bảo mật,Cyber Security,B,L3-L7,2,,,Vào từ Network/SysAdmin/SOC.
+57,SEC_GRC,GRC Analyst,Chuyên viên tuân thủ & quản trị rủi ro,Cyber Security,B,L3-L7,2,,,Có thể có entry qua audit/compliance nền phi kỹ thuật.
+58,SEC_IR,Incident Response / DFIR Specialist,Chuyên viên ứng cứu sự cố & điều tra số,Cyber Security,B,L4-L7,3,,,Vào từ SOC L3.
+59,SEC_PENTEST,Penetration Tester,Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng,Cyber Security,B,L3-L7,2,,,"Route đặc thù: CTF/bug bounty → pentest, không qua ladder công ty."
+6,DATA_AIARCH,AI Solution Architect,Kiến trúc sư giải pháp AI,"Data, AI & Machine Learning",C,L7-L8,3,,,Destination node.
+7,DATA_PM,Data Product Manager,Quản lý sản phẩm dữ liệu,"Data, AI & Machine Learning",C,L5-L7,2,,,Destination; vào từ PROD_PM hoặc DATA_DA senior.
+31,DATA_DA,Data Analyst,Chuyên viên phân tích dữ liệu,"Data, AI & Machine Learning",A,L1-L6,1,,,Cửa vào phổ biến nhất của cả domain Data tại VN.
+38,DATA_AI,AI Engineer,Kỹ sư trí tuệ nhân tạo,"Data, AI & Machine Learning",B,L3-L7,2,,,Ranh giới với DATA_ML mờ — xem mục 3 của taxonomy.
+39,DATA_ANALYTICSENG,Analytics Engineer,Kỹ sư phân tích dữ liệu,"Data, AI & Machine Learning",B,L4-L6,3,,,Title còn hiếm tại VN; thường là DE hoặc DA làm kiêm.
+40,DATA_CV_NLP,Computer Vision / NLP Engineer,Kỹ sư thị giác máy tính / xử lý ngôn ngữ,"Data, AI & Machine Learning",B,L3-L7,2,,,Gắn viện nghiên cứu / VinAI / FPT AI.
+41,DATA_DE,Data Engineer,Kỹ sư dữ liệu,"Data, AI & Machine Learning",B,L3-L7,2,,,Gần như không có Intern/Fresher DE. Vào từ Backend hoặc DA.
+42,DATA_DS,Data Scientist,Nhà khoa học dữ liệu,"Data, AI & Machine Learning",B,L3-L7,2,,,"Có fresher DS ở một số nơi nhưng rất mỏng, phần lớn yêu cầu Master/kinh nghiệm."
+43,DATA_GENAI,Generative AI / LLM Engineer,Kỹ sư AI tạo sinh / Kỹ sư LLM,"Data, AI & Machine Learning",B,L4-L7,2,,,Mới; phần lớn là Backend/AI engineer chuyển sang 2023+.
+44,DATA_GOV,Data Governance Specialist,Chuyên viên quản trị dữ liệu,"Data, AI & Machine Learning",B,L4-L7,3,,,Ngân hàng là nơi tuyển chính.
+45,DATA_ML,Machine Learning Engineer,Kỹ sư học máy,"Data, AI & Machine Learning",B,L3-L7,2,,,"Vào từ DS, Backend, hoặc research."
+46,DATA_MLOPS,MLOps Engineer,Kỹ sư MLOps / Kỹ sư vận hành hệ thống AI,"Data, AI & Machine Learning",B,L4-L7,2,,,Giao thoa mạnh với CLOUD_DEVOPS.
+47,DATA_PROMPT,Prompt Engineer,Kỹ sư thiết kế câu lệnh,"Data, AI & Machine Learning",B,L3-L5,3,,,Nghi ngờ đây không phải role độc lập tại VN. Nên verify sự tồn tại trước khi làm ladder.
+74,DATA_BI,Business Intelligence Analyst,Chuyên viên BI,"Data, AI & Machine Learning",D,L2-L6,2,,,"Có tuyển fresher (đặc biệt ngân hàng, retail) nhưng cũng nhiều người từ DA sang."
+17,EXEC_CDO,Chief Data / AI Officer,Giám đốc Dữ liệu / Giám đốc AI,Executive Technology Layer,C,L9-L10,3,,,"Mới, số lượng rất nhỏ."
+18,EXEC_CIO,Chief Information Officer,Giám đốc Thông tin (CIO),Executive Technology Layer,C,L9-L10,3,,,Gần như chỉ tồn tại ở enterprise/ngân hàng.
+19,EXEC_CISO,Chief Information Security Officer,Giám đốc An ninh Thông tin,Executive Technology Layer,C,L9-L10,3,,,Ngân hàng bắt buộc có theo quy định.
+20,EXEC_CPO,Chief Product Officer,Giám đốc Sản phẩm,Executive Technology Layer,C,L9-L10,3,,,Chủ yếu product company.
+21,EXEC_CTO,Chief Technology Officer,Giám đốc Công nghệ (CTO),Executive Technology Layer,C,L9-L10,3,,,"Tại startup VN, CTO có thể xuất hiện ở L7 — ghi rõ biến thiên theo quy mô."
+22,EXEC_VPOE,VP of Engineering,Phó Chủ tịch Kỹ thuật / Giám đốc Kỹ thuật,Executive Technology Layer,C,L9-L10,3,,,Hiếm tại VN; chủ yếu FDI và unicorn.
+16,INFRA_ITMANAGER,IT Manager,Quản lý CNTT / Trưởng phòng CNTT,IT Infrastructure & Enterprise Systems,C,L7-L9,2,,,Destination node.
+35,INFRA_HELPDESK,IT Helpdesk / IT Support,Nhân viên hỗ trợ kỹ thuật / IT Support,IT Infrastructure & Enterprise Systems,A,L1-L4,1,,,Trần rất thấp; giá trị của role này là làm feeder cho SysAdmin/SOC.
+36,INFRA_NETWORK,Network Engineer,Kỹ sư hệ thống mạng,IT Infrastructure & Enterprise Systems,A,L1-L7,2,,,"Ladder riêng theo chứng chỉ (CCNA→CCNP→CCIE), không theo band phần mềm."
+66,INFRA_CRM,Salesforce / CRM Consultant,Chuyên viên tư vấn giải pháp CRM,IT Infrastructure & Enterprise Systems,B,L3-L7,3,,,Salesforce partner tại VN có tuyển junior — cân nhắc D.
+67,INFRA_DBA,Database Administrator,Quản trị viên cơ sở dữ liệu / DBA,IT Infrastructure & Enterprise Systems,B,L3-L7,2,,,Vào từ SysAdmin hoặc Backend.
+68,INFRA_ERP,ERP Consultant / Engineer,Chuyên viên tư vấn giải pháp ERP,IT Infrastructure & Enterprise Systems,B,L3-L7,2,,,"Ladder theo module (SAP MM/FI/SD), không theo band chung."
+69,INFRA_ITOPS,IT Operations / Infrastructure Engineer,Kỹ sư vận hành hạ tầng,IT Infrastructure & Enterprise Systems,B,L3-L6,3,,,Giao thoa với CLOUD_DEVOPS.
+70,INFRA_SAPBASIS,SAP Basis Administrator,Quản trị SAP Basis,IT Infrastructure & Enterprise Systems,B,L4-L7,3,,,"Rất chuyên biệt, ít công ty tại VN."
+71,INFRA_SYSENG,Systems Engineer,Kỹ sư hệ thống,IT Infrastructure & Enterprise Systems,B,L3-L6,3,,,Vào từ SysAdmin.
+78,INFRA_SYSADMIN,System Administrator,Quản trị viên hệ thống,IT Infrastructure & Enterprise Systems,D,L2-L6,2,,,"Có entry, đồng thời là điểm đến của Helpdesk."
+11,PROD_AGILE,Agile Coach,Chuyên gia huấn luyện Agile,Product & Project Management,C,L7-L8,3,,,"Destination node, số lượng rất nhỏ tại VN."
+12,PROD_DM,Delivery Manager,Quản lý bàn giao dự án,Product & Project Management,C,L7-L8,3,,,"Đặc thù outsourcing lớn (FPT, KMS)."
+13,PROD_PJM,Project Manager,Quản lý dự án,Product & Project Management,C,L6-L8,2,,,"Destination; vào từ PL, BA, Tech Lead."
+14,PROD_PL,Project Leader,Trưởng dự án,Product & Project Management,C,L5-L6,3,,,"Đặc thù outsourcing VN. Là một cấp bậc, không phải path."
+33,PROD_BA,Business Analyst,Chuyên viên phân tích nghiệp vụ / BA,Product & Project Management,A,L1-L7,1,,,"Ladder đầy đủ; cửa vào lớn, đặc biệt ngân hàng và outsourcing."
+60,PROD_PO,Product Owner,Chủ sở hữu sản phẩm / Product Owner,Product & Project Management,B,L4-L6,2,,,"Tại VN nhiều nơi PO ≈ BA cấp cao, không phải role riêng. Cần verify."
+61,PROD_SM,Scrum Master,Scrum Master / Điều phối viên Scrum,Product & Project Management,B,L4-L6,2,,,"Thường kiêm nhiệm, ít khi là ladder độc lập."
+76,PROD_PM,Product Manager,Quản lý sản phẩm / Product Manager,Product & Project Management,D,L3-L9,2,,,Vừa có Associate PM (entry) vừa là điểm đến của BA/dev.
+15,QA_LEAD,QA/QC Lead / Test Manager,Trưởng nhóm QA/QC / Quản lý kiểm thử,Quality Assurance & Testing,C,L6-L8,2,,,Destination node.
+34,QA_MANUAL,Manual Tester / QC,Kỹ sư kiểm thử thủ công / Tester,Quality Assurance & Testing,A,L1-L5,1,,,Cửa vào IT lớn nhất tại VN sau BA. Trần thấp — đây là điểm đáng phân tích.
+62,QA_ANALYST,QA Analyst / Auditor,Chuyên viên đảm bảo quy trình chất lượng,Quality Assurance & Testing,B,L4-L6,3,,,Ranh giới với QA_LEAD mờ tại VN.
+63,QA_PERF,Performance Test Engineer,Kỹ sư kiểm thử hiệu năng,Quality Assurance & Testing,B,L4-L7,2,,,Chuyên môn hoá; vào từ QA_AUTO hoặc DevOps.
+64,QA_SDET,SDET,Kỹ sư phát triển công cụ và kiểm thử,Quality Assurance & Testing,B,L4-L7,2,,,Yêu cầu nền coding thật; vào từ Dev hoặc QA_AUTO senior.
+65,QA_SECTEST,Security Tester,Kỹ sư kiểm thử bảo mật,Quality Assurance & Testing,B,L4-L7,3,,,Giao thoa mạnh với SEC_PENTEST — xem quy tắc phân định.
+77,QA_AUTO,Automation QA Engineer,Kỹ sư kiểm thử tự động,Quality Assurance & Testing,D,L3-L7,2,,,"Vào từ QA_MANUAL upskill, hoặc tuyển thẳng từ dev."
+,SWE_ARCH_ENT,Enterprise Architect,Kiến trúc sư doanh nghiệp,Software Engineering & Architecture,C,L7-L9,2,,,Không có L1–L6. Đây là ca test chính.
+1,SWE_ARCH_SOL,Solution Architect,Kiến trúc sư giải pháp,Software Engineering & Architecture,D,L6-L8,2,,,"Điểm đến; nhiều ở SI, banking, cloud partner. | SUA 2026-08-22: C->D. Web search xac nhan co ladder rieng o nhom cloud reseller/presales (MEGAZONE, Noventiq, KDDI, SMARTOSC): Cloud Solution Architect (Senior, Junior) sàn 3+ năm, có nhánh Junior — tách bạch với nhóm ngân hàng (NAB, ACB) là destination node sàn 8-10+ năm."
+,SWE_ARCH_SW,Software Architect,Kiến trúc sư phần mềm,Software Engineering & Architecture,C,L6-L8,2,,,Điểm đến từ Senior/Lead Backend.
+4,SWE_EM,Engineering Manager,Trưởng phòng Kỹ thuật,Software Engineering & Architecture,C,L7-L9,2,,,Là một cấp bậc. Nhánh Management.
+5,SWE_TECHLEAD,Tech Lead,Trưởng nhóm kỹ thuật,Software Engineering & Architecture,C,L6-L7,2,,,"Là một cấp bậc, không phải path. Nhánh IC."
+23,SWE_BACKEND,Back-end Developer,Lập trình viên Back-end / Kỹ sư Back-end,Software Engineering & Architecture,A,L1-L7,1,,,Ladder chuẩn nhất thị trường. Dùng làm role tham chiếu cho cả dataset.
+24,SWE_EMBEDDED,Embedded Software Engineer,Kỹ sư phần mềm nhúng / Kỹ sư IoT,Software Engineering & Architecture,A,L1-L7,2,,,"Gắn FDI Nhật/Hàn/Đức (Bosch, Renesas). Band map theo thang FDI."
+25,SWE_FRONTEND,Front-end Developer,Lập trình viên Front-end,Software Engineering & Architecture,A,L1-L7,1,,,Như trên.
+26,SWE_FULLSTACK,Full-stack Developer,Lập trình viên Full-stack,Software Engineering & Architecture,A,L1-L7,1,,,Product/startup dùng nhiều; outsourcing ít gọi title này.
+27,SWE_GAME,Game Developer,Lập trình viên Game,Software Engineering & Architecture,A,L1-L7,2,,,"Cụm riêng (VNG, Gameloft, Amanotes), ít giao thoa ladder chung."
+28,SWE_MOBILE,Mobile Developer,Lập trình viên Mobile / Kỹ sư ứng dụng di động,Software Engineering & Architecture,A,L1-L7,1,,,"Tách iOS/Android/Flutter ở band thấp, gộp lại từ L5."
+29,SWE_UIUX,UI/UX Designer,Chuyên viên thiết kế UI/UX,Software Engineering & Architecture,A,L1-L7,2,,,"Ladder riêng, gần như không giao với ladder engineer."
+30,SWE_WEB,Web Developer,Lập trình viên Web,Software Engineering & Architecture,A,L1-L6,2,,,Trần thấp hơn Backend; VN thường không có Principal Web Dev.
+37,SWE_AIFIRST,AI-First Software Engineer,Kỹ sư phần mềm AI-First,Software Engineering & Architecture,B,L4-L7,3,,,"Nhãn mới nổi, chưa chắc là role độc lập tại VN hay chỉ là cách mô tả. Cân nhắc gộp vào SWE_FULLSTACK."
+72,SWE_BLOCKCHAIN,Blockchain Engineer,Kỹ sư Blockchain,Software Engineering & Architecture,D,L2-L7,2,,,"Startup crypto có tuyển fresher, nhưng phần lớn chuyển ngang từ Backend. Bạn quyết A hay B."
+73,SWE_BRSE,Bridge Software Engineer (BrSE),Kỹ sư cầu nối,Software Engineering & Architecture,D,L2-L7,2,,,"Hybrid thật: vừa có route riêng (comtor/N2 → BrSE), vừa là điểm đến của dev học tiếng Nhật."

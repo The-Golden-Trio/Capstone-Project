@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-DEST1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SEC_ISM",
+  "role_name": "Information Security Manager",
+  "role_name_vn": "Quản lý an toàn thông tin / Trưởng phòng bảo mật",
+  "role_group": "Cyber Security",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: destination node, là điểm hội tụ quản lý của toàn bộ nhánh Security (Engineer/AppSec/Pentest/IR/GRC).",
+  "occupied_bands": [
+    "L7",
+    "L8",
+    "L9"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đi lên từ Security Engineer, AppSec Engineer, Pentester hoặc GRC Analyst senior chuyển sang quản lý. Chưa có JD xác nhận mốc năm cụ thể.",
+  "destination_profile": {
+    "band_range": "L7 - L9",
+    "min_years_experience": "8-15",
+    "years_band_check": "Sàn 8 = sàn của L7. Trần 15 = trần của L8; L9 theo thang là 12+ nên nằm trong khoảng.",
+    "core_output": "Chịu trách nhiệm về chương trình an toàn thông tin của toàn tổ chức: đặt chiến lược bảo mật, quản lý ngân sách và đội bảo mật (Security Engineering/AppSec/Pentest/GRC/IR), báo cáo rủi ro trực tiếp cho cấp điều hành, đồng thời thực hiện quản lý trực tiếp con người — khác với Principal Security Engineer (IC) vốn chỉ chịu trách nhiệm kỹ thuật, không quản lý ngân sách/nhân sự.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — role này đã nằm trên nhánh Management. Chưa có JD xác nhận điểm rẽ diễn ra ở band nào.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SEC_ENG",
+        "role_name": "Cybersecurity / Security Engineer",
+        "from_band": "L7",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_APPSEC",
+        "role_name": "Application Security Engineer",
+        "from_band": "L7",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SEC_GRC",
+        "role_name": "GRC Analyst",
+        "from_band": "L7",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "EXEC_CISO",
+        "role_name": "Chief Information Security Officer",
+        "note": "Suy luận — bước tiếp theo tự nhiên nhất, đặc biệt tại ngân hàng.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "INFRA_ITMANAGER",
+        "role_name": "IT Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "EXEC_CISO",
+        "reason": "Ranh giới nằm ở phạm vi: ISM quản lý MỘT chương trình/đội bảo mật, CISO chịu trách nhiệm CẤP ĐIỀU HÀNH cho toàn bộ chiến lược an ninh thông tin của công ty.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ ranh giới rõ ràng giữa ISM và CISO tại các công ty VN quy mô vừa — có thể là cùng một vị trí ở công ty nhỏ hơn ngân hàng.",
+    "Band L9 trong roles.csv chưa có bằng chứng cụ thể; suy luận lấy trọn khoảng."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

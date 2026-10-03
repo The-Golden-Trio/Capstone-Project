@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-PRODQA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "PROD_SM",
+  "role_name": "Scrum Master",
+  "role_name_vn": "Scrum Master / Điều phối viên Scrum",
+  "role_group": "Product & Project Management",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: thường là vai trò kiêm nhiệm (Dev/BA/PM kiêm Scrum Master), ít khi là ladder độc lập trọn thời gian tại VN.",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher. Theo roles.csv, thường là vai trò kiêm nhiệm (Dev/BA/PM kiêm Scrum Master) chứ ít khi là ladder độc lập trọn thời gian tại VN. Sàn hợp lý là L4.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "Scrum Master (Middle, thường kiêm nhiệm)",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền Dev/BA/PM)",
+      "core_output": "Điều phối các nghi thức Scrum (standup, retro, planning) cho một đội theo khuôn mẫu có sẵn, hỗ trợ gỡ blocker đơn giản, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Scrum Master",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ huấn luyện một hoặc nhiều đội áp dụng Agile hiệu quả hơn, xử lý xung đột và blocker phức tạp, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Scrum Master Lead / Agile Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt chuyển đổi Agile cho tổ chức, coaching nhiều Scrum Master khác, tương ứng vai trò dẫn dắt kỹ thuật/chuyên môn cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [],
+    "management_track": [
+      {
+        "role_code": "PROD_AGILE",
+        "from_band": "L6",
+        "note": "Suy luận — Scrum Master Lead phát triển lên thành Agile Coach khi phạm vi mở rộng ra toàn tổ chức."
+      }
+    ],
+    "ic_track_note": "Không quan sát được band IC nào cao hơn L6 cho role này trong roles.csv hiện tại — người muốn tiếp tục leo cao thường CHUYỂN SANG role khác (xem management_track hoặc related_roles.next_steps) chứ không có nấc Principal riêng trong chính title này."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L4",
+        "note": "Suy luận — kỹ sư kiêm Scrum Master.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "PROD_AGILE",
+        "role_name": "Agile Coach",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "PROD_PJM",
+        "role_name": "Project Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "PROD_PJM",
+        "reason": "Ranh giới nằm ở phương pháp luận (Agile facilitation thuần) so với quản lý dự án tổng thể (phạm vi, ngân sách, tiến độ).",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_AGILE",
+        "reason": "Agile Coach hoạt động ở tầng tổ chức, Scrum Master hoạt động ở tầng một đội.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ tỷ lệ Scrum Master toàn thời gian so với kiêm nhiệm tại VN — roles.csv nghiêng về kiêm nhiệm nhưng không có số liệu.",
+    "Trần L6 là suy luận, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

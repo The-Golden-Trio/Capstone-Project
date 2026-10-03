@@ -1,0 +1,84 @@
+https://careers.holistics.io/job-openings/frontend-engineer-with-passion-for-ui-ux-and-performance
+
+Frontend Engineer (Junior/Middle)
+HCMC, Vietnam
+Full-time
+The position
+We’re the team behind projects like BI tool Holistics, database diagram tool dbdiagram.io, and open-source project dbml.org. We’re looking for another front-end engineer to help us build more awesome tools for data teams and developers.
+
+This is a full-time position based in Ho Chi Minh City with flexible, hybrid WFH/WFO setup.
+
+Our application’s architecture
+To get a taste of how working with us is like, here are some insights into how our application has been built so far.
+
+The Holistics app works by allowing data analysts to connect to their data warehouses and develop reusable “data models”. This allows non-technical users to use a friendly drag-and-drop interface to explore the data and build dashboards, without the need to bother their technical colleagues.
+
+On the frontend side, Vue.js 3.0 with TypeScript is our framework of choice for front-end development. To deal with displaying huge amount of data, we build sophisticated, custom Vue components that lazily render the data. Since many complex computation are done on the front-end, we also use Web workers to decouple those computation from the main rendering thread. This enables smoother user experience while also decouples computation from rendering logic.
+
+Most of our “as-code” features operate in dual modes: code-mode and UI-mode. The code is for technical-savvy users, while the UI mode is for those who prefer a more intuitive start. To support these features, we have developed our own compiler and a web-based editor, similar to a lightweight version of VSCode, both of which are optimized for performance in the browser environment.
+
+While we use the word frontend, it encompasses both the conventional frontend aspects as well as the “backend of the frontend”. This includes elements like frontend architecture, designing data structures to enable complex visualizations, and packaging components to reuse them across various product lines.
+
+On the backend side, Holistics is built using Ruby on Rails as the main web framework. Unlike standard Rails project structure, we **modularize the code base into local gems and **engines to improve maintainability and extensibility, following modular monolith pattern. This also follows the pattern of “Functional core, imperative shell with the gems being mostly functional/stateless code and engines handle the imperative/stateful part of the app.
+
+By using Sorbet to add static typing on top of Ruby, we ensure that most of our Ruby code has annotated type signature. This not only reduces a whole swath of common bugs that plagues Ruby codebases but also significantly improves developer productivity through IDE/editor integrations.
+
+We use PostgreSQL for our main production database due to its reliability and rich feature-set. We have built a custom job queue system on top of Postgres, which are then executed using Sidekiq on top of Redis.
+
+What you’ll work on here
+Here are some interesting frontend projects that have been going on inside Holistics:
+
+Build a web-based IDE for data analysts to explore and develop analytics logic
+Build a grid-based dashboard as-code
+Create custom, interactive visualization components leveraging open-source technologies like Vega-Lite
+Build a new design system and seamlessly integrate it across existing and new product lines.
+Develop front-end components capable of rendering hundreds of thousands of data points efficiently
+Perform ongoing audits and monitoring to optimize front-end performance, focusing on speed and user experience.
+Develop and optimize a (CI/CD) pipeline specifically for front-end development to enhance the Developer Experience (DX)
+Design and build a natural language interface for business users to explore data and view dashboards
+Create a domain specific language as part of a semantic layer to represent analytics logic
+The way we work
+Product & Design Team spends time research the problem, talk to customers and prepare Product Discovery Doc (PDD) and Product Requirement Doc (PRD).
+Engineering Team then performs a Technical Research. When we have a fairly good picture of the complexity and impact, we’ll start with the implementation.
+We have a weekly TED talk program where team members present topics they are interested in.
+Engineering Team organizes weekly technical talks as well as monthly technical workshops.
+Product Team has regular AMA events with external product experts
+We follow Spotify squad model. Our team is split into 4 squads, each (5-7 members) consists of engineers, product managers & designers working closely together.
+How we work on a new feature:
+We do not compromise product and code quality for artificial deadline. We refactor and think about code optimization regularly. We understand the good and bad of technical debt and use them to our advantage.
+We employ “pair programming” practices regularly where two team members work on a task together in one workstation. This brings a great deal of benefits, among which are faster knowledge transfer, reduced bus factor, better team cohesion and improved code quality.
+We have a strong writing culture: Almost everything is communicated through written documents. Just as our developers write reusable codes, we write evergreen notes.
+We maintain a problem-solving culture. Everyone is strongly encouraged to have rigorous understanding of a problem, separating Problem Space vs Solution Space as well as using Eigenquestions to find the most important dimensions of a problem. Solutions are deliberated over with trade-offs explicitly listed in discussion documentation. Watch this talk about problem-solving for engineers that our cofounder gave (in Vietnamese)
+We avoid being a feature factory. We’re aware more features do not equal better product.
+We let team members rotate every 3-6 months. This allows them to try new things and learn different aspects of the business.
+Our culture stimulates continuous learning:
+What we look for in you
+Here’s our idea of a good team member fit:
+
+You should have a profound interest in the front-end domain. You deeply care about the user experience and building high-performance front-end components.
+You should have a strong foundation in Computer Science with good problem-solving ability.
+Experience with our technology stack not required: While it's a bonus, it's not a requirement for you to be familiar with our current technical stack. We expect you to be able to pick up these quickly on the job.
+You should be someone with a continuous learning & growth mindset. You find yourself excited to learn something new as part of the work every week.
+Communications: Given we have a strong writing culture, you should be comfortable with communicating your ideas in English written forms.
+Genuine interest in the space: We'd love to work with people who are genuinely interested in the product and the space we're in, someone who cares about the end-product beyond just writing the code that makes it work.
+Interview Process
+Round 1:  Pair-coding interview
+Round 2: Technical interview (Optional)
+Round 3: Culture & Behavior Interview
+Compensation and Benefits
+💕 Benefits:
+
+Flexible Working Arrangement: Hybrid work (WFO + WFH) policies.
+Insurance & Healthcare: 100% Social Insurance covered on full gross salary; 24/7 premium healthcare insurance; periodic medical checkups for employee and family.
+Generous Leave Allowance: 14 annual leaves, 14 sick leaves, and childcare leave policy.
+Financial Rewards: 13th-month salary; annual compensation reviews.
+Growth & Development: Annual budget for personal and professional growth, well-being, and personal pursuits.
+Company Culture: Weekly happy hours and exciting company-organized events.
+🏢 Workstations provided for maximum productivity
+
+MacBook (or Laptop) Grant
+Mechanical Keyboard + Mouse
+Big-screen monitor(s)
+🌐 Working time: From Monday – Friday, from 9.00 a.m. to 6.00 p.m.
+
+🌐 Work location: 457-459 Nguyen Dinh Chieu street, MDA Building, Ban Co Ward, Ho Chi Minh City, Vietnam.

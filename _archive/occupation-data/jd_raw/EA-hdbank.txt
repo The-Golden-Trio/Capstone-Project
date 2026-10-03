@@ -1,0 +1,33 @@
+
+https://www.linkedin.com/jobs/view/4443497844/
+HDBank
+
+
+CHUYÊN GIA ARCHITECTURE (Kiến trúc giải pháp & Hệ thống) 
+About the job
+Mục tiêu vai trò:
+Dẫn dắt thiết kế kiến trúc tổng thể cho các dự án Core ngành và nền tảng dùng chung của Tập đoàn; đảm bảo tính nhất quán, khả năng tích hợp và mở rộng xuyên các công ty thành viên.
+
+Yêu cầu:
+Học vấn: Tốt nghiệp Đại học chuyên ngành CNTT, Khoa học máy tính, Hệ thống thông tin hoặc lĩnh vực liên quan; ưu tiên có bằng Thạc sĩ/MBA đối với cấp Director/Head.
+Ngoại ngữ: Tiếng Anh tốt — đọc hiểu tài liệu kỹ thuật, làm việc trực tiếp với vendor/đối tác quốc tế (Temenos, AWS, Microsoft...).
+Kỹ năng tư vấn & quản lý: Có khả năng tư vấn cấp lãnh đạo (C-level), làm việc đa ngành/đa công ty thành viên, quản lý stakeholder phức tạp.
+Sẵn sàng làm việc theo mô hình SWAT Team / dự án cấp tập đoàn, cường độ cao trong giai đoạn triển khai trọng điểm.
+
+Trách nhiệm:
+Thiết kế kiến trúc tổng thể (Solution/Enterprise Architecture) cho hệ thống Core ngành (chứng khoán, bảo hiểm, hàng không, du lịch/khách sạn, giáo dục, y tế, bán lẻ, BĐS, logistics...) và các nền tảng dùng chung.
+Thẩm định thiết kế kỹ thuật (Architecture Review) trước go-live; tư vấn công nghệ (Technology Advisory) cho Ban Chỉ đạo.
+Đảm bảo tính nhất quán & khả năng tích hợp giữa các dự án/công ty thành viên, tránh đầu tư trùng lặp hệ thống.
+
+Kinh nghiệm tối thiểu:
+12–15 năm kinh nghiệm CNTT, trong đó tối thiểu 5 năm ở vai trò Solution Architect / Enterprise Architect.
+Đã từng chủ trì kiến trúc cho tối thiểu 1–2 dự án chuyển đổi hệ thống lõi quy mô lớn (core banking, core bảo hiểm, ERP...).
+
+Background ưu tiên:
+Ưu tiên đã làm việc tại ngân hàng/tổ chức tài chính lớn, hoặc công ty tư vấn công nghệ/đối tác giải pháp lớn (Big4, Temenos, FIS, Oracle, SAP...).
+
+Chứng chỉ ưu tiên:
+TOGAF 9/10 (bắt buộc hoặc ưu tiên cao).
+AWS / Azure / GCP Solutions Architect – Professional.
+ArchiMate, ITIL 4.
+Am hiểu mô hình BIAN (Banking Industry Architecture Network) là lợi thế lớn cho các dự án Core ngân hàng.

@@ -1,0 +1,25 @@
+https://www.linkedin.com/jobs/view/zalo-tech-fresher-2026-at-zalo-4410541085/
+
+Zalo Tech Fresher 2026
+About the job
+Zalo Tech Fresher Program 2026 is a fast-track program for young, talented tech freshers who are passionate about using technology to make a greater impact on Vietnamese lives. This is not just a training program; it is an opportunity to build a strong engineering foundation and make real impact from day one.
+We are looking for Tech Freshers to join our program across multiple tracks, including Data & AI, Client Engineering (Mobile & Frontend), and Core Engineering (Backend, QC). In just 12 dynamic weeks, you will step into a professional working environment, receive personalized mentorship from senior engineers behind Zalo, Zing MP3, Kiki, Fiza, etc., and our latest AI innovations, and tackle real challenges that affect millions of users. The training journey is designed in 2 phases:
+Orientation (1 week): You will be equipped with essential foundations through structured training sessions, including soft skills and core technical knowledge to prepare for real-world engineering work;
+Project Mentoring (11 weeks): You will be assigned to a team and work closely with experienced mentors. Through hands-on projects, you will learn, build, and develop practical skills in a real product environment.
+
+During the program, you will have the opportunity to learn, build, and contribute across the following tracks:
+Data & AI: You will learn how to apply data, AI, and machine learning to real-world products, from data pipelines, researching statistical machine learning techniques/models to improving performance and user experience;
+Client Engineering (Mobile & Frontend): You will learn how to build high-performance user-facing applications across Mobile and Frontend, craft seamless user experiences, and understand how client systems interact with large-scale backend services systems;
+Core Engineering (Backend, QC): You will learn how to design and develop scalable backend systems serving millions of users, also gain exposure to software quality practices, including testing, automation, and building reliable systems.
+
+What you'll need
+Bachelor's Degree or Master's Degree in Computer Science, Software Engineering, AI, or any related major;
+Graduates in 2026 or graduated with less than 1 year of full-time working experience;
+Holding GPA of at least 7.5/10 or 3.0/4;
+Have solid knowledge of programming, DSA, and good logical thinking;
+Self-motivated, fast learner with a can-do attitude;
+Passion for making and delivering high-impact and high-quality products;
+Able to join full-time or part-time with a minimum of 3 - 4.5 days per week ;
+High academic achievement or participation in ICPC/APM or other programming competitions is preferred;
+Prior internship experience in the IT field is an advantage.
+

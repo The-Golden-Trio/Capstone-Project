@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-DEST1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "CLOUD_LEAD",
+  "role_name": "DevOps / Platform Lead",
+  "role_name_vn": "Trưởng nhóm DevOps",
+  "role_group": "Cloud, DevOps & SRE",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: destination node, là điểm hội tụ quản lý của nhánh Cloud/DevOps/SRE/Platform.",
+  "occupied_bands": [
+    "L6",
+    "L7",
+    "L8"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đi lên từ DevOps/SRE/Platform Engineer senior chuyển sang quản lý đội. Chưa có JD xác nhận mốc năm cụ thể.",
+  "destination_profile": {
+    "band_range": "L6 - L8",
+    "min_years_experience": "6-15",
+    "years_band_check": "Lấy trọn khoảng L6-L8 theo thang toàn cục vì không có bằng chứng để thu hẹp.",
+    "core_output": "Chịu trách nhiệm về con người và kết quả bàn giao của đội Cloud/DevOps/Platform: đặt chuẩn kỹ thuật và độ tin cậy hạ tầng cho tổ chức, quản lý ngân sách hạ tầng, đồng thời thực hiện quản lý trực tiếp (1:1, lộ trình phát triển, đánh giá hiệu suất) — khác với các role IC cấp Senior/Lead trong cùng domain vốn không có quyền quản lý nhân sự.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — role này đã nằm trên nhánh Management. Chưa có JD xác nhận điểm rẽ diễn ra ở band nào.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_SRE",
+        "role_name": "Site Reliability Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_PLATFORM",
+        "role_name": "Platform Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "EXEC_CTO",
+        "role_name": "Chief Technology Officer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "EXEC_VPOE",
+        "role_name": "VP of Engineering",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_EM",
+        "role_name": "Engineering Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect",
+        "note": "Suy luận — có thể trùng CLOUD_ARCH ở tổ chức nhỏ, cần đối chiếu Pass 2.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "CLOUD_ARCH",
+        "reason": "Cả hai có thể trùng ở tổ chức nhỏ — cần đối chiếu ở Pass 2 (ghi chú tương tự trong pass1/CLOUD_DEVOPS.json).",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_EM",
+        "reason": "Cùng bản chất quản lý kỹ thuật, khác domain phụ trách.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "pass1/CLOUD_DEVOPS.json đã ghi nhận nghi vấn CLOUD_LEAD có thể trùng với vai trò destination archetype C khác (CLOUD_ARCH) — chưa giải quyết.",
+    "Chưa rõ tỷ lệ tổ chức VN tách biệt CLOUD_LEAD (quản lý) khỏi CLOUD_ARCH (kiến trúc) hay gộp làm một người."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

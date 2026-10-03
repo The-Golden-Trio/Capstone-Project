@@ -1,0 +1,62 @@
+https://www.linkedin.com/jobs/view/lead-frontend-engineer-reactjs-at-nab-innovation-centre-vietnam-4336815951/
+
+Lead Frontend Engineer (ReactJS) 
+About the job
+About the job
+We are seeking passionate, results focused Lead ReactJS Engineer to take accountability for the design and delivery of NABs transformed digital platforms. You will be part of our delivery team and will be responsible for providing technical contribution throughout all phases of the software delivery life cycle as we initiate a transformation of NAB technology.
+Main Responsibilities
+Design, develop, review, implement, and manage ReactJS application code and services for the production and pre-release environments;
+Design, develop, review, implement, and manage continuous integration, build management and deployment scripts, systems, and any code as required;
+Participate in Agile software development, prototyping, and code review with international development teams to build scalable Microservices-based products;
+Understand the requirements of the customer or business and utilize this knowledge to develop applications that are consistent with this;
+Work with delivery teams to achieve success through development using CI/CD and DevOps practices, processes, and tooling;
+Provide robust coding practices, solid unit/component test coverage, and debugging code.
+Fulfil other tasks as assigned by your People Leader and/or authorized representative of NAB Vietnam from time to time
+
+Your Experience & Qualifications
+Must have:
++5 years’ experience working in Software Development .
+Solid experience in JavaScript ES6/TypeScript working with ReactJS and nice to have React Native experience or NodeJS experience
+Solid experience in all areas of web development (HTML5, CSS3, Bootstrap, Foundation, JQuery, JSON) including accessibility and security concerns
+Solid experience in modern front-end build pipelines and tools (e.g. Git, Webpack, Gulp, NPM)
+Experience in using front-end testing and test runners (eg. Mocha/Chai/Jest).
+Good experience in Agile (Scrum model) development environments
+Well-versed in writing structured, well-documented, maintainable, and clean code
+Good English communication skills (both verbal & written), especially in the global software development environment.
+
+Nice to have:
+Experience in Cloud computing such as Amazon Web Services (AWS), Google Cloud Platforms (GCP), or Azure Microsoft
+Experience in setting up, using, or configuring CI/CD pipelines and tools (e.g. Git, Ansible, Jenkins, Gulp, NPM, Gradle,..)
+Understanding of RESTful APIs design (GraphQL desirable) and Microservices-based systems.
+
+THE BENEFITS AND PERKSWe appreciate and reward our colleagues who do great work every day – from excelling for our customers, to taking ownership of an issue to get it resolved. Here’s how we support our people with a range of exclusive benefits.
+1. Generous compensation and benefit package
+Attractive salary
+20-day paid annual leave and 7-day paid sick leave
+13th month salary and Annual Performance Bonus
+Premium healthcare for yourself and family members
+Monthly allowance for team activities
+Premium welcome kit and occasional gifts of appreciation
+Extra benefits on your work anniversary
+
+2. Exciting career and development opportunities
+Large scale products with modern technologies in banking domain
+Clear roadmap for career advancement in both technical and leadership pathways
+Access to digital learning platform such as Udemy
+Consistent and high-quality leadership training through the Distinctive Leadership program (DLP)
+Specialist capabilities and accreditations in key skill areas such as Cloud Engineering, Digital, Data, Security and SREs (Site reliability engineers)
+Sponsored English course with native teachers
+Opportunity for training in Australia
+
+3. Professional and engaging working environment
+Hybrid working model and excellent work-life balance
+State-of-the-art & modern Agile office
+Food and beverages in the office pantry
+Employee Assistance Program to improve your physical and mental health
+Annual team activities and company events
+A solid and talented team behind you – great people who love what they do
+
+A DIVERSE AND INCLUSIVE WORKPLACE WORKS BETTER FOR EVERYONEWe know that our people make us who we are. That's why we have built a culture of respect – where everyone feels valued and appreciated for being their true authentic selves at NAB. With our focus on inclusion and diversity, and in partnership with our Employee Resource Groups, NAB is a place where First Nations colleagues, colleagues of all genders, sexualities and ages, carers and colleagues with disability, and colleagues from all cultures, races and religions have the opportunity to thrive, connect and grow.We are intent on providing an environment where you can work your way. Ask about our many flexible work options and please let us know if we can provide any adjustments throughout the recruitment process.
+If this excites you, let's have a chat over a cup of coffee!
+It's more than just a career at NAB!We believe in people with people and dreams, and we want you to achieve your aspirations. More than just a career, NAB Vietnam offers you a flexibility to balance your work - life, the opportunity to grow as professionals, people and a complete set of well-being offerings. If you have an appetite to learn, grow and elevate others around you, this is the place for you.
+IT'S MORE THAN MONEYWe naturally also provide a very competitive remuneration package but a career with us is about a lot more than money. We believe in people with ideas and dreams, and we want you to achieve your aspirations. We will work together to deliver exceptional products and outcomes that push the limits of our own aspirations. Our passion for creating value and exceeding our customers' expectations means we are constantly striving to redefine our standards of excellence. You will have our backing to develop and our encouragement to explore, realize and reach your full potential.

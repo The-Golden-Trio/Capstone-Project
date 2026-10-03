@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-DEST1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "DATA_PM",
+  "role_name": "Data Product Manager",
+  "role_name_vn": "Quản lý sản phẩm dữ liệu",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: destination node, vào từ Product Manager hoặc Data Analyst senior, không có ladder riêng từ đầu.",
+  "occupied_bands": [
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đi lên từ Product Manager (nền nghiệp vụ) hoặc Data Analyst senior (nền dữ liệu) đã bổ sung tư duy sản phẩm. Chưa có JD xác nhận mốc năm cụ thể.",
+  "destination_profile": {
+    "band_range": "L5 - L7",
+    "min_years_experience": "4-12",
+    "years_band_check": "Lấy trọn khoảng L5-L7 theo thang toàn cục vì không có bằng chứng để thu hẹp. Khoảng rộng là biểu hiện trung thực của việc thiếu dữ liệu.",
+    "core_output": "Định nghĩa và ưu tiên hoá roadmap cho các sản phẩm/nền tảng dữ liệu (data platform, self-service analytics, data product nội bộ), làm cầu nối giữa nhu cầu nghiệp vụ và năng lực kỹ thuật của đội Data — khác với Product Manager thông thường ở chỗ đối tượng phục vụ là NGƯỜI DÙNG NỘI BỘ (data consumer) chứ không phải khách hàng cuối, và khác với Data Analyst ở chỗ chịu trách nhiệm về ROADMAP chứ không chỉ phân tích.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — suy luận rằng role này nằm trên nhánh IC/sản phẩm. Chưa có JD xác nhận.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "PROD_PM",
+        "role_name": "Product Manager",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "EXEC_CDO",
+        "role_name": "Chief Data / AI Officer",
+        "note": "Suy luận; chưa có JD xác nhận tại VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "PROD_PM",
+        "reason": "Ranh giới nằm ở đối tượng phục vụ: dữ liệu/nội bộ so với sản phẩm/khách hàng cuối.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_DA",
+        "reason": "Data Analyst phân tích, Data PM chịu trách nhiệm roadmap và ưu tiên hoá.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ role này đã phổ biến tại VN hay còn rất hiếm — 'Data Product Manager' là title mới nổi ngay cả ở thị trường quốc tế.",
+    "Khoảng năm 4-12 lấy trọn thang band vì không có dữ liệu để thu hẹp."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

@@ -1,0 +1,213 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-DATA1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "DATA_DS",
+  "role_name": "Data Scientist",
+  "role_name_vn": "Nhà khoa học dữ liệu",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: có Fresher Data Scientist ở một số nơi nhưng rất mỏng, phần lớn yêu cầu bằng Master trở lên — nên đây là lateral-entry với một ngoại lệ hiếm ở đáy, không phải full ladder A.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Có Fresher Data Scientist ở một số nơi nhưng rất mỏng, phần lớn yêu cầu bằng Master trở lên — theo roles.csv. Sàn hợp lý lấy L3 nhưng cần hiểu đây là NGOẠI LỆ hiếm, không phải cửa vào phổ biến như DATA_DA.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "Data Scientist (hiếm, thường có bằng Master)",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Thực hiện phân tích thống kê và xây dựng model thử nghiệm cho một câu hỏi nghiệp vụ cụ thể theo hướng dẫn, dùng notebook và pipeline có sẵn, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Data Scientist",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Tự thiết kế và chạy một thử nghiệm (A/B test, model dự báo) trọn vẹn từ đặt giả thuyết tới trình bày kết quả, tương ứng vai trò tự chủ trong phạm vi một module hoặc một mảng việc.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Data Scientist",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ dẫn dắt phân tích cho một domain nghiệp vụ, đề xuất hướng đi dựa trên dữ liệu ở cấp chiến lược sản phẩm, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn, review công việc của người khác.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Data Science Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật cho một team Data Science, định chuẩn phương pháp luận thống kê/thử nghiệm cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal Data Scientist",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt định hướng khai thác dữ liệu xuyên nhiều đội, cố vấn cấp lãnh đạo về quyết định dựa trên dữ liệu, tương ứng vai trò chịu trách nhiệm cross-team.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal Data Scientist",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Suy luận dùng chung SWE_EM do thiếu Data Science Manager chuyên biệt trong taxonomy."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "DATA_DA",
+        "role_name": "Data Analyst",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": null,
+        "role_name": "Học viên Toán/Thống kê sau đại học (ngoài ngành IT)",
+        "from_band": "L3",
+        "note": "Chưa map được vào role_code trong roles.csv, giữ null theo quy tắc.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "DATA_ML",
+        "role_name": "Machine Learning Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "DATA_ML",
+        "role_name": "Machine Learning Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_AI",
+        "role_name": "AI Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_DA",
+        "reason": "Ranh giới nằm ở mức độ mô hình hoá thống kê/ML so với báo cáo mô tả — mờ ở band thấp.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_ML",
+        "reason": "Data Scientist thiên nghiên cứu/thử nghiệm, ML Engineer thiên triển khai production — mờ ở VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Tỷ lệ Fresher Data Scientist thật tại VN chưa rõ — roles.csv ghi 'rất mỏng' nhưng không có số liệu.",
+    "Ranh giới DATA_DS / DATA_DA / DATA_ML chưa có quy tắc phân định rõ."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

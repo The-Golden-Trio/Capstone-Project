@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-DEST1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "PROD_PL",
+  "role_name": "Project Leader",
+  "role_name_vn": "Trưởng dự án",
+  "role_group": "Product & Project Management",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: đặc thù outsourcing VN, là một cấp bậc chứ không phải một path — đi lên từ BA hoặc Dev senior.",
+  "occupied_bands": [
+    "L5",
+    "L6"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đặc thù outsourcing VN theo roles.csv — là MỘT CẤP BẬC (không phải lộ trình riêng), đi lên từ Business Analyst hoặc Developer senior đã có kinh nghiệm điều phối dự án nhỏ. Chưa có JD xác nhận mốc năm cụ thể.",
+  "destination_profile": {
+    "band_range": "L5 - L6",
+    "min_years_experience": "4-9",
+    "years_band_check": "Lấy trọn khoảng L5-L6 theo thang toàn cục vì không có bằng chứng để thu hẹp.",
+    "core_output": "Điều phối một dự án outsourcing quy mô vừa/nhỏ (thường theo mô hình team augmentation hoặc fixed-scope): quản lý tiến độ và giao tiếp với khách hàng ở tầng vận hành hàng ngày, dưới sự giám sát của Project Manager hoặc Delivery Manager — khác với Project Manager vốn có toàn quyền ngân sách và chịu trách nhiệm cuối cùng về dự án.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — role này đã nằm trên nhánh Management/Delivery, và theo roles.csv là một cấp bậc chứ không phải path riêng. Chưa có JD xác nhận điểm rẽ.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "PROD_PJM",
+        "role_name": "Project Manager",
+        "note": "Có neo từ roles.csv — bước tiến tự nhiên nhất.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_TECHLEAD",
+        "role_name": "Tech Lead",
+        "note": "Ở outsourcing VN, hai vai trò này hay bị gộp — có neo gián tiếp từ pass1/SWE_TECHLEAD.json.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_TECHLEAD",
+        "reason": "pass1/SWE_TECHLEAD.json ghi nhận nghi vấn 'ở công ty outsourcing VN, Tech Lead và Project Leader hay bị gộp' — chưa có JD xác nhận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_PJM",
+        "reason": "Ranh giới nằm ở quyền hạn ngân sách và trách nhiệm cuối cùng.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Ranh giới với SWE_TECHLEAD ở công ty outsourcing chưa rõ — pass1/SWE_TECHLEAD.json đã nêu nghi vấn này nhưng chưa giải quyết.",
+    "Đặc thù outsourcing khiến chưa rõ role này có tương đương nào ở product company/ngân hàng hay không."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

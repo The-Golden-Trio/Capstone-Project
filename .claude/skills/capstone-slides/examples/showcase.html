@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capstone Slides — Layout Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   CAPSTONE SLIDES — DESIGN SYSTEM v1
+   Source: "Management Consulting Toolkit" template, slides 1–35.
+   Canvas: 960 × 540 px (16:9). 1pt in the PPTX = 1.333px here.
+   DO NOT edit tokens per deck. Only add slide-specific rules at the bottom,
+   inside the marked "DECK-SPECIFIC" block, and only using the tokens.
+   ========================================================================== */
+:root{
+  /* ---- Color (the whole palette — nothing else is allowed) ---- */
+  --navy:  #003BA3;   /* primary: titles, headings, dark blocks, table headers */
+  --blue:  #4A8CFF;   /* accent: big numbers, highlights, icons, bullets, light blocks */
+  --gray:  #EFEFEF;   /* surfaces: cards, cells, tracks, neutral blocks */
+  --ink:   #000000;   /* body text */
+  --white: #FFFFFF;   /* background, text on navy/blue */
+
+  /* ---- Type ---- */
+  --font: 'Montserrat', Arial, Helvetica, sans-serif;
+  --fs-xs:   14.67px;  /* 11pt  credits, chart axis, footnotes */
+  --fs-sm:   16px;     /* 12pt  captions, dense body */
+  --fs-body: 18.67px;  /* 14pt  body text (default) */
+  --fs-lead: 21.33px;  /* 16pt  cover subtitle */
+  --fs-h3:   24px;     /* 18pt  item heading, card header */
+  --fs-stat: 32px;     /* 24pt  inline stat value */
+  --fs-h2:   37.33px;  /* 28pt  slide title */
+  --fs-h2l:  40px;     /* 30pt  percentage, image-slide title */
+  --fs-h1:   50.67px;  /* 38pt  photo-slide headline */
+  --fs-d4:   62.67px;  /* 47pt  section title */
+  --fs-d3:   70.67px;  /* 53pt  cover title */
+  --fs-d2:   93.33px;  /* 70-72pt  TOC numbers, section number, "Thanks" */
+  --fs-d1:   122.67px; /* 92pt  big number */
+  --lh-tight: 1.08;
+  --lh-title: 1.15;
+  --lh-body:  1.3;
+
+  /* ---- Grid ---- */
+  --W: 960px; --H: 540px;
+  --mx: 75px;          /* box edge; text sits 10px further in (PPTX inset) */
+  --inset: 10px;
+  --title-top: 40px;
+  --blk: 128px;        /* decorative block width (always) */
+  --mid: 270px;        /* horizontal midline — blocks meet here */
+  --bar: 32px;         /* footer bar / edge strip thickness */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000}
+body{font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
+
+/* ---------------- Slide canvas ---------------- */
+.deck{position:absolute;left:0;top:0;width:var(--W);height:var(--H);transform-origin:0 0}
+.slide{position:absolute;inset:0;width:var(--W);height:var(--H);overflow:hidden;background:var(--white);
+  color:var(--ink);font-family:var(--font);font-size:var(--fs-body);line-height:var(--lh-body);display:none}
+.slide.active{display:block}
+.slide *{font-family:inherit}
+
+/* ---------------- Text primitives ---------------- */
+.title{position:absolute;left:var(--mx);top:var(--title-top);width:810px;min-height:60px;padding:0 var(--inset);
+  display:flex;align-items:center;font-size:var(--fs-h2);font-weight:700;line-height:var(--lh-title);color:var(--navy)}
+.title.center{justify-content:center;text-align:center}
+.title.right{justify-content:flex-end;text-align:right}
+.h3{font-size:var(--fs-h3);font-weight:700;color:var(--navy);line-height:1.2}
+.p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.sm{font-size:var(--fs-sm)}
+.xs{font-size:var(--fs-xs)}
+.hl{color:var(--blue)}               /* highlight words inside navy text */
+.navy{color:var(--navy)} .blue{color:var(--blue)}
+b,strong{font-weight:700;color:var(--navy)}
+.center{text-align:center}.right{text-align:right}
+.ul{list-style:none}
+.ul li{position:relative;padding-left:1.55em;line-height:var(--lh-body)}
+.ul li::before{content:"";position:absolute;left:.35em;top:.5em;width:.36em;height:.36em;border-radius:50%;background:var(--blue)}
+.ul li li::before{background:transparent;border:1.5px solid var(--blue)}
+.ul li+li{margin-top:.12em}
+.ul ul{list-style:none;margin-top:.12em}
+.ul.gap li+li{margin-top:.5em}
+
+/* ---------------- Decorative system ---------------- */
+.blk{position:absolute;width:var(--blk)}          /* set left/top/height inline */
+.blk.navy{background:var(--navy)} .blk.blue{background:var(--blue)} .blk.gray{background:var(--gray)}
+.footbar{position:absolute;left:0;bottom:0;width:var(--W);height:var(--bar);background:linear-gradient(90deg,var(--navy) 50%,var(--blue) 50%)}
+.footbar.rev{background:linear-gradient(90deg,var(--blue) 50%,var(--navy) 50%)}
+.edge-r{position:absolute;right:0;top:60px;bottom:0;width:var(--bar);background:var(--blue)}
+.edge-l{position:absolute;left:0;top:0;height:470px;width:var(--bar);background:var(--blue)}
+
+/* ---------------- Components ---------------- */
+.photo{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.shot{display:block;max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--gray);background:var(--white)} /* product screenshots stay in color */
+.ph{background:var(--gray);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:var(--fs-sm);font-weight:600;text-align:center;padding:10px}
+.icon{width:44px;height:44px;stroke:var(--blue);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dot{display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--blue);vertical-align:middle}
+.dot.navy{background:var(--navy)} .dot.ink{background:var(--ink)} .dot.gray{background:var(--gray)}
+/* SVG paint helpers — never hard-code hex inside SVG, use these */
+.s-navy{stroke:var(--navy)} .s-blue{stroke:var(--blue)} .s-gray{stroke:var(--gray)} .s-white{stroke:var(--white)} .s-ink{stroke:var(--ink)}
+.f-navy{fill:var(--navy)} .f-blue{fill:var(--blue)} .f-gray{fill:var(--gray)} .f-white{fill:var(--white)} .f-ink{fill:var(--ink)} .f-none{fill:none}
+.node{display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 16px;font-size:var(--fs-body);line-height:1.2;min-height:41px}
+.node.navy{background:var(--navy);color:var(--white);font-weight:700}
+.node.blue{background:var(--blue);color:var(--white);font-weight:700}
+.node.gray{background:var(--gray);color:var(--ink)}
+.node.outline{background:var(--white);border:2px solid var(--blue);color:var(--navy)}
+.kpi{background:var(--navy);color:var(--white);text-align:center;padding:8px 18px;line-height:1.15}
+.kpi .v{font-size:var(--fs-h3);font-weight:700;display:block}
+.kpi .l{font-size:var(--fs-sm);font-weight:700;display:block}
+.tbl{border-collapse:collapse;width:100%}
+.tbl th{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-body);padding:9px 10px;text-align:center;line-height:1.15}
+.tbl td{padding:9px 10px;font-size:var(--fs-body);line-height:1.2;text-align:center;border-bottom:1px solid var(--gray)}
+.tbl td:first-child{text-align:left}
+.tbl th:first-child{background:transparent}
+.tbl.filled th:first-child{background:var(--navy);text-align:left}
+
+/* ===================== LAYOUTS ===================== */
+/* Absolute regions below mirror the PPTX placeholder boxes (px). */
+
+/* 01 cover */
+.l-cover .cv-title{position:absolute;left:172px;top:103px;width:710px;height:235px;padding:0 var(--inset);display:flex;flex-direction:column;justify-content:flex-end;text-align:right;font-size:var(--fs-d3);font-weight:700;line-height:var(--lh-tight);color:var(--navy)}
+.l-cover .cv-sub{position:absolute;left:172px;top:348px;width:710px;padding:0 var(--inset);text-align:right;font-size:var(--fs-lead)}
+.l-cover .cv-meta{position:absolute;right:86px;bottom:44px;text-align:right;font-size:var(--fs-sm);line-height:1.45}
+
+/* 02 toc */
+.l-toc .toc{position:absolute;left:85px;top:148px;width:820px;display:grid;grid-template-columns:417px 1fr;row-gap:28px}
+.l-toc .toc-item{display:grid;grid-template-columns:146px 1fr;column-gap:24px;align-items:start;min-height:122px}
+.l-toc .toc-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:.95;text-align:right}
+.l-toc .toc-item .h3{margin-top:2px;margin-bottom:8px}
+.l-toc .toc.rows-3{top:132px;row-gap:34px}
+.l-toc .toc.rows-3 .toc-item{min-height:0}
+.l-toc .toc.rows-3 .toc-num{font-size:var(--fs-d4)}
+
+/* 03 section (right-aligned) + .alt (left-aligned) */
+.l-section .sec{position:absolute;left:416px;top:120px;width:468px;padding:0 var(--inset);text-align:right}
+.l-section .sec-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:1}
+.l-section .sec-title{font-size:var(--fs-d4);font-weight:700;color:var(--navy);line-height:1.05;margin-top:8px}
+.l-section .sec-sub{font-size:var(--fs-body);margin-top:14px}
+.l-section.alt .sec{left:74px;text-align:left}
+
+/* 04 intro (text left, blocks right) + .alt (blocks left, text right) */
+.l-intro .txt{position:absolute;left:121px;top:140px;width:444px;padding:0 var(--inset)}
+.l-intro .txt .t{font-size:var(--fs-h2);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:14px}
+.l-intro.alt .txt{left:418px;top:150px;width:426px;text-align:right}
+
+/* 05 statement (one big line) */
+.l-statement .big{position:absolute;left:74px;top:110px;width:600px;height:320px;padding:0 var(--inset);display:flex;align-items:center;font-size:98.67px;font-weight:700;line-height:1;color:var(--navy)}
+.l-statement .big.m{font-size:var(--fs-d3)}
+
+/* 06 text (+ bullets) */
+.l-text .body{position:absolute;left:var(--mx);top:128px;width:560px;padding:0 var(--inset)}
+.l-text.wide .body{width:810px}
+.l-text .body > * + *{margin-top:14px}
+
+/* 07 two columns */
+.l-2col .cols{position:absolute;left:74px;top:200px;width:560px;display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding:0 var(--inset)}
+.l-2col .cols .h3{margin-bottom:12px}
+
+/* 08 three columns with icons */
+.l-3col .cols{position:absolute;left:82px;top:196px;width:796px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:42px;text-align:center}
+.l-3col .cols .icon{margin:0 auto 4px;display:block}
+.l-3col .cols .h3{margin:6px 0 8px}
+
+/* 09 six-grid (3 × 2) */
+.l-grid6 .grid{position:absolute;left:74px;top:150px;width:720px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:10px;row-gap:30px;padding:0 var(--inset)}
+.l-grid6 .grid .h3{margin-bottom:8px}
+
+/* 10 four items right-aligned (2 × 2) */
+.l-4items .grid{position:absolute;left:331px;top:160px;width:553px;display:grid;grid-template-columns:1fr 1fr;column-gap:34px;row-gap:34px;text-align:right;padding:0 var(--inset)}
+.l-4items .grid .h3{margin-bottom:8px}
+
+/* 11 quadrant / SWOT */
+.l-quad .quad{position:absolute;left:110px;top:130px;display:grid;grid-template-columns:42px 292px 292px;column-gap:20px;row-gap:20px}
+.l-quad .quad > :nth-child(3n){margin-left:50px}
+.l-quad .side{background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;height:153px}
+.l-quad .q-h{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);height:35px;padding:0 20px;display:flex;align-items:center}
+.l-quad .q-b{background:var(--gray);height:118px;padding:14px 20px}
+
+/* 12 rows (label + items) */
+.l-rows .rows{position:absolute;left:75px;top:124px;width:809px;display:flex;flex-direction:column;gap:10px}
+.l-rows .row{display:grid;grid-template-columns:199px 1fr;height:81px}
+.l-rows .row .lab{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);line-height:1.1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px}
+.l-rows .row .its{background:var(--gray);display:flex;align-items:center;justify-content:space-around;gap:20px;padding:0 24px}
+.l-rows .row .its > *{flex:1}
+
+/* 13 table / maturity */
+.l-table .tblwrap{position:absolute;left:85px;top:128px;width:810px}
+
+/* 14 process chevrons */
+.l-process .chev{position:absolute;left:75px;top:146px;width:808px;height:121px;display:flex}
+.l-process .chev > div{flex:1;background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 44px 0 50px;
+  clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,40px 50%)}
+.l-process .chev > div:first-child{clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%);padding-left:20px}
+.l-process .chev > div + div{margin-left:-36px}
+.l-process .notes{position:absolute;left:75px;top:286px;width:808px;display:grid;column-gap:14px}
+
+/* 15 roadmap stairs */
+.l-roadmap .stairs{position:absolute;left:75px;top:170px;width:809px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);align-items:start}
+.l-roadmap .step{margin-top:calc(var(--rise,33px) * (var(--n,3) - 1 - var(--i,0)))}
+.l-roadmap .step .h3{text-align:center;padding-bottom:10px}
+.l-roadmap .step .line{height:8px;background:var(--blue);position:relative}
+.l-roadmap .step + .step .line::before{content:"";position:absolute;left:0;bottom:0;width:8px;height:calc(var(--rise,33px) + 8px);background:var(--blue)}
+.l-roadmap .step .ul{padding:14px 10px 0 20px}
+
+/* 16 hierarchy tree (top-down) */
+.l-tree .tree{position:absolute;left:75px;top:120px;width:809px;display:flex;justify-content:center}
+.tree ul{display:flex;justify-content:center;padding-top:30px;position:relative;list-style:none}
+.tree > ul{padding-top:0}
+.tree li{position:relative;padding:30px 6px 0;display:flex;flex-direction:column;align-items:center}
+.tree > ul > li{padding-top:0}
+.tree li::before,.tree li::after{content:"";position:absolute;top:0;width:50%;height:30px;border-top:2px solid var(--blue)}
+.tree li::before{right:50%}
+.tree li::after{left:50%;border-left:2px solid var(--blue)}
+.tree li:only-child::before,.tree li:only-child::after{border-top:0}
+.tree li:first-child::before,.tree li:last-child::after{border-top:0}
+.tree li:last-child::before{border-right:2px solid var(--blue);width:calc(50% + 1px)}
+.tree li:last-child::before{right:calc(50% - 1px)}
+.tree li:last-child::after{border-left:0}
+.tree > ul > li::before,.tree > ul > li::after{display:none}
+.tree ul ul::before{content:"";position:absolute;top:0;left:50%;height:30px;border-left:2px solid var(--blue)}
+.tree .node{white-space:nowrap}
+.tree .lv1{min-width:161px;font-size:var(--fs-h3)}
+.tree .lv2{min-width:136px}
+.tree .lv3{min-width:78px;padding:6px 12px}
+
+/* 17 breakdown (left → right) */
+.l-breakdown .bd{position:absolute;left:170px;top:118px;height:380px;display:flex;align-items:center}
+.bd .root{width:128px;min-height:116px;font-size:var(--fs-h3);text-align:left;justify-content:flex-start;padding:10px 12px}
+.bd .groups{display:flex;flex-direction:column;gap:26px;margin-left:30px;position:relative;padding-left:0}
+.bd .groups::before{content:"";position:absolute;left:-16px;top:58px;bottom:58px;border-left:2px solid var(--blue)}
+.bd .grp{display:flex;align-items:center;position:relative}
+.bd .grp::before{content:"";position:absolute;left:-16px;top:50%;width:16px;border-top:2px solid var(--blue)}
+.bd .grp > .node{width:128px;min-height:116px;font-size:var(--fs-h3);font-weight:700;color:var(--navy);justify-content:flex-start;text-align:left}
+.bd .leaves{display:flex;flex-direction:column;justify-content:space-between;gap:10px;margin-left:36px;position:relative;align-self:stretch}
+.bd .leaves::before{content:"";position:absolute;left:-18px;top:20px;bottom:20px;border-left:2px solid var(--blue)}
+.bd .leaves::after{content:"";position:absolute;left:-36px;top:50%;width:18px;border-top:2px solid var(--blue)}
+.bd .leaves .node{position:relative;width:170px;min-height:38px;justify-content:flex-start;font-size:var(--fs-sm);text-align:left}
+.bd .leaves .node::before{content:"";position:absolute;left:-18px;top:50%;width:18px;border-top:2px solid var(--blue)}
+
+/* 18 matrix 2×2 */
+.l-matrix .mx{position:absolute;left:120px;top:118px;display:grid;grid-template-columns:150px 36px 216px 216px;grid-template-rows:42px 111px 111px 36px 40px;column-gap:10px;row-gap:5px;align-items:center}
+.l-matrix .mx .cell{height:111px;background:var(--gray);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 18px;line-height:1.2}
+.l-matrix .mx .cell.on{background:var(--navy);color:var(--white)}
+.l-matrix .mx .tick{color:var(--navy);text-align:center;font-size:var(--fs-body)}
+.l-matrix .mx .tick.y{writing-mode:vertical-rl;transform:rotate(180deg);justify-self:center}
+.l-matrix .mx .axis{font-weight:700;color:var(--navy);font-size:var(--fs-h3);text-align:center}
+
+/* 19 cycle (4-part ring) */
+.l-cycle .ring{position:absolute;left:330px;top:128px;width:300px;height:300px}
+.l-cycle .lbl{position:absolute;display:flex;align-items:center;gap:10px;font-size:var(--fs-body);white-space:nowrap}
+.l-cycle .lbl i{display:block;height:2px;width:36px}
+.l-cycle .lbl i::after{content:"";display:block;width:8px;height:8px;border-radius:50%;margin-top:-3px}
+.l-cycle .lbl.l{right:640px;flex-direction:row}
+.l-cycle .lbl.r{left:640px}
+.l-cycle .lbl.navy i,.l-cycle .lbl.navy i::after{background:var(--navy)}
+.l-cycle .lbl.blue i,.l-cycle .lbl.blue i::after{background:var(--blue)}
+.l-cycle .lbl.l i::after{margin-left:28px}
+.l-cycle .lbl.r i::after{margin-left:0}
+
+/* 20 diagram (free canvas) */
+.l-diagram .stage{position:absolute;left:var(--mx);top:128px;width:810px;height:370px;display:flex;align-items:center;justify-content:center}
+.l-diagram.has-bar .stage{height:340px}
+.l-diagram .title.two{min-height:98px}
+
+/* 21 quote */
+.l-quote .q{position:absolute;left:281px;top:110px;width:604px;height:214px;padding:0 var(--inset);display:flex;align-items:flex-end;justify-content:flex-end;text-align:right;font-size:var(--fs-h2);font-weight:600;line-height:1.2;color:var(--blue)}
+.l-quote .by{position:absolute;left:281px;top:346px;width:604px;padding:0 var(--inset);text-align:right;font-size:var(--fs-h3);font-weight:700;color:var(--navy)}
+
+/* 22 big number */
+.l-bignum .num{position:absolute;left:74px;top:148px;width:810px;height:174px;display:flex;align-items:flex-end;justify-content:center;font-size:var(--fs-d1);font-weight:700;color:var(--blue);line-height:1}
+.l-bignum .cap{position:absolute;left:74px;top:334px;width:810px;text-align:center}
+
+/* 23 photo full-bleed + headline */
+.l-photo .bg{position:absolute;inset:0}
+.l-photo .wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 70%)}
+.l-photo .head{position:absolute;left:74px;top:52px;width:480px;padding:0 var(--inset);font-size:var(--fs-h1);font-weight:700;line-height:1.12;color:var(--navy)}
+
+/* 24 photo left + text right */
+.l-photoleft .pic{position:absolute;left:0;top:112px;width:349px;height:314px}
+.l-photoleft .txt{position:absolute;left:391px;top:150px;width:493px;padding:0 var(--inset);text-align:right}
+.l-photoleft .txt .t{font-size:var(--fs-h2l);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:16px}
+
+/* 25 demo / screenshot */
+.l-demo .side{position:absolute;left:var(--mx);top:128px;width:300px;padding:0 var(--inset)}
+.l-demo .side .h3{margin-bottom:10px}
+.l-demo .screen{position:absolute;left:392px;top:120px;width:500px;height:380px;display:flex;align-items:center;justify-content:center}
+
+/* 26 stats bars */
+.l-bars .grp{position:absolute;top:140px;width:330px}
+.l-bars .grp.l{left:75px}
+.l-bars .grp.r{left:555px;text-align:right}
+.l-bars .grp .h3{margin-bottom:10px;padding:0 var(--inset)}
+.l-bars .bar{display:grid;grid-template-columns:90px 1fr;align-items:center;column-gap:8px;height:44px;padding:0 var(--inset)}
+.l-bars .grp.r .bar{grid-template-columns:1fr auto}
+.l-bars .bar .v{white-space:nowrap}
+.l-bars .bar .v{font-size:var(--fs-stat);font-weight:700;color:var(--navy);line-height:1}
+.l-bars .bar .track{height:12px;background:var(--gray);position:relative}
+.l-bars .bar .track span{position:absolute;top:0;bottom:0;left:0;background:var(--blue)}
+.l-bars .grp.r .bar .track span{left:auto;right:0}
+.l-bars .foot{position:absolute;left:75px;top:302px;width:809px;text-align:center}
+.l-bars .foot .icons{display:flex;justify-content:center;gap:22px;margin-top:18px}
+
+/* 27 donut percentages */
+.l-donuts .cols{position:absolute;left:78px;top:160px;width:801px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);column-gap:40px;text-align:center}
+.l-donuts .ring{width:120px;height:120px;margin:0 auto;display:block}
+.l-donuts .pct{font-size:var(--fs-h2l);font-weight:700;color:var(--blue);margin:14px 0 6px;line-height:1}
+
+/* 28 chart + KPI */
+.l-chart .left{position:absolute;left:85px;top:122px;width:390px}
+.l-chart .right{position:absolute;left:500px;top:122px;width:390px}
+.l-chart svg text{font-family:var(--font)}
+
+/* 29 team */
+.l-team .grid{position:absolute;left:75px;top:128px;width:809px;display:flex;justify-content:center;gap:var(--gap,90px)}
+.l-team .m{width:var(--w,237px);text-align:center}
+.l-team .m .face{width:var(--d,192px);height:var(--d,192px);border-radius:50%;overflow:hidden;margin:0 auto 18px;background:var(--gray)}
+.l-team .m .h3{margin-bottom:6px}
+
+/* 30 testimonials */
+.l-testi .list{position:absolute;left:115px;top:160px;width:320px;padding:0 var(--inset)}
+.l-testi .list .by{font-size:var(--fs-h3);font-weight:700;color:var(--navy);margin-top:6px}
+.l-testi .list > div + div{margin-top:34px}
+
+/* 31 thanks / closing */
+.l-thanks .big{position:absolute;left:74px;top:46px;width:560px;height:140px;padding:0 var(--inset);display:flex;align-items:flex-end;font-size:var(--fs-d2);font-weight:700;color:var(--navy);line-height:1}
+.l-thanks .info{position:absolute;left:74px;top:198px;width:480px;padding:0 var(--inset)}
+.l-thanks .info .icons{display:flex;gap:10px;margin-top:22px}
+
+/* ===================== DECK-SPECIFIC (keep tiny, tokens only) ===================== */
+
+/* ===================== Presentation shell (not part of the look) ===================== */
+.hud{position:fixed;right:14px;bottom:12px;font:600 12px/1 var(--font);color:rgba(255,255,255,.55);letter-spacing:.04em;user-select:none;z-index:9}
+body.overview{overflow:auto;background:#000}
+body.overview .deck{position:static;transform:none!important;width:auto;height:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:18px}
+body.overview .slide{position:relative;display:block;zoom:.32;cursor:pointer;outline:0}
+body.overview .slide.active{outline:10px solid var(--blue)}
+@media print{
+  @page{size:960px 540px;margin:0}
+  html,body{background:#fff;overflow:visible;height:auto}
+  .deck{position:static;transform:none!important;width:auto;height:auto}
+  .slide{position:relative;display:block!important;break-after:page;page-break-after:always}
+  .hud{display:none}
+}
+</style>
+</head>
+<body>
+<main class="deck">
+<!-- ================= SLIDES START ================= -->
+<!-- layout: cover -->
+<section class="slide l-cover">
+  <div class="blk blue" style="left:0;top:0;height:270px"></div>
+  <h1 class="cv-title"><span>Hướng nghiệp</span><span>cùng <span class="hl">AI</span></span></h1>
+  <p class="cv-sub">Nền tảng trải nghiệm nghề cho học sinh THPT</p>
+  <p class="cv-meta"><b>Nhóm CAP-01</b> · GVHD: ThS. Nguyễn Văn A<br>Khoa KH&amp;KT Máy tính · HCMUT · 12/2026</p>
+</section>
+
+<!-- layout: toc -->
+<section class="slide l-toc">
+  <h2 class="title center">Nội dung</h2>
+  <div class="toc">
+    <div class="toc-item"><div class="toc-num">01</div><div><div class="h3">Vấn đề</div><p>Học sinh chọn ngành thiếu trải nghiệm thực tế</p></div></div>
+    <div class="toc-item"><div class="toc-num">02</div><div><div class="h3">Giải pháp</div><p>Mô phỏng công việc kết hợp gợi ý bằng AI</p></div></div>
+    <div class="toc-item"><div class="toc-num">03</div><div><div class="h3">Kiến trúc</div><p>Thiết kế hệ thống và công nghệ sử dụng</p></div></div>
+    <div class="toc-item"><div class="toc-num">04</div><div><div class="h3">Kết quả</div><p>Đánh giá, demo và hướng phát triển</p></div></div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!-- layout: section -->
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">01</div>
+    <div class="sec-title">Vấn đề</div>
+    <p class="sec-sub">Vì sao học sinh THPT chọn sai ngành?</p>
+  </div>
+</section>
+
+<!-- layout: section-alt -->
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">02</div>
+    <div class="sec-title">Giải pháp</div>
+    <p class="sec-sub">Trải nghiệm nghề trước khi chọn ngành</p>
+  </div>
+</section>
+
+<!-- layout: intro -->
+<section class="slide l-intro">
+  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:834px;top:270px;height:270px"></div>
+  <div class="txt">
+    <div class="t">Bối cảnh</div>
+    <p>Mỗi năm hơn một triệu học sinh lớp 12 đăng ký xét tuyển đại học. Phần lớn chọn ngành dựa trên lời khuyên của gia đình hoặc xu hướng, trong khi rất ít em từng được tiếp xúc với công việc thực tế của ngành đó.</p>
+  </div>
+</section>
+
+<!-- layout: intro-alt -->
+<section class="slide l-intro alt">
+  <div class="blk navy" style="left:0;top:270px;height:270px"></div>
+  <div class="blk blue" style="left:128px;top:130px;height:140px"></div>
+  <div class="txt">
+    <div class="t">Vấn đề cốt lõi</div>
+    <p>Các bài trắc nghiệm hướng nghiệp hiện nay chỉ đưa ra kết quả chung chung. Học sinh không biết một ngày làm việc của kỹ sư, bác sĩ hay nhà thiết kế thực sự trông như thế nào.</p>
+  </div>
+</section>
+
+<!-- layout: statement -->
+<section class="slide l-statement">
+  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:834px;top:270px;height:141px"></div>
+  <div class="big">Thử nghề trước, chọn ngành sau</div>
+</section>
+
+<!-- layout: text -->
+<section class="slide l-text">
+  <h2 class="title">Mục tiêu đề tài</h2>
+  <div class="body">
+    <p>Xây dựng nền tảng web giúp học sinh:</p>
+    <ul class="ul gap">
+      <li>Trải nghiệm <b>mô phỏng công việc</b> của 20+ nghề phổ biến</li>
+      <li>Nhận gợi ý ngành học được cá nhân hóa bằng AI</li>
+      <li>So sánh ngành theo kỹ năng, thu nhập và cơ hội việc làm
+        <ul><li>Dữ liệu từ nguồn O*NET và thị trường Việt Nam</li></ul>
+      </li>
+      <li>Chia sẻ kết quả với phụ huynh và giáo viên</li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+</section>
+
+<!-- layout: 2col -->
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Giải pháp của nhóm</h2>
+  <div class="cols">
+    <div><div class="h3">Mô phỏng nghề</div><p>Học sinh hóa thân vào một ngày làm việc thông qua các nhiệm vụ ngắn, có phản hồi ngay.</p></div>
+    <div><div class="h3">Cố vấn AI</div><p>Mô hình ngôn ngữ phân tích lựa chọn của học sinh và đề xuất ngành học phù hợp.</p></div>
+  </div>
+</section>
+
+<!-- layout: 3col -->
+<section class="slide l-3col">
+  <h2 class="title center">Tính năng chính</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      <div class="h3">Khám phá</div><p>Thư viện hơn 20 nghề với video và mô tả</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <div class="h3">Trải nghiệm</div><p>Nhiệm vụ mô phỏng công việc thực tế</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+      <div class="h3">Gợi ý</div><p>AI đề xuất ngành học phù hợp năng lực</p>
+    </div>
+  </div>
+  <div class="footbar rev"></div>
+</section>
+
+<!-- layout: grid6 -->
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Yêu cầu chức năng</h2>
+  <div class="grid">
+    <div><div class="h3">Tài khoản</div><p>Đăng ký, đăng nhập bằng Google</p></div>
+    <div><div class="h3">Hồ sơ</div><p>Lưu sở thích và điểm mạnh của học sinh</p></div>
+    <div><div class="h3">Mô phỏng</div><p>Chơi nhiệm vụ theo từng nghề</p></div>
+    <div><div class="h3">Gợi ý</div><p>Đề xuất ngành bằng AI kèm lý do</p></div>
+    <div><div class="h3">Báo cáo</div><p>Xuất kết quả cho phụ huynh</p></div>
+    <div><div class="h3">Quản trị</div><p>Quản lý nội dung nghề và nhiệm vụ</p></div>
+  </div>
+</section>
+
+<!-- layout: 4items -->
+<section class="slide l-4items">
+  <div class="blk gray" style="left:127px;top:111px;height:159px"></div>
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <h2 class="title right">Các bên liên quan</h2>
+  <div class="grid">
+    <div><div class="h3">Học sinh</div><p>Người dùng chính, lớp 10 đến lớp 12</p></div>
+    <div><div class="h3">Phụ huynh</div><p>Theo dõi kết quả và cùng định hướng</p></div>
+    <div><div class="h3">Giáo viên</div><p>Tư vấn dựa trên báo cáo của lớp</p></div>
+    <div><div class="h3">Nhà trường</div><p>Tích hợp vào hoạt động hướng nghiệp</p></div>
+  </div>
+</section>
+
+<!-- layout: quad -->
+<section class="slide l-quad">
+  <h2 class="title center">Phân tích SWOT</h2>
+  <div class="quad">
+    <div class="side">Bên trong</div>
+    <div><div class="q-h">Điểm mạnh</div><div class="q-b"><ul class="ul"><li>Trải nghiệm tương tác</li><li>Cá nhân hóa bằng AI</li></ul></div></div>
+    <div><div class="q-h">Điểm yếu</div><div class="q-b"><ul class="ul"><li>Nội dung nghề còn ít</li><li>Chi phí gọi mô hình AI</li></ul></div></div>
+    <div class="side">Bên ngoài</div>
+    <div><div class="q-h">Cơ hội</div><div class="q-b"><ul class="ul"><li>Chương trình GDPT 2018</li><li>Nhu cầu hướng nghiệp cao</li></ul></div></div>
+    <div><div class="q-h">Thách thức</div><div class="q-b"><ul class="ul"><li>Đối thủ đã có thương hiệu</li><li>Độ tin cậy của AI</li></ul></div></div>
+  </div>
+</section>
+
+<!-- layout: rows -->
+<section class="slide l-rows">
+  <h2 class="title center">Công nghệ sử dụng</h2>
+  <div class="rows">
+    <div class="row"><div class="lab">Frontend</div><div class="its"><span>React 19</span><span>TypeScript</span><span>Tailwind CSS</span></div></div>
+    <div class="row"><div class="lab">Backend</div><div class="its"><span>NestJS</span><span>PostgreSQL</span><span>Redis</span></div></div>
+    <div class="row"><div class="lab">AI</div><div class="its"><span>LLM API</span><span>Embedding + RAG</span><span>Prompt templates</span></div></div>
+    <div class="row"><div class="lab">Hạ tầng</div><div class="its"><span>Docker</span><span>GitHub Actions</span><span>Nx monorepo</span></div></div>
+  </div>
+</section>
+
+<!-- layout: table -->
+<section class="slide l-table">
+  <h2 class="title">So sánh giải pháp hiện có</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th></th><th>Trắc nghiệm</th><th>Tư vấn viên</th><th>Video nghề</th><th>Của nhóm</th></tr></thead>
+      <tbody>
+        <tr><td>Chi phí thấp</td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td><td><span class="dot navy"></span></td></tr>
+        <tr><td>Cá nhân hóa</td><td></td><td><span class="dot"></span></td><td></td><td><span class="dot navy"></span></td></tr>
+        <tr><td>Trải nghiệm thực tế</td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot navy"></span></td></tr>
+        <tr><td>Quy mô lớn</td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td><td><span class="dot navy"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- layout: process -->
+<section class="slide l-process">
+  <h2 class="title">Quy trình nghiên cứu</h2>
+  <div class="chev"><div>Khảo sát</div><div>Thiết kế</div><div>Kiểm thử</div></div>
+  <div class="notes" style="grid-template-columns:repeat(3,1fr)">
+    <ul class="ul"><li>Phỏng vấn 30 học sinh</li><li>Khảo sát 250 phiếu online</li></ul>
+    <ul class="ul"><li>Wireframe và prototype</li><li>Thiết kế hệ thống</li></ul>
+    <ul class="ul"><li>Usability test 12 người</li><li>Đo SUS và tỉ lệ hoàn thành</li></ul>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- layout: roadmap -->
+<section class="slide l-roadmap">
+  <h2 class="title">Kế hoạch thực hiện</h2>
+  <div class="stairs" style="--n:3">
+    <div class="step" style="--i:0"><div class="h3">Giai đoạn 1</div><div class="line"></div><ul class="ul"><li>Khảo sát người dùng</li><li>Phân tích yêu cầu</li></ul></div>
+    <div class="step" style="--i:1"><div class="h3">Giai đoạn 2</div><div class="line"></div><ul class="ul"><li>Xây dựng MVP</li><li>Tích hợp AI</li></ul></div>
+    <div class="step" style="--i:2"><div class="h3">Giai đoạn 3</div><div class="line"></div><ul class="ul"><li>Thử nghiệm tại trường</li><li>Hoàn thiện báo cáo</li></ul></div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!-- layout: tree -->
+<section class="slide l-tree">
+  <h2 class="title center">Phân rã chức năng</h2>
+  <div class="tree">
+    <ul><li><div class="node navy lv1">Hệ thống</div>
+      <ul>
+        <li><div class="node blue lv2">Học sinh</div>
+          <ul><li><div class="node outline lv3">Khám phá</div></li><li><div class="node outline lv3">Mô phỏng</div></li></ul>
+        </li>
+        <li><div class="node blue lv2">Quản trị</div>
+          <ul><li><div class="node outline lv3">Nội dung</div></li><li><div class="node outline lv3">Người dùng</div></li><li><div class="node outline lv3">Thống kê</div></li></ul>
+        </li>
+      </ul>
+    </li></ul>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!-- layout: breakdown -->
+<section class="slide l-breakdown">
+  <h2 class="title center">Cấu trúc chi phí vận hành</h2>
+  <div class="bd">
+    <div class="node navy root">Chi phí hằng tháng</div>
+    <div class="groups">
+      <div class="grp"><div class="node gray">Hạ tầng</div>
+        <div class="leaves"><div class="node gray">Máy chủ</div><div class="node blue">Gọi API mô hình AI</div></div></div>
+      <div class="grp"><div class="node gray">Vận hành</div>
+        <div class="leaves"><div class="node gray">Tên miền, email</div><div class="node gray">Giám sát, log</div></div></div>
+    </div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!-- layout: matrix -->
+<section class="slide l-matrix">
+  <h2 class="title">Ưu tiên tính năng</h2>
+  <div class="mx">
+    <div></div><div></div><div class="axis" style="grid-column:3 / 5">Ma trận ưu tiên</div>
+    <div class="axis" style="grid-row:2 / 4;text-align:left">Giá trị</div>
+    <div class="tick y">Cao</div><div class="cell">Gợi ý bằng AI</div><div class="cell on">Mô phỏng nghề</div>
+    <div class="tick y">Thấp</div><div class="cell">Huy hiệu</div><div class="cell">Diễn đàn</div>
+    <div></div><div></div><div class="tick">Dễ</div><div class="tick">Khó</div>
+    <div></div><div></div><div class="axis" style="grid-column:3 / 5">Công sức</div>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- layout: cycle -->
+<section class="slide l-cycle">
+  <h2 class="title center">Vòng lặp trải nghiệm</h2>
+  <svg class="ring" viewBox="0 0 300 300">
+    <g fill="none" stroke-width="86">
+      <circle class="s-blue" cx="150" cy="150" r="107" pathLength="100" stroke-dasharray="23 77" transform="rotate(-86 150 150)"/>
+      <circle class="s-navy" cx="150" cy="150" r="107" pathLength="100" stroke-dasharray="23 77" transform="rotate(4 150 150)"/>
+      <circle class="s-blue" cx="150" cy="150" r="107" pathLength="100" stroke-dasharray="23 77" transform="rotate(94 150 150)"/>
+      <circle class="s-navy" cx="150" cy="150" r="107" pathLength="100" stroke-dasharray="23 77" transform="rotate(184 150 150)"/>
+    </g>
+  </svg>
+  <div class="lbl l navy" style="top:190px">Chọn nghề<i></i></div>
+  <div class="lbl l blue" style="top:340px">Nhận gợi ý<i></i></div>
+  <div class="lbl r blue" style="top:190px"><i></i>Làm nhiệm vụ</div>
+  <div class="lbl r navy" style="top:340px"><i></i>AI phân tích</div>
+  <div class="footbar"></div>
+</section>
+
+<!-- layout: diagram -->
+<section class="slide l-diagram">
+  <h2 class="title center two">Ba yếu tố của một lựa chọn ngành tốt</h2>
+  <div class="stage">
+    <svg width="810" height="330" viewBox="0 0 810 330">
+      <g class="f-blue"><circle cx="357" cy="100" r="80"/><circle cx="453" cy="100" r="80"/><circle cx="405" cy="190" r="80"/></g>
+      <g class="f-none s-navy" stroke-width="2"><circle cx="357" cy="100" r="80"/><circle cx="453" cy="100" r="80"/><circle cx="405" cy="190" r="80"/></g>
+      <path class="f-navy" d="M393 120 L417 120 L405 140 Z"/>
+      <path class="s-navy" stroke-width="2" d="M410 128 L545 200"/><circle class="f-navy" cx="545" cy="200" r="4"/>
+      <text x="255" y="74" text-anchor="end" class="f-blue" font-size="22">Sở thích</text>
+      <text x="555" y="74" class="f-blue" font-size="22">Năng lực</text>
+      <text x="300" y="208" text-anchor="end" class="f-blue" font-size="22">Nhu cầu xã hội</text>
+      <text x="557" y="208" class="f-navy" font-size="22" font-weight="700">Ngành phù hợp</text>
+    </svg>
+  </div>
+</section>
+
+<!-- layout: quote -->
+<section class="slide l-quote">
+  <div class="blk blue" style="left:0;top:111px;height:159px"></div>
+  <div class="blk gray" style="left:128px;top:270px;height:270px"></div>
+  <blockquote class="q">“Em chọn ngành vì bạn bè chọn, đến năm hai mới biết mình không hợp.”</blockquote>
+  <p class="by">—Sinh viên năm 2, phỏng vấn người dùng</p>
+</section>
+
+<!-- layout: bignum -->
+<section class="slide l-bignum">
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+  <div class="num">62%</div>
+  <p class="cap">học sinh được khảo sát không chắc chắn về ngành mình đã chọn</p>
+</section>
+
+<!-- layout: photo -->
+<section class="slide l-photo">
+  <div class="bg"><div class="ph photo" style="height:100%">[ẢNH: học sinh trong lớp, tông sáng]</div></div>
+  <div class="wash"></div>
+  <div class="head">Một lựa chọn, bốn năm đại học</div>
+  <div class="blk blue" style="left:127px;top:257px;height:141px"></div>
+  <div class="blk navy" style="left:0;top:398px;height:142px"></div>
+</section>
+
+<!-- layout: photoleft -->
+<section class="slide l-photoleft">
+  <div class="blk navy" style="left:221px;top:0;height:112px"></div>
+  <div class="pic"><div class="ph" style="width:100%;height:100%">[ẢNH 349×314, trắng đen]</div></div>
+  <div class="blk blue" style="left:0;top:426px;height:114px"></div>
+  <div class="txt">
+    <div class="t">Học qua trải nghiệm hiệu quả hơn đọc mô tả</div>
+    <p>Học sinh nhớ lâu hơn khi tự tay làm một nhiệm vụ của nghề thay vì chỉ đọc giới thiệu.</p>
+  </div>
+</section>
+
+<!-- layout: demo -->
+<section class="slide l-demo">
+  <h2 class="title">Màn hình mô phỏng nghề</h2>
+  <div class="side">
+    <div class="h3">Luồng chính</div>
+    <ul class="ul gap"><li>Chọn nghề từ thư viện</li><li>Hoàn thành 3 nhiệm vụ ngắn</li><li>Nhận nhận xét từ AI</li></ul>
+  </div>
+  <div class="screen"><div class="ph" style="width:500px;height:312px">[SCREENSHOT 16:10 — dùng &lt;img class="shot"&gt;]</div></div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- layout: bars -->
+<section class="slide l-bars">
+  <h2 class="title center">Đối tượng khảo sát</h2>
+  <div class="grp l">
+    <div class="h3">Giới tính</div>
+    <div class="bar"><span class="v">54%</span><div class="track"><span style="width:54%"></span></div></div>
+    <div class="bar"><span class="v">46%</span><div class="track"><span style="width:46%"></span></div></div>
+  </div>
+  <div class="grp r">
+    <div class="h3">Khối lớp</div>
+    <div class="bar"><div class="track"><span style="width:70%"></span></div><span class="v">Lớp 12</span></div>
+    <div class="bar"><div class="track"><span style="width:30%"></span></div><span class="v">Lớp 11</span></div>
+  </div>
+  <div class="foot">
+    <div class="h3">Sở thích nổi bật</div>
+    <div class="icons">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+    </div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!-- layout: donuts -->
+<section class="slide l-donuts">
+  <h2 class="title center">Kết quả kiểm thử</h2>
+  <div class="cols" style="--n:3">
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="92 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">92%</div><p>hoàn thành nhiệm vụ mô phỏng</p>
+    </div>
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="78 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">78%</div><p>đồng ý với gợi ý ngành của AI</p>
+    </div>
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="81 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">81</div><p>điểm SUS trung bình</p>
+    </div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!-- layout: chart -->
+<section class="slide l-chart">
+  <h2 class="title">Hiệu năng hệ thống</h2>
+  <div class="left">
+    <svg width="390" height="220" viewBox="0 0 390 220">
+      <g class="s-gray" stroke-width="1"><line x1="40" y1="20" x2="380" y2="20"/><line x1="40" y1="75" x2="380" y2="75"/><line x1="40" y1="130" x2="380" y2="130"/><line x1="40" y1="185" x2="380" y2="185"/></g>
+      <g class="f-ink" font-size="12"><text x="32" y="24" text-anchor="end">600</text><text x="32" y="79" text-anchor="end">400</text><text x="32" y="134" text-anchor="end">200</text><text x="32" y="189" text-anchor="end">0</text></g>
+      <g class="f-navy"><rect x="70" y="80" width="34" height="105"/><rect x="180" y="60" width="34" height="125"/><rect x="290" y="45" width="34" height="140"/></g>
+      <g class="f-blue"><rect x="106" y="120" width="34" height="65"/><rect x="216" y="110" width="34" height="75"/><rect x="326" y="100" width="34" height="85"/></g>
+      <g class="f-ink" font-size="13" text-anchor="middle"><text x="105" y="206">100 users</text><text x="215" y="206">500 users</text><text x="325" y="206">1000 users</text></g>
+      <g font-size="13"><rect class="f-navy" x="120" y="3" width="10" height="10"/><text class="f-ink" x="134" y="13">Trước tối ưu</text><rect class="f-blue" x="236" y="3" width="10" height="10"/><text class="f-ink" x="250" y="13">Sau tối ưu</text></g>
+    </svg>
+    <p class="sm" style="margin-top:14px">Thời gian phản hồi p95 (ms) khi tải tăng dần, đo bằng k6.</p>
+  </div>
+  <div class="right">
+    <svg width="390" height="200" viewBox="0 0 390 200">
+      <g fill="none" stroke-width="48" transform="rotate(-90 100 100)">
+        <circle class="s-gray" cx="100" cy="100" r="72"/>
+        <circle class="s-navy" cx="100" cy="100" r="72" pathLength="100" stroke-dasharray="23 100"/>
+        <circle class="s-blue" cx="100" cy="100" r="72" pathLength="100" stroke-dasharray="43 100" stroke-dashoffset="-23"/>
+      </g>
+      <g font-size="16" class="f-ink"><text x="330" y="64" text-anchor="end">API (23%)</text><text x="330" y="104" text-anchor="end">AI (43%)</text><text x="330" y="144" text-anchor="end">Khác (34%)</text></g>
+      <circle class="f-navy" cx="348" cy="58" r="7"/><circle class="f-blue" cx="348" cy="98" r="7"/><circle class="f-gray" cx="348" cy="138" r="7"/>
+    </svg>
+    <div class="kpi" style="width:300px;margin:18px 0 0 45px"><span class="v">1,2 giây</span><span class="l">Thời gian gợi ý trung bình</span></div>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- layout: team -->
+<section class="slide l-team">
+  <div class="edge-l"></div>
+  <h2 class="title center">Thành viên nhóm</h2>
+  <div class="grid" style="--w:185px;--d:140px;--gap:16px">
+    <div class="m"><div class="face"><div class="ph" style="height:100%">[ẢNH]</div></div><div class="h3">Châu Anh Nhật</div><p>Trưởng nhóm, Backend</p></div>
+    <div class="m"><div class="face"><div class="ph" style="height:100%">[ẢNH]</div></div><div class="h3">Thành viên 2</div><p>Frontend</p></div>
+    <div class="m"><div class="face"><div class="ph" style="height:100%">[ẢNH]</div></div><div class="h3">Thành viên 3</div><p>AI, dữ liệu</p></div>
+    <div class="m"><div class="face"><div class="ph" style="height:100%">[ẢNH]</div></div><div class="h3">Thành viên 4</div><p>UI/UX, kiểm thử</p></div>
+  </div>
+</section>
+
+<!-- layout: testimonials -->
+<section class="slide l-testi">
+  <h2 class="title">Phản hồi người dùng</h2>
+  <div class="list">
+    <div><p>“Lần đầu em biết kỹ sư phần mềm làm gì trong một ngày.”</p><div class="by">—Học sinh lớp 11</div></div>
+    <div><p>“Báo cáo giúp tôi trao đổi với con dễ hơn nhiều.”</p><div class="by">—Phụ huynh</div></div>
+  </div>
+  <div class="blk blue" style="left:568px;top:106px;height:164px"></div>
+  <div class="blk gray" style="left:696px;top:270px;height:270px"></div>
+</section>
+
+<!-- layout: thanks -->
+<section class="slide l-thanks">
+  <div class="big">Cảm ơn!</div>
+  <div class="info">
+    <p>Thầy cô và các bạn có câu hỏi nào không?</p>
+    <p style="margin-top:14px">nhom-cap01@hcmut.edu.vn<br>github.com/nhom-cap01/career-ai<br>demo.career-ai.vn</p>
+    <div class="icons">
+      <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+    </div>
+  </div>
+  <div class="blk blue" style="left:704px;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+</section>
+<!-- ================= SLIDES END ================= -->
+</main>
+<div class="hud" id="hud"></div>
+<script>
+/* Deck runtime: fit-to-window, ← → / Space / PgUp PgDn / Home End, F = fullscreen, O = overview, #n deep link, P = print */
+(function(){
+  const deck=document.querySelector('.deck'), slides=[...deck.querySelectorAll('.slide')], hud=document.getElementById('hud');
+  let i=0; try{i=Math.min(Math.max((parseInt(location.hash.slice(1))||1)-1,0),slides.length-1)}catch(e){}
+  function fit(){ if(document.body.classList.contains('overview'))return;
+    const s=Math.min(innerWidth/960,innerHeight/540); deck.style.transform=`translate(${(innerWidth-960*s)/2}px,${(innerHeight-540*s)/2}px) scale(${s})`; }
+  function show(n){ i=Math.min(Math.max(n,0),slides.length-1); slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    hud.textContent=(i+1)+' / '+slides.length; try{history.replaceState(null,'','#'+(i+1))}catch(e){} }
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1)}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='f'||e.key==='F'){try{const r=document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();r&&r.catch&&r.catch(()=>{})}catch(e){}}
+    else if(e.key==='o'||e.key==='O'){document.body.classList.toggle('overview');fit();slides[i].scrollIntoView({block:'center'})}
+    else if(e.key==='p'||e.key==='P'){print()}
+  });
+  slides.forEach((s,k)=>s.addEventListener('click',()=>{ if(document.body.classList.contains('overview')){document.body.classList.remove('overview');show(k);fit()} }));
+  addEventListener('resize',fit); fit(); show(i);
+})();
+</script>
+</body>
+</html>

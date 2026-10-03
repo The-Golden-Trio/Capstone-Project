@@ -1,0 +1,47 @@
+
+Principal Frontend Engineer
+MONEY FORWARD VIETNAM CO.,LTD
+Mô tả công việc
+- Analyze requirements, propose and implement solutions for our projects
+- Architect and develop shared libraries or frameworks that can resolve complex designs and interactions
+- Optimize web applications for maximum speed and scalability
+- Troubleshoot UI/UX issues and give suggestions for improvement
+- Develop company-wide standards for development processes
+- Perform regular technical audit
+- Coach and mentor middle/senior developers
+
+Yêu cầu:
+Must-Have
+- 5+ year experience in frontend development with 2+ years of experience of leadership
+- Expertise in JavaScript, TypeScript
+- Solid experience with React and/or Vue.JS
+- Solid experience with HTML, CSS (SASS/LESS)
+- Hands-on experience with testing frameworks (e.g., Jest, Mocha, Ava)
+- Good understanding of common architectural patterns for CSS and JavaScript
+- Good knowledge of web security
+- Good sense of UI/UX
+- Experience with web performance optimization, SEO
+- Experience of training middle/senior developers
+- Good English communication skills
+
+Nice-To-Have
+- Backend development experience (e.g., Golang, Ruby on Rails, Laravel, Express.js, Django)
+- Familiarity with CI/CD, Docker, Kubernetes
+- DevOps experience with on-premises or cloud computing (AWS, GCP, Azure)
+- Japanese skills (N3+)
+
+Chế độ:
+- Sign -on bonus 1 month salary gross
+- No probation applied for Technical positions - all levels
+- Salary review: Twice a year
+- Bonus: 13th-month salary
+- Paid leave: 15 days in total, Maternity leave for partner (extra 5 days)
+- Awards: Monthly Culture Hero, Half-year MVP for excellent members
+- Activities: Company trip, Year-end party, Half-year party, Team-building, Happy hour, etc...
+- Devices: MacBook Pro + Dell Monitor
+- Working hour: Monday to Friday (working hour starts from 8am to 9am)
+- Health care: Annual health check
+- Insurance: Social Insurance, Health Insurance, Unemployment Insurance (company will pay for full salary); Voluntary health insurance & accident insurance (Bao Viet Tokio Marine Insurance 24/7
+- Training: External or internal training courses; Internal workshop; Support Attending Conference; Scrum training; Order books based on member‘s requests
+- Others: Grab expenses on the party day; Club activities, playstation, billiard, etc… Free bike parking, fruits and coffee
+ 

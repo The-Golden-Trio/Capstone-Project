@@ -1,0 +1,56 @@
+https://www.linkedin.com/jobs/view/4454971451/
+
+Senior Frontend Engineer (UI Engineer)
+About the job
+ABOUT DATAXIGHTDataXight, headquartered in Mountain View, CA, is on a bold mission to transform healthcare through groundbreaking data-driven solutions. We're passionate about empowering our team to work on projects that not only push boundaries but also make a tangible difference in the lives of millions. Are you ready to be part of something greater?
+THE ROLEWe are looking for a Senior Frontend Engineer (UI Engineer) to join our engineering team to continue the development of a cloud-native, world-class informatics platform serving customers across a spectrum of industries - biopharmaceutical, clinical diagnostics, healthcare, and academic research in with compliant protection of data, privacy, and intellectual property. In this role, you will work closely with backend, data, and product teams to build scalable frontend architectures and deliver seamless user experiences for complex data workflows. You will play a key role in shaping our UI standards, component systems, and frontend engineering practices.This position is ideal for someone passionate about modern frontend technologies, data visualization, and building products that drive meaningful impact.
+KEY RESPONSIBILITIES
+Develop and maintain high-quality frontend applications using modern frameworks (React, TypeScript)
+Build reusable, scalable UI components and contribute to a shared design system
+Collaborate with product, backend, and data teams to deliver intuitive user experiences
+Implement complex data-driven interfaces, including dashboards and visualization tools
+Optimize performance for large datasets and responsive applications
+Write clean, maintainable, and well-tested code (unit, integration, E2E)
+Contribute to frontend architecture and engineering best practices
+Support and mentor junior engineers through code reviews and knowledge sharing (no direct management)
+Participate in design and product discussions to improve usability and UX
+
+MUST-HAVE QUALIFICATIONS
+5+ years of experience in frontend or UI engineering (data platforms or large-scale preferred)
+Strong experience with React and modern state management approaches.
+Solid JavaScript (ES6+) and TypeScript.
+Strong knowledge of HTML5, CSS3, and responsive design
+Experience building modular, component-based UI architectures
+Familiarity with testing frameworks (Jest, React Testing Library, Cypress, etc.)
+Experience working with data-heavy or performance-sensitive applications
+Ability to work independently while collaborating effectively within a team
+Bachelor’s degree in Computer Science, Engineering, or equivalent experience
+Professional English communication skills.
+
+NICE-TO-HAVE QUALIFICATIONS
+Experience with data visualization tools (e.g., D3.js, SVG-based rendering)
+Familiarity with Storybook or design systems
+Experience with frontend tooling (Webpack, Vite, etc.)
+Knowledge of browser performance techniques (IndexedDB, Web Workers)
+Exposure to healthcare, life sciences, or data-intensive domains
+Strong interest in UX and interaction design
+
+LIFELONG SKILLS
+Inquisitive Mindset: Demonstrates a deep-rooted curiosity, constantly seeking to understand project details and underlying principles, indicative of a continuous learning approach.
+Clarity and Insight: Actively seeks clarity and understanding of project requirements to ensure accurate and effective implementation.
+Depth of Perception: Has talent for looking beyond initial requests, intuitively grasping and addressing the core needs and objectives underlying a project.
+Implementation Insight: Skilled in outlining and describing the phases of project implementation, breaking down complex tasks into manageable steps.
+Articulate Communication: Exhibits strong verbal and written communication skills, adept at tailoring messages effectively for different audiences, ensuring that it is not only clear but also contextually relevant and empathetic.
+
+WHY JOIN DATAXIGHTThis isn’t just another job; it’s an opportunity to join a team that's earnest about making a global impact in human health. We provide room for growth, a dynamic and collaborative work environment, and the chance to make your mark in an industry ripe for innovation. Join our team and immerse yourself in a dynamic, supportive, and friendly workplace that fosters collaboration and personal growth. We Offer:
+Competitive compensation.
+Flexible time off, including floating holidays.
+Private health insurance & full social, health, and unemployment insurance in line with Vietnamese labor law.
+Professional development support.
+Company-provided lunches along with a selection of coffee, tea, and snacks.
+Other employee benefits as stipulated in Vietnamese labor law, reinforcing our commitment to your growth and well-being.
+If you’re someone who thrives on solving complex problems and actively wants to transform healthcare, apply DataXight today. Send your resume, cover letter, and relevant work samples or GitHub profile to careers@dataxight.com. We look forward to reviewing your application and potentially welcoming you to our globally connected team!
+
+Benefits found in job post
+
+Medical insurance

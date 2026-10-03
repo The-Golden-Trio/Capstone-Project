@@ -1,0 +1,354 @@
+// Lược đồ cơ sở dữ liệu của Vào Nghề.
+//
+// Sinh client:  pnpm exec nx run @datn/api:prisma-generate
+// Tạo migration: pnpm exec prisma migrate dev --schema apps/api/prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+// Prisma 7 không nhận chuỗi kết nối trong file lược đồ nữa:
+//   - migrate/introspect đọc `datasource.url` trong apps/api/prisma.config.ts
+//     (DIRECT_URL, cổng 5432 — chế độ session, vì chế độ transaction không
+//     giữ được prepared statement nên không migrate được)
+//   - lúc chạy, PrismaService dựng client với adapter pg trỏ vào DATABASE_URL
+//     (cổng 6543 — pooler, chịu được nhiều kết nối ngắn)
+datasource db {
+  provider = "postgresql"
+}
+
+/// Ba vai trò theo docs/report.md §5.5.
+enum Role {
+  USER // học sinh hoặc phụ huynh
+  CONTRIBUTOR // cựu sinh viên hoặc cố vấn
+  ADMIN
+}
+
+enum ConsentMethod {
+  GUARDIAN_EMAIL
+}
+
+// ══ Danh tính ══════════════════════════════════════════════════════════
+
+model User {
+  id           String    @id @default(cuid())
+  username     String    @unique
+  /// Có thể rỗng: tài khoản chỉ dùng tên đăng nhập thì chưa cần email.
+  email        String?   @unique
+  displayName  String
+  /// Rỗng với tài khoản chỉ đăng nhập bằng Google.
+  passwordHash String?
+  role         Role      @default(USER)
+  /// Dùng để tính xem có cần người giám hộ đồng ý không.
+  dateOfBirth  DateTime? @db.Date
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  oauthAccounts  OAuthAccount[]
+  refreshTokens  RefreshToken[]
+  consent        ParentalConsent?
+  gameProfile    GameProfile?
+  runs           ScenarioRun[]
+  bandSkills     UserBandSkill[]
+  eventAnswers   EventAnswer[]
+  eventAwards    EventAward[]
+  enrollments    Enrollment[]
+}
+
+/// Liên kết nhà cung cấp đăng nhập. Bảng riêng thay vì cột `googleId` để
+/// thêm nhà cung cấp thứ hai chỉ là thêm dòng, và một người có thể vừa có
+/// mật khẩu vừa có liên kết Google.
+model OAuthAccount {
+  id                String   @id @default(cuid())
+  userId            String
+  provider          String
+  providerAccountId String
+  createdAt         DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+/// Token làm mới, lưu dạng băm và xoay vòng mỗi lần dùng.
+///
+/// `replacedById` nối các token thành một chuỗi. Nếu một token đã thu hồi
+/// lại được đem ra dùng, nghĩa là nó đã bị lộ — thu hồi cả chuỗi.
+model RefreshToken {
+  id           String    @id @default(cuid())
+  userId       String
+  tokenHash    String    @unique
+  expiresAt    DateTime
+  revokedAt    DateTime?
+  replacedById String?
+  userAgent    String?
+  createdAt    DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+/// Đồng ý của người giám hộ cho tài khoản dưới 16 tuổi (Nghị định 13/2023/NĐ-CP).
+/// Bản đồ án ghi nhận chứ chưa xác minh — giao diện nói rõ điều đó.
+model ParentalConsent {
+  id            String        @id @default(cuid())
+  userId        String        @unique
+  guardianName  String
+  guardianEmail String
+  method        ConsentMethod @default(GUARDIAN_EMAIL)
+  consentedAt   DateTime      @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ══ Tiến trình chơi ════════════════════════════════════════════════════
+
+/// Phần hồ sơ không mở khoá gì cả: chân dung tính cách và các mốc đã qua.
+model GameProfile {
+  userId       String   @id
+  /// CHỈ phần chân dung đến từ bài tự vấn.
+  ///
+  /// Phần đến từ nhiệm vụ phụ không lưu ở đây mà cộng lại từ bảng EventAnswer
+  /// mỗi lần đọc. Giữ một nguồn cho mỗi thứ thì không bao giờ có chuyện tổng
+  /// và các phần cộng lại ra hai số khác nhau.
+  quizFit      Json     @default("{}")
+  quizDone     Boolean  @default(false)
+  eventsPlayed Int      @default(0)
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+/// Một lượt chơi kịch bản sâu.
+///
+/// `seed` do máy chủ phát lúc mở màn; `actions` là chuỗi hành động máy khách
+/// gửi lên khi kết thúc. Giữ cả hai nghĩa là mọi điểm đã trao đều tái dựng
+/// lại được — không phải tin, mà kiểm được.
+model ScenarioRun {
+  id            String    @id @default(cuid())
+  userId        String
+  scenarioKey   String
+  roleCode      String
+  band          String
+  seed          BigInt
+  /// Phiên bản nội dung đã ghim cho lượt này.
+  ///
+  /// Máy chủ chấm điểm bằng cách CHẠY LẠI lượt chơi. Nội dung nay nằm trong
+  /// database nên có thể đổi giữa chừng; đổi rồi mà chạy lại bằng bản mới thì
+  /// lượt chơi rẽ nhánh khác và điểm ra sai. Ghim số này lúc mở màn khiến một
+  /// lượt đang dở trở thành bất biến.
+  contentVersion Int      @default(0)
+  actions       Json?
+  startedAt     DateTime  @default(now())
+  completedAt   DateTime?
+  endingId      String?
+  endingType    String?
+  pointsAwarded Int       @default(0)
+  /// Người chơi chấm tình huống có giống thực tế không (1–5 sao).
+  rating        Int?
+
+  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  evidence RunEvidence[]
+
+  @@index([userId, completedAt])
+  @@index([userId, scenarioKey])
+}
+
+/// Bằng chứng do máy chủ chấm lại, không phải điều máy khách khai.
+model RunEvidence {
+  id         String  @id @default(cuid())
+  runId      String
+  activityId String
+  skill      String
+  /// "+2" | "0" | "-1"
+  anchor     String
+  /// Đã bị hạ trần vì người chơi xem gợi ý.
+  capped     Boolean @default(false)
+  why        String
+  quote      String?
+  timeout    Boolean @default(false)
+
+  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([runId])
+}
+
+/// Tổng điểm kỹ năng theo (người chơi, nghề, cấp bậc).
+///
+/// Suy ra được từ RunEvidence, nhưng giữ sẵn ở đây vì đây là số được đọc mỗi
+/// lần kiểm "cấp bậc này đã mở chưa" — một lần đọc có chỉ mục thay vì gộp
+/// toàn bộ bằng chứng.
+model UserBandSkill {
+  id       String @id @default(cuid())
+  userId   String
+  roleCode String
+  band     String
+  points   Int    @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roleCode, band])
+  @@index([userId])
+}
+
+/// Một lựa chọn ở nhiệm vụ phụ. Máy chủ tra tín hiệu từ bộ dữ liệu rồi cộng
+/// vào chân dung, nên vector tính cách cũng là suy ra chứ không phải gửi lên.
+model EventAnswer {
+  id          String   @id @default(cuid())
+  userId      String
+  eventId     String
+  roleCode    String
+  band        String
+  choiceIndex Int
+  answeredAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+  @@index([userId])
+}
+
+/// Điểm kỹ năng đã trao cho một nhiệm vụ phụ, tại một cấp bậc.
+///
+/// Tách khỏi `EventAnswer` vì hai sổ trả lời hai câu khác nhau. `EventAnswer`
+/// là chân dung: mỗi nhiệm vụ chỉ được nói một lần, đổi lựa chọn thì thay chứ
+/// không cộng thêm, nếu không vector tính cách sẽ phình theo số lần bấm. Còn
+/// sổ này là tiến trình: cùng một nhiệm vụ làm ở cấp bậc khác thì là công
+/// khác, nhưng làm lại ở đúng cấp bậc cũ thì không được tính nữa.
+model EventAward {
+  id        String   @id @default(cuid())
+  userId    String
+  roleCode  String
+  band      String
+  eventId   String
+  points    Int
+  awardedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId, band])
+  @@index([userId])
+}
+
+/// Ghi danh một cấp bậc của một nghề.
+///
+/// Người chơi phải bấm "vào học" trước khi làm kịch bản của cấp bậc đó. Lưu
+/// lại chứ không để trong bộ nhớ trình duyệt vì nó trả lời câu "mình đang dở
+/// ở đâu" — câu đó phải đúng cả khi mở máy khác.
+model Enrollment {
+  id         String   @id @default(cuid())
+  userId     String
+  roleCode   String
+  band       String
+  enrolledAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roleCode, band])
+  @@index([userId])
+}
+
+/* ══ Nội dung game ═══════════════════════════════════════════════════════
+   Trước đây toàn bộ nội dung nằm trong mã (`packages/game-core/src/data`),
+   nên sửa một câu thoại là phải build lại cả hai ứng dụng, và trình duyệt
+   tải về 193 KB dữ liệu ở mỗi lần mở trang.
+
+   Mỗi thực thể một dòng: vài cột để tra cứu, cộng một cột `body` giữ nguyên
+   hình dạng mà Zod schema trong `game-core` đã định nghĩa — hợp đồng dữ liệu
+   không đổi, chỉ đổi chỗ cất.
+
+   Mọi bảng đều có `version`: cùng một `version` là một ảnh chụp nhất quán của
+   cả bộ dữ liệu. Chỉ script seed ghi vào những bảng này; API không có đường
+   ghi nào. */
+
+/// Phiên bản nội dung đang được phục vụ.
+model ContentRelease {
+  version  Int      @id
+  seededAt DateTime @default(now())
+  /// `_meta.source_dataset` của bộ sinh, để truy ngược về nguồn.
+  source   String
+  active   Boolean  @default(false)
+
+  @@index([active])
+}
+
+/// Một nghề chơi được, kèm sự kiện riêng và thang lương trong `body`.
+model RoleDoc {
+  version   Int
+  roleCode  String
+  nameVn    String
+  roleGroup String
+  bandStart String
+  bandEnd   String
+  body      Json
+
+  @@id([version, roleCode])
+}
+
+/// Kịch bản sâu — thứ duy nhất được chạy lại khi chấm điểm.
+model ScenarioDoc {
+  version   Int
+  key       String
+  roleCode  String
+  band      String
+  title     String
+  shortname String?
+  body      Json
+
+  @@id([version, key])
+  @@index([version, roleCode, band])
+}
+
+/// Sự kiện phụ dùng chung cho mọi nghề. Sự kiện riêng nằm trong RoleDoc.body.
+model SharedEventDoc {
+  version Int
+  eventId String
+  title   String
+  body    Json
+
+  @@id([version, eventId])
+}
+
+model QuizQuestionDoc {
+  version    Int
+  questionId String
+  /// Giữ thứ tự câu hỏi như trong bộ dữ liệu gốc.
+  ordinal    Int
+  body       Json
+
+  @@id([version, questionId])
+}
+
+/// Lời NPC cho lượt đào sâu. Có lời mới được mở lượt đào sâu, nên đây vừa là
+/// nội dung vừa là điều kiện của luật chơi.
+model FollowupDoc {
+  version    Int
+  scenarioKey String
+  activityId String
+  who        String
+  text       String
+
+  @@id([version, scenarioKey, activityId])
+}
+
+/// Bản đồ ngân hà 3D: nhóm, hành tinh, đường nối. Thuần trình bày.
+model GalaxyDoc {
+  version Int
+  kind    String
+  key     String
+  body    Json
+
+  @@id([version, kind, key])
+}
+
+/// Hai bảng tra nhỏ không đáng dựng bảng riêng: `all_roles`, `fit_dimensions`.
+model MetaDoc {
+  version Int
+  key     String
+  body    Json
+
+  @@id([version, key])
+}

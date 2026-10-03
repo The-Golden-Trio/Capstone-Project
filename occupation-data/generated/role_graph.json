@@ -1,0 +1,1683 @@
+{
+  "_meta": {
+    "generated_at": "2026-09-15",
+    "generator": "occupation-data/build_role_graph.py",
+    "source": "dataset_22_roles_enriched_v3.json + output/skills_taxonomy.json",
+    "counts": {
+      "nodes": 22,
+      "edges": 64,
+      "edges_by_type": {
+        "ABSORBED": 39,
+        "PROGRESSES_TO": 28,
+        "SIMILAR": 36
+      },
+      "absorbed_aliases": 39,
+      "nodes_without_skill_data": [
+        "CLOUD_DEVOPS",
+        "CLOUD_ENG",
+        "DATA_AI",
+        "INFRA_NETWORK",
+        "SEC_ENG",
+        "SEC_PENTEST",
+        "SWE_UIUX"
+      ]
+    },
+    "distance_rules": {
+      "SIMILAR": "1 - weight",
+      "PROGRESSES_TO": "max(0.05, 1 - Jaccard(skillSet A, skillSet B)); Jaccard=0 nếu thiếu skill data",
+      "ABSORBED": "không phải node — ghi ở absorbed[]"
+    },
+    "note": "39 cạnh ABSORBED trong dataset đều trỏ tới role_code ngoài 22 node (alias tìm kiếm). Graph hiển thị 22 node + 64 cạnh SIMILAR/PROGRESSES_TO; alias giữ ở absorbed[] để UI có thể vẽ vệ tinh."
+  },
+  "nodes": [
+    {
+      "roleCode": "CLOUD_DEVOPS",
+      "nameVn": "Kỹ sư DevOps",
+      "nameEn": "DevOps Engineer",
+      "roleGroup": "Cloud, DevOps & SRE",
+      "bands": "L3-L7",
+      "hasSkillData": false,
+      "skillIds": [],
+      "absorbedRoles": [
+        {
+          "roleCode": "CLOUD_AUTO",
+          "note": "Tự động hoá là phần việc lõi của DevOps"
+        },
+        {
+          "roleCode": "CLOUD_DEVSECOPS",
+          "note": "DevOps có thêm mảng bảo mật"
+        },
+        {
+          "roleCode": "CLOUD_PLATFORM",
+          "note": "Title mới, nội dung trùng DevOps"
+        },
+        {
+          "roleCode": "CLOUD_SRE",
+          "note": "Tại VN hai title này thường dùng thay thế nhau"
+        },
+        {
+          "roleCode": "DATA_MLOPS",
+          "note": "DevOps áp dụng cho mô hình ML"
+        },
+        {
+          "roleCode": "INFRA_ITOPS",
+          "note": "Vận hành hạ tầng — chồng lấn với DevOps"
+        }
+      ]
+    },
+    {
+      "roleCode": "CLOUD_ENG",
+      "nameVn": "Kỹ sư điện toán đám mây",
+      "nameEn": "Cloud Engineer",
+      "roleGroup": "Cloud, DevOps & SRE",
+      "bands": "L2-L6",
+      "hasSkillData": false,
+      "skillIds": [],
+      "absorbedRoles": []
+    },
+    {
+      "roleCode": "DATA_AI",
+      "nameVn": "Kỹ sư trí tuệ nhân tạo",
+      "nameEn": "AI Engineer",
+      "roleGroup": "Data, AI & Machine Learning",
+      "bands": "L3-L7",
+      "hasSkillData": false,
+      "skillIds": [],
+      "absorbedRoles": [
+        {
+          "roleCode": "DATA_CV_NLP",
+          "note": "Chuyên môn thị giác máy tính / NLP"
+        },
+        {
+          "roleCode": "DATA_DS",
+          "note": "Data Scientist thiên nghiên cứu — cùng nhóm trải nghiệm"
+        },
+        {
+          "roleCode": "DATA_GENAI",
+          "note": "Chuyên môn LLM trong AI Engineer"
+        },
+        {
+          "roleCode": "DATA_ML",
+          "note": "AI Engineer là tên chung và phổ biến hơn"
+        }
+      ]
+    },
+    {
+      "roleCode": "DATA_DA",
+      "nameVn": "Chuyên viên phân tích dữ liệu",
+      "nameEn": "Data Analyst",
+      "roleGroup": "Data, AI & Machine Learning",
+      "bands": "L1-L6",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_apache_kafka",
+        "hard_apache_spark",
+        "hard_hadoop",
+        "hard_html_css",
+        "hard_net",
+        "hard_numpy",
+        "hard_pandas",
+        "hard_python",
+        "hard_pytorch",
+        "hard_sas",
+        "hard_scikit_learn",
+        "hard_sql",
+        "hard_tensorflow"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "DATA_BI",
+          "note": "Nhiều công ty VN gộp hai vị trí này làm một"
+        }
+      ]
+    },
+    {
+      "roleCode": "DATA_DE",
+      "nameVn": "Kỹ sư dữ liệu",
+      "nameEn": "Data Engineer",
+      "roleGroup": "Data, AI & Machine Learning",
+      "bands": "L3-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_apache_kafka",
+        "hard_apache_spark",
+        "hard_fastapi",
+        "hard_flutter",
+        "hard_hadoop",
+        "hard_javascript",
+        "hard_net",
+        "hard_numpy",
+        "hard_pandas",
+        "hard_python",
+        "hard_scikit_learn",
+        "hard_sql"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "DATA_ANALYTICSENG",
+          "note": "Title hiếm tại VN, thường do Data Engineer kiêm"
+        },
+        {
+          "roleCode": "INFRA_DBA",
+          "note": "Quản trị CSDL gần nhánh dữ liệu hơn nhánh hỗ trợ IT"
+        }
+      ]
+    },
+    {
+      "roleCode": "INFRA_ERP",
+      "nameVn": "Chuyên viên tư vấn giải pháp ERP",
+      "nameEn": "ERP / CRM Consultant",
+      "roleGroup": "IT Infrastructure & Enterprise Systems",
+      "bands": "L3-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_apache_kafka",
+        "hard_asp_net",
+        "hard_asp_net_core",
+        "hard_blockchain",
+        "hard_c_sharp",
+        "hard_flutter",
+        "hard_javascript",
+        "hard_jquery",
+        "hard_net",
+        "hard_node_js",
+        "hard_python",
+        "hard_react_js",
+        "hard_sql"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "INFRA_CRM",
+          "note": "Cùng bản chất tư vấn cấu hình hệ thống doanh nghiệp; Salesforce là một nền tảng cụ thể trong nhóm này (ITviec chỉ có 4 tin riêng cho Salesforce)"
+        },
+        {
+          "roleCode": "INFRA_SAPBASIS",
+          "note": "Là mảng kỹ thuật hạ tầng của hệ SAP — thuộc cùng hệ sinh thái ERP"
+        }
+      ]
+    },
+    {
+      "roleCode": "INFRA_HELPDESK",
+      "nameVn": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+      "nameEn": "IT Helpdesk",
+      "roleGroup": "IT Infrastructure & Enterprise Systems",
+      "bands": "L1-L4",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_apache_kafka",
+        "hard_apache_spark",
+        "hard_asp_net",
+        "hard_bash_shell",
+        "hard_blockchain",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_capacitor",
+        "hard_html_css",
+        "hard_javascript",
+        "hard_jquery",
+        "hard_net",
+        "hard_node_js",
+        "hard_powershell",
+        "hard_python",
+        "hard_qt",
+        "hard_react_js",
+        "hard_sql",
+        "hard_vba"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "INFRA_SYSADMIN",
+          "note": "Cùng nhánh vận hành và hỗ trợ hệ thống nội bộ"
+        },
+        {
+          "roleCode": "INFRA_SYSENG",
+          "note": "Chồng lấn gần hoàn toàn với System Administrator"
+        }
+      ]
+    },
+    {
+      "roleCode": "INFRA_NETWORK",
+      "nameVn": "Kỹ sư hệ thống mạng",
+      "nameEn": "Network Engineer",
+      "roleGroup": "IT Infrastructure & Enterprise Systems",
+      "bands": "L1-L7",
+      "hasSkillData": false,
+      "skillIds": [],
+      "absorbedRoles": []
+    },
+    {
+      "roleCode": "PROD_BA",
+      "nameVn": "Chuyên viên phân tích nghiệp vụ / BA",
+      "nameEn": "Business Analyst",
+      "roleGroup": "Product & Project Management",
+      "bands": "L1-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_apache_kafka",
+        "hard_asp_net",
+        "hard_asp_net_core",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_clojure",
+        "hard_flutter",
+        "hard_html_css",
+        "hard_java",
+        "hard_javascript",
+        "hard_jquery",
+        "hard_net",
+        "hard_php",
+        "hard_python",
+        "hard_react_js",
+        "hard_react_native",
+        "hard_sql",
+        "hard_vba"
+      ],
+      "absorbedRoles": []
+    },
+    {
+      "roleCode": "PROD_PM",
+      "nameVn": "Quản lý sản phẩm / Product Manager",
+      "nameEn": "Product Manager",
+      "roleGroup": "Product & Project Management",
+      "bands": "L3-L9",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_angular",
+        "hard_angular_js",
+        "hard_apache_kafka",
+        "hard_apache_spark",
+        "hard_apl",
+        "hard_asp_net",
+        "hard_asp_net_core",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_crystal",
+        "hard_flutter",
+        "hard_html_css",
+        "hard_java",
+        "hard_javascript",
+        "hard_laravel",
+        "hard_net",
+        "hard_node_js",
+        "hard_php",
+        "hard_python",
+        "hard_sql"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "DATA_PM",
+          "note": "Product Manager chuyên mảng dữ liệu"
+        },
+        {
+          "roleCode": "PROD_PJM",
+          "note": "Quản lý dự án — cùng bản chất điều phối và ưu tiên"
+        },
+        {
+          "roleCode": "PROD_PO",
+          "note": "Tại VN, Product Owner và Product Manager thường không tách bạch"
+        },
+        {
+          "roleCode": "PROD_SM",
+          "note": "Scrum Master thường là vai trò kiêm nhiệm"
+        }
+      ]
+    },
+    {
+      "roleCode": "QA_MANUAL",
+      "nameVn": "Kỹ sư kiểm thử thủ công / Tester",
+      "nameEn": "Quality Engineer",
+      "roleGroup": "Quality Assurance & Testing",
+      "bands": "L1-L5",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_angular",
+        "hard_angular_js",
+        "hard_apache_kafka",
+        "hard_apl",
+        "hard_asp_net_core",
+        "hard_blockchain",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_django",
+        "hard_flutter",
+        "hard_html_css",
+        "hard_java",
+        "hard_javascript",
+        "hard_net",
+        "hard_node_js",
+        "hard_php",
+        "hard_python",
+        "hard_react_js",
+        "hard_react_native",
+        "hard_spring",
+        "hard_sql",
+        "hard_typescript"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "QA_ANALYST",
+          "note": "Ranh giới với QC rất mờ tại VN"
+        },
+        {
+          "roleCode": "QA_AUTO",
+          "note": "Thị trường VN ngày càng tuyển chung dưới title QA Engineer; automation là bước tiến của cùng một nghề"
+        },
+        {
+          "roleCode": "QA_LEAD",
+          "note": "Cấp cao hơn trong cùng nhánh kiểm thử"
+        },
+        {
+          "roleCode": "QA_PERF",
+          "note": "Chuyên môn hẹp trong kiểm thử"
+        },
+        {
+          "roleCode": "QA_SDET",
+          "note": "Kiểm thử tự động ở mức lập trình sâu — vẫn là nghề QA"
+        }
+      ]
+    },
+    {
+      "roleCode": "SEC_ENG",
+      "nameVn": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
+      "nameEn": "Cybersecurity Engineer",
+      "roleGroup": "Cyber Security",
+      "bands": "L1-L7",
+      "hasSkillData": false,
+      "skillIds": [],
+      "absorbedRoles": [
+        {
+          "roleCode": "SEC_IR",
+          "note": "Xử lý sự cố là một phần của công việc bảo mật phòng thủ"
+        },
+        {
+          "roleCode": "SEC_SOC",
+          "note": "JD thật cho thấy trùng lặp lớn: Security Engineer cũng viết rule/parser trên SIEM và giám sát sự kiện. Cybersecurity Engineer là tên chung và dễ nhận biết hơn"
+        }
+      ]
+    },
+    {
+      "roleCode": "SEC_PENTEST",
+      "nameVn": "Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng",
+      "nameEn": "Penetration Tester",
+      "roleGroup": "Cyber Security",
+      "bands": "L3-L7",
+      "hasSkillData": false,
+      "skillIds": [],
+      "absorbedRoles": [
+        {
+          "roleCode": "QA_SECTEST",
+          "note": "Cùng là kiểm thử bảo mật"
+        },
+        {
+          "roleCode": "SEC_APPSEC",
+          "note": "Cùng hướng tìm lỗ hổng, tập trung tầng ứng dụng"
+        }
+      ]
+    },
+    {
+      "roleCode": "SWE_ARCH_SOL",
+      "nameVn": "Kiến trúc sư giải pháp",
+      "nameEn": "Solution Architect",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L6-L8",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_asp_net",
+        "hard_asp_net_core",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_cobol",
+        "hard_html_css",
+        "hard_java",
+        "hard_javascript",
+        "hard_jquery",
+        "hard_net",
+        "hard_next_js",
+        "hard_node_js",
+        "hard_php",
+        "hard_python",
+        "hard_react_js",
+        "hard_spring",
+        "hard_sql",
+        "hard_typescript",
+        "hard_vue_js"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "CLOUD_ARCH",
+          "note": "Kiến trúc sư chuyên mảng cloud — cùng họ Architect"
+        },
+        {
+          "roleCode": "DATA_AIARCH",
+          "note": "Kiến trúc sư chuyên mảng AI — cùng họ Architect, nhất quán với cách gộp Enterprise/Software/Cloud Architect"
+        },
+        {
+          "roleCode": "SWE_ARCH_ENT",
+          "note": "Solution Architect là tên phổ biến hơn; Enterprise Architect là biến thể phạm vi rộng hơn"
+        },
+        {
+          "roleCode": "SWE_ARCH_SW",
+          "note": "Solution Architect phổ biến hơn; Software Architect hẹp hơn về phạm vi"
+        }
+      ]
+    },
+    {
+      "roleCode": "SWE_BACKEND",
+      "nameVn": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "nameEn": "Backend Developer",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L1-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_apache_kafka",
+        "hard_apl",
+        "hard_asp_net",
+        "hard_asp_net_core",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_go",
+        "hard_java",
+        "hard_javascript",
+        "hard_laravel",
+        "hard_net",
+        "hard_node_js",
+        "hard_php",
+        "hard_python",
+        "hard_react_js",
+        "hard_ruby",
+        "hard_ruby_on_rails",
+        "hard_spring",
+        "hard_typescript"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "SWE_FULLSTACK",
+          "note": "Là Frontend + Backend, không phải trải nghiệm thứ ba"
+        }
+      ]
+    },
+    {
+      "roleCode": "SWE_EM",
+      "nameVn": "Trưởng phòng Kỹ thuật",
+      "nameEn": "Engineering Manager",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L7-L9",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_asp_net",
+        "hard_asp_net_core",
+        "hard_bash_shell",
+        "hard_c_sharp",
+        "hard_hadoop",
+        "hard_javascript",
+        "hard_net",
+        "hard_numpy",
+        "hard_php",
+        "hard_powershell",
+        "hard_python",
+        "hard_pytorch",
+        "hard_react_js",
+        "hard_simplicity",
+        "hard_sql",
+        "hard_tensorflow",
+        "hard_typescript",
+        "hard_vba",
+        "hard_vue_js"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "CLOUD_LEAD",
+          "note": "Quản lý đội hạ tầng — cùng bản chất quản lý người"
+        },
+        {
+          "roleCode": "INFRA_ITMANAGER",
+          "note": "Quản lý bộ phận IT — cùng bản chất quản lý người"
+        },
+        {
+          "roleCode": "SEC_ISM",
+          "note": "Quản lý an toàn thông tin — cùng bản chất quản lý người"
+        }
+      ]
+    },
+    {
+      "roleCode": "SWE_EMBEDDED",
+      "nameVn": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+      "nameEn": "Embedded Engineer",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L1-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_apache_kafka",
+        "hard_bash_shell",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_clojure",
+        "hard_cobol",
+        "hard_flutter",
+        "hard_go",
+        "hard_java",
+        "hard_javascript",
+        "hard_net",
+        "hard_node_js",
+        "hard_numpy",
+        "hard_pandas",
+        "hard_python",
+        "hard_pytorch",
+        "hard_qt",
+        "hard_tensorflow",
+        "hard_typescript"
+      ],
+      "absorbedRoles": []
+    },
+    {
+      "roleCode": "SWE_FRONTEND",
+      "nameVn": "Lập trình viên Front-end",
+      "nameEn": "Frontend Developer",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L1-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_angular",
+        "hard_apl",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_dart",
+        "hard_elixir",
+        "hard_flutter",
+        "hard_html_css",
+        "hard_java",
+        "hard_javascript",
+        "hard_jquery",
+        "hard_net",
+        "hard_next_js",
+        "hard_node_js",
+        "hard_nuxt_js",
+        "hard_php",
+        "hard_react_js",
+        "hard_react_native",
+        "hard_typescript",
+        "hard_vue_js"
+      ],
+      "absorbedRoles": [
+        {
+          "roleCode": "SWE_WEB",
+          "note": "Trùng gần hoàn toàn với Frontend"
+        }
+      ]
+    },
+    {
+      "roleCode": "SWE_GAME",
+      "nameVn": "Lập trình viên Game",
+      "nameEn": "Game Developer",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L1-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_apache_kafka",
+        "hard_apache_spark",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_crystal",
+        "hard_electron",
+        "hard_flutter",
+        "hard_groovy",
+        "hard_hadoop",
+        "hard_javascript",
+        "hard_net",
+        "hard_pandas",
+        "hard_php",
+        "hard_typescript",
+        "hard_unity",
+        "hard_vue_js"
+      ],
+      "absorbedRoles": []
+    },
+    {
+      "roleCode": "SWE_MOBILE",
+      "nameVn": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
+      "nameEn": "Mobile Developer",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L1-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_bash_shell",
+        "hard_blockchain",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_cordova",
+        "hard_dart",
+        "hard_electron",
+        "hard_flutter",
+        "hard_java",
+        "hard_javascript",
+        "hard_kotlin",
+        "hard_net",
+        "hard_node_js",
+        "hard_objective_c",
+        "hard_react_js",
+        "hard_react_native",
+        "hard_swift",
+        "hard_tensorflow",
+        "hard_typescript"
+      ],
+      "absorbedRoles": []
+    },
+    {
+      "roleCode": "SWE_TECHLEAD",
+      "nameVn": "Trưởng nhóm kỹ thuật",
+      "nameEn": "Tech Lead",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L6-L7",
+      "hasSkillData": true,
+      "skillIds": [
+        "hard_angular",
+        "hard_apache_kafka",
+        "hard_asp_net_core",
+        "hard_c_plus_plus",
+        "hard_c_sharp",
+        "hard_fastapi",
+        "hard_go",
+        "hard_java",
+        "hard_javascript",
+        "hard_kotlin",
+        "hard_net",
+        "hard_next_js",
+        "hard_node_js",
+        "hard_php",
+        "hard_python",
+        "hard_react_js",
+        "hard_spring",
+        "hard_sql",
+        "hard_typescript"
+      ],
+      "absorbedRoles": []
+    },
+    {
+      "roleCode": "SWE_UIUX",
+      "nameVn": "Chuyên viên thiết kế UI/UX",
+      "nameEn": "UI/UX Designer",
+      "roleGroup": "Software Engineering & Architecture",
+      "bands": "L1-L7",
+      "hasSkillData": false,
+      "skillIds": [],
+      "absorbedRoles": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "PROGRESSES_TO:CLOUD_DEVOPS->SEC_ENG",
+      "from": "CLOUD_DEVOPS",
+      "to": "SEC_ENG",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:CLOUD_DEVOPS->SWE_ARCH_SOL",
+      "from": "CLOUD_DEVOPS",
+      "to": "SWE_ARCH_SOL",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:DATA_DA->DATA_AI",
+      "from": "DATA_DA",
+      "to": "DATA_AI",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:DATA_DA->DATA_DE",
+      "from": "DATA_DA",
+      "to": "DATA_DE",
+      "type": "PROGRESSES_TO",
+      "distance": 0.4375,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_python",
+        "hard_sql"
+      ],
+      "sharedSkillCount": 9,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:DATA_DE->DATA_AI",
+      "from": "DATA_DE",
+      "to": "DATA_AI",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->CLOUD_DEVOPS",
+      "from": "INFRA_HELPDESK",
+      "to": "CLOUD_DEVOPS",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->CLOUD_ENG",
+      "from": "INFRA_HELPDESK",
+      "to": "CLOUD_ENG",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->INFRA_ERP",
+      "from": "INFRA_HELPDESK",
+      "to": "INFRA_ERP",
+      "type": "PROGRESSES_TO",
+      "distance": 0.4762,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_net",
+        "hard_sql"
+      ],
+      "sharedSkillCount": 11,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->INFRA_NETWORK",
+      "from": "INFRA_HELPDESK",
+      "to": "INFRA_NETWORK",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_HELPDESK->SEC_ENG",
+      "from": "INFRA_HELPDESK",
+      "to": "SEC_ENG",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:INFRA_NETWORK->SEC_ENG",
+      "from": "INFRA_NETWORK",
+      "to": "SEC_ENG",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:PROD_BA->INFRA_ERP",
+      "from": "PROD_BA",
+      "to": "INFRA_ERP",
+      "type": "PROGRESSES_TO",
+      "distance": 0.45,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_sql",
+        "hard_net"
+      ],
+      "sharedSkillCount": 11,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:PROD_BA->PROD_PM",
+      "from": "PROD_BA",
+      "to": "PROD_PM",
+      "type": "PROGRESSES_TO",
+      "distance": 0.48,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_java",
+        "hard_net"
+      ],
+      "sharedSkillCount": 13,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SEC_ENG->SEC_PENTEST",
+      "from": "SEC_ENG",
+      "to": "SEC_PENTEST",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_ARCH_SOL->SWE_EM",
+      "from": "SWE_ARCH_SOL",
+      "to": "SWE_EM",
+      "type": "PROGRESSES_TO",
+      "distance": 0.5926,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_net",
+        "hard_c_sharp"
+      ],
+      "sharedSkillCount": 11,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->CLOUD_DEVOPS",
+      "from": "SWE_BACKEND",
+      "to": "CLOUD_DEVOPS",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->DATA_AI",
+      "from": "SWE_BACKEND",
+      "to": "DATA_AI",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->DATA_DE",
+      "from": "SWE_BACKEND",
+      "to": "DATA_DE",
+      "type": "PROGRESSES_TO",
+      "distance": 0.8519,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_apache_kafka",
+        "hard_python"
+      ],
+      "sharedSkillCount": 4,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->PROD_PM",
+      "from": "SWE_BACKEND",
+      "to": "PROD_PM",
+      "type": "PROGRESSES_TO",
+      "distance": 0.5,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_java",
+        "hard_net"
+      ],
+      "sharedSkillCount": 13,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->SEC_PENTEST",
+      "from": "SWE_BACKEND",
+      "to": "SEC_PENTEST",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->SWE_ARCH_SOL",
+      "from": "SWE_BACKEND",
+      "to": "SWE_ARCH_SOL",
+      "type": "PROGRESSES_TO",
+      "distance": 0.48,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_java",
+        "hard_net"
+      ],
+      "sharedSkillCount": 13,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_BACKEND->SWE_TECHLEAD",
+      "from": "SWE_BACKEND",
+      "to": "SWE_TECHLEAD",
+      "type": "PROGRESSES_TO",
+      "distance": 0.4167,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_java",
+        "hard_c_sharp"
+      ],
+      "sharedSkillCount": 14,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_FRONTEND->SWE_ARCH_SOL",
+      "from": "SWE_FRONTEND",
+      "to": "SWE_ARCH_SOL",
+      "type": "PROGRESSES_TO",
+      "distance": 0.5,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_node_js",
+        "hard_c_sharp"
+      ],
+      "sharedSkillCount": 13,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_FRONTEND->SWE_TECHLEAD",
+      "from": "SWE_FRONTEND",
+      "to": "SWE_TECHLEAD",
+      "type": "PROGRESSES_TO",
+      "distance": 0.6071,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_react_js",
+        "hard_c_sharp"
+      ],
+      "sharedSkillCount": 11,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_MOBILE->SWE_TECHLEAD",
+      "from": "SWE_MOBILE",
+      "to": "SWE_TECHLEAD",
+      "type": "PROGRESSES_TO",
+      "distance": 0.6897,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_react_js",
+        "hard_java"
+      ],
+      "sharedSkillCount": 9,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_TECHLEAD->SWE_ARCH_SOL",
+      "from": "SWE_TECHLEAD",
+      "to": "SWE_ARCH_SOL",
+      "type": "PROGRESSES_TO",
+      "distance": 0.4167,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_java",
+        "hard_c_sharp"
+      ],
+      "sharedSkillCount": 14,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_TECHLEAD->SWE_EM",
+      "from": "SWE_TECHLEAD",
+      "to": "SWE_EM",
+      "type": "PROGRESSES_TO",
+      "distance": 0.6897,
+      "distanceMethod": "1 - jaccard(hard skill top-10 languages ∪ frameworks)",
+      "requiredSkills": [
+        "hard_c_sharp",
+        "hard_net"
+      ],
+      "sharedSkillCount": 9,
+      "note": null
+    },
+    {
+      "id": "PROGRESSES_TO:SWE_UIUX->PROD_PM",
+      "from": "SWE_UIUX",
+      "to": "PROD_PM",
+      "type": "PROGRESSES_TO",
+      "distance": 1.0,
+      "distanceMethod": "no_skill_data: một trong hai role KHONG_CO_TRONG_BAO_CAO → Jaccard=0 → distance=1.0",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": null
+    },
+    {
+      "id": "SIMILAR:CLOUD_DEVOPS->CLOUD_ENG",
+      "from": "CLOUD_DEVOPS",
+      "to": "CLOUD_ENG",
+      "type": "SIMILAR",
+      "distance": 0.35,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng làm hạ tầng: DevOps thiên tự động hoá, Cloud Engineer thiên nền tảng"
+    },
+    {
+      "id": "SIMILAR:CLOUD_DEVOPS->INFRA_NETWORK",
+      "from": "CLOUD_DEVOPS",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng vận hành hạ tầng, khác tầng mạng và tầng ứng dụng"
+    },
+    {
+      "id": "SIMILAR:CLOUD_DEVOPS->SEC_ENG",
+      "from": "CLOUD_DEVOPS",
+      "to": "SEC_ENG",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "DevSecOps là vùng giao nhau"
+    },
+    {
+      "id": "SIMILAR:CLOUD_ENG->INFRA_NETWORK",
+      "from": "CLOUD_ENG",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.6,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng hạ tầng: một trên mây, một dưới đất"
+    },
+    {
+      "id": "SIMILAR:DATA_AI->DATA_DE",
+      "from": "DATA_AI",
+      "to": "DATA_DE",
+      "type": "SIMILAR",
+      "distance": 0.5,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "AI Engineer phụ thuộc dữ liệu do Data Engineer chuẩn bị"
+    },
+    {
+      "id": "SIMILAR:DATA_AI->SWE_ARCH_SOL",
+      "from": "DATA_AI",
+      "to": "SWE_ARCH_SOL",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Đưa AI vào production đòi hỏi tư duy kiến trúc"
+    },
+    {
+      "id": "SIMILAR:DATA_AI->SWE_BACKEND",
+      "from": "DATA_AI",
+      "to": "SWE_BACKEND",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Đưa mô hình vào sản phẩm cần kỹ năng backend"
+    },
+    {
+      "id": "SIMILAR:DATA_DA->DATA_AI",
+      "from": "DATA_DA",
+      "to": "DATA_AI",
+      "type": "SIMILAR",
+      "distance": 0.55,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng nền thống kê; AI đi sâu vào mô hình hoá"
+    },
+    {
+      "id": "SIMILAR:DATA_DA->DATA_DE",
+      "from": "DATA_DA",
+      "to": "DATA_DE",
+      "type": "SIMILAR",
+      "distance": 0.522,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_pandas",
+        "hard_numpy",
+        "hard_apache_spark",
+        "hard_hadoop",
+        "hard_scikit_learn"
+      ],
+      "sharedSkillCount": 9,
+      "note": "Cùng chuỗi dữ liệu: DA phân tích, DE xây đường ống"
+    },
+    {
+      "id": "SIMILAR:DATA_DA->PROD_BA",
+      "from": "DATA_DA",
+      "to": "PROD_BA",
+      "type": "SIMILAR",
+      "distance": 0.595,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_html_css"
+      ],
+      "sharedSkillCount": 5,
+      "note": "Cùng là cầu nối nghiệp vụ: DA làm với số liệu, BA làm với quy trình"
+    },
+    {
+      "id": "SIMILAR:INFRA_ERP->DATA_DA",
+      "from": "INFRA_ERP",
+      "to": "DATA_DA",
+      "type": "SIMILAR",
+      "distance": 0.7,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 4,
+      "note": "Cùng làm việc với dữ liệu nghiệp vụ doanh nghiệp"
+    },
+    {
+      "id": "SIMILAR:INFRA_HELPDESK->CLOUD_ENG",
+      "from": "INFRA_HELPDESK",
+      "to": "CLOUD_ENG",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Helpdesk là một đường vào hạ tầng đám mây"
+    },
+    {
+      "id": "SIMILAR:INFRA_HELPDESK->INFRA_NETWORK",
+      "from": "INFRA_HELPDESK",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.5,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng nhánh hạ tầng nội bộ; Helpdesk là cửa vào của Network"
+    },
+    {
+      "id": "SIMILAR:INFRA_HELPDESK->SEC_ENG",
+      "from": "INFRA_HELPDESK",
+      "to": "SEC_ENG",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Helpdesk là cửa vào phổ biến của nghề bảo mật"
+    },
+    {
+      "id": "SIMILAR:PROD_BA->INFRA_ERP",
+      "from": "PROD_BA",
+      "to": "INFRA_ERP",
+      "type": "SIMILAR",
+      "distance": 0.577,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_asp_net",
+        "hard_jquery"
+      ],
+      "sharedSkillCount": 11,
+      "note": "Cùng cầu nối nghiệp vụ - kỹ thuật; ERP thiên cấu hình hệ thống"
+    },
+    {
+      "id": "SIMILAR:PROD_BA->PROD_PM",
+      "from": "PROD_BA",
+      "to": "PROD_PM",
+      "type": "SIMILAR",
+      "distance": 0.522,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_asp_net",
+        "hard_html_css"
+      ],
+      "sharedSkillCount": 13,
+      "note": "BA là đường vào phổ biến nhất của Product Manager"
+    },
+    {
+      "id": "SIMILAR:PROD_PM->SWE_EM",
+      "from": "PROD_PM",
+      "to": "SWE_EM",
+      "type": "SIMILAR",
+      "distance": 0.723,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_asp_net"
+      ],
+      "sharedSkillCount": 8,
+      "note": "Cùng cấp quản lý: PM quản sản phẩm, EM quản con người"
+    },
+    {
+      "id": "SIMILAR:QA_MANUAL->PROD_BA",
+      "from": "QA_MANUAL",
+      "to": "PROD_BA",
+      "type": "SIMILAR",
+      "distance": 0.725,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_html_css",
+        "hard_react_native"
+      ],
+      "sharedSkillCount": 14,
+      "note": "Cùng phải hiểu sâu yêu cầu nghiệp vụ"
+    },
+    {
+      "id": "SIMILAR:QA_MANUAL->SEC_PENTEST",
+      "from": "QA_MANUAL",
+      "to": "SEC_PENTEST",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng bản chất tìm lỗi có hệ thống, khác mục tiêu"
+    },
+    {
+      "id": "SIMILAR:QA_MANUAL->SWE_BACKEND",
+      "from": "QA_MANUAL",
+      "to": "SWE_BACKEND",
+      "type": "SIMILAR",
+      "distance": 0.767,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_spring",
+        "hard_apl"
+      ],
+      "sharedSkillCount": 14,
+      "note": "Automation QA cần kỹ năng lập trình thật"
+    },
+    {
+      "id": "SIMILAR:SEC_ENG->INFRA_NETWORK",
+      "from": "SEC_ENG",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.6,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Bảo mật mạng là giao điểm hai nghề"
+    },
+    {
+      "id": "SIMILAR:SEC_ENG->SEC_PENTEST",
+      "from": "SEC_ENG",
+      "to": "SEC_PENTEST",
+      "type": "SIMILAR",
+      "distance": 0.4,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Hai mặt của bảo mật: phòng thủ và tấn công"
+    },
+    {
+      "id": "SIMILAR:SEC_ENG->SWE_BACKEND",
+      "from": "SEC_ENG",
+      "to": "SWE_BACKEND",
+      "type": "SIMILAR",
+      "distance": 0.7,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Application Security cần đọc hiểu code để tìm lỗ hổng"
+    },
+    {
+      "id": "SIMILAR:SWE_ARCH_SOL->CLOUD_ENG",
+      "from": "SWE_ARCH_SOL",
+      "to": "CLOUD_ENG",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Kiến trúc hệ thống hiện đại gắn chặt với hạ tầng đám mây"
+    },
+    {
+      "id": "SIMILAR:SWE_BACKEND->CLOUD_DEVOPS",
+      "from": "SWE_BACKEND",
+      "to": "CLOUD_DEVOPS",
+      "type": "SIMILAR",
+      "distance": 0.55,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "DevOps là hướng đi tự nhiên của Backend quan tâm vận hành"
+    },
+    {
+      "id": "SIMILAR:SWE_BACKEND->DATA_DE",
+      "from": "SWE_BACKEND",
+      "to": "DATA_DE",
+      "type": "SIMILAR",
+      "distance": 0.55,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 4,
+      "note": "Data Engineer phần lớn đi lên từ Backend, chia sẻ kỹ năng hệ thống"
+    },
+    {
+      "id": "SIMILAR:SWE_BACKEND->SWE_MOBILE",
+      "from": "SWE_BACKEND",
+      "to": "SWE_MOBILE",
+      "type": "SIMILAR",
+      "distance": 0.7,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 8,
+      "note": "Mobile cần backend; chia sẻ tư duy API và dữ liệu"
+    },
+    {
+      "id": "SIMILAR:SWE_EMBEDDED->INFRA_NETWORK",
+      "from": "SWE_EMBEDDED",
+      "to": "INFRA_NETWORK",
+      "type": "SIMILAR",
+      "distance": 0.75,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng làm việc với thiết bị phần cứng thật"
+    },
+    {
+      "id": "SIMILAR:SWE_FRONTEND->SWE_BACKEND",
+      "from": "SWE_FRONTEND",
+      "to": "SWE_BACKEND",
+      "type": "SIMILAR",
+      "distance": 0.716,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_apl"
+      ],
+      "sharedSkillCount": 10,
+      "note": "Hai nửa của một ứng dụng web, thường làm việc cặp với nhau"
+    },
+    {
+      "id": "SIMILAR:SWE_FRONTEND->SWE_MOBILE",
+      "from": "SWE_FRONTEND",
+      "to": "SWE_MOBILE",
+      "type": "SIMILAR",
+      "distance": 0.615,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_dart",
+        "hard_react_native"
+      ],
+      "sharedSkillCount": 11,
+      "note": "Cùng làm giao diện; React Native khiến hai nghề chồng lấn mạnh"
+    },
+    {
+      "id": "SIMILAR:SWE_GAME->SWE_EMBEDDED",
+      "from": "SWE_GAME",
+      "to": "SWE_EMBEDDED",
+      "type": "SIMILAR",
+      "distance": 0.752,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_pandas"
+      ],
+      "sharedSkillCount": 8,
+      "note": "Cùng phải tối ưu hiệu năng sát phần cứng"
+    },
+    {
+      "id": "SIMILAR:SWE_GAME->SWE_UIUX",
+      "from": "SWE_GAME",
+      "to": "SWE_UIUX",
+      "type": "SIMILAR",
+      "distance": 0.7,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng quan tâm trải nghiệm và cảm giác người dùng"
+    },
+    {
+      "id": "SIMILAR:SWE_TECHLEAD->SWE_ARCH_SOL",
+      "from": "SWE_TECHLEAD",
+      "to": "SWE_ARCH_SOL",
+      "type": "SIMILAR",
+      "distance": 0.562,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [
+        "hard_spring",
+        "hard_next_js"
+      ],
+      "sharedSkillCount": 14,
+      "note": "Cùng nhánh IC cấp cao, khác phạm vi: một đội và một hệ thống"
+    },
+    {
+      "id": "SIMILAR:SWE_TECHLEAD->SWE_EM",
+      "from": "SWE_TECHLEAD",
+      "to": "SWE_EM",
+      "type": "SIMILAR",
+      "distance": 0.5,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 9,
+      "note": "Điểm rẽ nhánh IC/Management — cùng xuất phát, khác hướng"
+    },
+    {
+      "id": "SIMILAR:SWE_UIUX->PROD_PM",
+      "from": "SWE_UIUX",
+      "to": "PROD_PM",
+      "type": "SIMILAR",
+      "distance": 0.65,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng tập trung vào trải nghiệm và nhu cầu người dùng"
+    },
+    {
+      "id": "SIMILAR:SWE_UIUX->SWE_FRONTEND",
+      "from": "SWE_UIUX",
+      "to": "SWE_FRONTEND",
+      "type": "SIMILAR",
+      "distance": 0.45,
+      "distanceMethod": "1 - weight (70% semantic + 30% skill-Jaccard, gán sẵn trong dataset)",
+      "requiredSkills": [],
+      "sharedSkillCount": 0,
+      "note": "Cùng làm phần người dùng nhìn thấy: UI/UX thiết kế, Frontend hiện thực"
+    }
+  ],
+  "absorbed": [
+    {
+      "parentRoleCode": "CLOUD_DEVOPS",
+      "roleCode": "CLOUD_AUTO",
+      "note": "Tự động hoá là phần việc lõi của DevOps"
+    },
+    {
+      "parentRoleCode": "CLOUD_DEVOPS",
+      "roleCode": "CLOUD_DEVSECOPS",
+      "note": "DevOps có thêm mảng bảo mật"
+    },
+    {
+      "parentRoleCode": "CLOUD_DEVOPS",
+      "roleCode": "CLOUD_PLATFORM",
+      "note": "Title mới, nội dung trùng DevOps"
+    },
+    {
+      "parentRoleCode": "CLOUD_DEVOPS",
+      "roleCode": "CLOUD_SRE",
+      "note": "Tại VN hai title này thường dùng thay thế nhau"
+    },
+    {
+      "parentRoleCode": "CLOUD_DEVOPS",
+      "roleCode": "DATA_MLOPS",
+      "note": "DevOps áp dụng cho mô hình ML"
+    },
+    {
+      "parentRoleCode": "CLOUD_DEVOPS",
+      "roleCode": "INFRA_ITOPS",
+      "note": "Vận hành hạ tầng — chồng lấn với DevOps"
+    },
+    {
+      "parentRoleCode": "DATA_AI",
+      "roleCode": "DATA_CV_NLP",
+      "note": "Chuyên môn thị giác máy tính / NLP"
+    },
+    {
+      "parentRoleCode": "DATA_AI",
+      "roleCode": "DATA_DS",
+      "note": "Data Scientist thiên nghiên cứu — cùng nhóm trải nghiệm"
+    },
+    {
+      "parentRoleCode": "DATA_AI",
+      "roleCode": "DATA_GENAI",
+      "note": "Chuyên môn LLM trong AI Engineer"
+    },
+    {
+      "parentRoleCode": "DATA_AI",
+      "roleCode": "DATA_ML",
+      "note": "AI Engineer là tên chung và phổ biến hơn"
+    },
+    {
+      "parentRoleCode": "DATA_DA",
+      "roleCode": "DATA_BI",
+      "note": "Nhiều công ty VN gộp hai vị trí này làm một"
+    },
+    {
+      "parentRoleCode": "DATA_DE",
+      "roleCode": "DATA_ANALYTICSENG",
+      "note": "Title hiếm tại VN, thường do Data Engineer kiêm"
+    },
+    {
+      "parentRoleCode": "DATA_DE",
+      "roleCode": "INFRA_DBA",
+      "note": "Quản trị CSDL gần nhánh dữ liệu hơn nhánh hỗ trợ IT"
+    },
+    {
+      "parentRoleCode": "INFRA_ERP",
+      "roleCode": "INFRA_CRM",
+      "note": "Cùng bản chất tư vấn cấu hình hệ thống doanh nghiệp; Salesforce là một nền tảng cụ thể trong nhóm này (ITviec chỉ có 4 tin riêng cho Salesforce)"
+    },
+    {
+      "parentRoleCode": "INFRA_ERP",
+      "roleCode": "INFRA_SAPBASIS",
+      "note": "Là mảng kỹ thuật hạ tầng của hệ SAP — thuộc cùng hệ sinh thái ERP"
+    },
+    {
+      "parentRoleCode": "INFRA_HELPDESK",
+      "roleCode": "INFRA_SYSADMIN",
+      "note": "Cùng nhánh vận hành và hỗ trợ hệ thống nội bộ"
+    },
+    {
+      "parentRoleCode": "INFRA_HELPDESK",
+      "roleCode": "INFRA_SYSENG",
+      "note": "Chồng lấn gần hoàn toàn với System Administrator"
+    },
+    {
+      "parentRoleCode": "PROD_PM",
+      "roleCode": "DATA_PM",
+      "note": "Product Manager chuyên mảng dữ liệu"
+    },
+    {
+      "parentRoleCode": "PROD_PM",
+      "roleCode": "PROD_PJM",
+      "note": "Quản lý dự án — cùng bản chất điều phối và ưu tiên"
+    },
+    {
+      "parentRoleCode": "PROD_PM",
+      "roleCode": "PROD_PO",
+      "note": "Tại VN, Product Owner và Product Manager thường không tách bạch"
+    },
+    {
+      "parentRoleCode": "PROD_PM",
+      "roleCode": "PROD_SM",
+      "note": "Scrum Master thường là vai trò kiêm nhiệm"
+    },
+    {
+      "parentRoleCode": "QA_MANUAL",
+      "roleCode": "QA_ANALYST",
+      "note": "Ranh giới với QC rất mờ tại VN"
+    },
+    {
+      "parentRoleCode": "QA_MANUAL",
+      "roleCode": "QA_AUTO",
+      "note": "Thị trường VN ngày càng tuyển chung dưới title QA Engineer; automation là bước tiến của cùng một nghề"
+    },
+    {
+      "parentRoleCode": "QA_MANUAL",
+      "roleCode": "QA_LEAD",
+      "note": "Cấp cao hơn trong cùng nhánh kiểm thử"
+    },
+    {
+      "parentRoleCode": "QA_MANUAL",
+      "roleCode": "QA_PERF",
+      "note": "Chuyên môn hẹp trong kiểm thử"
+    },
+    {
+      "parentRoleCode": "QA_MANUAL",
+      "roleCode": "QA_SDET",
+      "note": "Kiểm thử tự động ở mức lập trình sâu — vẫn là nghề QA"
+    },
+    {
+      "parentRoleCode": "SEC_ENG",
+      "roleCode": "SEC_IR",
+      "note": "Xử lý sự cố là một phần của công việc bảo mật phòng thủ"
+    },
+    {
+      "parentRoleCode": "SEC_ENG",
+      "roleCode": "SEC_SOC",
+      "note": "JD thật cho thấy trùng lặp lớn: Security Engineer cũng viết rule/parser trên SIEM và giám sát sự kiện. Cybersecurity Engineer là tên chung và dễ nhận biết hơn"
+    },
+    {
+      "parentRoleCode": "SEC_PENTEST",
+      "roleCode": "QA_SECTEST",
+      "note": "Cùng là kiểm thử bảo mật"
+    },
+    {
+      "parentRoleCode": "SEC_PENTEST",
+      "roleCode": "SEC_APPSEC",
+      "note": "Cùng hướng tìm lỗ hổng, tập trung tầng ứng dụng"
+    },
+    {
+      "parentRoleCode": "SWE_ARCH_SOL",
+      "roleCode": "CLOUD_ARCH",
+      "note": "Kiến trúc sư chuyên mảng cloud — cùng họ Architect"
+    },
+    {
+      "parentRoleCode": "SWE_ARCH_SOL",
+      "roleCode": "DATA_AIARCH",
+      "note": "Kiến trúc sư chuyên mảng AI — cùng họ Architect, nhất quán với cách gộp Enterprise/Software/Cloud Architect"
+    },
+    {
+      "parentRoleCode": "SWE_ARCH_SOL",
+      "roleCode": "SWE_ARCH_ENT",
+      "note": "Solution Architect là tên phổ biến hơn; Enterprise Architect là biến thể phạm vi rộng hơn"
+    },
+    {
+      "parentRoleCode": "SWE_ARCH_SOL",
+      "roleCode": "SWE_ARCH_SW",
+      "note": "Solution Architect phổ biến hơn; Software Architect hẹp hơn về phạm vi"
+    },
+    {
+      "parentRoleCode": "SWE_BACKEND",
+      "roleCode": "SWE_FULLSTACK",
+      "note": "Là Frontend + Backend, không phải trải nghiệm thứ ba"
+    },
+    {
+      "parentRoleCode": "SWE_EM",
+      "roleCode": "CLOUD_LEAD",
+      "note": "Quản lý đội hạ tầng — cùng bản chất quản lý người"
+    },
+    {
+      "parentRoleCode": "SWE_EM",
+      "roleCode": "INFRA_ITMANAGER",
+      "note": "Quản lý bộ phận IT — cùng bản chất quản lý người"
+    },
+    {
+      "parentRoleCode": "SWE_EM",
+      "roleCode": "SEC_ISM",
+      "note": "Quản lý an toàn thông tin — cùng bản chất quản lý người"
+    },
+    {
+      "parentRoleCode": "SWE_FRONTEND",
+      "roleCode": "SWE_WEB",
+      "note": "Trùng gần hoàn toàn với Frontend"
+    }
+  ]
+}

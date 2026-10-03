@@ -1,0 +1,210 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-4",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "DATA_DA",
+  "role_name": "Data Analyst",
+  "role_name_vn": "Chuyên viên Phân tích Dữ liệu",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "A",
+  "archetype_reasoning": "Cửa vào phổ biến nhất của domain Data tại VN — không đòi hỏi nền tảng lập trình sâu như DE/DS/ML, nhiều JD chấp nhận trái ngành có nền Excel/SQL/thống kê vững.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Data Analyst Intern",
+      "title_aliases": [
+        "Business Intelligence Intern"
+      ],
+      "years_experience": "0",
+      "core_output": "Làm sạch dữ liệu và tạo báo cáo/dashboard đơn giản theo template có sẵn dưới sự hướng dẫn trực tiếp, chưa tự đề xuất chỉ số hay cách phân tích.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Data Analyst",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự viết được truy vấn SQL cho yêu cầu báo cáo rõ ràng, tạo dashboard cơ bản trên công cụ BI (Power BI/Tableau/Looker), mọi kết luận phân tích đều cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Data Analyst",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự thực hiện một phân tích trọn vẹn từ truy vấn dữ liệu tới trình bày kết luận cho một câu hỏi nghiệp vụ cụ thể đã được xác định sẵn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Data Analyst",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Tự đề xuất chỉ số và cách đo lường cho một mảng nghiệp vụ, xây dashboard tự phục vụ (self-service) cho stakeholder, làm việc trực tiếp với phòng ban nghiệp vụ.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Data Analyst",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ toàn bộ khung phân tích cho một domain nghiệp vụ lớn, tư vấn quyết định kinh doanh dựa trên dữ liệu, mentor DA cấp dưới, làm việc trực tiếp với lãnh đạo phòng ban.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead / Principal Data Analyst",
+      "title_aliases": [],
+      "years_experience": "6-10",
+      "core_output": "Đặt chuẩn phân tích và công cụ BI cho toàn tổ chức, dẫn dắt đội DA — đây gần như là trần của title DA thuần tại VN; band cao hơn thường đổi sang DATA_PM hoặc DATA_GOV.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": "N/A — role dừng ở L6, không có nhánh IC/Management riêng trong ladder DA. Kỹ sư muốn tiến xa hơn thường CHUYỂN ROLE (xem next_steps) chứ không thăng tiến tiếp trong title DA.",
+  "internal_variants": [
+    {
+      "variant_name": "Business/Product Data Analyst",
+      "focus": "Gắn với một mảng sản phẩm hoặc nghiệp vụ cụ thể.",
+      "evidence_level": "C_INFERRED"
+    },
+    {
+      "variant_name": "Financial/Risk Data Analyst",
+      "focus": "Đặc thù ngân hàng — phân tích rủi ro tín dụng, gian lận.",
+      "evidence_level": "C_INFERRED"
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "DATA_DE",
+        "role_name": "Data Engineer",
+        "note": "Suy luận — chuyển hướng kỹ thuật hơn.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_BI",
+        "role_name": "BI Developer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_PM",
+        "role_name": "Data Product Manager",
+        "note": "Suy luận — chuyển hướng nghiệp vụ hơn.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "PROD_BA",
+        "role_name": "Business Analyst",
+        "note": "Ranh giới mờ, đặc biệt ở ngân hàng.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_BI",
+        "reason": "Nhiều công ty VN gộp DA và BI Developer thành một vị trí.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_BA",
+        "reason": "Cả hai đều làm cầu nối dữ liệu/nghiệp vụ, ranh giới do từng công ty tự định nghĩa.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này.",
+    "Trần L6 là suy luận từ quan sát chung của ngành, chưa có JD Lead/Principal DA tại VN để xác nhận có tồn tại title đó hay không, hay DA giỏi chỉ đơn giản đổi sang DE/BI/PM.",
+    "Chưa rõ mức độ yêu cầu lập trình (Python/R) khác nhau thế nào giữa DA ở ngân hàng và DA ở product company."
+  ]
+}

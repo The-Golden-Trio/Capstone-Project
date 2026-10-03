@@ -1,0 +1,186 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-CLOUD1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "CLOUD_AUTO",
+  "role_name": "Automation / CI-CD Engineer",
+  "role_name_vn": "Kỹ sư tự động hóa",
+  "role_group": "Cloud, DevOps & SRE",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv: chuyển ngang từ Developer hoặc SysAdmin quan tâm tự động hoá, giao thoa với QA_AUTO và CLOUD_DEVOPS nên nhiều nơi không tách thành chức danh riêng.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher thuần. Chuyển ngang từ Developer hoặc SysAdmin có quan tâm tới tự động hoá. Sàn hợp lý là L3. Ranh giới với CLOUD_DEVOPS và QA_AUTO khá mờ — nhiều nơi đây không phải chức danh riêng.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "Automation Engineer (mới chuyển ngang)",
+      "title_aliases": [],
+      "years_experience": "1-3",
+      "core_output": "Viết và bảo trì script CI/CD có sẵn, tự động hoá các tác vụ lặp lại theo yêu cầu cụ thể, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Automation Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Tự thiết kế pipeline CI/CD mới cho một dự án/team, tích hợp công cụ kiểm thử và triển khai tự động, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Automation Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ chuẩn hoá quy trình CI/CD cho nhiều team, tối ưu tốc độ và độ tin cậy pipeline ở quy mô tổ chức, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Automation / CI-CD Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật tự động hoá cho tổ chức, định chuẩn công cụ và quy trình CI/CD, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [],
+    "management_track": [
+      {
+        "role_code": "CLOUD_LEAD",
+        "from_band": "L6",
+        "note": "Suy luận — chưa có JD xác nhận."
+      }
+    ],
+    "ic_track_note": "Không quan sát được band IC nào cao hơn L6 cho role này trong roles.csv hiện tại — người muốn tiếp tục leo cao thường CHUYỂN SANG role khác (xem management_track hoặc related_roles.next_steps) chứ không có nấc Principal riêng trong chính title này."
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L3",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "INFRA_SYSADMIN",
+        "role_name": "System Administrator",
+        "from_band": "L3",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "CLOUD_LEAD",
+        "role_name": "DevOps / Platform Lead",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "role_name": "DevOps Engineer",
+        "note": "Chồng lấn mạnh.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "QA_AUTO",
+        "role_name": "Automation QA Engineer",
+        "note": "Chồng lấn mạnh.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "CLOUD_DEVOPS",
+        "reason": "roles.csv ghi rõ 'giao thoa với QA_AUTO và CLOUD_DEVOPS' — nhiều công ty không tách chức danh này riêng.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "QA_AUTO",
+        "reason": "Ranh giới nằm ở đối tượng tự động hoá: hạ tầng/triển khai (CLOUD_AUTO) so với kiểm thử (QA_AUTO).",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ 'Automation / CI-CD Engineer' có phải chức danh tuyển dụng độc lập tại VN hay chỉ là một phần việc trong CLOUD_DEVOPS/QA_AUTO.",
+    "Trần L6 và điểm rẽ nhánh là suy luận theo thang toàn cục, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

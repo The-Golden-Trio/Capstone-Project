@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-DEST1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "QA_LEAD",
+  "role_name": "QA/QC Lead / Test Manager",
+  "role_name_vn": "Trưởng nhóm QA/QC / Quản lý kiểm thử",
+  "role_group": "Quality Assurance & Testing",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: destination node, là điểm hội tụ quản lý của toàn bộ nhánh QA (Manual/Auto/SDET/Perf/SecTest/Analyst).",
+  "occupied_bands": [
+    "L6",
+    "L7",
+    "L8"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đi lên từ Senior Manual Tester, QA Automation Engineer hoặc SDET senior chuyển sang quản lý. Chưa có JD xác nhận mốc năm cụ thể.",
+  "destination_profile": {
+    "band_range": "L6 - L8",
+    "min_years_experience": "6-15",
+    "years_band_check": "Lấy trọn khoảng L6-L8 theo thang toàn cục vì không có bằng chứng để thu hẹp.",
+    "core_output": "Chịu trách nhiệm chiến lược chất lượng cho toàn bộ sản phẩm/tổ chức: đặt chuẩn quy trình QA (manual + automation), quản lý ngân sách và đội test, báo cáo chất lượng cho cấp quản lý sản phẩm/kỹ thuật, đồng thời thực hiện quản lý trực tiếp con người — khác với Principal SDET/Performance Engineer (IC) vốn chỉ chịu trách nhiệm kỹ thuật.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — role này đã nằm trên nhánh Management. Chưa có JD xác nhận điểm rẽ diễn ra ở band nào.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "QA_MANUAL",
+        "role_name": "Manual Tester / QC",
+        "from_band": "L6",
+        "note": "Có neo từ pass1/QA_MANUAL.json — next_steps phổ biến nhất.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "QA_AUTO",
+        "role_name": "Automation QA Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "QA_SDET",
+        "role_name": "SDET",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "INFRA_ITMANAGER",
+        "role_name": "IT Manager",
+        "note": "Suy luận — hiếm, thường ở lại lĩnh vực QA/kỹ thuật.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "QA_ANALYST",
+        "role_name": "QA Analyst / Auditor",
+        "note": "Có neo — pass1_new/QA_ANALYST.json ghi nhận ranh giới hai role này mờ tại VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "QA_ANALYST",
+        "reason": "Ranh giới mờ tại VN theo roles.csv — nhiều công ty không tách bạch hai vai trò.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Ranh giới với QA_ANALYST chưa rõ — roles.csv tự ghi nhận đây là điểm mờ cần Pass 2 xác định.",
+    "Band L8 trong roles.csv chưa có bằng chứng cụ thể."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

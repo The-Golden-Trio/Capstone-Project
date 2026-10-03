@@ -14,11 +14,16 @@
     "out-tsc",
     "dist",
     "jest.config.ts",
-    "jest.config.cts",
+    "jest.config.cjs",
     "src/**/*.spec.ts",
     "src/**/*.test.ts",
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "../../packages/game-core/tsconfig.lib.json"
+    }
   ]
 }

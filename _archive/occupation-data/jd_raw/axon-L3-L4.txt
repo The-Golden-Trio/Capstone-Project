@@ -1,0 +1,74 @@
+https://www.linkedin.com/jobs/view/software-engineer-ii-at-axon-4218018912/
+
+Software Engineer II  - Axon
+About the job
+Join Axon and be a Force for Good.
+
+At Axon, we’re on a mission to Protect Life. We’re explorers, pursuing society’s most critical safety and justice issues with our ecosystem of devices and cloud software. Like our products, we work better together. We connect with candor and care, seeking out diverse perspectives from our customers, communities and each other.
+
+Life at Axon is fast-paced, challenging and meaningful. Here, you’ll take ownership and drive real change. Constantly grow as you work hard for a mission that matters at a company where you matter.
+
+We are an equal opportunity employer that promotes justice, advances equity, values diversity and fosters inclusion. We’re committed to hiring the best talent — regardless of race, creed, color, ancestry, religion, sex (including pregnancy), national origin, sexual orientation, age, citizenship status, marital status, disability, gender identity, genetic information, veteran status, or any other characteristic protected by applicable laws, regulations and ordinances — and empowering all of our employees so they can do their best work. If you have a disability or special need that requires assistance or accommodation during the application or the recruiting process, please email recruitingops@axon.com.
+
+Your Impact
+
+As one of the software engineers on the team, you will make key design decisions that will shape this product. You’ll create and maintain the data integration, management, and analytics platform alongside Axon’s newest public safety technology products. This platform will offer law enforcement administrators and crime analysts flexible access to key crime data, decision support, state and federal crime reports, and criminal investigation insights.
+
+Axon has lead the global effort to protect life and through electric weapons, body cameras, a number of real-time sensors, public safety software products and AI tools. Axon is uniquely positioned to tie together every aspect of an incident in order to help law enforcement agencies better prepare for what might happen, respond efficiently and effectively, deliver justice, ensure the well being of their officers, and increase the safety of their communities. Working together with our customers and product teams, you will build the foundation for Axon’s outcome-oriented data efforts.
+
+What You’ll Do
+
+Location: HCMC office 5 days a week.
+
+Direct Reports
+
+
+Participating in code reviews and architecture design meetings.
+Owning and driving end-to-end features with Product and Design.
+Ensuring that your code hits a high bar for quality and performance.
+Partner with internal teams and agencies to make public safety data accessible and actionable.
+Influence peers, advise senior leaders, coach and mentor junior team members.
+Facilitate cross-team collaboration among engineers and contribute to the broader community of Axon engineers.
+
+What You Bring
+
+
+Bachelor's Degree in Computer Science, Engineering, or related field.
+Highly technical with 2+ years of experience developing and maintaining end-to-end, high availability, high throughput web-scale data systems.
+Backend experience in managed languages such as Java, Scala, Go, C#, Python or similar.
+Demonstrated ability to make tough technical decisions based on requirements, constraints, and trade-offs.
+You follow the latest in software engineering and open source technologies, and can intuit the fine line between promising new practice and overhyped fad.
+Industry experience working with SQL or NoSQL data stores.
+Good Linux/Unix/Mac experience.
+You love delighting end users and hunger for novel challenges.
+
+Benefits that Benefit You
+
+
+Medical and Dental Insurance
+Vision Insurance
+Robust Paid Time Off policy
+Bonuses
+Lunch allowance
+Cell phone stipend
+Free LinkedIn Learning account
+Access to 24/7 online emotional and mental support
+Gym membership
+Free parking
+Stocked fridges and pantries - free coffee, cold beverages, snacks
+Annual Company Outing Trip
+Monthly team social activities
+
+Don’t meet every single requirement? That's ok. At Axon, we Aim Far. We think big with a long-term view because we want to reinvent the world to be a safer, better place. We are also committed to building diverse teams that reflect the communities we serve.
+
+Studies have shown that women and people of color are less likely to apply to jobs unless they check every box in the job description. If you’re excited about this role and our mission to Protect Life but your experience doesn’t align perfectly with every qualification listed here, we encourage you to apply anyways. You may be just the right candidate for this or other roles.
+
+Important Notes
+
+The above job description is not intended as, nor should it be construed as, exhaustive of all duties, responsibilities, skills, efforts, or working conditions associated with this job. The job description may change or be supplemented at any time in accordance with business needs and conditions.
+
+Some roles may also require legal eligibility to work in a firearms environment.
+
+Axon’s mission is to Protect Life and is committed to the well-being and safety of its employees as well as Axon’s impact on the environment. All Axon employees must be aware of and committed to the appropriate environmental, health, and safety regulations, policies, and procedures. Axon employees are empowered to report safety concerns as they arise and activities potentially impacting the environment.
+
+We are an equal opportunity employer that promotes justice, advances equity, values diversity and fosters inclusion. We’re committed to hiring the best talent — regardless of race, creed, color, ancestry, religion, sex (including pregnancy), national origin, sexual orientation, age, citizenship status, marital status, disability, gender identity, genetic information, veteran status, or any other characteristic protected by applicable laws, regulations and ordinances — and empowering all of our employees so they can do their best work. If you have a disability or special need that requires assistance or accommodation during the application or the recruiting process, please email recruitingops@axon.com. Please note that this email address is for accommodation purposes only. Axon will not respond to inquiries for other purposes.

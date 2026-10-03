@@ -1,0 +1,42 @@
+https://www.linkedin.com/jobs/view/frontend-engineer-remote-full-time-at-employment-hero-3992950159/
+
+About the job
+Our mission and where you fit inAt Employment Hero, we’re an ambitious bunch of people on a mission to make employment easier and more valuable for everyone.
+Our world-class software is the easiest way for businesses to manage HR, payroll, employee engagement, and benefits.
+Since our inception in 2014, we've had some pretty impressive growth (100% YoY), reached unicorn status in 2022, and now serve 300,000 businesses globally, with 2 million+ users on the platform. We have no plans to slow down. 
+There’s never been a more exciting time to join one of the fastest-growing SaaS unicorns, so let’s see if we could be a match!
+In your role, you'll be focused on…As a growing team, we need innovative and passionate Intermediate Frontend Software Development Engineers to join our squads who will be a vital part of our engineering team, responsible for developing product features and collaborating with colleagues in design, product, and engineering. You will take ownership of writing automated tests for your production codes and work with cutting-edge technologies, focusing on tech stacks such as Ruby on Rails and ReactJS. In addition, you will have the opportunity to work on a diverse range of products and features.
+As a Frontend Software Engineer, you’ll be:
+Develop new product lines with new critical features, using our techstack which includes ReactJS, React Native within an AWS Cloud environment using EC2 and Kubernetes.
+Provide your input into our technical strategy with your squad, including participate in sprint planning
+Develop code for the frontend as an end-to-end Frontend Software Development Engineer
+Ensure both your colleagues and yourself are producing high quality code through testing and code reviews
+Share your knowledge with your squad and mentor junior developers
+Learn and collaborate with highly respected Senior Software Developers, in a high performing and supportive squad
+Show your passion for working in highly complex and technically challenging development
+Enhance legacy features for our award-winning HR tech platform
+
+You’re the hero we’re looking for if: 
+Experience in Frontend software development experience, CI/CD, web application performance tuning, ReactJS/Redux applications. In deep in fundamental understanding of Javascript/Typescript, ReactJS/Redux, Building tool such as Webpack, Rollup, ViteJS.
+Strong English communication skills (both verbal & written)
+At least 4 years of experience in Frontend Software Development
+Demonstrated experience implementing, maintaining and deploying full-stack web technologies
+Strong understanding of standard Software Engineering processes, Testing, and Agile methodology
+A team player that always puts colleagues ahead of yourself and has a highly adaptable and versatile approach to work
+You are passionate about learning and sharing your knowledge, and not afraid to challenge your peers, but also welcome being challenged
+We have a number of positions open which would suit many skills and experiences, including being open to candidates who are willing to learn our technical stack
+Experience in translating design wireframes into functioning UI components
+It’ll be great, but not essential, if you also have experience with:
+Bachelor's degree in Computer Science of Software Engineering or an equivalent
+Experience in developing highly modular mobile applications and mobile application performance tuning
+Experience writing unit tests
+Experience in functional programming
+Experience is important, but for us, the biggest measure of success is people who can live and breathe our values. Show us what you can bring to the table, and we’ll empower you to let your talents shine. 
+Are we a match? Please apply direction below, if you are a match, then you can expect next steps below:
+Step 1: You will join an at-home test round.
+Step 2: Then, you will have a screening call with our Talent Acquisition Team, where we will go through your overall working experience, your motivation, and expectations. This is also an opportunity for you to clarify any information you need about the job and Employment Hero.
+Step 3: An online interview with our Engineering Team, where we will dive deep into your culture fit and professional expertise."
+*Note: We can be flexible between step 1 and step 2 based on the availability of our team and the urgency of this position. 
+Not exactly the right fit for you?
+If you’re excited about Employment Hero, but this role is not the one for you, we encourage you to explore our careers page, packed with many more great opportunities.
+Know someone who would be a great fit? Feel free to share the role with your network!

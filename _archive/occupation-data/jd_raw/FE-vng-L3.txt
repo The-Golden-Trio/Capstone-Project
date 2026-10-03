@@ -1,0 +1,33 @@
+https://www.linkedin.com/jobs/view/4453036934/
+
+About the job
+About the Role:
+Design and build high-quality, scalable user interfaces for the Game Publishing Platform, supporting player experiences such as authentication, content management, game publishing workflows, and more.
+Deliver high-performance and maintainable frontend applications using React, TypeScript, and a micro-frontend architecture (Single-Spa, SystemJS). Develop, maintain, and evolve the company’s UI System Library to ensure design consistency and reusability across projects.
+Responsibilities
+Collaborate with backend engineers to integrate APIs and deliver complete end-to-end product features.
+Leverage AI-powered tools (e.g., Claude, Cursor) to accelerate development, improve code quality, and automate workflows.
+Write maintainable, testable, and performant code following modern engineering best practices.
+Participate in technical discussions, code reviews, and the continuous improvement of engineering processes.
+Support live service operations, monitoring, and troubleshooting to ensure system reliability and quick resolution of player-impacting issues.
+Learn and grow in both technical skills and domain knowledge, with mentorship and collaboration from teammates.
+ Qualifications
+Bachelor’s degree in Computer Science, Engineering, or related field.
+3+ years of professional experience as a frontend engineer.
+Proficiency in React (or strong interest in mastering it) and JavaScript/TypeScript.
+Proven Mobile Development Experience: Strong expertise in React Native with at least one application successfully delivered to Production (App Store/Google Play).
+Must have hands-on experience in the full mobile release lifecycle, beyond just theoretical knowledge.
+Good understanding of frontend engineering fundamentals, data structures, and algorithms.
+Skilled in HTML/CSS and modern web development principles.
+Experience using modern UI libraries such as Tailwind CSS, Shadcn UI, or Headless UI.
+Familiarity with Git and common development tools (Chrome DevTools, bundlers such as Webpack/Vite).
+Awareness of web performance optimization, Core Web Vitals, and browser rendering processes.
+Awareness of frontend security best practices (e.g., XSS prevention, cookies, authentication).
+Experience writing unit tests to ensure reliability and maintainability of frontend applications.
+Good communication and collaboration skills, with the ability to work closely with both engineers and non-engineers.
+Comfortable taking ownership of service reliability and operational health.
+Familiarity with AI-powered development tools to improve efficiency and quality.
+
+Preferred Skills
+Hands-on experience with micro-frontend architectures (preferably Single-Spa, SystemJS).
+Experience building and maintaining UI component libraries or design systems.

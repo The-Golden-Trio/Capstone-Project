@@ -1,0 +1,1084 @@
+/* ═══ Hiệu ứng không viết được bằng utility ═══
+   Ba thứ ở đây cần gradient nhiều lớp, inset shadow và pseudo-element —
+   viết bằng class tay rõ hơn nhiều so với nhồi vào thuộc tính style.
+   Mọi thứ còn lại của app dùng Tailwind. */
+
+/* ── Hành tinh ──
+   Màu và góc nghiêng do `domain/planet.ts` quyết định, truyền vào bằng
+   ba biến CSS: --p1 (lõi), --p2 (được chiếu), --pa (góc dải mây). */
+.planet {
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(
+    circle at 32% 26%,
+    var(--p2),
+    var(--p1) 58%,
+    #05091a 100%
+  );
+  box-shadow:
+    inset -9px -11px 26px rgba(0, 0, 0, 0.6),
+    inset 5px 6px 18px rgba(255, 255, 255, 0.07),
+    0 0 34px -8px var(--p2);
+}
+
+/* dải mây ngang thân hành tinh */
+.planet::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0.5;
+  background: repeating-linear-gradient(
+    var(--pa),
+    transparent 0 7%,
+    rgba(0, 0, 0, 0.28) 7% 11%,
+    transparent 11% 19%,
+    rgba(255, 255, 255, 0.05) 19% 22%
+  );
+}
+
+.planet-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.planet-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 2px solid var(--p2);
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%) rotate(-19deg) scaleY(0.26);
+  pointer-events: none;
+}
+
+.planet-moon {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--p2);
+  opacity: 0.8;
+  box-shadow: 0 0 10px -2px var(--p2);
+}
+
+.orb .planet-wrap {
+  transition: transform 0.18s;
+}
+.orb:hover .planet-wrap {
+  transform: translateY(-5px) scale(1.05);
+}
+.orb:hover .planet {
+  box-shadow:
+    inset -9px -11px 26px rgba(0, 0, 0, 0.6),
+    inset 5px 6px 18px rgba(255, 255, 255, 0.09),
+    0 0 46px -4px var(--p2);
+}
+.orb.dim .planet {
+  filter: saturate(0.35) brightness(0.6);
+}
+
+/* so le các hành tinh trên bản đồ cho khỏi thẳng hàng như bảng tính */
+.starmap .orb:nth-child(4n + 1) {
+  margin-top: 4px;
+}
+.starmap .orb:nth-child(4n + 2) {
+  margin-top: 26px;
+}
+.starmap .orb:nth-child(4n + 3) {
+  margin-top: 12px;
+}
+.starmap .orb:nth-child(4n) {
+  margin-top: 34px;
+}
+
+/* ── Nền sao ──
+   Các lớp radial-gradient lát nền. Thuần CSS — không JS, không canvas,
+   nên không có gì để hỏng. Mỗi lớp một cỡ lát khác nhau nên mắt không
+   bắt được quy luật lặp. */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+      1.4px 1.4px at 23% 17%,
+      rgba(200, 215, 235, 0.5),
+      transparent 62%
+    ),
+    radial-gradient(1.1px 1.1px at 71% 44%, rgba(240, 215, 154, 0.44), transparent 62%),
+    radial-gradient(1px 1px at 46% 78%, rgba(200, 215, 235, 0.36), transparent 62%),
+    radial-gradient(1.6px 1.6px at 88% 12%, rgba(200, 215, 235, 0.3), transparent 62%),
+    radial-gradient(1px 1px at 12% 61%, rgba(240, 215, 154, 0.28), transparent 62%),
+    radial-gradient(1.2px 1.2px at 57% 29%, rgba(200, 215, 235, 0.34), transparent 62%),
+    radial-gradient(1px 1px at 34% 91%, rgba(200, 215, 235, 0.26), transparent 62%);
+  background-size: 347px 311px, 269px 241px, 419px 383px, 233px 287px,
+    311px 199px, 179px 263px, 397px 331px;
+  background-repeat: repeat;
+}
+
+/* ── Chòm sao: đường nối giữa các hành tinh ── */
+.constellation-line {
+  stroke-linecap: round;
+}
+.constellation-line.sim {
+  stroke: var(--color-blue);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 6;
+  opacity: 0.42;
+}
+.constellation-line.up {
+  stroke: var(--color-gold);
+  stroke-width: 1.5;
+  opacity: 0.42;
+}
+.constellation-line.hot {
+  opacity: 0.9;
+}
+.constellation-line.up.hot {
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 5px var(--color-gold));
+}
+
+/* ── Hành trình cấp bậc: đường dọc nối các chặng ── */
+.roadmap {
+  position: relative;
+  padding-left: 30px;
+}
+.roadmap::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: linear-gradient(var(--color-gold), var(--color-line) 60%);
+}
+.roadmap-stop::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-line);
+  transform: translateY(-50%);
+}
+.roadmap-stop.open::before {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 12px -1px var(--color-gold);
+}
+.roadmap-stop.current::before {
+  width: 17px;
+  height: 17px;
+  left: -28px;
+}
+
+/* ── Thông báo nổi ── */
+@media (prefers-reduced-motion: no-preference) {
+  .toast-pop {
+    animation: toast-pop 0.22s ease-out;
+  }
+  @keyframes toast-pop {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* ═══ Chất game ═══
+   Chuyển động ở đây đều ngắn và có lý do: cho người chơi thấy hành động của
+   mình có tác dụng. Khối `prefers-reduced-motion: reduce` ở styles.css tắt
+   toàn bộ transition lẫn animation, nên không chỗ nào phải tự nhớ điều đó. */
+
+/* ── Thẻ hành động ──
+   Lựa chọn trong màn chơi là hành động, nên phải bấm được như một cái nút
+   thật: nhấc lên khi rê, lún xuống khi bấm. */
+.action-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.14s ease,
+    border-color 0.14s ease,
+    box-shadow 0.14s ease;
+}
+.action-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent, var(--color-gold));
+  opacity: 0;
+  transition: opacity 0.14s ease;
+}
+.action-card:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--accent, var(--color-gold));
+  box-shadow: 0 10px 22px -16px var(--accent-glow, rgba(212, 176, 106, 0.45));
+}
+.action-card:hover:not(:disabled)::before,
+.action-card[aria-pressed='true']::before {
+  opacity: 1;
+}
+.action-card:active:not(:disabled) {
+  transform: translateY(0) scale(0.995);
+}
+
+/* phím tắt hiện trên thẻ hành động */
+.keycap {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  border: 1px solid var(--color-line);
+  background: var(--color-inset);
+  box-shadow: 0 2px 0 var(--color-line-2);
+}
+
+/* ── Huy hiệu nhân vật đang nói ── */
+.crest-active {
+  filter: drop-shadow(0 0 7px var(--accent-glow, rgba(212, 176, 106, 0.45)));
+}
+
+/* ── Hiện dần từng dòng ──
+   Bằng chứng ở màn tổng kết hiện lần lượt, để người chơi đọc kịp thay vì bị
+   dội cả bảng điểm vào mặt. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal 0.32s ease-out backwards;
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* ── Mở cấp bậc ──
+     Khoảnh khắc đáng ăn mừng duy nhất của cả màn chơi. */
+  .level-up {
+    animation: level-up 0.9s ease-out;
+  }
+  @keyframes level-up {
+    0% {
+      transform: scale(0.94);
+      box-shadow: 0 0 0 0 var(--color-good);
+    }
+    45% {
+      transform: scale(1.02);
+      box-shadow: 0 0 34px -6px var(--color-good);
+    }
+    100% {
+      transform: none;
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+
+  /* ── Nhịp đập của dải khẩn cấp ── */
+  .pulse-stakes {
+    animation: pulse-stakes 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse-stakes {
+    0%,
+    100% {
+      border-color: var(--color-stakes);
+    }
+    50% {
+      border-color: rgba(224, 138, 91, 0.35);
+    }
+  }
+}
+
+/* ── Thanh tiến trình cảnh ── */
+.scene-step {
+  height: 3px;
+  flex: 1;
+  border-radius: 2px;
+  background: var(--color-line);
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3s ease;
+}
+.scene-step.done {
+  background: var(--accent, var(--color-gold));
+}
+.scene-step.now {
+  background: var(--accent, var(--color-gold));
+  opacity: 0.45;
+}
+
+/* ── Thanh kinh nghiệm ──
+   Không chỉ là một khối màu đặc: có chiều sâu ở rãnh, chuyển sắc dọc theo
+   thanh, một vệt sáng ở mép trên cho ra chất thuỷ tinh, và quầng sáng hắt ra
+   theo màu của nghề đang chơi. Đây là con số quan trọng nhất của cả hệ thống
+   nên nó đáng được nhìn cho ra tấm ra món. */
+.xp-track {
+  position: relative;
+  height: 9px;
+  border-radius: 5px;
+  border: 1px solid var(--color-line-2);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    var(--color-inset)
+  );
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.xp-fill {
+  /* Vệt sáng bên dưới định vị theo phần đã đầy, nên phần đã đầy phải là gốc
+     toạ độ — thiếu dòng này thì vệt sáng chạy hết cả rãnh. */
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--accent, #d4b06a) 70%, #000) 0%,
+    var(--accent, #d4b06a) 55%,
+    color-mix(in oklab, var(--accent, #d4b06a) 55%, #fff) 100%
+  );
+  box-shadow:
+    0 0 10px -2px var(--accent-glow, rgba(212, 176, 106, 0.45)),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* vệt sáng chạy qua, để thanh không đứng chết một chỗ */
+@media (prefers-reduced-motion: no-preference) {
+  .xp-fill::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background: linear-gradient(
+      100deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.22) 50%,
+      transparent 80%
+    );
+    background-size: 220% 100%;
+    animation: xp-sheen 3.4s ease-in-out infinite;
+  }
+  @keyframes xp-sheen {
+    0%,
+    62% {
+      background-position: 120% 0;
+    }
+    100% {
+      background-position: -120% 0;
+    }
+  }
+}
+
+/* ── Nút "Đang ở" trên thanh đầu trang ──
+   Còn việc dở thì thở nhẹ một nhịp: đủ để mắt bắt được khi lướt qua, không
+   tới mức giật liên tục làm khó chịu khi ngồi lâu. */
+@media (prefers-reduced-motion: no-preference) {
+  .here-chip-calling {
+    animation: here-calling 2.8s ease-in-out infinite;
+  }
+  @keyframes here-calling {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+      border-color: var(--color-line-2);
+    }
+    50% {
+      box-shadow: 0 0 14px -3px var(--accent-glow, rgba(212, 176, 106, 0.45));
+      border-color: var(--accent, var(--color-gold));
+    }
+  }
+}
+
+
+/* ═══ Bản đồ nghề ═══
+   Hai chất liệu tách bạch: mặt biển (quần đảo, tông xanh đêm) và tờ bản đồ
+   giấy bên trong một hòn đảo (giấy ngả vàng, nét mực). Ghim và nhãn ngoài
+   biển được chống-phóng trong IslandsView (scale 1/zoom) nên mọi cỡ chữ ở
+   đây là cỡ thật trên màn hình, không đổi theo mức phóng. */
+
+/* ── Cảnh: mặt biển nhường chỗ cho tờ giấy ── */
+
+.stage-shown,
+.stage-dimmed {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  /* Không lề: bản đồ ăn trọn khung hình. Các nút nổi bên trên nó. */
+  transition:
+    opacity 0.5s ease,
+    filter 0.5s ease;
+}
+
+/* Mặt biển lùi lại chứ không tắt hẳn: còn thấy mình vừa cập bến hòn nào. */
+.stage-dimmed {
+  opacity: 0.2;
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.paper-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  /* Bóng tối quanh tờ giấy — cảm giác đang cầm bản đồ trên tay. */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(4, 8, 20, 0.55),
+    rgba(4, 8, 20, 0.9) 78%
+  );
+  animation: stage-dim 0.5s ease-out;
+}
+
+@keyframes stage-dim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Mặt biển ── */
+
+/* Hai bản đồ ăn trọn khung hình.
+   `preserveAspectRatio` co viewBox cho vừa để đảo không méo cũng không bị
+   cắt, nên khung rộng hơn tỉ lệ ấy thì thừa ra hai dải hai bên. Cách lấp
+   không phải là ép tỉ lệ khung, mà là vẽ nền và lưới lấn ra ngoài viewBox:
+   thứ nằm ngoài viewBox nhưng còn trong khung phần tử vẫn được vẽ. Xem
+   OVERSCAN trong mapGeometry. */
+.sea-map,
+.paper-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sea-view {
+  transform-origin: 0 0;
+  transition: transform 0.85s cubic-bezier(0.32, 0.72, 0.24, 1);
+}
+
+.sea-route path {
+  fill: none;
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.4;
+  stroke-dasharray: 3 12;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
+.sea-grid line {
+  stroke: rgba(141, 178, 222, 0.09);
+  stroke-width: 1;
+}
+
+.sea-grid line.is-major {
+  stroke: rgba(141, 178, 222, 0.2);
+}
+
+.sea-coord text {
+  fill: rgba(141, 178, 222, 0.22);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-anchor: middle;
+  user-select: none;
+}
+
+/* ── Hòn đảo ── */
+
+.isle {
+  cursor: pointer;
+  transition:
+    opacity 0.45s ease,
+    filter 0.25s ease;
+}
+
+.isle:focus {
+  outline: none;
+}
+
+.isle:focus-visible .isle-land {
+  stroke: var(--color-gold-2);
+  stroke-width: 3;
+}
+
+.isle:hover {
+  filter: drop-shadow(0 0 16px var(--accent-glow, rgba(212, 176, 106, 0.4)));
+}
+
+.isle.is-dimmed {
+  opacity: 0.16;
+}
+
+/* vòng sóng ôm quanh bờ */
+.isle-surf {
+  fill: none;
+  stroke: rgba(160, 208, 255, 0.28);
+  stroke-width: 9;
+  stroke-linejoin: round;
+}
+
+.isle-land {
+  fill: var(--accent-soft, #2c4a74);
+  stroke: var(--accent, var(--color-gold));
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.isle.is-done .isle-land {
+  fill: var(--color-good-soft);
+  stroke: var(--color-good);
+}
+
+.isle.is-locked .isle-land {
+  fill: #16294a;
+  stroke: var(--color-line-2);
+}
+
+.isle.is-locked .isle-surf {
+  stroke: rgba(141, 178, 222, 0.12);
+}
+
+.isle.is-selected .isle-land {
+  stroke-width: 3;
+}
+
+.isle-rock {
+  fill: rgba(255, 255, 255, 0.07);
+}
+
+/* ghim: cỡ cố định, không đổi theo mức phóng */
+.isle-pin-shadow {
+  fill: rgba(0, 0, 0, 0.42);
+}
+
+.isle-pin {
+  fill: var(--accent, var(--color-gold));
+  stroke: #0a1026;
+  stroke-width: 1.2;
+}
+
+.isle.is-done .isle-pin {
+  fill: var(--color-good);
+}
+
+.isle.is-locked .isle-pin {
+  fill: #4a5f80;
+}
+
+.isle-pin-dot {
+  fill: #0a1026;
+}
+
+.isle-label {
+  fill: var(--color-ink);
+  font-family: var(--font-display, serif);
+  font-size: 15px;
+  font-weight: 600;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: #081d35;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  user-select: none;
+}
+
+.isle-sub {
+  fill: var(--color-ink-2);
+  font-size: 11.5px;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: #081d35;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  user-select: none;
+}
+
+.isle.is-locked .isle-label,
+.isle.is-locked .isle-sub {
+  fill: var(--color-muted);
+}
+
+/* ── Tấm bản đồ của một hòn đảo ──
+   Cùng bố cục bản đồ kho báu, nhưng vẽ bằng nét thẳng và màu của nghề. Màu ở
+   đây cố định theo nghề và không đổi khi bấm vào địa điểm: tấm bản đồ đứng
+   yên, chỉ có ký hiệu được chọn là sáng lên. */
+
+.paper-tint-in {
+  stop-color: #12274b;
+}
+
+.paper-tint-out {
+  stop-color: #0a1730;
+}
+
+.paper-grid line {
+  stroke: var(--accent, #d4b06a);
+  stroke-width: 1;
+  opacity: 0.1;
+}
+
+/* ── Ngoặc bốn góc màn hình ── */
+.map-corners span {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--accent, #d4b06a);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.map-corners span:nth-child(1) {
+  top: 14px;
+  left: 14px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.map-corners span:nth-child(2) {
+  top: 14px;
+  right: 14px;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.map-corners span:nth-child(3) {
+  bottom: 14px;
+  left: 14px;
+  border-right: 0;
+  border-top: 0;
+}
+
+.map-corners span:nth-child(4) {
+  bottom: 14px;
+  right: 14px;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* đảo: một nét bờ, bên trong là bình độ */
+.paper-sand {
+  fill: color-mix(in srgb, var(--accent, #d4b06a) 15%, #12274b);
+}
+
+.paper-coast {
+  fill: none;
+  stroke: var(--accent, #d4b06a);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.paper-contour {
+  fill: none;
+  stroke: var(--accent, #d4b06a);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  opacity: 0.3;
+}
+
+/* hoa gió, rút về một vòng ngắm */
+.paper-compass-ring {
+  fill: none;
+  stroke: var(--accent, #d4b06a);
+  stroke-width: 1.2;
+  opacity: 0.45;
+}
+
+.paper-compass-tick {
+  fill: none;
+  stroke: var(--accent, #d4b06a);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+
+.paper-compass-hub {
+  fill: var(--accent, #d4b06a);
+  opacity: 0.6;
+}
+
+.paper-compass-needle {
+  fill: var(--color-gold);
+}
+
+.paper-compass-text {
+  fill: var(--color-ink-2);
+  font-family: var(--font-display, serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-anchor: middle;
+  user-select: none;
+}
+
+/* ── Ký hiệu địa điểm ── */
+
+.paper-mark {
+  cursor: pointer;
+}
+
+.paper-mark:focus {
+  outline: none;
+}
+
+.paper-mark-halo {
+  fill: rgba(8, 16, 36, 0.62);
+  stroke: var(--accent, #d4b06a);
+  stroke-width: 1.2;
+  opacity: 0.55;
+  transition:
+    opacity 0.18s ease,
+    stroke-width 0.18s ease;
+}
+
+.paper-mark:hover .paper-mark-halo,
+.paper-mark:focus-visible .paper-mark-halo,
+.paper-mark.is-open .paper-mark-halo {
+  opacity: 1;
+  stroke-width: 2;
+}
+
+.paper-mark-body {
+  fill: none;
+  stroke: var(--accent, #d4b06a);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.paper-mark-line {
+  fill: none;
+  stroke: var(--accent, #d4b06a);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.7;
+}
+
+/* Viên ngọc của nhiệm vụ chính là thứ duy nhất được tô đầy. */
+.paper-mark.is-main .paper-mark-body {
+  fill: var(--color-gold-soft);
+  stroke: var(--color-gold);
+  stroke-width: 2.4;
+}
+
+.paper-mark.is-main .paper-mark-line,
+.paper-mark.is-main .paper-mark-halo {
+  stroke: var(--color-gold);
+}
+
+.paper-mark.is-done .paper-mark-body,
+.paper-mark.is-done .paper-mark-line,
+.paper-mark.is-done .paper-mark-halo {
+  stroke: var(--color-good);
+  fill: none;
+}
+
+.paper-mark-label {
+  fill: var(--color-ink);
+  font-family: var(--font-display, serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: #0a1730;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  user-select: none;
+}
+
+.paper-mark.is-done .paper-mark-label {
+  fill: var(--color-good);
+}
+
+
+/* ── Hộp câu hỏi, neo cạnh ký hiệu vừa bấm ── */
+
+.quest-box {
+  position: fixed;
+  z-index: 40;
+  width: min(360px, calc(100vw - 24px));
+  max-height: min(560px, calc(100vh - 24px));
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surf);
+  padding: 16px;
+  color: var(--color-ink);
+  box-shadow: 0 22px 50px -18px rgba(0, 0, 0, 0.8);
+}
+
+/* ── Nút nổi trên bản đồ ── */
+
+.map-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: rgba(16, 31, 61, 0.88);
+  padding: 6px 13px;
+  font-size: 12.5px;
+  color: var(--color-ink-2);
+  backdrop-filter: blur(6px);
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.map-chip:hover:not(.is-plain) {
+  border-color: var(--accent, var(--color-gold));
+  color: var(--color-ink);
+}
+
+.map-chip.is-plain {
+  cursor: default;
+  color: var(--color-ink);
+}
+
+.map-chip.is-accent {
+  border-color: var(--accent, var(--color-gold));
+  color: var(--color-gold-2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .isle.is-current .isle-pin {
+    animation: pin-breathe 2.6s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center bottom;
+  }
+  @keyframes pin-breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.12);
+    }
+  }
+
+  .paper-map {
+    animation: paper-unfurl 0.5s cubic-bezier(0.32, 0.72, 0.24, 1) backwards;
+  }
+  @keyframes paper-unfurl {
+    from {
+      opacity: 0;
+      transform: scale(0.94) rotate(-0.6deg);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .quest-box {
+    animation: quest-in 0.24s ease-out;
+  }
+  @keyframes quest-in {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.map-overlay {
+  position: absolute;
+  z-index: 10;
+  width: min(380px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  overflow-y: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .map-overlay {
+    animation: overlay-in 0.28s ease-out;
+  }
+  @keyframes overlay-in {
+    from {
+      opacity: 0;
+      transform: translateX(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* ═══ Thanh kinh nghiệm bám đáy ═══
+   Có ở mọi trang. Chiều cao khai ra thành biến để `main` chừa đúng ngần ấy
+   chỗ — nếu không thì đáy trang nào cũng bị thanh này che mất một dải. */
+
+:root {
+  --xp-bar-h: 46px;
+}
+
+.xp-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  height: calc(var(--xp-bar-h) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  border-top: 1px solid var(--color-line-2);
+  background: rgba(8, 13, 31, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.xp-bar-inner {
+  display: flex;
+  height: var(--xp-bar-h);
+  align-items: center;
+  gap: 14px;
+  padding: 0 18px;
+}
+
+.xp-bar-label {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.xp-bar-total {
+  position: relative;
+  font-family: var(--font-display, serif);
+  font-size: 17px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-gold-2);
+}
+
+/* "+N" nổi lên rồi tan — dấu hiệu duy nhất cho biết vừa được cộng. */
+.xp-bar-gain {
+  position: absolute;
+  top: -2px;
+  left: calc(100% + 6px);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-good);
+  white-space: nowrap;
+}
+
+.xp-bar-track {
+  min-width: 90px;
+  max-width: 340px;
+  flex: 1;
+}
+
+.xp-bar-place {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--color-ink-2);
+  white-space: nowrap;
+}
+
+.xp-bar-frac {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 10.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-muted);
+}
+
+.xp-bar-hint {
+  color: var(--color-muted);
+}
+
+/* Màn hẹp: bỏ chữ, giữ con số và thanh. */
+@media (max-width: 640px) {
+  .xp-bar-label,
+  .xp-bar-place {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .xp-bar-total.is-gaining {
+    animation: xp-pop 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes xp-pop {
+    0% {
+      transform: scale(1);
+    }
+    35% {
+      transform: scale(1.28);
+      text-shadow: 0 0 16px var(--color-good);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .xp-bar-gain {
+    animation: xp-gain-rise 2.2s ease-out forwards;
+  }
+  @keyframes xp-gain-rise {
+    0% {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    18% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  .xp-fill.is-gaining {
+    animation: xp-surge 0.7s ease-out;
+  }
+  @keyframes xp-surge {
+    0%,
+    100% {
+      filter: brightness(1);
+    }
+    40% {
+      filter: brightness(1.75);
+    }
+  }
+}

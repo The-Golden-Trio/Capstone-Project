@@ -1,0 +1,60 @@
+https://www.linkedin.com/jobs/view/4448787295/
+
+Software Development Engineer (Front-end) - Ho Chi Minh City 
+About the job
+Your work days are brighter here.
+
+We’re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI platform for managing people, money, and agents, we’re shaping the future of work so teams can reach their potential and focus on what matters most. The minute you join, you’ll feel it. Not just in the products we build, but in how we show up for each other. Our culture is rooted in integrity, empathy, and shared enthusiasm. We’re in this together, tackling big challenges with bold ideas and genuine care. We look for curious minds and courageous collaborators who bring sun-drenched optimism and drive. Whether you're building smarter solutions, supporting customers, or creating a space where everyone belongs, you’ll do meaningful work with Workmates who’ve got your back. In return, we’ll give you the trust to take risks, the tools to grow, the skills to develop and the support of a company invested in you for the long haul. So, if you want to inspire a brighter work day for everyone, including yourself, you’ve found a match in Workday, and we hope to be a match for you too.
+
+About The Team
+
+Come join the Paradox team at Workday! Paradox helps organizations around the world reimagine recruitment and hiring with the first-of-its-kind conversational recruiting platform. Paradox's AI assistant streamlines tasks like screening for minimum qualifications, instantly scheduling interviews, answering common candidate questions, and more through simple, frictionless mobile, chat, and text message-driven experiences to allow recruiting and hiring teams to spend more time with people and less time with software.
+
+About The Role
+
+As a Front-End Engineer on the Workday Engineering team, you will be a core contributor to the Paradox browser extension project, building the front-end experiences that bring product's capabilities directly into users' browsers. This role is essential to ensuring our browser extension delivers a seamless, responsive, and accessible experience across browsers and devices.
+
+Responsibilities:
+
+Implementing clean, reusable front-end components based on UI/UX designs that are intuitive and visually polished
+Ensuring responsive, accessible, and high-performance experiences across browsers and devices
+Developing, maintaining, and improving Front-end components and integrations with third-party services and SDKs
+Developing, testing, and maintaining browser extensions that extend product capabilities, ensuring cross-browser compatibility and security compliance
+Partnering with engineering in Vietnam and product teams in the U.S. to refine requirements and plan technical tasks
+Proposing solutions, estimating effort, and taking ownership of features end-to-end from design through deployment
+Participating in code reviews, sharing best practices, and continuously improving code quality, user experience, and performance
+Integrating backend and AI-related APIs into intuitive, reliable front-end experiences
+Collaborating with backend and AI engineers to refine contracts, handle edge cases, and ensure smooth end-to-end flows
+Recommending UX and workflow improvements based on user feedback and data to help shape innovative features
+Other duties which are assigned by the Employer or authorized person of the Employer.
+
+About You
+
+Basic Qualifications
+
+3+ years experience in front-end software engineering.
+Experience at least modern UI framework.
+
+Other Qualifications
+
+Proficient in the full software development lifecycle, from designing and programming to testing and maintaining front-end applications. Familiar with modern front-end architecture and system design principles.
+Experienced in working cooperatively across distributed teams and time zones, with effective communication and an inclusive approach, particularly in a cross-border setting between Vietnam and the U.S.
+Skilled in using source control tools (e.g., Git) to manage code changes, versioning, branching, and merge conflicts across collaborative projects.
+Able to apply structured problem-solving approaches to design efficient solutions and optimize front-end performance within browser extension environments.
+Experienced in testing methodologies such as unit, integration, automation, and regression testing to ensure code quality, performance, and security before deployment.
+Excellent communication skills in English and Vietnamese, both verbal and written, with the ability to articulate technical ideas to diverse audiences.
+Comfortable managing multiple priorities and collaborating across teams.
+
+Our Approach to Flexible Work
+
+With Flex Work, we’re combining the best of both worlds: in-person time and remote. Our approach enables our teams to deepen connections, maintain a strong community, and do their best work. We know that flexibility can take shape in many ways, so rather than a number of required days in-office each week, we simply spend at least half (50%) of our time each quarter in the office or in the field with our customers, prospects, and partners (depending on role). This means you'll have the freedom to create a flexible schedule that caters to your business, team, and personal needs, while being intentional to make the most of time spent together. Those in our remote "home office" roles also have the opportunity to come together in our offices for important moments that matter.
+
+At Workday, we are committed to providing an accessible and inclusive hiring experience where all candidates can fully demonstrate their skills. If you require assistance or an accommodation at any point, please email accommodations@workday.com.
+
+Are you being referred to one of our roles? If so, ask your connection at Workday about our Employee Referral process!
+
+At Workday, we value our candidates’ privacy and data security. Workday will never ask candidates to apply to jobs through websites that are not Workday Careers.
+
+Please be aware of sites that may ask for you to input your data in connection with a job posting that appears to be from Workday but is not.
+
+In addition, Workday will never ask candidates to pay a recruiting fee, or pay for consulting or coaching services, in order to apply for a job at Workday.

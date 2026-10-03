@@ -1,0 +1,213 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "A-FINAL1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SWE_EMBEDDED",
+  "role_name": "Embedded Software Engineer",
+  "role_name_vn": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "A",
+  "archetype_reasoning": "Xếp A theo roles.csv: ladder đầy đủ, gắn chặt với FDI Nhật/Hàn/Đức (Bosch, Renesas...) — 'band map theo thang FDI', tức mốc năm/band có thể phản ánh văn hoá thâm niên của FDI hơn thị trường VN nói chung.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Embedded Software Engineer Intern",
+      "title_aliases": [],
+      "years_experience": "0",
+      "core_output": "Viết firmware đơn giản cho một module phần cứng theo tài liệu thiết kế có sẵn dưới giám sát trực tiếp, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Embedded Engineer",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự hoàn thành một driver/module firmware nhỏ trong phạm vi được giao, mọi thay đổi qua review kỹ — đặc biệt tại FDI Nhật/Đức nơi quy trình review thường chặt hơn mặt bằng chung, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Embedded Engineer",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự hiện thực trọn vẹn một driver/giao thức giao tiếp (UART/I2C/SPI) đã xác định rõ, debug bằng công cụ đo (oscilloscope, logic analyzer) dưới hướng dẫn, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Embedded Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm end-to-end firmware cho một board/module phần cứng, tối ưu tiêu thụ điện năng và bộ nhớ trong giới hạn phần cứng chặt, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Embedded Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ thiết kế kiến trúc firmware/RTOS cho một sản phẩm nhúng, làm việc trực tiếp với đội thiết kế phần cứng để cân bằng ràng buộc HW/SW, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead Embedded Engineer",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật cho một đội embedded, đặt chuẩn quy trình phát triển firmware — đặc biệt các chuẩn chất lượng khắt khe của FDI Nhật/Đức như automotive (ISO 26262...), tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal Embedded Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt định hướng kiến trúc phần cứng-phần mềm xuyên nhiều sản phẩm/dự án, đại diện kỹ thuật khi làm việc với tổng hành dinh (Nhật/Hàn/Đức), tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal Embedded Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Suy luận — taxonomy 78 role không có Embedded Engineering Manager chuyên biệt, dùng chung SWE_EM."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "note": "Chồng lấn ở phần kết nối thiết bị IoT với backend/cloud.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_BACKEND",
+        "reason": "Ranh giới nằm ở việc làm việc trực tiếp với phần cứng/firmware (Embedded) so với chỉ xử lý dữ liệu IoT ở tầng cloud/server (Backend).",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "roles.csv ghi rõ 'band map theo thang FDI' — mốc năm/band ở trên dùng chung thang toàn cục VN, CHƯA điều chỉnh riêng cho văn hoá thâm niên đặc thù của FDI Nhật/Hàn/Đức, có thể lệch so với thực tế.",
+    "Chưa rõ mức lương và tốc độ thăng tiến có bị ảnh hưởng bởi văn hoá đánh giá theo thâm niên (kiểu Nhật) khác với product/startup VN hay không."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

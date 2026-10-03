@@ -1,0 +1,235 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "T1-1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "hiệu chỉnh gián tiếp",
+    "anchor_note": "KHÔNG có JD thật cho role này trong bộ đã thu thập — bộ JD hiện tại chỉ phủ Frontend và kiến trúc/PO. Nội dung dưới là suy luận từ chuẩn ngành + cấu trúc band, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về thị trường."
+  },
+  "role_code": "SWE_BACKEND",
+  "role_name": "Back-end Developer",
+  "role_name_vn": "Lập trình viên Back-end",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "A",
+  "archetype_reasoning": "Ladder đầy đủ và phổ biến nhất thị trường VN — cửa vào entry-level rộng ở cả 4 loại công ty. Dùng làm role tham chiếu của cả dataset cùng với SWE_FRONTEND.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Backend Engineer Intern",
+      "title_aliases": [
+        "Software Engineering Intern (Backend)"
+      ],
+      "years_experience": "0",
+      "core_output": "Hiện thực logic nghiệp vụ đơn giản và viết API endpoint theo mẫu có sẵn dưới sự giám sát trực tiếp của kỹ sư cấp cao, chưa tự quyết định về schema dữ liệu hay lựa chọn thư viện.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null,
+      "calibration_note": "Suy luận theo cấu trúc song song với golden A (Frontend Intern) — cùng archetype, cùng band, khác domain kỹ thuật."
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Backend Engineer",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự hoàn thành một endpoint hoặc một luồng xử lý nghiệp vụ nhỏ trong phạm vi được giao, viết được truy vấn CSDL cơ bản, mọi thay đổi schema đều cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Backend Engineer",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự hiện thực trọn vẹn một tính năng backend đã được xác định rõ — API, xử lý nghiệp vụ, truy vấn CSDL — tham gia code review hai chiều, nhưng chưa tự quyết định kiến trúc service hay chọn công nghệ mới.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Backend Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm end-to-end một service hoặc module nghiệp vụ: thiết kế schema, viết migration, tối ưu truy vấn, review code cho đồng nghiệp, trong khung kiến trúc hệ thống do người khác đặt ra.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Backend Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ thiết kế kiến trúc cho một domain nghiệp vụ hoặc một nhóm service, chịu trách nhiệm về hiệu năng và độ tin cậy ở quy mô production, mentor kỹ sư cấp dưới qua code review — không quản lý con người.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead Backend Engineer",
+      "title_aliases": [],
+      "years_experience": "6-9 (kèm 2+ năm dẫn dắt)",
+      "core_output": "Tự quyết kiến trúc và công nghệ ở phạm vi hệ thống mình phụ trách trong khung kiến trúc tổng thể do cấp trên cung cấp, coaching một đội kỹ sư — chưa có line management.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal Backend Engineer / Staff Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt định hướng kỹ thuật xuyên nhiều đội, xây chuẩn kỹ thuật cho tổ chức, review thiết kế của kỹ sư khác — thuần IC, không có direct report.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc golden A (Frontend): điểm rẽ không sắc, diễn ra qua L6 (coaching, chưa line management) rồi mới tới nhánh Management thật ở SWE_EM. Chưa có JD Backend xác nhận trực tiếp.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal Backend Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SWE_EM",
+        "from_band": "L6",
+        "note": "Chuyển sang role riêng SWE_EM, không tiếp tục trong ladder Backend."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "SWE_ARCH_SW",
+        "role_name": "Software Architect",
+        "note": "Suy luận, đi sâu vào kiến trúc phần mềm.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_EM",
+        "role_name": "Engineering Manager",
+        "note": "Nhánh Management.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_FULLSTACK",
+        "role_name": "Full-stack Developer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_DE",
+        "role_name": "Data Engineer",
+        "note": "Có neo gián tiếp: roles.csv ghi Data Engineer archetype B, feeder phổ biến là Backend.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_FULLSTACK",
+        "reason": "Ranh giới mờ ở nhiều JD ghi 'Backend' nhưng vẫn yêu cầu kiến thức frontend cơ bản.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G."
+  },
+  "verification_flags": [
+    {
+      "id": "VF-T1-01",
+      "severity": "trung bình",
+      "flag": "Toàn bộ core_output mượn văn phong và số năm từ golden Frontend; chưa có JD Backend nào để đối chiếu.",
+      "action": "Pass 2 ưu tiên top: đây là role phổ biến nhất thị trường, cần ít nhất 10-12 JD trải đều 4 loại công ty."
+    }
+  ],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — mọi nội dung là suy luận có hiệu chỉnh từ golden A. Đây là khoảng trống lấy mẫu, không phải kết luận thị trường.",
+    "Chưa biết Backend VN có phân tách theo ngôn ngữ (Java/Node/Python/.NET/Go) ngay từ band thấp hay chỉ phân biệt ở band cao, khác gì so với Mobile (phân tách iOS/Android từ đầu).",
+    "Điểm rẽ nhánh L6 mượn nguyên từ golden Frontend — domain Backend có thể có ngưỡng năm khác do gắn nhiều hơn với hệ thống hạ tầng/dữ liệu."
+  ]
+}

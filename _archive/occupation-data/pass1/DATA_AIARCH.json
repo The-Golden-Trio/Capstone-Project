@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A)",
+      "golden/SWE_ARCH_ENT.json v2 (archetype C)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "KHÔNG có JD nào trong bộ đã thu thập mang title này — bộ JD chỉ phủ frontend và kiến trúc doanh nghiệp theo kế hoạch. Đây là khoảng trống lấy mẫu, không phải bằng chứng về thị trường."
+  },
+  "role_code": "DATA_AIARCH",
+  "role_name": "AI Solution Architect",
+  "role_name_vn": "Kiến trúc sư giải pháp AI",
+  "role_group": "Data, AI & Machine Learning",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv đã verify: đây là vị trí giao giữa kiến trúc hệ thống và chuyên môn AI/ML, không có cửa vào entry-level. LƯU Ý: role này nằm ở Tier 3 trong roles.csv vì nghi ngờ nó hiếm, và bản thân việc nó có tồn tại như một role độc lập tại VN hay chỉ là một nhãn title mới nổi cũng chưa được kiểm chứng.",
+  "occupied_bands": [
+    "L7",
+    "L8"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Suy luận: đi lên từ Machine Learning Engineer hoặc Solution Architect đã bổ sung chuyên môn AI. Chưa có JD xác nhận.",
+  "destination_profile": {
+    "band_range": "L7 - L8",
+    "min_years_experience": "8-15",
+    "years_band_check": "Lấy trọn khoảng L7-L8 theo thang toàn cục vì không có bằng chứng để thu hẹp. Bản Pass 1 trước ghi 7-10, sàn 7 thấp hơn sàn L7 (=8) — đã sửa.",
+    "core_output": "Thiết kế kiến trúc cho toàn vòng đời của một hệ thống AI trong môi trường production: đường đi của dữ liệu huấn luyện, cách phục vụ suy luận ở quy mô lớn, cơ chế đánh giá và giám sát chất lượng đầu ra của mô hình, cùng ranh giới bảo mật và tuân thủ khi mô hình chạm vào dữ liệu thật — khác với Machine Learning Engineer vốn chịu trách nhiệm về chính mô hình.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — suy luận rằng role này nằm trên nhánh IC. Chưa có JD xác nhận.",
+  "internal_variants": [
+    {
+      "variant_name": "GenAI / LLM Architect",
+      "focus": "Kiến trúc cho hệ thống dùng mô hình ngôn ngữ lớn: RAG, vector database, đánh giá đầu ra.",
+      "evidence_level": "C_INFERRED",
+      "note": "Chưa có JD mang title này. Nhưng golden A ghi nhận yêu cầu tích hợp LLM/RAG/agent đã xuất hiện ở nhiều band frontend, nên nhu cầu ở tầng kiến trúc là hợp lý — vẫn cần kiểm chứng."
+    },
+    {
+      "variant_name": "MLOps Architect",
+      "focus": "Hạ tầng tự động hoá huấn luyện, theo dõi phiên bản và triển khai mô hình.",
+      "evidence_level": "C_INFERRED",
+      "note": "Chưa có JD. Giao thoa mạnh với DATA_MLOPS — cần quy tắc phân định."
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "DATA_ML",
+        "role_name": "Machine Learning Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_ARCH_SOL",
+        "role_name": "Solution Architect",
+        "from_band": "L6-L7",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_MLOPS",
+        "role_name": "MLOps Engineer",
+        "from_band": "L6",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "EXEC_CDO",
+        "role_name": "Chief Data / AI Officer",
+        "note": "Suy luận; chưa có JD xác nhận tại VN.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_ARCH_ENT",
+        "role_name": "Enterprise Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_ARCH",
+        "role_name": "Cloud Architect",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "DATA_ML",
+        "reason": "Phân biệt ở chỗ chịu trách nhiệm về hệ thống quanh mô hình hay về chính mô hình. Chưa kiểm chứng tại VN.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_MLOPS",
+        "reason": "Giao thoa mạnh ở phần hạ tầng triển khai mô hình.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [
+    {
+      "id": "VF-C1-07",
+      "severity": "cao",
+      "flag": "0 JD. Không có neo thực nghiệm nào. Đồng thời role này ở Tier 3, tức theo runbook sẽ KHÔNG chạy Pass 2 — nghĩa là nó sẽ ở lại trạng thái C_INFERRED trong dataset cuối.",
+      "action": "Trước hết kiểm chứng sự TỒN TẠI của role tại VN, chứ chưa cần dựng profile. Nếu không tìm được tin tuyển nào thì ghi vào caveats — con số 'x/78 role không đủ dữ liệu công khai' bản thân nó là một phát hiện của capstone."
+    }
+  ],
+  "confidence_overall": "low",
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này. Bộ JD hiện tại cố ý chỉ phủ frontend và kiến trúc doanh nghiệp — đây là khoảng trống lấy mẫu, không phải kết luận về thị trường.",
+    "Chưa biết đây có phải role độc lập tại VN hay chỉ là một nhãn title gán cho Senior ML Engineer.",
+    "Chưa có quy tắc phân định giữa DATA_AIARCH, DATA_ML và DATA_MLOPS.",
+    "Khoảng năm 8-15 là lấy trọn thang band vì không có dữ liệu để thu hẹp."
+  ]
+}

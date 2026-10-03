@@ -1,0 +1,198 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "B-SEC1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SEC_AISEC",
+  "role_name": "AI Security Engineer",
+  "role_name_vn": "Chuyên viên bảo mật AI",
+  "role_group": "Cyber Security",
+  "archetype": "B",
+  "archetype_reasoning": "Xếp B theo roles.csv nhưng RẤT MỚI — cần verify sự tồn tại tại VN trước khi tin vào ladder này. Suy luận: phần lớn là AppSec Engineer hoặc AI Engineer bổ sung chuyên môn chéo.",
+  "occupied_bands": [
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Không có cửa vào Intern/Fresher. Role rất mới (gắn với làn sóng GenAI 2023+), phần lớn là AppSec Engineer hoặc AI Engineer bổ sung chuyên môn chéo — theo roles.csv. Sàn hợp lý là L4, nhưng CẦN xác minh sự tồn tại độc lập của title này tại VN trước Pass 2.",
+  "levels": [
+    {
+      "band": "L4",
+      "title_vn": "AI Security Engineer (Middle)",
+      "title_aliases": [],
+      "years_experience": "2-4 (kèm nền AppSec hoặc AI)",
+      "core_output": "Rà soát lỗ hổng bảo mật cơ bản trong hệ thống có tích hợp AI (prompt injection, data leakage) theo checklist có sẵn, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior AI Security Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ thiết kế kiểm thử bảo mật cho một hệ thống AI/LLM (red-teaming model), đề xuất biện pháp phòng vệ, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "AI Security Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật bảo mật AI cho tổ chức, định chuẩn đánh giá rủi ro cho hệ thống AI mới trước khi lên production, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L7",
+      "title_vn": "Principal AI Security Engineer",
+      "title_aliases": [],
+      "years_experience": "8-12",
+      "core_output": "Đặt chiến lược bảo mật AI xuyên toàn bộ danh mục sản phẩm có dùng AI, tương ứng vai trò chịu trách nhiệm cross-team.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "Principal AI Security Engineer",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "SEC_ISM",
+        "from_band": "L6",
+        "note": "Suy luận — chưa có JD xác nhận."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SEC_APPSEC",
+        "role_name": "Application Security Engineer",
+        "from_band": "L4",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_AI",
+        "role_name": "AI Engineer",
+        "from_band": "L5",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "SEC_ISM",
+        "role_name": "Information Security Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SEC_APPSEC",
+        "role_name": "Application Security Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_GENAI",
+        "role_name": "Generative AI / LLM Engineer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SEC_APPSEC",
+        "reason": "Ranh giới nằm ở đối tượng bảo mật: hệ thống AI/model so với ứng dụng nói chung.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_GENAI",
+        "reason": "Có thể là cùng một người kiêm cả xây dựng lẫn bảo mật hệ thống AI ở công ty nhỏ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "verification_flags": [
+    {
+      "id": "VF-B-AISEC-01",
+      "severity": "cao",
+      "flag": "roles.csv ghi rõ 'rất mới; verify sự tồn tại tại VN trước'. Đây là role có độ bất định cao nhất trong domain Security.",
+      "action": "Pass 2 bắt buộc: tìm JD dùng đúng title 'AI Security Engineer' hoặc mô tả tương đương tại VN trước khi tin vào ladder này."
+    }
+  ],
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "CHƯA XÁC MINH được title này có tồn tại độc lập tại VN — roles.csv tự đánh giá 'rất mới'.",
+    "Nếu role không tồn tại độc lập, phần việc này nhiều khả năng đang được SEC_APPSEC hoặc DATA_AI đảm nhiệm kiêm nhiệm."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "confidence_overall": "low"
+}

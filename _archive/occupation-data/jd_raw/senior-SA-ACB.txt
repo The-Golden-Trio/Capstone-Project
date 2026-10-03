@@ -1,0 +1,46 @@
+https://www.linkedin.com/jobs/view/4456142152/
+
+Senior Solution Architect 
+About the job
+Key Responsibilities1. Architecture Review & Governance
+Review architecture, solution design, and technology deliverables developed by internal teams and external partners.
+Coordinate review activities with business, technology, and governance stakeholders.
+Ensure identified issues, risks, and improvement actions are addressed prior to approval.
+Monitor deliverable quality, completeness, and compliance with established standards and requirements.
+2. Architecture & Solution Assessment
+Assess architecture and solution designs to ensure alignment with enterprise principles, target-state architecture, and industry best practices.
+Identify architectural risks, gaps, dependencies, and implementation challenges.
+Evaluate design decisions from both business and technology perspectives.
+Provide recommendations to enhance solution quality, scalability, maintainability, and operational effectiveness.
+3. Solution Validation & Advisory
+Facilitate architecture reviews, design walkthroughs, and technical discussions.
+Evaluate the feasibility and practicality of proposed solutions, operating models, and implementation approaches.
+Validate assumptions, recommendations, and design decisions proposed by project teams and technology partners.
+Provide independent assessments and advisory support for architecture and technology-related decisions.
+4. Quality Assurance & Acceptance Support
+Validate deliverables against agreed quality standards, requirements, and acceptance criteria.
+Ensure supporting documentation, knowledge transfer materials, and ownership arrangements are complete and adequately maintained.
+Provide recommendations on deliverable readiness and approval status.
+Support continuous improvement of architecture governance and review practices.
+
+Qualifications & Experience
+8+ years of experience in Enterprise Architecture, Solution Architecture, Digital Transformation, or related areas.
+Experience in Banking & Financial Services, or large-scale transformation programs.
+Experience working with technology vendors, system integrators, and cross-functional stakeholders.
+Technical Expertise
+Strong knowledge of TOGAF, BIAN, DDD, API, Integration, Cloud, and Microservices Architecture.
+Ability to assess enterprise-scale architecture deliverables from both strategic and implementation perspectives.
+Skills & Competencies
+Strong analytical, problem-solving, and critical-thinking skills.
+Excellent stakeholder management and communication skills.
+Experience facilitating architecture reviews and governance forums.
+Ability to constructively challenge and validate recommendations from partners and vendors.
+
+
+Requirements added by the job poster
+
+• 3+ years of work experience with API Development
+
+• 5+ years of work experience with TOGAF
+
+• 5+ years of work experience with Architecture Governance

@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-EXEC1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "EXEC_CDO",
+  "role_name": "Chief Data / AI Officer",
+  "role_name_vn": "Giám đốc Dữ liệu / Giám đốc AI",
+  "role_group": "Executive Technology Layer",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: destination node cấp điều hành, MỚI và số lượng rất nhỏ tại VN — đây là role có độ bất định cao nhất trong nhóm EXEC.",
+  "occupied_bands": [
+    "L9",
+    "L10"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đi lên từ AI Solution Architect hoặc Data Product Manager senior. Role MỚI và số lượng RẤT NHỎ tại VN theo roles.csv — nhiều khả năng chỉ tồn tại ở một số ít công ty lớn nhất đang đầu tư mạnh vào AI/dữ liệu.",
+  "destination_profile": {
+    "band_range": "L9 - L10",
+    "min_years_experience": "12-20",
+    "years_band_check": "Sàn 12 = sàn của L9. Lấy trọn khoảng L9-L10 theo thang toàn cục vì không có bằng chứng để thu hẹp.",
+    "core_output": "Chịu trách nhiệm chiến lược dữ liệu và AI tổng thể của doanh nghiệp: quyết định đầu tư vào hạ tầng dữ liệu/AI, đặt khung quản trị dữ liệu và đạo đức AI (AI governance) cấp công ty, quản lý tổ chức Data/AI (qua Data Governance Lead, AI Solution Architect, Data Science Lead cấp dưới), báo cáo trực tiếp cho CEO/hội đồng quản trị về giá trị và rủi ro của dữ liệu/AI — đây là vai trò còn rất mới nên ranh giới với CTO/CIO chưa ổn định ngay cả ở thị trường quốc tế.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — đỉnh của nhánh Data/AI. Không có bước tiếp theo trong taxonomy nội bộ.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "DATA_AIARCH",
+        "role_name": "AI Solution Architect",
+        "from_band": "L9",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "DATA_PM",
+        "role_name": "Data Product Manager",
+        "from_band": "L9",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [],
+    "lateral_moves": [
+      {
+        "role_code": "EXEC_CTO",
+        "role_name": "Chief Technology Officer",
+        "note": "Suy luận — ở công ty chưa đủ lớn để tách riêng, CTO thường kiêm luôn vai trò này.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "EXEC_CTO",
+        "reason": "Ở công ty chưa đủ lớn để tách riêng vị trí Data/AI cấp điều hành, CTO thường kiêm nhiệm vai trò này.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "verification_flags": [
+    {
+      "id": "VF-C-CDO-01",
+      "severity": "cao",
+      "flag": "roles.csv tự đánh giá role này 'mới, số lượng rất nhỏ' — đây là role có độ bất định tồn tại cao nhất trong toàn bộ 78 role, cùng nhóm với DATA_PROMPT và SEC_AISEC.",
+      "action": "Pass 2: xác minh có bao nhiêu công ty VN thực sự có chức danh CDO/Chief AI Officer trước khi dùng dữ liệu này cho sản phẩm cuối."
+    }
+  ],
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "roles.csv tự ghi nhận role này 'mới, số lượng rất nhỏ' — nghi vấn về sự tồn tại thực tế tại VN còn lớn hơn cả các role EXEC khác.",
+    "Chưa rõ ranh giới với CTO/CIO ở các công ty coi dữ liệu/AI là một phần của hạ tầng chung thay vì tách riêng."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "confidence_overall": "low"
+}

@@ -1,0 +1,165 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A)",
+      "golden/SWE_ARCH_ENT.json v2 (archetype C)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "mạnh (nhưng lệch nguồn)",
+    "anchor_note": "Neo vào nhánh Management của golden_SWE_FRONTEND.json, dựng từ 3 JD Engineering Manager thật. CẢ BA ĐỀU TỪ NAB — một ngân hàng. Ba nấc L7 / L7-L8 / L8 có thể phản ánh cấu trúc cấp bậc nội bộ của NAB hơn là chuẩn thị trường VN."
+  },
+  "role_code": "SWE_EM",
+  "role_name": "Engineering Manager",
+  "role_name_vn": "Quản lý Kỹ thuật",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "C",
+  "archetype_reasoning": "Engineering Manager là điểm đến của nhánh Management, không phải một lộ trình có cửa vào riêng: không tồn tại Junior Engineering Manager tại VN. Ba JD EM trong bộ đã thu thập đều yêu cầu ứng viên đã có kinh nghiệm dẫn dắt đội trước đó — hoặc ở vai trò Technical Lead, hoặc 5+ năm dẫn dắt đội Agile.",
+  "occupied_bands": [
+    "L7",
+    "L8",
+    "L9"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đi lên từ Tech Lead hoặc từ vai trò dẫn dắt kỹ thuật tương đương. Điểm quan trọng với người chọn nghề: bước sang quản lý KHÔNG đồng nghĩa với ngừng viết code — nấc EM thấp nhất quan sát được vẫn đòi 5+ năm kinh nghiệm hands-on và trực tiếp tham gia xử lý sự cố production.",
+  "destination_profile": {
+    "band_range": "L7 - L9",
+    "min_years_experience": "8-15 (nấc cao nhất quan sát được: 10+ năm kèm 5+ năm dẫn dắt đội Agile)",
+    "years_band_check": "Sàn 8 = sàn của L7. Trần 15 = trần của L8; L9 theo thang là 12+ nên nằm trong khoảng. Lưu ý: nấc EM hands-on ở NAB chỉ ghi '5+ năm hands-on React/React Native' — đó là số năm CHUYÊN MÔN, không phải tổng số năm, nên không kéo sàn xuống 5.",
+    "core_output": "Chịu trách nhiệm về con người và kết quả bàn giao của một hoặc nhiều đội kỹ sư: đặt chuẩn kỹ thuật và kỷ luật bảo mật/kiểm toán cho đội, quản lý cột mốc và rủi ro, đồng thời thực hiện đầy đủ vai trò quản lý trực tiếp gồm họp 1:1, kế hoạch phát triển cá nhân, lộ trình nghề nghiệp và đánh giá hiệu suất — những quyền mà cấp Tech Lead phía dưới không có.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — role này đã nằm trên nhánh Management. Nhưng điểm rẽ KHÔNG sắc: golden A cho thấy nó diễn ra qua ba nấc, và nấc đầu tiên (EM hands-on) vẫn yêu cầu kinh nghiệm kỹ thuật trực tiếp. Đây là thông tin đính chính một hiểu lầm phổ biến — nhiều người nghĩ 'lên quản lý là bỏ code'.",
+  "internal_variants": [
+    {
+      "variant_name": "EM hands-on",
+      "focus": "Vẫn đòi kinh nghiệm kỹ thuật trực tiếp và tham gia xử lý sự cố Sev1/Sev2; hướng dẫn kỹ sư nhưng CHƯA có quyền đánh giá hiệu suất.",
+      "evidence_level": "C_INFERRED",
+      "anchor": "golden A nhánh Management nấc L7 (NAB)"
+    },
+    {
+      "variant_name": "EM phụ trách squad",
+      "focus": "Dẫn dắt một hoặc nhiều squad đưa giải pháp lên production, đảm bảo kỷ luật kỹ thuật và quan hệ với stakeholder.",
+      "evidence_level": "C_INFERRED",
+      "anchor": "golden A nấc L7-L8 (NAB)"
+    },
+    {
+      "variant_name": "EM line management đầy đủ",
+      "focus": "Quản lý trực tiếp: 1:1, kế hoạch phát triển, lộ trình nghề nghiệp, đánh giá thử việc và đánh giá hiệu suất. Không còn yêu cầu hands-on.",
+      "evidence_level": "C_INFERRED",
+      "anchor": "golden A nấc L8 (NAB)"
+    }
+  ],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SWE_TECHLEAD",
+        "role_name": "Tech Lead",
+        "from_band": "L6-L7",
+        "note": "Đường vào tự nhiên nhất. Một JD EM trong bộ ghi rõ yêu cầu 'kinh nghiệm ở vai trò Engineering Manager / Technical Lead có đóng góp kỹ thuật trực tiếp'.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_PJM",
+        "role_name": "Project Manager",
+        "from_band": "L6",
+        "note": "PM có nền kỹ thuật mạnh. Suy luận, chưa có JD xác nhận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "EXEC_VPOE",
+        "role_name": "VP of Engineering",
+        "note": "Suy luận từ chuẩn ngành; chưa có JD xác nhận tại VN.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "EXEC_CTO",
+        "role_name": "Chief Technology Officer",
+        "note": "Suy luận; phổ biến hơn ở công ty vừa và nhỏ.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "PROD_PM",
+        "role_name": "Product Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_DM",
+        "role_name": "Delivery Manager",
+        "note": "Ở công ty outsourcing, hai vai trò này chồng lấn. Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_TECHLEAD",
+        "reason": "Phân biệt bằng quyền đánh giá hiệu suất và quản lý trực tiếp, không bằng việc còn code hay không.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "PROD_DM",
+        "reason": "Ở outsourcing VN, EM và Delivery Manager hay bị gộp. Chưa có JD xác nhận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "Có neo từ 3 JD EM của NAB: phân tầng nội bộ rõ thành nhiều nấc, và yếu tố vận hành production ('You Build It, You Run It', trực sự cố Sev1/Sev2) xuất hiện ở NHÁNH MANAGEMENT chứ không ở band IC nào. Đây là phát hiện đáng chú ý — nó đảo ngược kỳ vọng thông thường rằng on-call là việc của kỹ sư chứ không phải của quản lý.",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [
+    {
+      "id": "VF-C1-02",
+      "severity": "cao",
+      "flag": "Cả ba nấc L7 / L7-L8 / L8 đều dựng từ JD của một công ty duy nhất (NAB). Rủi ro thật là chúng phản ánh thang bậc nội bộ NAB chứ không phải chuẩn thị trường.",
+      "action": "Pass 2: bắt buộc tìm ít nhất 1-2 JD Engineering Manager ở công ty product hoặc outsourcing trước khi nâng confidence."
+    },
+    {
+      "id": "VF-C1-03",
+      "severity": "thấp",
+      "flag": "roles.csv để bands L7-L9 nhưng golden A chỉ dựng được tới L8. Band L9 hiện không có bằng chứng nào.",
+      "action": "Hoặc thu hẹp roles.csv về L7-L8, hoặc tìm JD Head/Director of Engineering."
+    }
+  ],
+  "confidence_overall": "low",
+  "unknowns": [
+    "Bộ JD chỉ có 3 tin Engineering Manager, tất cả từ NAB. Không biết EM ở công ty product Việt Nam hay outsourcing trông như thế nào.",
+    "Band L9 trong roles.csv chưa có bằng chứng nào; golden A dừng ở L8.",
+    "Chưa rõ quyền về ngân sách và tuyển dụng của EM tại VN — không JD nào nhắc tới.",
+    "Chưa rõ ranh giới EM và Delivery Manager ở công ty outsourcing, vì chưa có JD nào từ nhóm này."
+  ]
+}

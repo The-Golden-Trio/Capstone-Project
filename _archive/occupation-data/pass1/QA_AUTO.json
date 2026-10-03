@@ -1,0 +1,213 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "D-HYBRID1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)",
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "QA_AUTO",
+  "role_name": "Automation QA Engineer",
+  "role_name_vn": "Kỹ sư kiểm thử tự động",
+  "role_group": "Quality Assurance & Testing",
+  "archetype": "D",
+  "archetype_reasoning": "Xếp D theo roles.csv: HYBRID — vào từ QA_MANUAL upskill (lateral, giống B) HOẶC tuyển thẳng từ dev có nền coding (gần giống A ở một số công ty), và ở band cao role hội tụ gần đích đến QA_LEAD/SWE_ARCH_SW.",
+  "occupied_bands": [
+    "L3",
+    "L4",
+    "L5",
+    "L6",
+    "L7"
+  ],
+  "entry_note": "Không có Intern/Fresher Automation QA thuần, nhưng có HAI route lateral rõ: (1) Manual Tester upskill thêm code (phổ biến nhất theo roles.csv); (2) tuyển thẳng từ Developer muốn chuyển hướng sang test. Sàn hợp lý là L3. Từ band L6, role hội tụ gần với đích đến (QA Lead hoặc chuyên gia kỹ thuật kiểm thử cấp cao) — xem destination_profile.",
+  "levels": [
+    {
+      "band": "L3",
+      "title_vn": "Junior Automation QA Engineer",
+      "title_aliases": [],
+      "years_experience": "1-2 (từ QA_MANUAL upskill hoặc dev mới)",
+      "core_output": "Viết test script tự động cho một tính năng theo framework có sẵn, dưới hướng dẫn của automation engineer senior, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Automation QA Engineer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Tự thiết kế bộ test tự động cho một module, tích hợp vào pipeline CI/CD ở mức cơ bản, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Automation QA Engineer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ xây dựng chiến lược automation cho cả một sản phẩm (test pyramid, coverage), mentor QA cấp dưới về kỹ năng coding, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Automation QA Lead",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật automation cho tổ chức, định chuẩn công cụ và framework kiểm thử tự động, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "destination_profile": {
+    "band_range": "L7",
+    "min_years_experience": "8-12",
+    "years_band_check": "Sàn 8 = sàn của L7 theo thang toàn cục. Trần 12 = trần của L7.",
+    "core_output": "Đặt chiến lược kiểm thử tự động xuyên nhiều đội/sản phẩm ở tầng kỹ thuật cao nhất, thường hội tụ với vai trò SDET Principal hoặc chuyển hẳn sang QA Lead quản lý — ở band này, số lượng vị trí thuần 'Automation QA' tại VN rất nhỏ, phần lớn người ở mức này đã mang title khác (QA_LEAD, QA_SDET Principal, hoặc Software Architect), nên đây gần với điểm hội tụ hơn một nấc ladder riêng.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": {
+    "branch_point_band": "L6",
+    "branch_point_note": "Suy luận theo cấu trúc chung: L6 là band bắt đầu dẫn dắt kỹ thuật một team/hệ thống theo thang toàn cục.",
+    "ic_track": [
+      {
+        "band": "L7",
+        "title_vn": "N/A — L7 của role này đã được mô tả trong destination_profile như điểm hội tụ, không phải một nấc IC riêng.",
+        "note": "Suy luận."
+      }
+    ],
+    "management_track": [
+      {
+        "role_code": "QA_LEAD",
+        "from_band": "L6",
+        "note": "Suy luận."
+      }
+    ]
+  },
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "QA_MANUAL",
+        "role_name": "Manual Tester / QC",
+        "from_band": "L3",
+        "note": "Đường vào phổ biến nhất theo roles.csv.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_BACKEND",
+        "role_name": "Back-end Developer",
+        "from_band": "L3",
+        "note": "Route tuyển thẳng từ dev.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [
+      {
+        "role_code": "QA_LEAD",
+        "role_name": "QA/QC Lead / Test Manager",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "QA_SDET",
+        "role_name": "SDET",
+        "note": "Suy luận — chuyên môn hoá sâu hơn về công cụ/framework.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "QA_SDET",
+        "role_name": "SDET",
+        "note": "Ranh giới mờ ở band cao.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "CLOUD_AUTO",
+        "role_name": "Automation / CI-CD Engineer",
+        "note": "Chồng lấn theo roles.csv.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "QA_SDET",
+        "reason": "roles.csv/pass1 nhiều nơi coi hai role gần như một; SDET nhấn mạnh xây framework/công cụ, QA_AUTO nhấn mạnh viết và duy trì test tự động.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "QA_MANUAL",
+        "reason": "Manual Tester là feeder chính, ranh giới rõ hơn ở việc có code hay không.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Tỷ lệ vào từ QA_MANUAL upskill so với tuyển thẳng từ dev chưa có số liệu.",
+    "Điểm chia giữa levels[] (L3-L6) và destination_profile (L7) là suy luận, chưa có JD xác nhận."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

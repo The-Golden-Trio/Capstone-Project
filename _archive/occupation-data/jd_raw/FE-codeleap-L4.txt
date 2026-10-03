@@ -1,0 +1,70 @@
+https://www.linkedin.com/jobs/view/frontend-engineer-react-js-at-code-leap-4433104932/
+About the job
+YOUR NEW ROLE CODE LEAP
+
+We are looking for an experienced Frontend Engineer to join our expert team in Ho Chi Minh City. This role is perfect for team players with a strong interest in developing their international career - not just as a coder, but as a product builder.
+
+YOUR EXCITING TASKS
+
+Design, build the frontend services for our client’s product and bring it to the next level
+Write high-quality, optimized and reusable code
+Review the code and provide feedback on possible problems
+Optimize the application for maximum speed and scalability
+Analyze, debug, and fix complex bugs
+Work with an international team based in Vietnam and Germany
+Write comprehensive technical documents
+
+YOUR PROFILE AND YOUR PERSONALITY
+
+At least 4 years of experience developing and designing web applications in dynamic environments
+Strong knowledge of JavaScript, TypeScript, ReactJS. Solid understanding of rendering strategies including client-side and server-side rendering
+Experience with modern UI libraries such as Tailwind, MUI, Ant Design, or Element Plus
+Familiarity with styling approaches, including SCSS, LESS, and styled-components
+Proficiency in building and maintaining design systems (e.g., Polaris, Chakra UI), and using Atomic Design Methodology to structure UI components
+Experience using Storybook, not only for component development but also for QA workflows
+Experience with tools like Redux, Jotai, and TanStack Query for efficient state and data management
+Proficiency with TanStack Router for modern routing in React applications
+Familiar with OpenAPI (Swagger), Postman, and HTTP clients like fetch or axios
+Hands-on experience with unit tests, as well as E2E testing using Jest, React Testing Library, Playwright, or Cypress
+Hands-on experience with reading and understanding technical documents
+You understand and know how to prioritize your tasks with a problem-solving mindset
+You don't take things personally and are comfortable with ambiguity and rapid changes common in early-stage product development
+You don't wait for others to tell you what you need to do, but proactively reach out to people, communicate, ask for help, and get things done
+You are proficient in communicating in the English language
+
+Nice to have
+
+Experience with cloud hosting platforms: AWS (CloudFront + S3), Azure (App Service), or on-premise setups
+Familiarity with front-end deployment pipelines, CI/CD workflows using GitHub Actions, and automated release tools like semantic-release or changesets
+Understanding of the CQRS pattern for backend communication
+Exposure to micro-frontends or modular front-end architectures
+Knowledge of remote logging and monitoring tools such as Sentry
+
+Benefits Await You At Code Leap
+
+Competitive salary and beneﬁts
+Year-end bonus (13th-month salary)
+Generous annual leave of up to 18 days
+Additional premium health insurance
+Enjoy a stress-free and comfortable commute to and from work with our Grab Services sponsor
+Enjoy an endless selection of delicious refreshments, including gourmet coffee, beverages, snacks, and fresh fruits, all complimentary
+Focused on individual development:
+Unlimited access to Udemy and other recommendation courses
+Sponsored Professional certificates such as AWS, PMI, Scrum Master, etc
+Soft skills training for professional growth
+Sharing session every Friday, come along with lunch provided by CODE LEAP
+1-on-1 coaching with experienced professionals
+Flexible work policy, which provides flexible hours to accommodate personal schedules and commitments
+Dynamic, fun, and agile environment, perfect for sharing and creativity
+Open-minded, kind & humble colleagues
+CONTACT
+
+Please reach out and contact us now with your latest CV as well as a little description of yourself at jobs@codeleap.de.
+
+About Us
+
+With our expert teams spread across two continents, CODE LEAP provides innovative software solutions for venture-backed companies and leading enterprise businesses in Germany. Our teams in Germany and Ho Chi Minh City (Vietnam) work hand in hand to develop state-of-the-art solutions of the highest quality.
+
+Because collaborating with the right people is the secret to our successful growth.
+
+We future-proof organizations - be part of it!

@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "C-EXEC1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_ARCH_ENT.json (archetype C, dùng để hiệu chỉnh độ chi tiết destination_profile)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden C để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "EXEC_CISO",
+  "role_name": "Chief Information Security Officer",
+  "role_name_vn": "Giám đốc An ninh Thông tin",
+  "role_group": "Executive Technology Layer",
+  "archetype": "C",
+  "archetype_reasoning": "Xếp C theo roles.csv: destination node cấp điều hành, ngân hàng bắt buộc phải có theo quy định.",
+  "occupied_bands": [
+    "L9",
+    "L10"
+  ],
+  "entry_note": "Không có cửa vào entry-level. Đi lên từ Information Security Manager senior. Ngân hàng tại VN BẮT BUỘC có vị trí này theo quy định — đây là điểm khác biệt so với các role EXEC khác vốn phụ thuộc hoàn toàn vào lựa chọn của công ty.",
+  "destination_profile": {
+    "band_range": "L9 - L10",
+    "min_years_experience": "12-20",
+    "years_band_check": "Sàn 12 = sàn của L9. Lấy trọn khoảng L9-L10 theo thang toàn cục vì không có bằng chứng để thu hẹp.",
+    "core_output": "Chịu trách nhiệm chiến lược an ninh thông tin của toàn doanh nghiệp trước hội đồng quản trị và cơ quan quản lý (đặc biệt Ngân hàng Nhà nước với khối ngân hàng): đặt khẩu vị rủi ro bảo mật, phê duyệt ngân sách an ninh thông tin, đại diện công ty khi có sự cố bảo mật nghiêm trọng hoặc thanh tra — khác với Information Security Manager vốn vận hành chương trình bảo mật hàng ngày, còn CISO chịu trách nhiệm TUÂN THỦ QUY ĐỊNH và QUAN HỆ VỚI CƠ QUAN QUẢN LÝ ở cấp cao nhất.",
+    "tasks": [],
+    "skills_hard": [],
+    "skills_soft": [],
+    "certifications": [],
+    "evidence_level": "C_INFERRED",
+    "evidence_company": null,
+    "evidence_title_observed": null,
+    "source_url": null
+  },
+  "branching": "N/A — đỉnh của nhánh Management bảo mật. Không có bước tiếp theo trong taxonomy nội bộ.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [
+      {
+        "role_code": "SEC_ISM",
+        "role_name": "Information Security Manager",
+        "from_band": "L9",
+        "note": "Suy luận — đường vào tự nhiên nhất, có neo từ next_steps của pass1_new/SEC_ISM.json.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "next_steps": [],
+    "lateral_moves": [
+      {
+        "role_code": "EXEC_CIO",
+        "role_name": "Chief Information Officer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SEC_ISM",
+        "reason": "Ranh giới nằm ở việc CISO là vị trí điều hành (C-level, báo cáo hội đồng quản trị) còn ISM là quản lý cấp phòng ban.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Vì là yêu cầu bắt buộc theo quy định ở ngân hàng, chưa rõ role này có khác biệt lớn về nội dung công việc giữa ngân hàng và các ngành khác (nếu có CISO) hay không.",
+    "Chưa rõ ranh giới rõ với SEC_ISM ở các công ty quy mô vừa (không phải ngân hàng lớn)."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

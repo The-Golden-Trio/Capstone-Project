@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -)",
+      "Bash(pnpm add *)"
+    ],
+    "ask": [
+      "Read(./_archive/**)",
+      "Edit(./_archive/**)"
+    ]
+  }
+}

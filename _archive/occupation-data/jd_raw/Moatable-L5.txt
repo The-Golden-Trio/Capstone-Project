@@ -1,0 +1,61 @@
+https://www.linkedin.com/jobs/view/4338759111/
+
+Senior Frontend Engineer 
+About the job
+Description
+
+Once you join our team, you will:
+
+ Collaborate with other team members (PM, UI, backend engineer, QA) to provide a seamless freight experience for our customer;
+ Participating design the front end architecture, collaborate with backend engineers to develop and deliver elegant product solutions;
+ Propose innovative technical solutions to hard business problems;
+ Curiosity and passion, understanding of LLM and AI Agent framework;
+ Lean and grow constantly, improve yourself and make the team member around you better
+
+Requirements
+
+ Familiarity with the development process and work patterns of internet products.
+ Fluent in frontend technologies, including HTML, CSS, JavaScript, and TypeScript.
+ Fluent in React, with practical experience in developing complete React projects.
+ Solid experience with common frontend frameworks, libraries, and tools such as Webpack, Babel, Vite, Turbo, Lerna, Next.js, React, and Vue.
+ Understanding and familiarity with Node.js, capable of project building, with some backend development experience in Node.js.
+ Proficiency in TypeScript; practical experience with TypeScript projects is a plus.
+ Familiarity with commonly used frontend state management tools, such as Redux, MobX, Observable, React Hooks, Zustand, and Recoil.
+
+Preferred Qualifications
+
+ Practical experience with TypeScript and React projects.
+ Experience in developing AI bots.
+ Some experience in backend development with Node.js and Python.
+ Familiarity with open-source LLM models and knowledge of projects like LangChain and Llama-Index.
+ Understanding of containerization and serverless development.
+ A personal blog or independent website is a plus.
+
+Why We Are Different
+
+Our team builds and scales AI-native SaaS solutions that empower industries to solve their most important problems—faster and smarter.
+
+What We Do
+
+Our team builds and scales AI-native SaaS solutions that empower industries to solve their most important problems—faster and smarter. We provide operational expertise and financial resources to our portfolio companies, positioning them for high growth rates and enabling them to become the #1 SaaS company in their respective industries.
+
+Why Join Us
+
+Global impact - Your code will power our products used by millions worldwide
+
+Growth-stage thrill - The energy of a startup with the stability of proven traction
+
+Own the product - No outsourcing - we build & innovate in-house
+
+What We Offer
+
+Attractive Base Salary, Full Social Insurance contributions from you Day 1
+Quarter Performance Review and Annual Bonus
+Additional On-site Bonus up to 2.500.000 VND/monthly
+Monthly Allowance of
+500.000 VND during probation, 
+1.000.000 VND after probation and 
+1.500.000 VND after your one year
+Annual Health Check-up 
+Accident Insurance Package
+Premium health care for your and your family

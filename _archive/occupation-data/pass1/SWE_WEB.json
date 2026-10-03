@@ -1,0 +1,188 @@
+{
+  "_meta": {
+    "pass": 1,
+    "batch": "A-FINAL1",
+    "generated_at": "2026-08-22",
+    "golden_used": [
+      "golden/SWE_FRONTEND.json (archetype A, 40 JD thật, dùng để hiệu chỉnh độ chi tiết core_output)"
+    ],
+    "search_enabled": false,
+    "anchor_strength": "không có",
+    "anchor_note": "CHƯA THU THẬP JD NÀO cho role này trong bộ đã thu thập — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO (theo kế hoạch Bước B), không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này không tồn tại hay hiếm tại VN. Nội dung dưới đây là suy luận từ chuẩn ngành + cấu trúc band toàn cục, chỉ mượn golden A để giữ độ chi tiết và văn phong đồng đều với các role đã có Pass 1."
+  },
+  "role_code": "SWE_WEB",
+  "role_name": "Web Developer",
+  "role_name_vn": "Lập trình viên Web",
+  "role_group": "Software Engineering & Architecture",
+  "archetype": "A",
+  "archetype_reasoning": "Xếp A theo roles.csv: ladder đầy đủ có cửa vào entry-level như SWE_BACKEND/SWE_FRONTEND, nhưng TRẦN THẤP HƠN (L6 thay vì L7) — roles.csv ghi rõ 'VN thường không có Principal Web Dev', tức band cao hầu như chuyển sang title khác.",
+  "occupied_bands": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "entry_note": null,
+  "levels": [
+    {
+      "band": "L1",
+      "title_vn": "Web Developer Intern",
+      "title_aliases": [
+        "Front-end/Web Developer Intern"
+      ],
+      "years_experience": "0",
+      "core_output": "Hiện thực trang/tính năng web đơn giản theo mẫu HTML/CSS/JS có sẵn dưới giám sát trực tiếp, chưa tự quyết định cấu trúc trang, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L2",
+      "title_vn": "Fresher Web Developer",
+      "title_aliases": [],
+      "years_experience": "0-1",
+      "core_output": "Tự hoàn thành một trang/component web nhỏ trong phạm vi được giao, mọi thay đổi đều qua review, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L3",
+      "title_vn": "Junior Web Developer",
+      "title_aliases": [],
+      "years_experience": "1-2",
+      "core_output": "Tự hiện thực trọn vẹn một trang/tính năng web đã xác định rõ (HTML/CSS/JS, tích hợp API có sẵn), tham gia code review hai chiều, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L4",
+      "title_vn": "Middle Web Developer",
+      "title_aliases": [],
+      "years_experience": "2-4",
+      "core_output": "Chịu trách nhiệm end-to-end một mảng website/webapp: tối ưu hiệu năng tải trang, responsive, tích hợp CMS/SEO cơ bản, review code cho đồng nghiệp, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L5",
+      "title_vn": "Senior Web Developer",
+      "title_aliases": [],
+      "years_experience": "4-7",
+      "core_output": "Tự chủ kiến trúc frontend cho cả một website/webapp quy mô vừa, chịu trách nhiệm về hiệu năng và khả năng bảo trì, mentor kỹ sư cấp dưới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn, đồng thời review công việc của người khác.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    },
+    {
+      "band": "L6",
+      "title_vn": "Lead Web Developer",
+      "title_aliases": [],
+      "years_experience": "6-9",
+      "core_output": "Dẫn dắt kỹ thuật cho đội Web Developer, đặt chuẩn công nghệ và quy trình phát triển web cho tổ chức — đây gần như là TRẦN thực tế của title 'Web Developer' thuần tại VN, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống, chịu trách nhiệm về kết quả của cả nhóm.",
+      "tasks": [],
+      "skills_hard": [],
+      "skills_soft": [],
+      "certifications": [],
+      "evidence_level": "C_INFERRED",
+      "evidence_company": null,
+      "evidence_title_observed": null,
+      "source_url": null
+    }
+  ],
+  "branching": "N/A — role dừng ở L6, thấp hơn trần chung L7 của các role SWE archetype A khác. Đây KHÔNG phải thiếu sót — roles.csv ghi rõ 'VN thường không có Principal Web Dev', phản ánh thực tế web developer cao cấp thường được gọi bằng title khác (Frontend/Fullstack Principal) chứ không giữ nguyên title 'Web Developer'.",
+  "internal_variants": [],
+  "related_roles": {
+    "feeder_roles": [],
+    "next_steps": [
+      {
+        "role_code": "SWE_FRONTEND",
+        "role_name": "Front-end Developer",
+        "note": "Suy luận — nhiều Web Developer chuyển sang title Frontend Developer khi lên band cao.",
+        "evidence_level": "C_INFERRED"
+      },
+      {
+        "role_code": "SWE_FULLSTACK",
+        "role_name": "Full-stack Developer",
+        "note": "Suy luận.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "lateral_moves": [
+      {
+        "role_code": "SWE_FRONTEND",
+        "role_name": "Front-end Developer",
+        "note": "Ranh giới mờ, có thể là cùng một vị trí ở nhiều công ty.",
+        "evidence_level": "C_INFERRED"
+      }
+    ],
+    "often_confused_with": [
+      {
+        "role_code": "SWE_FRONTEND",
+        "reason": "roles.csv ghi rõ Web Developer có trần thấp hơn Backend/Frontend — nhiều khả năng đây là cùng một công việc với tên gọi khác ở band thấp, tách biệt dần ở band cao.",
+        "evidence_level": "C_INFERRED"
+      }
+    ]
+  },
+  "company_type_variance": {
+    "outsourcing": "CHUA_CO_DU_LIEU",
+    "product_local": "CHUA_CO_DU_LIEU",
+    "enterprise_bank": "CHUA_CO_DU_LIEU",
+    "bigtech_fdi": "CHUA_CO_DU_LIEU"
+  },
+  "unknowns": [
+    "CHƯA THU THẬP JD NÀO cho role này — bộ JD hiện tại cố ý chỉ phủ Frontend và cụm kiến trúc/PO, không nhắm tới role này. Đây là khoảng trống lấy mẫu, KHÔNG phải bằng chứng về việc role này hiếm hay không tồn tại tại VN.",
+    "Chưa rõ ranh giới thật giữa 'Web Developer' và 'Frontend Developer' tại VN — có thể là cùng một vị trí với hai tên gọi khác nhau tuỳ công ty.",
+    "Trần L6 là suy luận theo roles.csv, chưa có JD xác nhận mốc chuyển đổi sang title khác ở band cao."
+  ],
+  "work_environment_ids": [],
+  "work_environment_primary": null,
+  "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+  "education_path_ids": [],
+  "education_path_primary": null,
+  "education_path_note": "Chưa gán. Thuộc Pass 2.",
+  "job_outlook": {
+    "method": "posting_count",
+    "itviec_open_postings": null,
+    "topdev_open_postings": null,
+    "measured_at": null,
+    "confidence": "low",
+    "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+  },
+  "salary_ref": {
+    "source": "taxonomy_v2",
+    "joined": false,
+    "note": "Chưa join. Thuộc Bước G — trích từ salary_reference.csv, không sinh bằng model."
+  },
+  "verification_flags": [],
+  "confidence_overall": "low"
+}

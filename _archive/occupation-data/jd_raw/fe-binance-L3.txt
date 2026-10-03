@@ -1,0 +1,86 @@
+https://www.linkedin.com/jobs/view/4456096215/
+
+Junior Software Engineer 
+About the job
+Binance is a leading global blockchain ecosystem behind the world’s largest cryptocurrency exchange by trading volume and registered users. We are trusted by 300+ million people in 100+ countries for our industry-leading security, user fund transparency, trading engine speed, deep liquidity, and an unmatched portfolio of digital-asset products. Binance offerings range from trading and finance to education, research, payments, institutional services, Web3 features, and more. We leverage the power of digital assets and blockchain to build an inclusive financial ecosystem to advance the freedom of money and improve financial access for people around the world.
+
+About The Role
+
+We are looking for a Junior Software Engineer who is comfortable working across the full product development stack, including frontend, backend, and AI-powered features.
+
+In this role, you will build internal tools, automation platforms, data-driven products, and AI-enabled workflows. You will work on user-facing interfaces, backend services, APIs, data integrations, and LLM-powered capabilities. We are looking for someone who can move fast, learn quickly, and use AI tools effectively to deliver end-to-end product features.
+
+This is not a pure frontend or pure backend role. We value engineers who can take ownership of a feature from requirement understanding to UI implementation, backend logic, AI integration, testing, and iteration.
+
+Responsibilities
+
+Build and maintain end-to-end product features across frontend, backend, and AI/LLM components. 
+Develop user interfaces for internal tools, dashboards, AI assistants, automation workflows, and productivity platforms. 
+Build backend services, APIs, data pipelines, task workflows, and integrations with internal or external systems. 
+Integrate LLM/AI capabilities into real product scenarios, such as intelligent assistants, RAG workflows, AI agents, automation tools, classification, summarization, and issue analysis. 
+Use AI coding tools to improve development speed, code quality, testing, and debugging. 
+Work with product, operations, support, engineering, security, and infrastructure teams to understand user needs and deliver practical solutions. 
+Participate in product iteration based on user feedback, usage data, and business impact. 
+Write clean, maintainable code and contribute to documentation, testing, and engineering best practices. 
+
+Requirements
+
+Bachelor’s degree or above in Computer Science, Software Engineering, Engineering, or a related field. 
+Solid programming foundation and ability to learn new technologies quickly. 
+Hands-on experience with at least one frontend framework, such as React, Vue, Angular, or similar. 
+Hands-on experience with at least one backend language or framework, such as Python, Go, Java, Node.js, FastAPI, Spring Boot, Express, or similar. 
+Basic understanding of frontend engineering, including component design, state management, API integration, UI debugging, and browser fundamentals. 
+Basic understanding of backend engineering, including API design, databases, authentication, async jobs, logging, monitoring, and service reliability. 
+Real experience with LLM/AI applications, such as: LLM API integration/ Prompt engineering/ RAG/AI agents/ Tool/function calling/ Workflow automation/ Text classification / summarization / extraction/ LLM output evaluation 
+Comfortable using AI coding tools such as Cursor, Claude Code, GitHub Copilot, Cline, OpenCode, or similar tools in daily development. 
+Strong ownership, good communication skills, and willingness to work on ambiguous problems. 
+Ability to deliver practical solutions with both engineering quality and user experience in mind. 
+
+Nice to Have
+
+Experience building AI-powered products, internal tools, dashboards, workflow automation systems, or data-driven applications. 
+Experience with LLM/Agent/RAG frameworks such as LangChain, LlamaIndex, Dify, AutoGen, CrewAI, OpenAI API, Anthropic API, Hugging Face, or similar. 
+Experience with vector databases, embeddings, semantic search, knowledge bases, or retrieval systems. 
+Experience with observability, monitoring, alerting, incident analysis, DevOps, SRE, or workflow automation. 
+Experience with UI/UX design thinking or building usable internal tools from scratch. 
+Experience using AI tools to build full-stack features faster, including frontend generation, backend scaffolding, tests, and documentation. 
+Personal AI projects, hackathon projects, open-source contributions, or production AI application experience. 
+Good technical writing and knowledge sharing habits. 
+
+What We Value
+
+Are comfortable working end to end across frontend, backend, and AI features. 
+Are AI-native and actively use AI tools to improve their own productivity. 
+Have built real AI/LLM applications, not just used ChatGPT. 
+Care about user experience and practical business value. 
+Can quickly turn ambiguous requirements into working product features. 
+Are curious, hands-on, and fast-learning. 
+Think about reliability, maintainability, security, and AI output quality. 
+Communicate clearly and collaborate well with cross-functional partners. 
+
+Example Work You May Do
+
+Build a dashboard or internal tool that helps users understand operational data and AI-generated insights. 
+Develop a user interface for an AI assistant or agent workflow. 
+Build backend APIs and data pipelines for AI-powered automation. 
+Integrate LLMs into product workflows for classification, summarization, recommendation, or issue analysis. 
+Build a RAG-based knowledge assistant for domain-specific Q&A. 
+Develop an agent workflow that can call tools, retrieve data, and complete multi-step tasks. 
+Use AI coding tools to accelerate frontend, backend, testing, and documentation work. 
+Improve product experience based on user feedback and usage data. 
+
+Why Binance
+
+ Shape the future with the world’s leading blockchain ecosystem
+ Collaborate with world-class talent in a user-centric global organization with a flat structure
+ Tackle unique, fast-paced projects with autonomy in an innovative environment
+ Thrive in a results-driven workplace with opportunities for career growth and continuous learning
+ Competitive salary and company benefits
+ Work-from-home arrangement (the arrangement may vary depending on the work nature of the business team)
+
+Binance is committed to being an equal opportunity employer. We believe that having a diverse workforce is fundamental to our success.
+
+By submitting a job application, you confirm that you have read and agree to our  Candidate Privacy Notice .
+
+We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses and identifying potential inconsistencies or verification signals in application materials based on available information. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.
+

@@ -1,0 +1,66 @@
+https://www.linkedin.com/jobs/view/4440956024/
+
+Senior Engineer - Front End
+
+$3,000/month - $3,500/month
+Hybrid
+Full-time
+
+About the job
+Street addresses weren’t designed for 2026. They aren’t accurate enough to specify building entrances, and they don’t exist for parks, rural areas and many parts of the world. This makes it hard to find places and causes problems and inefficiencies on a global scale.
+
+That’s why we created what3words. We divided the world into 3m squares and gave each square a unique combination of three words. It’s the easiest way to find and share precise locations.
+
+Over the last year, what3words has been used in 193 countries, and our monthly active users continue to grow at an impressive pace. Our tech is used by emergency services, delivery companies, eCommerce businesses, ride-hailing apps and NGOs, and is integrated into the navigation systems of millions of cars around the world.
+
+Who We’re Looking For
+
+Based in Vietnam out of our centrally located Ho Chi Minh City office, we’re looking for an experienced Front End Engineer who knows code, and enjoys creating engaging experiences that people love to use.
+
+At what3words, we're proud of our tech stack. We have built a massively scalable, microservices-based architecture, based around Kubernetes on AWS. You'll be exposed to technologies such as ReactJS, Docker, Redis, Kubernetes, AWS Lambdas, Prometheus, Grafana, Python, Athena, BigQuery, Java, Scala, C++, and Swift.
+
+This is a great opportunity to join a collaborative, ambitious and Agile team, at one of the most exciting times in this company's life.
+
+Requirements:
+
+This role will focus primarily on the development of our map site, account management system, and other websites to support and showcase what3words’ offerings. You will also work closely with our product and UX teams, receiving and inputting on designs and feasibility checks, and bringing fresh ideas to make what3words a better solution. You will have good experience of building sleek user interfaces on top of RESTful web APIs, using React, JavaScript, CSS. You will be able to work independently, self-motivate, collaborate well with others and keep calm under pressure.
+
+What we expect:
+
+Strong experience with ES6, TypeScript, React, HTML, CSS. 
+Excellent communication skills in verbal and written English. 
+A passion for software engineering and continuous learning. 
+Solid track record of building responsive sites for desktop, tablet and mobile. 
+
+Bonus points for:
+
+Knowledge of Next.js, Google Maps or Leaflet, GIS systems, AWS, Kubernetes, or similar systems. 
+Experience of Agile working environments. 
+
+The role is based in our centrally located HCMC office. While you can work from the office five days a week if preferred, our Engineering team can choose to work up to two days a week from home. We also offer a six-week remote-work allowance; for up to six weeks a year, you can work from anywhere in the world (as long as you’ve got great WiFi and are happy to work with your main office timezone).
+
+Equality, Diversity And Inclusion At What3words
+
+Our mission is to help everyone talk about everywhere, and we believe diverse perspectives make for a better company and better products too. We strongly encourage applications from underrepresented groups and are committed to diversity, equity and inclusion in our hiring processes and company culture.
+
+Benefits
+
+We offer the following benefits to all permanent employees of what3words:
+
+Competitive salary
+ Flexible working
+ 6 week remote working (work from anywhere) policy
+ 25 days holiday: plus the option to buy more!
+ Share options
+ Private health insurance
+ Wellbeing Days
+ Generous parental leave policies
+ Family friendly policies
+ Employee Assistance Programme (EAP)
+ Lunch & learn sessions
+ Team social budget
+
+
+Benefits found in job post
+
+Medical insurance

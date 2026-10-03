@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/vitest",
+    "lib": ["dom", "es2022"],
     "types": [
       "vitest/globals",
       "vitest/importMeta",
@@ -13,7 +14,11 @@
     ],
     "jsx": "react-jsx",
     "module": "esnext",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "lib": [
+      "es2022",
+      "dom"
+    ]
   },
   "include": [
     "vite.config.ts",
