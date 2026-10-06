@@ -120,6 +120,7 @@
 | D-72 | **Gặp cô mỗi tuần** (chọn ngày 5/9). Slot đăng ký là chiều T7 (16h, từ 19/9 đổi thành 17h). Riêng tuần 7/9 gặp vào T5 10/9 lúc 17h | 30/8 → 14/9 | 💬 | ✅ |
 | D-73 | Thảo luận trên Discord. Task và minutes ghi ở kênh `#weekly-minutes`. Tài liệu đẩy lên repo, chia theo tuần | 25/7, 6/8 | 💬 | ✅ (từ 21/9: ghi vào `docs/project-hub/`) |
 | D-74 | Tên sản phẩm là **JobQuest** ở mọi nơi, kể cả trong app (thay "Vào Nghề") | 30/9 | Phúc chốt 30/9 ([07](07-van-de-mo.md) A3) | ✅ (app còn hiện "Vào Nghề", cần sửa code) |
+| D-75 | Dùng **một master slide** chứa toàn bộ nội dung và cập nhật xuyên suốt, thay cho việc làm deck lẻ từng tuần | 6/10 | [Phân task 6/10](tuan/2026-W41/2026-10-06_phan-task.md) | ✅ (Nhật dựng, T0610.11; kế hoạch cập nhật deck T2609.30 làm theo cách này) |
 
 ## I. Định dạng task & chấm kiểu SJT
 
