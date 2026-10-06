@@ -54,7 +54,7 @@ Mỗi nghề có nhiều cấp, bắt đầu từ **L1 (intern)**. **Cấp cao n
 | `submissions/` | Bản lưu mọi file đã nộp hoặc trình bày cho cô (PDF, PPTX) |
 | [`reports/`](../../reports/README.md) (gốc repo) | Source LaTeX các báo cáo nộp cô, mỗi lần nộp một folder, kèm nhật ký sync |
 | `archive/` | Tài liệu của hướng đề tài đã bỏ |
-| `templates/` | Mẫu meeting minutes |
+| [`templates/`](templates/bao-cao-dacn.md) | **Mẫu báo cáo ĐACN** (cấu trúc bắt buộc của báo cáo, kèm bảng đối chiếu) và mẫu meeting minutes |
 
 ## Quy ước giữ single source of truth
 
