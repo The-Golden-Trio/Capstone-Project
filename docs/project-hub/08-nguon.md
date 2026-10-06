@@ -48,6 +48,7 @@
 
 | Nhóm | File |
 |---|---|
+| **Hiện hành: mẫu báo cáo** | [`templates/2026-08-30_DACN_Final_Report_Template_English.pdf`](templates/2026-08-30_DACN_Final_Report_Template_English.pdf) (mẫu báo cáo ĐACN tiếng Anh, bản 30/8/2026, Phúc đưa vào 6/10) · [`templates/bao-cao-dacn.md`](templates/bao-cao-dacn.md) (cấu trúc và đối chiếu với báo cáo hiện tại) |
 | **Hiện hành: sản phẩm & spec** | `occupation-data/specs/spec-scenario-KHOI1.md` (v2.2) · `occupation-data/specs/HUONG-DAN-SINH-SCENARIO.md` |
 | **Hiện hành: dữ liệu** | `occupation-data/README.md` (mục lục) · `occupation-data/datasets/` · `occupation-data/decisions/78_to_22_roles.csv` · `occupation-data/tools/visualize_*.html` |
 | **Hiện hành: kỹ thuật** | `docs/vao-nghe-flow.*` · `infra/local/docker-compose.yml` (Overleaf) |

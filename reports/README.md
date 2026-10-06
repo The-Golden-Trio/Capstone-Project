@@ -6,6 +6,7 @@ Mỗi lần nộp báo cáo cho cô, lưu **source LaTeX** vào đây rồi ch�
 
 - Mỗi báo cáo một folder: `reports/yyyy-mm-dd_<slug>/`, với `yyyy-mm-dd` là **ngày nộp**. Ví dụ `reports/2026-09-18_ch1-5/`.
 - Trong folder: `main.tex`, các file con (`chapters/*.tex`…), `images/`, `*.bib`. Lấy từ Overleaf bằng **Menu → Download → Source**, rồi giải nén vào folder.
+- **Cấu trúc báo cáo theo mẫu ĐACN**: tên chương, tên mục và thứ tự ở [`docs/project-hub/templates/bao-cao-dacn.md`](../docs/project-hub/templates/bao-cao-dacn.md).
 - **Không sửa report cũ** sau khi đã nộp. Tuần sau nộp bản mới thì tạo folder mới, kể cả khi chỉ sửa vài chương.
 - **PDF bản cuối** vẫn lưu ở [`docs/project-hub/submissions/`](../docs/project-hub/submissions/) với tên `yyyy-mm-dd_JobQuest_<Tên>.pdf`.
 
