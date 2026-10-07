@@ -22,6 +22,7 @@ pdflatex main.tex    (chạy 3 lần để mục lục và số bảng ổn đ�
 
 - **Sửa nội dung ở `report.md`**, rồi chạy lại script. Không sửa tay `main.tex`, `chapters/*.tex`, `references.tex`: lần chạy sau sẽ ghi đè.
 - Sơ đồ Mermaid trong `report.md` không vẽ được trong LaTeX. Sơ đồ thứ n lấy ảnh `latex/figures/fig<n>.png`; đổi sơ đồ thì thay ảnh này.
+- Ảnh có sẵn (ví dụ xuất từ PlantUML) thì viết một dòng `![Chú thích.](latex/figures/<tên>.png)`. Ảnh này không tính vào số thứ tự `fig<n>` của sơ đồ Mermaid.
 - Bìa (tên môn, GVHD, nhóm, sinh viên) nằm trong hằng `MAIN` của `tools/report/md2tex.py`.
 - Script tự kiểm số mục: nếu `## 4.3 …` trong Markdown lệch với số LaTeX sẽ đánh thì dừng và báo.
 

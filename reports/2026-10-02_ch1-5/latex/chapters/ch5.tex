@@ -27,21 +27,21 @@ Evaluation process. This process is internal to the project and supports RP-1 an
 
 \subsubsection{Use case modelling}
 
-Four actors correspond to the user groups in Section 4.2.1. Two external systems participate: the model provider, which performs generation and assessment, and the occupational data source, which supplies reference data.
+Four actors correspond to the user groups in Section 4.2.1. Two external systems also participate, though they are not drawn in the diagram: the model provider, which performs generation and assessment, and the occupational data source, which supplies reference data. Use cases in the diagram are named rather than numbered, and the descriptions and the traceability matrix below refer to them by name. A use case joined to another by an include relation is always performed as part of it; one joined by an extend relation is performed only under the condition stated in the flow of the use case it extends.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/fig3.png}
+\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/jobquest_ucdiagram-1.png}
 \caption{Use case diagram for the proposed system}
 \end{figure}
 
-Tabular descriptions of the key use cases follow. UC-03 and UC-08 are the use cases on which the project's research problems depend.
+Tabular descriptions of the key use cases follow. Author scenario and Review scenario are the use cases on which RP-1 depends, and Perform scenario, through Assess answer, is the one on which RP-2 depends.
 
-UC-03 --- Perform a task scenario
+Perform scenario
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.802\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
-\caption{Use case UC-03, Perform a task scenario.} \\
+\caption{Use case Perform scenario.} \\
 \hline
 \textbf{Field} & \textbf{Content} \\ \hline
 \endfirsthead
@@ -50,22 +50,22 @@ UC-03 --- Perform a task scenario
 \endhead
 Actor & Explorer (primary); model provider (supporting) \\ \hline
 Goal & Attempt a task representative of the occupation and receive an assessment of it \\ \hline
-Precondition & The user is authenticated and the level is accessible under BR-01 or BR-02 \\ \hline
-Trigger & The user selects a level and proceeds past the context screen \\ \hline
-Main flow & 1. System retrieves the published seed for the task. 2. System generates a scenario instance that passes through the seed's canon events and preserves its required facts, developing the narrative between those events from the user's responses. 3. System presents the scenario and the response affordance. 4. User submits a response. 5. System scores the response against the expert effectiveness key, the answer key, or the rubric, according to response format, recording hint use and response time. 6. System records the competencies evidenced. 7. System returns result, response-specific feedback, and forward guidance. 8. System advances to the next task or concludes the level. \\ \hline
-Alternative flow & 4a. User abandons the task: progress to that point is recorded and the session may be resumed (NFR-03). \\ \hline
-Exception flow & 2a. Generation fails, or fails the automated check against the seed: system retries, then serves an instance from the expert-approved sample rather than an unchecked one. 5a. Assessment fails: response is stored and queued; user is informed that assessment is pending. \\ \hline
-Postcondition & An assessment record exists (DR-07) and competence records are updated (DR-06) \\ \hline
-Business rules & BR-07 representation includes unfavourable aspects; design constraint DC-01 requires the assessor to differ from the generator \\ \hline
-Requirements & FR-03, FR-04, FR-05, FR-06, FR-07, FR-08, FR-22; NFR-01, NFR-02, NFR-07, NFR-14, NFR-15 \\ \hline
+Precondition & The explorer is signed in, is enrolled in the level, and has chosen a published scenario in it (Choose scenario) \\ \hline
+Trigger & The explorer starts the chosen scenario \\ \hline
+Main flow & 1. System shows the role, team, and working context of the scenario (View scenario context). 2. System presents the next activity in its question type: choice, ordering, prioritising, or free text. 3. Explorer submits an answer. 4. System assesses the answer (Assess answer): a closed answer against the option scores set by the domain expert, a free-text answer against the rubric anchors, each score backed by quotations found verbatim in the answer. 5. System records the expertise and soft-skill competencies evidenced, capped per skill per scenario. 6. System returns the result, the feedback, and the guidance separately. 7. Steps 2 to 6 repeat for each activity; the scenario ends with a summary of expertise and soft-skill points and of hint use. \\ \hline
+Alternative flow & 3a. Explorer is stuck and asks for a hint (Get hint): the hint is shown, the +2 option is removed for that activity, and hint use is recorded. 4a. A free-text answer needs probing: system asks a follow-up question within the expert's follow-up goal and the activity's limit (Answer follow-up question), and assesses the follow-up answer as well. 5a. A random event is dropped into the session within the configured probability: its answer adds bonus soft-skill evidence only and never lowers the main score. 6a. Explorer judges the content wrong (Flag wrong content): the flag is recorded and reaches a domain expert of the occupation. 7a. Credit reaches the threshold of the next level (Unlock next level). 7b. Explorer has completed every level of the occupation (Rate occupation). 7c. Explorer leaves mid-scenario: progress is kept and resumes at the recorded position (NFR-03). \\ \hline
+Exception flow & 1a. Scenario is unavailable: explorer is returned to the Galaxy Map. 4b. An AI-written follow-up or feedback fails the output check: the expert's default follow-up or default feedback is shown instead. 4c. Model provider fails: the answer and progress are kept, the explorer is told within 10 s, and assessment completes when the provider recovers (NFR-04). \\ \hline
+Postcondition & An assessment record exists, with hint use and any flag (DR-07), and progress is updated within the per-scenario cap (DR-06) \\ \hline
+Business rules & BR-06 assessment is formative; BR-07 representation includes unfavourable aspects; BR-11 replay cannot exceed the cap; design constraint DC-01 requires the assessor to differ from the generator \\ \hline
+Requirements & FR-09, FR-10, FR-11, FR-12, FR-13, FR-14, FR-15; NFR-01, NFR-02, NFR-03, NFR-04, NFR-07, NFR-14, NFR-15, NFR-17 \\ \hline
 \end{longtable}
 }
 
-UC-04 --- Progress to a further level or occupation
+Unlock next level
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.802\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
-\caption{Use case UC-04, Progress to a further level or occupation.} \\
+\caption{Use case Unlock next level.} \\
 \hline
 \textbf{Field} & \textbf{Content} \\ \hline
 \endfirsthead
@@ -74,22 +74,22 @@ UC-04 --- Progress to a further level or occupation
 \endhead
 Actor & Explorer (primary); occupational data source (supporting) \\ \hline
 Goal & Convert demonstrated competence into access to further exploration \\ \hline
-Precondition & A level has been completed and competence credit awarded \\ \hline
-Trigger & Level completion \\ \hline
-Main flow & 1. System computes accumulated competence against the next level's threshold. 2. If met, the next level is unlocked. 3. System computes overlap between demonstrated competencies and the entry requirements of adjacent occupations. 4. Occupations whose overlap conditions are satisfied are offered, each at the level the credited competencies support. 5. User selects a destination or returns to the catalogue. \\ \hline
+Precondition & The explorer has completed a scenario in an enrolled level and competence credit has been awarded \\ \hline
+Trigger & A scenario ends with credit awarded (extends Perform scenario) \\ \hline
+Main flow & 1. System computes accumulated competence credit against the next level's threshold. 2. If it is met, the next level is unlocked and the explorer is told. 3. System recomputes the overlap between demonstrated competencies and the levels of adjacent occupations. 4. Where overlap conditions are met, the adjacent occupation is offered at the higher starting level the competencies support (Enter adjacent occupation). 5. Explorer enrols in the next level, chooses another scenario, or returns to the Galaxy Map. \\ \hline
 Alternative flow & 2a. Threshold not met: system indicates the competencies outstanding and suggests tasks that elicit them. \\ \hline
-Exception flow & 3a. Adjacency data unavailable: within-occupation progression is offered and the cross-occupation offer is suppressed rather than guessed. \\ \hline
-Postcondition & Accessible levels and offered occupations reflect demonstrated competence \\ \hline
-Business rules & BR-02, BR-03 \\ \hline
-Requirements & FR-09, FR-10; DR-02, DR-03 \\ \hline
+Exception flow & 3a. Adjacency data is missing: no adjacent offer is made rather than one guessed; the entry level of every occupation stays open (BR-01). \\ \hline
+Postcondition & Accessible levels and offered starting levels reflect demonstrated competence \\ \hline
+Business rules & BR-01, BR-02, BR-03, BR-11 \\ \hline
+Requirements & FR-06, FR-07, FR-08; DR-02, DR-03, DR-06 \\ \hline
 \end{longtable}
 }
 
-UC-08 --- Review generated scenarios
+Author scenario
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.802\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
-\caption{Use case UC-08, Review generated scenarios.} \\
+\caption{Use case Author scenario.} \\
 \hline
 \textbf{Field} & \textbf{Content} \\ \hline
 \endfirsthead
@@ -97,46 +97,47 @@ UC-08 --- Review generated scenarios
 \textbf{Field} & \textbf{Content} \\ \hline
 \endhead
 Actor & Domain expert (primary); model provider (supporting) \\ \hline
-Goal & Ensure only scenarios that experts judge occupationally accurate and competency-eliciting are published \\ \hline
-Precondition & A seed exists, a sample of scenarios has been generated from it, and the expert is not one of its authors \\ \hline
-Trigger & Generation completes, or annual revalidation falls due \\ \hline
-Main flow & 1. System presents the seed with a sample of scenarios generated from it, showing each scenario against the seed's required facts and target competencies. 2. The expert judges factual accuracy and whether each scenario necessarily elicits its target competencies. 3. The expert records an approval, rejection, or correction against the seed and each sampled scenario. 4. An approved seed becomes eligible for publication by the content administrator. \\ \hline
-Alternative flow & 3a. The expert rejects a scenario: it is withheld and regeneration is requested. 3b. The expert corrects the seed: its author revises it, and prior generations from that seed are invalidated and regenerated. \\ \hline
-Exception flow & 2a. The expert judges a scenario passable without the target competency: the seed is returned for revision, since the evidence model would otherwise be invalid (Section 2.2). 2b. The expert authored the seed: the system does not offer it to that expert for review. \\ \hline
-Postcondition & Only seeds with a recorded expert approval are servable, and only through scenarios that pass the automated check against them \\ \hline
-Business rules & BR-05, BR-07 \\ \hline
-Requirements & FR-15, FR-16; DR-04, DR-05 \\ \hline
+Goal & Record expert knowledge as the scenario content from which tasks are presented and answers judged \\ \hline
+Precondition & The content administrator has opened a scenario for the task (FR-33); the expert is assigned to the occupation; its knowledge exists (FR-21) \\ \hline
+Trigger & The expert is notified that a scenario has been opened for the task \\ \hline
+Main flow & 1. The expert writes the scenario context: role, team, situation, and objective. 2. System generates the scenario content with AI from the context (Generate scenario content), keeping the run's context, model, cost, and check result. 3. The expert edits the content and sets the allowed question types, the score of each option, the rubric, each criterion resolving to a competency, the hints, the random events, and the side quests. 4. For each free-text activity, the expert sets a follow-up goal, a default follow-up, and default feedback. 5. The expert adds reference answers with expert scores (Build reference set). 6. System runs the automatic checks and records the authorship. 7. The expert submits the scenario for review. \\ \hline
+Alternative flow & 2a. The expert regenerates the content or writes it without AI; every run is kept in the generation history. \\ \hline
+Exception flow & 5a. A reference answer fails validation: it is not stored and the reasons are returned. 6a. A check fails: the scenario cannot be submitted, and the failing items are identified. \\ \hline
+Postcondition & A checked scenario with author provenance and generation history awaits review \\ \hline
+Business rules & BR-05 \\ \hline
+Requirements & FR-22, FR-23, FR-24; NFR-10, NFR-16; DR-04, DR-05, DR-09 \\ \hline
 \end{longtable}
 }
 
-UC-07 --- Author a scenario seed
+Review scenario
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.802\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
-\caption{Use case UC-07, Author a scenario seed.} \\
+\caption{Use case Review scenario.} \\
 \hline
 \textbf{Field} & \textbf{Content} \\ \hline
 \endfirsthead
 \hline
 \textbf{Field} & \textbf{Content} \\ \hline
 \endhead
-Actor & Domain expert (primary); occupational data source (supporting) \\ \hline
-Goal & Record expert knowledge as the material from which accurate scenarios are generated and responses judged \\ \hline
-Precondition & The content administrator has created the occupation, the expert is assigned to it, and reference data are available \\ \hline
-Trigger & The expert begins authoring a scenario for the occupation \\ \hline
-Main flow & 1. The expert selects the occupation and its tasks and skills from reference data. 2. The expert enters the required facts. 3. The expert enters target competencies, each resolving to the competency taxonomy. 4. The expert enters the narrative skeleton with its canon events, and the response options drawn from critical incidents, each with its effectiveness profile. 5. The expert enters the rubric, each criterion attributed to a target competency. 6. System records the authoring expert. 7. System validates the seed against its schema and rejects criteria or options not attributable to a competency. \\ \hline
-Exception flow & 7a. Unattributable criteria or options: the seed is rejected with the offending items identified. \\ \hline
-Postcondition & A schema-valid seed with author provenance exists and is eligible for generation and review \\ \hline
-Business rules & BR-05 \\ \hline
-Requirements & FR-15; DR-01, DR-02, DR-04 \\ \hline
+Actor & Domain expert (primary) \\ \hline
+Goal & Ensure only scenarios that experts judge occupationally accurate and competency-eliciting reach explorers \\ \hline
+Precondition & The scenario has been submitted; review criteria exist for the occupation (FR-32); the content administrator has assigned this expert, who is not the author, with a deadline (FR-34) \\ \hline
+Trigger & The expert is notified of the assignment, or a published scenario is sent back for revalidation \\ \hline
+Main flow & 1. System shows the scenario with its context, activities, option scores, rubric, and generation history, next to the review criteria. 2. The expert answers every criterion (Apply review criteria). 3. The expert approves the scenario, requests changes, or rejects it, with comments. 4. System records the decision with the reviewer, the time, and the criteria version used; an approved scenario passes to the content administrator for presentation. \\ \hline
+Alternative flow & 1a. The scenario is under revalidation (Revalidate scenario): it stays published and playable meanwhile, the result is recorded, and an outdated scenario is flagged for replacement. 3a. Changes requested: the scenario returns to its author and re-enters review once revised. 3b. Rejected: the scenario is closed and cannot be reopened; the content administrator may open a new scenario for the task. \\ \hline
+Exception flow & 2a. A criterion is left unanswered: no decision can be submitted. 1b. The deadline passes: the content administrator is notified and may reassign the review (Reassign overdue review). \\ \hline
+Postcondition & Every scenario reaching presentation carries a recorded approval against the review criteria \\ \hline
+Business rules & BR-05, BR-07 \\ \hline
+Requirements & FR-25, FR-27, FR-34; NFR-15, NFR-16; DR-13, DR-19 \\ \hline
 \end{longtable}
 }
 
-UC-05 --- Rate a completed occupation
+Rate occupation
 
 {\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.243\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.752\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
-\caption{Use case UC-05, Rate a completed occupation.} \\
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.217\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.778\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Use case Rate occupation.} \\
 \hline
 \textbf{Field} & \textbf{Content} \\ \hline
 \endfirsthead
@@ -145,23 +146,23 @@ UC-05 --- Rate a completed occupation
 \endhead
 Actor & Explorer \\ \hline
 Goal & Record an impression of the occupation and contribute to its aggregate profile \\ \hline
-Precondition & The user has completed the occupation (BR-04) \\ \hline
-Trigger & Occupation completion \\ \hline
-Main flow & 1. System presents the five rating attributes. 2. User submits ratings. 3. System records the rating and recomputes the aggregate profile. 4. System presents the aggregate alongside the user's own ratings. \\ \hline
-Alternative flow & 2a. User declines to rate: completion is recorded without a rating. \\ \hline
-Exception flow & 3a. Population below the suppression threshold: aggregate is withheld and the condition is stated rather than displaying an unfounded figure. \\ \hline
+Precondition & The explorer has completed every level of the occupation (BR-04) \\ \hline
+Trigger & Completion of the occupation's last level (extends Perform scenario) \\ \hline
+Main flow & 1. System presents the five rating attributes and a feedback field. 2. Explorer submits ratings and feedback. 3. System records them and recomputes the aggregate profile. 4. System presents the aggregate alongside the explorer's own ratings, and on the occupation profile. \\ \hline
+Alternative flow & 2a. Explorer declines to rate: completion is recorded without a rating. \\ \hline
+Exception flow & 3a. Population below the suppression threshold: the aggregate is withheld and the condition is stated rather than displaying an unfounded figure. \\ \hline
 Postcondition & Rating recorded; aggregate updated or suppressed \\ \hline
 Business rules & BR-04 \\ \hline
-Requirements & FR-12; NFR-06; DR-08 \\ \hline
+Requirements & FR-19; NFR-06; DR-08 \\ \hline
 \end{longtable}
 }
 
-The remaining use cases --- catalogue exploration, orientation conversation, personal record review, disagreement review, lifecycle management, coverage monitoring, model configuration, and operational monitoring --- are specified in the same form in Appendix 1.
+The remaining use cases in the diagram are specified in the same form in Appendix 1.
 
-The traceability matrix below traces every requirement to the use case realising it, so that no requirement is left unrealised and no use case introduces behaviour the requirements do not specify.
+The traceability matrix below traces every requirement to the use case realising it, so that no requirement is left unrealised and no use case introduces behaviour the requirements do not specify. Use cases are listed by actor, in the order explorer, domain expert, content administrator, and system administrator, each followed by the use cases it includes or is extended by.
 
 {\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.379\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.196\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.229\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.190\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.367\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.224\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.224\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.181\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Traceability from requirements to use cases.} \\
 \hline
 \textbf{Use case} & \textbf{Functional} & \textbf{Non-functional} & \textbf{Data} \\ \hline
@@ -169,19 +170,61 @@ The traceability matrix below traces every requirement to the use case realising
 \hline
 \textbf{Use case} & \textbf{Functional} & \textbf{Non-functional} & \textbf{Data} \\ \hline
 \endhead
-UC-01 Explore catalogue & FR-02 & NFR-08, NFR-09, NFR-13 & DR-01 \\ \hline
-UC-02 Orientation conversation & FR-11 & NFR-01, NFR-07 & DR-01, DR-06 \\ \hline
-UC-03 Perform task scenario & FR-03, FR-04, FR-05, FR-06, FR-07, FR-08, FR-22 & NFR-01, NFR-02, NFR-03, NFR-04, NFR-07, NFR-13, NFR-14, NFR-15 & DR-04, DR-05, DR-07 \\ \hline
-UC-04 Progress further & FR-09, FR-10, FR-14 & --- & DR-02, DR-03, DR-06 \\ \hline
-UC-05 Rate occupation & FR-12 & NFR-06 & DR-08 \\ \hline
-UC-06 Review personal record & FR-13 & NFR-05 & DR-06, DR-07 \\ \hline
-UC-07 Author scenario seed & FR-15 & NFR-10 & DR-01, DR-02, DR-04 \\ \hline
-UC-08 Review generated scenarios & FR-16 & NFR-10, NFR-15 & DR-04, DR-05 \\ \hline
-UC-09 Review assessment disagreements & FR-17 & NFR-14 & DR-07, DR-09 \\ \hline
-UC-10 Manage lifecycle & FR-18 & NFR-10 & DR-04 \\ \hline
-UC-11 Monitor coverage & FR-19 & --- & DR-04 \\ \hline
-UC-12 Configure models & FR-20 & NFR-11, NFR-12 & DR-05 \\ \hline
-UC-13 Monitor operation & FR-21 & NFR-11 & DR-10 \\ \hline
-Account management & FR-01 & NFR-05 & DR-06 \\ \hline
+Register account & FR-01 & NFR-05, NFR-17 & DR-16 \\ \hline
+Manage account & FR-02 & NFR-05 & DR-16 \\ \hline
+Complete orientation quiz & FR-03 & NFR-08 & DR-01, DR-12 \\ \hline
+Build user portrait & FR-04 & NFR-05, NFR-07 & DR-12 \\ \hline
+View career path & FR-17 & --- & DR-15 \\ \hline
+View personal record & FR-18 & NFR-05 & DR-06, DR-07 \\ \hline
+Send app feedback & FR-20 & --- & DR-18 \\ \hline
+Explore occupations & FR-05, FR-06 & NFR-08, NFR-13, NFR-18, NFR-19 & DR-01, DR-15 \\ \hline
+View occupation profile & FR-05 & NFR-06 & DR-08, DR-15 \\ \hline
+Enter adjacent occupation & FR-07 & --- & DR-02, DR-03, DR-06 \\ \hline
+Choose scenario & FR-08 & --- & DR-06 \\ \hline
+View level description & FR-05 & --- & DR-15 \\ \hline
+Complete side quest & FR-16 & --- & DR-04, DR-06 \\ \hline
+Perform scenario & FR-10, FR-15 & NFR-03, NFR-04, NFR-07, NFR-11, NFR-13, NFR-19 & DR-04, DR-05, DR-06 \\ \hline
+View scenario context & FR-09 & NFR-09 & DR-04 \\ \hline
+Assess answer & FR-11, FR-14, FR-15 & NFR-02, NFR-05, NFR-07, NFR-14, NFR-15, NFR-17 & DR-07 \\ \hline
+Get hint & FR-13 & --- & DR-07 \\ \hline
+Answer follow-up question & FR-12 & NFR-01, NFR-15, NFR-17 & DR-07 \\ \hline
+Flag wrong content & FR-14 & --- & DR-07 \\ \hline
+Unlock next level & FR-08 & --- & DR-06 \\ \hline
+Rate occupation & FR-19 & NFR-06 & DR-08 \\ \hline
+Author scenario & FR-22 & NFR-10, NFR-16 & DR-04 \\ \hline
+Generate scenario content & FR-23 & NFR-11, NFR-12 & DR-05, DR-10 \\ \hline
+Build reference set & FR-24 & --- & DR-09 \\ \hline
+Review scenario & FR-25 & NFR-15, NFR-16 & DR-13 \\ \hline
+Apply review criteria & FR-25 & --- & DR-19 \\ \hline
+Revalidate scenario & FR-27 & NFR-16 & DR-13 \\ \hline
+Review flagged content & FR-14 & --- & DR-07 \\ \hline
+Play-test draft game & FR-26 & --- & DR-11 \\ \hline
+Check grading reliability & FR-28 & NFR-14 & DR-07, DR-09 \\ \hline
+Submit blind ratings & FR-29 & --- & DR-09 \\ \hline
+Create occupation knowledge & FR-21 & NFR-10 & DR-01, DR-02, DR-03, DR-15 \\ \hline
+Update occupation knowledge & FR-21 & --- & DR-02, DR-03, DR-15 \\ \hline
+Manage occupation & FR-30 & NFR-10, NFR-16 & DR-13, DR-15 \\ \hline
+Import reference data & FR-31 & --- & DR-01 \\ \hline
+Assign domain expert & FR-34 & --- & DR-13, DR-16 \\ \hline
+Reassign overdue review & FR-34 & --- & DR-13 \\ \hline
+Design scenario presentation & FR-35 & NFR-15 & DR-14 \\ \hline
+Generate missing asset & FR-36 & --- & DR-14 \\ \hline
+Define review criteria & FR-32 & --- & DR-19 \\ \hline
+Open task scenario & FR-33 & --- & DR-13 \\ \hline
+Publish scenario & FR-37 & NFR-15, NFR-16 & DR-13 \\ \hline
+Remove scenario & FR-38 & NFR-16 & DR-13 \\ \hline
+Monitor occupation statistics & FR-39 & NFR-06 & DR-06, DR-08, DR-11 \\ \hline
+Request revalidation & FR-27 & --- & DR-13 \\ \hline
+View coverage report & FR-39 & --- & DR-04, DR-15 \\ \hline
+Manage user accounts & FR-41 & NFR-17 & DR-16 \\ \hline
+Assign occupation staff & FR-40 & --- & DR-16 \\ \hline
+Disable account & FR-41 & --- & DR-16 \\ \hline
+Delete account & FR-41 & NFR-05 & DR-16 \\ \hline
+View activity log & FR-41 & --- & DR-16 \\ \hline
+Configure AI models & FR-42 & NFR-12 & DR-17 \\ \hline
+Monitor operation cost & FR-43 & NFR-11, NFR-18 & DR-10 \\ \hline
+Re-run failed job & FR-43 & NFR-04 & DR-10 \\ \hline
+Review app feedback & FR-20 & --- & DR-18 \\ \hline
+Handle data requests & FR-44 & NFR-05 & DR-17 \\ \hline
 \end{longtable}
 }

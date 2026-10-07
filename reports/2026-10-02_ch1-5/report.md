@@ -30,6 +30,7 @@ The report establishes the evidence base for this approach, reviews existing res
 | SCCT | Social Cognitive Career Theory |
 | SDT | Self-Determination Theory |
 | UC | Use Case |
+| UR | User Requirement |
 | ĐACN | Đồ án chuyên ngành (Specialized Project) |
 
 ---
@@ -302,13 +303,13 @@ Three processes constitute the operation of the platform. They are modelled form
 
 The exploration process is the primary user-facing process. A registered user optionally completes an orientation conversation, which is provided for users who do not know which occupation to begin with and is not a prerequisite. The user selects an occupation and a level within it, is presented with the role, team, and working context before any task begins, and then works through the tasks comprising that level. Each task is a scenario drawn from the occupation and is answered in one of nine formats — multiple choice, multiple selection, ordering, matching, true/false, timed choice, free text, simplified email, or simplified code — with hints available throughout. Tasks ask what the user does in the situation, a behavioural-tendency instruction [28], because how a user tends to act is itself information about fit; scoring uses expert effectiveness keys in either case. Each response option is of one of three types: correct, the most effective response; trade-off, effective for one competency at a cost to another; or wrong, ineffective or harmful. Options and rubric criteria are scored on a single ordinal scale per competency, from −1 (ineffective or harmful) through 0 and +1 to +2 (most effective), so that evidence from choices and from written responses accumulates in the same competence record and agreement with experts can be computed on an ordinal scale. Using a hint is recorded and lowers the weight of that response as evidence of independent competence without blocking progress; a timed task that expires is recorded as unanswered, with its response time, and carries no separate penalty. The system evaluates each response, records the competencies it evidences, and returns a result, feedback specific to the response, and guidance for improvement. Completing a level awards competence credit; accumulated credit unlocks higher levels of the same occupation or, where competencies overlap sufficiently, entry to an adjacent occupation above its entry level. On completing an occupation, the user may rate it on five attributes, which contribute to that occupation's aggregate profile.
 
-The content lifecycle process governs how occupations enter the catalogue, and it involves two roles with distinct responsibilities. Domain experts own the occupational content and author it in the system: for each scenario they enter the required facts, the competencies it must elicit, the critical incidents from which response options are drawn, the effectiveness of each option, and the rubric against which free responses are judged, which together form the scenario's seed. A seed is a template rather than a script: it fixes the canon events of a scenario — the situations every run must pass through, at set points — together with the keyed options and rubric attached to them, and leaves the narrative between those events to be developed by the model in response to the user's answers. Validation accordingly has two layers. In the first, the system generates a sample of scenarios from the seed, and experts other than the seed's authors review the seed and the sample in the system, judging their accuracy and returning approvals, rejections, or corrections, each recorded with the identity of the reviewing expert. In the second, every scenario generated at run time is checked automatically against its seed — that it passes through every canon event, preserves the required facts, and leaves each option's keyed profile unchanged (FR-04) — and one that fails is regenerated or replaced by an instance from the approved sample. The content administrator does not author occupational content. The administrator manages the occupation as an entry in the catalogue, arranges how approved content is laid out and presented in gameplay, reviews the occupation as a whole before release, publishes it, and operates its lifecycle thereafter. Published content is revalidated annually by the experts, since occupational practice changes. In the present phase, in which no industry experts are yet engaged, the project team performs the expert role on provisional seeds (Section 4.2.1).
+The content lifecycle process governs how occupations enter the catalogue, and it involves two roles with distinct responsibilities. Domain experts own the occupational content and author it in the system: for each scenario they enter the required facts, the competencies it must elicit, the critical incidents from which response options are drawn, the effectiveness of each option, and the rubric against which free responses are judged, which together form the scenario's seed. A seed is a template rather than a script: it fixes the canon events of a scenario — the situations every run must pass through, at set points — together with the keyed options and rubric attached to them, and leaves the narrative between those events to be developed by the model in response to the user's answers. Validation accordingly has two layers. In the first, the system generates a sample of scenarios from the seed, and experts other than the seed's authors review the seed and the sample in the system, judging their accuracy and returning approvals, rejections, or corrections, each recorded with the identity of the reviewing expert. In the second, every scenario generated at run time is checked automatically against its seed — that it passes through every canon event, preserves the required facts, and leaves each option's keyed profile unchanged (NFR-15) — and one that fails is regenerated or replaced by an instance from the approved sample. The content administrator does not author occupational content. The administrator manages the occupation as an entry in the catalogue, arranges how approved content is laid out and presented in gameplay, reviews the occupation as a whole before release, publishes it, and operates its lifecycle thereafter. Published content is revalidated annually by the experts, since occupational practice changes. In the present phase, in which no industry experts are yet engaged, the project team performs the expert role on provisional seeds (Section 4.2.1).
 
 The evaluation process is internal and supports the research objectives. It proceeds in two stages (Section 4.2.2): a synthetic benchmark constructed by the project team, and a reference set of real responses and generated scenarios rated independently by domain experts, against which generation quality and assessment accuracy are measured offline as specified in Section 2.6.
 
 ### 4.1.3 Business rules
 
-Business rules are stated here as policies and constraints of the domain that hold independently of any particular implementation. Constraints arising from implementation choices — which models are used, how cost is bounded, where data is processed — are recorded separately as design constraints in Section 4.3.2.
+Business rules are stated here as policies and constraints of the domain that hold independently of any particular implementation. Constraints arising from implementation choices — which models are used, how cost is bounded, where data is processed — are recorded separately as design constraints in Section 4.3.3.
 
 | ID | Rule | Origin |
 |---|---|---|
@@ -453,88 +454,157 @@ Localisation presents a further difficulty: occupational taxonomies are authored
 
 ## 4.3 User's Requirements
 
-Requirements are expressed first as user stories per group, then analysed into functional, non-functional, and data requirements. Each requirement carries a priority (Must, Should, Could), an assessment of feasibility within the project's scope and schedule, and a statement of how it is to be verified.
+Requirements are expressed first as user requirements per group, each with a priority (Must, Should, Could). These are then analysed into functional, non-functional, and data requirements. Each of these carries two verification methods: a business verification, by which a stakeholder — an explorer, a domain expert, a content administrator, or a system administrator — confirms that the requirement meets its purpose, through acceptance tests, walkthroughs, or expert review; and a technical verification, by which the development team confirms that the implementation behaves correctly, through automated, integration, boundary, load, or fault-injection tests.
 
-### 4.3.1 Functional requirements
+### 4.3.1 User requirements
 
-User stories — explorer:
+User requirements — explorer:
 
-- As an explorer, I want to try the entry level of any occupation without prerequisite, so that I can survey possibilities before committing attention to one.
-- As an explorer, I want to be told my role, team, and working context before a task begins, so that my decisions are situated rather than abstract.
-- As an explorer, I want to perform tasks that practitioners would recognise, so that what I learn reflects the occupation.
-- As an explorer, I want to see the unfavourable aspects of an occupation, so that my impression is not a recruitment pitch.
-- As an explorer, I want my response assessed with a result, an explanation, and guidance, so that I understand both the judgment and how to improve.
-- As an explorer, I want competencies I have demonstrated to be recorded, so that my progress reflects what I can do rather than time spent.
-- As an explorer, I want to move to an adjacent occupation when my competencies qualify me, so that I need not restart when exploring related work.
-- As an explorer, I want to rate an occupation after completing it and see how others rated it, so that I can compare my impression with a broader one.
-- As an explorer, I want a private record of what I have attempted and demonstrated, so that my exploration accumulates.
-- As an explorer, I want hints when I am stuck, so that I can continue while still learning.
+| ID | User requirement | Priority |
+|---|---|---|
+| UR-E01 | As an explorer, I want to create an account, recover it if I forget my password, and return to my own progress on every visit, so that my exploration is kept safe. | Must |
+| UR-E02 | As an explorer, I want to browse the occupations available, read what each involves at every level, including its unfavourable aspects, and try the entry level of any of them without prerequisite, so that I can survey possibilities before committing to one. | Must |
+| UR-E03 | As an explorer who does not know where to begin, I want optional suggestions of occupations to start with, and a description of myself that explains them, so that a blank choice does not stop me. | Should |
+| UR-E04 | As an explorer, I want to be told my role, team, and working context before each scenario begins, so that my decisions are situated rather than abstract. | Must |
+| UR-E05 | As an explorer, I want to perform tasks that practitioners would recognise and whose objective I can understand, so that what I learn reflects the occupation. | Must |
+| UR-E06 | As an explorer, I want to respond in the forms the work itself takes — choosing a course of action, ordering steps, prioritising tasks, or writing an answer such as an email or a code review — so that I experience how the work is done, not only what it is about. | Must |
+| UR-E07 | As an explorer, I want hints when I am stuck, at a small cost to my best possible score, so that I can continue while still learning. | Should |
+| UR-E08 | As an explorer, I want my response judged as an expert in the occupation would judge it, probed further when my answer is unclear, and returned as a result, an explanation, and guidance, so that I can trust the judgment and know how to improve. | Must |
+| UR-E09 | As an explorer, I want follow-up questions and feedback to arrive without long waits, and to see progress while I wait, so that the experience keeps its momentum. | Must |
+| UR-E10 | As an explorer, I want to play on my phone, over a weak connection, and with assistive technology if I need it, without installing anything, so that I can explore wherever I am. | Must |
+| UR-E11 | As an explorer, I want to resume where I stopped after an interruption or a system failure, and to be told promptly if something has failed, so that I never lose work I have done. | Must |
+| UR-E12 | As an explorer, I want to know which content and judgments are produced by AI, so that I can weigh them accordingly. | Must |
+| UR-E13 | As an explorer, I want to choose scenarios within a level, have the competencies I demonstrate recorded, and open higher levels as they grow, without replaying the same scenario being enough to inflate them, so that my progress reflects what I can do rather than time spent. | Must |
+| UR-E14 | As an explorer, I want to start an adjacent occupation at a level my competencies support, so that I need not restart from the entry level when exploring related work. | Should |
+| UR-E15 | As an explorer, I want to see the career path across the levels of an occupation — the role held at each level — so that I understand where the occupation could lead me. | Should |
+| UR-E16 | As an explorer, I want to rate an occupation after completing it and see how others rated it, without anyone's individual rating being exposed, so that I can compare my impression with a broader one. | Should |
+| UR-E17 | As an explorer, I want a private record of what I have attempted and demonstrated, so that my exploration accumulates into something I can reflect on. | Should |
+| UR-E18 | As an explorer, I want my individual responses and results never to be shown to others or passed to employers, and my data to be deleted when I ask, so that trying an occupation carries no risk to me. | Must |
+| UR-E19 | As an explorer, I want to use the platform in Vietnamese or English, so that language is not a barrier to exploring. | Should |
+| UR-E20 | As an explorer, I want short side quests I can answer on the spot for bonus points, so that I can engage with an occupation in small steps. | Could |
+| UR-E21 | As an explorer, I want to send feedback about the whole app, so that problems and ideas reach the team. | Should |
 
-User stories — domain expert:
+: User requirements of explorers.
 
-- As a domain expert, I want to author a scenario's seed — required facts, target competencies, keyed response options, and rubric — with my authorship recorded, so that every seed's provenance is traceable.
-- As a domain expert, I want to review scenarios generated from seeds I did not author and record my approval, rejection, or correction, so that only content experts judge accurate is published.
-- As a domain expert, I want to see where the automated judge disagrees with expert judgments, so that the rubric can be refined.
+User requirements — domain expert:
 
-User stories — content administrator:
+| ID | User requirement | Priority |
+|---|---|---|
+| UR-D01 | As a domain expert, I want to write a scenario's context with AI assistance and set the allowed question types, the score of each option, the grading rubric, hints, random events, and side quests directly in the system, with my authorship recorded, so that the content I own is traceable to me and needs no developer to enter. | Must |
+| UR-D02 | As a domain expert, I want every published scenario to keep the required facts and option scores exactly as I set them, so that the system never misrepresents the work in my name. | Must |
+| UR-D03 | As a domain expert, I want to review scenarios written by another expert of my occupation against shared criteria and approve them, request changes, or reject them, so that only content experts judge accurate, and AI output kept within the limits they set, reaches explorers. | Must |
+| UR-D04 | As a domain expert, I want to see where the automated judge disagrees with expert judgments, so that I can refine the rubric. | Should |
+| UR-D05 | As a domain expert, I want to revalidate published content when practice changes, so that what explorers see stays current. | Should |
+| UR-D06 | As a domain expert, I want to create and keep up to date the knowledge of an occupation once the content administrator has created it — levels, salary, generation rules, competencies, and adjacency — so that progression and adjacency reflect how the work is organised in Vietnam. | Should |
+| UR-D07 | As a domain expert, I want to rate explorers' responses and generated scenarios blind, independently of other experts, so that the automated judge and the generator can be measured against expert judgment. | Should |
+| UR-D08 | As the author of a scenario, I want to play the draft game before it is published, without my play being counted as explorer data, so that I can confirm it presents my content correctly. | Must |
+| UR-D09 | As the author of a scenario, I want to add sample answers with expert scores while preparing it, so that the automated judge can be checked against my judgment. | Should |
 
-- As a content administrator, I want to arrange how approved content is laid out and presented in gameplay, so that explorers receive it in a coherent form.
-- As a content administrator, I want to add a new occupation, review it as a whole, and track its progress through authoring, review, and publication, so that catalogue growth is managed.
-- As a content administrator, I want to see coverage and last-validated dates across occupations, so that I can identify stale content.
+: User requirements of domain experts.
 
-User stories — system administrator:
+User requirements — content administrator:
 
-- As a system administrator, I want to configure which models perform generation and assessment, so that the separation required by DC-01 is enforced and providers can be changed.
-- As a system administrator, I want to monitor usage, cost, and failures, so that the service remains operable within budget.
+| ID | User requirement | Priority |
+|---|---|---|
+| UR-C01 | As a content administrator, I want to add a new occupation and track it through authoring, review, publication, and retirement without asking developers, so that catalogue growth is managed. | Must |
+| UR-C02 | As a content administrator, I want to arrange how approved content is presented in gameplay — question types, characters, and scenes — without altering its substance, so that explorers receive it in a coherent form. | Must |
+| UR-C03 | As a content administrator, I want to publish a scenario only after it has been approved and play-tested by its author, so that nothing unvalidated is released. | Must |
+| UR-C04 | As a content administrator, I want to see coverage and play statistics for my occupations, so that I can identify outdated or weak content and arrange its revalidation. | Should |
+| UR-C05 | As a content administrator, I want to replace an outdated scenario by removing the old one first and then opening a new one, so that explorers never meet superseded content. | Should |
+| UR-C06 | As a content administrator, I want to open a scenario for each task and assign a domain expert other than its author to review it, so that every scenario is reviewed independently. | Must |
+| UR-C07 | As a content administrator, I want to import occupational reference data from O\*NET and ESCO, so that occupations start from an established source. | Should |
+| UR-C08 | As a content administrator, I want to define the criteria domain experts use to review scenarios, so that every review follows the same standard. | Must |
 
-| ID | Functional requirement | Group | Priority | Feasibility | Verification |
-|---|---|---|---|---|---|
-| FR-01 | Register and authenticate a user account | Explorer | Must | High | Account creation and sign-in succeed; unauthenticated access to progress is refused |
-| FR-02 | Present the entry level of any published occupation without prerequisite | Explorer | Must | High | Entry level reachable for a new account with zero credit |
-| FR-03 | Present role, team, and working context before the first task of a level | Explorer | Must | High | Context screen precedes first task in every level |
-| FR-04 | Generate a task scenario from a published seed, passing through its canon events and preserving its required facts and keyed option profiles: a keyed response option may be rephrased, but its effectiveness profile may not be altered. A generation that fails the automated check against the seed is not served | Explorer | Must | Medium | Expert review of sampled generations against the seed's fact list; injected violations are rejected by the automated check |
-| FR-05 | Accept structured responses — multiple choice, multiple selection, ordering, matching, true/false, and timed choice — and score them against expert-keyed effectiveness profiles on the scale of −1 to +2 per competency, or an answer key where the item is factual | Explorer | Must | High | Known-input tests produce the keyed scores |
-| FR-06 | Accept free-text responses, including simplified emails and explanations or reviews of code, and score them against the seed's rubric, on the same scale of −1 to +2 per criterion, with a panel of judging models | Explorer | Must | Medium | Agreement with expert judgment on the reference set, measured by quadratic weighted kappa |
-| FR-07 | Return result, response-specific feedback, and forward guidance as distinct elements | Explorer | Must | High | All three present and distinguishable for every assessed response |
-| FR-08 | Record competencies evidenced by each assessed response | Explorer | Must | Medium | Competence records correspond to rubric criteria for sampled sessions |
-| FR-09 | Award competence credit on level completion and unlock levels per BR-02 | Explorer | Must | High | Threshold boundary tests unlock at and only at the specified credit |
-| FR-10 | Offer entry to an adjacent occupation, at the level the credited competencies support, when overlap conditions are met per BR-03 | Explorer | Should | Medium | Offered set matches taxonomy-derived expectation for seeded profiles |
-| FR-11 | Conduct an optional orientation conversation producing candidate occupations | Explorer | Should | Medium | Conversation completes and yields a non-empty ranked candidate set |
-| FR-12 | Collect a five-attribute rating on completion and display aggregates | Explorer | Should | High | Rating accepted only after completion; aggregate updates; suppression below threshold |
-| FR-13 | Present a private record of attempted occupations, competencies, and awards | Explorer | Should | High | Record reflects session history for a seeded account |
-| FR-14 | Introduce probabilistic career and life events affecting subsequent exploration | Explorer | Could | Medium | Events occur within configured probability bounds across repeated runs |
-| FR-15 | Author and edit a seed — required facts, target competencies, canon events, keyed response options, and rubric — recording its authors | Domain expert | Must | High | Seed persists with all components and its author provenance |
-| FR-16 | Present a seed and a sample of its generated scenarios for expert review and record each expert's approval, rejection, or correction; an expert may not review a seed they authored | Domain expert | Must | High | No scenario is served from a seed without a recorded approval |
-| FR-17 | Report disagreements between automated and expert judgment for expert review | Domain expert | Should | Medium | Disagreement list matches recomputation over the reference set |
-| FR-18 | Manage occupation lifecycle: create, track status, publish, retire | Content administrator | Must | High | State transitions follow the defined lifecycle; publication requires completed review |
-| FR-19 | Report catalogue coverage and last-validated dates | Content administrator | Should | High | Report matches stored metadata |
-| FR-20 | Configure generation and assessment model providers, enforcing separation | System administrator | Must | Medium | Configuration rejects identical provider for both roles |
-| FR-21 | Monitor usage, cost, and error rates | System administrator | Should | High | Metrics present and consistent with generated load |
-| FR-22 | Record hint use and on-device response time as assessment evidence; hint use lowers the evidential weight of the response, and an expired timed task is recorded as unanswered | Explorer | Should | Medium | Evidence records carry hint and timing fields; timing excludes network delay; a response given with a hint contributes less credit than the same response without one |
+: User requirements of content administrators.
 
-: Functional requirements with priority, feasibility, and verification method.
+User requirements — system administrator:
 
-### 4.3.2 Non-functional requirements
+| ID | User requirement | Priority |
+|---|---|---|
+| UR-S01 | As a system administrator, I want to configure which models generate and which assess, keep the two separate, and change provider without touching any authored content, so that assessment stays independent and the platform is not locked to one vendor. | Must |
+| UR-S02 | As a system administrator, I want to monitor usage, cost, and failures, re-run failed AI jobs, and keep the cost of each session within budget, so that the service remains operable on grant funding. | Must |
+| UR-S03 | As a system administrator, I want to manage every account, explorers included — grant staff their roles and occupations, view activity logs, and disable or delete accounts — so that each person can do exactly their part and misuse can be stopped. | Must |
+| UR-S04 | As a system administrator, I want to handle data-subject requests and oversee data-protection controls, so that the platform meets its legal obligations to users, including minors. | Must |
+| UR-S05 | As a system administrator, I want to review feedback sent about the app, so that recurring problems are found and fixed. | Should |
 
-| ID | Non-functional requirement | Category | Priority | Feasibility | Verification |
-|---|---|---|---|---|---|
-| NFR-01 | Scenario generation completes within 5 s at the 95th percentile; a progress indicator is shown beyond 2 s | Performance | Must | Medium | Latency distribution measured over at least 200 sampled generations |
-| NFR-02 | Assessment of a free-text response completes within 8 s at the 95th percentile | Performance | Must | Medium | Latency distribution measured over at least 200 sampled assessments |
-| NFR-03 | Session progress survives interruption and resumes without loss | Reliability | Must | High | Forced interruption tests resume at the recorded position |
-| NFR-04 | On model provider failure, no committed progress is lost and the user is notified within 10 s | Reliability | Should | Medium | Fault injection against the provider interface; zero progress-record loss across injected failures |
-| NFR-05 | Personal data is collected only as required, stored encrypted, and deletable on request | Security and privacy | Must | High | Data inventory review; deletion request removes records |
-| NFR-06 | Statistics derived from user performance are published only in aggregate form, with a minimum-population suppression threshold | Security and privacy | Must | High | No individual-level statistic is exposed; aggregates below threshold are withheld |
-| NFR-07 | Machine generation and machine assessment are disclosed to the user | Transparency | Must | High | Disclosure present at the point of use |
-| NFR-08 | Interface language and occupational content support Vietnamese and English | Usability | Should | Medium | Both locales render complete content |
-| NFR-09 | At least 80% of representative readers correctly state a task's objective after reading its scenario | Usability | Should | Medium | Comprehension check with a minimum of 20 representative readers |
-| NFR-10 | Adding an occupation requires no code modification | Maintainability | Must | High | A new occupation is published through the authoring interface alone |
-| NFR-11 | Mean model cost per completed session remains within the configured ceiling, with per-session cost recorded | Cost | Must | Medium | Cost telemetry aggregated per session and compared against the configured ceiling |
-| NFR-12 | Model provider is replaceable without changes to seeds or rubrics | Portability | Should | Medium | Provider substitution test with unchanged content |
-| NFR-13 | Core exploration functions remain usable on mobile browsers and over low-bandwidth connections | Accessibility | Must | Medium | Complete task flow verified on a representative low-end mobile device over a throttled connection |
-| NFR-14 | Automated scoring of free-text responses meets the acceptance criteria against expert judgment: quadratic weighted kappa of at least 0.70, a standardised mean score difference of at most 0.15, and agreement no more than 0.10 below expert–expert agreement | Assessment validity | Must | Medium | Stage B evaluation against the expert reference set (DR-09), reported per role and per difficulty stratum |
-| NFR-15 | Generated scenarios preserve the required facts and keyed option profiles of their seed; proposed target, at least 95% of required facts preserved | Content fidelity | Must | Medium | Automatic check of each required fact against the generated scenario, with experts confirming a sample |
+: User requirements of system administrators.
 
-: Non-functional requirements with priority, feasibility, and verification method.
+### 4.3.2 Functional requirements
+
+| ID | Functional requirement | Group | Business verification | Technical verification |
+|---|---|---|---|---|
+| FR-01 | Register, sign in, and recover the account | Explorer | Acceptance test: a user registers, signs in, resets a forgotten password, and reaches their own progress | Authentication tests; unauthenticated requests for progress are refused; reset links expire after one use |
+| FR-02 | Edit, sign out of, and delete the account | Explorer | Walkthrough of each account action | Account deletion removes personal data as defined in NFR-05 |
+| FR-03 | Run an optional, retakable RIASEC orientation quiz suggesting occupations [41] | Explorer | Pilot users complete the quiz and find the suggested occupations meaningful | Quiz yields a RIASEC profile; the five suggested occupations (project-defined) come from matching it with each occupation's O\*NET interest code, without AI; skipping leads to the Galaxy Map; retaking replaces the earlier result |
+| FR-04 | Write the explorer's portrait from the RIASEC profile with AI, including the social index | Explorer | Pilot users judge the description relevant and not misleading | The AI writes only the description text; the social index is the profile's Social score; the portrait is labelled as self-reported and not validated |
+| FR-05 | Browse occupations on the Galaxy Map and show each profile with its downsides and level descriptions | Explorer | Explorers find an occupation on the map and can state its main downsides and what each level involves | Every published occupation appears on the map with all profile fields and a description for every level; ratings follow FR-19 suppression |
+| FR-06 | Open the entry level of every published occupation to every explorer | Explorer | Acceptance test: a new explorer opens the entry level of any published occupation | Entry level reachable with zero credit and without any adjacency check |
+| FR-07 | Let explorers start an adjacent occupation at a higher level when overlap conditions are met | Explorer | Domain experts judge the offered starting levels as plausible for seeded profiles | Overlap only unlocks higher starting levels and never blocks an entry level; no offer is made where adjacency data is missing |
+| FR-08 | Enrol in levels, choose scenarios, award credit, and unlock the next level | Explorer | Acceptance test: an explorer enrols, chooses scenarios, and progresses through levels as expected | Threshold boundary tests unlock at and only at the specified credit; below the threshold, tasks for the missing competencies are suggested |
+| FR-09 | Show the role, team, and context before each scenario | Explorer | Explorer walkthrough: the context is shown and understood before each scenario | End-to-end test: the context screen precedes every scenario; an unavailable scenario returns the explorer to the map |
+| FR-10 | Support choice, ordering, prioritising, and free-text answers | Explorer | Explorers complete each response form without help | Known-input tests return the expected scores for each closed form |
+| FR-11 | Score free-text answers with anchor points backed by quotations | Explorer | Domain experts judge a sample of scored responses as fair and well-evidenced | Every quotation is found verbatim in the response; scores outside the rubric anchors are rejected; agreement with experts is checked under NFR-14 |
+| FR-12 | Answer follow-up questions generated by AI on free-text answers | Explorer | Explorers judge the follow-up questions relevant to what they wrote | Follow-ups stay within the expert's follow-up goal and the activity's limit; each follow-up passes the output check before display, otherwise the expert's default follow-up is shown; each follow-up answer is assessed |
+| FR-13 | Offer hints when the explorer is stuck | Explorer | Explorers continue after a hint and still find the task meaningful | Using a hint removes the +2 option for that activity; hint use is recorded and shown in the summary; hints do not reveal grading criteria |
+| FR-14 | Return result, feedback, and guidance separately | Explorer | Usability test: explorers identify the result, the feedback, and the guidance separately | All three present and distinguishable for every assessed scenario; AI-written feedback is built from the rubric anchors and passes the output check (on topic, no grading criteria, correct language), otherwise the expert's default feedback is shown; explorers can flag wrong content to the domain expert |
+| FR-15 | Record evidenced expertise and soft-skill competencies, capped per skill per scenario | Explorer | Domain experts spot-check sampled sessions: recorded competencies match the observed behaviour | Records correspond to rubric criteria and are split into expertise and soft skills; random-event answers add bonus soft-skill evidence only; replay test confirms accumulation never exceeds the cap |
+| FR-16 | Offer optional side quests for bonus points | Explorer | Explorers find side quests short and optional | Side quests are authored by the domain expert (FR-22); side-quest points are recorded separately from main-quest competence credit |
+| FR-17 | Show the career path of each occupation level | Explorer | Explorers can describe the role held at each level of an occupation | Career path lists every level of the occupation with its role and description, as written by the domain expert |
+| FR-18 | Show a private record of attempts, expertise and soft-skill points, and awards | Explorer | Explorers confirm their record is accurate and complete | Record reconstructs from session history for a seeded account; both point types shown in the top bar, summary, and profile; not accessible to other users |
+| FR-19 | Collect occupation ratings and feedback | Explorer | Acceptance test: the rating and feedback form appears only after full completion; aggregated results are shown or withheld as expected | Form accepted only once every level is completed; aggregated result updates after each new submission; suppressed below the response-count threshold |
+| FR-20 | Send app feedback and review it | Explorer, System administrator | An explorer sends feedback and a system administrator finds it in the review list | Every submission is stored with time and app version; the system administrator can mark it as handled |
+| FR-21 | Create and update occupation knowledge: levels, salary, generation rules, competencies, adjacency | Domain expert | Experts approve the adaptation for Vietnamese practice | Knowledge can be created only for an occupation the content administrator has created; every rubric criterion resolves to a competency; routes without enough data are hidden, not guessed |
+| FR-22 | Author scenario context, question types, option scores, rubric, hints, random events, and side quests | Domain expert | Walkthrough: an author prepares a scenario for an assigned task end to end, including its hints, random events, and side quests | Edits persist with authorship recorded; access limited to domain experts assigned to that occupation; every free-text activity has a follow-up goal, a default follow-up, and default feedback; random events are dropped into sessions at random within the configured probability, target the scenario's reviewed skills, and never lower the main score |
+| FR-23 | Generate scenario content with AI from the author's context, keeping its generation history | Domain expert | Domain-expert review of sampled generations against the required facts and the occupation's rules | Automated validator passes on every stored generation; a scenario that fails the checks cannot be submitted; each run's context, model, cost, and check result are viewable |
+| FR-24 | Add reference answers with expert scores | Domain expert | Experts confirm the stored criteria reflect what they intended | Item is stored only when validation passes; failing items return the reasons |
+| FR-25 | Review another expert's scenario against the review criteria | Domain expert | Walkthrough: an expert approves, rejects, and requests changes on sample scenarios using the criteria | Reviewer is never the author; every criterion is answered before a decision; unapproved scenarios are never served to explorers; a rejected scenario cannot be reopened |
+| FR-26 | Play-test the draft game before publication | Domain expert | Walkthrough: the author is invited, play-tests a draft game, and reports findings | Author is notified when the draft game is built; play-test sessions are excluded from every explorer aggregate; display findings return the scenario to presentation, content findings return it to the author and to review |
+| FR-27 | Revalidate a published scenario on request | Domain expert | Experts revalidate a sample of published scenarios on request | A domain expert or content administrator can send a published scenario back to the review queue; the scenario stays published and playable meanwhile; the result is recorded; outdated scenarios are flagged for replacement |
+| FR-28 | Report disagreements between AI and expert grading | Domain expert | Experts confirm the disagreement list helps them refine grading criteria | Disagreement list matches recomputation over the reference set |
+| FR-29 | Rate responses and scenarios blind | Domain expert | Experts confirm they cannot see AI scores or other experts' ratings while rating | Blind-rating records exist per expert; inter-expert agreement is computable |
+| FR-30 | Create and manage own occupations | Content administrator | Walkthrough: a content administrator takes their occupation from draft to published to retired | State transitions follow the defined lifecycle; publication requires completed review; actions on other occupations are refused; a domain that still holds occupations cannot be deleted |
+| FR-31 | Import O\*NET and ESCO reference data | Content administrator | A content administrator imports a sample and adjusts it | Imported records resolve against source identifiers; unresolved records are listed; domain experts are notified to derive competencies once the import completes |
+| FR-32 | Define the scenario review criteria | Content administrator | Domain experts confirm the criteria are clear enough to apply | Reviews cannot start until criteria exist for the occupation; each review records an answer per criterion |
+| FR-33 | Open one active scenario per task | Content administrator | Walkthrough: a content administrator opens a scenario and the author is notified | A second active scenario for the same task is refused; retired and rejected scenarios do not count |
+| FR-34 | Assign a domain expert as reviewer, with a deadline, and reassign overdue reviews | Content administrator | Walkthrough: a content administrator assigns a domain expert to review a scenario and reassigns an overdue review | Assigning the author is refused; the domain expert is notified; the deadline appears in the review queue; the reviewer is reminded before the deadline; once it passes, the content administrator is notified and can reassign the review |
+| FR-35 | Design the scenario presentation with AI | Content administrator | Walkthrough: a content administrator gamifies an approved scenario | Question types outside the allowed set are refused; content text is read-only in this step |
+| FR-36 | Maintain a bias-checked asset library; AI generates missing assets | Content administrator | Reviewers judge sampled assets, including AI-generated ones, free of stereotyping | Every asset carries its source and bias-check result; an AI-generated asset enters the library only after its bias check passes |
+| FR-37 | Publish a scenario after review and play-test | Content administrator | Walkthrough: a content administrator publishes a ready scenario with an effective date and release note | Publish is disabled unless the status is ready |
+| FR-38 | Retire or delete a published scenario | Content administrator | Walkthrough: a content administrator replaces an outdated scenario | Played scenarios are retired and keep their history; unplayed scenarios are deleted permanently |
+| FR-39 | Monitor own occupations: statistics and coverage | Content administrator | A content administrator spots a weak or outdated scenario from the dashboard | Figures match stored records; ratings follow the suppression threshold; coverage matches stored metadata |
+| FR-40 | Assign and reassign one content administrator and domain experts to each occupation | System administrator | Walkthrough: a system administrator assigns staff to an occupation and moves it to another content administrator | Every occupation carries exactly one content administrator and at least one domain expert once assigned; reassigning an occupation moves its pending work to the new content administrator |
+| FR-41 | Manage all user accounts, roles, and role-based access | System administrator | Walkthrough: a system administrator views the activity log of an explorer and a staff member, then disables and deletes an account | Staff sign in on the shared login screen and see only the work for their assigned occupations; wrong-role access to admin screens is refused; disabled accounts cannot sign in; deleted accounts follow NFR-05; staff-authored records are kept |
+| FR-42 | Configure separate generation and assessment models | System administrator | A system administrator changes a provider through the configuration screen | Configuration rejects an identical provider for both roles |
+| FR-43 | Monitor usage, cost, and errors, and re-run failed AI jobs | System administrator | A system administrator uses the monitoring screen to spot cost or error spikes | Metrics consistent with generated load; alerts raised when a cost threshold is crossed; failed generation and grading runs listed with cause and can be re-run |
+| FR-44 | Handle data requests and data-protection settings | System administrator | Data-protection walkthrough of a deletion request | Requests are completed and logged; settings take effect on the next computation; a transfer impact assessment is documented and kept current for each AI provider |
+
+: Functional requirements with business and technical verification.
+
+### 4.3.3 Non-functional requirements
+
+| ID | Non-functional requirement | Category | Business verification | Technical verification |
+|---|---|---|---|---|
+| NFR-01 | Follow-up generation within 5 s (95th percentile); progress shown after 2 s | Performance | Usability session: explorers find the wait for follow-up questions acceptable and see progress feedback | Latency distribution measured over at least 200 sampled follow-ups |
+| NFR-02 | Free-text assessment within 8 s (95th percentile) | Performance | Usability session: explorers find the wait for feedback acceptable | Latency distribution measured over at least 200 sampled assessments |
+| NFR-03 | Progress survives interruption | Reliability | Acceptance test: an explorer closes the browser mid-scenario, returns, and continues | Forced-interruption tests resume at the recorded position |
+| NFR-04 | No progress lost on provider failure; user notified within 10 s | Reliability | Explorers receive a clear message and find their progress intact | Fault injection against the provider interface; zero progress-record loss across injected failures |
+| NFR-05 | Minimal, encrypted, deletable personal data; only de-identified answers sent to AI providers | Security and privacy | Data-protection review against applicable regulation; walkthrough of a deletion request | Data inventory review; encryption check; deletion request removes records; AI requests contain no name, e-mail, or account ID; providers are configured with no training on submitted data and no retention |
+| NFR-06 | Suppress aggregates below a minimum population | Security and privacy | Privacy review confirms small-population figures are withheld and the reason is stated | Aggregates below threshold are withheld |
+| NFR-07 | Disclose AI generation and AI assessment | Transparency | Pilot users can state that scenarios and assessments are machine-produced | Disclosure present at the point of use in every relevant screen |
+| NFR-08 | Vietnamese and English support | Usability | Native speakers review both locales for completeness and accuracy | Both locales render complete content with no missing text |
+| NFR-09 | At least 80% of readers state the task objective correctly | Usability | Comprehension check with a minimum of 20 representative readers | Validator confirms every scenario states an explicit objective in its context |
+| NFR-10 | New occupations need no code change | Maintainability | A content administrator publishes a new occupation through the authoring interface alone | No code change or redeployment is recorded for the new occupation |
+| NFR-11 | Session cost stays within the configured ceiling | Cost | System administrator reviews cost against the agreed budget | Cost telemetry aggregated per session and compared against the configured ceiling |
+| NFR-12 | Model provider replaceable without content changes | Portability | Domain experts confirm scenario quality is unchanged after a provider switch | Provider substitution test with unchanged content; regression suite passes |
+| NFR-13 | Works in a mobile browser on a slow connection | Compatibility | Explorers complete a scenario on their own phone | Test on reference devices and a throttled network profile agreed for testing |
+| NFR-14 | AI grading validated against expert judgment | Fairness | Domain experts accept the agreement report for their occupation | Cohen's kappa per difficulty stratum recomputed whenever the assessment model changes |
+| NFR-15 | Published scenarios match approved content; AI content during play stays within expert-set limits | Accuracy | Reviewers confirm sampled published scenarios and sampled follow-ups and feedback stay within the approved content | Automated comparison between approved and published content shows no difference; every follow-up and feedback shown passed the output check or is an expert default |
+| NFR-16 | Scenario status changes logged; published content immutable | Auditability | A content administrator traces who approved and published a scenario | Lifecycle log complete for every scenario; write attempts on published content are refused |
+| NFR-17 | Passwords hashed, all traffic encrypted, idle sessions expire, AI prompts protected against injection | Security and privacy | Security review of sign-in, session handling, and AI prompts | Stored passwords are salted hashes; plain-HTTP requests are redirected or refused; sessions end after the configured idle time; explorer answers reach the AI as separated data whose instructions are ignored; an injection test set in the regression suite never changes a score |
+| NFR-18 | Explorer service available within the agreed operating target | Availability | A system administrator reviews monthly availability against the agreed target | Uptime monitoring records availability; planned maintenance is announced in advance |
+| NFR-19 | Explorer screens meet WCAG 2.1 level AA | Accessibility | Users with assistive technology complete a scenario | Automated and manual accessibility audit against WCAG 2.1 AA |
+
+: Non-functional requirements with business and technical verification.
 
 Design constraints are recorded separately from business rules, since they arise from implementation choices rather than from the domain. Each derives from at least one non-functional requirement: the requirement states what must be achieved, and the constraint fixes or prohibits a design choice so that it can be.
 
@@ -547,28 +617,37 @@ Design constraints are recorded separately from business rules, since they arise
 
 : Design constraints.
 
-### 4.3.3 Data requirements
+### 4.3.4 Data requirements
 
-| ID | Data requirement | Source | Priority | Feasibility | Verification |
-|---|---|---|---|---|---|
-| DR-01 | Occupational reference data: occupations, constituent tasks, work activities, and skills | O\*NET and ESCO, adapted for Vietnamese practice by domain experts | Must | Medium | Imported records resolve against source identifiers |
-| DR-02 | Competency taxonomy with definitions and observable indicators, distinguishing soft and technical competencies | Derived from DR-01 under expert adaptation | Must | Medium | Every rubric criterion resolves to a taxonomy entry |
-| DR-03 | Occupational adjacency relations with overlap measures | Computed from DR-01/DR-02 | Should | Medium | Computed adjacency reviewed by experts for plausibility |
-| DR-04 | Scenario seeds: required facts, target competencies, narrative skeleton with its canon events, keyed response options, rubric, and expert provenance | Domain experts | Must | High | Seed schema validation; expert provenance recorded |
-| DR-05 | Generated scenario instances with provenance linking to seed and model version | System | Must | High | Every served scenario carries resolvable provenance |
-| DR-06 | User profile and progress: competence credit, unlocked levels, occupation history | System | Must | High | Progress reconstructs from stored records |
-| DR-07 | Assessment records: response, score, competencies evidenced, feedback, guidance, and attempt type (explorer, review, or test) | System | Must | High | Records complete for every assessed response; review and test attempts are excluded from explorer metrics and aggregate ratings |
-| DR-08 | Occupation ratings on five attributes, with completion precondition enforced | Explorers | Should | High | Ratings exist only for completed occupations |
-| DR-09 | Evaluation reference set: a synthetic criterion-perturbed benchmark (Stage A), and real responses and generated scenarios with independent expert ratings, stratified by difficulty (Stage B) | Project team (Stage A); domain experts (Stage B) | Must | Medium | Stage A levels sample-checked by the advisor; Stage B inter-expert agreement recorded |
-| DR-10 | Operational telemetry: latency, cost, error rates, model versions | System | Should | High | Telemetry present and queryable |
+| ID | Data requirement | Source | Business verification | Technical verification |
+|---|---|---|---|---|
+| DR-01 | Occupational reference data (occupations, tasks, skills) | O\*NET and ESCO, imported by the content administrator and adapted for Vietnamese practice by domain experts | Domain experts review the adaptation for Vietnamese practice | Imported records resolve against source identifiers |
+| DR-02 | Competency taxonomy with observable indicators | Derived from DR-01 under expert adaptation | Domain experts review definitions and indicators | Every rubric criterion resolves to a taxonomy entry |
+| DR-03 | Occupational adjacency with overlap measures | Computed from DR-01/DR-02 | Domain experts review computed adjacency for plausibility | Overlap values are reproducible from DR-01/DR-02 |
+| DR-04 | Scenario content: context, activities, option scores, rubric, hints, random events, side quests | Author domain expert with AI assistance | Reviewer sign-off recorded before presentation | Context schema validation; automatic checks pass before submission |
+| DR-05 | Generated scenarios with provenance | System | A content administrator traces any served scenario back to its context and model | Every served scenario carries resolvable provenance |
+| DR-06 | User progress: enrolled levels, competence credit capped per scenario, side-quest points, play history, awards | System | Explorers confirm their progress and awards are shown correctly | Progress reconstructs from stored records; replaying a scenario never adds credit beyond the cap |
+| DR-07 | Assessment records, including hint use and explorer flags | System, with flags from explorers | Domain experts audit a sample of assessment records and review flagged content | Records complete for every assessed response; every flag reaches a domain expert of that occupation |
+| DR-08 | Five-attribute occupation ratings (project-defined) | Explorers | Acceptance test of the rating flow after full completion | Ratings exist only for fully completed occupations |
+| DR-09 | Expert reference set stratified by difficulty | Domain experts | Inter-expert agreement recorded for the reference set | Set covers the defined difficulty strata; every item passed validation |
+| DR-10 | Operational telemetry | System | A system administrator answers cost and error questions from the telemetry | Telemetry present and queryable |
+| DR-11 | Play-test session flag | System | Staff confirm dashboards are unchanged after play-testing | Play-test sessions are absent from explorer-facing aggregates |
+| DR-12 | Quiz answers, RIASEC profile with social index, and AI portrait | Explorers and AI model | Pilot users judge the description relevant and not misleading | Profile recalculates from stored answers; retaking the quiz replaces the profile and portrait |
+| DR-13 | Scenario lifecycle record, including review decisions, comments, and revalidation results | System, from staff actions | A content administrator reconstructs a scenario's history | Every transition in SM-01 is logged; every review and revalidation result is stored with actor and time; at most one active scenario per task |
+| DR-14 | Presentation data and asset library | Content administrator with AI | Reviewers check sampled assets for stereotyping | Every presented asset resolves to a library entry with a bias-check result |
+| DR-15 | Occupation catalogue, including level descriptions and future roles | Content administrator and domain experts | A content administrator reviews the catalogue for completeness | Every published occupation has all required fields and a description for every level |
+| DR-16 | User accounts, roles, assignments, and activity log | System administrator; activity log from the system | A system administrator confirms each occupation's staff and reviews an account's activity | Exactly one content administrator and at least one domain expert per occupation; every account action is logged |
+| DR-17 | Platform settings | System administrator | A system administrator reviews settings against policy | Every change is versioned with actor and time |
+| DR-18 | App feedback records | Explorers | A system administrator reviews recent feedback | Each record holds text, time, app version, and handling status |
+| DR-19 | Scenario review criteria | Content administrator | Domain experts confirm the criteria match how they review | Criteria are versioned; each review links to the version it used |
 
-: Data requirements with source, priority, feasibility, and verification method.
+: Data requirements with source, business verification, and technical verification.
 
-Personal data within DR-06, DR-07, and DR-08 is subject to the policies in Section 4.1.4. DR-09 contains no personal data and is retained as a research asset.
+Personal data within DR-06, DR-07, DR-08, DR-11, DR-12, DR-16, and DR-18 is subject to the policies in Section 4.1.4. DR-09 contains no personal data and is retained as a research asset.
 
 ## 4.4 Summary
 
-This chapter specified the proposed system against the domain established in Chapters 1 to 3. The business context identified three operating processes — exploration, content lifecycle, and evaluation — and twelve business rules, several of which derive from the evidence reviewed in Chapter 2 rather than from product preference: accessible entry levels, competence-gated progression, taxonomy-derived adjacency, mandatory expert validation, and formative-only assessment. It set out a public-benefit business model in which all content is free to users, operation is funded through grants, acknowledged sponsorship, donations, and an intended partnership with the Ministry of Education and Training, and sponsors are excluded from content so that the candour of occupational representation is protected, together with a five-stage roadmap in which each stage is gated by evidence, and a staged organisation of five operating units under a steering committee, with content governed by occupational domain. The system description identified four user groups — explorers, domain experts, content administrators, and system administrators — two research problems in AI applied to education — grounded generation and the validity of stealth assessment, each stated with the comparison that makes its answer knowledge — and the principal difficulties, the most consequential being generation fidelity, assessment validity, expert availability, cost sustainability without revenue, and the uneven alignment between screen-based tasks and live work. The requirements analysis produced twenty-two functional, fifteen non-functional, and ten data requirements, each prioritised, assessed for feasibility, and paired with a verification method, together with four design constraints, each derived from a non-functional requirement and recorded separately from the business rules. Chapter 5 models the processes and interactions these requirements imply.
+This chapter specified the proposed system against the domain established in Chapters 1 to 3. The business context identified three operating processes — exploration, content lifecycle, and evaluation — and twelve business rules, several of which derive from the evidence reviewed in Chapter 2 rather than from product preference: accessible entry levels, competence-gated progression, taxonomy-derived adjacency, mandatory expert validation, and formative-only assessment. It set out a public-benefit business model in which all content is free to users, operation is funded through grants, acknowledged sponsorship, donations, and an intended partnership with the Ministry of Education and Training, and sponsors are excluded from content so that the candour of occupational representation is protected, together with a five-stage roadmap in which each stage is gated by evidence, and a staged organisation of five operating units under a steering committee, with content governed by occupational domain. The system description identified four user groups — explorers, domain experts, content administrators, and system administrators — two research problems in AI applied to education — grounded generation and the validity of stealth assessment, each stated with the comparison that makes its answer knowledge — and the principal difficulties, the most consequential being generation fidelity, assessment validity, expert availability, cost sustainability without revenue, and the uneven alignment between screen-based tasks and live work. The requirements analysis produced forty-three prioritised user requirements, from which forty-four functional, nineteen non-functional, and nineteen data requirements were derived, each paired with a business and a technical verification method, together with four design constraints, each derived from a non-functional requirement and recorded separately from the business rules. Chapter 5 models the processes and interactions these requirements imply.
 
 ---
 
@@ -641,145 +720,160 @@ Evaluation process. This process is internal to the project and supports RP-1 an
 
 ### 5.1.2 Use case modelling
 
-Four actors correspond to the user groups in Section 4.2.1. Two external systems participate: the model provider, which performs generation and assessment, and the occupational data source, which supplies reference data.
+Four actors correspond to the user groups in Section 4.2.1. Two external systems also participate, though they are not drawn in the diagram: the model provider, which performs generation and assessment, and the occupational data source, which supplies reference data. Use cases in the diagram are named rather than numbered, and the descriptions and the traceability matrix below refer to them by name. A use case joined to another by an include relation is always performed as part of it; one joined by an extend relation is performed only under the condition stated in the flow of the use case it extends.
 
-```mermaid
-flowchart LR
-    EX([Explorer]); DE([Domain expert]); CA([Content administrator]); SA([System administrator])
-    MP[(Model provider)]; OD[(Occupational data source)]
-
-    EX --- U1(UC-01 Explore occupation catalogue)
-    EX --- U2(UC-02 Complete orientation conversation)
-    EX --- U3(UC-03 Perform a task scenario)
-    EX --- U4(UC-04 Progress to a further level or occupation)
-    EX --- U5(UC-05 Rate a completed occupation)
-    EX --- U6(UC-06 Review personal record)
-
-    DE --- U7(UC-07 Author scenario seed)
-    DE --- U8(UC-08 Review generated scenarios)
-    DE --- U9(UC-09 Review assessment disagreements)
-
-    CA --- U10(UC-10 Manage occupation lifecycle)
-    CA --- U11(UC-11 Monitor coverage and currency)
-
-    SA --- U12(UC-12 Configure generation and assessment models)
-    SA --- U13(UC-13 Monitor operation and cost)
-
-    U3 --- MP
-    U8 --- MP
-    U4 --- OD
-    U7 --- OD
-```
-
-*Use case diagram for the proposed system.*
+![Use case diagram for the proposed system.](latex/figures/jobquest_ucdiagram-1.png)
 
 
-Tabular descriptions of the key use cases follow. UC-03 and UC-08 are the use cases on which the project's research problems depend.
+Tabular descriptions of the key use cases follow. Author scenario and Review scenario are the use cases on which RP-1 depends, and Perform scenario, through Assess answer, is the one on which RP-2 depends.
 
-UC-03 — Perform a task scenario
+Perform scenario
 
 | Field | Content |
 |---|---|
 | Actor | Explorer (primary); model provider (supporting) |
 | Goal | Attempt a task representative of the occupation and receive an assessment of it |
-| Precondition | The user is authenticated and the level is accessible under BR-01 or BR-02 |
-| Trigger | The user selects a level and proceeds past the context screen |
-| Main flow | 1. System retrieves the published seed for the task. 2. System generates a scenario instance that passes through the seed's canon events and preserves its required facts, developing the narrative between those events from the user's responses. 3. System presents the scenario and the response affordance. 4. User submits a response. 5. System scores the response against the expert effectiveness key, the answer key, or the rubric, according to response format, recording hint use and response time. 6. System records the competencies evidenced. 7. System returns result, response-specific feedback, and forward guidance. 8. System advances to the next task or concludes the level. |
-| Alternative flow | 4a. User abandons the task: progress to that point is recorded and the session may be resumed (NFR-03). |
-| Exception flow | 2a. Generation fails, or fails the automated check against the seed: system retries, then serves an instance from the expert-approved sample rather than an unchecked one. 5a. Assessment fails: response is stored and queued; user is informed that assessment is pending. |
-| Postcondition | An assessment record exists (DR-07) and competence records are updated (DR-06) |
-| Business rules | BR-07 representation includes unfavourable aspects; design constraint DC-01 requires the assessor to differ from the generator |
-| Requirements | FR-03, FR-04, FR-05, FR-06, FR-07, FR-08, FR-22; NFR-01, NFR-02, NFR-07, NFR-14, NFR-15 |
+| Precondition | The explorer is signed in, is enrolled in the level, and has chosen a published scenario in it (Choose scenario) |
+| Trigger | The explorer starts the chosen scenario |
+| Main flow | 1. System shows the role, team, and working context of the scenario (View scenario context). 2. System presents the next activity in its question type: choice, ordering, prioritising, or free text. 3. Explorer submits an answer. 4. System assesses the answer (Assess answer): a closed answer against the option scores set by the domain expert, a free-text answer against the rubric anchors, each score backed by quotations found verbatim in the answer. 5. System records the expertise and soft-skill competencies evidenced, capped per skill per scenario. 6. System returns the result, the feedback, and the guidance separately. 7. Steps 2 to 6 repeat for each activity; the scenario ends with a summary of expertise and soft-skill points and of hint use. |
+| Alternative flow | 3a. Explorer is stuck and asks for a hint (Get hint): the hint is shown, the +2 option is removed for that activity, and hint use is recorded. 4a. A free-text answer needs probing: system asks a follow-up question within the expert's follow-up goal and the activity's limit (Answer follow-up question), and assesses the follow-up answer as well. 5a. A random event is dropped into the session within the configured probability: its answer adds bonus soft-skill evidence only and never lowers the main score. 6a. Explorer judges the content wrong (Flag wrong content): the flag is recorded and reaches a domain expert of the occupation. 7a. Credit reaches the threshold of the next level (Unlock next level). 7b. Explorer has completed every level of the occupation (Rate occupation). 7c. Explorer leaves mid-scenario: progress is kept and resumes at the recorded position (NFR-03). |
+| Exception flow | 1a. Scenario is unavailable: explorer is returned to the Galaxy Map. 4b. An AI-written follow-up or feedback fails the output check: the expert's default follow-up or default feedback is shown instead. 4c. Model provider fails: the answer and progress are kept, the explorer is told within 10 s, and assessment completes when the provider recovers (NFR-04). |
+| Postcondition | An assessment record exists, with hint use and any flag (DR-07), and progress is updated within the per-scenario cap (DR-06) |
+| Business rules | BR-06 assessment is formative; BR-07 representation includes unfavourable aspects; BR-11 replay cannot exceed the cap; design constraint DC-01 requires the assessor to differ from the generator |
+| Requirements | FR-09, FR-10, FR-11, FR-12, FR-13, FR-14, FR-15; NFR-01, NFR-02, NFR-03, NFR-04, NFR-07, NFR-14, NFR-15, NFR-17 |
 
-: Use case UC-03, Perform a task scenario.
+: Use case Perform scenario.
 
-UC-04 — Progress to a further level or occupation
+Unlock next level
 
 | Field | Content |
 |---|---|
 | Actor | Explorer (primary); occupational data source (supporting) |
 | Goal | Convert demonstrated competence into access to further exploration |
-| Precondition | A level has been completed and competence credit awarded |
-| Trigger | Level completion |
-| Main flow | 1. System computes accumulated competence against the next level's threshold. 2. If met, the next level is unlocked. 3. System computes overlap between demonstrated competencies and the entry requirements of adjacent occupations. 4. Occupations whose overlap conditions are satisfied are offered, each at the level the credited competencies support. 5. User selects a destination or returns to the catalogue. |
+| Precondition | The explorer has completed a scenario in an enrolled level and competence credit has been awarded |
+| Trigger | A scenario ends with credit awarded (extends Perform scenario) |
+| Main flow | 1. System computes accumulated competence credit against the next level's threshold. 2. If it is met, the next level is unlocked and the explorer is told. 3. System recomputes the overlap between demonstrated competencies and the levels of adjacent occupations. 4. Where overlap conditions are met, the adjacent occupation is offered at the higher starting level the competencies support (Enter adjacent occupation). 5. Explorer enrols in the next level, chooses another scenario, or returns to the Galaxy Map. |
 | Alternative flow | 2a. Threshold not met: system indicates the competencies outstanding and suggests tasks that elicit them. |
-| Exception flow | 3a. Adjacency data unavailable: within-occupation progression is offered and the cross-occupation offer is suppressed rather than guessed. |
-| Postcondition | Accessible levels and offered occupations reflect demonstrated competence |
-| Business rules | BR-02, BR-03 |
-| Requirements | FR-09, FR-10; DR-02, DR-03 |
+| Exception flow | 3a. Adjacency data is missing: no adjacent offer is made rather than one guessed; the entry level of every occupation stays open (BR-01). |
+| Postcondition | Accessible levels and offered starting levels reflect demonstrated competence |
+| Business rules | BR-01, BR-02, BR-03, BR-11 |
+| Requirements | FR-06, FR-07, FR-08; DR-02, DR-03, DR-06 |
 
-: Use case UC-04, Progress to a further level or occupation.
+: Use case Unlock next level.
 
-UC-08 — Review generated scenarios
+Author scenario
 
 | Field | Content |
 |---|---|
 | Actor | Domain expert (primary); model provider (supporting) |
-| Goal | Ensure only scenarios that experts judge occupationally accurate and competency-eliciting are published |
-| Precondition | A seed exists, a sample of scenarios has been generated from it, and the expert is not one of its authors |
-| Trigger | Generation completes, or annual revalidation falls due |
-| Main flow | 1. System presents the seed with a sample of scenarios generated from it, showing each scenario against the seed's required facts and target competencies. 2. The expert judges factual accuracy and whether each scenario necessarily elicits its target competencies. 3. The expert records an approval, rejection, or correction against the seed and each sampled scenario. 4. An approved seed becomes eligible for publication by the content administrator. |
-| Alternative flow | 3a. The expert rejects a scenario: it is withheld and regeneration is requested. 3b. The expert corrects the seed: its author revises it, and prior generations from that seed are invalidated and regenerated. |
-| Exception flow | 2a. The expert judges a scenario passable without the target competency: the seed is returned for revision, since the evidence model would otherwise be invalid (Section 2.2). 2b. The expert authored the seed: the system does not offer it to that expert for review. |
-| Postcondition | Only seeds with a recorded expert approval are servable, and only through scenarios that pass the automated check against them |
-| Business rules | BR-05, BR-07 |
-| Requirements | FR-15, FR-16; DR-04, DR-05 |
+| Goal | Record expert knowledge as the scenario content from which tasks are presented and answers judged |
+| Precondition | The content administrator has opened a scenario for the task (FR-33); the expert is assigned to the occupation; its knowledge exists (FR-21) |
+| Trigger | The expert is notified that a scenario has been opened for the task |
+| Main flow | 1. The expert writes the scenario context: role, team, situation, and objective. 2. System generates the scenario content with AI from the context (Generate scenario content), keeping the run's context, model, cost, and check result. 3. The expert edits the content and sets the allowed question types, the score of each option, the rubric, each criterion resolving to a competency, the hints, the random events, and the side quests. 4. For each free-text activity, the expert sets a follow-up goal, a default follow-up, and default feedback. 5. The expert adds reference answers with expert scores (Build reference set). 6. System runs the automatic checks and records the authorship. 7. The expert submits the scenario for review. |
+| Alternative flow | 2a. The expert regenerates the content or writes it without AI; every run is kept in the generation history. |
+| Exception flow | 5a. A reference answer fails validation: it is not stored and the reasons are returned. 6a. A check fails: the scenario cannot be submitted, and the failing items are identified. |
+| Postcondition | A checked scenario with author provenance and generation history awaits review |
+| Business rules | BR-05 |
+| Requirements | FR-22, FR-23, FR-24; NFR-10, NFR-16; DR-04, DR-05, DR-09 |
 
-: Use case UC-08, Review generated scenarios.
+: Use case Author scenario.
 
-UC-07 — Author a scenario seed
+Review scenario
 
 | Field | Content |
 |---|---|
-| Actor | Domain expert (primary); occupational data source (supporting) |
-| Goal | Record expert knowledge as the material from which accurate scenarios are generated and responses judged |
-| Precondition | The content administrator has created the occupation, the expert is assigned to it, and reference data are available |
-| Trigger | The expert begins authoring a scenario for the occupation |
-| Main flow | 1. The expert selects the occupation and its tasks and skills from reference data. 2. The expert enters the required facts. 3. The expert enters target competencies, each resolving to the competency taxonomy. 4. The expert enters the narrative skeleton with its canon events, and the response options drawn from critical incidents, each with its effectiveness profile. 5. The expert enters the rubric, each criterion attributed to a target competency. 6. System records the authoring expert. 7. System validates the seed against its schema and rejects criteria or options not attributable to a competency. |
-| Exception flow | 7a. Unattributable criteria or options: the seed is rejected with the offending items identified. |
-| Postcondition | A schema-valid seed with author provenance exists and is eligible for generation and review |
-| Business rules | BR-05 |
-| Requirements | FR-15; DR-01, DR-02, DR-04 |
+| Actor | Domain expert (primary) |
+| Goal | Ensure only scenarios that experts judge occupationally accurate and competency-eliciting reach explorers |
+| Precondition | The scenario has been submitted; review criteria exist for the occupation (FR-32); the content administrator has assigned this expert, who is not the author, with a deadline (FR-34) |
+| Trigger | The expert is notified of the assignment, or a published scenario is sent back for revalidation |
+| Main flow | 1. System shows the scenario with its context, activities, option scores, rubric, and generation history, next to the review criteria. 2. The expert answers every criterion (Apply review criteria). 3. The expert approves the scenario, requests changes, or rejects it, with comments. 4. System records the decision with the reviewer, the time, and the criteria version used; an approved scenario passes to the content administrator for presentation. |
+| Alternative flow | 1a. The scenario is under revalidation (Revalidate scenario): it stays published and playable meanwhile, the result is recorded, and an outdated scenario is flagged for replacement. 3a. Changes requested: the scenario returns to its author and re-enters review once revised. 3b. Rejected: the scenario is closed and cannot be reopened; the content administrator may open a new scenario for the task. |
+| Exception flow | 2a. A criterion is left unanswered: no decision can be submitted. 1b. The deadline passes: the content administrator is notified and may reassign the review (Reassign overdue review). |
+| Postcondition | Every scenario reaching presentation carries a recorded approval against the review criteria |
+| Business rules | BR-05, BR-07 |
+| Requirements | FR-25, FR-27, FR-34; NFR-15, NFR-16; DR-13, DR-19 |
 
-: Use case UC-07, Author a scenario seed.
+: Use case Review scenario.
 
-UC-05 — Rate a completed occupation
+Rate occupation
 
 | Field | Content |
 |---|---|
 | Actor | Explorer |
 | Goal | Record an impression of the occupation and contribute to its aggregate profile |
-| Precondition | The user has completed the occupation (BR-04) |
-| Trigger | Occupation completion |
-| Main flow | 1. System presents the five rating attributes. 2. User submits ratings. 3. System records the rating and recomputes the aggregate profile. 4. System presents the aggregate alongside the user's own ratings. |
-| Alternative flow | 2a. User declines to rate: completion is recorded without a rating. |
-| Exception flow | 3a. Population below the suppression threshold: aggregate is withheld and the condition is stated rather than displaying an unfounded figure. |
+| Precondition | The explorer has completed every level of the occupation (BR-04) |
+| Trigger | Completion of the occupation's last level (extends Perform scenario) |
+| Main flow | 1. System presents the five rating attributes and a feedback field. 2. Explorer submits ratings and feedback. 3. System records them and recomputes the aggregate profile. 4. System presents the aggregate alongside the explorer's own ratings, and on the occupation profile. |
+| Alternative flow | 2a. Explorer declines to rate: completion is recorded without a rating. |
+| Exception flow | 3a. Population below the suppression threshold: the aggregate is withheld and the condition is stated rather than displaying an unfounded figure. |
 | Postcondition | Rating recorded; aggregate updated or suppressed |
 | Business rules | BR-04 |
-| Requirements | FR-12; NFR-06; DR-08 |
+| Requirements | FR-19; NFR-06; DR-08 |
 
-: Use case UC-05, Rate a completed occupation.
+: Use case Rate occupation.
 
-The remaining use cases — catalogue exploration, orientation conversation, personal record review, disagreement review, lifecycle management, coverage monitoring, model configuration, and operational monitoring — are specified in the same form in Appendix 1.
+The remaining use cases in the diagram are specified in the same form in Appendix 1.
 
-The traceability matrix below traces every requirement to the use case realising it, so that no requirement is left unrealised and no use case introduces behaviour the requirements do not specify.
+The traceability matrix below traces every requirement to the use case realising it, so that no requirement is left unrealised and no use case introduces behaviour the requirements do not specify. Use cases are listed by actor, in the order explorer, domain expert, content administrator, and system administrator, each followed by the use cases it includes or is extended by.
 
 | Use case | Functional | Non-functional | Data |
 |---|---|---|---|
-| UC-01 Explore catalogue | FR-02 | NFR-08, NFR-09, NFR-13 | DR-01 |
-| UC-02 Orientation conversation | FR-11 | NFR-01, NFR-07 | DR-01, DR-06 |
-| UC-03 Perform task scenario | FR-03, FR-04, FR-05, FR-06, FR-07, FR-08, FR-22 | NFR-01, NFR-02, NFR-03, NFR-04, NFR-07, NFR-13, NFR-14, NFR-15 | DR-04, DR-05, DR-07 |
-| UC-04 Progress further | FR-09, FR-10, FR-14 | — | DR-02, DR-03, DR-06 |
-| UC-05 Rate occupation | FR-12 | NFR-06 | DR-08 |
-| UC-06 Review personal record | FR-13 | NFR-05 | DR-06, DR-07 |
-| UC-07 Author scenario seed | FR-15 | NFR-10 | DR-01, DR-02, DR-04 |
-| UC-08 Review generated scenarios | FR-16 | NFR-10, NFR-15 | DR-04, DR-05 |
-| UC-09 Review assessment disagreements | FR-17 | NFR-14 | DR-07, DR-09 |
-| UC-10 Manage lifecycle | FR-18 | NFR-10 | DR-04 |
-| UC-11 Monitor coverage | FR-19 | — | DR-04 |
-| UC-12 Configure models | FR-20 | NFR-11, NFR-12 | DR-05 |
-| UC-13 Monitor operation | FR-21 | NFR-11 | DR-10 |
-| Account management | FR-01 | NFR-05 | DR-06 |
+| Register account | FR-01 | NFR-05, NFR-17 | DR-16 |
+| Manage account | FR-02 | NFR-05 | DR-16 |
+| Complete orientation quiz | FR-03 | NFR-08 | DR-01, DR-12 |
+| Build user portrait | FR-04 | NFR-05, NFR-07 | DR-12 |
+| View career path | FR-17 | — | DR-15 |
+| View personal record | FR-18 | NFR-05 | DR-06, DR-07 |
+| Send app feedback | FR-20 | — | DR-18 |
+| Explore occupations | FR-05, FR-06 | NFR-08, NFR-13, NFR-18, NFR-19 | DR-01, DR-15 |
+| View occupation profile | FR-05 | NFR-06 | DR-08, DR-15 |
+| Enter adjacent occupation | FR-07 | — | DR-02, DR-03, DR-06 |
+| Choose scenario | FR-08 | — | DR-06 |
+| View level description | FR-05 | — | DR-15 |
+| Complete side quest | FR-16 | — | DR-04, DR-06 |
+| Perform scenario | FR-10, FR-15 | NFR-03, NFR-04, NFR-07, NFR-11, NFR-13, NFR-19 | DR-04, DR-05, DR-06 |
+| View scenario context | FR-09 | NFR-09 | DR-04 |
+| Assess answer | FR-11, FR-14, FR-15 | NFR-02, NFR-05, NFR-07, NFR-14, NFR-15, NFR-17 | DR-07 |
+| Get hint | FR-13 | — | DR-07 |
+| Answer follow-up question | FR-12 | NFR-01, NFR-15, NFR-17 | DR-07 |
+| Flag wrong content | FR-14 | — | DR-07 |
+| Unlock next level | FR-08 | — | DR-06 |
+| Rate occupation | FR-19 | NFR-06 | DR-08 |
+| Author scenario | FR-22 | NFR-10, NFR-16 | DR-04 |
+| Generate scenario content | FR-23 | NFR-11, NFR-12 | DR-05, DR-10 |
+| Build reference set | FR-24 | — | DR-09 |
+| Review scenario | FR-25 | NFR-15, NFR-16 | DR-13 |
+| Apply review criteria | FR-25 | — | DR-19 |
+| Revalidate scenario | FR-27 | NFR-16 | DR-13 |
+| Review flagged content | FR-14 | — | DR-07 |
+| Play-test draft game | FR-26 | — | DR-11 |
+| Check grading reliability | FR-28 | NFR-14 | DR-07, DR-09 |
+| Submit blind ratings | FR-29 | — | DR-09 |
+| Create occupation knowledge | FR-21 | NFR-10 | DR-01, DR-02, DR-03, DR-15 |
+| Update occupation knowledge | FR-21 | — | DR-02, DR-03, DR-15 |
+| Manage occupation | FR-30 | NFR-10, NFR-16 | DR-13, DR-15 |
+| Import reference data | FR-31 | — | DR-01 |
+| Assign domain expert | FR-34 | — | DR-13, DR-16 |
+| Reassign overdue review | FR-34 | — | DR-13 |
+| Design scenario presentation | FR-35 | NFR-15 | DR-14 |
+| Generate missing asset | FR-36 | — | DR-14 |
+| Define review criteria | FR-32 | — | DR-19 |
+| Open task scenario | FR-33 | — | DR-13 |
+| Publish scenario | FR-37 | NFR-15, NFR-16 | DR-13 |
+| Remove scenario | FR-38 | NFR-16 | DR-13 |
+| Monitor occupation statistics | FR-39 | NFR-06 | DR-06, DR-08, DR-11 |
+| Request revalidation | FR-27 | — | DR-13 |
+| View coverage report | FR-39 | — | DR-04, DR-15 |
+| Manage user accounts | FR-41 | NFR-17 | DR-16 |
+| Assign occupation staff | FR-40 | — | DR-16 |
+| Disable account | FR-41 | — | DR-16 |
+| Delete account | FR-41 | NFR-05 | DR-16 |
+| View activity log | FR-41 | — | DR-16 |
+| Configure AI models | FR-42 | NFR-12 | DR-17 |
+| Monitor operation cost | FR-43 | NFR-11, NFR-18 | DR-10 |
+| Re-run failed job | FR-43 | NFR-04 | DR-10 |
+| Review app feedback | FR-20 | — | DR-18 |
+| Handle data requests | FR-44 | NFR-05 | DR-17 |
 
 : Traceability from requirements to use cases.
 
