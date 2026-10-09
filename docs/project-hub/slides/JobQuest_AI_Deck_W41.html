@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobQuest AI Section</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   CAPSTONE SLIDES — DESIGN SYSTEM v1
+   Source: "Management Consulting Toolkit" template, slides 1–35.
+   Canvas: 960 × 540 px (16:9). 1pt in the PPTX = 1.333px here.
+   DO NOT edit tokens per deck. Only add slide-specific rules at the bottom,
+   inside the marked "DECK-SPECIFIC" block, and only using the tokens.
+   ========================================================================== */
+:root{
+  /* ---- Color (the whole palette — nothing else is allowed) ---- */
+  --navy:  #003BA3;   /* primary: titles, headings, dark blocks, table headers */
+  --blue:  #4A8CFF;   /* accent: big numbers, highlights, icons, bullets, light blocks */
+  --gray:  #EFEFEF;   /* surfaces: cards, cells, tracks, neutral blocks */
+  --ink:   #000000;   /* body text */
+  --white: #FFFFFF;   /* background, text on navy/blue */
+
+  /* ---- Type ---- */
+  --font: 'Montserrat', Arial, Helvetica, sans-serif;
+  --fs-xs:   14.67px;  /* 11pt  credits, chart axis, footnotes */
+  --fs-sm:   16px;     /* 12pt  captions, dense body */
+  --fs-body: 18.67px;  /* 14pt  body text (default) */
+  --fs-lead: 21.33px;  /* 16pt  cover subtitle */
+  --fs-h3:   24px;     /* 18pt  item heading, card header */
+  --fs-stat: 32px;     /* 24pt  inline stat value */
+  --fs-h2:   37.33px;  /* 28pt  slide title */
+  --fs-h2l:  40px;     /* 30pt  percentage, image-slide title */
+  --fs-h1:   50.67px;  /* 38pt  photo-slide headline */
+  --fs-d4:   62.67px;  /* 47pt  section title */
+  --fs-d3:   70.67px;  /* 53pt  cover title */
+  --fs-d2:   93.33px;  /* 70-72pt  TOC numbers, section number, "Thanks" */
+  --fs-d1:   122.67px; /* 92pt  big number */
+  --lh-tight: 1.08;
+  --lh-title: 1.15;
+  --lh-body:  1.3;
+
+  /* ---- Grid ---- */
+  --W: 960px; --H: 540px;
+  --mx: 75px;          /* box edge; text sits 10px further in (PPTX inset) */
+  --inset: 10px;
+  --title-top: 40px;
+  --blk: 128px;        /* decorative block width (always) */
+  --mid: 270px;        /* horizontal midline — blocks meet here */
+  --bar: 32px;         /* footer bar / edge strip thickness */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000}
+body{font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
+
+/* ---------------- Slide canvas ---------------- */
+.deck{position:absolute;left:0;top:0;width:var(--W);height:var(--H);transform-origin:0 0}
+.slide{position:absolute;inset:0;width:var(--W);height:var(--H);overflow:hidden;background:var(--white);
+  color:var(--ink);font-family:var(--font);font-size:var(--fs-body);line-height:var(--lh-body);display:none}
+.slide.active{display:block}
+.slide *{font-family:inherit}
+
+/* ---------------- Text primitives ---------------- */
+.title{position:absolute;left:var(--mx);top:var(--title-top);width:810px;min-height:60px;padding:0 var(--inset);
+  display:flex;align-items:center;font-size:var(--fs-h2);font-weight:700;line-height:var(--lh-title);color:var(--navy)}
+.title.center{justify-content:center;text-align:center}
+.title.right{justify-content:flex-end;text-align:right}
+.h3{font-size:var(--fs-h3);font-weight:700;color:var(--navy);line-height:1.2}
+.p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.sm{font-size:var(--fs-sm)}
+.xs{font-size:var(--fs-xs)}
+.hl{color:var(--blue)}               /* highlight words inside navy text */
+.navy{color:var(--navy)} .blue{color:var(--blue)}
+b,strong{font-weight:700;color:var(--navy)}
+.center{text-align:center}.right{text-align:right}
+.ul{list-style:none}
+.ul li{position:relative;padding-left:1.55em;line-height:var(--lh-body)}
+.ul li::before{content:"";position:absolute;left:.35em;top:.5em;width:.36em;height:.36em;border-radius:50%;background:var(--blue)}
+.ul li li::before{background:transparent;border:1.5px solid var(--blue)}
+.ul li+li{margin-top:.12em}
+.ul ul{list-style:none;margin-top:.12em}
+.ul.gap li+li{margin-top:.5em}
+
+/* ---------------- Decorative system ---------------- */
+.blk{position:absolute;width:var(--blk)}          /* set left/top/height inline */
+.blk.navy{background:var(--navy)} .blk.blue{background:var(--blue)} .blk.gray{background:var(--gray)}
+.footbar{position:absolute;left:0;bottom:0;width:var(--W);height:var(--bar);background:linear-gradient(90deg,var(--navy) 50%,var(--blue) 50%)}
+.footbar.rev{background:linear-gradient(90deg,var(--blue) 50%,var(--navy) 50%)}
+.edge-r{position:absolute;right:0;top:60px;bottom:0;width:var(--bar);background:var(--blue)}
+.edge-l{position:absolute;left:0;top:0;height:470px;width:var(--bar);background:var(--blue)}
+
+/* ---------------- Components ---------------- */
+.photo{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.shot{display:block;max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--gray);background:var(--white)} /* product screenshots stay in color */
+.ph{background:var(--gray);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:var(--fs-sm);font-weight:600;text-align:center;padding:10px}
+.icon{width:44px;height:44px;stroke:var(--blue);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dot{display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--blue);vertical-align:middle}
+.dot.navy{background:var(--navy)} .dot.ink{background:var(--ink)} .dot.gray{background:var(--gray)}
+/* SVG paint helpers — never hard-code hex inside SVG, use these */
+.s-navy{stroke:var(--navy)} .s-blue{stroke:var(--blue)} .s-gray{stroke:var(--gray)} .s-white{stroke:var(--white)} .s-ink{stroke:var(--ink)}
+.f-navy{fill:var(--navy)} .f-blue{fill:var(--blue)} .f-gray{fill:var(--gray)} .f-white{fill:var(--white)} .f-ink{fill:var(--ink)} .f-none{fill:none}
+.node{display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 16px;font-size:var(--fs-body);line-height:1.2;min-height:41px}
+.node.navy{background:var(--navy);color:var(--white);font-weight:700}
+.node.blue{background:var(--blue);color:var(--white);font-weight:700}
+.node.gray{background:var(--gray);color:var(--ink)}
+.node.outline{background:var(--white);border:2px solid var(--blue);color:var(--navy)}
+.kpi{background:var(--navy);color:var(--white);text-align:center;padding:8px 18px;line-height:1.15}
+.kpi .v{font-size:var(--fs-h3);font-weight:700;display:block}
+.kpi .l{font-size:var(--fs-sm);font-weight:700;display:block}
+.tbl{border-collapse:collapse;width:100%}
+.tbl th{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-body);padding:9px 10px;text-align:center;line-height:1.15}
+.tbl td{padding:9px 10px;font-size:var(--fs-body);line-height:1.2;text-align:center;border-bottom:1px solid var(--gray)}
+.tbl td:first-child{text-align:left}
+.tbl th:first-child{background:transparent}
+.tbl.filled th:first-child{background:var(--navy);text-align:left}
+
+/* ===================== LAYOUTS ===================== */
+/* Absolute regions below mirror the PPTX placeholder boxes (px). */
+
+/* 01 cover */
+.l-cover .cv-title{position:absolute;left:172px;top:103px;width:710px;height:235px;padding:0 var(--inset);display:flex;flex-direction:column;justify-content:flex-end;text-align:right;font-size:var(--fs-d3);font-weight:700;line-height:var(--lh-tight);color:var(--navy)}
+.l-cover .cv-sub{position:absolute;left:172px;top:348px;width:710px;padding:0 var(--inset);text-align:right;font-size:var(--fs-lead)}
+.l-cover .cv-meta{position:absolute;right:86px;bottom:44px;text-align:right;font-size:var(--fs-sm);line-height:1.45}
+
+/* 02 toc */
+.l-toc .toc{position:absolute;left:85px;top:148px;width:820px;display:grid;grid-template-columns:417px 1fr;row-gap:28px}
+.l-toc .toc-item{display:grid;grid-template-columns:146px 1fr;column-gap:24px;align-items:start;min-height:122px}
+.l-toc .toc-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:.95;text-align:right}
+.l-toc .toc-item .h3{margin-top:2px;margin-bottom:8px}
+.l-toc .toc.rows-3{top:132px;row-gap:34px}
+.l-toc .toc.rows-3 .toc-item{min-height:0}
+.l-toc .toc.rows-3 .toc-num{font-size:var(--fs-d4)}
+
+/* 03 section (right-aligned) + .alt (left-aligned) */
+.l-section .sec{position:absolute;left:416px;top:120px;width:468px;padding:0 var(--inset);text-align:right}
+.l-section .sec-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:1}
+.l-section .sec-title{font-size:var(--fs-d4);font-weight:700;color:var(--navy);line-height:1.05;margin-top:8px}
+.l-section .sec-sub{font-size:var(--fs-body);margin-top:14px}
+.l-section.alt .sec{left:74px;text-align:left}
+
+/* 04 intro (text left, blocks right) + .alt (blocks left, text right) */
+.l-intro .txt{position:absolute;left:121px;top:140px;width:444px;padding:0 var(--inset)}
+.l-intro .txt .t{font-size:var(--fs-h2);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:14px}
+.l-intro.alt .txt{left:418px;top:150px;width:426px;text-align:right}
+
+/* 05 statement (one big line) */
+.l-statement .big{position:absolute;left:74px;top:110px;width:600px;height:320px;padding:0 var(--inset);display:flex;align-items:center;font-size:98.67px;font-weight:700;line-height:1;color:var(--navy)}
+.l-statement .big.m{font-size:var(--fs-d3)}
+
+/* 06 text (+ bullets) */
+.l-text .body{position:absolute;left:var(--mx);top:128px;width:560px;padding:0 var(--inset)}
+.l-text.wide .body{width:810px}
+.l-text .body > * + *{margin-top:14px}
+
+/* 07 two columns */
+.l-2col .cols{position:absolute;left:74px;top:200px;width:560px;display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding:0 var(--inset)}
+.l-2col .cols .h3{margin-bottom:12px}
+
+/* 08 three columns with icons */
+.l-3col .cols{position:absolute;left:82px;top:196px;width:796px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:42px;text-align:center}
+.l-3col .cols .icon{margin:0 auto 4px;display:block}
+.l-3col .cols .h3{margin:6px 0 8px}
+
+/* 09 six-grid (3 × 2) */
+.l-grid6 .grid{position:absolute;left:74px;top:150px;width:720px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:10px;row-gap:30px;padding:0 var(--inset)}
+.l-grid6 .grid .h3{margin-bottom:8px}
+
+/* 10 four items right-aligned (2 × 2) */
+.l-4items .grid{position:absolute;left:331px;top:160px;width:553px;display:grid;grid-template-columns:1fr 1fr;column-gap:34px;row-gap:34px;text-align:right;padding:0 var(--inset)}
+.l-4items .grid .h3{margin-bottom:8px}
+
+/* 11 quadrant / SWOT */
+.l-quad .quad{position:absolute;left:110px;top:130px;display:grid;grid-template-columns:42px 292px 292px;column-gap:20px;row-gap:20px}
+.l-quad .quad > :nth-child(3n){margin-left:50px}
+.l-quad .side{background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;height:153px}
+.l-quad .q-h{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);height:35px;padding:0 20px;display:flex;align-items:center}
+.l-quad .q-b{background:var(--gray);height:118px;padding:14px 20px}
+
+/* 12 rows (label + items) */
+.l-rows .rows{position:absolute;left:75px;top:124px;width:809px;display:flex;flex-direction:column;gap:10px}
+.l-rows .row{display:grid;grid-template-columns:199px 1fr;height:81px}
+.l-rows .row .lab{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);line-height:1.1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px}
+.l-rows .row .its{background:var(--gray);display:flex;align-items:center;justify-content:space-around;gap:20px;padding:0 24px}
+.l-rows .row .its > *{flex:1}
+
+/* 13 table / maturity */
+.l-table .tblwrap{position:absolute;left:85px;top:128px;width:810px}
+
+/* 14 process chevrons */
+.l-process .chev{position:absolute;left:75px;top:146px;width:808px;height:121px;display:flex}
+.l-process .chev > div{flex:1;background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 44px 0 50px;
+  clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,40px 50%)}
+.l-process .chev > div:first-child{clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%);padding-left:20px}
+.l-process .chev > div + div{margin-left:-36px}
+.l-process .notes{position:absolute;left:75px;top:286px;width:808px;display:grid;column-gap:14px}
+
+/* 15 roadmap stairs */
+.l-roadmap .stairs{position:absolute;left:75px;top:170px;width:809px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);align-items:start}
+.l-roadmap .step{margin-top:calc(var(--rise,33px) * (var(--n,3) - 1 - var(--i,0)))}
+.l-roadmap .step .h3{text-align:center;padding-bottom:10px}
+.l-roadmap .step .line{height:8px;background:var(--blue);position:relative}
+.l-roadmap .step + .step .line::before{content:"";position:absolute;left:0;bottom:0;width:8px;height:calc(var(--rise,33px) + 8px);background:var(--blue)}
+.l-roadmap .step .ul{padding:14px 10px 0 20px}
+
+/* 16 hierarchy tree (top-down) */
+.l-tree .tree{position:absolute;left:75px;top:120px;width:809px;display:flex;justify-content:center}
+.tree ul{display:flex;justify-content:center;padding-top:30px;position:relative;list-style:none}
+.tree > ul{padding-top:0}
+.tree li{position:relative;padding:30px 6px 0;display:flex;flex-direction:column;align-items:center}
+.tree > ul > li{padding-top:0}
+.tree li::before,.tree li::after{content:"";position:absolute;top:0;width:50%;height:30px;border-top:2px solid var(--blue)}
+.tree li::before{right:50%}
+.tree li::after{left:50%;border-left:2px solid var(--blue)}
+.tree li:only-child::before,.tree li:only-child::after{border-top:0}
+.tree li:first-child::before,.tree li:last-child::after{border-top:0}
+.tree li:last-child::before{border-right:2px solid var(--blue);width:calc(50% + 1px)}
+.tree li:last-child::before{right:calc(50% - 1px)}
+.tree li:last-child::after{border-left:0}
+.tree > ul > li::before,.tree > ul > li::after{display:none}
+.tree ul ul::before{content:"";position:absolute;top:0;left:50%;height:30px;border-left:2px solid var(--blue)}
+.tree .node{white-space:nowrap}
+.tree .lv1{min-width:161px;font-size:var(--fs-h3)}
+.tree .lv2{min-width:136px}
+.tree .lv3{min-width:78px;padding:6px 12px}
+
+/* 17 breakdown (left → right) */
+.l-breakdown .bd{position:absolute;left:170px;top:118px;height:380px;display:flex;align-items:center}
+.bd .root{width:128px;min-height:116px;font-size:var(--fs-h3);text-align:left;justify-content:flex-start;padding:10px 12px}
+.bd .groups{display:flex;flex-direction:column;gap:26px;margin-left:30px;position:relative;padding-left:0}
+.bd .groups::before{content:"";position:absolute;left:-16px;top:58px;bottom:58px;border-left:2px solid var(--blue)}
+.bd .grp{display:flex;align-items:center;position:relative}
+.bd .grp::before{content:"";position:absolute;left:-16px;top:50%;width:16px;border-top:2px solid var(--blue)}
+.bd .grp > .node{width:128px;min-height:116px;font-size:var(--fs-h3);font-weight:700;color:var(--navy);justify-content:flex-start;text-align:left}
+.bd .leaves{display:flex;flex-direction:column;justify-content:space-between;gap:10px;margin-left:36px;position:relative;align-self:stretch}
+.bd .leaves::before{content:"";position:absolute;left:-18px;top:20px;bottom:20px;border-left:2px solid var(--blue)}
+.bd .leaves::after{content:"";position:absolute;left:-36px;top:50%;width:18px;border-top:2px solid var(--blue)}
+.bd .leaves .node{position:relative;width:170px;min-height:38px;justify-content:flex-start;font-size:var(--fs-sm);text-align:left}
+.bd .leaves .node::before{content:"";position:absolute;left:-18px;top:50%;width:18px;border-top:2px solid var(--blue)}
+
+/* 18 matrix 2×2 */
+.l-matrix .mx{position:absolute;left:120px;top:118px;display:grid;grid-template-columns:150px 36px 216px 216px;grid-template-rows:42px 111px 111px 36px 40px;column-gap:10px;row-gap:5px;align-items:center}
+.l-matrix .mx .cell{height:111px;background:var(--gray);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 18px;line-height:1.2}
+.l-matrix .mx .cell.on{background:var(--navy);color:var(--white)}
+.l-matrix .mx .tick{color:var(--navy);text-align:center;font-size:var(--fs-body)}
+.l-matrix .mx .tick.y{writing-mode:vertical-rl;transform:rotate(180deg);justify-self:center}
+.l-matrix .mx .axis{font-weight:700;color:var(--navy);font-size:var(--fs-h3);text-align:center}
+
+/* 19 cycle (4-part ring) */
+.l-cycle .ring{position:absolute;left:330px;top:128px;width:300px;height:300px}
+.l-cycle .lbl{position:absolute;display:flex;align-items:center;gap:10px;font-size:var(--fs-body);white-space:nowrap}
+.l-cycle .lbl i{display:block;height:2px;width:36px}
+.l-cycle .lbl i::after{content:"";display:block;width:8px;height:8px;border-radius:50%;margin-top:-3px}
+.l-cycle .lbl.l{right:640px;flex-direction:row}
+.l-cycle .lbl.r{left:640px}
+.l-cycle .lbl.navy i,.l-cycle .lbl.navy i::after{background:var(--navy)}
+.l-cycle .lbl.blue i,.l-cycle .lbl.blue i::after{background:var(--blue)}
+.l-cycle .lbl.l i::after{margin-left:28px}
+.l-cycle .lbl.r i::after{margin-left:0}
+
+/* 20 diagram (free canvas) */
+.l-diagram .stage{position:absolute;left:var(--mx);top:128px;width:810px;height:370px;display:flex;align-items:center;justify-content:center}
+.l-diagram.has-bar .stage{height:340px}
+.l-diagram .title.two{min-height:98px}
+
+/* 21 quote */
+.l-quote .q{position:absolute;left:281px;top:110px;width:604px;height:214px;padding:0 var(--inset);display:flex;align-items:flex-end;justify-content:flex-end;text-align:right;font-size:var(--fs-h2);font-weight:600;line-height:1.2;color:var(--blue)}
+.l-quote .by{position:absolute;left:281px;top:346px;width:604px;padding:0 var(--inset);text-align:right;font-size:var(--fs-h3);font-weight:700;color:var(--navy)}
+
+/* 22 big number */
+.l-bignum .num{position:absolute;left:74px;top:148px;width:810px;height:174px;display:flex;align-items:flex-end;justify-content:center;font-size:var(--fs-d1);font-weight:700;color:var(--blue);line-height:1}
+.l-bignum .cap{position:absolute;left:74px;top:334px;width:810px;text-align:center}
+
+/* 23 photo full-bleed + headline */
+.l-photo .bg{position:absolute;inset:0}
+.l-photo .wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 70%)}
+.l-photo .head{position:absolute;left:74px;top:52px;width:480px;padding:0 var(--inset);font-size:var(--fs-h1);font-weight:700;line-height:1.12;color:var(--navy)}
+
+/* 24 photo left + text right */
+.l-photoleft .pic{position:absolute;left:0;top:112px;width:349px;height:314px}
+.l-photoleft .txt{position:absolute;left:391px;top:150px;width:493px;padding:0 var(--inset);text-align:right}
+.l-photoleft .txt .t{font-size:var(--fs-h2l);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:16px}
+
+/* 25 demo / screenshot */
+.l-demo .side{position:absolute;left:var(--mx);top:128px;width:300px;padding:0 var(--inset)}
+.l-demo .side .h3{margin-bottom:10px}
+.l-demo .screen{position:absolute;left:392px;top:120px;width:500px;height:380px;display:flex;align-items:center;justify-content:center}
+
+/* 26 stats bars */
+.l-bars .grp{position:absolute;top:140px;width:330px}
+.l-bars .grp.l{left:75px}
+.l-bars .grp.r{left:555px;text-align:right}
+.l-bars .grp .h3{margin-bottom:10px;padding:0 var(--inset)}
+.l-bars .bar{display:grid;grid-template-columns:90px 1fr;align-items:center;column-gap:8px;height:44px;padding:0 var(--inset)}
+.l-bars .grp.r .bar{grid-template-columns:1fr auto}
+.l-bars .bar .v{white-space:nowrap}
+.l-bars .bar .v{font-size:var(--fs-stat);font-weight:700;color:var(--navy);line-height:1}
+.l-bars .bar .track{height:12px;background:var(--gray);position:relative}
+.l-bars .bar .track span{position:absolute;top:0;bottom:0;left:0;background:var(--blue)}
+.l-bars .grp.r .bar .track span{left:auto;right:0}
+.l-bars .foot{position:absolute;left:75px;top:302px;width:809px;text-align:center}
+.l-bars .foot .icons{display:flex;justify-content:center;gap:22px;margin-top:18px}
+
+/* 27 donut percentages */
+.l-donuts .cols{position:absolute;left:78px;top:160px;width:801px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);column-gap:40px;text-align:center}
+.l-donuts .ring{width:120px;height:120px;margin:0 auto;display:block}
+.l-donuts .pct{font-size:var(--fs-h2l);font-weight:700;color:var(--blue);margin:14px 0 6px;line-height:1}
+
+/* 28 chart + KPI */
+.l-chart .left{position:absolute;left:85px;top:122px;width:390px}
+.l-chart .right{position:absolute;left:500px;top:122px;width:390px}
+.l-chart svg text{font-family:var(--font)}
+
+/* 29 team */
+.l-team .grid{position:absolute;left:75px;top:128px;width:809px;display:flex;justify-content:center;gap:var(--gap,90px)}
+.l-team .m{width:var(--w,237px);text-align:center}
+.l-team .m .face{width:var(--d,192px);height:var(--d,192px);border-radius:50%;overflow:hidden;margin:0 auto 18px;background:var(--gray)}
+.l-team .m .h3{margin-bottom:6px}
+
+/* 30 testimonials */
+.l-testi .list{position:absolute;left:115px;top:160px;width:320px;padding:0 var(--inset)}
+.l-testi .list .by{font-size:var(--fs-h3);font-weight:700;color:var(--navy);margin-top:6px}
+.l-testi .list > div + div{margin-top:34px}
+
+/* 31 thanks / closing */
+.l-thanks .big{position:absolute;left:74px;top:46px;width:560px;height:140px;padding:0 var(--inset);display:flex;align-items:flex-end;font-size:var(--fs-d2);font-weight:700;color:var(--navy);line-height:1}
+.l-thanks .info{position:absolute;left:74px;top:198px;width:480px;padding:0 var(--inset)}
+.l-thanks .info .icons{display:flex;gap:10px;margin-top:22px}
+
+/* ===================== DECK-SPECIFIC (keep tiny, tokens only) ===================== */
+.slide > aside.notes{display:none}
+.refs-slide .refs{position:absolute;left:var(--mx);top:112px;width:810px;padding:0 var(--inset);column-count:2;column-gap:28px;font-size:var(--fs-xs);line-height:1.3}
+.refs-slide .refs p{margin-bottom:7px;break-inside:avoid}
+.refs-slide .refs p.rh{font-weight:700;color:var(--navy);font-size:var(--fs-sm)}
+
+/* ===================== Presentation shell (not part of the look) ===================== */
+.hud{position:fixed;right:14px;bottom:12px;font:600 12px/1 var(--font);color:rgba(255,255,255,.55);letter-spacing:.04em;user-select:none;z-index:9}
+body.overview{overflow:auto;background:#000}
+body.overview .deck{position:static;transform:none!important;width:auto;height:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:18px}
+body.overview .slide{position:relative;display:block;zoom:.32;cursor:pointer;outline:0}
+body.overview .slide.active{outline:10px solid var(--blue)}
+@media print{
+  @page{size:960px 540px;margin:0}
+  html,body{background:#fff;overflow:visible;height:auto}
+  .deck{position:static;transform:none!important;width:auto;height:auto}
+  .slide{position:relative;display:block!important;break-after:page;page-break-after:always}
+  .hud{display:none}
+}
+</style>
+</head>
+<body>
+<main class="deck">
+<!-- ================= SLIDES START ================= -->
+
+<!-- 01 cover -->
+<section class="slide l-cover">
+  <div class="blk blue" style="left:0;top:0;height:270px"></div>
+  <h1 class="cv-title"><span>AI in</span><span><span class="hl">JobQuest</span></span></h1>
+  <p class="cv-sub">From an expert's knowledge to a scored playthrough</p>
+  <p class="cv-meta"><b>AI section · Week 41 · 9 October 2026</b><br>Specialized Project (ĐACN) · HCMUT<br>Advisor: Assoc. Prof. Võ Thị Ngọc Châu · Team: Golden Trio</p>
+  <aside class="notes">Phần AI của master deck (D-75). Nói ngay từ đầu rằng tuần này là khảo sát và chốt hướng, để cô không chờ số liệu.</aside>
+</section>
+
+<!-- 02 status -->
+<section class="slide l-text wide">
+  <h2 class="title">What this section covers</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>We walk the product flow and stop at each of <b>five places where AI works</b></li>
+      <li>Each of your AI questions is answered at the step it belongs to</li>
+      <li>This week produced design decisions and a literature review</li>
+      <li><b>No measurement has been run yet</b></li>
+      <li>The first test is planned for week 42</li>
+    </ul>
+  </div>
+  <aside class="notes">Nói thẳng: tuần này là khảo sát và chốt hướng, chưa có số đo. Phép thử đầu tiên là tuần 42.</aside>
+</section>
+
+<!-- 03 question map -->
+<section class="slide l-table">
+  <h2 class="title">Where your questions are answered</h2>
+  <div class="tblwrap">
+    <table class="tbl filled">
+      <colgroup><col style="width:610px"><col></colgroup>
+      <thead><tr><th>Your question</th><th>Slides</th></tr></thead>
+      <tbody>
+        <tr><td>Is JobQuest AI-native? What if the AI is down?</td><td>4–5, 26–27</td></tr>
+        <tr><td>How are scenarios checked and plays scored?</td><td>8–17</td></tr>
+        <tr><td>Must the judge be stronger than the generator?</td><td>18–19</td></tr>
+        <tr><td>Is there published evidence that LLM judges work?</td><td>20–22</td></tr>
+        <tr><td>Which benchmark and which framework?</td><td>23–25</td></tr>
+        <tr><td>How do technologies and AI models compare?</td><td>29–31</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Nguồn các câu hỏi: buổi 19/9 (07 B2), buổi 26/9 (07 B20), email 1/10 mục 9 (07 B24) và danh sách 6/10. Số slide phải được cập nhật nếu thêm hoặc bớt slide.</aside>
+</section>
+
+<!-- 04 flow -->
+<section class="slide l-diagram">
+  <h2 class="title center">Five places where AI works</h2>
+  <div class="stage">
+    <svg width="810" height="340" viewBox="0 0 810 340">
+      <g class="f-navy" font-size="16" font-weight="700"><text x="0" y="22">Authoring · no player is waiting</text><text x="0" y="212">Play</text></g>
+      <!-- row 1 -->
+      <rect class="f-gray" x="0" y="36" width="138" height="68"/>
+      <rect class="f-blue" x="168" y="36" width="138" height="68"/>
+      <rect class="f-blue" x="336" y="36" width="138" height="68"/>
+      <rect class="f-blue" x="504" y="36" width="138" height="68"/>
+      <rect class="f-navy" x="672" y="36" width="138" height="68"/>
+      <!-- row 2 -->
+      <rect class="f-navy" x="0" y="226" width="138" height="68"/>
+      <rect class="f-blue" x="168" y="226" width="138" height="68"/>
+      <rect class="f-gray" x="336" y="226" width="138" height="68"/>
+      <rect class="f-blue" x="504" y="226" width="138" height="68"/>
+      <rect class="f-navy" x="672" y="226" width="138" height="68"/>
+      <!-- arrows -->
+      <g class="s-navy" stroke-width="2">
+        <path d="M141 70 H162"/><path d="M309 70 H330"/><path d="M477 70 H498"/><path d="M645 70 H666"/>
+        <path d="M141 260 H162"/><path d="M309 260 H330"/><path d="M477 260 H498"/><path d="M645 260 H666"/>
+        <path d="M573 222 V114"/>
+      </g>
+      <g class="f-navy">
+        <path d="M168 70 l-8 -5 v10 z"/><path d="M336 70 l-8 -5 v10 z"/><path d="M504 70 l-8 -5 v10 z"/><path d="M672 70 l-8 -5 v10 z"/>
+        <path d="M168 260 l-8 -5 v10 z"/><path d="M336 260 l-8 -5 v10 z"/><path d="M504 260 l-8 -5 v10 z"/><path d="M672 260 l-8 -5 v10 z"/>
+        <path d="M573 106 l-5 8 h10 z"/>
+      </g>
+      <text x="585" y="172" class="f-navy" font-size="16">flagged cases</text>
+      <!-- row 1 labels -->
+      <g text-anchor="middle" font-size="16">
+        <text x="69" y="66" class="f-ink">Domain</text><text x="69" y="86" class="f-ink">Expert</text>
+        <g class="f-white"><text x="237" y="66" font-weight="700">AI-1</text><text x="237" y="86">interviews</text>
+        <text x="405" y="66" font-weight="700">AI-2</text><text x="405" y="86">drafts seed</text>
+        <text x="573" y="66" font-weight="700">AI-3</text><text x="573" y="86">tests plays</text>
+        <text x="741" y="66" font-weight="700">Approved</text><text x="741" y="86">seed</text>
+        <text x="69" y="256" font-weight="700">Approved</text><text x="69" y="276">seed</text>
+        <text x="237" y="256" font-weight="700">AI-4</text><text x="237" y="276">narrates</text>
+        <text x="573" y="256" font-weight="700">AI-5</text><text x="573" y="276">scores</text>
+        <text x="741" y="256" font-weight="700">Skill</text><text x="741" y="276">scores</text></g>
+        <text x="405" y="256" class="f-ink">Player</text><text x="405" y="276" class="f-ink">answers</text>
+      </g>
+    </svg>
+  </div>
+  <aside class="notes">Slide khung; các slide sau đi lần lượt từng bước. Trả lời nửa đầu của câu "AI-native": AI có mặt ở mọi khâu của vòng đời nội dung và của lúc chơi. Cờ chấm lệch đi từ AI-5 về AI-3 rồi tới chuyên gia.</aside>
+</section>
+
+<!-- 05 who decides -->
+<section class="slide l-table">
+  <h2 class="title">AI drafts, experts decide</h2>
+  <div class="tblwrap">
+    <table class="tbl filled">
+      <colgroup><col style="width:90px"><col style="width:360px"><col></colgroup>
+      <thead><tr><th>Step</th><th>AI does</th><th>A person decides</th></tr></thead>
+      <tbody>
+        <tr><td><b>AI-1</b></td><td>Interviews the expert for seed input</td><td>Expert confirms the record</td></tr>
+        <tr><td><b>AI-2</b></td><td>Drafts a structured game seed</td><td>Expert sets scoring keys, approves</td></tr>
+        <tr><td><b>AI-3</b></td><td>Runs test plays, picks cases to review</td><td>Expert rules, approves publication</td></tr>
+        <tr><td><b>AI-4</b></td><td>Writes narration and follow-ups</td><td>No one at run time; rules constrain it</td></tr>
+        <tr><td><b>AI-5</b></td><td>Scores the playthrough on the rubric</td><td>Expert reviews flagged cases</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Nguyên tắc: AI soạn, nối, chấm và lọc. Chuyên gia (DE) quyết nội dung nghề, khoá chấm và việc xuất bản. Không có AI thì vòng lõi không chạy được (định nghĩa ở slide 26).</aside>
+</section>
+
+<!-- 06 AI-1 -->
+<section class="slide l-text wide">
+  <h2 class="title">Step 1: AI-1 interviews the expert</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>An LLM probes for incidents, good and poor responses, situation facts</li>
+      <li>One interview per expert; merged notes mark agreement and differences</li>
+      <li>Probes only inside a human-written topic guide <span class="sm">(Flanagan, 1954; Whetzel et al., 2020)</span></li>
+      <li>A tracker lists the seed fields still missing</li>
+      <li>The expert confirms a summary</li>
+      <li>Every turn is stored verbatim; each seed field links to its source turn</li>
+    </ul>
+  </div>
+  <aside class="notes">Dẫn tới câu hỏi 1 cho cô ở slide 33 (phạm vi AI-1 và AI-2 trong ĐACN).</aside>
+</section>
+
+<!-- 07 AI-1 evidence -->
+<section class="slide l-2col">
+  <h2 class="title">AI-1: evidence and limits</h2>
+  <div class="cols" style="width:810px;top:140px">
+    <div><div class="h3">What studies show</div><p class="sm">In 766 AI-led interviews, 94.8–99.8% of questions were open-ended and 0.1–0.4% hallucinated (Chopra &amp; Haaland). A chatbot asking follow-ups drew more specific answers than a form (Xiao et al., 2020).</p></div>
+    <div><div class="h3">Weaknesses, gap</div><p class="sm">AI interviewers missed follow-ups in 88% of failures (Wuttke et al., 2025). An LLM elicited at most 73.7% of requirements and invented a figure (Korn et al.). <b>Hence the tracker and confirmation.</b> No study found of expert critical-incident interviews, or in Vietnamese.</p></div>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Chopra &amp; Haaland là working paper (ghi năm bản sửa 2026). Wuttke chỉ so sánh nhỏ: 5 phỏng vấn do AI, 6 do người.</aside>
+</section>
+
+<!-- 08 AI-2 -->
+<section class="slide l-text wide">
+  <h2 class="title">Step 2: AI-2 drafts the game seed</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>Helps the Content Admin build context, characters, situations, canon events</li>
+      <li>Drafts are written from the expert's own words</li>
+      <li><b>The expert sets every scoring key and rubric anchor</b>; the model only drafts</li>
+      <li>Machine structure check, then expert approval, before any player sees it</li>
+      <li>Schema follows evidence-centered design <span class="sm">(Mislevy &amp; Haertel, 2006; Shute, 2011)</span></li>
+      <li>Checkpoint 1 of 4 for generated content</li>
+    </ul>
+  </div>
+  <aside class="notes">Trả lời "QA kịch bản sinh", chốt thứ nhất. Chi tiết schema của seed (danh sách fact, thang chấm) chờ game design; nói ở slide 32.</aside>
+</section>
+
+<!-- 09 why experts own keys -->
+<section class="slide l-2col">
+  <h2 class="title">Why experts own keys and rubrics</h2>
+  <div class="cols" style="width:810px;top:150px">
+    <div><div class="h3">Rubrics</div><p class="sm">Rubrics generated by LLMs differ from those human graders use, and LLM graders take shortcuts. Analytic rubrics that reflect human grading logic narrow the gap (Wu et al.).</p></div>
+    <div><div class="h3">Drafted content</div><p class="sm">When GPT-4 drafted 210 examination questions, specialists required revision of 15% and judged 0.5% false (Klang et al., 2023).</p></div>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Hai dẫn chứng cho quy tắc "DE đặt mọi khoá chấm và mốc rubric, model chỉ soạn".</aside>
+</section>
+
+<!-- 10 AI-3 -->
+<section class="slide l-text wide">
+  <h2 class="title">Step 3: AI-3 helps the expert test</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>A volunteer expert has about seven hours and cannot read every answer</li>
+      <li>AI-3 runs test plays (testers, simulated answers) through AI-4 and AI-5</li>
+      <li>It ranks cases: judges differ by over one level, or a rule broke</li>
+      <li><b>Plus a blind random sample of unflagged cases</b></li>
+      <li>The expert rules and may refine anchors; rubrics are versioned <span class="sm">(Shankar et al., 2024)</span></li>
+      <li>Checkpoint 2 of 4: expert-scored plays also validate the judge</li>
+    </ul>
+  </div>
+  <aside class="notes">Giai đoạn này chưa có chuyên gia và người chơi thật: nhóm đóng vai cả hai, cô kiểm một mẫu. Kết quả cho thấy bộ máy chạy được, chưa phải độ khớp với chuyên gia.</aside>
+</section>
+
+<!-- 11 AI-3 evidence -->
+<section class="slide l-2col">
+  <h2 class="title">Why a random sample, and real plays</h2>
+  <div class="cols" style="width:810px;top:140px">
+    <div><div class="h3">Random sample</div><p class="sm">LLM confidence separates right from wrong grades only weakly (AUC 0.57–0.64; Ferrer et al.), so flagged cases alone can hide errors. If n audited cases show no error, the rate is at most about 3/n at 95% (Hanley &amp; Lippman-Hand, 1983).</p></div>
+    <div><div class="h3">Real plays</div><p class="sm">Persona-prompted LLMs answered with near-uniform accuracy, unlike 2,359 real students (Balog &amp; Bakken, 2026). Simulated profiles correlated r = 0.72 with students on multiple choice (Lu &amp; Wang, 2024).</p></div>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Hanley &amp; Lippman-Hand: mới đọc đoạn mở đầu, điều kiện n &gt; 30 lấy từ bài nhắc lại 1995; cần đọc bản gốc trước khi trích con số. Người chơi giả lập chỉ tìm được vấn đề tương đối.</aside>
+</section>
+
+<!-- 12 AI-4 -->
+<section class="slide l-text wide">
+  <h2 class="title">Step 4: AI-4 narrates during play</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li><b>The engine, not the model, controls</b> the order of canon events</li>
+      <li>Canon content is shown verbatim; approved variants are logged</li>
+      <li>The model writes only connecting narration and follow-up questions</li>
+      <li>The whole seed is in the prompt; the rubric and keys are not</li>
+      <li>Run-time checks are rules, not a model call, so no added waiting</li>
+      <li>A different model family reviews the logs afterwards</li>
+    </ul>
+  </div>
+  <aside class="notes">Trả lời "QA kịch bản sinh", chốt thứ ba (luật lúc chạy) và thứ tư (rà log). Luật: con số và tên riêng phải có trong seed hoặc trong câu người chơi gõ; engine đếm follow-up. Không nêu con số ngoài về giới hạn của phép kiểm; nếu cô hỏi bắt được bao nhiêu lỗi, trả lời là nhóm sẽ đo bằng bộ thử của mình.</aside>
+</section>
+
+<!-- 13 AI-4 evidence -->
+<section class="slide l-3col">
+  <h2 class="title center">AI-4: why these choices</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <div class="h3">Authored plot</div><p class="sm">Holding authored structure outside free generation is the established approach (Riedl &amp; Bulitko, 2013).</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div class="h3">Rules on facts</div><p class="sm">Wrong numbers (184) and names (105) led 418 accuracy errors (Thomson &amp; Reiter, 2020).</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+      <div class="h3">Whole seed in prompt</div><p class="sm">When the source fits, long-context prompting beat retrieval on average (Li et al., 2024).</p>
+    </div>
+  </div>
+  <div class="footbar rev"></div>
+  <aside class="notes">Thomson &amp; Reiter là lý do luật nhắm vào con số và tên riêng.</aside>
+</section>
+
+<!-- 14 AI-4 testing -->
+<section class="slide l-text">
+  <h2 class="title">Testing the run-time checks</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>A test set of scripted player turns in four classes</li>
+      <li>On-script, off-script, adversarial, rubric-fishing</li>
+      <li>We report the violation rate per class</li>
+      <li><b>Not yet built</b></li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <aside class="notes">Checkpoint 3 of 4 (luật lúc chạy) và 4 of 4 (rà log sau). Nói rõ bộ thử chưa dựng.</aside>
+</section>
+
+<!-- 15 AI-5 -->
+<section class="slide l-text wide">
+  <h2 class="title">Step 5: AI-5 scores the playthrough</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li><b>A separate judge</b>: the scoring model is not the narrating model (DC-01)</li>
+      <li>No reference answer; each rubric criterion is scored by level descriptions</li>
+      <li>One call per situation per judge, at most three criteria</li>
+      <li>The call runs in the background; results show on the summary screen</li>
+      <li>Per criterion: a verbatim quote, then the rationale, then the level</li>
+      <li>The quote must be a substring of what the player typed</li>
+    </ul>
+  </div>
+  <aside class="notes">Thang chấm ghi là dự kiến; bảng chấm năng lực và bộ tiêu chí chờ game design (slide 32).</aside>
+</section>
+
+<!-- 16 panel -->
+<section class="slide l-process">
+  <h2 class="title">A panel of three judges</h2>
+  <div class="chev"><div>Three families</div><div>Median score</div><div>Escalate</div></div>
+  <div class="notes" style="grid-template-columns:repeat(3,1fr)">
+    <ul class="ul"><li>Three model families judge each situation</li></ul>
+    <ul class="ul"><li>The median is the score</li><li>If one judge is down, wait for all three</li></ul>
+    <ul class="ul"><li>Judges differ by over one level: flag</li><li>The expert sees it through AI-3</li></ul>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- 17 why per situation, why panel -->
+<section class="slide l-2col">
+  <h2 class="title">Why per situation, why a panel</h2>
+  <div class="cols" style="width:810px;top:140px">
+    <div><div class="h3">Per situation</div><p class="sm">Batching several rubric checks into one call trades accuracy for cost, with large loss when evidence is spread over a long trajectory (Peng et al., 2026). A verdict shifts with the other rubrics judged alongside it (Yu et al.).</p></div>
+    <div><div class="h3">A panel</div><p class="sm">A five-judge vote matched the best single judge (r = 0.627 vs 0.623; Kim et al., 2025). Judges also vary across runs (Haldar &amp; Hockenmaier, 2025). <b>We do not claim a panel is more accurate.</b></p></div>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Lý do nêu cho panel là độ bền (đạt mức judge đơn tốt nhất mà không cần biết trước judge nào tốt nhất), không phải độ chính xác hơn.</aside>
+</section>
+
+<!-- 18 judge stronger? -->
+<section class="slide l-intro">
+  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:834px;top:270px;height:270px"></div>
+  <div class="txt" style="top:110px;width:520px">
+    <div class="t">Must the judge be stronger than the generator?</div>
+    <p><b>Not relative to the generator.</b> The judge scores text a person wrote, so the two do not compete. It needs four other things (next slide). Each judge family is tested at two tiers in week 42; we choose the cheapest tier that is not clearly worse.</p>
+  </div>
+  <aside class="notes">Trả lời câu hỏi "model chấm có cần mạnh hơn model sinh không".</aside>
+</section>
+
+<!-- 19 what the judge needs -->
+<section class="slide l-4items">
+  <div class="blk gray" style="left:127px;top:111px;height:159px"></div>
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <h2 class="title right">What the judge does need</h2>
+  <div class="grid" style="top:140px">
+    <div><div class="h3">Knowledge</div><p class="sm">With no reference answer, judges matched experts only on questions they could answer (Krumdick et al.).</p></div>
+    <div><div class="h3">Capacity</div><p class="sm">ICC under 0.20 for small models, 0.41–0.57 for larger; 0.45 between two humans (Jung et al., 2025).</p></div>
+    <div><div class="h3">Reasoning optional</div><p class="sm">Two reasoning models were less valid than a smaller standard model (Yoshida, 2025).</p></div>
+    <div><div class="h3">Another family</div><p class="sm">Evaluators favour their own output and similar mistakes (Panickssery et al., 2024; Goel et al., 2025).</p></div>
+  </div>
+  <aside class="notes">JobQuest không có đáp án mẫu, nên judge phải hiểu công việc IT và rubric phải mang tri thức miền. Ngoài ra Tan et al. (2025): khả năng làm judge đi theo khả năng giải bài.</aside>
+</section>
+
+<!-- 20 bignum Mansour -->
+<section class="slide l-bignum">
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+  <div class="num">0.313</div>
+  <p class="cap">average kappa of ChatGPT scoring essays (Llama 0.297)<br>best supervised system: 0.817<br>(Mansour et al., 2024)</p>
+  <aside class="notes">Câu hỏi của cô ở buổi 26/9 (07 B20): có bằng chứng đã công bố rằng LLM judge đáng tin không. Trả lời: có điều kiện, không phải mặc định. Đây là mức trung bình của LLM được prompt, thấp hơn người chấm.</aside>
+</section>
+
+<!-- 21 reliable? -->
+<section class="slide l-text wide">
+  <h2 class="title">Is an LLM judge reliable?</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li><b>Conditionally, not by default</b></li>
+      <li>Agreement nears human level with a strong model, an explicit rubric, scored examples</li>
+      <li>This phase relies on the first two; scored examples come after expert rulings</li>
+      <li>Weakest on partially correct answers (Schleifer et al., 2026)</li>
+      <li>Evidence is English, essays, 2023–2024 models; none on Vietnamese role-play</li>
+    </ul>
+  </div>
+  <aside class="notes">Điều kiện lấy từ báo cáo §2.5, tài liệu [101] đến [105]. Slide này phải khớp với slide ngưỡng chấp nhận trong phần D do Nhật trình bày. Dẫn tới câu hỏi 3 cho cô.</aside>
+</section>
+
+<!-- 22 RP-2 criteria -->
+<section class="slide l-table">
+  <h2 class="title">RP-2 criteria (Williamson et al., 2012)</h2>
+  <div class="tblwrap">
+    <table class="tbl filled">
+      <colgroup><col style="width:560px"><col></colgroup>
+      <thead><tr><th>Measure on our own task</th><th>Threshold</th></tr></thead>
+      <tbody>
+        <tr><td>Quadratic weighted kappa</td><td>≥ 0.70</td></tr>
+        <tr><td>Standardised mean difference</td><td>≤ 0.15</td></tr>
+        <tr><td>Below expert–expert agreement</td><td>≤ 0.10</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Hệ quả: độ tin cậy phải đo trên chính bài toán của nhóm (research problem RP-2). Dẫn tới câu hỏi 3: giữ kappa ≥ 0,70 hay lấy "không thấp hơn quá 0,10 so với độ khớp giữa chuyên gia" làm tiêu chí chính.</aside>
+</section>
+
+<!-- 23 benchmark -->
+<section class="slide l-text wide">
+  <h2 class="title">Benchmark: no public one fits</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>Nothing public matches: ordinal rubric, short human answers, Vietnamese, IT work</li>
+      <li>References only: JudgeBench, BiGGen Bench, SEA-HELM</li>
+      <li><b>Ours:</b> expert-scored playthrough transcripts against judge scores, per situation</li>
+      <li>For now the team stands in for experts; the advisor checks a sample</li>
+      <li>So results show the machinery works, not agreement with experts</li>
+      <li>The measures work on any ordinal scale, so they do not wait for game design</li>
+    </ul>
+  </div>
+  <aside class="notes">JudgeBench (Tan et al., 2025): phán đoán cặp đúng/sai. BiGGen Bench (Kim et al., 2025): thang 1–5 có mô tả từng mức và điểm của người. SEA-HELM: mức xử lý tiếng Việt của từng model. Nói rõ giai đoạn này nhóm đóng vai DE (D-47).</aside>
+</section>
+
+<!-- 24 first test -->
+<section class="slide l-rows">
+  <h2 class="title center">First test, week 42</h2>
+  <div class="rows">
+    <div class="row"><div class="lab">Data</div><div class="its"><span>About 30 transcripts</span><span>Scored by the team as experts</span></div></div>
+    <div class="row"><div class="lab">Judges</div><div class="its"><span>6 models</span><span>3 families, 2 tiers each</span></div></div>
+    <div class="row"><div class="lab">Compare</div><div class="its"><span>Per situation vs whole play</span><span>3 repeated runs</span></div></div>
+    <div class="row"><div class="lab">Measures</div><div class="its"><span>Weighted kappa with CI</span><span>Confusion matrix, agreement</span><span>Stability, verbatim quotes</span></div></div>
+  </div>
+  <aside class="notes">Đo gồm: QWK kèm khoảng tin cậy, bảng nhầm lẫn, khớp đúng mức và lệch một mức, độ ổn định giữa các lần chạy, tỉ lệ câu trích đúng nguyên văn. Mỗi lượt gọi trả tiền và việc cài Inspect AI phải hỏi Phúc trước.</aside>
+</section>
+
+<!-- 25 framework -->
+<section class="slide l-text wide">
+  <h2 class="title">Framework for the LLM judge</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li><b>Offline tests: Inspect AI</b>, open source, UK AI Security Institute</li>
+      <li>Repeated runs, several graders, median reducer, ordinal Krippendorff's alpha</li>
+      <li>Our rubric needs a custom scorer</li>
+      <li><b>In the product:</b> our own TypeScript module with schema-validated output</li>
+      <li>Prompts and rubrics live in data files shared by both</li>
+      <li>Not chosen: OpenAI Evals platform, deprecation announced 3 June 2026</li>
+    </ul>
+  </div>
+  <aside class="notes">Các công cụ này không có bài báo bình duyệt. Khoa học nằm ở phương pháp: chấm theo rubric có lập luận trước điểm (Liu et al., 2023) và panel judge (Verga et al.).</aside>
+</section>
+
+<!-- 26 AI-native -->
+<section class="slide l-2col">
+  <h2 class="title">Is JobQuest AI-native?</h2>
+  <div class="cols" style="width:810px;top:130px">
+    <div><div class="h3">Definition adopted</div><p class="sm">AI is constitutive of the core loop: remove it and the central activity collapses (Xu et al., preprint, 53 AI-native games). AI is part of design, operation and maintenance (Ericsson, white paper). No standards body defines the term.</p></div>
+    <div><div class="h3">Applied to JobQuest</div><p class="sm">AI works at all five steps. Without it the system can neither fit narration to a free-text answer nor score it. <b>There is no substitute path:</b> no keyword scoring, no scripted replacement.</p></div>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Nêu thẳng hai nguồn neo của định nghĩa là một preprint và một tài liệu của hãng: đây là câu hỏi 4 cho cô. ITU-R M.2160 dùng thuật ngữ mà không định nghĩa. Không bàn tới prototype. Xu et al., Ericsson, ITU còn 🔍: đọc bản gốc trước khi dựng.</aside>
+</section>
+
+<!-- 27 provider fails -->
+<section class="slide l-text">
+  <h2 class="title">When the model provider fails</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>Generation and scoring, the core, stop</li>
+      <li>The session pauses; answers and progress are saved (NFR-04)</li>
+      <li>Play resumes when the AI returns</li>
+      <li>Sign-in, occupation map and profile stay available</li>
+      <li>Another provider is still AI, not a fallback (DC-02)</li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <aside class="notes">Trả lời nửa sau câu hỏi: khi AI sập thì còn chạy không. Không có đường thay thế như chấm theo từ khoá.</aside>
+</section>
+
+<!-- 28 Chu -->
+<section class="slide l-bignum">
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+  <div class="num">5.2 days</div>
+  <p class="cap">between public incidents, Anthropic API (OpenAI: 5.6)<br>median recovery about one hour; providers uncorrelated<br>(Chu et al., 2025)</p>
+  <aside class="notes">Lý do dùng nhiều nhà cung cấp. Chu et al. còn 🔍: đọc bản gốc, kiểm 5,64 và 5,22 ngày, thời gian phục hồi và kết luận không tương quan trước khi trích.</aside>
+</section>
+
+<!-- 29 comparing models -->
+<section class="slide l-2col">
+  <h2 class="title">Comparing AI models</h2>
+  <div class="cols" style="width:810px;top:140px">
+    <div><div class="h3">Four families</div><p class="sm">One for generation, three for the judge panel. Judges differ from the generator (DC-01) and from each other; bias toward related models falls as the relationship grows distant (Li et al., 2026).</p></div>
+    <div><div class="h3">Six criteria</div><p class="sm">Vietnamese capability, knowledge of IT work, response time, price, schema-constrained output, data terms.</p></div>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Trả lời email 1/10, mục 9 (07 B24): đối sánh giải pháp công nghệ, kể cả model AI.</aside>
+</section>
+
+<!-- 30 candidates -->
+<section class="slide l-table">
+  <h2 class="title">Candidates to test</h2>
+  <div class="tblwrap" style="top:116px">
+    <table class="tbl filled">
+      <colgroup><col style="width:150px"><col style="width:430px"><col></colgroup>
+      <thead><tr><th>Role</th><th>Model (USD per 1M tokens, in / out)</th><th>SEA-HELM, Vietnamese</th></tr></thead>
+      <tbody>
+        <tr><td><b>Judge</b>, Anthropic</td><td>claude-sonnet-5-5 (2 / 10), claude-haiku-5-5 (0.10 / 0.50)</td><td>Sonnet 5: 77.0, Haiku 4.5: 67.7</td></tr>
+        <tr><td><b>Judge</b>, OpenAI</td><td>gpt-6.1-sol (2 / 10), gpt-6-luna (0.10 / 0.50)</td><td>GPT 5.6 Sol: 77.1, Luna: 71.9</td></tr>
+        <tr><td><b>Judge</b>, Google</td><td>gemini-3.8-flash (0.75 / 3.75), gemini-3.5-flash-lite (0.30 / 2.50)</td><td>78.4, 3.1 Flash Lite: 75.2</td></tr>
+        <tr><td><b>Narrator</b></td><td>deepseek-flash (0.30 / 1.20), qwen3.8-flash (0.15 / 0.47)</td><td>V4 Flash: 72.1, Qwen 3.8 Next: 74.9</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Ghi rõ "candidates to test", chưa phải lựa chọn cuối. Giá đọc ngày 8 và 9/10/2026; điểm SEA-HELM (18/9/2026) là của các model cũ hơn cùng dòng. Giá Anthropic đã đối chiếu; giá OpenAI, Google, DeepSeek, Alibaba và bảng SEA-HELM còn 🔍: mở lại trang chính thức trong ngày trình bày.</aside>
+</section>
+
+<!-- 31 what public data cannot tell -->
+<section class="slide l-text wide">
+  <h2 class="title">What public data cannot tell us</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>No public benchmark covers IT knowledge for our three roles</li>
+      <li>The newest small models are not on the Vietnamese leaderboard</li>
+      <li>No response-time data measured from Vietnam</li>
+      <li>One playthrough costs about <b>$0.015</b> (small tier) or <b>$0.086</b> (mid tier)</li>
+      <li>Token counts in that estimate are assumptions</li>
+      <li>The final choice follows the week-42 test: agreement, time, cost</li>
+    </ul>
+  </div>
+  <aside class="notes">Chi phí một lượt chơi do nhóm tự tính, số token là giả định. Dẫn tới câu hỏi 2 cho cô (miễn phí có hạn mức, mua thêm lượt).</aside>
+</section>
+
+<!-- 32 waiting for game design -->
+<section class="slide l-rows">
+  <h2 class="title center">Not settled: waiting for game design</h2>
+  <div class="rows">
+    <div class="row"><div class="lab">Scoring scale</div><div class="its"><span>Levels and what each means</span><span>−1 / 0 / +1 / +2 is planned, not final</span></div></div>
+    <div class="row"><div class="lab">Scoring tables</div><div class="its"><span>Competency table per play</span><span>Criteria given to the judge</span></div></div>
+    <div class="row"><div class="lab">Seed content</div><div class="its"><span>Required facts (NFR-15)</span><span>Sample scenarios are placeholders</span></div></div>
+    <div class="row"><div class="lab">Process evidence</div><div class="its"><span>How hints, time, follow-ups count</span><span>How scores combine</span></div></div>
+  </div>
+  <aside class="notes">Slide này giúp cô thấy phần nào chưa có là có chủ đích. Mức +1 hiện chưa có mô tả ở đâu cả (D-87); kịch bản mẫu chỉ mô tả ba mức. Phép đo không phụ thuộc game design.</aside>
+</section>
+
+<!-- 33 decisions -->
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Decisions we need from you</h2>
+  <div class="grid">
+    <div><div class="h3">1 · Scope</div><p class="sm">AI-4 and AI-5 fully, AI-3 as harness, AI-1 and AI-2 as prototype?</p></div>
+    <div><div class="h3">2 · Free quota</div><p class="sm">Daily free plays plus paid extras? About 400–2,200 VND a play.</p></div>
+    <div><div class="h3">3 · Pass mark</div><p class="sm">Keep kappa ≥ 0.70, or at most 0.10 below expert agreement? (NFR-14)</p></div>
+    <div><div class="h3">4 · AI-native</div><p class="sm">Two anchors: a preprint and a vendor white paper. Acceptable?</p></div>
+    <div><div class="h3">5 · Section 5.2.3</div><p class="sm">Candidates and test plan now, final choice after measurement?</p></div>
+    <div><div class="h3">6 · 6 Oct list</div><p class="sm">Was it your 3 October feedback? We have no minutes.</p></div>
+  </div>
+  <aside class="notes">Dành nhiều thời gian nhất cho slide này. Câu 2: tỉ giá và số token là giả định; nhóm chỉ cài hạn mức miễn phí mỗi ngày trong giai đoạn này, mua thêm lượt chỉ mô tả. Câu 1: AI-1 và AI-2 không quá khó, AI-3, AI-4, AI-5 khó hơn.</aside>
+</section>
+
+<!-- 34 next steps -->
+<section class="slide l-roadmap">
+  <h2 class="title">Next steps</h2>
+  <div class="stairs" style="--n:3">
+    <div class="step" style="--i:0"><div class="h3">Week 42</div><div class="line"></div><ul class="ul"><li>First test: about 30 transcripts</li><li>Six judges, two narrators</li></ul></div>
+    <div class="step" style="--i:1"><div class="h3">Report</div><div class="line"></div><ul class="ul"><li>Write Section 5.2.3</li><li>Then 5.3.6: prompts, schema, flow</li></ul></div>
+    <div class="step" style="--i:2"><div class="h3">Game design</div><div class="line"></div><ul class="ul"><li>Scale, competency table</li><li>Judge criteria</li></ul></div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<!-- 35 refs 1 -->
+<section class="slide l-text wide refs-slide">
+  <h2 class="title">References: peer-reviewed (1/2)</h2>
+  <div class="refs">
+    <p>Balog &amp; Bakken (2026). “Act Like a 5th Grader” is Not Enough. Findings of EMNLP. arXiv:2608.30033</p>
+    <p>Chu et al. (2025). ICPE 2025. doi:10.1145/3676151.3719372</p>
+    <p>Flanagan (1954). The critical incident technique. Psychological Bulletin, 51(4)</p>
+    <p>Goel et al. (2025). Great Models Think Alike. ICML 2025. arXiv:2502.04313</p>
+    <p>Haldar &amp; Hockenmaier (2025). Rating Roulette. EMNLP 2025. arXiv:2510.27106</p>
+    <p>Hanley &amp; Lippman-Hand (1983). JAMA. doi:10.1001/jama.1983.03330370053031</p>
+    <p>Jung et al. (2025). Model size, temperature, prompt style and score alignment. NCME AIME. arXiv:2509.19329</p>
+    <p>Kim et al. (2025). BiGGen Bench. NAACL 2025. arXiv:2406.05761</p>
+    <p>Klang et al. (2023). BMC Medical Education, 23, 772</p>
+    <p>Li, D. et al. (2026). Preference Leakage. ICLR 2026. arXiv:2502.01534</p>
+    <p>Li, Z. et al. (2024). RAG or long-context LLMs? EMNLP 2024 Industry. arXiv:2407.16833</p>
+    <p>Liu et al. (2023). G-Eval. EMNLP 2023</p>
+    <p>Lu &amp; Wang (2024). Generative Students. L@S 2024. arXiv:2405.11591</p>
+    <p>Mansour et al. (2024). Can LLMs score essays? LREC-COLING 2024. arXiv:2403.06149</p>
+    <p>Mislevy &amp; Haertel (2006). Educ. Measurement: Issues and Practice, 25(4)</p>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- 36 refs 2 -->
+<section class="slide l-text wide refs-slide">
+  <h2 class="title">References: peer-reviewed (2/2)</h2>
+  <div class="refs">
+    <p>Panickssery et al. (2024). LLM evaluators favor their own generations. NeurIPS 2024. arXiv:2404.13076</p>
+    <p>Peng et al. (2026). LLM-as-a-Judge for rubrics in agentic scenarios. EMNLP 2026. arXiv:2606.29920</p>
+    <p>Riedl &amp; Bulitko (2013). Interactive narrative. AI Magazine, 34(1)</p>
+    <p>Schleifer et al. (2026). Quality-conditioned agreement in short answer scoring. BEA 2026. arXiv:2605.07647</p>
+    <p>Shankar et al. (2024). Who validates the validators? UIST 2024</p>
+    <p>Shute (2011). Stealth assessment in computer-based games</p>
+    <p>Tan et al. (2025). JudgeBench. ICLR 2025. arXiv:2410.12784</p>
+    <p>Thomson &amp; Reiter (2020). Accuracy in data-to-text systems. INLG 2020. arXiv:2011.03992</p>
+    <p>Whetzel et al. (2020). Situational judgment tests. Personnel Assessment and Decisions, 6(1)</p>
+    <p>Williamson, Xi &amp; Breyer (2012)</p>
+    <p>Wu et al. Unveiling scoring processes. Technology, Knowledge and Learning. arXiv:2407.18328</p>
+    <p>Wuttke et al. (2025). AI conversational interviewing. LaTeCH-CLfL 2025. arXiv:2410.01824</p>
+    <p>Xiao et al. (2020). Tell me about yourself. ACM TOCHI. doi:10.1145/3381804</p>
+    <p>Yoshida (2025). Reasoning models for essay scoring. Findings of EMNLP 2025</p>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- 37 refs 3 -->
+<section class="slide l-text wide refs-slide">
+  <h2 class="title">References: preprints, vendor, docs</h2>
+  <div class="refs">
+    <p class="rh">Preprints and working papers</p>
+    <p>Chopra &amp; Haaland. Conducting qualitative interviews with AI. CESifo WP 10666</p>
+    <p>Ferrer et al. (2026). When can we trust LLM graders? arXiv:2603.29559</p>
+    <p>Korn et al. (2025). LLMREI. arXiv:2507.02564</p>
+    <p>Krumdick et al. (2025). No Free Labels. arXiv:2503.05061</p>
+    <p>Verga et al. (2024). Replacing judges with juries. arXiv:2404.18796</p>
+    <p>Xu et al. (2026). AI Native Games. arXiv:2607.00527</p>
+    <p>Yu et al. (2026). Rubric interference in LLM judges. arXiv:2608.14684</p>
+    <p class="rh">Standards, vendor, documentation</p>
+    <p>ITU-R Recommendation M.2160-0 (2023)</p>
+    <p>Ericsson. Defining AI native (white paper)</p>
+    <p>UK AI Security Institute. Inspect AI documentation</p>
+    <p>OpenAI. API deprecations (Evals, 3 June 2026)</p>
+    <p>AI Singapore. SEA-HELM, Vietnamese (18 Sep 2026)</p>
+    <p>Provider pricing pages (read 8–9 Oct 2026)</p>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<!-- ================= SLIDES END ================= -->
+</main>
+<div class="hud" id="hud"></div>
+<script>
+/* Deck runtime: fit-to-window, ← → / Space / PgUp PgDn / Home End, F = fullscreen, O = overview, #n deep link, P = print */
+(function(){
+  const deck=document.querySelector('.deck'), slides=[...deck.querySelectorAll('.slide')], hud=document.getElementById('hud');
+  let i=0; try{i=Math.min(Math.max((parseInt(location.hash.slice(1))||1)-1,0),slides.length-1)}catch(e){}
+  function fit(){ if(document.body.classList.contains('overview'))return;
+    const s=Math.min(innerWidth/960,innerHeight/540); deck.style.transform=`translate(${(innerWidth-960*s)/2}px,${(innerHeight-540*s)/2}px) scale(${s})`; }
+  function show(n){ i=Math.min(Math.max(n,0),slides.length-1); slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    hud.textContent=(i+1)+' / '+slides.length; try{history.replaceState(null,'','#'+(i+1))}catch(e){} }
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1)}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='f'||e.key==='F'){try{const r=document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();r&&r.catch&&r.catch(()=>{})}catch(e){}}
+    else if(e.key==='o'||e.key==='O'){document.body.classList.toggle('overview');fit();slides[i].scrollIntoView({block:'center'})}
+    else if(e.key==='p'||e.key==='P'){print()}
+  });
+  slides.forEach((s,k)=>s.addEventListener('click',()=>{ if(document.body.classList.contains('overview')){document.body.classList.remove('overview');show(k);fit()} }));
+  addEventListener('resize',fit); fit(); show(i);
+})();
+</script>
+</body>
+</html>
