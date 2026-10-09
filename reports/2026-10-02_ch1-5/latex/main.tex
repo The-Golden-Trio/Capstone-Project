@@ -1,8 +1,53 @@
 % Sinh tự động từ report.md bằng tools/report/md2tex.py. Sửa report.md rồi chạy lại.
 % longtable v4.24 (10/2025) báo "Infinite glue shrinkage" ở mọi chỗ bảng ngắt trang; dùng bản v4.13 kèm sẵn.
 \makeatletter\declare@file@substitution{longtable.sty}{longtable-2020-01-07.sty}\makeatother
+\PassOptionsToPackage{table}{xcolor}
 \documentclass[twoside,final]{hcmut-report}
 \usepackage{pdflscape}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+
+\definecolor{uclabel}{gray}{0.92}   % label column and title row
+\definecolor{uchead}{gray}{0.85}    % "Step | Action" header row
+
+% column widths: label | step | action
+\newlength{\ucA}\newlength{\ucB}\newlength{\ucC}\newlength{\ucBC}
+\AtBeginDocument{%
+  \setlength{\ucA}{0.19\linewidth}%
+  \setlength{\ucB}{0.07\linewidth}%
+  \setlength{\ucC}{\dimexpr\linewidth-\ucA-\ucB-6\tabcolsep-4\arrayrulewidth\relax}%
+  \setlength{\ucBC}{\dimexpr\ucB+\ucC+2\tabcolsep+\arrayrulewidth\relax}%
+}
+
+% \begin{usecase}{UC-E01}{Register account} ... \end{usecase}
+\newenvironment{usecase}[2]{%
+  \renewcommand{\arraystretch}{1.3}%
+  \begin{longtable}{|>{\columncolor{uclabel}\raggedright\arraybackslash}p{\ucA}%
+                    |>{\centering\arraybackslash}p{\ucB}%
+                    |>{\raggedright\arraybackslash}p{\ucC}|}
+  \caption{Use case #1: #2}\label{tab:#1}\\
+  \hline
+  \textbf{#1} & \multicolumn{2}{>{\columncolor{uclabel}}p{\ucBC}|}{\textbf{#2}}\\
+  \endfirsthead
+  \hline
+  \textbf{#1} & \multicolumn{2}{>{\columncolor{uclabel}}p{\ucBC}|}{\textbf{#2} \textit{(continued)}}\\
+  \endhead
+  \hline
+  \endfoot
+}{\end{longtable}}
+
+% one-cell row: \ucrow{Precondition}{text}
+\newcommand{\ucrow}[2]{%
+  \hline \textbf{#1} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\ucBC}|}{#2}\\}
+
+% step block: \ucsteps{Ordinary Sequence} followed by \ucstep{1}{text} ...
+\newcommand{\ucsteps}[1]{%
+  \hline \textbf{#1} & \cellcolor{uchead}\textbf{Step} & \cellcolor{uchead}\textbf{Action}\\}
+\newcommand{\ucstep}[2]{\cline{2-3} & #1 & #2\\}
+
+% bullet line inside a cell (breaks before each item, not after the last)
+\newcommand{\ucitem}[1]{\ifhmode\par\fi\textbullet~#1}
 \setlength{\LTleft}{0pt}
 \setlength{\LTright}{0pt}
 \setlength{\emergencystretch}{3em}
