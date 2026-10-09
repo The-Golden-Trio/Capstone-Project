@@ -331,9 +331,33 @@ b,strong{font-weight:700;color:var(--navy)}
 
 /* ===================== DECK-SPECIFIC (keep tiny, tokens only) ===================== */
 .slide > aside.notes{display:none}
-.refs-slide .refs{position:absolute;left:var(--mx);top:112px;width:810px;padding:0 var(--inset);column-count:2;column-gap:28px;font-size:var(--fs-xs);line-height:1.3}
-.refs-slide .refs p{margin-bottom:7px;break-inside:avoid}
-.refs-slide .refs p.rh{font-weight:700;color:var(--navy);font-size:var(--fs-sm)}
+.kick{position:absolute;left:85px;top:16px;font-size:var(--fs-xs);font-weight:700;color:var(--blue);letter-spacing:.04em;line-height:1.2}
+.sub{position:absolute;left:var(--mx);top:98px;width:810px;padding:0 var(--inset);font-size:var(--fs-h3);font-weight:600;color:var(--blue);line-height:1.2}
+.title.two{min-height:98px;align-items:flex-start}
+.dense .body{top:110px;font-size:var(--fs-sm);line-height:1.3}
+.dense.xs .body{font-size:var(--fs-xs)}
+.dense .body.low{top:140px}
+.dense .body.low2{top:148px}
+.dense .body > * + *{margin-top:8px}
+.dense .ul li+li{margin-top:.35em}
+.dense .ul ul{margin-top:.25em}
+.dense .ul ul li+li{margin-top:.15em}
+.ol{padding-left:1.55em;margin-top:.25em}
+.ol li+li{margin-top:.25em}
+.ol li::marker{color:var(--blue);font-weight:700}
+.ul .ol li{padding-left:0}
+.ul .ol li::before{display:none}
+.dense .body.cols2 > *{margin-top:0}
+.dense .tbl th,.dense .tbl td{font-size:inherit;padding:4px 8px;line-height:1.25;text-align:left}
+.dense .tbl tr.grp td{background:var(--gray)}
+.dense.tight .body{top:104px}
+.dense.tight .body > * + *{margin-top:5px}
+.dense.tight .tbl th,.dense.tight .tbl td{padding:3px 8px}
+.cols2{display:grid;grid-template-columns:1.6fr 1fr;column-gap:28px}
+.cols2 .hd{font-size:var(--fs-h3);font-weight:700;color:var(--navy);margin-bottom:6px}
+.refs-slide .refs{position:absolute;left:var(--mx);top:118px;width:810px;padding:0 var(--inset);column-count:2;column-gap:28px;font-size:var(--fs-xs);line-height:1.3}
+.refs-slide .refs p{margin-bottom:4px;break-inside:avoid}
+.refs-slide .refs p.rh{font-weight:700;color:var(--navy);font-size:var(--fs-sm);margin-top:4px}
 
 /* ===================== Presentation shell (not part of the look) ===================== */
 .hud{position:fixed;right:14px;bottom:12px;font:600 12px/1 var(--font);color:rgba(255,255,255,.55);letter-spacing:.04em;user-select:none;z-index:9}
@@ -354,587 +378,396 @@ body.overview .slide.active{outline:10px solid var(--blue)}
 <main class="deck">
 <!-- ================= SLIDES START ================= -->
 
-<!-- 01 cover -->
-<section class="slide l-cover">
-  <div class="blk blue" style="left:0;top:0;height:270px"></div>
-  <h1 class="cv-title"><span>AI in</span><span><span class="hl">JobQuest</span></span></h1>
-  <p class="cv-sub">From an expert's knowledge to a scored playthrough</p>
-  <p class="cv-meta"><b>AI section · Week 41 · 9 October 2026</b><br>Specialized Project (ĐACN) · HCMUT<br>Advisor: Assoc. Prof. Võ Thị Ngọc Châu · Team: Golden Trio</p>
-  <aside class="notes">Phần AI của master deck (D-75). Nói ngay từ đầu rằng tuần này là khảo sát và chốt hướng, để cô không chờ số liệu.</aside>
-</section>
-
-<!-- 02 status -->
-<section class="slide l-text wide">
-  <h2 class="title">What this section covers</h2>
-  <div class="body">
-    <ul class="ul gap">
-      <li>We walk the product flow and stop at each of <b>five places where AI works</b></li>
-      <li>Each of your AI questions is answered at the step it belongs to</li>
-      <li>This week produced design decisions and a literature review</li>
-      <li><b>No measurement has been run yet</b></li>
-      <li>The first test is planned for week 42</li>
+<!-- 01 -->
+<section class="slide l-text wide dense">
+  <div class="kick">AI section · Week 41</div>
+  <h2 class="title">AI in JobQuest</h2>
+  <p class="sub">From an expert's knowledge to a scored playthrough</p>
+  <div class="body low">
+    <p>This section walks through the product flow from start to end and stops at each of the five places where AI works.</p>
+    <p>Each of your AI questions is answered at the step it belongs to:</p>
+    <ul class="ul">
+      <li>Is JobQuest AI-native, and what happens when the AI is down? (slides 2 and 11)</li>
+      <li>How are generated scenarios checked, and how is a playthrough scored? (slides 4 to 7)</li>
+      <li>Does the judging model need to be stronger than the generating model? (slide 8)</li>
+      <li>Is there published evidence that an LLM judge is reliable? (slide 9)</li>
+      <li>Which benchmark and which framework? (slide 10)</li>
+      <li>Comparison of technology solutions, including AI models (slide 12)</li>
     </ul>
-  </div>
-  <aside class="notes">Nói thẳng: tuần này là khảo sát và chốt hướng, chưa có số đo. Phép thử đầu tiên là tuần 42.</aside>
-</section>
-
-<!-- 03 question map -->
-<section class="slide l-table">
-  <h2 class="title">Where your questions are answered</h2>
-  <div class="tblwrap">
-    <table class="tbl filled">
-      <colgroup><col style="width:610px"><col></colgroup>
-      <thead><tr><th>Your question</th><th>Slides</th></tr></thead>
-      <tbody>
-        <tr><td>Is JobQuest AI-native? What if the AI is down?</td><td>4–5, 26–27</td></tr>
-        <tr><td>How are scenarios checked and plays scored?</td><td>8–17</td></tr>
-        <tr><td>Must the judge be stronger than the generator?</td><td>18–19</td></tr>
-        <tr><td>Is there published evidence that LLM judges work?</td><td>20–22</td></tr>
-        <tr><td>Which benchmark and which framework?</td><td>23–25</td></tr>
-        <tr><td>How do technologies and AI models compare?</td><td>29–31</td></tr>
-      </tbody>
-    </table>
+    <p><b>Status:</b> this week produced the design decisions and the literature review. <b>No measurement has been run yet.</b> The first test is planned for week 42.</p>
   </div>
   <div class="edge-r"></div>
-  <aside class="notes">Nguồn các câu hỏi: buổi 19/9 (07 B2), buổi 26/9 (07 B20), email 1/10 mục 9 (07 B24) và danh sách 6/10. Số slide phải được cập nhật nếu thêm hoặc bớt slide.</aside>
+  <aside class="notes">Nói ngay từ đầu rằng tuần này là khảo sát và chốt hướng, để cô không chờ số liệu.</aside>
 </section>
 
-<!-- 04 flow -->
-<section class="slide l-diagram">
-  <h2 class="title center">Five places where AI works</h2>
-  <div class="stage">
-    <svg width="810" height="340" viewBox="0 0 810 340">
-      <g class="f-navy" font-size="16" font-weight="700"><text x="0" y="22">Authoring · no player is waiting</text><text x="0" y="212">Play</text></g>
-      <!-- row 1 -->
-      <rect class="f-gray" x="0" y="36" width="138" height="68"/>
-      <rect class="f-blue" x="168" y="36" width="138" height="68"/>
-      <rect class="f-blue" x="336" y="36" width="138" height="68"/>
-      <rect class="f-blue" x="504" y="36" width="138" height="68"/>
-      <rect class="f-navy" x="672" y="36" width="138" height="68"/>
-      <!-- row 2 -->
-      <rect class="f-navy" x="0" y="226" width="138" height="68"/>
-      <rect class="f-blue" x="168" y="226" width="138" height="68"/>
-      <rect class="f-gray" x="336" y="226" width="138" height="68"/>
-      <rect class="f-blue" x="504" y="226" width="138" height="68"/>
-      <rect class="f-navy" x="672" y="226" width="138" height="68"/>
-      <!-- arrows -->
-      <g class="s-navy" stroke-width="2">
-        <path d="M141 70 H162"/><path d="M309 70 H330"/><path d="M477 70 H498"/><path d="M645 70 H666"/>
-        <path d="M141 260 H162"/><path d="M309 260 H330"/><path d="M477 260 H498"/><path d="M645 260 H666"/>
-        <path d="M573 222 V114"/>
-      </g>
-      <g class="f-navy">
-        <path d="M168 70 l-8 -5 v10 z"/><path d="M336 70 l-8 -5 v10 z"/><path d="M504 70 l-8 -5 v10 z"/><path d="M672 70 l-8 -5 v10 z"/>
-        <path d="M168 260 l-8 -5 v10 z"/><path d="M336 260 l-8 -5 v10 z"/><path d="M504 260 l-8 -5 v10 z"/><path d="M672 260 l-8 -5 v10 z"/>
-        <path d="M573 106 l-5 8 h10 z"/>
-      </g>
-      <text x="585" y="172" class="f-navy" font-size="16">flagged cases</text>
-      <!-- row 1 labels -->
-      <g text-anchor="middle" font-size="16">
-        <text x="69" y="66" class="f-ink">Domain</text><text x="69" y="86" class="f-ink">Expert</text>
-        <g class="f-white"><text x="237" y="66" font-weight="700">AI-1</text><text x="237" y="86">interviews</text>
-        <text x="405" y="66" font-weight="700">AI-2</text><text x="405" y="86">drafts seed</text>
-        <text x="573" y="66" font-weight="700">AI-3</text><text x="573" y="86">tests plays</text>
-        <text x="741" y="66" font-weight="700">Approved</text><text x="741" y="86">seed</text>
-        <text x="69" y="256" font-weight="700">Approved</text><text x="69" y="276">seed</text>
-        <text x="237" y="256" font-weight="700">AI-4</text><text x="237" y="276">narrates</text>
-        <text x="573" y="256" font-weight="700">AI-5</text><text x="573" y="276">scores</text>
-        <text x="741" y="256" font-weight="700">Skill</text><text x="741" y="276">scores</text></g>
-        <text x="405" y="256" class="f-ink">Player</text><text x="405" y="276" class="f-ink">answers</text>
-      </g>
-    </svg>
-  </div>
-  <aside class="notes">Slide khung; các slide sau đi lần lượt từng bước. Trả lời nửa đầu của câu "AI-native": AI có mặt ở mọi khâu của vòng đời nội dung và của lúc chơi. Cờ chấm lệch đi từ AI-5 về AI-3 rồi tới chuyên gia.</aside>
-</section>
-
-<!-- 05 who decides -->
-<section class="slide l-table">
-  <h2 class="title">AI drafts, experts decide</h2>
-  <div class="tblwrap">
+<!-- 02 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">The flow</div>
+  <h2 class="title">Five places where AI works</h2>
+  <div class="body">
     <table class="tbl filled">
-      <colgroup><col style="width:90px"><col style="width:360px"><col></colgroup>
+      <colgroup><col style="width:62px"><col style="width:360px"><col></colgroup>
       <thead><tr><th>Step</th><th>AI does</th><th>A person decides</th></tr></thead>
       <tbody>
-        <tr><td><b>AI-1</b></td><td>Interviews the expert for seed input</td><td>Expert confirms the record</td></tr>
-        <tr><td><b>AI-2</b></td><td>Drafts a structured game seed</td><td>Expert sets scoring keys, approves</td></tr>
-        <tr><td><b>AI-3</b></td><td>Runs test plays, picks cases to review</td><td>Expert rules, approves publication</td></tr>
-        <tr><td><b>AI-4</b></td><td>Writes narration and follow-ups</td><td>No one at run time; rules constrain it</td></tr>
-        <tr><td><b>AI-5</b></td><td>Scores the playthrough on the rubric</td><td>Expert reviews flagged cases</td></tr>
+        <tr class="grp"><td colspan="3"><b>Authoring</b> (no player is waiting): Domain Expert → AI-1 → raw knowledge → AI-2 with Content Admin → seed → AI-3 with Domain Expert → approved seed</td></tr>
+        <tr><td><b>AI-1</b></td><td>Interviews the Domain Expert to collect what a seed needs</td><td>The expert confirms the record</td></tr>
+        <tr><td><b>AI-2</b></td><td>Turns the expert's input into a structured game seed</td><td>The expert sets every scoring key and rubric anchor, and approves the seed</td></tr>
+        <tr><td><b>AI-3</b></td><td>Runs test playthroughs and picks the cases the expert must see</td><td>The expert rules on them and approves publication</td></tr>
+        <tr class="grp"><td colspan="3"><b>Play</b>: approved seed → AI-4 → player answers → AI-5 → skill scores; flagged cases → AI-3 → Domain Expert</td></tr>
+        <tr><td><b>AI-4</b></td><td>Writes connecting narration and follow-up questions during play</td><td>Nobody at run time; the engine and rules constrain it</td></tr>
+        <tr><td><b>AI-5</b></td><td>Scores the playthrough against the rubric</td><td>The expert reviews flagged cases</td></tr>
       </tbody>
     </table>
-  </div>
-  <div class="edge-r"></div>
-  <aside class="notes">Nguyên tắc: AI soạn, nối, chấm và lọc. Chuyên gia (DE) quyết nội dung nghề, khoá chấm và việc xuất bản. Không có AI thì vòng lõi không chạy được (định nghĩa ở slide 26).</aside>
-</section>
-
-<!-- 06 AI-1 -->
-<section class="slide l-text wide">
-  <h2 class="title">Step 1: AI-1 interviews the expert</h2>
-  <div class="body">
-    <ul class="ul gap">
-      <li>An LLM probes for incidents, good and poor responses, situation facts</li>
-      <li>One interview per expert; merged notes mark agreement and differences</li>
-      <li>Probes only inside a human-written topic guide <span class="sm">(Flanagan, 1954; Whetzel et al., 2020)</span></li>
-      <li>A tracker lists the seed fields still missing</li>
-      <li>The expert confirms a summary</li>
-      <li>Every turn is stored verbatim; each seed field links to its source turn</li>
+    <ul class="ul">
+      <li>Principle: AI drafts, connects, scores and filters. Domain Experts decide occupational content, scoring keys and publication.</li>
+      <li>AI is present at every step of the content lifecycle and of play. Without it the core loop cannot run (definition on slide 11).</li>
     </ul>
   </div>
-  <aside class="notes">Dẫn tới câu hỏi 1 cho cô ở slide 33 (phạm vi AI-1 và AI-2 trong ĐACN).</aside>
-</section>
-
-<!-- 07 AI-1 evidence -->
-<section class="slide l-2col">
-  <h2 class="title">AI-1: evidence and limits</h2>
-  <div class="cols" style="width:810px;top:140px">
-    <div><div class="h3">What studies show</div><p class="sm">In 766 AI-led interviews, 94.8–99.8% of questions were open-ended and 0.1–0.4% hallucinated (Chopra &amp; Haaland). A chatbot asking follow-ups drew more specific answers than a form (Xiao et al., 2020).</p></div>
-    <div><div class="h3">Weaknesses, gap</div><p class="sm">AI interviewers missed follow-ups in 88% of failures (Wuttke et al., 2025). An LLM elicited at most 73.7% of requirements and invented a figure (Korn et al.). <b>Hence the tracker and confirmation.</b> No study found of expert critical-incident interviews, or in Vietnamese.</p></div>
-  </div>
   <div class="edge-r"></div>
-  <aside class="notes">Chopra &amp; Haaland là working paper (ghi năm bản sửa 2026). Wuttke chỉ so sánh nhỏ: 5 phỏng vấn do AI, 6 do người.</aside>
+  <aside class="notes">Trả lời nửa đầu của câu "AI-native": AI có mặt ở mọi khâu. Đây là slide khung; các slide 3 đến 7 đi lần lượt từng bước.</aside>
 </section>
 
-<!-- 08 AI-2 -->
-<section class="slide l-text wide">
-  <h2 class="title">Step 2: AI-2 drafts the game seed</h2>
+<!-- 03 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Step 1</div>
+  <h2 class="title">AI-1 interviews the Domain Expert</h2>
   <div class="body">
-    <ul class="ul gap">
-      <li>Helps the Content Admin build context, characters, situations, canon events</li>
-      <li>Drafts are written from the expert's own words</li>
-      <li><b>The expert sets every scoring key and rubric anchor</b>; the model only drafts</li>
-      <li>Machine structure check, then expert approval, before any player sees it</li>
-      <li>Schema follows evidence-centered design <span class="sm">(Mislevy &amp; Haertel, 2006; Shute, 2011)</span></li>
-      <li>Checkpoint 1 of 4 for generated content</li>
+    <ul class="ul">
+      <li><b>What it does.</b> An LLM asks and probes to collect what a seed needs: incidents, what a good and a poor response look like, facts of the situation. One interview per expert; the merged content marks where experts agree and where they differ.</li>
+      <li><b>How it is constrained.</b>
+        <ul>
+          <li>A human-written topic guide based on the critical incident technique (Flanagan, 1954) and on situational-judgment-test development practice (Whetzel et al., 2020). The model probes inside each topic only.</li>
+          <li>A tracker of seed fields still missing.</li>
+          <li>The expert is shown a summary and confirms it.</li>
+          <li>Every turn is stored verbatim, and each seed field links to the turn it came from.</li>
+        </ul>
+      </li>
+      <li><b>Evidence that an LLM can hold an interview to a guide.</b> In 766 AI-led interviews, 94.8% to 99.8% of questions were open-ended, 95.7% to 99.6% neutral, and 0.1% to 0.4% hallucinated (Chopra &amp; Haaland, working paper). A chatbot asking follow-up questions elicited more informative and specific answers than a static form, with about 600 participants (Xiao et al., 2020).</li>
+      <li><b>Known weakness, and the design response.</b> In a small comparison (5 AI-led and 6 human-led interviews) the AI interviewer committed 88% of the failures to follow up on unclear answers (Wuttke et al., 2025). An LLM requirements interviewer elicited at most 73.7% of requirements and invented a figure in one interview (Korn et al., preprint). Hence the coverage tracker and the expert's confirmation.</li>
+      <li><b>Gap.</b> No study was found of an LLM conducting critical-incident interviews with domain experts, and none in Vietnamese.</li>
     </ul>
   </div>
-  <aside class="notes">Trả lời "QA kịch bản sinh", chốt thứ nhất. Chi tiết schema của seed (danh sách fact, thang chấm) chờ game design; nói ở slide 32.</aside>
-</section>
-
-<!-- 09 why experts own keys -->
-<section class="slide l-2col">
-  <h2 class="title">Why experts own keys and rubrics</h2>
-  <div class="cols" style="width:810px;top:150px">
-    <div><div class="h3">Rubrics</div><p class="sm">Rubrics generated by LLMs differ from those human graders use, and LLM graders take shortcuts. Analytic rubrics that reflect human grading logic narrow the gap (Wu et al.).</p></div>
-    <div><div class="h3">Drafted content</div><p class="sm">When GPT-4 drafted 210 examination questions, specialists required revision of 15% and judged 0.5% false (Klang et al., 2023).</p></div>
-  </div>
   <div class="edge-r"></div>
-  <aside class="notes">Hai dẫn chứng cho quy tắc "DE đặt mọi khoá chấm và mốc rubric, model chỉ soạn".</aside>
+  <aside class="notes">Chỗ này dẫn tới câu hỏi 1 cho cô ở slide 14 (phạm vi AI-1 và AI-2 trong ĐACN).</aside>
 </section>
 
-<!-- 10 AI-3 -->
-<section class="slide l-text wide">
-  <h2 class="title">Step 3: AI-3 helps the expert test</h2>
+<!-- 04 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Step 2</div>
+  <h2 class="title">AI-2 turns expert input into a game seed</h2>
   <div class="body">
-    <ul class="ul gap">
-      <li>A volunteer expert has about seven hours and cannot read every answer</li>
-      <li>AI-3 runs test plays (testers, simulated answers) through AI-4 and AI-5</li>
-      <li>It ranks cases: judges differ by over one level, or a rule broke</li>
-      <li><b>Plus a blind random sample of unflagged cases</b></li>
-      <li>The expert rules and may refine anchors; rubrics are versioned <span class="sm">(Shankar et al., 2024)</span></li>
-      <li>Checkpoint 2 of 4: expert-scored plays also validate the judge</li>
+    <ul class="ul">
+      <li><b>What it does.</b> Helps the Content Administrator turn the experts' answers into a structured seed: context, characters, situations, canon events, and the scoring frame.</li>
+      <li><b>Rules.</b>
+        <ul>
+          <li>Drafts are written from the expert's own words.</li>
+          <li><b>The Domain Expert sets every scoring key and every rubric anchor.</b> The model only drafts.</li>
+          <li>A seed passes automatic structure checks, then the expert's approval, before any player sees it.</li>
+        </ul>
+      </li>
+      <li><b>Why experts own keys and rubrics.</b>
+        <ul>
+          <li>Rubrics generated by LLMs differ from the rubrics human graders use, and LLM graders take shortcuts; analytic rubrics that reflect human grading logic narrow the gap (Wu et al.).</li>
+          <li>When GPT-4 drafted 210 examination questions, specialists required revision of 15% and judged 0.5% false (Klang et al., 2023).</li>
+        </ul>
+      </li>
+      <li><b>Schema.</b> The seed follows evidence-centered design: what is measured, which behaviour is evidence for it, and which situation elicits that behaviour (Mislevy &amp; Haertel, 2006; Shute, 2011).</li>
+      <li><b>Checkpoint 1 of 4 for generated content:</b> structure check by machine, content approved by the expert.</li>
     </ul>
   </div>
-  <aside class="notes">Giai đoạn này chưa có chuyên gia và người chơi thật: nhóm đóng vai cả hai, cô kiểm một mẫu. Kết quả cho thấy bộ máy chạy được, chưa phải độ khớp với chuyên gia.</aside>
-</section>
-
-<!-- 11 AI-3 evidence -->
-<section class="slide l-2col">
-  <h2 class="title">Why a random sample, and real plays</h2>
-  <div class="cols" style="width:810px;top:140px">
-    <div><div class="h3">Random sample</div><p class="sm">LLM confidence separates right from wrong grades only weakly (AUC 0.57–0.64; Ferrer et al.), so flagged cases alone can hide errors. If n audited cases show no error, the rate is at most about 3/n at 95% (Hanley &amp; Lippman-Hand, 1983).</p></div>
-    <div><div class="h3">Real plays</div><p class="sm">Persona-prompted LLMs answered with near-uniform accuracy, unlike 2,359 real students (Balog &amp; Bakken, 2026). Simulated profiles correlated r = 0.72 with students on multiple choice (Lu &amp; Wang, 2024).</p></div>
-  </div>
   <div class="edge-r"></div>
-  <aside class="notes">Hanley &amp; Lippman-Hand: mới đọc đoạn mở đầu, điều kiện n &gt; 30 lấy từ bài nhắc lại 1995; cần đọc bản gốc trước khi trích con số. Người chơi giả lập chỉ tìm được vấn đề tương đối.</aside>
+  <aside class="notes">Trả lời "QA kịch bản sinh", chốt thứ nhất. Chi tiết schema của seed (danh sách fact, thang chấm) chờ game design; nói ở slide 13.</aside>
 </section>
 
-<!-- 12 AI-4 -->
-<section class="slide l-text wide">
-  <h2 class="title">Step 4: AI-4 narrates during play</h2>
+<!-- 05 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Step 3 · Before publishing</div>
+  <h2 class="title">AI-3 helps the expert test</h2>
   <div class="body">
-    <ul class="ul gap">
-      <li><b>The engine, not the model, controls</b> the order of canon events</li>
-      <li>Canon content is shown verbatim; approved variants are logged</li>
-      <li>The model writes only connecting narration and follow-up questions</li>
-      <li>The whole seed is in the prompt; the rubric and keys are not</li>
-      <li>Run-time checks are rules, not a model call, so no added waiting</li>
-      <li>A different model family reviews the logs afterwards</li>
+    <ul class="ul">
+      <li><b>Problem.</b> A playthrough contains many free-text answers. A volunteer expert with about seven hours cannot read every one.</li>
+      <li><b>What it does.</b> Collects test playthroughs (experts or testers playing, plus simulated answers), runs AI-4 and AI-5 on them, and builds a ranked queue of the cases that need the expert:
+        <ul>
+          <li>cases where the three judges differ by more than one level;</li>
+          <li>generated turns that broke a run-time rule;</li>
+          <li><b>plus a blind random sample of cases that were not flagged.</b></li>
+        </ul>
+      </li>
+      <li><b>The expert decides.</b> The expert can also refine a rubric anchor during review, so rubrics are versioned: people's criteria shift while they grade (Shankar et al., 2024).</li>
+      <li><b>Why the random sample is required.</b> Confidence signals from an LLM grader separate right from wrong grades only weakly (area under the curve 0.57 to 0.64; Ferrer et al., preprint), so flagged cases alone can hide errors. If n audited cases show no error, the error rate is at most about 3/n with 95% confidence (Hanley &amp; Lippman-Hand, 1983).</li>
+      <li><b>Simulated players only find relative problems.</b> Persona-prompted LLMs answered with near-perfect, uniform accuracy, unlike 2,359 real students (Balog &amp; Bakken, 2026). Simulated student profiles correlated with real students at r = 0.72 on multiple-choice items (Lu &amp; Wang, 2024). Real test plays are therefore needed as well.</li>
+      <li><b>Checkpoint 2 of 4.</b> These expert-scored test plays are also the validation data for the judge (slide 10).</li>
+      <li><b>This phase.</b> There are no experts and no real players yet: the team stands in for both and the advisor checks a sample. Results then show that the machinery works, not agreement with experts.</li>
     </ul>
   </div>
-  <aside class="notes">Trả lời "QA kịch bản sinh", chốt thứ ba (luật lúc chạy) và thứ tư (rà log). Luật: con số và tên riêng phải có trong seed hoặc trong câu người chơi gõ; engine đếm follow-up. Không nêu con số ngoài về giới hạn của phép kiểm; nếu cô hỏi bắt được bao nhiêu lỗi, trả lời là nhóm sẽ đo bằng bộ thử của mình.</aside>
+  <div class="edge-r"></div>
+  <aside class="notes">Trả lời "QA kịch bản sinh", chốt thứ hai; và nguồn dữ liệu cho benchmark.</aside>
 </section>
 
-<!-- 13 AI-4 evidence -->
-<section class="slide l-3col">
-  <h2 class="title center">AI-4: why these choices</h2>
-  <div class="cols">
-    <div>
-      <svg class="icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      <div class="h3">Authored plot</div><p class="sm">Holding authored structure outside free generation is the established approach (Riedl &amp; Bulitko, 2013).</p>
-    </div>
-    <div>
-      <svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-      <div class="h3">Rules on facts</div><p class="sm">Wrong numbers (184) and names (105) led 418 accuracy errors (Thomson &amp; Reiter, 2020).</p>
-    </div>
-    <div>
-      <svg class="icon" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
-      <div class="h3">Whole seed in prompt</div><p class="sm">When the source fits, long-context prompting beat retrieval on average (Li et al., 2024).</p>
-    </div>
-  </div>
-  <div class="footbar rev"></div>
-  <aside class="notes">Thomson &amp; Reiter là lý do luật nhắm vào con số và tên riêng.</aside>
-</section>
-
-<!-- 14 AI-4 testing -->
-<section class="slide l-text">
-  <h2 class="title">Testing the run-time checks</h2>
+<!-- 06 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Step 4</div>
+  <h2 class="title">AI-4 narrates during play</h2>
   <div class="body">
-    <ul class="ul gap">
-      <li>A test set of scripted player turns in four classes</li>
-      <li>On-script, off-script, adversarial, rubric-fishing</li>
-      <li>We report the violation rate per class</li>
-      <li><b>Not yet built</b></li>
+    <ul class="ul">
+      <li><b>The engine owns the plot.</b> The game engine, not the model, controls the order of canon events. Canon content is shown verbatim from the seed. A situation may have several approved canon variants chosen at random; the log records which variant was served.</li>
+      <li><b>What the model writes.</b> Only the connecting narration and the follow-up questions that fit the player's free-text answer. The whole seed is placed in the prompt; no retrieval and no fine-tuning. The rubric and scoring keys are not in its prompt.</li>
+      <li><b>Run-time checks are rules, not another model call,</b> so checking adds no waiting time: numbers and names must come from the seed or from the player's own text, and the engine counts follow-ups. A model from a different family reviews the logs afterwards.</li>
+      <li><b>Evidence.</b>
+        <ul>
+          <li>Holding authored structure outside free generation is the established approach in interactive narrative (Riedl &amp; Bulitko, 2013).</li>
+          <li>In generated text checked against its data, wrong numbers (184) and wrong names (105) were the two largest classes among 418 accuracy errors (Thomson &amp; Reiter, 2020), which is why the rules target them.</li>
+          <li>When the source fits in the prompt, long-context prompting outperformed retrieval on average (Li et al., 2024).</li>
+        </ul>
+      </li>
+      <li><b>How the checks will be shown to work.</b> A test set of scripted player turns in four classes (on-script, off-script, adversarial, rubric-fishing), reporting the violation rate per class. Not yet built.</li>
+      <li><b>Checkpoint 3 of 4</b> (rules at run time) <b>and 4 of 4</b> (log review afterwards).</li>
     </ul>
   </div>
-  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
-  <aside class="notes">Checkpoint 3 of 4 (luật lúc chạy) và 4 of 4 (rà log sau). Nói rõ bộ thử chưa dựng.</aside>
+  <div class="edge-r"></div>
+  <aside class="notes">Trả lời "QA kịch bản sinh", chốt thứ ba và thứ tư. Không nêu con số bên ngoài về giới hạn của phép kiểm. Nếu cô hỏi phép kiểm bắt được bao nhiêu lỗi, trả lời là nhóm sẽ đo bằng bộ thử của mình.</aside>
 </section>
 
-<!-- 15 AI-5 -->
-<section class="slide l-text wide">
-  <h2 class="title">Step 5: AI-5 scores the playthrough</h2>
+<!-- 07 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Step 5</div>
+  <h2 class="title">AI-5 scores the playthrough</h2>
   <div class="body">
-    <ul class="ul gap">
-      <li><b>A separate judge</b>: the scoring model is not the narrating model (DC-01)</li>
-      <li>No reference answer; each rubric criterion is scored by level descriptions</li>
-      <li>One call per situation per judge, at most three criteria</li>
-      <li>The call runs in the background; results show on the summary screen</li>
-      <li>Per criterion: a verbatim quote, then the rationale, then the level</li>
-      <li>The quote must be a substring of what the player typed</li>
+    <ul class="ul">
+      <li><b>A separate judge.</b> The scoring model is not the narrating model (design constraint DC-01).</li>
+      <li><b>No reference answer.</b> Answers are free text; the judge scores each rubric criterion by how far the answer meets the behaviour described for each level.</li>
+      <li><b>One call per situation per judge,</b> with at most three criteria in a call. The call runs in the background when the situation ends; results appear on the summary screen.</li>
+      <li><b>Auditable output.</b> For each criterion: a verbatim quote from the player, then the rationale, then the level. The quote must be a substring of what the player typed.</li>
+      <li><b>A panel of three judges from three model families.</b> The median is the score. Cases where judges differ by more than one level go to the expert through AI-3. If one judge is unavailable, the system waits for all three.</li>
+      <li><b>Why not one call for everything.</b> Batching several rubric checks into one call trades accuracy for cost, and the loss is large when the evidence is spread over a long trajectory (Peng et al., 2026). A verdict on one rubric shifts depending on which other rubrics are judged with it (Yu et al., preprint).</li>
+      <li><b>Why a panel.</b> A five-judge vote matched the best single judge (Pearson correlation with humans 0.627 against 0.623; Kim et al., 2025), so a panel reaches the best judge's level without knowing in advance which judge that is. LLM judges also give different scores to the same item across runs (Haldar &amp; Hockenmaier, 2025). We do not claim a panel is more accurate than a single judge.</li>
     </ul>
   </div>
-  <aside class="notes">Thang chấm ghi là dự kiến; bảng chấm năng lực và bộ tiêu chí chờ game design (slide 32).</aside>
+  <div class="edge-r"></div>
+  <aside class="notes">Trả lời "chấm lượt chơi", phần kỹ thuật. Thang chấm ghi là dự kiến; bảng chấm năng lực và bộ tiêu chí chờ game design (slide 13).</aside>
 </section>
 
-<!-- 16 panel -->
-<section class="slide l-process">
-  <h2 class="title">A panel of three judges</h2>
-  <div class="chev"><div>Three families</div><div>Median score</div><div>Escalate</div></div>
-  <div class="notes" style="grid-template-columns:repeat(3,1fr)">
-    <ul class="ul"><li>Three model families judge each situation</li></ul>
-    <ul class="ul"><li>The median is the score</li><li>If one judge is down, wait for all three</li></ul>
-    <ul class="ul"><li>Judges differ by over one level: flag</li><li>The expert sees it through AI-3</li></ul>
+<!-- 08 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Your question</div>
+  <h2 class="title two">Does the judge need to be stronger than the generator?</h2>
+  <div class="body low2">
+    <ul class="ul">
+      <li><b>Answer: not relative to the generator.</b> The judge scores text written by a person, not the generator's output, so the two are not in competition.</li>
+      <li><b>What the judge does need.</b>
+        <ol class="ol">
+          <li><b>Enough knowledge of the work.</b> Without a reference answer, LLM judges agreed with human experts only on questions they could answer correctly themselves (Krumdick et al., preprint), and judging ability tracks problem-solving ability (Tan et al., 2025). JobQuest has no reference answer, so the judge must understand IT work, and the rubric's behavioural descriptions must carry the domain knowledge.</li>
+          <li><b>Enough capacity.</b> Small models aligned poorly with human raters (intraclass correlation below 0.20) and larger models moderately (0.41 to 0.57), against 0.45 between the two human raters (Jung et al., 2025).</li>
+          <li><b>Not necessarily a reasoning model.</b> Two reasoning models had lower validity than a smaller standard model in essay scoring (Yoshida, 2025).</li>
+          <li><b>A different model family.</b> LLM evaluators recognise and favour their own generations (Panickssery et al., 2024) and favour models whose mistakes resemble their own (Goel et al., 2025).</li>
+        </ol>
+      </li>
+      <li><b>Decision method.</b> Each judge family is tested at two tiers in week 42; the cheapest tier that is not clearly worse is chosen.</li>
+    </ul>
   </div>
   <div class="edge-r"></div>
-</section>
-
-<!-- 17 why per situation, why panel -->
-<section class="slide l-2col">
-  <h2 class="title">Why per situation, why a panel</h2>
-  <div class="cols" style="width:810px;top:140px">
-    <div><div class="h3">Per situation</div><p class="sm">Batching several rubric checks into one call trades accuracy for cost, with large loss when evidence is spread over a long trajectory (Peng et al., 2026). A verdict shifts with the other rubrics judged alongside it (Yu et al.).</p></div>
-    <div><div class="h3">A panel</div><p class="sm">A five-judge vote matched the best single judge (r = 0.627 vs 0.623; Kim et al., 2025). Judges also vary across runs (Haldar &amp; Hockenmaier, 2025). <b>We do not claim a panel is more accurate.</b></p></div>
-  </div>
-  <div class="edge-r"></div>
-  <aside class="notes">Lý do nêu cho panel là độ bền (đạt mức judge đơn tốt nhất mà không cần biết trước judge nào tốt nhất), không phải độ chính xác hơn.</aside>
-</section>
-
-<!-- 18 judge stronger? -->
-<section class="slide l-intro">
-  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
-  <div class="blk navy" style="left:834px;top:270px;height:270px"></div>
-  <div class="txt" style="top:110px;width:520px">
-    <div class="t">Must the judge be stronger than the generator?</div>
-    <p><b>Not relative to the generator.</b> The judge scores text a person wrote, so the two do not compete. It needs four other things (next slide). Each judge family is tested at two tiers in week 42; we choose the cheapest tier that is not clearly worse.</p>
-  </div>
   <aside class="notes">Trả lời câu hỏi "model chấm có cần mạnh hơn model sinh không".</aside>
 </section>
 
-<!-- 19 what the judge needs -->
-<section class="slide l-4items">
-  <div class="blk gray" style="left:127px;top:111px;height:159px"></div>
-  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
-  <h2 class="title right">What the judge does need</h2>
-  <div class="grid" style="top:140px">
-    <div><div class="h3">Knowledge</div><p class="sm">With no reference answer, judges matched experts only on questions they could answer (Krumdick et al.).</p></div>
-    <div><div class="h3">Capacity</div><p class="sm">ICC under 0.20 for small models, 0.41–0.57 for larger; 0.45 between two humans (Jung et al., 2025).</p></div>
-    <div><div class="h3">Reasoning optional</div><p class="sm">Two reasoning models were less valid than a smaller standard model (Yoshida, 2025).</p></div>
-    <div><div class="h3">Another family</div><p class="sm">Evaluators favour their own output and similar mistakes (Panickssery et al., 2024; Goel et al., 2025).</p></div>
-  </div>
-  <aside class="notes">JobQuest không có đáp án mẫu, nên judge phải hiểu công việc IT và rubric phải mang tri thức miền. Ngoài ra Tan et al. (2025): khả năng làm judge đi theo khả năng giải bài.</aside>
-</section>
-
-<!-- 20 bignum Mansour -->
-<section class="slide l-bignum">
-  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
-  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
-  <div class="num">0.313</div>
-  <p class="cap">average kappa of ChatGPT scoring essays (Llama 0.297)<br>best supervised system: 0.817<br>(Mansour et al., 2024)</p>
-  <aside class="notes">Câu hỏi của cô ở buổi 26/9 (07 B20): có bằng chứng đã công bố rằng LLM judge đáng tin không. Trả lời: có điều kiện, không phải mặc định. Đây là mức trung bình của LLM được prompt, thấp hơn người chấm.</aside>
-</section>
-
-<!-- 21 reliable? -->
-<section class="slide l-text wide">
+<!-- 09 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Your question</div>
   <h2 class="title">Is an LLM judge reliable?</h2>
-  <div class="body">
-    <ul class="ul gap">
-      <li><b>Conditionally, not by default</b></li>
-      <li>Agreement nears human level with a strong model, an explicit rubric, scored examples</li>
-      <li>This phase relies on the first two; scored examples come after expert rulings</li>
-      <li>Weakest on partially correct answers (Schleifer et al., 2026)</li>
-      <li>Evidence is English, essays, 2023–2024 models; none on Vietnamese role-play</li>
+  <p class="sub">What published evidence says</p>
+  <div class="body low">
+    <ul class="ul">
+      <li><b>Answer: conditionally, not by default.</b></li>
+      <li><b>Average performance of prompted LLMs is below human raters.</b> On a standard essay-scoring dataset, average quadratic weighted kappa was 0.313 for ChatGPT and 0.297 for Llama, against 0.817 for the best supervised system (Mansour et al., 2024).</li>
+      <li><b>Conditions under which agreement approaches human level</b> (report Section 2.5, references [101] to [105]): a strong model, an explicit rubric, and scored examples. This phase relies on the first two; scored examples become available once experts have ruled on test cases.</li>
+      <li><b>Weakest where it matters.</b> Automated scorers handle fully correct and fully incorrect answers well and are much worse on partially correct ones, while human agreement stays constant (Schleifer et al., 2026).</li>
+      <li><b>The evidence is from another setting:</b> English, essays and short answers, 2023 to 2024 models. No study was found on Vietnamese answers or on role-play transcripts.</li>
+      <li><b>Consequence.</b> Reliability must be measured on our own task. That is research problem RP-2, with the acceptance criteria of Williamson et al. (2012): quadratic weighted kappa of at least 0.70, standardised mean difference of at most 0.15, and at most 0.10 below expert–expert agreement.</li>
     </ul>
   </div>
-  <aside class="notes">Điều kiện lấy từ báo cáo §2.5, tài liệu [101] đến [105]. Slide này phải khớp với slide ngưỡng chấp nhận trong phần D do Nhật trình bày. Dẫn tới câu hỏi 3 cho cô.</aside>
+  <div class="edge-r"></div>
+  <aside class="notes">Trả lời nhận xét 26/9 về bằng chứng đã công bố cho độ tin cậy của LLM judge. Slide này phải khớp với slide ngưỡng chấp nhận trong phần D do Nhật trình bày. Dẫn tới câu hỏi 3 cho cô ở slide 14.</aside>
 </section>
 
-<!-- 22 RP-2 criteria -->
-<section class="slide l-table">
-  <h2 class="title">RP-2 criteria (Williamson et al., 2012)</h2>
-  <div class="tblwrap">
+<!-- 10 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Your questions</div>
+  <h2 class="title">Benchmark and framework</h2>
+  <div class="body">
+    <ul class="ul">
+      <li><b>No public benchmark matches our task</b> (ordinal rubric, short answers written by people, Vietnamese, IT work). Existing ones are used as references only: JudgeBench, pairwise correctness judgments (Tan et al., 2025); BiGGen Bench, a 1-to-5 rubric with a description per level and human ratings (Kim et al., 2025); SEA-HELM, how well each model handles Vietnamese.</li>
+      <li><b>Our benchmark.</b> Playthrough transcripts scored by Domain Experts during testing (slide 5), compared with the judges' scores on the same transcripts, situation by situation.</li>
+      <li><b>Measures.</b> Quadratic weighted kappa with a confidence interval; the confusion matrix; exact and adjacent agreement; stability across repeated runs; share of quotes found verbatim in the transcript.</li>
+      <li><b>First test, week 42.</b> About 30 transcripts; six judge models (three families, two tiers each); per-situation calls against one call for the whole playthrough; three repeated runs.</li>
+      <li><b>Framework.</b>
+        <ul>
+          <li>Offline test harness: <b>Inspect AI</b>, open source, maintained by the UK AI Security Institute. It provides repeated runs, several grader models in one run, a median reducer and an ordinal Krippendorff's alpha. Our rubric needs a custom scorer.</li>
+          <li>In the product: our own TypeScript module with schema-validated output. Prompts and rubrics are kept in data files shared by both.</li>
+          <li>Not chosen: OpenAI's hosted Evals platform was announced deprecated on 3 June 2026.</li>
+        </ul>
+      </li>
+      <li>These tools have no peer-reviewed papers. The cited science is in the method: rubric-based scoring with reasoning before the score (Liu et al., 2023) and panels of judges (Verga et al., preprint).</li>
+    </ul>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Trả lời "benchmark" và "framework cho LLM judge". Nói rõ ở giai đoạn này nhóm đóng vai DE nên kết quả chưa phải độ khớp với chuyên gia (D-47).</aside>
+</section>
+
+<!-- 11 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Your question</div>
+  <h2 class="title two">AI-native, and what happens when the AI is down</h2>
+  <div class="body low2">
+    <ul class="ul">
+      <li><b>Definition adopted.</b> A system is AI-native when AI is constitutive of its core loop, so that removing the AI makes the central activity collapse or change fundamentally (Xu et al., preprint, a survey of 53 AI-native games), and when AI is part of design, operation and maintenance, not an added component (Ericsson, white paper). No standards body defines the term; ITU-R M.2160 uses it without a definition.</li>
+      <li><b>Applied to JobQuest.</b> AI works at all five steps. Without it the system cannot fit the narration to a free-text answer and cannot score that answer. There is no substitute path: no keyword scoring and no scripted replacement.</li>
+      <li><b>When the model provider fails.</b>
+        <ul>
+          <li>Generation and scoring, the core, stop.</li>
+          <li>The session pauses. Answers and progress are saved (NFR-04), and play resumes when the AI returns.</li>
+          <li>Pages that do not use AI (sign-in, occupation map, profile) stay available.</li>
+          <li>Switching to another provider is still AI, not a fallback (DC-02).</li>
+        </ul>
+      </li>
+      <li><b>Why several providers.</b> A study of public incident reports found an incident on average every 5.6 days for the OpenAI API and every 5.2 days for the Anthropic API, a median recovery time of about one hour, and no correlation between providers (Chu et al., 2025).</li>
+    </ul>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Trả lời "AI-native, chứng minh kỹ, khi AI sập thì có còn chạy được không". Nêu thẳng hai nguồn neo của định nghĩa là một preprint và một tài liệu của hãng; đây là câu hỏi 4 cho cô. Không bàn tới prototype.</aside>
+</section>
+
+<!-- 12 -->
+<section class="slide l-text wide dense xs tight">
+  <div class="kick">Your question</div>
+  <h2 class="title">Comparing technologies and AI models</h2>
+  <div class="body">
+    <ul class="ul">
+      <li><b>Four model families:</b> one for generation, three for the judge panel. Judges differ from the generator (DC-01) and from each other; bias toward related models falls as the relation grows distant (Li et al., 2026).</li>
+      <li><b>Criteria:</b> Vietnamese; knowledge of IT work; response time; price; schema-constrained output; data terms.</li>
+    </ul>
     <table class="tbl filled">
-      <colgroup><col style="width:560px"><col></colgroup>
-      <thead><tr><th>Measure on our own task</th><th>Threshold</th></tr></thead>
+      <colgroup><col style="width:130px"><col style="width:400px"><col></colgroup>
+      <thead><tr><th>Role</th><th>Candidates (USD / 1M tokens, in / out, 8–9 Oct)</th><th>SEA-HELM Vietnamese (18 Sep)</th></tr></thead>
       <tbody>
-        <tr><td>Quadratic weighted kappa</td><td>≥ 0.70</td></tr>
-        <tr><td>Standardised mean difference</td><td>≤ 0.15</td></tr>
-        <tr><td>Below expert–expert agreement</td><td>≤ 0.10</td></tr>
+        <tr><td>Judge, Anthropic</td><td>claude-sonnet-5-5 (2 / 10); claude-haiku-5-5 (0.10 / 0.50)</td><td>Sonnet 5: 77.0; Haiku 4.5: 67.7 (earlier models)</td></tr>
+        <tr><td>Judge, OpenAI</td><td>gpt-6.1-sol (2 / 10); gpt-6-luna (0.10 / 0.50)</td><td>GPT 5.6 Sol: 77.1; GPT 5.6 Luna: 71.9 (earlier models)</td></tr>
+        <tr><td>Judge, Google</td><td>gemini-3.8-flash (0.75 / 3.75); gemini-3.5-flash-lite (0.30 / 2.50)</td><td>78.4; Gemini 3.1 Flash Lite: 75.2</td></tr>
+        <tr><td>Narrator</td><td>deepseek-flash (0.30 / 1.20); qwen3.8-flash (0.15 / 0.47)</td><td>DeepSeek V4 Flash: 72.1; Qwen 3.8 Flash Next: 74.9</td></tr>
       </tbody>
     </table>
-  </div>
-  <div class="edge-r"></div>
-  <aside class="notes">Hệ quả: độ tin cậy phải đo trên chính bài toán của nhóm (research problem RP-2). Dẫn tới câu hỏi 3: giữ kappa ≥ 0,70 hay lấy "không thấp hơn quá 0,10 so với độ khớp giữa chuyên gia" làm tiêu chí chính.</aside>
-</section>
-
-<!-- 23 benchmark -->
-<section class="slide l-text wide">
-  <h2 class="title">Benchmark: no public one fits</h2>
-  <div class="body">
-    <ul class="ul gap">
-      <li>Nothing public matches: ordinal rubric, short human answers, Vietnamese, IT work</li>
-      <li>References only: JudgeBench, BiGGen Bench, SEA-HELM</li>
-      <li><b>Ours:</b> expert-scored playthrough transcripts against judge scores, per situation</li>
-      <li>For now the team stands in for experts; the advisor checks a sample</li>
-      <li>So results show the machinery works, not agreement with experts</li>
-      <li>The measures work on any ordinal scale, so they do not wait for game design</li>
+    <ul class="ul">
+      <li><b>What public data cannot tell us:</b> IT knowledge for our three roles (no public benchmark); the newest small models (not on the Vietnamese leaderboard); response time measured from Vietnam.</li>
+      <li><b>Cost of one playthrough</b> (token counts assumed, narrator included): about 0.015 USD with small-tier judges, 0.086 with mid-tier. <b>Final choice after the week-42 test,</b> with agreement, response time and cost.</li>
     </ul>
   </div>
-  <aside class="notes">JudgeBench (Tan et al., 2025): phán đoán cặp đúng/sai. BiGGen Bench (Kim et al., 2025): thang 1–5 có mô tả từng mức và điểm của người. SEA-HELM: mức xử lý tiếng Việt của từng model. Nói rõ giai đoạn này nhóm đóng vai DE (D-47).</aside>
+  <div class="edge-r"></div>
+  <aside class="notes">Trả lời email 1/10, mục 9: đối sánh giải pháp công nghệ, kể cả model AI. Ghi rõ "candidates to test", chưa phải lựa chọn cuối. Chỗ này dẫn tới câu hỏi 2 cho cô (mô hình miễn phí có hạn mức, mua thêm lượt).</aside>
 </section>
 
-<!-- 24 first test -->
-<section class="slide l-rows">
-  <h2 class="title center">First test, week 42</h2>
-  <div class="rows">
-    <div class="row"><div class="lab">Data</div><div class="its"><span>About 30 transcripts</span><span>Scored by the team as experts</span></div></div>
-    <div class="row"><div class="lab">Judges</div><div class="its"><span>6 models</span><span>3 families, 2 tiers each</span></div></div>
-    <div class="row"><div class="lab">Compare</div><div class="its"><span>Per situation vs whole play</span><span>3 repeated runs</span></div></div>
-    <div class="row"><div class="lab">Measures</div><div class="its"><span>Weighted kappa with CI</span><span>Confusion matrix, agreement</span><span>Stability, verbatim quotes</span></div></div>
-  </div>
-  <aside class="notes">Đo gồm: QWK kèm khoảng tin cậy, bảng nhầm lẫn, khớp đúng mức và lệch một mức, độ ổn định giữa các lần chạy, tỉ lệ câu trích đúng nguyên văn. Mỗi lượt gọi trả tiền và việc cài Inspect AI phải hỏi Phúc trước.</aside>
-</section>
-
-<!-- 25 framework -->
-<section class="slide l-text wide">
-  <h2 class="title">Framework for the LLM judge</h2>
+<!-- 13 -->
+<section class="slide l-text wide dense">
+  <div class="kick">Not settled yet</div>
+  <h2 class="title">Waiting for game design</h2>
   <div class="body">
-    <ul class="ul gap">
-      <li><b>Offline tests: Inspect AI</b>, open source, UK AI Security Institute</li>
-      <li>Repeated runs, several graders, median reducer, ordinal Krippendorff's alpha</li>
-      <li>Our rubric needs a custom scorer</li>
-      <li><b>In the product:</b> our own TypeScript module with schema-validated output</li>
-      <li>Prompts and rubrics live in data files shared by both</li>
-      <li>Not chosen: OpenAI Evals platform, deprecation announced 3 June 2026</li>
+    <ul class="ul">
+      <li>The scoring scale: how many levels and what each level means. The scale −1 / 0 / +1 / +2 is <b>planned, not final</b>; the current sample scenarios describe three levels only.</li>
+      <li>The competency scoring table for a playthrough, and the specific criteria given to the judge.</li>
+      <li>The list of required facts in a seed, needed to measure fact preservation (NFR-15).</li>
+      <li>How evidence from the play process (hints, time, follow-ups) counts, and how scores combine into a competency.</li>
+      <li>The current sample scenarios and scoring are placeholders and will be revised.</li>
+      <li><b>What does not depend on game design:</b> the measure itself. Agreement between judge and expert can be computed on any ordinal scale.</li>
     </ul>
   </div>
-  <aside class="notes">Các công cụ này không có bài báo bình duyệt. Khoa học nằm ở phương pháp: chấm theo rubric có lập luận trước điểm (Liu et al., 2023) và panel judge (Verga et al.).</aside>
-</section>
-
-<!-- 26 AI-native -->
-<section class="slide l-2col">
-  <h2 class="title">Is JobQuest AI-native?</h2>
-  <div class="cols" style="width:810px;top:130px">
-    <div><div class="h3">Definition adopted</div><p class="sm">AI is constitutive of the core loop: remove it and the central activity collapses (Xu et al., preprint, 53 AI-native games). AI is part of design, operation and maintenance (Ericsson, white paper). No standards body defines the term.</p></div>
-    <div><div class="h3">Applied to JobQuest</div><p class="sm">AI works at all five steps. Without it the system can neither fit narration to a free-text answer nor score it. <b>There is no substitute path:</b> no keyword scoring, no scripted replacement.</p></div>
-  </div>
   <div class="edge-r"></div>
-  <aside class="notes">Nêu thẳng hai nguồn neo của định nghĩa là một preprint và một tài liệu của hãng: đây là câu hỏi 4 cho cô. ITU-R M.2160 dùng thuật ngữ mà không định nghĩa. Không bàn tới prototype. Xu et al., Ericsson, ITU còn 🔍: đọc bản gốc trước khi dựng.</aside>
+  <aside class="notes">Slide này giúp cô thấy phần nào chưa có là có chủ đích.</aside>
 </section>
 
-<!-- 27 provider fails -->
-<section class="slide l-text">
-  <h2 class="title">When the model provider fails</h2>
-  <div class="body">
-    <ul class="ul gap">
-      <li>Generation and scoring, the core, stop</li>
-      <li>The session pauses; answers and progress are saved (NFR-04)</li>
-      <li>Play resumes when the AI returns</li>
-      <li>Sign-in, occupation map and profile stay available</li>
-      <li>Another provider is still AI, not a fallback (DC-02)</li>
-    </ul>
-  </div>
-  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
-  <aside class="notes">Trả lời nửa sau câu hỏi: khi AI sập thì còn chạy không. Không có đường thay thế như chấm theo từ khoá.</aside>
-</section>
-
-<!-- 28 Chu -->
-<section class="slide l-bignum">
-  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
-  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
-  <div class="num">5.2 days</div>
-  <p class="cap">between public incidents, Anthropic API (OpenAI: 5.6)<br>median recovery about one hour; providers uncorrelated<br>(Chu et al., 2025)</p>
-  <aside class="notes">Lý do dùng nhiều nhà cung cấp. Chu et al. còn 🔍: đọc bản gốc, kiểm 5,64 và 5,22 ngày, thời gian phục hồi và kết luận không tương quan trước khi trích.</aside>
-</section>
-
-<!-- 29 comparing models -->
-<section class="slide l-2col">
-  <h2 class="title">Comparing AI models</h2>
-  <div class="cols" style="width:810px;top:140px">
-    <div><div class="h3">Four families</div><p class="sm">One for generation, three for the judge panel. Judges differ from the generator (DC-01) and from each other; bias toward related models falls as the relationship grows distant (Li et al., 2026).</p></div>
-    <div><div class="h3">Six criteria</div><p class="sm">Vietnamese capability, knowledge of IT work, response time, price, schema-constrained output, data terms.</p></div>
-  </div>
-  <div class="edge-r"></div>
-  <aside class="notes">Trả lời email 1/10, mục 9 (07 B24): đối sánh giải pháp công nghệ, kể cả model AI.</aside>
-</section>
-
-<!-- 30 candidates -->
-<section class="slide l-table">
-  <h2 class="title">Candidates to test</h2>
-  <div class="tblwrap" style="top:116px">
-    <table class="tbl filled">
-      <colgroup><col style="width:150px"><col style="width:430px"><col></colgroup>
-      <thead><tr><th>Role</th><th>Model (USD per 1M tokens, in / out)</th><th>SEA-HELM, Vietnamese</th></tr></thead>
-      <tbody>
-        <tr><td><b>Judge</b>, Anthropic</td><td>claude-sonnet-5-5 (2 / 10), claude-haiku-5-5 (0.10 / 0.50)</td><td>Sonnet 5: 77.0, Haiku 4.5: 67.7</td></tr>
-        <tr><td><b>Judge</b>, OpenAI</td><td>gpt-6.1-sol (2 / 10), gpt-6-luna (0.10 / 0.50)</td><td>GPT 5.6 Sol: 77.1, Luna: 71.9</td></tr>
-        <tr><td><b>Judge</b>, Google</td><td>gemini-3.8-flash (0.75 / 3.75), gemini-3.5-flash-lite (0.30 / 2.50)</td><td>78.4, 3.1 Flash Lite: 75.2</td></tr>
-        <tr><td><b>Narrator</b></td><td>deepseek-flash (0.30 / 1.20), qwen3.8-flash (0.15 / 0.47)</td><td>V4 Flash: 72.1, Qwen 3.8 Next: 74.9</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="edge-r"></div>
-  <aside class="notes">Ghi rõ "candidates to test", chưa phải lựa chọn cuối. Giá đọc ngày 8 và 9/10/2026; điểm SEA-HELM (18/9/2026) là của các model cũ hơn cùng dòng. Giá Anthropic đã đối chiếu; giá OpenAI, Google, DeepSeek, Alibaba và bảng SEA-HELM còn 🔍: mở lại trang chính thức trong ngày trình bày.</aside>
-</section>
-
-<!-- 31 what public data cannot tell -->
-<section class="slide l-text wide">
-  <h2 class="title">What public data cannot tell us</h2>
-  <div class="body">
-    <ul class="ul gap">
-      <li>No public benchmark covers IT knowledge for our three roles</li>
-      <li>The newest small models are not on the Vietnamese leaderboard</li>
-      <li>No response-time data measured from Vietnam</li>
-      <li>One playthrough costs about <b>$0.015</b> (small tier) or <b>$0.086</b> (mid tier)</li>
-      <li>Token counts in that estimate are assumptions</li>
-      <li>The final choice follows the week-42 test: agreement, time, cost</li>
-    </ul>
-  </div>
-  <aside class="notes">Chi phí một lượt chơi do nhóm tự tính, số token là giả định. Dẫn tới câu hỏi 2 cho cô (miễn phí có hạn mức, mua thêm lượt).</aside>
-</section>
-
-<!-- 32 waiting for game design -->
-<section class="slide l-rows">
-  <h2 class="title center">Not settled: waiting for game design</h2>
-  <div class="rows">
-    <div class="row"><div class="lab">Scoring scale</div><div class="its"><span>Levels and what each means</span><span>−1 / 0 / +1 / +2 is planned, not final</span></div></div>
-    <div class="row"><div class="lab">Scoring tables</div><div class="its"><span>Competency table per play</span><span>Criteria given to the judge</span></div></div>
-    <div class="row"><div class="lab">Seed content</div><div class="its"><span>Required facts (NFR-15)</span><span>Sample scenarios are placeholders</span></div></div>
-    <div class="row"><div class="lab">Process evidence</div><div class="its"><span>How hints, time, follow-ups count</span><span>How scores combine</span></div></div>
-  </div>
-  <aside class="notes">Slide này giúp cô thấy phần nào chưa có là có chủ đích. Mức +1 hiện chưa có mô tả ở đâu cả (D-87); kịch bản mẫu chỉ mô tả ba mức. Phép đo không phụ thuộc game design.</aside>
-</section>
-
-<!-- 33 decisions -->
-<section class="slide l-grid6">
-  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
-  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+<!-- 14 -->
+<section class="slide l-text wide dense xs">
+  <div class="kick">Questions and next steps</div>
   <h2 class="title">Decisions we need from you</h2>
-  <div class="grid">
-    <div><div class="h3">1 · Scope</div><p class="sm">AI-4 and AI-5 fully, AI-3 as harness, AI-1 and AI-2 as prototype?</p></div>
-    <div><div class="h3">2 · Free quota</div><p class="sm">Daily free plays plus paid extras? About 400–2,200 VND a play.</p></div>
-    <div><div class="h3">3 · Pass mark</div><p class="sm">Keep kappa ≥ 0.70, or at most 0.10 below expert agreement? (NFR-14)</p></div>
-    <div><div class="h3">4 · AI-native</div><p class="sm">Two anchors: a preprint and a vendor white paper. Acceptable?</p></div>
-    <div><div class="h3">5 · Section 5.2.3</div><p class="sm">Candidates and test plan now, final choice after measurement?</p></div>
-    <div><div class="h3">6 · 6 Oct list</div><p class="sm">Was it your 3 October feedback? We have no minutes.</p></div>
+  <div class="body cols2">
+    <div>
+      <div class="hd">Questions</div>
+      <ol class="ol">
+        <li><b>Scope of AI-1 and AI-2 in this phase.</b> We propose building AI-4 and AI-5 fully, AI-3 as a test harness, and AI-1 and AI-2 as a design with a prototype. Is that the right scope?</li>
+        <li><b>A daily free quota with paid extra plays.</b> One playthrough costs an estimated 400 to 2,200 Vietnamese dong in model calls. May we move from "free for everyone" to a number of free plays per day plus paid additional plays? We would implement only the daily quota in this phase.</li>
+        <li><b>The pass mark for the judge (NFR-14).</b> Keep quadratic weighted kappa of at least 0.70, or treat "at most 0.10 below expert–expert agreement" as the main criterion?</li>
+        <li><b>The definition of AI-native.</b> Its two anchors are a preprint and a vendor white paper. Is that acceptable?</li>
+        <li><b>Section 5.2.3.</b> May it present candidates, criteria, a provisional choice and a test plan, with the final choice reported after measurement?</li>
+        <li><b>Was the 6 October task list your feedback from 3 October?</b> We have no minutes of that meeting.</li>
+      </ol>
+    </div>
+    <div>
+      <div class="hd">Next steps</div>
+      <ul class="ul">
+        <li>Week 42: the first test (about 30 transcripts, six judge models, two narrator candidates).</li>
+        <li>Write Section 5.2.3, then Section 5.3.6 (prompts, output schema, scoring flow).</li>
+        <li>Game design: scale, competency table, judge criteria.</li>
+      </ul>
+    </div>
   </div>
-  <aside class="notes">Dành nhiều thời gian nhất cho slide này. Câu 2: tỉ giá và số token là giả định; nhóm chỉ cài hạn mức miễn phí mỗi ngày trong giai đoạn này, mua thêm lượt chỉ mô tả. Câu 1: AI-1 và AI-2 không quá khó, AI-3, AI-4, AI-5 khó hơn.</aside>
+  <div class="edge-r"></div>
+  <aside class="notes">Dành nhiều thời gian nhất cho slide này. Tỉ giá và số token trong câu 2 là giả định.</aside>
 </section>
 
-<!-- 34 next steps -->
-<section class="slide l-roadmap">
-  <h2 class="title">Next steps</h2>
-  <div class="stairs" style="--n:3">
-    <div class="step" style="--i:0"><div class="h3">Week 42</div><div class="line"></div><ul class="ul"><li>First test: about 30 transcripts</li><li>Six judges, two narrators</li></ul></div>
-    <div class="step" style="--i:1"><div class="h3">Report</div><div class="line"></div><ul class="ul"><li>Write Section 5.2.3</li><li>Then 5.3.6: prompts, schema, flow</li></ul></div>
-    <div class="step" style="--i:2"><div class="h3">Game design</div><div class="line"></div><ul class="ul"><li>Scale, competency table</li><li>Judge criteria</li></ul></div>
-  </div>
-  <div class="footbar"></div>
-</section>
-
-<!-- 35 refs 1 -->
+<!-- 15 -->
 <section class="slide l-text wide refs-slide">
-  <h2 class="title">References: peer-reviewed (1/2)</h2>
+  <div class="kick">References (1/2)</div>
+  <h2 class="title">Peer-reviewed</h2>
   <div class="refs">
-    <p>Balog &amp; Bakken (2026). “Act Like a 5th Grader” is Not Enough. Findings of EMNLP. arXiv:2608.30033</p>
-    <p>Chu et al. (2025). ICPE 2025. doi:10.1145/3676151.3719372</p>
-    <p>Flanagan (1954). The critical incident technique. Psychological Bulletin, 51(4)</p>
-    <p>Goel et al. (2025). Great Models Think Alike. ICML 2025. arXiv:2502.04313</p>
-    <p>Haldar &amp; Hockenmaier (2025). Rating Roulette. EMNLP 2025. arXiv:2510.27106</p>
-    <p>Hanley &amp; Lippman-Hand (1983). JAMA. doi:10.1001/jama.1983.03330370053031</p>
-    <p>Jung et al. (2025). Model size, temperature, prompt style and score alignment. NCME AIME. arXiv:2509.19329</p>
-    <p>Kim et al. (2025). BiGGen Bench. NAACL 2025. arXiv:2406.05761</p>
-    <p>Klang et al. (2023). BMC Medical Education, 23, 772</p>
-    <p>Li, D. et al. (2026). Preference Leakage. ICLR 2026. arXiv:2502.01534</p>
-    <p>Li, Z. et al. (2024). RAG or long-context LLMs? EMNLP 2024 Industry. arXiv:2407.16833</p>
-    <p>Liu et al. (2023). G-Eval. EMNLP 2023</p>
-    <p>Lu &amp; Wang (2024). Generative Students. L@S 2024. arXiv:2405.11591</p>
-    <p>Mansour et al. (2024). Can LLMs score essays? LREC-COLING 2024. arXiv:2403.06149</p>
-    <p>Mislevy &amp; Haertel (2006). Educ. Measurement: Issues and Practice, 25(4)</p>
+    <p>Balog &amp; Bakken (2026). Findings of EMNLP 2026</p>
+    <p>Chu et al. (2025). ICPE 2025</p>
+    <p>Flanagan (1954). Psychological Bulletin, 51(4) [26]</p>
+    <p>Goel et al. (2025). ICML 2025</p>
+    <p>Haldar &amp; Hockenmaier (2025). EMNLP 2025</p>
+    <p>Hanley &amp; Lippman-Hand (1983). JAMA</p>
+    <p>Jung et al. (2025). NCME AIME 2025</p>
+    <p>Kim et al. (2025). BiGGen Bench. NAACL 2025</p>
+    <p>Klang et al. (2023). BMC Medical Education, 23</p>
+    <p>Li, D. et al. (2026). Preference Leakage. ICLR 2026</p>
+    <p>Li, Z. et al. (2024). EMNLP 2024 Industry Track</p>
+    <p>Liu et al. (2023). G-Eval. EMNLP 2023 [58]</p>
+    <p>Lu &amp; Wang (2024). Generative Students. L@S 2024</p>
+    <p>Mansour et al. (2024). LREC-COLING 2024</p>
+    <p>Mislevy &amp; Haertel (2006). EM:IP, 25(4)</p>
+    <p>Panickssery et al. (2024). NeurIPS 2024</p>
+    <p>Peng et al. (2026). EMNLP 2026</p>
+    <p>Riedl &amp; Bulitko (2013). AI Magazine, 34(1)</p>
+    <p>Schleifer et al. (2026). BEA 2026</p>
+    <p>Shankar et al. (2024). UIST 2024</p>
+    <p>Shute (2011). Stealth assessment [20]</p>
+    <p>Tan et al. (2025). JudgeBench. ICLR 2025 [60]</p>
+    <p>Thomson &amp; Reiter (2020). INLG 2020</p>
+    <p>Whetzel et al. (2020). PAD, 6(1) [27]</p>
+    <p>Williamson, Xi &amp; Breyer (2012) [71]</p>
+    <p>Wu et al. Technology, Knowledge and Learning</p>
+    <p>Wuttke et al. (2025). LaTeCH-CLfL 2025</p>
+    <p>Xiao et al. (2020). ACM TOCHI</p>
+    <p>Yoshida (2025). Findings of EMNLP 2025</p>
   </div>
   <div class="edge-r"></div>
 </section>
 
-<!-- 36 refs 2 -->
+<!-- 16 -->
 <section class="slide l-text wide refs-slide">
-  <h2 class="title">References: peer-reviewed (2/2)</h2>
-  <div class="refs">
-    <p>Panickssery et al. (2024). LLM evaluators favor their own generations. NeurIPS 2024. arXiv:2404.13076</p>
-    <p>Peng et al. (2026). LLM-as-a-Judge for rubrics in agentic scenarios. EMNLP 2026. arXiv:2606.29920</p>
-    <p>Riedl &amp; Bulitko (2013). Interactive narrative. AI Magazine, 34(1)</p>
-    <p>Schleifer et al. (2026). Quality-conditioned agreement in short answer scoring. BEA 2026. arXiv:2605.07647</p>
-    <p>Shankar et al. (2024). Who validates the validators? UIST 2024</p>
-    <p>Shute (2011). Stealth assessment in computer-based games</p>
-    <p>Tan et al. (2025). JudgeBench. ICLR 2025. arXiv:2410.12784</p>
-    <p>Thomson &amp; Reiter (2020). Accuracy in data-to-text systems. INLG 2020. arXiv:2011.03992</p>
-    <p>Whetzel et al. (2020). Situational judgment tests. Personnel Assessment and Decisions, 6(1)</p>
-    <p>Williamson, Xi &amp; Breyer (2012)</p>
-    <p>Wu et al. Unveiling scoring processes. Technology, Knowledge and Learning. arXiv:2407.18328</p>
-    <p>Wuttke et al. (2025). AI conversational interviewing. LaTeCH-CLfL 2025. arXiv:2410.01824</p>
-    <p>Xiao et al. (2020). Tell me about yourself. ACM TOCHI. doi:10.1145/3381804</p>
-    <p>Yoshida (2025). Reasoning models for essay scoring. Findings of EMNLP 2025</p>
-  </div>
-  <div class="edge-r"></div>
-</section>
-
-<!-- 37 refs 3 -->
-<section class="slide l-text wide refs-slide">
-  <h2 class="title">References: preprints, vendor, docs</h2>
+  <div class="kick">References (2/2)</div>
+  <h2 class="title">Preprints, standards, vendor</h2>
   <div class="refs">
     <p class="rh">Preprints and working papers</p>
-    <p>Chopra &amp; Haaland. Conducting qualitative interviews with AI. CESifo WP 10666</p>
-    <p>Ferrer et al. (2026). When can we trust LLM graders? arXiv:2603.29559</p>
+    <p>Chopra &amp; Haaland. CESifo Working Paper 10666</p>
+    <p>Ferrer et al. (2026). arXiv:2603.29559</p>
     <p>Korn et al. (2025). LLMREI. arXiv:2507.02564</p>
-    <p>Krumdick et al. (2025). No Free Labels. arXiv:2503.05061</p>
-    <p>Verga et al. (2024). Replacing judges with juries. arXiv:2404.18796</p>
+    <p>Krumdick et al. (2025). arXiv:2503.05061</p>
+    <p>Verga et al. (2024). arXiv:2404.18796 [74]</p>
     <p>Xu et al. (2026). AI Native Games. arXiv:2607.00527</p>
-    <p>Yu et al. (2026). Rubric interference in LLM judges. arXiv:2608.14684</p>
+    <p>Yu et al. (2026). arXiv:2608.14684</p>
     <p class="rh">Standards, vendor, documentation</p>
     <p>ITU-R Recommendation M.2160-0 (2023)</p>
     <p>Ericsson. Defining AI native (white paper)</p>
     <p>UK AI Security Institute. Inspect AI documentation</p>
     <p>OpenAI. API deprecations (Evals, 3 June 2026)</p>
     <p>AI Singapore. SEA-HELM, Vietnamese (18 Sep 2026)</p>
-    <p>Provider pricing pages (read 8–9 Oct 2026)</p>
+    <p>Pricing pages: Anthropic, OpenAI, Google, DeepSeek, Alibaba (8–9 Oct 2026)</p>
   </div>
   <div class="edge-r"></div>
 </section>
