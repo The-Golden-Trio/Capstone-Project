@@ -29,16 +29,18 @@ Mỗi nghề có nhiều cấp, bắt đầu từ **L1 (intern)**. **Cấp cao n
 | **Nội dung chơi được** | 2 kịch bản (Backend L1, L3), 43 sự kiện, quiz 6 câu | Kịch bản cho các nghề khác (DevOps và Solution Architect đã giao từ 27/8) |
 | **Prototype web** | Chạy end-to-end: đăng nhập (email + Google), đồng ý giám hộ, quiz, **bản đồ ngân hà 3D**, quần đảo L1–L10, màn chơi (chat + văn phòng 2D), tổng kết, hành trang. Dùng DB thật | **AI sinh và chấm** (hiện chấm bằng từ khoá), đánh giá nghề 5 tiêu chí, random bối cảnh công ty, công cụ cho chuyên gia/admin |
 | **Đánh giá** | **Mới có thiết kế trên giấy** (báo cáo 26/9 §4.2.2): hai giai đoạn, A là benchmark tổng hợp, B là câu trả lời thật do chuyên gia chấm; ngưỡng QWK và CVI (D-47, D-48) | Chưa dựng benchmark Giai đoạn A · chưa có chuyên gia (Giai đoạn B ở capstone) · chưa triển khai đo lường nào |
+| **Thiết kế AI** (12/10) | Năm thành phần AI-1…AI-5, cách chấm, định nghĩa AI-native, công cụ và model dự kiến đem thử (D-89…D-97); viết ở báo cáo §5.2.3 (`reports/2026-10-02_ch1-5/`), đã trình cô 10/10 | Chưa đo gì: phép thử đầu tiên là T0610.17 · thang chấm, tiêu chí cho judge chờ game design (D-95) · yêu cầu và use case còn lệch với thiết kế này ([07](07-van-de-mo.md) A20) |
 
 ## Đã chốt gần đây (chi tiết ở [02](02-quyet-dinh.md))
 
 - 23/9: **Get-to-know-me là tuỳ chọn** (D-29). **Người chơi học cả hard skill lẫn soft skill** (D-32).
 - 29/9: **DE dùng hệ thống**, CA không phải business admin (D-16). **Miễn phí**, chừa chỗ logo nhà tài trợ và ô quyên góp (D-17).
+- 7–9/10: **Kiến trúc AI năm thành phần**; DE đặt khoá chấm và duyệt seed, CA cùng AI dựng khung game (D-90). **Chấm không có đáp án mẫu**, panel ba judge khác họ, lấy trung vị (D-91). **AI-native là không có đường thay thế** khi AI lỗi (D-92). Thang chấm và tiêu chí chờ game design (D-95).
 
 ## Việc chưa làm (chi tiết ở [07](07-van-de-mo.md))
 
 1. **Sửa báo cáo theo góp ý cô 26/9** (31 task T2609 và 6 task T0110 phát sinh 1/10, [tuần 40](tuan/2026-W40/tuan.md)), upload T6 2/10, gặp cô T7 3/10. Trong đó có **đổi căn cứ pháp lý**: NĐ 13/2023 đã hết hiệu lực (T0110.5).
-2. **Tích hợp LLM:** model sinh và **panel judge nhiều họ** (khác họ model sinh), ước chi phí. Dựng benchmark Giai đoạn A.
+2. **Tích hợp LLM:** thiết kế đã có ở báo cáo §5.2.3 (12/10); còn chạy phép thử đầu tiên để chọn model (T0610.17), rồi tích hợp vào code. Bộ thử là lượt DE chơi thử và chấm (D-93).
 3. **Chốt ~22 role cuối và ~3 role pilot**, rồi tìm panel chuyên gia đầu (~9 người, tiêu chuẩn đã có ở D-62).
 
 ## Các file trong thư mục này
