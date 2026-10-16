@@ -2,7 +2,7 @@
 
 window.GAME = {
   "_meta": {
-    "generated_at": "2026-09-29",
+    "generated_at": "2026-10-16",
     "source_dataset": "occupation-data/datasets/final_22_roles.json",
     "group": "Software Engineering & Architecture",
     "note": "SINH TU DONG. Sinh lai: node docs/data/build.mjs"
@@ -132,16 +132,16 @@ window.GAME = {
   "quiz": {
     "_meta": {
       "file": "shared/fit_quiz.json",
-      "version": "0.2-draft",
+      "version": "0.3-draft",
       "status": "CHUA_VERIFY",
       "evidence_level": "C_INFERRED",
-      "purpose": "Bộ câu hỏi Get to Know Me. Đo người chơi trên 8 chiều fit_dimensions và trục Người–Vật (social index), rồi ghép với hồ sơ hợp nghề để gợi ý 5 nghề. Đặc tả: docs/project-hub/assets/jobquest-get-to-know-me.md",
+      "purpose": "Bộ câu hỏi Get to Know Me. Đo người chơi trên 8 chiều fit_dimensions và hai trục World-of-Work (Prediger 1982: People–Things, Data–Ideas), rồi ghép với hồ sơ hợp nghề để gợi ý 5 nghề. Đặc tả: docs/project-hub/assets/jobquest-get-to-know-me.md",
       "method_note": "Đây là câu tự soạn, KHÔNG lấy từ bộ đo tâm lý đã chuẩn hoá nào (không phải RIASEC, không phải Big Five). Chưa kiểm định độ tin cậy. Dùng để gợi ý hướng khám phá, KHÔNG dùng làm kết luận về tính cách.",
-      "scoring": "stage: không chấm, chỉ chỉnh giọng văn mô tả. pair: người chơi chọn một vế và mức (rất đúng = 1.0, hơi đúng = 0.5); signal và orientation nhân với mức. text: AI đọc câu trả lời, trả tín hiệu −2..+2 cho từng chiều kèm trích nguyên văn; máy chủ bỏ mọi giá trị có trích dẫn không có trong câu trả lời và kẹp mỗi chiều về ±2. orientation: + là thiên về con người, − là thiên về hệ thống/vật (trục People–Things của Prediger).",
+      "scoring": "stage: không chấm, chỉ chỉnh giọng văn mô tả. pair: người chơi chọn một vế và mức (rất giống = 1.0, hơi giống = 0.5); signal, people_things và data_ideas nhân với mức. text: AI đọc câu trả lời, trả tín hiệu −2..+2 cho từng chiều và từng trục kèm trích nguyên văn; máy chủ bỏ mọi giá trị có trích dẫn không có trong câu trả lời và kẹp về ±2. people_things: + là làm việc qua con người, − là qua vật (công cụ, hệ thống, code). data_ideas: + là dữ kiện, số liệu, quy trình có hệ thống, − là trừu tượng, lý thuyết, cách làm mới.",
       "usage": "Bỏ qua được (D-29). Người chơi bỏ qua thì vào thẳng màn chọn nghề, không bị thiệt gì. Câu tự luận bắt buộc nếu làm bài, vì đó là phần AI đọc để viết mô tả.",
       "unknowns": [
         "Vẫn là câu tự soạn, chưa kiểm định độ tin cậy. Mỗi chiều nay được chạm 3–6 lần qua câu chọn, cộng thêm câu tự luận.",
-        "orientation của câu chọn là suy luận của nhóm theo khái niệm People–Things, chưa đối chiếu với thang đo gốc.",
+        "Giá trị people_things và data_ideas của từng vế là suy luận của nhóm theo định nghĩa trục của Prediger (1982), chưa đối chiếu với thang đo RIASEC gốc.",
         "Chưa đối chiếu kết quả gợi ý với lựa chọn nghề thật của người chơi sau đó, nên chưa biết gợi ý có đúng không."
       ]
     },
@@ -195,7 +195,7 @@ window.GAME = {
               "DEEP_WORK": 2,
               "INTERRUPT": -1
             },
-            "orientation": -1
+            "people_things": -1
           },
           {
             "option_id": "q1b",
@@ -204,7 +204,7 @@ window.GAME = {
               "PEOPLE": 2,
               "INTERRUPT": 1
             },
-            "orientation": 1
+            "people_things": 1
           }
         ]
       },
@@ -218,7 +218,8 @@ window.GAME = {
             "text": "Thấy thú vị. Tự tìm hiểu rồi đề xuất cách làm",
             "signal": {
               "AMBIGUITY": 2
-            }
+            },
+            "data_ideas": -2
           },
           {
             "option_id": "q2b",
@@ -226,7 +227,8 @@ window.GAME = {
             "signal": {
               "AMBIGUITY": -2,
               "DETAIL": 1
-            }
+            },
+            "data_ideas": 2
           }
         ]
       },
@@ -264,7 +266,8 @@ window.GAME = {
             "signal": {
               "DETAIL": 2,
               "DEEP_WORK": 1
-            }
+            },
+            "data_ideas": 2
           },
           {
             "option_id": "q4b",
@@ -272,7 +275,8 @@ window.GAME = {
             "signal": {
               "DETAIL": -1,
               "AMBIGUITY": 1
-            }
+            },
+            "data_ideas": -2
           }
         ]
       },
@@ -324,7 +328,8 @@ window.GAME = {
             "signal": {
               "REPETITION": 2,
               "DETAIL": 1
-            }
+            },
+            "data_ideas": 1
           },
           {
             "option_id": "q6b",
@@ -332,7 +337,8 @@ window.GAME = {
             "signal": {
               "REPETITION": -2,
               "AMBIGUITY": 1
-            }
+            },
+            "data_ideas": -1
           }
         ]
       },
@@ -348,7 +354,7 @@ window.GAME = {
               "PEOPLE": 2,
               "AMBIGUITY": 1
             },
-            "orientation": 2
+            "people_things": 2
           },
           {
             "option_id": "q7b",
@@ -357,7 +363,7 @@ window.GAME = {
               "DEEP_WORK": 2,
               "PEOPLE": -1
             },
-            "orientation": -2
+            "people_things": -2
           }
         ]
       },
@@ -373,7 +379,7 @@ window.GAME = {
               "PEOPLE": 2,
               "INTERRUPT": 1
             },
-            "orientation": 2
+            "people_things": 2
           },
           {
             "option_id": "q8b",
@@ -382,7 +388,7 @@ window.GAME = {
               "DEEP_WORK": 1,
               "INTERRUPT": -1
             },
-            "orientation": -1
+            "people_things": -1
           }
         ]
       },
@@ -437,7 +443,7 @@ window.GAME = {
               "INTERRUPT": 2,
               "PEOPLE": 1
             },
-            "orientation": 1
+            "people_things": 1
           },
           {
             "option_id": "q10b",
@@ -446,7 +452,7 @@ window.GAME = {
               "INTERRUPT": -2,
               "DEEP_WORK": 1
             },
-            "orientation": -1
+            "people_things": -1
           }
         ]
       },
@@ -462,7 +468,7 @@ window.GAME = {
               "VISIBLE": 2,
               "PEOPLE": 1
             },
-            "orientation": 1
+            "people_things": 1
           },
           {
             "option_id": "q11b",
@@ -471,7 +477,7 @@ window.GAME = {
               "DETAIL": 2,
               "VISIBLE": -1
             },
-            "orientation": -1
+            "people_things": -1
           }
         ]
       },
@@ -486,7 +492,8 @@ window.GAME = {
             "signal": {
               "REPETITION": 1,
               "PRESSURE": -1
-            }
+            },
+            "data_ideas": 1
           },
           {
             "option_id": "q12b",
@@ -495,7 +502,8 @@ window.GAME = {
               "AMBIGUITY": 2,
               "PRESSURE": 1,
               "REPETITION": -1
-            }
+            },
+            "data_ideas": -1
           }
         ]
       },
@@ -511,7 +519,7 @@ window.GAME = {
               "PEOPLE": 2,
               "VISIBLE": 1
             },
-            "orientation": 2
+            "people_things": 2
           },
           {
             "option_id": "q13b",
@@ -520,7 +528,7 @@ window.GAME = {
               "DETAIL": 2,
               "DEEP_WORK": 1
             },
-            "orientation": -2
+            "people_things": -2
           }
         ]
       },
@@ -535,7 +543,8 @@ window.GAME = {
             "signal": {
               "REPETITION": 2,
               "DETAIL": 1
-            }
+            },
+            "data_ideas": 1
           },
           {
             "option_id": "q14b",
@@ -543,7 +552,33 @@ window.GAME = {
             "signal": {
               "REPETITION": -1,
               "AMBIGUITY": 1
-            }
+            },
+            "data_ideas": -1
+          }
+        ]
+      },
+      {
+        "question_id": "q15",
+        "kind": "pair",
+        "prompt": "Được giao một tuần tự do, bạn muốn dành nó để",
+        "options": [
+          {
+            "option_id": "q15a",
+            "text": "Dọn lại số liệu và quy trình cho gọn, để cả nhóm làm chính xác hơn",
+            "signal": {
+              "DETAIL": 2,
+              "REPETITION": 1
+            },
+            "data_ideas": 2
+          },
+          {
+            "option_id": "q15b",
+            "text": "Thử một cách tiếp cận mới cho bài toán chưa ai giải được",
+            "signal": {
+              "AMBIGUITY": 2,
+              "DEEP_WORK": 1
+            },
+            "data_ideas": -2
           }
         ]
       },
