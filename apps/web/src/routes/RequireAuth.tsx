@@ -11,11 +11,11 @@ import { useLanguage } from '../i18n/useT';
 import { decideGate } from './gate';
 
 /**
- * Cổng vào của toàn bộ phần đã đăng nhập.
+ * Cổng vào của toàn bộ app.
  *
- * Ba trạng thái, không phải hai: trong lúc còn đang hỏi máy chủ thì chưa được
- * kết luận gì. Nhảy thẳng sang `/login` khi `status === 'loading'` sẽ đá văng
- * người đang có phiên hợp lệ mỗi lần họ tải lại trang.
+ * Không còn bắt đăng nhập (xem `decideGate`): khách vào được mọi màn. Cổng
+ * chỉ còn chờ nội dung game về, và với người đã đăng nhập thì giữ cửa đồng ý
+ * của người giám hộ cùng lời mời tự vấn lần đầu.
  */
 export function RequireAuth() {
   const { status, user } = useAuthStore();
@@ -32,10 +32,13 @@ export function RequireAuth() {
   const contentError = useContentStore((s) => s.error);
 
   useEffect(() => {
-    if (status !== 'authed') return;
-    if (!profileLoaded) void loadProfile();
-    void loadProgress();
+    // Còn đang hỏi phiên đăng nhập thì chưa nạp: lúc đó chưa biết lấy nội
+    // dung từ máy chủ hay từ bản đóng gói.
+    if (status === 'loading') return;
     void loadContent();
+    if (status !== 'authed') return;
+    if (!profileLoaded) void loadProfile().catch(() => undefined);
+    void loadProgress();
   }, [status, profileLoaded, loadProfile, loadProgress, loadContent]);
 
   const decision = decideGate({
@@ -49,7 +52,7 @@ export function RequireAuth() {
 
   // Nội dung không về thì không vào được app — nói rõ và cho thử lại, chứ
   // đừng để người chơi ngồi trước một màn hình trắng không giải thích gì.
-  if (status === 'authed' && contentError) {
+  if (contentError) {
     return (
       <>
         <StarField />
@@ -88,9 +91,7 @@ export function RequireAuth() {
   }
 
   if (decision.kind === 'redirect') {
-    // Nhớ chỗ định tới để đăng nhập xong quay lại đúng đó.
-    const state = decision.to === '/login' ? { from: location } : undefined;
-    return <Navigate to={decision.to} replace state={state} />;
+    return <Navigate to={decision.to} replace />;
   }
 
   return <AppShell />;

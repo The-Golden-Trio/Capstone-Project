@@ -23,11 +23,18 @@ describe('cửa vào', () => {
     expect(decideGate(at({ status: 'loading' }))).toEqual({ kind: 'wait' });
   });
 
-  it('chưa đăng nhập thì về màn đăng nhập', () => {
-    expect(decideGate(at({ status: 'anon' }))).toEqual({
-      kind: 'redirect',
-      to: '/login',
-    });
+  it('chưa đăng nhập vẫn vào thẳng, không bị đẩy về màn đăng nhập', () => {
+    expect(
+      decideGate(
+        at({ status: 'anon', consentStatus: null, profileLoaded: false }),
+      ),
+    ).toEqual({ kind: 'allow' });
+  });
+
+  it('khách chưa tự vấn cũng không bị đẩy vào bài tự vấn', () => {
+    expect(
+      decideGate(at({ status: 'anon', consentStatus: null, quizDone: false })),
+    ).toEqual({ kind: 'allow' });
   });
 
   it('đã tự vấn rồi thì vào thẳng', () => {
@@ -44,7 +51,9 @@ describe('mời tự vấn lần đầu', () => {
   });
 
   it('đang ở trong phần tự vấn thì để yên, không chuyển hướng vòng quanh', () => {
-    expect(decideGate(at({ quizDone: false, pathname: '/quiz' })).kind).toBe('allow');
+    expect(decideGate(at({ quizDone: false, pathname: '/quiz' })).kind).toBe(
+      'allow',
+    );
     expect(
       decideGate(at({ quizDone: false, pathname: '/quiz/result' })).kind,
     ).toBe('allow');
@@ -77,9 +86,9 @@ describe('đồng ý của người giám hộ đứng trước', () => {
   });
 
   it('đã có đồng ý thì tiếp tục sang bước tự vấn', () => {
-    expect(decideGate(at({ consentStatus: 'granted', quizDone: false }))).toEqual(
-      { kind: 'redirect', to: '/quiz' },
-    );
+    expect(
+      decideGate(at({ consentStatus: 'granted', quizDone: false })),
+    ).toEqual({ kind: 'redirect', to: '/quiz' });
   });
 
   it('chưa có nội dung game thì chờ, chưa vẽ gì', () => {

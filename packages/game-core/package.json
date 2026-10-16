@@ -19,7 +19,9 @@
       "types": "./dist/testing/fixture.d.ts",
       "import": "./dist/testing/fixture.js",
       "default": "./dist/testing/fixture.js"
-    }
+    },
+    "./data/game-data.json": "./data/game-data.json",
+    "./data/galaxy-data.json": "./data/galaxy-data.json"
   },
   "nx": {
     "name": "game-core",

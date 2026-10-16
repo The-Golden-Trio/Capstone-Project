@@ -30,7 +30,7 @@ export interface GateInput {
 
 export type GateDecision =
   | { kind: 'wait' }
-  | { kind: 'redirect'; to: '/login' | '/consent' | '/quiz' }
+  | { kind: 'redirect'; to: '/consent' | '/quiz' }
   | { kind: 'allow' };
 
 export function decideGate(input: GateInput): GateDecision {
@@ -38,7 +38,9 @@ export function decideGate(input: GateInput): GateDecision {
   // những người đang có phiên hợp lệ, mỗi lần họ tải lại trang.
   if (input.status === 'loading') return { kind: 'wait' };
 
-  if (input.status === 'anon') return { kind: 'redirect', to: '/login' };
+  // Không còn bắt đăng nhập: khách vào thẳng mọi màn. Đăng nhập chỉ để lưu
+  // tiến trình lên máy chủ; chưa đăng nhập thì nội dung lấy từ bản dữ liệu
+  // đóng gói sẵn (xem `contentStore`) và hồ sơ để trống.
 
   if (input.consentStatus === 'pending' && input.pathname !== '/consent') {
     return { kind: 'redirect', to: '/consent' };
@@ -53,6 +55,7 @@ export function decideGate(input: GateInput): GateDecision {
   // biết đôi chút về người chơi. Bấm "bỏ qua" cũng đặt `quizDone`, nên đây là
   // một cửa đi qua đúng một lần chứ không phải rào chắn.
   if (
+    input.status === 'authed' &&
     input.profileLoaded &&
     !input.quizDone &&
     !input.pathname.startsWith('/quiz')

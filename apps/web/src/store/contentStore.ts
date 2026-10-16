@@ -11,11 +11,17 @@
  */
 import { create } from 'zustand';
 import {
+  GameDataSchema,
   createGameIndex,
   type FollowupLine,
   type GameIndex,
 } from '@datn/game-core';
+// Bản dữ liệu đóng gói, chỉ lấy URL: tệp được tải khi cần chứ không nằm
+// trong bundle chính.
+import bundledGameDataUrl from '@datn/game-core/data/game-data.json?url';
+import bundledGalaxyUrl from '@datn/game-core/data/galaxy-data.json?url';
 import { contentApi } from '../api/endpoints';
+import type { GalaxyContent } from '../api/schemas';
 import { initGalaxy } from '../galaxy/galaxy';
 
 interface ContentStore {
@@ -24,6 +30,8 @@ interface ContentStore {
   followups: Record<string, FollowupLine>;
   /** Phiên bản nội dung máy chủ đang phục vụ. */
   version: number | null;
+  /** Đang dùng bản dữ liệu đóng gói thay cho máy chủ (khách, hoặc không có API). */
+  offline: boolean;
   loading: boolean;
   error: string | null;
   load: () => Promise<void>;
@@ -36,10 +44,17 @@ interface ContentStore {
   reset: () => void;
 }
 
+async function fetchJson(url: string): Promise<unknown> {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Không tải được ${url}`);
+  return res.json();
+}
+
 export const useContentStore = create<ContentStore>()((set, get) => ({
   index: null,
   followups: {},
   version: null,
+  offline: false,
   loading: false,
   error: null,
 
@@ -55,13 +70,28 @@ export const useContentStore = create<ContentStore>()((set, get) => ({
         followups: payload.followups,
         version: payload.version,
         loading: false,
+        offline: false,
       });
-    } catch (err) {
-      set({
-        loading: false,
-        error:
-          err instanceof Error ? err.message : 'Không tải được nội dung game',
-      });
+    } catch {
+      // Chưa đăng nhập (API trả 401) hoặc không chạy máy chủ: dùng bản dữ
+      // liệu đóng gói sẵn để khách vẫn xem được app. Không có lời đào sâu,
+      // vì phần đó chỉ có trong database.
+      try {
+        const bundled: unknown = await fetchJson(bundledGameDataUrl);
+        set({
+          index: createGameIndex(GameDataSchema.parse(bundled)),
+          followups: {},
+          version: null,
+          loading: false,
+          offline: true,
+        });
+      } catch (err) {
+        set({
+          loading: false,
+          error:
+            err instanceof Error ? err.message : 'Không tải được nội dung game',
+        });
+      }
     }
   },
 
@@ -71,7 +101,10 @@ export const useContentStore = create<ContentStore>()((set, get) => ({
   loadGalaxy: async () => {
     if (get().galaxyReady) return;
     try {
-      const payload = await contentApi.galaxy();
+      const payload = await contentApi
+        .galaxy()
+        // Như `load`: không có máy chủ thì lấy bản đóng gói.
+        .catch(() => fetchJson(bundledGalaxyUrl) as Promise<GalaxyContent>);
       // `initGalaxy` dựng các bảng tra của module `galaxy`; mọi hàm ở đó đọc
       // qua `galaxyData()` nên phải gọi trước khi trang bản đồ vẽ.
       initGalaxy({
@@ -93,6 +126,7 @@ export const useContentStore = create<ContentStore>()((set, get) => ({
       index: null,
       followups: {},
       version: null,
+      offline: false,
       loading: false,
       error: null,
       galaxyReady: false,
