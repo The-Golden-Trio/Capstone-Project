@@ -166,24 +166,64 @@ export const MESSAGES = {
     en: 'This quiz is not validated yet, so it cannot conclude anything about your personality. Treat it as a direction to explore, not a measurement.',
   },
 
-  /* ── Chỉ số xã hội ── */
-  'social.title': { vi: 'Chỉ số xã hội', en: 'Social index' },
-  'social.explain': {
-    vi: 'Bạn thích làm việc qua con người hay qua hệ thống, công cụ, dữ liệu. Không bên nào tốt hơn.',
-    en: 'Whether you prefer working through people or through systems, tools and data. Neither is better.',
+  /* ── Workstyle (vị trí trên World-of-Work Map) ── */
+  'workstyle.title': { vi: 'Workstyle', en: 'Workstyle' },
+  'workstyle.explain': {
+    vi: 'Cách bạn thích làm việc, theo hai trục: qua con người hay qua vật (công cụ, hệ thống, code), và với dữ kiện, quy trình hay với ý tưởng. Không kiểu nào tốt hơn.',
+    en: 'How you like to work, on two axes: through people or through things (tools, systems, code), and with data and procedures or with ideas. No style is better than another.',
   },
-  'social.things': { vi: 'Hệ thống', en: 'Systems' },
-  'social.people': { vi: 'Con người', en: 'People' },
-  'social.label.things': { vi: 'Thiên về hệ thống', en: 'Leans towards systems' },
-  'social.label.balanced': { vi: 'Cân bằng', en: 'Balanced' },
-  'social.label.people': { vi: 'Thiên về con người', en: 'Leans towards people' },
-  'social.basis': {
-    vi: 'Từ {quiz} câu tự vấn và {play} lựa chọn khi chơi',
-    en: 'From {quiz} quiz answers and {play} choices in play',
+  'workstyle.source': {
+    vi: 'Dựa trên World-of-Work Map của ACT (Prediger, 1982)',
+    en: 'Based on ACT’s World-of-Work Map (Prediger, 1982)',
   },
-  'social.none': {
-    vi: 'Chưa có chỉ số. Làm bài tự vấn hoặc chơi vài nhiệm vụ phụ.',
-    en: 'No index yet. Take the quiz or play a few side quests.',
+  'workstyle.people': { vi: 'Con người', en: 'People' },
+  'workstyle.things': { vi: 'Vật', en: 'Things' },
+  'workstyle.data': { vi: 'Dữ kiện', en: 'Data' },
+  'workstyle.ideas': { vi: 'Ý tưởng', en: 'Ideas' },
+  'workstyle.axisPT': { vi: 'Vật → Con người', en: 'Things → People' },
+  'workstyle.axisDI': { vi: 'Ý tưởng → Dữ kiện', en: 'Ideas → Data' },
+  'workstyle.basis': {
+    vi: '{quiz} câu tự vấn · {play} lựa chọn khi chơi',
+    en: '{quiz} quiz answers · {play} choices in play',
+  },
+  'workstyle.none': {
+    vi: 'Chưa có workstyle. Làm bài tự vấn hoặc chơi vài nhiệm vụ phụ.',
+    en: 'No workstyle yet. Take the quiz or play a few side quests.',
+  },
+  'workstyle.region.S': { vi: 'Người hỗ trợ', en: 'Helper' },
+  'workstyle.region.E': { vi: 'Người dẫn dắt', en: 'Persuader' },
+  'workstyle.region.C': { vi: 'Người tổ chức', en: 'Organizer' },
+  'workstyle.region.R': { vi: 'Người thực hành', en: 'Doer' },
+  'workstyle.region.I': { vi: 'Người phân tích', en: 'Thinker' },
+  'workstyle.region.A': { vi: 'Người sáng tạo', en: 'Creator' },
+  'workstyle.region.center': { vi: 'Cân bằng', en: 'Balanced' },
+  'workstyle.desc.S': {
+    vi: 'Thích giúp đỡ, hướng dẫn và hỗ trợ người khác.',
+    en: 'You like helping, teaching and supporting others.',
+  },
+  'workstyle.desc.E': {
+    vi: 'Thích điều phối người và việc, thuyết phục, quyết định dựa trên số liệu.',
+    en: 'You like coordinating people and work, persuading, deciding from numbers.',
+  },
+  'workstyle.desc.C': {
+    vi: 'Thích làm việc có hệ thống với dữ liệu, quy trình và công cụ.',
+    en: 'You like working systematically with data, procedures and tools.',
+  },
+  'workstyle.desc.R': {
+    vi: 'Thích làm việc trực tiếp với máy móc, hệ thống và code để mọi thứ chạy được.',
+    en: 'You like working hands-on with machines, systems and code to make things run.',
+  },
+  'workstyle.desc.I': {
+    vi: 'Thích dùng ý tưởng và hệ thống để giải bài toán khó.',
+    en: 'You like using ideas and systems to solve hard problems.',
+  },
+  'workstyle.desc.A': {
+    vi: 'Thích sáng tạo, diễn đạt ý tưởng theo cách mới cho người khác dùng.',
+    en: 'You like creating and expressing ideas in new ways for others to use.',
+  },
+  'workstyle.desc.center': {
+    vi: 'Chưa nghiêng hẳn về người hay vật, về dữ kiện hay ý tưởng. Chơi thêm thì vị trí sẽ rõ dần.',
+    en: 'No clear lean yet between people and things, or data and ideas. It sharpens as you play.',
   },
 
   /* ── Tám chiều, dạng ngắn để ghép câu "vì bạn …" ── */

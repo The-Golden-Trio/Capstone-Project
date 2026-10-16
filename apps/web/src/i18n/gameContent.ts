@@ -40,6 +40,7 @@ export const QUIZ_PROMPT_EN: Record<string, string> = {
   q12: 'For the same job, you would rather work at',
   q13: 'You need to win the team over to your solution',
   q14: 'Before every release, your checks are',
+  q15: 'Given a free week, you would spend it',
   t1: 'Tell us about a time you did something and lost track of time. What were you doing — alone or with whom?',
   t2: 'What kind of work or environment drains you the most? Why?',
   t3: 'Five years from now, if someone filmed your ideal working day, what would they see you doing?',
@@ -86,4 +87,6 @@ export const QUIZ_OPTION_EN: Record<string, string> = {
   q13b: 'Write a careful doc with numbers for people to read',
   q14a: 'A fixed checklist you follow step by step every time',
   q14b: 'Different each time, depending on what changed',
+  q15a: 'Tidying data and procedures so the whole team works more precisely',
+  q15b: 'Trying a new approach to a problem nobody has solved yet',
 };

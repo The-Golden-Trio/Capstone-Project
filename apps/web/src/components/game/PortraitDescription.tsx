@@ -3,10 +3,10 @@ import { useT } from '../../i18n/useT';
 import { Card, CardBody, CardHeader } from '../ui/Card';
 import { Note } from '../ui/Note';
 import { Pill } from '../ui/Pill';
-import { SocialIndex } from './SocialIndex';
+import { WorkstyleMap } from './WorkstyleMap';
 
 /**
- * "Về bạn" và chỉ số xã hội, đặt cạnh nhau (FR-13). Dùng ở cả màn chân dung
+ * "Về bạn" và vị trí trên World-of-Work Map, đặt cạnh nhau (FR-13). Dùng ở cả màn chân dung
  * lẫn Hành trang — ở Hành trang thì thấy được hai thứ này đổi theo lượt chơi.
  */
 export function PortraitDescription({ portrait }: { portrait: PortraitView }) {
@@ -38,9 +38,9 @@ export function PortraitDescription({ portrait }: { portrait: PortraitView }) {
       </Card>
 
       <Card>
-        <CardHeader title={t('social.title')} />
+        <CardHeader title={t('workstyle.title')} />
         <CardBody>
-          <SocialIndex index={portrait.socialIndex} />
+          <WorkstyleMap position={portrait.workstyle} />
         </CardBody>
       </Card>
     </div>

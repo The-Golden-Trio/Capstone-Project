@@ -62,11 +62,16 @@ export const PortraitSchema = z.object({
       reasons: z.array(z.string()),
     }),
   ),
-  socialIndex: z
+  /** Vị trí trên World-of-Work Map (Prediger 1982), FR-13. */
+  workstyle: z
     .object({
-      value: z.number(),
-      label: z.enum(['things', 'balanced', 'people']),
-      basis: z.object({ quizItems: z.number(), playChoices: z.number() }),
+      peopleThings: z.number(),
+      dataIdeas: z.number(),
+      region: z.enum(['S', 'E', 'C', 'R', 'I', 'A', 'center']),
+      basis: z.object({
+        peopleThings: z.object({ quizItems: z.number(), playChoices: z.number() }),
+        dataIdeas: z.object({ quizItems: z.number(), playChoices: z.number() }),
+      }),
     })
     .nullable(),
   description: z
