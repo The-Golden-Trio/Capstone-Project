@@ -187,7 +187,7 @@ Measurement practice. Two constructs require separate instruments and should not
 
 Three considerations arise from the intended user population and the nature of the data involved, each corresponding to a requirement of the project's specification.
 
-Data protection for young users. A system addressed partly to secondary and tertiary students processes behavioural and performance data concerning individuals who may be minors, engaging Vietnam's Law on Personal Data Protection [99] and its implementing decree [100], both in force from 1 January 2026, and comparable frameworks for users elsewhere. Under that law, processing data collected in Vietnam on a platform located abroad is a cross-border transfer of personal data, which bears on any system that sends users' responses to a model provider outside the country. Aggregated statistics derived from individual performance carry a residual privacy surface, since aggregate presentations can under some conditions permit inference about individuals.
+Data protection. A system of this kind processes behavioural and performance data about its users, engaging Vietnam's Law on Personal Data Protection [99] and its implementing decree [100], both in force from 1 January 2026, and comparable frameworks for users elsewhere. Under that law, processing data collected in Vietnam on a platform located abroad is a cross-border transfer of personal data, which bears on any system that sends users' responses to a model provider outside the country. Aggregated statistics derived from individual performance carry a residual privacy surface, since aggregate presentations can under some conditions permit inference about individuals.
 
 Fairness in automated assessment. An automated judgment of a user's demonstrated competence may influence that user's estimation of their own capability. The evaluator biases documented in Section 2.5 are therefore not solely accuracy concerns but fairness concerns, and the corresponding controls — chance-corrected validation, cross-family evaluation, rubric anchoring — function as fairness safeguards. Presenting assessment formatively, and not as a determination affecting access to opportunity, keeps the consequences proportionate to the reliability the method can currently support.
 
@@ -332,9 +332,9 @@ BR-01 and BR-03 are complementary. BR-01 keeps discovery free: the entry level o
 
 ### 4.1.4 Organisational policies and legal-ethical considerations
 
-The platform processes personal data, including performance data, of users who may be minors, and is therefore subject to Vietnam's Law on Personal Data Protection and its implementing decree [99][100] and to comparable frameworks for users in other jurisdictions. Three policies follow. Data minimisation limits collection to what the exploration and assessment functions require. Aggregate-only publication governs any statistic derived from user performance, with suppression thresholds applied so that small populations cannot be de-anonymised; as a privacy measure rather than a rule of the domain, it is specified as a non-functional requirement (NFR-06). Formative-use limitation (BR-06) prevents assessment output from acquiring consequences the method's reliability does not support.
+The platform processes personal data, including performance data, and is therefore subject to Vietnam's Law on Personal Data Protection and its implementing decree [99][100] and to comparable frameworks for users in other jurisdictions. Three policies follow. Data minimisation limits collection to what the exploration and assessment functions require. Aggregate-only publication governs any statistic derived from user performance, with suppression thresholds applied so that small populations cannot be de-anonymised; as a privacy measure rather than a rule of the domain, it is specified as a non-functional requirement (NFR-06). Formative-use limitation (BR-06) prevents assessment output from acquiring consequences the method's reliability does not support.
 
-Two provisions of the law shape the design directly. A child's rights as a data subject are exercised by the child's legal representative; the platform therefore obtains guardian consent for users under sixteen, as a conservative practice. Sending a user's response to a model provider located abroad is a cross-border transfer of personal data, for which the law requires a transfer impact assessment to be filed with the competent authority within sixty days of the first transfer; responses are therefore stripped of identifying details before they leave the platform, since de-identified data is not personal data under the law, and the assessment is to be prepared before any deployment to real users. How these provisions apply to a university-hosted project, and whether behavioural logs fall within the decree's sensitive categories, are to be confirmed with the university's legal office.
+One provision of the law shapes the design directly. Sending a user's response to a model provider located abroad is a cross-border transfer of personal data, for which the law requires a transfer impact assessment to be filed with the competent authority within sixty days of the first transfer; responses are therefore stripped of identifying details before they leave the platform, since de-identified data is not personal data under the law, and the assessment is to be prepared before any deployment to real users. How this provision applies to a university-hosted project, and whether behavioural logs fall within the decree's sensitive categories, are to be confirmed with the university's legal office.
 
 Two further policies concern the system's use of generative models. Provenance disclosure requires that users be informed that scenarios are machine-generated from expert-authored material and that assessments are machine-produced. Expert accountability assigns responsibility for the occupational accuracy of published content to the authoring and reviewing domain experts, as recorded in the system, rather than to the generating model. Under the intended partnership described in Section 4.1.5, data governance would additionally follow the requirements of the Ministry of Education and Training for systems serving students. Detailed processing policies, including third-party model providers, are specified in Section 5.3.10.
 
@@ -344,7 +344,7 @@ JobQuest is designed as a public-benefit platform rather than a commercial produ
 
 Value and beneficiaries. The platform offers learners experiential occupational information before commitment, and offers education authorities and institutions a scalable complement to limited counselling capacity. All content is available to all users without charge; access to levels and occupations is governed by demonstrated competence (BR-01 to BR-03) rather than by payment. The choice is deliberate: the users who most need occupational information — secondary students choosing a field under examination and family pressure — are those least able to pay for it, and the platform's effect depends on reaching them.
 
-Partners and funders. The Ministry of Education and Training and educational-technology organisations may each act both as partners and as funders. As a partner, the Ministry — preceded by city-level education departments — supplies distribution through schools, legitimacy with schools and families, and a governance framework for minors' data, while edtech organisations supply pilot hosting, distribution, and technical cooperation. As funders, both may provide programme funding, grants, or in-kind support such as cloud credits. Industry partners and professional associations supply and coordinate domain experts, and the host university provides academic oversight. One set of safeguards applies to every partner and funder, whatever its role: none authors, validates, or ranks occupational content; none receives identifiable user data, only aggregate statistics (NFR-06); none may introduce charges, promotional content, or monetisation of users; and every partnership and source of funding is disclosed on the platform.
+Partners and funders. The Ministry of Education and Training and educational-technology organisations may each act both as partners and as funders. As a partner, the Ministry — preceded by city-level education departments — supplies distribution through schools, legitimacy with schools and families, and a governance framework for students' data, while edtech organisations supply pilot hosting, distribution, and technical cooperation. As funders, both may provide programme funding, grants, or in-kind support such as cloud credits. Industry partners and professional associations supply and coordinate domain experts, and the host university provides academic oversight. One set of safeguards applies to every partner and funder, whatever its role: none authors, validates, or ranks occupational content; none receives identifiable user data, only aggregate statistics (NFR-06); none may introduce charges, promotional content, or monetisation of users; and every partnership and source of funding is disclosed on the platform.
 
 Funding and sustainability. Without user revenue, operation is funded through public and philanthropic support: grant funding sought from the Ministry and from educational-technology organisations; sponsorship from companies, which may contribute experts as well as funds; voluntary donations through a donation box on the platform; and in-kind contribution of expert consultation. The first expert panel, in Stage 1, contributes voluntarily; from Stage 2 an honorarium for experts is budgeted within grant funding. The cost structure determines how that funding must be managed. The dominant variable cost is language-model inference, incurred per session, which is why per-session cost is a monitored requirement (NFR-11). The system manages it by enforcing a configured ceiling on the model cost of each session, a cost-management mechanism specified with the design in Chapter 5. The dominant fixed cost is expert authoring, incurred per occupation, which is why coverage expands field by field rather than all at once. Model access is provider-portable (NFR-12, DC-02), so that inference can move to lower-cost or institutionally hosted models as funding conditions change. Two further levers reduce cost. A panel of smaller judging models from different families is less expensive than a single large judge [74], and because a seed fixes a scenario's canon events, keyed options, and rubric in advance (BR-05), run-time generation is confined to the narrative between those events, which bounds the length and therefore the cost of each generation.
 
@@ -374,7 +374,7 @@ Organisational structure. The organisation is staged. During the present phase a
 | Content and Occupational Expertise | Content lead (1); assessment and rubric specialist (1); domain leads, one per occupational domain (part-time); domain experts (part-time, three to four per role) | Occupation catalogue; authoring of seeds, rubrics, and keyed options by domain experts, and their review of generated scenarios; presentation, review, and publication of occupations; annual revalidation | Domain expert; content administrator; BR-05, BR-07 |
 | Research and Evaluation | Research lead (1); evaluation analyst (1) | Construction of the expert reference set; offline evaluation; subsequent user studies | Evaluation process; RP-1, RP-2 |
 | Partnerships and Outreach | Partnerships manager (1); school and institution outreach coordinator (1) | Liaison with the Ministry, schools, and universities; grant applications and reporting; recruitment of domain experts | — |
-| Data Protection and Compliance | Data protection officer (1, part-time initially) | Consent and minors' data; data-subject requests; regulatory compliance | DC-03; policies in Section 4.1.4 |
+| Data Protection and Compliance | Data protection officer (1, part-time initially) | Consent; data-subject requests; regulatory compliance | DC-03; policies in Section 4.1.4 |
 
 : Proposed organisational structure for sustained operation.
 
@@ -612,7 +612,7 @@ Design constraints are recorded separately from business rules, since they arise
 |---|---|---|---|
 | DC-01 | The assessor and generator shall use different model families. | NFR-14 | Reduces correlated failure modes and self-preference bias, thereby improving the independence of automated evaluation (Section 2.5) |
 | DC-02 | The system shall support replacing the underlying model provider without requiring changes to the core application logic. | NFR-12, NFR-04 | Dependence on third-party model providers; portability as funding conditions change |
-| DC-03 | Personal data is processed and stored in compliance with Vietnam's Law on Personal Data Protection and its implementing decree, including the provisions for minors and for cross-border transfer. | NFR-05, NFR-06 | Legal obligation (Sections 2.7, 4.1.4) |
+| DC-03 | Personal data is processed and stored in compliance with Vietnam's Law on Personal Data Protection and its implementing decree, including the provisions for cross-border transfer. | NFR-05, NFR-06 | Legal obligation (Sections 2.7, 4.1.4) |
 | DC-05 | The platform is delivered as a web application usable through standard browsers without installation. | NFR-13 | Universal access (Section 4.1.5) |
 
 : Design constraints.
@@ -877,6 +877,67 @@ The traceability matrix below traces every requirement to the use case realising
 
 : Traceability from requirements to use cases.
 
+## 5.2 Technology Solution
+
+This section selects the technologies of the system. Each choice is made against criteria after comparison with alternatives. The frontend and backend comparisons are in preparation; the AI part follows.
+
+### 5.2.1 Frontend
+
+The comparison of frontend technologies is in preparation and will be added in the next revision.
+
+### 5.2.2 Backend
+
+The comparison of backend technologies is in preparation and will be added in the next revision.
+
+### 5.2.3 AI algorithms, technologies, and models
+
+This subsection records the AI design as presented to the advisor in week 41. It is a design and a literature review: no measurement has been run yet, and the first test is planned for the following week. Several parts of Chapter 4 predate this design and are to be aligned with it in the next revision.
+
+The five places where AI works. AI is used at five steps, three while content is authored and two during play. AI drafts, connects, scores, and filters; domain experts decide occupational content, scoring keys, and publication.
+
+| Step | What AI does | What a person decides |
+|---|---|---|
+| AI-1 | Interviews the domain expert to collect what a scenario seed needs | The expert confirms the record |
+| AI-2 | Turns the expert's input into a structured game seed, with the content administrator | The expert sets every scoring key and rubric anchor, and approves the seed |
+| AI-3 | Runs test playthroughs and picks the cases the expert must see | The expert rules on them and approves publication |
+| AI-4 | Writes connecting narration and follow-up questions during play | Nobody at run time; the engine and rules constrain it |
+| AI-5 | Scores the playthrough against the rubric | The expert reviews flagged cases |
+
+: The five AI components and the human decision attached to each.
+
+AI-1, interviewing the domain expert. A language model asks and probes to collect what a seed needs: incidents, what a good and a poor response look like, and the facts of the situation. Each expert is interviewed separately, and the merged content marks where experts agree and where they differ. The interview is constrained by a human-written topic guide based on the critical incident technique [26] and on development practice for situational judgment tests [27]; the model probes inside each topic only. A tracker lists the seed fields still missing, the expert is shown a summary and confirms it, and every turn is stored verbatim so that each seed field links to the turn it came from. That a language model can hold an interview to a guide is supported by 766 AI-led interviews in which 94.8% to 99.8% of questions were open-ended, 95.7% to 99.6% neutral, and 0.1% to 0.4% hallucinated [115].
+
+AI-2, drafting the game seed. The model helps the content administrator turn the experts' answers into a structured seed: context, characters, situations, canon events, and the scoring frame. Drafts are written from the expert's own words, the domain expert sets every scoring key and every rubric anchor, and a seed passes automatic structure checks and then the expert's approval before any player sees it. Experts own keys and rubrics because, when GPT-4 drafted 210 examination questions, specialists required revision of 15% and judged 0.5% false [116]. The seed follows evidence-centered design: what is measured, which behaviour is evidence for it, and which situation elicits that behaviour [20][117]. This is the first of four checkpoints for generated content: structure is checked by machine and content is approved by the expert.
+
+AI-3, helping the expert test before publishing. A volunteer expert with about seven hours cannot read every free-text answer. AI-3 runs AI-4 and AI-5 on test playthroughs, from experts, testers, and simulated answers, and ranks the cases that need the expert: cases where the three judges differ by more than one level, generated turns that broke a run-time rule, and a blind random sample of cases that were not flagged. The expert decides, and can refine a rubric anchor during review, so rubrics are versioned. The random sample is required because confidence signals from a language-model grader separate right from wrong grades only weakly, with an area under the curve of 0.57 to 0.64 [118], so flagged cases alone can hide errors; if n audited cases show no error, the error rate is at most about 3/n at 95% confidence [119]. Simulated players find relative problems only: persona-prompted models answered with near-perfect, uniform accuracy, unlike 2,359 real students [120], so real test plays are needed as well. The run-time checks of AI-4 are to be tested on scripted player turns in four classes (on-script, off-script, adversarial, and rubric-fishing), reporting the violation rate per class; this test set is not yet built. This is the second checkpoint, and the expert-scored test plays are also the validation data for the judge. In the present phase there are no experts or real players: the team stands in for both and the advisor checks a sample, so results show that the machinery works, not agreement with experts.
+
+AI-4, narrating during play. The game engine, not the model, controls the order of canon events. Canon content is shown verbatim from the seed; a situation may have several approved canon variants chosen at random, and the log records which variant was served. The model writes only the connecting narration and the follow-up questions that fit the player's free-text answer. The whole seed is placed in the prompt, without retrieval or fine-tuning, and the rubric and scoring keys are not in the prompt. Run-time checks are rules, not another model call, so checking adds no waiting time: numbers and names must come from the seed or from the player's own text, and the engine counts follow-ups. A model from a different family reviews the logs afterwards. Holding authored structure outside free generation is the established approach in interactive narrative [121], and when the source fits in the prompt, long-context prompting outperformed retrieval on average [122]. These are the third checkpoint (rules at run time) and the fourth (log review afterwards).
+
+AI-5, scoring the playthrough. The scoring model is separate from the narrating model (DC-01). There is no reference answer: answers are free text, and the judge scores each rubric criterion by how far the answer meets the behaviour described for each level. Each judge is called once per situation, with at most three criteria in a call; the call runs in the background when the situation ends, and results appear on the summary screen. For each criterion the judge returns a verbatim quote from the player, then the rationale, then the level, and the quote must be a substring of what the player typed. A panel of three judges from three model families scores each situation and the median is the score; cases where judges differ by more than one level go to the expert through AI-3, and if one judge is unavailable the system waits for all three. One call for all criteria was not chosen because batching several rubric checks into one call trades accuracy for cost, with a large loss when the evidence is spread over a long trajectory [123]. A panel was chosen because a five-judge vote matched the best single judge, with a Pearson correlation with humans of 0.627 against 0.623 [124], so a panel reaches the best judge's level without knowing in advance which judge that is. The design does not claim that a panel is more accurate than a single judge.
+
+Strength of the judge relative to the generator. The judge does not need to be stronger than the generator, because it scores text written by a person, not the generator's output. It does need enough capacity: small models aligned poorly with human raters (intraclass correlation below 0.20) and larger models moderately (0.41 to 0.57), against 0.45 between the two human raters [125]. It need not be a reasoning model: two reasoning models had lower validity than a smaller standard model in essay scoring [126]. Each judge family is therefore to be tested at two tiers, and the cheapest tier that is not clearly worse is chosen.
+
+Reliability of a language-model judge. Published evidence supports a conditional answer, not reliability by default. On a standard essay dataset, mean quadratic weighted kappa was 0.313 for ChatGPT and 0.297 for Llama against 0.817 for the best supervised system [127]. Agreement nears human level with a strong model, an explicit rubric, and scored examples (Section 2.5) [101][102][103][104][105]; the present phase has the first two, and examples come later from expert rulings. Automated scorers handle fully correct and fully incorrect answers well and are much worse on partially correct ones, while human agreement stays constant [128]. A judge is only as good as its knowledge of the work: without a reference answer, judges agreed with experts only on questions they could answer themselves [129], and judging ability tracks problem-solving ability [60]; since there is no reference answer here, the judge must know IT work and the rubric must carry domain knowledge. Judges favour their own generations [130], hence a judge family other than the generator's. This evidence comes from another setting, English essays and short answers scored by earlier generations of models; none concerns Vietnamese or role-play. Reliability must therefore be measured on the project's own task (RP-2) against the criteria of Williamson, Xi and Breyer [71]: quadratic weighted kappa of at least 0.70, a standardised mean difference of at most 0.15, and agreement at most 0.10 below that between experts.
+
+Framework for the judge. The offline test harness is Inspect AI, an open-source framework maintained by the UK AI Security Institute [131]. It provides repeated runs, several grader models in one run, a median reducer, and an ordinal Krippendorff's alpha; the project's rubric needs a custom scorer. In the product, the judge is the project's own TypeScript module with schema-validated output, and prompts and rubrics are kept in data files shared by both. These tools have no peer-reviewed papers; the cited science is in the method, rubric-based scoring with reasoning before the score [58] and panels of judges [74].
+
+AI-native character and provider failure. The definition adopted is that a system is AI-native when AI is constitutive of its core loop, so that removing the AI makes the central activity collapse or change fundamentally [132], and when AI is part of design, operation, and maintenance, not an added component [133]. In JobQuest, AI works at all five steps: without it the system cannot fit the narration to a free-text answer and cannot score that answer, and there is no substitute path, neither keyword scoring nor a scripted replacement. When the model provider fails, generation and scoring, the core, stop; the session pauses, answers and progress are saved (NFR-04), and play resumes when the AI returns; pages that do not use AI, such as sign-in, the occupation map, and the profile, stay available; switching to another provider is still AI, not a fallback (DC-02). Several providers are used so that an outage at one provider does not take every AI function down at once.
+
+Model families and candidates. Four model families are needed: one for generation and three for the judge panel. Judges differ from the generator (DC-01) and from each other. The criteria are Vietnamese capability, knowledge of IT work, response time, price, schema-constrained output, and data terms. The table below lists the candidates to be tested, with Vietnamese scores from the SEA-HELM leaderboard of 18 September 2026 [134] and list prices read on 8 and 9 October 2026 [135]. Where a candidate is not on the leaderboard, the score shown is that of the closest listed model, under that model's name.
+
+| Role | Candidates (USD per million tokens, input / output) | SEA-HELM Vietnamese |
+|---|---|---|
+| Judge, Anthropic | claude-sonnet-5-5 (2 / 10); claude-haiku-5-5 (0.10 / 0.50) | Sonnet 5: 77.0; Haiku 4.5: 67.7 (earlier models) |
+| Judge, OpenAI | gpt-6.1-sol (2 / 10); gpt-6-luna (0.10 / 0.50) | GPT 5.6 Sol: 77.1; GPT 5.6 Luna: 71.9 (earlier models) |
+| Judge, Google | gemini-3.8-flash (0.75 / 3.75); gemini-3.5-flash-lite (0.30 / 2.50) | gemini-3.8-flash: 78.4; Gemini 3.1 Flash Lite: 75.2 |
+| Narrator | deepseek-flash (0.30 / 1.20); qwen3.8-flash (0.15 / 0.47) | DeepSeek V4 Flash: 72.1; Qwen 3.8 Flash Next: 74.9 |
+
+: Candidate models to be tested, with list prices and Vietnamese benchmark scores.
+
+Public data cannot answer three things: knowledge of IT work for the three pilot roles, for which no public benchmark exists; the newest small models, which are not on the Vietnamese leaderboard; and response time measured from Vietnam. With token counts assumed, one playthrough costs about USD 0.015 with small-tier judges and USD 0.086 with mid-tier judges, narrator included. The final choice is made after the first test, reported with agreement, response time, and cost.
+
+Items awaiting game design. Several items cannot be settled before the game design is fixed: the scoring scale, where −1 / 0 / +1 / +2 is planned and not final and the current sample scenarios describe three levels only; the competency scoring table for a playthrough and the specific criteria given to the judge; the list of required facts in a seed, needed to measure fact preservation (NFR-15); and how evidence from the play process, such as hints, time, and follow-ups, counts and how scores combine into a competency. The current sample scenarios and scoring are placeholders. The measure itself does not depend on game design: agreement between judge and expert can be computed on any ordinal scale.
+
 ---
 
 ## References
@@ -1106,3 +1167,47 @@ The traceability matrix below traces every requirement to the use case realising
 [112] P. A. Creed and W. O. Yin, "Reliability and validity of a Chinese version of the Career Decision-Making Difficulties Questionnaire," *International Journal for Educational and Vocational Guidance*, vol. 6, no. 1, pp. 47-63, 2006, doi: 10.1007/s10775-006-0003-3.
 
 [113] L. Sovet, J. Tak, and S. Jung, "Validation of the Career Decision-Making Difficulties Questionnaire among Korean college students," *Journal of Career Assessment*, vol. 23, no. 4, pp. 661-676, 2015, doi: 10.1177/1069072714553556.
+
+[114] J. Cohen, "A coefficient of agreement for nominal scales," *Educational and Psychological Measurement*, vol. 20, no. 1, pp. 37-46, 1960, doi: 10.1177/001316446002000104.
+
+[115] F. Chopra and I. Haaland, "Conducting qualitative interviews with AI," CESifo Working Paper No. 10666, 2023 (revised 2026). [Working paper.]
+
+[116] E. Klang et al., "Advantages and pitfalls in utilizing artificial intelligence for crafting medical examinations: A medical education pilot study with GPT-4," *BMC Medical Education*, vol. 23, art. 772, 2023, doi: 10.1186/s12909-023-04752-w.
+
+[117] R. J. Mislevy and G. D. Haertel, "Implications of evidence-centered design for educational testing," *Educational Measurement: Issues and Practice*, vol. 25, no. 4, pp. 6-20, 2006, doi: 10.1111/j.1745-3992.2006.00075.x.
+
+[118] R. Ferrer, D. Turgut, Z. Chen, and S. Sonkar, "When can we trust LLM graders? Calibrating confidence for automated assessment," arXiv:2603.29559, 2026. [Preprint.]
+
+[119] J. A. Hanley and A. Lippman-Hand, "If nothing goes wrong, is everything all right? Interpreting zero numerators," *JAMA*, vol. 249, no. 13, pp. 1743-1745, 1983, doi: 10.1001/jama.1983.03330370053031.
+
+[120] K. Balog and A. M. Bakken, "'Act like a 5th grader' is not enough: Bounding knowledge in LLM-based user simulators," in *Findings of the Association for Computational Linguistics: EMNLP 2026*, 2026. arXiv:2608.30033.
+
+[121] M. O. Riedl and V. Bulitko, "Interactive narrative: An intelligent systems approach," *AI Magazine*, vol. 34, no. 1, 2013, doi: 10.1609/aimag.v34i1.2449.
+
+[122] Z. Li, C. Li, M. Zhang, Q. Mei, and M. Bendersky, "Retrieval augmented generation or long-context LLMs? A comprehensive study and hybrid approach," in *Proc. 2024 Conf. Empirical Methods in Natural Language Processing: Industry Track*, 2024. arXiv:2407.16833.
+
+[123] Y. Peng et al., "Can LLM-as-a-judge reliably verify rubrics in agentic scenarios?" in *Proc. 2026 Conf. Empirical Methods in Natural Language Processing (EMNLP)*, 2026. arXiv:2606.29920.
+
+[124] S. Kim et al., "The BiGGen Bench: A principled benchmark for fine-grained evaluation of language models with language models," in *Proc. 2025 Conf. North American Chapter of the Association for Computational Linguistics (NAACL)*, 2025. arXiv:2406.05761.
+
+[125] J. Jung, M. Lu, S. C. Benker, and D. Darici, "How model size, temperature, and prompt style affect LLM-human assessment score alignment," presented at *NCME AIME 2025*. arXiv:2509.19329.
+
+[126] L. Yoshida, "Are the reasoning models good at automated essay scoring?" in *Findings of the Association for Computational Linguistics: EMNLP 2025*, pp. 8388-8394, 2025, doi: 10.18653/v1/2025.findings-emnlp.445.
+
+[127] W. Mansour, S. Albatarni, S. Eltanbouly, and T. Elsayed, "Can large language models automatically score proficiency of written essays?" in *Proc. LREC-COLING 2024*, 2024. arXiv:2403.06149.
+
+[128] A. V. G. Schleifer, M. Ariely, B. Beigman Klebanov, A. Salman, and G. Alexandron, "Quality-conditioned agreement in automated short answer scoring: Mid-range degradation and the impact of task-specific adaptation," in *Proc. 21st Workshop on Innovative Use of NLP for Building Educational Applications (BEA)*, 2026. arXiv:2605.07647.
+
+[129] M. Krumdick, C. Lovering, V. Reddy, S. Ebner, and C. Tanner, "No free labels: Limitations of LLM-as-a-judge without human grounding," arXiv:2503.05061, 2025. [Preprint.]
+
+[130] A. Panickssery, S. R. Bowman, and S. Feng, "LLM evaluators recognize and favor their own generations," in *Advances in Neural Information Processing Systems (NeurIPS) 37*, 2024. arXiv:2404.13076.
+
+[131] UK AI Security Institute, "Inspect AI: A framework for large language model evaluations," documentation. Available: https://inspect.aisi.org.uk/ (accessed 8 Oct. 2026).
+
+[132] Z. Xu, F. Meng, K. Xu, C. Verbrugge, S. Lucas, and J. Zhao, "AI native games: A survey and roadmap," arXiv:2607.00527, 2026. [Preprint.]
+
+[133] Ericsson, "Defining AI native," white paper. Available: https://www.ericsson.com/en/reports-and-papers/white-papers/ai-native (accessed 8 Oct. 2026).
+
+[134] AI Singapore, "SEA-HELM leaderboard: Vietnamese," snapshot of 18 Sep. 2026. Available: https://leaderboard.sea-lion.ai/detailed/VI (accessed 8 Oct. 2026).
+
+[135] Anthropic, OpenAI, Google, DeepSeek, and Alibaba Cloud, official API pricing pages (accessed 8-9 Oct. 2026).

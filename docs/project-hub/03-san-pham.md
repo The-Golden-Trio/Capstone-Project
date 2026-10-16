@@ -133,7 +133,7 @@ Cách sinh scenario mới: xem `occupation-data/specs/HUONG-DAN-SINH-SCENARIO.md
 |---|---|
 | DC-01 | Model chấm khác họ với model sinh (BR-09 của bản 18/9) |
 | DC-02 | Sinh và chấm dựa vào provider bên ngoài, qua một interface thay được |
-| DC-03 | Xử lý dữ liệu cá nhân theo luật bảo vệ dữ liệu cá nhân của Việt Nam, gồm quy định cho trẻ vị thành niên |
+| DC-03 | Xử lý dữ liệu cá nhân theo luật bảo vệ dữ liệu cá nhân của Việt Nam, gồm quy định về chuyển dữ liệu ra nước ngoài (12/10: bỏ phần quy định cho trẻ vị thành niên, D-97) |
 | DC-04 | Chi phí model mỗi phiên bị chặn bởi một trần cấu hình (cô 26/9: đây là giải pháp, chuyển ra khỏi DC, T2609.9) |
 | DC-05 | Web chạy trên trình duyệt, không cần cài |
 | DC-06 | Model được viết lại lời một lựa chọn đã có khoá nhưng không được đổi profile hiệu quả của nó |

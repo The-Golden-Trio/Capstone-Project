@@ -1063,3 +1063,78 @@ Review app feedback & FR-20 & --- & DR-18 \\ \hline
 Handle data requests & FR-44 & NFR-05 & DR-17 \\ \hline
 \end{longtable}
 }
+
+\subsection{Technology Solution}
+
+This section selects the technologies of the system. Each choice is made against criteria after comparison with alternatives. The frontend and backend comparisons are in preparation; the AI part follows.
+
+\subsubsection{Frontend}
+
+The comparison of frontend technologies is in preparation and will be added in the next revision.
+
+\subsubsection{Backend}
+
+The comparison of backend technologies is in preparation and will be added in the next revision.
+
+\subsubsection{AI algorithms, technologies, and models}
+
+This subsection records the AI design as presented to the advisor in week 41. It is a design and a literature review: no measurement has been run yet, and the first test is planned for the following week. Several parts of Chapter 4 predate this design and are to be aligned with it in the next revision.
+
+The five places where AI works. AI is used at five steps, three while content is authored and two during play. AI drafts, connects, scores, and filters; domain experts decide occupational content, scoring keys, and publication.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.092\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.491\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.412\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{The five AI components and the human decision attached to each.} \\
+\hline
+\textbf{Step} & \textbf{What AI does} & \textbf{What a person decides} \\ \hline
+\endfirsthead
+\hline
+\textbf{Step} & \textbf{What AI does} & \textbf{What a person decides} \\ \hline
+\endhead
+AI-1 & Interviews the domain expert to collect what a scenario seed needs & The expert confirms the record \\ \hline
+AI-2 & Turns the expert's input into a structured game seed, with the content administrator & The expert sets every scoring key and rubric anchor, and approves the seed \\ \hline
+AI-3 & Runs test playthroughs and picks the cases the expert must see & The expert rules on them and approves publication \\ \hline
+AI-4 & Writes connecting narration and follow-up questions during play & Nobody at run time; the engine and rules constrain it \\ \hline
+AI-5 & Scores the playthrough against the rubric & The expert reviews flagged cases \\ \hline
+\end{longtable}
+}
+
+AI-1, interviewing the domain expert. A language model asks and probes to collect what a seed needs: incidents, what a good and a poor response look like, and the facts of the situation. Each expert is interviewed separately, and the merged content marks where experts agree and where they differ. The interview is constrained by a human-written topic guide based on the critical incident technique\cite{r26} and on development practice for situational judgment tests\cite{r27}; the model probes inside each topic only. A tracker lists the seed fields still missing, the expert is shown a summary and confirms it, and every turn is stored verbatim so that each seed field links to the turn it came from. That a language model can hold an interview to a guide is supported by 766 AI-led interviews in which 94.8\% to 99.8\% of questions were open-ended, 95.7\% to 99.6\% neutral, and 0.1\% to 0.4\% hallucinated\cite{r115}.
+
+AI-2, drafting the game seed. The model helps the content administrator turn the experts' answers into a structured seed: context, characters, situations, canon events, and the scoring frame. Drafts are written from the expert's own words, the domain expert sets every scoring key and every rubric anchor, and a seed passes automatic structure checks and then the expert's approval before any player sees it. Experts own keys and rubrics because, when GPT-4 drafted 210 examination questions, specialists required revision of 15\% and judged 0.5\% false\cite{r116}. The seed follows evidence-centered design: what is measured, which behaviour is evidence for it, and which situation elicits that behaviour\cite{r20,r117}. This is the first of four checkpoints for generated content: structure is checked by machine and content is approved by the expert.
+
+AI-3, helping the expert test before publishing. A volunteer expert with about seven hours cannot read every free-text answer. AI-3 runs AI-4 and AI-5 on test playthroughs, from experts, testers, and simulated answers, and ranks the cases that need the expert: cases where the three judges differ by more than one level, generated turns that broke a run-time rule, and a blind random sample of cases that were not flagged. The expert decides, and can refine a rubric anchor during review, so rubrics are versioned. The random sample is required because confidence signals from a language-model grader separate right from wrong grades only weakly, with an area under the curve of 0.57 to 0.64\cite{r118}, so flagged cases alone can hide errors; if n audited cases show no error, the error rate is at most about 3/n at 95\% confidence\cite{r119}. Simulated players find relative problems only: persona-prompted models answered with near-perfect, uniform accuracy, unlike 2,359 real students\cite{r120}, so real test plays are needed as well. The run-time checks of AI-4 are to be tested on scripted player turns in four classes (on-script, off-script, adversarial, and rubric-fishing), reporting the violation rate per class; this test set is not yet built. This is the second checkpoint, and the expert-scored test plays are also the validation data for the judge. In the present phase there are no experts or real players: the team stands in for both and the advisor checks a sample, so results show that the machinery works, not agreement with experts.
+
+AI-4, narrating during play. The game engine, not the model, controls the order of canon events. Canon content is shown verbatim from the seed; a situation may have several approved canon variants chosen at random, and the log records which variant was served. The model writes only the connecting narration and the follow-up questions that fit the player's free-text answer. The whole seed is placed in the prompt, without retrieval or fine-tuning, and the rubric and scoring keys are not in the prompt. Run-time checks are rules, not another model call, so checking adds no waiting time: numbers and names must come from the seed or from the player's own text, and the engine counts follow-ups. A model from a different family reviews the logs afterwards. Holding authored structure outside free generation is the established approach in interactive narrative\cite{r121}, and when the source fits in the prompt, long-context prompting outperformed retrieval on average\cite{r122}. These are the third checkpoint (rules at run time) and the fourth (log review afterwards).
+
+AI-5, scoring the playthrough. The scoring model is separate from the narrating model (DC-01). There is no reference answer: answers are free text, and the judge scores each rubric criterion by how far the answer meets the behaviour described for each level. Each judge is called once per situation, with at most three criteria in a call; the call runs in the background when the situation ends, and results appear on the summary screen. For each criterion the judge returns a verbatim quote from the player, then the rationale, then the level, and the quote must be a substring of what the player typed. A panel of three judges from three model families scores each situation and the median is the score; cases where judges differ by more than one level go to the expert through AI-3, and if one judge is unavailable the system waits for all three. One call for all criteria was not chosen because batching several rubric checks into one call trades accuracy for cost, with a large loss when the evidence is spread over a long trajectory\cite{r123}. A panel was chosen because a five-judge vote matched the best single judge, with a Pearson correlation with humans of 0.627 against 0.623\cite{r124}, so a panel reaches the best judge's level without knowing in advance which judge that is. The design does not claim that a panel is more accurate than a single judge.
+
+Strength of the judge relative to the generator. The judge does not need to be stronger than the generator, because it scores text written by a person, not the generator's output. It does need enough capacity: small models aligned poorly with human raters (intraclass correlation below 0.20) and larger models moderately (0.41 to 0.57), against 0.45 between the two human raters\cite{r125}. It need not be a reasoning model: two reasoning models had lower validity than a smaller standard model in essay scoring\cite{r126}. Each judge family is therefore to be tested at two tiers, and the cheapest tier that is not clearly worse is chosen.
+
+Reliability of a language-model judge. Published evidence supports a conditional answer, not reliability by default. On a standard essay dataset, mean quadratic weighted kappa was 0.313 for ChatGPT and 0.297 for Llama against 0.817 for the best supervised system\cite{r127}. Agreement nears human level with a strong model, an explicit rubric, and scored examples (Section 2.5)\cite{r101,r102,r103,r104,r105}; the present phase has the first two, and examples come later from expert rulings. Automated scorers handle fully correct and fully incorrect answers well and are much worse on partially correct ones, while human agreement stays constant\cite{r128}. A judge is only as good as its knowledge of the work: without a reference answer, judges agreed with experts only on questions they could answer themselves\cite{r129}, and judging ability tracks problem-solving ability\cite{r60}; since there is no reference answer here, the judge must know IT work and the rubric must carry domain knowledge. Judges favour their own generations\cite{r130}, hence a judge family other than the generator's. This evidence comes from another setting, English essays and short answers scored by earlier generations of models; none concerns Vietnamese or role-play. Reliability must therefore be measured on the project's own task (RP-2) against the criteria of Williamson, Xi and Breyer\cite{r71}: quadratic weighted kappa of at least 0.70, a standardised mean difference of at most 0.15, and agreement at most 0.10 below that between experts.
+
+Framework for the judge. The offline test harness is Inspect AI, an open-source framework maintained by the UK AI Security Institute\cite{r131}. It provides repeated runs, several grader models in one run, a median reducer, and an ordinal Krippendorff's alpha; the project's rubric needs a custom scorer. In the product, the judge is the project's own TypeScript module with schema-validated output, and prompts and rubrics are kept in data files shared by both. These tools have no peer-reviewed papers; the cited science is in the method, rubric-based scoring with reasoning before the score\cite{r58} and panels of judges\cite{r74}.
+
+AI-native character and provider failure. The definition adopted is that a system is AI-native when AI is constitutive of its core loop, so that removing the AI makes the central activity collapse or change fundamentally\cite{r132}, and when AI is part of design, operation, and maintenance, not an added component\cite{r133}. In JobQuest, AI works at all five steps: without it the system cannot fit the narration to a free-text answer and cannot score that answer, and there is no substitute path, neither keyword scoring nor a scripted replacement. When the model provider fails, generation and scoring, the core, stop; the session pauses, answers and progress are saved (NFR-04), and play resumes when the AI returns; pages that do not use AI, such as sign-in, the occupation map, and the profile, stay available; switching to another provider is still AI, not a fallback (DC-02). Several providers are used so that an outage at one provider does not take every AI function down at once.
+
+Model families and candidates. Four model families are needed: one for generation and three for the judge panel. Judges differ from the generator (DC-01) and from each other. The criteria are Vietnamese capability, knowledge of IT work, response time, price, schema-constrained output, and data terms. The table below lists the candidates to be tested, with Vietnamese scores from the SEA-HELM leaderboard of 18 September 2026\cite{r134} and list prices read on 8 and 9 October 2026\cite{r135}. Where a candidate is not on the leaderboard, the score shown is that of the closest listed model, under that model's name.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.460\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.387\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Candidate models to be tested, with list prices and Vietnamese benchmark scores.} \\
+\hline
+\textbf{Role} & \textbf{Candidates (USD per million tokens, input / output)} & \textbf{SEA-HELM Vietnamese} \\ \hline
+\endfirsthead
+\hline
+\textbf{Role} & \textbf{Candidates (USD per million tokens, input / output)} & \textbf{SEA-HELM Vietnamese} \\ \hline
+\endhead
+Judge, Anthropic & claude-sonnet-5-5 (2 / 10); claude-haiku-5-5 (0.10 / 0.50) & Sonnet 5: 77.0; Haiku 4.5: 67.7 (earlier models) \\ \hline
+Judge, OpenAI & gpt-6.1-sol (2 / 10); gpt-6-luna (0.10 / 0.50) & GPT 5.6 Sol: 77.1; GPT 5.6 Luna: 71.9 (earlier models) \\ \hline
+Judge, Google & gemini-3.8-flash (0.75 / 3.75); gemini-3.5-flash-lite (0.30 / 2.50) & gemini-3.8-flash: 78.4; Gemini 3.1 Flash Lite: 75.2 \\ \hline
+Narrator & deepseek-flash (0.30 / 1.20); qwen3.8-flash (0.15 / 0.47) & DeepSeek V4 Flash: 72.1; Qwen 3.8 Flash Next: 74.9 \\ \hline
+\end{longtable}
+}
+
+Public data cannot answer three things: knowledge of IT work for the three pilot roles, for which no public benchmark exists; the newest small models, which are not on the Vietnamese leaderboard; and response time measured from Vietnam. With token counts assumed, one playthrough costs about USD 0.015 with small-tier judges and USD 0.086 with mid-tier judges, narrator included. The final choice is made after the first test, reported with agreement, response time, and cost.
+
+Items awaiting game design. Several items cannot be settled before the game design is fixed: the scoring scale, where $-$1 / 0 / +1 / +2 is planned and not final and the current sample scenarios describe three levels only; the competency scoring table for a playthrough and the specific criteria given to the judge; the list of required facts in a seed, needed to measure fact preservation (NFR-15); and how evidence from the play process, such as hints, time, and follow-ups, counts and how scores combine into a competency. The current sample scenarios and scoring are placeholders. The measure itself does not depend on game design: agreement between judge and expert can be computed on any ordinal scale.
