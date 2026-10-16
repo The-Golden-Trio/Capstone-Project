@@ -95,7 +95,7 @@ export class ProfileController {
     return this.profile.submitQuiz(user.id, dto);
   }
 
-  /** Chân dung: năm nghề hợp nhất, chỉ số xã hội, đoạn mô tả (FR-10, FR-13). */
+  /** Chân dung: năm nghề hợp nhất, workstyle, đoạn mô tả (FR-10, FR-13). */
   @Get('portrait')
   portraitView(
     @CurrentUser() user: AuthUser,

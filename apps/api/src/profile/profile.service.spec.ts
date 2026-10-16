@@ -52,7 +52,8 @@ describe('ProfileService.submitQuiz', () => {
         { dimension: 'DEEP_WORK', value: 2, quote: 'ngồi một mình cả đêm' },
         { dimension: 'PEOPLE', value: 2, quote: 'rất thích họp nhóm' },
       ],
-      orientation: { value: -1, quote: 'một mình' },
+      people_things: { value: -1, quote: 'một mình' },
+      data_ideas: { value: -2, quote: 'chép từ đâu đó' },
     });
     const { service, saved } = setup(ai);
     await service.submitQuiz('u1', {
@@ -64,7 +65,8 @@ describe('ProfileService.submitQuiz', () => {
     expect(row.quizTextReadAt).toBeInstanceOf(Date);
     expect(row.quizTextEvidence).toMatchObject({
       signals: [{ dimension: 'DEEP_WORK' }],
-      orientation: [{ value: -1 }],
+      // trích dẫn của data_ideas không có trong câu nên bị bỏ
+      axes: [{ axis: 'peopleThings', value: -1 }],
     });
     expect(row.portraitBasis).toBeNull();
   });
@@ -78,7 +80,8 @@ describe('ProfileService.submitQuiz', () => {
     expect(view.quizDone).toBe(true);
     expect(saved().quizTexts).toEqual({ [textQ.question_id]: ANSWER });
     expect(saved().quizTextReadAt).toBeNull();
-    expect(saved().quizOrientationN).toBeGreaterThan(0);
+    expect(saved().quizPeopleThingsN).toBeGreaterThan(0);
+    expect(saved().quizDataIdeasN).toBeGreaterThan(0);
   });
 
   it('từ chối câu tự luận quá ngắn và lựa chọn lạ', async () => {

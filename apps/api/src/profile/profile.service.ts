@@ -7,12 +7,14 @@ import {
 import {
   MIN_ANSWER_LENGTH,
   QuizAnswerError,
+  WORKSTYLE_AXES,
   SIDE_QUEST_POINTS,
   acceptTextReading,
   addFits,
   applySignal,
   bandsOf,
   blankFit,
+  blankTallies,
   checkQuizTexts,
   matchChoice,
   questKind,
@@ -22,7 +24,8 @@ import {
   type FitVector,
   type GameEvent,
   type GameIndex,
-  type OrientationTally,
+  type AxisTallies,
+  type WorkstyleAxis,
   type QuestKind,
   type QuizChoice,
   type QuizTextAnswer,
@@ -45,7 +48,11 @@ export interface GameProfileView {
 /** Hồ sơ thô cùng những gì cần để suy ra chân dung — cho `PortraitService`. */
 export interface ProfileState {
   row: GameProfile;
-  eventAnswers: Array<{ roleCode: string; eventId: string; choiceIndex: number }>;
+  eventAnswers: Array<{
+    roleCode: string;
+    eventId: string;
+    choiceIndex: number;
+  }>;
   index: GameIndex;
   view: GameProfileView;
 }
@@ -53,7 +60,13 @@ export interface ProfileState {
 /** Bằng chứng từ câu tự luận, như lưu trong `quizTextEvidence`. */
 export interface TextEvidence {
   signals: Array<AcceptedEvidence & { questionId: string }>;
-  orientation: Array<{ questionId: string; value: number; quote: string }>;
+  /** Hai trục World-of-Work AI đọc ra được từ câu kể. */
+  axes: Array<{
+    questionId: string;
+    axis: WorkstyleAxis;
+    value: number;
+    quote: string;
+  }>;
 }
 
 /** Kết quả một lần trả lời nhiệm vụ phụ. */
@@ -159,8 +172,10 @@ export class ProfileService {
     const data = {
       quizFit: score.fit,
       quizDone: true,
-      quizOrientationSum: score.orientation.sum,
-      quizOrientationN: score.orientation.n,
+      quizPeopleThingsSum: score.axes.peopleThings.sum,
+      quizPeopleThingsN: score.axes.peopleThings.n,
+      quizDataIdeasSum: score.axes.dataIdeas.sum,
+      quizDataIdeasN: score.axes.dataIdeas.n,
       stage: score.stage,
       quizTexts: texts.length
         ? Object.fromEntries(texts.map((t) => [t.questionId, t.text]))
@@ -221,21 +236,26 @@ export class ProfileService {
     if (!raw) return null;
 
     let fit = blankFit();
-    const evidence: TextEvidence = { signals: [], orientation: [] };
+    const evidence: TextEvidence = { signals: [], axes: [] };
     for (const answer of answers) {
       const reading = raw[answer.questionId];
       if (!reading) continue;
-      const accepted = acceptTextReading(answer.text, reading, index.dimensions);
+      const accepted = acceptTextReading(
+        answer.text,
+        reading,
+        index.dimensions,
+      );
       fit = applySignal(fit, accepted.signal);
       evidence.signals.push(
-        ...accepted.evidence.map((e) => ({ questionId: answer.questionId, ...e })),
-      );
-      if (accepted.orientation !== null) {
-        evidence.orientation.push({
+        ...accepted.evidence.map((e) => ({
           questionId: answer.questionId,
-          value: accepted.orientation,
-          quote: reading.orientation?.quote ?? '',
-        });
+          ...e,
+        })),
+      );
+      for (const axis of WORKSTYLE_AXES) {
+        const found = accepted.axes[axis];
+        if (found)
+          evidence.axes.push({ questionId: answer.questionId, axis, ...found });
       }
     }
     return { fit, evidence };
@@ -472,17 +492,27 @@ const readTexts = (value: unknown): Record<string, string> =>
       )
     : {};
 
-/** Trục Người–Vật từ câu tự luận đã đọc. */
-export const textOrientation = (evidence: unknown): OrientationTally => {
-  const list = (evidence as Partial<TextEvidence> | null)?.orientation;
-  if (!Array.isArray(list)) return { sum: 0, n: 0 };
-  return list.reduce(
-    (tally, item) =>
-      typeof item?.value === 'number'
-        ? { sum: tally.sum + item.value, n: tally.n + 1 }
-        : tally,
-    { sum: 0, n: 0 },
-  );
+/**
+ * Hai trục World-of-Work từ câu kể đã đọc. Bản ghi cũ (trước khi có trục
+ * Data–Ideas) lưu `orientation`, tức trục People–Things.
+ */
+export const textAxes = (evidence: unknown): AxisTallies => {
+  const tallies = blankTallies();
+  const stored = evidence as
+    | (Partial<TextEvidence> & { orientation?: Array<{ value?: unknown }> })
+    | null;
+  const items = [
+    ...(Array.isArray(stored?.axes) ? stored.axes : []),
+    ...(Array.isArray(stored?.orientation)
+      ? stored.orientation.map((o) => ({ ...o, axis: 'peopleThings' as const }))
+      : []),
+  ];
+  for (const item of items) {
+    if (typeof item?.value !== 'number' || !(item.axis in tallies)) continue;
+    tallies[item.axis].sum += item.value;
+    tallies[item.axis].n += 1;
+  }
+  return tallies;
 };
 
 export { readTexts as readQuizTexts };

@@ -1,5 +1,5 @@
 /**
- * Get to Know Me: phần câu chọn, top 5 và chỉ số xã hội.
+ * Get to Know Me: phần câu chọn, top 5 và vị trí trên World-of-Work Map.
  *
  * Chạy trên bộ câu hỏi thật, vì điều đáng kiểm là tính chất của chính bộ
  * câu hỏi: mỗi chiều được chạm đủ số lần, và bài làm hết thì ra đúng năm nghề.
@@ -14,7 +14,15 @@ import {
   scoreQuizChoices,
   type QuizChoice,
 } from './quiz.js';
-import { PRIOR_WEIGHT, socialIndex, socialLabel } from './social.js';
+import {
+  PRIOR_WEIGHT,
+  WORKSTYLE_AXES,
+  blankTallies,
+  playAxes,
+  workstyle,
+  workstyleRegion,
+  type AxisTallies,
+} from './workstyle.js';
 import { acceptTextReading } from './textSignal.js';
 
 const game = fixtureIndex();
@@ -54,8 +62,10 @@ describe('chấm câu chọn', () => {
     const lean = scoreQuizChoices(allFirst(0.5), quiz);
     for (const d of DIMENSIONS)
       expect(lean.fit[d]).toBeCloseTo(strong.fit[d] / 2);
-    expect(lean.orientation.sum).toBeCloseTo(strong.orientation.sum / 2);
-    expect(lean.orientation.n).toBe(strong.orientation.n);
+    for (const axis of WORKSTYLE_AXES) {
+      expect(lean.axes[axis].sum).toBeCloseTo(strong.axes[axis].sum / 2);
+      expect(lean.axes[axis].n).toBe(strong.axes[axis].n);
+    }
   });
 
   it('câu giai đoạn không cộng gì vào chân dung', () => {
@@ -132,32 +142,43 @@ describe('top 5', () => {
   });
 });
 
-describe('chỉ số xã hội', () => {
-  it('chưa có gì thì không có chỉ số', () => {
+const tallies = (pt: [number, number], di: [number, number]): AxisTallies => ({
+  peopleThings: { sum: pt[0], n: pt[1] },
+  dataIdeas: { sum: di[0], n: di[1] },
+});
+
+describe('World-of-Work', () => {
+  it('mỗi trục có đúng sáu câu chọn trong bài', () => {
+    const count = (key: 'people_things' | 'data_ideas') =>
+      pairs.filter((q) => q.options.some((o) => o[key] !== undefined)).length;
+    expect(count('people_things')).toBe(6);
+    expect(count('data_ideas')).toBe(6);
+  });
+
+  it('chưa có gì thì không có vị trí', () => {
     expect(
-      socialIndex({ quiz: { sum: 0, n: 0 }, play: { sum: 0, n: 0 } }),
+      workstyle({ quiz: blankTallies(), play: blankTallies() }),
     ).toBeNull();
   });
 
-  it('chỉ có bài tự vấn thì theo đúng dấu của bài', () => {
-    const people = socialIndex({
-      quiz: { sum: 6, n: 6 },
-      play: { sum: 0, n: 0 },
+  it('chỉ có bài tự vấn thì theo đúng dấu của bài, hai trục độc lập', () => {
+    const w = workstyle({
+      quiz: tallies([6, 6], [-6, 6]),
+      play: blankTallies(),
     });
-    const things = socialIndex({
-      quiz: { sum: -6, n: 6 },
-      play: { sum: 0, n: 0 },
-    });
-    expect(people?.label).toBe('people');
-    expect(things?.label).toBe('things');
-    expect(people?.value).toBe(100 - (things?.value ?? 0));
+    expect(w?.peopleThings).toBeGreaterThan(50);
+    expect(w?.dataIdeas).toBeLessThan(50);
+    // People + Ideas là vùng Arts (A) theo lục giác của Holland.
+    expect(w?.region).toBe('A');
   });
 
   it('chơi càng nhiều thì lựa chọn thật càng lấn bài tự vấn', () => {
-    const quizOnly = { sum: -6, n: 6 };
     const values = [0, PRIOR_WEIGHT, PRIOR_WEIGHT * 4].map(
       (n) =>
-        socialIndex({ quiz: quizOnly, play: { sum: 2 * n, n } })?.value ?? 0,
+        workstyle({
+          quiz: tallies([-6, 6], [0, 0]),
+          play: tallies([2 * n, n], [0, 0]),
+        })?.peopleThings ?? 0,
     );
     expect(values[0]).toBeLessThan(values[1]);
     expect(values[1]).toBeLessThan(values[2]);
@@ -166,15 +187,36 @@ describe('chỉ số xã hội', () => {
 
   it('luôn nằm trong 0–100', () => {
     for (const sum of [-1000, -3, 0, 3, 1000]) {
-      const v = socialIndex({
-        quiz: { sum, n: 1 },
-        play: { sum: 0, n: 0 },
-      })?.value;
-      expect(v).toBeGreaterThanOrEqual(0);
-      expect(v).toBeLessThanOrEqual(100);
+      const w = workstyle({
+        quiz: tallies([sum, 1], [-sum, 1]),
+        play: blankTallies(),
+      });
+      for (const v of [w?.peopleThings, w?.dataIdeas]) {
+        expect(v).toBeGreaterThanOrEqual(0);
+        expect(v).toBeLessThanOrEqual(100);
+      }
     }
-    expect(socialLabel(35)).toBe('balanced');
-    expect(socialLabel(66)).toBe('people');
+  });
+
+  it('sáu vùng theo đúng góc của lục giác, gần tâm thì chưa có vùng', () => {
+    expect(workstyleRegion(1, 0)).toBe('S');
+    expect(workstyleRegion(0.5, 0.87)).toBe('E');
+    expect(workstyleRegion(-0.5, 0.87)).toBe('C');
+    expect(workstyleRegion(-1, 0)).toBe('R');
+    expect(workstyleRegion(-0.5, -0.87)).toBe('I');
+    expect(workstyleRegion(0.5, -0.87)).toBe('A');
+    expect(workstyleRegion(0.1, -0.1)).toBe('center');
+  });
+
+  it('lựa chọn khi chơi quy ra hai trục, kẹp về ±2', () => {
+    expect(playAxes({ PEOPLE: 3, DETAIL: 2, AMBIGUITY: 1 })).toEqual({
+      peopleThings: 2,
+      dataIdeas: 1,
+    });
+    expect(playAxes({ AMBIGUITY: 2 })).toEqual({
+      peopleThings: 0,
+      dataIdeas: -2,
+    });
   });
 });
 
@@ -191,12 +233,14 @@ describe('đọc câu tự luận', () => {
           { dimension: 'PEOPLE', value: 2, quote: 'thích làm việc nhóm' },
           { dimension: 'NOPE', value: 2, quote: 'quên cả ăn' },
         ],
-        orientation: { value: -1, quote: 'một mình' },
+        people_things: { value: -1, quote: 'một mình' },
+        data_ideas: { value: 1, quote: 'sửa lỗi cho đồ án' },
       },
       DIMENSIONS,
     );
     expect(accepted.signal).toEqual({ DEEP_WORK: 2 });
-    expect(accepted.orientation).toBe(-1);
+    expect(accepted.axes.peopleThings?.value).toBe(-1);
+    expect(accepted.axes.dataIdeas?.value).toBe(1);
     expect(accepted.evidence).toHaveLength(1);
   });
 
@@ -208,11 +252,13 @@ describe('đọc câu tự luận', () => {
           { dimension: 'DEEP_WORK', value: 5, quote: 'cả đêm' },
           { dimension: 'DEEP_WORK', value: 2, quote: 'MỘT MÌNH' },
         ],
-        orientation: { value: -9, quote: 'không có trong câu' },
+        people_things: { value: -9, quote: 'không có trong câu' },
+        data_ideas: { value: 9, quote: 'quên cả ăn' },
       },
       DIMENSIONS,
     );
     expect(accepted.signal['DEEP_WORK']).toBe(2);
-    expect(accepted.orientation).toBeNull();
+    expect(accepted.axes.peopleThings).toBeNull();
+    expect(accepted.axes.dataIdeas?.value).toBe(2);
   });
 });

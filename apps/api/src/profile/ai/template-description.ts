@@ -5,7 +5,7 @@
  * cách làm việc, nêu một điều có thể khó, và không bảo người chơi chọn nghề
  * nào.
  */
-import type { SocialLabel } from '@datn/game-core';
+import type { WorkstyleRegion } from '@datn/game-core';
 import type {
   DescriptionWriter,
   PortraitFacts,
@@ -17,36 +17,83 @@ import type {
 const PHRASES: Record<PortraitLocale, Record<string, [string, string]>> = {
   vi: {
     INTERRUPT: ['xoay xở tốt khi bị ngắt quãng', 'bị ngắt quãng liên tục'],
-    DEEP_WORK: ['thích tập trung sâu vào một việc', 'phải ngồi một mình với một việc thật lâu'],
-    AMBIGUITY: ['thấy hứng thú với yêu cầu còn mơ hồ', 'yêu cầu còn mơ hồ, thiếu thông tin'],
+    DEEP_WORK: [
+      'thích tập trung sâu vào một việc',
+      'phải ngồi một mình với một việc thật lâu',
+    ],
+    AMBIGUITY: [
+      'thấy hứng thú với yêu cầu còn mơ hồ',
+      'yêu cầu còn mơ hồ, thiếu thông tin',
+    ],
     DETAIL: ['để ý tới từng chi tiết nhỏ', 'phải soát từng chi tiết nhỏ'],
-    PEOPLE: ['thích làm việc và thuyết phục người khác', 'phải trao đổi với nhiều người suốt ngày'],
-    VISIBLE: ['cần thấy kết quả công việc rõ ràng', 'phải liên tục cho người khác thấy kết quả'],
+    PEOPLE: [
+      'thích làm việc và thuyết phục người khác',
+      'phải trao đổi với nhiều người suốt ngày',
+    ],
+    VISIBLE: [
+      'cần thấy kết quả công việc rõ ràng',
+      'phải liên tục cho người khác thấy kết quả',
+    ],
     REPETITION: ['chịu được việc lặp lại đều đặn', 'việc cứ lặp đi lặp lại'],
-    PRESSURE: ['làm tốt dưới áp lực thời gian', 'áp lực thời gian và sự cố dồn dập'],
+    PRESSURE: [
+      'làm tốt dưới áp lực thời gian',
+      'áp lực thời gian và sự cố dồn dập',
+    ],
   },
   en: {
-    INTERRUPT: ['cope well with interruptions', 'you are interrupted all the time'],
-    DEEP_WORK: ['like to focus deeply on one thing', 'you must sit alone with one task for long stretches'],
-    AMBIGUITY: ['enjoy requests that are still vague', 'requests are vague and information is missing'],
+    INTERRUPT: [
+      'cope well with interruptions',
+      'you are interrupted all the time',
+    ],
+    DEEP_WORK: [
+      'like to focus deeply on one thing',
+      'you must sit alone with one task for long stretches',
+    ],
+    AMBIGUITY: [
+      'enjoy requests that are still vague',
+      'requests are vague and information is missing',
+    ],
     DETAIL: ['notice small details', 'you have to check every small detail'],
-    PEOPLE: ['like working with and persuading people', 'you talk to many people all day'],
-    VISIBLE: ['need to see clear results from your work', 'you must keep showing results to others'],
-    REPETITION: ['are fine with steady, repeated work', 'the work repeats over and over'],
-    PRESSURE: ['do well under time pressure', 'deadlines and incidents pile up'],
+    PEOPLE: [
+      'like working with and persuading people',
+      'you talk to many people all day',
+    ],
+    VISIBLE: [
+      'need to see clear results from your work',
+      'you must keep showing results to others',
+    ],
+    REPETITION: [
+      'are fine with steady, repeated work',
+      'the work repeats over and over',
+    ],
+    PRESSURE: [
+      'do well under time pressure',
+      'deadlines and incidents pile up',
+    ],
   },
 };
 
-const SOCIAL: Record<PortraitLocale, Record<SocialLabel, string>> = {
+/** Một câu tả workstyle của người chơi (vị trí trên World-of-Work Map). */
+const REGION: Record<PortraitLocale, Record<WorkstyleRegion, string>> = {
   vi: {
-    people: 'Bạn nghiêng về làm việc qua con người: trao đổi, thuyết phục, gỡ rối cho người khác.',
-    balanced: 'Bạn khá cân bằng giữa làm việc với người và làm việc với hệ thống.',
-    things: 'Bạn nghiêng về làm việc với hệ thống, công cụ và dữ liệu hơn là với người.',
+    S: 'Workstyle của bạn là Người hỗ trợ: thích giúp đỡ, hướng dẫn và hỗ trợ người khác.',
+    E: 'Workstyle của bạn là Người dẫn dắt: thích điều phối người và việc, thuyết phục, quyết định dựa trên số liệu.',
+    C: 'Workstyle của bạn là Người tổ chức: thích làm việc có hệ thống với dữ liệu, quy trình và công cụ.',
+    R: 'Workstyle của bạn là Người thực hành: thích làm việc trực tiếp với máy móc, hệ thống và code để mọi thứ chạy được.',
+    I: 'Workstyle của bạn là Người phân tích: thích dùng ý tưởng và hệ thống để giải bài toán khó.',
+    A: 'Workstyle của bạn là Người sáng tạo: thích sáng tạo, diễn đạt ý tưởng theo cách mới cho người khác dùng.',
+    center:
+      'Workstyle của bạn đang cân bằng: chưa nghiêng hẳn về người hay vật, về dữ kiện hay ý tưởng.',
   },
   en: {
-    people: 'You lean towards working through people: talking things through, persuading, unblocking others.',
-    balanced: 'You are fairly balanced between working with people and working with systems.',
-    things: 'You lean towards working with systems, tools and data rather than with people.',
+    S: 'Your workstyle is the Helper: you like helping, teaching and supporting others.',
+    E: 'Your workstyle is the Persuader: you like coordinating people and work, persuading, deciding from numbers.',
+    C: 'Your workstyle is the Organizer: you like working systematically with data, procedures and tools.',
+    R: 'Your workstyle is the Doer: you like working hands-on with machines, systems and code to make things run.',
+    I: 'Your workstyle is the Thinker: you like using ideas and systems to solve hard problems.',
+    A: 'Your workstyle is the Creator: you like creating and expressing ideas in new ways for others to use.',
+    center:
+      'Your workstyle is balanced: no clear lean yet between people and things, or data and ideas.',
   },
 };
 
@@ -69,9 +116,11 @@ export function templateDescription(facts: PortraitFacts): string {
         : `Bạn có vẻ ${joined}${avoid ? `, nhưng có thể thấy khó khi ${avoid}` : ''}.`,
     );
   }
-  if (facts.social) sentences.push(SOCIAL[locale][facts.social.label]);
+  if (facts.workstyle) sentences.push(REGION[locale][facts.workstyle.region]);
   if (facts.topRoles.length > 0) {
-    const roles = facts.topRoles.slice(0, 2).join(locale === 'en' ? ' and ' : ' và ');
+    const roles = facts.topRoles
+      .slice(0, 2)
+      .join(locale === 'en' ? ' and ' : ' và ');
     sentences.push(
       locale === 'en'
         ? `${roles} could be good places to start — try them and judge for yourself.`

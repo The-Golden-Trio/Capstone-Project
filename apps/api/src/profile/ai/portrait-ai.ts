@@ -8,7 +8,7 @@
  * chối. Tầng dịch vụ coi `null` là "chưa làm được" và có đường lui riêng:
  * câu tự luận để đọc sau, đoạn mô tả viết bằng khuôn cố định.
  */
-import type { SocialLabel, TextReading } from '@datn/game-core';
+import type { TextReading, Workstyle } from '@datn/game-core';
 
 export interface TextToRead {
   questionId: string;
@@ -39,7 +39,8 @@ export interface PortraitFacts {
   strengths: Array<{ dimension: string; description: string; value: number }>;
   /** Chiều âm nhất trước. */
   aversions: Array<{ dimension: string; description: string; value: number }>;
-  social: { value: number; label: SocialLabel } | null;
+  /** Vị trí trên World-of-Work Map, `null` khi chưa có gì để nói. */
+  workstyle: Pick<Workstyle, 'peopleThings' | 'dataIdeas' | 'region'> | null;
   topRoles: string[];
   texts: Array<{ prompt: string; text: string }>;
 }

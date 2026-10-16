@@ -23,7 +23,7 @@ export * from './domain/sideQuests.js';
 export * from './domain/sideQuestGrader.js';
 export * from './domain/fit.js';
 export * from './domain/quiz.js';
-export * from './domain/social.js';
+export * from './domain/workstyle.js';
 export * from './domain/textSignal.js';
 export * from './domain/format.js';
 export * from './domain/followups.js';

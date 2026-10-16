@@ -1,10 +1,11 @@
 import { Inject, Injectable } from '@nestjs/common';
 import {
   DIMENSIONS,
-  orientationFromEvents,
-  socialIndex,
+  addTallies,
+  tallyEvents,
   topMatches,
-  type SocialIndex,
+  workstyle,
+  type Workstyle,
 } from '@datn/game-core';
 import { PrismaService } from '../prisma/prisma.service';
 import {
@@ -17,7 +18,7 @@ import { templateDescription } from './ai/template-description';
 import {
   ProfileService,
   readQuizTexts,
-  textOrientation,
+  textAxes,
   type ProfileState,
 } from './profile.service';
 
@@ -38,7 +39,8 @@ export interface PortraitView {
   quizDone: boolean;
   /** Đúng năm nghề (FR-10), rỗng khi chưa có hồ sơ. */
   top: PortraitMatch[];
-  socialIndex: SocialIndex | null;
+  /** Vị trí trên World-of-Work Map (FR-13), `null` khi chưa có gì để nói. */
+  workstyle: Workstyle | null;
   description: {
     text: string;
     source: 'llm' | 'template';
@@ -49,12 +51,13 @@ export interface PortraitView {
 }
 
 /**
- * "Chân dung" (FR-10, FR-13): năm nghề hợp nhất, chỉ số xã hội và đoạn mô
- * tả người chơi.
+ * "Chân dung" (FR-10, FR-13): năm nghề hợp nhất, vị trí trên World-of-Work
+ * Map và đoạn mô tả người chơi.
  *
  * Năm nghề và chỉ số tính lại mỗi lần đọc từ những gì đã lưu, nên luôn theo
  * kịp lượt chơi mới. Đoạn mô tả thì tốn một lần gọi AI, nên chỉ viết lại khi
- * "nền" của nó đổi: làm lại bài, năm nghề đổi, nhãn chỉ số đổi, đổi ngôn ngữ.
+ * "nền" của nó đổi: làm lại bài, năm nghề đổi, vùng trên bản đồ đổi, đổi ngôn
+ * ngữ.
  */
 @Injectable()
 export class PortraitService {
@@ -80,20 +83,25 @@ export class PortraitService {
       reasons,
     }));
 
-    const fromText = textOrientation(row.quizTextEvidence);
-    const social = socialIndex({
-      quiz: {
-        sum: row.quizOrientationSum + fromText.sum,
-        n: row.quizOrientationN + fromText.n,
-      },
-      play: orientationFromEvents(state.eventAnswers, index),
+    const position = workstyle({
+      quiz: addTallies(
+        {
+          peopleThings: {
+            sum: row.quizPeopleThingsSum,
+            n: row.quizPeopleThingsN,
+          },
+          dataIdeas: { sum: row.quizDataIdeasSum, n: row.quizDataIdeasN },
+        },
+        textAxes(row.quizTextEvidence),
+      ),
+      play: tallyEvents(state.eventAnswers, index),
     });
 
     return {
       quizDone: row.quizDone,
       top,
-      socialIndex: social,
-      description: await this.description(userId, locale, state, top, social),
+      workstyle: position,
+      description: await this.description(userId, locale, state, top, position),
       textsPending: Boolean(row.quizTexts) && !row.quizTextReadAt,
     };
   }
@@ -103,16 +111,16 @@ export class PortraitService {
     locale: PortraitLocale,
     state: ProfileState,
     top: PortraitMatch[],
-    social: SocialIndex | null,
+    position: Workstyle | null,
   ): Promise<PortraitView['description']> {
     const { row } = state;
-    if (top.length === 0 && !social) return null;
+    if (top.length === 0 && !position) return null;
 
     const basis = JSON.stringify({
       locale,
       stage: row.stage,
       top: top.map((m) => m.roleCode),
-      social: social?.label ?? null,
+      region: position?.region ?? null,
       textsRead: Boolean(row.quizTextReadAt),
     });
 
@@ -133,7 +141,7 @@ export class PortraitService {
       };
     }
 
-    const facts = portraitFacts(locale, state, top, social);
+    const facts = portraitFacts(locale, state, top, position);
     const written = this.ai ? await this.ai.write(facts) : null;
     const text = written?.text ?? templateDescription(facts);
     const source = written ? 'llm' : 'template';
@@ -159,7 +167,7 @@ export function portraitFacts(
   locale: PortraitLocale,
   state: ProfileState,
   top: PortraitMatch[],
-  social: SocialIndex | null,
+  position: Workstyle | null,
 ): PortraitFacts {
   const { row, index, view } = state;
   const described = DIMENSIONS.map((dimension) => ({
@@ -180,7 +188,11 @@ export function portraitFacts(
       .filter((d) => d.value < 0)
       .sort((a, b) => a.value - b.value)
       .slice(0, 2),
-    social: social && { value: social.value, label: social.label },
+    workstyle: position && {
+      peopleThings: position.peopleThings,
+      dataIdeas: position.dataIdeas,
+      region: position.region,
+    },
     topRoles: top.map((m) => (locale === 'en' ? m.nameEn : m.name)),
     texts: Object.entries(texts).map(([questionId, text]) => ({
       prompt:

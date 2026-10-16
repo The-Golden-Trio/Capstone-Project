@@ -9,6 +9,7 @@
  */
 import type { Quiz, QuizQuestion } from '../data/schema.js';
 import { applySignal, blankFit, type FitVector } from './fit.js';
+import { WORKSTYLE_AXES, blankTallies, type AxisTallies } from './workstyle.js';
 
 /** Hai mức trả lời một câu chọn: "rất đúng" và "hơi đúng". */
 export const QUIZ_STRENGTHS = [1, 0.5] as const;
@@ -26,15 +27,10 @@ export interface QuizTextAnswer {
   text: string;
 }
 
-/** Tổng trục Người–Vật: cộng dồn và số câu đã nói về trục này. */
-export interface OrientationTally {
-  sum: number;
-  n: number;
-}
-
 export interface QuizChoiceScore {
   fit: FitVector;
-  orientation: OrientationTally;
+  /** Hai trục World-of-Work từ các câu chọn. */
+  axes: AxisTallies;
   /** `option_id` của câu giai đoạn, nếu người chơi đã trả lời. */
   stage: string | null;
 }
@@ -46,13 +42,13 @@ export const questionsOfKind = (
   kind: QuizQuestion['kind'],
 ): QuizQuestion[] => quiz.questions.filter((q) => q.kind === kind);
 
-/** Cộng tín hiệu và trục Người–Vật từ các câu chọn. Lựa chọn lạ thì ném lỗi. */
+/** Cộng tín hiệu 8 chiều và hai trục World-of-Work. Lựa chọn lạ thì ném lỗi. */
 export function scoreQuizChoices(
   choices: readonly QuizChoice[],
   quiz: Quiz,
 ): QuizChoiceScore {
   let fit = blankFit();
-  const orientation: OrientationTally = { sum: 0, n: 0 };
+  const axes = blankTallies();
   let stage: string | null = null;
 
   for (const choice of choices) {
@@ -82,13 +78,16 @@ export function scoreQuizChoices(
         Object.entries(option.signal).map(([d, v]) => [d, v * strength]),
       ),
     );
-    if (option.orientation !== undefined) {
-      orientation.sum += option.orientation * strength;
-      orientation.n += 1;
+    for (const axis of WORKSTYLE_AXES) {
+      const value =
+        axis === 'peopleThings' ? option.people_things : option.data_ideas;
+      if (value === undefined) continue;
+      axes[axis].sum += value * strength;
+      axes[axis].n += 1;
     }
   }
 
-  return { fit, orientation, stage };
+  return { fit, axes, stage };
 }
 
 /** Kiểm độ dài câu tự luận theo giới hạn của từng câu. Trả câu đã cắt khoảng trắng. */

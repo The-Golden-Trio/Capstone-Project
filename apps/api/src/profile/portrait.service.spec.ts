@@ -19,8 +19,10 @@ const baseRow = (over: Partial<GameProfile> = {}): GameProfile =>
     quizDone: true,
     eventsPlayed: 0,
     updatedAt: new Date(),
-    quizOrientationSum: -4,
-    quizOrientationN: 4,
+    quizPeopleThingsSum: -4,
+    quizPeopleThingsN: 4,
+    quizDataIdeasSum: -4,
+    quizDataIdeasN: 4,
     stage: 'stage_university',
     quizTexts: { t1: 'Mình làm đồ án một mình suốt đêm' },
     quizTextFit: null,
@@ -66,16 +68,22 @@ const fakeAi = (write: PortraitAi['write']): PortraitAi => ({
 });
 
 describe('PortraitService', () => {
-  it('trả đúng năm nghề, chỉ số xã hội và mô tả', async () => {
+  it('trả đúng năm nghề, workstyle và mô tả', async () => {
     const { service } = setup({});
     const view = await service.get('u1', 'vi');
     expect(view.top).toHaveLength(5);
-    expect(view.socialIndex?.label).toBe('things');
+    // Things + Ideas là vùng Khoa học & Công nghệ (Investigative).
+    expect(view.workstyle?.peopleThings).toBeLessThan(50);
+    expect(view.workstyle?.dataIdeas).toBeLessThan(50);
+    expect(view.workstyle?.region).toBe('I');
     expect(view.description?.source).toBe('template');
   });
 
   it('chỉ gọi AI lại khi nền đổi', async () => {
-    const ai = fakeAi(async () => ({ text: 'Bạn thích tập trung.', model: 'm' }));
+    const ai = fakeAi(async () => ({
+      text: 'Bạn thích tập trung.',
+      model: 'm',
+    }));
     const { service } = setup({ ai });
     await service.get('u1', 'vi');
     await service.get('u1', 'vi');
@@ -105,18 +113,20 @@ describe('PortraitService', () => {
     }
   });
 
-  it('chưa có gì thì không có mô tả và không có chỉ số', async () => {
+  it('chưa có gì thì không có mô tả và không có vị trí', async () => {
     const { service } = setup({
       row: baseRow({
         quizFit: blankFit(),
-        quizOrientationSum: 0,
-        quizOrientationN: 0,
+        quizPeopleThingsSum: 0,
+        quizPeopleThingsN: 0,
+        quizDataIdeasSum: 0,
+        quizDataIdeasN: 0,
         quizTexts: null,
       }),
     });
     const view = await service.get('u1', 'vi');
     expect(view.top).toEqual([]);
-    expect(view.socialIndex).toBeNull();
+    expect(view.workstyle).toBeNull();
     expect(view.description).toBeNull();
   });
 
@@ -135,7 +145,7 @@ describe('templateDescription', () => {
       { dimension: 'DETAIL', description: '', value: 3 },
     ],
     aversions: [{ dimension: 'PEOPLE', description: '', value: -2 }],
-    social: { value: 20, label: 'things' },
+    workstyle: { peopleThings: 20, dataIdeas: 25, region: 'I' },
     topRoles: ['Kỹ sư Backend', 'Kỹ sư Nhúng'],
     texts: [],
   };
@@ -145,10 +155,13 @@ describe('templateDescription', () => {
     expect(text).toContain('tập trung sâu');
     expect(text).toContain('có thể thấy khó khi');
     expect(text).toContain('Kỹ sư Backend');
+    expect(text).toContain('Người phân tích');
     expect(text).not.toMatch(/hợp với nghề/);
   });
 
   it('có bản tiếng Anh', () => {
-    expect(templateDescription({ ...facts, locale: 'en' })).toMatch(/^You seem to/);
+    expect(templateDescription({ ...facts, locale: 'en' })).toMatch(
+      /^You seem to/,
+    );
   });
 });

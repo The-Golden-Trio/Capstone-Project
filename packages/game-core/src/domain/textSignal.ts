@@ -7,6 +7,7 @@
  * nặng hơn một câu chọn "rất đúng".
  */
 import type { Signal, TextReading } from '../data/schema.js';
+import type { WorkstyleAxis } from './workstyle.js';
 
 export const TEXT_SIGNAL_CAP = 2;
 
@@ -18,8 +19,11 @@ export interface AcceptedEvidence {
 
 export interface AcceptedTextReading {
   signal: Signal;
-  /** `null` khi AI không thấy gì về trục Người–Vật, hoặc trích dẫn không có thật. */
-  orientation: number | null;
+  /**
+   * Hai trục World-of-Work. `null` khi AI không thấy gì về trục đó, hoặc
+   * trích dẫn không có thật.
+   */
+  axes: Record<WorkstyleAxis, { value: number; quote: string } | null>;
   evidence: AcceptedEvidence[];
 }
 
@@ -53,14 +57,20 @@ export function acceptTextReading(
     evidence.push({ dimension: item.dimension, value, quote: item.quote });
   }
 
-  const o = reading.orientation;
-  const orientation =
-    o &&
-    Number.isFinite(o.value) &&
-    o.value !== 0 &&
-    quoteFound(answer, o.quote)
-      ? clamp(o.value)
+  const axis = (raw: { value: number; quote: string } | null | undefined) =>
+    raw &&
+    Number.isFinite(raw.value) &&
+    raw.value !== 0 &&
+    quoteFound(answer, raw.quote)
+      ? { value: clamp(raw.value), quote: raw.quote }
       : null;
 
-  return { signal, orientation, evidence };
+  return {
+    signal,
+    axes: {
+      peopleThings: axis(reading.people_things),
+      dataIdeas: axis(reading.data_ideas),
+    },
+    evidence,
+  };
 }

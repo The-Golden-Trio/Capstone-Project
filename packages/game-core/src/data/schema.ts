@@ -269,11 +269,15 @@ export const QuizOptionSchema = z.object({
   text: z.string(),
   signal: SignalSchema.default({}),
   /**
-   * Trục Người–Vật (People–Things của Prediger): dương là thiên về làm việc
-   * qua con người, âm là qua hệ thống, công cụ, dữ liệu. Thiếu nghĩa là câu
-   * này không nói gì về trục đó.
+   * Hai trục World-of-Work (Prediger 1982), mỗi trục −2…+2. Thiếu nghĩa là
+   * câu này không nói gì về trục đó.
+   *   - `people_things`: dương = làm việc qua con người, âm = qua vật (công
+   *     cụ, hệ thống, code)
+   *   - `data_ideas`: dương = dữ kiện, số liệu, quy trình có hệ thống, âm =
+   *     trừu tượng, lý thuyết, cách làm mới
    */
-  orientation: z.number().optional(),
+  people_things: z.number().optional(),
+  data_ideas: z.number().optional(),
 });
 
 export const QuizQuestionSchema = z.object({
@@ -309,7 +313,8 @@ export const TextReadingSchema = z.object({
       }),
     )
     .default([]),
-  orientation: z.object({ value: z.number(), quote: z.string() }).nullish(),
+  people_things: z.object({ value: z.number(), quote: z.string() }).nullish(),
+  data_ideas: z.object({ value: z.number(), quote: z.string() }).nullish(),
 });
 
 /* ── Gói dữ liệu ───────────────────────────────────────────────────── */
