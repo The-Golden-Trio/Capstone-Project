@@ -116,7 +116,7 @@
                         <mxPoint x="18" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="portrait" parent="1" style="rounded=1;arcSize=35;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;fontFamily=Helvetica;fontSize=12;fontColor=#000000;" value="View portrait: top 5 occupations, AI description, social index" vertex="1">
+                <mxCell id="portrait" parent="1" style="rounded=1;arcSize=35;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;fontFamily=Helvetica;fontSize=12;fontColor=#000000;" value="View portrait: top 5 occupations, AI description, workstyle" vertex="1">
                     <mxGeometry height="48" width="290" x="215" y="920" as="geometry"/>
                 </mxCell>
                 <mxCell id="edge_14" edge="1" parent="1" source="quiz" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontColor=#000000;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="portrait" value="">

@@ -44,7 +44,7 @@ pnpm start                                  # web :4200, api :3000/api
 | `/login`, `/register` | Đăng nhập / tạo tài khoản | Email + mật khẩu, nút Google, ngày sinh, đổi ngôn ngữ VI/EN |
 | (cổng) | `RequireAuth` + `decideGate()` | Chưa đăng nhập → `/login`. Dưới 16 tuổi chưa có đồng ý → `/consent`. Chưa tự vấn → `/quiz`. Qua hết → `/jobs` |
 | `/consent` | Người lớn đồng ý | Tên + email người giám hộ (chỉ ghi nhận) |
-| `/quiz` → `/quiz/result` | Get to Know Me → Chân dung | 1 câu giai đoạn, 14 câu hai vế (rất/hơi giống), 3 câu kể ngắn bắt buộc, có nút bỏ qua. Chân dung: StarMap **5 nghề** kèm lý do, đoạn mô tả **do Claude viết** (không có khoá thì viết theo khuôn), **chỉ số xã hội**, FitRadar gấp lại. Hành trang cũng hiện mô tả và chỉ số |
+| `/quiz` → `/quiz/result` | Get to Know Me → Chân dung | 1 câu giai đoạn, 15 câu hai vế (rất/hơi giống), 3 câu kể ngắn bắt buộc, có nút bỏ qua. Chân dung: StarMap **5 nghề** kèm lý do, đoạn mô tả **do Claude viết** (không có khoá thì viết theo khuôn), **Workstyle** (bản đồ World-of-Work hai trục, 6 kiểu), FitRadar gấp lại. Hành trang cũng hiện mô tả và Workstyle |
 | `/jobs` | **Bản đồ ngân hà 3D** | 22 hành tinh, đường bay, buồng lái (vị trí, điểm, nghề đã ghé), dock hành tinh lân cận, PlanetPanel (điều kiện nhập cảnh), bài kiểm tra nhập cảnh |
 | `/jobs/:role` | Quần đảo của nghề | Mỗi cấp L1…L10 là một đảo. LevelPanel: lương, điểm, nhân vật. Nút "Vào học / Tiếp tục học" (ghi danh) |
 | `/jobs/:role/:band` | Bản đồ giấy của đảo | Ngọc = nhiệm vụ chính, núi/rừng = nhiệm vụ phụ (hỏi nhanh tại chỗ, cộng điểm) |
@@ -94,7 +94,7 @@ Folder `occupation-data/` đã được sắp xếp lại ngày 23/9: chỉ còn
 | **AI sinh kịch bản** | ❌ **Chưa có.** Kịch bản do người viết sẵn |
 | **AI chấm tự luận** | ❌ **Chưa có.** Chấm bằng so khớp từ khoá (`keywordGrader.ts`). Sẵn interface để thay bằng `aiGrader.ts` |
 | AI sinh follow-up | ❌ Chưa có (follow-up lấy từ dữ liệu có sẵn) |
-| Get-to-know-me | ⚠️ Có (v0.2, 18 câu, có câu kể do AI đọc), nhưng tự soạn, **chưa kiểm định**. Đọc câu kể và viết mô tả cần `ANTHROPIC_API_KEY`; chưa chạy thử với khoá thật |
+| Get-to-know-me | ⚠️ Có (v0.3, 19 câu, có câu kể do AI đọc), nhưng tự soạn, **chưa kiểm định**. Đọc câu kể và viết mô tả cần `ANTHROPIC_API_KEY`; chưa chạy thử với khoá thật |
 | Đánh giá nghề 5 tiêu chí | ❌ Chưa có |
 | Random bối cảnh công ty (OT, WFH…) | ❌ Chưa có (ý 3 trong task 8/9, được tách ra làm task riêng) |
 | Công cụ cho chuyên gia / admin (viết seed, duyệt, xuất bản) | ❌ Chưa có |
