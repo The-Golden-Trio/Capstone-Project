@@ -92,8 +92,8 @@ def table(rows, caption):
     return "\n".join(out)
 
 
-def figure(n, caption, outdir):
-    img = f"figures/fig{n}.png"
+def figure(n, caption, outdir, img=None):
+    img = img or f"figures/fig{n}.png"
     if (outdir / img).exists():
         inner = f"\\includegraphics[width=\\textwidth,height=0.9\\textheight,keepaspectratio]{{{img}}}"
     else:
@@ -170,6 +170,12 @@ def convert(md, outdir):
             nfig += 1
             cur.append(figure(nfig, cap.group(1), outdir))
             i = k + 1
+            continue
+        m = re.match(r"!\[(.+)\]\((?:latex/)?(figures/[^)]+)\)\s*$", ln)
+        if m:
+            # Ảnh có sẵn (README): không tính vào số thứ tự fig<n> của sơ đồ Mermaid.
+            cur.append(figure(None, m.group(1), outdir, img=m.group(2)))
+            i += 1
             continue
         if ln.startswith("\\begin{landscape}"):
             j = i

@@ -10,7 +10,10 @@ The report establishes the evidence base for this approach, reviews existing res
 
 | Abbreviation | Expansion |
 |---|---|
+| API | Application Programming Interface |
+| ASVS | Application Security Verification Standard |
 | BR | Business Rule |
+| CDN | Content Delivery Network |
 | DC | Design Constraint |
 | DR | Data Requirement |
 | ECD | Evidence-Centered Design |
@@ -18,10 +21,12 @@ The report establishes the evidence base for this approach, reviews existing res
 | FR | Functional Requirement |
 | HCMUT | Ho Chi Minh City University of Technology |
 | I-CVI | Item-level Content Validity Index |
+| JWT | JSON Web Token |
 | LLM | Large Language Model |
 | MBTI | Myers–Briggs Type Indicator |
 | MOET | Ministry of Education and Training (Vietnam) |
 | NFR | Non-functional Requirement |
+| OWASP | Open Worldwide Application Security Project |
 | O\*NET | Occupational Information Network |
 | RIASEC | Realistic, Investigative, Artistic, Social, Enterprising, Conventional |
 | RJP | Realistic Job Preview |
@@ -29,7 +34,10 @@ The report establishes the evidence base for this approach, reviews existing res
 | S-CVI/Ave | Scale-level Content Validity Index, averaging method |
 | SCCT | Social Cognitive Career Theory |
 | SDT | Self-Determination Theory |
+| SSE | Server-Sent Events |
+| TLS | Transport Layer Security |
 | UC | Use Case |
+| UML | Unified Modeling Language |
 | UR | User Requirement |
 | ĐACN | Đồ án chuyên ngành (Specialized Project) |
 
@@ -879,15 +887,89 @@ The traceability matrix below traces every requirement to the use case realising
 
 ## 5.2 Technology Solution
 
-This section selects the technologies of the system. Each choice is made against criteria after comparison with alternatives. The frontend and backend comparisons are in preparation; the AI part follows.
+The technology stack of JobQuest is chosen from what the requirements ask of each part of the system. Three properties of the requirements drive most choices: a written answer waits several seconds on external models that can fail (NFR-01, NFR-02, NFR-04); scores unlock levels and occupations, so the server must score authoritatively by the same rules the browser uses for immediate feedback (BR-02, BR-11, FR-15); and personal data must be processed and stored in Vietnam (DC-03). Sections 5.2.1 and 5.2.2 state, for each component of the frontend and backend, what it must do, with the requirements behind it, and the decision taken: the technology and the features of it that meet those requirements. The selected stack is summarised at the end of Section 5.2.2, and Section 5.2.3 covers the AI design. Versions are those resolved in the workspace lockfile at the time of writing.
 
 ### 5.2.1 Frontend
 
-The comparison of frontend technologies is in preparation and will be added in the next revision.
+The frontend serves two populations. Explorers, in twenty-one of the fifty-six use cases of Section 5.1.2, play on their own phones over weak connections (NFR-13), may use assistive technology (NFR-19), read the interface in Vietnamese (NFR-08; only Vietnamese is supported in this phase), and wait seconds while a model assesses a written answer (NFR-01, NFR-02). Staff, in the other thirty-five, work at desktops in forms, review queues, and tables (FR-21 to FR-44).
+
+Application framework. The frontend must render a game interface with many interacting states — the occupation map, conversations with characters, the four response forms of FR-10, hints, follow-up questions, and results (FR-05, FR-07, FR-10 to FR-14). It must show provisional feedback on closed formats at once, by the same rules the server applies (FR-15, BR-11), stay responsive while a model works (NFR-01, NFR-02), and load quickly on a mid-range phone without installation (NFR-13, DC-05). Every route except the landing page requires sign-in (FR-01), so no screen needs search indexing.
+
+**Decision: React 19 with Vite 8, as a client-rendered single-page application.** React's component model fits an interface of many independent, stateful parts, and it is the most used web framework, by 44.7% of developers [136], so libraries for drag-and-drop ordering, 3D rendering, and accessibility are mature. Running in the browser lets the shared rules package, *game-core*, compute provisional scores without a round trip. React 19's optimistic-update hook shows "saved, assessing" the moment an answer is sent [137]. Vite's production build splits code into chunks loaded on demand [138]: the prototype's entry was about 195 KB compressed in the build of 18 September 2026, and a budget of 200 KB for the first interactive screen, about one second under the Lighthouse mobile profile [139], is checked in continuous integration. Server-side rendering is not used: with every screen behind sign-in it brings no indexing benefit, and it would add a server that renders personal data, whereas static files hold none and can be cached on a content delivery network without affecting DC-03.
+
+Occupation map. The map must convey the progression metaphor of Section 4.2.1 (FR-05, FR-07), remain operable with a keyboard and a screen reader (NFR-19), and not exclude low-end devices (NFR-13).
+
+**Decision: three.js 0.186 through @react-three/fiber 9.7, with an SVG view drawn from the same data.** @react-three/fiber writes the 3D scene as React components that share state with the rest of the interface [140]. Because a canvas exposes nothing to a screen reader and a 3D scene costs GPU work every frame [141], an SVG view, in which each planet is a focusable, named element [142], is the accessible equivalent. It can be chosen at any time and is used automatically when WebGL is missing or lost, when reduced motion or data saving is requested, or on low-memory devices. The 3D libraries, about 310 KB compressed, load only when the 3D view opens.
+
+Styling. Styles must add little to the download (NFR-13) and let each occupation carry its own theme without code changes (NFR-10).
+
+**Decision: Tailwind CSS 4.3.** It generates CSS only for the classes used and has no runtime [143]; occupation themes are design tokens held as CSS variables and supplied by content data.
+
+Client state. Client state must apply *game-core*'s reducer directly (FR-10, FR-15) and keep unsent turns through a lost connection (NFR-03).
+
+**Decision: zustand 5.0.** A store wraps the reducer, so one dispatch updates both screen and rules state; its persistence middleware keeps unsent turns in browser storage, resent with an idempotency key on reconnection [144]. It needs no provider tree and adds little to the bundle.
+
+Routing. Routing must keep the 3D map and all staff code out of the explorer's first download (NFR-13), separate explorer and staff areas by role (FR-41), and resume a run on any device (NFR-03).
+
+**Decision: React Router 7.18.** Routes load on demand, nested layouts separate the areas by role, and route loaders fetch the state of an interrupted run from the server [145].
+
+Result delivery. Assessment results must reach the explorer as soon as they are ready (NFR-02, FR-14) over connections that drop (NFR-13). Only the server needs to push; the client submits answers by ordinary requests.
+
+**Decision: server-sent events.** The browser's built-in *EventSource* receives pushed events over plain HTTP, through any proxy, and reconnects by itself [146]; a bidirectional WebSocket channel is not needed.
+
+Staff application. Staff work in review queues, lists, and statistics (FR-21 to FR-44), in dialogs, comboboxes, and grids, where hand-built interfaces most often fail accessibility (NFR-19).
+
+**Decision: the same stack, plus TanStack Query and React Aria.** TanStack Query caches and refreshes server data [147]; React Aria supplies accessible interaction primitives [148]. The staff application is a separate bundle on the same origin and sign-in screen.
+
+Localisation. Only Vietnamese is supported in this phase, while NFR-08 still names Vietnamese and English and is to be aligned. Interface strings must be complete in every supported language, and adding English later must not require changes to the screens.
+
+**Decision: a typed message table with the standard *Intl* API.** An unknown key fails compilation and a test fails a missing translation; plurals, dates, and numbers are formatted by *Intl* [149]; content fields carry a locale, so a second language is added as data. Generated text is inserted as text, which React escapes, so model output cannot inject markup (NFR-17) [150].
 
 ### 5.2.2 Backend
 
-The comparison of backend technologies is in preparation and will be added in the next revision.
+The backend carries five kinds of work: short requests for navigation, records, and staff edits; durable recording of every turn as it happens (NFR-03); assessment and follow-up generation, which wait seconds on external models and occasionally fail (NFR-01, NFR-02, NFR-04); authoritative scoring (BR-02, BR-11); and a governed content lifecycle with logged transitions (NFR-16).
+
+Application framework. Most backend time is spent waiting — on models, on the database, on open result streams — and at Stage 4 about five thousand explorers are connected at once (Section 5.3.1). The framework must also give the modular structure of Section 5.3.1 clear module boundaries, check occupation-scoped roles on every request (FR-40, FR-41), integrate a job queue and server-sent events, and score by the same rules as the browser (FR-15, BR-11).
+
+**Decision: NestJS 11.1 on Node.js, in TypeScript.** Node.js serves I/O on an event loop, so a waiting request or open stream costs memory rather than a thread. NestJS modules and dependency injection give each bounded context its own module; guards enforce occupation-scoped roles; interceptors write the activity log; and first-party integrations provide BullMQ queues and server-sent events [151]. Dependency injection also binds the model port to the provider adapter named in configuration (DC-02, NFR-12) [152]. The server imports the same *game-core* package as the browser and recomputes every score from stored events. Models are called over HTTP and run nowhere in the process, so the request path needs no Python; the statistics for evaluating RP-1 and RP-2 run offline in Python scripts. Long computation, which would block an event loop, runs in worker processes.
+
+Database. Much of the data is relational, with rules that span records: a reviewer is never the author (FR-25), one active scenario per task (FR-33), exactly one content administrator per occupation (FR-40), and the replay cap (BR-11). Publication and its log must be atomic, and published content immutable (NFR-16); scenario content is nested documents (NFR-10, NFR-15); statistics are shown only above a population threshold (NFR-06, FR-19, FR-39); and the store must be hostable in Vietnam (DC-03).
+
+**Decision: PostgreSQL, accessed through Prisma ORM 7.10.** Foreign keys, check constraints, partial unique indexes, and transactions enforce the cross-record rules in the database itself — "one active scenario per task" is a single partial index [153]. A transition and its log entry share one transaction, and a trigger refuses updates to published releases. Content is stored in *jsonb* columns [154], validated by *game-core*'s schemas on write and read. Thresholded statistics are SQL grouping, window functions, and materialised views. PostgreSQL is open source, offered by every cloud provider, and the most used database, at 55.6% [136]. Prisma generates a typed client from the schema and, from version 7, runs over the standard *pg* driver [155]; partial indexes, checks, and triggers, which Prisma does not express, live in SQL migrations and are tested against the database.
+
+Job queue and messaging. Model work must survive failures, be retried, and be listed for re-run when it fails (NFR-04, FR-43); it must respect each provider's rate limits and serve live play first — narration and follow-ups for an explorer in a scenario before background scoring, and both before authoring work (NFR-01, NFR-11); results must reach the API replica holding the explorer's stream (NFR-02); and each session's model cost must be counted atomically (NFR-11).
+
+**Decision: Redis with BullMQ 6.3.** BullMQ provides persisted jobs, retries with exponential backoff, job priorities, per-queue rate limiting, and a set of failed jobs for re-run [156]; Redis's publish–subscribe carries results to every API replica, and its atomic counters meter the session budget. Redis holds nothing that cannot be rebuilt from PostgreSQL, and a scheduled reconciliation re-queues any stored answer without a result, so losing Redis loses no answer.
+
+Authentication. The platform must register, sign in, recover, and delete accounts (FR-01, FR-02); hash passwords, protect sessions, and end idle ones (NFR-17); scope roles to occupations (FR-41); and keep identity data in Vietnam (DC-03).
+
+**Decision: the platform's own module — argon2id, JWT access and refresh tokens in httpOnly cookies, and optional Google sign-in.** Passwords are hashed with argon2id [157]; a fifteen-minute access token and a rotating refresh token with reuse detection [158] live in httpOnly, SameSite cookies that scripts cannot read; Google ID tokens are verified with google-auth-library. Accounts stay in the platform's database in Vietnam, which an external identity service would hold abroad, and occupation-scoped authorisation must live in the application whichever service is used. The module is completed against ASVS 5.0 level 2 [159]: single-use, short-lived reset tokens; an inactivity limit; account status checked on every refresh and staff request; rate limiting of sign-in; and a second factor for staff.
+
+Validation and code organisation. Every input and every model output must be checked against a schema (NFR-17, FR-11), and one copy of the rules and contracts must serve both applications, the API, and the worker (FR-15).
+
+**Decision: Zod 4.6 schemas in an Nx 23.1 monorepo.** Zod schemas, shared by API, clients, and the rule checks, validate requests, content documents, and model output — scores within rubric anchors, quotations verbatim. Nx keeps *game-core* and the schemas in one repository, enforces module boundaries so staff code never enters the explorer's bundle (NFR-13), and builds and tests only what a change affects [160].
+
+Packaging and hosting. Personal data must be stored in Vietnam (DC-03, NFR-05) — Decree 53/2022 further requires domestic online-service enterprises to store users' data in Vietnam, applicability to be confirmed (Section 4.1.4) [161][162] — and the platform must stay available (NFR-18) while growing from a university pilot to a national service.
+
+**Decision: Docker containers, hosted in Vietnam.** One image runs as API or worker, with rolling deployment and health checks, and the platform depends only on portable services — PostgreSQL, Redis, and S3-compatible storage — so moving host is a change of configuration. The system of record runs on university infrastructure for the Stage 1 pilot and on a cloud provider in Vietnam from Stage 2 [163]; an international region such as Singapore would make every account a cross-border transfer [99]. Only de-identified text leaves the country, through the model gateway. International providers adding capacity in Vietnam, such as the AWS Hanoi Local Zone, whose control plane remains in Singapore [164], are reassessed with the legal office before Stage 2.
+
+Summary. The table summarises the selected stack and the requirements each choice serves.
+
+| Component | Technology | Requirements served |
+|---|---|---|
+| Frontend framework | React 19 + Vite 8, single-page application | Game interface (FR-05, FR-07, FR-10); rules in the browser (FR-15); light first load (NFR-13); no indexing needed (FR-01) |
+| Occupation map | three.js + @react-three/fiber, with an SVG view | Galaxy Map (FR-05, FR-07); accessibility (NFR-19); low-end devices (NFR-13) |
+| Styling, state, routing | Tailwind CSS 4, zustand 5, React Router 7 | No style runtime, unsent turns kept, routes on demand (NFR-13, NFR-03, FR-41) |
+| Result delivery | Server-sent events | Results pushed when ready (NFR-02, FR-14); automatic reconnection (NFR-13) |
+| Staff application | TanStack Query, React Aria | Queues and statistics (FR-21 to FR-44); accessibility (NFR-19) |
+| Backend framework | NestJS 11 on Node.js | Waiting without blocking (NFR-01, NFR-02); modules and role guards (FR-41); queue and SSE integration |
+| Database | PostgreSQL + Prisma 7 | Cross-record rules (FR-25, FR-33, FR-40); atomic, immutable publication (NFR-16); thresholded statistics (NFR-06) |
+| Job queue, messaging | Redis + BullMQ | Durable, retried, prioritised, rate-limited model work (NFR-04, NFR-11, FR-43) |
+| Authentication | argon2id, JWT in httpOnly cookies, Google sign-in | NFR-17, FR-01, FR-41; identity data in Vietnam (DC-03) |
+| Validation, code organisation | Zod 4, Nx monorepo | One copy of rules and schemas (FR-15, NFR-17) |
+| Packaging, hosting | Docker, host in Vietnam | DC-03, NFR-05; portable scaling and availability (NFR-18) |
+
+: Selected technology stack.
 
 ### 5.2.3 AI algorithms, technologies, and models
 
@@ -937,6 +1019,183 @@ Model families and candidates. Four model families are needed: one for generatio
 Public data cannot answer three things: knowledge of IT work for the three pilot roles, for which no public benchmark exists; the newest small models, which are not on the Vietnamese leaderboard; and response time measured from Vietnam. With token counts assumed, one playthrough costs about USD 0.015 with small-tier judges and USD 0.086 with mid-tier judges, narrator included. The final choice is made after the first test, reported with agreement, response time, and cost.
 
 Items awaiting game design. Several items cannot be settled before the game design is fixed: the scoring scale, where −1 / 0 / +1 / +2 is planned and not final and the current sample scenarios describe three levels only; the competency scoring table for a playthrough and the specific criteria given to the judge; the list of required facts in a seed, needed to measure fact preservation (NFR-15); and how evidence from the play process, such as hints, time, and follow-ups, counts and how scores combine into a competency. The current sample scenarios and scoring are placeholders. The measure itself does not depend on game design: agreement between judge and expert can be computed on any ordinal scale.
+
+## 5.3 Design
+
+### 5.3.1 System Architecture
+
+The architecture is derived from the requirements, not from the prototype. The prototype shows that the technologies of Section 5.2 work for this system and contributes several mechanisms; where it falls short, the gap is listed at the end of this section. The section presents the drivers and the architectural decision they lead to; the actors and external systems; the components and their interfaces; how the system runs; how it is deployed and scaled; and evidence that it meets the use cases and non-functional requirements.
+
+Architectural drivers. Eight properties of the requirements determine the structure.
+
+| ID | Driver | Source | Architectural consequence |
+|---|---|---|---|
+| AD-1 | Model calls lie on the explorer's critical path, take seconds, and fail independently of the platform | NFR-01, NFR-02, NFR-04; Perform scenario, flows 4b and 4c | No model is called inside the request that submits an answer. The answer is stored first; model work runs as a queued job whose result is pushed to the client |
+| AD-2 | Scores have consequences: credit unlocks levels and occupations | BR-02, BR-03, BR-11; FR-08, FR-15 | The server is the authority over every score; the client computes only provisional feedback, with the same rules |
+| AD-3 | Every judgment must be reconstructable, for the explorer, the expert, and the research | FR-28, NFR-14, NFR-16; DR-05, DR-07 | A run is an append-only sequence of events; model outputs enter it as recorded events with provenance and are never recomputed |
+| AD-4 | Content is governed data with a lifecycle | NFR-10, NFR-15, NFR-16; BR-05, BR-13 to BR-16; FR-21 to FR-38 | Content lives in versioned releases written by one lifecycle module; a published release is immutable; code interprets content but never contains it |
+| AD-5 | Personal data has a legal boundary | NFR-05, NFR-17, DC-03 | The system of record is hosted in Vietnam; one path leads to model providers, through de-identification |
+| AD-6 | Models are replaceable, separated by role, and cost-bounded | DC-01, DC-02, NFR-11, NFR-12 | Domain code depends on a model port; providers are adapters chosen by configuration; a ledger meters every call against a per-session ceiling |
+| AD-7 | Two client populations differ in device, network, and privilege | NFR-08, NFR-13, NFR-19; FR-21 to FR-44 | Two frontend applications on one origin: a light explorer application and a staff application downloaded only by staff |
+| AD-8 | Growth from pilot to national resource on grant funding | Section 4.1.5; NFR-11, NFR-18 | One deployable codebase at first; model-facing work scales separately; no stage requires re-architecture |
+
+: Architectural drivers and their consequences.
+
+Architectural style. The drivers call for a design in which nothing slow or fallible sits inside a request, the server owns every score, a run can be replayed, and the model-facing work can grow on its own.
+
+**Decision: a modular monolith with asynchronous workers.** One codebase is deployed as API processes, which answer requests, and worker processes, which run queued jobs. Modules follow the use case groups of Section 5.1.2 and communicate only through public interfaces, so any could later be extracted; the one part that must scale independently, model-facing work, is already separated by the worker tier, following the practice of extracting services only once a boundary has proved itself [165]. Inside, model providers, the database, and email are reached through ports with replaceable adapters [152], which meets DC-02; and runs are event-sourced [166], their state being the fold of their events through *game-core*. Four alternatives were rejected, each for a specific requirement.
+
+| Alternative | Requirement it fails | Why |
+|---|---|---|
+| Scoring in the browser, as in the prototype | BR-02, FR-11, NFR-05, DC-01 | A model cannot be called from the browser without exposing provider credentials, and the answer would bypass de-identification; a browser-computed score can be altered, voiding competence-gated unlocking |
+| Calling the model inside the submitting request | NFR-03, NFR-04, NFR-13 | A provider failure mid-request loses an unstored answer, and a request held open for eight seconds is the first to break on a weak mobile connection |
+| Microservices | NFR-03, NFR-16 | A turn with its consequences, or a release with its log, would span services and need distributed transactions; three people would operate several deployables for no requirement |
+| Serverless functions on the request path | NFR-01 | Cold starts add latency to the step whose 95th percentile NFR-01 bounds |
+
+: Architectural alternatives and the requirements they fail.
+
+Actors and external environment. Four actors use the system, each through a browser (Section 4.2.1). Explorers — students and career changers — play scenarios on phones or laptops. Domain experts author, review, and revalidate the content of an occupation and rate responses blind. Content administrators manage an occupation in the catalogue, assign reviews, design presentation, and publish. System administrators manage accounts, model configuration, cost, failed jobs, and data requests. Four external services sit outside the system boundary: model providers abroad — a narrator of one family, judges of three other families, and an image model; Google, as an optional identity provider; an email delivery service; and the occupational data sources O\*NET and ESCO, imported periodically.
+
+Component view. The figure below shows the components and the interfaces between them in UML notation: a ball is an interface a component provides, a socket one it requires. The API and Worker subsystems are the same codebase running different processes; they never call each other directly but communicate through the job queue and publish–subscribe channel in Redis.
+
+![Component diagram of JobQuest. Each line joins the component that requires an interface (socket) to the component that provides it (ball).](latex/figures/jobquest_component_diagram.png)
+
+Each module is described below with its responsibility and its state in the prototype.
+
+Explorer application. The occupation map, levels, the scenario player for the four response forms of FR-10, hints, follow-ups, results, the personal record, ratings, and feedback (FR-03 to FR-20). It runs *game-core* for instant provisional feedback on closed formats, queues unsent turns locally, and receives narration, follow-ups, and assessment results through a server-sent event stream. Prototype: screens, the 3D map, and the four forms exist; the turn queue, event stream, and 2D map do not.
+
+Staff application. The thirty-five staff use cases: the AI-1 interview through which a domain expert gives the knowledge a seed needs, review, test playthroughs, reliability, and blind rating for domain experts; seed drafting with AI-2, catalogue, presentation, publication, and statistics for content administrators; accounts, model configuration, monitoring, data requests, and feedback for system administrators. It shares the sign-in screen and origin with the explorer application (FR-41) but is a separate download. Prototype: absent.
+
+Game core. A library with no framework, network, or storage dependency: the reducer folding run events into state, scoring of closed formats against expert keys, credit with the per-scenario cap, unlocking and adjacency offers, content schemas, and the rule checks on model output of Section 5.2.3 — numbers and names in narration found in the seed or the player's text, the follow-up count, each judge's quotation found verbatim in the answer, levels within the scale. It runs unchanged in browser and server. Prototype: present; its free-text grader is a synchronous keyword matcher inside the reducer, which must become an asynchronous assessment entering the run as an event.
+
+Identity and access. Accounts, sign-in and recovery, sessions, occupation-scoped roles, disabling, deletion, and the activity log (FR-01, FR-02, FR-40, FR-41); every module asks it whether an actor may act on an occupation. Prototype: registration, email and Google sign-in, rotating sessions, and deletion exist; reset, idle expiry, scoped roles, disabling, and the log do not, and the three prototype roles must become the four actors of Section 4.2.1.
+
+Exploration. Everything outside the assessment itself: orientation, catalogue and profiles, enrolment, runs and their events, credit, unlocking, adjacency offers, side quests, ratings, records, and feedback (FR-03 to FR-09, FR-15 to FR-20). It validates turn events with *game-core* and stores them; for each free-text answer it records a narration request, and when a situation ends a scoring request, each in the same transaction as the event that causes it. Prototype: present, but runs are submitted as one batch at the end.
+
+Assessment. Turns answers into results, feedback, and guidance (FR-10 to FR-14). Closed formats are scored synchronously by *game-core*; free text is scored in the background when its situation ends (AI-5), and the result, together with feedback written from the judges' output, is written back as events and shown on the summary screen in the three separate parts of FR-14. It also routes explorers' flags of wrong content to the occupation's domain experts. Prototype: closed formats scored by replaying the run; free text matched by keyword.
+
+Content lifecycle. Occupations, knowledge, scenarios and drafts, generation history, review criteria, assignments and decisions, presentation, assets, and publication (FR-21 to FR-38). It is the only writer of content, implements the state machine SM-01, writes each transition with its log entry in one transaction, and publishes immutable, versioned releases. It uses AI orchestration for generation, validation, presentation, and missing assets; the scheduler for deadlines and annual revalidation; and the importer for O\*NET and ESCO, whose interest codes also drive orientation matching (FR-03). A domain expert or content administrator can send a published scenario back for revalidation while it stays playable (FR-27). Prototype: versioned immutable documents, written only by a seed script.
+
+AI orchestration. Runs every model use of the five AI components of Section 5.2.3 as a job: the expert interview (AI-1) and seed drafting (AI-2) at authoring time, with presentation design and missing assets (FR-35, FR-36); test playthroughs (AI-3); narration and follow-ups during play (AI-4, FR-12); and scoring by a panel of three judges (AI-5, FR-11), plus the portrait (FR-04). Per job it loads the pinned content version, removes identifying details from explorer text, checks the session budget, calls the model port, applies *game-core*'s rule checks, and records model, prompt version, cost, and latency. There is no scripted substitute for a model's output: a job that cannot complete is retried or waits, and a session pauses until it can. It rechecks at job time that no judge shares the narrator's family or another judge's. Prototype: absent; queue and model-client libraries are declared but unused.
+
+Model gateway. One adapter per provider and a registry recording each model's role — text generation, assessment, image generation (FR-36) — with its provider and family; configuration is refused when the narrator and a judge, or two judges, share either (FR-42, DC-01). It applies per-provider concurrency limits, timeouts, retries, and a circuit breaker. Whether adapters use providers' own clients or a unifying library is decided in Section 5.2.3. Prototype: absent.
+
+Analytics. Everything shown only in aggregate: ratings and statistics above the population threshold, play-tests excluded (FR-19, FR-39, NFR-06, DR-11); coverage; agreement by difficulty stratum and the disagreement list (FR-28, NFR-14); and blind ratings (FR-29). Occupation ratings are re-aggregated in the transaction that stores each rating (FR-19); heavier statistics refresh periodically, later from a replica. It never returns an individual's record. Prototype: personal summaries only.
+
+Operations. Telemetry of usage, cost, latency, and errors (DR-10); failed jobs and re-runs (FR-43); versioned settings, including the cost ceiling (DR-17); data-subject requests (FR-44); and feedback review (FR-20). Prototype: absent.
+
+Notification, scheduler, and import. Notification sends email and in-app notices: reset links, review assignments, reminders, play-test invitations. The scheduler runs recurring jobs: review reminders and overdue notices (FR-34), annual revalidation (BR-15), retention, refreshing statistics, and the reconciliation that re-queues any narration or scoring request left without a result. The importer loads O\*NET and ESCO and lists unresolved records (FR-31). Prototype: absent.
+
+Data stores. The operational database is the system of record: relational tables for accounts, assignments, runs, events, evidence, reviews, ratings, and logs, and documents for content. The queue store holds jobs, rate limits, budget counters, and the publish–subscribe channel feeding event streams — nothing that cannot be rebuilt from the database. The object store holds assets and exports. Prototype: the database, with 19 tables.
+
+System overview. The figure below shows the whole system as deployed: the two browser applications, the content delivery network, the reverse proxy, the API and worker processes with the modules inside them, the three data stores, and the external services. The dashed border is the boundary of DC-03; only de-identified text crosses it, through the model gateway. The numbered arrows follow one written answer from submission to what the explorer sees, the path detailed below.
+
+![System overview of JobQuest: components, technologies, and hosting, with the numbered path of one written answer. Blue arrows are the request path; orange arrows the background AI path; the dashed border is the hosting boundary of DC-03.](latex/figures/jobquest_arch_overview.png)
+
+Deployment. The deployment diagram below uses the same layout as the component diagram, so that each component can be found in the node that runs it. Both applications are static bundles, served to browsers by a content delivery network that holds no personal data. Inside one cloud region in Vietnam, a web application firewall and load balancer terminate TLS and spread requests over the API pods of two zones. API and worker pods run the same Docker image, started in two roles; both are stateless, so capacity grows by adding pods: API pods on CPU and open streams, worker pods on queue length. PostgreSQL runs as a primary with a synchronous standby in the other zone and a read replica for analytics; Redis runs as a primary with a replica. The model gateway reaches the providers abroad only through an egress proxy that admits allowlisted endpoints, and backups are copied to a second region in Vietnam. At Stage 1 the same nodes run on one university server under Docker Compose, with one API and one worker.
+
+![Deployment diagram of JobQuest at Stages 3 and 4, in the layout of the component diagram: devices and nodes, the components each node runs, and the protocol of each communication path.](latex/figures/jobquest_deployment.png)
+
+The assessed turn. A free-text answer in Perform scenario tests the architecture hardest, because it involves the explorer, the authority over scores, the models, and the failure of any of them. It has two phases: during the situation, the narrator answers the explorer (AI-4); when the situation ends, the judges score it in the background (AI-5). The figure below shows both as a sequence; the numbers in the steps refer to its messages.
+
+![Sequence of one written answer: narration during the situation, background scoring when it ends, the time left to the models under NFR-01 and NFR-02, and the path taken when a provider fails.](latex/figures/jobquest_seq_assessed_turn.png)
+
+1. Messages 1–4: the explorer application sends the answer with the run's next sequence number and an idempotency key, so a retry cannot record it twice (NFR-03, NFR-13). The API checks it with *game-core*, stores it with a narration request in one transaction, enqueues the job directly after commit — a transactional outbox [167] guarantees a job for every stored answer — and replies that the answer is saved. Progress shows at once, and a status line after two seconds (NFR-01).
+2. Messages 5–10: a worker removes identifying details and sends the seed and the player's text to the narrator; the rubric and scoring keys are not in its prompt. The narration and any follow-up are shown only if they pass the rule checks — numbers and names from the seed or the player's text, follow-ups within the count the engine allows — and reach the explorer through Redis and the event stream (FR-12, NFR-15). A model of another family reviews the logs afterwards.
+3. Messages 11–13: when the situation ends, the API stores the event and a scoring request together and the job is queued. A worker sends the answers, as delimited data the models are instructed never to obey, to three judges of three families in parallel, at most three criteria per call. Each judge returns, per criterion, a verbatim quotation, a rationale, and a level; a judgment is kept only if the quotation occurs in what the player typed (FR-11, NFR-17). The median is the score, and judges more than one level apart flag the case for the expert (AI-3).
+4. Messages 14–17: the worker stores the results as events with their provenance; *game-core* applies credit within the cap of BR-11; Redis carries the result to the API replica holding the explorer's stream, and result, feedback, and guidance appear as separate parts on the summary screen (FR-14, NFR-02, DR-07). Each event carries its sequence number, so a reconnecting stream replays whatever it missed from the database.
+5. Failure: the gateway retries, and may switch to another configured provider of an admissible family, which is still AI (DC-02). If a model stays unavailable, the session pauses with every answer and all progress saved, and the explorer is told within ten seconds (NFR-04); play resumes when the model returns, and pages that do not use AI, such as sign-in, the map, and the record, stay available. The scheduler re-queues any request left without a result, so not even loss of Redis loses an answer.
+
+A closed-format answer takes messages 1–4 only: the client shows *game-core*'s score at once and the server recomputes it from the stored event. Resuming after an interruption (flow 7c) folds the stored events and returns the state at the last recorded position on any device.
+
+Content path. The figure below shows the path a scenario takes from opening to play, and the two ways it returns to review.
+
+![Content lifecycle of a scenario, by actor: the expert's knowledge collected by AI-1 and drafted into a seed with AI-2, review by another expert, presentation, test playthroughs ranked by AI-3, and publication as an immutable release; revalidation and explorers' flags return it to review while the published version stays playable.](latex/figures/jobquest_content_lifecycle.png)
+
+Latency budget. Under the Lighthouse mobile profile [139], the platform's own share of either phase is about 0.4 s: a 150 ms round trip to submit, 20 ms for the transaction, 10 ms to enqueue, 50 ms of preparation and checks, 20 ms to store the result, and half a round trip to push it. That leaves about 4.6 s of NFR-01's five seconds for the narrator to write a follow-up, and about 7.6 s of NFR-02's eight seconds for the judging panel, the budgets against which the first test of Section 5.2.3 measures candidate models; because the panel waits for all three judges, its time is that of the slowest. NFR-02 still states its bound per answer, while scoring now runs per situation in the background; the requirement is to be aligned with Section 5.2.3. Generated text is not streamed token by token, because it must pass the rule checks before display.
+
+Realisation of the use cases. The table traces each group of use cases in Section 5.1.2 to the components that realise it.
+
+| Use cases | Components | Mechanism |
+|---|---|---|
+| Register account; Manage account | Explorer application; Identity and access; Notification | Own authentication module; single-use reset links by email |
+| Complete orientation quiz; Build user portrait | Explorer application; Exploration; AI orchestration | RIASEC matching in *game-core* without AI; portrait generated, checked, and labelled as AI-produced (FR-04, NFR-07) |
+| Explore occupations; View occupation profile; View level description; View career path; Enter adjacent occupation | Explorer application; Exploration; Analytics; Game core | Map model from the published release; 3D or accessible 2D rendering; adjacency offers computed by *game-core* from DR-02 and DR-03; ratings with suppression |
+| Choose scenario; Complete side quest; Unlock next level | Exploration; Game core | Enrolment and credit in the database; thresholds and caps evaluated by *game-core* on the server; adjacency precomputed from imported data |
+| Perform scenario; View scenario context; Get hint; Assess answer; Answer follow-up question; Flag wrong content | Explorer application; Exploration; Assessment; AI orchestration; Model gateway | The assessed turn above; flags routed to the occupation's domain experts |
+| Rate occupation; View personal record; Send app feedback | Exploration; Analytics; Operations | Ratings only after completion, aggregated on write; records rebuilt from events; feedback stored with app version |
+| Create occupation knowledge; Update occupation knowledge; Author scenario; Generate scenario content; Build reference set | Staff application; Content lifecycle; AI orchestration | Drafts with authorship; generation jobs with history and automatic validation; reference answers validated on entry |
+| Review scenario; Apply review criteria; Revalidate scenario; Review flagged content; Play-test draft game | Staff application; Content lifecycle; Exploration; Notification; Scheduler | State machine with reviewer-is-not-author constraint; criteria versioned per review; play-test runs excluded from aggregates |
+| Check grading reliability; Submit blind ratings | Staff application; Analytics; Assessment | Agreement by stratum from recorded judgments; blind ratings hidden from other experts and from AI scores |
+| Manage occupation; Import reference data; Define review criteria; Open task scenario; Assign domain expert; Reassign overdue review | Staff application; Content lifecycle; Reference-data import; Identity and access; Scheduler | One active scenario per task enforced by the database; reminders and overdue notices by the scheduler |
+| Design scenario presentation; Generate missing asset; Publish scenario; Remove scenario | Staff application; Content lifecycle; AI orchestration; Object store | Content text read-only during presentation; assets checked before entering the library; publication creates an immutable release |
+| Monitor occupation statistics; View coverage report; Request revalidation | Staff application; Analytics; Content lifecycle | Aggregates above threshold; revalidation sends a published scenario back to review while it stays playable |
+| Manage user accounts; Assign occupation staff; Disable account; Delete account; View activity log | Staff application; Identity and access | Occupation-scoped roles; status checked on refresh and on every staff request; deletion keeps staff-authored records |
+| Configure AI models; Monitor operation cost; Re-run failed job; Review app feedback; Handle data requests | Staff application; Operations; Model gateway | Registry rejects a provider or family shared by the narrator and a judge or by two judges; cost ledger and alerts; failed-job re-run; data-request workflow with log |
+
+: Realisation of use cases by architectural components.
+
+Realisation of the non-functional requirements and design constraints. The table gives, for each, the mechanism, the components, and whether the prototype has it; it underlies the verifications listed in Section 4.3.3.
+
+| ID | Mechanism | Components | In prototype |
+|---|---|---|---|
+| NFR-01 | Answer stored before any model call; narration and follow-up generated by a worker and pushed through the event stream; progress at once, status line after two seconds; interactive jobs before batch generation; bounded output length | Explorer application; Exploration; AI orchestration; Model gateway | No; follow-ups are pre-written |
+| NFR-02 | Scoring job queued when the situation ends; judges in parallel, so latency is the slowest judge's, not the sum; per-call timeouts; workers scaled on queue depth | AI orchestration; Model gateway; workers | No |
+| NFR-03 | Each turn stored as an event with an idempotent sequence number; local queue of unsent turns; resumption by folding stored events | Explorer application; Exploration; Game core | Partly; runs pinned to a content version, but actions sent only at the end |
+| NFR-04 | Transactional outbox; retries with backoff, circuit breaker, failover within the role; notice within ten seconds; reconciliation | Exploration; AI orchestration; Model gateway; Scheduler | No |
+| NFR-05 | Data inventory per data requirement; encryption in transit and at rest, including backups; de-identification before any model call; opaque job identifiers; providers set to no training and no retention; deletion by cascade and request workflow | Identity and access; AI orchestration; Operations; database | Partly; deletion by cascade |
+| NFR-06 | Aggregates only from Analytics, above a population threshold; play-tests excluded; no endpoint returns another person's record | Analytics | No |
+| NFR-07 | Every model output carries provenance — model, family, prompt version — from which the interface renders an AI label | AI orchestration; Explorer application | No |
+| NFR-08 | Typed interface strings with a completeness test; content fields carry a locale, so a language is added as data; only Vietnamese is supported in this phase | Both applications; Content lifecycle | Partly; interface strings typed |
+| NFR-09 | Validator refuses a scenario whose context lacks an explicit objective | Content lifecycle; Game core | No |
+| NFR-10 | Content as data in releases, created through the staff application; *game-core* interprets generic formats; map positions computed from data | Content lifecycle; Game core; Explorer application | Partly; content in the database, written by script |
+| NFR-11 | Per-session cost ledger: estimate before, actual after each call; ceiling from settings; threshold alerts; a session that reaches the ceiling makes no further model calls and pauses as on provider failure | AI orchestration; Operations; queue store | No |
+| NFR-12 | Model port with provider adapters; provider-neutral prompts and output schemas; a provider change re-runs the Stage A benchmark as a regression suite | Model gateway; AI orchestration | No |
+| NFR-13 | Explorer bundle under a performance budget; on-demand 3D chunk and 2D fallback; turn payloads of a few kilobytes; event stream with polling fallback; releases cached by version at the edge; on-device timing | Explorer application; content delivery network | Partly; 3D map loaded on demand |
+| NFR-14 | Every judgment records its judges; a change of assessment configuration recomputes agreement by stratum against the reference set | Analytics; AI orchestration; Operations | No |
+| NFR-15 | Publication copies the approved version into a hashed release, compared with what is served; canon content served verbatim; run-time narration shown only after the rule checks; a model of another family reviews the logs | Content lifecycle; AI orchestration; Game core | Partly; releases immutable |
+| NFR-16 | Lifecycle module as sole writer; transition and log in one transaction; a trigger refuses updates to published releases | Content lifecycle; database | No |
+| NFR-17 | Argon2id; HTTPS with strict transport security; httpOnly, SameSite cookies, rotation, idle expiry; answers passed to models as delimited data, outputs schema-validated; prompt-injection tests in the regression suite, against the leading OWASP risk for language-model applications [168] | Identity and access; AI orchestration; reverse proxy | Partly; hashing, cookies, rotation |
+| NFR-18 | Stateless API replicas with health checks and rolling deployment; backups with point-in-time recovery; uptime monitoring; announced maintenance | All tiers | No |
+| NFR-19 | Document-based interfaces; accessible 2D map; accessible primitives in the staff application; automated and manual audits | Both applications | No |
+| DC-01 | Registry records each model's provider and family; configuration rejects either shared by the narrator and a judge, or by two judges; panel rechecked at job time | Model gateway; Operations; AI orchestration | No |
+| DC-02 | Domain code depends only on the model port; providers are adapters selected per role | Model gateway | No |
+| DC-03 | System of record in Vietnam; one egress path, through de-identification; transfer impact assessment per provider; data-request workflow | Hosting; AI orchestration; Identity and access; Operations | No |
+| DC-05 | Browser applications, no installation; static delivery; tolerant of short disconnections | Both applications | Yes |
+
+: Realisation of non-functional requirements and design constraints by architectural mechanisms.
+
+Infrastructure and scalability. JobQuest's load is not where web systems usually feel it: the binding constraint is the model tier, not the web or database tier. The estimate below states its assumptions so pilots can revise them. A scenario lasts ten to fifteen minutes (Section 4.1.2) and is assumed to hold three situations, each scored by three judges, plus about four narration and follow-up calls: about thirteen model calls per scenario, or one per minute of play. An active explorer sends a request every five to ten seconds. For Stage 4 the reference is the 1.12 million grade-12 candidates of 2025 [169]: if a fifth of a cohort plays half an hour a week over a ten-week guidance season, concentrated in about twenty peak hours, peak concurrency is about five thousand.
+
+| Stage | Assumed users | Peak concurrent explorers | API requests per second | Model calls per second | Topology |
+|---|---|---|---|---|---|
+| 0. University project | Team and synthetic data | Under 10 | Under 5 | Under 1 | One host; all containers; hosted development database acceptable |
+| 1. Capstone and first pilot | 100 to 300 volunteers | About 50 | 5 to 10 | About 1 | University host in Vietnam; one API and one worker container; PostgreSQL with point-in-time recovery; Redis with append-only persistence; object store; uptime monitor; CDN for static files |
+| 2. Multi-site pilot | About 10,000 in partner schools | About 500, in class-sized bursts | 50 to 100 | About 8 | Cloud in Vietnam; two or more API replicas behind a load balancer; workers scaled on queue length; managed PostgreSQL with standby and read replica; managed Redis; staging |
+| 3 and 4. Public-sector partnership and national resource | Hundreds of thousands per year | About 5,000 | 500 to 1,000 | 80 to 90 | Two zones in Vietnam with autoscaling, PostgreSQL high availability, and a recovery region (deployment diagram) |
+
+: Capacity estimate and topology by roadmap stage.
+
+Each tier scales by its own mechanism, summarised below for Stage 4.
+
+| Tier | Load at Stage 4 | How it scales | Why it can |
+|---|---|---|---|
+| Content delivery network | All static files and published releases | Cache by version with long lifetimes | Releases are immutable, so caches never need purging and content reads never reach the database |
+| API | 500 to 1,000 requests per second; about 5,000 open result streams | Replicas behind the load balancer, scaled on CPU and open connections; at least two per zone | Stateless: sessions travel in cookies and results arrive through Redis publish–subscribe, so any replica can serve any explorer |
+| Workers | 80 to 90 model calls per second; 250 to 700 in flight | Scaled on queue length; each worker runs many I/O-bound jobs concurrently; in-flight calls capped per provider | Jobs are independent and idempotent; the queue absorbs bursts [170] |
+| Model providers | About 5,100 requests per minute; 7 to 8 million tokens per minute at about 1,500 tokens per call | Several providers per role within DC-01, so quotas add up; priorities: live narration first, background scoring next, authoring work last | The binding constraint is isolated in its own tier and limited without slowing the rest |
+| PostgreSQL | Under 500 writes per second; about 0.3 TB of run data per season at about 60 KB per run | Vertical growth behind a connection pooler; read replica for analytics; run events partitioned by month | All transactions stay within one primary; heavy reads move to the replica; old partitions are compressed or archived |
+| Redis | About 100 jobs per second, plus publish–subscribe messages | One primary and one replica | Holds nothing that cannot be rebuilt from PostgreSQL |
+
+: Scaling mechanism of each tier at Stage 4.
+
+The in-flight figure follows from Little's law: 85 calls per second, each lasting three to eight seconds. Two sizing assumptions remain to be measured by the load tests of Chapter 7: if one single-vCPU API replica serves about 300 light requests per second, Stage 4 needs four replicas, six with headroom across two zones; if one worker holds 50 calls in flight, it needs six to fourteen workers.
+
+The architecture scales for seven reasons. Processing tiers are stateless, so capacity grows by adding replicas. Fast and slow work are separated: a request stores and acknowledges in about 0.2 s, and slow work waits in a queue, so a class of forty starting together lengthens the queue rather than overloading the API. The binding constraint, the model tier, is isolated and limited on its own. Published content is immutable and therefore almost entirely served from cache. Reads for statistics are separated from writes by a replica. Load is shed by priority rather than by failure: under pressure, live narration goes first, background scoring waits a little longer for the summary screen, and authoring work waits for quiet hours. And no transaction spans services, so growth never requires distributed coordination. Canon content is approved once and served verbatim from releases, so run-time model calls are limited to narration, follow-ups, and scoring; the cost per playthrough is estimated in Section 5.2.3.
+
+Reliability and operations. Availability of 99.5% a month is proposed for Stages 1 and 2 and 99.9% once two zones run (NFR-18). The write-ahead log is archived continuously and backups taken nightly, both copied to a second region in Vietnam, for a proposed recovery point of five minutes and recovery time of one hour. Deployments roll replica by replica behind health checks, with backward-compatible migrations so old and new versions run side by side. Monitoring tracks queue length, 95th-percentile latency per provider, cost per session, and error rates, alerting at the thresholds of NFR-01, NFR-02, and NFR-11. A web application firewall and TLS guard the entry, secrets are held in a secret manager, and the egress proxy admits only allowlisted model endpoints.
+
+From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free *game-core* shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and httpOnly cookie sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
 
 ---
 
@@ -1211,3 +1470,73 @@ Items awaiting game design. Several items cannot be settled before the game desi
 [134] AI Singapore, "SEA-HELM leaderboard: Vietnamese," snapshot of 18 Sep. 2026. Available: https://leaderboard.sea-lion.ai/detailed/VI (accessed 8 Oct. 2026).
 
 [135] Anthropic, OpenAI, Google, DeepSeek, and Alibaba Cloud, official API pricing pages (accessed 8-9 Oct. 2026).
+
+[136] Stack Overflow, "2025 Developer Survey: Technology," 2025; usage among all respondents. Available: https://survey.stackoverflow.co/2025/technology (accessed 8 Oct. 2026).
+
+[137] React Team, "React v19," 5 Dec. 2024. Available: https://react.dev/blog/2024/12/05/react-19 (accessed 8 Oct. 2026).
+
+[138] Vite Team, "Vite 8.0 is out!," 12 Mar. 2026. Available: https://vite.dev/blog/announcing-vite8 (accessed 8 Oct. 2026).
+
+[139] Google Chrome, "Lighthouse throttling," Lighthouse documentation; mobile profile of 150 ms round-trip time, 1.6 Mbit/s download, and four-fold CPU slowdown. Available: https://github.com/GoogleChrome/lighthouse/blob/main/docs/throttling.md (accessed 8 Oct. 2026).
+
+[140] Poimandres, "React Three Fiber documentation." Available: https://r3f.docs.pmnd.rs (accessed 8 Oct. 2026).
+
+[141] MDN Web Docs, "WebGL best practices." Available: https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_best_practices (accessed 8 Oct. 2026).
+
+[142] World Wide Web Consortium, "Web Content Accessibility Guidelines (WCAG) 2.1," W3C Recommendation, 2018, updated 2023. Available: https://www.w3.org/TR/WCAG21/. [Standard.]
+
+[143] A. Wathan et al., "Tailwind CSS v4.0," 22 Jan. 2025. Available: https://tailwindcss.com/blog/tailwindcss-v4 (accessed 8 Oct. 2026).
+
+[144] Poimandres, "Zustand: bear necessities for state management in React." Available: https://github.com/pmndrs/zustand (accessed 8 Oct. 2026).
+
+[145] Remix Team, "React Router v7," 22 Nov. 2024. Available: https://remix.run/blog/react-router-v7 (accessed 8 Oct. 2026).
+
+[146] MDN Web Docs, "Using server-sent events." Available: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events (accessed 8 Oct. 2026).
+
+[147] TanStack, "TanStack Query documentation." Available: https://tanstack.com/query (accessed 8 Oct. 2026).
+
+[148] Adobe, "React Aria." Available: https://react-spectrum.adobe.com/react-aria/ (accessed 8 Oct. 2026).
+
+[149] Unicode Consortium, "CLDR: Plural rules," exposed in browsers by the Intl.PluralRules interface of ECMA-402. Available: https://cldr.unicode.org/index/cldr-spec/plural-rules (accessed 8 Oct. 2026).
+
+[150] React Team, "Common components: dangerouslySetInnerHTML," React escapes text content unless raw HTML is injected explicitly. Available: https://react.dev/reference/react-dom/components/common (accessed 8 Oct. 2026).
+
+[151] NestJS, "NestJS documentation: modules, guards, and queues." Available: https://docs.nestjs.com (accessed 8 Oct. 2026).
+
+[152] A. Cockburn, "Hexagonal architecture," 2005. Available: https://alistair.cockburn.us/hexagonal-architecture/ (accessed 8 Oct. 2026).
+
+[153] PostgreSQL Global Development Group, "PostgreSQL documentation: partial indexes." Available: https://www.postgresql.org/docs/current/indexes-partial.html (accessed 8 Oct. 2026).
+
+[154] PostgreSQL Global Development Group, "PostgreSQL documentation: JSON types." Available: https://www.postgresql.org/docs/current/datatype-json.html (accessed 8 Oct. 2026).
+
+[155] Prisma, "Prisma ORM v7.0.0: Rust-free Prisma Client becomes the default," 19 Nov. 2025. Available: https://www.prisma.io/changelog/2025-11-19 (accessed 8 Oct. 2026).
+
+[156] Taskforce.sh, "BullMQ documentation." Available: https://docs.bullmq.io (accessed 8 Oct. 2026).
+
+[157] OWASP Foundation, "Password Storage Cheat Sheet," recommends Argon2id. Available: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html (accessed 8 Oct. 2026).
+
+[158] T. Lodderstedt, J. Bradley, A. Labunets, and D. Fett, "Best Current Practice for OAuth 2.0 Security," RFC 9700, IETF, Jan. 2025, doi: 10.17487/RFC9700.
+
+[159] OWASP Foundation, "Application Security Verification Standard 5.0.0," May 2025. Available: https://owasp.org/www-project-application-security-verification-standard/ (accessed 8 Oct. 2026).
+
+[160] Nrwl, "Nx documentation: affected tasks, caching, and module boundaries." Available: https://nx.dev/docs (accessed 8 Oct. 2026).
+
+[161] Government of Vietnam, Decree No. 53/2022/NĐ-CP detailing a number of articles of the Law on Cybersecurity, 15 Aug. 2022, in force from 1 Oct. 2022, Art. 26. [Legislation.]
+
+[162] Tilleke & Gibbins, "What do Vietnam's new data localization requirements mean for domestic enterprises?," 8 Sep. 2022. Available: https://www.tilleke.com (accessed 8 Oct. 2026). [Legal commentary.]
+
+[163] "Service providers bet on the cloud," *Vietnam Investment Review*, 15 Aug. 2023. Available: https://vir.com.vn (accessed 8 Oct. 2026). [Grey literature.]
+
+[164] "AWS launches Local Zone cloud location in Hanoi, Vietnam," *DatacenterDynamics*, Jun. 2026. Available: https://www.datacenterdynamics.com (accessed 8 Oct. 2026). [Grey literature.]
+
+[165] M. Fowler, "MonolithFirst," 3 Jun. 2015. Available: https://martinfowler.com/bliki/MonolithFirst.html (accessed 8 Oct. 2026).
+
+[166] Microsoft, "Event Sourcing pattern," Azure Architecture Center. Available: https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing (accessed 8 Oct. 2026).
+
+[167] C. Richardson, "Pattern: Transactional outbox." Available: https://microservices.io/patterns/data/transactional-outbox.html (accessed 8 Oct. 2026).
+
+[168] OWASP Foundation, "OWASP Top 10 for LLM Applications 2025," LLM01:2025 Prompt Injection. Available: https://genai.owasp.org/llm-top-10/ (accessed 8 Oct. 2026).
+
+[169] "Trên 1,1 triệu thí sinh trên cả nước làm thủ tục dự thi tốt nghiệp THPT 2025," *Báo Lào Cai*, 25 Jun. 2025, citing Ministry of Education and Training statistics of 1,122,507 grade-12 registrants. [Grey literature.]
+
+[170] Microsoft, "Queue-Based Load Leveling pattern," Azure Architecture Center. Available: https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling (accessed 8 Oct. 2026).
