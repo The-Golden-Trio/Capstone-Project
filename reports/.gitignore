@@ -12,3 +12,6 @@
 *.toc
 *.xdv
 _minted*/
+
+# latexmk / LaTeX Workshop build output (PDF bản nộp lưu ở docs/project-hub/submissions/)
+build/
