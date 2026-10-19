@@ -15,16 +15,24 @@ Mỗi lần nộp báo cáo cho cô, lưu **source LaTeX** vào đây rồi ch�
 Từ bản 26/9, báo cáo được viết bằng **Markdown** (`report.md`), và LaTeX được **sinh ra** từ đó theo class `hcmut-report`:
 
 ```
-python tools/report/md2tex.py reports/2026-10-02_ch1-5/report.md reports/2026-10-02_ch1-5/latex
-cd reports/2026-10-02_ch1-5/latex
-pdflatex main.tex    (chạy 3 lần để mục lục và số bảng ổn định)
+python tools/report/md2tex.py reports/<ngày>_<slug>/report.md reports/<ngày>_<slug>
+cd reports/<ngày>_<slug>
+latexmk -pdf -outdir=build main.tex    (tự chạy đủ số lần; PDF ở build/main.pdf)
 ```
 
 - **Sửa nội dung ở `report.md`**, rồi chạy lại script. Không sửa tay `main.tex`, `chapters/*.tex`, `references.tex`: lần chạy sau sẽ ghi đè.
 - Sơ đồ Mermaid trong `report.md` không vẽ được trong LaTeX. Sơ đồ thứ n lấy ảnh `latex/figures/fig<n>.png`; đổi sơ đồ thì thay ảnh này.
-- Ảnh có sẵn (ví dụ xuất từ PlantUML) thì viết một dòng `![Chú thích.](latex/figures/<tên>.png)`. Ảnh này không tính vào số thứ tự `fig<n>` của sơ đồ Mermaid.
+- Ảnh có sẵn (ví dụ xuất từ PlantUML) thì viết một dòng `![Chú thích.](latex/figures/<tên>.png)`. Ảnh này không tính vào số thứ tự `fig<n>` của sơ đồ Mermaid. Sơ đồ dạng dọc (activity diagram) thì thêm độ rộng: `![Chú thích.](latex/figures/<tên>.png){width=0.63}` (rộng 0,63 lần bề ngang trang, cao tối đa 0,85 trang; `{width=1}` là rộng hết trang).
+- Bảng use case viết thẳng bằng LaTeX trong `report.md`, từ dòng `\begin{usecase}{UC-E01}{Tên}` đến `\end{usecase}`. Script chép nguyên văn khối này; môi trường `usecase` và các lệnh `\ucrow`, `\ucsteps`, `\ucstep`, `\ucitem` định nghĩa trong hằng `MAIN`.
 - Bìa (tên môn, GVHD, nhóm, sinh viên) nằm trong hằng `MAIN` của `tools/report/md2tex.py`.
+- **Bài học 8–16/10:** Chương 5 từng được sửa tay trong `.tex` (bảng use case, activity diagram), nên `report.md` lệch với bản nộp 16/10. Ngày 19/10 đã đưa các sửa đó về `reports/2026-10-16_ch1-5/report.md`; sinh lại từ file này ra đúng nội dung bản 16/10 (chỉ khác độ rộng cột tự tính). Từ bản sau, mọi sửa đi qua `report.md`.
 - Script tự kiểm số mục: nếu `## 4.3 …` trong Markdown lệch với số LaTeX sẽ đánh thì dừng và báo.
+
+## Build PDF offline (thay Overleaf)
+
+- Cài TeX Live một lần: `brew install --cask mactex-no-gui` (macOS, khoảng 6 GB). Cài xong mở lại terminal và VS Code để có `latexmk` trong PATH.
+- VS Code: cài extension **LaTeX Workshop** (`james-yu.latex-workshop`, đã có trong gợi ý của repo). Cấu hình nằm ở `.vscode/settings.json`: mở `main.tex` hoặc một file trong `chapters/`, lưu là tự build, PDF mở trong tab bên cạnh. Ctrl/Cmd+click vào PDF để nhảy về dòng nguồn.
+- Kết quả build ở `build/` cạnh `main.tex` và đã bị gitignore. Bản nộp vẫn copy sang `docs/project-hub/submissions/`.
 
 ## Cách sync
 

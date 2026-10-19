@@ -2,7 +2,7 @@
 """Chuyển báo cáo Markdown (reports/<ngày>/report.md) sang LaTeX theo class hcmut-report.
 
 Usage:
-  python tools/report/md2tex.py reports/2026-10-02_ch1-5/report.md reports/2026-10-02_ch1-5/latex
+  python tools/report/md2tex.py reports/2026-10-16_ch1-5/report.md reports/2026-10-16_ch1-5
 
 Ghi vào thư mục đích: main.tex, chapters/*.tex, references.tex.
 Thư mục đích phải có sẵn hcmut-report.cls, graphics/hcmut.png và figures/fig<n>.png
@@ -92,10 +92,13 @@ def table(rows, caption):
     return "\n".join(out)
 
 
-def figure(n, caption, outdir, img=None):
+def figure(n, caption, outdir, img=None, width=None):
     img = img or f"figures/fig{n}.png"
+    # {width=0.63} sau ảnh: rộng 0.63\textwidth, cao tối đa 0.85\textheight (sơ đồ hoạt động dạng dọc).
+    size = "width=\\textwidth,height=0.9\\textheight" if width is None else (
+        "width=" + ("" if width == "1" else width) + "\\textwidth,height=0.85\\textheight")
     if (outdir / img).exists():
-        inner = f"\\includegraphics[width=\\textwidth,height=0.9\\textheight,keepaspectratio]{{{img}}}"
+        inner = f"\\includegraphics[{size},keepaspectratio]{{{img}}}"
     else:
         inner = f"\\fbox{{\\parbox{{0.8\\textwidth}}{{\\centering Thiếu {inl(img)}}}}}"
     return f"\\begin{{figure}}[H]\n\\centering\n{inner}\n\\caption{{{inl(caption.rstrip('.'))}}}\n\\end{{figure}}"
@@ -171,11 +174,19 @@ def convert(md, outdir):
             cur.append(figure(nfig, cap.group(1), outdir))
             i = k + 1
             continue
-        m = re.match(r"!\[(.+)\]\((?:latex/)?(figures/[^)]+)\)\s*$", ln)
+        m = re.match(r"!\[(.+)\]\((?:latex/)?(figures/[^)]+)\)(?:\{width=([\d.]+)\})?\s*$", ln)
         if m:
             # Ảnh có sẵn (README): không tính vào số thứ tự fig<n> của sơ đồ Mermaid.
-            cur.append(figure(None, m.group(1), outdir, img=m.group(2)))
+            cur.append(figure(None, m.group(1), outdir, img=m.group(2), width=m.group(3)))
             i += 1
+            continue
+        if ln.startswith("\\begin{usecase}"):
+            # Bảng use case viết thẳng bằng LaTeX (môi trường usecase trong MAIN): chép nguyên văn.
+            j = i
+            while not lines[j].startswith("\\end{usecase}"):
+                j += 1
+            cur.append("\n".join(lines[i : j + 1]))
+            i = j + 1
             continue
         if ln.startswith("\\begin{landscape}"):
             j = i
@@ -233,8 +244,53 @@ def convert(md, outdir):
 MAIN = r"""% Sinh tự động từ report.md bằng tools/report/md2tex.py. Sửa report.md rồi chạy lại.
 % longtable v4.24 (10/2025) báo "Infinite glue shrinkage" ở mọi chỗ bảng ngắt trang; dùng bản v4.13 kèm sẵn.
 \makeatletter\declare@file@substitution{longtable.sty}{longtable-2020-01-07.sty}\makeatother
+\PassOptionsToPackage{table}{xcolor}
 \documentclass[twoside,final]{hcmut-report}
 \usepackage{pdflscape}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+
+\definecolor{uclabel}{gray}{0.92}   % label column and title row
+\definecolor{uchead}{gray}{0.85}    % "Step | Action" header row
+
+% column widths: label | step | action
+\newlength{\ucA}\newlength{\ucB}\newlength{\ucC}\newlength{\ucBC}
+\AtBeginDocument{%
+  \setlength{\ucA}{0.19\linewidth}%
+  \setlength{\ucB}{0.07\linewidth}%
+  \setlength{\ucC}{\dimexpr\linewidth-\ucA-\ucB-6\tabcolsep-4\arrayrulewidth\relax}%
+  \setlength{\ucBC}{\dimexpr\ucB+\ucC+2\tabcolsep+\arrayrulewidth\relax}%
+}
+
+% \begin{usecase}{UC-E01}{Register account} ... \end{usecase}
+\newenvironment{usecase}[2]{%
+  \renewcommand{\arraystretch}{1.3}%
+  \begin{longtable}{|>{\columncolor{uclabel}\raggedright\arraybackslash}p{\ucA}%
+                    |>{\centering\arraybackslash}p{\ucB}%
+                    |>{\raggedright\arraybackslash}p{\ucC}|}
+  \caption{Use case #1: #2}\\
+  \hline
+  \textbf{#1} & \multicolumn{2}{>{\columncolor{uclabel}}p{\ucBC}|}{\textbf{#2}}\\
+  \endfirsthead
+  \hline
+  \textbf{#1} & \multicolumn{2}{>{\columncolor{uclabel}}p{\ucBC}|}{\textbf{#2} \textit{(continued)}}\\
+  \endhead
+  \hline
+  \endfoot
+}{\end{longtable}}
+
+% one-cell row: \ucrow{Precondition}{text}
+\newcommand{\ucrow}[2]{%
+  \hline \textbf{#1} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\ucBC}|}{#2}\\}
+
+% step block: \ucsteps{Ordinary Sequence} followed by \ucstep{1}{text} ...
+\newcommand{\ucsteps}[1]{%
+  \hline \textbf{#1} & \cellcolor{uchead}\textbf{Step} & \cellcolor{uchead}\textbf{Action}\\}
+\newcommand{\ucstep}[2]{\cline{2-3} & #1 & #2\\}
+
+% bullet line inside a cell (breaks before each item, not after the last)
+\newcommand{\ucitem}[1]{\ifhmode\par\fi\textbullet~#1}
 \setlength{\LTleft}{0pt}
 \setlength{\LTright}{0pt}
 \setlength{\emergencystretch}{3em}
@@ -244,11 +300,10 @@ MAIN = r"""% Sinh tự động từ report.md bằng tools/report/md2tex.py. S�
 \title{JobQuest: An AI-Native Experiential Career-Exploration Platform}
 \advisor{& Assoc. Prof. Võ Thị Ngọc Châu &}
 \groupname{& Golden Trio &}
-% TODO: điền họ tên và MSSV của Nhật
 \stuname{%
   & Nguyễn Hữu Phúc & 2352938 \\
   & Trương Gia Kỳ Nam & 2352787 \\
-  & Nhật & (MSSV)
+  & Châu Anh Nhật & 2352856
 }
 
 \begin{document}
