@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>JobQuest · Thiết kế mô hình AI · xin cô góp ý phạm vi</title>
+<!-- Brief 1 trang đính kèm mail gửi cô (T1910.2, bước 3). In ra PDF: xem README.md cùng thư mục. -->
+<style>
+  @page { size: A4 landscape; margin: 8mm 10mm 7mm; }
+  :root { --ink: #0f1f3d; --muted: #475569; --blue: #1d4ed8; --rule: #cbd5e1; --soft: #f1f5f9; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink); background: #fff;
+         font: 8.6pt/1.33 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .head { display: flex; justify-content: space-between; align-items: baseline;
+          border-bottom: 2px solid var(--ink); padding-bottom: 3px; margin-bottom: 4px; }
+  h1 { font-size: 13pt; margin: 0; }
+  .meta { color: var(--muted); font-size: 8pt; }
+  .lead { margin: 0 0 4px; }
+  img { width: 90%; display: block; margin: 0 auto 6px; }
+  .cap { font-size: 7.5pt; color: var(--muted); margin: 2px 0 5px; }
+  .cols { display: grid; grid-template-columns: 1.25fr 1fr 1.1fr; gap: 12px; }
+  h2 { font-size: 9.5pt; margin: 0 0 3px; padding-bottom: 2px; border-bottom: 1px solid var(--rule); }
+  p { margin: 0 0 4px; }
+  ul, ol { margin: 0 0 4px 14px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 7.8pt; margin: 2px 0 0; }
+  th, td { border: 1px solid var(--rule); padding: 2px 4px; vertical-align: top; text-align: left; }
+  th { background: var(--soft); }
+  .q li { margin: 2px 0; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>JobQuest · Thiết kế mô hình AI (§5.3.6): xin cô góp ý phạm vi trước khi viết</h1>
+  <div class="meta">Nhóm Golden Trio · Châu Anh Nhật · 21/10/2026</div>
+</div>
+<p class="lead">Nhóm sắp viết mục 5.3.6 theo mẫu báo cáo. Hình dưới là toàn bộ flow AI (bổ sung từ phần đã trình cô ngày 10/10). Nhóm xin cô cho ý kiến 4 câu ở cột phải.</p>
+
+<img src="fig-ai-flow-compact.png" alt="Flow AI của JobQuest">
+
+<div class="cols">
+  <div>
+    <h2>Cách nhóm hiểu và phạm vi</h2>
+    <ul>
+      <li>"Mô hình AI" của JobQuest là <b>hệ thống ghép nhiều LLM có sẵn</b>, đặt trong luật và có chuyên gia giám sát. Nhóm <b>không huấn luyện mô hình riêng</b>: điều cần chứng minh là cách ghép có đáng tin không (RP-1, RP-2).</li>
+      <li>AI chỉ làm việc luật không làm được: <b>sinh diễn biến scenario theo câu trả lời</b>, hỏi đào sâu, chấm câu tự luận. Thứ tự mốc canon, chấm câu lựa chọn, cộng điểm, mở cấp là luật tất định.</li>
+    </ul>
+    <table>
+      <tr><th>Thành phần</th><th>ĐACN</th><th>ĐATN</th></tr>
+      <tr><td>Sinh scenario (AI-4) · chấm, phản hồi (AI-5)</td><td>Phép thử khả thi</td><td>Đo RP-1, RP-2</td></tr>
+      <tr><td>Dựng seed (AI-1, AI-2) · chạy thử, xếp ca (AI-3)</td><td>Bản thử</td><td>Dùng với panel chuyên gia đầu</td></tr>
+      <tr><td>AI phụ (câu hỏi 3)</td><td colspan="2">Chờ ý kiến cô</td></tr>
+      <tr><td>LLM local dự phòng</td><td colspan="2">Ý tưởng theo gợi ý của cô</td></tr>
+    </table>
+  </div>
+
+  <div>
+    <h2>Quyết định thiết kế mới</h2>
+    <ul>
+      <li><b>Một đường chấm cho mọi câu tự luận, tách khỏi thiết kế game.</b> AI-5 nhận <i>tiêu chí kèm mô tả từng mức</i>, trả về <i>mức, câu trích nguyên văn, lý do</i>. Game (đang thiết kế) quyết định điểm dùng làm gì, nên phần AI viết được ngay.</li>
+      <li><b>Adapter gateway tự viết, chuẩn API tương thích OpenAI:</b> đổi nhà cung cấp bằng cấu hình; LLM local cũng cắm vào được theo cách này.</li>
+      <li><b>Dựng seed:</b> AI-1 phỏng vấn chuyên gia, AI-2 dựng bản nháp, chuyên gia sửa và đặt mọi khoá chấm.</li>
+    </ul>
+    <h2>Phép thử đầu (nền cho §7.3 <i>AI-related evaluation</i>)</h2>
+    <p>~30 bản ghi từ hai kịch bản Backend, nhóm đóng vai chuyên gia, cô kiểm một phần; 3 họ mô hình chấm × 2 bậc × 3 lần lặp; đo QWK, độ ổn định, độ trễ, chi phí. Chứng minh bộ máy chạy đúng, chưa phải độ khớp với chuyên gia thật.</p>
+  </div>
+
+  <div>
+    <h2>Xin cô ý kiến</h2>
+    <ol class="q">
+      <li>Hiểu "thiết kế mô hình AI" là <b>thiết kế hệ thống ghép nhiều LLM, không huấn luyện mô hình riêng</b> có đúng ý cô không?</li>
+      <li>Ở ĐACN nhóm chạy <b>phép thử chứng minh khả thi</b> cho phần sinh và phần chấm (bảng bên trái). Mức này đã đủ chưa?</li>
+      <li>Ba chỗ dùng AI phụ (<b>chân dung RIASEC, thiết kế trình bày, sinh hình</b>) không thuộc vòng lõi. Nên đưa vào giải pháp hay bỏ để tập trung vào vòng lõi?</li>
+      <li>Phép thử khoảng 30 bản ghi, nhóm đóng vai chuyên gia, có <b>đủ cho §7.3 <i>AI-related evaluation</i></b> không? Cô kiểm được khoảng bao nhiêu bản ghi?</li>
+    </ol>
+  </div>
+</div>
+
+</body>
+</html>

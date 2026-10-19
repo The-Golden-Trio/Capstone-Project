@@ -9,7 +9,7 @@
 |---|---|
 | **Tên** | **JobQuest**: An AI-Native Experiential Career-Exploration Platform |
 | **Slogan** | *Try the job before you pick the career.* |
-| **Môn** | Đồ án chuyên ngành (ĐACN), HCMUT. Giai đoạn sau là capstone (mở rộng số nghề và độ hoàn thiện) |
+| **Môn** | Đồ án chuyên ngành (ĐACN), HCMUT, rồi **đồ án tốt nghiệp (ĐATN, còn gọi capstone) trên cùng đề tài**. ĐACN đề xuất ý tưởng và thiết kế giải pháp; ĐATN hiện thực đầy đủ những tính năng ĐACN đã đưa ra (D-103) |
 | **GVHD** | PGS. TS. Võ Thị Ngọc Châu |
 | **Nhóm** | Golden Trio (nhóm 23, project 258) |
 | **Repo** | `github.com/The-Golden-Trio/Capstone-Project` |

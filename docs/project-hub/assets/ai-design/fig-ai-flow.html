@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JobQuest AI flow</title>
+<!-- Nguồn của hình flow AI end-to-end (T1910.2). Chụp ra PNG: xem README.md cùng thư mục. -->
+<style>
+  :root {
+    --ink: #0f1f3d; --muted: #475569; --line: #94a3b8;
+    --ai: #1d4ed8; --ai-bg: #dbeafe;
+    --rule: #475569; --rule-bg: #f1f5f9;
+    --human: #b45309; --human-bg: #fff7ed;
+    --data: #0f1f3d; --data-bg: #ffffff;
+    --game: #7e22ce; --game-bg: #faf5ff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: var(--ink);
+         font: 13px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .fig { width: 1760px; padding: 22px 24px 18px; }
+  h1 { font-size: 19px; margin: 0 0 4px; letter-spacing: .2px; }
+  .sub { color: var(--muted); margin: 0 0 14px; font-size: 13px; }
+  .lane { display: grid; grid-template-columns: 150px 1fr; border: 1px solid #cbd5e1;
+          border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+  .lane-h { background: var(--ink); color: #fff; padding: 12px 12px; font-weight: 700;
+            font-size: 14px; display: flex; flex-direction: column; justify-content: center; }
+  .lane-h small { font-weight: 400; color: #cbd5e1; font-size: 12px; margin-top: 4px; }
+  .lane-b { padding: 14px 14px; display: flex; align-items: center; gap: 0; }
+  .n { border: 2px solid; border-radius: 8px; padding: 7px 9px; min-width: 112px; max-width: 168px;
+       font-weight: 700; font-size: 13px; }
+  .n .d { display: block; font-weight: 400; font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+  .ai    { border-color: var(--ai); background: var(--ai-bg); }
+  .ai .t { color: var(--ai); }
+  .rule  { border-color: var(--rule); background: var(--rule-bg); }
+  .human { border-color: var(--human); background: var(--human-bg); }
+  .data  { border-color: var(--data); background: var(--data-bg); border-width: 2px; border-style: double; border-width: 4px; }
+  .game  { border-color: var(--game); background: var(--game-bg); border-style: dashed; }
+  .out   { border-color: #94a3b8; background: #fff; border-style: dashed; color: var(--muted); }
+  .a { flex: 0 0 auto; color: var(--line); font-size: 20px; padding: 0 6px; }
+  .a.lbl { font-size: 11px; color: var(--muted); text-align: center; line-height: 1.15; padding: 0 6px; }
+  .a.lbl b { display: block; font-size: 20px; color: var(--line); font-weight: 400; }
+  .stack { display: flex; flex-direction: column; gap: 8px; }
+  .stack .row { display: flex; align-items: center; }
+  .src { white-space: nowrap; font-size: 12px; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px 7px;
+         background: #fff; margin: 2px 0; }
+  .loop { margin-left: 8px; font-size: 12px; color: var(--ai); font-weight: 700;
+          border: 2px dashed var(--ai); border-radius: 8px; padding: 6px 9px; }
+  .gw { border: 1px solid #cbd5e1; border-radius: 10px; display: grid;
+        grid-template-columns: 150px 1fr; overflow: hidden; }
+  .gw .lane-h { background: #1e3a8a; }
+  .gw-b { padding: 12px 14px; display: flex; gap: 10px; align-items: stretch; flex-wrap: nowrap; }
+  .gw-core { flex: 1.6; border: 2px solid var(--rule); background: var(--rule-bg); border-radius: 8px; padding: 8px 10px; }
+  .gw-core b { font-size: 13px; }
+  .gw-core ul { margin: 4px 0 0 16px; padding: 0; font-size: 12px; color: var(--muted); }
+  .prov { flex: 1; border: 2px solid var(--ai); border-radius: 8px; padding: 8px 10px; background: #fff; font-size: 12px; }
+  .prov b { font-size: 13px; color: var(--ai); }
+  .prov.out { border: 2px dashed #94a3b8; color: var(--muted); }
+  .prov.out b { color: var(--muted); }
+  .legend { display: flex; gap: 18px; margin-top: 12px; font-size: 12px; color: var(--muted); align-items: center; }
+  .legend span.k { display: inline-block; width: 22px; height: 14px; border: 2px solid; border-radius: 4px;
+                   vertical-align: middle; margin-right: 6px; }
+  /* #compact: bản rút gọn cho brief 1 trang — bỏ chữ mô tả, chữ chính to hơn */
+  .compact .fig { width: 1500px; padding: 10px 12px 8px; }
+  .compact-only { display: none; }
+  .compact .compact-only { display: inline; }
+  .compact .full-only,
+  .compact h1, .compact .sub, .compact .n .d, .compact .gw-core ul { display: none; }
+  .compact .n { font-size: 16px; min-width: 0; max-width: 178px; padding: 6px 8px; }
+  .compact .src { font-size: 14px; }
+  .compact .lane-h { font-size: 15px; padding: 8px 10px; }
+  .compact .lane-h small { font-size: 13px; }
+  .compact .lane-b { padding: 9px 10px; }
+  .compact .lane { grid-template-columns: 130px 1fr; margin-bottom: 8px; }
+  .compact .gw { grid-template-columns: 130px 1fr; }
+  .compact .gw-b { padding: 8px 10px; }
+  .compact .gw-core b, .compact .prov b { font-size: 14px; }
+  .compact .prov { font-size: 13px; }
+  .compact .a.lbl { font-size: 13px; }
+  .compact .loop { font-size: 14px; }
+  .compact .legend { font-size: 14px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<script>if (location.hash === '#compact') document.body.classList.add('compact');</script>
+<div class="fig" id="fig">
+  <h1>JobQuest AI flow: from an expert's knowledge to a scored playthrough, and back</h1>
+  <p class="sub">AI drafts, connects, scores and filters; domain experts decide occupational content, scoring keys and publication. Every free-text answer takes the same scoring path (AI-5); game rules decide what a score means.</p>
+
+  <!-- 1. Authoring -->
+  <div class="lane">
+    <div class="lane-h">1 · Authoring<small>no player waiting</small></div>
+    <div class="lane-b">
+      <div class="n human">Domain expert<span class="d">knowledge of real work</span></div>
+      <div class="a">→</div>
+      <div class="n ai"><span class="t">AI-1 Interview</span><span class="d">topic guide from critical incidents; every turn stored verbatim</span></div>
+      <div class="a">→</div>
+      <div class="n ai"><span class="t">AI-2 Draft seed</span><span class="d">with the content admin, from the expert's own words</span></div>
+      <div class="a">→</div>
+      <div class="n human">Expert completes seed<span class="d">sets every scoring key and rubric level; may edit any field</span></div>
+      <div class="a">→</div>
+      <div class="n rule">Structure check<span class="d">schema, required fields</span></div>
+      <div class="a">→</div>
+      <div class="n ai"><span class="t">AI-3 Test plays &amp; triage</span><span class="d">runs AI-4 and AI-5 on test plays; ranks cases for the expert</span></div>
+      <div class="a">→</div>
+      <div class="n human">Expert rules, approves<span class="d">another expert reviews</span></div>
+      <div class="a">→</div>
+      <div class="n data">Published release<span class="d">immutable, versioned, hashed</span></div>
+    </div>
+  </div>
+
+  <!-- 2. Play -->
+  <div class="lane">
+    <div class="lane-h">2 · Play<small>a player is waiting</small></div>
+    <div class="lane-b">
+      <div class="n data">Release pinned to the run<span class="d">with rubric, prompt and model versions</span></div>
+      <div class="a">→</div>
+      <div class="n rule">Engine keeps canon order<span class="d">canon content shown verbatim</span></div>
+      <div class="a">→</div>
+      <div class="stack">
+        <div class="row">
+          <div class="src">Closed answer</div><div class="a">→</div>
+          <div class="n rule">Scored by game-core<span class="d">against the expert's key; no AI</span></div>
+        </div>
+        <div class="row">
+          <div class="src">Free-text answer</div><div class="a">→</div>
+          <div class="n ai"><span class="t">AI-4 Narration &amp; follow-up</span><span class="d">seed in prompt; rubric and keys never in prompt</span></div>
+          <div class="a">→</div>
+          <div class="n rule">Run-time rule checks<span class="d">names and numbers from seed or player; follow-up cap</span></div>
+        </div>
+      </div>
+      <div class="a lbl"><b>→</b>situation<br>ends</div>
+      <div class="n ai"><span class="t">AI-5 Judge panel</span><span class="d">3 model families · ≤ 3 criteria per call · background · median</span></div>
+      <div class="a">→</div>
+      <div class="n rule">Quote &amp; level check<span class="d">quote must occur in what the player typed</span></div>
+      <div class="a">→</div>
+      <div class="n ai"><span class="t">Feedback writer</span><span class="d">from AI-5 output; names behaviours, not skills</span></div>
+      <div class="a">→</div>
+      <div class="n game">Game rules<span class="d">score → outcome, competence; pending the gamify flow</span></div>
+    </div>
+  </div>
+
+  <!-- 3. Feedback loop -->
+  <div class="lane">
+    <div class="lane-h">3 · Feedback loop<small>gets more trustworthy with use</small></div>
+    <div class="lane-b">
+      <div class="stack" style="gap:2px">
+        <div class="src">Judges more than one level apart</div>
+        <div class="src">Rule broken: run-time check, or log review by another model family</div>
+        <div class="src">Random blind sample of unflagged cases</div>
+        <div class="src">Player flags wrong content</div>
+      </div>
+      <div class="a">→</div>
+      <div class="n ai"><span class="t">AI-3 Rank cases</span><span class="d">for a volunteer expert's limited hours</span></div>
+      <div class="a">→</div>
+      <div class="n human">Expert rules<span class="d">confirms or corrects the score</span></div>
+      <div class="a">→</div>
+      <div class="n data">Rubric vN+1<span class="d">versioned; earlier runs keep their version</span></div>
+      <div class="a">+</div>
+      <div class="n data">Calibration examples<span class="d">expert-scored answers given to the judges</span></div>
+      <div class="a">+</div>
+      <div class="n data">Validation set<span class="d">expert vs judge agreement (QWK), RP-2</span></div>
+      <div class="loop">↺ back to authoring and AI-5</div>
+    </div>
+  </div>
+
+  <!-- Gateway -->
+  <div class="gw">
+    <div class="lane-h">Model gateway<small>every AI box above calls through it</small></div>
+    <div class="gw-b">
+      <div class="gw-core"><b class="full-only">Own adapter layer, OpenAI-compatible API as the common format</b><b class="compact-only">Own adapter layer, OpenAI-compatible API · one family per role (DC-01) · de-identification · cost ledger</b>
+        <ul>
+          <li>Registry refuses a narrator and a judge, or two judges, of the same family (DC-01)</li>
+          <li>De-identification before any call; answers sent as data, never as instructions</li>
+          <li>Per-session cost ledger; retries, timeouts, failover within the role</li>
+        </ul>
+      </div>
+      <div class="prov"><b>Narrator</b><br>one family, two candidates</div>
+      <div class="prov"><b>Judges</b><br>three other families, two tiers each</div>
+      <div class="prov out"><b>Local LLM fallback</b><br>if every provider is down · idea only, out of scope (D-98)</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="k" style="border-color:var(--ai);background:var(--ai-bg)"></span>AI component</span>
+    <span><span class="k" style="border-color:var(--rule);background:var(--rule-bg)"></span>Deterministic rule, no AI</span>
+    <span><span class="k" style="border-color:var(--human);background:var(--human-bg)"></span>Person decides</span>
+    <span><span class="k" style="border-color:var(--data);border-style:double;border-width:4px"></span>Versioned data</span>
+    <span><span class="k" style="border-color:var(--game);background:var(--game-bg);border-style:dashed"></span>Pending game design</span>
+    <span><span class="k" style="border-color:#94a3b8;border-style:dashed"></span>Out of scope</span>
+  </div>
+</div>
+</body>
+</html>
