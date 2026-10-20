@@ -1,0 +1,40 @@
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 1148    4.764902/s
+    checks_succeeded...: 100.00% 1148 out of 1148
+    checks_failed......: 0.00%   0 out of 1148
+
+    ✓ GET /auth/me 2xx
+    ✓ GET /content/scenarios/:key 2xx
+    ✓ GET /content/bootstrap 2xx
+    ✓ POST /runs 2xx
+    ✓ GET /content/galaxy 2xx
+    ✓ GET /profile 2xx
+    ✓ GET /profile/progress 2xx
+    ✓ GET /profile/roles/:role 2xx
+    ✓ GET /profile/runs 2xx
+    ✓ POST /runs/:id/complete 2xx
+
+    CUSTOM
+    t_run_complete.................: avg=16.76ms med=14.92ms p(95)=31.97ms p(99)=37.92ms  max=42.22ms 
+
+    HTTP
+    http_req_duration..............: avg=12.92ms med=7.58ms  p(95)=35.21ms p(99)=141.06ms max=196.57ms
+      { expected_response:true }...: avg=12.92ms med=7.58ms  p(95)=35.21ms p(99)=141.06ms max=196.57ms
+    http_req_failed................: 0.00%  0 out of 1198
+    http_reqs......................: 1198   4.972433/s
+
+    EXECUTION
+    iteration_duration.............: avg=54.56s  med=53.43s  p(95)=1m8s    p(99)=1m11s    max=1m15s   
+    iterations.....................: 182    0.755411/s
+    vus............................: 20     min=0         max=50
+    vus_max........................: 50     min=50        max=50
+
+    NETWORK
+    data_received..................: 26 MB  107 kB/s
+    data_sent......................: 483 kB 2.0 kB/s
+
+
+

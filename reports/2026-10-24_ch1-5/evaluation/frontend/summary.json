@@ -1,0 +1,367 @@
+[
+  {
+    "page": "Landing",
+    "path": "/",
+    "profile": "mobile",
+    "finalUrl": "http://localhost:4300/",
+    "performance": 66,
+    "accessibility": 95,
+    "bestPractices": 73,
+    "seo": 83,
+    "perfRange": [
+      64,
+      66
+    ],
+    "fcp_ms": 3753,
+    "lcp_ms": 7987,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 4208,
+    "transfer_kb": 32635,
+    "failedA11y": [
+      "color-contrast",
+      "heading-order"
+    ]
+  },
+  {
+    "page": "Landing",
+    "path": "/",
+    "profile": "desktop",
+    "finalUrl": "http://localhost:4300/",
+    "performance": 87,
+    "accessibility": 95,
+    "bestPractices": 73,
+    "seo": 83,
+    "perfRange": [
+      86,
+      89
+    ],
+    "fcp_ms": 1007,
+    "lcp_ms": 1801,
+    "tbt_ms": 0,
+    "cls": 0.002,
+    "si_ms": 2062,
+    "transfer_kb": 32910,
+    "failedA11y": [
+      "color-contrast",
+      "heading-order"
+    ]
+  },
+  {
+    "page": "Sign-in",
+    "path": "/login",
+    "profile": "mobile",
+    "finalUrl": "http://localhost:4300/login",
+    "performance": 60,
+    "accessibility": 95,
+    "bestPractices": 96,
+    "seo": 83,
+    "perfRange": [
+      60,
+      66
+    ],
+    "fcp_ms": 6801,
+    "lcp_ms": 7064,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 6801,
+    "transfer_kb": 615,
+    "failedA11y": [
+      "landmark-one-main",
+      "link-in-text-block"
+    ]
+  },
+  {
+    "page": "Sign-in",
+    "path": "/login",
+    "profile": "desktop",
+    "finalUrl": "http://localhost:4300/login",
+    "performance": 87,
+    "accessibility": 95,
+    "bestPractices": 96,
+    "seo": 83,
+    "perfRange": [
+      82,
+      88
+    ],
+    "fcp_ms": 1614,
+    "lcp_ms": 1614,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 1614,
+    "transfer_kb": 617,
+    "failedA11y": [
+      "landmark-one-main",
+      "link-in-text-block"
+    ]
+  },
+  {
+    "page": "Orientation quiz",
+    "path": "/quiz",
+    "profile": "mobile",
+    "finalUrl": "http://localhost:4300/quiz",
+    "performance": 66,
+    "accessibility": 95,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      66,
+      72
+    ],
+    "fcp_ms": 4071,
+    "lcp_ms": 6034,
+    "tbt_ms": 4,
+    "cls": 0,
+    "si_ms": 5428,
+    "transfer_kb": 669,
+    "failedA11y": [
+      "link-name"
+    ]
+  },
+  {
+    "page": "Orientation quiz",
+    "path": "/quiz",
+    "profile": "desktop",
+    "finalUrl": "http://localhost:4300/quiz",
+    "performance": 95,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      92,
+      95
+    ],
+    "fcp_ms": 1015,
+    "lcp_ms": 1321,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 1119,
+    "transfer_kb": 671,
+    "failedA11y": []
+  },
+  {
+    "page": "Occupation map (3D)",
+    "path": "/jobs",
+    "profile": "mobile",
+    "finalUrl": "http://localhost:4300/jobs",
+    "performance": 27,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      27,
+      29
+    ],
+    "fcp_ms": 4849,
+    "lcp_ms": 8058,
+    "tbt_ms": 10768,
+    "cls": 0,
+    "si_ms": 10395,
+    "transfer_kb": 1022,
+    "failedA11y": [
+      "link-name"
+    ]
+  },
+  {
+    "page": "Occupation map (3D)",
+    "path": "/jobs",
+    "profile": "desktop",
+    "finalUrl": "http://localhost:4300/jobs",
+    "performance": 53,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      53,
+      57
+    ],
+    "fcp_ms": 1124,
+    "lcp_ms": 1777,
+    "tbt_ms": 2397,
+    "cls": 0,
+    "si_ms": 3362,
+    "transfer_kb": 1019,
+    "failedA11y": []
+  },
+  {
+    "page": "Occupation levels",
+    "path": "/jobs/SWE_BACKEND",
+    "profile": "mobile",
+    "finalUrl": "http://localhost:4300/jobs/SWE_BACKEND",
+    "performance": 68,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      62,
+      68
+    ],
+    "fcp_ms": 3720,
+    "lcp_ms": 5522,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 5636,
+    "transfer_kb": 691,
+    "failedA11y": [
+      "link-name"
+    ]
+  },
+  {
+    "page": "Occupation levels",
+    "path": "/jobs/SWE_BACKEND",
+    "profile": "desktop",
+    "finalUrl": "http://localhost:4300/jobs/SWE_BACKEND",
+    "performance": 89,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      88,
+      91
+    ],
+    "fcp_ms": 918,
+    "lcp_ms": 1397,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 2479,
+    "transfer_kb": 690,
+    "failedA11y": [
+      "color-contrast"
+    ]
+  },
+  {
+    "page": "Level map",
+    "path": "/jobs/SWE_BACKEND/L1",
+    "profile": "mobile",
+    "finalUrl": "http://localhost:4300/jobs/SWE_BACKEND/L1",
+    "performance": 61,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      60,
+      62
+    ],
+    "fcp_ms": 4236,
+    "lcp_ms": 6180,
+    "tbt_ms": 24,
+    "cls": 0,
+    "si_ms": 9178,
+    "transfer_kb": 704,
+    "failedA11y": [
+      "link-name"
+    ]
+  },
+  {
+    "page": "Level map",
+    "path": "/jobs/SWE_BACKEND/L1",
+    "profile": "desktop",
+    "finalUrl": "http://localhost:4300/jobs/SWE_BACKEND/L1",
+    "performance": 86,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      84,
+      96
+    ],
+    "fcp_ms": 1026,
+    "lcp_ms": 1395,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 3432,
+    "transfer_kb": 704,
+    "failedA11y": []
+  },
+  {
+    "page": "Scenario play",
+    "path": "/play/SWE_BACKEND_L1_S_EXEC",
+    "profile": "mobile",
+    "finalUrl": "http://localhost:4300/play/SWE_BACKEND_L1_S_EXEC",
+    "performance": 51,
+    "accessibility": 95,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      47,
+      67
+    ],
+    "fcp_ms": 4067,
+    "lcp_ms": 5997,
+    "tbt_ms": 571,
+    "cls": 0,
+    "si_ms": 5788,
+    "transfer_kb": 670,
+    "failedA11y": [
+      "link-name"
+    ]
+  },
+  {
+    "page": "Scenario play",
+    "path": "/play/SWE_BACKEND_L1_S_EXEC",
+    "profile": "desktop",
+    "finalUrl": "http://localhost:4300/play/SWE_BACKEND_L1_S_EXEC",
+    "performance": 91,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      91,
+      93
+    ],
+    "fcp_ms": 954,
+    "lcp_ms": 1431,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 1993,
+    "transfer_kb": 666,
+    "failedA11y": []
+  },
+  {
+    "page": "Profile",
+    "path": "/profile",
+    "profile": "mobile",
+    "finalUrl": "http://localhost:4300/profile",
+    "performance": 68,
+    "accessibility": 92,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      61,
+      68
+    ],
+    "fcp_ms": 4209,
+    "lcp_ms": 6091,
+    "tbt_ms": 17,
+    "cls": 0,
+    "si_ms": 4209,
+    "transfer_kb": 703,
+    "failedA11y": [
+      "color-contrast",
+      "link-name"
+    ]
+  },
+  {
+    "page": "Profile",
+    "path": "/profile",
+    "profile": "desktop",
+    "finalUrl": "http://localhost:4300/profile",
+    "performance": 89,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 83,
+    "perfRange": [
+      80,
+      89
+    ],
+    "fcp_ms": 1000,
+    "lcp_ms": 1308,
+    "tbt_ms": 0,
+    "cls": 0,
+    "si_ms": 2508,
+    "transfer_kb": 703,
+    "failedA11y": [
+      "color-contrast"
+    ]
+  }
+]
