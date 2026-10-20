@@ -39,13 +39,25 @@ export function setup() {
   for (let start = 0; start < VUS; start += 20) {
     const reqs = [];
     for (let i = start; i < Math.min(start + 20, VUS); i++) {
-      reqs.push(['POST', `${BASE}/auth/login`,
-        JSON.stringify({ identifier: `eval${String(i).padStart(3, '0')}`, password: 'evaluation-pass-1' }),
-        { headers: { 'content-type': 'application/json' }, tags: { name: 'setup' } }]);
+      reqs.push([
+        'POST',
+        `${BASE}/auth/login`,
+        JSON.stringify({
+          identifier: `eval${String(i).padStart(3, '0')}`,
+          password: 'evaluation-pass-1',
+        }),
+        {
+          headers: { 'content-type': 'application/json' },
+          tags: { name: 'setup' },
+        },
+      ]);
     }
     for (const r of http.batch(reqs)) {
       const c = r.cookies.access_token;
-      if (!c) throw new Error(`login failed with status ${r.status}: each VU needs its own account`);
+      if (!c)
+        throw new Error(
+          `login failed with status ${r.status}: each VU needs its own account`,
+        );
       sessions.push(`access_token=${c[0].value}`);
     }
   }
@@ -55,7 +67,10 @@ export function setup() {
 const think = () => sleep(THINK_MIN + Math.random() * (THINK_MAX - THINK_MIN));
 
 export default function (data) {
-  const headers = { cookie: data.sessions[(__VU - 1) % data.sessions.length], 'content-type': 'application/json' };
+  const headers = {
+    cookie: data.sessions[(__VU - 1) % data.sessions.length],
+    'content-type': 'application/json',
+  };
   const get = (path, name) => {
     const r = http.get(`${BASE}${path}`, { headers, tags: { name } });
     check(r, { [`${name} 2xx`]: (x) => x.status >= 200 && x.status < 300 });
@@ -63,24 +78,44 @@ export default function (data) {
   };
 
   if (Math.random() < 0.7) {
-    get('/auth/me', 'GET /auth/me'); think();
-    get('/content/bootstrap', 'GET /content/bootstrap'); think();
-    get('/content/galaxy', 'GET /content/galaxy'); think();
-    get('/profile', 'GET /profile'); think();
-    get('/profile/progress', 'GET /profile/progress'); think();
-    get('/profile/roles/SWE_BACKEND', 'GET /profile/roles/:role'); think();
-    get('/profile/runs', 'GET /profile/runs'); think();
-  } else {
-    const content = get(`/content/scenarios/${KEY}`, 'GET /content/scenarios/:key').json();
+    get('/auth/me', 'GET /auth/me');
     think();
-    const started = http.post(`${BASE}/runs`, JSON.stringify({ scenarioKey: KEY }), { headers, tags: { name: 'POST /runs' } });
+    get('/content/bootstrap', 'GET /content/bootstrap');
+    think();
+    get('/content/galaxy', 'GET /content/galaxy');
+    think();
+    get('/profile', 'GET /profile');
+    think();
+    get('/profile/progress', 'GET /profile/progress');
+    think();
+    get('/profile/roles/SWE_BACKEND', 'GET /profile/roles/:role');
+    think();
+    get('/profile/runs', 'GET /profile/runs');
+    think();
+  } else {
+    const content = get(
+      `/content/scenarios/${KEY}`,
+      'GET /content/scenarios/:key',
+    ).json();
+    think();
+    const started = http.post(
+      `${BASE}/runs`,
+      JSON.stringify({ scenarioKey: KEY }),
+      { headers, tags: { name: 'POST /runs' } },
+    );
     check(started, { 'POST /runs 2xx': (x) => x.status === 201 });
-    if (started.status !== 201) { think(); return; }
+    if (started.status !== 201) {
+      think();
+      return;
+    }
     const run = started.json();
     const actions = autoplay(content, run.seed, (__VU * 7919 + __ITER) >>> 0);
     sleep(30 + Math.random() * 30); // playing the scenario in the browser makes no request
-    const done = http.post(`${BASE}/runs/${run.runId}/complete`, JSON.stringify({ actions, rating: 4 }),
-      { headers, tags: { name: 'POST /runs/:id/complete' } });
+    const done = http.post(
+      `${BASE}/runs/${run.runId}/complete`,
+      JSON.stringify({ actions, rating: 4 }),
+      { headers, tags: { name: 'POST /runs/:id/complete' } },
+    );
     check(done, { 'POST /runs/:id/complete 2xx': (x) => x.status === 201 });
     completeTrend.add(done.timings.duration);
     think();

@@ -28,20 +28,36 @@ const PAGES = [
 // is audited with eval497, which has not, since the gate sends a finished explorer onwards.
 async function cookie(account) {
   const user = typeof account === 'string' ? account : 'eval499';
-  const r = await fetch(`${API}/auth/login`, { method: 'POST', headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ identifier: user, password: 'evaluation-pass-1' }) });
-  const c = r.headers.getSetCookie().map((x) => x.split(';')[0]).join('; ');
+  const r = await fetch(`${API}/auth/login`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ identifier: user, password: 'evaluation-pass-1' }),
+  });
+  const c = r.headers
+    .getSetCookie()
+    .map((x) => x.split(';')[0])
+    .join('; ');
   if (user === 'eval499')
-    await fetch(`${API}/profile/quiz`, { method: 'POST', headers: { cookie: c, 'content-type': 'application/json' }, body: '{"answers":[]}' });
+    await fetch(`${API}/profile/quiz`, {
+      method: 'POST',
+      headers: { cookie: c, 'content-type': 'application/json' },
+      body: '{"answers":[]}',
+    });
   return c;
 }
 
 // A fresh Chrome, with a fresh profile, for every run: state left by one page cannot leak into
 // the next, and every run starts with a cold cache, as a first visit does.
-const launch = () => chromeLauncher.launch({
-  chromePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-  chromeFlags: ['--headless=new', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--no-first-run'],
-});
+const launch = () =>
+  chromeLauncher.launch({
+    chromePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    chromeFlags: [
+      '--headless=new',
+      '--use-angle=swiftshader',
+      '--enable-unsafe-swiftshader',
+      '--no-first-run',
+    ],
+  });
 const summary = [];
 // ONLY=/a,/b limits the run to those paths (to resume after a failure).
 const ONLY = process.env.ONLY ? process.env.ONLY.split(',') : null;
@@ -51,14 +67,32 @@ try {
     for (const profile of ['mobile', 'desktop']) {
       const runs = [];
       for (let i = 0; i < RUNS; i++) {
-        const extraHeaders = authed ? { Cookie: await cookie(authed) } : undefined;
-        const flags = { output: 'json', logLevel: 'error', extraHeaders,
-          onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'] };
+        const extraHeaders = authed
+          ? { Cookie: await cookie(authed) }
+          : undefined;
+        const flags = {
+          output: 'json',
+          logLevel: 'error',
+          extraHeaders,
+          onlyCategories: [
+            'performance',
+            'accessibility',
+            'best-practices',
+            'seo',
+          ],
+        };
         const chrome = await launch();
         try {
           flags.port = chrome.port;
-          const res = await lighthouse(WEB + path, flags, profile === 'desktop' ? desktopConfig : undefined);
-          if (new URL(res.lhr.finalDisplayedUrl).pathname !== new URL(WEB + path).pathname)
+          const res = await lighthouse(
+            WEB + path,
+            flags,
+            profile === 'desktop' ? desktopConfig : undefined,
+          );
+          if (
+            new URL(res.lhr.finalDisplayedUrl).pathname !==
+            new URL(WEB + path).pathname
+          )
             throw new Error(`${path} ended at ${res.lhr.finalDisplayedUrl}`);
           runs.push(res.lhr);
         } finally {
@@ -67,16 +101,27 @@ try {
       }
       const m = computeMedianRun(runs);
       const a = m.audits;
-      const failedA11y = Object.values(a).filter((x) =>
-        m.categories.accessibility.auditRefs.some((r) => r.id === x.id && r.weight > 0) && x.score === 0).map((x) => x.id);
+      const failedA11y = Object.values(a)
+        .filter(
+          (x) =>
+            m.categories.accessibility.auditRefs.some(
+              (r) => r.id === x.id && r.weight > 0,
+            ) && x.score === 0,
+        )
+        .map((x) => x.id);
       const row = {
-        page: label, path, profile,
+        page: label,
+        path,
+        profile,
         finalUrl: m.finalDisplayedUrl,
         performance: Math.round(m.categories.performance.score * 100),
         accessibility: Math.round(m.categories.accessibility.score * 100),
         bestPractices: Math.round(m.categories['best-practices'].score * 100),
         seo: Math.round(m.categories.seo.score * 100),
-        perfRange: [Math.min(...runs.map((r) => r.categories.performance.score * 100)), Math.max(...runs.map((r) => r.categories.performance.score * 100))].map(Math.round),
+        perfRange: [
+          Math.min(...runs.map((r) => r.categories.performance.score * 100)),
+          Math.max(...runs.map((r) => r.categories.performance.score * 100)),
+        ].map(Math.round),
         fcp_ms: Math.round(a['first-contentful-paint'].numericValue),
         lcp_ms: Math.round(a['largest-contentful-paint'].numericValue),
         tbt_ms: Math.round(a['total-blocking-time'].numericValue),
@@ -86,10 +131,16 @@ try {
         failedA11y,
       };
       summary.push(row);
-      writeFileSync(`${OUT}/${path.replace(/\W+/g, '_') || 'root'}_${profile}.json`, JSON.stringify(m));
+      writeFileSync(
+        `${OUT}/${path.replace(/\W+/g, '_') || 'root'}_${profile}.json`,
+        JSON.stringify(m),
+      );
       console.log(JSON.stringify(row));
     }
   }
 } finally {
-  writeFileSync(`${OUT}/summary${ONLY ? '-part' : ''}.json`, JSON.stringify(summary, null, 2));
+  writeFileSync(
+    `${OUT}/summary${ONLY ? '-part' : ''}.json`,
+    JSON.stringify(summary, null, 2),
+  );
 }
