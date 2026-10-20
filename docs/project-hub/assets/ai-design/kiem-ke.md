@@ -3,6 +3,8 @@
 > Bước 1 của **T1910.2** (Nhật): gom mọi thứ đã có về AI trước khi viết §5.3.6 *Thiết kế mô hình AI* và mail xin cô xác nhận phạm vi.
 > Nguồn đã đọc: quyết định D-40…D-49, D-67, D-80…D-98 ([02](../../02-quyet-dinh.md)); báo cáo bản 16/10 ([`report.md`](../../../../reports/2026-10-16_ch1-5/report.md)) §2.5, §2.6, §4.1.2, §4.2.2, §4.3, §5.1.2, §5.2.3, §5.3.1; deck AI tuần 41; spec `occupation-data/specs/spec-scenario-KHOI1.md` v2.2 (Khối A, B); code `packages/game-core` (`grading/`, `followups.ts`, `sideQuestGrader.ts`, `scenarioEngine.ts`, `data/schema.ts`).
 > Mọi chỗ ghi **đề xuất** là của bản kiểm kê này, chưa phải quyết định.
+>
+> **20/10:** §5.3.6 đã viết vào [`report.md` bản 24/10](../../../../reports/2026-10-24_ch1-5/report.md) theo các đầu việc ở mục 3. Đã gỡ trong báo cáo: M1 (bảng chỗ dùng AI, phần phụ để sau theo D-104), M8 (câu trả lời mẫu có điểm là dữ liệu kiểm định và ví dụ hiệu chỉnh, không phải đáp án cho judge), M11 (D-100), M14 (trần sinh lại 2 lần, D-108); T7 (viết phản hồi), T8–T10 (mọi câu tự luận qua AI-5, D-101), T14 (rà log) có thẻ thiết kế. Còn chờ Nam sửa yêu cầu và use case: M4, M6, M7, M9, M10; chờ game design: M3, M5, M13.
 
 > **Ràng buộc (19/10):** flow gamify do Phúc đang làm, nên mọi thứ thuộc về game **chưa chốt**: thang chấm và nghĩa từng mức (M3), hết giờ (M5), profile lựa chọn (M13), kết cục SECRET (T8), sự kiện ngẫu nhiên (T9), nhiệm vụ phụ (T10), luật chọn kết cục, cách gộp điểm thành năng lực. **Cách xử lý đề xuất:** §5.3.6 thiết kế AI theo một *hợp đồng trừu tượng* không phụ thuộc game. Mọi câu tự luận, dù ở nhiệm vụ chính, sự kiện hay nhiệm vụ phụ, đều đi qua cùng một đường chấm AI-5: đầu vào là *tiêu chí kèm mô tả từng mức*, đầu ra là *mức kèm câu trích và lý do*. Game design quyết định có những tiêu chí nào, bao nhiêu mức, và điểm đó dùng để làm gì (mở kết cục, cộng năng lực…). Như vậy viết được thiết kế AI ngay, còn game chốt sau chỉ cần điền nội dung, không phải đổi kiến trúc.
 
@@ -43,9 +45,9 @@ Báo cáo §5.2.3 chỉ nói "năm chỗ dùng AI", nhưng yêu cầu, use case,
 | T8 | Nhận ra kết cục SECRET | Người chơi có tự nhận ra "lỗi thiết kế chờ sẵn" không | code `TextGrader.hitsSecret`; spec B5 | **Chưa có ở đâu trong báo cáo.** Đề xuất: một tiêu chí của AI-5, hoặc bỏ |
 | T9 | Chấm câu trả lời sự kiện ngẫu nhiên | Cộng bằng chứng kỹ năng mềm | UC-E11 ngoại lệ 3; FR-15 | Chưa có thiết kế. Đề xuất: gộp vào AI-5 |
 | T10 | Chấm nhiệm vụ phụ tự luận | Câu trả lời gần hướng nào nhất | code `sideQuestGrader.ts` (từ khoá, ghi "sẽ thay bằng AI") | Chưa có trong báo cáo. Đề xuất: phụ, ngoài phạm vi ĐACN |
-| T11 | Chân dung RIASEC | AI viết đoạn mô tả từ hồ sơ RIASEC | FR-04, UC-E04 | Phụ, hỏi cô |
-| T12 | Thiết kế trình bày | AI giúp CA biến nội dung đã duyệt thành màn chơi | FR-35, UC-C07 | Phụ, hỏi cô |
-| T13 | Sinh hình | Model sinh ảnh cho thư viện tài sản, có kiểm thiên kiến | FR-36, UC-C08; §5.3.1 (image model) | Phụ, hỏi cô |
+| T11 | Chân dung RIASEC | AI viết đoạn mô tả từ hồ sơ RIASEC | FR-04, UC-E04 | Phụ. **Cô 20/10: để sau** (D-104) |
+| T12 | Thiết kế trình bày | AI giúp CA biến nội dung đã duyệt thành màn chơi | FR-35, UC-C07 | Phụ. **Cô 20/10: để sau** (D-104) |
+| T13 | Sinh hình | Model sinh ảnh cho thư viện tài sản, có kiểm thiên kiến | FR-36, UC-C08; §5.3.1 (image model) | Phụ. **Cô 20/10: để sau** (D-104) |
 | T14 | Rà log sau | Model khác họ đọc lại log lượt chơi | D-89; §5.2.3 | Lõi (chốt kiểm thứ tư). Chưa có thiết kế chi tiết |
 | T15 | Sinh không có seed | Đường so sánh của RP-1 | §4.2.2 | Chỉ dùng khi đánh giá, không chạy trong sản phẩm |
 | — | Kiểm luật lúc chạy | Số và tên riêng phải có trong seed hoặc câu người chơi; đếm follow-up; trích dẫn là chuỗi con | D-89; §5.3.1 (game-core) | **Không phải AI**, là luật tất định. Cần nói rõ để thấy AI chỉ đặt ở chỗ cần |
