@@ -23,6 +23,10 @@ latexmk -pdf -outdir=build main.tex    (tự chạy đủ số lần; PDF ở bu
 - **Sửa nội dung ở `report.md`**, rồi chạy lại script. Không sửa tay `main.tex`, `chapters/*.tex`, `references.tex`: lần chạy sau sẽ ghi đè.
 - Sơ đồ Mermaid trong `report.md` không vẽ được trong LaTeX. Sơ đồ thứ n lấy ảnh `latex/figures/fig<n>.png`; đổi sơ đồ thì thay ảnh này.
 - Ảnh có sẵn (ví dụ xuất từ PlantUML) thì viết một dòng `![Chú thích.](latex/figures/<tên>.png)`. Ảnh này không tính vào số thứ tự `fig<n>` của sơ đồ Mermaid. Sơ đồ dạng dọc (activity diagram) thì thêm độ rộng: `![Chú thích.](latex/figures/<tên>.png){width=0.63}` (rộng 0,63 lần bề ngang trang, cao tối đa 0,85 trang; `{width=1}` là rộng hết trang).
+- Hình rất ngang (flow nhiều làn) thì thêm `{landscape}` sau ảnh: hình nằm riêng một trang xoay ngang, rộng hết dòng.
+- Công thức: một dòng `$$ … $$` thành `equation` có đánh số; `$…$` trong câu giữ nguyên cho LaTeX (class đã nạp `amsmath`).
+- Dòng phụ trên bìa lấy từ comment `<!-- reporttype: Report: Chapters 1 to 5 and 7 -->` ở đầu `report.md`; không có comment thì giữ chữ mặc định "Report: Chapters 1 to 5.1".
+- Được phép bỏ qua chương hoặc mục chưa viết (ví dụ có Chương 7 khi chưa có Chương 6, hay §5.3.6 ngay sau §5.3.1): script đặt lại bộ đếm LaTeX để số in ra khớp số ghi trong `report.md`.
 - Bảng use case viết thẳng bằng LaTeX trong `report.md`, từ dòng `\begin{usecase}{UC-E01}{Tên}` đến `\end{usecase}`. Script chép nguyên văn khối này; môi trường `usecase` và các lệnh `\ucrow`, `\ucsteps`, `\ucstep`, `\ucitem` định nghĩa trong hằng `MAIN`.
 - Bìa (tên môn, GVHD, nhóm, sinh viên) nằm trong hằng `MAIN` của `tools/report/md2tex.py`.
 - **Bài học 8–16/10:** Chương 5 từng được sửa tay trong `.tex` (bảng use case, activity diagram), nên `report.md` lệch với bản nộp 16/10. Ngày 19/10 đã đưa các sửa đó về `reports/2026-10-16_ch1-5/report.md`; sinh lại từ file này ra đúng nội dung bản 16/10 (chỉ khác độ rộng cột tự tính). Từ bản sau, mọi sửa đi qua `report.md`.
