@@ -1,0 +1,83 @@
+{
+  "group": "19",
+  "_note": "Khoa học môi trường (19-2041, 19-4042) gộp vào Kỹ sư môi trường (17); viễn thám (19-2099.01, 19-4099.03) gộp vào Trắc địa (17); kỹ thuật viên pháp y hình sự (19-4092) gộp vào Điều tra viên (33).",
+  "keep": [
+    {
+      "code": "19-1013.00",
+      "name_vi": "Kỹ sư nông nghiệp",
+      "absorbs": ["19-1011.00", "17-2021.00", "19-4012.00", "19-4012.01", "45-2011.00", "25-9021.00"],
+      "merge_reason": "Ở Việt Nam, khoa học cây trồng, chăn nuôi, cơ giới hoá nông nghiệp, kiểm dịch và khuyến nông đều thuộc khối nông học; kỹ thuật viên là cấp khởi đầu."
+    },
+    {
+      "code": "19-1012.00",
+      "name_vi": "Kỹ sư công nghệ thực phẩm",
+      "absorbs": ["19-4013.00"],
+      "merge_reason": "Kỹ thuật viên thực phẩm là cấp khởi đầu."
+    },
+    {
+      "code": "19-1029.04",
+      "name_vi": "Nhà sinh học, chuyên viên công nghệ sinh học",
+      "absorbs": ["19-1021.00", "19-1022.00", "19-1029.01", "19-1029.02", "19-1029.03", "19-4021.00", "19-1023.00"],
+      "merge_reason": "Hoá sinh, vi sinh, di truyền, sinh học phân tử, tin sinh và động vật học là các chuyên ngành sinh học, cùng trải nghiệm làm việc trong phòng thí nghiệm; kỹ thuật viên là cấp khởi đầu."
+    },
+    {
+      "code": "19-1031.00",
+      "name_vi": "Chuyên viên lâm nghiệp và bảo tồn",
+      "absorbs": ["19-1031.02", "19-1031.03", "19-1032.00", "19-4071.00"],
+      "merge_reason": "Quản lý đồng cỏ, rừng và vườn quốc gia cùng trải nghiệm quản lý tài nguyên tự nhiên; kỹ thuật viên là cấp khởi đầu."
+    },
+    {
+      "code": "19-1041.00",
+      "name_vi": "Nhà nghiên cứu y sinh, dịch tễ",
+      "absorbs": ["19-1042.00"],
+      "merge_reason": "Cùng trải nghiệm nghiên cứu bệnh và sức khoẻ cộng đồng bằng thí nghiệm và dữ liệu."
+    },
+    {
+      "code": "19-2012.00",
+      "name_vi": "Nhà vật lý",
+      "absorbs": ["19-2011.00", "19-4051.00", "19-4051.02"],
+      "merge_reason": "Thiên văn là một chuyên ngành vật lý; kỹ thuật viên hạt nhân là cấp khởi đầu."
+    },
+    {
+      "code": "19-2031.00",
+      "name_vi": "Nhà hoá học, chuyên viên kiểm nghiệm",
+      "absorbs": ["19-2032.00", "19-4031.00", "19-4099.01"],
+      "merge_reason": "Khoa học vật liệu là một hướng của hoá học; kỹ thuật viên hoá và kiểm nghiệm chất lượng là cấp khởi đầu."
+    },
+    {
+      "code": "19-2042.00",
+      "name_vi": "Nhà khoa học địa chất, khí tượng thuỷ văn",
+      "absorbs": ["19-2043.00", "19-4043.00", "19-2021.00"],
+      "merge_reason": "Địa chất, thuỷ văn và khí tượng đều thuộc khoa học trái đất; kỹ thuật viên là cấp khởi đầu."
+    },
+    {
+      "code": "19-3011.00",
+      "name_vi": "Nhà kinh tế học"
+    },
+    {
+      "code": "19-3041.00",
+      "name_vi": "Nhà nghiên cứu khoa học xã hội",
+      "absorbs": ["19-3091.00", "19-3093.00", "19-3092.00", "19-3094.00", "19-3022.00", "19-4061.00"],
+      "merge_reason": "Xã hội học, nhân học, lịch sử, địa lý, chính trị học và điều tra xã hội học cùng trải nghiệm nghiên cứu con người và xã hội; trợ lý nghiên cứu là cấp khởi đầu."
+    },
+    {
+      "code": "19-3033.00",
+      "name_vi": "Nhà tâm lý học",
+      "absorbs": ["19-3034.00", "19-3039.02", "19-3039.03", "19-3032.00"],
+      "merge_reason": "Tâm lý học đường, thần kinh và tổ chức là các chuyên ngành tâm lý học."
+    },
+    {
+      "code": "19-3051.00",
+      "name_vi": "Chuyên viên quy hoạch đô thị",
+      "absorbs": ["19-3099.01"],
+      "merge_reason": "Quy hoạch giao thông là một mảng của quy hoạch đô thị."
+    },
+    {
+      "code": "19-5011.00",
+      "name_vi": "Chuyên viên an toàn lao động (HSE)",
+      "absorbs": ["19-5012.00", "17-2111.00", "17-2111.02"],
+      "merge_reason": "Kỹ sư an toàn và phòng cháy cùng trải nghiệm đánh giá, phòng ngừa rủi ro tại nơi làm việc; kỹ thuật viên là cấp khởi đầu."
+    }
+  ],
+  "remove": []
+}

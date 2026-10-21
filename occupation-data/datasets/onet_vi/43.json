@@ -1,0 +1,141 @@
+{
+  "43-3031.00": {"title_vi": "Nhân viên kế toán sổ sách"},
+  "43-3021.00": {"title_vi": "Nhân viên lập hoá đơn, ghi sổ"},
+  "43-3051.00": {"title_vi": "Nhân viên tính lương, chấm công"},
+  "43-9041.00": {"title_vi": "Nhân viên xử lý hồ sơ bảo hiểm"},
+  "43-4161.00": {"title_vi": "Trợ lý nhân sự"},
+  "43-5011.00": {"title_vi": "Nhân viên đại lý vận tải hàng hoá"},
+  "43-5011.01": {"title_vi": "Nhân viên giao nhận hàng hoá (forwarder)"},
+  "43-3061.00": {"title_vi": "Nhân viên thủ tục mua hàng"},
+  "43-9111.00": {"title_vi": "Trợ lý thống kê"},
+  "43-4121.00": {"title_vi": "Nhân viên hành chính thư viện"},
+  "43-9031.00": {"title_vi": "Nhân viên dàn trang, chế bản điện tử"},
+  "43-9081.00": {"title_vi": "Nhân viên đọc mo-rát"},
+  "43-6014.00": {
+    "title_vi": "Thư ký, trợ lý hành chính",
+    "description_vi": "Làm các việc hành chính thường ngày như soạn thư từ, đặt lịch hẹn, sắp xếp và lưu giữ hồ sơ giấy, điện tử, hoặc cung cấp thông tin cho người gọi điện.",
+    "tasks_vi": {
+      "2790": "Nghe điện thoại, cung cấp thông tin, ghi lời nhắn hoặc chuyển máy cho đúng người.",
+      "2791": "Đón khách hoặc người gọi, xử lý yêu cầu hoặc hướng dẫn họ tới đúng người.",
+      "20281": "Tạo, duy trì và nhập thông tin vào cơ sở dữ liệu.",
+      "20280": "Dùng máy tính cho nhiều việc như quản lý dữ liệu hoặc soạn thảo văn bản.",
+      "20283": "Vận hành thiết bị văn phòng như máy fax, máy photo, tổng đài điện thoại và gọi sửa khi hỏng."
+    }
+  },
+  "43-6011.00": {"title_vi": "Thư ký giám đốc, trợ lý điều hành"},
+  "43-6012.00": {"title_vi": "Thư ký pháp lý"},
+  "43-6013.00": {"title_vi": "Thư ký y khoa"},
+  "43-1011.00": {"title_vi": "Tổ trưởng hành chính văn phòng"},
+  "43-9061.00": {"title_vi": "Nhân viên văn phòng"},
+  "43-4071.00": {"title_vi": "Nhân viên lưu trữ hồ sơ"},
+  "43-4021.00": {"title_vi": "Nhân viên văn thư"},
+  "43-9051.00": {"title_vi": "Nhân viên thư tín nội bộ"},
+  "43-9071.00": {"title_vi": "Nhân viên vận hành máy văn phòng"},
+  "43-9021.00": {"title_vi": "Nhân viên nhập liệu"},
+  "43-9022.00": {"title_vi": "Nhân viên đánh máy, soạn thảo văn bản"},
+  "43-4171.00": {"title_vi": "Lễ tân văn phòng"},
+  "43-4051.00": {
+    "title_vi": "Nhân viên chăm sóc khách hàng",
+    "description_vi": "Tiếp xúc với khách để cung cấp thông tin cơ bản hoặc theo kịch bản về sản phẩm, dịch vụ. Có thể xử lý và giải quyết khiếu nại thông thường. Không gồm người làm chủ yếu việc lắp đặt, bán hàng, sửa chữa và hỗ trợ kỹ thuật.",
+    "tasks_vi": {
+      "18565": "Trao đổi với khách qua điện thoại hoặc trực tiếp để cung cấp thông tin sản phẩm, dịch vụ, nhận đơn, huỷ tài khoản hoặc ghi nhận khiếu nại.",
+      "2578": "Ghi lại các lần làm việc, giao dịch với khách, gồm chi tiết câu hỏi, khiếu nại, góp ý và việc đã làm.",
+      "2580": "Kiểm tra để chắc chắn vấn đề của khách đã được xử lý đúng.",
+      "2581": "Liên hệ khách để trả lời câu hỏi hoặc thông báo kết quả xem xét khiếu nại, điều chỉnh dự kiến.",
+      "2583": "Tính phí dịch vụ khách yêu cầu, thu tiền đặt cọc, thanh toán hoặc lập hoá đơn."
+    }
+  },
+  "43-2011.00": {"title_vi": "Nhân viên tổng đài"},
+  "43-2021.00": {"title_vi": "Điện thoại viên"},
+  "43-4111.00": {"title_vi": "Phỏng vấn viên khảo sát"},
+  "43-3011.00": {"title_vi": "Nhân viên nhắc phí, thu hồi nợ"},
+  "43-4151.00": {"title_vi": "Nhân viên nhận đơn hàng"},
+  "43-4081.00": {
+    "title_vi": "Lễ tân khách sạn",
+    "description_vi": "Phục vụ khách của khách sạn, nhà nghỉ, khu nghỉ dưỡng: làm thủ tục nhận phòng, xếp phòng, giao chìa khoá hoặc thẻ, chuyển và nhận lời nhắn, ghi chép phòng đang có khách và tài khoản của khách, đặt và xác nhận phòng, đưa hoá đơn và thu tiền khi khách trả phòng.",
+    "tasks_vi": {
+      "2620": "Đặt và xác nhận phòng.",
+      "2610": "Đón khách, làm thủ tục nhận phòng và xếp phòng.",
+      "2611": "Kiểm tra khả năng thanh toán của khách và xác định cách khách sẽ trả tiền phòng.",
+      "2617": "Ghi các khoản phí như tiền phòng, đồ ăn, đồ uống hoặc điện thoại vào sổ bằng tay hoặc trên máy tính.",
+      "2615": "Giao chìa khoá phòng và hướng dẫn nhân viên hành lý đưa khách lên phòng."
+    }
+  },
+  "43-4181.00": {"title_vi": "Nhân viên đặt chỗ và bán vé"},
+  "43-3071.00": {
+    "title_vi": "Giao dịch viên ngân hàng",
+    "description_vi": "Thu và chi tiền. Ghi chép tiền và giấy tờ có giá trong các giao dịch của tổ chức tài chính.",
+    "tasks_vi": {
+      "2549": "Đối chiếu tiền giấy, tiền xu và séc trong ngăn kéo cuối ca và tính tổng giao dịch trong ngày bằng máy tính.",
+      "2551": "Nhận séc và tiền mặt để gửi, kiểm tra số tiền và độ chính xác của phiếu gửi tiền.",
+      "2563": "Theo dõi kho tiền để bảo đảm số dư đúng.",
+      "2550": "Chi tiền mặt, thanh toán séc sau khi kiểm tra chữ ký, khớp số tiền bằng chữ và bằng số và tài khoản đủ số dư.",
+      "2554": "Đếm tiền giấy, tiền xu và séc bằng tay hoặc máy đếm tiền để chuẩn bị nộp hoặc chuyển cho chi nhánh, ngân hàng trung ương."
+    }
+  },
+  "43-4141.00": {"title_vi": "Nhân viên mở tài khoản"},
+  "43-4131.00": {"title_vi": "Nhân viên tiếp nhận hồ sơ vay"},
+  "43-4041.00": {"title_vi": "Nhân viên kiểm tra, phê duyệt tín dụng"},
+  "43-4011.00": {"title_vi": "Nhân viên nghiệp vụ chứng khoán"},
+  "43-4031.00": {
+    "title_vi": "Cán bộ tiếp nhận hồ sơ hành chính công",
+    "description_vi": "Làm việc văn thư cho toà án, chính quyền địa phương hoặc cơ quan cấp phép. Có thể lập danh sách vụ việc đưa ra xét xử, tìm thông tin cho thẩm phán và toà án, soạn dự thảo chương trình họp, trả lời công văn, giữ sổ sách tài chính, cấp giấy phép, ghi dữ liệu, tổ chức kiểm tra hoặc thu phí.",
+    "tasks_vi": {
+      "23295": "Lên kế hoạch hoặc chỉ đạo việc lưu giữ, bảo quản và số hoá toàn bộ văn bản của chính quyền địa phương.",
+      "23282": "Kiểm tra văn bản pháp lý nộp cho toà án về sự tuân thủ luật và thủ tục.",
+      "23278": "Ghi kết quả giải quyết vụ việc, lệnh của toà hoặc thoả thuận nộp án phí.",
+      "23288": "Trả lời người dân về thủ tục tư pháp, lịch ra toà, ngày xét xử, hoãn phiên, lệnh, giấy triệu tập hoặc nộp phạt.",
+      "23283": "Làm việc văn phòng chung như ghi chép, đánh máy, đọc soát công văn, phát và lưu biểu mẫu, đặt lịch hẹn."
+    }
+  },
+  "43-4061.00": {"title_vi": "Cán bộ xét duyệt hồ sơ chính sách"},
+  "43-5071.00": {
+    "title_vi": "Nhân viên kho, giao nhận hàng",
+    "description_vi": "Kiểm tra và ghi chép hàng nhập, hàng xuất liên quan đến tồn kho. Xác nhận, ghi nhận hàng hoá, vật tư nhập về và thu xếp vận chuyển sản phẩm. Có thể chuẩn bị hàng để gửi đi.",
+    "tasks_vi": {
+      "20276": "Kiểm tra hàng trong lô và đối chiếu với chứng từ như bảng kê, hoá đơn hoặc đơn hàng.",
+      "4742": "Đề nghị cấp và cất giữ vật tư đóng gói để duy trì tồn kho.",
+      "4737": "Lập chứng từ như lệnh sản xuất, vận đơn hoặc lệnh xuất hàng để điều chuyển vật tư.",
+      "20277": "Đóng gói, niêm phong, dán nhãn hoặc dán tem để chuẩn bị gửi hàng bằng dụng cụ cầm tay, dụng cụ điện hoặc máy in cước.",
+      "4739": "Ghi dữ liệu lô hàng như trọng lượng, cước phí, chỗ trống, hư hỏng hoặc chênh lệch để báo cáo và kế toán."
+    }
+  },
+  "43-5111.00": {"title_vi": "Nhân viên cân đo, kiểm đếm hàng"},
+  "43-5061.00": {"title_vi": "Nhân viên kế hoạch và điều độ sản xuất"},
+  "43-5021.00": {
+    "title_vi": "Nhân viên giao hàng, chuyển phát",
+    "description_vi": "Nhận và giao thư từ, tài liệu, bưu kiện và các món khác giữa các phòng ban hoặc trực tiếp tới doanh nghiệp khác, đi bộ, xe đạp, xe máy, ô tô hoặc phương tiện công cộng.",
+    "tasks_vi": {
+      "20903": "Giao và nhận hồ sơ bệnh án, mẫu xét nghiệm và thuốc giữa bệnh viện và các cơ sở y tế.",
+      "7010": "Đi bộ, đi xe đạp, lái xe hoặc đi phương tiện công cộng tới nơi giao.",
+      "7011": "Xếp hàng lên xe theo danh sách, bảo đảm xếp đúng và cẩn thận với hàng nguy hiểm.",
+      "7013": "Nhận hàng cần giao và thông tin người nhận như tên, địa chỉ, số điện thoại và yêu cầu giao, qua điện thoại, bộ đàm hoặc trực tiếp.",
+      "7015": "Giao thư từ và hàng như báo, tài liệu, bưu kiện giữa các phòng ban, tới doanh nghiệp khác và nhà riêng."
+    }
+  },
+  "43-5052.00": {"title_vi": "Nhân viên bưu tá"},
+  "43-5051.00": {
+    "title_vi": "Nhân viên bưu cục",
+    "description_vi": "Làm các việc ở bưu cục như nhận thư và bưu kiện; bán tem, bưu thiếp và phong bì có tem; lập và bán phiếu chuyển tiền; chia thư vào ô, túi; kiểm tra cước thư.",
+    "tasks_vi": {
+      "11322": "Cân thư và bưu kiện, tính cước theo loại, khối lượng và nơi đến, dán tem đúng cước.",
+      "11326": "Kiểm tra cước và tình trạng đóng gói của thư, bưu kiện trước khi gửi.",
+      "11330": "Phân loại thư đến và đi theo loại và nơi đến bằng tay hoặc máy chia, máy quét điện tử.",
+      "11323": "Lấy chữ ký người nhận thư bảo đảm hoặc chuyển phát nhanh.",
+      "11327": "Trả lời câu hỏi về quy định, thủ tục bưu chính, cước phí và hộp thư."
+    }
+  },
+  "43-5053.00": {"title_vi": "Nhân viên phân loại bưu phẩm"},
+  "43-5032.00": {
+    "title_vi": "Điều phối viên",
+    "description_vi": "Xếp lịch và điều người, đội, thiết bị hoặc xe dịch vụ để chở vật tư, hàng hoá, hành khách, hoặc đi lắp đặt, bảo dưỡng, sửa chữa khẩn cấp bên ngoài. Có thể dùng bộ đàm, điện thoại hoặc máy tính để giao việc và tổng hợp số liệu, báo cáo tiến độ.",
+    "tasks_vi": {
+      "2723": "Xếp lịch hoặc điều người, đội, thiết bị, xe dịch vụ tới đúng nơi theo yêu cầu của khách qua bộ đàm hoặc điện thoại.",
+      "2727": "Lập lịch làm việc và lịch chạy xe hằng ngày.",
+      "2726": "Trao đổi với khách hoặc cấp trên để giải quyết câu hỏi, vấn đề hay yêu cầu dịch vụ, thiết bị.",
+      "2725": "Chuyển lệnh làm việc, lời nhắn hoặc thông tin giữa các đội, cấp trên và nhân viên kiểm tra hiện trường qua điện thoại hoặc bộ đàm.",
+      "2728": "Nhận hoặc lập lệnh làm việc."
+    }
+  },
+  "43-5031.00": {"title_vi": "Tổng đài viên khẩn cấp (113, 114, 115)"}
+}

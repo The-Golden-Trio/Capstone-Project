@@ -1,0 +1,79 @@
+{
+  "15-2011.00": {
+    "title_vi": "Chuyên viên định phí bảo hiểm (actuary)",
+    "description_vi": "Phân tích số liệu thống kê như tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu, rồi lập bảng xác suất để dự báo rủi ro và nghĩa vụ chi trả quyền lợi trong tương lai. Có thể xác định mức phí bảo hiểm và quỹ dự phòng cần có để bảo đảm chi trả.",
+    "tasks_vi": {
+      "24015": "Phân tích dữ liệu để xác định mức phí bảo hiểm, quỹ dự phòng và nghĩa vụ cần có để bảo đảm chi trả quyền lợi trong tương lai.",
+      "3501": "Phân tích thông tin thống kê để ước tính tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu.",
+      "3502": "Thiết kế, rà soát và hỗ trợ vận hành các sản phẩm bảo hiểm, niên kim và hưu trí, đánh giá khả năng tài chính và tính phí.",
+      "3503": "Phối hợp với lập trình viên, chuyên viên thẩm định, kế toán, chuyên viên bồi thường và lãnh đạo để xây dựng dòng sản phẩm mới hoặc cải tiến sản phẩm hiện có.",
+      "3506": "Tư vấn cho khách hàng theo hợp đồng, với vai trò chuyên gia tư vấn."
+    }
+  },
+  "15-2021.00": {
+    "title_vi": "Nhà toán học",
+    "description_vi": "Nghiên cứu toán học cơ bản hoặc ứng dụng các phương pháp toán vào khoa học, quản lý và các lĩnh vực khác. Giải quyết vấn đề trong nhiều lĩnh vực bằng phương pháp toán học.",
+    "tasks_vi": {
+      "24002": "Hướng dẫn người khác về các kỹ thuật toán học.",
+      "7369": "Cập nhật kiến thức chuyên ngành bằng cách đọc tạp chí, trao đổi với các nhà toán học khác và dự hội thảo.",
+      "7374": "Phát triển nguyên lý mới và mối liên hệ mới giữa các nguyên lý toán học đã có để thúc đẩy khoa học toán học.",
+      "20191": "Phổ biến kết quả nghiên cứu bằng báo cáo, bài báo khoa học hoặc trình bày tại hội thảo.",
+      "7372": "Xây dựng các bộ giả thiết và khảo sát hệ quả của từng bộ."
+    }
+  },
+  "15-2031.00": {
+    "title_vi": "Chuyên viên nghiên cứu vận trù",
+    "description_vi": "Xây dựng và áp dụng mô hình toán học cùng các phương pháp tối ưu để tạo và diễn giải thông tin, giúp ban quản lý ra quyết định và xây dựng chính sách. Có thể thu thập, phân tích dữ liệu và phát triển phần mềm hỗ trợ ra quyết định. Có thể thiết kế mạng lưới tối ưu về thời gian, chi phí hoặc hậu cần.",
+    "tasks_vi": {
+      "20952": "Trình bày kết quả mô hình hoá và phân tích dữ liệu cho ban quản lý hoặc người dùng cuối.",
+      "7382": "Xác định yêu cầu dữ liệu, thu thập và kiểm định thông tin bằng phán đoán và kiểm định thống kê.",
+      "7380": "Kiểm định và thử nghiệm mô hình để bảo đảm phù hợp, và điều chỉnh mô hình khi cần.",
+      "7384": "Soạn báo cáo cho ban quản lý, xác định và đánh giá vấn đề, đề xuất giải pháp.",
+      "7378": "Phối hợp với các bộ phận để triển khai thành công giải pháp đã chọn."
+    }
+  },
+  "15-2041.00": {
+    "title_vi": "Nhà thống kê",
+    "description_vi": "Phát triển hoặc áp dụng lý thuyết và phương pháp toán học, thống kê để thu thập, sắp xếp, diễn giải và tóm tắt dữ liệu số thành thông tin dùng được. Có thể chuyên về thống kê sinh học, nông nghiệp, kinh doanh hoặc kinh tế. Gồm cả nhà thống kê toán học và thống kê điều tra.",
+    "tasks_vi": {
+      "8956": "Phân tích và diễn giải dữ liệu thống kê để tìm khác biệt đáng kể trong quan hệ giữa các nguồn thông tin.",
+      "8958": "Đánh giá phương pháp và quy trình thu thập dữ liệu để bảo đảm tính hợp lệ, phù hợp, hiệu quả và chính xác.",
+      "8953": "Báo cáo kết quả phân tích thống kê bằng đồ thị, biểu đồ và bảng.",
+      "21100": "Xác định phương pháp thống kê nào phù hợp với nhu cầu người dùng hoặc câu hỏi nghiên cứu.",
+      "8957": "Chuẩn bị dữ liệu để xử lý: sắp xếp, kiểm tra sai sót, điều chỉnh và gán trọng số cho dữ liệu thô."
+    }
+  },
+  "15-2041.01": {
+    "title_vi": "Nhà thống kê sinh học",
+    "description_vi": "Phát triển và áp dụng lý thuyết, phương pháp thống kê sinh học vào nghiên cứu khoa học sự sống.",
+    "tasks_vi": {
+      "16254": "Rút ra kết luận hoặc đưa ra dự đoán dựa trên dữ liệu tổng hợp và phân tích thống kê.",
+      "16265": "Phân tích dữ liệu lâm sàng hoặc điều tra bằng các phương pháp như phân tích dọc, mô hình hiệu ứng hỗn hợp, hồi quy logistic và xây dựng mô hình.",
+      "16250": "Viết kế hoạch phân tích chi tiết, mô tả phân tích và kết quả cho đề cương nghiên cứu hoặc báo cáo.",
+      "16246": "Tính cỡ mẫu cần thiết cho nghiên cứu lâm sàng.",
+      "16243": "Đọc tài liệu mới, dự hội thảo và trao đổi với đồng nghiệp để cập nhật phương pháp trong thống kê sinh học, dược học, khoa học sự sống và khoa học xã hội."
+    }
+  },
+  "15-2051.02": {
+    "title_vi": "Chuyên viên quản lý dữ liệu lâm sàng",
+    "description_vi": "Vận dụng kiến thức y tế và quản trị cơ sở dữ liệu để phân tích dữ liệu lâm sàng, phát hiện và báo cáo xu hướng.",
+    "tasks_vi": {
+      "16281": "Thiết kế và kiểm định cơ sở dữ liệu lâm sàng, kể cả thiết kế và thử các quy tắc kiểm tra logic.",
+      "16284": "Xử lý dữ liệu lâm sàng: tiếp nhận, nhập, xác minh và lưu trữ thông tin.",
+      "16280": "Tạo truy vấn dữ liệu dựa trên các lỗi và thiếu sót phát hiện khi nhập liệu để xử lý vấn đề.",
+      "16285": "Lập kế hoạch quản lý dữ liệu cho từng dự án, gồm mã hoá, báo cáo, chuyển dữ liệu, khoá cơ sở dữ liệu và quy trình làm việc.",
+      "16279": "Theo dõi năng suất và chất lượng công việc để bảo đảm tuân thủ quy trình chuẩn."
+    }
+  },
+  "15-2099.01": {
+    "title_vi": "Kỹ thuật viên tin sinh học",
+    "description_vi": "Áp dụng nguyên lý và phương pháp tin sinh học để hỗ trợ nhà khoa học trong các lĩnh vực như dược phẩm, công nghệ y tế, công nghệ sinh học, sinh học tính toán và tin học y sinh. Dùng công cụ tin sinh học để trực quan hoá, phân tích và diễn giải dữ liệu phân tử. Có thể xây dựng và duy trì cơ sở dữ liệu xử lý thông tin gen và sinh học.",
+    "tasks_vi": {
+      "17721": "Kiểm tra chất lượng dữ liệu đầu vào và kết quả phân tích, dự đoán.",
+      "17710": "Trao đổi với nhà nghiên cứu, bác sĩ hoặc nhân viên CNTT để xác định nhu cầu dữ liệu, yêu cầu lập trình và hỗ trợ các nghiên cứu dựa trên cơ sở dữ liệu.",
+      "17709": "Phân tích hoặc xử lý dữ liệu tin sinh học bằng phần mềm, ứng dụng thống kê hoặc kỹ thuật khai phá dữ liệu.",
+      "17714": "Ghi lại mọi thay đổi, chỉnh sửa và sự cố của cơ sở dữ liệu.",
+      "17708": "Theo dõi hiệu năng cơ sở dữ liệu và thực hiện bảo trì, nâng cấp hoặc sửa chữa cần thiết."
+    }
+  }
+}

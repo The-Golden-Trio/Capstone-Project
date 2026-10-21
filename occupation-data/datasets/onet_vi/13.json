@@ -1,0 +1,200 @@
+{
+  "13-2011.00": {
+    "title_vi": "Kế toán viên và kiểm toán viên",
+    "description_vi": "Kiểm tra, phân tích và diễn giải sổ sách kế toán để lập báo cáo tài chính, tư vấn, hoặc kiểm toán và đánh giá báo cáo do người khác lập. Xây dựng hoặc tư vấn hệ thống ghi nhận chi phí và các số liệu tài chính, ngân sách.",
+    "tasks_vi": {
+      "21514": "Lập, kiểm tra hoặc phân tích sổ sách, báo cáo tài chính để đánh giá độ chính xác, đầy đủ và tuân thủ chuẩn mực.",
+      "21533": "Xử lý hoá đơn để thanh toán.",
+      "21516": "Rà soát tài khoản để tìm chênh lệch và đối chiếu.",
+      "21526": "Tính thuế phải nộp và lập tờ khai thuế, bảo đảm tuân thủ yêu cầu nộp và báo cáo thuế.",
+      "21515": "Lập bút toán điều chỉnh."
+    }
+  },
+  "13-2082.00": {"title_vi": "Nhân viên làm dịch vụ khai thuế"},
+  "13-2031.00": {"title_vi": "Chuyên viên phân tích ngân sách"},
+  "13-2081.00": {
+    "title_vi": "Cán bộ thuế",
+    "description_vi": "Xác định nghĩa vụ thuế hoặc thu thuế của cá nhân, doanh nghiệp theo luật và quy định.",
+    "tasks_vi": {
+      "5293": "Gửi thông báo cho người nộp thuế khi chậm nộp.",
+      "5291": "Trao đổi với người nộp thuế hoặc người đại diện về vấn đề, luật và quy định liên quan đến tờ khai, giải quyết sai sót.",
+      "5294": "Báo cho người nộp thuế khoản nộp thừa hoặc thiếu, hoàn tiền hoặc yêu cầu nộp thêm.",
+      "5290": "Lưu hồ sơ từng trường hợp, gồm thông tin liên hệ và các việc đã làm.",
+      "5292": "Liên hệ người nộp thuế bằng thư hoặc điện thoại để xử lý chênh lệch và yêu cầu giấy tờ chứng minh."
+    }
+  },
+  "13-1041.00": {
+    "title_vi": "Chuyên viên tuân thủ",
+    "description_vi": "Kiểm tra, đánh giá và điều tra việc đáp ứng điều kiện hoặc tuân thủ luật và quy định về giấy phép, hợp đồng, và các hoạt động thanh tra, phân tích tuân thủ khác.",
+    "tasks_vi": {
+      "21446": "Cảnh báo người vi phạm về lỗi hoặc mức phạt.",
+      "21447": "Xem xét hồ sơ, giấy tờ để thu thập thông tin về điều kiện hoặc trách nhiệm pháp lý.",
+      "21448": "Tư vấn cho người được cấp phép và các cá nhân, tổ chức về quy định cấp phép, giấy phép.",
+      "21449": "Lập báo cáo về hoạt động, đánh giá, kiến nghị hoặc quyết định.",
+      "21450": "Báo cáo vi phạm luật hoặc quy định cho cơ quan có thẩm quyền."
+    }
+  },
+  "13-1041.04": {"title_vi": "Thanh tra tài sản công"},
+  "13-1041.07": {"title_vi": "Chuyên viên đăng ký và pháp chế sản phẩm"},
+  "13-2061.00": {"title_vi": "Thanh tra tài chính, ngân hàng"},
+  "13-2099.04": {"title_vi": "Chuyên viên điều tra gian lận"},
+  "13-1199.04": {"title_vi": "Chuyên viên kế hoạch liên tục kinh doanh"},
+  "13-1199.07": {"title_vi": "Chuyên viên quản lý an ninh doanh nghiệp"},
+  "13-1031.00": {
+    "title_vi": "Chuyên viên giám định, bồi thường bảo hiểm",
+    "description_vi": "Xem xét các hồ sơ bồi thường đã giải quyết để bảo đảm chi trả đúng quy trình của công ty. Trao đổi với luật sư về hồ sơ cần khởi kiện. Có thể trực tiếp giải quyết bồi thường bảo hiểm.",
+    "tasks_vi": {
+      "21417": "Kiểm tra đơn yêu cầu bồi thường và hồ sơ để xác định phạm vi bảo hiểm.",
+      "21418": "Phân tích thông tin thu được khi điều tra và báo cáo kết quả, kiến nghị.",
+      "21426": "Chi trả và xử lý hồ sơ bồi thường trong hạn mức được giao.",
+      "21423": "Điều tra, đánh giá và giải quyết bồi thường, vận dụng kiến thức chuyên môn và kỹ năng giao tiếp để xử lý công bằng, nhanh và giảm tỉ lệ tổn thất.",
+      "21428": "Xác minh và phân tích dữ liệu dùng để giải quyết bồi thường, bảo đảm yêu cầu hợp lệ và chi trả đúng quy trình."
+    }
+  },
+  "13-1032.00": {"title_vi": "Giám định viên thiệt hại xe cơ giới"},
+  "13-2053.00": {"title_vi": "Chuyên viên thẩm định hợp đồng bảo hiểm"},
+  "13-2072.00": {
+    "title_vi": "Chuyên viên tín dụng",
+    "description_vi": "Đánh giá, phê duyệt hoặc đề xuất duyệt các khoản vay thương mại, bất động sản hoặc tín dụng. Tư vấn cho người vay về tình hình tài chính và cách trả nợ. Gồm cả chuyên viên vay thế chấp, thu hồi nợ, quản lý khoản vay và thẩm định khoản vay.",
+    "tasks_vi": {
+      "3408": "Gặp người vay để lấy thông tin cho hồ sơ vay và trả lời thắc mắc về quy trình.",
+      "3409": "Phân tích tình hình tài chính, lịch sử tín dụng và định giá tài sản của người vay để xem có cho vay được không.",
+      "3407": "Duyệt khoản vay trong hạn mức được giao và chuyển hồ sơ vượt hạn mức lên cấp trên.",
+      "3410": "Giải thích cho khách các loại khoản vay, hình thức tín dụng và điều khoản đi kèm.",
+      "3416": "Chuyển hồ sơ cho chuyên viên phân tích tín dụng xác minh và đề xuất."
+    }
+  },
+  "13-2041.00": {"title_vi": "Chuyên viên phân tích tín dụng"},
+  "13-2071.00": {"title_vi": "Chuyên viên tư vấn tín dụng, quản lý nợ"},
+  "13-2052.00": {
+    "title_vi": "Chuyên viên tư vấn tài chính cá nhân",
+    "description_vi": "Tư vấn kế hoạch tài chính cho khách hàng dựa trên hiểu biết về thuế, chiến lược đầu tư, chứng khoán, bảo hiểm, hưu trí và bất động sản. Đánh giá tài sản, nợ, dòng tiền, bảo hiểm, tình trạng thuế và mục tiêu tài chính của khách. Có thể mua bán tài sản tài chính cho khách.",
+    "tasks_vi": {
+      "12907": "Phỏng vấn khách để biết thu nhập, chi tiêu, bảo hiểm, tình trạng thuế, mục tiêu tài chính, khẩu vị rủi ro và thông tin khác cần cho kế hoạch tài chính.",
+      "12904": "Phân tích thông tin tài chính của khách để tìm chiến lược đạt mục tiêu.",
+      "12905": "Trả lời câu hỏi của khách về mục đích và chi tiết của kế hoạch, chiến lược tài chính.",
+      "20183": "Định kỳ xem lại tài khoản và kế hoạch của khách để quyết định có cần điều chỉnh khi đời sống, kinh tế hoặc kết quả đầu tư thay đổi.",
+      "20184": "Quản lý danh mục đầu tư của khách và cập nhật kế hoạch."
+    }
+  },
+  "13-2099.01": {
+    "title_vi": "Chuyên viên phân tích tài chính định lượng",
+    "description_vi": "Phát triển kỹ thuật định lượng phục vụ đầu tư chứng khoán, cổ phiếu, định giá công cụ tài chính. Xây mô hình toán học, thống kê cho quản trị rủi ro, tối ưu tài sản, định giá hoặc phân tích giá trị tương đối.",
+    "tasks_vi": {
+      "15997": "Áp dụng kỹ thuật toán học, thống kê vào các vấn đề tài chính thực tế như định giá phái sinh, giao dịch chứng khoán, quản trị rủi ro hoặc quản lý thị trường.",
+      "15995": "Nghiên cứu hoặc phát triển công cụ phân tích cho việc xây dựng, tối ưu danh mục, đo hiệu quả, phân tích lãi lỗ hoặc mô hình định giá.",
+      "15989": "Diễn giải kết quả phân tích tài chính.",
+      "15990": "Phát triển năng lực phân tích lõi và thư viện mô hình bằng kỹ thuật thống kê, định lượng, kinh tế lượng nâng cao.",
+      "15991": "Xác định hoặc đề xuất đặc tả mô hình và phương pháp thu thập dữ liệu."
+    }
+  },
+  "13-2023.00": {
+    "title_vi": "Thẩm định viên bất động sản",
+    "description_vi": "Thẩm định bất động sản và ước tính giá trị hợp lý. Có thể định mức thuế theo biểu quy định.",
+    "tasks_vi": {
+      "21549": "Tính giá trị cuối cùng của tài sản, có tính khấu hao, chi phí thay thế, so sánh với tài sản tương tự và khả năng sinh lời.",
+      "21550": "Viết báo cáo ước tính giá trị, nêu phương pháp và đáp ứng tiêu chuẩn thẩm định.",
+      "21569": "Chụp ảnh bên trong và bên ngoài tài sản để hỗ trợ định giá, chứng minh kết quả và hoàn thành báo cáo.",
+      "21565": "Tra cứu hồ sơ công khai về giao dịch như mua bán, cho thuê và định giá.",
+      "21570": "Thu thập giá đất của địa phương và thông tin giao dịch các tài sản lân cận để làm căn cứ định giá."
+    }
+  },
+  "13-2022.00": {"title_vi": "Thẩm định viên tài sản, động sản"},
+  "13-1071.00": {
+    "title_vi": "Chuyên viên nhân sự",
+    "description_vi": "Tuyển dụng, sàng lọc, phỏng vấn hoặc bố trí nhân sự trong tổ chức. Có thể làm nhiều mảng nhân sự khác.",
+    "tasks_vi": {
+      "18861": "Giải thích chính sách, quy trình, luật, tiêu chuẩn và quy định về nhân sự.",
+      "18859": "Tuyển nhân viên và làm giấy tờ tuyển dụng.",
+      "18864": "Cập nhật hướng dẫn và luật về bình đẳng cơ hội việc làm và quyền của người lao động khuyết tật.",
+      "18866": "Lập và lưu hồ sơ nhân sự như tuyển dụng, nghỉ việc, nghỉ phép, điều chuyển hoặc thăng chức trên phần mềm quản lý nhân sự.",
+      "18852": "Xử lý vấn đề quan hệ lao động như cáo buộc quấy rối, khiếu nại công việc hoặc mối lo khác của nhân viên."
+    }
+  },
+  "13-1141.00": {"title_vi": "Chuyên viên lương thưởng, phúc lợi và phân tích công việc"},
+  "13-1075.00": {"title_vi": "Chuyên viên quan hệ lao động"},
+  "13-1151.00": {"title_vi": "Chuyên viên đào tạo và phát triển"},
+  "13-1161.00": {
+    "title_vi": "Chuyên viên nghiên cứu thị trường và marketing",
+    "description_vi": "Nghiên cứu thị trường địa phương, khu vực, toàn quốc hoặc trực tuyến. Thu thập thông tin để xác định doanh số tiềm năng của sản phẩm, dịch vụ hoặc lên kế hoạch chiến dịch marketing, quảng cáo. Có thể thu thập thông tin về đối thủ, giá, doanh số, cách tiếp thị và phân phối. Có thể dùng chiến thuật marketing tìm kiếm, phân tích số liệu web và đề xuất cách tăng thứ hạng tìm kiếm.",
+    "tasks_vi": {
+      "5434": "Lập báo cáo kết quả, trình bày dữ liệu bằng biểu đồ và diễn giải kết quả phức tạp thành văn bản.",
+      "5437": "Tìm và cung cấp thông tin giúp công ty xác định vị thế trên thị trường.",
+      "5439": "Nghiên cứu ý kiến người tiêu dùng và chiến lược marketing, phối hợp với chuyên gia marketing, thống kê, thăm dò dư luận và chuyên gia khác.",
+      "5433": "Thu thập và phân tích dữ liệu về nhân khẩu học, sở thích, nhu cầu và thói quen mua của khách để tìm thị trường tiềm năng và yếu tố ảnh hưởng nhu cầu.",
+      "5443": "Thiết kế và đánh giá phương pháp thu thập dữ liệu như khảo sát, thăm dò hoặc bảng hỏi, hoặc thu xếp lấy dữ liệu sẵn có."
+    }
+  },
+  "13-1161.01": {"title_vi": "Chuyên viên marketing tìm kiếm (SEO, SEM)"},
+  "13-1082.00": {
+    "title_vi": "Chuyên viên quản lý dự án",
+    "description_vi": "Phân tích và điều phối tiến độ, thời hạn, mua sắm, nhân sự và ngân sách của sản phẩm hoặc dịch vụ theo từng dự án. Dẫn dắt và hướng dẫn công việc của nhân viên kỹ thuật. Có thể là đầu mối liên hệ với khách hàng.",
+    "tasks_vi": {
+      "21463": "Trao đổi với các bên liên quan chính để xác định yêu cầu và mục tiêu dự án.",
+      "21467": "Xác định nhu cầu của dự án như nguồn lực, nhân sự, tài chính bằng cách xem mục tiêu và tiến độ.",
+      "21481": "Bàn giao sản phẩm dự án cho khách, bảo đảm đạt tiêu chuẩn chất lượng.",
+      "21464": "Trao đổi với thành viên dự án để phát hiện và giải quyết vấn đề.",
+      "21473": "Lên kế hoạch, tiến độ và điều phối hoạt động dự án để kịp thời hạn."
+    }
+  },
+  "13-1121.00": {
+    "title_vi": "Chuyên viên tổ chức hội nghị, sự kiện",
+    "description_vi": "Điều phối nhân viên, đối tác hoặc khách hàng để chuẩn bị cho các buổi họp, sự kiện hoặc hội nghị.",
+    "tasks_vi": {
+      "1209": "Trao đổi với khách để xác định mục tiêu và yêu cầu của sự kiện như cuộc họp, hội thảo, hội nghị.",
+      "1212": "Kiểm tra hoá đơn của sự kiện và duyệt thanh toán.",
+      "1214": "Điều phối dịch vụ cho sự kiện như chỗ ở, đi lại cho người tham dự, địa điểm, ăn uống, biển bảng, trưng bày, nhu cầu đặc biệt, in ấn và an ninh.",
+      "1215": "Thu xếp thiết bị âm thanh hình ảnh, phương tiện, trưng bày và các nhu cầu khác.",
+      "1211": "Trao đổi với nhân viên tại địa điểm tổ chức để thống nhất chi tiết."
+    }
+  },
+  "13-1081.00": {
+    "title_vi": "Chuyên viên logistics",
+    "description_vi": "Phân tích và điều phối các hoạt động logistics của doanh nghiệp hoặc tổ chức. Chịu trách nhiệm toàn bộ vòng đời sản phẩm, gồm mua, phân phối, phân bổ nội bộ, giao hàng và thanh lý.",
+    "tasks_vi": {
+      "8932": "Xây dựng và giữ quan hệ tốt với nhân sự chủ chốt của khách hàng liên quan đến logistics.",
+      "8933": "Tìm hiểu nhu cầu của khách và hành động để đáp ứng.",
+      "8950": "Quản lý nhà thầu phụ: xem đề xuất, xây dựng yêu cầu kết quả và làm cầu nối giữa nhà thầu phụ với tổ chức.",
+      "8943": "Soạn đề xuất kèm tài liệu dự toán.",
+      "8937": "Cùng khách xem lại kết quả logistics so với mục tiêu, chuẩn và cam kết dịch vụ."
+    }
+  },
+  "13-1081.01": {"title_vi": "Kỹ sư logistics"},
+  "13-1081.02": {"title_vi": "Chuyên viên phân tích logistics"},
+  "13-1041.08": {"title_vi": "Đại lý khai báo hải quan"},
+  "13-1023.00": {
+    "title_vi": "Chuyên viên mua hàng",
+    "description_vi": "Mua máy móc, thiết bị, dụng cụ, phụ tùng, vật tư hoặc dịch vụ cần cho hoạt động của cơ sở. Mua nguyên liệu thô hoặc bán thành phẩm cho sản xuất. Có thể đàm phán hợp đồng.",
+    "tasks_vi": {
+      "1146": "Theo dõi và tuân thủ luật, quy định liên quan.",
+      "1142": "Mua hàng chất lượng cao nhất với giá thấp nhất và đúng số lượng.",
+      "1159": "Xây dựng chính sách, quy trình chào thầu và mua sắm hàng hoá, dịch vụ.",
+      "1143": "Lập đơn đặt hàng, mời chào giá và xem xét đề nghị mua hàng hoá, dịch vụ.",
+      "1157": "Viết và rà soát yêu cầu kỹ thuật của sản phẩm, nắm kiến thức kỹ thuật về hàng hoá, dịch vụ cần mua."
+    }
+  },
+  "13-1021.00": {"title_vi": "Nhân viên thu mua nông sản"},
+  "13-1022.00": {"title_vi": "Nhân viên thu mua hàng bán buôn, bán lẻ"},
+  "13-1051.00": {
+    "title_vi": "Chuyên viên dự toán chi phí",
+    "description_vi": "Lập dự toán chi phí cho sản xuất sản phẩm, dự án xây dựng hoặc dịch vụ để ban quản lý dự thầu hoặc định giá. Có thể chuyên một loại dịch vụ hoặc sản phẩm.",
+    "tasks_vi": {
+      "80": "Phân tích bản vẽ và hồ sơ để dự toán thời gian, chi phí, vật liệu và nhân công.",
+      "83": "Trao đổi với kỹ sư, kiến trúc sư, chủ đầu tư, nhà thầu và thầu phụ về thay đổi, điều chỉnh dự toán.",
+      "20846": "Thu thập dữ liệu chi phí cũ để dự toán cho sản phẩm hiện tại hoặc tương lai.",
+      "81": "Đánh giá hiệu quả chi phí của sản phẩm, dự án hoặc dịch vụ, theo dõi chi phí thực tế so với giá dự thầu trong quá trình thực hiện.",
+      "82": "Trao đổi với khách, nhà cung cấp, các phòng ban khác hoặc đốc công để lập dự toán và xử lý vướng mắc."
+    }
+  },
+  "13-1199.06": {
+    "title_vi": "Người kinh doanh online",
+    "description_vi": "Kinh doanh bán lẻ hoàn toàn trên mạng. Có thể lập chiến lược kinh doanh, nhập hàng, quản lý tồn kho, làm marketing, xử lý và giao đơn hàng, cân đối sổ sách tài chính.",
+    "tasks_vi": {
+      "15718": "Xử lý đơn hàng: đóng gói hàng và giấy tờ để gửi trực tiếp, hoặc chuyển đơn cho nhà sản xuất, đơn vị phân phối.",
+      "15731": "Nhận và xử lý thanh toán của khách qua dịch vụ giao dịch điện tử.",
+      "15710": "Tạo, quản lý hoặc tự động hoá đơn hàng, hoá đơn bằng phần mềm quản lý đơn hàng.",
+      "15709": "Gửi email xác nhận giao dịch và giao hàng.",
+      "15728": "Trả lời khách qua email, điện thoại hoặc tin nhắn về thắc mắc, khiếu nại liên quan đến sản phẩm, chính sách hoặc giao hàng."
+    }
+  }
+}

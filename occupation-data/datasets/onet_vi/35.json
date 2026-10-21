@@ -1,0 +1,178 @@
+{
+  "35-1011.00": {
+    "title_vi": "Bếp trưởng",
+    "description_vi": "Chỉ đạo và có thể trực tiếp tham gia sơ chế, nêm nếm và nấu các món salad, súp, cá, thịt, rau, tráng miệng và món khác. Có thể lên thực đơn, định giá món, đặt hàng nguyên liệu và giữ sổ sách.",
+    "tasks_vi": {
+      "11129": "Giám sát việc giữ vệ sinh để bảo đảm nhân viên làm đúng tiêu chuẩn và quy định.",
+      "11135": "Hướng dẫn đầu bếp và nhân viên cách sơ chế, nấu, trang trí và trình bày món ăn.",
+      "11132": "Giám sát và điều phối công việc của đầu bếp và nhân viên chế biến.",
+      "11131": "Đặt hàng thực phẩm và vật tư cần thiết để bếp vận hành hiệu quả.",
+      "11133": "Kiểm tra nguyên liệu, thiết bị và khu làm việc để bảo đảm đạt tiêu chuẩn."
+    }
+  },
+  "35-1012.00": {
+    "title_vi": "Tổ trưởng chế biến và phục vụ ăn uống",
+    "description_vi": "Trực tiếp giám sát và điều phối nhân viên chế biến và phục vụ món ăn.",
+    "tasks_vi": {
+      "2145": "Giải quyết khiếu nại của khách về dịch vụ ăn uống.",
+      "2146": "Đào tạo nhân viên về chế biến, phục vụ, vệ sinh và an toàn.",
+      "2150": "Phân công nhiệm vụ, trách nhiệm và vị trí làm việc theo yêu cầu công việc.",
+      "2157": "Đưa hoá đơn và nhận thanh toán.",
+      "18714": "Làm các việc tài chính như quản lý tiền mặt, chuẩn bị nộp tiền và tính lương."
+    }
+  },
+  "35-2011.00": {
+    "title_vi": "Đầu bếp đồ ăn nhanh",
+    "description_vi": "Chế biến và nấu món ăn tại cửa hàng đồ ăn nhanh có thực đơn hạn chế. Chỉ làm một số món cơ bản, thường bằng thiết bị nấu công suất lớn chuyên dụng.",
+    "tasks_vi": {
+      "5058": "Đọc phiếu gọi món hoặc nghe yêu cầu của khách, chế biến và nấu theo đúng yêu cầu.",
+      "5053": "Giữ tiêu chuẩn vệ sinh, sức khoẻ và an toàn ở khu làm việc.",
+      "5054": "Làm sạch khu sơ chế, mặt bếp và dụng cụ.",
+      "5055": "Vận hành thiết bị nấu công suất lớn như bếp nướng, nồi chiên ngập dầu hoặc vỉ nướng phẳng.",
+      "5057": "Nhận gọi món, đồ uống và thu tiền của khách."
+    }
+  },
+  "35-2012.00": {
+    "title_vi": "Đầu bếp bếp ăn tập thể",
+    "description_vi": "Chế biến và nấu số lượng lớn món ăn cho các cơ sở như trường học, bệnh viện hoặc căng tin.",
+    "tasks_vi": {
+      "21148": "Theo dõi và ghi nhiệt độ thực phẩm để bảo đảm an toàn thực phẩm.",
+      "9488": "Nấu theo thực đơn, chế độ ăn kiêng hoặc dinh dưỡng đặc biệt, hoặc theo số suất cần phục vụ.",
+      "21149": "Xoay vòng và bảo quản nguyên liệu, dùng hàng cũ trước.",
+      "9491": "Rửa nồi, chảo, bát đĩa, dụng cụ và thiết bị nấu.",
+      "9487": "Chia và phục vụ suất ăn cho người ở, nhân viên hoặc khách của cơ sở."
+    }
+  },
+  "35-2013.00": {
+    "title_vi": "Đầu bếp gia đình",
+    "description_vi": "Nấu ăn tại nhà riêng. Gồm cả đầu bếp riêng.",
+    "tasks_vi": {
+      "9503": "Gọt, rửa, sơ chế và nấu rau, thịt, nướng bánh mì và bánh ngọt.",
+      "20896": "Làm nguội, đóng gói, dán nhãn và cấp đông món ăn để dùng sau, kèm hướng dẫn hâm nóng.",
+      "9501": "Lên thực đơn theo nhu cầu và chế độ ăn kiêng của chủ nhà.",
+      "9502": "Mua hoặc đặt thực phẩm, đồ dùng và thiết bị bếp.",
+      "9504": "Nấu ăn tại nhà theo công thức hoặc khẩu vị của chủ nhà, lo mọi bữa cho gia đình và có thể cả nhân viên giúp việc."
+    }
+  },
+  "35-2014.00": {
+    "title_vi": "Đầu bếp nhà hàng",
+    "description_vi": "Chế biến, nêm nếm và nấu các món như súp, thịt, rau hoặc tráng miệng ở nhà hàng. Có thể đặt hàng nguyên liệu, giữ sổ sách, định giá món hoặc lên thực đơn.",
+    "tasks_vi": {
+      "18723": "Bảo đảm thực phẩm được bảo quản và nấu đúng nhiệt độ bằng cách điều chỉnh lò nướng, bếp nướng và lò quay.",
+      "18722": "Kiểm tra và làm sạch khu chế biến như thiết bị, mặt bàn và khu ra món để bảo đảm an toàn vệ sinh thực phẩm.",
+      "2173": "Chia phần, bày và trang trí món, chuyển cho phục vụ hoặc khách.",
+      "18724": "Bảo đảm thực phẩm và nguyên liệu tươi bằng cách kiểm tra chất lượng, theo dõi hàng cũ và mới, dùng hàng cũ trước.",
+      "2170": "Nêm nếm và nấu theo công thức hoặc theo kinh nghiệm, phán đoán của bản thân."
+    }
+  },
+  "35-2015.00": {
+    "title_vi": "Đầu bếp món nấu nhanh",
+    "description_vi": "Nấu theo yêu cầu nhiều món chỉ cần thời gian chế biến ngắn. Có thể nhận gọi món và phục vụ khách tại quầy hoặc bàn.",
+    "tasks_vi": {
+      "2187": "Làm sạch thiết bị chế biến, khu làm việc, quầy và bàn.",
+      "18725": "Bổ sung đồ dùng bếp, xoay vòng thực phẩm và đóng dấu ngày giờ lên đồ trong tủ lạnh.",
+      "2192": "Ra món từ quầy giữ nóng, bày ra đĩa và phục vụ khách tại bàn hoặc quầy.",
+      "2188": "Sắp xếp thứ tự làm món để các món dọn cùng lúc chín cùng lúc.",
+      "2189": "Nướng, nấu và chiên các món như khoai tây chiên, trứng và bánh kếp."
+    }
+  },
+  "35-2021.00": {
+    "title_vi": "Nhân viên sơ chế thực phẩm",
+    "description_vi": "Làm nhiều việc sơ chế ngoài nấu nướng, như chuẩn bị món nguội và hải sản có vỏ, thái thịt, pha cà phê hoặc trà.",
+    "tasks_vi": {
+      "18728": "Làm sạch và khử trùng khu làm việc, thiết bị, dụng cụ, bát đĩa và dao dĩa.",
+      "2204": "Hỗ trợ đầu bếp và nhân viên bếp các việc cần thiết, đưa cho đầu bếp đồ cần dùng.",
+      "18730": "Đo và ghi nhiệt độ thực phẩm và nơi bảo quản như tủ lạnh, tủ đông.",
+      "2210": "Chuyển thực phẩm, thiết bị và dụng cụ giữa kho và khu làm việc.",
+      "2208": "Đổ rác và làm sạch thùng rác trong bếp."
+    }
+  },
+  "35-3011.00": {
+    "title_vi": "Nhân viên pha chế (bartender)",
+    "description_vi": "Pha và phục vụ đồ uống cho khách, trực tiếp hoặc qua nhân viên phục vụ.",
+    "tasks_vi": {
+      "2227": "Rửa ly, dụng cụ và thiết bị quầy bar.",
+      "2223": "Thu tiền đồ uống đã phục vụ.",
+      "2225": "Đối chiếu tiền thu được.",
+      "2224": "Kiểm tra giấy tờ tuỳ thân để xác nhận khách đủ tuổi mua đồ uống có cồn.",
+      "2230": "Lau dọn quầy bar, khu làm việc và bàn."
+    }
+  },
+  "35-3023.00": {
+    "title_vi": "Nhân viên cửa hàng đồ ăn nhanh và quầy phục vụ",
+    "description_vi": "Nhận gọi món và phục vụ đồ ăn, đồ uống. Phục vụ khách tại quầy hoặc từ quầy giữ nóng. Có thể thu tiền và chuẩn bị đồ ăn, đồ uống.",
+    "tasks_vi": {
+      "23100": "Nhận thanh toán của khách và trả tiền thừa.",
+      "23110": "Phục vụ khách ở cửa hàng chuyên đồ ăn nhanh, giá rẻ, mang đi.",
+      "23104": "Nhận và ghi đơn của khách, tính tiền bằng máy tính tiền hoặc bằng tay.",
+      "23103": "Đối chiếu tiền thu và chi trong máy tính tiền.",
+      "23099": "Trao đổi với khách về đơn hàng, góp ý và khiếu nại."
+    }
+  },
+  "35-3023.01": {
+    "title_vi": "Nhân viên pha chế cà phê (barista)",
+    "description_vi": "Pha chế hoặc phục vụ cà phê đặc biệt và các loại đồ uống khác. Phục vụ đồ ăn như bánh nướng hoặc bánh mì kẹp.",
+    "tasks_vi": {
+      "17582": "Làm sạch hoặc khử trùng khu làm việc, dụng cụ và thiết bị.",
+      "17588": "Nhận và xử lý thanh toán của khách.",
+      "17581": "Pha chế hoặc phục vụ đồ uống nóng, lạnh như cà phê, espresso, cà phê xay đá hoặc trà.",
+      "17591": "Nhận đơn của khách và chuyển cho đồng nghiệp chuẩn bị.",
+      "17583": "Dọn dẹp khu phục vụ và chỗ ngồi."
+    }
+  },
+  "35-3031.00": {
+    "title_vi": "Nhân viên phục vụ bàn",
+    "description_vi": "Nhận gọi món và phục vụ đồ ăn, đồ uống cho khách tại bàn trong nhà hàng.",
+    "tasks_vi": {
+      "2276": "Thu tiền của khách.",
+      "2275": "Kiểm tra giấy tờ tuỳ thân để bảo đảm khách đủ tuổi dùng đồ uống có cồn.",
+      "2277": "Ghi món khách gọi vào phiếu, ghi nhớ hoặc nhập vào máy để chuyển cho bếp.",
+      "2279": "Hỏi thăm khách có hài lòng với bữa ăn không và xử lý khi có vấn đề.",
+      "2278": "Nhận gọi đồ ăn, đồ uống của khách."
+    }
+  },
+  "35-3041.00": {
+    "title_vi": "Nhân viên phục vụ suất ăn ngoài nhà hàng",
+    "description_vi": "Phục vụ đồ ăn cho người ở ngoài môi trường nhà hàng, như phòng khách sạn, phòng bệnh, cơ sở chăm sóc nội trú hoặc trên xe.",
+    "tasks_vi": {
+      "11152": "Bày suất ăn lên đĩa hoặc khay theo đơn hoặc hướng dẫn.",
+      "11150": "Làm sạch hoặc tiệt trùng bát đĩa, dụng cụ, thiết bị và khu bếp.",
+      "11149": "Theo dõi việc phát suất ăn, bảo đảm giao đúng người và đúng yêu cầu như chế độ ăn kiêng.",
+      "11151": "Kiểm tra khay để bảo đảm đủ món cần có.",
+      "11153": "Xếp lên khay các đồ đi kèm như dao dĩa, khăn ăn và gia vị."
+    }
+  },
+  "35-9011.00": {
+    "title_vi": "Nhân viên dọn bàn nhà hàng, căng tin và phụ quầy bar",
+    "description_vi": "Hỗ trợ phục vụ ăn uống: lau bàn, dọn bát đĩa bẩn, thay khăn trải bàn, bày bàn, bổ sung khăn, dao dĩa, ly và bát đĩa sạch, cấp đồ cho quầy bar và mang nước, gia vị, cà phê cho khách.",
+    "tasks_vi": {
+      "11178": "Vận hành máy tính tiền.",
+      "11169": "Mang nước đá, cà phê, bánh mì hoặc bơ cho khách.",
+      "11165": "Gạt thức ăn thừa, xếp chồng bát đĩa bẩn và mang vào bếp để rửa.",
+      "11163": "Lau bàn ghế bằng khăn ẩm hoặc thay khăn trải bàn bẩn.",
+      "11164": "Bày bàn với khăn sạch, gia vị và đồ dùng khác."
+    }
+  },
+  "35-9021.00": {
+    "title_vi": "Nhân viên rửa bát",
+    "description_vi": "Rửa bát đĩa, làm sạch bếp, thiết bị và dụng cụ chế biến.",
+    "tasks_vi": {
+      "11186": "Rửa bát đĩa, ly, dao dĩa, nồi chảo bằng máy hoặc bằng tay.",
+      "11188": "Giữ khu bếp, thiết bị và dụng cụ sạch sẽ, gọn gàng.",
+      "11187": "Cất bát đĩa, dụng cụ và đồ nấu sạch vào nơi quy định.",
+      "11190": "Quét hoặc chà sàn.",
+      "11189": "Bổ sung thực phẩm hoặc dụng cụ vào quầy phục vụ, tủ, tủ lạnh hoặc quầy salad."
+    }
+  },
+  "35-9031.00": {
+    "title_vi": "Nhân viên đón tiếp nhà hàng, quán cà phê",
+    "description_vi": "Chào đón khách, xếp chỗ ngồi tại bàn hoặc khu chờ, và góp phần bảo đảm chất lượng cơ sở và dịch vụ.",
+    "tasks_vi": {
+      "2296": "Đưa thực đơn cho khách.",
+      "2297": "Chào khách và xếp khách ngồi tại bàn hoặc khu chờ.",
+      "2302": "Giữ liên lạc với bếp, quản lý, nhân viên phục vụ và khách để mọi chi tiết bữa ăn được lo chu đáo và giải quyết mối quan tâm của khách.",
+      "18749": "Xếp khách vào bàn phù hợp với nhu cầu và theo vòng để các nhân viên phục vụ nhận số bàn hợp lý.",
+      "18750": "Trò chuyện với khách để biết họ có hài lòng với món ăn và dịch vụ không, xử lý khiếu nại hoặc tiếp chuyện."
+    }
+  }
+}

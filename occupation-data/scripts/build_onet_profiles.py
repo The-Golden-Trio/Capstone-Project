@@ -31,6 +31,11 @@ FILES = [
     "work_styles",
     "essential_skills",
     "transferable_skills",
+    "knowledge",
+    "task_statements",
+    "work_context",
+    "job_zones",
+    "related_occupations",
 ]
 
 ATTRIBUTION = [

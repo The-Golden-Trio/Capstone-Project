@@ -1,0 +1,403 @@
+{
+  "_meta": {
+    "status": "NHAP_CHO_DUYET",
+    "note": "Bảng thuật ngữ và hồ sơ nhóm tiếng Việt cho các nghề ngoài IT lấy từ O*NET 31.0. Nhóm soạn nháp ngày 2026-10-20, chưa có chuyên gia duyệt. Script build_all_onet_profiles.py đọc file này."
+  },
+  "groups": {
+    "11": {
+      "name": "Management Occupations",
+      "name_vi": "Quản lý",
+      "summary": "Nhóm nghề lập kế hoạch, điều hành và chịu trách nhiệm kết quả của một tổ chức hoặc một bộ phận: giám đốc, trưởng phòng các mảng như tài chính, nhân sự, marketing, sản xuất, y tế, giáo dục. Người làm nghề ra quyết định, phân bổ ngân sách và con người, và báo cáo cho cấp cao hơn. Phần lớn đi lên từ chuyên môn sau nhiều năm làm việc.",
+      "downsides": [
+        "Chịu trách nhiệm cho kết quả của cả bộ phận, kể cả những việc mình không trực tiếp làm.",
+        "Phải ra quyết định khó về ngân sách và con người.",
+        "Giờ làm thường dài và khó tách khỏi đời sống riêng."
+      ]
+    },
+    "13": {
+      "name": "Business and Financial Operations Occupations",
+      "name_vi": "Kinh doanh và tài chính",
+      "summary": "Nhóm nghề vận hành phần kinh doanh và tài chính của tổ chức: kế toán, kiểm toán, phân tích tài chính, thuế, mua hàng, nhân sự, tổ chức sự kiện, tư vấn quản lý. Công việc xoay quanh số liệu, quy định và tài liệu, thường làm trong văn phòng.",
+      "downsides": [
+        "Nhiều việc phải chính xác tuyệt đối; một sai sót nhỏ về số liệu hay quy định có thể gây hậu quả lớn.",
+        "Áp lực cao vào các kỳ chốt sổ, quyết toán hoặc hạn nộp báo cáo.",
+        "Phải liên tục cập nhật luật, chuẩn mực và quy định mới."
+      ]
+    },
+    "15": {
+      "name": "Computer and Mathematical Occupations",
+      "name_vi": "Toán học và thống kê",
+      "summary": "Trong danh mục này, nhóm chỉ gồm các nghề toán ứng dụng ngoài IT: nhà toán học, nhà thống kê, chuyên viên định phí bảo hiểm, nghiên cứu vận trù. Người làm nghề xây mô hình, phân tích dữ liệu và dùng kết quả để hỗ trợ quyết định. Các nghề máy tính đã nằm trong 22 nghề IT.",
+      "downsides": [
+        "Công việc trừu tượng, kết quả khó giải thích cho người không có nền toán.",
+        "Thường cần bằng cấp cao và nhiều năm học.",
+        "Ngồi máy tính gần như cả ngày."
+      ]
+    },
+    "17": {
+      "name": "Architecture and Engineering Occupations",
+      "manager_role": "11-9041.00",
+      "name_vi": "Kiến trúc và kỹ thuật",
+      "summary": "Nhóm nghề thiết kế, tính toán và giám sát việc tạo ra công trình, máy móc, hệ thống: kiến trúc sư, kỹ sư xây dựng, cơ khí, điện, hoá, môi trường, cùng các kỹ thuật viên và người vẽ kỹ thuật. Công việc kết hợp tính toán, bản vẽ và đi hiện trường.",
+      "downsides": [
+        "Sai sót trong thiết kế có thể gây nguy hiểm cho người dùng và tốn kém rất lớn.",
+        "Nhiều vị trí phải đi công trường hoặc nhà máy, chịu thời tiết và tiếng ồn.",
+        "Dự án thường bị ép tiến độ và ngân sách."
+      ]
+    },
+    "19": {
+      "name": "Life, Physical, and Social Science Occupations",
+      "manager_role": "11-9041.00",
+      "name_vi": "Khoa học tự nhiên và xã hội",
+      "summary": "Nhóm nghề nghiên cứu để hiểu thế giới tự nhiên và con người: nhà sinh học, hoá học, vật lý, địa chất, môi trường, kinh tế học, tâm lý học, xã hội học, cùng các kỹ thuật viên phòng thí nghiệm. Công việc gồm thiết kế thí nghiệm, thu thập và phân tích dữ liệu, viết báo cáo khoa học.",
+      "downsides": [
+        "Kết quả nghiên cứu đến chậm, nhiều thí nghiệm thất bại.",
+        "Phụ thuộc vào tài trợ và ngân sách nghiên cứu.",
+        "Nhiều vị trí đòi bằng thạc sĩ hoặc tiến sĩ."
+      ]
+    },
+    "21": {
+      "name": "Community and Social Service Occupations",
+      "name_vi": "Cộng đồng và công tác xã hội",
+      "summary": "Nhóm nghề hỗ trợ con người vượt qua khó khăn về tâm lý, gia đình, sức khoẻ hay cuộc sống: nhân viên công tác xã hội, tư vấn tâm lý, tư vấn học đường, tư vấn nghiện, nhân viên y tế cộng đồng. Công việc chủ yếu là lắng nghe, đánh giá nhu cầu và kết nối người cần giúp với dịch vụ phù hợp.",
+      "downsides": [
+        "Gánh nặng cảm xúc lớn khi thường xuyên tiếp xúc với hoàn cảnh khó khăn.",
+        "Có thể gặp người đang khủng hoảng, giận dữ hoặc hung hăng.",
+        "Thu nhập thường không tương xứng với áp lực công việc."
+      ]
+    },
+    "23": {
+      "name": "Legal Occupations",
+      "name_vi": "Pháp lý",
+      "summary": "Nhóm nghề làm việc với pháp luật: luật sư, thẩm phán, trọng tài, thư ký toà án, trợ lý pháp lý. Công việc gồm nghiên cứu luật, soạn văn bản, tư vấn và tranh tụng.",
+      "downsides": [
+        "Khối lượng đọc và viết rất lớn, thời hạn nộp hồ sơ không thể trễ.",
+        "Thường làm việc với các bên đang tranh chấp và căng thẳng.",
+        "Cần học lâu và có chứng chỉ hành nghề."
+      ]
+    },
+    "25": {
+      "name": "Educational Instruction and Library Occupations",
+      "manager_role": "11-9032.00",
+      "name_vi": "Giáo dục và thư viện",
+      "summary": "Nhóm nghề dạy học và hỗ trợ việc học: giáo viên từ mầm non tới đại học, giảng viên dạy nghề, giáo viên giáo dục đặc biệt, trợ giảng, thủ thư. Công việc gồm soạn bài, giảng dạy, đánh giá người học và làm việc với phụ huynh hoặc nhà trường.",
+      "downsides": [
+        "Khối lượng việc ngoài giờ dạy lớn: soạn bài, chấm bài, họp.",
+        "Phải xử lý hành vi khó của người học và kỳ vọng của phụ huynh.",
+        "Thu nhập ở nhiều vị trí không cao so với mức bằng cấp yêu cầu."
+      ]
+    },
+    "27": {
+      "name": "Arts, Design, Entertainment, Sports, and Media Occupations",
+      "name_vi": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "summary": "Nhóm nghề sáng tạo nội dung và trình diễn: nhà thiết kế đồ hoạ, thời trang, nội thất, diễn viên, nhạc sĩ, vận động viên, huấn luyện viên, phóng viên, biên tập viên, nhiếp ảnh gia, kỹ thuật viên âm thanh và hình ảnh. Kết quả công việc thường được người khác nhìn thấy và đánh giá trực tiếp.",
+      "downsides": [
+        "Thu nhập bấp bênh, nhiều người làm theo dự án hoặc tự do.",
+        "Cạnh tranh cao, nhiều người theo đuổi mà ít vị trí ổn định.",
+        "Lịch làm việc thất thường, hay làm buổi tối và cuối tuần."
+      ]
+    },
+    "29": {
+      "name": "Healthcare Practitioners and Technical Occupations",
+      "manager_role": "11-9111.00",
+      "name_vi": "Y tế chuyên môn và kỹ thuật y tế",
+      "summary": "Nhóm nghề trực tiếp chẩn đoán, điều trị và chăm sóc người bệnh, cùng các kỹ thuật viên y tế: bác sĩ, điều dưỡng, dược sĩ, nha sĩ, chuyên viên vật lý trị liệu, kỹ thuật viên xét nghiệm và chẩn đoán hình ảnh. Công việc đòi kiến thức chuyên sâu, chứng chỉ hành nghề và trách nhiệm cao với tính mạng người khác.",
+      "downsides": [
+        "Sai sót có thể ảnh hưởng tới sức khoẻ hoặc tính mạng người bệnh.",
+        "Thường làm ca, trực đêm, cuối tuần và lễ tết.",
+        "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+        "Thời gian học và lấy chứng chỉ hành nghề dài."
+      ]
+    },
+    "31": {
+      "name": "Healthcare Support Occupations",
+      "manager_role": "11-9111.00",
+      "name_vi": "Hỗ trợ y tế",
+      "summary": "Nhóm nghề hỗ trợ đội ngũ y tế và chăm sóc người bệnh: hộ lý, trợ lý điều dưỡng, trợ lý nha khoa, trợ lý vật lý trị liệu, nhân viên chăm sóc tại nhà. Công việc gồm chăm sóc cơ bản, chuẩn bị dụng cụ, hỗ trợ thủ thuật và ghi chép.",
+      "downsides": [
+        "Việc nặng về thể chất: đứng lâu, nâng đỡ người bệnh.",
+        "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+        "Thu nhập thường thấp so với khối lượng và áp lực công việc."
+      ]
+    },
+    "33": {
+      "name": "Protective Service Occupations",
+      "name_vi": "Dịch vụ bảo vệ an ninh và an toàn",
+      "summary": "Nhóm nghề bảo vệ người và tài sản: cảnh sát, lính cứu hoả, nhân viên bảo vệ, cứu hộ, quản giáo, điều tra viên. Công việc gồm tuần tra, ứng phó sự cố, điều tra và giữ trật tự.",
+      "downsides": [
+        "Có thể đối mặt với nguy hiểm thể chất và người hung hăng.",
+        "Làm theo ca, trực đêm, cuối tuần và lễ tết.",
+        "Áp lực tâm lý lớn khi phải xử lý tình huống khẩn cấp."
+      ]
+    },
+    "35": {
+      "name": "Food Preparation and Serving Related Occupations",
+      "manager_role": "11-9051.00",
+      "name_vi": "Chế biến và phục vụ ăn uống",
+      "summary": "Nhóm nghề nấu ăn và phục vụ khách: đầu bếp, phụ bếp, nhân viên pha chế, phục vụ bàn, nhân viên quán ăn nhanh, quản lý bếp. Công việc diễn ra trong nhịp nhanh, nhất là vào giờ cao điểm.",
+      "downsides": [
+        "Đứng gần như cả ca, làm trong bếp nóng và dễ bị bỏng, đứt tay.",
+        "Làm buổi tối, cuối tuần và lễ tết khi người khác nghỉ.",
+        "Hay phải tiếp khách khó tính, áp lực giờ cao điểm."
+      ]
+    },
+    "37": {
+      "name": "Building and Grounds Cleaning and Maintenance Occupations",
+      "name_vi": "Vệ sinh và bảo dưỡng toà nhà, cảnh quan",
+      "summary": "Nhóm nghề giữ cho toà nhà, khuôn viên và cảnh quan sạch sẽ, an toàn: nhân viên vệ sinh, tạp vụ, nhân viên chăm sóc cây xanh, diệt côn trùng, tổ trưởng vệ sinh. Công việc chủ yếu là lao động chân tay theo quy trình.",
+      "downsides": [
+        "Việc nặng về thể chất, nhiều động tác lặp lại.",
+        "Tiếp xúc với hoá chất tẩy rửa, bụi bẩn hoặc thời tiết ngoài trời.",
+        "Thu nhập thấp và ít cơ hội thăng tiến."
+      ]
+    },
+    "39": {
+      "name": "Personal Care and Service Occupations",
+      "name_vi": "Chăm sóc và dịch vụ cá nhân",
+      "summary": "Nhóm nghề phục vụ trực tiếp nhu cầu cá nhân của khách: thợ làm tóc, chăm sóc da và móng, huấn luyện viên thể hình, hướng dẫn viên du lịch, chăm sóc trẻ em, chăm sóc người cao tuổi, nhân viên giải trí. Công việc gắn với thái độ phục vụ và quan hệ với khách quen.",
+      "downsides": [
+        "Thu nhập phụ thuộc vào lượng khách và có thể thất thường.",
+        "Làm buổi tối, cuối tuần, khi khách có thời gian rảnh.",
+        "Phải giữ thái độ tốt cả khi gặp khách khó chịu."
+      ]
+    },
+    "41": {
+      "name": "Sales and Related Occupations",
+      "name_vi": "Bán hàng",
+      "summary": "Nhóm nghề bán sản phẩm và dịch vụ: nhân viên bán lẻ, thu ngân, đại diện bán hàng, môi giới bất động sản, đại lý bảo hiểm, nhân viên kinh doanh kỹ thuật. Công việc xoay quanh tìm khách, tư vấn, thuyết phục và chốt đơn.",
+      "downsides": [
+        "Thu nhập thường gắn với doanh số, áp lực chỉ tiêu theo tháng hoặc quý.",
+        "Bị từ chối nhiều, cần chịu được thất bại liên tục.",
+        "Ở bán lẻ, đứng lâu và làm cả cuối tuần, lễ tết."
+      ]
+    },
+    "43": {
+      "name": "Office and Administrative Support Occupations",
+      "manager_role": "11-3012.00",
+      "name_vi": "Văn phòng và hỗ trợ hành chính",
+      "summary": "Nhóm nghề giữ cho văn phòng vận hành trơn tru: thư ký, lễ tân, nhân viên hành chính, nhập liệu, chăm sóc khách hàng qua điện thoại, kế toán viên sổ sách, điều phối kho vận, nhân viên bưu chính. Công việc theo quy trình, nhiều giấy tờ và giao tiếp.",
+      "downsides": [
+        "Nhiều việc lặp lại và theo quy trình cố định.",
+        "Ngồi máy tính hoặc nghe điện thoại gần như cả ngày.",
+        "Nhiều việc nhập liệu, sắp xếp giấy tờ đang dần được tự động hoá."
+      ]
+    },
+    "45": {
+      "name": "Farming, Fishing, and Forestry Occupations",
+      "manager_role": "11-9013.00",
+      "name_vi": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+      "summary": "Nhóm nghề trồng trọt, chăn nuôi, đánh bắt và khai thác rừng: lao động nông trại, công nhân thu hoạch, người vận hành máy nông nghiệp, ngư dân, công nhân lâm nghiệp, người phân loại nông sản. Công việc gắn với thời tiết và mùa vụ.",
+      "downsides": [
+        "Làm ngoài trời, chịu nắng mưa và nhiệt độ khắc nghiệt.",
+        "Việc nặng, có nguy cơ tai nạn với máy móc và động vật.",
+        "Thu nhập theo mùa vụ, phụ thuộc thời tiết và giá cả."
+      ]
+    },
+    "47": {
+      "name": "Construction and Extraction Occupations",
+      "manager_role": "11-9021.00",
+      "name_vi": "Xây dựng và khai khoáng",
+      "summary": "Nhóm nghề trực tiếp xây dựng, sửa chữa công trình và khai thác khoáng sản: thợ xây, thợ mộc, thợ điện, thợ ống nước, thợ hàn kết cấu, công nhân mỏ, người vận hành máy thi công, đốc công. Công việc làm tại công trường, theo bản vẽ và quy định an toàn.",
+      "downsides": [
+        "Nguy cơ tai nạn lao động cao: làm trên cao, gần máy móc nặng và điện.",
+        "Làm ngoài trời, chịu thời tiết, tiếng ồn và bụi.",
+        "Việc nặng về thể chất, có thể ảnh hưởng sức khoẻ lâu dài."
+      ]
+    },
+    "49": {
+      "name": "Installation, Maintenance, and Repair Occupations",
+      "name_vi": "Lắp đặt, bảo trì và sửa chữa",
+      "summary": "Nhóm nghề lắp đặt, bảo trì và sửa chữa máy móc, thiết bị, phương tiện: thợ sửa ô tô, kỹ thuật viên điện lạnh, bảo trì máy công nghiệp, sửa chữa thiết bị điện tử, kỹ thuật viên máy bay. Công việc gồm chẩn đoán lỗi, thay thế linh kiện và kiểm tra an toàn.",
+      "downsides": [
+        "Thường làm trong tư thế khó, không gian chật, bẩn dầu mỡ.",
+        "Có nguy cơ tai nạn với điện, máy móc và vật nặng.",
+        "Có thể bị gọi sửa gấp ngoài giờ khi thiết bị hỏng."
+      ]
+    },
+    "51": {
+      "name": "Production Occupations",
+      "manager_role": "11-3051.00",
+      "name_vi": "Sản xuất",
+      "summary": "Nhóm nghề trực tiếp làm ra sản phẩm trong nhà máy và xưởng: công nhân lắp ráp, vận hành máy, thợ hàn, thợ may, công nhân chế biến thực phẩm, kiểm tra chất lượng, vận hành nhà máy điện và xử lý nước, tổ trưởng sản xuất. Công việc theo dây chuyền và quy trình chuẩn.",
+      "downsides": [
+        "Nhiều động tác lặp lại, nhịp làm do tốc độ máy quyết định.",
+        "Làm ca, kể cả ca đêm, trong môi trường ồn và có thể có hoá chất.",
+        "Có nguy cơ tai nạn với máy móc."
+      ]
+    },
+    "53": {
+      "name": "Transportation and Material Moving Occupations",
+      "name_vi": "Vận tải và bốc dỡ hàng hoá",
+      "summary": "Nhóm nghề vận chuyển người và hàng hoá: tài xế xe tải, xe buýt, phi công, thuyền viên, điều phối viên, công nhân bốc xếp, vận hành xe nâng, cần cẩu. Công việc gắn với phương tiện, lịch trình và an toàn giao thông.",
+      "downsides": [
+        "Ngồi lái hoặc vận hành máy nhiều giờ liền, dễ ảnh hưởng sức khoẻ.",
+        "Lịch làm việc thất thường, có chuyến dài ngày xa nhà.",
+        "Sai sót có thể gây tai nạn nghiêm trọng cho mình và người khác."
+      ]
+    }
+  },
+  "job_zones": {
+    "1": {
+      "label_vi": "Ít hoặc không cần chuẩn bị",
+      "education_vi": "Một số nghề cần tốt nghiệp THPT.",
+      "experience_vi": "Gần như không cần kinh nghiệm liên quan.",
+      "training_vi": "Vài ngày tới vài tháng được người có kinh nghiệm kèm tại chỗ."
+    },
+    "2": {
+      "label_vi": "Cần chuẩn bị một ít",
+      "education_vi": "Thường cần tốt nghiệp THPT.",
+      "experience_vi": "Có ít kinh nghiệm hoặc kiến thức liên quan là lợi thế.",
+      "training_vi": "Vài tháng tới một năm đào tạo tại chỗ."
+    },
+    "3": {
+      "label_vi": "Cần chuẩn bị ở mức vừa",
+      "education_vi": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "experience_vi": "Cần kinh nghiệm liên quan ở mức trung bình, ví dụ vài năm học việc hoặc làm việc.",
+      "training_vi": "Có thể cần một tới hai năm đào tạo tại chỗ."
+    },
+    "4": {
+      "label_vi": "Cần chuẩn bị nhiều",
+      "education_vi": "Thường cần bằng đại học.",
+      "experience_vi": "Cần nhiều kinh nghiệm liên quan, thường vài năm.",
+      "training_vi": "Vài tháng tới một năm đào tạo tại chỗ."
+    },
+    "5": {
+      "label_vi": "Cần chuẩn bị rất nhiều",
+      "education_vi": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "experience_vi": "Cần nhiều kinh nghiệm, thường từ năm năm trở lên.",
+      "training_vi": "Thường đã được đào tạo bài bản trước khi vào nghề, ít cần đào tạo tại chỗ."
+    }
+  },
+  "downside_rules": {
+    "_note": "Mỗi mục Work Context (thang CX 1–5) thành một mặt trái khi nghề cao hơn mặt bằng mọi nghề O*NET từ 1 độ lệch chuẩn trở lên và giá trị gốc từ 3 trở lên. Hai mục cuối dùng tỉ lệ người trả lời (CTP).",
+    "4.C.1.d.1": "Thường xuyên gặp tình huống xung đột với người khác.",
+    "4.C.1.d.2": "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "4.C.1.d.3": "Có thể phải đối mặt với người hung hăng hoặc bạo lực.",
+    "4.C.1.c.1": "Chịu trách nhiệm trực tiếp về sức khoẻ và an toàn của người khác.",
+    "4.C.2.a.1.c": "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "4.C.2.a.1.b": "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió.",
+    "4.C.2.b.1.a": "Làm trong môi trường ồn, gây khó chịu hoặc mất tập trung.",
+    "4.C.2.b.1.b": "Tiếp xúc với nhiệt độ rất nóng hoặc rất lạnh.",
+    "4.C.2.b.1.d": "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu.",
+    "4.C.2.b.1.e": "Làm trong không gian chật hoặc tư thế khó.",
+    "4.C.2.b.1.f": "Chịu rung lắc toàn thân khi vận hành máy hoặc xe.",
+    "4.C.2.c.1.a": "Có tiếp xúc với bức xạ.",
+    "4.C.2.c.1.b": "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "4.C.2.c.1.c": "Phải làm việc trên cao.",
+    "4.C.2.c.1.d": "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc.",
+    "4.C.2.c.1.e": "Làm cạnh máy móc hoặc dụng cụ nguy hiểm, có nguy cơ tai nạn.",
+    "4.C.2.c.1.f": "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt.",
+    "4.C.2.d.1.a": "Ngồi gần như cả ngày.",
+    "4.C.2.d.1.b": "Phải đứng trong phần lớn thời gian làm việc.",
+    "4.C.2.d.1.c": "Phải leo thang, giàn giáo hoặc cột.",
+    "4.C.2.d.1.d": "Phải đi lại hoặc chạy nhiều.",
+    "4.C.2.d.1.e": "Hay phải quỳ, cúi, khom hoặc bò.",
+    "4.C.2.d.1.h": "Hay phải cúi hoặc vặn người.",
+    "4.C.2.d.1.i": "Lặp đi lặp lại cùng một động tác.",
+    "4.C.2.e.1.e": "Phải mặc đồ bảo hộ chuyên dụng như mặt nạ thở, đai an toàn hoặc đồ chống bức xạ.",
+    "4.C.3.a.1": "Sai sót có thể gây hậu quả nghiêm trọng.",
+    "4.C.3.b.7": "Công việc lặp lại nhiều.",
+    "4.C.3.c.1": "Môi trường cạnh tranh cao.",
+    "4.C.3.d.1": "Thường xuyên phải làm gấp cho kịp hạn.",
+    "4.C.3.d.3": "Nhịp làm việc do tốc độ máy móc quyết định.",
+    "4.C.3.d.4": "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "4.C.3.d.8": "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần."
+  },
+  "work_environment_rules": {
+    "_note": "Mỗi mục Work Context (thang CX 1–5) thành một câu khi nghề cao hơn mặt bằng mọi nghề O*NET từ 0,5 độ lệch chuẩn (high) hoặc thấp hơn từ 0,5 độ lệch chuẩn (low). Nghề cao ở cả mục trong nhà và ngoài trời dùng câu indoor_outdoor_mixed. Giờ làm và lịch làm luôn hiện, dùng tỉ lệ người trả lời (CTP).",
+    "4.C.2.a.1.a": {"high": "Phần lớn thời gian làm trong nhà, có điều hoà."},
+    "4.C.2.a.1.c": {"high": "Thường làm ngoài trời, chịu thời tiết."},
+    "4.C.2.a.1.f": {"high": "Thường ngồi trong xe hoặc cabin máy."},
+    "4.C.2.d.1.a": {"high": "Ngồi phần lớn thời gian làm việc."},
+    "4.C.2.d.1.b": {"high": "Đứng phần lớn thời gian làm việc."},
+    "4.C.1.b.1.f": {"high": "Tiếp xúc nhiều với khách hàng hoặc người dân.", "low": "Ít tiếp xúc với khách hàng bên ngoài."},
+    "4.C.1.b.1.e": {"high": "Làm việc theo nhóm là chính.", "low": "Làm việc độc lập nhiều hơn làm theo nhóm."},
+    "4.C.3.a.4": {"high": "Được tự quyết nhiều trong công việc.", "low": "Ít được tự quyết, làm theo chỉ đạo và quy trình."},
+    "4.C.1.a.2.h": {"low": "Ít làm việc qua email."},
+    "indoor_outdoor_mixed": "Làm cả trong văn phòng lẫn ngoài hiện trường.",
+    "hours_over_40": "{pct}% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "regular_schedule_all": "Gần như ai trong nghề cũng làm giờ cố định.",
+    "irregular_schedule": "{pct}% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  },
+  "riasec_phrases": {
+    "_note": "Dùng để viết câu 'hợp với người…' từ hai chiều RIASEC cao nhất và chiều thấp nhất (Holland).",
+    "Realistic": "làm việc bằng tay với máy móc, công cụ, vật thật",
+    "Investigative": "tìm tòi, phân tích và giải quyết vấn đề bằng tư duy",
+    "Artistic": "sáng tạo và tự do thể hiện ý tưởng",
+    "Social": "giúp đỡ, dạy bảo và chăm sóc người khác",
+    "Enterprising": "thuyết phục, dẫn dắt người khác và kinh doanh",
+    "Conventional": "làm việc theo quy trình, chính xác với số liệu và giấy tờ"
+  },
+  "skills": {
+    "Active Learning": "Chủ động học hỏi",
+    "Active Listening": "Lắng nghe chủ động",
+    "Complex Problem Solving": "Giải quyết vấn đề phức tạp",
+    "Coordination": "Phối hợp",
+    "Critical Thinking": "Tư duy phản biện",
+    "Equipment Maintenance": "Bảo dưỡng thiết bị",
+    "Equipment Selection": "Chọn thiết bị và dụng cụ",
+    "Installation": "Lắp đặt",
+    "Instructing": "Hướng dẫn người khác",
+    "Judgment and Decision Making": "Đánh giá và ra quyết định",
+    "Learning Strategies": "Phương pháp học",
+    "Management of Financial Resources": "Quản lý tài chính",
+    "Management of Material Resources": "Quản lý vật tư và trang thiết bị",
+    "Management of Personnel Resources": "Quản lý nhân sự",
+    "Mathematics": "Toán học",
+    "Monitoring": "Theo dõi và đánh giá",
+    "Negotiation": "Đàm phán",
+    "Operation and Control": "Vận hành và điều khiển",
+    "Operations Analysis": "Phân tích yêu cầu",
+    "Operations Monitoring": "Giám sát vận hành",
+    "Persuasion": "Thuyết phục",
+    "Programming": "Lập trình",
+    "Quality Control Analysis": "Kiểm tra chất lượng",
+    "Reading Comprehension": "Đọc hiểu",
+    "Repairing": "Sửa chữa",
+    "Science": "Kiến thức khoa học",
+    "Service Orientation": "Tinh thần phục vụ",
+    "Social Perceptiveness": "Nhạy bén với người khác",
+    "Speaking": "Diễn đạt bằng lời",
+    "Systems Analysis": "Phân tích hệ thống",
+    "Systems Evaluation": "Đánh giá hệ thống",
+    "Technology Design": "Thiết kế công nghệ",
+    "Time Management": "Quản lý thời gian",
+    "Troubleshooting": "Chẩn đoán sự cố",
+    "Writing": "Viết"
+  },
+  "knowledge": {
+    "Administration and Management": "Quản trị và quản lý",
+    "Administrative": "Hành chính văn phòng",
+    "Biology": "Sinh học",
+    "Building and Construction": "Xây dựng",
+    "Chemistry": "Hoá học",
+    "Communications and Media": "Truyền thông",
+    "Computers and Electronics": "Máy tính và điện tử",
+    "Customer and Personal Service": "Dịch vụ khách hàng",
+    "Design": "Thiết kế và bản vẽ kỹ thuật",
+    "Economics and Accounting": "Kinh tế và kế toán",
+    "Education and Training": "Giáo dục và đào tạo",
+    "Engineering and Technology": "Kỹ thuật và công nghệ",
+    "English Language": "Ngôn ngữ (tiếng mẹ đẻ)",
+    "Fine Arts": "Mỹ thuật",
+    "Food Production": "Sản xuất thực phẩm",
+    "Foreign Language": "Ngoại ngữ",
+    "Geography": "Địa lý",
+    "History and Archeology": "Lịch sử và khảo cổ",
+    "Law and Government": "Luật và nhà nước",
+    "Mathematics": "Toán học",
+    "Mechanical": "Cơ khí",
+    "Medicine and Dentistry": "Y khoa và nha khoa",
+    "Personnel and Human Resources": "Nhân sự",
+    "Philosophy and Theology": "Triết học và tôn giáo",
+    "Physics": "Vật lý",
+    "Production and Processing": "Sản xuất và chế biến",
+    "Psychology": "Tâm lý học",
+    "Public Safety and Security": "An toàn và an ninh công cộng",
+    "Sales and Marketing": "Bán hàng và marketing",
+    "Sociology and Anthropology": "Xã hội học và nhân học",
+    "Telecommunications": "Viễn thông",
+    "Therapy and Counseling": "Trị liệu và tham vấn",
+    "Transportation": "Vận tải"
+  }
+}

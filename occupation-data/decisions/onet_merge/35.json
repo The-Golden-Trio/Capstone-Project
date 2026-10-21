@@ -1,0 +1,24 @@
+{
+  "group": "35",
+  "keep": [
+    {
+      "code": "35-2014.00",
+      "name_vi": "Đầu bếp",
+      "absorbs": ["35-1011.00", "35-2011.00", "35-2012.00", "35-2013.00", "35-2015.00", "35-2021.00", "35-9021.00"],
+      "merge_reason": "Cùng trải nghiệm nấu ăn trong bếp, chỉ khác nơi làm (nhà hàng, đồ ăn nhanh, bếp tập thể, gia đình). Rửa bát và sơ chế là việc khởi đầu trong bếp; bếp trưởng là cấp cao nhất."
+    },
+    {
+      "code": "35-3023.01",
+      "name_vi": "Nhân viên pha chế (barista, bartender)",
+      "absorbs": ["35-3011.00"],
+      "merge_reason": "Ở Việt Nam thường tuyển chung là nhân viên pha chế; cà phê và cocktail là hai biến thể."
+    },
+    {
+      "code": "35-3031.00",
+      "name_vi": "Nhân viên phục vụ nhà hàng",
+      "absorbs": ["35-3023.00", "35-3041.00", "35-9011.00", "35-9031.00"],
+      "merge_reason": "Cùng trải nghiệm phục vụ khách ăn uống; đón khách, dọn bàn và phục vụ quầy là các vị trí trong cùng một ca làm."
+    }
+  ],
+  "remove": []
+}

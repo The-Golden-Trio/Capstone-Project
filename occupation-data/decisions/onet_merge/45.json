@@ -1,0 +1,28 @@
+{
+  "group": "45",
+  "keep": [
+    {
+      "code": "45-2092.00",
+      "name_vi": "Lao động trồng trọt",
+      "absorbs": ["45-2041.00", "45-2091.00", "45-1011.00"],
+      "merge_reason": "Phân loại nông sản và lái máy nông nghiệp là các phần việc của trồng trọt; tổ trưởng là cấp cao."
+    },
+    {
+      "code": "45-2093.00",
+      "name_vi": "Lao động chăn nuôi và nuôi trồng thuỷ sản",
+      "absorbs": ["45-2021.00"],
+      "merge_reason": "Nhân giống là một phần việc chuyên sâu của chăn nuôi."
+    },
+    {
+      "code": "45-3031.00",
+      "name_vi": "Ngư dân, người đánh bắt thuỷ sản"
+    },
+    {
+      "code": "45-4011.00",
+      "name_vi": "Công nhân lâm nghiệp",
+      "absorbs": ["45-4021.00", "45-4022.00", "45-4023.00"],
+      "merge_reason": "Đốn cây, vận hành máy khai thác và phân hạng gỗ là các phần việc trong cùng một đội lâm nghiệp."
+    }
+  ],
+  "remove": []
+}

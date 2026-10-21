@@ -1,0 +1,94 @@
+{
+  "group": "29",
+  "_note": "Vệ sinh răng miệng (29-1292) gộp vào Trợ thủ nha khoa (31).",
+  "keep": [
+    {
+      "code": "29-1215.00",
+      "name_vi": "Bác sĩ",
+      "description_vi": "Khám, chẩn đoán và điều trị bệnh: hỏi bệnh, khám lâm sàng, chỉ định xét nghiệm và chẩn đoán hình ảnh, kê đơn, làm thủ thuật, theo dõi người bệnh và tư vấn phòng bệnh. Sau khi học y khoa và thực hành, bác sĩ chọn một chuyên khoa như nội, nhi, sản, tâm thần, gây mê, chẩn đoán hình ảnh hay y học gia đình; chuyên khoa là biến thể của nghề.",
+      "absorbs": ["29-1211.00", "29-1213.00", "29-1214.00", "29-1216.00", "29-1217.00", "29-1218.00", "29-1221.00", "29-1222.00", "29-1223.00", "29-1224.00", "29-1229.01", "29-1229.02", "29-1229.03", "29-1229.04", "29-1229.05", "29-1229.06", "29-1241.00", "29-1071.00", "29-1299.01", "29-1011.00", "29-1081.00"],
+      "merge_reason": "Cùng trải nghiệm khám và điều trị người bệnh; chuyên khoa là biến thể. Trợ lý bác sĩ tương ứng y sĩ ở Việt Nam. Nắn chỉnh cột sống, chân và trị liệu tự nhiên không có vị trí riêng ở Việt Nam."
+    },
+    {
+      "code": "29-1021.00",
+      "name_vi": "Bác sĩ răng hàm mặt (nha sĩ)",
+      "absorbs": ["29-1022.00", "29-1023.00", "29-1024.00"],
+      "merge_reason": "Phẫu thuật hàm mặt, chỉnh nha và phục hình là các chuyên ngành của răng hàm mặt."
+    },
+    {
+      "code": "29-1051.00",
+      "name_vi": "Dược sĩ",
+      "absorbs": ["29-2052.00", "31-9095.00"],
+      "merge_reason": "Dược sĩ trung cấp và nhân viên nhà thuốc là cấp khởi đầu của nghề dược."
+    },
+    {
+      "code": "29-1141.00",
+      "name_vi": "Điều dưỡng",
+      "absorbs": ["29-1141.01", "29-1141.02", "29-1141.03", "29-1141.04", "29-1171.00", "29-2061.00", "29-2053.00", "29-2055.00", "29-9093.00", "31-9099.02"],
+      "merge_reason": "Cùng trải nghiệm chăm sóc người bệnh theo y lệnh; hồi sức, tâm thần, phòng mổ, nội soi và điều dưỡng chuyên khoa là biến thể."
+    },
+    {
+      "code": "29-1161.00",
+      "name_vi": "Hộ sinh",
+      "absorbs": ["29-9099.01"],
+      "merge_reason": "Ở Việt Nam chỉ có một nghề hộ sinh."
+    },
+    {
+      "code": "29-1151.00",
+      "name_vi": "Kỹ thuật viên gây mê hồi sức",
+      "absorbs": ["29-1071.01", "29-1126.00"],
+      "merge_reason": "Ở Việt Nam, hỗ trợ gây mê và trị liệu hô hấp thuộc ngành gây mê hồi sức."
+    },
+    {
+      "code": "29-1123.00",
+      "name_vi": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "absorbs": ["29-1122.00", "29-1127.00", "29-1181.00", "29-1125.00", "29-1128.00", "29-1129.01", "29-1129.02", "29-9091.00", "29-2091.00", "29-2092.00", "31-2021.00", "31-2022.00", "31-2011.00", "31-2012.00", "31-9099.01"],
+      "merge_reason": "Ở Việt Nam, vật lý trị liệu, hoạt động trị liệu, ngôn ngữ trị liệu, thính học, chỉnh hình và các liệu pháp bổ trợ thuộc ngành phục hồi chức năng; phụ tá và kỹ thuật viên là cấp khởi đầu."
+    },
+    {
+      "code": "29-1291.00",
+      "name_vi": "Y học cổ truyền, châm cứu"
+    },
+    {
+      "code": "29-1031.00",
+      "name_vi": "Chuyên viên dinh dưỡng",
+      "absorbs": ["29-2051.00"],
+      "merge_reason": "Kỹ thuật viên dinh dưỡng là cấp khởi đầu."
+    },
+    {
+      "code": "29-1131.00",
+      "name_vi": "Bác sĩ thú y",
+      "absorbs": ["29-2056.00", "31-9096.00"],
+      "merge_reason": "Kỹ thuật viên và trợ lý thú y là cấp khởi đầu."
+    },
+    {
+      "code": "29-2011.00",
+      "name_vi": "Kỹ thuật viên xét nghiệm",
+      "absorbs": ["29-2011.01", "29-2011.02", "29-2011.04", "29-2012.00", "29-2012.01", "31-9097.00", "29-9092.00"],
+      "merge_reason": "Tế bào, di truyền, mô học và lấy máu là các mảng của xét nghiệm y học."
+    },
+    {
+      "code": "29-2034.00",
+      "name_vi": "Kỹ thuật viên chẩn đoán hình ảnh",
+      "absorbs": ["29-2031.00", "29-2032.00", "29-2033.00", "29-2035.00", "29-2036.00", "29-1124.00", "29-2099.01"],
+      "merge_reason": "X-quang, siêu âm, tim mạch, y học hạt nhân, MRI, xạ trị và điện não đều thuộc ngành kỹ thuật hình ảnh y học."
+    },
+    {
+      "code": "29-1041.00",
+      "name_vi": "Kỹ thuật viên khúc xạ, nhãn khoa",
+      "absorbs": ["29-2081.00", "29-2057.00", "29-2099.05", "29-1299.02", "29-1122.01"],
+      "merge_reason": "Đo khúc xạ, cắt kính, kỹ thuật nhãn khoa và phục hồi thị lực cùng thuộc mảng chăm sóc mắt."
+    },
+    {
+      "code": "29-2043.00",
+      "name_vi": "Nhân viên cấp cứu ngoại viện"
+    },
+    {
+      "code": "29-2072.00",
+      "name_vi": "Chuyên viên hồ sơ bệnh án",
+      "absorbs": ["29-2099.08"],
+      "merge_reason": "Hỗ trợ và tiếp nhận người bệnh là việc hành chính của bệnh viện, cùng khối với hồ sơ bệnh án."
+    }
+  ],
+  "remove": []
+}

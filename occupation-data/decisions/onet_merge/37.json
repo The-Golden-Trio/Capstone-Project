@@ -1,0 +1,22 @@
+{
+  "group": "37",
+  "keep": [
+    {
+      "code": "37-2011.00",
+      "name_vi": "Nhân viên vệ sinh và buồng phòng",
+      "absorbs": ["37-2012.00", "37-1011.00", "51-6011.00"],
+      "merge_reason": "Cùng trải nghiệm dọn dẹp theo quy trình, khác nơi làm (toà nhà, khách sạn); giặt là là một bộ phận của buồng phòng. Tổ trưởng là cấp cao của nghề này."
+    },
+    {
+      "code": "37-3011.00",
+      "name_vi": "Công nhân cảnh quan và cây xanh",
+      "absorbs": ["37-1012.00", "37-3012.00", "37-3013.00"],
+      "merge_reason": "Phun thuốc và cắt tỉa cây là các phần việc chuyên biệt của chăm sóc cảnh quan; tổ trưởng là cấp cao."
+    },
+    {
+      "code": "37-2021.00",
+      "name_vi": "Nhân viên kiểm soát côn trùng"
+    }
+  ],
+  "remove": []
+}

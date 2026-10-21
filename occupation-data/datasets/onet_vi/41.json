@@ -1,0 +1,229 @@
+{
+  "41-1011.00": {
+    "title_vi": "Tổ trưởng bán lẻ",
+    "description_vi": "Trực tiếp giám sát và điều phối nhân viên bán lẻ trong một cửa hàng hoặc quầy. Ngoài giám sát, có thể làm việc quản lý như mua hàng, lập ngân sách, kế toán và nhân sự.",
+    "tasks_vi": {
+      "657": "Phục vụ khách: chào hỏi, hỗ trợ và trả lời thắc mắc, khiếu nại của khách.",
+      "660": "Chỉ đạo và giám sát nhân viên bán hàng, kiểm kê, đối chiếu tiền thu hoặc phục vụ khách.",
+      "671": "Kiểm tra hàng để bảo đảm ghi giá và trưng bày đúng, hoạt động đúng như quảng cáo.",
+      "658": "Theo dõi hoạt động bán hàng để bảo đảm khách được phục vụ tốt và nhận hàng chất lượng.",
+      "668": "Hướng dẫn nhân viên xử lý các tình huống bán hàng khó và phức tạp."
+    }
+  },
+  "41-1012.00": {
+    "title_vi": "Tổ trưởng kinh doanh (ngoài bán lẻ)",
+    "description_vi": "Trực tiếp giám sát và điều phối nhân viên kinh doanh không thuộc bán lẻ. Ngoài giám sát, có thể lập ngân sách, làm kế toán và nhân sự.",
+    "tasks_vi": {
+      "9661": "Theo dõi kết quả của nhân viên kinh doanh để bảo đảm đạt mục tiêu.",
+      "9665": "Hỗ trợ nhân viên làm các việc khó hoặc phức tạp.",
+      "20266": "Chỉ đạo và giám sát nhân viên bán hàng, kiểm kê, đối chiếu tiền thu hoặc làm dịch vụ cụ thể.",
+      "9660": "Lắng nghe và giải quyết khiếu nại của khách về dịch vụ, sản phẩm hoặc nhân viên.",
+      "9673": "Lưu sổ sách về mua hàng, bán hàng và đề nghị cấp hàng."
+    }
+  },
+  "41-2011.00": {
+    "title_vi": "Thu ngân",
+    "description_vi": "Thu và chi tiền ở các cơ sở không phải tổ chức tài chính. Có thể dùng máy quét mã, máy tính tiền hoặc thiết bị liên quan. Có thể xử lý giao dịch thẻ tín dụng, thẻ ghi nợ và xác thực séc.",
+    "tasks_vi": {
+      "2400": "Nhận thanh toán bằng tiền mặt, séc, thẻ, phiếu mua hàng hoặc trừ tiền tự động.",
+      "2403": "Chào khách khi vào cửa hàng.",
+      "2401": "Xuất hoá đơn, hoàn tiền, ghi có hoặc trả tiền thừa cho khách.",
+      "18765": "Hỗ trợ khách bằng cách cung cấp thông tin và giải quyết khiếu nại.",
+      "2422": "Theo dõi các quầy thanh toán để bảo đảm đủ tiền lẻ và đủ người."
+    }
+  },
+  "41-2012.00": {
+    "title_vi": "Nhân viên đổi tiền và thu ngân sòng bạc",
+    "description_vi": "Đổi tiền của khách lấy xu, thẻ và phỉnh chơi. Có thể chi trả tiền thắng và lấy chữ ký khách trên biên nhận. Có thể trực quầy ở khu máy đánh bạc, giao tiền cho nhân viên đổi tiền đầu ca, hoặc đếm và kiểm tiền trong ngăn kéo.",
+    "tasks_vi": {
+      "6999": "Ghi chép chính xác các giao dịch đổi tiền, mẫu phê duyệt và đối chiếu giao dịch.",
+      "21152": "Đổi tiền, tín dụng, vé hoặc phỉnh sòng bạc và trả tiền thừa cho khách.",
+      "6998": "Đếm tiền và kiểm tra ngăn kéo tiền.",
+      "21153": "Kiểm tra giấy tờ tuỳ thân để xác nhận tuổi người chơi.",
+      "7003": "Giữ an ninh quầy thu ngân theo quy định."
+    }
+  },
+  "41-2021.00": {
+    "title_vi": "Nhân viên quầy dịch vụ và cho thuê",
+    "description_vi": "Nhận yêu cầu sửa chữa, cho thuê và dịch vụ, thường trực tiếp tại quầy. Có thể giới thiệu các lựa chọn, tính phí và nhận thanh toán.",
+    "tasks_vi": {
+      "678": "Tính tiền hàng hoặc dịch vụ và nhận thanh toán.",
+      "689": "Nhận yêu cầu dịch vụ như cho thuê, sửa chữa, giặt khô và lưu kho.",
+      "687": "Giải thích giá thuê, chính sách và thủ tục.",
+      "691": "Cung cấp thông tin về đồ cho thuê như tình trạng còn hàng, cách dùng hoặc mô tả.",
+      "692": "Tư vấn cho khách cách dùng và bảo quản hàng."
+    }
+  },
+  "41-2022.00": {
+    "title_vi": "Nhân viên bán phụ tùng",
+    "description_vi": "Bán phụ tùng thay thế và thiết bị tại xưởng sửa chữa hoặc cửa hàng phụ tùng.",
+    "tasks_vi": {
+      "2430": "Nhận thanh toán hoặc xin phê duyệt tín dụng.",
+      "20776": "Hỗ trợ khách, như trả lời khiếu nại và báo tình hình phụ tùng đang chờ hàng về.",
+      "20775": "Lấy hàng trong kho giao cho khách, và đặt hàng khi món khách cần đã hết.",
+      "2427": "Nhận và xử lý đơn đặt phụ tùng qua điện thoại.",
+      "20777": "Tìm và dán nhãn phụ tùng, quản lý tồn kho."
+    }
+  },
+  "41-2031.00": {
+    "title_vi": "Nhân viên bán lẻ",
+    "description_vi": "Bán hàng như đồ nội thất, xe cộ, thiết bị gia dụng hoặc quần áo cho người tiêu dùng.",
+    "tasks_vi": {
+      "694": "Chào khách và tìm hiểu khách muốn hoặc cần gì.",
+      "700": "Gợi ý, chọn và giúp khách tìm hàng theo nhu cầu và mong muốn.",
+      "697": "Tính giá bán, tổng tiền và nhận thanh toán tiền mặt hoặc thẻ.",
+      "712": "Chuẩn bị hàng để bán hoặc cho thuê.",
+      "701": "Trả lời câu hỏi về cửa hàng và hàng hoá."
+    }
+  },
+  "41-3011.00": {
+    "title_vi": "Nhân viên kinh doanh quảng cáo",
+    "description_vi": "Bán hoặc chào mời không gian, thời lượng quảng cáo trên ấn phẩm, biển hiệu, truyền hình, phát thanh, internet hoặc nơi công cộng.",
+    "tasks_vi": {
+      "4580": "Giải thích cho khách các hình thức quảng cáo cụ thể sẽ giúp quảng bá sản phẩm, dịch vụ của họ hiệu quả nhất ra sao.",
+      "4579": "Soạn và trình bày nội dung chào bán cho khách mới và cũ để bán chương trình quảng cáo mới, giữ và tăng hợp đồng hiện có.",
+      "4589": "Thu thập và tìm hiểu thông tin về sản phẩm, nhu cầu, vấn đề, lịch sử quảng cáo và cách kinh doanh của khách để chào bán hiệu quả.",
+      "4586": "Báo giá chi phí quảng cáo cho khách.",
+      "4581": "Giữ các khách hàng được giao và phát triển khách hàng mới."
+    }
+  },
+  "41-3021.00": {
+    "title_vi": "Đại lý bảo hiểm",
+    "description_vi": "Bán bảo hiểm nhân thọ, tài sản, tai nạn, sức khoẻ, xe cơ giới hoặc các loại khác. Có thể giới thiệu khách cho môi giới độc lập, tự làm môi giới hoặc làm cho công ty bảo hiểm.",
+    "tasks_vi": {
+      "720": "Thiết kế gói bảo hiểm phù hợp từng khách, thường bao gồm nhiều loại rủi ro.",
+      "721": "Bán nhiều loại hợp đồng bảo hiểm cho doanh nghiệp và cá nhân thay mặt công ty bảo hiểm, như xe cơ giới, cháy nổ, nhân thọ, tài sản, y tế, nha khoa hoặc các sản phẩm chuyên biệt.",
+      "724": "Giải thích đặc điểm, ưu và nhược điểm của các hợp đồng để thúc đẩy bán hàng.",
+      "728": "Làm việc hành chính như lưu hồ sơ và xử lý tái tục hợp đồng.",
+      "723": "Tìm khách mới và phát triển mạng lưới khách hàng tiềm năng qua các mối quan hệ."
+    }
+  },
+  "41-3031.00": {
+    "title_vi": "Nhân viên môi giới chứng khoán, hàng hoá và dịch vụ tài chính",
+    "description_vi": "Mua bán chứng khoán hoặc hàng hoá tại công ty đầu tư và giao dịch, hoặc cung cấp dịch vụ tài chính cho doanh nghiệp và cá nhân. Có thể tư vấn cho khách về cổ phiếu, trái phiếu, quỹ đầu tư, hàng hoá và tình hình thị trường.",
+    "tasks_vi": {
+      "23192": "Đặt lệnh chào mua hoặc chào bán chứng khoán.",
+      "23193": "Theo dõi thị trường và các vị thế đang nắm giữ.",
+      "23194": "Thoả thuận giá mua bán ở mức tối ưu cho khách.",
+      "23195": "Ghi chép chính xác các giao dịch.",
+      "23196": "Mua bán cổ phiếu, trái phiếu, hợp đồng tương lai hàng hoá, ngoại tệ hoặc chứng khoán khác thay mặt công ty đầu tư."
+    }
+  },
+  "41-3041.00": {
+    "title_vi": "Nhân viên đại lý du lịch",
+    "description_vi": "Lên kế hoạch và bán dịch vụ đi lại, lưu trú cho khách. Xác định điểm đến, phương tiện, ngày đi, chi phí và chỗ ở cần có. Có thể giới thiệu, lên lịch trình và bán tour trọn gói. Có thể hỗ trợ giải quyết sự cố khi khách đi du lịch.",
+    "tasks_vi": {
+      "737": "Thu tiền đi lại và lưu trú của khách.",
+      "741": "Lên kế hoạch, giới thiệu, sắp xếp và bán tour trọn gói và các chương trình khuyến mãi của hãng vận chuyển.",
+      "738": "Trao đổi với khách để xác định điểm đến, phương tiện, ngày đi, ngân sách và chỗ ở.",
+      "739": "Tính chi phí đi lại và lưu trú bằng máy tính, bảng giá hãng vận chuyển và bảng giá khách sạn, hoặc báo giá tour trọn gói.",
+      "20900": "Ghi chép và lưu thông tin về khách, nhà cung cấp và các gói du lịch."
+    }
+  },
+  "41-3091.00": {
+    "title_vi": "Nhân viên kinh doanh dịch vụ",
+    "description_vi": "Bán dịch vụ cho cá nhân hoặc doanh nghiệp, ngoài quảng cáo, bảo hiểm, tài chính và du lịch. Có thể giới thiệu các lựa chọn hoặc giải quyết vấn đề của khách.",
+    "tasks_vi": {
+      "23225": "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+      "23222": "Trả lời câu hỏi của khách về dịch vụ, giá, khả năng cung cấp hoặc điều kiện tín dụng.",
+      "23228": "Soạn bài chào hàng hoặc đề xuất để giải thích chi tiết dịch vụ.",
+      "23227": "Soạn mẫu biểu hoặc thoả thuận để hoàn tất việc bán.",
+      "23226": "Liên hệ khách tiềm năng hoặc khách hiện có để trao đổi cách dịch vụ đáp ứng nhu cầu của họ."
+    }
+  },
+  "41-4011.00": {
+    "title_vi": "Nhân viên kinh doanh sản phẩm kỹ thuật và khoa học",
+    "description_vi": "Bán hàng cho nhà bán buôn hoặc nhà sản xuất ở lĩnh vực cần kiến thức kỹ thuật hay khoa học như sinh học, kỹ thuật, hoá học và điện tử, thường có được từ ít nhất hai năm học sau phổ thông.",
+    "tasks_vi": {
+      "11240": "Đàm phán giá hoặc điều khoản hợp đồng mua bán, dịch vụ.",
+      "20608": "Soạn và gửi hợp đồng mua bán cho các đơn hàng.",
+      "11251": "Đến các cơ sở để đánh giá nhu cầu hoặc chào bán sản phẩm, dịch vụ.",
+      "11241": "Lưu hồ sơ khách hàng trên hệ thống.",
+      "11237": "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp hoặc điều kiện tín dụng."
+    }
+  },
+  "41-4012.00": {
+    "title_vi": "Nhân viên kinh doanh bán buôn và sản xuất",
+    "description_vi": "Bán hàng của nhà bán buôn hoặc nhà sản xuất cho doanh nghiệp hoặc nhóm khách, không thuộc sản phẩm kỹ thuật và khoa học. Cần hiểu biết sâu về hàng mình bán.",
+    "tasks_vi": {
+      "8113": "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp, công dụng và điều kiện tín dụng.",
+      "8114": "Gợi ý sản phẩm theo nhu cầu và mối quan tâm của khách.",
+      "8116": "Ước tính hoặc báo giá, điều kiện tín dụng, hợp đồng, bảo hành và ngày giao hàng.",
+      "8117": "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+      "20267": "Soạn hợp đồng mua bán và đơn đặt hàng."
+    }
+  },
+  "41-9011.00": {
+    "title_vi": "Nhân viên trình diễn và quảng bá sản phẩm",
+    "description_vi": "Trình diễn sản phẩm và trả lời câu hỏi để tạo sự quan tâm mua hàng. Có thể bán sản phẩm đang giới thiệu.",
+    "tasks_vi": {
+      "13191": "Phát mẫu thử, phiếu giảm giá, tờ rơi hoặc ưu đãi khác để thuyết phục người mua.",
+      "13194": "Bán sản phẩm đang quảng bá và ghi lại doanh số.",
+      "13192": "Giữ khu vực gọn gàng khi làm việc và trả đồ về chỗ cũ sau khi trình diễn.",
+      "13190": "Trình diễn hoặc giải thích sản phẩm, cách dùng, dịch vụ để thuyết phục khách mua hoặc dùng.",
+      "13193": "Ghi lại và báo cáo thông tin của buổi trình diễn, như số câu hỏi của khán giả hoặc số phiếu giảm giá đã phát."
+    }
+  },
+  "41-9012.00": {
+    "title_vi": "Người mẫu",
+    "description_vi": "Trình diễn quần áo, phụ kiện cho người mua tiềm năng tại buổi trình diễn thời trang, buổi giới thiệu riêng hoặc cửa hàng. Có thể tạo dáng chụp ảnh cho tạp chí, quảng cáo. Có thể làm mẫu cho tranh, tượng và các hình thức nghệ thuật khác.",
+    "tasks_vi": {
+      "23931": "Tạo dáng cho hoạ sĩ và nhiếp ảnh gia."
+    }
+  },
+  "41-9021.00": {
+    "title_vi": "Môi giới bất động sản (chủ sàn)",
+    "description_vi": "Điều hành văn phòng bất động sản hoặc làm cho công ty bất động sản thương mại, giám sát các giao dịch. Thường kiêm bán hoặc cho thuê bất động sản và thu xếp khoản vay.",
+    "tasks_vi": {
+      "4600": "Ký thoả thuận với chủ sở hữu để đưa bất động sản ra bán qua công ty.",
+      "4599": "Bán bất động sản của người khác để hưởng phí.",
+      "4602": "So sánh bất động sản với các tài sản tương tự đã bán gần đây để xác định giá thị trường cạnh tranh.",
+      "4603": "Làm trung gian đàm phán giữa người mua và người bán về giá, chi tiết thanh toán và khi chốt giao dịch.",
+      "4604": "Lập danh sách bất động sản đang bán, vị trí, mô tả và các phương án vay vốn trên máy tính."
+    }
+  },
+  "41-9022.00": {
+    "title_vi": "Nhân viên kinh doanh bất động sản",
+    "description_vi": "Cho thuê, mua hoặc bán bất động sản cho khách. Xem danh mục nhà đất, phỏng vấn khách tiềm năng, dẫn khách đi xem, trao đổi điều kiện bán và soạn hợp đồng. Gồm cả người đại diện cho bên mua.",
+    "tasks_vi": {
+      "2440": "Chuyển đề nghị mua cho người bán xem xét.",
+      "2445": "Làm trung gian đàm phán giữa người mua và người bán, thường đại diện cho một bên.",
+      "2441": "Làm việc với bên trung gian thanh toán, ngân hàng, đơn vị kiểm định nhà và diệt mối mọt để bảo đảm điều kiện hợp đồng được đáp ứng trước ngày chốt.",
+      "2458": "Tư vấn cho khách về thị trường, giá, vay thế chấp, yêu cầu pháp lý và các vấn đề liên quan.",
+      "2443": "Soạn giấy tờ như hợp đồng đại diện, hợp đồng mua bán, bảng quyết toán, chứng thư và hợp đồng thuê."
+    }
+  },
+  "41-9031.00": {
+    "title_vi": "Kỹ sư kinh doanh (sales engineer)",
+    "description_vi": "Bán hàng hoá hoặc dịch vụ cho doanh nghiệp, loại hàng đòi nền kỹ thuật tương đương bằng kỹ sư.",
+    "tasks_vi": {
+      "9682": "Xây dựng, trình bày hoặc trả lời đề xuất cho yêu cầu cụ thể của khách, gồm hồ sơ chào thầu và giải pháp theo ngành.",
+      "9680": "Phối hợp với đội kinh doanh để hiểu yêu cầu của khách, thúc đẩy bán sản phẩm và hỗ trợ bán hàng.",
+      "9690": "Soạn hợp đồng bán hàng hoặc dịch vụ.",
+      "9689": "Đến gặp khách tiềm năng ở các cơ sở thương mại, công nghiệp để giới thiệu mẫu, catalogue, giá, khả năng cung cấp và ưu điểm sản phẩm.",
+      "9692": "Cập nhật tin tức và xu hướng ngành, sản phẩm, dịch vụ, đối thủ, công nghệ cũ, hiện có và mới nổi, cùng các phát triển mới của dòng sản phẩm."
+    }
+  },
+  "41-9041.00": {
+    "title_vi": "Nhân viên bán hàng qua điện thoại (telesales)",
+    "description_vi": "Gọi điện để chào bán hàng hoá, dịch vụ hoặc kêu gọi quyên góp.",
+    "tasks_vi": {
+      "4619": "Gọi điện cho doanh nghiệp hoặc cá nhân để chào bán hàng hoá, dịch vụ hoặc kêu gọi ủng hộ từ thiện.",
+      "4621": "Lấy thông tin khách như tên, địa chỉ, cách thanh toán và nhập đơn vào máy.",
+      "4620": "Giải thích sản phẩm, dịch vụ, giá và trả lời câu hỏi của khách.",
+      "4622": "Ghi tên, địa chỉ, đơn mua và phản ứng của người đã liên hệ.",
+      "4627": "Lưu hồ sơ liên hệ, tài khoản và đơn hàng."
+    }
+  },
+  "41-9091.00": {
+    "title_vi": "Người bán hàng tận nhà, bán báo và bán hàng rong",
+    "description_vi": "Bán hàng hoá hoặc dịch vụ tới từng nhà hoặc trên đường phố.",
+    "tasks_vi": {
+      "13233": "Giải thích sản phẩm, dịch vụ, giá và trình diễn cách dùng.",
+      "13238": "Lập danh sách khách tiềm năng.",
+      "13231": "Giao hàng và thu tiền.",
+      "13232": "Ghi đơn hàng hoặc nhập đơn vào máy.",
+      "13235": "Tổ chức buổi bán hàng tại nhà và mời người đứng ra tổ chức để bán hàng."
+    }
+  }
+}

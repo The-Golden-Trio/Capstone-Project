@@ -34,7 +34,7 @@ Trọng số: Sở thích RIASEC (6) × 3, Work Styles (21) × 3, Essential + Tr
 ✓ là nghề có trong tầng Primary của Related Occupations.
 
 - **Lập trình viên Front-end** (15-1254.00): Computer and Information Research Scientists; ✓ Computer Programmers; ✓ Software Developers; ✓ Web and Digital Interface Designers; Data Scientists
-- **Lập trình viên Back-end (gồm Mobile)** (15-1252.00): ✓ Computer Systems Analysts; ✓ Database Architects; Computer and Information Research Scientists; ✓ Computer Systems Engineers/Architects; Bioinformatics Scientists
+- **Lập trình viên Back-end** (15-1252.00): ✓ Computer Systems Analysts; ✓ Database Architects; Computer and Information Research Scientists; ✓ Computer Systems Engineers/Architects; Bioinformatics Scientists
 - **Chuyên viên thiết kế UI/UX** (15-1255.00): ✓ Video Game Designers; ✓ Web Developers; Commercial and Industrial Designers; ✓ Graphic Designers; Special Effects Artists and Animators
 - **Kiến trúc sư giải pháp** (15-1299.08): ✓ Computer Network Architects; Information Security Analysts; Telecommunications Engineering Specialists; ✓ Software Developers; ✓ Information Security Engineers
 - **Trưởng phòng Kỹ thuật** (11-3021.00): Logisticians; ✓ Information Technology Project Managers; ✓ Management Analysts; Business Continuity Planners; Transportation, Storage, and Distribution Managers
@@ -52,7 +52,7 @@ Trọng số: Sở thích RIASEC (6) × 3, Work Styles (21) × 3, Essential + Tr
 ✓ là nghề có trong tầng Primary của Related Occupations.
 
 - **Lập trình viên Front-end** (15-1254.00): Data Warehousing Specialists; ✓ Web and Digital Interface Designers; ✓ Computer Programmers; ✓ Database Architects; ✓ Software Developers
-- **Lập trình viên Back-end (gồm Mobile)** (15-1252.00): ✓ Computer Systems Analysts; ✓ Database Architects; Blockchain Engineers; Data Warehousing Specialists; ✓ Web Developers
+- **Lập trình viên Back-end** (15-1252.00): ✓ Computer Systems Analysts; ✓ Database Architects; Blockchain Engineers; Data Warehousing Specialists; ✓ Web Developers
 - **Chuyên viên thiết kế UI/UX** (15-1255.00): ✓ Web Developers; ✓ Software Developers; ✓ Video Game Designers; ✓ Computer Programmers; ✓ Computer Systems Analysts
 - **Kiến trúc sư giải pháp** (15-1299.08): ✓ Computer Network Architects; ✓ Information Security Engineers; Information Security Analysts; ✓ Computer Hardware Engineers; Telecommunications Engineering Specialists
 - **Trưởng phòng Kỹ thuật** (11-3021.00): ✓ Information Technology Project Managers; ✓ Project Management Specialists; Medical and Health Services Managers; General and Operations Managers; Business Continuity Planners

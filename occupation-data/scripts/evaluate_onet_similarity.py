@@ -8,15 +8,13 @@ giống nhất có trúng bao nhiêu nghề trong danh sách đó.
 transferable_skills, knowledge ngoài bốn file của build_onet_profiles.py).
 Đầu ra: occupation-data/generated/onet_similarity_eval.json và .md.
 """
-import csv
 import json
 import math
 import operator
 import random
 import statistics
-from pathlib import Path
 
-from build_onet_profiles import ATTRIBUTION, EXTERNAL, GENERATED, RIASEC, ROLES, SOFT_GROUPS, read, zscores
+from build_onet_profiles import ATTRIBUTION, GENERATED, RIASEC, ROLES, SOFT_GROUPS, read, zscores
 
 DOMAINS = {
     "riasec": "Sở thích RIASEC (6)",
@@ -80,7 +78,6 @@ def build_vectors(raw, codes):
         c: unit([statistics.mean([za[c][e] for e in g["wa"]] + [zs[c][e] for e in g["ws"]]) for g in SOFT_GROUPS])
         for c in codes
     }
-    vec["riasec"] = {c: unit([z["riasec"][c][k] for k in RIASEC]) for c in codes}
     return vec
 
 
@@ -161,7 +158,7 @@ def tune(sims, codes, related, domains=tuple(DOMAINS)):
 
 
 def baselines(codes, related):
-    """Mốc so sánh: chọn ngẫu nhiên, và xếp theo cùng nhóm SOC (cùng 5 rồi 4 rồi 2 ký tự đầu của mã)."""
+    """Mốc so sánh: chọn ngẫu nhiên, và xếp theo cùng nhóm SOC (cùng 6 rồi 5 rồi 4 rồi 2 ký tự đầu của mã)."""
     idx = {c: i for i, c in enumerate(codes)}
     rng = random.Random(7)
     out = {}

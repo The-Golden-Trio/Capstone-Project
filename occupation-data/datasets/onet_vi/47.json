@@ -1,0 +1,139 @@
+{
+  "47-4011.00": {"title_vi": "Thanh tra, giám sát xây dựng"},
+  "47-2021.00": {
+    "title_vi": "Thợ xây",
+    "description_vi": "Xây và liên kết vật liệu như gạch, gạch block, bê tông, gạch kính, gạch nung bằng vữa và chất kết dính để xây hoặc sửa tường, vách ngăn, vòm, cống và công trình khác.",
+    "tasks_vi": {
+      "4769": "Đo khoảng cách từ mốc và vạch đường căn để định vị, dùng dây dọi và thước thuỷ.",
+      "4768": "Xây góc bằng cách dựng cọc góc thẳng đứng hoặc xây chân góc, rồi xây phần giữa theo dây căng giữa hai góc cho từng lớp gạch.",
+      "4775": "Trát và làm phẳng vữa hoặc hỗn hợp khác lên bề mặt.",
+      "4770": "Tính góc, số lớp và căn độ thẳng đứng, nằm ngang của các lớp gạch.",
+      "4772": "Chặt hoặc cắt gạch, đá, block cho vừa kích thước bằng bay, búa hoặc máy cắt."
+    }
+  },
+  "47-2022.00": {"title_vi": "Thợ xây đá"},
+  "47-2051.00": {"title_vi": "Thợ bê tông"},
+  "47-2161.00": {"title_vi": "Thợ trát"},
+  "47-2171.00": {"title_vi": "Thợ cốt thép"},
+  "47-2061.00": {"title_vi": "Lao động phổ thông xây dựng (phụ hồ)"},
+  "47-3011.00": {"title_vi": "Phụ việc thợ xây, thợ ốp lát"},
+  "47-1011.00": {"title_vi": "Đốc công xây dựng và khai thác"},
+  "47-2044.00": {"title_vi": "Thợ ốp lát gạch, đá"},
+  "47-2053.00": {"title_vi": "Thợ làm sàn đá mài (terrazzo)"},
+  "47-2041.00": {"title_vi": "Thợ trải thảm"},
+  "47-2042.00": {"title_vi": "Thợ lát sàn"},
+  "47-2043.00": {"title_vi": "Thợ chà, đánh bóng sàn"},
+  "47-4091.00": {"title_vi": "Thợ lát gạch block vỉa hè"},
+  "47-4031.00": {"title_vi": "Thợ dựng hàng rào"},
+  "47-2031.00": {
+    "title_vi": "Thợ mộc công trình",
+    "description_vi": "Làm, dựng, lắp hoặc sửa kết cấu và đồ gỗ hay vật liệu tương tự như cốp pha bê tông, khung nhà gồm vách ngăn, dầm, cột, kèo, cầu thang gỗ, khung cửa sổ, cửa đi và sàn gỗ. Có thể lắp tủ, ốp tường, vách thạch cao và tấm cách nhiệt.",
+    "tasks_vi": {
+      "23432": "Đo và vạch đường cắt lên vật liệu bằng thước, bút chì, phấn và dụng cụ lấy dấu.",
+      "23430": "Tuân thủ quy định an toàn và giữ nơi làm việc an toàn, sạch sẽ.",
+      "23433": "Tạo hình hoặc cắt vật liệu theo kích thước bằng dụng cụ cầm tay, máy hoặc cưa điện.",
+      "23436": "Chọn và đặt mua gỗ, vật liệu cần thiết.",
+      "23434": "Lắp các kết cấu, chi tiết như cửa sổ, khung, sàn, nẹp hoặc phụ kiện bằng dụng cụ mộc cầm tay hoặc dụng cụ điện."
+    }
+  },
+  "47-3012.00": {"title_vi": "Phụ việc thợ mộc"},
+  "47-2181.00": {"title_vi": "Thợ lợp mái"},
+  "47-3016.00": {"title_vi": "Phụ việc thợ lợp mái"},
+  "47-2141.00": {
+    "title_vi": "Thợ sơn công trình",
+    "description_vi": "Sơn tường, thiết bị, toà nhà, cầu và các bề mặt kết cấu khác bằng cọ, con lăn và súng phun. Có thể cạo sơn cũ để chuẩn bị bề mặt. Có thể pha màu hoặc dầu để có màu, độ đặc mong muốn.",
+    "tasks_vi": {
+      "11511": "Phủ bạt hoặc dán băng keo, giấy để bảo vệ bề mặt khi sơn.",
+      "11516": "Đọc phiếu công việc hoặc nghe hướng dẫn của cấp trên, chủ nhà để nắm yêu cầu.",
+      "11514": "Sơn, quét vecni, phủ men hoặc lớp hoàn thiện khác lên thiết bị, nhà, cầu và công trình bằng cọ, súng phun hoặc con lăn.",
+      "11512": "Trám vết nứt, lỗ hoặc mối nối bằng keo, mát tít, thạch cao hoặc chất trám khác.",
+      "11523": "Làm nhẵn bề mặt bằng giấy nhám, dao cạo, bàn chải, bùi nhùi thép hoặc máy chà."
+    }
+  },
+  "47-2142.00": {"title_vi": "Thợ dán giấy dán tường"},
+  "47-2081.00": {"title_vi": "Thợ làm vách, trần thạch cao"},
+  "47-2082.00": {"title_vi": "Thợ xử lý mối nối thạch cao"},
+  "47-2131.00": {"title_vi": "Thợ lắp vật liệu cách nhiệt sàn, trần, tường"},
+  "47-3014.00": {"title_vi": "Phụ việc thợ sơn, thợ trát"},
+  "47-2111.00": {
+    "title_vi": "Thợ điện",
+    "description_vi": "Lắp đặt, bảo trì và sửa chữa dây điện, thiết bị và đồ điện. Bảo đảm làm đúng quy chuẩn. Có thể lắp hoặc bảo dưỡng đèn đường, hệ thống liên lạc nội bộ hoặc hệ thống điều khiển điện.",
+    "tasks_vi": {
+      "2882": "Vẽ phác hoặc đọc bản vẽ để xác định vị trí dây, thiết bị và bảo đảm đúng quy chuẩn xây dựng, an toàn.",
+      "2888": "Đặt ống luồn dây trong vách, tường hoặc chỗ khuất, kéo dây cáp cách điện qua ống để nối mạch giữa các hộp.",
+      "2887": "Làm việc trên thang, giàn giáo hoặc mái để lắp, bảo trì hoặc sửa dây, thiết bị điện.",
+      "2883": "Dùng nhiều dụng cụ như máy thi công, dụng cụ đo, dụng cụ điện và thiết bị thử như máy hiện sóng, ampe kế, bút thử điện.",
+      "2873": "Lắp, đặt, thử hoặc bảo trì dây, thiết bị, đồ điện và điện tử bằng dụng cụ cầm tay hoặc dụng cụ điện."
+    }
+  },
+  "47-3013.00": {"title_vi": "Phụ việc thợ điện"},
+  "47-2231.00": {"title_vi": "Thợ lắp đặt điện mặt trời"},
+  "47-2152.00": {
+    "title_vi": "Thợ ống nước, thợ đường ống",
+    "description_vi": "Lắp ráp, lắp đặt, sửa đổi và sửa chữa đường ống, hệ thống ống dẫn nước, hơi, khí nén hoặc chất lỏng, khí khác. Có thể lắp thiết bị sưởi, làm mát và hệ thống điều khiển cơ khí. Gồm cả thợ lắp hệ thống phun nước chữa cháy.",
+    "tasks_vi": {
+      "23469": "Khoá hơi, nước hoặc chất khác trong đoạn ống bằng chìa khoá van hoặc cờ lê.",
+      "23478": "Lắp đặt hệ thống ống thoát nước mưa, nước thải hoặc cấp nước ngầm, kéo dài đường ống để nối thiết bị.",
+      "23466": "Nối các đoạn ống, ống mềm hoặc phụ kiện bằng khớp nối, kẹp, vít, bu lông, keo, dung môi, trám, hàn thiếc hoặc hàn.",
+      "23474": "Xác định và đánh dấu vị trí lắp ống, mối nối, lỗ xuyên hoặc thiết bị bằng thước và thước thuỷ.",
+      "23459": "Cắt, tiện ren hoặc uốn ống theo yêu cầu bằng cưa, mỏ cắt, máy ren hoặc máy uốn ống."
+    }
+  },
+  "47-2151.00": {"title_vi": "Thợ đặt ống"},
+  "47-3015.00": {"title_vi": "Phụ việc thợ ống nước"},
+  "47-2011.00": {"title_vi": "Thợ lò hơi"},
+  "47-2132.00": {"title_vi": "Thợ bảo ôn đường ống"},
+  "47-4071.00": {"title_vi": "Thợ hút bể phốt, thông cống"},
+  "47-2221.00": {
+    "title_vi": "Thợ lắp dựng kết cấu thép",
+    "description_vi": "Nâng, đặt và liên kết dầm, cột thép và các cấu kiện khác để tạo thành công trình hoặc khung kết cấu. Có thể dựng bồn chứa kim loại và lắp nhà thép tiền chế.",
+    "tasks_vi": {
+      "11544": "Đọc yêu cầu kỹ thuật hoặc bản vẽ để xác định vị trí, số lượng, kích thước vật liệu cần dùng.",
+      "11545": "Kiểm tra độ thẳng đứng, nằm ngang của cấu kiện thép bằng dây dọi, máy laser, máy kinh vĩ hoặc thước thuỷ.",
+      "11556": "Lắp dựng cấu kiện kim loại hoặc bê tông đúc sẵn cho nhà, cầu, đập, tháp, bồn chứa, hàng rào hoặc lan can đường.",
+      "11548": "Bắt bu lông tạm các cấu kiện thép đã căn chỉnh để tán, bắt bu lông hoặc hàn cố định.",
+      "24053": "Lắp hoặc kiểm tra thiết bị nâng, dây chằng như cáp, ròng rọc, móc để di chuyển thiết bị, vật liệu nặng."
+    }
+  },
+  "47-2211.00": {"title_vi": "Thợ gò tôn"},
+  "47-2121.00": {"title_vi": "Thợ lắp kính, nhôm kính"},
+  "47-2073.00": {
+    "title_vi": "Người vận hành máy thi công",
+    "description_vi": "Vận hành một hoặc nhiều loại máy thi công như máy san, máy ủi, máy cạp, máy nén khí, máy bơm, cần trục, máy xúc, máy kéo hoặc máy xúc lật để đào, chuyển và san đất, dựng công trình hoặc đổ bê tông, mặt đường. Có thể sửa chữa và bảo dưỡng máy.",
+    "tasks_vi": {
+      "9849": "Học và tuân thủ quy định an toàn.",
+      "9850": "Chủ động tránh mối nguy và vật cản như đường điện, máy khác, người làm việc hoặc vật rơi.",
+      "9852": "Khởi động máy, điều khiển ga, công tắc, cần gạt hoặc bàn đạp để vận hành máy ủi, máy đào rãnh, máy san hoặc máy xúc đào.",
+      "9858": "Phối hợp thao tác máy với các hoạt động khác, di chuyển tải theo tín hiệu tay hoặc âm thanh của tổ đội.",
+      "9855": "Căn chỉnh máy, đầu cắt hoặc thước đo độ sâu theo cọc mốc và đường căn, hoặc định vị máy theo tín hiệu tay của người khác."
+    }
+  },
+  "47-2071.00": {"title_vi": "Người vận hành máy rải và đầm mặt đường"},
+  "47-2072.00": {"title_vi": "Người vận hành máy đóng cọc"},
+  "47-4061.00": {"title_vi": "Người vận hành máy đặt và bảo dưỡng ray"},
+  "47-4051.00": {"title_vi": "Công nhân duy tu đường bộ"},
+  "47-5041.00": {
+    "title_vi": "Công nhân vận hành máy khai thác mỏ",
+    "description_vi": "Vận hành máy khai thác tự hành để cắt than, quặng kim loại và phi kim, đá hoặc cát từ gương lò và đưa lên băng tải, xe goòng hoặc xe tải liên tục.",
+    "tasks_vi": {
+      "20912": "Treo ống và rèm thông gió để gương lò luôn được thông gió đúng cách.",
+      "20913": "Đo khí mê-tan để bảo đảm không khí thở an toàn.",
+      "20914": "Kiểm tra độ vững của hệ thống chống nóc và chống hông trước khi khai thác.",
+      "14956": "Vận hành máy khai thác để gom than và chuyển xuống nền lò hoặc xe goòng.",
+      "14959": "Lái máy vào vị trí ở gương lò."
+    }
+  },
+  "47-5011.00": {"title_vi": "Thợ vận hành tháp khoan dầu khí"},
+  "47-5012.00": {"title_vi": "Thợ khoan dầu khí"},
+  "47-5013.00": {"title_vi": "Thợ vận hành thiết bị dịch vụ giếng dầu khí"},
+  "47-5071.00": {"title_vi": "Công nhân giàn khoan dầu khí"},
+  "47-5023.00": {"title_vi": "Thợ khoan địa chất"},
+  "47-5022.00": {"title_vi": "Người vận hành máy xúc mỏ lộ thiên"},
+  "47-5043.00": {"title_vi": "Thợ chống lò"},
+  "47-5044.00": {"title_vi": "Người vận hành máy xúc bốc hầm lò"},
+  "47-5051.00": {"title_vi": "Thợ tách đá ở mỏ đá"},
+  "47-5032.00": {"title_vi": "Thợ nổ mìn"},
+  "47-5081.00": {"title_vi": "Phụ việc khai thác mỏ"},
+  "47-4021.00": {"title_vi": "Thợ lắp đặt, sửa chữa thang máy"},
+  "47-4041.00": {"title_vi": "Công nhân xử lý vật liệu nguy hại"}
+}

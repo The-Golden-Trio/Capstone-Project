@@ -1,0 +1,52 @@
+{
+  "group": "41",
+  "keep": [
+    {
+      "code": "41-2031.00",
+      "name_vi": "Nhân viên bán hàng",
+      "absorbs": ["41-2022.00", "41-1011.00", "41-9011.00", "41-9091.00", "41-2021.00"],
+      "merge_reason": "Cùng trải nghiệm tư vấn và bán trực tiếp cho người mua; bán phụ tùng, PG, bán tận nhà và quầy cho thuê là các biến thể. Tổ trưởng cửa hàng là cấp cao."
+    },
+    {
+      "code": "41-2011.00",
+      "name_vi": "Thu ngân",
+      "absorbs": ["41-2012.00"],
+      "merge_reason": "Thu ngân ở khu vui chơi là một biến thể của thu ngân."
+    },
+    {
+      "code": "41-3021.00",
+      "name_vi": "Tư vấn viên bảo hiểm"
+    },
+    {
+      "code": "41-3031.00",
+      "name_vi": "Nhân viên môi giới chứng khoán"
+    },
+    {
+      "code": "41-9022.00",
+      "name_vi": "Nhân viên môi giới bất động sản",
+      "absorbs": ["41-9021.00"],
+      "merge_reason": "Chủ sàn là cấp cao của môi giới bất động sản."
+    },
+    {
+      "code": "41-4012.00",
+      "name_vi": "Nhân viên kinh doanh (sales B2B)",
+      "absorbs": ["41-3091.00", "41-3011.00", "41-1012.00", "41-9041.00", "11-2022.00"],
+      "merge_reason": "Cùng trải nghiệm tìm khách, chào hàng và chốt hợp đồng; bán quảng cáo, bán dịch vụ và telesales là biến thể. Trưởng nhóm và trưởng phòng kinh doanh là cấp cao."
+    },
+    {
+      "code": "41-9031.00",
+      "name_vi": "Kỹ sư kinh doanh (sales kỹ thuật)",
+      "absorbs": ["41-4011.00"],
+      "merge_reason": "Bán sản phẩm kỹ thuật, khoa học đòi cùng nền kỹ thuật như kỹ sư kinh doanh."
+    },
+    {
+      "code": "41-3041.00",
+      "name_vi": "Nhân viên kinh doanh tour du lịch"
+    },
+    {
+      "code": "41-9012.00",
+      "name_vi": "Người mẫu"
+    }
+  ],
+  "remove": []
+}

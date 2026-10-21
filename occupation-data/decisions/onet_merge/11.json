@@ -1,0 +1,69 @@
+{
+  "group": "11",
+  "_note": "Trưởng phòng theo chức năng (marketing, kinh doanh, tài chính, nhân sự, chuỗi cung ứng, mua hàng) được gộp vào nghề chuyên viên tương ứng ở nhóm 13 và 41 như cấp cao nhất của nghề đó; khai báo ở file của nghề nhận.",
+  "keep": [
+    {
+      "code": "11-1021.00",
+      "name_vi": "Giám đốc điều hành, quản lý vận hành"
+    },
+    {
+      "code": "11-3051.00",
+      "name_vi": "Quản lý sản xuất",
+      "absorbs": ["11-3051.01"],
+      "merge_reason": "Quản lý hệ thống chất lượng là một mảng của quản lý nhà máy."
+    },
+    {
+      "code": "11-3012.00",
+      "name_vi": "Quản lý hành chính",
+      "absorbs": ["11-3013.00", "11-3013.01", "11-9131.00", "11-9199.08"],
+      "merge_reason": "Quản lý cơ sở vật chất, an ninh, bưu cục và chống thất thoát đều là quản lý vận hành hành chính của một tổ chức."
+    },
+    {
+      "code": "11-9021.00",
+      "name_vi": "Quản lý xây dựng (chỉ huy trưởng công trình)"
+    },
+    {
+      "code": "11-9041.00",
+      "name_vi": "Quản lý kỹ thuật và nghiên cứu",
+      "absorbs": ["11-9121.00"],
+      "merge_reason": "Cùng trải nghiệm quản lý một đội kỹ sư hoặc nhà khoa học."
+    },
+    {
+      "code": "11-9032.00",
+      "name_vi": "Quản lý giáo dục (hiệu trưởng, trưởng khoa)",
+      "absorbs": ["11-9031.00", "11-9033.00"],
+      "merge_reason": "Cùng trải nghiệm điều hành cơ sở giáo dục, khác cấp học."
+    },
+    {
+      "code": "11-9051.00",
+      "name_vi": "Quản lý nhà hàng",
+      "absorbs": ["35-1012.00"],
+      "merge_reason": "Tổ trưởng phục vụ và chế biến là cấp ngay dưới quản lý nhà hàng."
+    },
+    {
+      "code": "11-9081.00",
+      "name_vi": "Quản lý khách sạn, khu nghỉ dưỡng",
+      "absorbs": ["11-9179.02", "11-9072.00"],
+      "merge_reason": "Quản lý spa và khu vui chơi thường nằm trong khối khách sạn, khu nghỉ dưỡng."
+    },
+    {
+      "code": "11-9111.00",
+      "name_vi": "Quản lý bệnh viện, cơ sở y tế",
+      "absorbs": ["11-9121.01"],
+      "merge_reason": "Điều phối nghiên cứu lâm sàng là một mảng quản lý trong bệnh viện."
+    },
+    {
+      "code": "11-9013.00",
+      "name_vi": "Chủ trang trại, quản lý nông nghiệp"
+    },
+    {
+      "code": "11-9141.00",
+      "name_vi": "Quản lý bất động sản, toà nhà"
+    }
+  ],
+  "remove": [
+    {"code": "11-1011.00", "reason_group": "Cấp C-level", "reason": "Theo cùng luật với nghề IT: cấp C-level không làm nghề riêng."},
+    {"code": "11-9071.00", "reason_group": "Không phù hợp với Việt Nam", "reason": "Casino bị hạn chế ở Việt Nam."},
+    {"code": "11-9161.00", "reason_group": "Không có vị trí tương ứng ở Việt Nam", "reason": "Ứng phó thiên tai do ban chỉ huy của cơ quan nhà nước đảm nhận, không tuyển như một nghề."}
+  ]
+}

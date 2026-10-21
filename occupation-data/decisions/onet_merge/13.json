@@ -1,0 +1,95 @@
+{
+  "group": "13",
+  "keep": [
+    {
+      "code": "13-2011.00",
+      "name_vi": "Kế toán, kiểm toán viên",
+      "absorbs": ["13-2082.00", "13-2031.00", "43-3031.00", "43-3021.00", "43-3051.00", "11-3031.00", "11-3031.01"],
+      "merge_reason": "Làm tờ khai thuế, phân tích ngân sách, ghi sổ, lập hoá đơn và tính lương là các phần việc của kế toán ở doanh nghiệp Việt Nam. Kế toán trưởng, giám đốc tài chính là cấp cao."
+    },
+    {
+      "code": "13-2081.00",
+      "name_vi": "Cán bộ thuế"
+    },
+    {
+      "code": "13-1041.00",
+      "name_vi": "Chuyên viên tuân thủ và quản lý rủi ro",
+      "absorbs": ["13-1041.04", "13-1041.07", "13-2061.00", "13-2099.04", "13-1199.04", "13-1199.07", "11-9199.01"],
+      "merge_reason": "Cùng trải nghiệm kiểm tra việc tuân thủ quy định và phát hiện rủi ro; pháp chế dược, thanh tra tài chính, chống gian lận, kế hoạch liên tục kinh doanh và an ninh doanh nghiệp là các biến thể. Trưởng phòng pháp chế là cấp cao."
+    },
+    {
+      "code": "13-1031.00",
+      "name_vi": "Chuyên viên thẩm định và bồi thường bảo hiểm",
+      "absorbs": ["13-1032.00", "13-2053.00", "43-9041.00"],
+      "merge_reason": "Giám định thiệt hại xe, thẩm định hợp đồng và xử lý hồ sơ bồi thường đều thuộc khâu thẩm định của công ty bảo hiểm."
+    },
+    {
+      "code": "13-2072.00",
+      "name_vi": "Chuyên viên tín dụng ngân hàng",
+      "absorbs": ["13-2041.00", "13-2071.00"],
+      "merge_reason": "Ở ngân hàng Việt Nam, phân tích tín dụng, tư vấn vay và quản lý khoản vay thường do cùng một chuyên viên tín dụng làm."
+    },
+    {
+      "code": "13-2052.00",
+      "name_vi": "Chuyên viên tư vấn tài chính và đầu tư",
+      "absorbs": ["11-3031.03"],
+      "merge_reason": "Quản lý quỹ là cấp cao của nghề tư vấn đầu tư."
+    },
+    {
+      "code": "13-2099.01",
+      "name_vi": "Chuyên viên phân tích tài chính định lượng (quant)"
+    },
+    {
+      "code": "13-2023.00",
+      "name_vi": "Thẩm định viên về giá",
+      "absorbs": ["13-2022.00"],
+      "merge_reason": "Ở Việt Nam chỉ có một chức danh thẩm định viên về giá, định giá bất động sản hay động sản là biến thể."
+    },
+    {
+      "code": "13-1071.00",
+      "name_vi": "Chuyên viên nhân sự",
+      "absorbs": ["13-1141.00", "13-1075.00", "13-1151.00", "43-4161.00", "11-3121.00", "11-3111.00", "11-3131.00"],
+      "merge_reason": "Lương thưởng, quan hệ lao động và đào tạo là các mảng trong phòng nhân sự; trợ lý nhân sự là cấp khởi đầu, trưởng phòng nhân sự là cấp cao."
+    },
+    {
+      "code": "13-1161.00",
+      "name_vi": "Chuyên viên marketing và nghiên cứu thị trường",
+      "absorbs": ["13-1161.01", "27-3031.00", "11-2021.00", "11-2011.00", "11-2032.00", "11-2033.00"],
+      "merge_reason": "SEO và quan hệ công chúng là các mảng của marketing và truyền thông. Trưởng phòng marketing, quảng cáo và quan hệ công chúng là cấp cao."
+    },
+    {
+      "code": "13-1082.00",
+      "name_vi": "Chuyên viên quản lý dự án"
+    },
+    {
+      "code": "13-1121.00",
+      "name_vi": "Chuyên viên tổ chức sự kiện"
+    },
+    {
+      "code": "13-1081.00",
+      "name_vi": "Chuyên viên logistics và xuất nhập khẩu",
+      "absorbs": ["13-1081.01", "13-1081.02", "13-1041.08", "43-5011.00", "43-5011.01", "11-3071.00", "11-3071.04"],
+      "merge_reason": "Phân tích, thiết kế logistics, khai báo hải quan và giao nhận vận tải là các phần việc của logistics và xuất nhập khẩu. Quản lý chuỗi cung ứng là cấp cao."
+    },
+    {
+      "code": "13-1023.00",
+      "name_vi": "Chuyên viên mua hàng",
+      "absorbs": ["13-1021.00", "13-1022.00", "43-3061.00", "11-3061.00"],
+      "merge_reason": "Mua nông sản và mua hàng bán lẻ là biến thể; nhân viên thủ tục mua hàng là cấp khởi đầu, trưởng phòng mua hàng là cấp cao."
+    },
+    {
+      "code": "13-1051.00",
+      "name_vi": "Kỹ sư dự toán (QS)"
+    },
+    {
+      "code": "13-1199.06",
+      "name_vi": "Người kinh doanh online"
+    }
+  ],
+  "remove": [
+    {"code": "13-1041.06", "reason_group": "Không có vị trí tương ứng ở Việt Nam", "reason": "Việt Nam không có chức danh coroner; khám nghiệm tử thi do bác sĩ pháp y làm."},
+    {"code": "13-1074.00", "reason_group": "Không có vị trí tương ứng ở Việt Nam", "reason": "Cai thầu lao động thời vụ nông nghiệp không phải nghề chính thức ở Việt Nam."},
+    {"code": "13-1011.00", "reason_group": "Vai trò hẹp, quá ít vị trí", "reason": "Quản lý nghệ sĩ, vận động viên chỉ có ở vài công ty giải trí."},
+    {"code": "13-1131.00", "reason_group": "Vai trò hẹp, quá ít vị trí", "reason": "Gây quỹ chủ yếu ở vài tổ chức phi lợi nhuận, ít tuyển như một nghề."}
+  ]
+}

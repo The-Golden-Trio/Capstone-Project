@@ -1,0 +1,132 @@
+{
+  "45-1011.00": {
+    "title_vi": "Tổ trưởng lao động nông, lâm, ngư nghiệp",
+    "description_vi": "Trực tiếp giám sát và điều phối công việc của lao động nông nghiệp, lâm nghiệp, nuôi trồng thuỷ sản và các công việc liên quan.",
+    "tasks_vi": {
+      "23340": "Giao việc như cho ăn, chữa bệnh cho vật nuôi, dọn dẹp và bảo dưỡng chuồng trại.",
+      "23341": "Ghi số lượng và loại cá, động vật có vỏ được nuôi, thu hoạch, thả, bán và vận chuyển.",
+      "23342": "Giám sát công nhân tuân thủ quy định an toàn, nhắc nhở hoặc kỷ luật người vi phạm.",
+      "23343": "Quan sát vật nuôi để phát hiện dấu hiệu bệnh, chấn thương hoặc hành vi bất thường, báo cho bác sĩ thú y hoặc quản lý khi cần.",
+      "23344": "Quan sát cá và ao nuôi để phát hiện bệnh, theo dõi tốc độ lớn, đánh giá chất lượng cá và mức độ thu hoạch."
+    }
+  },
+  "45-2011.00": {
+    "title_vi": "Thanh tra viên nông nghiệp",
+    "description_vi": "Kiểm tra nông sản, thiết bị và cơ sở chế biến, hoạt động đánh bắt cá và khai thác gỗ để bảo đảm tuân thủ luật và quy định về sức khoẻ, chất lượng và an toàn.",
+    "tasks_vi": {
+      "14846": "Kiểm tra nông sản và các hoạt động liên quan, kể cả đánh bắt cá và khai thác gỗ, về việc tuân thủ luật và quy định sức khoẻ, chất lượng, an toàn.",
+      "14850": "Giải thích và thực thi các văn bản, quy định của nhà nước, hướng dẫn tiêu chuẩn cho người làm nông nghiệp.",
+      "14852": "Kiểm tra vệ sinh và thao tác của nhân viên cơ sở.",
+      "14848": "Xác minh quy trình vận chuyển và xử lý đạt yêu cầu quy định.",
+      "14851": "Viết báo cáo kết quả, kiến nghị và hướng dẫn nông dân, người trồng trọt hoặc cơ sở chế biến cách khắc phục."
+    }
+  },
+  "45-2021.00": {
+    "title_vi": "Người nhân giống vật nuôi",
+    "description_vi": "Chọn và phối giống vật nuôi dựa trên phả hệ, đặc điểm và đời con. Có thể cần biết kỹ thuật thụ tinh nhân tạo và cách dùng thiết bị. Có thể ghi chép chu kỳ động dục, khoảng cách sinh hoặc phả hệ.",
+    "tasks_vi": {
+      "8232": "Cho vật nuôi ăn uống, dọn rửa và khử trùng chuồng, lồng và sân.",
+      "8237": "Theo dõi vật nuôi để phát hiện thời điểm động dục và cho vận động để kích thích khi cần.",
+      "8236": "Chữa vết thương và bệnh nhẹ, liên hệ bác sĩ thú y khi vật nuôi bệnh hoặc bị thương nặng.",
+      "21080": "Mua và dự trữ thức ăn, thuốc.",
+      "8235": "Chọn con giống và tinh dùng để phối, dựa trên hiểu biết về vật nuôi, phả hệ, đặc tính và đặc điểm mong muốn ở đời con."
+    }
+  },
+  "45-2041.00": {
+    "title_vi": "Công nhân phân loại nông sản",
+    "description_vi": "Phân hạng, phân loại nông sản và thực phẩm chưa chế biến theo kích cỡ, khối lượng, màu sắc hoặc tình trạng.",
+    "tasks_vi": {
+      "13352": "Xếp sản phẩm vào thùng theo hạng và ghi hạng lên thùng.",
+      "13351": "Cân sản phẩm hoặc ước lượng khối lượng bằng mắt hoặc tay.",
+      "13350": "Loại bỏ sản phẩm kém, lỗi hoặc tạp chất, xếp sản phẩm đạt vào thùng để chế biến tiếp.",
+      "13349": "Phân hạng và phân loại sản phẩm theo màu sắc, giống, chiều dài, chiều rộng, hình dáng, cảm giác, mùi và chất lượng để chế biến và sử dụng đúng."
+    }
+  },
+  "45-2091.00": {
+    "title_vi": "Người vận hành máy nông nghiệp",
+    "description_vi": "Lái và điều khiển máy móc phục vụ nông nghiệp như làm đất, gieo trồng, chăm sóc, thu hoạch, cho gia súc ăn, chăn dắt hoặc dọn chất thải chăn nuôi. Có thể đóng kiện rơm cỏ. Có thể vận hành máy cố định cho các công đoạn sau thu hoạch như bóc vỏ, tách hạt, tuốt lúa và cán bông.",
+    "tasks_vi": {
+      "13369": "Bốc dỡ nông sản hoặc thùng vật liệu bằng tay hoặc bằng băng tải, xe đẩy, xe nâng, vít tải.",
+      "13358": "Pha vật liệu, hoá chất theo chỉ định và đổ dung dịch, bột hoặc hạt giống vào máy gieo hoặc máy phun.",
+      "13363": "Phun phân bón hoặc thuốc bằng bình phun tay để trừ sâu, nấm, cỏ dại và bệnh.",
+      "13356": "Quan sát và nghe máy chạy để phát hiện hỏng hóc.",
+      "13360": "Điều khiển cần gạt để cài đặt, khởi động và điều chỉnh các bộ phận của máy."
+    }
+  },
+  "45-2092.00": {
+    "title_vi": "Lao động trồng trọt, vườn ươm và nhà kính",
+    "description_vi": "Trồng, chăm sóc và thu hoạch rau, quả, hạt, cây cảnh và cây trồng ngoài đồng bằng tay. Dùng dụng cụ như xẻng, bay, cuốc, đầm, liềm, kéo và dao. Có thể làm đất, bón phân, cấy, làm cỏ, tỉa thưa, cắt tỉa, phun thuốc, hoặc làm sạch, phân loại, đóng gói và bốc xếp nông sản. Có thể làm giàn, sửa hàng rào và chuồng trại, hoặc tham gia tưới tiêu.",
+    "tasks_vi": {
+      "23387": "Ghi chép thông tin về cây trồng như lượng thuốc đã dùng, năng suất hoặc chi phí.",
+      "23379": "Chỉ đạo và giám sát lao động thời vụ trong mùa trồng và thu hoạch.",
+      "23392": "Tham gia kiểm tra, phân hạng, phân loại, bảo quản và xử lý sau thu hoạch.",
+      "23370": "Thu hoạch cây, sang chậu hoặc trồng lại và dán nhãn.",
+      "23373": "Sửa chữa và bảo dưỡng xe, nông cụ và máy móc trong trang trại."
+    }
+  },
+  "45-2093.00": {
+    "title_vi": "Lao động chăn nuôi và nuôi trồng thuỷ sản",
+    "description_vi": "Chăm sóc vật nuôi ở trang trại, đồng cỏ hoặc trại thuỷ sản, như bò, cừu, lợn, dê, ngựa, gia cầm, thỏ, cá, động vật có vỏ và ong, để lấy thịt, lông, da, trứng, sữa và mật. Công việc có thể gồm cho ăn uống, chăn dắt, vắt sữa, thiến, đánh dấu, cắt mỏ, cân, bắt và đưa vật nuôi lên xe. Có thể ghi chép về vật nuôi, khám phát hiện bệnh và chấn thương, hỗ trợ đỡ đẻ, tiêm thuốc và vắc-xin, dọn dẹp chuồng trại.",
+    "tasks_vi": {
+      "13410": "Cho vật nuôi ăn uống và theo dõi lượng thức ăn, nước.",
+      "13419": "Lùa vật nuôi ra đồng cỏ hoặc tới bàn cân, xe tải và chuồng.",
+      "13412": "Khám vật nuôi để phát hiện bệnh, chấn thương và kiểm tra các chỉ số như tốc độ tăng cân.",
+      "13413": "Chữa bệnh như cho uống thuốc, tiêm vắc-xin, hoặc mời bác sĩ thú y khi cần điều trị sâu hơn.",
+      "13418": "Đánh dấu vật nuôi để xác định chủ sở hữu và phân hạng bằng dấu nung, thẻ, sơn hoặc xăm."
+    }
+  },
+  "45-3031.00": {
+    "title_vi": "Người đánh bắt cá và săn bắt",
+    "description_vi": "Săn, đặt bẫy, đánh bắt hoặc thu lượm động vật hoang dã, động vật và thực vật thuỷ sinh. Có thể dùng lưới, bẫy hoặc thiết bị khác. Có thể kéo mẻ lưới lên tàu.",
+    "tasks_vi": {
+      "23403": "Lái tàu và vận hành thiết bị hàng hải.",
+      "23410": "Gỡ sản phẩm khỏi ngư cụ và đo để bảo đảm đúng kích cỡ cho phép.",
+      "23428": "Chỉ đạo hoạt động đánh bắt hoặc săn bắt và giám sát thuyền viên.",
+      "23419": "Đánh giá thời tiết và tình trạng tàu để quyết định cách xử lý phù hợp.",
+      "23402": "Di chuyển bằng đi bộ, xe, thuyền hoặc phương tiện khác tới khu vực săn bắt."
+    }
+  },
+  "45-4011.00": {
+    "title_vi": "Công nhân lâm nghiệp và bảo tồn",
+    "description_vi": "Làm việc chân tay dưới sự giám sát để phát triển, duy trì và bảo vệ rừng, đất rừng, vùng đất ngập nước và đồng cỏ, như ươm và vận chuyển cây giống, phòng trừ sâu bệnh hại cây, làm công trình chống xói mòn và giữ nước. Gồm cả người phụ việc kiểm lâm, người nhổ và trồng cây giống, người thu hái lâm sản ngoài gỗ.",
+    "tasks_vi": {
+      "7026": "Kiểm tra thiết bị để bảo đảm chạy tốt.",
+      "7028": "Chữa cháy rừng hoặc đốt có kiểm soát theo chỉ đạo của cán bộ phòng cháy hoặc kỹ thuật viên lâm nghiệp.",
+      "7029": "Làm nhiệm vụ phòng và chữa cháy, như làm đường băng cản lửa hoặc dọn cành khô.",
+      "7027": "Trao đổi với đồng nghiệp về an toàn, độ cao cắt hoặc nhu cầu công việc."
+    }
+  },
+  "45-4021.00": {
+    "title_vi": "Công nhân đốn cây",
+    "description_vi": "Dùng rìu hoặc cưa máy để đốn cây, vận dụng hiểu biết về đặc điểm cây và kỹ thuật cắt để điều khiển hướng cây đổ và hạn chế hư hại.",
+    "tasks_vi": {
+      "13486": "Cưa vết cắt sau, chừa lại phần gỗ chắc để điều khiển hướng đổ.",
+      "13491": "Điều khiển hướng cây đổ bằng cách vạch đường cắt bằng rìu, cưa vết cắt trước bằng cưa máy, đẽo bỏ miếng gỗ và đóng nêm.",
+      "13484": "Tắt máy cưa, rút lưỡi cưa ra và chạy tới chỗ an toàn khi cây đổ.",
+      "13493": "Chọn cây cần đốn sau khi đánh giá vị trí, địa hình và thời tiết.",
+      "13488": "Đo cây đã đốn và cắt thành khúc gỗ theo chiều dài quy định bằng cưa máy và rìu."
+    }
+  },
+  "45-4022.00": {
+    "title_vi": "Người vận hành máy khai thác gỗ",
+    "description_vi": "Lái máy kéo hoặc xe bánh lốp gắn các bộ phận như lưỡi ủi, kéo cắt, kẹp, giá kéo, tời cáp, giá nâng hoặc cần cẩu để đốn cây, kéo, bốc dỡ, xếp gỗ, nhổ gốc hoặc dọn bụi. Gồm cả vận hành máy khai thác độc lập như máy băm gỗ.",
+    "tasks_vi": {
+      "9802": "Kiểm tra an toàn thiết bị trước khi dùng và bảo dưỡng cơ bản.",
+      "9807": "Điều khiển máy kéo thuỷ lực có kẹp và cần để nâng, xoay và gom cây đã cắt.",
+      "9806": "Phân hạng gỗ theo đặc điểm như kích cỡ mắt gỗ, độ thẳng và tiêu chuẩn của ngành hoặc công ty.",
+      "9803": "Lái máy kéo gắn lưỡi ủi, kẹp, giá kéo, tời cáp hoặc cần cẩu để kéo, bốc dỡ, xếp gỗ, nhổ gốc hoặc dọn bụi.",
+      "9804": "Lái máy kéo bánh xích hoặc bánh lốp để kéo, chở gỗ từ nơi đốn tới bãi tập kết."
+    }
+  },
+  "45-4023.00": {
+    "title_vi": "Người phân hạng và đo gỗ",
+    "description_vi": "Phân hạng gỗ hoặc ước tính khối lượng, giá trị thương mại của gỗ tròn, gỗ nguyên liệu tại bãi phân loại, hồ chứa gỗ hoặc sàn gỗ. Kiểm tra khuyết tật hoặc đo gỗ để tính thể tích.",
+    "tasks_vi": {
+      "9811": "Đánh giá đặc điểm và phân hạng gỗ theo tiêu chí đã có.",
+      "9812": "Ghi dữ liệu về từng cây hoặc khối lượng mỗi chuyến vào sổ hoặc thiết bị cầm tay.",
+      "9814": "Đo gỗ đã đốn hoặc chuyến gỗ nguyên liệu để tính thể tích, khối lượng, kích thước và giá trị, bằng dụng cụ đo và bảng quy đổi.",
+      "9813": "Sơn dấu màu lên gỗ để chỉ hạng hoặc loài, hoặc đọc hạng cho người đánh dấu.",
+      "9817": "Dùng đầu kim loại của thước đo chọc vào gỗ và kiểm tra khuyết tật như hư do nước, nứt, mắt gỗ, đầu gãy, chỗ mục, xoắn và cong."
+    }
+  }
+}
