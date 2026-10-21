@@ -1,0 +1,775 @@
+<title>Bản thử trang hồ sơ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  /* Bố cục: đầu trang, bốn tab (Tổng quan, Thống kê, Thành tựu, Nhật ký); mỗi tab là lưới thẻ 12 cột, xuống một cột trên điện thoại. */
+  :root {
+    --bg: #0a1026;
+    --surface: #101f3d;
+    --raised: #142b52;
+    --line: #254a7a;
+    --ink: #f8f6ee;
+    --ink-2: #c7d2e0;
+    --muted: #8fa6c4;
+    --gold: #d4b06a;
+    --gold-soft: rgba(212, 176, 106, 0.16);
+    --tried: #6fc9c9;
+    --track: #1c3862;
+    --good: #6fcf8f;
+    --bad: #ef7d7d;
+    --f-it: #5b8def;
+    --f-design: #c27bd6;
+    --f-biz: #d9963a;
+    --f-health: #3fb58a;
+    --f-edu: #e06c75;
+    --f-eng: #a8a04a;
+    --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f4ec; --surface: #ffffff; --raised: #eef1f6; --line: #c9d3e2;
+      --ink: #0e1a33; --ink-2: #2c3e5c; --muted: #5a6c88;
+      --gold: #8a6a1f; --gold-soft: rgba(138, 106, 31, 0.12);
+      --tried: #1f7f7f; --track: #dfe5ee; --good: #1f8a4f; --bad: #c0434f;
+      --f-it: #3566c9; --f-design: #9a4fb0; --f-biz: #b06f14; --f-health: #1f8a63; --f-edu: #c0434f; --f-eng: #7a7322;
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f4ec; --surface: #ffffff; --raised: #eef1f6; --line: #c9d3e2;
+    --ink: #0e1a33; --ink-2: #2c3e5c; --muted: #5a6c88;
+    --gold: #8a6a1f; --gold-soft: rgba(138, 106, 31, 0.12);
+    --tried: #1f7f7f; --track: #dfe5ee; --good: #1f8a4f; --bad: #c0434f;
+    --f-it: #3566c9; --f-design: #9a4fb0; --f-biz: #b06f14; --f-health: #1f8a63; --f-edu: #c0434f; --f-eng: #7a7322;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+  .page { max-width: 1120px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 48px; display: grid; gap: 16px; }
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  h1 { font-size: 24px; font-weight: 700; }
+  h2 { font-size: 15px; font-weight: 600; }
+  h3 { font-size: 13px; font-weight: 600; }
+  p { margin: 0; }
+  .note { color: var(--muted); font-size: 12px; }
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .eyebrow { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+  .sample { font-size: 12px; color: var(--gold); border: 1px dashed var(--gold); border-radius: 8px; padding: 6px 10px; background: var(--gold-soft); }
+
+  /* đầu trang */
+  .head { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .crest { width: 72px; height: 84px; }
+  .who { display: grid; gap: 8px; min-width: 0; }
+  .who-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chip { display: inline-flex; gap: 6px; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; font-size: 12px; color: var(--ink-2); }
+  .chip.zodiac { border-color: var(--gold); color: var(--gold); }
+  .pins { display: flex; gap: 6px; }
+  .pin { width: 30px; height: 30px; }
+
+  /* tab */
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+  .tab { font: inherit; font-weight: 600; color: var(--muted); background: none; border: 0; border-bottom: 2px solid transparent; padding: 10px 14px; cursor: pointer; white-space: nowrap; }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--gold); }
+  .tab:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+  .card { grid-column: span 12; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .card-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .sub { display: grid; gap: 10px; border-top: 1px dashed var(--line); padding-top: 14px; }
+  @media (min-width: 880px) {
+    .s5 { grid-column: span 5; } .s6 { grid-column: span 6; } .s7 { grid-column: span 7; } .s8 { grid-column: span 8; } .s4 { grid-column: span 4; }
+  }
+  svg text { font-family: var(--font-body); }
+  .chart { width: 100%; height: auto; display: block; }
+  .scroll { overflow-x: auto; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); }
+  .key { display: inline-block; width: 12px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .key.hatch { background: repeating-linear-gradient(45deg, var(--tried) 0 2px, transparent 2px 5px); outline: 1px solid var(--tried); }
+  .btn { font: inherit; font-size: 13px; color: var(--ink); background: var(--raised); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* đang chơi */
+  .playing { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .role { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; align-items: center; background: var(--raised); border-radius: 10px; padding: 10px 12px; border-left: 4px solid var(--c); }
+  .role-name { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+  .role-name b { font-size: 14px; }
+  .role-name span { color: var(--muted); font-size: 12px; }
+  .role-prog { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; grid-column: 1 / -1; font-size: 12px; color: var(--ink-2); }
+  .steps { display: flex; gap: 4px; }
+  .steps i { flex: 1; height: 8px; border-radius: 3px; background: var(--track); }
+  .steps i.done { background: var(--c); }
+  .unlock { grid-column: 1 / -1; font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; }
+  .ok { color: var(--good); } .todo { color: var(--ink-2); }
+
+  /* soft skill */
+  .radar-wrap { display: grid; gap: 16px; }
+  @media (min-width: 760px) { .radar-wrap { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; } }
+  .ranks { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .rank { display: grid; gap: 3px; }
+  .rank-top { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; }
+  .rank-name { color: var(--ink-2); }
+  .rank-lv { color: var(--gold); font-weight: 600; white-space: nowrap; }
+  .rank-pts { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+  .meter { height: 5px; border-radius: 3px; background: var(--track); overflow: hidden; }
+  .meter > span { display: block; height: 100%; background: var(--gold); }
+  .buff { color: var(--gold); font-size: 11px; font-weight: 600; }
+  .insight p { font-size: 13px; color: var(--ink-2); }
+  .series { display: flex; flex-wrap: wrap; gap: 6px; }
+  .series button { font: inherit; font-size: 12px; color: var(--ink-2); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; cursor: pointer; }
+  .series button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); background: var(--gold-soft); }
+  .series button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .trend-box { position: relative; }
+  .dot { cursor: pointer; outline: none; }
+  .dot:focus-visible .ring { stroke: var(--ink); stroke-width: 2; }
+  .tip { position: absolute; pointer-events: none; background: var(--raised); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4; min-width: 180px; max-width: 240px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); transform: translate(-50%, calc(-100% - 12px)); }
+  .tip b { display: block; }
+  .tip .path { color: var(--muted); }
+
+  /* mục tiêu */
+  .goal { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding-block: 7px; border-bottom: 1px dashed var(--line); font-size: 13px; }
+  .goal:last-child { border-bottom: 0; }
+  .goal .q { color: var(--muted); }
+  .link-skill { margin-top: 4px; font-size: 12px; color: var(--tried); }
+
+  /* kỹ năng nghề */
+  .hard-wrap { display: grid; gap: 16px; }
+  @media (min-width: 760px) { .hard-wrap { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); } }
+  .field { display: grid; gap: 8px; }
+  .field-name { display: flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 600; }
+  .fdot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .medals { display: flex; flex-wrap: wrap; gap: 8px; }
+  .medal { display: inline-flex; gap: 6px; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px 3px 4px; font-size: 12px; }
+  .medal i { width: 18px; height: 18px; border-radius: 50%; display: inline-block; }
+  .lv1 { background: #b07a4a; } .lv2 { background: #b9c3cf; } .lv3 { background: var(--gold); }
+
+  /* thống kê */
+  .kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; grid-column: span 12; }
+  @media (min-width: 720px) { .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: grid; gap: 2px; }
+  .kpi b { font-family: var(--font-mono); font-size: 26px; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .kpi span { color: var(--muted); font-size: 12px; }
+  .favs { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .fav { display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: center; background: var(--raised); border-radius: 10px; padding: 8px 10px; font-size: 13px; }
+  .fav-ico { width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--bg); }
+  .fav small { display: block; color: var(--muted); font-size: 11px; }
+  .fav .count { font-family: var(--font-mono); color: var(--gold); font-size: 12px; white-space: nowrap; }
+
+  /* thành tựu */
+  .badges { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 12px; }
+  .badge { display: grid; justify-items: center; gap: 6px; text-align: center; font-size: 12px; padding: 10px 6px; border-radius: 12px; background: var(--raised); position: relative; }
+  .badge.locked { opacity: 0.45; }
+  .badge svg { width: 48px; height: 48px; }
+  .badge .pinned { position: absolute; top: 6px; right: 8px; font-size: 10px; color: var(--gold); font-weight: 700; }
+  .cats { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  /* nhật ký */
+  .timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+  .event { display: grid; grid-template-columns: 52px 16px 1fr; gap: 10px; }
+  .event time { color: var(--muted); font-size: 12px; padding-top: 2px; text-align: right; }
+  .rail { position: relative; }
+  .rail::before { content: ""; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--line); }
+  .rail::after { content: ""; position: absolute; left: 2px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--c, var(--gold)); }
+  .event-body { padding-bottom: 16px; display: grid; gap: 3px; font-size: 13px; min-width: 0; }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 2px 6px; font-size: 11px; color: var(--muted); }
+  .crumbs span + span::before { content: "›"; margin-right: 6px; }
+  .event-body b { font-weight: 600; }
+  .result { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--ink-2); }
+  .up { color: var(--good); } .down { color: var(--bad); }
+  .settings { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  @media (max-width: 520px) {
+    .head { grid-template-columns: 1fr; }
+    .goal { grid-template-columns: 1fr; gap: 2px; }
+    .event { grid-template-columns: 44px 16px 1fr; }
+  }
+</style>
+
+<div class="page">
+  <p class="sample">Bản thử bố cục, dữ liệu mẫu. Tên bậc, ngưỡng điểm, nghề và thành tựu đều là ví dụ.</p>
+
+  <header class="head">
+    <svg class="crest" viewBox="0 0 72 84" aria-hidden="true">
+      <path d="M36 2 L68 14 V44 C68 64 52 76 36 82 C20 76 4 64 4 44 V14 Z" fill="var(--raised)" stroke="var(--gold)" stroke-width="2"/>
+      <circle cx="36" cy="38" r="16" fill="none" stroke="var(--tried)" stroke-width="2"/>
+      <text x="36" y="44" text-anchor="middle" font-size="18" font-weight="700" fill="var(--ink)">M</text>
+    </svg>
+    <div class="who">
+      <h1>Mây</h1>
+      <div class="who-row">
+        <span class="chip zodiac">♊ Song Tử · +12% điểm Giao tiếp và Thích ứng</span>
+        <span class="note">Huy hiệu ghim:</span>
+        <span class="pins" id="pins"></span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Các phần của hồ sơ">
+    <button class="tab" role="tab" id="t-overview" aria-controls="p-overview" aria-selected="true">Tổng quan</button>
+    <button class="tab" role="tab" id="t-stats" aria-controls="p-stats" aria-selected="false" tabindex="-1">Thống kê</button>
+    <button class="tab" role="tab" id="t-badges" aria-controls="p-badges" aria-selected="false" tabindex="-1">Thành tựu</button>
+    <button class="tab" role="tab" id="t-journal" aria-controls="p-journal" aria-selected="false" tabindex="-1">Nhật ký</button>
+  </nav>
+
+  <!-- Tổng quan -->
+  <section class="grid" role="tabpanel" id="p-overview" aria-labelledby="t-overview">
+    <article class="card">
+      <div class="card-head"><h2>Đang chơi</h2><span class="note">5 nghề · sắp theo lần chơi gần nhất</span></div>
+      <ul class="playing" id="playing"></ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h2>Bạn làm được tới đâu</h2><span class="note">7 nhóm soft skill · tối đa 10.000 điểm mỗi nhóm · 5 bậc, bậc không tụt</span></div>
+      <div class="radar-wrap">
+        <svg class="chart" id="radar" viewBox="0 0 520 400" role="img" aria-label="Biểu đồ bảy góc của bảy nhóm soft skill"></svg>
+        <ul class="ranks" id="ranks"></ul>
+      </div>
+      <div class="sub insight">
+        <span class="eyebrow">Sau 12 scenario</span>
+        <p><b>Đang mạnh lên:</b> Tư duy và giải quyết vấn đề được cộng ở 10 trên 12 scenario.</p>
+        <p><b>Nên luyện thêm:</b> Thích ứng và học hỏi bị trừ ở #4 và #9, đều là lúc yêu cầu đổi giữa chừng.</p>
+      </div>
+      <div class="sub">
+        <div class="card-head"><h3>Qua từng scenario</h3><span class="note">Chọn một nhóm; rê hoặc chạm vào chấm để xem điểm cộng trừ</span></div>
+        <div class="series" id="series"></div>
+        <div class="trend-box scroll" id="trend-box">
+          <svg class="chart" id="trend" viewBox="0 0 760 270" role="img" aria-label="Điểm tích luỹ của nhóm soft skill đang chọn qua 12 scenario"></svg>
+          <div class="tip" id="tip" hidden></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card s6">
+      <div class="card-head"><h2>Mục tiêu của bạn</h2><button class="btn" type="button">Sửa</button></div>
+      <div id="goals"></div>
+      <p class="note">Chỉ để bạn tự nhìn lại, không chấm điểm và không dùng để gợi ý nghề.</p>
+    </article>
+
+    <article class="card s6">
+      <div class="card-head"><h2>Bạn thích gì</h2><span class="note">RIASEC</span></div>
+      <svg class="chart" id="riasec" viewBox="0 0 480 250" role="img" aria-label="Sáu trục sở thích: cột tự kể và cột sau khi thử chồng lên nhau"></svg>
+      <div class="legend"><span><i class="key" style="background: var(--gold)"></i>Tự kể (Get to know me)</span><span><i class="key hatch"></i>Sau khi thử (12 scenario)</span></div>
+      <p class="note">Số trên cột là chênh lệch: chơi rồi thấy thích hơn (+) hay kém hơn (−) so với lúc tự kể.</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h2>Kỹ năng nghề</h2><span class="note">Keyword đã đạt, theo nhóm ngành</span></div>
+      <div class="hard-wrap">
+        <div id="hard" style="display: grid; gap: 14px;"></div>
+        <div style="display: grid; gap: 8px; align-content: start;">
+          <h3>Độ sâu theo nhóm ngành</h3>
+          <svg class="chart" id="stack" viewBox="0 0 360 160" role="img" aria-label="Số keyword theo mức ở từng nhóm ngành"></svg>
+        </div>
+      </div>
+      <div class="legend"><span><i class="key lv1"></i>Làm quen</span><span><i class="key lv2"></i>Thành thạo</span><span><i class="key lv3"></i>Chuyên sâu</span></div>
+    </article>
+  </section>
+
+  <!-- Thống kê -->
+  <section class="grid" role="tabpanel" id="p-stats" aria-labelledby="t-stats" hidden>
+    <div class="kpis" id="kpis"></div>
+
+    <article class="card s7">
+      <div class="card-head"><h2>Bản đồ khám phá</h2><span class="note">Mỗi cụm là một nhóm ngành, sao sáng là nghề đã thử</span></div>
+      <div class="scroll"><svg class="chart" id="sky" viewBox="0 0 520 300" role="img" aria-label="Bản đồ sao các nghề đã khám phá theo nhóm ngành"></svg></div>
+    </article>
+
+    <article class="card s5">
+      <div class="card-head"><h2>Thời gian theo nhóm ngành</h2><span class="note">Mỗi ô là 30 phút</span></div>
+      <div id="waffle"></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><h2>Việc yêu thích</h2><span class="note">Việc bạn chạm "Thích" nhiều nhất ở câu hỏi sau mỗi scenario</span></div>
+      <ul class="favs" id="favs"></ul>
+    </article>
+  </section>
+
+  <!-- Thành tựu -->
+  <section class="grid" role="tabpanel" id="p-badges" aria-labelledby="t-badges" hidden>
+    <article class="card">
+      <div class="card-head"><h2>Thành tựu</h2><span class="note mono">12 / 100</span></div>
+      <div class="cats" id="cats"></div>
+      <div class="badges" id="badges"></div>
+      <p class="note">Chạm một huy hiệu đã mở để ghim lên đầu trang, tối đa 3.</p>
+    </article>
+  </section>
+
+  <!-- Nhật ký -->
+  <section class="grid" role="tabpanel" id="p-journal" aria-labelledby="t-journal" hidden>
+    <article class="card s8">
+      <div class="card-head"><h2>Nhật ký</h2><span class="note">Mỗi scenario một dòng, mới nhất ở trên</span></div>
+      <ol class="timeline" id="journal"></ol>
+    </article>
+    <article class="card s4">
+      <h2>Riêng tư</h2>
+      <p class="note">Hồ sơ chỉ mình bạn xem.</p>
+      <div class="settings">
+        <button class="btn" type="button">Xoá phần kể về bạn</button>
+      </div>
+    </article>
+  </section>
+</div>
+
+<script>
+(() => {
+  const NS = "http://www.w3.org/2000/svg";
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => n.toLocaleString("vi-VN");
+  const signed = (n) => (n > 0 ? "+" : n < 0 ? "−" : "") + fmt(Math.abs(n));
+  function s(tag, attrs, parent, text) {
+    const n = document.createElementNS(NS, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    if (text !== undefined) n.textContent = text;
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  function h(tag, cls, text) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+
+  const FIELDS = {
+    it: { name: "Công nghệ thông tin", short: "CNTT", c: "var(--f-it)", total: 22, tried: 2 },
+    design: { name: "Thiết kế và truyền thông", short: "Thiết kế", c: "var(--f-design)", total: 6, tried: 1 },
+    biz: { name: "Kinh doanh và marketing", short: "Kinh doanh", c: "var(--f-biz)", total: 5, tried: 1 },
+    health: { name: "Y tế", short: "Y tế", c: "var(--f-health)", total: 3, tried: 1 },
+    edu: { name: "Giáo dục", short: "Giáo dục", c: "var(--f-edu)", total: 2, tried: 0 },
+    eng: { name: "Kỹ thuật", short: "Kỹ thuật", c: "var(--f-eng)", total: 2, tried: 0 }
+  };
+
+  /* 12 scenario đã chơi: nhóm ngành, nghề, cấp, tên */
+  const SCEN = [
+    ["05/10", "it", "Kiểm thử phần mềm", 1, "Đọc yêu cầu và viết ca kiểm thử", 64],
+    ["06/10", "it", "Kiểm thử phần mềm", 1, "Dò lỗi đăng nhập", 72],
+    ["06/10", "it", "Kiểm thử phần mềm", 1, "Báo lỗi cho lập trình viên", 81],
+    ["07/10", "it", "Kiểm thử phần mềm", 2, "Kiểm thử hồi quy trước ngày phát hành", 58],
+    ["08/10", "biz", "Marketing số", 1, "Viết email xin lỗi khách hàng", 69],
+    ["08/10", "it", "Phân tích dữ liệu", 1, "Làm sạch bảng doanh số", 75],
+    ["09/10", "it", "Phân tích dữ liệu", 1, "Tìm vì sao doanh số tuần giảm", 83],
+    ["10/10", "design", "Thiết kế UI/UX", 1, "Phỏng vấn người dùng", 70],
+    ["11/10", "it", "Kiểm thử phần mềm", 2, "Viết test tự động đầu tiên", 61],
+    ["13/10", "health", "Điều dưỡng", 1, "Tiếp nhận ca cấp cứu", 66],
+    ["14/10", "it", "Phân tích dữ liệu", 1, "Trình bày số liệu cho trưởng nhóm", 78],
+    ["15/10", "it", "Kiểm thử phần mềm", 2, "Kiểm thử ứng dụng trên điện thoại", 74]
+  ];
+
+  /* điểm cộng trừ của từng nhóm ở từng scenario; null = scenario không chấm nhóm đó */
+  const MAXP = 10000;
+  const TH = [0, 1000, 2500, 5000, 8000];
+  const SOFT = [
+    { short: "Giao tiếp", name: "Giao tiếp & Hợp tác", buff: true,
+      d: [null, 200, 450, null, 600, null, null, 520, null, 380, 700, 550],
+      ranks: ["Mới làm quen", "Biết lắng nghe", "Người kết nối", "Người gắn kết", "Linh hồn của nhóm"] },
+    { short: "Cảm xúc", name: "Trí tuệ cảm xúc & Xử lý xung đột",
+      d: [null, null, 300, null, 700, null, null, 400, null, 500, null, 200],
+      ranks: ["Đang tập bình tĩnh", "Biết thấu hiểu", "Người giữ hoà khí", "Người hoà giải", "Chỗ dựa tinh thần"] },
+    { short: "Lãnh đạo", name: "Lãnh đạo & Tư duy kinh doanh",
+      d: [null, null, null, 250, null, null, null, null, null, 400, 650, null],
+      ranks: ["Người đồng hành", "Dám đứng ra", "Người dẫn việc", "Người dẫn dắt", "Thủ lĩnh"] },
+    { short: "Tư duy", name: "Tư duy & Giải quyết vấn đề",
+      d: [500, 800, null, 600, null, 700, 900, 500, 700, null, 600, 600],
+      ranks: ["Hay thắc mắc", "Biết phân tích", "Người gỡ rối", "Nhà giải mã", "Bậc thầy giải đố"] },
+    { short: "Tự quản lý", name: "Tự quản lý & Chịu áp lực",
+      d: [400, null, 350, 700, null, 500, 300, null, 600, 800, null, 450],
+      ranks: ["Đang tập nề nếp", "Có kế hoạch", "Vững nhịp", "Bền bỉ", "Bình tĩnh trước bão"] },
+    { short: "Thích ứng", name: "Thích ứng & Học hỏi", buff: true,
+      d: [null, 300, null, -200, 400, null, 600, null, -300, 500, null, 500],
+      ranks: ["Tò mò", "Học nhanh", "Linh hoạt", "Thích nghi giỏi", "Người học suốt đời"] },
+    { short: "Chuyên nghiệp", name: "Đạo đức & Chuyên nghiệp",
+      d: [300, null, 500, 400, null, 300, null, null, 600, null, null, 600],
+      ranks: ["Đáng tin", "Giữ lời", "Tận tâm", "Chuyên nghiệp", "Hình mẫu"] }
+  ];
+  SOFT.forEach((g) => {
+    let acc = 0;
+    g.cum = g.d.map((v) => (acc += v || 0));
+    g.pts = acc;
+    let lv = 1;
+    TH.forEach((t, i) => { if (acc >= t) lv = i + 1; });
+    g.lv = lv;
+    const hi = lv < 5 ? TH[lv] : MAXP;
+    g.next = hi;
+    g.prog = (acc - TH[lv - 1]) / (hi - TH[lv - 1]);
+  });
+
+  /* ---------- Đang chơi ---------- */
+  const PLAYING = [
+    { k: "it", role: "Kiểm thử phần mềm", lv: 2, done: 3, total: 5,
+      need: [["Tư duy bậc 4", true], ["Chuyên nghiệp bậc 3", true], ["Viết test: Thành thạo", false]] },
+    { k: "it", role: "Phân tích dữ liệu", lv: 1, done: 3, total: 4,
+      need: [["Tư duy bậc 3", true], ["SQL: Làm quen", true]] },
+    { k: "health", role: "Điều dưỡng", lv: 1, done: 1, total: 5,
+      need: [["Cảm xúc bậc 2", true], ["Tự quản lý bậc 2", true]] },
+    { k: "design", role: "Thiết kế UI/UX", lv: 1, done: 1, total: 4,
+      need: [["Giao tiếp bậc 2", true], ["Wireframe: Làm quen", true]] },
+    { k: "biz", role: "Marketing số", lv: 1, done: 1, total: 4,
+      need: [["Giao tiếp bậc 2", true], ["Lãnh đạo bậc 2", true]] }
+  ];
+  function playing() {
+    PLAYING.forEach((p) => {
+      const li = h("li", "role");
+      li.style.setProperty("--c", FIELDS[p.k].c);
+      const name = h("div", "role-name");
+      name.append(h("b", "", p.role), h("span", "", FIELDS[p.k].name + " · Cấp " + p.lv));
+      const btn = h("button", "btn", "Chơi tiếp");
+      btn.type = "button";
+      const prog = h("div", "role-prog");
+      const steps = h("div", "steps");
+      for (let i = 0; i < p.total; i++) steps.appendChild(h("i", i < p.done ? "done" : ""));
+      prog.append(steps, h("span", "mono", p.done + "/" + p.total + " scenario"));
+      const unlock = h("div", "unlock");
+      unlock.appendChild(h("span", "", "Mở cấp " + (p.lv + 1) + " cần:"));
+      p.need.forEach(([t, ok]) => unlock.appendChild(h("span", ok ? "ok" : "todo", (ok ? "✓ " : "○ ") + t)));
+      li.append(name, btn, prog, unlock);
+      $("playing").appendChild(li);
+    });
+  }
+
+  /* ---------- Soft skill ---------- */
+  function radar() {
+    const svg = $("radar"), cx = 260, cy = 202, R = 132, n = SOFT.length;
+    const pt = (i, r) => {
+      const a = -Math.PI / 2 + (i * 2 * Math.PI) / n;
+      return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+    };
+    for (let lv = 5; lv >= 1; lv--) {
+      const pts = SOFT.map((_, i) => pt(i, (R * lv) / 5).join(",")).join(" ");
+      s("polygon", { points: pts, fill: lv % 2 ? "var(--raised)" : "var(--surface)", stroke: "var(--line)" }, svg);
+    }
+    SOFT.forEach((_, i) => { const [x, y] = pt(i, R); s("line", { x1: cx, y1: cy, x2: x, y2: y, stroke: "var(--line)" }, svg); });
+    [1, 2, 3, 4, 5].forEach((lv) => s("text", { x: cx + 4, y: cy - (R * lv) / 5 + 4, "font-size": 9, fill: "var(--muted)" }, svg, lv));
+    const val = (g) => Math.min(5, g.lv + (g.lv < 5 ? g.prog : 0));
+    const shape = SOFT.map((g, i) => pt(i, (R * val(g)) / 5).join(",")).join(" ");
+    s("polygon", { points: shape, fill: "var(--gold-soft)", stroke: "var(--gold)", "stroke-width": 2, "stroke-linejoin": "round" }, svg);
+    SOFT.forEach((g, i) => {
+      const [x, y] = pt(i, (R * val(g)) / 5);
+      s("circle", { cx: x, cy: y, r: 4, fill: "var(--gold)" }, svg);
+      const [lx, ly] = pt(i, R + 26);
+      const anchor = Math.abs(lx - cx) < 8 ? "middle" : lx > cx ? "start" : "end";
+      s("text", { x: lx, y: ly, "text-anchor": anchor, "font-size": 12, "font-weight": 600, fill: g.buff ? "var(--gold)" : "var(--ink-2)" }, svg, (g.buff ? "★ " : "") + g.short);
+      s("text", { x: lx, y: ly + 14, "text-anchor": anchor, "font-size": 10, fill: "var(--muted)" }, svg, "Bậc " + g.lv);
+    });
+
+    SOFT.forEach((g) => {
+      const li = h("li", "rank");
+      const top = h("div", "rank-top");
+      top.append(h("span", "rank-name", g.name), h("span", "rank-lv", g.lv + " · " + g.ranks[g.lv - 1]));
+      const m = h("div", "meter");
+      const bar = h("span");
+      bar.style.width = Math.round(g.prog * 100) + "%";
+      m.appendChild(bar);
+      const pts = h("div", "rank-pts");
+      pts.append(h("span", "mono", fmt(g.pts) + " / " + fmt(MAXP)), h("span", "", g.lv < 5 ? "Bậc " + (g.lv + 1) + " ở " + fmt(g.next) : "Bậc cao nhất"));
+      li.append(top, m, pts);
+      if (g.buff) li.appendChild(h("span", "buff", "★ Song Tử +12%"));
+      $("ranks").appendChild(li);
+    });
+  }
+
+  let active = 3;
+  function trend() {
+    const svg = $("trend"), tip = $("tip"), box = $("trend-box");
+    svg.textContent = "";
+    tip.hidden = true;
+    const L = 92, Rr = 740, T = 16, B = 232, n = SCEN.length, ymax = 7000;
+    const x = (i) => L + (i * (Rr - L)) / (n - 1), y = (v) => B - (v / ymax) * (B - T);
+    s("line", { x1: L, x2: Rr, y1: B, y2: B, stroke: "var(--line)" }, svg);
+    TH.slice(1).filter((t) => t <= ymax).forEach((t, i) => {
+      s("line", { x1: L, x2: Rr, y1: y(t), y2: y(t), stroke: "var(--line)", "stroke-dasharray": "3 4" }, svg);
+      s("text", { x: L - 10, y: y(t) + 4, "text-anchor": "end", "font-size": 10, fill: "var(--muted)" }, svg, "Bậc " + (i + 2) + " · " + fmt(t));
+    });
+    s("text", { x: L - 10, y: B + 4, "text-anchor": "end", "font-size": 10, fill: "var(--muted)" }, svg, "0");
+    for (let i = 0; i < n; i++) s("text", { x: x(i), y: B + 20, "text-anchor": "middle", "font-size": 10, fill: "var(--muted)" }, svg, "#" + (i + 1));
+
+    SOFT.forEach((g, si) => {
+      if (si === active) return;
+      const d = g.cum.map((v, i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1)).join(" ");
+      s("path", { d, fill: "none", stroke: "var(--muted)", "stroke-width": 1.2, opacity: 0.3 }, svg);
+    });
+    const g = SOFT[active];
+    const d = g.cum.map((v, i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1)).join(" ");
+    s("path", { d, fill: "none", stroke: "var(--gold)", "stroke-width": 2.5, "stroke-linejoin": "round" }, svg);
+
+    g.d.forEach((delta, i) => {
+      if (delta === null) return;
+      const [date, k, role, lv, name] = SCEN[i];
+      const cxp = x(i), cyp = y(g.cum[i]);
+      const grp = s("g", { class: "dot", tabindex: 0, role: "img", "aria-label": "#" + (i + 1) + " " + name + ": " + signed(delta) + " điểm" }, svg);
+      s("circle", { cx: cxp, cy: cyp, r: 12, fill: "transparent" }, grp);
+      s("circle", { class: "ring", cx: cxp, cy: cyp, r: 5.5, fill: delta < 0 ? "var(--bad)" : "var(--gold)", stroke: "var(--surface)", "stroke-width": 2 }, grp);
+      const show = () => {
+        tip.textContent = "";
+        tip.append(h("b", "", "#" + (i + 1) + " · " + name), h("div", "path", FIELDS[k].short + " › " + role + " › Cấp " + lv + " · " + date));
+        const line = h("div", delta < 0 ? "down" : "up", signed(delta) + " điểm " + g.short);
+        tip.appendChild(line);
+        if (g.buff && delta > 0) tip.appendChild(h("div", "path", "gồm +" + fmt(Math.round(delta - delta / 1.12)) + " từ Song Tử"));
+        tip.appendChild(h("div", "path", "Tổng sau màn này: " + fmt(g.cum[i])));
+        tip.hidden = false;
+        const sb = svg.getBoundingClientRect(), bb = box.getBoundingClientRect();
+        const scale = sb.width / 760;
+        tip.style.left = (sb.left - bb.left + box.scrollLeft + cxp * scale) + "px";
+        tip.style.top = (sb.top - bb.top + cyp * scale) + "px";
+      };
+      const hide = () => { tip.hidden = true; };
+      grp.addEventListener("pointerenter", show);
+      grp.addEventListener("click", show);
+      grp.addEventListener("focus", show);
+      grp.addEventListener("pointerleave", hide);
+      grp.addEventListener("blur", hide);
+    });
+  }
+  function series() {
+    SOFT.forEach((g, i) => {
+      const b = h("button", "", (g.buff ? "★ " : "") + g.short);
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(i === active));
+      b.addEventListener("click", () => {
+        active = i;
+        $("series").querySelectorAll("button").forEach((x, j) => x.setAttribute("aria-pressed", String(j === i)));
+        trend();
+      });
+      $("series").appendChild(b);
+    });
+  }
+
+  /* ---------- Mục tiêu ---------- */
+  const GOALS = [
+    ["Đích xa", "Làm ra thứ được nhiều người dùng"],
+    ["Vì", "Thấy mình có ích · “muốn bố mẹ bớt vất vả”"],
+    ["Cần giỏi lên", "Tự tin nói trước đám đông · Tiếng Anh", "Giao tiếp & Hợp tác: +2.300 điểm, lên 1 bậc từ lúc đặt mục tiêu"],
+    ["Có thể cản", "Chưa biết bắt đầu từ đâu"],
+    ["Khi gặp khó", "Tâm sự với bạn bè · Ra ngoài vận động"],
+    ["Sở thích", "Chơi game · Vẽ · Công nghệ, máy tính"]
+  ];
+  function goals() {
+    GOALS.forEach(([q, a, link]) => {
+      const g = h("div", "goal");
+      const right = h("div");
+      right.appendChild(h("div", "", a));
+      if (link) right.appendChild(h("div", "link-skill", "↗ " + link));
+      g.append(h("div", "q", q), right);
+      $("goals").appendChild(g);
+    });
+  }
+
+  /* ---------- RIASEC: cột tự kể, cột sau khi thử kẻ xọc chồng lên ---------- */
+  const RIASEC = [["Thực hành", 2.0, 1.6], ["Tìm tòi", 3.0, 2.7], ["Sáng tạo", 2.5, 2.8], ["Kết nối", 1.5, 2.1], ["Dẫn dắt", 2.0, 1.8], ["Tổ chức", 2.5, 2.2]];
+  function riasec() {
+    const svg = $("riasec"), L = 74, Rr = 470, T = 26, B = 206, n = RIASEC.length;
+    const defs = s("defs", {}, svg);
+    const pat = s("pattern", { id: "hatch", patternUnits: "userSpaceOnUse", width: 7, height: 7, patternTransform: "rotate(45)" }, defs);
+    s("rect", { width: 7, height: 7, fill: "var(--surface)", "fill-opacity": 0.35 }, pat);
+    s("line", { x1: 0, y1: 0, x2: 0, y2: 7, stroke: "var(--tried)", "stroke-width": 3.5 }, pat);
+    const y = (v) => B - (v / 3) * (B - T);
+    [["Thích", 3], ["Bình thường", 2], ["Không thích", 1]].forEach(([t, v]) => {
+      s("line", { x1: L, x2: Rr, y1: y(v), y2: y(v), stroke: "var(--line)", "stroke-dasharray": "3 4" }, svg);
+      s("text", { x: L - 8, y: y(v) + 4, "text-anchor": "end", "font-size": 10, fill: "var(--muted)" }, svg, t);
+    });
+    s("line", { x1: L, x2: Rr, y1: B, y2: B, stroke: "var(--line)" }, svg);
+    const band = (Rr - L) / n, w = band * 0.46;
+    RIASEC.forEach(([name, self, tried], i) => {
+      const cxp = L + band * i + band / 2;
+      s("rect", { x: cxp - w / 2, y: y(self), width: w, height: B - y(self), rx: 3, fill: "var(--gold)" }, svg);
+      s("rect", { x: cxp - w / 2 + 5, y: y(tried), width: w - 10, height: B - y(tried), rx: 3, fill: "url(#hatch)", stroke: "var(--tried)", "stroke-width": 1.5 }, svg);
+      const diff = Math.round((tried - self) * 10) / 10;
+      const top = Math.min(y(self), y(tried));
+      s("text", { x: cxp, y: top - 7, "text-anchor": "middle", "font-size": 11, "font-weight": 600, fill: diff > 0 ? "var(--good)" : diff < 0 ? "var(--bad)" : "var(--muted)" }, svg,
+        diff === 0 ? "=" : (diff > 0 ? "+" : "−") + Math.abs(diff).toString().replace(".", ","));
+      s("text", { x: cxp, y: B + 18, "text-anchor": "middle", "font-size": 11, fill: "var(--ink-2)" }, svg, name);
+    });
+  }
+
+  /* ---------- Kỹ năng nghề ---------- */
+  const HARD = {
+    it: [["SQL", 2], ["Viết ca kiểm thử", 2], ["Đọc log", 1], ["Viết test", 1], ["Báo lỗi", 2]],
+    design: [["Phỏng vấn người dùng", 1]],
+    biz: [["Viết nội dung", 1]],
+    health: [["Tiếp nhận bệnh nhân", 1]]
+  };
+  function hard() {
+    Object.keys(HARD).forEach((k) => {
+      const f = h("div", "field");
+      const nm = h("div", "field-name");
+      const dot = h("span", "fdot");
+      dot.style.background = FIELDS[k].c;
+      nm.append(dot, h("span", "", FIELDS[k].name));
+      const md = h("div", "medals");
+      HARD[k].forEach(([kw, lv]) => {
+        const m = h("span", "medal");
+        m.append(h("i", "lv" + lv), h("span", "", kw));
+        md.appendChild(m);
+      });
+      f.append(nm, md);
+      $("hard").appendChild(f);
+    });
+    const svg = $("stack"), L = 78, Rr = 330, max = 6, bh = 22, gap = 14, T = 8;
+    const x = (v) => L + (v / max) * (Rr - L);
+    const lvCol = ["#b07a4a", "#b9c3cf", "var(--gold)"];
+    Object.keys(HARD).forEach((k, i) => {
+      const yy = T + i * (bh + gap);
+      s("text", { x: L - 10, y: yy + bh / 2 + 4, "text-anchor": "end", "font-size": 11, fill: "var(--ink-2)" }, svg, FIELDS[k].short);
+      let acc = 0;
+      [1, 2, 3].forEach((lv) => {
+        const c = HARD[k].filter((x) => x[1] === lv).length;
+        if (!c) return;
+        s("rect", { x: x(acc), y: yy, width: x(acc + c) - x(acc) - 2, height: bh, rx: 4, fill: lvCol[lv - 1] }, svg);
+        acc += c;
+      });
+      s("text", { x: x(acc) + 6, y: yy + bh / 2 + 4, "font-size": 11, fill: "var(--muted)" }, svg, acc);
+    });
+  }
+
+  /* ---------- Thống kê ---------- */
+  function kpis() {
+    [["12", "scenario đã chơi"], ["6,5", "giờ chơi"], ["5/40", "nghề đã khám phá"], ["4/6", "nhóm ngành đã ghé"]].forEach(([v, l]) => {
+      const d = h("div", "kpi");
+      d.append(h("b", "", v), h("span", "", l));
+      $("kpis").appendChild(d);
+    });
+  }
+
+  function sky() {
+    const svg = $("sky");
+    const centers = { it: [130, 125], design: [300, 75], biz: [430, 110], health: [380, 225], edu: [230, 232], eng: [75, 250] };
+    const golden = Math.PI * (3 - Math.sqrt(5));
+    Object.keys(FIELDS).forEach((k) => {
+      const f = FIELDS[k], [cx, cy] = centers[k];
+      const pts = [];
+      for (let i = 0; i < f.total; i++) {
+        const r = 9 * Math.sqrt(i + 0.6), a = i * golden;
+        pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
+      }
+      for (let i = 0; i < f.tried - 1; i++) s("line", { x1: pts[i][0], y1: pts[i][1], x2: pts[i + 1][0], y2: pts[i + 1][1], stroke: f.c, "stroke-width": 1.5, opacity: 0.7 }, svg);
+      pts.forEach(([x, y], i) => {
+        const lit = i < f.tried;
+        if (lit) s("circle", { cx: x, cy: y, r: 8, fill: f.c, opacity: 0.25 }, svg);
+        s("circle", { cx: x, cy: y, r: lit ? 4.5 : 2.6, fill: lit ? f.c : "none", stroke: f.c, "stroke-width": lit ? 0 : 1, opacity: lit ? 1 : 0.6 }, svg);
+      });
+      const top = Math.min(...pts.map((p) => p[1]));
+      s("text", { x: cx, y: top - 12, "text-anchor": "middle", "font-size": 11, "font-weight": 600, fill: "var(--ink-2)" }, svg, f.short + " " + f.tried + "/" + f.total);
+    });
+  }
+
+  const HOURS = { it: 3.5, design: 1, biz: 1, health: 1 };
+  function waffle() {
+    const cells = [];
+    Object.keys(HOURS).forEach((k) => { for (let i = 0; i < HOURS[k] * 2; i++) cells.push(k); });
+    const cols = 8, size = 26, gap = 5, rows = Math.ceil(cells.length / cols);
+    const svg = s("svg", { class: "chart", viewBox: "0 0 " + (cols * (size + gap)) + " " + (rows * (size + gap)), role: "img", "aria-label": "Thời gian chơi theo nhóm ngành" });
+    cells.forEach((k, i) => s("rect", { x: (i % cols) * (size + gap), y: Math.floor(i / cols) * (size + gap), width: size, height: size, rx: 4, fill: FIELDS[k].c }, svg));
+    $("waffle").appendChild(svg);
+    const lg = h("div", "legend");
+    Object.keys(HOURS).forEach((k) => {
+      const sp = h("span");
+      const key = h("i", "key");
+      key.style.background = FIELDS[k].c;
+      sp.append(key, document.createTextNode(FIELDS[k].short + " " + String(HOURS[k]).replace(".", ",") + " giờ"));
+      lg.appendChild(sp);
+    });
+    $("waffle").appendChild(lg);
+  }
+
+  const FAVS = [["Dò log tìm nguyên nhân lỗi", "it", "LOG", 4], ["Tìm quy luật trong bảng số liệu", "it", "DATA", 3], ["Hỏi người dùng họ gặp khó ở đâu", "design", "UX", 2], ["Giải thích số liệu cho người không chuyên", "it", "TALK", 2], ["Lên danh sách ca kiểm thử", "it", "TEST", 2]];
+  function favs() {
+    FAVS.forEach(([t, k, code, n]) => {
+      const li = h("li", "fav");
+      const ico = h("span", "fav-ico", code);
+      ico.style.background = FIELDS[k].c;
+      const body = h("span");
+      body.append(h("span", "", t), h("small", "", FIELDS[k].name));
+      li.append(ico, body, h("span", "count", n + " lần thích"));
+      $("favs").appendChild(li);
+    });
+  }
+
+  /* ---------- Thành tựu ---------- */
+  const CATS = ["Khám phá", "Thành thạo", "Tiến bộ", "Tự soi", "Kiên trì"];
+  const CAT_C = ["var(--f-it)", "var(--gold)", "var(--tried)", "var(--f-design)", "var(--f-health)"];
+  const BADGES = [
+    ["Bước chân đầu", 0, 1, 1], ["Nhà thám hiểm", 0, 1, 0], ["Vượt ngành", 0, 1, 0], ["Ba thiên hà", 0, 0, 0],
+    ["Xong cấp đầu", 1, 1, 1], ["Thành thạo đầu tiên", 1, 1, 0], ["Chuyên sâu", 1, 0, 0],
+    ["Lên bậc 3", 2, 1, 0], ["Lên bậc 4", 2, 1, 0], ["Bậc 5 đầu tiên", 2, 0, 0],
+    ["Đặt mục tiêu", 3, 1, 1], ["Biết mình thích gì", 3, 1, 0], ["Nhìn lại", 3, 0, 0],
+    ["Không bỏ cuộc", 4, 1, 0], ["Tiến bộ 30 điểm", 4, 1, 0], ["Năm lần chơi lại", 4, 1, 0], ["Mười scenario", 4, 1, 0], ["Năm mươi scenario", 4, 0, 0]
+  ];
+  function hexBadge(cat, parent, cls, label) {
+    const svg = s("svg", Object.assign({ viewBox: "0 0 48 48" }, cls ? { class: cls } : {}, label ? { role: "img", "aria-label": label } : { "aria-hidden": "true" }), parent);
+    s("polygon", { points: "24,3 43,14 43,34 24,45 5,34 5,14", fill: "var(--surface)", stroke: CAT_C[cat], "stroke-width": 2.5 }, svg);
+    s("circle", { cx: 24, cy: 24, r: 9, fill: CAT_C[cat], opacity: 0.85 }, svg);
+  }
+  function badges() {
+    CATS.forEach((c, i) => {
+      const sp = h("span", "chip");
+      const key = h("i", "key");
+      key.style.background = CAT_C[i];
+      sp.append(key, document.createTextNode(c));
+      $("cats").appendChild(sp);
+    });
+    BADGES.forEach(([name, cat, got, pinned]) => {
+      const b = h("div", "badge" + (got ? "" : " locked"));
+      hexBadge(cat, b);
+      b.appendChild(h("span", "", got ? name : "Chưa mở: " + name));
+      if (pinned) {
+        b.appendChild(h("span", "pinned", "GHIM"));
+        hexBadge(cat, $("pins"), "pin", name);
+      }
+      $("badges").appendChild(b);
+    });
+  }
+
+  /* ---------- Nhật ký ---------- */
+  function journal() {
+    SCEN.map((r, i) => [r, i]).reverse().forEach(([[date, k, role, lv, name, score], i]) => {
+      const li = h("li", "event");
+      const rail = h("span", "rail");
+      rail.style.setProperty("--c", FIELDS[k].c);
+      const body = h("div", "event-body");
+      const crumbs = h("div", "crumbs");
+      [FIELDS[k].name, role, "Cấp " + lv].forEach((t) => crumbs.appendChild(h("span", "", t)));
+      const result = h("div", "result");
+      result.appendChild(h("span", "mono", score + " điểm"));
+      SOFT.forEach((g) => {
+        const d = g.d[i];
+        if (d === null) return;
+        result.appendChild(h("span", d < 0 ? "down" : "up", g.short + " " + signed(d)));
+      });
+      body.append(crumbs, h("b", "", "#" + (i + 1) + " · " + name), result);
+      li.append(h("time", "", date), rail, body);
+      $("journal").appendChild(li);
+    });
+  }
+
+  /* ---------- tab ---------- */
+  const tabs = Array.from(document.querySelectorAll(".tab"));
+  function select(tab) {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      $(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => select(t));
+    t.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      select(next);
+      next.focus();
+    });
+  });
+
+  playing(); radar(); series(); trend(); goals(); riasec(); hard();
+  kpis(); sky(); waffle(); favs();
+  badges(); journal();
+  if (/^#(stats|badges|journal)$/.test(location.hash)) select($("t-" + location.hash.slice(1)));
+})();
+</script>

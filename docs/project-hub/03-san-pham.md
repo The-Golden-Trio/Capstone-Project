@@ -94,18 +94,19 @@ Cách sinh scenario mới: xem `occupation-data/specs/HUONG-DAN-SINH-SCENARIO.md
 ## 6. Kỹ năng và bản đồ nghề
 
 - Mỗi lượt chơi ghi nhận **bằng chứng kỹ năng** (activity, kỹ năng, mốc, trích câu trả lời, có dùng hint không, có hết giờ không) rồi quy ra điểm.
-- Kỹ năng là **nhiên liệu** để lên cấp (BR-02) và sang nghề kề (BR-03). Cấp đầu của mọi nghề luôn mở (BR-01).
+- Kỹ năng là **điều kiện** để lên cấp (BR-02) và sang nghề kề (BR-03): bậc soft skill (7 nhóm, 5 bậc, tối đa 10.000 điểm mỗi nhóm) và keyword kỹ năng nghề 3 mức (D-104, D-105). Cấp đầu của mọi nghề luôn mở (BR-01).
 - Người chơi học **cả hard skill lẫn soft skill** (D-32).
-- ⚠️ **Chưa chốt:** điểm tính chung hay tách theo domain (D-35)?
 - Bản đồ hiện tại có **22 hành tinh / 7 nhóm nghề / 64 đường nối** (36 SIMILAR, 28 PROGRESSES_TO). 💡 Flow 20/9 đề xuất bỏ đường nối và tính toạ độ hành tinh từ skill.
 
 ## 7. Các lớp phụ
 
 | Lớp | Trạng thái |
 |---|---|
-| **Get-to-know-me** (6 câu, đo 8 chiều fit, có thể thêm tự luận) | Có trong code. **Tuỳ chọn** (D-29). Bộ câu hỏi tự soạn, **chưa kiểm định** |
+| **Get-to-know-me** (18 thẻ ba mức cho RIASEC, 5 câu mục tiêu chạm nhanh, không gọi AI) | **Tuỳ chọn** (D-29); thiết kế chốt 16/10 (D-107, D-108). Code hiện còn bản trước. Thẻ tự soạn, **chưa kiểm định** |
+| **Gợi ý nghề** (ba ô: cùng ngành bạn có thể thích, khác ngành bạn làm tốt, khác ngành bạn có thể thích) | Thiết kế chốt 19/10 (D-111). Chưa có trong code |
+| **Chòm sao** (cung Mặt Trời theo ngày sinh, +12% điểm cộng cho 2 nhóm soft skill) | Thiết kế chốt 21/10 (D-113). Chưa có trong code |
 | **Đánh giá nghề 5 tiêu chí** (lương, áp lực, độ khó, cân bằng, yêu thích) | Đã chốt (D-27). **Chưa có trong code**, màn tổng kết mới có "chấm sao độ thực tế" |
-| **Hành trang** (thẻ nhân vật, kỹ năng theo ngày, lộ trình L1→L10, lịch sử lượt chơi) | Có trong code |
+| **Hành trang** (thẻ nhân vật, kỹ năng theo ngày, lộ trình L1→L10, lịch sử lượt chơi) | Có trong code. Thiết kế mới là trang hồ sơ bốn tab (D-110) |
 | **Sự kiện roguelike** | Có 43 sự kiện trong game data (7 chung + 36 riêng cho 9 nghề) |
 
 ## 8. Đặc tả trong báo cáo Ch.1–5 (26/9)
