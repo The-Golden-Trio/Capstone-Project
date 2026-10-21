@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "purpose": "Task theo cấp cho 6 nghề IT chưa có task từ JD trong datasets/78_roles_unmerged.json.",
+    "collected": "2026-10-21, đọc JD trên ITviec, TopDev, 123job, Joboko, Việc làm Tuổi Trẻ và trang tuyển dụng công ty ở Việt Nam.",
+    "rule": "Task là câu tóm ý bằng lời của nhóm, không chép nguyên văn JD. Chia cấp theo số năm kinh nghiệm JD yêu cầu: L1 thực tập, L2 mới ra trường (dưới 1 năm), L3 junior (1–3 năm), L5 senior (3–5 năm), L6 senior hoặc lead (5–8 năm), L7 lead hoặc quản lý. Cấp không đọc được JD nào thì bỏ trống. Nhiều tin trên TopDev, 123job đã hết hạn khi đọc.",
+    "status": "NHAP_CHO_DUYET"
+  },
+  "roles": {
+    "SWE_GAME": {
+      "by_level": [
+        {"band": "L1", "tasks": ["Học Unity và nền tảng làm game, có lập trình viên kinh nghiệm kèm cặp", "Làm bài tập và task thật trong dự án của nhóm", "Phụ dựng game 2D, 3D trên Unity", "Chơi thử game đối thủ để đề xuất cải tiến"]},
+        {"band": "L2", "tasks": ["Dựng nhanh bản thử cơ chế game từ tài liệu thiết kế", "Gắn đồ hoạ, hoạt ảnh, giao diện tới khi có bản chơi được", "Nhận task theo sprint Scrum", "Làm nội dung, hệ thống, giao diện trong Unity và công cụ nội bộ", "Giữ bản build chạy ổn định và đủ nhanh"]},
+        {"band": "L3", "tasks": ["Làm tính năng game theo đặc tả cho nhiều nền tảng", "Tối ưu hiệu năng, bộ nhớ, dung lượng bản build trên Android, iOS", "Tích hợp SDK quảng cáo, phân tích, mua trong ứng dụng và đưa bản build lên kho ứng dụng", "Bảo trì, sửa lỗi game đang chạy", "Viết công cụ trong Unity Editor cho người thiết kế màn chơi"]},
+        {"band": "L5", "tasks": ["Thiết kế và làm tính năng mới, bản cập nhật cho game đang vận hành", "Dựng khung kiến trúc game dùng chung, đặt chuẩn code, review code", "Kèm lập trình viên junior qua review code", "Phối hợp với thiết kế, marketing, sản phẩm; sửa lỗi hiệu năng trên nhiều nền tảng"]},
+        {"band": "L6", "tasks": ["Định hướng kiến trúc và quy trình phát triển phía client", "Kèm junior và dẫn dắt review code", "Tối ưu hiệu năng, bộ nhớ, đồ hoạ; tích hợp SDK, cầu nối native, cập nhật nóng", "Nối game Unity với API, cơ sở dữ liệu, dịch vụ đám mây"]},
+        {"band": "L7", "tasks": ["Đặt và giữ chuẩn code để mã nguồn dễ bảo trì", "Tự viết các hệ thống lõi như mạng chơi nhiều người, vật lý", "Kèm lập trình viên, cùng quản lý dự án chạy sprint hai tuần và gỡ vướng", "Giải thích rủi ro kỹ thuật cho người không chuyên", "Ở cấp principal: theo dõi chất lượng kỹ thuật của nhiều dự án, làm đầu mối với studio đối tác"]}
+      ],
+      "sources": [
+        {"band": "L1", "title": "Unity Developer (Intern)", "company": "ABI Game Studio", "url": "https://123job.vn/viec-lam/unity-developer-intern-JD60K37Rrn"},
+        {"band": "L1", "title": "Unity Game Developer (Intern/Fresher)", "company": "Sonat Game Studio", "url": "https://123job.vn/viec-lam/unity-game-developer-intern-fresher-yreJ42oJqz"},
+        {"band": "L2", "title": "Fresher/Junior Unity Game Developer", "company": "EZ Technology", "url": "https://topdev.vn/viec-lam/fresher-junior-unity-game-developer-cong-ty-co-phan-ez-technology-2038963"},
+        {"band": "L2", "title": "Unity Game Developer (C#)", "company": "Nexon Dev Vina", "url": "https://itviec.com/viec-lam-it/unity-game-developer-c-nexon-dev-vina-1219"},
+        {"band": "L3", "title": "Unity Games Developer", "company": "Infinity Studios", "url": "https://topdev.vn/viec-lam/unity-games-developer-infinity-studios-2-2022839"},
+        {"band": "L3", "title": "Game Developer (Unity/Cocos Creator)", "company": "ELOFUN", "url": "https://topdev.vn/viec-lam/game-developer-unity-cocos-creator-elofun-2030734"},
+        {"band": "L3", "title": "Unity Game Developer (C#), Da Nang", "company": "Gear Games", "url": "https://topdev.vn/viec-lam/danang-unity-game-developer-c-gear-inc-2022527"},
+        {"band": "L3", "title": "Game Developer (Unity, C#, OOP)", "company": "Funtom Games", "url": "https://itviec.com/viec-lam-it/game-developer-unity-c-oop-funtom-games-5123"},
+        {"band": "L5", "title": "Unity Developer", "company": "SmartDev", "url": "https://topdev.vn/viec-lam/unity-developer-sign-on-bonus-smartdev-llc-2-2022024"},
+        {"band": "L5", "title": "Unity Game Developer", "company": "META CREW", "url": "https://topdev.vn/viec-lam/unity-game-developer-meta-crew-2030826"},
+        {"band": "L5", "title": "Mobile Game Developer (Remote)", "company": "Ateam Việt Nam", "url": "https://itviec.com/viec-lam-it/remote-mobile-game-developer-upto-2-000-ateam-viet-nam-3401"},
+        {"band": "L5", "title": "Senior Unity Developer", "company": "Amanotes Vietnam", "url": "https://topdev.vn/viec-lam/senior-unity-developer-800-2000-5407"},
+        {"band": "L6", "title": "Senior Game Developer (Cocos2d-x/Cocos Creator)", "company": "Athena Studio", "url": "https://itviec.com/viec-lam-it/senior-game-developer-cocos2d-x-cocos-creator-athena-studio-4445"},
+        {"band": "L6", "title": "Senior Unity Developer", "company": "VTI", "url": "https://tuyendung.vti.com.vn/en-US/Career/JobDetail/2642"},
+        {"band": "L7", "title": "Lead Game Developer", "company": "Service One Global", "url": "https://123job.vn/viec-lam/lead-game-developer-high-salary-50-million-G9xY6k87rN"},
+        {"band": "L7", "title": "Division Principal Games Programmer (Unreal, AI)", "company": "Gameloft", "url": "https://itviec.com/viec-lam-it/division-principal-games-programmer-unreal-engine-ai-gameloft-1053"}
+      ]
+    },
+    "SWE_EMBEDDED": {
+      "by_level": [
+        {"band": "L1", "tasks": ["Dựng hệ thống IoT đọc cảm biến nhiệt độ, độ ẩm, ánh sáng, bụi", "Viết, kiểm thử, gỡ lỗi firmware cho vi điều khiển như ESP32", "Cài giao thức truyền dữ liệu tiết kiệm pin", "Phụ làm bản mẫu phần cứng cho thiết bị đeo"]},
+        {"band": "L2", "tasks": ["Phân tích yêu cầu, viết và kiểm thử module phần mềm nhúng", "Phụ thiết kế module nhúng", "Chạy kiểm thử, ghi kết quả, tìm và sửa lỗi", "Học khoá phần mềm ô tô với người kèm cặp"]},
+        {"band": "L3", "tasks": ["Viết firmware cho thiết bị mạng, sửa lỗi khách hàng báo", "Thiết kế, viết, kiểm thử module nhúng bằng C/C++", "Viết driver trên Embedded Linux hoặc RTOS", "Gỡ lỗi phần cứng và firmware bằng máy hiện sóng, JTAG", "Tích hợp BLE, Wi-Fi, LTE và giao tiếp SPI, I2C, UART, CAN"]},
+        {"band": "L5", "tasks": ["Thiết kế và gỡ lỗi firmware trên nhiều dòng vi điều khiển ARM", "Cùng nhóm phần cứng chạy thử bo mạch mới", "Tối ưu hiệu năng, bộ nhớ, điện năng; đưa sản phẩm IoT từ bản mẫu lên sản xuất", "Viết kiểm thử, tài liệu, tham gia review thiết kế", "Kèm junior và giữ chuẩn code"]},
+        {"band": "L6", "tasks": ["Phát triển và cấu trúc lại phần mềm vi điều khiển theo chuẩn AUTOSAR", "Thiết kế cấu trúc module để dễ tối ưu", "Làm việc với bus xe CAN, LIN, FlexRay và quản lý nhóm nhỏ"]},
+        {"band": "L7", "tasks": ["Dẫn dắt nhóm nhúng, chuyển yêu cầu từ ban giám đốc thành việc", "Viết firmware thời gian thực bằng C/C++ trên FreeRTOS", "Phân tích yêu cầu và thiết kế kiến trúc phần mềm", "Viết và giữ tài liệu kỹ thuật"]}
+      ],
+      "sources": [
+        {"band": "L1", "title": "Intern Embedded Developer (IoT Systems)", "company": "ISB Vietnam", "url": "https://vieclam.itc.edu.vn/intern-embedded-developer-iot-systems-jxi6081928"},
+        {"band": "L1", "title": "Embedded System Intern", "company": "Fossil Vietnam", "url": "https://www.fit.hcmus.edu.vn/tin-tuc/d/fossil-viet-nam-tuyen-dung-thuc-tap-sinh-embedded-software"},
+        {"band": "L2", "title": "Fresher Embedded Software Engineer (C/C++)", "company": "Bosch Global Software Technologies", "url": "https://itviec.com/viec-lam-it/fresher-embedded-software-engineer-c-c-bosch-global-software-technologies-company-limited-0045"},
+        {"band": "L2", "title": "Fresher Embedded Talent", "company": "FPT Software", "url": "https://123job.vn/viec-lam/fresher-embedded-talent-wDWZN4LEqe"},
+        {"band": "L3", "title": "Junior Software Developer (Embedded, C/C++, Linux)", "company": "Gemtek Việt Nam", "url": "https://topdev.vn/viec-lam/junior-software-developer-embedded-c-c-linux-gemtek-viet-nam-2032046"},
+        {"band": "L3", "title": "Software Engineer (Embedded C, MCU, RTOS)", "company": "LG Electronics Development Vietnam", "url": "https://itviec.com/viec-lam-it/software-engineer-embedded-c-mcu-rtos-lg-electronics-development-vietnam-lgedv-5803"},
+        {"band": "L3", "title": "Automotive Embedded Software Engineer", "company": "Hitachi Digital Services", "url": "https://itviec.com/viec-lam-it/automotive-embedded-software-engineer-asap-hitachi-digital-services-4230"},
+        {"band": "L3", "title": "Embedded Firmware Engineer – BLE & IoT", "company": "Safetrust", "url": "https://itviec.com/viec-lam-it/embedded-firmware-engineer-ble-iot-safetrust-3425"},
+        {"band": "L5", "title": "Kỹ sư nhúng IoT (3 năm)", "company": "G-Innovations Việt Nam", "url": "https://topdev.vn/viec-lam/ky-su-nhung-iot-3-years-experience-cong-ty-co-phan-g-innovations-viet-nam-2085088"},
+        {"band": "L5", "title": "Embedded Firmware Engineer", "company": "Minda Việt Nam", "url": "https://vieclam.tuoitre.vn/vi/tim-viec-lam/embedded-firmware-engineer.35C85462.html"},
+        {"band": "L5", "title": "Senior IoT Embedded Firmware Engineer", "company": "Nova Intechs", "url": "https://topdev.vn/viec-lam/senior-iot-embedded-firmware-engineer-nova-intechs-2028232"},
+        {"band": "L6", "title": "Senior Embedded Software Engineer (AUTOSAR)", "company": "Yura Corporation", "url": "https://topdev.vn/detail-jobs/senior-embedded-software-engineer-autosar-cong-ty-tnhh-yura-corporation-bac-ninh-chi-nhanh-ha-noi-2034585"},
+        {"band": "L7", "title": "Trưởng nhóm lập trình nhúng (Firmware)", "company": "SOJI Electronics", "url": "https://vn.joboko.com/viec-lam-truong-nhom-lap-trinh-nhung-firmware-salary-upto-45-trieu-xvi6555165"}
+      ]
+    },
+    "SWE_TECHLEAD": {
+      "by_level": [
+        {"band": "L5", "tasks": ["Lập kế hoạch, ước lượng và phân tích yêu cầu cho dự án", "Giao việc trên Jira, họp xem tiến độ với từng thành viên", "Review code của nhóm, vẫn tự viết code và unit test", "Dẫn nhóm nhỏ 3–5 người, kiểm soát chất lượng từng giai đoạn"]},
+        {"band": "L6", "tasks": ["Định hướng kỹ thuật, kiến trúc và thiết kế giải pháp", "Kèm lập trình viên, góp ý hiệu suất, dẫn review code", "Gỡ vướng kỹ thuật, dựng CI/CD", "Chuyển yêu cầu của quản lý sản phẩm thành đặc tả kỹ thuật", "Đặt chuẩn code, ước lượng, theo dõi rủi ro cùng quản lý dự án"]},
+        {"band": "L7", "tasks": ["Tuyển người, đặt mục tiêu và theo dõi phát triển của nhóm 10–12 người", "Giữ lộ trình và kiến trúc hệ thống, review thiết kế", "Quản lý nhiều nhóm, chia thời gian giữa kỹ thuật và quản lý người", "Quản lý phát hành và sự cố trên môi trường thật", "Làm đầu mối kỹ thuật với bộ phận sản phẩm và các bên liên quan"]}
+      ],
+      "sources": [
+        {"band": "L5", "title": "Front-End Team Leader", "company": "Applancer", "url": "https://topdev.vn/viec-lam/front-end-team-leader-applancer-jsc-topdev-vn-2-2022389"},
+        {"band": "L5", "title": "Technical Leader", "company": "NTT DATA Vietnam", "url": "https://topdev.vn/viec-lam/hochiminh-hanoi-technical-leader-ntt-data-vietnam-2029909"},
+        {"band": "L5", "title": "Technical Lead", "company": "Cosigma Việt Nam", "url": "https://topdev.vn/viec-lam/technical-lead-cong-ty-tnhh-cosigma-viet-nam-2101678"},
+        {"band": "L6", "title": "Technical Leader (.NET Core, ReactJS)", "company": "Softworld Vietnam", "url": "https://topdev.vn/viec-lam/technical-leader-softworld-vietnam-ltd-2055235"},
+        {"band": "L6", "title": "Technical Lead (.NET or NodeJS)", "company": "Emesoft", "url": "https://topdev.vn/viec-lam/technical-lead-net-or-nodejs-emesoft-2113547"},
+        {"band": "L6", "title": "Tech Lead (.NET/Angular)", "company": "NetPower AS", "url": "https://topdev.vn/viec-lam/tech-lead-net-angular-netpower-as-2035847"},
+        {"band": "L6", "title": "Team Leader / Technical Leader", "company": "TMA Solutions", "url": "https://itviec.com/viec-lam-it/team-leader-technical-leader-tma-solutions-3926"},
+        {"band": "L7", "title": "Engineering Manager", "company": "VinBigdata", "url": "https://topdev.vn/viec-lam/engineering-manager-vinbigdata-2031450"},
+        {"band": "L7", "title": "Technical Lead (Java)", "company": "VNDIRECT", "url": "https://topdev.vn/viec-lam/technical-lead-java-cong-ty-co-phan-chung-khoan-vndirect-2034120"},
+        {"band": "L7", "title": "Engineer Manager", "company": "Bizzi Vietnam", "url": "https://topdev.vn/viec-lam/engineer-manager-scrum-nodejs-reactjs-bizzi-2028261"},
+        {"band": "L7", "title": "Backend Lead", "company": "Vulcan Labs", "url": "https://itviec.com/viec-lam-it/backend-lead-vulcan-labs-5134"},
+        {"band": "L7", "title": "Technical Leader", "company": "Hitachi Digital Services", "url": "https://itviec.com/viec-lam-it/technical-leader-hitachi-digital-services-4508"}
+      ]
+    },
+    "CLOUD_ENG": {
+      "by_level": [
+        {"band": "L2", "tasks": ["Theo dõi hệ thống đám mây, trực đường dây hỗ trợ theo ca", "Tiếp nhận, phân loại, xử lý yêu cầu hỗ trợ của khách hàng", "Xử lý bước đầu sự cố lưu trữ, sao lưu, mạng, Kubernetes", "Thu thập log, phân tích sơ bộ rồi chuyển lên tuyến trên"]},
+        {"band": "L3", "tasks": ["Dựng và vận hành hạ tầng AWS cho hệ thống đang chạy thật", "Viết hạ tầng dưới dạng code bằng Terraform để tự động dựng mạng, lưu trữ", "Dựng giám sát, ghi log, cảnh báo và CI/CD", "Đọc log để tìm nguyên nhân gốc của sự cố", "Vẽ sơ đồ kiến trúc và viết tài liệu vận hành"]},
+        {"band": "L5", "tasks": ["Thiết kế, dựng, quản lý hạ tầng AWS: máy chủ, lưu trữ, mạng, cơ sở dữ liệu", "Tự động hoá hạ tầng bằng Terraform, Ansible; dựng CI/CD", "Quản lý phân quyền, mã hoá, kiểm soát mạng", "Vận hành Kubernetes trên môi trường thật, trực sự cố", "Đánh giá công nghệ mới, đề xuất giảm chi phí"]},
+        {"band": "L6", "tasks": ["Dẫn đội vận hành đám mây 24/7, giữ cam kết xử lý sự cố", "Phân tích nguyên nhân gốc, phối hợp các nhóm nội bộ", "Viết và review script tự động hoá, dựng bảng theo dõi", "Lên lịch vá lỗi, nâng cấp, bảo trì định kỳ"]},
+        {"band": "L7", "tasks": ["Thiết kế và dẫn dắt hạ tầng kết hợp AWS, GCP và máy chủ riêng, bảo đảm dự phòng và tối ưu chi phí", "Chuẩn hoá CI/CD và hạ tầng dưới dạng code", "Dựng hệ thống quan sát, dẫn xử lý sự cố và phân tích sau sự cố", "Quản lý 4–6 kỹ sư, giữ lộ trình, báo cáo giám đốc công nghệ"]}
+      ],
+      "sources": [
+        {"band": "L2", "title": "Cloud Support Engineer (L1) Fresher", "company": "FPT Smart Cloud", "url": "https://123job.vn/viec-lam/cloud-support-engineer-l1-fresher-0q77g7Nlq8"},
+        {"band": "L3", "title": "Infrastructure Engineer (Cloud)", "company": "Optimizer Việt Nam", "url": "https://itviec.com/viec-lam-it/infrastructure-engineer-cloud-ky-su-ha-tang-optimizer-viet-nam-3837"},
+        {"band": "L3", "title": "Cloud DevOps Engineer", "company": "LG CNS Việt Nam", "url": "https://itviec.com/viec-lam-it/cloud-devops-engineer-open-for-junior-and-middle-lg-cns-viet-nam-2019"},
+        {"band": "L3", "title": "Cloud Engineer", "company": "LG CNS Việt Nam", "url": "https://topdev.vn/viec-lam/cloud-engineer-lg-cns-viet-nam-2035400"},
+        {"band": "L3", "title": "Junior Cloud Solution Architect", "company": "Cloud Kinetics", "url": "https://topdev.vn/viec-lam/junior-cloud-solution-architect-cloud-kinetics-2032113"},
+        {"band": "L5", "title": "Middle/Senior Cloud Engineer (AWS)", "company": "NEC Vietnam", "url": "https://topdev.vn/viec-lam/middle-senior-cloud-engineer-aws-nec-vietnam-2090913"},
+        {"band": "L5", "title": "Senior Cloud Engineer (AWS)", "company": "CMC TS", "url": "https://topdev.vn/viec-lam/ha-noi-senior-cloud-engineer-aws-cmc-ts-2031502"},
+        {"band": "L5", "title": "Senior Cloud Engineer (Private Cloud, OpenStack)", "company": "MobiFone Digital Payment", "url": "https://itviec.com/viec-lam-it/senior-cloud-engineer-private-cloud-openstack-cong-ty-co-phan-thanh-toan-so-mobifone-4202"},
+        {"band": "L6", "title": "Cloud Operation Team Leader", "company": "V-KEY", "url": "https://topdev.vn/viec-lam/cloud-operation-team-leader-v-key-2027572"},
+        {"band": "L7", "title": "Infrastructure Lead (Cloud)", "company": "CarDoctor", "url": "https://itviec.com/viec-lam-it/infrastructure-lead-cloud-cardoctor-0044"},
+        {"band": "L7", "title": "DevOps Lead (Cloud Infrastructure, AWS)", "company": "Devblock VN", "url": "https://topdev.vn/viec-lam/devops-lead-vietnam-cloud-infrastructure-aws-devblock-vn-2056099"}
+      ]
+    },
+    "INFRA_ERP": {
+      "by_level": [
+        {"band": "L1", "tasks": ["Quản lý tài khoản và phân quyền người dùng trong SAP", "Học quy trình tài chính, mua hàng, bán hàng cùng chuyên viên tư vấn", "Xử lý và đóng yêu cầu hỗ trợ bằng tiếng Anh", "Phụ thu thập yêu cầu, kiểm thử với người dùng, soạn tài liệu hướng dẫn"]},
+        {"band": "L2", "tasks": ["Học lập trình ABAP, biến yêu cầu thành thiết kế logic", "Cấu hình module SAP tài chính, bán hàng, kho theo quy trình doanh nghiệp", "Viết tài liệu kiểm thử, phụ kiểm thử tích hợp và kiểm thử với người dùng", "Ghi tài liệu và bàn giao kiến thức"]},
+        {"band": "L3", "tasks": ["Tuỳ biến module Odoo hoặc ERP theo đặc tả, luồng duyệt, phân quyền", "Viết API, nối dữ liệu giữa các hệ thống", "Cấu hình NetSuite, báo cáo, vai trò người dùng", "Hỗ trợ vận hành: theo dõi, sửa lỗi, đào tạo người dùng"]},
+        {"band": "L5", "tasks": ["Biến yêu cầu tài chính thành đặc tả và cấu hình sổ cái, công nợ, tài sản cố định", "Dẫn buổi lấy yêu cầu, đào tạo người dùng, soạn kịch bản kiểm thử", "Hỗ trợ chuyển dữ liệu và vận hành sau khi đưa hệ thống vào dùng", "Quản lý phạm vi, tiến độ, rủi ro và yêu cầu thay đổi của dự án ERP"]},
+        {"band": "L6", "tasks": ["Tư vấn SAP bán hàng, mua hàng cho doanh nghiệp, dẫn dự án mới", "Cấu hình tài chính nhiều công ty, nhiều tiền tệ, hợp nhất báo cáo", "Dẫn kiểm thử với người dùng, tự sửa lỗi", "Khảo sát nhu cầu khách, đề xuất giải pháp và báo giá triển khai"]},
+        {"band": "L7", "tasks": ["Dẫn và kèm nhóm hệ thống văn phòng, duyệt chất lượng công việc", "Làm đầu mối công nghệ cho phòng tài chính, nhân sự, mua hàng", "Quản lý dự án nâng cấp SAP, tích hợp ngân hàng, hoá đơn điện tử đến khi đưa vào dùng", "Quản lý nhà cung cấp, hợp đồng và yêu cầu thay đổi"]}
+      ],
+      "sources": [
+        {"band": "L1", "title": "Intern to Staff, SAP Functional Consultant", "company": "EY Vietnam", "url": "https://jobs.neu.edu.vn/jobs/intern-to-staff-sap-functional-consultant-ey-viet-nam-1202510090906"},
+        {"band": "L1", "title": "SAP Consultant Intern – S/4HANA Public Cloud", "company": "Icon Consulting Group", "url": "https://itviec.com/viec-lam-it/sap-consultant-intern-s-4hana-public-cloud-ams-icon-consulting-group-4430"},
+        {"band": "L2", "title": "Fresher SAP Technical Consultant", "company": "FPT Software", "url": "https://tuyendung.fpt.com/fresher-sap-technical-consultant-hn-10532"},
+        {"band": "L2", "title": "SAP Functional Consultant Fresher", "company": "FPT Software", "url": "https://123job.vn/viec-lam/sap-functional-consultant-fresher-PDboMPGL9R"},
+        {"band": "L3", "title": "Odoo Developer", "company": "AI+DI", "url": "https://itviec.com/viec-lam-it/odoo-developer-python-javascript-html-css-sql-ai-di-0048"},
+        {"band": "L3", "title": "NetSuite ERP Administrator", "company": "Spiraledge", "url": "https://itviec.com/viec-lam-it/netsuite-erp-administrator-spiraledge-4918"},
+        {"band": "L3", "title": "Odoo Developer", "company": "ILA Vietnam", "url": "https://topdev.vn/viec-lam/odoo-developer-ila-vietnam-2034638"},
+        {"band": "L3", "title": "ERP Developer", "company": "Kỹ Nghệ Gỗ Hoa Nét", "url": "https://topdev.vn/viec-lam/erp-developer-cong-ty-tnhh-ky-nghe-go-hoa-net-2042536"},
+        {"band": "L5", "title": "D365 FnO Functional Consultant", "company": "CMC Global", "url": "https://cmcglobal.com.vn/?p=40304"},
+        {"band": "L5", "title": "ERP Team Leader", "company": "Unity Fitness", "url": "https://topdev.vn/viec-lam/erp-team-leader-it-team-leader-cong-ty-co-phan-the-thao-unity-fitness-2034151"},
+        {"band": "L5", "title": "Project Manager (ERP)", "company": "CMC TS", "url": "https://vn.joboko.com/viec-lam-project-manager-erp-xvi6667688"},
+        {"band": "L6", "title": "SAP Consultant (SD/MM)", "company": "Reeracoen Việt Nam", "url": "https://vieclam.tuoitre.vn/en/search-job/nam-tu-liem-hanoi-sap-consultant-33m-42m-24866.35C253BD.html"},
+        {"band": "L6", "title": "Senior Microsoft Dynamics 365 (F&O)", "company": "VTI", "url": "https://tuyendung.vti.com.vn/vi-VN/Career/JobDetail/2606"},
+        {"band": "L6", "title": "Senior Business Consultant (Presale ERP Oracle NetSuite)", "company": "People Profilers Vietnam", "url": "https://www.careers-page.com/people-profilers-vietnam/job/L7VR4563"},
+        {"band": "L7", "title": "Deputy SAP Manager", "company": "Wilmar CLV", "url": "https://itviec.com/viec-lam-it/deputy-sap-manager-seasonal-8-months-wilmar-clv-cambodia-laos-vietnam-2053"}
+      ]
+    },
+    "INFRA_NETWORK": {
+      "by_level": [
+        {"band": "L2", "tasks": ["Hỗ trợ tại chỗ, đi cáp, thay switch, router, tường lửa, điểm phát Wi-Fi", "Kiểm tra định kỳ và chẩn đoán lỗi cơ bản theo hướng dẫn", "Hỗ trợ người dùng khi máy tính và mạng gặp sự cố", "Quản trị máy chủ Windows, Linux và sao lưu cơ bản"]},
+        {"band": "L3", "tasks": ["Vận hành, giám sát, xử lý sự cố mạng LAN, WAN, tường lửa, VPN", "Cấu hình và bảo trì router, switch, tường lửa, Wi-Fi", "Quản trị máy ảo, máy chủ vật lý và thiết bị lưu trữ", "Sao lưu cấu hình thiết bị, vá lỗi", "Vẽ sơ đồ mạng và viết quy trình"]},
+        {"band": "L5", "tasks": ["Thiết kế, dựng và vận hành mạng trung tâm dữ liệu", "Cấu hình định tuyến, chuyển mạch, chính sách tường lửa, VPN", "Làm tuyến xử lý cuối cho sự cố khó, trực sự cố", "Nâng firmware và quản lý vòng đời thiết bị", "Tham gia dự án nâng cấp mạng, trung tâm dữ liệu, đám mây"]},
+        {"band": "L6", "tasks": ["Thiết kế kiến trúc mạng cho trung tâm dữ liệu, doanh nghiệp, đám mây kết hợp", "Lên phương án dự phòng, chuyển đổi khi lỗi, khôi phục thảm hoạ", "Xử lý và phân tích nguyên nhân sự cố nghiêm trọng", "Tự động hoá cấu hình mạng, review thiết kế, kèm kỹ sư"]},
+        {"band": "L7", "tasks": ["Vận hành và tối ưu toàn bộ mạng, máy chủ, lưu trữ, đám mây", "Đặt chính sách bảo mật, quản lý tường lửa, sao lưu, phân quyền", "Theo dõi cam kết dịch vụ, sự cố, tài sản, bản quyền phần mềm", "Phân công, đào tạo, đặt chỉ tiêu cho nhóm; lập kế hoạch và ngân sách hạ tầng"]}
+      ],
+      "sources": [
+        {"band": "L2", "title": "Network Engineer – Tech Lounge & AV", "company": "NAB Innovation Centre Vietnam", "url": "https://itviec.com/viec-lam-it/network-engineer-tech-lounge-av-hanoi-nab-innovation-centre-vietnam-3239"},
+        {"band": "L2", "title": "IT System Admin and Support", "company": "OL Vietnam", "url": "https://itviec.com/viec-lam-it/it-system-admin-and-support-hanoi-ol-vietnam-0931"},
+        {"band": "L2", "title": "System & DevOps Engineer", "company": "Tổng công ty Tân Cảng Sài Gòn", "url": "https://itviec.com/viec-lam-it/system-devops-engineer-tong-cong-ty-tan-cang-sai-gon-saigon-newport-corporation-2759"},
+        {"band": "L3", "title": "Nhân viên quản trị mạng", "company": "Tổng công ty Tân Cảng Sài Gòn", "url": "https://itviec.com/viec-lam-it/nhan-vien-quan-tri-mang-network-administrator-tong-cong-ty-tan-cang-sai-gon-saigon-newport-corporation-2459"},
+        {"band": "L3", "title": "Network & System Administrator", "company": "Phu Hung Securities", "url": "https://itviec.com/viec-lam-it/network-system-administrator-phu-hung-securities-phs-4040"},
+        {"band": "L3", "title": "Network Engineer", "company": "AirQuay Vina", "url": "https://topdev.vn/detail-jobs/network-engineer-cong-ty-tnhh-airquay-vina-2137766"},
+        {"band": "L3", "title": "IT System Engineer & Infrastructure Engineer", "company": "DONACOOP", "url": "https://itviec.com/viec-lam-it/it-system-engineer-infrastructure-engineer-tap-doan-donacoop-4155"},
+        {"band": "L5", "title": "Senior Network Engineer (L3)", "company": "Timo", "url": "https://itviec.com/viec-lam-it/senior-network-engineer-timo-2553"},
+        {"band": "L5", "title": "Senior Network Engineer (Datacenter, Security)", "company": "IIJ Global Solutions Viet Nam", "url": "https://itviec.com/viec-lam-it/senior-network-engineer-datacenter-security-operation-iij-global-solutions-viet-nam-4440"},
+        {"band": "L5", "title": "Chuyên viên Quản trị Mạng", "company": "Sacombank", "url": "https://topdev.vn/detail-jobs/chuyen-vien-quan-tri-mang-phong-ky-thuat-ha-tang-khoi-cong-nghe-thong-tin-ngan-hang-thuong-mai-co-phan-sai-gon-tai-loc-sacombank-2137772"},
+        {"band": "L6", "title": "Senior/Expert Network Infrastructure Engineer", "company": "MobiFone Digital Payment", "url": "https://itviec.com/viec-lam-it/senior-expert-network-infrastructure-engineer-cong-ty-co-phan-thanh-toan-so-mobifone-1051"},
+        {"band": "L7", "title": "Infrastructure Security Manager", "company": "Lining (Hải Long Intl.)", "url": "https://itviec.com/viec-lam-it/infrastructure-security-manager-windows-linux-thoi-trang-lining_cong-ty-tnhh-quoc-te-hai-long-2642"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,2004 @@
+{
+  "_note": "Luật khớp chức danh tin tuyển dụng (bộ VietJobs) với nghề trong danh mục. So trên tên viết thường, đã bỏ dấu (đ thành d). include: biểu thức chính quy, khớp một cái là nhận. exclude: khớp là loại. staff: true thì loại thêm chức danh quản lý (truong phong, giam doc, truong nhom, quan ly, manager, director, head, lead) để lương không bị kéo lên. Nghề không có ở đây là nghề hầu như chỉ tuyển ở khu vực nhà nước hoặc không đăng tin trên trang tuyển dụng. Nghề không có sales: true thì loại thêm tin bán hàng (sales_exclude), vì nhiều tin là 'nhân viên kinh doanh <sản phẩm của ngành>'. contract_exclude: loại tin theo cột contract_type (bán thời gian, thực tập, thời vụ, cộng tác viên).",
+  "global_exclude": "thuc tap|\\bintern(s|ship)?\\b|part[ -]?time|ban thoi gian|cong tac vien|\\bctv\\b|freelance|tinh nguyen",
+  "staff_exclude": "truong phong|pho phong|giam doc|truong nhom|truong bo phan|quan ly|manager|director|\\bhead\\b|\\blead(er)?\\b|\\bceo\\b|\\bcfo\\b|\\bcoo\\b",
+  "roles": {
+    "ONET-11-1021.00": {
+      "include": [
+        "giam doc dieu hanh",
+        "\\bceo\\b",
+        "\\bcoo\\b",
+        "giam doc van hanh",
+        "general manager",
+        "tong giam doc",
+        "giam doc chi nhanh"
+      ],
+      "exclude": [
+        "tro ly",
+        "tiep thi",
+        "marketing"
+      ]
+    },
+    "ONET-11-3051.00": {
+      "include": [
+        "quan ly san xuat",
+        "giam doc san xuat",
+        "truong phong san xuat",
+        "quan doc",
+        "giam doc nha may",
+        "production manager",
+        "plant manager"
+      ]
+    },
+    "ONET-11-3012.00": {
+      "include": [
+        "truong phong hanh chinh",
+        "quan ly hanh chinh",
+        "admin manager",
+        "truong phong hcns",
+        "truong phong hanh chinh nhan su"
+      ]
+    },
+    "ONET-11-9021.00": {
+      "include": [
+        "chi huy truong",
+        "chi huy cong truong",
+        "quan ly du an xay dung",
+        "giam doc du an xay dung",
+        "construction manager",
+        "site manager"
+      ]
+    },
+    "ONET-11-9041.00": {
+      "include": [
+        "truong phong ky thuat",
+        "giam doc ky thuat",
+        "truong phong r&?d",
+        "giam doc r&?d",
+        "engineering manager",
+        "technical manager",
+        "r&d manager"
+      ]
+    },
+    "ONET-11-9032.00": {
+      "include": [
+        "hieu truong",
+        "pho hieu truong",
+        "giam doc dao tao",
+        "truong phong dao tao",
+        "quan ly dao tao",
+        "giam doc hoc thuat",
+        "academic manager",
+        "truong khoa"
+      ]
+    },
+    "ONET-11-9051.00": {
+      "include": [
+        "quan ly nha hang",
+        "restaurant manager",
+        "quan ly quan",
+        "quan ly bep",
+        "quan ly f&b",
+        "f&b manager",
+        "quan ly cua hang (do an|tra sua|cafe|ca phe)"
+      ]
+    },
+    "ONET-11-9081.00": {
+      "include": [
+        "quan ly khach san",
+        "giam doc khach san",
+        "hotel manager",
+        "front office manager",
+        "quan ly resort",
+        "quan ly le tan",
+        "quan ly spa"
+      ]
+    },
+    "ONET-11-9111.00": {
+      "include": [
+        "giam doc benh vien",
+        "quan ly phong kham",
+        "giam doc phong kham",
+        "clinic manager",
+        "quan ly co so y te",
+        "dieu hanh phong kham"
+      ]
+    },
+    "ONET-11-9013.00": {
+      "include": [
+        "quan ly trang trai",
+        "quan ly nong trai",
+        "farm manager",
+        "quan ly vung trong",
+        "truong trai"
+      ]
+    },
+    "ONET-11-9141.00": {
+      "include": [
+        "quan ly toa nha",
+        "quan ly van hanh toa nha",
+        "building manager",
+        "property manager",
+        "quan ly bat dong san",
+        "ban quan ly toa nha"
+      ]
+    },
+    "ONET-13-2011.00": {
+      "include": [
+        "ke toan",
+        "kiem toan",
+        "accountant",
+        "accounting",
+        "auditor"
+      ],
+      "exclude": [
+        "ke toan truong",
+        "giam doc tai chinh"
+      ],
+      "staff": true
+    },
+    "ONET-13-1041.00": {
+      "include": [
+        "tuan thu",
+        "compliance",
+        "quan ly rui ro",
+        "risk management",
+        "kiem soat noi bo",
+        "internal control"
+      ],
+      "staff": true
+    },
+    "ONET-13-1031.00": {
+      "include": [
+        "giam dinh",
+        "boi thuong bao hiem",
+        "claims?",
+        "tham dinh bao hiem"
+      ],
+      "staff": true
+    },
+    "ONET-13-2072.00": {
+      "include": [
+        "tin dung",
+        "cho vay",
+        "credit officer",
+        "quan he khach hang (ca nhan|doanh nghiep)",
+        "\\brm\\b",
+        "tham dinh tin dung"
+      ],
+      "staff": true
+    },
+    "ONET-13-2052.00": {
+      "include": [
+        "tu van tai chinh",
+        "tu van dau tu",
+        "financial advisor",
+        "chuyen vien tai chinh ca nhan",
+        "wealth"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-13-2099.01": {
+      "include": [
+        "\\bquant\\b",
+        "phan tich dinh luong",
+        "quantitative"
+      ]
+    },
+    "ONET-13-2023.00": {
+      "include": [
+        "tham dinh gia",
+        "dinh gia",
+        "valuation",
+        "appraiser"
+      ],
+      "staff": true
+    },
+    "ONET-13-1071.00": {
+      "include": [
+        "nhan su",
+        "tuyen dung",
+        "\\bhr\\b",
+        "\\bc&b\\b",
+        "tien luong",
+        "recruit",
+        "human resource",
+        "dao tao noi bo"
+      ],
+      "exclude": [
+        "hanh chinh nhan su"
+      ],
+      "staff": true
+    },
+    "ONET-13-1161.00": {
+      "include": [
+        "marketing",
+        "nghien cuu thi truong",
+        "market research",
+        "brand",
+        "thuong hieu",
+        "\\bseo\\b",
+        "quang cao"
+      ],
+      "exclude": [
+        "thuc tap"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-13-1082.00": {
+      "include": [
+        "quan ly du an",
+        "project manager",
+        "\\bpmo\\b",
+        "dieu phoi du an",
+        "project coordinator"
+      ],
+      "exclude": [
+        "xay dung",
+        "phan mem",
+        "\\bit\\b",
+        "cong nghe thong tin"
+      ]
+    },
+    "ONET-13-1121.00": {
+      "include": [
+        "to chuc su kien",
+        "event",
+        "su kien"
+      ],
+      "staff": true
+    },
+    "ONET-13-1081.00": {
+      "include": [
+        "logistics?",
+        "xuat nhap khau",
+        "chung tu",
+        "khai bao hai quan",
+        "\\bxnk\\b",
+        "supply chain",
+        "chuoi cung ung",
+        "forwarder",
+        "import",
+        "export"
+      ],
+      "staff": true
+    },
+    "ONET-13-1023.00": {
+      "include": [
+        "mua hang",
+        "thu mua",
+        "purchasing",
+        "procurement",
+        "buyer"
+      ],
+      "staff": true
+    },
+    "ONET-13-1051.00": {
+      "include": [
+        "du toan",
+        "\\bqs\\b",
+        "quantity surveyor",
+        "boc tach khoi luong",
+        "kiem soat chi phi"
+      ],
+      "staff": true
+    },
+    "ONET-13-1199.06": {
+      "include": [
+        "san thuong mai dien tu",
+        "van hanh (shop|gian hang)",
+        "shopee",
+        "tiktok shop",
+        "lazada",
+        "ecommerce",
+        "e-commerce",
+        "ban hang online",
+        "sale online"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-15-2041.00": {
+      "include": [
+        "thong ke",
+        "statistic"
+      ],
+      "exclude": [
+        "ke toan"
+      ],
+      "staff": true
+    },
+    "ONET-15-2011.00": {
+      "include": [
+        "actuar",
+        "dinh phi"
+      ]
+    },
+    "ONET-17-1011.00": {
+      "include": [
+        "kien truc su",
+        "architect",
+        "thiet ke kien truc"
+      ],
+      "exclude": [
+        "giai phap",
+        "solution",
+        "phan mem",
+        "software",
+        "data",
+        "he thong",
+        "cloud"
+      ],
+      "staff": true
+    },
+    "ONET-17-1022.00": {
+      "include": [
+        "trac dia",
+        "ban do",
+        "surveyor",
+        "\\bgis\\b",
+        "khao sat dia hinh"
+      ],
+      "staff": true
+    },
+    "ONET-17-2051.00": {
+      "include": [
+        "ky su xay dung",
+        "ky su ket cau",
+        "ky su giam sat",
+        "ky su cau duong",
+        "ky su ha tang",
+        "civil engineer",
+        "ky su hien truong",
+        "ky su thi cong"
+      ],
+      "staff": true
+    },
+    "ONET-17-2071.00": {
+      "include": [
+        "ky su dien\\b(?! tu)",
+        "electrical engineer",
+        "ky su co dien",
+        "ky su \\bm&e\\b",
+        "ky su tu dong hoa"
+      ],
+      "staff": true
+    },
+    "ONET-17-2072.00": {
+      "include": [
+        "ky su dien tu",
+        "ky su vien thong",
+        "electronics? engineer",
+        "ky su phan cung",
+        "hardware engineer",
+        "ky su rf"
+      ],
+      "staff": true
+    },
+    "ONET-17-2141.00": {
+      "include": [
+        "ky su co khi",
+        "mechanical engineer",
+        "ky su thiet ke co khi",
+        "ky su che tao"
+      ],
+      "staff": true
+    },
+    "ONET-17-2141.02": {
+      "include": [
+        "ky su o to",
+        "automotive engineer",
+        "ky su xe"
+      ],
+      "staff": true
+    },
+    "ONET-17-2199.05": {
+      "include": [
+        "co dien tu",
+        "robot",
+        "mechatronic"
+      ],
+      "staff": true
+    },
+    "ONET-17-2041.00": {
+      "include": [
+        "\\bky su hoa\\b",
+        "ky su vat lieu",
+        "chemical engineer",
+        "ky su polyme",
+        "ky su son\\b"
+      ],
+      "staff": true
+    },
+    "ONET-17-2081.00": {
+      "include": [
+        "moi truong",
+        "environment",
+        "xu ly nuoc thai",
+        "\\behs\\b"
+      ],
+      "exclude": [
+        "an toan"
+      ],
+      "staff": true
+    },
+    "ONET-17-2112.00": {
+      "include": [
+        "ky su cong nghiep",
+        "industrial engineer",
+        "ky su quy trinh",
+        "process engineer",
+        "\\bie\\b",
+        "ke hoach san xuat",
+        "lean manufacturing"
+      ],
+      "staff": true
+    },
+    "ONET-17-2151.00": {
+      "include": [
+        "dau khi",
+        "\\bky su mo\\b",
+        "khai khoang",
+        "petroleum",
+        "mining engineer"
+      ],
+      "staff": true,
+      "exclude": [
+        "moi truong"
+      ]
+    },
+    "ONET-17-2031.00": {
+      "include": [
+        "ky su y sinh",
+        "thiet bi y te",
+        "biomedical",
+        "ky su ky thuat y te"
+      ],
+      "staff": true
+    },
+    "ONET-19-1013.00": {
+      "include": [
+        "ky su nong nghiep",
+        "ky thuat (vien )?nong nghiep",
+        "trong trot",
+        "bao ve thuc vat",
+        "agronom",
+        "ky su cay trong",
+        "ky thuat cay trong"
+      ],
+      "staff": true
+    },
+    "ONET-19-1012.00": {
+      "include": [
+        "cong nghe thuc pham",
+        "food technolog",
+        "\\br&d\\b.*thuc pham",
+        "nghien cuu phat trien san pham",
+        "ky su thuc pham"
+      ],
+      "staff": true
+    },
+    "ONET-19-1029.04": {
+      "include": [
+        "sinh hoc",
+        "cong nghe sinh hoc",
+        "biolog",
+        "vi sinh"
+      ],
+      "staff": true,
+      "exclude": [
+        "giao vien"
+      ]
+    },
+    "ONET-19-1031.00": {
+      "include": [
+        "lam nghiep",
+        "bao ton",
+        "forestry",
+        "conservation"
+      ],
+      "staff": true
+    },
+    "ONET-19-1041.00": {
+      "include": [
+        "dich te",
+        "nghien cuu lam sang",
+        "clinical research",
+        "epidemiolog"
+      ],
+      "staff": true
+    },
+    "ONET-19-2031.00": {
+      "include": [
+        "kiem nghiem",
+        "\\bhoa hoc\\b",
+        "phong thi nghiem",
+        "\\blab\\b",
+        "chemist",
+        "phan tich hoa"
+      ],
+      "staff": true,
+      "exclude": [
+        "khoa hoc"
+      ]
+    },
+    "ONET-19-2042.00": {
+      "include": [
+        "dia chat",
+        "khi tuong",
+        "thuy van",
+        "geolog"
+      ],
+      "staff": true
+    },
+    "ONET-19-3011.00": {
+      "include": [
+        "kinh te hoc",
+        "economist",
+        "nghien cuu kinh te",
+        "phan tich kinh te",
+        "phan tich vi mo"
+      ],
+      "staff": true
+    },
+    "ONET-19-3041.00": {
+      "include": [
+        "nghien cuu (xa hoi|vien)",
+        "researcher",
+        "social research"
+      ],
+      "exclude": [
+        "thi truong",
+        "market"
+      ],
+      "staff": true
+    },
+    "ONET-19-3033.00": {
+      "include": [
+        "tam ly",
+        "psycholog"
+      ],
+      "exclude": [
+        "tu van tam ly",
+        "tham van"
+      ],
+      "staff": true
+    },
+    "ONET-19-3051.00": {
+      "include": [
+        "quy hoach",
+        "urban plan"
+      ],
+      "staff": true
+    },
+    "ONET-19-5011.00": {
+      "include": [
+        "an toan lao dong",
+        "\\bhse\\b",
+        "\\bhsse\\b",
+        "\\bhs&?e\\b",
+        "an toan ve sinh lao dong",
+        "safety officer",
+        "\\behs\\b"
+      ],
+      "staff": true
+    },
+    "ONET-21-1014.00": {
+      "include": [
+        "tu van tam ly",
+        "tham van tam ly",
+        "chuyen vien tam ly",
+        "counsel"
+      ],
+      "staff": true
+    },
+    "ONET-21-1012.00": {
+      "include": [
+        "tu van tuyen sinh",
+        "huong nghiep",
+        "tu van du hoc",
+        "admission"
+      ],
+      "staff": true
+    },
+    "ONET-21-1021.00": {
+      "include": [
+        "cong tac xa hoi",
+        "social work",
+        "nhan vien xa hoi",
+        "du an phat trien cong dong"
+      ],
+      "staff": true
+    },
+    "ONET-23-1011.00": {
+      "include": [
+        "luat su",
+        "lawyer",
+        "attorney",
+        "legal counsel",
+        "tu van luat"
+      ],
+      "staff": true
+    },
+    "ONET-23-2011.00": {
+      "include": [
+        "phap che",
+        "phap ly",
+        "legal",
+        "paralegal",
+        "tro ly luat su"
+      ],
+      "exclude": [
+        "luat su"
+      ],
+      "staff": true
+    },
+    "ONET-25-1081.00": {
+      "include": [
+        "giang vien",
+        "lecturer"
+      ],
+      "exclude": [
+        "tieng anh",
+        "ky nang",
+        "trung tam"
+      ]
+    },
+    "ONET-25-2031.00": {
+      "include": [
+        "giao vien (thcs|thpt|trung hoc|cap 2|cap 3|toan|van|ly|hoa|sinh|su|dia)\\b"
+      ],
+      "exclude": [
+        "mam non",
+        "tieu hoc"
+      ]
+    },
+    "ONET-25-2021.00": {
+      "include": [
+        "giao vien tieu hoc",
+        "giao vien cap 1",
+        "primary teacher"
+      ]
+    },
+    "ONET-25-2011.00": {
+      "include": [
+        "giao vien mam non",
+        "co giao mam non",
+        "bao mau mam non",
+        "preschool teacher",
+        "kindergarten"
+      ]
+    },
+    "ONET-25-2051.00": {
+      "include": [
+        "giao duc dac biet",
+        "can thiep",
+        "tre tu ky",
+        "giao vien hoa nhap",
+        "special education"
+      ]
+    },
+    "ONET-25-3041.00": {
+      "include": [
+        "gia su",
+        "giao vien (tieng anh|tieng trung|tieng nhat|tieng han|ngoai ngu|ielts|toeic|ky nang|lap trinh|robotics|ve|piano|guitar)\\b",
+        "tro giang",
+        "teaching assistant",
+        "\\besl\\b",
+        "english teacher",
+        "giao vien trung tam"
+      ]
+    },
+    "ONET-25-4022.00": {
+      "include": [
+        "thu thu",
+        "thu vien",
+        "luu tru",
+        "van thu",
+        "librarian",
+        "archiv"
+      ],
+      "staff": true
+    },
+    "ONET-25-9031.00": {
+      "include": [
+        "phat trien chuong trinh",
+        "thiet ke chuong trinh",
+        "hoc lieu",
+        "instructional design",
+        "curriculum",
+        "bien soan noi dung dao tao"
+      ],
+      "staff": true
+    },
+    "ONET-27-1024.00": {
+      "include": [
+        "thiet ke do hoa",
+        "graphic design",
+        "designer",
+        "nhan vien thiet ke$",
+        "thiet ke (2d|banner|bao bi|an pham)"
+      ],
+      "exclude": [
+        "noi that",
+        "thoi trang",
+        "\\bui\\b",
+        "\\bux\\b",
+        "kien truc",
+        "co khi",
+        "san pham"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-27-1014.00": {
+      "include": [
+        "\\b2d\\b|\\b3d\\b",
+        "animat",
+        "hoat hinh",
+        "motion",
+        "\\bvfx\\b",
+        "ky xao",
+        "dung hinh 3d"
+      ],
+      "staff": true
+    },
+    "ONET-27-1013.00": {
+      "include": [
+        "hoa si",
+        "artist",
+        "ve tranh",
+        "nghe nhan",
+        "minh hoa",
+        "illustrat"
+      ],
+      "exclude": [
+        "make ?up",
+        "trang diem"
+      ],
+      "staff": true
+    },
+    "ONET-27-1021.00": {
+      "include": [
+        "thiet ke san pham",
+        "industrial design",
+        "product design(?!er? ui)",
+        "thiet ke cong nghiep"
+      ],
+      "exclude": [
+        "\\bui\\b",
+        "\\bux\\b",
+        "phan mem"
+      ],
+      "staff": true
+    },
+    "ONET-27-1022.00": {
+      "include": [
+        "thiet ke thoi trang",
+        "fashion design",
+        "thiet ke (quan ao|rap|mau)",
+        "\\brap (thoi trang|quan ao|ao|giay)\\b"
+      ],
+      "staff": true
+    },
+    "ONET-27-1025.00": {
+      "include": [
+        "thiet ke noi that",
+        "interior design",
+        "kien truc noi that",
+        "trang tri"
+      ],
+      "staff": true
+    },
+    "ONET-27-2011.00": {
+      "include": [
+        "dien vien",
+        "\\bactor\\b"
+      ],
+      "exclude": [
+        "mua"
+      ]
+    },
+    "ONET-27-2012.00": {
+      "include": [
+        "dao dien",
+        "director (video|film|phim)",
+        "producer",
+        "san xuat (phim|chuong trinh|noi dung video)",
+        "nha san xuat"
+      ]
+    },
+    "ONET-27-2042.00": {
+      "include": [
+        "ca si",
+        "nhac cong",
+        "musician",
+        "\\bsinger\\b",
+        "\\bdj\\b",
+        "giao vien (piano|guitar|thanh nhac)"
+      ]
+    },
+    "ONET-27-2031.00": {
+      "include": [
+        "dien vien mua",
+        "\\bvu cong\\b",
+        "dancer",
+        "bien dao mua",
+        "giao vien mua",
+        "\\bdance\\b"
+      ],
+      "exclude": [
+        "dich vu"
+      ]
+    },
+    "ONET-27-2021.00": {
+      "include": [
+        "huan luyen vien (bong|boi|the thao|vo|tennis|cau long|golf)",
+        "van dong vien",
+        "hlv (bong|boi|vo)"
+      ]
+    },
+    "ONET-27-3023.00": {
+      "include": [
+        "phong vien",
+        "nha bao",
+        "reporter",
+        "journalist",
+        "\\bmc\\b",
+        "bien tap vien truyen hinh"
+      ],
+      "staff": true
+    },
+    "ONET-27-3041.00": {
+      "include": [
+        "bien tap",
+        "editor(?!.*video)"
+      ],
+      "exclude": [
+        "video",
+        "dung phim",
+        "quay dung"
+      ],
+      "staff": true
+    },
+    "ONET-27-3043.00": {
+      "include": [
+        "content",
+        "copywrit",
+        "viet bai",
+        "noi dung",
+        "writer",
+        "bien kich",
+        "kich ban"
+      ],
+      "exclude": [
+        "video",
+        "quay"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-27-3091.00": {
+      "include": [
+        "phien dich",
+        "bien dich",
+        "translator",
+        "interpreter",
+        "thong dich"
+      ],
+      "staff": true
+    },
+    "ONET-27-4031.00": {
+      "include": [
+        "quay phim",
+        "dung phim",
+        "quay dung",
+        "video editor",
+        "editor video",
+        "chup anh",
+        "photographer",
+        "nhiep anh",
+        "cameraman",
+        "videographer"
+      ],
+      "staff": true
+    },
+    "ONET-27-4014.00": {
+      "include": [
+        "am thanh",
+        "anh sang",
+        "sound",
+        "lighting",
+        "ky thuat (phat song|truyen hinh|su kien)",
+        "livestream ky thuat"
+      ],
+      "staff": true
+    },
+    "ONET-29-1215.00": {
+      "include": [
+        "bac si(?! (thu y|rang|nha khoa))",
+        "doctor",
+        "\\bbs\\b"
+      ],
+      "exclude": [
+        "thu y",
+        "rang",
+        "nha khoa"
+      ]
+    },
+    "ONET-29-1021.00": {
+      "include": [
+        "bac si (rang|nha khoa)",
+        "nha si",
+        "dentist",
+        "bac si rang ham mat"
+      ]
+    },
+    "ONET-29-1051.00": {
+      "include": [
+        "duoc si",
+        "pharmacist",
+        "trinh duoc vien",
+        "nhan vien (nha thuoc|ban thuoc)"
+      ],
+      "staff": true
+    },
+    "ONET-29-1141.00": {
+      "include": [
+        "dieu duong",
+        "y ta",
+        "nurse"
+      ],
+      "exclude": [
+        "tro ly"
+      ],
+      "staff": true
+    },
+    "ONET-29-1161.00": {
+      "include": [
+        "ho sinh",
+        "midwife",
+        "nu ho sinh"
+      ]
+    },
+    "ONET-29-1123.00": {
+      "include": [
+        "phuc hoi chuc nang",
+        "vat ly tri lieu",
+        "physiotherap",
+        "ky thuat vien vltl",
+        "\\bvltl\\b"
+      ]
+    },
+    "ONET-29-1291.00": {
+      "include": [
+        "y hoc co truyen",
+        "cham cuu",
+        "dong y",
+        "bam huyet"
+      ]
+    },
+    "ONET-29-1031.00": {
+      "include": [
+        "dinh duong",
+        "nutrition"
+      ],
+      "staff": true
+    },
+    "ONET-29-1131.00": {
+      "include": [
+        "bac si thu y",
+        "thu y",
+        "veterinar"
+      ]
+    },
+    "ONET-29-2011.00": {
+      "include": [
+        "xet nghiem",
+        "laborator(y|ian) (y|medical)",
+        "ky thuat vien xet nghiem"
+      ]
+    },
+    "ONET-29-2034.00": {
+      "include": [
+        "chan doan hinh anh",
+        "x-?quang",
+        "sieu am",
+        "radiolog",
+        "ky thuat vien hinh anh",
+        "\\bct\\b.*\\bmri\\b"
+      ]
+    },
+    "ONET-29-1041.00": {
+      "include": [
+        "khuc xa",
+        "do mat",
+        "nhan khoa",
+        "optometr",
+        "kinh mat"
+      ]
+    },
+    "ONET-29-2072.00": {
+      "include": [
+        "ho so benh an",
+        "thu ky y khoa",
+        "medical record"
+      ]
+    },
+    "ONET-31-1131.00": {
+      "include": [
+        "ho ly",
+        "tro ly dieu duong",
+        "nursing assistant",
+        "dieu duong vien (cham soc|ho tro)"
+      ]
+    },
+    "ONET-31-1121.00": {
+      "include": [
+        "cham soc nguoi gia",
+        "cham soc tai nha",
+        "caregiver",
+        "giup viec",
+        "dieu duong (tai nha|cham soc nguoi)"
+      ]
+    },
+    "ONET-31-9091.00": {
+      "include": [
+        "phu ta nha khoa",
+        "tro thu nha khoa",
+        "tro ly nha khoa",
+        "dental assistant",
+        "phu ta bac si rang"
+      ]
+    },
+    "ONET-31-9092.00": {
+      "include": [
+        "tro ly bac si",
+        "tro ly y khoa",
+        "medical assistant",
+        "tro ly phong kham",
+        "le tan phong kham"
+      ]
+    },
+    "ONET-31-9011.00": {
+      "include": [
+        "massage",
+        "xoa bop",
+        "ky thuat vien (spa|tri lieu)",
+        "tri lieu"
+      ],
+      "exclude": [
+        "vat ly tri lieu",
+        "tam ly"
+      ]
+    },
+    "ONET-33-9032.00": {
+      "include": [
+        "bao ve",
+        "an ninh"
+      ],
+      "exclude": [
+        "an ninh mang",
+        "cyber",
+        "bao mat",
+        "thong tin",
+        "dam may",
+        "network"
+      ],
+      "staff": true
+    },
+    "ONET-33-9092.00": {
+      "include": [
+        "\\bcuu ho\\b",
+        "lifeguard"
+      ],
+      "exclude": [
+        "\\bxe\\b"
+      ]
+    },
+    "ONET-35-2014.00": {
+      "include": [
+        "dau bep",
+        "\\bbep\\b",
+        "\\bchef\\b",
+        "\\bcook\\b",
+        "phu bep",
+        "bep (truong|chinh|nong|lanh|au|a|viet)"
+      ],
+      "exclude": [
+        "quan ly bep",
+        "ve sinh"
+      ]
+    },
+    "ONET-35-3023.01": {
+      "include": [
+        "pha che",
+        "barista",
+        "bartender",
+        "\\bbar\\b"
+      ],
+      "staff": true
+    },
+    "ONET-35-3031.00": {
+      "include": [
+        "phuc vu",
+        "waiter",
+        "waitress",
+        "server",
+        "chay ban",
+        "order"
+      ],
+      "exclude": [
+        "khach hang",
+        "phuc vu khach hang"
+      ],
+      "staff": true
+    },
+    "ONET-37-2011.00": {
+      "include": [
+        "buong phong",
+        "housekeep",
+        "tap vu",
+        "ve sinh",
+        "lao cong",
+        "don dep"
+      ],
+      "exclude": [
+        "ve sinh lao dong",
+        "an toan",
+        "moi truong",
+        "thuc pham",
+        "thiet bi ve sinh"
+      ],
+      "staff": true
+    },
+    "ONET-37-3011.00": {
+      "include": [
+        "cay xanh",
+        "canh quan",
+        "lam vuon",
+        "landscap",
+        "gardener",
+        "cham soc vuon"
+      ],
+      "exclude": [
+        "kien truc",
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ],
+      "staff": true
+    },
+    "ONET-37-2021.00": {
+      "include": [
+        "kiem soat con trung",
+        "diet con trung",
+        "pest control",
+        "diet moi",
+        "kho trung"
+      ]
+    },
+    "ONET-39-5012.00": {
+      "include": [
+        "tho (lam )?toc",
+        "cat toc",
+        "\\bhair",
+        "tho phu toc",
+        "goi dau"
+      ]
+    },
+    "ONET-39-5094.00": {
+      "include": [
+        "\\bspa\\b",
+        "cham soc da",
+        "skin ?care",
+        "ky thuat vien da",
+        "tham my vien",
+        "esthetician"
+      ],
+      "exclude": [
+        "quan ly",
+        "massage"
+      ]
+    },
+    "ONET-39-5092.00": {
+      "include": [
+        "\\bnail\\b",
+        "lam mong",
+        "tho mong"
+      ]
+    },
+    "ONET-39-5091.00": {
+      "include": [
+        "trang diem",
+        "make ?up",
+        "makeup artist"
+      ]
+    },
+    "ONET-39-7011.00": {
+      "include": [
+        "huong dan vien",
+        "tour guide",
+        "\\bhdv\\b"
+      ]
+    },
+    "ONET-39-9011.00": {
+      "include": [
+        "bao mau",
+        "trong tre",
+        "nanny",
+        "cham soc tre",
+        "co nuoi"
+      ],
+      "exclude": [
+        "mam non"
+      ]
+    },
+    "ONET-39-9031.00": {
+      "include": [
+        "\\bpt\\b",
+        "personal trainer",
+        "huan luyen vien (the hinh|gym|yoga|ca nhan)",
+        "fitness",
+        "yoga",
+        "gym"
+      ]
+    },
+    "ONET-39-9032.00": {
+      "include": [
+        "hoat nao",
+        "giai tri",
+        "khu vui choi",
+        "animator",
+        "to chuc tro choi",
+        "teambuilding",
+        "game master"
+      ]
+    },
+    "ONET-39-2021.00": {
+      "include": [
+        "thu cung",
+        "cham soc (cho|meo|dong vat)",
+        "\\bpet\\b",
+        "grooming",
+        "groomer",
+        "tia long"
+      ]
+    },
+    "ONET-39-4031.00": {
+      "include": [
+        "tang le",
+        "mai tang",
+        "nghia trang",
+        "funeral"
+      ]
+    },
+    "ONET-41-2031.00": {
+      "include": [
+        "nhan vien ban hang",
+        "tu van ban hang",
+        "ban hang (tai|cua hang|showroom|thoi trang|my pham|sieu thi)",
+        "sales associate",
+        "nhan vien cua hang",
+        "nhan vien showroom",
+        "\\bpg\\b",
+        "\\bpb\\b"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-41-2011.00": {
+      "include": [
+        "thu ngan",
+        "cashier"
+      ],
+      "staff": true
+    },
+    "ONET-41-3021.00": {
+      "include": [
+        "tu van (vien )?bao hiem",
+        "dai ly bao hiem",
+        "insurance (agent|advisor|consultant)",
+        "bao hiem nhan tho",
+        "kinh doanh bao hiem"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-41-3031.00": {
+      "include": [
+        "moi gioi chung khoan",
+        "chung khoan",
+        "broker",
+        "tu van dau tu chung khoan"
+      ],
+      "staff": true,
+      "sales": true,
+      "exclude": [
+        "lap trinh",
+        "phan tich",
+        "developer"
+      ]
+    },
+    "ONET-41-9022.00": {
+      "include": [
+        "bat dong san",
+        "\\bbds\\b",
+        "real estate",
+        "moi gioi (nha|dat|can ho)"
+      ],
+      "exclude": [
+        "quan ly toa nha",
+        "ke toan",
+        "phap ly",
+        "thiet ke",
+        "marketing"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-41-4012.00": {
+      "include": [
+        "nhan vien kinh doanh",
+        "chuyen vien kinh doanh",
+        "sales (executive|b2b|representative)",
+        "\\bb2b\\b",
+        "phat trien thi truong",
+        "kinh doanh du an",
+        "\\bsale(s)?\\b",
+        "telesale"
+      ],
+      "exclude": [
+        "bat dong san",
+        "\\bbds\\b",
+        "bao hiem",
+        "chung khoan",
+        "tour",
+        "du lich",
+        "ky thuat",
+        "phan mem",
+        "sales admin",
+        "sale admin",
+        "online",
+        "thoi trang",
+        "cua hang"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-41-9031.00": {
+      "include": [
+        "kinh doanh ky thuat",
+        "ky su kinh doanh",
+        "ky su ban hang",
+        "sales engineer",
+        "technical sales",
+        "kinh doanh (thiet bi|may|giai phap|phan mem)"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-41-3041.00": {
+      "include": [
+        "sales tour",
+        "kinh doanh (tour|du lich)",
+        "tu van (tour|du lich)",
+        "dieu hanh tour",
+        "booking",
+        "ve may bay"
+      ],
+      "staff": true,
+      "sales": true
+    },
+    "ONET-41-9012.00": {
+      "include": [
+        "nguoi mau",
+        "\\bmodel\\b",
+        "mau (anh|livestream)"
+      ],
+      "exclude": [
+        "\\bapp\\b",
+        "nghiep vu"
+      ]
+    },
+    "ONET-43-6014.00": {
+      "include": [
+        "hanh chinh",
+        "thu ky",
+        "tro ly",
+        "secretary",
+        "admin(?!.*sale)",
+        "assistant",
+        "van phong"
+      ],
+      "exclude": [
+        "phap ly",
+        "nhan su$",
+        "sales admin",
+        "sale admin",
+        "bac si",
+        "nha khoa",
+        "giang"
+      ],
+      "staff": true
+    },
+    "ONET-43-4051.00": {
+      "include": [
+        "cham soc khach hang",
+        "\\bcskh\\b",
+        "customer (service|support|care)",
+        "tong dai",
+        "call ?center",
+        "dich vu khach hang",
+        "chat ?sale"
+      ],
+      "staff": true
+    },
+    "ONET-43-4081.00": {
+      "include": [
+        "le tan",
+        "receptionist",
+        "front (office|desk)"
+      ],
+      "exclude": [
+        "phong kham",
+        "nha khoa"
+      ],
+      "staff": true
+    },
+    "ONET-43-3071.00": {
+      "include": [
+        "giao dich vien",
+        "teller",
+        "dich vu khach hang ngan hang"
+      ],
+      "staff": true
+    },
+    "ONET-43-5071.00": {
+      "include": [
+        "\\bkho\\b",
+        "thu kho",
+        "warehouse",
+        "kiem kho",
+        "ke hoach vat tu",
+        "dieu do vat tu",
+        "inventory"
+      ],
+      "exclude": [
+        "ke toan kho"
+      ],
+      "staff": true
+    },
+    "ONET-43-5021.00": {
+      "include": [
+        "giao hang",
+        "shipper",
+        "giao nhan",
+        "delivery",
+        "tai xe giao hang"
+      ],
+      "staff": true
+    },
+    "ONET-43-5051.00": {
+      "include": [
+        "buu chinh",
+        "buu dien",
+        "buu ta",
+        "postal"
+      ],
+      "staff": true
+    },
+    "ONET-43-5032.00": {
+      "include": [
+        "dieu phoi (xe|van tai|giao hang|van chuyen)",
+        "dieu do",
+        "dispatch"
+      ],
+      "staff": true
+    },
+    "ONET-45-2092.00": {
+      "include": [
+        "cong nhan (nong nghiep|trong trot|vuon)",
+        "lao dong (nong nghiep|trong trot)",
+        "trong (rau|cay|nam)",
+        "thu hoach"
+      ],
+      "staff": true
+    },
+    "ONET-45-2093.00": {
+      "include": [
+        "chan nuoi",
+        "nuoi trong thuy san",
+        "trai (heo|ga|bo|tom|ca)",
+        "cong nhan trai",
+        "ky thuat (chan nuoi|thuy san)"
+      ],
+      "staff": true
+    },
+    "ONET-45-3031.00": {
+      "include": [
+        "danh bat",
+        "ngu dan",
+        "thuyen vien tau ca"
+      ]
+    },
+    "ONET-45-4011.00": {
+      "include": [
+        "cong nhan lam nghiep",
+        "trong rung",
+        "khai thac go"
+      ]
+    },
+    "ONET-47-2021.00": {
+      "include": [
+        "tho xay",
+        "tho ho",
+        "op lat",
+        "tho nho"
+      ],
+      "staff": true
+    },
+    "ONET-47-2031.00": {
+      "include": [
+        "tho moc (?!noi that)",
+        "cop pha",
+        "carpenter"
+      ]
+    },
+    "ONET-47-2141.00": {
+      "include": [
+        "tho son",
+        "thach cao",
+        "tho tran",
+        "tho hoan thien",
+        "painter"
+      ]
+    },
+    "ONET-47-2111.00": {
+      "include": [
+        "tho dien",
+        "electrician",
+        "dien (cong trinh|dan dung|nuoc)",
+        "ky thuat dien (cong trinh|toa nha)",
+        "nhan vien ky thuat dien"
+      ],
+      "exclude": [
+        "dien lanh",
+        "dien tu",
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ],
+      "staff": true
+    },
+    "ONET-47-2152.00": {
+      "include": [
+        "tho (ong )?nuoc",
+        "\\bong nuoc",
+        "plumber",
+        "cap thoat nuoc",
+        "tho ong"
+      ],
+      "staff": true,
+      "exclude": [
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ]
+    },
+    "ONET-47-2221.00": {
+      "include": [
+        "ket cau thep",
+        "nhom kinh",
+        "tho (sat|thep)",
+        "lap dung",
+        "tho kinh"
+      ],
+      "staff": true,
+      "exclude": [
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ]
+    },
+    "ONET-47-2073.00": {
+      "include": [
+        "lai (may|xe) (xuc|dao|lu|ui|cau)",
+        "van hanh (may xuc|may dao|may thi cong|may lu|xe cau)",
+        "excavator"
+      ]
+    },
+    "ONET-47-5041.00": {
+      "include": [
+        "khai thac (mo|than|da)",
+        "tho mo",
+        "cong nhan mo",
+        "khoan (dau|mo)"
+      ]
+    },
+    "ONET-49-3023.00": {
+      "include": [
+        "sua chua o to",
+        "ky thuat (vien )?o to",
+        "tho (may|dien|son|gam) o to",
+        "co khi o to",
+        "tho o to",
+        "automotive technician"
+      ],
+      "staff": true
+    },
+    "ONET-49-3052.00": {
+      "include": [
+        "sua (chua )?xe may",
+        "ky thuat (vien )?xe may",
+        "tho xe may"
+      ],
+      "staff": true
+    },
+    "ONET-49-3042.00": {
+      "include": [
+        "sua chua (may|xe) (cong trinh|nong nghiep|xuc|co gioi)",
+        "co khi (may|xe) cong trinh",
+        "thiet bi nang"
+      ],
+      "staff": true
+    },
+    "ONET-49-3011.00": {
+      "include": [
+        "bao duong may bay",
+        "ky thuat (vien )?may bay",
+        "aircraft (technician|maintenance)"
+      ]
+    },
+    "ONET-49-9021.00": {
+      "include": [
+        "dien lanh",
+        "dieu hoa",
+        "\\bhvac\\b",
+        "may lanh",
+        "tho lanh"
+      ],
+      "staff": true,
+      "exclude": [
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ]
+    },
+    "ONET-49-9041.00": {
+      "include": [
+        "bao tri",
+        "maintenance",
+        "sua chua may (moc|cong nghiep)",
+        "ky thuat (co khi|bao tri)"
+      ],
+      "exclude": [
+        "bao tri (toa nha|he thong mang|phan mem|website)",
+        "dien lanh",
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ],
+      "staff": true
+    },
+    "ONET-49-9051.00": {
+      "include": [
+        "duong day",
+        "tram (bien ap|dien)",
+        "luoi dien",
+        "dien luc"
+      ],
+      "staff": true
+    },
+    "ONET-49-9052.00": {
+      "include": [
+        "lap dat (internet|cap quang|vien thong|mang)",
+        "ky thuat (vien )?vien thong",
+        "cap quang",
+        "trien khai ha tang vien thong"
+      ],
+      "staff": true
+    },
+    "ONET-49-2094.00": {
+      "include": [
+        "sua chua (dien tu|thiet bi dien|dien thoai|may tinh|laptop)",
+        "ky thuat (vien )?dien tu",
+        "tho dien tu"
+      ],
+      "staff": true,
+      "exclude": [
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ]
+    },
+    "ONET-51-2092.00": {
+      "include": [
+        "lap rap",
+        "assembly",
+        "cong nhan (dien tu|san xuat)",
+        "cong nhan$",
+        "lao dong pho thong"
+      ],
+      "exclude": [
+        "may mac",
+        "thuc pham",
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ],
+      "staff": true
+    },
+    "ONET-51-4041.00": {
+      "include": [
+        "\\bcnc\\b",
+        "tho tien",
+        "tien phay",
+        "\\bphay\\b",
+        "tho co khi",
+        "gia cong co khi",
+        "machinist"
+      ],
+      "staff": true,
+      "exclude": [
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ]
+    },
+    "ONET-51-4121.00": {
+      "include": [
+        "tho han",
+        "welder",
+        "han (tig|mig|que|ong|dien|co2|ho quang)"
+      ],
+      "staff": true,
+      "exclude": [
+        "tieng han",
+        "han quoc"
+      ]
+    },
+    "ONET-51-3092.00": {
+      "include": [
+        "che bien (thuc pham|thuy san|thit)",
+        "cong nhan (thuc pham|che bien)",
+        "food production"
+      ],
+      "staff": true
+    },
+    "ONET-51-3011.00": {
+      "include": [
+        "lam banh",
+        "tho banh",
+        "bakery",
+        "baker",
+        "pastry",
+        "banh mi"
+      ]
+    },
+    "ONET-51-5112.00": {
+      "include": [
+        "\\bin\\b (an|offset|lua|kts|ky thuat so)",
+        "may in",
+        "cong nhan in",
+        "tho in",
+        "printing"
+      ],
+      "staff": true
+    },
+    "ONET-51-6031.00": {
+      "include": [
+        "may mac",
+        "cong nhan may",
+        "tho may",
+        "\\bda giay\\b",
+        "giay da",
+        "sewing"
+      ],
+      "exclude": [
+        "may (moc|tinh|in|lanh|xuc)"
+      ],
+      "staff": true
+    },
+    "ONET-51-7011.00": {
+      "include": [
+        "tho moc noi that",
+        "do go",
+        "tho go",
+        "san xuat noi that",
+        "\\bcnc go\\b",
+        "tho son go"
+      ],
+      "staff": true
+    },
+    "ONET-51-8013.00": {
+      "include": [
+        "van hanh (nha may dien|tram dien|lo hoi|tua bin|dien mat troi)",
+        "nha may dien"
+      ],
+      "staff": true
+    },
+    "ONET-51-8031.00": {
+      "include": [
+        "xu ly nuoc",
+        "nuoc thai",
+        "nha may nuoc",
+        "van hanh he thong nuoc"
+      ],
+      "staff": true
+    },
+    "ONET-51-8091.00": {
+      "include": [
+        "van hanh (nha may hoa chat|loc dau|day chuyen hoa)",
+        "hoa chat",
+        "loc dau",
+        "\\bpetro"
+      ],
+      "staff": true,
+      "exclude": [
+        "mua hang"
+      ]
+    },
+    "ONET-51-9061.00": {
+      "include": [
+        "\\bqc\\b",
+        "\\bqa\\b",
+        "kiem (soat|tra) chat luong",
+        "quality (control|inspector)",
+        "quan ly chat luong"
+      ],
+      "exclude": [
+        "phan mem",
+        "software",
+        "tester",
+        "kiem thu",
+        "\\bky su\\b",
+        "engineer",
+        "thiet ke"
+      ],
+      "staff": true
+    },
+    "ONET-51-9141.00": {
+      "include": [
+        "ban dan",
+        "semiconductor",
+        "chip",
+        "vi mach"
+      ],
+      "staff": true
+    },
+    "ONET-51-9071.00": {
+      "include": [
+        "kim hoan",
+        "trang suc",
+        "jewel",
+        "vang bac"
+      ],
+      "staff": true
+    },
+    "ONET-51-9081.00": {
+      "include": [
+        "rang gia",
+        "phuc hinh",
+        "labo nha khoa",
+        "chinh hinh",
+        "ky thuat vien nha khoa"
+      ]
+    },
+    "ONET-51-9111.00": {
+      "include": [
+        "van hanh (may|day chuyen)",
+        "dung may",
+        "machine operator",
+        "cong nhan van hanh",
+        "dong goi"
+      ],
+      "exclude": [
+        "phan mem",
+        "san thuong mai",
+        "website",
+        "kinh doanh"
+      ],
+      "staff": true
+    },
+    "ONET-53-2011.00": {
+      "include": [
+        "phi cong",
+        "pilot",
+        "co truong",
+        "co pho"
+      ]
+    },
+    "ONET-53-2021.00": {
+      "include": [
+        "kiem soat (vien )?khong luu",
+        "air traffic"
+      ]
+    },
+    "ONET-53-2031.00": {
+      "include": [
+        "tiep vien",
+        "flight attendant",
+        "cabin crew"
+      ]
+    },
+    "ONET-53-3032.00": {
+      "include": [
+        "lai xe tai",
+        "tai xe (xe )?tai",
+        "lai xe container",
+        "tai xe container",
+        "lai xe (hang|giao hang|bang c|bang fc|dau keo)",
+        "truck driver"
+      ]
+    },
+    "ONET-53-3052.00": {
+      "include": [
+        "lai xe (khach|buyt|bus|du lich|16|29|45)",
+        "tai xe (khach|buyt|bus|dua don)",
+        "lai xe dua don",
+        "bus driver"
+      ]
+    },
+    "ONET-53-4011.00": {
+      "include": [
+        "lai tau",
+        "train driver",
+        "duong sat",
+        "metro"
+      ]
+    },
+    "ONET-53-5021.00": {
+      "include": [
+        "thuyen vien",
+        "si quan (boong|may)",
+        "thuy thu",
+        "hang hai",
+        "seafarer",
+        "\\bcrew\\b"
+      ]
+    },
+    "ONET-53-7051.00": {
+      "include": [
+        "xe nang",
+        "forklift",
+        "cau truc",
+        "van hanh cau",
+        "lai cau",
+        "xe cau"
+      ]
+    },
+    "ONET-53-7062.00": {
+      "include": [
+        "boc xep",
+        "dong goi",
+        "boc vac",
+        "packing",
+        "packer",
+        "soan hang",
+        "phan loai hang"
+      ],
+      "staff": true
+    },
+    "ONET-53-7081.00": {
+      "include": [
+        "thu gom rac",
+        "xu ly rac",
+        "chat thai",
+        "moi truong do thi",
+        "ve sinh moi truong"
+      ],
+      "staff": true
+    },
+    "ONET-53-6051.00": {
+      "include": [
+        "dang kiem",
+        "kiem dinh (xe|phuong tien)"
+      ]
+    }
+  },
+  "sales_exclude": "kinh doanh|\\bsales?\\b|ban hang|telesale|tiep thi|marketing|tu van (khoa hoc|dich vu|san pham)",
+  "contract_exclude": "ban thoi gian|thuc tap|thoi vu|cong tac vien|part[ -]?time|intern"
+}

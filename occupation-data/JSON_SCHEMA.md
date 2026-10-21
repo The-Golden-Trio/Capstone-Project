@@ -18,6 +18,8 @@
 9. [`generated/role_graph.json`](#9-generatedrole_graphjson)
 10. [`scenarios/<ROLE>/<BAND>_<ARCHETYPE>.json`](#10-scenariosrole_band_archetypejson)
 11. [Những chỗ lệch / lỗi dữ liệu phát hiện khi đọc](#11-những-chỗ-lệch--lỗi-dữ-liệu-phát-hiện-khi-đọc)
+12. [Danh mục nghề ngoài IT từ O*NET](#12-danh-mục-nghề-ngoài-it-từ-onet)
+13. [Hồ sơ nghề chuẩn](#13-hồ-sơ-nghề-chuẩn-generatedoccupation_profilesjson)
 
 ---
 
@@ -52,6 +54,9 @@ Skeleton viết dạng JSONC (JSON có comment). Quy ước:
 | 9 | `generated/role_graph.json` | Graph 22 hành tinh + 64 cạnh + 39 alias, dùng cho bản đồ ngân hà | 52 KB | ❌ script sinh |
 | 10 | `scenarios/SWE_BACKEND/L1_S_EXEC.json` | Kịch bản chơi L1 "Sửa bug nhỏ" | 20 KB | ✅ |
 | 10 | `scenarios/SWE_BACKEND/L3_S_INCIDENT.json` | Kịch bản chơi L3 "Tối ưu API", **golden anchor** của spec | 20 KB | ✅ |
+| 12 | `decisions/onet_merge/*.json`, `datasets/onet_vi/*.json` | Quyết định gộp và bản dịch cho danh mục nghề ngoài IT | 22 + 23 file | ✅ |
+| 12 | `generated/onet_all_roles.json` | **Danh mục 199 nghề ngoài IT** (O\*NET), cùng khuôn với `final_22_roles.json` | 199 role | ❌ script sinh |
+| 13 | `generated/occupation_profiles.json` | **Hồ sơ nghề chuẩn** cho 221 nghề, một khuôn: kỹ năng, lương, đường học, nhu cầu tuyển | 221 role | ❌ script sinh |
 
 > ℹ️ Tên file đã đổi ngày 25/9 (README, script build và spec đã cập nhật theo). Đối chiếu tên cũ: `dataset_final_merged.json` → `78_roles_unmerged.json` · `dataset_22_roles_enriched_v3.json` → `final_22_roles.json` · `fit_quiz.json` → `DRAFT_fit_quiz.json` · `FILTERED_ROLES.csv` → `78_to_22_roles.csv`. Trong `_meta` của các file cũng còn dùng tên cũ.
 
@@ -507,7 +512,13 @@ Chỉ xuất hiện trong `78_roles_unmerged.json` (11/78 role đã gán). **Kh�
     "issues_fixed": 4,
     "fixes": ["string"],             // Các lỗi đã sửa
     "remaining_known_limits": ["string"] // Giới hạn còn tồn tại (81/97 sự kiện C_INFERRED, 7 role thiếu skill…)
-  }
+  },
+
+  "description_draft_2026_10_20": {  // Lần bổ sung description, levels, career fields, onet, label_vi
+    "added": ["string"],
+    "drafted_levels": { "SWE_EM": ["L7", "L8", "L9"] } // Band có core_output do nhóm soạn nháp
+  },
+
 }
 ```
 
@@ -548,8 +559,27 @@ Hai mảng dùng **cùng một cấu trúc**. Mỗi sự kiện là một màn n
   "role_name_vn": "Lập trình viên Back-end / Kỹ sư Back-end", // Tên gọi của nghề ở Việt Nam
   "role_group": "Software Engineering & Architecture",        // Nhóm nghề (7 nhóm, không còn EXEC)
   "roleplay_experience": "Viết logic nghiệp vụ và xử lý dữ liệu — phần người dùng không nhìn thấy", // Câu mô tả "chơi nghề này sẽ trải nghiệm gì"
+  "description": {                   // Mô tả nghề cho người đọc (FR-05, ERD job.summary / job.downsides). 22/22, NHÁP
+    "summary": "string",             // 2–3 câu: nghề là gì, làm gì hằng ngày, vào nghề thế nào
+    "downsides": ["string"],         // 3–4 mặt trái của nghề (BR-07), lấy từ sự kiện role-play, entry_note, lý do nghỉ việc ITviec
+    "evidence_level": "C_INFERRED",
+    "status": "NHAP_CHO_DUYET",      // Chưa có chuyên gia nghề duyệt
+    "source_note": "string"          // Ngày soạn và các field đã dùng làm căn cứ
+  },
   "archetype": "A" | "B" | "C" | "D", // Cửa vào nghề (xem §2). A 11 · B 6 · D 3 · C 2
   "bands": "L1-L7",                  // Khoảng band nghề này chiếm
+  "levels": [                        // Đúng một mục cho mỗi band trong `bands` (FR-17, DR-15). 22/22
+    {
+      "band": "L3",
+      "title_vn": "Junior Backend Engineer",
+      "years_experience": "1-2",
+      "core_output": "string",       // Ở band này chịu trách nhiệm tạo ra gì, được/không được tự quyết gì
+      "evidence_level": "A_VERIFIED" | "B_TITLE_SEEN" | "C_INFERRED",
+      "source": "78_roles_unmerged.json" | "78_roles_unmerged.json (SEC_SOC, đã gộp vào nghề này)" | "NHAP_2026-10-20"
+        // NHAP_… = nhóm soạn nháp vì 78 chỉ có một khối destination_profile cho nhiều band
+        // (SWE_ARCH_SOL L6–L8, SWE_TECHLEAD L6–L7, SWE_EM L7–L9, CLOUD_ENG L5–L6, PROD_PM L7–L9)
+    }
+  ],
 
   "similar_roles": [                 // Nghề đã bị GỘP vào nghề này (tên gọi khác của cùng trải nghiệm)
     {
@@ -562,6 +592,16 @@ Hai mảng dùng **cùng một cấu trúc**. Mỗi sự kiện là một màn n
   "feeder_roles": [                  // Nghề mà người ta đi từ đó lên nghề này
     { "role_code": "SWE_BACKEND", "role_name": "Backend Developer" }
   ],
+  // ↓ Chép nguyên từ 78_roles_unmerged.json cùng role_code (xem §3). Rỗng ở 14/22
+  "work_environment_ids": ["WE_HYBRID_PRODUCT"], "work_environment_primary": "string | null", "work_environment_note": "string",
+  "education_path_ids": ["EDU_CS_PREFERRED"], "education_path_primary": "string | null", "education_path_note": "string",
+  "job_outlook": { ... },            // Như §3. itviec_open_postings có ở 11/22, đếm ngày 22/08/2026
+  "onet": {                          // Mã O*NET dùng cho FR-03. 22/22
+    "codes": ["15-1252.00"],         // Một hoặc nhiều mã; nhiều mã = hồ sơ là trung bình các mã
+    "interest_code": "ICR",          // 3 chiều RIASEC cao nhất
+    "note": "string",                // Lý do gán mã
+    "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+  },
   "bands_correction": {              // (1/22, chỉ SEC_ENG) Ghi lại việc sửa khoảng band
     "old": "L3-L7", "new": "L1-L7", "evidence_level": "A_VERIFIED", "reason": "string"
   },
@@ -672,7 +712,9 @@ Hai mảng dùng **cùng một cấu trúc**. Mỗi sự kiện là một màn n
     "_source": { ... },              // (15/22)
     "evidence_level": "A_VERIFIED" | "C_INFERRED",
     "top_reasons_to_leave": [        // Lý do nghỉ việc hàng đầu của người làm nghề này
-      { "label": "The salary is less than expected", "pct": 25.4 }  // label = lý do (tiếng Anh), pct = % người chọn
+      { "label": "The salary is less than expected", "pct": 25.4,   // label = lý do (tiếng Anh, giữ nguyên nguồn), pct = % người chọn
+        "label_vi": "Lương thấp hơn kỳ vọng",                       // Bản dịch để hiển thị (D-96)
+        "label_note": "string" }                                     // (4/56) Chỉ có khi label gốc bị cắt ("direction", "organizational structure")
     ],
     "top_reasons_to_apply": [        // Lý do chọn nộp đơn vào công ty
       { "label": "50.5%", "pct": 29.3 } // ⚠️ LỖI: cả 75/75 label đang là chuỗi % chứ không phải lý do (xem §11)
@@ -1135,3 +1177,261 @@ Hai mảng dùng **cùng một cấu trúc**. Mỗi sự kiện là một màn n
 | 8 | `78_roles_unmerged.json` | `education_path_ids` dùng mã `EDU_*` nhưng **không có file định nghĩa** trong folder | Chưa rõ nghĩa chính thức của từng mã |
 | 9 | `role_graph.json` | Field viết **camelCase** (`roleCode`, `nameVn`), các file khác viết **snake_case** (`role_code`, `role_name_vn`) | Dễ nhầm khi join dữ liệu |
 | 10 | `final_22_roles.json` | `compensation._context` lặp y hệt ở 22 role (trừ 3 field), và `compensation.by_band` là lương chung toàn ngành chứ không riêng nghề | File phình to; dễ hiểu nhầm là lương riêng |
+
+---
+
+## 12. Danh mục nghề ngoài IT từ O*NET
+
+**Là gì:** danh mục nghề ngoài IT để thử module gợi ý nghề theo O\*NET và làm trang hồ sơ nghề. 846 mã O\*NET 31.0 có đủ dữ liệu (trừ nhóm 15-1 máy tính và các mã 22 nghề IT đang dùng) được gộp thành **199 nghề**: 628 mã gộp vào nghề khác, 19 mã loại. Cách gộp theo đúng tiêu chí của `78_to_22_roles.csv`. Chữ tiếng Việt là bản dịch nháp, chưa có người duyệt.
+
+**Không có:** lương Việt Nam, JD, thang cấp L1–L10, sự kiện role-play, mã môi trường làm việc (`work_environment_ids`). Các field này giữ đúng tên như ở `final_22_roles.json` nhưng để rỗng hoặc `null`. Môi trường làm việc, câu "hợp với ai" và lộ trình nghề có bản nháp sinh từ O\*NET (field `work_environment_onet`, `fit_summary`, `career_path`).
+
+| File | Là gì | Sửa tay? |
+|---|---|---|
+| `decisions/onet_merge/<nhóm>.json` | Quyết định giữ, gộp, loại của từng nhóm SOC (22 file) | ✅ |
+| `decisions/onet_to_catalogue.csv` | Bảng quyết định cùng cột với `78_to_22_roles.csv`, 846 dòng | ❌ script sinh |
+| `datasets/onet_vi/_terms.json` | 22 hồ sơ nhóm (kèm `manager_role` của 10 nhóm), 5 mức chuẩn bị (Job Zone), câu mặt trái và câu môi trường theo từng mục Work Context, câu mẫu cho 6 chiều RIASEC, tên tiếng Việt của 35 skill và 33 knowledge | ✅ |
+| `datasets/onet_vi/<nhóm>.json` | Bản dịch theo mã O\*NET: `title_vi`, `description_vi`, `tasks_vi` | ✅ |
+| `generated/onet_all_roles.json`, `.md` | Danh mục 199 nghề | ❌ `scripts/build_all_onet_profiles.py` |
+| `decisions/onet_to_vsco_overrides.json` | Mã nghề Việt Nam sửa tay cho 61 nghề, kèm lý do và độ tin cậy (§12.3) | ✅ |
+| `decisions/onet_to_vsco.csv`, `generated/onet_to_vsco.md` | 221 nghề nối với mã cấp 4 của Danh mục nghề nghiệp Việt Nam (§12.3) | ❌ `scripts/build_onet_to_vsco.py` |
+
+### 12.1 `decisions/onet_merge/<nhóm>.json`
+
+```jsonc
+{
+  "group": "29",                        // Nhóm SOC 2 chữ số
+  "_note": "string",                    // (tuỳ chọn) Mã của nhóm này được gộp sang nhóm khác
+  "keep": [
+    {
+      "code": "29-1215.00",             // Mã chính: lấy mô tả, task, mức chuẩn bị từ mã này
+      "name_vi": "Bác sĩ",              // Tên nghề trong danh mục (role_name_vn)
+      "description_vi": "string",       // (tuỳ chọn) Ghi đè mô tả khi mã chính quá hẹp so với nghề đã gộp
+      "absorbs": ["29-1211.00"],        // Mã gộp vào nghề này, có thể thuộc nhóm khác
+      "merge_reason": "string"          // Lý do gộp, dùng chung cho cả cụm
+    }
+  ],
+  "remove": [
+    { "code": "39-3011.00", "reason_group": "Không phù hợp với Việt Nam", "reason": "string" }
+  ]
+}
+```
+
+Script kiểm mỗi mã trong 846 mã xuất hiện đúng một lần (giữ, gộp hoặc loại). Thiếu hay trùng thì dừng và báo.
+
+### 12.2 `generated/onet_all_roles.json`
+
+Cấp gốc gồm `_meta`, `groups` (22 hồ sơ nhóm từ `_terms.json`) và `roles[]`. Mỗi phần tử `roles[]` có cùng khuôn với `final_22_roles.json` §4.3, cộng các field sau:
+
+```jsonc
+{
+  "role_code": "ONET-29-1215.00",
+  "role_name": "Family Medicine Physicians",   // Tên O*NET của mã chính
+  "role_name_vn": "Bác sĩ",
+  "role_group": "Healthcare Practitioners and Technical Occupations",
+  "role_group_vn": "Y tế chuyên môn và kỹ thuật y tế",
+  "description": {
+    "summary": "string",                // Mô tả tiếng Việt + một câu về mức chuẩn bị
+    "summary_en": "string",             // Mô tả gốc của O*NET
+    "downsides": ["string"],            // 3–4 mặt trái
+    "downsides_basis": [                // Căn cứ của từng mặt trái
+      { "element_id": "4.C.2.c.1.b", "text": "string", "value": 4.1, "unit": "thang 1–5", "z": 2.3,
+        "basis": "work_context" | "work_context_moderate" | "group" }
+    ],
+    "evidence_level": "B_TITLE_SEEN", "status": "NHAP_CHO_DUYET", "source_note": "string"
+  },
+  "tasks": [ { "task_id": "7771", "text": "string", "text_vi": "string" } ],  // 5 task Core đầu tiên của mã chính
+  "similar_roles": [                    // Các mã đã gộp vào, giống similar_roles của IT
+    { "role_code": "ONET-29-1211.00", "role_name": "Anesthesiologists", "role_name_vn": "Bác sĩ gây mê hồi sức", "merge_reason": "string" }
+  ],
+  "onet": {
+    "codes": ["29-1215.00", "29-1211.00"],   // Mã chính + mã gộp; hồ sơ là trung bình các mã
+    "interest_code": "ISR",
+    "riasec": { "Realistic": 2.1, "...": 0 }, // Thang 1–7, trung bình các mã
+    "soft": { "giao_tiep_hop_tac": 0.4, "...": 0 }, // 7 nhóm soft skill (z)
+    "note": "string", "_source": "string"
+  },
+  "job_zone": {                         // Thay cho levels[]: mức chuẩn bị để vào nghề
+    "zone": 5, "label_vi": "string", "education_vi": "string", "experience_vi": "string", "training_vi": "string"
+  },
+  "levels": [], "levels_note": "string",
+  "compensation": { "_status": "KHONG_CO_DU_LIEU_VN", "note": "string" },
+  "graph_edges": {
+    "similar_ranked": [                 // Tối đa 5 nghề trong danh mục (hoặc nghề IT) qua O*NET Related Occupations
+      { "role_code": "ONET-29-1141.00", "role_name": "string", "role_name_vn": "Điều dưỡng", "links": 6, "why": "string" }
+    ],
+    "progresses_to": ["ONET-11-9111.00"],   // Bước quan_ly của career_path
+    "progresses_from": ["ONET-29-1141.00"], // Nghề có bước quan_ly trỏ tới nghề này
+    "absorbed_roles": ["ONET-29-1211.00"]
+  },
+  "work_environment_onet": {
+    "facts": ["string"],                // 2–9 câu: mục Work Context lệch mặt bằng từ 0,5 độ lệch chuẩn, rồi giờ làm và lịch làm
+    "facts_basis": [ { "element_id": "4.C.2.d.1.b", "text": "string", "side": "high" | "low", "value": 4.2, "unit": "thang 1–5", "z": 1.1 } ],
+    "status": "NHAP_CHO_DUYET", "source_note": "string"
+  },
+  "fit_summary": {                      // Câu "hợp với ai" từ RIASEC
+    "text": "Hợp với người thích … Nghề cũng cần …, nhưng ít cần …",
+    "top": ["Social", "Investigative"], "low": "Artistic",
+    "status": "NHAP_CHO_DUYET", "source_note": "string"
+  },
+  "career_path": {                      // Lộ trình nháp; bước không có dữ liệu thì không có mặt
+    "steps": [
+      { "stage": "de_vao_hon" | "nghe_chinh" | "chuyen_sau" | "cap_cao" | "quan_ly", "label_vi": "string",
+        "roles": [ { "role_code": "ONET-29-2061.00", "role_name": "string", "role_name_vn": "string", "job_zone": 3 } ],
+        "basis": "string" }
+    ],
+    "status": "NHAP_CHO_DUYET", "source_note": "string"
+  },
+  "skills_status": {
+    "_status": "ONET",
+    "hard_skills_top": [ { "name": "Critical Thinking", "name_vi": "Tư duy phản biện", "importance": 4.2 } ],
+    "knowledge_top":  [ { "name": "Medicine and Dentistry", "name_vi": "Y khoa và nha khoa", "importance": 4.8 } ]
+  }
+}
+```
+
+**Lưu ý:**
+- Mặt trái lấy trung bình Work Context của mọi mã trong nghề. Tầng `work_context` là mục cao hơn mặt bằng mọi nghề từ 1 độ lệch chuẩn (giá trị ≥ 3); `work_context_moderate` từ 0,5 độ lệch chuẩn; `group` là mặt trái chung của nhóm, chỉ dùng khi hai tầng trên chưa đủ 3 mục.
+- Task chỉ lấy của mã chính, theo thứ tự trong `task_statements.csv`, vì chưa tải thang Importance của task.
+- Mã IT trong `similar_ranked` dùng `role_code` của 22 nghề (ví dụ `SWE_BACKEND`) và có `it_role: true`.
+- `career_path` suy từ quyết định gộp và Job Zone, vì O\*NET không có dữ liệu thăng tiến. `de_vao_hon` là mã gộp có Job Zone thấp hơn hoặc là vị trí phụ việc (Helpers, Assistants…), không có nghĩa phải làm vị trí đó trước. `cap_cao` là mã gộp là quản lý hoặc giám sát. `quan_ly` là `groups[].manager_role` của nhóm, chỉ 10 nhóm có.
+- `work_environment_onet` gộp mục trong nhà và ngoài trời thành một câu khi nghề cao ở cả hai. Lịch làm thay đổi dưới 5% thì ghi là gần như ai cũng làm giờ cố định.
+
+### 12.3 `decisions/onet_to_vsco.csv`: nối với mã nghề Việt Nam
+
+Nối 221 nghề (22 IT và 199 ngoài IT) với mã cấp 4 của Danh mục nghề nghiệp Việt Nam (Phụ lục I, Quyết định 34/2020/QĐ-TTg), để sau này lấy lương và số liệu lao động Việt Nam theo mã nghề. Chuỗi nối: mã O\*NET → nghề ESCO (bảng nối của O\*NET Resource Center) → 4 số đầu mã ESCO là ISCO-08 → mã Việt Nam cùng số. Hai file đầu vào nằm ở `external/esco_onet/` và `external/vsco_2020/`, tải bằng `--download`.
+
+Danh mục Việt Nam không trùng ISCO-08 ở mọi chỗ: nhóm 0 (quân đội, công an) và nhóm 1 (lãnh đạo, quản lý) đánh số riêng; giáo dục, văn phòng, bảo vệ, lắp ráp và lao động giản đơn nông nghiệp tách hoặc đánh số lại. Có mã cùng số nhưng khác nghĩa (ISCO 3355 là thanh tra cảnh sát, mã 3355 của Việt Nam là Kiểm lâm). Vì vậy cả 221 dòng đã duyệt tay; 61 dòng sai được ghi đè ở `onet_to_vsco_overrides.json`.
+
+| Cột | Nghĩa |
+|---|---|
+| `role_code`, `role_name_vn`, `role_group_vn` | Nghề trong danh mục (`IT` cho 22 nghề IT) |
+| `onet_main`, `onet_codes` | Mã O\*NET chính và mọi mã của nghề, ngăn bằng `;` |
+| `vsco_code`, `vsco_name` | Mã cấp 4 và tên nghề Việt Nam |
+| `vsco_level5` | Các mã cấp 5 dưới mã đó, để chọn chi tiết hơn khi cần |
+| `basis` | `tu_dong` (giữ đề xuất sau khi duyệt) hoặc `sua_tay` |
+| `confidence` | `cao`, `vua`, `thap`. Dòng tự động: `cao` khi mã chiếm từ 50% liên kết ESCO của mã O\*NET chính, còn lại `vua`. Dòng sửa tay: theo file overrides |
+| `reason` | Lý do sửa tay |
+| `isco08_auto`, `share_auto`, `alternatives_auto`, `n_links` | Đề xuất tự động và các mã ISCO khác, để duyệt lại |
+
+28 mã Việt Nam được nhiều nghề dùng chung (phủ 67 nghề), ví dụ 2512 cho Back-end, Mobile, Game, nhúng và Tech Lead. Số liệu Việt Nam theo mã sẽ giống nhau giữa các nghề này.
+
+---
+
+## 13. Hồ sơ nghề chuẩn: `generated/occupation_profiles.json`
+
+**Là gì:** hồ sơ để người chơi đọc trên trang hồ sơ nghề và để module gợi ý nghề dùng, **cùng một khuôn cho cả 221 nghề** (22 IT + 199 ngoài IT). Đây là nơi duy nhất gom kỹ năng, lương, đường học, nhu cầu tuyển của một nghề; không còn field hay file phụ cho từng nguồn. Script `scripts/build_occupation_profiles.py` dựng từ các file gốc dưới đây, **không sửa tay**. `final_22_roles.json` vẫn là dữ liệu của game (sự kiện, band, archetype) và app chưa đọc file này.
+
+| File gốc | Là gì | Sửa tay? |
+|---|---|---|
+| `datasets/vn/lfs_2024.json` | Số người làm và thu nhập bình quân theo 9 nhóm nghề, 21 ngành, trình độ (Báo cáo điều tra lao động việc làm 2024, Cục Thống kê) | ✅ gõ lại từ PDF |
+| `datasets/vn/public_pay.json` | Lương cơ sở, lương tối thiểu vùng, hệ số lương của giáo viên, giảng viên, bác sĩ, điều dưỡng, công chức, công an; nghề nào dùng thang nào | ✅ |
+| `datasets/vn/education_majors.json` | 434 ngành đại học (Thông tư 74/2026/TT-BGDĐT) và 652 ngành nghề cao đẳng, trung cấp (Thông tư 77/2026/TT-BGDĐT) | ✅ gõ lại và tách từ PDF |
+| `decisions/education_map.json` | Nghề → ngành học, giấy phép hành nghề | ✅ |
+| `decisions/vietjobs_title_rules.json` | Luật khớp chức danh tin tuyển dụng với nghề | ✅ |
+| `generated/vietjobs_stats.json`, `.md` | Lương rao và số tin theo nghề từ bộ VietJobs | ❌ `scripts/build_vietjobs_stats.py` |
+| `datasets/work_settings.json` | 9 nơi làm việc (văn phòng, hiện trường, nhà máy…) và luật gán | ✅ |
+| `datasets/onet_vi/it.json` | Bản dịch task O\*NET cho nghề IT chưa có task từ JD | ✅ |
+| `datasets/vn/it_postings.json` | Số tin đang mở trên ITviec của 22 nghề IT, đếm cùng ngày 21/10/2026 | ✅ |
+| `datasets/vn/it_jd_tasks.json` | Task theo cấp tóm từ JD ở Việt Nam cho 6 nghề IT (Game, nhúng, Tech Lead, Cloud, ERP, Network), kèm link JD | ✅ |
+| `datasets/vn/salary_reference.json` | Lương tham khảo đã duyệt cho 96 nghề ngoài IT, kèm nguồn, ngày, chất lượng; mục `unverified` là số chưa xác nhận, script không dùng | ✅ |
+| `generated/occupation_profiles.md` | Bảng độ phủ từng mục | ❌ script sinh |
+| `generated/occupation_profiles_review.md` | Lý do của từng quyết định theo từng nghề, có ô đánh dấu để duyệt | ❌ script sinh |
+
+### 13.1 Khuôn một hồ sơ
+
+Mục không có dữ liệu thì **không có mặt** trong hồ sơ (không để `null`); app chỉ cần kiểm có hay không.
+
+```jsonc
+{
+  "role_code": "SWE_BACKEND",              // IT giữ mã cũ; ngoài IT là ONET-xx-xxxx.xx
+  "role_name_vn": "string", "role_name": "string", "role_group_vn": "string", "is_it": true,
+  "onet_shared_with": "SWE_BACKEND",       // (chỉ nghề IT có cùng bộ mã O*NET với nghề khác) phần O*NET bị bỏ, xem 13.2
+  "codes": {
+    "onet": ["15-1252.00"],
+    "vsco": { "code": "2512", "name": "Nhà phát triển phần mềm", "confidence": "cao | vua" }  // §12.3
+  },
+  "overview": {
+    "summary": "string",
+    "fit_summary": "Hợp với người thích …",  // Từ RIASEC
+    "downsides": ["string"]
+  },
+  "interests": { "interest_code": "ICR", "riasec": { "Realistic": 3.6, "...": 0 } },  // Thang 1–7, cho module gợi ý
+  "daily_work": {
+    "by_level": [ { "band": "L3", "title_vn": "string", "tasks": ["string"] } ],  // Nghề IT có JD theo cấp
+    "tasks": ["string"]                                                          // Còn lại: 5 task O*NET đã dịch
+  },
+  "skills": {
+    "hard":      [ { "name_vn": "Lập trình", "name": "Programming", "score": 4.0 } ],  // O*NET, thang Importance 1–5
+    "tools":     [ { "name": "Java", "kind": "language | framework", "rank": 1 } ],    // ITviec, chỉ nghề IT
+    "knowledge": [ { "name_vn": "string", "name": "string", "score": 4.7 } ],
+    "soft":      { "giao_tiep_hop_tac": 0.04, "...": 0 }                                 // 7 nhóm, điểm z
+  },
+  "work_environment": {
+    "settings": ["WS_OFFICE"],               // 1–2 mã trong datasets/work_settings.json
+    "company_types": ["WE_HYBRID_PRODUCT"],  // Chỉ nghề IT, mã trong datasets/work_environments.json
+    "facts": ["string"]                      // Câu từ O*NET Work Context
+  },
+  "education": {
+    "preparation": { "zone": 4, "label_vn": "string", "education_vn": "string", "note": "Theo O*NET (Mỹ)." },
+    "majors_university": [ { "code": "480103", "name": "Kỹ thuật phần mềm" } ],
+    "majors_vocational": [ { "code": "480207", "name": "Lập trình máy tính", "levels": ["THN", "TC", "CĐ"] } ],
+    "licence": { "name": "string", "law": "string" },
+    "note": "string"
+  },
+  "career": {
+    "levels": [ { "band": "L3", "title_vn": "string", "years": "1-2", "core_output": "string" } ],  // Chỉ nghề IT
+    "path": [ { "stage": "nghe_chinh | chuyen_sau | cap_cao | quan_ly", "label_vn": "string",
+                "roles": [ { "role_code": "string", "role_name_vn": "string" } ] } ],         // Chỉ nghề ngoài IT
+    "progresses_to": ["role_code"],
+    "similar": [ { "role_code": "string", "role_name_vn": "string", "why": "string" } ]
+  },
+  "pay": {
+    "basis": "itviec | job_postings | public_scale | reference | group_average",
+    "source": "string",                      // Tên nguồn của số này (mọi basis)
+    "data_year": "2026",                     // Năm của số liệu; VietJobs ghi "trước 3/2026 …", bài không ghi ngày ghi "không ghi năm"
+    "collected": "2026-10-21",               // (reference) ngày nhóm đọc số
+    "stat": "range | average | by_experience", "quality": "tot | vua | yeu",  // (reference)
+    "by_experience": "mới vào 8–12tr; 1–3 năm 15–25tr; …",                    // (reference) chữ, khi nguồn có số theo năm kinh nghiệm
+    "source": "string", "url": "string", "date": "2026-03-18",              // (reference)
+    "monthly_vnd": { "low": 0, "median": 0, "high": 0 } | { "low": 0, "high": 0 } | { "average": 0 },
+    "n": 82,                                 // (job_postings) số tin có lương
+    "by_level": [ { "band": "L3", "label_vn": "string", "average": 0, "max": 0 } ],  // (itviec) lương toàn ngành IT theo cấp
+    "public_sector": { "label_vn": "string", "monthly_vnd": { "low": 0, "high": 0 }, "law": "string",
+                       "status": "van_ban | bai_phan_tich", "excludes": "string", "allowance_note": "string" },
+    "note": "string"
+  },
+  "outlook": {
+    "open_postings": 91, "board": "ITviec", "keyword": "backend-developer", "measured_at": "2026-10-21",
+    "source": "string", "data_year": "2026",                                       // Có ở cả nghề IT và ngoài IT
+    "level": "thap | vua | cao"                                                     // Nghề IT: tam phân vị trong 22 nghề IT
+    // hoặc nghề ngoài IT:
+    // "postings_per_10k": 32.9, "postings": 113, "level": "thap | vua | cao", "note": "string"
+  },
+  "work_life": { "reasons_to_leave": [ { "text_vn": "string", "pct": 25.4 } ] },   // Chỉ nghề IT có trong báo cáo ITviec
+  "sources": { "pay": { "evidence": "A | B | C", "source": "string" } }            // Theo từng mục
+}
+```
+
+### 13.2 Lương, nhu cầu tuyển và luật bỏ phần kém tin cậy
+
+**Lương nghề ngoài IT** lấy theo thứ tự, gặp nguồn nào trước thì dùng nguồn đó:
+1. `job_postings`: lương rao trong bộ VietJobs, khi nghề có từ 20 tin có lương. Ghi P25, trung vị, P75 của trung điểm khoảng lương.
+2. `public_scale`: hệ số lương × lương cơ sở 2.530.000 đ, cho nghề chủ yếu ở khu vực nhà nước (giáo viên, bác sĩ, điều dưỡng, công chức, công an). Chưa gồm phụ cấp.
+3. `reference`: lương tham khảo trong `datasets/vn/salary_reference.json`, chỉ nhận số mà người tìm đã mở trang và đọc được, từ năm 2022 trở lại đây. Có khoảng lương, số trung bình hoặc số theo năm kinh nghiệm, kèm nguồn, ngày và chất lượng `tot` / `vua` / `yeu`. Nghề chỉ có số mô hình của WageIndicator hay số của ngành rộng hơn bị chấm `yeu`.
+4. `group_average`: thu nhập bình quân của nhóm nghề cấp 1 theo mã Việt Nam (Cục Thống kê 2024). Rất thô: mọi nghề nhóm 2 đều là 12,1 triệu. Chỉ còn cho nghề không tìm được số nào đã xác nhận.
+
+Nghề có thang nhà nước nhưng đã dùng lương rao (ví dụ điều dưỡng) thì thêm `pay.public_sector`.
+
+**Nhu cầu tuyển nghề ngoài IT** là số tin của nghề trên 10.000 tin trong bộ VietJobs. `level` chia ba mức theo tam phân vị của các nghề có từ 5 tin. Nghề chủ yếu tuyển qua thi công chức, công an không có mục này. Bộ VietJobs không có ngày đăng của từng tin và chưa ghi giấy phép dữ liệu.
+
+**Mức chứng cứ** (`sources.*.evidence`): A là số liệu Việt Nam đã kiểm hoặc văn bản chính thức; B là O\*NET (Mỹ), lương rao, hoặc số của nhóm rộng hơn; C là nhóm soạn hoặc dịch, chưa duyệt.
+
+**Bỏ khỏi hồ sơ** (vẫn còn trong file gốc):
+- Mã nghề Việt Nam độ tin cậy `thap` (4 nghề).
+- Phần O\*NET của nghề IT có **cùng bộ mã** O\*NET với nghề đứng trước trong `ROLES` (chỉ Mobile, giống Back-end): câu môi trường, câu "hợp với ai", kỹ năng và kiến thức O\*NET. Giữ `interests` vì module gợi ý cần. Nghề chỉ trùng **mã chính** (Game, nhúng, Tech Lead, Cloud, ERP) vẫn giữ các phần này vì chúng là trung bình của mọi mã, nhưng không dùng task O\*NET (task chỉ lấy từ mã chính); task của các nghề này lấy từ JD (`datasets/vn/it_jd_tasks.json`).
+- Bước "Vị trí gần, dễ vào hơn" của lộ trình.
+- Lương rao của nghề có dưới 20 tin có lương.
+- Nhu cầu tuyển của nghề có dưới 5 tin trong VietJobs (ví dụ phi công, tiếp viên, thợ mộc): bộ dữ liệu lấy từ trang tuyển dụng văn phòng nên không phủ các ngành này, số 0 không có nghĩa là ít tuyển.
+- Số lương chỉ thấy qua đoạn trích tìm kiếm (JobsGO, TopCV, Paylab chặn công cụ tự động): ghi ở `salary_reference.json` mục `unverified`, không đưa vào hồ sơ.
+- Số lương trước năm 2022 (diễn viên múa 2012, thợ làm tóc 2019, thợ làm móng 2020).

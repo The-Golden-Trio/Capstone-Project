@@ -1,0 +1,9145 @@
+{
+ "_meta": {
+  "university": "Phụ lục I, Thông tư 74/2026/TT-BGDĐT ngày 28/8/2026 (Danh mục ngành đào tạo các trình độ của giáo dục đại học). Bản PDF là bản scan; danh sách được gõ lại tay ngày 21/10/2026 từ ảnh trang, chưa đối chiếu lần hai.",
+  "vocational": "Phụ lục I, Thông tư 77/2026/TT-BGDĐT ngày 25/9/2026 (Danh mục ngành, nghề đào tạo trình độ cao đẳng, trung cấp, giáo dục trung học nghề). Tách tự động từ PDF; levels: CĐ cao đẳng, TC trung cấp, THN trung học nghề.",
+  "excluded": "Mã nhóm 'Khác' (xx90) và mục sơ cấp (Phụ lục II của Thông tư 77)."
+ },
+ "university": [
+  {
+   "code": "140101",
+   "name": "Giáo dục học",
+   "group": "1401",
+   "group_name": "Khoa học giáo dục",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140103",
+   "name": "Công nghệ giáo dục",
+   "group": "1401",
+   "group_name": "Khoa học giáo dục",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140110",
+   "name": "Lý luận và phương pháp dạy học",
+   "group": "1401",
+   "group_name": "Khoa học giáo dục",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140113",
+   "name": "Giáo dục và phát triển cộng đồng",
+   "group": "1401",
+   "group_name": "Khoa học giáo dục",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140114",
+   "name": "Quản lý giáo dục",
+   "group": "1401",
+   "group_name": "Khoa học giáo dục",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140115",
+   "name": "Đo lường và đánh giá trong giáo dục",
+   "group": "1401",
+   "group_name": "Khoa học giáo dục",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140117",
+   "name": "Giáo dục quốc tế và so sánh",
+   "group": "1401",
+   "group_name": "Khoa học giáo dục",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140118",
+   "name": "Giáo dục đặc biệt",
+   "group": "1401",
+   "group_name": "Khoa học giáo dục",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140201",
+   "name": "Giáo dục Mầm non",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140202",
+   "name": "Giáo dục Tiểu học",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140203",
+   "name": "Giáo dục đặc biệt",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140204",
+   "name": "Giáo dục Công dân",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140205",
+   "name": "Giáo dục Chính trị",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140206",
+   "name": "Giáo dục Thể chất",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140208",
+   "name": "Giáo dục Quốc phòng - An ninh",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140209",
+   "name": "Sư phạm Toán học",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140210",
+   "name": "Sư phạm Tin học",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140211",
+   "name": "Sư phạm Vật lý",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140212",
+   "name": "Sư phạm Hóa học",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140213",
+   "name": "Sư phạm Sinh học",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140214",
+   "name": "Sư phạm Kỹ thuật công nghiệp",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140215",
+   "name": "Sư phạm Kỹ thuật nông nghiệp",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140217",
+   "name": "Sư phạm Ngữ văn",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140218",
+   "name": "Sư phạm Lịch sử",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140219",
+   "name": "Sư phạm Địa lý",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140221",
+   "name": "Sư phạm Âm nhạc",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140222",
+   "name": "Sư phạm Mỹ thuật",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140223",
+   "name": "Sư phạm tiếng dân tộc thiểu số Việt Nam",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140231",
+   "name": "Sư phạm tiếng Lào",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140238",
+   "name": "Sư phạm tiếng nước ngoài",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140245",
+   "name": "Sư phạm nghệ thuật",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140246",
+   "name": "Sư phạm công nghệ",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140247",
+   "name": "Sư phạm Khoa học tự nhiên",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140248",
+   "name": "Giáo dục pháp luật",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "140249",
+   "name": "Sư phạm Lịch sử - Địa lý",
+   "group": "1402",
+   "group_name": "Đào tạo giáo viên",
+   "field": "14",
+   "field_name": "Khoa học giáo dục và đào tạo giáo viên"
+  },
+  {
+   "code": "210101",
+   "name": "Lý luận, lịch sử và phê bình mỹ thuật",
+   "group": "2101",
+   "group_name": "Mỹ thuật",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210102",
+   "name": "Mỹ thuật tạo hình",
+   "group": "2101",
+   "group_name": "Mỹ thuật",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210103",
+   "name": "Hội họa",
+   "group": "2101",
+   "group_name": "Mỹ thuật",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210104",
+   "name": "Đồ họa",
+   "group": "2101",
+   "group_name": "Mỹ thuật",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210105",
+   "name": "Điêu khắc",
+   "group": "2101",
+   "group_name": "Mỹ thuật",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210108",
+   "name": "Thủ công mỹ nghệ",
+   "group": "2101",
+   "group_name": "Mỹ thuật",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210110",
+   "name": "Mỹ thuật đô thị",
+   "group": "2101",
+   "group_name": "Mỹ thuật",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210201",
+   "name": "Âm nhạc học",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210204",
+   "name": "Chỉ huy âm nhạc",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210205",
+   "name": "Thanh nhạc",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210206",
+   "name": "Quản lý nghệ thuật",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210207",
+   "name": "Biểu diễn nhạc cụ phương tây",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210210",
+   "name": "Biểu diễn nhạc cụ truyền thống",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210221",
+   "name": "Lý luận, lịch sử và phê bình sân khấu",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210222",
+   "name": "Nghệ thuật sân khấu",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210225",
+   "name": "Biên kịch",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210226",
+   "name": "Diễn viên",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210241",
+   "name": "Lý luận, lịch sử và phê bình múa",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210242",
+   "name": "Diễn viên múa",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210243",
+   "name": "Biên đạo múa",
+   "group": "2102",
+   "group_name": "Âm nhạc và Nghệ thuật trình diễn (sân khấu, múa, biểu diễn)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210301",
+   "name": "Nhiếp ảnh",
+   "group": "2103",
+   "group_name": "Nghệ thuật nghe nhìn (Phát thanh, điện ảnh, truyền hình, sản xuất đa phương tiện)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210302",
+   "name": "Công nghệ điện ảnh, truyền hình",
+   "group": "2103",
+   "group_name": "Nghệ thuật nghe nhìn (Phát thanh, điện ảnh, truyền hình, sản xuất đa phương tiện)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210331",
+   "name": "Lý luận, lịch sử và phê bình điện ảnh, truyền hình",
+   "group": "2103",
+   "group_name": "Nghệ thuật nghe nhìn (Phát thanh, điện ảnh, truyền hình, sản xuất đa phương tiện)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210332",
+   "name": "Nghệ thuật điện ảnh, truyền hình",
+   "group": "2103",
+   "group_name": "Nghệ thuật nghe nhìn (Phát thanh, điện ảnh, truyền hình, sản xuất đa phương tiện)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210303",
+   "name": "Thiết kế âm thanh, ánh sáng",
+   "group": "2103",
+   "group_name": "Nghệ thuật nghe nhìn (Phát thanh, điện ảnh, truyền hình, sản xuất đa phương tiện)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210340",
+   "name": "Quay phim",
+   "group": "2103",
+   "group_name": "Nghệ thuật nghe nhìn (Phát thanh, điện ảnh, truyền hình, sản xuất đa phương tiện)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210341",
+   "name": "Công nghệ âm nhạc",
+   "group": "2103",
+   "group_name": "Nghệ thuật nghe nhìn (Phát thanh, điện ảnh, truyền hình, sản xuất đa phương tiện)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210401",
+   "name": "Lý luận và lịch sử mỹ thuật ứng dụng",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210402",
+   "name": "Thiết kế công nghiệp",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210403",
+   "name": "Thiết kế đồ họa",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210404",
+   "name": "Thiết kế thời trang",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210406",
+   "name": "Thiết kế mỹ thuật sân khấu, điện ảnh",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210408",
+   "name": "Nghệ thuật số",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210410",
+   "name": "Mỹ thuật ứng dụng",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210412",
+   "name": "Phục chế mỹ thuật",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "210413",
+   "name": "Giám tuyển mỹ thuật",
+   "group": "2104",
+   "group_name": "Mỹ thuật ứng dụng (Thiết kế thời trang, nội thất, mỹ thuật công nghiệp)",
+   "field": "21",
+   "field_name": "Nghệ thuật"
+  },
+  {
+   "code": "220101",
+   "name": "Tiếng Việt và văn hóa Việt Nam",
+   "group": "2201",
+   "group_name": "Ngôn ngữ, văn học và văn hóa Việt Nam",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220102",
+   "name": "Ngôn ngữ Việt Nam",
+   "group": "2201",
+   "group_name": "Ngôn ngữ, văn học và văn hóa Việt Nam",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220104",
+   "name": "Hán Nôm",
+   "group": "2201",
+   "group_name": "Ngôn ngữ, văn học và văn hóa Việt Nam",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220109",
+   "name": "Ngôn ngữ các dân tộc thiểu số Việt Nam",
+   "group": "2201",
+   "group_name": "Ngôn ngữ, văn học và văn hóa Việt Nam",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220112",
+   "name": "Văn hóa các dân tộc thiểu số Việt Nam",
+   "group": "2201",
+   "group_name": "Ngôn ngữ, văn học và văn hóa Việt Nam",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220121",
+   "name": "Văn học Việt Nam",
+   "group": "2201",
+   "group_name": "Ngôn ngữ, văn học và văn hóa Việt Nam",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220130",
+   "name": "Văn học",
+   "group": "2201",
+   "group_name": "Ngôn ngữ, văn học và văn hóa Việt Nam",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220140",
+   "name": "Văn hóa học",
+   "group": "2201",
+   "group_name": "Ngôn ngữ, văn học và văn hóa Việt Nam",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220111",
+   "name": "Ngôn ngữ Ảrập",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220201",
+   "name": "Ngôn ngữ Anh",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220202",
+   "name": "Ngôn ngữ Nga",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220203",
+   "name": "Ngôn ngữ Pháp",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220204",
+   "name": "Ngôn ngữ Trung Quốc",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220205",
+   "name": "Ngôn ngữ Đức",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220209",
+   "name": "Ngôn ngữ Nhật",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220210",
+   "name": "Ngôn ngữ Hàn Quốc",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220212",
+   "name": "Ngôn ngữ Lào",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220214",
+   "name": "Ngôn ngữ Thái Lan",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220242",
+   "name": "Văn học nước ngoài",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220243",
+   "name": "Ngôn ngữ tiếng nước ngoài khác",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "220244",
+   "name": "Ngôn ngữ học",
+   "group": "2202",
+   "group_name": "Ngôn ngữ, văn học và văn hóa nước ngoài",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229001",
+   "name": "Triết học",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229008",
+   "name": "Chủ nghĩa xã hội khoa học",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229009",
+   "name": "Tôn giáo học",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229010",
+   "name": "Lịch sử",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229011",
+   "name": "Lịch sử Thế giới",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229013",
+   "name": "Lịch sử Việt Nam",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229015",
+   "name": "Lịch sử Đảng Cộng sản Việt Nam",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229017",
+   "name": "Khảo cổ học",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229042",
+   "name": "Quản lý văn hóa",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229045",
+   "name": "Gia đình học",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "229047",
+   "name": "Di sản học",
+   "group": "2290",
+   "group_name": "Khác",
+   "field": "22",
+   "field_name": "Nhân văn"
+  },
+  {
+   "code": "310101",
+   "name": "Kinh tế học",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310102",
+   "name": "Kinh tế chính trị",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310104",
+   "name": "Kinh tế đầu tư",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310105",
+   "name": "Kinh tế phát triển",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310106",
+   "name": "Kinh tế quốc tế",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310107",
+   "name": "Thống kê kinh tế",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310108",
+   "name": "Toán kinh tế",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310109",
+   "name": "Kinh tế số",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310110",
+   "name": "Quản lý kinh tế",
+   "group": "3101",
+   "group_name": "Kinh tế học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310201",
+   "name": "Chính trị học",
+   "group": "3102",
+   "group_name": "Khoa học chính trị",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310202",
+   "name": "Xây dựng Đảng và chính quyền nhà nước",
+   "group": "3102",
+   "group_name": "Khoa học chính trị",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310204",
+   "name": "Hồ Chí Minh học",
+   "group": "3102",
+   "group_name": "Khoa học chính trị",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310205",
+   "name": "Quản lý nhà nước",
+   "group": "3102",
+   "group_name": "Khoa học chính trị",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310206",
+   "name": "Quan hệ quốc tế",
+   "group": "3102",
+   "group_name": "Khoa học chính trị",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310301",
+   "name": "Xã hội học",
+   "group": "3103",
+   "group_name": "Xã hội học và Nhân học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310302",
+   "name": "Nhân học",
+   "group": "3103",
+   "group_name": "Xã hội học và Nhân học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310310",
+   "name": "Dân tộc học",
+   "group": "3103",
+   "group_name": "Xã hội học và Nhân học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310313",
+   "name": "Phát triển bền vững",
+   "group": "3103",
+   "group_name": "Xã hội học và Nhân học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310315",
+   "name": "Phát triển con người",
+   "group": "3103",
+   "group_name": "Xã hội học và Nhân học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310317",
+   "name": "Quyền con người",
+   "group": "3103",
+   "group_name": "Xã hội học và Nhân học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310399",
+   "name": "Giới và phát triển",
+   "group": "3103",
+   "group_name": "Xã hội học và Nhân học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310401",
+   "name": "Tâm lý học",
+   "group": "3104",
+   "group_name": "Tâm lý học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310402",
+   "name": "Tâm lý học lâm sàng",
+   "group": "3104",
+   "group_name": "Tâm lý học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310403",
+   "name": "Tâm lý học giáo dục",
+   "group": "3104",
+   "group_name": "Tâm lý học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310501",
+   "name": "Địa lý học",
+   "group": "3105",
+   "group_name": "Địa lý học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310601",
+   "name": "Quốc tế học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310602",
+   "name": "Châu Á học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310607",
+   "name": "Thái Bình Dương học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310608",
+   "name": "Đông phương học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310612",
+   "name": "Trung Quốc học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310613",
+   "name": "Nhật Bản học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310614",
+   "name": "Hàn Quốc học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310620",
+   "name": "Đông Nam Á học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310630",
+   "name": "Việt Nam học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310631",
+   "name": "Khu vực học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310639",
+   "name": "Châu Mỹ học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "310640",
+   "name": "Hoa Kỳ học",
+   "group": "3106",
+   "group_name": "Khu vực học",
+   "field": "31",
+   "field_name": "Khoa học xã hội và hành vi"
+  },
+  {
+   "code": "320101",
+   "name": "Báo chí học",
+   "group": "3201",
+   "group_name": "Báo chí và truyền thông",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320104",
+   "name": "Truyền thông đa phương tiện",
+   "group": "3201",
+   "group_name": "Báo chí và truyền thông",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320105",
+   "name": "Truyền thông đại chúng",
+   "group": "3201",
+   "group_name": "Báo chí và truyền thông",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320106",
+   "name": "Công nghệ truyền thông",
+   "group": "3201",
+   "group_name": "Báo chí và truyền thông",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320107",
+   "name": "Truyền thông quốc tế",
+   "group": "3201",
+   "group_name": "Báo chí và truyền thông",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320108",
+   "name": "Quan hệ công chúng",
+   "group": "3201",
+   "group_name": "Báo chí và truyền thông",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320202",
+   "name": "Thông tin học",
+   "group": "3202",
+   "group_name": "Thông tin - Thư viện",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320203",
+   "name": "Khoa học thư viện",
+   "group": "3202",
+   "group_name": "Thông tin - Thư viện",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320303",
+   "name": "Lưu trữ học",
+   "group": "3203",
+   "group_name": "Văn thư - Lưu trữ - Bảo tàng",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320305",
+   "name": "Bảo tàng học",
+   "group": "3203",
+   "group_name": "Văn thư - Lưu trữ - Bảo tàng",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "320401",
+   "name": "Xuất bản",
+   "group": "3204",
+   "group_name": "Xuất bản - Phát hành",
+   "field": "32",
+   "field_name": "Báo chí và thông tin"
+  },
+  {
+   "code": "340101",
+   "name": "Quản trị kinh doanh",
+   "group": "3401",
+   "group_name": "Kinh doanh",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340115",
+   "name": "Marketing",
+   "group": "3401",
+   "group_name": "Kinh doanh",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340116",
+   "name": "Bất động sản",
+   "group": "3401",
+   "group_name": "Kinh doanh",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340120",
+   "name": "Kinh doanh quốc tế",
+   "group": "3401",
+   "group_name": "Kinh doanh",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340121",
+   "name": "Kinh doanh thương mại",
+   "group": "3401",
+   "group_name": "Kinh doanh",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340122",
+   "name": "Thương mại điện tử",
+   "group": "3401",
+   "group_name": "Kinh doanh",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340123",
+   "name": "Logistics và Quản lý chuỗi cung ứng",
+   "group": "3401",
+   "group_name": "Kinh doanh",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340201",
+   "name": "Tài chính - Ngân hàng",
+   "group": "3402",
+   "group_name": "Tài chính - Ngân hàng - Bảo hiểm",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340204",
+   "name": "Bảo hiểm",
+   "group": "3402",
+   "group_name": "Tài chính - Ngân hàng - Bảo hiểm",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340205",
+   "name": "Công nghệ tài chính",
+   "group": "3402",
+   "group_name": "Tài chính - Ngân hàng - Bảo hiểm",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340301",
+   "name": "Kế toán",
+   "group": "3403",
+   "group_name": "Kế toán - Kiểm toán",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340302",
+   "name": "Kiểm toán",
+   "group": "3403",
+   "group_name": "Kế toán - Kiểm toán",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340401",
+   "name": "Khoa học quản lý",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340402",
+   "name": "Chính sách công",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340403",
+   "name": "Quản lý công",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340404",
+   "name": "Quản trị nhân lực",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340405",
+   "name": "Hệ thống thông tin quản lý",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340406",
+   "name": "Quản trị văn phòng",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340409",
+   "name": "Quản lý dự án",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340412",
+   "name": "Quản lý khoa học và công nghệ",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "340417",
+   "name": "Quản lý an toàn và sức khỏe nghề nghiệp",
+   "group": "3404",
+   "group_name": "Quản trị - Quản lý",
+   "field": "34",
+   "field_name": "Kinh doanh và quản lý"
+  },
+  {
+   "code": "380101",
+   "name": "Luật",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "380102",
+   "name": "Luật hiến pháp và luật hành chính",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "380103",
+   "name": "Luật dân sự và tố tụng dân sự",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "380104",
+   "name": "Luật hình sự và tố tụng hình sự",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "380105",
+   "name": "Tội phạm học và phòng ngừa tội phạm",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "380106",
+   "name": "Lý luận và lịch sử nhà nước và pháp luật",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "380107",
+   "name": "Luật kinh tế",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "380108",
+   "name": "Luật quốc tế",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "380109",
+   "name": "Luật thương mại quốc tế",
+   "group": "3801",
+   "group_name": "Luật",
+   "field": "38",
+   "field_name": "Pháp luật"
+  },
+  {
+   "code": "420101",
+   "name": "Sinh học",
+   "group": "4201",
+   "group_name": "Sinh học",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420102",
+   "name": "Nhân chủng học",
+   "group": "4201",
+   "group_name": "Sinh học",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420107",
+   "name": "Vi sinh vật học",
+   "group": "4201",
+   "group_name": "Sinh học",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420115",
+   "name": "Lý sinh học",
+   "group": "4201",
+   "group_name": "Sinh học",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420116",
+   "name": "Hóa sinh học",
+   "group": "4201",
+   "group_name": "Sinh học",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420120",
+   "name": "Sinh thái học",
+   "group": "4201",
+   "group_name": "Sinh học",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420121",
+   "name": "Di truyền học",
+   "group": "4201",
+   "group_name": "Sinh học",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420201",
+   "name": "Công nghệ sinh học",
+   "group": "4202",
+   "group_name": "Sinh học ứng dụng",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420202",
+   "name": "Kỹ thuật sinh học",
+   "group": "4202",
+   "group_name": "Sinh học ứng dụng",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "420203",
+   "name": "Sinh học ứng dụng",
+   "group": "4202",
+   "group_name": "Sinh học ứng dụng",
+   "field": "42",
+   "field_name": "Khoa học sự sống"
+  },
+  {
+   "code": "440101",
+   "name": "Thiên văn học",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440102",
+   "name": "Vật lý học",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440104",
+   "name": "Vật lý chất rắn",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440106",
+   "name": "Vật lý nguyên tử và hạt nhân",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440180",
+   "name": "Công nghệ bán dẫn",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440109",
+   "name": "Cơ học",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440110",
+   "name": "Quang học",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440111",
+   "name": "Vật lý địa cầu",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440112",
+   "name": "Hóa học",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440113",
+   "name": "Hóa vô cơ",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440114",
+   "name": "Hóa hữu cơ",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440118",
+   "name": "Hóa phân tích",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440119",
+   "name": "Hóa lý",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440122",
+   "name": "Khoa học vật liệu",
+   "group": "4401",
+   "group_name": "Khoa học vật chất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440201",
+   "name": "Địa chất học",
+   "group": "4402",
+   "group_name": "Khoa học trái đất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440210",
+   "name": "Địa vật lý",
+   "group": "4402",
+   "group_name": "Khoa học trái đất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440214",
+   "name": "Bản đồ, viễn thám và hệ thông tin địa lý",
+   "group": "4402",
+   "group_name": "Khoa học trái đất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440217",
+   "name": "Địa lý tự nhiên",
+   "group": "4402",
+   "group_name": "Khoa học trái đất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440221",
+   "name": "Biến đổi khí hậu",
+   "group": "4402",
+   "group_name": "Khoa học trái đất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440222",
+   "name": "Khí tượng và khí hậu học",
+   "group": "4402",
+   "group_name": "Khoa học trái đất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440224",
+   "name": "Thủy văn học",
+   "group": "4402",
+   "group_name": "Khoa học trái đất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440228",
+   "name": "Hải dương học",
+   "group": "4402",
+   "group_name": "Khoa học trái đất",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440301",
+   "name": "Khoa học môi trường",
+   "group": "4403",
+   "group_name": "Khoa học môi trường",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440304",
+   "name": "Quản lý, an toàn và sức khỏe môi trường",
+   "group": "4403",
+   "group_name": "Khoa học môi trường",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "440306",
+   "name": "Bảo tồn thiên nhiên và đa dạng sinh học",
+   "group": "4403",
+   "group_name": "Khoa học môi trường",
+   "field": "44",
+   "field_name": "Khoa học tự nhiên"
+  },
+  {
+   "code": "460101",
+   "name": "Toán học",
+   "group": "4601",
+   "group_name": "Toán học",
+   "field": "46",
+   "field_name": "Toán và thống kê"
+  },
+  {
+   "code": "460107",
+   "name": "Khoa học tính toán",
+   "group": "4601",
+   "group_name": "Toán học",
+   "field": "46",
+   "field_name": "Toán và thống kê"
+  },
+  {
+   "code": "460108",
+   "name": "Khoa học dữ liệu",
+   "group": "4601",
+   "group_name": "Toán học",
+   "field": "46",
+   "field_name": "Toán và thống kê"
+  },
+  {
+   "code": "460112",
+   "name": "Toán ứng dụng",
+   "group": "4601",
+   "group_name": "Toán học",
+   "field": "46",
+   "field_name": "Toán và thống kê"
+  },
+  {
+   "code": "460117",
+   "name": "Toán tin",
+   "group": "4601",
+   "group_name": "Toán học",
+   "field": "46",
+   "field_name": "Toán và thống kê"
+  },
+  {
+   "code": "460201",
+   "name": "Thống kê",
+   "group": "4602",
+   "group_name": "Thống kê",
+   "field": "46",
+   "field_name": "Toán và thống kê"
+  },
+  {
+   "code": "480101",
+   "name": "Khoa học máy tính",
+   "group": "4801",
+   "group_name": "Máy tính",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "480102",
+   "name": "Mạng máy tính và truyền thông dữ liệu",
+   "group": "4801",
+   "group_name": "Máy tính",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "480103",
+   "name": "Kỹ thuật phần mềm",
+   "group": "4801",
+   "group_name": "Máy tính",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "480104",
+   "name": "Hệ thống thông tin",
+   "group": "4801",
+   "group_name": "Máy tính",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "480106",
+   "name": "Kỹ thuật máy tính",
+   "group": "4801",
+   "group_name": "Máy tính",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "480107",
+   "name": "Trí tuệ nhân tạo",
+   "group": "4801",
+   "group_name": "Máy tính",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "480108",
+   "name": "Công nghệ kỹ thuật máy tính",
+   "group": "4801",
+   "group_name": "Máy tính",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "480201",
+   "name": "Công nghệ thông tin",
+   "group": "4802",
+   "group_name": "Công nghệ thông tin",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "480208",
+   "name": "An ninh mạng",
+   "group": "4802",
+   "group_name": "Công nghệ thông tin",
+   "field": "48",
+   "field_name": "Máy tính và công nghệ thông tin"
+  },
+  {
+   "code": "510101",
+   "name": "Công nghệ kỹ thuật kiến trúc",
+   "group": "5101",
+   "group_name": "Công nghệ kỹ thuật kiến trúc và công trình xây dựng",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510103",
+   "name": "Công nghệ kỹ thuật xây dựng",
+   "group": "5101",
+   "group_name": "Công nghệ kỹ thuật kiến trúc và công trình xây dựng",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510104",
+   "name": "Công nghệ kỹ thuật giao thông",
+   "group": "5101",
+   "group_name": "Công nghệ kỹ thuật kiến trúc và công trình xây dựng",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510105",
+   "name": "Công nghệ kỹ thuật vật liệu xây dựng",
+   "group": "5101",
+   "group_name": "Công nghệ kỹ thuật kiến trúc và công trình xây dựng",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510201",
+   "name": "Công nghệ kỹ thuật cơ khí",
+   "group": "5102",
+   "group_name": "Công nghệ kỹ thuật cơ khí",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510203",
+   "name": "Công nghệ kỹ thuật cơ điện tử",
+   "group": "5102",
+   "group_name": "Công nghệ kỹ thuật cơ khí",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510205",
+   "name": "Công nghệ kỹ thuật ô tô",
+   "group": "5102",
+   "group_name": "Công nghệ kỹ thuật cơ khí",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510206",
+   "name": "Công nghệ kỹ thuật nhiệt",
+   "group": "5102",
+   "group_name": "Công nghệ kỹ thuật cơ khí",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510207",
+   "name": "Công nghệ kỹ thuật tàu thủy",
+   "group": "5102",
+   "group_name": "Công nghệ kỹ thuật cơ khí",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510211",
+   "name": "Bảo dưỡng công nghiệp",
+   "group": "5102",
+   "group_name": "Công nghệ kỹ thuật cơ khí",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510301",
+   "name": "Công nghệ kỹ thuật điện, điện tử",
+   "group": "5103",
+   "group_name": "Công nghệ kỹ thuật điện, điện tử và viễn thông",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510302",
+   "name": "Công nghệ kỹ thuật điện tử - viễn thông",
+   "group": "5103",
+   "group_name": "Công nghệ kỹ thuật điện, điện tử và viễn thông",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510303",
+   "name": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+   "group": "5103",
+   "group_name": "Công nghệ kỹ thuật điện, điện tử và viễn thông",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510401",
+   "name": "Công nghệ kỹ thuật hóa học",
+   "group": "5104",
+   "group_name": "Công nghệ hóa học, vật liệu, luyện kim và môi trường",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510402",
+   "name": "Công nghệ vật liệu",
+   "group": "5104",
+   "group_name": "Công nghệ hóa học, vật liệu, luyện kim và môi trường",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510406",
+   "name": "Công nghệ kỹ thuật môi trường",
+   "group": "5104",
+   "group_name": "Công nghệ hóa học, vật liệu, luyện kim và môi trường",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510601",
+   "name": "Quản lý công nghiệp",
+   "group": "5106",
+   "group_name": "Quản lý công nghiệp",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510602",
+   "name": "Quản lý năng lượng",
+   "group": "5106",
+   "group_name": "Quản lý công nghiệp",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510604",
+   "name": "Kinh tế công nghiệp",
+   "group": "5106",
+   "group_name": "Quản lý công nghiệp",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510701",
+   "name": "Công nghệ dầu khí và khai thác dầu",
+   "group": "5107",
+   "group_name": "Công nghệ dầu khí và khai thác",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "510801",
+   "name": "Công nghệ kỹ thuật in",
+   "group": "5108",
+   "group_name": "Công nghệ kỹ thuật in",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "519002",
+   "name": "Công nghệ nông nghiệp",
+   "group": "5190",
+   "group_name": "Khác",
+   "field": "51",
+   "field_name": "Công nghệ kỹ thuật"
+  },
+  {
+   "code": "520101",
+   "name": "Cơ kỹ thuật",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520103",
+   "name": "Kỹ thuật cơ khí",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520107",
+   "name": "Kỹ thuật Robot",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520114",
+   "name": "Kỹ thuật cơ điện tử",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520115",
+   "name": "Kỹ thuật nhiệt",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520116",
+   "name": "Kỹ thuật cơ khí động lực",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520117",
+   "name": "Kỹ thuật công nghiệp",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520118",
+   "name": "Kỹ thuật hệ thống công nghiệp",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520120",
+   "name": "Kỹ thuật hàng không",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520121",
+   "name": "Kỹ thuật không gian",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520122",
+   "name": "Kỹ thuật tàu thủy",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520130",
+   "name": "Kỹ thuật ô tô",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520135",
+   "name": "Kỹ thuật năng lượng",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520137",
+   "name": "Kỹ thuật in",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520138",
+   "name": "Kỹ thuật hàng hải",
+   "group": "5201",
+   "group_name": "Kỹ thuật cơ khí và cơ kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520201",
+   "name": "Kỹ thuật điện",
+   "group": "5202",
+   "group_name": "Kỹ thuật điện, điện tử và viễn thông",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520202",
+   "name": "Thiết kế vi mạch",
+   "group": "5202",
+   "group_name": "Kỹ thuật điện, điện tử và viễn thông",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520203",
+   "name": "Kỹ thuật điện tử",
+   "group": "5202",
+   "group_name": "Kỹ thuật điện, điện tử và viễn thông",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520204",
+   "name": "Kỹ thuật rađa - dẫn đường",
+   "group": "5202",
+   "group_name": "Kỹ thuật điện, điện tử và viễn thông",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520207",
+   "name": "Kỹ thuật điện tử - viễn thông",
+   "group": "5202",
+   "group_name": "Kỹ thuật điện, điện tử và viễn thông",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520209",
+   "name": "Kỹ thuật mật mã",
+   "group": "5202",
+   "group_name": "Kỹ thuật điện, điện tử và viễn thông",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520212",
+   "name": "Kỹ thuật y sinh",
+   "group": "5202",
+   "group_name": "Kỹ thuật điện, điện tử và viễn thông",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520216",
+   "name": "Kỹ thuật điều khiển và tự động hóa",
+   "group": "5202",
+   "group_name": "Kỹ thuật điện, điện tử và viễn thông",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520301",
+   "name": "Kỹ thuật hóa học",
+   "group": "5203",
+   "group_name": "Kỹ thuật hóa học, vật liệu, luyện kim và môi trường",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520309",
+   "name": "Kỹ thuật vật liệu",
+   "group": "5203",
+   "group_name": "Kỹ thuật hóa học, vật liệu, luyện kim và môi trường",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520312",
+   "name": "Kỹ thuật dệt, may",
+   "group": "5203",
+   "group_name": "Kỹ thuật hóa học, vật liệu, luyện kim và môi trường",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520320",
+   "name": "Kỹ thuật môi trường",
+   "group": "5203",
+   "group_name": "Kỹ thuật hóa học, vật liệu, luyện kim và môi trường",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520401",
+   "name": "Vật lý kỹ thuật",
+   "group": "5204",
+   "group_name": "Vật lý kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520402",
+   "name": "Kỹ thuật hạt nhân",
+   "group": "5204",
+   "group_name": "Vật lý kỹ thuật",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520501",
+   "name": "Kỹ thuật địa chất",
+   "group": "5205",
+   "group_name": "Kỹ thuật địa chất, địa vật lý và trắc địa",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520502",
+   "name": "Kỹ thuật địa vật lý",
+   "group": "5205",
+   "group_name": "Kỹ thuật địa chất, địa vật lý và trắc địa",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520503",
+   "name": "Kỹ thuật trắc địa - bản đồ",
+   "group": "5205",
+   "group_name": "Kỹ thuật địa chất, địa vật lý và trắc địa",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520601",
+   "name": "Kỹ thuật mỏ",
+   "group": "5206",
+   "group_name": "Kỹ thuật mỏ",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520603",
+   "name": "Khai thác mỏ",
+   "group": "5206",
+   "group_name": "Kỹ thuật mỏ",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520604",
+   "name": "Kỹ thuật dầu khí",
+   "group": "5206",
+   "group_name": "Kỹ thuật mỏ",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "520607",
+   "name": "Kỹ thuật tuyển khoáng",
+   "group": "5206",
+   "group_name": "Kỹ thuật mỏ",
+   "field": "52",
+   "field_name": "Kỹ thuật"
+  },
+  {
+   "code": "540101",
+   "name": "Công nghệ thực phẩm",
+   "group": "5401",
+   "group_name": "Chế biến lương thực, thực phẩm và đồ uống",
+   "field": "54",
+   "field_name": "Sản xuất và chế biến"
+  },
+  {
+   "code": "540104",
+   "name": "Công nghệ sau thu hoạch",
+   "group": "5401",
+   "group_name": "Chế biến lương thực, thực phẩm và đồ uống",
+   "field": "54",
+   "field_name": "Sản xuất và chế biến"
+  },
+  {
+   "code": "540105",
+   "name": "Công nghệ chế biến thủy sản",
+   "group": "5401",
+   "group_name": "Chế biến lương thực, thực phẩm và đồ uống",
+   "field": "54",
+   "field_name": "Sản xuất và chế biến"
+  },
+  {
+   "code": "540106",
+   "name": "Đảm bảo chất lượng và an toàn thực phẩm",
+   "group": "5401",
+   "group_name": "Chế biến lương thực, thực phẩm và đồ uống",
+   "field": "54",
+   "field_name": "Sản xuất và chế biến"
+  },
+  {
+   "code": "540203",
+   "name": "Công nghệ vật liệu dệt, may",
+   "group": "5402",
+   "group_name": "Sản xuất, chế biến sợi, vải, giày, da",
+   "field": "54",
+   "field_name": "Sản xuất và chế biến"
+  },
+  {
+   "code": "540204",
+   "name": "Công nghệ dệt, may",
+   "group": "5402",
+   "group_name": "Sản xuất, chế biến sợi, vải, giày, da",
+   "field": "54",
+   "field_name": "Sản xuất và chế biến"
+  },
+  {
+   "code": "540206",
+   "name": "Công nghệ da giày",
+   "group": "5402",
+   "group_name": "Sản xuất, chế biến sợi, vải, giày, da",
+   "field": "54",
+   "field_name": "Sản xuất và chế biến"
+  },
+  {
+   "code": "549001",
+   "name": "Công nghệ chế biến lâm sản",
+   "group": "5490",
+   "group_name": "Khác",
+   "field": "54",
+   "field_name": "Sản xuất và chế biến"
+  },
+  {
+   "code": "580101",
+   "name": "Kiến trúc",
+   "group": "5801",
+   "group_name": "Kiến trúc và quy hoạch",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580102",
+   "name": "Kiến trúc cảnh quan",
+   "group": "5801",
+   "group_name": "Kiến trúc và quy hoạch",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580103",
+   "name": "Kiến trúc nội thất",
+   "group": "5801",
+   "group_name": "Kiến trúc và quy hoạch",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580105",
+   "name": "Quy hoạch vùng và đô thị",
+   "group": "5801",
+   "group_name": "Kiến trúc và quy hoạch",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580106",
+   "name": "Quản lý đô thị và công trình",
+   "group": "5801",
+   "group_name": "Kiến trúc và quy hoạch",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580108",
+   "name": "Thiết kế nội thất",
+   "group": "5801",
+   "group_name": "Kiến trúc và quy hoạch",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580112",
+   "name": "Đô thị học",
+   "group": "5801",
+   "group_name": "Kiến trúc và quy hoạch",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580201",
+   "name": "Kỹ thuật xây dựng",
+   "group": "5802",
+   "group_name": "Kỹ thuật Xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580202",
+   "name": "Kỹ thuật xây dựng công trình thủy",
+   "group": "5802",
+   "group_name": "Kỹ thuật Xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580204",
+   "name": "Kỹ thuật xây dựng công trình ngầm",
+   "group": "5802",
+   "group_name": "Kỹ thuật Xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580205",
+   "name": "Kỹ thuật xây dựng công trình giao thông",
+   "group": "5802",
+   "group_name": "Kỹ thuật Xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580210",
+   "name": "Kỹ thuật cơ sở hạ tầng",
+   "group": "5802",
+   "group_name": "Kỹ thuật Xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580211",
+   "name": "Địa kỹ thuật",
+   "group": "5802",
+   "group_name": "Kỹ thuật Xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580212",
+   "name": "Kỹ thuật tài nguyên nước",
+   "group": "5802",
+   "group_name": "Kỹ thuật Xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580215",
+   "name": "Kỹ thuật an toàn giao thông",
+   "group": "5802",
+   "group_name": "Kỹ thuật Xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "580302",
+   "name": "Quản lý xây dựng",
+   "group": "5803",
+   "group_name": "Quản lý xây dựng",
+   "field": "58",
+   "field_name": "Kiến trúc và xây dựng"
+  },
+  {
+   "code": "620101",
+   "name": "Nông nghiệp",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620102",
+   "name": "Khuyến nông",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620103",
+   "name": "Khoa học đất",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620105",
+   "name": "Chăn nuôi",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620109",
+   "name": "Nông học",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620110",
+   "name": "Khoa học cây trồng",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620112",
+   "name": "Bảo vệ thực vật",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620115",
+   "name": "Kinh tế nông nghiệp",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620116",
+   "name": "Phát triển nông thôn",
+   "group": "6201",
+   "group_name": "Nông nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620201",
+   "name": "Lâm học",
+   "group": "6202",
+   "group_name": "Lâm nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620202",
+   "name": "Lâm nghiệp đô thị",
+   "group": "6202",
+   "group_name": "Lâm nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620205",
+   "name": "Lâm sinh",
+   "group": "6202",
+   "group_name": "Lâm nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620210",
+   "name": "Lâm nghiệp",
+   "group": "6202",
+   "group_name": "Lâm nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620211",
+   "name": "Quản lý tài nguyên rừng",
+   "group": "6202",
+   "group_name": "Lâm nghiệp",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620301",
+   "name": "Nuôi trồng thủy sản",
+   "group": "6203",
+   "group_name": "Thủy sản",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620303",
+   "name": "Khoa học thủy sản",
+   "group": "6203",
+   "group_name": "Thủy sản",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620304",
+   "name": "Khai thác thủy sản",
+   "group": "6203",
+   "group_name": "Thủy sản",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "620305",
+   "name": "Quản lý thủy sản",
+   "group": "6203",
+   "group_name": "Thủy sản",
+   "field": "62",
+   "field_name": "Nông, lâm nghiệp và thủy sản"
+  },
+  {
+   "code": "640101",
+   "name": "Thú y",
+   "group": "6401",
+   "group_name": "Thú y",
+   "field": "64",
+   "field_name": "Thú y"
+  },
+  {
+   "code": "720101",
+   "name": "Y khoa",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720102",
+   "name": "Gây mê hồi sức",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720103",
+   "name": "Hồi sức cấp cứu",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720104",
+   "name": "Ngoại khoa",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720105",
+   "name": "Sản phụ khoa",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720106",
+   "name": "Nhi khoa",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720107",
+   "name": "Nội khoa",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720108",
+   "name": "Ung thư",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720109",
+   "name": "Truyền nhiễm và các bệnh nhiệt đới",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720110",
+   "name": "Y học dự phòng",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720111",
+   "name": "Điện quang và Y học hạt nhân",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720112",
+   "name": "Cấp cứu ngoại viện",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720115",
+   "name": "Y học cổ truyền",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720117",
+   "name": "Dịch tễ học",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720118",
+   "name": "Dược lý và độc chất",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720119",
+   "name": "Phẫu thuật tạo hình, tái tạo và thẩm mỹ",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720155",
+   "name": "Tai - Mũi - Họng",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720157",
+   "name": "Nhãn khoa",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720158",
+   "name": "Khoa học thần kinh",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720159",
+   "name": "Y học gia đình",
+   "group": "7201",
+   "group_name": "Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720201",
+   "name": "Dược học",
+   "group": "7202",
+   "group_name": "Dược học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720202",
+   "name": "Công nghệ dược phẩm",
+   "group": "7202",
+   "group_name": "Dược học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720203",
+   "name": "Hóa dược",
+   "group": "7202",
+   "group_name": "Dược học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720301",
+   "name": "Điều dưỡng",
+   "group": "7203",
+   "group_name": "Điều dưỡng, hộ sinh",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720302",
+   "name": "Hộ sinh",
+   "group": "7203",
+   "group_name": "Điều dưỡng, hộ sinh",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720401",
+   "name": "Dinh dưỡng",
+   "group": "7204",
+   "group_name": "Dinh dưỡng",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720501",
+   "name": "Răng - Hàm - Mặt",
+   "group": "7205",
+   "group_name": "Răng - Hàm - Mặt",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720601",
+   "name": "Kỹ thuật xét nghiệm y học",
+   "group": "7206",
+   "group_name": "Kỹ thuật Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720602",
+   "name": "Kỹ thuật hình ảnh y học",
+   "group": "7206",
+   "group_name": "Kỹ thuật Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720603",
+   "name": "Kỹ thuật Phục hồi chức năng",
+   "group": "7206",
+   "group_name": "Kỹ thuật Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720607",
+   "name": "Kỹ thuật y học thể dục thể thao",
+   "group": "7206",
+   "group_name": "Kỹ thuật Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720609",
+   "name": "Khúc xạ nhãn khoa",
+   "group": "7206",
+   "group_name": "Kỹ thuật Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720610",
+   "name": "Kỹ thuật gây mê hồi sức",
+   "group": "7206",
+   "group_name": "Kỹ thuật Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720611",
+   "name": "Kỹ thuật phục hình răng",
+   "group": "7206",
+   "group_name": "Kỹ thuật Y học",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720701",
+   "name": "Y tế công cộng",
+   "group": "7207",
+   "group_name": "Y tế công cộng",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "720801",
+   "name": "Quản lý y tế",
+   "group": "7208",
+   "group_name": "Quản lý Y tế",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "729001",
+   "name": "Y sinh học thể dục thể thao",
+   "group": "7290",
+   "group_name": "Khác",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "729002",
+   "name": "Giáo dục y học",
+   "group": "7290",
+   "group_name": "Khác",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "729003",
+   "name": "Y học quân sự",
+   "group": "7290",
+   "group_name": "Khác",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "729004",
+   "name": "Y học biển",
+   "group": "7290",
+   "group_name": "Khác",
+   "field": "72",
+   "field_name": "Sức khỏe"
+  },
+  {
+   "code": "760101",
+   "name": "Công tác xã hội",
+   "group": "7601",
+   "group_name": "Công tác xã hội",
+   "field": "76",
+   "field_name": "Dịch vụ xã hội"
+  },
+  {
+   "code": "760104",
+   "name": "Dân số và phát triển",
+   "group": "7601",
+   "group_name": "Công tác xã hội",
+   "field": "76",
+   "field_name": "Dịch vụ xã hội"
+  },
+  {
+   "code": "810101",
+   "name": "Du lịch",
+   "group": "8101",
+   "group_name": "Du lịch",
+   "field": "81",
+   "field_name": "Du lịch, khách sạn, thể thao và dịch vụ cá nhân"
+  },
+  {
+   "code": "810201",
+   "name": "Quản trị khách sạn",
+   "group": "8102",
+   "group_name": "Khách sạn, nhà hàng",
+   "field": "81",
+   "field_name": "Du lịch, khách sạn, thể thao và dịch vụ cá nhân"
+  },
+  {
+   "code": "810202",
+   "name": "Quản trị nhà hàng và dịch vụ ăn uống",
+   "group": "8102",
+   "group_name": "Khách sạn, nhà hàng",
+   "field": "81",
+   "field_name": "Du lịch, khách sạn, thể thao và dịch vụ cá nhân"
+  },
+  {
+   "code": "810301",
+   "name": "Quản lý thể dục thể thao",
+   "group": "8103",
+   "group_name": "Thể dục, thể thao",
+   "field": "81",
+   "field_name": "Du lịch, khách sạn, thể thao và dịch vụ cá nhân"
+  },
+  {
+   "code": "810302",
+   "name": "Huấn luyện thể thao",
+   "group": "8103",
+   "group_name": "Thể dục, thể thao",
+   "field": "81",
+   "field_name": "Du lịch, khách sạn, thể thao và dịch vụ cá nhân"
+  },
+  {
+   "code": "810501",
+   "name": "Kinh tế gia đình",
+   "group": "8105",
+   "group_name": "Kinh tế gia đình",
+   "field": "81",
+   "field_name": "Du lịch, khách sạn, thể thao và dịch vụ cá nhân"
+  },
+  {
+   "code": "840101",
+   "name": "Khai thác vận tải",
+   "group": "8401",
+   "group_name": "Khai thác vận tải",
+   "field": "84",
+   "field_name": "Dịch vụ vận tải"
+  },
+  {
+   "code": "840102",
+   "name": "Quản lý hoạt động bay",
+   "group": "8401",
+   "group_name": "Khai thác vận tải",
+   "field": "84",
+   "field_name": "Dịch vụ vận tải"
+  },
+  {
+   "code": "840103",
+   "name": "Quản lý vận tải",
+   "group": "8401",
+   "group_name": "Khai thác vận tải",
+   "field": "84",
+   "field_name": "Dịch vụ vận tải"
+  },
+  {
+   "code": "840104",
+   "name": "Kinh tế vận tải",
+   "group": "8401",
+   "group_name": "Khai thác vận tải",
+   "field": "84",
+   "field_name": "Dịch vụ vận tải"
+  },
+  {
+   "code": "840106",
+   "name": "Khoa học hàng hải",
+   "group": "8401",
+   "group_name": "Khai thác vận tải",
+   "field": "84",
+   "field_name": "Dịch vụ vận tải"
+  },
+  {
+   "code": "850101",
+   "name": "Quản lý tài nguyên và môi trường",
+   "group": "8501",
+   "group_name": "Quản lý tài nguyên và môi trường",
+   "field": "85",
+   "field_name": "Môi trường và bảo vệ môi trường"
+  },
+  {
+   "code": "850103",
+   "name": "Quản lý đất đai",
+   "group": "8501",
+   "group_name": "Quản lý tài nguyên và môi trường",
+   "field": "85",
+   "field_name": "Môi trường và bảo vệ môi trường"
+  },
+  {
+   "code": "850104",
+   "name": "Môi trường và phát triển bền vững",
+   "group": "8501",
+   "group_name": "Quản lý tài nguyên và môi trường",
+   "field": "85",
+   "field_name": "Môi trường và bảo vệ môi trường"
+  },
+  {
+   "code": "850201",
+   "name": "Bảo hộ lao động",
+   "group": "8502",
+   "group_name": "Dịch vụ an toàn lao động và vệ sinh công nghiệp",
+   "field": "85",
+   "field_name": "Môi trường và bảo vệ môi trường"
+  },
+  {
+   "code": "850202",
+   "name": "An toàn, vệ sinh lao động",
+   "group": "8502",
+   "group_name": "Dịch vụ an toàn lao động và vệ sinh công nghiệp",
+   "field": "85",
+   "field_name": "Môi trường và bảo vệ môi trường"
+  },
+  {
+   "code": "860101",
+   "name": "Trinh sát an ninh",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860102",
+   "name": "Trinh sát cảnh sát",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860103",
+   "name": "Trinh sát kỹ thuật",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860104",
+   "name": "Điều tra hình sự",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860107",
+   "name": "Kỹ thuật Công an nhân dân",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860108",
+   "name": "Kỹ thuật hình sự",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860109",
+   "name": "Quản lý nhà nước về an ninh trật tự",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860110",
+   "name": "Quản lý trật tự an toàn giao thông",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860111",
+   "name": "Thi hành án hình sự và hỗ trợ tư pháp",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860112",
+   "name": "Tham mưu, chỉ huy công an nhân dân",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860113",
+   "name": "Phòng cháy chữa cháy và cứu nạn cứu hộ",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860114",
+   "name": "An ninh mạng và phòng chống tội phạm sử dụng công nghệ cao",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860116",
+   "name": "Hậu cần công an nhân dân",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860117",
+   "name": "Nghiên cứu quốc tế",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860118",
+   "name": "An ninh phi truyền thống",
+   "group": "8601",
+   "group_name": "An ninh và trật tự xã hội",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860201",
+   "name": "Chỉ huy tham mưu Lục quân",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860202",
+   "name": "Chỉ huy tham mưu Hải quân",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860203",
+   "name": "Chỉ huy tham mưu Không quân",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860204",
+   "name": "Chỉ huy tham mưu Phòng không",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860205",
+   "name": "Chỉ huy tham mưu Pháo binh",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860206",
+   "name": "Chỉ huy tham mưu Tăng - thiết giáp",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860207",
+   "name": "Chỉ huy tham mưu Đặc công",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860208",
+   "name": "Nghệ thuật quân sự",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860209",
+   "name": "Lịch sử nghệ thuật quân sự",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860210",
+   "name": "Chiến lược quân sự",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860211",
+   "name": "Chiến lược quốc phòng",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860212",
+   "name": "Nghệ thuật chiến dịch",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860213",
+   "name": "Chiến thuật",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860214",
+   "name": "Biên phòng",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860215",
+   "name": "Chỉ huy tham mưu tác chiến không gian mạng",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860216",
+   "name": "Quản lý biên giới và cửa khẩu",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860217",
+   "name": "Tình báo quân sự",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860218",
+   "name": "Hậu cần quân sự",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860219",
+   "name": "Chỉ huy, tham mưu thông tin",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860220",
+   "name": "Chỉ huy, quản lý kỹ thuật",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860221",
+   "name": "Trinh sát quân sự",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860222",
+   "name": "Quân sự cơ sở",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860226",
+   "name": "Chỉ huy kỹ thuật Phòng không",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860227",
+   "name": "Chỉ huy kỹ thuật Tăng - thiết giáp",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860228",
+   "name": "Chỉ huy kỹ thuật công binh",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860229",
+   "name": "Chỉ huy kỹ thuật hóa học",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860239",
+   "name": "Trinh sát kỹ thuật",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860232",
+   "name": "Chỉ huy kỹ thuật hải quân",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  },
+  {
+   "code": "860233",
+   "name": "Chỉ huy kỹ thuật tác chiến điện tử",
+   "group": "8602",
+   "group_name": "Quân sự",
+   "field": "86",
+   "field_name": "An ninh, quốc phòng"
+  }
+ ],
+ "vocational": [
+  {
+   "code": "140201",
+   "name": "Giáo dục mầm non",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "140203",
+   "name": "Giáo dục đặc biệt",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "140214",
+   "name": "Sư phạm kỹ thuật công nghiệp",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "140215",
+   "name": "Sư phạm kỹ thuật nông nghiệp",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "140221",
+   "name": "Sư phạm âm nhạc",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "140222",
+   "name": "Sư phạm mỹ thuật",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210101",
+   "name": "Kỹ thuật điêu khắc gỗ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210103",
+   "name": "Hội họa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210104",
+   "name": "Đồ họa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210105",
+   "name": "Điêu khắc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210106",
+   "name": "Thiết kế mỹ thuật sân khấu - điện ảnh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210107",
+   "name": "Gốm",
+   "levels": []
+  },
+  {
+   "code": "210201",
+   "name": "Nghệ thuật biểu diễn ca kịch Huế",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210202",
+   "name": "Nghệ thuật biểu diễn dân ca",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210203",
+   "name": "Nghệ thuật biểu diễn chèo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210204",
+   "name": "Chỉ huy âm nhạc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210205",
+   "name": "Thanh nhạc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210206",
+   "name": "Nghệ thuật biểu diễn kịch múa",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210207",
+   "name": "Biểu diễn nhạc cụ phương Tây",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210208",
+   "name": "Nghệ thuật biểu diễn xiếc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210209",
+   "name": "Nghệ thuật biểu diễn dân ca quan họ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210210",
+   "name": "Biểu diễn nhạc cụ truyền thống",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210211",
+   "name": "Diễn viên kịch - điện ảnh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210212",
+   "name": "Diễn viên sân khấu kịch hát",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210215",
+   "name": "Huấn luyện múa",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210218",
+   "name": "Đờn ca nhạc tài tử Nam Bộ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210219",
+   "name": "Nhạc công kịch hát dân tộc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210220",
+   "name": "Nhạc công truyền thống Huế",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210221",
+   "name": "Lý luận, lịch sử và phê bình sân khấu",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210222",
+   "name": "Nhạc jazz",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210223",
+   "name": "Violon",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210224",
+   "name": "Organ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210226",
+   "name": "Lý thuyết âm nhạc",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210227",
+   "name": "Sáng tác âm nhạc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210229",
+   "name": "Biên tập và dàn dựng ca, múa, nhạc",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210332",
+   "name": "Quay phim",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210233",
+   "name": "Kỹ thuật viên điện ảnh, sân khấu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210234",
+   "name": "Đạo diễn sân khấu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210235",
+   "name": "Sản xuất nhạc cụ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210236",
+   "name": "Văn hóa, văn nghệ quần chúng",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210237",
+   "name": "Tạp kỹ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210238",
+   "name": "Công nghệ âm nhạc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210239",
+   "name": "Sản xuất âm nhạc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210240",
+   "name": "Nghệ thuật trình diễn mẫu thời trang",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210241",
+   "name": "Đạo diễn nghệ thuật biểu diễn xiếc",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210242",
+   "name": "Diễn viên múa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210243",
+   "name": "Biên đạo múa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210244",
+   "name": "Nghệ thuật biểu diễn tuồng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210245",
+   "name": "Nghệ thuật biểu diễn cải lương",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210246",
+   "name": "Nghệ thuật biểu diễn múa dân gian dân tộc",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210247",
+   "name": "Nghệ thuật biểu diễn kịch nói",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210248",
+   "name": "Piano",
+   "levels": []
+  },
+  {
+   "code": "210250",
+   "name": "Biên kịch sân khấu",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210251",
+   "name": "Nghệ thuật biểu diễn múa rối",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210252",
+   "name": "Huấn luyện viên múa rối",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210253",
+   "name": "Huấn luyện viên xiếc",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210254",
+   "name": "Nghệ thuật biểu diễn đàn, hát then",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210255",
+   "name": "Nghệ thuật biểu diễn Yoga",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210256",
+   "name": "Huấn luyện viên Yoga nghệ thuật",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210301",
+   "name": "Nhiếp ảnh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210302",
+   "name": "Công nghệ điện ảnh - truyền hình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210303",
+   "name": "Thiết kế âm thanh, ánh sáng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210306",
+   "name": "Dựng ảnh",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210307",
+   "name": "Chụp ảnh",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210308",
+   "name": "Kỹ thuật sản xuất chương trình truyền hình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210311",
+   "name": "Thiết kế nghe nhìn",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210312",
+   "name": "Chiếu sáng nghệ thuật",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210313",
+   "name": "Kỹ sư âm thanh",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210314",
+   "name": "Sản xuất nội dung số",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210315",
+   "name": "Trình diễn nghệ thuật số",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210316",
+   "name": "Sáng tác âm thanh điện tử",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210317",
+   "name": "Sản xuất phim",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210318",
+   "name": "Sản xuất phim hoạt hình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210320",
+   "name": "Đạo diễn điện ảnh, truyền hình",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210331",
+   "name": "Lý luận, lịch sử và phê bình điện ảnh",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210332",
+   "name": "Biên kịch điện ảnh – truyền hình",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210402",
+   "name": "Thiết kế công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210403",
+   "name": "Thiết kế đồ họa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210404",
+   "name": "Thiết kế thời trang",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210405",
+   "name": "Tạo hình hóa trang",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210407",
+   "name": "Đúc, dát đồng mỹ nghệ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210408",
+   "name": "Nghệ thuật số",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210411",
+   "name": "Sơn mài",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210412",
+   "name": "Kỹ thuật sơn mài và khảm trai",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210417",
+   "name": "Trang trí nội thất",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210418",
+   "name": "Thiết kế trang trí sản phẩm, bao bì",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210420",
+   "name": "Thiết kế đồ gỗ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210421",
+   "name": "Mộc mỹ nghệ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210422",
+   "name": "Gia công và thiết kế sản phẩm mộc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210423",
+   "name": "Thủ công mỹ nghệ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "210424",
+   "name": "Chạm khắc đá",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210425",
+   "name": "Thiết kế mỹ thuật số",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210426",
+   "name": "Thiết kế mỹ thuật truyền thông đa phương tiện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210427",
+   "name": "Thiết kế mỹ thuật game",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210428",
+   "name": "Thiết kế tương tác",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210429",
+   "name": "Thiết kế hình ảnh 3D",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "210430",
+   "name": "Thiết kế nội thất",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220101",
+   "name": "Tiếng Việt và văn hóa Việt Nam",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220103",
+   "name": "Việt Nam học",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220107",
+   "name": "Ngôn ngữ Khmer",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220112",
+   "name": "Văn hóa các dân tộc thiểu số Việt Nam",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220201",
+   "name": "Ngôn ngữ Anh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220202",
+   "name": "Ngôn ngữ Nga",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220203",
+   "name": "Ngôn ngữ Pháp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220204",
+   "name": "Ngôn ngữ Trung Quốc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220205",
+   "name": "Ngôn ngữ Đức",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220209",
+   "name": "Ngôn ngữ Nhật",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220210",
+   "name": "Ngôn ngữ Hàn Quốc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220212",
+   "name": "Ngôn ngữ Lào",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220214",
+   "name": "Ngôn ngữ Thái Lan",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220216",
+   "name": "Tiếng Anh thương mại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220217",
+   "name": "Tiếng Anh du lịch",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220218",
+   "name": "Tiếng Anh lễ tân nhà hàng, khách sạn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220219",
+   "name": "Phiên dịch tiếng Anh thương mại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220220",
+   "name": "Phiên dịch tiếng Anh du lịch",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220221",
+   "name": "Phiên dịch tiếng Nhật kinh tế, thương mại Phiên dịch tiếng Nhật kinh tế, thương mại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "220222",
+   "name": "Phiên dịch tiếng Đức kinh tế, thương mại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320101",
+   "name": "Báo chí học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320104",
+   "name": "Truyền thông đa phương tiện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320106",
+   "name": "Công nghệ truyền thông",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320107",
+   "name": "Tổ chức sự kiện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320108",
+   "name": "Quan hệ công chúng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320201",
+   "name": "Hệ thống thông tin",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320202",
+   "name": "Hệ thống thông tin quản lý",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320203",
+   "name": "Khoa học thư viện",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320205",
+   "name": "Thư viện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320207",
+   "name": "Thư viện - Thiết bị trường học",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "320209",
+   "name": "Công nghệ thiết bị trường học",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320301",
+   "name": "Văn thư hành chính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320302",
+   "name": "Văn thư - Lưu trữ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320303",
+   "name": "Lưu trữ học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320305",
+   "name": "Bảo tàng học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320306",
+   "name": "Thư ký",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320308",
+   "name": "Bảo tồn và khai thác di tích, di sản lịch sử",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "320309",
+   "name": "Hành chính văn phòng",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "320310",
+   "name": "Trợ lý y khoa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320311",
+   "name": "Thư ký y khoa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320401",
+   "name": "Xuất bản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "320403",
+   "name": "Phát hành xuất bản phẩm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340102",
+   "name": "Kinh doanh xuất nhập khẩu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340104",
+   "name": "Kinh  doanh bưu chính viễn thông",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340105",
+   "name": "Kinh doanh xăng dầu và khí đốt",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340108",
+   "name": "Kinh doanh bất động sản",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340110",
+   "name": "Kinh doanh vận tải đường bộ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340115",
+   "name": "Marketing",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340117",
+   "name": "Marketing du lịch",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340118",
+   "name": "Marketing thương mại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340119",
+   "name": "Quản trị bán hàng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340120",
+   "name": "Bán hàng trong siêu thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340121",
+   "name": "Kinh doanh thương mại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340122",
+   "name": "Thương mại điện tử",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340123",
+   "name": "Logistics và quản lý chuỗi cung ứng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340125",
+   "name": "Dịch vụ thương mại hàng không",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340126",
+   "name": "Kế hoạch đầu  tư",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340127",
+   "name": "Thu mua",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340201",
+   "name": "Tài chính - Ngân hàng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340203",
+   "name": "Tài chính tín dụng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340204",
+   "name": "Bảo hiểm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340205",
+   "name": "Công nghệ tài chính và kinh doanh số",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340206",
+   "name": "Tài chính doanh nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340207",
+   "name": "Tư vấn tài chính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340301",
+   "name": "Kế toán",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340302",
+   "name": "Kiểm toán",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340303",
+   "name": "Kế toán lao động, tiền lương và bảo hiểm xã hội",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340305",
+   "name": "Kế toán ngân hàng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340306",
+   "name": "Kế toán tin học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340307",
+   "name": "Kế toán hành chính sự nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340308",
+   "name": "Kế toán hợp tác xã",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340309",
+   "name": "Kế toán xây dựng",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340311",
+   "name": "Kế toán thuế",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340313",
+   "name": "Kế toán doanh nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340314",
+   "name": "Kế toán số",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340404",
+   "name": "Quản trị nhân lực",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340405",
+   "name": "Quản trị kinh doanh vận tải biển",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340406",
+   "name": "Quản trị văn phòng",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340407",
+   "name": "Quản trị kinh doanh vận tải đường bộ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340408",
+   "name": "Quản trị kinh doanh vận tải đường sắt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340409",
+   "name": "Quản trị kinh doanh vận tải hàng không",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340413",
+   "name": "Quản trị kinh doanh vật tư xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340415",
+   "name": "Quản trị kinh doanh xăng dầu và gas",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340416",
+   "name": "Quản trị kinh doanh bất động sản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340417",
+   "name": "Quản trị doanh nghiệp vừa và nhỏ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340419",
+   "name": "Quản lý kinh doanh điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340420",
+   "name": "Quản lý doanh nghiệp",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340421",
+   "name": "Quản lý và kinh doanh du lịch",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340422",
+   "name": "Quản lý và kinh doanh khách sạn",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340423",
+   "name": "Quản lý và kinh doanh nhà hàng và dịch vụ ăn uống",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340424",
+   "name": "Quản lý và bán hàng siêu thị",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340425",
+   "name": "Quản lý kho hàng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340426",
+   "name": "Quản lý nhà đất",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340427",
+   "name": "Quản lý công trình đô thị",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340429",
+   "name": "Quản lý khai thác công trình thủy lợi",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340430",
+   "name": "Quản lý khu đô thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340431",
+   "name": "Quản lý cây xanh đô thị",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340432",
+   "name": "Quản lý công trình đường thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340434",
+   "name": "Quản lý tòa nhà",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340435",
+   "name": "Quản lý lao động, tiền lương và bảo trợ xã hội",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340436",
+   "name": "Quản lý văn hóa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340439",
+   "name": "Quản lý vận tải và dịch vụ logistics",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340441",
+   "name": "Quản lý chất lượng thực phẩm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340443",
+   "name": "Quản lý siêu thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340444",
+   "name": "Quản lý hàng hải",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340445",
+   "name": "Quản trị kinh doanh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340446",
+   "name": "Quản trị homestay và cơ sở lưu trú nhỏ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "340447",
+   "name": "Quản trị công nghiệp văn hóa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340448",
+   "name": "Số hóa di sản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340449",
+   "name": "Vận hành không gian sáng tạo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340450",
+   "name": "Tổ chức lễ hội và sự kiện văn hóa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340451",
+   "name": "Quản trị sân golf và dịch vụ golf",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340452",
+   "name": "Quản trị kho vận",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340453",
+   "name": "Quản lý và khai thác cảng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "340454",
+   "name": "Quản trị kinh doanh vận tải đường thủy nội địa",
+   "levels": []
+  },
+  {
+   "code": "380101",
+   "name": "Pháp luật",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "380102",
+   "name": "Pháp luật về quản lý hành chính công",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "380201",
+   "name": "Dịch vụ pháp lý",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "380203",
+   "name": "Tư pháp cơ sở",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "380205",
+   "name": "Dịch vụ pháp lý doanh nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "380206",
+   "name": "Dịch vụ pháp lý về đất đai",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "380207",
+   "name": "Dịch vụ pháp lý về tố tụng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "420201",
+   "name": "Công nghệ sinh học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "420203",
+   "name": "Sinh học ứng dụng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "440201",
+   "name": "Địa chất học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "440202",
+   "name": "Quan trắc khí tượng nông nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "440203",
+   "name": "Quan trắc hải văn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "440206",
+   "name": "Khí tượng học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "440224",
+   "name": "Thủy văn học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "440225",
+   "name": "Quan trắc khí tượng hàng không",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "460201",
+   "name": "Thống kê",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "460202",
+   "name": "Thống kê doanh nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "460203",
+   "name": "Hệ thống thông tin kinh tế",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480101",
+   "name": "Khoa học máy tính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480102",
+   "name": "Mạng máy tính và truyền thông dữ liệu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480103",
+   "name": "Thiết kế mạch điện tử trên máy tính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480107",
+   "name": "Trí tuệ nhân tạo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480108",
+   "name": "Công nghệ kỹ thuật máy tính",
+   "levels": []
+  },
+  {
+   "code": "480109",
+   "name": "Đồ họa đa phương tiện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480110",
+   "name": "Kỹ thuật sửa chữa, lắp ráp máy tính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480201",
+   "name": "Công nghệ thông tin",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480203",
+   "name": "Tin học văn phòng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480204",
+   "name": "Tin học viễn thông ứng dụng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480205",
+   "name": "Tin học ứng dụng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480206",
+   "name": "Xử lý dữ liệu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480207",
+   "name": "Lập trình máy tính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480208",
+   "name": "An ninh mạng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480209",
+   "name": "Quản trị mạng máy tính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480210",
+   "name": "Quản trị hệ thống",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480212",
+   "name": "Vẽ thiết kế mỹ thuật có trợ giúp bằng máy tính",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "480213",
+   "name": "Vẽ và thiết kế trên máy tính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480214",
+   "name": "Thiết kế trang web",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480215",
+   "name": "Thiết kế và quản lý website",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "480216",
+   "name": "Quản trị cơ sở dữ liệu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480218",
+   "name": "Kỹ thuật công nghệ số trong chăn nuôi thú y và chăn nuôi thông minh",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "480219",
+   "name": "Robot và trí tuệ nhân tạo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "480220",
+   "name": "Công nghệ ứng dụng trí tuệ nhân tạo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510101",
+   "name": "Công nghệ kỹ thuật kiến trúc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510103",
+   "name": "Công nghệ kỹ thuật xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510104",
+   "name": "Công nghệ kỹ thuật giao thông",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510105",
+   "name": "Công nghệ kỹ thuật vật liệu xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510106",
+   "name": "Công nghệ kỹ thuật nội thất và điện nước công trình",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510107",
+   "name": "Công trình thủy lợi",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510108",
+   "name": "Xây dựng và hoàn thiện công trình thủy lợi",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510109",
+   "name": "Xây dựng công trình thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510110",
+   "name": "Xây dựng và bảo trì công trình đường sắt tốc độ tới 120 km/h",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510111",
+   "name": "Bảo trì công trình đường sắt đô thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510112",
+   "name": "Lắp đặt cầu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510114",
+   "name": "Xây dựng công trình thủy điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510116",
+   "name": "Kỹ thuật xây dựng mỏ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510120",
+   "name": "Thí nghiệm và kiểm tra chất lượng công trình xây dựng",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510121",
+   "name": "Công nghệ kỹ thuật hạ tầng đô thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510122",
+   "name": "Xây dựng và bảo trì công trình đường sắt tốc độ dưới 200 km/h",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510123",
+   "name": "Xây dựng và bảo trì đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510124",
+   "name": "Xây dựng và bảo trì cầu hầm đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510125",
+   "name": "Công nghệ số trong xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510126",
+   "name": "Công nghệ kỹ thuật công trình ngầm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510127",
+   "name": "Công nghệ kỹ thuật công trình xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510201",
+   "name": "Công nghệ kỹ thuật cơ khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510205",
+   "name": "Công nghệ kỹ thuật ô tô",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510206",
+   "name": "Công nghệ kỹ thuật nhiệt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510210",
+   "name": "Công nghệ kỹ thuật đo lường",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510212",
+   "name": "Công nghệ chế tạo máy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510213",
+   "name": "Công nghệ chế tạo vỏ tàu thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510214",
+   "name": "Công nghệ chế tạo, bảo dưỡng toa xe",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510215",
+   "name": "Công nghệ chế tạo, bảo dưỡng đầu máy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510217",
+   "name": "Công nghệ hàn",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510218",
+   "name": "Vận hành và bảo trì tua bin điện gió",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510219",
+   "name": "Công nghệ chế tạo phương tiện đường sắt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510301",
+   "name": "Công nghệ kỹ thuật điện, điện tử",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510302",
+   "name": "Thủy điện",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510303",
+   "name": "Công nghệ kỹ thuật điều khiển và tự động hóa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510304",
+   "name": "Công nghệ kỹ thuật cơ điện tử",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510306",
+   "name": "Công nghệ kỹ thuật chiếu sáng đô thị",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510312",
+   "name": "Công nghệ kỹ thuật điện tử, truyền thông",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510314",
+   "name": "Công nghệ điện tử và năng lượng tòa nhà",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510315",
+   "name": "Công nghệ cơ khí, sưởi ấm và điều hòa không khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510316",
+   "name": "Nhiệt điện",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510317",
+   "name": "Kiểm thử và đóng gói vi mạch",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510318",
+   "name": "Vi mạch bán dẫn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510319",
+   "name": "Công nghệ robot công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510320",
+   "name": "Công nghệ bán dẫn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510321",
+   "name": "Công nghệ kỹ thuật bán dẫn và vi mạch",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510322",
+   "name": "Vận hành và bảo trì thiết bị bay không người lái",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510324",
+   "name": "Công nghệ kỹ thuật điện và năng lượng tái tạo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510325",
+   "name": "Công nghệ kỹ thuật bảo trì thiết bị công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510326",
+   "name": "Công nghệ kỹ thuật tự động hóa trong nông nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510327",
+   "name": "Cơ điện tử ô tô",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510328",
+   "name": "Điện gió",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510329",
+   "name": "Công nghệ sản xuất bảng mạch in",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510330",
+   "name": "Công nghệ sản xuất chip bán dẫn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510331",
+   "name": "Sửa chữa và điều khiển máy bay không người lái tầm thấp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510332",
+   "name": "Kỹ thuật lắp đặt và bảo trì trạm sạc xe điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510333",
+   "name": "Công nghệ CNC nâng cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510334",
+   "name": "Công nghệ cơ điện công trình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510335",
+   "name": "Công nghệ điện khí tự động hóa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510401",
+   "name": "Công nghệ kỹ thuật hóa học",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510402",
+   "name": "Công nghệ kỹ thuật vật liệu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510403",
+   "name": "Công nghệ hóa vô cơ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510404",
+   "name": "Hóa phân tích",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510405",
+   "name": "Công nghệ hóa nhựa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510406",
+   "name": "Công nghệ kỹ thuật môi trường",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510407",
+   "name": "Công nghệ hóa silicat",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510410",
+   "name": "Công nghệ mạ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510411",
+   "name": "Công nghệ sơn",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510414",
+   "name": "Công nghệ sơn ô tô",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510417",
+   "name": "Công nghệ nhiệt luyện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510418",
+   "name": "Công nghệ đúc kim loại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510419",
+   "name": "Công nghệ cán, kéo kim loại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510420",
+   "name": "Công nghệ gia công kim loại",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510422",
+   "name": "Công nghệ kỹ thuật tài nguyên nước",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510423",
+   "name": "Công nghệ hóa hữu cơ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510424",
+   "name": "Công nghệ hóa nhuộm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510501",
+   "name": "Công nghệ sản xuất bột giấy và giấy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510503",
+   "name": "Công nghệ sản xuất sản phẩm từ cao su",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510505",
+   "name": "Công nghệ sản xuất ván nhân tạo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510508",
+   "name": "Sản xuất vật liệu nổ công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510509",
+   "name": "Sản xuất các chất vô cơ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510514",
+   "name": "Sản xuất xi măng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510516",
+   "name": "Sản xuất gạch ceramic",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510517",
+   "name": "Sản xuất gạch granit",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510519",
+   "name": "Sản xuất vật liệu chịu lửa",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510522",
+   "name": "Sản xuất sứ xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510524",
+   "name": "Sản xuất sản phẩm kính, thủy tinh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510536",
+   "name": "Sản xuất gốm xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510538",
+   "name": "Chế biến mủ cao su",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510601",
+   "name": "Quản lý công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510603",
+   "name": "Kiểm nghiệm chất lượng lương thực, thực phẩm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510605",
+   "name": "Kiểm nghiệm bột giấy và giấy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510606",
+   "name": "Thí nghiệm và kiểm tra chất lượng cầu đường bộ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510609",
+   "name": "Kiểm tra và phân tích hóa chất",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510610",
+   "name": "Giám định khối lượng, chất lượng than",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520614",
+   "name": "Kiểm nghiệm chất lượng cao su",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510702",
+   "name": "Khoan khai thác dầu khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510706",
+   "name": "Kỹ thuật xăng dầu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510707",
+   "name": "Phân tích các sản phẩm lọc dầu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510712",
+   "name": "Vận hành thiết bị chế biến dầu khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510713",
+   "name": "Vận hành thiết bị khai thác dầu khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510801",
+   "name": "Công nghệ kỹ thuật in",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510803",
+   "name": "Công nghệ hoàn thiện xuất bản phẩm",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510804",
+   "name": "Công nghệ chế bản điện tử",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "510808",
+   "name": "Công nghệ chế tạo khuôn in",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510901",
+   "name": "Công nghệ kỹ thuật địa chất",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510902",
+   "name": "Công nghệ kỹ thuật trắc địa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510907",
+   "name": "Trắc địa - Địa hình - Địa chính",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510910",
+   "name": "Trắc địa công trình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510912",
+   "name": "Khảo sát địa hình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "510915",
+   "name": "Khoan thăm dò địa chất",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "511002",
+   "name": "Công nghệ tuyển khoáng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "511003",
+   "name": "Khai thác mỏ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "511004",
+   "name": "Kỹ thuật khai thác mỏ hầm lò",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "511006",
+   "name": "Vận hành thiết bị sàng tuyển than",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "511008",
+   "name": "Khoan nổ mìn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "511009",
+   "name": "Khoan đào đường hầm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520102",
+   "name": "Kỹ thuật máy nông nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520103",
+   "name": "Kỹ thuật lắp đặt ống công nghệ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520104",
+   "name": "Chế tạo thiết bị cơ khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520105",
+   "name": "Chế tạo khuôn mẫu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520109",
+   "name": "Gia công lắp ráp hệ thống ống tàu thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520110",
+   "name": "Gia công và lắp ráp nội thất tàu thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520111",
+   "name": "Lắp ráp ô tô",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520112",
+   "name": "Lắp ráp hệ thống động lực tàu thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520113",
+   "name": "Lắp đặt thiết bị cơ khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520114",
+   "name": "Lắp đặt thiết bị lạnh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520116",
+   "name": "Kỹ thuật cơ khí động lực",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520117",
+   "name": "Cơ khí chế tạo",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520118",
+   "name": "Cơ - Điện mỏ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520119",
+   "name": "Cơ - Điện tuyển khoáng",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520120",
+   "name": "Kỹ thuật hàng không",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520121",
+   "name": "Cắt gọt kim loại",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520122",
+   "name": "Gò",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520123",
+   "name": "Hàn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520124",
+   "name": "Rèn, dập",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520125",
+   "name": "Nguội chế tạo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520126",
+   "name": "Nguội sửa chữa máy công cụ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520127",
+   "name": "Nguội lắp ráp cơ khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520128",
+   "name": "Sửa chữa, lắp ráp xe máy",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520129",
+   "name": "Sửa chữa, vận hành tàu cuốc",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520131",
+   "name": "Sửa chữa máy tàu thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520132",
+   "name": "Sửa chữa thiết bị dệt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520133",
+   "name": "Sửa chữa thiết bị may",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520138",
+   "name": "Sửa chữa thiết bị in",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520139",
+   "name": "Sửa chữa thiết bị mỏ hầm lò",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520142",
+   "name": "Sửa chữa thiết bị luyện kim",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520144",
+   "name": "Sửa chữa thiết bị chế biến dầu khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520145",
+   "name": "Sửa chữa máy nâng chuyển",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520146",
+   "name": "Sửa chữa máy thi công xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520149",
+   "name": "Bảo trì thiết bị cơ điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520150",
+   "name": "Kỹ thuật bảo trì phương tiện đường sắt đô thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520151",
+   "name": "Bảo trì hệ thống thiết bị cơ khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520152",
+   "name": "Bảo trì và sửa chữa thiết bị cơ khí",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520155",
+   "name": "Bảo trì hệ thống thiết bị công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520156",
+   "name": "Bảo dưỡng công nghiệp",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520157",
+   "name": "Bảo trì và sửa chữa thiết bị nhiệt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520158",
+   "name": "Bảo trì và sửa chữa máy công cụ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520159",
+   "name": "Bảo trì và sửa chữa ô tô",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520160",
+   "name": "Bảo trì và sửa chữa khung, vỏ ô tô",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520163",
+   "name": "Kỹ thuật bảo trì phương tiện đường sắt tốc độ dưới 200 km/h",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520164",
+   "name": "Kỹ thuật bảo trì phương tiện đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520165",
+   "name": "Bảo trì và sửa chữa máy bay",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520166",
+   "name": "Kỹ thuật vận hành và bảo trì hệ thống năng lượng mặt trời",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520181",
+   "name": "Bảo trì và sửa chữa thiết bị y tế",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520182",
+   "name": "Vận hành cần, cầu trục",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520183",
+   "name": "Vận hành máy thi công nền",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520184",
+   "name": "Vận hành máy thi công mặt đường",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520185",
+   "name": "Vận hành máy xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520186",
+   "name": "Vận hành máy đóng cọc và khoan cọc nhồi",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520187",
+   "name": "Vận hành máy nông nghiệp",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520188",
+   "name": "Vận hành, sửa chữa máy thi công đường sắt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520191",
+   "name": "Điều khiển tàu cuốc",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520192",
+   "name": "Vận hành máy xúc thủy lực",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520193",
+   "name": "Vận hành máy gạt",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520197",
+   "name": "Kỹ thuật lập trình, gia công trên máy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520198",
+   "name": "Cơ khí xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520199",
+   "name": "Cơ - Điện nông nghiệp",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520201",
+   "name": "Kỹ thuật lắp đặt điện và điều khiển trong công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520203",
+   "name": "Kỹ thuật cơ điện chế biến cao su",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520204",
+   "name": "Kỹ thuật cơ điện mỏ hầm lò",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520205",
+   "name": "Kỹ thuật máy lạnh và điều hòa không khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520217",
+   "name": "Kỹ thuật mạng ngoại vi và thiết bị đầu cuối",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520219",
+   "name": "Kỹ thuật lắp đặt đài trạm viễn thông",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520221",
+   "name": "Kỹ thuật truyền dẫn quang và vô tuyến",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520222",
+   "name": "Điện tử công nghiệp và dân dụng",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520223",
+   "name": "Điện công nghiệp và dân dụng",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520224",
+   "name": "Điện tử dân dụng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520225",
+   "name": "Điện tử công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520226",
+   "name": "Điện dân dụng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520227",
+   "name": "Điện công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520228",
+   "name": "Điện tàu thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520232",
+   "name": "Sửa chữa điện máy công trình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520234",
+   "name": "Sửa chữa đường dây tải điện đang vận hành",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520235",
+   "name": "Sửa chữa thiết bị tự động hóa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520239",
+   "name": "Lắp đặt điện công trình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520240",
+   "name": "Lắp đặt thiết bị điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520242",
+   "name": "Xây lắp đường dây và trạm điện",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520243",
+   "name": "Lắp đặt đường dây tải điện và trạm biến áp có điện áp từ 220 kv trở lên",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520244",
+   "name": "Lắp đặt đường dây tải điện và trạm biến áp có điện áp từ 110 kv trở xuống",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520245",
+   "name": "Vận hành điện trong nhà máy điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520246",
+   "name": "Vận hành nhà máy thủy điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520247",
+   "name": "Vận hành nhà máy nhiệt điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520249",
+   "name": "Vận hành và sửa chữa trạm bơm điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520251",
+   "name": "Vận hành điện trong nhà máy thủy điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520254",
+   "name": "Vận hành nhà máy điện hạt nhân",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520255",
+   "name": "Vận hành, sửa chữa thiết bị lạnh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520256",
+   "name": "Quản lý vận hành, sửa chữa đường dây và trạm biến áp có điện áp từ 220 kv trở lên",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520257",
+   "name": "Quản lý vận hành, sửa chữa đường dây và trạm biến áp có điện áp từ 110 kv trở xuống",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520259",
+   "name": "Đo lường điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520260",
+   "name": "Thí nghiệm điện",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520261",
+   "name": "Cơ điện lạnh thủy sản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520262",
+   "name": "Cơ điện nông thôn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520263",
+   "name": "Cơ điện tử",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520264",
+   "name": "Tự động hóa công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520265",
+   "name": "Hệ thống điện",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520270",
+   "name": "Lắp đặt và bảo trì hệ thống năng lượng tái tạo",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520271",
+   "name": "Vận hành nhà máy điện gió, điện mặt trời",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520272",
+   "name": "Vận hành, khai thác điện tàu thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520273",
+   "name": "Lắp đặt và bảo trì hệ thống thông tin tín hiệu đường sắt tốc độ đến 120 km/h",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520274",
+   "name": "Lắp đặt và bảo trì hệ thống thông tin tín hiệu và AFC đường sắt tốc độ dưới 200 km/h",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520275",
+   "name": "Kỹ thuật hệ thống điện đường sắt tốc độ dưới 200 km/h",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520276",
+   "name": "Lắp đặt và bảo trì hệ thống thông tin tín hiệu và AFC đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520277",
+   "name": "Kỹ thuật hệ thống điện đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520278",
+   "name": "Điều độ điện sức kéo đường sắt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520279",
+   "name": "Kỹ thuật robot công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520280",
+   "name": "Thông tin tín hiệu đường sắt đô thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520301",
+   "name": "Luyện gang",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520302",
+   "name": "Luyện thép",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520303",
+   "name": "Luyện kim đen",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "520304",
+   "name": "Luyện kim màu",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520309",
+   "name": "Xử lý nước thải công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520310",
+   "name": "Xử lý chất thải trong sản xuất cao su",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520311",
+   "name": "Kỹ thuật thoát nước và xử lý nước thải",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "520312",
+   "name": "Cấp, thoát nước",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "529001",
+   "name": "Kỹ thuật lò hơi",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "529002",
+   "name": "Kỹ thuật tua bin",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "529005",
+   "name": "Kỹ thuật thiết bị hình ảnh y tế",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "529006",
+   "name": "Kỹ thuật thiết bị điện tử y tế",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "529007",
+   "name": "Kỹ thuật thiết bị xét nghiệm y tế",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "529008",
+   "name": "Kỹ thuật thiết bị cơ điện y tế",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "529010",
+   "name": "Lắp đặt, vận hành và sửa chữa bơm, quạt, máy nén khí",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "529015",
+   "name": "Lặn thi công",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540101",
+   "name": "Công nghệ thực phẩm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540102",
+   "name": "Chế biến lương thực",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540104",
+   "name": "Công nghệ sau thu hoạch",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540106",
+   "name": "Chế biến rau quả",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540108",
+   "name": "Công nghệ kỹ thuật chế biến và bảo quản thực phẩm",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "540113",
+   "name": "Công nghệ kỹ thuật sản xuất muối",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "540123",
+   "name": "Sản xuất đường mía",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "540124",
+   "name": "Công nghệ chế biến chè",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540125",
+   "name": "Chế biến cà phê, ca cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540127",
+   "name": "Công nghệ kỹ thuật kiểm nghiệm chất lượng lương thực, thực phẩm",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "540129",
+   "name": "Công nghệ thực phẩm - dược phẩm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540130",
+   "name": "Công nghệ kỹ thuật chế biến và bảo quản lương thực",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "540131",
+   "name": "Chế biến thực phẩm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540201",
+   "name": "Công nghệ sợi, dệt",
+   "levels": []
+  },
+  {
+   "code": "540204",
+   "name": "Công nghệ may",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540205",
+   "name": "May thời trang",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540206",
+   "name": "Công nghệ da giày",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "540207",
+   "name": "Công nghệ may veston",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "549002",
+   "name": "Công nghệ giấy và bột giấy",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "580101",
+   "name": "Thiết kế kiến trúc",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580102",
+   "name": "Họa viên kiến trúc",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580103",
+   "name": "Thiết kế cảnh quan, hoa viên",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580201",
+   "name": "Kỹ thuật xây dựng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "580202",
+   "name": "Xây dựng dân dụng và công nghiệp",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580203",
+   "name": "Xây dựng cầu đường",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580205",
+   "name": "Xây dựng cầu đường bộ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "580207",
+   "name": "Cốp pha - Giàn giáo",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580208",
+   "name": "Cốt thép - Hàn",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580209",
+   "name": "Nề - Hoàn thiện",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580210",
+   "name": "Mộc xây dựng và trang trí nội thất",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "580211",
+   "name": "Mộc dân dụng",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580212",
+   "name": "Điện - Nước",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "580302",
+   "name": "Quản lý xây dựng",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620102",
+   "name": "Khuyến nông",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620103",
+   "name": "Công nghệ kỹ thuật chế biến sản phẩm cây nhiệt đới",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620104",
+   "name": "Công nghệ kỹ thuật chế biến và bảo quản sản phẩm cây công nghiệp",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "620105",
+   "name": "Chăn nuôi",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "620110",
+   "name": "Khoa học cây trồng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620111",
+   "name": "Trồng trọt và bảo vệ thực vật",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620112",
+   "name": "Bảo vệ thực vật",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620114",
+   "name": "Trồng cây công nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620115",
+   "name": "Trồng cây ăn quả",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620116",
+   "name": "Phát triển nông thôn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620117",
+   "name": "Chăn nuôi gia súc, gia cầm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620120",
+   "name": "Chăn nuôi - Thú y",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620122",
+   "name": "Khuyến nông lâm",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620124",
+   "name": "Chọn và nhân giống cây trồng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620125",
+   "name": "Kỹ thuật rau, hoa công nghệ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620126",
+   "name": "Thủy lợi tổng hợp",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "620130",
+   "name": "Quản lý và kinh doanh nông nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620131",
+   "name": "Nông nghiệp công nghệ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620133",
+   "name": "Quản lý trang trại thông minh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620135",
+   "name": "Công nghệ kỹ thuật chế biến và bảo quản nông sản",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "620136",
+   "name": "Công nghệ kỹ thuật chế biến và bảo quản sản phẩm cây ăn quả",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "620137",
+   "name": "Trồng trọt",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "620202",
+   "name": "Lâm nghiệp đô thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620203",
+   "name": "Làm vườn - Cây cảnh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620204",
+   "name": "Kỹ thuật cây cao su",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620205",
+   "name": "Lâm sinh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620209",
+   "name": "Sinh vật cảnh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620210",
+   "name": "Lâm nghiệp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620211",
+   "name": "Quản lý tài nguyên rừng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620212",
+   "name": "Quản trị tài nguyên rừng bền vững",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620301",
+   "name": "Nuôi trồng thủy sản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620302",
+   "name": "Chế biến và bảo quản thủy sản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620304",
+   "name": "Khai thác thủy sản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620305",
+   "name": "Nuôi trồng thủy sản nước mặn, nước lợ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620310",
+   "name": "Phòng và chữa bệnh thủy sản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620312",
+   "name": "Kiểm ngư",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620313",
+   "name": "Công nghệ kỹ thuật chế biến và bảo quản thủy sản",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "620315",
+   "name": "Nuôi trồng thủy sản nước ngọt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "640101",
+   "name": "Thú y",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "640201",
+   "name": "Dịch vụ thú y",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720101",
+   "name": "Y sỹ đa khoa",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720115",
+   "name": "Y sỹ y học cổ truyền",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720201",
+   "name": "Dược học",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720202",
+   "name": "Kỹ thuật dược",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720203",
+   "name": "Kỹ thuật kiểm nghiệm thuốc",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720204",
+   "name": "Dược cộng đồng",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720205",
+   "name": "Dược liệu dược học cổ truyền",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720301",
+   "name": "Điều dưỡng",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720302",
+   "name": "Hộ sinh",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720401",
+   "name": "Dinh dưỡng",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720601",
+   "name": "Kỹ thuật xét nghiệm y học",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720602",
+   "name": "Kỹ thuật hình ảnh y học",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720603",
+   "name": "Kỹ thuật phục hồi chức năng",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720606",
+   "name": "Kỹ thuật vật lý trị liệu",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "720611",
+   "name": "Kỹ thuật phục hình răng",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "729001",
+   "name": "Dân số y tế",
+   "levels": [
+    "TC"
+   ]
+  },
+  {
+   "code": "729002",
+   "name": "Quản lý, huấn luyện sức khỏe",
+   "levels": [
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "729003",
+   "name": "Cấp cứu ngoại viện",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "760101",
+   "name": "Công tác xã hội",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "760102",
+   "name": "Công tác thanh thiếu niên",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "760202",
+   "name": "Chăm sóc và hỗ trợ gia đình",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "760203",
+   "name": "Dịch vụ chăm sóc gia đình",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "760204",
+   "name": "Chăm sóc và nuôi dưỡng trẻ",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "760205",
+   "name": "Chăm sóc người cao tuổi",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "760206",
+   "name": "Dịch vụ cộng đồng và hỗ trợ người khuyết tật",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810101",
+   "name": "Quản trị dịch vụ du lịch và lữ hành",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810102",
+   "name": "Du lịch sinh thái",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "810103",
+   "name": "Hướng dẫn du lịch",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810104",
+   "name": "Quản trị lữ hành",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810105",
+   "name": "Quản trị du lịch MICE",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810107",
+   "name": "Điều hành tour du lịch",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810112",
+   "name": "Digital marketing du lịch và khách sạn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810113",
+   "name": "Du lịch cộng đồng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810201",
+   "name": "Quản trị khách sạn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810202",
+   "name": "Quản trị nhà hàng và dịch vụ ăn uống",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810203",
+   "name": "Nghiệp vụ lễ tân",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810204",
+   "name": "Nghiệp vụ lưu trú",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810206",
+   "name": "Quản trị nhà hàng",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810207",
+   "name": "Kỹ thuật chế biến món ăn",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810209",
+   "name": "Kỹ thuật pha chế đồ uống",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810210",
+   "name": "Kỹ thuật làm bánh",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810212",
+   "name": "Quản trị khu resort",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810301",
+   "name": "Vận động viên thể thao",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "810302",
+   "name": "Huấn luyện thể thao",
+   "levels": [
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810303",
+   "name": "Quản lý thể dục, thể thao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810304",
+   "name": "Kỹ thuật golf",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810307",
+   "name": "Kỹ thuật vận hành, bảo dưỡng cơ sở thể thao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810403",
+   "name": "Kỹ thuật chăm sóc tóc",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "810404",
+   "name": "Chăm sóc sắc đẹp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810406",
+   "name": "Spa trị liệu và chăm sóc sức khỏe du lịch",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "810501",
+   "name": "Kinh tế gia đình",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840101",
+   "name": "Khai thác vận tải",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840103",
+   "name": "Khai thác vận tải đường biển",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "840104",
+   "name": "Khai thác vận tải thủy nội địa",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "840105",
+   "name": "Khai thác vận tải đường bộ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "840106",
+   "name": "Khai thác vận tải đường không",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "840107",
+   "name": "Khai thác vận tải đường sắt",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "840108",
+   "name": "Điều khiển phương tiện thủy nội địa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840109",
+   "name": "Điều khiển tàu biển",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840110",
+   "name": "Khai thác máy tàu biển",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840111",
+   "name": "Khai thác máy tàu thủy",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840116",
+   "name": "Xếp dỡ cơ giới tổng hợp",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840124",
+   "name": "Lái tàu diesel đường sắt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840125",
+   "name": "Điều hành chạy tàu hỏa",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840127",
+   "name": "Lái tàu đường sắt đô thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840128",
+   "name": "Điều hành đường sắt đô thị",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840130",
+   "name": "Lái tàu đầu máy hơi nước đường sắt",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840131",
+   "name": "Lái tàu điện đường sắt tốc độ dưới 200 km/h",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840132",
+   "name": "Lái tàu đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840133",
+   "name": "Điều hành chạy tàu điện đường sắt tốc độ dưới 200 km/h",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840134",
+   "name": "Điều hành chạy tàu đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840135",
+   "name": "Kiểm soát an toàn đường sắt tốc độ dưới",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840136",
+   "name": "Kiểm soát an toàn đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840137",
+   "name": "Quản lý khai thác đường sắt tốc độ dưới",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840138",
+   "name": "Quản lý khai thác đường sắt tốc độ cao",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "840203",
+   "name": "Kinh doanh dịch vụ bưu chính viễn thông",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "850101",
+   "name": "Quản lý tài nguyên và môi trường",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "850103",
+   "name": "Quản lý đất đai",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "850111",
+   "name": "An toàn phóng xạ",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "850113",
+   "name": "Quản lý tài nguyên nước",
+   "levels": [
+    "THN",
+    "TC"
+   ]
+  },
+  {
+   "code": "850201",
+   "name": "Bảo hộ lao động",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  },
+  {
+   "code": "850202",
+   "name": "An toàn, vệ sinh lao động",
+   "levels": [
+    "THN",
+    "TC",
+    "CĐ"
+   ]
+  }
+ ]
+}

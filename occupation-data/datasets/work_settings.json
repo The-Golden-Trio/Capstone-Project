@@ -1,0 +1,183 @@
+{
+  "_meta": {
+    "note": "Nơi làm việc chính của nghề, dùng chung cho mọi nghề. Khác với datasets/work_environments.json (kiểu công ty của nghề IT). Gán tự động trong scripts/build_occupation_profiles.py theo luật bên dưới: nhóm nghề SOC 2 chữ số và mục Work Context của O*NET lệch mặt bằng từ 0,5 độ lệch chuẩn (cùng ngưỡng với câu môi trường). Một nghề có 1-2 nơi làm việc. Luật do nhóm đặt ngày 21/10/2026, chưa duyệt. Luật có fallback: true chỉ áp khi nghề chưa khớp luật nào khác.",
+    "context_elements": {
+      "indoors": "4.C.2.a.1.a",
+      "outdoors": "4.C.2.a.1.c",
+      "vehicle": "4.C.2.a.1.f",
+      "sitting": "4.C.2.d.1.a",
+      "standing": "4.C.2.d.1.b",
+      "public": "4.C.1.b.1.f"
+    }
+  },
+  "settings": {
+    "WS_OFFICE": {
+      "name_vn": "Văn phòng",
+      "summary": "Làm trong phòng, ngồi máy tính phần lớn thời gian, giờ hành chính."
+    },
+    "WS_FIELD": {
+      "name_vn": "Hiện trường, công trường, ngoài trời",
+      "summary": "Đi lại nhiều, làm ngoài trời hoặc ở công trình, chịu thời tiết."
+    },
+    "WS_FACTORY": {
+      "name_vn": "Nhà máy, xưởng, kho bãi",
+      "summary": "Đứng máy, làm tay hoặc bốc xếp ở xưởng, kho, thường theo ca."
+    },
+    "WS_HEALTH": {
+      "name_vn": "Bệnh viện, phòng khám, cơ sở chăm sóc",
+      "summary": "Làm với người bệnh, có ca trực, quy trình vệ sinh chặt."
+    },
+    "WS_SCHOOL": {
+      "name_vn": "Trường học, trung tâm",
+      "summary": "Đứng lớp và làm việc với học sinh, sinh viên, theo năm học."
+    },
+    "WS_SERVICE": {
+      "name_vn": "Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ",
+      "summary": "Đứng phục vụ khách trực tiếp, thường làm cuối tuần và ngày lễ."
+    },
+    "WS_VEHICLE": {
+      "name_vn": "Trên xe, tàu, máy bay",
+      "summary": "Phần lớn thời gian ngồi lái hoặc làm việc trên phương tiện."
+    },
+    "WS_STUDIO": {
+      "name_vn": "Phòng thu, sân khấu, trường quay",
+      "summary": "Làm theo dự án, giờ giấc thất thường, nhiều buổi diễn hoặc buổi quay."
+    },
+    "WS_LAB": {
+      "name_vn": "Phòng thí nghiệm",
+      "summary": "Làm thí nghiệm, đo, phân tích mẫu theo quy trình an toàn chặt."
+    }
+  },
+  "rules": [
+    {
+      "setting": "WS_VEHICLE",
+      "groups": [
+        "53"
+      ],
+      "context_high": [
+        "vehicle"
+      ]
+    },
+    {
+      "setting": "WS_HEALTH",
+      "groups": [
+        "29",
+        "31"
+      ]
+    },
+    {
+      "setting": "WS_SCHOOL",
+      "groups": [
+        "25"
+      ],
+      "except": [
+        "25-4022",
+        "25-4012",
+        "25-9031"
+      ]
+    },
+    {
+      "setting": "WS_SERVICE",
+      "groups": [
+        "35",
+        "39",
+        "41-2"
+      ],
+      "except": [
+        "39-7011",
+        "39-9032"
+      ]
+    },
+    {
+      "setting": "WS_STUDIO",
+      "groups": [
+        "27-2",
+        "27-4"
+      ]
+    },
+    {
+      "setting": "WS_LAB",
+      "groups": [
+        "19-1",
+        "19-2"
+      ],
+      "except": [
+        "19-1031"
+      ]
+    },
+    {
+      "setting": "WS_FACTORY",
+      "groups": [
+        "49",
+        "51"
+      ],
+      "context_not_high": [
+        "outdoors"
+      ]
+    },
+    {
+      "setting": "WS_FIELD",
+      "context_high": [
+        "outdoors"
+      ]
+    },
+    {
+      "setting": "WS_OFFICE",
+      "context_high": [
+        "sitting"
+      ],
+      "context_not_high": [
+        "outdoors"
+      ]
+    },
+    {
+      "setting": "WS_SERVICE",
+      "groups": [
+        "33-9032",
+        "37-2011",
+        "43-4081",
+        "39-9032",
+        "41-9012",
+        "11-9051",
+        "11-9081"
+      ],
+      "fallback": true
+    },
+    {
+      "setting": "WS_FACTORY",
+      "groups": [
+        "43-5",
+        "11-3051",
+        "17-2112",
+        "17-2199",
+        "17-2141",
+        "17-2071"
+      ],
+      "fallback": true
+    },
+    {
+      "setting": "WS_STUDIO",
+      "groups": [
+        "27-1013"
+      ],
+      "fallback": true
+    },
+    {
+      "setting": "WS_OFFICE",
+      "groups": [
+        "11",
+        "13",
+        "15",
+        "17",
+        "19",
+        "21",
+        "23",
+        "25",
+        "27",
+        "41",
+        "43"
+      ],
+      "fallback": true
+    }
+  ]
+}

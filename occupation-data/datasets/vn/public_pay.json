@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "base_salary_vnd": 2530000,
+    "base_salary_law": "Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3",
+    "minimum_wage_vnd": {"I": 5310000, "II": 4730000, "III": 4140000, "IV": 3700000},
+    "minimum_wage_law": "Nghị định 293/2025/NĐ-CP ngày 10/11/2025, hiệu lực 01/01/2026",
+    "salary_tables_law": "Nghị định 204/2004/NĐ-CP (bảng lương theo ngạch, hạng); vẫn áp dụng tới tháng 10/2026",
+    "rule": "Lương = hệ số × lương cơ sở, chưa gồm phụ cấp ưu đãi nghề, thâm niên, khu vực. low là bậc 1 của hạng vào nghề, high là bậc cao nhất của hạng cao thường gặp.",
+    "checked": "Kiểm ngày 21/10/2026 qua cổng chính phủ và trang văn bản luật. status: van_ban = đã đọc toàn văn; bai_phan_tich = chỉ đọc bài phân tích của trang luật. Mục chỉ thấy qua đoạn trích tìm kiếm (kiểm lâm, hải quan, dược sĩ) không đưa vào."
+  },
+  "scales": {
+    "teacher_preschool": {
+      "label_vn": "Giáo viên mầm non hạng III đến hạng I", "classes": "A0 → A2.2", "coef_low": 2.10, "coef_high": 6.38,
+      "allowance_pct": 45, "allowance_note": "Phụ cấp ưu đãi 45%, 60% ở vùng khó khăn (Nghị định 182/2026/NĐ-CP)",
+      "law": "Thông tư 31/2026/TT-BGDĐT ngày 14/4/2026", "status": "van_ban"
+    },
+    "teacher_school": {
+      "label_vn": "Giáo viên tiểu học, THCS, THPT hạng III đến hạng I", "classes": "A1 → A2.1", "coef_low": 2.34, "coef_high": 6.78,
+      "allowance_pct": 40, "allowance_note": "Phụ cấp ưu đãi 45% với tiểu học, 40% với THCS và THPT; cao hơn ở vùng khó khăn (Nghị định 182/2026/NĐ-CP)",
+      "law": "Thông tư 31/2026/TT-BGDĐT ngày 14/4/2026", "status": "van_ban"
+    },
+    "lecturer": {
+      "label_vn": "Giảng viên, giảng viên chính, giảng viên cao cấp", "classes": "A1 → A3.1", "coef_low": 2.34, "coef_high": 8.00,
+      "allowance_pct": 25, "allowance_note": "Phụ cấp ưu đãi 25% (Nghị định 182/2026/NĐ-CP)",
+      "law": "Thông tư 31/2026/TT-BGDĐT, Điều 14", "status": "van_ban"
+    },
+    "doctor": {
+      "label_vn": "Bác sĩ hạng III đến hạng I", "classes": "A1 → A3.1", "coef_low": 2.34, "coef_high": 8.00,
+      "allowance_pct": 40, "allowance_note": "Phụ cấp ưu đãi 40% với khám chữa bệnh chung, tới 80% với cấp cứu, hồi sức, tâm thần (Nghị định 350/2026/NĐ-CP)",
+      "law": "Thông tư 41/2025/TT-BYT; hệ số theo Thông tư liên tịch 10/2015 đã hết hiệu lực, dự thảo giữ nguyên", "status": "bai_phan_tich"
+    },
+    "nurse_tech": {
+      "label_vn": "Điều dưỡng, hộ sinh, kỹ thuật y hạng IV đến hạng II", "classes": "A0 → A2.1", "coef_low": 2.10, "coef_high": 6.78,
+      "allowance_pct": 40, "allowance_note": "Phụ cấp ưu đãi 40% với điều dưỡng khám chữa bệnh chung (Nghị định 350/2026/NĐ-CP)",
+      "law": "Thông tư 02/2025/TT-BYT; xếp lương theo hướng dẫn của Bộ Y tế ngày 05/6/2025", "status": "van_ban"
+    },
+    "civil_servant": {
+      "label_vn": "Công chức chuyên viên đến chuyên viên chính", "classes": "A1 → A2.1", "coef_low": 2.34, "coef_high": 6.78,
+      "law": "Thông tư 02/2021/TT-BNV, sửa đổi bởi Thông tư 06/2022/TT-BNV", "status": "van_ban"
+    },
+    "police_officer": {
+      "label_vn": "Sĩ quan công an từ Thiếu úy đến Thượng tá", "classes": "cấp hàm", "coef_low": 4.20, "coef_high": 7.30,
+      "law": "Nghị định 204/2004/NĐ-CP, Bảng 6", "status": "bai_phan_tich"
+    }
+  },
+  "roles": {
+    "ONET-25-2011.00": "teacher_preschool",
+    "ONET-25-2021.00": "teacher_school",
+    "ONET-25-2031.00": "teacher_school",
+    "ONET-25-2051.00": "teacher_school",
+    "ONET-25-1081.00": "lecturer",
+    "ONET-29-1215.00": "doctor",
+    "ONET-29-1021.00": "doctor",
+    "ONET-29-1141.00": "nurse_tech",
+    "ONET-29-1161.00": "nurse_tech",
+    "ONET-29-1151.00": "nurse_tech",
+    "ONET-29-1123.00": "nurse_tech",
+    "ONET-29-2011.00": "nurse_tech",
+    "ONET-29-2034.00": "nurse_tech",
+    "ONET-13-2081.00": "civil_servant",
+    "ONET-43-4031.00": "civil_servant",
+    "ONET-33-3051.00": "police_officer",
+    "ONET-33-3021.00": "police_officer",
+    "ONET-33-3012.00": "police_officer",
+    "ONET-33-2011.00": "police_officer"
+  }
+}
