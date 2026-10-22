@@ -1,0 +1,298 @@
+element,so_nghe_o_net_dung,ten_vi
+I:Adjust equipment to ensure adequate performance.,120,Căn chỉnh thiết bị
+I:Administer basic health care or medical treatments.,49,Chăm sóc y tế cơ bản
+I:Administer diagnostic tests to assess patient health.,35,Làm xét nghiệm chẩn đoán
+I:Administer emergency medical treatment.,32,Cấp cứu
+I:Administer therapeutic treatments.,25,Điều trị và trị liệu
+I:Advise others on business or operational matters.,87,Tư vấn kinh doanh và vận hành
+I:Advise others on educational or vocational matters.,71,Tư vấn học tập và hướng nghiệp
+I:Advise others on environmental sustainability or green practices.,18,Tư vấn môi trường và phát triển bền vững
+I:Advise others on financial matters.,8,Tư vấn tài chính
+I:Advise others on healthcare or wellness issues.,29,Tư vấn sức khoẻ
+I:Advise others on legal or regulatory matters.,27,Tư vấn pháp lý
+I:Advise others on products or services.,33,Tư vấn sản phẩm và dịch vụ
+I:Advise patients or clients on medical issues.,40,Tư vấn y khoa cho người bệnh
+I:Alter audio or video recordings.,6,Dựng âm thanh và video
+I:Analyze biological or chemical substances or related data.,23,Phân tích mẫu sinh học và hoá học
+I:Analyze business or financial data.,27,Phân tích số liệu kinh doanh và tài chính
+I:Analyze data to improve operations.,80,Phân tích số liệu để cải tiến vận hành
+I:Analyze environmental or geospatial data.,23,Phân tích dữ liệu môi trường và bản đồ
+I:Analyze health or medical data.,62,Phân tích dữ liệu y tế
+I:Analyze market or industry conditions.,25,Phân tích thị trường
+I:Analyze performance of systems or equipment.,29,Phân tích hiệu suất hệ thống và thiết bị
+I:Analyze scientific or applied data using mathematical principles.,21,Phân tích số liệu bằng toán học
+I:Apply decorative finishes.,11,Hoàn thiện trang trí bề mặt
+I:Apply hygienic or cosmetic agents to skin or hair.,7,Chăm sóc da và tóc
+I:Apply materials to fill gaps or imperfections.,17,Trám vá và xử lý khe hở
+I:Apply protective solutions or coatings.,39,Phủ lớp bảo vệ
+I:Arrange displays or decorations.,21,Trưng bày và trang trí
+I:Assemble equipment or components.,72,Lắp ráp thiết bị
+I:Assemble products or work aids.,19,Lắp ráp sản phẩm
+I:Assess characteristics of land or property.,22,Thẩm định đất đai và tài sản
+"I:Assess living, work, or social needs or status of individuals or communities.",13,Đánh giá nhu cầu xã hội của người dân
+"I:Assess student capabilities, needs, or performance.",55,Đánh giá học sinh
+I:Assist healthcare practitioners during medical procedures.,32,Phụ giúp thủ thuật y khoa
+I:Assist individuals with special needs.,37,Hỗ trợ người có nhu cầu đặc biệt
+I:Assist others to access additional services or resources.,55,Kết nối người dân với dịch vụ hỗ trợ
+I:Authorize business activities or transactions.,17,Duyệt giao dịch
+I:Build structures.,47,Thi công kết cấu
+I:Calculate financial data.,15,Tính toán tài chính
+I:Care for plants or animals.,7,Chăm sóc cây trồng và vật nuôi
+I:Clean medical equipment or facilities.,23,Vệ sinh thiết bị y tế
+"I:Clean tools, equipment, facilities, or work areas.",199,Vệ sinh nơi làm việc và dụng cụ
+"I:Clean workpieces, finished products, or other objects.",33,Làm sạch sản phẩm
+I:Climb equipment or structures.,7,Làm việc trên cao
+I:Collect data about consumer needs or opinions.,39,Khảo sát nhu cầu khách hàng
+I:Collect environmental or biological samples.,34,Lấy mẫu môi trường và sinh học
+I:Collect information about patients or clients.,57,Thu thập thông tin người bệnh và khách hàng
+I:Collect samples of products or materials.,20,Lấy mẫu sản phẩm và vật liệu
+"I:Compile records, documentation, or other data.",66,Tổng hợp hồ sơ và số liệu
+I:Connect components or supply lines to equipment or tools.,34,Đấu nối thiết bị
+I:Consult legal materials or public records.,7,Tra cứu văn bản pháp luật và hồ sơ công
+I:Counsel others about personal matters.,27,Tham vấn cá nhân
+I:Create artistic designs or performances.,16,Sáng tác và biểu diễn
+I:Create decorative objects or parts of objects.,11,Làm đồ trang trí
+I:Create visual designs or displays.,74,Thiết kế hình ảnh
+I:Cut materials.,67,Cắt vật liệu
+I:Cut trees or other vegetation.,4,Chặt và tỉa cây
+I:Design computer or information systems or applications.,43,Thiết kế hệ thống phần mềm
+I:Design databases.,19,Thiết kế cơ sở dữ liệu
+I:Design electrical or electronic systems or equipment.,18,Thiết kế hệ thống điện và điện tử
+I:Design industrial systems or equipment.,19,Thiết kế thiết bị công nghiệp
+I:Design structures or facilities.,17,Thiết kế công trình
+I:Determine operational methods or procedures.,54,Xây dựng cách làm việc
+I:Determine resource needs of projects or operations.,60,Tính nguồn lực cho dự án
+I:Determine values or prices of goods or services.,37,Định giá hàng hoá và dịch vụ
+I:Develop business or marketing plans.,23,Lập kế hoạch kinh doanh và marketing
+"I:Develop educational programs, plans, or procedures.",79,Xây dựng chương trình giảng dạy
+I:Develop financial or business plans.,8,Lập kế hoạch tài chính
+I:Develop marketing or promotional materials.,17,Làm nội dung quảng bá
+"I:Develop models of systems, processes, or products.",29,Lập mô hình hệ thống và sản phẩm
+"I:Develop news, entertainment, or artistic content.",9,Sản xuất nội dung tin tức và giải trí
+I:Develop operational or technical procedures or standards.,85,Soạn quy trình và tiêu chuẩn kỹ thuật
+I:Develop organizational or program goals or objectives.,22,Xây dựng mục tiêu chương trình
+I:Develop patient or client care or treatment plans.,44,Lập kế hoạch chăm sóc và điều trị
+I:Develop plans for managing or preserving natural resources.,15,Lập kế hoạch bảo tồn tài nguyên
+I:Develop public or community health programs.,16,Xây dựng chương trình y tế cộng đồng
+I:Develop recipes or menus.,4,Lên thực đơn và công thức món ăn
+I:Develop research plans or methodologies.,41,Thiết kế nghiên cứu
+I:Develop scientific or mathematical theories or models.,16,Xây dựng lý thuyết và mô hình khoa học
+I:Develop systems or practices to mitigate or resolve environmental problems.,17,Xử lý vấn đề môi trường
+I:Develop technical specifications for products or operations.,34,Viết đặc tả kỹ thuật
+I:Diagnose system or equipment problems.,24,Chẩn đoán hỏng hóc thiết bị
+I:Direct vehicle traffic.,6,Điều tiết giao thông
+I:Disassemble equipment.,51,Tháo dỡ thiết bị
+I:Dispose of waste or debris.,42,Xử lý rác thải
+"I:Document technical designs, procedures, or activities.",51,Viết tài liệu kỹ thuật
+I:Edit written materials or documents.,12,Biên tập văn bản
+I:Escort others.,17,Áp tải và hộ tống
+I:Estimate project development or operational costs.,42,Dự toán chi phí
+"I:Evaluate condition of financial assets, property, or other resources.",11,Thẩm định tài sản
+"I:Evaluate designs, specifications, or other technical data.",43,Đánh giá bản thiết kế kỹ thuật
+I:Evaluate patient or client condition or treatment options.,37,Đánh giá tình trạng người bệnh
+I:Evaluate personnel capabilities or performance.,44,Đánh giá năng lực nhân viên
+I:Evaluate production inputs or outputs.,29,Đánh giá đầu vào và đầu ra sản xuất
+"I:Evaluate programs, practices, or processes.",69,Đánh giá chương trình và quy trình
+I:Evaluate project feasibility.,13,Đánh giá tính khả thi dự án
+I:Evaluate scholarly work.,7,Thẩm định công trình học thuật
+"I:Evaluate the characteristics, usefulness, or performance of products or technologies.",49,Đánh giá sản phẩm và công nghệ
+I:Evaluate the quality or accuracy of data.,61,Kiểm tra độ chính xác của dữ liệu
+"I:Examine financial activities, operations, or systems.",17,Kiểm tra hoạt động tài chính
+I:Examine materials or documentation for accuracy or compliance.,43,Rà soát hồ sơ và tài liệu
+I:Examine people or animals to assess health conditions or physical characteristics.,41,Khám sức khoẻ
+I:Execute financial transactions.,50,Thực hiện giao dịch tài chính
+I:Fabricate medical devices.,15,Chế tạo dụng cụ y tế
+I:Fit assistive devices to patients or clients.,3,Lắp dụng cụ hỗ trợ cho người bệnh
+I:Follow standard healthcare safety procedures to protect patient and staff members.,13,An toàn trong cơ sở y tế
+I:Gather data about operational or development activities.,20,Thu thập số liệu vận hành
+I:Gather information for news stories.,2,Săn tin
+I:Gather information from physical or electronic sources.,40,Tra cứu và thu thập thông tin
+I:Groom or style hair.,2,Cắt và tạo kiểu tóc
+I:Hunt animals.,1,Săn bắt
+I:Identify business or organizational opportunities.,31,Tìm cơ hội kinh doanh
+I:Implement procedures or processes.,43,Triển khai quy trình
+I:Implement security measures for computer or information systems.,13,Bảo mật hệ thống máy tính
+I:Inspect characteristics or conditions of materials or products.,31,Kiểm tra vật liệu và sản phẩm
+"I:Inspect commercial, industrial, or production systems or equipment.",126,Kiểm tra thiết bị công nghiệp
+I:Inspect completed work or finished products.,87,Nghiệm thu sản phẩm
+I:Inspect facilities or equipment.,79,Kiểm tra cơ sở và thiết bị
+I:Inspect vehicles.,30,Kiểm tra phương tiện
+I:Install commercial or production equipment.,33,Lắp đặt thiết bị sản xuất
+I:Install energy or heating equipment.,4,Lắp đặt thiết bị năng lượng và nhiệt
+I:Install plumbing or piping equipment or systems.,10,Lắp đặt đường ống
+I:Intervene in crisis situations or emergencies.,22,Can thiệp khủng hoảng
+I:Interview people to obtain information.,52,Phỏng vấn lấy thông tin
+I:Investigate criminal or legal matters.,30,Điều tra vụ việc pháp lý
+I:Investigate incidents or accidents.,11,Điều tra sự cố và tai nạn
+"I:Investigate individuals' background, behavior, or activities.",5,Xác minh lý lịch
+I:Investigate the environmental impact of industrial or development activities.,30,Đánh giá tác động môi trường
+I:Issue documentation.,10,Cấp giấy tờ
+"I:Join parts using soldering, welding, or brazing techniques.",33,Hàn
+"I:Load products, materials, or equipment for transportation or further processing.",62,Bốc xếp hàng hoá
+"I:Maintain electronic, computer, or other technical equipment.",41,Bảo trì thiết bị điện tử và máy tính
+I:Maintain facilities or equipment.,26,Bảo trì cơ sở và thiết bị
+I:Maintain health or medical records.,88,Quản lý hồ sơ bệnh án
+I:Maintain medical equipment or instruments.,35,Bảo trì dụng cụ y tế
+I:Maintain operational records.,344,Ghi sổ vận hành
+I:Maintain safety or security.,35,Giữ an ninh và an toàn
+I:Maintain sales or financial records.,28,Ghi chép sổ sách bán hàng và tài chính
+I:Maintain tools or equipment.,128,Bảo quản dụng cụ
+I:Maintain vehicles in working condition.,30,Bảo dưỡng phương tiện
+I:Make legal decisions.,3,Ra phán quyết pháp lý
+I:Mark materials or objects for identification.,36,Đánh dấu và ghi nhãn
+"I:Measure physical characteristics of materials, products, or equipment.",124,Đo đạc kích thước và thông số
+I:Monitor environmental conditions.,21,Quan trắc môi trường
+I:Monitor equipment operation.,90,Giám sát máy móc
+"I:Monitor external affairs, trends, or events.",24,Theo dõi xu hướng và thời sự
+I:Monitor financial data or activities.,21,Theo dõi số liệu tài chính
+I:Monitor health conditions of humans or animals.,71,Theo dõi sức khoẻ
+I:Monitor individual behavior or performance.,43,Theo dõi hành vi và tiến bộ
+I:Monitor operation of computer or information technologies.,11,Giám sát hệ thống máy tính
+I:Monitor operations to ensure adequate performance.,86,Giám sát vận hành
+I:Monitor operations to ensure compliance with regulations or standards.,64,Giám sát tuân thủ quy định
+"I:Monitor safety or security of work areas, facilities, or properties.",47,Giám sát an ninh khu vực
+"I:Move materials, equipment, or supplies.",68,Vận chuyển vật tư
+I:Obtain formal documentation or authorization.,9,Xin giấy phép và chứng từ
+I:Obtain information about goods or services.,5,Tìm hiểu hàng hoá và dịch vụ
+I:Operate agricultural or forestry equipment.,10,Vận hành máy nông lâm nghiệp
+I:Operate audiovisual or related equipment.,18,Vận hành thiết bị âm thanh và hình ảnh
+I:Operate communications equipment or systems.,17,Vận hành thiết bị liên lạc
+I:Operate computer systems or computerized equipment.,19,Vận hành máy tính và thiết bị số
+I:Operate construction or excavation equipment.,19,Vận hành máy xây dựng
+I:Operate cutting or grinding equipment.,34,Vận hành máy cắt và mài
+I:Operate energy production or distribution equipment.,10,Vận hành thiết bị điện và năng lượng
+I:Operate industrial processing or production equipment.,49,Vận hành dây chuyền sản xuất
+I:Operate lifting or moving equipment.,48,Vận hành thiết bị nâng hạ
+I:Operate medical equipment.,42,Vận hành thiết bị y tế
+I:Operate office equipment.,9,Sử dụng thiết bị văn phòng
+I:Operate pumping systems or equipment.,26,Vận hành hệ thống bơm
+I:Operate transportation equipment or vehicles.,59,Điều khiển phương tiện
+I:Package objects.,20,Đóng gói
+I:Perform administrative or clerical activities.,87,Làm thủ tục hành chính
+I:Perform agricultural activities.,7,Canh tác nông nghiệp
+"I:Perform athletic activities for fitness, competition, or artistic purposes.",7,Tập luyện và thi đấu thể thao
+I:Perform general construction or extraction activities.,39,Thi công xây dựng
+I:Position materials or components for assembly.,65,Định vị chi tiết để lắp ráp
+I:Position tools or equipment.,33,Định vị dụng cụ và thiết bị
+I:Position workpieces or materials on equipment.,40,Gá đặt phôi lên máy
+"I:Prepare documentation for contracts, applications, or permits.",47,Soạn hồ sơ hợp đồng và giấy phép
+"I:Prepare financial documents, reports, or budgets.",41,Lập báo cáo tài chính và ngân sách
+I:Prepare foods or beverages.,20,Chế biến món ăn và đồ uống
+I:Prepare health or medical documents.,34,Soạn giấy tờ y tế
+I:Prepare industrial materials for processing or use.,18,Chuẩn bị nguyên liệu sản xuất
+I:Prepare informational or instructional materials.,85,Soạn tài liệu hướng dẫn
+I:Prepare legal or regulatory documents.,34,Soạn văn bản pháp lý
+I:Prepare medical equipment or work areas for use.,27,Chuẩn bị dụng cụ và phòng y tế
+I:Prepare mixtures or solutions.,45,Pha chế dung dịch
+I:Prepare proposals or grant applications.,60,Viết đề xuất và hồ sơ tài trợ
+I:Prepare reports of operational or procedural activities.,83,Viết báo cáo công việc
+I:Prepare specimens or materials for testing.,16,Chuẩn bị mẫu thử
+I:Present research or technical information.,109,Trình bày kết quả nghiên cứu
+I:Process digital or online data.,53,Xử lý dữ liệu số
+I:Process shipments or mail.,16,Xử lý hàng gửi và thư từ
+I:Program computer systems or production equipment.,27,Lập trình máy tính và máy móc
+I:Protect people or property from threats such as fires or flooding.,5,Phòng chống cháy nổ và thiên tai
+I:Provide food or beverage services.,13,Phục vụ ăn uống
+"I:Provide general assistance to others, such as customers, patrons, or motorists.",39,Hỗ trợ khách
+I:Read documents or materials to inform work processes.,149,Đọc bản vẽ và tài liệu kỹ thuật
+I:Reconcile financial data.,10,Đối chiếu số liệu tài chính
+I:Record information about environmental conditions.,2,Ghi chép số liệu môi trường
+I:Record information about legal matters.,26,Ghi chép hồ sơ pháp lý
+I:Remove workpieces from production equipment.,20,Tháo sản phẩm khỏi máy
+I:Repair electrical or electronic equipment.,18,Sửa thiết bị điện và điện tử
+I:Repair tools or equipment.,68,Sửa dụng cụ và thiết bị
+I:Repair vehicle components.,14,Sửa chữa phương tiện
+I:Research agricultural processes or practices.,7,Nghiên cứu nông nghiệp
+I:Research biological or ecological phenomena.,20,Nghiên cứu sinh học và sinh thái
+I:Research historical or social issues.,13,Nghiên cứu lịch sử và xã hội
+I:Research issues related to earth sciences.,7,Nghiên cứu khoa học trái đất
+"I:Research laws, precedents, or other legal data.",6,Nghiên cứu luật và án lệ
+"I:Research organizational behavior, processes, or performance.",10,Nghiên cứu tổ chức
+I:Research technology designs or applications.,38,Nghiên cứu công nghệ
+I:Resolve computer problems.,16,Xử lý sự cố máy tính
+I:Select materials or equipment for operations or projects.,122,Chọn vật tư và thiết bị
+"I:Set up classrooms, facilities, educational materials, or equipment.",19,Chuẩn bị lớp học và đồ dùng dạy học
+"I:Set up computer systems, networks, or other information systems.",15,Cài đặt hệ thống máy tính và mạng
+I:Set up equipment.,33,Lắp đặt và cài đặt thiết bị
+I:Set up protective structures or coverings near work areas.,8,Dựng che chắn an toàn
+I:Sew garments or materials.,8,May
+I:Shape materials to create products.,21,Tạo hình vật liệu
+I:Smooth surfaces of objects or equipment.,39,Đánh bóng bề mặt
+I:Sort materials or products.,28,Phân loại hàng hoá
+I:Stock supplies or products.,31,Xếp kho và bày hàng
+I:Study details of artistic productions.,16,Phân tích tác phẩm nghệ thuật
+I:Take physical measurements of patients or clients.,3,Đo chỉ số cơ thể
+I:Teach academic or vocational subjects.,83,Giảng dạy
+I:Teach life skills.,24,Dạy kỹ năng sống
+I:Teach safety procedures or standards to others.,11,Huấn luyện an toàn
+I:Test characteristics of materials or products.,34,Thử nghiệm vật liệu và sản phẩm
+I:Test performance of computer or information systems.,22,Kiểm thử hệ thống máy tính
+I:Test performance of equipment or systems.,91,Chạy thử thiết bị
+I:Test sites or materials for environmental hazards.,5,Kiểm tra nguy cơ môi trường
+I:Train others on health or medical topics.,78,Hướng dẫn kiến thức y tế
+I:Train others on operational or work procedures.,147,Đào tạo quy trình làm việc
+I:Train others to use equipment or products.,57,Hướng dẫn sử dụng thiết bị
+"I:Treat injuries, illnesses, or diseases.",39,Điều trị bệnh
+I:Verify personal information.,15,Xác minh thông tin cá nhân
+I:Write material for artistic or commercial purposes.,37,Viết nội dung sáng tạo và quảng cáo
+K:Administrative,280,Nghiệp vụ văn phòng
+K:Biology,135,Sinh học
+K:Building and Construction,114,Xây dựng
+K:Chemistry,125,Hoá học
+K:Communications and Media,131,Truyền thông và báo chí
+K:Computers and Electronics,350,Máy tính và điện tử
+K:Design,187,Thiết kế kỹ thuật và đồ hoạ
+K:Economics and Accounting,105,Kinh tế và kế toán
+K:Education and Training,296,Sư phạm
+K:Engineering and Technology,225,Kỹ thuật và công nghệ
+K:Fine Arts,31,Nghệ thuật
+K:Food Production,38,Sản xuất thực phẩm
+K:Foreign Language,9,Ngoại ngữ
+K:Geography,72,Địa lý
+K:History and Archeology,24,Lịch sử và khảo cổ
+K:Law and Government,202,Pháp luật và hành chính nhà nước
+K:Mathematics,346,Toán
+K:Mechanical,280,Cơ khí
+K:Medicine and Dentistry,112,Y khoa
+K:Philosophy and Theology,24,Triết học và tôn giáo
+K:Physics,115,Vật lý
+K:Production and Processing,251,Sản xuất và chế biến
+K:Psychology,190,Tâm lý học
+K:Public Safety and Security,273,An ninh và an toàn công cộng
+K:Sales and Marketing,121,Bán hàng và marketing
+K:Sociology and Anthropology,94,Xã hội học và nhân học
+K:Telecommunications,70,Viễn thông
+K:Therapy and Counseling,95,Trị liệu và tham vấn
+K:Transportation,110,Vận tải
+S:Equipment Maintenance,101,Bảo dưỡng thiết bị
+S:Operation and Control,213,Điều khiển máy móc
+S:Operations Analysis,90,Phân tích yêu cầu vận hành
+S:Operations Monitoring,282,Theo dõi máy móc khi chạy
+S:Programming,31,Lập trình
+S:Quality Control Analysis,227,Kiểm tra chất lượng
+S:Repairing,95,Sửa chữa máy móc
+S:Systems Analysis,309,Phân tích hệ thống
+S:Systems Evaluation,288,Đánh giá hiệu quả hệ thống
+S:Troubleshooting,136,Tìm và xử lý lỗi kỹ thuật
+T:AI,0,
+T:API,0,
+T:Bảo mật,0,
+T:Cloud,0,
+T:Cơ sở dữ liệu,0,
+T:DevOps,0,
+T:ERP,0,
+T:Game,0,
+T:Git,0,
+T:Kiến trúc hệ thống,0,
+T:Kiểm thử,0,
+T:Lập trình,0,
+T:Mobile,0,
+T:Máy chủ,0,
+T:Mạng,0,
+T:Nhúng / IoT,0,
+T:Phân tích dữ liệu,0,
+T:Phân tích nghiệp vụ,0,
+T:Quản lý dự án,0,
+T:Quản lý sản phẩm,0,
+T:Thiết kế giao diện,0,
+T:Vận hành & sự cố,0,
