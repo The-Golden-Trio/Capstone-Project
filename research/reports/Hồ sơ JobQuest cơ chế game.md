@@ -4,9 +4,9 @@ Hồ sơ JobQuest có **ba phần chỉ số**, và phần đáng tin lớn lên
 
 ## Cách đọc file này
 
-File chia theo **sáu khối A–F**. Mỗi khối đi theo cùng một thứ tự: **Đề xuất** → **Chi tiết** → **Mượn từ game** → **Chỗ căng** → **Căn cứ** → **Cần chốt hoặc còn mở** (khối nào không có phần nào thì bỏ phần đó). Việc còn mở đánh số theo khối (B1, C1, D1, E1, F1…); khối A và phần chung dùng số thứ tự chung. Các mẫu mượn từ game giữ số 1–9 xuyên suốt.
+File chia theo **bảy khối A–G**. Mỗi khối đi theo cùng một thứ tự: **Đề xuất** → **Chi tiết** → **Mượn từ game** → **Chỗ căng** → **Căn cứ** → **Cần chốt hoặc còn mở** (khối nào không có phần nào thì bỏ phần đó). Việc còn mở đánh số theo khối (B1, C1, D1, E1, F1…); khối A và phần chung dùng số thứ tự chung. Các mẫu mượn từ game giữ số 1–9 xuyên suốt.
 
-**Trạng thái (21/10):** cả sáu khối đã chốt khi đi lại từng ý (14–21/10).
+**Trạng thái (22/10):** cả bảy khối đã chốt khi đi lại từng ý (14–22/10); bản đồ keyword cho 221 nghề đã có bản nháp (khối G).
 
 ### Cách đọc nguồn
 
@@ -21,9 +21,10 @@ Câu đó là: *"Bạn kể vài điều về mình, game phác một bản nhá
 | **A. Thông tin cơ bản** | Biệt danh, ngày sinh đã có, giai đoạn đang ở; hồ sơ riêng tư, không trang công khai |
 | **B. Hồ sơ và bộ chỉ số** | Ba phần: RIASEC 6 trục (thích gì), soft skill 7 nhóm (làm được tới đâu), kỹ năng cứng dạng keyword (nghề cần gì); không nhãn loại |
 | **C. Get to know me** | 18 thẻ ba mức cho vạch RIASEC "tự kể"; năm câu mục tiêu chạm nhanh thành thẻ "Mục tiêu của bạn"; không gọi AI |
-| **D. Trang hồ sơ** | Đầu trang và bốn tab: Tổng quan (đang chơi, soft skill 7 góc 5 bậc, mục tiêu, RIASEC, kỹ năng nghề), Thống kê, Thành tựu, Nhật ký |
+| **D. Trang hồ sơ** | Đầu trang và bốn tab: Tổng quan (đang chơi, soft skill 7 góc bậc 0–5, mục tiêu, RIASEC, kỹ năng nghề), Thống kê, Thành tựu, Nhật ký |
 | **E. Gợi ý nghề** | Độ giống nghề–nghề (đã kiểm với O\*NET); "bạn có thể thích" từ RIASEC và "bạn làm tốt" từ soft skill, mỗi thứ có mức A–C; 0–3 nghề cho mỗi ô: cùng ngành bạn có thể thích, khác ngành bạn làm tốt, khác ngành bạn có thể thích; không hiện số |
 | **F. Hoàng đạo** | Luật của game: cung Mặt Trời theo ngày sinh, luôn bật, +12% điểm cộng cho 2 nhóm soft skill; mô tả theo chiêm tinh phương Tây; không ngũ hành, không con giáp |
+| **G. Điểm và mở khoá** | Soft skill 7 nhóm × 10.000, bậc 0–5; quỹ mỗi cấp theo band × độ khó nghề; vào cấp cần bậc ở mọi nhóm (mức 60% quỹ các cấp trước); nhảy nghề cần bậc và độ phủ keyword 50%; thang cấp cho cả 221 nghề |
 
 ### Luồng Get to know me: 18 thẻ và năm câu mục tiêu, khoảng ba phút
 
@@ -354,17 +355,17 @@ Hồ sơ là **trang riêng, có đầu trang và bốn tab**. Không có trang 
 
 Mỗi nghề đang chơi một dòng: tên nghề, nhóm ngành, cấp hiện tại, thanh chia ô số scenario đã xong trong cấp (ví dụ 3/5), điều kiện mở cấp sau với dấu ✓ đã đạt và ○ chưa đạt (ví dụ *"Mở cấp 3 cần: ✓ Tư duy bậc 4 · ✓ Chuyên nghiệp bậc 3 · ○ Viết test: Thành thạo"*), nút "Chơi tiếp". Sắp theo lần chơi gần nhất.
 
-### Chi tiết: soft skill, biểu đồ 7 góc và 5 bậc
+### Chi tiết: soft skill, biểu đồ 7 góc và bậc 0–5
 
-- **Điểm mỗi nhóm tối đa 10.000.** Điểm cộng trừ theo luật ở khối B.
-- **5 bậc, ngưỡng tăng dần**, tạm đặt 0 · 1.000 · 2.500 · 5.000 · 8.000. **Bậc không tụt**: điểm trong một bậc vẫn lên xuống, nhưng đã lên bậc thì giữ bậc.
-- **Bậc là điều kiện mở cấp nghề**, ví dụ "Cấp 3 của Quản lý sản phẩm cần Giao tiếp bậc 2". Ngưỡng cụ thể cho từng cấp viết cùng dữ liệu cấp nghề (B4).
-- **Biểu đồ 7 góc, 5 vòng**, mỗi vòng một bậc. Cạnh biểu đồ là danh sách: tên nhóm, bậc và tên bậc, thanh tiến độ tới bậc sau, điểm (ví dụ "3.400 / 10.000 · Bậc 4 ở 5.000").
-- **Mỗi nhóm 5 tên bậc riêng** (35 tên). Bậc 1 không được là lời chê; nó là điểm xuất phát. Ví dụ Giao tiếp & Hợp tác: Mới làm quen · Biết lắng nghe · Người kết nối · Người gắn kết · Linh hồn của nhóm.
+- **Điểm mỗi nhóm tối đa 10.000.** Cách cộng trừ ở khối G.
+- **Bậc 0 đến 5**, ngưỡng 0 · 500 · 1.500 · 3.000 · 6.000 · 10.000; bậc 0 là mới vào. **Bậc không tụt**: điểm trong một bậc vẫn lên xuống, nhưng đã lên bậc thì giữ bậc.
+- **Bậc là điều kiện mở cấp nghề** (khối G).
+- **Biểu đồ 7 góc, 5 vòng**, mỗi vòng một bậc. Cạnh biểu đồ là danh sách: tên nhóm, bậc và tên bậc, thanh tiến độ tới bậc sau, điểm (ví dụ "3.400 / 10.000 · Bậc 4 ở 6.000"). Khi xem một cấp chưa mở, biểu đồ vẽ thêm hình điều kiện của cấp đó chồng lên hình hiện tại, để thấy ngay nhóm nào còn thiếu.
+- **Mỗi nhóm 5 tên bậc riêng cho bậc 1–5** (35 tên). Bậc 1 không được là lời chê. Ví dụ Giao tiếp & Hợp tác: Mới làm quen · Biết lắng nghe · Người kết nối · Người gắn kết · Linh hồn của nhóm.
 - **Lên bậc là một khoảnh khắc riêng** ở màn kết quả scenario: *"Giao tiếp & Hợp tác lên bậc 3: Người kết nối"*.
 - **Điểm mạnh, cần luyện:** hai dòng dưới biểu đồ, từ biến động điểm, chỉ khi nhóm đã được chấm ở ít nhất 3 scenario (B5). Ví dụ *"Thích ứng và học hỏi bị trừ ở #4 và #9, đều là lúc yêu cầu đổi giữa chừng."*
 - **Biểu đồ theo từng scenario:** chọn một nhóm thì đường điểm tích luỹ của nhóm đó nổi lên, các nhóm khác mờ; mỗi scenario có chấm nhóm đó là một chấm, chấm đỏ khi bị trừ. Rê hoặc chạm vào chấm: tên scenario, nhóm ngành › nghề › cấp, ngày, điểm cộng trừ, phần cộng từ chòm sao, tổng sau màn đó.
-- **Chòm sao buff 10–15% điểm cộng** cho 1–2 nhóm theo cung; nhóm được buff có dấu ★ trên biểu đồ và danh sách. Chi tiết ở khối F.
+- **Chòm sao buff 12% điểm cộng** cho 2 nhóm theo cung; nhóm được buff có dấu ★ trên biểu đồ và danh sách. Chi tiết ở khối F.
 
 ### Chi tiết: mục tiêu, RIASEC, kỹ năng nghề
 
@@ -404,7 +405,7 @@ Mỗi nghề đang chơi một dòng: tên nghề, nhóm ngành, cấp hiện t�
 
 | # | Việc | Đề xuất | Ai làm |
 |---|---|---|---|
-| D1 | Ngưỡng 5 bậc | Tạm 0 · 1.000 · 2.500 · 5.000 · 8.000, tối đa 10.000 | Chỉnh sau khi thử |
+| D1 | Ngưỡng bậc 0–5 | Tạm 0 · 500 · 1.500 · 3.000 · 6.000 · 10.000 | Chỉnh sau khi thử |
 | D2 | 35 tên bậc | Bậc 1 không chê; tên tả việc làm, không tả con người | Nhóm |
 | D3 | Danh sách khoảng 100 thành tựu | Năm loại: khám phá, thành thạo, tiến bộ, tự soi, kiên trì | Sau khi xong game design |
 | D4 | Có tầng "ngành" giữa nhóm ngành và nghề không | Bản thử đang dùng nhóm ngành › nghề › cấp | Nhóm |
@@ -665,7 +666,108 @@ Ví dụ: người chơi cung Song Tử được +400 điểm Thích ứng trong
 | F2 | Duyệt nội dung 12 cung | [Hoàng đạo 12 cung.md](Hoàng%20đạo%2012%20cung.md) | Nhóm |
 | F3 | Con giáp của năm hiện tại làm chủ đề Tết chung cho mọi người | Tuỳ chọn, làm sau | Nhóm |
 
-## Chung cho cả sáu khối
+## Khối G · Điểm và mở khoá
+
+> Đã chốt khi đi lại từng ý ngày 21–22/10. Thang cấp và quỹ điểm của cả 221 nghề sinh bởi `occupation-data/scripts/build_point_budgets.py`, kết quả ở [point_budgets.md](../../occupation-data/generated/point_budgets.md); thang cấp 199 nghề ngoài IT và nguồn ở `research/research_notes/Thang cấp nghề/`.
+
+### Đề xuất
+
+Điểm có ba việc: **mở đường đi sâu hơn** (cấp sau, nghề khác), **soi lại bản thân** (biểu đồ 7 góc, gợi ý "bạn làm tốt" ở khối E), **thấy mình tiến bộ** (lên bậc, lên mức keyword). Không dùng để so với người khác, không mua bán, không chặn việc thử: cấp đầu mọi nghề luôn mở (BR-01).
+
+| Loại | Đơn vị | Lấy từ | Dùng để |
+|---|---|---|---|
+| **Soft skill** | Điểm, 7 nhóm × tối đa 10.000, bậc 0–5 | Từng màn chơi | Điều kiện mở cấp và nhảy nghề; dùng chung cho mọi nghề, không quy đổi |
+| **Kỹ năng nghề (keyword)** | Mức Làm quen · Thành thạo · Chuyên sâu | Xong một cấp (đầu ra của cấp) | Điều kiện vào cấp sau trong nghề; độ phủ khi nhảy nghề |
+| **Điểm màn** | 0–100 | Từng màn | Màn kết quả, nhật ký |
+
+Nguyên tắc: điểm chỉ đến từ việc chơi (ngoại lệ duy nhất là buff chòm sao, nhân trên điểm đã kiếm); mỗi màn có trần, chơi lại không vượt trần (D-37); người chơi bình thường đi hết được mọi cấp của nghề mình chơi.
+
+### Chi tiết: thang cấp của 221 nghề
+
+- 22 nghề IT giữ thang có sẵn (L1–L9, 123 cấp).
+- 199 nghề ngoài IT có thang mới: 4–7 cấp mỗi nghề, 1.195 cấp, dựng từ hệ thống Việt Nam: hạng chức danh hoặc bậc nghề nghiệp viên chức (y tế, giáo dục, văn hoá, khoa học…), bậc kỹ năng nghề, chứng chỉ hành nghề, cấp bậc công an và toà án, thang chức danh phổ biến của doanh nghiệp. Mỗi cấp ghi tên chức danh, số năm kinh nghiệm, việc chính, căn cứ và mức chứng cứ (A văn bản chính thức 305 cấp, B thông lệ tuyển dụng 837, C suy luận 53).
+- **Band đánh số liền nhau trong mỗi nghề**; band thật dùng để so với nghề khác giữ ở `band_equivalent`. Ví dụ Luật sư partner là L6 trong nghề, ghi "≈ L7 ở nghề khác". Quỹ điểm tính theo band tương đương.
+
+### Chi tiết: độ khó nghề
+
+**k** = 1 + chuẩn hoá (phân vị 5–95) của mức trung bình O\*NET đòi ở 35 kỹ năng, trọng số theo độ quan trọng; k từ 1 đến 2. Trên 910 nghề, chỉ số này tương quan 0,83 với Job Zone nhưng mịn hơn ([ghi chú](../research_notes/Thang%20cấp%20nghề/thang_cham_va_do_kho.md); Le, Oh và cộng sự 2011 dùng Job Zone làm độ phức tạp của việc). Ví dụ: Thu ngân 1,06 · Đầu bếp 1,14 · Back-end 1,70 · Điều dưỡng 1,79 · Luật sư 2,00. Hạng: dễ (k < 1,4) 64 nghề · vừa (< 1,75) 79 · khó (< 1,9) 48 · rất khó 30.
+
+### Chi tiết: quỹ điểm
+
+1. **Quỹ của một cấp** = quỹ gốc của band × 0,746 × k^1,4. Quỹ gốc: L1 300 · L2 500 · L3 700 · L4 900 · L5 1.100 · L6 1.400 · L7 1.800 · L8 2.200 · L9 2.700. Nghề L1–L7 có k = 1 được 5.000 ở nhóm chính.
+2. **Chia cho 7 nhóm** theo trọng số nghề (mức nghề cần nhóm đó theo O\*NET, 2^z rồi chia cho nhóm lớn nhất). Mọi màn có thể cho nhiều nhóm.
+3. **Nhóm trọng tâm của cấp** nhân 1,6, rồi chuẩn hoá để tổng quỹ của cấp không đổi: L1–L2 Thích ứng và Chuyên nghiệp · L3–L5 hai nhóm chính của nghề · L6–L7 Lãnh đạo và nhóm chính · L8–L9 Lãnh đạo và Giao tiếp. Mỗi cấp luyện một tổ hợp khác nhau.
+4. **Chia quỹ của cấp cho các màn chính** theo khối lượng việc của từng nhóm trong từng màn; tổng phần chia của mỗi nhóm là 100%. Chơi hoàn hảo hết màn chính của một cấp là chạm đúng trần của cấp.
+5. Người soạn seed được dời tối đa 30% quỹ của cấp giữa các nhóm theo việc thật của cấp, tổng giữ nguyên.
+
+Nghề khó có quỹ lớn hơn hẳn (k^1,4), nên cấp cuối của nghề khó đạt được ngay trong nghề đó. Ví dụ Back-end (Tư duy): L1 400 · L2 660 · L3 1.400 · L4 1.800 · L5 2.200 · L6 2.970 · L7 3.820.
+
+### Chi tiết: một màn chấm ra bao nhiêu
+
+**Mỗi mục con, mỗi câu trả lời:** chất lượng **0 / 1 / 2** (chưa đạt · đạt · làm tốt), **cờ phản tác dụng** ghi riêng (đổ lỗi, xúc phạm, làm lộ thông tin…), hoặc **không xét** (câu không cho cơ hội thể hiện mục đó, bỏ khỏi trung bình).
+
+- Thang có điểm âm (−1/0/+1) dùng trong bài kiểm tra tình huống khi người làm *chọn* phương án; với câu tự viết, gần nhất là khoá chấm PISA 2/1/0 cộng mã không trả lời ([ghi chú](../research_notes/Thang%20cấp%20nghề/thang_cham_va_do_kho.md)). Cờ tách riêng vì nếu để trong trung bình thì một câu tốt xoá mất một hành vi gây hại.
+- Ba mức là đủ cho một hành vi trong một tình huống; muốn ổn định hơn thì chấm mỗi mục ở nhiều câu, nhiều màn. Người và LLM judge đồng ý tốt nhất ở thang 0–5 (ICC 0,853) so với 0–10 (0,805) và 0–100 (0,840) (Li và cộng sự 2026, preprint, toàn văn).
+- **Judge chấm bằng câu hỏi có/không** gắn với hành vi cụ thể, code quy ra mức; checklist có/không làm các judge đồng ý với nhau hơn (Lee và cộng sự, CheckEval, EMNLP 2025, toàn văn tr. 1–2). Ví dụ *Kiểm soát cảm xúc*: A có ghi nhận cảm xúc người kia không · B có đưa hướng xử lý không · C có thêm bước chủ động không · cờ: có đổ lỗi, gay gắt không. Thiếu A hoặc B là 0; có A và B là 1; đủ A, B, C là 2.
+
+**Gộp trong một màn, cho mỗi nhóm:**
+
+- Phần đạt = trung bình mức ÷ 2 (phần trăm của điểm tối đa).
+- **Điểm nhóm = trần của nhóm trong màn × (phần đạt − hệ số phạt × số cờ)**, có thể âm. Hệ số phạt tăng theo band: L1–L2 0,25 · L3–L5 0,35 · L6 trở lên 0,5.
+- **Buff chòm sao** nhân 1,12 sau cùng, chỉ phần dương. Làm tròn tới 10.
+
+Ví dụ màn L3, trần Cảm xúc 240: ba câu chấm 1, 0 (kèm cờ cãi lại đồng nghiệp), 2 → phần đạt 50%, trừ 35% → 15% × 240 = 36, làm tròn 40.
+
+**Điểm màn 0–100** = phần đạt trung bình của mọi nhóm trong màn.
+
+### Chi tiết: mở cấp và nhảy nghề
+
+- **Bậc:** 0 · 500 · 1.500 · 3.000 · 6.000 · 10.000 (bậc 0 đến bậc 5).
+- **Điều kiện soft skill vào một cấp:** mỗi nhóm cần bậc mà người chơi đạt **60%** quỹ của nhóm đó ở các cấp trước trong nghề sẽ có. Nhóm cần bậc 0 thì không ghi. Hai cấp đầu thường chỉ cần keyword; từ cấp 3 các nhóm bắt đầu cần bậc 1, rồi tăng đều. Ví dụ Back-end: L3 Tư duy 1 · Thích ứng 1 · Chuyên nghiệp 1 → L5 Tư duy 2 · Thích ứng 2 · năm nhóm khác bậc 1 → L7 Tư duy 3 · Thích ứng 3 · Giao tiếp 2 · Tự quản lý 2 · Chuyên nghiệp 2 · Cảm xúc 1 · Lãnh đạo 1.
+- **Điều kiện keyword trong cùng nghề:** đã xong cấp trước (đầu ra của cấp trước là đầu vào của cấp sau).
+- **Nhảy sang nghề khác:** vào thẳng cấp cao nhất mà người chơi đủ cả hai: (1) bậc soft skill theo điều kiện của cấp đó, điểm dùng chung không quy đổi; (2) **độ phủ keyword ≥ 50%** = tổng của min(mức đang có, mức cần) / tổng mức cần (Làm quen 1, Thành thạo 2, Chuyên sâu 3). Nghề khó tự đòi bậc cao hơn vì quỹ lớn hơn, nên kinh nghiệm ở nghề dễ chỉ đưa vào được cấp thấp của nghề khó.
+
+**Kiểm trên 221 nghề, chơi riêng một nghề:** chơi 60% đi hết cả 221 nghề; chơi 50% bị chặn ở gần như mọi nghề trừ vài nghề dễ; chơi 75% xong nghề thì nhóm chính lên bậc 2–4 ở nghề dễ, bậc 3–5 ở nghề vừa, phần lớn bậc 5 ở nghề khó và rất khó. Cấp cuối của 30 nghề rất khó cần nhóm chính bậc 3 (4 nghề), bậc 4 (21 nghề) hoặc bậc 5 (5 nghề).
+
+### Chi tiết: bản đồ keyword và quy đổi
+
+Sinh bởi `occupation-data/scripts/build_keyword_map.py`, kết quả ở [keyword_map.md](../../occupation-data/generated/keyword_map.md); nguồn ở `research/research_notes/Bản đồ keyword/`.
+
+- **Kho keyword (297):** 22 keyword IT của nhóm cho 22 nghề IT; nghề ngoài IT lấy từ O\*NET 31.0: 29 mảng kiến thức, 10 kỹ năng kỹ thuật và 236 hoạt động trung gian (IWA). Bỏ những gì trùng soft skill: kỹ năng xã hội, tư duy, tự quản; kiến thức chăm sóc khách hàng, quản trị, nhân sự; hoạt động thuộc nhóm giao tiếp, quan hệ, quản lý người, lập kế hoạch. Phép thử cho mỗi keyword: học được từ một khoá học và kiểm được bằng sản phẩm hay bài thực hành.
+- **Mỗi nghề 6–10 keyword**: nghề "dùng" một keyword khi O\*NET cho nó nổi bật hơn mức thường gặp (RCA > 1); hoạt động xếp theo số nhiệm vụ cốt lõi của nghề, bỏ hoạt động chỉ xuất hiện ở một nhiệm vụ; xen kẽ kiến thức với việc làm. 22 keyword IT nối sang phần tử O\*NET tương đương (ví dụ Kiểm thử ↔ kiểm thử hệ thống máy tính, kiểm tra chất lượng) để quy đổi với ngành khác.
+- **Mức cao nhất của keyword:** kiến thức và kỹ năng theo mức O\*NET đòi, chia ba theo phân vị của chính phần tử đó; hoạt động cốt lõi lên Chuyên sâu.
+- **Đầu vào, đầu ra từng cấp** chia đều các lần lên mức cho các cấp của thang; đầu vào cấp sau là đầu ra cộng dồn của cấp trước. Đây là bản nháp tự động cho B4, chờ chuyên gia nghề duyệt.
+- **Quy đổi một chiều** s(A→B) = trong các nghề O\*NET dùng A, bao nhiêu phần cũng dùng B; chỉ giữ cặp có ý nghĩa thống kê (z ≥ 3). Tín chỉ: cùng keyword hoặc tương đương 1; s ≥ 0,75 là 0,5; 0,5 ≤ s < 0,75 là 0,25 (Dawson, Williams & Rizoiu 2021; Alabdulkareem và cộng sự 2018; Hosseinioun và cộng sự 2025; mức tín chỉ là lựa chọn thiết kế). Mức quy đổi lấy lớn nhất, không cộng dồn.
+- **Kiểm định trên 878 nghề O\*NET** (mỗi nghề ở mức cao nhất, so với danh sách nghề liên quan của O\*NET): độ phủ phân biệt nghề liên quan với nghề khác ở AUC 0,918 (chỉ keyword trùng 0,908); 42,0% cặp nghề liên quan đạt ngưỡng 50%, so với 2,1% cặp nghề khác.
+- **Ví dụ nhảy theo keyword** (người chơi đã xong nghề nguồn): Thu ngân → Nhân viên bán hàng tới L4/L6; Điều dưỡng → Hộ lý tới cấp cuối; Thợ điện công trình → Công nhân đường dây tới L5/L6; Back-end → Điều dưỡng chỉ cấp đầu.
+
+### Chi tiết: chơi lại, nhiệm vụ phụ, kỹ năng nghề
+
+- **Chơi lại:** mỗi màn giữ kết quả cao nhất; lần sau chỉ cộng phần chênh, không vượt trần (D-37).
+- **Nhiệm vụ phụ:** thiết kế sau; quỹ tối đa 10% quỹ của cấp.
+- **Số màn chính mỗi cấp** = số keyword đầu ra + 1, tối thiểu 3, tối đa 6; mỗi keyword đầu ra được luyện ở ít nhất 2 màn.
+- **Nâng keyword:** xong một cấp thì nhận keyword ở mức ghi trong đầu ra của cấp đó.
+
+### Chỗ căng
+
+| Chỗ căng | Bằng chứng | Cách xử lý |
+|---|---|---|
+| **Chòm sao quyết định với người chơi sát ngưỡng** | Chơi 55%: không buff 35/221 nghề đi hết, buff trúng 2 nhóm chính của nghề 60/221 | Giữ: là lợi thế nhỏ có chủ ý (khối F); người sát ngưỡng bù bằng chơi lại hoặc nhiệm vụ phụ |
+| **Một nghề vừa đã đưa nhóm chính sát bậc 5** | Back-end chơi 75% có Tư duy 9.940 | Đổi lấy việc cấp cuối nghề khó đạt được trong nghề; bậc 5 là dấu của người đi hết nghề khó |
+| **Thang cấp ngoài IT dựa nhiều vào thông lệ tuyển dụng** | 837/1.195 cấp mức B | Chuyên gia nghề duyệt; ưu tiên nghề có scenario trước |
+| **Văn bản pháp lý có thể đã đổi** | Luật Viên chức 2025 thay hạng IV–I bằng bậc nghề nghiệp 1–5 từ 1/7/2026; NĐ 31/2015 về bậc kỹ năng nghề có thể đã bị thay | Đọc NĐ 232/2026 và văn bản thay NĐ 31/2015, sửa tên chức danh |
+
+### Cần chốt hoặc còn mở
+
+| # | Việc | Đề xuất | Ai làm |
+|---|---|---|---|
+| G1 | Duyệt bản đồ keyword và tên tiếng Việt; thêm keyword cho Người mẫu (O\*NET không có dữ liệu); xem lại 22 nghề IT có ít keyword hơn (4–9) nên dễ được nhảy vào hơn | Bản nháp đã dựng (mục trên) | Nhóm, rồi chuyên gia nghề |
+| G2 | Hệ số phạt 0,25 / 0,35 / 0,5; mức vào cấp 60%; độ phủ 50%; k^1,4 | Giữ tạm | Chỉnh khi chơi thử |
+| G3 | Code đọc band liền nhau (`bandsOf`) | Dữ liệu đã đánh số liền; thêm `band_equivalent` vào schema | Nhóm code |
+| G4 | Sửa tên chức danh theo bậc nghề nghiệp viên chức mới | Đọc NĐ 232/2026 | Nhóm |
+| G5 | Mô tả có/không cho từng mục con soft skill (42 mục) | Viết cùng seed | Nhóm, chuyên gia duyệt |
+
+## Chung cho cả bảy khối
 
 ### Những chỗ chưa có bằng chứng
 
@@ -682,3 +784,15 @@ Không nguồn nào trong ghi chú đo trên **người dùng Việt Nam** hay t
 Hướng thiết kế là "người chơi kể, việc chơi sửa". Get to know me chỉ cần chạm và không gọi AI; phần tự soi nằm ở thẻ mục tiêu do chính người chơi viết. Hồ sơ đo ba thứ có tên rõ ràng: thích gì, làm được tới đâu, nghề cần gì. Gợi ý nghề có công thức, mức điểm và một phép kiểm trên dữ liệu thật.
 
 Ba việc rẻ quyết định thiết kế đứng được hay không, và cả ba cho ra số liệu mà chương đánh giá đang thiếu: thử 18 thẻ trên vài chục người; chạy mô phỏng gợi ý với người chơi giả; cho 2–3 giáo viên hướng nghiệp chấm cùng một bộ gợi ý.
+
+## Ý tưởng để thiết kế sau
+
+| Ý tưởng | Đã có gì | Khối liên quan |
+|---|---|---|
+| **Nhiệm vụ phụ** ngoài công việc chính: cà phê với đồng nghiệp, chạy bộ với sếp, ăn trưa ở công ty, đi chơi với công ty | Lặp lại được giữa các nghề và các cấp; chủ yếu cho điểm soft skill; quỹ tạm tối đa 10% quỹ của cấp. Xong hết màn chính là đã chạm trần của cấp | Điểm và mở khoá |
+| **Tiền tệ** chỉ để mua đồ trang trí (khung huy hiệu, màu tàu, hiệu ứng hành tinh) | Không mua được mở cấp hay gợi ý | D |
+| **Con giáp của năm** làm chủ đề Tết chung cho mọi người chơi | Không gắn vào từng người | F |
+| **Khoảng 100 thành tựu** chia 5 loại: khám phá, thành thạo, tiến bộ, tự soi, kiên trì | Danh sách chốt sau khi xong game design | D |
+| **35 tên bậc soft skill** | Bậc 1 không là lời chê | D |
+| **Dời quỹ giữa các nhóm trong một cấp** (tối đa 30%, tổng giữ nguyên) theo việc thật của cấp, ví dụ cấp Lead nhiều việc dẫn dắt hơn | Luật đã có, chưa áp cho cấp nào | Điểm và mở khoá |
+| **Câu hỏi có/không cho từng mục con soft skill** để judge chấm | Thang 0 / 1 / 2 và cờ phản tác dụng đã chốt (khối G) | G |
