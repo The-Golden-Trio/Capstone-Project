@@ -1,6 +1,6 @@
 # 07 · Vấn đề mở, cần chốt
 
-> Game design 21/10: đóng A5 (D-105, D-110); thêm §H. 22/10: điểm và mở khoá (D-114 đến D-119); sửa H2, thêm H9–H12. 23/10: keyword từ ESCO (D-120), viết lại H9; nghề cấp cao (D-121), thêm H13.
+> Game design 21/10: đóng A5 (D-105, D-110); thêm §H. 22/10: điểm và mở khoá (D-114 đến D-119); sửa H2, thêm H9–H12. 23/10: keyword từ ESCO (D-120), viết lại H9; nghề cấp cao (D-121), thêm H13; luật nhảy nghề thêm hồ sơ nền và kênh Sim (D-122); nối nghề sang ESCO linh hoạt hơn (D-123).
 > Đã chuyển sang [02](02-quyet-dinh.md) ngày 23/9: Get-to-know-me tuỳ chọn (D-29), học cả hard lẫn soft skill (D-32).
 > Email cô 1/10: thêm B23 (design constraint, đã xử lý) và B24 (tiến độ 11 mục).
 > Gặp cô 10/10 (ghi 13/10): thêm B25, B26, B27; cập nhật B2, B20, A21.
@@ -131,8 +131,8 @@ Chi tiết từng mục ở [đề xuất game design](../../research/reports/H�
 | H6 | 🟠 | Danh sách nhóm ngành của game; có tầng "ngành" giữa nhóm ngành và nghề không (D4) | Bản thử dùng nhóm ngành › nghề › cấp | Cả nhóm |
 | H7 | ⚪ để sau | Tham số gợi ý nghề: sức nặng của tự kể (2), ngưỡng S, ngưỡng hồ sơ phẳng, ngưỡng Sim ≥ 1,2 và trùng keyword ≥ 30% (E1–E3) | Chỉnh bằng mô phỏng và phép thử với học sinh | Cả nhóm |
 | H8 | ⚪ để sau | Duyệt nội dung 12 cung; mức buff 12% (F1, F2) | [Hoàng đạo 12 cung](../../research/reports/Hoàng%20đạo%2012%20cung.md) | Cả nhóm |
-| H9 | 🟠 | Duyệt bảng nối 221 nghề → ESCO (61 dòng sửa tay; thợ sửa xe máy mượn nghề ESCO của thợ sửa ô tô) và tên tiếng Việt nháp của 1.402 keyword, 280 nhóm kỹ năng; keyword của Bác sĩ, Vận động viên yếu vì ESCO ghi ít kỹ năng; vài cặp nghề gần nhau khó nhảy vì keyword mịn (Thu ngân → Bán hàng phủ 14%, Điều dưỡng → Hộ lý 37%), xem lại ngưỡng và tín chỉ khi chơi thử (H10) | `research/research_notes/Bản đồ keyword/nghe_esco.csv`, `ten_keyword_vi.csv`; bảng ở `occupation-data/generated/keyword_map.md` | Cả nhóm, rồi chuyên gia nghề |
-| H10 | ⚪ để sau | Hệ số phạt 0,25 / 0,35 / 0,5; mức vào cấp 60%; độ phủ 50%; số mũ k^1,4; tín chỉ quy đổi 0,5 / 0,25 | Chỉnh khi chơi thử | Cả nhóm |
+| H9 | 🟠 | **Chờ nhóm và chuyên gia nghề duyệt** (Claude đã tự rà một lượt 23/10: đổi 4 dòng nối, sửa 35 tên dịch sai nghĩa; reviewer đối chiếu kỹ khoảng 450/1.797 tên với mô tả ESCO): bảng nối 221 nghề → ESCO (65 dòng sửa tay, 1 dòng mượn, 3 nghề ghép 2 nghề ESCO), hai danh sách keyword chọn tay (Bác sĩ, Thợ sửa xe máy), tên tiếng Việt của 1.414 keyword và 308 nhóm (giữ cả tên tiếng Anh). Thu ngân → Nhân viên bán hàng vẫn chỉ vào cấp đầu, xem lại ngưỡng 50% và 30% khi chơi thử (H10) | `research/research_notes/Bản đồ keyword/` (nghe_esco.csv, keyword_chon_tay.csv, ten_keyword_vi.csv); bảng ở `occupation-data/generated/keyword_map.md` | Cả nhóm, rồi chuyên gia nghề |
+| H10 | ⚪ để sau | Hệ số phạt 0,25 / 0,35 / 0,5; mức vào cấp 60%; độ phủ 50% và 30% cho nghề rất giống; số mũ k^1,4; tín chỉ quy đổi 0,5 / 0,25 | Chỉnh khi chơi thử | Cả nhóm |
 | H11 | 🟠 | Code đọc band liền nhau (`bandsOf`); thêm `band_equivalent` vào schema; nối thang cấp 199 nghề vào hồ sơ nghề chuẩn (`occupation_profiles.json`) | Dữ liệu đã đánh số liền | Nhóm code |
 | H12 | 🟠 | Sửa tên chức danh theo bậc nghề nghiệp viên chức mới (Luật Viên chức 2025, NĐ 232/2026) và văn bản thay NĐ 31/2015 | Đọc văn bản gốc | Cả nhóm |
 | H13 | 🟠 | Sửa BR-01 trong báo cáo đã nộp (bảng business rule, "The entry level of every occupation is accessible without prerequisite") và `assets/jobquest-requirements-report.md` theo ngoại lệ D-121; duyệt danh sách nghề đi trước | `research/research_notes/Thang cấp nghề/nghe_di_truoc.csv` | Phúc, rồi chuyên gia nghề |

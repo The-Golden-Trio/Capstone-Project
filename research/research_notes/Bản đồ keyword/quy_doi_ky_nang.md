@@ -217,6 +217,20 @@ Công thức mục B giữ nguyên, nhưng ma trận đổi từ nghề O*NET ×
 
 V3 giờ độc lập với dữ liệu dựng bảng: bảng quy đổi học từ ESCO, còn chuẩn là Related Occupations của O*NET. Trên 221 nghề (836 cặp có hướng liên quan): AUC 0,878 có quy đổi, 0,868 chỉ cùng nhóm; cặp liên quan đạt 50% là 36,6%, cặp khác 1,5%. Phép kiểm cùng nhóm ISCO-08 3 số (AUC 0,909) chỉ để soát sơ bộ, vì cách chọn keyword đã dùng nhóm ISCO.
 
+### G. Cập nhật 23/10: hồ sơ nền và kênh Sim (D-122)
+
+Keyword mịn làm vài cặp nghề gần nhau khó nhảy (Điều dưỡng → Hộ lý phủ 34%). Đã so bốn cách trên 221 nghề, tỉ lệ cặp được vào cấp cuối:
+
+| Cách | Cùng ISCO 3 số | Khác nhóm | Nhảy khác ngành vào sâu hơn cấp đầu |
+|---|---|---|---|
+| Chỉ keyword | 51,2% | 1,3% | 3–8% |
+| Tín chỉ theo cây ESCO (nhóm cùng nhánh cha 0,25) | AUC O*NET 0,887, đạt 50% 40,0% / 1,7% | | 5–12% |
+| Hồ sơ nền (kỹ năng bắt buộc ESCO của nghề đã xong, mức Làm quen) | 54,9% | 1,6% | 5–11% |
+| Kênh Sim (Sim ≥ 1,2 thì ngưỡng 30%) | 66,5% | 2,3% | 4–9% |
+| Hồ sơ nền + Sim (chọn) | 70,1% | 2,7% | 6–12% |
+
+Sim là độ giống nghề của khối E (RIASEC 2, kiến thức 2, kỹ năng 1, phong cách làm việc 1), nên không kiểm bằng Related Occupations của O*NET được (vòng tròn); phép ISCO độc lập với Sim. Thu ngân → Nhân viên bán hàng vẫn không qua (phủ 15%) vì ESCO mô tả hai nghề khác nhau thật.
+
 ### E. Câu nên viết trong báo cáo
 
 "Hệ số quy đổi keyword dựa trên xác suất có điều kiện đồng xuất hiện trên ma trận nghề × kỹ năng O*NET (Alabdulkareem et al. 2018; Dawson et al. 2021), lấy chiều theo Hosseinioun et al. (2025), rời rạc hoá thành bốn bậc và hiệu chỉnh ngưỡng bằng chấm chuyên gia (quy trình theo O*NET Related Occupations, Dahlke et al. 2022). Các ngưỡng là lựa chọn thiết kế đã được kiểm chứng, không phải chuẩn quốc tế."

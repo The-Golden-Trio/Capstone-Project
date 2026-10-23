@@ -22,13 +22,13 @@ http://data.europa.eu/esco/skill/032867c3-3c53-42ad-aabe-030eeb6292ab,keyword,me
 http://data.europa.eu/esco/skill/0332f526-6dc0-4f09-8a7c-2b9473c50736,keyword,ensure infrastructure accessibility,11,Bảo đảm hạ tầng tiếp cận được cho mọi người
 http://data.europa.eu/esco/skill/03598f35-15f1-41fa-bd8a-313e74523307,keyword,use jewellery equipment,11,Dùng dụng cụ kim hoàn
 http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2,keyword,manage claim files,3,Quản lý hồ sơ bồi thường
-http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339,keyword,information structure,13,Cấu trúc thông tin
+http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339,keyword,information structure,13,Dạng cấu trúc của dữ liệu
 http://data.europa.eu/esco/skill/047ceb23-1eb3-4889-a07f-84a1e4b85bff,keyword,monitor flour unloading equipment,4,Giám sát thiết bị dỡ bột
 http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b,keyword,maintain statutory books,1,Lưu sổ sách theo luật định
 http://data.europa.eu/esco/skill/04838ae5-a737-48a0-a782-3d1b6b6cb75b,keyword,wash the laundry,5,Giặt đồ
 http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14,keyword,embargo regulations,74,Quy định cấm vận
 http://data.europa.eu/esco/skill/04e6474d-f6fd-4e60-9191-24faae8ba0bb,keyword,perform live,10,Biểu diễn trực tiếp
-http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9,keyword,use an application-specific interface,22,Dùng giao diện lập trình ứng dụng (API)
+http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9,keyword,use an application-specific interface,22,Dùng giao diện riêng của ứng dụng (như API)
 http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d,keyword,audit contractors,4,Kiểm tra nhà thầu
 http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa,keyword,life sciences,15,Khoa học sự sống
 http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da,keyword,operate warehouse record systems,5,Vận hành hệ thống ghi chép kho
@@ -47,15 +47,14 @@ http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc,keyword,no
 http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065,keyword,apply system organisational policies,4,Áp dụng chính sách tổ chức hệ thống
 http://data.europa.eu/esco/skill/07e51c60-763a-4335-b4ec-70a15f66d328,keyword,propose ICT solutions to business problems,5,Đề xuất giải pháp CNTT cho vấn đề kinh doanh
 http://data.europa.eu/esco/skill/07ebc888-0f3f-46e7-99d2-a7c7ebd7ffe3,keyword,property management software,2,Phần mềm quản lý bất động sản
-http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7,keyword,typography,5,Nghệ thuật chữ
+http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7,keyword,typography,5,Sắp chữ và dàn trang in (typography)
 http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636,keyword,environmental policy,21,Chính sách môi trường
 http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d,keyword,accounting department processes,9,Quy trình phòng kế toán
 http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88,keyword,perform business research,11,Nghiên cứu kinh doanh
 http://data.europa.eu/esco/skill/087b1ce2-34ac-47f8-b5a1-47919193fd04,keyword,understand the physical language of a live performance,2,Hiểu ngôn ngữ cơ thể trong biểu diễn trực tiếp
-http://data.europa.eu/esco/skill/088fd519-b655-4f66-a9d2-5c991a7975a0,keyword,stimulate students' independence,2,Khuyến khích học sinh tự lập
+http://data.europa.eu/esco/skill/088fd519-b655-4f66-a9d2-5c991a7975a0,keyword,stimulate students' independence,2,Giúp học sinh có nhu cầu đặc biệt tự lập
 http://data.europa.eu/esco/skill/0893faa7-0666-466d-bf32-65005da1c933,keyword,restrain individuals,7,Khống chế người
 http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a,keyword,help clients make decisions during counselling sessions,7,Giúp thân chủ ra quyết định khi tham vấn
-http://data.europa.eu/esco/skill/089ddb19-1c7a-43ff-ba64-070f7ce4787a,keyword,warehouse operations,5,Nghiệp vụ kho
 http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d,keyword,ensure compliance with environmental legislation,68,Tuân thủ luật môi trường
 http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e,keyword,produce statistical financial records,7,Lập số liệu thống kê tài chính
 http://data.europa.eu/esco/skill/08f85a8c-c50c-4c97-b456-2fdda7f6a973,keyword,preventive medicine,1,Y học dự phòng
@@ -80,12 +79,12 @@ http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365,keyword,st
 http://data.europa.eu/esco/skill/0b8da079-f587-403f-a6ad-cd18b8150044,keyword,gather technical information,5,Thu thập thông tin kỹ thuật
 http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2,keyword,perform laboratory tests,40,Làm xét nghiệm trong phòng thí nghiệm
 http://data.europa.eu/esco/skill/0ba0717c-3a7a-45a3-834c-59c554e56c72,keyword,translate formulae into processes,4,Chuyển công thức thành quy trình sản xuất
-http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4,keyword,microbiology-bacteriology,18,Vi sinh vật học
+http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4,keyword,microbiology-bacteriology,18,Vi sinh – vi khuẩn học (chuyên khoa y)
 http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237,keyword,keep heavy construction equipment in good condition,14,Bảo quản máy xây dựng hạng nặng
 http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe,keyword,select acupuncture points,1,Chọn huyệt châm cứu
 http://data.europa.eu/esco/skill/0c627853-241e-405b-9044-aaff6bca133e,keyword,install power lines,5,Lắp đặt đường dây điện
 http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726,keyword,statistical process control,13,Kiểm soát quá trình bằng thống kê
-http://data.europa.eu/esco/skill/0c8c1e58-1c48-4efc-9359-9a28f803c52d,keyword,undertake clinical audit,3,Thực hiện đánh giá lâm sàng
+http://data.europa.eu/esco/skill/0c8c1e58-1c48-4efc-9359-9a28f803c52d,keyword,undertake clinical audit,3,Kiểm toán lâm sàng nội bộ
 http://data.europa.eu/esco/skill/0c944316-12f6-4949-a156-a03dbaae790f,keyword,ensure sanitation,40,Bảo đảm vệ sinh
 http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82,keyword,operate cash register,52,Vận hành máy tính tiền
 http://data.europa.eu/esco/skill/0cd8732f-e69c-4644-be07-e8bf5edc01af,keyword,follow time cues,14,Theo tín hiệu thời gian trên sân khấu
@@ -130,6 +129,7 @@ http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc,keyword,co
 http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d,keyword,lay bricks,1,Xây gạch
 http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e,keyword,implement marketing strategies,42,Triển khai chiến lược marketing
 http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd,keyword,manage digital libraries,3,Quản lý thư viện số
+http://data.europa.eu/esco/skill/147170ba-0141-4337-89af-b4513d745afe,keyword,support development of annual budget,6,Hỗ trợ lập ngân sách năm
 http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a,keyword,solve technical problems,3,Giải quyết vấn đề kỹ thuật
 http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987,keyword,promote health and safety policies in health services,8,Thúc đẩy chính sách an toàn trong y tế
 http://data.europa.eu/esco/skill/14dc991f-1b21-413d-86a3-499e6676abb9,keyword,consult student's support system,5,Phối hợp mạng lưới hỗ trợ học sinh
@@ -154,8 +154,9 @@ http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be,keyword,us
 http://data.europa.eu/esco/skill/19ef02d8-0297-4ec2-afbf-a58165c7c6a2,keyword,repair jewellery,5,Sửa trang sức
 http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9,keyword,creatively use digital technologies,2,Dùng công nghệ số sáng tạo
 http://data.europa.eu/esco/skill/1b10c3de-1284-4c89-a9f9-762ad51a6ad7,keyword,trends in fashion,3,Xu hướng thời trang
-http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59,keyword,car controls,16,Điều khiển xe
+http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59,keyword,car controls,16,"Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)"
 http://data.europa.eu/esco/skill/1b270383-b30c-4092-a9ed-b1637ecf2b79,keyword,use meteorological information,13,Dùng thông tin khí tượng
+http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab,keyword,create animated narratives,3,Dựng câu chuyện hoạt hình
 http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3,keyword,analytical chemistry,17,Hoá phân tích
 http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522,keyword,use data processing techniques,12,Kỹ thuật xử lý dữ liệu
 http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991,keyword,check construction compliance,6,Kiểm tra tuân thủ trong xây dựng
@@ -163,6 +164,7 @@ http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50,keyword,an
 http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a,keyword,assess physical conditions of clients,10,Đánh giá thể trạng khách hàng
 http://data.europa.eu/esco/skill/1ba59ce0-7fec-434b-8d5c-9b275250a26c,keyword,prepare presentation material,9,Chuẩn bị tài liệu trình bày
 http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251,keyword,exercise patience,3,Kiên nhẫn
+http://data.europa.eu/esco/skill/1bc7c69b-4292-4592-b854-f48165a06082,keyword,repair engines,4,Sửa động cơ
 http://data.europa.eu/esco/skill/1bfeddc8-44be-4559-af64-2b2d41ceae65,keyword,remove paint,2,Tẩy sơn
 http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1,keyword,forecast organisational risks,12,Dự báo rủi ro tổ chức
 http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d,keyword,provide visitor information,3,Cung cấp thông tin cho khách tham quan
@@ -170,17 +172,19 @@ http://data.europa.eu/esco/skill/1c7ac9a3-5385-4443-bd7f-64f86451c0c1,keyword,us
 http://data.europa.eu/esco/skill/1c8a92d4-18b9-4279-898c-ad89233bb511,keyword,monitor ingredient storage,3,Giám sát kho nguyên liệu
 http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8,keyword,assess impact of industrial activities,2,Đánh giá tác động của hoạt động công nghiệp
 http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6,keyword,provide first aid,35,Sơ cứu
+http://data.europa.eu/esco/skill/1d38a162-61a0-42e8-83ca-47ce3e881032,keyword,develop a coaching style,14,Xây dựng phong cách huấn luyện
 http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9,keyword,compile legal documents,16,Soạn văn bản pháp lý
 http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9,keyword,ensure compliance with legal requirements,77,Tuân thủ yêu cầu pháp lý
 http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35,keyword,perform a feasibility study on solar absorption cooling,1,Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời
-http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29,keyword,interpret current data,10,Đọc dữ liệu hiện hành
+http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29,keyword,interpret current data,10,Phân tích dữ liệu cập nhật nhất
 http://data.europa.eu/esco/skill/1f403e44-7a79-4b91-b86a-e406208be161,keyword,interpret visual literacy,11,Đọc hiểu hình ảnh
-http://data.europa.eu/esco/skill/1f5148bb-1eb0-473d-a312-50e4ed24159f,keyword,supply machine with appropriate tools,31,Lắp dao cụ phù hợp cho máy
+http://data.europa.eu/esco/skill/1f5148bb-1eb0-473d-a312-50e4ed24159f,keyword,supply machine with appropriate tools,31,Cấp dụng cụ và vật tư phù hợp cho máy
 http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e,keyword,urban planning law,6,Luật quy hoạch đô thị
 http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49,keyword,manage animal biosecurity,36,An toàn sinh học cho vật nuôi
 http://data.europa.eu/esco/skill/1fe563ab-47b8-4092-98d6-2ac94952891e,keyword,embroider fabrics,3,Thêu vải
 http://data.europa.eu/esco/skill/1fe682ad-b8a2-44bb-a557-7eccf79b2014,keyword,operate recycling processing equipment,3,Vận hành thiết bị tái chế
 http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c,keyword,electricity principles,20,Nguyên lý điện
+http://data.europa.eu/esco/skill/202d0d2b-f6b9-48fe-b70e-cff49fa1d087,keyword,replace tyres,1,Thay lốp
 http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158,keyword,handle fuels,2,Xử lý nhiên liệu
 http://data.europa.eu/esco/skill/209a5498-3449-4689-8ed9-bd08cab4fd78,keyword,engineering principles,133,Nguyên lý kỹ thuật
 http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b,keyword,prepare lesson content,107,Soạn bài giảng
@@ -219,7 +223,6 @@ http://data.europa.eu/esco/skill/2672f6a9-1e70-43c5-859d-e6a0fc9ea0f1,keyword,ai
 http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb,keyword,plan engineering activities,5,Lập kế hoạch công việc kỹ thuật
 http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da,keyword,greet guests,28,Chào đón khách
 http://data.europa.eu/esco/skill/26a79a26-7e70-4727-bf1b-eb79febe388a,keyword,label medical laboratory samples,3,Dán nhãn mẫu xét nghiệm
-http://data.europa.eu/esco/skill/26baf34d-6721-4bac-b7eb-add0bc566a82,keyword,attend to detail in preparation for audits,6,Chuẩn bị chi tiết cho kiểm toán
 http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a,keyword,hair colouring,2,Nhuộm tóc
 http://data.europa.eu/esco/skill/26ed52cf-30ca-451e-9699-a6c04a30649f,keyword,solder electronics,11,Hàn mạch điện tử
 http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e,keyword,traditional Chinese medicine,3,Y học cổ truyền Trung Hoa
@@ -267,15 +270,16 @@ http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec,keyword,es
 http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d,keyword,"health, safety and hygiene legislation",28,"Luật an toàn, sức khoẻ và vệ sinh"
 http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80,keyword,ICT network security risks,12,Rủi ro an ninh mạng
 http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd,keyword,cartography,11,Bản đồ học
-http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04,keyword,ensure the integrity of mail,4,Bảo đảm an toàn thư từ
+http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04,keyword,ensure the integrity of mail,4,Giữ thư và bưu kiện nguyên vẹn
 http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76,keyword,harvest crop,10,Thu hoạch mùa màng
 http://data.europa.eu/esco/skill/2ea26d96-22bc-4425-97d4-3fab5384f614,keyword,manage nutrients,2,Quản lý dinh dưỡng cây trồng
 http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d,keyword,analyse X-ray imagery,3,Đọc phim X-quang
-http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75,keyword,polygraphy,2,Kiểm tra bằng máy phát hiện nói dối
+http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75,keyword,polygraphy,2,Công nghệ in
 http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70,keyword,calculate tax,6,Tính thuế
 http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114,keyword,compile course material,63,Soạn tài liệu khoá học
 http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2,keyword,maintain imaging equipment,3,Bảo dưỡng thiết bị chẩn đoán hình ảnh
 http://data.europa.eu/esco/skill/2f4f78ac-0246-4c59-907d-9fcb46f8fb77,keyword,mark differences in colours,30,Phân biệt màu sắc
+http://data.europa.eu/esco/skill/2f58fc20-4528-410b-877f-3dec775f1b4e,keyword,lubricate engines,0,Tra dầu bôi trơn động cơ
 http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0,keyword,apply quality standards in social services,61,Áp dụng chuẩn chất lượng dịch vụ xã hội
 http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4,keyword,operate welding equipment,22,Vận hành thiết bị hàn
 http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106,keyword,read assembly drawings,41,Đọc bản vẽ lắp ráp
@@ -318,7 +322,7 @@ http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90,keyword,an
 http://data.europa.eu/esco/skill/36aa8d72-84b2-4abc-a30b-cdee19363cb3,keyword,measure parts of manufactured products,21,Đo chi tiết sản phẩm
 http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa,keyword,manage school budget,6,Quản lý ngân sách trường học
 http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab,keyword,remove defective products,15,Loại bỏ sản phẩm lỗi
-http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763,keyword,undertake inspections,19,Thực hiện thanh tra
+http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763,keyword,undertake inspections,19,"Kiểm tra an toàn, an ninh tại chỗ"
 http://data.europa.eu/esco/skill/37236b8f-0fdc-43eb-bcd3-f4f11864da5a,keyword,supervise artefact movement,4,Giám sát di chuyển hiện vật
 http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db,keyword,manufacturing processes,61,Quy trình chế tạo
 http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c,keyword,apply statistical analysis techniques,46,Phân tích thống kê
@@ -327,7 +331,7 @@ http://data.europa.eu/esco/skill/38509fa4-7c06-4a4b-9622-f521f03c37b8,keyword,ph
 http://data.europa.eu/esco/skill/386774ac-fe5b-431a-b485-9aec0bf5c09e,keyword,maintain electrical equipment,19,Bảo dưỡng thiết bị điện
 http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32,keyword,do cloud refactoring,2,Tái cấu trúc ứng dụng cho đám mây
 http://data.europa.eu/esco/skill/38a5c459-c591-4f76-a358-37de342bb11d,keyword,job market offers,9,Thông tin tuyển dụng trên thị trường
-http://data.europa.eu/esco/skill/38da3c60-4b7c-4698-9256-574e4ee4e93b,keyword,knowledge base,3,Cơ sở tri thức
+http://data.europa.eu/esco/skill/38da3c60-4b7c-4698-9256-574e4ee4e93b,keyword,knowledge base,3,Kho bài hướng dẫn trực tuyến (knowledge base)
 http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002,keyword,assist amusement park visitors,1,Hỗ trợ khách công viên giải trí
 http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb,keyword,digital systems,21,Hệ thống số
 http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f,keyword,conduct land surveys,3,Khảo sát đo đạc đất đai
@@ -344,6 +348,7 @@ http://data.europa.eu/esco/skill/3c1af34b-4562-4c39-a30e-0812b84a147e,keyword,us
 http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116,keyword,banking activities,20,Nghiệp vụ ngân hàng
 http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433,keyword,design drawings,57,Bản vẽ thiết kế
 http://data.europa.eu/esco/skill/3c35dfa4-6dae-45a5-ae0a-f6a45923a95f,keyword,biometrics,2,Sinh trắc học
+http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0,keyword,repair vehicle electrical systems,2,Sửa hệ thống điện của xe
 http://data.europa.eu/esco/skill/3caca7c9-5530-4333-b525-134073fdf740,keyword,pre-flight procedures for IFR flights,4,Thủ tục trước chuyến bay IFR
 http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4,keyword,digital compositing,1,Ghép lớp hình ảnh số (compositing)
 http://data.europa.eu/esco/skill/3cdf3193-e070-40aa-a1b1-ab985db2c647,keyword,editorial standards,17,Chuẩn biên tập
@@ -383,7 +388,6 @@ http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67,keyword,le
 http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2,keyword,ICT safety,4,An toàn CNTT
 http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f,keyword,serve food in table service,6,Phục vụ bàn
 http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b,keyword,adjust engineering designs,116,Điều chỉnh thiết kế kỹ thuật
-http://data.europa.eu/esco/skill/42dced65-823e-4f29-ad93-cae933b0dd7c,keyword,regulations for international transportation,1,Quy định vận tải quốc tế
 http://data.europa.eu/esco/skill/435d1751-8667-41ec-8b32-865b7cd3c684,keyword,manage production enterprise,5,Quản lý doanh nghiệp sản xuất
 http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6,keyword,software anomalies,8,Lỗi bất thường của phần mềm
 http://data.europa.eu/esco/skill/43ae58b9-5e56-4524-b45a-b422777a0576,keyword,database,10,Cơ sở dữ liệu
@@ -399,12 +403,12 @@ http://data.europa.eu/esco/skill/453b6898-de72-4ff9-b217-4a3cd377e155,keyword,mo
 http://data.europa.eu/esco/skill/456f68b4-ca28-4029-a67f-7813b2c6cb4d,keyword,food ethics,3,Đạo đức thực phẩm
 http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6,keyword,diagnose nursing care,3,Chẩn đoán điều dưỡng
 http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4,keyword,perform test run,134,Chạy thử
+http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36,keyword,monitor patients' progress related to treatment,8,Theo dõi tiến triển điều trị
 http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59,keyword,dispense medicines,2,Cấp phát thuốc
 http://data.europa.eu/esco/skill/46cb7282-7fb0-4d3c-b6b8-bfe81fab077e,keyword,draw conclusions from market research results,5,Rút kết luận từ nghiên cứu thị trường
 http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3,keyword,handover the service area,4,Bàn giao khu vực phục vụ
 http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc,keyword,integrate ICT data,4,Tích hợp dữ liệu CNTT
 http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7,keyword,torch temperature for metal processes,5,Nhiệt độ ngọn lửa trong gia công kim loại
-http://data.europa.eu/esco/skill/473a8b64-a05c-4d49-962d-b9d9219950bc,keyword,analyse relation between supply chain improvement and profit,4,Phân tích chuỗi cung ứng và lợi nhuận
 http://data.europa.eu/esco/skill/473c68ee-1ab3-4bcf-b286-f7a8df0acec6,keyword,maintain an artistic portfolio,15,Duy trì hồ sơ tác phẩm (portfolio)
 http://data.europa.eu/esco/skill/476015fc-ab0d-462b-83bb-0354e2d48610,keyword,cosmetic dental procedures,1,Nha khoa thẩm mỹ
 http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3,keyword,system backup best practice,5,Sao lưu hệ thống
@@ -420,7 +424,7 @@ http://data.europa.eu/esco/skill/496932f1-0b6b-4f73-9432-d95c7ddcd43b,keyword,re
 http://data.europa.eu/esco/skill/497705d7-7a03-4a68-99f3-69d2de9366f4,keyword,undertake risk assessment of social service users,14,Đánh giá rủi ro của người được hỗ trợ
 http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818,keyword,ensure public safety and security,84,"Bảo đảm an toàn, an ninh công cộng"
 http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e,keyword,react calmly in stressful situations,9,Bình tĩnh khi căng thẳng
-http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e,keyword,handle data samples,4,Xử lý mẫu dữ liệu
+http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e,keyword,handle data samples,4,Lấy mẫu dữ liệu thống kê
 http://data.europa.eu/esco/skill/4a30802f-827c-4706-9099-de85beee6cb5,keyword,splice cable,7,Nối cáp
 http://data.europa.eu/esco/skill/4a752bd2-9fe9-4539-ab5a-8edc0dec6ef0,keyword,community education,2,Giáo dục cộng đồng
 http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b,keyword,identify customer objectives,5,Xác định mục tiêu của khách hàng
@@ -438,11 +442,10 @@ http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c,keyword,pa
 http://data.europa.eu/esco/skill/4be5ce29-9ecb-47c6-b38d-a2552230dd3f,keyword,carry out navigational calculations,7,Tính toán hàng hải
 http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c,keyword,recycle livestock manure,1,Tái chế phân chuồng
 http://data.europa.eu/esco/skill/4c58528e-bdaa-43ad-8f5a-8ad0b8cd4bbb,keyword,design principles,18,Nguyên lý thiết kế
-http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314,keyword,percolation,4,Thẩm thấu (percolation)
+http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314,keyword,percolation,4,Nước thấm qua vật liệu xốp (percolation)
 http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083,keyword,work safely with machines,74,Làm việc an toàn với máy móc
 http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d,keyword,ensure compliance with company regulations,9,Tuân thủ quy định công ty
 http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c,keyword,manage profitability,10,Quản lý lợi nhuận
-http://data.europa.eu/esco/skill/4d2fa936-9983-45c3-986b-fdf82fb65d0d,keyword,advise patients on infectious diseases when travelling,0,Tư vấn bệnh truyền nhiễm khi đi du lịch
 http://data.europa.eu/esco/skill/4d3541fa-3e71-4574-afa9-900ff6a2b33d,keyword,respond to healthcare users' extreme emotions,5,Ứng phó cảm xúc cực đoan của người bệnh
 http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2,keyword,manage healthcare users' data,40,Quản lý dữ liệu người bệnh
 http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956,keyword,manage ICT data architecture,6,Quản lý kiến trúc dữ liệu CNTT
@@ -454,10 +457,10 @@ http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369,keyword,so
 http://data.europa.eu/esco/skill/4e6bf27c-e5eb-4653-80cf-63295f731cb1,keyword,operate digging construction equipment,3,Vận hành máy đào
 http://data.europa.eu/esco/skill/4e7b2c61-aa42-404c-995f-32281b818923,keyword,have spatial awareness,10,Định hướng không gian
 http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f,keyword,perform cleaning duties,21,Làm vệ sinh
-http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f,keyword,manoeuvre bus,2,Điều khiển xe buýt
+http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07,keyword,general medicine,7,Y học tổng quát
+http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f,keyword,manoeuvre bus,2,Lùi và rẽ xe buýt
 http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719,keyword,inspect construction sites,18,Kiểm tra công trường
 http://data.europa.eu/esco/skill/4fc1d2b4-9645-4fda-be99-abdf8e66c88d,keyword,research new ideas,10,Nghiên cứu ý tưởng mới
-http://data.europa.eu/esco/skill/50167173-ac2d-42b1-954a-a5c5a18a6373,keyword,printing materials,9,Vật liệu in
 http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0,keyword,implement customer follow-up,17,Chăm sóc khách hàng sau bán
 http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c,keyword,maintain equipment,46,Bảo dưỡng thiết bị
 http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3,keyword,internet governance,2,Quản trị Internet
@@ -468,16 +471,18 @@ http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4,keyword,sh
 http://data.europa.eu/esco/skill/518779a6-ea5d-4e4b-8029-8bc90b5bcb92,keyword,agricultural business management,4,Quản trị kinh doanh nông nghiệp
 http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35,keyword,handle chemical cleaning agents,23,Dùng hoá chất tẩy rửa
 http://data.europa.eu/esco/skill/51b27007-ddb2-45a8-8103-0ec8c95e6313,keyword,inspect event facilities,2,Kiểm tra cơ sở tổ chức sự kiện
-http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec,keyword,de-limb trees,12,Tỉa cành cây
+http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec,keyword,de-limb trees,12,Cắt cành cây
 http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7,keyword,human physiology,29,Sinh lý người
 http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e,keyword,deal with emergency care situations,39,Xử lý tình huống cấp cứu
 http://data.europa.eu/esco/skill/51f30679-bc69-4fc8-b456-d3e6a560fe0b,keyword,assist in transportation of animals,13,Hỗ trợ vận chuyển động vật
 http://data.europa.eu/esco/skill/5206a9b8-8337-4f0b-ae00-163a2f55d8cf,keyword,carry out waste water treatment,2,Xử lý nước thải
 http://data.europa.eu/esco/skill/52272cdd-7a52-4b88-a12b-7ca442c37f99,keyword,provide project information on exhibitions,4,Cung cấp thông tin dự án triển lãm
+http://data.europa.eu/esco/skill/52743af8-ab5d-4ce3-b877-13d349394456,keyword,diagnose problems with vehicles,7,Chẩn đoán hư hỏng của xe
 http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f,keyword,install electrical and electronic equipment,24,"Lắp đặt thiết bị điện, điện tử"
 http://data.europa.eu/esco/skill/52838a25-11f5-4cb1-b4ab-c5c7d59041e8,keyword,types of electronics,8,Các loại thiết bị điện tử
 http://data.europa.eu/esco/skill/52d6eb67-56c0-4ad7-b5c2-71e7c2362ece,keyword,install electricity sockets,4,Lắp ổ cắm điện
 http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2,keyword,aircraft mechanics,15,Cơ khí máy bay
+http://data.europa.eu/esco/skill/534e2ade-f9dd-470c-a56f-97d2cc896468,keyword,maintain braking system,1,Bảo dưỡng hệ thống phanh
 http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb,keyword,green space strategies,2,Chiến lược không gian xanh
 http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6,keyword,carry out inventory control accuracy,37,Kiểm soát độ chính xác tồn kho
 http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0,keyword,urban sustainability,1,Đô thị bền vững
@@ -507,7 +512,7 @@ http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3,keyword,me
 http://data.europa.eu/esco/skill/5769c02b-01f0-4bfc-b5e4-02f80ae6daf6,keyword,make up performing artists,2,Trang điểm cho nghệ sĩ
 http://data.europa.eu/esco/skill/5785d5e2-716c-48a6-b463-dfd02349793d,keyword,arrange event needs,2,Chuẩn bị nhu cầu cho sự kiện
 http://data.europa.eu/esco/skill/57869946-cec2-4121-981c-84c9846c58d0,keyword,electric current,19,Dòng điện
-http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822,keyword,perform balance sheet operations,3,Nghiệp vụ bảng cân đối kế toán
+http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822,keyword,perform balance sheet operations,3,Lập bảng cân đối kế toán
 http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248,keyword,cyber attack counter-measures,9,Biện pháp chống tấn công mạng
 http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a,keyword,airtight construction,3,Xây dựng kín khí
 http://data.europa.eu/esco/skill/58a15a33-2b41-4a7e-bb8a-777328b5d82a,keyword,clean toilet facilities,3,Vệ sinh nhà vệ sinh
@@ -521,7 +526,7 @@ http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47,keyword,pr
 http://data.europa.eu/esco/skill/5aa57bdc-5765-435e-8fc9-99b3febdb213,keyword,hire human resources,7,Thuê nhân sự
 http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba,keyword,inventory management rules,3,Quy tắc quản lý tồn kho
 http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c,keyword,security threats,15,Mối đe doạ an ninh
-http://data.europa.eu/esco/skill/5b1aecb9-17a6-46ae-8611-c742f11db2f9,keyword,neonatology,2,Sơ sinh học
+http://data.europa.eu/esco/skill/5b1aecb9-17a6-46ae-8611-c742f11db2f9,keyword,neonatology,2,Y học sơ sinh
 http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4,keyword,describe artistic experience,13,Mô tả trải nghiệm nghệ thuật
 http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517,keyword,adjust weight of cargo to capacity of freight transport vehicles,5,Phân bổ tải trọng hàng theo sức chở của xe
 http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4,keyword,use automotive diagnostic equipment,5,Dùng thiết bị chẩn đoán ô tô
@@ -537,6 +542,7 @@ http://data.europa.eu/esco/skill/5c845ff8-b3f7-42b1-a846-a4238a8b404e,keyword,us
 http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a,keyword,synthesise financial information,11,Tổng hợp thông tin tài chính
 http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40,keyword,dispose of sewage sludge,1,Xử lý bùn thải
 http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1,keyword,check quality of products on the production line,22,Kiểm tra chất lượng trên dây chuyền
+http://data.europa.eu/esco/skill/5d26851b-270a-4fbe-abeb-2bfd6eba3e2d,keyword,analyse logistic changes,5,Phân tích thay đổi logistics
 http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5,keyword,adapt fitness exercises,3,Điều chỉnh bài tập thể lực
 http://data.europa.eu/esco/skill/5d715a3d-ddb1-4906-a599-e9737f4ca491,keyword,advise on hair style,3,Tư vấn kiểu tóc
 http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c,keyword,select camera apertures,3,Chọn khẩu độ máy ảnh
@@ -557,6 +563,7 @@ http://data.europa.eu/esco/skill/5fd6c193-93c6-4f2d-bf9b-e0debb851f2d,keyword,co
 http://data.europa.eu/esco/skill/60493b7f-8613-431e-91ea-6a2c0410c6d4,keyword,vehicle cargo capacity,4,Sức chở của xe
 http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976,keyword,breed stock,3,Nhân giống vật nuôi
 http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113,keyword,provide health education,41,Giáo dục sức khoẻ
+http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea,keyword,pharmacology,14,Dược lý học
 http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580,keyword,prepare financial statements,6,Lập báo cáo tài chính
 http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030,keyword,building codes,15,Quy chuẩn xây dựng
 http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3,keyword,deploy cloud resource,5,Triển khai tài nguyên đám mây
@@ -617,8 +624,7 @@ http://data.europa.eu/esco/skill/69bece91-c806-42ad-bde4-db28c7f8fc4b,keyword,me
 http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d,keyword,ensure equipment availability,133,Bảo đảm thiết bị sẵn sàng
 http://data.europa.eu/esco/skill/6a609f8f-1451-4102-ad2d-62c5270e1237,keyword,office administration,6,Quản trị văn phòng
 http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab,keyword,manage engineering project,24,Quản lý dự án kỹ thuật
-http://data.europa.eu/esco/skill/6ab43249-d856-453b-9f45-37c3f8dae339,keyword,advise on loans of art work for exhibitions,4,Tư vấn cho mượn tác phẩm triển lãm
-http://data.europa.eu/esco/skill/6ac62059-f71c-4c4c-8aa8-91202816f773,keyword,badminton,0,Cầu lông
+http://data.europa.eu/esco/skill/6ab43249-d856-453b-9f45-37c3f8dae339,keyword,advise on loans of art work for exhibitions,4,Đánh giá tình trạng tác phẩm để cho mượn triển lãm
 http://data.europa.eu/esco/skill/6ae8306a-4f9d-4410-ac82-6406f3cbd16a,keyword,manage office facility systems,3,Quản lý hệ thống cơ sở văn phòng
 http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266,keyword,conduct preoperative investigations,3,Thăm khám trước phẫu thuật
 http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297,keyword,disability types,10,Các dạng khuyết tật
@@ -649,6 +655,7 @@ http://data.europa.eu/esco/skill/6eff134b-e34f-4d6e-a6e8-5e47cf2228d0,keyword,ri
 http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab,keyword,security engineering,13,Kỹ thuật bảo mật
 http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb,keyword,environmental legislation,52,Luật môi trường
 http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d,keyword,real estate market,14,Thị trường bất động sản
+http://data.europa.eu/esco/skill/6f993130-082b-4732-b62f-52cdf2096ad9,keyword,use methods of logistical data analysis,1,Phân tích dữ liệu logistics
 http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa,keyword,communicable diseases,4,Bệnh truyền nhiễm
 http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4,keyword,take food and beverage orders from customers,4,Nhận gọi món
 http://data.europa.eu/esco/skill/705f5906-9b08-4562-9544-46f6ab944a7e,keyword,forest conservation,1,Bảo tồn rừng
@@ -676,7 +683,6 @@ http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4,keyword,us
 http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898,keyword,plan digital marketing,8,Lập kế hoạch marketing số
 http://data.europa.eu/esco/skill/738de3bd-2b6d-4183-beb9-055360b58639,keyword,support management of raw materials,4,Hỗ trợ quản lý nguyên liệu
 http://data.europa.eu/esco/skill/73997f48-cd9d-4724-872d-86ecbb2ed9a2,keyword,plant species,11,Các loài thực vật
-http://data.europa.eu/esco/skill/73d95ec0-d7fb-45e5-8134-b2ee1c0be8af,keyword,manage personal finances,1,Quản lý tài chính cá nhân
 http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c,keyword,use testing equipment,50,Dùng thiết bị thử nghiệm
 http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238,keyword,observe human behaviour,3,Quan sát hành vi con người
 http://data.europa.eu/esco/skill/748b5c82-bf2f-4a76-af21-9ef24667e6c8,keyword,ensure conformance to jewel design specifications,8,Bảo đảm đúng thông số thiết kế trang sức
@@ -723,13 +729,14 @@ http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8,keyword,cl
 http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b,keyword,perform office routine activities,15,Việc văn phòng thường ngày
 http://data.europa.eu/esco/skill/7c6ab71d-c8d4-4a85-9f33-7ab3c2e23157,keyword,manage the health and welfare of livestock,7,Quản lý sức khoẻ và phúc lợi vật nuôi
 http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5,keyword,collect tax,2,Thu thuế
-http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed,keyword,use automatic programming,12,Lập trình tự động
+http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed,keyword,use automatic programming,12,Dùng công cụ tự sinh mã từ đặc tả
 http://data.europa.eu/esco/skill/7d2a1c45-fae0-4bd6-b570-c668c9d4eda7,keyword,prepare surface for painting,3,Chuẩn bị bề mặt trước khi sơn
 http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0,keyword,cost management,24,Quản lý chi phí
 http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861,keyword,geodesy,5,Trắc địa học
 http://data.europa.eu/esco/skill/7d8ca06a-f737-4927-96f2-de4f2cd15895,keyword,identify mental health issues,7,Nhận biết vấn đề sức khoẻ tâm thần
 http://data.europa.eu/esco/skill/7d9d73a8-08df-4624-a5df-95cb220c0736,keyword,cosmetics,10,Mỹ phẩm
 http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80,keyword,analyse library users' queries,2,Phân tích yêu cầu tra cứu của bạn đọc
+http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d,keyword,types of paper,19,Các loại giấy
 http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce,keyword,document evidence,5,Ghi nhận chứng cứ
 http://data.europa.eu/esco/skill/7de3b70e-2568-420a-8528-69523d323e7a,keyword,keep time accurately,7,Giữ đúng thời gian
 http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27,keyword,monitor amusement park safety,3,Giám sát an toàn công viên giải trí
@@ -738,15 +745,14 @@ http://data.europa.eu/esco/skill/7e1f9657-ab4e-407c-842f-b846197060e3,keyword,ex
 http://data.europa.eu/esco/skill/7e2f6f05-d6ef-45f3-a33c-5d6d0b07e1cf,keyword,alter wearing apparel,11,Sửa quần áo
 http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15,keyword,design database in the cloud,4,Thiết kế cơ sở dữ liệu trên đám mây
 http://data.europa.eu/esco/skill/7e9daad3-8604-4839-af9b-dc6f8db3ef68,keyword,stock shelves,44,Xếp hàng lên kệ
-http://data.europa.eu/esco/skill/7ec3c77b-1955-4397-9bd3-7b7b9d0b8531,keyword,manage personnel agenda,5,Quản lý lịch làm việc nhân sự
 http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833,keyword,statistics,43,Thống kê
 http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e,keyword,attend to ICT systems quality,5,Bảo đảm chất lượng hệ thống CNTT
 http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b,keyword,types of metal,71,Các loại kim loại
 http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842,keyword,urban planning,9,Quy hoạch đô thị
-http://data.europa.eu/esco/skill/7f67f82e-73c5-4dc0-b506-8e0b1a84f614,keyword,bind wire,4,Buộc dây thép
+http://data.europa.eu/esco/skill/7f67f82e-73c5-4dc0-b506-8e0b1a84f614,keyword,bind wire,4,Bó và buộc dây cáp
 http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a,keyword,record customers' personal data,26,Ghi thông tin cá nhân của khách
 http://data.europa.eu/esco/skill/7f7cdd61-bb45-47e9-b7a2-9c5f42d48015,keyword,plan presence at professional events,3,Lên kế hoạch tham dự sự kiện chuyên ngành
-http://data.europa.eu/esco/skill/7fafdbcc-01e5-41df-b269-37dffc49c678,keyword,room aesthetics,3,Thẩm mỹ phòng
+http://data.europa.eu/esco/skill/7fafdbcc-01e5-41df-b269-37dffc49c678,keyword,room aesthetics,3,Đánh giá sự hài hoà của thiết kế nội thất
 http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b,keyword,graphic design,18,Thiết kế đồ hoạ
 http://data.europa.eu/esco/skill/7feca0cc-f0b3-470d-ba03-48c0f7cff286,keyword,educate on sustainable tourism,7,Giáo dục du lịch bền vững
 http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0,keyword,prepare construction documents,2,Lập hồ sơ thi công
@@ -762,6 +768,7 @@ http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8,keyword,ad
 http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5,keyword,assist pool users,1,Hỗ trợ người dùng bể bơi
 http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37,keyword,laboratory techniques,43,Kỹ thuật phòng thí nghiệm
 http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb,keyword,check for damaged items,6,Kiểm tra hàng hư hỏng
+http://data.europa.eu/esco/skill/82ae17ef-a422-4803-923e-d62da42476a9,keyword,revise legal documents,4,Rà soát văn bản pháp lý
 http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9,keyword,maintain amusement park attractions,2,Bảo trì trò chơi công viên giải trí
 http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9,keyword,identify construction materials from blueprints,3,Xác định vật liệu xây dựng từ bản vẽ
 http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f,keyword,calibrate laboratory equipment,20,Hiệu chuẩn thiết bị phòng thí nghiệm
@@ -808,6 +815,7 @@ http://data.europa.eu/esco/skill/8a1942a8-bebd-4cc5-bdff-fe215aaa3de5,keyword,us
 http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c,keyword,analyse financial performance of a company,34,Phân tích hiệu quả tài chính doanh nghiệp
 http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31,keyword,perform machine maintenance,22,Bảo dưỡng máy
 http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354,keyword,use psychoeducation,6,Giáo dục tâm lý
+http://data.europa.eu/esco/skill/8add048c-4d51-41c5-8aa2-f57412c4a637,keyword,enhance production workflow,3,Cải tiến quy trình sản xuất
 http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8,keyword,conduct educational activities,6,Tổ chức hoạt động giáo dục
 http://data.europa.eu/esco/skill/8afc36b7-9a70-44cb-95df-6625e76ca89d,keyword,shape nails,3,Tạo dáng móng
 http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292,keyword,motion graphics,5,Đồ hoạ chuyển động (motion graphics)
@@ -825,6 +833,7 @@ http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe,keyword,fi
 http://data.europa.eu/esco/skill/8d927aab-9202-4c02-9f39-5d478458f25c,keyword,assess social service users' situation,59,Đánh giá hoàn cảnh người dùng dịch vụ xã hội
 http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40,keyword,track key performance indicators,21,Theo dõi chỉ số KPI
 http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98,keyword,clear out drains,2,Thông tắc cống
+http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253,keyword,prescribe medication,4,Kê đơn thuốc
 http://data.europa.eu/esco/skill/8eaba8f3-98f7-40e6-96a9-181f1c121e44,keyword,massage theory,4,Lý thuyết xoa bóp
 http://data.europa.eu/esco/skill/8ebb2c0a-0baa-43bf-95cf-094047c57427,keyword,maintain professional administration,7,Duy trì hồ sơ hành chính chuyên môn
 http://data.europa.eu/esco/skill/8ed53702-3e4e-4637-a4c3-9dc8f4281019,keyword,install construction profiles,10,Lắp đặt thanh định hình xây dựng
@@ -842,9 +851,10 @@ http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8,keyword,ad
 http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025,keyword,acquire system component,1,Mua linh kiện hệ thống
 http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f,keyword,hybrid vehicle architecture,6,Kiến trúc xe hybrid
 http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19,keyword,manage resources,10,Quản lý nguồn lực
-http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d,keyword,apply animal hygiene practices,39,Vệ sinh thú y
+http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d,keyword,apply animal hygiene practices,39,Giữ vệ sinh phòng bệnh khi làm việc với động vật
 http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7,keyword,perform customer management,4,Quản lý khách hàng
 http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a,keyword,execute software tests,14,Chạy kiểm thử phần mềm
+http://data.europa.eu/esco/skill/9142eba6-0abe-4d6f-9b8b-5a88f4ff6a8d,keyword,perform minor vehicle repairs,0,Sửa chữa nhỏ cho xe
 http://data.europa.eu/esco/skill/9153d8b4-f8ac-4a2c-99d2-383f5c129af1,keyword,assist in epilepsy surgery,1,Phụ mổ động kinh
 http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de,keyword,analyse internal factors of companies,14,Phân tích yếu tố nội bộ doanh nghiệp
 http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55,keyword,write work-related reports,141,Viết báo cáo công việc
@@ -855,9 +865,10 @@ http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde,keyword,in
 http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4,keyword,clean ink rollers,3,Lau trục mực in
 http://data.europa.eu/esco/skill/92848013-ebac-4b3a-b2ad-e2b846f10621,keyword,sand between coats,3,Chà nhám giữa các lớp sơn
 http://data.europa.eu/esco/skill/92d04a10-eff2-4190-b5da-85e419f8ebbd,keyword,translate spoken language simultaneously,3,Dịch song song (cabin)
+http://data.europa.eu/esco/skill/92e4064a-a93c-4e22-a63b-8da91757b90c,keyword,detect bottlenecks,3,Phát hiện điểm nghẽn
 http://data.europa.eu/esco/skill/932e60c4-118a-4280-8e49-38a16a0c73d0,keyword,radiological procedures,1,Quy trình chẩn đoán hình ảnh
 http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d,keyword,steer vessels,4,Lái tàu
-http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52,keyword,forensic intelligence,4,Tình báo pháp y
+http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52,keyword,forensic intelligence,4,Phân tích thông tin pháp y phục vụ điều tra
 http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989,keyword,biology,39,Sinh học
 http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190,keyword,inspect industrial equipment,7,Kiểm tra thiết bị công nghiệp
 http://data.europa.eu/esco/skill/94812554-043f-4ffd-838e-583eccf3e297,keyword,watering principles,5,Nguyên tắc tưới
@@ -867,7 +878,6 @@ http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586,keyword,in
 http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08,keyword,electronics,87,Điện tử
 http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0,keyword,maintain credit history of clients,7,Duy trì lịch sử tín dụng khách hàng
 http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda,keyword,use warehouse marking tools,3,Dùng dụng cụ đánh dấu kho
-http://data.europa.eu/esco/skill/96d549bb-3e62-4c45-92a7-f114df089581,keyword,analyse supply chain strategies,19,Phân tích chiến lược chuỗi cung ứng
 http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540,keyword,assess supplier risks,42,Đánh giá rủi ro nhà cung cấp
 http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0,keyword,apply ICT system usage policies,7,Áp dụng chính sách sử dụng hệ thống CNTT
 http://data.europa.eu/esco/skill/9714735d-6f60-440b-bdbc-aaf45ebcbe78,keyword,analyse the context of an organisation,8,Phân tích bối cảnh tổ chức
@@ -893,7 +903,7 @@ http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395,keyword,pr
 http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba,keyword,information governance compliance,3,Tuân thủ quản trị thông tin
 http://data.europa.eu/esco/skill/9b22bea8-699d-4faf-8373-7a620a386817,keyword,identify requirements of the work in the artistic performance,1,Xác định yêu cầu của tiết mục biểu diễn
 http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf,keyword,health care system,14,Hệ thống y tế
-http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961,keyword,quantity surveying,2,Dự toán khối lượng
+http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961,keyword,quantity surveying,2,Dự toán và quản lý chi phí xây dựng
 http://data.europa.eu/esco/skill/9c6974e1-8d8b-43e9-b6b0-75da7634bfc9,keyword,fundamental analysis,3,Phân tích cơ bản
 http://data.europa.eu/esco/skill/9c72fa23-60c5-4b90-81a8-44a871beb4e5,keyword,engage the audience emotionally,4,Chạm đến cảm xúc khán giả
 http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618,keyword,handover the food preparation area,11,Bàn giao khu sơ chế
@@ -957,7 +967,7 @@ http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f,keyword,en
 http://data.europa.eu/esco/skill/a8429098-ddac-481b-91e7-688d021c092e,keyword,ecology,18,Sinh thái học
 http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d,keyword,educate customers on coffee varieties,3,Giới thiệu các loại cà phê cho khách
 http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a,keyword,digital media,15,Truyền thông số
-http://data.europa.eu/esco/skill/a89c463d-e6f0-417d-9216-b59b92249226,keyword,carry out order intake,42,Nhận đơn hàng
+http://data.europa.eu/esco/skill/a89c463d-e6f0-417d-9216-b59b92249226,keyword,carry out order intake,42,Nhận đơn đặt trước cho hàng chưa có sẵn
 http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3,keyword,tend boring machine,7,Đứng máy doa
 http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105,keyword,teach kindergarten class content,4,Dạy nội dung mầm non
 http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21,keyword,draft design specifications,11,Soạn đặc tả thiết kế
@@ -982,6 +992,7 @@ http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46,keyword,ma
 http://data.europa.eu/esco/skill/abe138ec-e084-47c7-abe3-e7f371f05eae,keyword,interact with an audience,15,Tương tác với khán giả
 http://data.europa.eu/esco/skill/ac223703-4984-4c98-a579-33dacd0e14c0,keyword,implement exercise activities for animals,8,Cho động vật vận động
 http://data.europa.eu/esco/skill/ac51e567-2261-48c7-b0cb-97c07fc60b6c,keyword,develop a specific interior design,1,Phát triển thiết kế nội thất cụ thể
+http://data.europa.eu/esco/skill/ac6e266a-5362-4690-8937-b71a2d9311d1,keyword,carry out repair of motorcycles,0,Sửa chữa xe máy
 http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582,keyword,correct potentially harmful movements,14,Chỉnh động tác dễ gây chấn thương
 http://data.europa.eu/esco/skill/acc74047-f59f-4935-afc0-45ec43b9b57a,keyword,define part requirements,10,Xác định yêu cầu chi tiết linh kiện
 http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a,keyword,provide customised products,5,Làm sản phẩm theo yêu cầu khách
@@ -989,16 +1000,15 @@ http://data.europa.eu/esco/skill/acd54bcb-4c69-4ee9-a27f-732aec62804d,keyword,ad
 http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95,keyword,implement a virtual private network,8,Triển khai mạng riêng ảo (VPN)
 http://data.europa.eu/esco/skill/ad2552dc-fa50-417f-8d05-493089242fd2,keyword,monitor therapeutic progress,4,Theo dõi tiến triển trị liệu
 http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a,keyword,statistical analysis system software,8,Phần mềm thống kê SAS
+http://data.europa.eu/esco/skill/ada1d7d1-c887-4a28-b399-0d589b938786,keyword,apply risk management in sports,11,Quản lý rủi ro trong thể thao
 http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d,keyword,manage healthcare staff,8,Quản lý nhân viên y tế
 http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02,keyword,clean wood surface,12,Làm sạch bề mặt gỗ
 http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6,keyword,analyse quality of nurse care,3,Phân tích chất lượng chăm sóc điều dưỡng
 http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545,keyword,create furniture frames,3,Làm khung đồ gỗ
 http://data.europa.eu/esco/skill/af1c7b89-679b-4fae-b67c-ed05c669719c,keyword,repair wiring,3,Sửa dây điện
 http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581,keyword,operate surveying instruments,8,Vận hành máy đo đạc
-http://data.europa.eu/esco/skill/af2e97dc-fa66-421e-a793-ba4e4afa2dad,keyword,types of packaging used in industrial shipments,5,Các loại bao bì vận chuyển công nghiệp
 http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d,keyword,products coding system,3,Hệ thống mã sản phẩm
 http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf,keyword,computer graphics,10,Đồ hoạ máy tính
-http://data.europa.eu/esco/skill/afdee309-07f9-464e-ad3b-29f4e539da88,keyword,conduct health related research,9,Nghiên cứu sức khoẻ
 http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9,keyword,analyse the credit history of potential customers,5,Phân tích lịch sử tín dụng khách hàng tiềm năng
 http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9,keyword,meet picking standards,3,Đạt chuẩn lấy hàng
 http://data.europa.eu/esco/skill/b028aef0-6227-40a8-a35c-9ded6ceeead8,keyword,massage types,3,Các kiểu xoa bóp
@@ -1030,8 +1040,8 @@ http://data.europa.eu/esco/skill/b71e3394-599c-4205-a592-1778e45626ec,keyword,cr
 http://data.europa.eu/esco/skill/b74a4387-80dc-4d78-aab4-11215c86b1dc,keyword,inorganic chemistry,4,Hoá vô cơ
 http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6,keyword,present menus,3,Giới thiệu thực đơn
 http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4,keyword,ensure client orientation,76,Hướng tới khách hàng
-http://data.europa.eu/esco/skill/b7e57889-a84f-440c-9e60-459aa69979e9,keyword,analyse supply chain trends,43,Phân tích xu hướng chuỗi cung ứng
 http://data.europa.eu/esco/skill/b826a56a-811d-477c-b165-271729f644a4,keyword,paint surfaces,6,Sơn bề mặt
+http://data.europa.eu/esco/skill/b8316819-feca-403d-902f-a86562fd91e9,keyword,analyse transport business networks,3,Phân tích mạng lưới vận tải
 http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d,keyword,deal with departures in accommodation,2,Làm thủ tục trả phòng
 http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8,keyword,drive mobile heavy construction equipment,10,Lái máy thi công hạng nặng
 http://data.europa.eu/esco/skill/b90316c1-67e9-4338-b4dd-c950831ce33e,keyword,manage portfolio,1,Quản lý danh mục đầu tư
@@ -1115,19 +1125,18 @@ http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493,keyword,gr
 http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0,keyword,create insurance policies,6,Soạn hợp đồng bảo hiểm
 http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf,keyword,interact with healthcare users,51,Tương tác với người bệnh
 http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf,keyword,wash the dishes,2,Rửa bát đĩa
-http://data.europa.eu/esco/skill/c68e4cc4-b842-4660-a84c-48f11c70f657,keyword,legal department processes,3,Quy trình phòng pháp chế
 http://data.europa.eu/esco/skill/c73ea1b8-e121-4f91-b8f0-dee4ee28d6ec,keyword,plan schedule,17,Lên lịch
 http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292,keyword,ensure cleanliness of food preparation area,8,Giữ sạch khu sơ chế
 http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b,keyword,maintain customer records,12,Lưu hồ sơ khách hàng
 http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf,keyword,hair,6,Tóc
 http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e,keyword,manage purchasing cycle,3,Quản lý chu trình mua hàng
 http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887,keyword,legal terminology,18,Thuật ngữ pháp lý
-http://data.europa.eu/esco/skill/c8ab7e5b-b786-412f-a519-dfd93517b698,keyword,study media sources,14,Nghiên cứu nguồn tin truyền thông
 http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e,keyword,electricity,90,Điện
 http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22,keyword,clean road vehicles,3,Rửa xe
 http://data.europa.eu/esco/skill/c8bd9f9f-0ec6-447a-ab78-ad6eeeed9aa8,keyword,electrical testing methods,10,Phương pháp thử nghiệm điện
 http://data.europa.eu/esco/skill/c94dd931-f568-48e2-9a1c-922f1ce21f67,keyword,demography,3,Nhân khẩu học
-http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d,keyword,actuarial science,30,Khoa học tính phí bảo hiểm
+http://data.europa.eu/esco/skill/c95c29fe-3971-46b7-80e9-1f7e75ba99b3,keyword,use specific data analysis software,5,Dùng phần mềm phân tích dữ liệu chuyên dụng
+http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d,keyword,actuarial science,30,"Toán tính rủi ro (bảo hiểm, tài chính)"
 http://data.europa.eu/esco/skill/ca0f9294-09f6-4528-bb3d-604955f8acfd,keyword,manage farm supplies,2,Quản lý vật tư nông trại
 http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7,keyword,finish mortar joints,1,Miết mạch vữa
 http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff,keyword,ICT system user requirements,9,Yêu cầu người dùng hệ thống CNTT
@@ -1136,7 +1145,6 @@ http://data.europa.eu/esco/skill/cb5c6c3a-8999-41ee-83c9-012974efc43e,keyword,pr
 http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b,keyword,discharge cement,4,Xả xi măng
 http://data.europa.eu/esco/skill/cbcce641-a001-47eb-b15b-476da8dfc9ce,keyword,install lightning protection system,1,Lắp đặt hệ thống chống sét
 http://data.europa.eu/esco/skill/cbe6e2a5-f7bc-4162-9803-fcb9ecd86052,keyword,perform facial treatment,1,Chăm sóc da mặt
-http://data.europa.eu/esco/skill/cc69175e-c35d-4494-8844-e71385ccce4a,keyword,use foreign languages for health-related research,1,Dùng ngoại ngữ trong nghiên cứu y tế
 http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2,keyword,register visitors,3,Đăng ký khách
 http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed,keyword,fire-fighting systems,17,Hệ thống chữa cháy
 http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b,keyword,undertake continuous professional development in social work,56,Học tập liên tục trong công tác xã hội
@@ -1155,7 +1163,6 @@ http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525,keyword,se
 http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523,keyword,ICT infrastructure,8,Hạ tầng CNTT
 http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a,keyword,track geometry,1,Hình học đường ray
 http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089,keyword,monitor the welfare of animals,39,Theo dõi phúc lợi động vật
-http://data.europa.eu/esco/skill/d13ec79c-ed13-4f4a-bed7-850f3fec57ef,keyword,determine colour shades,3,Xác định sắc độ màu
 http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60,keyword,have computer literacy,238,Tin học cơ bản
 http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87,keyword,electrical wiring plans,29,Sơ đồ đi dây điện
 http://data.europa.eu/esco/skill/d181042e-c531-4461-af7c-4071c53418fe,keyword,type on electronic devices,3,Đánh máy trên thiết bị điện tử
@@ -1177,6 +1184,7 @@ http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1,keyword,un
 http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a,keyword,test procedures,6,Quy trình thử nghiệm
 http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b,keyword,maintain pastures,4,Chăm sóc đồng cỏ
 http://data.europa.eu/esco/skill/d58a48d1-5b7f-4028-ae11-b051d13ee1a8,keyword,analyse staff capacity,15,Phân tích năng lực nhân sự
+http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69,keyword,interpret medical results,5,Đọc kết quả y khoa
 http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8,keyword,inform on interest rates,2,Tư vấn lãi suất
 http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0,keyword,common aviation safety regulations,36,Quy định an toàn hàng không chung
 http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a,keyword,assist students in their learning,85,Hỗ trợ học sinh học tập
@@ -1199,8 +1207,10 @@ http://data.europa.eu/esco/skill/d9c7afc0-2c34-4757-b9f1-cc9137f11a29,keyword,ga
 http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed,keyword,sustainable building materials,2,Vật liệu xây dựng bền vững
 http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f,keyword,court procedures,15,Thủ tục toà án
 http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac,keyword,support ICT system users,4,Hỗ trợ người dùng hệ thống CNTT
+http://data.europa.eu/esco/skill/db3c8181-31b4-4950-bf0b-de01f93c372b,keyword,disassemble engines,6,Tháo rã động cơ
 http://data.europa.eu/esco/skill/db85a2ca-04c4-4275-ba7a-b615c3686e09,keyword,skin types,6,Các loại da
 http://data.europa.eu/esco/skill/db99d662-4230-49b3-a9e9-b0043a70c3c3,keyword,operate drilling equipment,10,Vận hành thiết bị khoan
+http://data.europa.eu/esco/skill/dbadb531-2fb9-4361-b80b-9be8c3c54229,keyword,instruct in sport,13,Huấn luyện thể thao
 http://data.europa.eu/esco/skill/dbe63ddf-76f8-4177-a482-fee995a57b77,keyword,integrated pest management,1,Quản lý dịch hại tổng hợp
 http://data.europa.eu/esco/skill/dbe6fdf0-d776-4dd2-95b6-d7a9dd799603,keyword,textile techniques,8,Kỹ thuật dệt
 http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b,keyword,analyse goal progress,10,Phân tích tiến độ mục tiêu
@@ -1228,13 +1238,14 @@ http://data.europa.eu/esco/skill/e1f09038-b493-4771-ae29-a2d3e7ea013a,keyword,do
 http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686,keyword,control of expenses,21,Kiểm soát chi phí
 http://data.europa.eu/esco/skill/e207163b-7963-4c3e-9494-7a4bb000211b,keyword,estimate duration of work,14,Ước tính thời gian làm việc
 http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449,keyword,copyright legislation,56,Luật bản quyền
-http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95,keyword,refer social service users,36,Chuyển tuyến người dùng dịch vụ xã hội
+http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95,keyword,refer social service users,36,Giới thiệu người dùng dịch vụ sang đơn vị khác
 http://data.europa.eu/esco/skill/e258707b-7676-4e9b-9c36-20c38018b349,keyword,publishing market,4,Thị trường xuất bản
 http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846,keyword,maintain kitchen equipment at correct temperature,8,Giữ nhiệt độ đúng cho thiết bị bếp
 http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3,keyword,advise on teaching methods,4,Tư vấn phương pháp giảng dạy
 http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5,keyword,compare survey computations,6,Đối chiếu kết quả tính toán khảo sát
+http://data.europa.eu/esco/skill/e2e15494-65b9-4af5-8b86-53fb51e7e022,keyword,manage accounts,12,Quản lý sổ sách kế toán của tổ chức
 http://data.europa.eu/esco/skill/e2e398af-6449-48e7-9fd5-ebe202dd157f,keyword,position patients undergoing interventions,3,Đặt tư thế người bệnh khi can thiệp
-http://data.europa.eu/esco/skill/e2e5d534-bf89-466b-a2a7-ea1b1f26222d,keyword,determine child welfare,13,Đánh giá phúc lợi trẻ em
+http://data.europa.eu/esco/skill/e2e5d534-bf89-466b-a2a7-ea1b1f26222d,keyword,determine child welfare,13,Đánh giá mức độ an toàn và nhu cầu bảo vệ của trẻ
 http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e,keyword,prepare chemical samples,16,Chuẩn bị mẫu hoá chất
 http://data.europa.eu/esco/skill/e33ad426-d088-4136-b9f4-8e9c70522932,keyword,bakery production methods,3,Phương pháp sản xuất bánh
 http://data.europa.eu/esco/skill/e37a6dcf-68c8-4afd-a2ca-503bbaa4a140,keyword,notify customers on special offers,1,Thông báo ưu đãi cho khách
@@ -1279,6 +1290,7 @@ http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394,keyword,pe
 http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824,keyword,tie reinforcing steel,1,Buộc cốt thép
 http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e,keyword,maintain a non-emotional involvement,6,Giữ khách quan về cảm xúc
 http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1,keyword,document management,6,Quản lý tài liệu
+http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6,keyword,offset printing,2,In offset
 http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b,keyword,train guides,2,Đào tạo hướng dẫn viên
 http://data.europa.eu/esco/skill/ea8aa053-2ac6-4f8e-b5d7-8e52b55966c2,keyword,manage acute pain,1,Kiểm soát đau cấp
 http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2,keyword,swim,18,Bơi
@@ -1389,7 +1401,7 @@ http://data.europa.eu/esco/skill/fd60bbcc-c3b6-4fa5-936c-eef5ae0a2d44,keyword,in
 http://data.europa.eu/esco/skill/fd6ab598-d7b1-4cef-9e54-e8f1a725881c,keyword,differentiate types of packages,5,Phân biệt loại bưu kiện
 http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd,keyword,implement data warehousing techniques,2,Kỹ thuật kho dữ liệu (data warehouse)
 http://data.europa.eu/esco/skill/fd843a67-4662-4682-9c7e-b4d794eaff12,keyword,prepare market research reports,4,Viết báo cáo nghiên cứu thị trường
-http://data.europa.eu/esco/skill/fd8c0029-9dc7-4b54-845b-ed30c61ba0f8,keyword,translate language concepts,6,Chuyển tải khái niệm ngôn ngữ
+http://data.europa.eu/esco/skill/fd8c0029-9dc7-4b54-845b-ed30c61ba0f8,keyword,translate language concepts,6,Dịch văn bản giữa các ngôn ngữ
 http://data.europa.eu/esco/skill/fe30a4b0-1a99-4fc7-afff-b162b8c834ba,keyword,communication principles,23,Nguyên tắc giao tiếp
 http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13,keyword,perform market research,80,Khảo sát thị trường
 http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30,keyword,perform defensive driving,14,Lái xe phòng vệ
@@ -1404,13 +1416,20 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 003,nhom,personal skills and development,8,Kỹ năng cá nhân và phát triển bản thân (chung)
 0031,nhom,personal skills and development,94,Kỹ năng cá nhân và phát triển bản thân
 0111,nhom,education science,241,Khoa học giáo dục
+0112,nhom,training for pre-school teachers,4,Sư phạm mầm non
 0113,nhom,teacher training without subject specialisation,62,Sư phạm chung
+0114,nhom,teacher training with subject specialisation,29,Sư phạm theo môn
 0211,nhom,audio-visual techniques and media production,143,Kỹ thuật nghe nhìn và sản xuất truyền thông
 0212,nhom,"fashion, interior and industrial design",41,"Thiết kế thời trang, nội thất và công nghiệp"
 0213,nhom,fine arts,28,Mỹ thuật
+0214,nhom,handicrafts,50,Thủ công mỹ nghệ
+0215,nhom,music and performing arts,54,Âm nhạc và nghệ thuật biểu diễn
+0222,nhom,history and archaeology,24,Lịch sử và khảo cổ học
 0223,nhom,philosophy and ethics,9,Triết học và đạo đức học
+0231,nhom,language acquisition,21,Học ngoại ngữ
 0232,nhom,literature and linguistics,72,Văn học và ngôn ngữ học
 0311,nhom,economics,43,Kinh tế học
+0312,nhom,political sciences and civics,135,Khoa học chính trị và giáo dục công dân
 0313,nhom,psychology,78,Tâm lý học
 0314,nhom,sociology and cultural studies,96,Xã hội học và nghiên cứu văn hoá
 0321,nhom,journalism and reporting,33,Báo chí và đưa tin
@@ -1428,7 +1447,9 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 0419,nhom,business and administration not elsewhere classified,23,Kinh doanh và quản trị khác
 042,nhom,law,15,Luật (chung)
 0421,nhom,law,800,Luật
+051,nhom,biological and related sciences,5,Sinh học và khoa học liên quan (chung)
 0511,nhom,biology,183,Sinh học
+0512,nhom,biochemistry,40,Hoá sinh
 0521,nhom,environmental sciences,58,Khoa học môi trường
 0522,nhom,natural environments and wildlife,38,Môi trường tự nhiên và động vật hoang dã
 0531,nhom,chemistry,277,Hoá học
@@ -1460,6 +1481,7 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 0729,nhom,manufacturing and processing not elsewhere classified,29,Sản xuất và chế biến khác
 0731,nhom,architecture and town planning,38,Kiến trúc và quy hoạch đô thị
 0732,nhom,building and civil engineering,317,Xây dựng dân dụng và công trình
+0788,nhom,"inter-disciplinary programmes and qualifications involving engineering, manufacturing and construction",6,"Liên ngành kỹ thuật, sản xuất và xây dựng"
 079,nhom,"engineering, manufacturing and construction not elsewhere classified",46,"Kỹ thuật, sản xuất và xây dựng khác (chung)"
 0799,nhom,"engineering, manufacturing and construction not elsewhere classified",7,"Kỹ thuật, sản xuất và xây dựng khác"
 0811,nhom,crop and livestock production,100,Trồng trọt và chăn nuôi
@@ -1473,6 +1495,7 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 0913,nhom,nursing and midwifery,35,Điều dưỡng và hộ sinh
 0914,nhom,medical diagnostic and treatment technology,101,Kỹ thuật chẩn đoán và điều trị y khoa
 0915,nhom,therapy and rehabilitation,44,Trị liệu và phục hồi chức năng
+0916,nhom,pharmacy,22,Dược
 0917,nhom,traditional and complementary medicine and therapy,8,Y học cổ truyền và bổ trợ
 0921,nhom,care of the elderly and of disabled adults,31,Chăm sóc người cao tuổi và người khuyết tật
 0922,nhom,child care and youth services,10,Chăm sóc trẻ em và dịch vụ thanh thiếu niên
@@ -1496,11 +1519,12 @@ S1.12.0,nhom,"creating artistic, visual or instructive materials",66,"Tạo tài
 S1.12.1,nhom,creating visual displays and decorations,235,Tạo trưng bày và trang trí
 S1.12.2,nhom,developing instructive or promotional materials,206,"Soạn tài liệu hướng dẫn, quảng bá"
 S1.12.3,nhom,creating artistic designs or performances,201,"Sáng tạo thiết kế, tiết mục nghệ thuật"
+S1.13.0,nhom,writing and composing,44,Viết và sáng tác
 S1.13.2,nhom,artistic and creative writing,58,Sáng tác văn chương
 S1.13.3,nhom,technical or academic writing,429,"Viết kỹ thuật, học thuật"
 S1.14.1,nhom,practising sports,32,Tập luyện thể thao
 S1.14.2,nhom,performing artistic or cultural activities,100,"Biểu diễn nghệ thuật, văn hoá"
-S1.14.3,nhom,conducting gaming activities,16,Điều hành trò chơi
+S1.14.3,nhom,conducting gaming activities,16,Điều hành trò chơi cờ bạc (casino)
 S1.15.2,nhom,translating and interpreting,9,Biên dịch và phiên dịch
 S1.3.0,nhom,teaching and training,150,Giảng dạy và đào tạo
 S1.3.1,nhom,teaching academic or vocational subjects,117,"Dạy môn học, nghề"
@@ -1518,6 +1542,7 @@ S1.5.6,nhom,advising on design or use of technologies,32,"Tư vấn thiết kế
 S1.5.7,nhom,advising on business or operational matters,77,"Tư vấn kinh doanh, vận hành"
 S1.5.8,nhom,advising on educational or vocational matters,16,"Tư vấn học tập, nghề nghiệp"
 S1.5.9,nhom,advising on workplace health and safety issues,53,Tư vấn an toàn lao động
+S1.6.0,nhom,"promoting, selling and purchasing",32,"Quảng bá, bán và mua"
 S1.6.1,nhom,selling products or services,184,"Bán sản phẩm, dịch vụ"
 S1.6.2,nhom,"promoting products, services, or programs",414,"Quảng bá sản phẩm, dịch vụ, chương trình"
 S1.6.3,nhom,purchasing goods or services,191,"Mua hàng hoá, dịch vụ"
@@ -1529,6 +1554,7 @@ S2.1.4,nhom,carrying out forensic and police investigations,30,"Điều tra hìn
 S2.2.0,nhom,documenting and recording information,22,Ghi chép và lưu hồ sơ
 S2.2.1,nhom,"preparing financial documents, records, reports, or budgets",249,"Lập chứng từ, báo cáo tài chính, ngân sách"
 S2.2.2,nhom,recording legal information,26,Ghi chép thông tin pháp lý
+S2.2.3,nhom,"preparing documentation for contracts, applications, or permits",70,"Lập hồ sơ hợp đồng, đơn, giấy phép"
 S2.2.4,nhom,maintaining or preparing medical documentation,73,Lập hồ sơ y tế
 S2.2.5,nhom,maintaining operational records,764,Ghi sổ vận hành
 S2.2.6,nhom,"documenting technical designs, procedures, problems or activities",199,"Ghi tài liệu thiết kế, quy trình, sự cố kỹ thuật"
@@ -1538,6 +1564,7 @@ S2.4.1,nhom,gathering information from physical or electronic sources,337,"Thu t
 S2.4.2,nhom,entering and transforming information,121,Nhập và chuyển đổi thông tin
 S2.5.0,nhom,measuring physical properties,329,Đo tính chất vật lý
 S2.5.1,nhom,measuring dimensions and related properties,153,Đo kích thước
+S2.5.2,nhom,weighing,16,Cân đo khối lượng
 S2.6.1,nhom,performing calculations,213,Tính toán
 S2.6.2,nhom,determining values of goods or services,65,"Định giá hàng hoá, dịch vụ"
 S2.6.3,nhom,estimating resource needs,211,Ước tính nguồn lực
@@ -1562,6 +1589,7 @@ S2.9.0,nhom,monitoring developments in area of expertise,398,Cập nhật tiến
 S3.0.0,nhom,assisting and caring,116,Hỗ trợ và chăm sóc
 S3.1.0,nhom,counselling,8,Tham vấn
 S3.1.1,nhom,"counselling on personal, family or social issues",80,"Tham vấn vấn đề cá nhân, gia đình, xã hội"
+S3.1.2,nhom,providing support to resolve problems,67,Hỗ trợ giải quyết vấn đề
 S3.1.3,nhom,assisting people to access services,65,Giúp người dân tiếp cận dịch vụ
 S3.2.0,nhom,providing health care or medical treatments,52,"Chăm sóc sức khoẻ, điều trị"
 S3.2.1,nhom,"providing medical, dental and nursing care",101,"Chăm sóc y tế, nha khoa, điều dưỡng"
@@ -1569,6 +1597,7 @@ S3.2.2,nhom,performing surgical procedures,15,Phẫu thuật
 S3.2.3,nhom,providing physical therapies,12,Vật lý trị liệu
 S3.2.4,nhom,providing psychological and occupational therapies,49,"Trị liệu tâm lý, hoạt động trị liệu"
 S3.2.5,nhom,"prescribing and ordering medical tests, treatments or devices",32,"Chỉ định xét nghiệm, điều trị, thiết bị y tế"
+S3.2.6,nhom,fitting assistive devices,14,Lắp dụng cụ hỗ trợ
 S3.3.0,nhom,protecting and enforcing,128,Bảo vệ và thực thi
 S3.3.2,nhom,complying with environmental protection laws and standards,204,Tuân thủ luật bảo vệ môi trường
 S3.3.3,nhom,complying with operational procedures,803,Tuân thủ quy trình vận hành
@@ -1606,7 +1635,7 @@ S5.6.2,nhom,"using word processing, publishing and presentation software",24,"D�
 S5.6.3,nhom,using computer aided design and drawing tools,169,"Dùng công cụ thiết kế, vẽ trên máy tính"
 S5.6.4,nhom,using digital tools for processing sound and images,29,"Dùng công cụ số xử lý âm thanh, hình ảnh"
 S5.7.0,nhom,using digital tools to control machinery,190,Dùng công cụ số điều khiển máy móc
-S6.0.0,nhom,handling and moving,54,Bốc xếp và di chuyển
+S6.0.0,nhom,handling and moving,54,Lao động tay chân: xử lý và di chuyển hàng
 S6.1.0,nhom,sorting and packaging goods and materials,4,"Phân loại và đóng gói hàng hoá, vật liệu"
 S6.1.1,nhom,sorting materials or products,175,"Phân loại vật liệu, sản phẩm"
 S6.1.2,nhom,marking materials or objects for identification,84,"Đánh dấu vật liệu, đồ vật"
@@ -1616,21 +1645,25 @@ S6.11.1,nhom,"cleaning tools, equipment, workpieces and vehicles",170,"Làm sạ
 S6.11.2,nhom,cleaning interior and exterior of buildings,189,Vệ sinh trong và ngoài toà nhà
 S6.11.3,nhom,cleaning outdoor spaces,8,Vệ sinh không gian ngoài trời
 S6.12.0,nhom,washing and maintaining textiles and clothing,18,"Giặt và bảo quản đồ vải, quần áo"
+S6.13.0,nhom,handling and disposing of waste and hazardous materials,59,Xử lý chất thải và vật liệu nguy hại
 S6.13.1,nhom,handling and disposing of hazardous materials,146,Xử lý vật liệu nguy hại
 S6.13.2,nhom,disposing of non-hazardous waste or debris,37,Xử lý chất thải thông thường
 S6.2.1,nhom,"loading and unloading goods and, materials",74,"Bốc dỡ hàng hoá, vật liệu"
 S6.2.2,nhom,"moving or lifting materials, equipment, or supplies",92,"Di chuyển, nâng vật liệu, thiết bị"
 S6.2.3,nhom,storing goods and materials,160,"Lưu kho hàng hoá, vật liệu"
 S6.2.4,nhom,"positioning materials, tools or equipment",255,"Định vị vật liệu, dụng cụ, thiết bị"
+S6.3.0,nhom,transforming and blending materials,22,Biến đổi và pha trộn vật liệu
 S6.3.1,nhom,preparing mixtures or solutions,159,"Pha trộn hỗn hợp, dung dịch"
 S6.3.6,nhom,collecting and preparing specimens or materials for testing,116,Lấy và chuẩn bị mẫu thử
 S6.4.1,nhom,cultivating land and crops,33,Canh tác đất và cây trồng
 S6.4.2,nhom,"planting, pruning and harvesting trees, crops and other plants",27,"Trồng, tỉa, thu hoạch cây"
+S6.5.0,nhom,assembling and fabricating products,158,Lắp ráp và chế tạo sản phẩm
 S6.5.1,nhom,fabricating precision instruments or jewellery,36,"Chế tác dụng cụ chính xác, trang sức"
+S6.5.3,nhom,assembling electrical and electronic products,30,"Lắp ráp sản phẩm điện, điện tử"
 S6.5.4,nhom,assembling mechanical products,11,Lắp ráp sản phẩm cơ khí
 S6.5.5,nhom,assembling furniture,3,Lắp ráp đồ nội thất
 S6.5.6,nhom,fabricating garments and textile products,49,May hàng dệt may
-S6.5.7,nhom,fabricating food and related products,47,Chế biến thực phẩm
+S6.5.7,nhom,fabricating food and related products,47,Làm thực phẩm và sản phẩm liên quan (thao tác)
 S6.6.1,nhom,making production moulds and casts,46,Làm khuôn đúc
 S6.6.3,nhom,making models,21,Làm mô hình
 S6.7.0,nhom,using hand tools,83,Dùng dụng cụ cầm tay
@@ -1638,7 +1671,9 @@ S6.7.1,nhom,cutting materials and drilling holes,126,"Cắt vật liệu, khoan 
 S6.7.2,nhom,shaping materials to create products,60,Tạo hình vật liệu
 S6.7.3,nhom,smoothing surfaces of objects or equipment,62,Làm nhẵn bề mặt
 S6.7.4,nhom,using precision hand tools,82,Dùng dụng cụ cầm tay chính xác
+S6.7.5,nhom,"hammering, nailing and riveting",14,"Đóng, đóng đinh, tán đinh"
 S6.9.1,nhom,tending and breeding animals,58,Chăm sóc và nhân giống vật nuôi
+S6.9.2,nhom,tending and breeding aquatic animals,35,Nuôi và nhân giống thuỷ sản
 S6.9.3,nhom,moving and herding animals,35,"Di chuyển, chăn dắt vật nuôi"
 S6.9.5,nhom,feeding and grooming animals,36,Cho ăn và chải chuốt vật nuôi
 S6.9.6,nhom,training animals,12,Huấn luyện động vật
@@ -1649,6 +1684,7 @@ S7.1.2,nhom,installing wooden and metal components,593,"Lắp cấu kiện gỗ,
 S7.1.6,nhom,"joining parts using soldering, welding or brazing techniques",69,"Hàn nối chi tiết (hàn điện, hàn thiếc, hàn đồng)"
 S7.2.1,nhom,"installing heating, ventilation and air conditioning equipment",9,"Lắp đặt hệ thống sưởi, thông gió, điều hoà"
 S7.2.2,nhom,installing plumbing or piping equipment or systems,37,"Lắp đặt hệ thống cấp thoát nước, đường ống"
+S7.2.3,nhom,installing insulation materials,8,Lắp vật liệu cách nhiệt
 S7.3.1,nhom,applying material to fill gaps in surfaces,1,Trét vá bề mặt
 S7.3.3,nhom,applying protective or decorative solutions or coatings,80,"Phủ sơn, lớp bảo vệ, trang trí"
 S8.0.0,nhom,working with machinery and specialised equipment,358,Vận hành máy móc và thiết bị chuyên dụng
@@ -1662,6 +1698,7 @@ S8.2.3,nhom,operating rail vehicles,31,Vận hành phương tiện đường s�
 S8.3.0,nhom,operating watercraft,33,Điều khiển tàu thuyền
 S8.4.0,nhom,operating machinery for the extraction and processing of raw materials,9,"Vận hành máy khai thác, chế biến nguyên liệu"
 S8.4.1,nhom,"operating mining, drilling and mineral processing machinery",13,"Vận hành máy khai mỏ, khoan, chế biến khoáng sản"
+S8.4.2,nhom,operating metal processing and finishing machinery,32,Vận hành máy gia công và hoàn thiện kim loại
 S8.4.3,nhom,operating pumping systems or equipment,42,Vận hành hệ thống bơm
 S8.4.4,nhom,operating energy production or distribution equipment,40,"Vận hành thiết bị sản xuất, phân phối năng lượng"
 S8.4.5,nhom,"operating petroleum, chemical or water processing systems or equipment",51,"Vận hành hệ thống xử lý dầu khí, hoá chất, nước"
@@ -1670,14 +1707,17 @@ S8.5.2,nhom,operating packaging machinery,11,Vận hành máy đóng gói
 S8.5.3,nhom,"operating machinery for the manufacture and treatment of textiles, fur and leather products",92,"Vận hành máy dệt, may, thuộc da"
 S8.5.4,nhom,operating food processing machinery,95,Vận hành máy chế biến thực phẩm
 S8.5.5,nhom,operating mixing and separating machinery,45,"Vận hành máy trộn, tách"
+S8.5.6,nhom,operating print and photographic production equipment,27,Vận hành thiết bị in và ảnh
 S8.6.0,nhom,using precision instrumentation and equipment,66,Dùng thiết bị chính xác
 S8.6.1,nhom,operating medical equipment,22,Vận hành thiết bị y tế
 S8.6.2,nhom,operating audio-visual equipment,40,Vận hành thiết bị nghe nhìn
 S8.6.3,nhom,operating scientific and laboratory equipment,93,Vận hành thiết bị phòng thí nghiệm
 S8.6.4,nhom,operating communications equipment,101,Vận hành thiết bị liên lạc
+S8.6.5,nhom,operating precision industrial equipment,41,Vận hành thiết bị công nghiệp chính xác
 S8.6.6,nhom,using precision measuring equipment,227,Dùng thiết bị đo chính xác
 S8.7.1,nhom,repairing and installing mechanical equipment,73,"Sửa chữa, lắp đặt thiết bị cơ khí"
 S8.7.3,nhom,maintaining mechanical machinery,158,Bảo dưỡng máy móc cơ khí
 S8.8.0,nhom,"installing, maintaining and repairing electrical, electronic and precision equipment",32,"Lắp đặt, bảo dưỡng, sửa chữa thiết bị điện, điện tử, chính xác"
 S8.8.1,nhom,"installing and repairing electrical, electronic and precision equipment",118,"Lắp đặt, sửa chữa thiết bị điện, điện tử, chính xác"
 S8.8.2,nhom,"maintaining electrical, electronic and precision equipment",208,"Bảo dưỡng thiết bị điện, điện tử, chính xác"
+S8.9.0,nhom,operating aircraft,13,Điều khiển máy bay

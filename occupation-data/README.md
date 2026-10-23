@@ -73,9 +73,9 @@ external/esco_onet/ + external/vsco_2020/ (tải bằng --download)
 external/onet_31_0/ + datasets/final_22_roles.json + research/research_notes/Thang cấp nghề/ (thang cấp, nghe_di_truoc.csv)
    └─ python3 occupation-data/scripts/build_point_budgets.py ─► generated/point_budgets.json, generated/levels_non_it.json
 
-external/esco_1_2_1/*.csv (ESCO v1.2.1, tải tay, xem dưới) + generated/point_budgets.json
+external/esco_1_2_1/*.csv (ESCO v1.2.1, tải tay, xem dưới) + external/onet_31_0/ (Sim, kiểm định) + generated/point_budgets.json
    └─ python3 occupation-data/scripts/build_keyword_map.py ─► generated/keyword_map.json, keyword_map.md, keyword_elements_en.csv
-         ▲ đọc research/research_notes/Bản đồ keyword/ (nghe_esco.csv, ten_keyword_vi.csv, keyword_it*.csv)
+         ▲ đọc research/research_notes/Bản đồ keyword/ (nghe_esco.csv, keyword_chon_tay.csv, ten_keyword_vi.csv, keyword_it*.csv)
 
 external/vietjobs/ (tải bằng --download)
    └─ python3 occupation-data/scripts/build_vietjobs_stats.py ─► generated/vietjobs_stats.json

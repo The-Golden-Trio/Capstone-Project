@@ -13,6 +13,8 @@ Luật (khối G của đề xuất game design; nguồn ở research/research_n
 - Mỗi nghề tối đa 6 keyword cốt lõi (nhiều nghề cùng nhóm ISCO 3 số có, hiếm ở nghề khác; nhóm dưới 5 nghề thì lấy nhóm
   ISCO 2 số) và 4 keyword đặc trưng (nghề cùng nhóm ít có). Một kỹ năng và một kiến thức cùng gốc từ chỉ giữ một.
   Nghề ESCO có dưới 6 keyword bắt buộc thì bổ sung kỹ năng tuỳ chọn (ghi ở "optional_fill").
+- Một nghề nối tối đa 2 nghề ESCO khi nghề Việt Nam bao trùm cả hai (nghe_esco.csv, cột esco_uri_phu): gộp kỹ năng.
+  Nghề ESCO không có hoặc quá mỏng thì nhóm chọn tay 6–10 kỹ năng ESCO, có lý do (keyword_chon_tay.csv, theo thứ tự cốt lõi).
 - Mức cao nhất: hai keyword cốt lõi đầu, rồi xen kẽ đặc trưng và cốt lõi (keyword đặc trưng là thứ làm nên nghề);
   30% đầu Chuyên sâu, 20% cuối Làm quen, còn lại Thành thạo.
 - Lên mức chia đều cho các cấp. Nghề có nghề đi trước (point_budgets "prerequisite") vào cấp đầu với mọi keyword ở Làm quen.
@@ -22,6 +24,9 @@ Luật (khối G của đề xuất game design; nguồn ở research/research_n
   mỗi keyword cần lấy nhóm tốt nhất của nó. Quy đổi một chiều giữa nhóm s(A→B) = P(B dùng | A dùng) trên 3.039 nghề ESCO;
   giữ nhóm có ≥ 10 nghề dùng, cặp cùng có ở ≥ 3 nghề và z siêu bội ≥ 3.
   Tín chỉ: cùng nhóm 1; s ≥ 0,75 → 0,5; 0,5 ≤ s < 0,75 → 0,25; còn lại 0. Mức quy đổi lấy lớn nhất, không cộng dồn.
+- Hồ sơ nền: người đã xong cấp cuối một nghề có thêm mọi nhóm kỹ năng của các kỹ năng bắt buộc ESCO của nghề đó, mức
+  Làm quen ("background_groups"). Luật nhảy: độ phủ ≥ 50%, hoặc ≥ 30% nếu hai nghề rất giống theo Sim của khối E
+  (Sim ≥ 1,2, "similar_careers"; cùng mã O*NET ghi null).
 """
 import csv
 import json
@@ -39,6 +44,7 @@ MAP_FILE = KW_DIR / "nghe_esco.csv"
 NAMES_FILE = KW_DIR / "ten_keyword_vi.csv"
 IT_FILE = KW_DIR / "keyword_it.csv"
 IT_ESCO_FILE = KW_DIR / "keyword_it_esco.csv"
+MANUAL_FILE = KW_DIR / "keyword_chon_tay.csv"
 ATTRIBUTION = [
     "This service uses the ESCO classification of the European Commission (ESCO v1.2.1).",
     "JobQuest has modified the ESCO data: selected and grouped skills, assigned levels and added Vietnamese names.",
@@ -50,6 +56,10 @@ MIN_KEYWORDS = 6
 MIN_FAMILY = 5
 TOP_SHARE, LOW_SHARE = 0.3, 0.2
 MIN_USES = 3
+JUMP_COVERAGE = 0.5
+SIMILAR_COVERAGE = 0.3
+SIM_SIMILAR = 1.2
+SIM_WEIGHTS = {"riasec": 2, "knowledge": 2, "skills": 1, "styles": 1}
 MIN_OCC = 10
 MIN_PAIR = 3
 Z_MIN = 3.0
@@ -138,18 +148,27 @@ def stems(label):
     return {w[:5] for w in re.findall(r"[a-z0-9-]+", label.lower()) if len(w) >= 5 and w not in GENERIC}
 
 
-def select(esco, o):
-    """Keyword của một nghề ESCO kèm mức cao nhất, và số keyword phải bổ sung từ kỹ năng tuỳ chọn."""
-    isco = esco.occ[o]["iscoGroup"]
-    sibs = [x for x in esco.family[isco[:3]] if x != o]
+def levels_by_order(order):
+    n = len(order)
+    top, low = math.ceil(TOP_SHARE * n), math.floor(LOW_SHARE * n)
+    return {s: 3 if i < top else 1 if i >= n - low else 2 for i, s in enumerate(order)}
+
+
+def select(esco, occs):
+    """Keyword của nghề nối với 1–2 nghề ESCO (gộp kỹ năng) kèm mức cao nhất, và số keyword phải bổ sung từ kỹ năng tuỳ chọn.
+    Nhóm nghề cùng loại lấy theo nghề ESCO đầu."""
+    isco = esco.occ[occs[0]]["iscoGroup"]
+    sibs = [x for x in esco.family[isco[:3]] if x not in occs]
     if len(sibs) < MIN_FAMILY:
-        sibs = [x for x in esco.family[isco[:2]] if x != o]
+        sibs = [x for x in esco.family[isco[:2]] if x not in occs]
+    ess = set().union(*(esco.ess[o] for o in occs))
+    opt = set().union(*(esco.opt[o] for o in occs)) - ess
 
     def scored(skills):
         return [(s, sum(s in esco.ess[x] | esco.opt[x] for x in sibs) / len(sibs), math.log(len(esco.occ) / esco.uses[s]))
                 for s in skills if esco.is_keyword(s)]
 
-    rows = scored(esco.ess[o])
+    rows = scored(ess)
     picked, cores, specs = [], [], []
     types = ("skill/competence", "knowledge")
 
@@ -172,15 +191,13 @@ def select(esco, o):
         if s not in picked:
             add(s, specs)
     essential = len(picked)
-    for s, share, idf in sorted(scored(esco.opt[o]), key=lambda t: (-t[1] * t[2], t[0])):
+    for s, share, idf in sorted(scored(opt), key=lambda t: (-t[1] * t[2], t[0])):
         if len(picked) >= MIN_KEYWORDS:
             break
         add(s, cores)
     rest = cores[2:]
     order = cores[:2] + [x for pair in zip(specs, rest) for x in pair] + specs[len(rest):] + rest[len(specs):]
-    n = len(order)
-    top, low = math.ceil(TOP_SHARE * n), math.floor(LOW_SHARE * n)
-    return {s: 3 if i < top else 1 if i >= n - low else 2 for i, s in enumerate(order)}, len(picked) - essential
+    return levels_by_order(order), len(picked) - essential
 
 
 def conversion(used):
@@ -268,23 +285,67 @@ def auc(pos, neg):
     return (rank_sum - n1 * (n1 + 1) / 2) / (n1 * n0)
 
 
+def finished_profile(career, groups):
+    """Nhóm kỹ năng của người đã xong cấp cuối một nghề: keyword đầu ra cộng hồ sơ nền ở mức Làm quen."""
+    have = lift(career["levels"][-1]["output"], groups)
+    for g in career["background_groups"]:
+        have.setdefault(g, 1)
+    return have
+
+
+def can_jump(cov, similar):
+    return cov >= (SIMILAR_COVERAGE if similar else JUMP_COVERAGE)
+
+
 def validate(careers, groups, conv, tests):
-    """Độ phủ (nghề nguồn đã xong cấp cuối) cho cấp cuối nghề đích; cặp có hướng liên quan theo từng phép kiểm."""
-    have = {c["role_code"]: lift(c["levels"][-1]["output"], groups) for c in careers}
+    """Độ phủ (nghề nguồn đã xong cấp cuối) cho cấp cuối nghề đích; cặp có hướng liên quan theo từng phép kiểm.
+    "jump_*": tỉ lệ cặp được vào cấp cuối theo luật nhảy nghề (độ phủ 50%, hoặc 30% nếu hai nghề rất giống)."""
+    have = {c["role_code"]: finished_profile(c, groups) for c in careers}
+    similar = {c["role_code"]: set(c["similar_careers"]) for c in careers}
     out = {}
     for name, related in tests.items():
         for k, table in (("conv", conv), ("exact", {})):
-            pos, neg = [], []
+            pos, neg, jump_pos, jump_neg = [], [], [], []
             for a in careers:
                 for b in careers:
                     if a is not b:
                         cov = coverage(have[a["role_code"]], b["levels"][-1]["output"], groups, table)
-                        (pos if related(a["role_code"], b["role_code"]) else neg).append(cov)
+                        rel = related(a["role_code"], b["role_code"])
+                        (pos if rel else neg).append(cov)
+                        (jump_pos if rel else jump_neg).append(can_jump(cov, b["role_code"] in similar[a["role_code"]]))
             out[f"{name}_{k}"] = {
                 "pairs_related": len(pos), "auc": round(auc(pos, neg), 3),
                 "mean_related": round(statistics.mean(pos), 3), "mean_other": round(statistics.mean(neg), 3),
                 "pass50_related": round(sum(x >= 0.5 for x in pos) / len(pos), 3),
-                "pass50_other": round(sum(x >= 0.5 for x in neg) / len(neg), 3)}
+                "pass50_other": round(sum(x >= 0.5 for x in neg) / len(neg), 3),
+                "jump_related": round(statistics.mean(jump_pos), 3), "jump_other": round(statistics.mean(jump_neg), 3)}
+    return out
+
+
+def similar_careers(budgets):
+    """Cặp nghề rất giống theo Sim của khối E (RIASEC 2, kiến thức 2, kỹ năng 1, phong cách làm việc 1; điểm z trên mọi
+    nghề O*NET); nghề ghép nhiều mã lấy trung bình các cặp mã. Hai nghề cùng một mã O*NET coi như rất giống."""
+    import evaluate_onet_similarity as S
+    _, raw, _ = S.load()
+    codes = sorted(set.intersection(*[set(v) for v in raw.values()]))
+    vec = S.build_vectors(raw, codes)
+    sims = S.standardise(S.cosine_matrices({d: vec[d] for d in SIM_WEIGHTS}, codes))
+    idx = {c: i for i, c in enumerate(codes)}
+    total = sum(SIM_WEIGHTS.values())
+
+    def sim(a, b):
+        pairs = [(idx[x], idx[y]) for x in a["onet"] for y in b["onet"] if x in idx and y in idx]
+        if any(i == j for i, j in pairs):
+            return None
+        return statistics.mean(sum(w * sims[d][i][j] for d, w in SIM_WEIGHTS.items()) / total for i, j in pairs) if pairs else float("-inf")
+
+    out = defaultdict(dict)
+    for a in budgets:
+        for b in budgets:
+            if a is not b:
+                s = sim(a, b)
+                if s is None or s >= SIM_SIMILAR:
+                    out[a["role_code"]][b["role_code"]] = None if s is None else round(s, 2)
     return out
 
 
@@ -344,18 +405,24 @@ def markdown(data):
         "Độ phủ keyword (nghề nguồn đã xong cấp cuối) cho cấp cuối nghề đích, tính trên cặp có hướng. Phép kiểm theo O\\*NET độc lập "
         "với cách chọn keyword; phép kiểm theo ISCO chỉ để soát sơ bộ, vì cách chọn keyword đã dùng nhóm ISCO 3 số.",
         "",
-        "| Cặp liên quan | Cách tính | AUC | Độ phủ TB, liên quan | Độ phủ TB, khác | Đạt 50%, liên quan | Đạt 50%, khác |",
-        "|---|---|---|---|---|---|---|",
+        "Nghề nguồn tính cả hồ sơ nền (kỹ năng bắt buộc ESCO của nghề, mức Làm quen). Cột \"Được nhảy\" theo luật: độ phủ ≥ 50%, "
+        f"hoặc ≥ 30% nếu hai nghề rất giống (Sim ≥ 1,2; {num(sum(len(c['similar_careers']) for c in data['careers']))} cặp có hướng).",
+        "",
+        "| Cặp liên quan | Cách tính | AUC | Độ phủ TB, liên quan | Độ phủ TB, khác | Đạt 50%, liên quan | Đạt 50%, khác | Được nhảy, liên quan | Được nhảy, khác |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for name, label in (("onet", "Nghề liên quan O\\*NET (Primary)"), ("isco3", "Cùng ISCO 3 số"), ("isco2", "Cùng ISCO 2 số")):
         for k, how in (("conv", "Có quy đổi"), ("exact", "Chỉ cùng nhóm")):
             r = v[f"{name}_{k}"]
             lines.append(f"| {label} ({num(r['pairs_related'])} cặp) | {how} | {dec(r['auc'])} | {pct(r['mean_related'])} | "
-                         f"{pct(r['mean_other'])} | {pct(r['pass50_related'])} | {pct(r['pass50_other'])} |")
+                         f"{pct(r['mean_other'])} | {pct(r['pass50_related'])} | {pct(r['pass50_other'])} | {pct(r['jump_related'])} | {pct(r['jump_other'])} |")
+    lines += ["", "Phép kiểm theo O\\*NET thiên về kênh Sim (Sim cũng dựng từ O\\*NET); phép theo ISCO thiên nhẹ về keyword."]
     lines += ["", "## Từng nghề", "", "| Nghề | Nghề ESCO | Keyword (mức cao nhất) |", "|---|---|---|"]
     for c in data["careers"]:
-        kws = "; ".join(f"{k['ten_vi'] or k['en']} ({k['max_level']})" for k in c["keywords"])
-        lines.append(f"| {c['name_vn']} | {c['esco']['label']} | {kws} |")
+        kws = "; ".join(f"{k['ten_vi']} · *{k['en']}* ({k['max_level']})" if k["ten_vi"] else f"{k['en']} ({k['max_level']})"
+                        for k in c["keywords"])
+        esco = c["esco"]["label"] + (f" + {c['esco']['extra']['label']}" if c["esco"]["extra"] else "")
+        lines.append(f"| {c['name_vn']} | {esco} | {kws} |")
     lines += ["", "## Nguồn", ""] + [f"- {a}" for a in data["attribution"]]
     return "\n".join(lines) + "\n"
 
@@ -363,18 +430,26 @@ def markdown(data):
 def main():
     esco = Esco()
     mapping = {r["role_code"]: r for r in read_kw(MAP_FILE)}
+    manual = defaultdict(list)
+    for r in sorted(read_kw(MANUAL_FILE), key=lambda r: int(r["thu_tu"])):
+        manual[r["role_code"]].append(r["esco_uri"])
     names = {r["element"]: r["ten_vi"] for r in read_kw(NAMES_FILE)} if NAMES_FILE.exists() else {}
     groups = {s: sorted(esco.groups(s)) for s in esco.skills}
     used = {o: {g: 1.0 for s in esco.ess[o] if esco.is_keyword(s) for g in groups[s] or [s]} for o in esco.occ}
     conv, count = conversion(used)
 
     budgets = json.loads((GENERATED / "point_budgets.json").read_text(encoding="utf-8"))["roles"]
+    similar = similar_careers(budgets)
     careers, isco = [], {}
     for c in budgets:
         m = mapping[c["role_code"]]
-        o = esco.occ[m["esco_uri"]]
+        occs = [m["esco_uri"]] + ([m["esco_uri_phu"]] if m["esco_uri_phu"] else [])
+        o = esco.occ[occs[0]]
         isco[c["role_code"]] = o["iscoGroup"]
-        maxes, fill = select(esco, m["esco_uri"])
+        if c["role_code"] in manual:
+            maxes, fill = levels_by_order(manual[c["role_code"]]), 0
+        else:
+            maxes, fill = select(esco, occs)
         keys = list(maxes)
         plan = schedule(keys, maxes, len(c["levels"]), {k: 1 for k in keys} if c.get("prerequisite") else None)
         reached = plan[-1]["output"]
@@ -383,14 +458,18 @@ def main():
         keys = sorted(keys, key=lambda k: -maxes[k])
         careers.append({
             "role_code": c["role_code"], "name_vn": c["name_vn"], "is_it": c["is_it"],
-            "esco": {"label": o["preferredLabel"], "code": o["code"], "uri": m["esco_uri"], "how": m["cach_chon"]},
+            "esco": {"label": o["preferredLabel"], "code": o["code"], "uri": m["esco_uri"], "how": m["cach_chon"],
+                     "extra": ({"label": esco.occ[occs[1]]["preferredLabel"], "uri": occs[1]} if len(occs) > 1 else None)},
             "optional_fill": fill, "trimmed_steps": trimmed, "keyword_base": 1 if c.get("prerequisite") else 0,
             "keywords": [{"element": k, "en": esco.skills[k]["preferredLabel"], "ten_vi": names.get(k), "max_level": maxes[k],
                           "groups": groups[k]} for k in keys],
             "levels": [{"band": l["band"], "title_vn": l["title_vn"], **p} for l, p in zip(c["levels"], plan)],
+            "background_groups": sorted({g for s in set().union(*(esco.ess[x] for x in occs)) | set(maxes) if esco.is_keyword(s)
+                                         for g in groups[s] or [s]}),
+            "similar_careers": similar[c["role_code"]],
         })
     vocab = sorted({k["element"] for c in careers for k in c["keywords"]})
-    gvocab = sorted({g for k in vocab for g in groups[k] or [k]})
+    gvocab = sorted({g for k in vocab for g in groups[k] or [k]} | {g for c in careers for g in c["background_groups"]})
     tests = {"onet": onet_related(budgets),
              "isco3": lambda a, b: isco[a][:3] == isco[b][:3],
              "isco2": lambda a, b: isco[a][:2] == isco[b][:2]}
@@ -404,7 +483,9 @@ def main():
         for k in vocab:
             w.writerow([k, "keyword", esco.skills[k]["preferredLabel"], esco.ess_uses[k], names.get(k, "")])
         for g in gvocab:
-            if g not in esco.skills:
+            if g in esco.skills and g not in vocab:
+                w.writerow([g, "keyword", esco.skills[g]["preferredLabel"], esco.ess_uses[g], names.get(g, "")])
+            elif g not in esco.skills:
                 w.writerow([g, "nhom", esco.glabel[g], count.get(g, 0), names.get(g, "")])
     group_conversion = {a: {b: x for b, x in d.items() if b in gvocab} for a, d in conv.items() if a in gvocab}
     data = {
