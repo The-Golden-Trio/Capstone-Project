@@ -70,7 +70,7 @@ external/esco_onet/ + external/vsco_2020/ (tải bằng --download)
    └─ python3 occupation-data/scripts/build_onet_to_vsco.py ─► decisions/onet_to_vsco.csv, generated/onet_to_vsco.md
          ▲ đọc decisions/onet_to_vsco_overrides.json + generated/onet_all_roles.json (chạy SAU build_all_onet_profiles.py)
 
-external/onet_31_0/ + datasets/final_22_roles.json + research/research_notes/Thang cấp nghề/
+external/onet_31_0/ + datasets/final_22_roles.json + research/research_notes/Thang cấp nghề/ (thang cấp, nghe_di_truoc.csv)
    └─ python3 occupation-data/scripts/build_point_budgets.py ─► generated/point_budgets.json, generated/levels_non_it.json
 
 external/esco_1_2_1/*.csv (ESCO v1.2.1, tải tay, xem dưới) + generated/point_budgets.json

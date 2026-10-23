@@ -15,6 +15,9 @@ Luật (khối G của đề xuất game design; nguồn ở research/research_n
   Nghề ESCO có dưới 6 keyword bắt buộc thì bổ sung kỹ năng tuỳ chọn (ghi ở "optional_fill").
 - Mức cao nhất: hai keyword cốt lõi đầu, rồi xen kẽ đặc trưng và cốt lõi (keyword đặc trưng là thứ làm nên nghề);
   30% đầu Chuyên sâu, 20% cuối Làm quen, còn lại Thành thạo.
+- Lên mức chia đều cho các cấp. Nghề có nghề đi trước (point_budgets "prerequisite") vào cấp đầu với mọi keyword ở Làm quen.
+  Mỗi cấp nâng tối đa 5 keyword (tối đa 6 màn = số keyword đầu ra + 1); thang quá ngắn thì bỏ các lần lên mức cuối
+  của keyword ít cốt lõi nhất, và mức cao nhất ghi theo mức thật đạt được.
 - Nhảy nghề tính ở tầng nhóm kỹ năng cấp 3 của ESCO (S x.y.z; kiến thức theo lĩnh vực ISCED-F 4 số, thiếu thì 3 số):
   mỗi keyword cần lấy nhóm tốt nhất của nó. Quy đổi một chiều giữa nhóm s(A→B) = P(B dùng | A dùng) trên 3.039 nghề ESCO;
   giữ nhóm có ≥ 10 nghề dùng, cặp cùng có ở ≥ 3 nghề và z siêu bội ≥ 3.
@@ -42,6 +45,7 @@ ATTRIBUTION = [
 ]
 
 CORE, SPEC = 6, 4
+MAX_PER_LEVEL = 5
 MIN_KEYWORDS = 6
 MIN_FAMILY = 5
 TOP_SHARE, LOW_SHARE = 0.3, 0.2
@@ -206,10 +210,12 @@ def conversion(used):
     return out, count
 
 
-def schedule(keys, maxes, n):
-    """Chia các lần lên mức cho n cấp: cấp i (i ≥ 1) có đầu ra; đầu vào cấp i = đầu ra cộng dồn tới cấp i−1."""
-    steps = [k for lvl in (1, 2, 3) for k in keys if maxes[k] >= lvl]
-    have, levels = {}, []
+def schedule(keys, maxes, n, base=None):
+    """Chia các lần lên mức cho n cấp: đầu vào cấp i = đầu ra cộng dồn tới cấp i−1; base là nền có sẵn khi vào cấp đầu.
+    keys xếp theo độ cốt lõi giảm dần, nên phần bị bỏ khi vượt MAX_PER_LEVEL × n là lần lên mức cuối của keyword ít cốt lõi."""
+    base = base or {}
+    steps = [k for lvl in (1, 2, 3) for k in keys if maxes[k] >= lvl and lvl > base.get(k, 0)][:MAX_PER_LEVEL * n]
+    have, levels = dict(base), []
     per = [len(steps) * (i + 1) // n - len(steps) * i // n for i in range(n)]
     pos = 0
     for i in range(n):
@@ -369,12 +375,16 @@ def main():
         o = esco.occ[m["esco_uri"]]
         isco[c["role_code"]] = o["iscoGroup"]
         maxes, fill = select(esco, m["esco_uri"])
-        keys = sorted(maxes, key=lambda k: -maxes[k])
-        plan = schedule(keys, maxes, len(c["levels"]))
+        keys = list(maxes)
+        plan = schedule(keys, maxes, len(c["levels"]), {k: 1 for k in keys} if c.get("prerequisite") else None)
+        reached = plan[-1]["output"]
+        trimmed = sum(maxes[k] - reached.get(k, 0) for k in keys)
+        maxes = {k: reached[k] for k in keys}
+        keys = sorted(keys, key=lambda k: -maxes[k])
         careers.append({
             "role_code": c["role_code"], "name_vn": c["name_vn"], "is_it": c["is_it"],
             "esco": {"label": o["preferredLabel"], "code": o["code"], "uri": m["esco_uri"], "how": m["cach_chon"]},
-            "optional_fill": fill,
+            "optional_fill": fill, "trimmed_steps": trimmed, "keyword_base": 1 if c.get("prerequisite") else 0,
             "keywords": [{"element": k, "en": esco.skills[k]["preferredLabel"], "ten_vi": names.get(k), "max_level": maxes[k],
                           "groups": groups[k]} for k in keys],
             "levels": [{"band": l["band"], "title_vn": l["title_vn"], **p} for l, p in zip(c["levels"], plan)],

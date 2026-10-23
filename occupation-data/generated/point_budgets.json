@@ -1277,7 +1277,15 @@
             "thich_ung_hoc_hoi": 1900,
             "dao_duc_chuyen_nghiep": 1510
           },
-          "requirement": {}
+          "requirement": {
+            "tu_duy_giai_quyet_van_de": 3,
+            "thich_ung_hoc_hoi": 3,
+            "tu_quan_ly_ap_luc": 2,
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "lanh_dao_kinh_doanh": 1,
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L7",
@@ -1298,13 +1306,13 @@
             "dao_duc_chuyen_nghiep": 1940
           },
           "requirement": {
-            "tu_duy_giai_quyet_van_de": 2,
-            "giao_tiep_hop_tac": 1,
-            "tri_tue_cam_xuc": 1,
-            "lanh_dao_kinh_doanh": 1,
-            "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "tu_duy_giai_quyet_van_de": 3,
+            "thich_ung_hoc_hoi": 3,
+            "giao_tiep_hop_tac": 2,
+            "lanh_dao_kinh_doanh": 2,
+            "tu_quan_ly_ap_luc": 2,
+            "dao_duc_chuyen_nghiep": 2,
+            "tri_tue_cam_xuc": 1
           }
         },
         {
@@ -1326,13 +1334,13 @@
             "dao_duc_chuyen_nghiep": 2450
           },
           "requirement": {
-            "tu_duy_giai_quyet_van_de": 3,
-            "giao_tiep_hop_tac": 2,
-            "lanh_dao_kinh_doanh": 2,
-            "tu_quan_ly_ap_luc": 2,
-            "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2,
-            "tri_tue_cam_xuc": 1
+            "tu_duy_giai_quyet_van_de": 4,
+            "giao_tiep_hop_tac": 3,
+            "lanh_dao_kinh_doanh": 3,
+            "tu_quan_ly_ap_luc": 3,
+            "thich_ung_hoc_hoi": 3,
+            "dao_duc_chuyen_nghiep": 3,
+            "tri_tue_cam_xuc": 2
           }
         }
       ],
@@ -1352,6 +1360,26 @@
         "thich_ung_hoc_hoi",
         "tu_quan_ly_ap_luc"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L5",
+        "careers": [
+          "SWE_BACKEND",
+          "SWE_FRONTEND",
+          "SWE_TECHLEAD",
+          "CLOUD_DEVOPS",
+          "CLOUD_ENG"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 1910,
+        "tri_tue_cam_xuc": 1370,
+        "lanh_dao_kinh_doanh": 1380,
+        "tu_duy_giai_quyet_van_de": 6120,
+        "tu_quan_ly_ap_luc": 2900,
+        "thich_ung_hoc_hoi": 5250,
+        "dao_duc_chuyen_nghiep": 1700
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 6600,
         "tri_tue_cam_xuc": 3330,
@@ -1389,7 +1417,15 @@
             "thich_ung_hoc_hoi": 1590,
             "dao_duc_chuyen_nghiep": 1160
           },
-          "requirement": {}
+          "requirement": {
+            "tu_duy_giai_quyet_van_de": 3,
+            "thich_ung_hoc_hoi": 3,
+            "tu_quan_ly_ap_luc": 2,
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "lanh_dao_kinh_doanh": 1,
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L7",
@@ -1410,12 +1446,13 @@
             "dao_duc_chuyen_nghiep": 1490
           },
           "requirement": {
-            "tu_duy_giai_quyet_van_de": 2,
-            "giao_tiep_hop_tac": 1,
-            "lanh_dao_kinh_doanh": 1,
-            "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "tu_duy_giai_quyet_van_de": 3,
+            "thich_ung_hoc_hoi": 3,
+            "giao_tiep_hop_tac": 2,
+            "lanh_dao_kinh_doanh": 2,
+            "tu_quan_ly_ap_luc": 2,
+            "dao_duc_chuyen_nghiep": 2,
+            "tri_tue_cam_xuc": 1
           }
         }
       ],
@@ -1435,6 +1472,26 @@
         "tu_quan_ly_ap_luc",
         "thich_ung_hoc_hoi"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L5",
+        "careers": [
+          "SWE_BACKEND",
+          "SWE_FRONTEND",
+          "SWE_MOBILE",
+          "SWE_GAME",
+          "SWE_EMBEDDED"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 1910,
+        "tri_tue_cam_xuc": 1260,
+        "lanh_dao_kinh_doanh": 1380,
+        "tu_duy_giai_quyet_van_de": 6120,
+        "tu_quan_ly_ap_luc": 2760,
+        "thich_ung_hoc_hoi": 5240,
+        "dao_duc_chuyen_nghiep": 1450
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 2580,
         "tri_tue_cam_xuc": 1860,
@@ -1471,7 +1528,15 @@
             "thich_ung_hoc_hoi": 1600,
             "dao_duc_chuyen_nghiep": 1320
           },
-          "requirement": {}
+          "requirement": {
+            "tu_duy_giai_quyet_van_de": 3,
+            "thich_ung_hoc_hoi": 3,
+            "giao_tiep_hop_tac": 2,
+            "lanh_dao_kinh_doanh": 2,
+            "tu_quan_ly_ap_luc": 2,
+            "dao_duc_chuyen_nghiep": 2,
+            "tri_tue_cam_xuc": 1
+          }
         },
         {
           "band": "L8",
@@ -1492,13 +1557,13 @@
             "dao_duc_chuyen_nghiep": 1670
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 2,
-            "tu_duy_giai_quyet_van_de": 2,
-            "giao_tiep_hop_tac": 1,
-            "tri_tue_cam_xuc": 1,
-            "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "tu_duy_giai_quyet_van_de": 4,
+            "lanh_dao_kinh_doanh": 3,
+            "tu_quan_ly_ap_luc": 3,
+            "thich_ung_hoc_hoi": 3,
+            "giao_tiep_hop_tac": 2,
+            "tri_tue_cam_xuc": 2,
+            "dao_duc_chuyen_nghiep": 2
           }
         },
         {
@@ -1520,13 +1585,13 @@
             "dao_duc_chuyen_nghiep": 2040
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 3,
-            "tu_duy_giai_quyet_van_de": 3,
-            "giao_tiep_hop_tac": 2,
-            "tu_quan_ly_ap_luc": 2,
-            "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2,
-            "tri_tue_cam_xuc": 1
+            "lanh_dao_kinh_doanh": 4,
+            "tu_duy_giai_quyet_van_de": 4,
+            "thich_ung_hoc_hoi": 4,
+            "giao_tiep_hop_tac": 3,
+            "tu_quan_ly_ap_luc": 3,
+            "dao_duc_chuyen_nghiep": 3,
+            "tri_tue_cam_xuc": 2
           }
         }
       ],
@@ -1546,6 +1611,23 @@
         "tu_duy_giai_quyet_van_de",
         "tu_quan_ly_ap_luc"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L6",
+        "careers": [
+          "SWE_TECHLEAD",
+          "SWE_ARCH_SOL"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 3040,
+        "tri_tue_cam_xuc": 2070,
+        "lanh_dao_kinh_doanh": 3380,
+        "tu_duy_giai_quyet_van_de": 9210,
+        "tu_quan_ly_ap_luc": 4390,
+        "thich_ung_hoc_hoi": 6830,
+        "dao_duc_chuyen_nghiep": 2610
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 6840,
         "tri_tue_cam_xuc": 4030,
@@ -1917,7 +1999,10 @@
             "thich_ung_hoc_hoi": 1040,
             "dao_duc_chuyen_nghiep": 270
           },
-          "requirement": {}
+          "requirement": {
+            "tu_duy_giai_quyet_van_de": 1,
+            "thich_ung_hoc_hoi": 1
+          }
         },
         {
           "band": "L4",
@@ -1938,8 +2023,11 @@
             "dao_duc_chuyen_nghiep": 340
           },
           "requirement": {
-            "tu_duy_giai_quyet_van_de": 1,
-            "thich_ung_hoc_hoi": 1
+            "tu_duy_giai_quyet_van_de": 2,
+            "giao_tiep_hop_tac": 1,
+            "tu_quan_ly_ap_luc": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
           }
         },
         {
@@ -1962,9 +2050,11 @@
           },
           "requirement": {
             "tu_duy_giai_quyet_van_de": 2,
+            "thich_ung_hoc_hoi": 2,
             "giao_tiep_hop_tac": 1,
+            "lanh_dao_kinh_doanh": 1,
             "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1
+            "dao_duc_chuyen_nghiep": 1
           }
         },
         {
@@ -1987,10 +2077,11 @@
           },
           "requirement": {
             "tu_duy_giai_quyet_van_de": 3,
-            "thich_ung_hoc_hoi": 2,
+            "thich_ung_hoc_hoi": 3,
+            "tu_quan_ly_ap_luc": 2,
             "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
             "lanh_dao_kinh_doanh": 1,
-            "tu_quan_ly_ap_luc": 1,
             "dao_duc_chuyen_nghiep": 1
           }
         },
@@ -2039,6 +2130,24 @@
         "thich_ung_hoc_hoi",
         "tu_quan_ly_ap_luc"
       ],
+      "prerequisite": {
+        "type": "chuyen_ngang",
+        "band": "L2",
+        "careers": [
+          "DATA_DA",
+          "DATA_DE",
+          "SWE_BACKEND"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 550,
+        "tri_tue_cam_xuc": 340,
+        "lanh_dao_kinh_doanh": 330,
+        "tu_duy_giai_quyet_van_de": 1060,
+        "tu_quan_ly_ap_luc": 730,
+        "thich_ung_hoc_hoi": 1190,
+        "dao_duc_chuyen_nghiep": 830
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 3830,
         "tri_tue_cam_xuc": 1690,
@@ -2076,7 +2185,10 @@
             "thich_ung_hoc_hoi": 840,
             "dao_duc_chuyen_nghiep": 440
           },
-          "requirement": {}
+          "requirement": {
+            "tu_duy_giai_quyet_van_de": 1,
+            "thich_ung_hoc_hoi": 1
+          }
         },
         {
           "band": "L4",
@@ -2097,8 +2209,11 @@
             "dao_duc_chuyen_nghiep": 570
           },
           "requirement": {
+            "giao_tiep_hop_tac": 1,
             "tu_duy_giai_quyet_van_de": 1,
-            "thich_ung_hoc_hoi": 1
+            "tu_quan_ly_ap_luc": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
           }
         },
         {
@@ -2121,10 +2236,11 @@
           },
           "requirement": {
             "tu_duy_giai_quyet_van_de": 2,
+            "thich_ung_hoc_hoi": 2,
             "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
             "lanh_dao_kinh_doanh": 1,
             "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1,
             "dao_duc_chuyen_nghiep": 1
           }
         },
@@ -2148,12 +2264,12 @@
           },
           "requirement": {
             "tu_duy_giai_quyet_van_de": 3,
+            "tu_quan_ly_ap_luc": 2,
             "thich_ung_hoc_hoi": 2,
+            "dao_duc_chuyen_nghiep": 2,
             "giao_tiep_hop_tac": 1,
             "tri_tue_cam_xuc": 1,
-            "lanh_dao_kinh_doanh": 1,
-            "tu_quan_ly_ap_luc": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "lanh_dao_kinh_doanh": 1
           }
         },
         {
@@ -2176,11 +2292,11 @@
           },
           "requirement": {
             "tu_duy_giai_quyet_van_de": 3,
+            "thich_ung_hoc_hoi": 3,
+            "giao_tiep_hop_tac": 2,
             "lanh_dao_kinh_doanh": 2,
             "tu_quan_ly_ap_luc": 2,
-            "thich_ung_hoc_hoi": 2,
             "dao_duc_chuyen_nghiep": 2,
-            "giao_tiep_hop_tac": 1,
             "tri_tue_cam_xuc": 1
           }
         }
@@ -2201,6 +2317,23 @@
         "thich_ung_hoc_hoi",
         "tu_quan_ly_ap_luc"
       ],
+      "prerequisite": {
+        "type": "chuyen_ngang",
+        "band": "L2",
+        "careers": [
+          "SWE_BACKEND",
+          "DATA_DA"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 550,
+        "tri_tue_cam_xuc": 340,
+        "lanh_dao_kinh_doanh": 330,
+        "tu_duy_giai_quyet_van_de": 1060,
+        "tu_quan_ly_ap_luc": 730,
+        "thich_ung_hoc_hoi": 1190,
+        "dao_duc_chuyen_nghiep": 830
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 3580,
         "tri_tue_cam_xuc": 2100,
@@ -2238,7 +2371,10 @@
             "thich_ung_hoc_hoi": 1270,
             "dao_duc_chuyen_nghiep": 650
           },
-          "requirement": {}
+          "requirement": {
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L4",
@@ -2259,8 +2395,11 @@
             "dao_duc_chuyen_nghiep": 830
           },
           "requirement": {
+            "thich_ung_hoc_hoi": 2,
+            "giao_tiep_hop_tac": 1,
             "tu_duy_giai_quyet_van_de": 1,
-            "thich_ung_hoc_hoi": 1
+            "tu_quan_ly_ap_luc": 1,
+            "dao_duc_chuyen_nghiep": 1
           }
         },
         {
@@ -2285,6 +2424,8 @@
             "tu_duy_giai_quyet_van_de": 2,
             "thich_ung_hoc_hoi": 2,
             "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "lanh_dao_kinh_doanh": 1,
             "tu_quan_ly_ap_luc": 1,
             "dao_duc_chuyen_nghiep": 1
           }
@@ -2309,8 +2450,8 @@
           },
           "requirement": {
             "tu_duy_giai_quyet_van_de": 3,
+            "thich_ung_hoc_hoi": 3,
             "tu_quan_ly_ap_luc": 2,
-            "thich_ung_hoc_hoi": 2,
             "dao_duc_chuyen_nghiep": 2,
             "giao_tiep_hop_tac": 1,
             "tri_tue_cam_xuc": 1,
@@ -2362,6 +2503,24 @@
         "thich_ung_hoc_hoi",
         "tu_quan_ly_ap_luc"
       ],
+      "prerequisite": {
+        "type": "chuyen_ngang",
+        "band": "L2",
+        "careers": [
+          "SWE_BACKEND",
+          "INFRA_HELPDESK",
+          "INFRA_NETWORK"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 550,
+        "tri_tue_cam_xuc": 340,
+        "lanh_dao_kinh_doanh": 330,
+        "tu_duy_giai_quyet_van_de": 820,
+        "tu_quan_ly_ap_luc": 560,
+        "thich_ung_hoc_hoi": 1360,
+        "dao_duc_chuyen_nghiep": 850
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 4360,
         "tri_tue_cam_xuc": 2700,
@@ -3863,7 +4022,15 @@
             "thich_ung_hoc_hoi": 860,
             "dao_duc_chuyen_nghiep": 600
           },
-          "requirement": {}
+          "requirement": {
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "lanh_dao_kinh_doanh": 1,
+            "tu_duy_giai_quyet_van_de": 1,
+            "tu_quan_ly_ap_luc": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L6",
@@ -3887,9 +4054,13 @@
             "dao_duc_chuyen_nghiep": 760
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 1,
-            "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1
+            "lanh_dao_kinh_doanh": 2,
+            "tu_quan_ly_ap_luc": 2,
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "tu_duy_giai_quyet_van_de": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
           }
         },
         {
@@ -3915,11 +4086,11 @@
           },
           "requirement": {
             "lanh_dao_kinh_doanh": 3,
+            "giao_tiep_hop_tac": 2,
+            "tri_tue_cam_xuc": 2,
+            "tu_duy_giai_quyet_van_de": 2,
             "tu_quan_ly_ap_luc": 2,
-            "giao_tiep_hop_tac": 1,
-            "tri_tue_cam_xuc": 1,
-            "tu_duy_giai_quyet_van_de": 1,
-            "thich_ung_hoc_hoi": 1,
+            "thich_ung_hoc_hoi": 2,
             "dao_duc_chuyen_nghiep": 1
           }
         },
@@ -3945,13 +4116,13 @@
             "dao_duc_chuyen_nghiep": 1210
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 3,
+            "lanh_dao_kinh_doanh": 4,
             "tu_quan_ly_ap_luc": 3,
             "giao_tiep_hop_tac": 2,
             "tri_tue_cam_xuc": 2,
             "tu_duy_giai_quyet_van_de": 2,
             "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 1
+            "dao_duc_chuyen_nghiep": 2
           }
         },
         {
@@ -3978,10 +4149,10 @@
           "requirement": {
             "lanh_dao_kinh_doanh": 4,
             "giao_tiep_hop_tac": 3,
+            "tri_tue_cam_xuc": 3,
+            "tu_duy_giai_quyet_van_de": 3,
             "tu_quan_ly_ap_luc": 3,
             "thich_ung_hoc_hoi": 3,
-            "tri_tue_cam_xuc": 2,
-            "tu_duy_giai_quyet_van_de": 2,
             "dao_duc_chuyen_nghiep": 2
           }
         }
@@ -4002,6 +4173,30 @@
         "tu_quan_ly_ap_luc",
         "thich_ung_hoc_hoi"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L4",
+        "careers": [
+          "ONET-11-3051.00",
+          "ONET-11-3012.00",
+          "ONET-11-9051.00",
+          "ONET-11-9081.00",
+          "ONET-11-9141.00",
+          "ONET-11-9013.00",
+          "ONET-13-1081.00",
+          "ONET-13-1082.00",
+          "ONET-17-2112.00"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 870,
+        "tri_tue_cam_xuc": 940,
+        "lanh_dao_kinh_doanh": 1770,
+        "tu_duy_giai_quyet_van_de": 860,
+        "tu_quan_ly_ap_luc": 1230,
+        "thich_ung_hoc_hoi": 940,
+        "dao_duc_chuyen_nghiep": 850
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 8560,
         "tri_tue_cam_xuc": 6070,
@@ -4220,7 +4415,9 @@
             "thich_ung_hoc_hoi": 850,
             "dao_duc_chuyen_nghiep": 810
           },
-          "requirement": {}
+          "requirement": {
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L5",
@@ -4244,10 +4441,13 @@
             "dao_duc_chuyen_nghiep": 990
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 1,
+            "lanh_dao_kinh_doanh": 2,
+            "tu_quan_ly_ap_luc": 2,
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
             "tu_duy_giai_quyet_van_de": 1,
-            "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
           }
         },
         {
@@ -4272,13 +4472,13 @@
             "dao_duc_chuyen_nghiep": 1260
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 2,
-            "tu_quan_ly_ap_luc": 2,
+            "lanh_dao_kinh_doanh": 3,
+            "tu_quan_ly_ap_luc": 3,
+            "tu_duy_giai_quyet_van_de": 2,
+            "thich_ung_hoc_hoi": 2,
+            "dao_duc_chuyen_nghiep": 2,
             "giao_tiep_hop_tac": 1,
-            "tri_tue_cam_xuc": 1,
-            "tu_duy_giai_quyet_van_de": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "tri_tue_cam_xuc": 1
           }
         },
         {
@@ -4337,10 +4537,10 @@
             "lanh_dao_kinh_doanh": 4,
             "tu_quan_ly_ap_luc": 4,
             "tu_duy_giai_quyet_van_de": 3,
+            "thich_ung_hoc_hoi": 3,
+            "dao_duc_chuyen_nghiep": 3,
             "giao_tiep_hop_tac": 2,
-            "tri_tue_cam_xuc": 2,
-            "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2
+            "tri_tue_cam_xuc": 2
           }
         },
         {
@@ -4391,6 +4591,39 @@
         "tu_quan_ly_ap_luc",
         "tu_duy_giai_quyet_van_de"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L3",
+        "careers": [
+          "ONET-51-2092.00",
+          "ONET-51-3011.00",
+          "ONET-51-3092.00",
+          "ONET-51-4041.00",
+          "ONET-51-4121.00",
+          "ONET-51-5112.00",
+          "ONET-51-6031.00",
+          "ONET-51-7011.00",
+          "ONET-51-8013.00",
+          "ONET-51-8031.00",
+          "ONET-51-8091.00",
+          "ONET-51-9061.00",
+          "ONET-51-9071.00",
+          "ONET-51-9081.00",
+          "ONET-51-9111.00",
+          "ONET-51-9141.00",
+          "ONET-17-2112.00",
+          "ONET-17-2141.00"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 390,
+        "tri_tue_cam_xuc": 620,
+        "lanh_dao_kinh_doanh": 650,
+        "tu_duy_giai_quyet_van_de": 590,
+        "tu_quan_ly_ap_luc": 710,
+        "thich_ung_hoc_hoi": 640,
+        "dao_duc_chuyen_nghiep": 1020
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 11220,
         "tri_tue_cam_xuc": 8340,
@@ -4609,7 +4842,15 @@
             "thich_ung_hoc_hoi": 700,
             "dao_duc_chuyen_nghiep": 690
           },
-          "requirement": {}
+          "requirement": {
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "lanh_dao_kinh_doanh": 1,
+            "tu_duy_giai_quyet_van_de": 1,
+            "tu_quan_ly_ap_luc": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L5",
@@ -4633,8 +4874,13 @@
             "dao_duc_chuyen_nghiep": 840
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 1,
-            "tu_quan_ly_ap_luc": 1
+            "lanh_dao_kinh_doanh": 2,
+            "tu_duy_giai_quyet_van_de": 2,
+            "tu_quan_ly_ap_luc": 2,
+            "dao_duc_chuyen_nghiep": 2,
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "thich_ung_hoc_hoi": 1
           }
         },
         {
@@ -4659,13 +4905,13 @@
             "dao_duc_chuyen_nghiep": 1070
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 2,
-            "tu_quan_ly_ap_luc": 2,
-            "giao_tiep_hop_tac": 1,
+            "lanh_dao_kinh_doanh": 3,
+            "tu_quan_ly_ap_luc": 3,
+            "giao_tiep_hop_tac": 2,
+            "tu_duy_giai_quyet_van_de": 2,
+            "dao_duc_chuyen_nghiep": 2,
             "tri_tue_cam_xuc": 1,
-            "tu_duy_giai_quyet_van_de": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "thich_ung_hoc_hoi": 1
           }
         },
         {
@@ -4693,10 +4939,10 @@
             "lanh_dao_kinh_doanh": 3,
             "tu_quan_ly_ap_luc": 3,
             "giao_tiep_hop_tac": 2,
+            "tri_tue_cam_xuc": 2,
+            "tu_duy_giai_quyet_van_de": 2,
             "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2,
-            "tri_tue_cam_xuc": 1,
-            "tu_duy_giai_quyet_van_de": 1
+            "dao_duc_chuyen_nghiep": 2
           }
         },
         {
@@ -4722,12 +4968,12 @@
           },
           "requirement": {
             "lanh_dao_kinh_doanh": 4,
-            "tu_quan_ly_ap_luc": 3,
-            "giao_tiep_hop_tac": 2,
+            "tu_quan_ly_ap_luc": 4,
+            "giao_tiep_hop_tac": 3,
+            "dao_duc_chuyen_nghiep": 3,
             "tri_tue_cam_xuc": 2,
             "tu_duy_giai_quyet_van_de": 2,
-            "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2
+            "thich_ung_hoc_hoi": 2
           }
         },
         {
@@ -4755,10 +5001,10 @@
             "lanh_dao_kinh_doanh": 5,
             "tu_quan_ly_ap_luc": 4,
             "giao_tiep_hop_tac": 3,
+            "tri_tue_cam_xuc": 3,
+            "tu_duy_giai_quyet_van_de": 3,
             "thich_ung_hoc_hoi": 3,
-            "dao_duc_chuyen_nghiep": 3,
-            "tri_tue_cam_xuc": 2,
-            "tu_duy_giai_quyet_van_de": 2
+            "dao_duc_chuyen_nghiep": 3
           }
         }
       ],
@@ -4778,6 +5024,25 @@
         "tu_quan_ly_ap_luc",
         "thich_ung_hoc_hoi"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L3",
+        "careers": [
+          "ONET-17-2051.00",
+          "ONET-17-1011.00",
+          "ONET-13-1051.00",
+          "ONET-17-1022.00"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 1410,
+        "tri_tue_cam_xuc": 890,
+        "lanh_dao_kinh_doanh": 1520,
+        "tu_duy_giai_quyet_van_de": 2050,
+        "tu_quan_ly_ap_luc": 1530,
+        "thich_ung_hoc_hoi": 860,
+        "dao_duc_chuyen_nghiep": 1980
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 10200,
         "tri_tue_cam_xuc": 6790,
@@ -4818,7 +5083,11 @@
             "thich_ung_hoc_hoi": 640,
             "dao_duc_chuyen_nghiep": 610
           },
-          "requirement": {}
+          "requirement": {
+            "tri_tue_cam_xuc": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L5",
@@ -4842,8 +5111,13 @@
             "dao_duc_chuyen_nghiep": 740
           },
           "requirement": {
-            "tri_tue_cam_xuc": 1,
-            "lanh_dao_kinh_doanh": 1
+            "tri_tue_cam_xuc": 2,
+            "lanh_dao_kinh_doanh": 2,
+            "giao_tiep_hop_tac": 1,
+            "tu_duy_giai_quyet_van_de": 1,
+            "tu_quan_ly_ap_luc": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
           }
         },
         {
@@ -4870,11 +5144,11 @@
           "requirement": {
             "lanh_dao_kinh_doanh": 3,
             "tri_tue_cam_xuc": 2,
+            "thich_ung_hoc_hoi": 2,
+            "dao_duc_chuyen_nghiep": 2,
             "giao_tiep_hop_tac": 1,
             "tu_duy_giai_quyet_van_de": 1,
-            "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "tu_quan_ly_ap_luc": 1
           }
         },
         {
@@ -4902,10 +5176,10 @@
             "tri_tue_cam_xuc": 3,
             "lanh_dao_kinh_doanh": 3,
             "giao_tiep_hop_tac": 2,
+            "tu_duy_giai_quyet_van_de": 2,
             "tu_quan_ly_ap_luc": 2,
-            "tu_duy_giai_quyet_van_de": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "thich_ung_hoc_hoi": 2,
+            "dao_duc_chuyen_nghiep": 2
           }
         },
         {
@@ -4931,11 +5205,11 @@
           },
           "requirement": {
             "lanh_dao_kinh_doanh": 4,
+            "giao_tiep_hop_tac": 3,
             "tri_tue_cam_xuc": 3,
-            "giao_tiep_hop_tac": 2,
+            "thich_ung_hoc_hoi": 3,
             "tu_duy_giai_quyet_van_de": 2,
             "tu_quan_ly_ap_luc": 2,
-            "thich_ung_hoc_hoi": 2,
             "dao_duc_chuyen_nghiep": 2
           }
         }
@@ -4956,6 +5230,26 @@
         "tri_tue_cam_xuc",
         "giao_tiep_hop_tac"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L3",
+        "careers": [
+          "ONET-25-2011.00",
+          "ONET-25-2021.00",
+          "ONET-25-2031.00",
+          "ONET-25-2051.00",
+          "ONET-25-1081.00"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 560,
+        "tri_tue_cam_xuc": 1400,
+        "lanh_dao_kinh_doanh": 780,
+        "tu_duy_giai_quyet_van_de": 440,
+        "tu_quan_ly_ap_luc": 650,
+        "thich_ung_hoc_hoi": 1830,
+        "dao_duc_chuyen_nghiep": 1300
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 7620,
         "tri_tue_cam_xuc": 10360,
@@ -4996,7 +5290,15 @@
             "thich_ung_hoc_hoi": 1210,
             "dao_duc_chuyen_nghiep": 1160
           },
-          "requirement": {}
+          "requirement": {
+            "tu_duy_giai_quyet_van_de": 2,
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "lanh_dao_kinh_doanh": 1,
+            "tu_quan_ly_ap_luc": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L6",
@@ -5020,12 +5322,13 @@
             "dao_duc_chuyen_nghiep": 1470
           },
           "requirement": {
+            "tu_duy_giai_quyet_van_de": 3,
+            "giao_tiep_hop_tac": 2,
             "lanh_dao_kinh_doanh": 2,
-            "giao_tiep_hop_tac": 1,
-            "tu_duy_giai_quyet_van_de": 1,
-            "tu_quan_ly_ap_luc": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "tu_quan_ly_ap_luc": 2,
+            "dao_duc_chuyen_nghiep": 2,
+            "tri_tue_cam_xuc": 1,
+            "thich_ung_hoc_hoi": 1
           }
         },
         {
@@ -5052,11 +5355,11 @@
           "requirement": {
             "lanh_dao_kinh_doanh": 3,
             "tu_duy_giai_quyet_van_de": 3,
+            "tu_quan_ly_ap_luc": 3,
             "giao_tiep_hop_tac": 2,
-            "tu_quan_ly_ap_luc": 2,
+            "tri_tue_cam_xuc": 2,
             "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2,
-            "tri_tue_cam_xuc": 1
+            "dao_duc_chuyen_nghiep": 2
           }
         },
         {
@@ -5082,12 +5385,12 @@
           },
           "requirement": {
             "lanh_dao_kinh_doanh": 4,
-            "tu_duy_giai_quyet_van_de": 3,
+            "tu_duy_giai_quyet_van_de": 4,
+            "giao_tiep_hop_tac": 3,
             "tu_quan_ly_ap_luc": 3,
-            "giao_tiep_hop_tac": 2,
-            "tri_tue_cam_xuc": 2,
-            "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2
+            "thich_ung_hoc_hoi": 3,
+            "dao_duc_chuyen_nghiep": 3,
+            "tri_tue_cam_xuc": 2
           }
         },
         {
@@ -5112,13 +5415,13 @@
             "dao_duc_chuyen_nghiep": 2900
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 4,
+            "lanh_dao_kinh_doanh": 5,
+            "giao_tiep_hop_tac": 4,
             "tu_duy_giai_quyet_van_de": 4,
-            "giao_tiep_hop_tac": 3,
+            "tri_tue_cam_xuc": 3,
             "tu_quan_ly_ap_luc": 3,
             "thich_ung_hoc_hoi": 3,
-            "dao_duc_chuyen_nghiep": 3,
-            "tri_tue_cam_xuc": 2
+            "dao_duc_chuyen_nghiep": 3
           }
         }
       ],
@@ -5138,6 +5441,36 @@
         "tu_duy_giai_quyet_van_de",
         "tu_quan_ly_ap_luc"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L4",
+        "careers": [
+          "ONET-17-1011.00",
+          "ONET-17-1022.00",
+          "ONET-17-2031.00",
+          "ONET-17-2041.00",
+          "ONET-17-2051.00",
+          "ONET-17-2071.00",
+          "ONET-17-2072.00",
+          "ONET-17-2081.00",
+          "ONET-17-2112.00",
+          "ONET-17-2141.00",
+          "ONET-17-2141.02",
+          "ONET-17-2151.00",
+          "ONET-17-2199.05",
+          "ONET-19-1012.00",
+          "ONET-19-1013.00"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 1850,
+        "tri_tue_cam_xuc": 1090,
+        "lanh_dao_kinh_doanh": 1580,
+        "tu_duy_giai_quyet_van_de": 3540,
+        "tu_quan_ly_ap_luc": 2140,
+        "thich_ung_hoc_hoi": 1230,
+        "dao_duc_chuyen_nghiep": 1610
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 13060,
         "tri_tue_cam_xuc": 6720,
@@ -5620,7 +5953,10 @@
             "thich_ung_hoc_hoi": 730,
             "dao_duc_chuyen_nghiep": 830
           },
-          "requirement": {}
+          "requirement": {
+            "tri_tue_cam_xuc": 1,
+            "dao_duc_chuyen_nghiep": 1
+          }
         },
         {
           "band": "L5",
@@ -5644,8 +5980,13 @@
             "dao_duc_chuyen_nghiep": 1010
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 1,
-            "tu_quan_ly_ap_luc": 1
+            "lanh_dao_kinh_doanh": 2,
+            "giao_tiep_hop_tac": 1,
+            "tri_tue_cam_xuc": 1,
+            "tu_duy_giai_quyet_van_de": 1,
+            "tu_quan_ly_ap_luc": 1,
+            "thich_ung_hoc_hoi": 1,
+            "dao_duc_chuyen_nghiep": 1
           }
         },
         {
@@ -5670,13 +6011,13 @@
             "dao_duc_chuyen_nghiep": 1280
           },
           "requirement": {
-            "lanh_dao_kinh_doanh": 2,
+            "lanh_dao_kinh_doanh": 3,
+            "tri_tue_cam_xuc": 2,
             "tu_quan_ly_ap_luc": 2,
+            "dao_duc_chuyen_nghiep": 2,
             "giao_tiep_hop_tac": 1,
-            "tri_tue_cam_xuc": 1,
             "tu_duy_giai_quyet_van_de": 1,
-            "thich_ung_hoc_hoi": 1,
-            "dao_duc_chuyen_nghiep": 1
+            "thich_ung_hoc_hoi": 1
           }
         },
         {
@@ -5705,9 +6046,9 @@
             "tu_quan_ly_ap_luc": 3,
             "giao_tiep_hop_tac": 2,
             "tri_tue_cam_xuc": 2,
+            "tu_duy_giai_quyet_van_de": 2,
             "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2,
-            "tu_duy_giai_quyet_van_de": 1
+            "dao_duc_chuyen_nghiep": 2
           }
         },
         {
@@ -5733,12 +6074,12 @@
           },
           "requirement": {
             "lanh_dao_kinh_doanh": 4,
+            "giao_tiep_hop_tac": 3,
+            "tri_tue_cam_xuc": 3,
             "tu_quan_ly_ap_luc": 3,
-            "giao_tiep_hop_tac": 2,
-            "tri_tue_cam_xuc": 2,
+            "dao_duc_chuyen_nghiep": 3,
             "tu_duy_giai_quyet_van_de": 2,
-            "thich_ung_hoc_hoi": 2,
-            "dao_duc_chuyen_nghiep": 2
+            "thich_ung_hoc_hoi": 2
           }
         },
         {
@@ -5764,10 +6105,10 @@
           },
           "requirement": {
             "lanh_dao_kinh_doanh": 5,
+            "tu_quan_ly_ap_luc": 4,
             "giao_tiep_hop_tac": 3,
             "tri_tue_cam_xuc": 3,
             "tu_duy_giai_quyet_van_de": 3,
-            "tu_quan_ly_ap_luc": 3,
             "thich_ung_hoc_hoi": 3,
             "dao_duc_chuyen_nghiep": 3
           }
@@ -5789,6 +6130,36 @@
         "tu_quan_ly_ap_luc",
         "dao_duc_chuyen_nghiep"
       ],
+      "prerequisite": {
+        "type": "cap_cao",
+        "band": "L3",
+        "careers": [
+          "ONET-29-1021.00",
+          "ONET-29-1031.00",
+          "ONET-29-1041.00",
+          "ONET-29-1051.00",
+          "ONET-29-1123.00",
+          "ONET-29-1131.00",
+          "ONET-29-1141.00",
+          "ONET-29-1151.00",
+          "ONET-29-1161.00",
+          "ONET-29-1215.00",
+          "ONET-29-1291.00",
+          "ONET-29-2011.00",
+          "ONET-29-2034.00",
+          "ONET-29-2043.00",
+          "ONET-29-2072.00"
+        ]
+      },
+      "arrival_points": {
+        "giao_tiep_hop_tac": 650,
+        "tri_tue_cam_xuc": 930,
+        "lanh_dao_kinh_doanh": 480,
+        "tu_duy_giai_quyet_van_de": 610,
+        "tu_quan_ly_ap_luc": 580,
+        "thich_ung_hoc_hoi": 670,
+        "dao_duc_chuyen_nghiep": 1050
+      },
       "career_budget": {
         "giao_tiep_hop_tac": 10980,
         "tri_tue_cam_xuc": 8550,

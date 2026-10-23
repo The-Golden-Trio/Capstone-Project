@@ -3,6 +3,7 @@
 Đầu vào:
 - datasets/final_22_roles.json (thang cấp 22 nghề IT)
 - research/research_notes/Thang cấp nghề/thang_cap_nhom_{A,B}.csv (thang cấp nghề ngoài IT, có nguồn)
+- research/research_notes/Thang cấp nghề/nghe_di_truoc.csv (nghề cấp cao và nghề chuyển ngang: nghề đi trước, band cần đạt)
 - external/onet_31_0/ (thêm essential_skills, transferable_skills để tính độ khó)
 Đầu ra: generated/levels_non_it.json, generated/point_budgets.json, generated/point_budgets.md
 
@@ -13,6 +14,9 @@ Luật (khối "Điểm và mở khoá" của đề xuất game design):
   2 nhóm trọng tâm của cấp nhân 1,6 rồi chuẩn hoá lại để tổng quỹ của cấp không đổi. Hồ sơ mỗi nhóm tối đa 10.000.
 - Bậc 0 đến 5. Vào một cấp cần mọi nhóm đạt bậc mà người chơi đạt 60% quỹ các cấp trước sẽ có (nhóm cần bậc 0 thì không ghi).
 - Điểm soft skill dùng chung giữa các nghề, không quy đổi; nghề khó đòi bậc cao hơn vì quỹ lớn hơn.
+- Nghề cấp cao và nghề chuyển ngang (ngoại lệ của BR-01): cấp đầu không mở sẵn. Muốn vào phải đã xong một cấp có band
+  tương đương ≥ band cấp đầu − 1 ở một nghề đi trước, và đủ bậc mà người chơi đạt 60% có được khi đi tới đó (mỗi nhóm lấy
+  quỹ ít nhất trong các nghề đi trước, nên đi đường nào đúng luật cũng vào được); các cấp sau cộng tiếp từ quỹ đó.
 """
 import csv
 import json
@@ -23,6 +27,7 @@ from build_onet_profiles import ROLES, SOFT_GROUPS, ATTRIBUTION, EXTERNAL, GENER
 
 REPO = ROOT.parent
 LADDER_DIR = REPO / "research" / "research_notes" / "Thang cấp nghề"
+PREREQ_FILE = LADDER_DIR / "nghe_di_truoc.csv"
 BAND_BASE = {"L1": 300, "L2": 500, "L3": 700, "L4": 900, "L5": 1100, "L6": 1400, "L7": 1800, "L8": 2200, "L9": 2700}
 TOP_BUDGET = 5000
 BAND_SCALE = TOP_BUDGET / sum(BAND_BASE[f"L{i}"] for i in range(1, 8))
@@ -112,7 +117,8 @@ def build():
     k_of, (p5, p95) = difficulty()
     _, _, activities, styles = load_onet()
     za, zs = zscores(activities), zscores(styles)
-    result = []
+    prereq = {r["role_code"]: r for r in read_csv(PREREQ_FILE)}
+    staged = []
     for c in careers():
         codes = [x for x in c["onet"] if x in k_of and x in za and x in zs]
         k = statistics.mean(k_of[x] for x in codes)
@@ -121,30 +127,60 @@ def build():
         top_raw = max(raw.values())
         weights = {g: raw[g] / top_raw for g in GROUPS}
         top3 = sorted(GROUPS, key=lambda g: -weights[g])[:3]
-        level_budgets = []
-        for l in c["levels"]:
-            focus = focus_groups(l["band_equivalent"], top3)
+        def budget_of(band):
+            focus = focus_groups(band, top3)
             boosted = {g: weights[g] * (FOCUS_BOOST if g in focus else 1) for g in GROUPS}
             norm = sum(weights.values()) / sum(boosted.values())
-            base = BAND_BASE[l["band_equivalent"]] * BAND_SCALE * k ** K_POWER
-            level_budgets.append((focus, {g: r10(base * boosted[g] * norm) for g in GROUPS}))
-        cumulative = {g: 0.0 for g in GROUPS}
+            base = BAND_BASE[band] * BAND_SCALE * k ** K_POWER
+            return focus, {g: r10(base * boosted[g] * norm) for g in GROUPS}
+
+        p = prereq.get(c["role_code"])
+        extra = {"prerequisite": {"type": p["loai"], "band": p["band_can"], "careers": p["nghe_di_truoc"].split(";")}} if p else {}
+        staged.append((c, k, weights, top3, extra, [budget_of(l["band_equivalent"]) for l in c["levels"]]))
+
+    by_code = {c["role_code"]: (c, budgets, extra) for c, _, _, _, extra, budgets in staged}
+    arrival = {}
+
+    def arrive(code):
+        """Quỹ ít nhất (từng nhóm) mà người chơi đã đi qua khi tới band cần đạt ở một nghề đi trước."""
+        if code not in arrival:
+            c, _, extra = by_code[code]
+            paths = []
+            for f in extra["prerequisite"]["careers"]:
+                fc, fbudgets, fextra = by_code[f]
+                total = dict(arrive(f)) if fextra else {g: 0.0 for g in GROUPS}
+                for l, (_, b) in zip(fc["levels"], fbudgets):
+                    for g in GROUPS:
+                        total[g] += b[g]
+                    if int(l["band_equivalent"][1:]) >= int(extra["prerequisite"]["band"][1:]):
+                        break
+                paths.append(total)
+            arrival[code] = {g: min(t[g] for t in paths) for g in GROUPS}
+        return arrival[code]
+
+    result = []
+    for c, k, weights, top3, extra, level_budgets in staged:
+        cumulative = dict(arrive(c["role_code"])) if extra else {g: 0.0 for g in GROUPS}
+        if extra:
+            extra = {**extra, "arrival_points": {g: r10(v) for g, v in cumulative.items()}}
         levels = []
-        for i, (l, (focus, budget)) in enumerate(zip(c["levels"], level_budgets)):
+        for l, (focus, budget) in zip(c["levels"], level_budgets):
             needed = {g: rank(ENTRY_SHARE * cumulative[g]) for g in GROUPS}
             requirement = {g: b for g, b in sorted(needed.items(), key=lambda x: -x[1]) if b > 0}
             levels.append({**l, "focus": focus, "budget": budget, "requirement": requirement})
             for g in GROUPS:
                 cumulative[g] += budget[g]
+        own = {g: sum(b[g] for _, b in level_budgets) for g in GROUPS}
         result.append({**c, "k": round(k, 2), "tier": tier(round(k, 2)), "weights": {g: round(w, 2) for g, w in weights.items()}, "top3": top3,
-                       "career_budget": {g: r10(v) for g, v in cumulative.items()}, "levels": levels})
+                       **extra, "career_budget": {g: r10(v) for g, v in own.items()}, "levels": levels})
     return result, (p5, p95)
 
 
 def blocked_at(career, share, buff=()):
     """Chơi riêng nghề này với tỉ lệ đạt `share` của quỹ mỗi màn: bị chặn ở cấp nào (None nếu đi hết).
-    `buff`: các nhóm được chòm sao nhân 1,12 phần dương."""
-    have = {g: 0.0 for g in GROUPS}
+    `buff`: các nhóm được chòm sao nhân 1,12 phần dương. Nghề có nghề đi trước: coi như đã đi qua nghề đi trước cùng tỉ lệ."""
+    prior = career.get("arrival_points", {})
+    have = {g: prior.get(g, 0) * share * (1.12 if g in buff else 1) for g in GROUPS}
     for l in career["levels"]:
         if any(rank(have[g]) < b for g, b in l["requirement"].items()):
             return l["band"]
@@ -154,7 +190,8 @@ def blocked_at(career, share, buff=()):
 
 
 def finish_rank(career, share):
-    total = sum(l["budget"][career["top3"][0]] for l in career["levels"]) * share
+    main = career["top3"][0]
+    total = (career.get("arrival_points", {}).get(main, 0) + sum(l["budget"][main] for l in career["levels"])) * share
     return rank(total)
 
 
@@ -192,7 +229,17 @@ def markdown(data, p):
     no_buff = sum(blocked_at(c, 0.55) is None for c in data)
     buffed = sum(blocked_at(c, 0.55, buff=c["top3"][:2]) is None for c in data)
     lines += ["", f"Chòm sao: chơi 55%, không buff thì {no_buff}/221 nghề đi hết; buff đúng 2 nhóm chính của nghề thì {buffed}/221.", ""]
-    lines += ["## Từng nghề", "", "| Nghề | k | Hạng | Cấp | Điều kiện vào cấp cuối |", "|---|---|---|---|---|"]
+    names = {c["role_code"]: c["name_vn"] for c in data}
+    lines += ["## Nghề cấp cao và nghề chuyển ngang", "",
+              f"Cấp đầu không mở sẵn (ngoại lệ của BR-01). Nguồn: `{PREREQ_FILE.relative_to(REPO).as_posix()}`.", "",
+              "| Nghề | Loại | Cấp đầu | Cần đã xong | Ở một trong các nghề | Bậc cần ở cấp đầu |", "|---|---|---|---|---|---|"]
+    for c in data:
+        p = c.get("prerequisite")
+        if p:
+            lines.append(f"| {c['name_vn']} | {'cấp cao' if p['type'] == 'cap_cao' else 'chuyển ngang'} | {c['levels'][0]['band_equivalent']} | {p['band']} | "
+                         + "; ".join(names[x] for x in p["careers"]) + " | "
+                         + "; ".join(f"{NAMES[g]} bậc {b}" for g, b in c["levels"][0]["requirement"].items()) + " |")
+    lines += ["", "## Từng nghề", "", "| Nghề | k | Hạng | Cấp | Điều kiện vào cấp cuối |", "|---|---|---|---|---|"]
     for c in sorted(data, key=lambda c: -c["k"]):
         last = c["levels"][-1]
         lines.append(f"| {c['name_vn']} | {dec(c['k'], 2)} | {c['tier']} | {c['levels'][0]['band']}–{last['band']}"

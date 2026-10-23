@@ -7,41 +7,41 @@
     "onet_conv": {
       "pairs_related": 836,
       "auc": 0.878,
-      "mean_related": 0.394,
+      "mean_related": 0.395,
       "mean_other": 0.075,
-      "pass50_related": 0.366,
+      "pass50_related": 0.37,
       "pass50_other": 0.015
     },
     "onet_exact": {
       "pairs_related": 836,
       "auc": 0.868,
-      "mean_related": 0.344,
+      "mean_related": 0.345,
       "mean_other": 0.053,
-      "pass50_related": 0.297,
+      "pass50_related": 0.3,
       "pass50_other": 0.01
     },
     "isco3_conv": {
       "pairs_related": 782,
       "auc": 0.909,
-      "mean_related": 0.459,
+      "mean_related": 0.46,
       "mean_other": 0.074,
-      "pass50_related": 0.508,
+      "pass50_related": 0.512,
       "pass50_other": 0.013
     },
     "isco3_exact": {
       "pairs_related": 782,
       "auc": 0.891,
-      "mean_related": 0.41,
+      "mean_related": 0.411,
       "mean_other": 0.052,
-      "pass50_related": 0.416,
+      "pass50_related": 0.419,
       "pass50_other": 0.009
     },
     "isco2_conv": {
       "pairs_related": 2548,
       "auc": 0.78,
-      "mean_related": 0.276,
+      "mean_related": 0.277,
       "mean_other": 0.069,
-      "pass50_related": 0.232,
+      "pass50_related": 0.233,
       "pass50_other": 0.009
     },
     "isco2_exact": {
@@ -49,7 +49,7 @@
       "auc": 0.758,
       "mean_related": 0.237,
       "mean_other": 0.048,
-      "pass50_related": 0.185,
+      "pass50_related": 0.186,
       "pass50_other": 0.006
     },
     "it_team": {
@@ -5763,6 +5763,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
@@ -6030,6 +6032,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
@@ -6299,6 +6303,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
@@ -6567,6 +6573,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
@@ -6834,6 +6842,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
@@ -7108,6 +7118,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
@@ -7376,6 +7388,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
@@ -7472,20 +7486,6 @@
         {
           "band": "L6",
           "title_vn": "Solution Architect",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 1,
-            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1,
-            "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025": 1,
-            "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72": 1,
-            "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81": 1,
-            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 1,
-            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1
-          }
-        },
-        {
-          "band": "L7",
-          "title_vn": "Senior Solution Architect",
           "entry": {
             "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 1,
             "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1,
@@ -7493,16 +7493,47 @@
             "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72": 1,
             "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81": 1,
             "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 1,
-            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1
+            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1,
+            "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26": 1,
+            "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49": 1,
+            "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 2,
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
+            "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025": 2,
+            "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72": 1,
+            "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81": 1,
+            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 1,
+            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1,
+            "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26": 1,
+            "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49": 1,
+            "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28": 1
+          }
+        },
+        {
+          "band": "L7",
+          "title_vn": "Senior Solution Architect",
+          "entry": {
+            "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 2,
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
+            "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025": 2,
+            "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72": 1,
+            "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81": 1,
+            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 1,
+            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1,
+            "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26": 1,
+            "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49": 1,
+            "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 2,
             "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
             "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025": 2,
             "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72": 2,
-            "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81": 1,
-            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 1,
-            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1,
+            "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81": 2,
+            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 2,
+            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 2,
             "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26": 1,
             "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49": 1,
             "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28": 1
@@ -7516,9 +7547,9 @@
             "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
             "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025": 2,
             "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72": 2,
-            "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81": 1,
-            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 1,
-            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1,
+            "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81": 2,
+            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 2,
+            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 2,
             "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26": 1,
             "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49": 1,
             "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28": 1
@@ -7549,6 +7580,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 1,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
@@ -7572,7 +7605,7 @@
           "element": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
           "en": "unified modelling language",
           "ten_vi": "Ngôn ngữ mô hình hoá thống nhất (UML)",
-          "max_level": 3,
+          "max_level": 2,
           "groups": [
             "0611"
           ]
@@ -7646,23 +7679,6 @@
         {
           "band": "L6",
           "title_vn": "Tech Lead",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 1,
-            "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998": 1,
-            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 1,
-            "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f": 1,
-            "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308": 1,
-            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1,
-            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1,
-            "http://data.europa.eu/esco/skill/5be3d306-6cf1-4b49-aa1d-01651dd4ba4c": 1,
-            "http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9": 1,
-            "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3": 1
-          }
-        },
-        {
-          "band": "L7",
-          "title_vn": "Senior Tech Lead",
           "entry": {
             "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 1,
             "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998": 1,
@@ -7676,9 +7692,37 @@
             "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3": 1
           },
           "output": {
+            "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 2,
+            "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998": 2,
+            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 2,
+            "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f": 2,
+            "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308": 2,
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1,
+            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1,
+            "http://data.europa.eu/esco/skill/5be3d306-6cf1-4b49-aa1d-01651dd4ba4c": 1,
+            "http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9": 1,
+            "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3": 1
+          }
+        },
+        {
+          "band": "L7",
+          "title_vn": "Senior Tech Lead",
+          "entry": {
+            "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 2,
+            "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998": 2,
+            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 2,
+            "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f": 2,
+            "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308": 2,
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1,
+            "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966": 1,
+            "http://data.europa.eu/esco/skill/5be3d306-6cf1-4b49-aa1d-01651dd4ba4c": 1,
+            "http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9": 1,
+            "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3": 1
+          },
+          "output": {
             "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9": 3,
             "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998": 3,
-            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 3,
+            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 2,
             "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f": 2,
             "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308": 2,
             "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
@@ -7701,6 +7745,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
@@ -7799,20 +7845,6 @@
         {
           "band": "L7",
           "title_vn": "Engineering Manager",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1,
-            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 1,
-            "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8": 1,
-            "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d": 1,
-            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 1,
-            "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e": 1,
-            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 1
-          }
-        },
-        {
-          "band": "L8",
-          "title_vn": "Senior Engineering Manager",
           "entry": {
             "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1,
             "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 1,
@@ -7820,16 +7852,47 @@
             "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d": 1,
             "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 1,
             "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e": 1,
-            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 1
+            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 1,
+            "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69": 1,
+            "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0": 1,
+            "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
+            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 2,
+            "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8": 2,
+            "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d": 1,
+            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 1,
+            "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e": 1,
+            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 1,
+            "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69": 1,
+            "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0": 1,
+            "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9": 1
+          }
+        },
+        {
+          "band": "L8",
+          "title_vn": "Senior Engineering Manager",
+          "entry": {
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
+            "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 2,
+            "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8": 2,
+            "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d": 1,
+            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 1,
+            "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e": 1,
+            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 1,
+            "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69": 1,
+            "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0": 1,
+            "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
             "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 2,
             "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8": 2,
             "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d": 2,
-            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 1,
-            "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e": 1,
-            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 1,
+            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 2,
+            "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e": 2,
+            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 2,
             "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69": 1,
             "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0": 1,
             "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9": 1
@@ -7843,9 +7906,9 @@
             "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb": 2,
             "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8": 2,
             "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d": 2,
-            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 1,
-            "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e": 1,
-            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 1,
+            "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3": 2,
+            "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e": 2,
+            "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065": 2,
             "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69": 1,
             "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0": 1,
             "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9": 1
@@ -7876,6 +7939,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
@@ -8048,6 +8113,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
@@ -8293,6 +8360,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
@@ -8391,37 +8460,6 @@
         {
           "band": "L3",
           "title_vn": "AI Engineer (mới chuyển ngang)",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 1,
-            "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 1,
-            "http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2": 1,
-            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1
-          }
-        },
-        {
-          "band": "L4",
-          "title_vn": "Middle AI Engineer",
-          "entry": {
-            "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 1,
-            "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 1,
-            "http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2": 1,
-            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 1,
-            "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 1,
-            "http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2": 1,
-            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 1,
-            "http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4": 1,
-            "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49": 1,
-            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
-            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 1
-          }
-        },
-        {
-          "band": "L5",
-          "title_vn": "Senior AI Engineer",
           "entry": {
             "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 1,
             "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 1,
@@ -8430,7 +8468,9 @@
             "http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4": 1,
             "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49": 1,
             "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
-            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 1
+            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 1,
+            "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9": 1,
+            "http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 2,
@@ -8446,8 +8486,8 @@
           }
         },
         {
-          "band": "L6",
-          "title_vn": "AI Engineering Lead",
+          "band": "L4",
+          "title_vn": "Middle AI Engineer",
           "entry": {
             "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 2,
             "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 2,
@@ -8465,10 +8505,66 @@
             "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 2,
             "http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2": 2,
             "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
+            "http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4": 1,
+            "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49": 1,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
+            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 1,
+            "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9": 1,
+            "http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17": 1
+          }
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior AI Engineer",
+          "entry": {
+            "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 2,
+            "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 2,
+            "http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2": 2,
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
+            "http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4": 1,
+            "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49": 1,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
+            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 1,
+            "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9": 1,
+            "http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 2,
+            "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 2,
+            "http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2": 2,
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
             "http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4": 2,
             "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49": 2,
             "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
             "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 1,
+            "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9": 1,
+            "http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17": 1
+          }
+        },
+        {
+          "band": "L6",
+          "title_vn": "AI Engineering Lead",
+          "entry": {
+            "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 2,
+            "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 2,
+            "http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2": 2,
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
+            "http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4": 2,
+            "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49": 2,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
+            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 1,
+            "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9": 1,
+            "http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97": 2,
+            "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806": 2,
+            "http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2": 2,
+            "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
+            "http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4": 2,
+            "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49": 2,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 2,
+            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 2,
             "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9": 1,
             "http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17": 1
           }
@@ -8483,8 +8579,8 @@
             "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575": 2,
             "http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4": 2,
             "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49": 2,
-            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
-            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 1,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 2,
+            "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213": 2,
             "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9": 1,
             "http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17": 1
           },
@@ -8514,6 +8610,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
@@ -8614,37 +8712,6 @@
         {
           "band": "L3",
           "title_vn": "Data Engineer (mới chuyển ngang)",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 1,
-            "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 1,
-            "http://data.europa.eu/esco/skill/f9670490-8aa4-4540-b121-d440a8294aab": 1,
-            "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 1
-          }
-        },
-        {
-          "band": "L4",
-          "title_vn": "Middle Data Engineer",
-          "entry": {
-            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 1,
-            "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 1,
-            "http://data.europa.eu/esco/skill/f9670490-8aa4-4540-b121-d440a8294aab": 1,
-            "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 1,
-            "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 1,
-            "http://data.europa.eu/esco/skill/f9670490-8aa4-4540-b121-d440a8294aab": 1,
-            "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 1,
-            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
-            "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522": 1,
-            "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 1,
-            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 1
-          }
-        },
-        {
-          "band": "L5",
-          "title_vn": "Senior Data Engineer",
           "entry": {
             "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 1,
             "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 1,
@@ -8653,7 +8720,9 @@
             "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
             "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522": 1,
             "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 1,
-            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 1
+            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 1,
+            "http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd": 1,
+            "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
@@ -8669,8 +8738,8 @@
           }
         },
         {
-          "band": "L6",
-          "title_vn": "Data Engineering Lead",
+          "band": "L4",
+          "title_vn": "Middle Data Engineer",
           "entry": {
             "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
             "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 2,
@@ -8688,10 +8757,66 @@
             "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 2,
             "http://data.europa.eu/esco/skill/f9670490-8aa4-4540-b121-d440a8294aab": 2,
             "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 2,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
+            "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522": 1,
+            "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 1,
+            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 1,
+            "http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd": 1,
+            "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a": 1
+          }
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Data Engineer",
+          "entry": {
+            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
+            "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 2,
+            "http://data.europa.eu/esco/skill/f9670490-8aa4-4540-b121-d440a8294aab": 2,
+            "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 2,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 1,
+            "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522": 1,
+            "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 1,
+            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 1,
+            "http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd": 1,
+            "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
+            "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 2,
+            "http://data.europa.eu/esco/skill/f9670490-8aa4-4540-b121-d440a8294aab": 2,
+            "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 2,
             "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 2,
             "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522": 2,
             "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 1,
             "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 1,
+            "http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd": 1,
+            "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a": 1
+          }
+        },
+        {
+          "band": "L6",
+          "title_vn": "Data Engineering Lead",
+          "entry": {
+            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
+            "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 2,
+            "http://data.europa.eu/esco/skill/f9670490-8aa4-4540-b121-d440a8294aab": 2,
+            "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 2,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 2,
+            "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522": 2,
+            "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 1,
+            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 1,
+            "http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd": 1,
+            "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
+            "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666": 2,
+            "http://data.europa.eu/esco/skill/f9670490-8aa4-4540-b121-d440a8294aab": 2,
+            "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 2,
+            "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 2,
+            "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522": 2,
+            "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 2,
+            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 2,
             "http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd": 1,
             "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a": 1
           }
@@ -8706,8 +8831,8 @@
             "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec": 2,
             "http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e": 2,
             "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522": 2,
-            "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 1,
-            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 1,
+            "http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775": 2,
+            "http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5": 2,
             "http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd": 1,
             "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a": 1
           },
@@ -8737,6 +8862,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
@@ -8836,37 +8963,6 @@
         {
           "band": "L3",
           "title_vn": "DevOps Engineer (mới chuyển ngang)",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 1,
-            "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 1,
-            "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3": 1,
-            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 1
-          }
-        },
-        {
-          "band": "L4",
-          "title_vn": "Middle DevOps Engineer",
-          "entry": {
-            "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 1,
-            "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 1,
-            "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3": 1,
-            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 1,
-            "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 1,
-            "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3": 1,
-            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 1,
-            "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53": 1,
-            "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90": 1,
-            "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 1,
-            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 1
-          }
-        },
-        {
-          "band": "L5",
-          "title_vn": "Senior DevOps Engineer",
           "entry": {
             "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 1,
             "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 1,
@@ -8875,7 +8971,9 @@
             "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53": 1,
             "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90": 1,
             "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 1,
-            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 1
+            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 1,
+            "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3": 1,
+            "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 2,
@@ -8891,8 +8989,8 @@
           }
         },
         {
-          "band": "L6",
-          "title_vn": "DevOps Lead / Platform Lead",
+          "band": "L4",
+          "title_vn": "Middle DevOps Engineer",
           "entry": {
             "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 2,
             "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 2,
@@ -8910,10 +9008,66 @@
             "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 2,
             "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3": 2,
             "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
+            "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53": 1,
+            "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90": 1,
+            "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 1,
+            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 1,
+            "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3": 1,
+            "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32": 1
+          }
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior DevOps Engineer",
+          "entry": {
+            "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 2,
+            "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 2,
+            "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3": 2,
+            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
+            "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53": 1,
+            "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90": 1,
+            "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 1,
+            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 1,
+            "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3": 1,
+            "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 2,
+            "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 2,
+            "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3": 2,
+            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
             "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53": 2,
             "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90": 2,
             "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 1,
             "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 1,
+            "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3": 1,
+            "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32": 1
+          }
+        },
+        {
+          "band": "L6",
+          "title_vn": "DevOps Lead / Platform Lead",
+          "entry": {
+            "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 2,
+            "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 2,
+            "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3": 2,
+            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
+            "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53": 2,
+            "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90": 2,
+            "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 1,
+            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 1,
+            "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3": 1,
+            "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde": 2,
+            "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6": 2,
+            "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3": 2,
+            "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
+            "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53": 2,
+            "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90": 2,
+            "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 2,
+            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 2,
             "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3": 1,
             "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32": 1
           }
@@ -8928,8 +9082,8 @@
             "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15": 2,
             "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53": 2,
             "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90": 2,
-            "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 1,
-            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 1,
+            "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17": 2,
+            "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963": 2,
             "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3": 1,
             "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32": 1
           },
@@ -8959,6 +9113,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
@@ -9178,6 +9334,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
@@ -9445,6 +9603,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
@@ -9670,6 +9830,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
@@ -9946,6 +10108,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
@@ -10218,6 +10382,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
@@ -10440,6 +10606,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 1,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b",
@@ -10464,7 +10632,7 @@
           "element": "http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac",
           "en": "support ICT system users",
           "ten_vi": "Hỗ trợ người dùng hệ thống CNTT",
-          "max_level": 3,
+          "max_level": 2,
           "groups": [
             "S1.3.3",
             "S5.2.3"
@@ -10617,7 +10785,7 @@
           "output": {
             "http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b": 3,
             "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69": 3,
-            "http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac": 3,
+            "http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac": 2,
             "http://data.europa.eu/esco/skill/01e7dee7-3ff1-4807-acad-058dbed91aba": 2,
             "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3": 2,
             "http://data.europa.eu/esco/skill/c2296e2e-5fef-4f24-a24f-e5b3792268be": 2,
@@ -10640,6 +10808,8 @@
         "how": "chon_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
@@ -10909,6 +11079,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
@@ -11007,37 +11179,6 @@
         {
           "band": "L5",
           "title_vn": "Giám sát vận hành (Supervisor)",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1,
-            "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 1
-          }
-        },
-        {
-          "band": "L6",
-          "title_vn": "Trưởng bộ phận vận hành",
-          "entry": {
-            "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1,
-            "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1,
-            "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 1,
-            "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c": 1,
-            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
-            "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 1,
-            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1
-          }
-        },
-        {
-          "band": "L7",
-          "title_vn": "Quản lý vận hành (Operations Manager)",
           "entry": {
             "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 1,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
@@ -11046,7 +11187,9 @@
             "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c": 1,
             "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
             "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 1,
-            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1,
+            "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44": 1,
+            "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 2,
@@ -11062,8 +11205,8 @@
           }
         },
         {
-          "band": "L8",
-          "title_vn": "Giám đốc vận hành (COO)",
+          "band": "L6",
+          "title_vn": "Trưởng bộ phận vận hành",
           "entry": {
             "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 2,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
@@ -11081,10 +11224,66 @@
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
             "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 2,
             "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 2,
+            "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c": 1,
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
+            "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 1,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1,
+            "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44": 1,
+            "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d": 1
+          }
+        },
+        {
+          "band": "L7",
+          "title_vn": "Quản lý vận hành (Operations Manager)",
+          "entry": {
+            "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 2,
+            "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 2,
+            "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c": 1,
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
+            "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 1,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1,
+            "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44": 1,
+            "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 2,
+            "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 2,
             "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c": 2,
             "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
             "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 1,
             "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1,
+            "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44": 1,
+            "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d": 1
+          }
+        },
+        {
+          "band": "L8",
+          "title_vn": "Giám đốc vận hành (COO)",
+          "entry": {
+            "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 2,
+            "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 2,
+            "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c": 2,
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 1,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1,
+            "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44": 1,
+            "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 2,
+            "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 2,
+            "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c": 2,
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 2,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 2,
             "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44": 1,
             "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d": 1
           }
@@ -11099,8 +11298,8 @@
             "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09": 2,
             "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c": 2,
             "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
-            "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 1,
-            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1,
+            "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca": 2,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 2,
             "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44": 1,
             "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d": 1
           },
@@ -11130,6 +11329,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
@@ -11350,6 +11551,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314",
@@ -11441,40 +11644,16 @@
         {
           "band": "L4",
           "title_vn": "Trưởng ca / giám sát sản xuất",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 1,
-            "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 1,
-            "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 1
-          }
-        },
-        {
-          "band": "L5",
-          "title_vn": "Phó quản đốc",
-          "entry": {
-            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 1,
-            "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 1,
-            "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 1,
-            "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 1,
-            "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 1,
-            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 1
-          }
-        },
-        {
-          "band": "L6",
-          "title_vn": "Quản đốc phân xưởng",
           "entry": {
             "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 1,
             "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 1,
             "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 1,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
             "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 1,
-            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 1
+            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 1,
+            "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 1,
+            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
@@ -11489,8 +11668,8 @@
           }
         },
         {
-          "band": "L7",
-          "title_vn": "Quản lý sản xuất (Production Manager)",
+          "band": "L5",
+          "title_vn": "Phó quản đốc",
           "entry": {
             "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
             "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 1,
@@ -11506,10 +11685,62 @@
             "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
             "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 2,
             "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 2,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
             "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 1,
             "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 1,
             "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 1,
+            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
+          }
+        },
+        {
+          "band": "L6",
+          "title_vn": "Quản đốc phân xưởng",
+          "entry": {
+            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
+            "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 2,
+            "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
+            "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 1,
+            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 1,
+            "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 1,
+            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
+            "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 2,
+            "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 2,
+            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 1,
+            "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 1,
+            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
+          }
+        },
+        {
+          "band": "L7",
+          "title_vn": "Quản lý sản xuất (Production Manager)",
+          "entry": {
+            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
+            "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 2,
+            "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 2,
+            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 1,
+            "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 1,
+            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
+            "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
+            "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 2,
+            "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 2,
+            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 2,
+            "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 2,
             "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
             "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
           }
@@ -11522,21 +11753,21 @@
             "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 2,
             "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 2,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
-            "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 1,
-            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 1,
-            "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 1,
+            "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 2,
+            "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 2,
+            "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 2,
             "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
             "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
           },
           "output": {
-            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
+            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 3,
             "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 2,
             "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 2,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
             "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 2,
             "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 2,
             "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 2,
-            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
+            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 2,
             "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
           }
         },
@@ -11544,14 +11775,14 @@
           "band": "L9",
           "title_vn": "Giám đốc sản xuất khối / Phó tổng giám đốc sản xuất",
           "entry": {
-            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 2,
+            "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314": 3,
             "http://data.europa.eu/esco/skill/020b3c27-bae1-4b85-9d6f-eccee0f5ed99": 2,
             "http://data.europa.eu/esco/skill/1c9bb265-6ff7-428e-9a72-9c8df75178b8": 2,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
             "http://data.europa.eu/esco/skill/911e13ee-1eec-4243-88c8-3c08a3681a19": 2,
             "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84": 2,
             "http://data.europa.eu/esco/skill/d1a2437d-7eee-4c13-9104-0bb3dd7b45d6": 2,
-            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 1,
+            "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db": 2,
             "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6": 1
           },
           "output": {
@@ -11579,6 +11810,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/435d1751-8667-41ec-8b32-865b7cd3c684",
@@ -11751,6 +11984,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
@@ -11849,59 +12084,6 @@
         {
           "band": "L4",
           "title_vn": "Kỹ sư giám sát thi công / cán bộ kỹ thuật hiện trường",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
-            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 1,
-            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 1
-          }
-        },
-        {
-          "band": "L5",
-          "title_vn": "Chỉ huy trưởng công trường hạng III",
-          "entry": {
-            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
-            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 1,
-            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
-            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 1,
-            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 1,
-            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 1,
-            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 1,
-            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
-            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1
-          }
-        },
-        {
-          "band": "L6",
-          "title_vn": "Chỉ huy trưởng công trường hạng II",
-          "entry": {
-            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
-            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 1,
-            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 1,
-            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 1,
-            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 1,
-            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
-            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
-            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 1,
-            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 1,
-            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 1,
-            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 1,
-            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
-            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1,
-            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
-            "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
-            "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
-          }
-        },
-        {
-          "band": "L7",
-          "title_vn": "Chỉ huy trưởng công trường hạng I",
           "entry": {
             "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 1,
             "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 1,
@@ -11916,12 +12098,96 @@
           },
           "output": {
             "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
-            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
-            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
-            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 2,
+            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 1,
+            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 1,
+            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 1,
             "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 1,
             "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
             "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1,
+            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
+            "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
+            "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
+          }
+        },
+        {
+          "band": "L5",
+          "title_vn": "Chỉ huy trưởng công trường hạng III",
+          "entry": {
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 1,
+            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 1,
+            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 1,
+            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 1,
+            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
+            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1,
+            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
+            "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
+            "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
+            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
+            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 1,
+            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 1,
+            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
+            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1,
+            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
+            "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
+            "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
+          }
+        },
+        {
+          "band": "L6",
+          "title_vn": "Chỉ huy trưởng công trường hạng II",
+          "entry": {
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
+            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
+            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 1,
+            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 1,
+            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
+            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1,
+            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
+            "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
+            "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
+            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
+            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 2,
+            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 2,
+            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
+            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1,
+            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
+            "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
+            "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
+          }
+        },
+        {
+          "band": "L7",
+          "title_vn": "Chỉ huy trưởng công trường hạng I",
+          "entry": {
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
+            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
+            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 2,
+            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 2,
+            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
+            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1,
+            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
+            "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
+            "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
+            "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
+            "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 2,
+            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 2,
+            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 2,
+            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 2,
             "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
             "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
             "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
@@ -11935,22 +12201,22 @@
             "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
             "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
             "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 2,
-            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 1,
-            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 1,
-            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 1,
+            "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 2,
+            "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 2,
+            "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 2,
             "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
             "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
             "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
           },
           "output": {
-            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 3,
             "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
             "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
             "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 2,
             "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 2,
             "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 2,
             "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 2,
-            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
+            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 2,
             "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
             "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
           }
@@ -11959,14 +12225,14 @@
           "band": "L9",
           "title_vn": "Tổng giám đốc doanh nghiệp xây dựng",
           "entry": {
-            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 2,
+            "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388": 3,
             "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0": 2,
             "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9": 2,
             "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e": 2,
             "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5": 2,
             "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9": 2,
             "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0": 2,
-            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 1,
+            "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991": 2,
             "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e": 1,
             "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442": 1
           },
@@ -11996,6 +12262,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
@@ -12085,37 +12353,6 @@
         {
           "band": "L4",
           "title_vn": "Tổ trưởng chuyên môn",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 1,
-            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 1
-          }
-        },
-        {
-          "band": "L5",
-          "title_vn": "Phó hiệu trưởng",
-          "entry": {
-            "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 1,
-            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 1,
-            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 1,
-            "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 1,
-            "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 1,
-            "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 1,
-            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 1
-          }
-        },
-        {
-          "band": "L6",
-          "title_vn": "Hiệu trưởng",
           "entry": {
             "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 1,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
@@ -12124,12 +12361,13 @@
             "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 1,
             "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 1,
             "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 1,
-            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 1
+            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 1,
+            "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 2,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
-            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 2,
+            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 1,
             "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 1,
             "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 1,
             "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 1,
@@ -12139,13 +12377,39 @@
           }
         },
         {
-          "band": "L7",
-          "title_vn": "Trưởng phòng chuyên môn Sở Giáo dục và Đào tạo",
+          "band": "L5",
+          "title_vn": "Phó hiệu trưởng",
+          "entry": {
+            "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 1,
+            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 1,
+            "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 1,
+            "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 1,
+            "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 1,
+            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 1,
+            "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 2,
+            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 2,
+            "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 1,
+            "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 1,
+            "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 1,
+            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 1,
+            "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2": 1
+          }
+        },
+        {
+          "band": "L6",
+          "title_vn": "Hiệu trưởng",
           "entry": {
             "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 2,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
             "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 2,
-            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 1,
+            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 2,
             "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 1,
             "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 1,
             "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 1,
@@ -12159,8 +12423,34 @@
             "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 2,
             "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 2,
             "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 2,
-            "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 2,
+            "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 1,
             "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 1,
+            "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2": 1
+          }
+        },
+        {
+          "band": "L7",
+          "title_vn": "Trưởng phòng chuyên môn Sở Giáo dục và Đào tạo",
+          "entry": {
+            "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 2,
+            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 2,
+            "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 2,
+            "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 2,
+            "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 1,
+            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 1,
+            "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa": 2,
+            "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc": 2,
+            "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 2,
+            "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 2,
+            "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 2,
+            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 2,
             "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2": 1
           }
         },
@@ -12175,7 +12465,7 @@
             "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0": 2,
             "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8": 2,
             "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe": 2,
-            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 1,
+            "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84": 2,
             "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2": 1
           },
           "output": {
@@ -12203,6 +12493,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
@@ -12300,37 +12592,6 @@
         {
           "band": "L5",
           "title_vn": "Trưởng nhóm kỹ thuật (Lead Engineer)",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 1,
-            "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 1,
-            "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0": 1,
-            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1
-          }
-        },
-        {
-          "band": "L6",
-          "title_vn": "Kỹ sư trưởng / trưởng nhóm R&D",
-          "entry": {
-            "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 1,
-            "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 1,
-            "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0": 1,
-            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 1,
-            "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 1,
-            "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0": 1,
-            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 1,
-            "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f": 1,
-            "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de": 1,
-            "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1
-          }
-        },
-        {
-          "band": "L7",
-          "title_vn": "Trưởng phòng kỹ thuật / R&D",
           "entry": {
             "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 1,
             "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 1,
@@ -12339,7 +12600,9 @@
             "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f": 1,
             "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de": 1,
             "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
+            "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34": 1,
+            "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 2,
@@ -12355,8 +12618,8 @@
           }
         },
         {
-          "band": "L8",
-          "title_vn": "Giám đốc kỹ thuật (Technical Director)",
+          "band": "L6",
+          "title_vn": "Kỹ sư trưởng / trưởng nhóm R&D",
           "entry": {
             "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 2,
             "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 2,
@@ -12374,10 +12637,66 @@
             "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 2,
             "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0": 2,
             "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 2,
+            "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f": 1,
+            "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de": 1,
+            "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 1,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
+            "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34": 1,
+            "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f": 1
+          }
+        },
+        {
+          "band": "L7",
+          "title_vn": "Trưởng phòng kỹ thuật / R&D",
+          "entry": {
+            "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 2,
+            "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 2,
+            "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0": 2,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 2,
+            "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f": 1,
+            "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de": 1,
+            "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 1,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
+            "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34": 1,
+            "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 2,
+            "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 2,
+            "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0": 2,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 2,
             "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f": 2,
             "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de": 2,
             "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 1,
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
+            "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34": 1,
+            "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f": 1
+          }
+        },
+        {
+          "band": "L8",
+          "title_vn": "Giám đốc kỹ thuật (Technical Director)",
+          "entry": {
+            "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 2,
+            "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 2,
+            "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0": 2,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 2,
+            "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f": 2,
+            "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de": 2,
+            "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 1,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
+            "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34": 1,
+            "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6": 2,
+            "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44": 2,
+            "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0": 2,
+            "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 2,
+            "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f": 2,
+            "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de": 2,
+            "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
             "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34": 1,
             "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f": 1
           }
@@ -12392,8 +12711,8 @@
             "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61": 2,
             "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f": 2,
             "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de": 2,
-            "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 1,
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
+            "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
             "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34": 1,
             "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f": 1
           },
@@ -12423,6 +12742,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/9f10e94b-a43d-4772-9f60-24e9bbbdedb7",
@@ -12668,6 +12989,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
@@ -12935,6 +13258,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 1,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
@@ -13004,42 +13329,64 @@
         {
           "band": "L4",
           "title_vn": "Phó trưởng phòng chức năng bệnh viện",
-          "entry": {},
-          "output": {
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 1
-          }
-        },
-        {
-          "band": "L5",
-          "title_vn": "Trưởng phòng chức năng (quản lý chất lượng, kế hoạch tổng hợp)",
-          "entry": {
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
-            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 1,
-            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 1,
-            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
-            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1
-          }
-        },
-        {
-          "band": "L6",
-          "title_vn": "Trưởng khoa",
           "entry": {
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 1,
             "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 1,
             "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 1,
             "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
-            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1
+            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
+            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
+            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
           },
           "output": {
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
             "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 1,
             "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 1,
             "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
+            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
+            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
+            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
+          }
+        },
+        {
+          "band": "L5",
+          "title_vn": "Trưởng phòng chức năng (quản lý chất lượng, kế hoạch tổng hợp)",
+          "entry": {
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 1,
+            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 1,
+            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
+            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
+            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
+            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 2,
+            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 2,
+            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
+            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
+            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
+            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
+          }
+        },
+        {
+          "band": "L6",
+          "title_vn": "Trưởng khoa",
+          "entry": {
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 2,
+            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 2,
+            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
+            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
+            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
+            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 2,
+            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 2,
+            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 2,
             "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
             "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
             "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
@@ -13050,31 +13397,9 @@
           "title_vn": "Phó giám đốc bệnh viện",
           "entry": {
             "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
-            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 1,
-            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 1,
-            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
-            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
-            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
-            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
-          },
-          "output": {
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
             "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 2,
             "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 2,
-            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
-            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
-            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
-            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
-          }
-        },
-        {
-          "band": "L8",
-          "title_vn": "Giám đốc bệnh viện / người chịu trách nhiệm chuyên môn kỹ thuật",
-          "entry": {
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
-            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 2,
-            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 2,
-            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 1,
+            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 2,
             "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 1,
             "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 1,
             "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
@@ -13090,10 +13415,32 @@
           }
         },
         {
+          "band": "L8",
+          "title_vn": "Giám đốc bệnh viện / người chịu trách nhiệm chuyên môn kỹ thuật",
+          "entry": {
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 2,
+            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 2,
+            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 2,
+            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 2,
+            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 2,
+            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
+          },
+          "output": {
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 3,
+            "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 2,
+            "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 2,
+            "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 2,
+            "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d": 2,
+            "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf": 2,
+            "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b": 1
+          }
+        },
+        {
           "band": "L9",
           "title_vn": "Tổng giám đốc hệ thống bệnh viện / Giám đốc Sở Y tế",
           "entry": {
-            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 2,
+            "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea": 3,
             "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b": 2,
             "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c": 2,
             "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357": 2,
@@ -13124,6 +13471,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
@@ -13344,6 +13693,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
@@ -13611,6 +13962,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
@@ -13883,6 +14236,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
@@ -14150,6 +14505,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
@@ -14420,6 +14777,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/97b713f0-b9e8-4903-8dee-7e0b4019a1c0",
@@ -14687,6 +15046,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/b7e57889-a84f-440c-9e60-459aa69979e9",
@@ -14957,6 +15318,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
@@ -15224,6 +15587,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/51b27007-ddb2-45a8-8103-0ec8c95e6313",
@@ -15453,6 +15818,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
@@ -15721,6 +16088,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 1,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
@@ -15874,6 +16243,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
@@ -16144,6 +16515,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
@@ -16392,6 +16765,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
@@ -16660,6 +17035,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
@@ -16928,6 +17305,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
@@ -17171,6 +17550,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
@@ -17438,6 +17819,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
@@ -17667,6 +18050,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
@@ -17934,6 +18319,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
@@ -18204,6 +18591,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
@@ -18474,6 +18863,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
@@ -18718,6 +19109,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
@@ -18963,6 +19356,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
@@ -19209,6 +19604,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
@@ -19476,6 +19873,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
@@ -19744,6 +20143,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
@@ -20011,6 +20412,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
@@ -20278,6 +20681,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 2,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
@@ -20463,6 +20868,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
@@ -20730,6 +21137,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
@@ -20998,6 +21407,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
@@ -21268,6 +21679,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
@@ -21538,6 +21951,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
@@ -21807,6 +22222,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
@@ -22077,6 +22494,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
@@ -22344,6 +22763,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
@@ -22588,6 +23009,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
@@ -22862,6 +23285,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
@@ -23131,6 +23556,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
@@ -23398,6 +23825,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
@@ -23669,6 +24098,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
@@ -23900,6 +24331,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/bfe4f330-d595-48c7-ab3c-f309471d6953",
@@ -24143,6 +24576,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
@@ -24391,6 +24826,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
@@ -24666,6 +25103,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
@@ -24891,6 +25330,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/38a5c459-c591-4f76-a358-37de342bb11d",
@@ -25135,6 +25576,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
@@ -25402,6 +25845,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
@@ -25649,6 +26094,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
@@ -25821,6 +26268,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
@@ -26028,6 +26477,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
@@ -26235,6 +26686,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
@@ -26424,6 +26877,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
@@ -26670,6 +27125,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
@@ -26938,6 +27395,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
@@ -27206,6 +27665,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
@@ -27474,6 +27935,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
@@ -27717,6 +28180,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
@@ -27960,6 +28425,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/c1b4aa1e-bc42-49e4-952a-0cbd45f1d57b",
@@ -28231,6 +28698,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
@@ -28499,6 +28968,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
@@ -28707,6 +29178,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
@@ -28929,6 +29402,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
@@ -29200,6 +29675,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
@@ -29468,6 +29945,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/3c1af34b-4562-4c39-a30e-0812b84a147e",
@@ -29715,6 +30194,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
@@ -29983,6 +30464,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/3c1af34b-4562-4c39-a30e-0812b84a147e",
@@ -30252,6 +30735,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/0cd8732f-e69c-4644-be07-e8bf5edc01af",
@@ -30471,6 +30956,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
@@ -30657,6 +31144,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 2,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/3d102bed-1232-43f7-9ae3-f672a1798f90",
@@ -30788,6 +31277,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/0cd8732f-e69c-4644-be07-e8bf5edc01af",
@@ -31007,6 +31498,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/0cd8732f-e69c-4644-be07-e8bf5edc01af",
@@ -31232,6 +31725,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7287dff1-7420-4d24-939a-5f4eb15b752b",
@@ -31501,6 +31996,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
@@ -31746,6 +32243,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7287dff1-7420-4d24-939a-5f4eb15b752b",
@@ -32015,6 +32514,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
@@ -32258,6 +32759,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
@@ -32477,6 +32980,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
@@ -32696,6 +33201,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -32939,6 +33446,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -33182,6 +33691,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -33428,6 +33939,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
@@ -33698,6 +34211,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -33943,6 +34458,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
@@ -34188,6 +34705,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -34455,6 +34974,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
@@ -34698,6 +35219,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -34941,6 +35464,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 4,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
@@ -35126,6 +35651,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -35371,6 +35898,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -35615,6 +36144,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
@@ -35835,6 +36366,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
@@ -36054,6 +36587,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2806260f-6399-4add-8f11-070141423f9d",
@@ -36273,6 +36808,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 1,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
@@ -36296,7 +36833,7 @@
           "element": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
           "en": "wash the dishes",
           "ten_vi": "Rửa bát đĩa",
-          "max_level": 3,
+          "max_level": 2,
           "groups": [
             "S6.11.1"
           ]
@@ -36447,7 +36984,7 @@
           "output": {
             "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8": 3,
             "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297": 3,
-            "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf": 3,
+            "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf": 2,
             "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b": 2,
             "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4": 2,
             "http://data.europa.eu/esco/skill/04838ae5-a737-48a0-a782-3d1b6b6cb75b": 2,
@@ -36470,6 +37007,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 1,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
@@ -36493,7 +37032,7 @@
           "element": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
           "en": "apply sustainability principles in health care",
           "ten_vi": "Phát triển bền vững trong y tế",
-          "max_level": 3,
+          "max_level": 2,
           "groups": [
             "S3.3.2"
           ]
@@ -36644,7 +37183,7 @@
           "output": {
             "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064": 3,
             "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d": 3,
-            "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac": 3,
+            "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac": 2,
             "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf": 2,
             "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d": 2,
             "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4": 2,
@@ -36667,6 +37206,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
@@ -36886,6 +37427,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
@@ -37105,6 +37648,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
@@ -37325,6 +37870,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
@@ -37568,6 +38115,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
@@ -37811,6 +38360,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
@@ -38055,6 +38606,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 2,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
@@ -38227,6 +38780,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
@@ -38494,6 +39049,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 3,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
@@ -38666,6 +39223,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
@@ -38888,6 +39447,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
@@ -39107,6 +39668,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
@@ -39352,6 +39915,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
@@ -39571,6 +40136,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
@@ -39814,6 +40381,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 1,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
@@ -39968,6 +40537,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7e1edea2-3c00-44b0-b23e-982d9304cc49",
@@ -40122,6 +40693,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
@@ -40342,6 +40915,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/41730268-d97a-42dd-b6e0-b117d9432eb5",
@@ -40563,6 +41138,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
@@ -40782,6 +41359,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
@@ -41001,6 +41580,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7d9d73a8-08df-4624-a5df-95cb220c0736",
@@ -41247,6 +41828,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7d9d73a8-08df-4624-a5df-95cb220c0736",
@@ -41452,6 +42035,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7d9d73a8-08df-4624-a5df-95cb220c0736",
@@ -41671,6 +42256,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
@@ -41916,6 +42503,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 1,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/a65fb963-6faf-47b2-a3d9-c4e5e4d833c5",
@@ -41939,7 +42528,7 @@
           "element": "http://data.europa.eu/esco/skill/bcb02777-45be-4166-9448-74a15b6f8136",
           "en": "assist children with special needs in education settings",
           "ten_vi": "Hỗ trợ trẻ có nhu cầu đặc biệt trong học tập",
-          "max_level": 3,
+          "max_level": 2,
           "groups": [
             "S3.4.4"
           ]
@@ -42092,7 +42681,7 @@
           "output": {
             "http://data.europa.eu/esco/skill/a65fb963-6faf-47b2-a3d9-c4e5e4d833c5": 3,
             "http://data.europa.eu/esco/skill/4a874516-eb34-4dc1-833d-864c5a448db2": 3,
-            "http://data.europa.eu/esco/skill/bcb02777-45be-4166-9448-74a15b6f8136": 3,
+            "http://data.europa.eu/esco/skill/bcb02777-45be-4166-9448-74a15b6f8136": 2,
             "http://data.europa.eu/esco/skill/f8d4a24c-fb62-444e-9525-7aa5662f440d": 2,
             "http://data.europa.eu/esco/skill/453b6898-de72-4ff9-b217-4a3cd377e155": 2,
             "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934": 2,
@@ -42115,6 +42704,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
@@ -42364,6 +42955,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 2,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
@@ -42536,6 +43129,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
@@ -42723,6 +43318,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/77a11321-754a-41de-b9e4-80d747f528db",
@@ -42966,6 +43563,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
@@ -43211,6 +43810,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
@@ -43481,6 +44082,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
@@ -43728,6 +44331,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
@@ -43999,6 +44604,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 1,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/0e21e183-e787-4f23-a240-93b416c088c2",
@@ -44154,6 +44761,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
@@ -44398,6 +45007,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e",
@@ -44666,6 +45277,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
@@ -44916,6 +45529,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 4,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
@@ -45053,6 +45668,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
@@ -45262,6 +45879,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
@@ -45506,6 +46125,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
@@ -45696,6 +46317,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
@@ -45853,6 +46476,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
@@ -46058,6 +46683,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
@@ -46248,6 +46875,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
@@ -46491,6 +47120,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
@@ -46711,6 +47342,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
@@ -46931,6 +47564,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
@@ -47174,6 +47809,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
@@ -47393,6 +48030,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
@@ -47617,6 +48256,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
@@ -47843,6 +48484,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
@@ -48066,6 +48709,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/386774ac-fe5b-431a-b485-9aec0bf5c09e",
@@ -48314,6 +48959,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/40fa39b5-0f69-432a-b5ea-b01b5d98649a",
@@ -48534,6 +49181,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
@@ -48785,6 +49434,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
@@ -49004,6 +49655,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 2,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/a3d2c72d-1029-47fb-9d0d-4c4a57a044d9",
@@ -49175,6 +49828,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
@@ -49422,6 +50077,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
@@ -49666,6 +50323,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
@@ -49936,6 +50595,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
@@ -50182,6 +50843,8 @@
         "how": "muon"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
@@ -50404,6 +51067,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
@@ -50650,6 +51315,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
@@ -50894,6 +51561,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
@@ -51127,6 +51796,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/fd60bbcc-c3b6-4fa5-936c-eef5ae0a2d44",
@@ -51348,6 +52019,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
@@ -51569,6 +52242,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
@@ -51815,6 +52490,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
@@ -52038,6 +52715,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
@@ -52281,6 +52960,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
@@ -52524,6 +53205,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
@@ -52729,6 +53412,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/41daf4d3-33b8-4199-b814-e54964d277b6",
@@ -52936,6 +53621,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
@@ -53179,6 +53866,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/6542601c-92ee-4a03-abd9-fde0635727a2",
@@ -53367,6 +54056,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
@@ -53587,6 +54278,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
@@ -53810,6 +54503,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 1,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
@@ -53983,6 +54678,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/03598f35-15f1-41fa-bd8a-313e74523307",
@@ -54232,6 +54929,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 2,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
@@ -54385,6 +55084,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
@@ -54604,6 +55305,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
@@ -54825,6 +55528,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/1b270383-b30c-4092-a9ed-b1637ecf2b79",
@@ -55093,6 +55798,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/1b270383-b30c-4092-a9ed-b1637ecf2b79",
@@ -55337,6 +56044,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 1,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
@@ -55491,6 +56200,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
@@ -55710,6 +56421,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
@@ -55933,6 +56646,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
@@ -56177,6 +56892,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
@@ -56404,6 +57121,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
@@ -56647,6 +57366,8 @@
         "how": "sua_tay"
       },
       "optional_fill": 0,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
@@ -56867,6 +57588,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 0,
+      "trimmed_steps": 1,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
@@ -56890,7 +57613,7 @@
           "element": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
           "en": "load heavy items on pallets",
           "ten_vi": "Xếp hàng nặng lên pallet",
-          "max_level": 3,
+          "max_level": 2,
           "groups": [
             "S6.2.1"
           ]
@@ -57046,7 +57769,7 @@
           "output": {
             "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173": 3,
             "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c": 3,
-            "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1": 3,
+            "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1": 2,
             "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda": 2,
             "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba": 2,
             "http://data.europa.eu/esco/skill/ee5e2297-39cc-4ed6-89e5-d58016118a7f": 2,
@@ -57069,6 +57792,8 @@
         "how": "tu_dong"
       },
       "optional_fill": 3,
+      "trimmed_steps": 0,
+      "keyword_base": 0,
       "keywords": [
         {
           "element": "http://data.europa.eu/esco/skill/40f65a56-ccbe-4601-9f32-1cc6cdd24f28",
