@@ -143,3 +143,36 @@ Nguồn: European Commission & US DOL/ETA, "The crosswalk between ESCO and O*NET
 6. **Mức**: mức trong cấp nghề đi theo band cấp; O*NET LV (phân vị theo từng phần tử) chỉ đặt trần; neo chữ theo TCKNNQG Bậc 1 / 2 / 3+.
 7. **Dữ liệu cần tải thêm** (O*NET 31.0, đã có knowledge, essential_skills, transferable_skills, task_statements, work_activities, occupation_data): Software Skills, Tasks to DWAs, GWAs to IWAs to DWAs, Task Ratings, Level Scale Anchors, Scales Reference, Content Model Reference. Tools Used không còn từ bản 30.3; nghề tay chân cần dụng cụ thì lấy từ DWA/task.
 
+---
+
+## 6. Đổi xương sống sang ESCO cho mọi nghề (23/10)
+
+Đề xuất ở mục trên (O*NET làm xương sống, IT giữ 22 keyword nhóm soạn) đã chạy ở bản 22/10 và bị thay. Lý do: đối xử khác nhau giữa IT và ngành khác, và O*NET quá thô.
+
+**Đo trên bản 22/10:**
+
+| Vấn đề | Số liệu |
+|---|---|
+| Nếu IT cũng rút từ O*NET thì nhiều nghề trùng nhau | Back-end = Mobile (cùng mã 15-1252.00); DevOps ≈ Network; Cloud ≈ Solution Architect; mất Cloud, DevOps, API, Git, Mobile, ERP, AI |
+| Mức keyword lệch | IT (nhóm soạn) 17/55/29% Làm quen/Thành thạo/Chuyên sâu; ngoài IT 0/5/95%, vì IWA của O*NET không có thang mức |
+| O*NET thô với nghề tay nghề | Thợ hàn chỉ có "Hàn"; DWA (2.087 mục) vẫn ở dạng việc chung, IT chỉ có "Design software applications" |
+
+**ESCO v1.2.1** (13.939 kỹ năng, 3.039 nghề, mỗi nghề có kỹ năng bắt buộc và tuỳ chọn) tách nghề mịn hơn: cùng mã O*NET 15-1252.00 có mobile application developer, digital games developer, embedded systems software developer, user interface developer; cùng 51-4121.00 có welder, pipe welder, spot welder, brazier, solderer. Kỹ năng ở mức Git, API: "tools for software configuration management", "use an application-specific interface", "perform tungsten inert gas welding", "apply arc welding techniques".
+
+**So ba phương án trên 221 nghề** (bản thử dùng nghề liên quan O*NET; bản chọn có thêm phép kiểm cùng nhóm ISCO-08 3 số, 782 cặp có hướng, nhưng phép này chỉ là soát sơ bộ vì cách chọn keyword đã dùng nhóm ISCO):
+
+| | O*NET + IT nhóm soạn (22/10) | ESCO một tầng | ESCO hai tầng (chọn) |
+|---|---|---|---|
+| Cùng nguồn cho mọi nghề | Không | Có | Có |
+| AUC độ phủ, nghề liên quan O*NET | 0,918 (trên 878 nghề O*NET, có lợi thế sân nhà) | 0,763 (bản thử) | 0,878 |
+| AUC độ phủ, cùng ISCO 3 số | 0,903 | chưa đo | 0,909 |
+| Cặp liên quan / cặp khác đạt 50% (O*NET) | 42,0% / 2,1% | 9,8% / 0,2% (bản thử) | 36,6% / 1,5% |
+| Khớp 22 keyword nhóm soạn (có trọng số mức) | 38% (O*NET cho IT) | 53–56% (bản thử) | 49,5% |
+| Nhảy khác nhóm ngành vào sâu hơn cấp đầu | 7–10% | 0–3% | 3–8% |
+
+"Hai tầng" nghĩa là keyword mịn dùng để hiển thị và lên mức, còn nhảy nghề quy keyword về nhóm kỹ năng cấp 3 của ESCO (S x.y.z, lĩnh vực ISCED-F 4 số). Một tầng thì keyword mịn quá nên hai nghề hầu như không trùng, nhảy nghề gần như tắt.
+
+**Luật lọc kỹ năng mềm** dựa trên cây kỹ năng ESCO: bỏ transversal, ngoại ngữ (S1.15.1), bộ 40 kỹ năng nghiên cứu chung, và kỹ năng mà mọi nhánh đều nằm trong 14 nhóm trùng 7 nhóm soft skill (S1.0, S1.1, S1.2, S1.4, S1.7, S1.8, S1.9, S4.1, S4.2, S4.5, S4.6, S4.8, S4.9, S3.3.1). Nhánh S1 của ESCO lẫn kỹ năng chuyên môn (S1.11 thiết kế hệ thống, S1.3 giảng dạy, S1.6 bán hàng), nên không bỏ cả nhánh. Nhóm trùng soft skill cũng bị bỏ khỏi tầng quy đổi, để "tuân thủ an toàn" không nối mọi nghề tay nghề với nhau.
+
+**Giới hạn còn lại:** ESCO là chuẩn châu Âu, không có tiếng Việt, không có nghề tư vấn ERP và thợ sửa xe máy; vài nghề ESCO ghi rất ít kỹ năng bắt buộc (Vận động viên, Cán bộ tiếp nhận hồ sơ). Bảng nối 221 nghề → ESCO ở `nghe_esco.csv`; bảng tương đương 22 keyword nhóm soạn → kỹ năng ESCO ở `keyword_it_esco.csv` (dùng làm bài kiểm). `keyword_it_onet.csv` giữ lại để có thể quay về cách cũ.
+

@@ -211,6 +211,12 @@ Phần này là **đề xuất thiết kế của người ghi**, ghép từ cá
 6. **V5, sức khoẻ game**: đồ thị nhảy nghề ở ngưỡng 50%: không nghề nào bị cô lập, không nghề "trung tâm" nhận nhảy từ quá nhiều nghề; soát tay 10 nghề có bậc vào cao nhất.
 7. **Cặp lệch giữa dữ liệu và chữ**: tính SBERT cosine (O*NET 2022 dùng `nli-distilroberta-base-v2`) trên mô tả tiếng Anh của phần tử O*NET; đưa vào danh sách duyệt tay các cặp s cao nhưng cosine thấp, và cặp cosine cao nhưng s = 0. Không đưa cosine trực tiếp vào công thức, vì O*NET 2022 cho thấy chữ giống chưa chắc cùng chuyên môn.
 
+### F. Cập nhật 23/10: chạy trên ESCO, theo nhóm kỹ năng
+
+Công thức mục B giữ nguyên, nhưng ma trận đổi từ nghề O*NET × phần tử O*NET sang **3.039 nghề ESCO × nhóm kỹ năng cấp 3 của ESCO** (lý do ở `phan_loai_ky_nang_cung.md` mục 6). Keyword của nghề là kỹ năng ESCO mịn; khi nhảy nghề, keyword quy về nhóm, mức nhóm = mức lớn nhất. Cùng nhóm tín chỉ 1 (ví dụ hàn TIG sang hàn hồ quang). Mỗi keyword nghề đích lấy nhóm tốt nhất của nó. Chỉ giữ nhóm có ít nhất 10 nghề dùng và cặp cùng có ở ít nhất 3 nghề, để tránh tín chỉ từ nhóm quá ít dữ liệu.
+
+V3 giờ độc lập với dữ liệu dựng bảng: bảng quy đổi học từ ESCO, còn chuẩn là Related Occupations của O*NET. Trên 221 nghề (836 cặp có hướng liên quan): AUC 0,878 có quy đổi, 0,868 chỉ cùng nhóm; cặp liên quan đạt 50% là 36,6%, cặp khác 1,5%. Phép kiểm cùng nhóm ISCO-08 3 số (AUC 0,909) chỉ để soát sơ bộ, vì cách chọn keyword đã dùng nhóm ISCO.
+
 ### E. Câu nên viết trong báo cáo
 
 "Hệ số quy đổi keyword dựa trên xác suất có điều kiện đồng xuất hiện trên ma trận nghề × kỹ năng O*NET (Alabdulkareem et al. 2018; Dawson et al. 2021), lấy chiều theo Hosseinioun et al. (2025), rời rạc hoá thành bốn bậc và hiệu chỉnh ngưỡng bằng chấm chuyên gia (quy trình theo O*NET Related Occupations, Dahlke et al. 2022). Các ngưỡng là lựa chọn thiết kế đã được kiểm chứng, không phải chuẩn quốc tế."

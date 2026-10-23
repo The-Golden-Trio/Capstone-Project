@@ -1,10 +1,130 @@
 role_code,keyword,max_level
-SWE_FRONTEND,Lập trình,3
-SWE_FRONTEND,Thiết kế giao diện,2
-SWE_FRONTEND,API,2
-SWE_FRONTEND,Git,2
-SWE_FRONTEND,Kiểm thử,2
-SWE_FRONTEND,Kiến trúc hệ thống,2
+CLOUD_DEVOPS,DevOps,3
+CLOUD_DEVOPS,Cloud,3
+CLOUD_DEVOPS,Máy chủ,3
+CLOUD_DEVOPS,Vận hành & sự cố,3
+CLOUD_DEVOPS,Git,3
+CLOUD_DEVOPS,Lập trình,2
+CLOUD_DEVOPS,Bảo mật,2
+CLOUD_DEVOPS,Mạng,2
+CLOUD_DEVOPS,K:Computers and Electronics,2
+CLOUD_ENG,Cloud,3
+CLOUD_ENG,Máy chủ,3
+CLOUD_ENG,Mạng,2
+CLOUD_ENG,Bảo mật,2
+CLOUD_ENG,DevOps,2
+CLOUD_ENG,Vận hành & sự cố,2
+CLOUD_ENG,K:Computers and Electronics,2
+CLOUD_ENG,Kiến trúc hệ thống,2
+CLOUD_ENG,Kiểm thử,1
+DATA_AI,AI,3
+DATA_AI,Lập trình,3
+DATA_AI,Phân tích dữ liệu,3
+DATA_AI,Cơ sở dữ liệu,2
+DATA_AI,Cloud,2
+DATA_AI,Git,2
+DATA_AI,K:Mathematics,3
+DATA_AI,K:Computers and Electronics,2
+DATA_AI,I:Research technology designs or applications.,2
+DATA_DA,Phân tích dữ liệu,3
+DATA_DA,Cơ sở dữ liệu,3
+DATA_DA,Phân tích nghiệp vụ,2
+DATA_DA,Lập trình,2
+DATA_DA,AI,1
+DATA_DA,K:Mathematics,3
+DATA_DA,I:Analyze market or industry conditions.,2
+DATA_DA,K:Computers and Electronics,2
+DATA_DA,I:Evaluate the quality or accuracy of data.,2
+DATA_DE,Cơ sở dữ liệu,3
+DATA_DE,Lập trình,3
+DATA_DE,Cloud,3
+DATA_DE,Phân tích dữ liệu,2
+DATA_DE,DevOps,2
+DATA_DE,Git,2
+DATA_DE,K:Computers and Electronics,2
+DATA_DE,Kiến trúc hệ thống,2
+DATA_DE,I:Develop operational or technical procedures or standards.,2
+INFRA_ERP,ERP,3
+INFRA_ERP,Phân tích nghiệp vụ,3
+INFRA_ERP,Cơ sở dữ liệu,2
+INFRA_ERP,Quản lý dự án,2
+INFRA_ERP,Kiểm thử,1
+INFRA_ERP,K:Economics and Accounting,2
+INFRA_ERP,K:Computers and Electronics,2
+INFRA_ERP,S:Systems Evaluation,2
+INFRA_ERP,Kiến trúc hệ thống,1
+INFRA_HELPDESK,Vận hành & sự cố,3
+INFRA_HELPDESK,Máy chủ,2
+INFRA_HELPDESK,Mạng,2
+INFRA_HELPDESK,Bảo mật,1
+INFRA_HELPDESK,K:Computers and Electronics,2
+INFRA_HELPDESK,I:Operate computer systems or computerized equipment.,2
+INFRA_HELPDESK,I:Train others to use equipment or products.,2
+INFRA_HELPDESK,Kiểm thử,1
+INFRA_HELPDESK,K:Administrative,1
+INFRA_NETWORK,Mạng,3
+INFRA_NETWORK,Máy chủ,3
+INFRA_NETWORK,Vận hành & sự cố,3
+INFRA_NETWORK,Bảo mật,2
+INFRA_NETWORK,Cloud,1
+INFRA_NETWORK,K:Computers and Electronics,2
+INFRA_NETWORK,S:Systems Evaluation,2
+INFRA_NETWORK,Kiến trúc hệ thống,1
+INFRA_NETWORK,Lập trình,1
+PROD_BA,Phân tích nghiệp vụ,3
+PROD_BA,Phân tích dữ liệu,2
+PROD_BA,Quản lý dự án,2
+PROD_BA,Kiểm thử,1
+PROD_BA,Cơ sở dữ liệu,1
+PROD_BA,Thiết kế giao diện,1
+PROD_BA,K:Computers and Electronics,2
+PROD_BA,I:Develop technical specifications for products or operations.,2
+PROD_BA,Kiến trúc hệ thống,1
+PROD_PM,Quản lý sản phẩm,3
+PROD_PM,Phân tích nghiệp vụ,3
+PROD_PM,Quản lý dự án,3
+PROD_PM,Phân tích dữ liệu,2
+PROD_PM,Thiết kế giao diện,1
+PROD_PM,I:Analyze market or industry conditions.,2
+PROD_PM,I:Monitor financial data or activities.,2
+PROD_PM,K:Computers and Electronics,1
+PROD_PM,K:Engineering and Technology,1
+QA_MANUAL,Kiểm thử,3
+QA_MANUAL,Phân tích nghiệp vụ,2
+QA_MANUAL,Cơ sở dữ liệu,1
+QA_MANUAL,API,1
+QA_MANUAL,Lập trình,1
+QA_MANUAL,Git,1
+QA_MANUAL,K:Computers and Electronics,2
+QA_MANUAL,I:Develop operational or technical procedures or standards.,2
+QA_MANUAL,K:Mathematics,1
+SEC_ENG,Bảo mật,3
+SEC_ENG,Mạng,3
+SEC_ENG,Vận hành & sự cố,3
+SEC_ENG,Máy chủ,2
+SEC_ENG,Cloud,2
+SEC_ENG,Lập trình,1
+SEC_ENG,K:Computers and Electronics,2
+SEC_ENG,K:Engineering and Technology,2
+SEC_ENG,Kiến trúc hệ thống,1
+SEC_PENTEST,Bảo mật,3
+SEC_PENTEST,Mạng,3
+SEC_PENTEST,Lập trình,2
+SEC_PENTEST,Máy chủ,2
+SEC_PENTEST,API,2
+SEC_PENTEST,Kiểm thử,2
+SEC_PENTEST,K:Computers and Electronics,2
+SEC_PENTEST,I:Develop operational or technical procedures or standards.,2
+SEC_PENTEST,I:Present research or technical information.,2
+SWE_ARCH_SOL,Kiến trúc hệ thống,3
+SWE_ARCH_SOL,Cloud,3
+SWE_ARCH_SOL,API,3
+SWE_ARCH_SOL,Cơ sở dữ liệu,3
+SWE_ARCH_SOL,Bảo mật,2
+SWE_ARCH_SOL,Phân tích nghiệp vụ,2
+SWE_ARCH_SOL,DevOps,2
+SWE_ARCH_SOL,K:Computers and Electronics,3
+SWE_ARCH_SOL,Kiểm thử,2
 SWE_BACKEND,Lập trình,3
 SWE_BACKEND,API,3
 SWE_BACKEND,Cơ sở dữ liệu,3
@@ -14,6 +134,43 @@ SWE_BACKEND,Kiểm thử,2
 SWE_BACKEND,Cloud,2
 SWE_BACKEND,Bảo mật,1
 SWE_BACKEND,DevOps,1
+SWE_BACKEND,K:Mathematics,2
+SWE_EM,Quản lý dự án,3
+SWE_EM,Quản lý sản phẩm,2
+SWE_EM,Kiến trúc hệ thống,2
+SWE_EM,Phân tích nghiệp vụ,2
+SWE_EM,Lập trình,2
+SWE_EM,I:Evaluate project feasibility.,2
+SWE_EM,K:Computers and Electronics,2
+SWE_EM,K:Mathematics,1
+SWE_EM,Kiểm thử,1
+SWE_EMBEDDED,Nhúng / IoT,3
+SWE_EMBEDDED,Lập trình,3
+SWE_EMBEDDED,Mạng,2
+SWE_EMBEDDED,Kiến trúc hệ thống,2
+SWE_EMBEDDED,Kiểm thử,2
+SWE_EMBEDDED,Git,2
+SWE_EMBEDDED,K:Computers and Electronics,3
+SWE_EMBEDDED,K:Mathematics,2
+SWE_EMBEDDED,"I:Evaluate designs, specifications, or other technical data.",2
+SWE_FRONTEND,Lập trình,3
+SWE_FRONTEND,Thiết kế giao diện,2
+SWE_FRONTEND,API,2
+SWE_FRONTEND,Git,2
+SWE_FRONTEND,Kiểm thử,2
+SWE_FRONTEND,Kiến trúc hệ thống,2
+SWE_FRONTEND,K:Computers and Electronics,2
+SWE_FRONTEND,I:Process digital or online data.,2
+SWE_FRONTEND,I:Advise others on the design or use of technologies.,1
+SWE_GAME,Game,3
+SWE_GAME,Lập trình,3
+SWE_GAME,Thiết kế giao diện,2
+SWE_GAME,Git,2
+SWE_GAME,Kiểm thử,2
+SWE_GAME,Kiến trúc hệ thống,2
+SWE_GAME,K:Mathematics,2
+SWE_GAME,K:Computers and Electronics,2
+SWE_GAME,"I:Evaluate designs, specifications, or other technical data.",2
 SWE_MOBILE,Mobile,3
 SWE_MOBILE,Lập trình,3
 SWE_MOBILE,API,2
@@ -21,112 +178,23 @@ SWE_MOBILE,Thiết kế giao diện,2
 SWE_MOBILE,Git,2
 SWE_MOBILE,Kiểm thử,2
 SWE_MOBILE,Kiến trúc hệ thống,2
-SWE_GAME,Game,3
-SWE_GAME,Lập trình,3
-SWE_GAME,Thiết kế giao diện,2
-SWE_GAME,Git,2
-SWE_GAME,Kiểm thử,2
-SWE_GAME,Kiến trúc hệ thống,2
-SWE_UIUX,Thiết kế giao diện,3
-SWE_UIUX,Phân tích nghiệp vụ,2
-SWE_UIUX,Quản lý sản phẩm,1
-SWE_UIUX,Kiểm thử,1
-SWE_UIUX,Lập trình,1
-SWE_EMBEDDED,Nhúng / IoT,3
-SWE_EMBEDDED,Lập trình,3
-SWE_EMBEDDED,Mạng,2
-SWE_EMBEDDED,Kiến trúc hệ thống,2
-SWE_EMBEDDED,Kiểm thử,2
-SWE_EMBEDDED,Git,2
-SWE_ARCH_SOL,Kiến trúc hệ thống,3
-SWE_ARCH_SOL,Cloud,3
-SWE_ARCH_SOL,API,3
-SWE_ARCH_SOL,Cơ sở dữ liệu,3
-SWE_ARCH_SOL,Bảo mật,2
-SWE_ARCH_SOL,Phân tích nghiệp vụ,2
-SWE_ARCH_SOL,DevOps,2
+SWE_MOBILE,K:Computers and Electronics,2
+SWE_MOBILE,"I:Evaluate designs, specifications, or other technical data.",2
 SWE_TECHLEAD,Lập trình,3
 SWE_TECHLEAD,Kiến trúc hệ thống,3
 SWE_TECHLEAD,Git,3
 SWE_TECHLEAD,Quản lý dự án,2
 SWE_TECHLEAD,Kiểm thử,2
 SWE_TECHLEAD,DevOps,2
-SWE_EM,Quản lý dự án,3
-SWE_EM,Quản lý sản phẩm,2
-SWE_EM,Kiến trúc hệ thống,2
-SWE_EM,Phân tích nghiệp vụ,2
-SWE_EM,Lập trình,2
-QA_MANUAL,Kiểm thử,3
-QA_MANUAL,Phân tích nghiệp vụ,2
-QA_MANUAL,Cơ sở dữ liệu,1
-QA_MANUAL,API,1
-QA_MANUAL,Lập trình,1
-QA_MANUAL,Git,1
-DATA_DA,Phân tích dữ liệu,3
-DATA_DA,Cơ sở dữ liệu,3
-DATA_DA,Phân tích nghiệp vụ,2
-DATA_DA,Lập trình,2
-DATA_DA,AI,1
-DATA_AI,AI,3
-DATA_AI,Lập trình,3
-DATA_AI,Phân tích dữ liệu,3
-DATA_AI,Cơ sở dữ liệu,2
-DATA_AI,Cloud,2
-DATA_AI,Git,2
-DATA_DE,Cơ sở dữ liệu,3
-DATA_DE,Lập trình,3
-DATA_DE,Cloud,3
-DATA_DE,Phân tích dữ liệu,2
-DATA_DE,DevOps,2
-DATA_DE,Git,2
-CLOUD_DEVOPS,DevOps,3
-CLOUD_DEVOPS,Cloud,3
-CLOUD_DEVOPS,Máy chủ,3
-CLOUD_DEVOPS,Vận hành & sự cố,3
-CLOUD_DEVOPS,Git,3
-CLOUD_DEVOPS,Lập trình,2
-CLOUD_DEVOPS,Bảo mật,2
-CLOUD_DEVOPS,Mạng,2
-CLOUD_ENG,Cloud,3
-CLOUD_ENG,Máy chủ,3
-CLOUD_ENG,Mạng,2
-CLOUD_ENG,Bảo mật,2
-CLOUD_ENG,DevOps,2
-CLOUD_ENG,Vận hành & sự cố,2
-SEC_ENG,Bảo mật,3
-SEC_ENG,Mạng,3
-SEC_ENG,Vận hành & sự cố,3
-SEC_ENG,Máy chủ,2
-SEC_ENG,Cloud,2
-SEC_ENG,Lập trình,1
-SEC_PENTEST,Bảo mật,3
-SEC_PENTEST,Mạng,3
-SEC_PENTEST,Lập trình,2
-SEC_PENTEST,Máy chủ,2
-SEC_PENTEST,API,2
-SEC_PENTEST,Kiểm thử,2
-PROD_BA,Phân tích nghiệp vụ,3
-PROD_BA,Phân tích dữ liệu,2
-PROD_BA,Quản lý dự án,2
-PROD_BA,Kiểm thử,1
-PROD_BA,Cơ sở dữ liệu,1
-PROD_BA,Thiết kế giao diện,1
-PROD_PM,Quản lý sản phẩm,3
-PROD_PM,Phân tích nghiệp vụ,3
-PROD_PM,Quản lý dự án,3
-PROD_PM,Phân tích dữ liệu,2
-PROD_PM,Thiết kế giao diện,1
-INFRA_ERP,ERP,3
-INFRA_ERP,Phân tích nghiệp vụ,3
-INFRA_ERP,Cơ sở dữ liệu,2
-INFRA_ERP,Quản lý dự án,2
-INFRA_ERP,Kiểm thử,1
-INFRA_HELPDESK,Vận hành & sự cố,3
-INFRA_HELPDESK,Máy chủ,2
-INFRA_HELPDESK,Mạng,2
-INFRA_HELPDESK,Bảo mật,1
-INFRA_NETWORK,Mạng,3
-INFRA_NETWORK,Máy chủ,3
-INFRA_NETWORK,Vận hành & sự cố,3
-INFRA_NETWORK,Bảo mật,2
-INFRA_NETWORK,Cloud,1
+SWE_TECHLEAD,K:Computers and Electronics,3
+SWE_TECHLEAD,"I:Evaluate designs, specifications, or other technical data.",3
+SWE_TECHLEAD,K:Mathematics,2
+SWE_UIUX,Thiết kế giao diện,3
+SWE_UIUX,Phân tích nghiệp vụ,2
+SWE_UIUX,Quản lý sản phẩm,1
+SWE_UIUX,Kiểm thử,1
+SWE_UIUX,Lập trình,1
+SWE_UIUX,K:Computers and Electronics,2
+SWE_UIUX,K:Fine Arts,2
+SWE_UIUX,I:Interview people to obtain information.,2
+SWE_UIUX,I:Process digital or online data.,1

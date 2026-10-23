@@ -43,6 +43,8 @@ occupation-data/
 | `decisions/education_map.json`, `decisions/vietjobs_title_rules.json` | Nghề → ngành học, giấy phép; luật khớp chức danh tin tuyển dụng | `scripts/build_occupation_profiles.py`, `scripts/build_vietjobs_stats.py` |
 | `datasets/work_settings.json` | 9 nơi làm việc dùng chung và luật gán | `scripts/build_occupation_profiles.py` |
 | `decisions/onet_to_vsco.csv` | 221 nghề nối với mã nghề Việt Nam (Quyết định 34/2020/QĐ-TTg) qua ISCO-08; sửa tay ở `decisions/onet_to_vsco_overrides.json` | Thu thập lương, thống kê lao động Việt Nam |
+| `generated/point_budgets.json` | Thang cấp, độ khó, quỹ điểm soft skill và điều kiện vào cấp của 221 nghề | `scripts/build_keyword_map.py`, module điểm (chưa nối) |
+| `generated/keyword_map.json` | Keyword kỹ năng cứng từ ESCO cho 221 nghề, đầu vào và đầu ra từng cấp, bảng quy đổi theo nhóm kỹ năng khi nhảy nghề | Module điểm và mở khoá, ô gợi ý cùng ngành (chưa nối) |
 
 ## Luồng dữ liệu
 
@@ -68,6 +70,13 @@ external/esco_onet/ + external/vsco_2020/ (tải bằng --download)
    └─ python3 occupation-data/scripts/build_onet_to_vsco.py ─► decisions/onet_to_vsco.csv, generated/onet_to_vsco.md
          ▲ đọc decisions/onet_to_vsco_overrides.json + generated/onet_all_roles.json (chạy SAU build_all_onet_profiles.py)
 
+external/onet_31_0/ + datasets/final_22_roles.json + research/research_notes/Thang cấp nghề/
+   └─ python3 occupation-data/scripts/build_point_budgets.py ─► generated/point_budgets.json, generated/levels_non_it.json
+
+external/esco_1_2_1/*.csv (ESCO v1.2.1, tải tay, xem dưới) + generated/point_budgets.json
+   └─ python3 occupation-data/scripts/build_keyword_map.py ─► generated/keyword_map.json, keyword_map.md, keyword_elements_en.csv
+         ▲ đọc research/research_notes/Bản đồ keyword/ (nghe_esco.csv, ten_keyword_vi.csv, keyword_it*.csv)
+
 external/vietjobs/ (tải bằng --download)
    └─ python3 occupation-data/scripts/build_vietjobs_stats.py ─► generated/vietjobs_stats.json
 
@@ -77,6 +86,8 @@ Tất cả các file trên + datasets/vn/ + decisions/education_map.json + datas
 ```
 
 Chạy mọi lệnh từ **gốc repo**.
+
+**Tải ESCO:** ESCO không cho tải tự động (phải qua form có email và CAPTCHA). Vào [trang tải ESCO](https://esco.ec.europa.eu/en/use-esco/download), chọn *ESCO dataset - v1.2.1* · *Classification* · *csv* · *en*, gửi form, mở link trong email rồi giải nén vào `occupation-data/external/esco_1_2_1/`. Trang nào hiện keyword phải ghi "This service uses the ESCO classification of the European Commission" và nói rõ JobQuest đã chỉnh sửa dữ liệu (dòng ghi nguồn có sẵn trong `keyword_map.json`).
 
 ## Thêm kịch bản mới
 
