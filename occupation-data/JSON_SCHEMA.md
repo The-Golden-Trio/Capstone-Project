@@ -1481,7 +1481,7 @@ Nghề có thang nhà nước nhưng đã dùng lương rao (ví dụ điều d�
 {
   "attribution": ["This service uses the ESCO classification of the European Commission (ESCO v1.2.1).", "string"],
   "validation": { "onet_conv": { "auc": 0.893, "jump_related": 0.623, "...": 0 }, "isco3_conv": {}, "it_team": { "share": 0.495 } },
-  "vocabulary_size": 1414, "group_count": 308,
+  "vocabulary_size": 1414, "group_count": 279,
   "groups": { "S7.1.6": { "en": "string", "ten_vi": "string" } },   // Nhóm kỹ năng cấp 3 của ESCO (và vài keyword không thuộc nhóm nào, khoá là URI)
   "group_conversion": {                       // Quy đổi một chiều giữa nhóm: có A thì được tính một phần B
     "S5.7.0": { "0416": { "s": 0.547, "z": 10.7, "credit": 0.25 } }   // credit 0,5 hoặc 0,25; cùng nhóm là 1
@@ -1499,14 +1499,14 @@ Nghề có thang nhà nước nhưng đã dùng lương rao (ví dụ điều d�
     "levels": [ { "band": "L1", "title_vn": "string",
                   "entry": { "<URI>": 1 },    // Keyword và mức cần khi vào cấp (bằng output cấp trước)
                   "output": { "<URI>": 1 } } ],  // Keyword và mức nhận khi xong cấp
-    "background_groups": ["S5.1.0", "0613"],  // Hồ sơ nền: nhóm của mọi kỹ năng bắt buộc ESCO của nghề, mức Làm quen
     "similar_careers": { "SWE_MOBILE": 1.78, "SWE_EMBEDDED": null }  // Nghề rất giống (Sim ≥ 1,2); null là cùng mã O*NET
   } ]
 }
 ```
 
-**Cách tính nhảy nghề** (code phải làm đúng như `coverage`, `finished_profile`, `can_jump` trong script):
-1. **Mức đang có theo nhóm:** với mỗi keyword người chơi đã đạt, gán mức của nó cho mọi nhóm trong `groups` (keyword không có nhóm thì dùng chính URI), lấy mức lớn nhất. Với mỗi nghề người chơi đã **xong cấp cuối**, thêm mọi nhóm trong `background_groups` ở mức 1 nếu chưa có.
+**Cách tính nhảy nghề** (code phải làm đúng như `lift`, `coverage`, `can_jump` trong script; chỉ dùng keyword người chơi thấy được, D-124):
+1. **Mức đang có theo nhóm:** với mỗi keyword người chơi đã đạt, gán mức của nó cho mọi nhóm trong `groups` (keyword không có nhóm thì dùng chính URI), lấy mức lớn nhất.
 2. **Giá trị cho một nhóm đích g:** lớn nhất giữa mức đang có ở g và (mức ở nhóm a × `group_conversion[a][g].credit`) với mọi a đang có.
 3. **Độ phủ của một cấp đích** = Σ min(giá trị tốt nhất trong các nhóm của keyword, mức cần) / Σ mức cần, chạy trên `entry` của cấp đó (mỗi keyword cần lấy nhóm tốt nhất của nó).
-4. **Được vào** cấp cao nhất có độ phủ ≥ 0,5, hoặc ≥ 0,3 nếu nghề đích nằm trong `similar_careers` của một nghề người chơi đã xong cấp cuối; đồng thời đủ bậc soft skill (`point_budgets.json` §14) và đủ điều kiện nghề đi trước nếu có.
+4. **Được vào** cấp cao nhất có độ phủ ≥ 0,5, hoặc ≥ 0,3 nếu nghề đích nằm trong `similar_careers` của một nghề người chơi đã chơi; đồng thời đủ bậc soft skill (`point_budgets.json` §14) và đủ điều kiện nghề đi trước nếu có.
+5. **Màn giải thích:** với từng keyword nghề đích cần, ghi loại khớp: đủ (cùng keyword hoặc cùng nhóm), gần giống (qua `group_conversion`, ghi keyword của người chơi được dùng và tín chỉ), hoặc còn thiếu; rồi độ phủ, ngưỡng áp dụng và lý do (nghề rất giống), cấp vào được, keyword còn thiếu để lên tiếp.

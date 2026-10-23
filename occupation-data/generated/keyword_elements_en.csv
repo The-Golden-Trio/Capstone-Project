@@ -1416,20 +1416,13 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 003,nhom,personal skills and development,8,Kỹ năng cá nhân và phát triển bản thân (chung)
 0031,nhom,personal skills and development,94,Kỹ năng cá nhân và phát triển bản thân
 0111,nhom,education science,241,Khoa học giáo dục
-0112,nhom,training for pre-school teachers,4,Sư phạm mầm non
 0113,nhom,teacher training without subject specialisation,62,Sư phạm chung
-0114,nhom,teacher training with subject specialisation,29,Sư phạm theo môn
 0211,nhom,audio-visual techniques and media production,143,Kỹ thuật nghe nhìn và sản xuất truyền thông
 0212,nhom,"fashion, interior and industrial design",41,"Thiết kế thời trang, nội thất và công nghiệp"
 0213,nhom,fine arts,28,Mỹ thuật
-0214,nhom,handicrafts,50,Thủ công mỹ nghệ
-0215,nhom,music and performing arts,54,Âm nhạc và nghệ thuật biểu diễn
-0222,nhom,history and archaeology,24,Lịch sử và khảo cổ học
 0223,nhom,philosophy and ethics,9,Triết học và đạo đức học
-0231,nhom,language acquisition,21,Học ngoại ngữ
 0232,nhom,literature and linguistics,72,Văn học và ngôn ngữ học
 0311,nhom,economics,43,Kinh tế học
-0312,nhom,political sciences and civics,135,Khoa học chính trị và giáo dục công dân
 0313,nhom,psychology,78,Tâm lý học
 0314,nhom,sociology and cultural studies,96,Xã hội học và nghiên cứu văn hoá
 0321,nhom,journalism and reporting,33,Báo chí và đưa tin
@@ -1447,7 +1440,6 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 0419,nhom,business and administration not elsewhere classified,23,Kinh doanh và quản trị khác
 042,nhom,law,15,Luật (chung)
 0421,nhom,law,800,Luật
-051,nhom,biological and related sciences,5,Sinh học và khoa học liên quan (chung)
 0511,nhom,biology,183,Sinh học
 0512,nhom,biochemistry,40,Hoá sinh
 0521,nhom,environmental sciences,58,Khoa học môi trường
@@ -1481,7 +1473,6 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 0729,nhom,manufacturing and processing not elsewhere classified,29,Sản xuất và chế biến khác
 0731,nhom,architecture and town planning,38,Kiến trúc và quy hoạch đô thị
 0732,nhom,building and civil engineering,317,Xây dựng dân dụng và công trình
-0788,nhom,"inter-disciplinary programmes and qualifications involving engineering, manufacturing and construction",6,"Liên ngành kỹ thuật, sản xuất và xây dựng"
 079,nhom,"engineering, manufacturing and construction not elsewhere classified",46,"Kỹ thuật, sản xuất và xây dựng khác (chung)"
 0799,nhom,"engineering, manufacturing and construction not elsewhere classified",7,"Kỹ thuật, sản xuất và xây dựng khác"
 0811,nhom,crop and livestock production,100,Trồng trọt và chăn nuôi
@@ -1495,14 +1486,12 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 0913,nhom,nursing and midwifery,35,Điều dưỡng và hộ sinh
 0914,nhom,medical diagnostic and treatment technology,101,Kỹ thuật chẩn đoán và điều trị y khoa
 0915,nhom,therapy and rehabilitation,44,Trị liệu và phục hồi chức năng
-0916,nhom,pharmacy,22,Dược
 0917,nhom,traditional and complementary medicine and therapy,8,Y học cổ truyền và bổ trợ
 0921,nhom,care of the elderly and of disabled adults,31,Chăm sóc người cao tuổi và người khuyết tật
 0922,nhom,child care and youth services,10,Chăm sóc trẻ em và dịch vụ thanh thiếu niên
 0923,nhom,social work and counselling,63,Công tác xã hội và tư vấn
 1012,nhom,hair and beauty services,30,Làm tóc và làm đẹp
 1013,nhom,"hotel, restaurants and catering",9,"Khách sạn, nhà hàng và ăn uống"
-1014,nhom,sports,11,Thể thao
 1015,nhom,"travel, tourism and leisure",32,Du lịch và giải trí
 1021,nhom,community sanitation,85,Vệ sinh cộng đồng
 1022,nhom,occupational health and safety,288,An toàn và sức khoẻ nghề nghiệp
@@ -1519,7 +1508,6 @@ S1.12.0,nhom,"creating artistic, visual or instructive materials",66,"Tạo tài
 S1.12.1,nhom,creating visual displays and decorations,235,Tạo trưng bày và trang trí
 S1.12.2,nhom,developing instructive or promotional materials,206,"Soạn tài liệu hướng dẫn, quảng bá"
 S1.12.3,nhom,creating artistic designs or performances,201,"Sáng tạo thiết kế, tiết mục nghệ thuật"
-S1.13.0,nhom,writing and composing,44,Viết và sáng tác
 S1.13.2,nhom,artistic and creative writing,58,Sáng tác văn chương
 S1.13.3,nhom,technical or academic writing,429,"Viết kỹ thuật, học thuật"
 S1.14.1,nhom,practising sports,32,Tập luyện thể thao
@@ -1542,7 +1530,6 @@ S1.5.6,nhom,advising on design or use of technologies,32,"Tư vấn thiết kế
 S1.5.7,nhom,advising on business or operational matters,77,"Tư vấn kinh doanh, vận hành"
 S1.5.8,nhom,advising on educational or vocational matters,16,"Tư vấn học tập, nghề nghiệp"
 S1.5.9,nhom,advising on workplace health and safety issues,53,Tư vấn an toàn lao động
-S1.6.0,nhom,"promoting, selling and purchasing",32,"Quảng bá, bán và mua"
 S1.6.1,nhom,selling products or services,184,"Bán sản phẩm, dịch vụ"
 S1.6.2,nhom,"promoting products, services, or programs",414,"Quảng bá sản phẩm, dịch vụ, chương trình"
 S1.6.3,nhom,purchasing goods or services,191,"Mua hàng hoá, dịch vụ"
@@ -1554,7 +1541,6 @@ S2.1.4,nhom,carrying out forensic and police investigations,30,"Điều tra hìn
 S2.2.0,nhom,documenting and recording information,22,Ghi chép và lưu hồ sơ
 S2.2.1,nhom,"preparing financial documents, records, reports, or budgets",249,"Lập chứng từ, báo cáo tài chính, ngân sách"
 S2.2.2,nhom,recording legal information,26,Ghi chép thông tin pháp lý
-S2.2.3,nhom,"preparing documentation for contracts, applications, or permits",70,"Lập hồ sơ hợp đồng, đơn, giấy phép"
 S2.2.4,nhom,maintaining or preparing medical documentation,73,Lập hồ sơ y tế
 S2.2.5,nhom,maintaining operational records,764,Ghi sổ vận hành
 S2.2.6,nhom,"documenting technical designs, procedures, problems or activities",199,"Ghi tài liệu thiết kế, quy trình, sự cố kỹ thuật"
@@ -1564,7 +1550,6 @@ S2.4.1,nhom,gathering information from physical or electronic sources,337,"Thu t
 S2.4.2,nhom,entering and transforming information,121,Nhập và chuyển đổi thông tin
 S2.5.0,nhom,measuring physical properties,329,Đo tính chất vật lý
 S2.5.1,nhom,measuring dimensions and related properties,153,Đo kích thước
-S2.5.2,nhom,weighing,16,Cân đo khối lượng
 S2.6.1,nhom,performing calculations,213,Tính toán
 S2.6.2,nhom,determining values of goods or services,65,"Định giá hàng hoá, dịch vụ"
 S2.6.3,nhom,estimating resource needs,211,Ước tính nguồn lực
@@ -1589,7 +1574,6 @@ S2.9.0,nhom,monitoring developments in area of expertise,398,Cập nhật tiến
 S3.0.0,nhom,assisting and caring,116,Hỗ trợ và chăm sóc
 S3.1.0,nhom,counselling,8,Tham vấn
 S3.1.1,nhom,"counselling on personal, family or social issues",80,"Tham vấn vấn đề cá nhân, gia đình, xã hội"
-S3.1.2,nhom,providing support to resolve problems,67,Hỗ trợ giải quyết vấn đề
 S3.1.3,nhom,assisting people to access services,65,Giúp người dân tiếp cận dịch vụ
 S3.2.0,nhom,providing health care or medical treatments,52,"Chăm sóc sức khoẻ, điều trị"
 S3.2.1,nhom,"providing medical, dental and nursing care",101,"Chăm sóc y tế, nha khoa, điều dưỡng"
@@ -1597,7 +1581,6 @@ S3.2.2,nhom,performing surgical procedures,15,Phẫu thuật
 S3.2.3,nhom,providing physical therapies,12,Vật lý trị liệu
 S3.2.4,nhom,providing psychological and occupational therapies,49,"Trị liệu tâm lý, hoạt động trị liệu"
 S3.2.5,nhom,"prescribing and ordering medical tests, treatments or devices",32,"Chỉ định xét nghiệm, điều trị, thiết bị y tế"
-S3.2.6,nhom,fitting assistive devices,14,Lắp dụng cụ hỗ trợ
 S3.3.0,nhom,protecting and enforcing,128,Bảo vệ và thực thi
 S3.3.2,nhom,complying with environmental protection laws and standards,204,Tuân thủ luật bảo vệ môi trường
 S3.3.3,nhom,complying with operational procedures,803,Tuân thủ quy trình vận hành
@@ -1645,35 +1628,28 @@ S6.11.1,nhom,"cleaning tools, equipment, workpieces and vehicles",170,"Làm sạ
 S6.11.2,nhom,cleaning interior and exterior of buildings,189,Vệ sinh trong và ngoài toà nhà
 S6.11.3,nhom,cleaning outdoor spaces,8,Vệ sinh không gian ngoài trời
 S6.12.0,nhom,washing and maintaining textiles and clothing,18,"Giặt và bảo quản đồ vải, quần áo"
-S6.13.0,nhom,handling and disposing of waste and hazardous materials,59,Xử lý chất thải và vật liệu nguy hại
 S6.13.1,nhom,handling and disposing of hazardous materials,146,Xử lý vật liệu nguy hại
 S6.13.2,nhom,disposing of non-hazardous waste or debris,37,Xử lý chất thải thông thường
 S6.2.1,nhom,"loading and unloading goods and, materials",74,"Bốc dỡ hàng hoá, vật liệu"
 S6.2.2,nhom,"moving or lifting materials, equipment, or supplies",92,"Di chuyển, nâng vật liệu, thiết bị"
 S6.2.3,nhom,storing goods and materials,160,"Lưu kho hàng hoá, vật liệu"
 S6.2.4,nhom,"positioning materials, tools or equipment",255,"Định vị vật liệu, dụng cụ, thiết bị"
-S6.3.0,nhom,transforming and blending materials,22,Biến đổi và pha trộn vật liệu
 S6.3.1,nhom,preparing mixtures or solutions,159,"Pha trộn hỗn hợp, dung dịch"
 S6.3.6,nhom,collecting and preparing specimens or materials for testing,116,Lấy và chuẩn bị mẫu thử
 S6.4.1,nhom,cultivating land and crops,33,Canh tác đất và cây trồng
 S6.4.2,nhom,"planting, pruning and harvesting trees, crops and other plants",27,"Trồng, tỉa, thu hoạch cây"
-S6.5.0,nhom,assembling and fabricating products,158,Lắp ráp và chế tạo sản phẩm
 S6.5.1,nhom,fabricating precision instruments or jewellery,36,"Chế tác dụng cụ chính xác, trang sức"
-S6.5.3,nhom,assembling electrical and electronic products,30,"Lắp ráp sản phẩm điện, điện tử"
 S6.5.4,nhom,assembling mechanical products,11,Lắp ráp sản phẩm cơ khí
 S6.5.5,nhom,assembling furniture,3,Lắp ráp đồ nội thất
 S6.5.6,nhom,fabricating garments and textile products,49,May hàng dệt may
 S6.5.7,nhom,fabricating food and related products,47,Làm thực phẩm và sản phẩm liên quan (thao tác)
-S6.6.1,nhom,making production moulds and casts,46,Làm khuôn đúc
 S6.6.3,nhom,making models,21,Làm mô hình
 S6.7.0,nhom,using hand tools,83,Dùng dụng cụ cầm tay
 S6.7.1,nhom,cutting materials and drilling holes,126,"Cắt vật liệu, khoan lỗ"
 S6.7.2,nhom,shaping materials to create products,60,Tạo hình vật liệu
 S6.7.3,nhom,smoothing surfaces of objects or equipment,62,Làm nhẵn bề mặt
 S6.7.4,nhom,using precision hand tools,82,Dùng dụng cụ cầm tay chính xác
-S6.7.5,nhom,"hammering, nailing and riveting",14,"Đóng, đóng đinh, tán đinh"
 S6.9.1,nhom,tending and breeding animals,58,Chăm sóc và nhân giống vật nuôi
-S6.9.2,nhom,tending and breeding aquatic animals,35,Nuôi và nhân giống thuỷ sản
 S6.9.3,nhom,moving and herding animals,35,"Di chuyển, chăn dắt vật nuôi"
 S6.9.5,nhom,feeding and grooming animals,36,Cho ăn và chải chuốt vật nuôi
 S6.9.6,nhom,training animals,12,Huấn luyện động vật
@@ -1684,7 +1660,6 @@ S7.1.2,nhom,installing wooden and metal components,593,"Lắp cấu kiện gỗ,
 S7.1.6,nhom,"joining parts using soldering, welding or brazing techniques",69,"Hàn nối chi tiết (hàn điện, hàn thiếc, hàn đồng)"
 S7.2.1,nhom,"installing heating, ventilation and air conditioning equipment",9,"Lắp đặt hệ thống sưởi, thông gió, điều hoà"
 S7.2.2,nhom,installing plumbing or piping equipment or systems,37,"Lắp đặt hệ thống cấp thoát nước, đường ống"
-S7.2.3,nhom,installing insulation materials,8,Lắp vật liệu cách nhiệt
 S7.3.1,nhom,applying material to fill gaps in surfaces,1,Trét vá bề mặt
 S7.3.3,nhom,applying protective or decorative solutions or coatings,80,"Phủ sơn, lớp bảo vệ, trang trí"
 S8.0.0,nhom,working with machinery and specialised equipment,358,Vận hành máy móc và thiết bị chuyên dụng
@@ -1698,7 +1673,6 @@ S8.2.3,nhom,operating rail vehicles,31,Vận hành phương tiện đường s�
 S8.3.0,nhom,operating watercraft,33,Điều khiển tàu thuyền
 S8.4.0,nhom,operating machinery for the extraction and processing of raw materials,9,"Vận hành máy khai thác, chế biến nguyên liệu"
 S8.4.1,nhom,"operating mining, drilling and mineral processing machinery",13,"Vận hành máy khai mỏ, khoan, chế biến khoáng sản"
-S8.4.2,nhom,operating metal processing and finishing machinery,32,Vận hành máy gia công và hoàn thiện kim loại
 S8.4.3,nhom,operating pumping systems or equipment,42,Vận hành hệ thống bơm
 S8.4.4,nhom,operating energy production or distribution equipment,40,"Vận hành thiết bị sản xuất, phân phối năng lượng"
 S8.4.5,nhom,"operating petroleum, chemical or water processing systems or equipment",51,"Vận hành hệ thống xử lý dầu khí, hoá chất, nước"
@@ -1707,17 +1681,14 @@ S8.5.2,nhom,operating packaging machinery,11,Vận hành máy đóng gói
 S8.5.3,nhom,"operating machinery for the manufacture and treatment of textiles, fur and leather products",92,"Vận hành máy dệt, may, thuộc da"
 S8.5.4,nhom,operating food processing machinery,95,Vận hành máy chế biến thực phẩm
 S8.5.5,nhom,operating mixing and separating machinery,45,"Vận hành máy trộn, tách"
-S8.5.6,nhom,operating print and photographic production equipment,27,Vận hành thiết bị in và ảnh
 S8.6.0,nhom,using precision instrumentation and equipment,66,Dùng thiết bị chính xác
 S8.6.1,nhom,operating medical equipment,22,Vận hành thiết bị y tế
 S8.6.2,nhom,operating audio-visual equipment,40,Vận hành thiết bị nghe nhìn
 S8.6.3,nhom,operating scientific and laboratory equipment,93,Vận hành thiết bị phòng thí nghiệm
 S8.6.4,nhom,operating communications equipment,101,Vận hành thiết bị liên lạc
-S8.6.5,nhom,operating precision industrial equipment,41,Vận hành thiết bị công nghiệp chính xác
 S8.6.6,nhom,using precision measuring equipment,227,Dùng thiết bị đo chính xác
 S8.7.1,nhom,repairing and installing mechanical equipment,73,"Sửa chữa, lắp đặt thiết bị cơ khí"
 S8.7.3,nhom,maintaining mechanical machinery,158,Bảo dưỡng máy móc cơ khí
 S8.8.0,nhom,"installing, maintaining and repairing electrical, electronic and precision equipment",32,"Lắp đặt, bảo dưỡng, sửa chữa thiết bị điện, điện tử, chính xác"
 S8.8.1,nhom,"installing and repairing electrical, electronic and precision equipment",118,"Lắp đặt, sửa chữa thiết bị điện, điện tử, chính xác"
 S8.8.2,nhom,"maintaining electrical, electronic and precision equipment",208,"Bảo dưỡng thiết bị điện, điện tử, chính xác"
-S8.9.0,nhom,operating aircraft,13,Điều khiển máy bay

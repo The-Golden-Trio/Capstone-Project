@@ -229,7 +229,9 @@ Keyword mịn làm vài cặp nghề gần nhau khó nhảy (Điều dưỡng �
 | Kênh Sim (Sim ≥ 1,2 thì ngưỡng 30%) | 66,5% | 2,3% | 4–9% |
 | Hồ sơ nền + Sim (chọn) | 70,1% | 2,7% | 6–12% |
 
-Sim là độ giống nghề của khối E (RIASEC 2, kiến thức 2, kỹ năng 1, phong cách làm việc 1), nên không kiểm bằng Related Occupations của O*NET được (vòng tròn); phép ISCO độc lập với Sim. Thu ngân → Nhân viên bán hàng vẫn không qua (phủ 15%) vì ESCO mô tả hai nghề khác nhau thật.
+Sim là độ giống nghề của khối E (RIASEC 2, kiến thức 2, kỹ năng 1, phong cách làm việc 1), nên không kiểm bằng Related Occupations của O*NET được (vòng tròn); phép ISCO độc lập với Sim. Thu ngân → Nhân viên bán hàng vẫn không qua (phủ 14%) vì ESCO mô tả hai nghề khác nhau thật.
+
+**Sau đó bỏ hồ sơ nền (D-124):** đó là kỹ năng ẩn, người chơi không thấy nên không giải thích được vì sao nhảy được. Chỉ còn keyword và kênh Sim: cặp cùng ISCO 3 số được vào cấp cuối 67,4% so với 2,4% (774 cặp, sau khi đổi 4 dòng nối); nhảy khác ngành 4–9%.
 
 ### E. Câu nên viết trong báo cáo
 

@@ -24,8 +24,7 @@ Luật (khối G của đề xuất game design; nguồn ở research/research_n
   mỗi keyword cần lấy nhóm tốt nhất của nó. Quy đổi một chiều giữa nhóm s(A→B) = P(B dùng | A dùng) trên 3.039 nghề ESCO;
   giữ nhóm có ≥ 10 nghề dùng, cặp cùng có ở ≥ 3 nghề và z siêu bội ≥ 3.
   Tín chỉ: cùng nhóm 1; s ≥ 0,75 → 0,5; 0,5 ≤ s < 0,75 → 0,25; còn lại 0. Mức quy đổi lấy lớn nhất, không cộng dồn.
-- Hồ sơ nền: người đã xong cấp cuối một nghề có thêm mọi nhóm kỹ năng của các kỹ năng bắt buộc ESCO của nghề đó, mức
-  Làm quen ("background_groups"). Luật nhảy: độ phủ ≥ 50%, hoặc ≥ 30% nếu hai nghề rất giống theo Sim của khối E
+- Luật nhảy chỉ dùng keyword người chơi thấy được: độ phủ ≥ 50%, hoặc ≥ 30% nếu hai nghề rất giống theo Sim của khối E
   (Sim ≥ 1,2, "similar_careers"; cùng mã O*NET ghi null).
 """
 import csv
@@ -285,14 +284,6 @@ def auc(pos, neg):
     return (rank_sum - n1 * (n1 + 1) / 2) / (n1 * n0)
 
 
-def finished_profile(career, groups):
-    """Nhóm kỹ năng của người đã xong cấp cuối một nghề: keyword đầu ra cộng hồ sơ nền ở mức Làm quen."""
-    have = lift(career["levels"][-1]["output"], groups)
-    for g in career["background_groups"]:
-        have.setdefault(g, 1)
-    return have
-
-
 def can_jump(cov, similar):
     return cov >= (SIMILAR_COVERAGE if similar else JUMP_COVERAGE)
 
@@ -300,7 +291,7 @@ def can_jump(cov, similar):
 def validate(careers, groups, conv, tests):
     """Độ phủ (nghề nguồn đã xong cấp cuối) cho cấp cuối nghề đích; cặp có hướng liên quan theo từng phép kiểm.
     "jump_*": tỉ lệ cặp được vào cấp cuối theo luật nhảy nghề (độ phủ 50%, hoặc 30% nếu hai nghề rất giống)."""
-    have = {c["role_code"]: finished_profile(c, groups) for c in careers}
+    have = {c["role_code"]: lift(c["levels"][-1]["output"], groups) for c in careers}
     similar = {c["role_code"]: set(c["similar_careers"]) for c in careers}
     out = {}
     for name, related in tests.items():
@@ -405,7 +396,7 @@ def markdown(data):
         "Độ phủ keyword (nghề nguồn đã xong cấp cuối) cho cấp cuối nghề đích, tính trên cặp có hướng. Phép kiểm theo O\\*NET độc lập "
         "với cách chọn keyword; phép kiểm theo ISCO chỉ để soát sơ bộ, vì cách chọn keyword đã dùng nhóm ISCO 3 số.",
         "",
-        "Nghề nguồn tính cả hồ sơ nền (kỹ năng bắt buộc ESCO của nghề, mức Làm quen). Cột \"Được nhảy\" theo luật: độ phủ ≥ 50%, "
+        "Cột \"Được nhảy\" theo luật: độ phủ ≥ 50%, "
         f"hoặc ≥ 30% nếu hai nghề rất giống (Sim ≥ 1,2; {num(sum(len(c['similar_careers']) for c in data['careers']))} cặp có hướng).",
         "",
         "| Cặp liên quan | Cách tính | AUC | Độ phủ TB, liên quan | Độ phủ TB, khác | Đạt 50%, liên quan | Đạt 50%, khác | Được nhảy, liên quan | Được nhảy, khác |",
@@ -464,12 +455,10 @@ def main():
             "keywords": [{"element": k, "en": esco.skills[k]["preferredLabel"], "ten_vi": names.get(k), "max_level": maxes[k],
                           "groups": groups[k]} for k in keys],
             "levels": [{"band": l["band"], "title_vn": l["title_vn"], **p} for l, p in zip(c["levels"], plan)],
-            "background_groups": sorted({g for s in set().union(*(esco.ess[x] for x in occs)) | set(maxes) if esco.is_keyword(s)
-                                         for g in groups[s] or [s]}),
             "similar_careers": similar[c["role_code"]],
         })
     vocab = sorted({k["element"] for c in careers for k in c["keywords"]})
-    gvocab = sorted({g for k in vocab for g in groups[k] or [k]} | {g for c in careers for g in c["background_groups"]})
+    gvocab = sorted({g for k in vocab for g in groups[k] or [k]})
     tests = {"onet": onet_related(budgets),
              "isco3": lambda a, b: isco[a][:3] == isco[b][:3],
              "isco2": lambda a, b: isco[a][:2] == isco[b][:2]}

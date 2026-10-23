@@ -1355,7 +1355,6 @@ http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7,keyword,se
 http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,buy new library items,Mua tài liệu mới cho thư viện,nhap_cho_duyet
 0031,nhom,personal skills and development,Kỹ năng cá nhân và phát triển bản thân,nhap_cho_duyet
 0111,nhom,education science,Khoa học giáo dục,nhap_cho_duyet
-0112,nhom,training for pre-school teachers,Sư phạm mầm non,nhap_cho_duyet
 0113,nhom,teacher training without subject specialisation,Sư phạm chung,nhap_cho_duyet
 0211,nhom,audio-visual techniques and media production,Kỹ thuật nghe nhìn và sản xuất truyền thông,nhap_cho_duyet
 0212,nhom,"fashion, interior and industrial design","Thiết kế thời trang, nội thất và công nghiệp",nhap_cho_duyet
@@ -1423,7 +1422,6 @@ http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23,keyword,bu
 0923,nhom,social work and counselling,Công tác xã hội và tư vấn,nhap_cho_duyet
 1012,nhom,hair and beauty services,Làm tóc và làm đẹp,nhap_cho_duyet
 1013,nhom,"hotel, restaurants and catering","Khách sạn, nhà hàng và ăn uống",nhap_cho_duyet
-1014,nhom,sports,Thể thao,nhap_cho_duyet
 1015,nhom,"travel, tourism and leisure",Du lịch và giải trí,nhap_cho_duyet
 1021,nhom,community sanitation,Vệ sinh cộng đồng,nhap_cho_duyet
 1022,nhom,occupational health and safety,An toàn và sức khoẻ nghề nghiệp,nhap_cho_duyet
@@ -1440,7 +1438,6 @@ S1.12.0,nhom,"creating artistic, visual or instructive materials","Tạo tài li
 S1.12.1,nhom,creating visual displays and decorations,Tạo trưng bày và trang trí,nhap_cho_duyet
 S1.12.2,nhom,developing instructive or promotional materials,"Soạn tài liệu hướng dẫn, quảng bá",nhap_cho_duyet
 S1.12.3,nhom,creating artistic designs or performances,"Sáng tạo thiết kế, tiết mục nghệ thuật",nhap_cho_duyet
-S1.13.0,nhom,writing and composing,Viết và sáng tác,nhap_cho_duyet
 S1.13.2,nhom,artistic and creative writing,Sáng tác văn chương,nhap_cho_duyet
 S1.13.3,nhom,technical or academic writing,"Viết kỹ thuật, học thuật",nhap_cho_duyet
 S1.14.1,nhom,practising sports,Tập luyện thể thao,nhap_cho_duyet
@@ -1474,7 +1471,6 @@ S2.1.4,nhom,carrying out forensic and police investigations,"Điều tra hình s
 S2.2.0,nhom,documenting and recording information,Ghi chép và lưu hồ sơ,nhap_cho_duyet
 S2.2.1,nhom,"preparing financial documents, records, reports, or budgets","Lập chứng từ, báo cáo tài chính, ngân sách",nhap_cho_duyet
 S2.2.2,nhom,recording legal information,Ghi chép thông tin pháp lý,nhap_cho_duyet
-S2.2.3,nhom,"preparing documentation for contracts, applications, or permits","Lập hồ sơ hợp đồng, đơn, giấy phép",nhap_cho_duyet
 S2.2.4,nhom,maintaining or preparing medical documentation,Lập hồ sơ y tế,nhap_cho_duyet
 S2.2.5,nhom,maintaining operational records,Ghi sổ vận hành,nhap_cho_duyet
 S2.2.6,nhom,"documenting technical designs, procedures, problems or activities","Ghi tài liệu thiết kế, quy trình, sự cố kỹ thuật",nhap_cho_duyet
@@ -1576,7 +1572,6 @@ S6.5.4,nhom,assembling mechanical products,Lắp ráp sản phẩm cơ khí,nhap
 S6.5.5,nhom,assembling furniture,Lắp ráp đồ nội thất,nhap_cho_duyet
 S6.5.6,nhom,fabricating garments and textile products,May hàng dệt may,nhap_cho_duyet
 S6.5.7,nhom,fabricating food and related products,Làm thực phẩm và sản phẩm liên quan (thao tác),nhap_cho_duyet
-S6.6.1,nhom,making production moulds and casts,Làm khuôn đúc,nhap_cho_duyet
 S6.6.3,nhom,making models,Làm mô hình,nhap_cho_duyet
 S6.7.0,nhom,using hand tools,Dùng dụng cụ cầm tay,nhap_cho_duyet
 S6.7.1,nhom,cutting materials and drilling holes,"Cắt vật liệu, khoan lỗ",nhap_cho_duyet
@@ -1668,31 +1663,7 @@ http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1,keyword,op
 http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718,keyword,geography,Địa lý,nhap_cho_duyet
 http://data.europa.eu/esco/skill/d63c2bad-817d-4116-b4d8-b927cb01212d,keyword,commercial law,Luật thương mại,nhap_cho_duyet
 S5.6.2,nhom,"using word processing, publishing and presentation software","Dùng phần mềm soạn thảo, chế bản, trình chiếu",nhap_cho_duyet
-0114,nhom,teacher training with subject specialisation,Sư phạm theo môn,nhap_cho_duyet
-0214,nhom,handicrafts,Thủ công mỹ nghệ,nhap_cho_duyet
-0215,nhom,music and performing arts,Âm nhạc và nghệ thuật biểu diễn,nhap_cho_duyet
-0222,nhom,history and archaeology,Lịch sử và khảo cổ học,nhap_cho_duyet
-0231,nhom,language acquisition,Học ngoại ngữ,nhap_cho_duyet
-0312,nhom,political sciences and civics,Khoa học chính trị và giáo dục công dân,nhap_cho_duyet
-051,nhom,biological and related sciences,Sinh học và khoa học liên quan (chung),nhap_cho_duyet
 0512,nhom,biochemistry,Hoá sinh,nhap_cho_duyet
-0788,nhom,"inter-disciplinary programmes and qualifications involving engineering, manufacturing and construction","Liên ngành kỹ thuật, sản xuất và xây dựng",nhap_cho_duyet
-0916,nhom,pharmacy,Dược,nhap_cho_duyet
-S1.6.0,nhom,"promoting, selling and purchasing","Quảng bá, bán và mua",nhap_cho_duyet
-S2.5.2,nhom,weighing,Cân đo khối lượng,nhap_cho_duyet
-S3.1.2,nhom,providing support to resolve problems,Hỗ trợ giải quyết vấn đề,nhap_cho_duyet
-S3.2.6,nhom,fitting assistive devices,Lắp dụng cụ hỗ trợ,nhap_cho_duyet
-S6.13.0,nhom,handling and disposing of waste and hazardous materials,Xử lý chất thải và vật liệu nguy hại,nhap_cho_duyet
-S6.3.0,nhom,transforming and blending materials,Biến đổi và pha trộn vật liệu,nhap_cho_duyet
-S6.5.0,nhom,assembling and fabricating products,Lắp ráp và chế tạo sản phẩm,nhap_cho_duyet
-S6.5.3,nhom,assembling electrical and electronic products,"Lắp ráp sản phẩm điện, điện tử",nhap_cho_duyet
-S6.7.5,nhom,"hammering, nailing and riveting","Đóng, đóng đinh, tán đinh",nhap_cho_duyet
-S6.9.2,nhom,tending and breeding aquatic animals,Nuôi và nhân giống thuỷ sản,nhap_cho_duyet
-S7.2.3,nhom,installing insulation materials,Lắp vật liệu cách nhiệt,nhap_cho_duyet
-S8.4.2,nhom,operating metal processing and finishing machinery,Vận hành máy gia công và hoàn thiện kim loại,nhap_cho_duyet
-S8.5.6,nhom,operating print and photographic production equipment,Vận hành thiết bị in và ảnh,nhap_cho_duyet
-S8.6.5,nhom,operating precision industrial equipment,Vận hành thiết bị công nghiệp chính xác,nhap_cho_duyet
-S8.9.0,nhom,operating aircraft,Điều khiển máy bay,nhap_cho_duyet
 http://data.europa.eu/esco/skill/1bc7c69b-4292-4592-b854-f48165a06082,keyword,repair engines,Sửa động cơ,nhap_cho_duyet
 http://data.europa.eu/esco/skill/1d38a162-61a0-42e8-83ca-47ce3e881032,keyword,develop a coaching style,Xây dựng phong cách huấn luyện,nhap_cho_duyet
 http://data.europa.eu/esco/skill/202d0d2b-f6b9-48fe-b70e-cff49fa1d087,keyword,replace tyres,Thay lốp,nhap_cho_duyet

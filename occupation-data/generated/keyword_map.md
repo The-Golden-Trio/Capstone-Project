@@ -2,7 +2,7 @@
 
 Sinh bởi `occupation-data/scripts/build_keyword_map.py` từ ESCO v1.2.1, cùng một cách cho mọi nghề. Nghề nối sang ESCO ở `research/research_notes/Bản đồ keyword/nghe_esco.csv`; tên tiếng Việt ở `ten_keyword_vi.csv` cùng thư mục.
 
-- Kho keyword: 1.414; nhóm kỹ năng dùng khi nhảy nghề: 308; cặp nhóm quy đổi có tín chỉ: 962.
+- Kho keyword: 1.414; nhóm kỹ năng dùng khi nhảy nghề: 279; cặp nhóm quy đổi có tín chỉ: 804.
 - Khớp với keyword nhóm soạn cho 22 nghề IT (có trọng số theo mức, so đúng kỹ năng): 49,5%.
 - 14 nghề có ít kỹ năng bắt buộc trong ESCO nên bổ sung kỹ năng tuỳ chọn hoặc còn dưới 6 keyword: Người kinh doanh online (6); Kỹ sư công nghiệp, quản lý sản xuất (6); Trợ lý pháp lý, chuyên viên pháp chế (6); Điều tra viên (6); Cán bộ hải quan và biên phòng cửa khẩu (6); Nhân viên vệ sinh và buồng phòng (6); Nhân viên tổ chức hoạt động vui chơi giải trí (6); Người mẫu (6); Cán bộ tiếp nhận hồ sơ hành chính công (5); Công nhân khai thác mỏ, dầu khí (6); Nhân viên kiểm tra chất lượng sản xuất (QC) (6); Kỹ thuật viên phục hình, chỉnh hình (6); Tiếp viên (6); Công nhân thu gom, xử lý rác và chất thải (6).
 
@@ -10,16 +10,16 @@ Sinh bởi `occupation-data/scripts/build_keyword_map.py` từ ESCO v1.2.1, cùn
 
 Độ phủ keyword (nghề nguồn đã xong cấp cuối) cho cấp cuối nghề đích, tính trên cặp có hướng. Phép kiểm theo O\*NET độc lập với cách chọn keyword; phép kiểm theo ISCO chỉ để soát sơ bộ, vì cách chọn keyword đã dùng nhóm ISCO 3 số.
 
-Nghề nguồn tính cả hồ sơ nền (kỹ năng bắt buộc ESCO của nghề, mức Làm quen). Cột "Được nhảy" theo luật: độ phủ ≥ 50%, hoặc ≥ 30% nếu hai nghề rất giống (Sim ≥ 1,2; 3.832 cặp có hướng).
+Cột "Được nhảy" theo luật: độ phủ ≥ 50%, hoặc ≥ 30% nếu hai nghề rất giống (Sim ≥ 1,2; 3.832 cặp có hướng).
 
 | Cặp liên quan | Cách tính | AUC | Độ phủ TB, liên quan | Độ phủ TB, khác | Đạt 50%, liên quan | Đạt 50%, khác | Được nhảy, liên quan | Được nhảy, khác |
 |---|---|---|---|---|---|---|---|---|
-| Nghề liên quan O\*NET (Primary) (836 cặp) | Có quy đổi | 0,893 | 43,3% | 9,0% | 41,5% | 1,7% | 62,3% | 2,9% |
-| Nghề liên quan O\*NET (Primary) (836 cặp) | Chỉ cùng nhóm | 0,886 | 40,0% | 7,1% | 37,8% | 1,4% | 55,9% | 2,3% |
-| Cùng ISCO 3 số (774 cặp) | Có quy đổi | 0,916 | 49,3% | 8,9% | 55,7% | 1,6% | 70,9% | 2,8% |
-| Cùng ISCO 3 số (774 cặp) | Chỉ cùng nhóm | 0,906 | 45,8% | 7,0% | 48,7% | 1,2% | 62,8% | 2,3% |
-| Cùng ISCO 2 số (2.526 cặp) | Có quy đổi | 0,791 | 30,7% | 8,4% | 25,9% | 1,1% | 37,3% | 2,1% |
-| Cùng ISCO 2 số (2.526 cặp) | Chỉ cùng nhóm | 0,782 | 27,7% | 6,5% | 22,4% | 0,9% | 32,7% | 1,6% |
+| Nghề liên quan O\*NET (Primary) (836 cặp) | Có quy đổi | 0,880 | 39,6% | 7,5% | 36,8% | 1,5% | 57,1% | 2,5% |
+| Nghề liên quan O\*NET (Primary) (836 cặp) | Chỉ cùng nhóm | 0,870 | 34,5% | 5,3% | 29,8% | 1,0% | 47,8% | 1,8% |
+| Cùng ISCO 3 số (774 cặp) | Có quy đổi | 0,909 | 46,2% | 7,5% | 51,6% | 1,3% | 67,4% | 2,4% |
+| Cùng ISCO 3 số (774 cặp) | Chỉ cùng nhóm | 0,889 | 41,1% | 5,2% | 41,9% | 0,9% | 58,7% | 1,7% |
+| Cùng ISCO 2 số (2.526 cặp) | Có quy đổi | 0,780 | 27,8% | 7,0% | 23,4% | 0,9% | 34,1% | 1,7% |
+| Cùng ISCO 2 số (2.526 cặp) | Chỉ cùng nhóm | 0,756 | 23,7% | 4,8% | 18,6% | 0,6% | 28,4% | 1,2% |
 
 Phép kiểm theo O\*NET thiên về kênh Sim (Sim cũng dựng từ O\*NET); phép theo ISCO thiên nhẹ về keyword.
 
