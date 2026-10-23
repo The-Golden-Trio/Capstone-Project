@@ -20,6 +20,8 @@
 11. [Những chỗ lệch / lỗi dữ liệu phát hiện khi đọc](#11-những-chỗ-lệch--lỗi-dữ-liệu-phát-hiện-khi-đọc)
 12. [Danh mục nghề ngoài IT từ O*NET](#12-danh-mục-nghề-ngoài-it-từ-onet)
 13. [Hồ sơ nghề chuẩn](#13-hồ-sơ-nghề-chuẩn-generatedoccupation_profilesjson)
+14. [Quỹ điểm và điều kiện vào cấp](#14-quỹ-điểm-và-điều-kiện-vào-cấp-generatedpoint_budgetsjson)
+15. [Bản đồ keyword và nhảy nghề](#15-bản-đồ-keyword-và-nhảy-nghề-generatedkeyword_mapjson)
 
 ---
 
@@ -1435,3 +1437,76 @@ Nghề có thang nhà nước nhưng đã dùng lương rao (ví dụ điều d�
 - Nhu cầu tuyển của nghề có dưới 5 tin trong VietJobs (ví dụ phi công, tiếp viên, thợ mộc): bộ dữ liệu lấy từ trang tuyển dụng văn phòng nên không phủ các ngành này, số 0 không có nghĩa là ít tuyển.
 - Số lương chỉ thấy qua đoạn trích tìm kiếm (JobsGO, TopCV, Paylab chặn công cụ tự động): ghi ở `salary_reference.json` mục `unverified`, không đưa vào hồ sơ.
 - Số lương trước năm 2022 (diễn viên múa 2012, thợ làm tóc 2019, thợ làm móng 2020).
+
+## 14. Quỹ điểm và điều kiện vào cấp: `generated/point_budgets.json`
+
+**Là gì:** thang cấp, độ khó, quỹ điểm soft skill từng cấp và điều kiện bậc để vào từng cấp của 221 nghề (D-114, D-115, D-117, D-121). Sinh bởi `scripts/build_point_budgets.py` từ `final_22_roles.json`, thang cấp ở `research/research_notes/Thang cấp nghề/` và O\*NET; **không sửa tay**. App chưa đọc file này.
+
+```jsonc
+{
+  "attribution": ["string"],                 // Dòng ghi nguồn O*NET, phải hiện khi dùng số liệu
+  "roles": [ {
+    "role_code": "SWE_TECHLEAD", "name_vn": "string", "is_it": true, "group_vn": "string",  // group_vn chỉ nghề ngoài IT
+    "onet": ["15-1252.00", "11-3021.00"],
+    "k": 1.77, "tier": "dễ | vừa | khó | rất khó",            // Độ khó nghề (D-115)
+    "weights": { "giao_tiep_hop_tac": 0.62, "...": 0 },        // Trọng số 7 nhóm soft skill của nghề (0–1)
+    "top3": ["tu_duy_giai_quyet_van_de", "..."],
+    "prerequisite": {                         // (chỉ 12 nghề cấp cao và nghề chuyển ngang) cấp đầu không mở sẵn
+      "type": "cap_cao | chuyen_ngang",
+      "band": "L5",                           // Phải đã xong một cấp có band_equivalent ≥ giá trị này…
+      "careers": ["SWE_BACKEND", "..."]       // …ở một trong các nghề này (nghề đi trước)
+    },
+    "arrival_points": { "giao_tiep_hop_tac": 1910, "...": 0 },  // (cùng điều kiện với prerequisite) quỹ ít nhất mỗi nhóm khi đi tới đó; đã cộng vào điều kiện các cấp
+    "career_budget": { "giao_tiep_hop_tac": 7420, "...": 0 },  // Tổng quỹ các cấp của chính nghề
+    "levels": [ {
+      "band": "L6",                           // Band đánh số liền trong nghề
+      "band_equivalent": "L6",                // Band thật để so với nghề khác
+      "title_vn": "string", "years_experience": "string",
+      "core_output": "string", "basis": "string", "evidence": "A | B | C",  // (chỉ nghề ngoài IT) nguồn của cấp
+      "focus": ["lanh_dao_kinh_doanh", "..."],  // 2 nhóm trọng tâm của cấp
+      "budget": { "giao_tiep_hop_tac": 1130, "...": 0 },     // Quỹ điểm tối đa mỗi nhóm ở cấp này
+      "requirement": { "tu_duy_giai_quyet_van_de": 3, "...": 0 }  // Bậc 1–5 cần để vào cấp; nhóm cần bậc 0 không có mặt
+    } ]
+  } ]
+}
+```
+
+**Luật vào cấp:** người chơi vào được một cấp khi mọi nhóm trong `requirement` đạt bậc (0 · 500 · 1.500 · 3.000 · 6.000 · 10.000 điểm). Nghề có `prerequisite` còn cần điều kiện nghề đi trước, kể cả khi nhảy thẳng vào cấp sau. Nghề không có `prerequisite` thì cấp đầu luôn mở (BR-01).
+
+## 15. Bản đồ keyword và nhảy nghề: `generated/keyword_map.json`
+
+**Là gì:** keyword kỹ năng cứng của 221 nghề lấy từ ESCO v1.2.1, đầu vào và đầu ra keyword từng cấp, và dữ liệu để tính nhảy nghề (D-120, D-122, D-123). Sinh bởi `scripts/build_keyword_map.py`, chạy **sau** `build_point_budgets.py`; **không sửa tay**. Nguồn sửa tay ở `research/research_notes/Bản đồ keyword/`: `nghe_esco.csv` (nghề → 1–2 nghề ESCO), `keyword_chon_tay.csv`, `ten_keyword_vi.csv`. App chưa đọc file này. Trang nào hiện keyword phải hiện dòng `attribution` của ESCO.
+
+```jsonc
+{
+  "attribution": ["This service uses the ESCO classification of the European Commission (ESCO v1.2.1).", "string"],
+  "validation": { "onet_conv": { "auc": 0.893, "jump_related": 0.623, "...": 0 }, "isco3_conv": {}, "it_team": { "share": 0.495 } },
+  "vocabulary_size": 1414, "group_count": 308,
+  "groups": { "S7.1.6": { "en": "string", "ten_vi": "string" } },   // Nhóm kỹ năng cấp 3 của ESCO (và vài keyword không thuộc nhóm nào, khoá là URI)
+  "group_conversion": {                       // Quy đổi một chiều giữa nhóm: có A thì được tính một phần B
+    "S5.7.0": { "0416": { "s": 0.547, "z": 10.7, "credit": 0.25 } }   // credit 0,5 hoặc 0,25; cùng nhóm là 1
+  },
+  "careers": [ {
+    "role_code": "string", "name_vn": "string", "is_it": true,
+    "esco": { "label": "string", "code": "2513.5", "uri": "string", "how": "tu_dong | sua_tay | chon_tay | muon | …+keyword_chon_tay",
+              "extra": { "label": "string", "uri": "string" } | null },  // Nghề ESCO thứ hai nếu nghề ghép 2
+    "optional_fill": 0,                       // Số keyword phải bổ sung từ kỹ năng tuỳ chọn
+    "trimmed_steps": 0,                       // Số lần lên mức bị bỏ để mỗi cấp nâng tối đa 5 keyword
+    "keyword_base": 0 | 1,                    // 1: nghề có nghề đi trước, vào cấp đầu với mọi keyword ở Làm quen
+    "keywords": [ { "element": "ESCO skill URI", "en": "string", "ten_vi": "string",
+                    "max_level": 3,           // 1 Làm quen · 2 Thành thạo · 3 Chuyên sâu, mức ở cấp cuối
+                    "groups": ["S5.1.0"] } ], // Nhóm dùng khi nhảy nghề; rỗng thì dùng chính keyword
+    "levels": [ { "band": "L1", "title_vn": "string",
+                  "entry": { "<URI>": 1 },    // Keyword và mức cần khi vào cấp (bằng output cấp trước)
+                  "output": { "<URI>": 1 } } ],  // Keyword và mức nhận khi xong cấp
+    "background_groups": ["S5.1.0", "0613"],  // Hồ sơ nền: nhóm của mọi kỹ năng bắt buộc ESCO của nghề, mức Làm quen
+    "similar_careers": { "SWE_MOBILE": 1.78, "SWE_EMBEDDED": null }  // Nghề rất giống (Sim ≥ 1,2); null là cùng mã O*NET
+  } ]
+}
+```
+
+**Cách tính nhảy nghề** (code phải làm đúng như `coverage`, `finished_profile`, `can_jump` trong script):
+1. **Mức đang có theo nhóm:** với mỗi keyword người chơi đã đạt, gán mức của nó cho mọi nhóm trong `groups` (keyword không có nhóm thì dùng chính URI), lấy mức lớn nhất. Với mỗi nghề người chơi đã **xong cấp cuối**, thêm mọi nhóm trong `background_groups` ở mức 1 nếu chưa có.
+2. **Giá trị cho một nhóm đích g:** lớn nhất giữa mức đang có ở g và (mức ở nhóm a × `group_conversion[a][g].credit`) với mọi a đang có.
+3. **Độ phủ của một cấp đích** = Σ min(giá trị tốt nhất trong các nhóm của keyword, mức cần) / Σ mức cần, chạy trên `entry` của cấp đó (mỗi keyword cần lấy nhóm tốt nhất của nó).
+4. **Được vào** cấp cao nhất có độ phủ ≥ 0,5, hoặc ≥ 0,3 nếu nghề đích nằm trong `similar_careers` của một nghề người chơi đã xong cấp cuối; đồng thời đủ bậc soft skill (`point_budgets.json` §14) và đủ điều kiện nghề đi trước nếu có.

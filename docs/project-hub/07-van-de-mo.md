@@ -1,6 +1,6 @@
 # 07 · Vấn đề mở, cần chốt
 
-> Game design 21/10: đóng A5 (D-105, D-110); thêm §H. 22/10: điểm và mở khoá (D-114 đến D-119); sửa H2, thêm H9–H12. 23/10: keyword từ ESCO (D-120), viết lại H9; nghề cấp cao (D-121), thêm H13; luật nhảy nghề thêm hồ sơ nền và kênh Sim (D-122); nối nghề sang ESCO linh hoạt hơn (D-123).
+> Game design 21/10: đóng A5 (D-105, D-110); thêm §H. 22/10: điểm và mở khoá (D-114 đến D-119); sửa H2, thêm H9–H12. 23/10: keyword từ ESCO (D-120), viết lại H9; nghề cấp cao (D-121), thêm H13; luật nhảy nghề thêm hồ sơ nền và kênh Sim (D-122); nối nghề sang ESCO linh hoạt hơn (D-123); thêm H14 (chờ chuyên gia).
 > Đã chuyển sang [02](02-quyet-dinh.md) ngày 23/9: Get-to-know-me tuỳ chọn (D-29), học cả hard lẫn soft skill (D-32).
 > Email cô 1/10: thêm B23 (design constraint, đã xử lý) và B24 (tiến độ 11 mục).
 > Gặp cô 10/10 (ghi 13/10): thêm B25, B26, B27; cập nhật B2, B20, A21.
@@ -135,4 +135,5 @@ Chi tiết từng mục ở [đề xuất game design](../../research/reports/H�
 | H10 | ⚪ để sau | Hệ số phạt 0,25 / 0,35 / 0,5; mức vào cấp 60%; độ phủ 50% và 30% cho nghề rất giống; số mũ k^1,4; tín chỉ quy đổi 0,5 / 0,25 | Chỉnh khi chơi thử | Cả nhóm |
 | H11 | 🟠 | Code đọc band liền nhau (`bandsOf`); thêm `band_equivalent` vào schema; nối thang cấp 199 nghề vào hồ sơ nghề chuẩn (`occupation_profiles.json`) | Dữ liệu đã đánh số liền | Nhóm code |
 | H12 | 🟠 | Sửa tên chức danh theo bậc nghề nghiệp viên chức mới (Luật Viên chức 2025, NĐ 232/2026) và văn bản thay NĐ 31/2015 | Đọc văn bản gốc | Cả nhóm |
-| H13 | 🟠 | Sửa BR-01 trong báo cáo đã nộp (bảng business rule, "The entry level of every occupation is accessible without prerequisite") và `assets/jobquest-requirements-report.md` theo ngoại lệ D-121; duyệt danh sách nghề đi trước | `research/research_notes/Thang cấp nghề/nghe_di_truoc.csv` | Phúc, rồi chuyên gia nghề |
+| H13 | 🟠 | Đưa ngoại lệ BR-01 (D-121) vào báo cáo **bản nộp kế tiếp** (bản 16/10 đã nộp, không sửa theo quy ước của `reports/`): chép BR-01, FR-02 và user story tương ứng từ `assets/jobquest-requirements-report.md` (đã sửa 23/10) sang `report.md` của bản mới; sửa đoạn "BR-01 and BR-03 are complementary" cho khớp | `docs/project-hub/assets/jobquest-requirements-report.md` | Phúc |
+| H14 | 🟠 | **Chờ chuyên gia nghề duyệt** phần dữ liệu nghề của game design 23/10: (1) bảng nối 221 nghề → ESCO và 2 danh sách keyword chọn tay; (2) khoảng 1.350/1.722 tên tiếng Việt chưa đối chiếu kỹ với mô tả ESCO; (3) 12 nghề cấp cao, nghề chuyển ngang, tiêu chí "cấp đầu đòi từ 2 năm" và danh sách nghề đi trước (nhất là 6 nghề quản lý ngoài IT). Nhóm tự duyệt trước được phần IT và tên tiếng Việt dễ hiểu | `research/research_notes/Bản đồ keyword/`, `research/research_notes/Thang cấp nghề/nghe_di_truoc.csv`, `occupation-data/generated/keyword_map.md` | Nhóm, rồi chuyên gia nghề |

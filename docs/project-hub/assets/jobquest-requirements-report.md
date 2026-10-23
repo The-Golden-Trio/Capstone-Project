@@ -10,7 +10,7 @@ Each requirement carries two verification methods:
 
 | ID | Rule | Origin | Business verification | Technical verification |
 |---|---|---|---|---|
-| BR-01 | The entry level of every occupation is accessible without prerequisite. | Exploration is the purpose; gating discovery defeats it | Acceptance test: a newly registered explorer opens the entry level of any published occupation | Access-control test: entry-level access is granted to an account with zero credit |
+| BR-01 | The entry level of every occupation is accessible without prerequisite, except for senior and lateral-entry occupations, whose entry level requires a completed level of a designated preceding occupation. | Exploration is the purpose; gating discovery defeats it. Senior roles such as Tech Lead, Engineering Manager or school principal are not entry points in practice | Acceptance test: a newly registered explorer opens the entry level of any published occupation that is not senior; a senior occupation shows as locked, with its preceding occupations listed | Access-control test: entry-level access is granted to an account with zero credit, except for senior occupations, which are granted only after the required level of a preceding occupation is completed |
 | BR-02 | Access to a higher level requires the competence credit specified for that level. | Competency-based progression | Walkthrough: an explorer below the threshold sees the level locked, with the outstanding competencies stated | Boundary tests at, just below, and just above the soft and domain credit thresholds |
 | BR-03 | Entry to an adjacent occupation requires demonstrated competencies overlapping that occupation's entry requirements, determined from the occupational taxonomy. | Occupational taxonomy and competency transfer | Domain experts judge the adjacent occupations offered to seeded profiles as plausible | Overlap computation matches the taxonomy-derived expected set for seeded profiles |
 | BR-04 | An occupation may be rated only by a user who has completed it in full. | Rating validity depends on exposure | Acceptance test: the rating form is unavailable until every level of the occupation is completed | Negative test: rating submissions for an incompletely completed occupation are rejected |
@@ -28,7 +28,7 @@ Each requirement carries two verification methods:
 | ID | Functional requirement | Group | Business verification | Technical verification |
 |---|---|---|---|---|
 | FR-01 | Register and authenticate a user account | Explorer | Acceptance test: a user registers, signs in, and reaches their own progress; a minor completes guardian consent | Authentication tests; unauthenticated requests for progress are refused |
-| FR-02 | Present the entry level of any published occupation without prerequisite | Explorer | Acceptance test: a new explorer opens the entry level of any published occupation | Entry level reachable for a new account with zero credit |
+| FR-02 | Present the entry level of any published occupation without prerequisite, except senior and lateral-entry occupations (BR-01) | Explorer | Acceptance test: a new explorer opens the entry level of any published occupation that is not senior | Entry level reachable for a new account with zero credit, senior occupations excepted |
 | FR-03 | Present the role, team, and working context specific to a task scenario before that scenario begins | Explorer | Explorer walkthrough: the context is shown and understood before each scenario | End-to-end test: the context screen precedes every scenario, not only the first one in a level |
 | FR-04 | Generate a task scenario from an occupation's authored context and generation rules, preserving the task's required facts | Explorer | Domain-expert review of sampled generations against the required facts and the occupation's rules | Automated validator passes on every stored generation (structure, skill coverage, occupation rules) |
 | FR-05 | Score free-text responses using discrete anchor points (positive / neutral / negative), each supported by a quotation drawn from the response | Explorer | Domain experts judge a sample of scored responses as fair and well-evidenced | Agreement with expert judgment on the reference set (Cohen's kappa, stratified by difficulty); every quotation is found verbatim in the response |
@@ -94,7 +94,7 @@ Personal data within DR-06, DR-07, DR-08, DR-11, DR-12, and DR-13 is subject to 
 ## Table E — User stories
 
 **Explorer**
-- As an explorer, I want to try the entry level of any occupation without prerequisite, so that I can survey possibilities before committing attention to one.
+- As an explorer, I want to try the entry level of any occupation without prerequisite, so that I can survey possibilities before committing attention to one. Senior roles open once I have reached the required level of an occupation that leads to them.
 - As an explorer, I want to be told my role, team, and working context before a task begins, so that my decisions are situated rather than abstract.
 - As an explorer, I want to perform tasks that practitioners would recognise, so that what I learn reflects the occupation.
 - As an explorer, I want to see the unfavourable aspects of an occupation, so that my impression is not a recruitment pitch.
