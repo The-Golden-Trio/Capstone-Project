@@ -1,6 +1,6 @@
 # 07 · Vấn đề mở, cần chốt
 
-> Game design 21/10: đóng A5 (D-105, D-110); thêm §H. 22/10: điểm và mở khoá (D-114 đến D-119); sửa H2, thêm H9–H12.
+> Game design 21/10: đóng A5 (D-105, D-110); thêm §H. 22/10: điểm và mở khoá (D-114 đến D-119); sửa H2, thêm H9–H12. 23/10: keyword từ ESCO (D-120), viết lại H9.
 > Đã chuyển sang [02](02-quyet-dinh.md) ngày 23/9: Get-to-know-me tuỳ chọn (D-29), học cả hard lẫn soft skill (D-32).
 > Email cô 1/10: thêm B23 (design constraint, đã xử lý) và B24 (tiến độ 11 mục).
 > Gặp cô 10/10 (ghi 13/10): thêm B25, B26, B27; cập nhật B2, B20, A21.
@@ -124,14 +124,14 @@ Chi tiết từng mục ở [đề xuất game design](../../research/reports/H�
 | # | Ưu tiên | Việc | Đề xuất | Ai |
 |---|---|---|---|---|
 | H1 | 🟠 | Duyệt bảng gán mã O\*NET cho 22 nghề và bảng nối 7 nhóm soft skill với O\*NET (B1, B2) | Bảng trong `occupation-data/generated/onet_profiles.md` và `SOFT_GROUPS` của script | Cả nhóm |
-| H2 | 🟠 | Duyệt đầu vào, đầu ra keyword của các cấp (B4) | Bản nháp tự động đã có cho cả 221 nghề (D-118, `occupation-data/generated/keyword_map.json`); duyệt kỹ 3 nghề pilot trước | Cả nhóm, rồi chuyên gia nghề duyệt |
+| H2 | 🟠 | Duyệt đầu vào, đầu ra keyword của các cấp (B4) | Bản nháp tự động đã có cho cả 221 nghề (D-120, `occupation-data/generated/keyword_map.json`); duyệt kỹ 3 nghề pilot trước | Cả nhóm, rồi chuyên gia nghề duyệt |
 | H3 | 🟠 | Thử 18 thẻ Get to know me trên 30–50 người; 2–3 học sinh 14–16 tuổi đọc lời thẻ và câu mục tiêu (C2, C3) | So vạch "tự kể" với "sau khi thử"; lệch nhiều thì lên 24 thẻ | Cả nhóm |
 | H4 | 🟠 | Danh sách từ dò dấu hiệu bất ổn; đường dây cho người chơi từ 16 tuổi, vì Tổng đài 111 dành cho trẻ em (C4, C5) | Danh sách ngắn, có không dấu và tiếng lóng | Cả nhóm |
 | H5 | ⚪ để sau | 35 tên bậc soft skill; danh sách khoảng 100 thành tựu (D2, D3) | Bậc 1 không là lời chê | Cả nhóm |
 | H6 | 🟠 | Danh sách nhóm ngành của game; có tầng "ngành" giữa nhóm ngành và nghề không (D4) | Bản thử dùng nhóm ngành › nghề › cấp | Cả nhóm |
 | H7 | ⚪ để sau | Tham số gợi ý nghề: sức nặng của tự kể (2), ngưỡng S, ngưỡng hồ sơ phẳng, ngưỡng Sim ≥ 1,2 và trùng keyword ≥ 30% (E1–E3) | Chỉnh bằng mô phỏng và phép thử với học sinh | Cả nhóm |
 | H8 | ⚪ để sau | Duyệt nội dung 12 cung; mức buff 12% (F1, F2) | [Hoàng đạo 12 cung](../../research/reports/Hoàng%20đạo%2012%20cung.md) | Cả nhóm |
-| H9 | 🟠 | Duyệt bản đồ keyword và tên tiếng Việt; thêm keyword cho Người mẫu (O\*NET không có dữ liệu); thêm keyword cho 22 nghề IT (đang 4–9, ít hơn nghề khác nên dễ được nhảy vào hơn); nối 8 keyword IT chưa có phần tử O\*NET tương đương (AI, API, Cloud, DevOps, ERP, Game, Git, Mobile) để quy đổi được với ngành khác; giãn việc lên keyword ở nghề có thang ngắn (ví dụ Trưởng nhóm kỹ thuật 2 cấp, cấp đầu nhận cùng lúc 6 keyword) | Bảng ở `occupation-data/generated/keyword_map.md` | Cả nhóm, rồi chuyên gia nghề |
+| H9 | 🟠 | Duyệt bảng nối 221 nghề → ESCO (61 dòng sửa tay; thợ sửa xe máy mượn nghề ESCO của thợ sửa ô tô) và tên tiếng Việt nháp của 1.402 keyword, 280 nhóm kỹ năng; keyword của Bác sĩ, Vận động viên yếu vì ESCO ghi ít kỹ năng; giãn việc lên keyword ở nghề có thang ngắn (cấp đầu có thể nhận cùng lúc nhiều keyword); vài cặp nghề gần nhau khó nhảy vì keyword mịn (Thu ngân → Bán hàng phủ 14%, Điều dưỡng → Hộ lý 37%), xem lại ngưỡng và tín chỉ khi chơi thử (H10) | `research/research_notes/Bản đồ keyword/nghe_esco.csv`, `ten_keyword_vi.csv`; bảng ở `occupation-data/generated/keyword_map.md` | Cả nhóm, rồi chuyên gia nghề |
 | H10 | ⚪ để sau | Hệ số phạt 0,25 / 0,35 / 0,5; mức vào cấp 60%; độ phủ 50%; số mũ k^1,4; tín chỉ quy đổi 0,5 / 0,25 | Chỉnh khi chơi thử | Cả nhóm |
 | H11 | 🟠 | Code đọc band liền nhau (`bandsOf`); thêm `band_equivalent` vào schema; nối thang cấp 199 nghề vào hồ sơ nghề chuẩn (`occupation_profiles.json`) | Dữ liệu đã đánh số liền | Nhóm code |
 | H12 | 🟠 | Sửa tên chức danh theo bậc nghề nghiệp viên chức mới (Luật Viên chức 2025, NĐ 232/2026) và văn bản thay NĐ 31/2015 | Đọc văn bản gốc | Cả nhóm |

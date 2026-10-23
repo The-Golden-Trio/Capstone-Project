@@ -94,7 +94,7 @@ Cách sinh scenario mới: xem `occupation-data/specs/HUONG-DAN-SINH-SCENARIO.md
 ## 6. Kỹ năng và bản đồ nghề
 
 - Mỗi lượt chơi ghi nhận **bằng chứng kỹ năng** (activity, kỹ năng, mốc, trích câu trả lời, có dùng hint không, có hết giờ không) rồi quy ra điểm.
-- Kỹ năng là **điều kiện** để lên cấp (BR-02) và sang nghề kề (BR-03): bậc soft skill (7 nhóm, bậc 0–5, tối đa 10.000 điểm mỗi nhóm) và keyword kỹ năng nghề 3 mức (D-104, D-114); nhảy nghề cần bậc và độ phủ keyword ≥ 50% (D-118). Cấp đầu của mọi nghề luôn mở (BR-01).
+- Kỹ năng là **điều kiện** để lên cấp (BR-02) và sang nghề kề (BR-03): bậc soft skill (7 nhóm, bậc 0–5, tối đa 10.000 điểm mỗi nhóm) và keyword kỹ năng nghề 3 mức (D-104, D-114); nhảy nghề cần bậc và độ phủ keyword ≥ 50% (D-118); keyword của mọi nghề lấy từ ESCO theo cùng một cách (D-120). Cấp đầu của mọi nghề luôn mở (BR-01).
 - Người chơi học **cả hard skill lẫn soft skill** (D-32).
 - Bản đồ hiện tại có **22 hành tinh / 7 nhóm nghề / 64 đường nối** (36 SIMILAR, 28 PROGRESSES_TO). 💡 Flow 20/9 đề xuất bỏ đường nối và tính toạ độ hành tinh từ skill.
 

@@ -140,7 +140,9 @@ Bảng do nhóm soạn.
 
 ### Chi tiết: kỹ năng cứng
 
-**Keyword, ba mức.** Kỹ năng cứng rút từ 31 kỹ năng trong tài liệu của nhóm thành keyword ngắn, tên theo việc chứ không theo công cụ. Mỗi keyword có ba mức: **Làm quen** (làm được việc đơn giản khi có người hướng dẫn), **Thành thạo** (tự làm được việc thường gặp), **Chuyên sâu** (xử lý tình huống khó, quyết định hướng đi, hướng dẫn người khác). Hai kỹ năng bị bỏ vì trùng soft skill: "Dùng AI đúng cách" (nhóm 4) và "Viết tài liệu" (nhóm 1). Ranh giới: keyword là phương pháp và công cụ; soft skill là hành vi.
+**Keyword, ba mức.** Kỹ năng cứng của mọi nghề là keyword lấy từ ESCO theo cùng một cách (khối G), tên theo việc chứ không theo sản phẩm. Mỗi keyword có ba mức: **Làm quen** (làm được việc đơn giản khi có người hướng dẫn), **Thành thạo** (tự làm được việc thường gặp), **Chuyên sâu** (xử lý tình huống khó, quyết định hướng đi, hướng dẫn người khác). Ranh giới: keyword là phương pháp và công cụ; soft skill là hành vi, nên kỹ năng ESCO thuộc nhóm trùng soft skill bị bỏ.
+
+Bảng dưới là 22 keyword nhóm soạn cho IT từ 31 kỹ năng trong tài liệu của nhóm. Nay bảng này là bài kiểm cho cách lấy keyword từ ESCO: bộ keyword ESCO tìm lại được 49,5% (O\*NET chỉ 38%).
 
 | Keyword | Nghĩa |
 |---|---|
@@ -221,7 +223,7 @@ Công thức, mức điểm và kiểm định nằm ở **khối E**. Ba điể
 | B1 | Duyệt bảng gán mã O\*NET cho 22 nghề | Bảng cuối của [onet_profiles.md](../../occupation-data/generated/onet_profiles.md) | Nhóm |
 | B2 | Duyệt bảng nối 7 nhóm soft skill với O\*NET | Phần `SOFT_GROUPS` trong script | Nhóm |
 | B3 | Trọng số khi tính độ giống nghề–nghề | Đã thay: RIASEC 2, kiến thức 2, kỹ năng 1, phong cách làm việc 1, kiểm trên O\*NET Related Occupations (khối E) | Xong |
-| B4 | Điền đầu vào, đầu ra keyword cho 123 cấp nghề | Làm kỹ trước cho 3 nghề pilot | Nhóm, rồi chuyên gia nghề duyệt |
+| B4 | Duyệt đầu vào, đầu ra keyword của các cấp nghề | Bản nháp tự động đã có cho 221 nghề (khối G); duyệt kỹ 3 nghề pilot trước | Nhóm, rồi chuyên gia nghề duyệt |
 | B5 | Ngưỡng số scenario trước khi nhận xét điểm mạnh, yếu | Tạm là 3 | Chỉnh sau khi thử |
 
 ## Khối C · Get to know me
@@ -545,7 +547,7 @@ Kiểm thử phần mềm là ví dụ hai mặt tách nhau: sau khi chơi, ngư
 | **Khác ngành, bạn làm tốt** | Nghề ở nhóm ngành khác | S mức A–C; chốt chặn bậc ≥ 2; r ≥ 0; có đủ dữ liệu soft skill | Mức S, rồi S, rồi r | 3, không quá 2 nghề cùng một nhóm ngành |
 | **Khác ngành, bạn có thể thích** | Nghề ở nhóm ngành khác | r mức A–C; **ít nhất 1 nghề ở nhóm ngành chưa ghé** nếu có nghề đạt | Mức r, rồi r | 3, không quá 2 nghề cùng một nhóm ngành |
 
-*Trùng keyword* = tổng mức (1–3) của keyword hai nghề cùng có / tổng mức keyword của nghề được gợi ý, chỉ tính cho nghề đã có bảng keyword (B4).
+*Trùng keyword* = tổng mức (1–3) của phần hai nghề cùng có / tổng mức của nghề được gợi ý, tính trên nhóm kỹ năng (keyword quy về nhóm kỹ năng cấp 3 của ESCO như khi nhảy nghề, khối G), vì keyword mịn ít khi trùng y hệt.
 
 Luật chung:
 
@@ -733,13 +735,16 @@ Ví dụ màn L3, trần Cảm xúc 240: ba câu chấm 1, 0 (kèm cờ cãi l�
 
 Sinh bởi `occupation-data/scripts/build_keyword_map.py`, kết quả ở [keyword_map.md](../../occupation-data/generated/keyword_map.md); nguồn ở `research/research_notes/Bản đồ keyword/`.
 
-- **Kho keyword (297):** 22 keyword IT của nhóm cho 22 nghề IT; nghề ngoài IT lấy từ O\*NET 31.0: 29 mảng kiến thức, 10 kỹ năng kỹ thuật và 236 hoạt động trung gian (IWA). Bỏ những gì trùng soft skill: kỹ năng xã hội, tư duy, tự quản; kiến thức chăm sóc khách hàng, quản trị, nhân sự; hoạt động thuộc nhóm giao tiếp, quan hệ, quản lý người, lập kế hoạch. Phép thử cho mỗi keyword: học được từ một khoá học và kiểm được bằng sản phẩm hay bài thực hành.
-- **Mỗi nghề 6–10 keyword**: nghề "dùng" một keyword khi O\*NET cho nó nổi bật hơn mức thường gặp (RCA > 1); hoạt động xếp theo số nhiệm vụ cốt lõi của nghề, bỏ hoạt động chỉ xuất hiện ở một nhiệm vụ; xen kẽ kiến thức với việc làm. 22 keyword IT nối sang phần tử O\*NET tương đương (ví dụ Kiểm thử ↔ kiểm thử hệ thống máy tính, kiểm tra chất lượng) để quy đổi với ngành khác.
-- **Mức cao nhất của keyword:** kiến thức và kỹ năng theo mức O\*NET đòi, chia ba theo phân vị của chính phần tử đó; hoạt động cốt lõi lên Chuyên sâu.
+- **Một nguồn cho mọi nghề: ESCO v1.2.1**, danh mục kỹ năng và nghề của Ủy ban châu Âu ([trang tải](https://esco.ec.europa.eu/en/use-esco/download); dùng lại tự do, phải ghi "This service uses the ESCO classification of the European Commission" và nói rõ đã chỉnh sửa). Đổi từ cách cũ (IT dùng 22 keyword nhóm soạn, ngành khác lấy từ O\*NET) vì cách cũ không công bằng: O\*NET thô, gom Back-end và Mobile vào một mã, và cho 95% keyword ngoài IT lên Chuyên sâu. ESCO tách nghề mịn hơn: cùng mã O\*NET "Software Developers" có mobile application developer, digital games developer, embedded systems software developer riêng.
+- **Mỗi nghề nối với một nghề ESCO** (`nghe_esco.csv`): 137 nghề tự động qua bảng nối ESCO–O\*NET và độ khớp tên, 61 nghề sửa tay (ví dụ Điều dưỡng → nurse responsible for general care, Thợ hàn → welder), 22 nghề IT chọn tay, 1 nghề mượn (ESCO không có thợ sửa xe máy, dùng chung nghề ESCO với thợ sửa ô tô nên hai nghề trùng bộ keyword).
+- **Kho keyword (1.402):** kỹ năng bắt buộc của nghề ESCO. Bỏ kỹ năng chung (transversal), ngoại ngữ (S1.15.1; biên dịch, phiên dịch vẫn giữ) và bộ 40 kỹ năng nghiên cứu ESCO gắn chung cho 122 nghề nghiên cứu; bỏ kỹ năng mà mọi nhánh đều thuộc 14 nhóm ESCO trùng 7 nhóm soft skill: giao tiếp và hợp tác (S1.0, S1.2, S1.4, S1.7, S1.8), tư duy và giải quyết vấn đề (S1.9, S4.9), lãnh đạo và kinh doanh (S1.1, S4.1, S4.5, S4.6, S4.8), tự quản lý (S4.2), đạo đức và chuyên nghiệp (S3.3.1, tuân thủ quy trình an toàn; khối B đã xếp "giữ an toàn, tuân thủ quy định" vào nhóm này; các nhóm S3.3 khác như an ninh, phòng cháy vẫn là keyword); bỏ tên sản phẩm (Jenkins, Joomla) và kỹ năng dưới 3 nghề ESCO dùng. Tên tiếng Việt là bản nháp chờ duyệt.
+- **Mỗi nghề 6–10 keyword** (trung bình 9,4): tối đa 6 keyword cốt lõi (nhiều nghề cùng nhóm ISCO 3 số có, hiếm ở nghề khác; nhóm dưới 5 nghề thì lấy nhóm ISCO 2 số) và 4 keyword đặc trưng (nghề cùng nhóm ít có); một kỹ năng và một kiến thức cùng gốc từ (gỡ lỗi phần mềm, công cụ gỡ lỗi) chỉ giữ một; nghề ESCO ghi quá ít kỹ năng bắt buộc thì bổ sung kỹ năng tuỳ chọn (15 nghề, ghi rõ trong bảng). Ví dụ Thợ hàn: hàn TIG, hàn hồ quang, vận hành thiết bị hàn, các loại kim loại, nhiệt độ ngọn lửa…; Mobile khác Back-end ở hệ điều hành di động. Hai nghề còn dưới 6 vì ESCO ghi quá ít: Vận động viên (3), Cán bộ tiếp nhận hồ sơ hành chính công (5). Bác sĩ cũng yếu: nghề ESCO general practitioner chỉ có 10 kỹ năng bắt buộc, phần lớn là kỹ năng nghiên cứu chung.
+- **Mức cao nhất theo độ cốt lõi:** hai keyword cốt lõi đầu, rồi xen kẽ đặc trưng và cốt lõi (keyword đặc trưng là thứ làm nên nghề, ví dụ hệ điều hành di động của Mobile); 30% đầu Chuyên sâu, 20% cuối Làm quen, còn lại Thành thạo. Như nhau cho IT (20/50/30%) và ngoài IT (19/50/31%).
 - **Đầu vào, đầu ra từng cấp** chia đều các lần lên mức cho các cấp của thang; đầu vào cấp sau là đầu ra cộng dồn của cấp trước. Đây là bản nháp tự động cho B4, chờ chuyên gia nghề duyệt.
-- **Quy đổi một chiều** s(A→B) = trong các nghề O\*NET dùng A, bao nhiêu phần cũng dùng B; chỉ giữ cặp có ý nghĩa thống kê (z ≥ 3). Tín chỉ: cùng keyword hoặc tương đương 1; s ≥ 0,75 là 0,5; 0,5 ≤ s < 0,75 là 0,25 (Dawson, Williams & Rizoiu 2021; Alabdulkareem và cộng sự 2018; Hosseinioun và cộng sự 2025; mức tín chỉ là lựa chọn thiết kế). Mức quy đổi lấy lớn nhất, không cộng dồn.
-- **Kiểm định trên 878 nghề O\*NET** (mỗi nghề ở mức cao nhất, so với danh sách nghề liên quan của O\*NET): độ phủ phân biệt nghề liên quan với nghề khác ở AUC 0,918 (chỉ keyword trùng 0,908); 42,0% cặp nghề liên quan đạt ngưỡng 50%, so với 2,1% cặp nghề khác.
-- **Ví dụ nhảy theo keyword** (người chơi đã xong nghề nguồn): Thu ngân → Nhân viên bán hàng tới L4/L6; Điều dưỡng → Hộ lý tới cấp cuối; Thợ điện công trình → Công nhân đường dây tới L5/L6; Back-end → Điều dưỡng chỉ cấp đầu.
+- **Nhảy nghề tính theo nhóm kỹ năng:** keyword quy về nhóm kỹ năng cấp 3 của ESCO (280 nhóm, không tính nhóm trùng soft skill; kiến thức theo lĩnh vực ISCED-F 4 số, thiếu thì 3 số; ví dụ hàn TIG và hàn hồ quang cùng nhóm "hàn nối chi tiết"), mức của nhóm = mức lớn nhất trong nhóm; mỗi keyword nghề đích lấy nhóm tốt nhất của nó, nên keyword thuộc nhiều nhóm không nặng hơn. **Quy đổi một chiều giữa các nhóm** s(A→B) = trong các nghề ESCO dùng A, bao nhiêu phần cũng dùng B, trên 3.039 nghề ESCO; chỉ giữ nhóm có ít nhất 10 nghề dùng, cặp cùng có ở ít nhất 3 nghề và có ý nghĩa thống kê (z ≥ 3). Tín chỉ: cùng nhóm 1; s ≥ 0,75 là 0,5; 0,5 ≤ s < 0,75 là 0,25 (Dawson, Williams & Rizoiu 2021; Alabdulkareem và cộng sự 2018; Hosseinioun và cộng sự 2025; mức tín chỉ là lựa chọn thiết kế). Mức quy đổi lấy lớn nhất, không cộng dồn.
+- **Kiểm định trên 221 nghề** (nghề nguồn đã xong cấp cuối, đo độ phủ cấp cuối nghề đích, cặp có hướng). Phép kiểm độc lập: hai nghề liên quan khi nằm trong danh sách nghề liên quan tầng Primary của O\*NET (836 cặp), AUC 0,878 (chỉ tính cùng nhóm 0,868); 36,6% cặp liên quan đạt ngưỡng 50%, so với 1,5% cặp khác. Theo nhóm ISCO-08 3 số (782 cặp): AUC 0,909, nhưng chỉ là soát sơ bộ vì cách chọn keyword đã dùng nhóm ISCO. Cách cũ được kiểm theo O\*NET (AUC 0,918 trên 878 nghề O\*NET), có lợi thế sân nhà vì quy đổi cũng học từ O\*NET, nên hai số không so thẳng được.
+- **Không nghiêng về IT:** tỉ lệ cặp nghề khác nhóm ngành vào được sâu hơn cấp đầu: IT → ngoài IT 5,1%, ngoài IT → ngoài IT 8,2%, ngoài IT → IT 3,4% (cách cũ 10,1%, 9,1%, 6,8%).
+- **Ví dụ nhảy theo keyword** (người chơi đã xong nghề nguồn): Back-end → Mobile tới cấp cuối; Thợ hàn → Thợ kết cấu thép tới cấp cuối; Thợ điện công trình → Công nhân đường dây tới cấp cuối; Thống kê → Phân tích dữ liệu tới L5/L6; Thiết kế đồ hoạ → UI/UX tới L5/L7; Back-end → Điều dưỡng chỉ cấp đầu. Vài cặp gần nhau chỉ vào được cấp đầu: Thu ngân → Nhân viên bán hàng (phủ 14%), Điều dưỡng → Hộ lý (37%); xem "Chỗ căng".
 
 ### Chi tiết: chơi lại, nhiệm vụ phụ, kỹ năng nghề
 
@@ -754,6 +759,7 @@ Sinh bởi `occupation-data/scripts/build_keyword_map.py`, kết quả ở [keyw
 |---|---|---|
 | **Chòm sao quyết định với người chơi sát ngưỡng** | Chơi 55%: không buff 35/221 nghề đi hết, buff trúng 2 nhóm chính của nghề 60/221 | Giữ: là lợi thế nhỏ có chủ ý (khối F); người sát ngưỡng bù bằng chơi lại hoặc nhiệm vụ phụ |
 | **Một nghề vừa đã đưa nhóm chính sát bậc 5** | Back-end chơi 75% có Tư duy 9.940 | Đổi lấy việc cấp cuối nghề khó đạt được trong nghề; bậc 5 là dấu của người đi hết nghề khó |
+| **Keyword mịn làm vài cặp nghề gần nhau khó nhảy** | Thu ngân → Nhân viên bán hàng phủ 14%, Điều dưỡng → Hộ lý 37%; cả 221 nghề thì cặp khác nhóm ngành vào sâu hơn cấp đầu 3–8%, cách cũ 7–10% | Chỉnh ngưỡng độ phủ và tín chỉ khi chơi thử (G2); có thể đưa kỹ năng tuỳ chọn vào tầng quy đổi |
 | **Thang cấp ngoài IT dựa nhiều vào thông lệ tuyển dụng** | 837/1.195 cấp mức B | Chuyên gia nghề duyệt; ưu tiên nghề có scenario trước |
 | **Văn bản pháp lý có thể đã đổi** | Luật Viên chức 2025 thay hạng IV–I bằng bậc nghề nghiệp 1–5 từ 1/7/2026; NĐ 31/2015 về bậc kỹ năng nghề có thể đã bị thay | Đọc NĐ 232/2026 và văn bản thay NĐ 31/2015, sửa tên chức danh |
 
@@ -761,7 +767,7 @@ Sinh bởi `occupation-data/scripts/build_keyword_map.py`, kết quả ở [keyw
 
 | # | Việc | Đề xuất | Ai làm |
 |---|---|---|---|
-| G1 | Duyệt bản đồ keyword và tên tiếng Việt; thêm keyword cho Người mẫu (O\*NET không có dữ liệu); xem lại 22 nghề IT có ít keyword hơn (4–9) nên dễ được nhảy vào hơn | Bản nháp đã dựng (mục trên) | Nhóm, rồi chuyên gia nghề |
+| G1 | Duyệt bảng nối 221 nghề → ESCO (61 dòng sửa tay, 1 dòng mượn) và tên tiếng Việt của 1.402 keyword, 280 nhóm kỹ năng (bản nháp) | Bản nháp đã dựng (mục trên); duyệt 3 nghề pilot trước | Nhóm, rồi chuyên gia nghề |
 | G2 | Hệ số phạt 0,25 / 0,35 / 0,5; mức vào cấp 60%; độ phủ 50%; k^1,4 | Giữ tạm | Chỉnh khi chơi thử |
 | G3 | Code đọc band liền nhau (`bandsOf`) | Dữ liệu đã đánh số liền; thêm `band_equivalent` vào schema | Nhóm code |
 | G4 | Sửa tên chức danh theo bậc nghề nghiệp viên chức mới | Đọc NĐ 232/2026 | Nhóm |
