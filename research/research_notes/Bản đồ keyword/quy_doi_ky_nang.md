@@ -215,7 +215,7 @@ Phần này là **đề xuất thiết kế của người ghi**, ghép từ cá
 
 Công thức mục B giữ nguyên, nhưng ma trận đổi từ nghề O*NET × phần tử O*NET sang **3.039 nghề ESCO × nhóm kỹ năng cấp 3 của ESCO** (lý do ở `phan_loai_ky_nang_cung.md` mục 6). Keyword của nghề là kỹ năng ESCO mịn; khi nhảy nghề, keyword quy về nhóm, mức nhóm = mức lớn nhất. Cùng nhóm tín chỉ 1 (ví dụ hàn TIG sang hàn hồ quang). Mỗi keyword nghề đích lấy nhóm tốt nhất của nó. Chỉ giữ nhóm có ít nhất 10 nghề dùng và cặp cùng có ở ít nhất 3 nghề, để tránh tín chỉ từ nhóm quá ít dữ liệu.
 
-V3 giờ độc lập với dữ liệu dựng bảng: bảng quy đổi học từ ESCO, còn chuẩn là Related Occupations của O*NET. Trên 221 nghề (836 cặp có hướng liên quan): AUC 0,878 có quy đổi, 0,868 chỉ cùng nhóm; cặp liên quan đạt 50% là 36,6%, cặp khác 1,5%. Phép kiểm cùng nhóm ISCO-08 3 số (AUC 0,909) chỉ để soát sơ bộ, vì cách chọn keyword đã dùng nhóm ISCO.
+V3 giờ độc lập với dữ liệu dựng bảng: bảng quy đổi học từ ESCO, còn chuẩn là Related Occupations của O*NET. Trên 221 nghề (836 cặp có hướng liên quan; số đo trước khi thêm hồ sơ nền ở mục G): AUC 0,878 có quy đổi, 0,868 chỉ cùng nhóm; cặp liên quan đạt 50% là 36,6%, cặp khác 1,5%. Phép kiểm cùng nhóm ISCO-08 3 số (AUC 0,909) chỉ để soát sơ bộ, vì cách chọn keyword đã dùng nhóm ISCO.
 
 ### G. Cập nhật 23/10: hồ sơ nền và kênh Sim (D-122)
 
