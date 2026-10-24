@@ -1,0 +1,270 @@
+\newpage
+\setcounter{section}{6}
+\section{System Evaluation}
+
+This chapter evaluates what exists in the present phase against the requirements of Section 4.3.3 and the sizing assumptions of Section 5.3. What exists is the prototype: the explorer application, the API with its database, and two hand-written scenarios scored by keyword matching; the AI tier, the staff application, and the queue and workers are designed but not built. The chapter therefore separates two kinds of result. Measurements are reported for what can be measured on the prototype: the frontend (Section 7.1), the API under load (Section 7.2), and the keyword grader that the AI judge is to replace (Section 7.3.3). For the AI tier, the evaluation data, measures, and acceptance thresholds are fixed in advance (Sections 7.3.1 and 7.3.2), so that results reported later are tested against criteria chosen before the results were seen. Every measurement names the build, the machine, and the tool version, and states which requirement it bears on and what it cannot establish.
+
+All measurements were taken on 20 October 2026 on the prototype at commit `9effe15`, built in production mode, on one development machine: Apple M1 Pro with eight cores and 16 GB of memory, macOS 27.0.1, Node.js 20.19, and PostgreSQL 17 on the same machine. The API ran as a single Node.js process against a separate database seeded with the release content and 500 synthetic explorer accounts. Scripts, raw summaries, and the probe set are kept with the report in the `evaluation` folder.
+
+\subsection{Frontend Evaluation}
+
+The frontend is evaluated against two requirements: NFR-13, that the explorer application works in a mobile browser on a slow connection, verified on a throttled network profile agreed for testing; and NFR-19, that explorer screens meet WCAG 2.1 level AA, verified by automated and manual audit (Section 4.3.3). The agreed profile is Lighthouse's mobile profile, already used for the latency budget of Section 5.3.1\cite{r137}.
+
+\subsubsection{Method}
+
+Lighthouse 13.5.0 audited the production build in Google Chrome 155, headless, under both its mobile profile (150 ms round trip, 1.6 Mbit/s download, four-fold CPU slowdown) and its desktop profile. The build was served by a static server standing in for the content delivery network of Section 5.3.1: text compressed with gzip, hashed assets cached for a year, video served by byte ranges, and the API on the same origin, as in deployment. Eight pages cover the explorer's path: the public landing page and sign-in, then, signed in as a test explorer, the orientation quiz, the 3D occupation map, an occupation's levels, a level's map, a scenario in play, and the profile. Each page was audited five times under each profile, each time in a newly started browser with an empty cache, as on a first visit, and the run reported is the median chosen by Lighthouse's own method, since the median of five runs is about twice as stable as a single run\cite{r202}. Two cautions apply. Headless Chrome draws WebGL in software, so the figures for the 3D map overstate the work a phone with a graphics processor would do; and a first visit is the worst case, since later visits reuse cached assets.
+
+The production bundle is the starting point for both profiles. The main script is 584 KB, 183 KB compressed, and the stylesheet 94 KB, 19 KB compressed; the 3D map is a separate chunk of 1,088 KB, 291 KB compressed, loaded only on the map page; and the landing page plays a 31.6 MB background video.
+
+\subsubsection{Results}
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.136\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.107\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.107\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.107\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.107\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.107\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.107\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.107\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.107\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Lighthouse category scores by page, median of five runs: P performance, A accessibility, BP best practices; (m) mobile profile, (d) desktop profile.} \\
+\hline
+\textbf{Page} & \textbf{P (m)} & \textbf{A (m)} & \textbf{BP (m)} & \textbf{SEO (m)} & \textbf{P (d)} & \textbf{A (d)} & \textbf{BP (d)} & \textbf{SEO (d)} \\ \hline
+\endfirsthead
+\hline
+\textbf{Page} & \textbf{P (m)} & \textbf{A (m)} & \textbf{BP (m)} & \textbf{SEO (m)} & \textbf{P (d)} & \textbf{A (d)} & \textbf{BP (d)} & \textbf{SEO (d)} \\ \hline
+\endhead
+Landing & 66 & 95 & 73 & 83 & 87 & 95 & 73 & 83 \\ \hline
+Sign-in & 60 & 95 & 96 & 83 & 87 & 95 & 96 & 83 \\ \hline
+Orientation quiz & 66 & 95 & 100 & 83 & 95 & 100 & 100 & 83 \\ \hline
+Occupation map (3D) & 27 & 96 & 100 & 83 & 53 & 100 & 100 & 83 \\ \hline
+Occupation levels & 68 & 96 & 100 & 83 & 89 & 96 & 100 & 83 \\ \hline
+Level map & 61 & 96 & 100 & 83 & 86 & 100 & 100 & 83 \\ \hline
+Scenario play & 51 & 95 & 100 & 83 & 91 & 100 & 100 & 83 \\ \hline
+Profile & 68 & 92 & 100 & 83 & 89 & 96 & 100 & 83 \\ \hline
+\textbf{Average} & \textbf{58.4} & \textbf{95.0} & \textbf{96.1} & \textbf{83.0} & \textbf{84.6} & \textbf{97.8} & \textbf{96.1} & \textbf{83.0} \\ \hline
+\end{longtable}
+}
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.154\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.143\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.143\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.108\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.154\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.164\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Mobile profile: load metrics of the median run, and the range of the performance score over the five runs.} \\
+\hline
+\textbf{Page} & \textbf{First contentful paint} & \textbf{Largest contentful paint} & \textbf{Total blocking time} & \textbf{Layout shift} & \textbf{Transferred} & \textbf{Performance, five runs} \\ \hline
+\endfirsthead
+\hline
+\textbf{Page} & \textbf{First contentful paint} & \textbf{Largest contentful paint} & \textbf{Total blocking time} & \textbf{Layout shift} & \textbf{Transferred} & \textbf{Performance, five runs} \\ \hline
+\endhead
+Landing & 3.8 s & 8.0 s & 0 ms & 0.000 & 31.9 MB & 64--66 \\ \hline
+Sign-in & 6.8 s & 7.1 s & 0 ms & 0.000 & 615 KB & 60--66 \\ \hline
+Orientation quiz & 4.1 s & 6.0 s & 4 ms & 0.000 & 669 KB & 66--72 \\ \hline
+Occupation map (3D) & 4.8 s & 8.1 s & 10,768 ms & 0.000 & 1,022 KB & 27--29 \\ \hline
+Occupation levels & 3.7 s & 5.5 s & 0 ms & 0.000 & 691 KB & 62--68 \\ \hline
+Level map & 4.2 s & 6.2 s & 24 ms & 0.000 & 704 KB & 60--62 \\ \hline
+Scenario play & 4.1 s & 6.0 s & 571 ms & 0.000 & 670 KB & 47--67 \\ \hline
+Profile & 4.2 s & 6.1 s & 17 ms & 0.000 & 703 KB & 61--68 \\ \hline
+\end{longtable}
+}
+
+\subsubsection{Analysis against the targets}
+
+NFR-13, mobile on a slow connection. The requirement is not met yet. On the mobile profile no page reaches a performance score of 90, the average is 58.4 against 84.6 on desktop, and the largest element appears after 5.5 to 8.1 seconds. The audits name the causes, and each is specific:
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item Fonts. The stylesheet of the web font service blocks the first paint on every page, which Lighthouse estimates costs 1.7 to 2.4 seconds on the mobile profile; serving the font files with the bundle removes the block and a third-party request.
+  \item The Google sign-in script, about 100 KB, is loaded on every page, including pages that never sign anyone in; it belongs on the sign-in page only.
+  \item The landing video, 31.6 MB, is downloaded in full on the mobile profile; a short compressed clip, or a still image on slow or metered connections, keeps the page's purpose at a fraction of the weight.
+  \item The 3D map spends 15.7 seconds evaluating script and blocks input for 10.8 seconds under software rendering. A graphics processor would remove much of that, but not enough to rely on: this is the case for the design's on-demand 3D chunk and accessible 2D view (Section 5.2.1), which becomes the default on low-end devices.
+  \item About 190 KB of the main script is unused on any single page, which route-level splitting removes.
+\end{enumerate}
+
+None of these is a property of the architecture. Layout is stable everywhere, with no measurable layout shift, and blocking time is negligible on every page except the 3D map and, at 0.6 s, the office scene of scenario play.
+
+NFR-19, accessibility. Automated accessibility scores are 92 to 100. The failures are few and concrete: insufficient colour contrast on the landing, levels, and profile pages; heading levels out of order on the landing page; on sign-in, no main landmark and links distinguished by colour alone; and icon links without an accessible name on the signed-in pages. Automated rules cover only part of WCAG\cite{r203}, so a score of 100 would not show conformance; the manual audit with keyboard and screen reader, and the accessible 2D map, are still to come, and NFR-19 is not yet met.
+
+Best practices and search. Best-practice scores are 96 to 100 except on the landing page (73), which loads images from third-party hosts that set cookies. The two public pages log two errors each to the console, because the session check answers an anonymous visitor with \textit{401 Unauthorized}; answering with an empty session would be quieter and equally correct. Search scores of 83 come from two omissions on every page, a meta description and a \textit{robots.txt} file, both one-line fixes.
+
+What this evaluation does not establish. It measures a first visit on an emulated device, not explorers' own phones on their own networks, which the business verification of NFR-13 requires; and it covers the explorer application only, since the staff application is not built.
+
+\subsection{Backend Evaluation}
+
+The backend is evaluated against the load the roadmap expects (Section 5.3.1) rather than against an arbitrary peak. Two questions are asked. Does one API process serve the explorer traffic of Stages 1 and 2 within the latency budget of Section 5.3.1, about 0.2 s for a request to be stored and acknowledged? And how many light requests per second does one process serve, the assumption of about 300 on which the replica count of Stage 4 rests? Model calls are not part of this evaluation, because the prototype makes none; they are the binding constraint of the target system and are measured with the AI tier (Section 7.3.2).
+
+\subsubsection{Method}
+
+Load was generated with k6 v2.3.0 on the same machine as the API. Each virtual user is a distinct registered explorer whose session is obtained by signing in before the test, so per-user queries and the single-run rules contend as they would between real explorers. Two profiles were run.
+
+Explorer sessions model what the roadmap assumes about an active explorer: a request every five to ten seconds (Section 5.3.1). In 70\% of iterations the explorer browses: session check, content bootstrap, occupation map, profile, progress, occupation levels, and run history. In 30\% the explorer plays: the scenario is loaded, a run is started, the virtual user plays it locally with \textit{game-core} on the seed the server issued, waits 30 to 60 seconds, which stands for playing, and submits the action log, which the server replays and scores. The submitted log is therefore one the server accepts, as a browser's would be. Each level ramps up over 30 seconds and holds for three minutes, at 50 virtual users (Stage 1), 500 (Stage 2), and 1,000 (twice Stage 2). Content requests carry no cached validator, so every one is served in full; real browsers revalidate and receive \textit{304 Not Modified}, so the measured content load is a worst case.
+
+Light-request capacity uses an open model: requests arrive at a fixed rate whatever the response time, so a slow server shows as queueing and dropped arrivals rather than as a lower request rate, which a closed model would hide\cite{r204}. Rates of 100 to 1,000 requests per second were offered for 45 seconds each, over the five authenticated reads of the browse path, for 200 distinct explorers.
+
+\subsubsection{Results}
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.096\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.095\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.070\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.078\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.078\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.065\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.087\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.124\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.095\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Explorer session profile: latency by load level (four-minute window including the ramp; CPU as a share of one core).} \\
+\hline
+\textbf{Level} & \textbf{Virtual users} & \textbf{Requests} & \textbf{Requests per second} & \textbf{p50} & \textbf{p95} & \textbf{p99} & \textbf{Max} & \textbf{Errors} & \textbf{API CPU, mean / max} & \textbf{Memory, max} \\ \hline
+\endfirsthead
+\hline
+\textbf{Level} & \textbf{Virtual users} & \textbf{Requests} & \textbf{Requests per second} & \textbf{p50} & \textbf{p95} & \textbf{p99} & \textbf{Max} & \textbf{Errors} & \textbf{API CPU, mean / max} & \textbf{Memory, max} \\ \hline
+\endhead
+Stage 1 & 50 & 1,148 & 4.8 & 7.4 ms & 19.3 ms & 34.4 ms & 93 ms & 0 & 3\% / 11\% & 344 MB \\ \hline
+Stage 2 & 500 & 11,423 & 47.8 & 4.6 ms & 12.5 ms & 22.1 ms & 77 ms & 0 & 15\% / 35\% & 371 MB \\ \hline
+Twice Stage 2 & 1,000 & 22,998 & 95.8 & 5.0 ms & 22.6 ms & 69.7 ms & 285 ms & 0 & 22\% / 48\% & 377 MB \\ \hline
+\end{longtable}
+}
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.281\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.144\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.113\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.119\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.124\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.098\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.116\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Latency by endpoint at Stage 2 (500 virtual users, 11,423 requests).} \\
+\hline
+\textbf{Endpoint} & \textbf{Requests} & \textbf{p50} & \textbf{p95} & \textbf{p99} & \textbf{Max} & \textbf{Errors} \\ \hline
+\endfirsthead
+\hline
+\textbf{Endpoint} & \textbf{Requests} & \textbf{p50} & \textbf{p95} & \textbf{p99} & \textbf{Max} & \textbf{Errors} \\ \hline
+\endhead
+`GET /auth/me` & 1,391 & 3.2 ms & 8.3 ms & 20.0 ms & 60 ms & 0 \\ \hline
+`GET /content/bootstrap` & 1,391 & 3.4 ms & 7.2 ms & 12.6 ms & 36 ms & 0 \\ \hline
+`GET /content/galaxy` & 1,391 & 7.0 ms & 12.3 ms & 21.8 ms & 55 ms & 0 \\ \hline
+`GET /profile` & 1,391 & 4.7 ms & 11.6 ms & 22.3 ms & 66 ms & 0 \\ \hline
+`GET /profile/progress` & 1,386 & 6.0 ms & 12.7 ms & 25.1 ms & 68 ms & 0 \\ \hline
+`GET /profile/roles/:role` & 1,358 & 3.6 ms & 8.5 ms & 15.7 ms & 45 ms & 0 \\ \hline
+`GET /profile/runs` & 1,328 & 3.8 ms & 9.0 ms & 16.1 ms & 76 ms & 0 \\ \hline
+`GET /content/scenarios/:key` & 611 & 2.2 ms & 6.3 ms & 9.3 ms & 30 ms & 0 \\ \hline
+`POST /runs` & 611 & 5.1 ms & 11.6 ms & 29.4 ms & 70 ms & 0 \\ \hline
+`POST /runs/:id/complete` & 565 & 11.9 ms & 21.2 ms & 34.6 ms & 52 ms & 0 \\ \hline
+\end{longtable}
+}
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.131\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.117\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.112\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.130\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.115\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.145\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.117\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Light-request capacity of one API process (open model, 45 s per rate, 152,034 requests in all).} \\
+\hline
+\textbf{Offered rate (per second)} & \textbf{Served rate} & \textbf{p50} & \textbf{p95} & \textbf{p99} & \textbf{Max} & \textbf{Arrivals dropped} & \textbf{Errors} \\ \hline
+\endfirsthead
+\hline
+\textbf{Offered rate (per second)} & \textbf{Served rate} & \textbf{p50} & \textbf{p95} & \textbf{p99} & \textbf{Max} & \textbf{Arrivals dropped} & \textbf{Errors} \\ \hline
+\endhead
+100 & 100 & 4.1 ms & 11.1 ms & 31.6 ms & 128 ms & 0 & 0 \\ \hline
+200 & 200 & 3.2 ms & 14.3 ms & 51.5 ms & 168 ms & 0 & 0 \\ \hline
+300 & 300 & 2.7 ms & 11.0 ms & 32.2 ms & 110 ms & 0 & 0 \\ \hline
+400 & 400 & 2.4 ms & 20.2 ms & 107.8 ms & 373 ms & 0 & 0 \\ \hline
+600 & 600 & 1.8 ms & 10.0 ms & 41.5 ms & 152 ms & 0 & 0 \\ \hline
+800 & 797 & 2.1 ms & 170.3 ms & 398.4 ms & 613 ms & 141 & 0 \\ \hline
+1,000 & 977 & 2.7 ms & 462.1 ms & 953.5 ms & 1,314 ms & 1,031 & 0 \\ \hline
+\end{longtable}
+}
+
+\subsubsection{Analysis against the targets}
+
+Stages 1 and 2. At both levels every request succeeded and the 95th percentile stayed under 20 ms, a tenth of the 0.2 s that Section 5.3.1 allots to storing and acknowledging a request; the heaviest request, the replay and scoring of a submitted run, stayed under 40 ms at the 99th percentile. Stage 1 offered 4.8 requests per second and Stage 2 47.8, matching the estimates of Section 5.3.1 (5 to 10, and 50 to 100), so the profile reproduces the assumed traffic and not an arbitrary one. The API process used at most a third of one core at Stage 2. Latency fell from Stage 1 to Stage 2 because a busier process stays warm; it is not a property to rely on. At twice Stage 2 the process served 95.8 requests per second, again without an error; the 95th percentile rose to 22.6 ms and the 99th to 70 ms, and the process used at most half of one core, so the explorer path has headroom beyond Stage 2 on a single process. A first run at this level failed half its requests: the test had 500 accounts for 1,000 virtual users, and the virtual users without a session were refused. The failures were the test's, not the server's, and the run reported gives every virtual user its own account.
+
+Light-request capacity. One process served every rate up to 600 requests per second with a 95th percentile of about 10 to 20 ms; at 800 the 95th percentile rose to 170 ms and arrivals began to be dropped, and at 1,000 the process saturated one core, served 977 per second, and the tail reached about one second. The knee is therefore between 600 and 800 requests per second, twice the 300 assumed in Section 5.3. The result is an upper bound, not a confirmation: one core of this machine is faster than a typical cloud vCPU, and the load generator shared the machine. It does show that the assumption is not optimistic, and the replica count of Stage 4, four to six replicas, stands until it is re-measured on the host chosen for Stage 1.
+
+What the load test found. Content responses are sent uncompressed: the bootstrap is 98.6 KB and the occupation map 73.6 KB, which compress to 24.3 KB and 20.3 KB. Compression at the reverse proxy or in the API removes about three quarters of the first-visit payload on the slow connections of NFR-13; it is recorded as a change for the next iteration. Content responses carry strong entity tags, and a revalidation with a matching tag returns \textit{304 Not Modified}, as the design of immutable releases intends.
+
+What this evaluation does not establish. It does not measure model calls, the queue, or workers, which do not yet exist; the 85 model calls per second of Stage 4 remain an estimate. It runs on one machine with no network between client and server, so it measures the server, not what an explorer on a mobile network experiences; that is the subject of Section 7.1. And it covers the explorer path only, since the staff application is not built. NFR-03 is not met by the prototype, as Section 5.3.1 states: actions are sent when a run ends, so a run interrupted before the end is lost; the turn-by-turn submission that meets it is part of the target design.
+
+\subsection{AI-related Evaluation}
+
+The AI evaluation asks whether the composition of existing language models solves the problem the project sets, not how good any one model is: the project does not design, train, or fine-tune a model (Section 5.2.3). It answers RP-1 and RP-2 (Section 4.2.2) and verifies the requirements that depend on the AI tier: NFR-01, NFR-02, NFR-04, NFR-11, NFR-12, NFR-14, NFR-15, and the prompt-injection clause of NFR-17. At the time of writing no AI component is implemented and no model has been called; the prototype scores free text with a keyword grader. This section therefore does three things. It describes how the evaluation data are created, which determines what the results can mean; it fixes the measures, the analysis, and the acceptance thresholds before any model output is seen, so that thresholds cannot be chosen after the results; and it reports the one evaluation that can be run now, a pilot of the construction method on the prototype's own grader, which is also the non-AI baseline against which the judge panel is compared.
+
+\subsubsection{Creation of the evaluation data}
+
+Stage A uses data built by the project team, because experts are engaged only from the capstone phase (Section 4.2.1). Its purpose is to show whether the judge agrees with team members standing in for experts, reacts to each rubric criterion, resists known biases, and is consistent; agreement with real experts on real players' responses is left to Stage B. The data are built in five steps.
+
+Step 1, situations. A situation is one free-text task inside a scenario, with its rubric: two or three criteria, each with a description of the behaviour at every level. Situations are taken from the provisional seeds of the three pilot roles (back-end engineering, DevOps and cloud engineering, and business analysis), which the team prepares from authoritative public sources under the advisor's guidance. They are chosen to cover the problem space on two axes the product already defines: occupation, and scenario archetype, which also fixes difficulty, since each archetype opens at a given level: execution of a clear task from L1, ambiguous requirements from L2, incidents under time pressure from L3, conflicts and reviews of others' work from L4; trade-off decisions, which open at L6, are left to Stage B. One situation per role and archetype gives 15 situations, the smallest set in which every cell of the two axes is observed. The two scenarios of the prototype supply two of them.
+
+Step 2, responses. Two kinds of response are written for each situation. The main kind are test plays, the data on which the judge is validated: each of the three team members plays every situation four times, each time in an assigned manner: as well as they can; as a newcomer to the field who knows little; in a hurry, writing the minimum; and off track, ignoring the task or acting beyond the role. The manners spread the answers across the whole scale, so that partially correct answers, where automated scorers are weakest\cite{r126}, are well represented, while the wording stays a player's own; 15 situations give 180 test plays. The auxiliary kind are constructed responses, which test what agreement alone cannot show: a strong reference response, variants that each degrade exactly one criterion to a lower level while keeping the others, following the perturbation-checklist method\cite{r73}, and probes for what the judge must not reward or punish: a paraphrase without the rubric's wording, keyword stuffing, negation of the right action in the right words, an injected instruction to the grader, and length padding. About eight per situation give 120 constructed responses, and 300 responses in all, or about 750 criterion judgments. A generator model may propose surface variation for constructed responses, but only from a family outside the judging panel (DC-01), and every one is edited by a person.
+
+Step 3, scores and labels. Each test play is scored on the rubric by the two team members who did not write it, independently and blind to its manner, as experts will rate blind in Stage B (FR-29). Where they differ by more than one level, they discuss the case and record a consensus; otherwise the lower of the two levels is taken, and agreement between them is reported with Krippendorff's alpha\cite{r72}, since it is the ceiling against which the judge is read. A constructed response receives its level by design, under a written labelling rule: a response receives the level whose description it meets in substance; a list of terms, or a response with no proposed action, meets no description and receives the lowest level; instructions addressed to the grader are ignored. A member who did not write it then labels it blind to the design, and a response on which the two disagree is revised or dropped, because a label that a second reader does not reproduce cannot serve as a key.
+
+Step 4, advisor check. The advisor checks the scores and labels of a random sample stratified by role, archetype, and kind of response, about a fifth of the test split or 40 responses, as planned in Section 4.2.2. A disagreement on a checked response sends its whole stratum back to Step 3.
+
+Step 5, freeze and split. The set is versioned and hashed. One situation per archetype, five in all, forms a development split used while prompts and rubric formats are being written; the other ten form a test split that is scored once, with frozen prompts, for the reported results. Without the split, prompts tuned on the responses that measure them would overstate the judge.
+
+Size. Thirty records would suffice to estimate a single proportion, but they cannot cover 15 situations, four manners of play, and five kinds of probe; the size above follows from coverage, not from a statistical target. The test split holds about 200 responses and 500 criterion judgments, about 100 per archetype, which bounds a proportion near 0.9 within about six percentage points at 95\% confidence. The final size is to be agreed with the advisor once this process has been presented.
+
+Data for RP-1 and the run-time checks. For RP-1, each of the 15 seeds is used to generate four scenario instances with the seed and four from the same instructions without it, 120 in all, rated blind to condition by two team members for occupational accuracy and for whether the target competency is required; seed facts are checked automatically against the list of required facts in each seed. For the run-time rules of AI-4 (Section 5.3.6), scripted player turns in four classes, on-script, off-script, adversarial, and rubric-fishing, three per class and situation, give 180 turns.
+
+\subsubsection{Measures and acceptance thresholds}
+
+The table below fixes what is measured, on which data, and the threshold for acceptance. Thresholds on agreement follow Williamson, Xi and Breyer\cite{r71}, as adopted in Section 5.2.3; in Stage A they are applied to the scores of team members standing in for experts, which is a weaker test than agreement with experts and is reported as such.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.190\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.351\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.306\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Measures and acceptance thresholds for the AI evaluation, fixed before any model is run.} \\
+\hline
+\textbf{Question} & \textbf{Measure} & \textbf{Data} & \textbf{Acceptance} \\ \hline
+\endfirsthead
+\hline
+\textbf{Question} & \textbf{Measure} & \textbf{Data} & \textbf{Acceptance} \\ \hline
+\endhead
+Does the judge agree with the raters? (RP-2, NFR-14) & Quadratic weighted kappa between the panel's level and the raters' level, per criterion and per archetype, with the confusion matrix; standardised mean difference & Test plays, test split & Kappa at least 0.70 and at most 0.10 below agreement between the two raters; standardised mean difference at most 0.15\cite{r71} \\ \hline
+Does it track each criterion? (RP-2) & Direction of change on degraded variants & Reference and degraded variants & Degraded criterion lower than in the reference in at least 90\% of variants, other criteria unchanged \\ \hline
+Is it robust to known biases? (RP-2) & Change of level under paraphrase, padding, and order of criteria; level on stuffing, negation, and off-track responses & Probes & Meaning-preserving probes change the level in at most 5\% of cases; stuffing and negation never scored above the designed level \\ \hline
+Does it resist injection? (NFR-17) & Share of injection probes scored above the designed level & Injection probes & None \\ \hline
+Is it consistent? (RP-2) & Krippendorff's alpha across three repeated runs; share of identical levels & All responses & Alpha at least 0.80 \\ \hline
+Does the panel add value? & Kappa of the median of three judges against each judge alone & All responses & Reported; panel not worse than the best single judge \\ \hline
+Is every quote real? (AI-5) & Share of quotes that are substrings of the response & All judgments & At least 99\% \\ \hline
+Is output well formed? (DC-02) & Share of outputs valid against the schema, before and after one retry & All calls & At least 99\% after one retry \\ \hline
+Does seeding make generation accurate? (RP-1) & Share of acceptable scenarios, seeded against unseeded, McNemar's test; share of required facts preserved & 120 generated scenarios & Seeded better than unseeded at the 5\% level; facts preserved at least 95\% (NFR-15) \\ \hline
+Do run-time rules hold? (NFR-15) & Violation rate per class of player turn & 180 scripted turns & Reported per class; no unflagged violation of canon \\ \hline
+Is it fast enough? (NFR-01, NFR-02) & 95th-percentile latency of narration and of the judging panel, measured from Vietnam & At least 200 calls each, drawn from the runs above & Narration within 4.6 s and panel within 7.6 s of model time (Section 5.3.1) \\ \hline
+Is it affordable? (NFR-11) & Cost per playthrough from the token ledger & All calls & Reported against the estimate of Section 5.3.6 \\ \hline
+Does failover work? (NFR-04, NFR-12) & Injected provider errors and time-outs at the gateway; provider substitution with unchanged content & Fault-injection runs & Replacement in the same role; no progress lost; notice within 10 s; regression suite passes after substitution \\ \hline
+\end{longtable}
+}
+
+Analysis. Confidence intervals are 95\% bootstrap intervals resampled by situation, not by response, because the responses of one situation share its wording and rubric and are not independent\cite{r205}. Each candidate model is run at two tiers (Section 5.2.3), and the cheaper tier is chosen unless the lower bound of the interval for its difference in kappa from the stronger tier is below $-$0.05. Runs use Inspect AI\cite{r129}, whose logs keep every prompt, output, and score for review. At the token counts and prices of Section 5.3.6, three repeated runs of the six judge configurations, two tiers in each of three families, on all 300 responses cost about USD 17, and the generation and turn tests about USD 1 more.
+
+Baseline. The keyword grader of the prototype is scored on the same data, for the situations it covers. It is the alternative that exists without AI, and Section 5.2.3 states that it is not an acceptable substitute; the comparison is what turns that statement into a measured claim.
+
+\subsubsection{Pilot: the construction method applied to the prototype's grader}
+
+The constructed-response part of the method of Section 7.3.1 was applied to the four free-text activities of the prototype's two back-end scenarios (L1 and L3), which carry five rubric criteria with three levels each (+2, 0, $-$1). A team member wrote 36 responses: a reference for each activity, variants degrading one criterion, paraphrases, keyword stuffing, negation, injection, and padding; the activity with two criteria received variants for each. This gives 46 criterion judgments, which were scored with the prototype's keyword grader. The levels were set by design and have not yet been labelled blind or checked by the advisor, so the pilot tests the method and characterises the grader; it does not estimate how accurate the grader would be on real answers, since each response class is present by design rather than in proportion to how often players write it.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.312\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.201\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.184\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.149\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.149\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Keyword grader against designed levels on the pilot probe set.} \\
+\hline
+\textbf{Response class} & \textbf{Judgments} & \textbf{Same as designed} & \textbf{Scored higher} & \textbf{Scored lower} \\ \hline
+\endfirsthead
+\hline
+\textbf{Response class} & \textbf{Judgments} & \textbf{Same as designed} & \textbf{Scored higher} & \textbf{Scored lower} \\ \hline
+\endhead
+Reference & 5 & 5 & 0 & 0 \\ \hline
+Variant degrading one criterion & 15 & 13 & 2 & 0 \\ \hline
+Paraphrase without the rubric's words & 8 & 2 & 0 & 6 \\ \hline
+Keyword stuffing & 5 & 0 & 5 & 0 \\ \hline
+Negation & 3 & 1 & 2 & 0 \\ \hline
+Injection & 5 & 3 & 2 & 0 \\ \hline
+Length padding & 5 & 4 & 1 & 0 \\ \hline
+\textbf{All} & \textbf{46} & \textbf{28} & \textbf{12} & \textbf{6} \\ \hline
+\end{longtable}
+}
+
+Overall, 28 of 46 judgments match the designed level, and quadratic weighted kappa is 0.30, far below the 0.70 required in Section 7.3.2. The grader does what it was written for: it scores the reference responses and nearly all the variants correctly, because its keyword lists were written from those same rubric descriptions. It fails in the two directions that matter for a free-text task. It under-scores paraphrases: six of eight paraphrase judgments lost one or two levels, including an incident report written for a non-technical reader, which is what the scenario asks for. And it over-scores responses that use the right words without the substance: all five keyword-stuffed responses and two of three negations (``it is not an N+1 problem, no join or batching is needed'') received the top level. The remaining over-scores show faults of string matching itself. Once accents are removed, the Vietnamese word \textit{cũng} (``also'') contains the keyword \textit{cũ} (``old''), so an injection probe was credited with recognising stale data; the grader for API design gives the middle level to any answer without its keywords, an injected one included; the abbreviation \textit{PR} (pull request) matched inside \textit{profile}; and the padding sentence, which mentions ``old tickets'', lifted a middle-level answer to the top. The grader did not follow the injected instruction, which it cannot read; the injection probes exist for the language-model judge.
+
+Two things follow. First, the construction method works as intended: the classes separate what a grader tracks from what it merely matches, and the failures are specific enough to act on. Second, the result supports with measurement the claim of Section 5.2.3 that keyword scoring is not a fallback for the AI path: a grader that rewards stuffing and penalises paraphrase would teach players to write keywords rather than to do the work. The probe set, labelling rule, and scoring script are kept with the report so the same set can be rerun against the judge panel.
+
+\subsection{Summary}
+
+The table records, for each requirement that this chapter bears on, what was measured in the present phase, the result, and what remains. A requirement is marked met only where a measurement shows it on the prototype; where the mechanism that meets it is designed but not built, the status says so.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.196\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.240\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.319\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.240\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Verification status of the requirements evaluated in this chapter.} \\
+\hline
+\textbf{Requirement} & \textbf{Measured} & \textbf{Result} & \textbf{Status} \\ \hline
+\endfirsthead
+\hline
+\textbf{Requirement} & \textbf{Measured} & \textbf{Result} & \textbf{Status} \\ \hline
+\endhead
+NFR-13 Mobile browser, slow connection & Lighthouse mobile profile on eight pages, median of five runs & Average performance 58.4 on mobile and 84.6 on desktop; largest element after 5.5 to 8.1 s on mobile & Not met; five causes identified, none in the architecture \\ \hline
+NFR-19 WCAG 2.1 AA & Automated accessibility audit on eight pages & Automated scores 92 to 100; contrast, landmark, and link-name failures & Partly; manual audit and the accessible 2D map still to do \\ \hline
+Section 5.3.1 capacity, Stages 1 and 2 & k6 explorer sessions at 50, 500, and 1,000 virtual users & No error in 35,569 requests; 95th percentile at most 23 ms & Met on one process \\ \hline
+Section 5.3.1 light-request assumption & k6 open-model ceiling of one process & Knee between 600 and 800 requests per second, against 300 assumed & Assumption holds, as an upper bound \\ \hline
+NFR-03 Progress survives interruption & Prototype design reviewed & Actions are sent when a run ends, so an interrupted run is lost & Not met; turn-by-turn submission designed (Section 5.3.1) \\ \hline
+NFR-01, NFR-02, NFR-04, NFR-11, NFR-12 & Not measurable: no model is called yet & Measures and thresholds fixed (Section 7.3.2) & To be measured with the AI tier \\ \hline
+RP-1, RP-2, NFR-14, NFR-15 & Evaluation data designed; keyword baseline measured & Keyword grader: 28 of 46 judgments as designed, kappa 0.30 & Baseline fails the threshold; judge panel to be measured \\ \hline
+\end{longtable}
+}
+
+Three findings call for changes before the next iteration: the first-visit weight of the explorer application (fonts, the sign-in script, the landing video, unused script), the uncompressed content responses of the API, and the failures of the automated accessibility audit. None of them requires a change of design; each is a configuration or an asset that the design already anticipates.
+
+The chapter also shows the limits of the present evidence. Every measurement was taken on one development machine, so the backend figures bound what one process can do rather than predict a deployed service, and the frontend figures stand for a first visit on the reference profile rather than for explorers' own phones. The AI tier, which is the binding constraint of the target system (Section 5.3.1) and the subject of both research problems, is not yet measured at all; Section 7.3 fixes how it will be, so that the result, whichever way it falls, is judged against thresholds chosen before it was seen.

@@ -2,7 +2,7 @@
 """Chuyển báo cáo Markdown (reports/<ngày>/report.md) sang LaTeX theo class hcmut-report.
 
 Usage:
-  python tools/report/md2tex.py reports/2026-10-16_ch1-5/report.md reports/2026-10-16_ch1-5
+  python tools/report/md2tex.py reports/master/report.md reports/master
 
 Ghi vào thư mục đích: main.tex, chapters/*.tex, references.tex.
 Thư mục đích phải có sẵn hcmut-report.cls, graphics/hcmut.png và figures/fig<n>.png
@@ -37,6 +37,8 @@ def inl(text, cites=True):
         holders.append(tex)
         return f"\x00H{len(holders) - 1}\x00"
 
+    # Công thức trong dòng $...$: giữ nguyên cho LaTeX.
+    text = re.sub(r"\$([^$\n]+?)\$", lambda m: hold("$" + m.group(1) + "$"), text)
     if cites:
         text = re.sub(
             r"\s*((?:\[\d+\])+)",
@@ -64,8 +66,11 @@ def table(rows, caption):
     floor = [min((lw * char_cm + 0.75) / TEXT_CM, 0.30) for lw in longest_word]
     if sum(floor) > 0.9:    # quá chật: chỉ bóp các cột có từ dài, giữ nguyên cột ID
         keep = sum(f for f, lw in zip(floor, longest_word) if lw <= 8)
-        scale = (0.9 - keep) / (sum(floor) - keep)
-        floor = [f if lw <= 8 else f * scale for f, lw in zip(floor, longest_word)]
+        if keep < 0.9 and sum(floor) > keep:
+            scale = (0.9 - keep) / (sum(floor) - keep)
+            floor = [f if lw <= 8 else f * scale for f, lw in zip(floor, longest_word)]
+        else:  # bảng nhiều cột mà cột nào cũng chỉ có từ ngắn: co đều mọi cột
+            floor = [f * 0.9 / sum(floor) for f in floor]
     want = [max(sum(len(r[i]) for r in cells) / len(cells), lw) ** 0.75 for i, lw in enumerate(longest_word)]
     frac, free = [None] * ncol, set(range(ncol))
     while True:
@@ -105,6 +110,9 @@ def figure(n, caption, outdir, img=None, width=None):
 
 
 def convert(md, outdir):
+    # Dòng phụ trên bìa lấy từ comment <!-- reporttype: ... --> trong report.md, nếu có.
+    rt = re.search(r"<!--\s*reporttype:\s*(.+?)\s*-->", md)
+    md = re.sub(r"<!--\s*reporttype:.*?-->\n?", "", md)
     lines = md.split("\n")
     files, cur = [], None            # [(tên file, [khối LaTeX])]
     refs, in_refs = [], False
@@ -148,14 +156,25 @@ def convert(md, outdir):
             continue
         m = re.match(r"# Chapter (\d+) — (.+)$", ln)
         if m:
+            # Cho phép bỏ qua chương chưa viết (ví dụ có Chương 7 khi chưa có Chương 6):
+            # LaTeX được đặt lại bộ đếm để vẫn đánh đúng số chương ghi trong báo cáo.
+            skip = int(m.group(1)) - 1 - counters[0]
+            if skip > 0:
+                counters[0] += skip
             check_number(0, m.group(1))
             start(f"ch{m.group(1)}")
-            cur.append(f"\\newpage\n\\section{{{inl(m.group(2))}}}")
+            setc = f"\\setcounter{{section}}{{{counters[0] - 1}}}\n" if skip > 0 else ""
+            cur.append(f"\\newpage\n{setc}\\section{{{inl(m.group(2))}}}")
             i += 1
             continue
         m = re.match(r"(#{2,3}) (\d+(?:\.\d+)+) (.+)$", ln)
         if m:
             level = len(m.group(1)) - 1
+            # Như với chương: cho phép bỏ qua mục chưa viết (ví dụ 5.3.6 ngay sau 5.3.1).
+            gap = int(m.group(2).split(".")[-1]) - 1 - counters[level]
+            if gap > 0:
+                counters[level] += gap
+                cur.append(f"\\setcounter{{{'sub' * level}section}}{{{counters[level]}}}")
             check_number(level, m.group(2))
             cur.append(f"\\{'sub' * level}section{{{inl(m.group(3))}}}")
             i += 1
@@ -174,10 +193,20 @@ def convert(md, outdir):
             cur.append(figure(nfig, cap.group(1), outdir))
             i = k + 1
             continue
-        m = re.match(r"!\[(.+)\]\((?:latex/)?(figures/[^)]+)\)(?:\{width=([\d.]+)\})?\s*$", ln)
+        m = re.match(r"!\[(.+)\]\((?:latex/)?(figures/[^)]+)\)(?:\{width=([\d.]+)\}|\{(landscape)\})?\s*$", ln)
         if m:
             # Ảnh có sẵn (README): không tính vào số thứ tự fig<n> của sơ đồ Mermaid.
-            cur.append(figure(None, m.group(1), outdir, img=m.group(2), width=m.group(3)))
+            fig = figure(None, m.group(1), outdir, img=m.group(2), width=m.group(3))
+            if m.group(4):
+                # {landscape}: hình rất ngang, đặt riêng một trang xoay ngang, rộng hết dòng.
+                fig = "\\begin{landscape}\n" + fig.replace("width=\\textwidth,height=0.9\\textheight", "width=\\linewidth") + "\n\\end{landscape}"
+            cur.append(fig)
+            i += 1
+            continue
+        m = re.match(r"\$\$(.+)\$\$\s*$", ln)
+        if m:
+            # Công thức một dòng $$...$$: thành equation có đánh số.
+            cur.append("\\begin{equation}\n" + m.group(1).strip() + "\n\\end{equation}")
             i += 1
             continue
         if ln.startswith("\\begin{usecase}"):
@@ -233,7 +262,8 @@ def convert(md, outdir):
     )
     front = [n for n, _ in files if n.startswith("00-")]
     chapters = [n for n, _ in files if n.startswith("ch")]
-    main = MAIN.replace("%%FRONT%%", "\n".join(
+    main = MAIN.replace("Report: Chapters 1 to 5.1", inl(rt.group(1)) if rt else "Report: Chapters 1 to 5.1")
+    main = main.replace("%%FRONT%%", "\n".join(
         f"\\input{{chapters/{n}}}\n\\newpage" + ("\n\\tableofcontents\n\\newpage" if n == front[0] else "")
         for n in front
     )).replace("%%CHAPTERS%%", "\n".join(f"\\input{{chapters/{n}}}" for n in chapters))
