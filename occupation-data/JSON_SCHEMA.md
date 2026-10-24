@@ -1361,12 +1361,11 @@ Mục không có dữ liệu thì **không có mặt** trong hồ sơ (không đ
   },
   "interests": { "interest_code": "ICR", "riasec": { "Realistic": 3.6, "...": 0 } },  // Thang 1–7, cho module gợi ý
   "daily_work": {
-    "by_level": [ { "band": "L3", "title_vn": "string", "tasks": ["string"] } ],  // Nghề IT có JD theo cấp
+    "by_level": [ { "band": "L3", "title_vn": "string", "tasks": ["string"] } ],  // Nghề IT có JD theo cấp; nghề ngoài IT sẽ bổ sung sau
     "tasks": ["string"]                                                          // Còn lại: 5 task O*NET đã dịch
   },
   "skills": {
     "hard":      [ { "name_vn": "Lập trình", "name": "Programming", "score": 4.0 } ],  // O*NET, thang Importance 1–5
-    "tools":     [ { "name": "Java", "kind": "language | framework", "rank": 1 } ],    // ITviec, chỉ nghề IT
     "knowledge": [ { "name_vn": "string", "name": "string", "score": 4.7 } ],
     "soft":      { "giao_tiep_hop_tac": 0.04, "...": 0 }                                 // 7 nhóm, điểm z
   },
@@ -1384,8 +1383,9 @@ Mục không có dữ liệu thì **không có mặt** trong hồ sơ (không đ
   },
   "career": {
     "levels": [ { "band": "L3", "title_vn": "string", "years": "1-2", "core_output": "string" } ],  // Chỉ nghề IT
-    "path": [ { "stage": "nghe_chinh | chuyen_sau | cap_cao | quan_ly", "label_vn": "string",
-                "roles": [ { "role_code": "string", "role_name_vn": "string" } ] } ],         // Chỉ nghề ngoài IT
+    "path": [ { "stage": "nghe_chinh | chuyen_sau | cap_cao | quan_ly | chuyen_ngang", "label_vn": "string",
+                "roles": [ { "role_code": "string", "role_name_vn": "string" } ] } ],
+    // Ngoài IT: từ quyết định gộp mã O*NET. IT: từ nghe_di_truoc.csv (D-121), các nghề nhận nghề này làm nghề đi trước
     "progresses_to": ["role_code"],
     "similar": [ { "role_code": "string", "role_name_vn": "string", "why": "string" } ]
   },
@@ -1399,7 +1399,8 @@ Mục không có dữ liệu thì **không có mặt** trong hồ sơ (không đ
     "source": "string", "url": "string", "date": "2026-03-18",              // (reference)
     "monthly_vnd": { "low": 0, "median": 0, "high": 0 } | { "low": 0, "high": 0 } | { "average": 0 },
     "n": 82,                                 // (job_postings) số tin có lương
-    "by_level": [ { "band": "L3", "label_vn": "string", "average": 0, "max": 0 } ],  // (itviec) lương toàn ngành IT theo cấp
+    "itviec_position": "Back-end Developer",  // (itviec) dòng của bảng vị trí × năm kinh nghiệm, datasets/vn/it_salary_by_years.json
+    "by_years": [ { "years": "<1 năm", "median": 12400000 } ],  // (itviec) trung vị theo số năm kinh nghiệm của đúng vị trí; bỏ mốc trống
     "public_sector": { "label_vn": "string", "monthly_vnd": { "low": 0, "high": 0 }, "law": "string",
                        "status": "van_ban | bai_phan_tich", "excludes": "string", "allowance_note": "string" },
     "note": "string"
@@ -1411,7 +1412,6 @@ Mục không có dữ liệu thì **không có mặt** trong hồ sơ (không đ
     // hoặc nghề ngoài IT:
     // "postings_per_10k": 32.9, "postings": 113, "level": "thap | vua | cao", "note": "string"
   },
-  "work_life": { "reasons_to_leave": [ { "text_vn": "string", "pct": 25.4 } ] },   // Chỉ nghề IT có trong báo cáo ITviec
   "sources": { "pay": { "evidence": "A | B | C", "source": "string" } }            // Theo từng mục
 }
 ```
@@ -1426,11 +1426,14 @@ Mục không có dữ liệu thì **không có mặt** trong hồ sơ (không đ
 
 Nghề có thang nhà nước nhưng đã dùng lương rao (ví dụ điều dưỡng) thì thêm `pay.public_sector`.
 
+**Lương nghề IT** (D-126): nghề có dòng trong bảng "IT POSITION / YEARS OF EXPERIENCE" của ITviec 2025–2026 (14 nghề) lấy trung vị chung (`monthly_vnd.median`) và trung vị theo số năm kinh nghiệm (`by_years`) của đúng dòng đó. Nghề không có dòng lấy số ở mục khác của báo cáo (`monthly_vnd.average`, 4 nghề) hoặc không có mục lương (UI/UX, DevOps, Cloud, Mạng). Không còn lương theo cấp của toàn ngành. Mốc năm kinh nghiệm không phải cấp bậc. Back-end có thêm `public_sector` theo thang viên chức công nghệ thông tin (Thông tư 08/2022/TT-BTTTT).
+
 **Nhu cầu tuyển nghề ngoài IT** là số tin của nghề trên 10.000 tin trong bộ VietJobs. `level` chia ba mức theo tam phân vị của các nghề có từ 5 tin. Nghề chủ yếu tuyển qua thi công chức, công an không có mục này. Bộ VietJobs không có ngày đăng của từng tin và chưa ghi giấy phép dữ liệu.
 
 **Mức chứng cứ** (`sources.*.evidence`): A là số liệu Việt Nam đã kiểm hoặc văn bản chính thức; B là O\*NET (Mỹ), lương rao, hoặc số của nhóm rộng hơn; C là nhóm soạn hoặc dịch, chưa duyệt.
 
 **Bỏ khỏi hồ sơ** (vẫn còn trong file gốc):
+- Công cụ (ngôn ngữ, framework) và lý do nghỉ việc của báo cáo ITviec: chỉ nghề IT có, bỏ để hồ sơ 221 nghề cùng khuôn (D-126). Vẫn còn trong `final_22_roles.json`.
 - Mã nghề Việt Nam độ tin cậy `thap` (4 nghề).
 - Phần O\*NET của nghề IT có **cùng bộ mã** O\*NET với nghề đứng trước trong `ROLES` (chỉ Mobile, giống Back-end): câu môi trường, câu "hợp với ai", kỹ năng và kiến thức O\*NET. Giữ `interests` vì module gợi ý cần. Nghề chỉ trùng **mã chính** (Game, nhúng, Tech Lead, Cloud, ERP) vẫn giữ các phần này vì chúng là trung bình của mọi mã, nhưng không dùng task O\*NET (task chỉ lấy từ mã chính); task của các nghề này lấy từ JD (`datasets/vn/it_jd_tasks.json`).
 - Bước "Vị trí gần, dễ vào hơn" của lộ trình.

@@ -10,6 +10,8 @@
 - datasets/vn/public_pay.json, datasets/vn/lfs_2024.json: thang lương nhà nước, lương bình quân nhóm nghề.
 - datasets/vn/salary_reference.json: lương tham khảo đã duyệt cho nghề ngoài IT chưa có nguồn nào ở trên.
 - datasets/vn/it_postings.json, datasets/vn/it_jd_tasks.json: số tin ITviec và task theo cấp từ JD của nghề IT.
+- datasets/vn/it_salary_by_years.json: lương trung vị theo vị trí và số năm kinh nghiệm của ITviec.
+- research/research_notes/Thang cấp nghề/nghe_di_truoc.csv: lộ trình cấp cao, chuyển ngang của nghề IT (D-121).
 - decisions/education_map.json, datasets/vn/education_majors.json: ngành học và giấy phép hành nghề.
 - datasets/work_settings.json: nơi làm việc có mã, gán theo luật trong file.
 
@@ -37,11 +39,13 @@ from build_all_onet_profiles import (
 )
 from build_vietjobs_stats import MIN_POSTINGS
 from build_onet_profiles import ATTRIBUTION, GENERATED, RIASEC, ROLES, ROOT, interest_code, prepare, profile_of
+from build_point_budgets import PREREQ_FILE
 
 DATASETS = ROOT / "datasets"
 DECISIONS = ROOT / "decisions"
 TASKS_PER_ROLE = 5
 DROPPED_PATH_STAGES = {"de_vao_hon"}
+IT_PATH_STAGES = (("cap_cao", "Cấp cao"), ("chuyen_ngang", "Chuyển ngang"))
 OUTLOOK_LEVELS = ("thap", "vua", "cao")
 MIN_OUTLOOK_POSTINGS = 5
 VIETJOBS_DATA_YEAR = "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)"
@@ -106,9 +110,11 @@ def load_sources():
         "lfs": load_json(DATASETS / "vn" / "lfs_2024.json"),
         "it_postings": load_json(DATASETS / "vn" / "it_postings.json"),
         "it_jd": load_json(DATASETS / "vn" / "it_jd_tasks.json"),
+        "it_salary": load_json(DATASETS / "vn" / "it_salary_by_years.json"),
         "salary_ref": load_json(DATASETS / "vn" / "salary_reference.json"),
         "edu": load_json(DECISIONS / "education_map.json"),
         "settings": load_json(DATASETS / "work_settings.json"),
+        "prereq": list(csv.DictReader(open(PREREQ_FILE, encoding="utf-8-sig"))),
         "majors": {
             "university": {m["name"]: m for m in majors["university"]},
             "vocational": {m["name"]: m for m in majors["vocational"]},
@@ -232,22 +238,27 @@ def pay_non_it(src, role_code, vsco):
     return pay, source
 
 
-def pay_it(role):
-    comp = role.get("compensation") or {}
-    level = comp.get("role_level_salary") or {}
-    by_band = [
-        {"band": b["band"], "label_vn": b.get("label"), "average": b.get("salary_avg"), "max": b.get("salary_max")}
-        for b in comp.get("by_band") or [] if b.get("salary_avg")
-    ]
-    if not level.get("avg") and not by_band:
+def pay_it(src, role):
+    """Nghề có dòng trong bảng vị trí × năm kinh nghiệm của ITviec dùng trung vị của đúng dòng đó; nghề khác giữ số
+    ITviec ở mục khác của báo cáo (theo loại công ty hay nhóm kinh nghiệm), ghi trong final_22_roles.json."""
+    table = src["it_salary"]
+    position = table["role_map"].get(role["role_code"])
+    if position:
+        row = table["rows"][position]
+        pay = {"basis": "itviec", "itviec_position": position,
+               "monthly_vnd": {"median": int(round(row["total"] * 1e6, -3))},
+               "by_years": [{"years": b, "median": int(round(v * 1e6, -3))}
+                            for b, v in zip(table["buckets"], row["by_years"]) if v is not None],
+               "source": ITVIEC_REPORT, "url": table["_meta"]["url"], "data_year": "2025–2026",
+               "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."}
+        return pay, {"evidence": "A", "source": table["_meta"]["source"]}
+    level = (role.get("compensation") or {}).get("role_level_salary") or {}
+    if not level.get("avg"):
         return None, None
-    pay = {"basis": "itviec", "source": ITVIEC_REPORT, "data_year": "2025–2026"}
-    if level.get("avg"):
-        pay["monthly_vnd"] = {"average": level["avg"]}
-    if by_band:
-        pay["by_level"] = by_band
-        pay["by_level_note"] = "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
-    return pay, {"evidence": "A" if level.get("avg") else "B", "source": ITVIEC_REPORT}
+    pay = {"basis": "itviec", "monthly_vnd": {"average": level["avg"]}, "source": ITVIEC_REPORT, "data_year": "2025–2026"}
+    if level.get("note"):
+        pay["note"] = level["note"]
+    return pay, {"evidence": "A", "source": ITVIEC_REPORT}
 
 
 def outlook_levels(src):
@@ -321,13 +332,7 @@ def it_profile(src, role, onet, it_level_of):
         profile["daily_work"] = {"tasks": onet["tasks"]}
         sources["daily_work"] = {"evidence": "B", "source": "O*NET 31.0, dịch nháp (datasets/onet_vi/it.json)"}
 
-    ss = role.get("skills_status") or {}
     skills = {}
-    tools = [{"name": x["skill"], "kind": "language", "rank": x["rank"]} for x in ss.get("hard_skills_languages", [])]
-    tools += [{"name": x["skill"], "kind": "framework", "rank": x["rank"]} for x in ss.get("hard_skills_frameworks", [])]
-    if tools:
-        skills["tools"] = tools
-        sources["skills.tools"] = {"evidence": "A", "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"}
     if not shared:
         skills["hard"] = scored(onet["skills"])
         skills["knowledge"] = scored(onet["knowledge"])
@@ -356,6 +361,15 @@ def it_profile(src, role, onet, it_level_of):
     if levels:
         career["levels"] = [{"band": l["band"], "title_vn": l.get("title_vn"), "years": l.get("years_experience"),
                              "core_output": l.get("core_output")} for l in levels]
+    # Lộ trình nghề IT lấy từ nghề đi trước của D-121: các nghề nhận nghề này làm nghề đi trước.
+    path = [{"stage": "nghe_chinh", "label_vn": "Nghề chính", "roles": [{"role_code": code}]}]
+    for stage, label in IT_PATH_STAGES:
+        roles = [{"role_code": r["role_code"]} for r in src["prereq"]
+                 if r["loai"] == stage and code in r["nghe_di_truoc"].split(";")]
+        if roles:
+            path.append({"stage": stage, "label_vn": label, "roles": roles})
+    if len(path) > 1:
+        career["path"] = path
     edges = role.get("graph_edges") or {}
     if edges.get("progresses_to"):
         career["progresses_to"] = edges["progresses_to"]
@@ -365,8 +379,11 @@ def it_profile(src, role, onet, it_level_of):
     if career:
         profile["career"] = career
 
-    pay, source = pay_it(role)
+    pay, source = pay_it(src, role)
     if pay:
+        public = public_pay(src, code)
+        if public:
+            pay["public_sector"] = public
         profile["pay"] = pay
         sources["pay"] = source
 
@@ -377,11 +394,6 @@ def it_profile(src, role, onet, it_level_of):
                               "source": "ITviec, số tin đang mở", "data_year": measured[:4], "measured_at": measured,
                               "level": it_level_of(count["open_postings"])}
         sources["outlook"] = {"evidence": "B", "source": src["it_postings"]["_meta"]["source"]}
-
-    reasons = (role.get("work_life") or {}).get("top_reasons_to_leave") or []
-    if reasons:
-        profile["work_life"] = {"reasons_to_leave": [{"text_vn": r.get("label_vi"), "pct": r.get("pct")} for r in reasons]}
-        sources["work_life"] = {"evidence": "A", "source": "ITviec 2025-2026"}
     profile["sources"] = sources
     return profile
 
@@ -509,10 +521,16 @@ def review_lines(src, raw, profile, onet_it):
 
     pay = profile.get("pay")
     if profile["is_it"]:
-        if pay:
-            avg = pay.get("monthly_vnd", {}).get("average")
-            out.append(f"- **Lương:** báo cáo ITviec 2025–2026; " + (f"trung bình theo nghề {money(avg)}" if avg else "báo cáo không có số riêng của nghề này")
-                       + "; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.")
+        if pay and pay.get("itviec_position"):
+            out.append(f"- **Lương:** báo cáo ITviec 2025–2026, dòng \"{pay['itviec_position']}\" của bảng vị trí × năm kinh nghiệm: "
+                       f"{pay_text(pay)}, {len(pay['by_years'])} mốc năm có số.")
+        elif pay:
+            out.append(f"- **Lương:** báo cáo ITviec 2025–2026, bảng vị trí không có dòng cho nghề này; dùng số ở mục khác: "
+                       f"{pay_text(pay)}" + (f" ({clean(pay['note'])})" if pay.get("note") else "") + ".")
+        else:
+            out.append("- **Lương:** báo cáo ITviec 2025–2026 không có số cho nghề này.")
+        if pay and pay.get("public_sector"):
+            out.append(f"  - Thêm thang viên chức để so: {pay_text(pay['public_sector'])}.")
     else:
         vj = src["vietjobs"]["roles"].get(code)
         chain = []
@@ -618,7 +636,7 @@ def review_markdown(src, data, raw_by_code, onet_it):
         "3. Lương tham khảo đã duyệt trong `datasets/vn/salary_reference.json`: chỉ nhận số đã mở trang đọc được, từ năm 2022; chất lượng tốt (khảo sát có mẫu, thang nhà nước, thống kê đúng nghề), vừa (bài hướng nghiệp, từ 3 tin), yếu (số mô hình WageIndicator, 1–2 tin, số đại diện cho ngành rộng hơn).",
         "4. Trung bình nhóm nghề cấp 1 của Cục Thống kê 2024 theo mã nghề Việt Nam.",
         "",
-        "**Lương nghề IT:** báo cáo ITviec 2025–2026 (trung bình theo nghề khi có, lương theo cấp của toàn ngành).",
+        "**Lương nghề IT:** báo cáo ITviec 2025–2026: trung vị theo vị trí và số năm kinh nghiệm khi bảng có dòng cho nghề; nếu không, số ở mục khác của báo cáo. Không dùng lương theo cấp của toàn ngành.",
         "",
         f"**Nhu cầu tuyển:** IT đếm tin trên ITviec cùng ngày, chia ba mức theo tam phân vị trong 22 nghề IT. Ngoài IT là số tin trên 10.000 tin VietJobs, bỏ khi dưới {MIN_OUTLOOK_POSTINGS} tin, chia ba mức theo tam phân vị.",
         "",
@@ -655,12 +673,12 @@ def coverage(profiles):
     fields = [
         ("Tóm tắt", "overview.summary"), ("Hợp với ai", "overview.fit_summary"), ("Mặt trái", "overview.downsides"),
         ("Mã nghề Việt Nam", "codes.vsco"), ("Việc hằng ngày", "daily_work"), ("Kỹ năng O*NET", "skills.hard"),
-        ("Công cụ (ITviec)", "skills.tools"), ("Kiến thức", "skills.knowledge"), ("Môi trường: câu mô tả", "work_environment.facts"),
+        ("Kiến thức", "skills.knowledge"), ("Môi trường: câu mô tả", "work_environment.facts"),
         ("Nơi làm việc", "work_environment.settings"), ("Kiểu công ty (IT)", "work_environment.company_types"), ("Mức chuẩn bị", "education.preparation"),
         ("Ngành đại học", "education.majors_university"), ("Ngành cao đẳng, trung cấp", "education.majors_vocational"),
         ("Giấy phép hành nghề", "education.licence"), ("Thang cấp", "career.levels"), ("Lộ trình", "career.path"),
         ("Thăng tiến", "career.progresses_to"), ("Nghề gần", "career.similar"), ("Lương", "pay"),
-        ("Nhu cầu tuyển", "outlook"), ("Lý do nghỉ việc", "work_life"),
+        ("Nhu cầu tuyển", "outlook"),
     ]
     rows = []
     for label, path in fields:

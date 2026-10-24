@@ -60,12 +60,6 @@
         "non_it": 199
       },
       {
-        "field": "Công cụ (ITviec)",
-        "path": "skills.tools",
-        "it": 15,
-        "non_it": 0
-      },
-      {
         "field": "Kiến thức",
         "path": "skills.knowledge",
         "it": 21,
@@ -122,7 +116,7 @@
       {
         "field": "Lộ trình",
         "path": "career.path",
-        "it": 0,
+        "it": 13,
         "non_it": 130
       },
       {
@@ -140,7 +134,7 @@
       {
         "field": "Lương",
         "path": "pay",
-        "it": 22,
+        "it": 18,
         "non_it": 199
       },
       {
@@ -148,16 +142,10 @@
         "path": "outlook",
         "it": 22,
         "non_it": 127
-      },
-      {
-        "field": "Lý do nghỉ việc",
-        "path": "work_life",
-        "it": 14,
-        "non_it": 0
       }
     ],
     "pay_basis": {
-      "itviec": 22,
+      "itviec": 18,
       "job_postings": 75,
       "reference": 96,
       "public_scale": 17,
@@ -303,108 +291,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "Javascript",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "Typescript",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "HTML/CSS",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "Dart",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "APL",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "Elixir",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Next.js",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Vue.js",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "jQuery",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "React Native",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Nuxt.js",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Angular",
-            "kind": "framework",
-            "rank": 9
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 10
-          }
-        ],
         "hard": [
           {
             "name_vn": "Lập trình",
@@ -574,6 +460,32 @@
             "core_output": "Đặt định hướng kỹ thuật frontend xuyên nhiều đội, review thiết kế và code của kỹ sư khác, và tham gia định nghĩa yêu cầu cùng product manager thay vì chỉ hiện thực yêu cầu đã có."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "SWE_FRONTEND",
+                "role_name_vn": "Lập trình viên Front-end"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_TECHLEAD",
+                "role_name_vn": "Trưởng nhóm kỹ thuật"
+              },
+              {
+                "role_code": "SWE_ARCH_SOL",
+                "role_name_vn": "Kiến trúc sư giải pháp"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "SWE_ARCH_SOL",
           "SWE_TECHLEAD"
@@ -598,56 +510,28 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Front-end Developer",
         "monthly_vnd": {
-          "average": 34800000
+          "median": 34800000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "3-4 năm",
+            "median": 30800000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
+            "years": "5-8 năm",
+            "median": 41800000
           },
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": ">8 năm",
+            "median": 46300000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 15,
@@ -657,26 +541,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "thap"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 31.5
-          },
-          {
-            "text_vn": "Ít hoặc không có cơ hội thăng chức",
-            "pct": 20.7
-          },
-          {
-            "text_vn": "Ít hoặc không có cơ hội tăng lương",
-            "pct": 20.7
-          },
-          {
-            "text_vn": "Công ty cạn nguồn tài chính",
-            "pct": 17.4
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -688,25 +552,17 @@
           "evidence": "A",
           "source": "JD đã xác minh (datasets/78_roles_unmerged.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -749,6 +605,15 @@
       },
       "daily_work": {
         "by_level": [
+          {
+            "band": "L1",
+            "title_vn": "Backend Engineer Intern",
+            "tasks": [
+              "Viết và kiểm thử API cho một tính năng nhỏ dưới hướng dẫn của kỹ sư senior",
+              "Tham gia review code của team để học chuẩn code",
+              "Viết unit test cho phần code của mình"
+            ]
+          },
           {
             "band": "L2",
             "title_vn": "Fresher Backend Engineer",
@@ -793,107 +658,19 @@
               "Thiết kế hệ thống core banking phân tán lớn",
               "Mentorship toàn team"
             ]
+          },
+          {
+            "band": "L7",
+            "title_vn": "Principal Backend Engineer / Staff Engineer",
+            "tasks": [
+              "Thiết kế kiến trúc backend chịu tải lớn, ổn định và dễ bảo trì",
+              "Tìm và gỡ điểm nghẽn hiệu năng, dẫn xử lý sự cố production nghiêm trọng",
+              "Chọn công nghệ và cố vấn kỹ thuật cho các team kỹ sư"
+            ]
           }
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "Go",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "Ruby",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "Typescript",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "Javascript",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "APL",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Spring",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "ASP.Net Core",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "ASP.Net",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "Laravel",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Ruby on Rails",
-            "kind": "framework",
-            "rank": 9
-          }
-        ],
         "hard": [
           {
             "name_vn": "Lập trình",
@@ -1053,6 +830,50 @@
             "core_output": "Đặt định hướng kỹ thuật xuyên nhiều đội, xây chuẩn kỹ thuật cho tổ chức, review thiết kế của kỹ sư khác — thuần IC, không có direct report."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "SWE_BACKEND",
+                "role_name_vn": "Lập trình viên Back-end / Kỹ sư Back-end"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_TECHLEAD",
+                "role_name_vn": "Trưởng nhóm kỹ thuật"
+              },
+              {
+                "role_code": "SWE_ARCH_SOL",
+                "role_name_vn": "Kiến trúc sư giải pháp"
+              }
+            ]
+          },
+          {
+            "stage": "chuyen_ngang",
+            "label_vn": "Chuyển ngang",
+            "roles": [
+              {
+                "role_code": "DATA_AI",
+                "role_name_vn": "Kỹ sư trí tuệ nhân tạo"
+              },
+              {
+                "role_code": "DATA_DE",
+                "role_name_vn": "Kỹ sư dữ liệu"
+              },
+              {
+                "role_code": "CLOUD_DEVOPS",
+                "role_name_vn": "Kỹ sư DevOps"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "SWE_ARCH_SOL",
           "SWE_TECHLEAD",
@@ -1102,56 +923,48 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Back-end Developer",
         "monthly_vnd": {
-          "average": 37800000
+          "median": 37800000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "<1 năm",
+            "median": 12400000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
+            "years": "1-2 năm",
+            "median": 25350000
           },
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
+            "years": "3-4 năm",
+            "median": 30100000
           },
           {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
+            "years": "5-8 năm",
+            "median": 39900000
           },
           {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": ">8 năm",
+            "median": 54900000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+        "public_sector": {
+          "label_vn": "Viên chức công nghệ thông tin hạng IV đến hạng II",
+          "monthly_vnd": {
+            "low": 4706000,
+            "high": 17153000
+          },
+          "law": "Thông tư 08/2022/TT-BTTTT, Điều 15 (áp dụng Bảng 3 Nghị định 204/2004/NĐ-CP)",
+          "source": "Thông tư 08/2022/TT-BTTTT, Điều 15 (áp dụng Bảng 3 Nghị định 204/2004/NĐ-CP); lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+          "data_year": "2026",
+          "status": "bai_phan_tich",
+          "excludes": "Chưa gồm phụ cấp ưu đãi nghề, thâm niên, khu vực."
+        }
       },
       "outlook": {
         "open_postings": 91,
@@ -1161,26 +974,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "cao"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Lương thấp hơn kỳ vọng",
-            "pct": 25.4
-          },
-          {
-            "text_vn": "Ít hoặc không có cơ hội tăng lương",
-            "pct": 18.5
-          },
-          {
-            "text_vn": "Công ty và sản phẩm không có triển vọng phát triển",
-            "pct": 16.8
-          },
-          {
-            "text_vn": "Ít cơ hội phát triển nghề nghiệp",
-            "pct": 15.9
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -1192,25 +985,17 @@
           "evidence": "A",
           "source": "JD đã xác minh (datasets/78_roles_unmerged.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -1279,105 +1064,6 @@
               "Đảm bảo tính bảo mật của ứng dụng (mã hóa, obfuscation)",
               "Tối ưu hóa kích thước app và tốc độ khởi động"
             ]
-          }
-        ]
-      },
-      "skills": {
-        "tools": [
-          {
-            "name": "Kotlin",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "Swift",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "Dart",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "Typescript",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "Objective-C",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "Bash/Shell",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "React Native",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "TensorFlow",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "Blockchain",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Cordova",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Electron",
-            "kind": "framework",
-            "rank": 9
           }
         ]
       },
@@ -1468,6 +1154,28 @@
             "core_output": "Đặt chuẩn kỹ thuật mobile xuyên nhiều đội và nhiều sản phẩm, review thiết kế kiến trúc app của kỹ sư khác — thuần IC, không có direct report."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "SWE_MOBILE",
+                "role_name_vn": "Lập trình viên Mobile / Kỹ sư ứng dụng di động"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_TECHLEAD",
+                "role_name_vn": "Trưởng nhóm kỹ thuật"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "SWE_TECHLEAD"
         ],
@@ -1486,56 +1194,36 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Mobile Developer",
         "monthly_vnd": {
-          "average": 28800000
+          "median": 36850000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "<1 năm",
+            "median": 14150000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
+            "years": "1-2 năm",
+            "median": 28800000
           },
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
+            "years": "3-4 năm",
+            "median": 29050000
           },
           {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
+            "years": "5-8 năm",
+            "median": 37350000
           },
           {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": ">8 năm",
+            "median": 45700000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 13,
@@ -1545,26 +1233,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "thap"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Lương thấp hơn kỳ vọng",
-            "pct": 23.1
-          },
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 15.4
-          },
-          {
-            "text_vn": "Ít cơ hội phát triển nghề nghiệp",
-            "pct": 15.4
-          },
-          {
-            "text_vn": "Môi trường độc hại hoặc nhiều chính trị nội bộ",
-            "pct": 15.4
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -1576,21 +1244,13 @@
           "evidence": "A",
           "source": "JD đã xác minh (datasets/78_roles_unmerged.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -1694,88 +1354,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "Crystal",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "Groovy",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "TypeScript",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Unity",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Vue.js",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "Apache Spark",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Electron",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Hadoop",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Pandas",
-            "kind": "framework",
-            "rank": 9
-          }
-        ],
         "hard": [
           {
             "name_vn": "Lập trình",
@@ -1939,6 +1517,28 @@
             "core_output": "Đặt định hướng công nghệ game xuyên nhiều dự án/studio, quyết định lựa chọn engine và kiến trúc kỹ thuật dài hạn, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "SWE_GAME",
+                "role_name_vn": "Lập trình viên Game"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_TECHLEAD",
+                "role_name_vn": "Trưởng nhóm kỹ thuật"
+              }
+            ]
+          }
+        ],
         "similar": [
           {
             "role_code": "SWE_UIUX",
@@ -1954,53 +1554,28 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
-        "by_level": [
+        "itviec_position": "Game Developer",
+        "monthly_vnd": {
+          "median": 33350000
+        },
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "1-2 năm",
+            "median": 26500000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
+            "years": "3-4 năm",
+            "median": 40400000
           },
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": "5-8 năm",
+            "median": 57850000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 7,
@@ -2010,26 +1585,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "thap"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Có cơ hội việc làm tốt hơn",
-            "pct": 36.4
-          },
-          {
-            "text_vn": "Thay đổi cơ cấu tổ chức",
-            "pct": 27.3
-          },
-          {
-            "text_vn": "Việc gia đình, khó cân bằng công việc và cuộc sống",
-            "pct": 18.2
-          },
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 18.2
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -2042,25 +1597,17 @@
           "status": "NHAP_CHO_DUYET",
           "source": "16 JD ở Việt Nam (datasets/vn/it_jd_tasks.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
-          "evidence": "B",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "evidence": "A",
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -2294,56 +1841,6 @@
           }
         ]
       },
-      "pay": {
-        "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
-        "by_level": [
-          {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
-          },
-          {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
-          },
-          {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
-          }
-        ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
-      },
       "outlook": {
         "open_postings": 12,
         "board": "ITviec",
@@ -2366,10 +1863,6 @@
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
-        },
-        "pay": {
-          "evidence": "B",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
         },
         "outlook": {
           "evidence": "B",
@@ -2474,103 +1967,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "Bash/Shell",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "COBOL",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "Clojure",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "Go",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "TypeScript",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": "NumPy",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Qt",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Pandas",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "TensorFlow",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "Torch/PyTorch",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 9
-          }
-        ],
         "hard": [
           {
             "name_vn": "Tư duy phản biện",
@@ -2730,6 +2126,28 @@
             "core_output": "Đặt định hướng kiến trúc phần cứng-phần mềm xuyên nhiều sản phẩm/dự án, đại diện kỹ thuật khi làm việc với tổng hành dinh (Nhật/Hàn/Đức), tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "SWE_EMBEDDED",
+                "role_name_vn": "Kỹ sư phần mềm nhúng / Kỹ sư IoT"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_TECHLEAD",
+                "role_name_vn": "Trưởng nhóm kỹ thuật"
+              }
+            ]
+          }
+        ],
         "similar": [
           {
             "role_code": "INFRA_NETWORK",
@@ -2745,56 +2163,36 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Embedded Engineer",
         "monthly_vnd": {
-          "average": 34350000
+          "median": 34350000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "<1 năm",
+            "median": 21400000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
+            "years": "1-2 năm",
+            "median": 23900000
           },
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
+            "years": "3-4 năm",
+            "median": 28400000
           },
           {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
+            "years": "5-8 năm",
+            "median": 39400000
           },
           {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": ">8 năm",
+            "median": 60650000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 17,
@@ -2816,17 +2214,13 @@
           "status": "NHAP_CHO_DUYET",
           "source": "13 JD ở Việt Nam (datasets/vn/it_jd_tasks.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
@@ -2881,108 +2275,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "TypeScript",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "COBOL",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "HTML/CSS",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "ASP.NET Core",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "jQuery",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Not using",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "Spring",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Next.js",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "ASP.NET",
-            "kind": "framework",
-            "rank": 9
-          },
-          {
-            "name": "Vue.js",
-            "kind": "framework",
-            "rank": 10
-          }
-        ],
         "hard": [
           {
             "name_vn": "Đọc hiểu",
@@ -3101,6 +2393,28 @@
             "core_output": "Đặt chuẩn kiến trúc giải pháp cho nhiều phân vùng nghiệp vụ, ngồi hội đồng thẩm định kiến trúc cùng Enterprise Architect, và là đầu mối kỹ thuật cao nhất khi làm việc với lãnh đạo hoặc khách hàng lớn."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "SWE_ARCH_SOL",
+                "role_name_vn": "Kiến trúc sư giải pháp"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_EM",
+                "role_name_vn": "Trưởng phòng Kỹ thuật"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "SWE_EM"
         ],
@@ -3124,32 +2438,12 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
         "monthly_vnd": {
           "average": 56300000
         },
-        "by_level": [
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
-          },
-          {
-            "band": "L8",
-            "label_vn": "Trên 8 năm / Senior Manager",
-            "average": 52400000,
-            "max": 75000000
-          }
-        ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "data_year": "2025–2026",
+        "note": "Trên 5 năm kinh nghiệm. Top 5 vị trí khó tuyển dụng"
       },
       "outlook": {
         "open_postings": 15,
@@ -3160,26 +2454,6 @@
         "measured_at": "2026-10-21",
         "level": "thap"
       },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 24.5
-          },
-          {
-            "text_vn": "Ít cơ hội phát triển nghề nghiệp",
-            "pct": 19.4
-          },
-          {
-            "text_vn": "Công ty và sản phẩm không có triển vọng phát triển",
-            "pct": 17.3
-          },
-          {
-            "text_vn": "Lãnh đạo thiếu quan tâm hoặc không truyền cảm hứng",
-            "pct": 15.3
-          }
-        ]
-      },
       "sources": {
         "overview": {
           "evidence": "C",
@@ -3189,10 +2463,6 @@
         "daily_work": {
           "evidence": "B",
           "source": "O*NET 31.0, dịch nháp (datasets/onet_vi/it.json)"
-        },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
         },
         "skills.hard": {
           "evidence": "B",
@@ -3205,10 +2475,6 @@
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -3284,103 +2550,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "TypeScript",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "Go",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "Kotlin",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Spring",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Next.js",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "ASP.NET Core",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Angular",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "FastAPI",
-            "kind": "framework",
-            "rank": 9
-          }
-        ],
         "hard": [
           {
             "name_vn": "Tư duy phản biện",
@@ -3495,6 +2664,32 @@
             "core_output": "Dẫn dắt kỹ thuật cho một đội lớn hoặc vài đội cùng một sản phẩm, điều phối quyết định kỹ thuật giữa các đội và cùng kiến trúc sư đặt kiến trúc tổng thể; vẫn chưa quản lý nhân sự trực tiếp."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "SWE_TECHLEAD",
+                "role_name_vn": "Trưởng nhóm kỹ thuật"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_ARCH_SOL",
+                "role_name_vn": "Kiến trúc sư giải pháp"
+              },
+              {
+                "role_code": "SWE_EM",
+                "role_name_vn": "Trưởng phòng Kỹ thuật"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "SWE_ARCH_SOL",
           "SWE_EM"
@@ -3514,26 +2709,28 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Tech Lead",
         "monthly_vnd": {
-          "average": 51800000
+          "median": 51800000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
+            "years": "1-2 năm",
+            "median": 45300000
           },
           {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": "3-4 năm",
+            "median": 53850000
+          },
+          {
+            "years": ">8 năm",
+            "median": 68450000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 32,
@@ -3543,26 +2740,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "vua"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 25.3
-          },
-          {
-            "text_vn": "Công ty và sản phẩm không có triển vọng phát triển",
-            "pct": 20.0
-          },
-          {
-            "text_vn": "Công việc không còn thử thách",
-            "pct": 17.3
-          },
-          {
-            "text_vn": "Môi trường độc hại hoặc nhiều chính trị nội bộ",
-            "pct": 17.3
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -3575,25 +2752,17 @@
           "status": "NHAP_CHO_DUYET",
           "source": "12 JD ở Việt Nam (datasets/vn/it_jd_tasks.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -3644,108 +2813,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "VBA",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "Bash/Shell",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "TypeScript",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "PowerShell",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "Simplicity",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Not using",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "ASP.NET",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "ASP.NET Core",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Hadoop",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "NumPy",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "TensorFlow",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Torch/PyTorch",
-            "kind": "framework",
-            "rank": 9
-          },
-          {
-            "name": "Vue.js",
-            "kind": "framework",
-            "rank": 10
-          }
-        ],
         "hard": [
           {
             "name_vn": "Tư duy phản biện",
@@ -3880,26 +2947,24 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "IT Manager",
         "monthly_vnd": {
-          "average": 50250000
+          "median": 50250000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": "1-2 năm",
+            "median": 46400000
           },
           {
-            "band": "L8",
-            "label_vn": "Trên 8 năm / Senior Manager",
-            "average": 52400000,
-            "max": 75000000
+            "years": ">8 năm",
+            "median": 50300000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 56,
@@ -3909,26 +2974,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "cao"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 34.4
-          },
-          {
-            "text_vn": "Ít hoặc không có cơ hội thăng chức",
-            "pct": 21.9
-          },
-          {
-            "text_vn": "Ít cơ hội phát triển nghề nghiệp",
-            "pct": 21.9
-          },
-          {
-            "text_vn": "Công ty và sản phẩm không có triển vọng phát triển",
-            "pct": 21.9
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -3940,25 +2985,17 @@
           "evidence": "B",
           "source": "O*NET 31.0, dịch nháp (datasets/onet_vi/it.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -4040,123 +3077,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "TypeScript",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "HTML/CSS",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "APL",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": "Typescript",
-            "kind": "language",
-            "rank": 11
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "React Native",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Django",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "ASP.NET Core",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Spring",
-            "kind": "framework",
-            "rank": 9
-          },
-          {
-            "name": "Angular",
-            "kind": "framework",
-            "rank": 10
-          },
-          {
-            "name": "Blockchain",
-            "kind": "framework",
-            "rank": 11
-          },
-          {
-            "name": "Angular.js",
-            "kind": "framework",
-            "rank": 12
-          }
-        ],
         "hard": [
           {
             "name_vn": "Đọc hiểu",
@@ -4331,41 +3251,32 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
-        "by_level": [
+        "itviec_position": "QA - QC",
+        "monthly_vnd": {
+          "median": 31200000
+        },
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "1-2 năm",
+            "median": 18000000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
+            "years": "3-4 năm",
+            "median": 24400000
           },
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
+            "years": "5-8 năm",
+            "median": 29750000
           },
           {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
+            "years": ">8 năm",
+            "median": 38500000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 45,
@@ -4375,26 +3286,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "cao"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Lương thấp hơn kỳ vọng",
-            "pct": 32.2
-          },
-          {
-            "text_vn": "Thay đổi cơ cấu tổ chức",
-            "pct": 20.7
-          },
-          {
-            "text_vn": "Ít cơ hội phát triển nghề nghiệp",
-            "pct": 18.4
-          },
-          {
-            "text_vn": "Ít hoặc không có cơ hội thăng chức",
-            "pct": 14.9
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -4406,25 +3297,17 @@
           "evidence": "A",
           "source": "JD đã xác minh (datasets/78_roles_unmerged.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
-          "evidence": "B",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "evidence": "A",
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -4506,73 +3389,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "HTML/CSS",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "SAS",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "Pandas",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "NumPy",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Hadoop",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Scikit-learn",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "Apache Spark",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "TensorFlow",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Torch/PyTorch",
-            "kind": "framework",
-            "rank": 9
-          }
-        ],
         "hard": [
           {
             "name_vn": "Đọc hiểu",
@@ -4733,6 +3549,32 @@
             "core_output": "Đặt chuẩn phân tích và công cụ BI cho toàn tổ chức, dẫn dắt đội DA — đây gần như là trần của title DA thuần tại VN; band cao hơn thường đổi sang DATA_PM hoặc DATA_GOV."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "DATA_DA",
+                "role_name_vn": "Chuyên viên phân tích dữ liệu"
+              }
+            ]
+          },
+          {
+            "stage": "chuyen_ngang",
+            "label_vn": "Chuyển ngang",
+            "roles": [
+              {
+                "role_code": "DATA_AI",
+                "role_name_vn": "Kỹ sư trí tuệ nhân tạo"
+              },
+              {
+                "role_code": "DATA_DE",
+                "role_name_vn": "Kỹ sư dữ liệu"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "DATA_AI",
           "DATA_DE"
@@ -4762,50 +3604,24 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Data Analyst/Data Scientist/Business Intelligence Analyst",
         "monthly_vnd": {
-          "average": 40650000
+          "median": 40650000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "1-2 năm",
+            "median": 23800000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
-          },
-          {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
+            "years": "5-8 năm",
+            "median": 42500000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 11,
@@ -4815,26 +3631,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "thap"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Môi trường độc hại hoặc nhiều chính trị nội bộ",
-            "pct": 33.3
-          },
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 22.2
-          },
-          {
-            "text_vn": "Lương thấp hơn kỳ vọng",
-            "pct": 22.2
-          },
-          {
-            "text_vn": "Quản lý trực tiếp can thiệp quá chi tiết",
-            "pct": 16.7
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -4846,25 +3642,17 @@
           "evidence": "A",
           "source": "JD đã xác minh (datasets/78_roles_unmerged.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -5083,44 +3871,12 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
         "monthly_vnd": {
           "average": 50600000
         },
-        "by_level": [
-          {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
-          }
-        ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "data_year": "2025–2026",
+        "note": "Trung bình tại công ty AI/Deep Tech. Vị trí khó tuyển nhất hiện nay"
       },
       "outlook": {
         "open_postings": 140,
@@ -5203,68 +3959,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "Apache Spark",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "NumPy",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Pandas",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "FastAPI",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Scikit-learn",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "Hadoop",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 9
-          }
-        ],
         "hard": [
           {
             "name_vn": "Đọc hiểu",
@@ -5407,6 +4101,28 @@
             "core_output": "Đặt chiến lược nền tảng dữ liệu xuyên nhiều đội/sản phẩm, tương ứng vai trò chịu trách nhiệm cross-team."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "DATA_DE",
+                "role_name_vn": "Kỹ sư dữ liệu"
+              }
+            ]
+          },
+          {
+            "stage": "chuyen_ngang",
+            "label_vn": "Chuyển ngang",
+            "roles": [
+              {
+                "role_code": "DATA_AI",
+                "role_name_vn": "Kỹ sư trí tuệ nhân tạo"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "DATA_AI"
         ],
@@ -5430,44 +4146,20 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Data Engineer",
         "monthly_vnd": {
-          "average": 41300000
+          "median": 41300000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": "3-4 năm",
+            "median": 56900000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 24,
@@ -5477,26 +4169,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "vua"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 37.5
-          },
-          {
-            "text_vn": "Ít cơ hội phát triển nghề nghiệp",
-            "pct": 25.0
-          },
-          {
-            "text_vn": "Ít hoặc không có cơ hội tăng lương",
-            "pct": 18.8
-          },
-          {
-            "text_vn": "Có cơ hội việc làm tốt hơn",
-            "pct": 18.8
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -5508,25 +4180,17 @@
           "evidence": "B",
           "source": "O*NET 31.0, dịch nháp (datasets/onet_vi/it.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -5754,6 +4418,28 @@
             "core_output": "Đặt định hướng hạ tầng và vận hành xuyên tổ chức, thường là người quyết định chiến lược cloud/multi-cloud cấp cao nhất về mặt kỹ thuật."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "CLOUD_DEVOPS",
+                "role_name_vn": "Kỹ sư DevOps"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_ARCH_SOL",
+                "role_name_vn": "Kiến trúc sư giải pháp"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "SWE_ARCH_SOL",
           "SEC_ENG"
@@ -5781,44 +4467,6 @@
           }
         ]
       },
-      "pay": {
-        "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
-        "by_level": [
-          {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
-          }
-        ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
-      },
       "outlook": {
         "open_postings": 69,
         "board": "ITviec",
@@ -5841,10 +4489,6 @@
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
-        },
-        "pay": {
-          "evidence": "B",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
         },
         "outlook": {
           "evidence": "B",
@@ -6093,6 +4737,28 @@
             "core_output": "Dẫn dắt kỹ thuật đội cloud và chịu trách nhiệm thiết kế giải pháp cho khách hàng lớn; ở cấp này ranh giới với Cloud Architect bắt đầu mờ."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "CLOUD_ENG",
+                "role_name_vn": "Kỹ sư điện toán đám mây"
+              }
+            ]
+          },
+          {
+            "stage": "cap_cao",
+            "label_vn": "Cấp cao",
+            "roles": [
+              {
+                "role_code": "SWE_ARCH_SOL",
+                "role_name_vn": "Kiến trúc sư giải pháp"
+              }
+            ]
+          }
+        ],
         "similar": [
           {
             "role_code": "CLOUD_DEVOPS",
@@ -6115,44 +4781,6 @@
             "role_name_vn": "Nhân viên hỗ trợ kỹ thuật / IT Support"
           }
         ]
-      },
-      "pay": {
-        "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
-        "by_level": [
-          {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
-          },
-          {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          }
-        ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
       },
       "outlook": {
         "open_postings": 82,
@@ -6177,10 +4805,6 @@
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
-        },
-        "pay": {
-          "evidence": "B",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
         },
         "outlook": {
           "evidence": "B",
@@ -6421,44 +5045,12 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
         "monthly_vnd": {
           "average": 44100000
         },
-        "by_level": [
-          {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
-          }
-        ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "data_year": "2025–2026",
+        "note": "Trung bình tại công ty ngành An ninh mạng. Security Engineer trong Top 15 vị trí nhu cầu lớn 2026"
       },
       "outlook": {
         "open_postings": 45,
@@ -6696,44 +5288,12 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
         "monthly_vnd": {
           "average": 44100000
         },
-        "by_level": [
-          {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
-          }
-        ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "data_year": "2025–2026",
+        "note": "Dùng chung số của nhóm An ninh mạng — chưa có số riêng cho Pentest"
       },
       "outlook": {
         "open_postings": 43,
@@ -6846,103 +5406,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "HTML/CSS",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "VBA",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "Clojure",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": "Not using",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "ASP.NET",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "ASP.Net Core",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "jQuery",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "React Native",
-            "kind": "framework",
-            "rank": 9
-          }
-        ],
         "hard": [
           {
             "name_vn": "Diễn đạt bằng lời",
@@ -7130,56 +5593,36 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Business Analyst",
         "monthly_vnd": {
-          "average": 30000000
+          "median": 30000000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "<1 năm",
+            "median": 12200000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
+            "years": "1-2 năm",
+            "median": 14000000
           },
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
+            "years": "3-4 năm",
+            "median": 28000000
           },
           {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
+            "years": "5-8 năm",
+            "median": 37400000
           },
           {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": ">8 năm",
+            "median": 41350000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 36,
@@ -7189,26 +5632,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "vua"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
-            "pct": 27.1
-          },
-          {
-            "text_vn": "Lương thấp hơn kỳ vọng",
-            "pct": 22.9
-          },
-          {
-            "text_vn": "Có cơ hội việc làm tốt hơn",
-            "pct": 15.7
-          },
-          {
-            "text_vn": "Môi trường độc hại hoặc nhiều chính trị nội bộ",
-            "pct": 15.7
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -7220,25 +5643,17 @@
           "evidence": "A",
           "source": "JD đã xác minh (datasets/78_roles_unmerged.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -7284,108 +5699,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "Java",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "PHP",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "Javascript",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "HTML/CSS",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "APL",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": "Crystal",
-            "kind": "language",
-            "rank": 10
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "ASP.NET",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Apache Spark",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "ASP.Net Core",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Angular",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Angular.js",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Laravel",
-            "kind": "framework",
-            "rank": 9
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 10
-          }
-        ],
         "hard": [
           {
             "name_vn": "Tư duy phản biện",
@@ -7548,50 +5861,32 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
+        "itviec_position": "Product Owner/Product Manager",
         "monthly_vnd": {
-          "average": 50100000
+          "median": 50100000
         },
-        "by_level": [
+        "by_years": [
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
+            "years": "1-2 năm",
+            "median": 25300000
           },
           {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
+            "years": "3-4 năm",
+            "median": 42700000
           },
           {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
+            "years": "5-8 năm",
+            "median": 60400000
           },
           {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
-          },
-          {
-            "band": "L8",
-            "label_vn": "Trên 8 năm / Senior Manager",
-            "average": 52400000,
-            "max": 75000000
+            "years": ">8 năm",
+            "median": 75000000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 8,
@@ -7601,26 +5896,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "thap"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Công ty và sản phẩm không có triển vọng phát triển",
-            "pct": 30.0
-          },
-          {
-            "text_vn": "Ít cơ hội phát triển nghề nghiệp",
-            "pct": 25.0
-          },
-          {
-            "text_vn": "Công việc không còn thử thách",
-            "pct": 17.5
-          },
-          {
-            "text_vn": "Lương thấp hơn kỳ vọng",
-            "pct": 17.5
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -7632,25 +5907,17 @@
           "evidence": "B",
           "source": "O*NET 31.0, dịch nháp (datasets/onet_vi/it.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
           "evidence": "A",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -7751,73 +6018,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "ASP.NET Core",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Flutter",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "ASP.NET",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "jQuery",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "Blockchain",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 9
-          }
-        ],
         "hard": [
           {
             "name_vn": "Đọc hiểu",
@@ -7983,41 +6183,32 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
-        "by_level": [
+        "itviec_position": "ERP Engineer/ERP Consultant",
+        "monthly_vnd": {
+          "median": 30200000
+        },
+        "by_years": [
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
+            "years": "<1 năm",
+            "median": 15200000
           },
           {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
+            "years": "1-2 năm",
+            "median": 16100000
           },
           {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
+            "years": "3-4 năm",
+            "median": 19500000
           },
           {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
+            "years": "5-8 năm",
+            "median": 35600000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 24,
@@ -8027,26 +6218,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "vua"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Lương thấp hơn kỳ vọng",
-            "pct": 47.1
-          },
-          {
-            "text_vn": "Công việc không còn thử thách",
-            "pct": 23.5
-          },
-          {
-            "text_vn": "Ít cơ hội phát triển nghề nghiệp",
-            "pct": 23.5
-          },
-          {
-            "text_vn": "Công ty và sản phẩm không có triển vọng phát triển",
-            "pct": 23.5
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -8059,25 +6230,17 @@
           "status": "NHAP_CHO_DUYET",
           "source": "15 JD ở Việt Nam (datasets/vn/it_jd_tasks.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
-          "evidence": "B",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "evidence": "A",
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -8141,103 +6304,6 @@
         ]
       },
       "skills": {
-        "tools": [
-          {
-            "name": "HTML/CSS",
-            "kind": "language",
-            "rank": 1
-          },
-          {
-            "name": "SQL",
-            "kind": "language",
-            "rank": 2
-          },
-          {
-            "name": "Python",
-            "kind": "language",
-            "rank": 3
-          },
-          {
-            "name": "PowerShell",
-            "kind": "language",
-            "rank": 4
-          },
-          {
-            "name": "C#",
-            "kind": "language",
-            "rank": 5
-          },
-          {
-            "name": "C++",
-            "kind": "language",
-            "rank": 6
-          },
-          {
-            "name": "Bash/Shell",
-            "kind": "language",
-            "rank": 7
-          },
-          {
-            "name": "JavaScript",
-            "kind": "language",
-            "rank": 8
-          },
-          {
-            "name": "VBA",
-            "kind": "language",
-            "rank": 9
-          },
-          {
-            "name": ".NET",
-            "kind": "framework",
-            "rank": 1
-          },
-          {
-            "name": "Apache Kafka",
-            "kind": "framework",
-            "rank": 2
-          },
-          {
-            "name": "Capacitor",
-            "kind": "framework",
-            "rank": 3
-          },
-          {
-            "name": "Qt",
-            "kind": "framework",
-            "rank": 4
-          },
-          {
-            "name": "ASP.NET",
-            "kind": "framework",
-            "rank": 5
-          },
-          {
-            "name": "jQuery",
-            "kind": "framework",
-            "rank": 6
-          },
-          {
-            "name": "Node.js",
-            "kind": "framework",
-            "rank": 7
-          },
-          {
-            "name": "React.js",
-            "kind": "framework",
-            "rank": 8
-          },
-          {
-            "name": "Blockchain",
-            "kind": "framework",
-            "rank": 9
-          },
-          {
-            "name": "Apache Spark",
-            "kind": "framework",
-            "rank": 10
-          }
-        ],
         "hard": [
           {
             "name_vn": "Đọc hiểu",
@@ -8393,6 +6459,28 @@
             "core_output": "Xử lý ticket phức tạp nhất, đào tạo nhân viên helpdesk mới, thường là bước đệm ngay trước khi chuyển hẳn sang SysAdmin hoặc SOC — đây là TRẦN thực tế của title Helpdesk."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "INFRA_HELPDESK",
+                "role_name_vn": "Nhân viên hỗ trợ kỹ thuật / IT Support"
+              }
+            ]
+          },
+          {
+            "stage": "chuyen_ngang",
+            "label_vn": "Chuyển ngang",
+            "roles": [
+              {
+                "role_code": "CLOUD_DEVOPS",
+                "role_name_vn": "Kỹ sư DevOps"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "CLOUD_DEVOPS",
           "CLOUD_ENG",
@@ -8420,35 +6508,28 @@
       },
       "pay": {
         "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
-        "by_level": [
+        "itviec_position": "IT Support/Helpdesk",
+        "monthly_vnd": {
+          "median": 20000000
+        },
+        "by_years": [
           {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
+            "years": "1-2 năm",
+            "median": 8600000
           },
           {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
+            "years": "3-4 năm",
+            "median": 18700000
           },
           {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
+            "years": "5-8 năm",
+            "median": 22500000
           }
         ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
+        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+        "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+        "data_year": "2025–2026",
+        "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net."
       },
       "outlook": {
         "open_postings": 19,
@@ -8458,26 +6539,6 @@
         "data_year": "2026",
         "measured_at": "2026-10-21",
         "level": "vua"
-      },
-      "work_life": {
-        "reasons_to_leave": [
-          {
-            "text_vn": "Việc gia đình, khó cân bằng công việc và cuộc sống",
-            "pct": 25.9
-          },
-          {
-            "text_vn": "Ít hoặc không có cơ hội thăng chức",
-            "pct": 18.5
-          },
-          {
-            "text_vn": "Lương thấp hơn kỳ vọng",
-            "pct": 18.5
-          },
-          {
-            "text_vn": "Ít hoặc không có cơ hội tăng lương",
-            "pct": 18.5
-          }
-        ]
       },
       "sources": {
         "overview": {
@@ -8489,25 +6550,17 @@
           "evidence": "A",
           "source": "JD đã xác minh (datasets/78_roles_unmerged.json)"
         },
-        "skills.tools": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026, chuyên gia IT tự khai (n=1.839)"
-        },
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
         },
         "pay": {
-          "evidence": "B",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
+          "evidence": "A",
+          "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\""
         },
         "outlook": {
           "evidence": "B",
           "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'"
-        },
-        "work_life": {
-          "evidence": "A",
-          "source": "ITviec 2025-2026"
         }
       }
     },
@@ -8765,6 +6818,28 @@
             "core_output": "Đặt chiến lược hạ tầng mạng xuyên toàn tổ chức/nhiều chi nhánh, là chuyên gia kỹ thuật mạng cấp cao nhất, thường tư vấn cho các dự án lớn, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc."
           }
         ],
+        "path": [
+          {
+            "stage": "nghe_chinh",
+            "label_vn": "Nghề chính",
+            "roles": [
+              {
+                "role_code": "INFRA_NETWORK",
+                "role_name_vn": "Kỹ sư hệ thống mạng"
+              }
+            ]
+          },
+          {
+            "stage": "chuyen_ngang",
+            "label_vn": "Chuyển ngang",
+            "roles": [
+              {
+                "role_code": "CLOUD_DEVOPS",
+                "role_name_vn": "Kỹ sư DevOps"
+              }
+            ]
+          }
+        ],
         "progresses_to": [
           "SEC_ENG"
         ],
@@ -8796,56 +6871,6 @@
           }
         ]
       },
-      "pay": {
-        "basis": "itviec",
-        "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
-        "data_year": "2025–2026",
-        "by_level": [
-          {
-            "band": "L1",
-            "label_vn": "Thực tập sinh",
-            "average": 6900000,
-            "max": 8000000
-          },
-          {
-            "band": "L2",
-            "label_vn": "Mới ra trường / dưới 1 năm",
-            "average": 14700000,
-            "max": 21400000
-          },
-          {
-            "band": "L3",
-            "label_vn": "Junior 1-3 năm",
-            "average": 19800000,
-            "max": 28800000
-          },
-          {
-            "band": "L4",
-            "label_vn": "Junior cao / chuyển tiếp Senior",
-            "average": 19800000,
-            "max": 31200000
-          },
-          {
-            "band": "L5",
-            "label_vn": "Senior 3-5 năm",
-            "average": 31200000,
-            "max": 41900000
-          },
-          {
-            "band": "L6",
-            "label_vn": "Senior 5-8 năm / Lead",
-            "average": 41900000,
-            "max": 52400000
-          },
-          {
-            "band": "L7",
-            "label_vn": "Tech Lead / Manager / Principal",
-            "average": 51800000,
-            "max": 75000000
-          }
-        ],
-        "by_level_note": "Lương theo cấp của toàn ngành IT, chưa tách theo nghề."
-      },
       "outlook": {
         "open_postings": 14,
         "board": "ITviec",
@@ -8869,10 +6894,6 @@
         "skills.hard": {
           "evidence": "B",
           "source": "O*NET 31.0 (Mỹ), thang Importance"
-        },
-        "pay": {
-          "evidence": "B",
-          "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
         },
         "outlook": {
           "evidence": "B",

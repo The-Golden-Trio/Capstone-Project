@@ -12,7 +12,6 @@
 | Mã nghề Việt Nam | `codes.vsco` | 21 | 196 |
 | Việc hằng ngày | `daily_work` | 22 | 199 |
 | Kỹ năng O*NET | `skills.hard` | 21 | 199 |
-| Công cụ (ITviec) | `skills.tools` | 15 | 0 |
 | Kiến thức | `skills.knowledge` | 21 | 199 |
 | Môi trường: câu mô tả | `work_environment.facts` | 21 | 199 |
 | Nơi làm việc | `work_environment.settings` | 22 | 199 |
@@ -22,19 +21,18 @@
 | Ngành cao đẳng, trung cấp | `education.majors_vocational` | 18 | 151 |
 | Giấy phép hành nghề | `education.licence` | 0 | 30 |
 | Thang cấp | `career.levels` | 22 | 0 |
-| Lộ trình | `career.path` | 0 | 130 |
+| Lộ trình | `career.path` | 13 | 130 |
 | Thăng tiến | `career.progresses_to` | 13 | 95 |
 | Nghề gần | `career.similar` | 22 | 199 |
-| Lương | `pay` | 22 | 199 |
+| Lương | `pay` | 18 | 199 |
 | Nhu cầu tuyển | `outlook` | 22 | 127 |
-| Lý do nghỉ việc | `work_life` | 14 | 0 |
 
 ## Lương theo nguồn
 
 | Nguồn | Số nghề |
 |---|---|
 | group_average | 11 |
-| itviec | 22 |
+| itviec | 18 |
 | job_postings | 75 |
 | public_scale | 17 |
 | reference | 96 |

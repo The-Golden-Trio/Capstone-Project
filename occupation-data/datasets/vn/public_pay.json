@@ -41,6 +41,12 @@
     "police_officer": {
       "label_vn": "Sĩ quan công an từ Thiếu úy đến Thượng tá", "classes": "cấp hàm", "coef_low": 4.20, "coef_high": 7.30,
       "law": "Nghị định 204/2004/NĐ-CP, Bảng 6", "status": "bai_phan_tich"
+    },
+    "it_officer": {
+      "label_vn": "Viên chức công nghệ thông tin hạng IV đến hạng II", "classes": "B → A2.1", "coef_low": 1.86, "coef_high": 6.78,
+      "law": "Thông tư 08/2022/TT-BTTTT, Điều 15 (áp dụng Bảng 3 Nghị định 204/2004/NĐ-CP)", "status": "bai_phan_tich",
+      "url": "https://vanban.vcci.com.vn/thong-tu-082022tt-btttt-quy-dinh-ve-ma-so-tieu-chuan-chuc-danh-nghe-nghiep-va-xep-luong-doi-voi-vien-chuc-chuyen-nganh-cong-nghe-thong-tin-an-toan-thong-tin",
+      "note": "Hạng IV nhóm B 1,86–4,06; hạng III A1 2,34–4,98; hạng II A2.1 4,40–6,78; hạng I A3.1 6,20–8,00. Đọc qua VCCI và bài lsvn.vn, tuoitre.vn ngày 23/10/2026; chưa mở được bản ở thuvienphapluat.vn."
     }
   },
   "roles": {
@@ -62,6 +68,7 @@
     "ONET-33-3051.00": "police_officer",
     "ONET-33-3021.00": "police_officer",
     "ONET-33-3012.00": "police_officer",
-    "ONET-33-2011.00": "police_officer"
+    "ONET-33-2011.00": "police_officer",
+    "SWE_BACKEND": "it_officer"
   }
 }

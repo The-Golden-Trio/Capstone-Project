@@ -11,7 +11,7 @@
 3. Lương tham khảo đã duyệt trong `datasets/vn/salary_reference.json`: chỉ nhận số đã mở trang đọc được, từ năm 2022; chất lượng tốt (khảo sát có mẫu, thang nhà nước, thống kê đúng nghề), vừa (bài hướng nghiệp, từ 3 tin), yếu (số mô hình WageIndicator, 1–2 tin, số đại diện cho ngành rộng hơn).
 4. Trung bình nhóm nghề cấp 1 của Cục Thống kê 2024 theo mã nghề Việt Nam.
 
-**Lương nghề IT:** báo cáo ITviec 2025–2026 (trung bình theo nghề khi có, lương theo cấp của toàn ngành).
+**Lương nghề IT:** báo cáo ITviec 2025–2026: trung vị theo vị trí và số năm kinh nghiệm khi bảng có dòng cho nghề; nếu không, số ở mục khác của báo cáo. Không dùng lương theo cấp của toàn ngành.
 
 **Nhu cầu tuyển:** IT đếm tin trên ITviec cùng ngày, chia ba mức theo tam phân vị trong 22 nghề IT. Ngoài IT là số tin trên 10.000 tin VietJobs, bỏ khi dưới 5 tin, chia ba mức theo tam phân vị.
 
@@ -35,7 +35,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1254.00. Gán theo `ROLES` trong build_onet_profiles.py: Web Developers.
 - **Mã nghề Việt Nam:** 2513 Nhà phát triển web và truyền thông đa phương tiện — giữ đề xuất tự động; mã ISCO 2513 chiếm 33% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 34,8tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Front-end Developer" của bảng vị trí × năm kinh nghiệm: giữa 34,8tr, 3 mốc năm có số.
 - **Nhu cầu tuyển:** 15 tin trên ITviec, từ khoá `frontend-developer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -47,7 +47,8 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1252.00. Gán theo `ROLES` trong build_onet_profiles.py: Software Developers.
 - **Mã nghề Việt Nam:** 2512 Nhà phát triển phần mềm — giữ đề xuất tự động; mã ISCO 2512 chiếm 38% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 37,8tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Back-end Developer" của bảng vị trí × năm kinh nghiệm: giữa 37,8tr, 5 mốc năm có số.
+  - Thêm thang viên chức để so: 4,7tr–17,2tr.
 - **Nhu cầu tuyển:** 91 tin trên ITviec, từ khoá `backend-developer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -61,7 +62,7 @@
   - Cùng bộ mã với `SWE_BACKEND` nên bỏ câu môi trường, câu "hợp với ai", kỹ năng, kiến thức O\*NET (chép nguyên).
   - Mã chính trùng với `SWE_BACKEND` nên không dùng task O\*NET; task lấy từ JD nếu có.
 - **Mã nghề Việt Nam:** 2512 Nhà phát triển phần mềm — giữ đề xuất tự động; mã ISCO 2512 chiếm 38% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 28,8tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Mobile Developer" của bảng vị trí × năm kinh nghiệm: giữa 36,9tr, 5 mốc năm có số.
 - **Nhu cầu tuyển:** 13 tin trên ITviec, từ khoá `mobile-application-developer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -74,7 +75,7 @@
 - **Mã O\*NET:** 15-1252.00, 15-1255.01. Gán theo `ROLES` trong build_onet_profiles.py: Ghép Software Developers và Video Game Designers.
   - Mã chính trùng với `SWE_BACKEND` nên không dùng task O\*NET; task lấy từ JD nếu có.
 - **Mã nghề Việt Nam:** 2512 Nhà phát triển phần mềm — giữ đề xuất tự động; mã ISCO 2512 chiếm 38% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; báo cáo không có số riêng của nghề này; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Game Developer" của bảng vị trí × năm kinh nghiệm: giữa 33,4tr, 3 mốc năm có số.
 - **Nhu cầu tuyển:** 7 tin trên ITviec, từ khoá `game-developer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** 16 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -86,7 +87,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1255.00. Gán theo `ROLES` trong build_onet_profiles.py: Web and Digital Interface Designers.
 - **Mã nghề Việt Nam:** 2166 Nhà thiết kế đồ họa và truyền thông đa phương tiện — giữ đề xuất tự động; mã ISCO 2166 chiếm 36% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; báo cáo không có số riêng của nghề này; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026 không có số cho nghề này.
 - **Nhu cầu tuyển:** 12 tin trên ITviec, từ khoá `ui-ux-designer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -99,7 +100,7 @@
 - **Mã O\*NET:** 15-1252.00, 17-2061.00. Gán theo `ROLES` trong build_onet_profiles.py: Ghép Software Developers và Computer Hardware Engineers.
   - Mã chính trùng với `SWE_BACKEND` nên không dùng task O\*NET; task lấy từ JD nếu có.
 - **Mã nghề Việt Nam:** 2512 Nhà phát triển phần mềm — giữ đề xuất tự động; mã ISCO 2512 chiếm 38% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 34,4tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Embedded Engineer" của bảng vị trí × năm kinh nghiệm: giữa 34,4tr, 5 mốc năm có số.
 - **Nhu cầu tuyển:** 17 tin trên ITviec, từ khoá `embedded-engineer`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** 13 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -111,7 +112,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1299.08. Gán theo `ROLES` trong build_onet_profiles.py: Computer Systems Engineers/Architects.
 - **Mã nghề Việt Nam:** 2511 Nhà phân tích hệ thống — giữ đề xuất tự động; mã ISCO 2511 chiếm 46% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 56,3tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, bảng vị trí không có dòng cho nghề này; dùng số ở mục khác: trung bình 56,3tr (Trên 5 năm kinh nghiệm. Top 5 vị trí khó tuyển dụng).
 - **Nhu cầu tuyển:** 15 tin trên ITviec, từ khoá `solution-architect`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -124,7 +125,7 @@
 - **Mã O\*NET:** 15-1252.00, 11-3021.00. Gán theo `ROLES` trong build_onet_profiles.py: Không có mã riêng; ghép Software Developers và Computer and Information Systems Managers.
   - Mã chính trùng với `SWE_BACKEND` nên không dùng task O\*NET; task lấy từ JD nếu có.
 - **Mã nghề Việt Nam:** 2512 Nhà phát triển phần mềm — giữ đề xuất tự động; mã ISCO 2512 chiếm 38% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 51,8tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Tech Lead" của bảng vị trí × năm kinh nghiệm: giữa 51,8tr, 3 mốc năm có số.
 - **Nhu cầu tuyển:** 32 tin trên ITviec, từ khoá `technical-leader`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** 12 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -136,7 +137,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 11-3021.00. Gán theo `ROLES` trong build_onet_profiles.py: Computer and Information Systems Managers.
 - **Mã nghề Việt Nam:** 1736 Dịch vụ và tính toán — sửa tay: ISCO 1330 (quản lý dịch vụ CNTT) trùng số với mã 1330 Chánh án của Việt Nam; 1736 'Dịch vụ và tính toán' là quản lý bộ phận tin học; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 50,2tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "IT Manager" của bảng vị trí × năm kinh nghiệm: giữa 50,2tr, 2 mốc năm có số.
 - **Nhu cầu tuyển:** 56 tin trên ITviec, từ khoá `engineering-manager`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -148,7 +149,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1253.00. Gán theo `ROLES` trong build_onet_profiles.py: Software Quality Assurance Analysts and Testers.
 - **Mã nghề Việt Nam:** 2519 Nhà chuyên môn về phát triển phần mềm ứng dụng và nhà phân tích chưa được phân vào đâu — giữ đề xuất tự động; mã ISCO 2519 chiếm 82% liên kết ESCO của mã O\*NET chính; độ tin cậy cao.
-- **Lương:** báo cáo ITviec 2025–2026; báo cáo không có số riêng của nghề này; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "QA - QC" của bảng vị trí × năm kinh nghiệm: giữa 31,2tr, 4 mốc năm có số.
 - **Nhu cầu tuyển:** 45 tin trên ITviec, từ khoá `manual-tester`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -160,7 +161,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-2051.01. Gán theo `ROLES` trong build_onet_profiles.py: Business Intelligence Analysts.
 - **Mã nghề Việt Nam:** 2421 Nhà phân tích tổ chức và quản lý — giữ đề xuất tự động; mã ISCO 2421 chiếm 60% liên kết ESCO của mã O\*NET chính; độ tin cậy cao.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 40,6tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Data Analyst/Data Scientist/Business Intelligence Analyst" của bảng vị trí × năm kinh nghiệm: giữa 40,6tr, 2 mốc năm có số.
 - **Nhu cầu tuyển:** 11 tin trên ITviec, từ khoá `data-analyst`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -172,7 +173,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-2051.00. Gán theo `ROLES` trong build_onet_profiles.py: Data Scientists.
 - **Mã nghề Việt Nam:** 2511 Nhà phân tích hệ thống — giữ đề xuất tự động; mã ISCO 2511 chiếm 71% liên kết ESCO của mã O\*NET chính; độ tin cậy cao.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 50,6tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, bảng vị trí không có dòng cho nghề này; dùng số ở mục khác: trung bình 50,6tr (Trung bình tại công ty AI/Deep Tech. Vị trí khó tuyển nhất hiện nay).
 - **Nhu cầu tuyển:** 140 tin trên ITviec, từ khoá `ai-machine-learning-engineer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -184,7 +185,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1243.01, 15-1243.00. Gán theo `ROLES` trong build_onet_profiles.py: Ghép Data Warehousing Specialists và Database Architects.
 - **Mã nghề Việt Nam:** 2521 Nhà quản trị và thiết kế cơ sở dữ liệu — giữ đề xuất tự động; mã ISCO 2521 chiếm 55% liên kết ESCO của mã O\*NET chính; độ tin cậy cao.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 41,3tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Data Engineer" của bảng vị trí × năm kinh nghiệm: giữa 41,3tr, 1 mốc năm có số.
 - **Nhu cầu tuyển:** 24 tin trên ITviec, từ khoá `data-engineer`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -196,7 +197,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1244.00, 15-1252.00. Gán theo `ROLES` trong build_onet_profiles.py: Không có mã riêng; ghép Network and Computer Systems Administrators và Software Developers.
 - **Mã nghề Việt Nam:** 2522 Nhà quản trị hệ thống — giữ đề xuất tự động; mã ISCO 2522 chiếm 36% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; báo cáo không có số riêng của nghề này; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026 không có số cho nghề này.
 - **Nhu cầu tuyển:** 69 tin trên ITviec, từ khoá `devops-engineer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -209,7 +210,7 @@
 - **Mã O\*NET:** 15-1299.08, 15-1244.00. Gán theo `ROLES` trong build_onet_profiles.py: Không có mã riêng; ghép Computer Systems Engineers/Architects và Network and Computer Systems Administrators.
   - Mã chính trùng với `SWE_ARCH_SOL` nên không dùng task O\*NET; task lấy từ JD nếu có.
 - **Mã nghề Việt Nam:** 2511 Nhà phân tích hệ thống — giữ đề xuất tự động; mã ISCO 2511 chiếm 46% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; báo cáo không có số riêng của nghề này; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026 không có số cho nghề này.
 - **Nhu cầu tuyển:** 82 tin trên ITviec, từ khoá `cloud-engineer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** 11 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -221,7 +222,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1299.05. Gán theo `ROLES` trong build_onet_profiles.py: Information Security Engineers.
 - **Mã nghề Việt Nam:** 2529 Nhà chuyên môn về cơ sở dữ liệu và mạng chưa được phân vào đâu — giữ đề xuất tự động; mã ISCO 2529 chiếm 89% liên kết ESCO của mã O\*NET chính; độ tin cậy cao.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 44,1tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, bảng vị trí không có dòng cho nghề này; dùng số ở mục khác: trung bình 44,1tr (Trung bình tại công ty ngành An ninh mạng. Security Engineer trong Top 15 vị trí nhu cầu lớn 2026).
 - **Nhu cầu tuyển:** 45 tin trên ITviec, từ khoá `security-engineer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -233,7 +234,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1299.04. Gán theo `ROLES` trong build_onet_profiles.py: Penetration Testers.
 - **Mã nghề Việt Nam:** 2529 Nhà chuyên môn về cơ sở dữ liệu và mạng chưa được phân vào đâu — giữ đề xuất tự động; mã ISCO 2529 chiếm 89% liên kết ESCO của mã O\*NET chính; độ tin cậy cao.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 44,1tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, bảng vị trí không có dòng cho nghề này; dùng số ở mục khác: trung bình 44,1tr (Dùng chung số của nhóm An ninh mạng — chưa có số riêng cho Pentest).
 - **Nhu cầu tuyển:** 43 tin trên ITviec, từ khoá `penetration-tester`, ngày 2026-10-21; mức vừa so với 22 nghề IT. Gần bằng security-engineer (45): từ khoá khớp rộng sang tin bảo mật nói chung.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -245,7 +246,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1211.00. Gán theo `ROLES` trong build_onet_profiles.py: Computer Systems Analysts.
 - **Mã nghề Việt Nam:** 2511 Nhà phân tích hệ thống — giữ đề xuất tự động; mã ISCO 2511 chiếm 54% liên kết ESCO của mã O\*NET chính; độ tin cậy cao.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 30,0tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Business Analyst" của bảng vị trí × năm kinh nghiệm: giữa 30,0tr, 5 mốc năm có số.
 - **Nhu cầu tuyển:** 36 tin trên ITviec, từ khoá `business-analyst`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -257,7 +258,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1299.09. Gán theo `ROLES` trong build_onet_profiles.py: Chỉ IT Project Managers; không ghép Marketing Managers vì kéo hồ sơ về phía marketing.
 - **Mã nghề Việt Nam:** 2511 Nhà phân tích hệ thống — sửa tay: Danh mục không có product manager; ISCO 1330 trùng số với Chánh án. Lấy mã gần nhất trong nhóm CNTT; **bỏ khỏi hồ sơ** vì độ tin cậy thấp.
-- **Lương:** báo cáo ITviec 2025–2026; trung bình theo nghề 50,1tr; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "Product Owner/Product Manager" của bảng vị trí × năm kinh nghiệm: giữa 50,1tr, 4 mốc năm có số.
 - **Nhu cầu tuyển:** 8 tin trên ITviec, từ khoá `product-manager`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -270,7 +271,7 @@
 - **Mã O\*NET:** 15-1211.00, 13-1111.00. Gán theo `ROLES` trong build_onet_profiles.py: Ghép Computer Systems Analysts và Management Analysts.
   - Mã chính trùng với `PROD_BA` nên không dùng task O\*NET; task lấy từ JD nếu có.
 - **Mã nghề Việt Nam:** 2511 Nhà phân tích hệ thống — giữ đề xuất tự động; mã ISCO 2511 chiếm 54% liên kết ESCO của mã O\*NET chính; độ tin cậy cao.
-- **Lương:** báo cáo ITviec 2025–2026; báo cáo không có số riêng của nghề này; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "ERP Engineer/ERP Consultant" của bảng vị trí × năm kinh nghiệm: giữa 30,2tr, 4 mốc năm có số.
 - **Nhu cầu tuyển:** 24 tin trên ITviec, từ khoá `erp`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** 15 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -282,7 +283,7 @@
 - [ ] Đã duyệt
 - **Mã O\*NET:** 15-1232.00. Gán theo `ROLES` trong build_onet_profiles.py: Computer User Support Specialists.
 - **Mã nghề Việt Nam:** 3512 Kỹ thuật viên hỗ trợ người sử dụng công nghệ thông tin và truyền thông — giữ đề xuất tự động; mã ISCO 3512 chiếm 36% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; báo cáo không có số riêng của nghề này; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026, dòng "IT Support/Helpdesk" của bảng vị trí × năm kinh nghiệm: giữa 20,0tr, 3 mốc năm có số.
 - **Nhu cầu tuyển:** 19 tin trên ITviec, từ khoá `it-support`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
@@ -295,7 +296,7 @@
 - **Mã O\*NET:** 15-1244.00, 15-1241.00. Gán theo `ROLES` trong build_onet_profiles.py: Ghép Network and Computer Systems Administrators và Computer Network Architects.
   - Mã chính trùng với `CLOUD_DEVOPS` nên không dùng task O\*NET; task lấy từ JD nếu có.
 - **Mã nghề Việt Nam:** 2522 Nhà quản trị hệ thống — giữ đề xuất tự động; mã ISCO 2522 chiếm 36% liên kết ESCO của mã O\*NET chính; độ tin cậy vừa.
-- **Lương:** báo cáo ITviec 2025–2026; báo cáo không có số riêng của nghề này; thêm lương theo cấp của toàn ngành IT; năm số liệu: 2025–2026.
+- **Lương:** báo cáo ITviec 2025–2026 không có số cho nghề này.
 - **Nhu cầu tuyển:** 14 tin trên ITviec, từ khoá `network-engineer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** 12 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
