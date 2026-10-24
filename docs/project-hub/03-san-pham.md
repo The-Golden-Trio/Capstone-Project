@@ -102,7 +102,7 @@ Cách sinh scenario mới: xem `occupation-data/specs/HUONG-DAN-SINH-SCENARIO.md
 
 | Lớp | Trạng thái |
 |---|---|
-| **Get-to-know-me** (18 thẻ ba mức cho RIASEC, 5 câu mục tiêu chạm nhanh, không gọi AI) | **Tuỳ chọn** (D-29); thiết kế chốt 16/10 (D-107, D-108). Code hiện còn bản trước. Thẻ tự soạn, **chưa kiểm định** |
+| **Get-to-know-me** (18 thẻ ba mức: 12 cho RIASEC, 6 cho nhóm ngành; 5 câu mục tiêu chạm nhanh, không gọi AI) | **Tuỳ chọn** (D-29); thiết kế chốt 16/10 (D-107, D-108), cụm 3 đổi 23/10 (D-125). Code hiện còn bản trước. Thẻ tự soạn, **chưa kiểm định** |
 | **Gợi ý nghề** (ba ô: cùng ngành bạn có thể thích, khác ngành bạn làm tốt, khác ngành bạn có thể thích) | Thiết kế chốt 19/10 (D-111). Chưa có trong code |
 | **Chòm sao** (cung Mặt Trời theo ngày sinh, +12% điểm cộng cho 2 nhóm soft skill) | Thiết kế chốt 21/10 (D-113). Chưa có trong code |
 | **Đánh giá nghề 5 tiêu chí** (lương, áp lực, độ khó, cân bằng, yêu thích) | Đã chốt (D-27). **Chưa có trong code**, màn tổng kết mới có "chấm sao độ thực tế" |

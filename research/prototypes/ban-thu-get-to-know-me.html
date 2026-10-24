@@ -202,7 +202,7 @@
     </div>
 
     <div class="panel">
-      <h2>Vùng việc IT nên thử trước</h2>
+      <h2>Vùng ngành nên thử trước</h2>
       <p class="note" id="areas-note"></p>
       <div class="areas" id="areas"></div>
     </div>
@@ -239,12 +239,12 @@
   };
   const ORDER = ["R", "I", "A", "S", "E", "C"];
   const AREAS = {
-    data: { name: "Dữ liệu", roles: "Phân tích dữ liệu · Kỹ sư dữ liệu · Kỹ sư AI" },
-    design: { name: "Thiết kế", roles: "Thiết kế UI/UX · Lập trình viên Front-end · Lập trình viên Game" },
-    infra: { name: "Hạ tầng", roles: "Kỹ sư hệ thống mạng · IT Support · Kỹ sư điện toán đám mây" },
-    manage: { name: "Quản lý", roles: "Phân tích nghiệp vụ · Quản lý sản phẩm · Trưởng nhóm kỹ thuật" },
-    security: { name: "Bảo mật", roles: "Kỹ sư an ninh mạng · Kiểm thử xâm nhập" },
-    code: { name: "Lập trình", roles: "Lập trình viên Back-end · Lập trình viên Mobile · Kỹ sư DevOps" }
+    ky_thuat: { name: "Kỹ thuật, sản xuất", roles: "Kỹ sư xây dựng · Thợ sửa chữa ô tô · Thợ cơ khí, tiện phay CNC" },
+    suc_khoe: { name: "Sức khoẻ, giáo dục", roles: "Bác sĩ · Điều dưỡng · Giáo viên tiểu học" },
+    kinh_doanh: { name: "Kinh doanh, quản lý", roles: "Kế toán, kiểm toán viên · Nhân viên kinh doanh · Luật sư" },
+    cong_nghe: { name: "Công nghệ, khoa học", roles: "Lập trình viên Back-end · Kỹ sư dữ liệu · Nhà sinh học" },
+    sang_tao: { name: "Sáng tạo, truyền thông", roles: "Nhà thiết kế đồ hoạ · Hoạ sĩ hoạt hình, kỹ xảo · Nhà thiết kế thời trang" },
+    dich_vu: { name: "Dịch vụ, vận hành", roles: "Đầu bếp · Tiếp viên · Hướng dẫn viên du lịch" }
   };
   const CARDS = [
     // cụm 1: mỗi trục một thẻ
@@ -261,13 +261,13 @@
     { text: "Đọc để hiểu vì sao có cầu vồng, nhật thực hay động đất", axis: "I" },
     { text: "Lắng nghe và an ủi một người bạn đang buồn", axis: "S" },
     { text: "Vẽ tranh, chụp ảnh, dựng video hay viết truyện của riêng mình", axis: "A" },
-    // cụm 3: vùng việc IT
-    { text: "Xem bảng điểm cả lớp để tìm ra môn nào nhiều bạn điểm thấp nhất", area: "data" },
-    { text: "Thiết kế màn hình một ứng dụng sao cho ai cũng dễ dùng", area: "design" },
-    { text: "Lắp một bộ máy tính và cài mạng wifi cho cả nhà", area: "infra" },
-    { text: "Chia việc cho nhóm làm bài tập lớn và nhắc mọi người kịp hạn", area: "manage" },
-    { text: "Tìm cách giữ tài khoản mạng xã hội không bị người lạ chiếm mất", area: "security" },
-    { text: "Tạo một công cụ nhỏ để máy tính tự làm một việc bạn phải làm đi làm lại", area: "code" }
+    // cụm 3: nhóm ngành (D-125), mỗi thẻ một vùng
+    { text: "Tận mắt theo dõi một cây cầu, cỗ máy hay mẻ bánh được làm ra từng bước", area: "ky_thuat" },
+    { text: "Giúp một người khoẻ lên, học tiến bộ hơn hay vượt qua lúc khó khăn", area: "suc_khoe" },
+    { text: "Tính xem quán nước phải bán bao nhiêu ly mỗi ngày thì mới có lời", area: "kinh_doanh" },
+    { text: "Dùng máy tính hay thí nghiệm để tìm ra câu trả lời cho một thắc mắc", area: "cong_nghe" },
+    { text: "Làm một video, bài hát hay thiết kế để nhiều người cùng xem", area: "sang_tao" },
+    { text: "Lo cho khách được phục vụ chu đáo, đi lại an toàn và đúng giờ", area: "dich_vu" }
   ];
   const LEVELS = [
     { v: 1, label: "Không thích" },
@@ -277,11 +277,11 @@
   const MAX = LEVELS.length;
   const ACTIVITIES = [
     { text: "Dò log để tìm nguyên nhân một lỗi", axis: "I" },
-    { text: "Điều phối buổi họp với khách hàng", axis: "E" },
-    { text: "Vẽ lại màn hình đăng nhập cho dễ dùng", axis: "A" },
-    { text: "Lập checklist trước khi phát hành", axis: "C" },
-    { text: "Cài đặt và cấu hình một máy chủ", axis: "R" },
-    { text: "Hướng dẫn một người dùng đang gặp lỗi", axis: "S" }
+    { text: "Thuyết phục một khách hàng ký hợp đồng", axis: "E" },
+    { text: "Vẽ lại bìa thực đơn cho một quán ăn", axis: "A" },
+    { text: "Kiểm kê hàng trong kho cuối ngày", axis: "C" },
+    { text: "Thay một linh kiện hỏng trong máy", axis: "R" },
+    { text: "Chăm sóc một người bệnh mới nhập viện", axis: "S" }
   ];
 
   const HOBBIES = [
@@ -347,7 +347,7 @@
     for (let c = 0; c < 3; c++) {
       $("c" + c).style.width = (c < cluster ? 100 : c > cluster ? 0 : (index - c * 6) / 6 * 100) + "%";
     }
-    $("card-eyebrow").textContent = cluster === 2 ? "Việc trong ngành IT · bạn thích tới đâu?" : "Bạn thích làm việc này tới đâu?";
+    $("card-eyebrow").textContent = cluster === 2 ? "Lĩnh vực · bạn thích tới đâu?" : "Bạn thích làm việc này tới đâu?";
     $("card-text").textContent = card.text;
     const scale = $("scale");
     scale.innerHTML = "";
@@ -517,8 +517,8 @@
     const liked = scored.filter((s) => s.v === MAX);
     const pick = (liked.length ? liked : scored).slice(0, 2);
     $("areas-note").textContent = liked.length
-      ? "Dựa trên các thẻ việc IT bạn chấm \"Thích\". Đây là chỗ nên thử trước, không phải kết luận bạn hợp nghề nào."
-      : "Bạn chưa chấm \"Thích\" thẻ việc IT nào, nên đây là hai vùng bạn ít ngại nhất. Thử một nhiệm vụ rồi xem cảm giác thật.";
+      ? "Dựa trên các thẻ nhóm ngành bạn chấm \"Thích\". Đây là chỗ nên thử trước, không phải kết luận bạn hợp nghề nào."
+      : "Bạn chưa chấm \"Thích\" thẻ nhóm ngành nào, nên đây là hai vùng bạn ít ngại nhất. Thử một nhiệm vụ rồi xem cảm giác thật.";
     const box = $("areas");
     box.innerHTML = "";
     pick.forEach((p) => {

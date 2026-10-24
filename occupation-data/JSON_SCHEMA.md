@@ -59,6 +59,7 @@ Skeleton viết dạng JSONC (JSON có comment). Quy ước:
 | 12 | `decisions/onet_merge/*.json`, `datasets/onet_vi/*.json` | Quyết định gộp và bản dịch cho danh mục nghề ngoài IT | 22 + 23 file | ✅ |
 | 12 | `generated/onet_all_roles.json` | **Danh mục 199 nghề ngoài IT** (O\*NET), cùng khuôn với `final_22_roles.json` | 199 role | ❌ script sinh |
 | 13 | `generated/occupation_profiles.json` | **Hồ sơ nghề chuẩn** cho 221 nghề, một khuôn: kỹ năng, lương, đường học, nhu cầu tuyển | 221 role | ❌ script sinh |
+| — | `decisions/interest_regions.json` | **6 vùng ngành** cho cụm 3 của Get to know me: lời thẻ và 23 nhóm nghề (`role_group_vn`) thuộc mỗi vùng (D-125) | 6 vùng | ✅ |
 
 > ℹ️ Tên file đã đổi ngày 25/9 (README, script build và spec đã cập nhật theo). Đối chiếu tên cũ: `dataset_final_merged.json` → `78_roles_unmerged.json` · `dataset_22_roles_enriched_v3.json` → `final_22_roles.json` · `fit_quiz.json` → `DRAFT_fit_quiz.json` · `FILTERED_ROLES.csv` → `78_to_22_roles.csv`. Trong `_meta` của các file cũng còn dùng tên cũ.
 

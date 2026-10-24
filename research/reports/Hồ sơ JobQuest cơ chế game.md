@@ -33,9 +33,9 @@ Cửa vào hỏi *"Bạn đã biết muốn thử nghề nào chưa?"*. Ai chọ
 | Bước | Người chơi làm gì | Ước tính | Ra cái gì |
 |---|---|---|---|
 | 0. Màn mở | Đọc hai dòng: 18 thẻ, khoảng 1–2 phút, không có đáp án đúng sai; cuối bài có phần kể về bạn, không bắt buộc | 10 giây | Kỳ vọng đúng về độ dài |
-| 1. 18 thẻ | Ba cụm sáu thẻ có thanh tiến độ; mỗi thẻ chạm Không thích · Bình thường · Thích | 90–120 giây | Vạch "tự kể" trên sáu trục; vùng việc IT nên thử trước |
+| 1. 18 thẻ | Ba cụm sáu thẻ có thanh tiến độ; mỗi thẻ chạm Không thích · Bình thường · Thích | 90–120 giây | Vạch "tự kể" trên sáu trục; vùng ngành nên thử trước |
 | 2. Kể về bạn (bỏ qua được) | Chọn tối đa 5 sở thích; năm câu mục tiêu, chạm và gõ thêm nếu muốn | 30–60 giây | Thẻ "Mục tiêu của bạn" |
-| 3. Kết quả | Xem sáu thanh, vùng việc IT, thẻ mục tiêu (khối D) | 30 giây | Hồ sơ nháp |
+| 3. Kết quả | Xem sáu thanh, vùng ngành nên thử, thẻ mục tiêu (khối D) | 30 giây | Hồ sơ nháp |
 
 Thời lượng là ước tính, chưa đo. Get to know me không gọi AI, nên không có chỗ chờ hay lỗi model.
 
@@ -236,7 +236,7 @@ Get to know me có **hai phần, đều chạm là chính**, khoảng 3 phút (�
 
 | Phần | Người chơi làm gì | Ra cái gì | Dùng để |
 |---|---|---|---|
-| **1. Bạn thích làm những việc gì?** | 18 thẻ, mỗi thẻ một việc; chạm Không thích · Bình thường · Thích | Vạch "tự kể" trên sáu trục RIASEC; hai ba vùng việc IT nên thử trước | Điểm xuất phát cho người chưa biết bắt đầu từ đâu |
+| **1. Bạn thích làm những việc gì?** | 18 thẻ, mỗi thẻ một việc; chạm Không thích · Bình thường · Thích | Vạch "tự kể" trên sáu trục RIASEC; hai ba vùng ngành nên thử trước | Điểm xuất phát cho người chưa biết bắt đầu từ đâu |
 | **2. Kể một chút về bạn** (không bắt buộc) | Chọn tối đa 5 sở thích; trả lời 5 câu về mục tiêu, mỗi câu chạm bao nhiêu lựa chọn cũng được, muốn thì gõ thêm | Thẻ "Mục tiêu của bạn" | Để người chơi tự nhìn rõ mình muốn gì; AI đọc để động viên khi chơi. Không chấm điểm, không dùng để gợi ý nghề |
 
 Get to know me không gọi AI.
@@ -255,7 +255,7 @@ Get to know me không gọi AI.
 ### Chi tiết: 18 thẻ
 
 - **Ba mức:** Không thích (1) · Bình thường (2) · Thích (3). Ba mức dễ phân biệt khi chạm nhanh.
-- **Ba cụm sáu thẻ**, có thanh tiến độ. Cụm 1 và 2: mỗi trục một thẻ, tổng hai thẻ mỗi trục. Cụm 3: sáu thẻ vùng việc IT, chấm riêng, không thuộc trục nào.
+- **Ba cụm sáu thẻ**, có thanh tiến độ. Cụm 1 và 2: mỗi trục một thẻ, tổng hai thẻ mỗi trục. Cụm 3: sáu thẻ nhóm ngành, mỗi thẻ một vùng, chấm riêng, không thuộc trục nào (D-125).
 - **Điểm một trục là trung bình** các lần chạm của trục đó, nên luôn nằm trong 1–3 và giảm được khi người chơi chạm thấp hơn. Vạch "sau khi thử" ở khối B tính cùng cách.
 - **Thẻ là một cảnh quen** với học sinh, không ghi tên trục. Câu dẫn: *"Bạn thích làm việc này tới đâu?"*, kèm *"Không có đáp án đúng sai."*
 - **Không ép khai thật.** Người chơi trả lời theo mục đích của họ; vạch "sau khi thử" từ việc chơi sẽ chỉnh dần.
@@ -269,16 +269,16 @@ Get to know me không gọi AI.
 | Thực hành (R) | Lắp một kệ sách hay mô hình theo hướng dẫn trong hộp | Tự tay sửa chiếc xe đạp hay cái quạt bị hỏng ở nhà |
 | Dẫn dắt (E) | Thuyết phục cả nhóm làm theo ý tưởng của mình | Đứng ra lo buổi sinh nhật hay chuyến đi chơi của lớp |
 
-| Vùng việc IT | Thẻ cụm 3 | Nghề trong vùng |
-|---|---|---|
-| Dữ liệu | Xem bảng điểm cả lớp để tìm ra môn nào nhiều bạn điểm thấp nhất | Phân tích dữ liệu · Kỹ sư dữ liệu · Kỹ sư AI |
-| Thiết kế | Thiết kế màn hình một ứng dụng sao cho ai cũng dễ dùng | UI/UX · Front-end · Game |
-| Hạ tầng | Lắp một bộ máy tính và cài mạng wifi cho cả nhà | Mạng · IT Support · Cloud |
-| Quản lý | Chia việc cho nhóm làm bài tập lớn và nhắc mọi người kịp hạn | BA · Quản lý sản phẩm · Trưởng nhóm |
-| Bảo mật | Tìm cách giữ tài khoản mạng xã hội không bị người lạ chiếm mất | An ninh mạng · Kiểm thử xâm nhập |
-| Lập trình | Tạo một công cụ nhỏ để máy tính tự làm một việc bạn phải làm đi làm lại | Back-end · Mobile · DevOps |
+| Vùng | Thẻ cụm 3 | Nhóm nghề trong vùng | Số nghề |
+|---|---|---|---|
+| Kỹ thuật, sản xuất | Tận mắt theo dõi một cây cầu, cỗ máy hay mẻ bánh được làm ra từng bước | Kiến trúc và kỹ thuật · Sản xuất · Xây dựng và khai khoáng · Lắp đặt, bảo trì và sửa chữa · Nông nghiệp | 50 |
+| Sức khoẻ, giáo dục | Giúp một người khoẻ lên, học tiến bộ hơn hay vượt qua lúc khó khăn | Y tế chuyên môn · Hỗ trợ y tế · Cộng đồng và công tác xã hội · Giáo dục | 33 |
+| Kinh doanh, quản lý | Tính xem quán nước phải bán bao nhiêu ly mỗi ngày thì mới có lời | Kinh doanh và tài chính · Bán hàng · Quản lý · Văn phòng · Pháp lý | 48 |
+| Công nghệ, khoa học | Dùng máy tính hay thí nghiệm để tìm ra câu trả lời cho một thắc mắc | Công nghệ thông tin · Toán và thống kê · Khoa học tự nhiên và xã hội | 38 |
+| Sáng tạo, truyền thông | Làm một video, bài hát hay thiết kế để nhiều người cùng xem | Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông | 17 |
+| Dịch vụ, vận hành | Lo cho khách được phục vụ chu đáo, đi lại an toàn và đúng giờ | Chăm sóc và dịch vụ cá nhân · Vận tải · An ninh và an toàn · Ăn uống · Vệ sinh, cảnh quan | 35 |
 
-Sáu thẻ IT có vì RIASEC phân biệt các nghề IT kém: nghề nào cũng cao ở Tìm tòi và Tổ chức (khối B). Hai thẻ mỗi trục là đo yếu; nếu sau lượt thử đầu vạch "tự kể" lệch nhiều so với "sau khi thử" thì tăng lên ba thẻ mỗi trục (24 thẻ, thêm khoảng một phút).
+Cụm 3 đo **lĩnh vực**, còn RIASEC đo **kiểu việc**: thợ sửa xe và người trồng trọt cùng nghiêng về Thực hành nhưng khác lĩnh vực. Bản trước (D-108) dùng sáu thẻ vùng việc IT vì RIASEC phân biệt các nghề IT kém; khi game có 221 nghề, thẻ riêng cho một ngành là ưu ái ngành đó, nên đổi thành sáu vùng phủ mọi nhóm nghề (D-125). Mỗi nhóm nghề thuộc đúng một vùng (`occupation-data/decisions/interest_regions.json`); việc tách các nghề trong cùng một ngành, kể cả IT, để cho gợi ý sau khi chơi (keyword, câu "thích tới đâu"). Vùng Sáng tạo ít nghề nhất (17) nhưng là lĩnh vực học sinh nhận ra rõ nhất. Hai thẻ mỗi trục là đo yếu; nếu sau lượt thử đầu vạch "tự kể" lệch nhiều so với "sau khi thử" thì tăng lên ba thẻ mỗi trục (24 thẻ, thêm khoảng một phút).
 
 **Thẻ do nhóm tự viết, không dịch Mini-IP của O\*NET.** Bản dịch là Adapted Material, và Mục 3(b)(2) của giấy phép buộc làm một Validation Study trước khi phát hành nếu sửa hay chỉ dùng một phần công cụ ([O\*NET Tools Developer License, toàn văn](https://www.onetcenter.org/license_toolsdev.html)). Viết từ định nghĩa của Holland, không mở danh sách câu Mini-IP khi viết. Cái giá: không có số liệu đo lường nào đứng sau, nên kết quả ghi là "bản nháp".
 

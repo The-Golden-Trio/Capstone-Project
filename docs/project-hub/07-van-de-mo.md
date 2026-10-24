@@ -125,7 +125,7 @@ Chi tiết từng mục ở [đề xuất game design](../../research/reports/H�
 |---|---|---|---|---|
 | H1 | 🟠 | Duyệt bảng gán mã O\*NET cho 22 nghề và bảng nối 7 nhóm soft skill với O\*NET (B1, B2) | Bảng trong `occupation-data/generated/onet_profiles.md` và `SOFT_GROUPS` của script | Cả nhóm |
 | H2 | 🟠 | Duyệt đầu vào, đầu ra keyword của các cấp (B4) | Bản nháp tự động đã có cho cả 221 nghề (D-120, `occupation-data/generated/keyword_map.json`); duyệt kỹ 3 nghề pilot trước | Cả nhóm, rồi chuyên gia nghề duyệt |
-| H3 | 🟠 | Thử 18 thẻ Get to know me trên 30–50 người; 2–3 học sinh 14–16 tuổi đọc lời thẻ và câu mục tiêu (C2, C3) | So vạch "tự kể" với "sau khi thử"; lệch nhiều thì lên 24 thẻ | Cả nhóm |
+| H3 | 🟠 | Thử 18 thẻ Get to know me trên 30–50 người; 2–3 học sinh 14–16 tuổi đọc lời thẻ, gồm 6 thẻ nhóm ngành mới (D-125), và câu mục tiêu (C2, C3) | So vạch "tự kể" với "sau khi thử"; lệch nhiều thì lên 24 thẻ | Cả nhóm |
 | H4 | 🟠 | Danh sách từ dò dấu hiệu bất ổn; đường dây cho người chơi từ 16 tuổi, vì Tổng đài 111 dành cho trẻ em (C4, C5) | Danh sách ngắn, có không dấu và tiếng lóng | Cả nhóm |
 | H5 | ⚪ để sau | 35 tên bậc soft skill; danh sách khoảng 100 thành tựu (D2, D3) | Bậc 1 không là lời chê | Cả nhóm |
 | H6 | 🟠 | Danh sách nhóm ngành của game; có tầng "ngành" giữa nhóm ngành và nghề không (D4) | Bản thử dùng nhóm ngành › nghề › cấp | Cả nhóm |
