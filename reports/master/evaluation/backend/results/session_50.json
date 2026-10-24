@@ -1,0 +1,109 @@
+{
+  "window_s": 239,
+  "overall": {
+    "n": 1148,
+    "rps": 4.8,
+    "p50": 7.4,
+    "p95": 19.3,
+    "p99": 34.4,
+    "max": 93.4,
+    "errors": 0
+  },
+  "endpoints": {
+    "GET /auth/me": {
+      "n": 139,
+      "rps": 0.58,
+      "p50": 6.4,
+      "p95": 14.0,
+      "p99": 20.3,
+      "max": 34.0,
+      "errors": 0
+    },
+    "GET /content/bootstrap": {
+      "n": 139,
+      "rps": 0.58,
+      "p50": 6.6,
+      "p95": 10.7,
+      "p99": 13.1,
+      "max": 20.3,
+      "errors": 0
+    },
+    "GET /content/galaxy": {
+      "n": 139,
+      "rps": 0.58,
+      "p50": 9.5,
+      "p95": 20.7,
+      "p99": 40.7,
+      "max": 46.8,
+      "errors": 0
+    },
+    "GET /profile": {
+      "n": 139,
+      "rps": 0.58,
+      "p50": 7.0,
+      "p95": 15.4,
+      "p99": 27.8,
+      "max": 36.3,
+      "errors": 0
+    },
+    "GET /profile/progress": {
+      "n": 139,
+      "rps": 0.58,
+      "p50": 8.5,
+      "p95": 30.7,
+      "p99": 38.5,
+      "max": 44.7,
+      "errors": 0
+    },
+    "GET /profile/roles/:role": {
+      "n": 139,
+      "rps": 0.58,
+      "p50": 6.2,
+      "p95": 17.2,
+      "p99": 49.9,
+      "max": 93.4,
+      "errors": 0
+    },
+    "GET /profile/runs": {
+      "n": 136,
+      "rps": 0.57,
+      "p50": 6.4,
+      "p95": 16.9,
+      "p99": 25.8,
+      "max": 38.2,
+      "errors": 0
+    },
+    "GET /content/scenarios/:key": {
+      "n": 61,
+      "rps": 0.26,
+      "p50": 4.9,
+      "p95": 8.0,
+      "p99": 14.7,
+      "max": 18.5,
+      "errors": 0
+    },
+    "POST /runs": {
+      "n": 61,
+      "rps": 0.26,
+      "p50": 9.6,
+      "p95": 18.7,
+      "p99": 22.7,
+      "max": 25.8,
+      "errors": 0
+    },
+    "POST /runs/:id/complete": {
+      "n": 56,
+      "rps": 0.23,
+      "p50": 14.9,
+      "p95": 32.0,
+      "p99": 37.9,
+      "max": 42.2,
+      "errors": 0
+    }
+  },
+  "api_process": {
+    "cpu_mean_pct": 3.1,
+    "cpu_max_pct": 11.3,
+    "rss_max_mb": 344
+  }
+}

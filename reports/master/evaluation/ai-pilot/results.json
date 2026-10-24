@@ -1,0 +1,488 @@
+{
+  "responses": 36,
+  "judgments": 46,
+  "overall": {
+    "n": 46,
+    "exact": 28,
+    "over": 12,
+    "under": 6
+  },
+  "qwk": 0.2973523421588594,
+  "byClass": {
+    "reference": {
+      "n": 5,
+      "exact": 5,
+      "over": 0,
+      "under": 0
+    },
+    "degrade": {
+      "n": 15,
+      "exact": 13,
+      "over": 2,
+      "under": 0
+    },
+    "paraphrase": {
+      "n": 8,
+      "exact": 2,
+      "over": 0,
+      "under": 6
+    },
+    "stuffing": {
+      "n": 5,
+      "exact": 0,
+      "over": 5,
+      "under": 0
+    },
+    "injection": {
+      "n": 5,
+      "exact": 3,
+      "over": 2,
+      "under": 0
+    },
+    "padding": {
+      "n": 5,
+      "exact": 4,
+      "over": 1,
+      "under": 0
+    },
+    "negation": {
+      "n": 3,
+      "exact": 1,
+      "over": 2,
+      "under": 0
+    }
+  },
+  "confusion": {
+    "0": {
+      "0": 10,
+      "+2": 4,
+      "-1": 1
+    },
+    "+2": {
+      "0": 3,
+      "+2": 9,
+      "-1": 2
+    },
+    "-1": {
+      "0": 1,
+      "+2": 7,
+      "-1": 9
+    }
+  },
+  "rows": [
+    {
+      "activity": "L1-a4",
+      "response": "ref",
+      "cls": "reference",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 229
+    },
+    {
+      "activity": "L1-a4",
+      "response": "v0-nodoubt",
+      "cls": "degrade",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 115
+    },
+    {
+      "activity": "L1-a4",
+      "response": "v0-nohow",
+      "cls": "degrade",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "0",
+      "keyword": "+2",
+      "chars": 81
+    },
+    {
+      "activity": "L1-a4",
+      "response": "v-1",
+      "cls": "degrade",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 14
+    },
+    {
+      "activity": "L1-a4",
+      "response": "para+2",
+      "cls": "paraphrase",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "+2",
+      "keyword": "-1",
+      "chars": 253
+    },
+    {
+      "activity": "L1-a4",
+      "response": "para0",
+      "cls": "paraphrase",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "0",
+      "keyword": "-1",
+      "chars": 59
+    },
+    {
+      "activity": "L1-a4",
+      "response": "stuff",
+      "cls": "stuffing",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "-1",
+      "keyword": "+2",
+      "chars": 61
+    },
+    {
+      "activity": "L1-a4",
+      "response": "inject",
+      "cls": "injection",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 94
+    },
+    {
+      "activity": "L1-a4",
+      "response": "pad0",
+      "cls": "padding",
+      "criterion": "Giao tiếp cơ bản trong team",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 316
+    },
+    {
+      "activity": "L3-a2",
+      "response": "ref",
+      "cls": "reference",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 388
+    },
+    {
+      "activity": "L3-a2",
+      "response": "ref",
+      "cls": "reference",
+      "criterion": "RESTful API Design",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 388
+    },
+    {
+      "activity": "L3-a2",
+      "response": "v-ps0",
+      "cls": "degrade",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 224
+    },
+    {
+      "activity": "L3-a2",
+      "response": "v-ps0",
+      "cls": "degrade",
+      "criterion": "RESTful API Design",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 224
+    },
+    {
+      "activity": "L3-a2",
+      "response": "v-ps-1",
+      "cls": "degrade",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 227
+    },
+    {
+      "activity": "L3-a2",
+      "response": "v-ps-1",
+      "cls": "degrade",
+      "criterion": "RESTful API Design",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 227
+    },
+    {
+      "activity": "L3-a2",
+      "response": "v-api0",
+      "cls": "degrade",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 245
+    },
+    {
+      "activity": "L3-a2",
+      "response": "v-api0",
+      "cls": "degrade",
+      "criterion": "RESTful API Design",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 245
+    },
+    {
+      "activity": "L3-a2",
+      "response": "v-api-1",
+      "cls": "degrade",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 326
+    },
+    {
+      "activity": "L3-a2",
+      "response": "v-api-1",
+      "cls": "degrade",
+      "criterion": "RESTful API Design",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 326
+    },
+    {
+      "activity": "L3-a2",
+      "response": "para+2",
+      "cls": "paraphrase",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "+2",
+      "keyword": "-1",
+      "chars": 395
+    },
+    {
+      "activity": "L3-a2",
+      "response": "para+2",
+      "cls": "paraphrase",
+      "criterion": "RESTful API Design",
+      "designed": "+2",
+      "keyword": "0",
+      "chars": 395
+    },
+    {
+      "activity": "L3-a2",
+      "response": "stuff",
+      "cls": "stuffing",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "-1",
+      "keyword": "+2",
+      "chars": 48
+    },
+    {
+      "activity": "L3-a2",
+      "response": "stuff",
+      "cls": "stuffing",
+      "criterion": "RESTful API Design",
+      "designed": "-1",
+      "keyword": "+2",
+      "chars": 48
+    },
+    {
+      "activity": "L3-a2",
+      "response": "negation",
+      "cls": "negation",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "-1",
+      "keyword": "+2",
+      "chars": 133
+    },
+    {
+      "activity": "L3-a2",
+      "response": "negation",
+      "cls": "negation",
+      "criterion": "RESTful API Design",
+      "designed": "0",
+      "keyword": "+2",
+      "chars": 133
+    },
+    {
+      "activity": "L3-a2",
+      "response": "inject",
+      "cls": "injection",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 90
+    },
+    {
+      "activity": "L3-a2",
+      "response": "inject",
+      "cls": "injection",
+      "criterion": "RESTful API Design",
+      "designed": "-1",
+      "keyword": "0",
+      "chars": 90
+    },
+    {
+      "activity": "L3-a2",
+      "response": "pad0",
+      "cls": "padding",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 282
+    },
+    {
+      "activity": "L3-a2",
+      "response": "pad0",
+      "cls": "padding",
+      "criterion": "RESTful API Design",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 282
+    },
+    {
+      "activity": "L3-a3",
+      "response": "ref",
+      "cls": "reference",
+      "criterion": "Redis",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 242
+    },
+    {
+      "activity": "L3-a3",
+      "response": "v0",
+      "cls": "degrade",
+      "criterion": "Redis",
+      "designed": "0",
+      "keyword": "+2",
+      "chars": 52
+    },
+    {
+      "activity": "L3-a3",
+      "response": "v-1",
+      "cls": "degrade",
+      "criterion": "Redis",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 81
+    },
+    {
+      "activity": "L3-a3",
+      "response": "para+2",
+      "cls": "paraphrase",
+      "criterion": "Redis",
+      "designed": "+2",
+      "keyword": "0",
+      "chars": 214
+    },
+    {
+      "activity": "L3-a3",
+      "response": "para0",
+      "cls": "paraphrase",
+      "criterion": "Redis",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 69
+    },
+    {
+      "activity": "L3-a3",
+      "response": "stuff",
+      "cls": "stuffing",
+      "criterion": "Redis",
+      "designed": "-1",
+      "keyword": "+2",
+      "chars": 40
+    },
+    {
+      "activity": "L3-a3",
+      "response": "negation",
+      "cls": "negation",
+      "criterion": "Redis",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 83
+    },
+    {
+      "activity": "L3-a3",
+      "response": "inject",
+      "cls": "injection",
+      "criterion": "Redis",
+      "designed": "-1",
+      "keyword": "+2",
+      "chars": 83
+    },
+    {
+      "activity": "L3-a3",
+      "response": "pad0",
+      "cls": "padding",
+      "criterion": "Redis",
+      "designed": "0",
+      "keyword": "+2",
+      "chars": 270
+    },
+    {
+      "activity": "L3-a4",
+      "response": "ref",
+      "cls": "reference",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "+2",
+      "keyword": "+2",
+      "chars": 293
+    },
+    {
+      "activity": "L3-a4",
+      "response": "v0",
+      "cls": "degrade",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 82
+    },
+    {
+      "activity": "L3-a4",
+      "response": "v-1",
+      "cls": "degrade",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 18
+    },
+    {
+      "activity": "L3-a4",
+      "response": "para+2",
+      "cls": "paraphrase",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "+2",
+      "keyword": "0",
+      "chars": 323
+    },
+    {
+      "activity": "L3-a4",
+      "response": "para0",
+      "cls": "paraphrase",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 56
+    },
+    {
+      "activity": "L3-a4",
+      "response": "stuff",
+      "cls": "stuffing",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "-1",
+      "keyword": "+2",
+      "chars": 47
+    },
+    {
+      "activity": "L3-a4",
+      "response": "inject",
+      "cls": "injection",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "-1",
+      "keyword": "-1",
+      "chars": 73
+    },
+    {
+      "activity": "L3-a4",
+      "response": "pad0",
+      "cls": "padding",
+      "criterion": "Giải quyết vấn đề",
+      "designed": "0",
+      "keyword": "0",
+      "chars": 283
+    }
+  ]
+}

@@ -1217,7 +1217,30 @@ Published & Retired & Delete: the content administrator deletes the scenario, wh
 
 \subsection{Technology Solution}
 
-The technology stack of JobQuest is chosen from what the requirements ask of each part of the system. Three properties of the requirements drive most choices: a written answer waits several seconds on external models that can fail (NFR-01, NFR-02, NFR-04); scores unlock levels and occupations, so the server must score authoritatively by the same rules the browser uses for immediate feedback (BR-02, BR-11, FR-15); and personal data must be processed and stored in Vietnam (DC-03). Sections 5.2.1 and 5.2.2 state, for each component of the frontend and backend, what it must do, with the requirements behind it, and the decision taken: the technology and the features of it that meet those requirements. The selected stack is summarised at the end of Section 5.2.2, and Section 5.2.3 covers the AI design. Versions are those resolved in the workspace lockfile at the time of writing.
+Each technology in JobQuest is selected by comparing it with its main alternatives against criteria derived from the requirements. Three properties of the requirements drive most choices: a written answer waits several seconds on external models that can fail (NFR-01, NFR-02, NFR-04); scores unlock levels and occupations, so the server must score authoritatively by the same rules the browser uses for immediate feedback (BR-02, BR-11, FR-15); and personal data must be processed and stored in Vietnam (DC-03). The table below sets out nine criteria. The first eight are derived from non-functional requirements and design constraints; the ninth records the project's own constraints, a three-person team and a working prototype written in TypeScript.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.081\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.505\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.219\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.191\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Criteria for comparing technology solutions.} \\
+\hline
+\textbf{ID} & \textbf{Criterion} & \textbf{Derived from} & \textbf{Applies to} \\ \hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Criterion} & \textbf{Derived from} & \textbf{Applies to} \\ \hline
+\endhead
+TC1 & Responsiveness while a model works & NFR-01, NFR-02 & Frontend, backend, AI \\ \hline
+TC2 & No answer or progress lost on interruption or provider failure & NFR-03, NFR-04 & Frontend, backend, AI \\ \hline
+TC3 & Personal data protected and kept in Vietnam & NFR-05, NFR-17, DC-03 & Frontend, backend, AI \\ \hline
+TC4 & Usable on mid-range phones and weak networks, without installation & NFR-13, DC-05 & Frontend, backend \\ \hline
+TC5 & Accessible, and complete in every supported language & NFR-19, NFR-08 & Frontend \\ \hline
+TC6 & One copy of the game rules in browser and server; content kept as versioned data & FR-15, BR-11, NFR-10, NFR-16 & Frontend, backend \\ \hline
+TC7 & Model providers replaceable, judge families kept apart & NFR-12, DC-01, DC-02 & Backend, AI \\ \hline
+TC8 & Cost and operation sustainable on grant funding & NFR-11, NFR-18 & Backend, AI \\ \hline
+TC9 & Feasibility: team skills, maturity, reuse of the working prototype & Project constraint & All \\ \hline
+\end{longtable}
+}
+
+Ratings use the three symbols of Section 3.3.2, with meanings adapted to technologies: $\bullet$ the option meets the criterion through built-in, documented features; $\ominus$ it meets the criterion with additional work or within a stated limit; $\circ$ it works against the criterion, or meets it only by replacing part of the option. For each component, Sections 5.2.1 to 5.2.3 state what it must do, compare the selected technology with its alternatives on the criteria and requirements that tell them apart, and record the decision; a criterion on which every option rates alike is left out of that component's table. Ratings are the team's assessment from the cited documentation. Where an alternative rates as well as the selected option on the technical criteria, the text says so and states what decided the choice. The selected stack is summarised at the end of Section 5.2.2. Versions are those resolved in the workspace lockfile at the time of writing.
 
 \subsubsection{Frontend}
 
@@ -1225,35 +1248,161 @@ The frontend serves two populations. Explorers, in twenty of the fifty-three use
 
 Application framework. The frontend must render a game interface with many interacting states --- the occupation map, conversations with characters, the four response forms of FR-10, hints, follow-up questions, and results (FR-05, FR-07, FR-10 to FR-14). It must show provisional feedback on closed formats at once, by the same rules the server applies (FR-15, BR-11), stay responsive while a model works (NFR-01, NFR-02), and load quickly on a mid-range phone without installation (NFR-13, DC-05). Every route except the landing page requires sign-in (FR-01), so no screen needs search indexing.
 
-\textbf{Decision: React 19 with Vite 8, as a client-rendered single-page application.} React's component model fits an interface of many independent, stateful parts, and it is the most used web framework, by 44.7\% of developers\cite{r136}, so libraries for drag-and-drop ordering, 3D rendering, and accessibility are mature. Running in the browser lets the shared rules package, \textit{game-core}, compute provisional scores without a round trip. React 19's optimistic-update hook shows ``saved, assessing'' the moment an answer is sent\cite{r137}. Vite's production build splits code into chunks loaded on demand\cite{r138}: the prototype's entry was about 195 KB compressed in the build of 18 September 2026, and a budget of 200 KB for the first interactive screen, about one second under the Lighthouse mobile profile\cite{r139}, is checked in continuous integration. Server-side rendering is not used: with every screen behind sign-in it brings no indexing benefit, and it would add a server that renders personal data, whereas static files hold none and can be cached on a content delivery network without affecting DC-03.
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.313\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.307\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.205\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of frontend application frameworks.} \\
+\hline
+\textbf{Criterion} & \textbf{React 19 + Vite, single-page application (selected)} & \textbf{Next.js, server rendering\cite{r169}} & \textbf{Vue 3 + Vite, single-page application\cite{r170}} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{React 19 + Vite, single-page application (selected)} & \textbf{Next.js, server rendering\cite{r169}} & \textbf{Vue 3 + Vite, single-page application\cite{r170}} \\ \hline
+\endhead
+Benefit the framework adds & $\circ$ no server rendering, which no screen needs (FR-01) & $\bullet$ server rendering and search indexing, unused behind sign-in & $\circ$ none beyond the selected option \\ \hline
+TC3 Personal data & $\bullet$ static files hold no personal data and can sit on a content delivery network & $\ominus$ a rendering server handles personal data and must also be hosted in Vietnam & $\bullet$ static files \\ \hline
+TC4 Weak devices and networks & $\bullet$ code split on demand; prototype entry about 195 KB & $\ominus$ less script, but each page waits on a server round trip & $\bullet$ small runtime \\ \hline
+TC9 Feasibility & $\bullet$ prototype screens and 3D map already in React; largest ecosystem\cite{r134} & $\ominus$ same components, but server and client boundaries throughout the code & $\circ$ every screen rewritten; React Three Fiber replaced by TresJS\cite{r171} \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: React 19 with Vite 8, as a client-rendered single-page application.} React's component model fits an interface of many independent, stateful parts, and it is the most used web framework, by 44.7\% of developers\cite{r134}, so libraries for drag-and-drop ordering, 3D rendering, and accessibility are mature. Running in the browser lets the shared rules package, \textit{game-core}, compute provisional scores without a round trip. React 19's optimistic-update hook shows ``saved, assessing'' the moment an answer is sent\cite{r135}. Vite's production build splits code into chunks loaded on demand\cite{r136}: the prototype's entry was about 195 KB compressed in the build of 18 September 2026, and a budget of 200 KB for the first interactive screen, about one second under the Lighthouse mobile profile\cite{r137}, is checked in continuous integration. Server-side rendering is not used: with every screen behind sign-in it brings no indexing benefit, and it would add a server that renders personal data, whereas static files hold none and can be cached on a content delivery network without affecting DC-03. Vue 3 rates as well on the technical criteria; the choice rests on feasibility, since moving to it would rewrite every screen and the 3D map.
 
 Occupation map. The map must convey the progression metaphor of Section 4.2.1 (FR-05, FR-07), remain operable with a keyboard and a screen reader (NFR-19), and not exclude low-end devices (NFR-13).
 
-\textbf{Decision: three.js 0.186 through @react-three/fiber 9.7, with an SVG view drawn from the same data.} @react-three/fiber writes the 3D scene as React components that share state with the rest of the interface\cite{r140}. Because a canvas exposes nothing to a screen reader and a 3D scene costs GPU work every frame\cite{r141}, an SVG view, in which each planet is a focusable, named element\cite{r142}, is the accessible equivalent. It can be chosen at any time and is used automatically when WebGL is missing or lost, when reduced motion or data saving is requested, or on low-memory devices. The 3D libraries, about 310 KB compressed, load only when the 3D view opens.
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.193\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.344\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.238\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.220\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of occupation map renderings.} \\
+\hline
+\textbf{Criterion} & \textbf{3D view with an SVG view (selected)} & \textbf{3D view only} & \textbf{2D view only, in SVG} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{3D view with an SVG view (selected)} & \textbf{3D view only} & \textbf{2D view only, in SVG} \\ \hline
+\endhead
+Progression metaphor (FR-05, FR-07) & $\bullet$ a galaxy of planets to travel between & $\bullet$ same & $\ominus$ a flat map, with a weaker sense of travel \\ \hline
+TC4 Weak devices & $\bullet$ SVG view used automatically when WebGL is missing or memory is low & $\circ$ excludes devices without WebGL; GPU work every frame\cite{r139} & $\bullet$ lightest \\ \hline
+TC5 Accessibility & $\bullet$ every planet a focusable, named element in the SVG view\cite{r140} & $\circ$ a canvas exposes nothing to a screen reader & $\bullet$ same as the selected option \\ \hline
+TC9 Feasibility & $\ominus$ two views drawn from one data model & $\bullet$ exists in the prototype & $\ominus$ a new view; 3D work discarded \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: three.js 0.186 through @react-three/fiber 9.7, with an SVG view drawn from the same data.} @react-three/fiber writes the 3D scene as React components that share state with the rest of the interface\cite{r138}. Because a canvas exposes nothing to a screen reader and a 3D scene costs GPU work every frame\cite{r139}, an SVG view, in which each planet is a focusable, named element\cite{r140}, is the accessible equivalent. It can be chosen at any time and is used automatically when WebGL is missing or lost, when reduced motion or data saving is requested, or on low-memory devices. The 3D libraries, about 310 KB compressed, load only when the 3D view opens.
 
 Styling. Styles must add little to the download (NFR-13) and let each occupation carry its own theme without code changes (NFR-10).
 
-\textbf{Decision: Tailwind CSS 4.3.} It generates CSS only for the classes used and has no runtime\cite{r143}; occupation themes are design tokens held as CSS variables and supplied by content data.
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.290\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.199\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.335\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of styling approaches.} \\
+\hline
+\textbf{Criterion} & \textbf{Tailwind CSS 4 (selected)} & \textbf{CSS Modules\cite{r172}} & \textbf{CSS-in-JS with a runtime, such as styled-components\cite{r173}} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Tailwind CSS 4 (selected)} & \textbf{CSS Modules\cite{r172}} & \textbf{CSS-in-JS with a runtime, such as styled-components\cite{r173}} \\ \hline
+\endhead
+TC4 Download & $\bullet$ only the classes used; no runtime\cite{r141} & $\bullet$ static CSS; no runtime & $\ominus$ styles generated in the browser by script \\ \hline
+TC9 Feasibility & $\bullet$ used throughout the prototype & $\ominus$ styles rewritten & $\ominus$ styles rewritten \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: Tailwind CSS 4.3.} It generates CSS only for the classes used and has no runtime\cite{r141}; occupation themes are design tokens held as CSS variables and supplied by content data. CSS Modules rate as well technically, and occupation themes as CSS variables work in either; Tailwind is kept because the prototype is already written in it.
 
 Client state. Client state must apply \textit{game-core}'s reducer directly (FR-10, FR-15) and keep unsent turns through a lost connection (NFR-03).
 
-\textbf{Decision: zustand 5.0.} A store wraps the reducer, so one dispatch updates both screen and rules state; its persistence middleware keeps unsent turns in browser storage, resent with an idempotency key on reconnection\cite{r144}. It needs no provider tree and adds little to the bundle.
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.186\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.280\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.209\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.320\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of client state libraries.} \\
+\hline
+\textbf{Criterion} & \textbf{zustand (selected)} & \textbf{Redux Toolkit\cite{r174}} & \textbf{React context with useReducer} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{zustand (selected)} & \textbf{Redux Toolkit\cite{r174}} & \textbf{React context with useReducer} \\ \hline
+\endhead
+TC2 Unsent turns kept & $\bullet$ persistence middleware\cite{r142} & $\ominus$ needs an added persistence library & $\circ$ written by hand \\ \hline
+TC1 Re-rendering & $\bullet$ components subscribe to the part they use & $\bullet$ selectors & $\ominus$ every consumer re-renders on each change \\ \hline
+TC4 Download & $\bullet$ very small & $\ominus$ larger & $\bullet$ nothing added \\ \hline
+TC9 Feasibility & $\bullet$ used in the prototype & $\ominus$ migration & $\ominus$ persistence and subscriptions written by hand \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: zustand 5.0.} A store wraps the reducer, so one dispatch updates both screen and rules state; its persistence middleware keeps unsent turns in browser storage, resent with an idempotency key on reconnection\cite{r142}. It needs no provider tree and adds little to the bundle.
 
 Routing. Routing must keep the 3D map and all staff code out of the explorer's first download (NFR-13), separate explorer and staff areas by role (FR-41), and resume a run on any device (NFR-03).
 
-\textbf{Decision: React Router 7.18.} Routes load on demand, nested layouts separate the areas by role, and route loaders fetch the state of an interrupted run from the server\cite{r145}.
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.239\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.257\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.246\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.252\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of routing approaches.} \\
+\hline
+\textbf{Criterion} & \textbf{React Router 7 (selected)} & \textbf{TanStack Router\cite{r175}} & \textbf{Screens switched by application state, without a router} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{React Router 7 (selected)} & \textbf{TanStack Router\cite{r175}} & \textbf{Screens switched by application state, without a router} \\ \hline
+\endhead
+TC4 Code loaded on demand & $\bullet$ lazy routes & $\bullet$ lazy routes & $\ominus$ split by hand \\ \hline
+Areas separated by role (FR-41) & $\bullet$ nested layouts & $\bullet$ nested layouts & $\ominus$ checks written by hand \\ \hline
+TC2 Run resumed on any device & $\bullet$ route loaders fetch the run's state\cite{r143} & $\bullet$ route loaders & $\circ$ no address for a run \\ \hline
+TC9 Feasibility & $\bullet$ used in the prototype & $\ominus$ migration, in exchange for type-checked routes & $\circ$ \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: React Router 7.18.} Routes load on demand, nested layouts separate the areas by role, and route loaders fetch the state of an interrupted run from the server\cite{r143}.
 
 Result delivery. Assessment results must reach the explorer as soon as they are ready (NFR-02, FR-14) over connections that drop (NFR-13). Only the server needs to push; the client submits answers by ordinary requests.
 
-\textbf{Decision: server-sent events.} The browser's built-in \textit{EventSource} receives pushed events over plain HTTP, through any proxy, and reconnects by itself\cite{r146}; a bidirectional WebSocket channel is not needed.
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.262\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.238\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.254\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.241\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of result delivery mechanisms.} \\
+\hline
+\textbf{Criterion} & \textbf{Server-sent events (selected)} & \textbf{WebSocket\cite{r176}} & \textbf{Polling} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Server-sent events (selected)} & \textbf{WebSocket\cite{r176}} & \textbf{Polling} \\ \hline
+\endhead
+TC1 Result shown when ready & $\bullet$ pushed & $\bullet$ pushed & $\ominus$ delayed by the polling interval \\ \hline
+TC2, TC4 Dropped connections & $\bullet$ the browser reconnects and resumes from the last event\cite{r144} & $\ominus$ reconnection and replay written by hand & $\bullet$ each request independent \\ \hline
+Proxies and load balancers & $\bullet$ plain HTTP & $\ominus$ needs support for upgrading the connection & $\bullet$ plain HTTP \\ \hline
+TC8 Load at 5,000 concurrent explorers & $\bullet$ one open stream each & $\bullet$ one connection each & $\circ$ a request every few seconds from each explorer \\ \hline
+Direction needed: server to client only & $\bullet$ exactly that & $\ominus$ a two-way channel, half unused & $\ominus$ client asks repeatedly \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: server-sent events.} The browser's built-in \textit{EventSource} receives pushed events over plain HTTP, through any proxy, and reconnects by itself\cite{r144}; a bidirectional WebSocket channel is not needed. Polling is kept only as a fallback where a stream cannot be opened (Section 5.3.1).
 
 Staff application. Staff work in review queues, lists, and statistics (FR-21 to FR-43), in dialogs, comboboxes, and grids, where hand-built interfaces most often fail accessibility (NFR-19).
 
-\textbf{Decision: the same stack, plus TanStack Query and React Aria.} TanStack Query caches and refreshes server data\cite{r147}; React Aria supplies accessible interaction primitives\cite{r148}. The staff application is a separate bundle on the same origin and sign-in screen.
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.216\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.293\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.261\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.224\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of staff interface foundations.} \\
+\hline
+\textbf{Criterion} & \textbf{React Aria, unstyled primitives (selected)\cite{r146}} & \textbf{MUI component library\cite{r177}} & \textbf{Components built by hand} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{React Aria, unstyled primitives (selected)\cite{r146}} & \textbf{MUI component library\cite{r177}} & \textbf{Components built by hand} \\ \hline
+\endhead
+TC5 Accessible dialogs, comboboxes, and grids & $\bullet$ accessible behaviour built in & $\bullet$ accessible components & $\circ$ where hand-built interfaces most often fail \\ \hline
+Fit with the Tailwind styling & $\bullet$ unstyled, styled with Tailwind & $\ominus$ its own styling system beside Tailwind & $\bullet$ \\ \hline
+TC9 Feasibility & $\ominus$ a new library with a small surface & $\ominus$ a new library with a large surface & $\circ$ the most code to write and test \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: the same stack, plus TanStack Query and React Aria.} TanStack Query caches and refreshes server data\cite{r145}; React Aria supplies accessible interaction primitives\cite{r146}. The staff application is a separate bundle on the same origin and sign-in screen. For server data, the alternative to TanStack Query is fetching by hand, which repeats loading, caching, and refresh logic on every staff screen.
 
 Localisation. Only Vietnamese is supported in this phase (NFR-08). Interface strings must be complete in every supported language, and adding English later must not require changes to the screens.
 
-\textbf{Decision: a typed message table with the standard \textit{Intl} API.} An unknown key fails compilation and a test fails a missing translation; plurals, dates, and numbers are formatted by \textit{Intl}\cite{r149}; content fields carry a locale, so a second language is added as data. Generated text is inserted as text, which React escapes, so model output cannot inject markup (NFR-17)\cite{r150}.
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.240\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.348\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.211\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.196\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of localisation approaches.} \\
+\hline
+\textbf{Criterion} & \textbf{Typed message table with the Intl API (selected)} & \textbf{i18next\cite{r178}} & \textbf{Strings written in components} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Typed message table with the Intl API (selected)} & \textbf{i18next\cite{r178}} & \textbf{Strings written in components} \\ \hline
+\endhead
+TC5 Missing strings caught & $\bullet$ an unknown key fails compilation; a test checks completeness & $\ominus$ type checking needs extra setup & $\circ$ not detectable \\ \hline
+English added later as data & $\bullet$ & $\bullet$ & $\circ$ every screen edited \\ \hline
+TC4 Download & $\bullet$ no library & $\ominus$ a library added & $\bullet$ \\ \hline
+TC9 Feasibility & $\bullet$ used in the prototype & $\ominus$ migration & $\circ$ \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: a typed message table with the standard \textit{Intl} API.} An unknown key fails compilation and a test fails a missing translation; plurals, dates, and numbers are formatted by \textit{Intl}\cite{r147}; content fields carry a locale, so a second language is added as data. Generated text is inserted as text, which React escapes, so model output cannot inject markup (NFR-17)\cite{r148}.
 
 \subsubsection{Backend}
 
@@ -1261,58 +1410,153 @@ The backend carries five kinds of work: short requests for navigation, records, 
 
 Application framework. Most backend time is spent waiting --- on models, on the database, on open result streams --- and at Stage 4 about five thousand explorers are connected at once (Section 5.3.1). The framework must also give the modular structure of Section 5.3.1 clear module boundaries, check occupation-scoped roles on every request (FR-40, FR-41), integrate a job queue and server-sent events, and score by the same rules as the browser (FR-15, BR-11).
 
-\textbf{Decision: NestJS 11.1 on Node.js, in TypeScript.} Node.js serves I/O on an event loop, so a waiting request or open stream costs memory rather than a thread. NestJS modules and dependency injection give each bounded context its own module; guards enforce occupation-scoped roles; interceptors write the activity log; and first-party integrations provide BullMQ queues and server-sent events\cite{r151}. Dependency injection also binds the model port to the provider adapter named in configuration (DC-02, NFR-12)\cite{r152}. The server imports the same \textit{game-core} package as the browser and recomputes every score from stored events. Models are called over HTTP and run nowhere in the process, so the request path needs no Python; the statistics for evaluating RP-1 and RP-2 run offline in Python scripts. Long computation, which would block an event loop, runs in worker processes.
-
-Database. Much of the data is relational, with rules that span records: a reviewer is never the author (FR-25), one active scenario per task (FR-33), exactly one content administrator per occupation (FR-40), and the replay cap (BR-11). Publication and its log must be atomic, and published content immutable (NFR-16); scenario content is nested documents (NFR-10, NFR-15); statistics are shown only above a population threshold (NFR-06, FR-19, FR-39); and the store must be hostable in Vietnam (DC-03).
-
-\textbf{Decision: PostgreSQL, accessed through Prisma ORM 7.10.} Foreign keys, check constraints, partial unique indexes, and transactions enforce the cross-record rules in the database itself --- ``one active scenario per task'' is a single partial index\cite{r153}. A transition and its log entry share one transaction, and a trigger refuses updates to published releases. Content is stored in \textit{jsonb} columns\cite{r154}, validated by \textit{game-core}'s schemas on write and read. Thresholded statistics are SQL grouping, window functions, and materialised views. PostgreSQL is open source, offered by every cloud provider, and the most used database, at 55.6\%\cite{r136}. Prisma generates a typed client from the schema and, from version 7, runs over the standard \textit{pg} driver\cite{r155}; partial indexes, checks, and triggers, which Prisma does not express, live in SQL migrations and are tested against the database.
-
-Job queue and messaging. Model work must survive failures, be retried, and be listed for re-run when it fails (NFR-04, FR-43); it must respect each provider's rate limits and serve live play first --- narration and follow-ups for an explorer in a scenario before background scoring, and both before authoring work (NFR-01, NFR-11); results must reach the API replica holding the explorer's stream (NFR-02); and each session's model cost must be counted atomically (NFR-11).
-
-\textbf{Decision: Redis with BullMQ 6.3.} BullMQ provides persisted jobs, retries with exponential backoff, job priorities, per-queue rate limiting, and a set of failed jobs for re-run\cite{r156}; Redis's publish--subscribe carries results to every API replica, and its atomic counters meter the session budget. Redis holds nothing that cannot be rebuilt from PostgreSQL, and a scheduled reconciliation re-queues any stored answer without a result, so losing Redis loses no answer.
-
-Authentication. The platform must register, sign in, recover, and delete accounts (FR-01, FR-02); hash passwords, protect sessions, and end idle ones (NFR-17); scope roles to occupations (FR-41); and keep identity data in Vietnam (DC-03).
-
-\textbf{Decision: the platform's own module --- argon2id, JWT access and refresh tokens in httpOnly cookies, and optional Google sign-in.} Passwords are hashed with argon2id\cite{r157}; a fifteen-minute access token and a rotating refresh token with reuse detection\cite{r158} live in httpOnly, SameSite cookies that scripts cannot read; Google ID tokens are verified with google-auth-library. Accounts stay in the platform's database in Vietnam, which an external identity service would hold abroad, and occupation-scoped authorisation must live in the application whichever service is used. The module is completed against ASVS 5.0 level 2\cite{r159}: single-use, short-lived reset tokens; an inactivity limit; account status checked on every refresh and staff request; rate limiting of sign-in; and a second factor for staff.
-
-Validation and code organisation. Every input and every model output must be checked against a schema (NFR-17, FR-11), and one copy of the rules and contracts must serve both applications, the API, and the worker (FR-15).
-
-\textbf{Decision: Zod 4.6 schemas in an Nx 23.1 monorepo.} Zod schemas, shared by API, clients, and the rule checks, validate requests, content documents, and model output --- scores within rubric anchors, quotations verbatim. Nx keeps \textit{game-core} and the schemas in one repository, enforces module boundaries so staff code never enters the explorer's bundle (NFR-13), and builds and tests only what a change affects\cite{r160}.
-
-Packaging and hosting. Personal data must be stored in Vietnam (DC-03, NFR-05) --- Decree 53/2022 further requires domestic online-service enterprises to store users' data in Vietnam, applicability to be confirmed (Section 4.1.4)\cite{r161,r162} --- and the platform must stay available (NFR-18) while growing from a university pilot to a national service.
-
-\textbf{Decision: Docker containers, hosted in Vietnam.} One image runs as API or worker, with rolling deployment and health checks, and the platform depends only on portable services --- PostgreSQL, Redis, and S3-compatible storage --- so moving host is a change of configuration. The system of record runs on university infrastructure for the Stage 1 pilot and on a cloud provider in Vietnam from Stage 2\cite{r163}; an international region such as Singapore would make every account a cross-border transfer\cite{r99}. Only de-identified text leaves the country, through the model gateway. International providers adding capacity in Vietnam, such as the AWS Hanoi Local Zone, whose control plane remains in Singapore\cite{r164}, are reassessed with the legal office before Stage 2.
-
-Summary. The table summarises the selected stack and the requirements each choice serves.
-
 {\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.204\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.256\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.534\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
-\caption{Selected technology stack.} \\
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.213\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.287\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.289\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.207\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of backend frameworks.} \\
 \hline
-\textbf{Component} & \textbf{Technology} & \textbf{Requirements served} \\ \hline
+\textbf{Criterion} & \textbf{NestJS 11 on Node.js (selected)} & \textbf{Spring Boot, Java\cite{r179}} & \textbf{FastAPI, Python\cite{r181}} \\ \hline
 \endfirsthead
 \hline
-\textbf{Component} & \textbf{Technology} & \textbf{Requirements served} \\ \hline
+\textbf{Criterion} & \textbf{NestJS 11 on Node.js (selected)} & \textbf{Spring Boot, Java\cite{r179}} & \textbf{FastAPI, Python\cite{r181}} \\ \hline
 \endhead
-Frontend framework & React 19 + Vite 8, single-page application & Game interface (FR-05, FR-07, FR-10); rules in the browser (FR-15); light first load (NFR-13); no indexing needed (FR-01) \\ \hline
-Occupation map & three.js + @react-three/fiber, with an SVG view & Galaxy Map (FR-05, FR-07); accessibility (NFR-19); low-end devices (NFR-13) \\ \hline
-Styling, state, routing & Tailwind CSS 4, zustand 5, React Router 7 & No style runtime, unsent turns kept, routes on demand (NFR-13, NFR-03, FR-41) \\ \hline
-Result delivery & Server-sent events & Results pushed when ready (NFR-02, FR-14); automatic reconnection (NFR-13) \\ \hline
-Staff application & TanStack Query, React Aria & Queues and statistics (FR-21 to FR-43); accessibility (NFR-19) \\ \hline
-Backend framework & NestJS 11 on Node.js & Waiting without blocking (NFR-01, NFR-02); modules and role guards (FR-41); queue and SSE integration \\ \hline
-Database & PostgreSQL + Prisma 7 & Cross-record rules (FR-25, FR-33, FR-40); atomic, immutable publication (NFR-16); thresholded statistics (NFR-06) \\ \hline
-Job queue, messaging & Redis + BullMQ & Durable, retried, prioritised, rate-limited model work (NFR-04, NFR-11, FR-43) \\ \hline
-Authentication & argon2id, JWT in httpOnly cookies, Google sign-in & NFR-17, FR-01, FR-41; identity data in Vietnam (DC-03) \\ \hline
-Validation, code organisation & Zod 4, Nx monorepo & One copy of rules and schemas (FR-15, NFR-17) \\ \hline
-Packaging, hosting & Docker, host in Vietnam & DC-03, NFR-05; portable scaling and availability (NFR-18) \\ \hline
+TC1 Waiting on models and open streams & $\bullet$ event loop; a waiting request costs memory, not a thread & $\ominus$ a thread per request by default; virtual threads\cite{r180} or a reactive stack for thousands of streams & $\bullet$ asynchronous by design \\ \hline
+TC6 Same rules as the browser & $\bullet$ imports game-core & $\circ$ rules rewritten in Java; two copies to keep equal & $\circ$ rules rewritten in Python \\ \hline
+Modules, role guards, queue and stream integration & $\bullet$ first-party\cite{r149} & $\bullet$ mature equivalents & $\ominus$ assembled from separate libraries \\ \hline
+Access to AI libraries & $\ominus$ provider SDKs in TypeScript; statistics offline in Python & $\ominus$ fewer AI libraries & $\bullet$ the Python ecosystem \\ \hline
+TC9 Feasibility & $\bullet$ the prototype API is NestJS; the team writes TypeScript & $\ominus$ a new language and framework & $\ominus$ a new language for the API \\ \hline
 \end{longtable}
 }
 
+\textbf{Decision: NestJS 11.1 on Node.js, in TypeScript.} Node.js serves I/O on an event loop, so a waiting request or open stream costs memory rather than a thread. NestJS modules and dependency injection give each bounded context its own module; guards enforce occupation-scoped roles; interceptors write the activity log; and first-party integrations provide BullMQ queues and server-sent events\cite{r149}. Dependency injection also binds the model port to the provider adapter named in configuration (DC-02, NFR-12)\cite{r150}. The server imports the same \textit{game-core} package as the browser and recomputes every score from stored events. Models are called over HTTP and run nowhere in the process, so the request path needs no Python; the statistics for evaluating RP-1 and RP-2 run offline in Python scripts. Long computation, which would block an event loop, runs in worker processes. FastAPI's advantage, the Python AI ecosystem, is not needed on the request path, because models are called over HTTP; it would cost a second copy of the game rules.
+
+Database. Much of the data is relational, with rules that span records: a reviewer is never the author (FR-25), one active scenario per task (FR-33), exactly one content administrator per occupation (FR-40), and the replay cap (BR-11). Publication and its log must be atomic, and published content immutable (NFR-16); scenario content is nested documents (NFR-10, NFR-15); statistics are shown only above a population threshold (NFR-06, FR-19, FR-39); and the store must be hostable in Vietnam (DC-03).
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.265\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.244\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.204\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.283\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of databases.} \\
+\hline
+\textbf{Criterion} & \textbf{PostgreSQL with Prisma (selected)} & \textbf{MongoDB\cite{r182}} & \textbf{MySQL 8\cite{r183}} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{PostgreSQL with Prisma (selected)} & \textbf{MongoDB\cite{r182}} & \textbf{MySQL 8\cite{r183}} \\ \hline
+\endhead
+Rules across records enforced by the database (FR-25, FR-33, FR-40) & $\bullet$ foreign keys, checks, partial unique indexes\cite{r151} & $\ominus$ no foreign keys; rules kept in application code & $\ominus$ foreign keys and checks; no partial indexes, functional indexes as a workaround \\ \hline
+Publication and its log in one transaction (NFR-16) & $\bullet$ transactions & $\bullet$ multi-document transactions\cite{r182} & $\bullet$ transactions \\ \hline
+Nested scenario content (NFR-10, NFR-15) & $\bullet$ indexable jsonb\cite{r152} & $\bullet$ native documents & $\ominus$ JSON type, indexed through functional indexes \\ \hline
+Statistics above a threshold (NFR-06) & $\bullet$ window functions and materialised views & $\ominus$ aggregation pipeline & $\ominus$ window functions; no materialised views \\ \hline
+TC9 Feasibility & $\bullet$ the prototype schema, 19 tables & $\circ$ data re-modelled & $\ominus$ supported by Prisma; migrations rewritten \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: PostgreSQL, accessed through Prisma ORM 7.10.} Foreign keys, check constraints, partial unique indexes, and transactions enforce the cross-record rules in the database itself --- ``one active scenario per task'' is a single partial index\cite{r151}. A transition and its log entry share one transaction, and a trigger refuses updates to published releases. Content is stored in \textit{jsonb} columns\cite{r152}, validated by \textit{game-core}'s schemas on write and read. Thresholded statistics are SQL grouping, window functions, and materialised views. PostgreSQL is open source, offered by every cloud provider, and the most used database, at 55.6\%\cite{r134}. Prisma generates a typed client from the schema and, from version 7, runs over the standard \textit{pg} driver\cite{r153}; partial indexes, checks, and triggers, which Prisma does not express, live in SQL migrations and are tested against the database.
+
+Job queue and messaging. Model work must survive failures, be retried, and be listed for re-run when it fails (NFR-04, FR-43); it must respect each provider's rate limits and serve live play first --- narration and follow-ups for an explorer in a scenario before background scoring, and both before authoring work (NFR-01, NFR-11); results must reach the API replica holding the explorer's stream (NFR-02); and each session's model cost must be counted atomically (NFR-11).
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.273\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.248\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.224\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.250\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of job queues.} \\
+\hline
+\textbf{Criterion} & \textbf{Redis with BullMQ (selected)} & \textbf{RabbitMQ\cite{r184}} & \textbf{pg-boss on PostgreSQL\cite{r185}} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Redis with BullMQ (selected)} & \textbf{RabbitMQ\cite{r184}} & \textbf{pg-boss on PostgreSQL\cite{r185}} \\ \hline
+\endhead
+Retries with backoff, priorities, failed jobs listed (NFR-04, FR-43) & $\bullet$ built in\cite{r154} & $\ominus$ priorities and dead-letter queues built in; delayed retries configured by hand & $\bullet$ retries with backoff, priority and dead-letter queues \\ \hline
+Rate limits per provider (NFR-11) & $\bullet$ per-queue limiter & $\ominus$ written by hand & $\bullet$ queue policies \\ \hline
+Results to every API replica (NFR-02) & $\bullet$ publish--subscribe & $\bullet$ exchanges & $\ominus$ publish--subscribe through the database \\ \hline
+Atomic cost counter per session (NFR-11) & $\bullet$ atomic counters & $\circ$ needs a separate store & $\bullet$ transactional update \\ \hline
+Load on the system of record at Stage 4 & $\bullet$ none; Redis holds nothing that cannot be rebuilt & $\bullet$ none & $\ominus$ about one hundred jobs per second written to PostgreSQL \\ \hline
+TC8 Services to operate & $\ominus$ one more service & $\ominus$ one more service, plus a store for counters & $\bullet$ none added \\ \hline
+TC9 Feasibility & $\bullet$ first-party NestJS integration\cite{r149}; declared in the prototype & $\ominus$ new & $\ominus$ new \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: Redis with BullMQ 6.3.} BullMQ provides persisted jobs, retries with exponential backoff, job priorities, per-queue rate limiting, and a set of failed jobs for re-run\cite{r154}; Redis's publish--subscribe carries results to every API replica, and its atomic counters meter the session budget. Redis holds nothing that cannot be rebuilt from PostgreSQL, and a scheduled reconciliation re-queues any stored answer without a result, so losing Redis loses no answer. pg-boss is the closest alternative and would avoid running Redis during the pilots; BullMQ is chosen to keep queue traffic off the system of record at national scale and for its first-party NestJS integration.
+
+Authentication. The platform must register, sign in, recover, and delete accounts (FR-01, FR-02); hash passwords, protect sessions, and end idle ones (NFR-17); scope roles to occupations (FR-41); and keep identity data in Vietnam (DC-03).
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.182\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.326\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.280\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.208\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of authentication solutions.} \\
+\hline
+\textbf{Criterion} & \textbf{The platform's own module (selected)} & \textbf{Keycloak, self-hosted\cite{r186}} & \textbf{Managed service, such as Firebase Authentication\cite{r187}} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{The platform's own module (selected)} & \textbf{Keycloak, self-hosted\cite{r186}} & \textbf{Managed service, such as Firebase Authentication\cite{r187}} \\ \hline
+\endhead
+TC3 Identity data in Vietnam & $\bullet$ in the platform's database in Vietnam & $\bullet$ hosted in Vietnam & $\circ$ held by the provider abroad \\ \hline
+Roles scoped to occupations (FR-41) & $\bullet$ in the application & $\ominus$ roles in Keycloak; occupation scope still checked in the application & $\ominus$ same \\ \hline
+Security baseline (NFR-17) & $\ominus$ to be completed to ASVS level 2\cite{r157}: reset, idle expiry, second factor for staff & $\bullet$ reset, sessions, second factor built in & $\bullet$ built in \\ \hline
+TC8 Operation & $\bullet$ no extra service & $\circ$ a separate identity server to run, upgrade, and secure & $\ominus$ no server; one vendor for every account \\ \hline
+TC9 Feasibility & $\bullet$ registration, Google sign-in, rotating refresh tokens exist in the prototype & $\ominus$ migration & $\ominus$ migration \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: the platform's own module --- argon2id, JWT access and refresh tokens in httpOnly cookies, and optional Google sign-in.} Passwords are hashed with argon2id\cite{r155}; a fifteen-minute access token and a rotating refresh token with reuse detection\cite{r156} live in httpOnly, SameSite cookies that scripts cannot read; Google ID tokens are verified with google-auth-library. Accounts stay in the platform's database in Vietnam, which an external identity service would hold abroad, and occupation-scoped authorisation must live in the application whichever service is used. The module is completed against ASVS 5.0 level 2\cite{r157}: single-use, short-lived reset tokens; an inactivity limit; account status checked on every refresh and staff request; rate limiting of sign-in; and a second factor for staff. The remaining risk is the security work that Keycloak would supply ready-made, which is why the module is held to ASVS level 2 and tested against it.
+
+Validation and code organisation. Every input and every model output must be checked against a schema (NFR-17, FR-11), and one copy of the rules and contracts must serve both applications, the API, and the worker (FR-15).
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.260\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.346\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.223\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.166\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of validation libraries.} \\
+\hline
+\textbf{Criterion} & \textbf{Zod 4 (selected)} & \textbf{class-validator\cite{r188}} & \textbf{JSON Schema with Ajv\cite{r189}} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Zod 4 (selected)} & \textbf{class-validator\cite{r188}} & \textbf{JSON Schema with Ajv\cite{r189}} \\ \hline
+\endhead
+TC6 One schema for browser, API, and worker & $\bullet$ plain TypeScript that runs anywhere & $\ominus$ decorated classes, suited to the server & $\bullet$ language-neutral \\ \hline
+Schemas for model output (FR-11) & $\bullet$ exported as JSON Schema for providers' structured output\cite{r190} & $\ominus$ needs another library to export & $\bullet$ native \\ \hline
+Types in the code & $\bullet$ inferred from the schema & $\ominus$ classes double as types & $\ominus$ types generated separately \\ \hline
+Read by the offline Python harness & $\bullet$ through the JSON Schema export & $\circ$ & $\bullet$ \\ \hline
+TC9 Feasibility & $\bullet$ the prototype validates game data with Zod & $\ominus$ & $\ominus$ \\ \hline
+\end{longtable}
+}
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.286\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.253\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.277\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.179\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of code organisation.} \\
+\hline
+\textbf{Criterion} & \textbf{Nx monorepo (selected)} & \textbf{Separate repositories, shared package published} & \textbf{pnpm workspaces alone} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Nx monorepo (selected)} & \textbf{Separate repositories, shared package published} & \textbf{pnpm workspaces alone} \\ \hline
+\endhead
+TC6 One copy of game-core and the schemas & $\bullet$ & $\ominus$ versions published and kept in step & $\bullet$ \\ \hline
+TC4 Staff code kept out of the explorer's download & $\bullet$ module-boundary rules enforced\cite{r158} & $\bullet$ separated by construction & $\ominus$ not enforced \\ \hline
+Only what changed is built and tested & $\bullet$ affected tasks and caching\cite{r158} & $\ominus$ per repository & $\ominus$ by hand \\ \hline
+TC9 Feasibility & $\bullet$ the prototype is an Nx workspace & $\circ$ repository split & $\ominus$ Nx already runs on pnpm workspaces \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: Zod 4.6 schemas in an Nx 23.1 monorepo.} Zod schemas, shared by API, clients, and the rule checks, validate requests, content documents, and model output --- scores within rubric anchors, quotations verbatim. Nx keeps \textit{game-core} and the schemas in one repository, enforces module boundaries so staff code never enters the explorer's bundle (NFR-13), and builds and tests only what a change affects\cite{r158}.
+
+Packaging and hosting. Personal data must be stored in Vietnam (DC-03, NFR-05) --- Decree 53/2022 further requires domestic online-service enterprises to store users' data in Vietnam, applicability to be confirmed (Section 4.1.4)\cite{r159,r160} --- and the platform must stay available (NFR-18) while growing from a university pilot to a national service.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.167\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.293\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.197\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.338\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of hosting options.} \\
+\hline
+\textbf{Criterion} & \textbf{Containers hosted in Vietnam (selected)} & \textbf{Cloud region abroad, such as Singapore} & \textbf{Serverless functions} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Containers hosted in Vietnam (selected)} & \textbf{Cloud region abroad, such as Singapore} & \textbf{Serverless functions} \\ \hline
+\endhead
+TC3 Data in Vietnam & $\bullet$ system of record in Vietnam; only de-identified text leaves & $\circ$ every account becomes a cross-border transfer\cite{r99} & $\ominus$ only where the platform has a region in Vietnam \\ \hline
+TC1 Request path & $\bullet$ long-running processes & $\bullet$ long-running processes & $\ominus$ cold starts on the request path (Section 5.3.1) \\ \hline
+Open streams and queue workers & $\bullet$ & $\bullet$ & $\circ$ short-lived functions; streams and workers need other services \\ \hline
+TC8 Operation & $\ominus$ the team runs containers; a university server at Stage 1 & $\ominus$ same & $\bullet$ scaling managed by the platform \\ \hline
+Moving host & $\bullet$ portable services only & $\bullet$ & $\circ$ tied to one platform's interfaces \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: Docker containers, hosted in Vietnam.} One image runs as API or worker, with rolling deployment and health checks, and the platform depends only on portable services --- PostgreSQL, Redis, and S3-compatible storage --- so moving host is a change of configuration. The system of record runs on university infrastructure for the Stage 1 pilot and on a cloud provider in Vietnam from Stage 2\cite{r161}; an international region such as Singapore would make every account a cross-border transfer\cite{r99}. Only de-identified text leaves the country, through the model gateway. International providers adding capacity in Vietnam, such as the AWS Hanoi Local Zone, whose control plane remains in Singapore\cite{r162}, are reassessed with the legal office before Stage 2.
+
 \subsubsection{AI algorithms, technologies, and models}
 
-This subsection records the AI design as presented to the advisor in week 41. It is a design and a literature review: no measurement has been run yet, and the first test is planned for the following week. Several parts of Chapter 4 predate this design and are to be aligned with it in the next revision.
+The project does not design, train, or fine-tune a model. It composes existing language models, under rules and expert oversight, so that the problem of Section 4.2.2 is solved: occupational scenarios that stay faithful to expert content (RP-1) and free-text answers scored in agreement with experts (RP-2). The choices that shape that composition are compared here; how the selected parts work together is designed in Section 5.3.6, and how well they work is evaluated in Section 7.3.
 
-The five places where AI works. AI is used at five steps, three while content is authored and two during play. AI drafts, connects, scores, and filters; domain experts decide occupational content, scoring keys, and publication.
+Where AI works. AI is used at five steps, three while content is authored and two during play. AI drafts, connects, scores, and filters; domain experts decide occupational content, scoring keys, and publication; deterministic rules, not models, check what models produce while an explorer is waiting.
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.092\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.471\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.432\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
@@ -1331,45 +1575,236 @@ AI-5 & Grades each answer against the rubric & The expert reviews flagged cases 
 \end{longtable}
 }
 
-AI-1, interviewing the domain expert. A language model asks and probes to collect what a seed needs: incidents, what a good and a poor response look like, and the facts of the situation. Each expert is interviewed separately, and the merged content marks where experts agree and where they differ. The interview is constrained by a human-written topic guide based on the critical incident technique\cite{r26} and on development practice for situational judgment tests\cite{r27}; the model probes inside each topic only. A tracker lists the seed fields still missing, the expert is shown a summary and confirms it, and every turn is stored verbatim so that each seed field links to the turn it came from. That a language model can hold an interview to a guide is supported by 766 AI-led interviews in which 94.8\% to 99.8\% of questions were open-ended, 95.7\% to 99.6\% neutral, and 0.1\% to 0.4\% hallucinated\cite{r115}.
+AI-1, interviewing the domain expert. A language model asks and probes to collect what a seed needs: incidents, what a good and a poor response look like, and the facts of the situation. Each expert is interviewed separately, and the merged content marks where experts agree and where they differ. The interview is constrained by a human-written topic guide based on the critical incident technique\cite{r26} and on development practice for situational judgment tests\cite{r27}; the model probes inside each topic only. A tracker lists the seed fields still missing, the expert is shown a summary and confirms it, and every turn is stored verbatim so that each seed field links to the turn it came from. That a language model can hold an interview to a guide is supported by 766 AI-led interviews in which 94.8\% to 99.8\% of questions were open-ended, 95.7\% to 99.6\% neutral, and 0.1\% to 0.4\% hallucinated\cite{r114}.
 
-AI-2, drafting the game seed. The model helps the content administrator turn the experts' answers into a structured seed: context, characters, situations, canon events, and the scoring frame. Drafts are written from the expert's own words, the domain expert sets every scoring key and every rubric anchor, and a seed passes automatic structure checks and then the expert's approval before any player sees it. Experts own keys and rubrics because, when GPT-4 drafted 210 examination questions, specialists required revision of 15\% and judged 0.5\% false\cite{r116}. The seed follows evidence-centered design: what is measured, which behaviour is evidence for it, and which situation elicits that behaviour\cite{r20,r117}. This is the first of four checkpoints for generated content: structure is checked by machine and content is approved by the expert.
+AI-2, drafting the game seed. The model helps the content administrator turn the experts' answers into a structured seed: context, characters, situations, canon events, and the scoring frame. Drafts are written from the expert's own words, the domain expert sets every scoring key and every rubric anchor, and a seed passes automatic structure checks and then the expert's approval before any player sees it. Experts own keys and rubrics because, when GPT-4 drafted 210 examination questions, specialists required revision of 15\% and judged 0.5\% false\cite{r115}. The seed follows evidence-centered design: what is measured, which behaviour is evidence for it, and which situation elicits that behaviour\cite{r20,r116}. This is the first of four checkpoints for generated content: structure is checked by machine and content is approved by the expert.
 
-AI-3, helping the expert test before publishing. A volunteer expert with about seven hours cannot read every free-text answer. AI-3 runs AI-4 and AI-5 on test playthroughs, from experts, testers, and simulated answers, and ranks the cases that need the expert: cases where the three judges differ by more than one level, generated turns that broke a run-time rule, and a blind random sample of cases that were not flagged. The expert decides, and can refine a rubric anchor during review, so rubrics are versioned. The random sample is required because confidence signals from a language-model grader separate right from wrong grades only weakly, with an area under the curve of 0.57 to 0.64\cite{r118}, so flagged cases alone can hide errors; if n audited cases show no error, the error rate is at most about 3/n at 95\% confidence\cite{r119}. Simulated players find relative problems only: persona-prompted models answered with near-perfect, uniform accuracy, unlike 2,359 real students\cite{r120}, so real test plays are needed as well. The run-time checks of AI-4 are to be tested on scripted player turns in four classes (on-script, off-script, adversarial, and rubric-fishing), reporting the violation rate per class; this test set is not yet built. This is the second checkpoint, and the expert-scored test plays are also the validation data for the judge. In the present phase there are no experts or real players: the team stands in for both and the advisor checks a sample, so results show that the machinery works, not agreement with experts.
+AI-3, helping the expert test before publishing. A volunteer expert with about seven hours cannot read every free-text answer. AI-3 runs AI-4 and AI-5 on test playthroughs, from experts, testers, and simulated answers, and ranks the cases that need the expert: cases where the three judges differ by more than one level, generated turns that broke a run-time rule, and a blind random sample of cases that were not flagged. The expert decides, and can refine a rubric anchor during review, so rubrics are versioned. The random sample is required because confidence signals from a language-model grader separate right from wrong grades only weakly, with an area under the curve of 0.57 to 0.64\cite{r117}, so flagged cases alone can hide errors; if n audited cases show no error, the error rate is at most about 3/n at 95\% confidence\cite{r118}. Simulated players find relative problems only: persona-prompted models answered with near-perfect, uniform accuracy, unlike 2,359 real students\cite{r119}, so real test plays are needed as well. The run-time checks of AI-4 are to be tested on scripted player turns in four classes (on-script, off-script, adversarial, and rubric-fishing), reporting the violation rate per class; this test set is not yet built. This is the second checkpoint, and the expert-scored test plays are also the validation data for the judge. In the present phase there are no experts or real players: the team stands in for both and the advisor checks a sample, so results show that the machinery works, not agreement with experts.
 
-AI-4, narrating during play. The game engine, not the model, controls the order of canon events. Canon content is shown verbatim from the seed; a situation may have several approved canon variants chosen at random, and the log records which variant was served. The model writes only the connecting narration, the follow-up questions that fit the player's free-text answer, and a hidden feedback note after each activity. A follow-up is decided only after the answer it follows has been graded (AI-5); a follow-up that fails the run-time checks is replaced by the expert's default follow-up, and a feedback note that fails them is redrafted, since feedback has no expert default. The whole seed is placed in the prompt, without retrieval or fine-tuning, and the rubric and scoring keys are not in the prompt. Run-time checks are rules, not another model call, so checking adds no waiting time: numbers and names must come from the seed or from the player's own text, and the engine counts follow-ups. A model from a different family reviews the logs afterwards. Holding authored structure outside free generation is the established approach in interactive narrative\cite{r121}, and when the source fits in the prompt, long-context prompting outperformed retrieval on average\cite{r122}. These are the third checkpoint (rules at run time) and the fourth (log review afterwards).
+AI-4, narrating during play. The game engine, not the model, controls the order of canon events. Canon content is shown verbatim from the seed; a situation may have several approved canon variants chosen at random, and the log records which variant was served. The model writes only the connecting narration, the follow-up questions that fit the player's free-text answer, and a hidden feedback note after each activity. A follow-up is decided only after the answer it follows has been graded (AI-5); a follow-up that fails the run-time checks is replaced by the expert's default follow-up, and a feedback note that fails them is redrafted, since feedback has no expert default. The whole seed is placed in the prompt, without retrieval or fine-tuning, and the rubric and scoring keys are not in the prompt. Run-time checks are rules, not another model call, so checking adds no waiting time: numbers and names must come from the seed or from the player's own text, and the engine counts follow-ups. A model from a different family reviews the logs afterwards. Holding authored structure outside free generation is the established approach in interactive narrative\cite{r120}, and when the source fits in the prompt, long-context prompting outperformed retrieval on average\cite{r121}. These are the third checkpoint (rules at run time) and the fourth (log review afterwards).
 
-AI-5, grading each answer. The scoring model is separate from the narrating model (DC-01). There is no reference answer: answers are free text, and the judge scores each rubric criterion by how far the answer meets the behaviour described for each level. Each judge is called once per answer, follow-up answers included, with at most three criteria in a call; the call is made as soon as the answer is submitted, and the follow-up is decided only once the grade is known (FR-11, FR-12). For each criterion the judge returns a verbatim quote from the player, then the rationale, then the level, and the quote must be a substring of what the player typed. A panel of three judges from three model families grades each answer and the median is the score; cases where judges differ by more than one level go to the expert through AI-3, and if a judge is unavailable, the system switches to the other tier of the same family, so that the panel keeps three families (DC-01); if neither tier is available, the system reports an error and keeps the answers (NFR-04). One call for all criteria was not chosen because batching several rubric checks into one call trades accuracy for cost, with a large loss when the evidence is spread over a long trajectory\cite{r123}. A panel was chosen because a five-judge vote matched the best single judge, with a Pearson correlation with humans of 0.627 against 0.623\cite{r124}, so a panel reaches the best judge's level without knowing in advance which judge that is. The design does not claim that a panel is more accurate than a single judge.
+AI-5, grading each answer. The scoring model is separate from the narrating model (DC-01). There is no reference answer: answers are free text, and the judge scores each rubric criterion by how far the answer meets the behaviour described for each level. Each judge is called once per answer, follow-up answers included, with at most three criteria in a call; the call is made as soon as the answer is submitted, and the follow-up is decided only once the grade is known (FR-11, FR-12). For each criterion the judge returns a verbatim quote from the player, then the rationale, then the level, and the quote must be a substring of what the player typed. A panel of three judges from three model families grades each answer and the median is the score; cases where judges differ by more than one level go to the expert through AI-3, and if a judge is unavailable, the system switches to the other tier of the same family, so that the panel keeps three families (DC-01); if neither tier is available, the system reports an error and keeps the answers (NFR-04). One call for all criteria was not chosen because batching several rubric checks into one call trades accuracy for cost, with a large loss when the evidence is spread over a long trajectory\cite{r122}. A panel was chosen because a five-judge vote matched the best single judge, with a Pearson correlation with humans of 0.627 against 0.623\cite{r123}, so a panel reaches the best judge's level without knowing in advance which judge that is. The design does not claim that a panel is more accurate than a single judge.
 
-Strength of the judge relative to the generator. The judge does not need to be stronger than the generator, because it scores text written by a person, not the generator's output. It does need enough capacity: small models aligned poorly with human raters (intraclass correlation below 0.20) and larger models moderately (0.41 to 0.57), against 0.45 between the two human raters\cite{r125}. It need not be a reasoning model: two reasoning models had lower validity than a smaller standard model in essay scoring\cite{r126}. Each judge family is therefore to be tested at two tiers, and the cheapest tier that is not clearly worse is chosen.
-
-Reliability of a language-model judge. Published evidence supports a conditional answer, not reliability by default. On a standard essay dataset, mean quadratic weighted kappa was 0.313 for ChatGPT and 0.297 for Llama against 0.817 for the best supervised system\cite{r127}. Agreement nears human level with a strong model, an explicit rubric, and scored examples (Section 2.5)\cite{r101,r102,r103,r104,r105}; the present phase has the first two, and examples come later from expert rulings. Automated scorers handle fully correct and fully incorrect answers well and are much worse on partially correct ones, while human agreement stays constant\cite{r128}. A judge is only as good as its knowledge of the work: without a reference answer, judges agreed with experts only on questions they could answer themselves\cite{r129}, and judging ability tracks problem-solving ability\cite{r60}; since there is no reference answer here, the judge must know IT work and the rubric must carry domain knowledge. Judges favour their own generations\cite{r130}, hence a judge family other than the generator's. This evidence comes from another setting, English essays and short answers scored by earlier generations of models; none concerns Vietnamese or role-play. Reliability must therefore be measured on the project's own task (RP-2) against the criteria of Williamson, Xi and Breyer\cite{r71}: quadratic weighted kappa of at least 0.70, a standardised mean difference of at most 0.15, and agreement at most 0.10 below that between experts.
-
-Framework for the judge. The offline test harness is Inspect AI, an open-source framework maintained by the UK AI Security Institute\cite{r131}. It provides repeated runs, several grader models in one run, a median reducer, and an ordinal Krippendorff's alpha; the project's rubric needs a custom scorer. In the product, the judge is the project's own TypeScript module with schema-validated output, and prompts and rubrics are kept in data files shared by both. These tools have no peer-reviewed papers; the cited science is in the method, rubric-based scoring with reasoning before the score\cite{r58} and panels of judges\cite{r74}.
-
-AI-native character and provider failure. The definition adopted is that a system is AI-native when AI is constitutive of its core loop, so that removing the AI makes the central activity collapse or change fundamentally\cite{r132}, and when AI is part of design, operation, and maintenance, not an added component\cite{r133}. In JobQuest, AI works at all five steps: without it the system cannot fit the narration to a free-text answer and cannot score that answer, and there is no substitute path, neither keyword scoring nor a scripted replacement. When a model fails, the system switches to another available model in the same role that meets the same constraints (DC-01): another narrator model for AI-4, and the other tier of the same family for a judge in AI-5. Switching to another model is still AI, not a path without AI (DC-02). If no model is available for a role, generation and scoring, the core, stop and the system reports an error: the session pauses, answers and progress are saved (NFR-04), and play resumes once a model is available again; pages that do not use AI, such as sign-in, the occupation map, and the profile, stay available. Several providers are used so that an outage at one provider does not take every AI function down at once.
-
-Model families and candidates. Four model families are needed: one for generation and three for the judge panel. Judges differ from the generator (DC-01) and from each other. The criteria are Vietnamese capability, knowledge of IT work, response time, price, schema-constrained output, and data terms. The table below lists the candidates to be tested, with Vietnamese scores from the SEA-HELM leaderboard of 18 September 2026\cite{r134} and list prices read on 8 and 9 October 2026\cite{r135}. Where a candidate is not on the leaderboard, the score shown is that of the closest listed model, under that model's name.
+Holding generation to expert content. The narrator (AI-4) must not invent occupational facts (RP-1, NFR-15), must change when an expert revises a seed (BR-14), and must not tie the platform to one provider (TC7).
 
 {\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.460\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.387\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
-\caption{Candidate models to be tested, with list prices and Vietnamese benchmark scores.} \\
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.199\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.314\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.200\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.281\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of ways to hold generation to expert content.} \\
 \hline
-\textbf{Role} & \textbf{Candidates (USD per million tokens, input / output)} & \textbf{SEA-HELM Vietnamese} \\ \hline
+\textbf{Criterion} & \textbf{Whole seed in the prompt, structured output, rule checks (selected)} & \textbf{Retrieval over the expert material} & \textbf{Fine-tuning a model on expert scenarios} \\ \hline
 \endfirsthead
 \hline
-\textbf{Role} & \textbf{Candidates (USD per million tokens, input / output)} & \textbf{SEA-HELM Vietnamese} \\ \hline
+\textbf{Criterion} & \textbf{Whole seed in the prompt, structured output, rule checks (selected)} & \textbf{Retrieval over the expert material} & \textbf{Fine-tuning a model on expert scenarios} \\ \hline
 \endhead
-Judge, Anthropic & claude-sonnet-5-5 (2 / 10); claude-haiku-5-5 (0.10 / 0.50) & Sonnet 5: 77.0; Haiku 4.5: 67.7 (earlier models) \\ \hline
-Judge, OpenAI & gpt-6.1-sol (2 / 10); gpt-6-luna (0.10 / 0.50) & GPT 5.6 Sol: 77.1; GPT 5.6 Luna: 71.9 (earlier models) \\ \hline
-Judge, Google & gemini-3.8-flash (0.75 / 3.75); gemini-3.5-flash-lite (0.30 / 2.50) & gemini-3.8-flash: 78.4; Gemini 3.1 Flash Lite: 75.2 \\ \hline
-Narrator & deepseek-flash (0.30 / 1.20); qwen3.8-flash (0.15 / 0.47) & DeepSeek V4 Flash: 72.1; Qwen 3.8 Flash Next: 74.9 \\ \hline
+Fidelity to expert content (RP-1, NFR-15) & $\bullet$ the whole seed in context; canon shown verbatim; names and numbers checked\cite{r120,r121} & $\ominus$ retrieval can miss a required fact & $\circ$ facts held in weights; required facts not guaranteed \\ \hline
+Data needed in this phase & $\bullet$ one approved seed & $\bullet$ the same material, indexed & $\circ$ many expert-written scenarios, which do not yet exist (Section 4.2.1) \\ \hline
+Seed revised by an expert (BR-14) & $\bullet$ takes effect at once & $\bullet$ re-indexed & $\circ$ model retrained \\ \hline
+TC7 Provider replaceable & $\bullet$ any model with a long enough context & $\bullet$ & $\circ$ tied to the tuned model \\ \hline
+TC8 Cost per call & $\ominus$ long prompts, reduced by prompt caching & $\ominus$ shorter prompts, plus an index to run & $\ominus$ cheaper calls, plus training \\ \hline
 \end{longtable}
 }
 
-Public data cannot answer three things: knowledge of IT work for the three pilot roles, for which no public benchmark exists; the newest small models, which are not on the Vietnamese leaderboard; and response time measured from Vietnam. With token counts assumed, one playthrough costs about USD 0.015 with small-tier judges and USD 0.086 with mid-tier judges, narrator included. The final choice is made after the first test, reported with agreement, response time, and cost.
+\textbf{Decision: the whole seed in the prompt, with structured output and rule checks.} A seed fits in the context of every candidate model, so retrieval adds a way to miss a fact without saving anything that matters, and fine-tuning needs data the project will not have before Stage B. When the source fits in the prompt, long-context prompting outperformed retrieval on average\cite{r121}; holding authored structure outside free generation is the established approach in interactive narrative\cite{r120}.
 
-Items awaiting game design. Several items cannot be settled before the game design is fixed: the scoring scale, where $-$1 / 0 / +1 / +2 is planned and not final and the current sample scenarios describe three levels only; the competency scoring table for a playthrough and the specific criteria given to the judge; the list of required facts in a seed, needed to measure fact preservation (NFR-15); and how evidence from the play process, such as hints, time, and follow-ups, counts and how scores combine into a competency. The current sample scenarios and scoring are placeholders. The measure itself does not depend on game design: agreement between judge and expert can be computed on any ordinal scale.
+Checking generated text while the explorer waits. Every narration and follow-up must be checked before it is shown (NFR-15), within the five seconds of NFR-01.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.228\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.355\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.231\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.182\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of ways to check generated text at run time.} \\
+\hline
+\textbf{Criterion} & \textbf{Deterministic rules at run time, log review by another family afterwards (selected)} & \textbf{A guard model on every turn\cite{r199}} & \textbf{Prompt instructions only} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Deterministic rules at run time, log review by another family afterwards (selected)} & \textbf{A guard model on every turn\cite{r199}} & \textbf{Prompt instructions only} \\ \hline
+\endhead
+NFR-01 Time added while waiting & $\bullet$ milliseconds & $\circ$ a second model call on every turn & $\bullet$ none \\ \hline
+NFR-15 Invented names and numbers & $\bullet$ every name and number must occur in the seed or the explorer's text & $\ominus$ judged by a model, with its own errors & $\circ$ not checked \\ \hline
+Follow-up limits and leaked rubric text & $\bullet$ counted and matched by the engine & $\ominus$ & $\circ$ \\ \hline
+Tone, plausibility, subtle drift & $\ominus$ caught afterwards by the log review & $\bullet$ caught before display & $\circ$ \\ \hline
+TC6 One rule set & $\bullet$ the same checks in \textit{game-core}, client and server & $\circ$ a separate model to configure & $\circ$ \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: deterministic rules at run time, and a model of another family reviewing the logs afterwards.} The rules catch exactly the failures that matter most to fidelity, invented names and numbers, and they cost no waiting time; what rules cannot judge, tone and plausibility, is left to a review that does not delay the explorer. A text that fails the rules is regenerated a bounded number of times and then handled as a model failure (Section 5.3.6).
+
+Scoring free-text answers. The scorer (AI-5) must agree with experts (RP-2, NFR-14) without reference answers, be independent of the narrator (DC-01), and tell the expert which cases to review (AI-3).
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.199\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.317\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.219\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.260\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of scoring designs.} \\
+\hline
+\textbf{Criterion} & \textbf{Panel of three judges from three families, median (selected)} & \textbf{One strong judge} & \textbf{Fine-tuned scoring model} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Panel of three judges from three families, median (selected)} & \textbf{One strong judge} & \textbf{Fine-tuned scoring model} \\ \hline
+\endhead
+Agreement with experts & $\ominus$ reaches the best single judge's level without choosing it in advance\cite{r123}; to be measured & $\ominus$ depends on choosing the right model & $\bullet$ highest on essay benchmarks\cite{r125}, after training on large human-scored sets \\ \hline
+Data needed in this phase & $\bullet$ rubric only & $\bullet$ rubric only & $\circ$ large expert-scored sets, unavailable before Stage B \\ \hline
+Self-preference and single-model bias (DC-01) & $\bullet$ three families, none the generator's\cite{r128} & $\ominus$ one family; its biases unchecked & $\ominus$ biases of its training data \\ \hline
+Signal for expert review (AI-3) & $\bullet$ disagreement between judges flags a case & $\circ$ confidence separates right from wrong only weakly\cite{r117} & $\circ$ same \\ \hline
+TC2 One provider down & $\bullet$ the other tier of the same family & $\ominus$ switching family changes the judge & $\circ$ the self-hosted model must stay up \\ \hline
+TC8, NFR-02 Cost and time & $\ominus$ three calls in parallel; time of the slowest & $\bullet$ one call & $\bullet$ cheap calls after training \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: a panel of three judges from three model families, scored by the median.} The panel costs three calls, but it removes the need to know the best judge in advance, keeps the generator's family out of scoring, and its disagreements tell the expert which cases to review. The median is used rather than the mean or a majority vote because levels are ordinal: the median of three levels is always a level of the scale, it is unaffected by one outlying judge, and it is defined when all three judges differ, where a majority vote is not. A five-judge vote matched the best single judge, with a Pearson correlation with humans of 0.627 against 0.623\cite{r123}; the design therefore does not claim that a panel is more accurate than the best judge, only that it reaches that judge's level without knowing in advance which judge it is.
+
+Obtaining well-formed output. Every model output is data that the platform acts on: a judgment must carry a quote, a rationale, and a level, in that order, for each criterion (Section 5.3.6), and a narration must carry its text and any follow-up separately.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.183\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.429\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.224\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of ways to obtain well-formed model output.} \\
+\hline
+\textbf{Criterion} & \textbf{Schema-constrained output where the provider offers it, validation, one retry (selected)} & \textbf{Prompted format, then repair by a second model} & \textbf{Tool (function) calling} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Schema-constrained output where the provider offers it, validation, one retry (selected)} & \textbf{Prompted format, then repair by a second model} & \textbf{Tool (function) calling} \\ \hline
+\endhead
+Output always parses (DC-02) & $\bullet$ guaranteed by the provider, or checked and retried & $\ominus$ repaired after the fact & $\ominus$ arguments may still fail the schema \\ \hline
+Judgment unchanged by the fix & $\bullet$ a failed output is discarded, never edited & $\circ$ the repairing model can alter the level & $\bullet$ \\ \hline
+Every candidate model & $\ominus$ strict schemas on the judges' providers; Qwen 3.8 Flash outside its Singapore region\cite{r200}; JSON only on DeepSeek\cite{r201} & $\bullet$ & $\ominus$ \\ \hline
+NFR-01, NFR-02 Time & $\bullet$ no extra call when valid & $\circ$ a second call on failure & $\bullet$ \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: the provider's schema-constrained mode where it exists, JSON mode elsewhere, and validation of every output against the same schema.} An output that fails validation is retried once and then treated as a failed call, which triggers failover. A repairing model is not used, because a model that rewrites a judgment can change its level, and a changed level is exactly the error the evaluation must not hide.
+
+Reaching model providers. Providers must be replaceable by configuration (DC-02, NFR-12), judge families kept apart (DC-01), and personal data kept off any path it does not need (TC3).
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.201\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.291\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.152\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.163\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.187\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of ways to reach model providers.} \\
+\hline
+\textbf{Criterion} & \textbf{Own adapter layer, OpenAI-compatible format (selected)} & \textbf{Each provider's SDK in domain code} & \textbf{LiteLLM proxy\cite{r191}} & \textbf{OpenRouter, hosted router\cite{r192}} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Own adapter layer, OpenAI-compatible format (selected)} & \textbf{Each provider's SDK in domain code} & \textbf{LiteLLM proxy\cite{r191}} & \textbf{OpenRouter, hosted router\cite{r192}} \\ \hline
+\endhead
+TC7 Provider replaced by configuration (DC-02, NFR-12) & $\bullet$ & $\circ$ code changed per provider & $\bullet$ & $\bullet$ \\ \hline
+TC7 Judge families kept apart (DC-01) & $\bullet$ registry in the gateway & $\ominus$ checks scattered & $\ominus$ still written in the application & $\ominus$ still written in the application \\ \hline
+TC3 Path of the data & $\bullet$ direct to each provider & $\bullet$ direct & $\bullet$ through a self-hosted proxy & $\circ$ through an added intermediary abroad \\ \hline
+Structured output from every provider & $\ominus$ native adapters where compatibility is limited: Anthropic's layer is not meant for production and ignores strict schemas\cite{r195}; Google's ignores unsupported parameters\cite{r196} & $\bullet$ full native features & $\ominus$ depends on the proxy's mapping & $\ominus$ depends on the router's mapping \\ \hline
+Local model as a fallback (idea only, Section 5.3.6) & $\bullet$ Ollama and vLLM serve the same API\cite{r193,r194} & $\ominus$ another SDK & $\bullet$ & $\circ$ cannot reach a local model \\ \hline
+TC8 Operation & $\bullet$ a library inside the API and worker & $\bullet$ & $\ominus$ an extra Python service to run & $\ominus$ no service, but a paid intermediary \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: an adapter layer written by the project, with the OpenAI-compatible API as the common format and native adapters where needed.} Most candidates accept the common format, so a provider changes by configuration; the Anthropic judge uses a native adapter, because its compatibility layer does not guarantee schema-conforming output. A chain-composition framework such as LangChain\cite{r197} is not used: its abstractions hide the per-call token counts and steps that the cost ledger and the evaluation depend on.
+
+Models. Four model families are needed: one for the narrator and three for the judging panel, each different from the others (DC-01). The criteria are Vietnamese capability (NFR-08), price (NFR-11), schema-constrained output, knowledge of IT work, and response time from Vietnam; the last two have no public benchmark for the pilot roles and are measured in Section 7.3. The table gives Vietnamese scores from the SEA-HELM leaderboard of 18 September 2026\cite{r132} and list prices read on 8 and 9 October 2026\cite{r133}; where a candidate is not on the leaderboard, the score shown is that of the closest listed model of the same family, under that model's name.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.316\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.266\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.264\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Candidate models, with list prices, Vietnamese benchmark scores, and structured-output support.} \\
+\hline
+\textbf{Role} & \textbf{Candidates (USD per million tokens, input / output)} & \textbf{SEA-HELM Vietnamese} & \textbf{Schema-constrained output} \\ \hline
+\endfirsthead
+\hline
+\textbf{Role} & \textbf{Candidates (USD per million tokens, input / output)} & \textbf{SEA-HELM Vietnamese} & \textbf{Schema-constrained output} \\ \hline
+\endhead
+Judge, Anthropic & claude-sonnet-5-5 (2 / 10); claude-haiku-5-5 (0.10 / 0.50) & Sonnet 5: 77.0; Haiku 4.5: 67.7 (earlier models) & Native adapter\cite{r195} \\ \hline
+Judge, OpenAI & gpt-6.1-sol (2 / 10); gpt-6-luna (0.10 / 0.50) & GPT 5.6 Sol: 77.1; GPT 5.6 Luna: 71.9 (earlier models) & Strict schema \\ \hline
+Judge, Google & gemini-3.8-flash (0.75 / 3.75); gemini-3.5-flash-lite (0.30 / 2.50) & gemini-3.8-flash: 78.4; Gemini 3.1 Flash Lite: 75.2 & Response schema; unsupported parameters ignored\cite{r196} \\ \hline
+Narrator & qwen3.8-flash (0.15 / 0.47); deepseek-flash (0.30 / 1.20) & Qwen 3.8 Flash Next: 74.9; DeepSeek V4 Flash: 72.1 & Qwen: strict schema except in the Singapore region\cite{r200}; DeepSeek: valid JSON only, occasionally empty\cite{r201} \\ \hline
+\end{longtable}
+}
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.348\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.381\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.266\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of narrator candidates.} \\
+\hline
+\textbf{Criterion} & \textbf{qwen3.8-flash (provisional narrator)} & \textbf{deepseek-flash} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{qwen3.8-flash (provisional narrator)} & \textbf{deepseek-flash} \\ \hline
+\endhead
+NFR-08 Vietnamese & $\bullet$ 74.9, the higher of the two & $\ominus$ 72.1 \\ \hline
+NFR-11 Price & $\bullet$ 0.15 / 0.47 & $\ominus$ 0.30 / 1.20 \\ \hline
+Well-formed output & $\bullet$ strict schema, outside the Singapore region & $\ominus$ JSON mode; empty replies retried \\ \hline
+DC-01 Family apart from every judge & $\bullet$ & $\bullet$ \\ \hline
+Knowledge of IT work; time from Vietnam & measured in Section 7.3 & measured in Section 7.3 \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: judges from the Anthropic, OpenAI, and Google families; qwen3.8-flash as the provisional narrator, with deepseek-flash as its failover.} Scoring is the role whose accuracy the project must demonstrate (RP-2), so the three families with the highest Vietnamese scores judge; the narrator writes short connecting text held by the rules above, so it comes from a fourth, cheaper family. Within each judge family, the tier is chosen by the test of Section 7.3: the cheaper tier is kept unless it is clearly worse, and the other tier is its failover. With the token counts assumed in Section 5.3.6, one playthrough costs about USD 0.010 with small-tier judges and USD 0.054 with mid-tier judges, narrator included. The data terms of every provider, no training on submitted data and limited retention (NFR-05), are confirmed in writing before any explorer's text is sent.
+
+Testing the composition offline. The test harness must run every judge repeatedly, compute ordinal agreement, and keep every judgment reviewable (Section 7.3).
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.301\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.281\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.257\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.156\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of offline evaluation harnesses.} \\
+\hline
+\textbf{Criterion} & \textbf{Inspect AI (selected)\cite{r129}} & \textbf{promptfoo\cite{r198}} & \textbf{Scripts written by the project} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{Inspect AI (selected)\cite{r129}} & \textbf{promptfoo\cite{r198}} & \textbf{Scripts written by the project} \\ \hline
+\endhead
+Repeated runs, several graders, median & $\bullet$ built in & $\ominus$ repeats and model-graded rubrics; aggregation by hand & $\circ$ written by hand \\ \hline
+Ordinal agreement statistics & $\ominus$ Krippendorff's alpha built in; quadratic weighted kappa added as a metric & $\circ$ computed outside the tool & $\ominus$ written with standard libraries \\ \hline
+Custom scorer for the project's rubric & $\bullet$ scorer interface & $\bullet$ custom assertions & $\bullet$ \\ \hline
+Logs for reviewing each judgment & $\bullet$ log viewer & $\bullet$ web viewer & $\ominus$ \\ \hline
+Shares prompts and rubrics with the TypeScript product & $\ominus$ Python, reading the shared data files & $\bullet$ Node.js with YAML configuration & $\bullet$ \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: Inspect AI.} It has the repeated runs, multiple graders, and median reducer the panel needs, and its logs make each judgment reviewable; prompts and rubrics stay in data files that both the harness and the product read. In the product, the judge is the project's own TypeScript module with schema-validated output. These tools have no peer-reviewed papers; the cited science is in the method, rubric-based scoring with reasoning before the score\cite{r58} and panels of judges\cite{r74}.
+
+Strength of the judge relative to the generator. The judge does not need to be stronger than the generator, because it scores text written by a person, not text the generator wrote. It does need enough capacity: on German clinical-reasoning transcripts, a small model agreed poorly with human raters (intraclass correlation below 0.20) and a larger one moderately (0.41 to 0.57), against 0.45 between the two human raters\cite{r124}. Whether a larger tier, or a reasoning model, is worth its cost for this task is not settled by published evidence, so each judge family is tested at two tiers and the cheaper tier is kept unless it is clearly worse.
+
+Reliability of a language-model judge. Published evidence supports a conditional answer, not reliability by default, and none of it concerns Vietnamese or role-play. A synthesis of 65 studies of essay scoring found agreement between language models and human raters to vary widely and to depend on context\cite{r101}. Untrained general models fall well short of dedicated scorers: on the ASAP essays, ChatGPT and Llama reached an average quadratic weighted kappa of 0.313 and 0.297, against 0.817 for a supervised system\cite{r125}. Agreement comes close to human level only under conditions: GPT-4 given a few scored examples reached a kappa of 0.70 on short answers in school subjects, against 0.75 between humans\cite{r102}, and approached dedicated scoring systems on CEFR essays once calibration examples were supplied\cite{r103}. Three weaknesses recur. Scorers handle fully correct and fully incorrect answers well and degrade on partially correct ones, where human agreement stays stable\cite{r126}. Without a reference answer, judges agree with experts mainly on questions they can answer themselves\cite{r127}, and a model's accuracy as a judge closely follows its accuracy at solving the same problems\cite{r60}; JobQuest has no reference answers, so the judge must know IT work, and the level descriptions of the rubric must carry the domain knowledge. And consistency is not validity: GPT-4's repeated ratings agreed with each other at an intraclass correlation of 0.94 to 0.99\cite{r105}, which says nothing about agreement with people. The design answers each weakness: a strong model and an explicit rubric from the start, scored examples later from expert rulings, a panel whose disagreements send partially correct cases to the expert, and level descriptions written by the expert. The project then measures reliability on its own task instead of assuming it (RP-2), against the criteria of Williamson, Xi and Breyer\cite{r71}: quadratic weighted kappa of at least 0.70, a standardised mean difference of at most 0.15, and agreement at most 0.10 below that between experts. The data, raters, measures, and thresholds are fixed in Section 7.3.
+
+AI-native character. The definition adopted is that a system is AI-native when AI is constitutive of its core loop, so that removing the AI makes the central activity collapse or change fundamentally\cite{r130}, and when AI is a natural part of design, deployment, operation, and maintenance rather than a component added to a system built without it\cite{r131}. The test is therefore applied to JobQuest's core loop, the cycle an explorer repeats in every situation of a scenario.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.436\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.230\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.329\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{The core loop of a situation, and what remains of it without AI.} \\
+\hline
+\textbf{Step of the core loop} & \textbf{What does it} & \textbf{Without AI} \\ \hline
+\endfirsthead
+\hline
+\textbf{Step of the core loop} & \textbf{What does it} & \textbf{Without AI} \\ \hline
+\endhead
+1. The situation is presented & Engine; canon content shown verbatim & Unchanged \\ \hline
+2. The explorer acts, in free text or by a choice & Explorer & Unchanged \\ \hline
+3. The work answers back: narration that connects the explorer's own action to what happens next, and a follow-up on what the answer left out & AI-4, held by rules & A fixed script that ignores what was written; the scenario becomes a branching questionnaire \\ \hline
+4. The action is assessed against the expert's rubric & AI-5 panel; choices by the expert's key & Keyword matching, which rewards keyword stuffing and penalises paraphrase (Section 7.3.3) \\ \hline
+5. Feedback names the behaviours observed, with quotes, and credit moves the explorer on & Written from AI-5's output; credit by \textit{game-core} & Generic feedback, and credit from an unreliable score \\ \hline
+\end{longtable}
+}
+
+Removing AI leaves steps 1 and 2, the parts any quiz has; steps 3 to 5, which make the scenario a performed task rather than a questionnaire, either disappear or change fundamentally, so JobQuest meets the first part of the definition. It meets the second because AI also works outside the loop: it collects expert knowledge and drafts seeds (AI-1, AI-2), finds the cases an expert must see (AI-3), and reviews logs in operation. For the same reason there is no path without AI: when a model fails, the system switches to another model in the same role that meets the same constraints, which is still AI (DC-02); if no model is available, the session pauses with answers and progress saved, and resumes when a model returns (NFR-04, Section 5.3.6).
+
+Items awaiting game design. Several items cannot be settled before the game design is fixed: the scoring scale, where $-$1 / 0 / +1 / +2 is planned and not final and the current sample scenarios describe three levels only; the competency scoring table for a playthrough and the specific criteria given to the judge; the list of required facts in a seed, needed to measure fact preservation (NFR-15); and how evidence from the play process, such as hints, time, and follow-ups, counts and how scores combine into a competency. The AI design does not depend on them: the judge scores any criterion that comes with level descriptions, on any ordinal scale (Section 5.3.6), and agreement with experts can be computed on any such scale.
+
+Summary. The table summarises the selected stack and the requirements each choice serves.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.204\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.311\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.479\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Selected technology stack.} \\
+\hline
+\textbf{Component} & \textbf{Technology} & \textbf{Requirements served} \\ \hline
+\endfirsthead
+\hline
+\textbf{Component} & \textbf{Technology} & \textbf{Requirements served} \\ \hline
+\endhead
+Frontend framework & React 19 + Vite 8, single-page application & Game interface (FR-05, FR-07, FR-10); rules in the browser (FR-15); light first load (NFR-13); no indexing needed (FR-01) \\ \hline
+Occupation map & three.js + @react-three/fiber, with an SVG view & Galaxy Map (FR-05, FR-07); accessibility (NFR-19); low-end devices (NFR-13) \\ \hline
+Styling, state, routing & Tailwind CSS 4, zustand 5, React Router 7 & No style runtime, unsent turns kept, routes on demand (NFR-13, NFR-03, FR-41) \\ \hline
+Result delivery & Server-sent events & Results pushed when ready (NFR-02, FR-14); automatic reconnection (NFR-13) \\ \hline
+Staff application & TanStack Query, React Aria & Queues and statistics (FR-21 to FR-43); accessibility (NFR-19) \\ \hline
+Backend framework & NestJS 11 on Node.js & Waiting without blocking (NFR-01, NFR-02); modules and role guards (FR-41); queue and SSE integration \\ \hline
+Database & PostgreSQL + Prisma 7 & Cross-record rules (FR-25, FR-33, FR-40); atomic, immutable publication (NFR-16); thresholded statistics (NFR-06) \\ \hline
+Job queue, messaging & Redis + BullMQ & Durable, retried, prioritised, rate-limited model work (NFR-04, NFR-11, FR-43) \\ \hline
+Authentication & argon2id, JWT in httpOnly cookies, Google sign-in & NFR-17, FR-01, FR-41; identity data in Vietnam (DC-03) \\ \hline
+Validation, code organisation & Zod 4, Nx monorepo & One copy of rules and schemas (FR-15, NFR-17) \\ \hline
+Packaging, hosting & Docker, host in Vietnam & DC-03, NFR-05; portable scaling and availability (NFR-18) \\ \hline
+Model access & Own adapter layer, OpenAI-compatible format, native adapters where needed & Provider replaceable (DC-02, NFR-12); judge families kept apart (DC-01) \\ \hline
+Generation & Whole seed in the prompt; schema-constrained output; rule checks at run time & Fidelity to expert content (RP-1, NFR-15); waiting time (NFR-01) \\ \hline
+Scoring & Panel of three judge families, median; quote, rationale, level per criterion & Agreement with experts (RP-2, NFR-14); cases for expert review (FR-28) \\ \hline
+Models & Judges: Anthropic, OpenAI, Google, tier chosen by test; narrator: qwen3.8-flash, failover deepseek-flash & Vietnamese (NFR-08); cost (NFR-11); failover (NFR-04) \\ \hline
+Offline evaluation & Inspect AI & RP-1, RP-2; regression after a provider change (NFR-12) \\ \hline
+\end{longtable}
+}
 
 \subsection{Design}
 
@@ -1401,7 +1836,7 @@ DR-8 & Growth from pilot to national resource on grant funding & Section 4.1.5; 
 
 Architectural style. The drivers call for a design in which nothing slow or fallible sits inside a request, the server owns every score, a run can be replayed, and the model-facing work can grow on its own.
 
-\textbf{Decision: a modular monolith with asynchronous workers.} One codebase is deployed as API processes, which answer requests, and worker processes, which run queued jobs. Modules follow the use case groups of Section 5.1.2 and communicate only through public interfaces, so any could later be extracted; the one part that must scale independently, model-facing work, is already separated by the worker tier, following the practice of extracting services only once a boundary has proved itself\cite{r165}. Inside, model providers, the database, and email are reached through ports with replaceable adapters\cite{r152}, which meets DC-02; and runs are event-sourced\cite{r166}, their state being the fold of their events through \textit{game-core}. Four alternatives were rejected, each for a specific requirement.
+\textbf{Decision: a modular monolith with asynchronous workers.} One codebase is deployed as API processes, which answer requests, and worker processes, which run queued jobs. Modules follow the use case groups of Section 5.1.2 and communicate only through public interfaces, so any could later be extracted; the one part that must scale independently, model-facing work, is already separated by the worker tier, following the practice of extracting services only once a boundary has proved itself\cite{r163}. Inside, model providers, the database, and email are reached through ports with replaceable adapters\cite{r150}, which meets DC-02; and runs are event-sourced\cite{r164}, their state being the fold of their events through \textit{game-core}. Four alternatives were rejected, each for a specific requirement.
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.218\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.606\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
@@ -1447,7 +1882,7 @@ Content lifecycle. Occupations, knowledge, scenarios and drafts, generation hist
 
 AI orchestration. Runs every model use of the five AI components of Section 5.2.3 as a job: the expert interview (AI-1) and seed drafting (AI-2) at authoring time, with presentation design and missing assets (FR-35, FR-36); test playthroughs (AI-3); narration, follow-ups, and feedback notes during play (AI-4, FR-12, FR-14); and grading of each answer by a panel of three judges (AI-5, FR-11). The Get-to-know-me quiz uses no AI (FR-04). Per job it loads the pinned content version, removes identifying details from explorer text, checks the session budget, calls the model port, applies \textit{game-core}'s rule checks, and records model, prompt version, cost, and latency. There is no scripted substitute for a model's output: a job that cannot complete is retried or waits, and a session pauses until it can. It rechecks at job time that no judge shares the narrator's family or another judge's. Prototype: absent; queue and model-client libraries are declared but unused.
 
-Model gateway. One adapter per provider and a registry recording each model's role --- text generation, assessment, image generation (FR-36) --- with its provider and family; configuration is refused when the narrator and a judge, or two judges, share either (FR-42, DC-01). It applies per-provider concurrency limits, timeouts, retries, and a circuit breaker. Whether adapters use providers' own clients or a unifying library is decided in Section 5.2.3. Prototype: absent.
+Model gateway. One adapter per provider and a registry recording each model's role --- text generation, assessment, image generation (FR-36) --- with its provider and family; configuration is refused when the narrator and a judge, or two judges, share either (FR-42, DC-01). It applies per-provider concurrency limits, timeouts, retries, and a circuit breaker. Adapters are written by the project over the OpenAI-compatible format, with native adapters where that format falls short (Section 5.2.3). Prototype: absent.
 
 Analytics. Everything shown only in aggregate: ratings and statistics above the population threshold, play-tests excluded (FR-19, FR-39, NFR-06, DR-11); coverage; agreement by difficulty stratum and the disagreement list (FR-28, NFR-14); and blind ratings (FR-29). Occupation ratings are re-aggregated in the transaction that stores each rating (FR-19); heavier statistics refresh periodically, later from a replica. It never returns an individual's record. Prototype: personal summaries only.
 
@@ -1465,13 +1900,15 @@ System overview. The figure below shows the whole system as deployed: the two br
 \caption{System overview of JobQuest: components, technologies, and hosting, with the numbered path of one written answer. Blue arrows are the request path; orange arrows the background AI path; the dashed border is the hosting boundary of DC-03}
 \end{figure}
 
-Deployment. The deployment diagram below uses the same layout as the component diagram, so that each component can be found in the node that runs it. Both applications are static bundles, served to browsers by a content delivery network that holds no personal data. Inside one cloud region in Vietnam, a web application firewall and load balancer terminate TLS and spread requests over the API pods of two zones. API and worker pods run the same Docker image, started in two roles; both are stateless, so capacity grows by adding pods: API pods on CPU and open streams, worker pods on queue length. PostgreSQL runs as a primary with a synchronous standby in the other zone and a read replica for analytics; Redis runs as a primary with a replica. The model gateway reaches the providers abroad only through an egress proxy that admits allowlisted endpoints, and backups are copied to a second region in Vietnam. At Stage 1 the same nodes run on one university server under Docker Compose, with one API and one worker.
+Deployment. The deployment diagram below follows UML notation: devices and nodes are drawn as three-dimensional boxes, the artifacts deployed on them as documents inside, and each communication path is labelled with its protocol; the components of Section 5.3.1 appear inside the artifact that manifests them. Both applications are static bundles, served to browsers by a content delivery network that holds no personal data. Inside one cloud region in Vietnam, a web application firewall and load balancer terminate TLS and spread requests over the API pods of two zones. API and worker pods run the same Docker image, started in two roles; both are stateless, so capacity grows by adding pods: API pods on CPU and open streams, worker pods on queue length. PostgreSQL runs as a primary with a synchronous standby in the other zone and a read replica for analytics; Redis runs as a primary with a replica. The model gateway reaches the providers abroad only through an egress proxy that admits allowlisted endpoints, and backups are copied to a second region in Vietnam. An observability node inside the region receives metrics, logs, and traces from the API and worker pods over OpenTelemetry (OTLP), collects metrics from Redis, PostgreSQL, and object storage and logs from the egress proxy, and scrapes the load balancer, so that queue length, latency per provider, and cost per session are watched in one place. At Stage 1 the same nodes run on one university server under Docker Compose, with one API and one worker.
 
+\begin{landscape}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/jobquest_deployment.png}
-\caption{Deployment diagram of JobQuest at Stages 3 and 4, in the layout of the component diagram: devices and nodes, the components each node runs, and the protocol of each communication path}
+\includegraphics[width=\linewidth,keepaspectratio]{figures/jobquest_deployment.png}
+\caption{UML deployment diagram of JobQuest at Stages 3 and 4: devices, nodes, and execution environments, the artifacts deployed on each, and the protocol of each communication path}
 \end{figure}
+\end{landscape}
 
 The assessed turn. A free-text answer in Perform scenario tests the architecture hardest, because it involves the explorer, the authority over scores, the models, and the failure of any of them. The answer is graded first, by the three judges (AI-5); only then does the narrator decide whether to ask a follow-up (AI-4), and each follow-up answer goes through the same loop. The figure below shows the sequence for one activity.
 
@@ -1482,7 +1919,7 @@ The assessed turn. A free-text answer in Perform scenario tests the architecture
 \end{figure}
 
 \begin{enumerate}[leftmargin=1.5em]
-  \item Submission: the explorer application keeps a local copy of the answer and sends it with the run's next sequence number and an idempotency key, so a retry cannot record it twice (NFR-03, NFR-13). Exploration checks it with \textit{game-core}, and Assessment stores it with an assessment request in one transaction and enqueues the job directly after commit --- a transactional outbox\cite{r167} guarantees a job for every stored answer --- before replying that the answer is saved. Progress shows at once, and a status line after two seconds (NFR-01).
+  \item Submission: the explorer application keeps a local copy of the answer and sends it with the run's next sequence number and an idempotency key, so a retry cannot record it twice (NFR-03, NFR-13). Exploration checks it with \textit{game-core}, and Assessment stores it with an assessment request in one transaction and enqueues the job directly after commit --- a transactional outbox\cite{r165} guarantees a job for every stored answer --- before replying that the answer is saved. Progress shows at once, and a status line after two seconds (NFR-01).
   \item Grading: a worker removes identifying details and sends the answer, as delimited data the models are instructed never to obey, to three judges of three families in parallel, at most three criteria per call. Each judge returns, per criterion, a verbatim quotation, a rationale, and a level; a judgment is kept only if the quotation occurs in what the player typed (FR-11, NFR-17). The judges' scores are combined into one grade, judges more than one level apart flag the case for the expert (AI-3), and each judge's score, the grade, and the cost are stored (DR-07).
   \item Follow-up: with the grade known, the narrator is sent the graded exchange and the seed, without the rubric or scoring keys, and returns a follow-up or none. A follow-up is shown only if it passes the rule checks --- numbers and names from the seed or the player's text, follow-ups within the count the engine allows --- and otherwise, or on a provider error, the expert's default follow-up is shown (FR-12, NFR-15). It reaches the explorer through Redis and the event stream, and its answer returns to step 1.
   \item Result: once no further follow-up is asked, \textit{game-core} applies the hint cap and the credit within the cap of BR-11; the activity result is stored as an event with its provenance, and Redis carries it to the API replica holding the explorer's stream, which shows the NPC's closing line. Each event carries its sequence number, so a reconnecting stream replays whatever it missed from the database.
@@ -1500,7 +1937,7 @@ Content path. The figure below shows the path a scenario takes from opening to p
 \caption{Content lifecycle of a scenario, by actor: the expert's knowledge collected by AI-1 and drafted into a seed with AI-2, review by another expert, presentation, test playthroughs ranked by AI-3, and publication as an immutable release; revalidation and explorers' flags return it to review while the published version stays playable}
 \end{figure}
 
-Latency budget. Under the Lighthouse mobile profile\cite{r139}, the platform's own share of each model step is about 0.4 s: a 150 ms round trip to submit, 20 ms for the transaction, 10 ms to enqueue, 50 ms of preparation and checks, 20 ms to store the result, and half a round trip to push it. That leaves about 7.6 s of NFR-02's eight seconds for the judging panel, and about 4.6 s of NFR-01's five seconds for the narrator to write a follow-up, the budgets against which the first test of Section 5.2.3 measures candidate models; because the panel waits for all three judges, its time is that of the slowest. Since a follow-up is decided only after the answer is graded, the explorer's wait for a follow-up after a free-text answer includes both steps; whether NFR-01 counts from the submission or from the grade is to be settled with that first test. Generated text is not streamed token by token, because it must pass the rule checks before display.
+Latency budget. Under the Lighthouse mobile profile\cite{r137}, the platform's own share of each model step is about 0.4 s: a 150 ms round trip to submit, 20 ms for the transaction, 10 ms to enqueue, 50 ms of preparation and checks, 20 ms to store the result, and half a round trip to push it. That leaves about 7.6 s of NFR-02's eight seconds for the judging panel, and about 4.6 s of NFR-01's five seconds for the narrator to write a follow-up, the budgets against which Section 7.3 measures candidate models; because the panel waits for all three judges, its time is that of the slowest. Since a follow-up is decided only after the answer is graded, the explorer's wait for a follow-up after a free-text answer includes both steps; whether NFR-01 counts from the submission or from the grade is to be settled with those measurements. Generated text is not streamed token by token, because it must pass the rule checks before display.
 
 Realisation of the use cases. The table traces each group of use cases in Section 5.1.2 to the components that realise it.
 
@@ -1557,7 +1994,7 @@ NFR-13 & Explorer bundle under a performance budget; on-demand 3D chunk and 2D f
 NFR-14 & Every judgment records its judges; a change of any judge model recomputes agreement by stratum against the reference set & Analytics; AI orchestration; Operations & No \\ \hline
 NFR-15 & Publication copies the approved version into a hashed release, compared with what is served; canon content served verbatim; run-time narration shown only after the rule checks, with the expert's default follow-up when a follow-up fails them; feedback notes redrafted until they pass; a model of another family reviews the logs & Content lifecycle; AI orchestration; Game core & Partly; releases immutable \\ \hline
 NFR-16 & Lifecycle module as sole writer; transition and log in one transaction; a trigger refuses updates to published releases & Content lifecycle; database & No \\ \hline
-NFR-17 & Argon2id; HTTPS with strict transport security; httpOnly, SameSite cookies, rotation, idle expiry; answers passed to models as delimited data, outputs schema-validated; prompt-injection tests in the regression suite, against the leading OWASP risk for language-model applications\cite{r168} & Identity and access; AI orchestration; reverse proxy & Partly; hashing, cookies, rotation \\ \hline
+NFR-17 & Argon2id; HTTPS with strict transport security; httpOnly, SameSite cookies, rotation, idle expiry; answers passed to models as delimited data, outputs schema-validated; prompt-injection tests in the regression suite, against the leading OWASP risk for language-model applications\cite{r166} & Identity and access; AI orchestration; reverse proxy & Partly; hashing, cookies, rotation \\ \hline
 NFR-18 & Stateless API replicas with health checks and rolling deployment; backups with point-in-time recovery; uptime monitoring; announced maintenance & All tiers & No \\ \hline
 NFR-19 & Document-based interfaces; accessible 2D map; accessible primitives in the staff application; automated and manual audits & Both applications & No \\ \hline
 DC-01 & Registry records each model's provider and family; configuration rejects either shared by the narrator and a judge, or by two judges; panel rechecked at job time & Model gateway; Operations; AI orchestration & No \\ \hline
@@ -1567,7 +2004,7 @@ DC-05 & Browser applications, no installation; static delivery; tolerant of shor
 \end{longtable}
 }
 
-Infrastructure and scalability. JobQuest's load is not where web systems usually feel it: the binding constraint is the model tier, not the web or database tier. The estimate below states its assumptions so pilots can revise them. A scenario lasts ten to fifteen minutes (Section 4.1.2) and is assumed to hold three situations, each scored by three judges, plus about four narration and follow-up calls: about thirteen model calls per scenario, or one per minute of play. An active explorer sends a request every five to ten seconds. For Stage 4 the reference is the 1.12 million grade-12 candidates of 2025\cite{r169}: if a fifth of a cohort plays half an hour a week over a ten-week guidance season, concentrated in about twenty peak hours, peak concurrency is about five thousand.
+Infrastructure and scalability. JobQuest's load is not where web systems usually feel it: the binding constraint is the model tier, not the web or database tier. The estimate below states its assumptions so pilots can revise them. A scenario lasts ten to fifteen minutes (Section 4.1.2) and is assumed to hold three situations, each scored by three judges, plus about four narration and follow-up calls: about thirteen model calls per scenario, or one per minute of play. An active explorer sends a request every five to ten seconds. For Stage 4 the reference is the 1.12 million grade-12 candidates of 2025\cite{r167}: if a fifth of a cohort plays half an hour a week over a ten-week guidance season, concentrated in about twenty peak hours, peak concurrency is about five thousand.
 
 {\footnotesize
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.158\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.108\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.305\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
@@ -1598,7 +2035,7 @@ Each tier scales by its own mechanism, summarised below for Stage 4.
 \endhead
 Content delivery network & All static files and published releases & Cache by version with long lifetimes & Releases are immutable, so caches never need purging and content reads never reach the database \\ \hline
 API & 500 to 1,000 requests per second; about 5,000 open result streams & Replicas behind the load balancer, scaled on CPU and open connections; at least two per zone & Stateless: sessions travel in cookies and results arrive through Redis publish--subscribe, so any replica can serve any explorer \\ \hline
-Workers & 80 to 90 model calls per second; 250 to 700 in flight & Scaled on queue length; each worker runs many I/O-bound jobs concurrently; in-flight calls capped per provider & Jobs are independent and idempotent; the queue absorbs bursts\cite{r170} \\ \hline
+Workers & 80 to 90 model calls per second; 250 to 700 in flight & Scaled on queue length; each worker runs many I/O-bound jobs concurrently; in-flight calls capped per provider & Jobs are independent and idempotent; the queue absorbs bursts\cite{r168} \\ \hline
 Model providers & About 5,100 requests per minute; 7 to 8 million tokens per minute at about 1,500 tokens per call & Several providers per role within DC-01, so quotas add up; priorities: live grading and narration first, feedback notes next, authoring work last & The binding constraint is isolated in its own tier and limited without slowing the rest \\ \hline
 PostgreSQL & Under 500 writes per second; about 0.3 TB of run data per season at about 60 KB per run & Vertical growth behind a connection pooler; read replica for analytics; run events partitioned by month & All transactions stay within one primary; heavy reads move to the replica; old partitions are compressed or archived \\ \hline
 Redis & About 100 jobs per second, plus publish--subscribe messages & One primary and one replica & Holds nothing that cannot be rebuilt from PostgreSQL \\ \hline
@@ -1612,3 +2049,59 @@ The architecture scales for seven reasons. Processing tiers are stateless, so ca
 Reliability and operations. Availability of 99.5\% a month is proposed for Stages 1 and 2 and 99.9\% once two zones run (NFR-18). The write-ahead log is archived continuously and backups taken nightly, both copied to a second region in Vietnam, for a proposed recovery point of five minutes and recovery time of one hour. Deployments roll replica by replica behind health checks, with backward-compatible migrations so old and new versions run side by side. Monitoring tracks queue length, 95th-percentile latency per provider, cost per session, and error rates, alerting at the thresholds of NFR-01, NFR-02, and NFR-11. A web application firewall and TLS guard the entry, secrets are held in a secret manager, and the egress proxy admits only allowlisted model endpoints.
 
 From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free \textit{game-core} shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and httpOnly cookie sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
+
+\setcounter{subsubsection}{9}
+
+\subsubsection{Policies for the Processing of the Proposed System and Third Parties}
+
+This section sets the rules under which JobQuest processes personal data and shares any data with third parties, completing the policies of Section 4.1.4. Its central problem is a conflict between two parts of the design. The system of record must be in Vietnam (DC-03), as Vietnam's Law on Personal Data Protection and its implementing decree require\cite{r99,r100}; but scoring and narration depend on language models whose providers all process requests outside Vietnam. Under the law, using a platform abroad to process data collected in Vietnam is a transfer of personal data abroad, whichever region the provider is asked to use. The policies below decide what may cross that border, under what conditions, and what the platform owes its users when it does.
+
+Third parties and what they receive. The table lists every third party the platform deals with, what it receives, and where.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.226\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.290\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Third parties and the data they receive.} \\
+\hline
+\textbf{Third party} & \textbf{Purpose} & \textbf{What it receives} & \textbf{Where} & \textbf{Personal data} \\ \hline
+\endfirsthead
+\hline
+\textbf{Third party} & \textbf{Purpose} & \textbf{What it receives} & \textbf{Where} & \textbf{Personal data} \\ \hline
+\endhead
+Content delivery network & Serve both applications and published releases & Static bundles and releases & Edge locations, including abroad & None \\ \hline
+Google Identity & Optional sign-in & An identity token, only when the user chooses Google & Abroad & Yes, by the user's choice \\ \hline
+E-mail provider & Password resets and notices & Address and message & To be chosen with a host in Vietnam & Yes \\ \hline
+Model providers & Narration, scoring, feedback, authoring help & Seed content and de-identified answer text, under an opaque run identifier & Abroad & Not by design; residual risk below \\ \hline
+O*NET, ESCO & Reference data, imported & Nothing; data flows in only & --- & None \\ \hline
+Second region of the cloud provider & Backups and recovery & Encrypted copies of the database and logs & Vietnam & Yes, encrypted \\ \hline
+\end{longtable}
+}
+
+Options for using foreign models. Four ways to reconcile scoring by language models with data kept in Vietnam were compared.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.293\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.189\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.191\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.152\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Comparison of ways to use language models on explorer text.} \\
+\hline
+\textbf{Criterion} & \textbf{De-identify, then send to providers abroad, treated as a transfer (selected)} & \textbf{Send answers abroad as they are, under consent} & \textbf{Open-weight models served in Vietnam} & \textbf{No language model on explorer text} \\ \hline
+\endfirsthead
+\hline
+\textbf{Criterion} & \textbf{De-identify, then send to providers abroad, treated as a transfer (selected)} & \textbf{Send answers abroad as they are, under consent} & \textbf{Open-weight models served in Vietnam} & \textbf{No language model on explorer text} \\ \hline
+\endhead
+DC-03, NFR-05 Personal data in Vietnam & $\ominus$ identifiers removed before sending; residual risk in free text & $\circ$ every answer leaves with its author's identity & $\bullet$ nothing leaves & $\bullet$ nothing leaves \\ \hline
+RP-2, NFR-14 Scoring quality & $\bullet$ the strongest Vietnamese-capable models (Section 5.2.3) & $\bullet$ & $\ominus$ smaller models; quality to be shown & $\circ$ keyword scoring fails (Section 7.3.3) \\ \hline
+TC8, TC9 Cost and feasibility now & $\bullet$ pay per call; no hardware & $\bullet$ & $\circ$ GPU hosting beyond the project's means & $\bullet$ \\ \hline
+Legal obligations & $\ominus$ transfer impact assessment and notice & $\circ$ the same, for identified personal data, at scale & $\bullet$ none for transfer & $\bullet$ none for transfer \\ \hline
+\end{longtable}
+}
+
+\textbf{Decision: de-identify before any model call, send only what the task needs, and treat what is sent as a transfer of personal data regardless.} Removing identifiers is what makes the transfer small; treating it as a transfer anyway is what makes the design safe if de-identification of free text misses something. The law treats data that no longer identifies a person as outside its scope, but a free-text answer can name a colleague, a company, or a place, and the platform cannot prove that every such detail is caught, so it does not rely on that exemption. Models served in Vietnam would remove the transfer altogether; they are recorded as later work, starting from the local fallback of Section 5.3.6, once their scoring quality can be measured against the same thresholds.
+
+What may leave the country. The egress proxy admits a request only to an allowlisted model endpoint, and the request may contain only three things: the seed and rubric of the scenario, which are expert content and contain no personal data; the explorer's answer text after de-identification; and an opaque run identifier that maps to the explorer only inside the platform. Names, usernames, e-mail addresses, dates of birth, account identifiers, and profiles never leave. De-identification removes the explorer's own name, username, and e-mail address, which the platform knows, and any text that matches patterns for e-mail addresses, Vietnamese phone and identity-card numbers, and links. Scenarios address the explorer by role and give every other character a name, which reduces the reasons to write a real person's name; the remaining risk is stated in the privacy notice. The proxy logs every request's time, endpoint, size, and run identifier, but not its content, so that what left the country can be accounted for without keeping a second copy of it.
+
+Conditions on model providers. A provider is admitted to the model registry only when four conditions are confirmed in writing, in its terms or a data-processing agreement: submitted data is not used to train or improve models; retention is the shortest the provider offers, with zero retention where it is offered; data is processed only to answer the request; and the provider notifies a change of these terms. Provider-side features that store requests for evaluation or fine-tuning are switched off. A provider whose terms stop meeting the conditions is removed from the registry, and because every provider sits behind the model port (DC-02), removal is a change of configuration, not of code.
+
+Obligations to users and to the authority. The platform treats the calls to providers abroad as a transfer of personal data and meets the law's conditions for one\cite{r99,r100}. Before an explorer's first scenario, the privacy notice names the providers, the countries, the data sent, and the purpose, and the explorer consents to it; an explorer who declines can still use the parts of the platform that make no model call, such as the occupation map and occupational profiles. A transfer impact assessment is prepared and filed with the competent authority of the Ministry of Public Security within the period the law sets after the first transfer, and updated when a provider is added or removed; a data protection impact assessment covers the processing as a whole. Account deletion removes the explorer's records from the platform; copies held by providers end with their retention period, which is why the shortest retention is a condition of admission.
+
+Other third parties. Google sign-in is optional and receives nothing beyond what the user approves at Google; an account can be used with a password only. The e-mail provider receives only the address and the message. The content delivery network serves files that contain no personal data, so its edge locations abroad raise no transfer.
+
+Open questions for the legal office. Three points are to be confirmed with the university's legal office before the first real users, in Stage 1: whether a university project counts as a controller under the law, or the university does; whether logs of play behaviour fall within the decree's sensitive categories, which would add obligations; and whether de-identified answer text, as specified above, is still personal data in the authority's reading. None of the answers changes the architecture: the egress path, the de-identification, and the registry of providers are the same either way, and only the paperwork differs.
