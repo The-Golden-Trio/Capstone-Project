@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobQuest · Game design tuần 43</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   CAPSTONE SLIDES — DESIGN SYSTEM v1
+   Source: "Management Consulting Toolkit" template, slides 1–35.
+   Canvas: 960 × 540 px (16:9). 1pt in the PPTX = 1.333px here.
+   DO NOT edit tokens per deck. Only add slide-specific rules at the bottom,
+   inside the marked "DECK-SPECIFIC" block, and only using the tokens.
+   ========================================================================== */
+:root{
+  /* ---- Color (the whole palette — nothing else is allowed) ---- */
+  --navy:  #003BA3;   /* primary: titles, headings, dark blocks, table headers */
+  --blue:  #4A8CFF;   /* accent: big numbers, highlights, icons, bullets, light blocks */
+  --gray:  #EFEFEF;   /* surfaces: cards, cells, tracks, neutral blocks */
+  --ink:   #000000;   /* body text */
+  --white: #FFFFFF;   /* background, text on navy/blue */
+
+  /* ---- Type ---- */
+  --font: 'Montserrat', Arial, Helvetica, sans-serif;
+  --fs-xs:   14.67px;  /* 11pt  credits, chart axis, footnotes */
+  --fs-sm:   16px;     /* 12pt  captions, dense body */
+  --fs-body: 18.67px;  /* 14pt  body text (default) */
+  --fs-lead: 21.33px;  /* 16pt  cover subtitle */
+  --fs-h3:   24px;     /* 18pt  item heading, card header */
+  --fs-stat: 32px;     /* 24pt  inline stat value */
+  --fs-h2:   37.33px;  /* 28pt  slide title */
+  --fs-h2l:  40px;     /* 30pt  percentage, image-slide title */
+  --fs-h1:   50.67px;  /* 38pt  photo-slide headline */
+  --fs-d4:   62.67px;  /* 47pt  section title */
+  --fs-d3:   70.67px;  /* 53pt  cover title */
+  --fs-d2:   93.33px;  /* 70-72pt  TOC numbers, section number, "Thanks" */
+  --fs-d1:   122.67px; /* 92pt  big number */
+  --lh-tight: 1.08;
+  --lh-title: 1.15;
+  --lh-body:  1.3;
+
+  /* ---- Grid ---- */
+  --W: 960px; --H: 540px;
+  --mx: 75px;          /* box edge; text sits 10px further in (PPTX inset) */
+  --inset: 10px;
+  --title-top: 40px;
+  --blk: 128px;        /* decorative block width (always) */
+  --mid: 270px;        /* horizontal midline — blocks meet here */
+  --bar: 32px;         /* footer bar / edge strip thickness */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000}
+body{font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
+
+/* ---------------- Slide canvas ---------------- */
+.deck{position:absolute;left:0;top:0;width:var(--W);height:var(--H);transform-origin:0 0}
+.slide{position:absolute;inset:0;width:var(--W);height:var(--H);overflow:hidden;background:var(--white);
+  color:var(--ink);font-family:var(--font);font-size:var(--fs-body);line-height:var(--lh-body);display:none}
+.slide.active{display:block}
+.slide *{font-family:inherit}
+
+/* ---------------- Text primitives ---------------- */
+.title{position:absolute;left:var(--mx);top:var(--title-top);width:810px;min-height:60px;padding:0 var(--inset);
+  display:flex;align-items:center;font-size:var(--fs-h2);font-weight:700;line-height:var(--lh-title);color:var(--navy)}
+.title.center{justify-content:center;text-align:center}
+.title.right{justify-content:flex-end;text-align:right}
+.h3{font-size:var(--fs-h3);font-weight:700;color:var(--navy);line-height:1.2}
+.p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.sm{font-size:var(--fs-sm)}
+.xs{font-size:var(--fs-xs)}
+.hl{color:var(--blue)}               /* highlight words inside navy text */
+.navy{color:var(--navy)} .blue{color:var(--blue)}
+b,strong{font-weight:700;color:var(--navy)}
+.center{text-align:center}.right{text-align:right}
+.ul{list-style:none}
+.ul li{position:relative;padding-left:1.55em;line-height:var(--lh-body)}
+.ul li::before{content:"";position:absolute;left:.35em;top:.5em;width:.36em;height:.36em;border-radius:50%;background:var(--blue)}
+.ul li li::before{background:transparent;border:1.5px solid var(--blue)}
+.ul li+li{margin-top:.12em}
+.ul ul{list-style:none;margin-top:.12em}
+.ul.gap li+li{margin-top:.5em}
+
+/* ---------------- Decorative system ---------------- */
+.blk{position:absolute;width:var(--blk)}          /* set left/top/height inline */
+.blk.navy{background:var(--navy)} .blk.blue{background:var(--blue)} .blk.gray{background:var(--gray)}
+.footbar{position:absolute;left:0;bottom:0;width:var(--W);height:var(--bar);background:linear-gradient(90deg,var(--navy) 50%,var(--blue) 50%)}
+.footbar.rev{background:linear-gradient(90deg,var(--blue) 50%,var(--navy) 50%)}
+.edge-r{position:absolute;right:0;top:60px;bottom:0;width:var(--bar);background:var(--blue)}
+.edge-l{position:absolute;left:0;top:0;height:470px;width:var(--bar);background:var(--blue)}
+
+/* ---------------- Components ---------------- */
+.photo{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.shot{display:block;max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--gray);background:var(--white)} /* product screenshots stay in color */
+.ph{background:var(--gray);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:var(--fs-sm);font-weight:600;text-align:center;padding:10px}
+.icon{width:44px;height:44px;stroke:var(--blue);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dot{display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--blue);vertical-align:middle}
+.dot.navy{background:var(--navy)} .dot.ink{background:var(--ink)} .dot.gray{background:var(--gray)}
+/* SVG paint helpers — never hard-code hex inside SVG, use these */
+.s-navy{stroke:var(--navy)} .s-blue{stroke:var(--blue)} .s-gray{stroke:var(--gray)} .s-white{stroke:var(--white)} .s-ink{stroke:var(--ink)}
+.f-navy{fill:var(--navy)} .f-blue{fill:var(--blue)} .f-gray{fill:var(--gray)} .f-white{fill:var(--white)} .f-ink{fill:var(--ink)} .f-none{fill:none}
+.node{display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 16px;font-size:var(--fs-body);line-height:1.2;min-height:41px}
+.node.navy{background:var(--navy);color:var(--white);font-weight:700}
+.node.blue{background:var(--blue);color:var(--white);font-weight:700}
+.node.gray{background:var(--gray);color:var(--ink)}
+.node.outline{background:var(--white);border:2px solid var(--blue);color:var(--navy)}
+.kpi{background:var(--navy);color:var(--white);text-align:center;padding:8px 18px;line-height:1.15}
+.kpi .v{font-size:var(--fs-h3);font-weight:700;display:block}
+.kpi .l{font-size:var(--fs-sm);font-weight:700;display:block}
+.tbl{border-collapse:collapse;width:100%}
+.tbl th{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-body);padding:9px 10px;text-align:center;line-height:1.15}
+.tbl td{padding:9px 10px;font-size:var(--fs-body);line-height:1.2;text-align:center;border-bottom:1px solid var(--gray)}
+.tbl td:first-child{text-align:left}
+.tbl th:first-child{background:transparent}
+.tbl.filled th:first-child{background:var(--navy);text-align:left}
+
+/* ===================== LAYOUTS ===================== */
+/* Absolute regions below mirror the PPTX placeholder boxes (px). */
+
+/* 01 cover */
+.l-cover .cv-title{position:absolute;left:172px;top:103px;width:710px;height:235px;padding:0 var(--inset);display:flex;flex-direction:column;justify-content:flex-end;text-align:right;font-size:var(--fs-d3);font-weight:700;line-height:var(--lh-tight);color:var(--navy)}
+.l-cover .cv-sub{position:absolute;left:172px;top:348px;width:710px;padding:0 var(--inset);text-align:right;font-size:var(--fs-lead)}
+.l-cover .cv-meta{position:absolute;right:86px;bottom:44px;text-align:right;font-size:var(--fs-sm);line-height:1.45}
+
+/* 02 toc */
+.l-toc .toc{position:absolute;left:85px;top:148px;width:820px;display:grid;grid-template-columns:417px 1fr;row-gap:28px}
+.l-toc .toc-item{display:grid;grid-template-columns:146px 1fr;column-gap:24px;align-items:start;min-height:122px}
+.l-toc .toc-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:.95;text-align:right}
+.l-toc .toc-item .h3{margin-top:2px;margin-bottom:8px}
+.l-toc .toc.rows-3{top:132px;row-gap:34px}
+.l-toc .toc.rows-3 .toc-item{min-height:0}
+.l-toc .toc.rows-3 .toc-num{font-size:var(--fs-d4)}
+
+/* 03 section (right-aligned) + .alt (left-aligned) */
+.l-section .sec{position:absolute;left:416px;top:120px;width:468px;padding:0 var(--inset);text-align:right}
+.l-section .sec-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:1}
+.l-section .sec-title{font-size:var(--fs-d4);font-weight:700;color:var(--navy);line-height:1.05;margin-top:8px}
+.l-section .sec-sub{font-size:var(--fs-body);margin-top:14px}
+.l-section.alt .sec{left:74px;text-align:left}
+
+/* 04 intro (text left, blocks right) + .alt (blocks left, text right) */
+.l-intro .txt{position:absolute;left:121px;top:140px;width:444px;padding:0 var(--inset)}
+.l-intro .txt .t{font-size:var(--fs-h2);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:14px}
+.l-intro.alt .txt{left:418px;top:150px;width:426px;text-align:right}
+
+/* 05 statement (one big line) */
+.l-statement .big{position:absolute;left:74px;top:110px;width:600px;height:320px;padding:0 var(--inset);display:flex;align-items:center;font-size:98.67px;font-weight:700;line-height:1;color:var(--navy)}
+.l-statement .big.m{font-size:var(--fs-d3)}
+
+/* 06 text (+ bullets) */
+.l-text .body{position:absolute;left:var(--mx);top:128px;width:560px;padding:0 var(--inset)}
+.l-text.wide .body{width:810px}
+.l-text .body > * + *{margin-top:14px}
+
+/* 07 two columns */
+.l-2col .cols{position:absolute;left:74px;top:200px;width:560px;display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding:0 var(--inset)}
+.l-2col .cols .h3{margin-bottom:12px}
+
+/* 08 three columns with icons */
+.l-3col .cols{position:absolute;left:82px;top:196px;width:796px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:42px;text-align:center}
+.l-3col .cols .icon{margin:0 auto 4px;display:block}
+.l-3col .cols .h3{margin:6px 0 8px}
+
+/* 09 six-grid (3 × 2) */
+.l-grid6 .grid{position:absolute;left:74px;top:150px;width:720px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:10px;row-gap:30px;padding:0 var(--inset)}
+.l-grid6 .grid .h3{margin-bottom:8px}
+
+/* 10 four items right-aligned (2 × 2) */
+.l-4items .grid{position:absolute;left:331px;top:160px;width:553px;display:grid;grid-template-columns:1fr 1fr;column-gap:34px;row-gap:34px;text-align:right;padding:0 var(--inset)}
+.l-4items .grid .h3{margin-bottom:8px}
+
+/* 11 quadrant / SWOT */
+.l-quad .quad{position:absolute;left:110px;top:130px;display:grid;grid-template-columns:42px 292px 292px;column-gap:20px;row-gap:20px}
+.l-quad .quad > :nth-child(3n){margin-left:50px}
+.l-quad .side{background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;height:153px}
+.l-quad .q-h{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);height:35px;padding:0 20px;display:flex;align-items:center}
+.l-quad .q-b{background:var(--gray);height:118px;padding:14px 20px}
+
+/* 12 rows (label + items) */
+.l-rows .rows{position:absolute;left:75px;top:124px;width:809px;display:flex;flex-direction:column;gap:10px}
+.l-rows .row{display:grid;grid-template-columns:199px 1fr;height:81px}
+.l-rows .row .lab{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);line-height:1.1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px}
+.l-rows .row .its{background:var(--gray);display:flex;align-items:center;justify-content:space-around;gap:20px;padding:0 24px}
+.l-rows .row .its > *{flex:1}
+
+/* 13 table / maturity */
+.l-table .tblwrap{position:absolute;left:85px;top:128px;width:810px}
+
+/* 14 process chevrons */
+.l-process .chev{position:absolute;left:75px;top:146px;width:808px;height:121px;display:flex}
+.l-process .chev > div{flex:1;background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 44px 0 50px;
+  clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,40px 50%)}
+.l-process .chev > div:first-child{clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%);padding-left:20px}
+.l-process .chev > div + div{margin-left:-36px}
+.l-process .notes{position:absolute;left:75px;top:286px;width:808px;display:grid;column-gap:14px}
+
+/* 15 roadmap stairs */
+.l-roadmap .stairs{position:absolute;left:75px;top:170px;width:809px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);align-items:start}
+.l-roadmap .step{margin-top:calc(var(--rise,33px) * (var(--n,3) - 1 - var(--i,0)))}
+.l-roadmap .step .h3{text-align:center;padding-bottom:10px}
+.l-roadmap .step .line{height:8px;background:var(--blue);position:relative}
+.l-roadmap .step + .step .line::before{content:"";position:absolute;left:0;bottom:0;width:8px;height:calc(var(--rise,33px) + 8px);background:var(--blue)}
+.l-roadmap .step .ul{padding:14px 10px 0 20px}
+
+/* 16 hierarchy tree (top-down) */
+.l-tree .tree{position:absolute;left:75px;top:120px;width:809px;display:flex;justify-content:center}
+.tree ul{display:flex;justify-content:center;padding-top:30px;position:relative;list-style:none}
+.tree > ul{padding-top:0}
+.tree li{position:relative;padding:30px 6px 0;display:flex;flex-direction:column;align-items:center}
+.tree > ul > li{padding-top:0}
+.tree li::before,.tree li::after{content:"";position:absolute;top:0;width:50%;height:30px;border-top:2px solid var(--blue)}
+.tree li::before{right:50%}
+.tree li::after{left:50%;border-left:2px solid var(--blue)}
+.tree li:only-child::before,.tree li:only-child::after{border-top:0}
+.tree li:first-child::before,.tree li:last-child::after{border-top:0}
+.tree li:last-child::before{border-right:2px solid var(--blue);width:calc(50% + 1px)}
+.tree li:last-child::before{right:calc(50% - 1px)}
+.tree li:last-child::after{border-left:0}
+.tree > ul > li::before,.tree > ul > li::after{display:none}
+.tree ul ul::before{content:"";position:absolute;top:0;left:50%;height:30px;border-left:2px solid var(--blue)}
+.tree .node{white-space:nowrap}
+.tree .lv1{min-width:161px;font-size:var(--fs-h3)}
+.tree .lv2{min-width:136px}
+.tree .lv3{min-width:78px;padding:6px 12px}
+
+/* 17 breakdown (left → right) */
+.l-breakdown .bd{position:absolute;left:170px;top:118px;height:380px;display:flex;align-items:center}
+.bd .root{width:128px;min-height:116px;font-size:var(--fs-h3);text-align:left;justify-content:flex-start;padding:10px 12px}
+.bd .groups{display:flex;flex-direction:column;gap:26px;margin-left:30px;position:relative;padding-left:0}
+.bd .groups::before{content:"";position:absolute;left:-16px;top:58px;bottom:58px;border-left:2px solid var(--blue)}
+.bd .grp{display:flex;align-items:center;position:relative}
+.bd .grp::before{content:"";position:absolute;left:-16px;top:50%;width:16px;border-top:2px solid var(--blue)}
+.bd .grp > .node{width:128px;min-height:116px;font-size:var(--fs-h3);font-weight:700;color:var(--navy);justify-content:flex-start;text-align:left}
+.bd .leaves{display:flex;flex-direction:column;justify-content:space-between;gap:10px;margin-left:36px;position:relative;align-self:stretch}
+.bd .leaves::before{content:"";position:absolute;left:-18px;top:20px;bottom:20px;border-left:2px solid var(--blue)}
+.bd .leaves::after{content:"";position:absolute;left:-36px;top:50%;width:18px;border-top:2px solid var(--blue)}
+.bd .leaves .node{position:relative;width:170px;min-height:38px;justify-content:flex-start;font-size:var(--fs-sm);text-align:left}
+.bd .leaves .node::before{content:"";position:absolute;left:-18px;top:50%;width:18px;border-top:2px solid var(--blue)}
+
+/* 18 matrix 2×2 */
+.l-matrix .mx{position:absolute;left:120px;top:118px;display:grid;grid-template-columns:150px 36px 216px 216px;grid-template-rows:42px 111px 111px 36px 40px;column-gap:10px;row-gap:5px;align-items:center}
+.l-matrix .mx .cell{height:111px;background:var(--gray);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 18px;line-height:1.2}
+.l-matrix .mx .cell.on{background:var(--navy);color:var(--white)}
+.l-matrix .mx .tick{color:var(--navy);text-align:center;font-size:var(--fs-body)}
+.l-matrix .mx .tick.y{writing-mode:vertical-rl;transform:rotate(180deg);justify-self:center}
+.l-matrix .mx .axis{font-weight:700;color:var(--navy);font-size:var(--fs-h3);text-align:center}
+
+/* 19 cycle (4-part ring) */
+.l-cycle .ring{position:absolute;left:330px;top:128px;width:300px;height:300px}
+.l-cycle .lbl{position:absolute;display:flex;align-items:center;gap:10px;font-size:var(--fs-body);white-space:nowrap}
+.l-cycle .lbl i{display:block;height:2px;width:36px}
+.l-cycle .lbl i::after{content:"";display:block;width:8px;height:8px;border-radius:50%;margin-top:-3px}
+.l-cycle .lbl.l{right:640px;flex-direction:row}
+.l-cycle .lbl.r{left:640px}
+.l-cycle .lbl.navy i,.l-cycle .lbl.navy i::after{background:var(--navy)}
+.l-cycle .lbl.blue i,.l-cycle .lbl.blue i::after{background:var(--blue)}
+.l-cycle .lbl.l i::after{margin-left:28px}
+.l-cycle .lbl.r i::after{margin-left:0}
+
+/* 20 diagram (free canvas) */
+.l-diagram .stage{position:absolute;left:var(--mx);top:128px;width:810px;height:370px;display:flex;align-items:center;justify-content:center}
+.l-diagram.has-bar .stage{height:340px}
+.l-diagram .title.two{min-height:98px}
+
+/* 21 quote */
+.l-quote .q{position:absolute;left:281px;top:110px;width:604px;height:214px;padding:0 var(--inset);display:flex;align-items:flex-end;justify-content:flex-end;text-align:right;font-size:var(--fs-h2);font-weight:600;line-height:1.2;color:var(--blue)}
+.l-quote .by{position:absolute;left:281px;top:346px;width:604px;padding:0 var(--inset);text-align:right;font-size:var(--fs-h3);font-weight:700;color:var(--navy)}
+
+/* 22 big number */
+.l-bignum .num{position:absolute;left:74px;top:148px;width:810px;height:174px;display:flex;align-items:flex-end;justify-content:center;font-size:var(--fs-d1);font-weight:700;color:var(--blue);line-height:1}
+.l-bignum .cap{position:absolute;left:74px;top:334px;width:810px;text-align:center}
+
+/* 23 photo full-bleed + headline */
+.l-photo .bg{position:absolute;inset:0}
+.l-photo .wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 70%)}
+.l-photo .head{position:absolute;left:74px;top:52px;width:480px;padding:0 var(--inset);font-size:var(--fs-h1);font-weight:700;line-height:1.12;color:var(--navy)}
+
+/* 24 photo left + text right */
+.l-photoleft .pic{position:absolute;left:0;top:112px;width:349px;height:314px}
+.l-photoleft .txt{position:absolute;left:391px;top:150px;width:493px;padding:0 var(--inset);text-align:right}
+.l-photoleft .txt .t{font-size:var(--fs-h2l);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:16px}
+
+/* 25 demo / screenshot */
+.l-demo .side{position:absolute;left:var(--mx);top:128px;width:300px;padding:0 var(--inset)}
+.l-demo .side .h3{margin-bottom:10px}
+.l-demo .screen{position:absolute;left:392px;top:120px;width:500px;height:380px;display:flex;align-items:center;justify-content:center}
+
+/* 26 stats bars */
+.l-bars .grp{position:absolute;top:140px;width:330px}
+.l-bars .grp.l{left:75px}
+.l-bars .grp.r{left:555px;text-align:right}
+.l-bars .grp .h3{margin-bottom:10px;padding:0 var(--inset)}
+.l-bars .bar{display:grid;grid-template-columns:90px 1fr;align-items:center;column-gap:8px;height:44px;padding:0 var(--inset)}
+.l-bars .grp.r .bar{grid-template-columns:1fr auto}
+.l-bars .bar .v{white-space:nowrap}
+.l-bars .bar .v{font-size:var(--fs-stat);font-weight:700;color:var(--navy);line-height:1}
+.l-bars .bar .track{height:12px;background:var(--gray);position:relative}
+.l-bars .bar .track span{position:absolute;top:0;bottom:0;left:0;background:var(--blue)}
+.l-bars .grp.r .bar .track span{left:auto;right:0}
+.l-bars .foot{position:absolute;left:75px;top:302px;width:809px;text-align:center}
+.l-bars .foot .icons{display:flex;justify-content:center;gap:22px;margin-top:18px}
+
+/* 27 donut percentages */
+.l-donuts .cols{position:absolute;left:78px;top:160px;width:801px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);column-gap:40px;text-align:center}
+.l-donuts .ring{width:120px;height:120px;margin:0 auto;display:block}
+.l-donuts .pct{font-size:var(--fs-h2l);font-weight:700;color:var(--blue);margin:14px 0 6px;line-height:1}
+
+/* 28 chart + KPI */
+.l-chart .left{position:absolute;left:85px;top:122px;width:390px}
+.l-chart .right{position:absolute;left:500px;top:122px;width:390px}
+.l-chart svg text{font-family:var(--font)}
+
+/* 29 team */
+.l-team .grid{position:absolute;left:75px;top:128px;width:809px;display:flex;justify-content:center;gap:var(--gap,90px)}
+.l-team .m{width:var(--w,237px);text-align:center}
+.l-team .m .face{width:var(--d,192px);height:var(--d,192px);border-radius:50%;overflow:hidden;margin:0 auto 18px;background:var(--gray)}
+.l-team .m .h3{margin-bottom:6px}
+
+/* 30 testimonials */
+.l-testi .list{position:absolute;left:115px;top:160px;width:320px;padding:0 var(--inset)}
+.l-testi .list .by{font-size:var(--fs-h3);font-weight:700;color:var(--navy);margin-top:6px}
+.l-testi .list > div + div{margin-top:34px}
+
+/* 31 thanks / closing */
+.l-thanks .big{position:absolute;left:74px;top:46px;width:560px;height:140px;padding:0 var(--inset);display:flex;align-items:flex-end;font-size:var(--fs-d2);font-weight:700;color:var(--navy);line-height:1}
+.l-thanks .info{position:absolute;left:74px;top:198px;width:480px;padding:0 var(--inset)}
+.l-thanks .info .icons{display:flex;gap:10px;margin-top:22px}
+
+/* ===================== DECK-SPECIFIC (keep tiny, tokens only) ===================== */
+.tbl.left td{text-align:left}
+.tbl.left td:first-child{white-space:nowrap}
+.tbl.dense th,.tbl.dense td{font-size:var(--fs-sm);padding:6px 8px;line-height:1.25}
+.tbl.dense{table-layout:fixed}
+.tbl.dense td{text-align:left;vertical-align:top}
+.l-diagram .stage.top{top:112px;height:414px;align-items:flex-start}
+.sample{width:810px}
+.sample .lead{font-size:var(--fs-sm);margin-bottom:12px}
+.sample .src{font-size:var(--fs-sm);margin-top:10px;line-height:1.25}
+.sample .p{color:var(--blue);font-weight:400;margin-left:6px}
+.sample .src .p{margin-left:0}
+.dcols{display:grid;column-gap:26px;align-items:start}
+.fld{margin-bottom:9px;font-size:var(--fs-sm);line-height:1.28}
+.fld .k{font-weight:700;color:var(--navy)}
+.fld ul{margin:2px 0 0;padding-left:18px}
+.fld .none{color:var(--blue)}
+.explain{display:grid;grid-template-columns:repeat(3,1fr);column-gap:24px}
+.explain .node{margin-bottom:6px}
+.explain ul{list-style:none;margin:0;padding:0}
+.explain li{font-size:var(--fs-sm);line-height:1.25;padding:5px 0;border-bottom:1px solid var(--gray)}
+.explain li span{display:block;color:var(--blue)}
+.sample .verdict{margin-top:14px}
+
+/* ===================== Presentation shell (not part of the look) ===================== */
+.hud{position:fixed;right:14px;bottom:12px;font:600 12px/1 var(--font);color:rgba(255,255,255,.55);letter-spacing:.04em;user-select:none;z-index:9}
+body.overview{overflow:auto;background:#000}
+body.overview .deck{position:static;transform:none!important;width:auto;height:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:18px}
+body.overview .slide{position:relative;display:block;zoom:.32;cursor:pointer;outline:0}
+body.overview .slide.active{outline:10px solid var(--blue)}
+@media print{
+  @page{size:960px 540px;margin:0}
+  html,body{background:#fff;overflow:visible;height:auto}
+  .deck{position:static;transform:none!important;width:auto;height:auto}
+  .slide{position:relative;display:block!important;break-after:page;page-break-after:always}
+  .hud{display:none}
+}
+</style>
+</head>
+<body>
+<main class="deck">
+<!-- ================= SLIDES START ================= -->
+<section class="slide l-cover">
+  <div class="blk blue" style="left:0;top:0;height:270px"></div>
+  <h1 class="cv-title"><span>Game design</span><span>tuần <span class="hl">43</span></span></h1>
+  <p class="cv-sub">Luật chơi, dữ liệu nghề và những gì cần chốt</p>
+  <p class="cv-meta"><b>JobQuest</b> · Tổng kết nội bộ nhóm<br>19–23/10/2026</p>
+</section>
+
+<section class="slide l-toc">
+  <h2 class="title center">Nội dung</h2>
+  <div class="toc rows-3">
+    <div class="toc-item"><div class="toc-num">01</div><div><div class="h3">Dữ liệu nghề</div><p>221 nghề, một khuôn hồ sơ</p></div></div>
+    <div class="toc-item"><div class="toc-num">02</div><div><div class="h3">Hồ sơ người chơi</div><p>Ba phần chỉ số, Get to know me</p></div></div>
+    <div class="toc-item"><div class="toc-num">03</div><div><div class="h3">Gợi ý nghề</div><p>Ba phép đo, ba ô gợi ý</p></div></div>
+    <div class="toc-item"><div class="toc-num">04</div><div><div class="h3">Điểm và mở khoá</div><p>Bậc soft skill, nghề cấp cao</p></div></div>
+    <div class="toc-item"><div class="toc-num">05</div><div><div class="h3">Keyword, nhảy nghề</div><p>ESCO cho mọi nghề, luật rõ ràng</p></div></div>
+    <div class="toc-item"><div class="toc-num">06</div><div><div class="h3">Cần nhóm chốt</div><p>Tối nay và khi có chuyên gia</p></div></div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<section class="slide l-statement">
+  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:834px;top:270px;height:141px"></div>
+  <div class="big">Một luật cho cả 221 nghề</div>
+</section>
+
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">01</div>
+    <div class="sec-title">Dữ liệu nghề</div>
+    <p class="sec-sub">Nền móng cho mọi luật chơi</p>
+  </div>
+</section>
+
+<section class="slide l-rows">
+  <h2 class="title center">Bốn lớp dữ liệu nghề</h2>
+  <div class="rows">
+    <div class="row"><div class="lab">Danh mục</div><div class="its"><span>22 nghề IT</span><span>199 nghề ngoài IT</span><span>Gộp từ 846 mã O*NET</span></div></div>
+    <div class="row"><div class="lab">Hồ sơ nghề</div><div class="its"><span>Lương, nhu cầu tuyển</span><span>Ngành học Việt Nam</span><span>Mã nghề Việt Nam</span></div></div>
+    <div class="row"><div class="lab">Thang cấp</div><div class="its"><span>4–7 cấp mỗi nghề</span><span>1.195 cấp ngoài IT</span><span>Chứng cứ A, B, C</span></div></div>
+    <div class="row"><div class="lab">Kỹ năng</div><div class="its"><span>Hồ sơ O*NET</span><span>1.414 keyword ESCO</span><span>Độ khó nghề k</span></div></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">O*NET: dữ liệu nghề của Mỹ</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Là gì</div><div class="v">Cơ sở dữ liệu nghề của Bộ Lao động Mỹ, bản 31.0, giấy phép CC BY 4.0 (phải ghi nguồn). Mỗi mã nghề được đo bằng cùng một bộ thang.</div></div><div class="fld"><div class="k">Đo bằng gì</div><ul><li>Sở thích RIASEC: thang 1–7</li><li>35 kỹ năng, 33 kiến thức: độ quan trọng 1–5</li><li>41 hoạt động công việc, 21 phong cách làm việc</li><li>Work Context: điều kiện làm việc (đứng, ngồi, giờ làm…)</li><li>Job Zone 1–5: mức chuẩn bị (học, kinh nghiệm)</li><li>Related Occupations: 20 nghề liên quan, chuyên gia rà</li></ul></div></div><div><div class="fld"><div class="k">Game dùng vào đâu</div><div class="v">Hồ sơ 199 nghề ngoài IT (mô tả, việc, môi trường), độ giống nghề Sim, mức nghề cần 7 nhóm soft skill, độ khó k.</div></div><div class="fld"><div class="k">Vì sao</div><div class="v">Bộ dữ liệu nghề công khai, đầy đủ nhất, đo mọi nghề bằng cùng khung; O*NET Interest Profiler là công cụ hướng nghiệp chuẩn dùng chính dữ liệu này.</div></div><div class="fld"><div class="k">Giới hạn</div><div class="v">Số liệu của Mỹ. Một mã có thể gom nhiều nghề: Back-end và Mobile cùng mã 15-1252, nên kỹ năng cứng lấy từ ESCO.</div></div></div></div><p class="src">Nguồn: onetcenter.org/database.html; Hồ sơ JobQuest cơ chế game.md khối B</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Gộp 846 mã O*NET thành 199 nghề</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Đầu vào</div><div class="v">846 mã O*NET 31.0 có đủ dữ liệu, trừ nhóm 15-1 (máy tính) vì đã có 22 nghề IT.</div></div><div class="fld"><div class="k">Kết quả</div><div class="v">199 nghề giữ · 628 mã gộp vào nghề khác · 19 mã loại. Mỗi nghề lấy mô tả, việc, mức chuẩn bị từ một mã chính.</div></div><div class="fld"><div class="k">Quy luật gộp</div><ul><li>Gộp khi <b>cùng trải nghiệm làm việc hằng ngày</b>: biến thể, chuyên khoa, loại máy khác nhau</li><li>Vị trí thấp, cao của cùng nghề thành cấp trong thang, không thành nghề riêng</li><li>Ví dụ: Công nhân lắp ráp gộp 9 mã (máy bay, động cơ, điện tử…); Phục vụ nhà hàng gộp 4 mã</li></ul></div></div><div><div class="fld"><div class="k">Quy luật loại (19 mã)</div><ul><li>Không phù hợp Việt Nam: 5 (ví dụ casino)</li><li>Không có vị trí tương ứng ở Việt Nam: 5</li><li>Vai trò hẹp, quá ít vị trí: 4</li><li>Không phải lựa chọn nghề theo tuyển dụng: 2</li><li>Nghề đang biến mất: 2 · Cấp C-level: 1</li></ul></div><div class="fld"><div class="k">Vì sao</div><div class="v">Cùng tiêu chí đã dùng để gộp 78 nghề IT thành 22 (D-52): mỗi nghề trong game phải là một trải nghiệm chơi khác nhau.</div></div><div class="fld"><div class="k">Kiểm</div><div class="v">Script dừng nếu một mã bị thiếu hoặc xuất hiện hai lần.</div></div></div></div><p class="src">Nguồn: decisions/onet_merge/*.json (lý do từng cụm), decisions/onet_to_catalogue.csv; JSON_SCHEMA.md §12</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">ESCO: kỹ năng mịn cho mọi nghề</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Là gì</div><div class="v">Danh mục kỹ năng và nghề của Ủy ban châu Âu, bản 1.2.1: 3.039 nghề, 13.939 kỹ năng. Mỗi nghề ghi kỹ năng bắt buộc và tuỳ chọn; kỹ năng xếp thành cây nhóm; kiến thức theo lĩnh vực đào tạo ISCED-F; nghề nối với mã ISCO-08.</div></div><div class="fld"><div class="k">Vì sao đổi</div><ul><li>Cách cũ: IT dùng 22 keyword nhóm soạn, ngành khác lấy từ O*NET, hai chuẩn khác nhau</li><li>O*NET thô: Back-end và Mobile cùng mã; 95% keyword ngoài IT lên Chuyên sâu</li><li>ESCO mịn đều: hàn TIG khác hàn hồ quang; mobile developer khác games developer</li></ul></div></div><div><div class="fld"><div class="k">Quy luật chung</div><div class="v">Mọi nghề lấy keyword theo <b>cùng một cách</b> từ cùng một nguồn, nên không ngành nào được chia nhỏ hơn ngành nào.</div></div><div class="fld"><div class="k">Nối 221 nghề với ESCO</div><div class="v">133 tự động (bảng nối ESCO–O*NET, độ khớp tên) · 65 sửa tay · 22 IT chọn tay · 1 mượn (thợ sửa xe máy); 3 nghề ghép 2 nghề ESCO (D-123).</div></div><div class="fld"><div class="k">Kiểm</div><div class="v">Bộ keyword ESCO tìm lại 49,5% keyword IT nhóm soạn; O*NET chỉ 38%.</div></div><div class="fld"><div class="k">Giấy phép</div><div class="v">Dùng lại tự do, phải ghi "This service uses the ESCO classification of the European Commission".</div></div></div></div><p class="src">Nguồn: esco.ec.europa.eu; Hồ sơ JobQuest cơ chế game.md khối G; D-120</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Band và chứng cứ của thang cấp</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Band là gì</div><div class="v">Cấp thâm niên dùng chung để so mọi nghề: L1 Intern · L2 Fresher · L3 Junior · L4 Middle · L5 Senior · L6 Lead · L7 Principal, Manager · L8 Senior Manager · L9 Head, Director. Số năm của Back-end: 0 · 0–1 · 1–2 · 2–4 · 4–7 · 6–9 · 8–12.</div></div><div class="fld"><div class="k">Quy luật</div><ul><li>Mỗi nghề chỉ chiếm band có thật ở Việt Nam (D-20)</li><li>Band đánh số liền trong nghề; band_equivalent để so giữa nghề (Luật sư partner là L6, ≈ L7 nghề khác)</li><li>22 nghề IT: 123 cấp · 199 nghề ngoài IT: 4–7 cấp, 1.195 cấp</li></ul></div></div><div><div class="fld"><div class="k">Thang ngoài IT dựng từ</div><div class="v">Hạng viên chức (y tế, giáo dục, văn hoá, khoa học…), bậc kỹ năng nghề, chứng chỉ hành nghề, cấp bậc công an và toà án, chức danh doanh nghiệp phổ biến.</div></div><div class="fld"><div class="k">Mức chứng cứ</div><ul><li>A: văn bản pháp luật hoặc dữ liệu Việt Nam đã đọc, 305 cấp</li><li>B: tin tuyển dụng, lộ trình phổ biến, 837 cấp</li><li>C: người dựng thang suy luận, 53 cấp</li></ul></div><div class="fld"><div class="k">Còn căng</div><div class="v">Luật Viên chức 2025 đổi hạng IV–I thành bậc nghề nghiệp 1–5 từ 1/7/2026; tên chức danh cần sửa (G4).</div></div></div></div><p class="src">Nguồn: JSON_SCHEMA.md (band), research_notes/Thang cấp nghề/; Hồ sơ JobQuest cơ chế game.md khối G</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Điều dưỡng 1/7: giới thiệu</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Tên<span class="p">role_name_vn · role_name</span></div><div class="v">Điều dưỡng · Registered Nurses</div></div><div class="fld"><div class="k">Nhóm nghề<span class="p">role_group_vn · is_it</span></div><div class="v">Y tế chuyên môn và kỹ thuật y tế · is_it = false</div></div><div class="fld"><div class="k">Mã O*NET<span class="p">codes.onet</span></div><div class="v">29-1141.00, 29-1141.01, 29-1141.02, 29-1141.03, 29-1141.04, 29-1171.00, 29-2061.00, 29-2053.00, 29-2055.00, 29-9093.00, 31-9099.02</div></div><div class="fld"><div class="k">Mã nghề Việt Nam<span class="p">codes.vsco</span></div><div class="v">2221 · Y tá/Điều dưỡng (cao cấp) · độ tin cậy cao</div></div></div><div><div class="fld"><div class="k">Mô tả<span class="p">overview.summary</span></div><div class="v">Đánh giá vấn đề và nhu cầu sức khoẻ của người bệnh, lập và thực hiện kế hoạch chăm sóc điều dưỡng, lưu hồ sơ y tế. Chăm sóc người bệnh, người bị thương, đang hồi phục hoặc khuyết tật. Có thể tư vấn giữ gìn sức khoẻ, phòng bệnh hoặc quản lý ca. Cần chứng chỉ hành nghề. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.</div></div><div class="fld"><div class="k">Hợp với ai<span class="p">overview.fit_summary</span></div><div class="v">Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.</div></div></div></div><p class="src">Nguồn (<span class="p">sources</span>) · <b>overview</b> C · NHAP_CHO_DUYET: Dịch nháp từ O*NET 31.0; mặt trái suy từ Work Context</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Điều dưỡng 2/7: mặt trái, môi trường</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Mặt trái<span class="p">overview.downsides</span></div><ul><li>Có nguy cơ tiếp xúc với bệnh truyền nhiễm.</li><li>Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.</li><li>Sai sót có thể gây hậu quả nghiêm trọng.</li><li>Thường xuyên gặp tình huống xung đột với người khác.</li></ul></div><div class="fld"><div class="k">Sở thích RIASEC<span class="p">interests</span></div><div class="v">Mã SIC · Realistic 4,168 · Investigative 4,608 · Artistic 1,543 · Social 5,258 · Enterprising 2,017 · Conventional 4,198</div></div></div><div><div class="fld"><div class="k">Nơi làm việc<span class="p">work_environment.settings</span></div><div class="v">WS_HEALTH (Bệnh viện, phòng khám, cơ sở chăm sóc)</div></div><div class="fld"><div class="k">Loại công ty<span class="p">work_environment.company_types</span></div><div class="v none">Không có trong dữ liệu</div></div><div class="fld"><div class="k">Điều kiện làm việc<span class="p">work_environment.facts</span></div><ul><li>Phần lớn thời gian làm trong nhà, có điều hoà.</li><li>Đứng phần lớn thời gian làm việc.</li><li>Làm việc theo nhóm là chính.</li><li>34% người trong nghề làm hơn 40 giờ mỗi tuần.</li><li>11% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định.</li></ul></div></div></div></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Điều dưỡng 3/7: việc hằng ngày</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Việc hằng ngày<span class="p">daily_work.tasks</span></div><ul><li>Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.</li><li>Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.</li><li>Lưu báo cáo và hồ sơ chính xác, chi tiết.</li></ul></div></div><div><div class="fld"><div class="k">Việc hằng ngày (tiếp)<span class="p">daily_work.tasks</span></div><ul><li>Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.</li><li>Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy.</li></ul></div></div></div><p class="src">Nghề ngoài IT hiện có 5 việc chung từ O*NET; việc theo từng cấp (<span class="p">daily_work.by_level</span>) sẽ bổ sung sau.</p><p class="src">Nguồn (<span class="p">sources</span>) · <b>daily_work</b> B: O*NET 31.0, dịch nháp</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Điều dưỡng 4/7: kỹ năng</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Kỹ năng: top 5 theo độ quan trọng 1–5<span class="p">skills.hard</span></div><div class="v">Lắng nghe chủ động 3,92 · Diễn đạt bằng lời 3,83 · Theo dõi và đánh giá 3,83 · Đọc hiểu 3,82 · Nhạy bén với người khác 3,81</div></div><div class="fld"><div class="k">Kiến thức: top 5 theo độ quan trọng 1–5<span class="p">skills.knowledge</span></div><div class="v">Y khoa và nha khoa 4,28 · Ngôn ngữ (tiếng mẹ đẻ) 4,05 · Dịch vụ khách hàng 3,89 · Tâm lý học 3,81 · Giáo dục và đào tạo 3,69</div></div></div><div><div class="fld"><div class="k">Mức nghề cần 7 nhóm soft skill (điểm z)<span class="p">skills.soft</span></div><div class="v">Giao tiếp &amp; hợp tác 0,804 · Trí tuệ cảm xúc &amp; xử lý xung đột 1,221 · Lãnh đạo &amp; tư duy kinh doanh 0,501 · Tư duy &amp; giải quyết vấn đề 0,351 · Tự quản lý &amp; chịu áp lực 0,797 · Thích ứng &amp; học hỏi 0,87 · Đạo đức &amp; chuyên nghiệp 1,13</div></div></div></div><p class="src">Độ quan trọng (O*NET Importance): 1 không quan trọng · 3 quan trọng · 5 cực kỳ quan trọng. Điểm z: 0 là mức của nghề bình thường, +1 là cao hơn 1 độ lệch chuẩn, số âm là cần ít hơn; tính từ các mục O*NET nối với nhóm.</p><p class="src">Nguồn (<span class="p">sources</span>) · <b>skills.hard</b> B: O*NET 31.0 (Mỹ), thang Importance</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Điều dưỡng 5/7: học tập, tuyển dụng</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Mức chuẩn bị<span class="p">education.preparation</span></div><div class="v">Zone 4 · Cần chuẩn bị nhiều · Thường cần bằng đại học. Theo O*NET (Mỹ).</div></div><div class="fld"><div class="k">Ngành đại học<span class="p">education.majors_university</span></div><div class="v">720301 Điều dưỡng</div></div><div class="fld"><div class="k">Ngành cao đẳng, trung cấp<span class="p">education.majors_vocational</span></div><div class="v">720301 Điều dưỡng (TC, CĐ)</div></div><div class="fld"><div class="k">Giấy phép hành nghề<span class="p">education.licence</span></div><div class="v">Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực). Luật Khám bệnh, chữa bệnh số 15/2023/QH15, hiệu lực 01/01/2024</div></div></div><div><div class="fld"><div class="k">Nhu cầu tuyển<span class="p">outlook</span></div><div class="v">postings_per_10k 32,7 · postings 111 · level cao · data_year trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin) · Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs). Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM.</div></div></div></div><p class="src">Nguồn (<span class="p">sources</span>) · <b>outlook</b> B: VietJobs (HuggingFace dinhieufam/VietJobs, bản đăng 2/3/2026), https://arxiv.org/abs/2603.05262</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Điều dưỡng 6/7: lương</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Lương<span class="p">pay</span></div><ul><li>basis = job_postings, n = 81</li><li>low 10.500.000 đ · median 12.000.000 đ · high 14.800.000 đ</li><li>Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.</li><li>Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) · trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)</li></ul></div></div><div><div class="fld"><div class="k">Lương khu vực công<span class="p">pay.public_sector</span></div><ul><li>Điều dưỡng, hộ sinh, kỹ thuật y hạng IV đến hạng II</li><li>low 5.313.000 đ · high 17.153.000 đ</li><li>Thông tư 02/2025/TT-BYT; xếp lương theo hướng dẫn của Bộ Y tế ngày 05/6/2025</li><li>Chưa gồm phụ cấp ưu đãi nghề, thâm niên, khu vực.</li><li>Phụ cấp ưu đãi 40% với điều dưỡng khám chữa bệnh chung (Nghị định 350/2026/NĐ-CP)</li></ul></div></div></div><p class="src">Nguồn (<span class="p">sources</span>) · <b>pay</b> B: VietJobs (HuggingFace dinhieufam/VietJobs, bản đăng 2/3/2026), https://arxiv.org/abs/2603.05262</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Điều dưỡng 7/7: lộ trình</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Lộ trình<span class="p">career</span></div><ul><li><b>Nghề chính:</b> Điều dưỡng</li><li><b>Chuyên sâu, cần học thêm:</b> Điều dưỡng tâm thần chuyên sâu, Điều dưỡng chuyên khoa lâm sàng, Điều dưỡng thực hành nâng cao</li><li><b>Lên quản lý:</b> Quản lý bệnh viện, cơ sở y tế</li><li><b>progresses_to:</b> Quản lý bệnh viện, cơ sở y tế</li></ul></div><div class="fld"><div class="k">Thang cấp<span class="p">career.levels</span></div><div class="v">Nghề ngoài IT lưu thang cấp ở levels_non_it.json, xem slide thang cấp.</div></div></div><div><div class="fld"><div class="k">Nghề giống<span class="p">career.similar</span></div><ul><li>Kỹ thuật viên chẩn đoán hình ảnh: O*NET Related Occupations, tầng Primary-Short</li><li>Nhân viên cấp cứu ngoại viện: O*NET Related Occupations, tầng Primary-Short</li><li>Kỹ thuật viên, chuyên viên phục hồi chức năng: O*NET Related Occupations, tầng Primary-Short</li><li>Bác sĩ: O*NET Related Occupations, tầng Primary-Short</li><li>Hộ lý, trợ lý điều dưỡng: O*NET Related Occupations, tầng Primary-Short</li></ul></div></div></div></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Thang cấp Điều dưỡng (1/2)</h2>
+  <div class="stage top">
+    <div class="sample">
+      <table class="tbl dense"><colgroup><col style="width:52px"><col style="width:190px"><col style="width:84px"><col><col style="width:120px"></colgroup><thead><tr><th>band</th><th>title_vn</th><th>Số năm</th><th>core_output</th><th>Chứng cứ</th></tr></thead><tbody><tr><td>L1</td><td>Sinh viên điều dưỡng thực tập</td><td>0</td><td>Chăm sóc cơ bản (đo sinh hiệu, vệ sinh, hỗ trợ ăn uống) dưới sự giám sát.</td><td>B · chung_chi_hanh_nghe</td></tr><tr><td>L2</td><td>Điều dưỡng thực hành</td><td>0–1</td><td>Thực hành chăm sóc đủ 6 tháng tại cơ sở khám chữa bệnh để xin giấy phép hành nghề.</td><td>A · chung_chi_hanh_nghe</td></tr><tr><td>L3</td><td>Điều dưỡng hạng III (có giấy phép hành nghề)</td><td>1–4</td><td>Lập và thực hiện kế hoạch chăm sóc, dùng thuốc theo y lệnh cho nhóm người bệnh được phân công.</td><td>A · vien_chuc</td></tr><tr><td>L4</td><td>Điều dưỡng chuyên khoa (hồi sức, phòng mổ, chạy thận)</td><td>3–7</td><td>Chăm sóc người bệnh nặng, vận hành thiết bị chuyên khoa và hướng dẫn điều dưỡng mới.</td><td>B · so_nam_kinh_nghiem</td></tr></tbody></table>
+      <p class="src">Nguồn: <span class="p">levels_non_it.json</span> · dựng từ thang_cap_nhom_A/B.csv. Chứng cứ A văn bản, dữ liệu Việt Nam · B tin tuyển dụng phổ biến · C suy luận</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Thang cấp Điều dưỡng (2/2)</h2>
+  <div class="stage top">
+    <div class="sample">
+      <table class="tbl dense"><colgroup><col style="width:52px"><col style="width:190px"><col style="width:84px"><col><col style="width:120px"></colgroup><thead><tr><th>band</th><th>title_vn</th><th>Số năm</th><th>core_output</th><th>Chứng cứ</th></tr></thead><tbody><tr><td>L5</td><td>Điều dưỡng hạng II</td><td>8–12</td><td>Giám sát chất lượng chăm sóc, đào tạo điều dưỡng và tham gia nghiên cứu điều dưỡng.</td><td>A · vien_chuc</td></tr><tr><td>L6</td><td>Điều dưỡng trưởng khoa</td><td>10+</td><td>Phân công nhân lực, quản lý vật tư và chất lượng chăm sóc của cả khoa.</td><td>B · doanh_nghiep</td></tr><tr><td>L7</td><td>Điều dưỡng hạng I / trưởng phòng điều dưỡng</td><td>15+</td><td>Xây dựng quy trình chăm sóc toàn bệnh viện và quản lý đội ngũ điều dưỡng, hộ sinh.</td><td>A · vien_chuc</td></tr></tbody></table>
+      <p class="src">Nguồn: <span class="p">levels_non_it.json</span> · dựng từ thang_cap_nhom_A/B.csv. Chứng cứ A văn bản, dữ liệu Việt Nam · B tin tuyển dụng phổ biến · C suy luận</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Back-end 1/7: giới thiệu</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Tên<span class="p">role_name_vn · role_name</span></div><div class="v">Lập trình viên Back-end / Kỹ sư Back-end · Backend Developer</div></div><div class="fld"><div class="k">Nhóm nghề<span class="p">role_group_vn · is_it</span></div><div class="v">Công nghệ thông tin · is_it = true</div></div><div class="fld"><div class="k">Mã O*NET<span class="p">codes.onet</span></div><div class="v">15-1252.00</div></div><div class="fld"><div class="k">Mã nghề Việt Nam<span class="p">codes.vsco</span></div><div class="v">2512 · Nhà phát triển phần mềm · độ tin cậy vua</div></div></div><div><div class="fld"><div class="k">Mô tả<span class="p">overview.summary</span></div><div class="v">Lập trình viên Back-end viết phần chạy phía máy chủ: xử lý nghiệp vụ, lưu và truy vấn dữ liệu, cung cấp API cho ứng dụng web và mobile. Người dùng không nhìn thấy phần này, nhưng mọi thao tác như đăng nhập, đặt hàng hay thanh toán đều đi qua nó. Càng lên cao, việc chuyển từ viết tính năng sang thiết kế hệ thống chịu tải lớn và chạy ổn định.</div></div><div class="fld"><div class="k">Hợp với ai<span class="p">overview.fit_summary</span></div><div class="v">Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.</div></div></div></div><p class="src">Nguồn (<span class="p">sources</span>) · <b>overview</b> C · NHAP_CHO_DUYET: Nhóm soạn từ JD và báo cáo ITviec</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Back-end 2/7: mặt trái, môi trường</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Mặt trái<span class="p">overview.downsides</span></div><ul><li>Kết quả khó nhìn thấy: làm tốt thì ít ai để ý, làm sai thì cả ứng dụng phía trước bị ảnh hưởng.</li><li>Hay phải sửa mã cũ không có tài liệu, người viết đã nghỉ.</li><li>Ước lượng thời gian thường bị ép ngắn lại vì áp lực từ khách hàng hoặc quản lý sản phẩm.</li><li>Trong khảo sát của ITviec, lương thấp hơn kỳ vọng là lý do nghỉ việc hay gặp nhất.</li></ul></div><div class="fld"><div class="k">Sở thích RIASEC<span class="p">interests</span></div><div class="v">Mã ICR · Realistic 3,61 · Investigative 6,05 · Artistic 2,37 · Social 1,81 · Enterprising 1,87 · Conventional 5,62</div></div></div><div><div class="fld"><div class="k">Nơi làm việc<span class="p">work_environment.settings</span></div><div class="v">WS_OFFICE (Văn phòng)</div></div><div class="fld"><div class="k">Loại công ty<span class="p">work_environment.company_types</span></div><div class="v">WE_HYBRID_PRODUCT (Hybrid tại công ty làm product in-house) · WE_PROJECT_OUTSOURCING (Theo dự án tại công ty outsourcing) · WE_ONSITE_ENTERPRISE (Onsite doanh nghiệp lớn / ngân hàng)</div></div><div class="fld"><div class="k">Điều kiện làm việc<span class="p">work_environment.facts</span></div><ul><li>Ngồi phần lớn thời gian làm việc.</li><li>Ít tiếp xúc với khách hàng bên ngoài.</li><li>Làm việc theo nhóm là chính.</li><li>8% người trong nghề làm hơn 40 giờ mỗi tuần.</li><li>Gần như ai trong nghề cũng làm giờ cố định.</li></ul></div></div></div></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Back-end 3/7: việc hằng ngày (L1–L4)</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Việc hằng ngày<span class="p">daily_work.by_level</span></div><ul><li><b>L1 Backend Engineer Intern:</b> Viết và kiểm thử API cho một tính năng nhỏ dưới hướng dẫn của kỹ sư senior; Tham gia review code của team để học chuẩn code; Viết unit test cho phần code của mình</li><li><b>L2 Fresher Backend Engineer:</b> Viết các API endpoint cơ bản; Viết unit test cho code của mình; Tham gia fix các bug mức độ ưu tiên thấp</li></ul></div></div><div><div class="fld"><div class="k">Việc hằng ngày (tiếp)<span class="p">daily_work.by_level</span></div><ul><li><b>L3 Junior Backend Engineer:</b> Phân tích yêu cầu và thiết kế DB schema cho module nhỏ; Triển khai các luồng nghiệp vụ phức tạp; Tối ưu hóa các API bị chậm</li><li><b>L4 Middle Backend Engineer:</b> Thiết kế kiến trúc cho microservices mới; Review code và mentor cho junior; Xử lý các bài toán concurrency và caching</li></ul></div></div></div><p class="src">Việc theo cấp L1, L2, L3, L4, L5, L6, L7, tóm từ JD.</p><p class="src">Nguồn (<span class="p">sources</span>) · <b>daily_work</b> A: JD đã xác minh (datasets/78_roles_unmerged.json)</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Back-end 3/7: việc hằng ngày (L5–L7)</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Việc hằng ngày<span class="p">daily_work.by_level</span></div><ul><li><b>L5 Senior Backend Engineer:</b> Định hướng chuẩn code và best practices; Xử lý sự cố hệ thống nghiêm trọng trên production; Tối ưu hiệu năng hệ thống chịu tải cao</li><li><b>L6 Lead Backend Engineer:</b> Định nghĩa chiến lược công nghệ backend; Thiết kế hệ thống core banking phân tán lớn; Mentorship toàn team</li></ul></div></div><div><div class="fld"><div class="k">Việc hằng ngày (tiếp)<span class="p">daily_work.by_level</span></div><ul><li><b>L7 Principal Backend Engineer / Staff Engineer:</b> Thiết kế kiến trúc backend chịu tải lớn, ổn định và dễ bảo trì; Tìm và gỡ điểm nghẽn hiệu năng, dẫn xử lý sự cố production nghiêm trọng; Chọn công nghệ và cố vấn kỹ thuật cho các team kỹ sư</li></ul></div></div></div><p class="src">Việc theo cấp L1, L2, L3, L4, L5, L6, L7, tóm từ JD.</p><p class="src">Nguồn (<span class="p">sources</span>) · <b>daily_work</b> A: JD đã xác minh (datasets/78_roles_unmerged.json)</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Back-end 4/7: kỹ năng</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Kỹ năng: top 5 theo độ quan trọng 1–5<span class="p">skills.hard</span></div><div class="v">Lập trình 4 · Tư duy phản biện 3,88 · Đánh giá và ra quyết định 3,62 · Đọc hiểu 3,5 · Chủ động học hỏi 3,5</div></div><div class="fld"><div class="k">Kiến thức: top 5 theo độ quan trọng 1–5<span class="p">skills.knowledge</span></div><div class="v">Máy tính và điện tử 4,75 · Toán học 3,57 · Dịch vụ khách hàng 3,56 · Ngôn ngữ (tiếng mẹ đẻ) 3,27 · Giáo dục và đào tạo 2,84</div></div></div><div><div class="fld"><div class="k">Mức nghề cần 7 nhóm soft skill (điểm z)<span class="p">skills.soft</span></div><div class="v">Giao tiếp &amp; hợp tác 0,036 · Trí tuệ cảm xúc &amp; xử lý xung đột -0,67 · Lãnh đạo &amp; tư duy kinh doanh -0,691 · Tư duy &amp; giải quyết vấn đề 0,98 · Tự quản lý &amp; chịu áp lực 0,539 · Thích ứng &amp; học hỏi 0,669 · Đạo đức &amp; chuyên nghiệp 0,038</div></div></div></div><p class="src">Độ quan trọng (O*NET Importance): 1 không quan trọng · 3 quan trọng · 5 cực kỳ quan trọng. Điểm z: 0 là mức của nghề bình thường, +1 là cao hơn 1 độ lệch chuẩn, số âm là cần ít hơn; tính từ các mục O*NET nối với nhóm.</p><p class="src">Nguồn (<span class="p">sources</span>) · <b>skills.hard</b> B: O*NET 31.0 (Mỹ), thang Importance</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Back-end 5/7: học tập, tuyển dụng</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Mức chuẩn bị<span class="p">education.preparation</span></div><div class="v">Zone 4 · Cần chuẩn bị nhiều · Thường cần bằng đại học. Theo O*NET (Mỹ).</div></div><div class="fld"><div class="k">Ngành đại học<span class="p">education.majors_university</span></div><div class="v">480103 Kỹ thuật phần mềm · 480201 Công nghệ thông tin · 480101 Khoa học máy tính</div></div><div class="fld"><div class="k">Ngành cao đẳng, trung cấp<span class="p">education.majors_vocational</span></div><div class="v">480207 Lập trình máy tính (THN, TC, CĐ)</div></div><div class="fld"><div class="k">Giấy phép hành nghề<span class="p">education.licence</span></div><div class="v none">Không có trong dữ liệu</div></div></div><div><div class="fld"><div class="k">Nhu cầu tuyển<span class="p">outlook</span></div><div class="v">open_postings 91 · board ITviec · keyword backend-developer · data_year 2026 · measured_at 2026-10-21 · level cao · ITviec, số tin đang mở</div></div></div></div><p class="src">Nguồn (<span class="p">sources</span>) · <b>outlook</b> B: ITviec, trang https://itviec.com/it-jobs/&lt;slug&gt;, số ở dòng tiêu đề &#x27;N ... jobs in Vietnam&#x27;</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Back-end 6/7: lương</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Lương<span class="p">pay</span></div><ul><li>basis = itviec, itviec_position = Back-end Developer</li><li>median 37.800.000 đ</li><li><b>by_years</b> (trung vị): &lt;1 năm 12.400.000 · 1-2 năm 25.350.000 · 3-4 năm 30.100.000 · 5-8 năm 39.900.000 · &gt;8 năm 54.900.000</li><li>Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.</li><li>Báo cáo ITviec Vietnam IT Salary &amp; Recruitment Market Report 2025-2026 · 2025–2026</li></ul></div></div><div><div class="fld"><div class="k">Lương khu vực công<span class="p">pay.public_sector</span></div><ul><li>Viên chức công nghệ thông tin hạng IV đến hạng II</li><li>low 4.706.000 đ · high 17.153.000 đ</li><li>Thông tư 08/2022/TT-BTTTT, Điều 15 (áp dụng Bảng 3 Nghị định 204/2004/NĐ-CP)</li><li>Chưa gồm phụ cấp ưu đãi nghề, thâm niên, khu vực.</li></ul></div></div></div><p class="src">Nguồn (<span class="p">sources</span>) · <b>pay</b> A: ITviec, Vietnam IT Salary &amp; Recruitment Market Report 2025-2026, bảng &quot;IT POSITION / YEARS OF EXPERIENCE&quot;, cột &quot;MEDIAN SALARY (MILLION VND)&quot;</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Back-end 7/7: lộ trình</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Lộ trình<span class="p">career</span></div><ul><li><b>Nghề chính:</b> Lập trình viên Back-end / Kỹ sư Back-end</li><li><b>Cấp cao:</b> Trưởng nhóm kỹ thuật, Kiến trúc sư giải pháp</li><li><b>Chuyển ngang:</b> Kỹ sư trí tuệ nhân tạo, Kỹ sư dữ liệu, Kỹ sư DevOps</li><li><b>levels:</b> 7 cấp, xem slide thang cấp</li><li><b>progresses_to:</b> Kiến trúc sư giải pháp, Trưởng nhóm kỹ thuật, Kỹ sư trí tuệ nhân tạo, Kỹ sư dữ liệu, Kỹ sư DevOps, Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng, Quản lý sản phẩm / Product Manager</li></ul></div></div><div><div class="fld"><div class="k">Nghề giống<span class="p">career.similar</span></div><ul><li>Kỹ sư dữ liệu: Data Engineer phần lớn đi lên từ Backend, chia sẻ kỹ năng hệ thống</li><li>Kỹ sư DevOps: DevOps là hướng đi tự nhiên của Backend quan tâm vận hành</li><li>Kỹ sư trí tuệ nhân tạo: Đưa mô hình vào sản phẩm cần kỹ năng backend</li><li>Lập trình viên Mobile / Kỹ sư ứng dụng di động: Mobile cần backend; chia sẻ tư duy API và dữ liệu</li><li>Kỹ sư an ninh mạng / Kỹ sư bảo mật: Application Security cần đọc hiểu code để tìm lỗ hổng</li><li>Lập trình viên Front-end: Hai nửa của một ứng dụng web, thường làm việc cặp với nhau</li><li>Kỹ sư kiểm thử thủ công / Tester: Automation QA cần kỹ năng lập trình thật</li></ul></div></div></div></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Thang cấp Back-end (1/4)</h2>
+  <div class="stage top">
+    <div class="sample">
+      <table class="tbl dense"><colgroup><col style="width:52px"><col style="width:190px"><col style="width:84px"><col><col style="width:120px"></colgroup><thead><tr><th>band</th><th>title_vn</th><th>Số năm</th><th>core_output</th><th>Chứng cứ</th></tr></thead><tbody><tr><td>L1</td><td>Backend Engineer Intern</td><td>0</td><td>Hiện thực logic nghiệp vụ đơn giản và viết API endpoint theo mẫu có sẵn dưới sự giám sát trực tiếp của kỹ sư cấp cao, chưa tự quyết định về schema dữ liệu hay lựa chọn thư viện.</td><td>C_INFERRED</td></tr><tr><td>L2</td><td>Fresher Backend Engineer</td><td>0-1</td><td>Tự hoàn thành một endpoint hoặc một luồng xử lý nghiệp vụ nhỏ trong phạm vi được giao, viết được truy vấn CSDL cơ bản, mọi thay đổi schema đều cần review.</td><td>A_VERIFIED</td></tr></tbody></table>
+      <p class="src">Nguồn: <span class="p">final_22_roles.json → levels</span> · dựng từ JD, 78_roles_unmerged.json. Chứng cứ A văn bản, dữ liệu Việt Nam · B tin tuyển dụng phổ biến · C suy luận</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Thang cấp Back-end (2/4)</h2>
+  <div class="stage top">
+    <div class="sample">
+      <table class="tbl dense"><colgroup><col style="width:52px"><col style="width:190px"><col style="width:84px"><col><col style="width:120px"></colgroup><thead><tr><th>band</th><th>title_vn</th><th>Số năm</th><th>core_output</th><th>Chứng cứ</th></tr></thead><tbody><tr><td>L3</td><td>Junior Backend Engineer</td><td>1-2</td><td>Tự hiện thực trọn vẹn một tính năng backend đã được xác định rõ — API, xử lý nghiệp vụ, truy vấn CSDL — tham gia code review hai chiều, nhưng chưa tự quyết định kiến trúc service hay chọn công nghệ mới.</td><td>A_VERIFIED</td></tr><tr><td>L4</td><td>Middle Backend Engineer</td><td>2-4</td><td>Chịu trách nhiệm end-to-end một service hoặc module nghiệp vụ: thiết kế schema, viết migration, tối ưu truy vấn, review code cho đồng nghiệp, trong khung kiến trúc hệ thống do người khác đặt ra.</td><td>A_VERIFIED</td></tr></tbody></table>
+      <p class="src">Nguồn: <span class="p">final_22_roles.json → levels</span> · dựng từ JD, 78_roles_unmerged.json. Chứng cứ A văn bản, dữ liệu Việt Nam · B tin tuyển dụng phổ biến · C suy luận</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Thang cấp Back-end (3/4)</h2>
+  <div class="stage top">
+    <div class="sample">
+      <table class="tbl dense"><colgroup><col style="width:52px"><col style="width:190px"><col style="width:84px"><col><col style="width:120px"></colgroup><thead><tr><th>band</th><th>title_vn</th><th>Số năm</th><th>core_output</th><th>Chứng cứ</th></tr></thead><tbody><tr><td>L5</td><td>Senior Backend Engineer</td><td>4-7</td><td>Tự chủ thiết kế kiến trúc cho một domain nghiệp vụ hoặc một nhóm service, chịu trách nhiệm về hiệu năng và độ tin cậy ở quy mô production, mentor kỹ sư cấp dưới qua code review — không quản lý con người.</td><td>A_VERIFIED</td></tr><tr><td>L6</td><td>Lead Backend Engineer</td><td>6-9 (kèm 2+ năm dẫn dắt)</td><td>Tự quyết kiến trúc và công nghệ ở phạm vi hệ thống mình phụ trách trong khung kiến trúc tổng thể do cấp trên cung cấp, coaching một đội kỹ sư — chưa có line management.</td><td>A_VERIFIED</td></tr></tbody></table>
+      <p class="src">Nguồn: <span class="p">final_22_roles.json → levels</span> · dựng từ JD, 78_roles_unmerged.json. Chứng cứ A văn bản, dữ liệu Việt Nam · B tin tuyển dụng phổ biến · C suy luận</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Thang cấp Back-end (4/4)</h2>
+  <div class="stage top">
+    <div class="sample">
+      <table class="tbl dense"><colgroup><col style="width:52px"><col style="width:190px"><col style="width:84px"><col><col style="width:120px"></colgroup><thead><tr><th>band</th><th>title_vn</th><th>Số năm</th><th>core_output</th><th>Chứng cứ</th></tr></thead><tbody><tr><td>L7</td><td>Principal Backend Engineer / Staff Engineer</td><td>8-12</td><td>Đặt định hướng kỹ thuật xuyên nhiều đội, xây chuẩn kỹ thuật cho tổ chức, review thiết kế của kỹ sư khác — thuần IC, không có direct report.</td><td>C_INFERRED</td></tr></tbody></table>
+      <p class="src">Nguồn: <span class="p">final_22_roles.json → levels</span> · dựng từ JD, 78_roles_unmerged.json. Chứng cứ A văn bản, dữ liệu Việt Nam · B tin tuyển dụng phổ biến · C suy luận</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">02</div>
+    <div class="sec-title">Hồ sơ người chơi</div>
+    <p class="sec-sub">Thích gì, làm được gì, đang có gì</p>
+  </div>
+</section>
+
+<section class="slide l-3col">
+  <h2 class="title center">Ba phần chỉ số của hồ sơ</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <div class="h3">RIASEC</div><p>Thích loại việc gì: tự kể và sau khi thử</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <div class="h3">Soft skill</div><p>Làm được tới đâu: 7 nhóm, bậc 0 đến 5</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <div class="h3">Keyword nghề</div><p>Kỹ năng cứng đã có, ba mức</p>
+    </div>
+  </div>
+  <div class="footbar rev"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">RIASEC: đo sở thích thế nào</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Là gì</div><div class="v">Sáu kiểu sở thích nghề của Holland: Thực hành (R), Tìm tòi (I), Sáng tạo (A), Kết nối (S), Dẫn dắt (E), Tổ chức (C). Trả lời câu "bạn thích loại việc gì", không phải "bạn là người thế nào".</div></div><div class="fld"><div class="k">Đo bằng gì</div><ul><li>Tự kể: trung bình 2 thẻ mỗi trục, thang 1–3 (Không thích 1 · Bình thường 2 · Thích 3)</li><li>Sau khi thử: trung bình các lần chạm "thích tới đâu" sau scenario, cũng 1–3</li><li>Nghề: điểm sở thích O*NET, thang 1–7</li></ul></div></div><div><div class="fld"><div class="k">Gộp hai nguồn</div><div class="v">P = (2·Tự kể + n·Sau khi thử) / (2 + n), n là số lần chạm. Tự kể nặng như 2 lần chạm; sau 10 lần, trải nghiệm chiếm 83%. Đây là ước lượng co rút; số 2 là lựa chọn thiết kế.</div></div><div class="fld"><div class="k">Vì sao đo sở thích</div><div class="v">Sở thích ổn định 0,55–0,58 ở tuổi 12–17, lên 0,67 ở 18–22 (Low 2005), nên hồ sơ ghi là "lúc này". Không dán nhãn loại người: MBTI đo các chiều liên tục, không phải loại tách biệt.</div></div><div class="fld"><div class="k">Giảm lệch</div><div class="v">Hỏi "thích tới đâu" trước khi hiện điểm, để làm tốt hay dở không kéo theo thích hay ghét.</div></div></div></div><p class="src">Nguồn: Low và cộng sự 2005; Gelman, Bayesian Data Analysis §2.5; Hồ sơ JobQuest cơ chế game.md khối B, C, E</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Soft skill: đo năng lực thế nào</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Là gì</div><div class="v">7 nhóm, 42 mục con, phỏng theo ba khung: Great Eight (Bartram 2005), NACE Career Readiness, ba năng lực chung của chương trình phổ thông 2018.</div></div><div class="fld"><div class="k">Đo bằng gì</div><ul><li>Điểm, mỗi nhóm tối đa 10.000</li><li>Chỉ cộng từ việc chơi: judge chấm mục con 0 / 1 / 2</li><li>Bậc 0–5 ở 0 · 500 · 1.500 · 3.000 · 6.000 · 10.000; bậc không tụt</li></ul></div><div class="fld"><div class="k">Ngưỡng</div><div class="v">Các mốc bậc là <b>tạm</b>, chưa có căn cứ; chỉnh khi chơi thử (D1).</div></div></div><div><div class="fld"><div class="k">Vì sao không tự khai</div><div class="v">Tự đánh giá năng lực chỉ tương quan 0,29 với kết quả thật (Zell & Krizan 2014).</div></div><div class="fld"><div class="k">Nghề cần nhóm nào</div><div class="v">Mỗi nhóm nối với hoạt động công việc và phong cách làm việc của O*NET, ra điểm z: nghề cần nhóm này hơn mức thường gặp bao nhiêu độ lệch chuẩn. Bảng nối là nhận định của nhóm.</div></div><div class="fld"><div class="k">Điểm mạnh, yếu</div><div class="v">Chỉ nhận xét khi nhóm đã được chấm ở ít nhất 3 scenario (tạm, B5).</div></div></div></div><p class="src">Nguồn: Bartram 2005; NACE; Zell & Krizan 2014; Hồ sơ JobQuest cơ chế game.md khối B, D</p></div>
+  </div>
+</section>
+
+<section class="slide l-process">
+  <h2 class="title">Get to know me: chỉ chạm, ba phút</h2>
+  <div class="chev"><div>Cửa vào</div><div>18 thẻ</div><div>Kể về bạn</div><div>Sau màn</div></div>
+  <div class="notes" style="grid-template-columns:repeat(4,1fr)">
+    <ul class="ul"><li>Đã biết muốn thử nghề nào?</li><li>Biết rồi thì vào bản đồ</li></ul>
+    <ul class="ul"><li>12 thẻ RIASEC, 6 thẻ nhóm ngành</li><li>Không gọi AI</li></ul>
+    <ul class="ul"><li>Tuỳ chọn: sở thích, mục tiêu</li><li>AI chỉ nhắc lại để động viên</li></ul>
+    <ul class="ul"><li>Hỏi "thích tới đâu", 3 mức</li><li>Cập nhật vạch sau khi thử</li></ul>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Cụm 1: mỗi trục RIASEC một thẻ</h2>
+  <div class="grid">
+    <div><div class="h3">Tìm tòi (I)</div><p>Điện thoại bỗng chạy chậm, bạn mày mò tìm cho ra nguyên nhân</p></div>
+    <div><div class="h3">Kết nối (S)</div><p>Giảng lại bài cho một bạn cùng lớp chưa hiểu</p></div>
+    <div><div class="h3">Tổ chức (C)</div><p>Sắp xếp lại thư mục ảnh và tài liệu trong máy cho gọn gàng</p></div>
+    <div><div class="h3">Sáng tạo (A)</div><p>Làm slide thuyết trình thật đẹp và khác mọi người</p></div>
+    <div><div class="h3">Thực hành (R)</div><p>Lắp một kệ sách hay mô hình theo hướng dẫn trong hộp</p></div>
+    <div><div class="h3">Dẫn dắt (E)</div><p>Thuyết phục cả nhóm làm theo ý tưởng của mình</p></div>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Cụm 2: thêm một thẻ mỗi trục</h2>
+  <div class="tblwrap">
+    <table class="tbl left">
+      <thead><tr><th></th><th>Thẻ</th></tr></thead>
+      <tbody>
+        <tr><td>Tìm tòi (I)</td><td>Đọc để hiểu vì sao có cầu vồng, nhật thực hay động đất</td></tr>
+        <tr><td>Kết nối (S)</td><td>Lắng nghe và an ủi một người bạn đang buồn</td></tr>
+        <tr><td>Tổ chức (C)</td><td>Ghi chi tiêu hằng tháng vào một bảng và giữ nó luôn đúng</td></tr>
+        <tr><td>Sáng tạo (A)</td><td>Vẽ tranh, chụp ảnh, dựng video hay viết truyện của riêng mình</td></tr>
+        <tr><td>Thực hành (R)</td><td>Tự tay sửa chiếc xe đạp hay cái quạt bị hỏng ở nhà</td></tr>
+        <tr><td>Dẫn dắt (E)</td><td>Đứng ra lo buổi sinh nhật hay chuyến đi chơi của lớp</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Cụm 3 mới: sáu thẻ nhóm ngành</h2>
+  <div class="grid">
+    <div><div class="h3">Kỹ thuật · 50</div><p>Tận mắt theo dõi một cây cầu, cỗ máy hay mẻ bánh được làm ra từng bước</p></div>
+    <div><div class="h3">Sức khoẻ · 33</div><p>Giúp một người khoẻ lên, học tiến bộ hơn hay vượt qua lúc khó khăn</p></div>
+    <div><div class="h3">Kinh doanh · 48</div><p>Tính xem quán nước phải bán bao nhiêu ly mỗi ngày thì mới có lời</p></div>
+    <div><div class="h3">Công nghệ · 38</div><p>Dùng máy tính hay thí nghiệm để tìm ra câu trả lời cho một thắc mắc</p></div>
+    <div><div class="h3">Sáng tạo · 17</div><p>Làm một video, bài hát hay thiết kế để nhiều người cùng xem</p></div>
+    <div><div class="h3">Dịch vụ · 35</div><p>Lo cho khách được phục vụ chu đáo, đi lại an toàn và đúng giờ</p></div>
+  </div>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Trang hồ sơ và chòm sao</h2>
+  <div class="cols">
+    <div><div class="h3">Trang hồ sơ</div><p>Bốn tab: Tổng quan, Thống kê, Thành tựu, Nhật ký. Biểu đồ 7 góc, RIASEC dạng cột, kỹ năng nghề. Không có điểm năng khiếu.</p></div>
+    <div><div class="h3">Chòm sao</div><p>Cung Mặt Trời theo ngày sinh, luôn bật. Cộng 12% điểm dương cho 2 nhóm soft skill của cung. Mô tả chỉ để đọc, AI không dùng.</p></div>
+  </div>
+</section>
+
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">03</div>
+    <div class="sec-title">Gợi ý nghề</div>
+    <p class="sec-sub">Nghề nào hợp với bạn, và vì sao</p>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Ba ô gợi ý, không hiện con số</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Ô gợi ý</th><th>Đo bằng</th><th>Ý nghĩa</th></tr></thead>
+      <tbody>
+        <tr><td>Cùng ngành, bạn có thể thích</td><td>Độ giống nghề Sim và sở thích</td><td>Đi tiếp trong ngành quen</td></tr>
+        <tr><td>Khác ngành, bạn làm tốt</td><td>Soft skill khớp nghề</td><td>Thế mạnh mở đường mới</td></tr>
+        <tr><td>Khác ngành, bạn có thể thích</td><td>Sở thích RIASEC</td><td>Thử điều mình thích</td></tr>
+        <tr><td>Mỗi ô 0–3 nghề</td><td>Sim trúng 43,9% nghề liên quan</td><td>Lý do bằng lời</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Sim: hai nghề giống nhau tới đâu</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Là gì</div><div class="v">Độ giống nghề–nghề, dựng từ 4 nhóm mô tả O*NET: RIASEC 6 mục, kiến thức 33, kỹ năng 35, phong cách làm việc 21.</div></div><div class="fld"><div class="k">Cách tính</div><ul><li>Chuẩn hoá z từng mục trên mọi nghề O*NET</li><li>Cosine giữa hai nghề, rồi chuẩn hoá z trên mọi cặp</li><li>Sim = (2·RIASEC + 2·kiến thức + 1·kỹ năng + 1·phong cách) / 6</li></ul></div><div class="fld"><div class="k">Đơn vị</div><div class="v">Độ lệch chuẩn so với một cặp nghề bình thường (0 là bình thường).</div></div></div><div><div class="fld"><div class="k">Ngưỡng (phân vị trên 384.903 cặp)</div><ul><li>≥ 1,9: rất giống, 1% cặp giống nhất</li><li>1,5–1,9: giống, 1–5%</li><li>1,2–1,5: khá giống, 5–10%</li><li>< 1,2: không coi là giống</li></ul></div><div class="fld"><div class="k">Kiểm</div><div class="v">So với Related Occupations trên 878 nghề; chọn trọng số trên một nửa, đo trên nửa kia: trúng 43,9% trong 10 nghề đầu (theo nhóm mã SOC 30,7%; ngẫu nhiên 1,3%).</div></div><div class="fld"><div class="k">Dùng ở</div><div class="v">Ô gợi ý cùng ngành (Sim ≥ 1,2); ngưỡng nhảy nghề 30% khi hai nghề rất giống.</div></div></div></div><p class="src">Nguồn: Dahlke và cộng sự 2022 (cách O*NET dựng Related Occupations); onet_similarity_eval.md; Hồ sơ JobQuest cơ chế game.md khối E</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">r: bạn có thể thích nghề này không</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Là gì</div><div class="v">Tương quan Pearson giữa 6 điểm RIASEC P của người chơi (1–3) và 6 điểm sở thích O*NET của nghề (1–7); chỉ so hình dạng hồ sơ nên không cần đổi thang. Đây là cách O*NET Interest Profiler ghép người với nghề.</div></div><div class="fld"><div class="k">Đơn vị</div><div class="v">Hệ số tương quan, −1 (ngược hẳn) · 0 (không liên quan) · 1 (cùng hình dạng).</div></div><div class="fld"><div class="k">Ngưỡng</div><ul><li>A ≥ 0,73 · B 0,61–0,73 · C 0,43–0,61: vào ô "có thể thích"</li><li>D 0–0,43: không gợi ý theo sở thích · âm: không gợi ý</li><li>Quy ước thống kê của O*NET với 6 trục (một phía, p < 0,05 / 0,10 / 0,20), chưa kiểm với kết quả nghề nghiệp</li></ul></div></div><div><div class="fld"><div class="k">Vì sao tách &quot;thích&quot; và &quot;làm tốt&quot;</div><div class="v">Thuyết điều chỉnh công việc (Dawis & Lofquist 1984): hợp sở thích đi cùng hài lòng; hợp năng lực đi cùng hiệu suất. Hai mặt ứng đúng hai nguồn dữ liệu của game.</div></div><div class="fld"><div class="k">Vì sao không hiện số</div><div class="v">Khớp sở thích chỉ tương quan khoảng 0,19 với hài lòng trong công việc (Hoff 2020); O*NET ghi mối liên hệ với thành công trong nghề "chưa được xác định".</div></div><div class="fld"><div class="k">Không dùng để xếp hạng</div><div class="v">Giới tính, mức lương, độ danh giá của nghề (Gottfredson: tuổi teen hay tự loại nghề theo giới, uy tín).</div></div></div></div><p class="src">Nguồn: Lewis & Morris 2025 (O*NET); Hoff và cộng sự 2020; Hồ sơ JobQuest cơ chế game.md khối E</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">S: bạn đã làm tốt điều nghề này cần</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Là gì</div><div class="v">Tương quan Pearson giữa tỉ lệ đạt của người chơi ở 7 nhóm soft skill (điểm kiếm được ÷ điểm tối đa ở các màn đã chơi, không tính buff chòm sao) và mức nghề cần 7 nhóm đó (điểm z từ O*NET).</div></div><div class="fld"><div class="k">Ngưỡng</div><ul><li>A ≥ 0,67 · B 0,55–0,67 · C 0,38–0,55: vào ô "bạn làm tốt"</li><li>Cùng cách đặt ngưỡng như r, tính lại cho 7 nhóm</li><li>Chốt: 2 nhóm nghề cần nhất phải ở bậc ≥ 2; chỉ tính khi đã có điểm ở ≥ 4/7 nhóm</li></ul></div></div><div><div class="fld"><div class="k">Vì sao dùng tỉ lệ đạt</div><div class="v">Để người chơi nhiều không tự động "làm tốt" hơn người chơi ít.</div></div><div class="fld"><div class="k">Vì sao có chốt bậc</div><div class="v">Tương quan chỉ so hình dạng; thiếu chốt thì người bậc nào cũng thấp vẫn "khớp".</div></div><div class="fld"><div class="k">Lời văn</div><div class="v">Chỉ nói "nghề này cần X, bạn đã làm tốt X", không hứa "bạn sẽ giỏi nghề này": độ khớp năng lực với nghề chỉ dự báo hiệu suất ở mức 0,12 (Kristof-Brown 2005).</div></div></div></div><p class="src">Nguồn: Kristof-Brown và cộng sự 2005; Hồ sơ JobQuest cơ chế game.md khối E</p></div>
+  </div>
+</section>
+
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">04</div>
+    <div class="sec-title">Điểm và mở khoá</div>
+    <p class="sec-sub">Điểm để làm gì, mở cấp thế nào</p>
+  </div>
+</section>
+
+<section class="slide l-text">
+  <h2 class="title">Điểm có ba việc</h2>
+  <div class="body">
+    <p>Điểm soft skill giúp người chơi:</p>
+    <ul class="ul gap">
+      <li><b>Mở đường</b> đi sâu hơn: cấp sau, nghề khác</li>
+      <li><b>Soi lại bản thân</b> qua biểu đồ 7 góc</li>
+      <li><b>Thấy tiến bộ</b> khi lên bậc, lên mức keyword</li>
+      <li>Mỗi nhóm tối đa 10.000 điểm, bậc không tụt</li>
+      <li>Bậc 0–5 ở 0 · 500 · 1.500 · 3.000 · 6.000 · 10.000</li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+</section>
+
+<section class="slide l-process">
+  <h2 class="title">Một màn chấm ra bao nhiêu điểm</h2>
+  <div class="chev"><div>Judge hỏi</div><div>Quy mức</div><div>Tính điểm</div><div>Chòm sao</div></div>
+  <div class="notes" style="grid-template-columns:repeat(4,1fr)">
+    <ul class="ul"><li>Judge trả lời câu hỏi hành vi</li><li>AI không tự cho điểm</li></ul>
+    <ul class="ul"><li>Mỗi mục 0, 1 hoặc 2</li><li>Cờ phản tác dụng riêng</li></ul>
+    <ul class="ul"><li>Trần × (mức TB ÷ 2 − phạt)</li><li>Phạt 0,25 / 0,35 / 0,5</li></ul>
+    <ul class="ul"><li>+12% cho 2 nhóm của cung</li><li>Chỉ nhân phần dương</li></ul>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Chấm một câu: từ có/không ra 0/1/2</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Judge chỉ trả lời có/không</div><ul><li>Mỗi mục con có sẵn vài câu hỏi gắn hành vi cụ thể</li><li>Ví dụ <b>Kiểm soát cảm xúc</b>: A. có ghi nhận cảm xúc người kia không? · B. có đưa hướng xử lý không? · C. có thêm bước chủ động không?</li><li>Câu cờ: có đổ lỗi, gay gắt, xúc phạm không?</li></ul></div><div class="fld"><div class="k">Code quy ra mức</div><ul><li>Thiếu A hoặc thiếu B → <b>0</b> chưa đạt</li><li>Có A và B → <b>1</b> đạt</li><li>Có A, B và C → <b>2</b> làm tốt</li><li>Câu cờ "có" → <b>1 cờ</b>, ghi riêng</li><li>Câu không cho cơ hội thể hiện mục này → không xét</li></ul></div></div><div><div class="fld"><div class="k">Vì sao hỏi có/không</div><div class="v">Câu hỏi có/không gắn hành vi cụ thể làm các judge đồng ý với nhau hơn (CheckEval, EMNLP 2025); AI không tự cho điểm, code quy ra mức.</div></div><div class="fld"><div class="k">Vì sao 3 mức</div><div class="v">Khoá chấm PISA 2/1/0 dùng cho câu tự viết; thang −1/0/+1 là của bài kiểm tra tình huống khi người làm chọn phương án, không hợp câu tự viết.</div></div><div class="fld"><div class="k">Vì sao cờ ghi riêng</div><div class="v">Nếu gộp vào trung bình, một câu trả lời tốt sẽ xoá mất một hành vi gây hại.</div></div></div></div><p class="src">Nguồn: thang_cham_va_do_kho.md; Lee và cộng sự 2025; Hồ sơ JobQuest cơ chế game.md khối G</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Từ mức ra điểm nhóm: một ví dụ</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Công thức</div><ul><li>Phần đạt = trung bình mức ÷ 2 (vì mức tối đa là 2)</li><li>Phần trừ = số cờ × hệ số phạt: 0,25 (L1–L2) · 0,35 (L3–L5) · 0,5 (L6 trở lên), tạm (G2)</li><li>Điểm nhóm = trần của nhóm trong màn × (phần đạt − phần trừ), có thể âm; làm tròn tới 10</li></ul></div><div class="fld"><div class="k">Đề bài</div><div class="v">Màn ở cấp L3. Trong màn này nhóm Trí tuệ cảm xúc được tối đa 240 điểm. Có 3 câu trả lời được chấm mục Kiểm soát cảm xúc.</div></div><div class="fld"><div class="k">Kết quả chấm</div><ul><li>Câu 1: mức 1</li><li>Câu 2: mức 0, kèm 1 cờ (cãi lại đồng nghiệp)</li><li>Câu 3: mức 2</li></ul></div></div><div><div class="fld"><div class="k">Tính</div><ul><li>Trung bình mức = (1 + 0 + 2) ÷ 3 = 1 → phần đạt = 1 ÷ 2 = <b>50%</b></li><li>Phần trừ = 1 cờ × 0,35 = <b>35%</b></li><li>50% − 35% = <b>15%</b></li><li>Điểm = 15% × 240 = 36 → làm tròn <b>40 điểm</b></li></ul></div><div class="fld"><div class="k">Đọc kết quả</div><div class="v">Không có cờ thì được 50% × 240 = 120 điểm; một lần cãi lại đồng nghiệp làm mất 84 điểm. Hệ số phạt tăng theo band: cấp càng cao, hành vi gây hại càng bị trừ nặng.</div></div><div class="fld"><div class="k">Buff chòm sao</div><div class="v">Nếu nhóm này là nhóm của cung thì nhân 1,12, chỉ áp cho điểm dương.</div></div></div></div><p class="src">Nguồn: Hồ sơ JobQuest cơ chế game.md khối G (một màn chấm ra bao nhiêu)</p></div>
+  </div>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Luật của một cấp nghề</h2>
+  <div class="grid">
+    <div><div class="h3">Quỹ điểm</div><p>Theo band và độ khó nghề k từ 1 đến 2</p></div>
+    <div><div class="h3">Vào cấp</div><p>Đủ bậc mọi nhóm, mức 60% quỹ các cấp trước</p></div>
+    <div><div class="h3">Thang cấp</div><p>4–7 cấp mỗi nghề, theo thang thật ở Việt Nam</p></div>
+    <div><div class="h3">Số màn</div><p>Số keyword đầu ra cộng 1, từ 3 đến 6</p></div>
+    <div><div class="h3">Chơi lại</div><p>Giữ kết quả cao nhất, chỉ cộng phần chênh</p></div>
+    <div><div class="h3">Nhiệm vụ phụ</div><p>Thiết kế sau, tối đa 10% quỹ của cấp</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Độ khó nghề k</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Là gì</div><div class="v">Một số cho mỗi nghề, thang 1 đến 2: nghề đòi kỹ năng ở mức cao tới đâu.</div></div><div class="fld"><div class="k">Cách tính</div><ul><li>Mức trung bình O*NET đòi ở 35 kỹ năng, trọng số theo độ quan trọng</li><li>Chuẩn hoá theo phân vị 5–95 trên mọi nghề</li><li>k = 1 + giá trị đó</li></ul></div><div class="fld"><div class="k">Vì sao</div><div class="v">Tương quan 0,83 với Job Zone (mức chuẩn bị) trên 910 nghề nhưng mịn hơn, vì Job Zone chỉ có 5 mức; Le, Oh và cộng sự 2011 dùng Job Zone làm độ phức tạp của việc.</div></div></div><div><div class="fld"><div class="k">Ví dụ</div><div class="v">Thu ngân 1,06 · Đầu bếp 1,14 · Back-end 1,70 · Điều dưỡng 1,79 · Luật sư 2,00.</div></div><div class="fld"><div class="k">Hạng</div><ul><li>Dễ: k < 1,4 (64 nghề)</li><li>Vừa: < 1,75 (79 nghề)</li><li>Khó: < 1,9 (48 nghề)</li><li>Rất khó: còn lại (30 nghề)</li></ul></div><div class="fld"><div class="k">Dùng ở</div><div class="v">Quỹ điểm của mỗi cấp nhân k^1,4.</div></div></div></div><p class="src">Nguồn: thang_cham_va_do_kho.md; point_budgets.json (k, tier); Hồ sơ JobQuest cơ chế game.md khối G</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Quỹ điểm của một cấp nghề</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Đơn vị</div><div class="v">Điểm soft skill mà một cấp nghề cho được ở mỗi nhóm, khi chơi trọn vẹn mọi màn chính.</div></div><div class="fld"><div class="k">Công thức</div><div class="v">Quỹ cấp = quỹ gốc của band × 0,746 × k^1,4. Quỹ gốc: L1 300 · L2 500 · L3 700 · L4 900 · L5 1.100 · L6 1.400 · L7 1.800 · L8 2.200 · L9 2.700.</div></div><div class="fld"><div class="k">Vì sao 0,746</div><div class="v">Quỹ gốc L1–L7 cộng lại là 6.700. Nhân 0,746 để nghề dễ nhất (k = 1) đi hết L1–L7 được đúng 5.000 điểm ở nhóm chính, tức nửa thang 10.000 (bậc 3).</div></div></div><div><div class="fld"><div class="k">Vì sao nhân k^1,4</div><div class="v">Để nghề càng khó càng đòi bậc cao. Tổng nhóm chính khi đi hết L1–L7 (chưa tính nhóm trọng tâm):</div></div><div class="fld"><ul><li>k = 1: 5.000 điểm → bậc 3</li><li>Back-end k = 1,70: 10.500 → chạm trần 10.000, bậc 5 (nếu chỉ nhân k: 8.500, bậc 4)</li><li>Luật sư k = 2,00: 13.200 → trần 10.000, bậc 5</li></ul></div><div class="fld"><div class="k">Hệ quả</div><div class="v">Người chơi nghề dễ chỉ lên khoảng bậc 3, nên nhảy sang nghề khó chỉ vào được cấp thấp. Mũ 1,4 nới khoảng cách: k = 2 cho ×2,64 thay vì ×2. Con số 1,4 là lựa chọn thiết kế, tạm (G2).</div></div></div></div><p class="src">Nguồn: build_point_budgets.py; point_budgets.json; Hồ sơ JobQuest cơ chế game.md khối G; D-114</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Chia quỹ cho 7 nhóm: Điều dưỡng L1</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">1. Quỹ của cấp</div><div class="v">300 × 0,746 × 1,79^1,4 ≈ 506 điểm.</div></div><div class="fld"><div class="k">2. Trọng số mỗi nhóm</div><div class="v">2^z ÷ 2^z của nhóm nghề cần nhất (z là mức nghề cần nhóm đó). Nhóm nghề cần nhất được 1. Điều dưỡng: Chuyên nghiệp 1,00 · Cảm xúc 0,98 · Thích ứng 0,90 · Giao tiếp 0,83 · Tự quản lý 0,66 · Lãnh đạo 0,63 · Tư duy 0,60.</div></div><div class="fld"><div class="k">3. Mỗi nhóm nhận</div><div class="v">Quỹ × trọng số. Ví dụ Giao tiếp: 506 × 0,83 ≈ 420.</div></div></div><div><div class="fld"><div class="k">4. Nhóm trọng tâm × 1,6</div><div class="v">Mỗi cấp chọn 2 nhóm để luyện, nhân 1,6, rồi thu nhỏ cả 7 nhóm cùng tỉ lệ để tổng quỹ cấp không đổi. L1–L2 Thích ứng, Chuyên nghiệp · L3–L5 hai nhóm chính của nghề · L6–L7 Lãnh đạo và nhóm chính · L8–L9 Lãnh đạo, Giao tiếp. Mỗi cấp luyện một tổ hợp khác.</div></div><div class="fld"><div class="k">5. Kết quả L1</div><div class="v">Chuyên nghiệp 670 · Thích ứng 600 · Cảm xúc 410 · Giao tiếp 350 · Tự quản lý 280 · Lãnh đạo 260 · Tư duy 250 (làm tròn tới 10).</div></div><div class="fld"><div class="k">6. Chia cho các màn</div><div class="v">Quỹ của cấp chia cho các màn chính theo khối lượng việc từng nhóm; chơi trọn vẹn mọi màn là chạm đúng quỹ cấp.</div></div></div></div><p class="src">Nguồn: point_budgets.json (weights, levels[0].budget); Hồ sơ JobQuest cơ chế game.md khối G</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Quỹ điểm L1: mỗi nghề nặng nhóm khác</h2>
+  <div class="stage top">
+    <svg width="810" height="330" viewBox="0 0 810 330">
+      <rect class="f-navy" x="300" y="4" width="16" height="16"/><text x="324" y="18" class="f-ink" font-size="15">Điều dưỡng · k 1,79 (khó)</text>
+      <rect class="f-blue" x="560" y="4" width="16" height="16"/><text x="584" y="18" class="f-ink" font-size="15">Back-end · k 1,7 (vừa)</text>
+      <text x="288" y="60" text-anchor="end" class="f-ink" font-size="15">Giao tiếp &amp; hợp tác</text>
+      <rect class="f-navy" x="300" y="40" width="209" height="14"/><text x="515" y="52" class="f-navy" font-size="13">350</text>
+      <rect class="f-blue" x="300" y="56" width="125" height="14"/><text x="431" y="68" class="f-blue" font-size="13">210</text>
+      <text x="288" y="100" text-anchor="end" class="f-ink" font-size="15">Trí tuệ cảm xúc &amp; xử lý xung đột</text>
+      <rect class="f-navy" x="300" y="80" width="245" height="14"/><text x="551" y="92" class="f-navy" font-size="13">410</text>
+      <rect class="f-blue" x="300" y="96" width="78" height="14"/><text x="384" y="108" class="f-blue" font-size="13">130</text>
+      <text x="288" y="140" text-anchor="end" class="f-ink" font-size="15">Lãnh đạo &amp; tư duy kinh doanh</text>
+      <rect class="f-navy" x="300" y="120" width="155" height="14"/><text x="461" y="132" class="f-navy" font-size="13">260</text>
+      <rect class="f-blue" x="300" y="136" width="72" height="14"/><text x="378" y="148" class="f-blue" font-size="13">120</text>
+      <text x="288" y="180" text-anchor="end" class="f-ink" font-size="15">Tư duy &amp; giải quyết vấn đề</text>
+      <rect class="f-navy" x="300" y="160" width="149" height="14"/><text x="455" y="172" class="f-navy" font-size="13">250</text>
+      <rect class="f-blue" x="300" y="176" width="239" height="14"/><text x="545" y="188" class="f-blue" font-size="13">400</text>
+      <text x="288" y="220" text-anchor="end" class="f-ink" font-size="15">Tự quản lý &amp; chịu áp lực</text>
+      <rect class="f-navy" x="300" y="200" width="167" height="14"/><text x="473" y="212" class="f-navy" font-size="13">280</text>
+      <rect class="f-blue" x="300" y="216" width="173" height="14"/><text x="479" y="228" class="f-blue" font-size="13">290</text>
+      <text x="288" y="260" text-anchor="end" class="f-ink" font-size="15">Thích ứng &amp; học hỏi</text>
+      <rect class="f-navy" x="300" y="240" width="358" height="14"/><text x="664" y="252" class="f-navy" font-size="13">600</text>
+      <rect class="f-blue" x="300" y="256" width="304" height="14"/><text x="610" y="268" class="f-blue" font-size="13">510</text>
+      <text x="288" y="300" text-anchor="end" class="f-ink" font-size="15">Đạo đức &amp; chuyên nghiệp</text>
+      <rect class="f-navy" x="300" y="280" width="400" height="14"/><text x="706" y="292" class="f-navy" font-size="13">670</text>
+      <rect class="f-blue" x="300" y="296" width="197" height="14"/><text x="503" y="308" class="f-blue" font-size="13">330</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Vào cấp 3 cần bậc nào</h2>
+  <div class="cols">
+    <div><div class="h3">Điều dưỡng hạng III (có giấy phép hành nghề)</div><p>Giao tiếp &amp; hợp tác bậc 1, Trí tuệ cảm xúc &amp; xử lý xung đột bậc 1, Thích ứng &amp; học hỏi bậc 1, Đạo đức &amp; chuyên nghiệp bậc 1. Nhóm không ghi là bậc 0.</p></div>
+    <div><div class="h3">Junior Backend Engineer</div><p>Tư duy &amp; giải quyết vấn đề bậc 1, Thích ứng &amp; học hỏi bậc 1, Đạo đức &amp; chuyên nghiệp bậc 1. Nhóm không ghi là bậc 0.</p></div>
+  </div>
+</section>
+
+<section class="slide l-bignum">
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+  <div class="num">60%</div>
+  <p class="cap">điểm mỗi màn là đủ để đi hết cả 221 nghề</p>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Vì sao mức vào cấp là 60%</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Luật</div><div class="v">Vào một cấp cần, ở mỗi nhóm, bậc mà người chơi đạt 60% quỹ của các cấp trước trong nghề sẽ có. Nhóm cần bậc 0 thì không ghi.</div></div><div class="fld"><div class="k">Kiểm bằng mô phỏng</div><ul><li>Chơi riêng một nghề, cả 221 nghề</li><li>60%: đi hết cả 221 nghề</li><li>55%: chỉ 33/221 nghề đi hết (58/221 nếu buff chòm sao trúng 2 nhóm chính)</li><li>50%: bị chặn ở gần như mọi nghề, trừ vài nghề dễ</li></ul></div></div><div><div class="fld"><div class="k">Nghĩa là</div><div class="v">Người chơi đạt 60% mỗi màn là đi hết nghề mình chọn; thấp hơn thì chơi lại màn (chỉ cộng phần chênh) hoặc làm nhiệm vụ phụ.</div></div><div class="fld"><div class="k">Nghề cấp cao</div><div class="v">Bậc cần tính từ quỹ ít nhất trong các nghề đi trước, nên đi đường nào đúng luật cũng vào được: 126 đường đi ở mức 60% đều vào và đi hết.</div></div><div class="fld"><div class="k">Còn tạm</div><div class="v">Mức 60% chỉnh khi chơi thử (G2).</div></div></div></div><p class="src">Nguồn: build_point_budgets.py; point_budgets.md; Hồ sơ JobQuest cơ chế game.md khối G</p></div>
+  </div>
+</section>
+
+<section class="slide l-tree">
+  <h2 class="title center">12 nghề không mở sẵn cấp đầu</h2>
+  <div class="tree">
+    <ul><li><div class="node navy lv1">12 nghề</div>
+      <ul>
+        <li><div class="node blue lv2">Cấp cao (9)</div>
+          <ul><li><div class="node outline lv3">3 nghề IT</div></li><li><div class="node outline lv3">6 nghề quản lý</div></li></ul>
+        </li>
+        <li><div class="node blue lv2">Chuyển ngang (3)</div>
+          <ul><li><div class="node outline lv3">Kỹ sư AI</div></li><li><div class="node outline lv3">Data Engineer</div></li><li><div class="node outline lv3">DevOps</div></li></ul>
+        </li>
+      </ul>
+    </li></ul>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<section class="slide l-text">
+  <h2 class="title">Muốn vào nghề cấp cao</h2>
+  <div class="body">
+    <p>Ngoại lệ của BR-01, cần đủ cả hai điều kiện:</p>
+    <ul class="ul gap">
+      <li>Đã xong band ngay dưới cấp đầu ở <b>nghề đi trước</b></li>
+      <li>Đủ bậc như người chơi 60% đi tới đó</li>
+      <li>Ví dụ: Tech Lead cần Senior Back-end, Front-end hoặc Mobile</li>
+      <li>126 đường đi đều vào được và đi hết</li>
+      <li>Sửa BR-01 trong báo cáo tuần sau, sau khi hỏi cô</li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Cấp cao: Trưởng nhóm kỹ thuật</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Nghề đi trước (5)<span class="p">prerequisite.careers</span></div><ul><li><b>Lập trình viên Back-end / Kỹ sư Back-end</b></li><li>Lập trình viên Front-end</li><li>Lập trình viên Mobile / Kỹ sư ứng dụng di động</li><li>Lập trình viên Game</li><li>Kỹ sư phần mềm nhúng / Kỹ sư IoT</li></ul></div><div class="fld"><div class="k">Cần đã xong<span class="p">prerequisite.band</span></div><div class="v">L5 ở một nghề đi trước · type = cap_cao</div></div></div><div><div class="fld"><div class="k">Cấp đầu<span class="p">levels[0]</span></div><div class="v">L6 Tech Lead</div></div><div class="fld"><div class="k">Bậc soft skill cần ở cấp đầu<span class="p">levels[0].requirement</span></div><ul><li>Tư duy &amp; giải quyết vấn đề: bậc 3</li><li>Thích ứng &amp; học hỏi: bậc 3</li><li>Tự quản lý &amp; chịu áp lực: bậc 2</li><li>Giao tiếp &amp; hợp tác: bậc 1</li><li>Trí tuệ cảm xúc &amp; xử lý xung đột: bậc 1</li><li>Lãnh đạo &amp; tư duy kinh doanh: bậc 1</li><li>Đạo đức &amp; chuyên nghiệp: bậc 1</li></ul></div><div class="fld"><div class="k">Keyword lúc vào<span class="p">keyword_map.json → keyword_base</span></div><div class="v">1: mọi keyword của nghề ở mức 1 Làm quen</div></div></div></div><p class="src">Nguồn: <span class="p">point_budgets.json</span>, <span class="p">keyword_map.json</span>, sửa tay ở nghe_di_truoc.csv</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Cấp cao: Quản lý bệnh viện, cơ sở y tế</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Nghề đi trước (15)<span class="p">prerequisite.careers</span></div><ul><li>Bác sĩ răng hàm mặt (nha sĩ)</li><li>Chuyên viên dinh dưỡng</li><li>Kỹ thuật viên khúc xạ, nhãn khoa</li><li>Dược sĩ</li><li>Kỹ thuật viên, chuyên viên phục hồi chức năng</li><li>Bác sĩ thú y</li><li><b>Điều dưỡng</b></li><li>Kỹ thuật viên gây mê hồi sức</li><li>Hộ sinh</li><li>Bác sĩ</li><li>Y học cổ truyền, châm cứu</li><li>Kỹ thuật viên xét nghiệm</li><li>Kỹ thuật viên chẩn đoán hình ảnh</li><li>Nhân viên cấp cứu ngoại viện</li><li>Chuyên viên hồ sơ bệnh án</li></ul></div></div><div><div class="fld"><div class="k">Cần đã xong<span class="p">prerequisite.band</span></div><div class="v">L3 ở một nghề đi trước · type = cap_cao</div></div><div class="fld"><div class="k">Cấp đầu<span class="p">levels[0]</span></div><div class="v">L4 Phó trưởng phòng chức năng bệnh viện</div></div><div class="fld"><div class="k">Bậc soft skill cần ở cấp đầu<span class="p">levels[0].requirement</span></div><ul><li>Trí tuệ cảm xúc &amp; xử lý xung đột: bậc 1</li><li>Đạo đức &amp; chuyên nghiệp: bậc 1</li></ul></div><div class="fld"><div class="k">Keyword lúc vào<span class="p">keyword_map.json → keyword_base</span></div><div class="v">1: mọi keyword của nghề ở mức 1 Làm quen</div></div></div></div><p class="src">Nguồn: <span class="p">point_budgets.json</span>, <span class="p">keyword_map.json</span>, sửa tay ở nghe_di_truoc.csv</p></div>
+  </div>
+</section>
+
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">05</div>
+    <div class="sec-title">Keyword, nhảy nghề</div>
+    <p class="sec-sub">Kỹ năng cứng, cùng một cách cho mọi nghề</p>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Vì sao đổi sang ESCO</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th></th><th>Cách cũ</th><th>ESCO</th></tr></thead>
+      <tbody>
+        <tr><td>Nguồn keyword</td><td>IT tự soạn, còn lại O*NET</td><td>Một nguồn cho mọi nghề</td></tr>
+        <tr><td>Back-end và Mobile</td><td>Trùng y hệt</td><td>Tách được</td></tr>
+        <tr><td>Keyword lên Chuyên sâu</td><td>Ngoài IT 95%</td><td>31%, như IT</td></tr>
+        <tr><td>Độ mịn</td><td>"Hàn" chung chung</td><td>Hàn TIG, hàn hồ quang</td></tr>
+        <tr><td>Khớp keyword IT nhóm soạn</td><td>38%</td><td>49,5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-text">
+  <h2 class="title">Keyword của một nghề</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li><b>6 keyword cốt lõi</b> và <b>4 keyword đặc trưng</b></li>
+      <li>Bỏ kỹ năng trùng soft skill, ngoại ngữ, tên sản phẩm</li>
+      <li>30% lên Chuyên sâu, 20% dừng ở Làm quen</li>
+      <li>Mỗi cấp nâng tối đa 5 keyword</li>
+      <li>Nghề ESCO thiếu: ghép 2 nghề hoặc chọn tay</li>
+      <li>Giữ cả tên tiếng Việt và tiếng Anh</li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Chọn keyword cho một nghề</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Ứng viên</div><div class="v">Kỹ năng bắt buộc của nghề ESCO.</div></div><div class="fld"><div class="k">Loại bỏ</div><ul><li>Kỹ năng chung (transversal) và ngoại ngữ</li><li>Bộ 40 kỹ năng nghiên cứu gắn chung cho 122 nghề</li><li>Kỹ năng thuộc 14 nhóm ESCO trùng 7 nhóm soft skill</li><li>Tên sản phẩm (Jenkins, Joomla); kỹ năng dưới 3 nghề dùng</li></ul></div><div class="fld"><div class="k">Mức</div><div class="v">1 Làm quen: làm việc đơn giản khi có hướng dẫn · 2 Thành thạo: tự làm việc thường gặp · 3 Chuyên sâu: xử lý tình huống khó, hướng dẫn người khác.</div></div></div><div><div class="fld"><div class="k">Chấm điểm</div><ul><li>Độ hiếm = log(số nghề ESCO / số nghề dùng kỹ năng)</li><li>Cốt lõi (tối đa 6): tỉ lệ nghề cùng nhóm ISCO 3 số có kỹ năng × độ hiếm</li><li>Đặc trưng (4): (1 − tỉ lệ đó) × độ hiếm: thứ làm nghề khác nghề bên cạnh</li><li>Nhóm ISCO dưới 5 nghề thì dùng nhóm 2 số</li></ul></div><div class="fld"><div class="k">Mức cao nhất</div><div class="v">Xếp theo độ cốt lõi: 30% đầu lên Chuyên sâu, 20% cuối dừng ở Làm quen, còn lại Thành thạo. Thực tế IT 20/50/30%, ngoài IT 19/50/31% (Làm quen / Thành thạo / Chuyên sâu).</div></div><div class="fld"><div class="k">Giới hạn</div><div class="v">6–10 keyword mỗi nghề (trung bình 9,4); mỗi cấp nâng tối đa 5 keyword.</div></div></div></div><p class="src">Nguồn: build_keyword_map.py; keyword_map.md; Hồ sơ JobQuest cơ chế game.md khối G</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">10 keyword mẫu, theo mức cao nhất</h2>
+  <div class="stage top">
+    <div class="sample">
+      <table class="tbl dense left"><thead><tr><th>max_level</th><th>Điều dưỡng</th><th>Back-end</th></tr></thead><tbody><tr><td>3 Chuyên sâu</td><td>Năng lực lâm sàng theo bối cảnh · Giáo dục sức khoẻ · Phát triển bền vững trong y tế</td><td>Lập trình máy tính · Gỡ lỗi phần mềm · Dịch vụ web</td></tr><tr><td>2 Thành thạo</td><td>Tuân thủ hướng dẫn lâm sàng · Chẩn đoán điều dưỡng · Tương tác với người bệnh · Tham gia đào tạo nhân viên y tế · Xử lý tình huống cấp cứu</td><td>Dùng giao diện riêng của ứng dụng (như API) · Đọc hiểu yêu cầu kỹ thuật · Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE) · Quản lý dự án kỹ thuật · Làm bản mẫu phần mềm (prototype)</td></tr><tr><td>1 Làm quen</td><td>Phân tích chất lượng chăm sóc điều dưỡng · Góp phần chăm sóc y tế liên tục</td><td>Xác định yêu cầu của khách hàng · Phân tích đặc tả phần mềm</td></tr></tbody></table>
+      <p class="src">Nguồn: <span class="p">keyword_map.json → careers[].keywords[].ten_vi, max_level</span> · ESCO v1.2.1, tên tiếng Việt là bản nháp chờ duyệt</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Nhảy nghề, không có gì ẩn</h2>
+  <div class="cols">
+    <div><div class="h3">Được vào khi</div><p>Phủ 50% keyword nghề đích cần, hoặc 30% nếu hai nghề rất giống. Đủ bậc soft skill. Nghề cấp cao cần nghề đi trước.</p></div>
+    <div><div class="h3">Màn giải thích</div><p>Từng keyword: đủ, gần giống (tính một nửa) hoặc còn thiếu. Kèm độ phủ, ngưỡng, cấp vào được và keyword cần thêm.</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Độ phủ và quy đổi nhóm kỹ năng</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Độ phủ (%)</div><div class="v">Σ min(mức đang có, mức cần) / Σ mức cần, mức 1/2/3, tính trên đầu vào của cấp đích. Chỉ dùng keyword người chơi đã đạt và thấy được (D-124).</div></div><div class="fld"><div class="k">Nhóm kỹ năng</div><div class="v">Keyword quy về nhóm cấp 3 của ESCO (279 nhóm; kiến thức theo ISCED-F 4 số). Cùng nhóm tính đủ: hàn TIG thay được hàn hồ quang.</div></div><div class="fld"><div class="k">Ngưỡng</div><div class="v">Độ phủ ≥ 50%, hoặc ≥ 30% nếu hai nghề rất giống (Sim ≥ 1,2); đồng thời đủ bậc soft skill. Ngưỡng tạm, chỉnh khi chơi thử (G2).</div></div></div><div><div class="fld"><div class="k">Quy đổi s(A→B)</div><div class="v">Trong các nghề ESCO dùng nhóm A, bao nhiêu phần cũng dùng nhóm B, đếm trên 3.039 nghề. Một chiều: A sang B khác B sang A.</div></div><div class="fld"><div class="k">Lọc</div><ul><li>Nhóm có ít nhất 10 nghề dùng</li><li>Cặp cùng có ở ít nhất 3 nghề</li><li>Có ý nghĩa thống kê: z ≥ 3</li></ul></div><div class="fld"><div class="k">Tín chỉ</div><div class="v">Cùng nhóm 1 · s ≥ 0,75 được 0,5 · 0,5 ≤ s < 0,75 được 0,25; lấy mức cao nhất, không cộng dồn. Ý tưởng từ Dawson 2021, Alabdulkareem 2018; mức tín chỉ là lựa chọn thiết kế.</div></div></div></div><p class="src">Nguồn: build_keyword_map.py; quy_doi_ky_nang.md; Hồ sơ JobQuest cơ chế game.md khối G; D-122</p></div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Màn giải thích: Điều dưỡng → Hộ lý</h2>
+  <div class="stage top">
+    <div class="sample">
+      <p class="lead">Người chơi đã xong Điều dưỡng hạng II (L5) ở nghề Điều dưỡng, chơi 60% điểm. Xét cấp L4 Tổ trưởng hộ lý của khoa.</p>
+      <div class="explain"><div><div class="node navy">Đủ · 3</div><ul><li>Phát triển bền vững trong y tế</li><li>Tương tác với người bệnh</li><li>Tuân thủ hướng dẫn lâm sàng</li></ul></div><div><div class="node blue">Gần giống · 1</div><ul><li>Đồng cảm với người bệnh<span>quy đổi 0,25 từ Giáo dục sức khoẻ</span></li></ul></div><div><div class="node outline">Còn thiếu · 6</div><ul><li>Theo dõi dấu hiệu sinh tồn cơ bản</li><li>Hỗ trợ cơ bản cho người bệnh</li><li>Điều dưỡng chăm sóc dài hạn</li><li>Thực hiện chăm sóc điều dưỡng</li><li>Chăm sóc người khuyết tật</li><li>Chăm sóc điều dưỡng chuyên nghiệp</li></ul></div></div>
+      <p class="verdict">Keyword phủ <b>37%</b> (ngưỡng 30% vì hai nghề rất giống), đủ tới L4; soft skill đủ tới L4 → vào <b>L4</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Màn giải thích: Back-end → Front-end</h2>
+  <div class="stage top">
+    <div class="sample">
+      <p class="lead">Người chơi đã xong Senior Backend Engineer (L5) ở nghề Back-end, chơi 60% điểm. Xét cấp L6 Lead Frontend Engineer.</p>
+      <div class="explain"><div><div class="node navy">Đủ · 6</div><ul><li>Lập trình máy tính</li><li>Gỡ lỗi phần mềm</li><li>Dùng giao diện riêng của ứng dụng (như API)</li><li>Dịch vụ web</li><li>Làm bản mẫu phần mềm (prototype)</li><li>Phân tích đặc tả phần mềm</li></ul></div><div><div class="node blue">Gần giống · 3</div><ul><li>Dựng giao diện front-end cho website<span>quy đổi 0,25 từ Dùng giao diện riêng của ứng dụng (như API)</span></li><li>Hệ thống tên miền (DNS)<span>quy đổi 0,25 từ Gỡ lỗi phần mềm</span></li><li>Môi trường phát triển tích hợp (IDE)<span>quy đổi 0,25 từ Gỡ lỗi phần mềm</span></li></ul></div><div><div class="node outline">Còn thiếu · 1</div><ul><li>Quy trình phát triển nội dung</li></ul></div></div>
+      <p class="verdict">Keyword phủ <b>77%</b> (ngưỡng 30% vì hai nghề rất giống), đủ tới L7; soft skill đủ tới L6 → vào <b>L6</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="slide l-donuts">
+  <h2 class="title center">Kiểm định luật nhảy nghề</h2>
+  <div class="cols" style="--n:3">
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="67 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">67%</div><p>cặp cùng nhóm nghề vào được cấp cuối</p>
+    </div>
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="2.4 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">2,4%</div><p>cặp không liên quan nhảy nhầm</p>
+    </div>
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="3.9 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">3,9%</div><p>ngoài IT vào sâu nghề IT: không ưu ái IT</p>
+    </div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Đọc số kiểm định nhảy nghề</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Cặp nghề liên quan</div><ul><li>Cùng nhóm ISCO-08 3 số: 774 cặp; thiên nhẹ về keyword vì cách chọn keyword đã dùng nhóm ISCO</li><li>Nằm trong Related Occupations của O*NET: 836 cặp; thiên về kênh Sim vì Sim cũng dựng từ O*NET</li><li>Cặp có hướng; nghề nguồn đã xong cấp cuối</li></ul></div><div class="fld"><div class="k">AUC là gì</div><div class="v">Xác suất một cặp liên quan có độ phủ cao hơn một cặp không liên quan chọn ngẫu nhiên. 0,5 là đoán mò, 1 là tách hoàn hảo.</div></div></div><div><div class="fld"><div class="k">Kết quả</div><ul><li>AUC 0,909 (ISCO) · 0,880 (O*NET)</li><li>Nhảy tới cấp cuối: 67,4% cặp liên quan so với 2,4% cặp khác (ISCO)</li><li>57,1% so với 2,5% (O*NET)</li></ul></div><div class="fld"><div class="k">Không ưu ái IT</div><div class="v">Tỉ lệ cặp khác ngành vào sâu hơn cấp đầu: IT → ngoài IT 5,6% · ngoài IT → ngoài IT 9,2% · ngoài IT → IT 3,9%.</div></div><div class="fld"><div class="k">Chưa đo</div><div class="v">Người chơi thật: ngưỡng chỉnh sau khi chơi thử.</div></div></div></div><p class="src">Nguồn: keyword_map.json (validation); Hồ sơ JobQuest cơ chế game.md khối G</p></div>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Engine đọc dữ liệu từ đâu</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th></th><th>Chứa gì</th><th>Dùng cho</th></tr></thead>
+      <tbody>
+        <tr><td>keyword_map.json</td><td>Keyword, quy đổi nhóm</td><td>Nhảy nghề, giải thích</td></tr>
+        <tr><td>point_budgets.json</td><td>Quỹ điểm, ngưỡng cấp</td><td>Mở cấp, nghề cấp cao</td></tr>
+        <tr><td>nghe_di_truoc.csv</td><td>12 nghề cấp cao</td><td>Nguồn, build ra JSON</td></tr>
+        <tr><td>ten_keyword_vi.csv</td><td>Tên Việt, Anh 1.693 mục</td><td>Nguồn, build ra JSON</td></tr>
+        <tr><td>interest_regions.json</td><td>6 vùng ngành, lời thẻ</td><td>Get to know me cụm 3</td></tr>
+        <tr><td>JSON_SCHEMA.md</td><td>§14–15, từng trường</td><td>Người viết engine</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">06</div>
+    <div class="sec-title">Cần nhóm chốt</div>
+    <p class="sec-sub">Tối nay và khi có chuyên gia</p>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Tối nay nhóm duyệt được</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Việc</th><th>File</th><th>Cách làm</th></tr></thead>
+      <tbody>
+        <tr><td>Bộ luật tuần này</td><td>Hub D-104 đến D-125</td><td>Đồng ý hoặc phản biện</td></tr>
+        <tr><td>22 nghề IT: nghề ESCO, keyword</td><td>keyword_map.md</td><td>Xem 22 dòng IT</td></tr>
+        <tr><td>Nghề đi trước của 6 nghề IT</td><td>nghe_di_truoc.csv</td><td>Đọc 6 dòng đầu</td></tr>
+        <tr><td>Tên tiếng Việt khó hiểu, sai</td><td>ten_keyword_vi.csv</td><td>Chia 3 người</td></tr>
+        <tr><td>Lời 6 thẻ nhóm ngành</td><td>interest_regions.json</td><td>Đọc, sửa lời</td></tr>
+        <tr><td>Keyword ít chặn nghề rất giống</td><td>Slide màn giải thích</td><td>Giữ hay siết</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Những ngưỡng còn tạm</h2>
+  <div class="stage top">
+    <div class="sample"><table class="tbl dense"><colgroup><col style="width:170px"><col style="width:250px"><col><col style="width:150px"></colgroup><thead><tr><th>Ngưỡng</th><th>Giá trị</th><th>Căn cứ hiện có</th><th>Chỉnh bằng</th></tr></thead><tbody><tr><td>Mốc bậc soft skill</td><td>0 · 500 · 1.500 · 3.000 · 6.000 · 10.000</td><td>Chưa có, quy ước</td><td>Chơi thử (D1)</td></tr><tr><td>Mức vào cấp</td><td>60% quỹ các cấp trước</td><td>Mô phỏng 221 nghề</td><td>Chơi thử (G2)</td></tr><tr><td>Độ phủ nhảy nghề</td><td>50%; 30% nếu rất giống</td><td>Kiểm định ISCO và O*NET</td><td>Chơi thử (G2)</td></tr><tr><td>Mũ độ khó</td><td>k^1,4</td><td>Cấp cuối nghề khó đạt được trong nghề</td><td>Chơi thử (G2)</td></tr><tr><td>Hệ số phạt</td><td>0,25 / 0,35 / 0,5</td><td>Quy ước, tăng theo band</td><td>Chơi thử (G2)</td></tr><tr><td>Buff chòm sao</td><td>+12%</td><td>Trong khoảng 10–15%</td><td>Chơi thử (F1)</td></tr><tr><td>Sim ô cùng ngành</td><td>≥ 1,2</td><td>10% cặp nghề giống nhất</td><td>Bảng keyword (E3)</td></tr><tr><td>Sức nặng tự kể</td><td>2 lần chạm</td><td>Lựa chọn thiết kế</td><td>Mô phỏng (E1)</td></tr></tbody></table><p class="src">Nguồn: Hồ sơ JobQuest cơ chế game.md, mục Cần chốt của các khối</p></div>
+  </div>
+</section>
+
+<section class="slide l-quad">
+  <h2 class="title center">Chờ chuyên gia, chơi thử và cô</h2>
+  <div class="quad">
+    <div class="side">Dữ liệu</div>
+    <div><div class="q-h">Chuyên gia nghề</div><div class="q-b"><ul class="ul"><li>Nối ESCO nghề ngoài IT</li><li>Nghề đi trước 6 nghề quản lý</li></ul></div></div>
+    <div><div class="q-h">Tên và keyword</div><div class="q-b"><ul class="ul"><li>Khoảng 1.250 tên chưa soát kỹ</li><li>Keyword Bác sĩ, thợ xe máy</li></ul></div></div>
+    <div class="side">Luật</div>
+    <div><div class="q-h">Chơi thử</div><div class="q-b"><ul class="ul"><li>Ngưỡng 50%, 30% và 60%</li><li>Thu ngân → Bán hàng chỉ L1</li></ul></div></div>
+    <div><div class="q-h">Hỏi cô</div><div class="q-b"><ul class="ul"><li>Ngoại lệ BR-01, nghề cấp cao</li><li>Sửa báo cáo bản kế tiếp</li></ul></div></div>
+  </div>
+</section>
+
+<section class="slide l-thanks">
+  <div class="big">Góp ý nhé!</div>
+  <div class="info">
+    <p>Nhóm thấy luật nào cần sửa trước khi chốt?</p>
+    <p style="margin-top:14px">Quyết định: docs/project-hub/02-quyet-dinh.md<br>Việc mở: H9, H13, H14 trong 07-van-de-mo.md<br>Chi tiết: Hồ sơ JobQuest cơ chế game.md</p>
+    <div class="icons">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+    </div>
+  </div>
+  <div class="blk blue" style="left:704px;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+</section>
+
+<!-- ================= SLIDES END ================= -->
+</main>
+<div class="hud" id="hud"></div>
+<script>
+/* Deck runtime: fit-to-window, ← → / Space / PgUp PgDn / Home End, F = fullscreen, O = overview, #n deep link, P = print */
+(function(){
+  const deck=document.querySelector('.deck'), slides=[...deck.querySelectorAll('.slide')], hud=document.getElementById('hud');
+  let i=0; try{i=Math.min(Math.max((parseInt(location.hash.slice(1))||1)-1,0),slides.length-1)}catch(e){}
+  function fit(){ if(document.body.classList.contains('overview'))return;
+    const s=Math.min(innerWidth/960,innerHeight/540); deck.style.transform=`translate(${(innerWidth-960*s)/2}px,${(innerHeight-540*s)/2}px) scale(${s})`; }
+  function show(n){ i=Math.min(Math.max(n,0),slides.length-1); slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    hud.textContent=(i+1)+' / '+slides.length; try{history.replaceState(null,'','#'+(i+1))}catch(e){} }
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1)}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='f'||e.key==='F'){try{const r=document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();r&&r.catch&&r.catch(()=>{})}catch(e){}}
+    else if(e.key==='o'||e.key==='O'){document.body.classList.toggle('overview');fit();slides[i].scrollIntoView({block:'center'})}
+    else if(e.key==='p'||e.key==='P'){print()}
+  });
+  slides.forEach((s,k)=>s.addEventListener('click',()=>{ if(document.body.classList.contains('overview')){document.body.classList.remove('overview');show(k);fit()} }));
+  addEventListener('resize',fit); fit(); show(i);
+})();
+</script>
+</body>
+</html>
