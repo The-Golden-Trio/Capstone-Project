@@ -2050,6 +2050,30 @@ Reliability and operations. Availability of 99.5\% a month is proposed for Stage
 
 From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free \textit{game-core} shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and httpOnly cookie sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
 
+\setcounter{subsubsection}{5}
+
+\subsubsection{AI Model Design}
+
+JobQuest does not design, train, or fine-tune a model (Section 5.2.3). This section designs how existing language models are composed with rules, data, and expert oversight into the AI components of the platform. Only its structure is fixed here: each part is written once its content has been verified, and the parts that depend on the game design stay parameterised until the game design is fixed. The parts fall into four groups: the overview (parts 1 and 2), the components and their data (parts 3 to 6), scoring and model calls (parts 7 to 10), and operation (parts 11 to 15).
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item Design principles: the principles that decide which decisions a model takes and which a rule takes.
+  \item End-to-end flow: one figure of the authoring, play, and review loops, and of the model gateway that every call passes through.
+  \item The AI components: the contract of each of AI-1 to AI-5, namely when it runs, what it receives and returns, how its output is checked, and what happens on failure.
+  \item Feedback writer: how the result of a judgment becomes feedback the explorer can use.
+  \item Other free text: how every other free-text answer in the game reaches the same grader.
+  \item Data contracts: the seed that experts author and the judgment that the graders return, with what is stored and versioned.
+  \item Scoring and aggregation: how the levels given by the judges are combined into a grade and a competency score, with the parameters left open until the game design is fixed.
+  \item Edge cases: invalid output, an empty answer, hints, and a missing judge.
+  \item Model call configuration and prompts: the parameters of each kind of call, their translation to the API of each provider, the system prompt, and prompt caching.
+  \item Run-time rules of AI-4: the checks applied to the narrator's text before the explorer sees it.
+  \item Privacy and safety: de-identification and the defence against prompt injection; the policy on third parties is in Section 5.3.10.
+  \item Failure behaviour: the sequence of fallbacks when a call fails, and the idea of a local model as the last fallback, which is not implemented and is to be shown in the component and deployment diagrams.
+  \item Cost and time: the cost of a playthrough and the time budget of each call.
+  \item Feedback loop and versions: how expert rulings improve the rubrics and the calibration examples, and how versions of models, prompts, and rubrics are tracked.
+  \item Deferred AI functions: the AI functions left for a later phase and where they attach to the design.
+\end{enumerate}
+
 \setcounter{subsubsection}{9}
 
 \subsubsection{Policies for the Processing of the Proposed System and Third Parties}
