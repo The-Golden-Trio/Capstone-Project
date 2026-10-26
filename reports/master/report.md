@@ -666,15 +666,15 @@ The three processes identified in Section 4.1.2 are modelled below as activity d
 
 Exploration process. The explorer's part of the platform is modelled in seven diagrams, from access to the platform to sending feedback about the app (AD-01a to AD-01g).
 
-![Explorer: access the platform (AD-01a).](latex/figures/AD-01a_Explorer_AccessPlatform.png){width=0.62}
+![Explorer: access the platform (AD-01a).](latex/figures/AD-01a_Explorer_AccessPlatform.png){width=0.59}
 
 ![Explorer: complete the Get-to-know-me quiz (AD-01b).](latex/figures/AD-01b_Explorer_GetToKnowMeQuiz.png){width=0.53}
 
-![Explorer: choose level and quest (AD-01c).](latex/figures/AD-01c_Explorer_ChooseLevelAndQuest.png){width=0.46}
+![Explorer: choose level and quest (AD-01c).](latex/figures/AD-01c_Explorer_ChooseLevelAndQuest.png){width=0.43}
 
 ![Explorer: perform scenario (AD-01d).](latex/figures/AD-01d_Explorer_PerformScenario.png){width=1}
 
-![Explorer: rate occupation (AD-01e).](latex/figures/AD-01e_Explorer_RateOccupation.png){width=0.8}
+![Explorer: rate occupation (AD-01e).](latex/figures/AD-01e_Explorer_RateOccupation.png){width=0.47}
 
 ![Explorer: manage profile and account (AD-01f).](latex/figures/AD-01f_Explorer_ProfileAccount.png){width=1}
 
@@ -686,13 +686,13 @@ Content lifecycle process. This process governs occupational accuracy and is the
 
 The content administrator's other flows are modelled in AD-02a to AD-02f.
 
-![Content administrator: access the portal (AD-02a).](latex/figures/AD-02a_ContentAdmin_AccessPortal.png){width=0.57}
+![Content administrator: access the portal (AD-02a).](latex/figures/AD-02a_ContentAdmin_AccessPortal.png){width=0.36}
 
-![Content administrator: manage catalogue (AD-02b).](latex/figures/AD-02b_ContentAdmin_ManageCatalogue.png){width=0.58}
+![Content administrator: manage catalogue (AD-02b).](latex/figures/AD-02b_ContentAdmin_ManageCatalogue.png){width=0.49}
 
 ![Content administrator: import reference data (AD-02c).](latex/figures/AD-02c_ContentAdmin_ImportReferenceData.png){width=0.4}
 
-![Content administrator: replace or delete scenario (AD-02d).](latex/figures/AD-02d_ContentAdmin_ReplaceOrDeleteScenario.png){width=0.51}
+![Content administrator: replace or delete scenario (AD-02d).](latex/figures/AD-02d_ContentAdmin_ReplaceOrDeleteScenario.png){width=0.38}
 
 ![Content administrator: monitor occupation (AD-02e).](latex/figures/AD-02e_ContentAdmin_MonitorOccupation.png){width=0.89}
 
@@ -700,11 +700,11 @@ The content administrator's other flows are modelled in AD-02a to AD-02f.
 
 The domain expert's other flows are modelled in AD-03a to AD-03d.
 
-![Domain expert: access the portal (AD-03a).](latex/figures/AD-03a_DomainExpert_AccessPortal.png){width=0.55}
+![Domain expert: access the portal (AD-03a).](latex/figures/AD-03a_DomainExpert_AccessPortal.png){width=0.35}
 
-![Domain expert: revalidate scenario (AD-03b).](latex/figures/AD-03b_DomainExpert_RevalidateScenario.png){width=0.64}
+![Domain expert: revalidate scenario (AD-03b).](latex/figures/AD-03b_DomainExpert_RevalidateScenario.png){width=0.47}
 
-![Domain expert: check assessor reliability (AD-03c).](latex/figures/AD-03c_DomainExpert_CheckAssessorReliability.png){width=0.58}
+![Domain expert: check assessor reliability (AD-03c).](latex/figures/AD-03c_DomainExpert_CheckAssessorReliability.png){width=0.55}
 
 ![Domain expert: manage occupation profile (AD-03d).](latex/figures/AD-03d_DomainExpert_ManageOccupationProfile.png){width=0.47}
 
@@ -712,15 +712,15 @@ Evaluation process. This process is internal to the project and supports RP-1 an
 
 Platform administration. Besides the three processes, the system administrator's flows are modelled in AD-05a to AD-05e.
 
-![System administrator: access the portal (AD-05a).](latex/figures/AD-05a_SystemAdmin_AccessPortal.png){width=0.53}
+![System administrator: access the portal (AD-05a).](latex/figures/AD-05a_SystemAdmin_AccessPortal.png){width=0.35}
 
 ![System administrator: manage accounts (AD-05b).](latex/figures/AD-05b_SystemAdmin_ManageAccounts.png){width=1}
 
-![System administrator: configure AI models (AD-05c).](latex/figures/AD-05c_SystemAdmin_ConfigureModels.png){width=0.41}
+![System administrator: configure AI models (AD-05c).](latex/figures/AD-05c_SystemAdmin_ConfigureModels.png){width=0.4}
 
 ![System administrator: monitor operation (AD-05d).](latex/figures/AD-05d_SystemAdmin_MonitorOperation.png){width=0.66}
 
-![System administrator: review app feedback (AD-05e).](latex/figures/AD-05e_SystemAdmin_ReviewFeedback.png){width=0.41}
+![System administrator: review app feedback (AD-05e).](latex/figures/AD-05e_SystemAdmin_ReviewFeedback.png){width=0.4}
 
 ### 5.1.2 Use case modelling
 
@@ -2357,6 +2357,53 @@ JobQuest does not design, train, or fine-tune a model (Section 5.2.3). This sect
 13. Cost and time: the cost of a playthrough and the time budget of each call.
 14. Feedback loop and versions: how expert rulings improve the rubrics and the calibration examples, and how versions of models, prompts, and rubrics are tracked.
 15. Deferred AI functions: the AI functions left for a later phase and where they attach to the design.
+### 5.3.2 Sitemap Design
+
+The two applications of Section 5.3.1 have one sitemap each. A box is a screen and lists its main elements; a solid arrow is navigation the user chooses, and a dashed arrow, labelled with its condition, is a screen the system leads to after an action.
+
+Explorer application. A visitor reaches sign-in from the landing page, which also carries the AI disclosure and the language switch, and after signing in arrives at the Galaxy Map, the home screen. From there the explorer can take the Get-to-know-me quiz or skip it, the result showing the RIASEC profile, social index, portrait, and five suggested occupations (FR-03, FR-04); open an occupation profile with its downsides, salary, career path, and ratings (FR-05, FR-17); open their profile, with the private record (FR-18) and account settings (FR-02); or send app feedback (FR-20). An occupation leads to level selection and enrolment (FR-06 to FR-08), then to the Island Map of the level with its main quests, side quests, and suggested tasks. A main quest passes through the scenario introduction (FR-09) to the scenario player, with the activity, answer form, hint, random event, follow-up question, and the flag for wrong content (FR-10 to FR-13), and ends on the scenario summary with result, feedback, and guidance (FR-14). Rating an occupation opens only once all its levels are completed (FR-19).
+
+![Sitemap of the explorer application (SITE-01).](latex/figures/SITE-01_ExplorerApp.png){width=0.78}
+
+Staff application. One sign-in screen leads to three portals, one per staff actor, each limited to the occupations its user is assigned to (FR-40). The content administrator's portal reaches scenario slots, where a scenario is opened, assigned to a domain expert with a review deadline, reassigned when overdue, or deleted (FR-33, FR-34, FR-38); the occupation catalogue and reference-data import (FR-30, FR-31); review criteria (FR-32); the occupation monitor (FR-39); the gamify workspace and asset library (FR-35, FR-36); and publication (FR-37). The domain expert's portal reaches scenario authoring (FR-22 to FR-24), review (FR-25), play-test (FR-26), revalidation (FR-27), the occupation profile manager (FR-21), and grading reliability, with blind rating and the disagreement report (FR-28, FR-29). The system administrator's portal reaches accounts (FR-41), occupation staffing (FR-40), AI model settings (FR-42), the operations monitor (FR-43), and the app feedback inbox (FR-20). The dashed arrows trace a scenario between portals along SM-01: an approved review leads to the gamify workspace, a built draft game to the play-test, and the play-test returns display findings to the workspace, content findings to authoring, and a passed play-test to publication; a review requesting changes also returns to authoring, and the occupation monitor can request revalidation.
+
+![Sitemap of the staff application (SITE-02): three portals behind one sign-in, with dashed arrows for the path a scenario takes between them.](latex/figures/SITE-02_StaffApp.png){landscape}
+
+### 5.3.3 Sequence Diagrams
+
+The sequence diagrams below show how the components of Section 5.3.1 cooperate in the main flows of each actor; the assessed turn (SD-01) is shown in Section 5.3.1. Lifelines are the actors, the two applications, the modules, the data stores, and the external services; a solid arrow is a call and a dashed arrow a reply or a pushed event. All diagrams follow the conventions of SD-01: a request is stored in PostgreSQL before slow work is queued in Redis, so the reply comes at once; AI orchestration takes model work from the queue and reaches the providers only through the model gateway; results reach the open application through Redis and the result stream rather than by polling; and each state change of a scenario is written with its log entry, following SM-01.
+
+Access the platform. The explorer application is a static bundle served by the content delivery network. Sign-in takes one of three paths: a password, checked against the stored hash; Google, for which Identity and access exchanges the authorization code for an ID token and verifies it before finding or creating the account; or registration. Wrong details or a disabled account end the flow with an error (FR-01, FR-41). Otherwise a session is started and the sign-in logged, and the reply says whether the Get-to-know-me quiz is done, which decides between the quiz and the Galaxy Map.
+
+![Sequence of access to the platform (SD-04): sign-in with a password or Google, or registration, then the quiz or the Galaxy Map.](latex/figures/SD-04_Explorer_AccessPlatform.png){width=0.7}
+
+Get-to-know-me quiz. The questions are loaded once and the answers kept by the application until submitted. Exploration computes the RIASEC profile and social index, picks the five occupations whose interest codes are closest and the portrait of the top type, and labels the result as self-reported; no model is called (FR-03, FR-04). The explorer then opens a suggested occupation or browses the Galaxy Map.
+
+![Sequence of the Get-to-know-me quiz (SD-03): profile, suggestions, and portrait computed without AI.](latex/figures/SD-03_Explorer_GetToKnowMeQuiz.png){width=0.64}
+
+Finish a scenario. If the hidden feedback notes of the last activities are still being written, the explorer sees progress, and the summary is requested again when AI orchestration announces the notes ready. Exploration then totals the activity scores, picks the ending, combines the notes, and caps the competency points (FR-15); with enough credit it unlocks the next level, otherwise it picks practice tasks (FR-08). Progress, history, and badges are stored before the ending, feedback, and guidance are shown (FR-14), and the explorer returns to the Island Map or opens the profile.
+
+![Sequence of finishing a scenario (SD-02): waiting for pending feedback notes, scoring, credit and unlocking, and the summary.](latex/figures/SD-02_Explorer_FinishScenario.png){width=0.92}
+
+Generate scenario content. The flow has three parts. The content administrator opens a scenario for a task; Content lifecycle refuses if the task already has an active scenario (FR-33), and otherwise creates an empty one, to which the administrator assigns an author and a reviewer with a review deadline (FR-34); the author is emailed through a queued notification. The author chooses situation options and writes the context; the generation job is stored and queued, and AI orchestration calls the model through the gateway, checks the output, stores the generation record, and pushes the content to the staff application (FR-23). Each revision the author requests of a part follows the same path and is kept in the generation history. The author then sets task types and option scores, checks the rubric anchors, adds sample answers, and writes hints and events (FR-22, FR-24); the automatic content checks must pass before the scenario can be submitted, which sets it submitted and emails the reviewer.
+
+![Sequence of generating scenario content (SD-05): opening and assignment, generation and revision with AI, and completion and submission.](latex/figures/SD-05_DomainExpert_GenerateScenario.png)
+
+Review a scenario. Identity and access refuses a reviewer who is the scenario's author or is not assigned to it. Opening the scenario sets it in review. The reviewer answers each review criterion and then rejects, requests changes, or approves; a decision with a criterion unanswered is refused (FR-25, FR-32). Rejection retires the scenario, a request for changes returns it to draft with the comments, and approval sets it approved. The outcome is pushed to the author's open staff application and emailed to the author and the content administrator.
+
+![Sequence of reviewing a scenario (SD-06): access check, answers to the review criteria, and the decision with its state change.](latex/figures/SD-06_DomainExpert_ReviewScenario.png)
+
+Gamify and play-test. The content administrator asks for presentation ideas; AI orchestration sends the approved content and the allowed task types to a model and returns suggested task types, characters, and backgrounds, storing their cost. The administrator's choice of task types is checked against the set the author allowed (FR-35). A missing asset is generated by the image model, checked for bias, stored in object storage, and added to the asset library (FR-36). Confirming the presentation builds the draft game and invites the author to play it; the staff application runs *game-core* locally, and each answer follows SD-01 in a session flagged as a play-test, so it is excluded from statistics. The author's findings are pushed to the administrator: a display issue returns the scenario to presentation, a content issue returns it to drafting, and confirmation that the content is final sets it ready (FR-26).
+
+![Sequence of gamifying and play-testing a scenario (SD-07): presentation suggested with AI, missing assets generated and checked, and the draft game play-tested by its author.](latex/figures/SD-07_ContentAdmin_GamifyAndPlaytest.png)
+
+Publish a scenario. Content lifecycle refuses to publish a scenario that is not ready. Otherwise it compares the release with the approved content, stores the release by version in object storage and the locked release in PostgreSQL, and sets it published at once or keeps it ready until the scheduler publishes it on the effective date (FR-37). When an explorer then starts the main quest, Exploration checks the status and loads any saved position; an unavailable scenario returns the explorer to the Island Map. The explorer application fetches the release by its version through the content delivery network, which reads object storage only when the file is not cached, and shows the scenario introduction with its optional context (FR-09).
+
+![Sequence of publishing a scenario (SD-08): checks and the immutable release, publication on the effective date, and the explorer loading the release through the content delivery network.](latex/figures/SD-08_ContentAdmin_PublishScenario.png)
+
+Import reference data. The uploaded O\*NET and ESCO files are stored in object storage and an import job is queued. The importer reads the files, looks up the source identifiers in O\*NET and ESCO, matches the records, stores matched and unmatched records, and pushes the result; the content administrator fixes or skips each unmatched record (FR-31) and then adapts the data to Vietnamese practice. The adapted data is stored with its log entry, and the occupation's domain experts are emailed.
+
+![Sequence of importing reference data (SD-09): upload, matching against O\*NET and ESCO, resolution of unmatched records, and adaptation.](latex/figures/SD-09_ContentAdmin_ImportReferenceData.png)
 
 ### 5.3.10 Policies for the Processing of the Proposed System and Third Parties
 
