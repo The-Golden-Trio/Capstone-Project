@@ -2338,6 +2338,26 @@ Reliability and operations. Availability of 99.5% a month is proposed for Stages
 
 From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free *game-core* shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and httpOnly cookie sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
 
+### 5.3.6 AI Model Design
+
+JobQuest does not design, train, or fine-tune a model (Section 5.2.3). This section designs how existing language models are composed with rules, data, and expert oversight into the AI components of the platform. Only its structure is fixed here: each part is written once its content has been verified, and the parts that depend on the game design stay parameterised until the game design is fixed. The parts fall into four groups: the overview (parts 1 and 2), the components and their data (parts 3 to 6), scoring and model calls (parts 7 to 10), and operation (parts 11 to 15).
+
+1. Design principles: the principles that decide which decisions a model takes and which a rule takes.
+2. End-to-end flow: one figure of the authoring, play, and review loops, and of the model gateway that every call passes through.
+3. The AI components: the contract of each of AI-1 to AI-5, namely when it runs, what it receives and returns, how its output is checked, and what happens on failure.
+4. Feedback writer: how the result of a judgment becomes feedback the explorer can use.
+5. Other free text: how every other free-text answer in the game reaches the same grader.
+6. Data contracts: the seed that experts author and the judgment that the graders return, with what is stored and versioned.
+7. Scoring and aggregation: how the levels given by the judges are combined into a grade and a competency score, with the parameters left open until the game design is fixed.
+8. Edge cases: invalid output, an empty answer, hints, and a missing judge.
+9. Model call configuration and prompts: the parameters of each kind of call, their translation to the API of each provider, the system prompt, and prompt caching.
+10. Run-time rules of AI-4: the checks applied to the narrator's text before the explorer sees it.
+11. Privacy and safety: de-identification and the defence against prompt injection; the policy on third parties is in Section 5.3.10.
+12. Failure behaviour: the sequence of fallbacks when a call fails, and the idea of a local model as the last fallback, which is not implemented and is to be shown in the component and deployment diagrams.
+13. Cost and time: the cost of a playthrough and the time budget of each call.
+14. Feedback loop and versions: how expert rulings improve the rubrics and the calibration examples, and how versions of models, prompts, and rubrics are tracked.
+15. Deferred AI functions: the AI functions left for a later phase and where they attach to the design.
+
 ### 5.3.10 Policies for the Processing of the Proposed System and Third Parties
 
 This section sets the rules under which JobQuest processes personal data and shares any data with third parties, completing the policies of Section 4.1.4. Its central problem is a conflict between two parts of the design. The system of record must be in Vietnam (DC-03), as Vietnam's Law on Personal Data Protection and its implementing decree require [99][100]; but scoring and narration depend on language models whose providers all process requests outside Vietnam. Under the law, using a platform abroad to process data collected in Vietnam is a transfer of personal data abroad, whichever region the provider is asked to use. The policies below decide what may cross that border, under what conditions, and what the platform owes its users when it does.
