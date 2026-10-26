@@ -1,0 +1,73 @@
+{
+  "group": "53",
+  "_note": "Ba nghề vận hành trạm bơm, nén khí (53-7071, 53-7072, 53-7073) gộp vào Vận hành nhà máy (51).",
+  "keep": [
+    {
+      "code": "53-2011.00",
+      "name_vi": "Phi công",
+      "absorbs": ["53-2012.00"],
+      "merge_reason": "Phi công hãng và phi công thương mại khác loại máy bay, cùng trải nghiệm."
+    },
+    {
+      "code": "53-2021.00",
+      "name_vi": "Kiểm soát viên không lưu",
+      "absorbs": ["53-2022.00"],
+      "merge_reason": "Điều hành sân bay là phần việc mặt đất của quản lý bay."
+    },
+    {
+      "code": "53-2031.00",
+      "name_vi": "Tiếp viên",
+      "absorbs": ["53-1044.00", "53-6061.00"],
+      "merge_reason": "Tiếp viên tàu, xe là biến thể của tiếp viên; tổ trưởng là cấp cao."
+    },
+    {
+      "code": "53-3032.00",
+      "name_vi": "Tài xế xe tải",
+      "absorbs": ["53-3033.00", "53-3031.00", "53-1043.00"],
+      "merge_reason": "Xe tải nhẹ, xe giao hàng kèm bán là biến thể; đội trưởng là cấp cao."
+    },
+    {
+      "code": "53-3052.00",
+      "name_vi": "Tài xế xe khách, xe buýt",
+      "absorbs": ["53-3051.00", "53-3053.00", "53-3011.00"],
+      "merge_reason": "Cùng trải nghiệm chở người theo lộ trình; xe đưa đón, xe cứu thương là biến thể."
+    },
+    {
+      "code": "53-4011.00",
+      "name_vi": "Lái tàu hoả, tàu điện",
+      "absorbs": ["53-4013.00", "53-4022.00", "53-4031.00", "53-4041.00"],
+      "merge_reason": "Dồn tàu, gác ghi, trưởng tàu và lái tàu điện ngầm đều thuộc ngành vận hành đường sắt."
+    },
+    {
+      "code": "53-5021.00",
+      "name_vi": "Thuyền viên, sĩ quan hàng hải",
+      "absorbs": ["53-5011.00", "53-5022.00", "53-5031.00"],
+      "merge_reason": "Thuỷ thủ, lái ca nô và máy trưởng là các chức danh trên cùng một con tàu."
+    },
+    {
+      "code": "53-7051.00",
+      "name_vi": "Người vận hành xe nâng, cần cẩu",
+      "absorbs": ["53-7021.00", "53-7031.00", "53-7041.00", "53-7011.00", "53-1041.00", "53-7121.00"],
+      "merge_reason": "Cùng trải nghiệm vận hành máy nâng hạ, bốc xếp hàng hoá; khác loại máy."
+    },
+    {
+      "code": "53-7062.00",
+      "name_vi": "Công nhân bốc xếp, đóng gói",
+      "absorbs": ["53-7064.00", "53-7065.00", "53-7063.00", "53-7061.00", "53-1042.00", "53-6021.00", "53-6031.00", "53-6032.00"],
+      "merge_reason": "Cùng trải nghiệm lao động phổ thông trong kho bãi và dịch vụ phương tiện; tổ trưởng là cấp cao."
+    },
+    {
+      "code": "53-7081.00",
+      "name_vi": "Công nhân thu gom, xử lý rác và chất thải",
+      "absorbs": ["47-4041.00"],
+      "merge_reason": "Xử lý vật liệu nguy hại là một mảng của xử lý chất thải."
+    },
+    {
+      "code": "53-6051.00",
+      "name_vi": "Đăng kiểm viên, thanh tra giao thông",
+      "absorbs": ["53-6051.01", "53-6051.07", "53-6041.00", "53-6011.00"],
+      "merge_reason": "Cùng trải nghiệm kiểm tra an toàn phương tiện và hạ tầng giao thông."
+    }
+  ],
+  "remove": []
+}

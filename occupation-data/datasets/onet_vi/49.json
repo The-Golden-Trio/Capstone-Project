@@ -1,0 +1,140 @@
+{
+  "49-3023.00": {
+    "title_vi": "Thợ sửa chữa ô tô",
+    "description_vi": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu ô tô.",
+    "tasks_vi": {
+      "23534": "Kiểm tra theo danh mục để không bỏ sót bộ phận quan trọng như dây curoa, ống dẫn, hệ thống lái, bugi, phanh, nhiên liệu, ổ bi bánh xe và các điểm hay hỏng.",
+      "23524": "Thử và chỉnh các hệ thống đã sửa cho đạt thông số của nhà sản xuất.",
+      "23533": "Bảo dưỡng định kỳ như thay dầu, bôi trơn và chỉnh máy.",
+      "23523": "Kiểm tra hư hỏng của xe và ghi lại để sửa chữa.",
+      "23537": "Cân chỉnh bánh xe, cầu, khung, thanh xoắn và cơ cấu lái bằng thiết bị cân chỉnh và máy cân bằng bánh xe."
+    }
+  },
+  "49-3021.00": {"title_vi": "Thợ gò hàn, đồng sơn ô tô"},
+  "49-3022.00": {"title_vi": "Thợ lắp và sửa kính ô tô"},
+  "49-3093.00": {"title_vi": "Thợ sửa và thay lốp"},
+  "49-3031.00": {"title_vi": "Thợ sửa xe buýt, xe tải và động cơ diesel"},
+  "49-3092.00": {"title_vi": "Kỹ thuật viên xe cắm trại (RV)"},
+  "49-2096.00": {"title_vi": "Thợ lắp đặt, sửa chữa điện tử ô tô"},
+  "49-1011.00": {"title_vi": "Tổ trưởng thợ sửa chữa, lắp đặt"},
+  "49-3052.00": {
+    "title_vi": "Thợ sửa xe máy",
+    "description_vi": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu xe máy, xe tay ga, xe gắn máy, xe địa hình và phương tiện có động cơ tương tự.",
+    "tasks_vi": {
+      "20651": "Lắp, cân bằng, thay lốp hoặc kiểm tra tình trạng, áp suất lốp.",
+      "8353": "Thay bộ phận hỏng bằng dụng cụ cầm tay, máy ép hoặc dụng cụ điện.",
+      "8357": "Tháo động cơ và sửa hoặc thay bộ phận hỏng như bộ phát điện, chế hoà khí hoặc máy phát.",
+      "8354": "Nối bảng kiểm tra vào động cơ để đo công suất máy phát, thời điểm đánh lửa và các chỉ số khác.",
+      "8355": "Nghe tiếng máy, kiểm tra khung xe hoặc hỏi khách để xác định tính chất và mức độ hỏng hóc."
+    }
+  },
+  "49-3053.00": {"title_vi": "Thợ sửa động cơ nhỏ, máy làm vườn"},
+  "49-3091.00": {"title_vi": "Thợ sửa xe đạp"},
+  "49-3051.00": {"title_vi": "Thợ sửa ca nô, xuồng máy"},
+  "49-3042.00": {
+    "title_vi": "Thợ sửa máy công trình",
+    "description_vi": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu máy cơ khí, thuỷ lực và khí nén di động như cần cẩu, máy ủi, máy san và băng tải dùng trong xây dựng, khai thác gỗ và khai mỏ.",
+    "tasks_vi": {
+      "3001": "Sửa chữa và thay bộ phận hỏng hoặc mòn.",
+      "3000": "Thử sản phẩm và thiết bị cơ khí sau khi sửa hoặc lắp để bảo đảm chạy tốt và đúng thông số của nhà sản xuất.",
+      "3002": "Vận hành và kiểm tra máy, thiết bị hạng nặng để chẩn đoán lỗi.",
+      "3008": "Đọc và hiểu sách hướng dẫn vận hành, bản vẽ và tài liệu kỹ thuật.",
+      "3004": "Tháo và lắp lại thiết bị hạng nặng bằng palăng và dụng cụ cầm tay."
+    }
+  },
+  "49-3041.00": {"title_vi": "Thợ sửa máy nông nghiệp"},
+  "49-3043.00": {"title_vi": "Thợ sửa toa xe đường sắt"},
+  "49-3011.00": {
+    "title_vi": "Kỹ thuật viên bảo dưỡng máy bay",
+    "description_vi": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu động cơ và các cụm của máy bay như hệ thống thuỷ lực và khí nén.",
+    "tasks_vi": {
+      "9947": "Kiểm tra công việc đã làm để xác nhận bảo dưỡng đạt tiêu chuẩn và máy bay sẵn sàng hoạt động.",
+      "9946": "Đọc và hiểu tài liệu bảo dưỡng, thông báo kỹ thuật và yêu cầu khác để quyết định cách sửa hoặc thay bộ phận hỏng.",
+      "9948": "Ghi nhật ký sửa chữa, ghi lại mọi việc bảo dưỡng phòng ngừa và khắc phục.",
+      "9950": "Kiểm tra các bộ phận như càng đáp, hệ thống thuỷ lực, hệ thống chống đóng băng để tìm vết nứt, gãy, rò rỉ hoặc lỗi khác.",
+      "9949": "Kiểm tra định kỳ và đột xuất theo quy định."
+    }
+  },
+  "49-2091.00": {"title_vi": "Kỹ thuật viên điện tử hàng không"},
+  "49-9021.00": {
+    "title_vi": "Thợ điện lạnh",
+    "description_vi": "Lắp đặt hoặc sửa chữa hệ thống sưởi, điều hoà trung tâm, thông gió hoặc làm lạnh, gồm cả lò đốt dầu, lò khí nóng và bếp sưởi.",
+    "tasks_vi": {
+      "23554": "Trao đổi với người dùng về hỏng hóc của hệ thống sưởi, làm mát để khoanh vùng lỗi hoặc xác nhận đã sửa xong.",
+      "23552": "Đo thông mạch của mạch điện, linh kiện bằng thiết bị đo điện.",
+      "23553": "Sửa hoặc thay thiết bị, linh kiện, dây điện hỏng.",
+      "23561": "Bố trí và đấu dây điện giữa bộ điều khiển và thiết bị theo sơ đồ, bằng dụng cụ thợ điện.",
+      "23575": "Hẹn lịch với khách và lập phiếu công việc, phiếu xuất vật tư."
+    }
+  },
+  "49-9031.00": {"title_vi": "Thợ sửa đồ gia dụng"},
+  "49-9041.00": {
+    "title_vi": "Thợ bảo trì máy công nghiệp",
+    "description_vi": "Sửa chữa, lắp đặt, điều chỉnh hoặc bảo trì máy sản xuất, chế biến công nghiệp hoặc hệ thống phân phối của nhà máy lọc dầu và đường ống. Có thể lắp đặt, tháo dỡ hoặc di chuyển máy và thiết bị nặng theo phương án.",
+    "tasks_vi": {
+      "11815": "Sửa chữa hoặc giữ tình trạng hoạt động của máy móc, thiết bị sản xuất, chế biến.",
+      "11814": "Sửa hoặc thay bộ phận gãy, hỏng của máy móc, thiết bị.",
+      "11820": "Làm sạch, bôi trơn hoặc chỉnh bộ phận, thiết bị, máy móc.",
+      "11813": "Tháo máy, thiết bị để lấy bộ phận ra sửa.",
+      "11817": "Lắp lại thiết bị sau khi kiểm tra, thử nghiệm hoặc sửa xong."
+    }
+  },
+  "49-9043.00": {"title_vi": "Công nhân bảo trì máy"},
+  "49-9044.00": {"title_vi": "Thợ lắp đặt, căn chỉnh máy"},
+  "49-9045.00": {"title_vi": "Thợ sửa vật liệu chịu lửa"},
+  "49-9012.00": {"title_vi": "Thợ lắp đặt, sửa van và thiết bị điều khiển"},
+  "49-9011.00": {"title_vi": "Thợ sửa cửa cơ khí, cửa cuốn"},
+  "49-9071.00": {"title_vi": "Thợ bảo trì, sửa chữa tổng hợp"},
+  "49-9081.00": {"title_vi": "Kỹ thuật viên bảo dưỡng tua-bin gió"},
+  "49-9091.00": {"title_vi": "Thợ sửa máy bán hàng tự động, máy trò chơi"},
+  "49-9095.00": {"title_vi": "Thợ lắp đặt nhà tiền chế"},
+  "49-9096.00": {"title_vi": "Thợ chằng buộc, nâng hạ (rigger)"},
+  "49-9098.00": {"title_vi": "Phụ việc lắp đặt, bảo trì, sửa chữa"},
+  "49-9094.00": {"title_vi": "Thợ khoá, sửa két sắt"},
+  "49-9051.00": {
+    "title_vi": "Công nhân đường dây điện",
+    "description_vi": "Lắp đặt hoặc sửa chữa cáp, dây dẫn của hệ thống truyền tải, phân phối điện. Có thể dựng cột và tháp truyền tải nhẹ hoặc nặng.",
+    "tasks_vi": {
+      "8412": "Tuân thủ quy trình an toàn như kiểm tra thiết bị thường xuyên và rào chắn khu vực làm việc.",
+      "8418": "Lái xe chở dụng cụ và vật tư tới công trường.",
+      "8413": "Cắt cầu dao hoặc gắn tiếp địa để loại bỏ nguy hiểm điện từ đường dây bị đứt, đổ hoặc để sửa chữa.",
+      "8414": "Leo cột hoặc dùng xe gầu nâng để tiếp cận thiết bị.",
+      "8416": "Lắp đặt, bảo trì và sửa hệ thống truyền tải, phân phối điện, gồm ống, cáp, dây và thiết bị như máy biến áp, máy cắt và cầu dao."
+    }
+  },
+  "49-2095.00": {"title_vi": "Thợ sửa chữa điện trạm, nhà máy điện và rơ-le"},
+  "49-9097.00": {"title_vi": "Thợ sửa tín hiệu và ghi đường sắt"},
+  "49-9052.00": {
+    "title_vi": "Kỹ thuật viên đường dây viễn thông",
+    "description_vi": "Lắp đặt và sửa chữa cáp viễn thông, kể cả cáp quang.",
+    "tasks_vi": {
+      "11848": "Hàn nối cáp bằng dụng cụ cầm tay, keo epoxy hoặc máy.",
+      "11847": "Kiểm tra, đo thử đường dây, cáp, ghi và phân tích kết quả để đánh giá đặc tính truyền dẫn và tìm điểm lỗi.",
+      "11857": "Làm sạch và bảo quản dụng cụ, thiết bị đo.",
+      "24058": "Lắp dịch vụ cho khách: lắp, kết nối, thử và chỉnh thiết bị như modem internet.",
+      "11852": "Tiếp cận khu vực để kéo dây hoặc lắp hộp đấu nối, thiết bị phụ bằng xe gầu, leo cột, thang hoặc chui vào hầm, rãnh."
+    }
+  },
+  "49-2021.00": {"title_vi": "Thợ lắp đặt, sửa thiết bị vô tuyến, trạm phát sóng"},
+  "49-2022.00": {"title_vi": "Thợ lắp đặt, sửa thiết bị viễn thông"},
+  "49-2098.00": {"title_vi": "Thợ lắp hệ thống an ninh, báo cháy"},
+  "49-2097.00": {"title_vi": "Thợ lắp đặt, sửa thiết bị âm thanh hình ảnh"},
+  "49-2094.00": {
+    "title_vi": "Thợ sửa chữa điện, điện tử công nghiệp",
+    "description_vi": "Sửa chữa, thử nghiệm, điều chỉnh hoặc lắp đặt thiết bị điện tử như bộ điều khiển công nghiệp, máy phát sóng và ăng-ten.",
+    "tasks_vi": {
+      "886": "Thử thiết bị hỏng để chẩn đoán lỗi bằng thiết bị đo hoặc phần mềm, dựa trên hiểu biết về nguyên lý hoạt động của khối và hệ thống điện tử.",
+      "892": "Ghi nhật ký thiết bị về sự cố, sửa chữa, hiệu chuẩn và thử nghiệm.",
+      "884": "Lắp đặt và thử thiết bị công nghiệp để bảo đảm hoạt động đúng.",
+      "890": "Kiểm tra bộ phận của thiết bị công nghiệp về độ chính xác khi lắp hoặc tìm lỗi như mối nối lỏng, dây sờn.",
+      "897": "Lắp lại thiết bị đã sửa ở cơ sở công nghiệp hoặc quân sự."
+    }
+  },
+  "49-2092.00": {"title_vi": "Thợ sửa động cơ điện, dụng cụ điện"},
+  "49-2093.00": {"title_vi": "Thợ sửa điện, điện tử phương tiện vận tải"},
+  "49-2011.00": {"title_vi": "Thợ sửa máy tính, máy ATM và máy văn phòng"},
+  "49-9062.00": {"title_vi": "Kỹ thuật viên sửa chữa thiết bị y tế"},
+  "49-9061.00": {"title_vi": "Thợ sửa máy ảnh"},
+  "49-9064.00": {"title_vi": "Thợ sửa đồng hồ"},
+  "49-9063.00": {"title_vi": "Thợ sửa và lên dây nhạc cụ"}
+}

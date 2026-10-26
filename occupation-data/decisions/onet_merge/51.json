@@ -1,0 +1,95 @@
+{
+  "group": "51",
+  "_note": "Giặt là (51-6011) gộp vào Vệ sinh và buồng phòng (37); làm gốm, chạm đá, thổi thuỷ tinh (51-9195.03, .04, .05) gộp vào Hoạ sĩ, nghệ nhân (27). Phụ việc sản xuất là cấp khởi đầu; tổ trưởng sản xuất là cấp cao.",
+  "keep": [
+    {
+      "code": "51-2092.00",
+      "name_vi": "Công nhân lắp ráp",
+      "absorbs": ["51-2011.00", "51-2021.00", "51-2022.00", "51-2023.00", "51-2031.00", "51-2051.00", "51-2061.00", "51-1011.00", "51-9198.00"],
+      "merge_reason": "Lắp ráp máy bay, động cơ, thiết bị điện tử, cơ điện và đồng hồ cùng trải nghiệm làm việc trên dây chuyền lắp ráp."
+    },
+    {
+      "code": "51-4041.00",
+      "name_vi": "Thợ cơ khí, tiện phay CNC",
+      "absorbs": ["51-4021.00", "51-4022.00", "51-4023.00", "51-4031.00", "51-4032.00", "51-4033.00", "51-4034.00", "51-4035.00", "51-4081.00", "51-4111.00", "51-4061.00", "51-4062.00", "51-4071.00", "51-4072.00", "51-4191.00", "51-4192.00", "51-4193.00", "51-4194.00", "51-4051.00", "51-4052.00", "51-9161.00", "51-9162.00"],
+      "merge_reason": "Đứng máy tiện, phay, mài, dập, đúc, nhiệt luyện, mạ, làm khuôn và lập trình CNC là các vị trí trong cùng một xưởng cơ khí; khác loại máy."
+    },
+    {
+      "code": "51-4121.00",
+      "name_vi": "Thợ hàn",
+      "absorbs": ["51-4122.00", "51-2041.00"],
+      "merge_reason": "Hàn máy và gia công kết cấu kim loại cùng trải nghiệm hàn, cắt, ghép kim loại."
+    },
+    {
+      "code": "51-3092.00",
+      "name_vi": "Công nhân chế biến thực phẩm",
+      "absorbs": ["51-3091.00", "51-3093.00", "51-3021.00", "51-3022.00", "51-3023.00", "51-9193.00"],
+      "merge_reason": "Rang sấy, nấu, pha trộn, pha lóc thịt cá và cấp đông là các công đoạn của nhà máy thực phẩm."
+    },
+    {
+      "code": "51-3011.00",
+      "name_vi": "Thợ làm bánh"
+    },
+    {
+      "code": "51-5112.00",
+      "name_vi": "Công nhân in ấn",
+      "absorbs": ["51-5111.00", "51-5113.00", "51-9151.00"],
+      "merge_reason": "Chế bản, in, đóng xén và in tráng ảnh là các công đoạn của ngành in."
+    },
+    {
+      "code": "51-6031.00",
+      "name_vi": "Công nhân may mặc, da giày",
+      "absorbs": ["51-6021.00", "51-6051.00", "51-6052.00", "51-6061.00", "51-6062.00", "51-6063.00", "51-6064.00", "51-6091.00", "51-6092.00", "51-6042.00", "51-6041.00", "51-6093.00"],
+      "merge_reason": "Dệt, nhuộm, cắt, may, là, làm rập, may đo, bọc nệm và giày da là các công đoạn của ngành dệt may, da giày Việt Nam."
+    },
+    {
+      "code": "51-7011.00",
+      "name_vi": "Thợ mộc đồ gỗ nội thất",
+      "absorbs": ["51-7021.00", "51-7031.00", "51-7032.00", "51-7041.00", "51-7042.00"],
+      "merge_reason": "Hoàn thiện, làm mẫu và đứng máy cưa, máy chế biến gỗ là các công đoạn của xưởng đồ gỗ."
+    },
+    {
+      "code": "51-8013.00",
+      "name_vi": "Vận hành nhà máy điện",
+      "absorbs": ["51-8011.00", "51-8012.00", "51-8021.00"],
+      "merge_reason": "Vận hành lò phản ứng, điều độ điện và vận hành lò hơi thuộc khối vận hành nhà máy điện."
+    },
+    {
+      "code": "51-8031.00",
+      "name_vi": "Vận hành nhà máy nước, xử lý nước thải"
+    },
+    {
+      "code": "51-8091.00",
+      "name_vi": "Vận hành nhà máy hoá chất, lọc dầu, khí",
+      "absorbs": ["51-8092.00", "51-8093.00", "51-9011.00", "51-9012.00", "53-7071.00", "53-7072.00", "53-7073.00"],
+      "merge_reason": "Nhà máy khí, lọc dầu, thiết bị hoá chất, chưng tách và trạm bơm, nén khí cùng trải nghiệm vận hành dây chuyền quá trình liên tục."
+    },
+    {
+      "code": "51-9061.00",
+      "name_vi": "Nhân viên kiểm tra chất lượng sản xuất (QC)"
+    },
+    {
+      "code": "51-9141.00",
+      "name_vi": "Kỹ thuật viên sản xuất bán dẫn"
+    },
+    {
+      "code": "51-9071.00",
+      "name_vi": "Thợ kim hoàn",
+      "absorbs": ["51-9071.06"],
+      "merge_reason": "Chế tác đá quý là một chuyên ngành kim hoàn."
+    },
+    {
+      "code": "51-9081.00",
+      "name_vi": "Kỹ thuật viên phục hình, chỉnh hình",
+      "absorbs": ["51-9082.00", "51-9083.00"],
+      "merge_reason": "Làm răng giả, dụng cụ chỉnh hình và tròng kính cùng trải nghiệm chế tác dụng cụ y tế theo đơn."
+    },
+    {
+      "code": "51-9111.00",
+      "name_vi": "Công nhân vận hành máy sản xuất",
+      "absorbs": ["51-9021.00", "51-9022.00", "51-9023.00", "51-9031.00", "51-9032.00", "51-9041.00", "51-9051.00", "51-9123.00", "51-9124.00", "51-9191.00", "51-9192.00", "51-9194.00", "51-9195.00", "51-9196.00", "51-9197.00"],
+      "merge_reason": "Đóng gói, nghiền, trộn, cắt, ép, sấy, sơn phủ, dán, khắc, đúc và làm giấy, lốp cùng trải nghiệm đứng máy trên dây chuyền; khác loại máy và sản phẩm."
+    }
+  ],
+  "remove": []
+}

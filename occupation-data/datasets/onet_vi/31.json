@@ -1,0 +1,211 @@
+{
+  "31-1121.00": {
+    "title_vi": "Nhân viên chăm sóc sức khoẻ tại nhà",
+    "description_vi": "Theo dõi sức khoẻ của người khuyết tật hoặc người bệnh và đáp ứng nhu cầu y tế của họ, như thay băng, chăm sóc vết thương hoặc cho uống thuốc, dưới sự chỉ đạo của điều dưỡng có chứng chỉ. Hỗ trợ các việc chăm sóc thường ngày như ăn uống, tắm rửa, vệ sinh, đi lại. Tuỳ khả năng của người bệnh, có thể nấu ăn, dọn dẹp nhẹ và giặt giũ.",
+    "tasks_vi": {
+      "4245": "Lên thực đơn, mua sắm, nấu và dọn bữa cho người bệnh hoặc người nhà theo chế độ ăn được chỉ định.",
+      "18694": "Chăm sóc người bệnh bằng cách thay ga giường, giặt là, dọn dẹp hoặc hỗ trợ vệ sinh cá nhân.",
+      "20577": "Tắm cho người bệnh.",
+      "4240": "Ghi chép việc chăm sóc, tình trạng, tiến triển và vấn đề của người bệnh để báo cáo với cấp trên hoặc người quản lý ca.",
+      "4241": "Giúp người bệnh lên xuống giường, bồn tắm, xe lăn, ô tô, mặc quần áo và chải chuốt."
+    }
+  },
+  "31-1122.00": {
+    "title_vi": "Nhân viên chăm sóc cá nhân",
+    "description_vi": "Hỗ trợ riêng cho người khuyết tật hoặc người bệnh cần giúp đỡ trong chăm sóc cá nhân và sinh hoạt hằng ngày như ăn uống, tắm rửa, mặc quần áo, chải chuốt, vệ sinh và đi lại. Có thể nấu ăn, dọn dẹp nhẹ và giặt giũ. Làm việc ở nhiều nơi tuỳ nhu cầu người được chăm sóc: nhà riêng, nơi làm việc, ngoài cộng đồng hoặc cơ sở chăm sóc ban ngày.",
+    "tasks_vi": {
+      "2371": "Ghi chép tiến triển và dịch vụ đã làm, báo thay đổi về tình trạng của người được chăm sóc cho quản lý.",
+      "2370": "Chăm sóc tại giường hoặc chăm sóc cá nhân, như hỗ trợ đi lại và vệ sinh.",
+      "2369": "Làm các việc liên quan đến sức khoẻ như theo dõi dấu hiệu sinh tồn và việc dùng thuốc, dưới sự chỉ đạo của điều dưỡng hoặc chuyên viên vật lý trị liệu.",
+      "2376": "Tham gia họp xem xét ca cùng đội chăm sóc để đánh giá nhu cầu và lên kế hoạch tiếp tục dịch vụ.",
+      "2374": "Hướng dẫn người được chăm sóc về giữ nhà sạch sẽ, dùng điện nước, vệ sinh, dinh dưỡng hoặc chăm sóc trẻ sơ sinh."
+    }
+  },
+  "31-1131.00": {
+    "title_vi": "Hộ lý, trợ lý điều dưỡng",
+    "description_vi": "Chăm sóc hoặc hỗ trợ chăm sóc cơ bản dưới sự chỉ đạo của điều dưỡng có chứng chỉ tại chỗ. Theo dõi sức khoẻ, cho ăn, tắm rửa, mặc quần áo, chải chuốt, vệ sinh và hỗ trợ đi lại cho người bệnh ở cơ sở y tế hoặc viện dưỡng lão. Có thể cho uống thuốc và làm các việc y tế khác.",
+    "tasks_vi": {
+      "19341": "Trở mình hoặc đổi tư thế cho người bệnh nằm liệt giường.",
+      "19317": "Trả lời chuông gọi, đèn báo hoặc hệ thống liên lạc để biết người bệnh cần gì.",
+      "19325": "Cho người bệnh ăn hoặc giúp họ ăn uống.",
+      "19327": "Đo và ghi lượng ăn uống, lượng nước tiểu và phân, báo thay đổi cho nhân viên y tế.",
+      "19331": "Đỡ người bệnh trong sinh hoạt hằng ngày như ra khỏi giường, tắm, mặc quần áo, đi vệ sinh, đứng, đi lại hoặc tập luyện."
+    }
+  },
+  "31-1132.00": {
+    "title_vi": "Nhân viên vận chuyển người bệnh",
+    "description_vi": "Đưa người bệnh tới phòng mổ, phòng chụp X-quang và các khu vực khác bằng xe lăn, cáng hoặc giường đẩy. Có thể quản lý vật tư, lau rửa và vận chuyển thiết bị.",
+    "tasks_vi": {
+      "19357": "Nâng hoặc giúp người khác nâng người bệnh lên xuống giường, bàn khám, bàn mổ hoặc cáng.",
+      "19366": "Đưa người bệnh tới khoa điều trị, khoa xét nghiệm, phòng mổ hoặc khu vực khác bằng xe lăn, cáng hoặc giường đẩy.",
+      "19356": "Khử trùng hoặc tiệt trùng thiết bị, vật tư bằng chất diệt khuẩn hoặc máy tiệt trùng.",
+      "19353": "Lau rửa thiết bị như xe lăn, giường bệnh, thiết bị y tế di động, ghi lại việc cần sửa chữa hoặc bảo dưỡng.",
+      "19359": "Ứng phó tình huống khẩn cấp như cuộc gọi cấp cứu, sự cố an ninh hoặc báo cháy."
+    }
+  },
+  "31-1133.00": {
+    "title_vi": "Hộ lý tâm thần",
+    "description_vi": "Hỗ trợ người bệnh suy giảm trí tuệ hoặc rối loạn cảm xúc, dưới sự chỉ đạo của điều dưỡng và bác sĩ. Có thể hỗ trợ sinh hoạt hằng ngày, dẫn dắt hoạt động học tập và giải trí, hoặc đưa người bệnh đi khám và điều trị. Có thể phải khống chế người bệnh có hành vi bạo lực.",
+    "tasks_vi": {
+      "20578": "Lắng nghe, động viên và hỗ trợ tinh thần cho người bệnh tâm thần.",
+      "1994": "Chăm sóc thể chất, cảm xúc, tâm lý hoặc phục hồi thường ngày cho người khuyết tật nhận thức, trí tuệ hoặc phát triển, dưới sự chỉ đạo của điều dưỡng hoặc bác sĩ.",
+      "18696": "Kiểm tra thể chất và theo dõi người bệnh để phát hiện hành vi bất thường hoặc nguy hại, báo cho nhân viên chuyên môn.",
+      "2001": "Khống chế hoặc đỡ người bệnh khi cần để tránh thương tích.",
+      "1996": "Làm việc trong nhóm có thể gồm bác sĩ tâm thần, nhà tâm lý, điều dưỡng tâm thần hoặc nhân viên công tác xã hội."
+    }
+  },
+  "31-2011.00": {
+    "title_vi": "Kỹ thuật viên hoạt động trị liệu",
+    "description_vi": "Hỗ trợ chuyên viên hoạt động trị liệu thực hiện các liệu trình và thủ thuật. Theo quy định, có thể tham gia lập kế hoạch điều trị, làm các việc thường quy, điều hành chương trình hoạt động và ghi lại tiến triển điều trị. Thường cần được đào tạo chính quy.",
+    "tasks_vi": {
+      "4258": "Hướng dẫn hoặc hỗ trợ hướng dẫn người bệnh và gia đình về bài tập tại nhà, kỹ năng sống cơ bản hoặc cách dùng, bảo quản dụng cụ hỗ trợ.",
+      "4255": "Giữ và lan toả thái độ tích cực với người bệnh và chương trình điều trị của họ.",
+      "4262": "Báo cáo cấp trên bằng lời hoặc văn bản về tiến triển, thái độ và hành vi của người bệnh.",
+      "4261": "Thực hiện hoặc giúp chuyên viên thực hiện kế hoạch điều trị nhằm giúp người bệnh tự lập trong sinh hoạt.",
+      "4256": "Theo dõi người bệnh khi tham gia hoạt động trị liệu và động viên họ."
+    }
+  },
+  "31-2012.00": {
+    "title_vi": "Phụ tá hoạt động trị liệu",
+    "description_vi": "Dưới sự giám sát chặt của chuyên viên hoặc kỹ thuật viên hoạt động trị liệu, chỉ làm các việc được giao, việc chọn lọc hoặc việc thường quy trong tình huống cụ thể, như chuẩn bị người bệnh và phòng điều trị.",
+    "tasks_vi": {
+      "9398": "Động viên người bệnh và đáp ứng nhu cầu thể chất của họ để giúp đạt mục tiêu trị liệu.",
+      "9399": "Báo cáo cấp trên hoặc chuyên viên bằng lời hoặc văn bản về tiến triển, thái độ, mức chuyên cần và kết quả của người bệnh.",
+      "9400": "Quan sát mức chuyên cần, tiến triển, thái độ và kết quả của người bệnh, ghi vào hồ sơ.",
+      "9403": "Chuẩn bị và giữ gìn khu vực làm việc, vật liệu, thiết bị, quản lý kho vật tư điều trị và giáo dục.",
+      "9409": "Đưa đón người bệnh tới và rời khu vực hoạt động trị liệu."
+    }
+  },
+  "31-2021.00": {
+    "title_vi": "Kỹ thuật viên vật lý trị liệu",
+    "description_vi": "Hỗ trợ chuyên viên vật lý trị liệu thực hiện các liệu trình và thủ thuật. Theo quy định, có thể tham gia lập kế hoạch điều trị, làm các việc thường quy, ghi lại tiến triển và điều chỉnh một số liệu pháp theo tình trạng người bệnh, trong phạm vi kế hoạch do chuyên viên vật lý trị liệu đặt ra. Thường cần được đào tạo chính quy.",
+    "tasks_vi": {
+      "2008": "Hướng dẫn, động viên, bảo vệ và hỗ trợ người bệnh khi tập bài tập hoặc hoạt động chức năng.",
+      "21192": "Ghi thông tin người bệnh, như ghi chú tiến triển.",
+      "15247": "Quan sát người bệnh trong khi điều trị để thu thập, đánh giá dữ liệu về phản ứng và tiến triển, báo lại cho chuyên viên trực tiếp hoặc qua ghi chú.",
+      "21193": "Hướng dẫn người bệnh tư thế vận động đúng và cách cải thiện khả năng vận động, như tập dưới nước.",
+      "2013": "Cố định người bệnh vào hoặc lên thiết bị trị liệu."
+    }
+  },
+  "31-2022.00": {
+    "title_vi": "Phụ tá vật lý trị liệu",
+    "description_vi": "Dưới sự giám sát chặt của chuyên viên hoặc kỹ thuật viên vật lý trị liệu, chỉ làm các việc được giao, việc chọn lọc hoặc việc thường quy trong tình huống cụ thể, như chuẩn bị người bệnh và khu vực điều trị.",
+    "tasks_vi": {
+      "4273": "Dọn dẹp, sắp xếp khu vực làm việc và khử trùng thiết bị sau khi điều trị.",
+      "4276": "Cố định người bệnh vào hoặc lên thiết bị trị liệu.",
+      "4275": "Hướng dẫn, động viên, bảo vệ hoặc hỗ trợ người bệnh tập bài tập hay hoạt động chức năng, theo chỉ đạo của nhân viên y tế.",
+      "4278": "Trao đổi với nhân viên vật lý trị liệu để thảo luận và đánh giá thông tin người bệnh, phục vụ lập kế hoạch, điều chỉnh hoặc điều phối điều trị.",
+      "4274": "Quan sát người bệnh trong khi điều trị để thu thập, đánh giá dữ liệu về phản ứng và tiến triển, báo cho chuyên viên."
+    }
+  },
+  "31-9011.00": {
+    "title_vi": "Chuyên viên xoa bóp trị liệu",
+    "description_vi": "Xoa bóp trị liệu cho mô mềm và khớp. Có thể hỗ trợ đánh giá tầm vận động và sức cơ, hoặc đề xuất kế hoạch trị liệu cho khách.",
+    "tasks_vi": {
+      "7880": "Xoa bóp, nhào nặn cơ và mô mềm để điều trị bệnh, chấn thương hoặc giữ gìn sức khoẻ.",
+      "7879": "Dùng ngón tay và bàn tay ấn vào các điểm cụ thể trên cơ thể.",
+      "7878": "Hỏi khách về tiền sử bệnh và tình trạng căng thẳng, đau nhức để chọn cách xoa bóp hiệu quả nhất.",
+      "23928": "Giữ khu vực xoa bóp sạch sẽ bằng cách bổ sung vật tư và khử trùng thiết bị.",
+      "7887": "Phục vụ khách tại cơ sở chuyên nghiệp hoặc tới văn phòng, nhà riêng của khách."
+    }
+  },
+  "31-9091.00": {
+    "title_vi": "Trợ thủ nha khoa",
+    "description_vi": "Làm một số việc lâm sàng giới hạn dưới sự chỉ đạo của nha sĩ, như chuẩn bị và tiệt trùng dụng cụ, chuẩn bị người bệnh, hỗ trợ nha sĩ trong khi điều trị và hướng dẫn người bệnh chăm sóc răng miệng. Có thể làm việc hành chính như đặt lịch hẹn, lưu hồ sơ, lập hoá đơn và mã hoá thông tin bảo hiểm.",
+    "tasks_vi": {
+      "550": "Chuẩn bị người bệnh, tiệt trùng hoặc khử trùng dụng cụ, bày khay dụng cụ, chuẩn bị vật liệu hoặc hỗ trợ nha sĩ khi làm thủ thuật.",
+      "552": "Ghi thông tin điều trị vào hồ sơ người bệnh.",
+      "555": "Hỗ trợ nha sĩ xử lý tình huống cấp cứu y khoa hoặc nha khoa.",
+      "18552": "Đặt hàng và theo dõi tồn kho vật tư, thiết bị nha khoa.",
+      "551": "Chụp phim X-quang chẩn đoán nha khoa."
+    }
+  },
+  "31-9092.00": {
+    "title_vi": "Trợ lý y khoa",
+    "description_vi": "Làm việc hành chính và một số việc lâm sàng dưới sự chỉ đạo của bác sĩ. Việc hành chính có thể gồm đặt lịch hẹn, lưu hồ sơ bệnh án, lập hoá đơn và mã hoá thông tin bảo hiểm. Việc lâm sàng có thể gồm đo và ghi dấu hiệu sinh tồn, tiền sử bệnh, chuẩn bị người bệnh để khám, lấy máu và cho dùng thuốc theo chỉ định của bác sĩ.",
+    "tasks_vi": {
+      "2024": "Hỏi người bệnh để lấy thông tin y tế và đo dấu hiệu sinh tồn, cân nặng, chiều cao.",
+      "2033": "Làm sạch, tiệt trùng dụng cụ và xử lý vật tư nhiễm bẩn.",
+      "2026": "Ghi tiền sử bệnh, chỉ số sinh tồn hoặc kết quả xét nghiệm vào hồ sơ bệnh án.",
+      "2029": "Giải thích cho người bệnh về quy trình điều trị, thuốc, chế độ ăn hoặc chỉ dẫn của bác sĩ.",
+      "2032": "Chuẩn bị phòng khám, giữ phòng gọn gàng sạch sẽ."
+    }
+  },
+  "31-9093.00": {
+    "title_vi": "Nhân viên chuẩn bị và tiệt trùng thiết bị y tế",
+    "description_vi": "Chuẩn bị, tiệt trùng, lắp đặt hoặc làm sạch thiết bị phòng xét nghiệm và y tế. Có thể làm việc thường quy trong phòng xét nghiệm và vận hành hoặc kiểm tra thiết bị.",
+    "tasks_vi": {
+      "4297": "Kiểm tra thiết bị để phát hiện rò rỉ, bộ phận mòn hoặc lỏng, hoặc dấu hiệu hư hỏng khác.",
+      "4299": "Kiểm tra vật tư vô trùng để bảo đảm còn hạn dùng.",
+      "4294": "Ghi kết quả kiểm tra máy tiệt trùng.",
+      "4291": "Sắp xếp và lắp khay dụng cụ phẫu thuật thường quy hoặc chuyên khoa và các vật tư đã tiệt trùng, đáp ứng yêu cầu đặc biệt khi cần.",
+      "4293": "Vận hành và bảo dưỡng nồi hấp tiệt trùng, ghi lại số mẻ, đồ trong mẻ và việc bảo dưỡng đã làm."
+    }
+  },
+  "31-9094.00": {
+    "title_vi": "Nhân viên ghi chép y khoa",
+    "description_vi": "Chép lại báo cáo y khoa do bác sĩ và nhân viên y tế ghi âm, gồm khám ngoại trú, cấp cứu, chẩn đoán hình ảnh, phẫu thuật, rà soát bệnh án và tổng kết. Chuyển chữ viết tắt thành dạng đầy đủ, dễ hiểu. Biên tập khi cần và gửi lại báo cáo dạng in hoặc điện tử để duyệt, ký hoặc sửa.",
+    "tasks_vi": {
+      "9416": "Gửi lại báo cáo đã chép dạng in hoặc điện tử để bác sĩ duyệt, ký, sửa và đưa vào hồ sơ bệnh án.",
+      "9421": "Soạn báo cáo y khoa, thư từ, hồ sơ, thông tin chăm sóc, số liệu thống kê, tài liệu nghiên cứu y học và tài liệu hành chính.",
+      "9419": "Phát hiện lỗi trong báo cáo và hỏi lại bác sĩ để có thông tin đúng.",
+      "9414": "Rà soát và biên tập bản chép về chính tả, ngữ pháp, độ rõ ràng, tính nhất quán và thuật ngữ y khoa.",
+      "9413": "Chép lời đọc cho nhiều loại báo cáo y khoa như tiền sử bệnh, khám lâm sàng, cấp cứu, phẫu thuật, rà soát bệnh án, hội chẩn hoặc tổng kết ra viện."
+    }
+  },
+  "31-9095.00": {
+    "title_vi": "Nhân viên phụ việc nhà thuốc",
+    "description_vi": "Ghi nhận thuốc giao tới nhà thuốc, xếp hàng vào kho và báo cấp trên khi cần nhập thêm. Có thể thu ngân và nhận đơn thuốc.",
+    "tasks_vi": {
+      "2058": "Xử lý yêu cầu thanh toán bảo hiểm y tế, ghi số tiền và tính phần người bệnh cùng chi trả.",
+      "2046": "Trả lời điện thoại, chuyển cho dược sĩ khi cần.",
+      "2050": "In nhãn thuốc bằng máy tính và máy in.",
+      "2052": "Thu ngân, xử lý thanh toán tiền mặt hoặc thẻ.",
+      "2057": "Lập và lưu sổ sách tồn kho, phiếu thu, mua hàng hoặc giao nhận trên máy tính."
+    }
+  },
+  "31-9096.00": {
+    "title_vi": "Trợ lý thú y và nhân viên chăm sóc động vật thí nghiệm",
+    "description_vi": "Cho ăn, uống và kiểm tra thú cưng và động vật không phải vật nuôi trang trại để phát hiện bệnh hoặc chấn thương, tại phòng thí nghiệm, bệnh viện và phòng khám thú y. Làm sạch và khử trùng chuồng, khu làm việc, tiệt trùng dụng cụ thí nghiệm và phẫu thuật. Có thể chăm sóc sau mổ, cho thuốc uống hoặc bôi, chuẩn bị mẫu xét nghiệm dưới sự giám sát của kỹ thuật viên, bác sĩ thú y hoặc nhà khoa học.",
+    "tasks_vi": {
+      "4312": "Giữ hoặc cố định động vật khi làm thủ thuật thú y.",
+      "4306": "Theo dõi động vật hồi phục sau mổ và báo bác sĩ thú y khi có thay đổi bất thường.",
+      "4314": "Chuẩn bị thuốc theo đơn.",
+      "4311": "Làm sạch và giữ gìn chuồng, khu nhốt, phòng khám, phòng mổ hoặc khu bốc dỡ động vật để hạn chế lây bệnh.",
+      "4316": "Kiểm tra động vật để phát hiện thay đổi hành vi hoặc triệu chứng cho thấy bệnh hay chấn thương."
+    }
+  },
+  "31-9097.00": {
+    "title_vi": "Kỹ thuật viên lấy máu",
+    "description_vi": "Lấy máu để xét nghiệm, truyền máu, hiến máu hoặc nghiên cứu. Có thể giải thích quy trình cho người bệnh và hỗ trợ người có phản ứng bất lợi hồi phục.",
+    "tasks_vi": {
+      "24039": "Xác nhận danh tính người bệnh bằng cách kiểm tra thông tin cá nhân.",
+      "19381": "Đối chiếu phiếu chỉ định xét nghiệm với ống mẫu.",
+      "19375": "Xử lý vật sắc nhọn nhiễm bẩn theo luật, tiêu chuẩn và quy định.",
+      "19374": "Xử lý máu và dịch, mô nguy hại sinh học theo luật, tiêu chuẩn và quy định.",
+      "19385": "Lấy mẫu theo các mốc thời gian quy định cho các xét nghiệm như đo nồng độ thuốc điều trị."
+    }
+  },
+  "31-9099.01": {
+    "title_vi": "Kỹ thuật viên hỗ trợ âm ngữ trị liệu",
+    "description_vi": "Hỗ trợ chuyên viên âm ngữ trị liệu đánh giá và điều trị rối loạn lời nói, ngôn ngữ, giọng nói và độ lưu loát. Thực hiện chương trình và hoạt động theo kế hoạch của chuyên viên. Theo dõi việc dùng thiết bị và hệ thống giao tiếp thay thế.",
+    "tasks_vi": {
+      "17535": "Ghi lại tiến triển của thân chủ so với mục tiêu điều trị.",
+      "17532": "Thực hiện kế hoạch hoặc quy trình điều trị theo chỉ đạo của chuyên viên âm ngữ trị liệu.",
+      "17534": "Thu thập và tổng hợp dữ liệu để ghi nhận kết quả của thân chủ hoặc đánh giá chất lượng chương trình.",
+      "17539": "Làm việc hỗ trợ như chuẩn bị tài liệu, lưu hồ sơ, quản lý vật tư và xếp lịch.",
+      "17533": "Hỗ trợ chuyên viên khắc phục hoặc phát triển kỹ năng nói và ngôn ngữ cho thân chủ."
+    }
+  },
+  "31-9099.02": {
+    "title_vi": "Kỹ thuật viên nội soi",
+    "description_vi": "Giữ vùng vô trùng để hỗ trợ bác sĩ và điều dưỡng trong khi nội soi. Chuẩn bị và bảo quản dụng cụ, thiết bị. Có thể lấy mẫu bệnh phẩm.",
+    "tasks_vi": {
+      "17519": "Làm sạch, khử trùng hoặc hiệu chỉnh ống soi và dụng cụ nội soi theo khuyến cáo của nhà sản xuất và tiêu chuẩn cơ sở.",
+      "17527": "Lấy mẫu bệnh phẩm theo quy trình y khoa chuẩn.",
+      "17521": "Kiểm tra an toàn để bảo đảm thiết bị hoạt động đúng.",
+      "17523": "Bảo dưỡng hoặc sửa chữa thiết bị nội soi.",
+      "17525": "Hỗ trợ bác sĩ hoặc điều dưỡng thực hiện thủ thuật nội soi."
+    }
+  }
+}

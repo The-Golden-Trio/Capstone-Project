@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "source": "ITviec, Vietnam IT Salary & Recruitment Market Report 2025-2026, bảng \"IT POSITION / YEARS OF EXPERIENCE\", cột \"MEDIAN SALARY (MILLION VND)\"",
+    "url": "https://itviec.com/report/vietnam-it-salary-and-recruitment-market",
+    "survey": "Khảo sát trực tuyến 27/5–31/7 và 21/10–11/11/2025, n = 1.839 cho cả báo cáo; không có cỡ mẫu riêng từng vị trí",
+    "read": "2026-10-23, đọc trực tiếp trên trang chính thức",
+    "unit": "Trung vị lương tháng, triệu đồng. Trang không ghi gross hay net. null là ô trống trong bảng gốc.",
+    "caution": "Cột Total không phải trung bình có trọng số của các mốc năm (ví dụ Data Engineer: Total 41,3 nhưng 3-4 năm 56,9). Mốc năm kinh nghiệm không phải cấp bậc; nối với cấp nào là việc của người dùng số.",
+    "role_map_note": "role_map nối dòng của bảng với nghề IT của game, theo report_position trong final_22_roles.json (compensation.itviec_2025_2026). Nghề không có dòng tương ứng thì không có trong role_map.",
+    "vs_final_22_roles": "final_22_roles.json đã chép bảng này (tr.54) nhưng có ô vá bằng ước tính (Front-end, Data Engineer: <1 năm, 1-2 năm) và số ước tính C_INFERRED cho 7 nghề không có dòng. File này chỉ giữ ô có trong báo cáo, để hồ sơ nghề không dùng số ước tính."
+  },
+  "buckets": ["<1 năm", "1-2 năm", "3-4 năm", "5-8 năm", ">8 năm"],
+  "rows": {
+    "Back-end Developer": {"total": 37.8, "by_years": [12.4, 25.35, 30.1, 39.9, 54.9]},
+    "Front-end Developer": {"total": 34.8, "by_years": [null, null, 30.8, 41.8, 46.3]},
+    "Full-stack Developer": {"total": 37.25, "by_years": [10.1, 20.35, 34.5, 41.8, 44.8]},
+    "Mobile Developer": {"total": 36.85, "by_years": [14.15, 28.8, 29.05, 37.35, 45.7]},
+    "Game Developer": {"total": 33.35, "by_years": [null, 26.5, 40.4, 57.85, null]},
+    "Embedded Engineer": {"total": 34.35, "by_years": [21.4, 23.9, 28.4, 39.4, 60.65]},
+    "Product Owner/Product Manager": {"total": 50.1, "by_years": [null, 25.3, 42.7, 60.4, 75]},
+    "Business Analyst": {"total": 30, "by_years": [12.2, 14, 28, 37.4, 41.35]},
+    "Project Leader/Project Manager": {"total": 50.1, "by_years": [17.2, 29.85, 48.4, 58.45, null]},
+    "Tech Lead": {"total": 51.8, "by_years": [null, 45.3, 53.85, null, 68.45]},
+    "IT Manager": {"total": 50.25, "by_years": [null, 46.4, null, null, 50.3]},
+    "CTO/CIO/VPoE": {"total": 101.25, "by_years": [null, null, 100.3, null, null]},
+    "Tester": {"total": 28.8, "by_years": [14.15, 14.2, 20.7, 25.3, 36.5]},
+    "QA - QC": {"total": 31.2, "by_years": [null, 18, 24.4, 29.75, 38.5]},
+    "Data Analyst/Data Scientist/Business Intelligence Analyst": {"total": 40.65, "by_years": [null, 23.8, null, 42.5, null]},
+    "Data Engineer": {"total": 41.3, "by_years": [null, null, 56.9, null, null]},
+    "ERP Engineer/ERP Consultant": {"total": 30.2, "by_years": [15.2, 16.1, 19.5, 35.6, null]},
+    "IT Support/Helpdesk": {"total": 20, "by_years": [null, 8.6, 18.7, 22.5, null]}
+  },
+  "role_map": {
+    "SWE_BACKEND": "Back-end Developer",
+    "SWE_FRONTEND": "Front-end Developer",
+    "SWE_MOBILE": "Mobile Developer",
+    "SWE_GAME": "Game Developer",
+    "SWE_EMBEDDED": "Embedded Engineer",
+    "SWE_TECHLEAD": "Tech Lead",
+    "SWE_EM": "IT Manager",
+    "PROD_PM": "Product Owner/Product Manager",
+    "PROD_BA": "Business Analyst",
+    "QA_MANUAL": "QA - QC",
+    "DATA_DA": "Data Analyst/Data Scientist/Business Intelligence Analyst",
+    "DATA_DE": "Data Engineer",
+    "INFRA_ERP": "ERP Engineer/ERP Consultant",
+    "INFRA_HELPDESK": "IT Support/Helpdesk"
+  }
+}

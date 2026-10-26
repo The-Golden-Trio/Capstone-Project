@@ -1,0 +1,2227 @@
+{
+  "meta": {
+    "source": "O*NET 31.0 Database (CSV), https://www.onetcenter.org/database.html",
+    "licence": "CC BY 4.0",
+    "attribution": [
+      "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+      "Used under the CC BY 4.0 license.",
+      "O*NET® is a trademark of USDOL/ETA.",
+      "JobQuest has modified all or some of this information.",
+      "USDOL/ETA has not approved, endorsed, or tested these modifications."
+    ],
+    "riasec_scale": "Occupational Interests, 1–7",
+    "soft_scale": "Trung bình điểm chuẩn hoá (z) trên toàn bộ nghề của O*NET của các mục được nối với nhóm: Work Activities thang Importance, Work Styles thang Work Styles Impact. 0 = mức thường gặp. Chỉ để hiển thị, không tham gia so sánh nghề.",
+    "similarity": "Độ giống chuẩn hoá: trung bình có trọng số của cosine từng nhóm (RIASEC, Work Styles, Skills). Cùng một cách đo cho mọi bảng, không trừ tâm nghề IT.",
+    "weights": {
+      "riasec": 3,
+      "styles": 3,
+      "skills": 1
+    },
+    "population": 878,
+    "cross_field_pool_size": 839,
+    "judgement": "Gán mã O*NET cho nghề và bảng nối 7 nhóm soft skill là nhận định của nhóm, chưa có nguồn công bố."
+  },
+  "riasec_names_vi": {
+    "Realistic": "Thực hành",
+    "Investigative": "Tìm tòi",
+    "Artistic": "Sáng tạo",
+    "Social": "Kết nối",
+    "Enterprising": "Dẫn dắt",
+    "Conventional": "Tổ chức"
+  },
+  "soft_groups": [
+    {
+      "id": "giao_tiep_hop_tac",
+      "name": "Giao tiếp & hợp tác",
+      "wa": [
+        "Communicating with Supervisors, Peers, or Subordinates",
+        "Communicating with People Outside the Organization",
+        "Interpreting the Meaning of Information for Others",
+        "Providing Consultation and Advice to Others",
+        "Documenting/Recording Information"
+      ],
+      "ws": [
+        "Cooperation"
+      ]
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "name": "Trí tuệ cảm xúc & xử lý xung đột",
+      "wa": [
+        "Resolving Conflicts and Negotiating with Others",
+        "Establishing and Maintaining Interpersonal Relationships",
+        "Assisting and Caring for Others",
+        "Performing for or Working Directly with the Public"
+      ],
+      "ws": [
+        "Empathy",
+        "Self-Control",
+        "Humility",
+        "Social Orientation"
+      ]
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "name": "Lãnh đạo & tư duy kinh doanh",
+      "wa": [
+        "Guiding, Directing, and Motivating Subordinates",
+        "Coordinating the Work and Activities of Others",
+        "Developing and Building Teams",
+        "Coaching and Developing Others",
+        "Training and Teaching Others",
+        "Selling or Influencing Others",
+        "Developing Objectives and Strategies",
+        "Monitoring and Controlling Resources",
+        "Staffing Organizational Units"
+      ],
+      "ws": [
+        "Leadership Orientation",
+        "Self-Confidence"
+      ]
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "name": "Tư duy & giải quyết vấn đề",
+      "wa": [
+        "Analyzing Data or Information",
+        "Making Decisions and Solving Problems",
+        "Thinking Creatively",
+        "Processing Information",
+        "Getting Information",
+        "Working with Computers"
+      ],
+      "ws": [
+        "Innovation",
+        "Intellectual Curiosity"
+      ]
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "name": "Tự quản lý & chịu áp lực",
+      "wa": [
+        "Organizing, Planning, and Prioritizing Work",
+        "Scheduling Work and Activities"
+      ],
+      "ws": [
+        "Attention to Detail",
+        "Stress Tolerance",
+        "Initiative",
+        "Achievement Orientation",
+        "Perseverance"
+      ]
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "name": "Thích ứng & học hỏi",
+      "wa": [
+        "Updating and Using Relevant Knowledge"
+      ],
+      "ws": [
+        "Adaptability",
+        "Tolerance for Ambiguity",
+        "Optimism"
+      ]
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "name": "Đạo đức & chuyên nghiệp",
+      "wa": [
+        "Evaluating Information to Determine Compliance with Standards"
+      ],
+      "ws": [
+        "Integrity",
+        "Sincerity",
+        "Dependability",
+        "Cautiousness"
+      ]
+    }
+  ],
+  "roles": {
+    "SWE_FRONTEND": {
+      "name_vi": "Lập trình viên Front-end",
+      "onet_codes": [
+        {
+          "code": "15-1254.00",
+          "title": "Web Developers"
+        }
+      ],
+      "note": "Web Developers",
+      "interest_code": "CIA",
+      "riasec": {
+        "Realistic": 2.98,
+        "Investigative": 5.01,
+        "Artistic": 3.13,
+        "Social": 2.22,
+        "Enterprising": 2.96,
+        "Conventional": 5.03
+      },
+      "riasec_z": {
+        "Realistic": -0.826,
+        "Investigative": 0.98,
+        "Artistic": 0.994,
+        "Social": -0.414,
+        "Enterprising": 0.084,
+        "Conventional": 0.508
+      },
+      "soft": {
+        "giao_tiep_hop_tac": -0.21,
+        "tri_tue_cam_xuc": -0.697,
+        "lanh_dao_kinh_doanh": -0.355,
+        "tu_duy_giai_quyet_van_de": 0.921,
+        "tu_quan_ly_ap_luc": 0.388,
+        "thich_ung_hoc_hoi": 0.562,
+        "dao_duc_chuyen_nghiep": -0.586
+      }
+    },
+    "SWE_BACKEND": {
+      "name_vi": "Lập trình viên Back-end",
+      "onet_codes": [
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers"
+        }
+      ],
+      "note": "Software Developers",
+      "interest_code": "ICR",
+      "riasec": {
+        "Realistic": 3.61,
+        "Investigative": 6.05,
+        "Artistic": 2.37,
+        "Social": 1.81,
+        "Enterprising": 1.87,
+        "Conventional": 5.62
+      },
+      "riasec_z": {
+        "Realistic": -0.499,
+        "Investigative": 1.599,
+        "Artistic": 0.361,
+        "Social": -0.649,
+        "Enterprising": -0.593,
+        "Conventional": 1.102
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.036,
+        "tri_tue_cam_xuc": -0.67,
+        "lanh_dao_kinh_doanh": -0.691,
+        "tu_duy_giai_quyet_van_de": 0.98,
+        "tu_quan_ly_ap_luc": 0.539,
+        "thich_ung_hoc_hoi": 0.669,
+        "dao_duc_chuyen_nghiep": 0.038
+      }
+    },
+    "SWE_MOBILE": {
+      "name_vi": "Lập trình viên Mobile",
+      "onet_codes": [
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers"
+        }
+      ],
+      "note": "O*NET không có mã riêng cho mobile; dùng chung hồ sơ với Back-end nên hai nghề không được so với nhau",
+      "interest_code": "ICR",
+      "riasec": {
+        "Realistic": 3.61,
+        "Investigative": 6.05,
+        "Artistic": 2.37,
+        "Social": 1.81,
+        "Enterprising": 1.87,
+        "Conventional": 5.62
+      },
+      "riasec_z": {
+        "Realistic": -0.499,
+        "Investigative": 1.599,
+        "Artistic": 0.361,
+        "Social": -0.649,
+        "Enterprising": -0.593,
+        "Conventional": 1.102
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.036,
+        "tri_tue_cam_xuc": -0.67,
+        "lanh_dao_kinh_doanh": -0.691,
+        "tu_duy_giai_quyet_van_de": 0.98,
+        "tu_quan_ly_ap_luc": 0.539,
+        "thich_ung_hoc_hoi": 0.669,
+        "dao_duc_chuyen_nghiep": 0.038
+      }
+    },
+    "SWE_GAME": {
+      "name_vi": "Lập trình viên Game",
+      "onet_codes": [
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers"
+        },
+        {
+          "code": "15-1255.01",
+          "title": "Video Game Designers"
+        }
+      ],
+      "note": "Ghép Software Developers và Video Game Designers",
+      "interest_code": "ICA",
+      "riasec": {
+        "Realistic": 3.19,
+        "Investigative": 5.1,
+        "Artistic": 4.375,
+        "Social": 2.055,
+        "Enterprising": 2.895,
+        "Conventional": 4.735
+      },
+      "riasec_z": {
+        "Realistic": -0.717,
+        "Investigative": 1.034,
+        "Artistic": 2.031,
+        "Social": -0.509,
+        "Enterprising": 0.043,
+        "Conventional": 0.211
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.041,
+        "tri_tue_cam_xuc": -0.47,
+        "lanh_dao_kinh_doanh": -0.329,
+        "tu_duy_giai_quyet_van_de": 1.044,
+        "tu_quan_ly_ap_luc": 0.35,
+        "thich_ung_hoc_hoi": 0.699,
+        "dao_duc_chuyen_nghiep": -0.794
+      }
+    },
+    "SWE_UIUX": {
+      "name_vi": "Chuyên viên thiết kế UI/UX",
+      "onet_codes": [
+        {
+          "code": "15-1255.00",
+          "title": "Web and Digital Interface Designers"
+        }
+      ],
+      "note": "Web and Digital Interface Designers",
+      "interest_code": "IAC",
+      "riasec": {
+        "Realistic": 2.59,
+        "Investigative": 4.88,
+        "Artistic": 4.48,
+        "Social": 2.2,
+        "Enterprising": 3.13,
+        "Conventional": 4.4
+      },
+      "riasec_z": {
+        "Realistic": -1.028,
+        "Investigative": 0.903,
+        "Artistic": 2.119,
+        "Social": -0.426,
+        "Enterprising": 0.189,
+        "Conventional": -0.126
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.108,
+        "tri_tue_cam_xuc": -0.811,
+        "lanh_dao_kinh_doanh": -0.966,
+        "tu_duy_giai_quyet_van_de": 1.25,
+        "tu_quan_ly_ap_luc": 0.182,
+        "thich_ung_hoc_hoi": 0.55,
+        "dao_duc_chuyen_nghiep": -0.909
+      }
+    },
+    "SWE_EMBEDDED": {
+      "name_vi": "Kỹ sư phần mềm nhúng / IoT",
+      "onet_codes": [
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers"
+        },
+        {
+          "code": "17-2061.00",
+          "title": "Computer Hardware Engineers"
+        }
+      ],
+      "note": "Ghép Software Developers và Computer Hardware Engineers",
+      "interest_code": "ICR",
+      "riasec": {
+        "Realistic": 4.65,
+        "Investigative": 5.805,
+        "Artistic": 2.1,
+        "Social": 1.815,
+        "Enterprising": 1.925,
+        "Conventional": 5.495
+      },
+      "riasec_z": {
+        "Realistic": 0.04,
+        "Investigative": 1.453,
+        "Artistic": 0.136,
+        "Social": -0.646,
+        "Enterprising": -0.559,
+        "Conventional": 0.976
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.151,
+        "tri_tue_cam_xuc": -0.716,
+        "lanh_dao_kinh_doanh": -0.217,
+        "tu_duy_giai_quyet_van_de": 1.118,
+        "tu_quan_ly_ap_luc": 0.476,
+        "thich_ung_hoc_hoi": 0.654,
+        "dao_duc_chuyen_nghiep": 0.031
+      }
+    },
+    "SWE_ARCH_SOL": {
+      "name_vi": "Kiến trúc sư giải pháp",
+      "onet_codes": [
+        {
+          "code": "15-1299.08",
+          "title": "Computer Systems Engineers/Architects"
+        }
+      ],
+      "note": "Computer Systems Engineers/Architects",
+      "interest_code": "CIR",
+      "riasec": {
+        "Realistic": 4.1,
+        "Investigative": 5.46,
+        "Artistic": 1.88,
+        "Social": 2.1,
+        "Enterprising": 3.03,
+        "Conventional": 5.76
+      },
+      "riasec_z": {
+        "Realistic": -0.245,
+        "Investigative": 1.248,
+        "Artistic": -0.047,
+        "Social": -0.483,
+        "Enterprising": 0.127,
+        "Conventional": 1.242
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.257,
+        "tri_tue_cam_xuc": -0.409,
+        "lanh_dao_kinh_doanh": 0.26,
+        "tu_duy_giai_quyet_van_de": 0.817,
+        "tu_quan_ly_ap_luc": 0.586,
+        "thich_ung_hoc_hoi": 0.744,
+        "dao_duc_chuyen_nghiep": 0.417
+      }
+    },
+    "SWE_TECHLEAD": {
+      "name_vi": "Trưởng nhóm kỹ thuật",
+      "onet_codes": [
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers"
+        },
+        {
+          "code": "11-3021.00",
+          "title": "Computer and Information Systems Managers"
+        }
+      ],
+      "note": "Không có mã riêng; ghép Software Developers và Computer and Information Systems Managers",
+      "interest_code": "CIE",
+      "riasec": {
+        "Realistic": 3.145,
+        "Investigative": 5.27,
+        "Artistic": 1.92,
+        "Social": 2.08,
+        "Enterprising": 3.48,
+        "Conventional": 5.78
+      },
+      "riasec_z": {
+        "Realistic": -0.741,
+        "Investigative": 1.135,
+        "Artistic": -0.013,
+        "Social": -0.495,
+        "Enterprising": 0.407,
+        "Conventional": 1.263
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.176,
+        "tri_tue_cam_xuc": -0.294,
+        "lanh_dao_kinh_doanh": 0.328,
+        "tu_duy_giai_quyet_van_de": 0.956,
+        "tu_quan_ly_ap_luc": 0.713,
+        "thich_ung_hoc_hoi": 0.671,
+        "dao_duc_chuyen_nghiep": 0.22
+      }
+    },
+    "SWE_EM": {
+      "name_vi": "Trưởng phòng Kỹ thuật",
+      "onet_codes": [
+        {
+          "code": "11-3021.00",
+          "title": "Computer and Information Systems Managers"
+        }
+      ],
+      "note": "Computer and Information Systems Managers",
+      "interest_code": "CEI",
+      "riasec": {
+        "Realistic": 2.68,
+        "Investigative": 4.49,
+        "Artistic": 1.47,
+        "Social": 2.35,
+        "Enterprising": 5.09,
+        "Conventional": 5.94
+      },
+      "riasec_z": {
+        "Realistic": -0.982,
+        "Investigative": 0.671,
+        "Artistic": -0.388,
+        "Social": -0.34,
+        "Enterprising": 1.406,
+        "Conventional": 1.424
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.316,
+        "tri_tue_cam_xuc": 0.082,
+        "lanh_dao_kinh_doanh": 1.348,
+        "tu_duy_giai_quyet_van_de": 0.932,
+        "tu_quan_ly_ap_luc": 0.887,
+        "thich_ung_hoc_hoi": 0.673,
+        "dao_duc_chuyen_nghiep": 0.402
+      }
+    },
+    "QA_MANUAL": {
+      "name_vi": "Kiểm thử",
+      "onet_codes": [
+        {
+          "code": "15-1253.00",
+          "title": "Software Quality Assurance Analysts and Testers"
+        }
+      ],
+      "note": "Software Quality Assurance Analysts and Testers",
+      "interest_code": "ICR",
+      "riasec": {
+        "Realistic": 3.8,
+        "Investigative": 5.76,
+        "Artistic": 1.69,
+        "Social": 1.53,
+        "Enterprising": 1.57,
+        "Conventional": 5.67
+      },
+      "riasec_z": {
+        "Realistic": -0.401,
+        "Investigative": 1.426,
+        "Artistic": -0.205,
+        "Social": -0.81,
+        "Enterprising": -0.779,
+        "Conventional": 1.152
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.069,
+        "tri_tue_cam_xuc": -0.456,
+        "lanh_dao_kinh_doanh": -0.176,
+        "tu_duy_giai_quyet_van_de": 0.83,
+        "tu_quan_ly_ap_luc": 0.4,
+        "thich_ung_hoc_hoi": 0.328,
+        "dao_duc_chuyen_nghiep": 0.278
+      }
+    },
+    "DATA_DA": {
+      "name_vi": "Chuyên viên phân tích dữ liệu",
+      "onet_codes": [
+        {
+          "code": "15-2051.01",
+          "title": "Business Intelligence Analysts"
+        }
+      ],
+      "note": "Business Intelligence Analysts",
+      "interest_code": "CIE",
+      "riasec": {
+        "Realistic": 1.24,
+        "Investigative": 5.41,
+        "Artistic": 1.93,
+        "Social": 1.85,
+        "Enterprising": 4.42,
+        "Conventional": 5.79
+      },
+      "riasec_z": {
+        "Realistic": -1.729,
+        "Investigative": 1.218,
+        "Artistic": -0.005,
+        "Social": -0.626,
+        "Enterprising": 0.99,
+        "Conventional": 1.273
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.151,
+        "tri_tue_cam_xuc": -0.604,
+        "lanh_dao_kinh_doanh": -0.387,
+        "tu_duy_giai_quyet_van_de": 0.831,
+        "tu_quan_ly_ap_luc": 0.234,
+        "thich_ung_hoc_hoi": 0.26,
+        "dao_duc_chuyen_nghiep": -0.259
+      }
+    },
+    "DATA_AI": {
+      "name_vi": "Kỹ sư trí tuệ nhân tạo",
+      "onet_codes": [
+        {
+          "code": "15-2051.00",
+          "title": "Data Scientists"
+        }
+      ],
+      "note": "Data Scientists",
+      "interest_code": "ICA",
+      "riasec": {
+        "Realistic": 2.17,
+        "Investigative": 6.98,
+        "Artistic": 2.61,
+        "Social": 1.66,
+        "Enterprising": 1.71,
+        "Conventional": 5.39
+      },
+      "riasec_z": {
+        "Realistic": -1.246,
+        "Investigative": 2.152,
+        "Artistic": 0.561,
+        "Social": -0.735,
+        "Enterprising": -0.692,
+        "Conventional": 0.87
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.189,
+        "tri_tue_cam_xuc": -0.997,
+        "lanh_dao_kinh_doanh": -0.468,
+        "tu_duy_giai_quyet_van_de": 1.253,
+        "tu_quan_ly_ap_luc": 0.305,
+        "thich_ung_hoc_hoi": 0.74,
+        "dao_duc_chuyen_nghiep": -0.544
+      }
+    },
+    "DATA_DE": {
+      "name_vi": "Kỹ sư dữ liệu",
+      "onet_codes": [
+        {
+          "code": "15-1243.01",
+          "title": "Data Warehousing Specialists"
+        },
+        {
+          "code": "15-1243.00",
+          "title": "Database Architects"
+        }
+      ],
+      "note": "Ghép Data Warehousing Specialists và Database Architects",
+      "interest_code": "CIE",
+      "riasec": {
+        "Realistic": 2.78,
+        "Investigative": 5.21,
+        "Artistic": 1.89,
+        "Social": 1.97,
+        "Enterprising": 2.865,
+        "Conventional": 6.25
+      },
+      "riasec_z": {
+        "Realistic": -0.93,
+        "Investigative": 1.099,
+        "Artistic": -0.038,
+        "Social": -0.558,
+        "Enterprising": 0.025,
+        "Conventional": 1.735
+      },
+      "soft": {
+        "giao_tiep_hop_tac": -0.036,
+        "tri_tue_cam_xuc": -0.807,
+        "lanh_dao_kinh_doanh": -0.16,
+        "tu_duy_giai_quyet_van_de": 0.983,
+        "tu_quan_ly_ap_luc": 0.282,
+        "thich_ung_hoc_hoi": 0.293,
+        "dao_duc_chuyen_nghiep": 0.039
+      }
+    },
+    "CLOUD_DEVOPS": {
+      "name_vi": "Kỹ sư DevOps",
+      "onet_codes": [
+        {
+          "code": "15-1244.00",
+          "title": "Network and Computer Systems Administrators"
+        },
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers"
+        }
+      ],
+      "note": "Không có mã riêng; ghép Network and Computer Systems Administrators và Software Developers",
+      "interest_code": "CIR",
+      "riasec": {
+        "Realistic": 3.9,
+        "Investigative": 5.045,
+        "Artistic": 1.685,
+        "Social": 2.015,
+        "Enterprising": 2.665,
+        "Conventional": 5.9
+      },
+      "riasec_z": {
+        "Realistic": -0.349,
+        "Investigative": 1.001,
+        "Artistic": -0.209,
+        "Social": -0.532,
+        "Enterprising": -0.099,
+        "Conventional": 1.383
+      },
+      "soft": {
+        "giao_tiep_hop_tac": -0.103,
+        "tri_tue_cam_xuc": -0.792,
+        "lanh_dao_kinh_doanh": -0.607,
+        "tu_duy_giai_quyet_van_de": 0.808,
+        "tu_quan_ly_ap_luc": 0.377,
+        "thich_ung_hoc_hoi": 0.553,
+        "dao_duc_chuyen_nghiep": 0.262
+      }
+    },
+    "CLOUD_ENG": {
+      "name_vi": "Kỹ sư điện toán đám mây",
+      "onet_codes": [
+        {
+          "code": "15-1299.08",
+          "title": "Computer Systems Engineers/Architects"
+        },
+        {
+          "code": "15-1244.00",
+          "title": "Network and Computer Systems Administrators"
+        }
+      ],
+      "note": "Không có mã riêng; ghép Computer Systems Engineers/Architects và Network and Computer Systems Administrators",
+      "interest_code": "CIR",
+      "riasec": {
+        "Realistic": 4.145,
+        "Investigative": 4.75,
+        "Artistic": 1.44,
+        "Social": 2.16,
+        "Enterprising": 3.245,
+        "Conventional": 5.97
+      },
+      "riasec_z": {
+        "Realistic": -0.222,
+        "Investigative": 0.826,
+        "Artistic": -0.413,
+        "Social": -0.449,
+        "Enterprising": 0.261,
+        "Conventional": 1.454
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.008,
+        "tri_tue_cam_xuc": -0.662,
+        "lanh_dao_kinh_doanh": -0.131,
+        "tu_duy_giai_quyet_van_de": 0.726,
+        "tu_quan_ly_ap_luc": 0.401,
+        "thich_ung_hoc_hoi": 0.591,
+        "dao_duc_chuyen_nghiep": 0.452
+      }
+    },
+    "SEC_ENG": {
+      "name_vi": "Kỹ sư an ninh mạng",
+      "onet_codes": [
+        {
+          "code": "15-1299.05",
+          "title": "Information Security Engineers"
+        }
+      ],
+      "note": "Information Security Engineers",
+      "interest_code": "CIR",
+      "riasec": {
+        "Realistic": 4.3,
+        "Investigative": 5.54,
+        "Artistic": 1.33,
+        "Social": 1.83,
+        "Enterprising": 2.66,
+        "Conventional": 6.06
+      },
+      "riasec_z": {
+        "Realistic": -0.141,
+        "Investigative": 1.296,
+        "Artistic": -0.505,
+        "Social": -0.638,
+        "Enterprising": -0.102,
+        "Conventional": 1.544
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.475,
+        "tri_tue_cam_xuc": -0.632,
+        "lanh_dao_kinh_doanh": 0.48,
+        "tu_duy_giai_quyet_van_de": 0.956,
+        "tu_quan_ly_ap_luc": 0.839,
+        "thich_ung_hoc_hoi": 0.629,
+        "dao_duc_chuyen_nghiep": 0.874
+      }
+    },
+    "SEC_PENTEST": {
+      "name_vi": "Chuyên viên kiểm thử xâm nhập",
+      "onet_codes": [
+        {
+          "code": "15-1299.04",
+          "title": "Penetration Testers"
+        }
+      ],
+      "note": "Penetration Testers",
+      "interest_code": "ICR",
+      "riasec": {
+        "Realistic": 3.91,
+        "Investigative": 5.19,
+        "Artistic": 1.31,
+        "Social": 1.99,
+        "Enterprising": 2.1,
+        "Conventional": 5.18
+      },
+      "riasec_z": {
+        "Realistic": -0.344,
+        "Investigative": 1.088,
+        "Artistic": -0.522,
+        "Social": -0.546,
+        "Enterprising": -0.45,
+        "Conventional": 0.659
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.644,
+        "tri_tue_cam_xuc": -1.041,
+        "lanh_dao_kinh_doanh": -0.22,
+        "tu_duy_giai_quyet_van_de": 1.308,
+        "tu_quan_ly_ap_luc": 0.808,
+        "thich_ung_hoc_hoi": 0.726,
+        "dao_duc_chuyen_nghiep": 0.646
+      }
+    },
+    "PROD_BA": {
+      "name_vi": "Chuyên viên phân tích nghiệp vụ",
+      "onet_codes": [
+        {
+          "code": "15-1211.00",
+          "title": "Computer Systems Analysts"
+        }
+      ],
+      "note": "Computer Systems Analysts",
+      "interest_code": "ICR",
+      "riasec": {
+        "Realistic": 3.27,
+        "Investigative": 6.39,
+        "Artistic": 1.98,
+        "Social": 1.91,
+        "Enterprising": 2.23,
+        "Conventional": 5.93
+      },
+      "riasec_z": {
+        "Realistic": -0.676,
+        "Investigative": 1.801,
+        "Artistic": 0.036,
+        "Social": -0.592,
+        "Enterprising": -0.369,
+        "Conventional": 1.414
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.015,
+        "tri_tue_cam_xuc": -0.195,
+        "lanh_dao_kinh_doanh": -0.448,
+        "tu_duy_giai_quyet_van_de": 1.115,
+        "tu_quan_ly_ap_luc": 0.234,
+        "thich_ung_hoc_hoi": 0.636,
+        "dao_duc_chuyen_nghiep": -0.223
+      }
+    },
+    "PROD_PM": {
+      "name_vi": "Quản lý sản phẩm",
+      "onet_codes": [
+        {
+          "code": "15-1299.09",
+          "title": "Information Technology Project Managers"
+        }
+      ],
+      "note": "Chỉ IT Project Managers; không ghép Marketing Managers vì kéo hồ sơ về phía marketing",
+      "interest_code": "ECI",
+      "riasec": {
+        "Realistic": 1.73,
+        "Investigative": 3.87,
+        "Artistic": 1.77,
+        "Social": 2.67,
+        "Enterprising": 5.91,
+        "Conventional": 5.31
+      },
+      "riasec_z": {
+        "Realistic": -1.475,
+        "Investigative": 0.303,
+        "Artistic": -0.138,
+        "Social": -0.157,
+        "Enterprising": 1.915,
+        "Conventional": 0.79
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 1.301,
+        "tri_tue_cam_xuc": 0.644,
+        "lanh_dao_kinh_doanh": 1.967,
+        "tu_duy_giai_quyet_van_de": 0.864,
+        "tu_quan_ly_ap_luc": 1.372,
+        "thich_ung_hoc_hoi": 1.096,
+        "dao_duc_chuyen_nghiep": 0.732
+      }
+    },
+    "INFRA_ERP": {
+      "name_vi": "Chuyên viên tư vấn giải pháp ERP",
+      "onet_codes": [
+        {
+          "code": "15-1211.00",
+          "title": "Computer Systems Analysts"
+        },
+        {
+          "code": "13-1111.00",
+          "title": "Management Analysts"
+        }
+      ],
+      "note": "Ghép Computer Systems Analysts và Management Analysts",
+      "interest_code": "CIE",
+      "riasec": {
+        "Realistic": 2.32,
+        "Investigative": 5.915,
+        "Artistic": 1.805,
+        "Social": 2.365,
+        "Enterprising": 3.52,
+        "Conventional": 5.99
+      },
+      "riasec_z": {
+        "Realistic": -1.169,
+        "Investigative": 1.519,
+        "Artistic": -0.109,
+        "Social": -0.331,
+        "Enterprising": 0.431,
+        "Conventional": 1.474
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.651,
+        "tri_tue_cam_xuc": 0.17,
+        "lanh_dao_kinh_doanh": 0.335,
+        "tu_duy_giai_quyet_van_de": 1.12,
+        "tu_quan_ly_ap_luc": 0.538,
+        "thich_ung_hoc_hoi": 0.718,
+        "dao_duc_chuyen_nghiep": -0.068
+      }
+    },
+    "INFRA_HELPDESK": {
+      "name_vi": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+      "onet_codes": [
+        {
+          "code": "15-1232.00",
+          "title": "Computer User Support Specialists"
+        }
+      ],
+      "note": "Computer User Support Specialists",
+      "interest_code": "CRI",
+      "riasec": {
+        "Realistic": 4.13,
+        "Investigative": 3.77,
+        "Artistic": 1.0,
+        "Social": 3.31,
+        "Enterprising": 2.36,
+        "Conventional": 6.02
+      },
+      "riasec_z": {
+        "Realistic": -0.23,
+        "Investigative": 0.243,
+        "Artistic": -0.78,
+        "Social": 0.21,
+        "Enterprising": -0.289,
+        "Conventional": 1.504
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.602,
+        "tri_tue_cam_xuc": 0.022,
+        "lanh_dao_kinh_doanh": -0.237,
+        "tu_duy_giai_quyet_van_de": 0.527,
+        "tu_quan_ly_ap_luc": -0.004,
+        "thich_ung_hoc_hoi": 0.68,
+        "dao_duc_chuyen_nghiep": -0.1
+      }
+    },
+    "INFRA_NETWORK": {
+      "name_vi": "Kỹ sư hệ thống mạng",
+      "onet_codes": [
+        {
+          "code": "15-1244.00",
+          "title": "Network and Computer Systems Administrators"
+        },
+        {
+          "code": "15-1241.00",
+          "title": "Computer Network Architects"
+        }
+      ],
+      "note": "Ghép Network and Computer Systems Administrators và Computer Network Architects",
+      "interest_code": "CIR",
+      "riasec": {
+        "Realistic": 4.115,
+        "Investigative": 4.66,
+        "Artistic": 1.625,
+        "Social": 2.195,
+        "Enterprising": 3.33,
+        "Conventional": 5.62
+      },
+      "riasec_z": {
+        "Realistic": -0.237,
+        "Investigative": 0.772,
+        "Artistic": -0.259,
+        "Social": -0.429,
+        "Enterprising": 0.313,
+        "Conventional": 1.102
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.004,
+        "tri_tue_cam_xuc": -0.715,
+        "lanh_dao_kinh_doanh": -0.206,
+        "tu_duy_giai_quyet_van_de": 0.664,
+        "tu_quan_ly_ap_luc": 0.378,
+        "thich_ung_hoc_hoi": 0.522,
+        "dao_duc_chuyen_nghiep": 0.537
+      }
+    }
+  },
+  "outside_it": {
+    "11-2021.00": {
+      "name_vi": "Quản lý marketing",
+      "title": "Marketing Managers",
+      "interest_code": "ECI",
+      "riasec": {
+        "Realistic": 1.0,
+        "Investigative": 2.9,
+        "Artistic": 2.45,
+        "Social": 2.82,
+        "Enterprising": 7.0,
+        "Conventional": 4.7
+      },
+      "riasec_z": {
+        "Realistic": -1.853,
+        "Investigative": -0.274,
+        "Artistic": 0.428,
+        "Social": -0.071,
+        "Enterprising": 2.591,
+        "Conventional": 0.176
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.379,
+        "tri_tue_cam_xuc": 0.376,
+        "lanh_dao_kinh_doanh": 1.315,
+        "tu_duy_giai_quyet_van_de": 0.432,
+        "tu_quan_ly_ap_luc": 0.719,
+        "thich_ung_hoc_hoi": 1.303,
+        "dao_duc_chuyen_nghiep": -0.639
+      }
+    },
+    "13-1161.01": {
+      "name_vi": "Chuyên viên marketing tìm kiếm",
+      "title": "Search Marketing Strategists",
+      "interest_code": "ECI",
+      "riasec": {
+        "Realistic": 1.0,
+        "Investigative": 3.78,
+        "Artistic": 3.23,
+        "Social": 2.76,
+        "Enterprising": 5.54,
+        "Conventional": 4.68
+      },
+      "riasec_z": {
+        "Realistic": -1.853,
+        "Investigative": 0.249,
+        "Artistic": 1.078,
+        "Social": -0.105,
+        "Enterprising": 1.685,
+        "Conventional": 0.156
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.702,
+        "tri_tue_cam_xuc": -0.677,
+        "lanh_dao_kinh_doanh": 0.413,
+        "tu_duy_giai_quyet_van_de": 1.274,
+        "tu_quan_ly_ap_luc": 0.437,
+        "thich_ung_hoc_hoi": 1.049,
+        "dao_duc_chuyen_nghiep": -0.92
+      }
+    },
+    "13-1161.00": {
+      "name_vi": "Nghiên cứu thị trường, chuyên viên marketing",
+      "title": "Market Research Analysts and Marketing Specialists",
+      "interest_code": "ECI",
+      "riasec": {
+        "Realistic": 1.08,
+        "Investigative": 4.6,
+        "Artistic": 2.56,
+        "Social": 2.47,
+        "Enterprising": 5.52,
+        "Conventional": 4.62
+      },
+      "riasec_z": {
+        "Realistic": -1.812,
+        "Investigative": 0.737,
+        "Artistic": 0.52,
+        "Social": -0.271,
+        "Enterprising": 1.673,
+        "Conventional": 0.095
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.773,
+        "tri_tue_cam_xuc": -0.389,
+        "lanh_dao_kinh_doanh": -0.049,
+        "tu_duy_giai_quyet_van_de": 1.031,
+        "tu_quan_ly_ap_luc": 0.294,
+        "thich_ung_hoc_hoi": 0.548,
+        "dao_duc_chuyen_nghiep": -0.831
+      }
+    },
+    "27-1024.00": {
+      "name_vi": "Thiết kế đồ hoạ",
+      "title": "Graphic Designers",
+      "interest_code": "ACE",
+      "riasec": {
+        "Realistic": 3.38,
+        "Investigative": 2.86,
+        "Artistic": 7.0,
+        "Social": 2.16,
+        "Enterprising": 3.43,
+        "Conventional": 3.92
+      },
+      "riasec_z": {
+        "Realistic": -0.619,
+        "Investigative": -0.298,
+        "Artistic": 4.218,
+        "Social": -0.449,
+        "Enterprising": 0.376,
+        "Conventional": -0.609
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.238,
+        "tri_tue_cam_xuc": -0.253,
+        "lanh_dao_kinh_doanh": 0.111,
+        "tu_duy_giai_quyet_van_de": 0.674,
+        "tu_quan_ly_ap_luc": 0.058,
+        "thich_ung_hoc_hoi": 0.401,
+        "dao_duc_chuyen_nghiep": -1.461
+      }
+    },
+    "27-1013.00": {
+      "name_vi": "Hoạ sĩ, nhà điêu khắc, minh hoạ",
+      "title": "Fine Artists, Including Painters, Sculptors, and Illustrators",
+      "interest_code": "ARI",
+      "riasec": {
+        "Realistic": 4.05,
+        "Investigative": 2.68,
+        "Artistic": 7.0,
+        "Social": 2.28,
+        "Enterprising": 2.37,
+        "Conventional": 2.34
+      },
+      "riasec_z": {
+        "Realistic": -0.271,
+        "Investigative": -0.405,
+        "Artistic": 4.218,
+        "Social": -0.38,
+        "Enterprising": -0.282,
+        "Conventional": -2.199
+      },
+      "soft": {
+        "giao_tiep_hop_tac": -1.969,
+        "tri_tue_cam_xuc": -1.054,
+        "lanh_dao_kinh_doanh": -1.629,
+        "tu_duy_giai_quyet_van_de": 0.014,
+        "tu_quan_ly_ap_luc": -0.515,
+        "thich_ung_hoc_hoi": 0.261,
+        "dao_duc_chuyen_nghiep": -2.506
+      }
+    },
+    "17-1011.00": {
+      "name_vi": "Kiến trúc sư công trình",
+      "title": "Architects, Except Landscape and Naval",
+      "interest_code": "RCA",
+      "riasec": {
+        "Realistic": 4.92,
+        "Investigative": 3.88,
+        "Artistic": 4.13,
+        "Social": 2.53,
+        "Enterprising": 3.65,
+        "Conventional": 4.44
+      },
+      "riasec_z": {
+        "Realistic": 0.18,
+        "Investigative": 0.308,
+        "Artistic": 1.827,
+        "Social": -0.237,
+        "Enterprising": 0.512,
+        "Conventional": -0.086
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.691,
+        "tri_tue_cam_xuc": 0.123,
+        "lanh_dao_kinh_doanh": 0.989,
+        "tu_duy_giai_quyet_van_de": 0.965,
+        "tu_quan_ly_ap_luc": 0.775,
+        "thich_ung_hoc_hoi": 0.444,
+        "dao_duc_chuyen_nghiep": 0.41
+      }
+    },
+    "13-1082.00": {
+      "name_vi": "Chuyên viên quản lý dự án",
+      "title": "Project Management Specialists",
+      "interest_code": "ECS",
+      "riasec": {
+        "Realistic": 1.48,
+        "Investigative": 2.75,
+        "Artistic": 1.57,
+        "Social": 3.32,
+        "Enterprising": 6.3,
+        "Conventional": 5.55
+      },
+      "riasec_z": {
+        "Realistic": -1.604,
+        "Investigative": -0.363,
+        "Artistic": -0.305,
+        "Social": 0.216,
+        "Enterprising": 2.157,
+        "Conventional": 1.031
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.838,
+        "tri_tue_cam_xuc": 0.213,
+        "lanh_dao_kinh_doanh": 0.951,
+        "tu_duy_giai_quyet_van_de": 0.545,
+        "tu_quan_ly_ap_luc": 1.302,
+        "thich_ung_hoc_hoi": 0.832,
+        "dao_duc_chuyen_nghiep": 0.506
+      }
+    },
+    "15-2041.00": {
+      "name_vi": "Nhà thống kê",
+      "title": "Statisticians",
+      "interest_code": "ICR",
+      "riasec": {
+        "Realistic": 2.14,
+        "Investigative": 6.58,
+        "Artistic": 1.77,
+        "Social": 1.71,
+        "Enterprising": 1.82,
+        "Conventional": 6.03
+      },
+      "riasec_z": {
+        "Realistic": -1.262,
+        "Investigative": 1.914,
+        "Artistic": -0.138,
+        "Social": -0.707,
+        "Enterprising": -0.624,
+        "Conventional": 1.514
+      },
+      "soft": {
+        "giao_tiep_hop_tac": 0.754,
+        "tri_tue_cam_xuc": -0.891,
+        "lanh_dao_kinh_doanh": -0.251,
+        "tu_duy_giai_quyet_van_de": 1.375,
+        "tu_quan_ly_ap_luc": 0.115,
+        "thich_ung_hoc_hoi": 0.132,
+        "dao_duc_chuyen_nghiep": 0.104
+      }
+    }
+  },
+  "within_it": {
+    "SWE_FRONTEND": [
+      {
+        "to": "SWE_GAME",
+        "combined": 1.74
+      },
+      {
+        "to": "SWE_BACKEND",
+        "combined": 1.649
+      },
+      {
+        "to": "SWE_MOBILE",
+        "combined": 1.649
+      }
+    ],
+    "SWE_BACKEND": [
+      {
+        "to": "SWE_EMBEDDED",
+        "combined": 1.906
+      },
+      {
+        "to": "PROD_BA",
+        "combined": 1.789
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.778
+      }
+    ],
+    "SWE_MOBILE": [
+      {
+        "to": "SWE_EMBEDDED",
+        "combined": 1.906
+      },
+      {
+        "to": "PROD_BA",
+        "combined": 1.789
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.778
+      }
+    ],
+    "SWE_GAME": [
+      {
+        "to": "SWE_UIUX",
+        "combined": 1.775
+      },
+      {
+        "to": "SWE_FRONTEND",
+        "combined": 1.74
+      },
+      {
+        "to": "SWE_BACKEND",
+        "combined": 1.688
+      }
+    ],
+    "SWE_UIUX": [
+      {
+        "to": "SWE_GAME",
+        "combined": 1.775
+      },
+      {
+        "to": "SWE_FRONTEND",
+        "combined": 1.636
+      },
+      {
+        "to": "SWE_BACKEND",
+        "combined": 1.265
+      }
+    ],
+    "SWE_EMBEDDED": [
+      {
+        "to": "SWE_BACKEND",
+        "combined": 1.906
+      },
+      {
+        "to": "SWE_MOBILE",
+        "combined": 1.906
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.776
+      }
+    ],
+    "SWE_ARCH_SOL": [
+      {
+        "to": "SWE_TECHLEAD",
+        "combined": 1.879
+      },
+      {
+        "to": "CLOUD_ENG",
+        "combined": 1.873
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.849
+      }
+    ],
+    "SWE_TECHLEAD": [
+      {
+        "to": "SWE_ARCH_SOL",
+        "combined": 1.879
+      },
+      {
+        "to": "INFRA_ERP",
+        "combined": 1.853
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.783
+      }
+    ],
+    "SWE_EM": [
+      {
+        "to": "PROD_PM",
+        "combined": 1.787
+      },
+      {
+        "to": "SWE_TECHLEAD",
+        "combined": 1.743
+      },
+      {
+        "to": "INFRA_ERP",
+        "combined": 1.642
+      }
+    ],
+    "QA_MANUAL": [
+      {
+        "to": "DATA_DE",
+        "combined": 1.626
+      },
+      {
+        "to": "SWE_EMBEDDED",
+        "combined": 1.602
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.601
+      }
+    ],
+    "DATA_DA": [
+      {
+        "to": "DATA_DE",
+        "combined": 1.533
+      },
+      {
+        "to": "DATA_AI",
+        "combined": 1.522
+      },
+      {
+        "to": "INFRA_ERP",
+        "combined": 1.434
+      }
+    ],
+    "DATA_AI": [
+      {
+        "to": "SWE_BACKEND",
+        "combined": 1.689
+      },
+      {
+        "to": "SWE_MOBILE",
+        "combined": 1.689
+      },
+      {
+        "to": "SWE_FRONTEND",
+        "combined": 1.631
+      }
+    ],
+    "DATA_DE": [
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.768
+      },
+      {
+        "to": "INFRA_NETWORK",
+        "combined": 1.685
+      },
+      {
+        "to": "SWE_BACKEND",
+        "combined": 1.663
+      }
+    ],
+    "CLOUD_DEVOPS": [
+      {
+        "to": "CLOUD_ENG",
+        "combined": 1.912
+      },
+      {
+        "to": "INFRA_NETWORK",
+        "combined": 1.904
+      },
+      {
+        "to": "SWE_ARCH_SOL",
+        "combined": 1.849
+      }
+    ],
+    "CLOUD_ENG": [
+      {
+        "to": "INFRA_NETWORK",
+        "combined": 1.936
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.912
+      },
+      {
+        "to": "SWE_ARCH_SOL",
+        "combined": 1.873
+      }
+    ],
+    "SEC_ENG": [
+      {
+        "to": "CLOUD_ENG",
+        "combined": 1.833
+      },
+      {
+        "to": "INFRA_NETWORK",
+        "combined": 1.832
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.796
+      }
+    ],
+    "SEC_PENTEST": [
+      {
+        "to": "SEC_ENG",
+        "combined": 1.631
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.594
+      },
+      {
+        "to": "INFRA_NETWORK",
+        "combined": 1.54
+      }
+    ],
+    "PROD_BA": [
+      {
+        "to": "INFRA_ERP",
+        "combined": 1.818
+      },
+      {
+        "to": "SWE_BACKEND",
+        "combined": 1.789
+      },
+      {
+        "to": "SWE_MOBILE",
+        "combined": 1.789
+      }
+    ],
+    "PROD_PM": [
+      {
+        "to": "SWE_EM",
+        "combined": 1.787
+      },
+      {
+        "to": "SWE_TECHLEAD",
+        "combined": 1.374
+      },
+      {
+        "to": "INFRA_ERP",
+        "combined": 1.266
+      }
+    ],
+    "INFRA_ERP": [
+      {
+        "to": "SWE_TECHLEAD",
+        "combined": 1.853
+      },
+      {
+        "to": "PROD_BA",
+        "combined": 1.818
+      },
+      {
+        "to": "SWE_ARCH_SOL",
+        "combined": 1.758
+      }
+    ],
+    "INFRA_HELPDESK": [
+      {
+        "to": "PROD_BA",
+        "combined": 1.041
+      },
+      {
+        "to": "CLOUD_ENG",
+        "combined": 1.022
+      },
+      {
+        "to": "INFRA_ERP",
+        "combined": 1.016
+      }
+    ],
+    "INFRA_NETWORK": [
+      {
+        "to": "CLOUD_ENG",
+        "combined": 1.936
+      },
+      {
+        "to": "CLOUD_DEVOPS",
+        "combined": 1.904
+      },
+      {
+        "to": "SWE_ARCH_SOL",
+        "combined": 1.837
+      }
+    ]
+  },
+  "cross_field": {
+    "SWE_FRONTEND": [
+      {
+        "to": "19-1029.01",
+        "title": "Bioinformatics Scientists",
+        "combined": 1.564
+      },
+      {
+        "to": "19-2012.00",
+        "title": "Physicists",
+        "combined": 1.478
+      },
+      {
+        "to": "19-4061.00",
+        "title": "Social Science Research Assistants",
+        "combined": 1.448
+      },
+      {
+        "to": "19-2099.01",
+        "title": "Remote Sensing Scientists and Technologists",
+        "combined": 1.406
+      },
+      {
+        "to": "19-3011.00",
+        "title": "Economists",
+        "combined": 1.403
+      }
+    ],
+    "SWE_BACKEND": [
+      {
+        "to": "19-1029.01",
+        "title": "Bioinformatics Scientists",
+        "combined": 1.742
+      },
+      {
+        "to": "19-2099.01",
+        "title": "Remote Sensing Scientists and Technologists",
+        "combined": 1.681
+      },
+      {
+        "to": "17-2199.05",
+        "title": "Mechatronics Engineers",
+        "combined": 1.669
+      },
+      {
+        "to": "17-2072.01",
+        "title": "Radio Frequency Identification Device Specialists",
+        "combined": 1.647
+      },
+      {
+        "to": "17-2199.06",
+        "title": "Microsystems Engineers",
+        "combined": 1.619
+      }
+    ],
+    "SWE_MOBILE": [
+      {
+        "to": "19-1029.01",
+        "title": "Bioinformatics Scientists",
+        "combined": 1.742
+      },
+      {
+        "to": "19-2099.01",
+        "title": "Remote Sensing Scientists and Technologists",
+        "combined": 1.681
+      },
+      {
+        "to": "17-2199.05",
+        "title": "Mechatronics Engineers",
+        "combined": 1.669
+      },
+      {
+        "to": "17-2072.01",
+        "title": "Radio Frequency Identification Device Specialists",
+        "combined": 1.647
+      },
+      {
+        "to": "17-2199.06",
+        "title": "Microsystems Engineers",
+        "combined": 1.619
+      }
+    ],
+    "SWE_GAME": [
+      {
+        "to": "19-1029.01",
+        "title": "Bioinformatics Scientists",
+        "combined": 1.547
+      },
+      {
+        "to": "17-2112.01",
+        "title": "Human Factors Engineers and Ergonomists",
+        "combined": 1.517
+      },
+      {
+        "to": "27-1021.00",
+        "title": "Commercial and Industrial Designers",
+        "combined": 1.488
+      },
+      {
+        "to": "19-2012.00",
+        "title": "Physicists",
+        "combined": 1.463
+      },
+      {
+        "to": "19-2011.00",
+        "title": "Astronomers",
+        "combined": 1.462
+      }
+    ],
+    "SWE_UIUX": [
+      {
+        "to": "27-1021.00",
+        "title": "Commercial and Industrial Designers",
+        "combined": 1.625
+      },
+      {
+        "to": "27-1024.00",
+        "title": "Graphic Designers",
+        "combined": 1.583
+      },
+      {
+        "to": "27-1014.00",
+        "title": "Special Effects Artists and Animators",
+        "combined": 1.496
+      },
+      {
+        "to": "27-1027.00",
+        "title": "Set and Exhibit Designers",
+        "combined": 1.481
+      },
+      {
+        "to": "13-1161.01",
+        "title": "Search Marketing Strategists",
+        "combined": 1.48
+      }
+    ],
+    "SWE_EMBEDDED": [
+      {
+        "to": "17-2199.05",
+        "title": "Mechatronics Engineers",
+        "combined": 1.806
+      },
+      {
+        "to": "17-2072.01",
+        "title": "Radio Frequency Identification Device Specialists",
+        "combined": 1.797
+      },
+      {
+        "to": "19-2099.01",
+        "title": "Remote Sensing Scientists and Technologists",
+        "combined": 1.789
+      },
+      {
+        "to": "17-2199.06",
+        "title": "Microsystems Engineers",
+        "combined": 1.781
+      },
+      {
+        "to": "19-1029.01",
+        "title": "Bioinformatics Scientists",
+        "combined": 1.761
+      }
+    ],
+    "SWE_ARCH_SOL": [
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.73
+      },
+      {
+        "to": "17-2112.00",
+        "title": "Industrial Engineers",
+        "combined": 1.693
+      },
+      {
+        "to": "19-1029.02",
+        "title": "Molecular and Cellular Biologists",
+        "combined": 1.675
+      },
+      {
+        "to": "13-1199.07",
+        "title": "Security Management Specialists",
+        "combined": 1.625
+      },
+      {
+        "to": "17-2031.00",
+        "title": "Bioengineers and Biomedical Engineers",
+        "combined": 1.551
+      }
+    ],
+    "SWE_TECHLEAD": [
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.73
+      },
+      {
+        "to": "17-2112.00",
+        "title": "Industrial Engineers",
+        "combined": 1.646
+      },
+      {
+        "to": "13-1199.07",
+        "title": "Security Management Specialists",
+        "combined": 1.59
+      },
+      {
+        "to": "19-3099.01",
+        "title": "Transportation Planners",
+        "combined": 1.572
+      },
+      {
+        "to": "19-3022.00",
+        "title": "Survey Researchers",
+        "combined": 1.555
+      }
+    ],
+    "SWE_EM": [
+      {
+        "to": "13-1081.00",
+        "title": "Logisticians",
+        "combined": 1.795
+      },
+      {
+        "to": "13-1199.04",
+        "title": "Business Continuity Planners",
+        "combined": 1.713
+      },
+      {
+        "to": "11-3071.00",
+        "title": "Transportation, Storage, and Distribution Managers",
+        "combined": 1.696
+      },
+      {
+        "to": "11-3071.04",
+        "title": "Supply Chain Managers",
+        "combined": 1.685
+      },
+      {
+        "to": "11-3051.01",
+        "title": "Quality Control Systems Managers",
+        "combined": 1.673
+      }
+    ],
+    "QA_MANUAL": [
+      {
+        "to": "17-2072.01",
+        "title": "Radio Frequency Identification Device Specialists",
+        "combined": 1.581
+      },
+      {
+        "to": "19-4061.00",
+        "title": "Social Science Research Assistants",
+        "combined": 1.577
+      },
+      {
+        "to": "19-4031.00",
+        "title": "Chemical Technicians",
+        "combined": 1.57
+      },
+      {
+        "to": "17-2199.06",
+        "title": "Microsystems Engineers",
+        "combined": 1.558
+      },
+      {
+        "to": "17-2112.02",
+        "title": "Validation Engineers",
+        "combined": 1.548
+      }
+    ],
+    "DATA_DA": [
+      {
+        "to": "13-2099.01",
+        "title": "Financial Quantitative Analysts",
+        "combined": 1.657
+      },
+      {
+        "to": "19-3011.00",
+        "title": "Economists",
+        "combined": 1.613
+      },
+      {
+        "to": "33-3021.06",
+        "title": "Intelligence Analysts",
+        "combined": 1.608
+      },
+      {
+        "to": "13-1081.02",
+        "title": "Logistics Analysts",
+        "combined": 1.512
+      },
+      {
+        "to": "13-2099.04",
+        "title": "Fraud Examiners, Investigators and Analysts",
+        "combined": 1.473
+      }
+    ],
+    "DATA_AI": [
+      {
+        "to": "19-1029.01",
+        "title": "Bioinformatics Scientists",
+        "combined": 1.82
+      },
+      {
+        "to": "19-2012.00",
+        "title": "Physicists",
+        "combined": 1.644
+      },
+      {
+        "to": "19-2099.01",
+        "title": "Remote Sensing Scientists and Technologists",
+        "combined": 1.63
+      },
+      {
+        "to": "19-4061.00",
+        "title": "Social Science Research Assistants",
+        "combined": 1.63
+      },
+      {
+        "to": "19-2021.00",
+        "title": "Atmospheric and Space Scientists",
+        "combined": 1.591
+      }
+    ],
+    "DATA_DE": [
+      {
+        "to": "13-2099.01",
+        "title": "Financial Quantitative Analysts",
+        "combined": 1.635
+      },
+      {
+        "to": "13-1081.02",
+        "title": "Logistics Analysts",
+        "combined": 1.609
+      },
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.606
+      },
+      {
+        "to": "19-4061.00",
+        "title": "Social Science Research Assistants",
+        "combined": 1.601
+      },
+      {
+        "to": "17-2072.01",
+        "title": "Radio Frequency Identification Device Specialists",
+        "combined": 1.473
+      }
+    ],
+    "CLOUD_DEVOPS": [
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.706
+      },
+      {
+        "to": "17-2072.01",
+        "title": "Radio Frequency Identification Device Specialists",
+        "combined": 1.625
+      },
+      {
+        "to": "17-2112.00",
+        "title": "Industrial Engineers",
+        "combined": 1.553
+      },
+      {
+        "to": "19-1029.02",
+        "title": "Molecular and Cellular Biologists",
+        "combined": 1.508
+      },
+      {
+        "to": "13-1199.07",
+        "title": "Security Management Specialists",
+        "combined": 1.503
+      }
+    ],
+    "CLOUD_ENG": [
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.713
+      },
+      {
+        "to": "13-1199.07",
+        "title": "Security Management Specialists",
+        "combined": 1.667
+      },
+      {
+        "to": "17-2112.00",
+        "title": "Industrial Engineers",
+        "combined": 1.57
+      },
+      {
+        "to": "19-1029.02",
+        "title": "Molecular and Cellular Biologists",
+        "combined": 1.492
+      },
+      {
+        "to": "13-1081.02",
+        "title": "Logistics Analysts",
+        "combined": 1.454
+      }
+    ],
+    "SEC_ENG": [
+      {
+        "to": "13-1199.07",
+        "title": "Security Management Specialists",
+        "combined": 1.663
+      },
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.502
+      },
+      {
+        "to": "19-1029.02",
+        "title": "Molecular and Cellular Biologists",
+        "combined": 1.474
+      },
+      {
+        "to": "17-2112.00",
+        "title": "Industrial Engineers",
+        "combined": 1.467
+      },
+      {
+        "to": "17-2112.02",
+        "title": "Validation Engineers",
+        "combined": 1.465
+      }
+    ],
+    "SEC_PENTEST": [
+      {
+        "to": "13-2099.01",
+        "title": "Financial Quantitative Analysts",
+        "combined": 1.506
+      },
+      {
+        "to": "19-2099.01",
+        "title": "Remote Sensing Scientists and Technologists",
+        "combined": 1.496
+      },
+      {
+        "to": "17-2072.01",
+        "title": "Radio Frequency Identification Device Specialists",
+        "combined": 1.464
+      },
+      {
+        "to": "19-2031.00",
+        "title": "Chemists",
+        "combined": 1.445
+      },
+      {
+        "to": "19-1029.01",
+        "title": "Bioinformatics Scientists",
+        "combined": 1.425
+      }
+    ],
+    "PROD_BA": [
+      {
+        "to": "19-1029.01",
+        "title": "Bioinformatics Scientists",
+        "combined": 1.638
+      },
+      {
+        "to": "19-2099.01",
+        "title": "Remote Sensing Scientists and Technologists",
+        "combined": 1.592
+      },
+      {
+        "to": "17-2072.01",
+        "title": "Radio Frequency Identification Device Specialists",
+        "combined": 1.567
+      },
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.565
+      },
+      {
+        "to": "19-2012.00",
+        "title": "Physicists",
+        "combined": 1.55
+      }
+    ],
+    "PROD_PM": [
+      {
+        "to": "13-1082.00",
+        "title": "Project Management Specialists",
+        "combined": 1.886
+      },
+      {
+        "to": "13-1081.00",
+        "title": "Logisticians",
+        "combined": 1.854
+      },
+      {
+        "to": "11-9111.00",
+        "title": "Medical and Health Services Managers",
+        "combined": 1.835
+      },
+      {
+        "to": "11-1011.00",
+        "title": "Chief Executives",
+        "combined": 1.804
+      },
+      {
+        "to": "13-1199.04",
+        "title": "Business Continuity Planners",
+        "combined": 1.801
+      }
+    ],
+    "INFRA_ERP": [
+      {
+        "to": "19-3099.01",
+        "title": "Transportation Planners",
+        "combined": 1.647
+      },
+      {
+        "to": "19-3022.00",
+        "title": "Survey Researchers",
+        "combined": 1.639
+      },
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.633
+      },
+      {
+        "to": "17-2112.00",
+        "title": "Industrial Engineers",
+        "combined": 1.577
+      },
+      {
+        "to": "17-2112.01",
+        "title": "Human Factors Engineers and Ergonomists",
+        "combined": 1.472
+      }
+    ],
+    "INFRA_HELPDESK": [
+      {
+        "to": "31-9092.00",
+        "title": "Medical Assistants",
+        "combined": 1.128
+      },
+      {
+        "to": "31-9091.00",
+        "title": "Dental Assistants",
+        "combined": 0.949
+      },
+      {
+        "to": "43-6013.00",
+        "title": "Medical Secretaries and Administrative Assistants",
+        "combined": 0.943
+      },
+      {
+        "to": "19-5012.00",
+        "title": "Occupational Health and Safety Technicians",
+        "combined": 0.938
+      },
+      {
+        "to": "29-1071.01",
+        "title": "Anesthesiologist Assistants",
+        "combined": 0.913
+      }
+    ],
+    "INFRA_NETWORK": [
+      {
+        "to": "13-1081.01",
+        "title": "Logistics Engineers",
+        "combined": 1.704
+      },
+      {
+        "to": "13-1199.07",
+        "title": "Security Management Specialists",
+        "combined": 1.704
+      },
+      {
+        "to": "17-2112.00",
+        "title": "Industrial Engineers",
+        "combined": 1.547
+      },
+      {
+        "to": "19-1029.02",
+        "title": "Molecular and Cellular Biologists",
+        "combined": 1.52
+      },
+      {
+        "to": "13-2099.01",
+        "title": "Financial Quantitative Analysts",
+        "combined": 1.486
+      }
+    ]
+  },
+  "outside_to_it": {
+    "11-2021.00": [
+      {
+        "to": "PROD_PM",
+        "combined": 1.546
+      },
+      {
+        "to": "SWE_EM",
+        "combined": 1.397
+      },
+      {
+        "to": "INFRA_ERP",
+        "combined": 1.066
+      }
+    ],
+    "13-1161.01": [
+      {
+        "to": "SWE_UIUX",
+        "combined": 1.48
+      },
+      {
+        "to": "SWE_GAME",
+        "combined": 1.415
+      },
+      {
+        "to": "SWE_FRONTEND",
+        "combined": 1.378
+      }
+    ],
+    "13-1161.00": [
+      {
+        "to": "DATA_DA",
+        "combined": 1.434
+      },
+      {
+        "to": "SWE_UIUX",
+        "combined": 1.349
+      },
+      {
+        "to": "INFRA_ERP",
+        "combined": 1.343
+      }
+    ],
+    "27-1024.00": [
+      {
+        "to": "SWE_UIUX",
+        "combined": 1.583
+      },
+      {
+        "to": "SWE_GAME",
+        "combined": 1.274
+      },
+      {
+        "to": "SWE_FRONTEND",
+        "combined": 1.198
+      }
+    ],
+    "27-1013.00": [
+      {
+        "to": "SWE_UIUX",
+        "combined": 1.236
+      },
+      {
+        "to": "SWE_GAME",
+        "combined": 0.895
+      },
+      {
+        "to": "SWE_FRONTEND",
+        "combined": 0.85
+      }
+    ],
+    "17-1011.00": [
+      {
+        "to": "SWE_GAME",
+        "combined": 1.37
+      },
+      {
+        "to": "SWE_UIUX",
+        "combined": 1.23
+      },
+      {
+        "to": "SWE_TECHLEAD",
+        "combined": 1.052
+      }
+    ],
+    "13-1082.00": [
+      {
+        "to": "PROD_PM",
+        "combined": 1.886
+      },
+      {
+        "to": "SWE_EM",
+        "combined": 1.661
+      },
+      {
+        "to": "SWE_TECHLEAD",
+        "combined": 1.14
+      }
+    ],
+    "15-2041.00": [
+      {
+        "to": "DATA_AI",
+        "combined": 1.742
+      },
+      {
+        "to": "DATA_DE",
+        "combined": 1.712
+      },
+      {
+        "to": "QA_MANUAL",
+        "combined": 1.638
+      }
+    ]
+  }
+}

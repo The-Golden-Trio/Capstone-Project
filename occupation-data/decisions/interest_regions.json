@@ -1,0 +1,76 @@
+{
+  "_note": "Cụm 3 của Get to know me (D-125): 6 thẻ nhóm ngành thay cho 6 thẻ vùng việc IT, để không nghề nào được ưu ái. Mỗi nhóm nghề (role_group_vn trong generated/occupation_profiles.json) thuộc đúng một vùng; vùng của một nghề là vùng chứa nhóm của nó. RIASEC đo kiểu việc người chơi thích, vùng đo lĩnh vực. Lời thẻ do nhóm tự viết ngày 23/10/2026, chưa thử trên người thật (H3).",
+  "regions": [
+    {
+      "id": "ky_thuat",
+      "name_vn": "Kỹ thuật, sản xuất",
+      "card": "Tận mắt theo dõi một cây cầu, cỗ máy hay mẻ bánh được làm ra từng bước",
+      "groups": [
+        "Kiến trúc và kỹ thuật",
+        "Sản xuất",
+        "Xây dựng và khai khoáng",
+        "Lắp đặt, bảo trì và sửa chữa",
+        "Nông nghiệp, ngư nghiệp và lâm nghiệp"
+      ],
+      "role_count": 50
+    },
+    {
+      "id": "suc_khoe",
+      "name_vn": "Sức khoẻ, giáo dục",
+      "card": "Giúp một người khoẻ lên, học tiến bộ hơn hay vượt qua lúc khó khăn",
+      "groups": [
+        "Y tế chuyên môn và kỹ thuật y tế",
+        "Hỗ trợ y tế",
+        "Cộng đồng và công tác xã hội",
+        "Giáo dục và thư viện"
+      ],
+      "role_count": 33
+    },
+    {
+      "id": "kinh_doanh",
+      "name_vn": "Kinh doanh, quản lý",
+      "card": "Tính xem quán nước phải bán bao nhiêu ly mỗi ngày thì mới có lời",
+      "groups": [
+        "Kinh doanh và tài chính",
+        "Bán hàng",
+        "Quản lý",
+        "Văn phòng và hỗ trợ hành chính",
+        "Pháp lý"
+      ],
+      "role_count": 48
+    },
+    {
+      "id": "cong_nghe",
+      "name_vn": "Công nghệ, khoa học",
+      "card": "Dùng máy tính hay thí nghiệm để tìm ra câu trả lời cho một thắc mắc",
+      "groups": [
+        "Công nghệ thông tin",
+        "Toán học và thống kê",
+        "Khoa học tự nhiên và xã hội"
+      ],
+      "role_count": 38
+    },
+    {
+      "id": "sang_tao",
+      "name_vn": "Sáng tạo, truyền thông",
+      "card": "Làm một video, bài hát hay thiết kế để nhiều người cùng xem",
+      "groups": [
+        "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông"
+      ],
+      "role_count": 17
+    },
+    {
+      "id": "dich_vu",
+      "name_vn": "Dịch vụ, vận hành",
+      "card": "Lo cho khách được phục vụ chu đáo, đi lại an toàn và đúng giờ",
+      "groups": [
+        "Chăm sóc và dịch vụ cá nhân",
+        "Vận tải và bốc dỡ hàng hoá",
+        "Dịch vụ bảo vệ an ninh và an toàn",
+        "Chế biến và phục vụ ăn uống",
+        "Vệ sinh và bảo dưỡng toà nhà, cảnh quan"
+      ],
+      "role_count": 35
+    }
+  ]
+}

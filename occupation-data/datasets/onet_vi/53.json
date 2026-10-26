@@ -1,0 +1,159 @@
+{
+  "53-7071.00": {"title_vi": "Người vận hành trạm nén, bơm khí"},
+  "53-7072.00": {"title_vi": "Người vận hành trạm bơm"},
+  "53-7073.00": {"title_vi": "Người vận hành bơm đầu giếng"},
+  "53-2011.00": {
+    "title_vi": "Phi công hãng hàng không",
+    "description_vi": "Lái và dẫn đường máy bay cánh cố định, thường trên các tuyến bay thường lệ, để chở khách và hàng. Cần chứng chỉ vận tải hàng không và năng định cho loại máy bay cụ thể. Gồm cả phi công nội địa, quốc tế và giáo viên huấn luyện phi công.",
+    "tasks_vi": {
+      "10562": "Dùng thiết bị đo để dẫn đường khi tầm nhìn kém.",
+      "10568": "Khởi động động cơ, điều khiển và lái máy bay chở khách, thư hoặc hàng, theo kế hoạch bay, quy định và quy trình.",
+      "10564": "Làm việc trong tổ bay cùng các thành viên khác, nhất là khi cất và hạ cánh.",
+      "10563": "Xử lý và báo cáo tình huống khẩn cấp, hỏng hóc khi đang bay.",
+      "10569": "Kiểm tra máy bay theo danh mục trước chuyến bay để phát hiện lỗi, hỏng hóc."
+    }
+  },
+  "53-2012.00": {"title_vi": "Phi công thương mại"},
+  "53-2021.00": {
+    "title_vi": "Kiểm soát viên không lưu",
+    "description_vi": "Điều hành hoạt động bay trên mặt đất và gần sân bay, và việc chuyển máy bay giữa các tầng độ cao, các trung tâm kiểm soát theo quy trình. Cho phép, điều tiết và kiểm soát các chuyến bay thương mại theo quy định để bảo đảm an toàn và nhanh chóng.",
+    "tasks_vi": {
+      "12731": "Thông báo cho phi công về máy bay gần đó hoặc điều kiện nguy hiểm như thời tiết, tốc độ và hướng gió, tầm nhìn.",
+      "12730": "Theo dõi máy bay trong vùng trời được giao bằng radar, máy tính hoặc quan sát.",
+      "24061": "Theo dõi, điều hành hoặc sắp thứ tự di chuyển của máy bay trên không và dưới mặt đất để giảm chậm trễ và tối đa an toàn.",
+      "12733": "Báo động lực lượng khẩn nguy sân bay khi có tình huống khẩn cấp hoặc máy bay gặp sự cố.",
+      "12738": "Giữ liên lạc vô tuyến, điện thoại với đài kiểm soát, trung tâm kiểm soát lân cận để điều phối máy bay."
+    }
+  },
+  "53-2022.00": {"title_vi": "Chuyên viên khai thác sân bay"},
+  "53-2031.00": {
+    "title_vi": "Tiếp viên hàng không",
+    "description_vi": "Giám sát an toàn khoang hành khách. Phục vụ hành khách, hướng dẫn thông tin an toàn, phục vụ đồ ăn, đồ uống và xử lý sự cố khẩn cấp.",
+    "tasks_vi": {
+      "9639": "Kiểm tra túi sơ cứu và thiết bị khẩn cấp, gồm bình chữa cháy và bình ô-xy, còn hoạt động tốt.",
+      "9637": "Thông báo và làm mẫu quy trình an toàn, khẩn cấp như cách dùng mặt nạ ô-xy, dây an toàn và áo phao.",
+      "23942": "Quan sát hành vi hành khách để phát hiện mối đe doạ tới an toàn của tổ bay và hành khách khác.",
+      "9638": "Đi dọc lối đi để kiểm tra hành khách tuân thủ quy định trước khi cất và hạ cánh.",
+      "9636": "Hướng dẫn và hỗ trợ hành khách trong tình huống khẩn cấp, như thoát khỏi máy bay sau khi hạ cánh khẩn cấp."
+    }
+  },
+  "53-1044.00": {"title_vi": "Tổ trưởng tiếp viên"},
+  "53-6061.00": {"title_vi": "Tiếp viên tàu, xe"},
+  "53-3032.00": {
+    "title_vi": "Tài xế xe tải nặng, xe container",
+    "description_vi": "Lái xe đầu kéo hoặc xe tải có tổng trọng tải lớn. Có thể phải dỡ hàng. Cần giấy phép lái xe hạng phù hợp. Gồm cả tài xế xe cứu hộ.",
+    "tasks_vi": {
+      "20693": "Kiểm tra giấy tờ của lô hàng về độ đầy đủ và chính xác.",
+      "20692": "Kiểm tra hàng để bảo đảm được chằng buộc chắc chắn.",
+      "10636": "Kiểm tra xe để bảo đảm hệ thống cơ khí, an toàn và thiết bị khẩn cấp hoạt động tốt.",
+      "10651": "Quay chân chống rơ-moóc lên xuống để cố định xe an toàn.",
+      "10638": "Lấy biên nhận hoặc chữ ký khi giao hàng và thu tiền dịch vụ khi cần."
+    }
+  },
+  "53-3033.00": {"title_vi": "Tài xế xe tải nhẹ"},
+  "53-3031.00": {"title_vi": "Tài xế giao hàng kiêm bán hàng"},
+  "53-1043.00": {"title_vi": "Đội trưởng lái xe và vận hành máy bốc xếp"},
+  "53-3052.00": {
+    "title_vi": "Tài xế xe buýt, xe khách",
+    "description_vi": "Lái xe buýt hoặc xe khách, gồm chạy tuyến cố định, xe hợp đồng và xe riêng. Có thể giúp hành khách mang hành lý. Có thể thu tiền vé.",
+    "tasks_vi": {
+      "18794": "Lái xe theo tuyến hoặc tới điểm đến đúng lịch, chấp hành luật giao thông để hành khách đi êm và an toàn.",
+      "3146": "Đỗ xe ở điểm đón để hành khách lên xe.",
+      "3144": "Kiểm tra xe, mức nhiên liệu, dầu và nước trước khi xuất bến.",
+      "21085": "Thông báo điểm dừng cho hành khách.",
+      "18795": "Giúp hành khách như người già, người khuyết tật lên xuống xe, ngồi đúng chỗ, mang hành lý và trả lời về lịch, tuyến xe."
+    }
+  },
+  "53-3051.00": {"title_vi": "Tài xế xe đưa đón học sinh"},
+  "53-3053.00": {"title_vi": "Tài xế xe đưa đón, tài xế riêng"},
+  "53-3011.00": {"title_vi": "Tài xế xe cứu thương"},
+  "53-4011.00": {
+    "title_vi": "Lái tàu hoả",
+    "description_vi": "Lái đầu máy điện, diesel-điện, hơi nước hoặc tua-bin khí để chở khách hoặc hàng. Hiểu lệnh chạy tàu, tín hiệu điện tử hoặc thủ công và quy định đường sắt.",
+    "tasks_vi": {
+      "12753": "Nhận tín hiệu xuất phát từ trưởng tàu và dùng tay ga, phanh hơi để lái đầu máy.",
+      "12750": "Theo dõi đồng hồ đo tốc độ, dòng điện, ắc quy hoặc áp suất khí trong đường phanh và bình chứa chính.",
+      "12752": "Hiểu lệnh chạy tàu, tín hiệu và quy định đường sắt về vận hành đầu máy.",
+      "12751": "Quan sát đường ray để phát hiện chướng ngại.",
+      "12754": "Liên lạc với trưởng tàu hoặc trung tâm điều độ qua bộ đàm về điểm dừng, chậm trễ hoặc tàu ngược chiều."
+    }
+  },
+  "53-4013.00": {"title_vi": "Lái tàu dồn trong ga"},
+  "53-4022.00": {"title_vi": "Nhân viên gác ghi, tín hiệu và phanh đường sắt"},
+  "53-4031.00": {"title_vi": "Trưởng tàu, trực ban ga"},
+  "53-4041.00": {"title_vi": "Lái tàu điện ngầm, tàu điện"},
+  "53-5021.00": {
+    "title_vi": "Thuyền trưởng, sĩ quan boong, hoa tiêu",
+    "description_vi": "Chỉ huy hoặc giám sát hoạt động của tàu thuyền như tàu kéo, phà. Cần giấy phép do cơ quan hàng hải cấp.",
+    "tasks_vi": {
+      "23802": "Chỉ đạo hướng đi và tốc độ tàu dựa trên hiểu biết về gió, thời tiết, độ sâu, thuỷ triều, dòng chảy và mối nguy ở vùng nước.",
+      "23803": "Ngăn tàu đang dẫn đường hoạt động thiếu an toàn.",
+      "23804": "Chỉ huy cập cầu khi tàu tới cảng hoặc bến.",
+      "23805": "Tra bản đồ, hải đồ, bản tin thời tiết hoặc thiết bị hàng hải để quyết định và chỉ đạo hành trình.",
+      "23806": "Lái và điều khiển tàu bằng vô tuyến, máy đo sâu, radar, đèn, phao tiêu hoặc hải đăng."
+    }
+  },
+  "53-5011.00": {"title_vi": "Thuỷ thủ, thợ máy tàu"},
+  "53-5022.00": {"title_vi": "Người lái ca nô, xuồng máy"},
+  "53-5031.00": {"title_vi": "Sĩ quan máy tàu biển"},
+  "53-7051.00": {
+    "title_vi": "Người lái xe nâng, xe kéo công nghiệp",
+    "description_vi": "Vận hành xe nâng, xe kéo công nghiệp để chuyển vật liệu trong kho, bãi, nhà máy, công trường hoặc nơi tương tự.",
+    "tasks_vi": {
+      "3202": "Điều khiển cần gạt của thiết bị nâng như xe nâng, dầm nâng có móc xoay, palăng hoặc sàn nâng để bốc dỡ, chuyển hoặc xếp vật liệu.",
+      "3201": "Lái xe nâng, xe kéo chạy xăng hoặc điện để chuyển vật liệu giữa khu bốc xếp, sản xuất và lưu kho.",
+      "15266": "Bốc dỡ vật liệu bằng tay hoặc máy từ pallet, sàn, toa, thiết bị nâng hoặc phương tiện vận chuyển khác.",
+      "3203": "Đưa càng nâng vào dưới, trên hoặc quanh pallet, kiện hàng và cố định hàng để chuyển tới nơi quy định.",
+      "15265": "Kiểm tra độ chính xác của hàng và di chuyển an toàn trong kho, nhà máy để giao kịp và đủ."
+    }
+  },
+  "53-7021.00": {"title_vi": "Người vận hành cần cẩu, cẩu tháp"},
+  "53-7031.00": {"title_vi": "Người vận hành tàu cuốc, máy nạo vét"},
+  "53-7041.00": {"title_vi": "Người vận hành tời, palăng"},
+  "53-7011.00": {"title_vi": "Người vận hành băng tải"},
+  "53-1041.00": {"title_vi": "Tổ trưởng bốc xếp hàng hoá hàng không"},
+  "53-7121.00": {"title_vi": "Công nhân nạp hàng lên toa, xe bồn và tàu"},
+  "53-7062.00": {
+    "title_vi": "Công nhân bốc xếp hàng hoá",
+    "description_vi": "Chuyển hàng hoá, hành lý hoặc vật liệu bằng tay, hoặc làm lao động phổ thông khác. Gồm mọi lao động chân tay chưa được phân loại ở nghề khác.",
+    "tasks_vi": {
+      "10789": "Giữ khu cất thiết bị gọn gàng để bảo vệ hàng tồn.",
+      "10779": "Đọc phiếu công việc hoặc nghe hướng dẫn để biết việc được giao và vật tư, thiết bị cần dùng.",
+      "10781": "Chuyển hàng hoá, vật liệu tới và rời kho, khu sản xuất, sân bốc xếp, xe giao hàng, tàu hoặc container, bằng tay hoặc xe đẩy, xe kéo và thiết bị khác."
+    }
+  },
+  "53-7064.00": {"title_vi": "Công nhân đóng gói thủ công"},
+  "53-7065.00": {"title_vi": "Nhân viên xếp hàng lên kệ, soạn đơn"},
+  "53-7063.00": {"title_vi": "Công nhân cấp liệu và nhận sản phẩm ở máy"},
+  "53-7061.00": {"title_vi": "Nhân viên rửa xe và thiết bị"},
+  "53-1042.00": {"title_vi": "Tổ trưởng bốc xếp"},
+  "53-6021.00": {"title_vi": "Nhân viên trông giữ xe"},
+  "53-6031.00": {"title_vi": "Nhân viên cây xăng, dịch vụ xe"},
+  "53-6032.00": {"title_vi": "Nhân viên phục vụ mặt đất cho tàu bay"},
+  "53-7081.00": {
+    "title_vi": "Công nhân thu gom rác, phế liệu tái chế",
+    "description_vi": "Thu gom và đổ rác hoặc phế liệu tái chế từ thùng chứa lên xe. Có thể lái xe.",
+    "tasks_vi": {
+      "7170": "Kiểm tra xe trước khi chạy tuyến để bảo đảm an toàn.",
+      "7174": "Lái xe theo tuyến quy định qua khu dân cư, ngõ hẻm, khu thương mại hoặc khu công nghiệp.",
+      "7171": "Đổ nhiên liệu hoặc châm dầu, dầu phanh cho xe.",
+      "20313": "Đổ rác hoặc phế liệu tái chế tại bãi xử lý.",
+      "7172": "Lập báo cáo thiết bị hỏng."
+    }
+  },
+  "53-6051.00": {
+    "title_vi": "Thanh tra an toàn vận tải",
+    "description_vi": "Kiểm tra thiết bị hoặc hàng hoá liên quan đến an toàn vận chuyển hàng và người. Gồm cả thanh tra vận tải đường sắt như kiểm tra hàng, kiểm tra đường ray và thanh tra phương tiện vận tải khác.",
+    "tasks_vi": {
+      "23850": "Lập và nộp báo cáo sau khi hoàn tất chuyến hàng.",
+      "23851": "Kiểm tra lô hàng để bảo đảm được chèn, chằng chắc chắn.",
+      "23852": "Ghi chi tiết về tình trạng hàng, cách xử lý hàng và sự cố gặp phải.",
+      "23853": "Hướng dẫn tổ bốc xếp kỹ thuật xếp hàng nguy hiểm và hàng nặng.",
+      "23854": "Theo dõi việc bốc hàng để bảo đảm tổ bốc xếp làm đúng quy trình."
+    }
+  },
+  "53-6051.01": {"title_vi": "Thanh tra hàng không"},
+  "53-6051.07": {"title_vi": "Đăng kiểm viên phương tiện, thiết bị vận tải"},
+  "53-6041.00": {"title_vi": "Kỹ thuật viên giao thông"},
+  "53-6011.00": {"title_vi": "Nhân viên vận hành cầu cất, âu thuyền"}
+}

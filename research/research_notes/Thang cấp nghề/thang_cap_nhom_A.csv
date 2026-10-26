@@ -1,0 +1,632 @@
+role_code,band,title_vn,years_experience,core_output,basis,evidence
+ONET-19-1012.00,L1,Thực tập sinh R&D thực phẩm,0,"Chuẩn bị mẫu thử, ghi chép thí nghiệm và hỗ trợ đánh giá cảm quan.",doanh_nghiep,B
+ONET-19-1012.00,L2,Nhân viên R&D thực phẩm,0–1,"Làm mẫu thử công thức, kiểm tra chỉ tiêu cơ bản và cập nhật hồ sơ sản phẩm.",doanh_nghiep,B
+ONET-19-1012.00,L3,Chuyên viên R&D thực phẩm (Junior),1–2,Tự phát triển một sản phẩm cải tiến từ công thức đến chạy thử pilot.,doanh_nghiep,B
+ONET-19-1012.00,L4,Chuyên viên R&D thực phẩm chính,2–4,"Phát triển sản phẩm mới, xác định hạn sử dụng và lập hồ sơ công bố sản phẩm.",doanh_nghiep,B
+ONET-19-1012.00,L5,Chuyên gia R&D thực phẩm (Senior),4–7,"Chủ trì dự án sản phẩm chiến lược, chuyển giao công nghệ lên dây chuyền.",doanh_nghiep,B
+ONET-19-1012.00,L6,Trưởng nhóm R&D thực phẩm,6–9,"Điều phối nhóm R&D, ưu tiên danh mục sản phẩm mới theo kế hoạch kinh doanh.",doanh_nghiep,B
+ONET-19-1012.00,L7,Trưởng phòng R&D / QA thực phẩm,8–12,"Chịu trách nhiệm danh mục sản phẩm, an toàn thực phẩm và hệ thống chất lượng của nhà máy.",doanh_nghiep,B
+ONET-19-1013.00,L1,Sinh viên nông học thực tập,0,"Theo dõi thí nghiệm đồng ruộng, lấy mẫu đất, cây và ghi số liệu.",doanh_nghiep,B
+ONET-19-1013.00,L2,Kỹ thuật viên nông nghiệp,0–2,"Hướng dẫn nông dân quy trình canh tác, bón phân và phòng trừ sâu bệnh tại hiện trường.",doanh_nghiep,B
+ONET-19-1013.00,L3,Kỹ sư nông nghiệp (Junior),1–3,Phụ trách kỹ thuật một vùng trồng hoặc mô hình trình diễn.,doanh_nghiep,B
+ONET-19-1013.00,L4,Kỹ sư nông nghiệp,3–5,"Xây dựng quy trình canh tác cho một cây trồng và theo dõi năng suất, chất lượng vùng nguyên liệu.",doanh_nghiep,B
+ONET-19-1013.00,L5,"Kỹ sư nông nghiệp cao cấp / nghiên cứu viên giống, đất",5–9,"Chọn tạo, khảo nghiệm giống hoặc giải pháp dinh dưỡng đất và chuyển giao kết quả.",so_nam_kinh_nghiem,B
+ONET-19-1013.00,L6,Nghiên cứu viên chính nông nghiệp (hạng II),10–15,"Chủ nhiệm đề tài lớn về giống, đất, cây trồng và hướng dẫn nghiên cứu viên trẻ.",vien_chuc,A
+ONET-19-1013.00,L7,Nghiên cứu viên cao cấp nông nghiệp (hạng I),16+,"Định hướng chương trình nghiên cứu nông nghiệp cấp viện, quốc gia.",vien_chuc,A
+ONET-19-1029.04,L1,Sinh viên nghiên cứu / thực tập sinh học,0,"Chuẩn bị môi trường, nuôi cấy và chạy thí nghiệm theo quy trình của nhóm.",doanh_nghiep,B
+ONET-19-1029.04,L2,Trợ lý nghiên cứu sinh học (hạng IV),0–2,"Thực hiện thí nghiệm sinh học phân tử, vi sinh theo đề cương và quản lý mẫu.",vien_chuc,A
+ONET-19-1029.04,L3,Nghiên cứu viên sinh học (hạng III),1–4,"Tự thiết kế thí nghiệm, phân tích số liệu và viết báo cáo khoa học.",vien_chuc,A
+ONET-19-1029.04,L4,Nghiên cứu viên sinh học chủ trì đề tài cấp cơ sở,3–6,"Chủ trì đề tài cấp cơ sở, công bố bài báo trong nước, quốc tế.",so_nam_kinh_nghiem,B
+ONET-19-1029.04,L5,"Nghiên cứu viên sinh học chủ nhiệm đề tài cấp bộ, tỉnh",6–10,"Chủ nhiệm đề tài cấp bộ, tỉnh hoặc dự án hợp tác doanh nghiệp, hướng dẫn học viên.",so_nam_kinh_nghiem,B
+ONET-19-1029.04,L6,Nghiên cứu viên chính sinh học (hạng II),10–15,"Chủ nhiệm nhiệm vụ cấp quốc gia, có sáng chế hoặc công bố quốc tế uy tín.",vien_chuc,A
+ONET-19-1029.04,L7,Nghiên cứu viên cao cấp sinh học (hạng I),16+,"Định hướng hướng nghiên cứu của viện, dẫn dắt nhóm nghiên cứu mạnh.",vien_chuc,A
+ONET-19-1031.00,L1,Sinh viên lâm nghiệp thực tập,0,"Đi tuần rừng, điều tra ô mẫu và ghi nhận loài cùng cán bộ hiện trường.",doanh_nghiep,B
+ONET-19-1031.00,L2,Kiểm lâm viên trung cấp / kỹ thuật viên lâm nghiệp,0–2,"Tuần tra bảo vệ rừng, phát hiện vi phạm và theo dõi diễn biến rừng.",vien_chuc,A
+ONET-19-1031.00,L3,Kiểm lâm viên / chuyên viên bảo tồn,1–4,"Quản lý địa bàn rừng, điều tra đa dạng sinh học và tuyên truyền cộng đồng.",vien_chuc,A
+ONET-19-1031.00,L4,Chuyên viên bảo tồn chính,3–7,"Lập kế hoạch bảo tồn loài, sinh cảnh và giám sát chương trình phục hồi rừng.",so_nam_kinh_nghiem,B
+ONET-19-1031.00,L5,Kiểm lâm viên chính / điều phối dự án bảo tồn,8–12,"Chủ trì dự án bảo tồn, xử lý vụ việc phức tạp và phối hợp nhiều bên.",vien_chuc,A
+ONET-19-1031.00,L6,Trưởng phòng bảo tồn / Phó giám đốc vườn quốc gia,12+,Điều hành chương trình bảo tồn và quản lý bảo vệ rừng của cả khu bảo tồn.,doanh_nghiep,B
+ONET-19-1041.00,L1,"Sinh viên nghiên cứu / thực tập y sinh, dịch tễ",0,"Nhập liệu, làm sạch số liệu điều tra và hỗ trợ thu thập mẫu.",doanh_nghiep,B
+ONET-19-1041.00,L2,"Trợ lý nghiên cứu y sinh, dịch tễ (hạng IV)",0–2,"Thực hiện điều tra thực địa, xét nghiệm hoặc phân tích số liệu theo đề cương.",vien_chuc,A
+ONET-19-1041.00,L3,"Nghiên cứu viên y sinh, dịch tễ (hạng III)",1–4,"Thiết kế nghiên cứu, phân tích thống kê và viết báo cáo dịch tễ.",vien_chuc,A
+ONET-19-1041.00,L4,"Nghiên cứu viên y sinh, dịch tễ chủ trì đề tài cấp cơ sở",3–6,"Chủ trì nghiên cứu cấp cơ sở, giám sát bệnh truyền nhiễm tại địa phương.",so_nam_kinh_nghiem,B
+ONET-19-1041.00,L5,"Nghiên cứu viên y sinh, dịch tễ chủ nhiệm đề tài cấp bộ, tỉnh",6–10,"Chủ nhiệm đề tài cấp bộ, điều tra ổ dịch và đề xuất biện pháp phòng chống.",so_nam_kinh_nghiem,B
+ONET-19-1041.00,L6,"Nghiên cứu viên chính y sinh, dịch tễ (hạng II)",10–15,"Chủ nhiệm chương trình nghiên cứu, can thiệp y tế công cộng cấp quốc gia.",vien_chuc,A
+ONET-19-1041.00,L7,"Nghiên cứu viên cao cấp y sinh, dịch tễ (hạng I)",16+,"Định hướng chiến lược nghiên cứu y sinh, dịch tễ và tư vấn chính sách y tế.",vien_chuc,A
+ONET-19-2012.00,L1,Sinh viên nghiên cứu / thực tập vật lý,0,"Vận hành thiết bị đo, ghi số liệu và hỗ trợ dựng thí nghiệm.",doanh_nghiep,B
+ONET-19-2012.00,L2,Trợ lý nghiên cứu vật lý (hạng IV),0–2,Thực hiện thí nghiệm hoặc mô phỏng theo kế hoạch của nhóm.,vien_chuc,A
+ONET-19-2012.00,L3,Nghiên cứu viên vật lý (hạng III),1–4,"Tự xây dựng mô hình, phân tích dữ liệu và viết bản thảo bài báo.",vien_chuc,A
+ONET-19-2012.00,L4,Nghiên cứu viên vật lý chủ trì đề tài cấp cơ sở,3–6,Chủ trì đề tài cấp cơ sở và công bố quốc tế.,so_nam_kinh_nghiem,B
+ONET-19-2012.00,L5,"Nghiên cứu viên vật lý chủ nhiệm đề tài cấp bộ, tỉnh",6–10,"Chủ nhiệm đề tài cấp bộ hoặc quỹ NAFOSTED, hướng dẫn nghiên cứu sinh.",so_nam_kinh_nghiem,B
+ONET-19-2012.00,L6,Nghiên cứu viên chính vật lý (hạng II),10–15,"Chủ nhiệm nhiệm vụ cấp quốc gia, dẫn dắt hướng nghiên cứu của phòng thí nghiệm.",vien_chuc,A
+ONET-19-2012.00,L7,Nghiên cứu viên cao cấp vật lý (hạng I),16+,Định hướng chương trình nghiên cứu vật lý của viện và hợp tác quốc tế.,vien_chuc,A
+ONET-19-2031.00,L1,Thực tập sinh kiểm nghiệm,0,"Rửa dụng cụ, chuẩn bị hoá chất và hỗ trợ chạy mẫu dưới sự kèm cặp.",doanh_nghiep,B
+ONET-19-2031.00,L2,Nhân viên kiểm nghiệm,0–1,Chạy chỉ tiêu hoá lý cơ bản theo phương pháp chuẩn và ghi nhật ký thử nghiệm.,doanh_nghiep,B
+ONET-19-2031.00,L3,Chuyên viên kiểm nghiệm (Junior),1–2,"Tự vận hành thiết bị phân tích (HPLC, GC, AAS) và trả kết quả đúng hạn.",doanh_nghiep,B
+ONET-19-2031.00,L4,Chuyên viên kiểm nghiệm chính,2–4,Thẩm định phương pháp phân tích mới và xử lý kết quả bất thường.,doanh_nghiep,B
+ONET-19-2031.00,L5,Chuyên gia kiểm nghiệm (Senior),4–7,"Phát triển phương pháp phân tích khó, đánh giá độ không đảm bảo đo.",doanh_nghiep,B
+ONET-19-2031.00,L6,Quản lý kỹ thuật phòng thử nghiệm,6–9,"Phụ trách kỹ thuật phòng thử nghiệm, duy trì công nhận ISO/IEC 17025.",doanh_nghiep,B
+ONET-19-2031.00,L7,Trưởng phòng thí nghiệm,8–12,"Điều hành phòng thí nghiệm, ký phiếu kết quả và chịu trách nhiệm pháp lý về số liệu.",doanh_nghiep,B
+ONET-19-2042.00,L1,"Sinh viên nghiên cứu / thực tập địa chất, khí tượng thuỷ văn",0,"Ghi số liệu quan trắc, lấy mẫu đất đá và hỗ trợ khảo sát thực địa.",doanh_nghiep,B
+ONET-19-2042.00,L2,"Trợ lý nghiên cứu địa chất, khí tượng thuỷ văn (hạng IV)",0–2,Quan trắc khí tượng thuỷ văn hoặc khảo sát địa chất theo phương án được giao.,vien_chuc,A
+ONET-19-2042.00,L3,"Nghiên cứu viên địa chất, khí tượng thuỷ văn (hạng III)",1–4,"Xử lý số liệu, lập bản đồ chuyên đề và viết bản tin hoặc báo cáo khảo sát.",vien_chuc,A
+ONET-19-2042.00,L4,Dự báo viên chính / chủ trì khảo sát địa chất,3–6,Ra bản tin dự báo chính hoặc chủ trì khảo sát địa chất một khu vực.,so_nam_kinh_nghiem,B
+ONET-19-2042.00,L5,"Chủ nhiệm dự án điều tra địa chất, khí tượng thuỷ văn",6–10,"Chủ nhiệm đề tài, dự án điều tra cơ bản và đánh giá rủi ro thiên tai.",so_nam_kinh_nghiem,B
+ONET-19-2042.00,L6,"Nghiên cứu viên chính địa chất, khí tượng thuỷ văn (hạng II)",10–15,Chủ nhiệm nhiệm vụ cấp quốc gia về tài nguyên địa chất hoặc dự báo thiên tai.,vien_chuc,A
+ONET-19-2042.00,L7,"Nghiên cứu viên cao cấp địa chất, khí tượng thuỷ văn (hạng I)",16+,"Định hướng nghiên cứu, mô hình dự báo của viện và tư vấn chính sách.",vien_chuc,A
+ONET-19-3011.00,L1,Sinh viên nghiên cứu / thực tập kinh tế,0,"Thu thập, làm sạch dữ liệu kinh tế và tổng hợp tài liệu tham khảo.",doanh_nghiep,B
+ONET-19-3011.00,L2,Trợ lý nghiên cứu kinh tế (hạng IV),0–2,"Chạy mô hình, phân tích số liệu theo đề cương và viết phần báo cáo được giao.",vien_chuc,A
+ONET-19-3011.00,L3,Nghiên cứu viên kinh tế (hạng III),1–4,Tự thực hiện nghiên cứu định lượng và viết báo cáo chính sách ngắn.,vien_chuc,A
+ONET-19-3011.00,L4,Nghiên cứu viên kinh tế chủ trì đề tài cấp cơ sở,3–6,"Chủ trì đề tài cấp cơ sở, công bố bài báo và báo cáo phân tích ngành.",so_nam_kinh_nghiem,B
+ONET-19-3011.00,L5,"Nghiên cứu viên kinh tế chủ nhiệm đề tài cấp bộ, tỉnh",6–10,"Chủ nhiệm đề tài cấp bộ, dự báo kinh tế vĩ mô hoặc đánh giá tác động chính sách.",so_nam_kinh_nghiem,B
+ONET-19-3011.00,L6,Nghiên cứu viên chính kinh tế (hạng II),10–15,"Chủ nhiệm nghiên cứu cấp quốc gia, góp ý dự thảo luật và chiến lược.",vien_chuc,A
+ONET-19-3011.00,L7,Nghiên cứu viên cao cấp kinh tế (hạng I),16+,"Định hướng chương trình nghiên cứu kinh tế của viện, tư vấn cấp hoạch định chính sách.",vien_chuc,A
+ONET-19-3033.00,L1,Sinh viên tâm lý thực tập,0,"Quan sát ca, chấm trắc nghiệm tâm lý và ghi chép dưới sự giám sát.",chung_chi_hanh_nghe,B
+ONET-19-3033.00,L2,Chuyên viên tâm lý thực hành,0–1,Thực hành tâm lý lâm sàng 9 tháng tại cơ sở được giao để xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-19-3033.00,L3,Chuyên viên tâm lý lâm sàng (có giấy phép),1–3,"Đánh giá tâm lý, làm trắc nghiệm và can thiệp tâm lý cơ bản cho người bệnh.",chung_chi_hanh_nghe,A
+ONET-19-3033.00,L4,Nhà tâm lý trị liệu,3–6,"Tự theo dõi ca trị liệu dài hạn (lo âu, trầm cảm, trẻ tự kỷ) theo một liệu pháp có bằng chứng.",so_nam_kinh_nghiem,B
+ONET-19-3033.00,L5,Chuyên gia tâm lý lâm sàng / giám sát lâm sàng,6–10,"Xử lý ca khó, giám sát chuyên môn cho nhà tâm lý trẻ và tham gia hội chẩn.",so_nam_kinh_nghiem,B
+ONET-19-3033.00,L6,Trưởng đơn vị tâm lý / giám đốc trung tâm tham vấn,10+,"Điều hành đơn vị, chuẩn hoá quy trình can thiệp và đạo đức nghề nghiệp.",doanh_nghiep,B
+ONET-19-3041.00,L1,Sinh viên nghiên cứu / thực tập xã hội học,0,"Phỏng vấn, nhập phiếu khảo sát và gỡ băng phỏng vấn sâu.",doanh_nghiep,B
+ONET-19-3041.00,L2,Trợ lý nghiên cứu xã hội học (hạng IV),0–2,"Thực hiện khảo sát thực địa, mã hoá dữ liệu theo đề cương.",vien_chuc,A
+ONET-19-3041.00,L3,Nghiên cứu viên xã hội học (hạng III),1–4,"Thiết kế bảng hỏi, phân tích dữ liệu định lượng, định tính và viết báo cáo.",vien_chuc,A
+ONET-19-3041.00,L4,Nghiên cứu viên xã hội học chủ trì đề tài cấp cơ sở,3–6,Chủ trì đề tài cấp cơ sở hoặc dự án khảo sát cho tổ chức quốc tế.,so_nam_kinh_nghiem,B
+ONET-19-3041.00,L5,"Nghiên cứu viên xã hội học chủ nhiệm đề tài cấp bộ, tỉnh",6–10,"Chủ nhiệm đề tài cấp bộ, đánh giá tác động xã hội của chính sách, dự án.",so_nam_kinh_nghiem,B
+ONET-19-3041.00,L6,Nghiên cứu viên chính xã hội học (hạng II),10–15,Chủ nhiệm nghiên cứu cấp quốc gia về các vấn đề xã hội lớn.,vien_chuc,A
+ONET-19-3041.00,L7,Nghiên cứu viên cao cấp xã hội học (hạng I),16+,Định hướng chương trình nghiên cứu xã hội của viện và tư vấn chính sách.,vien_chuc,A
+ONET-19-3051.00,L1,Thực tập sinh quy hoạch,0,"Số hoá bản đồ, thu thập hiện trạng và dựng bản vẽ theo hướng dẫn.",doanh_nghiep,B
+ONET-19-3051.00,L2,Chuyên viên quy hoạch mới,0–1,"Lập bản vẽ, thống kê sử dụng đất cho một phần đồ án quy hoạch.",doanh_nghiep,B
+ONET-19-3051.00,L3,Chuyên viên quy hoạch,1–2,"Phân tích hiện trạng, đề xuất phương án cơ cấu cho đồ án quy hoạch chi tiết.",doanh_nghiep,B
+ONET-19-3051.00,L4,Chủ trì lĩnh vực quy hoạch hạng III (có chứng chỉ hành nghề),2–4,"Chủ trì một lĩnh vực (kiến trúc cảnh quan, giao thông, hạ tầng) trong đồ án quy hoạch.",chung_chi_hanh_nghe,A
+ONET-19-3051.00,L5,Chủ nhiệm lập quy hoạch hạng II,4–7,"Chủ nhiệm đồ án quy hoạch phân khu, chi tiết và bảo vệ trước hội đồng thẩm định.",chung_chi_hanh_nghe,A
+ONET-19-3051.00,L6,Chủ nhiệm lập quy hoạch hạng I,7–10,"Chủ nhiệm quy hoạch chung đô thị lớn và phối hợp liên ngành, cộng đồng.",chung_chi_hanh_nghe,A
+ONET-19-3051.00,L7,Giám đốc trung tâm / viện quy hoạch,10+,"Điều hành đơn vị tư vấn quy hoạch, duyệt đồ án và định hướng phát triển đô thị.",doanh_nghiep,B
+ONET-19-5011.00,L1,Thực tập sinh an toàn lao động,0,"Kiểm tra bình chữa cháy, đồ bảo hộ và ghi nhận mối nguy theo danh mục.",doanh_nghiep,B
+ONET-19-5011.00,L2,Nhân viên an toàn (HSE Officer),0–1,"Tuần tra hiện trường, nhắc nhở vi phạm và tổ chức huấn luyện an toàn định kỳ.",doanh_nghiep,B
+ONET-19-5011.00,L3,Chuyên viên HSE,1–3,"Đánh giá rủi ro, cấp giấy phép làm việc nguy hiểm và điều tra sự cố nhỏ.",doanh_nghiep,B
+ONET-19-5011.00,L4,Chuyên viên HSE chính,3–5,"Xây dựng quy trình an toàn, kế hoạch ứng cứu khẩn cấp và quan trắc môi trường lao động.",doanh_nghiep,B
+ONET-19-5011.00,L5,Giám sát HSE (HSE Supervisor),5–8,"Phụ trách an toàn của một dự án, nhà máy và báo cáo tai nạn lao động.",doanh_nghiep,B
+ONET-19-5011.00,L6,Trưởng phòng HSE (HSE Manager),8+,Vận hành hệ thống quản lý an toàn (ISO 45001) và chịu trách nhiệm tuân thủ pháp luật an toàn.,doanh_nghiep,B
+ONET-13-1023.00,L1,Thực tập sinh mua hàng,0,"Cập nhật báo giá, theo dõi đơn hàng và đối chiếu chứng từ nhập kho.",doanh_nghiep,B
+ONET-13-1023.00,L2,Nhân viên mua hàng,0–1,"Lập đơn mua hàng và bám nhà cung cấp để hàng về đúng hạn, đúng số lượng.",doanh_nghiep,B
+ONET-13-1023.00,L3,Chuyên viên mua hàng,1–2,"Tự tìm, so sánh báo giá và đàm phán các đơn mua thường xuyên.",doanh_nghiep,B
+ONET-13-1023.00,L4,Chuyên viên chính mua hàng,2–4,"Phụ trách một nhóm ngành hàng, đánh giá định kỳ nhà cung cấp.",doanh_nghiep,B
+ONET-13-1023.00,L5,Chuyên viên cao cấp mua hàng (Senior),4–7,Đàm phán hợp đồng khung giá trị lớn và tìm nguồn cung thay thế.,doanh_nghiep,B
+ONET-13-1023.00,L6,Trưởng nhóm / Giám sát mua hàng,6–9,"Phân việc cho nhóm mua hàng, kiểm soát ngân sách mua và tồn kho.",doanh_nghiep,B
+ONET-13-1023.00,L7,Trưởng phòng mua hàng,8–12,"Xây dựng chiến lược mua hàng, chính sách nhà cung cấp và chịu trách nhiệm tiết kiệm chi phí.",doanh_nghiep,B
+ONET-13-1031.00,L1,Thực tập sinh thẩm định bồi thường bảo hiểm,0,Nhập hồ sơ yêu cầu bồi thường và kiểm tra giấy tờ còn thiếu.,doanh_nghiep,B
+ONET-13-1031.00,L2,Nhân viên thẩm định bồi thường bảo hiểm,0–1,Giám định hiện trường vụ tổn thất nhỏ và lập biên bản theo mẫu.,doanh_nghiep,B
+ONET-13-1031.00,L3,Chuyên viên thẩm định bồi thường bảo hiểm,1–2,Tự xử lý trọn hồ sơ bồi thường đơn giản từ giám định đến đề xuất số tiền.,doanh_nghiep,B
+ONET-13-1031.00,L4,Chuyên viên chính thẩm định bồi thường bảo hiểm,2–4,"Giải quyết hồ sơ giá trị trung bình, phát hiện dấu hiệu trục lợi.",doanh_nghiep,B
+ONET-13-1031.00,L5,Chuyên viên cao cấp thẩm định bồi thường bảo hiểm (Senior),4–7,"Xử lý vụ tổn thất lớn, phức tạp và thương lượng với khách hàng, giám định độc lập.",doanh_nghiep,B
+ONET-13-1031.00,L6,Trưởng nhóm / Giám sát thẩm định bồi thường bảo hiểm,6–9,"Phân hồ sơ, duyệt phương án bồi thường của nhóm trong hạn mức được giao.",doanh_nghiep,B
+ONET-13-1031.00,L7,Trưởng phòng thẩm định bồi thường bảo hiểm,8–12,Ban hành quy trình bồi thường và chịu trách nhiệm tỷ lệ bồi thường của nghiệp vụ.,doanh_nghiep,B
+ONET-13-1041.00,L1,Thực tập sinh tuân thủ và quản lý rủi ro,0,Tổng hợp quy định mới và cập nhật danh mục kiểm tra tuân thủ.,doanh_nghiep,B
+ONET-13-1041.00,L2,Nhân viên tuân thủ và quản lý rủi ro,0–1,"Rà soát hồ sơ, giao dịch theo danh mục và báo cáo điểm bất thường.",doanh_nghiep,B
+ONET-13-1041.00,L3,Chuyên viên tuân thủ và quản lý rủi ro,1–2,Tự thực hiện một đợt kiểm tra tuân thủ và đề xuất khắc phục.,doanh_nghiep,B
+ONET-13-1041.00,L4,Chuyên viên chính tuân thủ và quản lý rủi ro,2–4,Đánh giá rủi ro cho một mảng nghiệp vụ và viết quy trình kiểm soát.,doanh_nghiep,B
+ONET-13-1041.00,L5,Chuyên viên cao cấp tuân thủ và quản lý rủi ro (Senior),4–7,"Tư vấn ban điều hành về rủi ro pháp lý của sản phẩm, dự án mới.",doanh_nghiep,B
+ONET-13-1041.00,L6,Trưởng nhóm / Giám sát tuân thủ và quản lý rủi ro,6–9,Lập kế hoạch kiểm tra năm và điều phối nhóm chuyên viên tuân thủ.,doanh_nghiep,B
+ONET-13-1041.00,L7,Trưởng phòng tuân thủ và quản lý rủi ro,8–12,Chịu trách nhiệm khung quản trị rủi ro và làm việc với cơ quan quản lý.,doanh_nghiep,B
+ONET-13-1051.00,L1,Thực tập sinh dự toán (QS),0,Đo bóc khối lượng một hạng mục nhỏ theo bản vẽ dưới sự kèm cặp.,doanh_nghiep,B
+ONET-13-1051.00,L2,Kỹ sư dự toán mới,0–1,"Bóc khối lượng, áp đơn giá và lập dự toán hạng mục được giao.",doanh_nghiep,B
+ONET-13-1051.00,L3,Kỹ sư dự toán,1–2,Lập trọn dự toán công trình nhỏ và hồ sơ thanh toán khối lượng.,doanh_nghiep,B
+ONET-13-1051.00,L4,Kỹ sư định giá xây dựng hạng III,2–4,"Lập, thẩm tra dự toán và quản lý chi phí công trình cấp III, IV.",chung_chi_hanh_nghe,A
+ONET-13-1051.00,L5,Kỹ sư định giá xây dựng hạng II,4–7,"Chủ trì quản lý chi phí dự án cấp II, kiểm soát phát sinh và quyết toán.",chung_chi_hanh_nghe,A
+ONET-13-1051.00,L6,Kỹ sư định giá xây dựng hạng I,7–10,"Chủ trì định giá dự án cấp I, đặc biệt và thẩm tra tổng mức đầu tư.",chung_chi_hanh_nghe,A
+ONET-13-1051.00,L7,Trưởng phòng quản lý chi phí (QS Manager),10+,"Quản lý đội QS, ký hồ sơ chi phí và chịu trách nhiệm ngân sách các dự án.",doanh_nghiep,B
+ONET-13-1071.00,L1,Thực tập sinh nhân sự,0,"Sàng lọc hồ sơ ứng viên, cập nhật dữ liệu nhân sự và hỗ trợ sự kiện nội bộ.",doanh_nghiep,B
+ONET-13-1071.00,L2,Nhân viên nhân sự,0–1,"Đăng tin tuyển dụng, làm thủ tục nhận việc và chấm công, bảo hiểm.",doanh_nghiep,B
+ONET-13-1071.00,L3,Chuyên viên nhân sự,1–2,Tự tuyển dụng trọn vị trí nhân viên và giải đáp chính sách cho người lao động.,doanh_nghiep,B
+ONET-13-1071.00,L4,Chuyên viên chính nhân sự,2–4,"Phụ trách một mảng (tuyển dụng, C&B hoặc đào tạo) cho một khối.",doanh_nghiep,B
+ONET-13-1071.00,L5,Chuyên viên cao cấp nhân sự (Senior),4–7,"Thiết kế chính sách lương thưởng, khung năng lực hoặc chương trình đào tạo.",doanh_nghiep,B
+ONET-13-1071.00,L6,Trưởng nhóm / Giám sát nhân sự,6–9,"Điều phối nhóm nhân sự, làm đối tác nhân sự cho các trưởng bộ phận.",doanh_nghiep,B
+ONET-13-1071.00,L7,Trưởng phòng nhân sự,8–12,"Xây dựng chiến lược nhân sự, quỹ lương và văn hoá doanh nghiệp.",doanh_nghiep,B
+ONET-13-1081.00,L1,Thực tập sinh xuất nhập khẩu,0,"Chuẩn bị chứng từ, theo dõi lịch tàu và cập nhật trạng thái lô hàng.",doanh_nghiep,B
+ONET-13-1081.00,L2,Nhân viên chứng từ xuất nhập khẩu,0–1,"Lập bộ chứng từ (invoice, packing list, C/O) và đặt chỗ với hãng tàu.",doanh_nghiep,B
+ONET-13-1081.00,L3,Nhân viên khai hải quan (có chứng chỉ nghiệp vụ),1–2,"Khai báo và làm thủ tục thông quan lô hàng, xử lý phân luồng kiểm hoá.",chung_chi_hanh_nghe,A
+ONET-13-1081.00,L4,Chuyên viên logistics,2–4,"Lên phương án vận chuyển, tối ưu cước và xử lý sự cố chậm hàng.",doanh_nghiep,B
+ONET-13-1081.00,L5,Chuyên viên logistics cao cấp (Senior),4–7,"Quản lý tuyến vận tải, hợp đồng với nhà cung cấp dịch vụ và chi phí logistics.",doanh_nghiep,B
+ONET-13-1081.00,L6,Trưởng nhóm / Giám sát logistics,6–9,"Điều phối nhóm chứng từ, kho vận và chịu trách nhiệm chỉ số giao hàng đúng hạn.",doanh_nghiep,B
+ONET-13-1081.00,L7,Trưởng phòng logistics / chuỗi cung ứng,8–12,"Thiết kế mạng lưới kho, vận tải và ngân sách chuỗi cung ứng.",doanh_nghiep,B
+ONET-13-1082.00,L1,Thực tập sinh dự án,0,"Ghi biên bản họp, cập nhật tiến độ và lưu trữ tài liệu dự án.",doanh_nghiep,B
+ONET-13-1082.00,L2,Điều phối viên dự án (Project Coordinator),0–1,"Theo dõi đầu việc, nhắc hạn và tổng hợp báo cáo tuần.",doanh_nghiep,B
+ONET-13-1082.00,L3,Trợ lý quản lý dự án,1–2,"Lập kế hoạch chi tiết, quản lý rủi ro và thay đổi cho một phần dự án.",doanh_nghiep,B
+ONET-13-1082.00,L4,Quản lý dự án (Project Manager),2–4,"Chịu trách nhiệm phạm vi, tiến độ, chi phí của một dự án vừa.",doanh_nghiep,B
+ONET-13-1082.00,L5,Quản lý dự án cao cấp (Senior PM),4–7,"Dẫn dắt dự án lớn nhiều bên liên quan, xử lý xung đột và thay đổi phạm vi.",doanh_nghiep,B
+ONET-13-1082.00,L6,Quản lý chương trình (Program Manager),6–9,"Điều phối nhiều dự án liên quan, phân bổ nguồn lực giữa các dự án.",doanh_nghiep,B
+ONET-13-1082.00,L7,Trưởng văn phòng quản lý dự án (Head of PMO),8–12,Ban hành phương pháp quản lý dự án và theo dõi danh mục dự án toàn công ty.,doanh_nghiep,B
+ONET-13-1121.00,L1,Thực tập sinh tổ chức sự kiện,0,"Chuẩn bị vật phẩm, đón khách và hỗ trợ hậu cần tại sự kiện.",doanh_nghiep,B
+ONET-13-1121.00,L2,Nhân viên tổ chức sự kiện,0–1,"Liên hệ nhà cung cấp, lập checklist và chạy chương trình theo kịch bản.",doanh_nghiep,B
+ONET-13-1121.00,L3,Chuyên viên tổ chức sự kiện,1–2,"Tự tổ chức trọn một sự kiện nhỏ (hội thảo, ra mắt) từ kế hoạch đến nghiệm thu.",doanh_nghiep,B
+ONET-13-1121.00,L4,Chuyên viên chính tổ chức sự kiện,2–4,"Viết kịch bản, lập dự toán và điều phối sự kiện quy mô vài trăm khách.",doanh_nghiep,B
+ONET-13-1121.00,L5,Chuyên viên cao cấp tổ chức sự kiện (Senior),4–7,"Phụ trách sự kiện lớn, xử lý sự cố tại chỗ và làm việc trực tiếp với khách hàng.",doanh_nghiep,B
+ONET-13-1121.00,L6,Trưởng nhóm / Giám sát tổ chức sự kiện,6–9,"Điều phối nhiều sự kiện song song, quản lý đội sự kiện và nhà thầu.",doanh_nghiep,B
+ONET-13-1121.00,L7,Trưởng phòng tổ chức sự kiện,8–12,"Chịu trách nhiệm doanh thu, lợi nhuận mảng sự kiện và quan hệ khách hàng lớn.",doanh_nghiep,B
+ONET-13-1161.00,L1,Thực tập sinh marketing,0,"Tổng hợp dữ liệu thị trường, đối thủ và hỗ trợ chạy hoạt động truyền thông.",doanh_nghiep,B
+ONET-13-1161.00,L2,Nhân viên marketing,0–1,"Triển khai kế hoạch nội dung, quảng cáo trên một kênh và báo cáo số liệu.",doanh_nghiep,B
+ONET-13-1161.00,L3,Chuyên viên marketing,1–2,"Tự chạy trọn một hoạt động (chương trình khuyến mãi, chiến dịch quảng cáo).",doanh_nghiep,B
+ONET-13-1161.00,L4,Chuyên viên chính marketing,2–4,Lên kế hoạch chiến dịch nhiều kênh và đo lường hiệu quả theo ngân sách.,doanh_nghiep,B
+ONET-13-1161.00,L5,Chuyên viên cao cấp marketing (Senior),4–7,"Quản lý một nhãn hàng hoặc mảng nghiên cứu thị trường, đề xuất định vị sản phẩm.",doanh_nghiep,B
+ONET-13-1161.00,L6,Trưởng nhóm / Giám sát marketing,6–9,"Điều phối nhóm marketing, phân bổ ngân sách giữa các kênh.",doanh_nghiep,B
+ONET-13-1161.00,L7,Trưởng phòng marketing,8–12,"Xây dựng chiến lược thương hiệu, ngân sách marketing năm và chịu trách nhiệm tăng trưởng.",doanh_nghiep,B
+ONET-13-1199.06,L1,Cộng tác viên bán hàng online,0–1,"Đăng bài, chốt đơn hộ shop khác và hưởng hoa hồng.",so_nam_kinh_nghiem,C
+ONET-13-1199.06,L2,Chủ shop online mới,0–1,"Tự nhập hàng, đăng bán trên một sàn hoặc mạng xã hội và xử lý đơn.",so_nam_kinh_nghiem,C
+ONET-13-1199.06,L3,Chủ shop có doanh thu ổn định,1–3,"Quản lý tồn kho, chạy quảng cáo và giữ đánh giá shop tốt.",so_nam_kinh_nghiem,C
+ONET-13-1199.06,L4,Chủ shop đa kênh có nhân viên,2–5,"Bán trên nhiều sàn, thuê nhân viên và làm kế toán, thuế cho hộ kinh doanh.",so_nam_kinh_nghiem,C
+ONET-13-1199.06,L5,Chủ thương hiệu bán lẻ online,4+,"Phát triển sản phẩm mang thương hiệu riêng, quản lý đội ngũ và dòng tiền doanh nghiệp.",so_nam_kinh_nghiem,C
+ONET-13-2011.00,L1,Thực tập sinh kế toán – kiểm toán,0,"Nhập chứng từ, đối chiếu sổ phụ ngân hàng và hỗ trợ kiểm kê.",doanh_nghiep,B
+ONET-13-2011.00,L2,Kế toán viên / trợ lý kiểm toán,0–1,"Hạch toán một phần hành (công nợ, kho, thuế) hoặc làm thủ tục kiểm toán được giao.",doanh_nghiep,B
+ONET-13-2011.00,L3,Kế toán tổng hợp,1–2,"Khoá sổ, lập báo cáo tài chính và tờ khai thuế hằng kỳ.",doanh_nghiep,B
+ONET-13-2011.00,L4,Kế toán trưởng doanh nghiệp nhỏ,2–4,Tổ chức bộ máy kế toán và chịu trách nhiệm số liệu báo cáo tài chính trước pháp luật.,chung_chi_hanh_nghe,A
+ONET-13-2011.00,L5,Kiểm toán viên hành nghề / chủ nhiệm kiểm toán,4–7,"Lập kế hoạch kiểm toán, quản lý nhóm hiện trường và ký báo cáo kiểm toán.",chung_chi_hanh_nghe,A
+ONET-13-2011.00,L6,Trưởng phòng tài chính – kế toán,6–9,"Quản lý phòng kế toán, dòng tiền, ngân sách và làm việc với cơ quan thuế.",doanh_nghiep,B
+ONET-13-2011.00,L7,Giám đốc tài chính (CFO),8–12,"Hoạch định tài chính, huy động vốn và chịu trách nhiệm sức khoẻ tài chính doanh nghiệp.",doanh_nghiep,B
+ONET-13-2023.00,L1,Thực tập sinh thẩm định giá,0,Thu thập thông tin tài sản so sánh và chụp ảnh hiện trạng tài sản.,doanh_nghiep,B
+ONET-13-2023.00,L2,Trợ lý thẩm định giá,0–1,"Khảo sát hiện trường, lập phiếu thu thập thông tin và dự thảo báo cáo.",doanh_nghiep,B
+ONET-13-2023.00,L3,Chuyên viên thẩm định giá,1–3,"Tự áp dụng phương pháp so sánh, thu nhập, chi phí để ước tính giá tài sản.",doanh_nghiep,B
+ONET-13-2023.00,L4,Thẩm định viên về giá (có thẻ),3–5,"Đăng ký hành nghề và ký báo cáo, chứng thư thẩm định giá trong phạm vi được giao.",chung_chi_hanh_nghe,A
+ONET-13-2023.00,L5,Thẩm định viên cao cấp,5–8,"Thẩm định tài sản phức tạp (doanh nghiệp, dự án) và soát xét báo cáo của người khác.",so_nam_kinh_nghiem,C
+ONET-13-2023.00,L6,Trưởng phòng thẩm định giá,7–10,"Phân việc, kiểm soát chất lượng chứng thư và quản lý rủi ro nghề nghiệp của phòng.",doanh_nghiep,B
+ONET-13-2023.00,L7,Giám đốc doanh nghiệp thẩm định giá,10+,"Điều hành doanh nghiệp thẩm định giá, chịu trách nhiệm pháp lý cho các chứng thư phát hành.",chung_chi_hanh_nghe,A
+ONET-13-2052.00,L1,Thực tập sinh tư vấn đầu tư,0,"Tổng hợp tin thị trường, hỗ trợ mở tài khoản và chăm sóc khách hàng.",doanh_nghiep,B
+ONET-13-2052.00,L2,Chuyên viên môi giới (có chứng chỉ hành nghề môi giới),0–1,"Tìm khách hàng, đặt lệnh và tư vấn sản phẩm cơ bản theo khuyến nghị của công ty.",chung_chi_hanh_nghe,A
+ONET-13-2052.00,L3,Chuyên viên tư vấn đầu tư,1–2,Tư vấn danh mục cho khách cá nhân và giữ tài sản khách hàng tăng trưởng.,doanh_nghiep,B
+ONET-13-2052.00,L4,Chuyên viên tư vấn đầu tư cao cấp,2–4,"Quản lý nhóm khách hàng lớn, kết hợp nhiều loại tài sản theo khẩu vị rủi ro.",doanh_nghiep,B
+ONET-13-2052.00,L5,Chuyên gia quản lý tài sản (có chứng chỉ phân tích tài chính),4–7,"Lập kế hoạch tài chính trọn đời cho khách hàng ưu tiên, tự phân tích doanh nghiệp.",chung_chi_hanh_nghe,A
+ONET-13-2052.00,L6,Trưởng nhóm tư vấn đầu tư,6–9,"Quản lý đội chuyên viên, chịu chỉ tiêu tài sản quản lý và doanh thu phí của nhóm.",doanh_nghiep,B
+ONET-13-2052.00,L7,Giám đốc quản lý tài sản / khách hàng cá nhân,8–12,"Xây dựng sản phẩm, chính sách tư vấn và chịu trách nhiệm kết quả cả khối.",doanh_nghiep,B
+ONET-13-2072.00,L1,Thực tập sinh ngân hàng,0,"Hỗ trợ thu thập hồ sơ vay, nhập dữ liệu khách hàng và lưu trữ chứng từ.",doanh_nghiep,B
+ONET-13-2072.00,L2,Chuyên viên hỗ trợ tín dụng,0–1,"Kiểm tra hồ sơ, soạn hợp đồng tín dụng, thế chấp và theo dõi giải ngân.",doanh_nghiep,B
+ONET-13-2072.00,L3,Chuyên viên quan hệ khách hàng (RM),1–2,"Tìm khách hàng vay, thẩm định khả năng trả nợ và trình hồ sơ phê duyệt.",doanh_nghiep,B
+ONET-13-2072.00,L4,Chuyên viên quan hệ khách hàng cấp cao (SRM),2–4,"Quản lý danh mục khách hàng, chịu chỉ tiêu dư nợ, huy động và nợ xấu.",doanh_nghiep,B
+ONET-13-2072.00,L5,Chuyên gia quan hệ khách hàng (SERM),4–7,"Phục vụ khách hàng doanh nghiệp lớn, cấu trúc khoản vay phức tạp.",doanh_nghiep,B
+ONET-13-2072.00,L6,Phó phòng / Trưởng nhóm khách hàng,6–9,Phê duyệt hồ sơ trong hạn mức và điều phối nhóm RM.,doanh_nghiep,B
+ONET-13-2072.00,L7,Trưởng phòng khách hàng / Giám đốc phòng giao dịch,8–12,Chịu kết quả kinh doanh và chất lượng tín dụng của phòng hoặc điểm giao dịch.,doanh_nghiep,B
+ONET-13-2081.00,L2,Kiểm tra viên trung cấp thuế,0–2,"Tiếp nhận hồ sơ khai thuế, hướng dẫn người nộp thuế và cập nhật dữ liệu quản lý.",vien_chuc,A
+ONET-13-2081.00,L3,Kiểm tra viên thuế,1–4,"Kiểm tra hồ sơ khai thuế tại trụ sở cơ quan thuế, đôn đốc thu nợ thuế.",vien_chuc,A
+ONET-13-2081.00,L4,Kiểm tra viên thuế phụ trách nhóm doanh nghiệp,3–7,"Quản lý một nhóm doanh nghiệp, kiểm tra tại trụ sở người nộp thuế.",so_nam_kinh_nghiem,C
+ONET-13-2081.00,L5,Kiểm tra viên chính thuế,7–12,"Chủ trì đoàn kiểm tra, thanh tra thuế và đề xuất xử lý vi phạm.",vien_chuc,A
+ONET-13-2081.00,L6,Phó trưởng phòng / trưởng nhóm kiểm tra thuế,10–15,"Phân công, duyệt kết luận kiểm tra và giải quyết khiếu nại về thuế.",doanh_nghiep,C
+ONET-13-2081.00,L7,Kiểm tra viên cao cấp thuế,15+,"Xây dựng quy trình, chính sách quản lý thuế và chủ trì vụ việc phức tạp.",vien_chuc,A
+ONET-13-2099.01,L1,Thực tập sinh phân tích định lượng,0,"Làm sạch dữ liệu giá, chạy kiểm định thống kê và hỗ trợ backtest.",doanh_nghiep,B
+ONET-13-2099.01,L2,Chuyên viên phân tích định lượng (Junior Quant),0–1,Lập trình mô hình định giá hoặc chiến lược đã được thiết kế sẵn.,doanh_nghiep,B
+ONET-13-2099.01,L3,Chuyên viên phân tích định lượng,1–2,"Tự xây dựng, kiểm định một mô hình rủi ro hoặc chiến lược giao dịch.",doanh_nghiep,B
+ONET-13-2099.01,L4,Chuyên viên định lượng chính,2–4,Phát triển mô hình đưa vào vận hành và theo dõi sai lệch mô hình.,doanh_nghiep,C
+ONET-13-2099.01,L5,Chuyên gia định lượng (Senior Quant),4–7,"Thiết kế phương pháp mới, thẩm định mô hình của người khác.",doanh_nghiep,C
+ONET-13-2099.01,L6,Trưởng nhóm định lượng,6–9,"Định hướng nghiên cứu, phân việc và chịu trách nhiệm hiệu quả mô hình của nhóm.",doanh_nghiep,C
+ONET-13-2099.01,L7,Giám đốc định lượng / quản trị rủi ro thị trường,8–12,"Quyết định khung mô hình rủi ro, hạn mức và báo cáo trực tiếp ban điều hành.",doanh_nghiep,C
+ONET-17-1011.00,L1,Sinh viên kiến trúc thực tập,0,"Dựng mô hình, vẽ lại hiện trạng và triển khai bản vẽ theo phác thảo của kiến trúc sư.",doanh_nghiep,B
+ONET-17-1011.00,L2,Kiến trúc sư mới / hoạ viên kiến trúc,0–1,Triển khai bản vẽ kỹ thuật và phối cảnh cho một hạng mục của dự án.,doanh_nghiep,B
+ONET-17-1011.00,L3,Kiến trúc sư thiết kế,1–3,"Thiết kế phương án công trình nhỏ và phối hợp kết cấu, cơ điện trong hồ sơ.",doanh_nghiep,B
+ONET-17-1011.00,L4,Kiến trúc sư hành nghề (có chứng chỉ hành nghề kiến trúc),3–5,"Đứng tên, chịu trách nhiệm hồ sơ thiết kế kiến trúc trong phạm vi chứng chỉ.",chung_chi_hanh_nghe,A
+ONET-17-1011.00,L5,Chủ trì thiết kế kiến trúc,5–8,"Chủ trì phần kiến trúc của dự án lớn và bảo vệ phương án trước chủ đầu tư, cơ quan thẩm định.",doanh_nghiep,B
+ONET-17-1011.00,L6,Chủ nhiệm đồ án,7–10,"Điều phối toàn bộ các bộ môn của đồ án, chịu trách nhiệm tiến độ và chất lượng hồ sơ.",doanh_nghiep,B
+ONET-17-1011.00,L7,Kiến trúc sư trưởng / Giám đốc thiết kế,10+,"Định hướng ngôn ngữ thiết kế của công ty, duyệt phương án và chịu trách nhiệm chuyên môn cao nhất.",doanh_nghiep,B
+ONET-17-1022.00,L1,Thực tập sinh trắc địa,0,"Cầm gương, ghi sổ đo và hỗ trợ tổ đo ngoài thực địa.",doanh_nghiep,B
+ONET-17-1022.00,L2,Kỹ sư trắc địa mới / kỹ thuật viên đo đạc,0–2,"Đo đạc chi tiết bằng máy toàn đạc, GNSS và xử lý số liệu theo hướng dẫn.",doanh_nghiep,B
+ONET-17-1022.00,L3,Kỹ sư trắc địa hạng II (có chứng chỉ hành nghề đo đạc),2–4,"Đo khống chế, định vị công trình và lập bản đồ địa hình, hồ sơ địa chính.",chung_chi_hanh_nghe,A
+ONET-17-1022.00,L4,Kỹ sư trắc địa chính / tổ trưởng đo,4–6,"Phụ trách một tổ đo, lập phương án kỹ thuật và kiểm tra chất lượng sản phẩm đo.",so_nam_kinh_nghiem,B
+ONET-17-1022.00,L5,Kỹ sư trắc địa hạng I,5–9,"Chủ trì dự án đo đạc, bản đồ lớn và quan trắc biến dạng công trình.",chung_chi_hanh_nghe,A
+ONET-17-1022.00,L6,Trưởng phòng đo đạc bản đồ,9+,"Điều hành các tổ đo, ký sản phẩm và chịu trách nhiệm pháp lý về số liệu đo đạc.",doanh_nghiep,B
+ONET-17-2031.00,L1,Thực tập sinh kỹ thuật y sinh,0,"Hỗ trợ kiểm tra, bảo dưỡng thiết bị y tế và ghi nhật ký thiết bị.",doanh_nghiep,B
+ONET-17-2031.00,L2,Kỹ sư y sinh mới ra trường,0–1,"Lắp đặt, hiệu chuẩn thiết bị y tế cơ bản và hướng dẫn nhân viên y tế sử dụng.",doanh_nghiep,B
+ONET-17-2031.00,L3,Kỹ sư y sinh (Junior),1–2,"Tự sửa chữa thiết bị theo chuyên dòng (máy thở, monitor, siêu âm).",doanh_nghiep,B
+ONET-17-2031.00,L4,Kỹ sư y sinh (Middle),2–4,"Phụ trách quản lý một nhóm thiết bị, lập kế hoạch bảo trì và hồ sơ kiểm định.",doanh_nghiep,B
+ONET-17-2031.00,L5,Kỹ sư y sinh cao cấp (Senior),4–7,"Xử lý thiết bị phức tạp (CT, MRI), tư vấn cấu hình khi mua sắm thiết bị.",doanh_nghiep,B
+ONET-17-2031.00,L6,Trưởng nhóm kỹ thuật y sinh (Lead),6–9,"Điều phối nhóm kỹ sư, đánh giá nhà cung cấp và an toàn thiết bị.",doanh_nghiep,B
+ONET-17-2031.00,L7,Trưởng phòng vật tư – thiết bị y tế,8–12,Quản lý toàn bộ trang thiết bị y tế của bệnh viện hoặc mảng kỹ thuật của công ty.,doanh_nghiep,B
+ONET-17-2041.00,L1,"Thực tập sinh kỹ thuật hoá, vật liệu",0,"Chuẩn bị mẫu, chạy thí nghiệm và ghi kết quả theo quy trình phòng lab.",doanh_nghiep,B
+ONET-17-2041.00,L2,"Kỹ sư hoá, vật liệu mới ra trường",0–1,Theo dõi thông số công nghệ trên dây chuyền và lập báo cáo ca.,doanh_nghiep,B
+ONET-17-2041.00,L3,"Kỹ sư hoá, vật liệu (Junior)",1–2,Phân tích sự cố chất lượng sản phẩm và đề xuất điều chỉnh công thức.,doanh_nghiep,B
+ONET-17-2041.00,L4,"Kỹ sư hoá, vật liệu (Middle)",2–4,"Phụ trách một công đoạn hoặc dòng sản phẩm, cải tiến hiệu suất phản ứng.",doanh_nghiep,B
+ONET-17-2041.00,L5,"Kỹ sư hoá, vật liệu cao cấp (Senior)",4–7,"Phát triển công thức, vật liệu mới và chuyển giao lên sản xuất quy mô lớn.",doanh_nghiep,B
+ONET-17-2041.00,L6,"Trưởng nhóm kỹ thuật hoá, vật liệu (Lead)",6–9,"Điều phối nhóm R&D hoặc công nghệ, ưu tiên dự án cải tiến.",doanh_nghiep,B
+ONET-17-2041.00,L7,Trưởng phòng công nghệ,8–12,"Chịu trách nhiệm công nghệ sản xuất, an toàn hoá chất và chi phí nguyên liệu của nhà máy.",doanh_nghiep,B
+ONET-17-2051.00,L1,Thực tập sinh xây dựng,0,"Ghi nhật ký công trường, đo bóc khối lượng và hỗ trợ kỹ sư giám sát.",doanh_nghiep,B
+ONET-17-2051.00,L2,Kỹ sư xây dựng mới ra trường,0–1,"Giám sát một hạng mục thi công, nghiệm thu công việc hằng ngày.",doanh_nghiep,B
+ONET-17-2051.00,L3,Kỹ sư xây dựng,1–2,Thiết kế hoặc giám sát trọn hạng mục kết cấu của công trình nhỏ.,doanh_nghiep,B
+ONET-17-2051.00,L4,Kỹ sư xây dựng hạng III (có chứng chỉ hành nghề),2–4,"Thiết kế, giám sát thi công công trình cấp III, IV trong phạm vi chứng chỉ.",chung_chi_hanh_nghe,A
+ONET-17-2051.00,L5,Kỹ sư xây dựng hạng II,4–7,"Chủ trì thiết kế hoặc làm giám sát trưởng công trình cấp II, III.",chung_chi_hanh_nghe,A
+ONET-17-2051.00,L6,Kỹ sư xây dựng hạng I,7–10,"Chủ nhiệm thiết kế, giám sát trưởng công trình cấp I, đặc biệt.",chung_chi_hanh_nghe,A
+ONET-17-2051.00,L7,Trưởng phòng / Giám đốc kỹ thuật xây dựng,10+,"Điều hành phòng kỹ thuật, ký duyệt hồ sơ và chịu trách nhiệm chất lượng các dự án.",doanh_nghiep,B
+ONET-17-2071.00,L1,Thực tập sinh điện,0,"Đo kiểm, vẽ lại sơ đồ điện và hỗ trợ lắp đặt dưới sự giám sát.",doanh_nghiep,B
+ONET-17-2071.00,L2,Kỹ sư điện mới ra trường,0–1,"Thiết kế chi tiết mạch điện, tủ điện và bóc tách vật tư cho một hạng mục.",doanh_nghiep,B
+ONET-17-2071.00,L3,Kỹ sư điện,1–2,Tự thiết kế hệ thống điện công trình nhỏ hoặc phụ trách vận hành một trạm biến áp.,doanh_nghiep,B
+ONET-17-2071.00,L4,Kỹ sư điện hạng III (có chứng chỉ hành nghề),2–4,"Thiết kế, giám sát hệ thống cơ – điện công trình cấp III, IV trong phạm vi chứng chỉ.",chung_chi_hanh_nghe,B
+ONET-17-2071.00,L5,Kỹ sư điện hạng II,4–7,"Chủ trì thiết kế điện công trình cấp II, giải quyết sự cố hệ thống.",chung_chi_hanh_nghe,B
+ONET-17-2071.00,L6,Kỹ sư điện hạng I,7–10,"Chủ trì thiết kế hệ thống điện công trình cấp I, nhà máy, trạm cao thế.",chung_chi_hanh_nghe,B
+ONET-17-2071.00,L7,Trưởng phòng / Giám đốc kỹ thuật điện,10+,"Điều hành phòng kỹ thuật điện, duyệt hồ sơ thiết kế và an toàn điện của doanh nghiệp.",doanh_nghiep,B
+ONET-17-2072.00,L1,"Thực tập sinh kỹ thuật điện tử, viễn thông",0,"Hàn, đo kiểm mạch và hỗ trợ thử nghiệm sản phẩm trong phòng lab.",doanh_nghiep,B
+ONET-17-2072.00,L2,"Kỹ sư điện tử, viễn thông mới ra trường",0–1,"Thiết kế mạch đơn giản, lắp ráp và kiểm thử theo đặc tả.",doanh_nghiep,B
+ONET-17-2072.00,L3,"Kỹ sư điện tử, viễn thông (Junior)",1–2,"Tự thiết kế một khối mạch (nguồn, giao tiếp) hoặc tối ưu một trạm phát sóng.",doanh_nghiep,B
+ONET-17-2072.00,L4,"Kỹ sư điện tử, viễn thông (Middle)",2–4,"Thiết kế bo mạch hoàn chỉnh, viết firmware và xử lý lỗi EMC.",doanh_nghiep,B
+ONET-17-2072.00,L5,"Kỹ sư điện tử, viễn thông cao cấp (Senior)",4–7,Chủ trì kiến trúc phần cứng của sản phẩm hoặc quy hoạch mạng vô tuyến một vùng.,doanh_nghiep,B
+ONET-17-2072.00,L6,"Trưởng nhóm kỹ thuật điện tử, viễn thông (Lead)",6–9,"Điều phối nhóm thiết kế, duyệt sơ đồ và chịu trách nhiệm tiến độ sản phẩm.",doanh_nghiep,B
+ONET-17-2072.00,L7,"Trưởng phòng kỹ thuật điện tử, viễn thông",8–12,"Định hướng công nghệ, ngân sách và lộ trình sản phẩm phần cứng của phòng.",doanh_nghiep,B
+ONET-17-2081.00,L1,Thực tập sinh kỹ thuật môi trường,0,"Lấy mẫu nước, khí, đất và ghi nhận hiện trường theo kế hoạch quan trắc.",doanh_nghiep,B
+ONET-17-2081.00,L2,Kỹ sư môi trường mới ra trường,0–1,"Vận hành hệ thống xử lý nước thải, khí thải và lập báo cáo quan trắc định kỳ.",doanh_nghiep,B
+ONET-17-2081.00,L3,Kỹ sư môi trường (Junior),1–2,"Lập hồ sơ môi trường (giấy phép môi trường, báo cáo đánh giá tác động) phần được giao.",doanh_nghiep,B
+ONET-17-2081.00,L4,Kỹ sư môi trường (Middle),2–4,Thiết kế hệ thống xử lý nhỏ và chủ trì một hồ sơ môi trường hoàn chỉnh.,doanh_nghiep,B
+ONET-17-2081.00,L5,Kỹ sư môi trường cao cấp (Senior),4–7,Chủ trì đánh giá tác động môi trường dự án lớn và làm việc với cơ quan thẩm định.,doanh_nghiep,B
+ONET-17-2081.00,L6,Trưởng nhóm kỹ thuật môi trường (Lead),6–9,"Điều phối nhóm tư vấn môi trường, kiểm soát chất lượng hồ sơ.",doanh_nghiep,B
+ONET-17-2081.00,L7,Trưởng phòng môi trường,8–12,Chịu trách nhiệm tuân thủ môi trường của doanh nghiệp hoặc mảng tư vấn môi trường.,doanh_nghiep,B
+ONET-17-2112.00,L1,Thực tập sinh kỹ thuật công nghiệp,0,"Bấm giờ thao tác, vẽ sơ đồ dòng chảy và thu thập dữ liệu sản xuất.",doanh_nghiep,B
+ONET-17-2112.00,L2,Kỹ sư công nghiệp mới ra trường,0–1,"Lập định mức thời gian, cân bằng chuyền cho một sản phẩm.",doanh_nghiep,B
+ONET-17-2112.00,L3,Kỹ sư công nghiệp (Junior),1–2,"Thực hiện dự án cải tiến (5S, Kaizen) và bố trí lại mặt bằng một khu vực.",doanh_nghiep,B
+ONET-17-2112.00,L4,Kỹ sư công nghiệp (Middle),2–4,"Lập kế hoạch sản xuất, tối ưu năng suất và giảm lãng phí theo Lean.",doanh_nghiep,B
+ONET-17-2112.00,L5,Kỹ sư công nghiệp cao cấp (Senior),4–7,"Dẫn dắt dự án cải tiến cấp nhà máy (Six Sigma, tự động hoá) và tính hiệu quả đầu tư.",doanh_nghiep,B
+ONET-17-2112.00,L6,Trưởng nhóm kỹ thuật công nghiệp (Lead),6–9,"Điều phối nhóm kỹ sư công nghiệp, đặt chỉ tiêu năng suất cho các xưởng.",doanh_nghiep,B
+ONET-17-2112.00,L7,Trưởng phòng kế hoạch – cải tiến,8–12,Xây dựng hệ thống sản xuất tinh gọn và chịu trách nhiệm hiệu suất toàn nhà máy.,doanh_nghiep,B
+ONET-17-2141.00,L1,Thực tập sinh kỹ thuật cơ khí,0,Vẽ lại chi tiết trên phần mềm CAD và hỗ trợ kiểm tra lắp ráp.,doanh_nghiep,B
+ONET-17-2141.00,L2,Kỹ sư cơ khí mới ra trường,0–1,"Thiết kế chi tiết, đồ gá đơn giản và lập bản vẽ gia công.",doanh_nghiep,B
+ONET-17-2141.00,L3,Kỹ sư cơ khí (Junior),1–2,Tự thiết kế một cụm máy hoặc phụ trách bảo trì một dây chuyền.,doanh_nghiep,B
+ONET-17-2141.00,L4,Kỹ sư cơ khí (Middle),2–4,"Thiết kế máy hoàn chỉnh, tính bền và chọn vật liệu, linh kiện.",doanh_nghiep,B
+ONET-17-2141.00,L5,Kỹ sư cơ khí cao cấp (Senior),4–7,"Chủ trì thiết kế máy phức tạp, phân tích mô phỏng và xử lý hỏng hóc lớn.",doanh_nghiep,B
+ONET-17-2141.00,L6,Trưởng nhóm kỹ thuật cơ khí (Lead),6–9,"Điều phối nhóm thiết kế hoặc bảo trì, duyệt bản vẽ và kế hoạch.",doanh_nghiep,B
+ONET-17-2141.00,L7,Trưởng phòng kỹ thuật cơ khí,8–12,"Quản lý phòng kỹ thuật cơ khí, ngân sách thiết bị và tiêu chuẩn kỹ thuật.",doanh_nghiep,B
+ONET-17-2141.02,L1,Thực tập sinh kỹ thuật ô tô,0,"Hỗ trợ đo kiểm linh kiện, ghi dữ liệu thử nghiệm xe.",doanh_nghiep,B
+ONET-17-2141.02,L2,Kỹ sư ô tô mới ra trường,0–1,"Thiết kế, kiểm tra một chi tiết hoặc lập hướng dẫn công việc lắp ráp xe.",doanh_nghiep,B
+ONET-17-2141.02,L3,Kỹ sư ô tô (Junior),1–2,"Phụ trách một hệ thống (khung gầm, điện thân xe) trong dự án xe mới.",doanh_nghiep,B
+ONET-17-2141.02,L4,Kỹ sư ô tô (Middle),2–4,"Thiết kế, thử nghiệm hệ thống xe và làm việc với nhà cung cấp linh kiện.",doanh_nghiep,B
+ONET-17-2141.02,L5,Kỹ sư ô tô cao cấp (Senior),4–7,"Chủ trì tích hợp hệ thống xe, xử lý lỗi chất lượng toàn xe.",doanh_nghiep,B
+ONET-17-2141.02,L6,Trưởng nhóm kỹ thuật ô tô (Lead),6–9,"Điều phối nhóm kỹ sư theo mảng (động cơ, điện, thân vỏ) của một dòng xe.",doanh_nghiep,B
+ONET-17-2141.02,L7,Trưởng phòng kỹ thuật ô tô,8–12,Quản lý phòng phát triển sản phẩm hoặc kỹ thuật sản xuất ô tô.,doanh_nghiep,B
+ONET-17-2151.00,L1,"Thực tập sinh kỹ thuật mỏ, dầu khí",0,"Ghi chép số liệu khoan, nổ mìn hoặc khai thác và hỗ trợ kỹ sư hiện trường.",doanh_nghiep,B
+ONET-17-2151.00,L2,"Kỹ sư mỏ, dầu khí mới ra trường",0–1,Theo dõi một công đoạn khai thác hoặc vận hành giếng theo ca.,doanh_nghiep,B
+ONET-17-2151.00,L3,"Kỹ sư mỏ, dầu khí (Junior)",1–2,"Lập hộ chiếu khoan nổ, thiết kế khai thác ngắn hạn cho một khu vực.",doanh_nghiep,B
+ONET-17-2151.00,L4,"Kỹ sư mỏ, dầu khí (Middle)",2–4,"Phụ trách kỹ thuật một khu mỏ hoặc cụm giếng, tối ưu sản lượng.",doanh_nghiep,B
+ONET-17-2151.00,L5,"Kỹ sư mỏ, dầu khí cao cấp (Senior)",4–7,"Lập kế hoạch khai thác dài hạn, đánh giá trữ lượng và an toàn mỏ.",doanh_nghiep,B
+ONET-17-2151.00,L6,Quản đốc mỏ / kỹ sư trưởng giàn,6–9,"Chỉ huy kỹ thuật một ca, công trường hoặc giàn khai thác.",doanh_nghiep,B
+ONET-17-2151.00,L7,Giám đốc điều hành mỏ,8–12,"Điều hành kỹ thuật cả mỏ, chịu trách nhiệm sản lượng và an toàn khai thác.",doanh_nghiep,B
+ONET-17-2199.05,L1,"Thực tập sinh kỹ thuật cơ điện tử, robot",0,"Lắp ráp, đi dây cảm biến, cơ cấu chấp hành và kiểm tra hoạt động.",doanh_nghiep,B
+ONET-17-2199.05,L2,"Kỹ sư cơ điện tử, robot mới ra trường",0–1,"Lập trình PLC, robot cho một trạm theo chương trình mẫu.",doanh_nghiep,B
+ONET-17-2199.05,L3,"Kỹ sư cơ điện tử, robot (Junior)",1–2,"Tự tích hợp một trạm tự động (cơ khí, điện, điều khiển) và chạy thử.",doanh_nghiep,B
+ONET-17-2199.05,L4,"Kỹ sư cơ điện tử, robot (Middle)",2–4,"Thiết kế dây chuyền tự động nhỏ, lập trình robot và xử lý lỗi tích hợp.",doanh_nghiep,B
+ONET-17-2199.05,L5,"Kỹ sư cơ điện tử, robot cao cấp (Senior)",4–7,"Chủ trì giải pháp tự động hoá cả dây chuyền, tính năng suất và an toàn máy.",doanh_nghiep,B
+ONET-17-2199.05,L6,"Trưởng nhóm kỹ thuật cơ điện tử, robot (Lead)",6–9,"Điều phối nhóm tích hợp hệ thống, phân việc và duyệt thiết kế.",doanh_nghiep,B
+ONET-17-2199.05,L7,"Trưởng phòng kỹ thuật cơ điện tử, robot",8–12,"Quản lý phòng tự động hoá, chọn công nghệ và chịu trách nhiệm hiệu quả đầu tư.",doanh_nghiep,B
+ONET-27-1013.00,L2,Trợ lý xưởng vẽ / hoạ sĩ tập sự,0–2,"Chuẩn bị vật liệu, vẽ lót và hoàn thiện chi tiết theo phác thảo của hoạ sĩ chính.",doanh_nghiep,B
+ONET-27-1013.00,L3,Hoạ sĩ hạng III,1–3,"Tự sáng tác và hoàn thành tác phẩm theo đề tài được giao, tham gia triển lãm nhóm.",vien_chuc,A
+ONET-27-1013.00,L4,Hoạ sĩ có triển lãm cá nhân,3–6,Xây dựng bộ tác phẩm có phong cách riêng và tổ chức triển lãm hoặc bán tranh theo đặt hàng.,so_nam_kinh_nghiem,C
+ONET-27-1013.00,L5,Hoạ sĩ hạng II,6–10,"Chủ trì sáng tác tác phẩm lớn (tranh tường, tượng đài, minh hoạ trọn bộ) và hướng dẫn hoạ sĩ trẻ.",vien_chuc,A
+ONET-27-1013.00,L6,Hoạ sĩ hạng I,10+,"Định hướng nghệ thuật cho dự án cấp quốc gia, có tác phẩm đạt giải hoặc được bảo tàng sưu tập.",vien_chuc,A
+ONET-27-1014.00,L1,Thực tập sinh 2D/3D,0,"Làm các shot đơn giản (in-between, dọn hình, dựng mô hình phụ) dưới sự kèm cặp.",doanh_nghiep,B
+ONET-27-1014.00,L2,Hoạ sĩ diễn hoạt mới (Junior Animator),0–1,Hoàn thành shot diễn hoạt hoặc kỹ xảo ngắn theo storyboard và nhận xét của trưởng nhóm.,doanh_nghiep,B
+ONET-27-1014.00,L3,Hoạ sĩ diễn hoạt (Animator),1–2,"Tự xử lý trọn shot đúng tiến độ, sửa theo góp ý của đạo diễn.",doanh_nghiep,B
+ONET-27-1014.00,L4,Hoạ sĩ diễn hoạt chính (Mid Animator),2–4,"Đảm nhận các shot khó (diễn cảm, hiệu ứng mô phỏng) và giữ đồng nhất phong cách.",doanh_nghiep,B
+ONET-27-1014.00,L5,Hoạ sĩ diễn hoạt cao cấp (Senior),4–7,"Giải quyết shot phức tạp nhất, viết quy trình kỹ thuật và kèm hoạ sĩ mới.",doanh_nghiep,B
+ONET-27-1014.00,L6,Trưởng nhóm diễn hoạt / kỹ xảo (Lead),6–9,"Phân shot, kiểm tra chất lượng và chịu trách nhiệm tiến độ của cả nhóm.",doanh_nghiep,B
+ONET-27-1014.00,L7,Giám sát diễn hoạt / kỹ xảo (Supervisor),8–12,"Chốt giải pháp hình ảnh cho cả dự án và làm việc trực tiếp với đạo diễn, khách hàng.",doanh_nghiep,B
+ONET-27-1021.00,L1,Thực tập sinh thiết kế sản phẩm,0,"Vẽ phác thảo, dựng mô hình 3D và làm mẫu thử theo yêu cầu của nhóm.",doanh_nghiep,B
+ONET-27-1021.00,L2,Nhân viên thiết kế sản phẩm,0–1,Dựng bản vẽ 3D và bản vẽ kỹ thuật cho chi tiết được giao.,doanh_nghiep,B
+ONET-27-1021.00,L3,Nhà thiết kế sản phẩm (Junior),1–2,Thiết kế trọn một sản phẩm đơn giản từ ý tưởng đến hồ sơ gửi xưởng.,doanh_nghiep,B
+ONET-27-1021.00,L4,Nhà thiết kế sản phẩm,2–4,"Thiết kế sản phẩm theo nghiên cứu người dùng, phối hợp kỹ sư để sản xuất được.",doanh_nghiep,B
+ONET-27-1021.00,L5,Nhà thiết kế sản phẩm cao cấp (Senior),4–7,"Dẫn dắt thiết kế một dòng sản phẩm, quyết định vật liệu, kiểu dáng và chi phí khuôn.",doanh_nghiep,B
+ONET-27-1021.00,L6,Trưởng nhóm thiết kế (Lead Designer),6–9,"Phân việc, duyệt bản vẽ và giữ ngôn ngữ thiết kế chung của thương hiệu.",doanh_nghiep,B
+ONET-27-1021.00,L7,Giám đốc thiết kế sản phẩm,8–12,Định hướng thiết kế cho toàn bộ danh mục sản phẩm và quản lý ngân sách phòng thiết kế.,doanh_nghiep,B
+ONET-27-1022.00,L1,Thực tập sinh thiết kế thời trang,0,"Hỗ trợ tìm vải, phụ liệu, vẽ phác thảo và theo dõi may mẫu.",doanh_nghiep,B
+ONET-27-1022.00,L2,Trợ lý thiết kế,0–1,"Lên bản vẽ kỹ thuật (tech pack) và theo dõi rập, may mẫu cho nhà thiết kế.",doanh_nghiep,B
+ONET-27-1022.00,L3,Nhà thiết kế thời trang (Junior),1–2,Thiết kế một nhóm sản phẩm trong bộ sưu tập theo xu hướng được duyệt.,doanh_nghiep,B
+ONET-27-1022.00,L4,Nhà thiết kế thời trang,2–4,"Chịu trách nhiệm trọn một dòng hàng từ ý tưởng, mẫu thử đến lên chuyền.",doanh_nghiep,B
+ONET-27-1022.00,L5,Nhà thiết kế cao cấp (Senior Designer),4–7,"Xây dựng bộ sưu tập theo mùa, cân đối giá thành và định hướng cho thiết kế trẻ.",doanh_nghiep,B
+ONET-27-1022.00,L6,Nhà thiết kế trưởng (Head Designer),6–9,Quyết định concept các bộ sưu tập và duyệt toàn bộ mẫu trước khi sản xuất.,doanh_nghiep,B
+ONET-27-1022.00,L7,Giám đốc sáng tạo thương hiệu,8–12,Định hình bản sắc thương hiệu thời trang và chịu trách nhiệm hiệu quả kinh doanh của sản phẩm.,doanh_nghiep,B
+ONET-27-1024.00,L1,Thực tập sinh thiết kế đồ hoạ,0,"Chỉnh sửa ấn phẩm có sẵn, cắt ghép hình ảnh và dàn trang theo mẫu.",doanh_nghiep,B
+ONET-27-1024.00,L2,Nhân viên thiết kế đồ hoạ,0–1,"Thiết kế banner, ấn phẩm mạng xã hội theo bộ nhận diện có sẵn.",doanh_nghiep,B
+ONET-27-1024.00,L3,Chuyên viên thiết kế đồ hoạ (Junior),1–2,Tự thực hiện trọn một ấn phẩm từ brief đến file in hoặc file đăng.,doanh_nghiep,B
+ONET-27-1024.00,L4,Chuyên viên thiết kế đồ hoạ,2–4,Thiết kế key visual cho chiến dịch và xử lý file in ấn đúng kỹ thuật.,doanh_nghiep,B
+ONET-27-1024.00,L5,Chuyên viên thiết kế cao cấp (Senior Designer),4–7,Xây dựng bộ nhận diện thương hiệu và hệ thống thiết kế cho cả chiến dịch.,doanh_nghiep,B
+ONET-27-1024.00,L6,Trưởng nhóm thiết kế (Lead Designer),6–9,"Phân việc, duyệt ấn phẩm của nhóm và bảo vệ phương án trước khách hàng.",doanh_nghiep,B
+ONET-27-1024.00,L7,Giám đốc nghệ thuật (Art Director),8–12,Định hướng hình ảnh cho các chiến dịch và chịu trách nhiệm chất lượng sáng tạo của phòng.,doanh_nghiep,B
+ONET-27-1025.00,L1,Thực tập sinh thiết kế nội thất,0,"Đo đạc hiện trạng, vẽ lại mặt bằng và dựng mô hình 3D đơn giản.",doanh_nghiep,B
+ONET-27-1025.00,L2,Hoạ viên / diễn hoạ 3D,0–1,Dựng phối cảnh 3D và triển khai bản vẽ thi công theo thiết kế được duyệt.,doanh_nghiep,B
+ONET-27-1025.00,L3,Nhà thiết kế nội thất (Junior),1–2,"Thiết kế trọn một căn hộ hoặc phòng nhỏ, bóc khối lượng vật tư.",doanh_nghiep,B
+ONET-27-1025.00,L4,Nhà thiết kế nội thất,2–4,Tư vấn trực tiếp khách hàng và thiết kế công trình nhà ở hoàn chỉnh.,doanh_nghiep,B
+ONET-27-1025.00,L5,Chủ trì thiết kế nội thất (Senior),4–7,"Chủ trì thiết kế công trình lớn (văn phòng, khách sạn) và giám sát tác giả tại công trường.",doanh_nghiep,B
+ONET-27-1025.00,L6,Trưởng nhóm thiết kế,6–9,"Phân công dự án, duyệt hồ sơ và kiểm soát chi phí thiết kế của nhóm.",doanh_nghiep,B
+ONET-27-1025.00,L7,Giám đốc thiết kế,8–12,"Định hướng phong cách của công ty, ký duyệt hồ sơ và chịu trách nhiệm doanh thu mảng thiết kế.",doanh_nghiep,B
+ONET-27-2011.00,L2,Diễn viên hạng IV,0–2,"Đóng vai phụ, vai quần chúng và tham gia đầy đủ lịch tập của đoàn.",vien_chuc,A
+ONET-27-2011.00,L3,Diễn viên hạng III,1–4,"Đảm nhận vai có thoại, tự phân tích nhân vật theo chỉ đạo của đạo diễn.",vien_chuc,A
+ONET-27-2011.00,L4,Diễn viên đóng vai chính,3–6,"Gánh vai chính trong vở diễn hoặc phim, giữ chất lượng diễn qua nhiều suất.",so_nam_kinh_nghiem,C
+ONET-27-2011.00,L5,Diễn viên hạng II,6–10,"Đóng vai chính vở lớn, dàn dựng cảnh và hướng dẫn diễn viên trẻ.",vien_chuc,A
+ONET-27-2011.00,L6,Diễn viên hạng I / Nghệ sĩ ưu tú,10+,"Là gương mặt chủ lực của đơn vị nghệ thuật, tác phẩm đạt giải cấp quốc gia.",vien_chuc,A
+ONET-27-2012.00,L1,Thực tập sinh sản xuất,0,"Hỗ trợ đoàn phim: chép kịch bản phân cảnh, quản lý đạo cụ, liên hệ bối cảnh.",doanh_nghiep,B
+ONET-27-2012.00,L2,Trợ lý đạo diễn / trợ lý sản xuất,0–2,"Lập lịch quay, điều phối diễn viên và theo dõi tiến độ từng ngày quay.",doanh_nghiep,B
+ONET-27-2012.00,L3,Đạo diễn hạng III,2–4,"Đạo diễn chương trình, phim ngắn hoặc vở nhỏ từ kịch bản đến bản dựng cuối.",vien_chuc,A
+ONET-27-2012.00,L4,"Đạo diễn chương trình, phim dài",4–7,"Chỉ đạo trọn một phim truyện, vở diễn hoặc chương trình truyền hình định kỳ.",so_nam_kinh_nghiem,C
+ONET-27-2012.00,L5,Đạo diễn hạng II,7–12,Dàn dựng tác phẩm quy mô lớn và quyết định toàn bộ ngôn ngữ nghệ thuật của tác phẩm.,vien_chuc,A
+ONET-27-2012.00,L6,Đạo diễn hạng I,12+,"Chủ trì tác phẩm trọng điểm cấp quốc gia, có tác phẩm đạt giải lớn.",vien_chuc,A
+ONET-27-2012.00,L7,Nhà sản xuất điều hành / Giám đốc hãng phim,12+,"Chọn dự án, huy động vốn và chịu trách nhiệm lãi lỗ của cả danh mục phim, chương trình.",doanh_nghiep,B
+ONET-27-2021.00,L1,Vận động viên năng khiếu,0–2,Tập luyện theo giáo án tuyến năng khiếu và thi đấu giải trẻ.,doanh_nghiep,B
+ONET-27-2021.00,L2,Vận động viên cấp 2,1–3,"Đạt chuẩn thành tích cấp 2 của môn và thi đấu giải cấp tỉnh, quốc gia lứa trẻ.",chung_chi_hanh_nghe,A
+ONET-27-2021.00,L3,Vận động viên cấp 1,2–5,"Đạt chuẩn cấp 1, là thành viên đội tuyển tỉnh/ngành tại giải vô địch quốc gia.",chung_chi_hanh_nghe,A
+ONET-27-2021.00,L4,Vận động viên kiện tướng,4–8,Đạt chuẩn kiện tướng hoặc dự SEA Games/ASIAD/Olympic trong màu áo đội tuyển quốc gia.,chung_chi_hanh_nghe,A
+ONET-27-2021.00,L5,Huấn luyện viên (hạng III),6–10,Lập và thực hiện giáo án huấn luyện cho một nhóm vận động viên.,vien_chuc,A
+ONET-27-2021.00,L6,Huấn luyện viên chính (hạng II),9–14,"Phụ trách chuyên môn một đội tuyển tỉnh/ngành, chịu trách nhiệm thành tích giải.",vien_chuc,A
+ONET-27-2021.00,L7,Huấn luyện viên cao cấp (hạng I),14+,"Xây dựng chiến lược huấn luyện dài hạn, dẫn đội tuyển quốc gia ở giải quốc tế.",vien_chuc,A
+ONET-27-2031.00,L2,Diễn viên múa hạng IV,0–2,"Múa trong đội hình tập thể, nắm vững các tổ hợp động tác của tiết mục.",vien_chuc,A
+ONET-27-2031.00,L3,Diễn viên múa hạng III,2–5,"Múa các vai nhóm nhỏ, đôi, giữ kỹ thuật ổn định qua nhiều suất diễn.",vien_chuc,A
+ONET-27-2031.00,L4,Diễn viên múa chính (solist),4–8,Đảm nhận vai múa chính hoặc độc diễn trong chương trình của đoàn.,so_nam_kinh_nghiem,C
+ONET-27-2031.00,L5,Diễn viên múa hạng II,7–12,"Múa vai chính tác phẩm lớn, tập dượt và sửa động tác cho diễn viên trẻ.",vien_chuc,A
+ONET-27-2031.00,L6,Biên đạo múa / huấn luyện múa,10+,"Sáng tác, dàn dựng tiết mục múa và huấn luyện cả đoàn.",vien_chuc,A
+ONET-27-2042.00,L1,"Học viên thanh nhạc, nhạc cụ",0,"Luyện kỹ thuật, hát hoặc chơi bè trong buổi diễn của trường, câu lạc bộ.",doanh_nghiep,B
+ONET-27-2042.00,L2,"Ca sĩ, nhạc công hạng IV",0–2,"Biểu diễn trong dàn nhạc, hợp xướng hoặc tốp ca theo chương trình của đoàn.",vien_chuc,C
+ONET-27-2042.00,L3,"Ca sĩ, nhạc công hạng III",2–5,"Hát chính hoặc chơi bè chính trong tiết mục, tự xử lý tác phẩm được giao.",vien_chuc,C
+ONET-27-2042.00,L4,"Ca sĩ, nghệ sĩ độc tấu",4–8,"Biểu diễn độc lập một chương trình, có bản thu âm hoặc khán giả riêng.",so_nam_kinh_nghiem,C
+ONET-27-2042.00,L5,"Ca sĩ, nhạc công hạng II",7–12,"Giữ vai trò chủ lực của đoàn, dàn dựng phần nhạc và kèm nghệ sĩ trẻ.",vien_chuc,C
+ONET-27-2042.00,L6,"Nhạc sĩ, chỉ huy âm nhạc",10+,"Sáng tác, phối khí hoặc chỉ huy dàn nhạc, quyết định chất lượng âm nhạc của chương trình.",vien_chuc,A
+ONET-27-3023.00,L1,Cộng tác viên / thực tập sinh báo chí,0,"Lấy tin, chụp ảnh và viết tin ngắn theo phân công của ban.",doanh_nghiep,B
+ONET-27-3023.00,L2,Phóng viên tập sự,0–2,"Viết tin, bài theo đề tài được giao và tích luỹ đủ thời gian để xét thẻ nhà báo.",chung_chi_hanh_nghe,A
+ONET-27-3023.00,L3,"Phóng viên (có thẻ nhà báo, hạng III)",2–4,"Tự đề xuất đề tài, tác nghiệp độc lập và chịu trách nhiệm về độ chính xác của bài.",vien_chuc,A
+ONET-27-3023.00,L4,Phóng viên chính chuyên mục,4–7,"Phụ trách một mảng tin, viết loạt bài điều tra hoặc phóng sự dài kỳ.",so_nam_kinh_nghiem,C
+ONET-27-3023.00,L5,Phóng viên hạng II,7–12,Thực hiện tác phẩm chuyên sâu cấp quốc gia và hướng dẫn phóng viên trẻ.,vien_chuc,A
+ONET-27-3023.00,L6,Phóng viên hạng I / bình luận viên,12+,"Viết bình luận, chuyên luận định hướng dư luận, có tác phẩm đạt giải báo chí lớn.",vien_chuc,A
+ONET-27-3023.00,L7,Trưởng ban biên tập,10+,"Lên kế hoạch nội dung, phân công phóng viên và duyệt bài của cả ban.",doanh_nghiep,B
+ONET-27-3041.00,L1,Thực tập sinh biên tập,0,"Đọc soát lỗi chính tả, kiểm tra trích dẫn và định dạng bản thảo.",doanh_nghiep,B
+ONET-27-3041.00,L2,Biên tập viên tập sự,0–2,"Biên tập tin, bài ngắn và hoàn thiện bản thảo theo quy chuẩn của toà soạn hoặc nhà xuất bản.",doanh_nghiep,B
+ONET-27-3041.00,L3,Biên tập viên hạng III,2–4,"Biên tập trọn bài, trang, cuốn sách được giao và chịu trách nhiệm nội dung đã duyệt.",vien_chuc,A
+ONET-27-3041.00,L4,Biên tập viên chính chuyên mục,4–7,"Phụ trách một chuyên mục, tủ sách hoặc chương trình, lên kế hoạch đề tài định kỳ.",so_nam_kinh_nghiem,C
+ONET-27-3041.00,L5,Biên tập viên hạng II,7–12,"Thẩm định nội dung khó, nhạy cảm và hướng dẫn biên tập viên trẻ.",vien_chuc,A
+ONET-27-3041.00,L6,Biên tập viên hạng I / Thư ký toà soạn,12+,Điều phối toàn bộ dòng nội dung của toà soạn và ra quyết định biên tập cuối cùng.,vien_chuc,A
+ONET-27-3041.00,L7,Phó Tổng biên tập,12+,Chỉ đạo nội dung một khối ấn phẩm và chịu trách nhiệm trước Tổng biên tập.,doanh_nghiep,B
+ONET-27-3043.00,L1,Thực tập sinh viết nội dung,0,"Viết bài ngắn, chú thích ảnh và tổng hợp tư liệu theo dàn ý có sẵn.",doanh_nghiep,B
+ONET-27-3043.00,L2,Nhân viên viết nội dung (Content Writer),0–1,"Viết bài website, mạng xã hội theo lịch đăng và giọng văn thương hiệu.",doanh_nghiep,B
+ONET-27-3043.00,L3,Chuyên viên nội dung (Junior Copywriter),1–2,"Tự lên ý tưởng và viết trọn bài, kịch bản ngắn cho một kênh.",doanh_nghiep,B
+ONET-27-3043.00,L4,Chuyên viên nội dung (Copywriter),2–4,Viết thông điệp chính và kịch bản cho chiến dịch nhiều kênh.,doanh_nghiep,B
+ONET-27-3043.00,L5,Chuyên viên nội dung cao cấp (Senior Copywriter),4–7,"Định hình giọng văn thương hiệu, viết ý tưởng lớn và sửa bài cho người viết khác.",doanh_nghiep,B
+ONET-27-3043.00,L6,Trưởng nhóm nội dung (Content Lead),6–9,"Lập kế hoạch nội dung, phân việc và chịu trách nhiệm chỉ số hiệu quả của kênh.",doanh_nghiep,B
+ONET-27-3043.00,L7,Giám đốc sáng tạo nội dung,8–12,Định hướng chiến lược nội dung cho các thương hiệu và duyệt ý tưởng cuối cùng.,doanh_nghiep,B
+ONET-27-3091.00,L1,Thực tập sinh dịch thuật,0,"Dịch tài liệu ngắn, lập bảng thuật ngữ và soát bản dịch dưới sự kèm cặp.",doanh_nghiep,B
+ONET-27-3091.00,L2,Cộng tác viên biên dịch,0–1,"Dịch tài liệu thông dụng đúng hạn, đúng thuật ngữ khách hàng yêu cầu.",doanh_nghiep,B
+ONET-27-3091.00,L3,Biên dịch viên hạng III,1–3,"Dịch và hiệu đính tài liệu chuyên ngành, phiên dịch họp nhỏ.",vien_chuc,A
+ONET-27-3091.00,L4,Biên – phiên dịch viên chính,3–6,"Phiên dịch đuổi cho hội thảo, đàm phán và hiệu đính bản dịch của người khác.",so_nam_kinh_nghiem,C
+ONET-27-3091.00,L5,Biên dịch viên hạng II,6–10,"Dịch văn bản quan trọng (pháp lý, ngoại giao), thống nhất thuật ngữ cho cả đơn vị.",vien_chuc,A
+ONET-27-3091.00,L6,Biên dịch viên hạng I / phiên dịch hội nghị (cabin),10+,Dịch song song tại hội nghị cấp cao và chịu trách nhiệm chất lượng dịch cuối cùng.,vien_chuc,A
+ONET-27-4014.00,L2,"Kỹ thuật viên âm thanh, ánh sáng tập sự",0–1,"Lắp đặt, đi dây, kiểm tra thiết bị trước buổi diễn hoặc buổi phát.",doanh_nghiep,B
+ONET-27-4014.00,L3,"Kỹ thuật viên vận hành âm thanh, ánh sáng",1–3,"Tự vận hành bàn trộn, đèn cho chương trình nhỏ hoặc ca phát sóng thường.",doanh_nghiep,B
+ONET-27-4014.00,L4,Âm thanh viên hạng III,3–6,"Thu, xử lý âm thanh và chịu trách nhiệm chất lượng tiếng cho chương trình được giao.",vien_chuc,A
+ONET-27-4014.00,L5,Âm thanh viên hạng II,6–10,"Thiết kế hệ thống âm thanh cho chương trình lớn, xử lý sự cố khi phát trực tiếp.",vien_chuc,A
+ONET-27-4014.00,L6,Âm thanh viên hạng I / Kỹ sư âm thanh trưởng,10+,"Định chuẩn kỹ thuật âm thanh cho cả đài, nhà hát và duyệt phương án thiết bị.",vien_chuc,A
+ONET-27-4031.00,L2,Trợ lý quay phim / dựng phim,0–1,"Chuẩn bị máy, ánh sáng, sao lưu dữ liệu và dựng thô theo kịch bản.",doanh_nghiep,B
+ONET-27-4031.00,L3,"Quay phim, dựng phim viên",1–3,"Tự quay hoặc dựng trọn một phóng sự, video ngắn đúng yêu cầu biên tập.",doanh_nghiep,B
+ONET-27-4031.00,L4,Quay phim / dựng phim hạng III,3–6,"Quay, dựng chương trình định kỳ và chịu trách nhiệm chất lượng hình ảnh phát sóng.",vien_chuc,A
+ONET-27-4031.00,L5,Quay phim / dựng phim hạng II,6–10,"Quay chính phim tài liệu, phim truyện hoặc chương trình lớn, xử lý cảnh khó.",vien_chuc,A
+ONET-27-4031.00,L6,Quay phim hạng I / Đạo diễn hình ảnh,10+,Quyết định phong cách hình ảnh của cả tác phẩm và chỉ đạo tổ quay.,vien_chuc,A
+ONET-11-1021.00,L5,Giám sát vận hành (Supervisor),4–7,"Điều phối một ca hoặc một tổ, giữ chỉ tiêu năng suất, chất lượng hằng ngày.",doanh_nghiep,B
+ONET-11-1021.00,L6,Trưởng bộ phận vận hành,6–9,"Quản lý một bộ phận, lập kế hoạch nguồn lực và cải tiến quy trình.",doanh_nghiep,B
+ONET-11-1021.00,L7,Quản lý vận hành (Operations Manager),8–12,"Điều phối nhiều bộ phận, kiểm soát chi phí vận hành và chỉ số dịch vụ.",doanh_nghiep,B
+ONET-11-1021.00,L8,Giám đốc vận hành (COO),12–18,"Chịu trách nhiệm toàn bộ hoạt động vận hành, ngân sách và cơ cấu tổ chức của công ty.",doanh_nghiep,B
+ONET-11-1021.00,L9,Tổng giám đốc (CEO),15+,"Đặt chiến lược, chịu trách nhiệm kết quả kinh doanh trước hội đồng quản trị, chủ sở hữu.",doanh_nghiep,B
+ONET-11-3012.00,L3,Chuyên viên hành chính,1–3,"Quản lý văn thư, tài sản, hợp đồng dịch vụ văn phòng và hậu cần sự kiện nội bộ.",doanh_nghiep,B
+ONET-11-3012.00,L4,Giám sát hành chính,3–5,"Phân việc cho nhóm hành chính, lễ tân, tài xế và kiểm soát chi phí văn phòng.",doanh_nghiep,B
+ONET-11-3012.00,L5,Phó phòng hành chính,5–8,"Quản lý mua sắm, cơ sở vật chất và quy trình hành chính của một khối hoặc chi nhánh.",doanh_nghiep,B
+ONET-11-3012.00,L6,Trưởng phòng hành chính,7–10,"Ban hành quy chế hành chính, quản lý ngân sách văn phòng và an ninh, an toàn trụ sở.",doanh_nghiep,B
+ONET-11-3012.00,L7,Giám đốc hành chính,10+,"Điều hành toàn bộ dịch vụ hành chính, cơ sở vật chất của công ty nhiều chi nhánh.",doanh_nghiep,B
+ONET-11-3051.00,L4,Trưởng ca / giám sát sản xuất,2–4,"Chỉ huy sản xuất trong ca, giữ kế hoạch sản lượng và an toàn lao động.",doanh_nghiep,B
+ONET-11-3051.00,L5,Phó quản đốc,4–7,Lập kế hoạch sản xuất tuần của phân xưởng và xử lý ách tắc dây chuyền.,doanh_nghiep,B
+ONET-11-3051.00,L6,Quản đốc phân xưởng,6–9,"Chịu trách nhiệm sản lượng, chất lượng, chi phí và nhân lực của cả phân xưởng.",doanh_nghiep,B
+ONET-11-3051.00,L7,Quản lý sản xuất (Production Manager),8–12,"Điều phối nhiều phân xưởng, cân đối năng lực và kế hoạch sản xuất toàn nhà máy.",doanh_nghiep,B
+ONET-11-3051.00,L8,Giám đốc nhà máy (Plant Manager),12–18,"Điều hành toàn nhà máy, chịu trách nhiệm lợi nhuận, an toàn và tuân thủ.",doanh_nghiep,B
+ONET-11-3051.00,L9,Giám đốc sản xuất khối / Phó tổng giám đốc sản xuất,15+,"Định hướng chiến lược sản xuất, đầu tư nhà máy và chuỗi cung ứng của tập đoàn.",doanh_nghiep,B
+ONET-11-9013.00,L3,"Quản lý tổ, đội sản xuất trang trại",1–3,"Điều phối nhân công một khu chuồng, khu vườn và ghi chép nhật ký sản xuất.",so_nam_kinh_nghiem,C
+ONET-11-9013.00,L4,Chủ hộ sản xuất (gia trại),3–6,"Tự quyết định cây trồng, vật nuôi, vốn và đầu ra cho quy mô hộ gia đình.",so_nam_kinh_nghiem,C
+ONET-11-9013.00,L5,Chủ trang trại (đạt tiêu chí kinh tế trang trại),5–10,"Điều hành trang trại có giá trị sản xuất từ 1–2 tỷ đồng/năm, thuê lao động và ký hợp đồng bao tiêu.",chung_chi_hanh_nghe,A
+ONET-11-9013.00,L6,Giám đốc hợp tác xã / trang trại quy mô lớn,8–12,"Liên kết nhiều hộ, xây dựng vùng nguyên liệu đạt chứng nhận (VietGAP) và thương hiệu sản phẩm.",doanh_nghiep,B
+ONET-11-9013.00,L7,Giám đốc doanh nghiệp nông nghiệp,10+,Điều hành chuỗi sản xuất – chế biến – tiêu thụ nông sản và chiến lược xuất khẩu.,doanh_nghiep,B
+ONET-11-9021.00,L4,Kỹ sư giám sát thi công / cán bộ kỹ thuật hiện trường,2–4,"Quản lý thi công một hạng mục, nghiệm thu khối lượng và chất lượng.",doanh_nghiep,B
+ONET-11-9021.00,L5,Chỉ huy trưởng công trường hạng III,2–5,"Chỉ huy thi công công trình cấp III, IV: tiến độ, an toàn, chất lượng tại công trường.",chung_chi_hanh_nghe,A
+ONET-11-9021.00,L6,Chỉ huy trưởng công trường hạng II,4–8,"Chỉ huy công trình cấp II, điều phối nhà thầu phụ và xử lý sự cố kỹ thuật.",chung_chi_hanh_nghe,A
+ONET-11-9021.00,L7,Chỉ huy trưởng công trường hạng I,7–12,"Chỉ huy công trình cấp I, đặc biệt và chịu trách nhiệm toàn bộ công trường trước chủ đầu tư.",chung_chi_hanh_nghe,A
+ONET-11-9021.00,L8,Giám đốc dự án / giám đốc thi công,10–15,"Quản lý nhiều công trường, ngân sách và lợi nhuận của danh mục dự án.",doanh_nghiep,B
+ONET-11-9021.00,L9,Tổng giám đốc doanh nghiệp xây dựng,15+,"Điều hành doanh nghiệp xây dựng, đấu thầu chiến lược và năng lực thi công.",doanh_nghiep,B
+ONET-11-9032.00,L4,Tổ trưởng chuyên môn,3–6,"Lập kế hoạch dạy học của tổ bộ môn, dự giờ và bồi dưỡng giáo viên trong tổ.",doanh_nghiep,B
+ONET-11-9032.00,L5,Phó hiệu trưởng,5–10,"Phụ trách chuyên môn hoặc cơ sở vật chất của trường, điều hành khi hiệu trưởng vắng.",vien_chuc,A
+ONET-11-9032.00,L6,Hiệu trưởng,8–15,"Chịu trách nhiệm toàn diện về chất lượng giáo dục, tài chính và nhân sự của trường.",vien_chuc,A
+ONET-11-9032.00,L7,Trưởng phòng chuyên môn Sở Giáo dục và Đào tạo,12+,"Chỉ đạo chuyên môn một cấp học trong tỉnh, thanh tra và đánh giá các trường.",doanh_nghiep,C
+ONET-11-9032.00,L8,Giám đốc Sở Giáo dục và Đào tạo,15+,"Điều hành ngành giáo dục cấp tỉnh: quy hoạch mạng lưới trường, đội ngũ và ngân sách.",doanh_nghiep,C
+ONET-11-9041.00,L5,Trưởng nhóm kỹ thuật (Lead Engineer),4–7,"Phân việc, duyệt thiết kế và chịu trách nhiệm kỹ thuật một nhóm dự án.",doanh_nghiep,B
+ONET-11-9041.00,L6,Kỹ sư trưởng / trưởng nhóm R&D,6–9,Quyết định giải pháp kỹ thuật cho cả dự án và kèm cặp các trưởng nhóm.,doanh_nghiep,B
+ONET-11-9041.00,L7,Trưởng phòng kỹ thuật / R&D,8–12,"Quản lý phòng kỹ thuật, ngân sách nghiên cứu và lộ trình sản phẩm.",doanh_nghiep,B
+ONET-11-9041.00,L8,Giám đốc kỹ thuật (Technical Director),12–18,"Điều hành các phòng kỹ thuật, chọn công nghệ và chịu trách nhiệm chất lượng kỹ thuật.",doanh_nghiep,B
+ONET-11-9041.00,L9,Giám đốc công nghệ (CTO) / viện trưởng,15+,"Đặt chiến lược công nghệ, nghiên cứu của tổ chức và đại diện trước đối tác, nhà nước.",doanh_nghiep,B
+ONET-11-9051.00,L2,Nhân viên phục vụ,0–1,"Đón khách, ghi món, phục vụ bàn theo tiêu chuẩn của nhà hàng.",doanh_nghiep,B
+ONET-11-9051.00,L3,Tổ trưởng phục vụ (Captain),1–3,"Phân khu vực cho nhân viên trong ca, xử lý phàn nàn đơn giản của khách.",doanh_nghiep,B
+ONET-11-9051.00,L4,Giám sát nhà hàng (Supervisor),2–4,"Điều hành ca, kiểm tra vệ sinh, chất lượng phục vụ và chốt doanh thu ca.",doanh_nghiep,B
+ONET-11-9051.00,L5,Trợ lý quản lý nhà hàng,4–6,"Xếp lịch nhân viên, đặt hàng, kiểm kê và thay quản lý điều hành.",doanh_nghiep,B
+ONET-11-9051.00,L6,Quản lý nhà hàng,5–8,"Chịu trách nhiệm doanh thu, chi phí, nhân sự và trải nghiệm khách của nhà hàng.",doanh_nghiep,B
+ONET-11-9051.00,L7,Quản lý khu vực / Giám đốc ẩm thực (F&B),8+,"Quản lý nhiều nhà hàng hoặc toàn mảng ẩm thực khách sạn, chuẩn hoá vận hành.",doanh_nghiep,B
+ONET-11-9081.00,L3,Giám sát lễ tân (Front Office Supervisor),1–3,"Điều hành ca lễ tân, xử lý đặt phòng, phàn nàn và đối soát doanh thu ca.",doanh_nghiep,B
+ONET-11-9081.00,L4,Trợ lý trưởng bộ phận tiền sảnh,2–4,"Lập lịch ca, đào tạo nhân viên và theo dõi công suất phòng hằng ngày.",doanh_nghiep,B
+ONET-11-9081.00,L5,Trưởng bộ phận tiền sảnh (Front Office Manager),4–7,"Quản lý lễ tân, đặt phòng, hành lý và chỉ số hài lòng khách.",doanh_nghiep,B
+ONET-11-9081.00,L6,Giám đốc khối phòng (Rooms Division Manager),6–9,"Quản lý tiền sảnh, buồng phòng và doanh thu phòng của khách sạn.",doanh_nghiep,B
+ONET-11-9081.00,L7,Giám đốc điều hành khách sạn (Hotel Manager),8–12,"Điều hành vận hành hằng ngày của toàn khách sạn, phối hợp các khối.",doanh_nghiep,B
+ONET-11-9081.00,L8,Tổng giám đốc khách sạn (General Manager),12–18,"Chịu trách nhiệm lợi nhuận, thương hiệu và quan hệ chủ đầu tư của khách sạn, khu nghỉ dưỡng.",doanh_nghiep,B
+ONET-11-9081.00,L9,Giám đốc vùng / cụm khách sạn,15+,"Quản lý danh mục nhiều khách sạn, chiến lược giá và mở rộng thương hiệu.",doanh_nghiep,B
+ONET-11-9111.00,L4,Phó trưởng phòng chức năng bệnh viện,3–6,"Phụ trách một mảng (kế hoạch tổng hợp, quản lý chất lượng, vật tư) của phòng chức năng.",doanh_nghiep,B
+ONET-11-9111.00,L5,"Trưởng phòng chức năng (quản lý chất lượng, kế hoạch tổng hợp)",5–9,"Điều phối kế hoạch chuyên môn, đo lường chất lượng và an toàn người bệnh toàn viện.",doanh_nghiep,B
+ONET-11-9111.00,L6,Trưởng khoa,8–12,"Điều hành một khoa chuyên môn, phải hành nghề toàn thời gian và có tối thiểu 36 tháng hành nghề chuyên khoa.",chung_chi_hanh_nghe,A
+ONET-11-9111.00,L7,Phó giám đốc bệnh viện,12–18,Phụ trách khối chuyên môn hoặc tài chính – hậu cần của bệnh viện.,doanh_nghiep,B
+ONET-11-9111.00,L8,Giám đốc bệnh viện / người chịu trách nhiệm chuyên môn kỹ thuật,15+,"Điều hành toàn bệnh viện, chịu trách nhiệm pháp lý về chuyên môn, tài chính và giấy phép hoạt động.",chung_chi_hanh_nghe,A
+ONET-11-9111.00,L9,Tổng giám đốc hệ thống bệnh viện / Giám đốc Sở Y tế,18+,Định hướng chiến lược y tế cho nhiều cơ sở hoặc toàn ngành y tế tỉnh.,doanh_nghiep,C
+ONET-11-9141.00,L3,Nhân viên quản lý toà nhà,1–3,"Tiếp nhận yêu cầu cư dân, kiểm tra kỹ thuật định kỳ và thu phí dịch vụ.",doanh_nghiep,B
+ONET-11-9141.00,L4,Giám sát toà nhà,2–5,"Điều phối nhà thầu vệ sinh, an ninh, kỹ thuật và xử lý sự cố tại toà nhà.",doanh_nghiep,B
+ONET-11-9141.00,L5,Trưởng ban quản lý toà nhà,4–7,"Chịu trách nhiệm vận hành, ngân sách và quan hệ cư dân, khách thuê của một toà nhà.",doanh_nghiep,B
+ONET-11-9141.00,L6,Quản lý cụm toà nhà / quản lý tài sản,6–9,"Quản lý nhiều toà nhà, tối ưu tỷ lệ lấp đầy và doanh thu cho chủ đầu tư.",doanh_nghiep,B
+ONET-11-9141.00,L7,Giám đốc quản lý bất động sản,9+,"Điều hành mảng quản lý vận hành bất động sản, ký hợp đồng quản lý và mở rộng danh mục.",doanh_nghiep,B
+ONET-51-2092.00,L1,Công nhân học việc lắp ráp,"0–0,5",Lắp một công đoạn đơn giản theo hướng dẫn công việc dưới sự kèm của tổ trưởng.,doanh_nghiep,B
+ONET-51-2092.00,L2,Công nhân lắp ráp,0–1,"Lắp đúng thao tác chuẩn, đạt năng suất giờ và tự kiểm lỗi tại công đoạn.",doanh_nghiep,B
+ONET-51-2092.00,L3,Công nhân lắp ráp lành nghề,1–3,"Đứng được nhiều công đoạn, thay người vắng và phát hiện lỗi linh kiện.",doanh_nghiep,B
+ONET-51-2092.00,L4,Công nhân kỹ thuật chuyền,3–5,"Cân bằng chuyền, chỉnh đồ gá và hướng dẫn công nhân mới.",doanh_nghiep,B
+ONET-51-2092.00,L5,Tổ trưởng chuyền lắp ráp,5+,"Phân công, giữ năng suất, chất lượng và an toàn của cả chuyền trong ca.",doanh_nghiep,B
+ONET-51-3011.00,L1,Phụ bếp bánh (học việc),"0–0,5","Cân nguyên liệu, chuẩn bị khuôn và dọn dẹp khu bếp bánh.",doanh_nghiep,B
+ONET-51-3011.00,L2,Thợ bánh (Commis),0–1,"Làm các loại bánh cơ bản theo công thức chuẩn, đúng định lượng.",doanh_nghiep,B
+ONET-51-3011.00,L3,Thợ bánh chính (Demi Chef),1–3,"Tự phụ trách một quầy (bánh mì, bánh ngọt) trong ca.",doanh_nghiep,B
+ONET-51-3011.00,L4,Tổ trưởng bánh (Chef de Partie),3–5,"Phụ trách cả khu bánh trong ca, đặt hàng nguyên liệu và kiểm chất lượng.",doanh_nghiep,B
+ONET-51-3011.00,L5,Bếp phó bánh (Sous Pastry Chef),5–8,"Phát triển món mới, tính giá vốn và đào tạo thợ bánh.",doanh_nghiep,B
+ONET-51-3011.00,L6,Bếp trưởng bánh (Pastry Chef),8+,"Quyết định thực đơn bánh, quản lý đội bếp bánh và chi phí nguyên liệu.",doanh_nghiep,B
+ONET-51-3092.00,L1,Công nhân học việc chế biến,"0–0,5","Sơ chế nguyên liệu, đóng gói và giữ vệ sinh theo quy định an toàn thực phẩm.",doanh_nghiep,B
+ONET-51-3092.00,L2,Công nhân chế biến thực phẩm,0–1,"Đứng một công đoạn chế biến, ghi chép nhiệt độ, thời gian theo biểu mẫu.",doanh_nghiep,B
+ONET-51-3092.00,L3,"Công nhân phối trộn, nấu mẻ",1–3,"Cân phối liệu và vận hành nồi, máy trộn theo công thức mẻ.",doanh_nghiep,B
+ONET-51-3092.00,L4,Công nhân vận hành chính,3–5,"Điều chỉnh thông số máy, xử lý sai lệch mẻ và kèm công nhân mới.",doanh_nghiep,B
+ONET-51-3092.00,L5,Tổ trưởng sản xuất,5+,"Lập kế hoạch ca, kiểm soát định mức nguyên liệu và hồ sơ HACCP của tổ.",doanh_nghiep,B
+ONET-51-4041.00,L1,Học việc cơ khí CNC,"0–0,5","Chuẩn bị phôi, đo kiểm chi tiết bằng thước cặp, panme dưới sự kèm cặp.",doanh_nghiep,B
+ONET-51-4041.00,L2,Thợ cơ khí CNC bậc 1,0–2,"Đứng máy tiện, phay theo chương trình có sẵn và tự kiểm kích thước.",bac_tho,A
+ONET-51-4041.00,L3,Thợ cơ khí CNC bậc 2,2–5,"Tự gá đặt phôi, thay dao, bù dao và gia công chi tiết dung sai thường.",bac_tho,A
+ONET-51-4041.00,L4,Thợ cơ khí CNC bậc 3,5–8,"Lập trình CNC từ bản vẽ, gia công chi tiết dung sai chặt.",bac_tho,A
+ONET-51-4041.00,L5,Thợ cơ khí CNC bậc 4,8–12,"Gia công chi tiết phức tạp nhiều trục, chọn chế độ cắt tối ưu và sửa lỗi máy.",bac_tho,A
+ONET-51-4041.00,L6,Thợ cơ khí CNC bậc 5 / tổ trưởng,12+,"Xử lý chi tiết khó nhất của xưởng, lập quy trình công nghệ và kèm cặp thợ trẻ.",bac_tho,A
+ONET-51-4121.00,L1,Thợ phụ hàn,"0–0,5","Chuẩn bị mép hàn, mài sạch mối hàn và phụ thợ chính.",doanh_nghiep,B
+ONET-51-4121.00,L2,Thợ hàn bậc 1,0–2,Hàn vị trí bằng (1G/2G) mối hàn kết cấu đơn giản.,bac_tho,A
+ONET-51-4121.00,L3,Thợ hàn bậc 2,2–5,"Hàn các vị trí đứng, ngang (3G/4G) đạt yêu cầu kiểm tra ngoại quan.",bac_tho,A
+ONET-51-4121.00,L4,Thợ hàn bậc 3 (hàn ống 6G),5–8,"Hàn ống áp lực mọi vị trí, mối hàn đạt kiểm tra không phá huỷ.",bac_tho,A
+ONET-51-4121.00,L5,Thợ hàn bậc 4,8–12,"Hàn vật liệu đặc biệt (inox, hợp kim), đọc và áp dụng quy trình hàn (WPS).",bac_tho,A
+ONET-51-4121.00,L6,Thợ hàn bậc 5 / giám sát hàn,12+,"Lập quy trình hàn, kiểm tra tay nghề thợ và chịu trách nhiệm chất lượng mối hàn của công trình.",bac_tho,A
+ONET-51-5112.00,L1,Phụ máy in,"0–0,5","Chuẩn bị giấy, mực, vệ sinh máy và xếp thành phẩm.",doanh_nghiep,B
+ONET-51-5112.00,L2,Công nhân đứng máy in,0–2,Vận hành máy in theo thông số có sẵn và kiểm tờ in mẫu.,doanh_nghiep,B
+ONET-51-5112.00,L3,Thợ in chính,2–5,"Tự lên khuôn, canh màu, chỉnh chồng màu cho đơn hàng thường.",doanh_nghiep,B
+ONET-51-5112.00,L4,Thợ in bậc cao (máy in nhiều màu),5–8,"Vận hành máy in nhiều màu tốc độ cao, xử lý sự cố bản in và giấy.",doanh_nghiep,B
+ONET-51-5112.00,L5,Trưởng máy / tổ trưởng in,8+,"Phân ca máy, giữ chất lượng màu theo mẫu duyệt và định mức hao hụt.",doanh_nghiep,B
+ONET-51-6031.00,L1,Công nhân học việc may,"0–0,5","Tập may đường thẳng, công đoạn đơn giản trên máy một kim.",doanh_nghiep,B
+ONET-51-6031.00,L2,Công nhân may,0–1,May một công đoạn trên chuyền đạt năng suất định mức và chất lượng.,doanh_nghiep,B
+ONET-51-6031.00,L3,Công nhân may lành nghề,1–3,"May được nhiều công đoạn khó (tra tay, tra cổ), thay vị trí khi chuyền thiếu người.",doanh_nghiep,B
+ONET-51-6031.00,L4,Thợ may mẫu,3–6,"May sản phẩm mẫu hoàn chỉnh, ghi nhận lỗi kỹ thuật trước khi lên chuyền.",doanh_nghiep,B
+ONET-51-6031.00,L5,Tổ trưởng chuyền may,5+,"Bố trí công đoạn, cân bằng chuyền và chịu năng suất, chất lượng của chuyền.",doanh_nghiep,B
+ONET-51-7011.00,L1,Học việc mộc,"0–0,5","Chà nhám, sơn lót và phụ thợ chính lắp ráp.",doanh_nghiep,B
+ONET-51-7011.00,L2,Thợ mộc bậc 1,0–2,"Cắt, bào, khoan ván theo bản vẽ đơn giản.",bac_tho,A
+ONET-51-7011.00,L3,Thợ mộc bậc 2,2–5,"Làm trọn một món đồ gỗ (tủ, bàn) theo bản vẽ, mộng ghép chuẩn.",bac_tho,A
+ONET-51-7011.00,L4,Thợ mộc bậc 3,5–8,"Đọc bản vẽ kỹ thuật, bóc tách vật tư và lắp đặt nội thất tại công trình.",bac_tho,A
+ONET-51-7011.00,L5,Thợ mộc bậc 4,8–12,"Làm đồ gỗ chạm khắc hoặc kết cấu phức tạp, xử lý gỗ tự nhiên cong vênh.",bac_tho,A
+ONET-51-7011.00,L6,Thợ mộc bậc 5 / tổ trưởng,12+,"Chịu trách nhiệm kỹ thuật cả xưởng, ra mẫu mới và kèm cặp thợ trẻ.",bac_tho,A
+ONET-51-8013.00,L1,Học viên vận hành,0–1,"Học sơ đồ, quy trình vận hành và an toàn điện, đi ca kèm người hướng dẫn.",doanh_nghiep,B
+ONET-51-8013.00,L2,Trực phụ,1–3,"Đi kiểm tra thiết bị hiện trường, ghi thông số và thao tác theo lệnh trực chính.",doanh_nghiep,A
+ONET-51-8013.00,L3,Trực chính,3–6,"Vận hành một khối thiết bị (lò, tuabin, máy phát) và xử lý sự cố theo quy trình.",doanh_nghiep,A
+ONET-51-8013.00,L4,Trưởng kíp,6–10,"Chỉ huy kíp vận hành, ra lệnh thao tác và phối hợp với điều độ hệ thống điện.",doanh_nghiep,A
+ONET-51-8013.00,L5,Trưởng ca nhà máy điện,10+,"Chỉ huy toàn bộ vận hành nhà máy trong ca, chịu trách nhiệm an toàn và sản lượng.",doanh_nghiep,A
+ONET-51-8031.00,L1,Học việc vận hành trạm xử lý,"0–0,5","Lấy mẫu nước, ghi sổ vận hành và vệ sinh bể, máy bơm.",doanh_nghiep,B
+ONET-51-8031.00,L2,Công nhân vận hành bậc 1,0–2,"Vận hành bơm, châm hoá chất theo chế độ định sẵn và ghi nhật ký ca.",bac_tho,A
+ONET-51-8031.00,L3,Công nhân vận hành bậc 2,2–5,"Điều chỉnh liều hoá chất theo kết quả đo, xử lý sự cố bơm, van thường gặp.",bac_tho,A
+ONET-51-8031.00,L4,Công nhân vận hành bậc 3 / trực ca chính,5–8,"Vận hành cả dây chuyền xử lý trong ca, giữ chất lượng nước đầu ra đạt quy chuẩn.",bac_tho,A
+ONET-51-8031.00,L5,Trưởng ca vận hành,8+,"Phân công ca, xử lý sự cố lớn và báo cáo chất lượng nước với cấp trên.",doanh_nghiep,B
+ONET-51-8091.00,L1,Học viên vận hành,0–1,"Học quy trình công nghệ và an toàn cháy nổ, đi ca kèm người hướng dẫn.",doanh_nghiep,B
+ONET-51-8091.00,L2,Vận hành viên hiện trường,1–3,"Tuần tra thiết bị, đóng mở van và lấy mẫu theo lệnh phòng điều khiển.",doanh_nghiep,B
+ONET-51-8091.00,L3,Vận hành viên hiện trường chính,3–5,"Phụ trách một cụm phân xưởng, thực hiện khởi động, dừng thiết bị theo quy trình.",doanh_nghiep,B
+ONET-51-8091.00,L4,Vận hành viên phòng điều khiển,5–8,"Điều khiển phân xưởng qua hệ thống DCS, giữ thông số trong giới hạn an toàn.",doanh_nghiep,B
+ONET-51-8091.00,L5,Trưởng ca vận hành,8+,"Chỉ huy vận hành phân xưởng trong ca, ra quyết định khi có sự cố công nghệ.",doanh_nghiep,B
+ONET-51-9061.00,L1,Thực tập sinh QC,0,Đo kiểm mẫu theo hướng dẫn và ghi kết quả vào biểu mẫu.,doanh_nghiep,B
+ONET-51-9061.00,L2,Nhân viên QC (IPQC),0–1,"Kiểm tra sản phẩm trên chuyền, phát hiện và báo lỗi theo tiêu chuẩn.",doanh_nghiep,B
+ONET-51-9061.00,L3,Nhân viên QC chính (IQC/OQC),1–3,"Kiểm nguyên liệu đầu vào hoặc thành phẩm xuất xưởng, quyết định đạt/không đạt lô hàng.",doanh_nghiep,B
+ONET-51-9061.00,L4,Kỹ thuật viên chất lượng,3–5,"Phân tích nguyên nhân lỗi, đề xuất hành động khắc phục với sản xuất.",doanh_nghiep,B
+ONET-51-9061.00,L5,Giám sát QC,5–8,"Phân công nhóm QC, lập kế hoạch kiểm tra và làm việc với khách hàng về khiếu nại.",doanh_nghiep,B
+ONET-51-9061.00,L6,Trưởng phòng QA/QC,8+,Duy trì hệ thống quản lý chất lượng (ISO) và chịu trách nhiệm tỷ lệ lỗi của nhà máy.,doanh_nghiep,B
+ONET-51-9071.00,L1,Học việc kim hoàn,"0–0,5","Đánh bóng, làm sạch sản phẩm và phụ thợ chính đúc, hàn.",doanh_nghiep,B
+ONET-51-9071.00,L2,Thợ kim hoàn bậc 1,0–2,"Làm các khâu cơ bản: kéo dây, cưa, giũa, hàn nối theo mẫu.",bac_tho,A
+ONET-51-9071.00,L3,Thợ kim hoàn bậc 2,2–5,Chế tác trọn một món trang sức đơn giản theo mẫu.,bac_tho,A
+ONET-51-9071.00,L4,Thợ kim hoàn bậc 3,5–8,"Chế tác mẫu khó, nạm đá quý và sửa chữa trang sức cao cấp.",bac_tho,A
+ONET-51-9071.00,L5,Thợ kim hoàn bậc 4,8–12,Thiết kế và làm mẫu chủ (mẫu gốc) cho sản xuất hàng loạt.,bac_tho,A
+ONET-51-9071.00,L6,Thợ cả kim hoàn bậc 5,12+,"Làm tác phẩm kim hoàn cao cấp, giữ bí quyết nghề và đào tạo thợ.",bac_tho,A
+ONET-51-9081.00,L1,Học việc labo nha khoa,"0–0,5","Đổ mẫu thạch cao, cắt mẫu và vệ sinh dụng cụ labo.",doanh_nghiep,B
+ONET-51-9081.00,L2,Kỹ thuật viên labo,0–2,"Làm sườn sáp, sườn kim loại theo phiếu chỉ định của nha sĩ.",doanh_nghiep,B
+ONET-51-9081.00,L3,Kỹ thuật viên đắp sứ / CAD-CAM,2–4,"Đắp sứ hoặc thiết kế, phay răng sứ trên phần mềm đúng màu và khớp cắn.",doanh_nghiep,B
+ONET-51-9081.00,L4,Kỹ thuật viên phục hình chính,4–7,"Làm ca phục hình phức tạp (cầu dài, implant) và xử lý ca bị trả về.",doanh_nghiep,B
+ONET-51-9081.00,L5,Trưởng labo,7+,"Kiểm soát chất lượng, tiến độ của labo và làm việc trực tiếp với phòng khám.",doanh_nghiep,B
+ONET-51-9111.00,L1,Công nhân học việc đóng gói,"0–0,5","Cấp bao bì, xếp thùng và kiểm tra ngoại quan sản phẩm.",doanh_nghiep,B
+ONET-51-9111.00,L2,Công nhân vận hành máy đóng gói,0–1,"Vận hành máy chiết rót, đóng gói theo thông số và ghi biểu mẫu ca.",doanh_nghiep,B
+ONET-51-9111.00,L3,Công nhân vận hành máy lành nghề,1–3,"Đổi khuôn, đổi quy cách sản phẩm và xử lý kẹt máy thường gặp.",doanh_nghiep,B
+ONET-51-9111.00,L4,Công nhân vận hành chính (đứng nhiều máy),3–5,"Vận hành cả cụm máy, bảo dưỡng định kỳ và kèm công nhân mới.",doanh_nghiep,B
+ONET-51-9111.00,L5,Trưởng ca đóng gói,5+,"Bố trí người, máy trong ca và giữ hiệu suất thiết bị (OEE) của dây chuyền.",doanh_nghiep,B
+ONET-51-9141.00,L1,Học viên kỹ thuật phòng sạch,"0–0,5","Học quy tắc phòng sạch, chống tĩnh điện và thao tác nạp, lấy tấm wafer.",doanh_nghiep,B
+ONET-51-9141.00,L2,Kỹ thuật viên vận hành máy (Operator),0–1,"Vận hành máy kiểm tra, đóng gói chip theo công thức có sẵn.",doanh_nghiep,B
+ONET-51-9141.00,L3,Kỹ thuật viên thiết bị (Technician),1–3,"Cài đặt, hiệu chỉnh và sửa lỗi thiết bị trong ca.",doanh_nghiep,B
+ONET-51-9141.00,L4,Kỹ thuật viên cao cấp (Senior Technician),3–6,"Bảo dưỡng phòng ngừa, xử lý sự cố khó và cải tiến năng suất máy.",doanh_nghiep,B
+ONET-51-9141.00,L5,Trưởng ca kỹ thuật,6+,"Điều phối kỹ thuật viên trong ca, giữ thời gian chạy máy và tỷ lệ chip đạt.",doanh_nghiep,B
+ONET-29-1021.00,L1,Sinh viên răng hàm mặt thực tập lâm sàng,0,"Khám, làm thủ thuật đơn giản trên bệnh nhân dưới sự giám sát của giảng viên.",chung_chi_hanh_nghe,B
+ONET-29-1021.00,L2,Bác sĩ răng hàm mặt thực hành,0–1,Thực hành đủ thời gian quy định tại cơ sở được giao để đủ điều kiện xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-1021.00,L3,Bác sĩ răng hàm mặt hạng III (có giấy phép hành nghề),1–4,"Tự khám, điều trị nha khoa tổng quát (trám, nhổ, lấy tuỷ) và chịu trách nhiệm hồ sơ bệnh án.",vien_chuc,A
+ONET-29-1021.00,L4,Bác sĩ chuyên khoa I răng hàm mặt,3–7,"Điều trị chuyên sâu một mảng (chỉnh nha, cấy ghép implant, phục hình) và lập kế hoạch điều trị dài hạn.",vien_chuc,A
+ONET-29-1021.00,L5,Bác sĩ chính răng hàm mặt (hạng II),9–14,"Điều trị ca khó, hội chẩn và hướng dẫn bác sĩ trẻ.",vien_chuc,A
+ONET-29-1021.00,L6,Bác sĩ cao cấp (hạng I) / trưởng khoa răng hàm mặt,15+,Điều hành chuyên môn khoa hoặc phòng khám và chịu trách nhiệm chất lượng điều trị.,vien_chuc,A
+ONET-29-1031.00,L1,Sinh viên dinh dưỡng thực tập,0,"Thu thập khẩu phần, đo nhân trắc người bệnh dưới sự hướng dẫn.",chung_chi_hanh_nghe,B
+ONET-29-1031.00,L2,Cử nhân dinh dưỡng thực hành,0–1,Thực hành dinh dưỡng lâm sàng đủ 6 tháng để xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-1031.00,L3,Chuyên viên dinh dưỡng lâm sàng (có giấy phép),1–3,"Sàng lọc, đánh giá tình trạng dinh dưỡng và lập chế độ ăn cho người bệnh nội trú.",chung_chi_hanh_nghe,A
+ONET-29-1031.00,L4,Chuyên viên dinh dưỡng chính,3–6,"Xây dựng thực đơn bệnh lý (đái tháo đường, thận, ung thư) và tư vấn người bệnh, gia đình.",so_nam_kinh_nghiem,B
+ONET-29-1031.00,L5,Chuyên viên dinh dưỡng cao cấp,6–10,Chủ trì phác đồ dinh dưỡng của bệnh viện và nghiên cứu can thiệp dinh dưỡng.,so_nam_kinh_nghiem,C
+ONET-29-1031.00,L6,Trưởng khoa dinh dưỡng,10+,"Điều hành khoa dinh dưỡng, suất ăn bệnh lý và đào tạo nhân viên y tế về dinh dưỡng.",doanh_nghiep,B
+ONET-29-1041.00,L1,Sinh viên khúc xạ nhãn khoa thực tập lâm sàng,0,"Đo thị lực, đo khúc xạ cho bệnh nhân dưới sự giám sát của người hướng dẫn.",chung_chi_hanh_nghe,B
+ONET-29-1041.00,L2,Kỹ thuật y khúc xạ nhãn khoa thực hành (chưa có giấy phép),0–1,"Thực hành đo khúc xạ, thử kính đủ 6 tháng để xin giấy phép hành nghề.",chung_chi_hanh_nghe,A
+ONET-29-1041.00,L3,Kỹ thuật y khúc xạ nhãn khoa hạng III (có giấy phép hành nghề),1–4,"Đo khúc xạ, kê đơn kính và tư vấn chăm sóc mắt cho người cận, viễn, loạn.",vien_chuc,A
+ONET-29-1041.00,L4,Kỹ thuật y khúc xạ nhãn khoa chính,3–7,"Lắp kính tiếp xúc, điều trị rối loạn thị giác hai mắt và kiểm soát cận thị trẻ em.",so_nam_kinh_nghiem,B
+ONET-29-1041.00,L5,Kỹ thuật y khúc xạ nhãn khoa hạng II,8–12,"Xử lý ca khúc xạ phức tạp, hướng dẫn kỹ thuật viên mới và tham gia nghiên cứu.",vien_chuc,A
+ONET-29-1041.00,L6,Kỹ thuật y khúc xạ nhãn khoa hạng I / kỹ thuật viên trưởng khoa,12+,"Điều hành đơn vị khúc xạ, chuẩn hoá quy trình đo và chịu trách nhiệm chất lượng.",vien_chuc,A
+ONET-29-1051.00,L1,Sinh viên dược thực tập,0,"Thực tập tại nhà thuốc, khoa dược hoặc nhà máy theo kế hoạch của trường.",chung_chi_hanh_nghe,B
+ONET-29-1051.00,L2,Dược sĩ mới (đang thực hành),0–2,"Bán thuốc, cấp phát thuốc và tích luỹ thời gian thực hành để đủ điều kiện cấp chứng chỉ hành nghề dược.",chung_chi_hanh_nghe,B
+ONET-29-1051.00,L3,Dược sĩ hạng III / dược sĩ có chứng chỉ hành nghề,2–4,"Tư vấn sử dụng thuốc, kiểm soát nhập xuất thuốc và hồ sơ theo thực hành tốt.",vien_chuc,A
+ONET-29-1051.00,L4,Dược sĩ phụ trách chuyên môn / dược sĩ lâm sàng,3–7,"Chịu trách nhiệm chuyên môn một nhà thuốc hoặc duyệt đơn, giám sát tương tác thuốc tại khoa lâm sàng.",chung_chi_hanh_nghe,B
+ONET-29-1051.00,L5,Dược sĩ chính (hạng II),8–12,"Xây dựng danh mục thuốc, đấu thầu thuốc và chủ trì hoạt động dược lâm sàng.",vien_chuc,A
+ONET-29-1051.00,L6,Trưởng khoa dược / quản lý chuyên môn chuỗi nhà thuốc,10+,"Điều hành khoa dược hoặc chuyên môn cả chuỗi, chịu trách nhiệm an toàn sử dụng thuốc.",doanh_nghiep,B
+ONET-29-1051.00,L7,Dược sĩ cao cấp (hạng I),15+,"Dẫn dắt chuyên môn dược cấp bệnh viện, viện hoặc ngành và chủ trì đề tài nghiên cứu.",vien_chuc,A
+ONET-29-1123.00,L1,Sinh viên vật lý trị liệu thực tập lâm sàng,0,Hỗ trợ tập vận động cho người bệnh dưới sự giám sát của kỹ thuật viên.,chung_chi_hanh_nghe,B
+ONET-29-1123.00,L2,Kỹ thuật y phục hồi chức năng thực hành (chưa có giấy phép),0–1,Thực hành vật lý trị liệu đủ 6 tháng để xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-1123.00,L3,Kỹ thuật y phục hồi chức năng hạng III (có giấy phép hành nghề),1–4,"Lượng giá chức năng và thực hiện bài tập, điện trị liệu theo chỉ định của bác sĩ.",vien_chuc,A
+ONET-29-1123.00,L4,Kỹ thuật y phục hồi chức năng chính,3–7,"Phụ trách phục hồi chức năng chuyên sâu (thần kinh, thể thao, nhi) cho nhóm người bệnh.",so_nam_kinh_nghiem,B
+ONET-29-1123.00,L5,Kỹ thuật y phục hồi chức năng hạng II,8–12,"Xử lý ca khó, xây dựng chương trình phục hồi và hướng dẫn kỹ thuật viên trẻ.",vien_chuc,A
+ONET-29-1123.00,L6,Kỹ thuật y phục hồi chức năng hạng I / kỹ thuật viên trưởng khoa,12+,"Điều hành đơn vị phục hồi chức năng, chuẩn hoá kỹ thuật và chịu trách nhiệm chất lượng.",vien_chuc,A
+ONET-29-1131.00,L1,Sinh viên thú y thực tập,0,"Phụ khám, tiêm phòng và chăm sóc vật nuôi tại phòng khám hoặc trang trại.",doanh_nghiep,B
+ONET-29-1131.00,L2,Bác sĩ thú y mới / trợ lý phòng khám,0–1,"Khám lâm sàng, làm xét nghiệm nhanh và điều trị ca thông thường dưới sự giám sát.",doanh_nghiep,B
+ONET-29-1131.00,L3,Chẩn đoán viên bệnh động vật hạng III / bác sĩ thú y hành nghề,1–4,"Tự chẩn đoán, điều trị và kê đơn thuốc thú y, tư vấn phòng bệnh cho chủ nuôi.",vien_chuc,A
+ONET-29-1131.00,L4,Bác sĩ thú y chính,3–7,"Phẫu thuật, xử lý ca nặng hoặc phụ trách thú y cho cả trại chăn nuôi.",so_nam_kinh_nghiem,B
+ONET-29-1131.00,L5,Chẩn đoán viên bệnh động vật hạng II,8–12,"Chẩn đoán dịch bệnh động vật phức tạp, đề xuất biện pháp chống dịch.",vien_chuc,A
+ONET-29-1131.00,L6,Trưởng phòng khám / giám đốc kỹ thuật thú y,10+,"Điều hành phòng khám hoặc mảng thú y của doanh nghiệp chăn nuôi, chịu trách nhiệm an toàn dịch bệnh.",doanh_nghiep,B
+ONET-29-1141.00,L1,Sinh viên điều dưỡng thực tập,0,"Chăm sóc cơ bản (đo sinh hiệu, vệ sinh, hỗ trợ ăn uống) dưới sự giám sát.",chung_chi_hanh_nghe,B
+ONET-29-1141.00,L2,Điều dưỡng thực hành,0–1,Thực hành chăm sóc đủ 6 tháng tại cơ sở khám chữa bệnh để xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-1141.00,L3,Điều dưỡng hạng III (có giấy phép hành nghề),1–4,"Lập và thực hiện kế hoạch chăm sóc, dùng thuốc theo y lệnh cho nhóm người bệnh được phân công.",vien_chuc,A
+ONET-29-1141.00,L4,"Điều dưỡng chuyên khoa (hồi sức, phòng mổ, chạy thận)",3–7,"Chăm sóc người bệnh nặng, vận hành thiết bị chuyên khoa và hướng dẫn điều dưỡng mới.",so_nam_kinh_nghiem,B
+ONET-29-1141.00,L5,Điều dưỡng hạng II,8–12,"Giám sát chất lượng chăm sóc, đào tạo điều dưỡng và tham gia nghiên cứu điều dưỡng.",vien_chuc,A
+ONET-29-1141.00,L6,Điều dưỡng trưởng khoa,10+,"Phân công nhân lực, quản lý vật tư và chất lượng chăm sóc của cả khoa.",doanh_nghiep,B
+ONET-29-1141.00,L7,Điều dưỡng hạng I / trưởng phòng điều dưỡng,15+,"Xây dựng quy trình chăm sóc toàn bệnh viện và quản lý đội ngũ điều dưỡng, hộ sinh.",vien_chuc,A
+ONET-29-1151.00,L1,Sinh viên gây mê hồi sức thực tập lâm sàng,0,"Chuẩn bị thuốc, dụng cụ gây mê và theo dõi người bệnh dưới sự giám sát.",chung_chi_hanh_nghe,B
+ONET-29-1151.00,L2,Kỹ thuật y gây mê hồi sức thực hành (chưa có giấy phép),0–1,Thực hành phụ mê đủ 6 tháng để xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-1151.00,L3,Kỹ thuật y gây mê hồi sức hạng III (có giấy phép hành nghề),1–4,"Phụ bác sĩ gây mê, theo dõi sinh hiệu trong mổ và chăm sóc người bệnh hồi tỉnh.",vien_chuc,A
+ONET-29-1151.00,L4,Kỹ thuật y gây mê hồi sức chính,3–7,"Phụ mê ca phẫu thuật lớn, chuẩn bị máy gây mê và xử lý ban đầu biến cố hô hấp.",so_nam_kinh_nghiem,B
+ONET-29-1151.00,L5,Kỹ thuật y gây mê hồi sức hạng II,8–12,"Phụ trách kỹ thuật một khu phòng mổ, hướng dẫn kỹ thuật viên trẻ.",vien_chuc,A
+ONET-29-1151.00,L6,Kỹ thuật y gây mê hồi sức hạng I / kỹ thuật viên trưởng khoa,12+,"Điều phối kỹ thuật viên gây mê của khoa, chuẩn hoá quy trình an toàn phòng mổ.",vien_chuc,A
+ONET-29-1161.00,L1,Sinh viên hộ sinh thực tập,0,"Theo dõi sản phụ, phụ đỡ đẻ và chăm sóc sơ sinh dưới sự giám sát.",chung_chi_hanh_nghe,B
+ONET-29-1161.00,L2,Hộ sinh thực hành,0–1,Thực hành đủ 6 tháng tại cơ sở sản khoa để xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-1161.00,L3,Hộ sinh hạng III (có giấy phép hành nghề),1–4,"Theo dõi chuyển dạ, đỡ đẻ thường và chăm sóc mẹ, bé sau sinh.",vien_chuc,A
+ONET-29-1161.00,L4,Hộ sinh chính phòng sinh,3–7,Xử trí ban đầu tai biến sản khoa và tư vấn kế hoạch hoá gia đình.,so_nam_kinh_nghiem,B
+ONET-29-1161.00,L5,Hộ sinh hạng II,8–12,"Giám sát chất lượng chăm sóc sản khoa, đào tạo hộ sinh trẻ.",vien_chuc,A
+ONET-29-1161.00,L6,Hộ sinh trưởng khoa,10+,"Quản lý đội hộ sinh, vật tư và quy trình an toàn người bệnh của khoa sản.",doanh_nghiep,B
+ONET-29-1215.00,L1,Sinh viên y khoa thực tập lâm sàng,0,"Làm bệnh án, khám người bệnh và trình bệnh dưới sự giám sát của giảng viên.",chung_chi_hanh_nghe,B
+ONET-29-1215.00,L2,Bác sĩ thực hành,0–1,"Thực hành 12 tháng (9 tháng khám chữa bệnh, 3 tháng hồi sức cấp cứu) để đủ điều kiện xin giấy phép.",chung_chi_hanh_nghe,A
+ONET-29-1215.00,L3,Bác sĩ hạng III (có giấy phép hành nghề),1–4,"Khám, chẩn đoán, kê đơn và theo dõi điều trị người bệnh trong phạm vi hành nghề.",vien_chuc,A
+ONET-29-1215.00,L4,Bác sĩ chuyên khoa cấp I / thạc sĩ,3–7,Điều trị độc lập trong một chuyên khoa và trực chính tại khoa.,vien_chuc,A
+ONET-29-1215.00,L5,Bác sĩ chính (hạng II),10–14,"Hội chẩn ca khó, làm thủ thuật chuyên sâu và hướng dẫn bác sĩ trẻ.",vien_chuc,A
+ONET-29-1215.00,L6,Bác sĩ chuyên khoa cấp II / phó trưởng khoa,12–16,Chủ trì chuyên môn một mảng của khoa và xây dựng phác đồ điều trị.,vien_chuc,B
+ONET-29-1215.00,L7,Bác sĩ cao cấp (hạng I) / trưởng khoa,16+,"Điều hành chuyên môn khoa, chủ trì kỹ thuật mới và chịu trách nhiệm chất lượng khám chữa bệnh.",vien_chuc,A
+ONET-29-1291.00,L1,Sinh viên y học cổ truyền thực tập,0,"Bắt mạch, châm cứu, xoa bóp dưới sự giám sát của thầy thuốc.",chung_chi_hanh_nghe,B
+ONET-29-1291.00,L2,Bác sĩ y học cổ truyền thực hành,0–1,Thực hành đủ thời gian quy định để đủ điều kiện xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-1291.00,L3,Bác sĩ y học cổ truyền (có giấy phép hành nghề),1–4,"Khám, kê đơn thuốc cổ truyền và châm cứu, xoa bóp bấm huyệt cho người bệnh.",chung_chi_hanh_nghe,A
+ONET-29-1291.00,L4,Bác sĩ chuyên khoa I y học cổ truyền,3–7,Điều trị chuyên sâu bệnh mạn tính kết hợp y học cổ truyền với y học hiện đại.,vien_chuc,B
+ONET-29-1291.00,L5,Bác sĩ chính y học cổ truyền (hạng II),10–14,"Hội chẩn ca khó, xây dựng phác đồ y học cổ truyền và hướng dẫn bác sĩ trẻ.",vien_chuc,B
+ONET-29-1291.00,L6,Trưởng khoa y học cổ truyền,12+,"Điều hành khoa, quản lý chất lượng dược liệu, thuốc thang và kỹ thuật điều trị.",doanh_nghiep,B
+ONET-29-2011.00,L1,Sinh viên xét nghiệm y học thực tập lâm sàng,0,"Lấy mẫu, chạy xét nghiệm thường quy dưới sự giám sát của kỹ thuật viên.",chung_chi_hanh_nghe,B
+ONET-29-2011.00,L2,Kỹ thuật y xét nghiệm thực hành (chưa có giấy phép),0–1,Thực hành xét nghiệm đủ 6 tháng để xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-2011.00,L3,Kỹ thuật y xét nghiệm hạng III (có giấy phép hành nghề),1–4,"Thực hiện xét nghiệm huyết học, sinh hoá, vi sinh và trả kết quả đúng quy trình.",vien_chuc,A
+ONET-29-2011.00,L4,Kỹ thuật y xét nghiệm chính,3–7,"Làm xét nghiệm chuyên sâu (sinh học phân tử, nuôi cấy) và chạy nội kiểm chất lượng.",so_nam_kinh_nghiem,B
+ONET-29-2011.00,L5,Kỹ thuật y xét nghiệm hạng II,8–12,Thẩm định phương pháp xét nghiệm mới và hướng dẫn kỹ thuật viên trẻ.,vien_chuc,A
+ONET-29-2011.00,L6,Kỹ thuật y xét nghiệm hạng I / kỹ thuật viên trưởng khoa,12+,"Điều hành kỹ thuật phòng xét nghiệm, duy trì chuẩn chất lượng (ISO 15189).",vien_chuc,A
+ONET-29-2034.00,L2,Kỹ thuật y chẩn đoán hình ảnh thực hành (chưa có giấy phép),0–1,Thực hành chụp X-quang đủ 6 tháng để xin giấy phép hành nghề.,chung_chi_hanh_nghe,A
+ONET-29-2034.00,L3,Kỹ thuật y chẩn đoán hình ảnh hạng III (có giấy phép hành nghề),1–4,"Chụp X-quang, CT theo chỉ định và bảo đảm an toàn bức xạ cho người bệnh.",vien_chuc,A
+ONET-29-2034.00,L4,Kỹ thuật y chẩn đoán hình ảnh chính,3–7,"Thực hiện chụp CT, MRI có thuốc cản quang và xử lý ảnh chất lượng cao.",so_nam_kinh_nghiem,B
+ONET-29-2034.00,L5,Kỹ thuật y chẩn đoán hình ảnh hạng II,8–12,"Tối ưu quy trình chụp, kiểm tra chất lượng máy và hướng dẫn kỹ thuật viên trẻ.",vien_chuc,A
+ONET-29-2034.00,L6,Kỹ thuật y chẩn đoán hình ảnh hạng I / kỹ thuật viên trưởng khoa,12+,Điều hành kỹ thuật khoa chẩn đoán hình ảnh và an toàn bức xạ của khoa.,vien_chuc,A
+ONET-29-2043.00,L2,Cấp cứu viên ngoại viện thực hành,0–1,"Thực hành 6 tháng (3 tháng cấp cứu ngoại viện, 3 tháng hồi sức cấp cứu) để xin giấy phép.",chung_chi_hanh_nghe,A
+ONET-29-2043.00,L3,Cấp cứu viên ngoại viện (có giấy phép),1–3,"Sơ cứu, cố định, hồi sinh tim phổi và vận chuyển người bệnh an toàn về bệnh viện.",chung_chi_hanh_nghe,A
+ONET-29-2043.00,L4,Cấp cứu viên chính / trưởng kíp xe cấp cứu,3–6,"Chỉ huy kíp xe tại hiện trường, phân loại nạn nhân khi có nhiều người bị thương.",so_nam_kinh_nghiem,B
+ONET-29-2043.00,L5,Điều phối viên cấp cứu 115,5–9,"Tiếp nhận cuộc gọi, hướng dẫn sơ cứu qua điện thoại và điều xe phù hợp.",doanh_nghiep,B
+ONET-29-2043.00,L6,Trưởng trạm / đội cấp cứu ngoại viện,8+,"Quản lý xe, nhân lực, phác đồ và diễn tập ứng phó thảm hoạ của trạm.",doanh_nghiep,B
+ONET-29-2072.00,L2,Nhân viên lưu trữ hồ sơ bệnh án,0–1,"Tiếp nhận, sắp xếp, lưu trữ và cho mượn hồ sơ bệnh án đúng quy định.",doanh_nghiep,B
+ONET-29-2072.00,L3,Nhân viên mã hoá bệnh tật (ICD-10),1–3,"Mã hoá chẩn đoán, thủ thuật và kiểm tra hồ sơ trước khi đề nghị thanh toán bảo hiểm y tế.",doanh_nghiep,B
+ONET-29-2072.00,L4,Chuyên viên quản lý hồ sơ bệnh án điện tử,2–5,Kiểm soát chất lượng dữ liệu bệnh án điện tử và hướng dẫn khoa lâm sàng ghi chép đúng.,doanh_nghiep,C
+ONET-29-2072.00,L5,Chuyên viên kế hoạch tổng hợp,4–8,"Tổng hợp số liệu hoạt động chuyên môn, báo cáo thống kê y tế và xử lý từ chối thanh toán BHYT.",doanh_nghiep,B
+ONET-29-2072.00,L6,"Trưởng bộ phận hồ sơ, thống kê",7+,Ban hành quy trình hồ sơ bệnh án và chịu trách nhiệm số liệu thống kê của bệnh viện.,doanh_nghiep,C

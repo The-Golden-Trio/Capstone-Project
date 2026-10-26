@@ -1,0 +1,266 @@
+{
+  "51-9195.03": {"title_vi": "Thợ chạm khắc đá"},
+  "51-9195.04": {"title_vi": "Thợ thổi, uốn và hoàn thiện thuỷ tinh"},
+  "51-9195.05": {"title_vi": "Thợ làm gốm"},
+  "51-6011.00": {"title_vi": "Nhân viên giặt là, giặt khô"},
+  "51-2092.00": {
+    "title_vi": "Công nhân lắp ráp theo tổ",
+    "description_vi": "Làm việc trong một tổ chịu trách nhiệm lắp ráp toàn bộ sản phẩm hoặc một cụm của sản phẩm. Công nhân làm được mọi việc của tổ trong quy trình lắp ráp và luân chuyển qua hầu hết các vị trí thay vì cố định một việc. Có thể tham gia quyết định về công việc. Gồm cả tổ trưởng cùng làm trong tổ.",
+    "tasks_vi": {
+      "20157": "Kiểm tra chất lượng sản phẩm và chi tiết.",
+      "20160": "Xem lệnh sản xuất và bản vẽ để làm đúng yêu cầu kỹ thuật.",
+      "8468": "Luân chuyển qua mọi công đoạn của quy trình sản xuất.",
+      "8469": "Phân công công việc và quy trình làm.",
+      "20163": "Giám sát công nhân lắp ráp và đào tạo quy trình làm việc."
+    }
+  },
+  "51-2011.00": {"title_vi": "Công nhân lắp ráp kết cấu, hệ thống máy bay"},
+  "51-2021.00": {"title_vi": "Công nhân quấn dây, bọc và hoàn thiện cuộn dây"},
+  "51-2022.00": {"title_vi": "Công nhân lắp ráp thiết bị điện, điện tử"},
+  "51-2023.00": {"title_vi": "Công nhân lắp ráp thiết bị cơ điện"},
+  "51-2031.00": {"title_vi": "Công nhân lắp ráp động cơ, máy móc"},
+  "51-2051.00": {"title_vi": "Công nhân làm sản phẩm composite sợi thuỷ tinh"},
+  "51-2061.00": {"title_vi": "Công nhân lắp ráp, căn chỉnh đồng hồ"},
+  "51-1011.00": {"title_vi": "Tổ trưởng sản xuất"},
+  "51-9198.00": {"title_vi": "Phụ việc sản xuất"},
+  "51-4041.00": {
+    "title_vi": "Thợ cơ khí chính xác",
+    "description_vi": "Cài đặt và vận hành nhiều loại máy công cụ để làm chi tiết và dụng cụ chính xác bằng kim loại. Gồm cả thợ làm dụng cụ đo chính xác. Có thể chế tạo, sửa chi tiết để làm hoặc sửa máy công cụ, bảo trì máy công nghiệp, vận dụng kiến thức cơ học, toán, tính chất kim loại, lấy dấu và gia công.",
+    "tasks_vi": {
+      "20292": "Tính kích thước và dung sai bằng dụng cụ đo như panme, thước cặp.",
+      "3094": "Gia công chi tiết theo bản vẽ bằng máy công cụ như máy tiện, phay, bào hoặc mài.",
+      "3095": "Đo, kiểm tra hoặc thử sản phẩm hoàn thiện để phát hiện lỗi và bảo đảm đúng yêu cầu, bằng dụng cụ đo chính xác.",
+      "20293": "Cài đặt, chỉnh hoặc vận hành máy công cụ cơ bản hoặc chuyên dụng để gia công chính xác.",
+      "3110": "Lập trình máy tính hoặc thiết bị điện tử như máy công cụ điều khiển số (CNC)."
+    }
+  },
+  "51-4021.00": {"title_vi": "Thợ vận hành máy đùn, kéo kim loại và nhựa"},
+  "51-4022.00": {"title_vi": "Thợ vận hành máy rèn"},
+  "51-4023.00": {"title_vi": "Thợ vận hành máy cán"},
+  "51-4031.00": {"title_vi": "Thợ vận hành máy cắt, đột, dập"},
+  "51-4032.00": {"title_vi": "Thợ vận hành máy khoan, doa"},
+  "51-4033.00": {"title_vi": "Thợ vận hành máy mài, đánh bóng"},
+  "51-4034.00": {"title_vi": "Thợ tiện"},
+  "51-4035.00": {"title_vi": "Thợ phay, bào"},
+  "51-4081.00": {"title_vi": "Thợ vận hành nhiều loại máy công cụ"},
+  "51-4111.00": {"title_vi": "Thợ làm khuôn mẫu, dụng cụ"},
+  "51-4061.00": {"title_vi": "Thợ làm mẫu kim loại và nhựa"},
+  "51-4062.00": {"title_vi": "Thợ làm mẫu đúc kim loại và nhựa"},
+  "51-4071.00": {"title_vi": "Thợ làm khuôn đúc và lõi"},
+  "51-4072.00": {"title_vi": "Thợ vận hành máy làm khuôn, đúc"},
+  "51-4191.00": {"title_vi": "Thợ vận hành thiết bị nhiệt luyện"},
+  "51-4192.00": {"title_vi": "Thợ lấy dấu kim loại và nhựa"},
+  "51-4193.00": {"title_vi": "Thợ vận hành máy mạ"},
+  "51-4194.00": {"title_vi": "Thợ mài, giũa dụng cụ"},
+  "51-4051.00": {"title_vi": "Thợ vận hành lò luyện kim"},
+  "51-4052.00": {"title_vi": "Thợ rót, đúc kim loại"},
+  "51-9161.00": {"title_vi": "Thợ vận hành máy CNC"},
+  "51-9162.00": {"title_vi": "Lập trình viên máy CNC"},
+  "51-4121.00": {
+    "title_vi": "Thợ hàn",
+    "description_vi": "Dùng thiết bị hàn tay, cắt bằng lửa, hàn thiếc hoặc hàn vảy để hàn, nối chi tiết kim loại hoặc lấp lỗ, vết lõm, đường nối trên sản phẩm kim loại.",
+    "tasks_vi": {
+      "23583": "Dùng thiết bị an toàn và làm việc đúng quy tắc an toàn.",
+      "23584": "Kiểm tra phôi để phát hiện lỗi và đo bằng thước thẳng hoặc dưỡng để bảo đảm đúng yêu cầu.",
+      "23582": "Hàn chi tiết ở tư thế hàn bằng, hàn đứng hoặc hàn trần.",
+      "23600": "Phát hiện thiết bị chạy sai hoặc vật liệu lỗi và báo cấp trên.",
+      "23585": "Nhận biết, cài đặt và sử dụng dụng cụ cầm tay, dụng cụ điện thông dụng của nghề hàn như máy hàn hồ quang que và hàn khí bảo vệ."
+    }
+  },
+  "51-4122.00": {"title_vi": "Thợ vận hành máy hàn"},
+  "51-2041.00": {"title_vi": "Thợ gia công, lắp ráp kết cấu kim loại"},
+  "51-3092.00": {
+    "title_vi": "Công nhân chế biến thực phẩm",
+    "description_vi": "Cài đặt và vận hành thiết bị trộn, phối nguyên liệu dùng trong sản xuất thực phẩm. Gồm cả thợ làm kẹo và làm phô mai.",
+    "tasks_vi": {
+      "4919": "Ghi dữ liệu sản xuất và kiểm tra của từng mẻ như nguyên liệu dùng, nhiệt độ, kết quả kiểm tra và thời gian.",
+      "4921": "Làm sạch và tiệt trùng bồn chứa và khu chế biến.",
+      "4924": "Cài đặt, vận hành và theo dõi thiết bị nấu, trộn, phối hoặc chế biến nguyên liệu theo công thức.",
+      "4925": "Trộn hoặc phối nguyên liệu theo công thức bằng mái chèo, máy khuấy hoặc điều khiển bồn gia nhiệt và trộn.",
+      "4926": "Làm theo công thức để ra sản phẩm đúng hương vị, kết cấu, độ trong, mùi thơm hoặc màu sắc."
+    }
+  },
+  "51-3091.00": {"title_vi": "Công nhân vận hành máy rang, nướng, sấy thực phẩm"},
+  "51-3093.00": {"title_vi": "Công nhân vận hành máy nấu thực phẩm"},
+  "51-3021.00": {"title_vi": "Thợ pha lóc thịt"},
+  "51-3022.00": {"title_vi": "Công nhân cắt, sơ chế thịt, gia cầm, cá"},
+  "51-3023.00": {"title_vi": "Công nhân giết mổ và đóng gói thịt"},
+  "51-9193.00": {"title_vi": "Công nhân vận hành thiết bị làm lạnh, cấp đông"},
+  "51-3011.00": {
+    "title_vi": "Thợ làm bánh",
+    "description_vi": "Trộn nguyên liệu và nướng để làm bánh mì, bánh cuộn, bánh quy, bánh ngọt, bánh nướng và các loại bánh khác.",
+    "tasks_vi": {
+      "11918": "Đong hoặc cân bột và nguyên liệu khác để làm bột nhão, bột nhồi, nhân hoặc kem phủ, bằng cân hoặc cốc chia vạch.",
+      "11916": "Đặt nhiệt độ lò và cho bánh vào lò nướng.",
+      "20819": "Kiểm tra chất lượng sản phẩm, phát hiện hàng hỏng hoặc hết hạn.",
+      "11924": "Kiểm tra thiết bị đạt quy định vệ sinh, an toàn và bảo dưỡng, vệ sinh khi cần.",
+      "11922": "Điều chỉnh lượng nguyên liệu theo số bánh cần nướng."
+    }
+  },
+  "51-5112.00": {
+    "title_vi": "Thợ vận hành máy in",
+    "description_vi": "Cài đặt và vận hành máy in kỹ thuật số, in typo, in offset, in flexo, in ống đồng hoặc máy in khác. Gồm cả máy in offset số lượng nhỏ.",
+    "tasks_vi": {
+      "19430": "Chạy máy và in thử để kiểm tra độ phủ mực, mật độ, căn chỉnh và chồng màu.",
+      "19423": "Xem lệnh in để biết số lượng, loại giấy, màu hoặc yêu cầu in đặc biệt.",
+      "19417": "Chỉnh lưu lượng mực từ máng mực.",
+      "19431": "Kiểm tra giấy và mực đúng yêu cầu của đơn hàng.",
+      "19421": "Lấy và kiểm tra mẫu ngẫu nhiên trong khi in để biết cần chỉnh gì."
+    }
+  },
+  "51-5111.00": {"title_vi": "Kỹ thuật viên chế bản in"},
+  "51-5113.00": {"title_vi": "Công nhân đóng xén, hoàn thiện sản phẩm in"},
+  "51-9151.00": {"title_vi": "Công nhân xử lý, tráng rửa ảnh"},
+  "51-6031.00": {
+    "title_vi": "Công nhân may công nghiệp",
+    "description_vi": "Vận hành hoặc trông máy may để ráp, gia cố, trang trí hoặc làm các thao tác may khác trong sản xuất quần áo và sản phẩm khác.",
+    "tasks_vi": {
+      "12149": "Theo dõi máy để phát hiện lỗi như đường may hỏng, đứt chỉ hoặc máy trục trặc.",
+      "12151": "Lắp ống chỉ, suốt và luồn đầu chỉ qua các bộ phận dẫn của máy.",
+      "12150": "Đặt bán thành phẩm dưới kim theo dấu trên máy, kẹp, dưỡng hoặc vải.",
+      "12153": "Đưa quần áo hoặc chi tiết dưới kim và chân vịt để may ráp các phần với nhau.",
+      "12166": "Tháo dụng cụ giữ và lấy sản phẩm đã may ra khỏi máy."
+    }
+  },
+  "51-6021.00": {"title_vi": "Công nhân là, ủi"},
+  "51-6051.00": {"title_vi": "Thợ may tay"},
+  "51-6052.00": {"title_vi": "Thợ may đo"},
+  "51-6061.00": {"title_vi": "Công nhân vận hành máy tẩy, nhuộm"},
+  "51-6062.00": {"title_vi": "Công nhân vận hành máy cắt vải"},
+  "51-6063.00": {"title_vi": "Công nhân vận hành máy dệt, đan"},
+  "51-6064.00": {"title_vi": "Công nhân vận hành máy cuộn, xe, kéo sợi"},
+  "51-6091.00": {"title_vi": "Công nhân vận hành máy đùn sợi tổng hợp, sợi thuỷ tinh"},
+  "51-6092.00": {"title_vi": "Nhân viên thiết kế rập"},
+  "51-6042.00": {"title_vi": "Công nhân vận hành máy làm giày"},
+  "51-6041.00": {"title_vi": "Thợ giày, đồ da"},
+  "51-6093.00": {"title_vi": "Thợ bọc nệm, ghế"},
+  "51-7011.00": {
+    "title_vi": "Thợ mộc đồ gỗ",
+    "description_vi": "Cắt, tạo hình và lắp ráp đồ gỗ hoặc cài đặt và vận hành nhiều loại máy chế biến gỗ như cưa máy, máy bào cuốn, máy đục mộng để bào, cắt, tạo hình gỗ hoặc làm chi tiết cho sản phẩm gỗ.",
+    "tasks_vi": {
+      "12211": "Kiểm tra kích thước, chất lượng hoặc độ khít của chi tiết để bảo đảm đúng yêu cầu.",
+      "12210": "Làm hoặc lắp ráp chi tiết của sản phẩm như kệ trưng bày, đồ văn phòng, tủ hoặc đồ nội thất cao cấp.",
+      "12219": "Tỉa, chà nhám hoặc cạo bề mặt, mối ghép để chuẩn bị hoàn thiện.",
+      "12213": "Đo và vạch kích thước chi tiết lên giấy hoặc phôi gỗ trước khi cắt theo bản vẽ để lắp khít và đạt chất lượng.",
+      "12217": "Cắt gỗ đúng kích thước, tạo hình và tỉa mộng cho khít bằng dụng cụ cầm tay như bào, đục, giũa gỗ."
+    }
+  },
+  "51-7021.00": {"title_vi": "Thợ hoàn thiện đồ gỗ"},
+  "51-7031.00": {"title_vi": "Thợ làm mẫu gỗ"},
+  "51-7032.00": {"title_vi": "Thợ làm mẫu đúc bằng gỗ"},
+  "51-7041.00": {"title_vi": "Công nhân vận hành máy cưa gỗ"},
+  "51-7042.00": {"title_vi": "Công nhân vận hành máy chế biến gỗ"},
+  "51-8013.00": {
+    "title_vi": "Nhân viên vận hành nhà máy điện",
+    "description_vi": "Điều khiển, vận hành hoặc bảo dưỡng máy móc phát điện. Gồm cả người vận hành thiết bị phụ trợ.",
+    "tasks_vi": {
+      "12328": "Điều khiển công suất máy phát cho khớp pha, tần số hoặc điện áp của điện cấp lên tủ.",
+      "12318": "Điều chỉnh vận hành dựa trên số đọc của biểu đồ, đồng hồ đo theo chu kỳ quy định.",
+      "12316": "Điều khiển thiết bị phát điện gồm lò hơi, tua-bin, máy phát hoặc lò phản ứng bằng bảng điều khiển hoặc thiết bị bán tự động.",
+      "12319": "Khởi động hoặc dừng máy phát, bơm phụ, tua-bin và thiết bị khác của nhà máy khi cần.",
+      "12314": "Theo dõi thiết bị và chỉ báo của nhà máy để phát hiện dấu hiệu sự cố vận hành."
+    }
+  },
+  "51-8011.00": {"title_vi": "Nhân viên vận hành lò phản ứng hạt nhân"},
+  "51-8012.00": {"title_vi": "Điều độ viên hệ thống điện"},
+  "51-8021.00": {"title_vi": "Thợ vận hành lò hơi và máy cố định"},
+  "51-8031.00": {
+    "title_vi": "Nhân viên vận hành nhà máy nước, xử lý nước thải",
+    "description_vi": "Vận hành hoặc điều khiển toàn bộ quy trình hay hệ thống máy, thường qua bảng điều khiển, để chuyển hoặc xử lý nước và nước thải.",
+    "tasks_vi": {
+      "928": "Lấy và thử mẫu nước, nước thải bằng thiết bị thử và thang so màu chuẩn.",
+      "926": "Vận hành và chỉnh thiết bị để lọc, làm trong nước, xử lý nước thải và phát điện.",
+      "929": "Ghi dữ liệu vận hành, chấm công hoặc số đọc đồng hồ vào biểu mẫu.",
+      "925": "Cho hoá chất như amoniac, clo hoặc vôi để khử trùng và khử mùi nước.",
+      "927": "Kiểm tra thiết bị hoặc theo dõi điều kiện vận hành, đồng hồ đo để xác định tải và phát hiện sự cố."
+    }
+  },
+  "51-8091.00": {
+    "title_vi": "Nhân viên vận hành nhà máy hoá chất",
+    "description_vi": "Điều khiển hoặc vận hành toàn bộ quy trình hoá chất hoặc hệ thống máy.",
+    "tasks_vi": {
+      "10494": "Theo dõi thiết bị ghi, lưu lượng kế, đèn báo trên tủ và nghe tín hiệu cảnh báo để bảo đảm điều kiện quy trình đúng.",
+      "10493": "Chỉnh thông số điều khiển của thiết bị ảnh hưởng tới tốc độ phản ứng, chất lượng hoặc hiệu suất.",
+      "10498": "Lấy mẫu sản phẩm và kiểm tra chất lượng để giám sát quy trình và bảo đảm đạt chuẩn.",
+      "10496": "Ghi dữ liệu vận hành như điều kiện quy trình, kết quả kiểm tra hoặc số đọc thiết bị.",
+      "10495": "Điều khiển quy trình hoặc hệ thống máy hoá chất bằng tủ điều khiển, bảng điều khiển hoặc thiết bị bán tự động."
+    }
+  },
+  "51-8092.00": {"title_vi": "Nhân viên vận hành nhà máy khí"},
+  "51-8093.00": {"title_vi": "Nhân viên vận hành lọc dầu, hệ thống bơm dầu"},
+  "51-9011.00": {"title_vi": "Công nhân vận hành thiết bị hoá chất"},
+  "51-9012.00": {"title_vi": "Công nhân vận hành máy tách, lọc, chưng cất"},
+  "51-9061.00": {
+    "title_vi": "Nhân viên kiểm tra chất lượng sản phẩm",
+    "description_vi": "Kiểm tra, thử nghiệm, phân loại, lấy mẫu hoặc cân nguyên liệu và sản phẩm đã gia công, chế tạo, lắp ráp để phát hiện lỗi, mòn và sai lệch so với yêu cầu. Có thể dùng dụng cụ đo chính xác và thiết bị thử phức tạp.",
+    "tasks_vi": {
+      "12472": "Loại bỏ sản phẩm, vật liệu hoặc thiết bị không đạt yêu cầu.",
+      "12478": "Đánh dấu thông tin lên sản phẩm như hạng hoặc trạng thái đạt, không đạt.",
+      "12480": "Đo kích thước sản phẩm để xác nhận đúng yêu cầu bằng thước, thước cặp, calip hoặc panme.",
+      "20299": "Báo cho cấp trên hoặc người liên quan về sự cố sản xuất.",
+      "12474": "Kiểm tra, thử hoặc đo vật liệu, sản phẩm, công trình lắp đặt hoặc công việc về sự phù hợp yêu cầu."
+    }
+  },
+  "51-9141.00": {
+    "title_vi": "Kỹ thuật viên sản xuất bán dẫn",
+    "description_vi": "Làm một hoặc nhiều công đoạn trong sản xuất linh kiện bán dẫn: nạp vật liệu bán dẫn vào lò; cưa thỏi thành đoạn; nạp đoạn vào buồng nuôi tinh thể và theo dõi; xác định trục tinh thể bằng máy X-quang và cưa thỏi thành tấm wafer; làm sạch, đánh bóng và nạp wafer vào các lò, bể hoá chất và thiết bị dùng để tạo mạch và thay đổi tính dẫn điện.",
+    "tasks_vi": {
+      "12575": "Kiểm tra vật liệu, linh kiện, sản phẩm để tìm lỗi bề mặt và đo mạch bằng thiết bị thử điện tử, dụng cụ đo chính xác, kính hiển vi theo quy trình chuẩn.",
+      "12577": "Đọc lệnh sản xuất, hướng dẫn, công thức và sơ đồ quy trình để nắm yêu cầu và trình tự công đoạn.",
+      "12576": "Làm sạch tấm wafer bằng bể hoá chất, máy làm sạch tự động hoặc súng thổi khí.",
+      "12574": "Lưu thông tin và báo cáo về gia công, sản xuất và kiểm tra.",
+      "12580": "Đặt tấm wafer vào hộp hoặc giá giữ của thiết bị bằng que hút chân không hoặc nhíp."
+    }
+  },
+  "51-9071.00": {
+    "title_vi": "Thợ kim hoàn",
+    "description_vi": "Thiết kế, chế tác, chỉnh sửa, sửa chữa hoặc thẩm định trang sức, vàng, bạc, kim loại quý khác hoặc đá quý.",
+    "tasks_vi": {
+      "23624": "Làm sạch và đánh bóng đồ kim loại, trang sức bằng dụng cụ kim hoàn, bánh đánh bóng và bể hoá chất.",
+      "23621": "Làm nhẵn mối hàn và chỗ gồ ghề bằng giũa tay, giấy nhám rồi đánh bóng bằng bánh đánh bóng hoặc chổi kim loại.",
+      "23622": "Chế tác trang sức từ vàng, bạc, bạch kim và đá quý hoặc bán quý.",
+      "23625": "Cắt và giũa các món trang sức như nhẫn, trâm, vòng tay và mặt dây chuyền.",
+      "23628": "Kiểm tra sản phẩm đã lắp hoặc hoàn thiện bằng kính lúp hoặc dụng cụ đo chính xác."
+    }
+  },
+  "51-9071.06": {"title_vi": "Thợ chế tác đá quý, kim cương"},
+  "51-9081.00": {
+    "title_vi": "Kỹ thuật viên phục hình răng",
+    "description_vi": "Làm và sửa hàm giả toàn phần, bán phần hoặc khí cụ nha khoa.",
+    "tasks_vi": {
+      "7133": "Đọc chỉ định hoặc yêu cầu và xem mẫu hàm, dấu răng để xác định thiết kế sản phẩm cần làm.",
+      "7135": "Thử khí cụ về độ đúng yêu cầu và độ chính xác của khớp cắn bằng càng nhai và panme.",
+      "7134": "Làm, chỉnh hoặc sửa khí cụ nha khoa như hàm giả, mão răng, cầu răng, inlay hoặc khí cụ chỉnh nha.",
+      "7136": "Đặt mẫu răng lên càng nhai mô phỏng khớp cắn và chuyển động hàm của người bệnh để đánh giá chức năng.",
+      "7139": "Mài bỏ kim loại hoặc sứ thừa và đánh bóng bề mặt răng giả, khung bằng máy đánh bóng."
+    }
+  },
+  "51-9082.00": {"title_vi": "Kỹ thuật viên chế tạo dụng cụ chỉnh hình y tế"},
+  "51-9083.00": {"title_vi": "Kỹ thuật viên mài lắp tròng kính"},
+  "51-9111.00": {
+    "title_vi": "Công nhân vận hành máy đóng gói, chiết rót",
+    "description_vi": "Vận hành hoặc trông máy để chuẩn bị sản phẩm công nghiệp hoặc tiêu dùng cho lưu kho hoặc vận chuyển. Gồm cả công nhân nhà máy đồ hộp đóng gói thực phẩm.",
+    "tasks_vi": {
+      "3142": "Dán nhãn nhận dạng lên sản phẩm đã đóng gói hoặc in thông tin như số lô, nơi đến lên thùng.",
+      "3134": "Phân loại, phân hạng, cân và kiểm tra sản phẩm, xác nhận và chỉnh khối lượng hoặc kích thước cho đúng yêu cầu.",
+      "3129": "Dừng hoặc khởi động lại máy khi trục trặc, gỡ kẹt và báo hỏng hóc cho cấp trên.",
+      "3124": "Quan sát máy chạy để bảo đảm sản phẩm chiết rót, đóng gói đạt chất lượng và tiêu chuẩn.",
+      "3127": "Lấy sản phẩm đã đóng gói ra khỏi máy và tách sản phẩm lỗi."
+    }
+  },
+  "51-9021.00": {"title_vi": "Công nhân vận hành máy nghiền, xay, đánh bóng"},
+  "51-9022.00": {"title_vi": "Công nhân mài, đánh bóng thủ công"},
+  "51-9023.00": {"title_vi": "Công nhân vận hành máy trộn, phối liệu"},
+  "51-9031.00": {"title_vi": "Công nhân cắt, tỉa thủ công"},
+  "51-9032.00": {"title_vi": "Công nhân vận hành máy cắt, thái"},
+  "51-9041.00": {"title_vi": "Công nhân vận hành máy đùn, ép, nén"},
+  "51-9051.00": {"title_vi": "Công nhân vận hành lò nung, lò sấy, nồi nấu"},
+  "51-9123.00": {"title_vi": "Công nhân sơn, phủ, trang trí sản phẩm"},
+  "51-9124.00": {"title_vi": "Công nhân vận hành máy sơn, phủ, phun"},
+  "51-9191.00": {"title_vi": "Công nhân vận hành máy dán keo"},
+  "51-9192.00": {"title_vi": "Công nhân vận hành thiết bị làm sạch, tẩy rửa kim loại"},
+  "51-9194.00": {"title_vi": "Thợ khắc, chạm"},
+  "51-9195.00": {"title_vi": "Thợ đúc, tạo hình sản phẩm phi kim"},
+  "51-9196.00": {"title_vi": "Công nhân vận hành máy sản xuất sản phẩm giấy"},
+  "51-9197.00": {"title_vi": "Công nhân sản xuất lốp xe"}
+}

@@ -1,0 +1,83 @@
+{
+  "group": "17",
+  "_note": "Kỹ sư an toàn và phòng cháy (17-2111, 17-2111.02) gộp vào An toàn lao động (19); kỹ sư nông nghiệp (17-2021) gộp vào Kỹ sư nông nghiệp (19). Kỹ thuật viên và người vẽ kỹ thuật là cấp khởi đầu của nghề kỹ sư tương ứng.",
+  "keep": [
+    {
+      "code": "17-1011.00",
+      "name_vi": "Kiến trúc sư",
+      "absorbs": ["17-1012.00"],
+      "merge_reason": "Kiến trúc cảnh quan là một chuyên ngành của kiến trúc."
+    },
+    {
+      "code": "17-1022.00",
+      "name_vi": "Kỹ sư trắc địa, bản đồ",
+      "absorbs": ["17-1022.01", "17-1021.00", "17-3031.00", "19-2099.01", "19-4099.03"],
+      "merge_reason": "Ở Việt Nam, trắc địa, bản đồ, ảnh hàng không và viễn thám học chung một ngành; kỹ thuật viên đo đạc là cấp khởi đầu."
+    },
+    {
+      "code": "17-2051.00",
+      "name_vi": "Kỹ sư xây dựng",
+      "absorbs": ["17-2051.01", "17-3022.00", "17-3011.00", "47-4011.00"],
+      "merge_reason": "Kỹ sư giao thông là một chuyên ngành xây dựng; giám sát, thanh tra công trình là việc kỹ sư xây dựng đảm nhận ở Việt Nam; kỹ thuật viên và người vẽ kỹ thuật là cấp khởi đầu."
+    },
+    {
+      "code": "17-2071.00",
+      "name_vi": "Kỹ sư điện",
+      "absorbs": ["17-3023.00", "17-2199.03", "17-2161.00"],
+      "merge_reason": "Năng lượng và điện hạt nhân là các chuyên ngành của hệ thống điện; kỹ thuật viên điện là cấp khởi đầu."
+    },
+    {
+      "code": "17-2072.00",
+      "name_vi": "Kỹ sư điện tử, viễn thông",
+      "absorbs": ["17-2072.01", "17-2199.06", "17-2199.07", "17-3029.08", "17-3012.00"],
+      "merge_reason": "RFID, vi hệ thống và quang tử là các chuyên ngành của điện tử; kỹ thuật viên và người vẽ mạch là cấp khởi đầu."
+    },
+    {
+      "code": "17-2141.00",
+      "name_vi": "Kỹ sư cơ khí",
+      "absorbs": ["17-2141.01", "17-3027.00", "17-3013.00", "17-2011.00", "17-3021.00", "17-2121.00"],
+      "merge_reason": "Hàng không, đóng tàu và pin nhiên liệu là các hướng chuyên sâu của cơ khí, ít vị trí riêng ở Việt Nam; kỹ thuật viên và người vẽ cơ khí là cấp khởi đầu."
+    },
+    {
+      "code": "17-2141.02",
+      "name_vi": "Kỹ sư ô tô",
+      "absorbs": ["17-3027.01"],
+      "merge_reason": "Kỹ thuật viên ô tô là cấp khởi đầu."
+    },
+    {
+      "code": "17-2199.05",
+      "name_vi": "Kỹ sư cơ điện tử, robot",
+      "absorbs": ["17-2199.08", "17-3024.00", "17-3024.01"],
+      "merge_reason": "Robot là ứng dụng chính của cơ điện tử; kỹ thuật viên là cấp khởi đầu."
+    },
+    {
+      "code": "17-2041.00",
+      "name_vi": "Kỹ sư hoá học, vật liệu",
+      "absorbs": ["17-2131.00", "17-2199.09", "17-3026.01"],
+      "merge_reason": "Vật liệu và công nghệ nano thường học và làm cùng khối kỹ thuật hoá học ở Việt Nam."
+    },
+    {
+      "code": "17-2081.00",
+      "name_vi": "Kỹ sư, chuyên viên môi trường",
+      "absorbs": ["17-3025.00", "19-2041.00", "19-4042.00"],
+      "merge_reason": "Kỹ thuật môi trường và khoa học môi trường cùng trải nghiệm quan trắc, đánh giá và xử lý ô nhiễm; kỹ thuật viên là cấp khởi đầu."
+    },
+    {
+      "code": "17-2112.00",
+      "name_vi": "Kỹ sư công nghiệp, quản lý sản xuất",
+      "absorbs": ["17-2112.01", "17-2112.02", "17-2112.03", "17-3026.00", "17-3029.01"],
+      "merge_reason": "Kỹ thuật sản xuất, công thái học, thẩm định quy trình và kiểm tra không phá huỷ là các mảng của kỹ thuật công nghiệp."
+    },
+    {
+      "code": "17-2151.00",
+      "name_vi": "Kỹ sư mỏ, dầu khí",
+      "absorbs": ["17-2171.00"],
+      "merge_reason": "Cùng trải nghiệm khai thác tài nguyên dưới lòng đất, khác loại tài nguyên."
+    },
+    {
+      "code": "17-2031.00",
+      "name_vi": "Kỹ sư y sinh"
+    }
+  ],
+  "remove": []
+}

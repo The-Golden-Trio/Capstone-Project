@@ -1,0 +1,21 @@
+﻿role_code,thu_tu,esco_label,esco_uri,ly_do
+ONET-29-1215.00,1,undertake healthcare examination,http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33,"Bác sĩ đa khoa ở Việt Nam khám, chẩn đoán, chỉ định và đọc xét nghiệm, kê đơn, xử trí cấp cứu, theo dõi điều trị, tư vấn phòng bệnh; nghề ESCO general practitioner chỉ có 10 kỹ năng bắt buộc, phần lớn là kỹ năng nghiên cứu chung, nên chọn tay từ từ vựng ESCO"
+ONET-29-1215.00,2,interpret medical results,http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69,
+ONET-29-1215.00,3,prescribe medication,http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253,
+ONET-29-1215.00,4,general medicine,http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07,
+ONET-29-1215.00,5,deal with emergency care situations,http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e,
+ONET-29-1215.00,6,pharmacology,http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea,
+ONET-29-1215.00,7,monitor patients' progress related to treatment,http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36,
+ONET-29-1215.00,8,analyse X-ray imagery,http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d,
+ONET-29-1215.00,9,educate on the prevention of illness,http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac,
+ONET-29-1215.00,10,communicable diseases,http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa,
+ONET-49-3052.00,1,carry out repair of motorcycles,http://data.europa.eu/esco/skill/ac6e266a-5362-4690-8937-b71a2d9311d1,"ESCO không có nghề sửa xe máy; chọn tay trong bộ kỹ năng bắt buộc và tuỳ chọn của vehicle technician những việc của thợ sửa xe máy, bỏ kỹ năng chỉ của ô tô"
+ONET-49-3052.00,2,repair engines,http://data.europa.eu/esco/skill/1bc7c69b-4292-4592-b854-f48165a06082,
+ONET-49-3052.00,3,diagnose problems with vehicles,http://data.europa.eu/esco/skill/52743af8-ab5d-4ce3-b877-13d349394456,
+ONET-49-3052.00,4,disassemble engines,http://data.europa.eu/esco/skill/db3c8181-31b4-4950-bf0b-de01f93c372b,
+ONET-49-3052.00,5,maintain braking system,http://data.europa.eu/esco/skill/534e2ade-f9dd-470c-a56f-97d2cc896468,
+ONET-49-3052.00,6,engine components,http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12,
+ONET-49-3052.00,7,repair vehicle electrical systems,http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0,
+ONET-49-3052.00,8,lubricate engines,http://data.europa.eu/esco/skill/2f58fc20-4528-410b-877f-3dec775f1b4e,
+ONET-49-3052.00,9,replace tyres,http://data.europa.eu/esco/skill/202d0d2b-f6b9-48fe-b70e-cff49fa1d087,
+ONET-49-3052.00,10,perform minor vehicle repairs,http://data.europa.eu/esco/skill/9142eba6-0abe-4d6f-9b8b-5a88f4ff6a8d,

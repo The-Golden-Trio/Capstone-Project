@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "source": "ITviec, trang https://itviec.com/it-jobs/<slug>, số ở dòng tiêu đề 'N ... jobs in Vietnam'",
+    "measured_at": "2026-10-21",
+    "method": "Đọc số tin đang mở trên trang tìm theo từ khoá, cả 22 nghề trong cùng một ngày. Trang tìm theo từ khoá nên có thể khớp rộng hơn tên nghề; chọn từ khoá sát nghề nhất.",
+    "note": "Thay cho job_outlook trong final_22_roles.json (đếm 22/08/2026, 11 nghề chưa đo)."
+  },
+  "roles": {
+    "SWE_FRONTEND": {"slug": "frontend-developer", "open_postings": 15},
+    "SWE_BACKEND": {"slug": "backend-developer", "open_postings": 91},
+    "SWE_MOBILE": {"slug": "mobile-application-developer", "open_postings": 13},
+    "SWE_GAME": {"slug": "game-developer", "open_postings": 7},
+    "SWE_UIUX": {"slug": "ui-ux-designer", "open_postings": 12},
+    "SWE_EMBEDDED": {"slug": "embedded-engineer", "open_postings": 17},
+    "SWE_ARCH_SOL": {"slug": "solution-architect", "open_postings": 15},
+    "SWE_TECHLEAD": {"slug": "technical-leader", "open_postings": 32},
+    "SWE_EM": {"slug": "engineering-manager", "open_postings": 56},
+    "QA_MANUAL": {"slug": "manual-tester", "open_postings": 45},
+    "DATA_DA": {"slug": "data-analyst", "open_postings": 11},
+    "DATA_AI": {"slug": "ai-machine-learning-engineer", "open_postings": 140},
+    "DATA_DE": {"slug": "data-engineer", "open_postings": 24},
+    "CLOUD_DEVOPS": {"slug": "devops-engineer", "open_postings": 69},
+    "CLOUD_ENG": {"slug": "cloud-engineer", "open_postings": 82},
+    "SEC_ENG": {"slug": "security-engineer", "open_postings": 45},
+    "SEC_PENTEST": {"slug": "penetration-tester", "open_postings": 43, "note": "Gần bằng security-engineer (45): từ khoá khớp rộng sang tin bảo mật nói chung."},
+    "PROD_BA": {"slug": "business-analyst", "open_postings": 36},
+    "PROD_PM": {"slug": "product-manager", "open_postings": 8},
+    "INFRA_ERP": {"slug": "erp", "open_postings": 24},
+    "INFRA_HELPDESK": {"slug": "it-support", "open_postings": 19},
+    "INFRA_NETWORK": {"slug": "network-engineer", "open_postings": 14}
+  }
+}

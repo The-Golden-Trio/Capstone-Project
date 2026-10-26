@@ -1,0 +1,235 @@
+{
+  "29-1215.00": {
+    "title_vi": "Bác sĩ y học gia đình",
+    "tasks_vi": {
+      "7771": "Kê đơn hoặc thực hiện điều trị, trị liệu, cho thuốc, tiêm chủng và chăm sóc y tế chuyên sâu để chữa hoặc phòng bệnh, chấn thương.",
+      "7772": "Chỉ định, thực hiện và đọc kết quả xét nghiệm, phân tích hồ sơ, báo cáo và kết quả khám để chẩn đoán.",
+      "7774": "Thu thập, ghi và lưu thông tin người bệnh như tiền sử, báo cáo và kết quả khám.",
+      "7773": "Theo dõi tình trạng, diễn tiến của người bệnh và đánh giá lại phác đồ khi cần.",
+      "7775": "Giải thích thủ thuật, trao đổi kết quả xét nghiệm hoặc phác đồ điều trị với người bệnh."
+    }
+  },
+  "29-1211.00": {"title_vi": "Bác sĩ gây mê hồi sức"},
+  "29-1213.00": {"title_vi": "Bác sĩ da liễu"},
+  "29-1214.00": {"title_vi": "Bác sĩ cấp cứu"},
+  "29-1216.00": {"title_vi": "Bác sĩ nội tổng quát"},
+  "29-1217.00": {"title_vi": "Bác sĩ thần kinh"},
+  "29-1218.00": {"title_vi": "Bác sĩ sản phụ khoa"},
+  "29-1221.00": {"title_vi": "Bác sĩ nhi khoa"},
+  "29-1222.00": {"title_vi": "Bác sĩ giải phẫu bệnh"},
+  "29-1223.00": {"title_vi": "Bác sĩ tâm thần"},
+  "29-1224.00": {"title_vi": "Bác sĩ chẩn đoán hình ảnh"},
+  "29-1229.01": {"title_vi": "Bác sĩ dị ứng – miễn dịch"},
+  "29-1229.02": {"title_vi": "Bác sĩ điều trị nội trú"},
+  "29-1229.03": {"title_vi": "Bác sĩ tiết niệu"},
+  "29-1229.04": {"title_vi": "Bác sĩ phục hồi chức năng"},
+  "29-1229.05": {"title_vi": "Bác sĩ y học dự phòng"},
+  "29-1229.06": {"title_vi": "Bác sĩ y học thể thao"},
+  "29-1241.00": {"title_vi": "Bác sĩ nhãn khoa"},
+  "29-1071.00": {"title_vi": "Trợ lý bác sĩ (y sĩ)"},
+  "29-1299.01": {"title_vi": "Bác sĩ trị liệu tự nhiên"},
+  "29-1011.00": {"title_vi": "Chuyên viên nắn chỉnh cột sống"},
+  "29-1081.00": {"title_vi": "Bác sĩ chuyên khoa bàn chân"},
+  "29-1021.00": {
+    "title_vi": "Nha sĩ tổng quát",
+    "description_vi": "Khám, chẩn đoán và điều trị bệnh, chấn thương và dị tật của răng và nướu. Có thể điều trị bệnh của tuỷ và các mô răng ảnh hưởng tới vệ sinh và độ bền của răng. Có thể lắp khí cụ nha khoa hoặc chăm sóc dự phòng.",
+    "tasks_vi": {
+      "20562": "Đeo khẩu trang, găng tay và kính bảo hộ để bảo vệ người bệnh và bản thân khỏi bệnh lây nhiễm.",
+      "6925": "Gây tê để giảm đau cho người bệnh khi làm thủ thuật.",
+      "6926": "Khám răng, nướu và các mô liên quan bằng dụng cụ nha khoa, phim X-quang hoặc thiết bị chẩn đoán để đánh giá sức khoẻ răng miệng, chẩn đoán bệnh và lên kế hoạch điều trị.",
+      "6927": "Lập kế hoạch điều trị cho răng và mô miệng của người bệnh.",
+      "20563": "Dùng tay khoan, dụng cụ cầm tay, khí cụ nha khoa hoặc dụng cụ phẫu thuật."
+    }
+  },
+  "29-1022.00": {"title_vi": "Bác sĩ phẫu thuật hàm mặt"},
+  "29-1023.00": {"title_vi": "Bác sĩ chỉnh nha"},
+  "29-1024.00": {"title_vi": "Bác sĩ phục hình răng"},
+  "29-1051.00": {
+    "title_vi": "Dược sĩ",
+    "description_vi": "Cấp phát thuốc theo đơn của bác sĩ và nhân viên y tế, hướng dẫn người bệnh về thuốc và cách dùng. Có thể tư vấn cho bác sĩ về lựa chọn thuốc, liều dùng, tương tác và tác dụng phụ.",
+    "tasks_vi": {
+      "1808": "Kiểm tra đơn thuốc để bảo đảm chính xác, xác định thành phần cần và đánh giá sự phù hợp.",
+      "1815": "Phối hợp với nhân viên y tế khác để lập kế hoạch, theo dõi và đánh giá chất lượng, hiệu quả của thuốc hoặc phác đồ, tư vấn về cách dùng và đặc tính thuốc.",
+      "1823": "Làm việc ở bệnh viện, phòng khám hoặc tổ chức bảo hiểm y tế: cấp phát thuốc, tư vấn cho nhóm điều trị hoặc chuyên về một mảng điều trị như ung bướu.",
+      "1809": "Tư vấn về tương tác thuốc, tác dụng phụ, liều dùng và cách bảo quản thuốc.",
+      "1813": "Hỗ trợ chuyên sâu giúp người bệnh kiểm soát bệnh như tiểu đường, hen, cai thuốc lá hoặc tăng huyết áp."
+    }
+  },
+  "29-2052.00": {"title_vi": "Kỹ thuật viên dược"},
+  "29-1141.00": {
+    "title_vi": "Điều dưỡng",
+    "description_vi": "Đánh giá vấn đề và nhu cầu sức khoẻ của người bệnh, lập và thực hiện kế hoạch chăm sóc điều dưỡng, lưu hồ sơ y tế. Chăm sóc người bệnh, người bị thương, đang hồi phục hoặc khuyết tật. Có thể tư vấn giữ gìn sức khoẻ, phòng bệnh hoặc quản lý ca. Cần chứng chỉ hành nghề.",
+    "tasks_vi": {
+      "1841": "Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.",
+      "20413": "Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.",
+      "1839": "Lưu báo cáo và hồ sơ chính xác, chi tiết.",
+      "1840": "Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.",
+      "1855": "Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy."
+    }
+  },
+  "29-1141.01": {"title_vi": "Điều dưỡng cấp cứu, hồi sức"},
+  "29-1141.02": {"title_vi": "Điều dưỡng tâm thần chuyên sâu"},
+  "29-1141.03": {"title_vi": "Điều dưỡng hồi sức tích cực"},
+  "29-1141.04": {"title_vi": "Điều dưỡng chuyên khoa lâm sàng"},
+  "29-1171.00": {"title_vi": "Điều dưỡng thực hành nâng cao"},
+  "29-2061.00": {"title_vi": "Điều dưỡng trung cấp"},
+  "29-2053.00": {"title_vi": "Kỹ thuật viên chăm sóc tâm thần"},
+  "29-2055.00": {"title_vi": "Kỹ thuật viên dụng cụ phẫu thuật"},
+  "29-9093.00": {"title_vi": "Phụ mổ"},
+  "29-1161.00": {
+    "title_vi": "Hộ sinh",
+    "description_vi": "Chẩn đoán và điều phối mọi khâu của quá trình sinh, độc lập hoặc trong nhóm y tế. Có thể khám phụ khoa định kỳ cho phụ nữ.",
+    "tasks_vi": {
+      "18442": "Chăm sóc trước sinh, trong khi sinh, sau sinh và chăm sóc trẻ sơ sinh.",
+      "18444": "Theo dõi sự phát triển của thai bằng nghe tim thai, đo bề cao tử cung, xác định ngôi thai hoặc ước lượng kích thước, cân nặng thai.",
+      "18443": "Ghi tiền sử, triệu chứng, thể trạng và thông tin chẩn đoán khác của người bệnh.",
+      "18455": "Làm dịch vụ kế hoạch hoá gia đình như đặt vòng tránh thai, cấp thuốc tránh thai và các biện pháp khác.",
+      "18454": "Kê đơn thuốc trong phạm vi quy định cho phép."
+    }
+  },
+  "29-9099.01": {"title_vi": "Hộ sinh (không phải điều dưỡng)"},
+  "29-1151.00": {
+    "title_vi": "Điều dưỡng gây mê",
+    "description_vi": "Gây mê, theo dõi dấu hiệu sinh tồn và giám sát người bệnh hồi tỉnh sau gây mê. Có thể hỗ trợ bác sĩ gây mê, phẫu thuật viên, bác sĩ khác hoặc nha sĩ.",
+    "tasks_vi": {
+      "18361": "Kiểm soát đường thở và hô hấp của người bệnh bằng kỹ thuật như đặt nội khí quản, thở máy, thuốc hỗ trợ, trị liệu hô hấp và rút ống.",
+      "18365": "Xử lý tình huống cấp cứu bằng kiểm soát đường thở, truyền dịch, thuốc cấp cứu hoặc hồi sinh tim phổi cơ bản và nâng cao.",
+      "18362": "Theo dõi phản ứng của người bệnh như màu da, đồng tử, mạch, nhịp tim, huyết áp, nhịp thở, thông khí hoặc lượng nước tiểu.",
+      "18366": "Chọn, yêu cầu hoặc cho dùng thuốc mê, thuốc hỗ trợ, dịch truyền hoặc chế phẩm máu khi cần.",
+      "18370": "Chọn, chuẩn bị hoặc dùng thiết bị, máy theo dõi, vật tư và thuốc cho việc gây mê."
+    }
+  },
+  "29-1071.01": {"title_vi": "Trợ lý bác sĩ gây mê"},
+  "29-1126.00": {"title_vi": "Kỹ thuật viên trị liệu hô hấp"},
+  "29-1123.00": {
+    "title_vi": "Chuyên viên vật lý trị liệu",
+    "description_vi": "Đánh giá, lập kế hoạch, tổ chức và tham gia chương trình phục hồi chức năng giúp cải thiện vận động, giảm đau, tăng sức mạnh và khắc phục tình trạng khuyết tật do bệnh hoặc chấn thương.",
+    "tasks_vi": {
+      "363": "Lập và thực hiện chương trình vật lý trị liệu riêng cho từng người để duy trì, cải thiện hoặc phục hồi chức năng, giảm đau hoặc phòng rối loạn vận động.",
+      "364": "Khám và ghi nhận ban đầu, đánh giá dữ liệu để xác định vấn đề và chẩn đoán trước khi can thiệp.",
+      "370": "Ghi tiên lượng, phác đồ, phản ứng và tiến triển vào hồ sơ người bệnh hoặc vào máy tính.",
+      "367": "Hướng dẫn người bệnh và gia đình cách tiếp tục tập tại nhà.",
+      "365": "Đánh giá hiệu quả điều trị ở từng giai đoạn và điều chỉnh để đạt lợi ích cao nhất."
+    }
+  },
+  "29-1122.00": {"title_vi": "Chuyên viên hoạt động trị liệu"},
+  "29-1127.00": {"title_vi": "Chuyên viên ngôn ngữ trị liệu"},
+  "29-1181.00": {"title_vi": "Chuyên viên thính học"},
+  "29-1125.00": {"title_vi": "Chuyên viên trị liệu bằng hoạt động giải trí"},
+  "29-1128.00": {"title_vi": "Chuyên viên sinh lý vận động"},
+  "29-1129.01": {"title_vi": "Chuyên viên trị liệu bằng nghệ thuật"},
+  "29-1129.02": {"title_vi": "Chuyên viên trị liệu bằng âm nhạc"},
+  "29-9091.00": {"title_vi": "Chuyên viên chăm sóc chấn thương thể thao"},
+  "29-2091.00": {"title_vi": "Kỹ thuật viên chỉnh hình, chân tay giả"},
+  "29-2092.00": {"title_vi": "Chuyên viên máy trợ thính"},
+  "29-1291.00": {
+    "title_vi": "Chuyên viên châm cứu",
+    "description_vi": "Chẩn đoán, điều trị và phòng bệnh bằng cách kích thích các huyệt trên cơ thể bằng kim châm cứu. Có thể dùng giác hơi, thực phẩm bổ sung, xoa bóp trị liệu, bấm huyệt và các liệu pháp thay thế khác.",
+    "tasks_vi": {
+      "17357": "Tuân thủ quy trình chuẩn về chất lượng, an toàn, môi trường và kiểm soát nhiễm khuẩn.",
+      "17362": "Điều trị bằng dụng cụ như kim, giác, viên dán nhĩ châm, hạt hoặc thực phẩm bổ sung.",
+      "17361": "Tuân thủ luật và quy định liên quan.",
+      "17373": "Xác định đúng vị trí huyệt theo giải phẫu và tư thế người bệnh, các chống chỉ định và lưu ý khi dùng kim trong da, cứu ngải, điện châm, cạo gió hoặc chích máu.",
+      "17370": "Xây dựng kế hoạch và chiến lược điều trị riêng cho từng người."
+    }
+  },
+  "29-1031.00": {
+    "title_vi": "Chuyên viên dinh dưỡng",
+    "description_vi": "Lập kế hoạch và tổ chức chương trình dinh dưỡng, dịch vụ ăn uống để nâng cao sức khoẻ và kiểm soát bệnh. Có thể giám sát bộ phận cung cấp suất ăn số lượng lớn, tư vấn cho từng người hoặc nghiên cứu dinh dưỡng.",
+    "tasks_vi": {
+      "314": "Đánh giá nhu cầu dinh dưỡng, chế độ kiêng và kế hoạch điều trị hiện tại để lập và thực hiện kế hoạch chăm sóc dinh dưỡng, tư vấn dinh dưỡng.",
+      "23913": "Đánh giá kết quả xét nghiệm khi đưa ra khuyến nghị dinh dưỡng.",
+      "317": "Tư vấn cho cá nhân và nhóm về nguyên tắc dinh dưỡng tốt, thói quen ăn uống lành mạnh và theo dõi dinh dưỡng để nâng chất lượng sống.",
+      "316": "Tư vấn cho người bệnh và gia đình về nguyên tắc dinh dưỡng, thực đơn, điều chỉnh chế độ ăn, chọn và chế biến thực phẩm.",
+      "23914": "Tính tới sở thích, nhu cầu văn hoá, dân tộc, tôn giáo của người bệnh khi lập kế hoạch dinh dưỡng."
+    }
+  },
+  "29-2051.00": {"title_vi": "Kỹ thuật viên dinh dưỡng"},
+  "29-1131.00": {
+    "title_vi": "Bác sĩ thú y",
+    "description_vi": "Chẩn đoán, điều trị hoặc nghiên cứu bệnh và chấn thương ở động vật. Gồm cả bác sĩ thú y làm nghiên cứu, kiểm dịch vật nuôi hoặc chăm sóc thú cưng.",
+    "tasks_vi": {
+      "4107": "Chữa trị động vật bị bệnh hoặc bị thương bằng kê đơn, nắn xương, băng bó vết thương hoặc phẫu thuật.",
+      "4108": "Tiêm phòng cho động vật các bệnh như dại hoặc care.",
+      "4106": "Khám động vật để phát hiện và xác định bệnh hoặc chấn thương.",
+      "4109": "Lấy mô, phân, máu, nước tiểu hoặc dịch cơ thể khác để xét nghiệm.",
+      "4110": "Vận hành thiết bị chẩn đoán như máy X-quang, siêu âm và đọc kết quả hình ảnh."
+    }
+  },
+  "29-2056.00": {"title_vi": "Kỹ thuật viên thú y"},
+  "29-2011.00": {
+    "title_vi": "Cử nhân, kỹ thuật viên xét nghiệm y học",
+    "description_vi": "Thực hiện các xét nghiệm y học phức tạp phục vụ chẩn đoán, điều trị và phòng bệnh. Có thể đào tạo hoặc giám sát nhân viên.",
+    "tasks_vi": {
+      "1890": "Phân tích mẫu sinh phẩm để xác định thành phần hoặc phản ứng hoá học.",
+      "1886": "Phân tích kết quả xét nghiệm để kiểm tra độ chính xác.",
+      "1887": "Phân tích hoá học dịch cơ thể như máu, nước tiểu, dịch não tuỷ để phát hiện thành phần bình thường hoặc bất thường.",
+      "1889": "Nhập dữ liệu kết quả xét nghiệm vào máy tính để lưu trữ.",
+      "15233": "Lấy và phân tích mẫu máu để đếm tế bào, xem hình thái, xác định nhóm máu hoặc độ tương thích khi truyền máu, bằng kỹ thuật hiển vi."
+    }
+  },
+  "29-2011.01": {"title_vi": "Kỹ thuật viên di truyền tế bào"},
+  "29-2011.02": {"title_vi": "Kỹ thuật viên tế bào học"},
+  "29-2011.04": {"title_vi": "Kỹ thuật viên mô học (bậc cao)"},
+  "29-2012.00": {"title_vi": "Kỹ thuật viên xét nghiệm"},
+  "29-2012.01": {"title_vi": "Kỹ thuật viên mô học"},
+  "29-9092.00": {"title_vi": "Chuyên viên tư vấn di truyền"},
+  "29-2034.00": {
+    "title_vi": "Kỹ thuật viên X-quang",
+    "description_vi": "Chụp X-quang, chụp CT hoặc đưa chất không phóng xạ vào máu người bệnh để chẩn đoán hoặc nghiên cứu. Gồm cả kỹ thuật viên chuyên các phương pháp chụp quét khác.",
+    "tasks_vi": {
+      "22808": "Giải thích quy trình và quan sát người bệnh để bảo đảm an toàn, thoải mái khi chụp.",
+      "22805": "Xử lý phim X-quang bằng máy rửa phim hoặc trên máy tính.",
+      "22820": "Thực hiện các kỹ thuật như chụp cắt lớp, chụp nhũ ảnh, siêu âm, chọc hút khớp và nang, chụp cản quang, soi chiếu, chụp đầu, thân, chi dưới sự giám sát của bác sĩ.",
+      "22819": "Ghi, xử lý và lưu dữ liệu người bệnh, hồ sơ chụp và lập báo cáo.",
+      "22826": "Chuẩn bị thuốc cản quang, dược chất phóng xạ hoặc thuốc gây tê, chống co thắt theo chỉ định của bác sĩ chẩn đoán hình ảnh."
+    }
+  },
+  "29-2031.00": {"title_vi": "Kỹ thuật viên tim mạch"},
+  "29-2032.00": {"title_vi": "Kỹ thuật viên siêu âm"},
+  "29-2033.00": {"title_vi": "Kỹ thuật viên y học hạt nhân"},
+  "29-2035.00": {"title_vi": "Kỹ thuật viên chụp cộng hưởng từ (MRI)"},
+  "29-2036.00": {"title_vi": "Kỹ thuật viên tính liều xạ trị"},
+  "29-1124.00": {"title_vi": "Kỹ thuật viên xạ trị"},
+  "29-2099.01": {"title_vi": "Kỹ thuật viên chẩn đoán thần kinh"},
+  "29-1041.00": {
+    "title_vi": "Chuyên viên đo khúc xạ, chăm sóc mắt",
+    "description_vi": "Chẩn đoán, quản lý và điều trị các tình trạng, bệnh của mắt và hệ thị giác. Khám mắt, phát hiện vấn đề hoặc suy giảm thị lực, kê kính điều chỉnh và điều trị. Có thể kê thuốc điều trị một số bệnh mắt.",
+    "tasks_vi": {
+      "337": "Khám mắt bằng quan sát, dụng cụ và thuốc để đánh giá thị lực, khả năng điều tiết, phối hợp và chẩn đoán bệnh, bất thường như tăng nhãn áp hay mù màu.",
+      "338": "Phân tích kết quả đo và lập kế hoạch điều trị.",
+      "339": "Kê đơn, cung cấp, lắp và chỉnh kính gọng, kính áp tròng và dụng cụ hỗ trợ thị lực khác.",
+      "340": "Kê thuốc điều trị bệnh mắt trong phạm vi pháp luật cho phép.",
+      "341": "Hướng dẫn và tư vấn người bệnh về chăm sóc kính áp tròng, vệ sinh thị giác, bố trí ánh sáng và an toàn mắt."
+    }
+  },
+  "29-2081.00": {"title_vi": "Nhân viên cắt, lắp kính mắt"},
+  "29-2057.00": {"title_vi": "Kỹ thuật viên nhãn khoa"},
+  "29-2099.05": {"title_vi": "Kỹ thuật viên nhãn khoa (bậc cao)"},
+  "29-1299.02": {"title_vi": "Chuyên viên chỉnh thị"},
+  "29-1122.01": {"title_vi": "Chuyên viên phục hồi thị lực kém"},
+  "29-2043.00": {
+    "title_vi": "Nhân viên cấp cứu ngoại viện",
+    "description_vi": "Cấp cứu cơ bản hoặc nâng cao và đánh giá chấn thương, bệnh tật. Có thể tiêm truyền thuốc, dùng thiết bị như máy điện tim hoặc hồi sức nâng cao cho người bệnh, người bị thương.",
+    "tasks_vi": {
+      "22874": "Cấp cứu tim mạch như sốc điện chuyển nhịp và khử rung bằng tay.",
+      "22875": "Thực hiện can thiệp xâm lấn cấp cứu trước khi đưa người bệnh tới bệnh viện.",
+      "22870": "Phối hợp với thành viên đội cấp cứu, công an hoặc cứu hoả.",
+      "22866": "Đánh giá tính chất và mức độ bệnh, chấn thương để quyết định và ưu tiên các biện pháp y tế.",
+      "22868": "An ủi và trấn an người bệnh."
+    }
+  },
+  "29-2072.00": {
+    "title_vi": "Chuyên viên hồ sơ bệnh án",
+    "description_vi": "Tập hợp, xử lý và lưu hồ sơ bệnh án của bệnh viện, phòng khám đúng yêu cầu y khoa, hành chính, đạo đức, pháp lý và quy định ngành y. Mã hoá chẩn đoán, thủ thuật, dịch vụ và thiết bị y tế theo hệ thống mã số của ngành. Gồm cả nhân viên mã hoá y tế.",
+    "tasks_vi": {
+      "22886": "Bảo mật hồ sơ bệnh án.",
+      "22890": "Rà soát hồ sơ về độ đầy đủ, chính xác và tuân thủ quy định.",
+      "22891": "Số hoá hồ sơ sức khoẻ của người bệnh.",
+      "22887": "Cung cấp thông tin cho cá nhân, cơ quan theo đúng quy định.",
+      "22880": "Nhập dữ liệu như thông tin nhân khẩu, tiền sử và mức độ bệnh, thủ thuật chẩn đoán hoặc điều trị vào máy tính."
+    }
+  },
+  "29-2099.08": {"title_vi": "Nhân viên hỗ trợ người bệnh"},
+  "29-1292.00": {"title_vi": "Kỹ thuật viên vệ sinh răng miệng"}
+}

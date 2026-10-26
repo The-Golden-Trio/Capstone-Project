@@ -94,6 +94,40 @@
         "Danh sách skill là TỰ KHAI 'primarily use', nên có đuôi nhiễu (Frontend tự khai cả C++, Java, APL). Trọng số đã xét thứ hạng để giảm ảnh hưởng, nhưng bản thân dữ liệu vẫn mang đặc tính này",
         "Radar kỹ năng tiếng Anh ở dạng hình, chưa rút thành số"
       ]
+    },
+    "description_draft_2026_10_20": {
+      "added": [
+        "roles[].description: summary + downsides (nháp, chờ duyệt)",
+        "roles[].levels: mô tả cho mọi band trong roles[].bands",
+        "roles[].work_environment_*, education_path_*, job_outlook: chép từ 78_roles_unmerged.json",
+        "roles[].onet: mã O*NET và mã sở thích RIASEC",
+        "work_life.top_reasons_to_leave[].label_vi"
+      ],
+      "drafted_levels": {
+        "SWE_ARCH_SOL": [
+          "L6",
+          "L7",
+          "L8"
+        ],
+        "SWE_TECHLEAD": [
+          "L6",
+          "L7"
+        ],
+        "SWE_EM": [
+          "L7",
+          "L8",
+          "L9"
+        ],
+        "CLOUD_ENG": [
+          "L5",
+          "L6"
+        ],
+        "PROD_PM": [
+          "L7",
+          "L8",
+          "L9"
+        ]
+      }
     }
   },
   "fit_dimensions": {
@@ -425,6 +459,18 @@
       "role_name_vn": "Lập trình viên Front-end",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Dựng giao diện, thấy kết quả ngay trên màn hình",
+      "description": {
+        "summary": "Lập trình viên Front-end xây phần giao diện mà người dùng nhìn thấy và bấm vào trên web: màn hình, nút, biểu mẫu, hiệu ứng. Việc hằng ngày là biến bản thiết kế thành mã chạy được trên nhiều trình duyệt và thiết bị, nối giao diện với dữ liệu từ máy chủ, và giữ cho trang tải nhanh. Kết quả hiện ngay trên màn hình nên dễ thấy mình đã làm được gì.",
+        "downsides": [
+          "Thường phải dung hoà giữa bản thiết kế đẹp và giới hạn kỹ thuật thật, như hiệu ứng không chạy mượt trên máy yếu hay trình duyệt cũ.",
+          "Công nghệ front-end đổi nhanh, phải tự học liên tục để không bị tụt lại.",
+          "Nhiều nơi tuyển, nhất là công ty gia công, đòi tiếng Anh ngay từ cấp thực tập.",
+          "Trong khảo sát của ITviec, ít cơ hội thăng chức và tăng lương là hai lý do nghỉ việc hay gặp."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L7 (A_VERIFIED, 40 JD), company_type_variance, 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "SWE_WEB",
@@ -434,8 +480,96 @@
         }
       ],
       "feeder_roles": [],
+      "work_environment_ids": [
+        "WE_PROJECT_OUTSOURCING",
+        "WE_HYBRID_PRODUCT",
+        "WE_REMOTE_GLOBAL",
+        "WE_ONSITE_ENTERPRISE"
+      ],
+      "work_environment_primary": "WE_HYBRID_PRODUCT",
+      "work_environment_note": "Hybrid chiếm ưu thế rõ rệt: Axon (onsite T3-T6, remote T2), NAB (toàn bộ 5 JD ghi hybrid working model), Holistics, ANDPAD, what3words (tối đa 2 ngày WFH + 6 tuần làm việc từ bất kỳ đâu mỗi năm), Workday (Flex Work tính 50% theo quý thay vì ngày/tuần). Remote hoàn toàn chỉ ở Employment Hero và Binance, cả hai đều là công ty nước ngoài và đều ở band L5+. Onsite 100%: Nexlab, Axon SWE II, FireGroup, FinX, Moatable (có on-site bonus 2,5 triệu/tháng), One Mount. KHÔNG có JD nào trong 37 mẫu nhắc tới ca kíp, on-call hay công tác tới site khách hàng — WE_SHIFT_24_7 và WE_FIELD_CLIENT không áp dụng cho role này. ĐÍNH CHÍNH so với bản trước: FE38 (Engineering Manager Frontend/Mobile) mô tả mô hình 'You Build It, You Run It' cùng trách nhiệm xử lý sự cố Sev1/Sev2 — hàm ý có trực sự cố. Đây là JD DUY NHẤT trong 40 mẫu có yếu tố vận hành production, và nó xuất hiện ở nhánh Management chứ không phải ở các band IC. Kết luận 'role này không có on-call' chỉ đúng với nhánh IC.",
+      "education_path_ids": [
+        "EDU_CS_PREFERRED"
+      ],
+      "education_path_primary": "EDU_CS_PREFERRED",
+      "education_path_note": "Trên 37 JD: khoảng một nửa không nhắc bằng cấp. Bằng cấp được nới rõ ràng — FE15 ghi bằng CS là nice-to-have; FE18 và FE25 ghi 'or equivalent practical experience'; FE05 thay bằng cấp bằng yêu cầu có sản phẩm đã deploy; FE03 chấp nhận bootcamp ngang đại học. Yêu cầu bằng cứng tập trung ở nhóm outsourcing và enterprise (FE12 DXC, FE19 CMC, FE08/FE09), cộng FE23 (VNG). Ngoại lệ đáng chú ý: FE37 (Zalo Fresher) đặt ngưỡng GPA 7.5/10 — ngưỡng học lực duy nhất trong bộ, và xuất hiện đúng ở band entry nơi ứng viên chưa có gì khác để chứng minh năng lực.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 19,
+        "itviec_slug_used": "frontend-developer",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec, render server-side."
+      },
+      "onet": {
+        "codes": [
+          "15-1254.00"
+        ],
+        "interest_code": "CIA",
+        "note": "Web Developers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Frontend Engineer Intern",
+          "years_experience": "0",
+          "core_output": "Hiện thực component giao diện và tính năng nhỏ bằng React hoặc Vue dưới sự kèm cặp trực tiếp của kỹ sư có kinh nghiệm, tham gia code review với vai trò người học, và chưa chịu trách nhiệm về chất lượng sản phẩm cuối.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Frontend Engineer",
+          "years_experience": "0-1",
+          "core_output": "Được phân vào một đội thật và làm tính năng có người dùng dưới sự kèm cặp sát của mentor được chỉ định, tự hoàn thành được phạm vi nhỏ đã giao và biết escalate sớm khi vượt tầm, nhưng chưa tự chịu trách nhiệm về kết quả cuối.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Frontend Engineer",
+          "years_experience": "1-3",
+          "core_output": "Tự hiện thực trọn vẹn một tính năng frontend trong phạm vi đã được xác định bằng ReactJS hoặc Vue, tham gia code review hai chiều với đồng nghiệp, nhưng quyết định về kiến trúc và lựa chọn thư viện vẫn do người khác đưa ra.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Frontend Engineer",
+          "years_experience": "3-5",
+          "core_output": "Chịu trách nhiệm end-to-end một luồng tính năng frontend, tự quyết định cách hiện thực và cấu trúc component trong khung kiến trúc tổng thể do người khác đặt ra, review code cho đồng nghiệp và tối ưu hiệu năng ứng dụng.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Frontend Engineer",
+          "years_experience": "3-8 (rất phân tán: FinX 3+, NAB 4+ và 5+, Xenith 5+, DataXight 5+, Employment Hero 5+)",
+          "core_output": "Định hình chuẩn kỹ thuật frontend cho cả một sản phẩm — design system, kiến trúc component, chiến lược kiểm thử — và mentor kỹ sư cấp dưới thông qua code review, nhưng không quản lý con người.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead Frontend Engineer",
+          "years_experience": "7-10 (kèm 2+ năm ở vai trò dẫn dắt)",
+          "core_output": "Tự do ra quyết định kiến trúc và code ở phạm vi component mình phụ trách trong khung kiến trúc giải pháp do cấp trên đưa xuống, phản biện được quyết định của kỹ sư khác qua peer review, và đã từng dẫn dắt cùng coaching ít nhất một đội kỹ sư.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Frontend Engineer",
+          "years_experience": "5-12 (ANDPAD 8+, Money Forward 5+ kèm 2+ năm leadership, Axon 10+)",
+          "core_output": "Đặt định hướng kỹ thuật frontend xuyên nhiều đội, review thiết kế và code của kỹ sư khác, và tham gia định nghĩa yêu cầu cùng product manager thay vì chỉ hiện thực yêu cầu đã có.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -982,19 +1116,23 @@
         "top_reasons_to_leave": [
           {
             "label": "Career transition to a startup, freelancing, or a new job direction",
-            "pct": 31.5
+            "pct": 31.5,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
           },
           {
             "label": "Few or no opportunities for promotion",
-            "pct": 20.7
+            "pct": 20.7,
+            "label_vi": "Ít hoặc không có cơ hội thăng chức"
           },
           {
             "label": "Few or no opportunities for salary increases",
-            "pct": 20.7
+            "pct": 20.7,
+            "label_vi": "Ít hoặc không có cơ hội tăng lương"
           },
           {
             "label": "Company ran out of financial resources",
-            "pct": 17.4
+            "pct": 17.4,
+            "label_vi": "Công ty cạn nguồn tài chính"
           }
         ],
         "top_reasons_to_apply": [
@@ -1036,6 +1174,18 @@
       "role_name_vn": "Lập trình viên Back-end / Kỹ sư Back-end",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Viết logic nghiệp vụ và xử lý dữ liệu — phần người dùng không nhìn thấy",
+      "description": {
+        "summary": "Lập trình viên Back-end viết phần chạy phía máy chủ: xử lý nghiệp vụ, lưu và truy vấn dữ liệu, cung cấp API cho ứng dụng web và mobile. Người dùng không nhìn thấy phần này, nhưng mọi thao tác như đăng nhập, đặt hàng hay thanh toán đều đi qua nó. Càng lên cao, việc chuyển từ viết tính năng sang thiết kế hệ thống chịu tải lớn và chạy ổn định.",
+        "downsides": [
+          "Kết quả khó nhìn thấy: làm tốt thì ít ai để ý, làm sai thì cả ứng dụng phía trước bị ảnh hưởng.",
+          "Hay phải sửa mã cũ không có tài liệu, người viết đã nghỉ.",
+          "Ước lượng thời gian thường bị ép ngắn lại vì áp lực từ khách hàng hoặc quản lý sản phẩm.",
+          "Trong khảo sát của ITviec, lương thấp hơn kỳ vọng là lý do nghỉ việc hay gặp nhất."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L7 (5/7 A_VERIFIED), 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "SWE_FULLSTACK",
@@ -1045,8 +1195,96 @@
         }
       ],
       "feeder_roles": [],
+      "work_environment_ids": [
+        "WE_HYBRID_PRODUCT",
+        "WE_PROJECT_OUTSOURCING",
+        "WE_ONSITE_ENTERPRISE"
+      ],
+      "work_environment_primary": "WE_HYBRID_PRODUCT",
+      "work_environment_note": "Product/Startup thường hybrid, ngân hàng thường onsite 100%.",
+      "education_path_ids": [
+        "EDU_CS_PREFERRED",
+        "EDU_CS_REQUIRED"
+      ],
+      "education_path_primary": "EDU_CS_PREFERRED",
+      "education_path_note": "Bằng CS là điểm cộng lớn, nhưng portfolio và tư duy logic có thể bù đắp.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 125,
+        "itviec_slug_used": "backend-developer",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1252.00"
+        ],
+        "interest_code": "ICR",
+        "note": "Software Developers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Backend Engineer Intern",
+          "years_experience": "0",
+          "core_output": "Hiện thực logic nghiệp vụ đơn giản và viết API endpoint theo mẫu có sẵn dưới sự giám sát trực tiếp của kỹ sư cấp cao, chưa tự quyết định về schema dữ liệu hay lựa chọn thư viện.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Backend Engineer",
+          "years_experience": "0-1",
+          "core_output": "Tự hoàn thành một endpoint hoặc một luồng xử lý nghiệp vụ nhỏ trong phạm vi được giao, viết được truy vấn CSDL cơ bản, mọi thay đổi schema đều cần review.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Backend Engineer",
+          "years_experience": "1-2",
+          "core_output": "Tự hiện thực trọn vẹn một tính năng backend đã được xác định rõ — API, xử lý nghiệp vụ, truy vấn CSDL — tham gia code review hai chiều, nhưng chưa tự quyết định kiến trúc service hay chọn công nghệ mới.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Backend Engineer",
+          "years_experience": "2-4",
+          "core_output": "Chịu trách nhiệm end-to-end một service hoặc module nghiệp vụ: thiết kế schema, viết migration, tối ưu truy vấn, review code cho đồng nghiệp, trong khung kiến trúc hệ thống do người khác đặt ra.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Backend Engineer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ thiết kế kiến trúc cho một domain nghiệp vụ hoặc một nhóm service, chịu trách nhiệm về hiệu năng và độ tin cậy ở quy mô production, mentor kỹ sư cấp dưới qua code review — không quản lý con người.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead Backend Engineer",
+          "years_experience": "6-9 (kèm 2+ năm dẫn dắt)",
+          "core_output": "Tự quyết kiến trúc và công nghệ ở phạm vi hệ thống mình phụ trách trong khung kiến trúc tổng thể do cấp trên cung cấp, coaching một đội kỹ sư — chưa có line management.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Backend Engineer / Staff Engineer",
+          "years_experience": "8-12",
+          "core_output": "Đặt định hướng kỹ thuật xuyên nhiều đội, xây chuẩn kỹ thuật cho tổ chức, review thiết kế của kỹ sư khác — thuần IC, không có direct report.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -1625,19 +1863,23 @@
         "top_reasons_to_leave": [
           {
             "label": "The salary is less than expected",
-            "pct": 25.4
+            "pct": 25.4,
+            "label_vi": "Lương thấp hơn kỳ vọng"
           },
           {
             "label": "Few or no opportunities for salary increases",
-            "pct": 18.5
+            "pct": 18.5,
+            "label_vi": "Ít hoặc không có cơ hội tăng lương"
           },
           {
             "label": "The company and its product have no potential for growth",
-            "pct": 16.8
+            "pct": 16.8,
+            "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
           },
           {
             "label": "Limited career development opportunities",
-            "pct": 15.9
+            "pct": 15.9,
+            "label_vi": "Ít cơ hội phát triển nghề nghiệp"
           }
         ],
         "top_reasons_to_apply": [
@@ -1680,10 +1922,109 @@
       "role_name_vn": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Làm app chạy trên chính chiếc điện thoại của mình",
+      "description": {
+        "summary": "Lập trình viên Mobile làm ứng dụng chạy trên điện thoại, thường chuyên một nền tảng (iOS hoặc Android) hoặc dùng công cụ đa nền tảng như Flutter, React Native. Việc gồm dựng màn hình, nối với API, xử lý những đặc thù của điện thoại như pin, bộ nhớ, mất mạng, rồi đưa ứng dụng lên App Store và Google Play.",
+        "downsides": [
+          "Việc phát hành phụ thuộc kho ứng dụng: bản cập nhật có thể bị từ chối duyệt với lý do mơ hồ và trễ hàng tuần.",
+          "Phải kiểm trên rất nhiều đời máy; ứng dụng mượt trên máy mới vẫn có thể giật trên máy tầm trung.",
+          "Ở đội nhỏ, một người có thể phải lo cả iOS lẫn Android.",
+          "Lỗi đã sửa vẫn bị đánh giá xấu khi nhiều người dùng chưa cập nhật bản mới."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L7 (3/7 A_VERIFIED), internal_variants, 4 sự kiện role-play riêng. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [],
       "feeder_roles": [],
+      "work_environment_ids": [
+        "WE_HYBRID_PRODUCT",
+        "WE_PROJECT_OUTSOURCING"
+      ],
+      "work_environment_primary": "WE_HYBRID_PRODUCT",
+      "work_environment_note": "App phát hành liên tục nên thường áp dụng Agile/Scrum.",
+      "education_path_ids": [
+        "EDU_CS_PREFERRED",
+        "EDU_ANY_PLUS_TRAINING"
+      ],
+      "education_path_primary": "EDU_CS_PREFERRED",
+      "education_path_note": "Chứng chỉ khoá học iOS/Android hoặc portfolio app trên Store rất có giá trị.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 21,
+        "itviec_slug_used": "mobile-application-developer",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1252.00"
+        ],
+        "interest_code": "ICR",
+        "note": "O*NET không có mã riêng cho mobile; dùng chung hồ sơ với Back-end nên hai nghề không được so với nhau",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Mobile Developer Intern (iOS/Android/Flutter)",
+          "years_experience": "0",
+          "core_output": "Hiện thực màn hình và tính năng nhỏ trên MỘT nền tảng cụ thể (đã chọn ngay từ đầu, không phải đa nền tảng) dưới sự giám sát trực tiếp.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Mobile Developer",
+          "years_experience": "0-1",
+          "core_output": "Tự hoàn thành một màn hình hoặc tính năng nhỏ trên một nền tảng, theo component/pattern đã có sẵn.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Mobile Developer (iOS hoặc Android hoặc Flutter)",
+          "years_experience": "1-2",
+          "core_output": "Tự triển khai trọn vẹn một tính năng trên một nền tảng, tích hợp API, xử lý state cục bộ, vẫn cần review.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Mobile Developer",
+          "years_experience": "2-4",
+          "core_output": "Chịu trách nhiệm một module trên nền tảng mình phụ trách, tối ưu hiệu năng và trải nghiệm đặc thù nền tảng (lifecycle, memory, offline), review code.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Mobile Developer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ kiến trúc app trên nền tảng mình phụ trách; ở band này bắt đầu xuất hiện kỹ sư làm được CẢ iOS và Android hoặc chuyển hẳn sang cross-platform (React Native/Flutter) — điểm gộp nhánh mà roles.csv Pass 0 ghi nhận, chưa có JD xác nhận mốc chính xác.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead Mobile Engineer",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt kỹ thuật cho toàn bộ ứng dụng mobile của sản phẩm, tự quyết kiến trúc cross-platform hay native, coaching đội.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Mobile Engineer",
+          "years_experience": "8-12",
+          "core_output": "Đặt chuẩn kỹ thuật mobile xuyên nhiều đội và nhiều sản phẩm, review thiết kế kiến trúc app của kỹ sư khác — thuần IC, không có direct report.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -2215,19 +2556,23 @@
         "top_reasons_to_leave": [
           {
             "label": "Salary is lower than expected",
-            "pct": 23.1
+            "pct": 23.1,
+            "label_vi": "Lương thấp hơn kỳ vọng"
           },
           {
             "label": "Career transition to a startup, freelancing, or a new job direction",
-            "pct": 15.4
+            "pct": 15.4,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
           },
           {
             "label": "Limited career development opportunities",
-            "pct": 15.4
+            "pct": 15.4,
+            "label_vi": "Ít cơ hội phát triển nghề nghiệp"
           },
           {
             "label": "Toxic or overly political work environment",
-            "pct": 15.4
+            "pct": 15.4,
+            "label_vi": "Môi trường độc hại hoặc nhiều chính trị nội bộ"
           }
         ],
         "top_reasons_to_apply": [
@@ -2271,10 +2616,103 @@
       "role_name_vn": "Lập trình viên Game",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Làm game: đồ hoạ, gameplay, cảm giác chơi",
+      "description": {
+        "summary": "Lập trình viên Game viết mã cho trò chơi trên engine như Unity, Unreal hay Cocos: cơ chế chơi, điều khiển, hiệu ứng, giao diện trong game, và tích hợp quảng cáo, thanh toán trong ứng dụng. Phần khó là làm game vừa vui vừa chạy mượt trên máy cấu hình thấp. Việc làm tập trung ở một số ít studio, nhiều nơi làm game di động.",
+        "downsides": [
+          "Trước ngày phát hành thường có giai đoạn crunch, cả đội làm muộn nhiều ngày liền.",
+          "Quyết định kinh doanh, như thêm cơ chế nạp tiền, có thể đi ngược thiết kế gameplay đã tinh chỉnh nhiều tháng.",
+          "Số công ty tuyển ít và tập trung, nên ít lựa chọn khi muốn đổi chỗ làm.",
+          "Trong khảo sát của ITviec, khó cân bằng công việc và gia đình là một lý do nghỉ việc."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L7 (đều C_INFERRED, chưa có JD), unknowns, 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [],
       "feeder_roles": [],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1252.00",
+          "15-1255.01"
+        ],
+        "interest_code": "ICA",
+        "note": "Ghép Software Developers và Video Game Designers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Game Developer Intern",
+          "years_experience": "0",
+          "core_output": "Hiện thực tính năng gameplay đơn giản trong engine có sẵn (Unity/Unreal/Cocos2d) theo hướng dẫn sát, chưa tự thiết kế hệ thống game, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Game Developer",
+          "years_experience": "0-1",
+          "core_output": "Tự hoàn thành một tính năng gameplay nhỏ (một cơ chế, một màn chơi) trong phạm vi được giao, mọi thay đổi qua review, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Game Developer",
+          "years_experience": "1-2",
+          "core_output": "Tự hiện thực trọn vẹn một hệ thống gameplay đã xác định rõ (combat, inventory, UI game), tối ưu hiệu năng cơ bản trên thiết bị di động, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Game Developer",
+          "years_experience": "2-4",
+          "core_output": "Chịu trách nhiệm end-to-end một module game (một hệ thống gameplay lớn hoặc một tính năng live-ops), tích hợp SDK bên thứ ba (ads, IAP, analytics), tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Game Developer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ thiết kế kiến trúc kỹ thuật cho một game/dự án, tối ưu hiệu năng ở quy mô production (framerate, memory trên thiết bị thấp cấp), mentor kỹ sư cấp dưới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead Game Developer",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt kỹ thuật cho một đội phát triển game, đặt chuẩn kiến trúc engine và quy trình live-ops cho studio, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Game Engineer",
+          "years_experience": "8-12",
+          "core_output": "Đặt định hướng công nghệ game xuyên nhiều dự án/studio, quyết định lựa chọn engine và kiến trúc kỹ thuật dài hạn, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -2793,19 +3231,24 @@
         "top_reasons_to_leave": [
           {
             "label": "Have better job opportunities",
-            "pct": 36.4
+            "pct": 36.4,
+            "label_vi": "Có cơ hội việc làm tốt hơn"
           },
           {
             "label": "organizational structure",
-            "pct": 27.3
+            "pct": 27.3,
+            "label_vi": "Thay đổi cơ cấu tổ chức",
+            "label_note": "Nhãn gốc bị cắt khi trích từ báo cáo ITviec; bản dịch là suy đoán, cần đối chiếu báo cáo gốc."
           },
           {
             "label": "Family commitments and inability to balance work and personal life",
-            "pct": 18.2
+            "pct": 18.2,
+            "label_vi": "Việc gia đình, khó cân bằng công việc và cuộc sống"
           },
           {
             "label": "Career transition to a startup, freelancing, or a new job direction",
-            "pct": 18.2
+            "pct": 18.2,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
           }
         ],
         "top_reasons_to_apply": [
@@ -2848,10 +3291,102 @@
       "role_name_vn": "Chuyên viên thiết kế UI/UX",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Sáng tạo thị giác và trải nghiệm — KHÔNG cần code",
+      "description": {
+        "summary": "Chuyên viên thiết kế UI/UX quyết định sản phẩm số trông thế nào và dùng ra sao: nghiên cứu người dùng, vẽ luồng thao tác, làm wireframe và bản thiết kế chi tiết (thường trên Figma), rồi kiểm thử với người dùng thật. Nghề không đòi viết mã, nhưng phải làm việc sát với lập trình viên và quản lý sản phẩm.",
+        "downsides": [
+          "Góp ý thường mơ hồ, kiểu “làm cho đẹp hơn”, nên phải sửa nhiều vòng mà không rõ đích.",
+          "Kết quả nghiên cứu người dùng có thể trái ý cấp trên và không phải lúc nào cũng được nghe.",
+          "Thiết kế có thể bị cắt bớt vì tốn quá nhiều công để lập trình.",
+          "Nhiều công ty chưa có công cụ đo hiệu quả thiết kế, nên khó chứng minh đóng góp."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L7 (đều C_INFERRED, chưa có JD), 4 sự kiện role-play riêng. Chưa có lý do nghỉ việc ITviec cho nghề này. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [],
       "feeder_roles": [],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1255.00"
+        ],
+        "interest_code": "IAC",
+        "note": "Web and Digital Interface Designers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "UI/UX Design Intern",
+          "years_experience": "0",
+          "core_output": "Vẽ lại (redesign) màn hình đơn giản theo design system có sẵn dưới hướng dẫn sát, chưa tự quyết định luồng UX, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher UI/UX Designer",
+          "years_experience": "0-1",
+          "core_output": "Tự thiết kế một màn hình/component UI nhỏ trong phạm vi được giao theo design system có sẵn, mọi thay đổi qua review, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior UI/UX Designer",
+          "years_experience": "1-2",
+          "core_output": "Tự thiết kế trọn vẹn một luồng UI cho một tính năng đã xác định rõ (wireframe, high-fidelity mockup), thực hiện usability test cơ bản dưới hướng dẫn, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle UI/UX Designer",
+          "years_experience": "2-4",
+          "core_output": "Chịu trách nhiệm thiết kế UX cho một mảng sản phẩm: nghiên cứu người dùng cơ bản, thiết kế luồng tương tác, duy trì design system cho phần mình phụ trách, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior UI/UX Designer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ dẫn dắt thiết kế UX cho cả một sản phẩm, chủ trì nghiên cứu người dùng sâu, chịu trách nhiệm về trải nghiệm tổng thể, mentor designer cấp dưới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead UI/UX Designer",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt kỹ thuật/chuyên môn cho một đội design, đặt chuẩn design system và quy trình UX research cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal UI/UX Designer / Head of Design",
+          "years_experience": "8-12",
+          "core_output": "Đặt định hướng trải nghiệm người dùng xuyên nhiều sản phẩm, đại diện thiết kế cấp cao nhất khi làm việc với lãnh đạo sản phẩm/công nghệ, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -3310,10 +3845,103 @@
       "role_name_vn": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Lập trình điều khiển thiết bị phần cứng thật",
+      "description": {
+        "summary": "Kỹ sư phần mềm nhúng viết chương trình chạy trực tiếp trên thiết bị phần cứng như vi điều khiển, cảm biến, thiết bị IoT hay linh kiện ô tô. Việc gồm viết firmware và driver, làm việc với giao thức giao tiếp, đo kiểm bằng máy hiện sóng, và tối ưu trong giới hạn rất chặt về bộ nhớ và điện năng. Nhiều vị trí nằm ở công ty FDI Nhật, Hàn, Đức.",
+        "downsides": [
+          "Gỡ lỗi khó: có lỗi chỉ hiện sau nhiều giờ chạy, có chip không hỗ trợ công cụ debug.",
+          "Lỗi lọt ra thị trường có thể buộc phải nạp lại firmware cho từng thiết bị đã bán.",
+          "Quy trình review và chuẩn chất lượng ở công ty FDI thường rất chặt; chưa rõ thăng tiến có chậm hơn công ty sản phẩm hay không."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L7 (đều C_INFERRED, chưa có JD), unknowns, 4 sự kiện role-play riêng. Chưa có lý do nghỉ việc ITviec cho nghề này. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [],
       "feeder_roles": [],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 27,
+        "itviec_slug_used": "embedded-engineer",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1252.00",
+          "17-2061.00"
+        ],
+        "interest_code": "ICR",
+        "note": "Ghép Software Developers và Computer Hardware Engineers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Embedded Software Engineer Intern",
+          "years_experience": "0",
+          "core_output": "Viết firmware đơn giản cho một module phần cứng theo tài liệu thiết kế có sẵn dưới giám sát trực tiếp, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Embedded Engineer",
+          "years_experience": "0-1",
+          "core_output": "Tự hoàn thành một driver/module firmware nhỏ trong phạm vi được giao, mọi thay đổi qua review kỹ — đặc biệt tại FDI Nhật/Đức nơi quy trình review thường chặt hơn mặt bằng chung, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Embedded Engineer",
+          "years_experience": "1-2",
+          "core_output": "Tự hiện thực trọn vẹn một driver/giao thức giao tiếp (UART/I2C/SPI) đã xác định rõ, debug bằng công cụ đo (oscilloscope, logic analyzer) dưới hướng dẫn, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Embedded Engineer",
+          "years_experience": "2-4",
+          "core_output": "Chịu trách nhiệm end-to-end firmware cho một board/module phần cứng, tối ưu tiêu thụ điện năng và bộ nhớ trong giới hạn phần cứng chặt, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Embedded Engineer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ thiết kế kiến trúc firmware/RTOS cho một sản phẩm nhúng, làm việc trực tiếp với đội thiết kế phần cứng để cân bằng ràng buộc HW/SW, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead Embedded Engineer",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt kỹ thuật cho một đội embedded, đặt chuẩn quy trình phát triển firmware — đặc biệt các chuẩn chất lượng khắt khe của FDI Nhật/Đức như automotive (ISO 26262...), tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Embedded Engineer",
+          "years_experience": "8-12",
+          "core_output": "Đặt định hướng kiến trúc phần cứng-phần mềm xuyên nhiều sản phẩm/dự án, đại diện kỹ thuật khi làm việc với tổng hành dinh (Nhật/Hàn/Đức), tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -3880,6 +4508,18 @@
       "role_name_vn": "Kiến trúc sư giải pháp",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Thiết kế kiến trúc tổng thể cho cả hệ thống, chọn công nghệ và cân đối đánh đổi",
+      "description": {
+        "summary": "Kiến trúc sư giải pháp vẽ bức tranh tổng thể của một hệ thống trước khi các đội bắt tay xây: chia hệ thống thành những phần nào, dùng công nghệ và dịch vụ cloud nào, mua sẵn hay tự làm. Họ cân giữa tốc độ, chi phí, bảo mật và khả năng mở rộng, rồi thuyết phục cả đội kỹ thuật lẫn ban lãnh đạo. Phần lớn người làm nghề đi lên sau nhiều năm làm kỹ sư.",
+        "downsides": [
+          "Thường phải ra quyết định lớn khi chưa đủ thông tin, và hậu quả kéo dài nhiều năm.",
+          "Kiến trúc dễ bị đội phát triển chê là quá phức tạp so với nhu cầu hiện tại.",
+          "Phải giải thích chuyện kỹ thuật cho người không có nền kỹ thuật trong thời gian ngắn.",
+          "Ở ngân hàng và doanh nghiệp lớn gần như không có cửa vào cho người ít kinh nghiệm; mốc thường gặp là 8–10 năm trở lên."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: destination_profile và entry_note (C_INFERRED, một phần neo vào JD NAB, ACB), 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "SWE_ARCH_ENT",
@@ -3924,8 +4564,57 @@
           "role_name": "DevOps Engineer"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 14,
+        "itviec_slug_used": "solution-architect",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1299.08"
+        ],
+        "interest_code": "CIR",
+        "note": "Computer Systems Engineers/Architects",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "D",
       "bands": "L6-L8",
+      "levels": [
+        {
+          "band": "L6",
+          "title_vn": "Solution Architect",
+          "years_experience": "8-10",
+          "core_output": "Thiết kế kiến trúc giải pháp đầu-cuối cho một dự án: chọn cách chia hệ thống, công nghệ và dịch vụ cloud, so sánh mua sẵn với tự làm, trong khung kiến trúc mục tiêu do cấp Enterprise Architect đặt ra.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Senior Solution Architect",
+          "years_experience": "10-13",
+          "core_output": "Chịu trách nhiệm kiến trúc cho một phân vùng nghiệp vụ gồm nhiều dự án, chủ trì thẩm định phương án của các đội, cân đối chi phí, bảo mật và tốc độ ra giá trị ở cấp chương trình.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        },
+        {
+          "band": "L8",
+          "title_vn": "Principal / Lead Solution Architect",
+          "years_experience": "13-15",
+          "core_output": "Đặt chuẩn kiến trúc giải pháp cho nhiều phân vùng nghiệp vụ, ngồi hội đồng thẩm định kiến trúc cùng Enterprise Architect, và là đầu mối kỹ thuật cao nhất khi làm việc với lãnh đạo hoặc khách hàng lớn.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -4417,19 +5106,23 @@
         "top_reasons_to_leave": [
           {
             "label": "Career transition to a startup, freelancing, or a new job direction",
-            "pct": 24.5
+            "pct": 24.5,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
           },
           {
             "label": "Limited career development opportunities",
-            "pct": 19.4
+            "pct": 19.4,
+            "label_vi": "Ít cơ hội phát triển nghề nghiệp"
           },
           {
             "label": "The company and its product have no potential for growth",
-            "pct": 17.3
+            "pct": 17.3,
+            "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
           },
           {
             "label": "Uncaring or uninspiring leadership",
-            "pct": 15.3
+            "pct": 15.3,
+            "label_vi": "Lãnh đạo thiếu quan tâm hoặc không truyền cảm hứng"
           }
         ],
         "top_reasons_to_apply": [
@@ -4472,6 +5165,18 @@
       "role_name_vn": "Trưởng nhóm kỹ thuật",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Dẫn dắt kỹ thuật một đội, vẫn code nhưng quyết định hướng đi",
+      "description": {
+        "summary": "Trưởng nhóm kỹ thuật chịu trách nhiệm kỹ thuật cho một đội: quyết định cách xây phần việc của đội, review mã, gỡ những vướng mắc khó nhất và kèm cặp thành viên. Họ vẫn viết mã nhưng dành nhiều thời gian hơn cho họp và điều phối. Đây không phải vị trí tuyển người mới; thường đến sau vài năm ở cấp Senior.",
+        "downsides": [
+          "Lịch họp dày khiến ít thời gian viết mã, trong khi phần việc kỹ thuật của mình vẫn phải xong.",
+          "Phải đứng giữa khi thành viên bất đồng gay gắt về kỹ thuật.",
+          "Người giỏi nhất đội nghỉ giữa dự án là rủi ro đè trực tiếp lên trưởng nhóm.",
+          "Quyết định kiến trúc từ trước có thể thành gánh nặng khi hệ thống lớn lên."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: destination_profile và entry_note (C_INFERRED, chưa có JD Tech Lead), 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [],
       "feeder_roles": [
         {
@@ -4487,8 +5192,49 @@
           "role_name": "Mobile Developer"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1252.00",
+          "11-3021.00"
+        ],
+        "interest_code": "CIE",
+        "note": "Không có mã riêng; ghép Software Developers và Computer and Information Systems Managers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "C",
       "bands": "L6-L7",
+      "levels": [
+        {
+          "band": "L6",
+          "title_vn": "Tech Lead",
+          "years_experience": "6-9 (kèm 2+ năm dẫn dắt)",
+          "core_output": "Chịu trách nhiệm kỹ thuật cho phần việc của một đội: tự quyết kiến trúc ở phạm vi component hoặc module của đội trong khung kiến trúc tổng thể do cấp trên đưa xuống, review code, gỡ blocker khó nhất và kèm cặp thành viên; chưa có quyền đánh giá hiệu suất.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Senior Tech Lead",
+          "years_experience": "8-10",
+          "core_output": "Dẫn dắt kỹ thuật cho một đội lớn hoặc vài đội cùng một sản phẩm, điều phối quyết định kỹ thuật giữa các đội và cùng kiến trúc sư đặt kiến trúc tổng thể; vẫn chưa quản lý nhân sự trực tiếp.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -4983,19 +5729,23 @@
         "top_reasons_to_leave": [
           {
             "label": "Career transition to a startup, freelancing, or a new job direction",
-            "pct": 25.3
+            "pct": 25.3,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
           },
           {
             "label": "The company and its product have no potential for growth",
-            "pct": 20.0
+            "pct": 20.0,
+            "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
           },
           {
             "label": "The work is no longer challenging",
-            "pct": 17.3
+            "pct": 17.3,
+            "label_vi": "Công việc không còn thử thách"
           },
           {
             "label": "Toxic or overly political work environment",
-            "pct": 17.3
+            "pct": 17.3,
+            "label_vi": "Môi trường độc hại hoặc nhiều chính trị nội bộ"
           }
         ],
         "top_reasons_to_apply": [
@@ -5037,6 +5787,18 @@
       "role_name_vn": "Trưởng phòng Kỹ thuật",
       "role_group": "Software Engineering & Architecture",
       "roleplay_experience": "Chịu trách nhiệm về con người: tuyển, đánh giá hiệu suất, phát triển đội",
+      "description": {
+        "summary": "Trưởng phòng kỹ thuật (Engineering Manager) chịu trách nhiệm về con người và kết quả bàn giao của một hoặc nhiều đội kỹ sư: tuyển người, họp 1:1, đánh giá hiệu suất, xây lộ trình phát triển, quản lý tiến độ và rủi ro. Công việc chuyển từ tự làm sang giúp người khác làm tốt. Thường đến được vị trí này sau khoảng tám năm trở lên, qua vai trò trưởng nhóm.",
+        "downsides": [
+          "Phải ra quyết định khó về con người: đánh giá thấp một người mình quý, chọn ai nghỉ khi cắt giảm.",
+          "Xa dần chi tiết kỹ thuật, có lúc không theo kịp các buổi họp kỹ thuật của chính đội mình.",
+          "Một sự cố dễ được nhắc tới hơn nhiều tính năng giao đúng hạn.",
+          "Ở một số công ty, quản lý vẫn phải trực xử lý sự cố production."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: destination_profile và entry_note (C_INFERRED, neo vào 3 JD NAB), company_type_variance, 4 sự kiện role-play riêng. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "CLOUD_LEAD",
@@ -5067,8 +5829,56 @@
           "role_name": "Solution Architect"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "11-3021.00"
+        ],
+        "interest_code": "CEI",
+        "note": "Computer and Information Systems Managers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "C",
       "bands": "L7-L9",
+      "levels": [
+        {
+          "band": "L7",
+          "title_vn": "Engineering Manager",
+          "years_experience": "8-12",
+          "core_output": "Quản lý trực tiếp một đội kỹ sư: họp 1:1, kế hoạch phát triển cá nhân, đánh giá hiệu suất, quản lý cột mốc và rủi ro của đội; vẫn giữ nền kỹ thuật đủ để tham gia xử lý sự cố production.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        },
+        {
+          "band": "L8",
+          "title_vn": "Senior Engineering Manager",
+          "years_experience": "10-15",
+          "core_output": "Quản lý nhiều đội thông qua các trưởng nhóm, đặt chuẩn kỹ thuật và kỷ luật bảo mật, kiểm toán cho cả khối, tham gia tuyển dụng và phân bổ nguồn lực giữa các đội.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        },
+        {
+          "band": "L9",
+          "title_vn": "Head of Engineering / Director of Engineering",
+          "years_experience": "12-15+ (kèm 5+ năm dẫn dắt)",
+          "core_output": "Chịu trách nhiệm cả bộ phận kỹ thuật: chiến lược đội ngũ, cơ cấu tổ chức, ngân sách và báo cáo trực tiếp cho lãnh đạo công ty.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -5568,19 +6378,23 @@
         "top_reasons_to_leave": [
           {
             "label": "Career transition to a startup, freelancing, or a new job direction",
-            "pct": 34.4
+            "pct": 34.4,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
           },
           {
             "label": "Few or no opportunities for promotion",
-            "pct": 21.9
+            "pct": 21.9,
+            "label_vi": "Ít hoặc không có cơ hội thăng chức"
           },
           {
             "label": "Limited career development opportunities",
-            "pct": 21.9
+            "pct": 21.9,
+            "label_vi": "Ít cơ hội phát triển nghề nghiệp"
           },
           {
             "label": "The company and its product have no potential for growth",
-            "pct": 21.9
+            "pct": 21.9,
+            "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
           }
         ],
         "top_reasons_to_apply": [
@@ -5622,6 +6436,18 @@
       "role_name_vn": "Kỹ sư kiểm thử thủ công / Tester",
       "role_group": "Quality Assurance & Testing",
       "roleplay_experience": "Tìm lỗi có hệ thống, tỉ mỉ từng chi tiết — bắt đầu từ kiểm thử thủ công, tiến dần sang viết code tự động hoá",
+      "description": {
+        "summary": "Kỹ sư kiểm thử tìm lỗi trong phần mềm trước khi người dùng gặp: đọc yêu cầu, viết kịch bản kiểm thử, chạy thử theo nhiều tình huống, và báo lỗi đủ rõ để lập trình viên sửa được. Đây là cửa vào ngành phổ biến cho người chưa có nền lập trình vững; theo thời gian, nhiều người chuyển sang viết kiểm thử tự động.",
+        "downsides": [
+          "Nhiều việc lặp lại, như chạy lại cả bộ kiểm thử sau mỗi lần sửa lỗi.",
+          "Hay phải tranh luận với lập trình viên khi lỗi không tái hiện được trên máy họ.",
+          "Trần của kiểm thử thủ công thấp: lên cao thường phải chuyển sang tự động hoá hoặc quản lý, và nhu cầu kiểm thử thủ công đang giảm ở công ty lớn.",
+          "Trong khảo sát của ITviec, lương thấp hơn kỳ vọng là lý do nghỉ việc hay gặp nhất."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L5 (4/5 A_VERIFIED), company_type_variance, 5 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "QA_AUTO",
@@ -5655,8 +6481,78 @@
         }
       ],
       "feeder_roles": [],
+      "work_environment_ids": [
+        "WE_PROJECT_OUTSOURCING",
+        "WE_HYBRID_PRODUCT"
+      ],
+      "work_environment_primary": "WE_PROJECT_OUTSOURCING",
+      "work_environment_note": "Dễ làm remote nhưng do yếu tố bảo mật thường phải tới văn phòng ở dự án outsource.",
+      "education_path_ids": [
+        "EDU_ANY_PLUS_TRAINING"
+      ],
+      "education_path_primary": "EDU_ANY_PLUS_TRAINING",
+      "education_path_note": "Trung tâm đào tạo tester là bệ phóng lớn.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 74,
+        "itviec_slug_used": "manual-tester",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1253.00"
+        ],
+        "interest_code": "ICR",
+        "note": "Software Quality Assurance Analysts and Testers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L5",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "QA/Tester Intern",
+          "years_experience": "0",
+          "core_output": "Thực thi test case có sẵn dưới sự hướng dẫn, học cách viết bug report.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Tester",
+          "years_experience": "0-1",
+          "core_output": "Tự thực thi bộ test case cho một tính năng, viết bug report đạt chuẩn, chưa tự thiết kế test case.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior QC/Tester",
+          "years_experience": "1-2",
+          "core_output": "Tự thiết kế test case cho một tính năng từ yêu cầu có sẵn, thực hiện test theo nhiều kỹ thuật cơ bản (boundary, equivalence).",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle QC/Tester",
+          "years_experience": "2-4",
+          "core_output": "Chịu trách nhiệm test plan cho cả một module, tự xác định phạm vi và độ ưu tiên test, review test case của junior.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior QC/Tester",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ chiến lược test cho cả một sản phẩm, mentor đội test — đây gần như là TRẦN của title Manual Tester thuần tại VN; band cao hơn hầu như luôn đi kèm chuyển sang QA_AUTO hoặc QA_LEAD.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -6244,19 +7140,24 @@
         "top_reasons_to_leave": [
           {
             "label": "Salary is lower than expected",
-            "pct": 32.2
+            "pct": 32.2,
+            "label_vi": "Lương thấp hơn kỳ vọng"
           },
           {
             "label": "organizational structure",
-            "pct": 20.7
+            "pct": 20.7,
+            "label_vi": "Thay đổi cơ cấu tổ chức",
+            "label_note": "Nhãn gốc bị cắt khi trích từ báo cáo ITviec; bản dịch là suy đoán, cần đối chiếu báo cáo gốc."
           },
           {
             "label": "Limited career development opportunities",
-            "pct": 18.4
+            "pct": 18.4,
+            "label_vi": "Ít cơ hội phát triển nghề nghiệp"
           },
           {
             "label": "Few or no opportunities for promotion",
-            "pct": 14.9
+            "pct": 14.9,
+            "label_vi": "Ít hoặc không có cơ hội thăng chức"
           }
         ],
         "top_reasons_to_apply": [
@@ -6298,6 +7199,18 @@
       "role_name_vn": "Chuyên viên phân tích dữ liệu",
       "role_group": "Data, AI & Machine Learning",
       "roleplay_experience": "Đọc số liệu, tìm câu chuyện đằng sau con số — ít code, nhiều giao tiếp với phòng ban",
+      "description": {
+        "summary": "Chuyên viên phân tích dữ liệu trả lời câu hỏi kinh doanh bằng số liệu: lấy dữ liệu bằng SQL, làm sạch, phân tích, dựng dashboard trên công cụ như Power BI hay Tableau, và trình bày kết luận cho các phòng ban. Nghề dùng ít mã hơn các nghề kỹ thuật khác nhưng cần giao tiếp và hiểu nghiệp vụ. Ngân hàng và công ty sản phẩm tuyển nhiều.",
+        "downsides": [
+          "Có lúc bị kỳ vọng dùng số liệu để chứng minh điều cấp trên đã tin sẵn.",
+          "Nhiều thời gian dành cho dữ liệu bẩn, thiếu, hoặc mỗi phòng ban đưa một con số khác nhau.",
+          "Dashboard làm công phu vẫn có thể không ai dùng.",
+          "Trong khảo sát của ITviec, môi trường nhiều chính trị nội bộ là lý do nghỉ việc hay gặp nhất."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L6 (4/6 A_VERIFIED), company_type_variance, 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "DATA_BI",
@@ -6307,8 +7220,86 @@
         }
       ],
       "feeder_roles": [],
+      "work_environment_ids": [
+        "WE_ONSITE_ENTERPRISE",
+        "WE_HYBRID_PRODUCT"
+      ],
+      "work_environment_primary": "WE_HYBRID_PRODUCT",
+      "work_environment_note": "Ngân hàng yêu cầu bảo mật cao nên thường làm onsite.",
+      "education_path_ids": [
+        "EDU_ANY_PLUS_TRAINING",
+        "EDU_DOMAIN_PLUS_IT"
+      ],
+      "education_path_primary": "EDU_DOMAIN_PLUS_IT",
+      "education_path_note": "Rất chuộng khối kinh tế, tài chính, toán học.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-2051.01"
+        ],
+        "interest_code": "CIE",
+        "note": "Business Intelligence Analysts",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L6",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Data Analyst Intern",
+          "years_experience": "0",
+          "core_output": "Làm sạch dữ liệu và tạo báo cáo/dashboard đơn giản theo template có sẵn dưới sự hướng dẫn trực tiếp, chưa tự đề xuất chỉ số hay cách phân tích.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Data Analyst",
+          "years_experience": "0-1",
+          "core_output": "Tự viết được truy vấn SQL cho yêu cầu báo cáo rõ ràng, tạo dashboard cơ bản trên công cụ BI (Power BI/Tableau/Looker), mọi kết luận phân tích đều cần review.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Data Analyst",
+          "years_experience": "1-2",
+          "core_output": "Tự thực hiện một phân tích trọn vẹn từ truy vấn dữ liệu tới trình bày kết luận cho một câu hỏi nghiệp vụ cụ thể đã được xác định sẵn.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Data Analyst",
+          "years_experience": "2-4",
+          "core_output": "Tự đề xuất chỉ số và cách đo lường cho một mảng nghiệp vụ, xây dashboard tự phục vụ (self-service) cho stakeholder, làm việc trực tiếp với phòng ban nghiệp vụ.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Data Analyst",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ toàn bộ khung phân tích cho một domain nghiệp vụ lớn, tư vấn quyết định kinh doanh dựa trên dữ liệu, mentor DA cấp dưới, làm việc trực tiếp với lãnh đạo phòng ban.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead / Principal Data Analyst",
+          "years_experience": "6-10",
+          "core_output": "Đặt chuẩn phân tích và công cụ BI cho toàn tổ chức, dẫn dắt đội DA — đây gần như là trần của title DA thuần tại VN; band cao hơn thường đổi sang DATA_PM hoặc DATA_GOV.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -6824,19 +7815,23 @@
         "top_reasons_to_leave": [
           {
             "label": "Toxic or overly political work environment",
-            "pct": 33.3
+            "pct": 33.3,
+            "label_vi": "Môi trường độc hại hoặc nhiều chính trị nội bộ"
           },
           {
             "label": "Career transition to a startup, freelancing, or a new job direction",
-            "pct": 22.2
+            "pct": 22.2,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
           },
           {
             "label": "Salary is lower than expected",
-            "pct": 22.2
+            "pct": 22.2,
+            "label_vi": "Lương thấp hơn kỳ vọng"
           },
           {
             "label": "Leader/Line Manager engages in micromanagement",
-            "pct": 16.7
+            "pct": 16.7,
+            "label_vi": "Quản lý trực tiếp can thiệp quá chi tiết"
           }
         ],
         "top_reasons_to_apply": [
@@ -6878,6 +7873,18 @@
       "role_name_vn": "Kỹ sư trí tuệ nhân tạo",
       "role_group": "Data, AI & Machine Learning",
       "roleplay_experience": "Xây hệ thống thông minh: mô hình học máy, LLM, thị giác máy tính",
+      "description": {
+        "summary": "Kỹ sư trí tuệ nhân tạo đưa mô hình học máy vào sản phẩm thật: chọn hoặc tinh chỉnh mô hình (kể cả mô hình ngôn ngữ lớn), chuẩn bị dữ liệu, đánh giá chất lượng, và tối ưu chi phí, độ trễ khi chạy cho người dùng. Hầu như không tuyển người mới ra trường; thường vào nghề sau khi đã có nền lập trình, ví dụ từ Back-end.",
+        "downsides": [
+          "Mô hình tốt trong thử nghiệm có thể sai nhiều khi gặp dữ liệu thật.",
+          "Yêu cầu “thêm AI vào sản phẩm” hay đến trước khi có bài toán rõ ràng.",
+          "Huấn luyện tốn nhiều giờ máy; lỗi ở cuối quá trình làm mất trắng cả ngày.",
+          "Khó giải thích vì sao mô hình đưa ra một kết quả, trong khi khách hàng có thể đòi lời giải thích."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L3–L7 (đều C_INFERRED, chưa có JD), entry_note, 4 sự kiện role-play riêng. Chưa có lý do nghỉ việc ITviec cho nghề này. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "DATA_ML",
@@ -6918,8 +7925,73 @@
           "role_name": "Backend Developer"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 169,
+        "itviec_slug_used": "ai-machine-learning-engineer",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-2051.00"
+        ],
+        "interest_code": "ICA",
+        "note": "Data Scientists",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "B",
       "bands": "L3-L7",
+      "levels": [
+        {
+          "band": "L3",
+          "title_vn": "AI Engineer (mới chuyển ngang)",
+          "years_experience": "1-2 (kèm nền lập trình)",
+          "core_output": "Tích hợp API mô hình AI có sẵn (OpenAI, HuggingFace...) vào một tính năng cụ thể theo thiết kế đã có, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review trước khi merge/áp dụng.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle AI Engineer",
+          "years_experience": "2-4",
+          "core_output": "Tự triển khai một pipeline AI trọn vẹn cho một tính năng, từ dữ liệu đầu vào tới kết quả trả về, tinh chỉnh model có sẵn ở mức cơ bản, tương ứng vai trò tự chủ trong phạm vi một module hoặc một mảng việc, ít cần review chi tiết.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior AI Engineer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ thiết kế giải pháp AI cho một domain sản phẩm, đánh giá và chọn model phù hợp, tối ưu chi phí/độ trễ khi đưa vào production, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn, đồng thời review công việc của người khác.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "AI Engineering Lead",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt kỹ thuật AI cho một team, đặt chuẩn đánh giá chất lượng model và quy trình MLOps cơ bản, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc một hệ thống, chịu trách nhiệm về kết quả của cả nhóm.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal AI Engineer",
+          "years_experience": "8-12",
+          "core_output": "Đặt định hướng ứng dụng AI xuyên nhiều sản phẩm, quyết định build-vs-buy cho năng lực AI, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -7364,6 +8436,18 @@
       "role_name_vn": "Kỹ sư dữ liệu",
       "role_group": "Data, AI & Machine Learning",
       "roleplay_experience": "Xây đường ống đưa dữ liệu từ nhiều nguồn về một chỗ — nặng về kỹ thuật",
+      "description": {
+        "summary": "Kỹ sư dữ liệu xây và vận hành đường ống đưa dữ liệu từ nhiều nguồn về kho dữ liệu, để người phân tích và hệ thống AI dùng được. Việc gồm viết job ETL/ELT, thiết kế kho dữ liệu, tối ưu xử lý dữ liệu lớn và giữ dữ liệu đúng, đủ, kịp giờ. Hiếm khi tuyển người mới; thường chuyển sang từ Back-end hoặc phân tích dữ liệu.",
+        "downsides": [
+          "Pipeline lỗi ban đêm vẫn phải sửa trước giờ làm, vì báo cáo buổi sáng phụ thuộc vào nó.",
+          "Nguồn dữ liệu bên ngoài đổi định dạng không báo trước là có thể gãy cả hệ thống.",
+          "Chi phí xử lý dữ liệu lớn có thể tăng rất nhanh nếu thiết kế không cẩn thận.",
+          "Kho dữ liệu lâu năm thường có nhiều bảng không rõ ai đang dùng, nên sửa gì cũng rủi ro."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L3–L7 (đều C_INFERRED, chưa có JD), entry_note, 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "DATA_ANALYTICSENG",
@@ -7388,8 +8472,74 @@
           "role_name": "Data Analyst"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 39,
+        "itviec_slug_used": "data-engineer",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1243.01",
+          "15-1243.00"
+        ],
+        "interest_code": "CIE",
+        "note": "Ghép Data Warehousing Specialists và Database Architects",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "B",
       "bands": "L3-L7",
+      "levels": [
+        {
+          "band": "L3",
+          "title_vn": "Data Engineer (mới chuyển ngang)",
+          "years_experience": "1-3 (kèm nền Backend hoặc DA)",
+          "core_output": "Viết và vận hành pipeline ETL/ELT có sẵn, xử lý lỗi dữ liệu cơ bản dưới hướng dẫn, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Data Engineer",
+          "years_experience": "3-5",
+          "core_output": "Tự thiết kế một pipeline dữ liệu mới cho một nguồn/domain cụ thể, tối ưu truy vấn và job xử lý dữ liệu lớn, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Data Engineer",
+          "years_experience": "5-8",
+          "core_output": "Tự chủ kiến trúc dữ liệu cho cả một hệ thống (data warehouse/lakehouse), chịu trách nhiệm chất lượng và độ tin cậy dữ liệu ở quy mô production, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Data Engineering Lead",
+          "years_experience": "7-10",
+          "core_output": "Dẫn dắt kỹ thuật đội Data Engineering, đặt chuẩn kiến trúc dữ liệu và công cụ cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Data Engineer",
+          "years_experience": "8-12",
+          "core_output": "Đặt chiến lược nền tảng dữ liệu xuyên nhiều đội/sản phẩm, tương ứng vai trò chịu trách nhiệm cross-team.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -7884,19 +9034,24 @@
         "top_reasons_to_leave": [
           {
             "label": "direction",
-            "pct": 37.5
+            "pct": 37.5,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
+            "label_note": "Nhãn gốc bị cắt khi trích từ báo cáo ITviec; bản dịch là suy đoán, cần đối chiếu báo cáo gốc."
           },
           {
             "label": "Limited career development opportunities",
-            "pct": 25.0
+            "pct": 25.0,
+            "label_vi": "Ít cơ hội phát triển nghề nghiệp"
           },
           {
             "label": "Few or no opportunities for salary increases",
-            "pct": 18.8
+            "pct": 18.8,
+            "label_vi": "Ít hoặc không có cơ hội tăng lương"
           },
           {
             "label": "Have better job opportunities",
-            "pct": 18.8
+            "pct": 18.8,
+            "label_vi": "Có cơ hội việc làm tốt hơn"
           }
         ],
         "top_reasons_to_apply": [
@@ -7936,6 +9091,18 @@
       "role_name_vn": "Kỹ sư DevOps",
       "role_group": "Cloud, DevOps & SRE",
       "roleplay_experience": "Tự động hoá, đưa sản phẩm lên chạy thật, giữ hệ thống không sập",
+      "description": {
+        "summary": "Kỹ sư DevOps làm cho phần mềm được kiểm, đóng gói và đưa lên chạy thật một cách tự động, rồi giữ hệ thống chạy ổn định. Việc gồm dựng pipeline CI/CD, quản lý hạ tầng bằng mã (Infrastructure as Code), giám sát, xử lý sự cố và kiểm soát chi phí cloud. Thường không tuyển thẳng người mới; người làm nghề hay chuyển sang từ Back-end hoặc quản trị hệ thống sau vài năm.",
+        "downsides": [
+          "Có ca trực và có thể bị gọi dậy giữa đêm khi hệ thống ngừng chạy.",
+          "Bị kẹp giữa: đội phát triển muốn đưa lên nhanh, còn mình chịu trách nhiệm khi có sự cố.",
+          "Chi phí cloud tăng bất thường thường đổ về đội DevOps tìm nguyên nhân.",
+          "Phải giải thích nhu cầu hạ tầng cho cấp trên không có nền kỹ thuật."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L3–L7 (4/5 A_VERIFIED), entry_note, 5 sự kiện role-play riêng. Chưa có lý do nghỉ việc ITviec cho nghề này. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "DATA_MLOPS",
@@ -7984,8 +9151,80 @@
           "role_name": "IT Helpdesk"
         }
       ],
+      "work_environment_ids": [
+        "WE_HYBRID_PRODUCT",
+        "WE_REMOTE_GLOBAL"
+      ],
+      "work_environment_primary": "WE_HYBRID_PRODUCT",
+      "work_environment_note": "Thường xuyên có trực On-call.",
+      "education_path_ids": [
+        "EDU_CS_REQUIRED",
+        "EDU_CERT_DRIVEN"
+      ],
+      "education_path_primary": "EDU_CERT_DRIVEN",
+      "education_path_note": "Chứng chỉ AWS/Azure/GCP và CKA rất có trọng lượng.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 77,
+        "itviec_slug_used": "devops-engineer",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1244.00",
+          "15-1252.00"
+        ],
+        "interest_code": "CIR",
+        "note": "Không có mã riêng; ghép Network and Computer Systems Administrators và Software Developers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "B",
       "bands": "L3-L7",
+      "levels": [
+        {
+          "band": "L3",
+          "title_vn": "DevOps Engineer (mới chuyển ngang)",
+          "years_experience": "1-3 (thường kèm nền tảng Backend hoặc SysAdmin trước đó)",
+          "core_output": "Tự vận hành pipeline CI/CD có sẵn, viết script tự động hoá cho tác vụ lặp lại, học cách quản lý hạ tầng cloud dưới sự hướng dẫn của kỹ sư senior hơn.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle DevOps Engineer",
+          "years_experience": "3-5",
+          "core_output": "Chịu trách nhiệm một phần hạ tầng (một môi trường hoặc một cụm dịch vụ), tự thiết kế pipeline CI/CD mới, xử lý sự cố vận hành ở mức trung bình.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior DevOps Engineer",
+          "years_experience": "5-8",
+          "core_output": "Tự chủ kiến trúc hạ tầng cho cả một hệ thống, thiết lập chuẩn Infrastructure as Code, chịu trách nhiệm chính khi có sự cố production nghiêm trọng, mentor kỹ sư cấp dưới.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "DevOps Lead / Platform Lead",
+          "years_experience": "7-10",
+          "core_output": "Dẫn dắt đội DevOps/Platform, đặt chiến lược hạ tầng và công cụ cho toàn tổ chức, coaching đội.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal DevOps Engineer / Head of Infrastructure",
+          "years_experience": "8-12",
+          "core_output": "Đặt định hướng hạ tầng và vận hành xuyên tổ chức, thường là người quyết định chiến lược cloud/multi-cloud cấp cao nhất về mặt kỹ thuật.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -8480,6 +9719,18 @@
       "role_name_vn": "Kỹ sư điện toán đám mây",
       "role_group": "Cloud, DevOps & SRE",
       "roleplay_experience": "Xây và vận hành hạ tầng trên nền tảng đám mây",
+      "description": {
+        "summary": "Kỹ sư điện toán đám mây dựng và vận hành hạ tầng trên AWS, Azure hoặc Google Cloud: máy chủ ảo, lưu trữ, mạng, phân quyền, sao lưu. Nhiều người làm ở công ty đối tác cloud, triển khai hệ thống cho nhiều khách hàng, kể cả chuyển hệ thống cũ từ máy chủ vật lý lên cloud. Chứng chỉ của nhà cung cấp cloud thường được coi trọng.",
+        "downsides": [
+          "Sai sót bảo mật, như lộ khoá truy cập, có thể gây thiệt hại bằng tiền thật trong vài phút.",
+          "Dự án chuyển hệ thống cũ lên cloud thường bị ép tiến độ trong khi hệ thống không có tài liệu.",
+          "Chứng chỉ cloud hết hạn sau vài năm, phải tự học lại và có thể tự trả phí thi.",
+          "Có cửa vào cho người mới nhưng hẹp, chủ yếu ở công ty đối tác cloud."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L2–L4 và destination_profile (đều C_INFERRED, chưa có JD), entry_note, 4 sự kiện role-play riêng. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [],
       "feeder_roles": [
         {
@@ -8487,8 +9738,73 @@
           "role_name": "IT Helpdesk"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1299.08",
+          "15-1244.00"
+        ],
+        "interest_code": "CIR",
+        "note": "Không có mã riêng; ghép Computer Systems Engineers/Architects và Network and Computer Systems Administrators",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "D",
       "bands": "L2-L6",
+      "levels": [
+        {
+          "band": "L2",
+          "title_vn": "Fresher Cloud Engineer",
+          "years_experience": "0-1 (hiếm, chủ yếu AWS/Azure partner)",
+          "core_output": "Triển khai tài nguyên cloud theo hướng dẫn/template có sẵn (VM, storage, network cơ bản) dưới giám sát trực tiếp, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Cloud Engineer",
+          "years_experience": "1-2",
+          "core_output": "Tự cấu hình một dịch vụ cloud cụ thể theo yêu cầu rõ ràng (compute, storage, networking cơ bản), tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Cloud Engineer",
+          "years_experience": "2-4",
+          "core_output": "Chịu trách nhiệm triển khai một hệ thống trên cloud cho một dự án/khách hàng, viết Infrastructure as Code cơ bản, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Cloud Engineer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ thiết kế hạ tầng cloud cho nhiều dự án hoặc khách hàng cùng lúc, viết chuẩn Infrastructure as Code cho đội và kèm cặp kỹ sư cloud cấp dưới.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead Cloud Engineer",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt kỹ thuật đội cloud và chịu trách nhiệm thiết kế giải pháp cho khách hàng lớn; ở cấp này ranh giới với Cloud Architect bắt đầu mờ.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -8925,6 +10241,18 @@
       "role_name_vn": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
       "role_group": "Cyber Security",
       "roleplay_experience": "Bảo vệ hệ thống: giám sát và điều tra cảnh báo tấn công (giai đoạn đầu thường TRỰC CA, có ca đêm), viết rule phát hiện trên SIEM, triển khai firewall/IDS/EDR",
+      "description": {
+        "summary": "Kỹ sư an ninh mạng bảo vệ hệ thống của tổ chức trước tấn công: giám sát cảnh báo, điều tra dấu hiệu xâm nhập, viết luật phát hiện trên SIEM, triển khai tường lửa, IDS và phần mềm bảo vệ máy trạm. Cửa vào phổ biến là vị trí phân tích viên SOC trực theo ca; lên cao hơn thì thiết kế kiến trúc và chính sách bảo mật cho cả tổ chức.",
+        "downsides": [
+          "Giai đoạn đầu thường trực ca, kể cả ca đêm, và phần lớn cảnh báo là báo động giả.",
+          "Sự cố có thể xảy ra bất kỳ lúc nào, kể cả cuối tuần.",
+          "Quy định bảo mật hay bị các đội khác xem là làm chậm việc.",
+          "Cấp trên thường muốn một câu trả lời “an toàn hay không”, trong khi thực tế chỉ có mức độ rủi ro."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: roleplay_experience, bands_correction (A_VERIFIED), core_output L3–L7 (C_INFERRED) và L1–L2 của SEC_SOC, 4 sự kiện role-play riêng. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "SEC_SOC",
@@ -8953,8 +10281,89 @@
           "role_name": "DevOps Engineer"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 50,
+        "itviec_slug_used": "security-engineer",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1299.05"
+        ],
+        "interest_code": "CIR",
+        "note": "Information Security Engineers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "B",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "SOC Analyst Intern",
+          "years_experience": "0",
+          "core_output": "Theo dõi dashboard giám sát và học cách phân loại alert dưới sự kèm cặp trực tiếp, chưa tự xử lý sự cố nào.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json (SEC_SOC, đã gộp vào nghề này)"
+        },
+        {
+          "band": "L2",
+          "title_vn": "SOC Analyst (Tier 1)",
+          "years_experience": "0-1",
+          "core_output": "Tự phân loại và lọc cảnh báo bảo mật theo quy trình (playbook) có sẵn, escalate lên Tier 2 khi vượt phạm vi, thường làm việc theo ca.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json (SEC_SOC, đã gộp vào nghề này)"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Security Engineer (mới chuyển ngang)",
+          "years_experience": "1-3",
+          "core_output": "Triển khai và duy trì các công cụ bảo mật có sẵn (firewall, IDS/IPS, endpoint protection) theo hướng dẫn, xử lý alert cơ bản, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Security Engineer",
+          "years_experience": "2-4",
+          "core_output": "Tự cấu hình và điều chỉnh chính sách bảo mật cho một hệ thống/mảng hạ tầng, tham gia điều tra sự cố ở mức trung bình, tương ứng vai trò tự chủ trong phạm vi một module.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Security Engineer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ thiết kế kiến trúc bảo mật cho một hệ thống hoặc một domain hạ tầng, chịu trách nhiệm khi có sự cố bảo mật nghiêm trọng, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Security Engineering Lead",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt kỹ thuật đội bảo mật, đặt chuẩn chính sách và công cụ bảo mật cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Security Engineer",
+          "years_experience": "8-12",
+          "core_output": "Đặt chiến lược an ninh mạng xuyên toàn bộ hạ tầng/tổ chức, tương ứng vai trò chịu trách nhiệm cross-team.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -9416,6 +10825,18 @@
       "role_name_vn": "Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng",
       "role_group": "Cyber Security",
       "roleplay_experience": "Tấn công thử vào hệ thống để tìm lỗ hổng trước kẻ xấu",
+      "description": {
+        "summary": "Chuyên viên kiểm thử xâm nhập được thuê để tấn công thử vào hệ thống của khách hàng, trong phạm vi hợp đồng cho phép, nhằm tìm lỗ hổng trước kẻ xấu. Họ lên kế hoạch, khai thác lỗ hổng web, mobile hoặc hạ tầng, rồi viết báo cáo kèm cách khắc phục. Nhiều người vào nghề qua các cuộc thi CTF và chương trình bug bounty thay vì đi từ vị trí thực tập.",
+        "downsides": [
+          "Có những đợt nhiều ngày không tìm ra gì trong khi hợp đồng sắp hết hạn.",
+          "Khách hàng không phải lúc nào cũng muốn nghe kết quả xấu, nhất là khi họ cần chứng nhận gấp.",
+          "Kỹ năng có thể bị người quen nhờ dùng sai mục đích; phải giữ rất chặt ranh giới pháp lý và đạo đức.",
+          "Ít vị trí cho người mới; thường cần thành tích CTF hoặc bug bounty để chứng minh năng lực."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L3–L7 (đều C_INFERRED, chưa có JD), entry_note, 4 sự kiện role-play riêng. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "QA_SECTEST",
@@ -9440,8 +10861,72 @@
           "role_name": "Backend Developer"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1299.04"
+        ],
+        "interest_code": "ICR",
+        "note": "Penetration Testers",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "B",
       "bands": "L3-L7",
+      "levels": [
+        {
+          "band": "L3",
+          "title_vn": "Junior Penetration Tester",
+          "years_experience": "1-2 (hoặc tương đương qua CTF/bug bounty)",
+          "core_output": "Thực hiện kiểm thử xâm nhập cho một phạm vi hẹp (một ứng dụng/một hệ thống) theo phương pháp luận có sẵn, dưới review của pentester senior, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Penetration Tester",
+          "years_experience": "2-4",
+          "core_output": "Tự thực hiện một dự án pentest trọn vẹn (web/mobile/hạ tầng) từ lên kế hoạch tới viết báo cáo, cần review trước khi gửi khách hàng, tương ứng vai trò tự chủ trong phạm vi một module.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Penetration Tester",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ dẫn dắt các dự án pentest phức tạp (red team, kiểm thử hạ tầng lớn), phát triển kỹ thuật khai thác mới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Penetration Testing Lead",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt kỹ thuật đội pentest, đào tạo pentester junior, chịu trách nhiệm chất lượng báo cáo của cả đội, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Pentester / Red Team Lead",
+          "years_experience": "8-12",
+          "core_output": "Đặt chiến lược kiểm thử bảo mật xuyên tổ chức/khách hàng lớn, thường kiêm vai trò cố vấn kỹ thuật cao nhất, tương ứng vai trò chịu trách nhiệm cross-team.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -9869,10 +11354,109 @@
       "role_name_vn": "Chuyên viên phân tích nghiệp vụ / BA",
       "role_group": "Product & Project Management",
       "roleplay_experience": "Cầu nối giữa nghiệp vụ và kỹ thuật — giao tiếp nhiều, ÍT code",
+      "description": {
+        "summary": "Chuyên viên phân tích nghiệp vụ (BA) là cầu nối giữa khách hàng hoặc phòng ban nghiệp vụ với đội kỹ thuật: tìm hiểu nhu cầu, làm rõ quy trình, viết tài liệu yêu cầu và user story, rồi theo sát để sản phẩm làm đúng điều đã thống nhất. Nghề giao tiếp nhiều, viết mã ít, và là cửa vào phổ biến cho người học trái ngành.",
+        "downsides": [
+          "Yêu cầu bị đổi nhiều lần, kể cả khi tài liệu đã ký và đội đã làm gần xong.",
+          "Hay bị kẹp giữa các phòng ban muốn những điều trái ngược nhau.",
+          "Tài liệu sót tình huống sẽ bị đội phát triển chỉ ra, và BA chịu trách nhiệm.",
+          "Trong khảo sát của ITviec, lương thấp hơn kỳ vọng là một lý do nghỉ việc hay gặp."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L7 (4/7 A_VERIFIED), entry_note, company_type_variance, 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [],
       "feeder_roles": [],
+      "work_environment_ids": [
+        "WE_ONSITE_ENTERPRISE",
+        "WE_PROJECT_OUTSOURCING"
+      ],
+      "work_environment_primary": "WE_PROJECT_OUTSOURCING",
+      "work_environment_note": "Phụ thuộc vào khách hàng.",
+      "education_path_ids": [
+        "EDU_DOMAIN_PLUS_IT",
+        "EDU_ANY_PLUS_TRAINING"
+      ],
+      "education_path_primary": "EDU_DOMAIN_PLUS_IT",
+      "education_path_note": "Học tài chính, quản trị kinh doanh cực kỳ có lợi.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": 51,
+        "itviec_slug_used": "business-analyst",
+        "topdev_open_postings": null,
+        "measured_at": "2026-08-22",
+        "confidence": "medium",
+        "method_note": "Đếm qua trang category cố định ITviec (/it-jobs/<slug>), render server-side. KHÔNG có TopDev/LinkedIn (cả hai đều không đáng tin, xem ghi chú kỹ thuật)."
+      },
+      "onet": {
+        "codes": [
+          "15-1211.00"
+        ],
+        "interest_code": "ICR",
+        "note": "Computer Systems Analysts",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Business Analyst Intern",
+          "years_experience": "0",
+          "core_output": "Hỗ trợ thu thập yêu cầu và viết tài liệu dưới sự hướng dẫn trực tiếp, chưa tự làm việc với stakeholder.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Business Analyst",
+          "years_experience": "0-1",
+          "core_output": "Viết user story/use case cho yêu cầu đã được làm rõ, tham gia họp với vai trò ghi chép và hỗ trợ.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Business Analyst",
+          "years_experience": "1-2",
+          "core_output": "Tự thu thập và tài liệu hoá yêu cầu cho một tính năng cụ thể, làm việc trực tiếp với stakeholder cấp thực thi, vẫn cần review trước khi chuyển cho đội kỹ thuật.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Business Analyst",
+          "years_experience": "2-4",
+          "core_output": "Chịu trách nhiệm phân tích nghiệp vụ cho một module hoặc một luồng quy trình, tự quyết cách mô hình hoá yêu cầu (BPMN, wireframe), làm việc với cả stakeholder và kỹ thuật.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Business Analyst",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ phân tích cho cả một dự án hoặc một domain nghiệp vụ lớn, tư vấn giải pháp thay vì chỉ ghi nhận yêu cầu, mentor BA cấp dưới.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead Business Analyst",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt đội BA cho một chương trình/nhiều dự án song song, chuẩn hoá quy trình phân tích nghiệp vụ cho tổ chức.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal BA / BA Manager",
+          "years_experience": "8-12",
+          "core_output": "Đặt chiến lược phân tích nghiệp vụ cấp doanh nghiệp, tư vấn cấp lãnh đạo — vai trò gần với Domain Architect hơn là BA thực thi.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -10423,19 +12007,24 @@
         "top_reasons_to_leave": [
           {
             "label": "direction",
-            "pct": 27.1
+            "pct": 27.1,
+            "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới",
+            "label_note": "Nhãn gốc bị cắt khi trích từ báo cáo ITviec; bản dịch là suy đoán, cần đối chiếu báo cáo gốc."
           },
           {
             "label": "Salary is lower than expected",
-            "pct": 22.9
+            "pct": 22.9,
+            "label_vi": "Lương thấp hơn kỳ vọng"
           },
           {
             "label": "Have better job opportunities",
-            "pct": 15.7
+            "pct": 15.7,
+            "label_vi": "Có cơ hội việc làm tốt hơn"
           },
           {
             "label": "Toxic or overly political work environment",
-            "pct": 15.7
+            "pct": 15.7,
+            "label_vi": "Môi trường độc hại hoặc nhiều chính trị nội bộ"
           }
         ],
         "top_reasons_to_apply": [
@@ -10478,6 +12067,18 @@
       "role_name_vn": "Quản lý sản phẩm / Product Manager",
       "role_group": "Product & Project Management",
       "roleplay_experience": "Quyết định sản phẩm làm gì trước, làm gì sau và vì sao",
+      "description": {
+        "summary": "Quản lý sản phẩm (Product Manager) quyết định sản phẩm nên làm gì trước, làm gì sau và vì sao: tìm hiểu người dùng, đặt mục tiêu, sắp xếp lộ trình, viết yêu cầu, rồi đo xem tính năng ra mắt có hiệu quả không. Họ phải thuyết phục kỹ thuật, kinh doanh và lãnh đạo đi cùng một hướng. Vài công ty sản phẩm lớn có vị trí Associate PM cho người mới; phần lớn PM chuyển sang từ BA hoặc lập trình viên.",
+        "downsides": [
+          "Nhiều bên cùng đòi việc của mình được ưu tiên cao nhất, và PM phải nói “chưa” với nhiều người.",
+          "Thường phải chốt hướng khi chưa đủ dữ liệu.",
+          "Tính năng mình đã đấu tranh để làm có thể ra mắt mà rất ít người dùng.",
+          "Bộ phận kinh doanh có thể đã hứa với khách hàng trước khi hỏi ý kiến PM."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L3–L6 và destination_profile (đều C_INFERRED, chưa có JD), entry_note, 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "PROD_PO",
@@ -10518,8 +12119,88 @@
           "role_name": "UI/UX Designer"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1299.09"
+        ],
+        "interest_code": "ECI",
+        "note": "Chỉ IT Project Managers; không ghép Marketing Managers vì kéo hồ sơ về phía marketing",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "D",
       "bands": "L3-L9",
+      "levels": [
+        {
+          "band": "L3",
+          "title_vn": "Associate Product Manager",
+          "years_experience": "1-2 (hiếm, chủ yếu công ty product lớn)",
+          "core_output": "Hỗ trợ quản lý một phần backlog/tính năng dưới sự hướng dẫn sát của PM senior, viết user story và thu thập phản hồi người dùng theo khuôn mẫu, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Product Manager (Middle)",
+          "years_experience": "2-4 (hoặc chuyển ngang từ BA/Dev)",
+          "core_output": "Chịu trách nhiệm một tính năng/mảng sản phẩm nhỏ: viết PRD, làm việc với đội kỹ thuật và thiết kế, đo lường kết quả sau khi ra mắt, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Product Manager",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ định nghĩa chiến lược cho một sản phẩm/dòng sản phẩm, ưu tiên hoá roadmap dựa trên dữ liệu và mục tiêu kinh doanh, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Lead / Group Product Manager",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt nhiều PM cho một nhóm sản phẩm liên quan, định chuẩn quy trình phát triển sản phẩm cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật/chuyên môn cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Head of Product / Director of Product",
+          "years_experience": "8-12",
+          "core_output": "Chịu trách nhiệm chiến lược cho một danh mục nhiều sản phẩm, quản lý trực tiếp nhiều PM và Group PM, làm việc chặt với lãnh đạo kỹ thuật và kinh doanh.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        },
+        {
+          "band": "L8",
+          "title_vn": "Senior Director of Product",
+          "years_experience": "10-15",
+          "core_output": "Định hướng sản phẩm cho cả một khối kinh doanh, phân bổ nguồn lực giữa các dòng sản phẩm và chịu trách nhiệm kết quả kinh doanh của chúng.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        },
+        {
+          "band": "L9",
+          "title_vn": "VP of Product",
+          "years_experience": "12-15+",
+          "core_output": "Lãnh đạo toàn bộ chức năng sản phẩm của công ty và cùng ban điều hành đặt tầm nhìn sản phẩm; là bước ngay trước CPO.",
+          "evidence_level": "C_INFERRED",
+          "source": "NHAP_2026-10-20"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -11058,19 +12739,23 @@
         "top_reasons_to_leave": [
           {
             "label": "The company and its product have no potential for growth",
-            "pct": 30.0
+            "pct": 30.0,
+            "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
           },
           {
             "label": "Limited career development opportunities",
-            "pct": 25.0
+            "pct": 25.0,
+            "label_vi": "Ít cơ hội phát triển nghề nghiệp"
           },
           {
             "label": "The work is no longer challenging",
-            "pct": 17.5
+            "pct": 17.5,
+            "label_vi": "Công việc không còn thử thách"
           },
           {
             "label": "Salary is lower than expected",
-            "pct": 17.5
+            "pct": 17.5,
+            "label_vi": "Lương thấp hơn kỳ vọng"
           }
         ],
         "top_reasons_to_apply": [
@@ -11110,6 +12795,18 @@
       "role_name_vn": "Chuyên viên tư vấn giải pháp ERP",
       "role_group": "IT Infrastructure & Enterprise Systems",
       "roleplay_experience": "Cấu hình hệ thống quản trị doanh nghiệp (SAP, Oracle, Salesforce) theo quy trình của khách hàng — ít code, nhiều nghiệp vụ và làm việc trực tiếp với khách",
+      "description": {
+        "summary": "Chuyên viên tư vấn giải pháp ERP triển khai hệ thống quản trị doanh nghiệp như SAP, Oracle hay Salesforce cho khách hàng: tìm hiểu quy trình của họ, cấu hình phần mềm theo quy trình đó, kiểm thử với người dùng và hỗ trợ sau khi đưa vào dùng. Mỗi người thường chuyên một mảng như mua hàng, tài chính hay bán hàng. Nghề cần hiểu nghiệp vụ hơn là viết mã.",
+        "downsides": [
+          "Hay phải đi công tác dài ngày tới nhà máy hoặc văn phòng của khách hàng.",
+          "Người dùng cuối thường không muốn bỏ cách làm cũ, nên dự án dễ kéo dài.",
+          "Lỗi cấu hình có thể ảnh hưởng ngay tới tiền bạc, như tính lương sai cho cả công ty.",
+          "Trong khảo sát của ITviec, gần một nửa số người nghỉ việc nói lương thấp hơn kỳ vọng."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L3–L7 (đều C_INFERRED, chưa có JD), entry_note, 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "INFRA_CRM",
@@ -11134,8 +12831,73 @@
           "role_name": "IT Helpdesk"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1211.00",
+          "13-1111.00"
+        ],
+        "interest_code": "CIE",
+        "note": "Ghép Computer Systems Analysts và Management Analysts",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "B",
       "bands": "L3-L7",
+      "levels": [
+        {
+          "band": "L3",
+          "title_vn": "Junior ERP Consultant (một module cụ thể)",
+          "years_experience": "1-3",
+          "core_output": "Cấu hình một module ERP theo tài liệu thiết kế có sẵn dưới hướng dẫn của consultant senior, hỗ trợ kiểm thử UAT, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle ERP Consultant",
+          "years_experience": "2-4",
+          "core_output": "Tự triển khai một module ERP trọn vẹn cho một khách hàng/dự án, viết tài liệu functional spec cơ bản, tương ứng vai trò tự chủ trong phạm vi một module.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior ERP Consultant",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ tư vấn giải pháp ERP cho một module chuyên sâu (MM/FI/SD...), dẫn dắt kỹ thuật triển khai cho một dự án, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "ERP Practice Lead",
+          "years_experience": "6-9",
+          "core_output": "Dẫn dắt nhiều module/dự án ERP cùng lúc, định chuẩn phương pháp triển khai cho đội tư vấn, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal ERP Architect",
+          "years_experience": "8-12",
+          "core_output": "Đặt chiến lược ERP xuyên nhiều khách hàng/dự án lớn, vai trò kiến trúc sư giải pháp ERP cấp cao, tương ứng vai trò chịu trách nhiệm cross-team.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -11629,19 +13391,23 @@
         "top_reasons_to_leave": [
           {
             "label": "Salary is lower than expected",
-            "pct": 47.1
+            "pct": 47.1,
+            "label_vi": "Lương thấp hơn kỳ vọng"
           },
           {
             "label": "The work is no longer challenging",
-            "pct": 23.5
+            "pct": 23.5,
+            "label_vi": "Công việc không còn thử thách"
           },
           {
             "label": "Limited career development opportunities",
-            "pct": 23.5
+            "pct": 23.5,
+            "label_vi": "Ít cơ hội phát triển nghề nghiệp"
           },
           {
             "label": "The company and its product have no potential for growth",
-            "pct": 23.5
+            "pct": 23.5,
+            "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
           }
         ],
         "top_reasons_to_apply": [
@@ -11684,6 +13450,18 @@
       "role_name_vn": "Nhân viên hỗ trợ kỹ thuật / IT Support",
       "role_group": "IT Infrastructure & Enterprise Systems",
       "roleplay_experience": "Hỗ trợ người dùng và xử lý sự cố trực tiếp — cửa vào ngành dễ tiếp cận nhất",
+      "description": {
+        "summary": "Nhân viên hỗ trợ kỹ thuật giúp nhân viên trong công ty dùng được máy tính, phần mềm, máy in, mạng và tài khoản: nhận yêu cầu, xử lý sự cố, cài đặt thiết bị, quản lý tài sản IT. Đây là cửa vào ngành dễ tiếp cận nhất, không đòi bằng CNTT; nhiều người dùng vị trí này làm bước đệm sang quản trị hệ thống hoặc an ninh mạng.",
+        "downsides": [
+          "Nhiều câu hỏi lặp đi lặp lại hằng ngày.",
+          "Có thể bị gọi ngoài giờ, và ở một số nơi phải làm theo ca.",
+          "Trần nghề thấp: sau vài năm thường phải chuyển hướng để thăng tiến tiếp.",
+          "Lương trung vị thấp nhất trong 22 nghề; các việc đơn giản nhất có thể bị tự động hoá, dù mức độ chưa rõ."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L4 (2/4 A_VERIFIED), work_environment_ids, lương trung vị ITviec, unknowns, 4 sự kiện role-play riêng, lý do nghỉ việc ITviec. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [
         {
           "role_code": "INFRA_SYSADMIN",
@@ -11699,8 +13477,69 @@
         }
       ],
       "feeder_roles": [],
+      "work_environment_ids": [
+        "WE_ONSITE_ENTERPRISE",
+        "WE_SHIFT_24_7"
+      ],
+      "work_environment_primary": "WE_ONSITE_ENTERPRISE",
+      "work_environment_note": "Phải có mặt tại văn phòng để hỗ trợ phần cứng.",
+      "education_path_ids": [
+        "EDU_ANY_PLUS_TRAINING"
+      ],
+      "education_path_primary": "EDU_ANY_PLUS_TRAINING",
+      "education_path_note": "Không nhất thiết cần bằng đại học CS.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1232.00"
+        ],
+        "interest_code": "CRI",
+        "note": "Computer User Support Specialists",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L4",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Helpdesk Intern",
+          "years_experience": "0",
+          "core_output": "Hỗ trợ ghi nhận ticket và xử lý các vấn đề đơn giản nhất (reset mật khẩu, cài phần mềm cơ bản) dưới hướng dẫn trực tiếp.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher IT Support",
+          "years_experience": "0-1",
+          "core_output": "Tự xử lý ticket mức độ đơn giản-trung bình theo quy trình có sẵn, escalate khi vượt phạm vi.",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "IT Support / Helpdesk",
+          "years_experience": "1-2",
+          "core_output": "Tự xử lý phần lớn ticket, bắt đầu tham gia các việc mang tính hệ thống hơn (quản lý tài sản IT, cấu hình mạng cơ bản).",
+          "evidence_level": "A_VERIFIED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Senior IT Support / Helpdesk Lead",
+          "years_experience": "2-4",
+          "core_output": "Xử lý ticket phức tạp nhất, đào tạo nhân viên helpdesk mới, thường là bước đệm ngay trước khi chuyển hẳn sang SysAdmin hoặc SOC — đây là TRẦN thực tế của title Helpdesk.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",
@@ -12214,19 +14053,23 @@
         "top_reasons_to_leave": [
           {
             "label": "Family commitments and inability to balance work and personal life",
-            "pct": 25.9
+            "pct": 25.9,
+            "label_vi": "Việc gia đình, khó cân bằng công việc và cuộc sống"
           },
           {
             "label": "Few or no opportunities for promotion",
-            "pct": 18.5
+            "pct": 18.5,
+            "label_vi": "Ít hoặc không có cơ hội thăng chức"
           },
           {
             "label": "Salary is lower than expected",
-            "pct": 18.5
+            "pct": 18.5,
+            "label_vi": "Lương thấp hơn kỳ vọng"
           },
           {
             "label": "Few or no opportunities for salary increases",
-            "pct": 18.5
+            "pct": 18.5,
+            "label_vi": "Ít hoặc không có cơ hội tăng lương"
           }
         ],
         "top_reasons_to_apply": [
@@ -12267,6 +14110,18 @@
       "role_name_vn": "Kỹ sư hệ thống mạng",
       "role_group": "IT Infrastructure & Enterprise Systems",
       "roleplay_experience": "Thiết kế và vận hành hệ thống mạng — lộ trình theo chứng chỉ CCNA/CCNP",
+      "description": {
+        "summary": "Kỹ sư hệ thống mạng thiết kế, lắp đặt và vận hành mạng máy tính của tổ chức: switch, router, Wi-Fi, kết nối giữa các chi nhánh và các lớp bảo vệ mạng. Việc gồm cấu hình thiết bị, giám sát, xử lý sự cố và nâng cấp. Lộ trình nghề gắn chặt với các chứng chỉ như CCNA, CCNP, CCIE.",
+        "downsides": [
+          "Khi mạng sập, cả tổ chức ngừng làm việc và áp lực dồn lên người trực.",
+          "Nâng cấp thường chỉ được làm ngoài giờ, ví dụ đêm thứ Bảy.",
+          "Phải tự học chứng chỉ ngoài giờ trong nhiều tháng để thăng tiến.",
+          "Có lúc phải vận hành thiết bị giá rẻ vì quyết định tiết kiệm của cấp trên."
+        ],
+        "evidence_level": "C_INFERRED",
+        "status": "NHAP_CHO_DUYET",
+        "source_note": "Nháp 2026-10-20, viết từ: core_output L1–L7 (đều C_INFERRED, chưa có JD), 4 sự kiện role-play riêng. Chưa có chuyên gia nghề duyệt (BR-07 yêu cầu duyệt trước khi xuất bản)."
+      },
       "similar_roles": [],
       "feeder_roles": [
         {
@@ -12274,8 +14129,89 @@
           "role_name": "IT Helpdesk"
         }
       ],
+      "work_environment_ids": [],
+      "work_environment_primary": null,
+      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
+      "education_path_ids": [],
+      "education_path_primary": null,
+      "education_path_note": "Chưa gán. Thuộc Pass 2.",
+      "job_outlook": {
+        "method": "posting_count",
+        "itviec_open_postings": null,
+        "topdev_open_postings": null,
+        "measured_at": null,
+        "confidence": "low",
+        "method_note": "Chưa đo. Thuộc Bước F — đếm tay trên ITviec và TopDev cùng một ngày. KHÔNG hỏi model."
+      },
+      "onet": {
+        "codes": [
+          "15-1244.00",
+          "15-1241.00"
+        ],
+        "interest_code": "CIR",
+        "note": "Ghép Network and Computer Systems Administrators và Computer Network Architects",
+        "_source": "occupation-data/generated/onet_profiles.json (scripts/build_onet_profiles.py)"
+      },
       "archetype": "A",
       "bands": "L1-L7",
+      "levels": [
+        {
+          "band": "L1",
+          "title_vn": "Network Engineer Intern",
+          "years_experience": "0",
+          "core_output": "Hỗ trợ cấu hình thiết bị mạng cơ bản (switch/router) theo hướng dẫn sát, đang học chứng chỉ CCNA, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L2",
+          "title_vn": "Fresher Network Engineer",
+          "years_experience": "0-1 (thường có CCNA)",
+          "core_output": "Tự cấu hình một thiết bị mạng đơn lẻ theo runbook có sẵn, giám sát mạng cơ bản, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L3",
+          "title_vn": "Junior Network Engineer",
+          "years_experience": "1-2",
+          "core_output": "Tự triển khai và cấu hình một mảng mạng nhỏ (VLAN, routing cơ bản) đã xác định rõ, xử lý sự cố mạng đơn giản, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L4",
+          "title_vn": "Middle Network Engineer",
+          "years_experience": "2-4 (thường có CCNP)",
+          "core_output": "Chịu trách nhiệm vận hành một hệ thống mạng hoàn chỉnh (LAN/WAN của một chi nhánh/tổ chức vừa), thiết kế mở rộng mạng theo yêu cầu, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L5",
+          "title_vn": "Senior Network Engineer",
+          "years_experience": "4-7",
+          "core_output": "Tự chủ thiết kế kiến trúc mạng cho cả một tổ chức (routing/switching phức tạp, redundancy, bảo mật mạng), xử lý sự cố mạng nghiêm trọng, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L6",
+          "title_vn": "Network Engineering Lead",
+          "years_experience": "6-9 (thường có hoặc đang theo CCIE)",
+          "core_output": "Dẫn dắt kỹ thuật đội Network, đặt chuẩn kiến trúc và chính sách mạng cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        },
+        {
+          "band": "L7",
+          "title_vn": "Principal Network Engineer",
+          "years_experience": "8-12 (thường có CCIE)",
+          "core_output": "Đặt chiến lược hạ tầng mạng xuyên toàn tổ chức/nhiều chi nhánh, là chuyên gia kỹ thuật mạng cấp cao nhất, thường tư vấn cho các dự án lớn, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+          "evidence_level": "C_INFERRED",
+          "source": "78_roles_unmerged.json"
+        }
+      ],
       "compensation": {
         "_source": {
           "source": "ITviec IT Recruitment Market & Salary Report 2025-2026 (n=1.839 chuyên gia IT)",

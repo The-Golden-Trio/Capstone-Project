@@ -1,0 +1,153 @@
+{
+  "25-9021.00": {"title_vi": "Giảng viên khuyến nông và kinh tế gia đình"},
+  "25-1081.00": {
+    "title_vi": "Giảng viên ngành sư phạm",
+    "tasks_vi": {
+      "6148": "Soạn tài liệu môn học như đề cương, bài tập về nhà và tài liệu phát tay.",
+      "6160": "Nghiên cứu trong một lĩnh vực và công bố kết quả trên tạp chí, sách hoặc ấn phẩm điện tử.",
+      "6159": "Soạn đề, coi và chấm thi, hoặc giao việc này cho người khác.",
+      "6154": "Cập nhật tiến bộ của ngành qua đọc tài liệu mới, trao đổi với đồng nghiệp và dự hội thảo chuyên môn.",
+      "6153": "Hướng dẫn sinh viên đi thực địa, thực tập và nghiên cứu."
+    }
+  },
+  "25-1011.00": {"title_vi": "Giảng viên kinh tế, quản trị kinh doanh"},
+  "25-1021.00": {"title_vi": "Giảng viên khoa học máy tính"},
+  "25-1022.00": {"title_vi": "Giảng viên toán học"},
+  "25-1031.00": {"title_vi": "Giảng viên kiến trúc"},
+  "25-1032.00": {"title_vi": "Giảng viên kỹ thuật"},
+  "25-1041.00": {"title_vi": "Giảng viên nông nghiệp"},
+  "25-1042.00": {"title_vi": "Giảng viên sinh học"},
+  "25-1043.00": {"title_vi": "Giảng viên lâm nghiệp và bảo tồn"},
+  "25-1051.00": {"title_vi": "Giảng viên khoa học trái đất, khí quyển và biển"},
+  "25-1052.00": {"title_vi": "Giảng viên hoá học"},
+  "25-1053.00": {"title_vi": "Giảng viên khoa học môi trường"},
+  "25-1054.00": {"title_vi": "Giảng viên vật lý"},
+  "25-1061.00": {"title_vi": "Giảng viên nhân học và khảo cổ học"},
+  "25-1062.00": {"title_vi": "Giảng viên khu vực học, văn hoá học"},
+  "25-1063.00": {"title_vi": "Giảng viên kinh tế học"},
+  "25-1064.00": {"title_vi": "Giảng viên địa lý"},
+  "25-1065.00": {"title_vi": "Giảng viên chính trị học"},
+  "25-1066.00": {"title_vi": "Giảng viên tâm lý học"},
+  "25-1067.00": {"title_vi": "Giảng viên xã hội học"},
+  "25-1071.00": {"title_vi": "Giảng viên các chuyên ngành y"},
+  "25-1072.00": {"title_vi": "Giảng viên điều dưỡng"},
+  "25-1082.00": {"title_vi": "Giảng viên thư viện học"},
+  "25-1111.00": {"title_vi": "Giảng viên tư pháp hình sự, an ninh"},
+  "25-1112.00": {"title_vi": "Giảng viên luật"},
+  "25-1113.00": {"title_vi": "Giảng viên công tác xã hội"},
+  "25-1121.00": {"title_vi": "Giảng viên mỹ thuật, sân khấu, âm nhạc"},
+  "25-1122.00": {"title_vi": "Giảng viên truyền thông"},
+  "25-1123.00": {"title_vi": "Giảng viên ngôn ngữ và văn học"},
+  "25-1124.00": {"title_vi": "Giảng viên ngoại ngữ"},
+  "25-1125.00": {"title_vi": "Giảng viên lịch sử"},
+  "25-1126.00": {"title_vi": "Giảng viên triết học và tôn giáo học"},
+  "25-1192.00": {"title_vi": "Giảng viên khoa học gia đình"},
+  "25-1193.00": {"title_vi": "Giảng viên giáo dục thể chất, giải trí"},
+  "25-1194.00": {"title_vi": "Giảng viên cao đẳng nghề"},
+  "25-9044.00": {"title_vi": "Trợ giảng đại học"},
+  "25-2031.00": {
+    "title_vi": "Giáo viên trung học",
+    "description_vi": "Dạy một hoặc nhiều môn cho học sinh bậc trung học.",
+    "tasks_vi": {
+      "6650": "Chuẩn bị cho học sinh lên lớp trên bằng cách khuyến khích các em tìm cơ hội học tập và kiên trì với bài khó.",
+      "6640": "Giảng dạy một hoặc nhiều môn như ngữ văn, toán hay xã hội qua thuyết giảng, thảo luận và làm mẫu.",
+      "6639": "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+      "6643": "Chuẩn bị tài liệu và lớp học cho các hoạt động.",
+      "6644": "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh."
+    }
+  },
+  "25-2022.00": {"title_vi": "Giáo viên trung học cơ sở"},
+  "25-2023.00": {"title_vi": "Giáo viên hướng nghiệp, dạy nghề bậc THCS"},
+  "25-2032.00": {"title_vi": "Giáo viên dạy nghề bậc THPT"},
+  "25-3031.00": {"title_vi": "Giáo viên dạy thay"},
+  "25-2021.00": {
+    "title_vi": "Giáo viên tiểu học",
+    "description_vi": "Dạy kiến thức và kỹ năng xã hội cho học sinh bậc tiểu học.",
+    "tasks_vi": {
+      "6540": "Dạy học sinh theo từng em hoặc theo nhóm bằng thuyết giảng, thảo luận và làm mẫu.",
+      "6535": "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+      "6549": "Hướng dẫn và tư vấn cho học sinh gặp khó khăn thích nghi, học tập hoặc có năng khiếu đặc biệt.",
+      "6538": "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh.",
+      "6539": "Lên kế hoạch và tổ chức hoạt động cân đối giữa giảng dạy, làm mẫu và thực hành để học sinh được quan sát, đặt câu hỏi và khám phá."
+    }
+  },
+  "25-9042.00": {"title_vi": "Trợ giảng phổ thông"},
+  "25-2011.00": {
+    "title_vi": "Giáo viên mầm non",
+    "description_vi": "Dạy trẻ ở tuổi mầm non theo chương trình hoặc giáo án, qua các hoạt động giúp trẻ phát triển về xã hội, thể chất và trí tuệ.",
+    "tasks_vi": {
+      "6466": "Dạy kỹ năng cơ bản như nhận biết màu, hình, số, chữ, vệ sinh cá nhân và kỹ năng xã hội.",
+      "6467": "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự.",
+      "6478": "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của trẻ.",
+      "6464": "Chuẩn bị nhiều đồ dùng, học liệu để trẻ khám phá, thao tác và sử dụng trong học tập và chơi tưởng tượng.",
+      "6476": "Cho trẻ ăn bữa chính và bữa phụ theo hướng dẫn dinh dưỡng."
+    }
+  },
+  "25-2012.00": {"title_vi": "Giáo viên mẫu giáo"},
+  "25-2051.00": {
+    "title_vi": "Giáo viên giáo dục đặc biệt",
+    "description_vi": "Dạy kiến thức, kỹ năng xã hội và kỹ năng sống cho trẻ có khuyết tật về học tập, cảm xúc hoặc thể chất. Gồm cả giáo viên chuyên làm việc với trẻ khiếm thị, khiếm thính và trẻ khuyết tật trí tuệ.",
+    "tasks_vi": {
+      "19068": "Xây dựng hoặc thực hiện chiến lược đáp ứng nhu cầu của trẻ có nhiều dạng khuyết tật khác nhau.",
+      "19065": "Giao tiếp không lời với trẻ để an ủi, động viên hoặc khen ngợi.",
+      "19093": "Lưu hồ sơ học sinh chính xác, đầy đủ theo quy định.",
+      "19085": "Dạy hành vi được xã hội chấp nhận bằng kỹ thuật như điều chỉnh hành vi hoặc củng cố tích cực.",
+      "19064": "Chăm sóc nhu cầu cơ bản của trẻ như cho ăn, mặc quần áo hoặc thay tã."
+    }
+  },
+  "25-2055.00": {"title_vi": "Giáo viên giáo dục đặc biệt bậc mẫu giáo"},
+  "25-2056.00": {"title_vi": "Giáo viên giáo dục đặc biệt bậc tiểu học"},
+  "25-2057.00": {"title_vi": "Giáo viên giáo dục đặc biệt bậc THCS"},
+  "25-2058.00": {"title_vi": "Giáo viên giáo dục đặc biệt bậc THPT"},
+  "25-2059.01": {"title_vi": "Giáo viên thể chất cho trẻ khuyết tật"},
+  "25-9043.00": {"title_vi": "Trợ giảng giáo dục đặc biệt"},
+  "25-3041.00": {
+    "title_vi": "Gia sư",
+    "description_vi": "Dạy kèm từng học sinh hoặc nhóm nhỏ các môn học để hỗ trợ việc học trên lớp hoặc ôn thi chuẩn hoá, thi tuyển sinh.",
+    "tasks_vi": {
+      "17027": "Nhận xét bài cho học sinh, dùng cách khen ngợi để động viên, tạo động lực và sự tự tin.",
+      "17026": "Ôn lại bài cùng học sinh: thảo luận nội dung, giải bài tập hoặc xem lại phiếu bài tập.",
+      "17034": "Đánh giá tiến bộ của học sinh qua các buổi học.",
+      "17036": "Dạy học sinh kỹ năng học, ghi chép và chiến thuật làm bài thi.",
+      "17037": "Dạy riêng cho từng em hoặc nhóm nhỏ để nâng kết quả học tập, kỹ năng nghề hoặc ôn thi."
+    }
+  },
+  "25-3011.00": {"title_vi": "Giáo viên dạy người lớn và dạy tiếng Anh"},
+  "25-3021.00": {"title_vi": "Giáo viên dạy kỹ năng, năng khiếu"},
+  "25-4022.00": {
+    "title_vi": "Thủ thư",
+    "description_vi": "Quản lý và duy trì thư viện hoặc kho thông tin cho người dùng tra cứu hoặc mượn. Làm việc ở trường học, bảo tàng, doanh nghiệp, với nhiều loại tài liệu như sách, tạp chí, bản ghi âm, phim và cơ sở dữ liệu. Công việc có thể gồm bổ sung, biên mục, cho mượn tài liệu, và hỗ trợ người dùng tìm, sắp xếp thông tin, hướng dẫn cách tra cứu và vận hành thiết bị nghe nhìn.",
+    "tasks_vi": {
+      "22411": "Tra tài liệu tham khảo chuẩn, kể cả nguồn trực tuyến và internet, để trả lời câu hỏi của bạn đọc.",
+      "22412": "Phân tích yêu cầu của bạn đọc để xác định thông tin cần và giúp tìm hoặc cung cấp.",
+      "22413": "Giám sát hoạt động hằng ngày của thư viện, ngân sách, kế hoạch và nhân sự như tuyển, đào tạo, xếp lịch và đánh giá.",
+      "22414": "Lên kế hoạch và dạy các lớp về kỹ năng thông tin, sử dụng thư viện và công nghệ.",
+      "22416": "Mã hoá, phân loại và biên mục sách, ấn phẩm, phim, tài liệu nghe nhìn theo chủ đề hoặc khung phân loại chuẩn."
+    }
+  },
+  "25-4031.00": {"title_vi": "Nhân viên thư viện"},
+  "25-4011.00": {"title_vi": "Chuyên viên lưu trữ"},
+  "25-4012.00": {
+    "title_vi": "Chuyên viên bảo tàng (giám tuyển)",
+    "description_vi": "Quản lý bộ sưu tập như tác phẩm nghệ thuật, đồ sưu tầm, hiện vật lịch sử hoặc mẫu vật khoa học của bảo tàng và cơ sở khác. Có thể tổ chức hoạt động giáo dục, nghiên cứu hoặc phục vụ công chúng.",
+    "tasks_vi": {
+      "18641": "Lên kế hoạch và tổ chức thu nhận, lưu kho, trưng bày hiện vật, gồm chọn chủ đề, thiết kế triển lãm và lắp đặt vật trưng bày.",
+      "1644": "Xây dựng và duy trì hệ thống đăng ký, biên mục và hồ sơ cơ bản bằng cơ sở dữ liệu.",
+      "1649": "Lên kế hoạch và thực hiện dự án nghiên cứu trong lĩnh vực chuyên môn.",
+      "1645": "Cung cấp thông tin về hiện vật cho các giám tuyển khác và công chúng.",
+      "1648": "Đàm phán và duyệt mua, bán, trao đổi hoặc cho mượn hiện vật."
+    }
+  },
+  "25-4013.00": {"title_vi": "Kỹ thuật viên bảo tàng, chuyên viên bảo quản hiện vật"},
+  "25-9031.00": {
+    "title_vi": "Chuyên viên phát triển chương trình đào tạo",
+    "description_vi": "Xây dựng học liệu, điều phối nội dung giáo dục và đưa công nghệ vào giảng dạy để hướng dẫn giáo viên xây dựng chương trình và tổ chức khoá học. Có thể đào tạo và huấn luyện giáo viên. Gồm cả chuyên viên tư vấn giáo dục và phụ trách học liệu.",
+    "tasks_vi": {
+      "6871": "Dự giờ giáo viên để đánh giá và đề xuất cách nâng kỹ năng giảng dạy.",
+      "6864": "Lên kế hoạch và tổ chức chương trình tập huấn, hội thảo cho giáo viên về quy trình lớp học, học liệu, thiết bị và đồ dùng dạy học mới.",
+      "6867": "Giải thích và thực thi quy định của ngành giáo dục.",
+      "6863": "Tổ chức hoặc tham gia hội thảo, hội đồng và hội nghị nhằm nâng cao sự phát triển trí tuệ, xã hội và thể chất của học sinh.",
+      "6865": "Tư vấn cho giáo viên và cán bộ quản lý về xây dựng chương trình, sử dụng học liệu, thiết bị và triển khai chương trình, quy trình của nhà nước."
+    }
+  }
+}

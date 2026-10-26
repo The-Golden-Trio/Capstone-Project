@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "source": "Báo cáo điều tra lao động việc làm năm 2024, Cục Thống kê (Bộ Tài chính), đăng 16/5/2026",
+    "url": "https://www.nso.gov.vn/wp-content/uploads/2026/05/02-Sach-Bao-cao-lao-dong-viec-lam-tieng-Viet.pdf",
+    "note": "Gõ lại tay từ ảnh trang PDF ngày 21/10/2026. Thu nhập là thu nhập từ việc làm bình quân một tháng của lao động làm công ăn lương (nghìn đồng); không tính người tự làm. Nhóm nghề theo cấp 1 của Danh mục nghề nghiệp Việt Nam.",
+    "credit": "Nguồn: Cục Thống kê (nso.gov.vn)"
+  },
+  "employed_by_occupation_group": {
+    "_table": "Biểu 2.4, trang 29 của báo cáo",
+    "_unit": "nghìn người",
+    "total": 51860.3,
+    "groups": {
+      "1": {"name": "Các nhà lãnh đạo", "employed": 477.1, "share_pct": 0.9},
+      "2": {"name": "Chuyên môn kỹ thuật bậc cao", "employed": 3902.2, "share_pct": 7.5},
+      "3": {"name": "Chuyên môn kỹ thuật bậc trung", "employed": 1602.7, "share_pct": 3.1},
+      "4": {"name": "Nhân viên", "employed": 1317.0, "share_pct": 2.5},
+      "5": {"name": "Dịch vụ cá nhân, bảo vệ và bán hàng", "employed": 10411.0, "share_pct": 20.1},
+      "6": {"name": "Lao động có kỹ thuật trong nông, lâm nghiệp và thủy sản", "employed": 5600.7, "share_pct": 10.8},
+      "7": {"name": "Thợ thủ công và các thợ khác có liên quan", "employed": 7325.0, "share_pct": 14.1},
+      "8": {"name": "Thợ lắp ráp và vận hành máy móc thiết bị", "employed": 7626.0, "share_pct": 14.7},
+      "9": {"name": "Lao động giản đơn", "employed": 13287.5, "share_pct": 25.6},
+      "0": {"name": "Khác (không phân loại)", "employed": 311.2, "share_pct": 0.6}
+    }
+  },
+  "income_by_occupation_group": {
+    "_table": "Biểu 3.5, trang 38 của báo cáo",
+    "_unit": "nghìn đồng/tháng",
+    "total": 8673.6,
+    "groups": {
+      "1": {"name": "Nhà lãnh đạo", "all": 14312.1, "male": 14688.0, "female": 13517.8},
+      "2": {"name": "Chuyên môn kỹ thuật bậc cao", "all": 12100.0, "male": 13553.8, "female": 11037.6},
+      "3": {"name": "Chuyên môn kỹ thuật bậc trung", "all": 10123.0, "male": 11321.8, "female": 9247.7},
+      "4": {"name": "Nhân viên", "all": 9312.8, "male": 9370.7, "female": 9263.5},
+      "5": {"name": "Dịch vụ cá nhân, bảo vệ và bán hàng", "all": 7306.8, "male": 7798.4, "female": 6823.8},
+      "6": {"name": "Nghề trong nông nghiệp, lâm nghiệp, ngư nghiệp", "all": 6406.0, "male": 6876.1, "female": 5472.9},
+      "7": {"name": "Thợ thủ công và các thợ khác có liên quan", "all": 8206.3, "male": 8536.5, "female": 7177.4},
+      "8": {"name": "Thợ lắp ráp và vận hành máy móc thiết bị", "all": 8715.7, "male": 9434.9, "female": 8017.6},
+      "9": {"name": "Nghề giản đơn", "all": 6482.8, "male": 6925.4, "female": 5830.6}
+    }
+  },
+  "income_by_industry": {
+    "_table": "Biểu 3.4, trang 37 của báo cáo",
+    "_unit": "nghìn đồng/tháng",
+    "industries": {
+      "A": {"name": "Nông nghiệp, lâm nghiệp và thủy sản", "all": 5824.4},
+      "B": {"name": "Khai khoáng", "all": 11617.4},
+      "C": {"name": "Công nghiệp chế biến, chế tạo", "all": 8413.1},
+      "D": {"name": "Sản xuất và phân phối điện, khí đốt, nước nóng, hơi nước", "all": 11579.8},
+      "E": {"name": "Cung cấp nước; hoạt động quản lý và xử lý rác thải", "all": 8916.4},
+      "F": {"name": "Xây dựng", "all": 8165.5},
+      "G": {"name": "Bán buôn và bán lẻ; sửa chữa ô tô, mô tô, xe máy", "all": 8859.2},
+      "H": {"name": "Vận tải kho bãi", "all": 10617.9},
+      "I": {"name": "Dịch vụ lưu trú và ăn uống", "all": 6761.7},
+      "J": {"name": "Thông tin và truyền thông", "all": 12908.6},
+      "K": {"name": "Hoạt động tài chính, ngân hàng và bảo hiểm", "all": 12866.6},
+      "L": {"name": "Hoạt động kinh doanh bất động sản", "all": 10820.0},
+      "M": {"name": "Hoạt động chuyên môn, khoa học và công nghệ", "all": 11812.0},
+      "N": {"name": "Hoạt động hành chính và dịch vụ hỗ trợ", "all": 9283.3},
+      "O": {"name": "Hoạt động của Đảng, tổ chức chính trị - xã hội, quản lý nhà nước", "all": 9882.9},
+      "P": {"name": "Giáo dục và đào tạo", "all": 10074.1},
+      "Q": {"name": "Y tế và hoạt động trợ giúp xã hội", "all": 10128.9},
+      "R": {"name": "Nghệ thuật, vui chơi và giải trí", "all": 8022.3},
+      "S": {"name": "Hoạt động dịch vụ khác", "all": 7218.1},
+      "T": {"name": "Hoạt động làm thuê các công việc trong các hộ gia đình", "all": 5352.9},
+      "U": {"name": "Hoạt động của các tổ chức và cơ quan quốc tế", "all": 15547.5}
+    }
+  },
+  "income_by_qualification": {
+    "_table": "Biểu 3.3, trang 36 của báo cáo",
+    "_unit": "nghìn đồng/tháng",
+    "levels": {
+      "none": 7367.6, "so_cap": 9788.2, "trung_cap": 9035.4, "cao_dang": 9197.2, "dai_hoc_tro_len": 11777.9
+    }
+  }
+}

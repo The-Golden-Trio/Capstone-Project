@@ -1,0 +1,64 @@
+{
+  "group": "43",
+  "_note": "Nhân viên kế toán sổ sách, lương, hoá đơn gộp vào Kế toán (13); thủ tục mua hàng gộp vào Mua hàng (13); hồ sơ bảo hiểm gộp vào Thẩm định bảo hiểm (13); trợ lý nhân sự gộp vào Nhân sự (13); đại lý vận tải gộp vào Logistics (13); trợ lý thư viện gộp vào Thủ thư (25); dàn trang gộp vào Thiết kế đồ hoạ (27); đọc mo-rát gộp vào Biên tập viên (27); trợ lý thống kê gộp vào Thống kê (15).",
+  "keep": [
+    {
+      "code": "43-6014.00",
+      "name_vi": "Nhân viên hành chính, thư ký",
+      "absorbs": ["43-6011.00", "43-6012.00", "43-6013.00", "43-1011.00", "43-9061.00", "43-4071.00", "43-4021.00", "43-9051.00", "43-9071.00", "43-9021.00", "43-9022.00", "43-4171.00"],
+      "merge_reason": "Cùng trải nghiệm làm việc văn phòng theo quy trình: thư ký, lễ tân văn phòng, nhập liệu, lưu trữ, văn thư. Thư ký giám đốc là cấp cao; tổ trưởng hành chính là cấp quản lý."
+    },
+    {
+      "code": "43-4051.00",
+      "name_vi": "Nhân viên chăm sóc khách hàng",
+      "absorbs": ["43-2011.00", "43-2021.00", "43-4111.00", "43-3011.00", "43-4151.00"],
+      "merge_reason": "Cùng trải nghiệm trả lời và xử lý yêu cầu của khách qua điện thoại hoặc trực tiếp: tổng đài, phỏng vấn khảo sát, nhắc phí, nhận đơn."
+    },
+    {
+      "code": "43-4081.00",
+      "name_vi": "Lễ tân khách sạn",
+      "absorbs": ["39-6011.00", "39-6012.00", "43-4181.00"],
+      "merge_reason": "Concierge, hành lý và đặt phòng, đặt vé đều thuộc bộ phận tiền sảnh."
+    },
+    {
+      "code": "43-3071.00",
+      "name_vi": "Giao dịch viên ngân hàng",
+      "absorbs": ["43-4141.00", "43-4131.00", "43-4041.00", "43-4011.00"],
+      "merge_reason": "Mở tài khoản, tiếp nhận hồ sơ vay, kiểm tra tín dụng và giấy tờ chứng khoán là các việc ở quầy giao dịch."
+    },
+    {
+      "code": "43-4031.00",
+      "name_vi": "Cán bộ tiếp nhận hồ sơ hành chính công",
+      "absorbs": ["43-4061.00"],
+      "merge_reason": "Ở Việt Nam, xét điều kiện hưởng chính sách và cấp giấy phép đều qua bộ phận một cửa."
+    },
+    {
+      "code": "43-5071.00",
+      "name_vi": "Nhân viên kho và kế hoạch vật tư",
+      "absorbs": ["43-5111.00", "43-5061.00"],
+      "merge_reason": "Cân đo kiểm hàng và lập kế hoạch vật tư là các phần việc của kho."
+    },
+    {
+      "code": "43-5021.00",
+      "name_vi": "Nhân viên giao hàng (shipper)",
+      "absorbs": ["43-5052.00"],
+      "merge_reason": "Đưa thư bưu điện và giao hàng cùng trải nghiệm."
+    },
+    {
+      "code": "43-5051.00",
+      "name_vi": "Nhân viên bưu chính",
+      "absorbs": ["43-5053.00"],
+      "merge_reason": "Phân loại thư là một phần việc của bưu cục."
+    },
+    {
+      "code": "43-5032.00",
+      "name_vi": "Điều phối viên vận tải và khẩn cấp",
+      "absorbs": ["43-5031.00"],
+      "merge_reason": "Cùng trải nghiệm nhận cuộc gọi và điều xe, điều người; tổng đài 113, 114, 115 là biến thể khẩn cấp."
+    }
+  ],
+  "remove": [
+    {"code": "43-3041.00", "reason_group": "Không phù hợp với Việt Nam", "reason": "Quầy thu ngân casino; casino bị hạn chế ở Việt Nam."},
+    {"code": "43-5041.00", "reason_group": "Nghề đang biến mất", "reason": "Đồng hồ điện nước thông minh đang thay việc ghi chỉ số thủ công."}
+  ]
+}

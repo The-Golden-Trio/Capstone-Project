@@ -1,0 +1,587 @@
+<title>Bản thử Get to know me</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  /* Bố cục: một cột hẹp như màn điện thoại; mỗi lần một thẻ, rồi một màn kết quả có khu mô phỏng bên dưới. */
+  :root {
+    --bg: #0a1026;
+    --surface: #101f3d;
+    --raised: #142b52;
+    --line: #254a7a;
+    --ink: #f8f6ee;
+    --ink-2: #c7d2e0;
+    --muted: #8fa6c4;
+    --gold: #d4b06a;
+    --gold-soft: rgba(212, 176, 106, 0.14);
+    --tried: #6fc9c9;
+    --tried-soft: rgba(111, 201, 201, 0.16);
+    --track: #1c3862;
+    --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f4ec; --surface: #ffffff; --raised: #eef1f6; --line: #c9d3e2;
+      --ink: #0e1a33; --ink-2: #2c3e5c; --muted: #5a6c88;
+      --gold: #8a6a1f; --gold-soft: rgba(138, 106, 31, 0.12);
+      --tried: #1f7f7f; --tried-soft: rgba(31, 127, 127, 0.12); --track: #dfe5ee;
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f4ec; --surface: #ffffff; --raised: #eef1f6; --line: #c9d3e2;
+    --ink: #0e1a33; --ink-2: #2c3e5c; --muted: #5a6c88;
+    --gold: #8a6a1f; --gold-soft: rgba(138, 106, 31, 0.12);
+    --tried: #1f7f7f; --tried-soft: rgba(31, 127, 127, 0.12); --track: #dfe5ee;
+    color-scheme: light;
+  }
+
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+  .wrap {
+    max-width: 560px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 28px 48px;
+    display: grid; gap: 20px;
+  }
+  .eyebrow { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  h1 { font-size: 26px; line-height: 1.25; font-weight: 700; }
+  h2 { font-size: 19px; font-weight: 700; }
+  h3 { font-size: 15px; font-weight: 600; }
+  p { margin: 0; color: var(--ink-2); }
+  .note { font-size: 13px; color: var(--muted); }
+
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+
+  button { font: inherit; color: inherit; cursor: pointer; }
+  button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .primary { background: var(--gold); color: var(--bg); border: 0; border-radius: 10px; padding: 12px 18px; font-weight: 700; }
+  .ghost { background: transparent; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; color: var(--ink-2); }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+  /* tiến độ */
+  .progress { display: grid; gap: 8px; }
+  .progress-head { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .clusters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .cluster { height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
+  .cluster > span { display: block; height: 100%; background: var(--gold); width: 0; transition: width 0.25s ease; }
+
+  /* thẻ */
+  .card { background: var(--raised); border: 1px solid var(--line); border-radius: 16px; padding: 26px 20px; display: grid; gap: 22px; }
+  .card-text { font-size: 20px; line-height: 1.4; font-weight: 600; color: var(--ink); text-wrap: balance; min-height: 3.6em; }
+  .scale { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .scale button {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 6px; text-align: center; font-weight: 600; min-width: 0;
+  }
+  .scale button[aria-pressed="true"] { border-color: var(--gold); background: var(--gold-soft); }
+  .scale button:hover { border-color: var(--gold); }
+
+  /* kết quả */
+  .summary { font-size: 17px; color: var(--ink); font-weight: 500; }
+  .bars { display: grid; gap: 14px; }
+  .bar { display: grid; gap: 6px; }
+  .bar-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .bar-head .meaning { font-size: 13px; color: var(--muted); }
+  .bar-head .vals { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .track { position: relative; height: 22px; background: var(--track); border-radius: 6px; }
+  .fill-self { position: absolute; left: 0; top: 0; bottom: 0; background: var(--gold-soft); border-right: 3px solid var(--gold); border-radius: 6px 0 0 6px; }
+  .mark-tried { position: absolute; top: -3px; bottom: -3px; width: 3px; margin-left: -1.5px; background: var(--tried); border-radius: 2px; }
+  .ticks { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--ink-2); }
+  .legend i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .legend .l-self { background: var(--gold-soft); border-right: 3px solid var(--gold); }
+  .legend .l-tried { background: var(--tried); width: 3px; }
+
+  .areas { display: grid; gap: 10px; }
+  .area { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 4px; }
+  .area strong { color: var(--ink); }
+  .area .roles { font-size: 13px; color: var(--muted); }
+
+  /* mô phỏng */
+  .sim-grid { display: grid; gap: 10px; }
+  select { font: inherit; color: var(--ink); background: var(--raised); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; width: 100%; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 7px 12px; font-size: 13px; }
+  .chips button[aria-pressed="true"] { border-color: var(--tried); background: var(--tried-soft); }
+  .log { display: grid; gap: 6px; font-size: 13px; color: var(--ink-2); padding: 0; margin: 0; list-style: none; }
+  .log li { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px dashed var(--line); padding-bottom: 6px; }
+  .log li span:last-child { font-family: var(--font-mono); color: var(--tried); white-space: nowrap; }
+
+  /* phần "Về bạn" */
+  #about, #questions { display: grid; gap: 20px; }
+  .chips button.pick[aria-pressed="true"] { border-color: var(--gold); background: var(--gold-soft); }
+  textarea {
+    font: inherit; color: var(--ink); background: var(--raised); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 12px; width: 100%; box-sizing: border-box; resize: vertical; min-height: 64px;
+  }
+  textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .counter { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-align: right; }
+  .goal { display: grid; gap: 6px; padding-block: 10px; border-bottom: 1px dashed var(--line); }
+  @media (min-width: 560px) { .goal { grid-template-columns: 110px 1fr; gap: 12px; align-items: baseline; } }
+  .goal:last-child { border-bottom: 0; }
+  .goal .q { font-size: 13px; color: var(--muted); }
+  .goal .a { color: var(--ink); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font-size: 13px; color: var(--ink-2); }
+
+  @media (prefers-reduced-motion: reduce) { .cluster > span { transition: none; } }
+</style>
+
+<main class="wrap" id="app">
+  <!-- Màn mở -->
+  <section id="intro" class="panel" aria-labelledby="intro-title">
+    <div class="eyebrow">JobQuest · bản thử nội bộ</div>
+    <h1 id="intro-title">Bạn thích làm những việc gì?</h1>
+    <p>18 thẻ, mỗi thẻ là một việc. Chạm "Thích", "Bình thường" hay "Không thích". Khoảng 1–2 phút. Không có đáp án đúng sai.</p>
+    <p class="note">Cuối bài có phần kể về bạn, không bắt buộc. Thẻ và câu hỏi do nhóm tự viết, chưa kiểm định.</p>
+    <div class="row"><button class="primary" id="start" type="button">Bắt đầu</button></div>
+  </section>
+
+  <!-- Màn thẻ -->
+  <section id="quiz" hidden aria-live="polite">
+    <div class="progress">
+      <div class="progress-head"><span id="cluster-label">Cụm 1/3</span><span id="card-count">Thẻ 1/18</span></div>
+      <div class="clusters" aria-hidden="true">
+        <div class="cluster"><span id="c0"></span></div>
+        <div class="cluster"><span id="c1"></span></div>
+        <div class="cluster"><span id="c2"></span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="eyebrow" id="card-eyebrow">Bạn thích làm việc này tới đâu?</div>
+      <div class="card-text" id="card-text"></div>
+      <div class="scale" id="scale" role="group" aria-label="Mức thích"></div>
+    </div>
+    <div class="row"><button class="ghost" id="back" type="button">Quay lại thẻ trước</button></div>
+  </section>
+
+  <!-- Màn "Về bạn": sở thích và ba câu ngắn, bỏ qua được -->
+  <section id="about" hidden>
+    <div class="panel">
+      <div class="eyebrow">Phần cuối · không bắt buộc</div>
+      <h2>Kể một chút về bạn</h2>
+      <p>Chạm câu gần với bạn là đủ. Muốn nói thêm thì gõ vào ô bên dưới. Đây sẽ là điều bạn nhắm tới khi chơi.</p>
+      <div class="row"><button class="ghost" id="skip-about" type="button">Bỏ qua, xem kết quả luôn</button></div>
+    </div>
+
+    <div class="panel">
+      <h3>Sở thích của bạn</h3>
+      <p class="note">Chọn tối đa 5.</p>
+      <div class="chips" id="hobbies" role="group" aria-label="Sở thích"></div>
+    </div>
+
+    <div id="questions"></div>
+
+    <div class="row"><button class="primary" id="to-result" type="button">Xem kết quả</button></div>
+  </section>
+
+  <!-- Màn kết quả -->
+  <section id="result" hidden>
+    <div class="panel">
+      <div class="eyebrow">Bản nháp về bạn · dựa trên 12 thẻ</div>
+      <p class="summary" id="summary"></p>
+      <div class="legend">
+        <span><i class="l-self"></i>Tự kể (từ thẻ)</span>
+        <span><i class="l-tried"></i>Sau khi thử (từ mô phỏng bên dưới)</span>
+      </div>
+      <div class="bars" id="bars"></div>
+      <div class="ticks" aria-hidden="true"><span>1 · không thích</span><span>2 · bình thường</span><span>3 · thích</span></div>
+      <p class="note">Điểm mỗi trục là trung bình các lần chấm, không phải tổng, nên luôn nằm trong khoảng 1–3. Bản nháp sẽ rõ dần khi bạn chơi.</p>
+    </div>
+
+    <div class="panel" id="goals-panel">
+      <h2>Mục tiêu của bạn</h2>
+      <p class="note" id="goals-empty">Bạn chưa kể phần này. Lúc nào muốn thì mở lại Get to know me trong menu.</p>
+      <div id="goals"></div>
+      <p class="note" id="draft-note">Chỉ để bạn tự nhìn lại, không chấm điểm và không dùng để gợi ý nghề.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Vùng ngành nên thử trước</h2>
+      <p class="note" id="areas-note"></p>
+      <div class="areas" id="areas"></div>
+    </div>
+
+    <div class="panel" aria-labelledby="sim-title">
+      <h2 id="sim-title">Mô phỏng: chơi thử vài scenario</h2>
+      <p>Chọn một việc vừa làm trong scenario, chạm mức thích, rồi ghi nhận. Vạch xanh "sau khi thử" của trục đó sẽ cập nhật. Thử chấm thấp để xem điểm giảm.</p>
+      <div class="sim-grid">
+        <label for="sim-activity" class="note">Việc vừa làm</label>
+        <select id="sim-activity"></select>
+        <span class="note">Nếu ngày nào đi làm cũng là việc như vậy, bạn thấy thế nào?</span>
+        <div class="chips" id="sim-scale" role="group" aria-label="Mức thích sau khi thử"></div>
+        <div class="row">
+          <button class="primary" id="sim-add" type="button">Ghi nhận</button>
+          <button class="ghost" id="sim-clear" type="button">Xoá mô phỏng</button>
+        </div>
+        <ul class="log" id="sim-log"></ul>
+      </div>
+    </div>
+
+    <div class="row"><button class="ghost" id="restart" type="button">Làm lại từ đầu</button></div>
+  </section>
+</main>
+
+<script>
+(function () {
+  const AXES = {
+    R: { name: "Thực hành", meaning: "Thích việc động tay, làm với thiết bị, lắp và sửa", like: "động tay, làm với thiết bị" },
+    I: { name: "Tìm tòi", meaning: "Thích hỏi \"vì sao\", lần ra nguyên nhân", like: "phải lần ra nguyên nhân" },
+    A: { name: "Sáng tạo", meaning: "Thích làm ra thứ mới, thứ đẹp", like: "làm ra thứ mới, thứ đẹp" },
+    S: { name: "Kết nối", meaning: "Thích trò chuyện, hỗ trợ người khác", like: "trò chuyện, hỗ trợ người khác" },
+    E: { name: "Dẫn dắt", meaning: "Thích thuyết phục, điều phối", like: "thuyết phục, điều phối mọi người" },
+    C: { name: "Tổ chức", meaning: "Thích sắp xếp, làm theo quy trình, soát dữ liệu", like: "sắp xếp, làm theo quy trình" }
+  };
+  const ORDER = ["R", "I", "A", "S", "E", "C"];
+  const AREAS = {
+    ky_thuat: { name: "Kỹ thuật, sản xuất", roles: "Kỹ sư xây dựng · Thợ sửa chữa ô tô · Thợ cơ khí, tiện phay CNC" },
+    suc_khoe: { name: "Sức khoẻ, giáo dục", roles: "Bác sĩ · Điều dưỡng · Giáo viên tiểu học" },
+    kinh_doanh: { name: "Kinh doanh, quản lý", roles: "Kế toán, kiểm toán viên · Nhân viên kinh doanh · Luật sư" },
+    cong_nghe: { name: "Công nghệ, khoa học", roles: "Lập trình viên Back-end · Kỹ sư dữ liệu · Nhà sinh học" },
+    sang_tao: { name: "Sáng tạo, truyền thông", roles: "Nhà thiết kế đồ hoạ · Hoạ sĩ hoạt hình, kỹ xảo · Nhà thiết kế thời trang" },
+    dich_vu: { name: "Dịch vụ, vận hành", roles: "Đầu bếp · Tiếp viên · Hướng dẫn viên du lịch" }
+  };
+  const CARDS = [
+    // cụm 1: mỗi trục một thẻ
+    { text: "Điện thoại bỗng chạy chậm, bạn mày mò tìm cho ra nguyên nhân", axis: "I" },
+    { text: "Giảng lại bài cho một bạn cùng lớp chưa hiểu", axis: "S" },
+    { text: "Sắp xếp lại thư mục ảnh và tài liệu trong máy cho gọn gàng", axis: "C" },
+    { text: "Làm slide thuyết trình thật đẹp và khác mọi người", axis: "A" },
+    { text: "Lắp một kệ sách hay mô hình theo hướng dẫn trong hộp", axis: "R" },
+    { text: "Thuyết phục cả nhóm làm theo ý tưởng của mình", axis: "E" },
+    // cụm 2: mỗi trục thêm một thẻ
+    { text: "Đứng ra lo buổi sinh nhật hay chuyến đi chơi của lớp", axis: "E" },
+    { text: "Ghi chi tiêu hằng tháng vào một bảng và giữ cho nó luôn đúng", axis: "C" },
+    { text: "Tự tay sửa chiếc xe đạp hay cái quạt bị hỏng ở nhà", axis: "R" },
+    { text: "Đọc để hiểu vì sao có cầu vồng, nhật thực hay động đất", axis: "I" },
+    { text: "Lắng nghe và an ủi một người bạn đang buồn", axis: "S" },
+    { text: "Vẽ tranh, chụp ảnh, dựng video hay viết truyện của riêng mình", axis: "A" },
+    // cụm 3: nhóm ngành (D-125), mỗi thẻ một vùng
+    { text: "Tận mắt theo dõi một cây cầu, cỗ máy hay mẻ bánh được làm ra từng bước", area: "ky_thuat" },
+    { text: "Giúp một người khoẻ lên, học tiến bộ hơn hay vượt qua lúc khó khăn", area: "suc_khoe" },
+    { text: "Tính xem quán nước phải bán bao nhiêu ly mỗi ngày thì mới có lời", area: "kinh_doanh" },
+    { text: "Dùng máy tính hay thí nghiệm để tìm ra câu trả lời cho một thắc mắc", area: "cong_nghe" },
+    { text: "Làm một video, bài hát hay thiết kế để nhiều người cùng xem", area: "sang_tao" },
+    { text: "Lo cho khách được phục vụ chu đáo, đi lại an toàn và đúng giờ", area: "dich_vu" }
+  ];
+  const LEVELS = [
+    { v: 1, label: "Không thích" },
+    { v: 2, label: "Bình thường" },
+    { v: 3, label: "Thích" }
+  ];
+  const MAX = LEVELS.length;
+  const ACTIVITIES = [
+    { text: "Dò log để tìm nguyên nhân một lỗi", axis: "I" },
+    { text: "Thuyết phục một khách hàng ký hợp đồng", axis: "E" },
+    { text: "Vẽ lại bìa thực đơn cho một quán ăn", axis: "A" },
+    { text: "Kiểm kê hàng trong kho cuối ngày", axis: "C" },
+    { text: "Thay một linh kiện hỏng trong máy", axis: "R" },
+    { text: "Chăm sóc một người bệnh mới nhập viện", axis: "S" }
+  ];
+
+  const HOBBIES = [
+    "Chơi game", "Đọc sách, truyện", "Xem phim", "Nghe nhạc, chơi nhạc", "Vẽ", "Chụp ảnh, quay video",
+    "Thể thao", "Nấu ăn", "Du lịch", "Công nghệ, máy tính", "Lắp ráp, sửa đồ", "Viết lách",
+    "Học ngoại ngữ", "Buôn bán nhỏ", "Tình nguyện", "Nuôi thú cưng", "Khoa học, thiên văn",
+    "Thời trang", "Làm nội dung mạng xã hội", "Cờ, giải đố"
+  ];
+  const QUESTIONS = [
+    {
+      id: "dream", label: "Đích xa", q: "Ước mơ của bạn là gì?",
+      chips: ["Làm ra thứ được nhiều người dùng", "Có thu nhập tốt, lo được cho gia đình", "Giúp đỡ được nhiều người",
+        "Tự làm chủ, có công ty riêng", "Đi nhiều nơi, trải nghiệm thế giới"],
+      hint: "Ví dụ: làm ra một ứng dụng giúp bà ngoại gọi video cho dễ"
+    },
+    {
+      id: "why", label: "Vì", q: "Vì sao điều đó quan trọng với bạn?",
+      chips: ["Lo được cho gia đình", "Được làm điều mình thích", "Thấy mình có ích", "Được tự quyết định",
+        "Được người khác công nhận"],
+      hint: "Ví dụ: muốn bố mẹ bớt vất vả"
+    },
+    {
+      id: "growth", label: "Cần giỏi lên", q: "Bạn muốn mình giỏi lên ở điều gì?",
+      chips: ["Tự tin nói trước đám đông", "Giỏi một kỹ năng chuyên môn", "Quản lý thời gian tốt hơn", "Tiếng Anh",
+        "Làm việc nhóm ăn ý hơn"],
+      hint: "Ví dụ: bớt run khi phải thuyết trình trước lớp"
+    },
+    {
+      id: "obstacle", label: "Có thể cản", q: "Điều gì có thể cản bạn?",
+      chips: ["Chưa biết bắt đầu từ đâu", "Thiếu thời gian", "Dễ bỏ cuộc giữa chừng", "Ngại hỏi người khác",
+        "Gia đình muốn mình theo hướng khác"],
+      hint: "Ví dụ: cứ đến kỳ thi là bỏ dở mọi thứ"
+    },
+    {
+      id: "recharge", label: "Khi gặp khó", q: "Khi gặp chuyện khó trong cuộc sống, bạn thường tìm đến đâu để nghỉ ngơi, hay điều gì giúp bạn vượt qua?",
+      chips: ["Về với gia đình", "Tâm sự với bạn bè", "Ở một mình, làm điều mình thích", "Ra ngoài vận động",
+        "Nghĩ tới mục tiêu của mình"],
+      hint: "Ví dụ: nghe nhạc, đi dạo một vòng rồi ngồi lại làm"
+    }
+  ];
+  const MAX_HOBBIES = 5;
+  const TEXT_LIMIT = 500;
+
+  const $ = (id) => document.getElementById(id);
+  let hobbies = [];
+  let picks = {};
+  let texts = {};
+  let answers = new Array(CARDS.length).fill(null);
+  let index = 0;
+  let tried = [];
+  let simLevel = null;
+
+  function show(id) {
+    ["intro", "quiz", "about", "result"].forEach((s) => { $(s).hidden = s !== id; });
+    window.scrollTo(0, 0);
+  }
+
+  function renderCard() {
+    const card = CARDS[index];
+    const cluster = Math.floor(index / 6);
+    $("cluster-label").textContent = "Cụm " + (cluster + 1) + "/3";
+    $("card-count").textContent = "Thẻ " + (index + 1) + "/" + CARDS.length;
+    for (let c = 0; c < 3; c++) {
+      $("c" + c).style.width = (c < cluster ? 100 : c > cluster ? 0 : (index - c * 6) / 6 * 100) + "%";
+    }
+    $("card-eyebrow").textContent = cluster === 2 ? "Lĩnh vực · bạn thích tới đâu?" : "Bạn thích làm việc này tới đâu?";
+    $("card-text").textContent = card.text;
+    const scale = $("scale");
+    scale.innerHTML = "";
+    LEVELS.forEach((lv) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-pressed", answers[index] === lv.v ? "true" : "false");
+      b.textContent = lv.label;
+      b.addEventListener("click", () => choose(lv.v));
+      scale.appendChild(b);
+    });
+    $("back").hidden = index === 0;
+  }
+
+  function choose(v) {
+    answers[index] = v;
+    if (index < CARDS.length - 1) { index += 1; renderCard(); }
+    else { renderAbout(); show("about"); }
+  }
+
+  function toggle(list, value, max) {
+    const i = list.indexOf(value);
+    if (i >= 0) { list.splice(i, 1); return; }
+    if (list.length >= max) return;
+    list.push(value);
+  }
+
+  function chipGroup(container, values, selected, max, onChange) {
+    container.innerHTML = "";
+    values.forEach((v) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pick";
+      b.textContent = v;
+      b.setAttribute("aria-pressed", selected.includes(v) ? "true" : "false");
+      b.addEventListener("click", () => { toggle(selected, v, max); onChange(); });
+      container.appendChild(b);
+    });
+  }
+
+  function renderAbout() {
+    const hob = $("hobbies");
+    const redrawHobbies = () => chipGroup(hob, HOBBIES, hobbies, MAX_HOBBIES, redrawHobbies);
+    redrawHobbies();
+
+    const box = $("questions");
+    if (box.childElementCount) return;
+    QUESTIONS.forEach((qd) => {
+      picks[qd.id] = picks[qd.id] || [];
+      const panel = document.createElement("div");
+      panel.className = "panel";
+      panel.innerHTML =
+        "<h3></h3><p class=\"note\">Chạm những câu gần với bạn, bao nhiêu cũng được.</p><div class=\"chips\" role=\"group\"></div>" +
+        "<label class=\"note\">Muốn kể thêm? (không bắt buộc)</label><textarea rows=\"2\"></textarea>" +
+        "<div class=\"counter\"></div>";
+      panel.querySelector("h3").textContent = qd.q;
+      const chips = panel.querySelector(".chips");
+      chips.setAttribute("aria-label", qd.q);
+      const redraw = () => chipGroup(chips, qd.chips, picks[qd.id], qd.chips.length, redraw);
+      redraw();
+      const ta = panel.querySelector("textarea");
+      ta.id = "text-" + qd.id;
+      ta.maxLength = TEXT_LIMIT;
+      panel.querySelector("label").setAttribute("for", ta.id);
+      ta.placeholder = qd.hint;
+      const counter = panel.querySelector(".counter");
+      counter.textContent = "0/" + TEXT_LIMIT;
+      ta.addEventListener("input", () => { texts[qd.id] = ta.value; counter.textContent = ta.value.length + "/" + TEXT_LIMIT; });
+      box.appendChild(panel);
+    });
+  }
+
+  function renderGoals() {
+    const box = $("goals");
+    box.innerHTML = "";
+    const any = hobbies.length || QUESTIONS.some((q) => (picks[q.id] || []).length || (texts[q.id] || "").trim());
+    $("goals-empty").hidden = !!any;
+    $("draft-note").hidden = !any;
+    if (!any) return;
+
+    if (hobbies.length) {
+      const g = document.createElement("div");
+      g.className = "goal";
+      g.innerHTML = "<div class=\"q\">Sở thích</div><div class=\"tags\"></div>";
+      hobbies.forEach((h) => { const s = document.createElement("span"); s.textContent = h; g.querySelector(".tags").appendChild(s); });
+      box.appendChild(g);
+    }
+    QUESTIONS.forEach((qd) => {
+      const chosen = picks[qd.id] || [];
+      const text = (texts[qd.id] || "").trim();
+      if (!chosen.length && !text) return;
+      const g = document.createElement("div");
+      g.className = "goal";
+      g.innerHTML = "<div class=\"q\"></div><div class=\"a\"></div>";
+      g.querySelector(".q").textContent = qd.label;
+      g.querySelector(".a").textContent = chosen.concat(text ? ["“" + text + "”"] : []).join(" · ");
+      box.appendChild(g);
+    });
+  }
+
+  function mean(xs) { return xs.reduce((a, b) => a + b, 0) / xs.length; }
+
+  function selfScores() {
+    const out = {};
+    ORDER.forEach((k) => {
+      const vals = CARDS.map((c, i) => (c.axis === k ? answers[i] : null)).filter((v) => v !== null);
+      out[k] = vals.length ? mean(vals) : null;
+    });
+    return out;
+  }
+
+  function triedScores() {
+    const out = {};
+    ORDER.forEach((k) => {
+      const vals = tried.filter((t) => t.axis === k).map((t) => t.v);
+      out[k] = vals.length ? { value: mean(vals), n: vals.length } : null;
+    });
+    return out;
+  }
+
+  function pct(v) { return ((v - 1) / (MAX - 1)) * 100; }
+
+  function renderBars() {
+    const self = selfScores();
+    const tr = triedScores();
+    const bars = $("bars");
+    bars.innerHTML = "";
+    ORDER.forEach((k) => {
+      const ax = AXES[k];
+      const el = document.createElement("div");
+      el.className = "bar";
+      const s = self[k];
+      const t = tr[k];
+      let vals = "tự kể " + s.toFixed(1);
+      if (t) vals += " · sau khi thử " + t.value.toFixed(1) + " (" + t.n + " việc)";
+      el.innerHTML =
+        "<div class=\"bar-head\"><div><h3></h3><div class=\"meaning\"></div></div><div class=\"vals\"></div></div>" +
+        "<div class=\"track\"><div class=\"fill-self\"></div>" + (t ? "<div class=\"mark-tried\"></div>" : "") + "</div>";
+      el.querySelector("h3").textContent = ax.name;
+      el.querySelector(".meaning").textContent = ax.meaning;
+      el.querySelector(".vals").textContent = vals;
+      el.querySelector(".fill-self").style.width = Math.max(2, pct(s)) + "%";
+      if (t) el.querySelector(".mark-tried").style.left = pct(t.value) + "%";
+      bars.appendChild(el);
+    });
+  }
+
+  function renderSummary() {
+    const self = selfScores();
+    // Một trục được nhắc khi cả hai thẻ đều "thích", hoặc một thẻ "thích" và một thẻ "bình thường".
+    const liked = ORDER.filter((k) => self[k] >= 2.5).sort((a, b) => self[b] - self[a]);
+    let text;
+    if (!liked.length) {
+      text = "Chưa thấy loại việc nào bạn thật sự thích. Chơi thử vài scenario sẽ cho thấy rõ hơn.";
+    } else if (liked.length === 1) {
+      text = "Bạn có vẻ thích nhất những việc " + AXES[liked[0]].like + ".";
+    } else {
+      text = "Bạn có vẻ thích những việc " + AXES[liked[0]].like + ", và cả những việc " + AXES[liked[1]].like + ".";
+      if (liked.length > 2) text += " Ngoài ra còn " + (liked.length - 2) + " loại việc khác bạn cũng thích.";
+    }
+    $("summary").textContent = text;
+  }
+
+  function renderAreas() {
+    const scored = CARDS.map((c, i) => (c.area ? { area: c.area, v: answers[i] } : null)).filter(Boolean);
+    scored.sort((a, b) => b.v - a.v);
+    const liked = scored.filter((s) => s.v === MAX);
+    const pick = (liked.length ? liked : scored).slice(0, 2);
+    $("areas-note").textContent = liked.length
+      ? "Dựa trên các thẻ nhóm ngành bạn chấm \"Thích\". Đây là chỗ nên thử trước, không phải kết luận bạn hợp nghề nào."
+      : "Bạn chưa chấm \"Thích\" thẻ nhóm ngành nào, nên đây là hai vùng bạn ít ngại nhất. Thử một nhiệm vụ rồi xem cảm giác thật.";
+    const box = $("areas");
+    box.innerHTML = "";
+    pick.forEach((p) => {
+      const a = AREAS[p.area];
+      const el = document.createElement("div");
+      el.className = "area";
+      el.innerHTML = "<strong></strong><span class=\"roles\"></span>";
+      el.firstChild.textContent = a.name + " · bạn chấm " + LEVELS[p.v - 1].label.toLowerCase();
+      el.lastChild.textContent = a.roles;
+      box.appendChild(el);
+    });
+  }
+
+  function renderSim() {
+    const sel = $("sim-activity");
+    if (!sel.options.length) {
+      ACTIVITIES.forEach((a, i) => {
+        const o = document.createElement("option");
+        o.value = String(i);
+        o.textContent = a.text + " (trục " + AXES[a.axis].name + ")";
+        sel.appendChild(o);
+      });
+    }
+    const chips = $("sim-scale");
+    chips.innerHTML = "";
+    LEVELS.forEach((lv) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = lv.label;
+      b.setAttribute("aria-pressed", simLevel === lv.v ? "true" : "false");
+      b.addEventListener("click", () => { simLevel = lv.v; renderSim(); });
+      chips.appendChild(b);
+    });
+    $("sim-add").disabled = simLevel === null;
+    const log = $("sim-log");
+    log.innerHTML = "";
+    tried.slice().reverse().forEach((t) => {
+      const li = document.createElement("li");
+      li.innerHTML = "<span></span><span></span>";
+      li.firstChild.textContent = t.text;
+      li.lastChild.textContent = AXES[t.axis].name + " · " + t.v;
+      log.appendChild(li);
+    });
+  }
+
+  function renderResult() { renderSummary(); renderBars(); renderGoals(); renderAreas(); renderSim(); }
+
+  $("start").addEventListener("click", () => { index = 0; renderCard(); show("quiz"); });
+  $("back").addEventListener("click", () => { if (index > 0) { index -= 1; renderCard(); } });
+  $("restart").addEventListener("click", () => {
+    answers = new Array(CARDS.length).fill(null); tried = []; simLevel = null; index = 0;
+    hobbies = []; picks = {}; texts = {}; $("questions").innerHTML = "";
+    show("intro");
+  });
+  $("to-result").addEventListener("click", () => { renderResult(); show("result"); });
+  $("skip-about").addEventListener("click", () => { renderResult(); show("result"); });
+  $("sim-add").addEventListener("click", () => {
+    if (simLevel === null) return;
+    const a = ACTIVITIES[Number($("sim-activity").value)];
+    tried.push({ text: a.text, axis: a.axis, v: simLevel });
+    simLevel = null;
+    renderBars(); renderSim();
+  });
+  $("sim-clear").addEventListener("click", () => { tried = []; simLevel = null; renderBars(); renderSim(); });
+})();
+</script>

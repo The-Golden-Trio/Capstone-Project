@@ -1,0 +1,431 @@
+{
+  "27-1011.00": {
+    "title_vi": "Giám đốc nghệ thuật (art director)",
+    "description_vi": "Xây dựng ý tưởng thiết kế và cách trình bày cho sản phẩm hình ảnh và truyền thông như ấn phẩm in, phát sóng, video và phim. Chỉ đạo những người làm hình ảnh và dàn trang.",
+    "tasks_vi": {
+      "291": "Làm việc với giám đốc sáng tạo để xây dựng giải pháp thiết kế.",
+      "288": "Trình bản dàn trang cuối cho khách duyệt.",
+      "286": "Quản lý khách hàng và dự án của mình trong phạm vi ngân sách và tiến độ.",
+      "287": "Trao đổi với trưởng các bộ phận sáng tạo, mỹ thuật, viết nội dung và sản xuất về yêu cầu của khách, ý tưởng trình bày và điều phối hoạt động sáng tạo.",
+      "289": "Trao đổi với khách để xác định mục tiêu, ngân sách, thông tin nền, cách trình bày, phong cách và kỹ thuật."
+    }
+  },
+  "27-1012.00": {
+    "title_vi": "Nghệ nhân thủ công",
+    "description_vi": "Làm hoặc tái tạo đồ thủ công để bán và trưng bày bằng nhiều kỹ thuật như hàn, dệt, làm gốm và thêu may.",
+    "tasks_vi": {
+      "9250": "Chọn vật liệu dựa trên độ bền, màu sắc, bề mặt, độ cân, khối lượng, kích thước, độ dẻo và các đặc tính khác.",
+      "9247": "Làm đồ dùng hoặc đồ trang trí bằng tay với nhiều phương pháp và vật liệu.",
+      "9252": "Phát triển ý tưởng sáng tạo cho sản phẩm thủ công.",
+      "9251": "Hoàn thiện bề mặt cho sản phẩm.",
+      "9248": "Cắt, tạo hình, ghép, nối, đúc hoặc gia công vật liệu bằng dụng cụ cầm tay, dụng cụ điện hoặc máy."
+    }
+  },
+  "27-1013.00": {
+    "title_vi": "Hoạ sĩ, nhà điêu khắc và hoạ sĩ minh hoạ",
+    "description_vi": "Sáng tác tác phẩm nghệ thuật gốc bằng nhiều chất liệu và kỹ thuật khác nhau.",
+    "tasks_vi": {
+      "10989": "Dùng chất liệu như bút mực, màu nước, than, sơn dầu hoặc phần mềm máy tính để sáng tác.",
+      "10990": "Kết hợp và phát triển các yếu tố thị giác như đường nét, không gian, khối, màu sắc và phối cảnh để thể hiện ý tưởng, cảm xúc hoặc không khí mong muốn.",
+      "10991": "Trao đổi với khách hàng, biên tập viên, tác giả, giám đốc nghệ thuật và các bên liên quan về tính chất và nội dung tác phẩm.",
+      "10993": "Giữ hồ sơ tác phẩm để thể hiện phong cách, mối quan tâm và năng lực.",
+      "20990": "Quảng bá tác phẩm qua tờ giới thiệu, thư gửi hoặc trang web."
+    }
+  },
+  "27-1014.00": {
+    "title_vi": "Hoạ sĩ kỹ xảo và hoạt hình",
+    "description_vi": "Tạo kỹ xảo hoặc hoạt hình bằng phim, video, máy tính hoặc công cụ điện tử khác cho các sản phẩm như trò chơi điện tử, phim, video ca nhạc và quảng cáo.",
+    "tasks_vi": {
+      "6882": "Thiết kế đồ hoạ và hoạt hình phức tạp bằng óc phán đoán, sự sáng tạo và máy tính.",
+      "6888": "Tạo thiết kế, bản vẽ và minh hoạ cơ bản cho nhãn sản phẩm, bao bì, thư quảng cáo hoặc truyền hình.",
+      "6893": "Tham gia thiết kế và sản xuất chiến dịch đa phương tiện, lo ngân sách và tiến độ, hỗ trợ điều phối sản xuất, thiết kế nền và theo dõi tiến độ.",
+      "6883": "Tạo hình ảnh 2D và 3D thể hiện vật chuyển động hoặc minh hoạ một quá trình bằng phần mềm hoạt hình, dựng hình.",
+      "6884": "Làm vật thể hoặc nhân vật trông sống động bằng cách xử lý ánh sáng, màu sắc, chất liệu, bóng đổ và độ trong suốt, hoặc xử lý ảnh tĩnh để tạo cảm giác chuyển động."
+    }
+  },
+  "27-1021.00": {
+    "title_vi": "Nhà thiết kế công nghiệp và sản phẩm",
+    "description_vi": "Thiết kế và phát triển sản phẩm công nghiệp như ô tô, đồ gia dụng và đồ chơi trẻ em. Kết hợp năng khiếu nghệ thuật với nghiên cứu về cách dùng, thị trường và vật liệu để tạo thiết kế vừa tiện dụng vừa hấp dẫn.",
+    "tasks_vi": {
+      "6896": "Phác thảo ý tưởng, vẽ chi tiết, minh hoạ hoặc bản vẽ kỹ thuật bằng dụng cụ vẽ, màu và cọ, hoặc phần mềm CAD.",
+      "6898": "Chỉnh sửa và hoàn thiện thiết kế bằng mô hình để phù hợp yêu cầu khách, giới hạn sản xuất hoặc xu hướng thiết kế.",
+      "6902": "Đánh giá tính khả thi của ý tưởng dựa trên hình thức, an toàn, công năng, khả năng bảo trì, ngân sách, chi phí và phương pháp sản xuất, đặc điểm thị trường.",
+      "6900": "Trao đổi với bộ phận kỹ thuật, marketing, sản xuất, kinh doanh hoặc khách hàng để xác lập và đánh giá ý tưởng thiết kế sản phẩm.",
+      "6901": "Trình thiết kế và báo cáo cho khách hoặc hội đồng thiết kế duyệt, thảo luận các điểm cần sửa."
+    }
+  },
+  "27-1022.00": {
+    "title_vi": "Nhà thiết kế thời trang",
+    "description_vi": "Thiết kế quần áo và phụ kiện. Tạo thiết kế gốc hoặc phát triển từ xu hướng thời trang.",
+    "tasks_vi": {
+      "13015": "Phác thảo và vẽ chi tiết quần áo, phụ kiện, ghi yêu cầu kỹ thuật như phối màu, cấu trúc, loại vải và phụ liệu.",
+      "13014": "Xem mẫu thử trên người mẫu và trên giá, chỉnh thiết kế để đạt hiệu quả mong muốn.",
+      "13016": "Trao đổi ý tưởng thiết kế với lãnh đạo kinh doanh, quản lý hoặc khách hàng.",
+      "13019": "Chọn vật liệu và kỹ thuật sản xuất cho sản phẩm.",
+      "13020": "Gửi mẫu cho đại lý và nhân viên kinh doanh, sắp xếp trình diễn mẫu tại buổi bán hàng hoặc trình diễn thời trang."
+    }
+  },
+  "27-1023.00": {
+    "title_vi": "Nhà thiết kế hoa (florist)",
+    "description_vi": "Thiết kế, cắt tỉa và cắm hoa tươi, hoa khô, hoa giả và lá.",
+    "tasks_vi": {
+      "1720": "Lên phương án cắm hoa theo yêu cầu khách, dựa trên hiểu biết về thiết kế và vật liệu, hoặc chọn mẫu có sẵn phù hợp.",
+      "1725": "Cắt tỉa vật liệu và kết bó hoa, vòng hoa, tiểu cảnh bằng kéo, dụng cụ tạo hình, dây thép, ghim, băng keo và xốp cắm hoa.",
+      "1719": "Trao đổi với khách về giá, kiểu cắm, ngày giờ và địa điểm giao.",
+      "1726": "Làm việc văn phòng và bán hàng như giữ sổ sách, phục vụ khách, nghe điện thoại, bán quà tặng và thu tiền.",
+      "1724": "Gói và định giá sản phẩm đã hoàn thành."
+    }
+  },
+  "27-1024.00": {
+    "title_vi": "Nhà thiết kế đồ hoạ",
+    "description_vi": "Thiết kế đồ hoạ cho nhu cầu thương mại hoặc quảng bá cụ thể như bao bì, trưng bày hay logo. Có thể dùng nhiều chất liệu để tạo hiệu quả nghệ thuật hoặc trang trí.",
+    "tasks_vi": {
+      "307": "Nhập thông tin vào máy tính để dàn trang cho khách hoặc cấp trên.",
+      "304": "Xem lại bản dàn trang cuối và đề xuất chỗ cần cải thiện.",
+      "300": "Xác định kích thước, bố cục hình minh hoạ và chữ, chọn kiểu và cỡ chữ.",
+      "306": "Thiết kế đồ hoạ và bố cục cho hình minh hoạ sản phẩm, logo công ty và trang web.",
+      "299": "Tạo thiết kế, ý tưởng và bản dàn trang mẫu dựa trên nguyên tắc bố cục và thẩm mỹ."
+    }
+  },
+  "27-1025.00": {
+    "title_vi": "Nhà thiết kế nội thất",
+    "description_vi": "Lên kế hoạch, thiết kế và bày trí không gian bên trong phòng hoặc toà nhà. Thiết kế môi trường nội thất tiện dụng, thẩm mỹ và phù hợp mục đích sử dụng. Có thể chuyên một lĩnh vực, phong cách hoặc giai đoạn thiết kế nội thất.",
+    "tasks_vi": {
+      "20996": "Thiết kế bảo đảm an toàn và đáp ứng quy định về tiếp cận cho người khuyết tật.",
+      "18521": "Dùng phần mềm CAD và phần mềm liên quan để lập hồ sơ thi công.",
+      "23995": "Tìm hiểu yêu cầu quy chuẩn về sức khoẻ và an toàn để làm căn cứ thiết kế.",
+      "1735": "Trao đổi với khách để xác định các yếu tố ảnh hưởng tới thiết kế như ngân sách, sở thích kiến trúc, mục đích và công năng.",
+      "1736": "Tư vấn cho khách về bố trí không gian, sắp xếp và sử dụng đồ đạc, thiết bị, phối màu."
+    }
+  },
+  "27-1026.00": {
+    "title_vi": "Nhân viên trưng bày hàng hoá (visual merchandiser)",
+    "description_vi": "Lên kế hoạch và dựng khu trưng bày thương mại như ở tủ kính, bên trong cửa hàng bán lẻ và tại hội chợ.",
+    "tasks_vi": {
+      "9263": "Lên phương án trưng bày để thu hút khách.",
+      "9269": "Bày đạo cụ, đồ đạc, hàng hoá, phông nền và phụ kiện theo bản phác thảo.",
+      "9265": "Thay hoặc xoay vòng trưng bày tủ kính, khu trưng bày bên trong và biển hiệu theo thay đổi hàng tồn hoặc khuyến mãi.",
+      "9264": "Đặt bảng giá hoặc biển mô tả lên phông nền, kệ, hàng hoá hoặc sàn.",
+      "20752": "Trao đổi với quản lý cửa hàng, nhân viên mua hàng, nhân viên bán hàng, tạp vụ hoặc kỹ thuật để chọn vị trí trưng bày phù hợp."
+    }
+  },
+  "27-1027.00": {
+    "title_vi": "Nhà thiết kế bối cảnh và triển lãm",
+    "description_vi": "Thiết kế khu triển lãm đặc biệt và bối cảnh cho phim, video, truyền hình và sân khấu. Có thể đọc kịch bản, trao đổi với đạo diễn và nghiên cứu để chọn phong cách kiến trúc phù hợp.",
+    "tasks_vi": {
+      "9289": "Thiết kế bối cảnh dựa trên kịch bản, ngân sách, kết quả nghiên cứu và địa điểm sẵn có.",
+      "9286": "Vẽ phác và vẽ thi công theo tỉ lệ cho bối cảnh, gồm mặt bằng, cảnh trí và đạo cụ cần làm.",
+      "9294": "Vẽ phối cảnh sơ bộ cho khu triển lãm đề xuất, gồm chi tiết thi công, bố cục, vật liệu và sơ đồ cho kỹ xảo hoặc ánh sáng.",
+      "9305": "Đọc kịch bản để xác định yêu cầu về địa điểm, bối cảnh và thiết kế.",
+      "9293": "Trình phương án để duyệt và điều chỉnh cho đúng mục đích, phù hợp ngân sách hoặc giới hạn thi công."
+    }
+  },
+  "27-2011.00": {
+    "title_vi": "Diễn viên",
+    "description_vi": "Đóng vai trong sân khấu, truyền hình, phát thanh, video, phim hoặc bối cảnh khác để giải trí, thông tin hoặc giáo dục. Thể hiện vai bi hoặc hài qua lời nói, cử chỉ và chuyển động cơ thể. Có thể nhảy và hát.",
+    "tasks_vi": {
+      "7648": "Đi thử vai và tham gia tuyển chọn diễn viên.",
+      "7644": "Làm việc sát với đạo diễn, diễn viên khác và tác giả kịch bản để tìm cách thể hiện phù hợp nhất với vai.",
+      "7649": "Thể hiện vai diễn bằng lời thoại, cử chỉ và chuyển động để giải trí, thông tin hoặc giáo dục khán giả phát thanh, điện ảnh, truyền hình hoặc trực tiếp.",
+      "7643": "Nghiên cứu và tập vai từ kịch bản để hiểu, học thuộc lời thoại, động tác và tín hiệu theo chỉ đạo.",
+      "7646": "Phối hợp với diễn viên khác trong một tập thể biểu diễn."
+    }
+  },
+  "27-2012.00": {
+    "title_vi": "Nhà sản xuất và đạo diễn",
+    "description_vi": "Sản xuất hoặc đạo diễn chương trình sân khấu, truyền hình, phát thanh, video hoặc phim để giải trí, thông tin hay giáo dục. Chịu trách nhiệm các quyết định sáng tạo như cách hiểu kịch bản, chọn diễn viên hoặc khách mời, thiết kế bối cảnh, âm thanh, kỹ xảo và biên đạo.",
+    "tasks_vi": {
+      "22515": "Lên chi tiết khuôn hình, bố cục, chuyển động máy quay, âm thanh và di chuyển của diễn viên cho từng cảnh quay.",
+      "22516": "Truyền đạt cho diễn viên cách tiếp cận, tính cách nhân vật và chuyển động cần có ở từng cảnh để giảm số lần tập và quay lại.",
+      "22517": "Đạo diễn chương trình trực tiếp, phim, bản ghi hoặc chương trình không phát sóng cho mục đích giải trí, giáo dục.",
+      "22522": "Tìm hiểu chủ đề sản xuất qua internet, kho lưu trữ video và nguồn thông tin khác.",
+      "22523": "Xem lại phim, bản ghi hoặc buổi tập để bảo đảm đúng tiêu chuẩn sản xuất và phát sóng."
+    }
+  },
+  "27-2012.03": {
+    "title_vi": "Trưởng ban biên tập chương trình phát thanh, truyền hình",
+    "description_vi": "Chỉ đạo và điều phối nhân viên chuẩn bị lịch phát sóng và chương trình của đài phát thanh hoặc truyền hình, như thể thao hoặc tin tức.",
+    "tasks_vi": {
+      "7680": "Vận hành và bảo quản thiết bị âm thanh phát sóng và sản xuất.",
+      "7665": "Kiểm tra nhật ký chương trình đã phát về độ chính xác và tuân thủ quy định quản lý phát thanh truyền hình, xử lý sai sót.",
+      "7679": "Đọc tin, đọc hoặc thu thông báo công ích, quảng bá, hoặc làm các việc lên sóng khác.",
+      "7664": "Chỉ đạo và điều phối nhân viên làm tin tức, thể thao hoặc chương trình phát sóng.",
+      "7663": "Theo dõi và xem lại chương trình để bảo đảm đúng lịch, đúng hướng dẫn và đạt chất lượng."
+    }
+  },
+  "27-2012.04": {
+    "title_vi": "Đạo diễn tuyển vai (casting director)",
+    "description_vi": "Tổ chức thử vai và phỏng vấn người biểu diễn để chọn người phù hợp nhất cho vai trong sân khấu, truyền hình, phát thanh hoặc điện ảnh.",
+    "tasks_vi": {
+      "11018": "Tổ chức thử vai và phỏng vấn để ghép đặc điểm người biểu diễn với vai cụ thể hoặc mở rộng nguồn diễn viên.",
+      "11020": "Chuẩn bị cho diễn viên thử vai bằng cách gửi kịch bản và thông tin về vai, yêu cầu tuyển chọn.",
+      "11017": "Chọn người cho vai hoặc gửi danh sách người phù hợp cho nhà sản xuất, đạo diễn quyết định.",
+      "11024": "Liên hệ người đại diện và diễn viên để báo cơ hội thử vai, biểu diễn và hẹn giờ thử vai.",
+      "11021": "Làm cầu nối giữa đạo diễn, diễn viên và người đại diện."
+    }
+  },
+  "27-2012.05": {
+    "title_vi": "Trưởng bộ phận kỹ thuật phát thanh, truyền hình",
+    "description_vi": "Điều phối hoạt động của các bộ phận kỹ thuật như ghi hình, dựng, kỹ thuật và bảo trì để sản xuất chương trình phát thanh hoặc truyền hình.",
+    "tasks_vi": {
+      "3904": "Chuyển nguồn hình trong trường quay hoặc khi ghi hình nhiều máy ngoài hiện trường bằng bàn trộn hình, máy chiếu và bộ tạo kỹ xảo.",
+      "3897": "Xem hình qua màn kiểm tra và chỉ đạo quay phim, kỹ thuật hình về độ sáng và bố cục.",
+      "3899": "Giám sát và phân công nhân viên điều khiển kỹ thuật và sản xuất chương trình.",
+      "3896": "Theo dõi chương trình phát sóng để bảo đảm đúng chính sách và quy định của đài.",
+      "3902": "Vận hành thiết bị để sản xuất chương trình hoặc phát trực tiếp từ hiện trường."
+    }
+  },
+  "27-2021.00": {
+    "title_vi": "Vận động viên",
+    "description_vi": "Thi đấu trong các sự kiện thể thao.",
+    "tasks_vi": {
+      "13038": "Đánh giá thành tích sau thi đấu, xác định điểm mạnh, điểm yếu và điều chỉnh để thi đấu tốt hơn.",
+      "13036": "Bảo quản dụng cụ của môn thể thao.",
+      "13033": "Tham gia các buổi tập theo lịch.",
+      "13037": "Giữ thể lực tốt nhất bằng tập luyện đều đặn, theo chế độ dinh dưỡng hoặc tham vấn chuyên gia y tế.",
+      "13034": "Thi đấu theo luật và quy định của môn thể thao."
+    }
+  },
+  "27-2022.00": {
+    "title_vi": "Huấn luyện viên thể thao và chuyên viên tuyển trạch",
+    "description_vi": "Hướng dẫn hoặc huấn luyện nhóm, cá nhân những kỹ năng cơ bản của môn thể thao, chủ yếu để thi đấu. Làm mẫu kỹ thuật và cách tham gia. Có thể đánh giá điểm mạnh, yếu của vận động viên để tuyển chọn hoặc cải thiện kỹ thuật trước khi thi đấu.",
+    "tasks_vi": {
+      "1742": "Lên kế hoạch, tổ chức và điều hành buổi tập.",
+      "20109": "Định hướng tập luyện, động viên, tạo động lực và tư vấn dinh dưỡng để chuẩn bị cho vận động viên trước trận đấu, giải đấu hoặc chuyến thi đấu.",
+      "1747": "Điều chỉnh cách huấn luyện theo điểm mạnh và điểm yếu của vận động viên.",
+      "1750": "Hướng dẫn cá nhân hoặc nhóm về luật, chiến thuật và nguyên tắc thi đấu, như cách di chuyển cơ thể, tay, chân để đạt kết quả mong muốn.",
+      "1745": "Lên chiến thuật và chọn thành viên cho từng trận hoặc mùa giải."
+    }
+  },
+  "27-2023.00": {
+    "title_vi": "Trọng tài thể thao",
+    "description_vi": "Điều khiển các trận đấu, sự kiện thể thao. Phát hiện lỗi và quyết định hình phạt theo luật. Gồm mọi loại trọng tài, giám sát và giám khảo thi đấu.",
+    "tasks_vi": {
+      "3909": "Điều khiển trận đấu hoặc cuộc thi để giữ chuẩn mực và bảo đảm luật được tuân thủ.",
+      "23912": "Kiểm tra sân bãi về việc tuân thủ quy định và yêu cầu an toàn.",
+      "3915": "Giải quyết khiếu nại về lỗi hoặc phàn nàn của người tham gia và đưa ra hình phạt cần thiết theo luật.",
+      "3911": "Ra hiệu cho người thi đấu hoặc trọng tài khác về lỗi hoặc để điều khiển trận đấu.",
+      "3920": "Giảng giải luật và quy định của một môn thể thao."
+    }
+  },
+  "27-2031.00": {
+    "title_vi": "Diễn viên múa, vũ công",
+    "description_vi": "Biểu diễn múa, nhảy. Có thể diễn trên sân khấu, cho phát sóng hoặc ghi hình.",
+    "tasks_vi": {
+      "7686": "Nghiên cứu và tập các động tác cần cho vai diễn.",
+      "7687": "Phối hợp chuyển động cơ thể theo nhịp nhạc đệm.",
+      "7685": "Tập luyện và học lớp múa để duy trì kỹ thuật, khả năng và thể lực ở mức cao.",
+      "7690": "Phối hợp với bạn diễn hoặc nhóm múa.",
+      "7693": "Hiểu rõ khả năng và giới hạn thể chất của mình để chọn phong cách múa phù hợp."
+    }
+  },
+  "27-2032.00": {
+    "title_vi": "Biên đạo múa",
+    "description_vi": "Sáng tạo bài múa mới. Tập dượt cho buổi biểu diễn. Có thể đạo diễn và dàn dựng chương trình.",
+    "tasks_vi": {
+      "11028": "Chỉ đạo buổi tập, hướng dẫn diễn viên bước múa và kỹ thuật để đạt hiệu quả mong muốn.",
+      "11032": "Hướng dẫn diễn viên tư thế đứng và di chuyển đúng, dạy kỹ thuật chuẩn để tránh chấn thương.",
+      "11038": "Dạy học viên, diễn viên và người biểu diễn khác về nhịp điệu và chuyển động diễn tả.",
+      "11043": "Ghi lại động tác múa và các khía cạnh kỹ thuật dựa trên hiểu biết về đội hình và cấu trúc biên đạo.",
+      "11035": "Đạo diễn và dàn dựng tiết mục múa cho nhiều loại hình giải trí."
+    }
+  },
+  "27-2041.00": {
+    "title_vi": "Chỉ huy dàn nhạc và nhà soạn nhạc",
+    "description_vi": "Chỉ huy, dàn dựng và dẫn dắt các buổi biểu diễn khí nhạc hoặc thanh nhạc của nghệ sĩ hay nhóm như dàn nhạc, ban nhạc, hợp xướng; hoặc sáng tác tác phẩm âm nhạc gốc.",
+    "tasks_vi": {
+      "22544": "Dùng cử chỉ để định hình bản nhạc đang chơi, truyền đạt tiết tấu, cách nhấn câu, âm sắc, cao độ, âm lượng và các khía cạnh biểu diễn khác.",
+      "22545": "Chỉ huy nhóm trong buổi tập và biểu diễn trực tiếp hoặc thu âm để đạt cân bằng âm sắc, hoà âm, cường độ, nhịp điệu và tốc độ mong muốn.",
+      "22546": "Nghiên cứu tổng phổ để nắm chi tiết bản nhạc và xây dựng cách diễn giải.",
+      "22547": "Vận dụng lý thuyết âm nhạc để tạo cấu trúc âm nhạc, gồm hoà âm và giai điệu.",
+      "22548": "Cân nhắc quy mô và khả năng của nhóm, bản nhạc sẵn có và nhu cầu đa dạng để chọn tiết mục biểu diễn."
+    }
+  },
+  "27-2042.00": {
+    "title_vi": "Nhạc công và ca sĩ",
+    "description_vi": "Chơi một hoặc nhiều nhạc cụ hoặc hát. Có thể biểu diễn trên sân khấu, cho phát sóng hoặc thu âm, ghi hình.",
+    "tasks_vi": {
+      "22574": "Biểu diễn trước khán giả tại hoà nhạc, buổi độc tấu, chương trình giáo dục và các sự kiện xã hội khác.",
+      "22603": "Luyện tập một mình hoặc cùng nhạc công khác để thuần thục từng bản nhạc hoặc duy trì, nâng cao kỹ năng.",
+      "22577": "Chuyên chơi một họ nhạc cụ hoặc một thể loại nhạc.",
+      "22581": "Chơi nhạc cụ với vai trò độc tấu, thành viên hoặc khách mời của dàn nhạc, nhóm hoặc ban nhạc.",
+      "22587": "Chơi nhạc nền cho chương trình trực tiếp như ballet, opera, nhạc kịch và cabaret."
+    }
+  },
+  "27-2091.00": {
+    "title_vi": "DJ sự kiện",
+    "description_vi": "Phát nhạc thu sẵn cho khán giả tại câu lạc bộ, tiệc hoặc tiệc cưới. Có thể dùng kỹ thuật như trộn, cắt hoặc lấy mẫu để xử lý bản ghi. Có thể kiêm dẫn chương trình.",
+    "tasks_vi": {
+      "22619": "Vận hành bàn DJ và thiết bị khác như micro.",
+      "22609": "Trao đổi với khách hoặc chủ địa điểm để nắm thông tin sự kiện như gu nhạc, lịch trình và số khách dự kiến.",
+      "22605": "Bám lịch để sự kiện diễn ra đúng giờ.",
+      "22608": "Thu tiền của khách.",
+      "22613": "Soạn hợp đồng nhận diễn."
+    }
+  },
+  "27-3011.00": {
+    "title_vi": "Phát thanh viên, dẫn chương trình phát thanh",
+    "description_vi": "Nói hoặc đọc nội dung soạn sẵn như bản tin, quảng cáo trên đài phát thanh, truyền hình hoặc phương tiện truyền thông khác. Có thể phát và xếp nhạc, giới thiệu ca sĩ, tên bài, nhận diện đài hoặc phỏng vấn khách mời.",
+    "tasks_vi": {
+      "3925": "Đọc tin nhanh để thông báo cho khán thính giả về sự kiện quan trọng.",
+      "3935": "Giới thiệu bài hát, chuyển đoạn, quảng cáo hoặc thông tin công ích và nhận yêu cầu của thính giả.",
+      "3934": "Vận hành bàn điều khiển.",
+      "20887": "Nhận diện đài, mở đầu hoặc kết thúc chương trình bằng lời ứng khẩu hoặc theo kịch bản.",
+      "3928": "Tìm hiểu thông tin nền để chuẩn bị chương trình hoặc phỏng vấn."
+    }
+  },
+  "27-3023.00": {
+    "title_vi": "Phóng viên, nhà báo và bình luận viên",
+    "description_vi": "Viết hoặc dẫn tin, bài bình luận, phê bình cho báo in, phát thanh, truyền hình hoặc phương tiện truyền thông khác. Có thể thu thập và phân tích thông tin qua phỏng vấn, điều tra hoặc quan sát.",
+    "tasks_vi": {
+      "22634": "Đưa tin để đăng hoặc phát sóng, mô tả bối cảnh và chi tiết sự kiện.",
+      "22630": "Thu thập thông tin và xây dựng góc nhìn về chủ đề tin qua tìm hiểu, phỏng vấn, quan sát và trải nghiệm.",
+      "22628": "Tìm hiểu bối cảnh câu chuyện để đưa thông tin đầy đủ, chính xác.",
+      "22629": "Hẹn phỏng vấn những người có thông tin về câu chuyện.",
+      "22633": "Xây dựng và giữ quan hệ với các nguồn tin đáng tin cậy."
+    }
+  },
+  "27-3031.00": {
+    "title_vi": "Chuyên viên quan hệ công chúng (PR)",
+    "description_vi": "Quảng bá hoặc xây dựng hình ảnh mong muốn trước công chúng cho cá nhân, nhóm hoặc tổ chức. Có thể viết hoặc chọn nội dung gửi các phương tiện truyền thông. Có thể chuyên về mạng xã hội.",
+    "tasks_vi": {
+      "1764": "Trả lời yêu cầu thông tin của báo chí hoặc chỉ định người phát ngôn, nguồn tin phù hợp.",
+      "20555": "Lên kế hoạch hoặc chỉ đạo chương trình truyền thông để giữ nhận thức tích cực của công chúng hoặc cổ đông về thành tích, định hướng hoặc trách nhiệm môi trường của tổ chức.",
+      "23951": "Đăng và cập nhật nội dung trên trang web và mạng xã hội của công ty.",
+      "20554": "Viết thông cáo báo chí và nội dung truyền thông khác để quảng bá cho khách hàng.",
+      "1765": "Xây dựng và giữ quan hệ hợp tác với đại diện cộng đồng, người tiêu dùng, nhân viên hoặc các nhóm vì lợi ích công."
+    }
+  },
+  "27-3041.00": {
+    "title_vi": "Biên tập viên",
+    "description_vi": "Lên kế hoạch, điều phối, sửa hoặc biên tập văn bản. Có thể xem xét đề xuất và bản thảo để cân nhắc xuất bản.",
+    "tasks_vi": {
+      "1780": "Kiểm tra sự kiện, ngày tháng và số liệu bằng nguồn tham khảo chuẩn.",
+      "24025": "Viết nội dung như tít, tin, bài, xã luận hoặc bản tin.",
+      "1777": "Đọc bản thảo hoặc bản in thử để phát hiện và sửa lỗi chính tả, dấu câu và cú pháp.",
+      "1776": "Chuẩn bị, viết lại và biên tập bản thảo cho dễ đọc, hoặc giám sát người làm việc này.",
+      "1782": "Phát triển ý tưởng bài viết, nội dung có tính tới sức hút với người đọc."
+    }
+  },
+  "27-3042.00": {
+    "title_vi": "Người viết tài liệu kỹ thuật",
+    "description_vi": "Viết tài liệu kỹ thuật như sách hướng dẫn thiết bị, phụ lục hoặc hướng dẫn vận hành, bảo trì. Có thể hỗ trợ dàn trang.",
+    "tasks_vi": {
+      "3966": "Sắp xếp nội dung và hoàn thành bài viết theo chuẩn về trình tự, độ rõ ràng, súc tích, văn phong và thuật ngữ.",
+      "3967": "Lưu hồ sơ công việc và các lần chỉnh sửa.",
+      "3968": "Biên tập, chuẩn hoá hoặc sửa tài liệu do người viết khác hoặc nhân viên soạn.",
+      "3977": "Phân tích các thay đổi trong lĩnh vực để xác định nhu cầu cập nhật tài liệu đã xuất bản và soạn tài liệu mới.",
+      "3970": "Rà soát tài liệu đã xuất bản và đề xuất thay đổi về phạm vi, định dạng, nội dung, cách in và đóng."
+    }
+  },
+  "27-3043.00": {
+    "title_vi": "Nhà văn, tác giả",
+    "description_vi": "Sáng tác và soạn văn bản như kịch bản, truyện, quảng cáo và các tài liệu khác.",
+    "tasks_vi": {
+      "22671": "Viết văn xuôi hư cấu hoặc phi hư cấu như truyện ngắn, tiểu thuyết, tiểu sử, bài báo, bài phân tích và tiểu luận.",
+      "22668": "Sửa bài viết cho đạt chuẩn của bản thân và đáp ứng nhu cầu của khách hàng, nhà xuất bản, đạo diễn hoặc nhà sản xuất.",
+      "22654": "Trình bản thảo và ý tưởng cho khách hàng.",
+      "22664": "Biên tập hoặc viết lại nội dung có sẵn khi cần và gửi bài cho cấp trên, biên tập viên hoặc nhà xuất bản duyệt.",
+      "22662": "Tìm hiểu để có thông tin thực tế và chi tiết xác thực từ nguồn như báo chí, nhật ký và phỏng vấn."
+    }
+  },
+  "27-3043.05": {
+    "title_vi": "Nhà thơ, người viết lời bài hát và người viết sáng tạo",
+    "description_vi": "Sáng tác tác phẩm gốc như kịch bản, tiểu luận, văn xuôi, thơ hoặc lời bài hát để xuất bản hoặc biểu diễn.",
+    "tasks_vi": {
+      "11051": "Viết văn xuôi hư cấu hoặc phi hư cấu như truyện ngắn, tiểu thuyết, tiểu sử, bài báo, bài phân tích và tiểu luận.",
+      "11052": "Xây dựng chủ đề, cốt truyện, nhân vật, phân tích tâm lý, bối cảnh lịch sử, hành động và lời thoại để tạo tác phẩm.",
+      "11046": "Sửa bài viết cho đạt chuẩn của bản thân và đáp ứng nhu cầu của khách hàng, nhà xuất bản, đạo diễn hoặc nhà sản xuất.",
+      "11047": "Chọn đề tài và hình thức phù hợp để bày tỏ cảm xúc, trải nghiệm, ý tưởng hoặc kể chuyện.",
+      "11049": "Chuẩn bị tác phẩm theo định dạng xuất bản và gửi cho nhà xuất bản hoặc nhà sản xuất."
+    }
+  },
+  "27-3091.00": {
+    "title_vi": "Phiên dịch và biên dịch viên",
+    "description_vi": "Phiên dịch lời nói hoặc ngôn ngữ ký hiệu, hoặc biên dịch văn bản từ ngôn ngữ này sang ngôn ngữ khác.",
+    "tasks_vi": {
+      "9326": "Tuân thủ quy tắc đạo đức nghề nghiệp về bảo mật thông tin.",
+      "9328": "Dịch đồng thời hoặc dịch nối sang ngôn ngữ được yêu cầu, bằng lời hoặc ký hiệu tay, giữ nội dung, ngữ cảnh và văn phong gần nhất có thể.",
+      "9335": "Nghe người nói để hiểu ý và chuẩn bị bản dịch, dùng hệ thống nghe điện tử khi cần.",
+      "9333": "Tổng hợp thuật ngữ và thông tin dùng cho bản dịch, kể cả thuật ngữ chuyên ngành như pháp lý, y khoa.",
+      "9332": "Tra cứu tài liệu như từ điển, bảng thuật ngữ, bách khoa thư và ngân hàng thuật ngữ điện tử để bảo đảm dịch chính xác."
+    }
+  },
+  "27-3092.00": {
+    "title_vi": "Thư ký tốc ký toà án và người tạo phụ đề trực tiếp",
+    "description_vi": "Dùng phương pháp và thiết bị ghi nguyên văn để ghi, lưu, truy xuất và chép lại các phiên trước xét xử, phiên toà hoặc thông tin khác. Gồm cả người tốc ký phụ đề, vận hành thiết bị tốc ký máy tính để làm phụ đề cho chương trình trực tiếp hoặc ghi sẵn cho người khiếm thính.",
+    "tasks_vi": {
+      "8654": "Cung cấp biên bản phiên làm việc theo yêu cầu của thẩm phán, luật sư hoặc công chúng.",
+      "8663": "Ghi ký hiệu lên thiết bị lưu trữ và dùng phần mềm chép tự động để chuyển thành văn bản.",
+      "8655": "Ghi nguyên văn phiên toà, kỳ họp cơ quan lập pháp, họp uỷ ban và các buổi khác bằng thiết bị ghi, máy tốc ký điện tử hoặc mặt nạ tốc ký.",
+      "8661": "Ghi lời khai và các buổi làm việc khác cho luật sư.",
+      "8657": "Đề nghị người nói nói rõ lại những câu không nghe được."
+    }
+  },
+  "27-4011.00": {
+    "title_vi": "Kỹ thuật viên âm thanh và hình ảnh",
+    "description_vi": "Lắp đặt, bảo dưỡng và tháo dỡ thiết bị âm thanh và hình ảnh như micro, loa, dây và cáp, bàn trộn âm, máy quay, màn hình, máy chủ video và thiết bị điện tử liên quan cho sự kiện trực tiếp hoặc ghi hình như hoà nhạc, hội họp, hội nghị, thuyết trình, podcast, họp báo và sự kiện thể thao.",
+    "tasks_vi": {
+      "3980": "Báo cấp trên khi thiết bị lớn cần sửa chữa.",
+      "18650": "Chẩn đoán và xử lý sự cố hệ thống truyền thông.",
+      "3993": "Chỉ đạo và điều phối trợ lý và nhân viên khác trong khi sản xuất.",
+      "3990": "Nén, số hoá, sao chép và lưu trữ dữ liệu âm thanh, hình ảnh.",
+      "18649": "Lắp đặt, điều chỉnh và vận hành thiết bị điện tử để ghi, dựng và truyền chương trình phát thanh, truyền hình, phim, hội nghị truyền hình hoặc trình chiếu đa phương tiện."
+    }
+  },
+  "27-4012.00": {
+    "title_vi": "Kỹ thuật viên phát sóng",
+    "description_vi": "Lắp đặt, vận hành và bảo dưỡng thiết bị điện tử dùng để thu, dựng và truyền âm thanh, hình ảnh cho chương trình phát thanh, truyền hình. Điều khiển tín hiệu vào ra để điều chỉnh âm lượng, cường độ và độ rõ. Vận hành thiết bị phát vệ tinh, vi ba hoặc máy phát khác.",
+    "tasks_vi": {
+      "18654": "Phát và ghi chương trình bằng hệ thống tự động.",
+      "4014": "Báo sự cố thiết bị, bảo đảm được sửa và sửa khẩn cấp khi cần và có thể.",
+      "18655": "Lắp đặt, vận hành và bảo dưỡng máy tính, mạng của đài phát sóng.",
+      "4011": "Theo dõi màn hình và trao đổi với nhân viên đài để xác định mức âm thanh, hình ảnh và bảo đảm chương trình đang phát.",
+      "4009": "Theo dõi cường độ, độ rõ và độ ổn định của tín hiệu vào ra, điều chỉnh thiết bị để giữ chất lượng phát sóng."
+    }
+  },
+  "27-4014.00": {
+    "title_vi": "Kỹ thuật viên âm thanh",
+    "description_vi": "Lắp ráp và vận hành thiết bị để thu, đồng bộ, trộn, dựng hoặc tái tạo âm thanh, gồm nhạc, giọng nói và hiệu ứng, cho sân khấu, video, phim, truyền hình, podcast, sự kiện thể thao và sản phẩm khác.",
+    "tasks_vi": {
+      "7720": "Trao đổi với nhà sản xuất, người biểu diễn và các bên để xác định và đạt âm thanh mong muốn cho sản phẩm như bản thu âm hoặc phim.",
+      "7722": "Điều chỉnh âm lượng và chất lượng âm thanh trong buổi thu bằng bàn điều khiển.",
+      "7727": "Thu lời nói, nhạc và âm thanh khác bằng thiết bị ghi âm.",
+      "7729": "Tách nhạc cụ, giọng hát và âm thanh khác, rồi kết hợp lại ở khâu trộn hoặc hậu kỳ.",
+      "18662": "Lắp đặt, thử và chỉnh thiết bị thu cho buổi thu âm và biểu diễn trực tiếp."
+    }
+  },
+  "27-4021.00": {
+    "title_vi": "Nhiếp ảnh gia",
+    "description_vi": "Chụp ảnh người, phong cảnh, hàng hoá hoặc đối tượng khác. Có thể dùng thiết bị chiếu sáng để làm đẹp đối tượng. Có thể dùng phần mềm chỉnh sửa để hoàn thiện ảnh và bản in. Gồm nhiếp ảnh thương mại, công nghiệp, khoa học và phóng viên ảnh.",
+    "tasks_vi": {
+      "9344": "Chỉnh khẩu độ, tốc độ màn trập và lấy nét theo ánh sáng, độ sâu trường ảnh, chuyển động của đối tượng và loại phim hoặc độ nhạy.",
+      "9346": "Tạo ánh sáng nhân tạo bằng đèn flash và tấm phản quang.",
+      "9347": "Xác định hình ảnh và bố cục mong muốn, chọn và điều chỉnh đối tượng, thiết bị, ánh sáng để đạt hiệu quả.",
+      "20558": "Chuyển ảnh vào máy tính để chỉnh sửa, lưu trữ và gửi điện tử.",
+      "9345": "Dùng máy ảnh phim hoặc kỹ thuật số cùng các thiết bị như chân máy, kính lọc và đèn rời."
+    }
+  },
+  "27-4031.00": {
+    "title_vi": "Quay phim truyền hình, video và điện ảnh",
+    "description_vi": "Vận hành máy quay truyền hình, video hoặc phim để ghi hình ảnh, cảnh quay cho sản phẩm truyền hình, video hoặc điện ảnh.",
+    "tasks_vi": {
+      "4031": "Bố cục và lấy khuôn hình từng cảnh, vận dụng kỹ thuật về ánh sáng, ống kính, phim, kính lọc và cài đặt máy để đạt hiệu quả đạo diễn muốn.",
+      "4030": "Vận hành máy quay truyền hình hoặc điện ảnh để ghi cảnh cho chương trình truyền hình, quảng cáo hoặc phim.",
+      "4035": "Chỉnh vị trí và điều khiển máy quay, máy in phim và thiết bị liên quan để thay đổi nét, độ phơi sáng và ánh sáng.",
+      "4037": "Trao đổi với đạo diễn, kỹ thuật âm thanh, ánh sáng, thợ điện và ê-kíp về nhiệm vụ, thứ tự quay, hiệu ứng, chuyển động máy và yêu cầu ánh sáng.",
+      "4032": "Vận hành ống kính zoom, thay đổi hình theo yêu cầu và hướng dẫn khi tập."
+    }
+  },
+  "27-4032.00": {
+    "title_vi": "Biên tập dựng phim và video",
+    "description_vi": "Dựng hình ảnh động trên phim, video hoặc phương tiện khác. Có thể làm cùng nhà sản xuất hoặc đạo diễn để sắp xếp hình ảnh cho sản phẩm cuối. Có thể dựng hoặc đồng bộ âm thanh với hình.",
+    "tasks_vi": {
+      "4057": "Sắp xếp và nối các cảnh quay thô thành một mạch liền theo kịch bản hoặc chỉ dẫn của đạo diễn, nhà sản xuất.",
+      "4052": "Dựng phim và video để chèn nhạc, lời thoại, hiệu ứng âm thanh, sắp xếp phân đoạn và sửa lỗi bằng thiết bị dựng.",
+      "4053": "Chọn và ghép những cảnh quay hiệu quả nhất của mỗi cảnh để kể câu chuyện mạch lạc, trơn tru.",
+      "4060": "Xem từng phân đoạn cảnh quay để nắm nội dung trước khi dựng thành sản phẩm cuối.",
+      "4061": "Lắp đặt và vận hành hệ thống dựng trên máy tính, tạo chữ điện tử, bàn chuyển hình và bộ kỹ xảo số để làm sản phẩm cuối."
+    }
+  }
+}

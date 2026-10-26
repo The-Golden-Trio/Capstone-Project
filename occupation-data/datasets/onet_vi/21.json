@@ -1,0 +1,156 @@
+{
+  "21-1011.00": {
+    "title_vi": "Chuyên viên tư vấn cai nghiện và rối loạn hành vi",
+    "description_vi": "Tư vấn cho người gặp vấn đề với rượu, thuốc lá, ma tuý hoặc các vấn đề khác như cờ bạc và rối loạn ăn uống. Có thể tư vấn cho cá nhân, gia đình, nhóm hoặc tham gia chương trình phòng ngừa.",
+    "tasks_vi": {
+      "5583": "Tư vấn cho thân chủ hoặc người bệnh, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+      "5592": "Tham gia các khoá đào tạo để nâng cao kiến thức và kỹ năng.",
+      "5585": "Lập kế hoạch điều trị cho thân chủ dựa trên nghiên cứu, kinh nghiệm lâm sàng và tiền sử của họ.",
+      "5584": "Hoàn thành và lưu giữ chính xác hồ sơ, báo cáo về tiền sử, tiến triển, dịch vụ đã cung cấp và các thông tin bắt buộc khác.",
+      "5586": "Xem xét và đánh giá tiến triển của thân chủ so với các mục tiêu đo được trong kế hoạch điều trị và chăm sóc."
+    }
+  },
+  "21-1012.00": {
+    "title_vi": "Chuyên viên tư vấn học đường và hướng nghiệp",
+    "description_vi": "Tư vấn, hỗ trợ học sinh, sinh viên và cung cấp dịch vụ định hướng học tập và nghề nghiệp.",
+    "tasks_vi": {
+      "5606": "Lưu giữ hồ sơ học sinh chính xác, đầy đủ theo quy định của pháp luật và nhà trường.",
+      "18627": "Tư vấn cho học sinh về vấn đề học tập như chọn môn và chương trình, xếp lịch và đăng ký học, thích nghi với trường, trốn học, thói quen học và kế hoạch nghề nghiệp.",
+      "5608": "Can thiệp khủng hoảng cho học sinh khi có tình huống khó khăn ở trường.",
+      "23990": "Tư vấn cho cá nhân hoặc nhóm để giúp họ hiểu và vượt qua các vấn đề cá nhân, xã hội hoặc hành vi ảnh hưởng tới việc học và việc làm.",
+      "5631": "Xem học bạ để bảo đảm học sinh đủ điều kiện tốt nghiệp hoặc vào đại học, và viết thư giới thiệu."
+    }
+  },
+  "21-1013.00": {
+    "title_vi": "Nhà trị liệu hôn nhân và gia đình",
+    "description_vi": "Chẩn đoán và điều trị rối loạn tâm thần và cảm xúc, về nhận thức, cảm xúc hay hành vi, trong bối cảnh hôn nhân và gia đình. Áp dụng lý thuyết và kỹ thuật tâm lý trị liệu, trị liệu hệ thống gia đình khi làm việc với cá nhân, cặp đôi và gia đình.",
+    "tasks_vi": {
+      "9184": "Đặt câu hỏi giúp thân chủ nhận ra cảm xúc và hành vi của mình.",
+      "9186": "Khuyến khích cá nhân và các thành viên gia đình xây dựng và dùng kỹ năng, chiến lược để đối mặt với vấn đề một cách tích cực.",
+      "20232": "Xây dựng và thực hiện kế hoạch điều trị riêng cho các vấn đề quan hệ gia đình, khuôn mẫu hành vi tiêu cực và vấn đề cá nhân khác.",
+      "9187": "Lưu hồ sơ ca gồm hoạt động, ghi chú tiến triển, đánh giá và khuyến nghị.",
+      "9185": "Tư vấn cho thân chủ về các mối bận tâm như quan hệ không như ý, ly hôn và ly thân, nuôi dạy con, quản lý gia đình hoặc khó khăn tài chính."
+    }
+  },
+  "21-1014.00": {
+    "title_vi": "Chuyên viên tư vấn sức khoẻ tâm thần",
+    "description_vi": "Tư vấn cho cá nhân và nhóm để nâng cao sức khoẻ tâm thần và cảm xúc, chú trọng phòng ngừa. Có thể giúp người gặp nhiều vấn đề như nghiện; khó khăn gia đình, nuôi dạy con, hôn nhân; quản lý căng thẳng; lòng tự trọng hoặc tuổi già.",
+    "tasks_vi": {
+      "1591": "Bảo mật hồ sơ điều trị của thân chủ.",
+      "1592": "Khuyến khích thân chủ bày tỏ cảm xúc và chia sẻ những gì đang xảy ra, giúp họ hiểu rõ hơn về bản thân và các mối quan hệ.",
+      "1595": "Tư vấn cho thân chủ, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+      "23908": "Can thiệp khủng hoảng để bảo đảm an toàn cho người bệnh và người xung quanh.",
+      "18484": "Điền và lưu giữ giấy tờ liên quan đến thân chủ, gồm biểu mẫu bắt buộc, hồ sơ chẩn đoán và ghi chú tiến triển."
+    }
+  },
+  "21-1015.00": {
+    "title_vi": "Chuyên viên tư vấn phục hồi chức năng",
+    "description_vi": "Tư vấn để giúp người gặp khó khăn về cá nhân, xã hội hoặc nghề nghiệp do dị tật bẩm sinh, bệnh tật, tai nạn, tuổi già hay căng thẳng hằng ngày được tự lập và có việc làm nhiều nhất có thể. Điều phối hoạt động cho người ở cơ sở chăm sóc và điều trị. Đánh giá nhu cầu, thiết kế và thực hiện chương trình phục hồi, có thể gồm tư vấn cá nhân và nghề nghiệp, đào tạo và giới thiệu việc làm.",
+    "tasks_vi": {
+      "9205": "Xây dựng kế hoạch phục hồi phù hợp với năng khiếu, trình độ học vấn, thể chất và mục tiêu nghề nghiệp của thân chủ.",
+      "9201": "Trao đổi với thân chủ về lựa chọn và mục tiêu để xây dựng chương trình phục hồi và cách tiếp cận dịch vụ cần thiết.",
+      "9202": "Lập và lưu giữ hồ sơ ca, gồm thông tin cá nhân, điều kiện hưởng dịch vụ, dịch vụ đã cung cấp, ghi chép các lần làm việc và thư từ liên quan.",
+      "9208": "Tìm các rào cản việc làm của thân chủ, như nơi làm việc khó tiếp cận, lịch cứng nhắc hay khó khăn đi lại, và cùng thân chủ tìm cách vượt qua.",
+      "9204": "Phân tích thông tin từ phỏng vấn, hồ sơ học tập và y tế, ý kiến chuyên gia và kết quả đánh giá để xác định năng lực, nhu cầu và điều kiện hưởng dịch vụ."
+    }
+  },
+  "21-1021.00": {
+    "title_vi": "Nhân viên công tác xã hội về trẻ em, gia đình và trường học",
+    "description_vi": "Cung cấp dịch vụ xã hội để cải thiện đời sống xã hội và tâm lý của trẻ em và gia đình, nâng cao hạnh phúc gia đình và việc học của trẻ. Có thể hỗ trợ cha mẹ, làm thủ tục nhận con nuôi và tìm gia đình nhận nuôi cho trẻ bị bỏ rơi hoặc bị bạo hành. Ở trường học, xử lý các vấn đề như mang thai tuổi vị thành niên, vi phạm kỷ luật và trốn học. Có thể tư vấn cho giáo viên.",
+    "tasks_vi": {
+      "237": "Lưu hồ sơ ca và lập báo cáo.",
+      "235": "Phỏng vấn thân chủ theo từng người, theo gia đình hoặc nhóm để đánh giá hoàn cảnh, khả năng và vấn đề, từ đó xác định dịch vụ cần có.",
+      "250": "Làm cầu nối giữa học sinh, gia đình, nhà trường, dịch vụ gia đình, phòng khám tâm lý trẻ em, toà án, cơ quan bảo vệ trẻ em, bác sĩ và các bên khác để giúp trẻ gặp vấn đề như khuyết tật, bị bạo hành hay nghèo khó.",
+      "241": "Cùng thân chủ xây dựng và rà soát kế hoạch dịch vụ, theo dõi để đánh giá số lượng và chất lượng dịch vụ đã cung cấp.",
+      "243": "Xử lý các vấn đề pháp lý như bạo hành và kỷ luật trẻ em, hỗ trợ phiên điều trần và làm chứng để giúp quyết định quyền nuôi con."
+    }
+  },
+  "21-1022.00": {
+    "title_vi": "Nhân viên công tác xã hội trong y tế",
+    "description_vi": "Hỗ trợ tâm lý xã hội cho cá nhân, gia đình và nhóm để đối mặt với bệnh mạn tính, cấp tính hoặc giai đoạn cuối. Gồm tư vấn cho người chăm sóc trong gia đình, cung cấp thông tin, tư vấn và giới thiệu người bệnh tới các dịch vụ khác. Có thể quản lý ca, quản lý chăm sóc hoặc thực hiện can thiệp nâng cao sức khoẻ, phòng bệnh và tháo gỡ rào cản tiếp cận y tế.",
+    "tasks_vi": {
+      "263": "Bênh vực quyền lợi của thân chủ hoặc người bệnh để giải quyết khủng hoảng.",
+      "23910": "Giải thích cho thân chủ về triệu chứng giai đoạn cuối và các lựa chọn, để họ quyết định khi đã hiểu rõ.",
+      "258": "Phối hợp với các chuyên gia khác để đánh giá tình trạng sức khoẻ và nhu cầu của người bệnh.",
+      "260": "Giới thiệu người bệnh hoặc gia đình tới nguồn lực cộng đồng để hồi phục sau bệnh thể chất hay tâm thần và tiếp cận các dịch vụ như hỗ trợ tài chính, trợ giúp pháp lý, nhà ở, việc làm hoặc học tập.",
+      "265": "Dùng kết quả tham vấn và kinh nghiệm công tác xã hội để lập kế hoạch, điều phối chăm sóc và phục hồi cho người bệnh, theo dõi tới cùng để bảo đảm hiệu quả."
+    }
+  },
+  "21-1023.00": {
+    "title_vi": "Nhân viên công tác xã hội về sức khoẻ tâm thần và nghiện chất",
+    "description_vi": "Đánh giá và hỗ trợ điều trị cho người có vấn đề tâm thần, cảm xúc hoặc lạm dụng chất như rượu, thuốc lá và ma tuý. Công việc có thể gồm trị liệu cá nhân và nhóm, can thiệp khủng hoảng, quản lý ca, bênh vực quyền lợi thân chủ, phòng ngừa và giáo dục.",
+    "tasks_vi": {
+      "273": "Tư vấn cho thân chủ theo từng người hoặc theo nhóm để giúp họ đối phó với nghiện chất, bệnh tâm thần hay thể chất, nghèo đói, thất nghiệp hoặc bạo hành.",
+      "275": "Phối hợp với chuyên viên tư vấn, bác sĩ hoặc điều dưỡng để lập kế hoạch và điều phối điều trị, dựa trên kinh nghiệm công tác xã hội và nhu cầu người bệnh.",
+      "276": "Theo dõi, đánh giá và ghi lại tiến triển của thân chủ so với mục tiêu điều trị.",
+      "18487": "Phỏng vấn thân chủ, xem hồ sơ, thực hiện đánh giá hoặc trao đổi với chuyên gia khác để đánh giá tình trạng tâm thần hay thể chất của thân chủ.",
+      "281": "Giám sát hoặc chỉ đạo nhân viên khác cung cấp dịch vụ cho thân chủ."
+    }
+  },
+  "21-1091.00": {
+    "title_vi": "Chuyên viên giáo dục sức khoẻ",
+    "description_vi": "Tổ chức và quản lý chương trình giáo dục sức khoẻ giúp cá nhân, gia đình và cộng đồng duy trì lối sống lành mạnh. Dùng dữ liệu để xác định nhu cầu cộng đồng trước khi lập kế hoạch, triển khai, theo dõi và đánh giá chương trình. Có thể kết nối hệ thống y tế, cơ sở khám chữa bệnh, bảo hiểm và người bệnh. Có thể quản lý ngân sách cho chương trình giáo dục sức khoẻ.",
+    "tasks_vi": {
+      "20236": "Soạn và phát tài liệu giáo dục sức khoẻ như báo cáo, bản tin và tài liệu trực quan về hút thuốc, vắc-xin và các vấn đề y tế công cộng khác.",
+      "9218": "Xây dựng và duy trì quan hệ hợp tác với các cơ quan, tổ chức quan tâm tới y tế công cộng.",
+      "9222": "Duy trì cơ sở dữ liệu, danh sách liên lạc và các thông tin khác để chương trình giáo dục sức khoẻ vận hành thuận lợi.",
+      "9216": "Ghi chép hoạt động và thông tin như số hồ sơ đã hoàn thành, số buổi trình bày và số người được hỗ trợ.",
+      "9217": "Xây dựng và trình bày chương trình giáo dục, nâng cao sức khoẻ như hội thảo tập huấn, hội nghị và buổi nói chuyện ở trường học, cộng đồng."
+    }
+  },
+  "21-1092.00": {
+    "title_vi": "Cán bộ quản lý người được hưởng án treo và cải tạo phạm nhân",
+    "description_vi": "Cung cấp dịch vụ xã hội để hỗ trợ cải tạo người phạm tội đang bị giam giữ, hưởng án treo hoặc được tha có điều kiện. Đề xuất kế hoạch cải tạo và cách xử lý người phạm tội, kể cả tha có điều kiện và yêu cầu về học tập, việc làm.",
+    "tasks_vi": {
+      "1614": "Lập và lưu hồ sơ cho từng phạm nhân hoặc người phạm tội được giao.",
+      "1618": "Thu thập thông tin về lý lịch người phạm tội qua trò chuyện với họ, gia đình, bạn bè và những người có thông tin liên quan.",
+      "1625": "Định kỳ phỏng vấn người hưởng án treo hoặc tha có điều kiện để đánh giá việc đạt mục tiêu và tuân thủ điều kiện trong kế hoạch cải tạo.",
+      "1617": "Trao đổi với người phạm tội về vai trò của các vấn đề như nghiện rượu, ma tuý hay khó kiểm soát cơn giận trong hành vi phạm tội.",
+      "20056": "Giám sát người chấp hành án tại cộng đồng, như quản chế tại nhà có thiết bị điện tử, kiểm tra giờ giới nghiêm hoặc đến thăm nhà, nơi làm việc, trường học."
+    }
+  },
+  "21-1093.00": {
+    "title_vi": "Trợ lý dịch vụ xã hội",
+    "description_vi": "Hỗ trợ các chuyên viên dịch vụ xã hội cung cấp dịch vụ cho thân chủ trong nhiều lĩnh vực như tâm lý, phục hồi chức năng hoặc công tác xã hội, kể cả hỗ trợ gia đình. Có thể giúp thân chủ tìm và nhận các phúc lợi, dịch vụ xã hội và cộng đồng. Có thể hỗ trợ nhân viên công tác xã hội tổ chức chương trình phòng ngừa và giải quyết vấn đề về nghiện chất, quan hệ, phục hồi hoặc chăm sóc người phụ thuộc.",
+    "tasks_vi": {
+      "21179": "Đánh giá khả năng nhận thức, nhu cầu thể chất và cảm xúc của thân chủ để xác định biện pháp hỗ trợ phù hợp.",
+      "21180": "Xây dựng và thực hiện kế hoạch chăm sóc và điều chỉnh hành vi cho thân chủ.",
+      "3754": "Lưu hồ sơ hoặc lập báo cáo cho chủ cơ sở hay ban quản lý về các lần gặp thân chủ.",
+      "3755": "Đến thăm nhà hoặc dự họp nhóm để cung cấp thông tin về dịch vụ, yêu cầu và thủ tục của cơ quan.",
+      "3757": "Nộp báo cáo và trao đổi về báo cáo hoặc vấn đề với cấp trên."
+    }
+  },
+  "21-1094.00": {
+    "title_vi": "Nhân viên y tế cộng đồng",
+    "description_vi": "Nâng cao sức khoẻ trong cộng đồng bằng cách giúp mọi người tạo thói quen lành mạnh. Bênh vực nhu cầu sức khoẻ của người dân, giúp họ trao đổi hiệu quả với cơ sở y tế hoặc cơ quan dịch vụ xã hội. Làm cầu nối và triển khai chương trình nâng cao sức khoẻ cá nhân và cộng đồng. Có thể làm dịch vụ dự phòng như đo huyết áp, tầm soát tăng nhãn áp và thính lực. Có thể thu thập dữ liệu để xác định nhu cầu sức khoẻ của cộng đồng.",
+    "tasks_vi": {
+      "19042": "Báo cho cơ quan chức năng các trường hợp trẻ em hoặc người già bị bạo hành, bỏ bê hoặc bị đe doạ, theo quy định.",
+      "19032": "Theo dõi dinh dưỡng của trẻ em, người già và các nhóm nguy cơ cao.",
+      "19031": "Cập nhật hồ sơ thân chủ gồm kế hoạch, ghi chú, biểu mẫu và thông tin liên quan.",
+      "19026": "Liên hệ thân chủ trực tiếp, qua điện thoại hoặc bằng văn bản để bảo đảm họ đã làm các việc bắt buộc hoặc được khuyến nghị.",
+      "19020": "Tư vấn cho thân chủ hoặc nhóm cộng đồng về tự chăm sóc sức khoẻ, như kiểm soát bệnh tiểu đường."
+    }
+  },
+  "21-2011.00": {
+    "title_vi": "Chức sắc tôn giáo",
+    "description_vi": "Cử hành nghi lễ thờ phụng và các hoạt động tâm linh khác theo đức tin và thực hành của tôn giáo hay giáo phái. Hướng dẫn và hỗ trợ tinh thần, đạo đức cho tín đồ.",
+    "tasks_vi": {
+      "10934": "Cầu nguyện và lan toả đời sống tâm linh.",
+      "10936": "Soạn và giảng bài giảng hoặc bài nói chuyện.",
+      "10935": "Đọc kinh sách như Kinh Thánh, Torah hoặc Koran.",
+      "10937": "Tổ chức và chủ trì các buổi lễ định kỳ.",
+      "10939": "Hướng dẫn người muốn theo một tôn giáo."
+    }
+  },
+  "21-2021.00": {
+    "title_vi": "Người phụ trách hoạt động và giáo dục tôn giáo",
+    "description_vi": "Điều phối hoặc thiết kế chương trình và hoạt động tiếp cận cộng đồng để thúc đẩy giáo dục, sinh hoạt tôn giáo của một giáo phái. Có thể tư vấn, hướng dẫn về các vấn đề hôn nhân, sức khoẻ, tài chính và tôn giáo.",
+    "tasks_vi": {
+      "12977": "Xây dựng hoặc điều hành khoá học, chương trình giáo dục tôn giáo trong cộng đoàn.",
+      "12975": "Tìm và tuyển tình nguyện viên.",
+      "12978": "Chọn giáo trình hoặc hình thức lớp học phù hợp cho chương trình giáo dục.",
+      "12983": "Lên lịch sự kiện như trại, hội nghị, buổi họp, hội thảo hoặc tĩnh tâm.",
+      "12980": "Tư vấn cho cá nhân về vấn đề quan hệ, sức khoẻ, tài chính hoặc tôn giáo."
+    }
+  }
+}

@@ -1,0 +1,2473 @@
+{
+  "_meta": {
+    "source": "VietJobs (HuggingFace dinhieufam/VietJobs, bản đăng 2/3/2026), https://arxiv.org/abs/2603.05262",
+    "licence": "Chưa ghi trên trang dữ liệu; repo code của nhóm tác giả là MIT. Cần hỏi tác giả trước khi công bố.",
+    "postings_after_cleaning": 33964,
+    "matched_any_role": 20503,
+    "pay_rule": "Trung điểm khoảng lương rao (triệu đồng/tháng), bỏ tin thoả thuận và tin ngoài [4.0, 150.0] triệu. Chỉ tính phân vị khi có từ 20 tin có lương.",
+    "share_rule": "Số tin của nghề trên 10.000 tin sau làm sạch; một tin có thể tính cho nhiều nghề. Là chỉ báo tương đối trong một bộ dữ liệu từ trang tuyển dụng, nghiêng về việc văn phòng ở Hà Nội và TP.HCM.",
+    "caveat": "Lương rao, không phải lương thực nhận. Bộ dữ liệu không có ngày đăng của từng tin."
+  },
+  "roles": {
+    "ONET-11-1021.00": {
+      "postings": 110,
+      "share_per_10k": 32.4,
+      "with_pay": 50,
+      "pay_million_vnd": {
+        "p25": 14.5,
+        "median": 20.0,
+        "p75": 43.1
+      },
+      "sample_titles": [
+        "Giám Đốc Vận Hành",
+        "Giám Đốc Điều Hành",
+        "Giám Đốc Chi Nhánh",
+        "Thư Ký Tổng Giám Đốc",
+        "Giám đốc điều hành thương hiệu"
+      ]
+    },
+    "ONET-11-3051.00": {
+      "postings": 142,
+      "share_per_10k": 41.8,
+      "with_pay": 92,
+      "pay_million_vnd": {
+        "p25": 16.1,
+        "median": 21.0,
+        "p75": 27.5
+      },
+      "sample_titles": [
+        "Quản Lý Sản Xuất",
+        "Giám Đốc Sản Xuất",
+        "Trưởng Phòng Sản Xuất",
+        "Nhân Viên Quản Lý Sản Xuất",
+        "Quản Đốc Sản Xuất"
+      ]
+    },
+    "ONET-11-3012.00": {
+      "postings": 70,
+      "share_per_10k": 20.6,
+      "with_pay": 46,
+      "pay_million_vnd": {
+        "p25": 18.4,
+        "median": 22.5,
+        "p75": 28.5
+      },
+      "sample_titles": [
+        "Trưởng Phòng Hành Chính Nhân Sự",
+        "Trưởng Phòng Hành Chính",
+        "Trưởng Phòng HCNS",
+        "Giám Đốc Hành Chính (Admin Manager) - Tiếng Trung",
+        "Trưởng Phòng Hành Chính Kế Toán"
+      ]
+    },
+    "ONET-11-9021.00": {
+      "postings": 71,
+      "share_per_10k": 20.9,
+      "with_pay": 48,
+      "pay_million_vnd": {
+        "p25": 21.5,
+        "median": 22.5,
+        "p75": 27.5
+      },
+      "sample_titles": [
+        "Chỉ Huy Trưởng Công Trình",
+        "Chỉ Huy Trưởng",
+        "Chỉ Huy Trưởng Cơ Điện",
+        "Chỉ Huy Trưởng, Chỉ Huy Phó Thi Công Cơ Điện (MEP)",
+        "Chỉ Huy Trưởng Dự Án"
+      ]
+    },
+    "ONET-11-9041.00": {
+      "postings": 53,
+      "share_per_10k": 15.6,
+      "with_pay": 32,
+      "pay_million_vnd": {
+        "p25": 22.5,
+        "median": 27.5,
+        "p75": 30.0
+      },
+      "sample_titles": [
+        "Trưởng Phòng Kỹ Thuật",
+        "Trưởng Phòng R&D",
+        "Trưởng Phòng Kỹ Thuật Hạ Tầng, Giao Thông",
+        "Trưởng Phòng R&D Kỹ Thuật",
+        "Trưởng Phòng Kỹ Thuật Điện"
+      ]
+    },
+    "ONET-11-9032.00": {
+      "postings": 29,
+      "share_per_10k": 8.5,
+      "with_pay": 15,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Trưởng Phòng Đào Tạo",
+        "Quản Lý Đào Tạo",
+        "Phó Hiệu Trưởng",
+        "Trưởng Phòng Đào Tạo & ISO",
+        "Chuyên Viên Quản Lý Đào Tạo"
+      ]
+    },
+    "ONET-11-9051.00": {
+      "postings": 80,
+      "share_per_10k": 23.6,
+      "with_pay": 54,
+      "pay_million_vnd": {
+        "p25": 12.0,
+        "median": 14.0,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "Quản Lý Nhà Hàng",
+        "Trợ Lý Quản Lý Nhà Hàng",
+        "Cửa Hàng Trưởng/Quản Lý Nhà Hàng",
+        "Quản lý quan hệ đối tác",
+        "Quản Lý Nhà Hàng Nướng Hàn Quốc"
+      ]
+    },
+    "ONET-11-9081.00": {
+      "postings": 20,
+      "share_per_10k": 5.9,
+      "with_pay": 15,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Quản Lý Spa",
+        "Quản Lý Khách Sạn",
+        "Hotel Manager",
+        "Quản Lý Lễ Tân",
+        "Phó Giám Đốc Khách Sạn"
+      ]
+    },
+    "ONET-11-9111.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Quản Lý Phòng Khám"
+      ]
+    },
+    "ONET-11-9013.00": {
+      "postings": 4,
+      "share_per_10k": 1.2,
+      "with_pay": 3,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Quản Lý Trang Trại",
+        "Trưởng Trại Chăn Nuôi Heo",
+        "Quản Lý Trang Trại (Không Yêu Cầu Kinh Nghiệm)"
+      ]
+    },
+    "ONET-11-9141.00": {
+      "postings": 19,
+      "share_per_10k": 5.6,
+      "with_pay": 14,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Trưởng Ban Quản Lý Tòa Nhà",
+        "Quản Lý Tòa Nhà",
+        "Nhân Viên Kế Toán - Hành Chính Ban Quản Lý Tòa Nhà",
+        "Nhân Viên Quản Lý Vận Hành Toà Nhà",
+        "Trợ Lý Trưởng Ban Quản Lý Tòa Nhà"
+      ]
+    },
+    "ONET-13-2011.00": {
+      "postings": 3036,
+      "share_per_10k": 893.9,
+      "with_pay": 2340,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 12.5,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Kế Toán Tổng Hợp",
+        "Nhân Viên Kế Toán",
+        "Kế Toán Nội Bộ",
+        "Nhân Viên Kế Toán Tổng Hợp",
+        "Kế Toán Thuế"
+      ]
+    },
+    "ONET-13-1041.00": {
+      "postings": 69,
+      "share_per_10k": 20.3,
+      "with_pay": 47,
+      "pay_million_vnd": {
+        "p25": 12.5,
+        "median": 14.0,
+        "p75": 16.5
+      },
+      "sample_titles": [
+        "Chuyên Viên Kiểm Soát Nội Bộ",
+        "Nhân Viên Kiểm Soát Nội Bộ",
+        "Kiểm Soát Nội Bộ",
+        "Chuyên Viên Kiểm Soát Tuân Thủ",
+        "Nhân Viên QA Tuân Thủ (QA Compliance)"
+      ]
+    },
+    "ONET-13-1031.00": {
+      "postings": 8,
+      "share_per_10k": 2.4,
+      "with_pay": 5,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Admin Giải Quyết Bồi Thường Bảo Hiểm",
+        "Nhân Viên Giám Định Container",
+        "Nhân Viên Giám Định",
+        "Giám Định Viên Hàng Hải",
+        "Nhân Viên Hỗ Trợ Giám Định Bảo Hiểm"
+      ]
+    },
+    "ONET-13-2072.00": {
+      "postings": 51,
+      "share_per_10k": 15.0,
+      "with_pay": 27,
+      "pay_million_vnd": {
+        "p25": 15.0,
+        "median": 22.5,
+        "p75": 25.0
+      },
+      "sample_titles": [
+        "Chuyên Viên Quan Hệ Khách Hàng Cá Nhân",
+        "Chuyên Viên Quan Hệ Khách Hàng Doanh Nghiệp",
+        "CHUYÊN VIÊN QUAN HỆ KHÁCH HÀNG CÁ NHÂN",
+        "Tổng Đài Viên Xử Lý Hồ Sơ Tín Dụng",
+        "Chuyên Viên Cao Cấp Quan Hệ Khách Hàng Doanh Nghiệp Vừa Và Nhỏ (SME RM)"
+      ]
+    },
+    "ONET-13-2052.00": {
+      "postings": 51,
+      "share_per_10k": 15.0,
+      "with_pay": 42,
+      "pay_million_vnd": {
+        "p25": 14.5,
+        "median": 20.0,
+        "p75": 25.1
+      },
+      "sample_titles": [
+        "Chuyên Viên Tư Vấn Tài Chính",
+        "Nhân Viên Tư Vấn Tài Chính",
+        "Nhân Viên Kinh Doanh - Chuyên Viên Tư Vấn Tài Chính Kênh Ngân Hàng",
+        "Chuyên Viên Kinh Doanh/Sale/Tư Vấn Tài Chính",
+        "Chuyên Viên Tư Vấn Tài Chính Và Dịch Vụ Khách Hàng"
+      ]
+    },
+    "ONET-13-2099.01": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-13-2023.00": {
+      "postings": 21,
+      "share_per_10k": 6.2,
+      "with_pay": 13,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Thẩm Định Giá",
+        "Nhân viên định giá",
+        "Nhân Viên Quy Hoạch, Kế Hoạch Và Định Giá Đất",
+        "Chuyên Viên Thẩm Định Giá (Sơ Bộ Xây Dựng Dữ Liệu)",
+        "KỸ SƯ DỰ TOÁN (Định Giá Xây Dựng)"
+      ]
+    },
+    "ONET-13-1071.00": {
+      "postings": 496,
+      "share_per_10k": 146.0,
+      "with_pay": 373,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 12.5,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Chuyên Viên Tuyển Dụng",
+        "Nhân Viên Tuyển Dụng",
+        "Chuyên Viên Nhân Sự",
+        "Nhân Viên Nhân Sự",
+        "Chuyên Viên C&B"
+      ]
+    },
+    "ONET-13-1161.00": {
+      "postings": 1309,
+      "share_per_10k": 385.4,
+      "with_pay": 1021,
+      "pay_million_vnd": {
+        "p25": 10.5,
+        "median": 12.5,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Nhân Viên Marketing",
+        "Nhân Viên Content Marketing",
+        "Nhân Viên Digital Marketing",
+        "Chuyên Viên Digital Marketing",
+        "Chuyên Viên Marketing"
+      ]
+    },
+    "ONET-13-1082.00": {
+      "postings": 147,
+      "share_per_10k": 43.3,
+      "with_pay": 83,
+      "pay_million_vnd": {
+        "p25": 15.0,
+        "median": 20.0,
+        "p75": 28.5
+      },
+      "sample_titles": [
+        "Quản Lý Dự Án",
+        "Project Manager",
+        "Nhân Viên Quản Lý Dự Án",
+        "Chuyên Viên Quản Lý Dự Án",
+        "Nhân Viên Điều Phối Dự Án"
+      ]
+    },
+    "ONET-13-1121.00": {
+      "postings": 73,
+      "share_per_10k": 21.5,
+      "with_pay": 52,
+      "pay_million_vnd": {
+        "p25": 11.0,
+        "median": 12.5,
+        "p75": 13.5
+      },
+      "sample_titles": [
+        "Nhân Viên Tổ Chức Sự Kiện",
+        "Chuyên Viên Tổ Chức Sự Kiện",
+        "Nhân Viên Sự Kiện",
+        "MC Kiêm Sự Kiện",
+        "Chuyên Viên Truyền Thông Sự Kiện"
+      ]
+    },
+    "ONET-13-1081.00": {
+      "postings": 283,
+      "share_per_10k": 83.3,
+      "with_pay": 186,
+      "pay_million_vnd": {
+        "p25": 11.0,
+        "median": 12.5,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Nhân Viên Xuất Nhập Khẩu",
+        "Nhân Viên Khai Báo Hải Quan",
+        "Chuyên Viên Xuất Nhập Khẩu",
+        "Nhân Viên Chứng Từ Xuất Nhập Khẩu",
+        "Nhân Viên Chứng Từ"
+      ]
+    },
+    "ONET-13-1023.00": {
+      "postings": 438,
+      "share_per_10k": 129.0,
+      "with_pay": 317,
+      "pay_million_vnd": {
+        "p25": 11.2,
+        "median": 12.5,
+        "p75": 15.5
+      },
+      "sample_titles": [
+        "Nhân Viên Mua Hàng",
+        "Nhân Viên Thu Mua",
+        "Chuyên Viên Mua Hàng",
+        "Chuyên Viên Thu Mua",
+        "Nhân Viên Mua Hàng Tiếng Trung"
+      ]
+    },
+    "ONET-13-1051.00": {
+      "postings": 253,
+      "share_per_10k": 74.5,
+      "with_pay": 187,
+      "pay_million_vnd": {
+        "p25": 13.5,
+        "median": 16.0,
+        "p75": 18.5
+      },
+      "sample_titles": [
+        "Kỹ Sư QS",
+        "Nhân Viên Dự Toán",
+        "Kỹ Sư Dự Toán",
+        "Nhân Viên QS",
+        "Nhân Viên Dự Toán Nội Thất"
+      ]
+    },
+    "ONET-13-1199.06": {
+      "postings": 224,
+      "share_per_10k": 66.0,
+      "with_pay": 185,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 12.0,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Nhân Viên Vận Hành Sàn Thương Mại Điện Tử",
+        "Nhân Viên Sale Online",
+        "Nhân Viên Bán Hàng Online",
+        "Vận Hành Sàn Thương Mại Điện Tử",
+        "Ecommerce Executive"
+      ]
+    },
+    "ONET-15-2041.00": {
+      "postings": 19,
+      "share_per_10k": 5.6,
+      "with_pay": 15,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Thống Kê",
+        "Nhân Viên Lễ Tân - Thống Kê",
+        "Chuyên Viên Báo Cáo Thống Kê - QLTC - MSB - 3K019",
+        "Nhân Viên Thống Kê - Cấp Đơn Bảo Hiểm",
+        "Nhân Viên Thống Kê Thông Tin Bất Động Sản"
+      ]
+    },
+    "ONET-15-2011.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Định Phí Bảo Hiểm"
+      ]
+    },
+    "ONET-17-1011.00": {
+      "postings": 262,
+      "share_per_10k": 77.1,
+      "with_pay": 178,
+      "pay_million_vnd": {
+        "p25": 15.0,
+        "median": 17.5,
+        "p75": 20.0
+      },
+      "sample_titles": [
+        "Kiến Trúc Sư",
+        "Kiến Trúc Sư Triển Khai",
+        "Kiến Trúc Sư Thiết Kế Nội Thất",
+        "Kiến Trúc Sư Chủ Trì",
+        "Kiến Trúc Sư Quy Hoạch"
+      ]
+    },
+    "ONET-17-1022.00": {
+      "postings": 10,
+      "share_per_10k": 2.9,
+      "with_pay": 6,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Trắc Địa Công Trình",
+        "Chuyên Viên Biên Tập Bản Đồ",
+        "Trắc Đạc/Kỹ Sư Trắc Địa",
+        "Chuyên Viên Đo Đạc Trắc Địa",
+        "Kỹ Sư Xây Dựng Quality Surveyor"
+      ]
+    },
+    "ONET-17-2051.00": {
+      "postings": 333,
+      "share_per_10k": 98.0,
+      "with_pay": 244,
+      "pay_million_vnd": {
+        "p25": 14.0,
+        "median": 16.5,
+        "p75": 18.5
+      },
+      "sample_titles": [
+        "Kỹ Sư Xây Dựng",
+        "Kỹ Sư Hiện Trường",
+        "Kỹ Sư Kết Cấu",
+        "Kỹ Sư Giám Sát",
+        "Kỹ Sư Giám Sát HVAC"
+      ]
+    },
+    "ONET-17-2071.00": {
+      "postings": 210,
+      "share_per_10k": 61.8,
+      "with_pay": 151,
+      "pay_million_vnd": {
+        "p25": 13.5,
+        "median": 16.0,
+        "p75": 20.0
+      },
+      "sample_titles": [
+        "Kỹ Sư Điện",
+        "Kỹ Sư Cơ Điện",
+        "Kỹ Sư Tự Động Hóa",
+        "Kỹ Sư Cơ Điện (MEP)",
+        "Kỹ Sư Điện - Tự Động Hóa"
+      ]
+    },
+    "ONET-17-2072.00": {
+      "postings": 12,
+      "share_per_10k": 3.5,
+      "with_pay": 6,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Điện Tự Động Hóa",
+        "Kỹ Sư Điện Tử Viễn Thông",
+        "Electronic Engineer - Kỹ Sư Điện Tử - Thu Nhập 500-1000 USD (Bắc Ninh)",
+        "Kỹ Sư Điện Tự Động",
+        "Electronic Engineer - Kỹ Sư Điện Tử"
+      ]
+    },
+    "ONET-17-2141.00": {
+      "postings": 160,
+      "share_per_10k": 47.1,
+      "with_pay": 118,
+      "pay_million_vnd": {
+        "p25": 12.5,
+        "median": 15.0,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "Kỹ Sư Thiết Kế Cơ Khí",
+        "Kỹ Sư Cơ Khí",
+        "Kỹ sư cơ khí",
+        "Kỹ Sư Thiết Kế Cơ Khí Tự Động Hóa",
+        "KỸ SƯ CƠ KHÍ"
+      ]
+    },
+    "ONET-17-2141.02": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Ô Tô"
+      ]
+    },
+    "ONET-17-2199.05": {
+      "postings": 13,
+      "share_per_10k": 3.8,
+      "with_pay": 8,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Cơ Điện Tử",
+        "Giáo Viên Robotics",
+        "Giáo Viên Tin Học - Robotics",
+        "Kỹ Sư Lập Trình Nhúng - Robotics - Leaded",
+        "Cán Bộ Cơ Điện Tử"
+      ]
+    },
+    "ONET-17-2041.00": {
+      "postings": 11,
+      "share_per_10k": 3.2,
+      "with_pay": 8,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Hóa Dầu",
+        "Kỹ Sư Hóa Học (PE3)",
+        "Kỹ Sư Hóa Polymer",
+        "Nhân Viên Kỹ Thuật (Kỹ Sư Hóa, In Ấn, Mực In)",
+        "Kỹ Sư Hóa Thực Phẩm"
+      ]
+    },
+    "ONET-17-2081.00": {
+      "postings": 95,
+      "share_per_10k": 28.0,
+      "with_pay": 71,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 12.5,
+        "p75": 17.0
+      },
+      "sample_titles": [
+        "Nhân Viên Môi Trường",
+        "Nhân Viên Quan Trắc Môi Trường",
+        "Nhân Viên Kỹ Thuật Môi Trường",
+        "Nhân Viên Tư Vấn Môi Trường",
+        "Nhân Viên Vận Hành Hệ Thống Xử Lý Nước Thải"
+      ]
+    },
+    "ONET-17-2112.00": {
+      "postings": 90,
+      "share_per_10k": 26.5,
+      "with_pay": 60,
+      "pay_million_vnd": {
+        "p25": 10.6,
+        "median": 12.5,
+        "p75": 16.0
+      },
+      "sample_titles": [
+        "Nhân Viên Kế Hoạch Sản Xuất",
+        "Chuyên Viên Kế Hoạch Sản Xuất",
+        "Kế Hoạch Sản Xuất",
+        "Kỹ Sư Quy Trình",
+        "Kỹ Sư IE"
+      ]
+    },
+    "ONET-17-2151.00": {
+      "postings": 6,
+      "share_per_10k": 1.8,
+      "with_pay": 3,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Mỏ (Có Kinh Nghiệm Về Mỏ Đá)",
+        "(JP 156) Kỹ Sư Mô Hình Hóa 3D, Tạo Dữ Liệu 2D, Mô Hình 3D PMI, Sản Phẩm Biến Tần",
+        "Kỹ Sư Mô Hình Hóa 3D, Tạo Dữ Liệu 2D, Mô Hình 3D PMI, Sản Phẩm Biến Tần (Member)",
+        "Kỹ Sư Mô Phỏng (ET – CAE)"
+      ]
+    },
+    "ONET-17-2031.00": {
+      "postings": 19,
+      "share_per_10k": 5.6,
+      "with_pay": 9,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Thiết Bị Y Tế",
+        "Nhân Viên Kỹ Thuật Thiết Bị Y Tế",
+        "Nhân Viên Lắp Ráp Thiết Bị Y TẾ",
+        "Đăng Kí Sản Phẩm Thiết Bị Y Tế (Regulatory Affair)",
+        "Chuyên Viên Ứng Dụng Sản Phẩm - Thiết Bị Y Tế"
+      ]
+    },
+    "ONET-19-1013.00": {
+      "postings": 30,
+      "share_per_10k": 8.8,
+      "with_pay": 22,
+      "pay_million_vnd": {
+        "p25": 11.4,
+        "median": 12.5,
+        "p75": 16.4
+      },
+      "sample_titles": [
+        "Kỹ Sư Nông Nghiệp",
+        "Nhân Viên Kỹ Thuật Nông Nghiệp",
+        "Kỹ Sư Nông Nghiệp - Chuyên Ngành Phân Bón - BVTV",
+        "Kỹ Sư Nông Nghiệp - Chuyên Cây Ăn Trái",
+        "Nhân Viên Kỹ Thuật Quảng Bá–Thuốc Bảo Vệ Thực Vật"
+      ]
+    },
+    "ONET-19-1012.00": {
+      "postings": 21,
+      "share_per_10k": 6.2,
+      "with_pay": 14,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Nghiên Cứu Phát Triển Sản Phẩm",
+        "Nhân Viên R&D Thực Phẩm",
+        "Nhân Viên Nghiên Cứu Phát Triển Sản Phẩm POD",
+        "Nhân Viên R&D Phát Triển Sản Phẩm (Mảng Thực Phẩm)",
+        "Chuyên Viên/Nhân Viên R&D (Thực Phẩm Đông Lạnh)"
+      ]
+    },
+    "ONET-19-1029.04": {
+      "postings": 12,
+      "share_per_10k": 3.5,
+      "with_pay": 6,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Công Nghệ Sinh Học",
+        "Kỹ Sư Sinh Học",
+        "Kỹ Sư Sinh Học Ngành Thực Phẩm",
+        "Chuyên Viên Phòng Thí Nghiệm Vi Sinh",
+        "Nhân Viên Vi Sinh"
+      ]
+    },
+    "ONET-19-1031.00": {
+      "postings": 3,
+      "share_per_10k": 0.9,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Lâm Nghiệp",
+        "Kỹ Sư Trồng Trọt Cây Cao Su Và Cây Lâm Nghiệp",
+        "Kỹ Sư Lâm Nghiệp"
+      ]
+    },
+    "ONET-19-1041.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Điều phối viên nghiên cứu lâm sàng"
+      ]
+    },
+    "ONET-19-2031.00": {
+      "postings": 58,
+      "share_per_10k": 17.1,
+      "with_pay": 24,
+      "pay_million_vnd": {
+        "p25": 8.6,
+        "median": 10.0,
+        "p75": 11.4
+      },
+      "sample_titles": [
+        "Nhân Viên Phòng Thí Nghiệm",
+        "Nhân Viên Phòng Lab",
+        "Kiểm Nghiệm Viên Hóa Lý",
+        "Chuyên gia phân tích hoạt động",
+        "Nhân Viên Kiểm Nghiệm"
+      ]
+    },
+    "ONET-19-2042.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-19-3011.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Cao Cấp Phân Tích Vĩ Mô"
+      ]
+    },
+    "ONET-19-3041.00": {
+      "postings": 2,
+      "share_per_10k": 0.6,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nghiên Cứu Viên"
+      ]
+    },
+    "ONET-19-3033.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giáo Viên Hỗ Trợ Trẻ Đặc Biệt - Tâm Lý Học - Công Tác Xã Hội - Trường Mầm Non"
+      ]
+    },
+    "ONET-19-3051.00": {
+      "postings": 23,
+      "share_per_10k": 6.8,
+      "with_pay": 14,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kiến Trúc Sư Quy Hoạch",
+        "Chuyên Viên Thiết Kế Quy Hoạch",
+        "Chuyên Viên Quy Hoạch - Xây Dựng",
+        "Chuyên Viên Kiếm Soát Quy Hoạch (Chủ Đầu Tư)",
+        "Nhân Viên Quy Hoạch, Kế Hoạch Và Định Giá Đất"
+      ]
+    },
+    "ONET-19-5011.00": {
+      "postings": 170,
+      "share_per_10k": 50.1,
+      "with_pay": 90,
+      "pay_million_vnd": {
+        "p25": 12.9,
+        "median": 15.0,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "Giám Sát An Toàn Lao Động",
+        "Nhân Viên An Toàn Lao Động",
+        "Nhân Viên HSE",
+        "Chuyên Viên HSE",
+        "Kỹ Sư An Toàn Lao Động"
+      ]
+    },
+    "ONET-21-1014.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-21-1012.00": {
+      "postings": 187,
+      "share_per_10k": 55.1,
+      "with_pay": 167,
+      "pay_million_vnd": {
+        "p25": 13.0,
+        "median": 19.0,
+        "p75": 22.5
+      },
+      "sample_titles": [
+        "Nhân Viên Tư Vấn Tuyển Sinh",
+        "Chuyên Viên Tư Vấn Tuyển Sinh",
+        "Tư Vấn Tuyển Sinh",
+        "Nhân Viên Tư Vấn Du Học",
+        "Chuyên Viên Tư Vấn Du Học"
+      ]
+    },
+    "ONET-21-1021.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giáo Viên Hỗ Trợ Trẻ Đặc Biệt - Tâm Lý Học - Công Tác Xã Hội - Trường Mầm Non"
+      ]
+    },
+    "ONET-23-1011.00": {
+      "postings": 28,
+      "share_per_10k": 8.2,
+      "with_pay": 10,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Luật Sư",
+        "Luật Sư Khởi Kiện Tại Tòa Án",
+        "Trợ Lý Luật Sư",
+        "Luật Sư Tư Vấn",
+        "Luật Sư Nội Bộ"
+      ]
+    },
+    "ONET-23-2011.00": {
+      "postings": 139,
+      "share_per_10k": 40.9,
+      "with_pay": 84,
+      "pay_million_vnd": {
+        "p25": 11.6,
+        "median": 15.0,
+        "p75": 20.0
+      },
+      "sample_titles": [
+        "Chuyên Viên Pháp Chế",
+        "Chuyên Viên Pháp Lý",
+        "Nhân Viên Pháp Chế",
+        "Nhân Viên Pháp Lý",
+        "Chuyên Viên Pháp Lý Dự Án"
+      ]
+    },
+    "ONET-25-1081.00": {
+      "postings": 34,
+      "share_per_10k": 10.0,
+      "with_pay": 13,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giảng Viên Cơ Hữu",
+        "Giảng Viên An Toàn Điện",
+        "Giảng Viên Điều Dưỡng",
+        "Giảng Viên Thiết Kế Đồ Họa",
+        "Giảng Viên Đào Tạo - Dược Sĩ"
+      ]
+    },
+    "ONET-25-2031.00": {
+      "postings": 11,
+      "share_per_10k": 3.2,
+      "with_pay": 6,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giáo Viên Toán",
+        "Giáo Viên Toán Tiếng Anh",
+        "Giáo Viên Toán/Khoa Học Khối Quốc Tế Full Time",
+        "Giáo Viên Lý THPT",
+        "Giáo Viên Địa Lý"
+      ]
+    },
+    "ONET-25-2021.00": {
+      "postings": 3,
+      "share_per_10k": 0.9,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giáo Viên Tiểu Học"
+      ]
+    },
+    "ONET-25-2011.00": {
+      "postings": 12,
+      "share_per_10k": 3.5,
+      "with_pay": 11,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giáo Viên Mầm Non",
+        "Giáo Viên Mầm Non Đã Có Kinh Nghiệm Từ 1 Năm Trở Lên",
+        "Giáo Viên Mầm Non / Giáo Dục Đặc Biệt / Can Thiệp Sớm",
+        "Giáo Viên Mầm Non/ Trợ Giảng Tiếng Anh Montessori",
+        "GIÁO VIÊN MẦM NON"
+      ]
+    },
+    "ONET-25-2051.00": {
+      "postings": 4,
+      "share_per_10k": 1.2,
+      "with_pay": 3,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giáo Viên Mầm Non / Giáo Dục Đặc Biệt / Can Thiệp Sớm",
+        "Giáo Viên Can Thiệp Sớm",
+        "Giáo Viên Giáo Dục Đặc Biệt",
+        "Giáo Viên Giáo Dục Đặc Biệt Mầm Non"
+      ]
+    },
+    "ONET-25-3041.00": {
+      "postings": 109,
+      "share_per_10k": 32.1,
+      "with_pay": 79,
+      "pay_million_vnd": {
+        "p25": 10.5,
+        "median": 12.5,
+        "p75": 17.0
+      },
+      "sample_titles": [
+        "Giáo Viên Tiếng Anh",
+        "Giáo Viên Tiếng Trung",
+        "Giáo Viên Tiếng Nhật",
+        "Giáo Viên Tiếng Anh Mầm Non",
+        "Giáo Viên Tiếng Hàn"
+      ]
+    },
+    "ONET-25-4022.00": {
+      "postings": 15,
+      "share_per_10k": 4.4,
+      "with_pay": 6,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Nghiệp Vụ Lưu Trữ Chứng Từ",
+        "Nhân Viên Văn Thư Phòng Kiểm Nghiệm",
+        "Thư Ký Bộ Phận Lưu Trú",
+        "Đặt phòng phát hiện và mô hình máy chủ lưu trữ",
+        "Nhân Viên Văn Thư Kiêm Lễ Tân Hành Chính"
+      ]
+    },
+    "ONET-25-9031.00": {
+      "postings": 9,
+      "share_per_10k": 2.6,
+      "with_pay": 7,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Phát Triển Chương Trình Và Học Liệu",
+        "Chuyên Viên Phát Triển Chương Trình",
+        "Chuyên Viên R&D Học Liệu Fulltime",
+        "Giáo Viên Phát Triển Học Liệu Và Dạy Thử Tiếng Anh",
+        "Chuyên Viên Phát Triển Học Liệu Fulltime"
+      ]
+    },
+    "ONET-27-1024.00": {
+      "postings": 657,
+      "share_per_10k": 193.4,
+      "with_pay": 472,
+      "pay_million_vnd": {
+        "p25": 11.0,
+        "median": 12.5,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Nhân Viên Thiết Kế",
+        "Thiết kế đồ họa",
+        "Nhân Viên Thiết Kế Đồ Họa",
+        "Chuyên Viên Thiết Kế Đồ Họa",
+        "Game Designer"
+      ]
+    },
+    "ONET-27-1014.00": {
+      "postings": 324,
+      "share_per_10k": 95.4,
+      "with_pay": 243,
+      "pay_million_vnd": {
+        "p25": 12.5,
+        "median": 15.0,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "Nhân Viên Thiết Kế 3D",
+        "Nhân Viên Thiết Kế 2D",
+        "Chuyên Viên Thiết Kế 3D",
+        "Nhân Viên Thiết Kế Nội Thất 3D",
+        "3D Artist"
+      ]
+    },
+    "ONET-27-1013.00": {
+      "postings": 52,
+      "share_per_10k": 15.3,
+      "with_pay": 44,
+      "pay_million_vnd": {
+        "p25": 11.6,
+        "median": 14.0,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "3D Artist",
+        "2D Game Artist",
+        "Nhân Viên 2D Artist",
+        "Nhân Viên 2D UI/UX Game Artist",
+        "Nhân Viên VFX Artist"
+      ]
+    },
+    "ONET-27-1021.00": {
+      "postings": 13,
+      "share_per_10k": 3.8,
+      "with_pay": 2,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Product Design - Thiết Kế Thời Trang (Ngành Giày Dép)",
+        "Nhân Viên Thiết Kế Sản Phẩm Khuôn Bu Lông Ốc Vít",
+        "Chuyên Gia Xây Dựng Và Thiết Kế Sản Phẩm",
+        "Kỹ Sư Thiết Kế Sản Phẩm",
+        "Nhóm Trưởng Thiết Kế Sản Phẩm"
+      ]
+    },
+    "ONET-27-1022.00": {
+      "postings": 74,
+      "share_per_10k": 21.8,
+      "with_pay": 46,
+      "pay_million_vnd": {
+        "p25": 11.5,
+        "median": 14.0,
+        "p75": 16.8
+      },
+      "sample_titles": [
+        "Nhân Viên Thiết Kế Rập",
+        "Nhân Viên Thiết Kế Thời Trang",
+        "Thiết Kế Thời Trang",
+        "Chuyên Viên Thiết Kế Thời Trang",
+        "Thợ May Mẫu Sản Xuất-Hàng Thiết Kế Thời Trang"
+      ]
+    },
+    "ONET-27-1025.00": {
+      "postings": 158,
+      "share_per_10k": 46.5,
+      "with_pay": 142,
+      "pay_million_vnd": {
+        "p25": 12.9,
+        "median": 15.2,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "Nhân Viên Thiết Kế Nội Thất",
+        "Thiết Kế Nội Thất",
+        "Kiến Trúc Sư Thiết Kế Nội Thất",
+        "Nhân Viên Thiết Kế Nội Thất 3D",
+        "Chuyên Viên Thiết Kế Nội Thất"
+      ]
+    },
+    "ONET-27-2011.00": {
+      "postings": 4,
+      "share_per_10k": 1.2,
+      "with_pay": 4,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Trợ Lý Diễn Viên - Mảng Quay Dựng & Quản Lý Kênh",
+        "Diễn Viên",
+        "Diễn Viên - Không Yêu Cầu Kinh Nghiệm",
+        "Diễn Viên (Nam) - Không Yêu Cầu Kinh Nghiệm"
+      ]
+    },
+    "ONET-27-2012.00": {
+      "postings": 20,
+      "share_per_10k": 5.9,
+      "with_pay": 14,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Media - Media Producer (Video Editor)",
+        "Video Producer",
+        "Nhà sản xuất/biên tập viên",
+        "Producer",
+        "Trưởng Bộ Phận Sản Xuất Nội Dung Video (Youtube)"
+      ]
+    },
+    "ONET-27-2042.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giáo Viên Piano (Full-Time)"
+      ]
+    },
+    "ONET-27-2031.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Idol Dance Tiktok (Giải Trí Livestream)"
+      ]
+    },
+    "ONET-27-2021.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Huấn Luyện Viên Bơi (Bể Bơi Aqua-Tots)"
+      ]
+    },
+    "ONET-27-3023.00": {
+      "postings": 21,
+      "share_per_10k": 6.2,
+      "with_pay": 18,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "MC Kiêm Sự Kiện",
+        "Nhân Viên Lễ Tân - Có Kinh Nghiệm Làm MC",
+        "Chuyên Viên Truyền Thông (Kỹ Năng MC Tốt)",
+        "MC Cho Phòng Khám",
+        "Chuyên Viên Event Kiêm MC Nội Bộ"
+      ]
+    },
+    "ONET-27-3041.00": {
+      "postings": 149,
+      "share_per_10k": 43.9,
+      "with_pay": 134,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 11.5,
+        "p75": 13.5
+      },
+      "sample_titles": [
+        "Nhân Viên Editor",
+        "Biên Tập Viên",
+        "Editor",
+        "Cameraman Kiêm Editor",
+        "Nhân Viên Biên Tập"
+      ]
+    },
+    "ONET-27-3043.00": {
+      "postings": 694,
+      "share_per_10k": 204.3,
+      "with_pay": 578,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 11.5,
+        "p75": 13.0
+      },
+      "sample_titles": [
+        "Nhân Viên Content Marketing",
+        "Người tạo nội dung",
+        "Nhân Viên Content Creator",
+        "Nhân Viên Content",
+        "Tiếp thị nội dung"
+      ]
+    },
+    "ONET-27-3091.00": {
+      "postings": 221,
+      "share_per_10k": 65.1,
+      "with_pay": 144,
+      "pay_million_vnd": {
+        "p25": 13.5,
+        "median": 15.5,
+        "p75": 18.9
+      },
+      "sample_titles": [
+        "Phiên Dịch Tiếng Trung",
+        "Trợ Lý Phiên Dịch Tiếng Trung",
+        "Nhân Viên Phiên Dịch Tiếng Hàn",
+        "Phiên Dịch Viên Tiếng Trung",
+        "Nhân Viên Phiên Dịch Tiếng Trung"
+      ]
+    },
+    "ONET-27-4031.00": {
+      "postings": 715,
+      "share_per_10k": 210.5,
+      "with_pay": 606,
+      "pay_million_vnd": {
+        "p25": 11.0,
+        "median": 12.5,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Nhân Viên Video Editor",
+        "Video Editor",
+        "Nhân Viên Quay Dựng",
+        "Nhân Viên Quay Dựng Video",
+        "Nhân Viên Quay Phim"
+      ]
+    },
+    "ONET-27-4014.00": {
+      "postings": 15,
+      "share_per_10k": 4.4,
+      "with_pay": 12,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Âm Thanh Hội Nghị",
+        "Nhân Viên Âm Thanh Nhạc Nền Video YouTube",
+        "Nhân Viên Kỹ Thuật Âm Thanh Ánh Sáng Sự Kiện",
+        "Nhân Viên Kỹ Thuật Âm Thanh - Sound Effect",
+        "Nhân Viên Content Mạnh Sáng Tạo Nội Dung"
+      ]
+    },
+    "ONET-29-1215.00": {
+      "postings": 65,
+      "share_per_10k": 19.1,
+      "with_pay": 29,
+      "pay_million_vnd": {
+        "p25": 17.0,
+        "median": 22.0,
+        "p75": 38.8
+      },
+      "sample_titles": [
+        "Bác Sĩ Da Liễu",
+        "Bác Sĩ Tiêm Chủng",
+        "Bác Sĩ Chẩn Đoán Hình Ảnh",
+        "Trợ Lý Bác Sĩ",
+        "Bác Sĩ Phẫu Thuật Thẩm Mỹ"
+      ]
+    },
+    "ONET-29-1021.00": {
+      "postings": 19,
+      "share_per_10k": 5.6,
+      "with_pay": 13,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Bác Sĩ Nha Khoa",
+        "Bác Sĩ Răng Hàm Mặt",
+        "Tư Vấn Viên Nha Khoa Tấm Dentist",
+        "Bác Sĩ Nha Khoa Tổng Quát",
+        "Bác Sĩ Nha Khoa Tổng Quát - Định Hướng Chỉnh Nha"
+      ]
+    },
+    "ONET-29-1051.00": {
+      "postings": 97,
+      "share_per_10k": 28.6,
+      "with_pay": 69,
+      "pay_million_vnd": {
+        "p25": 11.0,
+        "median": 13.5,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "Trình Dược Viên OTC",
+        "Trình Dược Viên",
+        "Dược Sĩ",
+        "Trình Dược Viên ETC",
+        "Trình Dược Viên Kênh OTC"
+      ]
+    },
+    "ONET-29-1141.00": {
+      "postings": 111,
+      "share_per_10k": 32.7,
+      "with_pay": 81,
+      "pay_million_vnd": {
+        "p25": 10.5,
+        "median": 12.0,
+        "p75": 14.8
+      },
+      "sample_titles": [
+        "Điều Dưỡng Viên",
+        "Điều Dưỡng",
+        "Nhân Viên Điều Dưỡng",
+        "Điều Dưỡng Nha Khoa",
+        "Điều Dưỡng Đa Khoa"
+      ]
+    },
+    "ONET-29-1161.00": {
+      "postings": 3,
+      "share_per_10k": 0.9,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Hộ Sinh",
+        "Nữ Hộ Sinh"
+      ]
+    },
+    "ONET-29-1123.00": {
+      "postings": 6,
+      "share_per_10k": 1.8,
+      "with_pay": 6,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Thuật Viên Phục Hồi Chức Năng",
+        "Kỹ Thuật Viên Vật Lý Trị Liệu Phục Hồi Chức Năng",
+        "Bác Sỹ Y Học Cổ Truyền - Phục Hồi Chức Năng",
+        "Kỹ Thuật Viên Vật Lý Trị Liệu - Phục Hồi Chức Năng",
+        "Kỹ Thuật Viên Vật Lý Trị Liệu"
+      ]
+    },
+    "ONET-29-1291.00": {
+      "postings": 6,
+      "share_per_10k": 1.8,
+      "with_pay": 6,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Content Y Học Cổ Truyền",
+        "Lễ Tân Phòng Khám Đông Y - Đi Làm Ngay",
+        "Bác Sỹ Y Học Cổ Truyền - Phục Hồi Chức Năng",
+        "Kỹ Thuật Viên Đông Y/ Kỹ Thuật Viên Massage/ Spa",
+        "Nhân Viên Spa, Dưỡng Sinh Đông Y"
+      ]
+    },
+    "ONET-29-1031.00": {
+      "postings": 11,
+      "share_per_10k": 3.2,
+      "with_pay": 9,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Dinh Dưỡng",
+        "Tư Vấn Tổng Đài Sản Phẩm Sữa Dinh Dưỡng",
+        "Chuyên Viên R&D (Mảng Dinh Dưỡng Thể Thao)",
+        "Chuyên gia R & D - Dinh dưỡng",
+        "Medical Representative (Ngành Dinh Dưỡng)"
+      ]
+    },
+    "ONET-29-1131.00": {
+      "postings": 7,
+      "share_per_10k": 2.1,
+      "with_pay": 5,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Bác Sĩ Thú Y",
+        "Kỹ Sư Chăn Nuôi Thú Y",
+        "Trợ Lý Bác Sĩ Thú Y",
+        "Học Viên Bác Sĩ Thú Y - Không Yêu Cầu Kinh Nghiệm",
+        "Trợ Lí Bác Sĩ Thú Y"
+      ]
+    },
+    "ONET-29-2011.00": {
+      "postings": 14,
+      "share_per_10k": 4.1,
+      "with_pay": 11,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Thuật Viên Xét Nghiệm",
+        "Giảng Viên Xét Nghiệm Y Học (Từ Thạc Sĩ Trở Lên)",
+        "Điều Dưỡng/KTV Xét Nghiệm Lấy Mẫu Tại Nhà",
+        "Nhân Viên Thu Mẫu Xét Nghiệm - Điều Dưỡng Đi Dộng",
+        "Bác Sĩ Xét Nghiệm Vi Sinh"
+      ]
+    },
+    "ONET-29-2034.00": {
+      "postings": 15,
+      "share_per_10k": 4.4,
+      "with_pay": 7,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Thuật Viên Chẩn Đoán Hình Ảnh",
+        "Bác Sĩ Chẩn Đoán Hình Ảnh",
+        "Giảng Viên Chẩn Đoán Hình Ảnh (Từ Thạc Sĩ Trở Lên)",
+        "Bác Sĩ Siêu Âm Tổng Quát",
+        "Nhân Viên Kỹ Thuật CT - XQuang, 2 Năm Kinh Nghiệm"
+      ]
+    },
+    "ONET-29-1041.00": {
+      "postings": 9,
+      "share_per_10k": 2.6,
+      "with_pay": 6,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Thuật Viên Khúc Xạ",
+        "Nhân Viên Tư Vấn Kính Mắt Hàn Quốc",
+        "Kỹ Thuật Viên Khúc Xạ Nhãn Khoa",
+        "Bác Sĩ Nhãn Khoa",
+        "Kỹ Thuận Viên Khúc Xạ"
+      ]
+    },
+    "ONET-29-2072.00": {
+      "postings": 3,
+      "share_per_10k": 0.9,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Kho Hồ Sơ Bệnh Án",
+        "Nhân Viên Thư Ký Y Khoa",
+        "Thư Ký Y Khoa"
+      ]
+    },
+    "ONET-31-1131.00": {
+      "postings": 3,
+      "share_per_10k": 0.9,
+      "with_pay": 3,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Điều Dưỡng Viên Chăm Sóc",
+        "Điều Dưỡng Viên Hỗ Trợ Khai Trương",
+        "Điều Dưỡng Viên Chăm Sóc Tại Nhà"
+      ]
+    },
+    "ONET-31-1121.00": {
+      "postings": 2,
+      "share_per_10k": 0.6,
+      "with_pay": 2,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Điều Dưỡng Chăm Sóc Tại Nhà",
+        "Điều Dưỡng Viên Chăm Sóc Tại Nhà"
+      ]
+    },
+    "ONET-31-9091.00": {
+      "postings": 23,
+      "share_per_10k": 6.8,
+      "with_pay": 20,
+      "pay_million_vnd": {
+        "p25": 10.5,
+        "median": 11.5,
+        "p75": 12.5
+      },
+      "sample_titles": [
+        "Phụ Tá Nha Khoa",
+        "Trợ Thủ Nha Khoa",
+        "Nhân Viên Điều Dưỡng/Phụ Tá Nha Khoa",
+        "Phụ Tá/Trợ Thủ Nha Khoa",
+        "Trợ Thủ / Phụ Tá Nha Khoa"
+      ]
+    },
+    "ONET-31-9092.00": {
+      "postings": 12,
+      "share_per_10k": 3.5,
+      "with_pay": 9,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Lễ Tân Phòng Khám",
+        "Trợ Lý Bác Sĩ",
+        "Trợ Lý Y Khoa",
+        "Tư Vấn Nha Khoa - Trợ Lý Bác Sĩ",
+        "Lễ Tân Phòng Khám Đông Y - Đi Làm Ngay"
+      ]
+    },
+    "ONET-31-9011.00": {
+      "postings": 45,
+      "share_per_10k": 13.2,
+      "with_pay": 40,
+      "pay_million_vnd": {
+        "p25": 10.1,
+        "median": 12.5,
+        "p75": 18.2
+      },
+      "sample_titles": [
+        "Kỹ Thuật Viên Spa",
+        "Nhân Viên Chăm Sóc Da - Kỹ Thuật Viên Spa (Da Cơ Bản + Dưỡng Sinh)",
+        "Kỹ Thuật Viên Massage Mẹ Bé",
+        "Nhân Viên Sắp Xếp Phòng Trị Liệu (Có Đào Tạo) - Đi Làm Ngay",
+        "Kỹ Thuật Viên Trị Liệu - Phòng Khám Cơ Xương Khớp"
+      ]
+    },
+    "ONET-33-9032.00": {
+      "postings": 45,
+      "share_per_10k": 13.2,
+      "with_pay": 25,
+      "pay_million_vnd": {
+        "p25": 8.0,
+        "median": 9.5,
+        "p75": 14.5
+      },
+      "sample_titles": [
+        "Nhân Viên An Ninh",
+        "Nhân Viên Bảo Vệ",
+        "Bảo Vệ",
+        "Nhân Viên Kỹ Thuật Quảng Bá–Thuốc Bảo Vệ Thực Vật",
+        "Nhân Viên Viết Báo Cáo Công Tác Bảo Vệ Môi Trường"
+      ]
+    },
+    "ONET-33-9092.00": {
+      "postings": 4,
+      "share_per_10k": 1.2,
+      "with_pay": 2,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Cứu Hộ Bể Bơi",
+        "Tổ Trưởng Cứu Hộ",
+        "Nhân Viên Cứu Hộ"
+      ]
+    },
+    "ONET-35-2014.00": {
+      "postings": 162,
+      "share_per_10k": 47.7,
+      "with_pay": 119,
+      "pay_million_vnd": {
+        "p25": 8.0,
+        "median": 10.0,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Nhân Viên Phụ Bếp",
+        "Bếp Chính",
+        "Bếp Trưởng",
+        "Nhân Viên Bếp",
+        "Nhân Viên Bếp Bánh"
+      ]
+    },
+    "ONET-35-3023.01": {
+      "postings": 44,
+      "share_per_10k": 13.0,
+      "with_pay": 27,
+      "pay_million_vnd": {
+        "p25": 7.0,
+        "median": 8.5,
+        "p75": 11.5
+      },
+      "sample_titles": [
+        "Nhân Viên Pha Chế",
+        "Bartender",
+        "Giám Sát Bar",
+        "Nhân Viên Phục Vụ/ Pha Chế",
+        "Nhân Viên Pha Chế - Bartender/ Barista"
+      ]
+    },
+    "ONET-35-3031.00": {
+      "postings": 71,
+      "share_per_10k": 20.9,
+      "with_pay": 59,
+      "pay_million_vnd": {
+        "p25": 7.5,
+        "median": 8.5,
+        "p75": 11.0
+      },
+      "sample_titles": [
+        "Nhân Viên Phục Vụ",
+        "Nhân Viên Phục Vụ Nhà Hàng",
+        "Phục Vụ Bàn",
+        "Lễ Tân Khách Sạn Kiêm Phục Vụ Cafe",
+        "Phục Vụ Nhà Hàng - Yêu Cầu Tiếng Anh Giao Tiếp"
+      ]
+    },
+    "ONET-37-2011.00": {
+      "postings": 36,
+      "share_per_10k": 10.6,
+      "with_pay": 29,
+      "pay_million_vnd": {
+        "p25": 7.2,
+        "median": 8.5,
+        "p75": 10.2
+      },
+      "sample_titles": [
+        "Nhân Viên Buồng Phòng",
+        "Giám Sát Vệ Sinh Công Nghiệp",
+        "Phó Bộ Phận Buồng Phòng",
+        "Nhân Viên Buồng Phòng Khách Sạn",
+        "Giám Sát Buồng Phòng"
+      ]
+    },
+    "ONET-37-3011.00": {
+      "postings": 6,
+      "share_per_10k": 1.8,
+      "with_pay": 4,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Tổ Trưởng Cây Xanh",
+        "Nhân Viên Cảnh Quan Dự Án",
+        "Nhân Viên Làm Vườn Cảnh Quan (Nam)",
+        "Nhân Viên Giám Sát Cây Xanh",
+        "Chỉ Huy Trưởng Thi Công Cảnh Quan & Hạ Tầng"
+      ]
+    },
+    "ONET-37-2021.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Thuật Viên Kiểm Soát Côn Trùng"
+      ]
+    },
+    "ONET-39-5012.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Đào Tạo Gội Đầu"
+      ]
+    },
+    "ONET-39-5094.00": {
+      "postings": 80,
+      "share_per_10k": 23.6,
+      "with_pay": 72,
+      "pay_million_vnd": {
+        "p25": 11.5,
+        "median": 14.5,
+        "p75": 20.0
+      },
+      "sample_titles": [
+        "Kỹ Thuật Viên Spa",
+        "Kỹ Thuật Viên Chăm Sóc Da",
+        "Tư Vấn Viên Spa",
+        "Kỹ Thuật Viên Da Thẩm Mỹ",
+        "Nhân Viên Lễ Tân - Thu Ngân Thẩm Mỹ Viện"
+      ]
+    },
+    "ONET-39-5092.00": {
+      "postings": 2,
+      "share_per_10k": 0.6,
+      "with_pay": 2,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Làm Nail (Khu Vực Khách VIP) - Đi Làm Ngay"
+      ]
+    },
+    "ONET-39-5091.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Make Up"
+      ]
+    },
+    "ONET-39-7011.00": {
+      "postings": 9,
+      "share_per_10k": 2.6,
+      "with_pay": 4,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Hướng Dẫn Viên Du Lịch",
+        "Tour Guide",
+        "Hướng Dẫn Viên Du Lịch Quốc Tế",
+        "Hướng Dẫn Viên Du Lịch Quốc Tế Biết Tiếng Anh",
+        "Hướng Dẫn Viên Du Lịch Tiếng Tây Ban Nha"
+      ]
+    },
+    "ONET-39-9011.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Bảo Mẫu"
+      ]
+    },
+    "ONET-39-9031.00": {
+      "postings": 9,
+      "share_per_10k": 2.6,
+      "with_pay": 9,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Quản Lý Đội Huấn Luyện Viên Phòng Gym",
+        "Giáo Viên Năng Khiếu (Aerobic + Yoga Kid)",
+        "Huấn Luyện Viên Thể Hình (PT)",
+        "Huấn Luyện Viên Thể Hình",
+        "Huấn Luyện Viên Cá Nhân"
+      ]
+    },
+    "ONET-39-9032.00": {
+      "postings": 21,
+      "share_per_10k": 6.2,
+      "with_pay": 17,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Quản Lý Khu Vui Chơi Trẻ Em",
+        "2D Animator (Spine) All Level",
+        "Nhân Viên Giải Trí",
+        "Thiết Kế Và Sản Xuất Animator",
+        "Phó Quản Lý Cửa Hàng_Khu Vui Chơi Trẻ Em"
+      ]
+    },
+    "ONET-39-2021.00": {
+      "postings": 5,
+      "share_per_10k": 1.5,
+      "with_pay": 4,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Thợ Grooming Tay Nghề Cao",
+        "Chuyên Viên Chăm Sóc Mèo - Cat Care Specialist",
+        "Chuyên Viên Thú Cưng (Toàn Thời Gian)",
+        "Chuyên Viên Chăm Sóc & Huấn Luyện Thú Cưng",
+        "Quản Lý Cửa Hàng Thú Cưng Meowdela Cattery"
+      ]
+    },
+    "ONET-39-4031.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-41-2031.00": {
+      "postings": 733,
+      "share_per_10k": 215.8,
+      "with_pay": 606,
+      "pay_million_vnd": {
+        "p25": 8.5,
+        "median": 11.0,
+        "p75": 16.0
+      },
+      "sample_titles": [
+        "Nhân Viên Bán Hàng",
+        "Nhân Viên Tư Vấn Bán Hàng",
+        "Nhân Viên Bán Hàng Thời Trang",
+        "Nhân Viên Bán Hàng Siêu Thị",
+        "Tư Vấn Bán Hàng"
+      ]
+    },
+    "ONET-41-2011.00": {
+      "postings": 126,
+      "share_per_10k": 37.1,
+      "with_pay": 103,
+      "pay_million_vnd": {
+        "p25": 7.0,
+        "median": 8.5,
+        "p75": 9.5
+      },
+      "sample_titles": [
+        "Nhân Viên Thu Ngân",
+        "Thu Ngân",
+        "Nhân Viên Lễ Tân - Thu Ngân",
+        "Thu Ngân Nhà Hàng",
+        "Nhân Viên Lễ Tân - Thu Ngân Thẩm Mỹ Viện"
+      ]
+    },
+    "ONET-41-3021.00": {
+      "postings": 8,
+      "share_per_10k": 2.4,
+      "with_pay": 5,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Tư Vấn Bảo Hiểm",
+        "Chuyên Viên Kinh Doanh / Tư Vấn Bảo Hiểm",
+        "Chuyên Viên Tư Vấn Bảo Hiểm- Dự Án Hợp Tác Ngân Hàng ACB",
+        "Chuyên Viên Kinh Doanh / Tư Vấn Bảo Hiểm Daiichi Life - Không KPI Không Telesale - Lương Cứng Lên Đến 15 Triệu + Hoa Hồng - Hà Nội"
+      ]
+    },
+    "ONET-41-3031.00": {
+      "postings": 4,
+      "share_per_10k": 1.2,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Tư Vấn Đầu Tư Chứng Khoán",
+        "Chuyên Viên Chứng Khoán Và Đầu Tư",
+        "Chuyên Viên Dịch Vụ Giao Dịch Chứng Khoán"
+      ]
+    },
+    "ONET-41-9022.00": {
+      "postings": 148,
+      "share_per_10k": 43.6,
+      "with_pay": 112,
+      "pay_million_vnd": {
+        "p25": 12.0,
+        "median": 22.5,
+        "p75": 51.9
+      },
+      "sample_titles": [
+        "Nhân Viên Kinh Doanh Bất Động Sản",
+        "Nhân Viên Kinh Doanh/ Tư Vấn/ Sales Bất Động Sản",
+        "Chuyên Viên Kinh Doanh Bất Động Sản",
+        "Nhân Viên Kinh Doanh - Sales - Tư Vấn BĐS",
+        "Nhân Viên Kinh Doanh / Sale / Tư Vấn Bất Động Sản"
+      ]
+    },
+    "ONET-41-4012.00": {
+      "postings": 3511,
+      "share_per_10k": 1033.7,
+      "with_pay": 2769,
+      "pay_million_vnd": {
+        "p25": 12.5,
+        "median": 15.0,
+        "p75": 20.0
+      },
+      "sample_titles": [
+        "Nhân Viên Kinh Doanh",
+        "Nhân Viên Kinh Doanh Thị Trường",
+        "Chuyên Viên Kinh Doanh",
+        "Nhân Viên Kinh Doanh B2B",
+        "Nhân Viên Phát Triển Thị Trường"
+      ]
+    },
+    "ONET-41-9031.00": {
+      "postings": 285,
+      "share_per_10k": 83.9,
+      "with_pay": 211,
+      "pay_million_vnd": {
+        "p25": 13.5,
+        "median": 16.5,
+        "p75": 22.5
+      },
+      "sample_titles": [
+        "Nhân Viên Kinh Doanh Phần Mềm",
+        "Kỹ Sư Bán Hàng",
+        "Nhân Viên Kinh Doanh Thiết Bị Y Tế",
+        "Sales Engineer",
+        "Nhân Viên Kinh Doanh Kỹ Thuật"
+      ]
+    },
+    "ONET-41-3041.00": {
+      "postings": 271,
+      "share_per_10k": 79.8,
+      "with_pay": 208,
+      "pay_million_vnd": {
+        "p25": 10.5,
+        "median": 13.0,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "Nhân Viên Điều Hành Tour",
+        "Nhân Viên Kinh Doanh Du Lịch",
+        "Nhân viên kinh doanh tư vấn du lịch",
+        "Nhân Viên Booking KOL/KOC",
+        "Nhân Viên Sales Tour"
+      ]
+    },
+    "ONET-41-9012.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Mẫu Livestream (Ngành Hàng Cao Cấp)"
+      ]
+    },
+    "ONET-43-6014.00": {
+      "postings": 848,
+      "share_per_10k": 249.7,
+      "with_pay": 587,
+      "pay_million_vnd": {
+        "p25": 9.5,
+        "median": 11.5,
+        "p75": 14.0
+      },
+      "sample_titles": [
+        "Trợ Lý Tiếng Trung",
+        "Nhân Viên Văn Phòng",
+        "Nhân Viên Admin",
+        "Trợ Lý Phiên Dịch Tiếng Trung",
+        "Trợ Lý Dự Án"
+      ]
+    },
+    "ONET-43-4051.00": {
+      "postings": 702,
+      "share_per_10k": 206.7,
+      "with_pay": 568,
+      "pay_million_vnd": {
+        "p25": 9.0,
+        "median": 10.5,
+        "p75": 13.5
+      },
+      "sample_titles": [
+        "Nhân Viên Chăm Sóc Khách Hàng",
+        "Chăm Sóc Khách Hàng",
+        "Chuyên Viên Chăm Sóc Khách Hàng",
+        "Nhân Viên Dịch Vụ Khách Hàng",
+        "Chuyên Viên Dịch Vụ Khách Hàng"
+      ]
+    },
+    "ONET-43-4081.00": {
+      "postings": 104,
+      "share_per_10k": 30.6,
+      "with_pay": 78,
+      "pay_million_vnd": {
+        "p25": 7.5,
+        "median": 8.5,
+        "p75": 10.5
+      },
+      "sample_titles": [
+        "Nhân Viên Lễ Tân",
+        "Lễ Tân Khách Sạn",
+        "Nhân Viên Lễ Tân Văn Phòng",
+        "Nhân Viên Lễ Tân Khách Sạn",
+        "Nhân Viên Lễ Tân - Admin"
+      ]
+    },
+    "ONET-43-3071.00": {
+      "postings": 19,
+      "share_per_10k": 5.6,
+      "with_pay": 9,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giao Dịch Viên",
+        "Giao Dịch Viên/ Tư Vấn BĐS ( Có Lương Cứng Không Áp KPI )"
+      ]
+    },
+    "ONET-43-5071.00": {
+      "postings": 545,
+      "share_per_10k": 160.5,
+      "with_pay": 418,
+      "pay_million_vnd": {
+        "p25": 8.5,
+        "median": 9.0,
+        "p75": 11.0
+      },
+      "sample_titles": [
+        "Nhân Viên Kho",
+        "Nhân Viên Thủ Kho",
+        "Thủ Kho",
+        "Nhân Viên Phụ Kho",
+        "Nhân Viên Kho Vận"
+      ]
+    },
+    "ONET-43-5021.00": {
+      "postings": 98,
+      "share_per_10k": 28.9,
+      "with_pay": 87,
+      "pay_million_vnd": {
+        "p25": 9.0,
+        "median": 10.0,
+        "p75": 11.5
+      },
+      "sample_titles": [
+        "Nhân Viên Giao Hàng",
+        "Nhân Viên Giao Nhận",
+        "Nhân Viên Giao Hàng Xe Máy",
+        "Nhân Viên Giao Nhận Hiện Trường",
+        "Tài Xế Xe Tải Giao Hàng"
+      ]
+    },
+    "ONET-43-5051.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Bưu Tá Giao Nhận Xe Máy"
+      ]
+    },
+    "ONET-43-5032.00": {
+      "postings": 61,
+      "share_per_10k": 18.0,
+      "with_pay": 48,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 12.0,
+        "p75": 14.0
+      },
+      "sample_titles": [
+        "Nhân Viên Điều Phối Vận Tải",
+        "Nhân Viên Điều Phối Xe",
+        "Nhân Viên Điều Phối Xe Container",
+        "Nhân Viên Điều Độ/Điều Phối Xe Cont/ Đầu Kéo",
+        "Chuyên Viên Điều Phối Vận Tải"
+      ]
+    },
+    "ONET-45-2092.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Chuyên Viên Vận Hành Sau Thu Hoạch"
+      ]
+    },
+    "ONET-45-2093.00": {
+      "postings": 22,
+      "share_per_10k": 6.5,
+      "with_pay": 13,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Chăn Nuôi Heo",
+        "Kỹ Thuật Viên Chăn Nuôi - Trại Heo/Gà - Hỗ Trợ Chỗ Ở",
+        "Kỹ Thuật Chăn Nuôi (Không Yêu Cầu Kinh Nghiệm)",
+        "Trưởng Ban Khối Chăn Nuôi",
+        "Kỹ Sư Chăn Nuôi Thú Y"
+      ]
+    },
+    "ONET-45-3031.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-45-4011.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-47-2021.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-47-2031.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-47-2141.00": {
+      "postings": 4,
+      "share_per_10k": 1.2,
+      "with_pay": 2,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Thợ Sơn Bả Kim Loại",
+        "Thợ Sơn Xe Ô Tô",
+        "Thợ Sơn Xe Ô Tô (Đánh Bóng)"
+      ]
+    },
+    "ONET-47-2111.00": {
+      "postings": 94,
+      "share_per_10k": 27.7,
+      "with_pay": 74,
+      "pay_million_vnd": {
+        "p25": 9.0,
+        "median": 11.5,
+        "p75": 12.6
+      },
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Điện",
+        "Nhân Viên Kỹ Thuật Điện Nước",
+        "Thợ Điện",
+        "Nhân Viên Kỹ Thuật (Điện Nước/Mộc Nề)",
+        "Đại Diện Thương Mại - Kênh GT Điện Dân Dụng"
+      ]
+    },
+    "ONET-47-2152.00": {
+      "postings": 3,
+      "share_per_10k": 0.9,
+      "with_pay": 2,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Triển Khai Bản Vẽ MEP Cấp Thoát Nước",
+        "Chuyên Viên M&E (Cấp Thóat Nước, Điện)"
+      ]
+    },
+    "ONET-47-2221.00": {
+      "postings": 17,
+      "share_per_10k": 5.0,
+      "with_pay": 11,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Bản Vẽ Kết Cấu Thép - 鉄骨図面 - Tiếng Nhật N3",
+        "Nhân Viên Kỹ Thuật Nhôm Kính",
+        "Giám Sát Công Trường (Thi Công Cửa Nhôm Kính)",
+        "Chuyên Viên Kỹ Thuật Dự Án (Mảng Nhôm Kính)",
+        "Chuyên Viên Kỹ Thuật Nhôm Kính"
+      ]
+    },
+    "ONET-47-2073.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Lái Xe Xúc Lật"
+      ]
+    },
+    "ONET-47-5041.00": {
+      "postings": 2,
+      "share_per_10k": 0.6,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Khai Thác Mỏ",
+        "Chuyên Viên Kỹ Thuật/Sửa Chữa Xe Khai Thác Mỏ"
+      ]
+    },
+    "ONET-49-3023.00": {
+      "postings": 26,
+      "share_per_10k": 7.7,
+      "with_pay": 20,
+      "pay_million_vnd": {
+        "p25": 8.6,
+        "median": 12.0,
+        "p75": 15.0
+      },
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Ô Tô",
+        "Kỹ Thuật Viên Ô Tô",
+        "Kỹ Thuật Viên Sửa Chữa Ô Tô",
+        "Nhân Viên Sửa Chữa Ô Tô",
+        "Giảng Viên Kỹ Thuật Ô Tô"
+      ]
+    },
+    "ONET-49-3052.00": {
+      "postings": 4,
+      "share_per_10k": 1.2,
+      "with_pay": 4,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Sửa Xe Máy Điện",
+        "Kỹ Thuật Viên Xe Máy Điện",
+        "Kỹ Thuật Viên Sửa Chữa Xe Máy - Phân Khối Lớn BMW",
+        "Kỹ Thuật Viên Sửa Chữa Xe Máy"
+      ]
+    },
+    "ONET-49-3042.00": {
+      "postings": 2,
+      "share_per_10k": 0.6,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Thuật Viên Sửa Chữa Máy Công Trình",
+        "Kỹ Sư Bảo Trì Sửa Chữa Xe Cơ Giới"
+      ]
+    },
+    "ONET-49-3011.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-49-9021.00": {
+      "postings": 51,
+      "share_per_10k": 15.0,
+      "with_pay": 41,
+      "pay_million_vnd": {
+        "p25": 10.5,
+        "median": 11.0,
+        "p75": 14.5
+      },
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Điện Lạnh",
+        "Nhân Viên Bảo Trì Điện Lạnh",
+        "Nhân Viên Điện Lạnh",
+        "Kỹ Thuật Điện - Điện Lạnh",
+        "Kỹ Thuật Điện Lạnh"
+      ]
+    },
+    "ONET-49-9041.00": {
+      "postings": 336,
+      "share_per_10k": 98.9,
+      "with_pay": 246,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 11.5,
+        "p75": 13.0
+      },
+      "sample_titles": [
+        "Nhân Viên Bảo Trì",
+        "Nhân Viên Kỹ Thuật Bảo Trì",
+        "Nhân Viên Bảo Trì Điện",
+        "Nhân Viên Kỹ Thuật Cơ Khí",
+        "Kỹ Thuật Viên Bảo Trì"
+      ]
+    },
+    "ONET-49-9051.00": {
+      "postings": 3,
+      "share_per_10k": 0.9,
+      "with_pay": 3,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Vận Hành Trạm Biến Áp 110kV",
+        "Kỹ Sư Hiện Trường Dự Án Cáp Ngầm, Đường Dây",
+        "Nhân Viên Vận Hành Lưới Điện 22kV"
+      ]
+    },
+    "ONET-49-9052.00": {
+      "postings": 12,
+      "share_per_10k": 3.5,
+      "with_pay": 11,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Viễn Thông",
+        "Kỹ Thuật Viễn Thông",
+        "Kỹ Thuật Viên Viễn Thông"
+      ]
+    },
+    "ONET-49-2094.00": {
+      "postings": 22,
+      "share_per_10k": 6.5,
+      "with_pay": 20,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 11.0,
+        "p75": 13.2
+      },
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Điện Tử",
+        "Kỹ Thuật Viên Điện Tử",
+        "Nhân Viên Tiếp Nhận & Điều Phối Sửa Chữa Laptop",
+        "Kỹ Thuật Viên Bảo Dưỡng – Sửa Chữa Điện Thoại",
+        "Kỹ Thuật Viên Điện Tự Động Hóa"
+      ]
+    },
+    "ONET-51-2092.00": {
+      "postings": 41,
+      "share_per_10k": 12.1,
+      "with_pay": 26,
+      "pay_million_vnd": {
+        "p25": 8.5,
+        "median": 10.0,
+        "p75": 11.5
+      },
+      "sample_titles": [
+        "Nhân Viên Lắp Ráp Và Điều Chỉnh Tổng Hợp",
+        "Nhân Viên Lắp Ráp Thiết Bị Y TẾ",
+        "Công Nhân Lắp Ráp",
+        "Nhân Viên Lắp Ráp Điện",
+        "Nhân Viên Kỹ Thuật Lắp Ráp"
+      ]
+    },
+    "ONET-51-4041.00": {
+      "postings": 128,
+      "share_per_10k": 37.7,
+      "with_pay": 106,
+      "pay_million_vnd": {
+        "p25": 10.5,
+        "median": 12.5,
+        "p75": 15.6
+      },
+      "sample_titles": [
+        "Nhân Viên Vận Hành Máy CNC",
+        "Thợ Cơ Khí",
+        "Nhân Viên Kỹ Thuật CNC",
+        "Vận Hành Máy CNC/ Kỹ Thuật Tự Động Hóa",
+        "Nhân Viên Sản Xuất (Gia Công CNC)"
+      ]
+    },
+    "ONET-51-4121.00": {
+      "postings": 13,
+      "share_per_10k": 3.8,
+      "with_pay": 9,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Thợ Hàn",
+        "Nhân Viên Thợ Hàn",
+        "Thợ Hàn Cắt Inox",
+        "Thợ Hàn Inox",
+        "Thợ Hàn/Phụ Hàn - Không Yêu Cầu Kinh Nghiệm (Làm Việc Tại Quận 12, Hồ Chí Minh)"
+      ]
+    },
+    "ONET-51-3092.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Nhà Máy Chế Biến Thực Phẩm"
+      ]
+    },
+    "ONET-51-3011.00": {
+      "postings": 13,
+      "share_per_10k": 3.8,
+      "with_pay": 12,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Bếp Bánh Mì Ngọt",
+        "Nhân Viên Bếp Bánh (Bánh Mì)",
+        "Quản Lý Quầy Bánh Mì",
+        "Thợ Làm Bánh",
+        "Thợ Làm Bánh (Baker)"
+      ]
+    },
+    "ONET-51-5112.00": {
+      "postings": 32,
+      "share_per_10k": 9.4,
+      "with_pay": 24,
+      "pay_million_vnd": {
+        "p25": 9.0,
+        "median": 11.5,
+        "p75": 11.9
+      },
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật In Ấn",
+        "Nhân Viên Thiết Kế - In Ấn Bao Bì Tem Nhãn",
+        "Nhân Viên Kỹ Thuật Bình Ghép File Và In Ấn",
+        "Nhân Viên Sản Xuất Mảng In Ấn",
+        "Nhân Viên Thiết Kế Và Tách Màu In Ấn"
+      ]
+    },
+    "ONET-51-6031.00": {
+      "postings": 29,
+      "share_per_10k": 8.5,
+      "with_pay": 20,
+      "pay_million_vnd": {
+        "p25": 9.2,
+        "median": 11.8,
+        "p75": 16.2
+      },
+      "sample_titles": [
+        "Thợ May Mẫu Sản Xuất-Hàng Thiết Kế Thời Trang",
+        "Thợ May",
+        "Nhân Viên Thiết Kế/ Pattern Staff (May Mặc)",
+        "Thợ May Balo, Túi Xách, Vali (10-15Tr) - Việc Nhẹ, Phòng Điều Hòa, Không Áp Lực",
+        "Mua Hàng Phụ Liệu May Mặc"
+      ]
+    },
+    "ONET-51-7011.00": {
+      "postings": 8,
+      "share_per_10k": 2.4,
+      "with_pay": 8,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Tư Vấn Hỗ Trợ Phần Mềm Sản Xuất Đồ Gỗ",
+        "Kỹ Thuật Sản Xuất Nội Thất Và Ra File Cnc",
+        "Triển Khai Sản Xuất Nội Thất",
+        "Nhân Viên Đấu Thầu/Báo Giá - Đồ Gỗ Nội Thất",
+        "Kỹ Thuật Sản Xuất Nội Thất (Gỗ Óc Chó)"
+      ]
+    },
+    "ONET-51-8013.00": {
+      "postings": 2,
+      "share_per_10k": 0.6,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Vận Hành Nhà Máy Điện Gió",
+        "Nhân Viên Vận Hành Lò Hơi"
+      ]
+    },
+    "ONET-51-8031.00": {
+      "postings": 25,
+      "share_per_10k": 7.4,
+      "with_pay": 20,
+      "pay_million_vnd": {
+        "p25": 10.1,
+        "median": 13.0,
+        "p75": 17.5
+      },
+      "sample_titles": [
+        "Nhân Viên Vận Hành Hệ Thống Xử Lý Nước Thải",
+        "Nhân Viên Bảo Trì Hệ Thống Xử Lý Nước",
+        "Nhân Viên Xử Lý Nước Thải",
+        "Nhân Viên Vận Hành Nước Cấp Nước Thải",
+        "Nhân Viên Thiết Kế Công Nghệ Xử Lý Nước Thải"
+      ]
+    },
+    "ONET-51-8091.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Kỹ Thuật Mảng Hoá Chất"
+      ]
+    },
+    "ONET-51-9061.00": {
+      "postings": 335,
+      "share_per_10k": 98.6,
+      "with_pay": 219,
+      "pay_million_vnd": {
+        "p25": 10.0,
+        "median": 12.0,
+        "p75": 14.0
+      },
+      "sample_titles": [
+        "Nhân Viên QC",
+        "Nhân Viên Kiểm Soát Chất Lượng",
+        "Nhân Viên QA",
+        "Chuyên Viên Kiểm Soát Chất Lượng",
+        "Nhân Viên Kiểm Tra Chất Lượng"
+      ]
+    },
+    "ONET-51-9141.00": {
+      "postings": 5,
+      "share_per_10k": 1.5,
+      "with_pay": 3,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Sư Thiết Kế Vi Mạch FPGA",
+        "Giảng Viên Lĩnh Vực Thiết Kế Vi Mạch Bán Dẫn",
+        "Kỹ Sư Thiết Kế FPGA (Thiết Kế Chip & RTL Logic)",
+        "Kỹ sư dịch vụ (Bán dẫn)"
+      ]
+    },
+    "ONET-51-9071.00": {
+      "postings": 16,
+      "share_per_10k": 4.7,
+      "with_pay": 14,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Trưởng/Phó Trung Tâm Trang Sức",
+        "Nhân Viên Thiết Kế Trang Sức 3D",
+        "Nhân Viên Tư Vấn Trang Sức Cao Cấp",
+        "Chuyên Viên Chỉnh Sửa Hình Ảnh (Retouch/Trang Sức)",
+        "Chuyên Viên Livestream Trang Sức"
+      ]
+    },
+    "ONET-51-9081.00": {
+      "postings": 6,
+      "share_per_10k": 1.8,
+      "with_pay": 4,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Kỹ Thuật Viên Nha Khoa",
+        "Bác Sĩ Chấn Thương Chỉnh Hình"
+      ]
+    },
+    "ONET-51-9111.00": {
+      "postings": 201,
+      "share_per_10k": 59.2,
+      "with_pay": 149,
+      "pay_million_vnd": {
+        "p25": 9.0,
+        "median": 11.0,
+        "p75": 12.5
+      },
+      "sample_titles": [
+        "Nhân Viên Vận Hành Máy",
+        "Nhân Viên Vận Hành Máy CNC",
+        "Nhân Viên Đóng Gói",
+        "Công Nhân Vận Hành Máy",
+        "Kỹ Thuật Viên Vận Hành Máy"
+      ]
+    },
+    "ONET-53-2011.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-53-2021.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-53-2031.00": {
+      "postings": 0,
+      "share_per_10k": 0.0,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": []
+    },
+    "ONET-53-3032.00": {
+      "postings": 18,
+      "share_per_10k": 5.3,
+      "with_pay": 16,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Tài Xế Xe Tải Giao Hàng",
+        "Nhân Viên Lái Xe Tải Giao Hàng",
+        "Tài Xế Xe Tải (Bằng B2)",
+        "Tài Xế Container - Lượng Hàng Ổn Định",
+        "Lái Xe Giao Hàng"
+      ]
+    },
+    "ONET-53-3052.00": {
+      "postings": 3,
+      "share_per_10k": 0.9,
+      "with_pay": 3,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Lái Xe Du Lịch 16 Chỗ - Đi Làm Ngay"
+      ]
+    },
+    "ONET-53-4011.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Phục Vụ Tàu Đường Sắt(Cần Tiếng Anh)"
+      ]
+    },
+    "ONET-53-5021.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 1,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Giám Định Viên Hàng Hải"
+      ]
+    },
+    "ONET-53-7051.00": {
+      "postings": 22,
+      "share_per_10k": 6.5,
+      "with_pay": 11,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Vận Hành Xe Nâng",
+        "Nhân Viên Kho Lái Xe Nâng",
+        "Trình quản lý thiết kế cấu trúc thép",
+        "Nhân Viên Kỹ Thuật Xe Nâng Người/Nâng Hàng",
+        "Nhân Viên Kho - Xe Nâng"
+      ]
+    },
+    "ONET-53-7062.00": {
+      "postings": 36,
+      "share_per_10k": 10.6,
+      "with_pay": 29,
+      "pay_million_vnd": {
+        "p25": 7.2,
+        "median": 8.0,
+        "p75": 9.2
+      },
+      "sample_titles": [
+        "Nhân Viên Đóng Gói",
+        "Nhân Viên Soạn Hàng, Đóng Gói Hàng Hoá Máy Móc",
+        "Nhân Viên KCS Đóng Gói Hàng Hoá",
+        "Nhân Viên Soạn Hàng Và Đóng Hàng",
+        "Nhân Viên Đóng Gói Bánh Kẹo"
+      ]
+    },
+    "ONET-53-7081.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Vận Hành Dây Chuyền Phân Loại Chất Thải"
+      ]
+    },
+    "ONET-53-6051.00": {
+      "postings": 1,
+      "share_per_10k": 0.3,
+      "with_pay": 0,
+      "pay_million_vnd": null,
+      "sample_titles": [
+        "Nhân Viên Hồ Sơ Đăng Kiểm Chứng Nhận"
+      ]
+    }
+  }
+}

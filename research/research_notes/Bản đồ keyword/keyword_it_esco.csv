@@ -1,0 +1,127 @@
+﻿keyword,esco_label,esco_uri
+AI,artificial neural networks,http://data.europa.eu/esco/skill/5608d5a0-6d5e-43b7-be37-616501729bb4
+AI,utilise machine learning,http://data.europa.eu/esco/skill/8369c2d6-c100-4cf6-bd83-9668d8678433
+AI,machine learning,http://data.europa.eu/esco/skill/3a2d5b45-56e4-4f5a-a55a-4a4a65afdc43
+AI,principles of artificial intelligence,http://data.europa.eu/esco/skill/e465a154-93f7-4973-9ce1-31659fe16dd2
+API,use an application-specific interface,http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9
+API,web services,http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c
+Bảo mật,ICT network security risks,http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80
+Bảo mật,cyber attack counter-measures,http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248
+Bảo mật,information security strategy,http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50
+Bảo mật,ethical hacking principles,http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9
+Bảo mật,penetration testing tool,http://data.europa.eu/esco/skill/de586dcf-d7e5-4340-bf5b-d59026f1b436
+Bảo mật,manage keys for data protection,http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305
+Bảo mật,ICT security legislation,http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42
+Bảo mật,security engineering,http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab
+Bảo mật,ICT safety,http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2
+Bảo mật,execute ICT audits,http://data.europa.eu/esco/skill/7e1f9657-ab4e-407c-842f-b846197060e3
+Bảo mật,internet governance,http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3
+Bảo mật,conduct ICT code review,http://data.europa.eu/esco/skill/9d1b08b3-ba1e-41f6-a466-1ac1e62eb5f0
+Bảo mật,mobile device management,http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3
+Cloud,cloud technologies,http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0
+Cloud,design cloud architecture,http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6
+Cloud,design database in the cloud,http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15
+Cloud,deploy cloud resource,http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3
+Cloud,respond to incidents in cloud,http://data.europa.eu/esco/skill/440d5784-52a5-4729-8b04-29f978bd896d
+Cloud,do cloud refactoring,http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32
+Cloud,plan migration to cloud,http://data.europa.eu/esco/skill/0a52bed5-fd29-45fb-aba6-e32bccfda1c1
+Cơ sở dữ liệu,query languages,http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586
+Cơ sở dữ liệu,data models,http://data.europa.eu/esco/skill/fecf8a0d-62c4-4e71-9b03-0f4fc2ad7bf5
+Cơ sở dữ liệu,create data models,http://data.europa.eu/esco/skill/fbafa41f-cd05-4109-a649-8b44d306d779
+Cơ sở dữ liệu,manage ICT data architecture,http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956
+Cơ sở dữ liệu,data warehouse,http://data.europa.eu/esco/skill/3ec2e4d6-7000-4905-bf1a-c5b1679416de
+Cơ sở dữ liệu,implement data warehousing techniques,http://data.europa.eu/esco/skill/fd6d2981-3d4a-4ce2-9741-cfc98c5b74bd
+Cơ sở dữ liệu,design database in the cloud,http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15
+Cơ sở dữ liệu,resource description framework query language,http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806
+Cơ sở dữ liệu,normalise data,http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc
+DevOps,DevOps,http://data.europa.eu/esco/skill/f0de4973-0a70-4644-8fd4-3a97080476f4
+DevOps,Jenkins (tools for software configuration management),http://data.europa.eu/esco/skill/f47a1998-0beb-43be-9f46-380aa4d183da
+DevOps,integrated development environment software,http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde
+ERP,manage standard enterprise resource planning system,http://data.europa.eu/esco/skill/f0393af3-bcd9-41af-a36e-0cfb83b60081
+Game,digital game genres,http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a
+Game,3D texturing,http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be
+Game,3D lighting,http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188
+Game,apply 3D imaging techniques,http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2
+Game,digital game creation systems,http://data.europa.eu/esco/skill/966f2fd3-3de6-42da-b87c-da924c6d7960
+Game,develop virtual game engine,http://data.europa.eu/esco/skill/7d5ff73e-7bea-436d-974f-3a51ce24a138
+Git,tools for software configuration management,http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f
+Kiến trúc hệ thống,define software architecture,http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308
+Kiến trúc hệ thống,system design,http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9
+Kiến trúc hệ thống,align software with system architectures,http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966
+Kiến trúc hệ thống,software architecture models,http://data.europa.eu/esco/skill/2450c3b3-e78e-435b-b84d-e05d984e71dc
+Kiến trúc hệ thống,create software design,http://data.europa.eu/esco/skill/3bddfd7c-ab6d-40c2-883d-5e97fb7640ba
+Kiến trúc hệ thống,integrate system components,http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72
+Kiến trúc hệ thống,ICT system integration,http://data.europa.eu/esco/skill/6fa1c2c0-a012-4ca0-9642-e01569ba322c
+Kiến trúc hệ thống,design information system,http://data.europa.eu/esco/skill/a47d194d-0ffd-4aaa-b695-fbbe0255000e
+Kiến trúc hệ thống,systems theory,http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49
+Kiến trúc hệ thống,apply ICT systems theory,http://data.europa.eu/esco/skill/cbe2c304-1e7d-489a-97d9-a7d3e37a9db6
+Kiểm thử,execute software tests,http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a
+Kiểm thử,levels of software testing,http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d
+Kiểm thử,perform software unit testing,http://data.europa.eu/esco/skill/7961413f-61d0-4722-9cd9-20a050a29899
+Kiểm thử,software anomalies,http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6
+Kiểm thử,replicate customer software issues,http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480
+Kiểm thử,report test findings,http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93
+Kiểm thử,debug software,http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1
+Kiểm thử,execute integration testing,http://data.europa.eu/esco/skill/ea412de3-9d7a-4943-8d8c-c6d3c7495d0e
+Lập trình,computer programming,http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97
+Lập trình,ICT system programming,http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90
+Lập trình,web programming,http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28
+Lập trình,use software libraries,http://data.europa.eu/esco/skill/8b94aa1e-89c9-459d-b3b4-1dfab8dec2df
+Lập trình,use software design patterns,http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17
+Lập trình,task algorithmisation,http://data.europa.eu/esco/skill/7482a123-e801-48de-9733-262125671410
+Lập trình,algorithms,http://data.europa.eu/esco/skill/54924a2c-daca-40d3-9716-4b38ceb04f38
+Mobile,mobile operating systems,http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea
+Mobile,mobile device software frameworks,http://data.europa.eu/esco/skill/b8c01891-e3df-4a4b-948d-95b45e1788f5
+Máy chủ,operating systems,http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272
+Máy chủ,use ICT hardware,http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b
+Máy chủ,implement ICT recovery system,http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53
+Máy chủ,system backup best practice,http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3
+Máy chủ,hardware platforms,http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81
+Máy chủ,ICT infrastructure,http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523
+Mạng,network standards,http://data.europa.eu/esco/skill/d78dedfc-21d2-45fd-ba05-e56b7a8865e6
+Mạng,design computer network,http://data.europa.eu/esco/skill/2164e860-7f20-48bc-b98c-5d9f8a561550
+Mạng,implement a virtual private network,http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95
+Mạng,implement ICT network diagnostic tools,http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4
+Mạng,network engineering,http://data.europa.eu/esco/skill/02058de6-4b98-449f-8a45-8588b0eb2446
+Mạng,ICT infrastructure,http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523
+Nhúng / IoT,embedded systems,http://data.europa.eu/esco/skill/2180bd8c-86de-4889-8165-adac902eee9d
+Nhúng / IoT,Internet of Things,http://data.europa.eu/esco/skill/f049d050-12da-4e40-813a-2b5eb6df6b51
+Phân tích dữ liệu,execute analytical mathematical calculations,http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c
+Phân tích dữ liệu,handle data samples,http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e
+Phân tích dữ liệu,visual presentation techniques,http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213
+Phân tích dữ liệu,use data processing techniques,http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522
+Phân tích dữ liệu,unstructured data,http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666
+Phân tích dữ liệu,information categorisation,http://data.europa.eu/esco/skill/93aaf65c-5aad-4e6f-a7ba-ce9bf7c0e6e6
+Phân tích dữ liệu,create data sets,http://data.europa.eu/esco/skill/906323f4-00c4-4c3b-ab5a-8af77be3456e
+Phân tích dữ liệu,data mining,http://data.europa.eu/esco/skill/25f0ea33-b4a2-4f31-b7b4-7d20e827b180
+Phân tích dữ liệu,statistics,http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833
+Phân tích dữ liệu,perform dimensionality reduction,http://data.europa.eu/esco/skill/3e2ab38a-4519-4bef-b762-a8bf4836a775
+Phân tích dữ liệu,develop statistical software,http://data.europa.eu/esco/skill/bb165899-d95f-4433-95f2-173fefd716d2
+Phân tích nghiệp vụ,analyse business requirements,http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17
+Phân tích nghiệp vụ,identify customer requirements,http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64
+Phân tích nghiệp vụ,business process modelling,http://data.europa.eu/esco/skill/98301d4a-2cc3-439d-8d7f-0b6ac76302bb
+Phân tích nghiệp vụ,ICT system user requirements,http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff
+Phân tích nghiệp vụ,analyse software specifications,http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998
+Phân tích nghiệp vụ,interact with users to gather requirements,http://data.europa.eu/esco/skill/a8797f21-1af0-4c5e-98ca-bf1442929363
+Quản lý dự án,ICT project management,http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d
+Quản lý dự án,manage ICT project,http://data.europa.eu/esco/skill/3c76296d-4bbd-44ba-8eaa-95bf275f79b7
+Quản lý dự án,ICT project management methodologies,http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9
+Quản lý dự án,systems development life-cycle,http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575
+Quản lý sản phẩm,perform product planning,http://data.europa.eu/esco/skill/d15ba5cb-9212-4a90-85af-2c560da59925
+Quản lý sản phẩm,ICT market,http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131
+Quản lý sản phẩm,define technology strategy,http://data.europa.eu/esco/skill/248894d1-42dc-474f-af6e-2da52ac0c679
+Quản lý sản phẩm,provide cost benefit analysis reports,http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a
+Thiết kế giao diện,design user interface,http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e
+Thiết kế giao diện,create website wireframe,http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f
+Thiết kế giao diện,implement front-end website design,http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb
+Thiết kế giao diện,use methodologies for user-centered design,http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4
+Thiết kế giao diện,application usability,http://data.europa.eu/esco/skill/c4b626c1-e71c-44ec-9f88-042766f37fcc
+Thiết kế giao diện,use markup languages,http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26
+Thiết kế giao diện,World Wide Web Consortium standards,http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e
+Vận hành & sự cố,solve ICT system problems,http://data.europa.eu/esco/skill/9e06bac6-6b91-48ca-8b7d-c1f48cdecd7c
+Vận hành & sự cố,respond to incidents in cloud,http://data.europa.eu/esco/skill/440d5784-52a5-4729-8b04-29f978bd896d
+Vận hành & sự cố,provide ICT support,http://data.europa.eu/esco/skill/c2296e2e-5fef-4f24-a24f-e5b3792268be
+Vận hành & sự cố,use ICT ticketing system,http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69
+Vận hành & sự cố,building systems monitoring technology,http://data.europa.eu/esco/skill/0e8d16c9-e2db-4862-ac06-1567f01ef806
+Vận hành & sự cố,implement ICT recovery system,http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53
+Vận hành & sự cố,attend to ICT systems quality,http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e

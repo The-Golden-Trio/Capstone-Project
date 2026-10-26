@@ -36,6 +36,9 @@ Mỗi nghề có nhiều cấp, bắt đầu từ **L1 (intern)**. **Cấp cao n
 - 23/9: **Get-to-know-me là tuỳ chọn** (D-29). **Người chơi học cả hard skill lẫn soft skill** (D-32).
 - 29/9: **DE dùng hệ thống**, CA không phải business admin (D-16). **Miễn phí**, chừa chỗ logo nhà tài trợ và ô quyên góp (D-17).
 - 7–9/10: **Kiến trúc AI năm thành phần**; DE đặt khoá chấm và duyệt seed, CA cùng AI dựng khung game (D-90). **Chấm không có đáp án mẫu**, panel ba judge khác họ, lấy trung vị (D-91). **AI-native là không có đường thay thế** khi AI lỗi (D-92). Thang chấm và tiêu chí chờ game design (D-95).
+- 14–21/10: **Game design hồ sơ người chơi** (D-104 đến D-113): ba phần chỉ số RIASEC, soft skill 7 nhóm 5 bậc, keyword kỹ năng nghề; Get to know me chỉ chạm, không gọi AI; trang hồ sơ bốn tab; gợi ý nghề ba ô có công thức, đã kiểm với O\*NET; chòm sao buff 12%.
+- 21–22/10: **Điểm và mở khoá** (D-114 đến D-119): bậc 0–5, quỹ điểm theo band và độ khó nghề, vào cấp cần bậc ở mọi nhóm; thang chấm 0/1/2 kèm cờ phản tác dụng; thang cấp cho 199 nghề ngoài IT; bản đồ keyword và quy đổi cho 221 nghề.
+- 23/10: **Keyword từ ESCO cho mọi nghề** (D-120): cùng một nguồn và một cách cho IT và ngành khác, keyword mịn kèm nhóm kỹ năng để nhảy nghề. **Nghề cấp cao** (D-121): 12 nghề như Tech Lead, Engineering Manager, quản lý ngành cần thành thạo một nghề đi trước mới vào được; mỗi cấp nâng tối đa 5 keyword. **Get to know me không còn thẻ riêng cho IT** (D-125): 6 thẻ cụm 3 thành 6 nhóm ngành phủ cả 221 nghề. **Hồ sơ nghề** (D-126): bỏ công cụ, lý do nghỉ việc của ITviec; lương IT theo vị trí và số năm kinh nghiệm; Back-end đủ việc hằng ngày L1–L7.
 
 ## Việc chưa làm (chi tiết ở [07](07-van-de-mo.md))
 

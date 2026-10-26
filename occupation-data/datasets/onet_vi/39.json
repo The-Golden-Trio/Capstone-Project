@@ -1,0 +1,328 @@
+{
+  "39-1013.00": {
+    "title_vi": "Giám sát khu trò chơi có thưởng",
+    "description_vi": "Trực tiếp giám sát và điều phối nhân viên ở khu trò chơi có thưởng được giao. Có thể đi lại giữa các bàn, quan sát hoạt động và bảo đảm mỗi ca đủ người cho các bàn. Có thể xác minh và trả giải lớn, cài đặt lại hoặc chỉnh sửa máy đánh bạc. Có thể tổ chức hoạt động, dịch vụ cho khách ở khách sạn sòng bạc.",
+    "tasks_vi": {
+      "23127": "Giám sát hoạt động trò chơi để bảo đảm tuân thủ luật lệ của cơ sở và quy định của nhà nước, và nhân viên phục vụ nhanh, lịch sự.",
+      "23129": "Quan sát người chơi để phát hiện dấu hiệu gian lận như đánh dấu, tráo hoặc đếm bài, và báo bộ phận an ninh.",
+      "23133": "Làm giấy tờ cho các giao dịch tiền.",
+      "23128": "Tiếp nhận và giải quyết khiếu nại của khách.",
+      "23132": "Chào khách và hỏi về chất lượng phục vụ."
+    }
+  },
+  "39-1014.00": {
+    "title_vi": "Giám sát nhân viên giải trí và vui chơi",
+    "description_vi": "Trực tiếp giám sát và điều phối nhân viên làm việc trong lĩnh vực giải trí và vui chơi, trừ trò chơi có thưởng.",
+    "tasks_vi": {
+      "23159": "Xếp lịch làm việc theo yêu cầu để bảo đảm dịch vụ đạt chất lượng và đúng giờ.",
+      "23175": "Đào tạo nhân viên về quy trình vận hành và giải thích chính sách công ty.",
+      "23162": "Cung cấp cho khách thông tin về sự kiện hoặc hoạt động.",
+      "23160": "Cùng nhân viên lên chương trình sự kiện hoặc lịch hoạt động.",
+      "23172": "Giải quyết khiếu nại của khách về nhân viên hoặc dịch vụ."
+    }
+  },
+  "39-1022.00": {
+    "title_vi": "Giám sát nhân viên dịch vụ cá nhân",
+    "description_vi": "Giám sát và điều phối nhân viên làm dịch vụ cá nhân.",
+    "tasks_vi": {
+      "13140": "Đào tạo nhân viên về quy trình vận hành và giải thích chính sách công ty.",
+      "13142": "Họp với quản lý hoặc giám sát khác để nắm các thay đổi ảnh hưởng tới hoạt động.",
+      "13138": "Xếp lịch làm việc theo yêu cầu để bảo đảm dịch vụ đạt chất lượng và đúng giờ.",
+      "13151": "Tuyển dụng nhân viên.",
+      "13145": "Giải quyết khiếu nại của khách về nhân viên hoặc dịch vụ."
+    }
+  },
+  "39-2011.00": {
+    "title_vi": "Huấn luyện viên động vật",
+    "description_vi": "Huấn luyện động vật để cưỡi, kéo xe, bảo vệ, biểu diễn, vâng lời hoặc hỗ trợ người khuyết tật. Tập cho động vật quen giọng nói và sự tiếp xúc của con người, và phản ứng theo hiệu lệnh. Huấn luyện theo tiêu chuẩn cho trình diễn hoặc thi đấu. Có thể huấn luyện động vật thồ hàng hoặc làm việc theo đàn.",
+    "tasks_vi": {
+      "7989": "Ra hiệu cho động vật trong khi biểu diễn.",
+      "7993": "Nói chuyện, tương tác với động vật để chúng quen giọng nói và sự tiếp xúc của con người.",
+      "20593": "Thực hiện chương trình huấn luyện để tạo hoặc duy trì hành vi mong muốn cho thi đấu, giải trí, vâng lời, bảo vệ, cưỡi hoặc mục đích khác.",
+      "7992": "Cho động vật ăn, vận động hoặc chăm sóc chung như dọn dẹp chuồng và khu biểu diễn.",
+      "7988": "Quan sát thể trạng động vật để phát hiện bệnh hoặc tình trạng cần chữa trị."
+    }
+  },
+  "39-2021.00": {
+    "title_vi": "Nhân viên chăm sóc động vật",
+    "description_vi": "Cho ăn, uống, chải lông, tắm, cho vận động hoặc chăm sóc khác cho thú cưng và động vật không nuôi để lấy thịt, như chó, mèo, ngựa đua, cá cảnh, chim, thú trong vườn thú và chuột. Làm việc tại trại chó, trạm cứu hộ, vườn thú, rạp xiếc và thuỷ cung. Có thể ghi chép việc cho ăn, chữa trị, nhận và trả động vật. Có thể dọn rửa, khử trùng và sửa chuồng, lồng hoặc bể cá.",
+    "tasks_vi": {
+      "5072": "Cho động vật ăn uống theo lịch và hướng dẫn.",
+      "5077": "Chữa trị cho động vật bị bệnh hoặc bị thương, hoặc liên hệ bác sĩ thú y.",
+      "5075": "Kiểm tra và quan sát động vật để phát hiện dấu hiệu bệnh hoặc chấn thương.",
+      "5082": "Trộn thức ăn, sữa, thuốc hoặc chất bổ sung theo hướng dẫn, đơn thuốc và hiểu biết về từng loài.",
+      "20132": "Giặt đồ của cơ sở và dọn dẹp, sắp xếp, bảo quản, khử trùng chuồng trại và dụng cụ như yên, cương."
+    }
+  },
+  "39-3011.00": {
+    "title_vi": "Người chia bài sòng bạc (dealer)",
+    "description_vi": "Điều hành bàn chơi. Đứng hoặc ngồi sau bàn và điều hành trò chơi may rủi bằng cách chia bài, chia quân cho người chơi hoặc vận hành thiết bị khác. Trả tiền thắng hoặc thu tiền, phỉnh của người chơi. Có thể so bài của nhà cái với bài người chơi.",
+    "tasks_vi": {
+      "4446": "Trả tiền thắng hoặc thu tiền cược thua theo luật và quy trình của từng trò.",
+      "21151": "Chào khách và tạo cảm giác được chào đón.",
+      "4445": "Đổi tiền giấy lấy phỉnh hoặc xu.",
+      "4449": "Kiểm tra mọi người chơi đã đặt cược trước khi bắt đầu.",
+      "4451": "Kiểm tra bài và dụng cụ chơi để bảo đảm còn tốt."
+    }
+  },
+  "39-3012.00": {
+    "title_vi": "Nhân viên ghi cược và chạy vé cá cược",
+    "description_vi": "Niêm yết thông tin để khách đặt cược vào các cuộc đua và sự kiện thể thao. Hỗ trợ vận hành trò chơi như keno và bingo. Có thể vận hành máy tạo số ngẫu nhiên và đọc số cho khách. Nhận, xác minh và ghi tiền cược. Quét và xử lý vé trúng, trả tiền thắng.",
+    "tasks_vi": {
+      "8009": "Trả lời câu hỏi về luật chơi hoặc chính sách của sòng bạc.",
+      "8008": "Thu thẻ hoặc vé của người chơi.",
+      "20596": "Tính và xác minh số tiền thắng thua, trả tiền thắng hoặc chuyển khách tới quầy thu ngân để nhận."
+    }
+  },
+  "39-3021.00": {
+    "title_vi": "Nhân viên chiếu phim",
+    "description_vi": "Lắp đặt và vận hành máy chiếu phim và thiết bị âm thanh đi kèm.",
+    "tasks_vi": {
+      "8030": "Theo dõi để bảo đảm chất lượng âm thanh và hình ảnh đạt tiêu chuẩn.",
+      "8029": "Bật máy chiếu và mở cửa chắn để chiếu hình lên màn.",
+      "8040": "Mở và đóng rạp theo quy định và lịch.",
+      "8031": "Vận hành thiết bị để chiếu phim ở nhiều phòng cùng lúc.",
+      "21201": "Bảo dưỡng định kỳ như xoay hoặc thay bóng đèn xenon, lau máy chiếu và ống kính, tra dầu máy và giữ tiếp điểm điện sạch, chặt."
+    }
+  },
+  "39-3031.00": {
+    "title_vi": "Nhân viên soát vé và hướng dẫn chỗ ngồi",
+    "description_vi": "Hỗ trợ khách tại sự kiện giải trí như thu vé và thẻ vào cửa, giúp tìm chỗ ngồi, tìm đồ thất lạc và chỉ đường tới nhà vệ sinh, điện thoại.",
+    "tasks_vi": {
+      "20764": "Bán hoặc thu vé, thẻ vào cửa, thẻ hội viên của khách tại sự kiện giải trí.",
+      "20765": "Dọn dẹp cơ sở.",
+      "5100": "Hỗ trợ khách có nhu cầu đặc biệt, như người đi xe lăn.",
+      "5099": "Giữ trật tự và bảo đảm tuân thủ quy định an toàn.",
+      "5097": "Kiểm tra vé hoặc thẻ để xác nhận thật giả, dựa vào màu hoặc ngày phát hành."
+    }
+  },
+  "39-3091.00": {
+    "title_vi": "Nhân viên khu vui chơi giải trí",
+    "description_vi": "Làm nhiều việc phục vụ tại khu vui chơi hoặc giải trí. Có thể xếp lịch sử dụng cơ sở, bảo quản và cấp dụng cụ cho người tham gia thể thao, giải trí, hoặc vận hành quầy dịch vụ và trò chơi cảm giác mạnh.",
+    "tasks_vi": {
+      "5119": "Bán vé và thu phí của khách.",
+      "5116": "Cung cấp thông tin về cơ sở, các lựa chọn giải trí và nội quy.",
+      "5120": "Nắm quy trình dừng máy và sơ tán khẩn cấp.",
+      "5130": "Hướng dẫn khách tới trò chơi, chỗ ngồi hoặc điểm tham quan.",
+      "5118": "Theo dõi hoạt động để bảo đảm tuân thủ nội quy và quy trình an toàn, hoặc mời khách gây rối ra ngoài."
+    }
+  },
+  "39-3092.00": {
+    "title_vi": "Nhân viên phục trang",
+    "description_vi": "Chọn, thử và bảo quản phục trang cho diễn viên, hỗ trợ nghệ sĩ. Có thể giúp thay nhiều bộ trang phục trong buổi diễn.",
+    "tasks_vi": {
+      "9627": "Lập bảng danh sách thay đồ, ghi chú buổi diễn hoặc kiểm tra phục trang.",
+      "20898": "Giúp diễn viên mặc trang phục hoặc phân công người hỗ trợ thay đồ cho từng diễn viên.",
+      "9616": "Xếp phục trang theo thứ tự sử dụng để thay đồ nhanh trong buổi diễn.",
+      "9621": "Thiết kế, may phục trang hoặc gửi thợ may để may, sửa lớn hoặc chỉnh.",
+      "9629": "Kiểm tra độ vừa của trang phục trên diễn viên và phác thảo hoặc ghi chú chỗ cần sửa."
+    }
+  },
+  "39-3093.00": {
+    "title_vi": "Nhân viên phòng thay đồ và phòng gửi đồ",
+    "description_vi": "Cung cấp đồ dùng cá nhân cho khách ở phòng thay đồ, phòng tủ khoá hoặc phòng gửi áo khoác.",
+    "tasks_vi": {
+      "20134": "Dọn dẹp cơ sở như sàn và phòng tủ khoá.",
+      "4476": "Phát khăn và ga cho khách ở nhà tắm công cộng, phòng xông hơi và nhà vệ sinh.",
+      "4477": "Thu đồ vải hoặc quần áo bẩn để giặt.",
+      "4468": "Chuyển vấn đề hoặc khiếu nại của khách lên cấp trên.",
+      "4484": "Quản lý đồ thất lạc."
+    }
+  },
+  "39-4011.00": {
+    "title_vi": "Nhân viên ướp xác",
+    "description_vi": "Chuẩn bị thi hài để an táng theo quy định pháp luật.",
+    "tasks_vi": {
+      "4487": "Tuân thủ quy định về y tế, vệ sinh và bảo đảm đáp ứng yêu cầu pháp lý về ướp xác.",
+      "4488": "Trang điểm cho người đã khuất để trông tự nhiên.",
+      "4495": "Khâu hoặc cố định môi bằng kim chỉ hoặc dây.",
+      "4490": "Khâu kín vết rạch bằng kim và chỉ.",
+      "4489": "Rạch thành bụng và dùng ống chọc để rút máu, chất thải khỏi các cơ quan nội tạng."
+    }
+  },
+  "39-4021.00": {
+    "title_vi": "Nhân viên phục vụ tang lễ",
+    "description_vi": "Làm nhiều việc trong tang lễ như đặt quan tài trong phòng tang lễ hoặc nhà nguyện trước buổi lễ, bày hoa, đèn quanh quan tài, hướng dẫn người viếng, đóng nắp quan tài, cấp phát và cất giữ đồ tang lễ.",
+    "tasks_vi": {
+      "4512": "Đón tiếp người tới nhà tang lễ.",
+      "4511": "Làm nhiều việc trong tang lễ để hỗ trợ người tổ chức và bảo đảm buổi lễ diễn ra suôn sẻ, đúng kế hoạch.",
+      "4514": "Đóng nắp quan tài vào thời điểm thích hợp của buổi lễ.",
+      "4517": "Hướng dẫn hoặc dẫn người viếng tới phòng đang tổ chức lễ viếng hoặc tang lễ.",
+      "4518": "Đặt quan tài trong phòng tang lễ hoặc nhà nguyện trước lễ viếng."
+    }
+  },
+  "39-4031.00": {
+    "title_vi": "Người tổ chức tang lễ",
+    "description_vi": "Làm nhiều việc để tổ chức và điều hành từng tang lễ, như điều phối vận chuyển thi hài, gặp gia đình để thống nhất chi tiết, chọn người khiêng quan tài, hỗ trợ chọn người làm nghi thức tôn giáo và lo phương tiện đi lại cho người đưa tang.",
+    "tasks_vi": {
+      "3335": "Giám sát việc chuẩn bị và chăm sóc thi hài.",
+      "3334": "Lấy thông tin để hoàn tất giấy tờ pháp lý như giấy chứng tử hoặc giấy phép chôn cất.",
+      "3343": "Ướp xác khi cần.",
+      "3332": "Trao đổi với gia đình, bạn bè người đã khuất để thống nhất chi tiết tang lễ như nội dung cáo phó, chọn quan tài và kế hoạch buổi lễ.",
+      "21009": "Đưa thi hài khỏi nơi người đó mất."
+    }
+  },
+  "39-5011.00": {
+    "title_vi": "Thợ cắt tóc nam (barber)",
+    "description_vi": "Làm dịch vụ cắt tóc như cắt, tỉa, gội và tạo kiểu tóc, tỉa râu hoặc cạo râu.",
+    "tasks_vi": {
+      "8049": "Làm sạch và tiệt trùng kéo, lược, tông đơ và dụng cụ khác.",
+      "8050": "Cắt, tỉa tóc theo yêu cầu khách hoặc kiểu đang thịnh hành bằng tông đơ, lược, máy sấy và kéo.",
+      "8052": "Hỏi khách về dịch vụ và kiểu tóc mong muốn.",
+      "8053": "Dọn chỗ làm và quét sàn.",
+      "8051": "Choàng và cài khăn bảo vệ quanh vai khách."
+    }
+  },
+  "39-5012.00": {
+    "title_vi": "Thợ làm tóc và làm đẹp",
+    "description_vi": "Làm dịch vụ làm đẹp như cắt, nhuộm, tạo kiểu tóc, xoa bóp và chăm sóc da đầu. Có thể gội đầu, trang điểm, làm tóc giả, tẩy lông và chăm sóc móng, da.",
+    "tasks_vi": {
+      "635": "Giữ chỗ làm sạch sẽ và khử trùng dụng cụ như kéo, lược.",
+      "638": "Đặt lịch hẹn cho khách.",
+      "639": "Tẩy, nhuộm hoặc phủ màu tóc bằng dụng cụ bôi hoặc cọ.",
+      "636": "Cắt, tỉa và tạo dáng tóc hoặc tóc giả theo yêu cầu, chất tóc và khuôn mặt của khách, bằng tông đơ, kéo, máy tỉa và dao cạo.",
+      "641": "Gội, xả, dưỡng và sấy tóc, da đầu hoặc tóc giả bằng nước, dầu gội và dung dịch khác."
+    }
+  },
+  "39-5091.00": {
+    "title_vi": "Chuyên viên hoá trang sân khấu và biểu diễn",
+    "description_vi": "Hoá trang cho người biểu diễn để thể hiện thời đại, bối cảnh và tình huống của vai diễn.",
+    "tasks_vi": {
+      "24008": "Làm sạch dụng cụ như cọ trang điểm.",
+      "14798": "Lặp lại chính xác lớp hoá trang để tạo lại diện mạo nhân vật mỗi ngày.",
+      "14800": "Hoá trang để làm đẹp hoặc thay đổi diện mạo người tham gia các sản phẩm như phim.",
+      "14805": "Phân tích kịch bản, ghi lại các sự kiện ảnh hưởng tới diện mạo từng nhân vật để lên kế hoạch cho từng cảnh.",
+      "14801": "Chỉnh sửa hoặc giữ lớp hoá trang trong khi quay, diễn để bù cho thay đổi ánh sáng hoặc giữ tính liên tục."
+    }
+  },
+  "39-5092.00": {
+    "title_vi": "Thợ làm móng tay, móng chân",
+    "description_vi": "Làm sạch và tạo dáng móng tay, móng chân cho khách. Có thể sơn hoặc trang trí móng.",
+    "tasks_vi": {
+      "8748": "Làm sạch và khử trùng dụng cụ, chỗ làm.",
+      "8753": "Sơn lớp lót và sơn bóng hoặc sơn màu lên móng bằng cọ.",
+      "8758": "Quản lý vật tư và lưu hồ sơ dịch vụ của khách.",
+      "8752": "Tạo dáng và mài nhẵn đầu móng bằng kéo, dũa hoặc thanh nhám.",
+      "20769": "Làm mềm da quanh móng bằng nước và dầu, đẩy da bằng dụng cụ chuyên dụng và cắt bằng kéo hoặc kìm."
+    }
+  },
+  "39-5093.00": {
+    "title_vi": "Nhân viên gội đầu",
+    "description_vi": "Gội và xả tóc cho khách.",
+    "tasks_vi": {
+      "14818": "Xoa bóp, gội và dưỡng tóc, da đầu để làm sạch và loại bỏ dầu thừa.",
+      "14819": "Khuyên khách có bệnh da đầu mạn tính hoặc có thể lây đi khám bác sĩ.",
+      "14820": "Xử lý bệnh da đầu và rụng tóc bằng dung dịch, dầu gội chuyên dụng hoặc thiết bị như đèn hồng ngoại, máy rung."
+    }
+  },
+  "39-5094.00": {
+    "title_vi": "Chuyên viên chăm sóc da",
+    "description_vi": "Chăm sóc da mặt và cơ thể để làm đẹp. Gồm cả chuyên viên triệt lông bằng điện và bằng laser.",
+    "tasks_vi": {
+      "8069": "Tiệt trùng thiết bị và dọn chỗ làm.",
+      "8074": "Làm sạch da khách bằng nước, kem hoặc lotion.",
+      "8071": "Hướng dẫn khách cách làm sạch, chăm sóc da đúng và gợi ý quy trình dưỡng da.",
+      "8077": "Xác định sản phẩm hoặc màu nào giúp cải thiện chất lượng và vẻ ngoài của da khách.",
+      "8070": "Lưu hồ sơ nhu cầu, sở thích của khách và dịch vụ đã làm."
+    }
+  },
+  "39-6011.00": {
+    "title_vi": "Nhân viên khuân hành lý (bellman)",
+    "description_vi": "Vận chuyển hành lý cho khách ở nhà ga, bến xe, sân bay hoặc khách sạn và cơ sở tương tự.",
+    "tasks_vi": {
+      "2316": "Nhận và đánh dấu hành lý bằng thẻ nhận đồ.",
+      "2317": "Đón khách mới tới và dẫn lên phòng.",
+      "2324": "Đưa đón khách trong khuôn viên và khu vực lân cận, hoặc thu xếp phương tiện.",
+      "2323": "Giữ sảnh và lối vào sạch sẽ cho khách.",
+      "2314": "Chuyển hành lý, rương và kiện hàng tới và rời phòng, khu bốc dỡ, xe hoặc nhà ga, bằng tay hoặc xe đẩy."
+    }
+  },
+  "39-6012.00": {
+    "title_vi": "Nhân viên hỗ trợ khách (concierge)",
+    "description_vi": "Hỗ trợ khách ở khách sạn, chung cư hoặc toà văn phòng với các dịch vụ cá nhân. Có thể nhận lời nhắn; thu xếp hoặc tư vấn về đi lại, dịch vụ văn phòng hay giải trí; theo dõi yêu cầu dọn phòng và bảo trì của khách.",
+    "tasks_vi": {
+      "4529": "Cung cấp thông tin về địa phương như mua sắm, ăn uống, giải trí về đêm hoặc điểm vui chơi.",
+      "20259": "Đặt chỗ cho khách như bữa tối, spa, giờ chơi golf và lấy vé sự kiện đặc biệt.",
+      "20260": "Chỉ đường cho khách.",
+      "21203": "Đặt hoa cho khách.",
+      "4530": "Thu xếp chuyến tham quan và tour du lịch."
+    }
+  },
+  "39-7011.00": {
+    "title_vi": "Hướng dẫn viên tham quan",
+    "description_vi": "Dẫn cá nhân hoặc đoàn đi tham quan hoặc qua các điểm đáng chú ý như cơ sở công nghiệp, công trình công cộng và phòng trưng bày nghệ thuật.",
+    "tasks_vi": {
+      "4540": "Giới thiệu các điểm tham quan cho đoàn và trả lời câu hỏi.",
+      "4539": "Dẫn cá nhân hoặc đoàn trên du thuyền, tour tham quan hoặc qua các điểm đáng chú ý như nhà máy, công trình công cộng, phòng tranh.",
+      "4541": "Theo dõi hoạt động của khách để bảo đảm tuân thủ nội quy và quy tắc an toàn.",
+      "4538": "Tổ chức hoạt động giáo dục cho học sinh.",
+      "20135": "Tìm hiểu nhiều chủ đề như lịch sử địa điểm, điều kiện môi trường, kỹ năng và khả năng của khách để lên kế hoạch chuyến đi, hướng dẫn và thuyết minh phù hợp."
+    }
+  },
+  "39-7012.00": {
+    "title_vi": "Hướng dẫn viên du lịch đường dài",
+    "description_vi": "Lên kế hoạch, tổ chức và dẫn các chuyến du lịch, tour và thám hiểm đường dài cho cá nhân và đoàn.",
+    "tasks_vi": {
+      "13158": "Thu xếp chi tiết tour như chỗ ở, phương tiện, thiết bị và nhân viên y tế sẵn sàng.",
+      "13155": "Lên lịch trình tour dựa trên hiểu biết về tuyến đường và điểm đến.",
+      "13156": "Giải quyết vấn đề về lịch trình, dịch vụ hoặc chỗ ở.",
+      "13163": "Đáp ứng nhu cầu đặc biệt của khách trong đoàn.",
+      "13157": "Bán gói du lịch."
+    }
+  },
+  "39-9011.00": {
+    "title_vi": "Nhân viên trông trẻ",
+    "description_vi": "Chăm sóc trẻ em ở trường học, doanh nghiệp, gia đình và cơ sở giữ trẻ. Làm nhiều việc như thay quần áo, cho ăn, tắm và trông trẻ chơi.",
+    "tasks_vi": {
+      "18756": "Giữ môi trường chơi an toàn.",
+      "2336": "Quan sát và theo dõi trẻ chơi.",
+      "18757": "Trao đổi với cha mẹ hoặc người giám hộ về hoạt động, hành vi hằng ngày của trẻ và các vấn đề liên quan.",
+      "2331": "Hỗ trợ phát triển cảm xúc và xã hội của trẻ, khuyến khích trẻ hiểu người khác và có hình ảnh tích cực về bản thân.",
+      "2332": "Chăm sóc trẻ trong cơ sở tập trung như nhà nhóm, nhà trẻ, doanh nghiệp tư nhân hoặc trường cho trẻ khuyết tật."
+    }
+  },
+  "39-9011.01": {
+    "title_vi": "Bảo mẫu tại gia",
+    "description_vi": "Chăm sóc trẻ trong gia đình và hỗ trợ cha mẹ đáp ứng nhu cầu thể chất, cảm xúc, trí tuệ và xã hội của trẻ. Có thể lên thực đơn và nấu ăn, giặt giũ, tổ chức hoạt động vui chơi và đi chơi, dạy kỷ luật, kích thích trí tuệ, phát triển ngôn ngữ và đưa đón.",
+    "tasks_vi": {
+      "2355": "Dạy trẻ cách giữ an toàn, như nhờ người lớn khi qua đường và tránh xa đồ vật nguy hiểm.",
+      "2368": "Loại bỏ mối nguy và đặt giới hạn, quy tắc phù hợp để tạo môi trường an toàn cho trẻ.",
+      "2351": "Sơ cứu hoặc hồi sức tim phổi khi cần.",
+      "2365": "Hướng dẫn và giúp trẻ hình thành thói quen sức khoẻ và cá nhân như ăn, nghỉ và đi vệ sinh.",
+      "2352": "Điều chỉnh giờ nghỉ và giấc ngủ trưa của trẻ."
+    }
+  },
+  "39-9031.00": {
+    "title_vi": "Huấn luyện viên thể hình và hướng dẫn viên lớp tập nhóm",
+    "description_vi": "Hướng dẫn hoặc huấn luyện nhóm, cá nhân tập luyện để nâng cao thể lực. Làm mẫu kỹ thuật và tư thế, quan sát người tập và giải thích cách sửa để cải thiện kỹ năng. Xây dựng và áp dụng chương trình tập riêng cho từng người.",
+    "tasks_vi": {
+      "4559": "Quan sát người tập và chỉ ra cách sửa để cải thiện kỹ năng.",
+      "4557": "Đưa ra phương án thay thế trong buổi tập để phù hợp các mức thể lực khác nhau.",
+      "4565": "Theo dõi tiến bộ của người tập và điều chỉnh chương trình khi cần.",
+      "4558": "Lên bài tập, chọn nhạc và chọn động tác cho từng nhóm cơ theo khả năng và giới hạn của người tập.",
+      "4566": "Đánh giá khả năng, nhu cầu và thể trạng từng người, xây dựng chương trình tập đáp ứng yêu cầu riêng."
+    }
+  },
+  "39-9032.00": {
+    "title_vi": "Nhân viên tổ chức hoạt động giải trí",
+    "description_vi": "Tổ chức hoạt động giải trí cho nhóm ở cơ quan công, tư, tổ chức tình nguyện hoặc cơ sở vui chơi. Tổ chức và quảng bá các hoạt động như thủ công mỹ nghệ, thể thao, trò chơi, âm nhạc, kịch, sinh hoạt tập thể, cắm trại và sở thích, có tính tới nhu cầu và mối quan tâm của từng người.",
+    "tasks_vi": {
+      "2380": "Thực thi nội quy của cơ sở để giữ kỷ luật và an toàn.",
+      "2381": "Tổ chức, dẫn dắt và tạo hứng thú cho các hoạt động như mỹ thuật, thủ công, thể thao, trò chơi, cắm trại và sở thích.",
+      "21010": "Đánh giá nhu cầu và mối quan tâm của cá nhân, nhóm và lên kế hoạch hoạt động phù hợp với thiết bị, cơ sở sẵn có.",
+      "2382": "Quản lý hoạt động hằng ngày của cơ sở vui chơi.",
+      "2383": "Sơ cứu theo quy trình và gọi nhân viên cấp cứu khi cần."
+    }
+  },
+  "39-9041.00": {
+    "title_vi": "Cán bộ quản lý ký túc xá",
+    "description_vi": "Điều phối hoạt động ở ký túc xá trường trung học, đại học, nhà nhóm hoặc cơ sở tương tự. Đặt mua vật tư và xác định nhu cầu bảo trì, sửa chữa, đồ đạc. Có thể lưu sổ sách và xếp phòng. Có thể giúp người ở giải quyết vấn đề hoặc giới thiệu tới dịch vụ tư vấn.",
+    "tasks_vi": {
+      "6974": "Trao đổi với nhân viên khác để giải quyết vấn đề của từng sinh viên.",
+      "6977": "Quan sát sinh viên để phát hiện và báo hành vi bất thường.",
+      "20138": "Giám sát, đào tạo và đánh giá nhân viên ký túc xá, gồm trợ lý, sinh viên làm thêm và nhân viên sinh viên khác.",
+      "6971": "Sơ cứu khẩn cấp và gọi hỗ trợ y tế khi cần.",
+      "6976": "Đi kiểm tra định kỳ để bảo đảm người ở và khu vực an toàn."
+    }
+  }
+}

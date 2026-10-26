@@ -1,0 +1,20 @@
+{
+  "group": "15",
+  "keep": [
+    {
+      "code": "15-2041.00",
+      "name_vi": "Chuyên viên thống kê và toán ứng dụng",
+      "absorbs": ["15-2041.01", "15-2021.00", "15-2051.02", "15-2099.01", "43-9111.00"],
+      "merge_reason": "Cùng trải nghiệm dựng mô hình và phân tích số liệu, chỉ khác lĩnh vực áp dụng (y sinh, lâm sàng, toán thuần). Ở Việt Nam, vị trí nhà toán học thuần gần như chỉ có ở viện và trường. Trợ lý thống kê là cấp khởi đầu."
+    },
+    {
+      "code": "15-2011.00",
+      "name_vi": "Chuyên viên định phí bảo hiểm (actuary)"
+    },
+    {
+      "code": "15-2031.00",
+      "name_vi": "Chuyên viên nghiên cứu vận trù"
+    }
+  ],
+  "remove": []
+}

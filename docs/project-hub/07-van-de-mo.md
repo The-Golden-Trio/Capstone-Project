@@ -1,5 +1,6 @@
 # 07 · Vấn đề mở, cần chốt
 
+> Game design 21/10: đóng A5 (D-105, D-110); thêm §H. 22/10: điểm và mở khoá (D-114 đến D-119); sửa H2, thêm H9–H12. 23/10: keyword từ ESCO (D-120), viết lại H9; nghề cấp cao (D-121), thêm H13; luật nhảy nghề thêm kênh Sim (D-122), bỏ hồ sơ nền ẩn (D-124); nối nghề sang ESCO linh hoạt hơn (D-123); thêm H14 (chờ chuyên gia).
 > Đã chuyển sang [02](02-quyet-dinh.md) ngày 23/9: Get-to-know-me tuỳ chọn (D-29), học cả hard lẫn soft skill (D-32).
 > Email cô 1/10: thêm B23 (design constraint, đã xử lý) và B24 (tiến độ 11 mục).
 > Cô trả lời mail 20/10: thêm B28 (quá trình tạo dữ liệu đánh giá), B29 (bảng so sánh technology solution); D-104, D-105.
@@ -18,7 +19,7 @@
 |---|---|---|---|---|
 | A3 | ✅ 30/9 | **Tên sản phẩm: JobQuest hay Vào Nghề?** **JobQuest** (D-74) | Mọi file nộp cô: JobQuest. App: "Vào Nghề" → cần đổi `index.html` và màn đăng nhập | Phúc |
 | A4 | ⚪ để sau | **Bản đồ: giữ hệ sao và đường nối, hay bỏ?** | Code: 22 hành tinh, 64 đường nối. Nam 18/9: thiên hà → hệ sao → carousel hành tinh (tham khảo Plants vs Zombies). Nam 20/9: bỏ hệ sao và đường nối, toạ độ tính từ skill | Cả nhóm |
-| A5 | ⚪ để sau | **Điểm tính chung, hay tách domain point / skill point?** | Code: một loại XP theo skill. Đề xuất 18/9 và 20/9: tách theo domain/career, thêm achievement | Cả nhóm |
+| A5 | ✅ 21/10 | **Điểm tính chung, hay tách domain point / skill point?** Không dùng XP chung: soft skill 7 nhóm có bậc và keyword kỹ năng nghề là điều kiện mở cấp (D-105); có thành tựu và thống kê (D-110) | Code: một loại XP theo skill. Đề xuất 18/9 và 20/9: tách theo domain/career, thêm achievement | Cả nhóm |
 | A6 | ✅ 1/10 | **BR-01 và BR-03 nghe như mâu thuẫn.** Viết lại BR-03: năng lực trùng được tính vào các cấp của nghề kề (D-38) | BR-01: cấp đầu mọi nghề mở. BR-03: vào nghề kề cần năng lực trùng. Nếu ý là "BR-03 cho vào thẳng cấp cao hơn của nghề kề" thì phải ghi rõ trong báo cáo | Người viết Ch.4 |
 | A7 | ✅ 1/10 | **Đánh giá nghề sau mỗi task hay sau cả nghề?** **Sau cả nghề** (D-27). Chấm sao sau mỗi màn trong code, nếu giữ, là phản hồi về chất lượng scenario, không phải đánh giá nghề | Minutes 27/8: sau mỗi task. Deck 7/9 và BR-04: sau khi xong cả nghề, 5 tiêu chí. Code: chấm sao độ thực tế sau mỗi màn | Đã nghiêng về "sau cả nghề", cần xác nhận |
 | A8 | ✅ 29/9 | **Domain expert có dùng hệ thống không?** **Có (D-16)**, thay D-15. Còn phải đổi báo cáo và `03` §3 cho khớp (T2609.2, T2609.11). (Q1 ngày 26/9) | Báo cáo 18/9 (§4.2.1, UC-07 viết seed và rubric, UC-08 duyệt tình huống): domain expert thao tác trên hệ thống. Midweek 23/9 (D-15): chỉ tư vấn cho content admin. **26/9:** danh sách vai trò cuối để DE "viết nội dung" còn CA chỉ "trình bày trên màn hình", ngược D-15 (D-16 💡). Chưa rõ DE có màn hình soạn riêng không. Chặn T2609.2, T2609.11, T2609.13–16. Cần đổi actor các UC này, sửa `03` §3 và báo cáo Ch.4 | Phúc, cô (liên quan T2009.4) |
@@ -118,3 +119,25 @@
 | G5 | ✅ 1/10 | **Ngưỡng giữ fact ≥ 95%** cho RP-1. Giữ, ghi *"proposed target"* | D-48; block-resolutions ghi là "proposed target". Cũng là NFR mới cho DC-06 (T2609.10) |
 | G6 | ✅ 1/10 | Câu hỏi trong task hỏi "bạn làm gì?" hay "cách nào hiệu quả nhất?" **"Bạn làm gì?"** (D-84) | D-84 💡; báo cáo cần nói rõ |
 | G7 | ✅ 1/10 để sau (D-69) | Các mảng chưa quyết: **module học thuật/tuyển sinh** · **luồng dữ liệu thị trường lao động và lương** · chỉ số ẩn trên dashboard và **roadmap builder** · chi tiết chơi lại, blind box, đường bí mật | Handoff 29/9 §8. Chưa có trong báo cáo |
+
+## H. Game design còn mở (21/10)
+
+Chi tiết từng mục ở [đề xuất game design](../../research/reports/Hồ%20sơ%20JobQuest%20cơ%20chế%20game.md), mục "Cần chốt hoặc còn mở" của mỗi khối.
+
+| # | Ưu tiên | Việc | Đề xuất | Ai |
+|---|---|---|---|---|
+| H1 | 🟠 | Duyệt bảng gán mã O\*NET cho 22 nghề và bảng nối 7 nhóm soft skill với O\*NET (B1, B2) | Bảng trong `occupation-data/generated/onet_profiles.md` và `SOFT_GROUPS` của script | Cả nhóm |
+| H2 | 🟠 | Duyệt đầu vào, đầu ra keyword của các cấp (B4) | Bản nháp tự động đã có cho cả 221 nghề (D-120, `occupation-data/generated/keyword_map.json`); duyệt kỹ 3 nghề pilot trước | Cả nhóm, rồi chuyên gia nghề duyệt |
+| H3 | 🟠 | Thử 18 thẻ Get to know me trên 30–50 người; 2–3 học sinh 14–16 tuổi đọc lời thẻ, gồm 6 thẻ nhóm ngành mới (D-125), và câu mục tiêu (C2, C3) | So vạch "tự kể" với "sau khi thử"; lệch nhiều thì lên 24 thẻ | Cả nhóm |
+| H4 | 🟠 | Danh sách từ dò dấu hiệu bất ổn; đường dây cho người chơi từ 16 tuổi, vì Tổng đài 111 dành cho trẻ em (C4, C5) | Danh sách ngắn, có không dấu và tiếng lóng | Cả nhóm |
+| H5 | ⚪ để sau | 35 tên bậc soft skill; danh sách khoảng 100 thành tựu (D2, D3) | Bậc 1 không là lời chê | Cả nhóm |
+| H6 | 🟠 | Danh sách nhóm ngành của game; có tầng "ngành" giữa nhóm ngành và nghề không (D4) | Bản thử dùng nhóm ngành › nghề › cấp | Cả nhóm |
+| H7 | ⚪ để sau | Tham số gợi ý nghề: sức nặng của tự kể (2), ngưỡng S, ngưỡng hồ sơ phẳng, ngưỡng Sim ≥ 1,2 và trùng keyword ≥ 30% (E1–E3) | Chỉnh bằng mô phỏng và phép thử với học sinh | Cả nhóm |
+| H8 | ⚪ để sau | Duyệt nội dung 12 cung; mức buff 12% (F1, F2) | [Hoàng đạo 12 cung](../../research/reports/Hoàng%20đạo%2012%20cung.md) | Cả nhóm |
+| H9 | 🟠 | **Chờ nhóm và chuyên gia nghề duyệt** (Claude đã tự rà một lượt 23/10: đổi 4 dòng nối, sửa 35 tên dịch sai nghĩa; reviewer đối chiếu kỹ khoảng 450 tên với mô tả ESCO): bảng nối 221 nghề → ESCO (65 dòng sửa tay, 1 dòng mượn, 3 nghề ghép 2 nghề ESCO), hai danh sách keyword chọn tay (Bác sĩ, Thợ sửa xe máy), tên tiếng Việt của 1.414 keyword và 279 nhóm (giữ cả tên tiếng Anh). Thu ngân → Nhân viên bán hàng vẫn chỉ vào cấp đầu, xem lại ngưỡng 50% và 30% khi chơi thử (H10) | `research/research_notes/Bản đồ keyword/` (nghe_esco.csv, keyword_chon_tay.csv, ten_keyword_vi.csv); bảng ở `occupation-data/generated/keyword_map.md` | Cả nhóm, rồi chuyên gia nghề |
+| H10 | ⚪ để sau | Hệ số phạt 0,25 / 0,35 / 0,5; mức vào cấp 60%; độ phủ 50% và 30% cho nghề rất giống; số mũ k^1,4; tín chỉ quy đổi 0,5 / 0,25 | Chỉnh khi chơi thử | Cả nhóm |
+| H11 | 🟠 | Code đọc band liền nhau (`bandsOf`); thêm `band_equivalent` vào schema; nối thang cấp 199 nghề vào hồ sơ nghề chuẩn (`occupation_profiles.json`) | Dữ liệu đã đánh số liền | Nhóm code |
+| H12 | 🟠 | Sửa tên chức danh theo bậc nghề nghiệp viên chức mới (Luật Viên chức 2025, NĐ 232/2026) và văn bản thay NĐ 31/2015 | Đọc văn bản gốc | Cả nhóm |
+| H13 | ⚪ tuần sau | **Sau khi chốt với cô** ngoại lệ BR-01 (D-121): đưa vào báo cáo bản nộp kế tiếp (bản 16/10 đã nộp, không sửa theo quy ước của `reports/`). Chép BR-01, FR-02 và user story tương ứng từ `assets/jobquest-requirements-report.md` (đã sửa 23/10) sang `report.md` của bản mới; sửa đoạn "BR-01 and BR-03 are complementary" cho khớp | `docs/project-hub/assets/jobquest-requirements-report.md` | Phúc |
+| H14 | 🟠 | **Chờ chuyên gia nghề duyệt** phần dữ liệu nghề của game design 23/10: (1) bảng nối 221 nghề → ESCO và 2 danh sách keyword chọn tay; (2) khoảng 1.250/1.693 tên tiếng Việt chưa đối chiếu kỹ với mô tả ESCO; (3) 12 nghề cấp cao, nghề chuyển ngang, tiêu chí "cấp đầu đòi từ 2 năm" và danh sách nghề đi trước (nhất là 6 nghề quản lý ngoài IT). Nhóm tự duyệt trước được phần IT và tên tiếng Việt dễ hiểu | `research/research_notes/Bản đồ keyword/`, `research/research_notes/Thang cấp nghề/nghe_di_truoc.csv`, `occupation-data/generated/keyword_map.md` | Nhóm, rồi chuyên gia nghề |
+| H15 | 🟡 | **Bổ sung dữ liệu hồ sơ nghề còn thiếu** (D-126): (1) việc hằng ngày theo từng cấp cho 199 nghề ngoài IT (hiện là 5 việc chung của O\*NET) và cho nghề IT còn thiếu cấp (8 nghề IT chỉ có việc chung; Mobile, QA, BA, Helpdesk… thiếu vài cấp); (2) lương của UI/UX, DevOps, Cloud, Mạng (bảng ITviec không có dòng); (3) cân nhắc thêm thang viên chức công nghệ thông tin, an toàn thông tin cho các nghề IT khác ngoài Back-end; (4) lương cơ sở 2.530.000 đ (Nghị định 161/2026) cần kiểm lại vì có nguồn ghi 2.340.000 đ | `occupation-data/generated/occupation_profiles.md`, `datasets/vn/it_salary_by_years.json`, `datasets/vn/public_pay.json` | Nhóm |

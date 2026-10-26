@@ -1,0 +1,1374 @@
+{
+ "_meta": {
+  "purpose": "Lương tham khảo cho nghề ngoài IT không có đủ 20 tin có lương trong VietJobs và không thuộc thang lương nhà nước ở public_pay.json.",
+  "collected": "2026-10-21, bởi 4 agent tìm kiếm; duyệt tay từng dòng.",
+  "rule": "Chỉ nhận số mà người tìm đã mở trang và đọc được. Số trước năm 2022 không dùng. Đơn vị VND/tháng, lương gộp nếu nguồn không ghi.",
+  "stat": "range: khoảng low–high; average: chỉ có số trung bình (ghi ở median, xem mid_kind); by_experience: có số theo năm kinh nghiệm hoặc cấp bậc.",
+  "kind": "survey: khảo sát có mẫu; official_scale: thang lương hoặc đơn giá nhà nước; statistics: số thống kê; career_guide: bài hướng nghiệp của trang tuyển dụng, thường không nêu nguồn số; job_ads: tổng hợp từ tin tuyển dụng; news: báo dẫn lời người có thẩm quyền; modelled: số mô hình của WageIndicator, nhiều nghề khác nhau có cùng số.",
+  "quality": "tot: khảo sát có mẫu, thang lương nhà nước, thống kê đúng nghề; vua: bài hướng nghiệp, từ 3 tin tuyển dụng; yeu: số mô hình, 1–2 tin, số đại diện cho ngành rộng hơn, bài không ghi ngày."
+ },
+ "roles": {
+  "ONET-11-9081.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 18000000,
+    "high": 100000000
+   },
+   "by_experience": "trưởng bộ phận khách sạn 4 sao 18–28tr; tổng quản lý 40–100tr",
+   "source": "CareerLink, \"Mức lương ngành Khách sạn\"",
+   "url": "https://www.careerlink.vn/cam-nang-luong/muc-luong-nganh-khach-san/",
+   "date": "2026-03-18",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Chênh lệch lớn theo hạng sao và chuỗi."
+  },
+  "ONET-11-9111.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 9678588,
+    "high": 25428751
+   },
+   "by_experience": "khởi điểm 9,7–21,2tr; sau 5 năm 14,7–27,3tr",
+   "source": "WageIndicator Việt Nam, \"Quản lý các dịch vụ sức khỏe\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/quan-ly-cac-dich-vu-suc-khoe/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình."
+  },
+  "ONET-11-9013.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 9678588,
+    "high": 25428751
+   },
+   "by_experience": "khởi điểm 9,7–21,2tr; sau 5 năm 14,7–27,3tr",
+   "source": "WageIndicator Việt Nam, \"Quản lý sản xuất trong nông nghiệp, lâm nghiệp\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/quan-ly-san-xuat-trong-nong-nghiep-lam-nghiep/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình."
+  },
+  "ONET-13-1031.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 7000000,
+    "high": 15000000
+   },
+   "by_experience": "giám định tổn thất 7–12tr; giám định bồi thường 10–15tr",
+   "source": "VietnamWorks HR Insider, \"Ngành bảo hiểm\"",
+   "url": "https://www.vietnamworks.com/hrinsider/nganh-bao-hiem.html",
+   "date": "2025-06-25",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-13-2099.01": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 7038854,
+    "high": 19986059
+   },
+   "by_experience": "khởi điểm 7,0–12,3tr; sau 5 năm 10,6–21,4tr",
+   "source": "WageIndicator Việt Nam, \"Phân tích viên tài chính\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/phan-tich-vien-tai-chinh/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số của phân tích tài chính nói chung, không riêng quant."
+  },
+  "ONET-15-2011.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 15000000,
+    "high": 20000000
+   },
+   "by_experience": "chuyên viên định phí 15–20tr",
+   "source": "VietnamWorks HR Insider, \"Ngành bảo hiểm\"",
+   "url": "https://www.vietnamworks.com/hrinsider/nganh-bao-hiem.html",
+   "date": "2025-06-25",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Actuary cấp cao ở TP.HCM có thể trên 70tr theo một công ty săn đầu người."
+  },
+  "ONET-15-2031.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 8779761,
+    "high": 21139713
+   },
+   "by_experience": "khởi điểm 8,8–14,8tr; sau 5 năm 12,9–26,6tr",
+   "source": "WageIndicator Việt Nam, \"Nhà toán học, nhà thống kê\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/nha-toan-hoc-nha-lap-thong-ke-va-nha-thong-ke/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số đại diện, không riêng vận trù."
+  },
+  "ONET-19-3011.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 8000000,
+    "high": 30000000
+   },
+   "by_experience": "mới ra trường 8–12tr; 2–5 năm 15–25tr; quản lý, chuyên gia từ 30tr",
+   "source": "VietnamWorks HR Insider, \"Học kinh tế ra làm gì\"",
+   "url": "https://www.vietnamworks.com/hrinsider/tim-hieu-ve-nganh-kinh-te-va-trien-vong-nghe-nghiep-trong-tuong-lai.html",
+   "date": "2025-03-17",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Số của người học kinh tế nói chung."
+  },
+  "ONET-19-3041.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 7538090,
+    "high": 25971828
+   },
+   "by_experience": "khởi điểm 7,5–15,3tr; sau 5 năm 11,4–28,5tr",
+   "source": "WageIndicator Việt Nam, \"Chuyên viên xã hội học, nhà nhân loại học\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/chuyen-vien-xa-hoi-hoc-nha-nhan-loai-hoc-va-lien-quan/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình."
+  },
+  "ONET-19-3033.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 7000000,
+    "high": 50000000
+   },
+   "by_experience": "mới ra trường 7–10tr; 3–5 năm 12–20tr; chuyên gia từ 5 năm 25–50tr",
+   "source": "CareerLink, \"Ngành Tâm lý học là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/nganh-tam-ly-hoc-la-gi-ra-truong-lam-gi",
+   "date": "2026-02-05",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-19-3051.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 10000000,
+    "median": 25400000,
+    "high": 40000000
+   },
+   "mid_kind": "trung bình 7 tin",
+   "source": "Joboko, tin tuyển \"kiến trúc sư quy hoạch\"",
+   "url": "https://vn.joboko.com/tim-viec-lam-kien-truc-su-quy-hoach",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "7 tin có ghi lương."
+  },
+  "ONET-21-1014.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 7000000,
+    "high": 20000000
+   },
+   "by_experience": "0–2 năm 7–10tr; có chứng chỉ, 3–5 năm 12–20tr",
+   "source": "CareerLink, \"Ngành Tâm lý học là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/nganh-tam-ly-hoc-la-gi-ra-truong-lam-gi",
+   "date": "2026-02-05",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-21-1021.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 6000000,
+    "high": 20000000
+   },
+   "by_experience": "cơ quan nhà nước mới vào 6–8tr; tổ chức phi chính phủ, dự án 9–15tr; quản lý dự án trên 20tr",
+   "source": "CareerLink, \"Ngành công tác xã hội là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/nganh-cong-tac-xa-hoi-la-gi",
+   "date": "2025-08-20",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-21-1094.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 5501219,
+    "high": 8710048
+   },
+   "by_experience": "khởi điểm 5,5–10,8tr; sau 5 năm 8,2–19,0tr",
+   "source": "WageIndicator Việt Nam, \"Nhân viên sức khỏe cộng đồng\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/nhan-vien-suc-khoe-cong-dong/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Nhân viên y tế thôn bản chỉ nhận phụ cấp, không có lương."
+  },
+  "ONET-23-1011.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 8000000,
+    "high": 200000000
+   },
+   "by_experience": "trợ lý, mới vào 8–12tr; luật sư 1–3 năm 15–25tr; 3–7 năm 30–50tr; luật sư nội bộ cấp cao 40–80tr; luật sư thành viên từ 10 năm 80–200tr",
+   "source": "CareerLink, \"Mức lương ngành Luật\"",
+   "url": "https://www.careerlink.vn/cam-nang-luong/muc-luong-nganh-luat/",
+   "date": "2026-03-18",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-23-1023.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 5920200,
+    "median": 11132000,
+    "high": 20240000
+   },
+   "mid_kind": "bậc đầu thẩm phán cấp tỉnh",
+   "by_experience": "tòa cấp huyện (A1) 5,9–12,6tr; cấp tỉnh (A2.1) 11,1–17,2tr; tối cao (A3.1) 15,7–20,2tr; chưa gồm phụ cấp",
+   "source": "Bảng lương cán bộ, công chức 2026 (LuatVietnam) × lương cơ sở 2,53tr",
+   "url": "https://luatvietnam.vn/can-bo-cong-chuc/bang-luong-can-bo-cong-chuc-vien-chuc-nam-2026-566-107608-article.html",
+   "date": "2026",
+   "kind": "official_scale",
+   "quality": "vua",
+   "note": "Xếp ngạch theo cấp tòa lấy từ nguồn thứ cấp."
+  },
+  "ONET-25-4022.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 4705800,
+    "median": 5920200,
+    "high": 19101500
+   },
+   "mid_kind": "bậc khởi điểm cử nhân",
+   "by_experience": "hạng IV (B) 4,7–10,3tr; hạng III (A1) 5,9–12,6tr; hạng II (A2.2) 10,1–16,1tr; hạng I (A3.2) 14,6–19,1tr; chưa gồm phụ cấp",
+   "source": "Thông tư 02/2022/TT-BVHTTDL × lương cơ sở 2,53tr",
+   "url": "https://luatvietnam.vn/can-bo-cong-chuc/bang-luong-can-bo-cong-chuc-vien-chuc-nam-2026-566-107608-article.html",
+   "date": "2026",
+   "kind": "official_scale",
+   "quality": "tot",
+   "note": "Thủ thư ở thư viện công lập."
+  },
+  "ONET-25-4012.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 7538090,
+    "high": 25971828
+   },
+   "by_experience": "khởi điểm 7,5–15,3tr; sau 5 năm 11,4–28,5tr",
+   "source": "WageIndicator Việt Nam, \"Người lưu trữ và bảo tàng\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/nguoi-luu-tru-va-bao-tang/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình."
+  },
+  "ONET-25-9031.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 10000000,
+    "high": 18000000
+   },
+   "source": "Tin tuyển \"Curriculum Developer\" (IIG Việt Nam)",
+   "url": "https://vieclam.tuoitre.vn/en/search-job/curriculum-developer.35C1DB2E.html",
+   "date": "2024-11-26",
+   "kind": "job_ads",
+   "quality": "yeu",
+   "note": "Chỉ 1–2 tin."
+  },
+  "ONET-41-3021.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 5000000,
+    "high": 60000000
+   },
+   "by_experience": "dưới 1 năm 5–10tr; 1–3 năm 10–25tr; 3–5 năm 20–40tr; trưởng nhóm từ 5 năm 30–60tr",
+   "source": "CareerLink, \"Chuyên viên tư vấn bảo hiểm là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-luong/?p=3517",
+   "date": "2026-04-03",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Thu nhập chủ yếu từ hoa hồng."
+  },
+  "ONET-41-3031.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 4000000,
+    "median": 17500000,
+    "high": 100000000
+   },
+   "mid_kind": "lương cứng cộng hoa hồng",
+   "by_experience": "lương cứng 4–8tr; kèm hoa hồng thường 15–20tr; trên 10 năm 50–100tr",
+   "source": "JobOKO, \"Lương của nhân viên môi giới chứng khoán\"",
+   "url": "https://vn.joboko.com/blog/luong-cua-nhan-vien-moi-gioi-chung-khoan-co-cao-khong-nwi1853",
+   "kind": "career_guide",
+   "quality": "yeu",
+   "note": "Bài không ghi ngày."
+  },
+  "ONET-43-3071.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 8500000,
+    "median": 11300000,
+    "high": 30600000
+   },
+   "mid_kind": "trung bình",
+   "source": "VietnamWorks HR Insider, \"Lương nhân viên ngân hàng\"",
+   "url": "https://www.vietnamworks.com/hrinsider/luong-nhan-vien-ngan-hang.html",
+   "date": "2025-05-30",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-17-2072.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 7000000,
+    "high": 25000000
+   },
+   "by_experience": "thực tập, mới vào 7–10tr; 2–4 năm 15–25tr",
+   "source": "CareerLink, \"Ngành điện tử viễn thông\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/nganh-dien-tu-vien-thong-la-gi",
+   "date": "2026-04-10",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-17-2141.02": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 12000000,
+    "high": 35000000
+   },
+   "by_experience": "thiết kế 15–35tr; kiểm thử 15–30tr; sản xuất 12–25tr; ECU 18–40tr; dịch vụ 12–22tr",
+   "source": "CareerLink, \"Kỹ sư ô tô là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/?p=24132",
+   "date": "2026-06-12",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-17-2199.05": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 8000000,
+    "high": 30000000
+   },
+   "by_experience": "mới ra trường 8–12tr; 3–5 năm 15–25tr; quản lý trên 30tr",
+   "source": "CareerLink, \"Ngành cơ điện tử\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/nganh-co-dien-tu-la-gi",
+   "date": "2025-08-29",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-17-2041.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 10000000,
+    "high": 40000000
+   },
+   "by_experience": "mới ra trường 10–15tr; 3–5 năm 20–30tr; cấp cao trên 40tr",
+   "source": "CareerLink, \"Kỹ sư hóa học là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/ky-su-hoa-hoc-la-gi",
+   "date": "2025-04-03",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-17-2151.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 10000000,
+    "high": 40000000
+   },
+   "by_experience": "mới ra trường 10–18tr; 3–5 năm 25–40tr chưa gồm phụ cấp",
+   "source": "CareerLink, \"Kỹ sư dầu khí là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/ky-su-dau-khi-la-gi",
+   "date": "2025-07-01",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Chỉ dầu khí, chưa có số cho kỹ sư mỏ."
+  },
+  "ONET-17-2031.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 14000000
+   },
+   "mid_kind": "trung bình kỹ sư nói chung",
+   "source": "CareerLink, \"Nhu cầu tuyển dụng kỹ sư hiện nay\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/nhu-cau-tuyen-dung-ky-su-hien-nay",
+   "date": "2026-05-13",
+   "kind": "career_guide",
+   "quality": "yeu",
+   "note": "Số trung bình của mọi kỹ sư, không riêng y sinh."
+  },
+  "ONET-19-1012.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 12000000,
+    "median": 16700000,
+    "high": 17200000
+   },
+   "mid_kind": "trung bình",
+   "by_experience": "nhân viên QC 7,5–10,4tr; QA 7,9–10,6tr; chuyên viên R&D 12–17,2tr; giám sát QA nhà máy 13,6–18,7tr",
+   "source": "CareerViet, \"Công nghệ thực phẩm - dinh dưỡng\" (dẫn VietnamSalary)",
+   "url": "https://careerviet.vn/viec-lam/cong-nghe-thuc-pham-dinh-duong-c70-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-19-1029.04": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 7000000,
+    "high": 40000000
+   },
+   "by_experience": "mới ra trường 7–10tr; 2–3 năm 12–18tr; trưởng phòng thí nghiệm 25–40tr",
+   "source": "CareerLink, \"Học công nghệ sinh học ra làm gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/hoc-cong-nghe-sinh-hoc-ra-lam-gi",
+   "date": "2025-09-08",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-19-1031.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 5920200,
+    "high": 12599400
+   },
+   "by_experience": "ngạch A1 hệ số 2,34–4,98, chưa gồm phụ cấp",
+   "source": "Bảng lương viên chức 2026 (LuatVietnam) × lương cơ sở 2,53tr",
+   "url": "https://luatvietnam.vn/can-bo-cong-chuc/bang-luong-can-bo-cong-chuc-vien-chuc-nam-2026-566-107608-article.html",
+   "date": "2026",
+   "kind": "official_scale",
+   "quality": "yeu",
+   "note": "Xếp vào ngạch A1 là suy luận."
+  },
+  "ONET-19-1041.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 10000000,
+    "high": 20000000
+   },
+   "by_experience": "mới vào viện, bệnh viện 10–12tr; 2–3 năm nghiên cứu 12–18tr",
+   "source": "CareerLink, \"Học công nghệ sinh học ra làm gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/hoc-cong-nghe-sinh-hoc-ra-lam-gi",
+   "date": "2025-09-08",
+   "kind": "career_guide",
+   "quality": "yeu",
+   "note": "Số đại diện từ ngành công nghệ sinh học."
+  },
+  "ONET-19-2012.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 8779761,
+    "high": 21139713
+   },
+   "by_experience": "khởi điểm 8,8–14,8tr; sau 5 năm 12,9–26,6tr",
+   "source": "WageIndicator Việt Nam, \"Nhà vật lý và nhà thiên văn\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/nha-vat-ly-va-nha-thien-van/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình."
+  },
+  "ONET-19-2042.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 10000000,
+    "high": 20000000
+   },
+   "source": "Tin tuyển kỹ sư địa chất, Joboko",
+   "url": "https://vn.joboko.com/viec-lam-ky-su-dia-chat-xvi6561971",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "yeu",
+   "note": "1 tin."
+  },
+  "ONET-29-1291.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 5500000,
+    "high": 50000000
+   },
+   "by_experience": "công lập mới ra trường khoảng 5,5tr cộng phụ cấp 40–70%; 5–10 năm 10–18tr; tư nhân 3–5 năm 15–25tr; có tiếng 30–50tr",
+   "source": "CareerLink, \"Có nên học ngành Y học cổ truyền\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/co-nen-hoc-nganh-y-hoc-co-truyen",
+   "date": "2026-10-02",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-29-1131.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 7000000,
+    "high": 30000000
+   },
+   "by_experience": "0–2 năm 7–12tr; 3–5 năm 12–20tr; trên 5 năm hoặc quản lý 20–30tr",
+   "source": "CareerLink, \"Ngành thú y là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/nganh-thu-y-la-gi-ra-truong-lam-gi",
+   "date": "2026-02-05",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-29-2043.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 6000000,
+    "high": 15000000
+   },
+   "by_experience": "mới ra trường 6–10tr; 3–5 năm 10–15tr, chưa gồm phụ cấp trực",
+   "source": "CareerLink, \"Mức lương ngành Y\"",
+   "url": "https://www.careerlink.vn/cam-nang-luong/muc-luong-nganh-y/",
+   "date": "2026-03-18",
+   "kind": "career_guide",
+   "quality": "yeu",
+   "note": "Số của điều dưỡng, dùng làm đại diện."
+  },
+  "ONET-29-2072.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 6000000,
+    "high": 12000000
+   },
+   "by_experience": "Hà Nội, TP.HCM tới 15tr; Đà Nẵng, Cần Thơ 6–10tr",
+   "source": "CareerViet, \"Thư ký y khoa\"",
+   "url": "https://careerviet.vn/viec-lam/thu-ky-y-khoa-k-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-31-1131.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 6000000,
+    "high": 8000000
+   },
+   "source": "CareerLink, \"Hộ lý là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/ho-ly-la-gi",
+   "date": "2025-08-25",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Bệnh viện công."
+  },
+  "ONET-31-1121.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 6000000,
+    "high": 15000000
+   },
+   "source": "CareerLink, \"Nghề chăm sóc người cao tuổi\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/dinh-huong-nghe-nghiep/nghe-cham-soc-nguoi-cao-tuoi",
+   "date": "2026-07-07",
+   "kind": "career_guide",
+   "quality": "yeu",
+   "note": "Bài không có số riêng cho người chăm sóc; khoảng này ghép từ số hộ lý và điều dưỡng."
+  },
+  "ONET-31-9092.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 5501219,
+    "high": 19012472
+   },
+   "by_experience": "khởi điểm 5,5–10,8tr; sau 5 năm 8,2–19,0tr",
+   "source": "WageIndicator Việt Nam, \"Phụ tá y tế\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/phu-ta-y-te/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình."
+  },
+  "ONET-33-2022.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 5920200,
+    "high": 12599400
+   },
+   "by_experience": "kiểm lâm viên (A1) 5,9–12,6tr; trung cấp (B) 4,7–10,3tr; chưa gồm phụ cấp",
+   "source": "Bảng lương công chức 2026 (LuatVietnam) × lương cơ sở 2,53tr",
+   "url": "https://luatvietnam.vn/can-bo-cong-chuc/bang-luong-can-bo-cong-chuc-vien-chuc-nam-2026-566-107608-article.html",
+   "date": "2026",
+   "kind": "official_scale",
+   "quality": "yeu",
+   "note": "Xếp ngạch kiểm lâm lấy từ đoạn trích, chưa đọc văn bản."
+  },
+  "ONET-33-3051.04": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 5920200,
+    "high": 17153400
+   },
+   "by_experience": "trung cấp (A0) 5,3–12,4tr; kiểm tra viên (A1) 5,9–12,6tr; kiểm tra viên chính (A2.1) 11,1–17,2tr; chưa gồm phụ cấp",
+   "source": "Thời báo Tài chính Việt Nam (hệ số công chức hải quan) × lương cơ sở 2,53tr",
+   "url": "https://thoibaotaichinhvietnam.vn/bang-luong-cong-chuc-thue-hai-quan-tu-ngay-172024-154677.html",
+   "date": "2024",
+   "kind": "official_scale",
+   "quality": "vua",
+   "note": "Chỉ hải quan, chưa có số cho bộ đội biên phòng."
+  },
+  "ONET-49-3011.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 15000000,
+    "high": 50000000
+   },
+   "by_experience": "mới vào 15–20tr; có chứng chỉ B1/B2 và kinh nghiệm 35–50tr",
+   "source": "CafeF, dẫn lời ông Tạ Minh Trọng (Cục Hàng không Việt Nam)",
+   "url": "https://cafef.vn/viet-nam-co-nganh-hoc-khong-lo-that-nghiep-ai-kho-thay-the-luong-len-den-50-trieu-dong-thang-co-hoi-lam-viec-rong-mo-o-moi-truong-quoc-te-188260805003701266.chn",
+   "date": "2026-08-05",
+   "kind": "news",
+   "quality": "vua"
+  },
+  "ONET-51-9141.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 7000000,
+    "high": 30000000
+   },
+   "by_experience": "thử việc 7–10tr; 3 tháng đến 1 năm 10–15tr; bậc cao nhất 20–30tr",
+   "source": "Sài Gòn Giải Phóng, dẫn khảo sát Hội Vi mạch bán dẫn TP.HCM",
+   "url": "https://www.sggp.org.vn/nganh-cong-nghe-ban-dan-khat-nguoi-hoc-post751800.html",
+   "date": "2024-07-31",
+   "kind": "survey",
+   "quality": "tot"
+  },
+  "ONET-53-2011.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 208000000,
+    "high": 468000000
+   },
+   "by_experience": "cơ trưởng Vietjet 8.000–12.000 USD; Vietnam Airlines 10.000–18.000 USD",
+   "source": "CafeF, dẫn Aviation A2Z",
+   "url": "https://cafef.vn/muc-luong-phi-cong-o-viet-nam-va-the-gioi-188261002110711701.chn",
+   "date": "2026-10-02",
+   "kind": "news",
+   "quality": "vua",
+   "note": "Chỉ số của cơ trưởng; hãng chưa xác nhận."
+  },
+  "ONET-27-2011.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 7538090,
+    "high": 25971828
+   },
+   "by_experience": "khởi điểm 7,5–15,3tr; sau 5 năm 11,4–28,5tr",
+   "source": "WageIndicator Việt Nam, \"Diễn viên\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/dien-vien",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình; thu nhập thực tế theo vai, theo show."
+  },
+  "ONET-27-2012.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 7538090,
+    "high": 25971828
+   },
+   "by_experience": "khởi điểm 7,5–15,3tr; sau 5 năm 11,4–28,5tr",
+   "source": "WageIndicator Việt Nam, \"Giám đốc phim, cảnh quay và nhà sản xuất\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/giam-doc-phim-canh-quay-va-lien-quan-va-nha-san-xuat/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình."
+  },
+  "ONET-27-2042.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 7538090,
+    "high": 25971828
+   },
+   "by_experience": "khởi điểm 7,5–15,3tr; sau 5 năm 11,4–28,5tr",
+   "source": "WageIndicator Việt Nam, \"Nhạc sĩ, ca sĩ và người sáng tác\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/nhac-si-ca-si-va-nguoi-sang-tac/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình; thu nhập thực tế theo show."
+  },
+  "ONET-27-3023.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 8244253,
+    "high": 27312121
+   },
+   "by_experience": "khởi điểm 8,2–16,0tr; sau 5 năm 12,2–29,3tr",
+   "source": "WageIndicator Việt Nam, \"Phóng viên\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/phong-vien",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Số mô hình."
+  },
+  "ONET-27-4014.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 8000000,
+    "high": 12000000
+   },
+   "source": "Tin tuyển kỹ thuật viên âm thanh ánh sáng, 123job",
+   "url": "https://123job.vn/viec-lam/ky-thuat-vien-am-thanh-anh-sang-29Ggn5GA9E",
+   "date": "2026-01-06",
+   "kind": "job_ads",
+   "quality": "yeu",
+   "note": "1 tin."
+  },
+  "ONET-33-9092.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 7000000,
+    "median": 10000000,
+    "high": 21000000
+   },
+   "mid_kind": "trung vị 5 tin",
+   "source": "Tin tuyển cứu hộ bể bơi trên 123job và Joboko",
+   "url": "https://vn.joboko.com/tim-viec-lam-nhan-vien-cuu-ho-be-boi",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "5 tin."
+  },
+  "ONET-37-3011.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 8000000,
+    "high": 14000000
+   },
+   "source": "CareerViet, \"Cây xanh\"",
+   "url": "https://careerviet.vn/viec-lam/cay-xanh-k-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-39-5091.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 8000000,
+    "high": 50000000
+   },
+   "by_experience": "mới vào 8–12tr; làm ở tiệm 8–15tr; quầy hãng mỹ phẩm 10–18tr; phim, truyền hình 12–25tr; có tên tuổi 30–50tr",
+   "source": "CareerLink, \"Makeup artist là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/makeup-artist-la-gi",
+   "date": "2026-03-26",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-39-9011.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 4500000,
+    "high": 15000000
+   },
+   "by_experience": "Hà Nội, TP.HCM thường 6–10tr; trung tâm chuyên biệt 12–15tr; Bình Dương, Đà Nẵng 4,5–7tr",
+   "source": "CareerViet, \"Bảo mẫu\"",
+   "url": "https://careerviet.vn/viec-lam/bao-mau-k-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-39-2021.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 10000000,
+    "high": 40000000
+   },
+   "by_experience": "mới vào 10–15tr; tay nghề cao 30–40tr",
+   "source": "VOH, dẫn lời trưởng khoa Thú y HUTECH",
+   "url": "https://voh.com.vn/huong-nghiep/nganh-cham-soc-tham-my-thu-cung-thu-nhap-co-the-toi-40-trieu-dongthang-611289.html",
+   "date": "2025-08-18",
+   "kind": "news",
+   "quality": "yeu",
+   "note": "Ước tính của một chuyên gia."
+  },
+  "ONET-53-2021.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 8383588,
+    "high": 25490206
+   },
+   "by_experience": "khởi điểm 8,4–14,0tr; sau 5 năm 12,8–25,5tr",
+   "source": "WageIndicator Việt Nam, \"Kiểm soát viên không lưu\"",
+   "url": "https://wageindicator.org/vi-vn/cong-viec-tai-viet-nam/viec-lam-va-luong/kiem-soat-vien-khong-luu/",
+   "date": "2026",
+   "kind": "modelled",
+   "quality": "yeu",
+   "note": "Có thể thấp hơn thực tế."
+  },
+  "ONET-53-2031.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 15000000,
+    "high": 80000000
+   },
+   "by_experience": "học viên 15–20tr; tiếp viên mới 20–30tr; lâu năm 30–45tr; tiếp viên trưởng 45–60tr; trưởng tiếp viên 60–80tr",
+   "source": "CareerLink, \"Mức lương tiếp viên hàng không\"",
+   "url": "https://www.careerlink.vn/cam-nang-luong/muc-luong-tiep-vien-hang-khong/",
+   "date": "2026-03-20",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Tổng thu nhập; lương cứng 8–40tr."
+  },
+  "ONET-53-4011.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 13000000,
+    "high": 15000000
+   },
+   "source": "Sài Gòn Giải Phóng, đợt tuyển lái tàu Metro Hà Nội",
+   "url": "https://www.sggp.org.vn/tuyen-447-nhan-su-phuc-vu-khai-thac-van-hanh-duong-sat-do-thi-nhon-ga-ha-noi-post626810.html",
+   "date": "2022-02-14",
+   "kind": "news",
+   "quality": "yeu",
+   "note": "Chưa gồm ăn trưa và thưởng."
+  },
+  "ONET-53-5021.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 7000000,
+    "high": 50000000
+   },
+   "by_experience": "thủy thủ 7–12tr; thuyền viên có chứng chỉ 12–20tr; khối máy 18–30tr; sĩ quan tàu quốc tế 30–50tr trở lên",
+   "source": "CareerViet, \"Thuyền viên\"",
+   "url": "https://careerviet.vn/viec-lam/thuyen-vien-k-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-53-6051.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 5313000,
+    "high": 20240000
+   },
+   "by_experience": "hạng IV 5,3–12,4tr; hạng III 5,9–12,6tr; hạng II 11,1–17,2tr; hạng I 15,7–20,2tr; chưa gồm phụ cấp",
+   "source": "Thông tư 45/2022/TT-BGTVT × lương cơ sở 2,53tr",
+   "url": "https://tuoitre.vn/plo/luong-vien-chuc-dang-kiem-cao-nhat-gan-12-trieu-dongthang-post722292.html",
+   "date": "2026",
+   "kind": "official_scale",
+   "quality": "tot",
+   "note": "Đơn vị đăng kiểm công lập."
+  },
+  "ONET-45-2092.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 5400000
+   },
+   "mid_kind": "trung bình ngành",
+   "source": "Cục Thống kê, quý III/2026, qua VnBusiness",
+   "url": "https://vnbusiness.vn/thu-nhap-binh-quan-cua-53-trieu-nguoi-lao-dong-tren-ca-nuoc-qua-nhung-con-so.html",
+   "date": "2026-10-06",
+   "kind": "statistics",
+   "quality": "vua",
+   "note": "Thu nhập bình quân ngành nông, lâm, thủy sản, gồm cả người tự làm."
+  },
+  "ONET-45-2093.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 5400000
+   },
+   "mid_kind": "trung bình ngành",
+   "source": "Cục Thống kê, quý III/2026, qua VnBusiness",
+   "url": "https://vnbusiness.vn/thu-nhap-binh-quan-cua-53-trieu-nguoi-lao-dong-tren-ca-nuoc-qua-nhung-con-so.html",
+   "date": "2026-10-06",
+   "kind": "statistics",
+   "quality": "yeu",
+   "note": "Số của cả ngành nông, lâm, thủy sản."
+  },
+  "ONET-45-3031.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 5400000
+   },
+   "mid_kind": "trung bình ngành",
+   "by_experience": "chia tiền theo chuyến biển; chuyến được mùa có thể rất cao",
+   "source": "Cục Thống kê, quý III/2026, qua VnBusiness",
+   "url": "https://vnbusiness.vn/thu-nhap-binh-quan-cua-53-trieu-nguoi-lao-dong-tren-ca-nuoc-qua-nhung-con-so.html",
+   "date": "2026-10-06",
+   "kind": "statistics",
+   "quality": "yeu",
+   "note": "Ngư dân nhận tiền theo chuyến, không theo tháng."
+  },
+  "ONET-45-4011.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 5400000
+   },
+   "mid_kind": "trung bình ngành",
+   "source": "Cục Thống kê, quý III/2026, qua VnBusiness",
+   "url": "https://vnbusiness.vn/thu-nhap-binh-quan-cua-53-trieu-nguoi-lao-dong-tren-ca-nuoc-qua-nhung-con-so.html",
+   "date": "2026-10-06",
+   "kind": "statistics",
+   "quality": "yeu",
+   "note": "Số của cả ngành nông, lâm, thủy sản."
+  },
+  "ONET-47-2021.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 8970000,
+    "high": 10816000
+   },
+   "by_experience": "345–416 nghìn đồng/ngày công",
+   "source": "Sở Xây dựng Hà Nội, Quyết định 3461/QĐ-SXD (đơn giá nhân công xây dựng)",
+   "url": "https://luatvietnam.vn/tin-van-ban-moi/don-gia-nhan-cong-xay-dung-tren-dia-ban-tp-ha-noi-tu-22-12-2025-186-106465-article.html",
+   "date": "2025-12-22",
+   "kind": "official_scale",
+   "quality": "vua",
+   "note": "Đơn giá dự toán, nhân 26 ngày công; không phải lương trả thực tế."
+  },
+  "ONET-47-5041.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 20000000,
+    "high": 25000000
+   },
+   "mid_kind": "trung bình khối than hầm lò",
+   "by_experience": "gần nửa số thợ lò thu nhập trên 25tr/tháng",
+   "source": "Nhân Dân, kết quả năm 2024 của TKV",
+   "url": "https://nhandan.vn/tkv-phan-dau-tieu-thu-50-trieu-tan-than-trong-nam-2025-post866163.html",
+   "date": "2025",
+   "kind": "news",
+   "quality": "vua",
+   "note": "Chỉ trong Tập đoàn Than – Khoáng sản Việt Nam."
+  },
+  "ONET-49-9051.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 12300000
+   },
+   "mid_kind": "trung bình ngành điện",
+   "source": "Cục Thống kê, quý I/2025, qua VnEconomy",
+   "url": "https://vneconomy.vn/quy-1-2025-thu-nhap-binh-quan-cua-nguoi-lao-dong-tang-o-hau-het-cac-nganh-kinh-te.htm",
+   "date": "2025-04-08",
+   "kind": "statistics",
+   "quality": "yeu",
+   "note": "Số của cả ngành điện, khí đốt."
+  },
+  "ONET-51-4121.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 6000000,
+    "high": 20000000
+   },
+   "by_experience": "0–1 năm 6–9tr; 1–3 năm 9–14tr; 3–5 năm, hàn TIG hoặc áp lực 14–20tr; chứng chỉ quốc tế 20–35tr",
+   "source": "CareerLink, \"Thợ hàn là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/tho-han-la-gi",
+   "date": "2026-03-26",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-51-3092.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 9000000,
+    "median": 10000000,
+    "high": 11000000
+   },
+   "mid_kind": "giữa khoảng",
+   "source": "Báo Thanh Tra, dẫn một doanh nghiệp thủy sản TP.HCM",
+   "url": "https://thanhtra.com.vn/tieu-dung-AA9F50895/nhan-luc-nganh-thuy-san-cung-khong-du-cau-fd59fc1cf.html",
+   "date": "2025-12-16",
+   "kind": "news",
+   "quality": "vua"
+  },
+  "ONET-51-3011.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 6000000,
+    "high": 15000000
+   },
+   "by_experience": "mới vào 6–8tr; 2–4 năm 10–15tr; bếp trưởng bánh khách sạn 4–5 sao 18–30tr",
+   "source": "CareerLink, \"Thợ làm bánh là gì\"",
+   "url": "https://www.careerlink.vn/cam-nang-viec-lam/tu-van-nghe-nghiep/tho-lam-banh-la-gi",
+   "date": "2026-03-26",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-51-8013.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 12300000
+   },
+   "mid_kind": "trung bình ngành điện",
+   "source": "Cục Thống kê, quý I/2025, qua VnEconomy",
+   "url": "https://vneconomy.vn/quy-1-2025-thu-nhap-binh-quan-cua-nguoi-lao-dong-tang-o-hau-het-cac-nganh-kinh-te.htm",
+   "date": "2025-04-08",
+   "kind": "statistics",
+   "quality": "yeu",
+   "note": "Số của cả ngành điện, khí đốt."
+  },
+  "ONET-51-9081.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 12000000,
+    "high": 20000000
+   },
+   "source": "CareerViet, \"Nha khoa\"",
+   "url": "https://careerviet.vn/viec-lam/nha-khoa-k-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-53-3032.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 10000000,
+    "high": 25000000
+   },
+   "by_experience": "xe tải nhẹ 10–15tr; xe tải nặng 12–20tr; chạy đường dài 15–25tr",
+   "source": "CareerViet, \"Tài xế\"",
+   "url": "https://careerviet.vn/viec-lam/T%C3%A0i-x%E1%BA%BF-k-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-53-3052.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 12000000,
+    "high": 18000000
+   },
+   "by_experience": "xe khách tuyến cố định 12–18tr; xe hợp đồng 15–25tr",
+   "source": "CareerViet, \"Tài xế\"",
+   "url": "https://careerviet.vn/viec-lam/T%C3%A0i-x%E1%BA%BF-k-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua"
+  },
+  "ONET-53-7081.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "median": 9900000
+   },
+   "mid_kind": "trung bình ngành",
+   "source": "Cục Thống kê, quý I/2025, qua VnEconomy",
+   "url": "https://vneconomy.vn/quy-1-2025-thu-nhap-binh-quan-cua-nguoi-lao-dong-tang-o-hau-het-cac-nganh-kinh-te.htm",
+   "date": "2025-04-08",
+   "kind": "statistics",
+   "quality": "yeu",
+   "note": "Số của cả ngành cấp nước, xử lý rác thải."
+  },
+  "ONET-11-9141.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 10000000,
+    "median": 11000000,
+    "high": 12000000
+   },
+   "mid_kind": "trung bình",
+   "source": "TopCV, tra cứu mức lương \"Quản lý tòa nhà\"",
+   "url": "https://www.topcv.vn/tra-cuu-muc-luong-tai-viet-nam/quan-ly-toa-nha",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "Khoảng phổ biến 10–12tr; dải 5,5–40tr. TopCV tổng hợp từ tin tuyển dụng. Đọc trên trình duyệt ngày 21/10/2026."
+  },
+  "ONET-39-7011.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 8500000,
+    "median": 11300000,
+    "high": 14000000
+   },
+   "mid_kind": "trung bình",
+   "source": "TopCV, tra cứu mức lương \"Hướng dẫn viên du lịch\"",
+   "url": "https://www.topcv.vn/tra-cuu-muc-luong-tai-viet-nam/huong-dan-vien-du-lich",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "Khoảng phổ biến 8,5–14tr; dải 7,5–30tr. TopCV tổng hợp từ tin tuyển dụng. Đọc trên trình duyệt ngày 21/10/2026."
+  },
+  "ONET-29-1031.00": {
+   "stat": "by_experience",
+   "monthly_vnd": {
+    "low": 8000000,
+    "high": 20000000
+   },
+   "by_experience": "dinh dưỡng viên 8–15tr; bác sĩ dinh dưỡng 20–40tr; vị trí chuyên môn cao trên 30tr",
+   "source": "CareerViet, \"Dinh dưỡng\"",
+   "url": "https://careerviet.vn/viec-lam/dinh-duong-k-vi.html",
+   "date": "2026",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Đọc trên trình duyệt ngày 21/10/2026."
+  },
+  "ONET-49-3052.00": {
+   "stat": "range",
+   "monthly_vnd": {
+    "low": 6000000,
+    "high": 12000000
+   },
+   "by_experience": "thợ sửa xe máy 6–12tr; thợ sửa ô tô 8–18tr; thợ phụ garage 5–10tr",
+   "source": "Muaban.net, bảng lương thợ sửa xe Đà Nẵng",
+   "url": "https://muaban.net/viec-lam/tho-sua-xe-da-nang-luong-tu-7-trieu-den-10-trieu-cid17827",
+   "date": "2026-10",
+   "kind": "career_guide",
+   "quality": "vua",
+   "note": "Khảo sát của Muaban.net ở Đà Nẵng. Đọc trên trình duyệt ngày 21/10/2026."
+  },
+  "ONET-15-2041.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 8000000,
+    "median": 10000000,
+    "high": 12000000
+   },
+   "mid_kind": "trung bình 118 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 2 năm",
+   "source": "JobsGO, tra cứu lương \"Nhân Viên Thống Kê\"",
+   "url": "https://jobsgo.vn/muc-luong-nhan-vien-thong-ke.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "118 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 8–12tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-17-1022.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 15000000,
+    "median": 18600000,
+    "high": 23000000
+   },
+   "mid_kind": "trung bình 194 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 2 năm",
+   "source": "JobsGO, tra cứu lương \"Kỹ Sư Trắc Địa\"",
+   "url": "https://jobsgo.vn/muc-luong-ky-su-trac-dia.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "194 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 15–23tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-47-2031.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 10000000,
+    "median": 12900000,
+    "high": 15000000
+   },
+   "mid_kind": "trung bình 35 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 1 năm",
+   "source": "JobsGO, tra cứu lương \"Thợ Mộc\"",
+   "url": "https://jobsgo.vn/muc-luong-tho-moc.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "35 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–15tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-51-7011.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 10000000,
+    "median": 12900000,
+    "high": 15000000
+   },
+   "mid_kind": "trung bình 35 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 1 năm",
+   "source": "JobsGO, tra cứu lương \"Thợ Mộc\"",
+   "url": "https://jobsgo.vn/muc-luong-tho-moc.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "JobsGO không tách thợ mộc xây dựng và thợ mộc đồ gỗ. 35 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–15tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-47-2141.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 8000000,
+    "median": 10800000,
+    "high": 14000000
+   },
+   "mid_kind": "trung bình 34 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: 1–2 năm",
+   "source": "JobsGO, tra cứu lương \"Thợ Sơn\"",
+   "url": "https://jobsgo.vn/muc-luong-tho-son.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "34 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 8–14tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-47-2152.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 10000000,
+    "median": 13100000,
+    "high": 16000000
+   },
+   "mid_kind": "trung bình 128 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 1 năm",
+   "source": "JobsGO, tra cứu lương \"Thợ Điện Nước\"",
+   "url": "https://jobsgo.vn/muc-luong-tho-dien-nuoc.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "Chức danh gộp cả thợ điện và thợ nước. 128 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–16tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-47-2221.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 9000000,
+    "median": 13200000,
+    "high": 17000000
+   },
+   "mid_kind": "trung bình 30 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 1 năm",
+   "source": "JobsGO, tra cứu lương \"Thợ Nhôm Kính\"",
+   "url": "https://jobsgo.vn/muc-luong-tho-nhom-kinh.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "Chưa có số riêng cho thợ kết cấu thép. 30 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 9–17tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-29-1041.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 10000000,
+    "median": 13900000,
+    "high": 17000000
+   },
+   "mid_kind": "trung bình 23 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 2 năm",
+   "source": "JobsGO, tra cứu lương \"Kỹ Thuật Viên Khúc Xạ\"",
+   "url": "https://jobsgo.vn/muc-luong-ky-thuat-vien-khuc-xa.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "23 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–17tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-13-2023.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 10000000,
+    "median": 14000000,
+    "high": 19000000
+   },
+   "mid_kind": "trung bình 48 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 2 năm",
+   "source": "JobsGO, tra cứu lương \"Thẩm Định Viên\"",
+   "url": "https://jobsgo.vn/muc-luong-tham-dinh-vien.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "Chức danh có thể gồm cả thẩm định tín dụng. 48 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–19tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-53-7051.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 8000000,
+    "median": 9500000,
+    "high": 11000000
+   },
+   "mid_kind": "trung bình 36 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 2 năm",
+   "source": "JobsGO, tra cứu lương \"Lái Xe Nâng\"",
+   "url": "https://jobsgo.vn/muc-luong-lai-xe-nang.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "Chưa có số riêng cho lái cần cẩu. 36 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 8–11tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-11-9032.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 15000000,
+    "median": 19300000,
+    "high": 25000000
+   },
+   "mid_kind": "trung bình 11 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: 2–5 năm",
+   "source": "JobsGO, tra cứu lương \"Hiệu Trưởng\"",
+   "url": "https://jobsgo.vn/muc-luong-hieu-truong.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "yeu",
+   "note": "Chủ yếu trường tư; hiệu trưởng trường công theo thang lương nhà nước. 11 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 15–25tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-43-5051.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 8000000,
+    "median": 10500000,
+    "high": 13000000
+   },
+   "mid_kind": "trung bình 32 mẫu",
+   "source": "JobsGO, tra cứu lương \"Nhân Viên Bưu Cục\"",
+   "url": "https://jobsgo.vn/muc-luong-nhan-vien-buu-cuc.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "32 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 8–13tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-37-2021.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 11000000,
+    "median": 12300000,
+    "high": 13000000
+   },
+   "mid_kind": "trung bình 29 mẫu",
+   "source": "JobsGO, tra cứu lương \"Nhân Viên Kiểm Soát Côn Trùng\"",
+   "url": "https://jobsgo.vn/muc-luong-nhan-vien-kiem-soat-con-trung.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "29 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 11–13tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-39-9031.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 10000000,
+    "median": 17400000,
+    "high": 25000000
+   },
+   "mid_kind": "trung bình 60 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 1 năm",
+   "source": "JobsGO, tra cứu lương \"Huấn Luyện Viên\"",
+   "url": "https://jobsgo.vn/muc-luong-huan-luyen-vien.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "JobsGO xếp tin personal trainer vào chức danh này. 60 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–25tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-47-2073.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 11000000,
+    "median": 13300000,
+    "high": 16000000
+   },
+   "mid_kind": "trung bình 10 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: 1–3 năm",
+   "source": "JobsGO, tra cứu lương \"Lái Máy Công Trình\"",
+   "url": "https://jobsgo.vn/muc-luong-lai-may-cong-trinh.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "yeu",
+   "note": "10 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 11–16tr. Đọc trên Chrome ngày 21/10/2026."
+  },
+  "ONET-39-9032.00": {
+   "stat": "average",
+   "monthly_vnd": {
+    "low": 6000000,
+    "median": 7700000,
+    "high": 9000000
+   },
+   "mid_kind": "trung bình 35 mẫu",
+   "by_experience": "kinh nghiệm hay gặp nhất trong tin: dưới 2 năm",
+   "source": "JobsGO, tra cứu lương \"Nhân Viên Khu Vui Chơi\"",
+   "url": "https://jobsgo.vn/muc-luong-nhan-vien-khu-vui-choi.html",
+   "date": "2026",
+   "kind": "job_ads",
+   "quality": "vua",
+   "note": "35 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 6–9tr. Đọc trên Chrome ngày 21/10/2026."
+  }
+ },
+ "unverified": {
+  "_note": "Số chưa xác nhận. Ngày 21/10/2026 đã mở JobsGO bằng Chrome của người dùng và chuyển các nghề khớp chức danh lên roles; còn lại: Paylab báo lỗi, chức danh JobsGO lệch nghĩa hoặc không có. Trước đó: JobsGO hiện kiểm tra chống bot của Cloudflare (không vượt qua), Paylab báo lỗi truy cập, 123job và trang tin tuyển dụng đã hết hạn; tra thêm TopCV và CareerViet cho cùng chức danh nhưng không có số. Script không dùng mục này.",
+  "ONET-27-1021.00": "Chức danh 'Product Designer' của JobsGO (53 mẫu, trung bình 15,9tr) có thể là thiết kế giao diện số nên không dùng. JobsGO nhóm 'Thiết kế sản phẩm - công nghiệp': trung bình 12,9tr; dưới 1 năm 11,5tr, 1–3 năm 14tr, trên 3 năm 16tr — https://jobsgo.vn/luong-nganh-thiet-ke-san-pham-cong-nghiep.html",
+  "ONET-41-9012.00": "Paylab 'Model': 80% người mẫu 2,97–9,07tr — https://www.paylab.com/vn/salaryinfo/arts-culture/model?lang=en",
+  "ONET-49-3042.00": "JobsGO 'Thợ sửa chữa': trung bình 11,3tr (9–14tr) — https://jobsgo.vn/muc-luong-tho-sua-chua.html",
+  "ONET-49-9052.00": "JobsGO chỉ có 'Kỹ sư viễn thông' (55 mẫu, 15tr), khác kỹ thuật viên lắp đặt nên không dùng. Tin FPT Telecom, Viettel: 10–20tr — https://jobsgo.vn/viec-lam/nhan-vien-ky-thuat-vien-thong-27983277304.html",
+  "ONET-51-9071.00": "Tin 123job, Joboko, DOJI: học việc 6–9tr, lành nghề 10–15tr, kinh nghiệm 15–20tr — https://123job.vn/viec-lam/tho-kim-hoan-co-dao-tao-luong-15-20tr-1-thang-w9vaGg8MD5"
+ },
+ "not_found": {
+  "ONET-27-2021.00": "Không có số lương; chỉ có mức thưởng tối đa 40tr/tháng cho thành tích quốc tế (Nghị định 349/2025/NĐ-CP).",
+  "ONET-27-2031.00": "Chỉ có số năm 2012 (3–4tr), quá cũ nên không dùng.",
+  "ONET-39-5012.00": "Chỉ có bài khoảng năm 2019 (thợ chính 10–15tr), quá cũ nên không dùng. Chức danh 'Stylist' của JobsGO (12 mẫu, 10,8tr) có thể là stylist thời trang nên không dùng.",
+  "ONET-39-5092.00": "Chỉ có bài năm 2020 (8–12tr), quá cũ nên không dùng. JobsGO 'Nhân viên nail' có 15 mẫu, trung bình 34,4tr (15–68tr): bất thường, có thể lẫn tin đi làm ở nước ngoài, nên không dùng.",
+  "ONET-39-4031.00": "Không tìm được số ở Việt Nam.",
+  "ONET-51-8091.00": "Chỉ có trung bình cả ngành chế biến chế tạo (9,1tr), thấp hơn nhiều so với vận hành lọc dầu nên không dùng."
+ }
+}

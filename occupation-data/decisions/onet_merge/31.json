@@ -1,0 +1,35 @@
+{
+  "group": "31",
+  "_note": "Kỹ thuật viên và phụ tá phục hồi chức năng gộp vào Phục hồi chức năng (29); nhân viên nhà thuốc vào Dược sĩ (29); trợ lý thú y vào Bác sĩ thú y (29); lấy máu vào Xét nghiệm (29); kỹ thuật viên nội soi vào Điều dưỡng (29).",
+  "keep": [
+    {
+      "code": "31-1131.00",
+      "name_vi": "Hộ lý, trợ lý điều dưỡng",
+      "absorbs": ["31-1132.00", "31-1133.00", "31-9093.00"],
+      "merge_reason": "Cùng trải nghiệm chăm sóc cơ bản và hỗ trợ trong bệnh viện; vận chuyển người bệnh, hộ lý tâm thần và tiệt trùng dụng cụ là các vị trí hộ lý chuyên biệt."
+    },
+    {
+      "code": "31-1121.00",
+      "name_vi": "Nhân viên chăm sóc tại nhà",
+      "absorbs": ["31-1122.00"],
+      "merge_reason": "Cùng trải nghiệm chăm sóc người bệnh, người già tại nhà; ở Việt Nam không tách hai vị trí."
+    },
+    {
+      "code": "31-9091.00",
+      "name_vi": "Trợ thủ nha khoa",
+      "absorbs": ["29-1292.00"],
+      "merge_reason": "Vệ sinh răng miệng là việc của trợ thủ, kỹ thuật viên nha khoa ở Việt Nam."
+    },
+    {
+      "code": "31-9092.00",
+      "name_vi": "Trợ lý y khoa",
+      "absorbs": ["31-9094.00"],
+      "merge_reason": "Ghi chép y khoa ở Việt Nam do trợ lý và điều dưỡng kiêm, không có vị trí riêng."
+    },
+    {
+      "code": "31-9011.00",
+      "name_vi": "Chuyên viên xoa bóp trị liệu"
+    }
+  ],
+  "remove": []
+}

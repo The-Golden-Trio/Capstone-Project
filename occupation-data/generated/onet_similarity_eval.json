@@ -1,0 +1,950 @@
+{
+  "tuned": {
+    "weights": {
+      "riasec": 2,
+      "styles": 1,
+      "skills": 1,
+      "knowledge": 2
+    },
+    "train": {
+      "p5_short": 0.360625000000001,
+      "p10_primary": 0.42093749999999996,
+      "r20_all": 0.4745760771413825,
+      "occupations": 320
+    },
+    "test": {
+      "p5_short": 0.3779104477611949,
+      "p10_primary": 0.4391044776119404,
+      "r20_all": 0.48137245183488425,
+      "occupations": 335
+    },
+    "equal_on_test": {
+      "p5_short": 0.3420895522388071,
+      "p10_primary": 0.39313432835820894,
+      "r20_all": 0.42972074611462824,
+      "occupations": 335
+    }
+  },
+  "tuned_without_knowledge": {
+    "weights": {
+      "riasec": 3,
+      "styles": 3,
+      "skills": 1
+    },
+    "train": {
+      "p5_short": 0.2762500000000008,
+      "p10_primary": 0.3456250000000001,
+      "r20_all": 0.389803048138115,
+      "occupations": 320
+    },
+    "test": {
+      "p5_short": 0.31641791044776213,
+      "p10_primary": 0.3665671641791043,
+      "r20_all": 0.40137651892388265,
+      "occupations": 335
+    },
+    "equal_on_test": {
+      "p5_short": 0.26567164179104585,
+      "p10_primary": 0.3280597014925376,
+      "r20_all": 0.37064414401529155,
+      "occupations": 335
+    }
+  },
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ],
+  "occupations": 878,
+  "method": "cosine trên vector z (chuẩn hoá từng mục trên toàn bộ nghề), chuẩn hoá ma trận độ giống của từng nhóm, gộp bằng trung bình có trọng số",
+  "metrics": {
+    "p5_short": "trong 5 nghề giống nhất, tỉ lệ thuộc tầng Primary-Short (5 nghề)",
+    "p10_primary": "trong 10 nghề giống nhất, tỉ lệ thuộc Primary-Short hoặc Primary-Long (10 nghề)",
+    "r20_all": "trong 20 nghề giống nhất, tỉ lệ bắt được của cả 20 nghề liên quan"
+  },
+  "results": {
+    "riasec": {
+      "p5_short": 0.20335877862595508,
+      "p10_primary": 0.26717557251908325,
+      "r20_all": 0.3217581147900441,
+      "occupations": 655
+    },
+    "soft": {
+      "p5_short": 0.10564885496183243,
+      "p10_primary": 0.14610687022900726,
+      "r20_all": 0.1857304455195764,
+      "occupations": 655
+    },
+    "riasec3+styles3+skills1 (đang dùng)": {
+      "p5_short": 0.29679389312977006,
+      "p10_primary": 0.35633587786259574,
+      "r20_all": 0.39572230418885135,
+      "occupations": 655
+    },
+    "activities": {
+      "p5_short": 0.156946564885497,
+      "p10_primary": 0.20030534351144977,
+      "r20_all": 0.24213367387935536,
+      "occupations": 655
+    },
+    "skills": {
+      "p5_short": 0.1648854961832071,
+      "p10_primary": 0.22198473282442696,
+      "r20_all": 0.27533675154808146,
+      "occupations": 655
+    },
+    "knowledge": {
+      "p5_short": 0.2705343511450373,
+      "p10_primary": 0.3262595419847329,
+      "r20_all": 0.4005828089907454,
+      "occupations": 655
+    },
+    "skills+knowledge": {
+      "p5_short": 0.3007633587786252,
+      "p10_primary": 0.36030534351145027,
+      "r20_all": 0.4235217205939562,
+      "occupations": 655
+    },
+    "skills+knowledge+activities": {
+      "p5_short": 0.29221374045801435,
+      "p10_primary": 0.3461068702290077,
+      "r20_all": 0.40254864822586317,
+      "occupations": 655
+    },
+    "tất cả 6 nhóm, bằng nhau": {
+      "p5_short": 0.3325190839694647,
+      "p10_primary": 0.3844274809160305,
+      "r20_all": 0.4311797201805587,
+      "occupations": 655
+    }
+  },
+  "baselines": {
+    "ngẫu nhiên": {
+      "p5_short": 0.006412213740458017,
+      "p10_primary": 0.012519083969465631,
+      "r20_all": 0.022608168752970635,
+      "occupations": 655
+    },
+    "cùng nhóm mã SOC": {
+      "p5_short": 0.27572519083969427,
+      "p10_primary": 0.30702290076335814,
+      "r20_all": 0.32160335823093167,
+      "occupations": 655
+    }
+  },
+  "it_examples_in_use": [
+    {
+      "role": "Lập trình viên Front-end",
+      "code": "15-1254.00",
+      "top5": [
+        {
+          "code": "15-1221.00",
+          "title": "Computer and Information Research Scientists",
+          "in_related": false
+        },
+        {
+          "code": "15-1251.00",
+          "title": "Computer Programmers",
+          "in_related": true
+        },
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers",
+          "in_related": true
+        },
+        {
+          "code": "15-1255.00",
+          "title": "Web and Digital Interface Designers",
+          "in_related": true
+        },
+        {
+          "code": "15-2051.00",
+          "title": "Data Scientists",
+          "in_related": false
+        }
+      ]
+    },
+    {
+      "role": "Lập trình viên Back-end",
+      "code": "15-1252.00",
+      "top5": [
+        {
+          "code": "15-1211.00",
+          "title": "Computer Systems Analysts",
+          "in_related": true
+        },
+        {
+          "code": "15-1243.00",
+          "title": "Database Architects",
+          "in_related": true
+        },
+        {
+          "code": "15-1221.00",
+          "title": "Computer and Information Research Scientists",
+          "in_related": false
+        },
+        {
+          "code": "15-1299.08",
+          "title": "Computer Systems Engineers/Architects",
+          "in_related": true
+        },
+        {
+          "code": "19-1029.01",
+          "title": "Bioinformatics Scientists",
+          "in_related": false
+        }
+      ]
+    },
+    {
+      "role": "Chuyên viên thiết kế UI/UX",
+      "code": "15-1255.00",
+      "top5": [
+        {
+          "code": "15-1255.01",
+          "title": "Video Game Designers",
+          "in_related": true
+        },
+        {
+          "code": "15-1254.00",
+          "title": "Web Developers",
+          "in_related": true
+        },
+        {
+          "code": "27-1021.00",
+          "title": "Commercial and Industrial Designers",
+          "in_related": false
+        },
+        {
+          "code": "27-1024.00",
+          "title": "Graphic Designers",
+          "in_related": true
+        },
+        {
+          "code": "27-1014.00",
+          "title": "Special Effects Artists and Animators",
+          "in_related": false
+        }
+      ]
+    },
+    {
+      "role": "Kiến trúc sư giải pháp",
+      "code": "15-1299.08",
+      "top5": [
+        {
+          "code": "15-1241.00",
+          "title": "Computer Network Architects",
+          "in_related": true
+        },
+        {
+          "code": "15-1212.00",
+          "title": "Information Security Analysts",
+          "in_related": false
+        },
+        {
+          "code": "15-1241.01",
+          "title": "Telecommunications Engineering Specialists",
+          "in_related": false
+        },
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers",
+          "in_related": true
+        },
+        {
+          "code": "15-1299.05",
+          "title": "Information Security Engineers",
+          "in_related": true
+        }
+      ]
+    },
+    {
+      "role": "Trưởng phòng Kỹ thuật",
+      "code": "11-3021.00",
+      "top5": [
+        {
+          "code": "13-1081.00",
+          "title": "Logisticians",
+          "in_related": false
+        },
+        {
+          "code": "15-1299.09",
+          "title": "Information Technology Project Managers",
+          "in_related": true
+        },
+        {
+          "code": "13-1111.00",
+          "title": "Management Analysts",
+          "in_related": true
+        },
+        {
+          "code": "13-1199.04",
+          "title": "Business Continuity Planners",
+          "in_related": false
+        },
+        {
+          "code": "11-3071.00",
+          "title": "Transportation, Storage, and Distribution Managers",
+          "in_related": false
+        }
+      ]
+    },
+    {
+      "role": "Kiểm thử",
+      "code": "15-1253.00",
+      "top5": [
+        {
+          "code": "15-2099.01",
+          "title": "Bioinformatics Technicians",
+          "in_related": false
+        },
+        {
+          "code": "15-1251.00",
+          "title": "Computer Programmers",
+          "in_related": true
+        },
+        {
+          "code": "15-1299.02",
+          "title": "Geographic Information Systems Technologists and Technicians",
+          "in_related": false
+        },
+        {
+          "code": "15-2041.00",
+          "title": "Statisticians",
+          "in_related": false
+        },
+        {
+          "code": "15-1243.00",
+          "title": "Database Architects",
+          "in_related": true
+        }
+      ]
+    },
+    {
+      "role": "Chuyên viên phân tích dữ liệu",
+      "code": "15-2051.01",
+      "top5": [
+        {
+          "code": "15-2031.00",
+          "title": "Operations Research Analysts",
+          "in_related": true
+        },
+        {
+          "code": "13-2099.01",
+          "title": "Financial Quantitative Analysts",
+          "in_related": false
+        },
+        {
+          "code": "19-3011.00",
+          "title": "Economists",
+          "in_related": false
+        },
+        {
+          "code": "33-3021.06",
+          "title": "Intelligence Analysts",
+          "in_related": false
+        },
+        {
+          "code": "15-1299.07",
+          "title": "Blockchain Engineers",
+          "in_related": false
+        }
+      ]
+    },
+    {
+      "role": "Kỹ sư trí tuệ nhân tạo",
+      "code": "15-2051.00",
+      "top5": [
+        {
+          "code": "19-1029.01",
+          "title": "Bioinformatics Scientists",
+          "in_related": true
+        },
+        {
+          "code": "15-2021.00",
+          "title": "Mathematicians",
+          "in_related": true
+        },
+        {
+          "code": "15-2041.01",
+          "title": "Biostatisticians",
+          "in_related": true
+        },
+        {
+          "code": "15-2041.00",
+          "title": "Statisticians",
+          "in_related": true
+        },
+        {
+          "code": "15-2031.00",
+          "title": "Operations Research Analysts",
+          "in_related": true
+        }
+      ]
+    },
+    {
+      "role": "Kỹ sư an ninh mạng",
+      "code": "15-1299.05",
+      "top5": [
+        {
+          "code": "15-1212.00",
+          "title": "Information Security Analysts",
+          "in_related": true
+        },
+        {
+          "code": "15-1299.06",
+          "title": "Digital Forensics Analysts",
+          "in_related": false
+        },
+        {
+          "code": "15-1299.08",
+          "title": "Computer Systems Engineers/Architects",
+          "in_related": true
+        },
+        {
+          "code": "15-1244.00",
+          "title": "Network and Computer Systems Administrators",
+          "in_related": true
+        },
+        {
+          "code": "15-1241.00",
+          "title": "Computer Network Architects",
+          "in_related": true
+        }
+      ]
+    },
+    {
+      "role": "Chuyên viên kiểm thử xâm nhập",
+      "code": "15-1299.04",
+      "top5": [
+        {
+          "code": "15-1299.06",
+          "title": "Digital Forensics Analysts",
+          "in_related": false
+        },
+        {
+          "code": "15-1212.00",
+          "title": "Information Security Analysts",
+          "in_related": true
+        },
+        {
+          "code": "15-1299.05",
+          "title": "Information Security Engineers",
+          "in_related": true
+        },
+        {
+          "code": "15-1299.07",
+          "title": "Blockchain Engineers",
+          "in_related": true
+        },
+        {
+          "code": "15-2099.01",
+          "title": "Bioinformatics Technicians",
+          "in_related": false
+        }
+      ]
+    },
+    {
+      "role": "Chuyên viên phân tích nghiệp vụ",
+      "code": "15-1211.00",
+      "top5": [
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers",
+          "in_related": true
+        },
+        {
+          "code": "15-1299.08",
+          "title": "Computer Systems Engineers/Architects",
+          "in_related": true
+        },
+        {
+          "code": "15-1221.00",
+          "title": "Computer and Information Research Scientists",
+          "in_related": false
+        },
+        {
+          "code": "15-1241.00",
+          "title": "Computer Network Architects",
+          "in_related": false
+        },
+        {
+          "code": "15-1243.00",
+          "title": "Database Architects",
+          "in_related": true
+        }
+      ]
+    },
+    {
+      "role": "Quản lý sản phẩm",
+      "code": "15-1299.09",
+      "top5": [
+        {
+          "code": "13-1082.00",
+          "title": "Project Management Specialists",
+          "in_related": true
+        },
+        {
+          "code": "13-1081.00",
+          "title": "Logisticians",
+          "in_related": false
+        },
+        {
+          "code": "11-9111.00",
+          "title": "Medical and Health Services Managers",
+          "in_related": false
+        },
+        {
+          "code": "11-1011.00",
+          "title": "Chief Executives",
+          "in_related": false
+        },
+        {
+          "code": "13-1199.04",
+          "title": "Business Continuity Planners",
+          "in_related": false
+        }
+      ]
+    },
+    {
+      "role": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+      "code": "15-1232.00",
+      "top5": [
+        {
+          "code": "31-9092.00",
+          "title": "Medical Assistants",
+          "in_related": false
+        },
+        {
+          "code": "15-1211.00",
+          "title": "Computer Systems Analysts",
+          "in_related": true
+        },
+        {
+          "code": "15-1231.00",
+          "title": "Computer Network Support Specialists",
+          "in_related": true
+        },
+        {
+          "code": "15-1244.00",
+          "title": "Network and Computer Systems Administrators",
+          "in_related": true
+        },
+        {
+          "code": "15-1299.08",
+          "title": "Computer Systems Engineers/Architects",
+          "in_related": true
+        }
+      ]
+    }
+  ],
+  "it_examples_best": {
+    "combo": "tất cả 6 nhóm, bằng nhau",
+    "rows": [
+      {
+        "role": "Lập trình viên Front-end",
+        "code": "15-1254.00",
+        "top5": [
+          {
+            "code": "15-1243.01",
+            "title": "Data Warehousing Specialists",
+            "in_related": false
+          },
+          {
+            "code": "15-1255.00",
+            "title": "Web and Digital Interface Designers",
+            "in_related": true
+          },
+          {
+            "code": "15-1251.00",
+            "title": "Computer Programmers",
+            "in_related": true
+          },
+          {
+            "code": "15-1243.00",
+            "title": "Database Architects",
+            "in_related": true
+          },
+          {
+            "code": "15-1252.00",
+            "title": "Software Developers",
+            "in_related": true
+          }
+        ]
+      },
+      {
+        "role": "Lập trình viên Back-end",
+        "code": "15-1252.00",
+        "top5": [
+          {
+            "code": "15-1211.00",
+            "title": "Computer Systems Analysts",
+            "in_related": true
+          },
+          {
+            "code": "15-1243.00",
+            "title": "Database Architects",
+            "in_related": true
+          },
+          {
+            "code": "15-1299.07",
+            "title": "Blockchain Engineers",
+            "in_related": false
+          },
+          {
+            "code": "15-1243.01",
+            "title": "Data Warehousing Specialists",
+            "in_related": false
+          },
+          {
+            "code": "15-1254.00",
+            "title": "Web Developers",
+            "in_related": true
+          }
+        ]
+      },
+      {
+        "role": "Chuyên viên thiết kế UI/UX",
+        "code": "15-1255.00",
+        "top5": [
+          {
+            "code": "15-1254.00",
+            "title": "Web Developers",
+            "in_related": true
+          },
+          {
+            "code": "15-1252.00",
+            "title": "Software Developers",
+            "in_related": true
+          },
+          {
+            "code": "15-1255.01",
+            "title": "Video Game Designers",
+            "in_related": true
+          },
+          {
+            "code": "15-1251.00",
+            "title": "Computer Programmers",
+            "in_related": true
+          },
+          {
+            "code": "15-1211.00",
+            "title": "Computer Systems Analysts",
+            "in_related": true
+          }
+        ]
+      },
+      {
+        "role": "Kiến trúc sư giải pháp",
+        "code": "15-1299.08",
+        "top5": [
+          {
+            "code": "15-1241.00",
+            "title": "Computer Network Architects",
+            "in_related": true
+          },
+          {
+            "code": "15-1299.05",
+            "title": "Information Security Engineers",
+            "in_related": true
+          },
+          {
+            "code": "15-1212.00",
+            "title": "Information Security Analysts",
+            "in_related": false
+          },
+          {
+            "code": "17-2061.00",
+            "title": "Computer Hardware Engineers",
+            "in_related": true
+          },
+          {
+            "code": "15-1241.01",
+            "title": "Telecommunications Engineering Specialists",
+            "in_related": false
+          }
+        ]
+      },
+      {
+        "role": "Trưởng phòng Kỹ thuật",
+        "code": "11-3021.00",
+        "top5": [
+          {
+            "code": "15-1299.09",
+            "title": "Information Technology Project Managers",
+            "in_related": true
+          },
+          {
+            "code": "13-1082.00",
+            "title": "Project Management Specialists",
+            "in_related": true
+          },
+          {
+            "code": "11-9111.00",
+            "title": "Medical and Health Services Managers",
+            "in_related": false
+          },
+          {
+            "code": "11-1021.00",
+            "title": "General and Operations Managers",
+            "in_related": false
+          },
+          {
+            "code": "13-1199.04",
+            "title": "Business Continuity Planners",
+            "in_related": false
+          }
+        ]
+      },
+      {
+        "role": "Kiểm thử",
+        "code": "15-1253.00",
+        "top5": [
+          {
+            "code": "15-1243.00",
+            "title": "Database Architects",
+            "in_related": true
+          },
+          {
+            "code": "15-1243.01",
+            "title": "Data Warehousing Specialists",
+            "in_related": false
+          },
+          {
+            "code": "15-1252.00",
+            "title": "Software Developers",
+            "in_related": true
+          },
+          {
+            "code": "15-1251.00",
+            "title": "Computer Programmers",
+            "in_related": true
+          },
+          {
+            "code": "15-1299.05",
+            "title": "Information Security Engineers",
+            "in_related": true
+          }
+        ]
+      },
+      {
+        "role": "Chuyên viên phân tích dữ liệu",
+        "code": "15-2051.01",
+        "top5": [
+          {
+            "code": "13-2099.01",
+            "title": "Financial Quantitative Analysts",
+            "in_related": false
+          },
+          {
+            "code": "19-3011.00",
+            "title": "Economists",
+            "in_related": false
+          },
+          {
+            "code": "15-2051.00",
+            "title": "Data Scientists",
+            "in_related": true
+          },
+          {
+            "code": "15-2041.00",
+            "title": "Statisticians",
+            "in_related": false
+          },
+          {
+            "code": "15-1243.01",
+            "title": "Data Warehousing Specialists",
+            "in_related": false
+          }
+        ]
+      },
+      {
+        "role": "Kỹ sư trí tuệ nhân tạo",
+        "code": "15-2051.00",
+        "top5": [
+          {
+            "code": "15-2041.00",
+            "title": "Statisticians",
+            "in_related": true
+          },
+          {
+            "code": "15-2021.00",
+            "title": "Mathematicians",
+            "in_related": true
+          },
+          {
+            "code": "15-2041.01",
+            "title": "Biostatisticians",
+            "in_related": true
+          },
+          {
+            "code": "13-2099.01",
+            "title": "Financial Quantitative Analysts",
+            "in_related": true
+          },
+          {
+            "code": "15-2099.01",
+            "title": "Bioinformatics Technicians",
+            "in_related": true
+          }
+        ]
+      },
+      {
+        "role": "Kỹ sư an ninh mạng",
+        "code": "15-1299.05",
+        "top5": [
+          {
+            "code": "15-1299.08",
+            "title": "Computer Systems Engineers/Architects",
+            "in_related": true
+          },
+          {
+            "code": "15-1241.00",
+            "title": "Computer Network Architects",
+            "in_related": true
+          },
+          {
+            "code": "15-1212.00",
+            "title": "Information Security Analysts",
+            "in_related": true
+          },
+          {
+            "code": "15-1299.04",
+            "title": "Penetration Testers",
+            "in_related": true
+          },
+          {
+            "code": "15-1299.06",
+            "title": "Digital Forensics Analysts",
+            "in_related": false
+          }
+        ]
+      },
+      {
+        "role": "Chuyên viên kiểm thử xâm nhập",
+        "code": "15-1299.04",
+        "top5": [
+          {
+            "code": "15-1212.00",
+            "title": "Information Security Analysts",
+            "in_related": true
+          },
+          {
+            "code": "15-1299.05",
+            "title": "Information Security Engineers",
+            "in_related": true
+          },
+          {
+            "code": "15-1299.06",
+            "title": "Digital Forensics Analysts",
+            "in_related": false
+          },
+          {
+            "code": "15-1241.00",
+            "title": "Computer Network Architects",
+            "in_related": false
+          },
+          {
+            "code": "15-1299.08",
+            "title": "Computer Systems Engineers/Architects",
+            "in_related": true
+          }
+        ]
+      },
+      {
+        "role": "Chuyên viên phân tích nghiệp vụ",
+        "code": "15-1211.00",
+        "top5": [
+          {
+            "code": "15-1252.00",
+            "title": "Software Developers",
+            "in_related": true
+          },
+          {
+            "code": "15-1221.00",
+            "title": "Computer and Information Research Scientists",
+            "in_related": false
+          },
+          {
+            "code": "15-1299.08",
+            "title": "Computer Systems Engineers/Architects",
+            "in_related": true
+          },
+          {
+            "code": "15-1241.00",
+            "title": "Computer Network Architects",
+            "in_related": false
+          },
+          {
+            "code": "15-1243.00",
+            "title": "Database Architects",
+            "in_related": true
+          }
+        ]
+      },
+      {
+        "role": "Quản lý sản phẩm",
+        "code": "15-1299.09",
+        "top5": [
+          {
+            "code": "11-1011.00",
+            "title": "Chief Executives",
+            "in_related": false
+          },
+          {
+            "code": "11-9111.00",
+            "title": "Medical and Health Services Managers",
+            "in_related": false
+          },
+          {
+            "code": "11-3061.00",
+            "title": "Purchasing Managers",
+            "in_related": false
+          },
+          {
+            "code": "13-1082.00",
+            "title": "Project Management Specialists",
+            "in_related": true
+          },
+          {
+            "code": "11-1021.00",
+            "title": "General and Operations Managers",
+            "in_related": true
+          }
+        ]
+      },
+      {
+        "role": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+        "code": "15-1232.00",
+        "top5": [
+          {
+            "code": "15-1231.00",
+            "title": "Computer Network Support Specialists",
+            "in_related": true
+          },
+          {
+            "code": "15-1299.08",
+            "title": "Computer Systems Engineers/Architects",
+            "in_related": true
+          },
+          {
+            "code": "15-1211.00",
+            "title": "Computer Systems Analysts",
+            "in_related": true
+          },
+          {
+            "code": "15-1212.00",
+            "title": "Information Security Analysts",
+            "in_related": true
+          },
+          {
+            "code": "15-1244.00",
+            "title": "Network and Computer Systems Administrators",
+            "in_related": true
+          }
+        ]
+      }
+    ]
+  }
+}

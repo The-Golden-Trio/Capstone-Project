@@ -1,0 +1,55 @@
+{
+  "group": "47",
+  "_note": "Thanh tra xây dựng (47-4011) gộp vào Kỹ sư xây dựng (17); lắp đặt thang máy (47-4021) gộp vào Bảo trì máy công nghiệp (49); xử lý vật liệu nguy hại (47-4041) gộp vào Thu gom rác, tái chế (53). Phụ việc (Helpers--) là cấp khởi đầu của nghề tương ứng; đốc công là cấp cao.",
+  "keep": [
+    {
+      "code": "47-2021.00",
+      "name_vi": "Thợ xây, ốp lát",
+      "absorbs": ["47-2022.00", "47-2051.00", "47-2161.00", "47-2171.00", "47-2061.00", "47-3011.00", "47-1011.00", "47-2044.00", "47-2053.00", "47-2041.00", "47-2042.00", "47-2043.00", "47-4091.00", "47-4031.00"],
+      "merge_reason": "Xây đá, đổ bê tông, trát, buộc thép, ốp lát và lát sàn là các phần việc của thợ xây trên công trường Việt Nam; phụ hồ là cấp khởi đầu, đốc công là cấp cao."
+    },
+    {
+      "code": "47-2031.00",
+      "name_vi": "Thợ mộc",
+      "absorbs": ["47-3012.00", "47-2181.00", "47-3016.00"],
+      "merge_reason": "Lợp mái là một phần việc của thợ mộc công trình; phụ việc là cấp khởi đầu."
+    },
+    {
+      "code": "47-2141.00",
+      "name_vi": "Thợ sơn, thạch cao và hoàn thiện",
+      "absorbs": ["47-2142.00", "47-2081.00", "47-2082.00", "47-2131.00", "47-3014.00"],
+      "merge_reason": "Dán giấy, làm trần thạch cao, xử lý mối nối và cách nhiệt là các việc hoàn thiện nội thất."
+    },
+    {
+      "code": "47-2111.00",
+      "name_vi": "Thợ điện công trình",
+      "absorbs": ["47-3013.00", "47-2231.00"],
+      "merge_reason": "Lắp điện mặt trời là một phần việc của thợ điện; phụ việc là cấp khởi đầu."
+    },
+    {
+      "code": "47-2152.00",
+      "name_vi": "Thợ ống nước, đường ống",
+      "absorbs": ["47-2151.00", "47-3015.00", "47-2011.00", "47-2132.00", "47-4071.00"],
+      "merge_reason": "Đặt ống, lò hơi, bảo ôn đường ống và thông tắc cống cùng trải nghiệm làm hệ thống đường ống."
+    },
+    {
+      "code": "47-2221.00",
+      "name_vi": "Thợ kết cấu thép, nhôm kính",
+      "absorbs": ["47-2211.00", "47-2121.00"],
+      "merge_reason": "Gò tôn và lắp kính cùng trải nghiệm lắp dựng kết cấu kim loại cho công trình."
+    },
+    {
+      "code": "47-2073.00",
+      "name_vi": "Người vận hành máy thi công",
+      "absorbs": ["47-2071.00", "47-2072.00", "47-4061.00", "47-4051.00"],
+      "merge_reason": "Máy rải nhựa, máy đóng cọc, máy đặt ray và duy tu đường là các loại máy thi công."
+    },
+    {
+      "code": "47-5041.00",
+      "name_vi": "Công nhân khai thác mỏ, dầu khí",
+      "absorbs": ["47-5011.00", "47-5012.00", "47-5013.00", "47-5071.00", "47-5023.00", "47-5022.00", "47-5043.00", "47-5044.00", "47-5051.00", "47-5032.00", "47-5081.00"],
+      "merge_reason": "Khoan, xúc bốc, chống lò, nổ mìn và phụ việc giàn khoan cùng trải nghiệm khai thác tài nguyên dưới lòng đất hoặc ngoài khơi."
+    }
+  ],
+  "remove": []
+}

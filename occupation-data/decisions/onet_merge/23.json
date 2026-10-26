@@ -1,0 +1,24 @@
+{
+  "group": "23",
+  "keep": [
+    {
+      "code": "23-1011.00",
+      "name_vi": "Luật sư",
+      "absorbs": ["23-1022.00"],
+      "merge_reason": "Ở Việt Nam, trọng tài viên và hoà giải viên thương mại phần lớn là luật sư kiêm nhiệm."
+    },
+    {
+      "code": "23-1023.00",
+      "name_vi": "Thẩm phán",
+      "absorbs": ["23-1021.00", "23-1012.00"],
+      "merge_reason": "Thẩm phán hành chính là một loại thẩm phán. Thư ký toà án là bước đầu của con đường lên thẩm phán ở Việt Nam."
+    },
+    {
+      "code": "23-2011.00",
+      "name_vi": "Trợ lý pháp lý, chuyên viên pháp chế",
+      "absorbs": ["23-2093.00"],
+      "merge_reason": "Tra cứu hồ sơ pháp lý nhà đất là một phần việc của trợ lý pháp lý; ở Việt Nam không có nghề thẩm tra quyền sở hữu riêng."
+    }
+  ],
+  "remove": []
+}

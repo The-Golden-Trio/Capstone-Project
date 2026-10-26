@@ -1,0 +1,80 @@
+{
+  "_note": "Bản dịch nháp task Core của O*NET cho mã của 22 nghề IT, chỉ dùng cho nghề IT chưa có task theo cấp từ JD. Dịch ngày 21/10/2026, chưa có người duyệt.",
+  "15-1252.00": {"tasks_vi": {
+    "21662": "Phân tích nhu cầu người dùng và yêu cầu phần mềm để xem thiết kế có làm được trong thời gian và chi phí cho phép không.",
+    "21669": "Xây dựng hoặc chỉ đạo quy trình kiểm thử, lập trình và viết tài liệu cho hệ thống phần mềm.",
+    "21664": "Trao đổi với người phân tích hệ thống, kỹ sư, lập trình viên để thiết kế hệ thống và nắm giới hạn, yêu cầu hiệu năng, giao tiếp giữa các phần.",
+    "21670": "Sửa phần mềm đang chạy để vá lỗi, chạy được trên phần cứng mới, nâng cấp giao diện hoặc tăng hiệu năng.",
+    "21673": "Viết báo cáo về đặc tả, tiến độ và tình trạng dự án."
+  }},
+  "15-1255.00": {"tasks_vi": {
+    "21702": "Tìm lỗi lộ ra từ kiểm thử hoặc phản hồi của khách hàng, rồi tự sửa hoặc chuyển cho người phụ trách.",
+    "21692": "Thiết kế, dựng và duy trì trang web bằng ngôn ngữ kịch bản, công cụ tạo nội dung và công cụ quản lý.",
+    "21714": "Viết mã hỗ trợ cho ứng dụng web hoặc trang web.",
+    "21706": "Kiểm thử trang web theo lịch, hoặc sau mỗi lần sửa trang hay sản phẩm.",
+    "21686": "Phối hợp với lập trình viên front-end, back-end để hoàn thành trọn dự án web."
+  }},
+  "15-1299.08": {"tasks_vi": {
+    "14666": "Trao đổi với nhân viên hoặc khách hàng để hiểu yêu cầu cụ thể của hệ thống.",
+    "14677": "Đánh giá từng thành phần của hệ thống có hợp với mục đích không và đề xuất nên dùng gì.",
+    "14674": "Hướng dẫn khách hàng hoặc đội triển khai cách dựng hệ thống an toàn.",
+    "14676": "Chỉ đạo việc phân tích, phát triển và vận hành toàn bộ hệ thống máy tính.",
+    "14689": "Chỉ đạo việc cài đặt hệ điều hành, phần mềm mạng, phần mềm ứng dụng hoặc phần cứng."
+  }},
+  "11-3021.00": {"tasks_vi": {
+    "968": "Điều hành công việc hằng ngày của phòng: phân tích luồng việc, đặt thứ tự ưu tiên, chuẩn và hạn chót.",
+    "975": "Gặp trưởng các phòng ban, quản lý, nhà cung cấp để xin phối hợp và giải quyết vướng mắc.",
+    "978": "Xem kế hoạch dự án để lên lịch và điều phối công việc.",
+    "969": "Giao việc và duyệt kết quả của người phân tích hệ thống, lập trình viên và nhân viên kỹ thuật.",
+    "15198": "Hỗ trợ người dùng khi máy tính gặp sự cố."
+  }},
+  "15-2051.00": {"tasks_vi": {
+    "21823": "Phân tích, xử lý các tập dữ liệu lớn bằng phần mềm thống kê.",
+    "21828": "Vẽ biểu đồ và hình trực quan để trình bày kết quả phân tích dữ liệu.",
+    "21837": "Kiểm tra, đánh giá và chỉnh lại mô hình để dự đoán cho đúng.",
+    "21829": "Trình bày bằng lời hoặc văn bản kết quả mô hình và phân tích cho cấp quản lý hoặc người dùng.",
+    "21836": "Đề xuất giải pháp dựa trên dữ liệu cho các bên liên quan."
+  }},
+  "15-1243.01": {"tasks_vi": {
+    "16132": "Dựng quy trình cho kho dữ liệu: lấy nguồn, nạp, biến đổi và trích xuất dữ liệu.",
+    "16121": "Kiểm tra cấu trúc, độ chính xác và chất lượng dữ liệu trong kho.",
+    "16124": "Ánh xạ dữ liệu giữa hệ thống nguồn, kho dữ liệu và các kho dữ liệu chuyên đề.",
+    "16126": "Xây và chạy quy trình trích xuất dữ liệu từ các hệ thống khác như quản trị, thu phí, bồi thường.",
+    "16128": "Thiết kế và dựng cấu trúc cơ sở dữ liệu của kho."
+  }},
+  "15-1299.05": {"tasks_vi": {
+    "21776": "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+    "21769": "Điều phối việc giám sát mạng và hệ thống để phát hiện xâm nhập.",
+    "21766": "Đánh giá chất lượng các biện pháp kiểm soát bảo mật bằng chỉ số đo.",
+    "21783": "Đào tạo nhân viên và giám sát việc tuân thủ chuẩn, chính sách bảo mật thông tin.",
+    "21782": "Quét mạng bằng công cụ đánh giá lỗ hổng để tìm điểm yếu."
+  }},
+  "15-1299.04": {"tasks_vi": {
+    "21754": "Ghi lại kết quả kiểm thử xâm nhập.",
+    "21758": "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+    "21765": "Viết báo cáo đánh giá về phát hiện kỹ thuật, quy trình và đề xuất cách khắc phục.",
+    "21756": "Thu thập thông tin tình báo an ninh mạng để tìm lỗ hổng.",
+    "21761": "Cập nhật liên tục các xu hướng tấn công mới."
+  }},
+  "15-1299.09": {"tasks_vi": {
+    "16169": "Quản lý việc thực hiện dự án cho đúng ngân sách, tiến độ và phạm vi.",
+    "16154": "Trao đổi với thành viên dự án để tìm và gỡ vướng mắc.",
+    "16157": "Theo dõi các mốc và sản phẩm bàn giao của dự án.",
+    "16152": "Bàn giao sản phẩm của dự án, bảo đảm đạt chuẩn chất lượng.",
+    "16155": "Tìm hiểu nhu cầu hiện tại và sắp tới của khách hàng bằng cách hỏi trực tiếp, khảo sát hoặc cách khác."
+  }},
+  "15-1211.00": {"tasks_vi": {
+    "20950": "Dò và sửa lỗi chương trình, hệ thống để chạy lại bình thường.",
+    "3464": "Giúp nhân viên và người dùng xử lý sự cố máy tính và phần mềm.",
+    "3465": "Kiểm thử, bảo trì, theo dõi chương trình và hệ thống, kể cả điều phối việc cài đặt.",
+    "3482": "Dùng máy tính để giải bài toán kinh doanh như hệ thống quản lý sản xuất, tồn kho và phân tích chi phí.",
+    "3468": "Kết nối các hệ thống máy tính trong tổ chức để dùng chung được dữ liệu."
+  }},
+  "15-1244.00": {"tasks_vi": {
+    "1319": "Lên kế hoạch và triển khai biện pháp an ninh mạng để bảo vệ dữ liệu, phần mềm, phần cứng.",
+    "1317": "Sao lưu dữ liệu và khôi phục khi có sự cố.",
+    "15205": "Chẩn đoán, xử lý sự cố phần cứng, phần mềm, mạng và thay linh kiện hỏng khi cần.",
+    "1318": "Quản trị mạng máy tính và môi trường đi kèm: phần cứng, phần mềm hệ thống, ứng dụng và cấu hình.",
+    "15206": "Cấu hình, theo dõi và bảo trì ứng dụng email, phần mềm diệt virus."
+  }}
+}

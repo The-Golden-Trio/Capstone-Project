@@ -1,0 +1,101 @@
+{
+  "group": "27",
+  "_note": "Quan hệ công chúng (27-3031) gộp vào Marketing (13).",
+  "keep": [
+    {
+      "code": "27-1024.00",
+      "name_vi": "Nhà thiết kế đồ hoạ",
+      "absorbs": ["27-1011.00", "43-9031.00"],
+      "merge_reason": "Dàn trang là một phần việc của thiết kế đồ hoạ; giám đốc nghệ thuật là cấp cao."
+    },
+    {
+      "code": "27-1014.00",
+      "name_vi": "Hoạ sĩ hoạt hình, kỹ xảo"
+    },
+    {
+      "code": "27-1013.00",
+      "name_vi": "Hoạ sĩ, nghệ nhân",
+      "absorbs": ["27-1012.00", "51-9195.03", "51-9195.04", "51-9195.05"],
+      "merge_reason": "Cùng trải nghiệm sáng tác tác phẩm bằng tay; đồ thủ công, gốm, chạm đá và thuỷ tinh là biến thể."
+    },
+    {
+      "code": "27-1021.00",
+      "name_vi": "Nhà thiết kế sản phẩm công nghiệp"
+    },
+    {
+      "code": "27-1022.00",
+      "name_vi": "Nhà thiết kế thời trang"
+    },
+    {
+      "code": "27-1025.00",
+      "name_vi": "Nhà thiết kế nội thất và trang trí",
+      "absorbs": ["27-1027.00", "27-1026.00", "27-1023.00"],
+      "merge_reason": "Thiết kế bối cảnh, trưng bày cửa hàng và cắm hoa trang trí cùng trải nghiệm tạo không gian; khác quy mô."
+    },
+    {
+      "code": "27-2011.00",
+      "name_vi": "Diễn viên"
+    },
+    {
+      "code": "27-2012.00",
+      "name_vi": "Đạo diễn, nhà sản xuất",
+      "absorbs": ["27-2012.03", "27-2012.04", "27-2012.05"],
+      "merge_reason": "Biên tập chương trình, tuyển vai và chỉ đạo kỹ thuật là các vai trò trong ê-kíp sản xuất."
+    },
+    {
+      "code": "27-2042.00",
+      "name_vi": "Ca sĩ, nhạc công",
+      "absorbs": ["27-2041.00", "27-2091.00"],
+      "merge_reason": "Sáng tác, chỉ huy và DJ là các hướng khác nhau của nghề âm nhạc."
+    },
+    {
+      "code": "27-2031.00",
+      "name_vi": "Diễn viên múa",
+      "absorbs": ["27-2032.00"],
+      "merge_reason": "Biên đạo là cấp cao của diễn viên múa."
+    },
+    {
+      "code": "27-2021.00",
+      "name_vi": "Vận động viên, huấn luyện viên thể thao",
+      "absorbs": ["27-2022.00", "27-2023.00"],
+      "merge_reason": "Ở Việt Nam, huấn luyện viên và trọng tài phần lớn đi lên từ vận động viên."
+    },
+    {
+      "code": "27-3023.00",
+      "name_vi": "Phóng viên, nhà báo",
+      "absorbs": ["27-3011.00"],
+      "merge_reason": "Phát thanh viên và dẫn chương trình tin tức thuộc khối báo chí."
+    },
+    {
+      "code": "27-3041.00",
+      "name_vi": "Biên tập viên",
+      "absorbs": ["43-9081.00", "27-3042.00"],
+      "merge_reason": "Đọc mo-rát và viết tài liệu kỹ thuật là các phần việc biên tập."
+    },
+    {
+      "code": "27-3043.00",
+      "name_vi": "Nhà văn, người viết nội dung",
+      "absorbs": ["27-3043.05"],
+      "merge_reason": "Thơ, lời bài hát và văn sáng tạo là biến thể của nghề viết."
+    },
+    {
+      "code": "27-3091.00",
+      "name_vi": "Phiên dịch, biên dịch viên",
+      "absorbs": ["27-3092.00"],
+      "merge_reason": "Tốc ký và làm phụ đề trực tiếp cùng trải nghiệm chuyển lời nói thành văn bản."
+    },
+    {
+      "code": "27-4031.00",
+      "name_vi": "Nhiếp ảnh, quay phim và dựng phim",
+      "absorbs": ["27-4021.00", "27-4032.00"],
+      "merge_reason": "Ở Việt Nam, nhiếp ảnh, quay phim và dựng phim thường do cùng một người hoặc studio làm."
+    },
+    {
+      "code": "27-4014.00",
+      "name_vi": "Kỹ thuật viên âm thanh, ánh sáng, phát sóng",
+      "absorbs": ["27-4011.00", "27-4012.00"],
+      "merge_reason": "Cùng trải nghiệm vận hành thiết bị âm thanh, hình ảnh cho sự kiện và phát sóng."
+    }
+  ],
+  "remove": []
+}

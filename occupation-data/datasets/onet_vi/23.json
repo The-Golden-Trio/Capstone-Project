@@ -1,0 +1,79 @@
+{
+  "23-1011.00": {
+    "title_vi": "Luật sư",
+    "description_vi": "Đại diện thân chủ trong các vụ án hình sự, dân sự và các thủ tục pháp lý khác, soạn thảo văn bản pháp lý, hoặc quản lý và tư vấn cho thân chủ về các giao dịch pháp lý. Có thể chuyên một lĩnh vực hoặc hành nghề rộng trong nhiều lĩnh vực luật.",
+    "tasks_vi": {
+      "3774": "Giải thích luật, phán quyết và quy định cho cá nhân và doanh nghiệp.",
+      "3775": "Phân tích khả năng kết quả của vụ việc dựa trên hiểu biết về án lệ.",
+      "3778": "Thu thập chứng cứ để xây dựng hướng bào chữa hoặc khởi kiện, chẳng hạn phỏng vấn thân chủ và nhân chứng để làm rõ tình tiết.",
+      "3779": "Đại diện thân chủ trước toà án hoặc cơ quan nhà nước.",
+      "3777": "Đánh giá các phát hiện, xây dựng chiến lược và lập luận để chuẩn bị trình bày vụ việc."
+    }
+  },
+  "23-1012.00": {
+    "title_vi": "Thư ký pháp lý của thẩm phán",
+    "description_vi": "Hỗ trợ thẩm phán tại toà hoặc bằng cách nghiên cứu và chuẩn bị văn bản pháp lý.",
+    "tasks_vi": {
+      "19050": "Soạn bản tóm tắt, bản ghi nhớ pháp lý hoặc bản nêu vấn đề của vụ án, kèm đề xuất phù hợp.",
+      "19051": "Nghiên cứu luật, phán quyết của toà, tài liệu, ý kiến và các thông tin khác liên quan đến vụ án đang xét.",
+      "19047": "Soạn thảo hoặc rà soát bản án, quyết định và trích dẫn pháp lý.",
+      "19046": "Trao đổi với thẩm phán về vấn đề pháp lý, cách hiểu văn bản hoặc việc ra lệnh.",
+      "19052": "Xem xét đơn kiện, đơn yêu cầu và kiến nghị đã nộp để xác định vấn đề và căn cứ giải quyết."
+    }
+  },
+  "23-1021.00": {
+    "title_vi": "Thẩm phán hành chính, người xét xử và chủ toạ phiên điều trần",
+    "description_vi": "Chủ trì phiên điều trần để đề xuất hoặc ra quyết định về các yêu cầu liên quan đến chương trình hay vấn đề của nhà nước. Xác định trách nhiệm, chế tài hoặc mức phạt, hoặc đề xuất chấp nhận hay bác bỏ yêu cầu và thoả thuận.",
+    "tasks_vi": {
+      "7623": "Giám sát và điều hành phiên xét xử, điều trần để bảo đảm công bằng và bảo vệ quyền hợp pháp của các bên.",
+      "7617": "Soạn ý kiến và quyết định bằng văn bản.",
+      "7625": "Chủ trì phiên điều trần để xem xét và quyết định các yêu cầu, như điều kiện hưởng chương trình xã hội, bảo vệ môi trường hay thực thi quy định an toàn và sức khoẻ.",
+      "7626": "Phán quyết về phản đối, kiến nghị và tính chấp nhận được của chứng cứ.",
+      "7619": "Nghiên cứu và phân tích luật, quy định, chính sách và tiền lệ để chuẩn bị điều trần và đưa ra kết luận."
+    }
+  },
+  "23-1022.00": {
+    "title_vi": "Trọng tài viên, hoà giải viên",
+    "description_vi": "Tạo điều kiện cho đàm phán và giải quyết xung đột qua đối thoại. Giải quyết tranh chấp ngoài toà án khi các bên cùng đồng ý.",
+    "tasks_vi": {
+      "12999": "Soạn ý kiến hoặc quyết định bằng văn bản cho các vụ việc.",
+      "20238": "Áp dụng luật, quy định, chính sách hoặc tiền lệ liên quan để đi tới kết luận.",
+      "20239": "Chủ trì phiên làm việc để thu thập thông tin và chứng cứ phục vụ giải quyết yêu cầu.",
+      "20240": "Xác định mức độ trách nhiệm dựa trên chứng cứ, luật hoặc tiền lệ hành chính, tư pháp.",
+      "13001": "Phán quyết về phản đối, kiến nghị hoặc tính chấp nhận được của chứng cứ."
+    }
+  },
+  "23-1023.00": {
+    "title_vi": "Thẩm phán",
+    "description_vi": "Phân xử, tư vấn, xét xử hoặc thực thi công lý tại toà án. Có thể tuyên án bị cáo trong vụ án hình sự theo luật và khung hình phạt. Có thể xác định trách nhiệm của bị đơn trong vụ án dân sự.",
+    "tasks_vi": {
+      "5644": "Tuyên án bị cáo trong vụ án hình sự khi bị kết tội, theo quy định của pháp luật.",
+      "5649": "Giám sát phiên toà để bảo đảm mọi quy tắc và thủ tục được tuân thủ.",
+      "5643": "Hướng dẫn bồi thẩm đoàn về luật áp dụng, yêu cầu họ suy ra tình tiết từ chứng cứ và nghe phán quyết của họ.",
+      "5653": "Viết bản án cho các vụ việc.",
+      "5647": "Đọc hồ sơ đơn từ và kiến nghị để nắm tình tiết và vấn đề."
+    }
+  },
+  "23-2011.00": {
+    "title_vi": "Trợ lý pháp lý",
+    "description_vi": "Hỗ trợ luật sư bằng cách điều tra tình tiết, chuẩn bị văn bản pháp lý hoặc nghiên cứu án lệ. Nghiên cứu để phục vụ một thủ tục pháp lý, xây dựng hướng bào chữa hoặc khởi kiện.",
+    "tasks_vi": {
+      "18491": "Soạn bản khai có tuyên thệ và các văn bản như thư từ pháp lý, sắp xếp và lưu giữ hồ sơ giấy hoặc điện tử.",
+      "23994": "Soạn, biên tập hoặc rà soát văn bản pháp lý như dự thảo luật, bản tóm tắt, đơn kiện, đơn kháng cáo, di chúc, hợp đồng và biên bản giao dịch bất động sản.",
+      "21062": "Điều tra tình tiết và luật áp dụng của vụ việc, tra cứu các nguồn như hồ sơ công khai và internet để xác định căn cứ khởi kiện và chuẩn bị vụ việc.",
+      "18492": "Chuẩn bị cho phiên toà, chẳng hạn sắp xếp vật chứng.",
+      "18493": "Gặp thân chủ và các chuyên gia khác để trao đổi chi tiết vụ việc."
+    }
+  },
+  "23-2093.00": {
+    "title_vi": "Chuyên viên thẩm tra quyền sở hữu bất động sản",
+    "description_vi": "Tra cứu hồ sơ bất động sản, thẩm tra quyền sở hữu hoặc tóm tắt các văn bản pháp lý, bảo hiểm liên quan. Có thể lập danh sách thế chấp, hợp đồng và các giấy tờ liên quan đến quyền sở hữu bằng cách tra cứu hồ sơ công và tư cho công ty luật, công ty bất động sản hoặc công ty bảo hiểm quyền sở hữu.",
+    "tasks_vi": {
+      "9241": "Lập và phát hành cam kết và hợp đồng bảo hiểm quyền sở hữu dựa trên kết quả tra cứu.",
+      "9231": "Xem xét các giấy tờ như hợp đồng thế chấp, quyền cầm giữ, bản án, quyền địa dịch, bản đồ địa chính và hợp đồng để xác minh mô tả pháp lý, chủ sở hữu và các hạn chế của tài sản.",
+      "9234": "Kiểm tra từng hồ sơ quyền sở hữu để xác định các hạn chế, như nợ thuế, có ảnh hưởng hay giới hạn việc sử dụng tài sản không.",
+      "9235": "Lập báo cáo mô tả các vướng mắc về quyền sở hữu gặp phải và nêu việc cần làm để giải quyết.",
+      "9230": "Lập danh sách mọi giấy tờ pháp lý áp dụng cho một mảnh đất và công trình trên đó."
+    }
+  }
+}

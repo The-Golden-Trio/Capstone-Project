@@ -1,0 +1,32 @@
+{
+  "group": "21",
+  "keep": [
+    {
+      "code": "21-1014.00",
+      "name_vi": "Chuyên viên tư vấn tâm lý",
+      "absorbs": ["21-1011.00", "21-1013.00", "21-1015.00"],
+      "merge_reason": "Cùng trải nghiệm tham vấn một–một hoặc theo nhóm, chỉ khác đối tượng (người nghiện, gia đình, người cần phục hồi)."
+    },
+    {
+      "code": "21-1012.00",
+      "name_vi": "Chuyên viên tư vấn học đường và hướng nghiệp"
+    },
+    {
+      "code": "21-1021.00",
+      "name_vi": "Nhân viên công tác xã hội",
+      "absorbs": ["21-1022.00", "21-1023.00", "21-1093.00", "11-9151.00"],
+      "merge_reason": "Cùng trải nghiệm đánh giá hoàn cảnh và kết nối thân chủ với dịch vụ; chỉ khác môi trường (trường học, bệnh viện, cơ sở cai nghiện). Trợ lý dịch vụ xã hội là cấp khởi đầu, quản lý dịch vụ xã hội là cấp cao."
+    },
+    {
+      "code": "21-1094.00",
+      "name_vi": "Nhân viên y tế cộng đồng",
+      "absorbs": ["21-1091.00"],
+      "merge_reason": "Giáo dục sức khoẻ là phần việc chính của y tế cộng đồng."
+    }
+  ],
+  "remove": [
+    {"code": "21-1092.00", "reason_group": "Không có vị trí tương ứng ở Việt Nam", "reason": "Quản lý người được hưởng án treo do công an và chính quyền cơ sở đảm nhận, không tuyển như một nghề riêng."},
+    {"code": "21-2011.00", "reason_group": "Không phải lựa chọn nghề theo tuyển dụng", "reason": "Con đường tôn giáo theo sự đào tạo của từng giáo hội, không phải nghề người chơi chọn và thử như các nghề khác."},
+    {"code": "21-2021.00", "reason_group": "Không phải lựa chọn nghề theo tuyển dụng", "reason": "Như chức sắc tôn giáo: gắn với tổ chức tôn giáo, không tuyển như một nghề."}
+  ]
+}

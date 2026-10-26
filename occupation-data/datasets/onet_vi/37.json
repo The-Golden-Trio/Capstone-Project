@@ -1,0 +1,90 @@
+{
+  "37-1011.00": {
+    "title_vi": "Tổ trưởng buồng phòng và vệ sinh",
+    "description_vi": "Trực tiếp giám sát và điều phối công việc của nhân viên vệ sinh tại khách sạn, bệnh viện, văn phòng và các cơ sở khác.",
+    "tasks_vi": {
+      "9533": "Giám sát các dịch vụ nội bộ như giặt là, bảo trì sửa chữa, giặt khô hoặc dịch vụ trông giữ đồ.",
+      "9520": "Chọn vật liệu vệ sinh phù hợp nhất cho từng loại đồ vải, đồ nội thất, sàn và bề mặt.",
+      "9534": "Báo cho quản lý, lễ tân hoặc bộ phận tiếp nhận về các phòng đã sẵn sàng sử dụng.",
+      "9513": "Kiểm tra công việc đã làm để bảo đảm đạt yêu cầu và tiêu chuẩn.",
+      "9515": "Trực tiếp làm hoặc hỗ trợ việc vệ sinh khi cần."
+    }
+  },
+  "37-1012.00": {
+    "title_vi": "Tổ trưởng chăm sóc cảnh quan và cây xanh",
+    "description_vi": "Trực tiếp giám sát và điều phối công nhân làm cảnh quan, chăm sóc khuôn viên. Có thể xem hợp đồng để xác định yêu cầu dịch vụ, máy móc và nhân lực; trả lời khách hàng về phương pháp, vật liệu và giá; lập dự toán theo chi phí nhân công, vật liệu và máy móc.",
+    "tasks_vi": {
+      "11199": "Đặt ra và giám sát việc thực hiện quy trình, tiêu chuẩn làm việc để bảo đảm hiệu quả và an toàn cho công nhân.",
+      "11202": "Xếp lịch cho các tổ theo mức ưu tiên, nhân lực, thiết bị sẵn có và thời tiết.",
+      "11225": "Đi kiểm tra khuôn viên như công viên, vườn thực vật, nghĩa trang hoặc sân golf để xem tình trạng cây và đất.",
+      "11204": "Theo dõi tiến độ để bảo đảm làm đúng hướng dẫn và kịp thời hạn.",
+      "11201": "Chỉ đạo công nhân làm cảnh quan, chăm sóc bãi cỏ, cắt tỉa cây và bụi cây."
+    }
+  },
+  "37-2011.00": {
+    "title_vi": "Nhân viên vệ sinh toà nhà",
+    "description_vi": "Giữ cho toà nhà sạch sẽ, gọn gàng. Làm các việc vệ sinh nặng như lau sàn, giặt thảm, lau tường và kính, dọn rác. Có thể trông lò sưởi và nồi hơi, bảo trì thường xuyên, báo quản lý khi cần sửa chữa, và dọn tuyết hoặc rác trên vỉa hè.",
+    "tasks_vi": {
+      "9538": "Vệ sinh và bổ sung đồ dùng cho nhà vệ sinh.",
+      "9539": "Thu gom và đổ rác.",
+      "9540": "Làm sạch sàn bằng cách quét, lau, chà hoặc hút bụi.",
+      "20590": "Giữ an ninh và an toàn cho toà nhà, như khoá cửa sau giờ làm hoặc kiểm tra thiết bị điện để tránh nguy hiểm.",
+      "9544": "Báo quản lý khi hệ thống của toà nhà cần sửa chữa lớn hoặc bổ sung."
+    }
+  },
+  "37-2012.00": {
+    "title_vi": "Nhân viên buồng phòng và dọn dẹp",
+    "description_vi": "Làm các việc dọn dẹp nhẹ để giữ nhà riêng hoặc cơ sở kinh doanh như khách sạn, bệnh viện sạch sẽ, gọn gàng. Có thể gồm dọn giường, thay đồ vải, lau dọn phòng và hành lang, hút bụi.",
+    "tasks_vi": {
+      "9564": "Giữ kho và xe đẩy đủ đồ, sạch sẽ và gọn gàng.",
+      "9560": "Chở đồ vải, khăn, đồ dùng vệ sinh và vật tư dọn dẹp bằng xe đẩy.",
+      "9561": "Dọn phòng, hành lang, sảnh, phòng chờ, nhà vệ sinh, thang máy, cầu thang, phòng thay đồ và các khu vực khác cho đạt tiêu chuẩn vệ sinh.",
+      "9562": "Đổ thùng rác, làm sạch gạt tàn và chuyển rác thải tới nơi tập kết.",
+      "9566": "Quét, chà, đánh sáp hoặc đánh bóng sàn bằng chổi, cây lau hoặc máy chà sàn."
+    }
+  },
+  "37-2021.00": {
+    "title_vi": "Nhân viên diệt côn trùng và sinh vật gây hại",
+    "description_vi": "Phun hoặc thả dung dịch hoá chất, khí độc và đặt bẫy để tiêu diệt hoặc loại bỏ côn trùng, chuột và sinh vật gây hại trong nhà và khu vực xung quanh.",
+    "tasks_vi": {
+      "7974": "Ghi lại công việc đã làm.",
+      "7977": "Dọn sạch nơi làm việc sau khi xong.",
+      "20760": "Đo kích thước khu vực cần xử lý, tính lượng thuốc xông cần dùng và ước tính chi phí dịch vụ.",
+      "7976": "Phun hoặc rắc dung dịch, bột hoặc khí hoá chất vào phòng, lên quần áo, đồ đạc, gỗ, hoặc khu đầm lầy, mương rãnh, hố ga.",
+      "20759": "Tư vấn cho khách hàng cách xử lý và phòng ngừa sinh vật gây hại."
+    }
+  },
+  "37-3011.00": {
+    "title_vi": "Công nhân cảnh quan và chăm sóc khuôn viên",
+    "description_vi": "Làm và chăm sóc cảnh quan khuôn viên bằng dụng cụ cầm tay hoặc máy. Công việc thường gồm trải thảm cỏ, cắt cỏ, cắt tỉa, trồng cây, tưới nước, bón phân, đào xới, cào, lắp hệ thống tưới và xây tường chắn bằng khối bê tông lắp ghép.",
+    "tasks_vi": {
+      "9589": "Cắt cỏ hoặc xén viền bãi cỏ bằng máy.",
+      "20761": "Vận hành xe và máy như máy cắt cỏ, máy kéo, máy thổi tuyết, cưa máy, kéo điện, máy cắt thảm cỏ hoặc cưa tỉa cành.",
+      "9592": "Dùng dụng cụ cầm tay như xẻng, cào, cưa, kéo tỉa hàng rào hoặc rìu.",
+      "9593": "Cắt tỉa cây, bụi cây hoặc hàng rào cây bằng kéo hoặc cưa máy.",
+      "9594": "Nhặt và dọn rác."
+    }
+  },
+  "37-3012.00": {
+    "title_vi": "Nhân viên phun thuốc bảo vệ thực vật",
+    "description_vi": "Pha hoặc phun thuốc trừ sâu, thuốc diệt cỏ, thuốc trừ nấm hoặc thuốc diệt côn trùng dưới dạng phun sương, rắc bột, xông hơi hoặc trộn vào đất cho cây, bụi cây, bãi cỏ hoặc cây trồng. Thường cần được đào tạo riêng và có chứng nhận của cơ quan quản lý.",
+    "tasks_vi": {
+      "11227": "Đổ nước và hoá chất vào bình phun theo đúng công thức.",
+      "24043": "Ghi chép thông tin về việc phun thuốc, như loại thuốc và lượng đã dùng.",
+      "11228": "Pha thuốc trừ sâu, thuốc diệt cỏ hoặc thuốc trừ nấm để phun cho cây, bụi cây, bãi cỏ hoặc cây trồng.",
+      "11231": "Khởi động động cơ và vận hành máy như máy khuấy, máy bơm hoặc thiết bị phun cầm tay.",
+      "11230": "Nâng, đẩy và xoay vòi phun, ống dẫn để phun đúng khu vực."
+    }
+  },
+  "37-3013.00": {
+    "title_vi": "Công nhân cắt tỉa cây",
+    "description_vi": "Dùng kỹ thuật leo trèo và chằng buộc để cắt bỏ cành chết hoặc cành thừa trên cây, giữ hành lang an toàn cho đường sá, vỉa hè, đường dây điện, hoặc làm đẹp và giữ cây khoẻ. Cắt tỉa và chăm sóc cây bằng cưa tay, kéo tỉa và máy tỉa. Làm việc trên tán cây và có thể dùng xe nâng gắn trên xe tải.",
+    "tasks_vi": {
+      "13120": "Vận hành máy băm, nghiền và đưa cành, bụi cây vào máy.",
+      "13113": "Vận hành xe cần cẩu, máy xúc, máy nghiền gốc, máy băm cành, máy kéo, cưa máy, xe tải, máy phun và các dụng cụ khác.",
+      "13116": "Cắt cành chết hoặc cành thừa, dọn cành quanh đường dây điện, bằng đồ leo hoặc gầu xe nâng, cưa máy, móc, cưa tay và kéo.",
+      "13115": "Làm sạch, mài và tra dầu cho dụng cụ, thiết bị.",
+      "13119": "Kéo dụng cụ, thiết bị lên cho người cắt tỉa và hạ cành xuống bằng dây hoặc ròng rọc."
+    }
+  }
+}

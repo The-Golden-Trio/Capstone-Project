@@ -11680,7 +11680,17 @@
         ],
         "years_experience": "0",
         "core_output": "Hiện thực logic nghiệp vụ đơn giản và viết API endpoint theo mẫu có sẵn dưới sự giám sát trực tiếp của kỹ sư cấp cao, chưa tự quyết định về schema dữ liệu hay lựa chọn thư viện.",
-        "tasks": [],
+        "tasks": [
+          "Viết và kiểm thử API cho một tính năng nhỏ dưới hướng dẫn của kỹ sư senior",
+          "Tham gia review code của team để học chuẩn code",
+          "Viết unit test cho phần code của mình"
+        ],
+        "tasks_source": [
+          "https://www.123job.vn/viec-lam/thuc-tap-sinh-back-end-5DOVmXjAqV",
+          "https://vieclam.hub.edu.vn/portal/viec-lam/-java-php-python-node.js--backend-developer-intern-ODUy.html",
+          "https://123job.vn/viec-lam/intern-developer-backend-php-ruby-nodejs-JD60Ykparn"
+        ],
+        "tasks_note": "Tóm từ phần trách nhiệm của 3 tin thực tập backend ở Việt Nam, đọc ngày 23/10/2026.",
         "skills_hard": [],
         "skills_soft": [],
         "certifications": [],
@@ -11866,7 +11876,17 @@
         "title_aliases": [],
         "years_experience": "8-12",
         "core_output": "Đặt định hướng kỹ thuật xuyên nhiều đội, xây chuẩn kỹ thuật cho tổ chức, review thiết kế của kỹ sư khác — thuần IC, không có direct report.",
-        "tasks": [],
+        "tasks": [
+          "Thiết kế kiến trúc backend chịu tải lớn, ổn định và dễ bảo trì",
+          "Tìm và gỡ điểm nghẽn hiệu năng, dẫn xử lý sự cố production nghiêm trọng",
+          "Chọn công nghệ và cố vấn kỹ thuật cho các team kỹ sư"
+        ],
+        "tasks_source": [
+          "https://itviec.com/it-jobs/lead-principal-backend-engineer-java-vinamilk-2438",
+          "https://itviec.com/it-jobs/principal-software-engineer-node-js-typescript-money-forward-vietnam-co-ltd-4158",
+          "https://www.rgf-hragent.asia/en/principal-backend-engineer-it-software-saas-SDG-116935"
+        ],
+        "tasks_note": "Tóm từ phần trách nhiệm của 3 tin Principal Backend ở Việt Nam (Vinamilk, Money Forward Vietnam, RGF HR Agent), đọc ngày 23/10/2026.",
         "skills_hard": [],
         "skills_soft": [],
         "certifications": [],

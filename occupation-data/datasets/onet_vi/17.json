@@ -1,0 +1,183 @@
+{
+  "17-1011.00": {
+    "title_vi": "Kiến trúc sư",
+    "description_vi": "Lập phương án và thiết kế công trình như nhà ở, toà văn phòng, nhà hát, nhà xưởng và các công trình khác.",
+    "tasks_vi": {
+      "20479": "Vẽ bản vẽ tỉ lệ hoặc thiết kế kiến trúc bằng phần mềm CAD hoặc công cụ khác.",
+      "19596": "Lập phương án hoặc thiết kế công trình như nhà ở, văn phòng, nhà hát, nhà xưởng theo quy định về môi trường, an toàn và các quy định khác.",
+      "20481": "Gặp khách hàng để xem và trao đổi về bản vẽ kiến trúc.",
+      "134": "Lập hồ sơ hợp đồng cho nhà thầu xây dựng.",
+      "20483": "Hoàn thiện hồ sơ thi công gồm phần thể hiện thẩm mỹ của công trình và chi tiết cấu tạo."
+    }
+  },
+  "17-1012.00": {"title_vi": "Kiến trúc sư cảnh quan"},
+  "17-1022.00": {
+    "title_vi": "Kỹ sư trắc địa",
+    "description_vi": "Đo đạc chính xác và xác định ranh giới thửa đất. Cung cấp dữ liệu về hình dạng, địa hình, trọng lực, vị trí, độ cao và kích thước của đất và các đối tượng trên bề mặt trái đất cho kỹ thuật, làm bản đồ, khai mỏ, định giá đất, xây dựng và các mục đích khác.",
+    "tasks_vi": {
+      "3530": "Chỉ đạo hoặc thực hiện đo đạc để xác lập ranh giới pháp lý của thửa đất dựa trên giấy tờ quyền sử dụng.",
+      "3528": "Lập và lưu bản vẽ phác, bản đồ, báo cáo và mô tả pháp lý của kết quả đo để xác nhận và chịu trách nhiệm về công việc.",
+      "3534": "Viết mô tả kết quả đo ranh giới để dùng trong giấy chứng nhận, hợp đồng thuê và văn bản pháp lý khác.",
+      "3529": "Kiểm tra độ chính xác của số liệu đo, gồm phép đo và tính toán tại hiện trường.",
+      "3536": "Tra cứu hồ sơ pháp lý, hồ sơ đo đạc và giấy tờ đất để lấy thông tin về ranh giới khu vực cần đo."
+    }
+  },
+  "17-1022.01": {"title_vi": "Kỹ sư trắc địa cao cấp (đo đạc địa cầu)"},
+  "17-1021.00": {"title_vi": "Chuyên viên bản đồ và đo ảnh"},
+  "17-3031.00": {"title_vi": "Kỹ thuật viên đo đạc, bản đồ"},
+  "17-2051.00": {
+    "title_vi": "Kỹ sư xây dựng",
+    "description_vi": "Lập kế hoạch, thiết kế và giám sát xây dựng, bảo trì các công trình như đường bộ, đường sắt, sân bay, cầu, cảng, kênh, đập, thuỷ lợi, đường ống, nhà máy điện và hệ thống cấp thoát nước.",
+    "tasks_vi": {
+      "19610": "Chỉ đạo công tác kỹ thuật, bảo đảm tuân thủ quy định về môi trường, an toàn và các quy định của nhà nước.",
+      "20490": "Quản lý và chỉ đạo thi công, vận hành hoặc bảo trì tại công trường.",
+      "148": "Kiểm tra công trường để theo dõi tiến độ và bảo đảm đúng thiết kế, tiêu chuẩn an toàn, vệ sinh.",
+      "147": "Tính tải trọng, độ dốc, lưu lượng nước hoặc ứng suất vật liệu để xác định thông số thiết kế.",
+      "20491": "Lập phương án và thiết kế hệ thống, công trình giao thông hoặc thuỷ lợi bằng phần mềm thiết kế."
+    }
+  },
+  "17-2051.01": {"title_vi": "Kỹ sư giao thông"},
+  "17-3022.00": {"title_vi": "Kỹ thuật viên xây dựng"},
+  "17-3011.00": {"title_vi": "Người vẽ kỹ thuật kiến trúc, xây dựng"},
+  "17-2071.00": {
+    "title_vi": "Kỹ sư điện",
+    "description_vi": "Nghiên cứu, thiết kế, phát triển, thử nghiệm hoặc giám sát sản xuất và lắp đặt thiết bị, linh kiện, hệ thống điện cho thương mại, công nghiệp, quốc phòng hoặc khoa học.",
+    "tasks_vi": {
+      "1348": "Thiết kế, triển khai, bảo trì hoặc cải tiến thiết bị, công trình, linh kiện, sản phẩm hay hệ thống điện cho thương mại, công nghiệp hoặc dân dụng.",
+      "1357": "Giám sát tiến độ sản xuất của dự án để hoàn thành đúng hạn, đúng ngân sách.",
+      "1350": "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, hỗ trợ, lập tài liệu hoặc thử nghiệm để đáp ứng yêu cầu kỹ thuật, quy chuẩn và khách hàng.",
+      "1351": "Tính toán chi tiết để xây dựng tiêu chuẩn, thông số sản xuất, xây dựng hoặc lắp đặt.",
+      "1349": "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật."
+    }
+  },
+  "17-3023.00": {"title_vi": "Kỹ thuật viên điện, điện tử"},
+  "17-2199.03": {"title_vi": "Kỹ sư năng lượng"},
+  "17-2161.00": {"title_vi": "Kỹ sư hạt nhân"},
+  "17-2072.00": {
+    "title_vi": "Kỹ sư điện tử",
+    "description_vi": "Nghiên cứu, thiết kế, phát triển hoặc thử nghiệm linh kiện và hệ thống điện tử cho thương mại, công nghiệp, quốc phòng hoặc khoa học, dựa trên lý thuyết điện tử và tính chất vật liệu. Thiết kế mạch và linh kiện cho viễn thông, dẫn đường hàng không, âm học, đo lường và điều khiển.",
+    "tasks_vi": {
+      "5339": "Thiết kế linh kiện, phần mềm, sản phẩm hoặc hệ thống điện tử cho thương mại, công nghiệp, y tế, quốc phòng hoặc khoa học.",
+      "20497": "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật điện tử.",
+      "20494": "Đánh giá công việc của dự án để bảo đảm hiệu quả, đủ yêu cầu kỹ thuật và tương thích khi giải quyết vấn đề điện tử phức tạp.",
+      "5349": "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, vận hành hoặc cải tiến thiết bị, sản phẩm, hệ thống điện tử.",
+      "20496": "Trao đổi với kỹ sư, khách hàng, nhà cung cấp và các bên khác về dự án hoặc sản phẩm điện tử hiện có hay tiềm năng."
+    }
+  },
+  "17-2072.01": {"title_vi": "Chuyên viên thiết bị nhận dạng tần số vô tuyến (RFID)"},
+  "17-2199.06": {"title_vi": "Kỹ sư vi hệ thống"},
+  "17-2199.07": {"title_vi": "Kỹ sư quang tử"},
+  "17-3029.08": {"title_vi": "Kỹ thuật viên quang tử"},
+  "17-3012.00": {"title_vi": "Người vẽ kỹ thuật điện, điện tử"},
+  "17-2141.00": {
+    "title_vi": "Kỹ sư cơ khí",
+    "description_vi": "Lập kế hoạch và thiết kế dụng cụ, động cơ, máy móc và thiết bị cơ khí. Giám sát lắp đặt, vận hành, bảo trì và sửa chữa thiết bị như hệ thống nhiệt, khí, nước và hơi trung tâm.",
+    "tasks_vi": {
+      "1411": "Đọc và hiểu bản vẽ kỹ thuật, sơ đồ hoặc báo cáo từ máy tính.",
+      "20733": "Nghiên cứu, thiết kế, đánh giá, lắp đặt, vận hành hoặc bảo trì sản phẩm, thiết bị, hệ thống, quy trình cơ khí cho đúng yêu cầu.",
+      "20736": "Chọn bộ phận của hệ thống hoặc chỉ đạo sửa đổi sản phẩm để đúng thiết kế, thông số và quy định môi trường.",
+      "1412": "Trao đổi với kỹ sư và nhân viên khác để triển khai quy trình vận hành, xử lý hỏng hóc hoặc cung cấp thông tin kỹ thuật.",
+      "20734": "Điều tra hỏng hóc thiết bị để chẩn đoán lỗi và đề xuất cách khắc phục."
+    }
+  },
+  "17-2141.01": {"title_vi": "Kỹ sư pin nhiên liệu"},
+  "17-3027.00": {"title_vi": "Kỹ thuật viên cơ khí"},
+  "17-3013.00": {"title_vi": "Người vẽ kỹ thuật cơ khí"},
+  "17-2011.00": {"title_vi": "Kỹ sư hàng không vũ trụ"},
+  "17-3021.00": {"title_vi": "Kỹ thuật viên hàng không"},
+  "17-2121.00": {"title_vi": "Kỹ sư đóng tàu, kiến trúc sư tàu thuỷ"},
+  "17-2141.02": {
+    "title_vi": "Kỹ sư ô tô",
+    "description_vi": "Phát triển thiết kế mới hoặc cải tiến cho khung, động cơ, hộp số và các hệ thống khác của xe bằng phần mềm thiết kế. Chỉ đạo việc chế tạo, sửa đổi hoặc thử nghiệm xe và linh kiện.",
+    "tasks_vi": {
+      "16438": "Thực hiện hoặc chỉ đạo thử nghiệm ô tô ở cấp hệ thống.",
+      "16428": "Hướng dẫn kỹ thuật cho kỹ sư và nhân viên hỗ trợ khác.",
+      "16429": "Phân tích hỏng hóc, sai lệch hoặc nguyên nhân gốc.",
+      "16434": "Hiệu chỉnh các hệ thống trên xe, gồm thuật toán điều khiển và phần mềm.",
+      "16437": "Thiết kế hoặc phân tích hệ thống ô tô ở các mảng như khí động học, nhiên liệu thay thế, công thái học, động cơ lai, phanh, hộp số, lái, hiệu chỉnh, an toàn hoặc chẩn đoán."
+    }
+  },
+  "17-3027.01": {"title_vi": "Kỹ thuật viên ô tô"},
+  "17-2199.05": {
+    "title_vi": "Kỹ sư cơ điện tử",
+    "description_vi": "Nghiên cứu, thiết kế, phát triển hoặc thử nghiệm hệ thống tự động hoá, hệ thống thông minh, thiết bị thông minh hoặc điều khiển hệ thống công nghiệp.",
+    "tasks_vi": {
+      "16467": "Lập hồ sơ thiết kế cơ khí cho chi tiết, cụm lắp ráp hoặc thành phẩm.",
+      "16482": "Thiết kế thiết bị chính xác cao cho các ứng dụng cần độ chính xác hoặc điều khiển.",
+      "16474": "Thiết kế hệ thống kỹ thuật để tự động hoá công việc trong công nghiệp.",
+      "16470": "Triển khai hoặc thử nghiệm giải pháp thiết kế.",
+      "16468": "Lưu hồ sơ kỹ thuật của dự án."
+    }
+  },
+  "17-2199.08": {"title_vi": "Kỹ sư robot"},
+  "17-3024.00": {"title_vi": "Kỹ thuật viên cơ điện tử"},
+  "17-3024.01": {"title_vi": "Kỹ thuật viên robot"},
+  "17-2041.00": {
+    "title_vi": "Kỹ sư hoá học",
+    "description_vi": "Thiết kế thiết bị nhà máy hoá chất và xây dựng quy trình sản xuất hoá chất và sản phẩm như xăng, cao su tổng hợp, nhựa, chất tẩy rửa, xi măng, giấy và bột giấy, dựa trên nguyên lý và công nghệ hoá học, vật lý và kỹ thuật.",
+    "tasks_vi": {
+      "3552": "Xây dựng quy trình an toàn cho công nhân vận hành thiết bị hoặc làm việc gần phản ứng hoá học đang diễn ra.",
+      "18471": "Xử lý sự cố trong quy trình sản xuất hoá chất.",
+      "20955": "Theo dõi và phân tích dữ liệu từ quy trình và thí nghiệm.",
+      "18472": "Đánh giá thiết bị và quy trình hoá chất để tối ưu hiệu suất hoặc bảo đảm tuân thủ quy định an toàn, môi trường.",
+      "3560": "Thiết kế và bố trí mặt bằng thiết bị."
+    }
+  },
+  "17-2131.00": {"title_vi": "Kỹ sư vật liệu"},
+  "17-2199.09": {"title_vi": "Kỹ sư hệ thống nano"},
+  "17-3026.01": {"title_vi": "Kỹ thuật viên công nghệ nano"},
+  "17-2081.00": {
+    "title_vi": "Kỹ sư môi trường",
+    "description_vi": "Nghiên cứu, thiết kế, lập kế hoạch hoặc thực hiện công việc kỹ thuật để phòng ngừa, kiểm soát và khắc phục các mối nguy môi trường, vận dụng nhiều ngành kỹ thuật. Công việc có thể gồm xử lý chất thải, cải tạo khu vực ô nhiễm hoặc công nghệ kiểm soát ô nhiễm.",
+    "tasks_vi": {
+      "15210": "Thiết kế hoặc giám sát thiết kế hệ thống, quy trình, thiết bị để kiểm soát, quản lý hoặc cải thiện chất lượng nước, không khí, đất.",
+      "1377": "Đánh giá tác động môi trường hiện có hoặc có thể xảy ra của dự án sử dụng đất lên không khí, nước và đất.",
+      "20195": "Phối hợp với nhà khoa học môi trường, nhà quy hoạch, kỹ thuật viên chất thải nguy hại, kỹ sư, chuyên gia luật, kinh doanh và các chuyên gia khác để giải quyết vấn đề môi trường.",
+      "1374": "Tư vấn cho doanh nghiệp hoặc cơ quan nhà nước quy trình làm sạch khu vực ô nhiễm để bảo vệ con người và môi trường.",
+      "1373": "Đề xuất mục tiêu, chỉ tiêu dự án và báo cáo lãnh đạo về tiến độ đạt được."
+    }
+  },
+  "17-3025.00": {"title_vi": "Kỹ thuật viên môi trường"},
+  "17-2112.00": {
+    "title_vi": "Kỹ sư công nghiệp",
+    "description_vi": "Thiết kế, phát triển, thử nghiệm và đánh giá hệ thống tích hợp để quản lý quá trình sản xuất công nghiệp, gồm yếu tố con người, kiểm soát chất lượng, tồn kho, logistics và dòng vật liệu, phân tích chi phí và điều phối sản xuất.",
+    "tasks_vi": {
+      "18607": "Ước tính chi phí sản xuất, cách tiết kiệm chi phí và tác động của thay đổi thiết kế lên chi phí để lãnh đạo xem xét và quyết định.",
+      "1394": "Lập trình tự công đoạn gia công, lắp ráp chi tiết hoặc sản phẩm để sử dụng nguồn lực hiệu quả.",
+      "1391": "Phân tích số liệu thống kê và yêu cầu sản phẩm để xác định tiêu chuẩn, mục tiêu chất lượng và độ tin cậy của thành phẩm.",
+      "18609": "Trao đổi với khách hàng, nhà cung cấp, nhân viên và quản lý về mua hàng, yêu cầu sản phẩm, năng lực sản xuất hoặc tiến độ dự án.",
+      "1400": "Trao đổi với quản lý và người dùng để xây dựng tiêu chuẩn sản xuất và thiết kế."
+    }
+  },
+  "17-2112.01": {"title_vi": "Kỹ sư công thái học"},
+  "17-2112.02": {"title_vi": "Kỹ sư thẩm định quy trình (validation)"},
+  "17-2112.03": {"title_vi": "Kỹ sư sản xuất"},
+  "17-3026.00": {"title_vi": "Kỹ thuật viên kỹ thuật công nghiệp"},
+  "17-3029.01": {"title_vi": "Chuyên viên kiểm tra không phá huỷ (NDT)"},
+  "17-2151.00": {
+    "title_vi": "Kỹ sư mỏ và địa chất",
+    "description_vi": "Khảo sát dưới mặt đất để xác định đặc điểm của khu vực có thể khai thác hoặc xây dựng. Có thể chọn hệ thống chống đỡ, quy trình và thiết bị để khai thác hoặc thi công ngầm an toàn, tiết kiệm và thân thiện môi trường. Có thể kiểm tra điều kiện địa chất, thiết bị và môi trường làm việc không an toàn; thiết kế và điều phối chương trình an toàn mỏ.",
+    "tasks_vi": {
+      "3569": "Soạn báo cáo kỹ thuật cho nhân viên khai mỏ, kỹ thuật và quản lý.",
+      "3561": "Kiểm tra khu vực khai thác để phát hiện kết cấu, thiết bị và điều kiện làm việc không an toàn.",
+      "3568": "Chọn hoặc xây dựng phương pháp tìm, khai thác và sản xuất khoáng sản dựa trên an toàn, chi phí và đặc điểm mỏ.",
+      "3562": "Chọn vị trí và lên kế hoạch khai thác hầm lò hoặc lộ thiên, xác định quy trình, nhân lực và thiết bị để khai thác an toàn, tiết kiệm và thân thiện môi trường.",
+      "3565": "Lập tiến độ, báo cáo và dự toán chi phí phát triển và vận hành mỏ."
+    }
+  },
+  "17-2171.00": {"title_vi": "Kỹ sư dầu khí"},
+  "17-2031.00": {
+    "title_vi": "Kỹ sư y sinh",
+    "description_vi": "Vận dụng kiến thức kỹ thuật, sinh học, hoá học, tin học và cơ sinh học để thiết kế, phát triển và đánh giá các hệ thống và sản phẩm sinh học, nông nghiệp, y tế như cơ quan nhân tạo, bộ phận giả, thiết bị đo, hệ thống thông tin y tế và hệ thống quản lý chăm sóc sức khoẻ.",
+    "tasks_vi": {
+      "8968": "Đánh giá độ an toàn, hiệu suất và hiệu quả của thiết bị y sinh.",
+      "21856": "Soạn báo cáo kỹ thuật, tài liệu tổng hợp dữ liệu hoặc bài báo khoa học để công bố, nộp hồ sơ đăng ký hoặc xin bằng sáng chế.",
+      "21847": "Thiết kế hoặc phát triển thiết bị, dụng cụ, quy trình chẩn đoán y khoa và lâm sàng dựa trên nguyên lý kỹ thuật và khoa học hành vi sinh học.",
+      "8975": "Cùng nhà khoa học sự sống, nhà hoá học và nhà khoa học y học nghiên cứu khía cạnh kỹ thuật của hệ sinh học ở người và động vật.",
+      "8979": "Điều chỉnh hoặc thiết kế phần cứng, phần mềm máy tính cho ứng dụng y học."
+    }
+  },
+  "17-2021.00": {"title_vi": "Kỹ sư cơ khí nông nghiệp"},
+  "17-2111.00": {"title_vi": "Kỹ sư an toàn và sức khoẻ lao động"},
+  "17-2111.02": {"title_vi": "Kỹ sư phòng cháy chữa cháy"}
+}

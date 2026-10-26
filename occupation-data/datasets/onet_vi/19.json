@@ -1,0 +1,187 @@
+{
+  "19-2099.01": {"title_vi": "Nhà khoa học viễn thám"},
+  "19-4099.03": {"title_vi": "Kỹ thuật viên viễn thám"},
+  "19-2041.00": {"title_vi": "Nhà khoa học môi trường"},
+  "19-4042.00": {"title_vi": "Kỹ thuật viên khoa học và bảo vệ môi trường"},
+  "19-1013.00": {
+    "title_vi": "Nhà khoa học đất và cây trồng",
+    "description_vi": "Nghiên cứu chọn giống, sinh lý, sản xuất, năng suất và quản lý cây trồng, cây lâm nghiệp, cây cảnh; sự sinh trưởng của cây trong đất và phòng trừ sâu bệnh; hoặc nghiên cứu thành phần hoá học, vật lý, sinh học, khoáng vật của đất liên quan đến sinh trưởng cây trồng. Có thể phân loại và lập bản đồ đất, khảo sát tác động của các cách canh tác lên năng suất.",
+    "tasks_vi": {
+      "9021": "Truyền đạt kết quả nghiên cứu cho chuyên gia khác hoặc công chúng, hoặc giảng dạy các khoá học, hội thảo liên quan.",
+      "9024": "Xây dựng phương pháp bảo tồn, quản lý đất để nông dân hoặc doanh nghiệp lâm nghiệp áp dụng.",
+      "9022": "Tư vấn cho nông dân và chủ đất cách sử dụng đất tốt nhất, thúc đẩy cây sinh trưởng, phòng tránh hoặc khắc phục các vấn đề như xói mòn.",
+      "9025": "Làm thí nghiệm tạo giống cây trồng mới hoặc cải tiến về năng suất, chất lượng, kháng bệnh, giá trị dinh dưỡng hay thích nghi với loại đất, khí hậu cụ thể.",
+      "9026": "Khảo sát các vấn đề về đất hoặc chất lượng nước kém để xác định nguồn gốc và tác động."
+    }
+  },
+  "19-1011.00": {"title_vi": "Nhà khoa học chăn nuôi"},
+  "19-4012.00": {"title_vi": "Kỹ thuật viên nông nghiệp"},
+  "19-4012.01": {"title_vi": "Kỹ thuật viên nông nghiệp chính xác"},
+  "19-1012.00": {
+    "title_vi": "Nhà khoa học, kỹ sư công nghệ thực phẩm",
+    "description_vi": "Dùng hoá học, vi sinh, kỹ thuật và các ngành khoa học khác để nghiên cứu nguyên lý chế biến và hư hỏng của thực phẩm; phân tích hàm lượng vitamin, chất béo, đường và đạm; tìm nguồn thực phẩm mới; nghiên cứu cách làm thực phẩm chế biến an toàn, ngon và lành mạnh; xác định cách tốt nhất để chế biến, đóng gói, bảo quản, lưu kho và phân phối.",
+    "tasks_vi": {
+      "7494": "Kiểm tra khu chế biến để bảo đảm tuân thủ quy định nhà nước về vệ sinh, an toàn, chất lượng và quản lý chất thải.",
+      "7486": "Kiểm tra độ chín hoặc độ ổn định của nguyên liệu trước khi chế biến, và độ an toàn, chất lượng, dinh dưỡng của thành phẩm.",
+      "7489": "Nghiên cứu cách cải thiện thực phẩm về thành phần hoá học, hương vị, màu sắc, kết cấu, dinh dưỡng và sự tiện dụng.",
+      "7492": "Xây dựng tiêu chuẩn thực phẩm và thông số sản xuất, quy định an toàn vệ sinh, yêu cầu về quản lý chất thải và cấp nước.",
+      "18612": "Cập nhật quy định mới và tin tức ngành khoa học thực phẩm qua tài liệu khoa học."
+    }
+  },
+  "19-4013.00": {"title_vi": "Kỹ thuật viên công nghệ thực phẩm"},
+  "19-1029.04": {
+    "title_vi": "Nhà sinh học",
+    "description_vi": "Nghiên cứu các nguyên lý cơ bản của sự sống ở thực vật và động vật, như nguồn gốc, quan hệ, sự phát triển, giải phẫu và chức năng.",
+    "tasks_vi": {
+      "174": "Lập trình và dùng máy tính để lưu, xử lý và phân tích dữ liệu.",
+      "18613": "Soạn báo cáo kỹ thuật và nghiên cứu, như báo cáo đánh giá tác động môi trường, và truyền đạt kết quả cho doanh nghiệp, cơ quan nhà nước hoặc công chúng.",
+      "186": "Giám sát kỹ thuật viên sinh học và các nhà khoa học khác.",
+      "173": "Xây dựng quan hệ làm việc hiệu quả với các nhóm, cá nhân, cơ quan và công chúng để thúc đẩy hợp tác quản lý hoặc phát triển và diễn giải thông tin.",
+      "178": "Nhận dạng, phân loại và nghiên cứu cấu tạo, tập tính, sinh thái, sinh lý, dinh dưỡng, nuôi cấy và phân bố của các loài thực vật, động vật."
+    }
+  },
+  "19-1021.00": {"title_vi": "Nhà hoá sinh, lý sinh"},
+  "19-1022.00": {"title_vi": "Nhà vi sinh vật học"},
+  "19-1029.01": {"title_vi": "Nhà khoa học tin sinh học"},
+  "19-1029.02": {"title_vi": "Nhà sinh học phân tử và tế bào"},
+  "19-1029.03": {"title_vi": "Nhà di truyền học"},
+  "19-4021.00": {"title_vi": "Kỹ thuật viên sinh học"},
+  "19-1023.00": {"title_vi": "Nhà động vật học"},
+  "19-1031.00": {
+    "title_vi": "Nhà khoa học bảo tồn",
+    "description_vi": "Quản lý, cải thiện và bảo vệ tài nguyên thiên nhiên để sử dụng tối đa mà không gây hại môi trường. Có thể khảo sát đất và lập kế hoạch chống xói mòn, bảo vệ đồng cỏ. Có thể hướng dẫn nông dân, chủ trang trại cách luân canh, cày theo đường đồng mức, làm ruộng bậc thang để giữ đất và nước, chọn số lượng, loại vật nuôi và cây thức ăn phù hợp.",
+    "tasks_vi": {
+      "22138": "Vận dụng nguyên lý của các ngành như nông học, khoa học đất, lâm nghiệp, nông nghiệp để đạt mục tiêu bảo tồn.",
+      "22153": "Lập kế hoạch quản lý, bảo tồn đất như luân canh, trồng lại rừng, phủ xanh, cày theo đường đồng mức hoặc làm ruộng bậc thang để giữ đất, nước.",
+      "22135": "Giám sát dự án trong và sau thi công để bảo đảm đúng thiết kế.",
+      "22134": "Tư vấn cho người sử dụng đất như nông dân về kế hoạch, vấn đề hoặc giải pháp bảo tồn thay thế.",
+      "22133": "Áp dụng kỹ thuật quản lý đất, nước như quản lý dinh dưỡng, chống xói mòn, dải đệm hoặc dải lọc theo kế hoạch bảo tồn."
+    }
+  },
+  "19-1031.02": {"title_vi": "Chuyên viên quản lý đồng cỏ"},
+  "19-1031.03": {"title_vi": "Chuyên viên giáo dục thiên nhiên ở vườn quốc gia"},
+  "19-1032.00": {"title_vi": "Kỹ sư lâm nghiệp"},
+  "19-4071.00": {"title_vi": "Kỹ thuật viên lâm nghiệp và bảo tồn"},
+  "19-1041.00": {
+    "title_vi": "Nhà dịch tễ học",
+    "description_vi": "Điều tra và mô tả các yếu tố quyết định và sự phân bố của bệnh tật, khuyết tật hoặc kết quả sức khoẻ. Có thể xây dựng biện pháp phòng ngừa và kiểm soát.",
+    "tasks_vi": {
+      "15216": "Truyền đạt kết quả nghiên cứu về các loại bệnh cho nhân viên y tế, nhà hoạch định chính sách và công chúng.",
+      "5421": "Giám sát chương trình y tế công cộng, gồm phân tích thống kê, lập kế hoạch y tế, hệ thống giám sát và cải thiện sức khoẻ cộng đồng.",
+      "5422": "Điều tra bệnh hoặc ký sinh trùng để xác định nguyên nhân, yếu tố nguy cơ, diễn tiến, vòng đời hoặc đường lây truyền.",
+      "15217": "Giáo dục nhân viên y tế, người bệnh và công chúng về bệnh truyền nhiễm, cách lây và cách phòng.",
+      "15215": "Theo dõi và báo cáo ca bệnh truyền nhiễm cho cơ quan y tế địa phương và trung ương."
+    }
+  },
+  "19-1042.00": {"title_vi": "Nhà khoa học y sinh"},
+  "19-2012.00": {
+    "title_vi": "Nhà vật lý",
+    "description_vi": "Nghiên cứu các hiện tượng vật lý, xây dựng lý thuyết dựa trên quan sát và thí nghiệm, và tìm cách ứng dụng các định luật, lý thuyết vật lý.",
+    "tasks_vi": {
+      "10905": "Phân tích dữ liệu nghiên cứu để phát hiện và đo các hiện tượng vật lý.",
+      "10906": "Báo cáo kết quả thí nghiệm bằng bài báo khoa học hoặc trình bày tại hội nghị.",
+      "10903": "Thực hiện tính toán phức tạp trên máy tính để phân tích và đánh giá dữ liệu.",
+      "10904": "Mô tả và diễn đạt quan sát, kết luận bằng ngôn ngữ toán học.",
+      "10908": "Phối hợp với nhà khoa học khác thiết kế, phát triển và thử nghiệm thiết bị, dụng cụ và quy trình thí nghiệm, công nghiệp hoặc y tế."
+    }
+  },
+  "19-2011.00": {"title_vi": "Nhà thiên văn học"},
+  "19-4051.00": {"title_vi": "Kỹ thuật viên hạt nhân"},
+  "19-4051.02": {"title_vi": "Kỹ thuật viên giám sát bức xạ"},
+  "19-2031.00": {
+    "title_vi": "Nhà hoá học",
+    "description_vi": "Phân tích hoá học định tính, định lượng hoặc làm thí nghiệm trong phòng thí nghiệm để kiểm soát chất lượng, kiểm soát quy trình hoặc phát triển sản phẩm, tri thức mới.",
+    "tasks_vi": {
+      "1506": "Phát triển, cải tiến hoặc điều chỉnh sản phẩm, thiết bị, công thức, quy trình hoặc phương pháp phân tích.",
+      "1505": "Phân tích hợp chất hữu cơ, vô cơ để xác định tính chất, thành phần, cấu trúc, quan hệ hoặc phản ứng bằng sắc ký, quang phổ.",
+      "1510": "Làm biến đổi thành phần chất bằng nhiệt, ánh sáng, năng lượng hoặc chất xúc tác để phân tích định tính, định lượng.",
+      "18475": "Thực hiện các phép thử kiểm tra chất lượng.",
+      "1511": "Viết bài báo, báo cáo kỹ thuật hoặc soạn tiêu chuẩn, quy cách cho quy trình, cơ sở, sản phẩm hoặc phép thử."
+    }
+  },
+  "19-2032.00": {"title_vi": "Nhà khoa học vật liệu"},
+  "19-4031.00": {"title_vi": "Kỹ thuật viên hoá"},
+  "19-4099.01": {"title_vi": "Chuyên viên kiểm nghiệm chất lượng (QC lab)"},
+  "19-2042.00": {
+    "title_vi": "Nhà địa chất học",
+    "description_vi": "Nghiên cứu thành phần, cấu trúc và các đặc điểm vật lý của trái đất. Có thể dùng kiến thức địa chất, vật lý, toán để thăm dò dầu khí, khoáng sản, nước ngầm, hoặc xử lý chất thải, cải tạo đất và các vấn đề môi trường. Có thể nghiên cứu cấu tạo bên trong, khí quyển, đại dương và các trường từ, điện, trọng lực của trái đất.",
+    "tasks_vi": {
+      "20390": "Tìm và đọc bài báo nghiên cứu, báo cáo môi trường, lịch sử hoặc kỹ thuật.",
+      "3712": "Truyền đạt kết quả địa chất qua bài báo, hội nghị hoặc giảng dạy ở đại học.",
+      "3703": "Lập kế hoạch hoặc thực hiện khảo sát địa chất, địa hoá, địa vật lý ngoài thực địa, lấy mẫu, khoan thăm dò và thử nghiệm để thu thập dữ liệu.",
+      "3705": "Lập bản đồ địa chất, mặt cắt, biểu đồ hoặc báo cáo về khai thác khoáng sản, sử dụng đất hay quản lý tài nguyên từ kết quả thực địa và phòng thí nghiệm.",
+      "15224": "Phân tích và diễn giải dữ liệu địa chất bằng phần mềm."
+    }
+  },
+  "19-2043.00": {"title_vi": "Nhà thuỷ văn học"},
+  "19-4043.00": {"title_vi": "Kỹ thuật viên địa chất"},
+  "19-2021.00": {"title_vi": "Nhà khí tượng học"},
+  "19-3011.00": {
+    "title_vi": "Nhà kinh tế học",
+    "description_vi": "Nghiên cứu, viết báo cáo hoặc xây dựng kế hoạch giải quyết các vấn đề kinh tế liên quan đến sản xuất, phân phối hàng hoá, dịch vụ hoặc chính sách tiền tệ, tài khoá. Có thể thu thập và xử lý dữ liệu kinh tế, thống kê bằng kỹ thuật chọn mẫu và phương pháp kinh tế lượng.",
+    "tasks_vi": {
+      "7536": "Nghiên cứu số liệu kinh tế và thống kê trong lĩnh vực chuyên sâu như tài chính, lao động hoặc nông nghiệp.",
+      "7538": "Tổng hợp, phân tích và báo cáo dữ liệu để giải thích hiện tượng kinh tế và dự báo xu hướng thị trường bằng mô hình toán và kỹ thuật thống kê.",
+      "20052": "Nghiên cứu tác động kinh tế – xã hội của chính sách công mới như dự thảo luật, thuế, dịch vụ và quy định.",
+      "21106": "Giải thích tác động kinh tế của chính sách cho công chúng.",
+      "23988": "Thẩm định tài liệu do người khác viết."
+    }
+  },
+  "19-3041.00": {
+    "title_vi": "Nhà xã hội học",
+    "description_vi": "Nghiên cứu xã hội loài người và hành vi xã hội qua các nhóm và thiết chế xã hội mà con người tạo ra, cũng như các tổ chức xã hội, tôn giáo, chính trị và kinh doanh. Có thể nghiên cứu hành vi, tương tác của các nhóm, nguồn gốc, sự phát triển và ảnh hưởng của hoạt động nhóm lên từng thành viên.",
+    "tasks_vi": {
+      "5465": "Phân tích và diễn giải dữ liệu để hiểu rõ hơn hành vi xã hội của con người.",
+      "5464": "Soạn ấn phẩm và báo cáo kết quả nghiên cứu.",
+      "5468": "Xây dựng, triển khai và đánh giá phương pháp thu thập dữ liệu như bảng hỏi hoặc phỏng vấn.",
+      "5467": "Thu thập dữ liệu về thái độ, giá trị và hành vi của con người trong nhóm bằng quan sát, phỏng vấn và xem tài liệu.",
+      "5469": "Giảng dạy xã hội học."
+    }
+  },
+  "19-3091.00": {"title_vi": "Nhà nhân học và khảo cổ học"},
+  "19-3093.00": {"title_vi": "Nhà sử học"},
+  "19-3092.00": {"title_vi": "Nhà địa lý học"},
+  "19-3094.00": {"title_vi": "Nhà chính trị học"},
+  "19-3022.00": {"title_vi": "Chuyên viên điều tra xã hội học"},
+  "19-4061.00": {"title_vi": "Trợ lý nghiên cứu khoa học xã hội"},
+  "19-3033.00": {
+    "title_vi": "Nhà tâm lý học lâm sàng và tham vấn",
+    "description_vi": "Đánh giá, chẩn đoán và điều trị rối loạn tâm thần, cảm xúc qua quan sát, phỏng vấn và trắc nghiệm tâm lý. Giúp người gặp khủng hoảng hoặc khó thích nghi hiểu vấn đề của mình dựa trên tiền sử, phỏng vấn và lý thuyết. Tham vấn cá nhân hoặc nhóm để phát triển và thích nghi tốt hơn về cá nhân, xã hội, học tập và nghề nghiệp. Có thể thiết kế chương trình điều chỉnh hành vi và trao đổi với nhân viên y tế về cách điều trị phù hợp.",
+    "tasks_vi": {
+      "22190": "Đánh giá nguy cơ người bệnh gây hại cho bản thân hoặc người khác.",
+      "22165": "Ghi thông tin người bệnh, gồm ghi chú buổi làm việc, tiến triển, khuyến nghị và kế hoạch điều trị.",
+      "22168": "Xác định vấn đề tâm lý, cảm xúc, hành vi và chẩn đoán rối loạn từ phỏng vấn, trắc nghiệm, hồ sơ hoặc tài liệu tham khảo.",
+      "22170": "Viết báo cáo về thân chủ và lưu giữ giấy tờ bắt buộc.",
+      "22164": "Tham vấn cho cá nhân, nhóm hoặc gia đình để họ hiểu vấn đề, đối phó khủng hoảng, xác định mục tiêu và lập kế hoạch hành động thực tế."
+    }
+  },
+  "19-3034.00": {"title_vi": "Nhà tâm lý học đường"},
+  "19-3039.02": {"title_vi": "Nhà tâm lý học thần kinh"},
+  "19-3039.03": {"title_vi": "Nhà tâm lý học thần kinh lâm sàng"},
+  "19-3032.00": {"title_vi": "Nhà tâm lý học tổ chức – công nghiệp"},
+  "19-3051.00": {
+    "title_vi": "Chuyên viên quy hoạch đô thị và vùng",
+    "description_vi": "Xây dựng quy hoạch và chương trình tổng thể về sử dụng đất và cơ sở vật chất của các địa phương như thị trấn, thành phố, tỉnh và vùng đô thị.",
+    "tasks_vi": {
+      "220": "Thiết kế, thúc đẩy hoặc quản lý quy hoạch, chính sách của nhà nước về sử dụng đất, phân vùng, hạ tầng, công trình công cộng, nhà ở hoặc giao thông.",
+      "226": "Tư vấn cho cán bộ quy hoạch về tính khả thi, hiệu quả chi phí, sự tuân thủ quy định và phương án thay thế của dự án.",
+      "225": "Lập báo cáo bằng hình và lời về dữ liệu sử dụng đất, gồm bản đồ khu vực chồng các biến địa lý như mật độ dân số.",
+      "18476": "Tổ chức họp với cán bộ nhà nước, nhà khoa học xã hội, luật sư, chủ đầu tư, người dân và các nhóm lợi ích để xây dựng và giải quyết vấn đề sử dụng đất, quy hoạch cộng đồng.",
+      "230": "Hoà giải tranh chấp cộng đồng hoặc góp ý xây dựng phương án, kiến nghị cho chương trình, dự án."
+    }
+  },
+  "19-3099.01": {"title_vi": "Chuyên viên quy hoạch giao thông"},
+  "19-5011.00": {
+    "title_vi": "Chuyên viên an toàn và vệ sinh lao động",
+    "description_vi": "Xem xét, đánh giá và phân tích môi trường làm việc, thiết kế chương trình và quy trình để kiểm soát, loại bỏ, phòng ngừa bệnh tật hay chấn thương do tác nhân hoá học, vật lý, sinh học hoặc yếu tố công thái học. Có thể thanh tra và buộc tuân thủ luật về an toàn, sức khoẻ. Có thể làm cho khu vực nhà nước hoặc tư nhân.",
+    "tasks_vi": {
+      "11063": "Đề xuất biện pháp bảo vệ người lao động khỏi cách làm, quy trình hoặc vật liệu có thể gây nguy hiểm.",
+      "11066": "Xây dựng hoặc duy trì chương trình vệ sinh lao động như khảo sát tiếng ồn, giám sát không khí liên tục, khảo sát thông gió hoặc kế hoạch quản lý amiăng.",
+      "11062": "Ra lệnh tạm dừng hoạt động đe doạ sức khoẻ hoặc an toàn của người lao động.",
+      "11064": "Điều tra tai nạn để tìm nguyên nhân và cách phòng ngừa trong tương lai.",
+      "11067": "Kiểm tra, đánh giá nơi làm việc, thiết bị và cách làm để bảo đảm tuân thủ tiêu chuẩn an toàn và quy định nhà nước."
+    }
+  },
+  "19-5012.00": {"title_vi": "Kỹ thuật viên an toàn và vệ sinh lao động"},
+  "19-4092.00": {"title_vi": "Kỹ thuật viên giám định pháp y, hình sự"}
+}

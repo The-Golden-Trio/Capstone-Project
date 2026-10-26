@@ -1,0 +1,152 @@
+{
+  "11-1021.00": {
+    "title_vi": "Giám đốc điều hành, quản lý vận hành",
+    "description_vi": "Lập kế hoạch, điều hành và điều phối hoạt động của tổ chức nhà nước hoặc tư nhân, giám sát nhiều phòng ban hoặc chi nhánh. Xây dựng chính sách, quản lý vận hành hằng ngày và lên kế hoạch sử dụng vật tư, nhân lực; phạm vi rộng, không gói trong một mảng chức năng như nhân sự hay mua hàng. Thường quản lý thông qua các trưởng bộ phận.",
+    "tasks_vi": {
+      "20699": "Xem báo cáo tài chính, doanh số, hoạt động và các số liệu kết quả để đo năng suất, mức đạt mục tiêu, hoặc tìm chỗ cần cắt giảm chi phí, cải tiến.",
+      "933": "Chỉ đạo và điều phối các bộ phận liên quan đến sản xuất, định giá, bán hàng hoặc phân phối sản phẩm.",
+      "20700": "Chỉ đạo các hoạt động hành chính gắn trực tiếp với việc làm ra sản phẩm hoặc cung cấp dịch vụ.",
+      "20701": "Lập lịch làm việc và phân công nhiệm vụ cho nhân viên.",
+      "20703": "Chỉ đạo hoặc điều phối tài chính, ngân sách để có vốn hoạt động, tối đa hoá đầu tư hoặc tăng hiệu quả."
+    }
+  },
+  "11-3051.00": {
+    "title_vi": "Quản lý sản xuất",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối công việc và nguồn lực cần để sản xuất sản phẩm đúng yêu cầu về chi phí, chất lượng và số lượng.",
+    "tasks_vi": {
+      "39": "Đặt và giám sát tiêu chuẩn sản phẩm, kiểm tra mẫu nguyên liệu hoặc chỉ đạo thử nghiệm trong quá trình sản xuất để thành phẩm đạt chất lượng.",
+      "32": "Chỉ đạo hoặc điều phối hoạt động sản xuất, chế biến, phân phối hoặc tiếp thị của doanh nghiệp công nghiệp.",
+      "34": "Xem lịch sản xuất, lệnh sản xuất để quyết định về tồn kho, nhân lực, quy trình và phân công, trong giới hạn ngân sách và thời gian.",
+      "35": "Xem xét vận hành và trao đổi với nhân viên kỹ thuật, hành chính để giải quyết sự cố sản xuất.",
+      "36": "Tuyển, đào tạo, đánh giá hoặc cho nghỉ việc nhân viên, giải quyết khiếu nại nhân sự."
+    }
+  },
+  "11-3051.01": {"title_vi": "Quản lý hệ thống chất lượng"},
+  "11-3012.00": {
+    "title_vi": "Quản lý hành chính",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối một hoặc nhiều dịch vụ hành chính của tổ chức như quản lý hồ sơ, thông tin, phân phát thư từ và các dịch vụ hỗ trợ văn phòng khác.",
+    "tasks_vi": {
+      "21": "Lập và rà soát báo cáo, lịch vận hành để bảo đảm chính xác và hiệu quả.",
+      "20": "Đặt mục tiêu và thời hạn cho bộ phận.",
+      "23": "Mua, cấp phát và lưu kho vật tư.",
+      "22": "Phân tích quy trình nội bộ, đề xuất và thực hiện thay đổi quy trình hoặc chính sách để cải thiện vận hành, như đổi nhà cung cấp hay huỷ hồ sơ.",
+      "30": "Mở lớp hướng dẫn quy trình cho nhân viên."
+    }
+  },
+  "11-3013.00": {"title_vi": "Quản lý cơ sở vật chất"},
+  "11-3013.01": {"title_vi": "Quản lý an ninh"},
+  "11-9131.00": {"title_vi": "Trưởng bưu cục"},
+  "11-9199.08": {"title_vi": "Quản lý chống thất thoát"},
+  "11-9021.00": {
+    "title_vi": "Quản lý xây dựng",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối, thường qua các giám sát cấp dưới, việc xây dựng và bảo trì công trình, cơ sở và hệ thống. Tham gia từ ý tưởng dự án và giám sát tổ chức, tiến độ, ngân sách, thi công. Gồm cả quản lý các mảng chuyên biệt như mộc hay cấp thoát nước.",
+    "tasks_vi": {
+      "3318": "Kiểm tra dự án để bảo đảm tuân thủ quy chuẩn xây dựng, an toàn và các quy định khác.",
+      "3327": "Xây dựng hoặc thực hiện chương trình quản lý chất lượng.",
+      "20332": "Lên kế hoạch, tiến độ và điều phối hoạt động của dự án xây dựng để kịp thời hạn.",
+      "3326": "Lập và nộp dự toán ngân sách, báo cáo tiến độ hoặc báo cáo theo dõi chi phí.",
+      "20340": "Chỉ đạo và giám sát công nhân xây dựng và nhân sự liên quan."
+    }
+  },
+  "11-9041.00": {
+    "title_vi": "Quản lý kiến trúc và kỹ thuật",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối hoạt động trong các lĩnh vực như kiến trúc, kỹ thuật hoặc nghiên cứu và phát triển trong các lĩnh vực đó.",
+    "tasks_vi": {
+      "20170": "Quản lý việc phối hợp và tích hợp tổng thể các hoạt động kỹ thuật trong dự án kiến trúc hoặc kỹ thuật.",
+      "20171": "Chỉ đạo, xem xét hoặc duyệt thay đổi thiết kế của dự án.",
+      "1071": "Tư vấn hoặc đàm phán với khách hàng để lập yêu cầu kỹ thuật của dự án.",
+      "20172": "Lập ngân sách, hồ sơ dự thầu hoặc hợp đồng.",
+      "1070": "Trình bày và giải thích đề xuất, báo cáo hoặc kết quả cho khách hàng."
+    }
+  },
+  "11-9121.00": {"title_vi": "Quản lý nghiên cứu khoa học tự nhiên"},
+  "11-9032.00": {
+    "title_vi": "Quản lý giáo dục phổ thông",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối hoạt động học thuật, hành chính và hỗ trợ của trường mầm non, tiểu học hoặc trung học.",
+    "tasks_vi": {
+      "5215": "Tư vấn và định hướng cho học sinh về vấn đề cá nhân, học tập, nghề nghiệp hoặc hành vi.",
+      "5212": "Trao đổi với phụ huynh và giáo viên về hoạt động giáo dục, chính sách, hành vi hoặc khó khăn học tập của học sinh.",
+      "5226": "Dự giờ và xem tài liệu học tập để đánh giá, chuẩn hoá chương trình, phương pháp dạy và tìm chỗ cần cải thiện.",
+      "5234": "Xác định phạm vi chương trình đào tạo, soạn dự thảo thời khoá biểu và mô tả môn học để ước tính nhu cầu giáo viên, cơ sở vật chất.",
+      "5225": "Thực thi nội quy về kỷ luật và chuyên cần."
+    }
+  },
+  "11-9031.00": {"title_vi": "Quản lý cơ sở giáo dục mầm non"},
+  "11-9033.00": {"title_vi": "Quản lý giáo dục đại học"},
+  "11-9051.00": {
+    "title_vi": "Quản lý nhà hàng, dịch vụ ăn uống",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối hoạt động của cơ sở hoặc bộ phận phục vụ đồ ăn, đồ uống.",
+    "tasks_vi": {
+      "15199": "Kiểm tiền và nộp tiền vào ngân hàng.",
+      "1086": "Đặt tiêu chuẩn về hiệu suất làm việc của nhân viên và dịch vụ khách hàng.",
+      "1085": "Lưu hồ sơ theo yêu cầu của cơ quan nhà nước về vệ sinh an toàn thực phẩm.",
+      "1082": "Xếp ca làm việc và phân công nhiệm vụ.",
+      "1078": "Tìm hiểu và giải quyết khiếu nại về chất lượng món ăn, phục vụ hoặc cơ sở."
+    }
+  },
+  "11-9081.00": {
+    "title_vi": "Quản lý khách sạn, cơ sở lưu trú",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối hoạt động của cơ sở hoặc bộ phận cung cấp chỗ ở và dịch vụ đi kèm.",
+    "tasks_vi": {
+      "1105": "Trả lời thắc mắc về chính sách, dịch vụ của khách sạn và giải quyết khiếu nại của khách.",
+      "1108": "Tham gia hoạt động tài chính như đặt giá phòng, lập ngân sách và phân bổ kinh phí cho các bộ phận.",
+      "1109": "Trao đổi và phối hợp với các quản lý khác để hoạt động của khách sạn được đồng bộ.",
+      "1104": "Đón và làm thủ tục nhận phòng cho khách.",
+      "18599": "Theo dõi doanh thu của khách sạn hoặc cơ sở."
+    }
+  },
+  "11-9179.02": {"title_vi": "Quản lý spa"},
+  "11-9072.00": {"title_vi": "Quản lý khu vui chơi giải trí"},
+  "11-9111.00": {
+    "title_vi": "Quản lý dịch vụ y tế",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối dịch vụ y tế ở bệnh viện, phòng khám, tổ chức bảo hiểm y tế, cơ quan y tế công cộng hoặc tổ chức tương tự.",
+    "tasks_vi": {
+      "46": "Chỉ đạo, giám sát và đánh giá công việc của nhân viên y tế, điều dưỡng, kỹ thuật, văn thư, dịch vụ, bảo trì và các nhân sự khác.",
+      "49": "Xây dựng và duy trì hệ thống quản lý hồ sơ điện tử để lưu, xử lý dữ liệu như thông tin nhân sự và lập báo cáo.",
+      "58": "Lập kế hoạch, triển khai và quản lý chương trình, dịch vụ ở cơ sở y tế, gồm quản lý nhân sự, đào tạo và điều phối đội ngũ y tế, điều dưỡng, cơ sở vật chất.",
+      "51": "Điều hành hoạt động tài chính, gồm kế toán, lập ngân sách, duyệt chi, đặt giá dịch vụ và điều phối báo cáo tài chính.",
+      "55": "Theo dõi tiến bộ y học, thiết bị chẩn đoán và điều trị, công nghệ xử lý dữ liệu, quy định nhà nước, thay đổi về bảo hiểm y tế và các phương án tài chính."
+    }
+  },
+  "11-9121.01": {"title_vi": "Điều phối viên nghiên cứu lâm sàng"},
+  "11-9013.00": {
+    "title_vi": "Chủ trang trại, quản lý nông nghiệp",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối việc quản lý, vận hành trang trại, nhà kính, cơ sở nuôi trồng thuỷ sản, vườn ươm, rừng trồng hoặc cơ sở nông nghiệp khác. Có thể tuyển, đào tạo, giám sát lao động hoặc thuê dịch vụ cho việc hằng ngày. Có thể tham gia hoặc giám sát trồng, chăm sóc, thu hoạch, tài chính và tiêu thụ.",
+    "tasks_vi": {
+      "21370": "Thu thập và ghi chép số liệu về sinh trưởng, sản lượng và môi trường.",
+      "21371": "Quản lý vườn ươm cây cảnh để bán buôn, bán lẻ, trưng bày hoặc nghiên cứu.",
+      "21372": "Chỉ đạo và giám sát việc bắt cá bố mẹ, cho đẻ, ấp trứng và ương cá bột, vận dụng kiến thức quản lý và kỹ thuật nuôi cá.",
+      "21373": "Chỉ đạo và giám sát việc chuyển cá trưởng thành ra hồ, ao, sông hoặc bể nuôi thương phẩm.",
+      "21374": "Quyết định cách phân bổ nguồn lực và ứng phó sự cố bất ngờ như sâu bệnh, hạn hán và cháy."
+    }
+  },
+  "11-9141.00": {
+    "title_vi": "Quản lý bất động sản, toà nhà",
+    "description_vi": "Lập kế hoạch, chỉ đạo và điều phối việc mua bán, cho thuê hoặc quản trị bất động sản thương mại, công nghiệp và nhà ở. Gồm cả ban quản lý chung cư, khu nhà cho thuê, toà nhà hoặc đất.",
+    "tasks_vi": {
+      "7224": "Quản lý và giám sát vận hành, bảo trì, hành chính và cải tạo bất động sản thương mại, công nghiệp hoặc nhà ở.",
+      "7220": "Chỉ đạo thu phí dịch vụ, tiền thuê, tiền cọc và chi trả bảo hiểm, khoản vay, thuế và chi phí vận hành.",
+      "7223": "Lên kế hoạch, tiến độ và điều phối bảo trì chung, sửa chữa lớn và cải tạo hoặc xây dựng cho toà nhà.",
+      "7228": "Lập ngân sách chi tiết và báo cáo tài chính cho bất động sản.",
+      "7236": "Làm cầu nối giữa ban quản lý tại chỗ hoặc người thuê với chủ sở hữu."
+    }
+  },
+  "11-3031.00": {"title_vi": "Giám đốc tài chính, trưởng phòng tài chính"},
+  "11-3031.01": {"title_vi": "Thủ quỹ và kiểm soát viên tài chính"},
+  "11-9199.01": {"title_vi": "Trưởng phòng pháp chế, tuân thủ"},
+  "11-3031.03": {"title_vi": "Nhà quản lý quỹ đầu tư"},
+  "11-3121.00": {"title_vi": "Trưởng phòng nhân sự"},
+  "11-3111.00": {"title_vi": "Quản lý lương thưởng và phúc lợi"},
+  "11-3131.00": {"title_vi": "Quản lý đào tạo và phát triển"},
+  "11-2021.00": {"title_vi": "Trưởng phòng marketing"},
+  "11-2011.00": {"title_vi": "Quản lý quảng cáo và khuyến mãi"},
+  "11-2032.00": {"title_vi": "Quản lý quan hệ công chúng"},
+  "11-2033.00": {"title_vi": "Quản lý gây quỹ"},
+  "11-3071.00": {"title_vi": "Quản lý vận tải, kho bãi và phân phối"},
+  "11-3071.04": {"title_vi": "Quản lý chuỗi cung ứng"},
+  "11-3061.00": {"title_vi": "Trưởng phòng mua hàng"},
+  "11-9151.00": {"title_vi": "Quản lý dịch vụ xã hội và cộng đồng"},
+  "11-9179.01": {"title_vi": "Điều phối viên chương trình sức khoẻ, thể hình"},
+  "11-9171.00": {"title_vi": "Quản lý nhà tang lễ"},
+  "11-2022.00": {"title_vi": "Trưởng phòng kinh doanh"}
+}

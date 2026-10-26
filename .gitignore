@@ -58,3 +58,9 @@ test-output
 
 # local JSON snapshot của in-memory repository (apps/api)
 apps/api/.data
+
+# Dữ liệu tải từ nguồn ngoài (O*NET...), tải lại bằng script trong occupation-data/scripts
+occupation-data/external/
+
+# Cache của Python khi chạy script trong occupation-data/scripts
+__pycache__/
