@@ -374,16 +374,16 @@ body.overview .slide.active{outline:10px solid var(--blue)}
   <h1 class="cv-title"><span>Thiết kế AI-4:</span><span>người <span class="hl">dẫn truyện</span></span></h1>
   <p class="cv-sub">§5.3.6 Thiết kế mô hình AI · bản mẫu cho AI-4</p>
   <p class="cv-meta"><b>Golden Trio · JobQuest</b><br>Khoa KH&amp;KT Máy tính · HCMUT · 10/2026</p>
-  <aside class="notes">Deck này làm cuốn chiếu: mỗi phần của AI-4 viết xong và duyệt xong thì thêm vào đây. Bản này có phần 3 (Contract) và phần 7 (Privacy).</aside>
+  <aside class="notes">Deck này làm cuốn chiếu: mỗi phần của AI-4 viết xong và duyệt xong thì thêm vào đây. Bản này có các phần 1, 3, 4, 5, 6, 7, 8 (phần 2 chưa viết).</aside>
 </section>
 
 <!-- 2 khung 8 phan -->
 <section class="slide l-rows">
   <h2 class="title center">Khung 8 phần, AI-4 làm mẫu</h2>
   <div class="rows">
-    <div class="row"><div class="lab">Tổng quan</div><div class="its"><span>1 Nguyên tắc thiết kế</span><span>2 Luồng end-to-end</span></div></div>
+    <div class="row"><div class="lab">Tổng quan</div><div class="its"><span><b>1 Nguyên tắc thiết kế</b></span><span>2 Luồng end-to-end</span></div></div>
     <div class="row"><div class="lab">Thành phần</div><div class="its"><span><b>3 Contract</b></span></div></div>
-    <div class="row"><div class="lab">Chấm, gọi model</div><div class="its"><span>4 Scoring, edge cases</span><span><b>5 Gọi model, prompt</b></span></div></div>
+    <div class="row"><div class="lab">Chấm, gọi model</div><div class="its"><span><b>4 Scoring, edge cases</b></span><span><b>5 Gọi model, prompt</b></span></div></div>
     <div class="row"><div class="lab">Vận hành</div><div class="its"><span><b>6 Lỗi, chi phí, thời gian</b></span><span><b>7 Privacy</b></span><span><b>8 Vòng phản hồi, để sau</b></span></div></div>
   </div>
   <aside class="notes">§5.3.6 rút từ 15 phần (trình cô 24/10) còn 8 phần. Nhóm viết đầy đủ cả 8 phần cho AI-4 trước, xin cô góp ý về cấu trúc, rồi mới áp cho AI-1, 2, 3, 5. Chữ đậm là phần có trong deck này.</aside>
@@ -398,6 +398,74 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <p>Lúc chơi, engine giữ thứ tự sự kiện và hiện nguyên văn nội dung chuyên gia soạn trong seed. AI-4 chỉ viết hai thứ: lời nối giữa các sự kiện, và câu hỏi đào sâu (follow-up) sau câu tự luận của người chơi. AI-4 không chấm điểm.</p>
   </div>
   <aside class="notes">Ví dụ follow-up: người chơi viết "em sửa bug rồi deploy luôn", AI-4 hỏi "trưởng nhóm đang nghỉ phép, ai sẽ duyệt bản sửa của bạn?". Chấm điểm là việc của AI-5.</aside>
+</section>
+
+<!-- P1 section -->
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">01</div>
+    <div class="sec-title">Nguyên tắc thiết kế</div>
+    <p class="sec-sub">Vì sao AI-4 được thiết kế như vậy</p>
+  </div>
+  <aside class="notes">Tám nguyên tắc là lý do đứng sau mọi lựa chọn ở các phần còn lại. Cái chung của chúng: AI-4 chỉ được viết chữ, mọi quyết định và mọi kiểm tra nằm ở code. Model viết hay hay dở thì người chơi cũng chỉ bị ảnh hưởng một câu lời nối, vì không có gì quan trọng được giao cho nó quyết.</aside>
+</section>
+
+<!-- P1 statement -->
+<section class="slide l-statement">
+  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:834px;top:270px;height:141px"></div>
+  <div class="big m">AI-4 chỉ viết chữ, mọi quyết định nằm ở code</div>
+  <aside class="notes">Đây là nguyên tắc 1 và là gốc của các nguyên tắc còn lại. Đúng với D-89 (quyết định lúc chơi: nội dung canon hiện nguyên văn, phần AI viết chỉ được kiểm bằng luật). Quyết bằng code thì đoán trước được và kiểm được; quyết bằng model thì không. Vì vậy thứ tự sự kiện, có được hỏi đào sâu hay không, hỏi tối đa mấy lần đều do engine (phần code chạy màn chơi) quyết; AI-4 chỉ nhận một cờ "được hỏi / không".</aside>
+</section>
+
+<!-- P1 ai quyet -->
+<section class="slide l-table">
+  <h2 class="title">Ai quyết việc gì</h2>
+  <div class="tblwrap">
+    <table class="tbl lft keep1">
+      <thead><tr><th></th><th>Ai quyết</th><th>Không phải</th></tr></thead>
+      <tbody>
+        <tr><td><b>Thứ tự sự kiện</b></td><td>Engine, theo chuỗi forward_to</td><td>AI-4</td></tr>
+        <tr><td><b>Có hỏi đào sâu</b></td><td>Engine: có mục tiêu, còn trần</td><td>AI-4, điểm số</td></tr>
+        <tr><td><b>Hỏi về điều gì</b></td><td>Chuyên gia viết mục tiêu</td><td>AI-4 tự chọn</td></tr>
+        <tr><td><b>Câu được hiện</b></td><td>Luật R1–R4</td><td>AI-4, model khác</td></tr>
+        <tr><td><b>Điểm câu trả lời</b></td><td>AI-5</td><td>AI-4</td></tr>
+        <tr><td><b>Đổi model khi lỗi</b></td><td>Gateway</td><td>AI-4</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Bảng này trả lời câu hỏi "model hay luật quyết?" cho AI-4. Gateway là lớp gọi model của hệ thống. forward_to là trường trong kịch bản chỉ hoạt động kế tiếp. Mục tiêu đào sâu (followup_goal) do chuyên gia viết trong seed. Việc sửa seed và prompt khi có lỗi lặp lại không nằm trong bảng vì thuộc phần 8.</aside>
+</section>
+
+<!-- P1 noi dung -->
+<section class="slide l-4items">
+  <div class="blk gray" style="left:127px;top:111px;height:159px"></div>
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <h2 class="title right">Bốn nguyên tắc về nội dung</h2>
+  <div class="grid">
+    <div><div class="h3">Canon nguyên văn</div><p>AI-4 chỉ viết lời nối và một câu hỏi</p></div>
+    <div><div class="h3">Giấu rubric</div><p>Rubric, khoá chấm không bao giờ vào prompt</p></div>
+    <div><div class="h3">Luật nằm ở code</div><p>R1–R4 kiểm trong vài mili giây, không dùng model thứ hai</p></div>
+    <div><div class="h3">Không tin hãng</div><p>Đầu ra luôn qua schema của nhóm</p></div>
+  </div>
+  <aside class="notes">Canon nguyên văn: nội dung chuyên gia đã duyệt là thứ người chơi tin, càng ít chữ do AI viết càng ít chỗ sai (JSON chỉ có speaker, narration, follow_up; tối đa 280 và 200 ký tự). Không thấy thì không lộ: model đã không biết thì không thể để lộ. Luật nằm ở code: thêm một model kiểm là thêm một lượt gọi, vượt NFR-01 (follow-up sinh xong trong 5 giây ở p95), §5.2.3 đã cân nhắc và không chọn. Không tin hãng: mỗi hãng một kiểu (DeepSeek không ép được khuôn và đôi khi trả rỗng), nên đổi hãng chỉ là đổi cấu hình, đúng DC-02 (thay nhà cung cấp model không phải sửa logic lõi).</aside>
+</section>
+
+<!-- P1 van hanh -->
+<section class="slide l-text">
+  <h2 class="title">Ba nguyên tắc về vận hành</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li><b>Gửi ít nhất</b>, chỉ cho nơi cam kết không huấn luyện</li>
+      <li><b>Truy được nguồn</b>: lời đã hiện không sinh lại</li>
+      <li><b>Chờ chốt</b>: không chạy nội dung soạn sẵn thay cho AI</li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <aside class="notes">Gửi ít nhất khớp NFR-05 (dữ liệu cá nhân tối thiểu, chỉ gửi câu trả lời đã khử định danh). Truy được nguồn: mỗi lượt gọi có bản ghi; gọi lại model sẽ ra câu khác nên chạy lại ván phải dùng câu đã lưu. Nguyên tắc 8 còn chờ quyết định ②: D-92 (quyết định: AI-native, bỏ AI thì phần sinh và chấm không chạy) nói không có đường thay thế, còn bản master của Nam (FR-12: dùng follow-up mặc định của chuyên gia khi đầu ra AI không đạt) nói ngược lại.</aside>
 </section>
 
 <!-- 4 section contract -->
@@ -424,12 +492,11 @@ body.overview .slide.active{outline:10px solid var(--blue)}
         <tr><td><b>Không bao giờ nhận</b></td><td>Rubric, khoá chấm, tên và email người chơi</td></tr>
         <tr><td><b>Trả</b></td><td>JSON: lời nối và follow-up (hoặc null)</td></tr>
         <tr><td><b>Kiểm bằng</b></td><td>Bốn luật R1–R4 trong game-core, không gọi model khác</td></tr>
-        <tr><td><b>Hỏng thì</b></td><td>Chờ chốt</td></tr>
       </tbody>
     </table>
   </div>
   <div class="edge-r"></div>
-  <aside class="notes">Cả seed đưa vào prompt, không dùng retrieval, vì seed nhỏ và retrieval có thể bỏ sót một fact bắt buộc. Phần seed AI-4 dùng: bối cảnh, nhân vật, sự kiện canon đã hiện, fact bắt buộc, mục tiêu và trần follow-up, gợi ý đã hiện. Thời điểm chạy đã chốt (30/10): người chơi gõ xong thì AI-5 chấm điểm ngay, AI-4 chạy tiếp theo kịch bản chuyên gia đã soạn mà không chờ điểm; có được hỏi đào sâu hay không do engine quyết theo mục tiêu và trần. Ô "Hỏng thì" còn chờ nhóm chốt đường dự phòng.</aside>
+  <aside class="notes">Cả seed đưa vào prompt, không dùng retrieval, vì seed nhỏ và retrieval có thể bỏ sót một fact bắt buộc. Phần seed AI-4 dùng: bối cảnh, nhân vật, sự kiện canon đã hiện, fact bắt buộc, mục tiêu và trần follow-up, gợi ý đã hiện. Thời điểm chạy đã chốt (30/10): người chơi gõ xong thì AI-5 chấm điểm ngay, AI-4 chạy tiếp theo kịch bản chuyên gia đã soạn mà không chờ điểm; có được hỏi đào sâu hay không do engine quyết theo mục tiêu và trần.</aside>
 </section>
 
 <!-- 6 hai lua chon -->
@@ -478,10 +545,73 @@ body.overview .slide.active{outline:10px solid var(--blue)}
   <aside class="notes">Bản ghi chỉ thêm, không sửa. Truy nguồn: mọi câu người chơi từng thấy đều biết sinh ra từ model nào, prompt nào, seed nào. Chặn trần chi phí theo NFR-11 (chi phí mỗi phiên chơi không vượt trần đã đặt).</aside>
 </section>
 
-<!-- P5 section -->
+<!-- P4 section -->
 <section class="slide l-section alt">
   <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
   <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">04</div>
+    <div class="sec-title">Scoring, edge cases</div>
+    <p class="sec-sub">AI-4 không chấm; ca biên xử lý ra sao</p>
+  </div>
+  <aside class="notes">AI-4 không chấm điểm, nên "scoring" ở đây là ba chuyện: ai quyết có hỏi đào sâu, AI-4 được đánh giá bằng gì, và chạm AI-5 ở đâu. Sau đó là các ca biên. Mỗi ca ghi rõ trạng thái: Code (đã chạy, có test), Prompt (chỉ dặn model), Đề xuất (chưa làm).</aside>
+</section>
+
+<!-- P4 dieu kien -->
+<section class="slide l-table">
+  <h2 class="title">Khi nào engine cho phép hỏi đào sâu</h2>
+  <div class="tblwrap">
+    <table class="tbl lft">
+      <thead><tr><th></th><th>Lấy từ đâu</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hoạt động có mục tiêu đào sâu</b></td><td>followup_goal, chuyên gia viết</td></tr>
+        <tr><td><b>Chưa quá số lần của hoạt động</b></td><td>limitFollowup</td></tr>
+        <tr><td><b>Chưa quá trần của cả màn</b></td><td>Theo cấp: L1, L2 được 2; L3 đến L5 được 3</td></tr>
+        <tr><td><b>Chưa phải câu trả lời đào sâu</b></td><td>Hỏi một lần, không nối tiếp</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Cả bốn điều kiện đúng thì engine bật cờ "được hỏi". Engine quyết trước khi gọi AI-4 và không dựa vào điểm, theo quyết định ① chốt 30/10: người chơi gõ xong thì AI-5 chấm ngay, AI-4 chạy tiếp theo kịch bản chuyên gia đã soạn mà không chờ điểm. AI-4 chỉ đọc cờ; luật R2 bắt nếu AI-4 hỏi khi cờ là "không". Trần theo cấp lấy từ hàm followupCap trong game-core (các cấp còn lại được 4).</aside>
+</section>
+
+<!-- P4 danh gia -->
+<section class="slide l-table">
+  <h2 class="title">AI-4 được đánh giá bằng gì</h2>
+  <div class="tblwrap">
+    <table class="tbl lft">
+      <thead><tr><th></th><th>Đo gì</th><th>Khi nào</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mỗi lượt</b></td><td>Qua hay không qua R1–R4, luật nào vi phạm</td><td>Mỗi lượt gọi</td></tr>
+        <tr><td><b>Tổng thể</b></td><td>Tỉ lệ qua ngay lần đầu, độ trễ, tiền mỗi lượt</td><td>Bộ thử, log review</td></tr>
+        <tr><td><b>Với AI-5</b></td><td>Không nhận gì, không đưa gì; chạy song song</td><td>Mỗi lượt</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="edge-r"></div>
+  <aside class="notes">Không có điểm cho AI-4, chỉ có hai loại thước đo. Mỗi lượt: câu qua hay không qua bốn luật, kết quả quyết định sinh lại hay không. Tổng thể: tỉ lệ qua ngay lần đầu, tỉ lệ vi phạm theo luật, model, prompt, seed, số lỗi log review bắt được mà luật bỏ sót, độ trễ p95 (không quá 4,6 giây theo NFR-01), tiền mỗi lượt chơi. Ngưỡng chốt trước khi chạy, sau khi có số đo thật; hiện chưa có key nên chưa đo. Chưa chốt: AI-5 có đọc câu hỏi đào sâu của AI-4 khi chấm câu trả lời cho nó không; chốt khi viết phần AI-5. Câu trả lời cho một câu đào sâu được chấm như một câu trả lời nữa; luật gộp điểm thuộc phần AI-5 và D-95 (quyết định: thang chấm và cách gộp điểm chờ game design) vẫn đang mở.</aside>
+</section>
+
+<!-- P4 ca bien dau ra -->
+<section class="slide l-text">
+  <h2 class="title">Ca biên: đầu ra và hạ tầng</h2>
+  <div class="body">
+    <ul class="ul gap">
+      <li>Bịa tên, số; hỏi lẻn; sai khuôn: <b>R1–R4 bắt</b>, sinh lại</li>
+      <li>Qwen chặn nội dung: dừng, không sang hãng khác</li>
+      <li>Cả hai model hỏng: engine làm gì còn <b>chờ chốt</b></li>
+      <li>Tải lại trang, gửi hai lần: dùng câu đã lưu (đề xuất)</li>
+      <li>Chạy lại ván: dùng lời AI-4 đã lưu (đề xuất)</li>
+    </ul>
+  </div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <aside class="notes">Phần lớn ca biên về đầu ra model đã có code bắt và có test. Phần còn trống nằm ở đầu vào (trần độ dài, câu trống) và ở engine, tức việc nối AI-4 vào luồng chơi. Qwen chặn nội dung xấu bằng lỗi DataInspectionFailed: dừng lượt đó; người chơi thấy gì thì chưa chốt, gắn với quyết định ② (không còn model nào thì sao). Chạy lại ván phải dùng lời đã lưu vì gọi lại model sẽ ra câu khác.</aside>
+</section>
+
+<!-- P5 section -->
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
   <div class="sec">
     <div class="sec-num">05</div>
     <div class="sec-title">Gọi model, prompt</div>
@@ -688,9 +818,9 @@ body.overview .slide.active{outline:10px solid var(--blue)}
 </section>
 
 <!-- P6 section -->
-<section class="slide l-section">
-  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
-  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
   <div class="sec">
     <div class="sec-num">06</div>
     <div class="sec-title">Lỗi, chi phí, thời gian</div>
@@ -754,9 +884,9 @@ body.overview .slide.active{outline:10px solid var(--blue)}
 </section>
 
 <!-- 9 section privacy -->
-<section class="slide l-section alt">
-  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
-  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
   <div class="sec">
     <div class="sec-num">07</div>
     <div class="sec-title">Privacy</div>
@@ -830,9 +960,9 @@ body.overview .slide.active{outline:10px solid var(--blue)}
 </section>
 
 <!-- P8 section -->
-<section class="slide l-section">
-  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
-  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
   <div class="sec">
     <div class="sec-num">08</div>
     <div class="sec-title">Vòng phản hồi</div>
