@@ -9,6 +9,7 @@ Task **T1910.2** (Nhật). Tài liệu làm việc, chưa phải báo cáo. Nộ
 | `fig-ai-data.html` → `fig-ai-data.png` | Hình 2: đường đi của dữ liệu, phiên bản, ranh giới DC-03 |
 | `brief-thiet-ke-ai.html` → `brief-thiet-ke-ai.pdf` | Brief gửi cô: **1 trang A4 ngang** (hình flow rút gọn, cách hiểu và phạm vi, quyết định mới, phép thử, 5 câu hỏi) |
 | [`mail-nhap.md`](mail-nhap.md) | Mail nháp đi kèm brief |
+| [`ai-4-thiet-ke.md`](ai-4-thiet-ke.md) | Bản ý tưởng thiết kế AI-4 theo khung 8 phần (AI-4 làm mẫu), viết cuốn chiếu |
 
 ## Dựng lại hình và PDF
 

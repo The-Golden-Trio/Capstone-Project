@@ -1,0 +1,26 @@
+{
+  "status": 200,
+  "body": {
+    "id": "chatcmpl-fake-1",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"speaker\":\"an\",\"narration\":\"Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải.\",\"follow_up\":\"Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?\"}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2267,
+      "completion_tokens": 76,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  }
+}
