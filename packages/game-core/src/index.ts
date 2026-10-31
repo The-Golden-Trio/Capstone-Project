@@ -27,6 +27,11 @@ export * from './domain/followups.js';
 export * from './domain/rng.js';
 export * from './domain/scenarioEngine.js';
 
+/* ── Dẫn truyện (AI-4): phần luật, không gọi mạng ── */
+export * from './domain/narration/narratorView.js';
+export * from './domain/narration/rules.js';
+export * from './domain/narration/deidentify.js';
+
 /* ── Chấm điểm ── */
 export * from './domain/grading/types.js';
 export * from './domain/grading/structuredGrading.js';
