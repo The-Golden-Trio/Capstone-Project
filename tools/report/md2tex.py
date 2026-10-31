@@ -198,8 +198,8 @@ def convert(md, outdir):
             # Ảnh có sẵn (README): không tính vào số thứ tự fig<n> của sơ đồ Mermaid.
             fig = figure(None, m.group(1), outdir, img=m.group(2), width=m.group(3))
             if m.group(4):
-                # {landscape}: hình rất ngang, đặt riêng một trang xoay ngang, rộng hết dòng.
-                fig = "\\begin{landscape}\n" + fig.replace("width=\\textwidth,height=0.9\\textheight", "width=\\linewidth") + "\n\\end{landscape}"
+                # {landscape}: hình rất ngang, đặt riêng một trang xoay ngang, rộng hết dòng; cao tối đa 0.86 bề rộng trang dọc để không tràn trang.
+                fig = "\\begin{landscape}\n" + fig.replace("width=\\textwidth,height=0.9\\textheight", "width=\\linewidth,height=0.86\\textwidth,keepaspectratio") + "\n\\end{landscape}"
             cur.append(fig)
             i += 1
             continue

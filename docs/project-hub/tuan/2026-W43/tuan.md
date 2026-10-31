@@ -42,6 +42,6 @@
 
 <!-- Task ↪ và việc cần để ý. -->
 
-- **Vẽ LLM local vào component diagram và deployment diagram** (cô nhận xét 24/10; chỉ là ý tưởng, không hiện thực, D-98). Chưa có task ID: tạo ở tuần 44 bằng `python3 tools/hub/tuan.py next-id`. Sửa nguồn hình deployment ở `docs/project-hub/assets/deployment/build_deployment.py`, rồi chép PNG sang `reports/master/figures/`
+- ~~Vẽ LLM local vào component diagram và deployment diagram~~ (cô nhận xét 24/10; chỉ là ý tưởng, không hiện thực, D-98). **Xong 28/10:** thêm hộp *Local LLM* viền đứt nét vào cả hai hình, kèm chú giải "idea only, not implemented" và câu giải thích ở §5.3.1 ([deployment](../../assets/deployment/README.md), [component](../../assets/component/README.md)). Chưa có task ID vì làm ngay sau buổi họp
 - Nhóm review cách chấm ●/◐/○ trong các bảng so sánh §5.2 (T2010.2)
 - Ghi vào hub câu trả lời của cô ngày 24/10 về cỡ mẫu dữ liệu đánh giá (D-106) và về sáu tiêu chí AI-native (07 B26)

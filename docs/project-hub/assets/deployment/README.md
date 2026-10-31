@@ -20,7 +20,7 @@ Nội dung khớp đoạn "Deployment" trong `reports/master/report.md`.
 cd docs/project-hub/assets/deployment
 python3 build_deployment.py
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
-  --hide-scrollbars --force-device-scale-factor=2 --window-size=1880,1460 \
+  --hide-scrollbars --force-device-scale-factor=2 --window-size=1880,1620 \
   --screenshot="$PWD/jobquest_deployment.png" "file://$PWD/jobquest_deployment.svg"
 cp jobquest_deployment.png ../../../../reports/master/figures/
 ```

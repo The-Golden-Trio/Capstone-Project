@@ -9,7 +9,7 @@ chữ nhật xanh lá có biểu tượng tài liệu, đường nối ghi giao 
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-W, H = 1880, 1460
+W, H = 1880, 1620
 D = 12  # độ sâu mặt 3D
 
 C = {
@@ -42,13 +42,14 @@ def text(x, y, s, size=14, weight="normal", anchor="start", color=None, italic=F
     )
 
 
-def node(x, y, w, h, fill, stereo, name, sub=None, light_text=False, depth=D, name_size=17):
+def node(x, y, w, h, fill, stereo, name, sub=None, light_text=False, depth=D, name_size=17, dashed=False):
     """Hộp 3D kiểu UML: mặt trước, mặt trên, mặt phải."""
+    dash = ' stroke-dasharray="7 5"' if dashed else ""
     top = f"{x},{y} {x + depth},{y - depth} {x + w + depth},{y - depth} {x + w},{y}"
     right = f"{x + w},{y} {x + w + depth},{y - depth} {x + w + depth},{y + h - depth} {x + w},{y + h}"
-    out.append(f'<polygon points="{top}" fill="{shade(fill, 0.93)}" stroke="#333" stroke-width="1.2"/>')
-    out.append(f'<polygon points="{right}" fill="{shade(fill, 0.82)}" stroke="#333" stroke-width="1.2"/>')
-    out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="#333" stroke-width="1.2"/>')
+    out.append(f'<polygon points="{top}" fill="{shade(fill, 0.93)}" stroke="#333" stroke-width="1.2"{dash}/>')
+    out.append(f'<polygon points="{right}" fill="{shade(fill, 0.82)}" stroke="#333" stroke-width="1.2"{dash}/>')
+    out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="#333" stroke-width="1.2"{dash}/>')
     if not name:  # node lồng nhỏ: chữ do nơi gọi tự viết
         return
     col = "#ffffff" if light_text else C["text"]
@@ -59,10 +60,10 @@ def node(x, y, w, h, fill, stereo, name, sub=None, light_text=False, depth=D, na
         text(cx, y + 58, sub, 12.5, anchor="middle", color=col, italic=True)
 
 
-def artifact(x, y, w, h, name, sub=None):
+def artifact(x, y, w, h, name, sub=None, dashed=False):
     out.append(
         f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{C["artifact"]}" '
-        f'stroke="{C["artifact_line"]}" stroke-width="1.2"/>'
+        f'stroke="{C["artifact_line"]}" stroke-width="1.2"{' stroke-dasharray="6 4"' if dashed else ""}/>'
     )
     # biểu tượng tài liệu góc gấp
     ix, iy = x + w - 22, y + 7
@@ -116,7 +117,7 @@ line([(700, 125), (760, 125)], "HTTPS", (730, 115))
 line([(1120, 125), (1060, 125)], "HTTPS", (1090, 115))
 
 # ── Vùng cloud tại Việt Nam (node lồng các node) ─────────────────────
-node(340, 270, 1140, 1010, C["region"], "node", "Cloud region in Vietnam", "system of record; two zones (DC-03)", depth=14, name_size=18)
+node(340, 270, 1140, 1160, C["region"], "node", "Cloud region in Vietnam", "system of record; two zones (DC-03)", depth=14, name_size=18)
 
 node(380, 360, 1060, 80, C["blue"], "node", "WAF + layer-7 load balancer", "TLS termination, rate limits, health checks")
 line([(520, 200), (520, 348)], "HTTPS, SSE", (528, 300), anchor="start")
@@ -181,6 +182,14 @@ line([(1340, 1060), (1340, 1088)], "logs", (1350, 1082), anchor="start")
 line([(760, 1030), (800, 1030), (800, 1160), (820, 1160)], "OTLP", (780, 1048))
 line([(760, 1205), (820, 1205)], "metrics", (790, 1196))
 
+# ── Ý tưởng: LLM local làm fallback khi nhà cung cấp lỗi (D-98; không hiện thực, ngoài phạm vi) ──
+node(980, 1260, 280, 140, C["ext"], "node", "Local LLM server", "in Vietnam · fallback when providers fail", dashed=True)
+artifact(1000, 1330, 240, 56, "open-weight model", "Ollama or vLLM, idea only", dashed=True)
+# worker → LLM local: đi dọc mép phải vùng, nhảy qua đường egress → nhà cung cấp
+out.append('<path d="M1440,850 H1462 V988 A12,12 0 0 1 1462,1012 V1330 H1272" fill="none" stroke="#4a4a4a" stroke-width="1.6" stroke-dasharray="7 5"/>')
+out.append('<text x="1452" y="1322" font-size="13" text-anchor="end" fill="#4a4a4a" paint-order="stroke" stroke="#ffffff" stroke-width="4">HTTP, OpenAI-compatible API</text>')
+line([(1120, 1248), (1120, 1222)], "metrics", (1128, 1240), anchor="start")
+
 # ── Cột trái: Google ──────────────────────────────────────────────────
 node(20, 500, 250, 110, C["ext"], "node", "Google Identity", "optional sign-in")
 line([(380, 560), (270, 560)], "OIDC, HTTPS", (330, 549))
@@ -195,14 +204,15 @@ node(1580, 500, 270, 120, C["ext"], "node", "Email · O*NET · ESCO", "notificat
 line([(1440, 560), (1580, 560)], "SMTP, HTTPS", (1516, 549))
 
 # ── Dưới: vùng dự phòng và ghi chú Stage 1 ────────────────────────────
-node(440, 1340, 260, 100, C["ext"], "node", "Second region in Vietnam", "recovery copies")
-line([(570, 1250), (570, 1328)], "WAL, backups copied", (580, 1300), anchor="start")
+node(440, 1490, 260, 100, C["ext"], "node", "Second region in Vietnam", "recovery copies")
+line([(570, 1250), (570, 1478)], "WAL, backups copied", (580, 1370), anchor="start")
 
-note(820, 1310, 720, 110, [
+note(820, 1460, 720, 118, [
     "Stages 3 and 4 shown. At Stage 1 the same nodes run on one",
     "university server under Docker Compose, with one API pod and one",
     "worker pod; later stages add replicas and managed services, not nodes.",
     "Explorer text leaves Vietnam only through the egress proxy.",
+    "Dashed: idea only, not implemented (out of scope).",
 ])
 
 svg = (

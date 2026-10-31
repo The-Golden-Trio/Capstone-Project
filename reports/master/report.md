@@ -2196,9 +2196,9 @@ Architectural style. The drivers call for a design in which nothing slow or fall
 
 Actors and external environment. Four actors use the system, each through a browser (Section 4.2.1). Explorers — students and career changers — play scenarios on phones or laptops. Domain experts author, review, and revalidate the content of an occupation and rate responses blind. Content administrators manage an occupation in the catalogue, assign reviews, design presentation, and publish. System administrators manage accounts, model configuration, cost, failed jobs, and app feedback. Four external services sit outside the system boundary: model providers abroad — a narrator of one family, judges of three other families, and an image model; Google, as an optional identity provider; an email delivery service; and the occupational data sources O\*NET and ESCO, imported periodically.
 
-Component view. The figure below shows the components and the interfaces between them in UML notation: a ball is an interface a component provides, a socket one it requires. The API and Worker subsystems are the same codebase running different processes; they never call each other directly but communicate through the job queue and publish–subscribe channel in Redis.
+Component view. The figure below shows the components and the interfaces between them in UML notation: a ball is an interface a component provides, a socket one it requires. The API and Worker subsystems are the same codebase running different processes; they never call each other directly but communicate through the job queue and publish–subscribe channel in Redis. The dashed component, a local language model server behind the same adapter interface as the providers, is an idea only: it would serve as a fallback inside Vietnam when every provider fails (Section 5.3.6), it is not implemented, and building it is outside the scope of the project.
 
-![Component diagram of JobQuest. Each line joins the component that requires an interface (socket) to the component that provides it (ball).](latex/figures/jobquest_component_diagram.png)
+![Component diagram of JobQuest. Each line joins the component that requires an interface (socket) to the component that provides it (ball). Dashed: an idea that is not implemented.](latex/figures/jobquest_component_diagram.png)
 
 Each module is described below with its responsibility and its state in the prototype.
 
@@ -2232,9 +2232,9 @@ System overview. The figure below shows the whole system as deployed: the two br
 
 ![System overview of JobQuest: components, technologies, and hosting, with the numbered path of one written answer. Blue arrows are the request path; orange arrows the background AI path; the dashed border is the hosting boundary of DC-03.](latex/figures/jobquest_arch_overview.png)
 
-Deployment. The deployment diagram below follows UML notation: devices and nodes are drawn as three-dimensional boxes, the artifacts deployed on them as documents inside, and each communication path is labelled with its protocol; the components of Section 5.3.1 appear inside the artifact that manifests them. Both applications are static bundles, served to browsers by a content delivery network that holds no personal data. Inside one cloud region in Vietnam, a web application firewall and load balancer terminate TLS and spread requests over the API pods of two zones. API and worker pods run the same Docker image, started in two roles; both are stateless, so capacity grows by adding pods: API pods on CPU and open streams, worker pods on queue length. PostgreSQL runs as a primary with a synchronous standby in the other zone and a read replica for analytics; Redis runs as a primary with a replica. The model gateway reaches the providers abroad only through an egress proxy that admits allowlisted endpoints, and backups are copied to a second region in Vietnam. An observability node inside the region receives metrics, logs, and traces from the API and worker pods over OpenTelemetry (OTLP), collects metrics from Redis, PostgreSQL, and object storage and logs from the egress proxy, and scrapes the load balancer, so that queue length, latency per provider, and cost per session are watched in one place. At Stage 1 the same nodes run on one university server under Docker Compose, with one API and one worker.
+Deployment. The deployment diagram below follows UML notation: devices and nodes are drawn as three-dimensional boxes, the artifacts deployed on them as documents inside, and each communication path is labelled with its protocol; the components of Section 5.3.1 appear inside the artifact that manifests them. Both applications are static bundles, served to browsers by a content delivery network that holds no personal data. Inside one cloud region in Vietnam, a web application firewall and load balancer terminate TLS and spread requests over the API pods of two zones. API and worker pods run the same Docker image, started in two roles; both are stateless, so capacity grows by adding pods: API pods on CPU and open streams, worker pods on queue length. PostgreSQL runs as a primary with a synchronous standby in the other zone and a read replica for analytics; Redis runs as a primary with a replica. The model gateway reaches the providers abroad only through an egress proxy that admits allowlisted endpoints, and backups are copied to a second region in Vietnam. An observability node inside the region receives metrics, logs, and traces from the API and worker pods over OpenTelemetry (OTLP), collects metrics from Redis, PostgreSQL, and object storage and logs from the egress proxy, and scrapes the load balancer, so that queue length, latency per provider, and cost per session are watched in one place. At Stage 1 the same nodes run on one university server under Docker Compose, with one API and one worker. The dashed node, a local language model server inside the region, is an idea only: the worker would call it over an OpenAI-compatible API when every provider fails, so that explorer text stays in Vietnam; it is not implemented and is outside the scope of the project.
 
-![UML deployment diagram of JobQuest at Stages 3 and 4: devices, nodes, and execution environments, the artifacts deployed on each, and the protocol of each communication path.](latex/figures/jobquest_deployment.png){landscape}
+![UML deployment diagram of JobQuest at Stages 3 and 4: devices, nodes, and execution environments, the artifacts deployed on each, and the protocol of each communication path. Dashed: an idea that is not implemented.](latex/figures/jobquest_deployment.png){landscape}
 
 The assessed turn. A free-text answer in Perform scenario tests the architecture hardest, because it involves the explorer, the authority over scores, the models, and the failure of any of them. The answer is graded first, by the three judges (AI-5); only then does the narrator decide whether to ask a follow-up (AI-4), and each follow-up answer goes through the same loop. The figure below shows the sequence for one activity.
 
@@ -2338,25 +2338,6 @@ Reliability and operations. Availability of 99.5% a month is proposed for Stages
 
 From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free *game-core* shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and httpOnly cookie sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
 
-### 5.3.6 AI Model Design
-
-JobQuest does not design, train, or fine-tune a model (Section 5.2.3). This section designs how existing language models are composed with rules, data, and expert oversight into the AI components of the platform. Only its structure is fixed here: each part is written once its content has been verified, and the parts that depend on the game design stay parameterised until the game design is fixed. The parts fall into four groups: the overview (parts 1 and 2), the components and their data (parts 3 to 6), scoring and model calls (parts 7 to 10), and operation (parts 11 to 15).
-
-1. Design principles: the principles that decide which decisions a model takes and which a rule takes.
-2. End-to-end flow: one figure of the authoring, play, and review loops, and of the model gateway that every call passes through.
-3. The AI components: the contract of each of AI-1 to AI-5, namely when it runs, what it receives and returns, how its output is checked, and what happens on failure.
-4. Feedback writer: how the result of a judgment becomes feedback the explorer can use.
-5. Other free text: how every other free-text answer in the game reaches the same grader.
-6. Data contracts: the seed that experts author and the judgment that the graders return, with what is stored and versioned.
-7. Scoring and aggregation: how the levels given by the judges are combined into a grade and a competency score, with the parameters left open until the game design is fixed.
-8. Edge cases: invalid output, an empty answer, hints, and a missing judge.
-9. Model call configuration and prompts: the parameters of each kind of call, their translation to the API of each provider, the system prompt, and prompt caching.
-10. Run-time rules of AI-4: the checks applied to the narrator's text before the explorer sees it.
-11. Privacy and safety: de-identification and the defence against prompt injection; the policy on third parties is in Section 5.3.10.
-12. Failure behaviour: the sequence of fallbacks when a call fails, and the idea of a local model as the last fallback, which is not implemented and is to be shown in the component and deployment diagrams.
-13. Cost and time: the cost of a playthrough and the time budget of each call.
-14. Feedback loop and versions: how expert rulings improve the rubrics and the calibration examples, and how versions of models, prompts, and rubrics are tracked.
-15. Deferred AI functions: the AI functions left for a later phase and where they attach to the design.
 ### 5.3.2 Sitemap Design
 
 The two applications of Section 5.3.1 have one sitemap each. A box is a screen and lists its main elements; a solid arrow is navigation the user chooses, and a dashed arrow, labelled with its condition, is a screen the system leads to after an action.
@@ -2405,6 +2386,25 @@ Import reference data. The uploaded O\*NET and ESCO files are stored in object s
 
 ![Sequence of importing reference data (SD-09): upload, matching against O\*NET and ESCO, resolution of unmatched records, and adaptation.](latex/figures/SD-09_ContentAdmin_ImportReferenceData.png)
 
+### 5.3.6 AI Model Design
+
+JobQuest does not design, train, or fine-tune a model (Section 5.2.3). This section designs how existing language models are composed with rules, data, and expert oversight into the AI components of the platform. Only its structure is fixed here: each part is written once its content has been verified, and the parts that depend on the game design stay parameterised until the game design is fixed. The parts fall into four groups: the overview (parts 1 and 2), the components and their data (parts 3 to 6), scoring and model calls (parts 7 to 10), and operation (parts 11 to 15).
+
+1. Design principles: the principles that decide which decisions a model takes and which a rule takes.
+2. End-to-end flow: one figure of the authoring, play, and review loops, and of the model gateway that every call passes through.
+3. The AI components: the contract of each of AI-1 to AI-5, namely when it runs, what it receives and returns, how its output is checked, and what happens on failure.
+4. Feedback writer: how the result of a judgment becomes feedback the explorer can use.
+5. Other free text: how every other free-text answer in the game reaches the same grader.
+6. Data contracts: the seed that experts author and the judgment that the graders return, with what is stored and versioned.
+7. Scoring and aggregation: how the levels given by the judges are combined into a grade and a competency score, with the parameters left open until the game design is fixed.
+8. Edge cases: invalid output, an empty answer, hints, and a missing judge.
+9. Model call configuration and prompts: the parameters of each kind of call, their translation to the API of each provider, the system prompt, and prompt caching.
+10. Run-time rules of AI-4: the checks applied to the narrator's text before the explorer sees it.
+11. Privacy and safety: de-identification and the defence against prompt injection; the policy on third parties is in Section 5.3.10.
+12. Failure behaviour: the sequence of fallbacks when a call fails, and the idea of a local model as the last fallback, which is not implemented and is to be shown in the component and deployment diagrams.
+13. Cost and time: the cost of a playthrough and the time budget of each call.
+14. Feedback loop and versions: how expert rulings improve the rubrics and the calibration examples, and how versions of models, prompts, and rubrics are tracked.
+15. Deferred AI functions: the AI functions left for a later phase and where they attach to the design.
 ### 5.3.10 Policies for the Processing of the Proposed System and Third Parties
 
 This section sets the rules under which JobQuest processes personal data and shares any data with third parties, completing the policies of Section 4.1.4. Its central problem is a conflict between two parts of the design. The system of record must be in Vietnam (DC-03), as Vietnam's Law on Personal Data Protection and its implementing decree require [99][100]; but scoring and narration depend on language models whose providers all process requests outside Vietnam. Under the law, using a platform abroad to process data collected in Vietnam is a transfer of personal data abroad, whichever region the provider is asked to use. The policies below decide what may cross that border, under what conditions, and what the platform owes its users when it does.
