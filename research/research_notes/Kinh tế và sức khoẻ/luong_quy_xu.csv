@@ -1,0 +1,1319 @@
+role_code,ten_nghe,cap,so_cap,band_equivalent,ten_cap,luong_cap_trieu,cach_uoc,xu_moi_man,nguon_luong
+SWE_FRONTEND,Lập trình viên Front-end,1,7,L1,Frontend Engineer Intern,17.4,itviec_theo_nam,116,itviec
+SWE_FRONTEND,Lập trình viên Front-end,2,7,L2,Fresher Frontend Engineer,26.1,itviec_theo_nam,142,itviec
+SWE_FRONTEND,Lập trình viên Front-end,3,7,L3,Junior Frontend Engineer,30.8,itviec_theo_nam,154,itviec
+SWE_FRONTEND,Lập trình viên Front-end,4,7,L4,Middle Frontend Engineer,30.8,itviec_theo_nam,154,itviec
+SWE_FRONTEND,Lập trình viên Front-end,5,7,L5,Senior Frontend Engineer,30.8,itviec_theo_nam,154,itviec
+SWE_FRONTEND,Lập trình viên Front-end,6,7,L6,Lead Frontend Engineer,41.8,itviec_theo_nam,179,itviec
+SWE_FRONTEND,Lập trình viên Front-end,7,7,L7,Principal Frontend Engineer,41.8,itviec_theo_nam,179,itviec
+SWE_BACKEND,Lập trình viên Back-end / Kỹ sư Back-end,1,7,L1,Backend Engineer Intern,18.9,itviec_theo_nam,121,itviec
+SWE_BACKEND,Lập trình viên Back-end / Kỹ sư Back-end,2,7,L2,Fresher Backend Engineer,28.4,itviec_theo_nam,148,itviec
+SWE_BACKEND,Lập trình viên Back-end / Kỹ sư Back-end,3,7,L3,Junior Backend Engineer,28.4,itviec_theo_nam,148,itviec
+SWE_BACKEND,Lập trình viên Back-end / Kỹ sư Back-end,4,7,L4,Middle Backend Engineer,30.1,itviec_theo_nam,152,itviec
+SWE_BACKEND,Lập trình viên Back-end / Kỹ sư Back-end,5,7,L5,Senior Backend Engineer,39.9,itviec_theo_nam,175,itviec
+SWE_BACKEND,Lập trình viên Back-end / Kỹ sư Back-end,6,7,L6,Lead Backend Engineer,39.9,itviec_theo_nam,175,itviec
+SWE_BACKEND,Lập trình viên Back-end / Kỹ sư Back-end,7,7,L7,Principal Backend Engineer / Staff Engineer,54.9,itviec_theo_nam,206,itviec
+SWE_MOBILE,Lập trình viên Mobile / Kỹ sư ứng dụng di động,1,7,L1,Mobile Developer Intern (iOS/Android/Flutter),18.4,itviec_theo_nam,119,itviec
+SWE_MOBILE,Lập trình viên Mobile / Kỹ sư ứng dụng di động,2,7,L2,Fresher Mobile Developer,27.6,itviec_theo_nam,146,itviec
+SWE_MOBILE,Lập trình viên Mobile / Kỹ sư ứng dụng di động,3,7,L3,Junior Mobile Developer (iOS hoặc Android hoặc Flutter),27.6,itviec_theo_nam,146,itviec
+SWE_MOBILE,Lập trình viên Mobile / Kỹ sư ứng dụng di động,4,7,L4,Middle Mobile Developer,29.0,itviec_theo_nam,149,itviec
+SWE_MOBILE,Lập trình viên Mobile / Kỹ sư ứng dụng di động,5,7,L5,Senior Mobile Developer,37.4,itviec_theo_nam,170,itviec
+SWE_MOBILE,Lập trình viên Mobile / Kỹ sư ứng dụng di động,6,7,L6,Lead Mobile Engineer,45.7,itviec_theo_nam,187,itviec
+SWE_MOBILE,Lập trình viên Mobile / Kỹ sư ứng dụng di động,7,7,L7,Principal Mobile Engineer,45.7,itviec_theo_nam,187,itviec
+SWE_GAME,Lập trình viên Game,1,7,L1,Game Developer Intern,16.7,itviec_theo_nam,113,itviec
+SWE_GAME,Lập trình viên Game,2,7,L2,Fresher Game Developer,25.0,itviec_theo_nam,139,itviec
+SWE_GAME,Lập trình viên Game,3,7,L3,Junior Game Developer,25.0,itviec_theo_nam,139,itviec
+SWE_GAME,Lập trình viên Game,4,7,L4,Middle Game Developer,40.4,itviec_theo_nam,176,itviec
+SWE_GAME,Lập trình viên Game,5,7,L5,Senior Game Developer,57.8,itviec_theo_nam,211,itviec
+SWE_GAME,Lập trình viên Game,6,7,L6,Lead Game Developer,57.8,itviec_theo_nam,211,itviec
+SWE_GAME,Lập trình viên Game,7,7,L7,Principal Game Engineer,57.8,itviec_theo_nam,211,itviec
+SWE_UIUX,Chuyên viên thiết kế UI/UX,1,7,L1,UI/UX Design Intern,,chua_co_luong,,
+SWE_UIUX,Chuyên viên thiết kế UI/UX,2,7,L2,Fresher UI/UX Designer,,chua_co_luong,,
+SWE_UIUX,Chuyên viên thiết kế UI/UX,3,7,L3,Junior UI/UX Designer,,chua_co_luong,,
+SWE_UIUX,Chuyên viên thiết kế UI/UX,4,7,L4,Middle UI/UX Designer,,chua_co_luong,,
+SWE_UIUX,Chuyên viên thiết kế UI/UX,5,7,L5,Senior UI/UX Designer,,chua_co_luong,,
+SWE_UIUX,Chuyên viên thiết kế UI/UX,6,7,L6,Lead UI/UX Designer,,chua_co_luong,,
+SWE_UIUX,Chuyên viên thiết kế UI/UX,7,7,L7,Principal UI/UX Designer / Head of Design,,chua_co_luong,,
+SWE_EMBEDDED,Kỹ sư phần mềm nhúng / Kỹ sư IoT,1,7,L1,Embedded Software Engineer Intern,17.2,itviec_theo_nam,115,itviec
+SWE_EMBEDDED,Kỹ sư phần mềm nhúng / Kỹ sư IoT,2,7,L2,Fresher Embedded Engineer,25.8,itviec_theo_nam,141,itviec
+SWE_EMBEDDED,Kỹ sư phần mềm nhúng / Kỹ sư IoT,3,7,L3,Junior Embedded Engineer,25.8,itviec_theo_nam,141,itviec
+SWE_EMBEDDED,Kỹ sư phần mềm nhúng / Kỹ sư IoT,4,7,L4,Middle Embedded Engineer,28.4,itviec_theo_nam,148,itviec
+SWE_EMBEDDED,Kỹ sư phần mềm nhúng / Kỹ sư IoT,5,7,L5,Senior Embedded Engineer,39.4,itviec_theo_nam,174,itviec
+SWE_EMBEDDED,Kỹ sư phần mềm nhúng / Kỹ sư IoT,6,7,L6,Lead Embedded Engineer,60.6,itviec_theo_nam,216,itviec
+SWE_EMBEDDED,Kỹ sư phần mềm nhúng / Kỹ sư IoT,7,7,L7,Principal Embedded Engineer,60.6,itviec_theo_nam,216,itviec
+SWE_ARCH_SOL,Kiến trúc sư giải pháp,1,3,L6,Solution Architect,45.0,noi_suy_thap_cao,186,itviec
+SWE_ARCH_SOL,Kiến trúc sư giải pháp,2,3,L7,Senior Solution Architect,59.1,noi_suy_thap_cao,213,itviec
+SWE_ARCH_SOL,Kiến trúc sư giải pháp,3,3,L8,Principal / Lead Solution Architect,73.2,noi_suy_thap_cao,237,itviec
+SWE_TECHLEAD,Trưởng nhóm kỹ thuật,1,2,L6,Tech Lead,53.8,itviec_theo_nam,204,itviec
+SWE_TECHLEAD,Trưởng nhóm kỹ thuật,2,2,L7,Senior Tech Lead,68.4,itviec_theo_nam,229,itviec
+SWE_EM,Trưởng phòng Kỹ thuật,1,3,L7,Engineering Manager,50.3,itviec_theo_nam,197,itviec
+SWE_EM,Trưởng phòng Kỹ thuật,2,3,L8,Senior Engineering Manager,50.3,itviec_theo_nam,197,itviec
+SWE_EM,Trưởng phòng Kỹ thuật,3,3,L9,Head of Engineering / Director of Engineering,50.3,itviec_theo_nam,197,itviec
+QA_MANUAL,Kỹ sư kiểm thử thủ công / Tester,1,5,L1,QA/Tester Intern,15.6,itviec_theo_nam,110,itviec
+QA_MANUAL,Kỹ sư kiểm thử thủ công / Tester,2,5,L2,Fresher Tester,23.4,itviec_theo_nam,134,itviec
+QA_MANUAL,Kỹ sư kiểm thử thủ công / Tester,3,5,L3,Junior QC/Tester,23.4,itviec_theo_nam,134,itviec
+QA_MANUAL,Kỹ sư kiểm thử thủ công / Tester,4,5,L4,Middle QC/Tester,24.4,itviec_theo_nam,137,itviec
+QA_MANUAL,Kỹ sư kiểm thử thủ công / Tester,5,5,L5,Senior QC/Tester,29.8,itviec_theo_nam,151,itviec
+DATA_DA,Chuyên viên phân tích dữ liệu,1,6,L1,Data Analyst Intern,20.3,itviec_theo_nam,125,itviec
+DATA_DA,Chuyên viên phân tích dữ liệu,2,6,L2,Fresher Data Analyst,30.5,itviec_theo_nam,153,itviec
+DATA_DA,Chuyên viên phân tích dữ liệu,3,6,L3,Junior Data Analyst,30.5,itviec_theo_nam,153,itviec
+DATA_DA,Chuyên viên phân tích dữ liệu,4,6,L4,Middle Data Analyst,23.8,itviec_theo_nam,135,itviec
+DATA_DA,Chuyên viên phân tích dữ liệu,5,6,L5,Senior Data Analyst,42.5,itviec_theo_nam,181,itviec
+DATA_DA,Chuyên viên phân tích dữ liệu,6,6,L6,Lead / Principal Data Analyst,42.5,itviec_theo_nam,181,itviec
+DATA_AI,Kỹ sư trí tuệ nhân tạo,1,5,L3,AI Engineer (mới chuyển ngang),40.5,noi_suy_thap_cao,176,itviec
+DATA_AI,Kỹ sư trí tuệ nhân tạo,2,5,L4,Middle AI Engineer,46.8,noi_suy_thap_cao,190,itviec
+DATA_AI,Kỹ sư trí tuệ nhân tạo,3,5,L5,Senior AI Engineer,53.1,noi_suy_thap_cao,202,itviec
+DATA_AI,Kỹ sư trí tuệ nhân tạo,4,5,L6,AI Engineering Lead,59.5,noi_suy_thap_cao,214,itviec
+DATA_AI,Kỹ sư trí tuệ nhân tạo,5,5,L7,Principal AI Engineer,65.8,noi_suy_thap_cao,225,itviec
+DATA_DE,Kỹ sư dữ liệu,1,5,L3,Data Engineer (mới chuyển ngang),56.9,itviec_theo_nam,209,itviec
+DATA_DE,Kỹ sư dữ liệu,2,5,L4,Middle Data Engineer,56.9,itviec_theo_nam,209,itviec
+DATA_DE,Kỹ sư dữ liệu,3,5,L5,Senior Data Engineer,56.9,itviec_theo_nam,209,itviec
+DATA_DE,Kỹ sư dữ liệu,4,5,L6,Data Engineering Lead,56.9,itviec_theo_nam,209,itviec
+DATA_DE,Kỹ sư dữ liệu,5,5,L7,Principal Data Engineer,56.9,itviec_theo_nam,209,itviec
+CLOUD_DEVOPS,Kỹ sư DevOps,1,5,L3,DevOps Engineer (mới chuyển ngang),,chua_co_luong,,
+CLOUD_DEVOPS,Kỹ sư DevOps,2,5,L4,Middle DevOps Engineer,,chua_co_luong,,
+CLOUD_DEVOPS,Kỹ sư DevOps,3,5,L5,Senior DevOps Engineer,,chua_co_luong,,
+CLOUD_DEVOPS,Kỹ sư DevOps,4,5,L6,DevOps Lead / Platform Lead,,chua_co_luong,,
+CLOUD_DEVOPS,Kỹ sư DevOps,5,5,L7,Principal DevOps Engineer / Head of Infrastructure,,chua_co_luong,,
+CLOUD_ENG,Kỹ sư điện toán đám mây,1,5,L2,Fresher Cloud Engineer,,chua_co_luong,,
+CLOUD_ENG,Kỹ sư điện toán đám mây,2,5,L3,Junior Cloud Engineer,,chua_co_luong,,
+CLOUD_ENG,Kỹ sư điện toán đám mây,3,5,L4,Middle Cloud Engineer,,chua_co_luong,,
+CLOUD_ENG,Kỹ sư điện toán đám mây,4,5,L5,Senior Cloud Engineer,,chua_co_luong,,
+CLOUD_ENG,Kỹ sư điện toán đám mây,5,5,L6,Lead Cloud Engineer,,chua_co_luong,,
+SEC_ENG,Kỹ sư an ninh mạng / Kỹ sư bảo mật,1,7,L1,SOC Analyst Intern,35.3,noi_suy_thap_cao,165,itviec
+SEC_ENG,Kỹ sư an ninh mạng / Kỹ sư bảo mật,2,7,L2,SOC Analyst (Tier 1),39.0,noi_suy_thap_cao,173,itviec
+SEC_ENG,Kỹ sư an ninh mạng / Kỹ sư bảo mật,3,7,L3,Security Engineer (mới chuyển ngang),42.6,noi_suy_thap_cao,181,itviec
+SEC_ENG,Kỹ sư an ninh mạng / Kỹ sư bảo mật,4,7,L4,Middle Security Engineer,46.3,noi_suy_thap_cao,189,itviec
+SEC_ENG,Kỹ sư an ninh mạng / Kỹ sư bảo mật,5,7,L5,Senior Security Engineer,50.0,noi_suy_thap_cao,196,itviec
+SEC_ENG,Kỹ sư an ninh mạng / Kỹ sư bảo mật,6,7,L6,Security Engineering Lead,53.7,noi_suy_thap_cao,203,itviec
+SEC_ENG,Kỹ sư an ninh mạng / Kỹ sư bảo mật,7,7,L7,Principal Security Engineer,57.3,noi_suy_thap_cao,210,itviec
+SEC_PENTEST,Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng,1,5,L3,Junior Penetration Tester,35.3,noi_suy_thap_cao,165,itviec
+SEC_PENTEST,Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng,2,5,L4,Middle Penetration Tester,40.8,noi_suy_thap_cao,177,itviec
+SEC_PENTEST,Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng,3,5,L5,Senior Penetration Tester,46.3,noi_suy_thap_cao,189,itviec
+SEC_PENTEST,Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng,4,5,L6,Penetration Testing Lead,51.8,noi_suy_thap_cao,200,itviec
+SEC_PENTEST,Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng,5,5,L7,Principal Pentester / Red Team Lead,57.3,noi_suy_thap_cao,210,itviec
+PROD_BA,Chuyên viên phân tích nghiệp vụ / BA,1,7,L1,Business Analyst Intern,15.0,itviec_theo_nam,107,itviec
+PROD_BA,Chuyên viên phân tích nghiệp vụ / BA,2,7,L2,Fresher Business Analyst,22.5,itviec_theo_nam,132,itviec
+PROD_BA,Chuyên viên phân tích nghiệp vụ / BA,3,7,L3,Junior Business Analyst,22.5,itviec_theo_nam,132,itviec
+PROD_BA,Chuyên viên phân tích nghiệp vụ / BA,4,7,L4,Middle Business Analyst,28.0,itviec_theo_nam,147,itviec
+PROD_BA,Chuyên viên phân tích nghiệp vụ / BA,5,7,L5,Senior Business Analyst,37.4,itviec_theo_nam,170,itviec
+PROD_BA,Chuyên viên phân tích nghiệp vụ / BA,6,7,L6,Lead Business Analyst,41.4,itviec_theo_nam,178,itviec
+PROD_BA,Chuyên viên phân tích nghiệp vụ / BA,7,7,L7,Principal BA / BA Manager,41.4,itviec_theo_nam,178,itviec
+PROD_PM,Quản lý sản phẩm / Product Manager,1,7,L3,Associate Product Manager,37.6,itviec_theo_nam,170,itviec
+PROD_PM,Quản lý sản phẩm / Product Manager,2,7,L4,Product Manager (Middle),42.7,itviec_theo_nam,181,itviec
+PROD_PM,Quản lý sản phẩm / Product Manager,3,7,L5,Senior Product Manager,60.4,itviec_theo_nam,216,itviec
+PROD_PM,Quản lý sản phẩm / Product Manager,4,7,L6,Lead / Group Product Manager,75.0,itviec_theo_nam,240,itviec
+PROD_PM,Quản lý sản phẩm / Product Manager,5,7,L7,Head of Product / Director of Product,75.0,itviec_theo_nam,240,itviec
+PROD_PM,Quản lý sản phẩm / Product Manager,6,7,L8,Senior Director of Product,75.0,itviec_theo_nam,240,itviec
+PROD_PM,Quản lý sản phẩm / Product Manager,7,7,L9,VP of Product,75.0,itviec_theo_nam,240,itviec
+INFRA_ERP,Chuyên viên tư vấn giải pháp ERP,1,5,L3,Junior ERP Consultant (một module cụ thể),16.1,itviec_theo_nam,111,itviec
+INFRA_ERP,Chuyên viên tư vấn giải pháp ERP,2,5,L4,Middle ERP Consultant,19.5,itviec_theo_nam,122,itviec
+INFRA_ERP,Chuyên viên tư vấn giải pháp ERP,3,5,L5,Senior ERP Consultant,35.6,itviec_theo_nam,165,itviec
+INFRA_ERP,Chuyên viên tư vấn giải pháp ERP,4,5,L6,ERP Practice Lead,35.6,itviec_theo_nam,165,itviec
+INFRA_ERP,Chuyên viên tư vấn giải pháp ERP,5,5,L7,Principal ERP Architect,35.6,itviec_theo_nam,165,itviec
+INFRA_HELPDESK,Nhân viên hỗ trợ kỹ thuật / IT Support,1,4,L1,Helpdesk Intern,10.0,itviec_theo_nam,88,itviec
+INFRA_HELPDESK,Nhân viên hỗ trợ kỹ thuật / IT Support,2,4,L2,Fresher IT Support,15.0,itviec_theo_nam,107,itviec
+INFRA_HELPDESK,Nhân viên hỗ trợ kỹ thuật / IT Support,3,4,L3,IT Support / Helpdesk,15.0,itviec_theo_nam,107,itviec
+INFRA_HELPDESK,Nhân viên hỗ trợ kỹ thuật / IT Support,4,4,L4,Senior IT Support / Helpdesk Lead,18.7,itviec_theo_nam,120,itviec
+INFRA_NETWORK,Kỹ sư hệ thống mạng,1,7,L1,Network Engineer Intern,,chua_co_luong,,
+INFRA_NETWORK,Kỹ sư hệ thống mạng,2,7,L2,Fresher Network Engineer,,chua_co_luong,,
+INFRA_NETWORK,Kỹ sư hệ thống mạng,3,7,L3,Junior Network Engineer,,chua_co_luong,,
+INFRA_NETWORK,Kỹ sư hệ thống mạng,4,7,L4,Middle Network Engineer,,chua_co_luong,,
+INFRA_NETWORK,Kỹ sư hệ thống mạng,5,7,L5,Senior Network Engineer,,chua_co_luong,,
+INFRA_NETWORK,Kỹ sư hệ thống mạng,6,7,L6,Network Engineering Lead,,chua_co_luong,,
+INFRA_NETWORK,Kỹ sư hệ thống mạng,7,7,L7,Principal Network Engineer,,chua_co_luong,,
+ONET-11-1021.00,"Giám đốc điều hành, quản lý vận hành",1,5,L5,Giám sát vận hành (Supervisor),14.5,noi_suy_thap_cao,106,job_postings
+ONET-11-1021.00,"Giám đốc điều hành, quản lý vận hành",2,5,L6,Trưởng bộ phận vận hành,21.6,noi_suy_thap_cao,129,job_postings
+ONET-11-1021.00,"Giám đốc điều hành, quản lý vận hành",3,5,L7,Quản lý vận hành (Operations Manager),28.8,noi_suy_thap_cao,149,job_postings
+ONET-11-1021.00,"Giám đốc điều hành, quản lý vận hành",4,5,L8,Giám đốc vận hành (COO),36.0,noi_suy_thap_cao,166,job_postings
+ONET-11-1021.00,"Giám đốc điều hành, quản lý vận hành",5,5,L9,Tổng giám đốc (CEO),43.1,noi_suy_thap_cao,182,job_postings
+ONET-11-3012.00,Quản lý hành chính,1,5,L3,Chuyên viên hành chính,18.4,noi_suy_thap_cao,119,job_postings
+ONET-11-3012.00,Quản lý hành chính,2,5,L4,Giám sát hành chính,20.9,noi_suy_thap_cao,127,job_postings
+ONET-11-3012.00,Quản lý hành chính,3,5,L5,Phó phòng hành chính,23.4,noi_suy_thap_cao,134,job_postings
+ONET-11-3012.00,Quản lý hành chính,4,5,L6,Trưởng phòng hành chính,26.0,noi_suy_thap_cao,141,job_postings
+ONET-11-3012.00,Quản lý hành chính,5,5,L7,Giám đốc hành chính,28.5,noi_suy_thap_cao,148,job_postings
+ONET-11-3051.00,Quản lý sản xuất,1,6,L4,Trưởng ca / giám sát sản xuất,16.1,noi_suy_thap_cao,111,job_postings
+ONET-11-3051.00,Quản lý sản xuất,2,6,L5,Phó quản đốc,18.4,noi_suy_thap_cao,119,job_postings
+ONET-11-3051.00,Quản lý sản xuất,3,6,L6,Quản đốc phân xưởng,20.7,noi_suy_thap_cao,126,job_postings
+ONET-11-3051.00,Quản lý sản xuất,4,6,L7,Quản lý sản xuất (Production Manager),22.9,noi_suy_thap_cao,133,job_postings
+ONET-11-3051.00,Quản lý sản xuất,5,6,L8,Giám đốc nhà máy (Plant Manager),25.2,noi_suy_thap_cao,139,job_postings
+ONET-11-3051.00,Quản lý sản xuất,6,6,L9,Giám đốc sản xuất khối / Phó tổng giám đốc sản xuất,27.5,noi_suy_thap_cao,145,job_postings
+ONET-11-9013.00,"Chủ trang trại, quản lý nông nghiệp",1,5,L3,"Quản lý tổ, đội sản xuất trang trại",9.7,noi_suy_thap_cao,86,reference
+ONET-11-9013.00,"Chủ trang trại, quản lý nông nghiệp",2,5,L4,Chủ hộ sản xuất (gia trại),13.6,noi_suy_thap_cao,102,reference
+ONET-11-9013.00,"Chủ trang trại, quản lý nông nghiệp",3,5,L5,Chủ trang trại (đạt tiêu chí kinh tế trang trại),17.6,noi_suy_thap_cao,116,reference
+ONET-11-9013.00,"Chủ trang trại, quản lý nông nghiệp",4,5,L6,Giám đốc hợp tác xã / trang trại quy mô lớn,21.5,noi_suy_thap_cao,129,reference
+ONET-11-9013.00,"Chủ trang trại, quản lý nông nghiệp",5,5,L7,Giám đốc doanh nghiệp nông nghiệp,25.4,noi_suy_thap_cao,140,reference
+ONET-11-9021.00,Quản lý xây dựng (chỉ huy trưởng công trình),1,6,L4,Kỹ sư giám sát thi công / cán bộ kỹ thuật hiện trường,21.5,noi_suy_thap_cao,129,job_postings
+ONET-11-9021.00,Quản lý xây dựng (chỉ huy trưởng công trình),2,6,L5,Chỉ huy trưởng công trường hạng III,22.7,noi_suy_thap_cao,132,job_postings
+ONET-11-9021.00,Quản lý xây dựng (chỉ huy trưởng công trình),3,6,L6,Chỉ huy trưởng công trường hạng II,23.9,noi_suy_thap_cao,136,job_postings
+ONET-11-9021.00,Quản lý xây dựng (chỉ huy trưởng công trình),4,6,L7,Chỉ huy trưởng công trường hạng I,25.1,noi_suy_thap_cao,139,job_postings
+ONET-11-9021.00,Quản lý xây dựng (chỉ huy trưởng công trình),5,6,L8,Giám đốc dự án / giám đốc thi công,26.3,noi_suy_thap_cao,142,job_postings
+ONET-11-9021.00,Quản lý xây dựng (chỉ huy trưởng công trình),6,6,L9,Tổng giám đốc doanh nghiệp xây dựng,27.5,noi_suy_thap_cao,145,job_postings
+ONET-11-9032.00,"Quản lý giáo dục (hiệu trưởng, trưởng khoa)",1,5,L4,Tổ trưởng chuyên môn,15.0,noi_suy_thap_cao,107,reference
+ONET-11-9032.00,"Quản lý giáo dục (hiệu trưởng, trưởng khoa)",2,5,L5,Phó hiệu trưởng,17.5,noi_suy_thap_cao,116,reference
+ONET-11-9032.00,"Quản lý giáo dục (hiệu trưởng, trưởng khoa)",3,5,L6,Hiệu trưởng,20.0,noi_suy_thap_cao,124,reference
+ONET-11-9032.00,"Quản lý giáo dục (hiệu trưởng, trưởng khoa)",4,5,L7,Trưởng phòng chuyên môn Sở Giáo dục và Đào tạo,22.5,noi_suy_thap_cao,132,reference
+ONET-11-9032.00,"Quản lý giáo dục (hiệu trưởng, trưởng khoa)",5,5,L8,Giám đốc Sở Giáo dục và Đào tạo,25.0,noi_suy_thap_cao,139,reference
+ONET-11-9041.00,Quản lý kỹ thuật và nghiên cứu,1,5,L5,Trưởng nhóm kỹ thuật (Lead Engineer),22.5,noi_suy_thap_cao,132,job_postings
+ONET-11-9041.00,Quản lý kỹ thuật và nghiên cứu,2,5,L6,Kỹ sư trưởng / trưởng nhóm R&D,24.4,noi_suy_thap_cao,137,job_postings
+ONET-11-9041.00,Quản lý kỹ thuật và nghiên cứu,3,5,L7,Trưởng phòng kỹ thuật / R&D,26.2,noi_suy_thap_cao,142,job_postings
+ONET-11-9041.00,Quản lý kỹ thuật và nghiên cứu,4,5,L8,Giám đốc kỹ thuật (Technical Director),28.1,noi_suy_thap_cao,147,job_postings
+ONET-11-9041.00,Quản lý kỹ thuật và nghiên cứu,5,5,L9,Giám đốc công nghệ (CTO) / viện trưởng,30.0,noi_suy_thap_cao,152,job_postings
+ONET-11-9051.00,Quản lý nhà hàng,1,6,L2,Nhân viên phục vụ,12.0,noi_suy_thap_cao,96,job_postings
+ONET-11-9051.00,Quản lý nhà hàng,2,6,L3,Tổ trưởng phục vụ (Captain),13.1,noi_suy_thap_cao,100,job_postings
+ONET-11-9051.00,Quản lý nhà hàng,3,6,L4,Giám sát nhà hàng (Supervisor),14.2,noi_suy_thap_cao,105,job_postings
+ONET-11-9051.00,Quản lý nhà hàng,4,6,L5,Trợ lý quản lý nhà hàng,15.3,noi_suy_thap_cao,108,job_postings
+ONET-11-9051.00,Quản lý nhà hàng,5,6,L6,Quản lý nhà hàng,16.4,noi_suy_thap_cao,112,job_postings
+ONET-11-9051.00,Quản lý nhà hàng,6,6,L7,Quản lý khu vực / Giám đốc ẩm thực (F&B),17.5,noi_suy_thap_cao,116,job_postings
+ONET-11-9081.00,"Quản lý khách sạn, khu nghỉ dưỡng",1,7,L3,Giám sát lễ tân (Front Office Supervisor),18.0,noi_suy_thap_cao,118,reference
+ONET-11-9081.00,"Quản lý khách sạn, khu nghỉ dưỡng",2,7,L4,Trợ lý trưởng bộ phận tiền sảnh,31.7,noi_suy_thap_cao,156,reference
+ONET-11-9081.00,"Quản lý khách sạn, khu nghỉ dưỡng",3,7,L5,Trưởng bộ phận tiền sảnh (Front Office Manager),45.3,noi_suy_thap_cao,187,reference
+ONET-11-9081.00,"Quản lý khách sạn, khu nghỉ dưỡng",4,7,L6,Giám đốc khối phòng (Rooms Division Manager),59.0,noi_suy_thap_cao,213,reference
+ONET-11-9081.00,"Quản lý khách sạn, khu nghỉ dưỡng",5,7,L7,Giám đốc điều hành khách sạn (Hotel Manager),72.7,noi_suy_thap_cao,236,reference
+ONET-11-9081.00,"Quản lý khách sạn, khu nghỉ dưỡng",6,7,L8,Tổng giám đốc khách sạn (General Manager),86.3,noi_suy_thap_cao,250,reference
+ONET-11-9081.00,"Quản lý khách sạn, khu nghỉ dưỡng",7,7,L9,Giám đốc vùng / cụm khách sạn,100.0,noi_suy_thap_cao,250,reference
+ONET-11-9111.00,"Quản lý bệnh viện, cơ sở y tế",1,6,L4,Phó trưởng phòng chức năng bệnh viện,9.7,noi_suy_thap_cao,86,reference
+ONET-11-9111.00,"Quản lý bệnh viện, cơ sở y tế",2,6,L5,"Trưởng phòng chức năng (quản lý chất lượng, kế hoạch tổng hợp)",12.8,noi_suy_thap_cao,99,reference
+ONET-11-9111.00,"Quản lý bệnh viện, cơ sở y tế",3,6,L6,Trưởng khoa,16.0,noi_suy_thap_cao,111,reference
+ONET-11-9111.00,"Quản lý bệnh viện, cơ sở y tế",4,6,L7,Phó giám đốc bệnh viện,19.1,noi_suy_thap_cao,121,reference
+ONET-11-9111.00,"Quản lý bệnh viện, cơ sở y tế",5,6,L8,Giám đốc bệnh viện / người chịu trách nhiệm chuyên môn kỹ thuật,22.3,noi_suy_thap_cao,131,reference
+ONET-11-9111.00,"Quản lý bệnh viện, cơ sở y tế",6,6,L9,Tổng giám đốc hệ thống bệnh viện / Giám đốc Sở Y tế,25.4,noi_suy_thap_cao,140,reference
+ONET-11-9141.00,"Quản lý bất động sản, toà nhà",1,5,L3,Nhân viên quản lý toà nhà,10.0,noi_suy_thap_cao,88,reference
+ONET-11-9141.00,"Quản lý bất động sản, toà nhà",2,5,L4,Giám sát toà nhà,10.5,noi_suy_thap_cao,90,reference
+ONET-11-9141.00,"Quản lý bất động sản, toà nhà",3,5,L5,Trưởng ban quản lý toà nhà,11.0,noi_suy_thap_cao,92,reference
+ONET-11-9141.00,"Quản lý bất động sản, toà nhà",4,5,L6,Quản lý cụm toà nhà / quản lý tài sản,11.5,noi_suy_thap_cao,94,reference
+ONET-11-9141.00,"Quản lý bất động sản, toà nhà",5,5,L7,Giám đốc quản lý bất động sản,12.0,noi_suy_thap_cao,96,reference
+ONET-13-1023.00,Chuyên viên mua hàng,1,7,L1,Thực tập sinh mua hàng,11.2,noi_suy_thap_cao,93,job_postings
+ONET-13-1023.00,Chuyên viên mua hàng,2,7,L2,Nhân viên mua hàng,11.9,noi_suy_thap_cao,96,job_postings
+ONET-13-1023.00,Chuyên viên mua hàng,3,7,L3,Chuyên viên mua hàng,12.6,noi_suy_thap_cao,99,job_postings
+ONET-13-1023.00,Chuyên viên mua hàng,4,7,L4,Chuyên viên chính mua hàng,13.4,noi_suy_thap_cao,101,job_postings
+ONET-13-1023.00,Chuyên viên mua hàng,5,7,L5,Chuyên viên cao cấp mua hàng (Senior),14.1,noi_suy_thap_cao,104,job_postings
+ONET-13-1023.00,Chuyên viên mua hàng,6,7,L6,Trưởng nhóm / Giám sát mua hàng,14.8,noi_suy_thap_cao,107,job_postings
+ONET-13-1023.00,Chuyên viên mua hàng,7,7,L7,Trưởng phòng mua hàng,15.5,noi_suy_thap_cao,109,job_postings
+ONET-13-1031.00,Chuyên viên thẩm định và bồi thường bảo hiểm,1,7,L1,Thực tập sinh thẩm định bồi thường bảo hiểm,7.0,noi_suy_thap_cao,73,reference
+ONET-13-1031.00,Chuyên viên thẩm định và bồi thường bảo hiểm,2,7,L2,Nhân viên thẩm định bồi thường bảo hiểm,8.3,noi_suy_thap_cao,80,reference
+ONET-13-1031.00,Chuyên viên thẩm định và bồi thường bảo hiểm,3,7,L3,Chuyên viên thẩm định bồi thường bảo hiểm,9.7,noi_suy_thap_cao,86,reference
+ONET-13-1031.00,Chuyên viên thẩm định và bồi thường bảo hiểm,4,7,L4,Chuyên viên chính thẩm định bồi thường bảo hiểm,11.0,noi_suy_thap_cao,92,reference
+ONET-13-1031.00,Chuyên viên thẩm định và bồi thường bảo hiểm,5,7,L5,Chuyên viên cao cấp thẩm định bồi thường bảo hiểm (Senior),12.3,noi_suy_thap_cao,97,reference
+ONET-13-1031.00,Chuyên viên thẩm định và bồi thường bảo hiểm,6,7,L6,Trưởng nhóm / Giám sát thẩm định bồi thường bảo hiểm,13.7,noi_suy_thap_cao,103,reference
+ONET-13-1031.00,Chuyên viên thẩm định và bồi thường bảo hiểm,7,7,L7,Trưởng phòng thẩm định bồi thường bảo hiểm,15.0,noi_suy_thap_cao,107,reference
+ONET-13-1041.00,Chuyên viên tuân thủ và quản lý rủi ro,1,7,L1,Thực tập sinh tuân thủ và quản lý rủi ro,12.5,noi_suy_thap_cao,98,job_postings
+ONET-13-1041.00,Chuyên viên tuân thủ và quản lý rủi ro,2,7,L2,Nhân viên tuân thủ và quản lý rủi ro,13.2,noi_suy_thap_cao,101,job_postings
+ONET-13-1041.00,Chuyên viên tuân thủ và quản lý rủi ro,3,7,L3,Chuyên viên tuân thủ và quản lý rủi ro,13.8,noi_suy_thap_cao,103,job_postings
+ONET-13-1041.00,Chuyên viên tuân thủ và quản lý rủi ro,4,7,L4,Chuyên viên chính tuân thủ và quản lý rủi ro,14.5,noi_suy_thap_cao,106,job_postings
+ONET-13-1041.00,Chuyên viên tuân thủ và quản lý rủi ro,5,7,L5,Chuyên viên cao cấp tuân thủ và quản lý rủi ro (Senior),15.2,noi_suy_thap_cao,108,job_postings
+ONET-13-1041.00,Chuyên viên tuân thủ và quản lý rủi ro,6,7,L6,Trưởng nhóm / Giám sát tuân thủ và quản lý rủi ro,15.8,noi_suy_thap_cao,110,job_postings
+ONET-13-1041.00,Chuyên viên tuân thủ và quản lý rủi ro,7,7,L7,Trưởng phòng tuân thủ và quản lý rủi ro,16.5,noi_suy_thap_cao,113,job_postings
+ONET-13-1051.00,Kỹ sư dự toán (QS),1,7,L1,Thực tập sinh dự toán (QS),13.5,noi_suy_thap_cao,102,job_postings
+ONET-13-1051.00,Kỹ sư dự toán (QS),2,7,L2,Kỹ sư dự toán mới,14.3,noi_suy_thap_cao,105,job_postings
+ONET-13-1051.00,Kỹ sư dự toán (QS),3,7,L3,Kỹ sư dự toán,15.2,noi_suy_thap_cao,108,job_postings
+ONET-13-1051.00,Kỹ sư dự toán (QS),4,7,L4,Kỹ sư định giá xây dựng hạng III,16.0,noi_suy_thap_cao,111,job_postings
+ONET-13-1051.00,Kỹ sư dự toán (QS),5,7,L5,Kỹ sư định giá xây dựng hạng II,16.8,noi_suy_thap_cao,114,job_postings
+ONET-13-1051.00,Kỹ sư dự toán (QS),6,7,L6,Kỹ sư định giá xây dựng hạng I,17.7,noi_suy_thap_cao,117,job_postings
+ONET-13-1051.00,Kỹ sư dự toán (QS),7,7,L7,Trưởng phòng quản lý chi phí (QS Manager),18.5,noi_suy_thap_cao,119,job_postings
+ONET-13-1071.00,Chuyên viên nhân sự,1,7,L1,Thực tập sinh nhân sự,10.0,noi_suy_thap_cao,88,job_postings
+ONET-13-1071.00,Chuyên viên nhân sự,2,7,L2,Nhân viên nhân sự,10.8,noi_suy_thap_cao,91,job_postings
+ONET-13-1071.00,Chuyên viên nhân sự,3,7,L3,Chuyên viên nhân sự,11.7,noi_suy_thap_cao,95,job_postings
+ONET-13-1071.00,Chuyên viên nhân sự,4,7,L4,Chuyên viên chính nhân sự,12.5,noi_suy_thap_cao,98,job_postings
+ONET-13-1071.00,Chuyên viên nhân sự,5,7,L5,Chuyên viên cao cấp nhân sự (Senior),13.3,noi_suy_thap_cao,101,job_postings
+ONET-13-1071.00,Chuyên viên nhân sự,6,7,L6,Trưởng nhóm / Giám sát nhân sự,14.2,noi_suy_thap_cao,104,job_postings
+ONET-13-1071.00,Chuyên viên nhân sự,7,7,L7,Trưởng phòng nhân sự,15.0,noi_suy_thap_cao,107,job_postings
+ONET-13-1081.00,Chuyên viên logistics và xuất nhập khẩu,1,7,L1,Thực tập sinh xuất nhập khẩu,11.0,noi_suy_thap_cao,92,job_postings
+ONET-13-1081.00,Chuyên viên logistics và xuất nhập khẩu,2,7,L2,Nhân viên chứng từ xuất nhập khẩu,11.7,noi_suy_thap_cao,95,job_postings
+ONET-13-1081.00,Chuyên viên logistics và xuất nhập khẩu,3,7,L3,Nhân viên khai hải quan (có chứng chỉ nghiệp vụ),12.3,noi_suy_thap_cao,97,job_postings
+ONET-13-1081.00,Chuyên viên logistics và xuất nhập khẩu,4,7,L4,Chuyên viên logistics,13.0,noi_suy_thap_cao,100,job_postings
+ONET-13-1081.00,Chuyên viên logistics và xuất nhập khẩu,5,7,L5,Chuyên viên logistics cao cấp (Senior),13.7,noi_suy_thap_cao,103,job_postings
+ONET-13-1081.00,Chuyên viên logistics và xuất nhập khẩu,6,7,L6,Trưởng nhóm / Giám sát logistics,14.3,noi_suy_thap_cao,105,job_postings
+ONET-13-1081.00,Chuyên viên logistics và xuất nhập khẩu,7,7,L7,Trưởng phòng logistics / chuỗi cung ứng,15.0,noi_suy_thap_cao,107,job_postings
+ONET-13-1082.00,Chuyên viên quản lý dự án,1,7,L1,Thực tập sinh dự án,15.0,noi_suy_thap_cao,107,job_postings
+ONET-13-1082.00,Chuyên viên quản lý dự án,2,7,L2,Điều phối viên dự án (Project Coordinator),17.2,noi_suy_thap_cao,115,job_postings
+ONET-13-1082.00,Chuyên viên quản lý dự án,3,7,L3,Trợ lý quản lý dự án,19.5,noi_suy_thap_cao,122,job_postings
+ONET-13-1082.00,Chuyên viên quản lý dự án,4,7,L4,Quản lý dự án (Project Manager),21.8,noi_suy_thap_cao,129,job_postings
+ONET-13-1082.00,Chuyên viên quản lý dự án,5,7,L5,Quản lý dự án cao cấp (Senior PM),24.0,noi_suy_thap_cao,136,job_postings
+ONET-13-1082.00,Chuyên viên quản lý dự án,6,7,L6,Quản lý chương trình (Program Manager),26.2,noi_suy_thap_cao,142,job_postings
+ONET-13-1082.00,Chuyên viên quản lý dự án,7,7,L7,Trưởng văn phòng quản lý dự án (Head of PMO),28.5,noi_suy_thap_cao,148,job_postings
+ONET-13-1121.00,Chuyên viên tổ chức sự kiện,1,7,L1,Thực tập sinh tổ chức sự kiện,11.0,noi_suy_thap_cao,92,job_postings
+ONET-13-1121.00,Chuyên viên tổ chức sự kiện,2,7,L2,Nhân viên tổ chức sự kiện,11.4,noi_suy_thap_cao,94,job_postings
+ONET-13-1121.00,Chuyên viên tổ chức sự kiện,3,7,L3,Chuyên viên tổ chức sự kiện,11.8,noi_suy_thap_cao,95,job_postings
+ONET-13-1121.00,Chuyên viên tổ chức sự kiện,4,7,L4,Chuyên viên chính tổ chức sự kiện,12.2,noi_suy_thap_cao,97,job_postings
+ONET-13-1121.00,Chuyên viên tổ chức sự kiện,5,7,L5,Chuyên viên cao cấp tổ chức sự kiện (Senior),12.7,noi_suy_thap_cao,99,job_postings
+ONET-13-1121.00,Chuyên viên tổ chức sự kiện,6,7,L6,Trưởng nhóm / Giám sát tổ chức sự kiện,13.1,noi_suy_thap_cao,100,job_postings
+ONET-13-1121.00,Chuyên viên tổ chức sự kiện,7,7,L7,Trưởng phòng tổ chức sự kiện,13.5,noi_suy_thap_cao,102,job_postings
+ONET-13-1161.00,Chuyên viên marketing và nghiên cứu thị trường,1,7,L1,Thực tập sinh marketing,10.5,noi_suy_thap_cao,90,job_postings
+ONET-13-1161.00,Chuyên viên marketing và nghiên cứu thị trường,2,7,L2,Nhân viên marketing,11.2,noi_suy_thap_cao,93,job_postings
+ONET-13-1161.00,Chuyên viên marketing và nghiên cứu thị trường,3,7,L3,Chuyên viên marketing,12.0,noi_suy_thap_cao,96,job_postings
+ONET-13-1161.00,Chuyên viên marketing và nghiên cứu thị trường,4,7,L4,Chuyên viên chính marketing,12.8,noi_suy_thap_cao,99,job_postings
+ONET-13-1161.00,Chuyên viên marketing và nghiên cứu thị trường,5,7,L5,Chuyên viên cao cấp marketing (Senior),13.5,noi_suy_thap_cao,102,job_postings
+ONET-13-1161.00,Chuyên viên marketing và nghiên cứu thị trường,6,7,L6,Trưởng nhóm / Giám sát marketing,14.2,noi_suy_thap_cao,105,job_postings
+ONET-13-1161.00,Chuyên viên marketing và nghiên cứu thị trường,7,7,L7,Trưởng phòng marketing,15.0,noi_suy_thap_cao,107,job_postings
+ONET-13-1199.06,Người kinh doanh online,1,5,L1,Cộng tác viên bán hàng online,10.0,noi_suy_thap_cao,88,job_postings
+ONET-13-1199.06,Người kinh doanh online,2,5,L2,Chủ shop online mới,11.2,noi_suy_thap_cao,93,job_postings
+ONET-13-1199.06,Người kinh doanh online,3,5,L3,Chủ shop có doanh thu ổn định,12.5,noi_suy_thap_cao,98,job_postings
+ONET-13-1199.06,Người kinh doanh online,4,5,L4,Chủ shop đa kênh có nhân viên,13.8,noi_suy_thap_cao,103,job_postings
+ONET-13-1199.06,Người kinh doanh online,5,5,L5,Chủ thương hiệu bán lẻ online,15.0,noi_suy_thap_cao,107,job_postings
+ONET-13-2011.00,"Kế toán, kiểm toán viên",1,7,L1,Thực tập sinh kế toán – kiểm toán,10.0,noi_suy_thap_cao,88,job_postings
+ONET-13-2011.00,"Kế toán, kiểm toán viên",2,7,L2,Kế toán viên / trợ lý kiểm toán,10.8,noi_suy_thap_cao,91,job_postings
+ONET-13-2011.00,"Kế toán, kiểm toán viên",3,7,L3,Kế toán tổng hợp,11.7,noi_suy_thap_cao,95,job_postings
+ONET-13-2011.00,"Kế toán, kiểm toán viên",4,7,L4,Kế toán trưởng doanh nghiệp nhỏ,12.5,noi_suy_thap_cao,98,job_postings
+ONET-13-2011.00,"Kế toán, kiểm toán viên",5,7,L5,Kiểm toán viên hành nghề / chủ nhiệm kiểm toán,13.3,noi_suy_thap_cao,101,job_postings
+ONET-13-2011.00,"Kế toán, kiểm toán viên",6,7,L6,Trưởng phòng tài chính – kế toán,14.2,noi_suy_thap_cao,104,job_postings
+ONET-13-2011.00,"Kế toán, kiểm toán viên",7,7,L7,Giám đốc tài chính (CFO),15.0,noi_suy_thap_cao,107,job_postings
+ONET-13-2023.00,Thẩm định viên về giá,1,7,L1,Thực tập sinh thẩm định giá,10.0,noi_suy_thap_cao,88,reference
+ONET-13-2023.00,Thẩm định viên về giá,2,7,L2,Trợ lý thẩm định giá,11.5,noi_suy_thap_cao,94,reference
+ONET-13-2023.00,Thẩm định viên về giá,3,7,L3,Chuyên viên thẩm định giá,13.0,noi_suy_thap_cao,100,reference
+ONET-13-2023.00,Thẩm định viên về giá,4,7,L4,Thẩm định viên về giá (có thẻ),14.5,noi_suy_thap_cao,106,reference
+ONET-13-2023.00,Thẩm định viên về giá,5,7,L5,Thẩm định viên cao cấp,16.0,noi_suy_thap_cao,111,reference
+ONET-13-2023.00,Thẩm định viên về giá,6,7,L6,Trưởng phòng thẩm định giá,17.5,noi_suy_thap_cao,116,reference
+ONET-13-2023.00,Thẩm định viên về giá,7,7,L7,Giám đốc doanh nghiệp thẩm định giá,19.0,noi_suy_thap_cao,121,reference
+ONET-13-2052.00,Chuyên viên tư vấn tài chính và đầu tư,1,7,L1,Thực tập sinh tư vấn đầu tư,14.5,noi_suy_thap_cao,106,job_postings
+ONET-13-2052.00,Chuyên viên tư vấn tài chính và đầu tư,2,7,L2,Chuyên viên môi giới (có chứng chỉ hành nghề môi giới),16.3,noi_suy_thap_cao,112,job_postings
+ONET-13-2052.00,Chuyên viên tư vấn tài chính và đầu tư,3,7,L3,Chuyên viên tư vấn đầu tư,18.0,noi_suy_thap_cao,118,job_postings
+ONET-13-2052.00,Chuyên viên tư vấn tài chính và đầu tư,4,7,L4,Chuyên viên tư vấn đầu tư cao cấp,19.8,noi_suy_thap_cao,123,job_postings
+ONET-13-2052.00,Chuyên viên tư vấn tài chính và đầu tư,5,7,L5,Chuyên gia quản lý tài sản (có chứng chỉ phân tích tài chính),21.6,noi_suy_thap_cao,129,job_postings
+ONET-13-2052.00,Chuyên viên tư vấn tài chính và đầu tư,6,7,L6,Trưởng nhóm tư vấn đầu tư,23.3,noi_suy_thap_cao,134,job_postings
+ONET-13-2052.00,Chuyên viên tư vấn tài chính và đầu tư,7,7,L7,Giám đốc quản lý tài sản / khách hàng cá nhân,25.1,noi_suy_thap_cao,139,job_postings
+ONET-13-2072.00,Chuyên viên tín dụng ngân hàng,1,7,L1,Thực tập sinh ngân hàng,15.0,noi_suy_thap_cao,107,job_postings
+ONET-13-2072.00,Chuyên viên tín dụng ngân hàng,2,7,L2,Chuyên viên hỗ trợ tín dụng,16.7,noi_suy_thap_cao,113,job_postings
+ONET-13-2072.00,Chuyên viên tín dụng ngân hàng,3,7,L3,Chuyên viên quan hệ khách hàng (RM),18.3,noi_suy_thap_cao,119,job_postings
+ONET-13-2072.00,Chuyên viên tín dụng ngân hàng,4,7,L4,Chuyên viên quan hệ khách hàng cấp cao (SRM),20.0,noi_suy_thap_cao,124,job_postings
+ONET-13-2072.00,Chuyên viên tín dụng ngân hàng,5,7,L5,Chuyên gia quan hệ khách hàng (SERM),21.7,noi_suy_thap_cao,129,job_postings
+ONET-13-2072.00,Chuyên viên tín dụng ngân hàng,6,7,L6,Phó phòng / Trưởng nhóm khách hàng,23.3,noi_suy_thap_cao,134,job_postings
+ONET-13-2072.00,Chuyên viên tín dụng ngân hàng,7,7,L7,Trưởng phòng khách hàng / Giám đốc phòng giao dịch,25.0,noi_suy_thap_cao,139,job_postings
+ONET-13-2081.00,Cán bộ thuế,1,6,L2,Kiểm tra viên trung cấp thuế,5.9,noi_suy_thap_cao,67,public_scale
+ONET-13-2081.00,Cán bộ thuế,2,6,L3,Kiểm tra viên thuế,8.2,noi_suy_thap_cao,79,public_scale
+ONET-13-2081.00,Cán bộ thuế,3,6,L4,Kiểm tra viên thuế phụ trách nhóm doanh nghiệp,10.4,noi_suy_thap_cao,89,public_scale
+ONET-13-2081.00,Cán bộ thuế,4,6,L5,Kiểm tra viên chính thuế,12.7,noi_suy_thap_cao,99,public_scale
+ONET-13-2081.00,Cán bộ thuế,5,6,L6,Phó trưởng phòng / trưởng nhóm kiểm tra thuế,14.9,noi_suy_thap_cao,107,public_scale
+ONET-13-2081.00,Cán bộ thuế,6,6,L7,Kiểm tra viên cao cấp thuế,17.2,noi_suy_thap_cao,115,public_scale
+ONET-13-2099.01,Chuyên viên phân tích tài chính định lượng (quant),1,7,L1,Thực tập sinh phân tích định lượng,7.0,noi_suy_thap_cao,74,reference
+ONET-13-2099.01,Chuyên viên phân tích tài chính định lượng (quant),2,7,L2,Chuyên viên phân tích định lượng (Junior Quant),9.2,noi_suy_thap_cao,84,reference
+ONET-13-2099.01,Chuyên viên phân tích tài chính định lượng (quant),3,7,L3,Chuyên viên phân tích định lượng,11.4,noi_suy_thap_cao,93,reference
+ONET-13-2099.01,Chuyên viên phân tích tài chính định lượng (quant),4,7,L4,Chuyên viên định lượng chính,13.5,noi_suy_thap_cao,102,reference
+ONET-13-2099.01,Chuyên viên phân tích tài chính định lượng (quant),5,7,L5,Chuyên gia định lượng (Senior Quant),15.7,noi_suy_thap_cao,110,reference
+ONET-13-2099.01,Chuyên viên phân tích tài chính định lượng (quant),6,7,L6,Trưởng nhóm định lượng,17.8,noi_suy_thap_cao,117,reference
+ONET-13-2099.01,Chuyên viên phân tích tài chính định lượng (quant),7,7,L7,Giám đốc định lượng / quản trị rủi ro thị trường,20.0,noi_suy_thap_cao,124,reference
+ONET-15-2011.00,Chuyên viên định phí bảo hiểm (actuary),1,7,L1,Thực tập sinh định phí bảo hiểm,15.0,noi_suy_thap_cao,107,reference
+ONET-15-2011.00,Chuyên viên định phí bảo hiểm (actuary),2,7,L2,Chuyên viên định phí (actuarial analyst),15.8,noi_suy_thap_cao,110,reference
+ONET-15-2011.00,Chuyên viên định phí bảo hiểm (actuary),3,7,L3,Chuyên viên định phí (đang thi chứng chỉ actuary quốc tế),16.7,noi_suy_thap_cao,113,reference
+ONET-15-2011.00,Chuyên viên định phí bảo hiểm (actuary),4,7,L5,Chuyên viên định phí cao cấp (hội viên liên kết ASA/AIA),17.5,noi_suy_thap_cao,116,reference
+ONET-15-2011.00,Chuyên viên định phí bảo hiểm (actuary),5,7,L6,Trưởng nhóm định phí (hội viên chính thức FSA/FIA),18.3,noi_suy_thap_cao,119,reference
+ONET-15-2011.00,Chuyên viên định phí bảo hiểm (actuary),6,7,L7,Chuyên gia tính toán được bổ nhiệm của doanh nghiệp bảo hiểm,19.2,noi_suy_thap_cao,121,reference
+ONET-15-2011.00,Chuyên viên định phí bảo hiểm (actuary),7,7,L8,Giám đốc định phí (chief actuary),20.0,noi_suy_thap_cao,124,reference
+ONET-15-2031.00,Chuyên viên nghiên cứu vận trù,1,7,L1,Thực tập sinh phân tích vận hành,8.8,noi_suy_thap_cao,82,reference
+ONET-15-2031.00,Chuyên viên nghiên cứu vận trù,2,7,L2,Chuyên viên phân tích vận trù/tối ưu hóa,10.8,noi_suy_thap_cao,91,reference
+ONET-15-2031.00,Chuyên viên nghiên cứu vận trù,3,7,L3,Chuyên viên nghiên cứu vận trù,12.9,noi_suy_thap_cao,100,reference
+ONET-15-2031.00,Chuyên viên nghiên cứu vận trù,4,7,L5,Chuyên viên cao cấp/chuyên gia tối ưu hóa,15.0,noi_suy_thap_cao,107,reference
+ONET-15-2031.00,Chuyên viên nghiên cứu vận trù,5,7,L6,Trưởng nhóm phân tích vận hành,17.0,noi_suy_thap_cao,114,reference
+ONET-15-2031.00,Chuyên viên nghiên cứu vận trù,6,7,L7,Trưởng phòng phân tích/kế hoạch vận hành,19.1,noi_suy_thap_cao,121,reference
+ONET-15-2031.00,Chuyên viên nghiên cứu vận trù,7,7,L8,Giám đốc phân tích/kế hoạch chuỗi cung ứng,21.1,noi_suy_thap_cao,128,reference
+ONET-15-2041.00,Chuyên viên thống kê và toán ứng dụng,1,7,L1,Cộng tác viên điều tra thống kê/thực tập sinh,8.0,noi_suy_thap_cao,78,reference
+ONET-15-2041.00,Chuyên viên thống kê và toán ứng dụng,2,7,L2,Thống kê viên (tương đương chuyên viên),8.7,noi_suy_thap_cao,82,reference
+ONET-15-2041.00,Chuyên viên thống kê và toán ứng dụng,3,7,L4,Thống kê viên phụ trách chuyên đề/cuộc điều tra,9.3,noi_suy_thap_cao,85,reference
+ONET-15-2041.00,Chuyên viên thống kê và toán ứng dụng,4,7,L5,Thống kê viên chính,10.0,noi_suy_thap_cao,88,reference
+ONET-15-2041.00,Chuyên viên thống kê và toán ứng dụng,5,7,L6,Trưởng phòng thống kê chuyên ngành,10.7,noi_suy_thap_cao,91,reference
+ONET-15-2041.00,Chuyên viên thống kê và toán ứng dụng,6,7,L7,Thống kê viên cao cấp,11.3,noi_suy_thap_cao,93,reference
+ONET-15-2041.00,Chuyên viên thống kê và toán ứng dụng,7,7,L8,"Lãnh đạo cơ quan thống kê (cục, vụ)",12.0,noi_suy_thap_cao,96,reference
+ONET-17-1011.00,Kiến trúc sư,1,7,L1,Sinh viên kiến trúc thực tập,15.0,noi_suy_thap_cao,107,job_postings
+ONET-17-1011.00,Kiến trúc sư,2,7,L2,Kiến trúc sư mới / hoạ viên kiến trúc,15.8,noi_suy_thap_cao,110,job_postings
+ONET-17-1011.00,Kiến trúc sư,3,7,L3,Kiến trúc sư thiết kế,16.7,noi_suy_thap_cao,113,job_postings
+ONET-17-1011.00,Kiến trúc sư,4,7,L4,Kiến trúc sư hành nghề (có chứng chỉ hành nghề kiến trúc),17.5,noi_suy_thap_cao,116,job_postings
+ONET-17-1011.00,Kiến trúc sư,5,7,L5,Chủ trì thiết kế kiến trúc,18.3,noi_suy_thap_cao,119,job_postings
+ONET-17-1011.00,Kiến trúc sư,6,7,L6,Chủ nhiệm đồ án,19.2,noi_suy_thap_cao,121,job_postings
+ONET-17-1011.00,Kiến trúc sư,7,7,L7,Kiến trúc sư trưởng / Giám đốc thiết kế,20.0,noi_suy_thap_cao,124,job_postings
+ONET-17-1022.00,"Kỹ sư trắc địa, bản đồ",1,6,L1,Thực tập sinh trắc địa,15.0,noi_suy_thap_cao,107,reference
+ONET-17-1022.00,"Kỹ sư trắc địa, bản đồ",2,6,L2,Kỹ sư trắc địa mới / kỹ thuật viên đo đạc,16.6,noi_suy_thap_cao,113,reference
+ONET-17-1022.00,"Kỹ sư trắc địa, bản đồ",3,6,L3,Kỹ sư trắc địa hạng II (có chứng chỉ hành nghề đo đạc),18.2,noi_suy_thap_cao,118,reference
+ONET-17-1022.00,"Kỹ sư trắc địa, bản đồ",4,6,L4,Kỹ sư trắc địa chính / tổ trưởng đo,19.8,noi_suy_thap_cao,123,reference
+ONET-17-1022.00,"Kỹ sư trắc địa, bản đồ",5,6,L5,Kỹ sư trắc địa hạng I,21.4,noi_suy_thap_cao,128,reference
+ONET-17-1022.00,"Kỹ sư trắc địa, bản đồ",6,6,L6,Trưởng phòng đo đạc bản đồ,23.0,noi_suy_thap_cao,133,reference
+ONET-17-2031.00,Kỹ sư y sinh,1,7,L1,Thực tập sinh kỹ thuật y sinh,11.2,noi_suy_thap_cao,93,reference
+ONET-17-2031.00,Kỹ sư y sinh,2,7,L2,Kỹ sư y sinh mới ra trường,12.4,noi_suy_thap_cao,98,reference
+ONET-17-2031.00,Kỹ sư y sinh,3,7,L3,Kỹ sư y sinh (Junior),13.5,noi_suy_thap_cao,102,reference
+ONET-17-2031.00,Kỹ sư y sinh,4,7,L4,Kỹ sư y sinh (Middle),14.7,noi_suy_thap_cao,106,reference
+ONET-17-2031.00,Kỹ sư y sinh,5,7,L5,Kỹ sư y sinh cao cấp (Senior),15.9,noi_suy_thap_cao,110,reference
+ONET-17-2031.00,Kỹ sư y sinh,6,7,L6,Trưởng nhóm kỹ thuật y sinh (Lead),17.0,noi_suy_thap_cao,114,reference
+ONET-17-2031.00,Kỹ sư y sinh,7,7,L7,Trưởng phòng vật tư – thiết bị y tế,18.2,noi_suy_thap_cao,118,reference
+ONET-17-2041.00,"Kỹ sư hoá học, vật liệu",1,7,L1,"Thực tập sinh kỹ thuật hoá, vật liệu",10.0,noi_suy_thap_cao,88,reference
+ONET-17-2041.00,"Kỹ sư hoá học, vật liệu",2,7,L2,"Kỹ sư hoá, vật liệu mới ra trường",15.0,noi_suy_thap_cao,107,reference
+ONET-17-2041.00,"Kỹ sư hoá học, vật liệu",3,7,L3,"Kỹ sư hoá, vật liệu (Junior)",20.0,noi_suy_thap_cao,124,reference
+ONET-17-2041.00,"Kỹ sư hoá học, vật liệu",4,7,L4,"Kỹ sư hoá, vật liệu (Middle)",25.0,noi_suy_thap_cao,139,reference
+ONET-17-2041.00,"Kỹ sư hoá học, vật liệu",5,7,L5,"Kỹ sư hoá, vật liệu cao cấp (Senior)",30.0,noi_suy_thap_cao,152,reference
+ONET-17-2041.00,"Kỹ sư hoá học, vật liệu",6,7,L6,"Trưởng nhóm kỹ thuật hoá, vật liệu (Lead)",35.0,noi_suy_thap_cao,164,reference
+ONET-17-2041.00,"Kỹ sư hoá học, vật liệu",7,7,L7,Trưởng phòng công nghệ,40.0,noi_suy_thap_cao,175,reference
+ONET-17-2051.00,Kỹ sư xây dựng,1,7,L1,Thực tập sinh xây dựng,14.0,noi_suy_thap_cao,104,job_postings
+ONET-17-2051.00,Kỹ sư xây dựng,2,7,L2,Kỹ sư xây dựng mới ra trường,14.8,noi_suy_thap_cao,107,job_postings
+ONET-17-2051.00,Kỹ sư xây dựng,3,7,L3,Kỹ sư xây dựng,15.5,noi_suy_thap_cao,109,job_postings
+ONET-17-2051.00,Kỹ sư xây dựng,4,7,L4,Kỹ sư xây dựng hạng III (có chứng chỉ hành nghề),16.2,noi_suy_thap_cao,112,job_postings
+ONET-17-2051.00,Kỹ sư xây dựng,5,7,L5,Kỹ sư xây dựng hạng II,17.0,noi_suy_thap_cao,114,job_postings
+ONET-17-2051.00,Kỹ sư xây dựng,6,7,L6,Kỹ sư xây dựng hạng I,17.8,noi_suy_thap_cao,117,job_postings
+ONET-17-2051.00,Kỹ sư xây dựng,7,7,L7,Trưởng phòng / Giám đốc kỹ thuật xây dựng,18.5,noi_suy_thap_cao,119,job_postings
+ONET-17-2071.00,Kỹ sư điện,1,7,L1,Thực tập sinh điện,13.5,noi_suy_thap_cao,102,job_postings
+ONET-17-2071.00,Kỹ sư điện,2,7,L2,Kỹ sư điện mới ra trường,14.6,noi_suy_thap_cao,106,job_postings
+ONET-17-2071.00,Kỹ sư điện,3,7,L3,Kỹ sư điện,15.7,noi_suy_thap_cao,110,job_postings
+ONET-17-2071.00,Kỹ sư điện,4,7,L4,Kỹ sư điện hạng III (có chứng chỉ hành nghề),16.8,noi_suy_thap_cao,114,job_postings
+ONET-17-2071.00,Kỹ sư điện,5,7,L5,Kỹ sư điện hạng II,17.8,noi_suy_thap_cao,117,job_postings
+ONET-17-2071.00,Kỹ sư điện,6,7,L6,Kỹ sư điện hạng I,18.9,noi_suy_thap_cao,121,job_postings
+ONET-17-2071.00,Kỹ sư điện,7,7,L7,Trưởng phòng / Giám đốc kỹ thuật điện,20.0,noi_suy_thap_cao,124,job_postings
+ONET-17-2072.00,"Kỹ sư điện tử, viễn thông",1,7,L1,"Thực tập sinh kỹ thuật điện tử, viễn thông",7.0,noi_suy_thap_cao,73,reference
+ONET-17-2072.00,"Kỹ sư điện tử, viễn thông",2,7,L2,"Kỹ sư điện tử, viễn thông mới ra trường",10.0,noi_suy_thap_cao,88,reference
+ONET-17-2072.00,"Kỹ sư điện tử, viễn thông",3,7,L3,"Kỹ sư điện tử, viễn thông (Junior)",13.0,noi_suy_thap_cao,100,reference
+ONET-17-2072.00,"Kỹ sư điện tử, viễn thông",4,7,L4,"Kỹ sư điện tử, viễn thông (Middle)",16.0,noi_suy_thap_cao,111,reference
+ONET-17-2072.00,"Kỹ sư điện tử, viễn thông",5,7,L5,"Kỹ sư điện tử, viễn thông cao cấp (Senior)",19.0,noi_suy_thap_cao,121,reference
+ONET-17-2072.00,"Kỹ sư điện tử, viễn thông",6,7,L6,"Trưởng nhóm kỹ thuật điện tử, viễn thông (Lead)",22.0,noi_suy_thap_cao,130,reference
+ONET-17-2072.00,"Kỹ sư điện tử, viễn thông",7,7,L7,"Trưởng phòng kỹ thuật điện tử, viễn thông",25.0,noi_suy_thap_cao,139,reference
+ONET-17-2081.00,"Kỹ sư, chuyên viên môi trường",1,7,L1,Thực tập sinh kỹ thuật môi trường,10.0,noi_suy_thap_cao,88,job_postings
+ONET-17-2081.00,"Kỹ sư, chuyên viên môi trường",2,7,L2,Kỹ sư môi trường mới ra trường,11.2,noi_suy_thap_cao,93,job_postings
+ONET-17-2081.00,"Kỹ sư, chuyên viên môi trường",3,7,L3,Kỹ sư môi trường (Junior),12.3,noi_suy_thap_cao,97,job_postings
+ONET-17-2081.00,"Kỹ sư, chuyên viên môi trường",4,7,L4,Kỹ sư môi trường (Middle),13.5,noi_suy_thap_cao,102,job_postings
+ONET-17-2081.00,"Kỹ sư, chuyên viên môi trường",5,7,L5,Kỹ sư môi trường cao cấp (Senior),14.7,noi_suy_thap_cao,106,job_postings
+ONET-17-2081.00,"Kỹ sư, chuyên viên môi trường",6,7,L6,Trưởng nhóm kỹ thuật môi trường (Lead),15.8,noi_suy_thap_cao,110,job_postings
+ONET-17-2081.00,"Kỹ sư, chuyên viên môi trường",7,7,L7,Trưởng phòng môi trường,17.0,noi_suy_thap_cao,114,job_postings
+ONET-17-2112.00,"Kỹ sư công nghiệp, quản lý sản xuất",1,7,L1,Thực tập sinh kỹ thuật công nghiệp,10.6,noi_suy_thap_cao,90,job_postings
+ONET-17-2112.00,"Kỹ sư công nghiệp, quản lý sản xuất",2,7,L2,Kỹ sư công nghiệp mới ra trường,11.5,noi_suy_thap_cao,94,job_postings
+ONET-17-2112.00,"Kỹ sư công nghiệp, quản lý sản xuất",3,7,L3,Kỹ sư công nghiệp (Junior),12.4,noi_suy_thap_cao,98,job_postings
+ONET-17-2112.00,"Kỹ sư công nghiệp, quản lý sản xuất",4,7,L4,Kỹ sư công nghiệp (Middle),13.3,noi_suy_thap_cao,101,job_postings
+ONET-17-2112.00,"Kỹ sư công nghiệp, quản lý sản xuất",5,7,L5,Kỹ sư công nghiệp cao cấp (Senior),14.2,noi_suy_thap_cao,105,job_postings
+ONET-17-2112.00,"Kỹ sư công nghiệp, quản lý sản xuất",6,7,L6,Trưởng nhóm kỹ thuật công nghiệp (Lead),15.1,noi_suy_thap_cao,108,job_postings
+ONET-17-2112.00,"Kỹ sư công nghiệp, quản lý sản xuất",7,7,L7,Trưởng phòng kế hoạch – cải tiến,16.0,noi_suy_thap_cao,111,job_postings
+ONET-17-2141.00,Kỹ sư cơ khí,1,7,L1,Thực tập sinh kỹ thuật cơ khí,12.5,noi_suy_thap_cao,98,job_postings
+ONET-17-2141.00,Kỹ sư cơ khí,2,7,L2,Kỹ sư cơ khí mới ra trường,13.3,noi_suy_thap_cao,101,job_postings
+ONET-17-2141.00,Kỹ sư cơ khí,3,7,L3,Kỹ sư cơ khí (Junior),14.2,noi_suy_thap_cao,104,job_postings
+ONET-17-2141.00,Kỹ sư cơ khí,4,7,L4,Kỹ sư cơ khí (Middle),15.0,noi_suy_thap_cao,107,job_postings
+ONET-17-2141.00,Kỹ sư cơ khí,5,7,L5,Kỹ sư cơ khí cao cấp (Senior),15.8,noi_suy_thap_cao,110,job_postings
+ONET-17-2141.00,Kỹ sư cơ khí,6,7,L6,Trưởng nhóm kỹ thuật cơ khí (Lead),16.7,noi_suy_thap_cao,113,job_postings
+ONET-17-2141.00,Kỹ sư cơ khí,7,7,L7,Trưởng phòng kỹ thuật cơ khí,17.5,noi_suy_thap_cao,116,job_postings
+ONET-17-2141.02,Kỹ sư ô tô,1,7,L1,Thực tập sinh kỹ thuật ô tô,12.0,noi_suy_thap_cao,96,reference
+ONET-17-2141.02,Kỹ sư ô tô,2,7,L2,Kỹ sư ô tô mới ra trường,15.8,noi_suy_thap_cao,110,reference
+ONET-17-2141.02,Kỹ sư ô tô,3,7,L3,Kỹ sư ô tô (Junior),19.7,noi_suy_thap_cao,123,reference
+ONET-17-2141.02,Kỹ sư ô tô,4,7,L4,Kỹ sư ô tô (Middle),23.5,noi_suy_thap_cao,134,reference
+ONET-17-2141.02,Kỹ sư ô tô,5,7,L5,Kỹ sư ô tô cao cấp (Senior),27.3,noi_suy_thap_cao,145,reference
+ONET-17-2141.02,Kỹ sư ô tô,6,7,L6,Trưởng nhóm kỹ thuật ô tô (Lead),31.2,noi_suy_thap_cao,155,reference
+ONET-17-2141.02,Kỹ sư ô tô,7,7,L7,Trưởng phòng kỹ thuật ô tô,35.0,noi_suy_thap_cao,164,reference
+ONET-17-2151.00,"Kỹ sư mỏ, dầu khí",1,7,L1,"Thực tập sinh kỹ thuật mỏ, dầu khí",10.0,noi_suy_thap_cao,88,reference
+ONET-17-2151.00,"Kỹ sư mỏ, dầu khí",2,7,L2,"Kỹ sư mỏ, dầu khí mới ra trường",15.0,noi_suy_thap_cao,107,reference
+ONET-17-2151.00,"Kỹ sư mỏ, dầu khí",3,7,L3,"Kỹ sư mỏ, dầu khí (Junior)",20.0,noi_suy_thap_cao,124,reference
+ONET-17-2151.00,"Kỹ sư mỏ, dầu khí",4,7,L4,"Kỹ sư mỏ, dầu khí (Middle)",25.0,noi_suy_thap_cao,139,reference
+ONET-17-2151.00,"Kỹ sư mỏ, dầu khí",5,7,L5,"Kỹ sư mỏ, dầu khí cao cấp (Senior)",30.0,noi_suy_thap_cao,152,reference
+ONET-17-2151.00,"Kỹ sư mỏ, dầu khí",6,7,L6,Quản đốc mỏ / kỹ sư trưởng giàn,35.0,noi_suy_thap_cao,164,reference
+ONET-17-2151.00,"Kỹ sư mỏ, dầu khí",7,7,L7,Giám đốc điều hành mỏ,40.0,noi_suy_thap_cao,175,reference
+ONET-17-2199.05,"Kỹ sư cơ điện tử, robot",1,7,L1,"Thực tập sinh kỹ thuật cơ điện tử, robot",8.0,noi_suy_thap_cao,78,reference
+ONET-17-2199.05,"Kỹ sư cơ điện tử, robot",2,7,L2,"Kỹ sư cơ điện tử, robot mới ra trường",11.7,noi_suy_thap_cao,95,reference
+ONET-17-2199.05,"Kỹ sư cơ điện tử, robot",3,7,L3,"Kỹ sư cơ điện tử, robot (Junior)",15.3,noi_suy_thap_cao,109,reference
+ONET-17-2199.05,"Kỹ sư cơ điện tử, robot",4,7,L4,"Kỹ sư cơ điện tử, robot (Middle)",19.0,noi_suy_thap_cao,121,reference
+ONET-17-2199.05,"Kỹ sư cơ điện tử, robot",5,7,L5,"Kỹ sư cơ điện tử, robot cao cấp (Senior)",22.7,noi_suy_thap_cao,132,reference
+ONET-17-2199.05,"Kỹ sư cơ điện tử, robot",6,7,L6,"Trưởng nhóm kỹ thuật cơ điện tử, robot (Lead)",26.3,noi_suy_thap_cao,142,reference
+ONET-17-2199.05,"Kỹ sư cơ điện tử, robot",7,7,L7,"Trưởng phòng kỹ thuật cơ điện tử, robot",30.0,noi_suy_thap_cao,152,reference
+ONET-19-1012.00,Kỹ sư công nghệ thực phẩm,1,7,L1,Thực tập sinh R&D thực phẩm,12.0,noi_suy_thap_cao,96,reference
+ONET-19-1012.00,Kỹ sư công nghệ thực phẩm,2,7,L2,Nhân viên R&D thực phẩm,12.9,noi_suy_thap_cao,99,reference
+ONET-19-1012.00,Kỹ sư công nghệ thực phẩm,3,7,L3,Chuyên viên R&D thực phẩm (Junior),13.7,noi_suy_thap_cao,103,reference
+ONET-19-1012.00,Kỹ sư công nghệ thực phẩm,4,7,L4,Chuyên viên R&D thực phẩm chính,14.6,noi_suy_thap_cao,106,reference
+ONET-19-1012.00,Kỹ sư công nghệ thực phẩm,5,7,L5,Chuyên gia R&D thực phẩm (Senior),15.5,noi_suy_thap_cao,109,reference
+ONET-19-1012.00,Kỹ sư công nghệ thực phẩm,6,7,L6,Trưởng nhóm R&D thực phẩm,16.3,noi_suy_thap_cao,112,reference
+ONET-19-1012.00,Kỹ sư công nghệ thực phẩm,7,7,L7,Trưởng phòng R&D / QA thực phẩm,17.2,noi_suy_thap_cao,115,reference
+ONET-19-1013.00,Kỹ sư nông nghiệp,1,7,L1,Sinh viên nông học thực tập,11.4,noi_suy_thap_cao,94,job_postings
+ONET-19-1013.00,Kỹ sư nông nghiệp,2,7,L2,Kỹ thuật viên nông nghiệp,12.2,noi_suy_thap_cao,97,job_postings
+ONET-19-1013.00,Kỹ sư nông nghiệp,3,7,L3,Kỹ sư nông nghiệp (Junior),13.1,noi_suy_thap_cao,100,job_postings
+ONET-19-1013.00,Kỹ sư nông nghiệp,4,7,L4,Kỹ sư nông nghiệp,13.9,noi_suy_thap_cao,103,job_postings
+ONET-19-1013.00,Kỹ sư nông nghiệp,5,7,L5,"Kỹ sư nông nghiệp cao cấp / nghiên cứu viên giống, đất",14.7,noi_suy_thap_cao,106,job_postings
+ONET-19-1013.00,Kỹ sư nông nghiệp,6,7,L6,Nghiên cứu viên chính nông nghiệp (hạng II),15.6,noi_suy_thap_cao,109,job_postings
+ONET-19-1013.00,Kỹ sư nông nghiệp,7,7,L7,Nghiên cứu viên cao cấp nông nghiệp (hạng I),16.4,noi_suy_thap_cao,112,job_postings
+ONET-19-1029.04,"Nhà sinh học, chuyên viên công nghệ sinh học",1,7,L1,Sinh viên nghiên cứu / thực tập sinh học,7.0,noi_suy_thap_cao,73,reference
+ONET-19-1029.04,"Nhà sinh học, chuyên viên công nghệ sinh học",2,7,L2,Trợ lý nghiên cứu sinh học (hạng IV),12.5,noi_suy_thap_cao,98,reference
+ONET-19-1029.04,"Nhà sinh học, chuyên viên công nghệ sinh học",3,7,L3,Nghiên cứu viên sinh học (hạng III),18.0,noi_suy_thap_cao,118,reference
+ONET-19-1029.04,"Nhà sinh học, chuyên viên công nghệ sinh học",4,7,L4,Nghiên cứu viên sinh học chủ trì đề tài cấp cơ sở,23.5,noi_suy_thap_cao,134,reference
+ONET-19-1029.04,"Nhà sinh học, chuyên viên công nghệ sinh học",5,7,L5,"Nghiên cứu viên sinh học chủ nhiệm đề tài cấp bộ, tỉnh",29.0,noi_suy_thap_cao,149,reference
+ONET-19-1029.04,"Nhà sinh học, chuyên viên công nghệ sinh học",6,7,L6,Nghiên cứu viên chính sinh học (hạng II),34.5,noi_suy_thap_cao,163,reference
+ONET-19-1029.04,"Nhà sinh học, chuyên viên công nghệ sinh học",7,7,L7,Nghiên cứu viên cao cấp sinh học (hạng I),40.0,noi_suy_thap_cao,175,reference
+ONET-19-1031.00,Chuyên viên lâm nghiệp và bảo tồn,1,6,L1,Sinh viên lâm nghiệp thực tập,5.9,noi_suy_thap_cao,67,reference
+ONET-19-1031.00,Chuyên viên lâm nghiệp và bảo tồn,2,6,L2,Kiểm lâm viên trung cấp / kỹ thuật viên lâm nghiệp,7.3,noi_suy_thap_cao,75,reference
+ONET-19-1031.00,Chuyên viên lâm nghiệp và bảo tồn,3,6,L3,Kiểm lâm viên / chuyên viên bảo tồn,8.6,noi_suy_thap_cao,81,reference
+ONET-19-1031.00,Chuyên viên lâm nghiệp và bảo tồn,4,6,L4,Chuyên viên bảo tồn chính,9.9,noi_suy_thap_cao,87,reference
+ONET-19-1031.00,Chuyên viên lâm nghiệp và bảo tồn,5,6,L5,Kiểm lâm viên chính / điều phối dự án bảo tồn,11.3,noi_suy_thap_cao,93,reference
+ONET-19-1031.00,Chuyên viên lâm nghiệp và bảo tồn,6,6,L6,Trưởng phòng bảo tồn / Phó giám đốc vườn quốc gia,12.6,noi_suy_thap_cao,98,reference
+ONET-19-1041.00,"Nhà nghiên cứu y sinh, dịch tễ",1,7,L1,"Sinh viên nghiên cứu / thực tập y sinh, dịch tễ",10.0,noi_suy_thap_cao,88,reference
+ONET-19-1041.00,"Nhà nghiên cứu y sinh, dịch tễ",2,7,L2,"Trợ lý nghiên cứu y sinh, dịch tễ (hạng IV)",11.7,noi_suy_thap_cao,95,reference
+ONET-19-1041.00,"Nhà nghiên cứu y sinh, dịch tễ",3,7,L3,"Nghiên cứu viên y sinh, dịch tễ (hạng III)",13.3,noi_suy_thap_cao,101,reference
+ONET-19-1041.00,"Nhà nghiên cứu y sinh, dịch tễ",4,7,L4,"Nghiên cứu viên y sinh, dịch tễ chủ trì đề tài cấp cơ sở",15.0,noi_suy_thap_cao,107,reference
+ONET-19-1041.00,"Nhà nghiên cứu y sinh, dịch tễ",5,7,L5,"Nghiên cứu viên y sinh, dịch tễ chủ nhiệm đề tài cấp bộ, tỉnh",16.7,noi_suy_thap_cao,113,reference
+ONET-19-1041.00,"Nhà nghiên cứu y sinh, dịch tễ",6,7,L6,"Nghiên cứu viên chính y sinh, dịch tễ (hạng II)",18.3,noi_suy_thap_cao,119,reference
+ONET-19-1041.00,"Nhà nghiên cứu y sinh, dịch tễ",7,7,L7,"Nghiên cứu viên cao cấp y sinh, dịch tễ (hạng I)",20.0,noi_suy_thap_cao,124,reference
+ONET-19-2012.00,Nhà vật lý,1,7,L1,Sinh viên nghiên cứu / thực tập vật lý,8.8,noi_suy_thap_cao,82,reference
+ONET-19-2012.00,Nhà vật lý,2,7,L2,Trợ lý nghiên cứu vật lý (hạng IV),10.8,noi_suy_thap_cao,91,reference
+ONET-19-2012.00,Nhà vật lý,3,7,L3,Nghiên cứu viên vật lý (hạng III),12.9,noi_suy_thap_cao,100,reference
+ONET-19-2012.00,Nhà vật lý,4,7,L4,Nghiên cứu viên vật lý chủ trì đề tài cấp cơ sở,15.0,noi_suy_thap_cao,107,reference
+ONET-19-2012.00,Nhà vật lý,5,7,L5,"Nghiên cứu viên vật lý chủ nhiệm đề tài cấp bộ, tỉnh",17.0,noi_suy_thap_cao,114,reference
+ONET-19-2012.00,Nhà vật lý,6,7,L6,Nghiên cứu viên chính vật lý (hạng II),19.1,noi_suy_thap_cao,121,reference
+ONET-19-2012.00,Nhà vật lý,7,7,L7,Nghiên cứu viên cao cấp vật lý (hạng I),21.1,noi_suy_thap_cao,128,reference
+ONET-19-2031.00,"Nhà hoá học, chuyên viên kiểm nghiệm",1,7,L1,Thực tập sinh kiểm nghiệm,8.6,noi_suy_thap_cao,81,job_postings
+ONET-19-2031.00,"Nhà hoá học, chuyên viên kiểm nghiệm",2,7,L2,Nhân viên kiểm nghiệm,9.1,noi_suy_thap_cao,84,job_postings
+ONET-19-2031.00,"Nhà hoá học, chuyên viên kiểm nghiệm",3,7,L3,Chuyên viên kiểm nghiệm (Junior),9.5,noi_suy_thap_cao,86,job_postings
+ONET-19-2031.00,"Nhà hoá học, chuyên viên kiểm nghiệm",4,7,L4,Chuyên viên kiểm nghiệm chính,10.0,noi_suy_thap_cao,88,job_postings
+ONET-19-2031.00,"Nhà hoá học, chuyên viên kiểm nghiệm",5,7,L5,Chuyên gia kiểm nghiệm (Senior),10.5,noi_suy_thap_cao,90,job_postings
+ONET-19-2031.00,"Nhà hoá học, chuyên viên kiểm nghiệm",6,7,L6,Quản lý kỹ thuật phòng thử nghiệm,10.9,noi_suy_thap_cao,92,job_postings
+ONET-19-2031.00,"Nhà hoá học, chuyên viên kiểm nghiệm",7,7,L7,Trưởng phòng thí nghiệm,11.4,noi_suy_thap_cao,94,job_postings
+ONET-19-2042.00,"Nhà khoa học địa chất, khí tượng thuỷ văn",1,7,L1,"Sinh viên nghiên cứu / thực tập địa chất, khí tượng thuỷ văn",10.0,noi_suy_thap_cao,88,reference
+ONET-19-2042.00,"Nhà khoa học địa chất, khí tượng thuỷ văn",2,7,L2,"Trợ lý nghiên cứu địa chất, khí tượng thuỷ văn (hạng IV)",11.7,noi_suy_thap_cao,95,reference
+ONET-19-2042.00,"Nhà khoa học địa chất, khí tượng thuỷ văn",3,7,L3,"Nghiên cứu viên địa chất, khí tượng thuỷ văn (hạng III)",13.3,noi_suy_thap_cao,101,reference
+ONET-19-2042.00,"Nhà khoa học địa chất, khí tượng thuỷ văn",4,7,L4,Dự báo viên chính / chủ trì khảo sát địa chất,15.0,noi_suy_thap_cao,107,reference
+ONET-19-2042.00,"Nhà khoa học địa chất, khí tượng thuỷ văn",5,7,L5,"Chủ nhiệm dự án điều tra địa chất, khí tượng thuỷ văn",16.7,noi_suy_thap_cao,113,reference
+ONET-19-2042.00,"Nhà khoa học địa chất, khí tượng thuỷ văn",6,7,L6,"Nghiên cứu viên chính địa chất, khí tượng thuỷ văn (hạng II)",18.3,noi_suy_thap_cao,119,reference
+ONET-19-2042.00,"Nhà khoa học địa chất, khí tượng thuỷ văn",7,7,L7,"Nghiên cứu viên cao cấp địa chất, khí tượng thuỷ văn (hạng I)",20.0,noi_suy_thap_cao,124,reference
+ONET-19-3011.00,Nhà kinh tế học,1,7,L1,Sinh viên nghiên cứu / thực tập kinh tế,8.0,noi_suy_thap_cao,78,reference
+ONET-19-3011.00,Nhà kinh tế học,2,7,L2,Trợ lý nghiên cứu kinh tế (hạng IV),11.7,noi_suy_thap_cao,95,reference
+ONET-19-3011.00,Nhà kinh tế học,3,7,L3,Nghiên cứu viên kinh tế (hạng III),15.3,noi_suy_thap_cao,109,reference
+ONET-19-3011.00,Nhà kinh tế học,4,7,L4,Nghiên cứu viên kinh tế chủ trì đề tài cấp cơ sở,19.0,noi_suy_thap_cao,121,reference
+ONET-19-3011.00,Nhà kinh tế học,5,7,L5,"Nghiên cứu viên kinh tế chủ nhiệm đề tài cấp bộ, tỉnh",22.7,noi_suy_thap_cao,132,reference
+ONET-19-3011.00,Nhà kinh tế học,6,7,L6,Nghiên cứu viên chính kinh tế (hạng II),26.3,noi_suy_thap_cao,142,reference
+ONET-19-3011.00,Nhà kinh tế học,7,7,L7,Nghiên cứu viên cao cấp kinh tế (hạng I),30.0,noi_suy_thap_cao,152,reference
+ONET-19-3033.00,Nhà tâm lý học,1,6,L1,Sinh viên tâm lý thực tập,7.0,noi_suy_thap_cao,73,reference
+ONET-19-3033.00,Nhà tâm lý học,2,6,L2,Chuyên viên tâm lý thực hành,15.6,noi_suy_thap_cao,110,reference
+ONET-19-3033.00,Nhà tâm lý học,3,6,L3,Chuyên viên tâm lý lâm sàng (có giấy phép),24.2,noi_suy_thap_cao,136,reference
+ONET-19-3033.00,Nhà tâm lý học,4,6,L4,Nhà tâm lý trị liệu,32.8,noi_suy_thap_cao,159,reference
+ONET-19-3033.00,Nhà tâm lý học,5,6,L5,Chuyên gia tâm lý lâm sàng / giám sát lâm sàng,41.4,noi_suy_thap_cao,178,reference
+ONET-19-3033.00,Nhà tâm lý học,6,6,L6,Trưởng đơn vị tâm lý / giám đốc trung tâm tham vấn,50.0,noi_suy_thap_cao,196,reference
+ONET-19-3041.00,Nhà nghiên cứu khoa học xã hội,1,7,L1,Sinh viên nghiên cứu / thực tập xã hội học,7.5,noi_suy_thap_cao,76,reference
+ONET-19-3041.00,Nhà nghiên cứu khoa học xã hội,2,7,L2,Trợ lý nghiên cứu xã hội học (hạng IV),10.6,noi_suy_thap_cao,90,reference
+ONET-19-3041.00,Nhà nghiên cứu khoa học xã hội,3,7,L3,Nghiên cứu viên xã hội học (hạng III),13.7,noi_suy_thap_cao,103,reference
+ONET-19-3041.00,Nhà nghiên cứu khoa học xã hội,4,7,L4,Nghiên cứu viên xã hội học chủ trì đề tài cấp cơ sở,16.8,noi_suy_thap_cao,114,reference
+ONET-19-3041.00,Nhà nghiên cứu khoa học xã hội,5,7,L5,"Nghiên cứu viên xã hội học chủ nhiệm đề tài cấp bộ, tỉnh",19.8,noi_suy_thap_cao,123,reference
+ONET-19-3041.00,Nhà nghiên cứu khoa học xã hội,6,7,L6,Nghiên cứu viên chính xã hội học (hạng II),22.9,noi_suy_thap_cao,133,reference
+ONET-19-3041.00,Nhà nghiên cứu khoa học xã hội,7,7,L7,Nghiên cứu viên cao cấp xã hội học (hạng I),26.0,noi_suy_thap_cao,141,reference
+ONET-19-3051.00,Chuyên viên quy hoạch đô thị,1,7,L1,Thực tập sinh quy hoạch,10.0,noi_suy_thap_cao,88,reference
+ONET-19-3051.00,Chuyên viên quy hoạch đô thị,2,7,L2,Chuyên viên quy hoạch mới,15.0,noi_suy_thap_cao,107,reference
+ONET-19-3051.00,Chuyên viên quy hoạch đô thị,3,7,L3,Chuyên viên quy hoạch,20.0,noi_suy_thap_cao,124,reference
+ONET-19-3051.00,Chuyên viên quy hoạch đô thị,4,7,L4,Chủ trì lĩnh vực quy hoạch hạng III (có chứng chỉ hành nghề),25.0,noi_suy_thap_cao,139,reference
+ONET-19-3051.00,Chuyên viên quy hoạch đô thị,5,7,L5,Chủ nhiệm lập quy hoạch hạng II,30.0,noi_suy_thap_cao,152,reference
+ONET-19-3051.00,Chuyên viên quy hoạch đô thị,6,7,L6,Chủ nhiệm lập quy hoạch hạng I,35.0,noi_suy_thap_cao,164,reference
+ONET-19-3051.00,Chuyên viên quy hoạch đô thị,7,7,L7,Giám đốc trung tâm / viện quy hoạch,40.0,noi_suy_thap_cao,175,reference
+ONET-19-5011.00,Chuyên viên an toàn lao động (HSE),1,6,L1,Thực tập sinh an toàn lao động,12.9,noi_suy_thap_cao,100,job_postings
+ONET-19-5011.00,Chuyên viên an toàn lao động (HSE),2,6,L2,Nhân viên an toàn (HSE Officer),13.8,noi_suy_thap_cao,103,job_postings
+ONET-19-5011.00,Chuyên viên an toàn lao động (HSE),3,6,L3,Chuyên viên HSE,14.7,noi_suy_thap_cao,106,job_postings
+ONET-19-5011.00,Chuyên viên an toàn lao động (HSE),4,6,L4,Chuyên viên HSE chính,15.7,noi_suy_thap_cao,110,job_postings
+ONET-19-5011.00,Chuyên viên an toàn lao động (HSE),5,6,L5,Giám sát HSE (HSE Supervisor),16.6,noi_suy_thap_cao,113,job_postings
+ONET-19-5011.00,Chuyên viên an toàn lao động (HSE),6,6,L6,Trưởng phòng HSE (HSE Manager),17.5,noi_suy_thap_cao,116,job_postings
+ONET-21-1012.00,Chuyên viên tư vấn học đường và hướng nghiệp,1,6,L1,Thực tập sinh tư vấn học đường/hướng nghiệp,13.0,noi_suy_thap_cao,100,job_postings
+ONET-21-1012.00,Chuyên viên tư vấn học đường và hướng nghiệp,2,6,L2,Chuyên viên tư vấn học đường mới,14.9,noi_suy_thap_cao,107,job_postings
+ONET-21-1012.00,Chuyên viên tư vấn học đường và hướng nghiệp,3,6,L3,Chuyên viên tư vấn học đường/hướng nghiệp,16.8,noi_suy_thap_cao,114,job_postings
+ONET-21-1012.00,Chuyên viên tư vấn học đường và hướng nghiệp,4,6,L5,"Chuyên viên tư vấn chính, phụ trách phòng tham vấn",18.7,noi_suy_thap_cao,120,job_postings
+ONET-21-1012.00,Chuyên viên tư vấn học đường và hướng nghiệp,5,6,L6,Trưởng nhóm/giám sát chuyên môn tư vấn,20.6,noi_suy_thap_cao,126,job_postings
+ONET-21-1012.00,Chuyên viên tư vấn học đường và hướng nghiệp,6,6,L7,Trưởng phòng/giám đốc trung tâm hỗ trợ sinh viên và hướng nghiệp,22.5,noi_suy_thap_cao,132,job_postings
+ONET-21-1014.00,Chuyên viên tư vấn tâm lý,1,7,L1,Thực tập sinh tham vấn tâm lý (có giám sát),7.0,noi_suy_thap_cao,73,reference
+ONET-21-1014.00,Chuyên viên tư vấn tâm lý,2,7,L2,Chuyên viên tham vấn tâm lý mới,9.2,noi_suy_thap_cao,84,reference
+ONET-21-1014.00,Chuyên viên tư vấn tâm lý,3,7,L3,Chuyên viên tư vấn tâm lý,11.3,noi_suy_thap_cao,93,reference
+ONET-21-1014.00,Chuyên viên tư vấn tâm lý,4,7,L4,Người hành nghề tâm lý lâm sàng có giấy phép (nếu làm trong cơ sở khám chữa bệnh),13.5,noi_suy_thap_cao,102,reference
+ONET-21-1014.00,Chuyên viên tư vấn tâm lý,5,7,L5,Chuyên viên tâm lý cao cấp,15.7,noi_suy_thap_cao,110,reference
+ONET-21-1014.00,Chuyên viên tư vấn tâm lý,6,7,L6,Giám sát chuyên môn (clinical supervisor),17.8,noi_suy_thap_cao,117,reference
+ONET-21-1014.00,Chuyên viên tư vấn tâm lý,7,7,L7,Giám đốc chuyên môn/chủ phòng tham vấn tâm lý,20.0,noi_suy_thap_cao,124,reference
+ONET-21-1021.00,Nhân viên công tác xã hội,1,6,L1,Sinh viên thực hành công tác xã hội,6.0,noi_suy_thap_cao,68,reference
+ONET-21-1021.00,Nhân viên công tác xã hội,2,6,L2,"Nhân viên công tác xã hội (bậc 1, tương đương hạng IV cũ)",8.8,noi_suy_thap_cao,82,reference
+ONET-21-1021.00,Nhân viên công tác xã hội,3,6,L3,"Công tác xã hội viên (bậc 3, tương đương hạng III cũ)",11.6,noi_suy_thap_cao,94,reference
+ONET-21-1021.00,Nhân viên công tác xã hội,4,6,L5,"Công tác xã hội viên chính (bậc 4, tương đương hạng II cũ)",14.4,noi_suy_thap_cao,105,reference
+ONET-21-1021.00,Nhân viên công tác xã hội,5,6,L6,"Trưởng phòng công tác xã hội (bệnh viện, trung tâm)",17.2,noi_suy_thap_cao,115,reference
+ONET-21-1021.00,Nhân viên công tác xã hội,6,6,L7,Giám đốc trung tâm/cơ sở trợ giúp xã hội,20.0,noi_suy_thap_cao,124,reference
+ONET-21-1094.00,Nhân viên y tế cộng đồng,1,5,L1,"Cộng tác viên dân số – y tế ở thôn, tổ dân phố",5.5,noi_suy_thap_cao,65,reference
+ONET-21-1094.00,Nhân viên y tế cộng đồng,2,5,L2,"Nhân viên y tế thôn, bản (đã qua đào tạo từ 3 tháng)",6.3,noi_suy_thap_cao,70,reference
+ONET-21-1094.00,Nhân viên y tế cộng đồng,3,5,L3,Viên chức y tế/dân số tại trạm y tế xã,7.1,noi_suy_thap_cao,74,reference
+ONET-21-1094.00,Nhân viên y tế cộng đồng,4,5,L5,Cán bộ chuyên trách chương trình y tế cộng đồng/cán bộ dự án chính,7.9,noi_suy_thap_cao,78,reference
+ONET-21-1094.00,Nhân viên y tế cộng đồng,5,5,L6,Trưởng trạm y tế xã/điều phối dự án y tế cộng đồng,8.7,noi_suy_thap_cao,82,reference
+ONET-23-1011.00,Luật sư,1,7,L1,Thực tập sinh pháp lý (sinh viên luật),8.0,noi_suy_thap_cao,78,reference
+ONET-23-1011.00,Luật sư,2,7,L2,Trợ lý luật sư/học viên đào tạo nghề luật sư,40.0,noi_suy_thap_cao,175,reference
+ONET-23-1011.00,Luật sư,3,7,L3,Luật sư tập sự,72.0,noi_suy_thap_cao,235,reference
+ONET-23-1011.00,Luật sư,4,7,L4,"Luật sư (có chứng chỉ hành nghề), luật sư cộng sự",104.0,noi_suy_thap_cao,250,reference
+ONET-23-1011.00,Luật sư,5,7,L5,Luật sư cộng sự cao cấp (senior associate),136.0,noi_suy_thap_cao,250,reference
+ONET-23-1011.00,Luật sư,6,7,L7,Luật sư thành viên (partner),168.0,noi_suy_thap_cao,250,reference
+ONET-23-1011.00,Luật sư,7,7,L8,Luật sư điều hành (managing partner)/trưởng văn phòng luật sư,200.0,noi_suy_thap_cao,250,reference
+ONET-23-1023.00,Thẩm phán,1,7,L2,Thư ký Tòa án,5.9,noi_suy_thap_cao,67,reference
+ONET-23-1023.00,Thẩm phán,2,7,L3,Thẩm tra viên Tòa án,8.3,noi_suy_thap_cao,80,reference
+ONET-23-1023.00,Thẩm phán,3,7,L5,Thẩm phán Tòa án nhân dân bậc 1,10.7,noi_suy_thap_cao,91,reference
+ONET-23-1023.00,Thẩm phán,4,7,L6,Thẩm phán Tòa án nhân dân bậc 2,13.1,noi_suy_thap_cao,100,reference
+ONET-23-1023.00,Thẩm phán,5,7,L7,Thẩm phán Tòa án nhân dân bậc 3,15.5,noi_suy_thap_cao,109,reference
+ONET-23-1023.00,Thẩm phán,6,7,L8,Chánh án Tòa án nhân dân cấp tỉnh,17.9,noi_suy_thap_cao,117,reference
+ONET-23-1023.00,Thẩm phán,7,7,L9,Thẩm phán Tòa án nhân dân tối cao,20.2,noi_suy_thap_cao,125,reference
+ONET-23-2011.00,"Trợ lý pháp lý, chuyên viên pháp chế",1,6,L1,Thực tập sinh pháp chế,11.6,noi_suy_thap_cao,94,job_postings
+ONET-23-2011.00,"Trợ lý pháp lý, chuyên viên pháp chế",2,6,L2,Trợ lý pháp lý/chuyên viên pháp chế mới,13.3,noi_suy_thap_cao,101,job_postings
+ONET-23-2011.00,"Trợ lý pháp lý, chuyên viên pháp chế",3,6,L3,Chuyên viên pháp chế,15.0,noi_suy_thap_cao,107,job_postings
+ONET-23-2011.00,"Trợ lý pháp lý, chuyên viên pháp chế",4,6,L5,Chuyên viên pháp chế cao cấp,16.6,noi_suy_thap_cao,113,job_postings
+ONET-23-2011.00,"Trợ lý pháp lý, chuyên viên pháp chế",5,6,L6,Trưởng nhóm/phó phòng pháp chế,18.3,noi_suy_thap_cao,119,job_postings
+ONET-23-2011.00,"Trợ lý pháp lý, chuyên viên pháp chế",6,6,L7,Trưởng phòng pháp chế,20.0,noi_suy_thap_cao,124,job_postings
+ONET-25-1081.00,"Giảng viên đại học, cao đẳng",1,7,L2,Trợ giảng đại học,5.9,noi_suy_thap_cao,67,public_scale
+ONET-25-1081.00,"Giảng viên đại học, cao đẳng",2,7,L3,"Giảng viên (bậc 3, tương đương hạng III cũ)",8.3,noi_suy_thap_cao,80,public_scale
+ONET-25-1081.00,"Giảng viên đại học, cao đẳng",3,7,L5,"Giảng viên chính (bậc 4, tương đương hạng II cũ)",10.7,noi_suy_thap_cao,91,public_scale
+ONET-25-1081.00,"Giảng viên đại học, cao đẳng",4,7,L6,Trưởng bộ môn,13.1,noi_suy_thap_cao,100,public_scale
+ONET-25-1081.00,"Giảng viên đại học, cao đẳng",5,7,L7,"Phó giáo sư/giảng viên cao cấp (bậc 5, tương đương hạng I cũ), phó trưởng khoa",15.5,noi_suy_thap_cao,109,public_scale
+ONET-25-1081.00,"Giảng viên đại học, cao đẳng",6,7,L8,"Giáo sư, trưởng khoa",17.9,noi_suy_thap_cao,117,public_scale
+ONET-25-1081.00,"Giảng viên đại học, cao đẳng",7,7,L9,Hiệu trưởng/giám đốc đại học,20.2,noi_suy_thap_cao,125,public_scale
+ONET-25-2011.00,Giáo viên mầm non,1,7,L1,Sinh viên thực tập sư phạm mầm non,5.3,noi_suy_thap_cao,64,public_scale
+ONET-25-2011.00,Giáo viên mầm non,2,7,L2,"Giáo viên mầm non mới (bậc nghề nghiệp 2, tương đương hạng III cũ)",7.1,noi_suy_thap_cao,74,public_scale
+ONET-25-2011.00,Giáo viên mầm non,3,7,L4,"Giáo viên mầm non (bậc 3, tương đương hạng II cũ)",8.9,noi_suy_thap_cao,83,public_scale
+ONET-25-2011.00,Giáo viên mầm non,4,7,L5,"Giáo viên mầm non bậc 4 (tương đương hạng I cũ), giáo viên cốt cán",10.7,noi_suy_thap_cao,91,public_scale
+ONET-25-2011.00,Giáo viên mầm non,5,7,L6,Tổ trưởng chuyên môn (khối lớp),12.5,noi_suy_thap_cao,98,public_scale
+ONET-25-2011.00,Giáo viên mầm non,6,7,L7,Phó hiệu trưởng trường mầm non,14.3,noi_suy_thap_cao,105,public_scale
+ONET-25-2011.00,Giáo viên mầm non,7,7,L8,Hiệu trưởng trường mầm non,16.1,noi_suy_thap_cao,111,public_scale
+ONET-25-2021.00,Giáo viên tiểu học,1,7,L1,Sinh viên thực tập sư phạm tiểu học,5.9,noi_suy_thap_cao,67,public_scale
+ONET-25-2021.00,Giáo viên tiểu học,2,7,L2,"Giáo viên tiểu học mới (bậc nghề nghiệp 3, tương đương hạng III cũ)",7.8,noi_suy_thap_cao,77,public_scale
+ONET-25-2021.00,Giáo viên tiểu học,3,7,L4,"Giáo viên tiểu học (bậc 3, đạt chuẩn nghề nghiệp mức khá/tốt)",9.7,noi_suy_thap_cao,86,public_scale
+ONET-25-2021.00,Giáo viên tiểu học,4,7,L5,"Giáo viên tiểu học bậc 4 (tương đương hạng II–I cũ), giáo viên cốt cán",11.5,noi_suy_thap_cao,94,public_scale
+ONET-25-2021.00,Giáo viên tiểu học,5,7,L6,Tổ trưởng chuyên môn,13.4,noi_suy_thap_cao,102,public_scale
+ONET-25-2021.00,Giáo viên tiểu học,6,7,L7,Phó hiệu trưởng trường tiểu học,15.3,noi_suy_thap_cao,108,public_scale
+ONET-25-2021.00,Giáo viên tiểu học,7,7,L8,Hiệu trưởng trường tiểu học,17.2,noi_suy_thap_cao,115,public_scale
+ONET-25-2031.00,"Giáo viên trung học (THCS, THPT)",1,7,L1,Sinh viên thực tập sư phạm trung học,5.9,noi_suy_thap_cao,67,public_scale
+ONET-25-2031.00,"Giáo viên trung học (THCS, THPT)",2,7,L2,"Giáo viên trung học mới (bậc nghề nghiệp 3, tương đương hạng III cũ)",7.8,noi_suy_thap_cao,77,public_scale
+ONET-25-2031.00,"Giáo viên trung học (THCS, THPT)",3,7,L4,"Giáo viên trung học (bậc 3, đạt chuẩn nghề nghiệp mức khá/tốt)",9.7,noi_suy_thap_cao,86,public_scale
+ONET-25-2031.00,"Giáo viên trung học (THCS, THPT)",4,7,L5,"Giáo viên trung học bậc 4 (tương đương hạng II–I cũ), giáo viên cốt cán",11.5,noi_suy_thap_cao,94,public_scale
+ONET-25-2031.00,"Giáo viên trung học (THCS, THPT)",5,7,L6,Tổ trưởng chuyên môn,13.4,noi_suy_thap_cao,102,public_scale
+ONET-25-2031.00,"Giáo viên trung học (THCS, THPT)",6,7,L7,Phó hiệu trưởng trường trung học,15.3,noi_suy_thap_cao,108,public_scale
+ONET-25-2031.00,"Giáo viên trung học (THCS, THPT)",7,7,L8,Hiệu trưởng trường THCS/THPT,17.2,noi_suy_thap_cao,115,public_scale
+ONET-25-2051.00,Giáo viên giáo dục đặc biệt,1,6,L1,Thực tập sinh/trợ giảng can thiệp sớm,5.9,noi_suy_thap_cao,67,public_scale
+ONET-25-2051.00,Giáo viên giáo dục đặc biệt,2,6,L2,Giáo viên giáo dục đặc biệt mới (giáo viên can thiệp),8.2,noi_suy_thap_cao,79,public_scale
+ONET-25-2051.00,Giáo viên giáo dục đặc biệt,3,6,L3,Giáo viên giáo dục đặc biệt,10.4,noi_suy_thap_cao,89,public_scale
+ONET-25-2051.00,Giáo viên giáo dục đặc biệt,4,6,L5,Giáo viên/chuyên viên can thiệp chính,12.7,noi_suy_thap_cao,99,public_scale
+ONET-25-2051.00,Giáo viên giáo dục đặc biệt,5,6,L6,Trưởng nhóm chuyên môn giáo dục đặc biệt,14.9,noi_suy_thap_cao,107,public_scale
+ONET-25-2051.00,Giáo viên giáo dục đặc biệt,6,6,L7,Giám đốc chuyên môn/giám đốc trung tâm hỗ trợ giáo dục hòa nhập,17.2,noi_suy_thap_cao,115,public_scale
+ONET-25-3041.00,"Gia sư, giáo viên trung tâm",1,6,L1,Trợ giảng (TA) trung tâm,10.5,noi_suy_thap_cao,90,job_postings
+ONET-25-3041.00,"Gia sư, giáo viên trung tâm",2,6,L2,Gia sư/giáo viên trung tâm mới,11.8,noi_suy_thap_cao,95,job_postings
+ONET-25-3041.00,"Gia sư, giáo viên trung tâm",3,6,L3,Giáo viên trung tâm,13.1,noi_suy_thap_cao,100,job_postings
+ONET-25-3041.00,"Gia sư, giáo viên trung tâm",4,6,L5,Giáo viên chính (senior teacher),14.4,noi_suy_thap_cao,105,job_postings
+ONET-25-3041.00,"Gia sư, giáo viên trung tâm",5,6,L6,Trưởng bộ môn/điều phối học thuật,15.7,noi_suy_thap_cao,110,job_postings
+ONET-25-3041.00,"Gia sư, giáo viên trung tâm",6,6,L7,Quản lý học thuật/giám đốc trung tâm,17.0,noi_suy_thap_cao,114,job_postings
+ONET-25-4012.00,Chuyên viên bảo tàng,1,7,L1,Thực tập sinh/cộng tác viên bảo tàng,7.5,noi_suy_thap_cao,76,reference
+ONET-25-4012.00,Chuyên viên bảo tàng,2,7,L2,"Di sản viên (bậc 3, tương đương hạng III cũ)",10.6,noi_suy_thap_cao,90,reference
+ONET-25-4012.00,Chuyên viên bảo tàng,3,7,L4,Di sản viên phụ trách sưu tập/trưng bày,13.7,noi_suy_thap_cao,103,reference
+ONET-25-4012.00,Chuyên viên bảo tàng,4,7,L5,"Di sản viên chính (bậc 4, tương đương hạng II cũ)",16.8,noi_suy_thap_cao,114,reference
+ONET-25-4012.00,Chuyên viên bảo tàng,5,7,L6,Trưởng phòng nghiệp vụ bảo tàng,19.8,noi_suy_thap_cao,123,reference
+ONET-25-4012.00,Chuyên viên bảo tàng,6,7,L7,"Di sản viên hạng I cũ (bậc 5), chuyên gia di sản",22.9,noi_suy_thap_cao,133,reference
+ONET-25-4012.00,Chuyên viên bảo tàng,7,7,L8,Giám đốc bảo tàng,26.0,noi_suy_thap_cao,141,reference
+ONET-25-4022.00,"Thủ thư, chuyên viên lưu trữ",1,7,L1,Thực tập sinh/cộng tác viên thư viện,4.7,noi_suy_thap_cao,60,reference
+ONET-25-4022.00,"Thủ thư, chuyên viên lưu trữ",2,7,L2,"Thư viện viên (bậc 3, tương đương hạng III cũ)",7.1,noi_suy_thap_cao,74,reference
+ONET-25-4022.00,"Thủ thư, chuyên viên lưu trữ",3,7,L4,Thư viện viên phụ trách mảng nghiệp vụ,9.5,noi_suy_thap_cao,86,reference
+ONET-25-4022.00,"Thủ thư, chuyên viên lưu trữ",4,7,L5,"Thư viện viên chính (bậc 4, tương đương hạng II cũ)",11.9,noi_suy_thap_cao,96,reference
+ONET-25-4022.00,"Thủ thư, chuyên viên lưu trữ",5,7,L6,Trưởng phòng nghiệp vụ thư viện/lưu trữ,14.3,noi_suy_thap_cao,105,reference
+ONET-25-4022.00,"Thủ thư, chuyên viên lưu trữ",6,7,L7,"Thư viện viên hạng I cũ (bậc 5), chuyên gia thư viện",16.7,noi_suy_thap_cao,113,reference
+ONET-25-4022.00,"Thủ thư, chuyên viên lưu trữ",7,7,L8,"Giám đốc thư viện (tỉnh, trường đại học)",19.1,noi_suy_thap_cao,121,reference
+ONET-25-9031.00,Chuyên viên phát triển chương trình đào tạo,1,7,L1,Thực tập sinh thiết kế chương trình/học liệu,10.0,noi_suy_thap_cao,88,reference
+ONET-25-9031.00,Chuyên viên phát triển chương trình đào tạo,2,7,L2,Chuyên viên thiết kế chương trình đào tạo (instructional designer),11.3,noi_suy_thap_cao,93,reference
+ONET-25-9031.00,Chuyên viên phát triển chương trình đào tạo,3,7,L3,Chuyên viên phát triển chương trình,12.7,noi_suy_thap_cao,99,reference
+ONET-25-9031.00,Chuyên viên phát triển chương trình đào tạo,4,7,L5,Chuyên viên phát triển chương trình cao cấp,14.0,noi_suy_thap_cao,104,reference
+ONET-25-9031.00,Chuyên viên phát triển chương trình đào tạo,5,7,L6,Trưởng nhóm phát triển chương trình/đảm bảo chất lượng,15.3,noi_suy_thap_cao,109,reference
+ONET-25-9031.00,Chuyên viên phát triển chương trình đào tạo,6,7,L7,Trưởng phòng đào tạo/đảm bảo chất lượng,16.7,noi_suy_thap_cao,113,reference
+ONET-25-9031.00,Chuyên viên phát triển chương trình đào tạo,7,7,L8,Giám đốc học thuật/giám đốc đào tạo (L&D),18.0,noi_suy_thap_cao,118,reference
+ONET-27-1013.00,"Hoạ sĩ, nghệ nhân",1,5,L2,Trợ lý xưởng vẽ / hoạ sĩ tập sự,11.6,noi_suy_thap_cao,94,job_postings
+ONET-27-1013.00,"Hoạ sĩ, nghệ nhân",2,5,L3,Hoạ sĩ hạng III,13.1,noi_suy_thap_cao,100,job_postings
+ONET-27-1013.00,"Hoạ sĩ, nghệ nhân",3,5,L4,Hoạ sĩ có triển lãm cá nhân,14.6,noi_suy_thap_cao,106,job_postings
+ONET-27-1013.00,"Hoạ sĩ, nghệ nhân",4,5,L5,Hoạ sĩ hạng II,16.0,noi_suy_thap_cao,111,job_postings
+ONET-27-1013.00,"Hoạ sĩ, nghệ nhân",5,5,L6,Hoạ sĩ hạng I,17.5,noi_suy_thap_cao,116,job_postings
+ONET-27-1014.00,"Hoạ sĩ hoạt hình, kỹ xảo",1,7,L1,Thực tập sinh 2D/3D,12.5,noi_suy_thap_cao,98,job_postings
+ONET-27-1014.00,"Hoạ sĩ hoạt hình, kỹ xảo",2,7,L2,Hoạ sĩ diễn hoạt mới (Junior Animator),13.3,noi_suy_thap_cao,101,job_postings
+ONET-27-1014.00,"Hoạ sĩ hoạt hình, kỹ xảo",3,7,L3,Hoạ sĩ diễn hoạt (Animator),14.2,noi_suy_thap_cao,104,job_postings
+ONET-27-1014.00,"Hoạ sĩ hoạt hình, kỹ xảo",4,7,L4,Hoạ sĩ diễn hoạt chính (Mid Animator),15.0,noi_suy_thap_cao,107,job_postings
+ONET-27-1014.00,"Hoạ sĩ hoạt hình, kỹ xảo",5,7,L5,Hoạ sĩ diễn hoạt cao cấp (Senior),15.8,noi_suy_thap_cao,110,job_postings
+ONET-27-1014.00,"Hoạ sĩ hoạt hình, kỹ xảo",6,7,L6,Trưởng nhóm diễn hoạt / kỹ xảo (Lead),16.7,noi_suy_thap_cao,113,job_postings
+ONET-27-1014.00,"Hoạ sĩ hoạt hình, kỹ xảo",7,7,L7,Giám sát diễn hoạt / kỹ xảo (Supervisor),17.5,noi_suy_thap_cao,116,job_postings
+ONET-27-1021.00,Nhà thiết kế sản phẩm công nghiệp,1,7,L1,Thực tập sinh thiết kế sản phẩm,9.7,noi_suy_thap_cao,86,group_average
+ONET-27-1021.00,Nhà thiết kế sản phẩm công nghiệp,2,7,L2,Nhân viên thiết kế sản phẩm,10.7,noi_suy_thap_cao,91,group_average
+ONET-27-1021.00,Nhà thiết kế sản phẩm công nghiệp,3,7,L3,Nhà thiết kế sản phẩm (Junior),11.7,noi_suy_thap_cao,95,group_average
+ONET-27-1021.00,Nhà thiết kế sản phẩm công nghiệp,4,7,L4,Nhà thiết kế sản phẩm,12.7,noi_suy_thap_cao,99,group_average
+ONET-27-1021.00,Nhà thiết kế sản phẩm công nghiệp,5,7,L5,Nhà thiết kế sản phẩm cao cấp (Senior),13.7,noi_suy_thap_cao,103,group_average
+ONET-27-1021.00,Nhà thiết kế sản phẩm công nghiệp,6,7,L6,Trưởng nhóm thiết kế (Lead Designer),14.7,noi_suy_thap_cao,106,group_average
+ONET-27-1021.00,Nhà thiết kế sản phẩm công nghiệp,7,7,L7,Giám đốc thiết kế sản phẩm,15.7,noi_suy_thap_cao,110,group_average
+ONET-27-1022.00,Nhà thiết kế thời trang,1,7,L1,Thực tập sinh thiết kế thời trang,11.5,noi_suy_thap_cao,94,job_postings
+ONET-27-1022.00,Nhà thiết kế thời trang,2,7,L2,Trợ lý thiết kế,12.4,noi_suy_thap_cao,98,job_postings
+ONET-27-1022.00,Nhà thiết kế thời trang,3,7,L3,Nhà thiết kế thời trang (Junior),13.3,noi_suy_thap_cao,101,job_postings
+ONET-27-1022.00,Nhà thiết kế thời trang,4,7,L4,Nhà thiết kế thời trang,14.2,noi_suy_thap_cao,104,job_postings
+ONET-27-1022.00,Nhà thiết kế thời trang,5,7,L5,Nhà thiết kế cao cấp (Senior Designer),15.0,noi_suy_thap_cao,108,job_postings
+ONET-27-1022.00,Nhà thiết kế thời trang,6,7,L6,Nhà thiết kế trưởng (Head Designer),15.9,noi_suy_thap_cao,111,job_postings
+ONET-27-1022.00,Nhà thiết kế thời trang,7,7,L7,Giám đốc sáng tạo thương hiệu,16.8,noi_suy_thap_cao,114,job_postings
+ONET-27-1024.00,Nhà thiết kế đồ hoạ,1,7,L1,Thực tập sinh thiết kế đồ hoạ,11.0,noi_suy_thap_cao,92,job_postings
+ONET-27-1024.00,Nhà thiết kế đồ hoạ,2,7,L2,Nhân viên thiết kế đồ hoạ,11.7,noi_suy_thap_cao,95,job_postings
+ONET-27-1024.00,Nhà thiết kế đồ hoạ,3,7,L3,Chuyên viên thiết kế đồ hoạ (Junior),12.3,noi_suy_thap_cao,97,job_postings
+ONET-27-1024.00,Nhà thiết kế đồ hoạ,4,7,L4,Chuyên viên thiết kế đồ hoạ,13.0,noi_suy_thap_cao,100,job_postings
+ONET-27-1024.00,Nhà thiết kế đồ hoạ,5,7,L5,Chuyên viên thiết kế cao cấp (Senior Designer),13.7,noi_suy_thap_cao,103,job_postings
+ONET-27-1024.00,Nhà thiết kế đồ hoạ,6,7,L6,Trưởng nhóm thiết kế (Lead Designer),14.3,noi_suy_thap_cao,105,job_postings
+ONET-27-1024.00,Nhà thiết kế đồ hoạ,7,7,L7,Giám đốc nghệ thuật (Art Director),15.0,noi_suy_thap_cao,107,job_postings
+ONET-27-1025.00,Nhà thiết kế nội thất và trang trí,1,7,L1,Thực tập sinh thiết kế nội thất,12.9,noi_suy_thap_cao,100,job_postings
+ONET-27-1025.00,Nhà thiết kế nội thất và trang trí,2,7,L2,Hoạ viên / diễn hoạ 3D,13.7,noi_suy_thap_cao,103,job_postings
+ONET-27-1025.00,Nhà thiết kế nội thất và trang trí,3,7,L3,Nhà thiết kế nội thất (Junior),14.4,noi_suy_thap_cao,105,job_postings
+ONET-27-1025.00,Nhà thiết kế nội thất và trang trí,4,7,L4,Nhà thiết kế nội thất,15.2,noi_suy_thap_cao,108,job_postings
+ONET-27-1025.00,Nhà thiết kế nội thất và trang trí,5,7,L5,Chủ trì thiết kế nội thất (Senior),16.0,noi_suy_thap_cao,111,job_postings
+ONET-27-1025.00,Nhà thiết kế nội thất và trang trí,6,7,L6,Trưởng nhóm thiết kế,16.7,noi_suy_thap_cao,113,job_postings
+ONET-27-1025.00,Nhà thiết kế nội thất và trang trí,7,7,L7,Giám đốc thiết kế,17.5,noi_suy_thap_cao,116,job_postings
+ONET-27-2011.00,Diễn viên,1,5,L2,Diễn viên hạng IV,7.5,noi_suy_thap_cao,76,reference
+ONET-27-2011.00,Diễn viên,2,5,L3,Diễn viên hạng III,12.1,noi_suy_thap_cao,97,reference
+ONET-27-2011.00,Diễn viên,3,5,L4,Diễn viên đóng vai chính,16.8,noi_suy_thap_cao,114,reference
+ONET-27-2011.00,Diễn viên,4,5,L5,Diễn viên hạng II,21.4,noi_suy_thap_cao,128,reference
+ONET-27-2011.00,Diễn viên,5,5,L6,Diễn viên hạng I / Nghệ sĩ ưu tú,26.0,noi_suy_thap_cao,141,reference
+ONET-27-2012.00,"Đạo diễn, nhà sản xuất",1,7,L1,Thực tập sinh sản xuất,7.5,noi_suy_thap_cao,76,reference
+ONET-27-2012.00,"Đạo diễn, nhà sản xuất",2,7,L2,Trợ lý đạo diễn / trợ lý sản xuất,10.6,noi_suy_thap_cao,90,reference
+ONET-27-2012.00,"Đạo diễn, nhà sản xuất",3,7,L3,Đạo diễn hạng III,13.7,noi_suy_thap_cao,103,reference
+ONET-27-2012.00,"Đạo diễn, nhà sản xuất",4,7,L4,"Đạo diễn chương trình, phim dài",16.8,noi_suy_thap_cao,114,reference
+ONET-27-2012.00,"Đạo diễn, nhà sản xuất",5,7,L5,Đạo diễn hạng II,19.8,noi_suy_thap_cao,123,reference
+ONET-27-2012.00,"Đạo diễn, nhà sản xuất",6,7,L6,Đạo diễn hạng I,22.9,noi_suy_thap_cao,133,reference
+ONET-27-2012.00,"Đạo diễn, nhà sản xuất",7,7,L7,Nhà sản xuất điều hành / Giám đốc hãng phim,26.0,noi_suy_thap_cao,141,reference
+ONET-27-2021.00,"Vận động viên, huấn luyện viên thể thao",1,7,L1,Vận động viên năng khiếu,8.1,noi_suy_thap_cao,79,group_average
+ONET-27-2021.00,"Vận động viên, huấn luyện viên thể thao",2,7,L2,Vận động viên cấp 2,8.9,noi_suy_thap_cao,83,group_average
+ONET-27-2021.00,"Vận động viên, huấn luyện viên thể thao",3,7,L3,Vận động viên cấp 1,9.8,noi_suy_thap_cao,87,group_average
+ONET-27-2021.00,"Vận động viên, huấn luyện viên thể thao",4,7,L4,Vận động viên kiện tướng,10.6,noi_suy_thap_cao,90,group_average
+ONET-27-2021.00,"Vận động viên, huấn luyện viên thể thao",5,7,L5,Huấn luyện viên (hạng III),11.5,noi_suy_thap_cao,94,group_average
+ONET-27-2021.00,"Vận động viên, huấn luyện viên thể thao",6,7,L6,Huấn luyện viên chính (hạng II),12.3,noi_suy_thap_cao,97,group_average
+ONET-27-2021.00,"Vận động viên, huấn luyện viên thể thao",7,7,L7,Huấn luyện viên cao cấp (hạng I),13.2,noi_suy_thap_cao,101,group_average
+ONET-27-2031.00,Diễn viên múa,1,5,L2,Diễn viên múa hạng IV,9.7,noi_suy_thap_cao,86,group_average
+ONET-27-2031.00,Diễn viên múa,2,5,L3,Diễn viên múa hạng III,11.2,noi_suy_thap_cao,93,group_average
+ONET-27-2031.00,Diễn viên múa,3,5,L4,Diễn viên múa chính (solist),12.7,noi_suy_thap_cao,99,group_average
+ONET-27-2031.00,Diễn viên múa,4,5,L5,Diễn viên múa hạng II,14.2,noi_suy_thap_cao,105,group_average
+ONET-27-2031.00,Diễn viên múa,5,5,L6,Biên đạo múa / huấn luyện múa,15.7,noi_suy_thap_cao,110,group_average
+ONET-27-2042.00,"Ca sĩ, nhạc công",1,6,L1,"Học viên thanh nhạc, nhạc cụ",7.5,noi_suy_thap_cao,76,reference
+ONET-27-2042.00,"Ca sĩ, nhạc công",2,6,L2,"Ca sĩ, nhạc công hạng IV",11.2,noi_suy_thap_cao,93,reference
+ONET-27-2042.00,"Ca sĩ, nhạc công",3,6,L3,"Ca sĩ, nhạc công hạng III",14.9,noi_suy_thap_cao,107,reference
+ONET-27-2042.00,"Ca sĩ, nhạc công",4,6,L4,"Ca sĩ, nghệ sĩ độc tấu",18.6,noi_suy_thap_cao,120,reference
+ONET-27-2042.00,"Ca sĩ, nhạc công",5,6,L5,"Ca sĩ, nhạc công hạng II",22.3,noi_suy_thap_cao,131,reference
+ONET-27-2042.00,"Ca sĩ, nhạc công",6,6,L6,"Nhạc sĩ, chỉ huy âm nhạc",26.0,noi_suy_thap_cao,141,reference
+ONET-27-3023.00,"Phóng viên, nhà báo",1,7,L1,Cộng tác viên / thực tập sinh báo chí,8.2,noi_suy_thap_cao,80,reference
+ONET-27-3023.00,"Phóng viên, nhà báo",2,7,L2,Phóng viên tập sự,11.4,noi_suy_thap_cao,94,reference
+ONET-27-3023.00,"Phóng viên, nhà báo",3,7,L3,"Phóng viên (có thẻ nhà báo, hạng III)",14.6,noi_suy_thap_cao,106,reference
+ONET-27-3023.00,"Phóng viên, nhà báo",4,7,L4,Phóng viên chính chuyên mục,17.8,noi_suy_thap_cao,117,reference
+ONET-27-3023.00,"Phóng viên, nhà báo",5,7,L5,Phóng viên hạng II,21.0,noi_suy_thap_cao,127,reference
+ONET-27-3023.00,"Phóng viên, nhà báo",6,7,L6,Phóng viên hạng I / bình luận viên,24.1,noi_suy_thap_cao,136,reference
+ONET-27-3023.00,"Phóng viên, nhà báo",7,7,L7,Trưởng ban biên tập,27.3,noi_suy_thap_cao,145,reference
+ONET-27-3041.00,Biên tập viên,1,7,L1,Thực tập sinh biên tập,10.0,noi_suy_thap_cao,88,job_postings
+ONET-27-3041.00,Biên tập viên,2,7,L2,Biên tập viên tập sự,10.6,noi_suy_thap_cao,90,job_postings
+ONET-27-3041.00,Biên tập viên,3,7,L3,Biên tập viên hạng III,11.2,noi_suy_thap_cao,93,job_postings
+ONET-27-3041.00,Biên tập viên,4,7,L4,Biên tập viên chính chuyên mục,11.8,noi_suy_thap_cao,95,job_postings
+ONET-27-3041.00,Biên tập viên,5,7,L5,Biên tập viên hạng II,12.3,noi_suy_thap_cao,97,job_postings
+ONET-27-3041.00,Biên tập viên,6,7,L6,Biên tập viên hạng I / Thư ký toà soạn,12.9,noi_suy_thap_cao,100,job_postings
+ONET-27-3041.00,Biên tập viên,7,7,L7,Phó Tổng biên tập,13.5,noi_suy_thap_cao,102,job_postings
+ONET-27-3043.00,"Nhà văn, người viết nội dung",1,7,L1,Thực tập sinh viết nội dung,10.0,noi_suy_thap_cao,88,job_postings
+ONET-27-3043.00,"Nhà văn, người viết nội dung",2,7,L2,Nhân viên viết nội dung (Content Writer),10.5,noi_suy_thap_cao,90,job_postings
+ONET-27-3043.00,"Nhà văn, người viết nội dung",3,7,L3,Chuyên viên nội dung (Junior Copywriter),11.0,noi_suy_thap_cao,92,job_postings
+ONET-27-3043.00,"Nhà văn, người viết nội dung",4,7,L4,Chuyên viên nội dung (Copywriter),11.5,noi_suy_thap_cao,94,job_postings
+ONET-27-3043.00,"Nhà văn, người viết nội dung",5,7,L5,Chuyên viên nội dung cao cấp (Senior Copywriter),12.0,noi_suy_thap_cao,96,job_postings
+ONET-27-3043.00,"Nhà văn, người viết nội dung",6,7,L6,Trưởng nhóm nội dung (Content Lead),12.5,noi_suy_thap_cao,98,job_postings
+ONET-27-3043.00,"Nhà văn, người viết nội dung",7,7,L7,Giám đốc sáng tạo nội dung,13.0,noi_suy_thap_cao,100,job_postings
+ONET-27-3091.00,"Phiên dịch, biên dịch viên",1,6,L1,Thực tập sinh dịch thuật,13.5,noi_suy_thap_cao,102,job_postings
+ONET-27-3091.00,"Phiên dịch, biên dịch viên",2,6,L2,Cộng tác viên biên dịch,14.6,noi_suy_thap_cao,106,job_postings
+ONET-27-3091.00,"Phiên dịch, biên dịch viên",3,6,L3,Biên dịch viên hạng III,15.7,noi_suy_thap_cao,110,job_postings
+ONET-27-3091.00,"Phiên dịch, biên dịch viên",4,6,L4,Biên – phiên dịch viên chính,16.7,noi_suy_thap_cao,113,job_postings
+ONET-27-3091.00,"Phiên dịch, biên dịch viên",5,6,L5,Biên dịch viên hạng II,17.8,noi_suy_thap_cao,117,job_postings
+ONET-27-3091.00,"Phiên dịch, biên dịch viên",6,6,L6,Biên dịch viên hạng I / phiên dịch hội nghị (cabin),18.9,noi_suy_thap_cao,121,job_postings
+ONET-27-4014.00,"Kỹ thuật viên âm thanh, ánh sáng, phát sóng",1,5,L2,"Kỹ thuật viên âm thanh, ánh sáng tập sự",8.0,noi_suy_thap_cao,78,reference
+ONET-27-4014.00,"Kỹ thuật viên âm thanh, ánh sáng, phát sóng",2,5,L3,"Kỹ thuật viên vận hành âm thanh, ánh sáng",9.0,noi_suy_thap_cao,83,reference
+ONET-27-4014.00,"Kỹ thuật viên âm thanh, ánh sáng, phát sóng",3,5,L4,Âm thanh viên hạng III,10.0,noi_suy_thap_cao,88,reference
+ONET-27-4014.00,"Kỹ thuật viên âm thanh, ánh sáng, phát sóng",4,5,L5,Âm thanh viên hạng II,11.0,noi_suy_thap_cao,92,reference
+ONET-27-4014.00,"Kỹ thuật viên âm thanh, ánh sáng, phát sóng",5,5,L6,Âm thanh viên hạng I / Kỹ sư âm thanh trưởng,12.0,noi_suy_thap_cao,96,reference
+ONET-27-4031.00,"Nhiếp ảnh, quay phim và dựng phim",1,5,L2,Trợ lý quay phim / dựng phim,11.0,noi_suy_thap_cao,92,job_postings
+ONET-27-4031.00,"Nhiếp ảnh, quay phim và dựng phim",2,5,L3,"Quay phim, dựng phim viên",12.0,noi_suy_thap_cao,96,job_postings
+ONET-27-4031.00,"Nhiếp ảnh, quay phim và dựng phim",3,5,L4,Quay phim / dựng phim hạng III,13.0,noi_suy_thap_cao,100,job_postings
+ONET-27-4031.00,"Nhiếp ảnh, quay phim và dựng phim",4,5,L5,Quay phim / dựng phim hạng II,14.0,noi_suy_thap_cao,104,job_postings
+ONET-27-4031.00,"Nhiếp ảnh, quay phim và dựng phim",5,5,L6,Quay phim hạng I / Đạo diễn hình ảnh,15.0,noi_suy_thap_cao,107,job_postings
+ONET-29-1021.00,Bác sĩ răng hàm mặt (nha sĩ),1,6,L1,Sinh viên răng hàm mặt thực tập lâm sàng,5.9,noi_suy_thap_cao,67,public_scale
+ONET-29-1021.00,Bác sĩ răng hàm mặt (nha sĩ),2,6,L2,Bác sĩ răng hàm mặt thực hành,8.8,noi_suy_thap_cao,82,public_scale
+ONET-29-1021.00,Bác sĩ răng hàm mặt (nha sĩ),3,6,L3,Bác sĩ răng hàm mặt hạng III (có giấy phép hành nghề),11.6,noi_suy_thap_cao,95,public_scale
+ONET-29-1021.00,Bác sĩ răng hàm mặt (nha sĩ),4,6,L4,Bác sĩ chuyên khoa I răng hàm mặt,14.5,noi_suy_thap_cao,106,public_scale
+ONET-29-1021.00,Bác sĩ răng hàm mặt (nha sĩ),5,6,L5,Bác sĩ chính răng hàm mặt (hạng II),17.4,noi_suy_thap_cao,116,public_scale
+ONET-29-1021.00,Bác sĩ răng hàm mặt (nha sĩ),6,6,L6,Bác sĩ cao cấp (hạng I) / trưởng khoa răng hàm mặt,20.2,noi_suy_thap_cao,125,public_scale
+ONET-29-1031.00,Chuyên viên dinh dưỡng,1,6,L1,Sinh viên dinh dưỡng thực tập,8.0,noi_suy_thap_cao,78,reference
+ONET-29-1031.00,Chuyên viên dinh dưỡng,2,6,L2,Cử nhân dinh dưỡng thực hành,10.4,noi_suy_thap_cao,89,reference
+ONET-29-1031.00,Chuyên viên dinh dưỡng,3,6,L3,Chuyên viên dinh dưỡng lâm sàng (có giấy phép),12.8,noi_suy_thap_cao,99,reference
+ONET-29-1031.00,Chuyên viên dinh dưỡng,4,6,L4,Chuyên viên dinh dưỡng chính,15.2,noi_suy_thap_cao,108,reference
+ONET-29-1031.00,Chuyên viên dinh dưỡng,5,6,L5,Chuyên viên dinh dưỡng cao cấp,17.6,noi_suy_thap_cao,116,reference
+ONET-29-1031.00,Chuyên viên dinh dưỡng,6,6,L6,Trưởng khoa dinh dưỡng,20.0,noi_suy_thap_cao,124,reference
+ONET-29-1041.00,"Kỹ thuật viên khúc xạ, nhãn khoa",1,6,L1,Sinh viên khúc xạ nhãn khoa thực tập lâm sàng,10.0,noi_suy_thap_cao,88,reference
+ONET-29-1041.00,"Kỹ thuật viên khúc xạ, nhãn khoa",2,6,L2,Kỹ thuật y khúc xạ nhãn khoa thực hành (chưa có giấy phép),11.4,noi_suy_thap_cao,94,reference
+ONET-29-1041.00,"Kỹ thuật viên khúc xạ, nhãn khoa",3,6,L3,Kỹ thuật y khúc xạ nhãn khoa hạng III (có giấy phép hành nghề),12.8,noi_suy_thap_cao,99,reference
+ONET-29-1041.00,"Kỹ thuật viên khúc xạ, nhãn khoa",4,6,L4,Kỹ thuật y khúc xạ nhãn khoa chính,14.2,noi_suy_thap_cao,105,reference
+ONET-29-1041.00,"Kỹ thuật viên khúc xạ, nhãn khoa",5,6,L5,Kỹ thuật y khúc xạ nhãn khoa hạng II,15.6,noi_suy_thap_cao,110,reference
+ONET-29-1041.00,"Kỹ thuật viên khúc xạ, nhãn khoa",6,6,L6,Kỹ thuật y khúc xạ nhãn khoa hạng I / kỹ thuật viên trưởng khoa,17.0,noi_suy_thap_cao,114,reference
+ONET-29-1051.00,Dược sĩ,1,7,L1,Sinh viên dược thực tập,11.0,noi_suy_thap_cao,92,job_postings
+ONET-29-1051.00,Dược sĩ,2,7,L2,Dược sĩ mới (đang thực hành),12.1,noi_suy_thap_cao,96,job_postings
+ONET-29-1051.00,Dược sĩ,3,7,L3,Dược sĩ hạng III / dược sĩ có chứng chỉ hành nghề,13.2,noi_suy_thap_cao,101,job_postings
+ONET-29-1051.00,Dược sĩ,4,7,L4,Dược sĩ phụ trách chuyên môn / dược sĩ lâm sàng,14.2,noi_suy_thap_cao,105,job_postings
+ONET-29-1051.00,Dược sĩ,5,7,L5,Dược sĩ chính (hạng II),15.3,noi_suy_thap_cao,109,job_postings
+ONET-29-1051.00,Dược sĩ,6,7,L6,Trưởng khoa dược / quản lý chuyên môn chuỗi nhà thuốc,16.4,noi_suy_thap_cao,112,job_postings
+ONET-29-1051.00,Dược sĩ,7,7,L7,Dược sĩ cao cấp (hạng I),17.5,noi_suy_thap_cao,116,job_postings
+ONET-29-1123.00,"Kỹ thuật viên, chuyên viên phục hồi chức năng",1,6,L1,Sinh viên vật lý trị liệu thực tập lâm sàng,5.3,noi_suy_thap_cao,64,public_scale
+ONET-29-1123.00,"Kỹ thuật viên, chuyên viên phục hồi chức năng",2,6,L2,Kỹ thuật y phục hồi chức năng thực hành (chưa có giấy phép),7.7,noi_suy_thap_cao,77,public_scale
+ONET-29-1123.00,"Kỹ thuật viên, chuyên viên phục hồi chức năng",3,6,L3,Kỹ thuật y phục hồi chức năng hạng III (có giấy phép hành nghề),10.0,noi_suy_thap_cao,88,public_scale
+ONET-29-1123.00,"Kỹ thuật viên, chuyên viên phục hồi chức năng",4,6,L4,Kỹ thuật y phục hồi chức năng chính,12.4,noi_suy_thap_cao,98,public_scale
+ONET-29-1123.00,"Kỹ thuật viên, chuyên viên phục hồi chức năng",5,6,L5,Kỹ thuật y phục hồi chức năng hạng II,14.8,noi_suy_thap_cao,107,public_scale
+ONET-29-1123.00,"Kỹ thuật viên, chuyên viên phục hồi chức năng",6,6,L6,Kỹ thuật y phục hồi chức năng hạng I / kỹ thuật viên trưởng khoa,17.2,noi_suy_thap_cao,115,public_scale
+ONET-29-1131.00,Bác sĩ thú y,1,6,L1,Sinh viên thú y thực tập,7.0,noi_suy_thap_cao,73,reference
+ONET-29-1131.00,Bác sĩ thú y,2,6,L2,Bác sĩ thú y mới / trợ lý phòng khám,11.6,noi_suy_thap_cao,94,reference
+ONET-29-1131.00,Bác sĩ thú y,3,6,L3,Chẩn đoán viên bệnh động vật hạng III / bác sĩ thú y hành nghề,16.2,noi_suy_thap_cao,112,reference
+ONET-29-1131.00,Bác sĩ thú y,4,6,L4,Bác sĩ thú y chính,20.8,noi_suy_thap_cao,126,reference
+ONET-29-1131.00,Bác sĩ thú y,5,6,L5,Chẩn đoán viên bệnh động vật hạng II,25.4,noi_suy_thap_cao,140,reference
+ONET-29-1131.00,Bác sĩ thú y,6,6,L6,Trưởng phòng khám / giám đốc kỹ thuật thú y,30.0,noi_suy_thap_cao,152,reference
+ONET-29-1141.00,Điều dưỡng,1,7,L1,Sinh viên điều dưỡng thực tập,10.5,noi_suy_thap_cao,90,job_postings
+ONET-29-1141.00,Điều dưỡng,2,7,L2,Điều dưỡng thực hành,11.2,noi_suy_thap_cao,93,job_postings
+ONET-29-1141.00,Điều dưỡng,3,7,L3,Điều dưỡng hạng III (có giấy phép hành nghề),11.9,noi_suy_thap_cao,96,job_postings
+ONET-29-1141.00,Điều dưỡng,4,7,L4,"Điều dưỡng chuyên khoa (hồi sức, phòng mổ, chạy thận)",12.6,noi_suy_thap_cao,99,job_postings
+ONET-29-1141.00,Điều dưỡng,5,7,L5,Điều dưỡng hạng II,13.4,noi_suy_thap_cao,101,job_postings
+ONET-29-1141.00,Điều dưỡng,6,7,L6,Điều dưỡng trưởng khoa,14.1,noi_suy_thap_cao,104,job_postings
+ONET-29-1141.00,Điều dưỡng,7,7,L7,Điều dưỡng hạng I / trưởng phòng điều dưỡng,14.8,noi_suy_thap_cao,107,job_postings
+ONET-29-1151.00,Kỹ thuật viên gây mê hồi sức,1,6,L1,Sinh viên gây mê hồi sức thực tập lâm sàng,5.3,noi_suy_thap_cao,64,public_scale
+ONET-29-1151.00,Kỹ thuật viên gây mê hồi sức,2,6,L2,Kỹ thuật y gây mê hồi sức thực hành (chưa có giấy phép),7.7,noi_suy_thap_cao,77,public_scale
+ONET-29-1151.00,Kỹ thuật viên gây mê hồi sức,3,6,L3,Kỹ thuật y gây mê hồi sức hạng III (có giấy phép hành nghề),10.0,noi_suy_thap_cao,88,public_scale
+ONET-29-1151.00,Kỹ thuật viên gây mê hồi sức,4,6,L4,Kỹ thuật y gây mê hồi sức chính,12.4,noi_suy_thap_cao,98,public_scale
+ONET-29-1151.00,Kỹ thuật viên gây mê hồi sức,5,6,L5,Kỹ thuật y gây mê hồi sức hạng II,14.8,noi_suy_thap_cao,107,public_scale
+ONET-29-1151.00,Kỹ thuật viên gây mê hồi sức,6,6,L6,Kỹ thuật y gây mê hồi sức hạng I / kỹ thuật viên trưởng khoa,17.2,noi_suy_thap_cao,115,public_scale
+ONET-29-1161.00,Hộ sinh,1,6,L1,Sinh viên hộ sinh thực tập,5.3,noi_suy_thap_cao,64,public_scale
+ONET-29-1161.00,Hộ sinh,2,6,L2,Hộ sinh thực hành,7.7,noi_suy_thap_cao,77,public_scale
+ONET-29-1161.00,Hộ sinh,3,6,L3,Hộ sinh hạng III (có giấy phép hành nghề),10.0,noi_suy_thap_cao,88,public_scale
+ONET-29-1161.00,Hộ sinh,4,6,L4,Hộ sinh chính phòng sinh,12.4,noi_suy_thap_cao,98,public_scale
+ONET-29-1161.00,Hộ sinh,5,6,L5,Hộ sinh hạng II,14.8,noi_suy_thap_cao,107,public_scale
+ONET-29-1161.00,Hộ sinh,6,6,L6,Hộ sinh trưởng khoa,17.2,noi_suy_thap_cao,115,public_scale
+ONET-29-1215.00,Bác sĩ,1,7,L1,Sinh viên y khoa thực tập lâm sàng,17.0,noi_suy_thap_cao,114,job_postings
+ONET-29-1215.00,Bác sĩ,2,7,L2,Bác sĩ thực hành,20.6,noi_suy_thap_cao,126,job_postings
+ONET-29-1215.00,Bác sĩ,3,7,L3,Bác sĩ hạng III (có giấy phép hành nghề),24.3,noi_suy_thap_cao,137,job_postings
+ONET-29-1215.00,Bác sĩ,4,7,L4,Bác sĩ chuyên khoa cấp I / thạc sĩ,27.9,noi_suy_thap_cao,146,job_postings
+ONET-29-1215.00,Bác sĩ,5,7,L5,Bác sĩ chính (hạng II),31.5,noi_suy_thap_cao,156,job_postings
+ONET-29-1215.00,Bác sĩ,6,7,L6,Bác sĩ chuyên khoa cấp II / phó trưởng khoa,35.2,noi_suy_thap_cao,164,job_postings
+ONET-29-1215.00,Bác sĩ,7,7,L7,Bác sĩ cao cấp (hạng I) / trưởng khoa,38.8,noi_suy_thap_cao,173,job_postings
+ONET-29-1291.00,"Y học cổ truyền, châm cứu",1,6,L1,Sinh viên y học cổ truyền thực tập,5.5,noi_suy_thap_cao,65,reference
+ONET-29-1291.00,"Y học cổ truyền, châm cứu",2,6,L2,Bác sĩ y học cổ truyền thực hành,14.4,noi_suy_thap_cao,105,reference
+ONET-29-1291.00,"Y học cổ truyền, châm cứu",3,6,L3,Bác sĩ y học cổ truyền (có giấy phép hành nghề),23.3,noi_suy_thap_cao,134,reference
+ONET-29-1291.00,"Y học cổ truyền, châm cứu",4,6,L4,Bác sĩ chuyên khoa I y học cổ truyền,32.2,noi_suy_thap_cao,157,reference
+ONET-29-1291.00,"Y học cổ truyền, châm cứu",5,6,L5,Bác sĩ chính y học cổ truyền (hạng II),41.1,noi_suy_thap_cao,178,reference
+ONET-29-1291.00,"Y học cổ truyền, châm cứu",6,6,L6,Trưởng khoa y học cổ truyền,50.0,noi_suy_thap_cao,196,reference
+ONET-29-2011.00,Kỹ thuật viên xét nghiệm,1,6,L1,Sinh viên xét nghiệm y học thực tập lâm sàng,5.3,noi_suy_thap_cao,64,public_scale
+ONET-29-2011.00,Kỹ thuật viên xét nghiệm,2,6,L2,Kỹ thuật y xét nghiệm thực hành (chưa có giấy phép),7.7,noi_suy_thap_cao,77,public_scale
+ONET-29-2011.00,Kỹ thuật viên xét nghiệm,3,6,L3,Kỹ thuật y xét nghiệm hạng III (có giấy phép hành nghề),10.0,noi_suy_thap_cao,88,public_scale
+ONET-29-2011.00,Kỹ thuật viên xét nghiệm,4,6,L4,Kỹ thuật y xét nghiệm chính,12.4,noi_suy_thap_cao,98,public_scale
+ONET-29-2011.00,Kỹ thuật viên xét nghiệm,5,6,L5,Kỹ thuật y xét nghiệm hạng II,14.8,noi_suy_thap_cao,107,public_scale
+ONET-29-2011.00,Kỹ thuật viên xét nghiệm,6,6,L6,Kỹ thuật y xét nghiệm hạng I / kỹ thuật viên trưởng khoa,17.2,noi_suy_thap_cao,115,public_scale
+ONET-29-2034.00,Kỹ thuật viên chẩn đoán hình ảnh,1,5,L2,Kỹ thuật y chẩn đoán hình ảnh thực hành (chưa có giấy phép),5.3,noi_suy_thap_cao,64,public_scale
+ONET-29-2034.00,Kỹ thuật viên chẩn đoán hình ảnh,2,5,L3,Kỹ thuật y chẩn đoán hình ảnh hạng III (có giấy phép hành nghề),8.3,noi_suy_thap_cao,80,public_scale
+ONET-29-2034.00,Kỹ thuật viên chẩn đoán hình ảnh,3,5,L4,Kỹ thuật y chẩn đoán hình ảnh chính,11.2,noi_suy_thap_cao,93,public_scale
+ONET-29-2034.00,Kỹ thuật viên chẩn đoán hình ảnh,4,5,L5,Kỹ thuật y chẩn đoán hình ảnh hạng II,14.2,noi_suy_thap_cao,104,public_scale
+ONET-29-2034.00,Kỹ thuật viên chẩn đoán hình ảnh,5,5,L6,Kỹ thuật y chẩn đoán hình ảnh hạng I / kỹ thuật viên trưởng khoa,17.2,noi_suy_thap_cao,115,public_scale
+ONET-29-2043.00,Nhân viên cấp cứu ngoại viện,1,5,L2,Cấp cứu viên ngoại viện thực hành,6.0,noi_suy_thap_cao,68,reference
+ONET-29-2043.00,Nhân viên cấp cứu ngoại viện,2,5,L3,Cấp cứu viên ngoại viện (có giấy phép),8.2,noi_suy_thap_cao,80,reference
+ONET-29-2043.00,Nhân viên cấp cứu ngoại viện,3,5,L4,Cấp cứu viên chính / trưởng kíp xe cấp cứu,10.5,noi_suy_thap_cao,90,reference
+ONET-29-2043.00,Nhân viên cấp cứu ngoại viện,4,5,L5,Điều phối viên cấp cứu 115,12.8,noi_suy_thap_cao,99,reference
+ONET-29-2043.00,Nhân viên cấp cứu ngoại viện,5,5,L6,Trưởng trạm / đội cấp cứu ngoại viện,15.0,noi_suy_thap_cao,107,reference
+ONET-29-2072.00,Chuyên viên hồ sơ bệnh án,1,5,L2,Nhân viên lưu trữ hồ sơ bệnh án,6.0,noi_suy_thap_cao,68,reference
+ONET-29-2072.00,Chuyên viên hồ sơ bệnh án,2,5,L3,Nhân viên mã hoá bệnh tật (ICD-10),7.5,noi_suy_thap_cao,76,reference
+ONET-29-2072.00,Chuyên viên hồ sơ bệnh án,3,5,L4,Chuyên viên quản lý hồ sơ bệnh án điện tử,9.0,noi_suy_thap_cao,83,reference
+ONET-29-2072.00,Chuyên viên hồ sơ bệnh án,4,5,L5,Chuyên viên kế hoạch tổng hợp,10.5,noi_suy_thap_cao,90,reference
+ONET-29-2072.00,Chuyên viên hồ sơ bệnh án,5,5,L6,"Trưởng bộ phận hồ sơ, thống kê",12.0,noi_suy_thap_cao,96,reference
+ONET-31-1121.00,Nhân viên chăm sóc tại nhà,1,4,L1,"Học viên chăm sóc người bệnh, người cao tuổi",6.0,noi_suy_thap_cao,68,reference
+ONET-31-1121.00,Nhân viên chăm sóc tại nhà,2,4,L2,Nhân viên chăm sóc tại nhà (caregiver),9.0,noi_suy_thap_cao,83,reference
+ONET-31-1121.00,Nhân viên chăm sóc tại nhà,3,4,L4,Nhân viên chăm sóc chính/trưởng nhóm,12.0,noi_suy_thap_cao,96,reference
+ONET-31-1121.00,Nhân viên chăm sóc tại nhà,4,4,L5,Điều phối viên dịch vụ chăm sóc tại nhà,15.0,noi_suy_thap_cao,107,reference
+ONET-31-1131.00,"Hộ lý, trợ lý điều dưỡng",1,4,L1,Hộ lý thử việc,6.0,noi_suy_thap_cao,68,reference
+ONET-31-1131.00,"Hộ lý, trợ lý điều dưỡng",2,4,L2,Hộ lý,6.7,noi_suy_thap_cao,72,reference
+ONET-31-1131.00,"Hộ lý, trợ lý điều dưỡng",3,4,L3,Hộ lý chính/nhân viên chăm sóc người bệnh,7.3,noi_suy_thap_cao,75,reference
+ONET-31-1131.00,"Hộ lý, trợ lý điều dưỡng",4,4,L5,Tổ trưởng hộ lý của khoa,8.0,noi_suy_thap_cao,78,reference
+ONET-31-9011.00,Chuyên viên xoa bóp trị liệu,1,5,L1,Học viên kỹ thuật viên massage,10.1,noi_suy_thap_cao,88,job_postings
+ONET-31-9011.00,Chuyên viên xoa bóp trị liệu,2,5,L2,Kỹ thuật viên massage,12.1,noi_suy_thap_cao,97,job_postings
+ONET-31-9011.00,Chuyên viên xoa bóp trị liệu,3,5,L3,Kỹ thuật viên xoa bóp trị liệu,14.2,noi_suy_thap_cao,104,job_postings
+ONET-31-9011.00,Chuyên viên xoa bóp trị liệu,4,5,L5,Kỹ thuật viên trưởng/đào tạo,16.2,noi_suy_thap_cao,112,job_postings
+ONET-31-9011.00,Chuyên viên xoa bóp trị liệu,5,5,L6,"Quản lý cơ sở massage, spa trị liệu",18.2,noi_suy_thap_cao,118,job_postings
+ONET-31-9091.00,Trợ thủ nha khoa,1,5,L1,Thực tập sinh phụ tá nha khoa,10.5,noi_suy_thap_cao,90,job_postings
+ONET-31-9091.00,Trợ thủ nha khoa,2,5,L2,Trợ thủ nha khoa,11.0,noi_suy_thap_cao,92,job_postings
+ONET-31-9091.00,Trợ thủ nha khoa,3,5,L3,Trợ thủ nha khoa chính,11.5,noi_suy_thap_cao,94,job_postings
+ONET-31-9091.00,Trợ thủ nha khoa,4,5,L4,Trưởng nhóm trợ thủ/điều phối phòng khám,12.0,noi_suy_thap_cao,96,job_postings
+ONET-31-9091.00,Trợ thủ nha khoa,5,5,L5,Quản lý vận hành phòng khám nha khoa,12.5,noi_suy_thap_cao,98,job_postings
+ONET-31-9092.00,Trợ lý y khoa,1,5,L1,Thực tập sinh trợ lý y khoa,5.5,noi_suy_thap_cao,65,reference
+ONET-31-9092.00,Trợ lý y khoa,2,5,L2,Trợ lý bác sĩ/nhân viên y tế phòng khám,8.9,noi_suy_thap_cao,83,reference
+ONET-31-9092.00,Trợ lý y khoa,3,5,L3,Trợ lý y khoa chính,12.3,noi_suy_thap_cao,97,reference
+ONET-31-9092.00,Trợ lý y khoa,4,5,L4,Trưởng nhóm trợ lý/điều phối phòng khám,15.6,noi_suy_thap_cao,110,reference
+ONET-31-9092.00,Trợ lý y khoa,5,5,L5,Quản lý vận hành phòng khám,19.0,noi_suy_thap_cao,121,reference
+ONET-33-2011.00,"Lính cứu hoả, cứu nạn",1,6,L1,"Chiến sĩ nghĩa vụ chữa cháy và cứu nạn, cứu hộ",10.6,noi_suy_thap_cao,90,public_scale
+ONET-33-2011.00,"Lính cứu hoả, cứu nạn",2,6,L2,"Cán bộ chữa cháy và cứu nạn, cứu hộ (Thiếu úy – Trung úy)",12.2,noi_suy_thap_cao,97,public_scale
+ONET-33-2011.00,"Lính cứu hoả, cứu nạn",3,6,L4,Tổ trưởng/tiểu đội trưởng chữa cháy,13.8,noi_suy_thap_cao,103,public_scale
+ONET-33-2011.00,"Lính cứu hoả, cứu nạn",4,6,L5,"Phó đội trưởng đội chữa cháy và cứu nạn, cứu hộ (Đại úy)",15.3,noi_suy_thap_cao,109,public_scale
+ONET-33-2011.00,"Lính cứu hoả, cứu nạn",5,6,L6,"Đội trưởng đội chữa cháy và cứu nạn, cứu hộ khu vực (Thiếu tá – Trung tá)",16.9,noi_suy_thap_cao,114,public_scale
+ONET-33-2011.00,"Lính cứu hoả, cứu nạn",6,6,L7,Trưởng phòng Cảnh sát PCCC và CNCH công an tỉnh,18.5,noi_suy_thap_cao,119,public_scale
+ONET-33-2022.00,Kiểm lâm,1,6,L2,Kiểm lâm viên trung cấp,5.9,noi_suy_thap_cao,67,reference
+ONET-33-2022.00,Kiểm lâm,2,6,L3,"Kiểm lâm viên, kiểm lâm địa bàn xã",7.3,noi_suy_thap_cao,75,reference
+ONET-33-2022.00,Kiểm lâm,3,6,L5,Đội trưởng đội kiểm lâm cơ động và PCCC rừng,8.6,noi_suy_thap_cao,81,reference
+ONET-33-2022.00,Kiểm lâm,4,6,L6,"Kiểm lâm viên chính, hạt phó hạt kiểm lâm",9.9,noi_suy_thap_cao,87,reference
+ONET-33-2022.00,Kiểm lâm,5,6,L7,Hạt trưởng hạt kiểm lâm,11.3,noi_suy_thap_cao,93,reference
+ONET-33-2022.00,Kiểm lâm,6,6,L8,Chi cục trưởng chi cục kiểm lâm,12.6,noi_suy_thap_cao,98,reference
+ONET-33-3012.00,Cán bộ quản giáo,1,6,L2,Cán bộ quản giáo (Thiếu úy – Trung úy),10.6,noi_suy_thap_cao,90,public_scale
+ONET-33-3012.00,Cán bộ quản giáo,2,6,L3,Cán bộ quản giáo phụ trách đội phạm nhân (Thượng úy),12.2,noi_suy_thap_cao,97,public_scale
+ONET-33-3012.00,Cán bộ quản giáo,3,6,L5,Phó đội trưởng đội quản giáo (Đại úy – Thiếu tá),13.8,noi_suy_thap_cao,103,public_scale
+ONET-33-3012.00,Cán bộ quản giáo,4,6,L6,Đội trưởng đội quản giáo/trinh sát trại giam,15.3,noi_suy_thap_cao,109,public_scale
+ONET-33-3012.00,Cán bộ quản giáo,5,6,L7,Giám thị phân trại,16.9,noi_suy_thap_cao,114,public_scale
+ONET-33-3012.00,Cán bộ quản giáo,6,6,L8,Giám thị trại giam,18.5,noi_suy_thap_cao,119,public_scale
+ONET-33-3021.00,Điều tra viên,1,6,L2,Cán bộ điều tra,10.6,noi_suy_thap_cao,90,public_scale
+ONET-33-3021.00,Điều tra viên,2,6,L4,Điều tra viên sơ cấp,12.2,noi_suy_thap_cao,97,public_scale
+ONET-33-3021.00,Điều tra viên,3,6,L5,Điều tra viên trung cấp,13.8,noi_suy_thap_cao,103,public_scale
+ONET-33-3021.00,Điều tra viên,4,6,L6,Đội trưởng/phó trưởng phòng cảnh sát hình sự hoặc kinh tế,15.3,noi_suy_thap_cao,109,public_scale
+ONET-33-3021.00,Điều tra viên,5,6,L7,Điều tra viên cao cấp,16.9,noi_suy_thap_cao,114,public_scale
+ONET-33-3021.00,Điều tra viên,6,6,L8,Thủ trưởng/phó thủ trưởng cơ quan cảnh sát điều tra công an tỉnh,18.5,noi_suy_thap_cao,119,public_scale
+ONET-33-3051.00,Cảnh sát (công an),1,7,L2,"Cán bộ, chiến sĩ công an cấp hàm Thiếu úy",10.6,noi_suy_thap_cao,90,public_scale
+ONET-33-3051.00,Cảnh sát (công an),2,7,L3,Cán bộ công an cấp hàm Trung úy – Thượng úy,11.9,noi_suy_thap_cao,96,public_scale
+ONET-33-3051.00,Cảnh sát (công an),3,7,L4,"Cán bộ nghiệp vụ chính, cấp hàm Đại úy",13.2,noi_suy_thap_cao,101,public_scale
+ONET-33-3051.00,Cảnh sát (công an),4,7,L5,"Phó đội trưởng/phó trưởng công an xã, phường (Đại úy – Thiếu tá)",14.5,noi_suy_thap_cao,106,public_scale
+ONET-33-3051.00,Cảnh sát (công an),5,7,L6,"Đội trưởng/trưởng công an xã, phường (Thiếu tá – Trung tá)",15.9,noi_suy_thap_cao,110,public_scale
+ONET-33-3051.00,Cảnh sát (công an),6,7,L7,Trưởng phòng nghiệp vụ công an tỉnh (Trung tá – Thượng tá),17.2,noi_suy_thap_cao,115,public_scale
+ONET-33-3051.00,Cảnh sát (công an),7,7,L8,Giám đốc/phó giám đốc công an tỉnh (Đại tá – Thiếu tướng),18.5,noi_suy_thap_cao,119,public_scale
+ONET-33-3051.04,Cán bộ hải quan và biên phòng cửa khẩu,1,6,L2,"Công chức hải quan mới (kiểm tra viên hải quan, tương đương chuyên viên)",5.9,noi_suy_thap_cao,67,reference
+ONET-33-3051.04,Cán bộ hải quan và biên phòng cửa khẩu,2,6,L3,Kiểm tra viên hải quan tại cửa khẩu,8.2,noi_suy_thap_cao,79,reference
+ONET-33-3051.04,Cán bộ hải quan và biên phòng cửa khẩu,3,6,L5,Kiểm tra viên chính hải quan,10.4,noi_suy_thap_cao,89,reference
+ONET-33-3051.04,Cán bộ hải quan và biên phòng cửa khẩu,4,6,L6,Đội trưởng/trưởng hải quan cửa khẩu,12.7,noi_suy_thap_cao,99,reference
+ONET-33-3051.04,Cán bộ hải quan và biên phòng cửa khẩu,5,6,L7,Lãnh đạo chi cục hải quan khu vực,14.9,noi_suy_thap_cao,107,reference
+ONET-33-3051.04,Cán bộ hải quan và biên phòng cửa khẩu,6,6,L8,"Kiểm tra viên cao cấp hải quan, lãnh đạo cấp cục",17.2,noi_suy_thap_cao,115,reference
+ONET-33-9032.00,"Nhân viên bảo vệ, an ninh",1,5,L1,Nhân viên bảo vệ tập sự (đang học nghiệp vụ),8.0,noi_suy_thap_cao,78,job_postings
+ONET-33-9032.00,"Nhân viên bảo vệ, an ninh",2,5,L2,Nhân viên bảo vệ (đã có chứng chỉ nghiệp vụ bảo vệ),9.6,noi_suy_thap_cao,86,job_postings
+ONET-33-9032.00,"Nhân viên bảo vệ, an ninh",3,5,L3,Tổ trưởng/ca trưởng bảo vệ,11.2,noi_suy_thap_cao,93,job_postings
+ONET-33-9032.00,"Nhân viên bảo vệ, an ninh",4,5,L5,Chỉ huy mục tiêu/đội trưởng bảo vệ,12.9,noi_suy_thap_cao,100,job_postings
+ONET-33-9032.00,"Nhân viên bảo vệ, an ninh",5,5,L6,Giám sát vùng/quản lý khu vực dịch vụ bảo vệ,14.5,noi_suy_thap_cao,106,job_postings
+ONET-33-9092.00,"Nhân viên cứu hộ bể bơi, bãi biển",1,5,L1,Học viên cứu hộ (đang học chứng nhận cứu hộ),7.0,noi_suy_thap_cao,73,reference
+ONET-33-9092.00,"Nhân viên cứu hộ bể bơi, bãi biển",2,5,L2,Nhân viên cứu hộ bể bơi (có chứng nhận),10.5,noi_suy_thap_cao,90,reference
+ONET-33-9092.00,"Nhân viên cứu hộ bể bơi, bãi biển",3,5,L3,Cứu hộ viên bãi biển/vùng nước mở,14.0,noi_suy_thap_cao,104,reference
+ONET-33-9092.00,"Nhân viên cứu hộ bể bơi, bãi biển",4,5,L4,Tổ trưởng/ca trưởng cứu hộ,17.5,noi_suy_thap_cao,116,reference
+ONET-33-9092.00,"Nhân viên cứu hộ bể bơi, bãi biển",5,5,L5,"Đội trưởng đội cứu hộ, huấn luyện viên cứu hộ",21.0,noi_suy_thap_cao,127,reference
+ONET-35-2014.00,Đầu bếp,1,6,L1,Phụ bếp (commis),8.0,noi_suy_thap_cao,78,job_postings
+ONET-35-2014.00,Đầu bếp,2,6,L2,Đầu bếp (cook/demi chef),9.4,noi_suy_thap_cao,85,job_postings
+ONET-35-2014.00,Đầu bếp,3,6,L3,Đầu bếp phụ trách khu (chef de partie),10.8,noi_suy_thap_cao,91,job_postings
+ONET-35-2014.00,Đầu bếp,4,6,L5,Bếp phó (sous chef),12.2,noi_suy_thap_cao,97,job_postings
+ONET-35-2014.00,Đầu bếp,5,6,L6,Bếp trưởng (head chef),13.6,noi_suy_thap_cao,102,job_postings
+ONET-35-2014.00,Đầu bếp,6,6,L7,Bếp trưởng điều hành (executive chef),15.0,noi_suy_thap_cao,107,job_postings
+ONET-35-3023.01,"Nhân viên pha chế (barista, bartender)",1,5,L1,Nhân viên pha chế thử việc/part-time,7.0,noi_suy_thap_cao,73,job_postings
+ONET-35-3023.01,"Nhân viên pha chế (barista, bartender)",2,5,L2,Barista/bartender,8.1,noi_suy_thap_cao,79,job_postings
+ONET-35-3023.01,"Nhân viên pha chế (barista, bartender)",3,5,L3,Barista chính/head bartender,9.2,noi_suy_thap_cao,84,job_postings
+ONET-35-3023.01,"Nhân viên pha chế (barista, bartender)",4,5,L4,Trưởng ca/giám sát quầy bar,10.4,noi_suy_thap_cao,89,job_postings
+ONET-35-3023.01,"Nhân viên pha chế (barista, bartender)",5,5,L5,Quản lý quán/bar manager,11.5,noi_suy_thap_cao,94,job_postings
+ONET-35-3031.00,Nhân viên phục vụ nhà hàng,1,6,L1,Nhân viên phục vụ part-time/runner,7.5,noi_suy_thap_cao,76,job_postings
+ONET-35-3031.00,Nhân viên phục vụ nhà hàng,2,6,L2,Nhân viên phục vụ nhà hàng,8.2,noi_suy_thap_cao,79,job_postings
+ONET-35-3031.00,Nhân viên phục vụ nhà hàng,3,6,L3,Phục vụ chính/trưởng dãy (captain),8.9,noi_suy_thap_cao,83,job_postings
+ONET-35-3031.00,Nhân viên phục vụ nhà hàng,4,6,L4,Giám sát nhà hàng,9.6,noi_suy_thap_cao,86,job_postings
+ONET-35-3031.00,Nhân viên phục vụ nhà hàng,5,6,L5,Quản lý nhà hàng,10.3,noi_suy_thap_cao,89,job_postings
+ONET-35-3031.00,Nhân viên phục vụ nhà hàng,6,6,L6,Giám đốc ẩm thực (F&B manager) khách sạn,11.0,noi_suy_thap_cao,92,job_postings
+ONET-37-2011.00,Nhân viên vệ sinh và buồng phòng,1,5,L1,Nhân viên vệ sinh thời vụ,7.2,noi_suy_thap_cao,74,job_postings
+ONET-37-2011.00,Nhân viên vệ sinh và buồng phòng,2,5,L2,Nhân viên vệ sinh/buồng phòng,8.0,noi_suy_thap_cao,78,job_postings
+ONET-37-2011.00,Nhân viên vệ sinh và buồng phòng,3,5,L4,Giám sát vệ sinh/giám sát tầng,8.7,noi_suy_thap_cao,82,job_postings
+ONET-37-2011.00,Nhân viên vệ sinh và buồng phòng,4,5,L5,Trợ lý trưởng bộ phận buồng phòng,9.4,noi_suy_thap_cao,85,job_postings
+ONET-37-2011.00,Nhân viên vệ sinh và buồng phòng,5,5,L6,Trưởng bộ phận buồng phòng (executive housekeeper),10.2,noi_suy_thap_cao,89,job_postings
+ONET-37-2021.00,Nhân viên kiểm soát côn trùng,1,5,L1,Học việc kỹ thuật viên kiểm soát côn trùng,11.0,noi_suy_thap_cao,92,reference
+ONET-37-2021.00,Nhân viên kiểm soát côn trùng,2,5,L2,Kỹ thuật viên kiểm soát côn trùng,11.5,noi_suy_thap_cao,94,reference
+ONET-37-2021.00,Nhân viên kiểm soát côn trùng,3,5,L3,Kỹ thuật viên chính/xử lý mối công trình,12.0,noi_suy_thap_cao,96,reference
+ONET-37-2021.00,Nhân viên kiểm soát côn trùng,4,5,L4,Trưởng nhóm kỹ thuật,12.5,noi_suy_thap_cao,98,reference
+ONET-37-2021.00,Nhân viên kiểm soát côn trùng,5,5,L5,Giám sát kỹ thuật/quản lý chi nhánh,13.0,noi_suy_thap_cao,100,reference
+ONET-37-3011.00,Công nhân cảnh quan và cây xanh,1,5,L1,Lao động cây xanh thời vụ,8.0,noi_suy_thap_cao,78,reference
+ONET-37-3011.00,Công nhân cảnh quan và cây xanh,2,5,L2,"Công nhân cây xanh, cảnh quan",9.5,noi_suy_thap_cao,85,reference
+ONET-37-3011.00,Công nhân cảnh quan và cây xanh,3,5,L3,Công nhân kỹ thuật cây xanh bậc 2–3,11.0,noi_suy_thap_cao,92,reference
+ONET-37-3011.00,Công nhân cảnh quan và cây xanh,4,5,L4,Tổ trưởng cây xanh,12.5,noi_suy_thap_cao,98,reference
+ONET-37-3011.00,Công nhân cảnh quan và cây xanh,5,5,L5,Đội trưởng/giám sát cảnh quan,14.0,noi_suy_thap_cao,104,reference
+ONET-39-2021.00,Nhân viên chăm sóc thú cưng và động vật,1,5,L1,Nhân viên thực tập chăm sóc thú cưng,10.0,noi_suy_thap_cao,88,reference
+ONET-39-2021.00,Nhân viên chăm sóc thú cưng và động vật,2,5,L2,Nhân viên chăm sóc thú cưng,17.5,noi_suy_thap_cao,116,reference
+ONET-39-2021.00,Nhân viên chăm sóc thú cưng và động vật,3,5,L3,Chuyên viên cắt tỉa lông (groomer),25.0,noi_suy_thap_cao,139,reference
+ONET-39-2021.00,Nhân viên chăm sóc thú cưng và động vật,4,5,L4,Groomer chính/trưởng nhóm chăm sóc,32.5,noi_suy_thap_cao,158,reference
+ONET-39-2021.00,Nhân viên chăm sóc thú cưng và động vật,5,5,L5,Quản lý cửa hàng/khách sạn thú cưng,40.0,noi_suy_thap_cao,175,reference
+ONET-39-4031.00,Nhân viên dịch vụ tang lễ,1,5,L1,Nhân viên phục vụ tang lễ thời vụ,5.8,noi_suy_thap_cao,67,group_average
+ONET-39-4031.00,Nhân viên dịch vụ tang lễ,2,5,L2,Nhân viên phục vụ tang lễ,6.8,noi_suy_thap_cao,72,group_average
+ONET-39-4031.00,Nhân viên dịch vụ tang lễ,3,5,L3,"Chuyên viên tẩm liệm, khâm liệm",7.7,noi_suy_thap_cao,77,group_average
+ONET-39-4031.00,Nhân viên dịch vụ tang lễ,4,5,L4,Điều phối viên tổ chức tang lễ,8.6,noi_suy_thap_cao,81,group_average
+ONET-39-4031.00,Nhân viên dịch vụ tang lễ,5,5,L6,Quản lý nhà tang lễ/trưởng bộ phận dịch vụ tang lễ,9.5,noi_suy_thap_cao,85,group_average
+ONET-39-5012.00,Thợ làm tóc,1,5,L1,Học viên/thợ phụ gội,5.8,noi_suy_thap_cao,67,group_average
+ONET-39-5012.00,Thợ làm tóc,2,5,L2,Thợ phụ (assistant stylist),6.8,noi_suy_thap_cao,72,group_average
+ONET-39-5012.00,Thợ làm tóc,3,5,L3,Thợ chính (stylist),7.7,noi_suy_thap_cao,77,group_average
+ONET-39-5012.00,Thợ làm tóc,4,5,L5,Stylist cao cấp (top stylist),8.6,noi_suy_thap_cao,81,group_average
+ONET-39-5012.00,Thợ làm tóc,5,5,L6,Quản lý salon/giám đốc sáng tạo,9.5,noi_suy_thap_cao,85,group_average
+ONET-39-5091.00,Chuyên viên trang điểm,1,6,L1,Học viên trang điểm,8.0,noi_suy_thap_cao,78,reference
+ONET-39-5091.00,Chuyên viên trang điểm,2,6,L2,Trợ lý trang điểm (assistant),16.4,noi_suy_thap_cao,112,reference
+ONET-39-5091.00,Chuyên viên trang điểm,3,6,L3,Chuyên viên trang điểm (makeup artist),24.8,noi_suy_thap_cao,138,reference
+ONET-39-5091.00,Chuyên viên trang điểm,4,6,L5,Makeup artist cao cấp,33.2,noi_suy_thap_cao,160,reference
+ONET-39-5091.00,Chuyên viên trang điểm,5,6,L6,Trưởng nhóm trang điểm (key makeup artist),41.6,noi_suy_thap_cao,179,reference
+ONET-39-5091.00,Chuyên viên trang điểm,6,6,L7,Giám đốc trang điểm/chủ studio và học viện trang điểm,50.0,noi_suy_thap_cao,196,reference
+ONET-39-5092.00,Thợ làm móng,1,5,L1,Học viên/thợ phụ nail,5.8,noi_suy_thap_cao,67,group_average
+ONET-39-5092.00,Thợ làm móng,2,5,L2,Thợ nail,6.8,noi_suy_thap_cao,72,group_average
+ONET-39-5092.00,Thợ làm móng,3,5,L3,Thợ nail chính,7.7,noi_suy_thap_cao,77,group_average
+ONET-39-5092.00,Thợ làm móng,4,5,L5,Thợ nail cấp cao/đào tạo học viên,8.6,noi_suy_thap_cao,81,group_average
+ONET-39-5092.00,Thợ làm móng,5,5,L6,Chủ/quản lý tiệm nail,9.5,noi_suy_thap_cao,85,group_average
+ONET-39-5094.00,Chuyên viên chăm sóc da (spa),1,5,L1,Học viên kỹ thuật viên spa,11.5,noi_suy_thap_cao,94,job_postings
+ONET-39-5094.00,Chuyên viên chăm sóc da (spa),2,5,L2,Kỹ thuật viên spa,13.6,noi_suy_thap_cao,102,job_postings
+ONET-39-5094.00,Chuyên viên chăm sóc da (spa),3,5,L3,Kỹ thuật viên chăm sóc da chính,15.8,noi_suy_thap_cao,110,job_postings
+ONET-39-5094.00,Chuyên viên chăm sóc da (spa),4,5,L5,Kỹ thuật viên trưởng/chuyên viên tư vấn da,17.9,noi_suy_thap_cao,117,job_postings
+ONET-39-5094.00,Chuyên viên chăm sóc da (spa),5,5,L6,Quản lý spa/chi nhánh,20.0,noi_suy_thap_cao,124,job_postings
+ONET-39-7011.00,Hướng dẫn viên du lịch,1,6,L1,Cộng tác viên/hướng dẫn viên tập sự,8.5,noi_suy_thap_cao,81,reference
+ONET-39-7011.00,Hướng dẫn viên du lịch,2,6,L2,Hướng dẫn viên du lịch tại điểm (thẻ tại điểm),9.6,noi_suy_thap_cao,86,reference
+ONET-39-7011.00,Hướng dẫn viên du lịch,3,6,L3,Hướng dẫn viên du lịch nội địa (thẻ nội địa),10.7,noi_suy_thap_cao,91,reference
+ONET-39-7011.00,Hướng dẫn viên du lịch,4,6,L4,Hướng dẫn viên du lịch quốc tế (thẻ quốc tế),11.8,noi_suy_thap_cao,95,reference
+ONET-39-7011.00,Hướng dẫn viên du lịch,5,6,L5,Hướng dẫn viên chính/trưởng đoàn tour dài ngày,12.9,noi_suy_thap_cao,100,reference
+ONET-39-7011.00,Hướng dẫn viên du lịch,6,6,L6,Điều hành/trưởng nhóm hướng dẫn viên,14.0,noi_suy_thap_cao,104,reference
+ONET-39-9011.00,"Nhân viên trông trẻ, bảo mẫu",1,4,L1,Học việc bảo mẫu/người giúp việc chăm trẻ,4.5,noi_suy_thap_cao,60,reference
+ONET-39-9011.00,"Nhân viên trông trẻ, bảo mẫu",2,4,L2,"Bảo mẫu (gia đình, nhóm trẻ)",8.0,noi_suy_thap_cao,78,reference
+ONET-39-9011.00,"Nhân viên trông trẻ, bảo mẫu",3,4,L3,Bảo mẫu chính/cô nuôi có chứng chỉ chăm sóc trẻ,11.5,noi_suy_thap_cao,94,reference
+ONET-39-9011.00,"Nhân viên trông trẻ, bảo mẫu",4,4,L5,Chủ nhóm trẻ/tổ trưởng bảo mẫu,15.0,noi_suy_thap_cao,107,reference
+ONET-39-9031.00,Huấn luyện viên thể hình,1,6,L1,Thực tập sinh/huấn luyện viên sàn tập,10.0,noi_suy_thap_cao,88,reference
+ONET-39-9031.00,Huấn luyện viên thể hình,2,6,L2,Huấn luyện viên cá nhân (PT) mới,13.0,noi_suy_thap_cao,100,reference
+ONET-39-9031.00,Huấn luyện viên thể hình,3,6,L3,Huấn luyện viên cá nhân (PT),16.0,noi_suy_thap_cao,111,reference
+ONET-39-9031.00,Huấn luyện viên thể hình,4,6,L5,PT cao cấp/master trainer,19.0,noi_suy_thap_cao,121,reference
+ONET-39-9031.00,Huấn luyện viên thể hình,5,6,L6,Trưởng bộ phận PT (fitness manager),22.0,noi_suy_thap_cao,130,reference
+ONET-39-9031.00,Huấn luyện viên thể hình,6,6,L7,Giám đốc câu lạc bộ/chuỗi phòng tập,25.0,noi_suy_thap_cao,139,reference
+ONET-39-9032.00,Nhân viên tổ chức hoạt động vui chơi giải trí,1,6,L1,"Cộng tác viên hoạt náo, trại hè",6.0,noi_suy_thap_cao,68,reference
+ONET-39-9032.00,Nhân viên tổ chức hoạt động vui chơi giải trí,2,6,L2,"Nhân viên hoạt náo, tổ chức vui chơi (animator)",6.6,noi_suy_thap_cao,71,reference
+ONET-39-9032.00,Nhân viên tổ chức hoạt động vui chơi giải trí,3,6,L3,"Chuyên viên tổ chức hoạt động giải trí, ngoại khóa",7.2,noi_suy_thap_cao,74,reference
+ONET-39-9032.00,Nhân viên tổ chức hoạt động vui chơi giải trí,4,6,L5,Trưởng nhóm hoạt náo/tổ chức sự kiện,7.8,noi_suy_thap_cao,77,reference
+ONET-39-9032.00,Nhân viên tổ chức hoạt động vui chơi giải trí,5,6,L6,"Quản lý bộ phận giải trí (resort, khu vui chơi)",8.4,noi_suy_thap_cao,80,reference
+ONET-39-9032.00,Nhân viên tổ chức hoạt động vui chơi giải trí,6,6,L7,Giám đốc vận hành khu vui chơi giải trí,9.0,noi_suy_thap_cao,83,reference
+ONET-41-2011.00,Thu ngân,1,5,L1,Thu ngân part-time/thời vụ,7.0,noi_suy_thap_cao,73,job_postings
+ONET-41-2011.00,Thu ngân,2,5,L2,Nhân viên thu ngân,7.6,noi_suy_thap_cao,77,job_postings
+ONET-41-2011.00,Thu ngân,3,5,L3,Thu ngân chính/trưởng quầy thu ngân,8.2,noi_suy_thap_cao,80,job_postings
+ONET-41-2011.00,Thu ngân,4,5,L4,Trưởng ca/cửa hàng phó,8.9,noi_suy_thap_cao,83,job_postings
+ONET-41-2011.00,Thu ngân,5,5,L5,Cửa hàng trưởng,9.5,noi_suy_thap_cao,85,job_postings
+ONET-41-2031.00,Nhân viên bán hàng,1,6,L1,Nhân viên bán hàng part-time/thử việc,8.5,noi_suy_thap_cao,81,job_postings
+ONET-41-2031.00,Nhân viên bán hàng,2,6,L2,Nhân viên tư vấn bán hàng,10.0,noi_suy_thap_cao,88,job_postings
+ONET-41-2031.00,Nhân viên bán hàng,3,6,L3,Nhân viên bán hàng chính (senior),11.5,noi_suy_thap_cao,94,job_postings
+ONET-41-2031.00,Nhân viên bán hàng,4,6,L4,Trưởng ca/cửa hàng phó,13.0,noi_suy_thap_cao,100,job_postings
+ONET-41-2031.00,Nhân viên bán hàng,5,6,L5,Cửa hàng trưởng,14.5,noi_suy_thap_cao,106,job_postings
+ONET-41-2031.00,Nhân viên bán hàng,6,6,L6,Quản lý khu vực (area manager),16.0,noi_suy_thap_cao,111,job_postings
+ONET-41-3021.00,Tư vấn viên bảo hiểm,1,7,L1,Ứng viên đại lý bảo hiểm (học và thi chứng chỉ),5.0,noi_suy_thap_cao,62,reference
+ONET-41-3021.00,Tư vấn viên bảo hiểm,2,7,L2,Tư vấn viên bảo hiểm (đại lý có chứng chỉ),14.2,noi_suy_thap_cao,104,reference
+ONET-41-3021.00,Tư vấn viên bảo hiểm,3,7,L3,Tư vấn viên tài chính cấp cao,23.3,noi_suy_thap_cao,134,reference
+ONET-41-3021.00,Tư vấn viên bảo hiểm,4,7,L5,Trưởng nhóm kinh doanh (UM),32.5,noi_suy_thap_cao,158,reference
+ONET-41-3021.00,Tư vấn viên bảo hiểm,5,7,L6,Trưởng ban/trưởng phòng kinh doanh đại lý (SM/DM),41.7,noi_suy_thap_cao,179,reference
+ONET-41-3021.00,Tư vấn viên bảo hiểm,6,7,L7,Giám đốc kinh doanh khu vực,50.8,noi_suy_thap_cao,198,reference
+ONET-41-3021.00,Tư vấn viên bảo hiểm,7,7,L8,Giám đốc văn phòng tổng đại lý/giám đốc kênh đại lý vùng,60.0,noi_suy_thap_cao,215,reference
+ONET-41-3031.00,Nhân viên môi giới chứng khoán,1,7,L1,Thực tập sinh môi giới chứng khoán,4.0,noi_suy_thap_cao,60,reference
+ONET-41-3031.00,Nhân viên môi giới chứng khoán,2,7,L2,Chuyên viên môi giới (có chứng chỉ hành nghề môi giới),20.0,noi_suy_thap_cao,124,reference
+ONET-41-3031.00,Nhân viên môi giới chứng khoán,3,7,L3,Chuyên viên tư vấn đầu tư,36.0,noi_suy_thap_cao,166,reference
+ONET-41-3031.00,Nhân viên môi giới chứng khoán,4,7,L5,Chuyên viên tư vấn đầu tư cao cấp/quản lý khách hàng VIP,52.0,noi_suy_thap_cao,200,reference
+ONET-41-3031.00,Nhân viên môi giới chứng khoán,5,7,L6,Trưởng nhóm môi giới,68.0,noi_suy_thap_cao,229,reference
+ONET-41-3031.00,Nhân viên môi giới chứng khoán,6,7,L7,Giám đốc phòng môi giới/giám đốc chi nhánh,84.0,noi_suy_thap_cao,250,reference
+ONET-41-3031.00,Nhân viên môi giới chứng khoán,7,7,L8,Giám đốc khối môi giới,100.0,noi_suy_thap_cao,250,reference
+ONET-41-3041.00,Nhân viên kinh doanh tour du lịch,1,6,L1,Thực tập sinh kinh doanh lữ hành,10.5,noi_suy_thap_cao,90,job_postings
+ONET-41-3041.00,Nhân viên kinh doanh tour du lịch,2,6,L2,Nhân viên kinh doanh tour,11.9,noi_suy_thap_cao,96,job_postings
+ONET-41-3041.00,Nhân viên kinh doanh tour du lịch,3,6,L3,Chuyên viên kinh doanh/điều hành tour,13.3,noi_suy_thap_cao,101,job_postings
+ONET-41-3041.00,Nhân viên kinh doanh tour du lịch,4,6,L5,Trưởng nhóm kinh doanh/điều hành tour,14.7,noi_suy_thap_cao,106,job_postings
+ONET-41-3041.00,Nhân viên kinh doanh tour du lịch,5,6,L6,Trưởng phòng kinh doanh lữ hành,16.1,noi_suy_thap_cao,111,job_postings
+ONET-41-3041.00,Nhân viên kinh doanh tour du lịch,6,6,L7,Giám đốc kinh doanh lữ hành/giám đốc chi nhánh,17.5,noi_suy_thap_cao,116,job_postings
+ONET-41-4012.00,Nhân viên kinh doanh (sales B2B),1,7,L1,Thực tập sinh kinh doanh,12.5,noi_suy_thap_cao,98,job_postings
+ONET-41-4012.00,Nhân viên kinh doanh (sales B2B),2,7,L2,Nhân viên kinh doanh,13.8,noi_suy_thap_cao,103,job_postings
+ONET-41-4012.00,Nhân viên kinh doanh (sales B2B),3,7,L3,Chuyên viên kinh doanh,15.0,noi_suy_thap_cao,107,job_postings
+ONET-41-4012.00,Nhân viên kinh doanh (sales B2B),4,7,L4,Chuyên viên kinh doanh cao cấp/quản lý khách hàng lớn (key account),16.2,noi_suy_thap_cao,112,job_postings
+ONET-41-4012.00,Nhân viên kinh doanh (sales B2B),5,7,L6,Trưởng nhóm/giám sát kinh doanh,17.5,noi_suy_thap_cao,116,job_postings
+ONET-41-4012.00,Nhân viên kinh doanh (sales B2B),6,7,L7,Trưởng phòng kinh doanh/quản lý vùng,18.8,noi_suy_thap_cao,120,job_postings
+ONET-41-4012.00,Nhân viên kinh doanh (sales B2B),7,7,L8,Giám đốc kinh doanh,20.0,noi_suy_thap_cao,124,job_postings
+ONET-41-9012.00,Người mẫu,1,5,L1,"Người mẫu mới (new face), học viên đào tạo",5.8,noi_suy_thap_cao,67,group_average
+ONET-41-9012.00,Người mẫu,2,5,L2,Người mẫu tự do/có hợp đồng công ty quản lý,6.8,noi_suy_thap_cao,72,group_average
+ONET-41-9012.00,Người mẫu,3,5,L3,Người mẫu chuyên nghiệp,7.7,noi_suy_thap_cao,77,group_average
+ONET-41-9012.00,Người mẫu,4,5,L5,Người mẫu chính (vedette),8.6,noi_suy_thap_cao,81,group_average
+ONET-41-9012.00,Người mẫu,5,5,L6,Huấn luyện viên catwalk/giám đốc người mẫu công ty quản lý,9.5,noi_suy_thap_cao,85,group_average
+ONET-41-9022.00,Nhân viên môi giới bất động sản,1,6,L1,Cộng tác viên/thực tập sinh môi giới bất động sản,12.0,noi_suy_thap_cao,96,job_postings
+ONET-41-9022.00,Nhân viên môi giới bất động sản,2,6,L2,Chuyên viên môi giới bất động sản (có chứng chỉ hành nghề),20.0,noi_suy_thap_cao,124,job_postings
+ONET-41-9022.00,Nhân viên môi giới bất động sản,3,6,L3,Chuyên viên kinh doanh bất động sản cao cấp,28.0,noi_suy_thap_cao,147,job_postings
+ONET-41-9022.00,Nhân viên môi giới bất động sản,4,6,L5,Trưởng nhóm kinh doanh bất động sản,35.9,noi_suy_thap_cao,166,job_postings
+ONET-41-9022.00,Nhân viên môi giới bất động sản,5,6,L6,Trưởng phòng/giám đốc kinh doanh sàn,43.9,noi_suy_thap_cao,184,job_postings
+ONET-41-9022.00,Nhân viên môi giới bất động sản,6,6,L7,Giám đốc sàn giao dịch bất động sản,51.9,noi_suy_thap_cao,200,job_postings
+ONET-41-9031.00,Kỹ sư kinh doanh (sales kỹ thuật),1,7,L1,Thực tập sinh kỹ thuật kinh doanh,13.5,noi_suy_thap_cao,102,job_postings
+ONET-41-9031.00,Kỹ sư kinh doanh (sales kỹ thuật),2,7,L2,Kỹ sư ứng dụng/kỹ sư kinh doanh mới (presales),15.0,noi_suy_thap_cao,107,job_postings
+ONET-41-9031.00,Kỹ sư kinh doanh (sales kỹ thuật),3,7,L3,Kỹ sư kinh doanh,16.5,noi_suy_thap_cao,113,job_postings
+ONET-41-9031.00,Kỹ sư kinh doanh (sales kỹ thuật),4,7,L5,Kỹ sư kinh doanh cao cấp,18.0,noi_suy_thap_cao,118,job_postings
+ONET-41-9031.00,Kỹ sư kinh doanh (sales kỹ thuật),5,7,L6,Trưởng nhóm kinh doanh kỹ thuật,19.5,noi_suy_thap_cao,122,job_postings
+ONET-41-9031.00,Kỹ sư kinh doanh (sales kỹ thuật),6,7,L7,Trưởng phòng kinh doanh dự án/giải pháp,21.0,noi_suy_thap_cao,127,job_postings
+ONET-41-9031.00,Kỹ sư kinh doanh (sales kỹ thuật),7,7,L8,Giám đốc kinh doanh/giám đốc khu vực,22.5,noi_suy_thap_cao,132,job_postings
+ONET-43-3071.00,Giao dịch viên ngân hàng,1,6,L1,Giao dịch viên tập sự/thực tập sinh,8.5,noi_suy_thap_cao,81,reference
+ONET-43-3071.00,Giao dịch viên ngân hàng,2,6,L2,Giao dịch viên,12.9,noi_suy_thap_cao,100,reference
+ONET-43-3071.00,Giao dịch viên ngân hàng,3,6,L3,Giao dịch viên chính/cao cấp,17.3,noi_suy_thap_cao,115,reference
+ONET-43-3071.00,Giao dịch viên ngân hàng,4,6,L4,Kiểm soát viên giao dịch,21.8,noi_suy_thap_cao,129,reference
+ONET-43-3071.00,Giao dịch viên ngân hàng,5,6,L5,Trưởng bộ phận dịch vụ khách hàng/phó giám đốc phòng giao dịch,26.2,noi_suy_thap_cao,142,reference
+ONET-43-3071.00,Giao dịch viên ngân hàng,6,6,L6,Giám đốc phòng giao dịch,30.6,noi_suy_thap_cao,153,reference
+ONET-43-4031.00,Cán bộ tiếp nhận hồ sơ hành chính công,1,5,L1,Nhân viên hỗ trợ bộ phận một cửa (hợp đồng),5.9,noi_suy_thap_cao,67,public_scale
+ONET-43-4031.00,Cán bộ tiếp nhận hồ sơ hành chính công,2,5,L2,Công chức tiếp nhận và trả kết quả (cán sự/chuyên viên),8.7,noi_suy_thap_cao,82,public_scale
+ONET-43-4031.00,Cán bộ tiếp nhận hồ sơ hành chính công,3,5,L3,Chuyên viên một cửa phụ trách lĩnh vực,11.5,noi_suy_thap_cao,94,public_scale
+ONET-43-4031.00,Cán bộ tiếp nhận hồ sơ hành chính công,4,5,L5,Tổ trưởng bộ phận một cửa/chuyên viên chính,14.3,noi_suy_thap_cao,105,public_scale
+ONET-43-4031.00,Cán bộ tiếp nhận hồ sơ hành chính công,5,5,L6,Lãnh đạo trung tâm phục vụ hành chính công,17.2,noi_suy_thap_cao,115,public_scale
+ONET-43-4051.00,Nhân viên chăm sóc khách hàng,1,6,L1,Nhân viên tổng đài part-time/thực tập,9.0,noi_suy_thap_cao,83,job_postings
+ONET-43-4051.00,Nhân viên chăm sóc khách hàng,2,6,L2,Nhân viên chăm sóc khách hàng/tổng đài viên,9.9,noi_suy_thap_cao,87,job_postings
+ONET-43-4051.00,Nhân viên chăm sóc khách hàng,3,6,L3,Chuyên viên chăm sóc khách hàng cấp 2,10.8,noi_suy_thap_cao,91,job_postings
+ONET-43-4051.00,Nhân viên chăm sóc khách hàng,4,6,L4,Trưởng nhóm chăm sóc khách hàng (team leader),11.7,noi_suy_thap_cao,95,job_postings
+ONET-43-4051.00,Nhân viên chăm sóc khách hàng,5,6,L5,Giám sát chăm sóc khách hàng,12.6,noi_suy_thap_cao,98,job_postings
+ONET-43-4051.00,Nhân viên chăm sóc khách hàng,6,6,L6,Trưởng phòng chăm sóc khách hàng,13.5,noi_suy_thap_cao,102,job_postings
+ONET-43-4081.00,Lễ tân khách sạn,1,6,L1,Thực tập sinh lễ tân,7.5,noi_suy_thap_cao,76,job_postings
+ONET-43-4081.00,Lễ tân khách sạn,2,6,L2,Nhân viên lễ tân,8.1,noi_suy_thap_cao,79,job_postings
+ONET-43-4081.00,Lễ tân khách sạn,3,6,L3,Trưởng ca lễ tân,8.7,noi_suy_thap_cao,82,job_postings
+ONET-43-4081.00,Lễ tân khách sạn,4,6,L4,Giám sát lễ tân (front office supervisor),9.3,noi_suy_thap_cao,85,job_postings
+ONET-43-4081.00,Lễ tân khách sạn,5,6,L5,Trợ lý trưởng bộ phận tiền sảnh,9.9,noi_suy_thap_cao,87,job_postings
+ONET-43-4081.00,Lễ tân khách sạn,6,6,L6,Trưởng bộ phận tiền sảnh (front office manager),10.5,noi_suy_thap_cao,90,job_postings
+ONET-43-5021.00,Nhân viên giao hàng (shipper),1,5,L1,Shipper part-time/thời vụ,9.0,noi_suy_thap_cao,83,job_postings
+ONET-43-5021.00,Nhân viên giao hàng (shipper),2,5,L2,Nhân viên giao hàng,9.6,noi_suy_thap_cao,86,job_postings
+ONET-43-5021.00,Nhân viên giao hàng (shipper),3,5,L3,Nhân viên giao hàng tuyến cố định/xe tải nhẹ,10.2,noi_suy_thap_cao,89,job_postings
+ONET-43-5021.00,Nhân viên giao hàng (shipper),4,5,L4,Trưởng bưu cục/trưởng điểm giao nhận,10.9,noi_suy_thap_cao,91,job_postings
+ONET-43-5021.00,Nhân viên giao hàng (shipper),5,5,L5,Quản lý vùng giao nhận,11.5,noi_suy_thap_cao,94,job_postings
+ONET-43-5032.00,Điều phối viên vận tải và khẩn cấp,1,5,L1,Thực tập sinh điều phối,10.0,noi_suy_thap_cao,88,job_postings
+ONET-43-5032.00,Điều phối viên vận tải và khẩn cấp,2,5,L2,Nhân viên điều phối (dispatcher),11.0,noi_suy_thap_cao,92,job_postings
+ONET-43-5032.00,Điều phối viên vận tải và khẩn cấp,3,5,L3,Điều phối viên chính,12.0,noi_suy_thap_cao,96,job_postings
+ONET-43-5032.00,Điều phối viên vận tải và khẩn cấp,4,5,L4,Trưởng ca điều phối,13.0,noi_suy_thap_cao,100,job_postings
+ONET-43-5032.00,Điều phối viên vận tải và khẩn cấp,5,5,L5,Trưởng bộ phận điều hành vận tải/trung tâm điều phối,14.0,noi_suy_thap_cao,104,job_postings
+ONET-43-5051.00,Nhân viên bưu chính,1,5,L1,Nhân viên bưu chính thời vụ,8.0,noi_suy_thap_cao,78,reference
+ONET-43-5051.00,Nhân viên bưu chính,2,5,L2,Giao dịch viên bưu điện/nhân viên khai thác bưu chính,9.2,noi_suy_thap_cao,84,reference
+ONET-43-5051.00,Nhân viên bưu chính,3,5,L3,Giao dịch viên chính,10.5,noi_suy_thap_cao,90,reference
+ONET-43-5051.00,Nhân viên bưu chính,4,5,L4,Trưởng bưu cục,11.8,noi_suy_thap_cao,95,reference
+ONET-43-5051.00,Nhân viên bưu chính,5,5,L5,Giám đốc bưu điện cấp huyện/khu vực,13.0,noi_suy_thap_cao,100,reference
+ONET-43-5071.00,Nhân viên kho và kế hoạch vật tư,1,6,L1,Nhân viên kho thời vụ,8.5,noi_suy_thap_cao,81,job_postings
+ONET-43-5071.00,Nhân viên kho và kế hoạch vật tư,2,6,L2,Nhân viên kho,9.0,noi_suy_thap_cao,83,job_postings
+ONET-43-5071.00,Nhân viên kho và kế hoạch vật tư,3,6,L3,Thủ kho/nhân viên kế hoạch vật tư,9.5,noi_suy_thap_cao,85,job_postings
+ONET-43-5071.00,Nhân viên kho và kế hoạch vật tư,4,6,L4,Giám sát kho/trưởng ca kho,10.0,noi_suy_thap_cao,88,job_postings
+ONET-43-5071.00,Nhân viên kho và kế hoạch vật tư,5,6,L5,Trưởng kho (warehouse manager),10.5,noi_suy_thap_cao,90,job_postings
+ONET-43-5071.00,Nhân viên kho và kế hoạch vật tư,6,6,L6,Trưởng phòng kho vận/kế hoạch vật tư,11.0,noi_suy_thap_cao,92,job_postings
+ONET-43-6014.00,"Nhân viên hành chính, thư ký",1,6,L1,Thực tập sinh hành chính,9.5,noi_suy_thap_cao,85,job_postings
+ONET-43-6014.00,"Nhân viên hành chính, thư ký",2,6,L2,Nhân viên hành chính/văn thư,10.4,noi_suy_thap_cao,89,job_postings
+ONET-43-6014.00,"Nhân viên hành chính, thư ký",3,6,L3,Chuyên viên hành chính/thư ký bộ phận,11.3,noi_suy_thap_cao,93,job_postings
+ONET-43-6014.00,"Nhân viên hành chính, thư ký",4,6,L4,Thư ký/trợ lý giám đốc,12.2,noi_suy_thap_cao,97,job_postings
+ONET-43-6014.00,"Nhân viên hành chính, thư ký",5,6,L5,Trưởng bộ phận hành chính,13.1,noi_suy_thap_cao,100,job_postings
+ONET-43-6014.00,"Nhân viên hành chính, thư ký",6,6,L6,Trưởng phòng hành chính,14.0,noi_suy_thap_cao,104,job_postings
+ONET-45-2092.00,Lao động trồng trọt,1,5,L1,Lao động trồng trọt thời vụ,4.3,noi_suy_thap_cao,60,reference
+ONET-45-2092.00,Lao động trồng trọt,2,5,L2,Công nhân trồng trọt,5.0,noi_suy_thap_cao,62,reference
+ONET-45-2092.00,Lao động trồng trọt,3,5,L3,Công nhân kỹ thuật trồng trọt bậc 2–3,5.7,noi_suy_thap_cao,66,reference
+ONET-45-2092.00,Lao động trồng trọt,4,5,L4,Tổ trưởng sản xuất/đội trưởng nông trường,6.3,noi_suy_thap_cao,70,reference
+ONET-45-2092.00,Lao động trồng trọt,5,5,L5,Quản lý trang trại/chủ trang trại,7.0,noi_suy_thap_cao,73,reference
+ONET-45-2093.00,Lao động chăn nuôi và nuôi trồng thuỷ sản,1,5,L1,Lao động phổ thông trang trại,4.3,noi_suy_thap_cao,60,reference
+ONET-45-2093.00,Lao động chăn nuôi và nuôi trồng thuỷ sản,2,5,L2,Công nhân chăn nuôi/nuôi trồng thủy sản,5.0,noi_suy_thap_cao,62,reference
+ONET-45-2093.00,Lao động chăn nuôi và nuôi trồng thuỷ sản,3,5,L3,"Công nhân kỹ thuật chăn nuôi, thủy sản bậc 2–3",5.7,noi_suy_thap_cao,66,reference
+ONET-45-2093.00,Lao động chăn nuôi và nuôi trồng thuỷ sản,4,5,L4,Tổ trưởng/trưởng trại,6.3,noi_suy_thap_cao,70,reference
+ONET-45-2093.00,Lao động chăn nuôi và nuôi trồng thuỷ sản,5,5,L5,Quản lý trại/chủ trang trại,7.0,noi_suy_thap_cao,73,reference
+ONET-45-3031.00,"Ngư dân, người đánh bắt thuỷ sản",1,6,L1,Thuyền viên học việc trên tàu cá,4.3,noi_suy_thap_cao,60,reference
+ONET-45-3031.00,"Ngư dân, người đánh bắt thuỷ sản",2,6,L2,Thuyền viên tàu cá,4.9,noi_suy_thap_cao,61,reference
+ONET-45-3031.00,"Ngư dân, người đánh bắt thuỷ sản",3,6,L3,Máy trưởng tàu cá (có chứng chỉ),5.4,noi_suy_thap_cao,64,reference
+ONET-45-3031.00,"Ngư dân, người đánh bắt thuỷ sản",4,6,L4,Thuyền trưởng tàu cá hạng III,5.9,noi_suy_thap_cao,68,reference
+ONET-45-3031.00,"Ngư dân, người đánh bắt thuỷ sản",5,6,L5,Thuyền trưởng tàu cá hạng I–II,6.5,noi_suy_thap_cao,71,reference
+ONET-45-3031.00,"Ngư dân, người đánh bắt thuỷ sản",6,6,L6,Chủ tàu/tổ trưởng tổ đội khai thác hải sản,7.0,noi_suy_thap_cao,73,reference
+ONET-45-4011.00,Công nhân lâm nghiệp,1,5,L1,Lao động trồng rừng thời vụ,4.3,noi_suy_thap_cao,60,reference
+ONET-45-4011.00,Công nhân lâm nghiệp,2,5,L2,Công nhân lâm nghiệp,5.0,noi_suy_thap_cao,62,reference
+ONET-45-4011.00,Công nhân lâm nghiệp,3,5,L3,Công nhân lâm nghiệp bậc 2–3,5.7,noi_suy_thap_cao,66,reference
+ONET-45-4011.00,Công nhân lâm nghiệp,4,5,L4,Tổ trưởng/đội trưởng đội sản xuất lâm nghiệp,6.3,noi_suy_thap_cao,70,reference
+ONET-45-4011.00,Công nhân lâm nghiệp,5,5,L5,Trưởng trạm/quản đốc lâm trường,7.0,noi_suy_thap_cao,73,reference
+ONET-47-2021.00,"Thợ xây, ốp lát",1,5,L1,Phụ hồ,9.0,noi_suy_thap_cao,83,reference
+ONET-47-2021.00,"Thợ xây, ốp lát",2,5,L2,"Thợ xây, ốp lát bậc 1–2",9.4,noi_suy_thap_cao,85,reference
+ONET-47-2021.00,"Thợ xây, ốp lát",3,5,L3,Thợ xây chính bậc 3,9.9,noi_suy_thap_cao,87,reference
+ONET-47-2021.00,"Thợ xây, ốp lát",4,5,L5,Thợ cả bậc 4–5,10.4,noi_suy_thap_cao,89,reference
+ONET-47-2021.00,"Thợ xây, ốp lát",5,5,L6,Cai thầu/tổ trưởng thợ xây,10.8,noi_suy_thap_cao,91,reference
+ONET-47-2031.00,Thợ mộc,1,5,L1,Thợ phụ/học việc mộc,10.0,noi_suy_thap_cao,88,reference
+ONET-47-2031.00,Thợ mộc,2,5,L2,Thợ mộc bậc 1–2,11.2,noi_suy_thap_cao,93,reference
+ONET-47-2031.00,Thợ mộc,3,5,L3,Thợ mộc chính bậc 3,12.5,noi_suy_thap_cao,98,reference
+ONET-47-2031.00,Thợ mộc,4,5,L5,Thợ cả mộc bậc 4–5,13.8,noi_suy_thap_cao,103,reference
+ONET-47-2031.00,Thợ mộc,5,5,L6,Tổ trưởng xưởng mộc/giám sát thi công nội thất,15.0,noi_suy_thap_cao,107,reference
+ONET-47-2073.00,Người vận hành máy thi công,1,5,L1,Phụ máy thi công,11.0,noi_suy_thap_cao,92,reference
+ONET-47-2073.00,Người vận hành máy thi công,2,5,L2,Thợ vận hành máy thi công bậc 1–2,12.2,noi_suy_thap_cao,97,reference
+ONET-47-2073.00,Người vận hành máy thi công,3,5,L3,Thợ vận hành máy bậc 3,13.5,noi_suy_thap_cao,102,reference
+ONET-47-2073.00,Người vận hành máy thi công,4,5,L4,"Thợ vận hành máy bậc 4 (máy lớn, máy chuyên dụng)",14.8,noi_suy_thap_cao,107,reference
+ONET-47-2073.00,Người vận hành máy thi công,5,5,L5,Tổ trưởng/đội trưởng cơ giới,16.0,noi_suy_thap_cao,111,reference
+ONET-47-2111.00,Thợ điện công trình,1,6,L1,Thợ phụ/học việc điện công trình,9.0,noi_suy_thap_cao,83,job_postings
+ONET-47-2111.00,Thợ điện công trình,2,6,L2,Thợ điện công trình bậc 1,9.7,noi_suy_thap_cao,86,job_postings
+ONET-47-2111.00,Thợ điện công trình,3,6,L3,Thợ điện công trình bậc 2,10.4,noi_suy_thap_cao,90,job_postings
+ONET-47-2111.00,Thợ điện công trình,4,6,L4,Thợ điện công trình bậc 3,11.2,noi_suy_thap_cao,93,job_postings
+ONET-47-2111.00,Thợ điện công trình,5,6,L5,Thợ cả điện công trình bậc 4,11.9,noi_suy_thap_cao,96,job_postings
+ONET-47-2111.00,Thợ điện công trình,6,6,L6,Tổ trưởng/giám sát điện công trình,12.6,noi_suy_thap_cao,98,job_postings
+ONET-47-2141.00,"Thợ sơn, thạch cao và hoàn thiện",1,5,L1,"Thợ phụ sơn, thạch cao",8.0,noi_suy_thap_cao,78,reference
+ONET-47-2141.00,"Thợ sơn, thạch cao và hoàn thiện",2,5,L2,"Thợ sơn, thạch cao bậc 1–2",9.5,noi_suy_thap_cao,85,reference
+ONET-47-2141.00,"Thợ sơn, thạch cao và hoàn thiện",3,5,L3,Thợ hoàn thiện chính bậc 3,11.0,noi_suy_thap_cao,92,reference
+ONET-47-2141.00,"Thợ sơn, thạch cao và hoàn thiện",4,5,L5,Thợ cả hoàn thiện bậc 4–5,12.5,noi_suy_thap_cao,98,reference
+ONET-47-2141.00,"Thợ sơn, thạch cao và hoàn thiện",5,5,L6,Tổ trưởng/nhà thầu phụ hoàn thiện,14.0,noi_suy_thap_cao,104,reference
+ONET-47-2152.00,"Thợ ống nước, đường ống",1,6,L1,"Thợ phụ/học việc cấp thoát nước, đường ống",10.0,noi_suy_thap_cao,88,reference
+ONET-47-2152.00,"Thợ ống nước, đường ống",2,6,L2,"Thợ cấp thoát nước, đường ống bậc 1",11.2,noi_suy_thap_cao,93,reference
+ONET-47-2152.00,"Thợ ống nước, đường ống",3,6,L3,"Thợ cấp thoát nước, đường ống bậc 2",12.4,noi_suy_thap_cao,98,reference
+ONET-47-2152.00,"Thợ ống nước, đường ống",4,6,L4,"Thợ cấp thoát nước, đường ống bậc 3",13.6,noi_suy_thap_cao,102,reference
+ONET-47-2152.00,"Thợ ống nước, đường ống",5,6,L5,"Thợ cả cấp thoát nước, đường ống bậc 4",14.8,noi_suy_thap_cao,107,reference
+ONET-47-2152.00,"Thợ ống nước, đường ống",6,6,L6,Tổ trưởng/giám sát cấp thoát nước,16.0,noi_suy_thap_cao,111,reference
+ONET-47-2221.00,"Thợ kết cấu thép, nhôm kính",1,5,L1,Thợ phụ lắp dựng kết cấu,9.0,noi_suy_thap_cao,83,reference
+ONET-47-2221.00,"Thợ kết cấu thép, nhôm kính",2,5,L2,"Thợ lắp dựng kết cấu thép, nhôm kính bậc 1–2",11.0,noi_suy_thap_cao,92,reference
+ONET-47-2221.00,"Thợ kết cấu thép, nhôm kính",3,5,L3,"Thợ lắp dựng chính bậc 3, có chứng chỉ làm việc trên cao",13.0,noi_suy_thap_cao,100,reference
+ONET-47-2221.00,"Thợ kết cấu thép, nhôm kính",4,5,L5,Thợ cả lắp dựng bậc 4–5,15.0,noi_suy_thap_cao,107,reference
+ONET-47-2221.00,"Thợ kết cấu thép, nhôm kính",5,5,L6,Tổ trưởng/đội trưởng lắp dựng,17.0,noi_suy_thap_cao,114,reference
+ONET-47-5041.00,"Công nhân khai thác mỏ, dầu khí",1,6,L1,Học viên thợ mỏ (đào tạo nghề khai thác mỏ),16.0,noi_suy_thap_cao,111,reference
+ONET-47-5041.00,"Công nhân khai thác mỏ, dầu khí",2,6,L2,Công nhân khai thác mỏ bậc 1–2,17.8,noi_suy_thap_cao,117,reference
+ONET-47-5041.00,"Công nhân khai thác mỏ, dầu khí",3,6,L3,"Thợ khai thác bậc 3, vận hành máy khai thác",19.6,noi_suy_thap_cao,123,reference
+ONET-47-5041.00,"Công nhân khai thác mỏ, dầu khí",4,6,L5,"Thợ cả bậc 4–5, lò trưởng",21.4,noi_suy_thap_cao,128,reference
+ONET-47-5041.00,"Công nhân khai thác mỏ, dầu khí",5,6,L6,Tổ trưởng sản xuất/phó quản đốc phân xưởng,23.2,noi_suy_thap_cao,134,reference
+ONET-47-5041.00,"Công nhân khai thác mỏ, dầu khí",6,6,L7,Quản đốc phân xưởng khai thác,25.0,noi_suy_thap_cao,139,reference
+ONET-49-2094.00,"Thợ sửa chữa điện, điện tử",1,6,L1,"Thợ phụ/học việc sửa chữa điện, điện tử công nghiệp",10.0,noi_suy_thap_cao,88,job_postings
+ONET-49-2094.00,"Thợ sửa chữa điện, điện tử",2,6,L2,"Thợ sửa chữa điện, điện tử công nghiệp bậc 1",10.6,noi_suy_thap_cao,90,job_postings
+ONET-49-2094.00,"Thợ sửa chữa điện, điện tử",3,6,L3,"Thợ sửa chữa điện, điện tử công nghiệp bậc 2",11.3,noi_suy_thap_cao,93,job_postings
+ONET-49-2094.00,"Thợ sửa chữa điện, điện tử",4,6,L4,"Thợ sửa chữa điện, điện tử công nghiệp bậc 3",11.9,noi_suy_thap_cao,96,job_postings
+ONET-49-2094.00,"Thợ sửa chữa điện, điện tử",5,6,L5,"Thợ cả sửa chữa điện, điện tử công nghiệp bậc 4",12.6,noi_suy_thap_cao,98,job_postings
+ONET-49-2094.00,"Thợ sửa chữa điện, điện tử",6,6,L6,"Tổ trưởng bảo trì điện, điện tử",13.2,noi_suy_thap_cao,101,job_postings
+ONET-49-3011.00,Kỹ thuật viên bảo dưỡng máy bay,1,6,L1,Học viên kỹ thuật bảo dưỡng tàu bay,15.0,noi_suy_thap_cao,107,reference
+ONET-49-3011.00,Kỹ thuật viên bảo dưỡng máy bay,2,6,L2,Thợ máy bảo dưỡng tàu bay,22.0,noi_suy_thap_cao,130,reference
+ONET-49-3011.00,Kỹ thuật viên bảo dưỡng máy bay,3,6,L3,Kỹ thuật viên bảo dưỡng có năng định loại tàu bay,29.0,noi_suy_thap_cao,149,reference
+ONET-49-3011.00,Kỹ thuật viên bảo dưỡng máy bay,4,6,L5,Nhân viên xác nhận bảo dưỡng (giấy phép B1/B2),36.0,noi_suy_thap_cao,166,reference
+ONET-49-3011.00,Kỹ thuật viên bảo dưỡng máy bay,5,6,L6,Trưởng kíp/trưởng ca bảo dưỡng,43.0,noi_suy_thap_cao,182,reference
+ONET-49-3011.00,Kỹ thuật viên bảo dưỡng máy bay,6,6,L7,Giám đốc trung tâm/xưởng bảo dưỡng tàu bay,50.0,noi_suy_thap_cao,196,reference
+ONET-49-3023.00,Thợ sửa chữa ô tô,1,7,L1,Kỹ thuật viên tập sự xưởng ô tô,8.6,noi_suy_thap_cao,81,job_postings
+ONET-49-3023.00,Thợ sửa chữa ô tô,2,7,L2,Kỹ thuật viên sửa chữa ô tô bậc 1,9.7,noi_suy_thap_cao,86,job_postings
+ONET-49-3023.00,Thợ sửa chữa ô tô,3,7,L3,Kỹ thuật viên sửa chữa ô tô bậc 2,10.7,noi_suy_thap_cao,91,job_postings
+ONET-49-3023.00,Thợ sửa chữa ô tô,4,7,L4,Kỹ thuật viên chẩn đoán bậc 3,11.8,noi_suy_thap_cao,95,job_postings
+ONET-49-3023.00,Thợ sửa chữa ô tô,5,7,L5,Kỹ thuật viên trưởng (thợ cả bậc 4),12.9,noi_suy_thap_cao,99,job_postings
+ONET-49-3023.00,Thợ sửa chữa ô tô,6,7,L6,Tổ trưởng/quản đốc xưởng dịch vụ,13.9,noi_suy_thap_cao,104,job_postings
+ONET-49-3023.00,Thợ sửa chữa ô tô,7,7,L7,Giám đốc dịch vụ đại lý ô tô,15.0,noi_suy_thap_cao,107,job_postings
+ONET-49-3042.00,"Thợ sửa máy công trình, máy nông nghiệp",1,6,L1,"Thợ phụ/học việc sửa máy công trình, máy nông nghiệp",6.6,noi_suy_thap_cao,71,group_average
+ONET-49-3042.00,"Thợ sửa máy công trình, máy nông nghiệp",2,6,L2,"Thợ sửa máy công trình, máy nông nghiệp bậc 1",7.4,noi_suy_thap_cao,75,group_average
+ONET-49-3042.00,"Thợ sửa máy công trình, máy nông nghiệp",3,6,L3,"Thợ sửa máy công trình, máy nông nghiệp bậc 2",8.2,noi_suy_thap_cao,79,group_average
+ONET-49-3042.00,"Thợ sửa máy công trình, máy nông nghiệp",4,6,L4,"Thợ sửa máy công trình, máy nông nghiệp bậc 3",9.0,noi_suy_thap_cao,83,group_average
+ONET-49-3042.00,"Thợ sửa máy công trình, máy nông nghiệp",5,6,L5,"Thợ cả sửa máy công trình, máy nông nghiệp bậc 4",9.8,noi_suy_thap_cao,87,group_average
+ONET-49-3042.00,"Thợ sửa máy công trình, máy nông nghiệp",6,6,L6,Tổ trưởng xưởng sửa chữa/giám sát dịch vụ hiện trường,10.7,noi_suy_thap_cao,91,group_average
+ONET-49-3052.00,Thợ sửa xe máy,1,5,L1,Thợ phụ/học việc sửa xe máy,6.0,noi_suy_thap_cao,68,reference
+ONET-49-3052.00,Thợ sửa xe máy,2,5,L2,Thợ sửa xe máy (kỹ thuật viên cửa hàng),7.5,noi_suy_thap_cao,76,reference
+ONET-49-3052.00,Thợ sửa xe máy,3,5,L3,Thợ sửa xe máy chính,9.0,noi_suy_thap_cao,83,reference
+ONET-49-3052.00,Thợ sửa xe máy,4,5,L5,Thợ cả/kỹ thuật viên chẩn đoán,10.5,noi_suy_thap_cao,90,reference
+ONET-49-3052.00,Thợ sửa xe máy,5,5,L6,Trưởng xưởng dịch vụ/chủ tiệm sửa xe,12.0,noi_suy_thap_cao,96,reference
+ONET-49-9021.00,Thợ điện lạnh,1,6,L1,Thợ phụ/học việc điện lạnh,10.5,noi_suy_thap_cao,90,job_postings
+ONET-49-9021.00,Thợ điện lạnh,2,6,L2,Thợ điện lạnh bậc 1,11.3,noi_suy_thap_cao,93,job_postings
+ONET-49-9021.00,Thợ điện lạnh,3,6,L3,Thợ điện lạnh bậc 2,12.1,noi_suy_thap_cao,96,job_postings
+ONET-49-9021.00,Thợ điện lạnh,4,6,L4,Thợ điện lạnh bậc 3,12.9,noi_suy_thap_cao,100,job_postings
+ONET-49-9021.00,Thợ điện lạnh,5,6,L5,Thợ cả điện lạnh bậc 4,13.7,noi_suy_thap_cao,103,job_postings
+ONET-49-9021.00,Thợ điện lạnh,6,6,L6,Tổ trưởng/giám sát thi công cơ điện lạnh,14.5,noi_suy_thap_cao,106,job_postings
+ONET-49-9041.00,Thợ bảo trì máy công nghiệp,1,6,L1,Thợ phụ/học việc bảo trì máy công nghiệp,10.0,noi_suy_thap_cao,88,job_postings
+ONET-49-9041.00,Thợ bảo trì máy công nghiệp,2,6,L2,Thợ bảo trì máy công nghiệp bậc 1,10.6,noi_suy_thap_cao,90,job_postings
+ONET-49-9041.00,Thợ bảo trì máy công nghiệp,3,6,L3,Thợ bảo trì máy công nghiệp bậc 2,11.2,noi_suy_thap_cao,93,job_postings
+ONET-49-9041.00,Thợ bảo trì máy công nghiệp,4,6,L4,Thợ bảo trì máy công nghiệp bậc 3,11.8,noi_suy_thap_cao,95,job_postings
+ONET-49-9041.00,Thợ bảo trì máy công nghiệp,5,6,L5,Thợ cả bảo trì máy công nghiệp bậc 4,12.4,noi_suy_thap_cao,98,job_postings
+ONET-49-9041.00,Thợ bảo trì máy công nghiệp,6,6,L6,Tổ trưởng/trưởng ca bảo trì,13.0,noi_suy_thap_cao,100,job_postings
+ONET-49-9051.00,Công nhân đường dây và trạm điện,1,6,L1,Công nhân học việc đường dây (an toàn điện bậc 1/5–2/5),9.8,noi_suy_thap_cao,87,reference
+ONET-49-9051.00,Công nhân đường dây và trạm điện,2,6,L2,Công nhân quản lý vận hành đường dây bậc 1–2,11.1,noi_suy_thap_cao,92,reference
+ONET-49-9051.00,Công nhân đường dây và trạm điện,3,6,L3,Công nhân đường dây bậc 3 (an toàn điện 3/5),12.3,noi_suy_thap_cao,97,reference
+ONET-49-9051.00,Công nhân đường dây và trạm điện,4,6,L4,Công nhân đường dây bậc 4 (an toàn điện 4/5),13.5,noi_suy_thap_cao,102,reference
+ONET-49-9051.00,Công nhân đường dây và trạm điện,5,6,L5,"Tổ trưởng tổ đường dây/trạm điện, chỉ huy trực tiếp",14.8,noi_suy_thap_cao,107,reference
+ONET-49-9051.00,Công nhân đường dây và trạm điện,6,6,L6,Đội trưởng đội quản lý vận hành lưới điện,16.0,noi_suy_thap_cao,111,reference
+ONET-49-9052.00,Kỹ thuật viên lắp đặt viễn thông,1,5,L1,Cộng tác viên/học việc kỹ thuật viễn thông,6.6,noi_suy_thap_cao,71,group_average
+ONET-49-9052.00,Kỹ thuật viên lắp đặt viễn thông,2,5,L2,Nhân viên kỹ thuật lắp đặt thuê bao,7.6,noi_suy_thap_cao,76,group_average
+ONET-49-9052.00,Kỹ thuật viên lắp đặt viễn thông,3,5,L3,Kỹ thuật viên bảo trì hạ tầng mạng ngoại vi,8.6,noi_suy_thap_cao,81,group_average
+ONET-49-9052.00,Kỹ thuật viên lắp đặt viễn thông,4,5,L5,Tổ trưởng kỹ thuật địa bàn,9.6,noi_suy_thap_cao,86,group_average
+ONET-49-9052.00,Kỹ thuật viên lắp đặt viễn thông,5,5,L6,Trưởng đội/trung tâm hạ tầng viễn thông khu vực,10.7,noi_suy_thap_cao,91,group_average
+ONET-51-2092.00,Công nhân lắp ráp,1,5,L1,Công nhân học việc lắp ráp,8.5,noi_suy_thap_cao,81,job_postings
+ONET-51-2092.00,Công nhân lắp ráp,2,5,L2,Công nhân lắp ráp,9.2,noi_suy_thap_cao,84,job_postings
+ONET-51-2092.00,Công nhân lắp ráp,3,5,L3,Công nhân lắp ráp lành nghề,10.0,noi_suy_thap_cao,88,job_postings
+ONET-51-2092.00,Công nhân lắp ráp,4,5,L4,Công nhân kỹ thuật chuyền,10.8,noi_suy_thap_cao,91,job_postings
+ONET-51-2092.00,Công nhân lắp ráp,5,5,L5,Tổ trưởng chuyền lắp ráp,11.5,noi_suy_thap_cao,94,job_postings
+ONET-51-3011.00,Thợ làm bánh,1,6,L1,Phụ bếp bánh (học việc),6.0,noi_suy_thap_cao,68,reference
+ONET-51-3011.00,Thợ làm bánh,2,6,L2,Thợ bánh (Commis),7.8,noi_suy_thap_cao,77,reference
+ONET-51-3011.00,Thợ làm bánh,3,6,L3,Thợ bánh chính (Demi Chef),9.6,noi_suy_thap_cao,86,reference
+ONET-51-3011.00,Thợ làm bánh,4,6,L4,Tổ trưởng bánh (Chef de Partie),11.4,noi_suy_thap_cao,94,reference
+ONET-51-3011.00,Thợ làm bánh,5,6,L5,Bếp phó bánh (Sous Pastry Chef),13.2,noi_suy_thap_cao,101,reference
+ONET-51-3011.00,Thợ làm bánh,6,6,L6,Bếp trưởng bánh (Pastry Chef),15.0,noi_suy_thap_cao,107,reference
+ONET-51-3092.00,Công nhân chế biến thực phẩm,1,5,L1,Công nhân học việc chế biến,9.0,noi_suy_thap_cao,83,reference
+ONET-51-3092.00,Công nhân chế biến thực phẩm,2,5,L2,Công nhân chế biến thực phẩm,9.5,noi_suy_thap_cao,85,reference
+ONET-51-3092.00,Công nhân chế biến thực phẩm,3,5,L3,"Công nhân phối trộn, nấu mẻ",10.0,noi_suy_thap_cao,88,reference
+ONET-51-3092.00,Công nhân chế biến thực phẩm,4,5,L4,Công nhân vận hành chính,10.5,noi_suy_thap_cao,90,reference
+ONET-51-3092.00,Công nhân chế biến thực phẩm,5,5,L5,Tổ trưởng sản xuất,11.0,noi_suy_thap_cao,92,reference
+ONET-51-4041.00,"Thợ cơ khí, tiện phay CNC",1,6,L1,Học việc cơ khí CNC,10.5,noi_suy_thap_cao,90,job_postings
+ONET-51-4041.00,"Thợ cơ khí, tiện phay CNC",2,6,L2,Thợ cơ khí CNC bậc 1,11.5,noi_suy_thap_cao,94,job_postings
+ONET-51-4041.00,"Thợ cơ khí, tiện phay CNC",3,6,L3,Thợ cơ khí CNC bậc 2,12.5,noi_suy_thap_cao,98,job_postings
+ONET-51-4041.00,"Thợ cơ khí, tiện phay CNC",4,6,L4,Thợ cơ khí CNC bậc 3,13.6,noi_suy_thap_cao,102,job_postings
+ONET-51-4041.00,"Thợ cơ khí, tiện phay CNC",5,6,L5,Thợ cơ khí CNC bậc 4,14.6,noi_suy_thap_cao,106,job_postings
+ONET-51-4041.00,"Thợ cơ khí, tiện phay CNC",6,6,L6,Thợ cơ khí CNC bậc 5 / tổ trưởng,15.6,noi_suy_thap_cao,110,job_postings
+ONET-51-4121.00,Thợ hàn,1,6,L1,Thợ phụ hàn,6.0,noi_suy_thap_cao,68,reference
+ONET-51-4121.00,Thợ hàn,2,6,L2,Thợ hàn bậc 1,8.8,noi_suy_thap_cao,82,reference
+ONET-51-4121.00,Thợ hàn,3,6,L3,Thợ hàn bậc 2,11.6,noi_suy_thap_cao,94,reference
+ONET-51-4121.00,Thợ hàn,4,6,L4,Thợ hàn bậc 3 (hàn ống 6G),14.4,noi_suy_thap_cao,105,reference
+ONET-51-4121.00,Thợ hàn,5,6,L5,Thợ hàn bậc 4,17.2,noi_suy_thap_cao,115,reference
+ONET-51-4121.00,Thợ hàn,6,6,L6,Thợ hàn bậc 5 / giám sát hàn,20.0,noi_suy_thap_cao,124,reference
+ONET-51-5112.00,Công nhân in ấn,1,5,L1,Phụ máy in,9.0,noi_suy_thap_cao,83,job_postings
+ONET-51-5112.00,Công nhân in ấn,2,5,L2,Công nhân đứng máy in,9.7,noi_suy_thap_cao,86,job_postings
+ONET-51-5112.00,Công nhân in ấn,3,5,L3,Thợ in chính,10.4,noi_suy_thap_cao,90,job_postings
+ONET-51-5112.00,Công nhân in ấn,4,5,L4,Thợ in bậc cao (máy in nhiều màu),11.2,noi_suy_thap_cao,93,job_postings
+ONET-51-5112.00,Công nhân in ấn,5,5,L5,Trưởng máy / tổ trưởng in,11.9,noi_suy_thap_cao,96,job_postings
+ONET-51-6031.00,"Công nhân may mặc, da giày",1,5,L1,Công nhân học việc may,9.2,noi_suy_thap_cao,84,job_postings
+ONET-51-6031.00,"Công nhân may mặc, da giày",2,5,L2,Công nhân may,11.0,noi_suy_thap_cao,92,job_postings
+ONET-51-6031.00,"Công nhân may mặc, da giày",3,5,L3,Công nhân may lành nghề,12.7,noi_suy_thap_cao,99,job_postings
+ONET-51-6031.00,"Công nhân may mặc, da giày",4,5,L4,Thợ may mẫu,14.4,noi_suy_thap_cao,105,job_postings
+ONET-51-6031.00,"Công nhân may mặc, da giày",5,5,L5,Tổ trưởng chuyền may,16.2,noi_suy_thap_cao,112,job_postings
+ONET-51-7011.00,Thợ mộc đồ gỗ nội thất,1,6,L1,Học việc mộc,10.0,noi_suy_thap_cao,88,reference
+ONET-51-7011.00,Thợ mộc đồ gỗ nội thất,2,6,L2,Thợ mộc bậc 1,11.0,noi_suy_thap_cao,92,reference
+ONET-51-7011.00,Thợ mộc đồ gỗ nội thất,3,6,L3,Thợ mộc bậc 2,12.0,noi_suy_thap_cao,96,reference
+ONET-51-7011.00,Thợ mộc đồ gỗ nội thất,4,6,L4,Thợ mộc bậc 3,13.0,noi_suy_thap_cao,100,reference
+ONET-51-7011.00,Thợ mộc đồ gỗ nội thất,5,6,L5,Thợ mộc bậc 4,14.0,noi_suy_thap_cao,104,reference
+ONET-51-7011.00,Thợ mộc đồ gỗ nội thất,6,6,L6,Thợ mộc bậc 5 / tổ trưởng,15.0,noi_suy_thap_cao,107,reference
+ONET-51-8013.00,Vận hành nhà máy điện,1,5,L1,Học viên vận hành,9.8,noi_suy_thap_cao,87,reference
+ONET-51-8013.00,Vận hành nhà máy điện,2,5,L2,Trực phụ,11.4,noi_suy_thap_cao,94,reference
+ONET-51-8013.00,Vận hành nhà máy điện,3,5,L3,Trực chính,12.9,noi_suy_thap_cao,100,reference
+ONET-51-8013.00,Vận hành nhà máy điện,4,5,L4,Trưởng kíp,14.5,noi_suy_thap_cao,105,reference
+ONET-51-8013.00,Vận hành nhà máy điện,5,5,L5,Trưởng ca nhà máy điện,16.0,noi_suy_thap_cao,111,reference
+ONET-51-8031.00,"Vận hành nhà máy nước, xử lý nước thải",1,5,L1,Học việc vận hành trạm xử lý,10.1,noi_suy_thap_cao,88,job_postings
+ONET-51-8031.00,"Vận hành nhà máy nước, xử lý nước thải",2,5,L2,Công nhân vận hành bậc 1,12.0,noi_suy_thap_cao,96,job_postings
+ONET-51-8031.00,"Vận hành nhà máy nước, xử lý nước thải",3,5,L3,Công nhân vận hành bậc 2,13.8,noi_suy_thap_cao,103,job_postings
+ONET-51-8031.00,"Vận hành nhà máy nước, xử lý nước thải",4,5,L4,Công nhân vận hành bậc 3 / trực ca chính,15.6,noi_suy_thap_cao,110,job_postings
+ONET-51-8031.00,"Vận hành nhà máy nước, xử lý nước thải",5,5,L5,Trưởng ca vận hành,17.5,noi_suy_thap_cao,116,job_postings
+ONET-51-8091.00,"Vận hành nhà máy hoá chất, lọc dầu, khí",1,5,L1,Học viên vận hành,7.0,noi_suy_thap_cao,73,group_average
+ONET-51-8091.00,"Vận hành nhà máy hoá chất, lọc dầu, khí",2,5,L2,Vận hành viên hiện trường,8.1,noi_suy_thap_cao,79,group_average
+ONET-51-8091.00,"Vận hành nhà máy hoá chất, lọc dầu, khí",3,5,L3,Vận hành viên hiện trường chính,9.2,noi_suy_thap_cao,84,group_average
+ONET-51-8091.00,"Vận hành nhà máy hoá chất, lọc dầu, khí",4,5,L4,Vận hành viên phòng điều khiển,10.2,noi_suy_thap_cao,89,group_average
+ONET-51-8091.00,"Vận hành nhà máy hoá chất, lọc dầu, khí",5,5,L5,Trưởng ca vận hành,11.3,noi_suy_thap_cao,93,group_average
+ONET-51-9061.00,Nhân viên kiểm tra chất lượng sản xuất (QC),1,6,L1,Thực tập sinh QC,10.0,noi_suy_thap_cao,88,job_postings
+ONET-51-9061.00,Nhân viên kiểm tra chất lượng sản xuất (QC),2,6,L2,Nhân viên QC (IPQC),10.8,noi_suy_thap_cao,91,job_postings
+ONET-51-9061.00,Nhân viên kiểm tra chất lượng sản xuất (QC),3,6,L3,Nhân viên QC chính (IQC/OQC),11.6,noi_suy_thap_cao,94,job_postings
+ONET-51-9061.00,Nhân viên kiểm tra chất lượng sản xuất (QC),4,6,L4,Kỹ thuật viên chất lượng,12.4,noi_suy_thap_cao,98,job_postings
+ONET-51-9061.00,Nhân viên kiểm tra chất lượng sản xuất (QC),5,6,L5,Giám sát QC,13.2,noi_suy_thap_cao,101,job_postings
+ONET-51-9061.00,Nhân viên kiểm tra chất lượng sản xuất (QC),6,6,L6,Trưởng phòng QA/QC,14.0,noi_suy_thap_cao,104,job_postings
+ONET-51-9071.00,Thợ kim hoàn,1,6,L1,Học việc kim hoàn,6.6,noi_suy_thap_cao,71,group_average
+ONET-51-9071.00,Thợ kim hoàn,2,6,L2,Thợ kim hoàn bậc 1,7.4,noi_suy_thap_cao,75,group_average
+ONET-51-9071.00,Thợ kim hoàn,3,6,L3,Thợ kim hoàn bậc 2,8.2,noi_suy_thap_cao,79,group_average
+ONET-51-9071.00,Thợ kim hoàn,4,6,L4,Thợ kim hoàn bậc 3,9.0,noi_suy_thap_cao,83,group_average
+ONET-51-9071.00,Thợ kim hoàn,5,6,L5,Thợ kim hoàn bậc 4,9.8,noi_suy_thap_cao,87,group_average
+ONET-51-9071.00,Thợ kim hoàn,6,6,L6,Thợ cả kim hoàn bậc 5,10.7,noi_suy_thap_cao,91,group_average
+ONET-51-9081.00,"Kỹ thuật viên phục hình, chỉnh hình",1,5,L1,Học việc labo nha khoa,12.0,noi_suy_thap_cao,96,reference
+ONET-51-9081.00,"Kỹ thuật viên phục hình, chỉnh hình",2,5,L2,Kỹ thuật viên labo,14.0,noi_suy_thap_cao,104,reference
+ONET-51-9081.00,"Kỹ thuật viên phục hình, chỉnh hình",3,5,L3,Kỹ thuật viên đắp sứ / CAD-CAM,16.0,noi_suy_thap_cao,111,reference
+ONET-51-9081.00,"Kỹ thuật viên phục hình, chỉnh hình",4,5,L4,Kỹ thuật viên phục hình chính,18.0,noi_suy_thap_cao,118,reference
+ONET-51-9081.00,"Kỹ thuật viên phục hình, chỉnh hình",5,5,L5,Trưởng labo,20.0,noi_suy_thap_cao,124,reference
+ONET-51-9111.00,Công nhân vận hành máy sản xuất,1,5,L1,Công nhân học việc đóng gói,9.0,noi_suy_thap_cao,83,job_postings
+ONET-51-9111.00,Công nhân vận hành máy sản xuất,2,5,L2,Công nhân vận hành máy đóng gói,9.9,noi_suy_thap_cao,87,job_postings
+ONET-51-9111.00,Công nhân vận hành máy sản xuất,3,5,L3,Công nhân vận hành máy lành nghề,10.8,noi_suy_thap_cao,91,job_postings
+ONET-51-9111.00,Công nhân vận hành máy sản xuất,4,5,L4,Công nhân vận hành chính (đứng nhiều máy),11.6,noi_suy_thap_cao,95,job_postings
+ONET-51-9111.00,Công nhân vận hành máy sản xuất,5,5,L5,Trưởng ca đóng gói,12.5,noi_suy_thap_cao,98,job_postings
+ONET-51-9141.00,Kỹ thuật viên sản xuất bán dẫn,1,5,L1,Học viên kỹ thuật phòng sạch,7.0,noi_suy_thap_cao,73,reference
+ONET-51-9141.00,Kỹ thuật viên sản xuất bán dẫn,2,5,L2,Kỹ thuật viên vận hành máy (Operator),12.8,noi_suy_thap_cao,99,reference
+ONET-51-9141.00,Kỹ thuật viên sản xuất bán dẫn,3,5,L3,Kỹ thuật viên thiết bị (Technician),18.5,noi_suy_thap_cao,119,reference
+ONET-51-9141.00,Kỹ thuật viên sản xuất bán dẫn,4,5,L4,Kỹ thuật viên cao cấp (Senior Technician),24.2,noi_suy_thap_cao,137,reference
+ONET-51-9141.00,Kỹ thuật viên sản xuất bán dẫn,5,5,L5,Trưởng ca kỹ thuật,30.0,noi_suy_thap_cao,152,reference
+ONET-53-2011.00,Phi công,1,7,L1,Học viên phi công,208.0,noi_suy_thap_cao,250,reference
+ONET-53-2011.00,Phi công,2,7,L2,Cơ phó mới (bay kèm huấn luyện),251.3,noi_suy_thap_cao,250,reference
+ONET-53-2011.00,Phi công,3,7,L3,Phi công cơ phó,294.7,noi_suy_thap_cao,250,reference
+ONET-53-2011.00,Phi công,4,7,L5,Cơ trưởng,338.0,noi_suy_thap_cao,250,reference
+ONET-53-2011.00,Phi công,5,7,L6,Cơ trưởng giáo viên/kiểm tra viên,381.3,noi_suy_thap_cao,250,reference
+ONET-53-2011.00,Phi công,6,7,L7,Trưởng phi đội/đội bay,424.7,noi_suy_thap_cao,250,reference
+ONET-53-2011.00,Phi công,7,7,L8,Giám đốc khai thác bay/đoàn bay,468.0,noi_suy_thap_cao,250,reference
+ONET-53-2021.00,Kiểm soát viên không lưu,1,6,L1,Học viên kiểm soát viên không lưu,8.4,noi_suy_thap_cao,80,reference
+ONET-53-2021.00,Kiểm soát viên không lưu,2,6,L2,"Kiểm soát viên không lưu tại sân (có giấy phép, năng định TWR)",11.8,noi_suy_thap_cao,95,reference
+ONET-53-2021.00,Kiểm soát viên không lưu,3,6,L3,Kiểm soát viên không lưu tiếp cận/đường dài,15.2,noi_suy_thap_cao,108,reference
+ONET-53-2021.00,Kiểm soát viên không lưu,4,6,L5,Kiểm soát viên huấn luyện tại vị trí (OJTI),18.6,noi_suy_thap_cao,120,reference
+ONET-53-2021.00,Kiểm soát viên không lưu,5,6,L6,Kíp trưởng/trưởng ca kiểm soát không lưu,22.1,noi_suy_thap_cao,130,reference
+ONET-53-2021.00,Kiểm soát viên không lưu,6,6,L7,Giám đốc trung tâm kiểm soát (tiếp cận/đường dài),25.5,noi_suy_thap_cao,140,reference
+ONET-53-2031.00,Tiếp viên,1,5,L1,Học viên tiếp viên hàng không,15.0,noi_suy_thap_cao,107,reference
+ONET-53-2031.00,Tiếp viên,2,5,L2,Tiếp viên hạng phổ thông,31.2,noi_suy_thap_cao,155,reference
+ONET-53-2031.00,Tiếp viên,3,5,L3,Tiếp viên hạng thương gia,47.5,noi_suy_thap_cao,191,reference
+ONET-53-2031.00,Tiếp viên,4,5,L5,Tiếp viên trưởng,63.8,noi_suy_thap_cao,221,reference
+ONET-53-2031.00,Tiếp viên,5,5,L6,Tiếp viên trưởng huấn luyện/đội trưởng tiếp viên,80.0,noi_suy_thap_cao,248,reference
+ONET-53-3032.00,Tài xế xe tải,1,5,L1,Phụ xe tải,10.0,noi_suy_thap_cao,88,reference
+ONET-53-3032.00,Tài xế xe tải,2,5,L2,Tài xế xe tải hạng C1,13.8,noi_suy_thap_cao,103,reference
+ONET-53-3032.00,Tài xế xe tải,3,5,L3,Tài xế xe tải hạng C,17.5,noi_suy_thap_cao,116,reference
+ONET-53-3032.00,Tài xế xe tải,4,5,L4,Tài xế đầu kéo container hạng CE,21.2,noi_suy_thap_cao,128,reference
+ONET-53-3032.00,Tài xế xe tải,5,5,L6,Đội trưởng đội xe/điều hành vận tải,25.0,noi_suy_thap_cao,139,reference
+ONET-53-3052.00,"Tài xế xe khách, xe buýt",1,5,L1,"Phụ xe khách, nhân viên bán vé",12.0,noi_suy_thap_cao,96,reference
+ONET-53-3052.00,"Tài xế xe khách, xe buýt",2,5,L2,Tài xế hạng D1 (xe khách cỡ nhỏ),13.5,noi_suy_thap_cao,102,reference
+ONET-53-3052.00,"Tài xế xe khách, xe buýt",3,5,L3,Tài xế xe buýt hạng D2,15.0,noi_suy_thap_cao,107,reference
+ONET-53-3052.00,"Tài xế xe khách, xe buýt",4,5,L4,"Tài xế xe khách hạng D (xe trên 29 chỗ, giường nằm)",16.5,noi_suy_thap_cao,113,reference
+ONET-53-3052.00,"Tài xế xe khách, xe buýt",5,5,L6,Đội trưởng đội xe/điều hành tuyến,18.0,noi_suy_thap_cao,118,reference
+ONET-53-4011.00,"Lái tàu hoả, tàu điện",1,6,L1,Học viên lái tàu,13.0,noi_suy_thap_cao,100,reference
+ONET-53-4011.00,"Lái tàu hoả, tàu điện",2,6,L2,Phụ lái tàu,13.4,noi_suy_thap_cao,102,reference
+ONET-53-4011.00,"Lái tàu hoả, tàu điện",3,6,L3,Lái tàu (có giấy phép lái tàu),13.8,noi_suy_thap_cao,103,reference
+ONET-53-4011.00,"Lái tàu hoả, tàu điện",4,6,L5,"Lái tàu chính tuyến khách đường dài, lái tàu hướng dẫn",14.2,noi_suy_thap_cao,105,reference
+ONET-53-4011.00,"Lái tàu hoả, tàu điện",5,6,L6,Lái tàu giáo viên/đội trưởng đội lái máy,14.6,noi_suy_thap_cao,106,reference
+ONET-53-4011.00,"Lái tàu hoả, tàu điện",6,6,L7,Giám đốc xí nghiệp đầu máy,15.0,noi_suy_thap_cao,107,reference
+ONET-53-5021.00,"Thuyền viên, sĩ quan hàng hải",1,7,L1,Sinh viên thực tập sĩ quan (cadet),7.0,noi_suy_thap_cao,73,reference
+ONET-53-5021.00,"Thuyền viên, sĩ quan hàng hải",2,7,L2,Thủy thủ trực ca (OS/AB),14.2,noi_suy_thap_cao,104,reference
+ONET-53-5021.00,"Thuyền viên, sĩ quan hàng hải",3,7,L3,"Sĩ quan boong (sĩ quan trực ca, phó ba/phó hai)",21.3,noi_suy_thap_cao,128,reference
+ONET-53-5021.00,"Thuyền viên, sĩ quan hàng hải",4,7,L5,Đại phó,28.5,noi_suy_thap_cao,148,reference
+ONET-53-5021.00,"Thuyền viên, sĩ quan hàng hải",5,7,L6,Thuyền trưởng,35.7,noi_suy_thap_cao,166,reference
+ONET-53-5021.00,"Thuyền viên, sĩ quan hàng hải",6,7,L7,Thuyền trưởng tàu lớn/giám sát hàng hải (superintendent),42.8,noi_suy_thap_cao,182,reference
+ONET-53-5021.00,"Thuyền viên, sĩ quan hàng hải",7,7,L8,Giám đốc khai thác tàu/quản lý thuyền viên,50.0,noi_suy_thap_cao,196,reference
+ONET-53-6051.00,"Đăng kiểm viên, thanh tra giao thông",1,6,L1,Học viên thực tập nghiệp vụ đăng kiểm viên,5.3,noi_suy_thap_cao,64,reference
+ONET-53-6051.00,"Đăng kiểm viên, thanh tra giao thông",2,6,L2,Đăng kiểm viên xe cơ giới,8.3,noi_suy_thap_cao,80,reference
+ONET-53-6051.00,"Đăng kiểm viên, thanh tra giao thông",3,6,L4,Đăng kiểm viên phụ trách dây chuyền,11.3,noi_suy_thap_cao,93,reference
+ONET-53-6051.00,"Đăng kiểm viên, thanh tra giao thông",4,6,L5,Đăng kiểm viên xe cơ giới bậc cao,14.3,noi_suy_thap_cao,105,reference
+ONET-53-6051.00,"Đăng kiểm viên, thanh tra giao thông",5,6,L6,Giám đốc/phó giám đốc trung tâm đăng kiểm,17.3,noi_suy_thap_cao,115,reference
+ONET-53-6051.00,"Đăng kiểm viên, thanh tra giao thông",6,6,L7,Trưởng phòng nghiệp vụ cơ quan đăng kiểm/thanh tra giao thông,20.2,noi_suy_thap_cao,125,reference
+ONET-53-7051.00,"Người vận hành xe nâng, cần cẩu",1,5,L1,"Phụ cẩu, người ra tín hiệu (xi nhan)",8.0,noi_suy_thap_cao,78,reference
+ONET-53-7051.00,"Người vận hành xe nâng, cần cẩu",2,5,L2,Người vận hành xe nâng (có chứng chỉ vận hành),8.8,noi_suy_thap_cao,82,reference
+ONET-53-7051.00,"Người vận hành xe nâng, cần cẩu",3,5,L3,Thợ vận hành cần cẩu bậc 2–3,9.5,noi_suy_thap_cao,85,reference
+ONET-53-7051.00,"Người vận hành xe nâng, cần cẩu",4,5,L4,"Thợ vận hành cẩu bậc 4 (cẩu cảng, cẩu lớn)",10.2,noi_suy_thap_cao,89,reference
+ONET-53-7051.00,"Người vận hành xe nâng, cần cẩu",5,5,L5,Tổ trưởng vận hành thiết bị nâng,11.0,noi_suy_thap_cao,92,reference
+ONET-53-7062.00,"Công nhân bốc xếp, đóng gói",1,4,L1,Lao động bốc xếp thời vụ,7.2,noi_suy_thap_cao,74,job_postings
+ONET-53-7062.00,"Công nhân bốc xếp, đóng gói",2,4,L2,"Công nhân bốc xếp, đóng gói",7.9,noi_suy_thap_cao,78,job_postings
+ONET-53-7062.00,"Công nhân bốc xếp, đóng gói",3,4,L3,Công nhân bốc xếp lành nghề,8.5,noi_suy_thap_cao,81,job_postings
+ONET-53-7062.00,"Công nhân bốc xếp, đóng gói",4,4,L5,Tổ trưởng bốc xếp/trưởng ca kho,9.2,noi_suy_thap_cao,84,job_postings
+ONET-53-7081.00,"Công nhân thu gom, xử lý rác và chất thải",1,4,L1,Công nhân thu gom rác thử việc,7.9,noi_suy_thap_cao,78,reference
+ONET-53-7081.00,"Công nhân thu gom, xử lý rác và chất thải",2,4,L2,"Công nhân thu gom, vận chuyển rác",9.6,noi_suy_thap_cao,86,reference
+ONET-53-7081.00,"Công nhân thu gom, xử lý rác và chất thải",3,4,L3,Công nhân lái xe ép rác/công nhân bậc cao,11.2,noi_suy_thap_cao,93,reference
+ONET-53-7081.00,"Công nhân thu gom, xử lý rác và chất thải",4,4,L5,Tổ trưởng/đội trưởng đội thu gom,12.9,noi_suy_thap_cao,99,reference
