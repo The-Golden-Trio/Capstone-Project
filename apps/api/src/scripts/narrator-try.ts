@@ -21,6 +21,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
+  FOLLOW_UP_MAX_CHARS,
   hiddenTexts,
   narrationJsonSchema,
   narratorView,
@@ -96,8 +97,9 @@ const roughTokens = (chars: number) => Math.round(chars / 2.5);
 function printResult(label: string, result: NarrateResult): void {
   rule(label);
   if (result.status === 'ok') {
-    console.log(`✔ ${result.line.speaker}: ${result.line.narration}`);
-    console.log(`  hỏi đào sâu: ${result.line.follow_up ?? '(không)'}`);
+    console.log(`✔ ${result.line.speaker}: ${result.line.follow_up}`);
+  } else if (result.status === 'skipped') {
+    console.log('■ skipped — engine không cho hỏi đào sâu, không gọi model');
   } else if (result.status === 'blocked') {
     console.log('■ blocked — bộ lọc nội dung của nhà cung cấp chặn');
   } else {
@@ -172,20 +174,19 @@ const REQUEST_NOTES: Array<[string, string[]]> = [
     'Độ ngẫu nhiên. 0,7 là mức đội Qwen khuyên khi tắt suy nghĩ. DeepSeek dùng 1,0 vì thang khác.',
     'Không gửi top_p (Alibaba khuyên chỉ đặt một trong hai) và presence_penalty (giữ mặc định của Qwen).',
   ]],
-  ['"max_completion_tokens":', ['Trả về tối đa 300 token, gấp đôi độ dài cần. Bị cắt (finish_reason "length") thì R4 loại.']],
+  ['"max_completion_tokens":', [`Trả về tối đa ${NARRATOR_PROFILE.maxOutputTokens.qwen} token (DeepSeek: ${NARRATOR_PROFILE.maxOutputTokens.deepseek}), rộng hơn nhiều so với độ dài cần. Bị cắt (finish_reason "length") thì R4 loại.`]],
   ['"enable_thinking":', ['Tắt suy nghĩ: Qwen bật sẵn, làm chậm vài giây; bắt buộc tắt khi không stream và khi dùng JSON.']],
   ['"response_format":', ['Khuôn trả về. Qwen ép đúng khuôn ngay khi viết; code vẫn kiểm lại bằng cùng khuôn (R4).']],
   ['"name":', ['Tên đặt cho khuôn (Alibaba bắt buộc có). Không ảnh hưởng câu model viết, chỉ để nhận ra khuôn trong log.']],
   ['"speaker":', ['Người nói: chỉ được là nhân vật có trong kịch bản.']],
-  ['"narration":', ['Lời nhân vật đáp lại câu người chơi: tối đa 280 ký tự, vừa một bong bóng chat.']],
-  ['"follow_up":', ['Câu hỏi đào sâu, hoặc null nghĩa là không hỏi.']],
+  ['"follow_up":', [`Lời nhân vật nói tiếp: thường là một câu hỏi đào sâu, hoặc một lời dẫn không có dấu "?". Tối đa ${FOLLOW_UP_MAX_CHARS} ký tự.`]],
   ['"required":', [
-    'Ba trường bắt buộc phải có. Không hỏi thì vẫn phải ghi "follow_up": null,',
-    'để code phân biệt được "quyết định không hỏi" với "quên viết".',
+    'Hai trường bắt buộc phải có. Lượt không được hỏi đào sâu thì engine không gọi AI-4,',
+    'nên không có chuyện trả "follow_up": null.',
   ]],
   ['"additionalProperties":', [
-    'Không được thêm trường nào ngoài ba trường trên, ví dụ "score": 2 hay "goi_y": "...".',
-    'Lý do: AI-4 không được chấm điểm, và R1–R4 chỉ kiểm ba trường này — trường lạ có thể',
+    'Không được thêm trường nào ngoài hai trường trên, ví dụ "score": 2 hay "goi_y": "...".',
+    'Lý do: AI-4 không được chấm điểm, và R1–R4 chỉ kiểm hai trường này — trường lạ có thể',
     'chứa đáp án mà không luật nào kiểm tới.',
   ]],
   ['"strict":', ['Không được lệch khuôn.']],
@@ -273,14 +274,13 @@ function recording(inner: Transport): Transport & { log: Exchange[] } {
 
 function dry(scenario: Scenario, answer: string): void {
   const view = narratorView(scenario, SAMPLE_ACTIVITY_ID);
-  const messages = buildNarratorMessages({
+  const turn = {
     view,
     activityId: SAMPLE_ACTIVITY_ID,
     transcript: transcriptBefore(scenario, SAMPLE_ACTIVITY_ID),
     answer,
-    followUpAllowed,
-  });
-  const [system, user] = messages;
+  };
+  const [system, user] = buildNarratorMessages(turn, 'qwen');
   const fixed = system.parts[0].text.length + user.parts[0].text.length;
   const dynamic = user.parts[1].text.length;
 
@@ -310,11 +310,12 @@ function dry(scenario: Scenario, answer: string): void {
     deepseekFlash(),
   ];
   for (const spec of specs) {
+    const messages = buildNarratorMessages(turn, spec.provider);
     const { url, body } = gateway.preview({
       model: spec,
       messages,
       temperature: NARRATOR_PROFILE.temperature[spec.provider],
-      maxOutputTokens: NARRATOR_PROFILE.maxOutputTokens,
+      maxOutputTokens: NARRATOR_PROFILE.maxOutputTokens[spec.provider],
       json: { name: 'narration', schema },
       timeoutMs: NARRATOR_PROFILE.attemptTimeoutMs,
     });
@@ -345,12 +346,12 @@ async function fake(scenario: Scenario, answers: Array<[string, string]>): Promi
   const transport = fakeTransport(
     (_, i) =>
       i % 2 === 0
-        ? { content: JSON.stringify({ speaker: 'an', narration: 'Ok, em sửa trong 15 phút nữa nhé.', follow_up: null }), latencyMs: 1700 }
+        ? { content: JSON.stringify({ speaker: 'an', follow_up: 'Ok, em sửa trong 15 phút nữa nhé.' }), latencyMs: 1700 }
         : {
             content: JSON.stringify({
               speaker: 'an',
-              narration: 'Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải.',
-              follow_up: followUpAllowed ? 'Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?' : null,
+              follow_up:
+                'Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải. Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?',
             }),
             latencyMs: 1300,
             cachedTokens: 1024,
@@ -390,8 +391,8 @@ async function exportFiles(scenario: Scenario, answer: string): Promise<void> {
         {
           content: JSON.stringify({
             speaker: 'an',
-            narration: 'Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải.',
-            follow_up: followUpAllowed ? 'Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?' : null,
+            follow_up:
+              'Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải. Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?',
           }),
           latencyMs: 1300,
           promptTokens: 2267,

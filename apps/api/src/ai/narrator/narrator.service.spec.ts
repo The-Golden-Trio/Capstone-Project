@@ -22,14 +22,14 @@ const scenario = fixtureData().scenarios[SAMPLE_SCENARIO_KEY];
 const QWEN = qwenFlash({ apiKey: 'q', region: 'eu-central-1', workspaceId: 'ws', cacheMode: 'implicit' });
 const DEEPSEEK = deepseekFlash();
 
-const line = (o: { narration: string; follow_up?: string | null; speaker?: string }) =>
-  JSON.stringify({ speaker: o.speaker ?? 'an', narration: o.narration, follow_up: o.follow_up ?? null });
+const line = (o: { follow_up: string; speaker?: string }) =>
+  JSON.stringify({ speaker: o.speaker ?? 'an', follow_up: o.follow_up });
 
 const GOOD = line({
-  narration: 'Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải.',
-  follow_up: 'Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?',
+  follow_up:
+    'Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải. Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?',
 });
-const INVENTS_NUMBER = line({ narration: 'Ok, em sửa trong 15 phút nữa nhé.' });
+const INVENTS_NUMBER = line({ follow_up: 'Ok, em sửa trong 15 phút nữa nhé.' });
 
 function setup(script: FakeTurn[] | Parameters<typeof fakeTransport>[0], chain: ModelSpec[] = [QWEN, DEEPSEEK]) {
   const clock = new FakeClock();
@@ -63,7 +63,7 @@ describe('lượt bình thường', () => {
         modelKey: 'qwen3.8-flash@eu-central-1',
         family: 'qwen',
         promptVersion: 'narrator-v1',
-        profileVersion: 'narrator-profile-1',
+        profileVersion: 'narrator-profile-2',
         contentVersion: 7,
         temperature: 0.7,
         outcome: 'accepted',
@@ -74,15 +74,34 @@ describe('lượt bình thường', () => {
     expect(result.cost.usd).toBeGreaterThan(0);
   });
 
-  it('gửi đúng call profile cho Qwen', async () => {
+  it('gửi đúng call profile cho Qwen: trần 600 token', async () => {
     const { service, transport } = setup([{ content: GOOD }]);
     await service.narrate(input());
     expect(transport.calls[0].body).toMatchObject({
       temperature: 0.7,
-      max_completion_tokens: 300,
+      max_completion_tokens: 600,
       enable_thinking: false,
       response_format: { type: 'json_schema', json_schema: { strict: true } },
     });
+  });
+});
+
+describe('engine không cho hỏi đào sâu', () => {
+  it('không gọi model nào, không tốn đồng nào', async () => {
+    const { service, transport } = setup([{ content: GOOD }]);
+    const result = await service.narrate(input({ followUpAllowed: false }));
+    expect(result.status).toBe('skipped');
+    expect(transport.calls).toHaveLength(0);
+    expect(result.records).toEqual([]);
+    expect(result.cost.usd).toBe(0);
+  });
+});
+
+describe('trần token theo từng hãng', () => {
+  it('DeepSeek giữ 300', async () => {
+    const { service, transport } = setup([{ content: GOOD }], [DEEPSEEK]);
+    await service.narrate(input());
+    expect(transport.calls[0].body).toMatchObject({ max_tokens: 300 });
   });
 });
 
@@ -102,11 +121,18 @@ describe('sinh lại khi phạm luật', () => {
     expect(second[3].content).toContain('15');
   });
 
-  it('được hỏi đào sâu là do engine quyết: không được hỏi mà vẫn hỏi → R2, viết lại', async () => {
-    const { service } = setup([{ content: GOOD }, { content: line({ narration: 'Ừ, làm đi em.' }) }]);
-    const result = await service.narrate(input({ followUpAllowed: false }));
+  it('hai câu hỏi trong một follow_up → R2, viết lại', async () => {
+    const TWO = line({ follow_up: 'Em test thế nào? Và rollback ra sao?' });
+    const { service } = setup([{ content: TWO }, { content: GOOD }]);
+    const result = await service.narrate(input());
     expect(result.status).toBe('ok');
     expect(result.records[0].violations.map((v) => v.rule)).toEqual(['R2']);
+  });
+
+  it('lời dẫn không có dấu hỏi vẫn được nhận', async () => {
+    const { service } = setup([{ content: line({ follow_up: 'Ừ, anh nghe rồi. Em kể anh nghe thêm cách em định làm đi.' }) }]);
+    const result = await service.narrate(input());
+    expect(result.status).toBe('ok');
   });
 
   it('sau 3 lần hỏng trên Qwen (1 + 2 lần viết lại) thì sang DeepSeek, bắt đầu từ prompt sạch', async () => {

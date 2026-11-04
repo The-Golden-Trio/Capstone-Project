@@ -7,7 +7,7 @@
         "index": 0,
         "message": {
           "role": "assistant",
-          "content": "{\"speaker\":\"an\",\"narration\":\"Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải.\",\"follow_up\":\"Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?\"}"
+          "content": "{\"speaker\":\"an\",\"follow_up\":\"Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải. Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?\"}"
         },
         "finish_reason": "stop"
       }
