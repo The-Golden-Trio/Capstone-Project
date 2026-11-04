@@ -15,7 +15,8 @@
 | Kiến thức | `skills.knowledge` | 21 | 199 |
 | Môi trường: câu mô tả | `work_environment.facts` | 21 | 199 |
 | Nơi làm việc | `work_environment.settings` | 22 | 199 |
-| Kiểu công ty (IT) | `work_environment.company_types` | 8 | 0 |
+| Loại hình nơi làm | `work_environment.environments` | 22 | 199 |
+| Lịch làm rao (VietJobs) | `work_environment.schedule_vn` | 0 | 82 |
 | Mức chuẩn bị | `education.preparation` | 22 | 199 |
 | Ngành đại học | `education.majors_university` | 22 | 131 |
 | Ngành cao đẳng, trung cấp | `education.majors_vocational` | 18 | 151 |

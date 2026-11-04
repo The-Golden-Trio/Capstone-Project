@@ -79,7 +79,7 @@ Job không có trong danh sách vẫn sinh được, nhưng rơi vào tier 2 ho�
 
 ```bash
 python3 - <<'PY'
-import json
+import json, csv
 ROLE, BAND = "QA_MANUAL", "L4"          # <<< DOI O DAY
 for f in ("occupation-data/datasets/78_roles_unmerged.json",):
     d = json.load(open(f))
@@ -93,7 +93,7 @@ for f in ("occupation-data/datasets/78_roles_unmerged.json",):
       "role_group": r['role_group'], "archetype": r['archetype'],
       "occupied_bands": r['occupied_bands'],
       "company_type_variance": r['company_type_variance'],
-      "work_environment_ids": r.get('work_environment_ids'),
+      "work_environments": next((w['environments'] for w in csv.DictReader(open('occupation-data/decisions/occupation_work_environments.csv', encoding='utf-8-sig')) if w['role_code']==r['role_code']), None),
       "level": lv,
     }, ensure_ascii=False, indent=2)); break
 else:
@@ -194,7 +194,7 @@ Role kiểu này (ví dụ `SWE_ARCH_ENT`) chỉ có `destination_profile`. Sinh
 
 ```bash
 python3 - <<'PY'
-import json
+import json, csv
 ROLE = "SWE_ARCH_ENT"                    # <<< DOI O DAY
 d = json.load(open('occupation-data/datasets/78_roles_unmerged.json'))
 r = next(x for x in d if x['role_code']==ROLE)
@@ -204,7 +204,7 @@ print(json.dumps({
   "role_group": r['role_group'], "archetype": r['archetype'],
   "occupied_bands": r['occupied_bands'],
   "company_type_variance": r['company_type_variance'],
-  "work_environment_ids": r.get('work_environment_ids'),
+  "work_environments": next((w['environments'] for w in csv.DictReader(open('occupation-data/decisions/occupation_work_environments.csv', encoding='utf-8-sig')) if w['role_code']==r['role_code']), None),
   "destination_profile": r['destination_profile'],
 }, ensure_ascii=False, indent=2))
 PY
@@ -323,7 +323,9 @@ bad = [(b['activity_id'], o['skill']) for b in acts for o in b['observes']
        if o['skill'] not in (ctx['skills_hard'] if o['skill_type']=='hard' else ctx['skills_soft'])]
 print(ok(not bad), "observes.skill nam trong context.skills", bad or "")
 print(ok(role['company_type_variance'][ctx['company_type']] != "CHUA_CO_DU_LIEU"), "company_type co du lieu")
-print(ok(ctx['work_environment_id'] in (role.get('work_environment_ids') or [])), "work_env hop le")
+envs = {e.split(':')[0] for w in csv.DictReader(open('occupation-data/decisions/occupation_work_environments.csv', encoding='utf-8-sig'))
+        if w['role_code']==s['job']['role_code'] for e in w['environments'].split(';')}
+print(ok(ctx['work_environment_id'] in envs), "work_env nam trong loai hinh cua nghe")
 
 # --- 2.1: title, skills_in_play, job_scope ---
 print(ok(s['scenario_title']==ctx['task']), "scenario_title == context.task")

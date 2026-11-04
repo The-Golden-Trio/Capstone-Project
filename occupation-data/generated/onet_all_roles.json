@@ -466,9 +466,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường ngồi trong xe hoặc cabin máy.",
@@ -783,9 +780,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Làm việc theo nhóm là chính.",
@@ -1128,9 +1122,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -1504,9 +1495,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -1831,9 +1819,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -2209,9 +2194,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -2562,9 +2544,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -2909,9 +2888,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -3261,9 +3237,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -3612,9 +3585,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -3922,9 +3892,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Làm cả trong văn phòng lẫn ngoài hiện trường.",
@@ -4281,9 +4248,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -4640,9 +4604,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -4979,9 +4940,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -5349,9 +5307,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -5706,9 +5661,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -6011,9 +5963,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -6328,9 +6277,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -6636,9 +6582,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -7006,9 +6949,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -7396,9 +7336,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -7737,9 +7674,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -8057,9 +7991,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường ngồi trong xe hoặc cabin máy.",
@@ -8427,9 +8358,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -8817,9 +8745,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -9152,9 +9077,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -9461,9 +9383,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -9797,9 +9716,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -10147,9 +10063,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -10448,9 +10361,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -10786,9 +10696,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -11155,9 +11062,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -11525,9 +11429,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Làm cả trong văn phòng lẫn ngoài hiện trường.",
@@ -11910,9 +11811,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "39% người trong nghề làm hơn 40 giờ mỗi tuần.",
@@ -12262,9 +12160,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -12674,9 +12569,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -13041,9 +12933,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -13416,9 +13305,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ít tiếp xúc với khách hàng bên ngoài.",
@@ -13776,9 +13662,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -14147,9 +14030,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -14507,9 +14387,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "60% người trong nghề làm hơn 40 giờ mỗi tuần.",
@@ -14858,9 +14735,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường ngồi trong xe hoặc cabin máy.",
@@ -15191,9 +15065,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -15543,9 +15414,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -15917,9 +15785,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -16300,9 +16165,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ít tiếp xúc với khách hàng bên ngoài.",
@@ -16687,9 +16549,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -17060,9 +16919,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -17423,9 +17279,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -17792,9 +17645,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -18154,9 +18004,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -18474,9 +18321,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -18825,9 +18669,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -19211,9 +19052,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -19562,9 +19400,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -19929,9 +19764,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -20283,9 +20115,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -20601,9 +20430,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -20953,9 +20779,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -21326,9 +21149,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường ngồi trong xe hoặc cabin máy.",
@@ -21637,9 +21457,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -21947,9 +21764,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -22287,9 +22101,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -22822,9 +22633,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -23277,9 +23085,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "59% người trong nghề làm hơn 40 giờ mỗi tuần.",
@@ -23597,9 +23402,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -23962,9 +23764,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -24331,9 +24130,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -24671,9 +24467,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -25029,9 +24822,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -25388,9 +25178,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -25707,9 +25494,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -26034,9 +25818,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -26369,9 +26150,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -26705,9 +26483,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Làm việc độc lập nhiều hơn làm theo nhóm.",
@@ -27031,9 +26806,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -27358,9 +27130,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -27687,9 +27456,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -28043,9 +27809,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -28371,9 +28134,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -28719,9 +28479,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "24% người trong nghề làm hơn 40 giờ mỗi tuần.",
@@ -29043,9 +28800,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -29369,9 +29123,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -29695,9 +29446,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -30039,9 +29787,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -30368,9 +30113,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -30705,9 +30447,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -31040,9 +30779,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "40% người trong nghề làm hơn 40 giờ mỗi tuần.",
@@ -31361,9 +31097,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -31810,9 +31543,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -32235,9 +31965,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -32581,9 +32308,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -33025,9 +32749,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -33454,9 +33175,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -33796,9 +33514,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -34241,9 +33956,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -34653,9 +34365,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -34986,9 +34695,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -35348,9 +35054,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -35765,9 +35468,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -36191,9 +35891,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -36561,9 +36258,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -36937,9 +36631,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -37253,9 +36944,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -37590,9 +37278,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -37979,9 +37664,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -38343,9 +38025,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -38686,9 +38365,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -39030,9 +38706,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -39390,9 +39063,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -39768,9 +39438,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Làm cả trong văn phòng lẫn ngoài hiện trường.",
@@ -40131,9 +39798,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Làm cả trong văn phòng lẫn ngoài hiện trường.",
@@ -40459,9 +40123,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -40841,9 +40502,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -41180,9 +40838,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Làm cả trong văn phòng lẫn ngoài hiện trường.",
@@ -41533,9 +41188,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Tiếp xúc nhiều với khách hàng hoặc người dân.",
@@ -41868,9 +41520,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -42230,9 +41879,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -42639,9 +42285,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -42984,9 +42627,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -43359,9 +42999,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -43760,9 +43397,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -44125,9 +43759,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -44490,9 +44121,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -44859,9 +44487,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -45187,9 +44812,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -45504,9 +45126,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -45851,9 +45470,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -46184,9 +45800,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -46523,9 +46136,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -46891,9 +46501,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -47290,9 +46897,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -47606,9 +47210,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -47972,9 +47573,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -48312,9 +47910,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -48643,9 +48238,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường ngồi trong xe hoặc cabin máy.",
@@ -48967,9 +48559,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -49266,9 +48855,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -49640,9 +49226,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường ngồi trong xe hoặc cabin máy.",
@@ -50019,9 +49602,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Tiếp xúc nhiều với khách hàng hoặc người dân.",
@@ -50328,9 +49908,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -50622,9 +50199,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -51003,9 +50577,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -51418,9 +50989,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -51799,9 +51367,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -52154,9 +51719,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -52527,9 +52089,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -52897,9 +52456,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "48% người trong nghề làm hơn 40 giờ mỗi tuần.",
@@ -53223,9 +52779,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -53583,9 +53136,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -53951,9 +53501,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Ngồi phần lớn thời gian làm việc.",
@@ -54322,9 +53869,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -54717,9 +54261,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -55086,9 +54627,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -55442,9 +54980,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -55892,9 +55427,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -56324,9 +55856,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -56749,9 +56278,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -57136,9 +56662,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -57550,9 +57073,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -57961,9 +57481,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -58340,9 +57857,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -58765,9 +58279,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -59211,9 +58722,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -59634,9 +59142,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -60011,9 +59516,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -60372,9 +59874,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -60700,9 +60199,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -61121,9 +60617,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -61542,9 +61035,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -61927,9 +61417,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -62329,9 +61816,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Làm việc độc lập nhiều hơn làm theo nhóm.",
@@ -62721,9 +62205,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -63239,9 +62720,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -63777,9 +63255,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -64152,9 +63627,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -64505,9 +63977,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -64832,9 +64301,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -65258,9 +64724,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -65686,9 +65149,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -66093,9 +65553,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -66466,9 +65923,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -66816,9 +66270,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -67171,9 +66622,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -67479,9 +66927,6 @@
       ],
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -67810,9 +67255,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -68169,9 +67611,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Phần lớn thời gian làm trong nhà, có điều hoà.",
@@ -68606,9 +68045,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Đứng phần lớn thời gian làm việc.",
@@ -69002,9 +68438,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -69370,9 +68803,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường ngồi trong xe hoặc cabin máy.",
@@ -69723,9 +69153,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -70099,9 +69526,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -70483,9 +69907,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -70881,9 +70302,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -71252,9 +70670,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -71641,9 +71056,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -72046,9 +71458,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -72452,9 +71861,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",
@@ -72816,9 +72222,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
       "work_environment_onet": {
         "facts": [
           "Thường làm ngoài trời, chịu thời tiết.",

@@ -480,14 +480,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [
-        "WE_PROJECT_OUTSOURCING",
-        "WE_HYBRID_PRODUCT",
-        "WE_REMOTE_GLOBAL",
-        "WE_ONSITE_ENTERPRISE"
-      ],
-      "work_environment_primary": "WE_HYBRID_PRODUCT",
-      "work_environment_note": "Hybrid chiếm ưu thế rõ rệt: Axon (onsite T3-T6, remote T2), NAB (toàn bộ 5 JD ghi hybrid working model), Holistics, ANDPAD, what3words (tối đa 2 ngày WFH + 6 tuần làm việc từ bất kỳ đâu mỗi năm), Workday (Flex Work tính 50% theo quý thay vì ngày/tuần). Remote hoàn toàn chỉ ở Employment Hero và Binance, cả hai đều là công ty nước ngoài và đều ở band L5+. Onsite 100%: Nexlab, Axon SWE II, FireGroup, FinX, Moatable (có on-site bonus 2,5 triệu/tháng), One Mount. KHÔNG có JD nào trong 37 mẫu nhắc tới ca kíp, on-call hay công tác tới site khách hàng — WE_SHIFT_24_7 và WE_FIELD_CLIENT không áp dụng cho role này. ĐÍNH CHÍNH so với bản trước: FE38 (Engineering Manager Frontend/Mobile) mô tả mô hình 'You Build It, You Run It' cùng trách nhiệm xử lý sự cố Sev1/Sev2 — hàm ý có trực sự cố. Đây là JD DUY NHẤT trong 40 mẫu có yếu tố vận hành production, và nó xuất hiện ở nhánh Management chứ không phải ở các band IC. Kết luận 'role này không có on-call' chỉ đúng với nhánh IC.",
       "education_path_ids": [
         "EDU_CS_PREFERRED"
       ],
@@ -1195,13 +1187,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [
-        "WE_HYBRID_PRODUCT",
-        "WE_PROJECT_OUTSOURCING",
-        "WE_ONSITE_ENTERPRISE"
-      ],
-      "work_environment_primary": "WE_HYBRID_PRODUCT",
-      "work_environment_note": "Product/Startup thường hybrid, ngân hàng thường onsite 100%.",
       "education_path_ids": [
         "EDU_CS_PREFERRED",
         "EDU_CS_REQUIRED"
@@ -1936,12 +1921,6 @@
       },
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [
-        "WE_HYBRID_PRODUCT",
-        "WE_PROJECT_OUTSOURCING"
-      ],
-      "work_environment_primary": "WE_HYBRID_PRODUCT",
-      "work_environment_note": "App phát hành liên tục nên thường áp dụng Agile/Scrum.",
       "education_path_ids": [
         "EDU_CS_PREFERRED",
         "EDU_ANY_PLUS_TRAINING"
@@ -2630,9 +2609,6 @@
       },
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -3305,9 +3281,6 @@
       },
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -3858,9 +3831,6 @@
       },
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4564,9 +4534,6 @@
           "role_name": "DevOps Engineer"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -5192,9 +5159,6 @@
           "role_name": "Mobile Developer"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -5829,9 +5793,6 @@
           "role_name": "Solution Architect"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -6481,12 +6442,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [
-        "WE_PROJECT_OUTSOURCING",
-        "WE_HYBRID_PRODUCT"
-      ],
-      "work_environment_primary": "WE_PROJECT_OUTSOURCING",
-      "work_environment_note": "Dễ làm remote nhưng do yếu tố bảo mật thường phải tới văn phòng ở dự án outsource.",
       "education_path_ids": [
         "EDU_ANY_PLUS_TRAINING"
       ],
@@ -7220,12 +7175,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [
-        "WE_ONSITE_ENTERPRISE",
-        "WE_HYBRID_PRODUCT"
-      ],
-      "work_environment_primary": "WE_HYBRID_PRODUCT",
-      "work_environment_note": "Ngân hàng yêu cầu bảo mật cao nên thường làm onsite.",
       "education_path_ids": [
         "EDU_ANY_PLUS_TRAINING",
         "EDU_DOMAIN_PLUS_IT"
@@ -7925,9 +7874,6 @@
           "role_name": "Backend Developer"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -8472,9 +8418,6 @@
           "role_name": "Data Analyst"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -9151,12 +9094,6 @@
           "role_name": "IT Helpdesk"
         }
       ],
-      "work_environment_ids": [
-        "WE_HYBRID_PRODUCT",
-        "WE_REMOTE_GLOBAL"
-      ],
-      "work_environment_primary": "WE_HYBRID_PRODUCT",
-      "work_environment_note": "Thường xuyên có trực On-call.",
       "education_path_ids": [
         "EDU_CS_REQUIRED",
         "EDU_CERT_DRIVEN"
@@ -9738,9 +9675,6 @@
           "role_name": "IT Helpdesk"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -10281,9 +10215,6 @@
           "role_name": "DevOps Engineer"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -10861,9 +10792,6 @@
           "role_name": "Backend Developer"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -11368,12 +11296,6 @@
       },
       "similar_roles": [],
       "feeder_roles": [],
-      "work_environment_ids": [
-        "WE_ONSITE_ENTERPRISE",
-        "WE_PROJECT_OUTSOURCING"
-      ],
-      "work_environment_primary": "WE_PROJECT_OUTSOURCING",
-      "work_environment_note": "Phụ thuộc vào khách hàng.",
       "education_path_ids": [
         "EDU_DOMAIN_PLUS_IT",
         "EDU_ANY_PLUS_TRAINING"
@@ -12119,9 +12041,6 @@
           "role_name": "UI/UX Designer"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -12831,9 +12750,6 @@
           "role_name": "IT Helpdesk"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -13477,12 +13393,6 @@
         }
       ],
       "feeder_roles": [],
-      "work_environment_ids": [
-        "WE_ONSITE_ENTERPRISE",
-        "WE_SHIFT_24_7"
-      ],
-      "work_environment_primary": "WE_ONSITE_ENTERPRISE",
-      "work_environment_note": "Phải có mặt tại văn phòng để hỗ trợ phần cứng.",
       "education_path_ids": [
         "EDU_ANY_PLUS_TRAINING"
       ],
@@ -14129,9 +14039,6 @@
           "role_name": "IT Helpdesk"
         }
       ],
-      "work_environment_ids": [],
-      "work_environment_primary": null,
-      "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
       "education_path_ids": [],
       "education_path_primary": null,
       "education_path_note": "Chưa gán. Thuộc Pass 2.",

@@ -989,7 +989,6 @@
           role.role_group,
           role.archetype,
           role.education_path_primary,
-          role.work_environment_primary,
           skillText,
         ]
           .filter(Boolean)
@@ -1253,7 +1252,6 @@
               ${fact("Job outlook", formatOutlook(role))}
               ${fact("Confidence", role.confidence_overall || "Chưa rõ")}
               ${fact("Education", role.education_path_primary || "Chưa gắn")}
-              ${fact("Work environment", role.work_environment_primary || "Chưa gắn")}
             </div>
 
             ${section("Vai trò", role.archetype_reasoning || role.entry_note || destination?.core_output)}

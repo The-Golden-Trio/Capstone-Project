@@ -373,9 +373,6 @@ def build():
                 for c in k["absorbs"]
             ],
             "feeder_roles": [],
-            "work_environment_ids": [],
-            "work_environment_primary": None,
-            "work_environment_note": "Chưa gán mã môi trường: datasets/work_environments.json chỉ có cho nghề IT. Xem work_environment_onet.",
             "work_environment_onet": work_environment_of(context_row, ctp_row, terms["work_environment_rules"], stats),
             "fit_summary": fit_summary_of(p["riasec"], terms["riasec_phrases"]),
             "career_path": path,

@@ -1,0 +1,222 @@
+role_code,role_name_vn,environments,evidence,weight_status,reason
+SWE_FRONTEND,Lập trình viên Front-end,WE_HYBRID_PRODUCT:45;WE_PROJECT_OUTSOURCING:40;WE_ONSITE_ENTERPRISE:15,B,co_so_lieu,"ITviec 2023–2024: product 50%, outsourcing 32%, IT doanh nghiệp 9% số người trả lời; front-end có ở cả ba"
+SWE_BACKEND,Lập trình viên Back-end / Kỹ sư Back-end,WE_HYBRID_PRODUCT:40;WE_PROJECT_OUTSOURCING:40;WE_ONSITE_ENTERPRISE:20,B,co_so_lieu,"Tỉ lệ loại công ty của ITviec; back-end là vị trí đông nhất ở mọi loại, ngân hàng tuyển nhiều back-end nội bộ"
+SWE_MOBILE,Lập trình viên Mobile / Kỹ sư ứng dụng di động,WE_HYBRID_PRODUCT:50;WE_PROJECT_OUTSOURCING:50,B,co_so_lieu,Ứng dụng di động do công ty product tự làm hoặc thuê outsourcing; ít ở khối IT doanh nghiệp
+SWE_GAME,Lập trình viên Game,WE_HYBRID_PRODUCT:70;WE_PROJECT_OUTSOURCING:30,C,tam_thoi,Studio game tự phát hành chiếm phần lớn; phần còn lại là studio gia công game cho khách nước ngoài
+SWE_UIUX,Chuyên viên thiết kế UI/UX,WE_HYBRID_PRODUCT:50;WE_PROJECT_OUTSOURCING:30;WE_CORP_AGENCY:20,C,tam_thoi,Thiết kế UI/UX nhiều ở product; có ở outsourcing và agency digital
+SWE_EMBEDDED,Kỹ sư phần mềm nhúng / Kỹ sư IoT,WE_ENG_DESIGN_RND:50;WE_PROJECT_OUTSOURCING:50,C,tam_thoi,"Nhúng làm ở R&D của tập đoàn điện tử, ô tô và ở outsourcing phần mềm ô tô, thiết bị"
+SWE_ARCH_SOL,Kiến trúc sư giải pháp,WE_ONSITE_ENTERPRISE:40;WE_PROJECT_OUTSOURCING:40;WE_FIELD_CLIENT:20,C,tam_thoi,"Kiến trúc sư giải pháp ở doanh nghiệp lớn, outsourcing (thiết kế cho khách) và đối tác triển khai (presales)"
+SWE_TECHLEAD,Trưởng nhóm kỹ thuật,WE_HYBRID_PRODUCT:45;WE_PROJECT_OUTSOURCING:40;WE_ONSITE_ENTERPRISE:15,B,co_so_lieu,"Theo tỉ lệ loại công ty của ITviec, như back-end"
+SWE_EM,Trưởng phòng Kỹ thuật,WE_HYBRID_PRODUCT:45;WE_PROJECT_OUTSOURCING:40;WE_ONSITE_ENTERPRISE:15,B,co_so_lieu,Theo tỉ lệ loại công ty của ITviec; product cần quản lý kỹ thuật nhiều nhất
+QA_MANUAL,Kỹ sư kiểm thử thủ công / Tester,WE_PROJECT_OUTSOURCING:55;WE_HYBRID_PRODUCT:30;WE_ONSITE_ENTERPRISE:15,C,tam_thoi,"Kiểm thử thủ công tập trung ở outsourcing (đội QA riêng cho khách); product, doanh nghiệp ít hơn"
+DATA_DA,Chuyên viên phân tích dữ liệu,WE_ONSITE_ENTERPRISE:45;WE_HYBRID_PRODUCT:40;WE_PROJECT_OUTSOURCING:15,C,tam_thoi,"Phân tích dữ liệu nhiều ở ngân hàng, bán lẻ, viễn thông và ở product"
+DATA_AI,Kỹ sư trí tuệ nhân tạo,WE_HYBRID_PRODUCT:55;WE_PROJECT_OUTSOURCING:30;WE_REMOTE_GLOBAL:15,B,co_so_lieu,"AI tập trung ở product, R&D; remote cho nước ngoài là cửa hiếm (2–7% dân IT làm remote)"
+DATA_DE,Kỹ sư dữ liệu,WE_ONSITE_ENTERPRISE:40;WE_HYBRID_PRODUCT:40;WE_PROJECT_OUTSOURCING:20,C,tam_thoi,"Kỹ sư dữ liệu ở ngân hàng, tập đoàn và product có kho dữ liệu lớn"
+CLOUD_DEVOPS,Kỹ sư DevOps,WE_HYBRID_PRODUCT:50;WE_PROJECT_OUTSOURCING:30;WE_ONSITE_ENTERPRISE:20,C,tam_thoi,"DevOps nhiều ở product (deploy liên tục), outsourcing và khối IT doanh nghiệp"
+CLOUD_ENG,Kỹ sư điện toán đám mây,WE_PROJECT_OUTSOURCING:35;WE_ONSITE_ENTERPRISE:35;WE_HYBRID_PRODUCT:30,C,tam_thoi,"Kỹ sư cloud ở đối tác cloud (dịch vụ), doanh nghiệp chuyển đổi lên cloud và product"
+SEC_ENG,Kỹ sư an ninh mạng / Kỹ sư bảo mật,WE_ONSITE_ENTERPRISE:50;WE_SHIFT_24_7:30;WE_HYBRID_PRODUCT:20,C,tam_thoi,"Ngân hàng là bên tuyển an ninh nhiều (một nguồn cộng đồng đếm 176/340 tin SOC năm 2025, chưa kiểm); có ca SOC 24/7"
+SEC_PENTEST,Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng,WE_PROJECT_OUTSOURCING:60;WE_ONSITE_ENTERPRISE:40,C,tam_thoi,"Pentest chủ yếu ở công ty dịch vụ an ninh làm theo dự án cho khách, và đội red team ngân hàng"
+PROD_BA,Chuyên viên phân tích nghiệp vụ / BA,WE_ONSITE_ENTERPRISE:45;WE_PROJECT_OUTSOURCING:40;WE_HYBRID_PRODUCT:15,C,tam_thoi,"BA nhiều ở ngân hàng, bảo hiểm và ở outsourcing (BA làm với khách)"
+PROD_PM,Quản lý sản phẩm / Product Manager,WE_HYBRID_PRODUCT:80;WE_ONSITE_ENTERPRISE:20,C,tam_thoi,Quản lý sản phẩm gắn với công ty product; ngân hàng số có PM nội bộ
+INFRA_ERP,Chuyên viên tư vấn giải pháp ERP,WE_ONSITE_ENTERPRISE:60;WE_FIELD_CLIENT:40,B,co_so_lieu,"ITviec 2023–2024: ERP 65% ở văn phòng, 30% ở doanh nghiệp non-IT; JD đối tác triển khai vẫn ghi đi công tác"
+INFRA_HELPDESK,Nhân viên hỗ trợ kỹ thuật / IT Support,WE_ONSITE_ENTERPRISE:60;WE_SHIFT_24_7:40,C,tam_thoi,Hỗ trợ kỹ thuật chủ yếu ở doanh nghiệp; một phần ở trung tâm hỗ trợ 24/7
+INFRA_NETWORK,Kỹ sư hệ thống mạng,WE_ONSITE_ENTERPRISE:40;WE_FIELD_CLIENT:35;WE_ENG_TELECOM:25,C,tam_thoi,"Kỹ sư mạng ở doanh nghiệp lớn, công ty tích hợp hệ thống và nhà mạng"
+ONET-11-1021.00,"Giám đốc điều hành, quản lý vận hành",WE_CORP_SME:50;WE_CORP_LARGE:30;WE_CORP_FDI:20,B,co_so_lieu,"Phần lớn doanh nghiệp là ngoài nhà nước và nhỏ (bình quân 12,6 lao động); tập đoàn, FDI ít hơn"
+ONET-11-3051.00,Quản lý sản xuất,WE_MFG_FDI_PLANT:50;WE_MFG_LOCAL_PLANT:40;WE_MFG_FOOD_PLANT:10,C,tam_thoi,Quản lý sản xuất ở nhà máy FDI và nhà máy trong nước; một phần ở nhà máy thực phẩm
+ONET-11-3012.00,Quản lý hành chính,WE_CORP_SME:45;WE_CORP_LARGE:30;WE_GOV_OFFICE:25,C,tam_thoi,Quản lý hành chính ở doanh nghiệp và cơ quan nhà nước
+ONET-11-9021.00,Quản lý xây dựng (chỉ huy trưởng công trình),WE_CONS_SITE:75;WE_CONS_DEVELOPER:25,C,tam_thoi,Chỉ huy trưởng làm ở công trường nhà thầu; một phần đại diện chủ đầu tư
+ONET-11-9041.00,Quản lý kỹ thuật và nghiên cứu,WE_ENG_DESIGN_RND:45;WE_MFG_FDI_PLANT:30;WE_SCI_INSTITUTE:25,C,tam_thoi,"Quản lý kỹ thuật, R&D ở trung tâm R&D, nhà máy FDI và viện nghiên cứu"
+ONET-11-9032.00,"Quản lý giáo dục (hiệu trưởng, trưởng khoa)",WE_EDU_PUBLIC_SCHOOL:60;WE_EDU_PRIVATE_SCHOOL:25;WE_EDU_UNI_PUBLIC:15,B,co_so_lieu,"Hiệu trưởng, quản lý giáo dục phần lớn ở trường công (giáo viên ngoài công lập chỉ 10,1%)"
+ONET-11-9051.00,Quản lý nhà hàng,WE_HOSP_FNB_CHAIN:55;WE_HOSP_FNB_SMALL:30;WE_HOSP_HOTEL:15,C,tam_thoi,"Quản lý nhà hàng nhiều ở chuỗi F&B (tuyển trên trang việc làm), quán độc lập và nhà hàng khách sạn"
+ONET-11-9081.00,"Quản lý khách sạn, khu nghỉ dưỡng",WE_HOSP_HOTEL:65;WE_HOSP_SMALL_LODGING:35,B,co_so_lieu,"636 cơ sở lưu trú 4–5 sao; khách sạn nhỏ, homestay đông hơn nhiều về số lượng"
+ONET-11-9111.00,"Quản lý bệnh viện, cơ sở y tế",WE_HEALTH_PUBLIC_HOSPITAL:65;WE_HEALTH_PRIVATE_HOSPITAL:35,B,co_so_lieu,Khoảng 77% bệnh viện là công lập
+ONET-11-9013.00,"Chủ trang trại, quản lý nông nghiệp",WE_AGRI_FAMILY_FARM:60;WE_AGRI_ENTERPRISE_FARM:40,B,co_so_lieu,Nông hộ chiếm đa số; 28.349 trang trại năm 2025
+ONET-11-9141.00,"Quản lý bất động sản, toà nhà",WE_FAC_BUILDING:70;WE_CORP_REALESTATE:30,C,tam_thoi,"Quản lý toà nhà làm cho ban quản lý vận hành; một phần ở sàn, chủ đầu tư bất động sản"
+ONET-13-2011.00,"Kế toán, kiểm toán viên",WE_CORP_SME:55;WE_FIN_AUDIT:25;WE_CORP_FDI:20,B,co_so_lieu,"Kế toán là nghề có nhiều tin nhất ở văn phòng SME (3.036 tin VietJobs); kiểm toán, FDI ít hơn"
+ONET-13-2081.00,Cán bộ thuế,WE_GOV_TAX:100,A,co_so_lieu,Cán bộ thuế chỉ làm ở cơ quan thuế
+ONET-13-1041.00,Chuyên viên tuân thủ và quản lý rủi ro,WE_FIN_BANK_HQ:55;WE_CORP_FDI:25;WE_FIN_INSURANCE:20,C,tam_thoi,"Tuân thủ, rủi ro tập trung ở ngân hàng; có ở bảo hiểm và FDI"
+ONET-13-1031.00,Chuyên viên thẩm định và bồi thường bảo hiểm,WE_FIN_INSURANCE:100,C,tam_thoi,"Thẩm định, bồi thường bảo hiểm làm ở công ty bảo hiểm"
+ONET-13-2072.00,Chuyên viên tín dụng ngân hàng,WE_FIN_BANK_BRANCH:70;WE_FIN_BANK_HQ:30,C,tam_thoi,"Chuyên viên tín dụng phần lớn ở chi nhánh; thẩm định, phê duyệt ở hội sở"
+ONET-13-2052.00,Chuyên viên tư vấn tài chính và đầu tư,WE_FIN_SECURITIES:50;WE_FIN_BANK_BRANCH:30;WE_FIN_INSURANCE:20,C,tam_thoi,"Tư vấn đầu tư ở công ty chứng khoán, quản lý tài sản tại ngân hàng và bảo hiểm liên kết đầu tư"
+ONET-13-2099.01,Chuyên viên phân tích tài chính định lượng (quant),WE_FIN_SECURITIES:50;WE_FIN_BANK_HQ:50,C,tam_thoi,"Quant ở công ty chứng khoán, quỹ và khối rủi ro ngân hàng"
+ONET-13-2023.00,Thẩm định viên về giá,WE_FIN_AUDIT:60;WE_FIN_BANK_HQ:40,C,tam_thoi,Thẩm định giá ở công ty thẩm định giá và bộ phận định giá tài sản bảo đảm của ngân hàng
+ONET-13-1071.00,Chuyên viên nhân sự,WE_CORP_SME:45;WE_CORP_FDI:30;WE_CORP_LARGE:25,C,tam_thoi,"Nhân sự có ở mọi doanh nghiệp; chia theo số doanh nghiệp SME, FDI, tập đoàn"
+ONET-13-1161.00,Chuyên viên marketing và nghiên cứu thị trường,WE_CORP_SME:40;WE_CORP_AGENCY:35;WE_CORP_FDI:25,C,tam_thoi,"Marketing in-house ở SME, FDI và ở agency"
+ONET-13-1082.00,Chuyên viên quản lý dự án,WE_CORP_LARGE:35;WE_CONS_DEVELOPER:35;WE_CORP_FDI:30,C,tam_thoi,"Quản lý dự án ở tập đoàn, chủ đầu tư và công ty FDI"
+ONET-13-1121.00,Chuyên viên tổ chức sự kiện,WE_CORP_AGENCY:70;WE_HOSP_HOTEL:30,C,tam_thoi,Tổ chức sự kiện chủ yếu ở agency sự kiện; một phần ở bộ phận sự kiện khách sạn
+ONET-13-1081.00,Chuyên viên logistics và xuất nhập khẩu,WE_CORP_LOGISTICS:65;WE_MFG_FDI_PLANT:35,C,tam_thoi,"Logistics, xuất nhập khẩu ở công ty giao nhận và bộ phận xuất nhập khẩu của nhà máy FDI"
+ONET-13-1023.00,Chuyên viên mua hàng,WE_MFG_FDI_PLANT:40;WE_MFG_LOCAL_PLANT:30;WE_CORP_SME:30,C,tam_thoi,"Mua hàng nhiều ở nhà máy (FDI, trong nước) và doanh nghiệp thương mại"
+ONET-13-1051.00,Kỹ sư dự toán (QS),WE_CONS_CONSULTANT:50;WE_CONS_SITE:30;WE_CONS_DEVELOPER:20,C,tam_thoi,"Dự toán ở tư vấn, nhà thầu và chủ đầu tư"
+ONET-13-1199.06,Người kinh doanh online,WE_RETAIL_ONLINE:75;WE_CORP_SME:25,C,tam_thoi,Người kinh doanh online phần lớn tự làm; một phần làm cho shop của doanh nghiệp nhỏ
+ONET-15-2041.00,Chuyên viên thống kê và toán ứng dụng,WE_FIN_BANK_HQ:35;WE_SCI_INSTITUTE:35;WE_GOV_OFFICE:30,C,tam_thoi,"Thống kê ở ngân hàng, viện nghiên cứu và cơ quan thống kê nhà nước"
+ONET-15-2011.00,Chuyên viên định phí bảo hiểm (actuary),WE_FIN_INSURANCE:100,C,tam_thoi,Định phí bảo hiểm chỉ làm ở công ty bảo hiểm
+ONET-15-2031.00,Chuyên viên nghiên cứu vận trù,WE_CORP_LOGISTICS:45;WE_CORP_LARGE:35;WE_MFG_FDI_PLANT:20,C,tam_thoi,"Vận trù ở logistics, tập đoàn bán lẻ và nhà máy"
+ONET-17-1011.00,Kiến trúc sư,WE_CONS_CONSULTANT:80;WE_CONS_DEVELOPER:20,C,tam_thoi,Kiến trúc sư chủ yếu ở văn phòng tư vấn thiết kế; một phần ở chủ đầu tư
+ONET-17-1022.00,"Kỹ sư trắc địa, bản đồ",WE_CONS_SITE:50;WE_CONS_CONSULTANT:50,C,tam_thoi,Trắc địa chia giữa công trường thi công và công ty tư vấn khảo sát
+ONET-17-2051.00,Kỹ sư xây dựng,WE_CONS_SITE:55;WE_CONS_CONSULTANT:30;WE_CONS_DEVELOPER:15,B,co_so_lieu,"Kỹ sư xây dựng nhiều ở công trường (333 tin VietJobs, 81% làm thứ 7), tư vấn và chủ đầu tư"
+ONET-17-2071.00,Kỹ sư điện,WE_CONS_SITE:35;WE_MFG_FDI_PLANT:35;WE_ENERGY_GRID:30,C,tam_thoi,"Kỹ sư điện ở công trường cơ điện, nhà máy và ngành điện"
+ONET-17-2072.00,"Kỹ sư điện tử, viễn thông",WE_ENG_TELECOM:45;WE_ENG_DESIGN_RND:35;WE_MFG_FDI_PLANT:20,C,tam_thoi,"Điện tử viễn thông ở nhà mạng, R&D và nhà máy điện tử"
+ONET-17-2141.00,Kỹ sư cơ khí,WE_MFG_LOCAL_PLANT:40;WE_MFG_FDI_PLANT:35;WE_ENG_DESIGN_RND:25,C,tam_thoi,"Kỹ sư cơ khí ở nhà máy trong nước, FDI và phòng thiết kế"
+ONET-17-2141.02,Kỹ sư ô tô,WE_ENG_DESIGN_RND:45;WE_MFG_LOCAL_PLANT:35;WE_REPAIR_DEALER:20,C,tam_thoi,"Kỹ sư ô tô ở khối thiết kế hãng xe, nhà máy lắp ráp và xưởng dịch vụ đại lý"
+ONET-17-2199.05,"Kỹ sư cơ điện tử, robot",WE_MFG_FDI_PLANT:55;WE_ENG_DESIGN_RND:30;WE_ENG_EQUIPMENT_SERVICE:15,C,tam_thoi,"Cơ điện tử, robot nhiều ở nhà máy FDI tự động hoá; có ở R&D và nhà cung cấp thiết bị"
+ONET-17-2041.00,"Kỹ sư hoá học, vật liệu",WE_MFG_LOCAL_PLANT:40;WE_MFG_FDI_PLANT:30;WE_ENERGY_OIL_GAS:30,C,tam_thoi,"Kỹ sư hoá, vật liệu ở nhà máy hoá chất, vật liệu và lọc hoá dầu"
+ONET-17-2081.00,"Kỹ sư, chuyên viên môi trường",WE_CONS_CONSULTANT:40;WE_MFG_FDI_PLANT:30;WE_GOV_OFFICE:30,C,tam_thoi,"Môi trường ở tư vấn đánh giá tác động, bộ phận an toàn môi trường nhà máy và cơ quan quản lý"
+ONET-17-2112.00,"Kỹ sư công nghiệp, quản lý sản xuất",WE_MFG_FDI_PLANT:60;WE_MFG_LOCAL_PLANT:40,C,tam_thoi,"Kỹ sư công nghiệp làm ở nhà máy, nhiều nhất ở FDI"
+ONET-17-2151.00,"Kỹ sư mỏ, dầu khí",WE_ENERGY_OIL_GAS:60;WE_ENERGY_MINE:40,C,tam_thoi,"Kỹ sư mỏ, dầu khí ở dầu khí và mỏ than"
+ONET-17-2031.00,Kỹ sư y sinh,WE_ENG_EQUIPMENT_SERVICE:60;WE_HEALTH_PUBLIC_HOSPITAL:25;WE_HEALTH_PRIVATE_HOSPITAL:15,C,tam_thoi,Kỹ sư y sinh nhiều ở nhà cung cấp thiết bị y tế; một phần ở phòng vật tư thiết bị bệnh viện
+ONET-19-1013.00,Kỹ sư nông nghiệp,WE_AGRI_ENTERPRISE_FARM:45;WE_SCI_INSTITUTE:30;WE_GOV_OFFICE:25,C,tam_thoi,"Kỹ sư nông nghiệp ở doanh nghiệp nông nghiệp, viện và trung tâm khuyến nông"
+ONET-19-1012.00,Kỹ sư công nghệ thực phẩm,WE_MFG_FOOD_PLANT:70;WE_SCI_TESTING_LAB:30,C,tam_thoi,Công nghệ thực phẩm chủ yếu ở nhà máy thực phẩm; một phần ở trung tâm kiểm nghiệm
+ONET-19-1029.04,"Nhà sinh học, chuyên viên công nghệ sinh học",WE_SCI_INSTITUTE:50;WE_SCI_TESTING_LAB:30;WE_AGRI_ENTERPRISE_FARM:20,C,tam_thoi,"Sinh học ở viện nghiên cứu, phòng thí nghiệm dịch vụ và doanh nghiệp nông nghiệp công nghệ cao"
+ONET-19-1031.00,Chuyên viên lâm nghiệp và bảo tồn,WE_GOV_FOREST:50;WE_AGRI_FORESTRY:30;WE_SOCIAL_NGO:20,C,tam_thoi,"Lâm nghiệp, bảo tồn ở vườn quốc gia, kiểm lâm, công ty lâm nghiệp và tổ chức bảo tồn"
+ONET-19-1041.00,"Nhà nghiên cứu y sinh, dịch tễ",WE_SCI_INSTITUTE:60;WE_HEALTH_GRASSROOTS:40,C,tam_thoi,"Dịch tễ ở viện vệ sinh dịch tễ, Pasteur và trung tâm kiểm soát bệnh tật tỉnh"
+ONET-19-2012.00,Nhà vật lý,WE_SCI_INSTITUTE:60;WE_EDU_UNI_PUBLIC:40,C,tam_thoi,Nhà vật lý ở viện nghiên cứu và trường đại học
+ONET-19-2031.00,"Nhà hoá học, chuyên viên kiểm nghiệm",WE_SCI_TESTING_LAB:60;WE_MFG_LOCAL_PLANT:40,C,tam_thoi,Hoá kiểm nghiệm ở trung tâm kiểm nghiệm và phòng QC nhà máy
+ONET-19-2042.00,"Nhà khoa học địa chất, khí tượng thuỷ văn",WE_SCI_FIELD_STATION:70;WE_SCI_INSTITUTE:30,C,tam_thoi,"Khí tượng thuỷ văn, địa chất chủ yếu ở đài, trạm và đoàn địa chất"
+ONET-19-3011.00,Nhà kinh tế học,WE_SCI_INSTITUTE:40;WE_FIN_BANK_HQ:35;WE_GOV_OFFICE:25,C,tam_thoi,"Kinh tế học ở viện, khối phân tích ngân hàng và cơ quan nhà nước"
+ONET-19-3041.00,Nhà nghiên cứu khoa học xã hội,WE_SCI_INSTITUTE:50;WE_EDU_UNI_PUBLIC:30;WE_SOCIAL_NGO:20,C,tam_thoi,"Khoa học xã hội ở viện, trường đại học và tổ chức phát triển"
+ONET-19-3033.00,Nhà tâm lý học,WE_HEALTH_PUBLIC_HOSPITAL:40;WE_SOCIAL_COUNSELING:40;WE_EDU_UNI_PUBLIC:20,C,tam_thoi,"Nhà tâm lý ở bệnh viện (tâm thần, nhi), phòng tham vấn và trường đại học"
+ONET-19-3051.00,Chuyên viên quy hoạch đô thị,WE_CONS_CONSULTANT:60;WE_GOV_OFFICE:40,C,tam_thoi,"Quy hoạch ở viện, công ty tư vấn quy hoạch và sở quy hoạch"
+ONET-19-5011.00,Chuyên viên an toàn lao động (HSE),WE_CONS_SITE:50;WE_MFG_FDI_PLANT:50,C,tam_thoi,An toàn lao động ở công trường và nhà máy
+ONET-21-1014.00,Chuyên viên tư vấn tâm lý,WE_SOCIAL_COUNSELING:60;WE_SOCIAL_PUBLIC_CENTER:20;WE_SOCIAL_NGO:20,C,tam_thoi,"Tư vấn tâm lý chủ yếu ở phòng tham vấn tư; một phần ở trung tâm công tác xã hội, NGO"
+ONET-21-1012.00,Chuyên viên tư vấn học đường và hướng nghiệp,WE_EDU_PUBLIC_SCHOOL:45;WE_EDU_PRIVATE_SCHOOL:35;WE_EDU_CENTER:20,C,tam_thoi,"Tư vấn học đường, hướng nghiệp ở trường công, trường tư và trung tâm tư vấn"
+ONET-21-1021.00,Nhân viên công tác xã hội,WE_SOCIAL_PUBLIC_CENTER:55;WE_SOCIAL_NGO:30;WE_HEALTH_PUBLIC_HOSPITAL:15,B,co_so_lieu,"Công tác xã hội ở 425 cơ sở trợ giúp xã hội (195 công lập), NGO và phòng công tác xã hội bệnh viện"
+ONET-21-1094.00,Nhân viên y tế cộng đồng,WE_HEALTH_GRASSROOTS:80;WE_SOCIAL_NGO:20,A,co_so_lieu,Y tế cộng đồng là nhiệm vụ của trạm y tế xã (Thông tư 43/2025); một phần ở dự án NGO
+ONET-23-1011.00,Luật sư,WE_LEGAL_LAWFIRM:75;WE_CORP_FDI:25,B,co_so_lieu,"Khoảng 20.000 luật sư, phần lớn hành nghề ở tổ chức hành nghề luật sư; một phần làm pháp chế FDI"
+ONET-23-1023.00,Thẩm phán,WE_LEGAL_COURT:100,A,co_so_lieu,Thẩm phán chỉ làm ở toà án
+ONET-23-2011.00,"Trợ lý pháp lý, chuyên viên pháp chế",WE_LEGAL_LAWFIRM:40;WE_CORP_SME:30;WE_CORP_LARGE:30,C,tam_thoi,Trợ lý pháp lý ở công ty luật; pháp chế ở doanh nghiệp
+ONET-25-1081.00,"Giảng viên đại học, cao đẳng",WE_EDU_UNI_PUBLIC:65;WE_EDU_UNI_PRIVATE:35,C,tam_thoi,Giảng viên phần lớn ở trường công lập; đại học tư ít trường hơn
+ONET-25-2031.00,"Giáo viên trung học (THCS, THPT)",WE_EDU_PUBLIC_SCHOOL:75;WE_EDU_PRIVATE_SCHOOL:15;WE_EDU_CENTER:10,B,co_so_lieu,"Giáo viên ngoài công lập chỉ 10,1%; trung tâm luyện thi là nơi làm thêm"
+ONET-25-2021.00,Giáo viên tiểu học,WE_EDU_PUBLIC_SCHOOL:85;WE_EDU_PRIVATE_SCHOOL:15,B,co_so_lieu,"Giáo viên ngoài công lập chỉ 10,1%"
+ONET-25-2011.00,Giáo viên mầm non,WE_EDU_PUBLIC_SCHOOL:60;WE_EDU_PRIVATE_SCHOOL:40,B,co_so_lieu,Mầm non ngoài công lập nhiều hơn phổ thông (TP.HCM khoảng 62% trường mầm non)
+ONET-25-2051.00,Giáo viên giáo dục đặc biệt,WE_EDU_PUBLIC_SCHOOL:50;WE_EDU_CENTER:50,C,tam_thoi,"Giáo dục đặc biệt ở trường chuyên biệt, hoà nhập công lập và trung tâm can thiệp sớm tư nhân"
+ONET-25-3041.00,"Gia sư, giáo viên trung tâm",WE_EDU_CENTER:65;WE_EDU_ONLINE:35,C,tam_thoi,"Gia sư, giáo viên trung tâm dạy ở trung tâm và trực tuyến"
+ONET-25-4022.00,"Thủ thư, chuyên viên lưu trữ",WE_EDU_CULTURE:60;WE_EDU_UNI_PUBLIC:20;WE_GOV_OFFICE:20,C,tam_thoi,"Thủ thư, lưu trữ ở thư viện, kho lưu trữ, thư viện trường và văn thư lưu trữ cơ quan"
+ONET-25-4012.00,Chuyên viên bảo tàng,WE_EDU_CULTURE:100,C,tam_thoi,Chuyên viên bảo tàng làm ở bảo tàng
+ONET-25-9031.00,Chuyên viên phát triển chương trình đào tạo,WE_EDU_ONLINE:40;WE_EDU_CENTER:30;WE_CORP_FDI:30,C,tam_thoi,"Phát triển chương trình ở edtech, trung tâm và bộ phận đào tạo của doanh nghiệp"
+ONET-27-1024.00,Nhà thiết kế đồ hoạ,WE_CORP_AGENCY:45;WE_MEDIA_CREATIVE_STUDIO:30;WE_MEDIA_FREELANCE:25,B,co_so_lieu,"Thiết kế đồ hoạ nhiều ở agency (657 tin VietJobs), studio và freelance"
+ONET-27-1014.00,"Hoạ sĩ hoạt hình, kỹ xảo",WE_MEDIA_CREATIVE_STUDIO:70;WE_MEDIA_PRODUCTION:30,C,tam_thoi,"Hoạt hình, kỹ xảo ở studio hoạt hình, game art và công ty sản xuất phim"
+ONET-27-1013.00,"Hoạ sĩ, nghệ nhân",WE_MEDIA_FREELANCE:60;WE_MFG_WORKSHOP:40,C,tam_thoi,"Hoạ sĩ, nghệ nhân phần lớn tự do hoặc ở xưởng làng nghề"
+ONET-27-1021.00,Nhà thiết kế sản phẩm công nghiệp,WE_ENG_DESIGN_RND:50;WE_MFG_LOCAL_PLANT:30;WE_MEDIA_CREATIVE_STUDIO:20,C,tam_thoi,"Thiết kế sản phẩm ở phòng R&D, nhà máy và studio thiết kế"
+ONET-27-1022.00,Nhà thiết kế thời trang,WE_MEDIA_CREATIVE_STUDIO:45;WE_MFG_FDI_PLANT:35;WE_MEDIA_FREELANCE:20,C,tam_thoi,"Thiết kế thời trang ở thương hiệu trong nước, bộ phận phát triển mẫu nhà máy may và tự do"
+ONET-27-1025.00,Nhà thiết kế nội thất và trang trí,WE_CONS_CONSULTANT:60;WE_MEDIA_FREELANCE:20;WE_MFG_WORKSHOP:20,B,co_so_lieu,"Thiết kế nội thất chủ yếu ở công ty thiết kế thi công (158 tin VietJobs); tự do, xưởng nội thất"
+ONET-27-2011.00,Diễn viên,WE_ARTS_STATE_TROUPE:40;WE_MEDIA_PRODUCTION:35;WE_ARTS_ENTERTAINMENT:25,C,tam_thoi,"Diễn viên ở nhà hát công lập, phim và công ty giải trí"
+ONET-27-2012.00,"Đạo diễn, nhà sản xuất",WE_MEDIA_PRODUCTION:60;WE_MEDIA_NEWSROOM:25;WE_ARTS_STATE_TROUPE:15,C,tam_thoi,"Đạo diễn ở công ty sản xuất phim, đài truyền hình và nhà hát"
+ONET-27-2042.00,"Ca sĩ, nhạc công",WE_ARTS_ENTERTAINMENT:50;WE_ARTS_STATE_TROUPE:30;WE_MEDIA_FREELANCE:20,C,tam_thoi,"Ca sĩ, nhạc công ở công ty giải trí, phòng trà, nhà hát và show tự do"
+ONET-27-2031.00,Diễn viên múa,WE_ARTS_STATE_TROUPE:60;WE_ARTS_ENTERTAINMENT:40,C,tam_thoi,Diễn viên múa phần lớn ở nhà hát công lập; một phần ở công ty giải trí
+ONET-27-2021.00,"Vận động viên, huấn luyện viên thể thao",WE_SPORT_STATE_CENTER:60;WE_SPORT_PRO_CLUB:40,C,tam_thoi,Vận động viên phần lớn ở trung tâm huấn luyện tỉnh; câu lạc bộ chuyên nghiệp ít hơn
+ONET-27-3023.00,"Phóng viên, nhà báo",WE_MEDIA_NEWSROOM:85;WE_MEDIA_FREELANCE:15,B,co_so_lieu,Phóng viên làm ở 733 cơ quan báo chí; một phần cộng tác tự do
+ONET-27-3041.00,Biên tập viên,WE_MEDIA_NEWSROOM:65;WE_CORP_AGENCY:35,C,tam_thoi,Biên tập viên ở toà soạn và agency nội dung
+ONET-27-3043.00,"Nhà văn, người viết nội dung",WE_CORP_AGENCY:50;WE_MEDIA_FREELANCE:35;WE_CORP_SME:15,B,co_so_lieu,"Viết nội dung nhiều ở agency, tự do và SME (694 tin VietJobs)"
+ONET-27-3091.00,"Phiên dịch, biên dịch viên",WE_MFG_FDI_PLANT:40;WE_MEDIA_FREELANCE:40;WE_CORP_FDI:20,C,tam_thoi,"Phiên dịch tiếng Hàn, Nhật, Trung rất nhiều ở nhà máy FDI; tự do và văn phòng FDI"
+ONET-27-4031.00,"Nhiếp ảnh, quay phim và dựng phim",WE_MEDIA_PRODUCTION:45;WE_CORP_AGENCY:30;WE_MEDIA_FREELANCE:25,B,co_so_lieu,"Quay dựng ở công ty sản xuất, agency và tự do (715 tin VietJobs)"
+ONET-27-4014.00,"Kỹ thuật viên âm thanh, ánh sáng, phát sóng",WE_MEDIA_NEWSROOM:40;WE_ARTS_ENTERTAINMENT:40;WE_MEDIA_PRODUCTION:20,C,tam_thoi,"Kỹ thuật viên âm thanh, ánh sáng ở đài, sân khấu sự kiện và công ty sản xuất"
+ONET-29-1215.00,Bác sĩ,WE_HEALTH_PUBLIC_HOSPITAL:60;WE_HEALTH_PRIVATE_HOSPITAL:25;WE_HEALTH_CLINIC:15,B,co_so_lieu,"Khoảng 77% bệnh viện là công lập; bệnh viện tư chỉ 5,8% giường; phòng khám tư"
+ONET-29-1021.00,Bác sĩ răng hàm mặt (nha sĩ),WE_HEALTH_CLINIC:75;WE_HEALTH_PUBLIC_HOSPITAL:25,C,tam_thoi,Nha sĩ phần lớn ở phòng khám nha khoa tư; một phần ở bệnh viện
+ONET-29-1051.00,Dược sĩ,WE_HEALTH_PHARMACY:60;WE_HEALTH_PUBLIC_HOSPITAL:25;WE_MFG_LOCAL_PLANT:15,B,co_so_lieu,Khoảng 60.000 nhà thuốc; dược sĩ bệnh viện và nhà máy dược ít hơn
+ONET-29-1141.00,Điều dưỡng,WE_HEALTH_PUBLIC_HOSPITAL:65;WE_HEALTH_PRIVATE_HOSPITAL:25;WE_HEALTH_CARE_HOME:10,B,co_so_lieu,"Điều dưỡng chủ yếu ở bệnh viện công (77% số bệnh viện); bệnh viện tư, dưỡng lão"
+ONET-29-1161.00,Hộ sinh,WE_HEALTH_PUBLIC_HOSPITAL:75;WE_HEALTH_PRIVATE_HOSPITAL:25,B,co_so_lieu,"Hộ sinh ở khoa sản bệnh viện, phần lớn công lập"
+ONET-29-1151.00,Kỹ thuật viên gây mê hồi sức,WE_HEALTH_PUBLIC_HOSPITAL:70;WE_HEALTH_PRIVATE_HOSPITAL:30,B,co_so_lieu,"Gây mê ở bệnh viện có phòng mổ, phần lớn công lập"
+ONET-29-1123.00,"Kỹ thuật viên, chuyên viên phục hồi chức năng",WE_HEALTH_PUBLIC_HOSPITAL:50;WE_HEALTH_CLINIC:35;WE_HEALTH_CARE_HOME:15,C,tam_thoi,"Phục hồi chức năng ở bệnh viện, phòng khám vật lý trị liệu và dưỡng lão"
+ONET-29-1291.00,"Y học cổ truyền, châm cứu",WE_HEALTH_PUBLIC_HOSPITAL:50;WE_HEALTH_CLINIC:50,C,tam_thoi,Y học cổ truyền ở bệnh viện y học cổ truyền và phòng khám đông y
+ONET-29-1031.00,Chuyên viên dinh dưỡng,WE_HEALTH_PUBLIC_HOSPITAL:50;WE_HEALTH_PRIVATE_HOSPITAL:25;WE_MFG_FOOD_PLANT:25,C,tam_thoi,"Dinh dưỡng ở bệnh viện và công ty sữa, thực phẩm"
+ONET-29-1131.00,Bác sĩ thú y,WE_HEALTH_VET:70;WE_AGRI_ENTERPRISE_FARM:30,C,tam_thoi,Bác sĩ thú y ở phòng khám thú cưng và trang trại chăn nuôi
+ONET-29-2011.00,Kỹ thuật viên xét nghiệm,WE_HEALTH_PUBLIC_HOSPITAL:55;WE_HEALTH_PRIVATE_HOSPITAL:30;WE_SCI_TESTING_LAB:15,C,tam_thoi,Xét nghiệm ở bệnh viện và phòng thí nghiệm dịch vụ
+ONET-29-2034.00,Kỹ thuật viên chẩn đoán hình ảnh,WE_HEALTH_PUBLIC_HOSPITAL:65;WE_HEALTH_PRIVATE_HOSPITAL:35,B,co_so_lieu,"Chẩn đoán hình ảnh ở bệnh viện, phần lớn công lập"
+ONET-29-1041.00,"Kỹ thuật viên khúc xạ, nhãn khoa",WE_HEALTH_CLINIC:60;WE_HEALTH_PUBLIC_HOSPITAL:40,C,tam_thoi,"Khúc xạ, nhãn khoa ở phòng khám mắt, kính và khoa mắt bệnh viện"
+ONET-29-2043.00,Nhân viên cấp cứu ngoại viện,WE_HEALTH_EMERGENCY:100,A,co_so_lieu,"Cấp cứu ngoại viện làm ở trung tâm 115 (có phụ cấp trực riêng, Nghị định 192/2026)"
+ONET-29-2072.00,Chuyên viên hồ sơ bệnh án,WE_HEALTH_PUBLIC_HOSPITAL:70;WE_HEALTH_PRIVATE_HOSPITAL:30,B,co_so_lieu,"Hồ sơ bệnh án ở bệnh viện, phần lớn công lập"
+ONET-31-1131.00,"Hộ lý, trợ lý điều dưỡng",WE_HEALTH_PUBLIC_HOSPITAL:55;WE_HEALTH_PRIVATE_HOSPITAL:25;WE_HEALTH_CARE_HOME:20,B,co_so_lieu,"Hộ lý ở bệnh viện, phần lớn công lập; dưỡng lão"
+ONET-31-1121.00,Nhân viên chăm sóc tại nhà,WE_PERS_HOUSEHOLD:50;WE_HEALTH_CARE_HOME:50,C,tam_thoi,"Chăm sóc tại nhà qua công ty cung ứng hoặc thuê trực tiếp, và ở viện dưỡng lão"
+ONET-31-9091.00,Trợ thủ nha khoa,WE_HEALTH_CLINIC:100,C,tam_thoi,Trợ thủ nha khoa làm ở phòng khám nha khoa
+ONET-31-9092.00,Trợ lý y khoa,WE_HEALTH_CLINIC:50;WE_HEALTH_PRIVATE_HOSPITAL:50,C,tam_thoi,Trợ lý y khoa ở phòng khám và bệnh viện tư
+ONET-31-9011.00,Chuyên viên xoa bóp trị liệu,WE_PERS_BEAUTY_CHAIN:40;WE_HEALTH_CLINIC:30;WE_PERS_BEAUTY_SMALL:30,C,tam_thoi,"Xoa bóp trị liệu ở spa, phòng khám vật lý trị liệu, đông y và tiệm nhỏ"
+ONET-33-3051.00,Cảnh sát (công an),WE_GOV_POLICE:100,A,co_so_lieu,Cảnh sát chỉ làm trong lực lượng công an
+ONET-33-3021.00,Điều tra viên,WE_GOV_POLICE:100,A,co_so_lieu,Điều tra viên ở cơ quan cảnh sát điều tra
+ONET-33-3012.00,Cán bộ quản giáo,WE_GOV_PRISON:100,A,co_so_lieu,"Quản giáo ở trại giam, trại tạm giam"
+ONET-33-2011.00,"Lính cứu hoả, cứu nạn",WE_GOV_FIRE:100,A,co_so_lieu,Lính cứu hoả ở lực lượng cảnh sát phòng cháy chữa cháy
+ONET-33-2022.00,Kiểm lâm,WE_GOV_FOREST:100,A,co_so_lieu,"Kiểm lâm ở hạt kiểm lâm, vườn quốc gia"
+ONET-33-3051.04,Cán bộ hải quan và biên phòng cửa khẩu,WE_GOV_BORDER:100,A,co_so_lieu,"Hải quan, biên phòng ở cửa khẩu"
+ONET-33-9032.00,"Nhân viên bảo vệ, an ninh",WE_FAC_OUTSOURCED_SERVICE:70;WE_FAC_BUILDING:30,C,tam_thoi,Bảo vệ phần lớn qua công ty dịch vụ bảo vệ; một phần thuê trực tiếp ở toà nhà
+ONET-33-9092.00,"Nhân viên cứu hộ bể bơi, bãi biển",WE_HOSP_ENTERTAINMENT:50;WE_HOSP_HOTEL:30;WE_PERS_GYM:20,C,tam_thoi,"Cứu hộ ở công viên nước, bể bơi khách sạn và phòng tập"
+ONET-35-2014.00,Đầu bếp,WE_HOSP_FNB_CHAIN:40;WE_HOSP_FNB_SMALL:30;WE_HOSP_HOTEL:30,C,tam_thoi,"Đầu bếp ở chuỗi, quán độc lập và bếp khách sạn"
+ONET-35-3023.01,"Nhân viên pha chế (barista, bartender)",WE_HOSP_FNB_CHAIN:55;WE_HOSP_FNB_SMALL:45,C,tam_thoi,Pha chế ở chuỗi cà phê và quán độc lập
+ONET-35-3031.00,Nhân viên phục vụ nhà hàng,WE_HOSP_FNB_CHAIN:45;WE_HOSP_FNB_SMALL:35;WE_HOSP_HOTEL:20,C,tam_thoi,"Phục vụ ở chuỗi, quán độc lập và nhà hàng khách sạn"
+ONET-37-2011.00,Nhân viên vệ sinh và buồng phòng,WE_HOSP_HOTEL:45;WE_FAC_OUTSOURCED_SERVICE:40;WE_HOSP_SMALL_LODGING:15,C,tam_thoi,Buồng phòng ở khách sạn; vệ sinh qua công ty dịch vụ vệ sinh
+ONET-37-3011.00,Công nhân cảnh quan và cây xanh,WE_FAC_URBAN_ENV:70;WE_FAC_BUILDING:30,C,tam_thoi,Cây xanh ở công ty công viên cây xanh và ban quản lý khu đô thị
+ONET-37-2021.00,Nhân viên kiểm soát côn trùng,WE_FAC_HOME_SERVICE:100,C,tam_thoi,Kiểm soát côn trùng ở công ty dịch vụ tận nơi
+ONET-39-5012.00,Thợ làm tóc,WE_PERS_BEAUTY_SMALL:70;WE_PERS_BEAUTY_CHAIN:30,B,co_so_lieu,"Thợ tóc phần lớn ở tiệm nhỏ (5,3 triệu cơ sở cá thể); chuỗi salon ít hơn"
+ONET-39-5094.00,Chuyên viên chăm sóc da (spa),WE_PERS_BEAUTY_CHAIN:55;WE_PERS_BEAUTY_SMALL:45,C,tam_thoi,Chăm sóc da ở chuỗi spa (tuyển nhiều trên trang việc làm) và spa nhỏ
+ONET-39-5092.00,Thợ làm móng,WE_PERS_BEAUTY_SMALL:80;WE_PERS_BEAUTY_CHAIN:20,B,co_so_lieu,Thợ nail phần lớn ở tiệm nhỏ
+ONET-39-5091.00,Chuyên viên trang điểm,WE_MEDIA_FREELANCE:60;WE_PERS_BEAUTY_SMALL:25;WE_MEDIA_PRODUCTION:15,C,tam_thoi,"Trang điểm phần lớn tự do theo show cưới; một phần ở studio áo cưới, đoàn phim"
+ONET-39-7011.00,Hướng dẫn viên du lịch,WE_HOSP_TRAVEL:100,A,co_so_lieu,Hướng dẫn viên phải có hợp đồng với doanh nghiệp lữ hành hoặc là hội viên tổ chức nghề nghiệp (Luật Du lịch 2017)
+ONET-39-9011.00,"Nhân viên trông trẻ, bảo mẫu",WE_PERS_HOUSEHOLD:60;WE_EDU_PRIVATE_SCHOOL:40,C,tam_thoi,Trông trẻ tại nhà gia đình và bảo mẫu ở trường mầm non tư
+ONET-39-9031.00,Huấn luyện viên thể hình,WE_PERS_GYM:80;WE_HOSP_HOTEL:20,C,tam_thoi,"Huấn luyện viên thể hình ở phòng gym, một phần ở khách sạn, resort"
+ONET-39-9032.00,Nhân viên tổ chức hoạt động vui chơi giải trí,WE_HOSP_ENTERTAINMENT:60;WE_HOSP_HOTEL:25;WE_CORP_AGENCY:15,C,tam_thoi,"Hoạt động vui chơi ở khu giải trí, đội hoạt náo resort và agency sự kiện"
+ONET-39-2021.00,Nhân viên chăm sóc thú cưng và động vật,WE_PERS_PET:70;WE_HEALTH_VET:30,C,tam_thoi,"Chăm sóc thú cưng ở pet shop, spa và phòng khám thú y"
+ONET-39-4031.00,Nhân viên dịch vụ tang lễ,WE_PERS_FUNERAL:100,C,tam_thoi,Tang lễ ở nhà tang lễ và công ty dịch vụ tang lễ
+ONET-41-2031.00,Nhân viên bán hàng,WE_RETAIL_CHAIN:55;WE_RETAIL_SHOP:45,B,co_so_lieu,Bán lẻ truyền thống 65–70% thị trường nhưng chuỗi tuyển trên trang việc làm nhiều hơn
+ONET-41-2011.00,Thu ngân,WE_RETAIL_CHAIN:65;WE_HOSP_FNB_CHAIN:35,C,tam_thoi,"Thu ngân ở siêu thị, cửa hàng tiện lợi và chuỗi F&B"
+ONET-41-3021.00,Tư vấn viên bảo hiểm,WE_FIN_INSURANCE:70;WE_FIN_BANK_BRANCH:30,C,tam_thoi,Tư vấn bảo hiểm phần lớn là đại lý của công ty bảo hiểm; một phần bán qua ngân hàng
+ONET-41-3031.00,Nhân viên môi giới chứng khoán,WE_FIN_SECURITIES:100,C,tam_thoi,Môi giới chứng khoán làm ở công ty chứng khoán
+ONET-41-9022.00,Nhân viên môi giới bất động sản,WE_CORP_REALESTATE:100,C,tam_thoi,Môi giới bất động sản làm ở sàn hoặc văn phòng môi giới
+ONET-41-4012.00,Nhân viên kinh doanh (sales B2B),WE_CORP_SME:50;WE_CORP_FDI:25;WE_CORP_LOGISTICS:25,B,co_so_lieu,"Sales B2B nhiều nhất ở SME (3.511 tin VietJobs), FDI và logistics"
+ONET-41-9031.00,Kỹ sư kinh doanh (sales kỹ thuật),WE_ENG_EQUIPMENT_SERVICE:55;WE_CORP_FDI:45,C,tam_thoi,Sales kỹ thuật ở nhà cung cấp thiết bị và công ty FDI
+ONET-41-3041.00,Nhân viên kinh doanh tour du lịch,WE_HOSP_TRAVEL:80;WE_HOSP_HOTEL:20,C,tam_thoi,"Kinh doanh tour ở công ty lữ hành; một phần ở bộ phận bán của khách sạn, resort"
+ONET-41-9012.00,Người mẫu,WE_ARTS_ENTERTAINMENT:60;WE_MEDIA_FREELANCE:40,C,tam_thoi,"Người mẫu qua công ty quản lý, agency và tự do"
+ONET-43-6014.00,"Nhân viên hành chính, thư ký",WE_CORP_SME:50;WE_CORP_LARGE:25;WE_GOV_OFFICE:25,C,tam_thoi,"Hành chính, thư ký ở SME, tập đoàn và cơ quan nhà nước"
+ONET-43-4051.00,Nhân viên chăm sóc khách hàng,WE_CORP_LARGE:45;WE_CORP_SME:35;WE_FIN_BANK_HQ:20,C,tam_thoi,"Chăm sóc khách hàng nhiều ở tổng đài tập đoàn, SME và ngân hàng"
+ONET-43-4081.00,Lễ tân khách sạn,WE_HOSP_HOTEL:65;WE_HOSP_SMALL_LODGING:35,C,tam_thoi,Lễ tân ở khách sạn lớn và khách sạn nhỏ
+ONET-43-3071.00,Giao dịch viên ngân hàng,WE_FIN_BANK_BRANCH:100,A,co_so_lieu,"Giao dịch viên chỉ làm ở quầy chi nhánh, phòng giao dịch ngân hàng"
+ONET-43-4031.00,Cán bộ tiếp nhận hồ sơ hành chính công,WE_GOV_ONESTOP:100,A,co_so_lieu,"Tiếp nhận hồ sơ ở trung tâm phục vụ hành chính công, bộ phận một cửa"
+ONET-43-5071.00,Nhân viên kho và kế hoạch vật tư,WE_TRANS_WAREHOUSE:40;WE_MFG_FDI_PLANT:35;WE_MFG_LOCAL_PLANT:25,B,co_so_lieu,"Nhân viên kho ở kho vận và nhà máy (545 tin VietJobs, 74% làm thứ 7)"
+ONET-43-5021.00,Nhân viên giao hàng (shipper),WE_TRANS_DELIVERY:100,C,tam_thoi,Shipper ở công ty giao vận và ứng dụng giao hàng
+ONET-43-5051.00,Nhân viên bưu chính,WE_TRANS_POSTAL:100,C,tam_thoi,Nhân viên bưu chính ở bưu điện
+ONET-43-5032.00,Điều phối viên vận tải và khẩn cấp,WE_TRANS_ROAD_FREIGHT:50;WE_CORP_LOGISTICS:30;WE_HEALTH_EMERGENCY:20,C,tam_thoi,"Điều phối vận tải ở nhà xe, công ty logistics và tổng đài cấp cứu"
+ONET-45-2092.00,Lao động trồng trọt,WE_AGRI_FAMILY_FARM:75;WE_AGRI_ENTERPRISE_FARM:25,B,co_so_lieu,Nông nghiệp phần lớn là nông hộ; 28.349 trang trại
+ONET-45-2093.00,Lao động chăn nuôi và nuôi trồng thuỷ sản,WE_AGRI_FAMILY_FARM:60;WE_AGRI_ENTERPRISE_FARM:40,B,co_so_lieu,"Chăn nuôi, thuỷ sản phần lớn ở nông hộ; doanh nghiệp chăn nuôi khép kín đang tăng"
+ONET-45-3031.00,"Ngư dân, người đánh bắt thuỷ sản",WE_AGRI_FISHING:100,A,co_so_lieu,"Ngư dân đánh bắt trên tàu cá (hơn 81.700 tàu, 28.100 tàu từ 15 m)"
+ONET-45-4011.00,Công nhân lâm nghiệp,WE_AGRI_FORESTRY:70;WE_AGRI_FAMILY_FARM:30,C,tam_thoi,Công nhân lâm nghiệp ở công ty lâm nghiệp và hộ trồng rừng
+ONET-47-2021.00,"Thợ xây, ốp lát",WE_CONS_CREW:60;WE_CONS_SITE:40,C,tam_thoi,Thợ xây phần lớn ở tổ đội thợ phi chính thức; một phần ở công trường nhà thầu
+ONET-47-2031.00,Thợ mộc,WE_CONS_CREW:55;WE_CONS_SITE:45,C,tam_thoi,Thợ mộc công trình (cốp pha) ở tổ đội và nhà thầu
+ONET-47-2141.00,"Thợ sơn, thạch cao và hoàn thiện",WE_CONS_CREW:70;WE_CONS_SITE:30,C,tam_thoi,"Thợ sơn, thạch cao phần lớn ở tổ đội thợ"
+ONET-47-2111.00,Thợ điện công trình,WE_CONS_SITE:50;WE_CONS_CREW:30;WE_FAC_HOME_SERVICE:20,B,co_so_lieu,"Thợ điện công trình ở nhà thầu (94 tin VietJobs), tổ đội và sửa điện tận nhà"
+ONET-47-2152.00,"Thợ ống nước, đường ống",WE_CONS_CREW:40;WE_FAC_HOME_SERVICE:40;WE_CONS_SITE:20,C,tam_thoi,"Thợ ống nước ở tổ đội, sửa chữa tận nhà và công trường"
+ONET-47-2221.00,"Thợ kết cấu thép, nhôm kính",WE_CONS_SITE:55;WE_MFG_WORKSHOP:45,C,tam_thoi,"Thợ kết cấu thép, nhôm kính ở công trường và xưởng nhôm kính"
+ONET-47-2073.00,Người vận hành máy thi công,WE_CONS_SITE:80;WE_ENERGY_MINE:20,C,tam_thoi,Vận hành máy thi công ở công trường; một phần ở mỏ lộ thiên
+ONET-47-5041.00,"Công nhân khai thác mỏ, dầu khí",WE_ENERGY_MINE:70;WE_ENERGY_OIL_GAS:30,C,tam_thoi,Thợ mỏ phần lớn ở mỏ than; một phần ở dầu khí
+ONET-49-3023.00,Thợ sửa chữa ô tô,WE_REPAIR_DEALER:55;WE_REPAIR_SHOP:45,C,tam_thoi,Thợ sửa ô tô ở xưởng đại lý và garage tư
+ONET-49-3052.00,Thợ sửa xe máy,WE_REPAIR_SHOP:75;WE_REPAIR_DEALER:25,C,tam_thoi,Thợ sửa xe máy phần lớn ở tiệm nhỏ; một phần ở đại lý chính hãng
+ONET-49-3042.00,"Thợ sửa máy công trình, máy nông nghiệp",WE_REPAIR_SHOP:40;WE_ENG_EQUIPMENT_SERVICE:40;WE_CONS_SITE:20,C,tam_thoi,"Sửa máy công trình, nông nghiệp ở tiệm, nhà cung cấp thiết bị và công trường"
+ONET-49-3011.00,Kỹ thuật viên bảo dưỡng máy bay,WE_REPAIR_AVIATION:100,A,co_so_lieu,Bảo dưỡng máy bay ở trung tâm bảo dưỡng tàu bay (cần chứng chỉ CRS)
+ONET-49-9021.00,Thợ điện lạnh,WE_FAC_HOME_SERVICE:60;WE_FAC_BUILDING:25;WE_MFG_FDI_PLANT:15,B,co_so_lieu,"Điện lạnh phần lớn là dịch vụ tận nhà (mùa nóng cao điểm); toà nhà, nhà máy"
+ONET-49-9041.00,Thợ bảo trì máy công nghiệp,WE_MFG_FDI_PLANT:50;WE_MFG_LOCAL_PLANT:35;WE_MFG_FOOD_PLANT:15,B,co_so_lieu,Bảo trì máy ở nhà máy (336 tin VietJobs)
+ONET-49-9051.00,Công nhân đường dây và trạm điện,WE_ENERGY_GRID:100,C,tam_thoi,Công nhân đường dây làm cho ngành điện
+ONET-49-9052.00,Kỹ thuật viên lắp đặt viễn thông,WE_ENG_TELECOM:100,C,tam_thoi,Lắp đặt viễn thông làm cho nhà mạng
+ONET-49-2094.00,"Thợ sửa chữa điện, điện tử",WE_REPAIR_SHOP:55;WE_ENG_EQUIPMENT_SERVICE:45,C,tam_thoi,Sửa điện tử ở tiệm sửa chữa và nhà cung cấp thiết bị
+ONET-51-2092.00,Công nhân lắp ráp,WE_MFG_FDI_PLANT:75;WE_MFG_LOCAL_PLANT:25,B,co_so_lieu,Lắp ráp điện tử tập trung ở nhà máy FDI (bình quân 206 lao động/doanh nghiệp)
+ONET-51-4041.00,"Thợ cơ khí, tiện phay CNC",WE_MFG_LOCAL_PLANT:45;WE_MFG_FDI_PLANT:40;WE_MFG_WORKSHOP:15,C,tam_thoi,"Thợ CNC ở nhà máy cơ khí trong nước, FDI và xưởng nhỏ"
+ONET-51-4121.00,Thợ hàn,WE_MFG_LOCAL_PLANT:40;WE_CONS_SITE:35;WE_MFG_WORKSHOP:25,C,tam_thoi,"Thợ hàn ở nhà máy, công trường và xưởng nhỏ"
+ONET-51-3092.00,Công nhân chế biến thực phẩm,WE_MFG_FOOD_PLANT:80;WE_MFG_WORKSHOP:20,C,tam_thoi,Chế biến thực phẩm ở nhà máy; một phần ở cơ sở nhỏ
+ONET-51-3011.00,Thợ làm bánh,WE_HOSP_FNB_CHAIN:40;WE_MFG_WORKSHOP:35;WE_MFG_FOOD_PLANT:25,C,tam_thoi,"Thợ làm bánh ở chuỗi tiệm bánh, xưởng nhỏ và nhà máy bánh kẹo"
+ONET-51-5112.00,Công nhân in ấn,WE_MFG_LOCAL_PLANT:50;WE_MFG_WORKSHOP:50,C,tam_thoi,In ấn ở nhà máy bao bì và xưởng in nhỏ
+ONET-51-6031.00,"Công nhân may mặc, da giày",WE_MFG_FDI_PLANT:75;WE_MFG_LOCAL_PLANT:25,B,co_so_lieu,"May mặc, da giày xuất khẩu tập trung ở nhà máy FDI"
+ONET-51-7011.00,Thợ mộc đồ gỗ nội thất,WE_MFG_WORKSHOP:60;WE_MFG_LOCAL_PLANT:40,C,tam_thoi,Mộc nội thất ở xưởng làng nghề và nhà máy gỗ xuất khẩu
+ONET-51-8013.00,Vận hành nhà máy điện,WE_ENERGY_POWER_PLANT:100,C,tam_thoi,Vận hành nhà máy điện làm ở nhà máy điện
+ONET-51-8031.00,"Vận hành nhà máy nước, xử lý nước thải",WE_ENERGY_WATER:100,C,tam_thoi,"Vận hành nhà máy nước ở công ty cấp nước, xử lý nước thải"
+ONET-51-8091.00,"Vận hành nhà máy hoá chất, lọc dầu, khí",WE_ENERGY_OIL_GAS:70;WE_MFG_LOCAL_PLANT:30,C,tam_thoi,"Vận hành hoá chất, lọc dầu ở nhà máy lọc hoá dầu và nhà máy hoá chất"
+ONET-51-9061.00,Nhân viên kiểm tra chất lượng sản xuất (QC),WE_MFG_FDI_PLANT:55;WE_MFG_LOCAL_PLANT:30;WE_MFG_FOOD_PLANT:15,B,co_so_lieu,"QC nhiều ở nhà máy (335 tin VietJobs), nhất là FDI"
+ONET-51-9141.00,Kỹ thuật viên sản xuất bán dẫn,WE_MFG_CLEANROOM:100,C,tam_thoi,Bán dẫn làm ở nhà máy phòng sạch
+ONET-51-9071.00,Thợ kim hoàn,WE_MFG_WORKSHOP:70;WE_RETAIL_CHAIN:30,C,tam_thoi,Kim hoàn phần lớn ở xưởng gia đình; một phần ở xưởng của chuỗi trang sức
+ONET-51-9081.00,"Kỹ thuật viên phục hình, chỉnh hình",WE_MFG_WORKSHOP:70;WE_HEALTH_PUBLIC_HOSPITAL:30,C,tam_thoi,Phục hình chỉnh hình phần lớn ở labo nha khoa tư; một phần ở trung tâm chỉnh hình công lập
+ONET-51-9111.00,Công nhân vận hành máy sản xuất,WE_MFG_FDI_PLANT:55;WE_MFG_LOCAL_PLANT:45,C,tam_thoi,Vận hành máy ở nhà máy FDI và trong nước
+ONET-53-2011.00,Phi công,WE_TRANS_AIRLINE:100,A,co_so_lieu,Phi công làm cho hãng hàng không
+ONET-53-2021.00,Kiểm soát viên không lưu,WE_TRANS_ATC:100,A,co_so_lieu,Kiểm soát viên không lưu làm ở đơn vị quản lý bay
+ONET-53-2031.00,Tiếp viên,WE_TRANS_AIRLINE:100,A,co_so_lieu,Tiếp viên làm cho hãng hàng không
+ONET-53-3032.00,Tài xế xe tải,WE_TRANS_ROAD_FREIGHT:80;WE_TRANS_DELIVERY:20,C,tam_thoi,Tài xế tải ở doanh nghiệp vận tải; một phần lái xe tải nhỏ giao hàng
+ONET-53-3052.00,"Tài xế xe khách, xe buýt",WE_TRANS_PASSENGER:100,C,tam_thoi,"Tài xế xe khách, xe buýt ở doanh nghiệp vận tải hành khách"
+ONET-53-4011.00,"Lái tàu hoả, tàu điện",WE_TRANS_RAIL:100,C,tam_thoi,Lái tàu ở đường sắt và metro
+ONET-53-5021.00,"Thuyền viên, sĩ quan hàng hải",WE_TRANS_SHIP:100,C,tam_thoi,"Thuyền viên làm cho hãng tàu, công ty cung ứng thuyền viên"
+ONET-53-7051.00,"Người vận hành xe nâng, cần cẩu",WE_TRANS_PORT:40;WE_TRANS_WAREHOUSE:35;WE_CONS_SITE:25,C,tam_thoi,"Xe nâng, cần cẩu ở cảng, kho và công trường"
+ONET-53-7062.00,"Công nhân bốc xếp, đóng gói",WE_TRANS_WAREHOUSE:60;WE_TRANS_PORT:25;WE_MFG_FDI_PLANT:15,C,tam_thoi,"Bốc xếp ở kho vận, cảng và nhà máy"
+ONET-53-7081.00,"Công nhân thu gom, xử lý rác và chất thải",WE_FAC_URBAN_ENV:100,B,co_so_lieu,Thu gom rác làm cho công ty môi trường đô thị
+ONET-53-6051.00,"Đăng kiểm viên, thanh tra giao thông",WE_TRANS_INSPECTION:75;WE_GOV_OFFICE:25,C,tam_thoi,Đăng kiểm viên ở trung tâm đăng kiểm; thanh tra giao thông ở cơ quan nhà nước

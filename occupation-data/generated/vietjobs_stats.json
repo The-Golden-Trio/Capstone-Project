@@ -6,7 +6,20 @@
     "matched_any_role": 20503,
     "pay_rule": "Trung điểm khoảng lương rao (triệu đồng/tháng), bỏ tin thoả thuận và tin ngoài [4.0, 150.0] triệu. Chỉ tính phân vị khi có từ 20 tin có lương.",
     "share_rule": "Số tin của nghề trên 10.000 tin sau làm sạch; một tin có thể tính cho nhiều nghề. Là chỉ báo tương đối trong một bộ dữ liệu từ trang tuyển dụng, nghiêng về việc văn phòng ở Hà Nội và TP.HCM.",
-    "caveat": "Lương rao, không phải lương thực nhận. Bộ dữ liệu không có ngày đăng của từng tin."
+    "caveat": "Lương rao, không phải lương thực nhận. Bộ dữ liệu không có ngày đăng của từng tin.",
+    "schedule_rule": "Chỉ tính khi nghề có từ 20 tin ghi giờ làm. Thứ 7, chủ nhật, giờ một tuần, giờ vào làm đọc từ cột giờ làm của tin; giờ một tuần trừ 1 giờ nghỉ trưa khi khung giờ vắt qua 12:00–13:00, chưa trừ giờ nghỉ giữa ca gãy. Làm ca, ca đêm tìm theo cụm từ trong giờ làm và mô tả; đồng phục tìm trong phúc lợi. over_legal_week_pct là tỉ lệ tin rao trên 48 giờ/tuần (trần giờ làm bình thường, Điều 105 Bộ luật Lao động 2019).",
+    "schedule_all": {
+      "with_hours": 30351,
+      "saturday_pct": 66,
+      "saturday_half_pct": 13,
+      "sunday_pct": 5,
+      "shift_pct": 6,
+      "night_pct": 1,
+      "uniform_pct": 2,
+      "week_hours_median": 46.5,
+      "over_legal_week_pct": 20,
+      "start_median": "08:00"
+    }
   },
   "roles": {
     "ONET-11-1021.00": {
@@ -24,7 +37,19 @@
         "Giám Đốc Chi Nhánh",
         "Thư Ký Tổng Giám Đốc",
         "Giám đốc điều hành thương hiệu"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 101,
+        "saturday_pct": 64,
+        "saturday_half_pct": 18,
+        "sunday_pct": 3,
+        "shift_pct": 2,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 45.0,
+        "over_legal_week_pct": 20,
+        "start_median": "08:00"
+      }
     },
     "ONET-11-3051.00": {
       "postings": 142,
@@ -41,7 +66,19 @@
         "Trưởng Phòng Sản Xuất",
         "Nhân Viên Quản Lý Sản Xuất",
         "Quản Đốc Sản Xuất"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 118,
+        "saturday_pct": 89,
+        "saturday_half_pct": 3,
+        "sunday_pct": 3,
+        "shift_pct": 1,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 21,
+        "start_median": "08:00"
+      }
     },
     "ONET-11-3012.00": {
       "postings": 70,
@@ -58,7 +95,19 @@
         "Trưởng Phòng HCNS",
         "Giám Đốc Hành Chính (Admin Manager) - Tiếng Trung",
         "Trưởng Phòng Hành Chính Kế Toán"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 65,
+        "saturday_pct": 89,
+        "saturday_half_pct": 20,
+        "sunday_pct": 3,
+        "shift_pct": 0,
+        "night_pct": 2,
+        "uniform_pct": 6,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 22,
+        "start_median": "08:00"
+      }
     },
     "ONET-11-9021.00": {
       "postings": 71,
@@ -75,7 +124,19 @@
         "Chỉ Huy Trưởng Cơ Điện",
         "Chỉ Huy Trưởng, Chỉ Huy Phó Thi Công Cơ Điện (MEP)",
         "Chỉ Huy Trưởng Dự Án"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 52,
+        "saturday_pct": 92,
+        "saturday_half_pct": 15,
+        "sunday_pct": 6,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 6,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 43,
+        "start_median": "08:00"
+      }
     },
     "ONET-11-9041.00": {
       "postings": 53,
@@ -92,7 +153,19 @@
         "Trưởng Phòng Kỹ Thuật Hạ Tầng, Giao Thông",
         "Trưởng Phòng R&D Kỹ Thuật",
         "Trưởng Phòng Kỹ Thuật Điện"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 46,
+        "saturday_pct": 54,
+        "saturday_half_pct": 11,
+        "sunday_pct": 2,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 11,
+        "start_median": "08:00"
+      }
     },
     "ONET-11-9032.00": {
       "postings": 29,
@@ -105,7 +178,19 @@
         "Phó Hiệu Trưởng",
         "Trưởng Phòng Đào Tạo & ISO",
         "Chuyên Viên Quản Lý Đào Tạo"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 24,
+        "saturday_pct": 62,
+        "saturday_half_pct": 12,
+        "sunday_pct": 4,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 44.2,
+        "over_legal_week_pct": 22,
+        "start_median": "08:00"
+      }
     },
     "ONET-11-9051.00": {
       "postings": 80,
@@ -122,7 +207,19 @@
         "Cửa Hàng Trưởng/Quản Lý Nhà Hàng",
         "Quản lý quan hệ đối tác",
         "Quản Lý Nhà Hàng Nướng Hàn Quốc"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 64,
+        "saturday_pct": 33,
+        "saturday_half_pct": 2,
+        "sunday_pct": 25,
+        "shift_pct": 44,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 51.0,
+        "over_legal_week_pct": 57,
+        "start_median": "08:00"
+      }
     },
     "ONET-11-9081.00": {
       "postings": 20,
@@ -185,7 +282,19 @@
         "Kế Toán Nội Bộ",
         "Nhân Viên Kế Toán Tổng Hợp",
         "Kế Toán Thuế"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 2770,
+        "saturday_pct": 77,
+        "saturday_half_pct": 18,
+        "sunday_pct": 3,
+        "shift_pct": 1,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 20,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1041.00": {
       "postings": 69,
@@ -202,7 +311,19 @@
         "Kiểm Soát Nội Bộ",
         "Chuyên Viên Kiểm Soát Tuân Thủ",
         "Nhân Viên QA Tuân Thủ (QA Compliance)"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 63,
+        "saturday_pct": 70,
+        "saturday_half_pct": 17,
+        "sunday_pct": 2,
+        "shift_pct": 2,
+        "night_pct": 0,
+        "uniform_pct": 3,
+        "week_hours_median": 45.0,
+        "over_legal_week_pct": 14,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1031.00": {
       "postings": 8,
@@ -232,7 +353,19 @@
         "CHUYÊN VIÊN QUAN HỆ KHÁCH HÀNG CÁ NHÂN",
         "Tổng Đài Viên Xử Lý Hồ Sơ Tín Dụng",
         "Chuyên Viên Cao Cấp Quan Hệ Khách Hàng Doanh Nghiệp Vừa Và Nhỏ (SME RM)"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 42,
+        "saturday_pct": 38,
+        "saturday_half_pct": 14,
+        "sunday_pct": 5,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 40.0,
+        "over_legal_week_pct": 8,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-2052.00": {
       "postings": 51,
@@ -249,7 +382,19 @@
         "Nhân Viên Kinh Doanh - Chuyên Viên Tư Vấn Tài Chính Kênh Ngân Hàng",
         "Chuyên Viên Kinh Doanh/Sale/Tư Vấn Tài Chính",
         "Chuyên Viên Tư Vấn Tài Chính Và Dịch Vụ Khách Hàng"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 41,
+        "saturday_pct": 17,
+        "saturday_half_pct": 0,
+        "sunday_pct": 0,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 40.0,
+        "over_legal_week_pct": 5,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-2099.01": {
       "postings": 0,
@@ -269,7 +414,19 @@
         "Nhân Viên Quy Hoạch, Kế Hoạch Và Định Giá Đất",
         "Chuyên Viên Thẩm Định Giá (Sơ Bộ Xây Dựng Dữ Liệu)",
         "KỸ SƯ DỰ TOÁN (Định Giá Xây Dựng)"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 21,
+        "saturday_pct": 62,
+        "saturday_half_pct": 19,
+        "sunday_pct": 5,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 42.5,
+        "over_legal_week_pct": 6,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1071.00": {
       "postings": 496,
@@ -286,7 +443,19 @@
         "Chuyên Viên Nhân Sự",
         "Nhân Viên Nhân Sự",
         "Chuyên Viên C&B"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 455,
+        "saturday_pct": 73,
+        "saturday_half_pct": 16,
+        "sunday_pct": 3,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 45.0,
+        "over_legal_week_pct": 15,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1161.00": {
       "postings": 1309,
@@ -303,7 +472,19 @@
         "Nhân Viên Digital Marketing",
         "Chuyên Viên Digital Marketing",
         "Chuyên Viên Marketing"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 1208,
+        "saturday_pct": 71,
+        "saturday_half_pct": 17,
+        "sunday_pct": 4,
+        "shift_pct": 1,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 45.0,
+        "over_legal_week_pct": 16,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1082.00": {
       "postings": 147,
@@ -320,7 +501,19 @@
         "Nhân Viên Quản Lý Dự Án",
         "Chuyên Viên Quản Lý Dự Án",
         "Nhân Viên Điều Phối Dự Án"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 132,
+        "saturday_pct": 43,
+        "saturday_half_pct": 7,
+        "sunday_pct": 0,
+        "shift_pct": 2,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 42.5,
+        "over_legal_week_pct": 14,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1121.00": {
       "postings": 73,
@@ -337,7 +530,19 @@
         "Nhân Viên Sự Kiện",
         "MC Kiêm Sự Kiện",
         "Chuyên Viên Truyền Thông Sự Kiện"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 70,
+        "saturday_pct": 63,
+        "saturday_half_pct": 17,
+        "sunday_pct": 3,
+        "shift_pct": 1,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 43.5,
+        "over_legal_week_pct": 16,
+        "start_median": "08:30"
+      }
     },
     "ONET-13-1081.00": {
       "postings": 283,
@@ -354,7 +559,19 @@
         "Chuyên Viên Xuất Nhập Khẩu",
         "Nhân Viên Chứng Từ Xuất Nhập Khẩu",
         "Nhân Viên Chứng Từ"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 255,
+        "saturday_pct": 77,
+        "saturday_half_pct": 19,
+        "sunday_pct": 2,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 14,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1023.00": {
       "postings": 438,
@@ -371,7 +588,19 @@
         "Chuyên Viên Mua Hàng",
         "Chuyên Viên Thu Mua",
         "Nhân Viên Mua Hàng Tiếng Trung"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 392,
+        "saturday_pct": 81,
+        "saturday_half_pct": 17,
+        "sunday_pct": 2,
+        "shift_pct": 1,
+        "night_pct": 0,
+        "uniform_pct": 3,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 14,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1051.00": {
       "postings": 253,
@@ -388,7 +617,19 @@
         "Kỹ Sư Dự Toán",
         "Nhân Viên QS",
         "Nhân Viên Dự Toán Nội Thất"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 214,
+        "saturday_pct": 79,
+        "saturday_half_pct": 16,
+        "sunday_pct": 2,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 5,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 31,
+        "start_median": "08:00"
+      }
     },
     "ONET-13-1199.06": {
       "postings": 224,
@@ -405,7 +646,19 @@
         "Nhân Viên Bán Hàng Online",
         "Vận Hành Sàn Thương Mại Điện Tử",
         "Ecommerce Executive"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 212,
+        "saturday_pct": 63,
+        "saturday_half_pct": 13,
+        "sunday_pct": 8,
+        "shift_pct": 13,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 27,
+        "start_median": "08:00"
+      }
     },
     "ONET-15-2041.00": {
       "postings": 19,
@@ -444,7 +697,19 @@
         "Kiến Trúc Sư Thiết Kế Nội Thất",
         "Kiến Trúc Sư Chủ Trì",
         "Kiến Trúc Sư Quy Hoạch"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 233,
+        "saturday_pct": 78,
+        "saturday_half_pct": 25,
+        "sunday_pct": 4,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 3,
+        "week_hours_median": 44.9,
+        "over_legal_week_pct": 21,
+        "start_median": "08:00"
+      }
     },
     "ONET-17-1022.00": {
       "postings": 10,
@@ -474,7 +739,19 @@
         "Kỹ Sư Kết Cấu",
         "Kỹ Sư Giám Sát",
         "Kỹ Sư Giám Sát HVAC"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 252,
+        "saturday_pct": 81,
+        "saturday_half_pct": 8,
+        "sunday_pct": 7,
+        "shift_pct": 0,
+        "night_pct": 1,
+        "uniform_pct": 2,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 36,
+        "start_median": "08:00"
+      }
     },
     "ONET-17-2071.00": {
       "postings": 210,
@@ -491,7 +768,19 @@
         "Kỹ Sư Tự Động Hóa",
         "Kỹ Sư Cơ Điện (MEP)",
         "Kỹ Sư Điện - Tự Động Hóa"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 173,
+        "saturday_pct": 80,
+        "saturday_half_pct": 11,
+        "sunday_pct": 1,
+        "shift_pct": 2,
+        "night_pct": 1,
+        "uniform_pct": 1,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 20,
+        "start_median": "08:00"
+      }
     },
     "ONET-17-2072.00": {
       "postings": 12,
@@ -521,7 +810,19 @@
         "Kỹ sư cơ khí",
         "Kỹ Sư Thiết Kế Cơ Khí Tự Động Hóa",
         "KỸ SƯ CƠ KHÍ"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 140,
+        "saturday_pct": 74,
+        "saturday_half_pct": 7,
+        "sunday_pct": 2,
+        "shift_pct": 0,
+        "night_pct": 1,
+        "uniform_pct": 3,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 19,
+        "start_median": "08:00"
+      }
     },
     "ONET-17-2141.02": {
       "postings": 1,
@@ -573,7 +874,19 @@
         "Nhân Viên Kỹ Thuật Môi Trường",
         "Nhân Viên Tư Vấn Môi Trường",
         "Nhân Viên Vận Hành Hệ Thống Xử Lý Nước Thải"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 86,
+        "saturday_pct": 73,
+        "saturday_half_pct": 8,
+        "sunday_pct": 1,
+        "shift_pct": 3,
+        "night_pct": 0,
+        "uniform_pct": 3,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 15,
+        "start_median": "08:00"
+      }
     },
     "ONET-17-2112.00": {
       "postings": 90,
@@ -590,7 +903,19 @@
         "Kế Hoạch Sản Xuất",
         "Kỹ Sư Quy Trình",
         "Kỹ Sư IE"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 76,
+        "saturday_pct": 86,
+        "saturday_half_pct": 3,
+        "sunday_pct": 1,
+        "shift_pct": 4,
+        "night_pct": 0,
+        "uniform_pct": 5,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 21,
+        "start_median": "08:00"
+      }
     },
     "ONET-17-2151.00": {
       "postings": 6,
@@ -632,7 +957,19 @@
         "Kỹ Sư Nông Nghiệp - Chuyên Ngành Phân Bón - BVTV",
         "Kỹ Sư Nông Nghiệp - Chuyên Cây Ăn Trái",
         "Nhân Viên Kỹ Thuật Quảng Bá–Thuốc Bảo Vệ Thực Vật"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 22,
+        "saturday_pct": 59,
+        "saturday_half_pct": 9,
+        "sunday_pct": 0,
+        "shift_pct": 0,
+        "night_pct": 5,
+        "uniform_pct": 5,
+        "week_hours_median": 46.8,
+        "over_legal_week_pct": 28,
+        "start_median": "08:00"
+      }
     },
     "ONET-19-1012.00": {
       "postings": 21,
@@ -695,7 +1032,19 @@
         "Kiểm Nghiệm Viên Hóa Lý",
         "Chuyên gia phân tích hoạt động",
         "Nhân Viên Kiểm Nghiệm"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 51,
+        "saturday_pct": 47,
+        "saturday_half_pct": 4,
+        "sunday_pct": 4,
+        "shift_pct": 10,
+        "night_pct": 4,
+        "uniform_pct": 0,
+        "week_hours_median": 44.0,
+        "over_legal_week_pct": 10,
+        "start_median": "08:00"
+      }
     },
     "ONET-19-2042.00": {
       "postings": 0,
@@ -742,7 +1091,19 @@
         "Chuyên Viên Quy Hoạch - Xây Dựng",
         "Chuyên Viên Kiếm Soát Quy Hoạch (Chủ Đầu Tư)",
         "Nhân Viên Quy Hoạch, Kế Hoạch Và Định Giá Đất"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 22,
+        "saturday_pct": 50,
+        "saturday_half_pct": 5,
+        "sunday_pct": 5,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 9,
+        "week_hours_median": 40.0,
+        "over_legal_week_pct": 0,
+        "start_median": "08:00"
+      }
     },
     "ONET-19-5011.00": {
       "postings": 170,
@@ -759,7 +1120,19 @@
         "Nhân Viên HSE",
         "Chuyên Viên HSE",
         "Kỹ Sư An Toàn Lao Động"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 134,
+        "saturday_pct": 90,
+        "saturday_half_pct": 2,
+        "sunday_pct": 0,
+        "shift_pct": 1,
+        "night_pct": 1,
+        "uniform_pct": 3,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 30,
+        "start_median": "08:00"
+      }
     },
     "ONET-21-1014.00": {
       "postings": 0,
@@ -783,7 +1156,19 @@
         "Tư Vấn Tuyển Sinh",
         "Nhân Viên Tư Vấn Du Học",
         "Chuyên Viên Tư Vấn Du Học"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 171,
+        "saturday_pct": 44,
+        "saturday_half_pct": 19,
+        "sunday_pct": 9,
+        "shift_pct": 15,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 43.5,
+        "over_legal_week_pct": 17,
+        "start_median": "08:00"
+      }
     },
     "ONET-21-1021.00": {
       "postings": 1,
@@ -805,7 +1190,19 @@
         "Trợ Lý Luật Sư",
         "Luật Sư Tư Vấn",
         "Luật Sư Nội Bộ"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 27,
+        "saturday_pct": 67,
+        "saturday_half_pct": 11,
+        "sunday_pct": 0,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 41.2,
+        "over_legal_week_pct": 14,
+        "start_median": "08:00"
+      }
     },
     "ONET-23-2011.00": {
       "postings": 139,
@@ -822,7 +1219,19 @@
         "Nhân Viên Pháp Chế",
         "Nhân Viên Pháp Lý",
         "Chuyên Viên Pháp Lý Dự Án"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 120,
+        "saturday_pct": 72,
+        "saturday_half_pct": 18,
+        "sunday_pct": 5,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 27,
+        "start_median": "08:00"
+      }
     },
     "ONET-25-1081.00": {
       "postings": 34,
@@ -835,7 +1244,19 @@
         "Giảng Viên Điều Dưỡng",
         "Giảng Viên Thiết Kế Đồ Họa",
         "Giảng Viên Đào Tạo - Dược Sĩ"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 26,
+        "saturday_pct": 42,
+        "saturday_half_pct": 19,
+        "sunday_pct": 0,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 44.0,
+        "over_legal_week_pct": 6,
+        "start_median": "08:00"
+      }
     },
     "ONET-25-2031.00": {
       "postings": 11,
@@ -899,7 +1320,19 @@
         "Giáo Viên Tiếng Nhật",
         "Giáo Viên Tiếng Anh Mầm Non",
         "Giáo Viên Tiếng Hàn"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 95,
+        "saturday_pct": 47,
+        "saturday_half_pct": 8,
+        "sunday_pct": 14,
+        "shift_pct": 5,
+        "night_pct": 0,
+        "uniform_pct": 3,
+        "week_hours_median": 43.5,
+        "over_legal_week_pct": 16,
+        "start_median": "08:00"
+      }
     },
     "ONET-25-4022.00": {
       "postings": 15,
@@ -942,7 +1375,19 @@
         "Nhân Viên Thiết Kế Đồ Họa",
         "Chuyên Viên Thiết Kế Đồ Họa",
         "Game Designer"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 612,
+        "saturday_pct": 64,
+        "saturday_half_pct": 16,
+        "sunday_pct": 3,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 44.0,
+        "over_legal_week_pct": 14,
+        "start_median": "08:00"
+      }
     },
     "ONET-27-1014.00": {
       "postings": 324,
@@ -959,7 +1404,19 @@
         "Chuyên Viên Thiết Kế 3D",
         "Nhân Viên Thiết Kế Nội Thất 3D",
         "3D Artist"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 298,
+        "saturday_pct": 68,
+        "saturday_half_pct": 21,
+        "sunday_pct": 4,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 44.0,
+        "over_legal_week_pct": 17,
+        "start_median": "08:00"
+      }
     },
     "ONET-27-1013.00": {
       "postings": 52,
@@ -976,7 +1433,19 @@
         "Nhân Viên 2D Artist",
         "Nhân Viên 2D UI/UX Game Artist",
         "Nhân Viên VFX Artist"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 52,
+        "saturday_pct": 48,
+        "saturday_half_pct": 12,
+        "sunday_pct": 6,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 4,
+        "week_hours_median": 42.5,
+        "over_legal_week_pct": 8,
+        "start_median": "08:30"
+      }
     },
     "ONET-27-1021.00": {
       "postings": 13,
@@ -1006,7 +1475,19 @@
         "Thiết Kế Thời Trang",
         "Chuyên Viên Thiết Kế Thời Trang",
         "Thợ May Mẫu Sản Xuất-Hàng Thiết Kế Thời Trang"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 66,
+        "saturday_pct": 73,
+        "saturday_half_pct": 3,
+        "sunday_pct": 3,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 16,
+        "start_median": "08:00"
+      }
     },
     "ONET-27-1025.00": {
       "postings": 158,
@@ -1023,7 +1504,19 @@
         "Kiến Trúc Sư Thiết Kế Nội Thất",
         "Nhân Viên Thiết Kế Nội Thất 3D",
         "Chuyên Viên Thiết Kế Nội Thất"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 140,
+        "saturday_pct": 81,
+        "saturday_half_pct": 17,
+        "sunday_pct": 4,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 36,
+        "start_median": "08:00"
+      }
     },
     "ONET-27-2011.00": {
       "postings": 4,
@@ -1105,7 +1598,19 @@
         "Editor",
         "Cameraman Kiêm Editor",
         "Nhân Viên Biên Tập"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 141,
+        "saturday_pct": 71,
+        "saturday_half_pct": 11,
+        "sunday_pct": 5,
+        "shift_pct": 3,
+        "night_pct": 1,
+        "uniform_pct": 0,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 22,
+        "start_median": "08:00"
+      }
     },
     "ONET-27-3043.00": {
       "postings": 694,
@@ -1122,7 +1627,19 @@
         "Nhân Viên Content Creator",
         "Nhân Viên Content",
         "Tiếp thị nội dung"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 659,
+        "saturday_pct": 74,
+        "saturday_half_pct": 17,
+        "sunday_pct": 2,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 45.0,
+        "over_legal_week_pct": 19,
+        "start_median": "08:00"
+      }
     },
     "ONET-27-3091.00": {
       "postings": 221,
@@ -1139,7 +1656,19 @@
         "Nhân Viên Phiên Dịch Tiếng Hàn",
         "Phiên Dịch Viên Tiếng Trung",
         "Nhân Viên Phiên Dịch Tiếng Trung"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 200,
+        "saturday_pct": 72,
+        "saturday_half_pct": 5,
+        "sunday_pct": 7,
+        "shift_pct": 2,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 24,
+        "start_median": "08:00"
+      }
     },
     "ONET-27-4031.00": {
       "postings": 715,
@@ -1156,7 +1685,19 @@
         "Nhân Viên Quay Dựng",
         "Nhân Viên Quay Dựng Video",
         "Nhân Viên Quay Phim"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 676,
+        "saturday_pct": 79,
+        "saturday_half_pct": 14,
+        "sunday_pct": 3,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 20,
+        "start_median": "08:00"
+      }
     },
     "ONET-27-4014.00": {
       "postings": 15,
@@ -1186,7 +1727,19 @@
         "Bác Sĩ Chẩn Đoán Hình Ảnh",
         "Trợ Lý Bác Sĩ",
         "Bác Sĩ Phẫu Thuật Thẩm Mỹ"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 45,
+        "saturday_pct": 67,
+        "saturday_half_pct": 0,
+        "sunday_pct": 24,
+        "shift_pct": 2,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 51.0,
+        "over_legal_week_pct": 53,
+        "start_median": "08:00"
+      }
     },
     "ONET-29-1021.00": {
       "postings": 19,
@@ -1216,7 +1769,19 @@
         "Dược Sĩ",
         "Trình Dược Viên ETC",
         "Trình Dược Viên Kênh OTC"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 83,
+        "saturday_pct": 60,
+        "saturday_half_pct": 18,
+        "sunday_pct": 10,
+        "shift_pct": 13,
+        "night_pct": 0,
+        "uniform_pct": 6,
+        "week_hours_median": 45.5,
+        "over_legal_week_pct": 16,
+        "start_median": "08:00"
+      }
     },
     "ONET-29-1141.00": {
       "postings": 111,
@@ -1233,7 +1798,19 @@
         "Nhân Viên Điều Dưỡng",
         "Điều Dưỡng Nha Khoa",
         "Điều Dưỡng Đa Khoa"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 95,
+        "saturday_pct": 58,
+        "saturday_half_pct": 2,
+        "sunday_pct": 24,
+        "shift_pct": 16,
+        "night_pct": 8,
+        "uniform_pct": 4,
+        "week_hours_median": 51.0,
+        "over_legal_week_pct": 64,
+        "start_median": "08:00"
+      }
     },
     "ONET-29-1161.00": {
       "postings": 3,
@@ -1383,7 +1960,19 @@
         "Nhân Viên Điều Dưỡng/Phụ Tá Nha Khoa",
         "Phụ Tá/Trợ Thủ Nha Khoa",
         "Trợ Thủ / Phụ Tá Nha Khoa"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 20,
+        "saturday_pct": 70,
+        "saturday_half_pct": 0,
+        "sunday_pct": 55,
+        "shift_pct": 10,
+        "night_pct": 0,
+        "uniform_pct": 5,
+        "week_hours_median": 63.0,
+        "over_legal_week_pct": 92,
+        "start_median": "08:00"
+      }
     },
     "ONET-31-9092.00": {
       "postings": 12,
@@ -1413,7 +2002,19 @@
         "Kỹ Thuật Viên Massage Mẹ Bé",
         "Nhân Viên Sắp Xếp Phòng Trị Liệu (Có Đào Tạo) - Đi Làm Ngay",
         "Kỹ Thuật Viên Trị Liệu - Phòng Khám Cơ Xương Khớp"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 40,
+        "saturday_pct": 42,
+        "saturday_half_pct": 0,
+        "sunday_pct": 38,
+        "shift_pct": 40,
+        "night_pct": 0,
+        "uniform_pct": 5,
+        "week_hours_median": 63.0,
+        "over_legal_week_pct": 82,
+        "start_median": "09:00"
+      }
     },
     "ONET-33-9032.00": {
       "postings": 45,
@@ -1430,7 +2031,19 @@
         "Bảo Vệ",
         "Nhân Viên Kỹ Thuật Quảng Bá–Thuốc Bảo Vệ Thực Vật",
         "Nhân Viên Viết Báo Cáo Công Tác Bảo Vệ Môi Trường"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 30,
+        "saturday_pct": 47,
+        "saturday_half_pct": 3,
+        "sunday_pct": 7,
+        "shift_pct": 37,
+        "night_pct": 13,
+        "uniform_pct": 3,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 29,
+        "start_median": "08:00"
+      }
     },
     "ONET-33-9092.00": {
       "postings": 4,
@@ -1458,7 +2071,19 @@
         "Bếp Trưởng",
         "Nhân Viên Bếp",
         "Nhân Viên Bếp Bánh"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 135,
+        "saturday_pct": 23,
+        "saturday_half_pct": 1,
+        "sunday_pct": 12,
+        "shift_pct": 42,
+        "night_pct": 0,
+        "uniform_pct": 7,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 42,
+        "start_median": "08:00"
+      }
     },
     "ONET-35-3023.01": {
       "postings": 44,
@@ -1475,7 +2100,19 @@
         "Giám Sát Bar",
         "Nhân Viên Phục Vụ/ Pha Chế",
         "Nhân Viên Pha Chế - Bartender/ Barista"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 35,
+        "saturday_pct": 34,
+        "saturday_half_pct": 3,
+        "sunday_pct": 6,
+        "shift_pct": 20,
+        "night_pct": 3,
+        "uniform_pct": 6,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 9,
+        "start_median": "08:00"
+      }
     },
     "ONET-35-3031.00": {
       "postings": 71,
@@ -1492,7 +2129,19 @@
         "Phục Vụ Bàn",
         "Lễ Tân Khách Sạn Kiêm Phục Vụ Cafe",
         "Phục Vụ Nhà Hàng - Yêu Cầu Tiếng Anh Giao Tiếp"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 61,
+        "saturday_pct": 16,
+        "saturday_half_pct": 3,
+        "sunday_pct": 7,
+        "shift_pct": 52,
+        "night_pct": 0,
+        "uniform_pct": 5,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 27,
+        "start_median": "08:00"
+      }
     },
     "ONET-37-2011.00": {
       "postings": 36,
@@ -1509,7 +2158,19 @@
         "Phó Bộ Phận Buồng Phòng",
         "Nhân Viên Buồng Phòng Khách Sạn",
         "Giám Sát Buồng Phòng"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 26,
+        "saturday_pct": 31,
+        "saturday_half_pct": 4,
+        "sunday_pct": 8,
+        "shift_pct": 31,
+        "night_pct": 0,
+        "uniform_pct": 8,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 38,
+        "start_median": "08:00"
+      }
     },
     "ONET-37-3011.00": {
       "postings": 6,
@@ -1557,7 +2218,19 @@
         "Tư Vấn Viên Spa",
         "Kỹ Thuật Viên Da Thẩm Mỹ",
         "Nhân Viên Lễ Tân - Thu Ngân Thẩm Mỹ Viện"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 70,
+        "saturday_pct": 49,
+        "saturday_half_pct": 1,
+        "sunday_pct": 33,
+        "shift_pct": 27,
+        "night_pct": 0,
+        "uniform_pct": 4,
+        "week_hours_median": 57.0,
+        "over_legal_week_pct": 64,
+        "start_median": "08:30"
+      }
     },
     "ONET-39-5092.00": {
       "postings": 2,
@@ -1623,7 +2296,19 @@
         "Nhân Viên Giải Trí",
         "Thiết Kế Và Sản Xuất Animator",
         "Phó Quản Lý Cửa Hàng_Khu Vui Chơi Trẻ Em"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 21,
+        "saturday_pct": 24,
+        "saturday_half_pct": 0,
+        "sunday_pct": 10,
+        "shift_pct": 24,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 42.5,
+        "over_legal_week_pct": 38,
+        "start_median": "08:30"
+      }
     },
     "ONET-39-2021.00": {
       "postings": 5,
@@ -1660,7 +2345,19 @@
         "Nhân Viên Bán Hàng Thời Trang",
         "Nhân Viên Bán Hàng Siêu Thị",
         "Tư Vấn Bán Hàng"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 633,
+        "saturday_pct": 35,
+        "saturday_half_pct": 5,
+        "sunday_pct": 9,
+        "shift_pct": 39,
+        "night_pct": 0,
+        "uniform_pct": 5,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 32,
+        "start_median": "08:00"
+      }
     },
     "ONET-41-2011.00": {
       "postings": 126,
@@ -1677,7 +2374,19 @@
         "Nhân Viên Lễ Tân - Thu Ngân",
         "Thu Ngân Nhà Hàng",
         "Nhân Viên Lễ Tân - Thu Ngân Thẩm Mỹ Viện"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 116,
+        "saturday_pct": 28,
+        "saturday_half_pct": 0,
+        "sunday_pct": 20,
+        "shift_pct": 46,
+        "night_pct": 2,
+        "uniform_pct": 4,
+        "week_hours_median": 50.0,
+        "over_legal_week_pct": 70,
+        "start_median": "08:00"
+      }
     },
     "ONET-41-3021.00": {
       "postings": 8,
@@ -1717,7 +2426,19 @@
         "Chuyên Viên Kinh Doanh Bất Động Sản",
         "Nhân Viên Kinh Doanh - Sales - Tư Vấn BĐS",
         "Nhân Viên Kinh Doanh / Sale / Tư Vấn Bất Động Sản"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 118,
+        "saturday_pct": 80,
+        "saturday_half_pct": 32,
+        "sunday_pct": 8,
+        "shift_pct": 1,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 21,
+        "start_median": "08:00"
+      }
     },
     "ONET-41-4012.00": {
       "postings": 3511,
@@ -1734,7 +2455,19 @@
         "Chuyên Viên Kinh Doanh",
         "Nhân Viên Kinh Doanh B2B",
         "Nhân Viên Phát Triển Thị Trường"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 3125,
+        "saturday_pct": 73,
+        "saturday_half_pct": 17,
+        "sunday_pct": 5,
+        "shift_pct": 2,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 20,
+        "start_median": "08:00"
+      }
     },
     "ONET-41-9031.00": {
       "postings": 285,
@@ -1751,7 +2484,19 @@
         "Nhân Viên Kinh Doanh Thiết Bị Y Tế",
         "Sales Engineer",
         "Nhân Viên Kinh Doanh Kỹ Thuật"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 255,
+        "saturday_pct": 67,
+        "saturday_half_pct": 18,
+        "sunday_pct": 2,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 44.0,
+        "over_legal_week_pct": 10,
+        "start_median": "08:00"
+      }
     },
     "ONET-41-3041.00": {
       "postings": 271,
@@ -1768,7 +2513,19 @@
         "Nhân viên kinh doanh tư vấn du lịch",
         "Nhân Viên Booking KOL/KOC",
         "Nhân Viên Sales Tour"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 239,
+        "saturday_pct": 65,
+        "saturday_half_pct": 23,
+        "sunday_pct": 3,
+        "shift_pct": 4,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 44.0,
+        "over_legal_week_pct": 20,
+        "start_median": "08:00"
+      }
     },
     "ONET-41-9012.00": {
       "postings": 1,
@@ -1794,7 +2551,19 @@
         "Nhân Viên Admin",
         "Trợ Lý Phiên Dịch Tiếng Trung",
         "Trợ Lý Dự Án"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 786,
+        "saturday_pct": 68,
+        "saturday_half_pct": 13,
+        "sunday_pct": 4,
+        "shift_pct": 3,
+        "night_pct": 0,
+        "uniform_pct": 4,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 15,
+        "start_median": "08:00"
+      }
     },
     "ONET-43-4051.00": {
       "postings": 702,
@@ -1811,7 +2580,19 @@
         "Chuyên Viên Chăm Sóc Khách Hàng",
         "Nhân Viên Dịch Vụ Khách Hàng",
         "Chuyên Viên Dịch Vụ Khách Hàng"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 631,
+        "saturday_pct": 53,
+        "saturday_half_pct": 12,
+        "sunday_pct": 10,
+        "shift_pct": 19,
+        "night_pct": 2,
+        "uniform_pct": 3,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 25,
+        "start_median": "08:00"
+      }
     },
     "ONET-43-4081.00": {
       "postings": 104,
@@ -1828,7 +2609,19 @@
         "Nhân Viên Lễ Tân Văn Phòng",
         "Nhân Viên Lễ Tân Khách Sạn",
         "Nhân Viên Lễ Tân - Admin"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 93,
+        "saturday_pct": 53,
+        "saturday_half_pct": 15,
+        "sunday_pct": 16,
+        "shift_pct": 31,
+        "night_pct": 1,
+        "uniform_pct": 13,
+        "week_hours_median": 46.5,
+        "over_legal_week_pct": 34,
+        "start_median": "08:00"
+      }
     },
     "ONET-43-3071.00": {
       "postings": 19,
@@ -1855,7 +2648,19 @@
         "Thủ Kho",
         "Nhân Viên Phụ Kho",
         "Nhân Viên Kho Vận"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 496,
+        "saturday_pct": 74,
+        "saturday_half_pct": 7,
+        "sunday_pct": 8,
+        "shift_pct": 14,
+        "night_pct": 0,
+        "uniform_pct": 2,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 33,
+        "start_median": "08:00"
+      }
     },
     "ONET-43-5021.00": {
       "postings": 98,
@@ -1872,7 +2677,19 @@
         "Nhân Viên Giao Hàng Xe Máy",
         "Nhân Viên Giao Nhận Hiện Trường",
         "Tài Xế Xe Tải Giao Hàng"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 91,
+        "saturday_pct": 75,
+        "saturday_half_pct": 10,
+        "sunday_pct": 7,
+        "shift_pct": 8,
+        "night_pct": 0,
+        "uniform_pct": 5,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 30,
+        "start_median": "08:00"
+      }
     },
     "ONET-43-5051.00": {
       "postings": 1,
@@ -1898,7 +2715,19 @@
         "Nhân Viên Điều Phối Xe Container",
         "Nhân Viên Điều Độ/Điều Phối Xe Cont/ Đầu Kéo",
         "Chuyên Viên Điều Phối Vận Tải"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 52,
+        "saturday_pct": 85,
+        "saturday_half_pct": 15,
+        "sunday_pct": 2,
+        "shift_pct": 8,
+        "night_pct": 0,
+        "uniform_pct": 6,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 12,
+        "start_median": "08:00"
+      }
     },
     "ONET-45-2092.00": {
       "postings": 1,
@@ -1976,7 +2805,19 @@
         "Thợ Điện",
         "Nhân Viên Kỹ Thuật (Điện Nước/Mộc Nề)",
         "Đại Diện Thương Mại - Kênh GT Điện Dân Dụng"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 84,
+        "saturday_pct": 76,
+        "saturday_half_pct": 8,
+        "sunday_pct": 4,
+        "shift_pct": 12,
+        "night_pct": 0,
+        "uniform_pct": 1,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 34,
+        "start_median": "08:00"
+      }
     },
     "ONET-47-2152.00": {
       "postings": 3,
@@ -2035,7 +2876,19 @@
         "Kỹ Thuật Viên Sửa Chữa Ô Tô",
         "Nhân Viên Sửa Chữa Ô Tô",
         "Giảng Viên Kỹ Thuật Ô Tô"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 22,
+        "saturday_pct": 73,
+        "saturday_half_pct": 5,
+        "sunday_pct": 5,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 21,
+        "start_median": "08:00"
+      }
     },
     "ONET-49-3052.00": {
       "postings": 4,
@@ -2081,7 +2934,19 @@
         "Nhân Viên Điện Lạnh",
         "Kỹ Thuật Điện - Điện Lạnh",
         "Kỹ Thuật Điện Lạnh"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 44,
+        "saturday_pct": 61,
+        "saturday_half_pct": 7,
+        "sunday_pct": 16,
+        "shift_pct": 14,
+        "night_pct": 0,
+        "uniform_pct": 11,
+        "week_hours_median": 51.0,
+        "over_legal_week_pct": 52,
+        "start_median": "08:00"
+      }
     },
     "ONET-49-9041.00": {
       "postings": 336,
@@ -2098,7 +2963,19 @@
         "Nhân Viên Bảo Trì Điện",
         "Nhân Viên Kỹ Thuật Cơ Khí",
         "Kỹ Thuật Viên Bảo Trì"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 285,
+        "saturday_pct": 71,
+        "saturday_half_pct": 6,
+        "sunday_pct": 6,
+        "shift_pct": 26,
+        "night_pct": 4,
+        "uniform_pct": 7,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 29,
+        "start_median": "08:00"
+      }
     },
     "ONET-49-9051.00": {
       "postings": 3,
@@ -2137,7 +3014,19 @@
         "Nhân Viên Tiếp Nhận & Điều Phối Sửa Chữa Laptop",
         "Kỹ Thuật Viên Bảo Dưỡng – Sửa Chữa Điện Thoại",
         "Kỹ Thuật Viên Điện Tự Động Hóa"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 22,
+        "saturday_pct": 64,
+        "saturday_half_pct": 9,
+        "sunday_pct": 18,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 5,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 44,
+        "start_median": "08:00"
+      }
     },
     "ONET-51-2092.00": {
       "postings": 41,
@@ -2154,7 +3043,19 @@
         "Công Nhân Lắp Ráp",
         "Nhân Viên Lắp Ráp Điện",
         "Nhân Viên Kỹ Thuật Lắp Ráp"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 40,
+        "saturday_pct": 82,
+        "saturday_half_pct": 10,
+        "sunday_pct": 2,
+        "shift_pct": 10,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 29,
+        "start_median": "08:00"
+      }
     },
     "ONET-51-4041.00": {
       "postings": 128,
@@ -2171,7 +3072,19 @@
         "Nhân Viên Kỹ Thuật CNC",
         "Vận Hành Máy CNC/ Kỹ Thuật Tự Động Hóa",
         "Nhân Viên Sản Xuất (Gia Công CNC)"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 109,
+        "saturday_pct": 78,
+        "saturday_half_pct": 1,
+        "sunday_pct": 2,
+        "shift_pct": 23,
+        "night_pct": 0,
+        "uniform_pct": 6,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 33,
+        "start_median": "08:00"
+      }
     },
     "ONET-51-4121.00": {
       "postings": 13,
@@ -2223,7 +3136,19 @@
         "Nhân Viên Kỹ Thuật Bình Ghép File Và In Ấn",
         "Nhân Viên Sản Xuất Mảng In Ấn",
         "Nhân Viên Thiết Kế Và Tách Màu In Ấn"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 27,
+        "saturday_pct": 89,
+        "saturday_half_pct": 7,
+        "sunday_pct": 0,
+        "shift_pct": 0,
+        "night_pct": 0,
+        "uniform_pct": 4,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 26,
+        "start_median": "08:00"
+      }
     },
     "ONET-51-6031.00": {
       "postings": 29,
@@ -2240,7 +3165,19 @@
         "Nhân Viên Thiết Kế/ Pattern Staff (May Mặc)",
         "Thợ May Balo, Túi Xách, Vali (10-15Tr) - Việc Nhẹ, Phòng Điều Hòa, Không Áp Lực",
         "Mua Hàng Phụ Liệu May Mặc"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 24,
+        "saturday_pct": 83,
+        "saturday_half_pct": 4,
+        "sunday_pct": 4,
+        "shift_pct": 4,
+        "night_pct": 0,
+        "uniform_pct": 4,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 19,
+        "start_median": "07:45"
+      }
     },
     "ONET-51-7011.00": {
       "postings": 8,
@@ -2280,7 +3217,19 @@
         "Nhân Viên Xử Lý Nước Thải",
         "Nhân Viên Vận Hành Nước Cấp Nước Thải",
         "Nhân Viên Thiết Kế Công Nghệ Xử Lý Nước Thải"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 22,
+        "saturday_pct": 73,
+        "saturday_half_pct": 0,
+        "sunday_pct": 5,
+        "shift_pct": 18,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 17,
+        "start_median": "08:00"
+      }
     },
     "ONET-51-8091.00": {
       "postings": 1,
@@ -2306,7 +3255,19 @@
         "Nhân Viên QA",
         "Chuyên Viên Kiểm Soát Chất Lượng",
         "Nhân Viên Kiểm Tra Chất Lượng"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 294,
+        "saturday_pct": 71,
+        "saturday_half_pct": 3,
+        "sunday_pct": 4,
+        "shift_pct": 14,
+        "night_pct": 3,
+        "uniform_pct": 2,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 22,
+        "start_median": "08:00"
+      }
     },
     "ONET-51-9141.00": {
       "postings": 5,
@@ -2358,7 +3319,19 @@
         "Nhân Viên Đóng Gói",
         "Công Nhân Vận Hành Máy",
         "Kỹ Thuật Viên Vận Hành Máy"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 166,
+        "saturday_pct": 72,
+        "saturday_half_pct": 4,
+        "sunday_pct": 4,
+        "shift_pct": 27,
+        "night_pct": 1,
+        "uniform_pct": 7,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 37,
+        "start_median": "08:00"
+      }
     },
     "ONET-53-2011.00": {
       "postings": 0,
@@ -2432,7 +3405,19 @@
         "Trình quản lý thiết kế cấu trúc thép",
         "Nhân Viên Kỹ Thuật Xe Nâng Người/Nâng Hàng",
         "Nhân Viên Kho - Xe Nâng"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 21,
+        "saturday_pct": 67,
+        "saturday_half_pct": 0,
+        "sunday_pct": 0,
+        "shift_pct": 5,
+        "night_pct": 0,
+        "uniform_pct": 10,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 27,
+        "start_median": "08:00"
+      }
     },
     "ONET-53-7062.00": {
       "postings": 36,
@@ -2449,7 +3434,19 @@
         "Nhân Viên KCS Đóng Gói Hàng Hoá",
         "Nhân Viên Soạn Hàng Và Đóng Hàng",
         "Nhân Viên Đóng Gói Bánh Kẹo"
-      ]
+      ],
+      "schedule": {
+        "with_hours": 32,
+        "saturday_pct": 69,
+        "saturday_half_pct": 16,
+        "sunday_pct": 9,
+        "shift_pct": 9,
+        "night_pct": 0,
+        "uniform_pct": 0,
+        "week_hours_median": 48.0,
+        "over_legal_week_pct": 42,
+        "start_median": "08:00"
+      }
     },
     "ONET-53-7081.00": {
       "postings": 1,

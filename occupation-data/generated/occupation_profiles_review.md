@@ -21,6 +21,8 @@
 
 **Nơi làm việc:** luật trong `datasets/work_settings.json`, theo thứ tự, tối đa hai nơi; luật dự phòng chỉ áp khi chưa khớp luật nào.
 
+**Loại hình nơi làm:** nhóm gán tay 1–3 loại hình trong `datasets/work_environments.json` cho từng nghề, kèm trọng số random công ty và lý do (`decisions/occupation_work_environments.csv`). Lịch làm rao lấy từ cột giờ làm của tin VietJobs khi nghề có đủ tin.
+
 **Đã bỏ trên toàn bộ:**
 - Mã nghề Việt Nam độ tin cậy thấp: PROD_PM, ONET-11-9032.00, ONET-11-9111.00, ONET-13-1041.00
 - Phần O*NET (câu môi trường, hợp với ai, kỹ năng, kiến thức) của nghề IT có cùng bộ mã O*NET với nghề khác: SWE_MOBILE (giống SWE_BACKEND)
@@ -39,6 +41,7 @@
 - **Nhu cầu tuyển:** 15 tin trên ITviec, từ khoá `frontend-developer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty làm sản phẩm công nghệ (product) (45%), Công ty gia công phần mềm (outsourcing) (40%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (15%) — ITviec 2023–2024: product 50%, outsourcing 32%, IT doanh nghiệp 9% số người trả lời; front-end có ở cả ba.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Công nghệ thông tin, Khoa học máy tính; cao đẳng, trung cấp: Lập trình máy tính, Thiết kế trang web.
 - **Phần nháp cần đọc kỹ:** overview.
 
@@ -52,6 +55,7 @@
 - **Nhu cầu tuyển:** 91 tin trên ITviec, từ khoá `backend-developer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty làm sản phẩm công nghệ (product) (40%), Công ty gia công phần mềm (outsourcing) (40%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (20%) — Tỉ lệ loại công ty của ITviec; back-end là vị trí đông nhất ở mọi loại, ngân hàng tuyển nhiều back-end nội bộ.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Công nghệ thông tin, Khoa học máy tính; cao đẳng, trung cấp: Lập trình máy tính.
 - **Phần nháp cần đọc kỹ:** overview.
 
@@ -66,6 +70,7 @@
 - **Nhu cầu tuyển:** 13 tin trên ITviec, từ khoá `mobile-application-developer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty làm sản phẩm công nghệ (product) (50%), Công ty gia công phần mềm (outsourcing) (50%) — Ứng dụng di động do công ty product tự làm hoặc thuê outsourcing; ít ở khối IT doanh nghiệp.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Công nghệ thông tin, Khoa học máy tính; cao đẳng, trung cấp: Lập trình máy tính.
 - **Phần nháp cần đọc kỹ:** overview.
 
@@ -79,8 +84,9 @@
 - **Nhu cầu tuyển:** 7 tin trên ITviec, từ khoá `game-developer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** 16 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty làm sản phẩm công nghệ (product) (70%), Công ty gia công phần mềm (outsourcing) (30%) — Studio game tự phát hành chiếm phần lớn; phần còn lại là studio gia công game cho khách nước ngoài.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Khoa học máy tính, Nghệ thuật số; cao đẳng, trung cấp: Lập trình máy tính, Thiết kế mỹ thuật game.
-- **Phần nháp cần đọc kỹ:** overview, daily_work.
+- **Phần nháp cần đọc kỹ:** overview, daily_work, work_environment.environments.
 
 ### Chuyên viên thiết kế UI/UX (`SWE_UIUX`)
 
@@ -91,8 +97,9 @@
 - **Nhu cầu tuyển:** 12 tin trên ITviec, từ khoá `ui-ux-designer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty làm sản phẩm công nghệ (product) (50%), Công ty gia công phần mềm (outsourcing) (30%), Agency marketing, quảng cáo, sự kiện (20%) — Thiết kế UI/UX nhiều ở product; có ở outsourcing và agency digital.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thiết kế đồ họa, Nghệ thuật số, Công nghệ thông tin; cao đẳng, trung cấp: Thiết kế tương tác, Thiết kế đồ họa.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư phần mềm nhúng / Kỹ sư IoT (`SWE_EMBEDDED`)
 
@@ -104,8 +111,9 @@
 - **Nhu cầu tuyển:** 17 tin trên ITviec, từ khoá `embedded-engineer`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** 13 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng thiết kế, R&D kỹ thuật (50%), Công ty gia công phần mềm (outsourcing) (50%) — Nhúng làm ở R&D của tập đoàn điện tử, ô tô và ở outsourcing phần mềm ô tô, thiết bị.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật máy tính, Kỹ thuật điện tử - viễn thông, Kỹ thuật điều khiển và tự động hóa; cao đẳng, trung cấp: Công nghệ kỹ thuật máy tính, Điện tử công nghiệp.
-- **Phần nháp cần đọc kỹ:** overview, daily_work.
+- **Phần nháp cần đọc kỹ:** overview, daily_work, work_environment.environments.
 
 ### Kiến trúc sư giải pháp (`SWE_ARCH_SOL`)
 
@@ -116,8 +124,9 @@
 - **Nhu cầu tuyển:** 15 tin trên ITviec, từ khoá `solution-architect`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khối công nghệ của ngân hàng, doanh nghiệp lớn (40%), Công ty gia công phần mềm (outsourcing) (40%), Đối tác triển khai hệ thống tại khách hàng (20%) — Kiến trúc sư giải pháp ở doanh nghiệp lớn, outsourcing (thiết kế cho khách) và đối tác triển khai (presales).
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Khoa học máy tính, Hệ thống thông tin.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Trưởng nhóm kỹ thuật (`SWE_TECHLEAD`)
 
@@ -129,6 +138,7 @@
 - **Nhu cầu tuyển:** 32 tin trên ITviec, từ khoá `technical-leader`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** 12 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty làm sản phẩm công nghệ (product) (45%), Công ty gia công phần mềm (outsourcing) (40%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (15%) — Theo tỉ lệ loại công ty của ITviec, như back-end.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Khoa học máy tính, Công nghệ thông tin.
 - **Phần nháp cần đọc kỹ:** overview, daily_work.
 
@@ -141,6 +151,7 @@
 - **Nhu cầu tuyển:** 56 tin trên ITviec, từ khoá `engineering-manager`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty làm sản phẩm công nghệ (product) (45%), Công ty gia công phần mềm (outsourcing) (40%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (15%) — Theo tỉ lệ loại công ty của ITviec; product cần quản lý kỹ thuật nhiều nhất.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Công nghệ thông tin, Hệ thống thông tin quản lý.
 - **Phần nháp cần đọc kỹ:** overview.
 
@@ -153,8 +164,9 @@
 - **Nhu cầu tuyển:** 45 tin trên ITviec, từ khoá `manual-tester`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty gia công phần mềm (outsourcing) (55%), Công ty làm sản phẩm công nghệ (product) (30%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (15%) — Kiểm thử thủ công tập trung ở outsourcing (đội QA riêng cho khách); product, doanh nghiệp ít hơn.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Công nghệ thông tin, Hệ thống thông tin; cao đẳng, trung cấp: Lập trình máy tính, Tin học ứng dụng.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên phân tích dữ liệu (`DATA_DA`)
 
@@ -165,8 +177,9 @@
 - **Nhu cầu tuyển:** 11 tin trên ITviec, từ khoá `data-analyst`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khối công nghệ của ngân hàng, doanh nghiệp lớn (45%), Công ty làm sản phẩm công nghệ (product) (40%), Công ty gia công phần mềm (outsourcing) (15%) — Phân tích dữ liệu nhiều ở ngân hàng, bán lẻ, viễn thông và ở product.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Khoa học dữ liệu, Hệ thống thông tin quản lý, Thống kê; cao đẳng, trung cấp: Xử lý dữ liệu, Hệ thống thông tin kinh tế.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư trí tuệ nhân tạo (`DATA_AI`)
 
@@ -177,6 +190,7 @@
 - **Nhu cầu tuyển:** 140 tin trên ITviec, từ khoá `ai-machine-learning-engineer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty làm sản phẩm công nghệ (product) (55%), Công ty gia công phần mềm (outsourcing) (30%), Làm từ xa cho công ty nước ngoài (15%) — AI tập trung ở product, R&D; remote cho nước ngoài là cửa hiếm (2–7% dân IT làm remote).
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Trí tuệ nhân tạo, Khoa học dữ liệu, Khoa học máy tính; cao đẳng, trung cấp: Công nghệ ứng dụng trí tuệ nhân tạo.
 - **Phần nháp cần đọc kỹ:** overview.
 
@@ -189,8 +203,9 @@
 - **Nhu cầu tuyển:** 24 tin trên ITviec, từ khoá `data-engineer`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khối công nghệ của ngân hàng, doanh nghiệp lớn (40%), Công ty làm sản phẩm công nghệ (product) (40%), Công ty gia công phần mềm (outsourcing) (20%) — Kỹ sư dữ liệu ở ngân hàng, tập đoàn và product có kho dữ liệu lớn.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Khoa học dữ liệu, Hệ thống thông tin, Khoa học máy tính; cao đẳng, trung cấp: Quản trị cơ sở dữ liệu.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư DevOps (`CLOUD_DEVOPS`)
 
@@ -201,8 +216,9 @@
 - **Nhu cầu tuyển:** 69 tin trên ITviec, từ khoá `devops-engineer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty làm sản phẩm công nghệ (product) (50%), Công ty gia công phần mềm (outsourcing) (30%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (20%) — DevOps nhiều ở product (deploy liên tục), outsourcing và khối IT doanh nghiệp.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phần mềm, Mạng máy tính và truyền thông dữ liệu, Công nghệ thông tin; cao đẳng, trung cấp: Quản trị hệ thống.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư điện toán đám mây (`CLOUD_ENG`)
 
@@ -214,8 +230,9 @@
 - **Nhu cầu tuyển:** 82 tin trên ITviec, từ khoá `cloud-engineer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** 11 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty gia công phần mềm (outsourcing) (35%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (35%), Công ty làm sản phẩm công nghệ (product) (30%) — Kỹ sư cloud ở đối tác cloud (dịch vụ), doanh nghiệp chuyển đổi lên cloud và product.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Mạng máy tính và truyền thông dữ liệu, Công nghệ thông tin, Kỹ thuật máy tính; cao đẳng, trung cấp: Quản trị hệ thống, Quản trị mạng máy tính.
-- **Phần nháp cần đọc kỹ:** overview, daily_work.
+- **Phần nháp cần đọc kỹ:** overview, daily_work, work_environment.environments.
 
 ### Kỹ sư an ninh mạng / Kỹ sư bảo mật (`SEC_ENG`)
 
@@ -226,8 +243,9 @@
 - **Nhu cầu tuyển:** 45 tin trên ITviec, từ khoá `security-engineer`, ngày 2026-10-21; mức cao so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khối công nghệ của ngân hàng, doanh nghiệp lớn (50%), Trung tâm giám sát vận hành 24/7 (SOC, NOC) (30%), Công ty làm sản phẩm công nghệ (product) (20%) — Ngân hàng là bên tuyển an ninh nhiều (một nguồn cộng đồng đếm 176/340 tin SOC năm 2025, chưa kiểm); có ca SOC 24/7.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: An ninh mạng, Công nghệ thông tin, Mạng máy tính và truyền thông dữ liệu; cao đẳng, trung cấp: An ninh mạng.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng (`SEC_PENTEST`)
 
@@ -238,8 +256,9 @@
 - **Nhu cầu tuyển:** 43 tin trên ITviec, từ khoá `penetration-tester`, ngày 2026-10-21; mức vừa so với 22 nghề IT. Gần bằng security-engineer (45): từ khoá khớp rộng sang tin bảo mật nói chung.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty gia công phần mềm (outsourcing) (60%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (40%) — Pentest chủ yếu ở công ty dịch vụ an ninh làm theo dự án cho khách, và đội red team ngân hàng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: An ninh mạng, Kỹ thuật mật mã, Công nghệ thông tin; cao đẳng, trung cấp: An ninh mạng.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên phân tích nghiệp vụ / BA (`PROD_BA`)
 
@@ -250,8 +269,9 @@
 - **Nhu cầu tuyển:** 36 tin trên ITviec, từ khoá `business-analyst`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khối công nghệ của ngân hàng, doanh nghiệp lớn (45%), Công ty gia công phần mềm (outsourcing) (40%), Công ty làm sản phẩm công nghệ (product) (15%) — BA nhiều ở ngân hàng, bảo hiểm và ở outsourcing (BA làm với khách).
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Hệ thống thông tin quản lý, Hệ thống thông tin, Quản trị kinh doanh; cao đẳng, trung cấp: Hệ thống thông tin quản lý.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Quản lý sản phẩm / Product Manager (`PROD_PM`)
 
@@ -262,8 +282,9 @@
 - **Nhu cầu tuyển:** 8 tin trên ITviec, từ khoá `product-manager`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp (datasets/onet_vi/it.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty làm sản phẩm công nghệ (product) (80%), Khối công nghệ của ngân hàng, doanh nghiệp lớn (20%) — Quản lý sản phẩm gắn với công ty product; ngân hàng số có PM nội bộ.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị kinh doanh, Hệ thống thông tin quản lý, Công nghệ thông tin.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên tư vấn giải pháp ERP (`INFRA_ERP`)
 
@@ -275,6 +296,7 @@
 - **Nhu cầu tuyển:** 24 tin trên ITviec, từ khoá `erp`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** 15 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Khối công nghệ của ngân hàng, doanh nghiệp lớn (60%), Đối tác triển khai hệ thống tại khách hàng (40%) — ITviec 2023–2024: ERP 65% ở văn phòng, 30% ở doanh nghiệp non-IT; JD đối tác triển khai vẫn ghi đi công tác.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Hệ thống thông tin quản lý, Kế toán, Công nghệ thông tin; cao đẳng, trung cấp: Hệ thống thông tin quản lý, Kế toán tin học.
 - **Phần nháp cần đọc kỹ:** overview, daily_work.
 
@@ -287,8 +309,9 @@
 - **Nhu cầu tuyển:** 19 tin trên ITviec, từ khoá `it-support`, ngày 2026-10-21; mức vừa so với 22 nghề IT.
 - **Việc hằng ngày:** JD đã xác minh (datasets/78_roles_unmerged.json).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khối công nghệ của ngân hàng, doanh nghiệp lớn (60%), Trung tâm giám sát vận hành 24/7 (SOC, NOC) (40%) — Hỗ trợ kỹ thuật chủ yếu ở doanh nghiệp; một phần ở trung tâm hỗ trợ 24/7.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Công nghệ thông tin, Mạng máy tính và truyền thông dữ liệu; cao đẳng, trung cấp: Kỹ thuật sửa chữa, lắp ráp máy tính, Quản trị mạng máy tính, Tin học ứng dụng.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư hệ thống mạng (`INFRA_NETWORK`)
 
@@ -300,8 +323,9 @@
 - **Nhu cầu tuyển:** 14 tin trên ITviec, từ khoá `network-engineer`, ngày 2026-10-21; mức thấp so với 22 nghề IT.
 - **Việc hằng ngày:** 12 JD ở Việt Nam (datasets/vn/it_jd_tasks.json) (nháp).
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khối công nghệ của ngân hàng, doanh nghiệp lớn (40%), Đối tác triển khai hệ thống tại khách hàng (35%), Nhà mạng viễn thông (25%) — Kỹ sư mạng ở doanh nghiệp lớn, công ty tích hợp hệ thống và nhà mạng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Mạng máy tính và truyền thông dữ liệu, Công nghệ thông tin, Kỹ thuật điện tử - viễn thông; cao đẳng, trung cấp: Quản trị mạng máy tính, Quản trị hệ thống.
-- **Phần nháp cần đọc kỹ:** overview, daily_work.
+- **Phần nháp cần đọc kỹ:** overview, daily_work, work_environment.environments.
 
 ## Quản lý (11 nghề)
 
@@ -314,6 +338,8 @@
 - **Nhu cầu tuyển:** 110 tin trong VietJobs (32.4/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (nhóm 11, 13, 15, 17, 19, 21, 23, 25, 27, 41, 43; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Văn phòng doanh nghiệp vừa và nhỏ trong nước (50%), Văn phòng tập đoàn lớn trong nước (30%), Văn phòng công ty nước ngoài, đa quốc gia (20%) — Phần lớn doanh nghiệp là ngoài nhà nước và nhỏ (bình quân 12,6 lao động); tập đoàn, FDI ít hơn.
+  - Lịch làm rao (VietJobs, 101 tin có giờ): thứ 7 64%, chủ nhật 3%, làm ca 2%, trung vị 45.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị kinh doanh, Khoa học quản lý, Kinh tế học; ghi chú: Thường đi lên từ một nghề chuyên môn sau nhiều năm; nhiều người học thêm thạc sĩ quản trị kinh doanh.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -327,9 +353,11 @@
 - **Nhu cầu tuyển:** 142 tin trong VietJobs (41.8/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 43-5, 11-3051, 17-2112, 17-2199, 17-2141, 17-2071; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy FDI trong khu công nghiệp (50%), Nhà máy doanh nghiệp trong nước (40%), Nhà máy chế biến thực phẩm, thuỷ sản (10%) — Quản lý sản xuất ở nhà máy FDI và nhà máy trong nước; một phần ở nhà máy thực phẩm.
+  - Lịch làm rao (VietJobs, 118 tin có giờ): thứ 7 89%, chủ nhật 3%, làm ca 1%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý công nghiệp, Kỹ thuật công nghiệp, Kỹ thuật cơ khí; cao đẳng, trung cấp: Quản lý công nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Quản lý hành chính (`ONET-11-3012.00`)
 
@@ -340,9 +368,11 @@
 - **Nhu cầu tuyển:** 70 tin trong VietJobs (20.6/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (nhóm 11, 13, 15, 17, 19, 21, 23, 25, 27, 41, 43; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng doanh nghiệp vừa và nhỏ trong nước (45%), Văn phòng tập đoàn lớn trong nước (30%), Cơ quan hành chính nhà nước (25%) — Quản lý hành chính ở doanh nghiệp và cơ quan nhà nước.
+  - Lịch làm rao (VietJobs, 65 tin có giờ): thứ 7 89%, chủ nhật 3%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị văn phòng, Quản trị nhân lực, Quản trị kinh doanh; cao đẳng, trung cấp: Hành chính văn phòng, Quản trị văn phòng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (2); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Quản lý xây dựng (chỉ huy trưởng công trình) (`ONET-11-9021.00`)
 
@@ -353,9 +383,11 @@
 - **Nhu cầu tuyển:** 71 tin trong VietJobs (20.9/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công trường của nhà thầu xây dựng (75%), Chủ đầu tư, ban quản lý dự án (25%) — Chỉ huy trưởng làm ở công trường nhà thầu; một phần đại diện chủ đầu tư.
+  - Lịch làm rao (VietJobs, 52 tin có giờ): thứ 7 92%, chủ nhật 6%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý xây dựng, Kỹ thuật xây dựng; cao đẳng, trung cấp: Quản lý xây dựng; giấy phép: Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Quản lý kỹ thuật và nghiên cứu (`ONET-11-9041.00`)
 
@@ -366,9 +398,11 @@
 - **Nhu cầu tuyển:** 53 tin trong VietJobs (15.6/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng thiết kế, R&D kỹ thuật (45%), Nhà máy FDI trong khu công nghiệp (30%), Viện nghiên cứu, trung tâm khoa học nhà nước (25%) — Quản lý kỹ thuật, R&D ở trung tâm R&D, nhà máy FDI và viện nghiên cứu.
+  - Lịch làm rao (VietJobs, 46 tin có giờ): thứ 7 54%, chủ nhật 2%, làm ca 0%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật cơ khí, Kỹ thuật điện, Quản lý khoa học và công nghệ; ghi chú: Thường là kỹ sư hoặc nhà khoa học lên quản lý.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Quản lý giáo dục (hiệu trưởng, trưởng khoa) (`ONET-11-9032.00`)
 
@@ -379,6 +413,8 @@
 - **Nhu cầu tuyển:** 29 tin trong VietJobs (8.5/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (nhóm 11, 13, 15, 17, 19, 21, 23, 25, 27, 41, 43; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Trường công lập (mầm non đến THPT) (60%), Trường tư thục, quốc tế, song ngữ (25%), Trường đại học, cao đẳng công lập (15%) — Hiệu trưởng, quản lý giáo dục phần lớn ở trường công (giáo viên ngoài công lập chỉ 10,1%).
+  - Lịch làm rao (VietJobs, 24 tin có giờ): thứ 7 62%, chủ nhật 4%, làm ca 0%, trung vị 44.2 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý giáo dục, Giáo dục học; ghi chú: Thường là giáo viên, giảng viên có thâm niên được bổ nhiệm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -392,9 +428,11 @@
 - **Nhu cầu tuyển:** 80 tin trong VietJobs (23.6/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 33-9032, 37-2011, 43-4081, 39-9032, 41-9012, 11-9051, 11-9081; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Chuỗi nhà hàng, cà phê, đồ ăn nhanh (55%), Nhà hàng, quán cà phê, bar độc lập (30%), Khách sạn, resort 4–5 sao (15%) — Quản lý nhà hàng nhiều ở chuỗi F&B (tuyển trên trang việc làm), quán độc lập và nhà hàng khách sạn.
+  - Lịch làm rao (VietJobs, 64 tin có giờ): thứ 7 33%, chủ nhật 25%, làm ca 44%, trung vị 51.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị nhà hàng và dịch vụ ăn uống; cao đẳng, trung cấp: Quản trị nhà hàng và dịch vụ ăn uống, Quản lý và kinh doanh nhà hàng và dịch vụ ăn uống.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Quản lý khách sạn, khu nghỉ dưỡng (`ONET-11-9081.00`)
 
@@ -405,6 +443,7 @@
 - **Nhu cầu tuyển:** 20 tin trong VietJobs (5.9/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 33-9032, 37-2011, 43-4081, 39-9032, 41-9012, 11-9051, 11-9081; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Khách sạn, resort 4–5 sao (65%), Khách sạn nhỏ, nhà nghỉ, homestay (35%) — 636 cơ sở lưu trú 4–5 sao; khách sạn nhỏ, homestay đông hơn nhiều về số lượng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị khách sạn, Du lịch; cao đẳng, trung cấp: Quản trị khách sạn, Quản lý và kinh doanh khách sạn, Quản trị khu resort.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -418,6 +457,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Bệnh viện công (65%), Bệnh viện tư, quốc tế (35%) — Khoảng 77% bệnh viện là công lập.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý y tế, Y tế công cộng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -431,6 +471,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 4 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Nông hộ, gia trại (60%), Trang trại, doanh nghiệp nông nghiệp công nghệ cao (40%) — Nông hộ chiếm đa số; 28.349 trang trại năm 2025.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kinh tế nông nghiệp, Nông học, Chăn nuôi; cao đẳng, trung cấp: Quản lý trang trại thông minh, Quản lý và kinh doanh nông nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -444,9 +485,10 @@
 - **Nhu cầu tuyển:** 19 tin trong VietJobs (5.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Ban quản lý toà nhà, chung cư, khu đô thị (70%), Sàn giao dịch, môi giới bất động sản (30%) — Quản lý toà nhà làm cho ban quản lý vận hành; một phần ở sàn, chủ đầu tư bất động sản.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Bất động sản, Quản lý đô thị và công trình; cao đẳng, trung cấp: Quản lý tòa nhà, Quản trị kinh doanh bất động sản.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Kinh doanh và tài chính (16 nghề)
 
@@ -459,6 +501,8 @@
 - **Nhu cầu tuyển:** 3036 tin trong VietJobs (893.9/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Văn phòng doanh nghiệp vừa và nhỏ trong nước (55%), Công ty kiểm toán, thẩm định giá, tư vấn (25%), Văn phòng công ty nước ngoài, đa quốc gia (20%) — Kế toán là nghề có nhiều tin nhất ở văn phòng SME (3.036 tin VietJobs); kiểm toán, FDI ít hơn.
+  - Lịch làm rao (VietJobs, 2770 tin có giờ): thứ 7 77%, chủ nhật 3%, làm ca 1%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kế toán, Kiểm toán; cao đẳng, trung cấp: Kế toán, Kế toán doanh nghiệp; giấy phép: Chứng chỉ kiểm toán viên, kế toán viên (không bắt buộc với kế toán doanh nghiệp).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (4 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -472,6 +516,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Cơ quan thuế (100%) — Cán bộ thuế chỉ làm ở cơ quan thuế.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kế toán, Tài chính - Ngân hàng, Luật kinh tế; cao đẳng, trung cấp: Kế toán thuế; ghi chú: Vào ngành thuế qua thi tuyển công chức.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -485,9 +530,11 @@
 - **Nhu cầu tuyển:** 69 tin trong VietJobs (20.3/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Hội sở ngân hàng (55%), Văn phòng công ty nước ngoài, đa quốc gia (25%), Công ty bảo hiểm (20%) — Tuân thủ, rủi ro tập trung ở ngân hàng; có ở bảo hiểm và FDI.
+  - Lịch làm rao (VietJobs, 63 tin có giờ): thứ 7 70%, chủ nhật 2%, làm ca 2%, trung vị 45.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Luật kinh tế, Tài chính - Ngân hàng, Kiểm toán.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên thẩm định và bồi thường bảo hiểm (`ONET-13-1031.00`)
 
@@ -498,9 +545,10 @@
 - **Nhu cầu tuyển:** 8 tin trong VietJobs (2.4/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty bảo hiểm (100%) — Thẩm định, bồi thường bảo hiểm làm ở công ty bảo hiểm.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Bảo hiểm, Tài chính - Ngân hàng; cao đẳng, trung cấp: Bảo hiểm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên tín dụng ngân hàng (`ONET-13-2072.00`)
 
@@ -511,9 +559,11 @@
 - **Nhu cầu tuyển:** 51 tin trong VietJobs (15.0/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Chi nhánh, phòng giao dịch ngân hàng (70%), Hội sở ngân hàng (30%) — Chuyên viên tín dụng phần lớn ở chi nhánh; thẩm định, phê duyệt ở hội sở.
+  - Lịch làm rao (VietJobs, 42 tin có giờ): thứ 7 38%, chủ nhật 5%, làm ca 0%, trung vị 40.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Tài chính - Ngân hàng; cao đẳng, trung cấp: Tài chính tín dụng, Tài chính - Ngân hàng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên tư vấn tài chính và đầu tư (`ONET-13-2052.00`)
 
@@ -524,9 +574,11 @@
 - **Nhu cầu tuyển:** 51 tin trong VietJobs (15.0/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty chứng khoán, quản lý quỹ (50%), Chi nhánh, phòng giao dịch ngân hàng (30%), Công ty bảo hiểm (20%) — Tư vấn đầu tư ở công ty chứng khoán, quản lý tài sản tại ngân hàng và bảo hiểm liên kết đầu tư.
+  - Lịch làm rao (VietJobs, 41 tin có giờ): thứ 7 17%, chủ nhật 0%, làm ca 0%, trung vị 40.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Tài chính - Ngân hàng, Kinh tế đầu tư; cao đẳng, trung cấp: Tư vấn tài chính.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên phân tích tài chính định lượng (quant) (`ONET-13-2099.01`)
 
@@ -537,9 +589,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty chứng khoán, quản lý quỹ (50%), Hội sở ngân hàng (50%) — Quant ở công ty chứng khoán, quỹ và khối rủi ro ngân hàng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Toán ứng dụng, Công nghệ tài chính, Toán kinh tế.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thẩm định viên về giá (`ONET-13-2023.00`)
 
@@ -550,9 +603,11 @@
 - **Nhu cầu tuyển:** 21 tin trong VietJobs (6.2/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty kiểm toán, thẩm định giá, tư vấn (60%), Hội sở ngân hàng (40%) — Thẩm định giá ở công ty thẩm định giá và bộ phận định giá tài sản bảo đảm của ngân hàng.
+  - Lịch làm rao (VietJobs, 21 tin có giờ): thứ 7 62%, chủ nhật 5%, làm ca 0%, trung vị 42.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Tài chính - Ngân hàng, Bất động sản, Kinh tế học; giấy phép: Thẻ thẩm định viên về giá.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên nhân sự (`ONET-13-1071.00`)
 
@@ -563,9 +618,11 @@
 - **Nhu cầu tuyển:** 496 tin trong VietJobs (146.0/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng doanh nghiệp vừa và nhỏ trong nước (45%), Văn phòng công ty nước ngoài, đa quốc gia (30%), Văn phòng tập đoàn lớn trong nước (25%) — Nhân sự có ở mọi doanh nghiệp; chia theo số doanh nghiệp SME, FDI, tập đoàn.
+  - Lịch làm rao (VietJobs, 455 tin có giờ): thứ 7 73%, chủ nhật 3%, làm ca 0%, trung vị 45.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị nhân lực, Tâm lý học; cao đẳng, trung cấp: Quản trị nhân lực.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (3); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên marketing và nghiên cứu thị trường (`ONET-13-1161.00`)
 
@@ -576,9 +633,11 @@
 - **Nhu cầu tuyển:** 1309 tin trong VietJobs (385.4/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng doanh nghiệp vừa và nhỏ trong nước (40%), Agency marketing, quảng cáo, sự kiện (35%), Văn phòng công ty nước ngoài, đa quốc gia (25%) — Marketing in-house ở SME, FDI và ở agency.
+  - Lịch làm rao (VietJobs, 1208 tin có giờ): thứ 7 71%, chủ nhật 4%, làm ca 1%, trung vị 45.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Marketing, Quản trị kinh doanh, Quan hệ công chúng; cao đẳng, trung cấp: Marketing, Marketing thương mại.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (4).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên quản lý dự án (`ONET-13-1082.00`)
 
@@ -589,9 +648,11 @@
 - **Nhu cầu tuyển:** 147 tin trong VietJobs (43.3/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng tập đoàn lớn trong nước (35%), Chủ đầu tư, ban quản lý dự án (35%), Văn phòng công ty nước ngoài, đa quốc gia (30%) — Quản lý dự án ở tập đoàn, chủ đầu tư và công ty FDI.
+  - Lịch làm rao (VietJobs, 132 tin có giờ): thứ 7 43%, chủ nhật 0%, làm ca 2%, trung vị 42.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý dự án, Quản trị kinh doanh.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên tổ chức sự kiện (`ONET-13-1121.00`)
 
@@ -602,9 +663,11 @@
 - **Nhu cầu tuyển:** 73 tin trong VietJobs (21.5/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Agency marketing, quảng cáo, sự kiện (70%), Khách sạn, resort 4–5 sao (30%) — Tổ chức sự kiện chủ yếu ở agency sự kiện; một phần ở bộ phận sự kiện khách sạn.
+  - Lịch làm rao (VietJobs, 70 tin có giờ): thứ 7 63%, chủ nhật 3%, làm ca 1%, trung vị 43.5 giờ/tuần, vào làm 08:30.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quan hệ công chúng, Du lịch, Quản lý văn hóa; cao đẳng, trung cấp: Tổ chức sự kiện, Quản trị du lịch MICE.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên logistics và xuất nhập khẩu (`ONET-13-1081.00`)
 
@@ -615,9 +678,11 @@
 - **Nhu cầu tuyển:** 283 tin trong VietJobs (83.3/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty logistics, giao nhận, xuất nhập khẩu (65%), Nhà máy FDI trong khu công nghiệp (35%) — Logistics, xuất nhập khẩu ở công ty giao nhận và bộ phận xuất nhập khẩu của nhà máy FDI.
+  - Lịch làm rao (VietJobs, 255 tin có giờ): thứ 7 77%, chủ nhật 2%, làm ca 0%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Logistics và Quản lý chuỗi cung ứng, Kinh doanh quốc tế; cao đẳng, trung cấp: Logistics và quản lý chuỗi cung ứng, Kinh doanh xuất nhập khẩu.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (2); bỏ bước "dễ vào hơn" (3 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên mua hàng (`ONET-13-1023.00`)
 
@@ -628,9 +693,11 @@
 - **Nhu cầu tuyển:** 438 tin trong VietJobs (129.0/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy FDI trong khu công nghiệp (40%), Nhà máy doanh nghiệp trong nước (30%), Văn phòng doanh nghiệp vừa và nhỏ trong nước (30%) — Mua hàng nhiều ở nhà máy (FDI, trong nước) và doanh nghiệp thương mại.
+  - Lịch làm rao (VietJobs, 392 tin có giờ): thứ 7 81%, chủ nhật 2%, làm ca 1%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Logistics và Quản lý chuỗi cung ứng, Kinh doanh thương mại; cao đẳng, trung cấp: Thu mua.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư dự toán (QS) (`ONET-13-1051.00`)
 
@@ -641,9 +708,11 @@
 - **Nhu cầu tuyển:** 253 tin trong VietJobs (74.5/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty tư vấn thiết kế, giám sát (50%), Công trường của nhà thầu xây dựng (30%), Chủ đầu tư, ban quản lý dự án (20%) — Dự toán ở tư vấn, nhà thầu và chủ đầu tư.
+  - Lịch làm rao (VietJobs, 214 tin có giờ): thứ 7 79%, chủ nhật 2%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật xây dựng, Quản lý xây dựng; cao đẳng, trung cấp: Kế toán xây dựng; giấy phép: Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Người kinh doanh online (`ONET-13-1199.06`)
 
@@ -654,9 +723,11 @@
 - **Nhu cầu tuyển:** 224 tin trong VietJobs (66.0/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Tự kinh doanh online, livestream bán hàng (75%), Văn phòng doanh nghiệp vừa và nhỏ trong nước (25%) — Người kinh doanh online phần lớn tự làm; một phần làm cho shop của doanh nghiệp nhỏ.
+  - Lịch làm rao (VietJobs, 212 tin có giờ): thứ 7 63%, chủ nhật 8%, làm ca 13%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thương mại điện tử, Marketing; cao đẳng, trung cấp: Thương mại điện tử; ghi chú: Nhiều người tự học và mở cửa hàng mà không cần bằng cấp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Toán học và thống kê (3 nghề)
 
@@ -669,9 +740,10 @@
 - **Nhu cầu tuyển:** 19 tin trong VietJobs (5.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Hội sở ngân hàng (35%), Viện nghiên cứu, trung tâm khoa học nhà nước (35%), Cơ quan hành chính nhà nước (30%) — Thống kê ở ngân hàng, viện nghiên cứu và cơ quan thống kê nhà nước.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thống kê, Thống kê kinh tế, Toán ứng dụng; cao đẳng, trung cấp: Thống kê.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên định phí bảo hiểm (actuary) (`ONET-15-2011.00`)
 
@@ -682,9 +754,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty bảo hiểm (100%) — Định phí bảo hiểm chỉ làm ở công ty bảo hiểm.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Toán ứng dụng, Bảo hiểm, Toán kinh tế.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên nghiên cứu vận trù (`ONET-15-2031.00`)
 
@@ -695,9 +768,10 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty logistics, giao nhận, xuất nhập khẩu (45%), Văn phòng tập đoàn lớn trong nước (35%), Nhà máy FDI trong khu công nghiệp (20%) — Vận trù ở logistics, tập đoàn bán lẻ và nhà máy.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Toán ứng dụng, Kỹ thuật hệ thống công nghiệp, Khoa học dữ liệu.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Kiến trúc và kỹ thuật (13 nghề)
 
@@ -710,9 +784,11 @@
 - **Nhu cầu tuyển:** 262 tin trong VietJobs (77.1/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty tư vấn thiết kế, giám sát (80%), Chủ đầu tư, ban quản lý dự án (20%) — Kiến trúc sư chủ yếu ở văn phòng tư vấn thiết kế; một phần ở chủ đầu tư.
+  - Lịch làm rao (VietJobs, 233 tin có giờ): thứ 7 78%, chủ nhật 4%, làm ca 0%, trung vị 44.9 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kiến trúc; cao đẳng, trung cấp: Thiết kế kiến trúc; giấy phép: Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư trắc địa, bản đồ (`ONET-17-1022.00`)
 
@@ -723,9 +799,10 @@
 - **Nhu cầu tuyển:** 10 tin trong VietJobs (2.9/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công trường của nhà thầu xây dựng (50%), Công ty tư vấn thiết kế, giám sát (50%) — Trắc địa chia giữa công trường thi công và công ty tư vấn khảo sát.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật trắc địa - bản đồ, Bản đồ, viễn thám và hệ thông tin địa lý; cao đẳng, trung cấp: Công nghệ kỹ thuật trắc địa, Trắc địa công trình; giấy phép: Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư xây dựng (`ONET-17-2051.00`)
 
@@ -736,6 +813,8 @@
 - **Nhu cầu tuyển:** 333 tin trong VietJobs (98.0/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công trường của nhà thầu xây dựng (55%), Công ty tư vấn thiết kế, giám sát (30%), Chủ đầu tư, ban quản lý dự án (15%) — Kỹ sư xây dựng nhiều ở công trường (333 tin VietJobs, 81% làm thứ 7), tư vấn và chủ đầu tư.
+  - Lịch làm rao (VietJobs, 252 tin có giờ): thứ 7 81%, chủ nhật 7%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật xây dựng, Kỹ thuật xây dựng công trình giao thông; cao đẳng, trung cấp: Công nghệ kỹ thuật xây dựng; giấy phép: Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (3 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -749,9 +828,11 @@
 - **Nhu cầu tuyển:** 210 tin trong VietJobs (61.8/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 43-5, 11-3051, 17-2112, 17-2199, 17-2141, 17-2071; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công trường của nhà thầu xây dựng (35%), Nhà máy FDI trong khu công nghiệp (35%), Truyền tải, phân phối điện (30%) — Kỹ sư điện ở công trường cơ điện, nhà máy và ngành điện.
+  - Lịch làm rao (VietJobs, 173 tin có giờ): thứ 7 80%, chủ nhật 1%, làm ca 2%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật điện, Kỹ thuật điều khiển và tự động hóa; cao đẳng, trung cấp: Công nghệ kỹ thuật điện, điện tử.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư điện tử, viễn thông (`ONET-17-2072.00`)
 
@@ -762,9 +843,10 @@
 - **Nhu cầu tuyển:** 12 tin trong VietJobs (3.5/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà mạng viễn thông (45%), Văn phòng thiết kế, R&D kỹ thuật (35%), Nhà máy FDI trong khu công nghiệp (20%) — Điện tử viễn thông ở nhà mạng, R&D và nhà máy điện tử.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật điện tử - viễn thông, Kỹ thuật điện tử; cao đẳng, trung cấp: Công nghệ kỹ thuật điện tử, truyền thông.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư cơ khí (`ONET-17-2141.00`)
 
@@ -775,9 +857,11 @@
 - **Nhu cầu tuyển:** 160 tin trong VietJobs (47.1/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy doanh nghiệp trong nước (40%), Nhà máy FDI trong khu công nghiệp (35%), Văn phòng thiết kế, R&D kỹ thuật (25%) — Kỹ sư cơ khí ở nhà máy trong nước, FDI và phòng thiết kế.
+  - Lịch làm rao (VietJobs, 140 tin có giờ): thứ 7 74%, chủ nhật 2%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật cơ khí, Công nghệ kỹ thuật cơ khí; cao đẳng, trung cấp: Công nghệ kỹ thuật cơ khí.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (3 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư ô tô (`ONET-17-2141.02`)
 
@@ -788,9 +872,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 43-5, 11-3051, 17-2112, 17-2199, 17-2141, 17-2071; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng thiết kế, R&D kỹ thuật (45%), Nhà máy doanh nghiệp trong nước (35%), Xưởng dịch vụ đại lý ô tô, xe máy chính hãng (20%) — Kỹ sư ô tô ở khối thiết kế hãng xe, nhà máy lắp ráp và xưởng dịch vụ đại lý.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật ô tô, Công nghệ kỹ thuật ô tô; cao đẳng, trung cấp: Công nghệ kỹ thuật ô tô.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư cơ điện tử, robot (`ONET-17-2199.05`)
 
@@ -801,9 +886,10 @@
 - **Nhu cầu tuyển:** 13 tin trong VietJobs (3.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 43-5, 11-3051, 17-2112, 17-2199, 17-2141, 17-2071; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy FDI trong khu công nghiệp (55%), Văn phòng thiết kế, R&D kỹ thuật (30%), Nhà cung cấp, bảo trì thiết bị (15%) — Cơ điện tử, robot nhiều ở nhà máy FDI tự động hoá; có ở R&D và nhà cung cấp thiết bị.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật cơ điện tử, Kỹ thuật Robot; cao đẳng, trung cấp: Công nghệ kỹ thuật cơ điện tử, Kỹ thuật robot công nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư hoá học, vật liệu (`ONET-17-2041.00`)
 
@@ -814,9 +900,10 @@
 - **Nhu cầu tuyển:** 11 tin trong VietJobs (3.2/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy doanh nghiệp trong nước (40%), Nhà máy FDI trong khu công nghiệp (30%), Lọc hoá dầu, dầu khí ngoài khơi (30%) — Kỹ sư hoá, vật liệu ở nhà máy hoá chất, vật liệu và lọc hoá dầu.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật hóa học, Kỹ thuật vật liệu; cao đẳng, trung cấp: Công nghệ kỹ thuật hóa học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư, chuyên viên môi trường (`ONET-17-2081.00`)
 
@@ -827,9 +914,11 @@
 - **Nhu cầu tuyển:** 95 tin trong VietJobs (28.0/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty tư vấn thiết kế, giám sát (40%), Nhà máy FDI trong khu công nghiệp (30%), Cơ quan hành chính nhà nước (30%) — Môi trường ở tư vấn đánh giá tác động, bộ phận an toàn môi trường nhà máy và cơ quan quản lý.
+  - Lịch làm rao (VietJobs, 86 tin có giờ): thứ 7 73%, chủ nhật 1%, làm ca 3%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật môi trường, Khoa học môi trường; cao đẳng, trung cấp: Công nghệ kỹ thuật môi trường.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư công nghiệp, quản lý sản xuất (`ONET-17-2112.00`)
 
@@ -840,9 +929,11 @@
 - **Nhu cầu tuyển:** 90 tin trong VietJobs (26.5/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 43-5, 11-3051, 17-2112, 17-2199, 17-2141, 17-2071; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy FDI trong khu công nghiệp (60%), Nhà máy doanh nghiệp trong nước (40%) — Kỹ sư công nghiệp làm ở nhà máy, nhiều nhất ở FDI.
+  - Lịch làm rao (VietJobs, 76 tin có giờ): thứ 7 86%, chủ nhật 1%, làm ca 4%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật công nghiệp, Kỹ thuật hệ thống công nghiệp, Quản lý công nghiệp; cao đẳng, trung cấp: Quản lý công nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư mỏ, dầu khí (`ONET-17-2151.00`)
 
@@ -853,9 +944,10 @@
 - **Nhu cầu tuyển:** 6 tin trong VietJobs (1.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Lọc hoá dầu, dầu khí ngoài khơi (60%), Mỏ than, mỏ khoáng sản (40%) — Kỹ sư mỏ, dầu khí ở dầu khí và mỏ than.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật dầu khí, Kỹ thuật mỏ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư y sinh (`ONET-17-2031.00`)
 
@@ -866,9 +958,10 @@
 - **Nhu cầu tuyển:** 19 tin trong VietJobs (5.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà cung cấp, bảo trì thiết bị (60%), Bệnh viện công (25%), Bệnh viện tư, quốc tế (15%) — Kỹ sư y sinh nhiều ở nhà cung cấp thiết bị y tế; một phần ở phòng vật tư thiết bị bệnh viện.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật y sinh; cao đẳng, trung cấp: Bảo trì và sửa chữa thiết bị y tế.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Khoa học tự nhiên và xã hội (13 nghề)
 
@@ -881,9 +974,11 @@
 - **Nhu cầu tuyển:** 30 tin trong VietJobs (8.8/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thí nghiệm, Hiện trường, công trường, ngoài trời — luật khớp: WS_LAB (nhóm 19-1, 19-2); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Trang trại, doanh nghiệp nông nghiệp công nghệ cao (45%), Viện nghiên cứu, trung tâm khoa học nhà nước (30%), Cơ quan hành chính nhà nước (25%) — Kỹ sư nông nghiệp ở doanh nghiệp nông nghiệp, viện và trung tâm khuyến nông.
+  - Lịch làm rao (VietJobs, 22 tin có giờ): thứ 7 59%, chủ nhật 0%, làm ca 0%, trung vị 46.8 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Nông học, Khoa học cây trồng, Bảo vệ thực vật; cao đẳng, trung cấp: Trồng trọt và bảo vệ thực vật.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (4 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ sư công nghệ thực phẩm (`ONET-19-1012.00`)
 
@@ -894,9 +989,10 @@
 - **Nhu cầu tuyển:** 21 tin trong VietJobs (6.2/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thí nghiệm — luật khớp: WS_LAB (nhóm 19-1, 19-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy chế biến thực phẩm, thuỷ sản (70%), Trung tâm kiểm nghiệm, phòng thí nghiệm dịch vụ (30%) — Công nghệ thực phẩm chủ yếu ở nhà máy thực phẩm; một phần ở trung tâm kiểm nghiệm.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Công nghệ thực phẩm, Đảm bảo chất lượng và an toàn thực phẩm; cao đẳng, trung cấp: Công nghệ thực phẩm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà sinh học, chuyên viên công nghệ sinh học (`ONET-19-1029.04`)
 
@@ -907,9 +1003,10 @@
 - **Nhu cầu tuyển:** 12 tin trong VietJobs (3.5/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thí nghiệm — luật khớp: WS_LAB (nhóm 19-1, 19-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Viện nghiên cứu, trung tâm khoa học nhà nước (50%), Trung tâm kiểm nghiệm, phòng thí nghiệm dịch vụ (30%), Trang trại, doanh nghiệp nông nghiệp công nghệ cao (20%) — Sinh học ở viện nghiên cứu, phòng thí nghiệm dịch vụ và doanh nghiệp nông nghiệp công nghệ cao.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Công nghệ sinh học, Sinh học; cao đẳng, trung cấp: Công nghệ sinh học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (3 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên lâm nghiệp và bảo tồn (`ONET-19-1031.00`)
 
@@ -920,9 +1017,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 3 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Hạt kiểm lâm, vườn quốc gia (50%), Công ty lâm nghiệp, lâm trường (30%), Tổ chức phi chính phủ, dự án phát triển (20%) — Lâm nghiệp, bảo tồn ở vườn quốc gia, kiểm lâm, công ty lâm nghiệp và tổ chức bảo tồn.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Lâm học, Quản lý tài nguyên rừng, Bảo tồn thiên nhiên và đa dạng sinh học; cao đẳng, trung cấp: Lâm sinh, Quản lý tài nguyên rừng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà nghiên cứu y sinh, dịch tễ (`ONET-19-1041.00`)
 
@@ -933,9 +1031,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thí nghiệm, Văn phòng — luật khớp: WS_LAB (nhóm 19-1, 19-2); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Viện nghiên cứu, trung tâm khoa học nhà nước (60%), Trạm y tế xã, trung tâm y tế cơ sở (40%) — Dịch tễ ở viện vệ sinh dịch tễ, Pasteur và trung tâm kiểm soát bệnh tật tỉnh.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Y học dự phòng, Dịch tễ học, Y tế công cộng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà vật lý (`ONET-19-2012.00`)
 
@@ -946,9 +1045,10 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thí nghiệm — luật khớp: WS_LAB (nhóm 19-1, 19-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Viện nghiên cứu, trung tâm khoa học nhà nước (60%), Trường đại học, cao đẳng công lập (40%) — Nhà vật lý ở viện nghiên cứu và trường đại học.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Vật lý học, Vật lý kỹ thuật.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà hoá học, chuyên viên kiểm nghiệm (`ONET-19-2031.00`)
 
@@ -959,9 +1059,11 @@
 - **Nhu cầu tuyển:** 58 tin trong VietJobs (17.1/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thí nghiệm — luật khớp: WS_LAB (nhóm 19-1, 19-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Trung tâm kiểm nghiệm, phòng thí nghiệm dịch vụ (60%), Nhà máy doanh nghiệp trong nước (40%) — Hoá kiểm nghiệm ở trung tâm kiểm nghiệm và phòng QC nhà máy.
+  - Lịch làm rao (VietJobs, 51 tin có giờ): thứ 7 47%, chủ nhật 4%, làm ca 10%, trung vị 44.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Hóa học, Hóa phân tích; cao đẳng, trung cấp: Hóa phân tích, Kiểm tra và phân tích hóa chất.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà khoa học địa chất, khí tượng thuỷ văn (`ONET-19-2042.00`)
 
@@ -972,9 +1074,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thí nghiệm, Văn phòng — luật khớp: WS_LAB (nhóm 19-1, 19-2); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Đài, trạm khí tượng thuỷ văn, đoàn địa chất (70%), Viện nghiên cứu, trung tâm khoa học nhà nước (30%) — Khí tượng thuỷ văn, địa chất chủ yếu ở đài, trạm và đoàn địa chất.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Địa chất học, Khí tượng và khí hậu học, Thủy văn học; cao đẳng, trung cấp: Khí tượng học, Thủy văn học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà kinh tế học (`ONET-19-3011.00`)
 
@@ -985,9 +1088,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Viện nghiên cứu, trung tâm khoa học nhà nước (40%), Hội sở ngân hàng (35%), Cơ quan hành chính nhà nước (25%) — Kinh tế học ở viện, khối phân tích ngân hàng và cơ quan nhà nước.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kinh tế học, Kinh tế phát triển.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà nghiên cứu khoa học xã hội (`ONET-19-3041.00`)
 
@@ -998,9 +1102,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 2 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Viện nghiên cứu, trung tâm khoa học nhà nước (50%), Trường đại học, cao đẳng công lập (30%), Tổ chức phi chính phủ, dự án phát triển (20%) — Khoa học xã hội ở viện, trường đại học và tổ chức phát triển.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Xã hội học, Nhân học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà tâm lý học (`ONET-19-3033.00`)
 
@@ -1011,9 +1116,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Bệnh viện công (40%), Phòng tham vấn, trị liệu tâm lý tư nhân (40%), Trường đại học, cao đẳng công lập (20%) — Nhà tâm lý ở bệnh viện (tâm thần, nhi), phòng tham vấn và trường đại học.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Tâm lý học, Tâm lý học lâm sàng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên quy hoạch đô thị (`ONET-19-3051.00`)
 
@@ -1024,9 +1130,11 @@
 - **Nhu cầu tuyển:** 23 tin trong VietJobs (6.8/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty tư vấn thiết kế, giám sát (60%), Cơ quan hành chính nhà nước (40%) — Quy hoạch ở viện, công ty tư vấn quy hoạch và sở quy hoạch.
+  - Lịch làm rao (VietJobs, 22 tin có giờ): thứ 7 50%, chủ nhật 5%, làm ca 0%, trung vị 40.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quy hoạch vùng và đô thị, Đô thị học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên an toàn lao động (HSE) (`ONET-19-5011.00`)
 
@@ -1037,9 +1145,11 @@
 - **Nhu cầu tuyển:** 170 tin trong VietJobs (50.1/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công trường của nhà thầu xây dựng (50%), Nhà máy FDI trong khu công nghiệp (50%) — An toàn lao động ở công trường và nhà máy.
+  - Lịch làm rao (VietJobs, 134 tin có giờ): thứ 7 90%, chủ nhật 0%, làm ca 1%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý an toàn và sức khỏe nghề nghiệp, An toàn, vệ sinh lao động; cao đẳng, trung cấp: An toàn, vệ sinh lao động, Bảo hộ lao động.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Cộng đồng và công tác xã hội (4 nghề)
 
@@ -1052,9 +1162,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Phòng tham vấn, trị liệu tâm lý tư nhân (60%), Trung tâm công tác xã hội, bảo trợ xã hội công lập (20%), Tổ chức phi chính phủ, dự án phát triển (20%) — Tư vấn tâm lý chủ yếu ở phòng tham vấn tư; một phần ở trung tâm công tác xã hội, NGO.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Tâm lý học, Tâm lý học lâm sàng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên tư vấn học đường và hướng nghiệp (`ONET-21-1012.00`)
 
@@ -1065,9 +1176,11 @@
 - **Nhu cầu tuyển:** 187 tin trong VietJobs (55.1/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Trường công lập (mầm non đến THPT) (45%), Trường tư thục, quốc tế, song ngữ (35%), Trung tâm ngoại ngữ, luyện thi, kỹ năng (20%) — Tư vấn học đường, hướng nghiệp ở trường công, trường tư và trung tâm tư vấn.
+  - Lịch làm rao (VietJobs, 171 tin có giờ): thứ 7 44%, chủ nhật 9%, làm ca 15%, trung vị 43.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Tâm lý học giáo dục, Giáo dục học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên công tác xã hội (`ONET-21-1021.00`)
 
@@ -1078,6 +1191,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Trung tâm công tác xã hội, bảo trợ xã hội công lập (55%), Tổ chức phi chính phủ, dự án phát triển (30%), Bệnh viện công (15%) — Công tác xã hội ở 425 cơ sở trợ giúp xã hội (195 công lập), NGO và phòng công tác xã hội bệnh viện.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Công tác xã hội; cao đẳng, trung cấp: Công tác xã hội.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (2) → Cấp cao (1); bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1091,6 +1205,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Trạm y tế xã, trung tâm y tế cơ sở (80%), Tổ chức phi chính phủ, dự án phát triển (20%) — Y tế cộng đồng là nhiệm vụ của trạm y tế xã (Thông tư 43/2025); một phần ở dự án NGO.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Y tế công cộng; cao đẳng, trung cấp: Dân số y tế.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1106,6 +1221,8 @@
 - **Nhu cầu tuyển:** 28 tin trong VietJobs (8.2/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty luật, văn phòng luật sư (75%), Văn phòng công ty nước ngoài, đa quốc gia (25%) — Khoảng 20.000 luật sư, phần lớn hành nghề ở tổ chức hành nghề luật sư; một phần làm pháp chế FDI.
+  - Lịch làm rao (VietJobs, 27 tin có giờ): thứ 7 67%, chủ nhật 0%, làm ca 0%, trung vị 41.2 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Luật, Luật kinh tế; giấy phép: Chứng chỉ hành nghề luật sư (sau đào tạo nghề luật sư và tập sự).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1119,6 +1236,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Toà án (100%) — Thẩm phán chỉ làm ở toà án.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Luật; ghi chú: Sau đại học luật phải qua đào tạo nghiệp vụ xét xử và thi tuyển thẩm phán.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1132,9 +1250,11 @@
 - **Nhu cầu tuyển:** 139 tin trong VietJobs (40.9/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty luật, văn phòng luật sư (40%), Văn phòng doanh nghiệp vừa và nhỏ trong nước (30%), Văn phòng tập đoàn lớn trong nước (30%) — Trợ lý pháp lý ở công ty luật; pháp chế ở doanh nghiệp.
+  - Lịch làm rao (VietJobs, 120 tin có giờ): thứ 7 72%, chủ nhật 5%, làm ca 0%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Luật, Luật kinh tế; cao đẳng, trung cấp: Dịch vụ pháp lý, Dịch vụ pháp lý doanh nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Giáo dục và thư viện (9 nghề)
 
@@ -1147,9 +1267,11 @@
 - **Nhu cầu tuyển:** 34 tin trong VietJobs (10.0/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trường học, trung tâm, Văn phòng — luật khớp: WS_SCHOOL (nhóm 25); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Trường đại học, cao đẳng công lập (65%), Trường đại học tư thục (35%) — Giảng viên phần lớn ở trường công lập; đại học tư ít trường hơn.
+  - Lịch làm rao (VietJobs, 26 tin có giờ): thứ 7 42%, chủ nhật 0%, làm ca 0%, trung vị 44.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** giấy phép: Đạt chuẩn trình độ đào tạo theo cấp học; người không học sư phạm cần chứng chỉ nghiệp vụ sư phạm; ghi chú: Cần bằng thạc sĩ trở lên ở ngành mình dạy.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Giáo viên trung học (THCS, THPT) (`ONET-25-2031.00`)
 
@@ -1160,6 +1282,7 @@
 - **Nhu cầu tuyển:** 11 tin trong VietJobs (3.2/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trường học, trung tâm — luật khớp: WS_SCHOOL (nhóm 25).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Trường công lập (mầm non đến THPT) (75%), Trường tư thục, quốc tế, song ngữ (15%), Trung tâm ngoại ngữ, luyện thi, kỹ năng (10%) — Giáo viên ngoài công lập chỉ 10,1%; trung tâm luyện thi là nơi làm thêm.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Sư phạm Toán học, Sư phạm Ngữ văn, Sư phạm Khoa học tự nhiên; giấy phép: Đạt chuẩn trình độ đào tạo theo cấp học; người không học sư phạm cần chứng chỉ nghiệp vụ sư phạm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1173,6 +1296,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 3 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trường học, trung tâm — luật khớp: WS_SCHOOL (nhóm 25).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Trường công lập (mầm non đến THPT) (85%), Trường tư thục, quốc tế, song ngữ (15%) — Giáo viên ngoài công lập chỉ 10,1%.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Giáo dục Tiểu học; giấy phép: Đạt chuẩn trình độ đào tạo theo cấp học; người không học sư phạm cần chứng chỉ nghiệp vụ sư phạm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1186,6 +1310,7 @@
 - **Nhu cầu tuyển:** 12 tin trong VietJobs (3.5/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trường học, trung tâm — luật khớp: WS_SCHOOL (nhóm 25).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Trường công lập (mầm non đến THPT) (60%), Trường tư thục, quốc tế, song ngữ (40%) — Mầm non ngoài công lập nhiều hơn phổ thông (TP.HCM khoảng 62% trường mầm non).
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Giáo dục Mầm non; cao đẳng, trung cấp: Giáo dục mầm non; giấy phép: Đạt chuẩn trình độ đào tạo theo cấp học; người không học sư phạm cần chứng chỉ nghiệp vụ sư phạm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1199,9 +1324,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 4 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trường học, trung tâm — luật khớp: WS_SCHOOL (nhóm 25).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Trường công lập (mầm non đến THPT) (50%), Trung tâm ngoại ngữ, luyện thi, kỹ năng (50%) — Giáo dục đặc biệt ở trường chuyên biệt, hoà nhập công lập và trung tâm can thiệp sớm tư nhân.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Giáo dục đặc biệt; cao đẳng, trung cấp: Giáo dục đặc biệt; giấy phép: Đạt chuẩn trình độ đào tạo theo cấp học; người không học sư phạm cần chứng chỉ nghiệp vụ sư phạm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Gia sư, giáo viên trung tâm (`ONET-25-3041.00`)
 
@@ -1212,9 +1338,11 @@
 - **Nhu cầu tuyển:** 109 tin trong VietJobs (32.1/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trường học, trung tâm, Văn phòng — luật khớp: WS_SCHOOL (nhóm 25); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Trung tâm ngoại ngữ, luyện thi, kỹ năng (65%), Dạy trực tuyến, công ty edtech (35%) — Gia sư, giáo viên trung tâm dạy ở trung tâm và trực tuyến.
+  - Lịch làm rao (VietJobs, 95 tin có giờ): thứ 7 47%, chủ nhật 14%, làm ca 5%, trung vị 43.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Sư phạm tiếng nước ngoài, Ngôn ngữ Anh; ghi chú: Trung tâm thường cần bằng đại học đúng môn và chứng chỉ ngoại ngữ, không bắt buộc học sư phạm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thủ thư, chuyên viên lưu trữ (`ONET-25-4022.00`)
 
@@ -1225,9 +1353,10 @@
 - **Nhu cầu tuyển:** 15 tin trong VietJobs (4.4/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Thư viện, bảo tàng, lưu trữ công lập (60%), Trường đại học, cao đẳng công lập (20%), Cơ quan hành chính nhà nước (20%) — Thủ thư, lưu trữ ở thư viện, kho lưu trữ, thư viện trường và văn thư lưu trữ cơ quan.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Khoa học thư viện, Lưu trữ học; cao đẳng, trung cấp: Thư viện, Văn thư - Lưu trữ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên bảo tàng (`ONET-25-4012.00`)
 
@@ -1238,9 +1367,10 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (nhóm 11, 13, 15, 17, 19, 21, 23, 25, 27, 41, 43; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Thư viện, bảo tàng, lưu trữ công lập (100%) — Chuyên viên bảo tàng làm ở bảo tàng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Bảo tàng học, Di sản học; cao đẳng, trung cấp: Bảo tàng học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên phát triển chương trình đào tạo (`ONET-25-9031.00`)
 
@@ -1251,9 +1381,10 @@
 - **Nhu cầu tuyển:** 9 tin trong VietJobs (2.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (nhóm 11, 13, 15, 17, 19, 21, 23, 25, 27, 41, 43; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Dạy trực tuyến, công ty edtech (40%), Trung tâm ngoại ngữ, luyện thi, kỹ năng (30%), Văn phòng công ty nước ngoài, đa quốc gia (30%) — Phát triển chương trình ở edtech, trung tâm và bộ phận đào tạo của doanh nghiệp.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Lý luận và phương pháp dạy học, Công nghệ giáo dục.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông (17 nghề)
 
@@ -1266,6 +1397,8 @@
 - **Nhu cầu tuyển:** 657 tin trong VietJobs (193.4/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Agency marketing, quảng cáo, sự kiện (45%), Studio thiết kế, hoạt hình, thời trang (30%), Freelance sáng tạo theo show, dự án (25%) — Thiết kế đồ hoạ nhiều ở agency (657 tin VietJobs), studio và freelance.
+  - Lịch làm rao (VietJobs, 612 tin có giờ): thứ 7 64%, chủ nhật 3%, làm ca 0%, trung vị 44.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thiết kế đồ họa; cao đẳng, trung cấp: Thiết kế đồ họa.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1279,9 +1412,11 @@
 - **Nhu cầu tuyển:** 324 tin trong VietJobs (95.4/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Studio thiết kế, hoạt hình, thời trang (70%), Công ty sản xuất phim, TVC, MV (30%) — Hoạt hình, kỹ xảo ở studio hoạt hình, game art và công ty sản xuất phim.
+  - Lịch làm rao (VietJobs, 298 tin có giờ): thứ 7 68%, chủ nhật 4%, làm ca 0%, trung vị 44.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Nghệ thuật số, Thiết kế đồ họa; cao đẳng, trung cấp: Sản xuất phim hoạt hình, Thiết kế hình ảnh 3D.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Hoạ sĩ, nghệ nhân (`ONET-27-1013.00`)
 
@@ -1292,9 +1427,11 @@
 - **Nhu cầu tuyển:** 52 tin trong VietJobs (15.3/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thu, sân khấu, trường quay — luật khớp: WS_STUDIO (nhóm 27-1013; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Freelance sáng tạo theo show, dự án (60%), Xưởng nhỏ, cơ sở gia đình, làng nghề (40%) — Hoạ sĩ, nghệ nhân phần lớn tự do hoặc ở xưởng làng nghề.
+  - Lịch làm rao (VietJobs, 52 tin có giờ): thứ 7 48%, chủ nhật 6%, làm ca 0%, trung vị 42.5 giờ/tuần, vào làm 08:30.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Hội họa, Mỹ thuật tạo hình, Thủ công mỹ nghệ; cao đẳng, trung cấp: Hội họa, Thủ công mỹ nghệ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà thiết kế sản phẩm công nghiệp (`ONET-27-1021.00`)
 
@@ -1305,9 +1442,10 @@
 - **Nhu cầu tuyển:** 13 tin trong VietJobs (3.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng thiết kế, R&D kỹ thuật (50%), Nhà máy doanh nghiệp trong nước (30%), Studio thiết kế, hoạt hình, thời trang (20%) — Thiết kế sản phẩm ở phòng R&D, nhà máy và studio thiết kế.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thiết kế công nghiệp; cao đẳng, trung cấp: Thiết kế công nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà thiết kế thời trang (`ONET-27-1022.00`)
 
@@ -1318,9 +1456,11 @@
 - **Nhu cầu tuyển:** 74 tin trong VietJobs (21.8/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Studio thiết kế, hoạt hình, thời trang (45%), Nhà máy FDI trong khu công nghiệp (35%), Freelance sáng tạo theo show, dự án (20%) — Thiết kế thời trang ở thương hiệu trong nước, bộ phận phát triển mẫu nhà máy may và tự do.
+  - Lịch làm rao (VietJobs, 66 tin có giờ): thứ 7 73%, chủ nhật 3%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thiết kế thời trang; cao đẳng, trung cấp: Thiết kế thời trang, May thời trang.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà thiết kế nội thất và trang trí (`ONET-27-1025.00`)
 
@@ -1331,6 +1471,8 @@
 - **Nhu cầu tuyển:** 158 tin trong VietJobs (46.5/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (nhóm 11, 13, 15, 17, 19, 21, 23, 25, 27, 41, 43; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty tư vấn thiết kế, giám sát (60%), Freelance sáng tạo theo show, dự án (20%), Xưởng nhỏ, cơ sở gia đình, làng nghề (20%) — Thiết kế nội thất chủ yếu ở công ty thiết kế thi công (158 tin VietJobs); tự do, xưởng nội thất.
+  - Lịch làm rao (VietJobs, 140 tin có giờ): thứ 7 81%, chủ nhật 4%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thiết kế nội thất, Kiến trúc nội thất; cao đẳng, trung cấp: Thiết kế nội thất, Trang trí nội thất.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1); bỏ bước "dễ vào hơn" (2 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1344,9 +1486,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 4 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thu, sân khấu, trường quay, Hiện trường, công trường, ngoài trời — luật khớp: WS_STUDIO (nhóm 27-2, 27-4); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà hát, đoàn nghệ thuật công lập (40%), Công ty sản xuất phim, TVC, MV (35%), Công ty giải trí, quản lý nghệ sĩ, sự kiện (25%) — Diễn viên ở nhà hát công lập, phim và công ty giải trí.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Diễn viên, Nghệ thuật điện ảnh, truyền hình; cao đẳng, trung cấp: Diễn viên kịch - điện ảnh.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Đạo diễn, nhà sản xuất (`ONET-27-2012.00`)
 
@@ -1357,9 +1500,10 @@
 - **Nhu cầu tuyển:** 20 tin trong VietJobs (5.9/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thu, sân khấu, trường quay, Văn phòng — luật khớp: WS_STUDIO (nhóm 27-2, 27-4); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty sản xuất phim, TVC, MV (60%), Toà soạn báo, đài phát thanh truyền hình (25%), Nhà hát, đoàn nghệ thuật công lập (15%) — Đạo diễn ở công ty sản xuất phim, đài truyền hình và nhà hát.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Nghệ thuật điện ảnh, truyền hình, Nghệ thuật sân khấu; cao đẳng, trung cấp: Đạo diễn điện ảnh, truyền hình, Sản xuất phim.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Ca sĩ, nhạc công (`ONET-27-2042.00`)
 
@@ -1370,9 +1514,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thu, sân khấu, trường quay — luật khớp: WS_STUDIO (nhóm 27-2, 27-4).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty giải trí, quản lý nghệ sĩ, sự kiện (50%), Nhà hát, đoàn nghệ thuật công lập (30%), Freelance sáng tạo theo show, dự án (20%) — Ca sĩ, nhạc công ở công ty giải trí, phòng trà, nhà hát và show tự do.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thanh nhạc, Biểu diễn nhạc cụ phương tây, Biểu diễn nhạc cụ truyền thống; cao đẳng, trung cấp: Thanh nhạc, Biểu diễn nhạc cụ phương Tây.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Diễn viên múa (`ONET-27-2031.00`)
 
@@ -1383,9 +1528,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thu, sân khấu, trường quay — luật khớp: WS_STUDIO (nhóm 27-2, 27-4).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà hát, đoàn nghệ thuật công lập (60%), Công ty giải trí, quản lý nghệ sĩ, sự kiện (40%) — Diễn viên múa phần lớn ở nhà hát công lập; một phần ở công ty giải trí.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Diễn viên múa, Biên đạo múa; cao đẳng, trung cấp: Diễn viên múa.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Vận động viên, huấn luyện viên thể thao (`ONET-27-2021.00`)
 
@@ -1396,9 +1542,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thu, sân khấu, trường quay, Hiện trường, công trường, ngoài trời — luật khớp: WS_STUDIO (nhóm 27-2, 27-4); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Trung tâm huấn luyện thể thao, đội tuyển tỉnh (60%), Câu lạc bộ thể thao chuyên nghiệp (40%) — Vận động viên phần lớn ở trung tâm huấn luyện tỉnh; câu lạc bộ chuyên nghiệp ít hơn.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Huấn luyện thể thao, Giáo dục Thể chất; cao đẳng, trung cấp: Vận động viên thể thao, Huấn luyện thể thao.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Phóng viên, nhà báo (`ONET-27-3023.00`)
 
@@ -1409,6 +1556,7 @@
 - **Nhu cầu tuyển:** 21 tin trong VietJobs (6.2/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Toà soạn báo, đài phát thanh truyền hình (85%), Freelance sáng tạo theo show, dự án (15%) — Phóng viên làm ở 733 cơ quan báo chí; một phần cộng tác tự do.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Báo chí học, Truyền thông đại chúng; cao đẳng, trung cấp: Báo chí học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1422,9 +1570,11 @@
 - **Nhu cầu tuyển:** 149 tin trong VietJobs (43.9/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Toà soạn báo, đài phát thanh truyền hình (65%), Agency marketing, quảng cáo, sự kiện (35%) — Biên tập viên ở toà soạn và agency nội dung.
+  - Lịch làm rao (VietJobs, 141 tin có giờ): thứ 7 71%, chủ nhật 5%, làm ca 3%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Báo chí học, Xuất bản, Văn học; cao đẳng, trung cấp: Xuất bản.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhà văn, người viết nội dung (`ONET-27-3043.00`)
 
@@ -1435,6 +1585,8 @@
 - **Nhu cầu tuyển:** 694 tin trong VietJobs (204.3/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Agency marketing, quảng cáo, sự kiện (50%), Freelance sáng tạo theo show, dự án (35%), Văn phòng doanh nghiệp vừa và nhỏ trong nước (15%) — Viết nội dung nhiều ở agency, tự do và SME (694 tin VietJobs).
+  - Lịch làm rao (VietJobs, 659 tin có giờ): thứ 7 74%, chủ nhật 2%, làm ca 0%, trung vị 45.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Báo chí học, Văn học, Truyền thông đa phương tiện; cao đẳng, trung cấp: Sản xuất nội dung số.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1448,9 +1600,11 @@
 - **Nhu cầu tuyển:** 221 tin trong VietJobs (65.1/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy FDI trong khu công nghiệp (40%), Freelance sáng tạo theo show, dự án (40%), Văn phòng công ty nước ngoài, đa quốc gia (20%) — Phiên dịch tiếng Hàn, Nhật, Trung rất nhiều ở nhà máy FDI; tự do và văn phòng FDI.
+  - Lịch làm rao (VietJobs, 200 tin có giờ): thứ 7 72%, chủ nhật 7%, làm ca 2%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Ngôn ngữ Anh, Ngôn ngữ Trung Quốc, Ngôn ngữ Nhật; cao đẳng, trung cấp: Phiên dịch tiếng Anh thương mại.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhiếp ảnh, quay phim và dựng phim (`ONET-27-4031.00`)
 
@@ -1461,6 +1615,8 @@
 - **Nhu cầu tuyển:** 715 tin trong VietJobs (210.5/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thu, sân khấu, trường quay — luật khớp: WS_STUDIO (nhóm 27-2, 27-4).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty sản xuất phim, TVC, MV (45%), Agency marketing, quảng cáo, sự kiện (30%), Freelance sáng tạo theo show, dự án (25%) — Quay dựng ở công ty sản xuất, agency và tự do (715 tin VietJobs).
+  - Lịch làm rao (VietJobs, 676 tin có giờ): thứ 7 79%, chủ nhật 3%, làm ca 0%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quay phim, Nhiếp ảnh, Công nghệ điện ảnh, truyền hình; cao đẳng, trung cấp: Quay phim, Dựng ảnh, Nhiếp ảnh.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1474,9 +1630,10 @@
 - **Nhu cầu tuyển:** 15 tin trong VietJobs (4.4/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Phòng thu, sân khấu, trường quay, Văn phòng — luật khớp: WS_STUDIO (nhóm 27-2, 27-4); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Toà soạn báo, đài phát thanh truyền hình (40%), Công ty giải trí, quản lý nghệ sĩ, sự kiện (40%), Công ty sản xuất phim, TVC, MV (20%) — Kỹ thuật viên âm thanh, ánh sáng ở đài, sân khấu sự kiện và công ty sản xuất.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thiết kế âm thanh, ánh sáng, Công nghệ âm nhạc; cao đẳng, trung cấp: Thiết kế âm thanh, ánh sáng, Kỹ sư âm thanh, Kỹ thuật sản xuất chương trình truyền hình.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Y tế chuyên môn và kỹ thuật y tế (15 nghề)
 
@@ -1489,6 +1646,8 @@
 - **Nhu cầu tuyển:** 65 tin trong VietJobs (19.1/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Bệnh viện công (60%), Bệnh viện tư, quốc tế (25%), Phòng khám tư, chuyên khoa (15%) — Khoảng 77% bệnh viện là công lập; bệnh viện tư chỉ 5,8% giường; phòng khám tư.
+  - Lịch làm rao (VietJobs, 45 tin có giờ): thứ 7 67%, chủ nhật 24%, làm ca 2%, trung vị 51.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Y khoa, Y học gia đình; cao đẳng, trung cấp: Y sỹ đa khoa; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực); ghi chú: Bác sĩ học Y khoa 6 năm; trung cấp chỉ đào tạo y sỹ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1502,9 +1661,10 @@
 - **Nhu cầu tuyển:** 19 tin trong VietJobs (5.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Phòng khám tư, chuyên khoa (75%), Bệnh viện công (25%) — Nha sĩ phần lớn ở phòng khám nha khoa tư; một phần ở bệnh viện.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Răng - Hàm - Mặt; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Dược sĩ (`ONET-29-1051.00`)
 
@@ -1515,6 +1675,8 @@
 - **Nhu cầu tuyển:** 97 tin trong VietJobs (28.6/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Nhà thuốc, chuỗi nhà thuốc (60%), Bệnh viện công (25%), Nhà máy doanh nghiệp trong nước (15%) — Khoảng 60.000 nhà thuốc; dược sĩ bệnh viện và nhà máy dược ít hơn.
+  - Lịch làm rao (VietJobs, 83 tin có giờ): thứ 7 60%, chủ nhật 10%, làm ca 13%, trung vị 45.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Dược học; cao đẳng, trung cấp: Dược học, Kỹ thuật dược; giấy phép: Chứng chỉ hành nghề dược.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1528,6 +1690,8 @@
 - **Nhu cầu tuyển:** 111 tin trong VietJobs (32.7/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Bệnh viện công (65%), Bệnh viện tư, quốc tế (25%), Viện dưỡng lão, chăm sóc tại nhà (10%) — Điều dưỡng chủ yếu ở bệnh viện công (77% số bệnh viện); bệnh viện tư, dưỡng lão.
+  - Lịch làm rao (VietJobs, 95 tin có giờ): thứ 7 58%, chủ nhật 24%, làm ca 16%, trung vị 51.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Điều dưỡng; cao đẳng, trung cấp: Điều dưỡng; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (3) → Lên quản lý (1); bỏ bước "dễ vào hơn" (5 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1541,6 +1705,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 3 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Bệnh viện công (75%), Bệnh viện tư, quốc tế (25%) — Hộ sinh ở khoa sản bệnh viện, phần lớn công lập.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Hộ sinh; cao đẳng, trung cấp: Hộ sinh; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1554,6 +1719,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Bệnh viện công (70%), Bệnh viện tư, quốc tế (30%) — Gây mê ở bệnh viện có phòng mổ, phần lớn công lập.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật gây mê hồi sức; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1567,9 +1733,10 @@
 - **Nhu cầu tuyển:** 6 tin trong VietJobs (1.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Bệnh viện công (50%), Phòng khám tư, chuyên khoa (35%), Viện dưỡng lão, chăm sóc tại nhà (15%) — Phục hồi chức năng ở bệnh viện, phòng khám vật lý trị liệu và dưỡng lão.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật Phục hồi chức năng; cao đẳng, trung cấp: Kỹ thuật phục hồi chức năng, Kỹ thuật vật lý trị liệu; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (9 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Y học cổ truyền, châm cứu (`ONET-29-1291.00`)
 
@@ -1580,9 +1747,10 @@
 - **Nhu cầu tuyển:** 6 tin trong VietJobs (1.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Bệnh viện công (50%), Phòng khám tư, chuyên khoa (50%) — Y học cổ truyền ở bệnh viện y học cổ truyền và phòng khám đông y.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Y học cổ truyền; cao đẳng, trung cấp: Y sỹ y học cổ truyền; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên dinh dưỡng (`ONET-29-1031.00`)
 
@@ -1593,9 +1761,10 @@
 - **Nhu cầu tuyển:** 11 tin trong VietJobs (3.2/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Bệnh viện công (50%), Bệnh viện tư, quốc tế (25%), Nhà máy chế biến thực phẩm, thuỷ sản (25%) — Dinh dưỡng ở bệnh viện và công ty sữa, thực phẩm.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Dinh dưỡng; cao đẳng, trung cấp: Dinh dưỡng; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Bác sĩ thú y (`ONET-29-1131.00`)
 
@@ -1606,9 +1775,10 @@
 - **Nhu cầu tuyển:** 7 tin trong VietJobs (2.1/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Phòng khám, bệnh viện thú y (70%), Trang trại, doanh nghiệp nông nghiệp công nghệ cao (30%) — Bác sĩ thú y ở phòng khám thú cưng và trang trại chăn nuôi.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thú y; cao đẳng, trung cấp: Thú y, Dịch vụ thú y.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ thuật viên xét nghiệm (`ONET-29-2011.00`)
 
@@ -1619,9 +1789,10 @@
 - **Nhu cầu tuyển:** 14 tin trong VietJobs (4.1/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Bệnh viện công (55%), Bệnh viện tư, quốc tế (30%), Trung tâm kiểm nghiệm, phòng thí nghiệm dịch vụ (15%) — Xét nghiệm ở bệnh viện và phòng thí nghiệm dịch vụ.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật xét nghiệm y học; cao đẳng, trung cấp: Kỹ thuật xét nghiệm y học; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (2) → Lên quản lý (1); bỏ bước "dễ vào hơn" (3 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ thuật viên chẩn đoán hình ảnh (`ONET-29-2034.00`)
 
@@ -1632,6 +1803,7 @@
 - **Nhu cầu tuyển:** 15 tin trong VietJobs (4.4/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Bệnh viện công (65%), Bệnh viện tư, quốc tế (35%) — Chẩn đoán hình ảnh ở bệnh viện, phần lớn công lập.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật hình ảnh y học; cao đẳng, trung cấp: Kỹ thuật hình ảnh y học; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1645,9 +1817,10 @@
 - **Nhu cầu tuyển:** 9 tin trong VietJobs (2.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Phòng khám tư, chuyên khoa (60%), Bệnh viện công (40%) — Khúc xạ, nhãn khoa ở phòng khám mắt, kính và khoa mắt bệnh viện.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Khúc xạ nhãn khoa; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (3 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên cấp cứu ngoại viện (`ONET-29-2043.00`)
 
@@ -1658,6 +1831,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc, Hiện trường, công trường, ngoài trời — luật khớp: WS_HEALTH (nhóm 29, 31); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Trung tâm cấp cứu 115 (100%) — Cấp cứu ngoại viện làm ở trung tâm 115 (có phụ cấp trực riêng, Nghị định 192/2026).
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Cấp cứu ngoại viện; cao đẳng, trung cấp: Cấp cứu ngoại viện; giấy phép: Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1671,6 +1845,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 3 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc, Văn phòng — luật khớp: WS_HEALTH (nhóm 29, 31); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Bệnh viện công (70%), Bệnh viện tư, quốc tế (30%) — Hồ sơ bệnh án ở bệnh viện, phần lớn công lập.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Thư ký y khoa.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1686,6 +1861,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 3 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Bệnh viện công (55%), Bệnh viện tư, quốc tế (25%), Viện dưỡng lão, chăm sóc tại nhà (20%) — Hộ lý ở bệnh viện, phần lớn công lập; dưỡng lão.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Điều dưỡng; ghi chú: Hộ lý thường học sơ cấp hoặc đào tạo tại bệnh viện.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (3 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1699,9 +1875,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 2 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Làm tại nhà khách (giúp việc, bảo mẫu, chăm sóc) (50%), Viện dưỡng lão, chăm sóc tại nhà (50%) — Chăm sóc tại nhà qua công ty cung ứng hoặc thuê trực tiếp, và ở viện dưỡng lão.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Chăm sóc người cao tuổi, Dịch vụ chăm sóc gia đình.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Trợ thủ nha khoa (`ONET-31-9091.00`)
 
@@ -1712,9 +1889,11 @@
 - **Nhu cầu tuyển:** 23 tin trong VietJobs (6.8/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Phòng khám tư, chuyên khoa (100%) — Trợ thủ nha khoa làm ở phòng khám nha khoa.
+  - Lịch làm rao (VietJobs, 20 tin có giờ): thứ 7 70%, chủ nhật 55%, làm ca 10%, trung vị 63.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kỹ thuật phục hình răng; ghi chú: Thường học sơ cấp hoặc đào tạo tại phòng khám.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Trợ lý y khoa (`ONET-31-9092.00`)
 
@@ -1725,9 +1904,10 @@
 - **Nhu cầu tuyển:** 12 tin trong VietJobs (3.5/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Phòng khám tư, chuyên khoa (50%), Bệnh viện tư, quốc tế (50%) — Trợ lý y khoa ở phòng khám và bệnh viện tư.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Trợ lý y khoa.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Chuyên viên xoa bóp trị liệu (`ONET-31-9011.00`)
 
@@ -1738,9 +1918,11 @@
 - **Nhu cầu tuyển:** 45 tin trong VietJobs (13.2/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Bệnh viện, phòng khám, cơ sở chăm sóc — luật khớp: WS_HEALTH (nhóm 29, 31).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Chuỗi spa, salon, thẩm mỹ viện (40%), Phòng khám tư, chuyên khoa (30%), Tiệm tóc, nail, spa nhỏ (30%) — Xoa bóp trị liệu ở spa, phòng khám vật lý trị liệu, đông y và tiệm nhỏ.
+  - Lịch làm rao (VietJobs, 40 tin có giờ): thứ 7 42%, chủ nhật 38%, làm ca 40%, trung vị 63.0 giờ/tuần, vào làm 09:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Spa trị liệu và chăm sóc sức khỏe du lịch, Kỹ thuật vật lý trị liệu.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Dịch vụ bảo vệ an ninh và an toàn (8 nghề)
 
@@ -1753,6 +1935,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Công an (đồn, phòng nghiệp vụ) (100%) — Cảnh sát chỉ làm trong lực lượng công an.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Trinh sát cảnh sát, Quản lý trật tự an toàn giao thông; ghi chú: Học tại học viện, trường của Bộ Công an; tuyển sinh riêng có sơ tuyển sức khoẻ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1766,6 +1949,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Công an (đồn, phòng nghiệp vụ) (100%) — Điều tra viên ở cơ quan cảnh sát điều tra.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Điều tra hình sự, Trinh sát cảnh sát; ghi chú: Học tại học viện, trường của Bộ Công an.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1779,6 +1963,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Trại giam, trại tạm giam (100%) — Quản giáo ở trại giam, trại tạm giam.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Thi hành án hình sự và hỗ trợ tư pháp; ghi chú: Học tại trường của Bộ Công an.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1792,6 +1977,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Cảnh sát phòng cháy chữa cháy và cứu nạn (100%) — Lính cứu hoả ở lực lượng cảnh sát phòng cháy chữa cháy.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Phòng cháy chữa cháy và cứu nạn cứu hộ; ghi chú: Học tại Trường Đại học Phòng cháy chữa cháy (Bộ Công an).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Cấp cao (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1805,6 +1991,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Hạt kiểm lâm, vườn quốc gia (100%) — Kiểm lâm ở hạt kiểm lâm, vườn quốc gia.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý tài nguyên rừng, Lâm học; cao đẳng, trung cấp: Quản lý tài nguyên rừng; ghi chú: Vào ngạch kiểm lâm qua thi tuyển công chức.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1818,6 +2005,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Cửa khẩu, hải quan, biên phòng (100%) — Hải quan, biên phòng ở cửa khẩu.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý biên giới và cửa khẩu, Biên phòng; ghi chú: Hải quan tuyển qua thi công chức; biên phòng học tại học viện của Bộ Quốc phòng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1831,9 +2019,11 @@
 - **Nhu cầu tuyển:** 45 tin trong VietJobs (13.2/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 33-9032, 37-2011, 43-4081, 39-9032, 41-9012, 11-9051, 11-9081; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty dịch vụ vệ sinh, bảo vệ (70%), Ban quản lý toà nhà, chung cư, khu đô thị (30%) — Bảo vệ phần lớn qua công ty dịch vụ bảo vệ; một phần thuê trực tiếp ở toà nhà.
+  - Lịch làm rao (VietJobs, 30 tin có giờ): thứ 7 47%, chủ nhật 7%, làm ca 37%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** ghi chú: Không cần bằng cấp; công ty dịch vụ bảo vệ đào tạo ngắn hạn và cấp chứng nhận nghiệp vụ bảo vệ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên cứu hộ bể bơi, bãi biển (`ONET-33-9092.00`)
 
@@ -1844,9 +2034,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 4 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khu vui chơi, công viên giải trí (50%), Khách sạn, resort 4–5 sao (30%), Phòng gym, trung tâm thể hình (20%) — Cứu hộ ở công viên nước, bể bơi khách sạn và phòng tập.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** ghi chú: Học khoá cứu hộ ngắn hạn và có chứng nhận.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Chế biến và phục vụ ăn uống (3 nghề)
 
@@ -1859,9 +2050,11 @@
 - **Nhu cầu tuyển:** 162 tin trong VietJobs (47.7/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Chuỗi nhà hàng, cà phê, đồ ăn nhanh (40%), Nhà hàng, quán cà phê, bar độc lập (30%), Khách sạn, resort 4–5 sao (30%) — Đầu bếp ở chuỗi, quán độc lập và bếp khách sạn.
+  - Lịch làm rao (VietJobs, 135 tin có giờ): thứ 7 23%, chủ nhật 12%, làm ca 42%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kỹ thuật chế biến món ăn.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (2) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên pha chế (barista, bartender) (`ONET-35-3023.01`)
 
@@ -1872,9 +2065,11 @@
 - **Nhu cầu tuyển:** 44 tin trong VietJobs (13.0/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Chuỗi nhà hàng, cà phê, đồ ăn nhanh (55%), Nhà hàng, quán cà phê, bar độc lập (45%) — Pha chế ở chuỗi cà phê và quán độc lập.
+  - Lịch làm rao (VietJobs, 35 tin có giờ): thứ 7 34%, chủ nhật 6%, làm ca 20%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kỹ thuật pha chế đồ uống.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên phục vụ nhà hàng (`ONET-35-3031.00`)
 
@@ -1885,9 +2080,11 @@
 - **Nhu cầu tuyển:** 71 tin trong VietJobs (20.9/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Chuỗi nhà hàng, cà phê, đồ ăn nhanh (45%), Nhà hàng, quán cà phê, bar độc lập (35%), Khách sạn, resort 4–5 sao (20%) — Phục vụ ở chuỗi, quán độc lập và nhà hàng khách sạn.
+  - Lịch làm rao (VietJobs, 61 tin có giờ): thứ 7 16%, chủ nhật 7%, làm ca 52%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Quản trị nhà hàng; ghi chú: Phần lớn học việc tại chỗ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Vệ sinh và bảo dưỡng toà nhà, cảnh quan (3 nghề)
 
@@ -1900,9 +2097,11 @@
 - **Nhu cầu tuyển:** 36 tin trong VietJobs (10.6/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 33-9032, 37-2011, 43-4081, 39-9032, 41-9012, 11-9051, 11-9081; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khách sạn, resort 4–5 sao (45%), Công ty dịch vụ vệ sinh, bảo vệ (40%), Khách sạn nhỏ, nhà nghỉ, homestay (15%) — Buồng phòng ở khách sạn; vệ sinh qua công ty dịch vụ vệ sinh.
+  - Lịch làm rao (VietJobs, 26 tin có giờ): thứ 7 31%, chủ nhật 8%, làm ca 31%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Nghiệp vụ lưu trú; ghi chú: Phần lớn học việc tại chỗ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Công nhân cảnh quan và cây xanh (`ONET-37-3011.00`)
 
@@ -1913,9 +2112,10 @@
 - **Nhu cầu tuyển:** 6 tin trong VietJobs (1.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty môi trường đô thị, cây xanh (70%), Ban quản lý toà nhà, chung cư, khu đô thị (30%) — Cây xanh ở công ty công viên cây xanh và ban quản lý khu đô thị.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Làm vườn - Cây cảnh, Quản lý cây xanh đô thị.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên kiểm soát côn trùng (`ONET-37-2021.00`)
 
@@ -1926,9 +2126,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Dịch vụ kỹ thuật tận nhà (100%) — Kiểm soát côn trùng ở công ty dịch vụ tận nơi.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Bảo vệ thực vật; ghi chú: Học việc tại công ty và khoá an toàn hoá chất.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Chăm sóc và dịch vụ cá nhân (10 nghề)
 
@@ -1941,6 +2142,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Tiệm tóc, nail, spa nhỏ (70%), Chuỗi spa, salon, thẩm mỹ viện (30%) — Thợ tóc phần lớn ở tiệm nhỏ (5,3 triệu cơ sở cá thể); chuỗi salon ít hơn.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kỹ thuật chăm sóc tóc.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1954,9 +2156,11 @@
 - **Nhu cầu tuyển:** 80 tin trong VietJobs (23.6/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Chuỗi spa, salon, thẩm mỹ viện (55%), Tiệm tóc, nail, spa nhỏ (45%) — Chăm sóc da ở chuỗi spa (tuyển nhiều trên trang việc làm) và spa nhỏ.
+  - Lịch làm rao (VietJobs, 70 tin có giờ): thứ 7 49%, chủ nhật 33%, làm ca 27%, trung vị 57.0 giờ/tuần, vào làm 08:30.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Chăm sóc sắc đẹp, Spa trị liệu và chăm sóc sức khỏe du lịch.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ làm móng (`ONET-39-5092.00`)
 
@@ -1967,6 +2171,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 2 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ, Văn phòng — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Tiệm tóc, nail, spa nhỏ (80%), Chuỗi spa, salon, thẩm mỹ viện (20%) — Thợ nail phần lớn ở tiệm nhỏ.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Chăm sóc sắc đẹp; ghi chú: Thường học khoá ngắn tại tiệm hoặc trung tâm.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -1980,9 +2185,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Freelance sáng tạo theo show, dự án (60%), Tiệm tóc, nail, spa nhỏ (25%), Công ty sản xuất phim, TVC, MV (15%) — Trang điểm phần lớn tự do theo show cưới; một phần ở studio áo cưới, đoàn phim.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Tạo hình hóa trang, Chăm sóc sắc đẹp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Hướng dẫn viên du lịch (`ONET-39-7011.00`)
 
@@ -1993,6 +2199,7 @@
 - **Nhu cầu tuyển:** 9 tin trong VietJobs (2.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Công ty lữ hành (100%) — Hướng dẫn viên phải có hợp đồng với doanh nghiệp lữ hành hoặc là hội viên tổ chức nghề nghiệp (Luật Du lịch 2017).
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Du lịch; cao đẳng, trung cấp: Hướng dẫn du lịch; ghi chú: Cần thẻ hướng dẫn viên du lịch theo Luật Du lịch.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2006,9 +2213,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ, Hiện trường, công trường, ngoài trời — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Làm tại nhà khách (giúp việc, bảo mẫu, chăm sóc) (60%), Trường tư thục, quốc tế, song ngữ (40%) — Trông trẻ tại nhà gia đình và bảo mẫu ở trường mầm non tư.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Chăm sóc và nuôi dưỡng trẻ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Huấn luyện viên thể hình (`ONET-39-9031.00`)
 
@@ -2019,9 +2227,10 @@
 - **Nhu cầu tuyển:** 9 tin trong VietJobs (2.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Phòng gym, trung tâm thể hình (80%), Khách sạn, resort 4–5 sao (20%) — Huấn luyện viên thể hình ở phòng gym, một phần ở khách sạn, resort.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Giáo dục Thể chất, Huấn luyện thể thao; cao đẳng, trung cấp: Quản lý, huấn luyện sức khỏe, Huấn luyện thể thao.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên tổ chức hoạt động vui chơi giải trí (`ONET-39-9032.00`)
 
@@ -2032,9 +2241,11 @@
 - **Nhu cầu tuyển:** 21 tin trong VietJobs (6.2/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 33-9032, 37-2011, 43-4081, 39-9032, 41-9012, 11-9051, 11-9081; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khu vui chơi, công viên giải trí (60%), Khách sạn, resort 4–5 sao (25%), Agency marketing, quảng cáo, sự kiện (15%) — Hoạt động vui chơi ở khu giải trí, đội hoạt náo resort và agency sự kiện.
+  - Lịch làm rao (VietJobs, 21 tin có giờ): thứ 7 24%, chủ nhật 10%, làm ca 24%, trung vị 42.5 giờ/tuần, vào làm 08:30.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý thể dục thể thao, Du lịch; cao đẳng, trung cấp: Văn hóa, văn nghệ quần chúng, Tổ chức sự kiện.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (3 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên chăm sóc thú cưng và động vật (`ONET-39-2021.00`)
 
@@ -2045,9 +2256,10 @@
 - **Nhu cầu tuyển:** 5 tin trong VietJobs (1.5/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ, Hiện trường, công trường, ngoài trời — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Cửa hàng, spa thú cưng (70%), Phòng khám, bệnh viện thú y (30%) — Chăm sóc thú cưng ở pet shop, spa và phòng khám thú y.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Dịch vụ thú y.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên dịch vụ tang lễ (`ONET-39-4031.00`)
 
@@ -2058,9 +2270,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ, Hiện trường, công trường, ngoài trời — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà tang lễ, dịch vụ tang lễ (100%) — Tang lễ ở nhà tang lễ và công ty dịch vụ tang lễ.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** ghi chú: Học việc tại cơ sở dịch vụ tang lễ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Bán hàng (9 nghề)
 
@@ -2073,6 +2286,8 @@
 - **Nhu cầu tuyển:** 733 tin trong VietJobs (215.8/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Siêu thị, chuỗi bán lẻ, trung tâm thương mại (55%), Cửa hàng nhỏ, hộ kinh doanh (45%) — Bán lẻ truyền thống 65–70% thị trường nhưng chuỗi tuyển trên trang việc làm nhiều hơn.
+  - Lịch làm rao (VietJobs, 633 tin có giờ): thứ 7 35%, chủ nhật 9%, làm ca 39%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Bán hàng trong siêu thị, Kinh doanh thương mại; ghi chú: Phần lớn không đòi bằng cấp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2086,9 +2301,11 @@
 - **Nhu cầu tuyển:** 126 tin trong VietJobs (37.1/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 35, 39, 41-2).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Siêu thị, chuỗi bán lẻ, trung tâm thương mại (65%), Chuỗi nhà hàng, cà phê, đồ ăn nhanh (35%) — Thu ngân ở siêu thị, cửa hàng tiện lợi và chuỗi F&B.
+  - Lịch làm rao (VietJobs, 116 tin có giờ): thứ 7 28%, chủ nhật 20%, làm ca 46%, trung vị 50.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Bán hàng trong siêu thị; ghi chú: Phần lớn học việc tại chỗ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Tư vấn viên bảo hiểm (`ONET-41-3021.00`)
 
@@ -2099,9 +2316,10 @@
 - **Nhu cầu tuyển:** 8 tin trong VietJobs (2.4/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty bảo hiểm (70%), Chi nhánh, phòng giao dịch ngân hàng (30%) — Tư vấn bảo hiểm phần lớn là đại lý của công ty bảo hiểm; một phần bán qua ngân hàng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Bảo hiểm; cao đẳng, trung cấp: Bảo hiểm; ghi chú: Đại lý bảo hiểm cần chứng chỉ đại lý do doanh nghiệp bảo hiểm tổ chức thi.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên môi giới chứng khoán (`ONET-41-3031.00`)
 
@@ -2112,9 +2330,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 4 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty chứng khoán, quản lý quỹ (100%) — Môi giới chứng khoán làm ở công ty chứng khoán.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Tài chính - Ngân hàng; ghi chú: Cần chứng chỉ hành nghề chứng khoán theo Luật Chứng khoán.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên môi giới bất động sản (`ONET-41-9022.00`)
 
@@ -2125,9 +2344,11 @@
 - **Nhu cầu tuyển:** 148 tin trong VietJobs (43.6/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Sàn giao dịch, môi giới bất động sản (100%) — Môi giới bất động sản làm ở sàn hoặc văn phòng môi giới.
+  - Lịch làm rao (VietJobs, 118 tin có giờ): thứ 7 80%, chủ nhật 8%, làm ca 1%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Bất động sản; cao đẳng, trung cấp: Kinh doanh bất động sản; ghi chú: Cần chứng chỉ hành nghề môi giới bất động sản theo Luật Kinh doanh bất động sản.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên kinh doanh (sales B2B) (`ONET-41-4012.00`)
 
@@ -2138,6 +2359,8 @@
 - **Nhu cầu tuyển:** 3511 tin trong VietJobs (1033.7/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Văn phòng doanh nghiệp vừa và nhỏ trong nước (50%), Văn phòng công ty nước ngoài, đa quốc gia (25%), Công ty logistics, giao nhận, xuất nhập khẩu (25%) — Sales B2B nhiều nhất ở SME (3.511 tin VietJobs), FDI và logistics.
+  - Lịch làm rao (VietJobs, 3125 tin có giờ): thứ 7 73%, chủ nhật 5%, làm ca 2%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị kinh doanh, Kinh doanh thương mại, Marketing; cao đẳng, trung cấp: Quản trị bán hàng, Kinh doanh thương mại.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (2); bỏ bước "dễ vào hơn" (3 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2151,9 +2374,11 @@
 - **Nhu cầu tuyển:** 285 tin trong VietJobs (83.9/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (nhóm 11, 13, 15, 17, 19, 21, 23, 25, 27, 41, 43; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà cung cấp, bảo trì thiết bị (55%), Văn phòng công ty nước ngoài, đa quốc gia (45%) — Sales kỹ thuật ở nhà cung cấp thiết bị và công ty FDI.
+  - Lịch làm rao (VietJobs, 255 tin có giờ): thứ 7 67%, chủ nhật 2%, làm ca 0%, trung vị 44.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật cơ khí, Kỹ thuật điện, Kinh doanh thương mại.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên kinh doanh tour du lịch (`ONET-41-3041.00`)
 
@@ -2164,9 +2389,11 @@
 - **Nhu cầu tuyển:** 271 tin trong VietJobs (79.8/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty lữ hành (80%), Khách sạn, resort 4–5 sao (20%) — Kinh doanh tour ở công ty lữ hành; một phần ở bộ phận bán của khách sạn, resort.
+  - Lịch làm rao (VietJobs, 239 tin có giờ): thứ 7 65%, chủ nhật 3%, làm ca 4%, trung vị 44.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Du lịch; cao đẳng, trung cấp: Điều hành tour du lịch, Quản trị lữ hành.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Người mẫu (`ONET-41-9012.00`)
 
@@ -2177,9 +2404,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 33-9032, 37-2011, 43-4081, 39-9032, 41-9012, 11-9051, 11-9081; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty giải trí, quản lý nghệ sĩ, sự kiện (60%), Freelance sáng tạo theo show, dự án (40%) — Người mẫu qua công ty quản lý, agency và tự do.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Nghệ thuật trình diễn mẫu thời trang.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Văn phòng và hỗ trợ hành chính (9 nghề)
 
@@ -2192,9 +2420,11 @@
 - **Nhu cầu tuyển:** 848 tin trong VietJobs (249.7/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng doanh nghiệp vừa và nhỏ trong nước (50%), Văn phòng tập đoàn lớn trong nước (25%), Cơ quan hành chính nhà nước (25%) — Hành chính, thư ký ở SME, tập đoàn và cơ quan nhà nước.
+  - Lịch làm rao (VietJobs, 786 tin có giờ): thứ 7 68%, chủ nhật 4%, làm ca 3%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị văn phòng; cao đẳng, trung cấp: Hành chính văn phòng, Thư ký, Văn thư hành chính.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (2) → Cấp cao (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên chăm sóc khách hàng (`ONET-43-4051.00`)
 
@@ -2205,9 +2435,11 @@
 - **Nhu cầu tuyển:** 702 tin trong VietJobs (206.7/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Văn phòng tập đoàn lớn trong nước (45%), Văn phòng doanh nghiệp vừa và nhỏ trong nước (35%), Hội sở ngân hàng (20%) — Chăm sóc khách hàng nhiều ở tổng đài tập đoàn, SME và ngân hàng.
+  - Lịch làm rao (VietJobs, 631 tin có giờ): thứ 7 53%, chủ nhật 10%, làm ca 19%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Quản trị kinh doanh; ghi chú: Phần lớn không đòi ngành học riêng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Lễ tân khách sạn (`ONET-43-4081.00`)
 
@@ -2218,9 +2450,11 @@
 - **Nhu cầu tuyển:** 104 tin trong VietJobs (30.6/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ — luật khớp: WS_SERVICE (nhóm 33-9032, 37-2011, 43-4081, 39-9032, 41-9012, 11-9051, 11-9081; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Khách sạn, resort 4–5 sao (65%), Khách sạn nhỏ, nhà nghỉ, homestay (35%) — Lễ tân ở khách sạn lớn và khách sạn nhỏ.
+  - Lịch làm rao (VietJobs, 93 tin có giờ): thứ 7 53%, chủ nhật 16%, làm ca 31%, trung vị 46.5 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản trị khách sạn; cao đẳng, trung cấp: Nghiệp vụ lễ tân, Tiếng Anh lễ tân nhà hàng, khách sạn.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Giao dịch viên ngân hàng (`ONET-43-3071.00`)
 
@@ -2231,6 +2465,7 @@
 - **Nhu cầu tuyển:** 19 tin trong VietJobs (5.6/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Chi nhánh, phòng giao dịch ngân hàng (100%) — Giao dịch viên chỉ làm ở quầy chi nhánh, phòng giao dịch ngân hàng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Tài chính - Ngân hàng; cao đẳng, trung cấp: Tài chính - Ngân hàng, Kế toán ngân hàng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (3) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2244,6 +2479,7 @@
 - **Nhu cầu tuyển:** không có mục này; nghề không có luật khớp tin (chủ yếu tuyển qua thi công chức, công an, hoặc không đăng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Trung tâm phục vụ hành chính công, bộ phận một cửa (100%) — Tiếp nhận hồ sơ ở trung tâm phục vụ hành chính công, bộ phận một cửa.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý nhà nước, Luật; cao đẳng, trung cấp: Pháp luật về quản lý hành chính công; ghi chú: Vào qua thi tuyển công chức, viên chức.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2257,6 +2493,8 @@
 - **Nhu cầu tuyển:** 545 tin trong VietJobs (160.5/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 43-5, 11-3051, 17-2112, 17-2199, 17-2141, 17-2071; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Kho vận, trung tâm phân loại hàng (40%), Nhà máy FDI trong khu công nghiệp (35%), Nhà máy doanh nghiệp trong nước (25%) — Nhân viên kho ở kho vận và nhà máy (545 tin VietJobs, 74% làm thứ 7).
+  - Lịch làm rao (VietJobs, 496 tin có giờ): thứ 7 74%, chủ nhật 8%, làm ca 14%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Logistics và Quản lý chuỗi cung ứng; cao đẳng, trung cấp: Quản lý kho hàng, Quản trị kho vận.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2270,9 +2508,11 @@
 - **Nhu cầu tuyển:** 98 tin trong VietJobs (28.9/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Giao hàng, xe công nghệ (100%) — Shipper ở công ty giao vận và ứng dụng giao hàng.
+  - Lịch làm rao (VietJobs, 91 tin có giờ): thứ 7 75%, chủ nhật 7%, làm ca 8%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** ghi chú: Không đòi bằng cấp; cần giấy phép lái xe máy.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên bưu chính (`ONET-43-5051.00`)
 
@@ -2283,9 +2523,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 43-5, 11-3051, 17-2112, 17-2199, 17-2141, 17-2071; luật dự phòng).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Bưu điện, bưu cục (100%) — Nhân viên bưu chính ở bưu điện.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kinh doanh dịch vụ bưu chính viễn thông.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Điều phối viên vận tải và khẩn cấp (`ONET-43-5032.00`)
 
@@ -2296,9 +2537,11 @@
 - **Nhu cầu tuyển:** 61 tin trong VietJobs (18.0/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Văn phòng — luật khớp: WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Doanh nghiệp vận tải hàng hoá đường bộ (50%), Công ty logistics, giao nhận, xuất nhập khẩu (30%), Trung tâm cấp cứu 115 (20%) — Điều phối vận tải ở nhà xe, công ty logistics và tổng đài cấp cứu.
+  - Lịch làm rao (VietJobs, 52 tin có giờ): thứ 7 85%, chủ nhật 2%, làm ca 8%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Khai thác vận tải, Logistics và Quản lý chuỗi cung ứng; cao đẳng, trung cấp: Quản lý vận tải và dịch vụ logistics, Khai thác vận tải đường bộ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Nông nghiệp, ngư nghiệp và lâm nghiệp (4 nghề)
 
@@ -2311,6 +2554,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Nông hộ, gia trại (75%), Trang trại, doanh nghiệp nông nghiệp công nghệ cao (25%) — Nông nghiệp phần lớn là nông hộ; 28.349 trang trại.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Trồng trọt; ghi chú: Phần lớn học việc tại chỗ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2324,6 +2568,7 @@
 - **Nhu cầu tuyển:** 22 tin trong VietJobs (6.5/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Nông hộ, gia trại (60%), Trang trại, doanh nghiệp nông nghiệp công nghệ cao (40%) — Chăn nuôi, thuỷ sản phần lớn ở nông hộ; doanh nghiệp chăn nuôi khép kín đang tăng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Chăn nuôi gia súc, gia cầm, Nuôi trồng thủy sản; ghi chú: Phần lớn học việc tại chỗ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2337,6 +2582,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Tàu cá đánh bắt xa bờ (100%) — Ngư dân đánh bắt trên tàu cá (hơn 81.700 tàu, 28.100 tàu từ 15 m).
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Khai thác thủy sản; ghi chú: Phần lớn học việc trên tàu.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2350,9 +2596,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty lâm nghiệp, lâm trường (70%), Nông hộ, gia trại (30%) — Công nhân lâm nghiệp ở công ty lâm nghiệp và hộ trồng rừng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Lâm sinh, Lâm nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Xây dựng và khai khoáng (8 nghề)
 
@@ -2365,9 +2612,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Tổ đội thợ, nhà thầu phụ, thợ tự do (60%), Công trường của nhà thầu xây dựng (40%) — Thợ xây phần lớn ở tổ đội thợ phi chính thức; một phần ở công trường nhà thầu.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Nề - Hoàn thiện.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ mộc (`ONET-47-2031.00`)
 
@@ -2378,9 +2626,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Tổ đội thợ, nhà thầu phụ, thợ tự do (55%), Công trường của nhà thầu xây dựng (45%) — Thợ mộc công trình (cốp pha) ở tổ đội và nhà thầu.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Mộc xây dựng và trang trí nội thất, Cốp pha - Giàn giáo.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ sơn, thạch cao và hoàn thiện (`ONET-47-2141.00`)
 
@@ -2391,9 +2640,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 4 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Tổ đội thợ, nhà thầu phụ, thợ tự do (70%), Công trường của nhà thầu xây dựng (30%) — Thợ sơn, thạch cao phần lớn ở tổ đội thợ.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Nề - Hoàn thiện, Công nghệ sơn.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ điện công trình (`ONET-47-2111.00`)
 
@@ -2404,6 +2654,8 @@
 - **Nhu cầu tuyển:** 94 tin trong VietJobs (27.7/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công trường của nhà thầu xây dựng (50%), Tổ đội thợ, nhà thầu phụ, thợ tự do (30%), Dịch vụ kỹ thuật tận nhà (20%) — Thợ điện công trình ở nhà thầu (94 tin VietJobs), tổ đội và sửa điện tận nhà.
+  - Lịch làm rao (VietJobs, 84 tin có giờ): thứ 7 76%, chủ nhật 4%, làm ca 12%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Điện dân dụng, Điện công nghiệp, Lắp đặt điện công trình.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (2 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2417,9 +2669,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 3 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Tổ đội thợ, nhà thầu phụ, thợ tự do (40%), Dịch vụ kỹ thuật tận nhà (40%), Công trường của nhà thầu xây dựng (20%) — Thợ ống nước ở tổ đội, sửa chữa tận nhà và công trường.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Điện - Nước, Cấp, thoát nước, Kỹ thuật lắp đặt ống công nghệ.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (5 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ kết cấu thép, nhôm kính (`ONET-47-2221.00`)
 
@@ -2430,9 +2683,10 @@
 - **Nhu cầu tuyển:** 17 tin trong VietJobs (5.0/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công trường của nhà thầu xây dựng (55%), Xưởng nhỏ, cơ sở gia đình, làng nghề (45%) — Thợ kết cấu thép, nhôm kính ở công trường và xưởng nhôm kính.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Cốt thép - Hàn, Hàn.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Người vận hành máy thi công (`ONET-47-2073.00`)
 
@@ -2443,9 +2697,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công trường của nhà thầu xây dựng (80%), Mỏ than, mỏ khoáng sản (20%) — Vận hành máy thi công ở công trường; một phần ở mỏ lộ thiên.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Vận hành máy xây dựng, Vận hành máy xúc thủy lực, Vận hành máy thi công nền.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Công nhân khai thác mỏ, dầu khí (`ONET-47-5041.00`)
 
@@ -2456,9 +2711,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 2 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Mỏ than, mỏ khoáng sản (70%), Lọc hoá dầu, dầu khí ngoài khơi (30%) — Thợ mỏ phần lớn ở mỏ than; một phần ở dầu khí.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Khai thác mỏ; cao đẳng, trung cấp: Khai thác mỏ, Kỹ thuật khai thác mỏ hầm lò, Vận hành thiết bị khai thác dầu khí.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Lắp đặt, bảo trì và sửa chữa (9 nghề)
 
@@ -2471,9 +2727,11 @@
 - **Nhu cầu tuyển:** 26 tin trong VietJobs (7.7/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Xưởng dịch vụ đại lý ô tô, xe máy chính hãng (55%), Tiệm sửa chữa nhỏ, garage tư (45%) — Thợ sửa ô tô ở xưởng đại lý và garage tư.
+  - Lịch làm rao (VietJobs, 22 tin có giờ): thứ 7 73%, chủ nhật 5%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Bảo trì và sửa chữa ô tô, Công nghệ kỹ thuật ô tô.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (4 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ sửa xe máy (`ONET-49-3052.00`)
 
@@ -2484,9 +2742,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 4 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Tiệm sửa chữa nhỏ, garage tư (75%), Xưởng dịch vụ đại lý ô tô, xe máy chính hãng (25%) — Thợ sửa xe máy phần lớn ở tiệm nhỏ; một phần ở đại lý chính hãng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Sửa chữa, lắp ráp xe máy.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ sửa máy công trình, máy nông nghiệp (`ONET-49-3042.00`)
 
@@ -2497,9 +2756,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 2 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Tiệm sửa chữa nhỏ, garage tư (40%), Nhà cung cấp, bảo trì thiết bị (40%), Công trường của nhà thầu xây dựng (20%) — Sửa máy công trình, nông nghiệp ở tiệm, nhà cung cấp thiết bị và công trường.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Sửa chữa máy thi công xây dựng, Kỹ thuật máy nông nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ thuật viên bảo dưỡng máy bay (`ONET-49-3011.00`)
 
@@ -2510,6 +2770,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Trung tâm bảo dưỡng máy bay (100%) — Bảo dưỡng máy bay ở trung tâm bảo dưỡng tàu bay (cần chứng chỉ CRS).
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật hàng không; cao đẳng, trung cấp: Bảo trì và sửa chữa máy bay, Kỹ thuật hàng không.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2523,6 +2784,8 @@
 - **Nhu cầu tuyển:** 51 tin trong VietJobs (15.0/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Dịch vụ kỹ thuật tận nhà (60%), Ban quản lý toà nhà, chung cư, khu đô thị (25%), Nhà máy FDI trong khu công nghiệp (15%) — Điện lạnh phần lớn là dịch vụ tận nhà (mùa nóng cao điểm); toà nhà, nhà máy.
+  - Lịch làm rao (VietJobs, 44 tin có giờ): thứ 7 61%, chủ nhật 16%, làm ca 14%, trung vị 51.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kỹ thuật máy lạnh và điều hòa không khí, Vận hành, sửa chữa thiết bị lạnh.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2536,6 +2799,8 @@
 - **Nhu cầu tuyển:** 336 tin trong VietJobs (98.9/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Nhà máy FDI trong khu công nghiệp (50%), Nhà máy doanh nghiệp trong nước (35%), Nhà máy chế biến thực phẩm, thuỷ sản (15%) — Bảo trì máy ở nhà máy (336 tin VietJobs).
+  - Lịch làm rao (VietJobs, 285 tin có giờ): thứ 7 71%, chủ nhật 6%, làm ca 26%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Bảo trì hệ thống thiết bị công nghiệp, Bảo dưỡng công nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (8 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2549,9 +2814,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 3 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Truyền tải, phân phối điện (100%) — Công nhân đường dây làm cho ngành điện.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Xây lắp đường dây và trạm điện, Hệ thống điện.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (2).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ thuật viên lắp đặt viễn thông (`ONET-49-9052.00`)
 
@@ -2562,9 +2828,10 @@
 - **Nhu cầu tuyển:** 12 tin trong VietJobs (3.5/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà mạng viễn thông (100%) — Lắp đặt viễn thông làm cho nhà mạng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kỹ thuật mạng ngoại vi và thiết bị đầu cuối, Kỹ thuật lắp đặt đài trạm viễn thông.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (4).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ sửa chữa điện, điện tử (`ONET-49-2094.00`)
 
@@ -2575,9 +2842,11 @@
 - **Nhu cầu tuyển:** 22 tin trong VietJobs (6.5/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Tiệm sửa chữa nhỏ, garage tư (55%), Nhà cung cấp, bảo trì thiết bị (45%) — Sửa điện tử ở tiệm sửa chữa và nhà cung cấp thiết bị.
+  - Lịch làm rao (VietJobs, 22 tin có giờ): thứ 7 64%, chủ nhật 18%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Điện tử dân dụng, Điện tử công nghiệp và dân dụng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Sản xuất (16 nghề)
 
@@ -2590,6 +2859,8 @@
 - **Nhu cầu tuyển:** 41 tin trong VietJobs (12.1/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Nhà máy FDI trong khu công nghiệp (75%), Nhà máy doanh nghiệp trong nước (25%) — Lắp ráp điện tử tập trung ở nhà máy FDI (bình quân 206 lao động/doanh nghiệp).
+  - Lịch làm rao (VietJobs, 40 tin có giờ): thứ 7 82%, chủ nhật 2%, làm ca 10%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** ghi chú: Không đòi bằng cấp; đào tạo tại nhà máy.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2603,9 +2874,11 @@
 - **Nhu cầu tuyển:** 128 tin trong VietJobs (37.7/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy doanh nghiệp trong nước (45%), Nhà máy FDI trong khu công nghiệp (40%), Xưởng nhỏ, cơ sở gia đình, làng nghề (15%) — Thợ CNC ở nhà máy cơ khí trong nước, FDI và xưởng nhỏ.
+  - Lịch làm rao (VietJobs, 109 tin có giờ): thứ 7 78%, chủ nhật 2%, làm ca 23%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Cắt gọt kim loại, Công nghệ CNC nâng cao.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1); bỏ bước "dễ vào hơn" (19 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ hàn (`ONET-51-4121.00`)
 
@@ -2616,9 +2889,10 @@
 - **Nhu cầu tuyển:** 13 tin trong VietJobs (3.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy doanh nghiệp trong nước (40%), Công trường của nhà thầu xây dựng (35%), Xưởng nhỏ, cơ sở gia đình, làng nghề (25%) — Thợ hàn ở nhà máy, công trường và xưởng nhỏ.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Hàn, Công nghệ hàn.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Công nhân chế biến thực phẩm (`ONET-51-3092.00`)
 
@@ -2629,9 +2903,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy chế biến thực phẩm, thuỷ sản (80%), Xưởng nhỏ, cơ sở gia đình, làng nghề (20%) — Chế biến thực phẩm ở nhà máy; một phần ở cơ sở nhỏ.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Chế biến thực phẩm; ghi chú: Phần lớn đào tạo tại nhà máy.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ làm bánh (`ONET-51-3011.00`)
 
@@ -2642,9 +2917,10 @@
 - **Nhu cầu tuyển:** 13 tin trong VietJobs (3.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Chuỗi nhà hàng, cà phê, đồ ăn nhanh (40%), Xưởng nhỏ, cơ sở gia đình, làng nghề (35%), Nhà máy chế biến thực phẩm, thuỷ sản (25%) — Thợ làm bánh ở chuỗi tiệm bánh, xưởng nhỏ và nhà máy bánh kẹo.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kỹ thuật làm bánh.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Công nhân in ấn (`ONET-51-5112.00`)
 
@@ -2655,9 +2931,11 @@
 - **Nhu cầu tuyển:** 32 tin trong VietJobs (9.4/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy doanh nghiệp trong nước (50%), Xưởng nhỏ, cơ sở gia đình, làng nghề (50%) — In ấn ở nhà máy bao bì và xưởng in nhỏ.
+  - Lịch làm rao (VietJobs, 27 tin có giờ): thứ 7 89%, chủ nhật 0%, làm ca 0%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Công nghệ kỹ thuật in, Công nghệ chế bản điện tử.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Công nhân may mặc, da giày (`ONET-51-6031.00`)
 
@@ -2668,6 +2946,8 @@
 - **Nhu cầu tuyển:** 29 tin trong VietJobs (8.5/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Nhà máy FDI trong khu công nghiệp (75%), Nhà máy doanh nghiệp trong nước (25%) — May mặc, da giày xuất khẩu tập trung ở nhà máy FDI.
+  - Lịch làm rao (VietJobs, 24 tin có giờ): thứ 7 83%, chủ nhật 4%, làm ca 4%, trung vị 48.0 giờ/tuần, vào làm 07:45.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Công nghệ may, May thời trang, Công nghệ da giày.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2681,9 +2961,10 @@
 - **Nhu cầu tuyển:** 8 tin trong VietJobs (2.4/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Xưởng nhỏ, cơ sở gia đình, làng nghề (60%), Nhà máy doanh nghiệp trong nước (40%) — Mộc nội thất ở xưởng làng nghề và nhà máy gỗ xuất khẩu.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Mộc dân dụng, Gia công và thiết kế sản phẩm mộc.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (2) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Vận hành nhà máy điện (`ONET-51-8013.00`)
 
@@ -2694,9 +2975,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 2 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy điện (100%) — Vận hành nhà máy điện làm ở nhà máy điện.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Vận hành điện trong nhà máy điện, Vận hành nhà máy điện gió, điện mặt trời.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (3) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Vận hành nhà máy nước, xử lý nước thải (`ONET-51-8031.00`)
 
@@ -2707,9 +2989,11 @@
 - **Nhu cầu tuyển:** 25 tin trong VietJobs (7.4/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Công ty cấp nước, xử lý nước thải (100%) — Vận hành nhà máy nước ở công ty cấp nước, xử lý nước thải.
+  - Lịch làm rao (VietJobs, 22 tin có giờ): thứ 7 73%, chủ nhật 5%, làm ca 18%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kỹ thuật thoát nước và xử lý nước thải, Xử lý nước thải công nghiệp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Vận hành nhà máy hoá chất, lọc dầu, khí (`ONET-51-8091.00`)
 
@@ -2720,9 +3004,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Hiện trường, công trường, ngoài trời — luật khớp: WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Lọc hoá dầu, dầu khí ngoài khơi (70%), Nhà máy doanh nghiệp trong nước (30%) — Vận hành hoá chất, lọc dầu ở nhà máy lọc hoá dầu và nhà máy hoá chất.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Vận hành thiết bị chế biến dầu khí, Công nghệ kỹ thuật hóa học.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Nhân viên kiểm tra chất lượng sản xuất (QC) (`ONET-51-9061.00`)
 
@@ -2733,6 +3018,8 @@
 - **Nhu cầu tuyển:** 335 tin trong VietJobs (98.6/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Nhà máy FDI trong khu công nghiệp (55%), Nhà máy doanh nghiệp trong nước (30%), Nhà máy chế biến thực phẩm, thuỷ sản (15%) — QC nhiều ở nhà máy (335 tin VietJobs), nhất là FDI.
+  - Lịch làm rao (VietJobs, 294 tin có giờ): thứ 7 71%, chủ nhật 4%, làm ca 14%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Kiểm nghiệm chất lượng lương thực, thực phẩm, Công nghệ kỹ thuật đo lường.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2746,9 +3033,10 @@
 - **Nhu cầu tuyển:** 5 tin trong VietJobs (1.5/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy công nghệ cao, phòng sạch (100%) — Bán dẫn làm ở nhà máy phòng sạch.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Công nghệ bán dẫn; cao đẳng, trung cấp: Công nghệ sản xuất chip bán dẫn, Kiểm thử và đóng gói vi mạch.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thợ kim hoàn (`ONET-51-9071.00`)
 
@@ -2759,9 +3047,10 @@
 - **Nhu cầu tuyển:** 16 tin trong VietJobs (4.7/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi, Văn phòng — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Xưởng nhỏ, cơ sở gia đình, làng nghề (70%), Siêu thị, chuỗi bán lẻ, trung tâm thương mại (30%) — Kim hoàn phần lớn ở xưởng gia đình; một phần ở xưởng của chuỗi trang sức.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Thủ công mỹ nghệ; ghi chú: Phần lớn học nghề tại tiệm kim hoàn.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Kỹ thuật viên phục hình, chỉnh hình (`ONET-51-9081.00`)
 
@@ -2772,9 +3061,10 @@
 - **Nhu cầu tuyển:** 6 tin trong VietJobs (1.8/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Xưởng nhỏ, cơ sở gia đình, làng nghề (70%), Bệnh viện công (30%) — Phục hình chỉnh hình phần lớn ở labo nha khoa tư; một phần ở trung tâm chỉnh hình công lập.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật phục hình răng; cao đẳng, trung cấp: Kỹ thuật phục hình răng.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Công nhân vận hành máy sản xuất (`ONET-51-9111.00`)
 
@@ -2785,9 +3075,11 @@
 - **Nhu cầu tuyển:** 201 tin trong VietJobs (59.2/10.000 tin), mức cao; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Nhà máy, xưởng, kho bãi — luật khớp: WS_FACTORY (nhóm 49, 51; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Nhà máy FDI trong khu công nghiệp (55%), Nhà máy doanh nghiệp trong nước (45%) — Vận hành máy ở nhà máy FDI và trong nước.
+  - Lịch làm rao (VietJobs, 166 tin có giờ): thứ 7 72%, chủ nhật 4%, làm ca 27%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** ghi chú: Không đòi bằng cấp; đào tạo tại nhà máy.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Lên quản lý (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ## Vận tải và bốc dỡ hàng hoá (11 nghề)
 
@@ -2800,6 +3092,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Hãng hàng không (100%) — Phi công làm cho hãng hàng không.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật hàng không; giấy phép: Giấy phép lái tàu bay do Cục Hàng không Việt Nam cấp; ghi chú: Học tại trường đào tạo phi công (thường do hãng bay tuyển và tài trợ).
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2813,6 +3106,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Văn phòng — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_OFFICE (Work Context cao: sitting; không cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Quản lý bay, đài kiểm soát không lưu (100%) — Kiểm soát viên không lưu làm ở đơn vị quản lý bay.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Quản lý hoạt động bay.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2826,6 +3120,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 0 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức A, trọng số có số liệu):** Hãng hàng không (100%) — Tiếp viên làm cho hãng hàng không.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Dịch vụ thương mại hàng không; ghi chú: Hãng bay tuyển và đào tạo; yêu cầu ngoại hình, tiếng Anh.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (1 mã).
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2839,9 +3134,10 @@
 - **Nhu cầu tuyển:** 18 tin trong VietJobs (5.3/10.000 tin), mức thấp; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Doanh nghiệp vận tải hàng hoá đường bộ (80%), Giao hàng, xe công nghệ (20%) — Tài xế tải ở doanh nghiệp vận tải; một phần lái xe tải nhỏ giao hàng.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** giấy phép: Giấy phép lái xe hạng C1, C hoặc CE; ghi chú: Không đòi bằng cấp; cần giấy phép lái xe phù hợp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Tài xế xe khách, xe buýt (`ONET-53-3052.00`)
 
@@ -2852,9 +3148,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 3 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Doanh nghiệp xe khách, xe buýt (100%) — Tài xế xe khách, xe buýt ở doanh nghiệp vận tải hành khách.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** giấy phép: Giấy phép lái xe hạng D1, D2 hoặc D; ghi chú: Không đòi bằng cấp; cần giấy phép lái xe phù hợp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (1 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Lái tàu hoả, tàu điện (`ONET-53-4011.00`)
 
@@ -2865,9 +3162,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Đường sắt, metro (100%) — Lái tàu ở đường sắt và metro.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Lái tàu diesel đường sắt, Lái tàu đường sắt đô thị.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Thuyền viên, sĩ quan hàng hải (`ONET-53-5021.00`)
 
@@ -2878,9 +3176,10 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Hãng tàu biển (100%) — Thuyền viên làm cho hãng tàu, công ty cung ứng thuyền viên.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Khoa học hàng hải; cao đẳng, trung cấp: Điều khiển tàu biển, Khai thác máy tàu biển; giấy phép: Giấy chứng nhận khả năng chuyên môn thuyền viên.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (2 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Người vận hành xe nâng, cần cẩu (`ONET-53-7051.00`)
 
@@ -2891,9 +3190,11 @@
 - **Nhu cầu tuyển:** 22 tin trong VietJobs (6.5/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Cảng biển, cảng cạn (40%), Kho vận, trung tâm phân loại hàng (35%), Công trường của nhà thầu xây dựng (25%) — Xe nâng, cần cẩu ở cảng, kho và công trường.
+  - Lịch làm rao (VietJobs, 21 tin có giờ): thứ 7 67%, chủ nhật 0%, làm ca 5%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** cao đẳng, trung cấp: Vận hành cần, cầu trục, Xếp dỡ cơ giới tổng hợp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Chuyên sâu, cần học thêm (1) → Cấp cao (1).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Công nhân bốc xếp, đóng gói (`ONET-53-7062.00`)
 
@@ -2904,9 +3205,11 @@
 - **Nhu cầu tuyển:** 36 tin trong VietJobs (10.6/10.000 tin), mức vừa; năm số liệu: trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin).
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Kho vận, trung tâm phân loại hàng (60%), Cảng biển, cảng cạn (25%), Nhà máy FDI trong khu công nghiệp (15%) — Bốc xếp ở kho vận, cảng và nhà máy.
+  - Lịch làm rao (VietJobs, 32 tin có giờ): thứ 7 69%, chủ nhật 9%, làm ca 9%, trung vị 48.0 giờ/tuần, vào làm 08:00.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** ghi chú: Không đòi bằng cấp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** Nghề chính (1) → Cấp cao (1); bỏ bước "dễ vào hơn" (3 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 
 ### Công nhân thu gom, xử lý rác và chất thải (`ONET-53-7081.00`)
 
@@ -2917,6 +3220,7 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức B, trọng số có số liệu):** Công ty môi trường đô thị, cây xanh (100%) — Thu gom rác làm cho công ty môi trường đô thị.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** ghi chú: Không đòi bằng cấp.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình.
 - **Phần nháp cần đọc kỹ:** overview.
@@ -2930,7 +3234,8 @@
 - **Nhu cầu tuyển:** **bỏ**, chỉ 1 tin (cần từ 5); bộ dữ liệu không phủ ngành này.
 - **Việc hằng ngày:** O*NET 31.0, dịch nháp.
 - **Nơi làm việc:** Trên xe, tàu, máy bay, Hiện trường, công trường, ngoài trời — luật khớp: WS_VEHICLE (nhóm 53; Work Context cao: vehicle); WS_FIELD (Work Context cao: outdoors).
+- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức C, trọng số tạm thời, sửa khi có số liệu):** Trung tâm đăng kiểm xe cơ giới (75%), Cơ quan hành chính nhà nước (25%) — Đăng kiểm viên ở trung tâm đăng kiểm; thanh tra giao thông ở cơ quan nhà nước.
 - **Ngành học (nhóm tự gán, decisions/education_map.json):** đại học: Kỹ thuật ô tô, Kỹ thuật cơ khí động lực; cao đẳng, trung cấp: Công nghệ kỹ thuật ô tô.
 - **Lộ trình (suy từ quyết định gộp và Job Zone):** chỉ có nghề chính, không hiện lộ trình; bỏ bước "dễ vào hơn" (4 mã).
-- **Phần nháp cần đọc kỹ:** overview.
+- **Phần nháp cần đọc kỹ:** overview, work_environment.environments.
 

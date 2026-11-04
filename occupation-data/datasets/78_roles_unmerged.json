@@ -122,9 +122,6 @@
       "Ranh giới với SWE_ARCH_SOL (Solution Architect) chưa rõ — pass1/SWE_ARCH_SOL.json đã ghi nhận sự chồng lấn này nhưng chưa giải quyết.",
       "Chưa rõ liệu Cloud Architect ở phân khúc đại lý cloud (presales) có band thấp hơn destination node hay không, tương tự phát hiện ở Solution Architect."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -308,9 +305,6 @@
       "Chưa rõ 'Automation / CI-CD Engineer' có phải chức danh tuyển dụng độc lập tại VN hay chỉ là một phần việc trong CLOUD_DEVOPS/QA_AUTO.",
       "Trần L6 và điểm rẽ nhánh là suy luận theo thang toàn cục, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -603,12 +597,6 @@
       "enterprise_bank": "On-premise kết hợp Private Cloud",
       "bigtech_fdi": "Hệ thống CI/CD khổng lồ, IaC toàn phần"
     },
-    "work_environment_ids": [
-      "WE_HYBRID_PRODUCT",
-      "WE_REMOTE_GLOBAL"
-    ],
-    "work_environment_primary": "WE_HYBRID_PRODUCT",
-    "work_environment_note": "Thường xuyên có trực On-call.",
     "education_path_ids": [
       "EDU_CS_REQUIRED",
       "EDU_CERT_DRIVEN"
@@ -818,9 +806,6 @@
       "Chưa rõ DevSecOps Engineer tại VN báo cáo về đội DevOps hay đội Security — ảnh hưởng tới nhánh quản lý thật.",
       "Ranh giới với SEC_APPSEC và CLOUD_DEVOPS chưa có quy tắc phân định rõ."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -990,9 +975,6 @@
       "roles.csv tự mâu thuẫn nhẹ: vừa nói 'CÓ tuyển fresher' vừa nói 'khá ít tuyển intern/fresher' — cần Pass 2 làm rõ mức độ phổ biến thật của cửa vào entry-level này.",
       "Điểm chia giữa levels[] và destination_profile ở L5 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -1155,9 +1137,6 @@
       "Chưa rõ có công ty VN nào tuyển FinOps Specialist toàn thời gian độc lập hay 100% là kiêm nhiệm.",
       "Trần L6 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -1293,9 +1272,6 @@
       "pass1/CLOUD_DEVOPS.json đã ghi nhận nghi vấn CLOUD_LEAD có thể trùng với vai trò destination archetype C khác (CLOUD_ARCH) — chưa giải quyết.",
       "Chưa rõ tỷ lệ tổ chức VN tách biệt CLOUD_LEAD (quản lý) khỏi CLOUD_ARCH (kiến trúc) hay gộp làm một người."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -1478,9 +1454,6 @@
       "Title còn rất mới tại VN — chưa rõ đã có công ty nào tách biệt hẳn Platform Engineer khỏi DevOps Engineer hay chưa.",
       "Chưa rõ sàn năm thật; L4 là suy luận theo mức độ chuyên môn hoá cần có."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -1664,9 +1637,6 @@
       "Chưa rõ SRE tại VN có thực sự tách biệt khỏi DevOps Engineer hay phần lớn chỉ là tên gọi khác nhau ở big tech/fintech.",
       "Sàn năm L4 là suy luận — 'entry band cao' trong roles.csv chưa được lượng hoá bằng JD thật."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -1883,9 +1853,6 @@
       "Ranh giới DATA_AI / DATA_ML chưa rõ tại VN — cả hai có thể là cùng một vị trí tuyển dụng với hai tên gọi.",
       "Chưa rõ sàn năm kinh nghiệm thật; L3 là suy luận, có thể thực tế cao hơn (giống DATA_GENAI/DATA_ML)."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -2024,9 +1991,6 @@
       "enterprise_bank": "CHUA_CO_DU_LIEU",
       "bigtech_fdi": "CHUA_CO_DU_LIEU"
     },
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -2208,9 +2172,6 @@
       "Chưa rõ đây có phải chức danh tuyển dụng độc lập tại VN hay chỉ là mô tả một phần việc của DE/DA.",
       "Trần L6 là suy luận lấy theo roles.csv, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -2377,9 +2338,6 @@
       "Tỷ lệ Fresher BI Analyst thật so với chuyển từ DA sang chưa có số liệu — roles.csv chỉ ghi định tính.",
       "Điểm chia giữa levels[] và destination_profile ở L5 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -2579,9 +2537,6 @@
       "Chưa rõ tỷ lệ vị trí CV/NLP Engineer tại công ty thường (ngoài viện nghiên cứu/trung tâm AI) so với tại VinAI/FPT AI/Zalo AI.",
       "Sàn L3 dựa trên suy luận về đường vào qua nghiên cứu — chưa có JD xác nhận mốc năm."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -2859,12 +2814,6 @@
       "enterprise_bank": "Nhu cầu cực cao (Phân tích rủi ro, vận hành, thẻ)",
       "bigtech_fdi": "Phân tích sản phẩm chuyên sâu (Product Analytics)"
     },
-    "work_environment_ids": [
-      "WE_ONSITE_ENTERPRISE",
-      "WE_HYBRID_PRODUCT"
-    ],
-    "work_environment_primary": "WE_HYBRID_PRODUCT",
-    "work_environment_note": "Ngân hàng yêu cầu bảo mật cao nên thường làm onsite.",
     "education_path_ids": [
       "EDU_ANY_PLUS_TRAINING",
       "EDU_DOMAIN_PLUS_IT"
@@ -3076,9 +3025,6 @@
       "Chưa rõ Data Engineer VN có tách biệt rõ với Analytics Engineer hay phần lớn là một người kiêm cả hai — roles.csv gợi ý là kiêm nhiệm.",
       "Sàn năm 1-3 là suy luận, chưa có JD xác nhận mốc năm thật của lateral entry này."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -3290,9 +3236,6 @@
       "Tỷ lệ Fresher Data Scientist thật tại VN chưa rõ — roles.csv ghi 'rất mỏng' nhưng không có số liệu.",
       "Ranh giới DATA_DS / DATA_DA / DATA_ML chưa có quy tắc phân định rõ."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -3481,9 +3424,6 @@
       "Chưa rõ mức độ độc lập của title này với DATA_AI và SWE_AIFIRST tại VN.",
       "Role mới (2023+) nên chưa có đủ dữ liệu lịch sử để xác nhận ladder ổn định theo thời gian."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -3661,9 +3601,6 @@
       "Chưa rõ Data Governance Specialist có tồn tại như vị trí toàn thời gian ngoài ngân hàng/tổ chức tài chính hay không.",
       "Ranh giới với SEC_GRC chưa có quy tắc phân định rõ."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -3868,9 +3805,6 @@
       "Ranh giới DATA_ML / DATA_AI chưa rõ tại VN.",
       "Chưa rõ tỷ lệ ML Engineer VN thực sự tự huấn luyện model từ đầu so với chỉ fine-tune/triển khai model có sẵn — ảnh hưởng lớn tới core_output thật."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4066,9 +4000,6 @@
       "Chưa rõ MLOps Engineer VN có phải vị trí toàn thời gian tách biệt hay do DevOps/ML Engineer kiêm nhiệm ở phần lớn công ty.",
       "Chưa có quy tắc phân định rõ với CLOUD_DEVOPS và DATA_ML."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4185,9 +4116,6 @@
       "Chưa rõ role này đã phổ biến tại VN hay còn rất hiếm — 'Data Product Manager' là title mới nổi ngay cả ở thị trường quốc tế.",
       "Khoảng năm 4-12 lấy trọn thang band vì không có dữ liệu để thu hẹp."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4346,9 +4274,6 @@
       "CHƯA XÁC MINH được 'Prompt Engineer' có phải chức danh tuyển dụng độc lập tại VN hay chỉ là mô tả một phần việc của DATA_GENAI/DATA_AI — đây là nghi vấn lớn nhất của toàn bộ file này, không chỉ là thiếu JD.",
       "Nếu role không tồn tại độc lập, toàn bộ occupied_bands/levels ở trên nên được coi là giả định để test schema, không phải dữ liệu career-path thật."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4459,9 +4384,6 @@
       "roles.csv tự ghi nhận role này 'mới, số lượng rất nhỏ' — nghi vấn về sự tồn tại thực tế tại VN còn lớn hơn cả các role EXEC khác.",
       "Chưa rõ ranh giới với CTO/CIO ở các công ty coi dữ liệu/AI là một phần của hạ tầng chung thay vì tách riêng."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4563,9 +4485,6 @@
       "Gần như chỉ tồn tại ở enterprise/ngân hàng theo roles.csv — chưa rõ có tồn tại ở quy mô công ty nào nhỏ hơn tại VN không.",
       "Ranh giới với CTO chưa rõ ở các công ty không phải ngân hàng/tập đoàn lớn."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4662,9 +4581,6 @@
       "Vì là yêu cầu bắt buộc theo quy định ở ngân hàng, chưa rõ role này có khác biệt lớn về nội dung công việc giữa ngân hàng và các ngành khác (nếu có CISO) hay không.",
       "Chưa rõ ranh giới rõ với SEC_ISM ở các công ty quy mô vừa (không phải ngân hàng lớn)."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4761,9 +4677,6 @@
       "roles.csv ghi rõ role này 'chủ yếu product company' — chưa rõ mức độ tồn tại ở các loại công ty khác (outsourcing, ngân hàng).",
       "Chưa rõ ranh giới với VP of Product (nếu tồn tại như một nấc trung gian) — roles.csv không liệt kê title này riêng."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4893,9 +4806,6 @@
       "Biến thiên band theo quy mô công ty (L7 startup so với L9-L10 enterprise) là khác biệt LỚN NHẤT trong toàn bộ 6 role EXEC — occupied_bands ở đây đã điều chỉnh phản ánh điều này, khác các role EXEC khác.",
       "Chưa rõ tỷ lệ CTO tại VN là founder/đồng sáng lập so với được thuê vào sau."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -4996,9 +4906,6 @@
       "roles.csv tự ghi nhận role này 'hiếm tại VN' — chưa rõ có bao nhiêu công ty VN thực sự dùng title này thay vì gộp vào CTO.",
       "Chưa rõ ranh giới rõ với EXEC_CTO ở các công ty không phải FDI/unicorn lớn."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -5200,9 +5107,6 @@
       "roles.csv gợi ý archetype này có thể là D (hybrid) chứ không thuần B — CHƯA chốt trong Pass 1 này, giữ nguyên B theo roles.csv hiện tại.",
       "Chưa rõ tỷ lệ Salesforce partner tại VN thực sự tuyển fresher/junior so với chỉ tuyển lateral."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -5401,9 +5305,6 @@
       "Chưa rõ tỷ lệ DBA VN vào từ SysAdmin so với từ Backend Developer.",
       "Ranh giới với DATA_DE ở các hệ thống dữ liệu lớn (không chỉ RDBMS truyền thống) chưa rõ."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -5603,9 +5504,6 @@
       "Ladder theo module (MM/FI/SD...) khiến 'năm kinh nghiệm' khó so sánh trực tiếp giữa các module — số năm ở trên là gộp chung, chưa tách theo module.",
       "Chưa rõ đường vào phổ biến nhất là qua BA hay qua đào tạo chứng chỉ SAP nội bộ của chính công ty triển khai."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -5773,12 +5671,6 @@
       "enterprise_bank": "Đội ngũ đông đảo chia cấp L1, L2",
       "bigtech_fdi": "Có quy trình chuẩn hóa cao (ITSM)"
     },
-    "work_environment_ids": [
-      "WE_ONSITE_ENTERPRISE",
-      "WE_SHIFT_24_7"
-    ],
-    "work_environment_primary": "WE_ONSITE_ENTERPRISE",
-    "work_environment_note": "Phải có mặt tại văn phòng để hỗ trợ phần cứng.",
     "education_path_ids": [
       "EDU_ANY_PLUS_TRAINING"
     ],
@@ -5903,9 +5795,6 @@
       "Chưa rõ ranh giới rõ ràng giữa IT Manager và CIO tại các công ty VN quy mô vừa.",
       "Band L9 trong roles.csv chưa có bằng chứng cụ thể; suy luận lấy trọn khoảng."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -6088,9 +5977,6 @@
       "Chưa có quy tắc phân định rõ với CLOUD_DEVOPS và INFRA_SYSENG.",
       "Trần L6 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -6307,9 +6193,6 @@
       "Ladder theo chứng chỉ (CCNA→CCNP→CCIE) theo roles.csv khiến 'năm kinh nghiệm' có thể không phản ánh đúng năng lực bằng chứng chỉ đạt được — số năm ở trên là suy luận gộp chung theo thang toàn cục, chưa tách riêng theo lộ trình chứng chỉ.",
       "Chưa rõ điểm rẽ nhánh quản lý (sang INFRA_ITMANAGER) có đúng ở L6 hay Network Engineer VN thường ở lại thuần kỹ thuật lâu hơn do gắn chặt với hệ thống chứng chỉ chuyên môn quốc tế."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -6493,9 +6376,6 @@
       "Rất chuyên biệt — chưa rõ số lượng công ty VN thực sự có vị trí này tách biệt khỏi ERP Consultant hay System Administrator.",
       "Sàn năm L4 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -6674,9 +6554,6 @@
       "Tỷ lệ SysAdmin vào từ Helpdesk so với tuyển thẳng entry-level chưa có số liệu.",
       "Điểm chia giữa levels[] và destination_profile ở L5 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -6854,9 +6731,6 @@
       "Chưa có quy tắc phân định rõ với INFRA_ITOPS.",
       "Trần L6 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -6953,9 +6827,6 @@
       "roles.csv tự ghi nhận số lượng vị trí này 'rất nhỏ tại VN' — cần xác minh có bao nhiêu công ty thực sự có chức danh này trước khi tin vào dữ liệu.",
       "Chưa rõ Agile Coach tại VN có phải vị trí nội bộ toàn thời gian hay chủ yếu do consultant/freelancer bên ngoài đảm nhiệm."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -7250,12 +7121,6 @@
       "enterprise_bank": "Cầu nối hệ thống IT cũ và nghiệp vụ ngân hàng",
       "bigtech_fdi": "Ít gặp title BA thuần, thường là PM"
     },
-    "work_environment_ids": [
-      "WE_ONSITE_ENTERPRISE",
-      "WE_PROJECT_OUTSOURCING"
-    ],
-    "work_environment_primary": "WE_PROJECT_OUTSOURCING",
-    "work_environment_note": "Phụ thuộc vào khách hàng.",
     "education_path_ids": [
       "EDU_DOMAIN_PLUS_IT",
       "EDU_ANY_PLUS_TRAINING"
@@ -7379,9 +7244,6 @@
       "Ranh giới với SWE_EM ở công ty outsourcing chưa rõ — pass1/SWE_EM.json đã nêu nghi vấn này nhưng chưa giải quyết.",
       "Đặc thù riêng của outsourcing lớn khiến role này khó áp dụng cho product company — chưa rõ liệu có tương đương nào ở nhóm product_local hay không."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -7511,9 +7373,6 @@
       "Chưa rõ tỷ lệ Project Manager VN vào từ PL (outsourcing) so với từ BA/Tech Lead (product/enterprise).",
       "Band L8 trong roles.csv chưa có bằng chứng cụ thể để phân biệt với PROD_DM."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -7630,9 +7489,6 @@
       "Ranh giới với SWE_TECHLEAD ở công ty outsourcing chưa rõ — pass1/SWE_TECHLEAD.json đã nêu nghi vấn này nhưng chưa giải quyết.",
       "Đặc thù outsourcing khiến chưa rõ role này có tương đương nào ở product company/ngân hàng hay không."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -7839,9 +7695,6 @@
       "Tỷ lệ Associate PM thật (entry-level) so với PM là điểm đến của BA/Dev chuyển hướng chưa có số liệu — đây là bản chất HYBRID rộng nhất trong 78 role, cần Pass 2 làm rõ tỷ lệ.",
       "Điểm chia giữa levels[] (L3-L6) và destination_profile (L7-L9) là suy luận, chưa có JD xác nhận đúng ở L7."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -8017,9 +7870,6 @@
       "Mức độ độc lập của Product Owner với Business Analyst cấp cao tại VN CHƯA được xác minh — đây là nghi vấn chính roles.csv nêu.",
       "Trần L6 và điểm chuyển sang PROD_PM là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -8181,9 +8031,6 @@
       "Chưa rõ tỷ lệ Scrum Master toàn thời gian so với kiêm nhiệm tại VN — roles.csv nghiêng về kiêm nhiệm nhưng không có số liệu.",
       "Trần L6 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -8340,9 +8187,6 @@
       "Chưa rõ QA Analyst/Auditor có tồn tại như một chức danh tuyển dụng tách biệt khỏi QA_LEAD tại VN hay không.",
       "Trần L6 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -8553,9 +8397,6 @@
       "Tỷ lệ vào từ QA_MANUAL upskill so với tuyển thẳng từ dev chưa có số liệu.",
       "Điểm chia giữa levels[] (L3-L6) và destination_profile (L7) là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -8675,9 +8516,6 @@
       "Ranh giới với QA_ANALYST chưa rõ — roles.csv tự ghi nhận đây là điểm mờ cần Pass 2 xác định.",
       "Band L8 trong roles.csv chưa có bằng chứng cụ thể."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -8901,12 +8739,6 @@
       "enterprise_bank": "Test UAT nặng về nghiệp vụ",
       "bigtech_fdi": "Xu hướng giảm QA manual, tăng QA Automation"
     },
-    "work_environment_ids": [
-      "WE_PROJECT_OUTSOURCING",
-      "WE_HYBRID_PRODUCT"
-    ],
-    "work_environment_primary": "WE_PROJECT_OUTSOURCING",
-    "work_environment_note": "Dễ làm remote nhưng do yếu tố bảo mật thường phải tới văn phòng ở dự án outsource.",
     "education_path_ids": [
       "EDU_ANY_PLUS_TRAINING"
     ],
@@ -9097,9 +8929,6 @@
       "Chưa rõ tỷ lệ vị trí Performance Test Engineer toàn thời gian tại VN so với việc QA_AUTO/SDET kiêm nhiệm khi cần.",
       "Sàn năm L4 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -9289,9 +9118,6 @@
       "Chưa rõ ranh giới rõ ràng giữa QA_AUTO senior và SDET tại VN — có thể là cùng một vị trí với hai tên gọi.",
       "Sàn năm L4 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -9486,9 +9312,6 @@
       "Quy tắc phân định với SEC_PENTEST chưa có, dù roles.csv xác nhận đây là chồng lấn mạnh — đây là điểm cần Pass 2 giải quyết đầu tiên trong domain QA.",
       "Chưa rõ Security Tester có phải chức danh tuyển dụng riêng tại VN hay là một biến thể của QA_AUTO/SEC_PENTEST."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -9685,9 +9508,6 @@
       "CHƯA XÁC MINH được title này có tồn tại độc lập tại VN — roles.csv tự đánh giá 'rất mới'.",
       "Nếu role không tồn tại độc lập, phần việc này nhiều khả năng đang được SEC_APPSEC hoặc DATA_AI đảm nhiệm kiêm nhiệm."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -9875,9 +9695,6 @@
       "Chưa rõ tỷ lệ AppSec Engineer VN vào từ Dev so với từ Pentest.",
       "Ranh giới với QA_SECTEST chưa có quy tắc phân định rõ."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -10089,9 +9906,6 @@
       "Chưa rõ tỷ lệ Security Engineer VN vào từ Network so với từ SysAdmin so với từ SOC.",
       "Ranh giới với SEC_APPSEC chưa có quy tắc phân định rõ ở band thấp."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -10299,9 +10113,6 @@
       "Sàn entry qua ngả audit/compliance phi kỹ thuật CHƯA được xác nhận — đây là nghi vấn chính roles.csv nêu (đánh dấu ⚑).",
       "Ranh giới với DATA_GOV chưa có quy tắc phân định rõ."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -10476,9 +10287,6 @@
       "Chưa rõ tỷ lệ vị trí IR/DFIR toàn thời gian tách biệt tại VN so với việc SOC senior kiêm nhiệm.",
       "Sàn L4 là suy luận từ việc phải qua SOC tier cao nhất trước — chưa có JD xác nhận mốc năm quy đổi thật."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -10597,9 +10405,6 @@
       "Chưa rõ ranh giới rõ ràng giữa ISM và CISO tại các công ty VN quy mô vừa — có thể là cùng một vị trí ở công ty nhỏ hơn ngân hàng.",
       "Band L9 trong roles.csv chưa có bằng chứng cụ thể; suy luận lấy trọn khoảng."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -10804,9 +10609,6 @@
       "Số năm kinh nghiệm không phản ánh đúng năng lực với route CTF/bug bounty — cần một chỉ số khác (thứ hạng CTF, số bug bounty) mà JD thường không ghi rõ.",
       "Quy tắc phân định với QA_SECTEST chưa có, dù roles.csv xác nhận đây là chồng lấn mạnh."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -11060,12 +10862,6 @@
       "enterprise_bank": "Bắt buộc có để tuân thủ",
       "bigtech_fdi": "Thường outsource mảng này hoặc có Global SOC"
     },
-    "work_environment_ids": [
-      "WE_SHIFT_24_7",
-      "WE_ONSITE_ENTERPRISE"
-    ],
-    "work_environment_primary": "WE_SHIFT_24_7",
-    "work_environment_note": "Trực ca đêm là đặc trưng lớn nhất của role này ở band thấp.",
     "education_path_ids": [
       "EDU_ANY_PLUS_TRAINING",
       "EDU_CERT_DRIVEN"
@@ -11276,9 +11072,6 @@
       "Chưa rõ 'AI-First Software Engineer' có phải chức danh tuyển dụng độc lập tại VN hay chỉ là mô tả phong cách làm việc — roles.csv gợi ý cân nhắc gộp vào SWE_FULLSTACK.",
       "Ranh giới với DATA_GENAI (Generative AI/LLM Engineer) chưa rõ, có thể là cùng một role với hai tên gọi khác nhau."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -11419,9 +11212,6 @@
       "enterprise_bank": "Có neo từ golden C: gắn với hội đồng thẩm định kiến trúc, phối hợp với Enterprise/Security/Data Architect, và nghiệp vụ ngân hàng là yêu cầu bắt buộc chứ không phải điểm cộng.",
       "bigtech_fdi": "CHUA_CO_DU_LIEU"
     },
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -11607,9 +11397,6 @@
       "enterprise_bank": "CHUA_CO_DU_LIEU",
       "bigtech_fdi": "CHUA_CO_DU_LIEU"
     },
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -11959,13 +11746,6 @@
       "enterprise_bank": "Core banking, hệ thống cũ (Java/C#) hoặc microservices mới",
       "bigtech_fdi": "Scale cực lớn, kĩ năng thiết kế hệ thống phân tán quan trọng"
     },
-    "work_environment_ids": [
-      "WE_HYBRID_PRODUCT",
-      "WE_PROJECT_OUTSOURCING",
-      "WE_ONSITE_ENTERPRISE"
-    ],
-    "work_environment_primary": "WE_HYBRID_PRODUCT",
-    "work_environment_note": "Product/Startup thường hybrid, ngân hàng thường onsite 100%.",
     "education_path_ids": [
       "EDU_CS_PREFERRED",
       "EDU_CS_REQUIRED"
@@ -12171,9 +11951,6 @@
       "Tỷ lệ Fresher Blockchain Engineer thật (qua ngả startup crypto) so với chuyển ngang từ Backend chưa có số liệu — roles.csv chỉ ghi định tính.",
       "Điểm chia giữa levels[] (ladder) và destination_profile (đích đến chuyên gia) ở band L6 là suy luận của người viết Pass 1, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -12367,9 +12144,6 @@
       "Tỷ lệ BrSE vào từ route comtor (band thấp) so với route dev chuyển ngang (band cao) chưa có số liệu.",
       "Điểm chia giữa levels[] và destination_profile ở L6 là suy luận, chưa có JD xác nhận."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -12513,9 +12287,6 @@
       "enterprise_bank": "Có neo từ 3 JD EM của NAB: phân tầng nội bộ rõ thành nhiều nấc, và yếu tố vận hành production ('You Build It, You Run It', trực sự cố Sev1/Sev2) xuất hiện ở NHÁNH MANAGEMENT chứ không ở band IC nào. Đây là phát hiện đáng chú ý — nó đảo ngược kỳ vọng thông thường rằng on-call là việc của kỹ sư chứ không phải của quản lý.",
       "bigtech_fdi": "CHUA_CO_DU_LIEU"
     },
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -12745,9 +12516,6 @@
       "roles.csv ghi rõ 'band map theo thang FDI' — mốc năm/band ở trên dùng chung thang toàn cục VN, CHƯA điều chỉnh riêng cho văn hoá thâm niên đặc thù của FDI Nhật/Hàn/Đức, có thể lệch so với thực tế.",
       "Chưa rõ mức lương và tốc độ thăng tiến có bị ảnh hưởng bởi văn hoá đánh giá theo thâm niên (kiểu Nhật) khác với product/startup VN hay không."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -13038,12 +12806,6 @@
       "enterprise_bank": "Ít hơn, thường tách biệt Backend/Frontend",
       "bigtech_fdi": "Ít gặp ở scale lớn vì yêu cầu chuyên môn hóa sâu"
     },
-    "work_environment_ids": [
-      "WE_HYBRID_PRODUCT",
-      "WE_PROJECT_OUTSOURCING"
-    ],
-    "work_environment_primary": "WE_HYBRID_PRODUCT",
-    "work_environment_note": "Startup chuộng Fullstack để tiết kiệm resource.",
     "education_path_ids": [
       "EDU_CS_PREFERRED"
     ],
@@ -13261,9 +13023,6 @@
       "Chưa rõ mức độ tách biệt giữa Game Developer client-side (gameplay) và Game Backend Developer (server, live-ops, matchmaking) tại VN — có thể là hai ladder khác nhau đang bị gộp chung trong roles.csv.",
       "Cụm công ty tập trung hẹp (VNG, Gameloft, Amanotes...) theo roles.csv khiến core_output có thể thiên lệch theo văn hoá riêng của cụm này, chưa chắc đại diện cho toàn ngành game VN (studio nhỏ, indie)."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -13541,12 +13300,6 @@
       "enterprise_bank": "Super app ngân hàng ưu tiên Native hoặc Flutter/React Native tuỳ chiến lược",
       "bigtech_fdi": "Chuyên môn hóa cực cao (Android riêng, iOS riêng)"
     },
-    "work_environment_ids": [
-      "WE_HYBRID_PRODUCT",
-      "WE_PROJECT_OUTSOURCING"
-    ],
-    "work_environment_primary": "WE_HYBRID_PRODUCT",
-    "work_environment_note": "App phát hành liên tục nên thường áp dụng Agile/Scrum.",
     "education_path_ids": [
       "EDU_CS_PREFERRED",
       "EDU_ANY_PLUS_TRAINING"
@@ -13691,9 +13444,6 @@
       "enterprise_bank": "Có neo gián tiếp từ golden A: JD Lead Frontend của NAB ghi tường minh ranh giới quyền quyết định — tự quyết ở cấp component, kiến trúc tổng thể do cấp trên đưa xuống. Cần JD Tech Lead thuần để xác nhận pattern này ngoài nhánh frontend.",
       "bigtech_fdi": "CHUA_CO_DU_LIEU"
     },
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp / on-call / onsite / remote / công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -13912,9 +13662,6 @@
       "roles.csv ghi rõ ladder này 'gần như không giao với ladder engineer' — nhưng chính vì vậy taxonomy 78 role hiện KHÔNG có vị trí Design Manager/Head of Design tương ứng, khiến nhánh quản lý của UI/UX Designer chưa xác định rõ được (xem branching.management_track_note).",
       "Chưa rõ tỷ lệ công ty VN tách UX Research và UI Design thành hai vị trí riêng biệt hay gộp làm một như ladder ở trên."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -14100,9 +13847,6 @@
       "Chưa rõ ranh giới thật giữa 'Web Developer' và 'Frontend Developer' tại VN — có thể là cùng một vị trí với hai tên gọi khác nhau tuỳ công ty.",
       "Trần L6 là suy luận theo roles.csv, chưa có JD xác nhận mốc chuyển đổi sang title khác ở band cao."
     ],
-    "work_environment_ids": [],
-    "work_environment_primary": null,
-    "work_environment_note": "Chưa gán. Thuộc Pass 2 — căn cứ là JD có nhắc ca kíp/on-call/onsite/remote/công tác hay không.",
     "education_path_ids": [],
     "education_path_primary": null,
     "education_path_note": "Chưa gán. Thuộc Pass 2.",
@@ -15154,14 +14898,6 @@
         }
       ]
     },
-    "work_environment_ids": [
-      "WE_PROJECT_OUTSOURCING",
-      "WE_HYBRID_PRODUCT",
-      "WE_REMOTE_GLOBAL",
-      "WE_ONSITE_ENTERPRISE"
-    ],
-    "work_environment_primary": "WE_HYBRID_PRODUCT",
-    "work_environment_note": "Hybrid chiếm ưu thế rõ rệt: Axon (onsite T3-T6, remote T2), NAB (toàn bộ 5 JD ghi hybrid working model), Holistics, ANDPAD, what3words (tối đa 2 ngày WFH + 6 tuần làm việc từ bất kỳ đâu mỗi năm), Workday (Flex Work tính 50% theo quý thay vì ngày/tuần). Remote hoàn toàn chỉ ở Employment Hero và Binance, cả hai đều là công ty nước ngoài và đều ở band L5+. Onsite 100%: Nexlab, Axon SWE II, FireGroup, FinX, Moatable (có on-site bonus 2,5 triệu/tháng), One Mount. KHÔNG có JD nào trong 37 mẫu nhắc tới ca kíp, on-call hay công tác tới site khách hàng — WE_SHIFT_24_7 và WE_FIELD_CLIENT không áp dụng cho role này. ĐÍNH CHÍNH so với bản trước: FE38 (Engineering Manager Frontend/Mobile) mô tả mô hình 'You Build It, You Run It' cùng trách nhiệm xử lý sự cố Sev1/Sev2 — hàm ý có trực sự cố. Đây là JD DUY NHẤT trong 40 mẫu có yếu tố vận hành production, và nó xuất hiện ở nhánh Management chứ không phải ở các band IC. Kết luận 'role này không có on-call' chỉ đúng với nhánh IC.",
     "education_path_ids": [
       "EDU_CS_PREFERRED"
     ],
@@ -15758,11 +15494,6 @@
       "product_local": "CHUA_CO_DU_LIEU — không tìm được JD Enterprise Architect nào từ công ty product Việt Nam trong đợt thu thập 22/08/2026, kể cả khi tìm trên ITviec (chỉ 5 tin gắn thẻ 'enterprise architecture' toàn thị trường).",
       "bigtech_fdi": "CHUA_CO_DU_LIEU — không có JD nào trong mẫu."
     },
-    "work_environment_ids": [
-      "WE_ONSITE_ENTERPRISE"
-    ],
-    "work_environment_primary": "WE_ONSITE_ENTERPRISE",
-    "work_environment_note": "Techcombank, HDBank, TPBank, MEGAZONE đều ghi 'At office'; TPBank ghi thêm chính sách No OT. HDBank là ngoại lệ đáng ghi: mô hình 'SWAT Team, cường độ cao trong giai đoạn triển khai trọng điểm' — mâu thuẫn với hình dung 'ngân hàng thì nhàn'. NAB ghi hybrid, nhưng KHÔNG archetype nào trong work_environments.json mô tả 'hybrid tại doanh nghiệp lớn' — WE_HYBRID_PRODUCT được định nghĩa cho công ty làm product in-house. Xem VF-05.",
     "education_path_ids": [
       "EDU_CS_REQUIRED"
     ],
