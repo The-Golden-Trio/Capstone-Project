@@ -12,7 +12,7 @@ import {
   type PromptTurn,
 } from './narrator.prompt';
 import { NARRATOR_PROFILE } from './narrator.profile';
-import { NARRATOR_SYSTEM_PROMPT } from './prompts/narrator.v1';
+import { narratorSystemPrompt } from './prompts/narrator.v1';
 
 const data = fixtureData();
 const scenario = data.scenarios[SAMPLE_SCENARIO_KEY];
@@ -22,16 +22,17 @@ const turn = (activityId: string, answer: string): PromptTurn => ({
   activityId,
   transcript: transcriptBefore(scenario, activityId),
   answer,
-  followUpAllowed: true,
 });
+
+const SYSTEM_PROMPT = narratorSystemPrompt('qwen');
 
 const allText = (messages: ReturnType<typeof buildNarratorMessages>) =>
   messages.flatMap((m) => m.parts.map((p) => p.text)).join('\n');
 
 describe('thứ tự cho prompt cache', () => {
   it('hai người chơi khác nhau ở cùng hoạt động: phần đầu tới điểm cache giống hệt', () => {
-    const a = buildNarratorMessages(turn('a2', SAMPLE_ANSWERS.dung_kich_ban));
-    const b = buildNarratorMessages(turn('a2', SAMPLE_ANSWERS.lac_kich_ban));
+    const a = buildNarratorMessages(turn('a2', SAMPLE_ANSWERS.dung_kich_ban), 'qwen');
+    const b = buildNarratorMessages(turn('a2', SAMPLE_ANSWERS.lac_kich_ban), 'qwen');
     expect(a[0]).toEqual(b[0]);
     expect(a[1].parts[0]).toEqual(b[1].parts[0]);
     expect(a[1].parts[0].cacheBreakpoint).toBe(true);
@@ -46,7 +47,7 @@ describe('thứ tự cho prompt cache', () => {
   });
 
   it('câu người chơi nằm SAU điểm cache, không bao giờ trước', () => {
-    const [, user] = buildNarratorMessages(turn('a2', 'CÂU-ĐÁNH-DẤU'));
+    const [, user] = buildNarratorMessages(turn('a2', 'CÂU-ĐÁNH-DẤU'), 'qwen');
     expect(user.parts[0].text).not.toContain('CÂU-ĐÁNH-DẤU');
     expect(user.parts[1].text).toContain('CÂU-ĐÁNH-DẤU');
   });
@@ -56,13 +57,15 @@ describe('không lộ rubric — mọi kịch bản, mọi hoạt động, cả 
   it.each(Object.entries(data.scenarios))('%s', (_, s) => {
     for (const activity of canonOrder(s)) {
       const text = allText(
-        buildNarratorMessages({
-          view: narratorView(s, activity.activity_id),
-          activityId: activity.activity_id,
-          transcript: [],
-          answer: 'x',
-          followUpAllowed: true,
-        }),
+        buildNarratorMessages(
+          {
+            view: narratorView(s, activity.activity_id),
+            activityId: activity.activity_id,
+            transcript: [],
+            answer: 'x',
+          },
+          'qwen',
+        ),
       );
       for (const a of s.activities) {
         for (const o of a.observes) for (const anchor of Object.values(o.anchors)) expect(text).not.toContain(anchor);
@@ -74,7 +77,7 @@ describe('không lộ rubric — mọi kịch bản, mọi hoạt động, cả 
 
 describe('câu người chơi là dữ liệu', () => {
   it('không đóng được thẻ để chèn lệnh ra ngoài', () => {
-    const [, user] = buildNarratorMessages(turn('a2', SAMPLE_ANSWERS.tan_cong));
+    const [, user] = buildNarratorMessages(turn('a2', SAMPLE_ANSWERS.tan_cong), 'qwen');
     const dynamic = user.parts[1].text;
     const lastAnswer = dynamic.slice(dynamic.lastIndexOf('<cau_nguoi_choi>'));
     // Chỉ còn đúng một thẻ đóng — của hệ thống, ở cuối. Thẻ người chơi gõ đã bị vô hiệu.
@@ -83,29 +86,38 @@ describe('câu người chơi là dữ liệu', () => {
   });
 
   it('cả system prompt lẫn message người dùng đều có chữ "json" — điều kiện của json_object', () => {
-    const [system, user] = buildNarratorMessages(turn('a2', 'x'));
+    const [system, user] = buildNarratorMessages(turn('a2', 'x'), 'qwen');
     expect(system.parts[0].text).toContain('json');
     expect(user.parts.map((p) => p.text).join('')).toContain('json');
   });
 
   it('system prompt không chứa gì riêng của một kịch bản', () => {
-    for (const member of scenario.cast) expect(NARRATOR_SYSTEM_PROMPT).not.toContain(member.role_in_scene);
-    expect(NARRATOR_SYSTEM_PROMPT).not.toMatch(/N\+1|orders|Redis/);
+    for (const member of scenario.cast) expect(SYSTEM_PROMPT).not.toContain(member.role_in_scene);
+    expect(SYSTEM_PROMPT).not.toMatch(/N\+1|orders|Redis/);
   });
 
   describe('quy tắc chung', () => {
-    it('trần token trong prompt lấy từ call profile, không gõ tay', () => {
-      expect(NARRATOR_SYSTEM_PROMPT).toContain(`không quá ${NARRATOR_PROFILE.maxOutputTokens} token`);
+    it('trần token trong prompt lấy từ call profile theo từng hãng, không gõ tay', () => {
+      for (const provider of ['qwen', 'deepseek'] as const)
+        expect(narratorSystemPrompt(provider)).toContain(
+          `không quá ${NARRATOR_PROFILE.maxOutputTokens[provider]} token`,
+        );
+      expect(NARRATOR_PROFILE.maxOutputTokens.qwen).toBeGreaterThan(500);
+    });
+
+    it('chỉ có hai trường speaker và follow_up, không còn narration', () => {
+      expect(SYSTEM_PROMPT).not.toContain('narration');
+      expect(SYSTEM_PROMPT).toContain('"follow_up"');
     });
 
     it('bắt viết số bằng chữ số, có ví dụ số viết bằng chữ để cấm', () => {
-      expect(NARRATOR_SYSTEM_PROMPT).toMatch(/chữ số/);
-      for (const bad of ['mười lăm', 'chín', 'năm trăm']) expect(NARRATOR_SYSTEM_PROMPT).toContain(`"${bad}"`);
+      expect(SYSTEM_PROMPT).toMatch(/chữ số/);
+      for (const bad of ['mười lăm', 'chín', 'năm trăm']) expect(SYSTEM_PROMPT).toContain(`"${bad}"`);
     });
 
     it('cấm trả lời chuyện ngoài kịch bản và chửi bậy', () => {
-      expect(NARRATOR_SYSTEM_PROMPT).toMatch(/ngoài kịch bản/);
-      expect(NARRATOR_SYSTEM_PROMPT).toMatch(/Không chửi bậy/);
+      expect(SYSTEM_PROMPT).toMatch(/ngoài kịch bản/);
+      expect(SYSTEM_PROMPT).toMatch(/Không chửi bậy/);
     });
   });
 });
@@ -117,7 +129,7 @@ describe('bắt viết lại', () => {
   ];
 
   it('nối vào cuối, phần đầu giữ nguyên', () => {
-    const base = buildNarratorMessages(turn('a2', 'x'));
+    const base = buildNarratorMessages(turn('a2', 'x'), 'qwen');
     const next = [...base, ...regenerationMessages('{"speaker":"an"}', violations)];
     expect(next.slice(0, 2)).toEqual(base);
     expect(next[2].role).toBe('assistant');

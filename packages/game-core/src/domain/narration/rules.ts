@@ -1,5 +1,5 @@
 /**
- * Bốn luật kiểm câu AI-4 viết, TRƯỚC khi người chơi thấy.
+ * Bốn luật kiểm lời AI-4 viết, TRƯỚC khi người chơi thấy.
  *
  * Toàn là luật tất định, chạy vài mili giây — không gọi thêm model nào, nên
  * không ăn vào ngân sách 5 giây của NFR-01 (follow-up sinh xong trong 5 s ở
@@ -7,7 +7,9 @@
  *
  *   R1  Không bịa tên, số: mọi con số và tên riêng phải có trong kịch bản
  *       AI-4 được thấy, hoặc trong câu người chơi.
- *   R2  Follow-up trong trần: chỉ hỏi khi engine cho phép; hỏi đúng một câu.
+ *   R2  Một ý: lời follow-up có nhiều nhất một câu hỏi, và câu hỏi nằm ở cuối.
+ *       Lượt nào được hỏi là do engine quyết trước khi gọi AI-4 (không được
+ *       hỏi thì không gọi), nên luật này không phải kiểm lại.
  *   R3  Không lộ: không lặp lại nguyên cụm từ của rubric, khoá chấm, gợi ý
  *       chưa dùng, kết cục, hay hoạt động chưa tới.
  *   R4  Đúng khuôn: JSON đúng schema, không rỗng, không bị cắt, đúng độ dài.
@@ -20,14 +22,12 @@ import { z } from 'zod';
 import { normalizeVi } from '../format.js';
 
 /**
- * Lời nối dài tối đa bao nhiêu ký tự.
+ * Lời follow-up dài tối đa bao nhiêu ký tự.
  *
- * 1–2 câu thoại vừa một bong bóng chat trên điện thoại. Khoảng 100–130 token
- * tiếng Việt — cộng câu hỏi vẫn nằm gọn trong 300 token đầu ra của call profile.
+ * Giá trị khởi đầu, chưa đo: dài hơn thế thường là hai ý ghép lại, và người
+ * chơi phải đọc lâu. Chốt lại bằng thống kê độ dài các câu follow-up thật
+ * (xem `followUpLengthStats`), để người chơi đọc thoải mái.
  */
-export const NARRATION_MAX_CHARS = 280;
-
-/** Một câu hỏi, một ý. Dài hơn thế thường là hai câu hỏi ghép lại. */
 export const FOLLOW_UP_MAX_CHARS = 200;
 
 /**
@@ -42,8 +42,7 @@ export const LEAK_NGRAM = 5;
 export const NarrationOutputSchema = z
   .object({
     speaker: z.string().min(1),
-    narration: z.string().trim().min(1).max(NARRATION_MAX_CHARS),
-    follow_up: z.string().trim().min(1).max(FOLLOW_UP_MAX_CHARS).nullable(),
+    follow_up: z.string().trim().min(1).max(FOLLOW_UP_MAX_CHARS),
   })
   .strict();
 
@@ -63,10 +62,9 @@ export function narrationJsonSchema(castIds: readonly string[]) {
     type: 'object',
     properties: {
       speaker: { type: 'string', enum: [...castIds] },
-      narration: { type: 'string', maxLength: NARRATION_MAX_CHARS },
-      follow_up: { type: ['string', 'null'], maxLength: FOLLOW_UP_MAX_CHARS },
+      follow_up: { type: 'string', maxLength: FOLLOW_UP_MAX_CHARS },
     },
-    required: ['speaker', 'narration', 'follow_up'],
+    required: ['speaker', 'follow_up'],
     additionalProperties: false,
   } as const;
 }
@@ -91,8 +89,6 @@ export interface NarrationCheckContext {
   hiddenTexts: readonly string[];
   /** `npc_id` của các nhân vật trong kịch bản. */
   castIds: readonly string[];
-  /** Engine có cho hỏi đào sâu ở lượt này không (trần của hoạt động và của màn). */
-  followUpAllowed: boolean;
   /** `finish_reason` nhà cung cấp trả về. `length` nghĩa là bị cắt giữa chừng. */
   finishReason: string;
 }
@@ -149,7 +145,7 @@ function checkShape(
     const issues = result.error.issues
       .map((i) => `${i.path.join('.') || '(gốc)'}: ${i.message}`)
       .join('; ');
-    fail(`Sai schema — ${issues}`, `Json sai khuôn (${issues}). Giữ đúng ba trường speaker, narration, follow_up.`);
+    fail(`Sai schema — ${issues}`, `Json sai khuôn (${issues}). Giữ đúng hai trường speaker, follow_up.`);
     return { output: null, violations };
   }
 
@@ -227,7 +223,7 @@ function checkFacts(
   output: NarrationOutput,
   ctx: NarrationCheckContext,
 ): RuleViolation[] {
-  const written = [output.narration, output.follow_up ?? ''].join('\n');
+  const written = output.follow_up;
   const violations: RuleViolation[] = [];
 
   const knownNumbers = new Set(
@@ -276,42 +272,22 @@ function checkFacts(
 
 const questionMarks = (text: string): number => (text.match(/\?/g) ?? []).length;
 
-function checkFollowUp(
-  output: NarrationOutput,
-  ctx: NarrationCheckContext,
-): RuleViolation[] {
-  const violations: RuleViolation[] = [];
-  const fail = (detail: string, feedback: string) =>
-    violations.push({ rule: 'R2', detail, feedback });
-
-  // Câu hỏi chỉ được nằm ở `follow_up`, để engine đếm được — một câu hỏi lẻn
-  // vào lời nối là một lượt đào sâu không ai đếm.
-  if (questionMarks(output.narration) > 0) {
-    fail(
-      'Lời nối có câu hỏi',
-      'narration không được chứa câu hỏi. Nếu được hỏi thì đặt câu hỏi ở follow_up.',
-    );
+function checkFollowUp(output: NarrationOutput): RuleViolation[] {
+  // Lời follow-up là câu hỏi, hoặc một lời dẫn không có dấu hỏi khi tình huống
+  // cần vậy. Hai câu hỏi ghép lại là hai lượt đào sâu mà engine chỉ đếm một.
+  const text = output.follow_up.replace(/["'”’»)\s]+$/u, '');
+  const marks = questionMarks(text);
+  if (marks > 1 || (marks === 1 && !text.endsWith('?'))) {
+    return [
+      {
+        rule: 'R2',
+        detail: `follow_up có ${marks} dấu hỏi${marks === 1 ? ' nhưng không nằm ở cuối' : ''}`,
+        feedback:
+          'follow_up chỉ được có MỘT câu hỏi, hỏi một ý, đặt ở cuối và kết thúc bằng dấu "?". Hoặc là một lời dẫn không có dấu "?".',
+      },
+    ];
   }
-
-  if (output.follow_up === null) return violations;
-
-  if (!ctx.followUpAllowed) {
-    fail(
-      'Hỏi đào sâu khi engine không cho phép (hết trần hoặc hoạt động không có mục tiêu đào sâu)',
-      'Lượt này không được hỏi đào sâu. Đặt follow_up là null.',
-    );
-    return violations;
-  }
-
-  const question = output.follow_up.replace(/["'”’»)\s]+$/u, '');
-  if (questionMarks(question) !== 1 || !question.endsWith('?')) {
-    fail(
-      `follow_up phải là đúng một câu hỏi, kết thúc bằng "?" — đang có ${questionMarks(question)} dấu hỏi`,
-      'follow_up phải là đúng MỘT câu hỏi, hỏi một ý, kết thúc bằng dấu "?".',
-    );
-  }
-
-  return violations;
+  return [];
 }
 
 /* ── R3 ────────────────────────────────────────────────────────────── */
@@ -342,7 +318,7 @@ function checkLeak(
       .filter((g) => !visible.has(g)),
   );
 
-  const written = [output.narration, output.follow_up ?? ''].join('\n');
+  const written = output.follow_up;
   const leaked = [
     ...new Set(ngrams(written, LEAK_NGRAM).filter((g) => forbidden.has(g))),
   ];
@@ -356,6 +332,37 @@ function checkLeak(
         'Câu vừa rồi nhắc tới nội dung người chơi chưa được thấy. Viết lại, chỉ dựa vào kịch bản đã cho và câu người chơi; câu hỏi phải mở, không gợi ý đáp án.',
     },
   ];
+}
+
+/* ── Thống kê độ dài ──────────────────────────────────────────────── */
+
+export interface LengthStats {
+  count: number;
+  /** Số ký tự: trung bình, trung vị, p95, lớn nhất. */
+  chars: { mean: number; p50: number; p95: number; max: number };
+  /** Số âm tiết (tiếng Việt mỗi chữ một âm tiết), thang đọc dễ hình dung hơn ký tự. */
+  syllables: { mean: number; p50: number; p95: number; max: number };
+}
+
+function summarize(values: readonly number[]) {
+  const sorted = [...values].sort((a, b) => a - b);
+  const at = (q: number) => sorted[Math.min(sorted.length - 1, Math.ceil(q * sorted.length) - 1)];
+  const mean = sorted.reduce((sum, v) => sum + v, 0) / sorted.length;
+  return { mean: Math.round(mean * 10) / 10, p50: at(0.5), p95: at(0.95), max: sorted[sorted.length - 1] };
+}
+
+/**
+ * Thống kê độ dài các lời follow-up đã đến tay người chơi, để chốt
+ * `FOLLOW_UP_MAX_CHARS` theo dữ liệu chứ không theo cảm tính. Đầu vào là
+ * `follow_up` của các lượt `accepted` trong bản ghi lượt gọi.
+ */
+export function followUpLengthStats(texts: readonly string[]): LengthStats | null {
+  if (texts.length === 0) return null;
+  return {
+    count: texts.length,
+    chars: summarize(texts.map((t) => t.trim().length)),
+    syllables: summarize(texts.map((t) => (t.match(WORD) ?? []).length)),
+  };
 }
 
 /* ── Gộp ───────────────────────────────────────────────────────────── */
@@ -379,7 +386,7 @@ export function checkNarration(
     violations: [
       ...shape.violations,
       ...checkFacts(output, ctx),
-      ...checkFollowUp(output, ctx),
+      ...checkFollowUp(output),
       ...checkLeak(output, ctx),
     ],
   };

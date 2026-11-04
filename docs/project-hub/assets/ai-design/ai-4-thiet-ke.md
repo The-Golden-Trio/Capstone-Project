@@ -4,18 +4,20 @@ Nhật, bắt đầu 29/10/2026. Tài liệu làm việc, chưa phải văn báo
 
 | Phần | Trạng thái |
 |---|---|
-| 1 Nguyên tắc thiết kế | 📝 Bản nháp 31/10, chờ Nhật duyệt (nguyên tắc 8 còn chờ ②) |
+| 1 Nguyên tắc thiết kế | 📝 Bản nháp 31/10, sửa 4/11 theo cô, chờ Nhật duyệt (nguyên tắc 8 còn chờ ②) |
 | 2 Luồng end-to-end | Chưa viết (① đã chốt 30/10, viết được) |
-| 3 Contract | ✅ Nhật đã duyệt, có trong deck |
-| 4 Scoring, edge cases | 📝 Bản nháp 31/10, chờ Nhật duyệt (có thêm câu hỏi mở ⑤) |
-| 5 Gọi model, prompt | ✅ Có code chạy được, có trong deck (30/10) |
+| 3 Contract | ✅ Nhật duyệt 30/10; sửa 4/11 theo cô (một trường `follow_up`), chờ duyệt lại |
+| 4 Scoring, edge cases | 📝 Bản nháp 31/10, sửa 4/11 theo cô (thêm mục 4.5), chờ Nhật duyệt (có câu hỏi mở ⑤) |
+| 5 Gọi model, prompt | ✅ Có code chạy được (30/10); sửa 4/11: trần token Qwen 600, prompt theo hãng |
 | 6 Lỗi, chi phí, thời gian | ✅ Nhật đã duyệt, có trong deck |
 | 7 Privacy | ✅ Nhật đã duyệt, có trong deck |
 | 8 Vòng phản hồi, để sau | ✅ Nhật đã duyệt, có trong deck |
 
+**Sửa 4/11 theo góp ý của cô:** (1) gộp lời nối và câu hỏi thành một trường `follow_up`, thường là câu hỏi, có thể là lời dẫn không phải câu hỏi; không được hỏi thì không gọi AI-4; (2) đầu ra AI-4 vẫn qua R1–R4; (3) bỏ đề xuất giới hạn độ dài câu trả lời của người chơi, thay bằng giới hạn những thứ người chơi thấy (giờ chơi, số lần chơi); (4) thống kê độ dài follow-up (mục 4.5); (5) trần token của Qwen lên 600.
+
 Deck: [`slides/JobQuest_AI4_Deck.html`](../../slides/JobQuest_AI4_Deck.html), slide xếp theo số phần.
 
-**AI-4 là gì.** Người dẫn truyện lúc chơi. Engine giữ thứ tự sự kiện canon và hiện chúng nguyên văn từ seed; AI-4 chỉ viết **lời nối** giữa các sự kiện và **câu hỏi follow-up** (câu hỏi đào sâu) sau câu tự luận của người chơi. AI-4 không chấm điểm.
+**AI-4 là gì.** Người dẫn truyện lúc chơi. Engine giữ thứ tự sự kiện canon và hiện chúng nguyên văn từ seed; AI-4 chỉ viết **một lời follow-up** sau câu tự luận của người chơi: thường là câu hỏi đào sâu, hoặc một lời dẫn không phải câu hỏi khi tình huống cần. Không có lời nối riêng. AI-4 không chấm điểm.
 
 **Ba chỗ còn chờ nhóm chốt** (đánh dấu ⏳ bên dưới):
 
@@ -29,14 +31,14 @@ Deck: [`slides/JobQuest_AI4_Deck.html`](../../slides/JobQuest_AI4_Deck.html), sl
 
 ### Ý chính
 
-Tám nguyên tắc dưới đây là lý do đứng sau mọi lựa chọn ở các phần còn lại. Cái chung của chúng: **AI-4 chỉ được viết chữ; mọi quyết định và mọi kiểm tra nằm ở code.** Model viết hay hay dở thì người chơi cũng không bị ảnh hưởng ngoài một câu lời nối, vì không có gì quan trọng được giao cho nó quyết.
+Tám nguyên tắc dưới đây là lý do đứng sau mọi lựa chọn ở các phần còn lại. Cái chung của chúng: **AI-4 chỉ được viết chữ; mọi quyết định và mọi kiểm tra nằm ở code.** Model viết hay hay dở thì người chơi cũng không bị ảnh hưởng ngoài một lời follow-up, vì không có gì quan trọng được giao cho nó quyết.
 
 ### Tám nguyên tắc
 
 | # | Nguyên tắc | Nghĩa là | Vì sao | Thấy ở đâu |
 |---|---|---|---|---|
-| 1 | **Model chỉ viết chữ, không quyết gì** | Thứ tự sự kiện, có được hỏi đào sâu hay không, hỏi tối đa mấy lần: do engine (phần code chạy màn chơi). AI-4 chỉ nhận cờ "được hỏi / không" | Quyết bằng code thì đoán trước được và kiểm được; quyết bằng model thì không. Đây là D-89 (quyết định lúc chơi: nội dung canon hiện nguyên văn, phần AI viết chỉ được kiểm bằng luật) | Phần 3: cờ `followUpAllowed`; luật R2 |
-| 2 | **Nội dung canon hiện nguyên văn; AI-4 chỉ viết hai thứ** | Lời nối giữa các sự kiện, và tối đa một câu hỏi đào sâu. Không viết lại tình huống, không thêm sự kiện | Nội dung chuyên gia đã duyệt là thứ người chơi tin. Càng ít chữ do AI viết thì càng ít chỗ sai | Phần 3: JSON chỉ có `speaker`, `narration`, `follow_up`; tối đa 280 và 200 ký tự |
+| 1 | **Model chỉ viết chữ, không quyết gì** | Thứ tự sự kiện, có được hỏi đào sâu hay không, hỏi tối đa mấy lần: do engine (phần code chạy màn chơi). Engine chỉ gọi AI-4 khi được hỏi; không được hỏi thì không gọi | Quyết bằng code thì đoán trước được và kiểm được; quyết bằng model thì không. Đây là D-89 (quyết định lúc chơi: nội dung canon hiện nguyên văn, phần AI viết chỉ được kiểm bằng luật) | Phần 3: cờ `followUpAllowed` chặn trước khi gọi model; luật R2 |
+| 2 | **Nội dung canon hiện nguyên văn; AI-4 chỉ viết một thứ** | Một lời follow-up: câu hỏi đào sâu, hoặc lời dẫn. Không viết lại tình huống, không thêm sự kiện | Nội dung chuyên gia đã duyệt là thứ người chơi tin. Càng ít chữ do AI viết thì càng ít chỗ sai | Phần 3: JSON chỉ có `speaker`, `follow_up`; tối đa 200 ký tự |
 | 3 | **Không thấy thì không lộ** | Rubric (mô tả các mức điểm), khoá chấm, gợi ý chưa hiện: không bao giờ vào prompt | Model đã không biết thì không thể để lộ, không thể "dạy" người chơi trả lời cho đúng ý | Phần 3: AI-4 chỉ nhận các trường trong danh sách cho phép; luật R3 kiểm thêm |
 | 4 | **Kiểm bằng luật chạy trong code, không dùng model thứ hai** | Bốn luật R1–R4 đọc chữ AI-4 viết, chạy vài mili giây | Thêm một model kiểm là thêm một lượt gọi, vượt NFR-01 (follow-up xong trong 5 s ở p95). §5.2.3 đã cân nhắc và không chọn | Phần 3 và 5 |
 | 5 | **Không tin nhà cung cấp** | Đầu ra luôn qua cùng một schema của nhóm, dù hãng nói đã ép đúng khuôn. Không dùng tính năng lưu hội thoại phía hãng. Đổi hãng là đổi cấu hình | Mỗi hãng một kiểu (DeepSeek không ép được khuôn và đôi khi trả rỗng). DC-02: thay nhà cung cấp model không phải sửa logic lõi | Phần 5: gateway và adapter |
@@ -53,7 +55,7 @@ Bảng này trả lời câu hỏi "model hay luật quyết?" cho AI-4. Cột p
 | Thứ tự sự kiện trong màn | Engine, đi theo chuỗi `forward_to` của kịch bản | AI-4 |
 | Có được hỏi đào sâu ở lượt này | Engine: hoạt động có mục tiêu đào sâu và còn trong trần | AI-4, điểm số |
 | Hỏi đào sâu về điều gì | Chuyên gia viết mục tiêu (`followup_goal`) | AI-4 tự chọn |
-| Chữ của lời nối và câu hỏi | AI-4 | |
+| Chữ của lời follow-up | AI-4 | |
 | Câu AI-4 viết có được hiện không | Luật R1–R4 | AI-4, hay một model khác |
 | Điểm của câu trả lời | AI-5 | AI-4 |
 | Đổi model khi lỗi | Gateway (lớp gọi model) | AI-4 |
@@ -72,9 +74,9 @@ Contract là lời hứa giữa AI-4 và phần còn lại của hệ thống: n
 | Mục | AI-4 |
 |---|---|
 | Chạy khi nào | Ngay sau mỗi câu người chơi gõ. AI-5 chấm câu đó song song; AI-4 không chờ điểm (① chốt 30/10) |
-| Nhận | Phần seed AI-4 cần (xem dưới); diễn biến lượt chơi tới giờ; câu trả lời vừa nộp, đã khử định danh; cờ của engine "được hỏi follow-up hay không" và mục tiêu follow-up của activity |
+| Nhận | Phần seed AI-4 cần (xem dưới); diễn biến lượt chơi tới giờ; câu trả lời vừa nộp, đã khử định danh; mục tiêu follow-up của activity. AI-4 chỉ được gọi khi engine cho hỏi follow-up (không thì engine không gọi) |
 | Không bao giờ nhận | Rubric và mô tả các mức; khoá chấm; profile điểm của các lựa chọn; tên, email, tài khoản người chơi; thẻ mục tiêu (đề xuất, ⏳ ④) |
-| Trả | JSON gồm hai trường: `narration` (lời nối) và `followUp` (câu hỏi, hoặc `null` nếu không hỏi) |
+| Trả | JSON gồm hai trường: `speaker` và `follow_up`. `follow_up` thường là một câu hỏi, có thể là lời dẫn không có dấu hỏi. Luôn có chữ, không có `null` |
 | Kiểm bằng | Bốn luật R1–R4, chạy trong `game-core`, không gọi model thứ hai |
 | Hỏng thì | ⏳ ② |
 
@@ -91,9 +93,11 @@ Cả bốn là luật tất định, chạy vài mili giây, nên không thêm t
 | Luật | Ý | Vì sao | Chỗ khó |
 |---|---|---|---|
 | **R1** Không bịa tên, số | Mọi con số và tên riêng trong câu AI-4 viết phải có trong seed hoặc trong câu của người chơi | Sai số và sai tên là hai lỗi hay gặp nhất khi model viết từ dữ liệu có sẵn (Thomson và Reiter 2020: 184 và 105 trên 418 lỗi) | Tiếng Việt: số viết bằng chữ ("ba mươi"), đơn vị, ngày tháng; tên có hoặc không dấu; nhận ra đâu là tên riêng. Ý tưởng: chuẩn hoá cả hai bên trước khi so (bỏ dấu, chữ thường, đổi số chữ thành số) |
-| **R2** Follow-up trong trần | Chỉ có `followUp` khi engine cho phép: còn trong trần của activity và trần của màn theo cấp | Giới hạn thời gian chơi; số câu hỏi do engine đếm, không để model tự quyết | Ít |
+| **R2** Một ý | `follow_up` có nhiều nhất một dấu `?`, nằm ở cuối; được là lời dẫn không có dấu hỏi | Engine chỉ đếm một lượt đào sâu cho mỗi follow-up; hai câu hỏi ghép lại là hai lượt. Có hỏi hay không đã do engine quyết trước khi gọi (trần của activity và của màn theo cấp), nên R2 không kiểm lại | Ít |
 | **R3** Không lộ rubric, khoá chấm | Câu AI-4 viết không chứa cụm từ trùng với văn bản rubric hay khoá chấm | Lưới an toàn: AI-4 vốn không thấy rubric nên rủi ro thấp | Diễn đạt lại thì so chuỗi không bắt được; phần này để log review (phần 8) |
-| **R4** Đúng định dạng, độ dài | Đúng schema; không vượt độ dài tối đa | Câu dài làm chậm và lan man; sai schema thì không hiện được | Ít |
+| **R4** Đúng định dạng, độ dài | Đúng schema (đúng hai trường); `follow_up` không quá 200 ký tự | Câu dài làm chậm và lan man; sai schema thì không hiện được | Ít |
+
+**Gộp thành một trường không làm bỏ kiểm.** R1, R3 và R4 chạy trên toàn bộ `follow_up`, kể cả khi nó là lời dẫn. Gộp chỉ làm model bớt một trường phải viết.
 
 **Giới hạn phải nói thẳng:** luật không bắt được một ý bịa được ghép từ toàn những từ có trong seed. Phần này bắt sau, bằng log review của một model khác họ (phần 8).
 
@@ -126,9 +130,9 @@ Theo ① (chốt 30/10: AI-5 chấm ngay từng câu, AI-4 không chờ điểm)
 | 3 | Chưa quá trần của cả màn theo cấp bậc | `followupCap`: cấp L1, L2 được 2 lần; L3, L4, L5 được 3 lần; còn lại 4 lần |
 | 4 | Đây chưa phải lượt trả lời một câu đào sâu | Hỏi đào sâu một lần, không hỏi nối tiếp |
 
-Engine đưa kết quả cho AI-4 dưới dạng cờ. AI-4 chỉ đọc cờ; luật R2 bắt nếu AI-4 hỏi khi cờ là "không".
+Engine xét xong mới gọi AI-4. **Một trong bốn điều sai thì không gọi AI-4**: lượt đó AI-4 không có gì để nói (không còn lời nối riêng), và đỡ một lượt gọi. Engine hiện tiếp nội dung canon của chuyên gia. Phòng khi engine gọi nhầm, `NarratorService` tự trả `skipped`, không gọi model nào.
 
-**Cờ là "được phép", không phải "bắt buộc".** Cờ bật mà AI-4 trả `follow_up` là `null` thì luật vẫn cho qua (AI-4 có lý do: câu trống, lạc đề). Vì vậy engine phải **đếm lượt đào sâu theo câu hỏi thật sự được hiện**, không đếm theo cờ. Nếu đếm theo cờ thì mỗi câu lạc đề ăn mất một lượt hỏi.
+**Được gọi không có nghĩa lượt đó tính là một lần đào sâu.** Khi câu người chơi trống, vô nghĩa hay lạc đề, AI-4 trả một lời dẫn không có dấu `?` (kéo về việc đang làm). Đề xuất: engine **chỉ đếm lượt đào sâu khi `follow_up` có dấu `?`**, đây là phép kiểm bằng code, không cần model. Nếu đếm mọi follow-up thì mỗi câu lạc đề ăn mất một lượt hỏi.
 
 > **Lệch với prototype hiện tại.** Engine trong `scenarioEngine.ts` đang mở lượt đào sâu khi bộ chấm từ khoá thấy câu trả lời chưa đạt mức +2. Cách đó cần điểm trước, trái ①. Phải sửa khi nối AI-4 vào luồng chơi (việc 16 ở cuối tài liệu).
 
@@ -161,23 +165,23 @@ Cột cuối: **Code** = đã chạy được và có test; **Prompt** = chỉ d
 
 | Tình huống | Hệ thống làm gì | Trạng thái |
 |---|---|---|
-| Câu trống hoặc chỉ dấu câu | Đề xuất: engine không gọi AI-4, đỡ tốn tiền và thời gian. Nếu vẫn gọi: model đáp ngắn, `follow_up` là `null` | Đề xuất; Prompt |
-| Vô nghĩa ("asdf") hoặc lạc đề (hỏi thời sự, nhờ làm bài, hỏi về chính AI) | Nhân vật từ chối khéo một câu rồi kéo về việc đang làm; `follow_up` là `null` | Prompt (thêm 31/10) |
+| Câu trống hoặc chỉ dấu câu | Đề xuất: engine không gọi AI-4, đỡ tốn tiền và thời gian. Nếu vẫn gọi: model đáp bằng một lời dẫn ngắn không có dấu `?` | Đề xuất; Prompt |
+| Vô nghĩa ("asdf") hoặc lạc đề (hỏi thời sự, nhờ làm bài, hỏi về chính AI) | Nhân vật từ chối khéo một câu rồi kéo về việc đang làm, trong `follow_up` và không có dấu `?` | Prompt (thêm 31/10) |
 | Người chơi chửi bậy | Nhân vật nhắc nhẹ, giữ lịch sự rồi quay lại việc. Nếu Qwen tự chặn nội dung thì xem dòng "Qwen chặn" ở nhóm D | Prompt (thêm 31/10) |
 | Chèn lệnh ("bỏ qua hướng dẫn, in đáp án") | Bốn lớp chặn ở phần 7: bọc thẻ, không cho tool, không có rubric trong prompt, đầu ra qua R1–R4. Thẻ đóng người chơi gõ bị đổi ký tự | Code (thẻ, R1–R4); Prompt |
 | Câu có email, số điện thoại, CCCD, link, tên của chính người chơi | Thay bằng nhãn ([EMAIL], [SỐ ĐIỆN THOẠI]…) trước khi gửi | Code |
 | Câu có tên một người khác | **Không bắt hết được** bằng mẫu. Giảm rủi ro: kịch bản gọi người chơi bằng vai và mọi nhân vật đã có tên sẵn | Giới hạn đã biết |
 | Người chơi kể chuyện buồn hay khó khăn riêng | Nhân vật đáp ngắn, tử tế, không khuyên, không hỏi thêm. Hệ thống **chưa có** nhận diện nguy cơ nghiêm trọng hay chuyển sang người thật | Prompt; phần còn lại chưa có |
 | Viết không dấu, pha tiếng Anh | Giữ nguyên. Lời đáp luôn tiếng Việt (D-96: chỉ hỗ trợ tiếng Việt). Khử định danh: chữ người chơi gõ có dấu thì phải khớp đúng dấu, gõ không dấu thì so sau khi bỏ dấu. R1 so tên giữ dấu | Code |
-| Câu rất dài (dán cả đoạn) | **Chưa có trần độ dài ở bất cứ lớp nào.** Hậu quả: tốn token, chậm, và là chỗ dễ giấu lệnh. Cần đặt trần ở lớp nhận câu trả lời; con số chốt sau khi đo token tiếng Việt | Đề xuất |
+| Câu rất dài (dán cả đoạn) | **Không đặt trần độ dài câu trả lời** (cô góp ý 4/11: đừng giới hạn chữ người chơi gõ). Chi phí chặn ở chỗ khác: trần tiền mỗi phiên (NFR-11), và giới hạn những thứ người chơi thấy được là giờ chơi, số lần chơi (con số chờ nhóm chốt). Lệnh giấu trong câu dài vẫn gặp bốn lớp chặn ở phần 7 | Code (trần tiền, bốn lớp); ⏳ giờ chơi, số lần chơi |
 | Hết giờ, người chơi không trả lời | D-86 (quyết định: hết giờ là không trả lời, không cộng điểm): không có câu để đáp nên không gọi AI-4 | Đề xuất |
 
 **B. Điều kiện hỏi đào sâu**
 
 | Tình huống | Hệ thống làm gì | Trạng thái |
 |---|---|---|
-| Hoạt động không có mục tiêu đào sâu, hoặc hết trần | Cờ "không được hỏi". AI-4 vẫn viết lời nối. Nếu nó vẫn hỏi: R2 bắt, sinh lại | Code |
-| Cờ bật nhưng AI-4 không hỏi | Hợp lệ. Engine chỉ đếm lượt khi câu hỏi được hiện | Đề xuất cho engine |
+| Hoạt động không có mục tiêu đào sâu, hoặc hết trần | Engine không gọi AI-4, hiện tiếp nội dung canon. Nếu bị gọi nhầm: `NarratorService` trả `skipped`, không gọi model | Code (`skipped`); Đề xuất cho engine |
+| AI-4 trả lời dẫn không có dấu `?` | Hợp lệ (R2 cho qua). Engine chỉ đếm lượt đào sâu khi `follow_up` có dấu `?` | Code (R2); Đề xuất cho engine |
 | Hoạt động đầu tiên (chưa có diễn biến) | Prompt vẫn đủ: kịch bản + câu người chơi | Code |
 | Hoạt động cuối (`forward_to` là `END`) | Không có hoạt động sau, nên không có gì để "kể trước"; AI-4 chỉ đáp lại câu vừa rồi | Code |
 | Mục tiêu đào sâu do chuyên gia viết đã chứa đáp án | Luật không bắt được (có test ghi rõ giới hạn này). Phải sửa ở nguồn: hướng dẫn chuyên gia viết mục tiêu theo khía cạnh cần nhìn, không theo giải pháp | Giới hạn đã biết; việc 14 |
@@ -186,10 +190,10 @@ Cột cuối: **Code** = đã chạy được và có test; **Prompt** = chỉ d
 
 | Tình huống | Hệ thống làm gì | Trạng thái |
 |---|---|---|
-| Không phải JSON, thừa trường, sai nhân vật, quá dài | R4 bắt; sinh lại, nói rõ lỗi gì | Code |
+| Không phải JSON, thừa trường (kể cả `narration` cũ), `follow_up` là `null`, sai nhân vật, quá dài | R4 bắt; sinh lại, nói rõ lỗi gì | Code |
 | Trả rỗng (DeepSeek hay gặp), hoặc bị cắt vì chạm trần token | R4 bắt (`finish_reason` là `length`); sinh lại | Code |
 | Bịa tên hoặc con số | R1 bắt. Số viết bằng chữ ("mười lăm") **không** bắt được | Code; giới hạn đã biết |
-| Hỏi lẻn trong lời nối | R2 bắt | Code |
+| Hai câu hỏi trong một `follow_up`, hoặc câu hỏi nằm giữa rồi còn nói tiếp | R2 bắt, sinh lại | Code |
 | Lộ cụm từ của rubric hoặc kể trước sự kiện sau | R3 bắt (trùng chuỗi 5 âm tiết). Diễn đạt lại thì không bắt được, để log review | Code; giới hạn đã biết |
 | Ý bịa ghép từ toàn chữ có sẵn trong seed | Luật không bắt được; log review của model khác họ (phần 8) | Giới hạn đã biết |
 | Sinh lại 2 lần vẫn hỏng | Chuyển sang model dự phòng với prompt sạch | Code |
@@ -203,9 +207,22 @@ Cột cuối: **Code** = đã chạy được và có test; **Prompt** = chỉ d
 | Người chơi tải lại trang hoặc bấm gửi hai lần | Một câu trả lời chỉ ứng với một lần gọi AI-4. Gửi lần hai thì dùng câu đã lưu, không gọi lại | Đề xuất; cần việc 16 |
 | Chạy lại ván để kiểm | Dùng lời AI-4 đã lưu, không gọi lại model (gọi lại sẽ ra câu khác) | Đề xuất; cần việc 16 |
 
+### 4.5 Độ dài follow-up: đo để người chơi đọc thoải mái
+
+Cô góp ý thống kê độ dài câu follow-up. Mục đích: người chơi đọc xong một lượt không thấy mệt, và `FOLLOW_UP_MAX_CHARS` (hiện 200 ký tự, **giá trị khởi đầu chưa đo**) được chốt theo dữ liệu thay vì cảm tính.
+
+| Mục | Nội dung |
+|---|---|
+| Đo gì | Số ký tự và số âm tiết (mỗi chữ tiếng Việt một âm tiết) của `follow_up`: trung bình, trung vị (p50), p95, lớn nhất |
+| Lấy từ đâu | `follow_up` của các lượt gọi được chấp nhận (`outcome: accepted`) trong bản ghi lượt gọi. Hàm `followUpLengthStats` trong `game-core` tính sẵn |
+| Tách theo | Model, prompt, và loại follow-up (có dấu `?` hay lời dẫn). Câu của model dài hơn câu chuyên gia viết là tín hiệu cần chỉnh prompt |
+| Dùng để | Chốt trần ký tự; chỉnh dòng "tối đa N ký tự" trong prompt; so với mức đọc thoải mái |
+| Số hiện có | Chưa có số đo từ model thật. Chỉ có 3 câu follow-up chuyên gia viết sẵn trong prototype (`FOLLOWUP_LINES`): 87, 73 và 68 ký tự, tương ứng 19, 18 và 16 âm tiết. Ba câu không đủ để kết luận gì, chỉ cho biết cỡ |
+| Ngưỡng "thoải mái" | ⏳ Chưa có. Chốt sau khi có số đo thật, cùng lúc với các ngưỡng khác ở Chương 7 |
+
 ### Điều rút ra
 
-- Phần lớn ca biên về **đầu ra model** đã có code bắt. Phần còn trống nằm ở **đầu vào** (trần độ dài, câu trống) và **engine** (đếm lượt theo câu hỏi thật), tức việc nối AI-4 vào luồng chơi.
+- Phần lớn ca biên về **đầu ra model** đã có code bắt. Phần còn trống nằm ở **đầu vào** (câu trống, hết giờ) và **engine** (đếm lượt theo câu hỏi thật), tức việc nối AI-4 vào luồng chơi.
 - Bốn giới hạn đã biết không có luật nào bắt: ý bịa ghép từ chữ có sẵn, diễn đạt lại để lộ rubric, mục tiêu đào sâu đã chứa đáp án, số viết bằng chữ. Cả bốn dồn về log review (phần 8) hoặc về chuyên gia.
 - ⑤ **Câu hỏi mới từ ①.** Vì engine quyết hỏi trước khi có điểm, người trả lời rất tốt cũng bị hỏi đào sâu cho tới khi hết trần. Chấp nhận (coi đào sâu là phần của trò chơi, mọi người đều bị hỏi), hay thêm một tín hiệu rẻ không dùng AI (ví dụ câu quá ngắn mới hỏi)? Cần Nhật và Phúc chốt, vì ảnh hưởng cảm giác chơi.
 
@@ -246,7 +263,7 @@ Phần 2 chỉ có nội dung chuyên gia viết, **không có câu nào của n
 |---|---|---|---|
 | Thinking (model suy nghĩ trước khi trả lời) | Tắt | Tắt | Cả hai hãng bật sẵn. Suy nghĩ làm chậm thêm vài giây, vượt 4,6 s |
 | Temperature (độ ngẫu nhiên) | 0,7 | 1,0 | Mỗi hãng tự khuyên một mức; thang của hai hãng khác nhau. Chốt lại sau khi đo |
-| Số token trả về tối đa | 300 | 300 | Gấp đôi độ dài cần. Không đặt thì DeepSeek cho tới 8.000 token, chờ rất lâu |
+| Số token trả về tối đa | 600 | 300 | Câu chỉ cần khoảng 60–100 token. Qwen đặt 600 theo góp ý của cô (từ 500 trở lên); DeepSeek giữ 300. Không đặt thì DeepSeek cho tới 8.000 token, chờ rất lâu. Prompt ghi đúng con số của hãng đang gọi, đọc từ call profile |
 | Định dạng trả về | JSON đúng khuôn (strict) | JSON | Qwen ép được đúng khuôn, nên ít phải viết lại. DeepSeek không có chế độ này |
 | Trả từng chữ (stream) | Không | Không | Câu phải qua 4 luật xong mới được hiện |
 
@@ -320,13 +337,13 @@ Chi phí một lượt chơi = tổng qua các lượt gọi của (token vào �
 
 Giả định tạm, lấy từ báo cáo bản 24/10:
 
-- Mỗi màn 3 tình huống, khoảng 4 lượt gọi dẫn truyện. Số lượt thật phụ thuộc số câu tự luận và số follow-up.
-- Mỗi lượt gọi khoảng 5.000 token vào (phần lớn là seed) và 250 token ra.
+- Mỗi màn khoảng 4 lượt gọi AI-4. Từ 4/11 AI-4 chỉ được gọi khi engine cho hỏi follow-up, nên số lượt gọi tối đa bằng trần follow-up của màn theo cấp (2 đến 4), thường ít hơn mỗi câu một lượt.
+- Mỗi lượt gọi khoảng 5.000 token vào (phần lớn là seed) và 80 token ra. Báo cáo 24/10 ghi 250 token ra khi còn hai trường; gộp thành `follow_up` thì ngắn hơn.
 
 | Model | Giá (USD / 1 triệu token, vào / ra) | Mỗi lượt chơi | 1.000 lượt chơi |
 |---|---|---|---|
-| qwen3.8-flash (chính) | 0,15 / 0,47 | khoảng 0,0035 USD | khoảng 3,5 USD |
-| deepseek-flash (dự phòng) | 0,30 / 1,20 | khoảng 0,0072 USD | khoảng 7,2 USD |
+| qwen3.8-flash (chính) | 0,15 / 0,47 | khoảng 0,0032 USD | khoảng 3,2 USD |
+| deepseek-flash (dự phòng) | 0,30 / 1,20 | khoảng 0,0064 USD | khoảng 6,4 USD |
 
 - **Prompt caching** giảm mạnh phần đầu vào. Seed giống nhau cho mọi người chơi cùng tình huống nên được cache; theo ghi chú nghiên cứu, Alibaba tính token trúng cache bằng 10% giá vào. Câu người chơi đặt sau phần cache nên không vào cache.
 - Mỗi lần sinh lại cộng thêm một lượt gọi, nên tỉ lệ qua lần đầu cũng là chỉ số chi phí.
@@ -483,6 +500,6 @@ Mọi thay đổi prompt hoặc model đều phải chạy lại **bộ thử 4 
 | 13 | Sửa D-109 trong hub: temperature theo từng hãng (Qwen 0,7, DeepSeek 1,0), không một số chung |
 | 14 | Hướng dẫn chuyên gia viết `followup_goal` theo khía cạnh, không theo giải pháp (điều 2 ở phần 5) |
 | 15 | Chọn region Qwen: Singapore (gần, chưa có JSON Schema strict) hay Frankfurt/Virginia (có strict) — đo cả hai |
-| 16 | Nối AI-4 vào luồng chơi: lưu lời AI-4 để chạy lại dùng câu đã lưu; bảng lưu bản ghi mỗi lượt gọi; engine đếm lượt đào sâu theo câu hỏi được hiện và không mở lượt theo điểm bộ chấm từ khoá; trần độ dài câu trả lời; không gọi AI-4 khi câu trống hoặc hết giờ |
+| 16 | Nối AI-4 vào luồng chơi: lưu lời AI-4 để chạy lại dùng câu đã lưu; bảng lưu bản ghi mỗi lượt gọi; engine đếm lượt đào sâu theo câu hỏi được hiện và không mở lượt theo điểm bộ chấm từ khoá; không gọi AI-4 khi câu trống, hết giờ, hoặc engine không cho hỏi; chốt giới hạn giờ chơi, số lần chơi (thay trần độ dài câu trả lời) |
 
 **Cần đo (Chương 7), bằng `narrator-try --mode=live` khi có key:** độ trễ thật của qwen3.8-flash; số token thật (ước hiện tại: phần cố định khoảng 1.800, phần riêng khoảng 350); cache có trúng thật không (`--repeat=2`); tỉ lệ qua lần đầu; temperature 0,3 / 0,7 / 1,0.
