@@ -1,0 +1,196 @@
+@startuml ERD-03_ScenarioAuthoring
+title ERD-03 · Scenario authoring
+hide circle
+
+entity "scenario" as scenario {
+  * id : uuid <<PK>>
+  --
+  * task_id : uuid <<FK>>
+  * status : scenario_status
+    author_id : uuid <<FK>>
+  * opened_by : uuid <<FK>>
+    author_context : text
+    archetype : scenario_archetype
+    company_type : company_type
+    intro : text
+    situation : text
+    stakes : text
+    estimated_minutes : numeric(3,1)
+  * row_version : integer
+  * created_at : timestamp
+  * updated_at : timestamp
+}
+
+entity "scenario_skill" as scenario_skill {
+  * scenario_id : uuid <<PK,FK>>
+  * competency_id : uuid <<PK,FK>>
+  --
+}
+
+entity "cast_member" as cast_member {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * npc_key : varchar(40)
+  * role_in_scene : varchar(120)
+    pressure : text
+    voice : text
+}
+
+entity "activity" as activity {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * activity_key : varchar(20)
+  * summary : varchar(160)
+  * setup : text
+    npc_line : text
+  * input_prompt : text
+  * job_scope : text
+  * closing_line : text
+  * is_origin : boolean
+    forward_to_id : uuid <<FK>>
+    pick_count : smallint
+  * followup_limit : smallint
+    followup_goal : text
+    default_followup : text
+}
+
+entity "activity_allowed_type" as activity_allowed_type {
+  * activity_id : uuid <<PK,FK>>
+  * task_type : task_type <<PK>>
+  --
+}
+
+entity "activity_item" as activity_item {
+  * id : uuid <<PK>>
+  --
+  * activity_id : uuid <<FK>>
+  * item_key : varchar(20)
+  * text : text
+    score : smallint
+    why : text
+    correct_position : smallint
+    pick_rule : pick_rule
+    note : text
+  * sort_order : smallint
+}
+
+entity "rubric_criterion" as rubric_criterion {
+  * id : uuid <<PK>>
+  --
+  * activity_id : uuid <<FK>>
+  * competency_id : uuid <<FK>>
+  * anchor_plus2 : text
+  * anchor_zero : text
+  * anchor_minus1 : text
+}
+
+entity "hint" as hint {
+  * id : uuid <<PK>>
+  --
+  * activity_id : uuid <<FK>>
+  * text : text
+  * sort_order : smallint
+}
+
+entity "random_event" as random_event {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * activity_id : uuid <<FK>>
+  * chance : numeric(3,2)
+  * text : text
+  * prompt : text
+  * target_competency_id : uuid <<FK>>
+  * anchor_plus2 : text
+  * anchor_zero : text
+  * anchor_minus1 : text
+}
+
+entity "ending" as ending {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * type : ending_type
+  * priority : smallint
+    min_total_score : smallint
+    extra_behaviour : text
+  * text : text
+    reveals : text
+}
+
+entity "side_quest" as side_quest {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * prompt : text
+  * task_type : task_type
+  * points : smallint
+    answer_key : jsonb
+}
+
+entity "generation_run" as generation_run {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * kind : generation_kind
+  * requested_by : uuid <<FK>>
+  * ai_job_id : uuid <<FK,UQ>>
+  * model_config_id : uuid <<FK>>
+  * input : jsonb
+    output : jsonb
+    check_passed : boolean
+    check_report : jsonb
+  * created_at : timestamp
+}
+
+entity "reference_answer" as reference_answer {
+  * id : uuid <<PK>>
+  --
+  * activity_id : uuid <<FK>>
+  * author_id : uuid <<FK>>
+  * answer_text : text
+  * stratum : difficulty_stratum
+  * validation_passed : boolean
+  * created_at : timestamp
+}
+
+entity "reference_answer_score" as reference_answer_score {
+  * reference_answer_id : uuid <<PK,FK>>
+  * criterion_id : uuid <<PK,FK>>
+  --
+  * score : smallint
+}
+
+entity "ai_job\n(ERD-07)" as ai_job
+entity "competency\n(ERD-02)" as competency
+entity "model_config\n(ERD-07)" as model_config
+entity "task\n(ERD-02)" as task
+entity "user_account\n(ERD-01)" as user_account
+
+scenario }o--|| task
+scenario }o--o| user_account : author_id
+scenario_skill }o--|| scenario
+scenario_skill }o--|| competency
+cast_member }o--|| scenario
+activity }o--|| scenario
+activity }o--o| activity : forward_to_id
+activity_allowed_type }o--|| activity
+activity_item }o--|| activity
+rubric_criterion }o--|| activity
+rubric_criterion }o--|| competency
+hint }o--|| activity
+random_event }o--|| scenario
+random_event }o--|| activity
+random_event }o--|| competency
+ending }o--|| scenario
+side_quest }o--|| scenario
+generation_run }o--|| scenario
+generation_run |o--|| ai_job
+generation_run }o--|| model_config
+reference_answer }o--|| activity
+reference_answer }o--|| user_account
+reference_answer_score }o--|| reference_answer
+reference_answer_score }o--|| rubric_criterion
+@enduml

@@ -1,0 +1,30 @@
+@startuml AD-05c_SystemAdmin_ConfigureModels
+title AD-05c · System Admin — configure AI models
+
+|System Admin|
+|System|
+
+|System Admin|
+start
+:Open model settings;
+|System|
+:Show model settings;
+|System Admin|
+repeat
+  :Choose generation model;
+  :Choose three judge models;
+  :Submit settings;
+  |System|
+  :Check model families differ;
+  :Show check result;
+  |System Admin|
+  :View check result;
+repeat while () is ([families overlap]) not ([families differ])
+|System|
+:Save versioned settings;
+:Log actor and time;
+:Show saved settings;
+|System Admin|
+:View saved settings;
+stop
+@enduml

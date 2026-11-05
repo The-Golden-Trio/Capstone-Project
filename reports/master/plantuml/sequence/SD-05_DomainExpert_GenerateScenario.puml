@@ -1,0 +1,107 @@
+@startuml SD-05_DomainExpert_GenerateScenario
+title SD-05 · Content Admin, Domain Expert — generate scenario content
+
+actor "Content Admin" as CA
+actor "Domain Expert\n(author)" as DE
+participant "Staff app" as App
+participant "Content lifecycle" as CL
+participant "Result stream" as RS
+database "PostgreSQL" as DB
+queue "Redis" as R
+participant "Notification" as N
+participant "AI orchestration" as AI
+participant "Model gateway" as GW
+participant "Model" as M
+
+== Open scenario ==
+CA -> App : Select level and task
+App -> CL : Open scenario
+CL -> DB : Check active scenario
+DB --> CL : Active scenario status
+
+break active scenario exists
+  CL --> App : Open refused
+  App --> CA : Show block reason
+end
+
+CL -> DB : Create empty scenario
+CL --> App : Domain expert list
+App --> CA : Show domain expert list
+CA -> App : Assign author
+CA -> App : Choose reviewer
+CA -> App : Set review deadline
+App -> CL : Save assignment
+CL -> DB : Store assignment, deadline, log
+CL -> R : Enqueue notification
+R -> N : Take notification job
+N -> N : Email author
+
+== Generate content ==
+DE -> App : Open assigned scenario
+App -> RS : Open event stream
+RS -> R : Subscribe to staff channel
+App -> CL : Get situation options
+CL -> DB : Load level data
+DB --> CL : Level data
+CL --> App : Situation options
+App --> DE : Show situation options
+DE -> App : Choose options, write context
+App -> CL : Request generation
+CL -> DB : Store context, generation job
+CL --> App : Saved
+App --> DE : Show progress
+CL -> R : Enqueue generation job
+R -> AI : Take generation job
+AI -> GW : Generate scenario content
+GW -> M : Send context
+M --> GW : Scenario content
+GW --> AI : Scenario content
+AI -> AI : Check output
+AI -> DB : Store generation record
+AI -> R : Publish content ready
+R --> RS : Content event
+RS --> App : Push content ready
+App --> DE : Show generated content
+
+loop needs changes
+  DE -> App : Request AI revision
+  App -> CL : Request revision
+  CL -> R : Enqueue revision job
+  R -> AI : Take revision job
+  AI -> GW : Revise requested part
+  GW -> M : Send part and request
+  M --> GW : Revised part
+  GW --> AI : Revised part
+  AI -> DB : Store generation record
+  AI -> R : Publish revision ready
+  R --> RS : Revision event
+  RS --> App : Push revision ready
+  App --> DE : Show revised part
+end
+
+== Complete and submit ==
+DE -> App : Set task types, option scores
+DE -> App : Check rubric anchors
+DE -> App : Add sample answers
+DE -> App : Write hints and events
+App -> CL : Save scenario details
+CL -> DB : Store details, authorship
+
+loop checks failed
+  DE -> App : Request automatic checks
+  App -> CL : Run checks
+  CL -> CL : Check content rules
+  CL --> App : Check results
+  App --> DE : Show check results
+  DE -> App : Fix failed part
+end
+
+DE -> App : Submit for review
+App -> CL : Submit scenario
+CL -> DB : Set submitted, log
+CL -> R : Enqueue notification
+R -> N : Take notification job
+N -> N : Email reviewer
+CL --> App : Submitted
+App --> DE : Show submitted status
+@enduml

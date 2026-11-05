@@ -1,0 +1,145 @@
+@startuml UC-00_JobQuest
+left to right direction
+title UC-00 · JobQuest use cases
+
+actor "Explorer" as EX
+actor "Domain Expert" as DE
+actor "Content Administrator" as CA
+actor "System Administrator" as SA
+
+rectangle "JobQuest" {
+  ' ----- Explorer -----
+  usecase "Register account" as Register
+  usecase "Manage account" as ManageAcc
+  usecase "Complete Get-to-know-me quiz" as Quiz
+  usecase "Build user portrait" as Portrait
+  usecase "Explore occupations" as Explore
+  usecase "View occupation profile" as Profile
+  usecase "Enter adjacent occupation" as Adjacent
+  usecase "Choose scenario" as Choose
+  usecase "View level description" as LevelDesc
+  usecase "Complete side quest" as SideQuest
+  usecase "Perform scenario" as Perform
+  usecase "View scenario context" as Context
+  usecase "Resolve activity" as Resolve
+  usecase "Answer follow-up question" as FollowUp
+  usecase "Get hint" as Hint
+  usecase "Flag wrong content" as Flag
+  usecase "Rate occupation" as Rate
+  usecase "View career path" as CareerPath
+  usecase "View personal record" as Record
+  usecase "Send app feedback" as Feedback
+
+  ' ----- Domain Expert -----
+  usecase "Author scenario" as Author
+  usecase "Generate scenario content" as Generate
+  usecase "Build reference set" as RefSet
+  usecase "Review scenario" as Review
+  usecase "Apply review criteria" as ApplyCriteria
+  usecase "Revalidate scenario" as Revalidate
+  usecase "Review flagged content" as Flagged
+  usecase "Play-test draft game" as Playtest
+  usecase "Check grading reliability" as Reliability
+  usecase "Submit blind ratings" as Blind
+  usecase "Manage occupation profile" as ManageProfile
+
+  ' ----- Content Administrator -----
+  usecase "Import reference data" as Import
+  usecase "Manage occupation" as CreateOcc
+  usecase "Define review criteria" as Criteria
+  usecase "Open task scenario" as OpenScenario
+  usecase "Assign domain expert" as AssignDE
+  usecase "Generate missing asset" as Asset
+  usecase "Reassign overdue review" as Reassign
+  usecase "Design scenario presentation" as Design
+  usecase "Publish scenario" as Publish
+  usecase "Remove scenario" as Remove
+  usecase "View coverage report" as Coverage
+  usecase "Monitor occupation statistics" as Stats
+  usecase "Request revalidation" as ReqReval
+
+  ' ----- System Administrator -----
+  usecase "Assign occupation staff" as AssignStaff
+  usecase "View activity log" as ActivityLog
+  usecase "Disable account" as Disable
+  usecase "Delete account" as DeleteAcc
+  usecase "Manage user accounts" as Users
+  usecase "Configure AI models" as Models
+  usecase "Re-run failed job" as Rerun
+  usecase "Monitor operation cost" as Cost
+  usecase "Review app feedback" as ReviewFeedback
+}
+
+
+' ===== Explorer =====
+EX -- Register
+EX -- ManageAcc
+EX -- Quiz
+EX -- Explore
+EX -- Rate
+EX -- CareerPath
+EX -- Record
+EX -- Feedback
+Quiz ..> Portrait : <<include>>
+Explore <.. Profile : <<extend>>
+Explore <.. Adjacent : <<extend>>
+Choose .left.> Explore : <<extend>>
+Choose <.. LevelDesc : <<extend>>
+Choose <.. SideQuest : <<extend>>
+Perform .left.> Choose : <<extend>>
+Perform <.. Context : <<extend>>
+Perform ..> Resolve : <<include>>
+Perform <.. FollowUp : <<extend>>
+Perform <.. Hint : <<extend>>
+Perform <.. Flag : <<extend>>
+
+' ===== Domain Expert =====
+DE -- Author
+DE -- Review
+DE -- Playtest
+DE -- Reliability
+DE -- ManageProfile
+DE -- Flagged
+DE -- Revalidate
+Author ..> Generate : <<include>>
+Author ..> RefSet : <<include>>
+Review ..> ApplyCriteria : <<include>>
+Flagged <.. Revalidate : <<extend>>
+Reliability ..> Blind : <<include>>
+
+' ===== Content Administrator =====
+Import ..> CreateOcc : <<extend>>
+Coverage ..> Stats : <<extend>>
+ReqReval ..> Stats : <<extend>>
+Reassign .> AssignDE : <<extend>>
+Asset .> Design : <<extend>>
+Design -[hidden]> Reassign
+CreateOcc -- CA
+Criteria -- CA
+OpenScenario -- CA
+AssignDE -- CA
+Design -- CA
+Publish -- CA
+Remove -- CA
+Stats -- CA
+
+' ===== System Administrator =====
+AssignStaff ..> Users : <<extend>>
+ActivityLog ..> Users : <<extend>>
+Disable ..> Users : <<extend>>
+DeleteAcc ..> Users : <<extend>>
+Rerun ..> Cost : <<extend>>
+Users -- SA
+Models -- SA
+Cost -- SA
+ReviewFeedback -- SA
+
+' ----- layout only -----
+Record -[hidden]- Criteria
+Record -[hidden]- OpenScenario
+Record -[hidden]- AssignDE
+Record -[hidden]- Publish
+Record -[hidden]- Remove
+ManageProfile -[hidden]- Models
+ManageProfile -[hidden]- ReviewFeedback
+@enduml

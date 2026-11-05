@@ -1,0 +1,146 @@
+@startuml SD-01_Explorer_AnswerActivity
+title SD-01 · Explorer — play scenario
+
+actor Explorer
+participant "Explorer app" as App
+participant "Exploration" as Exp
+participant "Assessment" as Asm
+participant "Result stream" as RS
+database "PostgreSQL" as DB
+queue "Redis" as R
+participant "AI orchestration" as AI
+participant "Model gateway" as GW
+participant "Model" as M
+
+Explorer -> App : Open scenario
+App -> RS : Open event stream
+RS -> R : Subscribe to explorer channel
+App -> Exp : Get current activity
+Exp -> DB : Load activity and position
+DB --> Exp : Activity data
+Exp --> App : Activity and NPC
+App --> Explorer : Show activity and NPC
+
+Explorer -> App : Submit answer
+App -> App : Keep local copy
+App -> Exp : Post answer
+Exp -> Exp : Validate with rules
+
+break answer invalid
+  Exp --> App : Answer refused, reason
+  App --> Explorer : Show validation error
+end
+
+alt closed answer
+  Exp -> Asm : Score answer
+  Asm -> Asm : Apply expert scores
+  Asm -> Asm : Apply hint cap
+  Asm --> Exp : Score
+  Exp -> DB : Store answer, score, note job
+  Exp --> App : Saved, closing line
+  App -> App : Clear local copy
+  App --> Explorer : Show closing line
+  Exp -> R : Enqueue note job
+  R -> AI : Take note job
+else free text
+  Exp -> Asm : Request assessment
+  Asm -> DB : Store answer, assessment job
+  Asm --> Exp : Job stored
+  Exp --> App : Saved
+  App -> App : Clear local copy
+  App --> Explorer : Show progress
+  Asm -> R : Enqueue assessment job
+
+  loop each answer, while a follow-up is asked
+    R -> AI : Take assessment job
+    AI -> AI : De-identify answer
+
+    par judge 1
+      loop until success, at most 2 retries
+        AI -> GW : Grade with rubric
+        GW -> M : Send de-identified text
+        M --> GW : Score and quotes
+        GW --> AI : Score and quotes
+      end
+    else judge 2
+      loop until success, at most 2 retries
+        AI -> GW : Grade with rubric
+        GW -> M : Send de-identified text
+        M --> GW : Score and quotes
+        GW --> AI : Score and quotes
+      end
+    else judge 3
+      loop until success, at most 2 retries
+        AI -> GW : Grade with rubric
+        GW -> M : Send de-identified text
+        M --> GW : Score and quotes
+        GW --> AI : Score and quotes
+      end
+    end
+
+    break two or three judges fail
+      AI -> DB : Mark job as failed
+      AI -> R : Publish delay notice
+      R --> RS : Delay notice
+      RS --> App : Push delay notice
+      App --> Explorer : Show delay notice
+    end
+
+    AI -> AI : Check quotes verbatim
+
+    alt all three judges succeed
+      AI -> AI : Combine three judge scores
+    else one judge fails
+      AI -> AI : Combine two judge scores
+      AI -> AI : Mark grade as two-judge
+    end
+
+    AI -> DB : Store judge scores, grade, cost
+
+    AI -> GW : Decide on follow-up
+    GW -> M : Send graded exchange
+    M --> GW : Follow-up or none
+    GW --> AI : Follow-up or none
+
+    opt follow-up asked and limit not reached
+      AI -> AI : Check output
+      opt check fails or provider error
+        AI -> AI : Use default follow-up
+      end
+      AI -> DB : Store follow-up event
+      AI -> R : Publish follow-up
+      R --> RS : Follow-up event
+      RS --> App : Push follow-up
+      App --> Explorer : Show follow-up question
+      Explorer -> App : Answer follow-up
+      App -> Exp : Post follow-up answer
+      Exp -> Exp : Validate with rules
+      break answer invalid
+        Exp --> App : Answer refused, reason
+        App --> Explorer : Show validation error
+      end
+      Exp -> Asm : Request assessment
+      Asm -> DB : Store answer, assessment job
+      Asm --> Exp : Job stored
+      Exp --> App : Saved
+      Asm -> R : Enqueue assessment job
+    end
+  end
+
+  AI -> AI : Apply hint cap
+  AI -> DB : Store activity result
+  AI -> R : Publish result
+  R --> RS : Result event
+  RS --> App : Push result
+  App --> Explorer : Show closing line
+end
+
+loop until the note passes the check
+  AI -> GW : Draft feedback note
+  GW -> M : Send de-identified exchange
+  M --> GW : Feedback note
+  GW --> AI : Feedback note
+  AI -> AI : Check feedback note
+end
+AI -> DB : Store hidden note, check result
+@enduml

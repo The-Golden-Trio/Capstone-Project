@@ -1,0 +1,235 @@
+@startuml CL-05_ScenarioAuthoringReviewAndLifecycle
+title CL-05 · NestJS modules — Scenario authoring, review and lifecycle
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "ScenarioModule" <<Rectangle>> {
+  class ScenarioModule <<module>> {
+    imports: AuthModule, LifecycleModule, ReviewModule, AiModule
+    controllers: ScenarioController, GenerationController, ContentController
+    providers: ScenarioService, GenerationService, ContentService, ContentValidator, GenerationProcessor
+    exports: —
+  }
+  class ScenarioController <<controller>> {
+    -scenarios : ScenarioService
+    --
+    +listScenarios(user: AuthUser, query: ListScenariosQuery) : Page<ScenarioListItem>  «GET /staff/scenarios» [CA,DE]
+    +openScenario(user: AuthUser, dto: OpenScenarioInput) : ScenarioDetail  «POST /staff/scenarios» [CA]
+    +getScenario(user: AuthUser, scenarioId: string) : ScenarioDetail  «GET /staff/scenarios/{scenarioId}» [CA,DE]
+    +assignScenarioStaff(user: AuthUser, scenarioId: string, dto: AssignmentInput) : Assignment  «PUT /staff/scenarios/{scenarioId}/assignment» [CA]
+    +submitScenario(user: AuthUser, scenarioId: string) : ScenarioDetail  «POST /staff/scenarios/{scenarioId}/submit» [DE]
+    +getScenarioHistory(user: AuthUser, scenarioId: string) : LifecycleEntry[]  «GET /staff/scenarios/{scenarioId}/history» [CA,DE]
+  }
+  class GenerationController <<controller>> {
+    -generation : GenerationService
+    --
+    +getSituationOptions(user: AuthUser, scenarioId: string) : SituationOptions  «GET /staff/scenarios/{scenarioId}/situation-options» [DE]
+    +listGenerations(user: AuthUser, scenarioId: string) : GenerationRun[]  «GET /staff/scenarios/{scenarioId}/generations» [DE,CA]
+    +requestGeneration(user: AuthUser, scenarioId: string, dto: GenerationInput) : JobAccepted  «POST /staff/scenarios/{scenarioId}/generations» [DE]
+    +requestRevision(user: AuthUser, scenarioId: string, dto: RequestRevisionInput) : JobAccepted  «POST /staff/scenarios/{scenarioId}/revisions» [DE]
+  }
+  class ContentController <<controller>> {
+    -content : ContentService
+    --
+    +saveScenarioContent(user: AuthUser, scenarioId: string, ifMatch: string, dto: ScenarioContent) : ScenarioDetail  «PUT /staff/scenarios/{scenarioId}/content» [DE]
+    +runContentChecks(user: AuthUser, scenarioId: string) : CheckReport  «POST /staff/scenarios/{scenarioId}/checks» [DE]
+    +listReferenceAnswers(user: AuthUser, scenarioId: string) : ReferenceAnswer[]  «GET /staff/scenarios/{scenarioId}/reference-answers» [DE]
+    +addReferenceAnswer(user: AuthUser, scenarioId: string, dto: ReferenceAnswer) : ReferenceAnswer  «POST /staff/scenarios/{scenarioId}/reference-answers» [DE]
+  }
+  class ScenarioService {
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -assignments : AssignmentService
+    -notifications : NotificationService
+    --
+    +list(user: AuthUser, query: ListScenariosQuery) : Page<ScenarioListItem>
+    +open(user: AuthUser, dto: OpenScenarioInput) : ScenarioDetail  «409 if active scenario»
+    +get(user: AuthUser, scenarioId: string) : ScenarioDetail
+    +assign(user: AuthUser, scenarioId: string, dto: AssignmentInput) : Assignment
+    +submit(user: AuthUser, scenarioId: string) : ScenarioDetail
+    +history(scenarioId: string) : LifecycleEntry[]
+  }
+  class GenerationService {
+    -prisma : PrismaService
+    -generationQueue : Queue «generation»
+    --
+    +situationOptions(scenarioId: string) : SituationOptions
+    +requestGeneration(user: AuthUser, scenarioId: string, dto: GenerationInput) : JobAccepted
+    +requestRevision(user: AuthUser, scenarioId: string, dto: RequestRevisionInput) : JobAccepted
+    +list(scenarioId: string) : GenerationRun[]
+  }
+  class ContentService {
+    -prisma : PrismaService
+    -validator : ContentValidator
+    --
+    +save(user: AuthUser, scenarioId: string, dto: ScenarioContent, ifMatch: string) : ScenarioDetail
+    +checks(scenarioId: string) : CheckReport
+    +referenceAnswers(scenarioId: string) : ReferenceAnswer[]
+    +addReferenceAnswer(user: AuthUser, scenarioId: string, dto: ReferenceAnswer) : ReferenceAnswer
+  }
+  class ContentValidator {
+    <i>rules of spec-scenario: one origin, valid pointers, skills in play, follow-up caps, 10–15 min, endings</i>
+    -prisma : PrismaService
+    --
+    +check(scenarioId: string) : CheckReport
+  }
+  class GenerationProcessor <<processor · generation>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -validator : ContentValidator
+    -stream : StreamService
+    --
+    +process(job: Job<GenerationJob>) : Promise<void>
+  }
+  class "ScenarioModule DTOs" as ScenarioModule_DTOs <<dto>> {
+    Assignment
+    AssignmentInput
+    CheckReport
+    GenerationInput
+    GenerationRun
+    JobAccepted
+    LifecycleEntry
+    OpenScenarioInput
+    Page
+    ReferenceAnswer
+    RequestRevisionInput
+    ScenarioContent
+    ScenarioDetail
+    ScenarioListItem
+    SituationOptions
+    ListScenariosQuery { occupationId?, status?, mine?, cursor?, limit? }
+  }
+}
+
+package "LifecycleModule" <<Rectangle>> {
+  class LifecycleModule <<module>> {
+    imports: —
+    controllers: —
+    providers: ScenarioStateMachine
+    exports: ScenarioStateMachine
+  }
+  class ScenarioStateMachine {
+    <i>TRANSITIONS table = SM-01; writes lifecycle_log in the same transaction</i>
+    -prisma : PrismaService
+    --
+    +apply(tx, scenarioId: string, action: LifecycleAction, actor: AuthUser) : ScenarioStatus
+    +allowedActions(status: ScenarioStatus, role: Role) : LifecycleAction[]
+    +history(scenarioId: string) : LifecycleEntry[]
+  }
+  enum LifecycleAction {
+    OPEN
+    SUBMIT
+    START_REVIEW
+    REQUEST_CHANGES
+    REJECT
+    APPROVE
+    BUILD_DRAFT
+    REPORT_DISPLAY_ISSUE
+    REPORT_CONTENT_ISSUE
+    PASS_PLAYTEST
+    PUBLISH
+    DELETE
+  }
+  class "LifecycleModule DTOs" as LifecycleModule_DTOs <<dto>> {
+    LifecycleEntry
+    Role
+    ScenarioStatus
+  }
+}
+
+package "ReviewModule" <<Rectangle>> {
+  class ReviewModule <<module>> {
+    imports: AuthModule, LifecycleModule, CatalogueModule
+    controllers: ReviewController, ReviewAssignmentController, RevalidationController
+    providers: ReviewService, AssignmentService, RevalidationService
+    exports: AssignmentService
+  }
+  class ReviewController <<controller>> {
+    -reviews : ReviewService
+    --
+    +listMyReviewQueue(user: AuthUser) : ReviewQueueItem[]  «GET /staff/reviews» [DE]
+    +openScenarioForReview(user: AuthUser, scenarioId: string) : ReviewView  «GET /staff/scenarios/{scenarioId}/review» [DE]
+    +decideReview(user: AuthUser, scenarioId: string, dto: ReviewDecisionInput) : ScenarioDetail  «POST /staff/scenarios/{scenarioId}/review» [DE]
+  }
+  class ReviewAssignmentController <<controller>> {
+    -assignments : AssignmentService
+    --
+    +listReviewAssignments(user: AuthUser, query: ListReviewAssignmentsQuery) : Assignment[]  «GET /staff/review-assignments» [CA]
+    +reassignReview(user: AuthUser, assignmentId: string, dto: ReassignReviewInput) : Assignment  «POST /staff/review-assignments/{assignmentId}/reassign» [CA]
+  }
+  class RevalidationController <<controller>> {
+    -revalidations : RevalidationService
+    --
+    +requestRevalidation(user: AuthUser, scenarioId: string, dto: RequestRevalidationInput) : Revalidation  «POST /staff/scenarios/{scenarioId}/revalidations» [CA,DE]
+    +recordRevalidation(user: AuthUser, revalidationId: string, dto: RecordRevalidationInput) : Revalidation  «POST /staff/revalidations/{revalidationId}/result» [DE]
+  }
+  class ReviewService {
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -access : AccessPolicyService
+    -criteria : ReviewCriteriaService
+    -stream : StreamService
+    -notifications : NotificationService
+    --
+    +queue(user: AuthUser) : ReviewQueueItem[]
+    +open(user: AuthUser, scenarioId: string) : ReviewView  «SUBMITTED → IN_REVIEW»
+    +decide(user: AuthUser, scenarioId: string, dto: ReviewDecisionInput) : ScenarioDetail
+  }
+  class AssignmentService {
+    -prisma : PrismaService
+    -notifications : NotificationService
+    --
+    +assign(tx, scenarioId: string, dto: AssignmentInput) : Assignment  «reviewer ≠ author»
+    +list(user: AuthUser, query: ListReviewAssignmentsQuery) : Assignment[]
+    +reassign(user: AuthUser, assignmentId: string, dto: ReassignReviewInput) : Assignment
+  }
+  class RevalidationService {
+    -prisma : PrismaService
+    -notifications : NotificationService
+    --
+    +request(user: AuthUser, scenarioId: string, dto: RequestRevalidationInput) : Revalidation
+    +record(user: AuthUser, revalidationId: string, dto: RecordRevalidationInput) : Revalidation
+  }
+  class "ReviewModule DTOs" as ReviewModule_DTOs <<dto>> {
+    Assignment
+    AssignmentInput
+    ReassignReviewInput
+    RecordRevalidationInput
+    RequestRevalidationInput
+    Revalidation
+    ReviewDecisionInput
+    ReviewQueueItem
+    ReviewView
+    ScenarioDetail
+    ListReviewAssignmentsQuery { overdue?, occupationId? }
+  }
+}
+
+class AccessPolicyService <<CL-01 · AuthModule>>
+class ModelGatewayService <<CL-04 · AiModule>>
+class NotificationService <<CL-07 · NotificationModule>>
+class PromptBuilder <<CL-04 · AiModule>>
+class ReviewCriteriaService <<CL-02 · CatalogueModule>>
+
+ScenarioController --> ScenarioService
+GenerationController --> GenerationService
+ContentController --> ContentService
+ScenarioService --> ScenarioStateMachine
+ScenarioService --> AssignmentService
+ScenarioService --> NotificationService
+ContentService --> ContentValidator
+GenerationProcessor --> ModelGatewayService
+GenerationProcessor --> PromptBuilder
+GenerationProcessor --> ContentValidator
+ReviewController --> ReviewService
+ReviewAssignmentController --> AssignmentService
+RevalidationController --> RevalidationService
+ReviewService --> ScenarioStateMachine
+ReviewService --> AccessPolicyService
+ReviewService --> ReviewCriteriaService
+ReviewService --> NotificationService
+AssignmentService --> NotificationService
+RevalidationService --> NotificationService
+@enduml

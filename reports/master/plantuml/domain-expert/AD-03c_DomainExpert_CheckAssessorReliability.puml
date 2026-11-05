@@ -1,0 +1,44 @@
+@startuml AD-03c_DomainExpert_CheckAssessorReliability
+title AD-03c · Domain Expert — check AI grading reliability
+
+|Domain Expert|
+|System|
+|AI Model|
+
+|Domain Expert|
+start
+:Open reference samples;
+|System|
+:Hide other scores;
+:Show reference samples;
+|Domain Expert|
+repeat
+  :View sample;
+  :Rate sample blind;
+repeat while () is ([more samples]) not ([all rated])
+:Submit blind ratings;
+|System|
+:Save blind ratings;
+:Calculate expert agreement;
+:Send samples to AI;
+|AI Model|
+:Regrade all samples;
+|System|
+:Compare AI, expert scores;
+:Show agreement report;
+|Domain Expert|
+:View agreement report;
+while () is ([disagreement left])
+  :Inspect disagreement;
+endwhile ([none left])
+if () then ([rubric needs changing])
+  :Request replacement;
+  |System|
+  :Notify content admin; <<sendSignal>>
+  :Show request status;
+  |Domain Expert|
+  :View request status;
+else ([rubric fine])
+endif
+stop
+@enduml

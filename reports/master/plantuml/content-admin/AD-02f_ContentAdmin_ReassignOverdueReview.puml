@@ -1,0 +1,35 @@
+@startuml AD-02f_ContentAdmin_ReassignOverdueReview
+title AD-02f · Content Admin — reassign an overdue review
+
+|Content Admin|
+|System|
+
+|Content Admin|
+start
+:Open overdue reviews;
+|System|
+:Show overdue reviews;
+|Content Admin|
+:View overdue reviews;
+:Select overdue review;
+|System|
+:Show domain expert list;
+|Content Admin|
+:View domain expert list;
+repeat
+  :Choose new reviewer;
+  :Set new deadline;
+  |System|
+  :Check reviewer not author;
+  :Show check result;
+  |Content Admin|
+  :View check result;
+repeat while () is ([author chosen]) not ([valid reviewer])
+|System|
+:Save reassignment;
+:Notify new reviewer; <<sendSignal>>
+:Show updated review;
+|Content Admin|
+:View updated review;
+stop
+@enduml

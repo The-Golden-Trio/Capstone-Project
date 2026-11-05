@@ -1,0 +1,185 @@
+@startuml ERD-04_ReviewPresentationAndRelease
+title ERD-04 · Review, presentation and release
+hide circle
+
+entity "review_criteria_version" as review_criteria_version {
+  * id : uuid <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * version_no : integer
+  * created_by : uuid <<FK>>
+  * created_at : timestamp
+}
+
+entity "review_criterion" as review_criterion {
+  * id : uuid <<PK>>
+  --
+  * criteria_version_id : uuid <<FK>>
+  * text : text
+  * sort_order : smallint
+}
+
+entity "review_assignment" as review_assignment {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * reviewer_id : uuid <<FK>>
+  * assigned_by : uuid <<FK>>
+  * deadline_at : timestamp
+  * status : assignment_status
+    replaces_id : uuid <<FK,UQ>>
+    reminded_at : timestamp
+  * assigned_at : timestamp
+}
+
+entity "review" as review {
+  * id : uuid <<PK>>
+  --
+  * assignment_id : uuid <<FK>>
+  * criteria_version_id : uuid <<FK>>
+  * decision : review_decision
+    comment : text
+  * decided_at : timestamp
+}
+
+entity "review_answer" as review_answer {
+  * review_id : uuid <<PK,FK>>
+  * criterion_id : uuid <<PK,FK>>
+  --
+  * verdict : criterion_verdict
+    comment : text
+}
+
+entity "revalidation_request" as revalidation_request {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * reason : revalidation_reason
+    flag_id : uuid <<FK>>
+  * requested_by : uuid <<FK>>
+    outcome : revalidation_outcome
+    comment : text
+    handled_by : uuid <<FK>>
+  * created_at : timestamp
+    handled_at : timestamp
+}
+
+entity "lifecycle_log" as lifecycle_log {
+  * id : bigint <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+    from_status : scenario_status
+  * to_status : scenario_status
+  * action : varchar(40)
+  * actor_id : uuid <<FK>>
+    note : text
+  * created_at : timestamp
+}
+
+entity "asset" as asset {
+  * id : uuid <<PK>>
+  --
+  * kind : asset_kind
+  * storage_key : varchar(255) <<UQ>>
+  * source : asset_source
+    source_note : text
+    generation_run_id : uuid <<FK>>
+  * bias_check : bias_check_status
+    checked_by : uuid <<FK>>
+  * created_at : timestamp
+}
+
+entity "presentation" as presentation {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK,UQ>>
+  * designed_by : uuid <<FK>>
+    background_asset_id : uuid <<FK>>
+  * updated_at : timestamp
+}
+
+entity "presentation_activity" as presentation_activity {
+  * activity_id : uuid <<PK,FK>>
+  --
+  * presentation_id : uuid <<FK>>
+  * task_type : task_type
+    scene_asset_id : uuid <<FK>>
+}
+
+entity "presentation_npc" as presentation_npc {
+  * cast_member_id : uuid <<PK,FK>>
+  --
+  * presentation_id : uuid <<FK>>
+  * avatar_asset_id : uuid <<FK>>
+}
+
+entity "scenario_build" as scenario_build {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * content : jsonb
+  * content_hash : char(64)
+  * built_by : uuid <<FK>>
+  * built_at : timestamp
+}
+
+entity "scenario_release" as scenario_release {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK,UQ>>
+  * build_id : uuid <<FK,UQ>>
+  * storage_key : varchar(255) <<UQ>>
+  * published_by : uuid <<FK>>
+  * effective_from : timestamp
+    release_note : text
+  * published_at : timestamp
+    retired_at : timestamp
+}
+
+entity "playtest_finding" as playtest_finding {
+  * id : uuid <<PK>>
+  --
+  * build_id : uuid <<FK>>
+    run_id : uuid <<FK>>
+  * reported_by : uuid <<FK>>
+  * kind : finding_kind
+  * text : text
+  * created_at : timestamp
+}
+
+entity "activity\n(ERD-03)" as activity
+entity "cast_member\n(ERD-03)" as cast_member
+entity "content_flag\n(ERD-05)" as content_flag
+entity "generation_run\n(ERD-03)" as generation_run
+entity "occupation\n(ERD-02)" as occupation
+entity "scenario\n(ERD-03)" as scenario
+entity "scenario_run\n(ERD-05)" as scenario_run
+entity "user_account\n(ERD-01)" as user_account
+
+review_criteria_version }o--|| occupation
+review_criterion }o--|| review_criteria_version
+review_assignment }o--|| scenario
+review_assignment }o--|| user_account : reviewer_id
+review_assignment |o--o| review_assignment : replaces_id
+review }o--|| review_assignment
+review }o--|| review_criteria_version
+review_answer }o--|| review
+review_answer }o--|| review_criterion
+revalidation_request }o--|| scenario
+revalidation_request }o--o| content_flag
+lifecycle_log }o--|| scenario
+asset }o--o| generation_run
+presentation |o--|| scenario
+presentation }o--o| asset
+presentation_activity |o--|| activity
+presentation_activity }o--|| presentation
+presentation_activity }o--o| asset
+presentation_npc |o--|| cast_member
+presentation_npc }o--|| presentation
+presentation_npc }o--|| asset
+scenario_build }o--|| scenario
+scenario_release |o--|| scenario
+scenario_release |o--|| scenario_build
+playtest_finding }o--|| scenario_build
+playtest_finding }o--o| scenario_run
+@enduml

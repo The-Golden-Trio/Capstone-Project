@@ -1,0 +1,55 @@
+@startuml SD-02_Explorer_FinishScenario
+title SD-02 · Explorer — finish a scenario
+
+actor Explorer
+participant "Explorer app" as App
+participant "Exploration" as Exp
+participant "Result stream" as RS
+database "PostgreSQL" as DB
+queue "Redis" as R
+participant "AI orchestration" as AI
+
+Explorer -> App : Finish last activity
+App -> Exp : Request scenario summary
+Exp -> DB : Load scores and notes
+DB --> Exp : Scores and feedback notes
+
+opt feedback notes pending
+  Exp --> App : Summary pending
+  App --> Explorer : Show progress
+  AI -> DB : Store last hidden note
+  AI -> R : Publish notes ready
+  R --> RS : Notes ready event
+  RS --> App : Push notes ready
+  App -> Exp : Request scenario summary
+  Exp -> DB : Load scores and notes
+  DB --> Exp : Scores and feedback notes
+end
+
+Exp -> Exp : Total activity scores
+Exp -> Exp : Pick ending by score
+Exp -> Exp : Combine feedback notes
+Exp -> Exp : Cap competency points
+
+alt enough credit
+  Exp -> Exp : Unlock next level
+else not enough credit
+  Exp -> Exp : Pick practice tasks
+end
+
+Exp -> DB : Store progress, history, badges
+Exp --> App : Ending, feedback, guidance
+App --> Explorer : Show ending and feedback
+
+alt another quest
+  Explorer -> App : Return to Island Map
+  App --> Explorer : Show Island Map
+else view profile
+  Explorer -> App : Open profile
+  App -> Exp : Get private record
+  Exp -> DB : Load record
+  DB --> Exp : Record
+  Exp --> App : Record
+  App --> Explorer : Show profile
+end
+@enduml

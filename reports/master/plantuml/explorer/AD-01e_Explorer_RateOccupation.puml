@@ -1,0 +1,36 @@
+@startuml AD-01e_Explorer_RateOccupation
+title AD-01e · Explorer — rate a completed occupation
+
+|Explorer|
+|System|
+
+|Explorer|
+start
+:Open occupation rating;
+|System|
+if () then ([occupation not completed])
+  :Show rating locked;
+  |Explorer|
+  :View locked notice;
+  stop
+else ([occupation completed])
+endif
+|System|
+:Show rating form;
+|Explorer|
+:View rating form;
+:Rate and write feedback;
+:Submit rating;
+|System|
+:Save rating;
+:Update average rating;
+if () then ([enough ratings])
+  :Publish average rating;
+else ([too few ratings])
+  :Hide average rating;
+endif
+:Show occupation profile;
+|Explorer|
+:View occupation profile;
+stop
+@enduml

@@ -1,0 +1,52 @@
+@startuml CL-00_ModuleMap
+title CL-00 · NestJS module map (API app and worker app)\n<size:11>Arrows are module imports. Global modules are available everywhere. Modules with /staff routes also import AuthModule for OccupationAccessGuard (arrows omitted).</size>
+skinparam componentStyle rectangle
+
+package "Identity & access" {
+  [AuthModule\n<size:10>CL-01 · api</size>] as AuthModule
+  [UserModule\n<size:10>CL-01 · api</size>] as UserModule
+}
+package "Exploration" {
+  [QuizModule\n<size:10>CL-03 · api</size>] as QuizModule
+  [PlayModule\n<size:10>CL-03 · api</size>] as PlayModule
+  [FeedbackModule\n<size:10>CL-03 · api</size>] as FeedbackModule
+}
+package "Assessment" {
+  [AssessmentModule\n<size:10>CL-04 · worker</size>] as AssessmentModule
+  [QualityModule\n<size:10>CL-04 · worker · api</size>] as QualityModule
+}
+package "Content lifecycle" {
+  [CatalogueModule\n<size:10>CL-02 · api</size>] as CatalogueModule
+  [ImportModule\n<size:10>CL-02 · worker · api</size>] as ImportModule
+  [LifecycleModule\n<size:10>CL-05 · shared</size>] as LifecycleModule
+  [ScenarioModule\n<size:10>CL-05 · worker · api</size>] as ScenarioModule
+  [ReviewModule\n<size:10>CL-05 · api</size>] as ReviewModule
+  [PublishingModule\n<size:10>CL-06 · worker · api</size>] as PublishingModule
+}
+package "Monitoring" {
+  [MonitoringModule\n<size:10>CL-07 · api</size>] as MonitoringModule
+}
+package "AI orchestration · Model gateway" {
+  [AiModule\n<size:10>CL-04 · api</size>] as AiModule
+}
+package "Shared platform" {
+  [CoreModule\n<size:10>CL-07 · global · shared</size>] as CoreModule
+  [NotificationModule\n<size:10>CL-07 · global · worker · api</size>] as NotificationModule
+  [GameCoreModule\n<size:10>CL-07 · global · shared</size>] as GameCoreModule
+}
+CatalogueModule ..> FeedbackModule
+PlayModule ..> CatalogueModule
+PlayModule ..> AssessmentModule
+PlayModule ..> QualityModule
+AssessmentModule ..> AiModule
+ScenarioModule ..> LifecycleModule
+ScenarioModule ..> ReviewModule
+ScenarioModule ..> AiModule
+ReviewModule ..> LifecycleModule
+ReviewModule ..> CatalogueModule
+PublishingModule ..> LifecycleModule
+PublishingModule ..> AiModule
+PublishingModule ..> PlayModule
+QualityModule ..> AssessmentModule
+MonitoringModule ..> FeedbackModule
+@enduml

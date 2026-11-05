@@ -14,13 +14,29 @@ Mọi tính năng, endpoint, bảng, module đều phải truy được về m�
 |---|---|---|
 | 1 | **Quyết định đang hiệu lực** (✅) | [docs/project-hub/02-quyet-dinh.md](docs/project-hub/02-quyet-dinh.md). Dòng ♻️ đã bị thay, ⚠️ đang mâu thuẫn, 💡 mới là đề xuất: **không** code theo 3 loại này |
 | 2 | **Báo cáo master** (yêu cầu + thiết kế) | [reports/master/report.md](reports/master/report.md). §4.3 yêu cầu (BR, DC, FR, NFR, DR), §5.1 use case + activity, §5.2 công nghệ, §5.3.1 kiến trúc, §5.3.2 sitemap, §5.3.3 sequence, §5.3.6 AI, §5.3.10 chính sách dữ liệu |
-| 3 | **Sơ đồ** | [reports/master/figures/](reports/master/figures/) (PNG, đọc được bằng Read): `UC-00` use case · `AD-*` activity · `SD-01`…`SD-09` sequence (SD-01 lượt chơi có chấm là `jobquest_seq_assessed_turn.png`) · `SITE-01/02` sitemap · `SM-01` state machine scenario · `jobquest_component_diagram`, `jobquest_deployment`, `jobquest_arch_overview`, `jobquest_content_lifecycle` |
-| 4 | **ERD** | [docs/project-hub/assets/jobquest-erd-mermaid.md](docs/project-hub/assets/jobquest-erd-mermaid.md) (38 thực thể, 7 nhóm) |
+| 3 | **Sơ đồ PlantUML** (nguồn chính, đọc file `.puml`) | [reports/master/plantuml/](reports/master/plantuml/), xem bảng bên dưới |
+| 4 | Sơ đồ chỉ có ảnh | [reports/master/figures/](reports/master/figures/) (PNG, đọc bằng Read): `jobquest_component_diagram`, `jobquest_deployment`, `jobquest_arch_overview`, `jobquest_content_lifecycle`, `jobquest_seq_assessed_turn`. Các PNG khác trong thư mục này là bản xuất từ `.puml`; nếu lệch nhau thì `.puml` đúng |
 | 5 | **Thiết kế AI** | [docs/project-hub/assets/ai-design/](docs/project-hub/assets/ai-design/README.md); ví dụ request/response thật của AI-4 ở `ai-4-api/` |
 | 6 | **Game design** | [research/reports/](research/reports/): `Seed scenario JobQuest.md`, `Hồ sơ JobQuest cơ chế game.md`, `Kinh tế và sức khoẻ JobQuest.md`, `Gợi ý nghề cách tính.md`; luật kịch bản ở [occupation-data/specs/](occupation-data/specs/) |
 | 7 | **Đặc tả API** (báo cáo §5.3.7) | Chưa có trong `report.md` tại 6/11/2026. Danh sách endpoint của prototype ở [04 §4](docs/project-hub/04-hien-trang-code-data.md) chỉ mô tả code cũ, không phải hợp đồng đã chốt |
 
-Khi làm một tính năng: tìm FR và use case tương ứng → đọc activity và sequence diagram của nó → đối chiếu ERD và các quyết định ✅ liên quan → rồi mới code. Ghi ID (FR-xx, UC-xx, SD-xx, D-xx) vào mô tả PR.
+### Sơ đồ PlantUML (`reports/master/plantuml/`)
+
+Đọc thẳng file `.puml` (dạng text), không cần render. Đây là bản thiết kế chi tiết nhất để code theo.
+
+| Thư mục / file | Sơ đồ | Dùng khi |
+|---|---|---|
+| `UC-00_JobQuest.puml` | Use case toàn hệ thống | Xác định actor và use case của tính năng |
+| `explorer/`, `content-admin/`, `domain-expert/`, `system-admin/` | Activity `AD-01*`, `AD-02*`, `AD-03*`, `AD-05*` theo actor; `AD-04_GeneratingScenario.puml` ở gốc | Luồng nghiệp vụ, nhánh lỗi, điều kiện chặn |
+| `sequence/` | `SD-01`…`SD-09` | Thứ tự gọi giữa app, module, DB, Redis, dịch vụ ngoài: theo đúng thứ tự này khi code |
+| `class/` | `CL-00_ModuleMap` (module NestJS, module nào chạy ở `api`/`worker`, module nào import module nào) · `CL-01`…`CL-07` (controller, service, DTO của từng module) | Tạo module, controller, service, DTO: dùng đúng tên, vị trí và quan hệ import trong sơ đồ |
+| `erd/` | `ERD-00_Overview` · `ERD-01`…`ERD-07` theo nhóm | Schema Prisma: tên bảng, cột, kiểu, khoá, ràng buộc |
+| `sitemap/` | `SITE-01` explorer app · `SITE-02`…`SITE-04` staff app theo actor | Route và màn hình frontend |
+| `SM-01_ScenarioLifecycle.puml` | State machine scenario | Mọi chuyển trạng thái của scenario |
+
+ERD PlantUML (khoá `uuid`, bảng `user_account`…) **thay** bản Mermaid cũ ở `docs/project-hub/assets/jobquest-erd-mermaid.md` (29/9). Chỉ mở bản Mermaid khi người dùng nhắc tới nó.
+
+Khi làm một tính năng: tìm FR và use case tương ứng → đọc activity và sequence diagram của nó → xem module trong `class/` và bảng trong `erd/` → đối chiếu các quyết định ✅ liên quan → rồi mới code. Ghi ID (FR-xx, UC-xx, SD-xx, CL-xx, ERD-xx, D-xx) vào mô tả PR.
 
 ### Khi tài liệu thiếu, mâu thuẫn hoặc lệch code
 
@@ -32,7 +48,7 @@ Khi làm một tính năng: tìm FR và use case tương ứng → đọc activi
 
 ### Các ràng buộc kiến trúc phải giữ (tóm tắt §5.3.1, khi nghi ngờ đọc bản gốc)
 
-- **Modular monolith + worker bất đồng bộ.** Một codebase, chạy hai vai: API process và worker process. Module theo nhóm use case (Identity and access, Exploration, Assessment, Content lifecycle, AI orchestration, Model gateway, Analytics, Operations, Notification/scheduler/import), chỉ gọi nhau qua public interface. API và worker không gọi nhau trực tiếp, chỉ qua job queue và pub/sub trên Redis.
+- **Modular monolith + worker bất đồng bộ.** Một codebase, chạy hai vai: API process và worker process. Danh sách module NestJS, vai chạy và quan hệ import nằm ở `class/CL-00_ModuleMap.puml`. Không thêm module hay import ngoài sơ đồ đó. Module chỉ gọi nhau qua public interface. API và worker không gọi nhau trực tiếp, chỉ qua job queue và pub/sub trên Redis.
 - **Không gọi model trong request nộp câu trả lời.** Lưu câu trả lời vào PostgreSQL trước, đẩy job vào queue, trả lời ngay; kết quả về client qua server-sent events (polling chỉ là dự phòng).
 - **Server là nguồn chân lý của điểm.** Client chỉ tính điểm tạm bằng cùng luật trong `game-core`.
 - **Run là chuỗi sự kiện append-only**, state = fold sự kiện qua `game-core`. Output của model vào run dưới dạng sự kiện có provenance (model, prompt version, cost, latency), không bao giờ tính lại.
@@ -47,7 +63,8 @@ Khi làm một tính năng: tìm FR và use case tương ứng → đọc activi
 
 - Run gửi một lần khi kết thúc, chấm lại ở server bằng replay; thiết kế là gửi từng lượt.
 - Câu tự luận chấm bằng so khớp từ khoá (`keywordGrader.ts`, đồng bộ trong reducer); thiết kế là judge panel bất đồng bộ, kết quả vào run dưới dạng sự kiện.
-- Prisma có 19 model; ERD đích có 38 thực thể. Prototype có 3 role, thiết kế có 4 actor (Explorer, Domain expert, Content administrator, System administrator).
+- Prisma có 19 model, tên và cấu trúc khác ERD đích ở `plantuml/erd/`. Prototype có 3 role, thiết kế có 4 actor (Explorer, Domain expert, Content administrator, System administrator).
+- Module trong `apps/api/src` (`auth`, `content`, `profile`, `runs`…) không khớp module map `CL-00`.
 - Chưa có: worker, queue, SSE, model gateway, staff application, scheduler, importer.
 - Code chết không được import trong `AppModule`: `apps/api/src/app/skills/*`, `app/career-graph/*`, `app/persistence/*`. Đừng dựa vào hay mở rộng chúng.
 

@@ -1,0 +1,28 @@
+@startuml AD-02d_ContentAdmin_ReplaceOrDeleteScenario
+title AD-02d · Content Admin — replace or delete a scenario
+
+|Content Admin|
+|System|
+
+|Content Admin|
+start
+:Choose published scenario;
+:Request deletion;
+|System|
+:Show deletion warning;
+|Content Admin|
+:View deletion warning;
+:Confirm deletion;
+|System|
+:Retire scenario;
+:Keep play history;
+:Free the task slot;
+:Show scenario status;
+|Content Admin|
+:View scenario status;
+if () then ([replace it])
+  :Create replacement scenario;
+else ([no replacement])
+endif
+stop
+@enduml

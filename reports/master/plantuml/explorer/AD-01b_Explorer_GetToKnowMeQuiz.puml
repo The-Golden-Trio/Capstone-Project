@@ -1,0 +1,42 @@
+@startuml AD-01b_Explorer_GetToKnowMeQuiz
+title AD-01b · Explorer — complete Get-to-know-me quiz
+
+|Explorer|
+|System|
+
+|Explorer|
+start
+:Open Get-to-know-me quiz;
+if () then ([take it later])
+  :Close the quiz;
+  :Browse Galaxy Map;
+  stop
+else ([take it now])
+endif
+|System|
+:Show quiz questions;
+|Explorer|
+repeat
+  :View question;
+  :Choose an answer;
+repeat while () is ([more questions]) not ([all answered])
+:Submit answers;
+|System|
+:Calculate RIASEC profile;
+:Set social index;
+:Match interest codes;
+:Pick 5 closest occupations;
+:Pick portrait for type;
+:Label as self-reported;
+:Save profile;
+:Show portrait and suggestions;
+|Explorer|
+:View self-reported portrait;
+:View suggested occupations;
+if () then ([pick a suggestion])
+  :Select suggested occupation;
+else ([browse all])
+  :Browse Galaxy Map;
+endif
+stop
+@enduml

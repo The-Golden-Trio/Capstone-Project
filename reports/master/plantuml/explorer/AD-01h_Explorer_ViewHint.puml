@@ -1,0 +1,18 @@
+@startuml AD-01h_Explorer_ViewHint
+title AD-01h · Explorer — view a hint
+
+|Explorer|
+|System|
+
+|Explorer|
+start
+:Work on activity;
+:Open hint;
+|System|
+:Show hint via NPC;
+:Mark hint used;
+|Explorer|
+:View hint;
+:Continue the activity;
+stop
+@enduml

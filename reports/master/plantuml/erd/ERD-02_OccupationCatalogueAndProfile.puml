@@ -1,0 +1,143 @@
+@startuml ERD-02_OccupationCatalogueAndProfile
+title ERD-02 · Occupation catalogue and profile
+hide circle
+
+entity "domain" as domain {
+  * id : uuid <<PK>>
+  --
+  * code : varchar(40) <<UQ>>
+  * name : varchar(120)
+  * created_by : uuid <<FK>>
+  * created_at : timestamp
+}
+
+entity "occupation" as occupation {
+  * id : uuid <<PK>>
+  --
+  * domain_id : uuid <<FK>>
+  * code : varchar(40) <<UQ>>
+  * name : varchar(120)
+    summary : text
+    riasec_code : varchar(3)
+  * status : occupation_status
+  * created_by : uuid <<FK>>
+  * created_at : timestamp
+    published_at : timestamp
+    retired_at : timestamp
+}
+
+entity "occupation_level" as occupation_level {
+  * id : uuid <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * level_no : smallint
+  * band : varchar(3)
+  * title : varchar(120)
+  * description : text
+    future_role : text
+  * credit_threshold : integer
+    salary_min : numeric(12,0)
+    salary_max : numeric(12,0)
+    salary_currency : char(3)
+    written_by : uuid <<FK>>
+  * updated_at : timestamp
+}
+
+entity "downside" as downside {
+  * id : uuid <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * text : text
+  * sort_order : smallint
+  * written_by : uuid <<FK>>
+}
+
+entity "generation_rule" as generation_rule {
+  * id : uuid <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * rule_text : text
+  * written_by : uuid <<FK>>
+  * created_at : timestamp
+}
+
+entity "competency" as competency {
+  * id : uuid <<PK>>
+  --
+  * code : varchar(60) <<UQ>>
+  * kind : competency_kind
+  * name : varchar(160)
+  * indicator : text
+    source_record_id : uuid <<FK>>
+  * created_by : uuid <<FK>>
+}
+
+entity "level_competency" as level_competency {
+  * level_id : uuid <<PK,FK>>
+  * competency_id : uuid <<PK,FK>>
+  --
+  * proficiency : proficiency
+}
+
+entity "occupation_adjacency" as occupation_adjacency {
+  * from_occupation_id : uuid <<PK,FK>>
+  * to_occupation_id : uuid <<PK,FK>>
+  --
+  * overlap : numeric(4,3)
+  * max_start_level_no : smallint
+  * is_visible : boolean
+  * computed_at : timestamp
+}
+
+entity "task" as task {
+  * id : uuid <<PK>>
+  --
+  * level_id : uuid <<FK>>
+    source_record_id : uuid <<FK>>
+  * text : text
+  * sort_order : smallint
+}
+
+entity "import_job" as import_job {
+  * id : uuid <<PK>>
+  --
+    occupation_id : uuid <<FK>>
+  * source : reference_source
+  * file_key : varchar(255)
+  * requested_by : uuid <<FK>>
+  * status : job_status
+  * unresolved_count : integer
+  * requested_at : timestamp
+    finished_at : timestamp
+    completed_by : uuid <<FK>>
+    completed_at : timestamp
+}
+
+entity "reference_record" as reference_record {
+  * id : uuid <<PK>>
+  --
+  * import_job_id : uuid <<FK>>
+  * kind : reference_kind
+  * source_code : varchar(255)
+  * payload : jsonb
+  * is_resolved : boolean
+  * is_skipped : boolean
+    adjusted_by : uuid <<FK>>
+    adjusted_at : timestamp
+}
+
+
+occupation }o--|| domain
+occupation_level }o--|| occupation
+downside }o--|| occupation
+generation_rule }o--|| occupation
+competency }o--o| reference_record
+level_competency }o--|| occupation_level
+level_competency }o--|| competency
+occupation_adjacency }o--|| occupation : from_occupation_id
+occupation_adjacency }o--|| occupation : to_occupation_id
+task }o--|| occupation_level
+task }o--o| reference_record
+import_job }o--o| occupation
+reference_record }o--|| import_job
+@enduml

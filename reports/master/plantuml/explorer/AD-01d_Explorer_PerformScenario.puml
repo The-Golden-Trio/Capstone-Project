@@ -1,0 +1,143 @@
+@startuml AD-01d_Explorer_PerformScenario
+title AD-01d · Explorer — perform scenario
+
+|Explorer|
+|System|
+|AI Model|
+
+|Explorer|
+start
+:Start main quest;
+|System|
+if () then ([scenario unavailable])
+  :Show unavailable notice;
+  |Explorer|
+  :View unavailable notice;
+  stop
+else ([scenario available])
+endif
+|System|
+:Load saved position;
+:Show scenario intro;
+|Explorer|
+:View scenario intro;
+if () then ([wants context])
+  :Open scenario context;
+  |System|
+  :Show role and goal;
+  |Explorer|
+  :View role and goal;
+else ([skip context])
+endif
+repeat
+  :Open activity;
+  |System|
+  :Show activity and NPC;
+  |Explorer|
+  :View activity and NPC;
+  |System|
+  if () then ([event triggered])
+    :Show random event;
+    |Explorer|
+    :View random event;
+    :Respond to event;
+    |System|
+    :Save event response;
+  else ([no event])
+  endif
+  |Explorer|
+  :Work on activity;
+  repeat
+    repeat
+      :Submit answer;
+      |System|
+      :Check answer rules;
+      :Show answer status;
+      |Explorer|
+      :View answer status;
+    backward:Fix answer;
+    repeat while () is ([answer invalid]) not ([answer valid])
+    |System|
+    if () then ([closed answer])
+      :Apply expert scores;
+    else ([free text])
+      :De-identify answer;
+      |AI Model|
+      :Three judges grade answer;
+      :Decide on follow-up;
+      |System|
+      :Keep quoted evidence;
+      if () then ([question rejected])
+        :Use default question;
+      else ([question accepted])
+      endif
+    endif
+    :Show NPC response;
+    |Explorer|
+    :View NPC response;
+  backward:Answer follow-up;
+  repeat while () is ([follow-up asked]) not ([no follow-up])
+  |System|
+  if () then ([no event response])
+  else ([event response saved])
+    |AI Model|
+    :Grade event response;
+    |System|
+    :Add soft-skill evidence;
+  endif
+  if () then ([hint used])
+    :Cap activity score;
+  else ([no hint used])
+  endif
+  repeat
+    :Request feedback note;
+    |AI Model|
+    :Draft hidden feedback note;
+    |System|
+    :Check feedback note;
+  repeat while () is ([note fails check]) not ([note passes])
+  :Record competencies;
+  :Save progress;
+  :Show closing line;
+  |Explorer|
+  :View closing line;
+  if () then ([content seems wrong])
+    :Flag wrong content;
+    |System|
+    :Notify domain expert; <<sendSignal>>
+    :Show flag received;
+    |Explorer|
+    :View flag received;
+  else ([content fine])
+  endif
+  if () then ([leave scenario])
+    :Return to Island Map;
+    stop
+  else ([continue])
+  endif
+repeat while () is ([next activity]) not ([last activity done])
+|System|
+:Total activity scores;
+:Pick ending by score;
+:Combine feedback notes;
+fork
+  :Update progress bars;
+fork again
+  :Save history and badges;
+fork again
+  if () then ([enough credit])
+    :Unlock next level;
+  else ([not enough credit])
+    :Suggest practice tasks;
+  endif
+end fork
+:Show ending and feedback;
+|Explorer|
+:View ending and feedback;
+if () then ([another quest])
+  :Return to Island Map;
+else ([view profile])
+  :Open profile;
+endif
+stop
+@enduml

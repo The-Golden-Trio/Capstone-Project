@@ -1,0 +1,100 @@
+@startuml SD-07_ContentAdmin_GamifyAndPlaytest
+title SD-07 · Content Admin, Domain Expert — gamify and play-test
+
+actor "Content Admin" as CA
+actor "Domain Expert\n(author)" as DE
+participant "Staff app\n(with game-core)" as App
+participant "Content lifecycle" as CL
+participant "Result stream" as RS
+database "PostgreSQL" as DB
+database "Object storage" as OS
+queue "Redis" as R
+participant "AI orchestration" as AI
+participant "Model gateway" as GW
+participant "Model" as M
+
+== Design presentation ==
+CA -> App : Open approved scenario
+App -> RS : Open event stream
+RS -> R : Subscribe to staff channel
+
+loop suggestions need changes
+  CA -> App : Request presentation ideas
+  App -> CL : Request suggestions
+  CL -> R : Enqueue suggestion job
+  R -> AI : Take suggestion job
+  AI -> GW : Suggest task types, NPCs, backgrounds
+  GW -> M : Send approved content, allowed types
+  M --> GW : Suggestions
+  GW --> AI : Suggestions
+  AI -> DB : Store suggestions, cost
+  AI -> R : Publish suggestions ready
+  R --> RS : Suggestions event
+  RS --> App : Push suggestions
+  App --> CA : Show suggestions
+end
+
+CA -> App : Choose allowed task types
+App -> CL : Save presentation choices
+CL -> CL : Check task types allowed
+CL -> DB : Store presentation choices
+
+opt asset missing
+  CA -> App : Request missing asset
+  App -> CL : Request asset
+  CL -> R : Enqueue asset job
+  R -> AI : Take asset job
+  AI -> GW : Generate asset
+  GW -> M : Send image prompt
+  M --> GW : Image
+  GW --> AI : Image
+  AI -> AI : Check asset for bias
+  AI -> OS : Store checked asset
+  AI -> DB : Add to asset library
+  AI -> R : Publish asset ready
+  R --> RS : Asset event
+  RS --> App : Push asset ready
+  App --> CA : Show checked asset
+end
+
+== Build and play-test ==
+CA -> App : Confirm presentation
+App -> CL : Build draft game
+CL -> DB : Store draft game, log
+CL -> R : Publish draft ready
+R --> RS : Draft event
+RS --> App : Push draft ready
+App --> DE : Show play-test invitation
+
+DE -> App : Play draft game
+App -> CL : Load draft game
+CL -> DB : Load draft game
+DB --> CL : Draft game
+CL --> App : Draft game
+App -> App : Run game-core locally
+
+ref over DE, App, CL, AI, M : Play scenario (SD-01), session flagged as play-test
+
+DE -> App : Report findings
+App -> CL : Save findings
+CL -> DB : Store findings
+CL -> R : Publish findings
+R --> RS : Findings event
+RS --> App : Push findings
+App --> CA : Show play-test findings
+
+alt display issue
+  CA -> App : Fix display issue
+  App -> CL : Return to presentation
+  CL -> DB : Set approved, log
+else content issue
+  DE -> App : Return to drafting
+  App -> CL : Return to drafting
+  CL -> DB : Set draft, log
+else content final
+  DE -> App : Confirm content final
+  App -> CL : Pass play-test
+  CL -> DB : Set ready, log
+  App --> CA : Show ready to publish
+end
+@enduml

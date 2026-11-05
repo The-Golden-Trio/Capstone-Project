@@ -1,0 +1,47 @@
+@startuml AD-01c_Explorer_ChooseLevelAndQuest
+title AD-01c · Explorer — choose an occupation, a level, and a quest
+
+|Explorer|
+|System|
+
+|Explorer|
+start
+:Open Galaxy Map;
+|System|
+:Show Galaxy Map;
+|Explorer|
+:Browse Galaxy Map;
+:Select occupation;
+|System|
+:Show occupation summary;
+|Explorer|
+:View occupation summary;
+if () then ([wants details])
+  :View occupation profile;
+else ([skip profile])
+endif
+repeat
+  :Select occupation level;
+  |System|
+  :Check level access;
+  :Show level access;
+  |Explorer|
+  :View level access;
+repeat while () is ([level locked]) not ([level open])
+if () then ([not enrolled])
+  :Enrol in level;
+else ([already enrolled])
+  :Resume level;
+endif
+|System|
+:Load level progress;
+:Show Island Map;
+|Explorer|
+:Explore Island Map;
+if () then ([side quest])
+  :Start side quest;
+else ([main quest])
+  :Start main quest;
+endif
+stop
+@enduml

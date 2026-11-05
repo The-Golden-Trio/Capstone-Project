@@ -1,0 +1,54 @@
+@startuml AD-01f_Explorer_ProfileAccount
+title AD-01f · Explorer — manage profile and account
+
+|Explorer|
+|System|
+
+|Explorer|
+start
+:Open profile;
+|System|
+:Show profile;
+|Explorer|
+:View profile;
+if () then ([profile action])
+  if () then ([retake quiz])
+    :Open Get-to-know-me quiz;
+  else ([view past feedback])
+    :Open past feedback;
+  endif
+else ([account action])
+  if () then ([edit account])
+    :Edit account details;
+  else ([leave account])
+    if () then ([sign out])
+      :Sign out;
+    else ([delete account])
+      :Delete account;
+    endif
+  endif
+endif
+|System|
+if () then ([profile action])
+  if () then ([retake quiz])
+    :Load quiz questions;
+  else ([view past feedback])
+    :Load scenario feedback;
+  endif
+else ([account action])
+  if () then ([edit account])
+    :Save account changes;
+  else ([leave account])
+    if () then ([sign out])
+      :End session;
+    else ([delete account])
+      :Delete personal data;
+      :End session;
+    endif
+  endif
+endif
+:Show result screen;
+|Explorer|
+:View result screen;
+stop
+@enduml

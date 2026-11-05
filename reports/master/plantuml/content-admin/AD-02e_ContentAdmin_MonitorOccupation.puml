@@ -1,0 +1,34 @@
+@startuml AD-02e_ContentAdmin_MonitorOccupation
+title AD-02e · Content Admin — monitor an occupation
+
+|Content Admin|
+|System|
+
+|Content Admin|
+start
+:Open statistics;
+|System|
+fork
+  :Summarise plays and scores;
+fork again
+  :Summarise ratings;
+fork again
+  :Load grading agreement;
+fork again
+  :Count expert-scored samples;
+end fork
+:Show statistics;
+|Content Admin|
+:Review statistics;
+if () then ([content outdated])
+  :Request revalidation;
+  |System|
+  :Add to review queue;
+  :Notify domain expert; <<sendSignal>>
+  :Show request status;
+  |Content Admin|
+  :View request status;
+else ([content current])
+endif
+stop
+@enduml

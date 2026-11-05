@@ -1,0 +1,33 @@
+@startuml AD-02c_ContentAdmin_ImportReferenceData
+title AD-02c · Content Admin — import reference data
+
+|Content Admin|
+|System|
+
+|Content Admin|
+start
+:Upload O*NET, ESCO files;
+|System|
+:Match records to sources;
+if () then ([unmatched records])
+  :List unmatched records;
+  |Content Admin|
+  :View unmatched records;
+  :Fix or skip records;
+  |System|
+  :Apply record fixes;
+else ([all matched])
+endif
+:Show imported data;
+|Content Admin|
+:View imported data;
+:Adapt to Vietnamese practice;
+:Save adapted data;
+|System|
+:Store adapted data;
+:Notify domain experts; <<sendSignal>>
+:Show import summary;
+|Content Admin|
+:View import summary;
+stop
+@enduml

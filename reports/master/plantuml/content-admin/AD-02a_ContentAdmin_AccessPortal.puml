@@ -1,0 +1,26 @@
+@startuml AD-02a_ContentAdmin_AccessPortal
+title AD-02a · Content Admin — access the admin portal
+
+|Content Admin|
+|System|
+
+|Content Admin|
+start
+:Sign in;
+|System|
+:Check role;
+if () then ([wrong role])
+  :Show access error;
+  |Content Admin|
+  :View access error;
+  stop
+else ([content admin])
+endif
+|System|
+:Load own occupations;
+:Show dashboard;
+|Content Admin|
+:View dashboard;
+:Choose a function;
+stop
+@enduml

@@ -1,0 +1,20 @@
+@startwbs SITE-01_ExplorerApp
+title SITE-01 · Sitemap — Explorer app
+* Explorer app
+** Landing page
+** Sign in / Register
+** Galaxy Map (Home)
+*** Get-to-know-me quiz
+**** Quiz result
+*** Occupation profile
+**** Level selection
+***** Island Map
+****** Side quest
+****** Scenario intro
+******* Scenario play
+******** Scenario summary
+**** Rate occupation
+** Profile
+*** Account settings
+** App feedback
+@endwbs

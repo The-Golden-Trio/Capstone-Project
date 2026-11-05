@@ -1,0 +1,251 @@
+@startuml CL-04_AssessmentAiAndQuality
+title CL-04 · NestJS modules — Assessment, AI and quality
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "AssessmentModule" <<Rectangle>> {
+  class AssessmentModule <<module>> {
+    imports: AiModule
+    controllers: —
+    providers: AssessmentService, GradingProcessor, FeedbackNoteProcessor, JudgePanelService, FollowUpService
+    exports: AssessmentService, JudgePanelService
+  }
+  class AssessmentService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -gradingQueue : Queue «grading»
+    -noteQueue : Queue «feedback-note»
+    --
+    +scoreClosed(activity: ActivityContent, selection: Selection) : Score
+    +requestGrading(tx, answer: Answer) : JobAccepted
+    +requestNote(tx, runId: string, activityKey: string) : void
+  }
+  class GradingProcessor <<processor · grading>> {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -panel : JudgePanelService
+    -followUps : FollowUpService
+    -stream : StreamService
+    -noteQueue : Queue «feedback-note»
+    --
+    +process(job: Job<GradeJob>) : Promise<void>
+    -rubricFor(answer: Answer) : RubricCriterion[]  «activity rubric, or the random event's anchors»
+  }
+  class FeedbackNoteProcessor <<processor · feedback-note>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -checks : OutputCheckService
+    -stream : StreamService
+    --
+    +process(job: Job<NoteJob>) : Promise<void>
+  }
+  class JudgePanelService {
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -deid : DeIdentifierService
+    -checks : OutputCheckService
+    --
+    +grade(answerText: string, rubric: RubricCriterion[], jobId: string) : PanelResult
+    -callJudge(slot: JudgeSlot, prompt: Prompt) : JudgeOutcome  «retry ≤ 2»
+    -combine(scores: Score[]) : CombinedScore  «median of 3 · agreed or lower of 2»
+  }
+  class FollowUpService {
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -checks : OutputCheckService
+    --
+    +decide(exchange: Exchange, activity: ActivityContent, used: number) : FollowUp | null
+  }
+  class "AssessmentModule DTOs" as AssessmentModule_DTOs <<dto>> {
+    JobAccepted
+    Score
+  }
+}
+
+package "AiModule" <<Rectangle>> {
+  class AiModule <<module>> {
+    imports: AuthModule
+    controllers: SystemPromptController
+    providers: ModelGatewayService, OpenAiCompatibleProvider, AnthropicProvider, ModelConfigService, PromptBuilder, DeIdentifierService, OutputCheckService, CostLedgerService, PromptTemplateService
+    exports: ModelGatewayService, PromptBuilder, DeIdentifierService, OutputCheckService
+  }
+  class SystemPromptController <<controller>> {
+    -prompts : PromptTemplateService
+    --
+    +listSystemPrompts(user: AuthUser, occupationId: string) : SystemPromptVersion[]  «GET /staff/occupations/{occupationId}/system-prompts» [CA,DE]
+    +listSystemPromptVersions(user: AuthUser, occupationId: string, kind: string) : SystemPromptVersion[]  «GET /staff/occupations/{occupationId}/system-prompts/{kind}/versions» [CA,DE]
+    +saveSystemPrompt(user: AuthUser, occupationId: string, kind: string, dto: SaveSystemPromptInput) : SystemPromptVersion  «POST /staff/occupations/{occupationId}/system-prompts/{kind}/versions» [CA,DE]
+  }
+  class ModelGatewayService {
+    -providers : ModelProvider[]
+    -configs : ModelConfigService
+    -cost : CostLedgerService
+    -metrics : MetricsService
+    --
+    +complete(slot: ModelSlotKind, prompt: Prompt, jobId: string) : ModelReply
+    +generateImage(prompt: string, jobId: string) : Buffer
+  }
+  interface ModelProvider {
+    <i>token MODEL_PROVIDERS; one class per provider (NFR-12)</i>
+    --
+    +name : string
+    +complete(modelId: string, prompt: Prompt) : ModelReply
+    +generateImage?(modelId: string, prompt: string) : Buffer
+  }
+  class OpenAiCompatibleProvider <<adapter>> {
+    -http : HttpService
+  }
+  class AnthropicProvider <<adapter>> {
+    -http : HttpService
+  }
+  class ModelConfigService {
+    <i>models come from the deployment config (AI_MODELS); no screen</i>
+    -prisma : PrismaService
+    -settings : SettingsService
+    --
+    +onModuleInit() : Promise<void>  «check 4 different families, record model_config when the config hash is new»
+    +active() : ModelConfig
+  }
+  class PromptBuilder {
+    <i>system part = prompt in force for the occupation and kind; records its version on the job</i>
+    -templates : PromptTemplateService
+    --
+    +grading(occupationId: string, answer: string, rubric: RubricCriterion[]) : Prompt
+    +followUp(occupationId: string, exchange: Exchange, goal: string) : Prompt
+    +feedbackNote(occupationId: string, exchange: Exchange, rubric: RubricCriterion[]) : Prompt
+    +generation(occupationId: string, context: GenerationInput, rules: string[]) : Prompt
+    +revision(occupationId: string, part: string, request: string) : Prompt
+    +presentation(occupationId: string, content: object, allowedTypes: TaskType[]) : Prompt
+    +image(occupationId: string, description: string) : Prompt
+  }
+  class DeIdentifierService {
+    +strip(text: string) : string
+  }
+  class OutputCheckService {
+    +verifyQuotes(outcome: JudgeOutcome, answerText: string) : boolean
+    +checkFollowUp(question: string, activity: ActivityContent) : CheckResult
+    +checkNote(note: string, rubric: RubricCriterion[]) : CheckResult  «on topic, no criteria, Vietnamese»
+    +checkBias(image: Buffer) : CheckResult
+  }
+  class CostLedgerService {
+    -prisma : PrismaService
+    --
+    +record(jobId: string, reply: ModelReply) : Promise<void>
+    +sessionCost(runId: string) : number
+  }
+  class PromptTemplateService {
+    <i>Content Admin and Domain Experts of the occupation edit together (FR-44); highest version is in force</i>
+    -prisma : PrismaService
+    --
+    +listCurrent(user: AuthUser, occupationId: string) : SystemPromptVersion[]
+    +versions(user: AuthUser, occupationId: string, kind: PromptKind) : SystemPromptVersion[]
+    +save(user: AuthUser, occupationId: string, kind: PromptKind, dto: SaveSystemPromptInput) : SystemPromptVersion  «409 if baseVersionNo is not the latest»
+    +current(occupationId: string, kind: PromptKind) : PromptTemplate  «highest version, else DEFAULT_PROMPTS»
+  }
+  enum DEFAULT_PROMPTS {
+    GRADING
+    FOLLOW_UP
+    FEEDBACK_NOTE
+    GENERATION
+    REVISION
+    PRESENTATION_SUGGESTION
+    IMAGE
+  }
+  class "AiModule DTOs" as AiModule_DTOs <<dto>> {
+    GenerationInput
+    PromptKind
+    SaveSystemPromptInput
+    SystemPromptVersion
+    TaskType
+  }
+}
+
+package "QualityModule" <<Rectangle>> {
+  class QualityModule <<module>> {
+    imports: AuthModule, AssessmentModule
+    controllers: FlagController, ReliabilityController
+    providers: FlagService, ReliabilityService, RegradeProcessor
+    exports: FlagService
+  }
+  class FlagController <<controller>> {
+    -flags : FlagService
+    --
+    +listContentFlags(user: AuthUser, query: ListContentFlagsQuery) : ContentFlag[]  «GET /staff/flags» [DE]
+    +handleContentFlag(user: AuthUser, flagId: string, dto: HandleContentFlagInput) : ContentFlag  «PATCH /staff/flags/{flagId}» [DE]
+  }
+  class ReliabilityController <<controller>> {
+    -reliability : ReliabilityService
+    --
+    +getBlindSamples(user: AuthUser, occupationId: string) : BlindSample[]  «GET /staff/occupations/{occupationId}/blind-samples» [DE]
+    +submitBlindRatings(user: AuthUser, dto: SubmitBlindRatingsInput) : JobAccepted  «POST /staff/blind-ratings» [DE]
+    +getAgreementReport(user: AuthUser, occupationId: string) : AgreementReport  «GET /staff/occupations/{occupationId}/agreement-report» [DE,CA]
+    +requestReplacement(user: AuthUser, scenarioId: string, dto: RequestReplacementInput) : Revalidation  «POST /staff/scenarios/{scenarioId}/replacement-requests» [DE]
+  }
+  class FlagService {
+    -prisma : PrismaService
+    -notifications : NotificationService
+    --
+    +create(runId: string, dto: FlagContentInput) : void
+    +list(user: AuthUser, query: ListContentFlagsQuery) : ContentFlag[]
+    +handle(user: AuthUser, flagId: string, dto: HandleContentFlagInput) : ContentFlag
+  }
+  class ReliabilityService {
+    -prisma : PrismaService
+    -regradeQueue : Queue «regrade»
+    -notifications : NotificationService
+    --
+    +samples(user: AuthUser, occupationId: string) : BlindSample[]
+    +submit(user: AuthUser, dto: SubmitBlindRatingsInput) : JobAccepted
+    +report(occupationId: string) : AgreementReport  «Cohen's kappa per stratum»
+    +requestReplacement(user: AuthUser, scenarioId: string, dto: RequestReplacementInput) : Revalidation  «RELIABILITY_CHECK, OUTDATED, notify Content Admin»
+  }
+  class RegradeProcessor <<processor · regrade>> {
+    -prisma : PrismaService
+    -panel : JudgePanelService
+    -stream : StreamService
+    --
+    +process(job: Job<RegradeJob>) : Promise<void>
+  }
+  class "QualityModule DTOs" as QualityModule_DTOs <<dto>> {
+    AgreementReport
+    BlindSample
+    ContentFlag
+    FlagContentInput
+    HandleContentFlagInput
+    JobAccepted
+    RequestReplacementInput
+    Revalidation
+    SubmitBlindRatingsInput
+    ListContentFlagsQuery { status? }
+  }
+}
+
+class NotificationService <<CL-07 · NotificationModule>>
+
+GradingProcessor --> JudgePanelService
+GradingProcessor --> FollowUpService
+FeedbackNoteProcessor --> ModelGatewayService
+FeedbackNoteProcessor --> PromptBuilder
+FeedbackNoteProcessor --> OutputCheckService
+JudgePanelService --> ModelGatewayService
+JudgePanelService --> PromptBuilder
+JudgePanelService --> DeIdentifierService
+JudgePanelService --> OutputCheckService
+FollowUpService --> ModelGatewayService
+FollowUpService --> PromptBuilder
+FollowUpService --> OutputCheckService
+SystemPromptController --> PromptTemplateService
+ModelGatewayService --> ModelProvider
+ModelGatewayService --> ModelConfigService
+ModelGatewayService --> CostLedgerService
+OpenAiCompatibleProvider ..|> ModelProvider
+AnthropicProvider ..|> ModelProvider
+PromptBuilder --> PromptTemplateService
+FlagController --> FlagService
+ReliabilityController --> ReliabilityService
+FlagService --> NotificationService
+ReliabilityService --> NotificationService
+RegradeProcessor --> JudgePanelService
+@enduml

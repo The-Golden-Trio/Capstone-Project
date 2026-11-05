@@ -1,0 +1,68 @@
+@startuml ERD-00_Overview
+title ERD-00 · JobQuest data model overview
+hide circle
+
+package "ERD-01 Identity and access" {
+  entity "user_account" as user_account
+  entity "staff_assignment" as staff_assignment
+}
+package "ERD-02 Occupation catalogue and profile" {
+  entity "occupation" as occupation
+  entity "occupation_level" as occupation_level
+  entity "competency" as competency
+  entity "task" as task
+}
+package "ERD-03 Scenario authoring" {
+  entity "scenario" as scenario
+  entity "activity" as activity
+  entity "rubric_criterion" as rubric_criterion
+}
+package "ERD-04 Review, presentation and release" {
+  entity "review_assignment" as review_assignment
+  entity "review" as review
+  entity "scenario_build" as scenario_build
+  entity "scenario_release" as scenario_release
+}
+package "ERD-05 Exploration and progress" {
+  entity "enrolment" as enrolment
+  entity "scenario_run" as scenario_run
+  entity "competency_credit" as competency_credit
+}
+package "ERD-06 Answers and assessment" {
+  entity "answer" as answer
+  entity "assessment" as assessment
+}
+package "ERD-07 Operations and settings" {
+  entity "ai_job" as ai_job
+}
+
+staff_assignment }o--|| occupation
+staff_assignment }o--|| user_account
+occupation_level }o--|| occupation
+task }o--|| occupation_level
+scenario }o--|| task
+scenario }o--o| user_account
+activity }o--|| scenario
+rubric_criterion }o--|| activity
+rubric_criterion }o--|| competency
+review_assignment }o--|| scenario
+review_assignment }o--|| user_account
+review }o--|| review_assignment
+scenario_build }o--|| scenario
+scenario_release |o--|| scenario
+scenario_release |o--|| scenario_build
+enrolment }o--|| user_account
+enrolment }o--|| occupation_level
+scenario_run }o--|| user_account
+scenario_run }o--o| enrolment
+scenario_run }o--o| scenario_release
+scenario_run }o--|| scenario_build
+competency_credit }o--|| user_account
+competency_credit }o--|| scenario
+competency_credit }o--|| competency
+competency_credit }o--|| scenario_run
+answer }o--|| scenario_run
+assessment |o--|| answer
+assessment }o--|| ai_job
+ai_job }o--o| scenario_run
+@enduml
