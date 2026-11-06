@@ -330,6 +330,19 @@ b,strong{font-weight:700;color:var(--navy)}
 .l-thanks .info .icons{display:flex;gap:10px;margin-top:22px}
 
 /* ===================== DECK-SPECIFIC (keep tiny, tokens only) ===================== */
+.slide > .src{position:absolute;left:85px;bottom:12px;width:730px;font-size:var(--fs-sm);line-height:1.25;color:var(--ink)}
+.slide:has(> .footbar) > .src{bottom:44px}
+.tbl.dense th,.tbl.dense td{font-size:var(--fs-sm);padding:6px 8px;line-height:1.25}
+.tbl.dense{table-layout:fixed}
+.tbl.dense td{text-align:left;vertical-align:top}
+.l-diagram .stage.top{top:112px;height:414px;align-items:flex-start}
+.sample{width:810px}
+.sample .src{font-size:var(--fs-sm);margin-top:10px;line-height:1.25}
+.sample .p{color:var(--blue);font-weight:400;margin-left:6px}
+.dcols{display:grid;column-gap:26px;align-items:start}
+.fld{margin-bottom:9px;font-size:var(--fs-sm);line-height:1.28}
+.fld .k{font-weight:700;color:var(--navy)}
+.fld ul{margin:2px 0 0;padding-left:18px}
 
 /* ===================== Presentation shell (not part of the look) ===================== */
 .hud{position:fixed;right:14px;bottom:12px;font:600 12px/1 var(--font);color:rgba(255,255,255,.55);letter-spacing:.04em;user-select:none;z-index:9}
@@ -414,6 +427,31 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <div><div class="h3">VietJobs</div><p>30.351 tin: 66% làm thứ 7, trung vị 46,5 giờ/tuần</p></div>
     <div><div class="h3">Dọn dữ liệu</div><p>Bỏ trường cũ; hồ sơ nghề đọc từ một file CSV</p></div>
   </div>
+  <p class="src">Nguồn: datasets/work_environments.json; VietJobs (bộ dữ liệu đăng 2/3/2026), 30.351 tin ghi giờ làm: generated/vietjobs_stats.md</p>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Mẫu dữ liệu: một loại hình nơi làm</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Định danh<span class="p">id · industry</span></div><div class="v">WE_HYBRID_PRODUCT · IND_IT</div></div><div class="fld"><div class="k">Tên<span class="p">name_vn</span></div><div class="v">Công ty làm sản phẩm công nghệ (product)</div></div><div class="fld"><div class="k">Mức có mã, để lọc và random<span class="p">levels</span></div><ul><li>Giờ làm: hanh_chinh, linh hoạt cao</li><li>Cuối tuần: nghi</li><li>Tăng ca: theo_dot, ap_luc_khong_luong</li><li>Tiếp xúc khách, rủi ro thể chất: thap</li></ul></div><div class="fld"><div class="k">Số công ty hư cấu<span class="p">company_slots</span></div><div class="v">3</div></div></div><div><div class="fld"><div class="k">Lời mô tả cho AI-4<span class="p">attributes, 12 thuộc tính</span></div><ul><li><b>hours:</b> giờ linh hoạt quanh khung 9:00–18:00</li><li><b>on_call:</b> đội backend, hạ tầng trực xoay vòng theo tuần</li><li><b>peak_season:</b> trước đợt ra mắt lớn, khuyến mãi 11.11, Tết</li></ul></div><div class="fld"><div class="k">Chứng cứ từng thuộc tính<span class="p">evidence</span></div><div class="v">location: ghi A, nguồn báo cáo ITviec 2023–2024 và TopDev 2024–2025. Theo quy ước, báo cáo ngành là B: cần sửa trong dữ liệu. 11 thuộc tính còn lại: C.</div></div><div class="fld"><div class="k">Mặt trái<span class="p">cons</span></div><div class="v">Rủi ro theo tình hình gọi vốn, doanh thu; ranh giới giờ làm dễ mờ</div></div></div></div><p class="src">Nguồn: occupation-data/datasets/work_environments.json, bản 1.0 (29/10/2026), 1 trong 110 loại hình</p></div>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Mẫu dữ liệu: nghề trỏ tới loại hình</h2>
+  <div class="tblwrap">
+    <table class="tbl dense"><colgroup><col style="width:120px"><col style="width:250px"><col style="width:60px"><col style="width:100px"><col></colgroup>
+      <thead><tr><th>Nghề</th><th>environments (trọng số)</th><th>evidence</th><th>weight_status</th><th>reason</th></tr></thead>
+      <tbody>
+        <tr><td>Back-end</td><td>Product 40 · Outsourcing 40 · Khối công nghệ ngân hàng, doanh nghiệp lớn 20</td><td>B</td><td>co_so_lieu</td><td>Tỉ lệ loại công ty của ITviec; ngân hàng tuyển nhiều back-end nội bộ</td></tr>
+        <tr><td>Điều dưỡng</td><td>Bệnh viện công 65 · Bệnh viện tư 25 · Dưỡng lão 10</td><td>B</td><td>co_so_lieu</td><td>Bệnh viện công chiếm 77% số bệnh viện</td></tr>
+        <tr><td>Phục vụ nhà hàng</td><td>Chuỗi F&amp;B 45 · Quán độc lập 35 · Khách sạn 20</td><td>C</td><td>tam_thoi</td><td>Phục vụ ở chuỗi, quán độc lập và nhà hàng khách sạn</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:14px">Mỗi cấp: chọn loại hình theo trọng số, rồi chọn 1 trong company_slots công ty của loại hình đó. 157/221 dòng là tam_thoi.</p>
+  </div>
+  <p class="src">Nguồn: occupation-data/decisions/occupation_work_environments.csv; _meta.random_rule trong work_environments.json</p>
+  <div class="edge-r"></div>
 </section>
 
 <section class="slide l-donuts">
@@ -429,10 +467,38 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     </div>
     <div>
       <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="79 100" transform="rotate(-90 60 60)"/></svg>
-      <div class="pct">79%</div><p>mức C: nhóm suy luận; 157/221 nghề có trọng số tạm</p>
+      <div class="pct">79%</div><p>mức C: nhóm suy luận, chưa có nguồn</p>
     </div>
   </div>
+  <p class="src">Riêng trọng số random: 157/221 nghề còn tạm. Nguồn: research_notes/Môi trường làm việc/ (7 ghi chú nguồn); occupation_work_environments.csv</p>
   <div class="footbar"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title center">Nghề dịch vụ rao giờ làm dài hơn hẳn</h2>
+  <div class="stage">
+    <svg width="810" height="300" viewBox="0 0 810 300">
+      <g class="f-ink" font-size="18">
+        <text x="20" y="46">Mọi tin có ghi giờ</text>
+        <text x="20" y="106">Thu ngân (116 tin)</text>
+        <text x="20" y="166">Chăm sóc da (70)</text>
+        <text x="20" y="226">Điều dưỡng (95)</text>
+      </g>
+      <g class="f-gray">
+        <rect x="220" y="30" width="480" height="22"/><rect x="220" y="90" width="480" height="22"/>
+        <rect x="220" y="150" width="480" height="22"/><rect x="220" y="210" width="480" height="22"/>
+      </g>
+      <rect class="f-navy" x="220" y="30" width="96" height="22"/>
+      <g class="f-blue">
+        <rect x="220" y="90" width="336" height="22"/><rect x="220" y="150" width="307" height="22"/><rect x="220" y="210" width="307" height="22"/>
+      </g>
+      <g class="f-navy" font-size="22" font-weight="700">
+        <text x="716" y="49">20%</text><text x="716" y="109">70%</text><text x="716" y="169">64%</text><text x="716" y="229">64%</text>
+      </g>
+      <text class="f-ink" x="405" y="285" font-size="16" text-anchor="middle">Tỉ lệ tin rao trên 48 giờ/tuần, mức trần giờ làm bình thường của Điều 105</text>
+    </svg>
+  </div>
+  <p class="src">Nguồn: giờ rao trong tin VietJobs (bộ dữ liệu đăng 2/3/2026); Bộ luật Lao động 2019, Điều 105. Dữ liệu nghiêng việc văn phòng Hà Nội, TP.HCM, không có công chức, công an</p>
 </section>
 
 <section class="slide l-section alt">
@@ -461,9 +527,27 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <div><div class="h3">Lịch</div><p>Một màn là một ngày làm; giữa hai màn vài tuần</p></div>
     <div><div class="h3">Cửa hàng</div><p>6 nhóm món; buff +10/20/30%, trần chung +50%</p></div>
     <div><div class="h3">Sức khoẻ</div><p>0–100, bốn mức; chỉ đổi số lượt và lời dẫn</p></div>
-    <div><div class="h3">Tăng ca</div><p>Đổi sức khoẻ lấy lượt, tối đa 2 lần mỗi màn</p></div>
-    <div><div class="h3">NPC, cột mốc</div><p>22 lá tarot, 6 mở sẵn; 17 cột mốc cuộc sống</p></div>
+    <div><div class="h3">Tăng ca</div><p>Đổi sức khoẻ lấy lượt, tối đa 2 lần, 4 giờ mỗi màn</p></div>
+    <div><div class="h3">NPC, cột mốc</div><p>22 lá tarot kiểu Persona, 6 mở sẵn; 17 cột mốc</p></div>
   </div>
+  <p class="src">Nguồn: 13 triệu là trung vị lương của 217 nghề (occupation_profiles.json); trần OT 4 giờ/ngày, Điều 107 Bộ luật Lao động 2019; cua_hang_buff_game_that.md</p>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Căn bậc hai: chênh 117 lần còn 4,2 lần</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Cách quy lương ra xu</th><th>Thấp nhất</th><th>Trung vị</th><th>Cao nhất</th><th>Cao ÷ thấp</th></tr></thead>
+      <tbody>
+        <tr><td>Tuyến tính</td><td>31</td><td>105</td><td>3.600</td><td>117</td></tr>
+        <tr><td><b>Căn bậc hai, sàn 60, trần 250</b></td><td><b>60</b></td><td><b>103</b></td><td><b>250</b></td><td><b>4,2</b></td></tr>
+        <tr><td>Sàn 60 + 40 × căn bậc hai</td><td>82</td><td>101</td><td>300</td><td>3,7</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:16px">Xu mỗi màn, tính trên 1.294 cấp có lương. Tuyến tính cho phi công gấp 117 lần nghề thấp nhất dù màn dài như nhau. Căn bậc hai giữ thứ tự: 90% số cấp ở giữa vẫn chênh 2,6 lần.</p>
+  </div>
+  <p class="src">Căn bậc hai là lựa chọn thiết kế: chưa có nguồn nêu luật nén, Cook 2021 (lostgarden.com) chỉ khuyên nén. Nguồn: luong_quy_xu.py, luong_quy_xu.csv</p>
+  <div class="edge-r"></div>
 </section>
 
 <section class="slide l-2col">
@@ -472,8 +556,63 @@ body.overview .slide.active{outline:10px solid var(--blue)}
   <h2 class="title">Hai nguyên tắc công bằng</h2>
   <div class="cols">
     <div><div class="h3">Tiền không mua trần</div><p>Xu mua tốc độ và lựa chọn. Mọi buff cộng lại không quá +50%, điểm sau buff không vượt trần của màn.</p></div>
-    <div><div class="h3">Lương hiện ở mức sống</div><p>Món tiến độ tính giá theo xu của nghề đang chơi. Lương cao chỉ mua nhà, xe sớm hơn, không qua cấp dễ hơn.</p></div>
+    <div><div class="h3">Lương hiện ở mức sống</div><p>Món tiến độ tính giá theo <b>u</b>, xu một màn của nghề đang chơi. Món đời sống tính theo <b>X</b>, xu chuẩn của band. Lương cao mua nhà, xe sớm hơn, không qua cấp dễ hơn.</p></div>
   </div>
+  <p class="src">Căn cứ: D-17. Mô phỏng: tính món tiến độ theo X thì nghề lương thấp nhất kẹt gấp 4 lần (4% so với 1%)</p>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Mẫu dữ liệu: lương quy ra xu</h2>
+  <div class="tblwrap">
+    <table class="tbl dense"><colgroup><col style="width:120px"><col style="width:60px"><col><col style="width:110px"><col style="width:80px"><col style="width:150px"></colgroup>
+      <thead><tr><th>Nghề</th><th>Cấp</th><th>ten_cap</th><th>Lương (triệu)</th><th>Xu/màn</th><th>cach_uoc</th></tr></thead>
+      <tbody>
+        <tr><td>Back-end</td><td>L1</td><td>Backend Engineer Intern</td><td>18,9</td><td>121</td><td>itviec_theo_nam</td></tr>
+        <tr><td>Back-end</td><td>L3</td><td>Junior Backend Engineer</td><td>28,4</td><td>148</td><td>itviec_theo_nam</td></tr>
+        <tr><td>Back-end</td><td>L7</td><td>Principal / Staff Engineer</td><td>54,9</td><td>206</td><td>itviec_theo_nam</td></tr>
+        <tr><td>Điều dưỡng</td><td>L1</td><td>Sinh viên điều dưỡng thực tập</td><td>10,5</td><td>90</td><td>noi_suy_thap_cao</td></tr>
+        <tr><td>Điều dưỡng</td><td>L3</td><td>Điều dưỡng hạng III</td><td>11,9</td><td>96</td><td>noi_suy_thap_cao</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:14px">Ở L3, u của Back-end là 148, của Điều dưỡng là 96; X của band L3 là 98 cho mọi nghề. Buff vừa (0,5 u) giá 74 và 48 xu; phòng riêng (3 X) cùng giá. Lương ước thô, giá còn nháp.</p>
+  </div>
+  <p class="src">Nguồn: research_notes/Kinh tế và sức khoẻ/luong_quy_xu.csv (1.318 cấp); lương từ ITviec và tin tuyển dụng</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Cửa hàng sáu nhóm, có món thật</h2>
+  <div class="grid">
+    <div><div class="h3">Vật phẩm buff</div><p>Ly cà phê đen, bình trà mời cả nhóm; dùng một màn</p></div>
+    <div><div class="h3">Vé nhiệm vụ phụ</div><p>Karaoke cả phòng, chợ hoa Tết; mở cảnh, không chấm</p></div>
+    <div><div class="h3">Thân mật NPC</div><p>Cà phê sữa đá, quà đúng gu, danh thiếp mở lá mới</p></div>
+    <div><div class="h3">Cột mốc</div><p>17 mốc, mỗi mốc một cảnh và một buff nhỏ vĩnh viễn</p></div>
+    <div><div class="h3">Sức khoẻ</div><p>Tô phở sáng, gói gym tháng, nghỉ phép 3 ngày</p></div>
+    <div><div class="h3">Decor bàn</div><p>Sen đá, đèn lồng Trung thu; mang theo khi đổi công ty</p></div>
+  </div>
+  <p class="src">Mượn từ Persona, Stardew Valley, The Sims 4, Animal Crossing (cua_hang_buff_game_that.md). Judge không biết người chơi có món gì</p>
+</section>
+
+<section class="slide l-3col">
+  <h2 class="title center">Cột mốc gần đời sống người Việt</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+      <div class="h3">Về quê ăn Tết</div><p>Cả họ hỏi lương, hỏi người yêu; hồi đầy sức khoẻ</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <div class="h3">Mua căn hộ</div><p>Có lựa chọn bố mẹ góp một nửa giá</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="h3">Nhánh rẻ</div><p>CLB công ty, company trip: buff ngang mốc đắt tiền</p>
+    </div>
+  </div>
+  <p class="src">Giá căn hộ Hà Nội tăng 11,7%/năm, thu nhập tăng 6,4%/năm; tuổi kết hôn lần đầu 27,3 (TCTK, VnExpress; thứ cấp, chưa kèm link)</p>
+  <div class="footbar rev"></div>
 </section>
 
 <section class="slide l-table">
@@ -488,8 +627,9 @@ body.overview .slide.active{outline:10px solid var(--blue)}
         <tr><td>Tiêu hết</td><td>76–77%</td><td>1–2%</td><td>0/7</td></tr>
       </tbody>
     </table>
-    <p class="sm" style="margin-top:16px">4 nghề × 3 mức chơi × 4 kiểu, 300 lượt mỗi tổ hợp. Số tạm, chưa qua chơi thử.</p>
+    <p class="sm" style="margin-top:16px">4 nghề × 3 mức chơi × 4 kiểu, 300 lượt mỗi tổ hợp. Ngưỡng mở cấp 60% liên tục khắt khe hơn D-114, nên tỉ lệ kẹt là mức trên. Chưa mô phỏng ô tô, cưới, lá bài. Số tạm, chưa qua chơi thử.</p>
   </div>
+  <p class="src">Nguồn: research_notes/Kinh tế và sức khoẻ/mo_phong_can_bang.py, ket_qua_mo_phong.md</p>
   <div class="edge-r"></div>
 </section>
 
@@ -498,25 +638,27 @@ body.overview .slide.active{outline:10px solid var(--blue)}
   <div class="blk navy" style="left:832px;top:0;height:270px"></div>
   <div class="num">33%</div>
   <p class="cap">người chơi yếu cày OT ở nghề điều dưỡng bị kẹt; chơi cân bằng chỉ 1%</p>
+  <p class="src" style="left:150px;width:670px">Cùng chiều với tin tuyển thật: 64% tin điều dưỡng rao trên 48 giờ/tuần (VietJobs). Nguồn: ket_qua_mo_phong.md</p>
 </section>
 
 <section class="slide l-text">
-  <h2 class="title">Năm mục tiêu cân bằng đều đạt</h2>
+  <h2 class="title">Mô phỏng đạt năm mục tiêu cân bằng</h2>
   <div class="body">
     <p>Đã chốt 4/11, soát lại mỗi lần chỉnh số:</p>
     <ul class="ul gap">
-      <li>Không kiểu chơi nào áp đảo: chênh <b>≤ 2 điểm %</b></li>
+      <li>Không kiểu nào áp đảo: chênh ≤ 3 điểm %, đạt <b>≤ 2</b></li>
       <li>Nghề lương thấp không khó qua cấp hơn: kẹt <b>1–2%</b></li>
       <li>Cày OT không hơn chơi cân bằng</li>
-      <li>Phòng riêng cấp 2, căn hộ cấp 4–7</li>
-      <li>Cuối nghề dư tối đa khoảng 10 màn lương</li>
+      <li>Phòng riêng cấp 2, căn hộ cấp 4–7; Back-end mua xe sớm hơn</li>
+      <li>Cuối nghề dư tối đa khoảng 10 màn lương, sát ngưỡng</li>
     </ul>
   </div>
+  <p class="src">Nguồn: Kinh tế và sức khoẻ JobQuest.md khối 6, mục B1</p>
   <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
 </section>
 
 <section class="slide l-table">
-  <h2 class="title">Đề xuất sửa sáu quyết định cũ</h2>
+  <h2 class="title">Sửa sáu quyết định cũ</h2>
   <div class="tblwrap">
     <table class="tbl">
       <thead><tr><th>ID</th><th>Đề xuất sửa</th></tr></thead>
@@ -528,8 +670,9 @@ body.overview .slide.active{outline:10px solid var(--blue)}
         <tr><td>D-119</td><td>Nhiệm vụ phụ mở qua NPC, không chấm, thưởng cố định</td></tr>
       </tbody>
     </table>
-    <p class="sm" style="margin-top:16px">Giữ D-17, D-86, D-27. Chưa ghi vào 02-quyet-dinh.md.</p>
+    <p class="sm" style="margin-top:16px">Đã chốt 4/11, chưa ghi vào 02-quyet-dinh.md. Giữ D-17, D-86, D-27. Hub đang có hai dòng D-105 và hai dòng D-110 trùng số, cần đánh lại khi ghi.</p>
   </div>
+  <p class="src">Nguồn: Kinh tế và sức khoẻ JobQuest.md khối 7; docs/project-hub/02-quyet-dinh.md</p>
   <div class="edge-r"></div>
 </section>
 
@@ -550,6 +693,7 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <div class="t">Một màn là gì</div>
     <p>Một tình huống công việc trọn vẹn, dài 10–15 phút, xoay quanh <b>một việc chính</b> của cấp. Màn cho trải nghiệm 1–2 keyword trọng tâm và tự mang theo mọi kiến thức cần để trả lời. Game chấm cách xử lý, không chấm kiến thức có sẵn.</p>
   </div>
+  <p class="src" style="width:600px">Căn cứ: D-84, D-114. Nguồn: Seed scenario JobQuest.md khối 1</p>
 </section>
 
 <section class="slide l-rows">
@@ -560,6 +704,7 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <div class="row"><div class="lab">Diễn ra sao</div><div class="its"><span>D · Pha xử lý, nút canon</span><span>M · Mini note tự ghi</span></div></div>
     <div class="row"><div class="lab">Chấm</div><div class="its"><span>E1 · Thang 0/1/2 cộng cờ</span><span>E2 · Câu hỏi có/không, nháp</span></div></div>
   </div>
+  <p class="src">Nguồn: research/reports/Seed scenario JobQuest.md, khối 1 đến M</p>
 </section>
 
 <section class="slide l-2col">
@@ -567,9 +712,36 @@ body.overview .slide.active{outline:10px solid var(--blue)}
   <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
   <h2 class="title">Đổi chất, không đổi chấm</h2>
   <div class="cols">
-    <div><div class="h3">Được đổi</div><p>Lời thoại, nhịp việc, áp lực, giờ làm, văn hoá, thái độ NPC. Công ty random theo tỉ lệ thật của ngành.</p></div>
+    <div><div class="h3">Được đổi</div><p>Lời thoại, nhịp việc, áp lực, giờ làm, văn hoá, thái độ NPC. Công ty random theo trọng số loại hình, phần lớn còn là số tạm.</p></div>
     <div><div class="h3">Không được đổi</div><p>Khoá chấm, mục con đang quan sát, phạm vi hậu quả theo cấp. Không có thư mời để chọn công ty tốt.</p></div>
   </div>
+  <p class="src">Trọng số random: decisions/occupation_work_environments.csv. Nguồn: Seed scenario JobQuest.md khối G</p>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Onboard: 6 slide mỗi lần vào cấp</h2>
+  <div class="grid">
+    <div><div class="h3">1 · Chào mừng</div><p>Công ty, sản phẩm, cách làm việc với nhau · Culture</p></div>
+    <div><div class="h3">2 · Một ngày</div><p>Giờ làm, nhịp việc, 3 việc thường ngày · Xem trước</p></div>
+    <div><div class="h3">3 · Người gặp</div><p>NPC thường trực của cấp · Connection</p></div>
+    <div><div class="h3">4 · Vai bạn</div><p>Phạm vi, ai duyệt, thế nào là làm tốt · Clarification</p></div>
+    <div><div class="h3">5 · Quy định</div><p>2–3 quy định thật của nghề, công ty · Compliance</p></div>
+    <div><div class="h3">6 · Nên biết</div><p>Mặt không hay của vị trí (BR-07) · Xem trước</p></div>
+  </div>
+  <p class="src">Khung 4C: Bauer 2010, Onboarding New Employees, SHRM Foundation (thứ cấp); xem trước công việc trung thực (RJP). Không gọi AI, không chấm</p>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Nói trước rồi mới bắt lỗi</h2>
+  <div class="cols">
+    <div><div class="h3">Luật công bằng</div><p>Giới hạn và quy định phải được nói ra trong màn, qua lời dặn hoặc slide onboard. Người chơi không bị chặn hay gắn cờ vì điều chưa từng nghe.</p></div>
+    <div><div class="h3">Dữ liệu cho AI-4</div><p>Tên thay bằng chỗ giữ {ten}, server điền sau. Không gửi ngày sinh, trường, điểm. Hệ thống không có giới tính; NPC không đoán từ tên.</p></div>
+  </div>
+  <p class="src">Căn cứ: D-110 (gọi model ở nước ngoài, §5.3.10). Nguồn: Seed scenario JobQuest.md khối A</p>
 </section>
 
 <section class="slide l-3col">
@@ -588,7 +760,24 @@ body.overview .slide.active{outline:10px solid var(--blue)}
       <div class="h3">Lộ dần</div><p>Hỏi đúng mới lộ; mỗi hành động mở tối đa một dữ kiện</p>
     </div>
   </div>
+  <p class="src">Model nhập vai hay biết nhiều hơn nhân vật: Character-LLM (EMNLP 2023), TimeChara (Findings ACL 2024). Lộ quá sớm: Zhou và cộng sự 2026 (preprint, chưa vào danh mục nguồn)</p>
   <div class="footbar rev"></div>
+</section>
+
+<section class="slide l-text">
+  <h2 class="title">Khách hàng không tự biết mình cần gì</h2>
+  <div class="body">
+    <p>Dữ kiện của khách chia bốn lớp, lộ dần:</p>
+    <ul class="ul gap">
+      <li><b>L1</b> nói ngay, thường là giải pháp: “làm cho tôi nút X”</li>
+      <li><b>L2</b> lộ khi hỏi đúng chủ đề, hỏi lại vì sao</li>
+      <li><b>L3</b> ngầm: hỏi theo tình huống, xem quy trình thật</li>
+      <li><b>L4</b> chưa ai biết: lộ khi khách thấy phương án</li>
+      <li>Khách được nói mâu thuẫn; nhận ra điều đó là được chấm</li>
+    </ul>
+  </div>
+  <p class="src">Khung đã biết, ngầm, chưa biết: Sutcliffe &amp; Sawyer 2013, RE. Chia bốn lớp là đề xuất của nhóm</p>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
 </section>
 
 <section class="slide l-process">
@@ -600,7 +789,93 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <ul class="ul"><li>10:50 đếm giờ</li><li>Chốt nguyên nhân</li></ul>
     <ul class="ul"><li>Email rút gọn</li><li>Nêu hướng xử lý</li></ul>
   </div>
+  <p class="src">Nguồn: Seed scenario JobQuest.md, màn mẫu Back-end L3 (API chậm do lỗi N+1)</p>
   <div class="edge-r"></div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Điểm thời gian: nói rẻ, làm đắt</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Hành động</th><th>Điểm</th></tr></thead>
+      <tbody>
+        <tr><td>Một câu hỏi hay tin nhắn gửi NPC</td><td>1</td></tr>
+        <tr><td>Mở một tài liệu lần đầu</td><td>1</td></tr>
+        <tr><td>Việc nhỏ: chạy thử truy vấn trên staging</td><td>2</td></tr>
+        <tr><td>Việc lớn: viết bản vá, gọi họp</td><td>3</td></tr>
+        <tr><td>Trả lời nút, follow-up, ghi mini note</td><td>0</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:16px">Hết thời gian thì nút kết bật, người chơi vẫn nộp bài: không có trạng thái thua. Nút chưa tới thì không xét.</p>
+  </div>
+  <p class="src">Nguồn: Seed scenario JobQuest.md khối D2. Sức khoẻ, vật phẩm cộng trừ ngân sách: Kinh tế và sức khoẻ JobQuest.md khối 8</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Seed mẫu 1/4: định danh và bối cảnh</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Định danh, tên màn<span class="p">id · title</span></div><div class="v">SWE_BACKEND.L3.m2 · Sự cố hệ thống giờ cao điểm!</div></div><div class="fld"><div class="k">Việc chính, loại tình huống<span class="p">task_ref · situation_type</span></div><div class="v">L3#3 Tối ưu hoá các API bị chậm · S_INCIDENT</div></div><div class="fld"><div class="k">Vai người chơi<span class="p">player_role</span></div><div class="v">Junior back-end phụ trách API lịch sử đơn, báo cáo cho mentor (minh hoạ)</div></div><div class="fld"><div class="k">Giới hạn, chỉ AI-4 đọc<span class="p">limits</span></div><ul><li><b>decide_alone:</b> xem log, viết và test bản sửa</li><li><b>need_approval:</b> đưa bản sửa lên hệ thống thật → mentor</li><li><b>not_allowed:</b> hứa giờ xong với khách</li></ul></div></div><div><div class="fld"><div class="k">Chuyện gì đang xảy ra<span class="p">situation</span></div><div class="v">API lịch sử đơn chậm từ 8 giờ sáng: thường 0,2 giây, giờ hơn 4 giây. App quay mãi, bộ phận hỗ trợ bắt đầu nhận phàn nàn.</div></div><div class="fld"><div class="k">Việc của bạn<span class="p">goal</span></div><div class="v">Tìm ra vì sao API chậm và báo anh An hướng xử lý.</div></div><div class="fld"><div class="k">Hỏng thì mất gì<span class="p">stakes</span></div><div class="v">Tới trưa còn chậm thì đơn giờ cao điểm sẽ rớt.</div></div><div class="fld"><div class="k">Đồng hồ<span class="p">clock</span></div><div class="v">9:40 → 12:00 · 12 điểm thời gian</div></div><div class="fld"><div class="k">Độ khó, AI-4 không thấy<span class="p">difficulty</span></div><div class="v">Mơ hồ thấp · bên liên quan vừa · thiếu thông tin vừa · áp lực giờ cao</div></div></div></div><p class="src">Nguồn: Seed scenario JobQuest.md khối A, B1. focus_keywords chọn sau khi gỡ hàng chờ H1 (keyword lệch việc của cấp)</p></div>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Seed mẫu 2/4: fact sheet</h2>
+  <div class="tblwrap">
+    <table class="tbl dense"><colgroup><col style="width:40px"><col><col style="width:84px"><col style="width:136px"><col style="width:84px"></colgroup>
+      <thead><tr><th>id</th><th>text</th><th>visibility</th><th>unlock · known_by</th><th>required</th></tr></thead>
+      <tbody>
+        <tr><td>f1</td><td>API chậm từ 8:00: thường 0,2 giây, giờ hơn 4 giây</td><td>shown</td><td>—</td><td>✓</td></tr>
+        <tr><td>f2</td><td>3 phàn nàn; sau 6 điểm thời gian là 12 (timeline)</td><td>shown</td><td>support</td><td></td></tr>
+        <tr><td>f3</td><td>API do bạn viết ba tuần trước, mentor review</td><td>shown</td><td>mentor</td><td>✓</td></tr>
+        <tr><td>f4</td><td>Sáng nay có khách sỉ với 900 đơn trong lịch sử</td><td>on_ask</td><td>mở bảng số liệu</td><td>✓</td></tr>
+        <tr><td>f5</td><td>Mỗi lần mở lịch sử đơn, hỏi cơ sở dữ liệu 901 lần</td><td>on_ask</td><td>mở log</td><td>✓</td></tr>
+        <tr><td>f6</td><td>Mentor đang gấp release thanh toán lúc 14:00</td><td>on_ask</td><td>hỏi mentor về lịch</td><td></td></tr>
+        <tr><td>f7</td><td>Nguyên nhân: lấy chi tiết từng đơn trong vòng lặp</td><td>ai_only</td><td>mentor</td><td>✓</td></tr>
+        <tr><td>f8</td><td>API không giới hạn số đơn trả về</td><td>ai_only</td><td>mentor</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Mỗi hành động mở tối đa một dữ kiện; dữ kiện mở thì tự vào mini note. Nguồn: Seed scenario JobQuest.md khối B2</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Không làm minigame cho từng nghề</h2>
+  <div class="cols">
+    <div><div class="h3">Vì sao không</div><p>Mô phỏng cần giống ở tác vụ hơn ở bề ngoài. Minigame thêm phương sai không liên quan tới thứ cần đo. 221 nghề thì không làm xuể.</p></div>
+    <div><div class="h3">Thay bằng</div><p>Tài liệu hiện như thật và bấm được, nút hành động có giá thời gian, 9 định dạng câu hỏi. Biết trước các lựa chọn thì dùng câu đóng; cần giải thích, thuyết phục thì viết tự do.</p></div>
+  </div>
+  <p class="src">Hamstra và cộng sự 2014, Academic Medicine 89(3); Messick 1995, American Psychologist 50(9); D-80</p>
+</section>
+
+<section class="slide l-3col">
+  <h2 class="title center">Lời thoại chia nhịp, có biểu cảm</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <div class="h3">Nhịp</div><p>Mỗi nhịp một ý, 1–2 câu; câu hỏi luôn là nhịp cuối</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+      <div class="h3">Biểu cảm</div><p>Khoảng 8 biểu cảm theo asset, theo truyện, không theo đúng sai</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+      <div class="h3">Văn nói</div><p>Giọng vùng miền của NPC; bản nháp cần người Việt duyệt</p>
+    </div>
+  </div>
+  <p class="src">Nguồn: Seed scenario JobQuest.md khối C3. AI-4 trả nhịp dạng danh sách để app hiện nhịp đầu sớm (NFR-01)</p>
+  <div class="footbar rev"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Seed mẫu 3/4: cast và lời thoại</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Slot mentor<span class="p">relation · source · fill</span></div><div class="v">Cấp trên trực tiếp · resident · cố định</div></div><div class="fld"><div class="k">Muốn gì, bận gì<span class="p">want · pressure</span></div><div class="v">Sửa nhanh nhưng không đụng hệ thống thật khi chưa duyệt · đang gấp release lúc 14:00</div></div><div class="fld"><div class="k">Dữ kiện slot này biết<span class="p">facts[].known_by</span></div><div class="v">f3, f6, f7, f8: biết nguyên nhân thật, chỉ lộ khi được hỏi đúng</div></div><div class="fld"><div class="k">Slot support<span class="p">relation · source · expertise</span></div><div class="v">Phòng ban khác · guest · 0, nói lời đời thường</div></div><div class="fld"><div class="k">Khúc mắc<span class="p">concerns · resolve_when</span></div><div class="v">Khách sỉ doạ huỷ đơn → gỡ khi người chơi đưa mốc cập nhật cụ thể, không hứa giờ xong</div></div></div><div><div class="fld"><div class="k">Một lượt nói<span class="p">speaker: support · channel: call</span></div><ul><li>Alo em ơi, chị Linh nè.<span class="p">lo_lang</span></li><li>Khách sỉ gọi chị nãy giờ á.<span class="p">lo_lang</span></li><li>Họ nói trưa mà còn lag là huỷ đơn luôn.<span class="p">kho_chiu</span></li><li>Chị hứa với họ trưa xong được hông em?<span class="p">lo_lang</span></li></ul></div><div class="fld"><div class="k">Luật<span class="p">beats[] · expression</span></div><ul><li>Mỗi nhịp một ý; câu hỏi là nhịp cuối</li><li>Biểu cảm ép theo JSON schema, sai thì về bình thường</li><li>Lời mẫu cần người Việt duyệt</li></ul></div></div></div><p class="src">Nguồn: Seed scenario JobQuest.md khối C. Giá trị của hai slot là ví dụ minh hoạ; seed thật chưa soạn cast cho màn này</p></div>
+  </div>
 </section>
 
 <section class="slide l-4items">
@@ -612,6 +887,14 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <div><div class="h3">0/1/2 cộng cờ</div><p>Một thang cho cả câu đóng lẫn câu viết</p></div>
     <div><div class="h3">Trích lời</div><p>Mỗi chữ “có” phải trích câu của người chơi</p></div>
     <div><div class="h3">Bỏ qua may rủi</div><p>Chấm theo thông tin lúc quyết định, không theo kết quả</p></div>
+  </div>
+  <p class="src" style="left:150px;width:670px">Checklist có/không: CheckEval (EMNLP 2025). Outcome bias: Baron &amp; Hershey 1988, JPSP 54(4). Thang: D-116, D-87</p>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Seed mẫu 4/4: một nút và cách chấm</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Nút<span class="p">id · kind · trigger</span></div><div class="v">n2 · mid · theo giờ, 10:50</div></div><div class="fld"><div class="k">Ai nói, qua đâu<span class="p">speaker · channel</span></div><div class="v">support · call</div></div><div class="fld"><div class="k">Câu hỏi<span class="p">canon.prompt</span></div><div class="v">Bạn trả lời chị Linh thế nào?</div></div><div class="fld"><div class="k">Định dạng<span class="p">format · time_limit_seconds</span></div><div class="v">timed_choice · 30; hết giờ là mức 0, không cờ</div></div><div class="fld"><div class="k">Hỏi thêm, chưa tới<span class="p">probe · if_unreached</span></div><div class="v">vì sao · skip (không xét, giữ quỹ để chơi lại)</div></div><div class="fld"><div class="k">Biến thể lời<span class="p">variants</span></div><div class="v">Ở n1 chọn b thì chị Linh nói khác; lõi câu hỏi giữ nguyên</div></div></div><div><div class="fld"><div class="k">Quan sát, AI-4 không thấy<span class="p">observes[0]</span></div><div class="v">sub: DD.trung_thuc · from: n2, n4</div></div><div class="fld"><div class="k">Dấu hiệu trong màn này<span class="p">signs</span></div><ul><li><b>A</b> báo mentor hoặc kênh sự cố trước 12 giờ; không hứa với support khi chưa chắc</li><li><b>B</b> thừa nhận API mình viết gọi cơ sở dữ liệu trong vòng lặp</li><li><b>C</b> đề xuất thêm test tải, hoặc giới hạn số đơn trả về</li><li><b>Không tính:</b> “Chắc DB có vấn đề” không phải là nhận lỗi</li></ul></div><div class="fld"><div class="k">Quy ra mức (nháp)</div><div class="v">A và B → 1 · A, B và C → 2 · còn lại → 0. Mỗi “có” phải trích câu của người chơi.</div></div></div></div><p class="src">Nguồn: Seed scenario JobQuest.md khối D5, E1, E2</p></div>
   </div>
 </section>
 
@@ -628,7 +911,7 @@ body.overview .slide.active{outline:10px solid var(--blue)}
 <section class="slide l-roadmap">
   <h2 class="title">Đã chốt, đang nháp, làm tiếp</h2>
   <div class="stairs" style="--n:3">
-    <div class="step" style="--i:0"><div class="h3">Đã chốt</div><div class="line"></div><ul class="ul"><li>Seed: khối 1, A–D, E1, M</li><li>Kinh tế: 10 điểm, 4/11</li><li>110 loại hình nơi làm</li></ul></div>
+    <div class="step" style="--i:0"><div class="h3">Đã chốt</div><div class="line"></div><ul class="ul"><li>Seed: khối 1, A–D, E1, M</li><li>Kinh tế: 10 điểm, 4/11</li><li>Sửa 6 quyết định cũ</li><li>110 loại hình nơi làm</li></ul></div>
     <div class="step" style="--i:1"><div class="h3">Đang nháp</div><div class="line"></div><ul class="ul"><li>Câu hỏi có/không</li><li>13 cờ chung</li><li>Mẫu nhóm 7</li></ul></div>
     <div class="step" style="--i:2"><div class="h3">Làm tiếp</div><div class="line"></div><ul class="ul"><li>Ghi vào hub</li><li>Sửa schema code</li><li>Chơi thử bản nhỏ</li></ul></div>
   </div>
@@ -642,15 +925,16 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <div><div class="q-h">Nguồn yếu</div><div class="q-b"><ul class="ul"><li>79% ô thuộc tính mức C</li><li>157 nghề trọng số tạm</li></ul></div></div>
     <div><div class="q-h">Số tạm</div><div class="q-b"><ul class="ul"><li>Giá, buff chưa thử</li><li>Lời thoại chưa duyệt</li></ul></div></div>
     <div class="side">Chấm</div>
-    <div><div class="q-h">Judge tiếng Việt</div><div class="q-b"><ul class="ul"><li>Kappa khoảng 0,3</li><li>Cần bộ nhãn người Việt</li></ul></div></div>
-    <div><div class="q-h">Keyword cấp</div><div class="q-b"><ul class="ul"><li>Lệch việc của cấp</li><li>Nhóm 7 dễ đoán</li></ul></div></div>
+    <div><div class="q-h">Judge tiếng Việt</div><div class="q-b"><ul class="ul"><li>Kappa ~0,3, đo đa ngôn ngữ</li><li>Cần bộ nhãn người Việt</li></ul></div></div>
+    <div><div class="q-h">Keyword cấp</div><div class="q-b"><ul class="ul"><li>Lệch việc của cấp</li><li>Nhóm 7 dễ đoán đáp án</li></ul></div></div>
   </div>
+  <p class="src">Kappa giữa các judge trên nhiều ngôn ngữ: Fu &amp; Liu, Findings EMNLP 2025</p>
 </section>
 
 <section class="slide l-thanks">
   <div class="big">Cảm ơn!</div>
   <div class="info">
-    <p>Cần góp ý: bản mẫu nhóm 7 và các đề xuất sửa D-110 đến D-119.</p>
+    <p>Cần góp ý: bản mẫu nhóm 7 và việc sửa sáu quyết định cũ (D-105 đến D-119).</p>
     <p style="margin-top:14px">research/reports/Seed scenario JobQuest.md<br>research/reports/Kinh tế và sức khoẻ JobQuest.md<br>occupation-data/decisions/</p>
     <div class="icons">
       <svg class="icon" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.350 0-3.5 0 0-1 0-3 1.5-2.640-.5-5.360-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.650-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
