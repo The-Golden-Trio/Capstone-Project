@@ -189,6 +189,17 @@
 
 ---
 
+## K. Dẫn truyện trong màn
+
+| ID | Quyết định | Ngày | Nguồn | Trạng thái |
+|---|---|---|---|---|
+| D-127 | **Thời gian trong màn: giữ ngân sách điểm, 1 điểm = số phút cố định theo nhịp nghề** (văn phòng IT 5 phút, nhà hàng giờ cao điểm 2 phút). Hội thoại tính theo cuộc: 1 điểm cho tối đa 3 lượt qua lại, kể cả cuộc do NPC mở. Nút giữa và nút kết tốn 1 điểm. Sự kiện có giờ luôn xảy ra đúng giờ và cắt đôi hành động dài. Lõi đi đúng thứ tự: nút do người chơi bật có giờ dự phòng; nút kế là nút theo giờ và còn cách tối đa 6 điểm thì có "Tạm làm việc khác". Lời hứa có hạn (theo giờ hay theo sự kiện) được ghi vào sổ tay; trễ quá 1 điểm thì người được hứa nhắc | 5–6/11 | Phúc chốt qua 5 lượt chơi thử; [Luật dẫn truyện](../../research/reports/Luật%20dẫn%20truyện%20JobQuest.md) A1, A1b | ✅ |
+| D-128 | **Nút soạn sẵn thích ứng theo việc người chơi đã làm.** Nút có lõi cố định (giữ D-67, D-89) và lời dẫn `adapt` theo cờ truyện; người chơi đi trước thì nút đẩy căng hơn, không hỏi lại. Nút đóng giữ nguyên chữ phương án và profile. Câu hỏi thêm là câu của nhân vật (`by`, `hook`): hook đã được trả lời trong pha thì bỏ qua, không gọi tên chỗ người chơi bỏ sót; không ai hỏi tự nhiên thì dời về "Nhìn lại ca" sau nút kết. Ở nút có NPC, nhịp cuối là câu NPC nói hay hỏi; "bạn làm gì?" (D-84) chỉ còn ở danh sách hành động | 5–6/11 | Phúc chốt; [Luật dẫn truyện](../../research/reports/Luật%20dẫn%20truyện%20JobQuest.md) A6, A7, A9, A11 | ✅ |
+| D-129 | **Điều kiện cần đọc chữ người chơi thì khai thành câu hỏi có/không**, do bộ phán (cùng cơ chế thư viện câu hỏi có/không của AI-5) trả lời. Kết quả thành cờ; engine quyết, AI-4 không phán. Bộ phán chạy khi cuộc trò chuyện đóng, artefact lưu, nút xong (trước nhịp chốt của NPC), và theo lượt cho việc cần đáp ngay như xin duyệt. Cờ chỉ bật, không tắt. Khúc mắc dành cho nút kết thì giấu tới nút kết; nút kết chấm theo cả nút (email lẫn lời) | 5–6/11 | Phúc chốt; [Luật dẫn truyện](../../research/reports/Luật%20dẫn%20truyện%20JobQuest.md) A12, A13 | ✅ |
+| D-130 | **Prompt AI-4 bản 2:** bốn việc `reply` · `bridge` · `reaction` · `probe`, trả `{beats: [{speaker, text, expression}], question_by}`, luật R1–R4 sửa và 12 luật cách viết. Đổi contract AI-4 Nhật đã duyệt, nên chờ Nhật duyệt trước khi viết `narrator.v2.ts` | 5/11 | [Luật dẫn truyện](../../research/reports/Luật%20dẫn%20truyện%20JobQuest.md) phần C | 💡 |
+
+---
+
 ## Mẫu thêm quyết định mới
 
 ```
