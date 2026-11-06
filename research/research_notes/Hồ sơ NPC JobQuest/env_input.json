@@ -1,0 +1,1482 @@
+[
+ {
+  "id": "WE_HYBRID_PRODUCT",
+  "industry": "IND_IT",
+  "name_vn": "Công ty làm sản phẩm công nghệ (product)",
+  "summary": "Công ty tự xây và vận hành sản phẩm của mình, từ startup Việt tới trung tâm R&D của tập đoàn nước ngoài. Áp lực đến từ mục tiêu sản phẩm hơn là giờ công.",
+  "dress_code": "Tự do",
+  "customer_contact": "Ít gặp khách trực tiếp; làm với người dùng qua số liệu, phản hồi",
+  "company_types": [
+   "Công ty product Việt Nam",
+   "Startup, fintech, thương mại điện tử",
+   "Trung tâm R&D của tập đoàn nước ngoài",
+   "Studio game tự phát hành"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_PROJECT_OUTSOURCING",
+  "industry": "IND_IT",
+  "name_vn": "Công ty gia công phần mềm (outsourcing)",
+  "summary": "Làm theo dự án cho khách hàng, phần lớn ở Nhật, Mỹ, châu Âu. Được luân chuyển qua nhiều dự án và công nghệ, ít quyết định hướng sản phẩm.",
+  "dress_code": "Công sở nhẹ, chỉnh tề hơn khi khách sang thăm",
+  "customer_contact": "Vừa: họp với khách qua kỹ sư cầu nối hoặc trực tiếp",
+  "company_types": [
+   "Công ty outsourcing lớn hàng nghìn kỹ sư",
+   "Công ty vừa chuyên thị trường Nhật",
+   "Công ty dịch vụ cho khách Mỹ, châu Âu"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_ONSITE_ENTERPRISE",
+  "industry": "IND_IT",
+  "name_vn": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+  "summary": "Làm công nghệ cho một doanh nghiệp không bán phần mềm: ngân hàng, bảo hiểm, viễn thông, bán lẻ, tập đoàn nhà nước. Mọi thay đổi phải qua phê duyệt, nhịp chậm nhưng ổn định.",
+  "dress_code": "Công sở",
+  "customer_contact": "Thấp: khách là các phòng nghiệp vụ trong công ty",
+  "company_types": [
+   "Ngân hàng thương mại",
+   "Công ty bảo hiểm",
+   "Nhà mạng viễn thông",
+   "Tập đoàn bán lẻ, sản xuất"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_SHIFT_24_7",
+  "industry": "IND_IT",
+  "name_vn": "Trung tâm giám sát vận hành 24/7 (SOC, NOC)",
+  "summary": "Hệ thống phải được canh liên tục nên nhân sự làm theo ca xoay vòng, gồm ca đêm, cuối tuần, ngày lễ. Việc gắn với cam kết thời gian xử lý sự cố.",
+  "dress_code": "Tuỳ nơi",
+  "customer_contact": "Thấp: làm với hệ thống và đồng nghiệp ca khác",
+  "company_types": [
+   "Nhà mạng viễn thông",
+   "Công ty dịch vụ an ninh mạng",
+   "Ngân hàng lớn",
+   "Trung tâm dữ liệu"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_FIELD_CLIENT",
+  "industry": "IND_IT",
+  "name_vn": "Đối tác triển khai hệ thống tại khách hàng",
+  "summary": "Triển khai và cấu hình hệ thống (ERP, mạng, hạ tầng) cho doanh nghiệp khác. Có mặt ở chỗ khách theo giai đoạn dự án, cắt chuyển thường vào đêm hoặc cuối tuần.",
+  "dress_code": "Công sở; vào nhà máy thì theo quy định bảo hộ của khách",
+  "customer_contact": "Cao: làm trực tiếp với người dùng nghiệp vụ của khách",
+  "company_types": [
+   "Đối tác triển khai ERP",
+   "Công ty tích hợp hệ thống (system integrator)",
+   "Nhà phân phối thiết bị mạng"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_REMOTE_GLOBAL",
+  "industry": "IND_IT",
+  "name_vn": "Làm từ xa cho công ty nước ngoài",
+  "summary": "Làm từ xa cho tổ chức toàn cầu, phối hợp qua tài liệu và họp lệch múi giờ. Rất hiếm ở Việt Nam và gần như chỉ dành cho người đã có kinh nghiệm.",
+  "dress_code": "Không áp dụng",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Công ty nước ngoài không có văn phòng ở Việt Nam",
+   "Nhóm phân tán toàn cầu"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_HEALTH_PUBLIC_HOSPITAL",
+  "industry": "IND_HEALTH",
+  "name_vn": "Bệnh viện công",
+  "summary": "Bệnh viện tỉnh hoặc trung ương, đông bệnh nhân, nhiều khoa phòng. Ngày làm hành chính xen trực đêm, trực ngày nghỉ theo lịch khoa.",
+  "dress_code": "Đồng phục y tế theo chức danh, đồ bảo hộ khi làm thủ thuật",
+  "customer_contact": "Cao: người bệnh và người nhà suốt ngày",
+  "company_types": [
+   "Bệnh viện đa khoa tỉnh",
+   "Bệnh viện chuyên khoa trung ương",
+   "Trung tâm y tế quận huyện có giường"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_HEALTH_PRIVATE_HOSPITAL",
+  "industry": "IND_HEALTH",
+  "name_vn": "Bệnh viện tư, quốc tế",
+  "summary": "Bệnh viện tư nhân với dịch vụ chăm sóc khách hàng kỹ, ít quá tải hơn. Cấp cứu và phòng mổ chạy 24 giờ, khám ngoại trú cả sáng thứ 7.",
+  "dress_code": "Đồng phục theo nhận diện bệnh viện",
+  "customer_contact": "Cao, khách kỳ vọng dịch vụ cao",
+  "company_types": [
+   "Bệnh viện đa khoa tư nhân",
+   "Bệnh viện quốc tế",
+   "Bệnh viện chuyên khoa tư (sản, mắt, thẩm mỹ)"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_HEALTH_CLINIC",
+  "industry": "IND_HEALTH",
+  "name_vn": "Phòng khám tư, chuyên khoa",
+  "summary": "Phòng khám nhỏ hoặc chuỗi (nha khoa, mắt, đông y, vật lý trị liệu). Giờ mở cửa do phòng khám tự đăng ký, thường kéo dài tới tối và cuối tuần.",
+  "dress_code": "Đồng phục phòng khám, khẩu trang, găng",
+  "customer_contact": "Cao: tư vấn, chốt gói điều trị với khách",
+  "company_types": [
+   "Chuỗi nha khoa",
+   "Phòng khám mắt, kính",
+   "Phòng khám đông y, vật lý trị liệu"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_HEALTH_GRASSROOTS",
+  "industry": "IND_HEALTH",
+  "name_vn": "Trạm y tế xã, trung tâm y tế cơ sở",
+  "summary": "Y tế ở xã, phường: khám ban đầu, tiêm chủng, phòng dịch, chăm sóc cộng đồng. Đi xuống thôn bản nhiều hơn ngồi trong trạm.",
+  "dress_code": "Áo blouse, đồng phục y tế",
+  "customer_contact": "Cao: người dân, trẻ em, người già",
+  "company_types": [
+   "Trạm y tế phường đô thị",
+   "Trạm y tế xã vùng nông thôn, miền núi"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_HEALTH_PHARMACY",
+  "industry": "IND_HEALTH",
+  "name_vn": "Nhà thuốc, chuỗi nhà thuốc",
+  "summary": "Bán và tư vấn thuốc tại quầy. Chuỗi lớn có hàng nghìn cửa hàng mở từ sáng sớm tới tối, chia ca.",
+  "dress_code": "Đồng phục chuỗi, áo blouse dược sĩ",
+  "customer_contact": "Cao: tư vấn khách tại quầy",
+  "company_types": [
+   "Chuỗi nhà thuốc toàn quốc",
+   "Nhà thuốc tư nhân độc lập",
+   "Nhà thuốc bệnh viện"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_HEALTH_CARE_HOME",
+  "industry": "IND_HEALTH",
+  "name_vn": "Viện dưỡng lão, chăm sóc tại nhà",
+  "summary": "Chăm sóc người già, người bệnh lâu dài ở viện dưỡng lão hoặc tại nhà gia đình. Việc nặng, túc trực gần như suốt ngày đêm.",
+  "dress_code": "Đồng phục điều dưỡng",
+  "customer_contact": "Cao: người già, người bệnh và gia đình",
+  "company_types": [
+   "Viện dưỡng lão tư nhân",
+   "Công ty cung ứng điều dưỡng tại nhà"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_HEALTH_EMERGENCY",
+  "industry": "IND_HEALTH",
+  "name_vn": "Trung tâm cấp cứu 115",
+  "summary": "Tổng đài và kíp cấp cứu ngoại viện chạy 24/7, xe xuất phát từ các trạm vệ tinh tới hiện trường trong vài phút.",
+  "dress_code": "Đồng phục cấp cứu màu xanh",
+  "customer_contact": "Cao: người bệnh, người nhà trong lúc hoảng loạn",
+  "company_types": [
+   "Trung tâm cấp cứu 115 thành phố",
+   "Đơn vị cấp cứu ngoại viện của bệnh viện tỉnh"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_HEALTH_VET",
+  "industry": "IND_HEALTH",
+  "name_vn": "Phòng khám, bệnh viện thú y",
+  "summary": "Khám chữa bệnh cho chó mèo và vật nuôi. Thị trường thú cưng hơn 7 triệu con nên phòng khám mở dài và cả cuối tuần.",
+  "dress_code": "Áo blouse, găng",
+  "customer_contact": "Cao: chủ vật nuôi lo lắng",
+  "company_types": [
+   "Bệnh viện thú y thú cưng",
+   "Phòng khám thú y nhỏ"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_SOCIAL_PUBLIC_CENTER",
+  "industry": "IND_SOCIAL",
+  "name_vn": "Trung tâm công tác xã hội, bảo trợ xã hội công lập",
+  "summary": "Nuôi dưỡng, hỗ trợ người già, trẻ em, người khuyết tật, người tâm thần. Có trực tại cơ sở nuôi dưỡng.",
+  "dress_code": "Đồng phục cơ sở hoặc công sở",
+  "customer_contact": "Cao: người yếu thế và gia đình",
+  "company_types": [
+   "Trung tâm công tác xã hội tỉnh",
+   "Cơ sở bảo trợ trẻ em, người già"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_SOCIAL_NGO",
+  "industry": "IND_SOCIAL",
+  "name_vn": "Tổ chức phi chính phủ, dự án phát triển",
+  "summary": "Làm theo dự án có tài trợ (trẻ em, bình đẳng giới, môi trường, y tế cộng đồng). Văn phòng ở thành phố, hay đi thực địa.",
+  "dress_code": "Tự do, lịch sự",
+  "customer_contact": "Vừa: cộng đồng, chính quyền địa phương, nhà tài trợ",
+  "company_types": [
+   "Tổ chức quốc tế có văn phòng ở Việt Nam",
+   "Tổ chức phi lợi nhuận trong nước"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_SOCIAL_COUNSELING",
+  "industry": "IND_SOCIAL",
+  "name_vn": "Phòng tham vấn, trị liệu tâm lý tư nhân",
+  "summary": "Tham vấn cá nhân, gia đình theo lịch hẹn, trực tiếp hoặc trực tuyến. Khách thường đặt buổi tối và cuối tuần.",
+  "dress_code": "Lịch sự, thoải mái",
+  "customer_contact": "Cao: một đối một với khách",
+  "company_types": [
+   "Trung tâm tham vấn tâm lý",
+   "Phòng khám tâm lý tư"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_EDU_PUBLIC_SCHOOL",
+  "industry": "IND_EDU",
+  "name_vn": "Trường công lập (mầm non đến THPT)",
+  "summary": "Trường công theo năm học của Bộ Giáo dục. Ngày làm xoay quanh tiết dạy, chấm bài, họp tổ, liên lạc phụ huynh.",
+  "dress_code": "Công sở chỉnh tề; nhiều trường có áo dài cho cô giáo vào thứ 2, ngày lễ",
+  "customer_contact": "Cao: học sinh và phụ huynh; phụ huynh là nguồn áp lực lớn nhất với trên 70% giáo viên",
+  "company_types": [
+   "Trường tiểu học công lập",
+   "Trường THCS, THPT công lập",
+   "Trường mầm non công lập"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_EDU_PRIVATE_SCHOOL",
+  "industry": "IND_EDU",
+  "name_vn": "Trường tư thục, quốc tế, song ngữ",
+  "summary": "Trường ngoài công lập tự đặt chế độ làm việc nhưng phải hợp quy định chung. Học phí cao nên kỳ vọng của phụ huynh cũng cao.",
+  "dress_code": "Đồng phục giáo viên của trường",
+  "customer_contact": "Rất cao: phụ huynh theo sát qua ứng dụng, nhóm chat",
+  "company_types": [
+   "Trường song ngữ",
+   "Trường quốc tế",
+   "Hệ thống mầm non tư thục"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_EDU_CENTER",
+  "industry": "IND_EDU",
+  "name_vn": "Trung tâm ngoại ngữ, luyện thi, kỹ năng",
+  "summary": "Dạy thêm cho học sinh, người đi làm sau giờ học, giờ làm. Lịch dồn vào buổi tối và cuối tuần.",
+  "dress_code": "Công sở chỉnh tề",
+  "customer_contact": "Cao: học viên và phụ huynh, chỉ tiêu giữ học viên",
+  "company_types": [
+   "Chuỗi trung tâm tiếng Anh",
+   "Trung tâm luyện thi",
+   "Trung tâm kỹ năng, STEM"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_EDU_UNI_PUBLIC",
+  "industry": "IND_EDU",
+  "name_vn": "Trường đại học, cao đẳng công lập",
+  "summary": "Giảng dạy, nghiên cứu và phục vụ cộng đồng theo định mức năm. Lịch dạy theo học kỳ, nghiên cứu và hội đồng chen giữa.",
+  "dress_code": "Công sở",
+  "customer_contact": "Vừa: sinh viên",
+  "company_types": [
+   "Đại học công lập đa ngành",
+   "Đại học kỹ thuật công lập",
+   "Cao đẳng công lập"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_EDU_UNI_PRIVATE",
+  "industry": "IND_EDU",
+  "name_vn": "Trường đại học tư thục",
+  "summary": "Đại học ngoài công lập, thường giờ hành chính rõ hơn trường công, chú trọng tuyển sinh và trải nghiệm sinh viên.",
+  "dress_code": "Công sở",
+  "customer_contact": "Vừa: sinh viên, phụ huynh",
+  "company_types": [
+   "Đại học tư đa ngành",
+   "Đại học có vốn nước ngoài"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_EDU_ONLINE",
+  "industry": "IND_EDU",
+  "name_vn": "Dạy trực tuyến, công ty edtech",
+  "summary": "Dạy, soạn học liệu, phát triển khoá học trên nền tảng trực tuyến. Lịch dạy theo học viên, nhiều ca tối.",
+  "dress_code": "Tự do",
+  "customer_contact": "Vừa: học viên qua màn hình",
+  "company_types": [
+   "Công ty edtech",
+   "Nền tảng gia sư trực tuyến"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_EDU_CULTURE",
+  "industry": "IND_EDU",
+  "name_vn": "Thư viện, bảo tàng, lưu trữ công lập",
+  "summary": "Thiết chế văn hoá nhà nước mở cửa phục vụ công chúng cả cuối tuần, nên lịch làm lệch với giờ hành chính.",
+  "dress_code": "Công sở, có nơi đồng phục",
+  "customer_contact": "Vừa: bạn đọc, khách tham quan",
+  "company_types": [
+   "Bảo tàng tỉnh, quốc gia",
+   "Thư viện tỉnh",
+   "Trung tâm lưu trữ"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_GOV_OFFICE",
+  "industry": "IND_GOV",
+  "name_vn": "Cơ quan hành chính nhà nước",
+  "summary": "Bộ, sở, UBND xã phường sau sắp xếp chính quyền hai cấp. Giờ hành chính 5 ngày, việc theo văn bản, kế hoạch năm.",
+  "dress_code": "Công sở",
+  "customer_contact": "Vừa: người dân, doanh nghiệp, cơ quan khác",
+  "company_types": [
+   "UBND phường đô thị",
+   "UBND xã nông thôn",
+   "Sở chuyên ngành cấp tỉnh"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_GOV_ONESTOP",
+  "industry": "IND_GOV",
+  "name_vn": "Trung tâm phục vụ hành chính công, bộ phận một cửa",
+  "summary": "Quầy tiếp nhận và trả hồ sơ thủ tục cho dân và doanh nghiệp. Việc tại quầy, nhiều người, nhiều câu hỏi.",
+  "dress_code": "Đồng phục hoặc công sở, đeo thẻ",
+  "customer_contact": "Rất cao: người dân tại quầy cả ngày",
+  "company_types": [
+   "Trung tâm phục vụ hành chính công tỉnh",
+   "Bộ phận một cửa phường, xã"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_GOV_TAX",
+  "industry": "IND_GOV",
+  "name_vn": "Cơ quan thuế",
+  "summary": "Thuế tỉnh, thuế cơ sở: quản lý, hỗ trợ, kiểm tra người nộp thuế. Nhịp năm xoay quanh mùa quyết toán.",
+  "dress_code": "Trang phục ngành thuế",
+  "customer_contact": "Vừa: người nộp thuế, kế toán doanh nghiệp",
+  "company_types": [
+   "Thuế tỉnh",
+   "Thuế cơ sở"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_GOV_BORDER",
+  "industry": "IND_GOV",
+  "name_vn": "Cửa khẩu, hải quan, biên phòng",
+  "summary": "Kiểm tra người, hàng, phương tiện qua cửa khẩu đất liền, cảng biển, sân bay. Cửa khẩu lớn và sân bay chạy theo ca.",
+  "dress_code": "Trang phục ngành hải quan, quân phục biên phòng",
+  "customer_contact": "Cao: hành khách, doanh nghiệp, lái xe",
+  "company_types": [
+   "Chi cục hải quan cửa khẩu sân bay",
+   "Cửa khẩu đường bộ biên giới"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_GOV_POLICE",
+  "industry": "IND_GOV",
+  "name_vn": "Công an (đồn, phòng nghiệp vụ)",
+  "summary": "Công an phường xã và các phòng nghiệp vụ, điều tra. Trực ban 24/24, kỷ luật lực lượng vũ trang.",
+  "dress_code": "Quân phục công an",
+  "customer_contact": "Cao: người dân, người vi phạm",
+  "company_types": [
+   "Công an phường",
+   "Phòng cảnh sát điều tra cấp tỉnh"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_GOV_FIRE",
+  "industry": "IND_GOV",
+  "name_vn": "Cảnh sát phòng cháy chữa cháy và cứu nạn",
+  "summary": "Đội chữa cháy trực sẵn sàng, xe phải xuất phát trong vòng 90 giây khi có tin báo. Trực một ngày nghỉ một ngày.",
+  "dress_code": "Quân phục công an, đồ chống cháy, bình thở",
+  "customer_contact": "Cao: nạn nhân và người dân tại hiện trường",
+  "company_types": [
+   "Đội cảnh sát chữa cháy khu vực đô thị",
+   "Đội chữa cháy khu công nghiệp"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_GOV_PRISON",
+  "industry": "IND_GOV",
+  "name_vn": "Trại giam, trại tạm giam",
+  "summary": "Quản lý, giáo dục phạm nhân trong khu biệt lập. Trực canh gác luân phiên, kỷ luật nghiêm.",
+  "dress_code": "Quân phục công an",
+  "customer_contact": "Cao: phạm nhân và thân nhân",
+  "company_types": [
+   "Trại giam cấp bộ",
+   "Trại tạm giam công an tỉnh"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_GOV_FOREST",
+  "industry": "IND_GOV",
+  "name_vn": "Hạt kiểm lâm, vườn quốc gia",
+  "summary": "Tuần tra bảo vệ rừng, phòng cháy rừng, xử lý vi phạm. Mùa khô trực chốt 24/24.",
+  "dress_code": "Trang phục kiểm lâm",
+  "customer_contact": "Vừa: người dân sống gần rừng",
+  "company_types": [
+   "Hạt kiểm lâm huyện",
+   "Vườn quốc gia"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_LEGAL_COURT",
+  "industry": "IND_LEGAL",
+  "name_vn": "Toà án",
+  "summary": "Toà án tỉnh và toà án khu vực sau cải cách 2025. Việc gồm nghiên cứu hồ sơ, hoà giải và xét xử theo lịch phiên toà.",
+  "dress_code": "Trang phục ngành toà án; áo choàng khi xét xử",
+  "customer_contact": "Vừa: đương sự, luật sư",
+  "company_types": [
+   "Toà án nhân dân khu vực",
+   "Toà án nhân dân cấp tỉnh"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_LEGAL_LAWFIRM",
+  "industry": "IND_LEGAL",
+  "name_vn": "Công ty luật, văn phòng luật sư",
+  "summary": "Tư vấn doanh nghiệp, tranh tụng, giấy phép. Khoảng 20.000 luật sư; người mới bắt đầu bằng tập sự.",
+  "dress_code": "Công sở trang trọng; áo choàng luật sư khi ra toà",
+  "customer_contact": "Cao: khách hàng, cơ quan nhà nước",
+  "company_types": [
+   "Hãng luật lớn tư vấn doanh nghiệp",
+   "Văn phòng luật sư tranh tụng",
+   "Công ty luật nước ngoài"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_FIN_BANK_HQ",
+  "industry": "IND_FIN",
+  "name_vn": "Hội sở ngân hàng",
+  "summary": "Khối văn phòng ngân hàng: thẩm định, rủi ro, tuân thủ, phân tích, chăm sóc khách hàng. Giờ hành chính, KPI theo quý.",
+  "dress_code": "Đồng phục ngân hàng các ngày trong tuần",
+  "customer_contact": "Thấp tới vừa",
+  "company_types": [
+   "Ngân hàng thương mại cổ phần",
+   "Ngân hàng thương mại nhà nước",
+   "Ngân hàng nước ngoài"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_FIN_BANK_BRANCH",
+  "industry": "IND_FIN",
+  "name_vn": "Chi nhánh, phòng giao dịch ngân hàng",
+  "summary": "Quầy giao dịch và chuyên viên quan hệ khách hàng. Giờ mở cửa cố định, cuối ngày đối chiếu quỹ, chỉ tiêu huy động.",
+  "dress_code": "Đồng phục ngân hàng",
+  "customer_contact": "Rất cao: khách tại quầy",
+  "company_types": [
+   "Chi nhánh ngân hàng cổ phần",
+   "Phòng giao dịch ngân hàng nhà nước"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_FIN_SECURITIES",
+  "industry": "IND_FIN",
+  "name_vn": "Công ty chứng khoán, quản lý quỹ",
+  "summary": "Môi giới, phân tích, đầu tư theo nhịp phiên giao dịch. Ngày làm bám giờ mở và đóng cửa thị trường.",
+  "dress_code": "Công sở",
+  "customer_contact": "Cao với môi giới, thấp với phân tích",
+  "company_types": [
+   "Công ty chứng khoán",
+   "Công ty quản lý quỹ"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_FIN_INSURANCE",
+  "industry": "IND_FIN",
+  "name_vn": "Công ty bảo hiểm",
+  "summary": "Văn phòng nghiệp vụ (định phí, thẩm định, bồi thường) và mạng lưới đại lý. Đại lý ký hợp đồng đại lý, không phải hợp đồng lao động.",
+  "dress_code": "Đồng phục công ty, công sở",
+  "customer_contact": "Cao với đại lý và bồi thường",
+  "company_types": [
+   "Công ty bảo hiểm nhân thọ",
+   "Công ty bảo hiểm phi nhân thọ"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_FIN_AUDIT",
+  "industry": "IND_FIN",
+  "name_vn": "Công ty kiểm toán, thẩm định giá, tư vấn",
+  "summary": "Kiểm toán, thẩm định giá, tư vấn cho doanh nghiệp khách hàng. Nửa đầu năm là mùa cao điểm, đi khách hàng nhiều.",
+  "dress_code": "Công sở trang trọng",
+  "customer_contact": "Cao: kế toán, ban giám đốc khách hàng",
+  "company_types": [
+   "Hãng kiểm toán quốc tế",
+   "Công ty kiểm toán trong nước",
+   "Công ty thẩm định giá"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CORP_SME",
+  "industry": "IND_CORP",
+  "name_vn": "Văn phòng doanh nghiệp vừa và nhỏ trong nước",
+  "summary": "Công ty tư nhân vài chục tới vài trăm người: thương mại, dịch vụ, sản xuất nhỏ. Một người kiêm nhiều việc, làm cả sáng thứ 7.",
+  "dress_code": "Công sở, có nơi đồng phục áo công ty",
+  "customer_contact": "Vừa",
+  "company_types": [
+   "Công ty thương mại",
+   "Công ty dịch vụ",
+   "Công ty gia đình đang lớn"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CORP_LARGE",
+  "industry": "IND_CORP",
+  "name_vn": "Văn phòng tập đoàn lớn trong nước",
+  "summary": "Tập đoàn đa ngành hoặc doanh nghiệp nhà nước lớn. Quy trình bài bản, nhiều phòng ban, giờ hành chính.",
+  "dress_code": "Công sở, có nơi đồng phục",
+  "customer_contact": "Thấp tới vừa",
+  "company_types": [
+   "Tập đoàn đa ngành tư nhân",
+   "Tổng công ty nhà nước",
+   "Tập đoàn bán lẻ, tiêu dùng"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CORP_FDI",
+  "industry": "IND_CORP",
+  "name_vn": "Văn phòng công ty nước ngoài, đa quốc gia",
+  "summary": "Văn phòng đại diện hoặc khối văn phòng của công ty FDI. Thứ 2 đến thứ 6, quy trình toàn cầu, dùng tiếng Anh.",
+  "dress_code": "Công sở lịch sự, có ngày thứ 6 mặc tự do",
+  "customer_contact": "Vừa",
+  "company_types": [
+   "Văn phòng tập đoàn tiêu dùng đa quốc gia",
+   "Văn phòng công ty Nhật, Hàn",
+   "Văn phòng đại diện công ty châu Âu"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CORP_AGENCY",
+  "industry": "IND_CORP",
+  "name_vn": "Agency marketing, quảng cáo, sự kiện",
+  "summary": "Làm chiến dịch cho nhiều nhãn hàng cùng lúc. Nhịp theo deadline của khách, nhiều buổi pitch và sự kiện cuối tuần.",
+  "dress_code": "Tự do, sáng tạo",
+  "customer_contact": "Cao: khách hàng nhãn hàng",
+  "company_types": [
+   "Agency quảng cáo sáng tạo",
+   "Agency digital, mạng xã hội",
+   "Công ty tổ chức sự kiện"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CORP_LOGISTICS",
+  "industry": "IND_CORP",
+  "name_vn": "Công ty logistics, giao nhận, xuất nhập khẩu",
+  "summary": "Đặt chỗ tàu, làm chứng từ, thông quan cho hàng xuất nhập khẩu. Cut-off của hãng tàu là hạn chót cứng.",
+  "dress_code": "Công sở",
+  "customer_contact": "Vừa: khách hàng, hãng tàu, hải quan",
+  "company_types": [
+   "Công ty giao nhận vừa và nhỏ",
+   "Công ty logistics nước ngoài",
+   "Đại lý hãng tàu"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CORP_REALESTATE",
+  "industry": "IND_CORP",
+  "name_vn": "Sàn giao dịch, môi giới bất động sản",
+  "summary": "Lương cứng thấp cộng hoa hồng, đi dẫn khách xem dự án. Thị trường lên xuống theo chu kỳ.",
+  "dress_code": "Áo sơ mi công ty, công sở",
+  "customer_contact": "Rất cao",
+  "company_types": [
+   "Sàn phân phối dự án lớn",
+   "Văn phòng môi giới nhỏ"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_MFG_FDI_PLANT",
+  "industry": "IND_MFG",
+  "name_vn": "Nhà máy FDI trong khu công nghiệp",
+  "summary": "Nhà máy điện tử, may, giày, linh kiện của doanh nghiệp nước ngoài. Ca kíp, tăng ca theo đơn hàng, xe đưa đón, bữa ca.",
+  "dress_code": "Đồng phục, thẻ, đồ bảo hộ theo khu vực",
+  "customer_contact": "Thấp với công nhân; kỹ sư, phiên dịch làm với chuyên gia nước ngoài",
+  "company_types": [
+   "Nhà máy điện tử Hàn Quốc",
+   "Nhà máy may, giày xuất khẩu",
+   "Nhà máy linh kiện Nhật Bản"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_MFG_LOCAL_PLANT",
+  "industry": "IND_MFG",
+  "name_vn": "Nhà máy doanh nghiệp trong nước",
+  "summary": "Nhà máy của doanh nghiệp Việt: cơ khí, vật liệu, gỗ, nhựa, dược, ô tô lắp ráp. Ca hành chính hoặc 2–3 ca, làm thứ 7.",
+  "dress_code": "Đồng phục, bảo hộ",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Nhà máy cơ khí",
+   "Nhà máy gỗ xuất khẩu",
+   "Nhà máy dược, hoá chất"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_MFG_WORKSHOP",
+  "industry": "IND_MFG",
+  "name_vn": "Xưởng nhỏ, cơ sở gia đình, làng nghề",
+  "summary": "Xưởng vài chục người hoặc hộ gia đình: mộc, kim hoàn, bánh, in, nhôm kính, labo nha khoa. Giờ theo đơn, phần lớn phi chính thức.",
+  "dress_code": "Quần áo lao động tự túc",
+  "customer_contact": "Vừa: khách đặt hàng trực tiếp",
+  "company_types": [
+   "Xưởng mộc làng nghề",
+   "Xưởng kim hoàn gia đình",
+   "Xưởng in, bao bì nhỏ"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_MFG_CLEANROOM",
+  "industry": "IND_MFG",
+  "name_vn": "Nhà máy công nghệ cao, phòng sạch",
+  "summary": "Lắp ráp, kiểm tra chip và linh kiện bán dẫn trong phòng sạch. Máy chạy liên tục nên vận hành theo ca.",
+  "dress_code": "Đồ phòng sạch: mũ, khẩu trang, găng, giày chống tĩnh điện",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Nhà máy lắp ráp, kiểm thử chip",
+   "Nhà máy linh kiện công nghệ cao"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_MFG_FOOD_PLANT",
+  "industry": "IND_MFG",
+  "name_vn": "Nhà máy chế biến thực phẩm, thuỷ sản",
+  "summary": "Sơ chế, chế biến, đóng gói thực phẩm, thuỷ sản, sữa. Làm theo ca, có khu lạnh, cao điểm theo mùa vụ nguyên liệu.",
+  "dress_code": "Áo, mũ trùm, ủng, găng, khẩu trang theo vệ sinh an toàn thực phẩm",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Nhà máy thuỷ sản xuất khẩu",
+   "Nhà máy sữa, đồ uống",
+   "Nhà máy bánh kẹo"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_ENERGY_POWER_PLANT",
+  "industry": "IND_ENERGY",
+  "name_vn": "Nhà máy điện",
+  "summary": "Nhiệt điện, thuỷ điện, điện mặt trời vận hành liên tục. Kíp vận hành ghi thông số hằng giờ, giao ca đúng giờ.",
+  "dress_code": "Đồng phục bảo hộ, mũ, giày",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Nhà máy nhiệt điện",
+   "Nhà máy thuỷ điện"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_ENERGY_GRID",
+  "industry": "IND_ENERGY",
+  "name_vn": "Truyền tải, phân phối điện",
+  "summary": "Quản lý đường dây, trạm biến áp, sửa chữa sự cố lưới. Mùa nắng nóng tăng trực, đi tuyến dài.",
+  "dress_code": "Đồng phục bảo hộ ngành điện, dây an toàn",
+  "customer_contact": "Vừa: khách hàng dùng điện",
+  "company_types": [
+   "Công ty truyền tải điện",
+   "Điện lực tỉnh"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_ENERGY_WATER",
+  "industry": "IND_ENERGY",
+  "name_vn": "Công ty cấp nước, xử lý nước thải",
+  "summary": "Vận hành nhà máy nước, trạm xử lý nước thải của đô thị, khu công nghiệp. Chạy liên tục theo ba ca.",
+  "dress_code": "Đồng phục, ủng, găng, khẩu trang",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Công ty cấp nước đô thị",
+   "Công ty vận hành trạm xử lý nước thải khu công nghiệp"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_ENERGY_OIL_GAS",
+  "industry": "IND_ENERGY",
+  "name_vn": "Lọc hoá dầu, dầu khí ngoài khơi",
+  "summary": "Nhà máy lọc dầu trên bờ chạy theo ca; giàn khoan ngoài khơi làm theo phiên nhiều tuần rồi nghỉ bằng số ngày đã làm.",
+  "dress_code": "Đồ bảo hộ chống cháy, mũ, kính, giày",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Nhà máy lọc hoá dầu",
+   "Công ty khai thác dầu khí ngoài khơi"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_ENERGY_MINE",
+  "industry": "IND_ENERGY",
+  "name_vn": "Mỏ than, mỏ khoáng sản",
+  "summary": "Khai thác hầm lò hoặc lộ thiên, chủ yếu ở Quảng Ninh. Hầm lò là nghề đặc biệt nặng nhọc, độc hại, nguy hiểm.",
+  "dress_code": "Quần áo bảo hộ, mũ có đèn lò, ủng, bình tự cứu",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Công ty than hầm lò",
+   "Mỏ lộ thiên"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_SCI_INSTITUTE",
+  "industry": "IND_SCI",
+  "name_vn": "Viện nghiên cứu, trung tâm khoa học nhà nước",
+  "summary": "Làm đề tài, dự án nghiên cứu theo năm. Giờ hành chính, tiến độ theo hạn nghiệm thu đề tài.",
+  "dress_code": "Công sở, áo blouse trong phòng thí nghiệm",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Viện nghiên cứu thuộc bộ",
+   "Viện thuộc viện hàn lâm"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_SCI_TESTING_LAB",
+  "industry": "IND_SCI",
+  "name_vn": "Trung tâm kiểm nghiệm, phòng thí nghiệm dịch vụ",
+  "summary": "Phân tích mẫu thực phẩm, hàng hoá, môi trường theo yêu cầu khách và theo chuẩn. Giờ hành chính, nhiều mẫu gấp.",
+  "dress_code": "Áo blouse, kính, găng",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Trung tâm kiểm nghiệm nhà nước",
+   "Phòng thí nghiệm dịch vụ nước ngoài"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_SCI_FIELD_STATION",
+  "industry": "IND_SCI",
+  "name_vn": "Đài, trạm khí tượng thuỷ văn, đoàn địa chất",
+  "summary": "Quan trắc khí tượng, thuỷ văn, địa chất tại trạm và ngoài thực địa. Mùa bão lũ tăng số lần đo, trực dày.",
+  "dress_code": "Áo phao, đồ đi mưa, đồ bảo hộ thực địa",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Đài khí tượng thuỷ văn khu vực",
+   "Liên đoàn địa chất"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_ENG_DESIGN_RND",
+  "industry": "IND_ENG",
+  "name_vn": "Văn phòng thiết kế, R&D kỹ thuật",
+  "summary": "Thiết kế ô tô, cơ khí, điện tử, phần mềm nhúng ở trung tâm R&D của tập đoàn hoặc hãng xe. Giờ hành chính, áp lực theo mốc phát triển.",
+  "dress_code": "Công sở, đồ bảo hộ khi xuống xưởng",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Trung tâm R&D tập đoàn điện tử nước ngoài",
+   "Khối thiết kế của hãng ô tô Việt",
+   "Công ty thiết kế kỹ thuật"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_ENG_EQUIPMENT_SERVICE",
+  "industry": "IND_ENG",
+  "name_vn": "Nhà cung cấp, bảo trì thiết bị",
+  "summary": "Bán, lắp đặt và bảo trì thiết bị y tế, công nghiệp, máy công trình cho khách. Kỹ sư đi khách hàng nhiều.",
+  "dress_code": "Đồng phục công ty, đồ bảo hộ theo nơi làm",
+  "customer_contact": "Cao",
+  "company_types": [
+   "Nhà phân phối thiết bị y tế",
+   "Nhà cung cấp máy công nghiệp"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_ENG_TELECOM",
+  "industry": "IND_ENG",
+  "name_vn": "Nhà mạng viễn thông",
+  "summary": "Vận hành, lắp đặt, sửa chữa mạng di động, cáp quang ở mọi tỉnh. Sau bão là đợt trực khôi phục cáp xuyên đêm.",
+  "dress_code": "Đồng phục nhà mạng, dây an toàn",
+  "customer_contact": "Cao với kỹ thuật viên lắp đặt tại nhà",
+  "company_types": [
+   "Nhà mạng di động lớn",
+   "Nhà cung cấp internet cáp quang"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_CONS_SITE",
+  "industry": "IND_CONS",
+  "name_vn": "Công trường của nhà thầu xây dựng",
+  "summary": "Công trường nhà cao tầng, nhà xưởng, hạ tầng của nhà thầu chính. Làm theo tiến độ, ngoài trời, cả thứ 7 và có khi Chủ nhật.",
+  "dress_code": "Mũ bảo hộ, giày, áo phản quang, dây an toàn do người sử dụng lao động trang cấp",
+  "customer_contact": "Thấp tới vừa: chủ đầu tư, tư vấn giám sát",
+  "company_types": [
+   "Nhà thầu chính xây dựng dân dụng",
+   "Nhà thầu hạ tầng, giao thông",
+   "Nhà thầu cơ điện (M&E)"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CONS_CONSULTANT",
+  "industry": "IND_CONS",
+  "name_vn": "Công ty tư vấn thiết kế, giám sát",
+  "summary": "Thiết kế kiến trúc, kết cấu, nội thất, quy hoạch, dự toán và giám sát thi công. Văn phòng xen ra công trường.",
+  "dress_code": "Công sở; bảo hộ khi ra công trường",
+  "customer_contact": "Vừa: chủ đầu tư, chủ nhà",
+  "company_types": [
+   "Văn phòng kiến trúc",
+   "Công ty tư vấn kết cấu, giám sát",
+   "Công ty thiết kế, thi công nội thất"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CONS_CREW",
+  "industry": "IND_CONS",
+  "name_vn": "Tổ đội thợ, nhà thầu phụ, thợ tự do",
+  "summary": "Đội thợ nhận khoán phần việc từ nhà thầu hoặc sửa nhà cho dân. Phần lớn làm phi chính thức, trả theo công nhật hoặc khoán.",
+  "dress_code": "Quần áo lao động tự túc, mũ",
+  "customer_contact": "Vừa: chủ nhà, cai thầu",
+  "company_types": [
+   "Đội thợ nhận khoán",
+   "Thợ sửa nhà tự do"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_CONS_DEVELOPER",
+  "industry": "IND_CONS",
+  "name_vn": "Chủ đầu tư, ban quản lý dự án",
+  "summary": "Phía chủ đầu tư bất động sản hoặc ban quản lý dự án nhà nước: lập kế hoạch, chọn nhà thầu, theo dõi tiến độ, giải ngân.",
+  "dress_code": "Công sở",
+  "customer_contact": "Vừa: nhà thầu, cơ quan cấp phép",
+  "company_types": [
+   "Chủ đầu tư bất động sản",
+   "Ban quản lý dự án đầu tư xây dựng"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_FAC_BUILDING",
+  "industry": "IND_FACILITY",
+  "name_vn": "Ban quản lý toà nhà, chung cư, khu đô thị",
+  "summary": "Vận hành toà văn phòng, chung cư, trung tâm thương mại: kỹ thuật, an ninh, vệ sinh, cảnh quan, chăm sóc cư dân.",
+  "dress_code": "Đồng phục ban quản lý",
+  "customer_contact": "Cao: cư dân, khách thuê",
+  "company_types": [
+   "Công ty quản lý vận hành toà nhà",
+   "Ban quản lý khu đô thị"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_FAC_OUTSOURCED_SERVICE",
+  "industry": "IND_FACILITY",
+  "name_vn": "Công ty dịch vụ vệ sinh, bảo vệ",
+  "summary": "Cung cấp nhân viên vệ sinh, bảo vệ cho toà nhà, nhà máy, khách sạn. Ca dài, hay ca 12 giờ.",
+  "dress_code": "Đồng phục công ty dịch vụ",
+  "customer_contact": "Vừa: khách, cư dân, nhân viên toà nhà",
+  "company_types": [
+   "Công ty dịch vụ bảo vệ",
+   "Công ty vệ sinh công nghiệp"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_FAC_URBAN_ENV",
+  "industry": "IND_FACILITY",
+  "name_vn": "Công ty môi trường đô thị, cây xanh",
+  "summary": "Thu gom rác, quét đường, chăm sóc cây xanh công viên. Ca đêm và rạng sáng là chính, ngoài trời quanh năm.",
+  "dress_code": "Áo phản quang, găng, ủng, khẩu trang",
+  "customer_contact": "Thấp tới vừa: người dân trên tuyến",
+  "company_types": [
+   "Công ty môi trường đô thị",
+   "Công ty công viên cây xanh"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_FAC_HOME_SERVICE",
+  "industry": "IND_FACILITY",
+  "name_vn": "Dịch vụ kỹ thuật tận nhà",
+  "summary": "Sửa, lắp điều hoà, điện nước, diệt côn trùng tại nhà khách. Thợ đi xe máy, nhận việc trong ngày.",
+  "dress_code": "Đồng phục công ty hoặc tự túc",
+  "customer_contact": "Cao: chủ nhà",
+  "company_types": [
+   "Công ty dịch vụ điện lạnh",
+   "Công ty kiểm soát côn trùng",
+   "Thợ tự do qua ứng dụng gọi thợ"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_REPAIR_DEALER",
+  "industry": "IND_REPAIR",
+  "name_vn": "Xưởng dịch vụ đại lý ô tô, xe máy chính hãng",
+  "summary": "Xưởng bảo dưỡng của đại lý chính hãng (3S, HEAD). Quy trình theo hãng, khách đặt lịch.",
+  "dress_code": "Đồng phục kỹ thuật viên của hãng",
+  "customer_contact": "Vừa: cố vấn dịch vụ gặp khách, thợ ít",
+  "company_types": [
+   "Đại lý ô tô chính hãng",
+   "Đại lý xe máy chính hãng"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_REPAIR_SHOP",
+  "industry": "IND_REPAIR",
+  "name_vn": "Tiệm sửa chữa nhỏ, garage tư",
+  "summary": "Tiệm sửa xe máy, garage ô tô tư nhân, tiệm sửa đồ điện tử. Mở cửa dài, chủ và thợ làm cùng nhau.",
+  "dress_code": "Quần áo lao động",
+  "customer_contact": "Cao: khách chờ tại tiệm",
+  "company_types": [
+   "Tiệm sửa xe máy",
+   "Garage ô tô tư nhân",
+   "Tiệm sửa điện thoại, điện tử"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_REPAIR_AVIATION",
+  "industry": "IND_REPAIR",
+  "name_vn": "Trung tâm bảo dưỡng máy bay",
+  "summary": "Bảo dưỡng tàu bay tại sân bay và hangar, chạy 24/7. Thợ cần chứng chỉ, làm theo quy trình an toàn hàng không.",
+  "dress_code": "Đồng phục kỹ thuật, bảo hộ tai",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Công ty bảo dưỡng tàu bay",
+   "Bộ phận kỹ thuật hãng hàng không"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_HOSP_HOTEL",
+  "industry": "IND_HOSP",
+  "name_vn": "Khách sạn, resort 4–5 sao",
+  "summary": "Khách sạn lớn chạy 24/7 với lễ tân, buồng phòng, bếp, nhà hàng, sự kiện. Đồng phục, ca xoay, đông nhất dịp lễ Tết và hè.",
+  "dress_code": "Đồng phục theo bộ phận",
+  "customer_contact": "Rất cao: khách lưu trú, có khách nước ngoài",
+  "company_types": [
+   "Khách sạn 5 sao thương hiệu quốc tế",
+   "Resort ven biển",
+   "Khách sạn 4 sao trong nước"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_HOSP_SMALL_LODGING",
+  "industry": "IND_HOSP",
+  "name_vn": "Khách sạn nhỏ, nhà nghỉ, homestay",
+  "summary": "Cơ sở lưu trú nhỏ do gia đình hoặc chủ tư nhân điều hành. Một người kiêm lễ tân, đặt phòng, dọn dẹp.",
+  "dress_code": "Tự do hoặc áo đồng phục đơn giản",
+  "customer_contact": "Cao",
+  "company_types": [
+   "Khách sạn mini",
+   "Homestay"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_HOSP_FNB_CHAIN",
+  "industry": "IND_HOSP",
+  "name_vn": "Chuỗi nhà hàng, cà phê, đồ ăn nhanh",
+  "summary": "Chuỗi F&B có quy trình chuẩn, chia ca, có ca gãy. Đông nhất giờ trưa, giờ tối và cuối tuần.",
+  "dress_code": "Đồng phục, tạp dề, mũ theo chuỗi",
+  "customer_contact": "Rất cao",
+  "company_types": [
+   "Chuỗi cà phê",
+   "Chuỗi lẩu nướng",
+   "Chuỗi đồ ăn nhanh"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_HOSP_FNB_SMALL",
+  "industry": "IND_HOSP",
+  "name_vn": "Nhà hàng, quán cà phê, bar độc lập",
+  "summary": "Quán do chủ trực tiếp điều hành. Giờ mở cửa sớm hoặc khuya tuỳ quán, ít quy trình.",
+  "dress_code": "Tự do, tạp dề",
+  "customer_contact": "Rất cao",
+  "company_types": [
+   "Quán ăn gia đình",
+   "Quán cà phê độc lập",
+   "Bar, quán nhậu"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_HOSP_TRAVEL",
+  "industry": "IND_HOSP",
+  "name_vn": "Công ty lữ hành",
+  "summary": "Bán và điều hành tour trong nước, nước ngoài. Hướng dẫn viên đi theo đoàn, văn phòng bán tour theo mùa.",
+  "dress_code": "Đồng phục công ty, thẻ hướng dẫn viên",
+  "customer_contact": "Rất cao: khách cả ngày",
+  "company_types": [
+   "Công ty lữ hành lớn",
+   "Công ty tour nước ngoài vào Việt Nam",
+   "Công ty lữ hành nhỏ"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_HOSP_ENTERTAINMENT",
+  "industry": "IND_HOSP",
+  "name_vn": "Khu vui chơi, công viên giải trí",
+  "summary": "Công viên giải trí, công viên nước, khu vui chơi trong nhà. Đông nhất cuối tuần, lễ và hè.",
+  "dress_code": "Đồng phục khu vui chơi",
+  "customer_contact": "Rất cao: gia đình, trẻ em",
+  "company_types": [
+   "Công viên giải trí",
+   "Công viên nước"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_RETAIL_CHAIN",
+  "industry": "IND_RETAIL",
+  "name_vn": "Siêu thị, chuỗi bán lẻ, trung tâm thương mại",
+  "summary": "Siêu thị, chuỗi cửa hàng tiện lợi, điện máy, thời trang, vàng bạc. Ca sáng và ca chiều tối, đứng cả ca.",
+  "dress_code": "Đồng phục chuỗi",
+  "customer_contact": "Rất cao",
+  "company_types": [
+   "Chuỗi siêu thị",
+   "Chuỗi cửa hàng tiện lợi",
+   "Chuỗi điện máy, điện thoại"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_RETAIL_SHOP",
+  "industry": "IND_RETAIL",
+  "name_vn": "Cửa hàng nhỏ, hộ kinh doanh",
+  "summary": "Cửa hàng gia đình, tạp hoá, shop thời trang mặt phố. Bán lẻ truyền thống vẫn chiếm 65–70% thị trường.",
+  "dress_code": "Tự do",
+  "customer_contact": "Rất cao",
+  "company_types": [
+   "Shop thời trang",
+   "Cửa hàng tạp hoá",
+   "Cửa hàng điện thoại nhỏ"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_RETAIL_ONLINE",
+  "industry": "IND_RETAIL",
+  "name_vn": "Tự kinh doanh online, livestream bán hàng",
+  "summary": "Bán hàng qua sàn thương mại điện tử, mạng xã hội, livestream. Giờ vàng là buổi tối và các ngày sale đôi.",
+  "dress_code": "Tự do; chỉn chu khi livestream",
+  "customer_contact": "Cao: khách qua tin nhắn, bình luận",
+  "company_types": [
+   "Shop online tự làm",
+   "Nhóm livestream bán hàng"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_PERS_BEAUTY_CHAIN",
+  "industry": "IND_PERSONAL",
+  "name_vn": "Chuỗi spa, salon, thẩm mỹ viện",
+  "summary": "Chuỗi làm đẹp có quy trình, chỉ tiêu bán liệu trình. Lương cứng thấp cộng tour và hoa hồng.",
+  "dress_code": "Đồng phục spa",
+  "customer_contact": "Rất cao: tư vấn, chăm sóc trực tiếp",
+  "company_types": [
+   "Chuỗi spa chăm sóc da",
+   "Chuỗi salon tóc",
+   "Thẩm mỹ viện"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_PERS_BEAUTY_SMALL",
+  "industry": "IND_PERSONAL",
+  "name_vn": "Tiệm tóc, nail, spa nhỏ",
+  "summary": "Tiệm do chủ là thợ chính, vài thợ phụ. Học nghề tại tiệm, trả theo sản phẩm.",
+  "dress_code": "Tự do, tạp dề",
+  "customer_contact": "Rất cao",
+  "company_types": [
+   "Tiệm tóc",
+   "Tiệm nail",
+   "Tiệm gội đầu dưỡng sinh"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_PERS_GYM",
+  "industry": "IND_PERSONAL",
+  "name_vn": "Phòng gym, trung tâm thể hình",
+  "summary": "Chuỗi phòng tập và phòng tập độc lập. Huấn luyện viên cá nhân sống bằng lương cứng cộng hoa hồng gói tập.",
+  "dress_code": "Đồng phục thể thao của phòng tập",
+  "customer_contact": "Rất cao: một kèm một",
+  "company_types": [
+   "Chuỗi phòng gym lớn",
+   "Phòng tập độc lập",
+   "Phòng tập trong khách sạn"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_PERS_HOUSEHOLD",
+  "industry": "IND_PERSONAL",
+  "name_vn": "Làm tại nhà khách (giúp việc, bảo mẫu, chăm sóc)",
+  "summary": "Giúp việc, trông trẻ, chăm người già tại nhà gia đình, ở lại hoặc theo giờ, qua công ty cung ứng hoặc tự thoả thuận.",
+  "dress_code": "Tự do",
+  "customer_contact": "Rất cao: sống cùng gia đình chủ",
+  "company_types": [
+   "Công ty cung ứng giúp việc",
+   "Gia đình thuê trực tiếp"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_PERS_FUNERAL",
+  "industry": "IND_PERSONAL",
+  "name_vn": "Nhà tang lễ, dịch vụ tang lễ",
+  "summary": "Tổ chức tang lễ, lưu giữ, vận chuyển thi hài, hoả táng. Nhận việc bất kỳ giờ nào.",
+  "dress_code": "Đồng phục trang nghiêm",
+  "customer_contact": "Rất cao: gia đình đang đau buồn",
+  "company_types": [
+   "Nhà tang lễ thành phố",
+   "Công ty dịch vụ tang lễ tư nhân"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_PERS_PET",
+  "industry": "IND_PERSONAL",
+  "name_vn": "Cửa hàng, spa thú cưng",
+  "summary": "Bán đồ, cắt tỉa, tắm, trông giữ chó mèo. Đông cuối tuần và trước Tết.",
+  "dress_code": "Tạp dề, đồng phục cửa hàng",
+  "customer_contact": "Cao: chủ thú cưng",
+  "company_types": [
+   "Chuỗi cửa hàng thú cưng",
+   "Spa thú cưng nhỏ"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_TRANS_AIRLINE",
+  "industry": "IND_TRANS",
+  "name_vn": "Hãng hàng không",
+  "summary": "Tổ bay (phi công, tiếp viên) làm theo lịch bay xoay vòng, có giới hạn giờ bay và giờ nghỉ bắt buộc.",
+  "dress_code": "Đồng phục hãng",
+  "customer_contact": "Rất cao với tiếp viên; phi công ít gặp khách",
+  "company_types": [
+   "Hãng hàng không truyền thống",
+   "Hãng hàng không giá rẻ"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_TRANS_ATC",
+  "industry": "IND_TRANS",
+  "name_vn": "Quản lý bay, đài kiểm soát không lưu",
+  "summary": "Điều hành tàu bay từ đài kiểm soát, trung tâm kiểm soát đường dài. Ca kíp chặt, không được làm quá 2 giờ liên tục tại vị trí.",
+  "dress_code": "Đồng phục ngành",
+  "customer_contact": "Thấp: liên lạc với tổ lái qua bộ đàm",
+  "company_types": [
+   "Công ty quản lý bay khu vực",
+   "Đài kiểm soát tại sân bay địa phương"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_TRANS_ROAD_FREIGHT",
+  "industry": "IND_TRANS",
+  "name_vn": "Doanh nghiệp vận tải hàng hoá đường bộ",
+  "summary": "Chạy xe tải, container nội tỉnh và liên tỉnh. Giờ lái bị luật giới hạn, nhưng chuyến dài vẫn đi xuyên đêm.",
+  "dress_code": "Tự do hoặc áo công ty",
+  "customer_contact": "Thấp: kho, người nhận hàng",
+  "company_types": [
+   "Doanh nghiệp vận tải container",
+   "Nhà xe tải nhỏ"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_TRANS_PASSENGER",
+  "industry": "IND_TRANS",
+  "name_vn": "Doanh nghiệp xe khách, xe buýt",
+  "summary": "Xe buýt nội đô chạy theo tuyến cố định; xe khách liên tỉnh chạy theo chuyến, có xe giường nằm chạy đêm.",
+  "dress_code": "Đồng phục công ty",
+  "customer_contact": "Cao: hành khách",
+  "company_types": [
+   "Công ty xe buýt nội đô",
+   "Nhà xe khách liên tỉnh"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_TRANS_RAIL",
+  "industry": "IND_TRANS",
+  "name_vn": "Đường sắt, metro",
+  "summary": "Tàu hoả liên tỉnh và metro đô thị. Lái tàu, điều độ theo biểu đồ chạy tàu, từ sáng sớm tới tối muộn.",
+  "dress_code": "Đồng phục ngành đường sắt",
+  "customer_contact": "Vừa",
+  "company_types": [
+   "Công ty vận tải đường sắt",
+   "Công ty vận hành metro"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_TRANS_SHIP",
+  "industry": "IND_TRANS",
+  "name_vn": "Hãng tàu biển",
+  "summary": "Thuyền viên đi tàu nhiều tháng theo hợp đồng, sống và làm việc trên tàu theo ca trực.",
+  "dress_code": "Đồng phục, đồ bảo hộ",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Hãng tàu container",
+   "Công ty cung ứng thuyền viên"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_TRANS_PORT",
+  "industry": "IND_TRANS",
+  "name_vn": "Cảng biển, cảng cạn",
+  "summary": "Bốc xếp, vận hành cần cẩu, xe nâng ở cảng. Tàu cập là phải làm, nên cảng chạy liên tục theo ca.",
+  "dress_code": "Áo phản quang, mũ, giày bảo hộ",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Cảng container",
+   "Cảng cạn, ICD"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_TRANS_WAREHOUSE",
+  "industry": "IND_TRANS",
+  "name_vn": "Kho vận, trung tâm phân loại hàng",
+  "summary": "Kho hàng, trung tâm phân loại của thương mại điện tử và logistics. Ca đêm, chạy xuyên đêm mùa sale.",
+  "dress_code": "Áo đồng phục, giày bảo hộ",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Trung tâm phân loại thương mại điện tử",
+   "Kho của công ty logistics",
+   "Kho của nhà máy, nhà phân phối"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_TRANS_DELIVERY",
+  "industry": "IND_TRANS",
+  "name_vn": "Giao hàng, xe công nghệ",
+  "summary": "Shipper của công ty giao vận hoặc tài xế qua ứng dụng. Thu nhập theo số đơn, chạy ngoài đường cả ngày.",
+  "dress_code": "Áo đồng phục, mũ bảo hiểm của hãng",
+  "customer_contact": "Cao: người nhận hàng",
+  "company_types": [
+   "Công ty giao hàng nhanh",
+   "Ứng dụng gọi xe, giao đồ ăn"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_TRANS_POSTAL",
+  "industry": "IND_TRANS",
+  "name_vn": "Bưu điện, bưu cục",
+  "summary": "Bưu cục nhận gửi, phát thư, bưu phẩm, chi trả lương hưu, dịch vụ hành chính công.",
+  "dress_code": "Đồng phục bưu điện",
+  "customer_contact": "Cao",
+  "company_types": [
+   "Bưu điện tỉnh",
+   "Bưu cục phường, xã"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_TRANS_INSPECTION",
+  "industry": "IND_TRANS",
+  "name_vn": "Trung tâm đăng kiểm xe cơ giới",
+  "summary": "Kiểm định an toàn kỹ thuật ô tô theo dây chuyền. Nhiều trung tâm đã xã hội hoá, thiếu đăng kiểm viên kéo dài.",
+  "dress_code": "Đồng phục, bảo hộ",
+  "customer_contact": "Cao: chủ xe, lái xe",
+  "company_types": [
+   "Trung tâm đăng kiểm xã hội hoá",
+   "Trung tâm đăng kiểm nhà nước"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_AGRI_FAMILY_FARM",
+  "industry": "IND_AGRI",
+  "name_vn": "Nông hộ, gia trại",
+  "summary": "Hộ gia đình trồng lúa, rau màu, cây ăn trái, nuôi gia súc, thuỷ sản. Lịch theo mùa vụ và trời, không theo giờ hành chính.",
+  "dress_code": "Quần áo lao động, nón lá, ủng",
+  "customer_contact": "Thấp: thương lái, hợp tác xã",
+  "company_types": [
+   "Hộ trồng lúa",
+   "Hộ trồng cây ăn trái",
+   "Hộ nuôi thuỷ sản"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_AGRI_ENTERPRISE_FARM",
+  "industry": "IND_AGRI",
+  "name_vn": "Trang trại, doanh nghiệp nông nghiệp công nghệ cao",
+  "summary": "Trang trại quy mô lớn, nhà kính, chăn nuôi khép kín của doanh nghiệp. Có quy trình, ca chăm sóc.",
+  "dress_code": "Đồ bảo hộ, ủng; chuồng khép kín phải thay đồ, sát trùng",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Trang trại chăn nuôi khép kín",
+   "Doanh nghiệp rau, hoa công nghệ cao"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_AGRI_FISHING",
+  "industry": "IND_AGRI",
+  "name_vn": "Tàu cá đánh bắt xa bờ",
+  "summary": "Đi biển theo chuyến cùng chủ tàu và bạn thuyền. Chuyến biển kéo dài từ một tuần tới hơn một tháng.",
+  "dress_code": "Áo phao, đồ đi biển",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Tàu cá gia đình",
+   "Tổ đội tàu khai thác xa bờ"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_AGRI_FORESTRY",
+  "industry": "IND_AGRI",
+  "name_vn": "Công ty lâm nghiệp, lâm trường",
+  "summary": "Trồng, chăm sóc, khai thác rừng trồng, bảo vệ rừng. Làm ngoài trời, theo mùa trồng rừng.",
+  "dress_code": "Đồ bảo hộ, ủng, mũ",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Công ty lâm nghiệp nhà nước",
+   "Doanh nghiệp trồng rừng nguyên liệu"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_MEDIA_NEWSROOM",
+  "industry": "IND_MEDIA",
+  "name_vn": "Toà soạn báo, đài phát thanh truyền hình",
+  "summary": "Báo in, báo điện tử, đài truyền hình. Nhịp tin 24/7, làm theo kíp trực, đi tác nghiệp.",
+  "dress_code": "Tự do, lịch sự khi đi sự kiện; thẻ nhà báo",
+  "customer_contact": "Vừa: nguồn tin, nhân vật",
+  "company_types": [
+   "Báo điện tử lớn",
+   "Đài truyền hình tỉnh",
+   "Tạp chí chuyên ngành"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_MEDIA_PRODUCTION",
+  "industry": "IND_MEDIA",
+  "name_vn": "Công ty sản xuất phim, TVC, MV",
+  "summary": "Production house làm phim điện ảnh, quảng cáo, video ca nhạc theo dự án. Ngày quay rất dài, hợp đồng ngắn hạn.",
+  "dress_code": "Tự do, đồ đen hậu trường",
+  "customer_contact": "Vừa: khách hàng, diễn viên",
+  "company_types": [
+   "Hãng phim điện ảnh",
+   "Production house quảng cáo",
+   "Studio video ca nhạc"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_MEDIA_CREATIVE_STUDIO",
+  "industry": "IND_MEDIA",
+  "name_vn": "Studio thiết kế, hoạt hình, thời trang",
+  "summary": "Studio đồ hoạ, hoạt hình, kỹ xảo, nội dung game, thương hiệu thời trang. Làm theo dự án, có lúc chạy deadline.",
+  "dress_code": "Tự do",
+  "customer_contact": "Thấp tới vừa",
+  "company_types": [
+   "Studio hoạt hình, kỹ xảo",
+   "Studio thiết kế thương hiệu",
+   "Thương hiệu thời trang trong nước"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_MEDIA_FREELANCE",
+  "industry": "IND_MEDIA",
+  "name_vn": "Freelance sáng tạo theo show, dự án",
+  "summary": "Tự nhận việc chụp ảnh, trang điểm, dịch thuật, viết, vẽ theo show hoặc dự án. Không có lương cứng.",
+  "dress_code": "Tự do",
+  "customer_contact": "Rất cao: tự tìm và giữ khách",
+  "company_types": [
+   "Freelancer tự do",
+   "Nhóm freelancer nhận dự án"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_ARTS_STATE_TROUPE",
+  "industry": "IND_ARTS",
+  "name_vn": "Nhà hát, đoàn nghệ thuật công lập",
+  "summary": "Nhà hát kịch, múa, ca múa nhạc, tuồng chèo cải lương của nhà nước. Tập ban ngày, diễn buổi tối và cuối tuần.",
+  "dress_code": "Trang phục biểu diễn",
+  "customer_contact": "Cao: khán giả",
+  "company_types": [
+   "Nhà hát ca múa nhạc",
+   "Nhà hát kịch, cải lương, chèo"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_ARTS_ENTERTAINMENT",
+  "industry": "IND_ARTS",
+  "name_vn": "Công ty giải trí, quản lý nghệ sĩ, sự kiện",
+  "summary": "Quản lý ca sĩ, người mẫu, tổ chức show, phòng trà, sự kiện. Lịch theo show, buổi tối và cuối tuần.",
+  "dress_code": "Theo yêu cầu show",
+  "customer_contact": "Rất cao: khán giả, nhãn hàng",
+  "company_types": [
+   "Công ty giải trí, quản lý nghệ sĩ",
+   "Phòng trà, sân khấu tư nhân",
+   "Công ty dàn dựng sân khấu, ánh sáng"
+  ],
+  "company_slots": 3
+ },
+ {
+  "id": "WE_SPORT_STATE_CENTER",
+  "industry": "IND_ARTS",
+  "name_vn": "Trung tâm huấn luyện thể thao, đội tuyển tỉnh",
+  "summary": "Vận động viên năng khiếu, đội tuyển tỉnh và quốc gia tập trung huấn luyện. Ăn ở, tập luyện theo giáo án.",
+  "dress_code": "Đồng phục đội",
+  "customer_contact": "Thấp",
+  "company_types": [
+   "Trung tâm huấn luyện thể thao tỉnh",
+   "Trung tâm huấn luyện quốc gia"
+  ],
+  "company_slots": 2
+ },
+ {
+  "id": "WE_SPORT_PRO_CLUB",
+  "industry": "IND_ARTS",
+  "name_vn": "Câu lạc bộ thể thao chuyên nghiệp",
+  "summary": "Câu lạc bộ bóng đá, bóng chuyền, bóng rổ chuyên nghiệp. Mùa giải kéo dài từ tháng 9 tới tháng 5.",
+  "dress_code": "Trang phục câu lạc bộ",
+  "customer_contact": "Cao: cổ động viên, truyền thông",
+  "company_types": [
+   "Câu lạc bộ bóng đá chuyên nghiệp",
+   "Câu lạc bộ bóng chuyền"
+  ],
+  "company_slots": 2
+ }
+]

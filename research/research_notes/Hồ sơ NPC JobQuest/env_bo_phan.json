@@ -1,0 +1,7379 @@
+[
+ {
+  "id": "WE_HYBRID_PRODUCT",
+  "bo_phan": [
+   {
+    "id": "ky_thuat_san_pham",
+    "ten_vn": "Kỹ sư, thiết kế sản phẩm",
+    "relation_hop": [
+     "ngang_hang",
+     "phong_ban_khac",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Trung tâm R&D của tập đoàn nước ngoài",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "quan_ly",
+    "ten_vn": "Quản lý sản phẩm, trưởng nhóm",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dùng được phỏng vấn, đối tác",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_PROJECT_OUTSOURCING",
+  "bo_phan": [
+   {
+    "id": "ky_su",
+    "ten_vn": "Kỹ sư phần mềm, kiểm thử",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Công ty vừa chuyên thị trường Nhật",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "cau_noi_quan_ly_du_an",
+    "ten_vn": "Kỹ sư cầu nối, quản lý dự án",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng doanh nghiệp sang thăm",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ONSITE_ENTERPRISE",
+  "bo_phan": [
+   {
+    "id": "ky_thuat_cntt",
+    "ten_vn": "Kỹ sư, chuyên viên công nghệ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Ngân hàng thương mại",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "quan_ly",
+    "ten_vn": "Trưởng phòng, giám đốc khối công nghệ",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "nghiep_vu",
+    "ten_vn": "Nhân viên phòng nghiệp vụ",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Nhà cung cấp, kỹ sư đối tác",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SHIFT_24_7",
+  "bo_phan": [
+   {
+    "id": "truc_ca",
+    "ten_vn": "Kỹ sư trực ca giám sát",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "tai_nghe",
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Ngân hàng lớn",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "tai_nghe",
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     },
+     {
+      "company_type": "Nhà mạng viễn thông",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [],
+       "deo": [
+        "tai_nghe",
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "truong_ca",
+    "ten_vn": "Trưởng ca",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Kỹ sư đối tác, khách doanh nghiệp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FIELD_CLIENT",
+  "bo_phan": [
+   {
+    "id": "tu_van_trien_khai",
+    "ten_vn": "Tư vấn triển khai (văn phòng khách)",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Nhà phân phối thiết bị mạng",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "ky_thuat_hien_truong",
+    "ten_vn": "Triển khai tại nhà máy khách",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho",
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dùng nghiệp vụ phía khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_REMOTE_GLOBAL",
+  "bo_phan": [
+   {
+    "id": "lam_tu_xa",
+    "ten_vn": "Người làm từ xa",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "tai_nghe"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dong_nghiep_qua_video",
+    "ten_vn": "Quản lý, đồng nghiệp nước ngoài qua video",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "tai_nghe"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng nước ngoài qua video",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HEALTH_PUBLIC_HOSPITAL",
+  "bo_phan": [
+   {
+    "id": "bac_si",
+    "ten_vn": "Bác sĩ",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "ong_nghe",
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dieu_duong",
+    "ten_vn": "Điều dưỡng, hộ lý",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "the_deo",
+      "khau_trang"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "kip_thu_thuat",
+    "ten_vn": "Kíp mổ, thủ thuật",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "scrubs",
+     "khoac": [],
+     "deo": [
+      "mu_trum",
+      "khau_trang",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người bệnh, người nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HEALTH_PRIVATE_HOSPITAL",
+  "bo_phan": [
+   {
+    "id": "bac_si",
+    "ten_vn": "Bác sĩ",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "ong_nghe",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dieu_duong",
+    "ten_vn": "Điều dưỡng",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "scrubs",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "le_tan_cham_soc_khach",
+    "ten_vn": "Lễ tân, chăm sóc khách hàng",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Bệnh viện chuyên khoa tư (sản, mắt, thẩm mỹ)",
+      "do": {
+       "ao_nen": "ao_dai",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người bệnh, người nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HEALTH_CLINIC",
+  "bo_phan": [
+   {
+    "id": "bac_si_ky_thuat_vien",
+    "ten_vn": "Bác sĩ, kỹ thuật viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "scrubs",
+     "khoac": [],
+     "deo": [
+      "khau_trang",
+      "gang_tay",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Phòng khám đông y, vật lý trị liệu",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [
+        "blouse_trang"
+       ],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "tu_van_le_tan",
+    "ten_vn": "Tư vấn, lễ tân",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách đến khám",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HEALTH_GRASSROOTS",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_y_te",
+    "ten_vn": "Bác sĩ, y sĩ, điều dưỡng trạm",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "ong_nghe",
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "can_bo_phoi_hop",
+    "ten_vn": "Cán bộ xã, cộng tác viên dân số",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân, trẻ em, người già",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Trạm y tế xã vùng nông thôn, miền núi",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [
+        "non_la"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "WE_HEALTH_PHARMACY",
+  "bo_phan": [
+   {
+    "id": "duoc_si_quay",
+    "ten_vn": "Dược sĩ, nhân viên quầy",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Nhà thuốc tư nhân độc lập",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [
+        "blouse_trang"
+       ],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "tu_do"
+      }
+     },
+     {
+      "company_type": "Nhà thuốc bệnh viện",
+      "do": {
+       "ao_nen": "dong_phuc_nganh",
+       "khoac": [
+        "blouse_trang"
+       ],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "nganh"
+      }
+     }
+    ]
+   },
+   {
+    "id": "duoc_si_phu_trach",
+    "ten_vn": "Dược sĩ phụ trách, quản lý cửa hàng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách mua thuốc",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HEALTH_CARE_HOME",
+  "bo_phan": [
+   {
+    "id": "dieu_duong_cham_soc",
+    "ten_vn": "Điều dưỡng, nhân viên chăm sóc",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "scrubs",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "quan_ly_co_so",
+    "ten_vn": "Quản lý cơ sở, điều phối ca",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người cao tuổi, người nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HEALTH_EMERGENCY",
+  "bo_phan": [
+   {
+    "id": "kip_cap_cuu",
+    "ten_vn": "Kíp cấp cứu ngoại viện",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "ong_nghe",
+      "khau_trang",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dieu_phoi_115",
+    "ten_vn": "Điều phối viên tổng đài",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "tai_nghe",
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người bệnh, người nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HEALTH_VET",
+  "bo_phan": [
+   {
+    "id": "bac_si_thu_y",
+    "ten_vn": "Bác sĩ thú y",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "scrubs",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "gang_tay",
+      "ong_nghe"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "tro_ly_le_tan",
+    "ten_vn": "Trợ lý, lễ tân",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Phòng khám thú y nhỏ",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ vật nuôi",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SOCIAL_PUBLIC_CENTER",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_ctxh",
+    "ten_vn": "Nhân viên công tác xã hội",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "nhan_vien_cham_soc",
+    "ten_vn": "Nhân viên chăm sóc, bảo mẫu",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "lanh_dao_trung_tam",
+    "ten_vn": "Lãnh đạo trung tâm",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người được trợ giúp, gia đình",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SOCIAL_NGO",
+  "bo_phan": [
+   {
+    "id": "can_bo_du_an",
+    "ten_vn": "Cán bộ dự án",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "quan_ly_chuong_trinh",
+    "ten_vn": "Quản lý chương trình",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân cộng đồng, cán bộ địa phương",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SOCIAL_COUNSELING",
+  "bo_phan": [
+   {
+    "id": "nha_tham_van",
+    "ten_vn": "Nhà tham vấn, nhà trị liệu",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "le_tan_dieu_phoi",
+    "ten_vn": "Lễ tân, điều phối lịch hẹn",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Thân chủ, người nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_EDU_PUBLIC_SCHOOL",
+  "bo_phan": [
+   {
+    "id": "giao_vien",
+    "ten_vn": "Giáo viên (ngày thường)",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Trường mầm non công lập",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [
+        "tap_de"
+       ],
+       "deo": [],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "co_giao_ao_dai",
+    "ten_vn": "Cô giáo (thứ Hai, ngày lễ)",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_dai",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ban_giam_hieu",
+    "ten_vn": "Ban giám hiệu",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Phụ huynh",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_EDU_PRIVATE_SCHOOL",
+  "bo_phan": [
+   {
+    "id": "giao_vien",
+    "ten_vn": "Giáo viên",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Hệ thống mầm non tư thục",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     },
+     {
+      "company_type": "Trường quốc tế",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "tuyen_sinh_cskh",
+    "ten_vn": "Tuyển sinh, chăm sóc phụ huynh",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Phụ huynh",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_EDU_CENTER",
+  "bo_phan": [
+   {
+    "id": "giao_vien_tro_giang",
+    "ten_vn": "Giáo viên, trợ giảng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Trung tâm kỹ năng, STEM",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "tu_van_cham_soc",
+    "ten_vn": "Tư vấn, chăm sóc học viên",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Học viên, phụ huynh",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_EDU_UNI_PUBLIC",
+  "bo_phan": [
+   {
+    "id": "giang_vien",
+    "ten_vn": "Giảng viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "chuyen_vien_phong_ban",
+    "ten_vn": "Chuyên viên đào tạo, công tác sinh viên",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Sinh viên",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_EDU_UNI_PRIVATE",
+  "bo_phan": [
+   {
+    "id": "giang_vien",
+    "ten_vn": "Giảng viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "tuyen_sinh_cham_soc",
+    "ten_vn": "Tuyển sinh, chăm sóc sinh viên",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Sinh viên, phụ huynh",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_EDU_ONLINE",
+  "bo_phan": [
+   {
+    "id": "giao_vien_truc_tuyen",
+    "ten_vn": "Giáo viên trực tuyến",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "tai_nghe"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "van_hanh_hoc_vu",
+    "ten_vn": "Nhân viên vận hành, học vụ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Học viên qua màn hình",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_EDU_CULTURE",
+  "bo_phan": [
+   {
+    "id": "thuyet_minh_thu_thu",
+    "ten_vn": "Thuyết minh viên, thủ thư tại quầy",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Bảo tàng tỉnh, quốc gia",
+      "do": {
+       "ao_nen": "ao_dai",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "nghien_cuu_luu_tru",
+    "ten_vn": "Chuyên viên nghiên cứu, lưu trữ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "gang_tay"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Bạn đọc, khách tham quan",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_GOV_OFFICE",
+  "bo_phan": [
+   {
+    "id": "chuyen_vien",
+    "ten_vn": "Chuyên viên, cán bộ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "lanh_dao",
+    "ten_vn": "Lãnh đạo cơ quan",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân, đại diện doanh nghiệp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_GOV_ONESTOP",
+  "bo_phan": [
+   {
+    "id": "can_bo_quay",
+    "ten_vn": "Cán bộ tiếp nhận tại quầy",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Bộ phận một cửa phường, xã",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "chuyen_vien_xu_ly",
+    "ten_vn": "Chuyên viên xử lý hồ sơ",
+    "relation_hop": [
+     "phong_ban_khac",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_GOV_TAX",
+  "bo_phan": [
+   {
+    "id": "cong_chuc_thue",
+    "ten_vn": "Công chức thuế",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu",
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người nộp thuế, kế toán doanh nghiệp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_GOV_BORDER",
+  "bo_phan": [
+   {
+    "id": "hai_quan",
+    "ten_vn": "Công chức hải quan",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu",
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "bien_phong",
+    "ten_vn": "Bộ đội biên phòng",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Hành khách, lái xe, doanh nghiệp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_GOV_POLICE",
+  "bo_phan": [
+   {
+    "id": "can_bo_cong_an",
+    "ten_vn": "Cán bộ, chiến sĩ công an",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân, người vi phạm",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_GOV_FIRE",
+  "bo_phan": [
+   {
+    "id": "chien_si_hien_truong",
+    "ten_vn": "Chiến sĩ chữa cháy tại hiện trường",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_khoac_ky_thuat",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "can_bo_truc",
+    "ten_vn": "Cán bộ trực, tuyên truyền PCCC",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Nạn nhân, người dân tại hiện trường",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_GOV_PRISON",
+  "bo_phan": [
+   {
+    "id": "can_bo_quan_giao",
+    "ten_vn": "Cán bộ quản giáo",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "pham_nhan",
+    "ten_vn": "Phạm nhân",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [],
+     "mau": "nganh"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Thân nhân đến thăm",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_GOV_FOREST",
+  "bo_phan": [
+   {
+    "id": "kiem_lam",
+    "ten_vn": "Kiểm lâm viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "nhan_vien_vuon",
+    "ten_vn": "Nhân viên du lịch sinh thái, cứu hộ động vật",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "mu_luoi_trai"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân gần rừng, khách tham quan",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_LEGAL_COURT",
+  "bo_phan": [
+   {
+    "id": "tham_phan_thu_ky",
+    "ten_vn": "Thẩm phán, thư ký toà án",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "luat_su_tai_toa",
+    "ten_vn": "Luật sư tại toà",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đương sự, người dự phiên toà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_LEGAL_LAWFIRM",
+  "bo_phan": [
+   {
+    "id": "luat_su",
+    "ten_vn": "Luật sư",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "tro_ly_phap_ly",
+    "ten_vn": "Trợ lý, chuyên viên pháp lý",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng doanh nghiệp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Văn phòng luật sư tranh tụng",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "WE_FIN_BANK_HQ",
+  "bo_phan": [
+   {
+    "id": "chuyen_vien_hoi_so",
+    "ten_vn": "Chuyên viên hội sở",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Ngân hàng nước ngoài",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "lanh_dao_khoi",
+    "ten_vn": "Giám đốc khối, trưởng phòng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách doanh nghiệp, đối tác",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FIN_BANK_BRANCH",
+  "bo_phan": [
+   {
+    "id": "giao_dich_vien",
+    "ten_vn": "Giao dịch viên",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "chuyen_vien_khach_hang",
+    "ten_vn": "Chuyên viên khách hàng, tín dụng",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "bao_ve",
+    "ten_vn": "Bảo vệ",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách tại quầy",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FIN_SECURITIES",
+  "bo_phan": [
+   {
+    "id": "moi_gioi_phan_tich",
+    "ten_vn": "Môi giới, chuyên viên phân tích",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "truong_phong",
+    "ten_vn": "Trưởng phòng, giám đốc quỹ",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Nhà đầu tư",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FIN_INSURANCE",
+  "bo_phan": [
+   {
+    "id": "van_phong",
+    "ten_vn": "Nhân viên văn phòng, thẩm định",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "tu_van_dai_ly",
+    "ten_vn": "Tư vấn viên, đại lý",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "giam_dinh_boi_thuong",
+    "ten_vn": "Giám định bồi thường tại hiện trường",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng, người được bảo hiểm",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FIN_AUDIT",
+  "bo_phan": [
+   {
+    "id": "kiem_toan_vien",
+    "ten_vn": "Trợ lý, kiểm toán viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "chu_nhiem_partner",
+    "ten_vn": "Chủ nhiệm, partner",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Kế toán, ban giám đốc khách hàng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CORP_SME",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_van_phong",
+    "ten_vn": "Nhân viên văn phòng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Công ty dịch vụ",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "giam_doc",
+    "ten_vn": "Giám đốc, chủ doanh nghiệp",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng, đối tác",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CORP_LARGE",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_van_phong",
+    "ten_vn": "Nhân viên văn phòng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Tập đoàn bán lẻ, tiêu dùng",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "ban_dieu_hanh",
+    "ten_vn": "Ban điều hành",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "le_tan",
+    "ten_vn": "Lễ tân toà văn phòng",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_dai",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đối tác, khách doanh nghiệp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CORP_FDI",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_van_phong",
+    "ten_vn": "Nhân viên văn phòng (ngày thường)",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "nhan_vien_thu_sau",
+    "ten_vn": "Nhân viên văn phòng (thứ Sáu tự do)",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "quan_ly_nuoc_ngoai",
+    "ten_vn": "Quản lý, chuyên gia nước ngoài",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đối tác, nhà cung cấp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CORP_AGENCY",
+  "bo_phan": [
+   {
+    "id": "sang_tao_noi_dung",
+    "ten_vn": "Nhóm sáng tạo, nội dung",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "account",
+    "ten_vn": "Account, quản lý khách hàng",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "nhan_su_su_kien",
+    "ten_vn": "Nhân sự sự kiện tại hiện trường",
+    "relation_hop": [
+     "ngang_hang",
+     "khach_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "tai_nghe",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng nhãn hàng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CORP_LOGISTICS",
+  "bo_phan": [
+   {
+    "id": "chung_tu_sales",
+    "ten_vn": "Nhân viên chứng từ, sales logistics",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "hien_truong_cang_kho",
+    "ten_vn": "Nhân viên hiện trường ra cảng, kho",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho",
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng, đại diện hãng tàu",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CORP_REALESTATE",
+  "bo_phan": [
+   {
+    "id": "moi_gioi",
+    "ten_vn": "Chuyên viên tư vấn, môi giới",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Văn phòng môi giới nhỏ",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "truong_phong_kinh_doanh",
+    "ten_vn": "Trưởng phòng kinh doanh",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người mua, người thuê nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MFG_FDI_PLANT",
+  "bo_phan": [
+   {
+    "id": "cong_nhan",
+    "ten_vn": "Công nhân dây chuyền",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "the_deo",
+      "mu_trum",
+      "khau_trang"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Nhà máy may, giày xuất khẩu",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "the_deo",
+        "khau_trang"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "ky_su_to_truong",
+    "ten_vn": "Kỹ sư, tổ trưởng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_khoac_ky_thuat",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "van_phong_phien_dich",
+    "ten_vn": "Văn phòng, phiên dịch",
+    "relation_hop": [
+     "phong_ban_khac",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chuyên gia nước ngoài, khách kiểm hàng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MFG_LOCAL_PLANT",
+  "bo_phan": [
+   {
+    "id": "cong_nhan",
+    "ten_vn": "Công nhân",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Nhà máy dược, hoá chất",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "mu_trum",
+        "khau_trang",
+        "gang_tay"
+       ],
+       "mau": "cong_ty"
+      }
+     },
+     {
+      "company_type": "Nhà máy gỗ xuất khẩu",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "khau_trang",
+        "gang_tay"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "quan_doc_ky_thuat",
+    "ten_vn": "Quản đốc, cán bộ kỹ thuật",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_khoac_ky_thuat",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách đặt hàng, đoàn kiểm tra",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MFG_WORKSHOP",
+  "bo_phan": [
+   {
+    "id": "tho",
+    "ten_vn": "Thợ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Xưởng mộc làng nghề",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "khau_trang"
+       ],
+       "mau": "tu_do"
+      }
+     },
+     {
+      "company_type": "Xưởng kim hoàn gia đình",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [
+        "tap_de"
+       ],
+       "deo": [
+        "kinh_bao_ho"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "chu_xuong",
+    "ten_vn": "Chủ xưởng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách đặt hàng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MFG_CLEANROOM",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_phong_sach",
+    "ten_vn": "Kỹ thuật viên, công nhân phòng sạch",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "do_phong_sach"
+     ],
+     "deo": [
+      "mu_trum",
+      "khau_trang",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ky_su_ngoai_phong_sach",
+    "ten_vn": "Kỹ sư, văn phòng ngoài khu sạch",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_khoac_ky_thuat",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách tham quan, chuyên gia",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MFG_FOOD_PLANT",
+  "bo_phan": [
+   {
+    "id": "cong_nhan_che_bien",
+    "ten_vn": "Công nhân chế biến",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [
+      "mu_trum",
+      "khau_trang",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ky_thuat_qc",
+    "ten_vn": "Kỹ thuật, kiểm soát chất lượng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "mu_trum",
+      "khau_trang"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách kiểm hàng, đoàn đánh giá",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "mu_trum",
+      "khau_trang"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ENERGY_POWER_PLANT",
+  "bo_phan": [
+   {
+    "id": "van_hanh_hien_truong",
+    "ten_vn": "Công nhân, kỹ sư vận hành hiện trường",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "phong_dieu_khien",
+    "ten_vn": "Trưởng ca, phòng điều khiển trung tâm",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đoàn kiểm tra, nhà thầu",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ENERGY_GRID",
+  "bo_phan": [
+   {
+    "id": "cong_nhan_duong_day",
+    "ten_vn": "Công nhân đường dây, trạm",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "giao_dich_khach_hang",
+    "ten_vn": "Nhân viên giao dịch, ghi chỉ số",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng dùng điện",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ENERGY_WATER",
+  "bo_phan": [
+   {
+    "id": "van_hanh_tram",
+    "ten_vn": "Công nhân vận hành trạm, đường ống",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "gang_tay",
+      "khau_trang"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ky_su_xet_nghiem",
+    "ten_vn": "Kỹ sư, xét nghiệm mẫu nước",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân dùng nước",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Công ty vận hành trạm xử lý nước thải khu công nghiệp",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "mu_bao_ho"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "WE_ENERGY_OIL_GAS",
+  "bo_phan": [
+   {
+    "id": "van_hanh",
+    "ten_vn": "Kỹ sư, công nhân vận hành",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "kinh_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Công ty khai thác dầu khí ngoài khơi",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [
+        "ao_phao"
+       ],
+       "deo": [
+        "mu_bao_ho",
+        "kinh_bao_ho",
+        "gang_tay"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "phong_dieu_khien",
+    "ten_vn": "Trưởng ca, phòng điều khiển trung tâm",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Nhà thầu, chuyên gia",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "kinh_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ENERGY_MINE",
+  "bo_phan": [
+   {
+    "id": "tho_mo",
+    "ten_vn": "Thợ lò, công nhân mỏ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "khau_trang",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Mỏ lộ thiên",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [
+        "ao_phan_quang"
+       ],
+       "deo": [
+        "mu_bao_ho",
+        "khau_trang"
+       ],
+       "mau": "nganh"
+      }
+     }
+    ]
+   },
+   {
+    "id": "can_bo_ky_thuat_an_toan",
+    "ten_vn": "Cán bộ kỹ thuật, an toàn",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Mỏ lộ thiên",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [
+        "ao_phan_quang"
+       ],
+       "deo": [
+        "mu_bao_ho"
+       ],
+       "mau": "nganh"
+      }
+     }
+    ]
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đoàn kiểm tra, khách tham quan",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SCI_INSTITUTE",
+  "bo_phan": [
+   {
+    "id": "nghien_cuu_vien_ptn",
+    "ten_vn": "Nghiên cứu viên trong phòng thí nghiệm",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "lanh_dao_hanh_chinh",
+    "ten_vn": "Lãnh đạo, hành chính viện",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đối tác, khách tham quan",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SCI_TESTING_LAB",
+  "bo_phan": [
+   {
+    "id": "kiem_nghiem_vien",
+    "ten_vn": "Kiểm nghiệm viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "blouse_trang"
+     ],
+     "deo": [
+      "kinh_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "tiep_nhan_mau",
+    "ten_vn": "Tiếp nhận mẫu, trả kết quả",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách gửi mẫu (doanh nghiệp)",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SCI_FIELD_STATION",
+  "bo_phan": [
+   {
+    "id": "quan_trac_thuc_dia",
+    "ten_vn": "Quan trắc viên, địa chất viên thực địa",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_khoac_ky_thuat",
+     "khoac": [
+      "ao_mua"
+     ],
+     "deo": [
+      "mu_luoi_trai"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Đài khí tượng thuỷ văn khu vực",
+      "do": {
+       "ao_nen": "ao_khoac_ky_thuat",
+       "khoac": [
+        "ao_phao",
+        "ao_mua"
+       ],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "van_phong_du_bao",
+    "ten_vn": "Dự báo viên, văn phòng đài",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân địa phương",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "non_la"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ENG_DESIGN_RND",
+  "bo_phan": [
+   {
+    "id": "ky_su_thiet_ke",
+    "ten_vn": "Kỹ sư thiết kế ở văn phòng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Khối thiết kế của hãng ô tô Việt",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "ky_su_xuong",
+    "ten_vn": "Kỹ sư thử nghiệm dưới xưởng",
+    "relation_hop": [
+     "ngang_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho",
+      "kinh_bao_ho",
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đối tác, khách hàng doanh nghiệp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ENG_EQUIPMENT_SERVICE",
+  "bo_phan": [
+   {
+    "id": "ky_thuat_hien_truong",
+    "ten_vn": "Kỹ sư bảo trì tại chỗ khách",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Nhà cung cấp máy công nghiệp",
+      "do": {
+       "ao_nen": "ao_khoac_ky_thuat",
+       "khoac": [],
+       "deo": [
+        "mu_bao_ho",
+        "gang_tay"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "kinh_doanh_ung_dung",
+    "ten_vn": "Kinh doanh, chuyên viên ứng dụng",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Nhân viên phía khách hàng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Nhà phân phối thiết bị y tế",
+      "do": {
+       "ao_nen": "dong_phuc_nganh",
+       "khoac": [
+        "blouse_trang"
+       ],
+       "deo": [],
+       "mau": "nganh"
+      }
+     },
+     {
+      "company_type": "Nhà cung cấp máy công nghiệp",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "mu_bao_ho"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "WE_ENG_TELECOM",
+  "bo_phan": [
+   {
+    "id": "lap_dat_tai_nha",
+    "ten_vn": "Kỹ thuật viên lắp đặt tại nhà",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ky_thuat_tram",
+    "ten_vn": "Kỹ thuật viên trạm, cột",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_khoac_ky_thuat",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "giao_dich_vien",
+    "ten_vn": "Giao dịch viên cửa hàng",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng hộ gia đình",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CONS_SITE",
+  "bo_phan": [
+   {
+    "id": "cong_nhan",
+    "ten_vn": "Công nhân xây dựng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ky_su_chi_huy",
+    "ten_vn": "Kỹ sư, chỉ huy trưởng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ đầu tư, tư vấn giám sát",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CONS_CONSULTANT",
+  "bo_phan": [
+   {
+    "id": "thiet_ke_van_phong",
+    "ten_vn": "Kiến trúc sư, kỹ sư ở văn phòng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Văn phòng kiến trúc",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "giam_sat_cong_truong",
+    "ten_vn": "Tư vấn giám sát tại công trường",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ đầu tư, chủ nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Công ty tư vấn kết cấu, giám sát",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "WE_CONS_CREW",
+  "bo_phan": [
+   {
+    "id": "tho",
+    "ten_vn": "Thợ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Thợ sửa nhà tự do",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "mu_luoi_trai"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "cai_thau",
+    "ten_vn": "Cai thầu, trưởng đội",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_CONS_DEVELOPER",
+  "bo_phan": [
+   {
+    "id": "chuyen_vien_du_an",
+    "ten_vn": "Chuyên viên ban quản lý dự án",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Chủ đầu tư bất động sản",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "can_bo_ra_cong_truong",
+    "ten_vn": "Cán bộ dự án khi ra công trường",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Nhà thầu, cán bộ cấp phép",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FAC_BUILDING",
+  "bo_phan": [
+   {
+    "id": "le_tan_cskh",
+    "ten_vn": "Lễ tân, chăm sóc cư dân",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ky_thuat_toa_nha",
+    "ten_vn": "Kỹ thuật toà nhà",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "bao_ve",
+    "ten_vn": "Bảo vệ",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Cư dân, khách thuê",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FAC_OUTSOURCED_SERVICE",
+  "bo_phan": [
+   {
+    "id": "bao_ve",
+    "ten_vn": "Nhân viên bảo vệ",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ve_sinh",
+    "ten_vn": "Nhân viên vệ sinh",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "gang_tay",
+      "khau_trang",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "giam_sat",
+    "ten_vn": "Giám sát, đội trưởng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Cư dân, nhân viên toà nhà khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FAC_URBAN_ENV",
+  "bo_phan": [
+   {
+    "id": "cong_nhan_moi_truong",
+    "ten_vn": "Công nhân thu gom, quét đường",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "gang_tay",
+      "khau_trang",
+      "non_la"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "cong_nhan_cay_xanh",
+    "ten_vn": "Công nhân cây xanh",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân trên tuyến",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_FAC_HOME_SERVICE",
+  "bo_phan": [
+   {
+    "id": "ky_thuat_vien",
+    "ten_vn": "Thợ, kỹ thuật viên",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Thợ tự do qua ứng dụng gọi thợ",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     },
+     {
+      "company_type": "Công ty kiểm soát côn trùng",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "khau_trang",
+        "gang_tay",
+        "kinh_bao_ho"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "dieu_phoi",
+    "ten_vn": "Điều phối, chăm sóc khách qua điện thoại",
+    "relation_hop": [
+     "phong_ban_khac",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "tai_nghe"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_REPAIR_DEALER",
+  "bo_phan": [
+   {
+    "id": "ky_thuat_vien",
+    "ten_vn": "Kỹ thuật viên xưởng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "co_van_dich_vu",
+    "ten_vn": "Cố vấn dịch vụ",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ xe",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_REPAIR_SHOP",
+  "bo_phan": [
+   {
+    "id": "tho_sua",
+    "ten_vn": "Thợ sửa",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Tiệm sửa điện thoại, điện tử",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "chu_tiem",
+    "ten_vn": "Chủ tiệm",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách chờ tại tiệm",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_REPAIR_AVIATION",
+  "bo_phan": [
+   {
+    "id": "ky_thuat_hangar",
+    "ten_vn": "Kỹ sư, thợ máy tại hangar, sân đỗ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "tai_nghe",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ky_thuat_ke_hoach",
+    "ten_vn": "Kỹ sư kế hoạch, hồ sơ kỹ thuật",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Tổ bay, đại diện hãng khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HOSP_HOTEL",
+  "bo_phan": [
+   {
+    "id": "le_tan",
+    "ten_vn": "Lễ tân, quan hệ khách",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Khách sạn 4 sao trong nước",
+      "do": {
+       "ao_nen": "ao_dai",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "buong_phong",
+    "ten_vn": "Buồng phòng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "bep",
+    "ten_vn": "Bếp",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [
+      "mu_bep"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách lưu trú",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HOSP_SMALL_LODGING",
+  "bo_phan": [
+   {
+    "id": "le_tan_chu_nha",
+    "ten_vn": "Lễ tân, chủ nhà",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_duoi"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Homestay",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "don_phong",
+    "ten_vn": "Dọn phòng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Homestay",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách lưu trú, khách du lịch",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HOSP_FNB_CHAIN",
+  "bo_phan": [
+   {
+    "id": "phuc_vu_quay",
+    "ten_vn": "Phục vụ, nhân viên quầy",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [
+      "mu_luoi_trai",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Chuỗi lẩu nướng",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [
+        "tap_de"
+       ],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "bep",
+    "ten_vn": "Bếp",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [
+      "mu_trum"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Chuỗi lẩu nướng",
+      "do": {
+       "ao_nen": "dong_phuc_nganh",
+       "khoac": [
+        "tap_de"
+       ],
+       "deo": [
+        "mu_bep"
+       ],
+       "mau": "nganh"
+      }
+     }
+    ]
+   },
+   {
+    "id": "quan_ly_ca",
+    "ten_vn": "Quản lý cửa hàng, quản lý ca",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HOSP_FNB_SMALL",
+  "bo_phan": [
+   {
+    "id": "phuc_vu_pha_che",
+    "ten_vn": "Phục vụ, pha chế",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "bep",
+    "ten_vn": "Bếp",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "chu_quan",
+    "ten_vn": "Chủ quán",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HOSP_TRAVEL",
+  "bo_phan": [
+   {
+    "id": "huong_dan_vien",
+    "ten_vn": "Hướng dẫn viên",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo",
+      "mu_luoi_trai"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dieu_hanh_ban_tour",
+    "ten_vn": "Điều hành, bán tour ở văn phòng",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách du lịch",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_HOSP_ENTERTAINMENT",
+  "bo_phan": [
+   {
+    "id": "van_hanh_tro_choi",
+    "ten_vn": "Nhân viên vận hành trò chơi",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "mu_luoi_trai",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Công viên nước",
+      "do": {
+       "ao_nen": "ao_the_thao",
+       "khoac": [],
+       "deo": [
+        "mu_luoi_trai"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "dien_vien_hoat_nao",
+    "ten_vn": "Diễn viên, hoạt náo viên",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "trang_phuc_bieu_dien",
+     "khoac": [],
+     "deo": [
+      "tai_nghe"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Gia đình, trẻ em",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_RETAIL_CHAIN",
+  "bo_phan": [
+   {
+    "id": "ban_hang_thu_ngan",
+    "ten_vn": "Nhân viên bán hàng, thu ngân",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Chuỗi điện máy, điện thoại",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "kho_ke_hang",
+    "ten_vn": "Nhân viên kho, sắp xếp hàng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "quan_ly_cua_hang",
+    "ten_vn": "Quản lý cửa hàng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách mua sắm",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_RETAIL_SHOP",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_ban_hang",
+    "ten_vn": "Nhân viên bán hàng",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "chu_cua_hang",
+    "ten_vn": "Chủ cửa hàng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách mua hàng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_RETAIL_ONLINE",
+  "bo_phan": [
+   {
+    "id": "van_hanh_shop",
+    "ten_vn": "Chủ shop, đóng gói, trả lời tin nhắn",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "nguoi_livestream",
+    "ten_vn": "Người livestream",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng, người xem",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_PERS_BEAUTY_CHAIN",
+  "bo_phan": [
+   {
+    "id": "ky_thuat_vien",
+    "ten_vn": "Kỹ thuật viên chăm sóc",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "khau_trang",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Chuỗi salon tóc",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [
+        "tap_de"
+       ],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     },
+     {
+      "company_type": "Thẩm mỹ viện",
+      "do": {
+       "ao_nen": "scrubs",
+       "khoac": [],
+       "deo": [
+        "khau_trang",
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "tu_van_le_tan",
+    "ten_vn": "Tư vấn, lễ tân",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách làm đẹp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_PERS_BEAUTY_SMALL",
+  "bo_phan": [
+   {
+    "id": "tho",
+    "ten_vn": "Thợ tóc, thợ nail",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Tiệm nail",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [
+        "tap_de"
+       ],
+       "deo": [
+        "khau_trang"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "chu_tiem",
+    "ten_vn": "Chủ tiệm",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách làm đẹp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_PERS_GYM",
+  "bo_phan": [
+   {
+    "id": "huan_luyen_vien",
+    "ten_vn": "Huấn luyện viên",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_the_thao",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Phòng tập độc lập",
+      "do": {
+       "ao_nen": "ao_the_thao",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "tu_van_hoi_vien",
+    "ten_vn": "Tư vấn hội viên, lễ tân",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Hội viên",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_the_thao",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_PERS_HOUSEHOLD",
+  "bo_phan": [
+   {
+    "id": "giup_viec_bao_mau",
+    "ten_vn": "Người giúp việc, bảo mẫu, chăm sóc",
+    "relation_hop": [
+     "khach_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Công ty cung ứng giúp việc",
+      "do": {
+       "ao_nen": "thun_polo",
+       "khoac": [
+        "tap_de"
+       ],
+       "deo": [],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "nhan_vien_cong_ty_cung_ung",
+    "ten_vn": "Nhân viên công ty cung ứng",
+    "relation_hop": [
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Gia chủ, người trong nhà",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_PERS_FUNERAL",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_nghi_le",
+    "ten_vn": "Nhân viên nghi lễ, khiêng hạ",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "tu_van_dich_vu",
+    "ten_vn": "Tư vấn dịch vụ tang lễ",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Gia đình người mất",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_PERS_PET",
+  "bo_phan": [
+   {
+    "id": "cham_soc_cat_tia",
+    "ten_vn": "Nhân viên tắm, cắt tỉa thú cưng",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Spa thú cưng nhỏ",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [
+        "tap_de"
+       ],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "ban_hang_tu_van",
+    "ten_vn": "Nhân viên bán hàng, tư vấn",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ thú cưng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_AIRLINE",
+  "bo_phan": [
+   {
+    "id": "tiep_vien",
+    "ten_vn": "Tiếp viên",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_dai",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Hãng hàng không giá rẻ",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "phi_cong",
+    "ten_vn": "Phi công",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "mat_dat",
+    "ten_vn": "Nhân viên mặt đất, làm thủ tục",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi_vest",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Hành khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_ATC",
+  "bo_phan": [
+   {
+    "id": "kiem_soat_vien",
+    "ten_vn": "Kiểm soát viên không lưu",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "tai_nghe",
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "kip_truong",
+    "ten_vn": "Kíp trưởng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu",
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đoàn kiểm tra, khách tham quan",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_ROAD_FREIGHT",
+  "bo_phan": [
+   {
+    "id": "tai_xe_phu_xe",
+    "ten_vn": "Tài xế, phụ xe",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Nhà xe tải nhỏ",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "dieu_do",
+    "ten_vn": "Điều độ xe ở văn phòng",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Nhân viên kho, người nhận hàng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_PASSENGER",
+  "bo_phan": [
+   {
+    "id": "lai_xe",
+    "ten_vn": "Lái xe",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "phu_xe_phuc_vu",
+    "ten_vn": "Phụ xe, nhân viên phục vụ",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dieu_hanh_ben",
+    "ten_vn": "Điều hành bến, bán vé",
+    "relation_hop": [
+     "cap_tren",
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Hành khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_RAIL",
+  "bo_phan": [
+   {
+    "id": "lai_tau",
+    "ten_vn": "Lái tàu",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "nhan_vien_ga_toa",
+    "ten_vn": "Nhân viên nhà ga, trưởng toa",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu",
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Công ty vận hành metro",
+      "do": {
+       "ao_nen": "so_mi",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Hành khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_SHIP",
+  "bo_phan": [
+   {
+    "id": "si_quan",
+    "ten_vn": "Sĩ quan boong, máy",
+    "relation_hop": [
+     "cap_tren",
+     "ngang_hang",
+     "cap_duoi"
+    ],
+    "do": {
+     "ao_nen": "dong_phuc_nganh",
+     "khoac": [],
+     "deo": [
+      "phu_hieu"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "thuy_thu_tho_may",
+    "ten_vn": "Thuỷ thủ, thợ máy",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "ao_phao"
+     ],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "van_phong_cung_ung",
+    "ten_vn": "Văn phòng hãng tàu, cung ứng thuyền viên",
+    "relation_hop": [
+     "phong_ban_khac",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Đại diện chủ hàng, cảng vụ",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_PORT",
+  "bo_phan": [
+   {
+    "id": "cong_nhan_cang",
+    "ten_vn": "Công nhân bốc xếp, lái xe nâng",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dieu_do_kiem_dem",
+    "ten_vn": "Điều độ, kiểm đếm hiện trường",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho",
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Lái xe container, đại lý",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "mu_bao_ho"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_WAREHOUSE",
+  "bo_phan": [
+   {
+    "id": "nhan_vien_kho",
+    "ten_vn": "Nhân viên phân loại, bốc xếp",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "truong_ca_kho",
+    "ten_vn": "Trưởng ca, giám sát kho",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Tài xế, người giao nhận",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_DELIVERY",
+  "bo_phan": [
+   {
+    "id": "shipper_tai_xe",
+    "ten_vn": "Shipper, tài xế công nghệ",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "mu_bao_hiem"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "buu_cuc_dieu_phoi",
+    "ten_vn": "Nhân viên bưu cục, điều phối",
+    "relation_hop": [
+     "cap_tren",
+     "phong_ban_khac",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Ứng dụng gọi xe, giao đồ ăn",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [
+        "the_deo"
+       ],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người nhận hàng, khách đặt xe",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_POSTAL",
+  "bo_phan": [
+   {
+    "id": "giao_dich_vien",
+    "ten_vn": "Giao dịch viên bưu cục",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "buu_ta",
+    "ten_vn": "Bưu tá",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "mu_bao_hiem"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách gửi, nhận bưu phẩm",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_TRANS_INSPECTION",
+  "bo_phan": [
+   {
+    "id": "dang_kiem_vien",
+    "ten_vn": "Đăng kiểm viên trên dây chuyền",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "ao_phan_quang"
+     ],
+     "deo": [
+      "the_deo",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Trung tâm đăng kiểm xã hội hoá",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [
+        "ao_phan_quang"
+       ],
+       "deo": [
+        "the_deo",
+        "gang_tay"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "tiep_nhan_ho_so",
+    "ten_vn": "Tiếp nhận hồ sơ, thu phí",
+    "relation_hop": [
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ xe, lái xe",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_AGRI_FAMILY_FARM",
+  "bo_phan": [
+   {
+    "id": "nong_dan",
+    "ten_vn": "Nông dân, người trong hộ",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "non_la"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "can_bo_khuyen_nong",
+    "ten_vn": "Cán bộ khuyến nông, hợp tác xã",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "mu_luoi_trai"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Thương lái",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "mu_luoi_trai"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_AGRI_ENTERPRISE_FARM",
+  "bo_phan": [
+   {
+    "id": "cong_nhan_trai",
+    "ten_vn": "Công nhân trang trại",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "gang_tay",
+      "khau_trang"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Trang trại chăn nuôi khép kín",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "mu_trum",
+        "khau_trang",
+        "gang_tay"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "ky_su_nong_nghiep",
+    "ten_vn": "Kỹ sư, kỹ thuật viên",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "mu_luoi_trai"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Trang trại chăn nuôi khép kín",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "mu_trum",
+        "khau_trang"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách tham quan, đối tác thu mua",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Trang trại chăn nuôi khép kín",
+      "do": {
+       "ao_nen": "ao_lao_dong",
+       "khoac": [],
+       "deo": [
+        "mu_trum",
+        "khau_trang"
+       ],
+       "mau": "cong_ty"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "WE_AGRI_FISHING",
+  "bo_phan": [
+   {
+    "id": "ngu_dan",
+    "ten_vn": "Ngư dân, thuyền viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [
+      "ao_phao"
+     ],
+     "deo": [
+      "mu_luoi_trai"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "thuyen_truong",
+    "ten_vn": "Thuyền trưởng, chủ tàu",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_luoi_trai"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Chủ vựa, thương lái ở bến",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_AGRI_FORESTRY",
+  "bo_phan": [
+   {
+    "id": "cong_nhan_lam_nghiep",
+    "ten_vn": "Công nhân lâm nghiệp",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_lao_dong",
+     "khoac": [],
+     "deo": [
+      "mu_bao_ho",
+      "gang_tay"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ky_su_lam_nghiep",
+    "ten_vn": "Kỹ sư, cán bộ kỹ thuật lâm trường",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "ao_khoac_ky_thuat",
+     "khoac": [],
+     "deo": [
+      "mu_luoi_trai"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Người dân nhận khoán, thương lái gỗ",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "non_la"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MEDIA_NEWSROOM",
+  "bo_phan": [
+   {
+    "id": "phong_vien",
+    "ten_vn": "Phóng viên",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "bien_tap",
+    "ten_vn": "Biên tập viên, thư ký toà soạn",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "quay_phim_ky_thuat",
+    "ten_vn": "Quay phim, kỹ thuật",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "tai_nghe",
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Nguồn tin, nhân vật",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MEDIA_PRODUCTION",
+  "bo_phan": [
+   {
+    "id": "ekip_hau_truong",
+    "ten_vn": "Ekip hậu trường (quay, ánh sáng, đạo cụ)",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "tai_nghe",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dao_dien_san_xuat",
+    "ten_vn": "Đạo diễn, nhà sản xuất",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "tai_nghe"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dien_vien",
+    "ten_vn": "Diễn viên",
+    "relation_hop": [
+     "ngang_hang",
+     "khach_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "trang_phuc_bieu_dien",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng nhãn hàng, nghệ sĩ",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MEDIA_CREATIVE_STUDIO",
+  "bo_phan": [
+   {
+    "id": "hoa_si_thiet_ke",
+    "ten_vn": "Hoạ sĩ, nhà thiết kế",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "cap_duoi"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "tho_may_mau",
+    "ten_vn": "Thợ may mẫu",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [
+      "tap_de"
+     ],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách hàng doanh nghiệp",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_MEDIA_FREELANCE",
+  "bo_phan": [
+   {
+    "id": "freelancer",
+    "ten_vn": "Freelancer, thành viên nhóm",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khách thuê dự án",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ARTS_STATE_TROUPE",
+  "bo_phan": [
+   {
+    "id": "dien_vien_bieu_dien",
+    "ten_vn": "Diễn viên, nhạc công khi diễn",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "trang_phuc_bieu_dien",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "dien_vien_gio_tap",
+    "ten_vn": "Diễn viên trong giờ tập",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_the_thao",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan",
+    "bien_the_cong_ty": [
+     {
+      "company_type": "Nhà hát kịch, cải lương, chèo",
+      "do": {
+       "ao_nen": "doi_thuong_rieng",
+       "khoac": [],
+       "deo": [],
+       "mau": "tu_do"
+      }
+     }
+    ]
+   },
+   {
+    "id": "dao_dien_lanh_dao",
+    "ten_vn": "Đạo diễn, lãnh đạo nhà hát",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khán giả",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_ARTS_ENTERTAINMENT",
+  "bo_phan": [
+   {
+    "id": "nghe_si",
+    "ten_vn": "Nghệ sĩ trên sân khấu",
+    "relation_hop": [
+     "khach_hang",
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "trang_phuc_bieu_dien",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ekip_san_khau",
+    "ten_vn": "Ekip sân khấu, ánh sáng, âm thanh",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [
+      "tai_nghe",
+      "the_deo",
+      "gang_tay"
+     ],
+     "mau": "nganh"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "quan_ly_dieu_phoi",
+    "ten_vn": "Quản lý nghệ sĩ, điều phối show",
+    "relation_hop": [
+     "cap_tren",
+     "khach_hang",
+     "phong_ban_khac"
+    ],
+    "do": {
+     "ao_nen": "so_mi",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Khán giả, đại diện nhãn hàng",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SPORT_STATE_CENTER",
+  "bo_phan": [
+   {
+    "id": "van_dong_vien",
+    "ten_vn": "Vận động viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren"
+    ],
+    "do": {
+     "ao_nen": "ao_the_thao",
+     "khoac": [],
+     "deo": [],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "huan_luyen_vien",
+    "ten_vn": "Huấn luyện viên",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi"
+    ],
+    "do": {
+     "ao_nen": "ao_the_thao",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Phụ huynh, khách",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "doi_thuong_rieng",
+     "khoac": [],
+     "deo": [],
+     "mau": "tu_do"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ },
+ {
+  "id": "WE_SPORT_PRO_CLUB",
+  "bo_phan": [
+   {
+    "id": "cau_thu",
+    "ten_vn": "Cầu thủ, vận động viên",
+    "relation_hop": [
+     "ngang_hang",
+     "cap_tren",
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_the_thao",
+     "khoac": [],
+     "deo": [],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "ban_huan_luyen",
+    "ten_vn": "Ban huấn luyện",
+    "relation_hop": [
+     "cap_tren",
+     "cap_duoi"
+    ],
+    "do": {
+     "ao_nen": "ao_the_thao",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "van_phong_truyen_thong",
+    "ten_vn": "Văn phòng câu lạc bộ, truyền thông",
+    "relation_hop": [
+     "phong_ban_khac",
+     "khach_hang",
+     "ngang_hang"
+    ],
+    "do": {
+     "ao_nen": "thun_polo",
+     "khoac": [],
+     "deo": [
+      "the_deo"
+     ],
+     "mau": "cong_ty"
+    },
+    "nguon": "dress_code"
+   },
+   {
+    "id": "khach_nguoi_ngoai",
+    "ten_vn": "Cổ động viên",
+    "relation_hop": [
+     "khach_hang"
+    ],
+    "do": {
+     "ao_nen": "ao_the_thao",
+     "khoac": [],
+     "deo": [],
+     "mau": "cong_ty"
+    },
+    "nguon": "suy_luan"
+   }
+  ]
+ }
+]

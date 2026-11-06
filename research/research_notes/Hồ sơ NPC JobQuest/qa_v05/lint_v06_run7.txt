@@ -1,0 +1,354 @@
+== Phần 1: các bài từng hồ sơ (bộ lint v0.4, cổng mức thân lấy cao_trao của từng chương) ==
+[PASS] 0_chang_kho | 1a cau_mau text has no digits
+[PASS] 0_chang_kho | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] 0_chang_kho | 1c xu_ly_phu differs from chu_dao
+[PASS] 0_chang_kho | 1d core fields <= 15 words
+[PASS] 0_chang_kho | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] 0_chang_kho | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+[PASS] 0_chang_kho | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] 0_chang_kho | 3b every expression used is in the 8-set
+[PASS] 0_chang_kho | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] 0_chang_kho | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] 0_chang_kho | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] 0_chang_kho | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] I_nha_ao_thuat | 1a cau_mau text has no digits
+[PASS] I_nha_ao_thuat | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] I_nha_ao_thuat | 1c xu_ly_phu differs from chu_dao
+[PASS] I_nha_ao_thuat | 1d core fields <= 15 words
+[PASS] I_nha_ao_thuat | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] I_nha_ao_thuat | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+[PASS] I_nha_ao_thuat | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] I_nha_ao_thuat | 3b every expression used is in the 8-set
+[PASS] I_nha_ao_thuat | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] I_nha_ao_thuat | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] I_nha_ao_thuat | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] I_nha_ao_thuat | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] II_nu_tu_te | 1a cau_mau text has no digits
+[PASS] II_nu_tu_te | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] II_nu_tu_te | 1c xu_ly_phu differs from chu_dao
+[PASS] II_nu_tu_te | 1d core fields <= 15 words
+[PASS] II_nu_tu_te | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] II_nu_tu_te | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+[PASS] II_nu_tu_te | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] II_nu_tu_te | 3b every expression used is in the 8-set
+[PASS] II_nu_tu_te | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] II_nu_tu_te | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] II_nu_tu_te | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] II_nu_tu_te | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] III_hoang_hau | 1a cau_mau text has no digits
+[PASS] III_hoang_hau | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] III_hoang_hau | 1c xu_ly_phu differs from chu_dao
+[PASS] III_hoang_hau | 1d core fields <= 15 words
+[PASS] III_hoang_hau | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] III_hoang_hau | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+[PASS] III_hoang_hau | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] III_hoang_hau | 3b every expression used is in the 8-set
+[PASS] III_hoang_hau | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] III_hoang_hau | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] III_hoang_hau | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] III_hoang_hau | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] IV_hoang_de | 1a cau_mau text has no digits
+[PASS] IV_hoang_de | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] IV_hoang_de | 1c xu_ly_phu differs from chu_dao
+[PASS] IV_hoang_de | 1d core fields <= 15 words
+[PASS] IV_hoang_de | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] IV_hoang_de | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) nhay_cam shares bigram ['người chơi'] with tri_ky
+[PASS] IV_hoang_de | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] IV_hoang_de | 3b every expression used is in the 8-set
+[PASS] IV_hoang_de | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] IV_hoang_de | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] IV_hoang_de | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] IV_hoang_de | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] V_giao_hoang | 1a cau_mau text has no digits
+[PASS] V_giao_hoang | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] V_giao_hoang | 1c xu_ly_phu differs from chu_dao
+[PASS] V_giao_hoang | 1d core fields <= 15 words
+[PASS] V_giao_hoang | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] V_giao_hoang | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) muon shares bigram ['học trò'] with than
+       (info, not a failure) cau_mau[ngoai_gio] shares bigram ['từ hồi'] with gan_bo
+[PASS] V_giao_hoang | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] V_giao_hoang | 3b every expression used is in the 8-set
+[PASS] V_giao_hoang | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] V_giao_hoang | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] V_giao_hoang | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] V_giao_hoang | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] VI_tinh_nhan | 1a cau_mau text has no digits
+[PASS] VI_tinh_nhan | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] VI_tinh_nhan | 1c xu_ly_phu differs from chu_dao
+[PASS] VI_tinh_nhan | 1d core fields <= 15 words
+[PASS] VI_tinh_nhan | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] VI_tinh_nhan | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) nhay_cam shares bigram ['người chơi'] with tri_ky
+[PASS] VI_tinh_nhan | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] VI_tinh_nhan | 3b every expression used is in the 8-set
+[PASS] VI_tinh_nhan | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] VI_tinh_nhan | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] VI_tinh_nhan | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] VI_tinh_nhan | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] VII_co_xe | 1a cau_mau text has no digits
+[PASS] VII_co_xe | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] VII_co_xe | 1c xu_ly_phu differs from chu_dao
+[PASS] VII_co_xe | 1d core fields <= 15 words
+[PASS] VII_co_xe | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] VII_co_xe | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) so shares bigram ['năm ngoái'] with gan_bo
+[PASS] VII_co_xe | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] VII_co_xe | 3b every expression used is in the 8-set
+[PASS] VII_co_xe | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] VII_co_xe | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] VII_co_xe | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] VII_co_xe | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] VIII_suc_manh | 1a cau_mau text has no digits
+[PASS] VIII_suc_manh | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] VIII_suc_manh | 1c xu_ly_phu differs from chu_dao
+[PASS] VIII_suc_manh | 1d core fields <= 15 words
+[PASS] VIII_suc_manh | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] VIII_suc_manh | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) nhay_cam shares bigram ['bệnh nhân'] with gan_bo
+       (info, not a failure) diem_yeu shares bigram ['người khác'] with tri_ky
+[PASS] VIII_suc_manh | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] VIII_suc_manh | 3b every expression used is in the 8-set
+[PASS] VIII_suc_manh | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] VIII_suc_manh | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] VIII_suc_manh | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] VIII_suc_manh | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] IX_an_si | 1a cau_mau text has no digits
+[PASS] IX_an_si | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] IX_an_si | 1c xu_ly_phu differs from chu_dao
+[PASS] IX_an_si | 1d core fields <= 15 words
+[PASS] IX_an_si | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] IX_an_si | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) cau_mau[ngoai_gio] shares bigram ['ông thợ'] with than
+[PASS] IX_an_si | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] IX_an_si | 3b every expression used is in the 8-set
+[PASS] IX_an_si | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] IX_an_si | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] IX_an_si | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] IX_an_si | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] X_banh_xe_so_phan | 1a cau_mau text has no digits
+[PASS] X_banh_xe_so_phan | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] X_banh_xe_so_phan | 1c xu_ly_phu differs from chu_dao
+[PASS] X_banh_xe_so_phan | 1d core fields <= 15 words
+[PASS] X_banh_xe_so_phan | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] X_banh_xe_so_phan | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+[PASS] X_banh_xe_so_phan | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] X_banh_xe_so_phan | 3b every expression used is in the 8-set
+[PASS] X_banh_xe_so_phan | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] X_banh_xe_so_phan | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] X_banh_xe_so_phan | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] X_banh_xe_so_phan | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XI_cong_ly | 1a cau_mau text has no digits
+[PASS] XI_cong_ly | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XI_cong_ly | 1c xu_ly_phu differs from chu_dao
+[PASS] XI_cong_ly | 1d core fields <= 15 words
+[PASS] XI_cong_ly | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XI_cong_ly | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) so shares bigram ['giúp ai', 'mình chỉ', 'nói lý'] with gan_bo
+       (info, not a failure) diem_yeu shares bigram ['đúng sai'] with tri_ky
+[PASS] XI_cong_ly | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XI_cong_ly | 3b every expression used is in the 8-set
+[PASS] XI_cong_ly | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XI_cong_ly | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XI_cong_ly | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XI_cong_ly | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XII_nguoi_treo_nguoc | 1a cau_mau text has no digits
+[PASS] XII_nguoi_treo_nguoc | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XII_nguoi_treo_nguoc | 1c xu_ly_phu differs from chu_dao
+[PASS] XII_nguoi_treo_nguoc | 1d core fields <= 15 words
+[PASS] XII_nguoi_treo_nguoc | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XII_nguoi_treo_nguoc | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) nhay_cam shares bigram ['đổi nghề'] with tri_ky
+       (info, not a failure) so shares bigram ['bỏ cuộc'] with tri_ky
+[PASS] XII_nguoi_treo_nguoc | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XII_nguoi_treo_nguoc | 3b every expression used is in the 8-set
+[PASS] XII_nguoi_treo_nguoc | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XII_nguoi_treo_nguoc | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XII_nguoi_treo_nguoc | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XII_nguoi_treo_nguoc | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XIII_cai_chet | 1a cau_mau text has no digits
+[PASS] XIII_cai_chet | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XIII_cai_chet | 1c xu_ly_phu differs from chu_dao
+[PASS] XIII_cai_chet | 1d core fields <= 15 words
+[PASS] XIII_cai_chet | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XIII_cai_chet | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) nhay_cam shares bigram ['nghỉ việc'] with gan_bo
+[PASS] XIII_cai_chet | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XIII_cai_chet | 3b every expression used is in the 8-set
+[PASS] XIII_cai_chet | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XIII_cai_chet | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XIII_cai_chet | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XIII_cai_chet | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XIV_tiet_do | 1a cau_mau text has no digits
+[PASS] XIV_tiet_do | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XIV_tiet_do | 1c xu_ly_phu differs from chu_dao
+[PASS] XIV_tiet_do | 1d core fields <= 15 words
+[PASS] XIV_tiet_do | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XIV_tiet_do | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+[PASS] XIV_tiet_do | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XIV_tiet_do | 3b every expression used is in the 8-set
+[PASS] XIV_tiet_do | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XIV_tiet_do | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XIV_tiet_do | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XIV_tiet_do | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XV_ac_quy | 1a cau_mau text has no digits
+[PASS] XV_ac_quy | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XV_ac_quy | 1c xu_ly_phu differs from chu_dao
+[PASS] XV_ac_quy | 1d core fields <= 15 words
+[PASS] XV_ac_quy | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XV_ac_quy | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) so shares bigram ['nhà túng'] with gan_bo
+       (info, not a failure) nhay_cam shares bigram ['từ chối'] with tri_ky
+[PASS] XV_ac_quy | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XV_ac_quy | 3b every expression used is in the 8-set
+[PASS] XV_ac_quy | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XV_ac_quy | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XV_ac_quy | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XV_ac_quy | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XVI_toa_thap | 1a cau_mau text has no digits
+[PASS] XVI_toa_thap | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XVI_toa_thap | 1c xu_ly_phu differs from chu_dao
+[PASS] XVI_toa_thap | 1d core fields <= 15 words
+[PASS] XVI_toa_thap | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XVI_toa_thap | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) nhay_cam shares bigram ['hải xui'] with than
+       (info, not a failure) so shares bigram ['khỏi đội'] with gan_bo
+       (info, not a failure) cau_mau[ngang_hang] shares bigram ['xin lỗi'] with tri_ky
+       (info, not a failure) diem_yeu shares bigram ['lỗi ai', 'xin lỗi'] with tri_ky
+[PASS] XVI_toa_thap | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XVI_toa_thap | 3b every expression used is in the 8-set
+[PASS] XVI_toa_thap | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XVI_toa_thap | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XVI_toa_thap | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XVI_toa_thap | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XVII_ngoi_sao | 1a cau_mau text has no digits
+[PASS] XVII_ngoi_sao | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XVII_ngoi_sao | 1c xu_ly_phu differs from chu_dao
+[PASS] XVII_ngoi_sao | 1d core fields <= 15 words
+[PASS] XVII_ngoi_sao | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XVII_ngoi_sao | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) diem_yeu shares bigram ['lần đầu'] with tri_ky
+[PASS] XVII_ngoi_sao | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XVII_ngoi_sao | 3b every expression used is in the 8-set
+[PASS] XVII_ngoi_sao | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XVII_ngoi_sao | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XVII_ngoi_sao | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XVII_ngoi_sao | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XVIII_mat_trang | 1a cau_mau text has no digits
+[PASS] XVIII_mat_trang | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XVIII_mat_trang | 1c xu_ly_phu differs from chu_dao
+[PASS] XVIII_mat_trang | 1d core fields <= 15 words
+[PASS] XVIII_mat_trang | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XVIII_mat_trang | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+[PASS] XVIII_mat_trang | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XVIII_mat_trang | 3b every expression used is in the 8-set
+[PASS] XVIII_mat_trang | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XVIII_mat_trang | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XVIII_mat_trang | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XVIII_mat_trang | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XIX_mat_troi | 1a cau_mau text has no digits
+[PASS] XIX_mat_troi | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XIX_mat_troi | 1c xu_ly_phu differs from chu_dao
+[PASS] XIX_mat_troi | 1d core fields <= 15 words
+[PASS] XIX_mat_troi | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XIX_mat_troi | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) so shares bigram ['ba mẹ'] with gan_bo
+       (info, not a failure) so shares bigram ['ba mẹ'] with tri_ky
+[PASS] XIX_mat_troi | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XIX_mat_troi | 3b every expression used is in the 8-set
+[PASS] XIX_mat_troi | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XIX_mat_troi | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XIX_mat_troi | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XIX_mat_troi | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XX_phan_xet | 1a cau_mau text has no digits
+[PASS] XX_phan_xet | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XX_phan_xet | 1c xu_ly_phu differs from chu_dao
+[PASS] XX_phan_xet | 1d core fields <= 15 words
+[PASS] XX_phan_xet | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XX_phan_xet | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+       (info, not a failure) nhay_cam shares bigram ['người chơi'] with tri_ky
+       (info, not a failure) diem_yeu shares bigram ['xin lỗi'] with tri_ky
+[PASS] XX_phan_xet | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XX_phan_xet | 3b every expression used is in the 8-set
+[PASS] XX_phan_xet | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XX_phan_xet | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XX_phan_xet | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XX_phan_xet | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+[PASS] XXI_the_gioi | 1a cau_mau text has no digits
+[PASS] XXI_the_gioi | 1b cau_mau does not contain any cau_cua_rieng phrase
+[PASS] XXI_the_gioi | 1c xu_ly_phu differs from chu_dao
+[PASS] XXI_the_gioi | 1d core fields <= 15 words
+[PASS] XXI_the_gioi | 1e every vai_hop_le relation has a cau_mau; at least one bat_ky
+[PASS] XXI_the_gioi | 2 bond gate: no [loi] content word-trigram shared with than/gan_bo/tri_ky
+[PASS] XXI_the_gioi | 3a hay_dung >= 4, one happy, one unhappy
+[PASS] XXI_the_gioi | 3b every expression used is in the 8-set
+[PASS] XXI_the_gioi | 3c phan_ung.ghet differs from thich and is unhappy
+[PASS] XXI_the_gioi | 4 removed fields absent (ly_do_co_mat, da_gap, sidequest_hooks)
+[PASS] XXI_the_gioi | 5 tuyen_truyen chapters 1..3, than -> gan_bo -> tri_ky, mo_o = previous level
+[PASS] XXI_the_gioi | 2b cổng mức thân theo thứ tự nạp: chuyện đời và tóm tắt chương k không chứa cao trào chương k trở đi
+
+== Phần 2: các bài toàn cast ==
+[PASS] CAST | C1 đủ 22 lá, mỗi số một lá
+[PASS] CAST | C2 đủ 22 tên đã chốt, đúng nhãn anh/chị, không trùng
+[PASS] CAST | C3 sinh nhật hợp lệ và không trùng
+[PASS] CAST | C4 cách mở lá khớp khối 4 (6 sẵn, 3 cột mốc, 13 danh thiếp/người mới)
+[PASS] CAST | C5 năng lực và điều kiện cột mốc chép đúng chữ của khối 4
+[PASS] CAST | C6a không có hai lá trùng hệt Big Five
+[PASS] CAST | C6b khoảng cách Big Five giữa hai lá ≥ 2 (thang 1–7); 5 cặp gần nhất: 0–X 2.00; II–XIV 2.00; II–XXI 2.00; IV–IX 2.00; V–VIII 2.00
+[PASS] CAST | C7a bộ trợ từ giữa hai lá trùng < 50% (Jaccard)
+[PASS] CAST | C7b câu của riêng không trùng giữa các lá
+[PASS] CAST | C7c câu mẫu và phản ứng quà không dùng trợ từ mà hồ sơ cấm
+[PASS] CAST | C7d không trợ từ nào ở quá 50% câu mẫu của một người
+[PASS] CAST | C7e trợ từ nào ở quá 1/3 câu mẫu thì dễ thành tật nói
+[PASS] CAST | C8a màu chủ đạo khác nhau rõ (ΔE76 ≥ 10)
+[WARN] CAST | C8b ΔE76 ≥ 20; cặp gần nhất II_nu_tu_te–XVIII_mat_trang 12.7
+       - II_nu_tu_te–XVIII_mat_trang ΔE 12.7
+       - II_nu_tu_te–XIII_cai_chet ΔE 13.1
+       - 0_chang_kho–XIX_mat_troi ΔE 13.8
+       - XIII_cai_chet–XVIII_mat_trang ΔE 14.7
+       - V_giao_hoang–XII_nguoi_treo_nguoc ΔE 14.9
+       - VIII_suc_manh–XXI_the_gioi ΔE 15.3
+       - III_hoang_hau–XV_ac_quy ΔE 15.4
+       - VI_tinh_nhan–XV_ac_quy ΔE 15.8
+       - V_giao_hoang–IX_an_si ΔE 18.0
+       - IX_an_si–XXI_the_gioi ΔE 18.1
+       - VIII_suc_manh–XIV_tiet_do ΔE 19.6
+[PASS] CAST | C9 mỗi quan hệ slot có ít nhất 5 lá đóng được: cap_tren 12, ngang_hang 14, cap_duoi 6, phong_ban_khac 19, khach_hang 20
+[PASS] CAST | C10 tuổi hợp vai (cấp trên ≥ 25, cấp dưới ≤ 40, dưới 18 chỉ làm khách)
+[PASS] CAST | C11 xưng hô theo lựa chọn anh/chị: NPC nhỏ tuổi dùng {goi}, không còn "không muốn nói"
+[PASS] CAST | C12 biểu cảm: hay và hiếm không trùng; câu mẫu dùng mặt hiếm tối đa một câu; quà thích/ghét tách nhau
+[PASS] CAST | C13 id chương tuyến truyện duy nhất và mang số lá
+[PASS] CAST | C14 câu mẫu và phản ứng quà ≤ 25 tiếng
+[PASS] CAST | C15 đại từ trong câu mẫu khớp xưng hô engine tính (soát tay: có thể là người thứ ba)
+[PASS] CAST | C16 mọi thẻ dựng ra: phần người ≤ 250 tiếng (dài nhất 241, X_banh_xe_so_phan ngang_hang); nhiệm vụ phụ: khối đời tư gốc ≤ 200, đủ cả 3 dòng ký ức 12 tiếng và dòng cao trào ≤ 260 (v0.6, chờ duyệt) (dài nhất 251, XIII_cai_chet gan_bo)
+[PASS] CAST | C17 thẻ khi người chơi chọn anh và khi chọn chị chỉ khác đúng chữ xưng hô
+
+== Phần 2b: tách khối nguoi / doi_tu (v0.6) ==
+[PASS] CAST | T1 mỗi hồ sơ đúng các khối; danh_tinh chỉ còn tên, tuổi, giới, sinh nhật
+[PASS] CAST | T2 thẻ màn làm việc giống hệt khi xoá doi_tu khỏi hồ sơ (engine không đọc đời tư)
+[PASS] CAST | T3 khối nguoi không chung cụm 3 từ nào với khối doi_tu
+[WARN] CAST | T4 khối nguoi không có từ chỉ chuyện nhà hay nghề ngoài đời (soát tay)
+       - XIII_cai_chet: "gia đình" có "gia đình"
+       - XIII_cai_chet: "Phổ thông, trầm, chậm; còn vài chữ Nghệ khi nhắc chuyện quê " có "quê"
+       - XV_ac_quy: "gia đình" có "gia đình"
+       - XVIII_mat_trang: "gia đình" có "gia đình"
+       - XIX_mat_troi: "gia đình" có "gia đình"
+[PASS] CAST | T5 mỗi lá có mo_ta_ngan ≤ 15 tiếng, không trùng
+[PASS] CAST | T6 noi_gap ≤ 14 tiếng, không chữ số; mô tả ngắn và chỗ gặp không chạm cao trào nào; sổ tay mức k có đúng k+1 dòng chuyện
+
+== Phần 3: báo cáo đa dạng (không chấm đạt/trượt) ==
+Vùng giọng: {'trung_song_nam': 3, 'nam': 14, 'bac_song_nam': 5}
+Giới NPC: {'nu': 9, 'nam': 13}
+Tuổi: [16, 23, 24, 25, 26, 26, 27, 29, 29, 31, 32, 34, 34, 36, 37, 38, 39, 43, 46, 47, 58, 62] · nhóm <25: 3, 25–34: 10, 35–49: 7, ≥50: 2
+Cách xử lý bất đồng: {'nhuong_nhin': 4, 'thoa_hiep': 4, 'hop_tac': 5, 'canh_tranh': 5, 'ne_tranh': 4}
+Mức trang trọng: {0: 6, 1: 10, 2: 5, 3: 1}
+Big Five huong_ngoai      {1: 1, 2: 3, 3: 3, 4: 4, 5: 3, 6: 6, 7: 2}
+Big Five de_chiu          {3: 2, 4: 4, 5: 5, 6: 8, 7: 3}
+Big Five tan_tam          {2: 1, 3: 3, 4: 2, 5: 5, 6: 7, 7: 4}
+Big Five on_dinh_cam_xuc  {2: 1, 3: 3, 4: 3, 5: 5, 6: 6, 7: 4}
+Big Five coi_mo           {3: 4, 4: 7, 5: 2, 6: 3, 7: 6}
+Mặt hay dùng (số lá): {'vui': 22, 'binh_thuong': 17, 'suy_nghi': 13, 'kho_chiu': 11, 'cuoi_lon': 9, 'buon': 7, 'lo_lang': 6, 'ngac_nhien': 4}
+Lá theo quan hệ: {'cap_tren': ['Phương', 'Mai', 'Hồng', 'Minh', 'Mạnh', 'Thương', 'Hiếu', 'Đạt', 'Tấn', 'Sang', 'Thảo', 'Ngọc'], 'ngang_hang': ['Hân', 'Duy', 'Lộc', 'Mạnh', 'Thương', 'Tiên', 'Đạt', 'Luân', 'Tấn', 'Lam', 'Phát', 'Hải', 'My', 'Sang'], 'cap_duoi': ['Hân', 'Duy', 'Lộc', 'Luân', 'Hải', 'My'], 'phong_ban_khac': ['Hân', 'Duy', 'Phương', 'Mai', 'Hồng', 'Minh', 'Lộc', 'Mạnh', 'Thương', 'Hiếu', 'Tiên', 'Đạt', 'Luân', 'Lam', 'Phát', 'Hải', 'Sang', 'Thảo', 'Ngọc'], 'khach_hang': ['Hân', 'Duy', 'Phương', 'Mai', 'Hồng', 'Minh', 'Lộc', 'Mạnh', 'Thương', 'Hiếu', 'Tiên', 'Đạt', 'Luân', 'Tấn', 'Lam', 'Phát', 'My', 'Bảo', 'Thảo', 'Ngọc']}
+
+TỔNG: 0 bài FAIL, 2 bài WARN

@@ -1,0 +1,89 @@
+{
+ "WORK": {
+  "W7": {
+   "noi": "Xưởng in bao bì, bàn giao ca sáng",
+   "gio": "07:45",
+   "lua_chon": {
+    "A": "chi"
+   },
+   "slots": [
+    {
+     "id": "giam_doc",
+     "card": "V_giao_hoang",
+     "relation": "cap_tren",
+     "vai": "giám đốc xưởng, người duyệt kế hoạch in của người chơi",
+     "want": "biết chắc lô hộp bánh giao kịp thứ sáu",
+     "pressure": "khách vừa đổi màu logo hôm qua",
+     "known": "máy in số ba phải dừng bảo trì chiều nay"
+    },
+    {
+     "id": "nhan_vien_moi",
+     "card": "XII_nguoi_treo_nguoc",
+     "relation": "cap_duoi",
+     "vai": "thợ vận hành máy mới vào tuần này, người chơi phụ trách kèm",
+     "want": "không để lô in thử bị lệch màu nữa",
+     "pressure": "hôm qua in thử lệch màu hai lần",
+     "known": "mực xanh đang còn ít hơn nửa thùng"
+    },
+    {
+     "id": "dong_nghiep",
+     "card": "XVI_toa_thap",
+     "relation": "ngang_hang",
+     "vai": "kỹ thuật viên bảo trì máy, cùng cấp với người chơi",
+     "want": "dừng máy số ba đúng giờ để bảo trì",
+     "known": "bảo trì máy số ba mất khoảng ba tiếng"
+    }
+   ],
+   "turns": [
+    [
+     "giam_doc",
+     "Dạ chào bác, lô hộp bánh bên mình vẫn kịp thứ sáu ạ."
+    ],
+    [
+     "giam_doc",
+     "Bác thấy mình nên in lại mẫu màu mới trước không ạ?"
+    ],
+    [
+     "nhan_vien_moi",
+     "Luân ơi, bản in thử hôm qua lệch chỗ nào vậy em?"
+    ],
+    [
+     "nhan_vien_moi",
+     "Em làm chậm cũng được, nhưng sáng nay in thử lại giúp chị nha."
+    ],
+    [
+     "nhan_vien_moi",
+     "Nhìn em đo đạc kỹ ghê, hồi trước em làm kỹ thuật hả?"
+    ],
+    [
+     "dong_nghiep",
+     "Hải ơi, chiều nay dừng máy số ba mấy giờ vậy?"
+    ],
+    [
+     "giam_doc",
+     "Bác ơi, bác hồi xưa có đi dạy không ạ? Bác giảng dễ hiểu ghê."
+    ]
+   ]
+  }
+ },
+ "SIDE": {
+  "S7": {
+   "card": "V_giao_hoang",
+   "muc": "gap",
+   "lua_chon": {
+    "A": "anh"
+   },
+   "ten": "Khoa",
+   "noi": "Phòng khách nhà thầy Minh, buổi tối tư vấn hướng nghiệp",
+   "ky_uc": [],
+   "turns": [
+    "Dạ con chào thầy, em tới hỏi chuyện chọn nghề ạ.",
+    "Thầy thấy em có nên đổi nghề sớm không thầy?",
+    "Thầy tư vấn cho nhiều người vậy, có ai làm thầy nhớ nhất không?"
+   ]
+  }
+ },
+ "INTERVIEW": {
+  "cards": []
+ }
+}

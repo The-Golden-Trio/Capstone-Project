@@ -1,0 +1,96 @@
+{
+ "part1": [
+  {
+   "q": 1,
+   "X": "Trời, tui đi một vòng là quen nửa phòng luôn á! Ai đứng một mình là tui lại bắt chuyện liền.",
+   "Y": "Chị thường tìm một góc, ngồi với người chị quen. Ai bắt chuyện thì chị nói, chứ chị ít khi bắt chuyện trước."
+  },
+  {
+   "q": 2,
+   "X": "Chắc tui xỉu quá Linh ơi. Một tuần hông gặp ai là tui nói chuyện với Bánh Bao cả ngày luôn á.",
+   "Y": "Vài hôm đầu thì nhẹ đầu, dễ chịu lắm. Sang cuối tuần thì bắt đầu thấy thiếu thiếu, nhất là thiếu nhóm chạy buổi sáng."
+  },
+  {
+   "q": 3,
+   "X": "Ấm ức chút xíu á. Mà thôi, tui nhận phần tui cho xong, cãi qua cãi lại mệt lắm.",
+   "Y": "Khó chịu chứ. Chị nói thẳng với người ta, ngay hôm đó. Chị không cần ai chịu tội. Lỗi thì sửa cách làm, cho lần sau không lặp."
+  },
+  {
+   "q": 4,
+   "X": "Việc của đội thì chị vẫn làm, thích hay không là chuyện khác. Có khi chị nhận luôn cho nhanh, rồi ngồi làm một mình tới sáng.",
+   "Y": "Tui hay gật đầu trước rồi mới nghĩ á. Hồi học kế toán tui ráng tới năm hai, rồi cũng chạy. Chạy giỏi lắm á! Còn việc nhỏ nhỏ thì lỡ gật rồi, làm cho vui."
+  },
+  {
+   "q": 5,
+   "X": "Bàn tui hả, giấy note dán tùm lum hết trơn. Lịch thì tui có tải ứng dụng đàng hoàng, mà quên mở hoài á.",
+   "Y": "Gọn lắm đấy. Bút một chỗ, sổ một chỗ. Lịch thì chị ghi từ tối hôm trước, việc nào giờ nào rõ ràng."
+  },
+  {
+   "q": 6,
+   "X": "Chị ít để chuyện đó xảy ra. Nếu có thì chị báo trước, nói rõ bao giờ xong, rồi giữ đúng cái giờ ấy. Thức thêm một đêm chị chịu được, trễ hẹn thì chị không chịu được.",
+   "Y": "Cái này tui bị hoài luôn á. Tui chạy qua xin thêm chút giờ, rồi thức làm cho xong. Lần sau tui hứa ít lại… mà chắc cũng hứa nữa á, hì."
+  },
+  {
+   "q": 7,
+   "X": "Ngủ được. Chuẩn bị xong từ chiều thì còn gì mà lo. Sáng ra chạy một vòng là đầu tỉnh hẳn.",
+   "Y": "Ngủ được mà trằn trọc chút á. Nằm nghĩ tùm lum, rồi ôm Bánh Bao ngủ lúc nào hông hay."
+  },
+  {
+   "q": 8,
+   "X": "Răng mà quê dữ vậy trời! Mặt tui đỏ lên liền á. Về nhà than một hồi rồi cũng qua.",
+   "Y": "Khó chịu chứ. Nhưng chị không cãi ngay trước mặt mọi người. Xong việc chị gặp riêng người ta, nói cho rõ đúng sai."
+  },
+  {
+   "q": 9,
+   "X": "Món lạ thì chị nếm một miếng cho phải phép. Cách làm mới thì chị phải xem cách cũ hỏng ở đâu đã. Chưa thấy rõ hơn thì chị chưa đổi.",
+   "Y": "Thử đi, chết ai đâu! Tui là đứa giơ tay đầu tiên luôn á."
+  },
+  {
+   "q": 10,
+   "X": "Sáng chạy bộ với nhóm, trưa nấu cơm cho thằng bé nhà chị. Chiều dọn nhà, ghi lịch cho tuần sau. Thế là đủ vui rồi, Linh ạ.",
+   "Y": "Rảnh là tui đi lung tung, chỗ nào chưa tới là tui mò tới. Tối về nằm kể Bánh Bao nghe cả ngày đi đâu."
+  }
+ ],
+ "part2": [
+  {
+   "id": 1,
+   "text": "Chào em. Đơn sỉ bên chị bắt đầu treo khoảng 9:40. Chị nghĩ bên em đang bảo trì. Bảo trì thì phải báo trước chứ nhỉ. Giờ chị chỉ hỏi một việc: bao giờ thì hết?"
+  },
+  {
+   "id": 2,
+   "text": "Ừ, sang phụ thì được. Chuyện thực đơn mới chưa thuộc, để chị nắm lại sau ca. Thế lúc em sang, khu bàn 1 đến 6 ai trông?"
+  },
+  {
+   "id": 3,
+   "text": "Câu chữ thì em tự liệu. Chị không soạn sẵn cho ai cả. Chị chỉ cần một điều: tiền của khách không vào túi riêng ai. Hàng đang dài, có gì lát nữa nói tiếp."
+  },
+  {
+   "id": 4,
+   "text": "Để góc kia đi Linh, kế cái quạt á. Ủa khoan khoan, thùng đó ly chén đó, nhẹ tay xíu nha!"
+  },
+  {
+   "id": 5,
+   "text": "11 giờ. Chị ghi lại rồi đấy. Chị bị hẹn rồi lùi nhiều lần rồi, em gọi đúng giờ cho chị. Thế nhé."
+  },
+  {
+   "id": 6,
+   "text": "Ok ok, tui dán câu \"đang xử lý\" cho khách liền nè! Mà còn 14 ticket đang chờ, khách hỏi sâu là tui đứng hình á. Ủa khoan khoan, 11h là mình báo lại cho khách hay báo cho tui?"
+  },
+  {
+   "id": 7,
+   "text": "Ờ… tui nhớ mỗi vụ bàn 9 thôi á, Linh nhảy vô phụ tui. Còn chị Hà với chuyện bị la hông thì tui quên sạch rồi, trí nhớ cá vàng mà."
+  },
+  {
+   "id": 8,
+   "text": "Tối nay em đứng khu bàn 1 đến 6 nhé. Tiền riêng khách đưa thì không nhận. Món lỗi thì ghi sổ. Thế nhé."
+  },
+  {
+   "id": 9,
+   "text": "Trời, đó là chuyện tui rối nhất nè. Mai dọn rồi mà chỗ gửi Bánh Bao tui chưa có mô hết á. Linh có biết chỗ nào giữ mèo hông?"
+  },
+  {
+   "id": 10,
+   "text": "Ủa khoan khoan. Bàn 9 kêu món mới là tui chịu thua luôn á. Thực đơn mới tui chưa thuộc chi hết á, nói thiệt. Một mình tui ôm bàn 7 tới 12, chạy muốn xỉu luôn, hì."
+  }
+ ]
+}

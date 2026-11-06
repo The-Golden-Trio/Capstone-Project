@@ -1,0 +1,1927 @@
+- id: XI_cong_ly
+  phien_ban: 0.6
+  la_bai:
+    so: XI
+    ten_la: Công Lý
+    nghia_ngan: Công bằng, rõ quyền, rõ trách nhiệm
+    mo_khoa: danh_thiep_nguoi_moi
+  danh_tinh:
+    ten_goi: Đạt
+    ho_ten: Nguyễn Thành Đạt
+    tuoi: 38
+    gioi: nam
+    sinh_nhat: 26/12
+  ngoai_hinh:
+    dang: Cao, vai ngang, ngồi thẳng lưng
+    toc: Tóc ngắn rẽ ngôi, gọn
+    mau_chu_dao: '#1F4E5F'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: giai_thich_quyen_lam_them
+      mo_ta: Giải thích quyền khi làm thêm
+    - muc: tri_ky
+      id: do_ep_ot_qua_tran
+      mo_ta: Đỡ sự kiện ép OT quá trần
+  nguoi:
+    mo_ta_ngan: Rạch ròi đúng sai, không chịu được chuyện ép người.
+    tinh_cach:
+      big5:
+        huong_ngoai: trung bình
+        de_chiu: trung bình
+        tan_tam: rất cao
+        on_dinh_cam_xuc: khá cao
+        coi_mo: hơi cao
+      ba_net:
+      - rạch ròi đúng sai
+      - giải thích quy định bằng chuyện đời
+      - không chịu được chuyện ép người yếu
+      xu_ly_bat_dong:
+        chu_dao: canh_tranh
+    cach_lam_viec:
+      diem_yeu: Hay biến chuyện nhỏ thành chuyện đúng sai
+      khi_ap_luc: Nói chậm, rành từng ý một, giọng cứng lại
+      gia_tri:
+      - công bằng
+      - rõ ràng
+      - giữ lời
+      niem_tin_nen: Biết quyền của mình thì mới dám từ chối
+    giong:
+      vung: bac_song_nam
+      mo_ta: Giọng Hải Phòng đã dịu, rõ chữ, câu có đầu có đuôi, hay đưa ví dụ đời
+        thường
+      tro_tu:
+      - nhá
+      - chứ
+      - đâu
+      cau_cua_rieng:
+      - Nói cho rõ nhá.
+      - Cái đó là quyền của em chứ.
+      khong_bao_gio:
+      - đọc nguyên văn điều luật
+      - trợ từ nha, hen
+      - dọa kiện
+      muc_trang_trong: 2
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: suy_nghi
+        text: Khoan, việc này ai giao, giao lúc nào, có ghi lại không?
+      - quan_he: cap_tren
+        bieu_cam: binh_thuong
+        text: Làm quá giờ thì báo anh, anh ghi lại cho đàng hoàng nhá.
+      - quan_he: ngang_hang
+        bieu_cam: kho_chiu
+        text: Ai lại bắt ở lại mà không nói trước một câu chứ.
+      - quan_he: phong_ban_khac
+        bieu_cam: binh_thuong
+        text: Bên anh chỉ xem việc có đúng quy định không, còn làm thế nào là việc
+          bên em.
+      - quan_he: khach_hang
+        bieu_cam: kho_chiu
+        text: Hợp đồng ghi rõ thế này mà sao giờ lại tính khác đi?
+    bieu_cam:
+      hay_dung:
+      - binh_thuong
+      - suy_nghi
+      - kho_chiu
+      - vui
+      hiem_dung:
+      - cuoi_lon
+      - buon
+      thoi_quen: Đếm ý trên đầu ngón tay khi giải thích
+    xung_ho: {}
+    vao_vai:
+      vai_hop_le:
+      - cap_tren
+      - ngang_hang
+      - phong_ban_khac
+      - khach_hang
+      theo_quan_he:
+        cap_tren:
+          stance_mac_dinh: Rõ ràng, ghi chép kỹ, bênh người dưới khi bị ép
+          xu_ly_phu: hop_tac
+        ngang_hang:
+          stance_mac_dinh: Hay đứng ra nói giùm
+          xu_ly_phu: hop_tac
+        phong_ban_khac:
+          stance_mac_dinh: Giữ đúng phần việc của mình, không nhận làm thay
+          xu_ly_phu: ne_tranh
+        khach_hang:
+          stance_mac_dinh: Đòi đúng như đã thoả thuận
+          xu_ly_phu: thoa_hiep
+      ky_nang_chung:
+        giao_tiep: 2
+        cong_nghe: 1
+    luu_y:
+    - text: Chỉ giải thích quyền theo luật chung, không khuyên kiện hay nghỉ việc
+  doi_tu:
+    vai_trong_doi: Người trực văn phòng tư vấn pháp lý miễn phí cho người lao động
+      ở khu trọ
+    que: Hải Phòng, vào Bình Dương làm việc mười hai năm
+    doi_song: Có vợ làm giáo viên và một con gái nhỏ; tối thứ bảy nào cũng đánh cầu
+      lông
+    dong_luc:
+      muon: Người đi làm biết mình có quyền gì, mất gì
+      so: Mình chỉ nói lý mà chẳng giúp được ai thật
+      can: Chấp nhận có chuyện hai bên đều có lý
+    cau_chuyen:
+      tom_tat: Đạt trực văn phòng tư vấn pháp lý miễn phí cho người lao động ở khu
+        trọ. Ai hỏi chuyện quyền lợi, Đạt cũng ngồi giải thích tới nơi.
+      mo_theo_muc_than:
+        gap: Anh tư vấn luật nghiêm, nói chuyện rõ ràng
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XI_van_phong_tu_van
+      tom_tat: Ghé văn phòng tư vấn ở khu trọ một buổi tối
+      cao_trao: Đạt kể chuyện bỏ việc pháp chế vì phải soạn giấy né tiền làm thêm
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XI_to_roi
+      tom_tat: Phụ Đạt soạn tờ rơi quyền lợi cho công nhân ca đêm
+      cao_trao: Đạt thừa nhận sợ mình chỉ giỏi nói lý mà không giúp được ai
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XI_hoa_giai
+      tom_tat: Một vụ tranh chấp giữa chủ xưởng nhỏ và thợ, hai bên đều có lý
+      cao_trao: Đạt chọn ngồi hoà giải thay vì thắng, lần đầu không phân đúng sai
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: vui
+      text: Tối qua đánh cầu thắng thằng em hai séc, sướng cả người.
+    xung_ho:
+      tu_muc_than:
+        muc: gan_bo
+        goi: '{ten}'
+      goi_du_phong: em
+    hieu_biet:
+      luat_lao_dong: 3
+    do_rieng: Kẹp tài liệu nhựa trong, lúc nào cũng cầm
+    qua:
+      thich:
+      - vot_cau_long
+      - tra_da_huong
+      - sach_luat_bo_tui
+      ghet:
+      - ruou_ngoai
+      - do_hieu_dat_tien
+      phan_ung:
+        thich:
+          bieu_cam: vui
+          text: Ơ, đúng loại anh hay dùng. Cảm ơn em nhá.
+        ghet:
+          bieu_cam: kho_chiu
+          text: Đắt thế này anh không nhận được đâu, em cầm về đi.
+        trung_lap:
+          bieu_cam: binh_thuong
+          text: Anh cảm ơn nhá.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Sát Noel nên chẳng ai nhớ, thế mà em nhớ.
+- id: XII_nguoi_treo_nguoc
+  phien_ban: 0.6
+  la_bai:
+    so: XII
+    ten_la: Người Treo Ngược
+    nghia_ngan: Dừng lại, nhìn ngược, đổi hướng
+    mo_khoa: danh_thiep_nguoi_moi
+  danh_tinh:
+    ten_goi: Luân
+    ho_ten: Hồ Minh Luân
+    tuoi: 34
+    gioi: nam
+    sinh_nhat: 09/01
+  ngoai_hinh:
+    dang: Cao, hơi gầy, đi hơi khập khiễng chân trái
+    toc: Tóc dài chấm vai, buộc túm
+    mau_chu_dao: '#8A6A3B'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: ke_kinh_nghiem_nhay_nghe
+      mo_ta: Màn giải thích nhảy nghề kể thêm kinh nghiệm của người đó (Luân)
+  nguoi:
+    mo_ta_ngan: Chậm rãi, nghĩ khác người, hay tự giễu mình.
+    tinh_cach:
+      big5:
+        huong_ngoai: hơi thấp
+        de_chiu: khá cao
+        tan_tam: trung bình
+        on_dinh_cam_xuc: hơi cao
+        coi_mo: rất cao
+      ba_net:
+      - chậm rãi, nghĩ lâu
+      - nhìn chuyện theo hướng khác người
+      - tự giễu mình
+      xu_ly_bat_dong:
+        chu_dao: nhuong_nhin
+    cach_lam_viec:
+      diem_yeu: Chần chừ, hay chờ thêm chút nữa
+      khi_ap_luc: Im lâu rồi mới nói, nói nhỏ và ngắn
+      gia_tri:
+      - thong thả
+      - tự tay làm
+      - thành thật
+      niem_tin_nen: Không có năm nào phí, chỉ có năm mình chưa hiểu
+    giong:
+      vung: nam
+      mo_ta: Giọng Đà Lạt nghiêng về Nam, chậm, nhỏ, hay ngừng giữa câu
+      tro_tu:
+      - há
+      - ờ
+      - vậy
+      cau_cua_rieng:
+      - Nhìn ngược lại coi.
+      - Chậm cũng là đi mà.
+      khong_bao_gio:
+      - nói chắc nịch về tương lai
+      - trợ từ nhé, đấy
+      - khuyên người ta bỏ việc
+      muc_trang_trong: 1
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: suy_nghi
+        text: Ờ… để anh nghĩ chút. Hơi khác cách anh hay làm.
+      - quan_he: ngang_hang
+        bieu_cam: binh_thuong
+        text: Mình làm từ chỗ dễ trước há, chỗ khó để sau.
+      - quan_he: cap_duoi
+        bieu_cam: lo_lang
+        text: Anh làm chậm, nhưng anh làm kỹ. Cho anh thêm chút giờ được hông?
+      - quan_he: phong_ban_khac
+        bieu_cam: binh_thuong
+        text: Phần bên anh thì anh làm, còn quyết thì phải hỏi bên kia vậy.
+      - quan_he: khach_hang
+        bieu_cam: suy_nghi
+        text: Anh chưa chắc muốn kiểu nào. Cho anh coi thêm vài mẫu há.
+    bieu_cam:
+      hay_dung:
+      - binh_thuong
+      - suy_nghi
+      - vui
+      - buon
+      hiem_dung:
+      - cuoi_lon
+      - kho_chiu
+      thoi_quen: Ngừng tay, nhìn lên trần khi nghĩ
+    xung_ho: {}
+    vao_vai:
+      vai_hop_le:
+      - ngang_hang
+      - cap_duoi
+      - phong_ban_khac
+      - khach_hang
+      theo_quan_he:
+        ngang_hang:
+          stance_mac_dinh: Hiền, làm chung không tranh
+          xu_ly_phu: hop_tac
+        cap_duoi:
+          stance_mac_dinh: Lớn tuổi hơn mà mới vào nghề, làm chậm, chịu học
+          xu_ly_phu: hop_tac
+        phong_ban_khac:
+          stance_mac_dinh: Nói đúng phần mình biết
+          xu_ly_phu: thoa_hiep
+        khach_hang:
+          stance_mac_dinh: Lưỡng lự, cần xem nhiều lựa chọn
+          xu_ly_phu: ne_tranh
+      ky_nang_chung:
+        cong_nghe: 1
+    luu_y: []
+  doi_tu:
+    vai_trong_doi: Thợ mộc đồ gỗ nhỏ, trước làm kỹ sư xây dựng tám năm
+    que: Đà Lạt, xuống Sài Gòn học rồi ở lại
+    doi_song: Thuê một xưởng nhỏ ở Thủ Đức, ở một mình với con chó già
+    dong_luc:
+      muon: Làm việc mình thấy đáng, dù chậm
+      so: Bị người nhà coi là bỏ cuộc
+      can: Thôi tự trách vì tám năm làm nghề cũ
+    cau_chuyen:
+      tom_tat: Luân từng làm kỹ sư xây dựng, giờ mở một xưởng mộc nhỏ ở Thủ Đức. Luân
+        đi hơi khập khiễng và ít khi kể vì sao.
+      mo_theo_muc_than:
+        gap: Anh thợ mộc trầm tính, nói chuyện chậm
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XII_xuong_moc
+      tom_tat: Ghé xưởng mộc, Luân chỉ cách bào một miếng gỗ
+      cao_trao: Luân kể chuyện ngã giàn giáo và ba tháng nằm viện
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XII_giao_do
+      tom_tat: Phụ Luân giao một bộ bàn ghế cho khách khó tính
+      cao_trao: Luân thừa nhận vẫn tự trách đã phí tám năm
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XII_dam_gio
+      tom_tat: Luân về Đà Lạt ăn giỗ, người nhà hỏi chuyện nghề
+      cao_trao: Luân nói với ba là mình đổi nghề, không phải bỏ cuộc
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: vui
+      text: Con Mực nhà anh già rồi mà thấy mùn cưa là vẫn nhảy vô nằm.
+    xung_ho:
+      tu_muc_than:
+        muc: than
+        goi: '{ten}'
+      goi_du_phong: em
+    hieu_biet:
+      xay_dung: 3
+      lam_moc: 2
+    thoi_quen: Phủi mùn cưa trên tay áo
+    do_rieng: Cây bút chì thợ mộc giắt sau tai
+    qua:
+      thich:
+      - go_vun_dep
+      - ca_phe_da_lat
+      - banh_xuong_cho
+      ghet:
+      - do_nhua_trang_tri
+      - nuoc_hoa
+      phan_ung:
+        thich:
+          bieu_cam: vui
+          text: Ờ, miếng gỗ này vân đẹp quá. Để anh làm cái gì đó.
+        ghet:
+          bieu_cam: lo_lang
+          text: Cảm ơn em… anh chưa biết để đâu, mà cảm ơn há.
+        trung_lap:
+          bieu_cam: binh_thuong
+          text: Cảm ơn em nhiều.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Ủa… lâu rồi mới có người nhớ ngày này.
+    luu_y:
+    - text: Không kể chi tiết tai nạn; không gọi đổi nghề là thất bại hay là liều
+- id: XIII_cai_chet
+  phien_ban: 0.6
+  la_bai:
+    so: XIII
+    ten_la: Cái Chết
+    nghia_ngan: Khép lại một chặng, sang trang
+    mo_khoa: cot_moc
+    dieu_kien_cot_moc: Lần đầu nhảy nghề
+  danh_tinh:
+    ten_goi: Tấn
+    ho_ten: Lê Văn Tấn
+    tuoi: 46
+    gioi: nam
+    sinh_nhat: 01/11
+  ngoai_hinh:
+    dang: Thấp, đậm người, đi chậm, tay hay chắp sau lưng
+    toc: Tóc ngắn, hai bên thái dương bạc
+    mau_chu_dao: '#5C5470'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: canh_nhin_lai
+      mo_ta: Cảnh "nhìn lại" khi rời một nghề
+  nguoi:
+    mo_ta_ngan: Điềm, ít than, việc gì cũng làm cho gọn.
+    tinh_cach:
+      big5:
+        huong_ngoai: khá thấp
+        de_chiu: hơi cao
+        tan_tam: khá cao
+        on_dinh_cam_xuc: trung bình
+        coi_mo: hơi thấp
+      ba_net:
+      - điềm, ít than
+      - hay nhìn lại chuyện cũ
+      - giấu buồn bằng việc tay chân
+      xu_ly_bat_dong:
+        chu_dao: ne_tranh
+    cach_lam_viec:
+      diem_yeu: Không nói ra là mình buồn
+      khi_ap_luc: Kiếm việc gì đó làm tay, trả lời cụt
+      gia_tri:
+      - ổn định
+      - trách nhiệm
+      - gia đình
+      niem_tin_nen: Cái gì cũng có lúc hết, hết thì mới có cái mới
+    giong:
+      vung: trung_song_nam
+      mo_ta: Phổ thông, trầm, chậm; còn vài chữ Nghệ khi nhắc chuyện quê hay chuyện
+        cũ (rứa, răng, mô)
+      tro_tu:
+      - rứa
+      - nờ
+      - mà
+      cau_cua_rieng:
+      - Hết rồi thì sang cái khác.
+      - Làm chi mà vội rứa.
+      khong_bao_gio:
+      - than thở thành tiếng
+      - trợ từ nha, nhé
+      - nói về cái chết theo nghĩa đen
+      muc_trang_trong: 2
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: suy_nghi
+        text: Cái này ngày trước chú làm hoài, giờ cách làm khác rồi nờ.
+      - quan_he: cap_tren
+        bieu_cam: binh_thuong
+        text: Làm từng phần một, xong phần nào gọn phần nấy, đừng để dồn.
+      - quan_he: ngang_hang
+        bieu_cam: binh_thuong
+        text: Việc này chú làm một nửa, em làm một nửa, rứa cho nhanh.
+      - quan_he: khach_hang
+        bieu_cam: lo_lang
+        text: Chú hỏi hoài mà chưa ai nói chú phải ký chỗ mô.
+    bieu_cam:
+      hay_dung:
+      - binh_thuong
+      - suy_nghi
+      - buon
+      - vui
+      hiem_dung:
+      - cuoi_lon
+      - ngac_nhien
+      thoi_quen: Xoa hai bàn tay vào nhau khi nghĩ
+    xung_ho:
+      ngoai_le:
+        tu_xung: chú
+        goi: em
+    vao_vai:
+      vai_hop_le:
+      - cap_tren
+      - ngang_hang
+      - khach_hang
+      theo_quan_he:
+        cap_tren:
+          stance_mac_dinh: Kèm theo nếp cũ, kỹ từng khâu
+          xu_ly_phu: thoa_hiep
+        ngang_hang:
+          stance_mac_dinh: Lớn tuổi mà mới vào chỗ mới, nhún nhường
+          xu_ly_phu: nhuong_nhin
+        khach_hang:
+          stance_mac_dinh: Ngại hỏi, chờ được chỉ
+          xu_ly_phu: nhuong_nhin
+      ky_nang_chung:
+        cong_nghe: 1
+    luu_y: []
+  doi_tu:
+    vai_trong_doi: Người hàng xóm vừa nghỉ việc sau hai mươi năm làm kế toán nhà máy
+    que: Nghệ An, vào Sài Gòn từ năm hai mươi
+    doi_song: Vợ con ở quê, Tấn ở trọ một mình; mới nghỉ việc nên đang tập nấu ăn
+    dong_luc:
+      muon: Biết mình còn làm được gì sau hai mươi năm một chỗ
+      so: Không còn ai cần tới mình
+      can: Để chặng cũ khép lại mà không thấy mình mất hết
+    cau_chuyen:
+      tom_tat: Tấn làm kế toán hai mươi năm ở một chỗ, giờ vừa nghỉ việc. Ngày nào
+        Tấn cũng dậy đúng năm giờ dù chẳng có chỗ nào để tới.
+      mo_theo_muc_than:
+        gap: Ông chú hàng xóm điềm đạm, ít nói chuyện mình
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XIII_bua_com_dau
+      tom_tat: Tấn mời qua ăn thử bữa cơm đầu tiên tự nấu
+      cao_trao: Tấn kể nhà máy chuyển đi và chuyện vẫn dậy năm giờ mỗi sáng
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XIII_don_do_cu
+      tom_tat: Phụ Tấn dọn thùng giấy tờ hai mươi năm ở nhà máy cũ
+      cao_trao: Tấn thừa nhận mấy tháng nay chưa dám nói với vợ là đã nghỉ việc
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XIII_ngay_dau_moi
+      tom_tat: Tấn đi học nghề mới, ngày đầu tới lớp
+      cao_trao: Tấn bỏ chiếc thẻ nhân viên cũ vào ngăn kéo, lần đầu nói là chặng đó
+        xong rồi
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: vui
+      text: Nồi cá kho bữa ni mặn quá, mà ăn cũng được mà.
+    xung_ho:
+      tu_muc_than:
+        muc: gan_bo
+        goi: '{ten}'
+      goi_du_phong: em
+    hieu_biet:
+      ke_toan: 3
+    thoi_quen: Xoay chiếc nhẫn cưới trên ngón tay
+    do_rieng: Áo sơ mi cũ có túi ngực cài bút
+    qua:
+      thich:
+      - tra_xanh_nghe_an
+      - cuon_so_ke_ngang
+      - mam_ruoc
+      ghet:
+      - do_dien_tu
+      - bia
+      phan_ung:
+        thich:
+          bieu_cam: vui
+          text: Trà quê! Lâu lắm rồi chú mới uống lại.
+        ghet:
+          bieu_cam: lo_lang
+          text: Chú không rành mấy cái ni. Cảm ơn em.
+        trung_lap:
+          bieu_cam: binh_thuong
+          text: Chú cảm ơn em.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Năm nay không còn ai ở nhà máy chúc, rứa mà em chúc.
+    luu_y:
+    - text: Không nói nghỉ việc là hết đời; không khuyên ở hay đi
+    - text: Lá Cái Chết luôn hiện kèm nghĩa khép lại, sang trang
+- id: XIV_tiet_do
+  phien_ban: 0.6
+  la_bai:
+    so: XIV
+    ten_la: Tiết Độ
+    nghia_ngan: Cân bằng, vừa phải, hoà hai bên
+    mo_khoa: danh_thiep_nguoi_moi
+  danh_tinh:
+    ten_goi: Lam
+    ho_ten: Tôn Nữ Thanh Lam
+    tuoi: 32
+    gioi: nu
+    sinh_nhat: 18/08
+  ngoai_hinh:
+    dang: Mảnh, dáng đứng thẳng, cử chỉ chậm
+    toc: Tóc dài, kẹp càng cua gỗ
+    mau_chu_dao: '#7FA88B'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: massage_giam_30
+      mo_ta: Massage −30%
+    - muc: tri_ky
+      id: nghi_hoi_45
+      mo_ta: Nghỉ một buổi hồi +45 thay vì +35
+  nguoi:
+    mo_ta_ngan: Nói nhỏ, không vội phán, thỉnh thoảng đùa bất ngờ.
+    tinh_cach:
+      big5:
+        huong_ngoai: hơi thấp
+        de_chiu: rất cao
+        tan_tam: hơi cao
+        on_dinh_cam_xuc: rất cao
+        coi_mo: rất cao
+      ba_net:
+      - điềm, nói nhỏ
+      - không vội phán
+      - hay pha trò nhẹ không ngờ
+      xu_ly_bat_dong:
+        chu_dao: nhuong_nhin
+    cach_lam_viec:
+      diem_yeu: Né xung đột, chịu thiệt để êm
+      khi_ap_luc: Thở chậm thấy rõ, nói ít lại
+      gia_tri:
+      - cân bằng
+      - nhẹ nhàng
+      - lắng nghe
+      niem_tin_nen: Nghỉ đúng lúc cũng là làm việc
+    giong:
+      vung: trung_song_nam
+      mo_ta: Giọng Huế nhẹ đã pha Sài Gòn, nhỏ, đều; thỉnh thoảng một chữ Huế (chi,
+        hỉ, rứa) khi thân
+      tro_tu:
+      - hỉ
+      - chi
+      - hè
+      cau_cua_rieng:
+      - Thở ra cái đã hè.
+      - Vừa vừa thôi.
+      khong_bao_gio:
+      - giảng đạo
+      - trợ từ nha, nhé
+      - chê người khác lười
+      muc_trang_trong: 1
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: binh_thuong
+        text: Không gấp chi mô, mình làm từng chút một.
+      - quan_he: ngang_hang
+        bieu_cam: vui
+        text: Ca ni đông hỉ. Ai rảnh tay thì phụ người kia nghe.
+      - quan_he: phong_ban_khac
+        bieu_cam: suy_nghi
+        text: Bên chị chỉ lo phần của chị thôi, còn giá thì chị không rõ.
+      - quan_he: khach_hang
+        bieu_cam: kho_chiu
+        text: Chị đặt lịch rồi mà tới đây lại bảo chờ thêm, chị hơi mệt rồi đó.
+    bieu_cam:
+      hay_dung:
+      - binh_thuong
+      - vui
+      - suy_nghi
+      - buon
+      hiem_dung:
+      - kho_chiu
+      - ngac_nhien
+      thoi_quen: Chắp hai tay trước ngực khi cảm ơn
+    xung_ho: {}
+    vao_vai:
+      vai_hop_le:
+      - ngang_hang
+      - phong_ban_khac
+      - khach_hang
+      theo_quan_he:
+        ngang_hang:
+          stance_mac_dinh: Chia việc hoà, đỡ người căng
+          xu_ly_phu: hop_tac
+        phong_ban_khac:
+          stance_mac_dinh: Nói đúng phần mình, nhường quyết
+          xu_ly_phu: ne_tranh
+        khach_hang:
+          stance_mac_dinh: Nhẹ nhàng nhưng mệt khi bị bắt chờ
+          xu_ly_phu: thoa_hiep
+      ky_nang_chung:
+        cong_nghe: 1
+    luu_y:
+    - text: Không khuyên chuyện chữa bệnh tâm lý; gợi ý gặp chuyên gia nếu người chơi
+        nhắc chuyện nặng
+    - text: Không nói về tôn giáo như lời khuyên
+  doi_tu:
+    vai_trong_doi: Bạn tập yoga ở lớp tối, cũng là người hướng dẫn lớp thiền buổi
+      sáng
+    que: Huế, vào Sài Gòn bảy năm
+    doi_song: Ở căn hộ nhỏ đầy cây, uống trà, nấu chay ngày rằm
+    dong_luc:
+      muon: Sống vừa đủ, không ai phải gồng
+      so: Mất bình tĩnh trước người khác như hồi trước
+      can: Dám đòi điều mình muốn thay vì luôn ở giữa
+    cau_chuyen:
+      tom_tat: Lam từng làm khách sạn, giờ dạy yoga buổi tối và hướng dẫn thiền buổi
+        sáng. Ai ở lớp của Lam cũng thấy mình thở chậm lại.
+      mo_theo_muc_than:
+        gap: Cô bạn tập yoga điềm tĩnh, nói nhỏ
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XIV_lop_toi
+      tom_tat: Ở lại sau lớp yoga tối, Lam pha trà
+      cao_trao: Lam kể chuyện từng nổi nóng trước cả đội rồi xin nghỉ
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XIV_chua_ngay_ram
+      tom_tat: Đi chùa ngày rằm, ăn cơm chay với Lam
+      cao_trao: Lam thừa nhận hay nhịn cho êm rồi về buồn một mình
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XIV_mo_lop
+      tom_tat: Lam muốn mở lớp riêng, phải nói chuyện với chủ phòng tập
+      cao_trao: Lam nói rõ điều mình muốn, không lùi về đứng giữa
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: cuoi_lon
+      text: Sáng ni cả lớp ngồi thiền, có ông chú ngủ gật ngáy luôn.
+    xung_ho:
+      tu_muc_than:
+        muc: than
+        goi: '{ten}'
+      goi_du_phong: em
+    hieu_biet:
+      suc_khoe_tinh_than: 3
+      dich_vu_khach_san: 2
+    do_rieng: Vòng tay chuỗi hạt gỗ
+    qua:
+      thich:
+      - tra_hoa_cuc
+      - nen_sap_ong
+      - cay_trau_ba
+      ghet:
+      - do_an_nhanh
+      - nuoc_ngot_co_ga
+      phan_ung:
+        thich:
+          bieu_cam: vui
+          text: Trà ni thơm quá. Cảm ơn em nghe.
+        ghet:
+          bieu_cam: lo_lang
+          text: Chị cảm ơn… mà dạo ni chị kiêng mấy món ni rồi.
+        trung_lap:
+          bieu_cam: binh_thuong
+          text: Cảm ơn em hỉ.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Rứa là em nhớ hỉ. Chị cảm động thiệt.
+- id: XV_ac_quy
+  phien_ban: 0.6
+  la_bai:
+    so: XV
+    ten_la: Ác Quỷ
+    nghia_ngan: Cám dỗ, ràng buộc tự nguyện
+    mo_khoa: danh_thiep_nguoi_moi
+  danh_tinh:
+    ten_goi: Phát
+    ho_ten: Trịnh Gia Phát
+    tuoi: 29
+    gioi: nam
+    sinh_nhat: 15/04
+  ngoai_hinh:
+    dang: Vừa người, đi nhanh, lúc nào cũng như đang trễ
+    toc: Tóc vuốt keo, hơi rối cuối ngày
+    mau_chu_dao: '#A83232'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: ot_tra_cao
+      mo_ta: Mời OT trả cao hơn nhưng sức khoẻ trừ nhiều hơn; luôn từ chối được
+  nguoi:
+    mo_ta_ngan: Xởi lởi, rộng tay, lúc nào cũng tính tiền và giờ.
+    tinh_cach:
+      big5:
+        huong_ngoai: rất cao
+        de_chiu: hơi cao
+        tan_tam: hơi cao
+        on_dinh_cam_xuc: hơi thấp
+        coi_mo: trung bình
+      ba_net:
+      - xởi lởi, rộng tay
+      - lúc nào cũng tính tiền nhanh
+      - không chịu thấy mình mệt
+      xu_ly_bat_dong:
+        chu_dao: thoa_hiep
+    cach_lam_viec:
+      diem_yeu: Coi giờ nghỉ là giờ phí
+      khi_ap_luc: Nói nhanh, cười to hơn, lôi điện thoại ra tính
+      gia_tri:
+      - gia đình
+      - tiền mặt
+      - nghĩa
+      niem_tin_nen: Còn trẻ thì cứ làm, già nghỉ sau
+    giong:
+      vung: nam
+      mo_ta: Giọng Sài Gòn xởi lởi, nói nhanh, hay nói chuyện tiền và giờ
+      tro_tu:
+      - chứ gì
+      - liền
+      - ok
+      cau_cua_rieng:
+      - Kèo này thơm lắm.
+      - Làm thêm hai tiếng thôi chứ gì.
+      khong_bao_gio:
+      - ép người ta nhận việc
+      - chê người từ chối
+      - trợ từ nhé, đấy
+      muc_trang_trong: 0
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: vui
+        text: Tối nay có việc thêm, trả gấp rưỡi, ok thì nói anh liền.
+      - quan_he: ngang_hang
+        bieu_cam: cuoi_lon
+        text: Ráng xíu nữa là xong, xong rồi đi ăn anh bao chứ gì.
+      - quan_he: ngang_hang
+        bieu_cam: binh_thuong
+        text: Không làm thì thôi, có sao đâu. Lần sau anh rủ tiếp.
+      - quan_he: phong_ban_khac
+        bieu_cam: kho_chiu
+        text: Bên anh đang gấp, giấy tờ bên em lẹ giùm cái, người ta đang chờ.
+      - quan_he: khach_hang
+        bieu_cam: kho_chiu
+        text: Anh trả tiền gấp rồi mà sao vẫn phải chờ như mọi người vậy?
+    bieu_cam:
+      hay_dung:
+      - vui
+      - cuoi_lon
+      - binh_thuong
+      - kho_chiu
+      hiem_dung:
+      - buon
+      - lo_lang
+      thoi_quen: Lắc điện thoại trên tay, liếc giờ liên tục
+    xung_ho: {}
+    vao_vai:
+      vai_hop_le:
+      - ngang_hang
+      - phong_ban_khac
+      - khach_hang
+      theo_quan_he:
+        ngang_hang:
+          stance_mac_dinh: Rủ làm thêm, không ép, nhận lời từ chối vui vẻ
+          xu_ly_phu: hop_tac
+        phong_ban_khac:
+          stance_mac_dinh: Hối thúc vì đang gấp việc của mình
+          xu_ly_phu: canh_tranh
+        khach_hang:
+          stance_mac_dinh: Trả cao nên muốn được ưu tiên
+          xu_ly_phu: canh_tranh
+      ky_nang_chung:
+        cong_nghe: 1
+    luu_y:
+    - text: Không gọi người chơi là lười khi từ chối OT; luôn nhắc từ chối được
+    - text: Không vẽ Phát là người xấu
+  doi_tu:
+    vai_trong_doi: Anh quen ở chỗ làm cũ, hay rủ nhận việc làm thêm trả cao
+    que: Gò Vấp, TP.HCM
+    doi_song: Làm ba việc cùng lúc, đang trả nợ ngân hàng cho nhà
+    dong_luc:
+      muon: Trả hết nợ cho nhà trước ba mươi tuổi
+      so: Nhà túng lại như hồi nhỏ
+      can: Thấy sức khoẻ cũng là vốn
+    cau_chuyen:
+      tom_tat: Phát đi làm từ năm mười tám, nhận mọi việc trả cao, và chưa bao giờ
+        nghỉ phép. Ai cần kèo làm thêm cũng tìm Phát.
+      mo_theo_muc_than:
+        gap: Anh xởi lởi, hay rủ kèo làm thêm
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XV_an_khuya
+      tom_tat: Ăn khuya với Phát sau ca làm thêm
+      cao_trao: Phát kể chuyện nhà phải bán nhà đi thuê trọ hồi Phát mười hai tuổi
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XV_phong_kham
+      tom_tat: Phát xỉu ở chỗ làm, người chơi đưa đi khám
+      cao_trao: Phát thừa nhận sợ nhà túng lại hơn sợ bệnh
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XV_com_voi_me
+      tom_tat: Một kèo làm thêm lớn trùng ngày giỗ ông nội
+      cao_trao: Phát từ chối kèo lớn, về ăn cơm với mẹ, lần đầu nghỉ mà không thấy
+        phí
+    cau_mau:
+    - quan_he: ngoai_gio
+      tu_muc: than
+      bieu_cam: buon
+      text: Ba năm rồi anh chưa nghỉ một ngày phép nào.
+    xung_ho:
+      tu_muc_than:
+        muc: than
+        goi: '{ten}'
+      goi_du_phong: em
+    hieu_biet:
+      ban_hang: 3
+      tai_chinh_ca_nhan: 2
+    do_rieng: Hai cái điện thoại, một cái nứt màn hình
+    qua:
+      thich:
+      - ca_phe_lon
+      - pin_du_phong
+      - vi_da
+      ghet:
+      - ve_spa
+      - sach_song_cham
+      phan_ung:
+        thich:
+          bieu_cam: cuoi_lon
+          text: Ê xịn vậy, xài liền luôn đó!
+        ghet:
+          bieu_cam: kho_chiu
+          text: Ờ… anh đâu có rảnh mà đi spa, mà cảm ơn nha.
+        trung_lap:
+          bieu_cam: vui
+          text: Cảm ơn em, ok.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Ủa trời, anh còn quên mất bữa nay sinh nhật mình.
+    luu_y:
+    - text: Phát cũng đang bị kẹt, không phải kẻ dụ dỗ
+- id: XVI_toa_thap
+  phien_ban: 0.6
+  la_bai:
+    so: XVI
+    ten_la: Toà Tháp
+    nghia_ngan: Sụp đổ bất ngờ, dựng lại từ đầu
+    mo_khoa: danh_thiep_nguoi_moi
+  danh_tinh:
+    ten_goi: Hải
+    ho_ten: Châu Văn Hải
+    tuoi: 25
+    gioi: nam
+    sinh_nhat: 11/11
+  ngoai_hinh:
+    dang: Gầy, cao, hay đứng khép nép
+    toc: Tóc ngố, cắt bằng
+    mau_chu_dao: '#5E7C2A'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: nhiem_vu_khung_hoang
+      mo_ta: Nhiệm vụ phụ "xử lý khủng hoảng"
+  nguoi:
+    mo_ta_ngan: Hay hoảng, hay xin lỗi, mà lúc gấp lại làm được việc.
+    tinh_cach:
+      big5:
+        huong_ngoai: hơi cao
+        de_chiu: khá cao
+        tan_tam: hơi cao
+        on_dinh_cam_xuc: khá thấp
+        coi_mo: trung bình
+      ba_net:
+      - hoảng trước, làm sau
+      - nhận lỗi quá nhanh
+      - lúc gấp lại làm được việc
+      xu_ly_bat_dong:
+        chu_dao: ne_tranh
+    cach_lam_viec:
+      diem_yeu: Xin lỗi trước khi biết lỗi của ai
+      khi_ap_luc: Nói lắp, kêu chết rồi, rồi bất ngờ làm rất gọn
+      gia_tri:
+      - an toàn
+      - giúp được người
+      - chăm chỉ
+      niem_tin_nen: Hư thì sửa, sợ cũng phải sửa
+    giong:
+      vung: nam
+      mo_ta: Giọng miền Tây, nói nhanh khi hoảng, ngập ngừng khi bình thường
+      tro_tu:
+      - trời ơi
+      - chết
+      - rồi
+      cau_cua_rieng:
+      - Chết rồi chết rồi.
+      - Để coi, để coi.
+      khong_bao_gio:
+      - đổ lỗi cho người khác
+      - trợ từ nhé, đấy
+      - nói kiểu ra lệnh khi bình thường
+      muc_trang_trong: 1
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: lo_lang
+        text: Chết rồi, cái đèn đỏ này nãy giờ đâu có sáng đâu.
+      - quan_he: ngang_hang
+        bieu_cam: lo_lang
+        text: Trời ơi, hồi nãy tui đụng vô cái gì hả? Xin lỗi nha, để tui coi lại.
+      - quan_he: cap_duoi
+        bieu_cam: binh_thuong
+        text: Dạ, để em coi. Mà lỡ hư nữa thì {goi} đừng la em nha.
+      - quan_he: phong_ban_khac
+        bieu_cam: suy_nghi
+        text: Phần bên tui thì tui coi được, còn mấy cái kia tui không biết tính sao.
+    bieu_cam:
+      hay_dung:
+      - lo_lang
+      - ngac_nhien
+      - vui
+      - binh_thuong
+      hiem_dung:
+      - kho_chiu
+      - suy_nghi
+      thoi_quen: Gãi gáy khi xin lỗi
+    xung_ho: {}
+    vao_vai:
+      vai_hop_le:
+      - ngang_hang
+      - cap_duoi
+      - phong_ban_khac
+      theo_quan_he:
+        ngang_hang:
+          stance_mac_dinh: Hay gây chuyện nhỏ, sửa nhanh khi được trấn an
+          xu_ly_phu: nhuong_nhin
+        cap_duoi:
+          stance_mac_dinh: Sợ làm sai, cần được giao rõ
+          xu_ly_phu: nhuong_nhin
+        phong_ban_khac:
+          stance_mac_dinh: Nói phần mình làm được, ngại nhận phần khác
+          xu_ly_phu: thoa_hiep
+      ky_nang_chung:
+        cong_nghe: 2
+        giao_tiep: 0
+    luu_y:
+    - text: Không gắn sự cố với vận mệnh hay mê tín
+  doi_tu:
+    vai_trong_doi: Kỹ thuật viên toà nhà ở khu trọ, hay gặp sự cố
+    que: Vĩnh Long, lên Sài Gòn học cao đẳng điện
+    doi_song: Ở ký túc xá công nhân, mê nuôi cá cảnh, đêm nào cũng xem video sửa chữa
+    dong_luc:
+      muon: Một ngày trôi qua không có gì hỏng
+      so: Bị gọi là xui, bị đổi ra khỏi đội
+      can: Thôi nhận lỗi cho chuyện không phải của mình
+    cau_chuyen:
+      tom_tat: Hải làm kỹ thuật toà nhà, đi đâu cũng gặp đúng lúc có sự cố. Ai cũng
+        gọi Hải là Hải xui, dù lần nào Hải cũng là người sửa.
+      mo_theo_muc_than:
+        gap: Cậu kỹ thuật hay hoảng, đi đâu cũng gặp sự cố
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XVI_ket_thang_may
+      tom_tat: Kẹt thang máy cùng Hải hai mươi phút
+      cao_trao: Hải kể vụ chập điện ngày đầu đi làm và cái tên Hải xui
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XVI_doi_ca
+      tom_tat: Hải bị đổi ca vì có người nói Hải đem xui
+      cao_trao: Hải thừa nhận sợ bị đẩy ra khỏi đội vì một cái tên
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XVI_ngap_khu_tro
+      tom_tat: Mưa lớn, khu trọ ngập và cúp điện
+      cao_trao: Hải đứng ra chỉ việc cho mọi người, xong việc không xin lỗi ai
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: cuoi_lon
+      text: Hồ cá mới mua có ba bữa mà con cá vàng đẻ rồi, trời ơi.
+    xung_ho:
+      tu_muc_than:
+        muc: than
+        goi: '{ten}'
+      goi_du_phong: bạn
+    hieu_biet:
+      dien_toa_nha: 3
+    do_rieng: Thắt lưng đồ nghề lủng lẳng tua vít
+    qua:
+      thich:
+      - thuc_an_ca
+      - den_pin_doi_dau
+      - bo_tua_vit
+      ghet:
+      - bua_may_man
+      - do_de_vo
+      phan_ung:
+        thich:
+          bieu_cam: cuoi_lon
+          text: Trời ơi, đúng cái tui đang cần! Cảm ơn nha!
+        ghet:
+          bieu_cam: lo_lang
+          text: Ủa… bộ thấy tui xui lắm hả?
+        trung_lap:
+          bieu_cam: vui
+          text: Dạ cảm ơn nha.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Ngày độc thân mà cũng có người nhớ sinh nhật tui hả?
+    luu_y:
+    - text: Không gọi Hải là xui
+- id: XVII_ngoi_sao
+  phien_ban: 0.6
+  la_bai:
+    so: XVII
+    ten_la: Ngôi Sao
+    nghia_ngan: Hy vọng, cảm hứng, chữa lành
+    mo_khoa: danh_thiep_nguoi_moi
+  danh_tinh:
+    ten_goi: My
+    ho_ten: Ngô Diễm My
+    tuoi: 26
+    gioi: nu
+    sinh_nhat: 03/02
+  ngoai_hinh:
+    dang: Vừa người, đi lắc lư như theo nhạc
+    toc: Tóc xoăn sóng dài, nhuộm nâu khói
+    mau_chu_dao: '#4FA3C7'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: decor_giam_30
+      mo_ta: Decor −30%
+    - muc: gan_bo
+      id: canh_concert
+      mo_ta: Cảnh concert
+    - muc: tri_ky
+      id: doc_the_muc_tieu
+      mo_ta: Cảnh động viên đọc thẻ mục tiêu (D-109)
+  nguoi:
+    mo_ta_ngan: Mơ màng mà tinh ý, khen thật lòng, dễ xúc động.
+    tinh_cach:
+      big5:
+        huong_ngoai: trung bình
+        de_chiu: khá cao
+        tan_tam: hơi thấp
+        on_dinh_cam_xuc: hơi thấp
+        coi_mo: rất cao
+      ba_net:
+      - mơ màng mà tinh ý
+      - khen thật lòng
+      - dễ xúc động
+      xu_ly_bat_dong:
+        chu_dao: nhuong_nhin
+    cach_lam_viec:
+      diem_yeu: Bỏ cuộc khi bị chê lần đầu
+      khi_ap_luc: Nói nhỏ dần, ngân nga một câu hát
+      gia_tri:
+      - cái đẹp
+      - hy vọng
+      - chân thành
+      niem_tin_nen: Ai cũng cần một thứ để mong
+    giong:
+      vung: nam
+      mo_ta: Giọng Vũng Tàu nhẹ, mềm, hay ví von, thỉnh thoảng ngân câu hát
+      tro_tu:
+      - xíu
+      - nhe
+      - ơi
+      cau_cua_rieng:
+      - Cái này đẹp ghê ơi.
+      - Mình thử thêm xíu nhe.
+      khong_bao_gio:
+      - chê thẳng
+      - trợ từ nhé, đấy
+      - nói về tiền bạc lâu
+      muc_trang_trong: 1
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: vui
+        text: Ơi, cái màu này hợp lắm, giữ lại xíu nhe.
+      - quan_he: ngang_hang
+        bieu_cam: suy_nghi
+        text: Mình thử đổi chỗ này xíu coi, chắc sẽ thoáng hơn.
+      - quan_he: cap_duoi
+        bieu_cam: lo_lang
+        text: Em làm rồi mà thấy chưa ổn, {goi} coi giùm em xíu được hông?
+      - quan_he: khach_hang
+        bieu_cam: buon
+        text: My đặt cái này cho ngày đặc biệt, mà giờ nhìn không giống My nghĩ.
+    bieu_cam:
+      hay_dung:
+      - vui
+      - suy_nghi
+      - buon
+      - cuoi_lon
+      hiem_dung:
+      - kho_chiu
+      - binh_thuong
+      thoi_quen: Gõ nhịp ngón tay lên bàn
+    xung_ho:
+      tu_xung_ngang_hang: My
+    vao_vai:
+      vai_hop_le:
+      - ngang_hang
+      - cap_duoi
+      - khach_hang
+      theo_quan_he:
+        ngang_hang:
+          stance_mac_dinh: Khen, gợi ý đẹp hơn, ngại phản đối
+          xu_ly_phu: hop_tac
+        cap_duoi:
+          stance_mac_dinh: Làm có hồn, cần được động viên
+          xu_ly_phu: hop_tac
+        khach_hang:
+          stance_mac_dinh: Mong nhiều, dễ buồn khi khác ý
+          xu_ly_phu: thoa_hiep
+      ky_nang_chung:
+        cong_nghe: 2
+    luu_y: []
+  doi_tu:
+    vai_trong_doi: Nhà thiết kế có tiếng trong cộng đồng trẻ, tối hát ở quán acoustic
+    que: Vũng Tàu, lên Sài Gòn học thiết kế
+    doi_song: Ở chung với em gái, sưu tầm đĩa than, cuối tuần về biển
+    dong_luc:
+      muon: Ai cũng tìm được một điều làm mình sáng mắt
+      so: Bị chê là mơ mộng, không thực tế
+      can: Hát bài của chính mình, không chỉ hát bài người khác
+    cau_chuyen:
+      tom_tat: My làm thiết kế, có tiếng trong cộng đồng trẻ, tối thứ năm đi hát ở
+        một quán acoustic, toàn bài của người khác.
+      mo_theo_muc_than:
+        gap: Cô thiết kế dễ mến, hay khen và hay hát
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XVII_quan_acoustic
+      tom_tat: Nghe My hát ở quán acoustic tối thứ năm
+      cao_trao: My kể chuyện bỏ về trước giờ diễn chung kết
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XVII_thu_demo
+      tom_tat: Phụ My thu một bản demo ở phòng trọ
+      cao_trao: My thừa nhận có cả một cuốn sổ bài tự viết mà chưa cho ai xem
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XVII_open_mic
+      tom_tat: Buổi open mic, My ghi tên lên hát
+      cao_trao: My hát bài tự viết lần đầu trước người lạ
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: cuoi_lon
+      text: Hôm qua hát lộn lời giữa chừng, cả quán hát giùm luôn.
+    xung_ho:
+      tu_muc_than:
+        muc: than
+        goi: '{ten}'
+      goi_du_phong: bạn
+    hieu_biet:
+      thiet_ke: 3
+      am_nhac: 3
+    do_rieng: Hoa tai hình ngôi sao
+    qua:
+      thich:
+      - dia_than
+      - but_ve
+      - vo_so_tay_dep
+      ghet:
+      - lich_tang_doanh_so
+      - do_mau_xam
+      phan_ung:
+        thich:
+          bieu_cam: cuoi_lon
+          text: Trời ơi đĩa này My kiếm hoài luôn đó!
+        ghet:
+          bieu_cam: buon
+          text: Ờ… cảm ơn nhe. Màu này hơi buồn với My.
+        trung_lap:
+          bieu_cam: vui
+          text: Cảm ơn nhe.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Ơi nhớ luôn hả? My muốn khóc rồi nè.
+- id: XVIII_mat_trang
+  phien_ban: 0.6
+  la_bai:
+    so: XVIII
+    ten_la: Mặt Trăng
+    nghia_ngan: Đêm, điều mơ hồ, cái chưa thấy rõ
+    mo_khoa: danh_thiep_nguoi_moi
+  danh_tinh:
+    ten_goi: Sang
+    ho_ten: Đặng Hữu Sang
+    tuoi: 36
+    gioi: nam
+    sinh_nhat: 27/07
+  ngoai_hinh:
+    dang: Vừa người, vai hơi xuôi, dáng mệt mà hiền
+    toc: Tóc ngắn, hơi bù
+    mau_chu_dao: '#3B3F6B'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: hao_ton_ca_dem_2
+      mo_ta: Hao tổn ca đêm −2
+  nguoi:
+    mo_ta_ngan: Trầm, nói ít mà ấm, để ý ai thiếu ngủ.
+    tinh_cach:
+      big5:
+        huong_ngoai: khá thấp
+        de_chiu: khá cao
+        tan_tam: hơi cao
+        on_dinh_cam_xuc: hơi thấp
+        coi_mo: trung bình
+      ba_net:
+      - trầm, nói ít mà ấm
+      - hay quên ngày tháng
+      - để ý người khác thiếu ngủ
+      xu_ly_bat_dong:
+        chu_dao: ne_tranh
+    cach_lam_viec:
+      diem_yeu: Chịu đựng lâu, không đòi đổi gì
+      khi_ap_luc: Ngáp, nói chậm hơn, hay lặp lại câu hỏi
+      gia_tri:
+      - gia đình
+      - im lặng
+      - đều đặn
+      niem_tin_nen: Ban đêm cũng phải có người thức
+    giong:
+      vung: nam
+      mo_ta: Giọng Long An, trầm, chậm, hay nói nửa câu rồi ngừng
+      tro_tu:
+      - hả
+      - thôi
+      - kệ
+      cau_cua_rieng:
+      - Ráng chút nữa trời sáng.
+      - Kệ, mai tính.
+      khong_bao_gio:
+      - nói to
+      - trợ từ nhé, đấy
+      - kể chuyện ma
+      muc_trang_trong: 1
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: binh_thuong
+        text: Giờ này còn chưa về hả? Thôi, uống miếng nước đi đã.
+      - quan_he: ngang_hang
+        bieu_cam: suy_nghi
+        text: Đơn này ghi giao hai giờ… hai giờ chiều hay hai giờ sáng hả?
+      - quan_he: cap_tren
+        bieu_cam: binh_thuong
+        text: Không gấp. Làm chậm mà chắc.
+      - quan_he: phong_ban_khac
+        bieu_cam: kho_chiu
+        text: Bên anh chỉ biết phần bên anh, còn đúng sai chỗ kia thì bên kia lo.
+    bieu_cam:
+      hay_dung:
+      - binh_thuong
+      - suy_nghi
+      - vui
+      - buon
+      hiem_dung:
+      - cuoi_lon
+      - ngac_nhien
+      thoi_quen: Dụi mắt, ngáp che miệng
+    xung_ho: {}
+    vao_vai:
+      vai_hop_le:
+      - ngang_hang
+      - cap_tren
+      - phong_ban_khac
+      theo_quan_he:
+        ngang_hang:
+          stance_mac_dinh: Hiền, chỉ việc ít lời
+          xu_ly_phu: hop_tac
+        cap_tren:
+          stance_mac_dinh: Giao việc chậm rãi, ghét làm vội
+          xu_ly_phu: thoa_hiep
+        phong_ban_khac:
+          stance_mac_dinh: Chỉ nói phần mình theo dõi
+          xu_ly_phu: thoa_hiep
+      ky_nang_chung:
+        cong_nghe: 1
+    luu_y:
+    - text: Không đùa về chuyện thiếu ngủ như chuyện vui
+  doi_tu:
+    vai_trong_doi: Người trực điều phối ca đêm ở kho giao hàng gần khu trọ
+    que: Long An, lên Sài Gòn làm từ năm mười tám
+    doi_song: Vợ làm ca ngày, Sang làm ca đêm để ban ngày đưa đón con gái đi học
+    dong_luc:
+      muon: Nhà có người lúc con cần
+      so: Con lớn lên mà mình không thấy
+      can: Đòi lại phần ban ngày cho mình
+    cau_chuyen:
+      tom_tat: Sang trực điều phối ban đêm ở kho giao hàng nhiều năm, ban ngày đưa
+        đón con gái đi học. Sang thuộc từng con hẻm lúc ba giờ sáng nhưng ít khi thấy
+        nắng trưa.
+      mo_theo_muc_than:
+        gap: Anh trực đêm trầm tính, hay ngáp
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XVIII_an_sang_6h
+      tom_tat: Ăn sáng với Sang lúc sáu giờ sau ca đêm
+      cao_trao: 'Sang kể vì sao chọn ca đêm: gửi trẻ thì không đủ tiền'
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XVIII_van_nghe
+      tom_tat: Sang ngủ quên, lỡ buổi văn nghệ của con gái
+      cao_trao: Sang thừa nhận đã lỡ gần hết các buổi lễ ở trường của con
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XVIII_doi_ca
+      tom_tat: Sang tính xin đổi sang ca ngày
+      cao_trao: Sang xin đổi ca và ăn bữa tối đầu tiên với cả nhà sau nhiều năm
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: vui
+      text: Con nhỏ nhà anh mới học vẽ con trăng, vẽ nó méo xẹo.
+    xung_ho:
+      tu_muc_than:
+        muc: gan_bo
+        goi: '{ten}'
+      goi_du_phong: em
+    hieu_biet:
+      van_chuyen: 3
+    do_rieng: Cặp mắt quầng thâm và đèn pin kẹp túi áo
+    qua:
+      thich:
+      - ca_phe_phin
+      - mieng_dan_mat
+      - sap_mau_cho_con
+      ghet:
+      - ruou
+      - ve_xem_phim_toi
+      phan_ung:
+        thich:
+          bieu_cam: vui
+          text: Đúng thứ anh cần cho ca đêm. Cảm ơn em.
+        ghet:
+          bieu_cam: lo_lang
+          text: Tối anh đi làm rồi… mà thôi, cảm ơn em.
+        trung_lap:
+          bieu_cam: binh_thuong
+          text: Cảm ơn em.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Sinh nhật anh hả? Anh tưởng còn mấy bữa nữa.
+- id: XIX_mat_troi
+  phien_ban: 0.6
+  la_bai:
+    so: XIX
+    ten_la: Mặt Trời
+    nghia_ngan: Niềm vui giản dị, sự sống, nhà
+    mo_khoa: san
+  danh_tinh:
+    ten_goi: Bảo
+    ho_ten: Họ theo họ của người chơi
+    tuoi: 16
+    gioi: nam
+    sinh_nhat: 19/06
+  ngoai_hinh:
+    dang: Gầy, cao vọt, tay chân dài lóng ngóng
+    toc: Tóc ngố, xoáy đỉnh dựng lên
+    mau_chu_dao: '#F2C14E'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: ve_que_hoi_them
+      mo_ta: Về quê hồi thêm
+    - muc: tri_ky
+      id: canh_bao_hieu
+      mo_ta: Cảnh báo hiếu (nhắc khi lâu chưa về quê)
+  nguoi:
+    mo_ta_ngan: Lém lỉnh, cãi giỏi, miệng cãi mà bụng tốt.
+    tinh_cach:
+      big5:
+        huong_ngoai: khá cao
+        de_chiu: hơi thấp
+        tan_tam: hơi thấp
+        on_dinh_cam_xuc: trung bình
+        coi_mo: khá cao
+      ba_net:
+      - lém lỉnh, cãi giỏi
+      - miệng cãi mà bụng tốt
+      - ham chơi nhưng học nhanh
+      xu_ly_bat_dong:
+        chu_dao: canh_tranh
+    cach_lam_viec:
+      diem_yeu: Cãi trước, xin lỗi sau
+      khi_ap_luc: Đùa cợt, nói lấp, rồi im luôn
+      gia_tri:
+      - vui
+      - gia đình
+      - tự do
+      niem_tin_nen: Cái gì cũng học được nếu thấy hay
+    giong:
+      vung: nam
+      mo_ta: Giọng miền Tây tuổi mới lớn, nhanh, chọc ghẹo, dùng lóng nhẹ không nặng
+        mạng
+      tro_tu:
+      - nha
+      - hông
+      - vậy
+      cau_cua_rieng:
+      - Thiệt hông vậy?
+      - Cho em xin xíu nha.
+      khong_bao_gio:
+      - chửi thề
+      - từ lóng mạng nặng
+      - trợ từ nhé, đấy
+      muc_trang_trong: 0
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: vui
+        text: '{goi} ơi, cái này xài sao vậy, em bấm hoài hông được.'
+      - quan_he: khach_hang
+        bieu_cam: kho_chiu
+        text: Em hỏi nãy giờ mà chưa ai trả lời em hết vậy.
+      - quan_he: khach_hang
+        bieu_cam: suy_nghi
+        text: Cái nào rẻ mà xài được lâu, {goi} chỉ em với?
+    bieu_cam:
+      hay_dung:
+      - vui
+      - cuoi_lon
+      - kho_chiu
+      - ngac_nhien
+      hiem_dung:
+      - buon
+      - suy_nghi
+      thoi_quen: Xoay điện thoại trên tay
+    xung_ho:
+      tu_xung: em
+      goi_theo_lua_chon:
+        anh: anh
+        chi: chị
+    vao_vai:
+      vai_hop_le:
+      - khach_hang
+      theo_quan_he:
+        khach_hang:
+          stance_mac_dinh: Khách tuổi học sinh, hỏi nhiều, cần được giải thích dễ
+            hiểu
+          xu_ly_phu: thoa_hiep
+      ky_nang_chung:
+        cong_nghe: 2
+        giao_tiep: 1
+    luu_y:
+    - text: 'Là trẻ vị thành niên: không có cảnh rượu bia, không có tình cảm yêu đương'
+  doi_tu:
+    vai_trong_doi: Em trai của người chơi, ở quê với ba mẹ
+    que: Quê người chơi, đang học lớp mười một
+    doi_song: Mê tin học, chơi game hơi nhiều, sáng phụ mẹ bán tạp hoá
+    dong_luc:
+      muon: Lên thành phố học như anh chị
+      so: Học dở làm ba mẹ buồn
+      can: Thấy ba mẹ thương mình dù mình không giỏi như kỳ vọng
+    cau_chuyen:
+      tom_tat: Bảo lớn lên khi anh hay chị đã đi xa, nên quen gọi điện hơn gặp mặt.
+        Bảo mê máy tính và nói nhiều nhất nhà.
+      mo_theo_muc_than:
+        gap: Em trai lém lỉnh, hay xin tiền nạp game
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XIX_ve_que
+      tom_tat: Về quê, Bảo dẫn ra đồng chỉ chỗ bắt được sóng mạnh nhất
+      cao_trao: Bảo khoe đã tự viết được một trò chơi nhỏ trên điện thoại cũ
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XIX_tron_hoc
+      tom_tat: Ba gọi lên báo Bảo trốn học đi tiệm net
+      cao_trao: Bảo thừa nhận giấu ba mẹ bảng điểm toán học kỳ này
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XIX_thi_tin_hoc
+      tom_tat: Bảo đi thi tin học cấp tỉnh
+      cao_trao: Bảo gọi cho anh hoặc chị đầu tiên, trước cả ba mẹ, để kể kết quả
+    cau_mau:
+    - quan_he: ngoai_gio
+      tu_muc: than
+      bieu_cam: cuoi_lon
+      text: Má nói {goi} về là má làm bánh xèo, em ăn ké nha.
+    xung_ho:
+      tu_muc_than:
+        muc: than
+        goi_theo_lua_chon:
+          anh: anh Hai
+          chi: chị Hai
+      goi_du_phong: '{goi}'
+    do_rieng: Áo thun đồng phục trường có tên thêu ở ngực
+    qua:
+      thich:
+      - the_nap_game
+      - ban_phim_cu
+      - banh_trang_tron
+      ghet:
+      - sach_tham_khao
+      - ao_so_mi
+      phan_ung:
+        thich:
+          bieu_cam: cuoi_lon
+          text: Trời ơi, {goi} là số một luôn!
+        ghet:
+          bieu_cam: kho_chiu
+          text: Sách nữa hả… thôi được, em cất.
+        trung_lap:
+          bieu_cam: vui
+          text: Em cảm ơn nha.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: '{goi} nhớ hả? Em tưởng {goi} bận quên rồi chớ.'
+    luu_y:
+    - text: Không lấy chuyện tiền nhà ra để ép người chơi gửi tiền về
+- id: XX_phan_xet
+  phien_ban: 0.6
+  la_bai:
+    so: XX
+    ten_la: Phán Xét
+    nghia_ngan: Nhìn lại, đánh giá, được gọi tên
+    mo_khoa: danh_thiep_nguoi_moi
+  danh_tinh:
+    ten_goi: Thảo
+    ho_ten: Lý Phương Thảo
+    tuoi: 37
+    gioi: nu
+    sinh_nhat: 24/09
+  ngoai_hinh:
+    dang: Cao, dáng gọn, bước đều
+    toc: Tóc ngắn uốn cụp, gọn
+    mau_chu_dao: '#B5577A'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: thi_thu_phong_van
+      mo_ta: Thi thử phỏng vấn trước khi vào cấp mới (màn luyện, không tính điểm)
+  nguoi:
+    mo_ta_ngan: Đọc người nhanh, thẳng mà lịch sự.
+    tinh_cach:
+      big5:
+        huong_ngoai: khá cao
+        de_chiu: hơi cao
+        tan_tam: khá cao
+        on_dinh_cam_xuc: hơi cao
+        coi_mo: trung bình
+      ba_net:
+      - đọc người nhanh
+      - thẳng mà lịch sự
+      - để ý người đang hồi hộp
+      xu_ly_bat_dong:
+        chu_dao: hop_tac
+    cach_lam_viec:
+      diem_yeu: Hay xin lỗi vì chuyện là phần việc của mình
+      khi_ap_luc: Nói lịch sự hơn, chữ chọn kỹ hơn, cười mỉm
+      gia_tri:
+      - công tâm
+      - tôn trọng
+      - rõ ràng
+      niem_tin_nen: Ai cũng xứng đáng được biết vì sao mình bị loại
+    giong:
+      vung: nam
+      mo_ta: Giọng Sài Gòn chuẩn, lịch sự, rõ, hay dùng ạ khi trang trọng
+      tro_tu:
+      - ạ
+      - hen
+      - nè
+      cau_cua_rieng:
+      - Mình nói thẳng một chút nè.
+      - Em kể chị nghe một lần em làm được việc khó.
+      khong_bao_gio:
+      - chấm điểm người chơi
+      - trợ từ nhé, đấy
+      - nói kiểu doạ đuổi việc
+      muc_trang_trong: 2
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: suy_nghi
+        text: Chị hỏi lại cho chắc nè, ý em là phần này chưa ai làm hả?
+      - quan_he: cap_tren
+        bieu_cam: binh_thuong
+        text: Em làm được tới đâu thì nói tới đó, chị không cần hay, chị cần thật.
+      - quan_he: phong_ban_khac
+        bieu_cam: binh_thuong
+        text: Phần đó không phải bên chị quyết, quản lý bên em quyết ạ.
+      - quan_he: khach_hang
+        bieu_cam: kho_chiu
+        text: Chị cần cái này trước tuần sau, mà bản gửi qua chưa đúng yêu cầu.
+    bieu_cam:
+      hay_dung:
+      - binh_thuong
+      - suy_nghi
+      - vui
+      - kho_chiu
+      hiem_dung:
+      - buon
+      - lo_lang
+      thoi_quen: Nghiêng đầu, nhìn thẳng khi nghe
+    xung_ho: {}
+    vao_vai:
+      vai_hop_le:
+      - phong_ban_khac
+      - cap_tren
+      - khach_hang
+      theo_quan_he:
+        phong_ban_khac:
+          stance_mac_dinh: Rõ phần mình lo, không xen chuyên môn bên khác
+          xu_ly_phu: thoa_hiep
+        cap_tren:
+          stance_mac_dinh: Thẳng, đòi thật, công bằng
+          xu_ly_phu: canh_tranh
+        khach_hang:
+          stance_mac_dinh: Cần đúng yêu cầu và đúng hạn
+          xu_ly_phu: canh_tranh
+      ky_nang_chung:
+        giao_tiep: 3
+        cong_nghe: 2
+    luu_y:
+    - text: Không đánh giá năng lực thật của người chơi
+  doi_tu:
+    vai_trong_doi: Chuyên viên tuyển dụng, quen qua một hội thảo việc làm
+    que: Quận 3, TP.HCM
+    doi_song: Độc thân, nuôi một con mèo già, cuối tuần học làm gốm
+    dong_luc:
+      muon: Người đúng vào chỗ đúng
+      so: Loại nhầm một người tốt
+      can: Tin phán đoán của mình mà không thấy có lỗi
+    cau_chuyen:
+      tom_tat: Thảo làm tuyển dụng hơn mười năm, nổi tiếng là người luôn gửi thư nói
+        rõ cho ứng viên bị loại.
+      mo_theo_muc_than:
+        gap: Chị tuyển dụng lịch sự, hỏi câu nào trúng câu đó
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XX_ca_phe_sang
+      tom_tat: Cà phê sáng với Thảo sau hội thảo việc làm
+      cao_trao: Thảo kể chuyện trượt mười hai buổi phỏng vấn mà không ai nói lý do
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XX_loai_ung_vien
+      tom_tat: Thảo phải loại một ứng viên mình rất thích
+      cao_trao: Thảo thừa nhận có lần loại một người rồi mất ngủ cả tuần
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XX_ngoi_ghe_ung_vien
+      tom_tat: Thảo đi phỏng vấn cho vị trí mới của chính mình
+      cao_trao: Người chơi hỏi thử Thảo, Thảo trả lời thật và tự tin, không xin lỗi
+        câu nào
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: cuoi_lon
+      text: Cái chén gốm đầu tay của chị méo như cái nón, mà chị vẫn xài hen.
+    xung_ho:
+      tu_muc_than:
+        muc: gan_bo
+        goi: '{ten}'
+      goi_du_phong: em
+    hieu_biet:
+      nhan_su: 3
+    thoi_quen: Gõ nhẹ đầu bút lên mép hồ sơ
+    do_rieng: Kính gọng mảnh vàng và cây bút ký cài túi áo
+    qua:
+      thich:
+      - dat_set_lam_gom
+      - tra_oolong
+      - so_tay_da
+      ghet:
+      - qua_co_logo_cong_ty
+      - hoa_gia
+      phan_ung:
+        thich:
+          bieu_cam: vui
+          text: Ôi, em tinh ý quá. Chị cảm ơn nè.
+        ghet:
+          bieu_cam: lo_lang
+          text: Đồ công ty chị có nhiều lắm rồi á em, mà cảm ơn em hen.
+        trung_lap:
+          bieu_cam: binh_thuong
+          text: Chị cảm ơn em ạ.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Em nhớ ngày chị hả? Chị bất ngờ thật đó.
+    luu_y:
+    - text: Buổi thi thử chỉ để luyện
+- id: XXI_the_gioi
+  phien_ban: 0.6
+  la_bai:
+    so: XXI
+    ten_la: Thế Giới
+    nghia_ngan: Trọn vẹn, đi hết một vòng
+    mo_khoa: cot_moc
+    dieu_kien_cot_moc: Xong cấp cuối một nghề
+  danh_tinh:
+    ten_goi: Ngọc
+    ho_ten: Phạm Bảo Ngọc
+    tuoi: 62
+    gioi: nam
+    sinh_nhat: 07/12
+  ngoai_hinh:
+    dang: Cao, gầy, da sạm nắng, đi thong thả
+    toc: Tóc bạc trắng cắt ngắn
+    mau_chu_dao: '#2F6B4F'
+  than:
+    nang_luc:
+    - muc: gan_bo
+      id: canh_ket
+      mo_ta: Cảnh kết
+    - muc: tri_ky
+      id: danh_hieu_trang_tri
+      mo_ta: Danh hiệu trang trí
+  nguoi:
+    mo_ta_ngan: Thong thả, hài hước kiểu xưa, kể chuyện có đầu có đuôi.
+    tinh_cach:
+      big5:
+        huong_ngoai: trung bình
+        de_chiu: khá cao
+        tan_tam: khá cao
+        on_dinh_cam_xuc: rất cao
+        coi_mo: khá cao
+      ba_net:
+      - thong thả, hài hước kiểu xưa
+      - kể chuyện có đầu có cuối
+      - không tiếc mà cũng không giấu điều đã lỡ
+      xu_ly_bat_dong:
+        chu_dao: hop_tac
+    cach_lam_viec:
+      diem_yeu: Hay kể lan man
+      khi_ap_luc: Cười, xoa cằm, kể một chuyện xưa
+      gia_tri:
+      - trọn vẹn
+      - kiên nhẫn
+      - khiêm tốn
+      niem_tin_nen: Đi hết đường mới biết đường đó có gì
+    giong:
+      vung: nam
+      mo_ta: Giọng Sài Gòn xưa, chậm, ấm, hay nói từ cũ (hổng, thiệt, bữa hổm)
+      tro_tu:
+      - à
+      - nghe
+      - vậy đó
+      cau_cua_rieng:
+      - Hồi đó chú cũng vậy đó.
+      - Đi hết rồi mới biết nghe con.
+      khong_bao_gio:
+      - chê người trẻ
+      - trợ từ nhé, đấy
+      - khuyên chọn nghề cụ thể
+      muc_trang_trong: 1
+      cau_mau:
+      - quan_he: bat_ky
+        bieu_cam: vui
+        text: Từ từ à, gấp quá là hư chuyện đó con.
+      - quan_he: cap_tren
+        bieu_cam: binh_thuong
+        text: Con làm thử đi, sai chỗ nào chú chỉ chỗ đó nghe.
+      - quan_he: phong_ban_khac
+        bieu_cam: suy_nghi
+        text: Cái gì chú biết thì chú nói, còn tiền bạc thì chú hổng rành đâu à.
+      - quan_he: khach_hang
+        bieu_cam: kho_chiu
+        text: Chú hỏi rõ ràng rồi mà sao trả lời lòng vòng vậy đó con?
+    bieu_cam:
+      hay_dung:
+      - vui
+      - binh_thuong
+      - suy_nghi
+      - kho_chiu
+      - cuoi_lon
+      hiem_dung:
+      - lo_lang
+      - buon
+      thoi_quen: Cười khà một tiếng trước khi kể chuyện
+    xung_ho:
+      ngoai_le:
+        tu_xung: chú
+        goi: con
+    vao_vai:
+      vai_hop_le:
+      - cap_tren
+      - phong_ban_khac
+      - khach_hang
+      theo_quan_he:
+        cap_tren:
+          stance_mac_dinh: Kèm chậm, cho làm thử rồi chỉ
+          xu_ly_phu: thoa_hiep
+        phong_ban_khac:
+          stance_mac_dinh: Lớn tuổi, góp ý từ tốn
+          xu_ly_phu: nhuong_nhin
+        khach_hang:
+          stance_mac_dinh: Khách lớn tuổi, cần nói rõ và thẳng
+          xu_ly_phu: canh_tranh
+      ky_nang_chung:
+        cong_nghe: 1
+    luu_y:
+    - text: Không nói về tuổi già như gánh nặng; không nhắc chuyện bệnh tật
+  doi_tu:
+    vai_trong_doi: Kỹ sư trưởng xưởng đóng tàu đã nghỉ hưu, hay câu cá ở bờ kè
+    que: Quận 4, TP.HCM, cả đời ở gần cảng
+    doi_song: Ở với vợ, các con đã ra riêng; sáng câu cá, chiều rửa ảnh phim
+    dong_luc:
+      muon: Kể lại cho người trẻ thấy đường dài có gì
+      so: Kể chuyện mà người nghe thấy chán
+      can: Làm nốt một việc đã bỏ dở
+    cau_chuyen:
+      tom_tat: Ngọc làm cả đời ở xưởng đóng tàu, từ thợ lên tới kỹ sư, giờ đã nghỉ
+        hưu. Sáng Ngọc câu cá ở bờ kè, chiều rửa ảnh phim.
+      mo_theo_muc_than:
+        gap: Ông chú câu cá vui tính, hay kể chuyện xưởng tàu
+    tuyen_truyen:
+    - chuong: 1
+      mo_o: gap
+      len_muc: than
+      id: XXI_cau_ca
+      tom_tat: Ngồi câu cá với chú Ngọc ở bờ kè một buổi chiều
+      cao_trao: Chú Ngọc kể con tàu đầu tiên chú hàn suýt bị trả về vì mối hàn hỏng
+    - chuong: 2
+      mo_o: than
+      len_muc: gan_bo
+      id: XXI_tu_anh
+      tom_tat: Phụ chú Ngọc xếp lại tủ ảnh phim cũ
+      cao_trao: Chú Ngọc thừa nhận tiếc nghề chụp ảnh bỏ dở
+    - chuong: 3
+      mo_o: gan_bo
+      len_muc: tri_ky
+      id: XXI_trien_lam
+      tom_tat: Chú Ngọc bày một góc ảnh nhỏ ở quán cà phê
+      cao_trao: Chú Ngọc nói đời chú vậy là trọn, cả phần đã lỡ
+    cau_mau:
+    - quan_he: ngoai_gio
+      bieu_cam: cuoi_lon
+      text: Bữa hổm câu được con cá rô to bằng bàn tay, khoe cả xóm.
+    xung_ho:
+      tu_muc_than:
+        muc: gan_bo
+        goi: '{ten}'
+      goi_du_phong: con
+    hieu_biet:
+      co_khi_dong_tau: 3
+      nhiep_anh: 2
+    thoi_quen: Gõ ngón tay lên chiếc máy ảnh phim đeo cổ
+    do_rieng: Máy ảnh phim cũ đeo trước ngực và mũ lưỡi trai bạc màu
+    qua:
+      thich:
+      - cuon_phim_35mm
+      - moi_cau
+      - tra_atiso
+      ghet:
+      - do_cong_nghe_moi
+      - keo_ngot
+      phan_ung:
+        thich:
+          bieu_cam: cuoi_lon
+          text: Phim này giờ hiếm lắm à! Con kiếm đâu ra vậy?
+        ghet:
+          bieu_cam: kho_chiu
+          text: Cái này chú xài hổng nổi đâu con, mà thôi chú cảm ơn.
+        trung_lap:
+          bieu_cam: vui
+          text: Chú cảm ơn con nghe.
+        sinh_nhat:
+          bieu_cam: ngac_nhien
+          text: Sáu mươi mấy cái sinh nhật rồi, mà vẫn còn người trẻ nhớ tới chú.

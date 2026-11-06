@@ -1,0 +1,22 @@
+[
+  {"scene": "C1", "npc": "IV", "speaker": "quan_ly", "text": "Ừ, chị nghe đây. Nói gọn thôi em.", "expression": "binh_thuong", "context": "work"},
+  {"scene": "C1", "npc": "IV", "speaker": "quan_ly", "text": "Thế nhé. Việc này xong trước 9 giờ.", "expression": "binh_thuong", "context": "work"},
+  {"scene": "C1", "npc": "IV", "speaker": "quan_ly", "text": "Rõ chưa em? Thế nhé.", "expression": "binh_thuong", "context": "work"},
+  {"scene": "C1", "npc": "IV", "speaker": "quan_ly", "text": "Bạn ghi lại giúp chị nha.", "expression": "binh_thuong", "context": "work"},
+  {"scene": "C1", "npc": "IV", "speaker": "quan_ly", "text": "Chị xem lại đã nhé.", "expression": "suy_nghi", "context": "work"},
+  {"scene": "C1", "npc": "IV", "speaker": "quan_ly", "text": "Hôm nay quán cơm đông đấy.", "expression": "binh_thuong", "context": "work"},
+  {"scene": "C1", "npc": "IV", "speaker": "canh", "text": "Hà gõ đầu bút xuống bàn, nhìn bạn.", "expression": null, "context": "work"},
+  {"scene": "C2", "npc": "IV", "speaker": "khach_hang", "text": "Hồi trước chị làm việc khác, hen.", "expression": "cuoi_lon", "context": "work"},
+  {"scene": "C2", "npc": "IV", "speaker": "khach_hang", "text": "Chị cần giờ chắc chắn.", "expression": "kho_chiu", "context": "work"},
+  {"scene": "C2", "npc": "IV", "speaker": "khach_hang", "text": "Quán cơm bên chị cũng vậy nhỉ.", "expression": "ngac_nhien", "context": "work"},
+  {"scene": "S1", "npc": "IV", "speaker": "IV_hoang_de", "text": "Sáng nào chị cũng chạy bộ đấy.", "expression": "vui", "context": "side"},
+  {"scene": "S1", "npc": "IV", "speaker": "IV_hoang_de", "text": "Thế nhé.", "expression": "vui", "context": "side"},
+  {"scene": "C1", "npc": "0", "speaker": "dong_nghiep", "text": "Ê, gặp rồi nè! Nãy giờ tui đứng một mình muốn xỉu luôn á.", "expression": "vui", "context": "work"},
+  {"scene": "C1", "npc": "0", "speaker": "dong_nghiep", "text": "Linh ơi, thử đi, chết ai đâu!", "expression": "cuoi_lon", "context": "work"},
+  {"scene": "C1", "npc": "0", "speaker": "dong_nghiep", "text": "Ủa khoan khoan. Tui hỏi {ten} chút được hông?", "expression": "ngac_nhien", "context": "work"},
+  {"scene": "C1", "npc": "0", "speaker": "dong_nghiep", "text": "Ờ cảm ơn nha, hen.", "expression": "lo_lang", "context": "work"},
+  {"scene": "C3", "npc": "0", "speaker": "dong_nghiep", "text": "Lần trước ở công ty cũ tui cũng vậy á.", "expression": "kho_chiu", "context": "work"},
+  {"scene": "S2", "npc": "0", "speaker": "0_chang_kho", "text": "Linh ơi, nhớ Bánh Bao hông? Tui nhớ quá nha.", "expression": "vui", "context": "side"},
+  {"scene": "S2", "npc": "0", "speaker": "0_chang_kho", "text": "Bánh Bao ngủ trên tủ lạnh á.", "expression": "cuoi_lon", "context": "side"},
+  {"scene": "I1", "npc": "0", "speaker": "0_chang_kho", "text": "Tui hay hỏi trước nghĩ sau hen.", "expression": "vui", "context": "interview", "q": 3}
+]

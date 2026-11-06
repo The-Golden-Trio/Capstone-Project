@@ -1,0 +1,614 @@
+[
+ {
+  "scene": "C1-mo",
+  "npc": "IV",
+  "speaker": "quan_ly",
+  "text": "Tối nay em đứng khu bàn 1 đến 6 nhé.",
+  "expression": "binh_thuong",
+  "context": "work"
+ },
+ {
+  "scene": "C1-mo",
+  "npc": "IV",
+  "speaker": "quan_ly",
+  "text": "Tiền riêng khách đưa thì không nhận. Món lỗi thì ghi sổ. Thế nhé.",
+  "expression": "kho_chiu",
+  "context": "work"
+ },
+ {
+  "scene": "C1a",
+  "npc": "IV",
+  "speaker": "quan_ly",
+  "text": "Câu chữ thì em tự liệu. Chị không soạn sẵn cho ai cả.",
+  "expression": "suy_nghi",
+  "context": "work"
+ },
+ {
+  "scene": "C1a",
+  "npc": "IV",
+  "speaker": "quan_ly",
+  "text": "Chị chỉ cần một điều: tiền của khách không vào túi riêng ai.",
+  "expression": "binh_thuong",
+  "context": "work"
+ },
+ {
+  "scene": "C1a",
+  "npc": "IV",
+  "speaker": "quan_ly",
+  "text": "Hàng đang dài, có gì lát nữa nói tiếp.",
+  "expression": "kho_chiu",
+  "context": "work"
+ },
+ {
+  "scene": "C1b",
+  "npc": "0",
+  "speaker": "phuc_vu_2",
+  "text": "Ủa khoan khoan. Bàn 9 kêu món mới là tui chịu thua luôn á.",
+  "expression": "ngac_nhien",
+  "context": "work"
+ },
+ {
+  "scene": "C1b",
+  "npc": "0",
+  "speaker": "phuc_vu_2",
+  "text": "Thực đơn mới tui chưa thuộc chi hết á, nói thiệt.",
+  "expression": "lo_lang",
+  "context": "work"
+ },
+ {
+  "scene": "C1b",
+  "npc": "0",
+  "speaker": "phuc_vu_2",
+  "text": "Một mình tui ôm bàn 7 tới 12, chạy muốn xỉu luôn, hì.",
+  "expression": "vui",
+  "context": "work"
+ },
+ {
+  "scene": "C1c",
+  "npc": "IV",
+  "speaker": "quan_ly",
+  "text": "Ừ, sang phụ thì được.",
+  "expression": "suy_nghi",
+  "context": "work"
+ },
+ {
+  "scene": "C1c",
+  "npc": "IV",
+  "speaker": "quan_ly",
+  "text": "Chuyện thực đơn mới chưa thuộc, để chị nắm lại sau ca.",
+  "expression": "kho_chiu",
+  "context": "work"
+ },
+ {
+  "scene": "C1c",
+  "npc": "IV",
+  "speaker": "quan_ly",
+  "text": "Thế lúc em sang, khu bàn 1 đến 6 ai trông?",
+  "expression": "binh_thuong",
+  "context": "work"
+ },
+ {
+  "scene": "C2a",
+  "npc": "IV",
+  "speaker": "khach_si",
+  "text": "Chào em. Đơn sỉ bên chị bắt đầu treo khoảng 9:40.",
+  "expression": "binh_thuong",
+  "context": "work"
+ },
+ {
+  "scene": "C2a",
+  "npc": "IV",
+  "speaker": "khach_si",
+  "text": "Chị nghĩ bên em đang bảo trì. Bảo trì thì phải báo trước chứ nhỉ.",
+  "expression": "kho_chiu",
+  "context": "work"
+ },
+ {
+  "scene": "C2a",
+  "npc": "IV",
+  "speaker": "khach_si",
+  "text": "Giờ chị chỉ hỏi một việc: bao giờ thì hết?",
+  "expression": "kho_chiu",
+  "context": "work"
+ },
+ {
+  "scene": "C2b",
+  "npc": "IV",
+  "speaker": "khach_si",
+  "text": "11 giờ. Chị ghi lại rồi đấy.",
+  "expression": "suy_nghi",
+  "context": "work"
+ },
+ {
+  "scene": "C2b",
+  "npc": "IV",
+  "speaker": "khach_si",
+  "text": "Chị bị hẹn rồi lùi nhiều lần rồi, em gọi đúng giờ cho chị.",
+  "expression": "kho_chiu",
+  "context": "work"
+ },
+ {
+  "scene": "C2b",
+  "npc": "IV",
+  "speaker": "khach_si",
+  "text": "Thế nhé.",
+  "expression": "binh_thuong",
+  "context": "work"
+ },
+ {
+  "scene": "C2c",
+  "npc": "0",
+  "speaker": "support",
+  "text": "Ok ok, tui dán câu \"đang xử lý\" cho khách liền nè!",
+  "expression": "vui",
+  "context": "work"
+ },
+ {
+  "scene": "C2c",
+  "npc": "0",
+  "speaker": "support",
+  "text": "Mà còn 14 ticket đang chờ, khách hỏi sâu là tui đứng hình á.",
+  "expression": "lo_lang",
+  "context": "work"
+ },
+ {
+  "scene": "C2c",
+  "npc": "0",
+  "speaker": "support",
+  "text": "Ủa khoan khoan, 11h là mình báo lại cho khách hay báo cho tui?",
+  "expression": "ngac_nhien",
+  "context": "work"
+ },
+ {
+  "scene": "C3a",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Để góc kia đi Linh, kế cái quạt á.",
+  "expression": "vui",
+  "context": "side"
+ },
+ {
+  "scene": "C3a",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Ủa khoan khoan, thùng đó ly chén đó, nhẹ tay xíu nha!",
+  "expression": "ngac_nhien",
+  "context": "side"
+ },
+ {
+  "scene": "C3b",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Ờ… tui nhớ mỗi vụ bàn 9 thôi á, Linh nhảy vô phụ tui.",
+  "expression": "vui",
+  "context": "side"
+ },
+ {
+  "scene": "C3b",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Còn chị Hà với chuyện bị la hông thì tui quên sạch rồi, trí nhớ cá vàng mà.",
+  "expression": "cuoi_lon",
+  "context": "side"
+ },
+ {
+  "scene": "C3c",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Trời, đó là chuyện tui rối nhất nè.",
+  "expression": "lo_lang",
+  "context": "side"
+ },
+ {
+  "scene": "C3c",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Mai dọn rồi mà chỗ gửi Bánh Bao tui chưa có mô hết á.",
+  "expression": "lo_lang",
+  "context": "side"
+ },
+ {
+  "scene": "C3c",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Linh có biết chỗ nào giữ mèo hông?",
+  "expression": "lo_lang",
+  "context": "side"
+ },
+ {
+  "scene": "C4-IV-q1",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Chị thường tìm một góc, ngồi với người chị quen.",
+  "expression": "binh_thuong",
+  "context": "interview",
+  "q": 1
+ },
+ {
+  "scene": "C4-IV-q1",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Ai bắt chuyện thì chị nói, chứ chị ít khi bắt chuyện trước.",
+  "expression": "suy_nghi",
+  "context": "interview",
+  "q": 1
+ },
+ {
+  "scene": "C4-IV-q2",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Vài hôm đầu thì nhẹ đầu, dễ chịu lắm.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 2
+ },
+ {
+  "scene": "C4-IV-q2",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Sang cuối tuần thì bắt đầu thấy thiếu thiếu, nhất là thiếu nhóm chạy buổi sáng.",
+  "expression": "suy_nghi",
+  "context": "interview",
+  "q": 2
+ },
+ {
+  "scene": "C4-IV-q3",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Khó chịu chứ. Chị nói thẳng với người ta, ngay hôm đó.",
+  "expression": "kho_chiu",
+  "context": "interview",
+  "q": 3
+ },
+ {
+  "scene": "C4-IV-q3",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Chị không cần ai chịu tội. Lỗi thì sửa cách làm, cho lần sau không lặp.",
+  "expression": "binh_thuong",
+  "context": "interview",
+  "q": 3
+ },
+ {
+  "scene": "C4-IV-q4",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Việc của đội thì chị vẫn làm, thích hay không là chuyện khác.",
+  "expression": "binh_thuong",
+  "context": "interview",
+  "q": 4
+ },
+ {
+  "scene": "C4-IV-q4",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Có khi chị nhận luôn cho nhanh, rồi ngồi làm một mình tới sáng.",
+  "expression": "buon",
+  "context": "interview",
+  "q": 4
+ },
+ {
+  "scene": "C4-IV-q5",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Gọn lắm đấy. Bút một chỗ, sổ một chỗ.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 5
+ },
+ {
+  "scene": "C4-IV-q5",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Lịch thì chị ghi từ tối hôm trước, việc nào giờ nào rõ ràng.",
+  "expression": "binh_thuong",
+  "context": "interview",
+  "q": 5
+ },
+ {
+  "scene": "C4-IV-q6",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Chị ít để chuyện đó xảy ra.",
+  "expression": "suy_nghi",
+  "context": "interview",
+  "q": 6
+ },
+ {
+  "scene": "C4-IV-q6",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Nếu có thì chị báo trước, nói rõ bao giờ xong, rồi giữ đúng cái giờ ấy.",
+  "expression": "binh_thuong",
+  "context": "interview",
+  "q": 6
+ },
+ {
+  "scene": "C4-IV-q6",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Thức thêm một đêm chị chịu được, trễ hẹn thì chị không chịu được.",
+  "expression": "kho_chiu",
+  "context": "interview",
+  "q": 6
+ },
+ {
+  "scene": "C4-IV-q7",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Ngủ được. Chuẩn bị xong từ chiều thì còn gì mà lo.",
+  "expression": "binh_thuong",
+  "context": "interview",
+  "q": 7
+ },
+ {
+  "scene": "C4-IV-q7",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Sáng ra chạy một vòng là đầu tỉnh hẳn.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 7
+ },
+ {
+  "scene": "C4-IV-q8",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Khó chịu chứ. Nhưng chị không cãi ngay trước mặt mọi người.",
+  "expression": "kho_chiu",
+  "context": "interview",
+  "q": 8
+ },
+ {
+  "scene": "C4-IV-q8",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Xong việc chị gặp riêng người ta, nói cho rõ đúng sai.",
+  "expression": "binh_thuong",
+  "context": "interview",
+  "q": 8
+ },
+ {
+  "scene": "C4-IV-q9",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Món lạ thì chị nếm một miếng cho phải phép.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 9
+ },
+ {
+  "scene": "C4-IV-q9",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Cách làm mới thì chị phải xem cách cũ hỏng ở đâu đã.",
+  "expression": "suy_nghi",
+  "context": "interview",
+  "q": 9
+ },
+ {
+  "scene": "C4-IV-q9",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Chưa thấy rõ hơn thì chị chưa đổi.",
+  "expression": "binh_thuong",
+  "context": "interview",
+  "q": 9
+ },
+ {
+  "scene": "C4-IV-q10",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Sáng chạy bộ với nhóm, trưa nấu cơm cho thằng bé nhà chị.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 10
+ },
+ {
+  "scene": "C4-IV-q10",
+  "npc": "IV",
+  "speaker": "IV_hoang_de",
+  "text": "Chiều dọn nhà, ghi lịch cho tuần sau. Thế là đủ vui rồi, Linh ạ.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 10
+ },
+ {
+  "scene": "C4-0-q1",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Trời, tui đi một vòng là quen nửa phòng luôn á!",
+  "expression": "cuoi_lon",
+  "context": "interview",
+  "q": 1
+ },
+ {
+  "scene": "C4-0-q1",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Ai đứng một mình là tui lại bắt chuyện liền.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 1
+ },
+ {
+  "scene": "C4-0-q2",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Chắc tui xỉu quá Linh ơi.",
+  "expression": "lo_lang",
+  "context": "interview",
+  "q": 2
+ },
+ {
+  "scene": "C4-0-q2",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Một tuần hông gặp ai là tui nói chuyện với Bánh Bao cả ngày luôn á.",
+  "expression": "cuoi_lon",
+  "context": "interview",
+  "q": 2
+ },
+ {
+  "scene": "C4-0-q3",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Ấm ức chút xíu á.",
+  "expression": "lo_lang",
+  "context": "interview",
+  "q": 3
+ },
+ {
+  "scene": "C4-0-q3",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Mà thôi, tui nhận phần tui cho xong, cãi qua cãi lại mệt lắm.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 3
+ },
+ {
+  "scene": "C4-0-q4",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Tui hay gật đầu trước rồi mới nghĩ á.",
+  "expression": "cuoi_lon",
+  "context": "interview",
+  "q": 4
+ },
+ {
+  "scene": "C4-0-q4",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Hồi học kế toán tui ráng tới năm hai, rồi cũng chạy. Chạy giỏi lắm á!",
+  "expression": "cuoi_lon",
+  "context": "interview",
+  "q": 4
+ },
+ {
+  "scene": "C4-0-q4",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Còn việc nhỏ nhỏ thì lỡ gật rồi, làm cho vui.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 4
+ },
+ {
+  "scene": "C4-0-q5",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Bàn tui hả, giấy note dán tùm lum hết trơn.",
+  "expression": "cuoi_lon",
+  "context": "interview",
+  "q": 5
+ },
+ {
+  "scene": "C4-0-q5",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Lịch thì tui có tải ứng dụng đàng hoàng, mà quên mở hoài á.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 5
+ },
+ {
+  "scene": "C4-0-q6",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Cái này tui bị hoài luôn á.",
+  "expression": "lo_lang",
+  "context": "interview",
+  "q": 6
+ },
+ {
+  "scene": "C4-0-q6",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Tui chạy qua xin thêm chút giờ, rồi thức làm cho xong.",
+  "expression": "lo_lang",
+  "context": "interview",
+  "q": 6
+ },
+ {
+  "scene": "C4-0-q6",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Lần sau tui hứa ít lại… mà chắc cũng hứa nữa á, hì.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 6
+ },
+ {
+  "scene": "C4-0-q7",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Ngủ được mà trằn trọc chút á.",
+  "expression": "lo_lang",
+  "context": "interview",
+  "q": 7
+ },
+ {
+  "scene": "C4-0-q7",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Nằm nghĩ tùm lum, rồi ôm Bánh Bao ngủ lúc nào hông hay.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 7
+ },
+ {
+  "scene": "C4-0-q8",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Răng mà quê dữ vậy trời! Mặt tui đỏ lên liền á.",
+  "expression": "buon",
+  "context": "interview",
+  "q": 8
+ },
+ {
+  "scene": "C4-0-q8",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Về nhà than một hồi rồi cũng qua.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 8
+ },
+ {
+  "scene": "C4-0-q9",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Thử đi, chết ai đâu!",
+  "expression": "cuoi_lon",
+  "context": "interview",
+  "q": 9
+ },
+ {
+  "scene": "C4-0-q9",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Tui là đứa giơ tay đầu tiên luôn á.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 9
+ },
+ {
+  "scene": "C4-0-q10",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Rảnh là tui đi lung tung, chỗ nào chưa tới là tui mò tới.",
+  "expression": "vui",
+  "context": "interview",
+  "q": 10
+ },
+ {
+  "scene": "C4-0-q10",
+  "npc": "0",
+  "speaker": "0_chang_kho",
+  "text": "Tối về nằm kể Bánh Bao nghe cả ngày đi đâu.",
+  "expression": "cuoi_lon",
+  "context": "interview",
+  "q": 10
+ }
+]

@@ -1,0 +1,81 @@
+[
+  {"scene": "W7", "turn": 1, "choice": "chị", "task": "reply", "slot": "giam_doc", "card": "giam_doc",
+   "player": "Dạ chào bác, lô hộp bánh bên mình vẫn kịp thứ sáu ạ.",
+   "output": {"beats": [
+     {"speaker": "giam_doc", "text": "Chào cháu. Kịp thứ sáu thì tốt, bác nghe thế cũng yên được một phần.", "expression": "vui"},
+     {"speaker": "giam_doc", "text": "Có điều khách vừa đổi màu logo hôm qua.", "expression": "suy_nghi"},
+     {"speaker": "giam_doc", "text": "Mà chiều nay máy in số ba còn phải dừng bảo trì.", "expression": "binh_thuong"},
+     {"speaker": "giam_doc", "text": "Cháu xếp lịch thế nào mà kịp, kể bác nghe xem?", "expression": "suy_nghi"}
+   ], "question_by": "giam_doc"}},
+  {"scene": "W7", "turn": 2, "choice": "chị", "task": "reply", "slot": "giam_doc", "card": "giam_doc",
+   "player": "Bác thấy mình nên in lại mẫu màu mới trước không ạ?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bác Minh đẩy gọng kính lên, nhìn tờ kế hoạch trên tay bạn.", "expression": null},
+     {"speaker": "giam_doc", "text": "Ngày xưa bác cũng gặp chuyện gần giống thế này ấy. Khách đổi màu sát ngày giao.", "expression": "suy_nghi"},
+     {"speaker": "giam_doc", "text": "Nhưng kế hoạch là của cháu, bác chỉ duyệt thôi.", "expression": "binh_thuong"},
+     {"speaker": "giam_doc", "text": "Cháu đang nghiêng về hướng nào?", "expression": "binh_thuong"}
+   ], "question_by": "giam_doc"}},
+  {"scene": "W7", "turn": 3, "choice": "chị", "task": "reply", "slot": "nhan_vien_moi", "card": "nhan_vien_moi",
+   "player": "Luân ơi, bản in thử hôm qua lệch chỗ nào vậy em?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Luân ngừng tay, nhìn lên trần một lúc.", "expression": null},
+     {"speaker": "nhan_vien_moi", "text": "Ờ… lệch màu, chị. Hôm qua in thử hai lần, lần nào cũng lệch.", "expression": "suy_nghi"},
+     {"speaker": "nhan_vien_moi", "text": "Lệch chỗ nào thì… em nói chưa được. Em chỉ thấy màu ra không giống bản mẫu.", "expression": "buon"},
+     {"speaker": "nhan_vien_moi", "text": "Còn cái này nữa. Mực xanh còn ít hơn nửa thùng.", "expression": "binh_thuong"}
+   ], "question_by": null}},
+  {"scene": "W7", "turn": 4, "choice": "chị", "task": "reply", "slot": "nhan_vien_moi", "card": "nhan_vien_moi",
+   "player": "Em làm chậm cũng được, nhưng sáng nay in thử lại giúp chị nha.",
+   "output": {"beats": [
+     {"speaker": "nhan_vien_moi", "text": "Được, chị. Sáng nay em in thử lại.", "expression": "vui"},
+     {"speaker": "nhan_vien_moi", "text": "Em mà lệch thêm lần nữa chắc… phải xin đi học lại từ đầu quá.", "expression": "cuoi_lon"},
+     {"speaker": "nhan_vien_moi", "text": "Để em canh màu kỹ hơn hai lần hôm qua.", "expression": "suy_nghi"},
+     {"speaker": "nhan_vien_moi", "text": "Chị cần bản in thử trước mấy giờ?", "expression": "binh_thuong"}
+   ], "question_by": "nhan_vien_moi"}},
+  {"scene": "W7", "turn": 5, "choice": "chị", "task": "reply", "slot": "nhan_vien_moi", "card": "nhan_vien_moi",
+   "player": "Nhìn em đo đạc kỹ ghê, hồi trước em làm kỹ thuật hả?",
+   "output": {"beats": [
+     {"speaker": "nhan_vien_moi", "text": "Kỹ gì đâu chị… tại em chậm, nên phải ngó tới ngó lui.", "expression": "vui"},
+     {"speaker": "nhan_vien_moi", "text": "Chậm cũng là đi mà.", "expression": "binh_thuong"},
+     {"speaker": "nhan_vien_moi", "text": "Ờ, để em đo nốt chỗ này rồi chạy bản thử.", "expression": "suy_nghi"}
+   ], "question_by": null}},
+  {"scene": "W7", "turn": 6, "choice": "chị", "task": "reply", "slot": "dong_nghiep", "card": "dong_nghiep",
+   "player": "Hải ơi, chiều nay dừng máy số ba mấy giờ vậy?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Hải gãi gáy, lật cuốn sổ trong túi áo ra.", "expression": null},
+     {"speaker": "dong_nghiep", "text": "Để coi, để coi. Giờ dừng cụ thể tui… chưa nhớ ra, xin lỗi nha.", "expression": "lo_lang"},
+     {"speaker": "dong_nghiep", "text": "Mà cái này tui chắc: bảo trì máy số ba mất khoảng ba tiếng.", "expression": "binh_thuong"},
+     {"speaker": "dong_nghiep", "text": "Tui thì muốn dừng máy cho đúng giờ, để làm cho gọn.", "expression": "lo_lang"}
+   ], "question_by": null}},
+  {"scene": "W7", "turn": 7, "choice": "chị", "task": "reply", "slot": "giam_doc", "card": "giam_doc",
+   "player": "Bác ơi, bác hồi xưa có đi dạy không ạ? Bác giảng dễ hiểu ghê.",
+   "output": {"beats": [
+     {"speaker": "giam_doc", "text": "Cháu quá lời rồi. Đi dạy thì bác không dám nhận.", "expression": "vui"},
+     {"speaker": "giam_doc", "text": "Bác chỉ quen nói chậm, từng phần một thôi.", "expression": "binh_thuong"},
+     {"speaker": "giam_doc", "text": "Thôi, mình quay lại lô hộp bánh nhé. Thứ sáu đến nhanh lắm.", "expression": "suy_nghi"}
+   ], "question_by": null}},
+  {"scene": "S7", "turn": 1, "choice": "anh", "task": "reply", "slot": "V_giao_hoang", "card": "V_giao_hoang",
+   "player": "Dạ con chào thầy, em tới hỏi chuyện chọn nghề ạ.",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Thầy Minh gấp tờ báo lại, đặt xuống bàn nước.", "expression": null},
+     {"speaker": "V_giao_hoang", "text": "Khoa đấy à. Vào đây ngồi đi em.", "expression": "vui"},
+     {"speaker": "V_giao_hoang", "text": "Tối nào thầy cũng ngồi đây nghe học trò cũ kể chuyện, em cứ nói thong thả.", "expression": "binh_thuong"},
+     {"speaker": "V_giao_hoang", "text": "Em đang phân vân giữa những nghề nào?", "expression": "suy_nghi"}
+   ], "question_by": "V_giao_hoang"}},
+  {"scene": "S7", "turn": 2, "choice": "anh", "task": "reply", "slot": "V_giao_hoang", "card": "V_giao_hoang",
+   "player": "Thầy thấy em có nên đổi nghề sớm không thầy?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Thầy Minh đẩy gọng kính lên, ngồi im một lúc.", "expression": null},
+     {"speaker": "V_giao_hoang", "text": "Ngày xưa cũng có học trò ngồi đúng chỗ em, hỏi thầy y câu ấy.", "expression": "suy_nghi"},
+     {"speaker": "V_giao_hoang", "text": "Thầy nghĩ mãi, rồi vẫn không dám trả lời thay nó được.", "expression": "buon"},
+     {"speaker": "V_giao_hoang", "text": "Thầy chỉ tin một điều: nghề nào cũng cần người chịu ngồi lâu.", "expression": "binh_thuong"},
+     {"speaker": "V_giao_hoang", "text": "Nghề em đang làm có chuyện gì khiến em muốn đổi?", "expression": "suy_nghi"}
+   ], "question_by": "V_giao_hoang"}},
+  {"scene": "S7", "turn": 3, "choice": "anh", "task": "reply", "slot": "V_giao_hoang", "card": "V_giao_hoang",
+   "player": "Thầy tư vấn cho nhiều người vậy, có ai làm thầy nhớ nhất không?",
+   "output": {"beats": [
+     {"speaker": "V_giao_hoang", "text": "Nhớ nhất thì khó nói lắm. Đứa nào ghé, thầy cũng nhớ một kiểu.", "expression": "vui"},
+     {"speaker": "V_giao_hoang", "text": "Học trò cũ hay về đây, có đứa ngồi đến khuya mới chịu đi.", "expression": "binh_thuong"},
+     {"speaker": "V_giao_hoang", "text": "Thầy chỉ mong đứa nào đi đường dài cũng đừng lạc.", "expression": "buon"},
+     {"speaker": "V_giao_hoang", "text": "Mấy năm đi làm, em đã thấy mình lạc đường lần nào chưa?", "expression": "suy_nghi"}
+   ], "question_by": "V_giao_hoang"}}
+]
