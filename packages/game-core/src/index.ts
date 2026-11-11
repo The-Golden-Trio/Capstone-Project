@@ -31,6 +31,9 @@ export * from './domain/scenarioEngine.js';
 export * from './domain/narration/narratorView.js';
 export * from './domain/narration/rules.js';
 export * from './domain/narration/deidentify.js';
+export * from './domain/narration/npcCard.js';
+export * from './domain/narration/beats.js';
+export * from './domain/narration/sceneTurn.js';
 
 /* ── Chấm điểm ── */
 export * from './domain/grading/types.js';
