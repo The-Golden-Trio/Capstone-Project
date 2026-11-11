@@ -30,12 +30,13 @@ Mốc đối chiếu **31/10/2026**; kiểm lại bảng trạng thái của tà
 Đường dẫn bên dưới tính từ gốc repo:
 
 - Schema/luật: `packages/game-core/src/domain/narration/rules.ts`; bộ lọc seed: `narratorView.ts`; khử định danh: `deidentify.ts` cùng thư mục.
-- Schema hiện hành (từ 4/11) trả **`speaker`, `follow_up`**; `follow_up` luôn có chữ, tối đa 200 ký tự, nhiều nhất một dấu `?`. Trần token đầu ra theo hãng: Qwen 600, DeepSeek 300 (`narrator.profile.ts`). Khi mô tả payload thực tế, theo schema và request sinh từ code.
-- Prompt: `apps/api/src/ai/narrator/narrator.prompt.ts`, `prompts/narrator.v1.ts`; cấu hình lượt gọi: `narrator.profile.ts`; điều phối: `narrator.service.ts`; model và adapter: `apps/api/src/ai/gateway/`.
+- Schema hiện hành (từ 4/11) trả **`speaker`, `follow_up`**; `follow_up` luôn có chữ, tối đa 200 ký tự, nhiều nhất một dấu `?`. Trần token đầu ra theo hãng: Qwen 600 (kể cả qua OpenRouter), DeepSeek 300 (`narrator.profile.ts`). Mua Qwen trực tiếp hay qua OpenRouter đều có adapter riêng; tham số hai đường khác nhau. Khi mô tả payload thực tế, theo schema và request sinh từ code.
+- Prompt: `apps/api/src/ai/narrator/narrator.prompt.ts`, `prompts/narrator.v2.ts` (bản đang dùng từ 11/11; v1 giữ lại để đối chiếu); cấu hình lượt gọi: `narrator.profile.ts`; điều phối: `narrator.service.ts`; model và adapter: `apps/api/src/ai/gateway/`.
 - AI-4 không nhận rubric, khoá chấm, gợi ý chưa hiện, kết cục hay hoạt động tương lai. Không mở rộng prompt bằng cách gửi toàn bộ scenario thô; dùng `narratorView` và kiểm test chống lộ nội dung.
 - Luật R1–R4 chạy bằng code; không mô tả chúng như bảo đảm phát hiện mọi ý bịa hay rubric diễn đạt lại. Nội dung người chơi là dữ liệu không đáng tin, cần được phân định trong prompt và khử định danh trước khi gửi.
 - `apps/api/src/scripts/narrator-try.ts` sinh request mẫu. Theo `ai-4-api/README.md`, response đi kèm là **giả**, token và nội dung không dùng làm bằng chứng chất lượng/chi phí thật.
 - `request.jsonc` là bản trình bày cho người đọc: message content được tách dòng, có chú thích. Payload gửi thật dùng chuỗi. Không “sửa JSON” bằng cách xoá cấu trúc trình bày này; khi đổi prompt/payload, sửa code rồi export lại và kiểm artifact.
-- Chế độ thử offline không cần key: `pnpm exec nx run @datn/api:narrator-try -- --mode=fake`. Export artifact: `--mode=export`. Live cần key và gọi nhà cung cấp thật; không tự chạy để minh hoạ tài liệu.
+- Chế độ thử offline không cần key: `pnpm exec nx run @datn/api:narrator-try -- --mode=fake`. Export artifact: `--mode=export`. Có key: `--mode=check` gọi thử và nói rõ sai ở đâu; `--mode=live` chạy nhiều lượt. Hai chế độ này gọi nhà cung cấp thật; không tự chạy để minh hoạ tài liệu.
+- Kiểm chất lượng follow-up là **đề xuất chưa duyệt**: `ai-4-ke-hoach-kiem-chat-luong.md`.
 
 Khi sửa nội dung đã có trong cả bản thiết kế, deck và request, kiểm các chỗ diễn đạt cùng ý. Giữ rõ nhãn “nháp”, “đã duyệt”, “chưa đo” và “còn chờ chốt”; chỉ chuyển vào report master khi yêu cầu bao gồm việc đó.

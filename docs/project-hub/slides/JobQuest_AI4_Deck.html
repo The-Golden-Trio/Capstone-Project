@@ -662,7 +662,7 @@ body.overview .slide.active{outline:10px solid var(--blue)}
       </g>
     </svg>
   </div>
-  <aside class="notes">Hãng tính tiền theo số chữ gửi đi. Nếu phần đầu prompt giống hệt một lần gọi trước, hãng tính rẻ phần đó: Qwen 20% giá. Vì vậy phần giống nhau đặt trước, phần khác nhau đặt sau. Phần 2 chỉ có nội dung chuyên gia viết, không có câu nào của người chơi; câu trả lời của người chơi luôn nằm ở phần 3 và 4. Phần 1 cộng phần 2 ước khoảng 1.800 token, đủ ngưỡng 1.024 token để Qwen cache.</aside>
+  <aside class="notes">Hãng tính tiền theo số chữ gửi đi. Nếu phần đầu prompt giống hệt một lần gọi trước, hãng tính rẻ phần đó; tỉ lệ chung của Alibaba là 20% giá, riêng qwen3.8-flash tuỳ region. Vì vậy phần giống nhau đặt trước, phần khác nhau đặt sau. Phần 2 chỉ có nội dung chuyên gia viết, không có câu nào của người chơi; câu trả lời của người chơi luôn nằm ở phần 3 và 4. Phần 1 cộng phần 2 ước khoảng 1.800 token, đủ ngưỡng 1.024 token để Qwen cache.</aside>
 </section>
 
 <!-- P5 hai nguoi choi -->
@@ -731,15 +731,15 @@ body.overview .slide.active{outline:10px solid var(--blue)}
       <tbody>
         <tr><td><b>Cách bật</b></td><td>Tự động</td><td>Gắn cache_control</td></tr>
         <tr><td><b>Giữ bao lâu</b></td><td>Không cố định</td><td>5 phút, gia hạn mỗi lần trúng</td></tr>
-        <tr><td><b>Giá tạo cache</b></td><td>100% (như bình thường)</td><td>Khoảng 125%</td></tr>
-        <tr><td><b>Giá khi trúng</b></td><td>Khoảng 20%</td><td>Khoảng 10%</td></tr>
+        <tr><td><b>Giá tạo cache (tỉ lệ chung)</b></td><td>100% (như bình thường)</td><td>Khoảng 125%</td></tr>
+        <tr><td><b>Giá khi trúng (tỉ lệ chung)</b></td><td>Khoảng 20%</td><td>Khoảng 10%</td></tr>
         <tr><td><b>Chắc trúng?</b></td><td>Không</td><td>Có, tại điểm đánh dấu</td></tr>
-        <tr><td><b>Nhóm dùng khi</b></td><td>Mặc định</td><td>Từ 4 lượt dùng chung trong 5 phút</td></tr>
+        <tr><td><b>Nhóm dùng khi</b></td><td>Mặc định</td><td>Xem giá riêng của model trước</td></tr>
       </tbody>
     </table>
   </div>
   <div class="edge-r"></div>
-  <aside class="notes">Cả hai cần phần đầu chung tối thiểu 1.024 token; phần cố định của AI-4 ước khoảng 1.800 token nên đủ. Implicit: Qwen tự nhận ra phần đầu lặp lại, không tốn thêm phí nhưng không hứa trúng. Explicit: nhóm gắn cache_control ở cuối phần kịch bản, lần đầu tốn 125% giá để "cất", sau đó 5 phút ai gửi đúng phần đầu ấy đều trúng, chỉ tính 10%. Ví dụ 4 lượt dùng chung trong 5 phút: explicit tốn 1,25 + 0,1 × 3 = 1,55; implicit tốn 1 + 0,2 × 3 = 1,60, nên từ 4 lượt trở lên explicit rẻ hơn. Lúc ít người chơi dùng implicit; cả lớp cùng chơi một kịch bản thì bật explicit bằng biến QWEN_CACHE_MODE=explicit. DeepSeek chỉ có kiểu implicit. Nguồn: trang Context cache của Alibaba Model Studio.</aside>
+  <aside class="notes">Lưu ý (đối chiếu tài liệu 5/11/2026): các tỉ lệ trên là tỉ lệ chung; riêng qwen3.8-flash có tỉ lệ khác theo region, phải xem trong console, nên phép tính bên dưới chỉ là minh hoạ với tỉ lệ chung. Cả hai cần phần đầu chung tối thiểu 1.024 token; phần cố định của AI-4 ước khoảng 1.800 token nên đủ. Implicit: Qwen tự nhận ra phần đầu lặp lại, không tốn thêm phí nhưng không hứa trúng. Explicit: nhóm gắn cache_control ở cuối phần kịch bản, lần đầu tốn 125% giá để "cất", sau đó 5 phút ai gửi đúng phần đầu ấy đều trúng, chỉ tính 10%. Ví dụ 4 lượt dùng chung trong 5 phút: explicit tốn 1,25 + 0,1 × 3 = 1,55; implicit tốn 1 + 0,2 × 3 = 1,60, nên từ 4 lượt trở lên explicit rẻ hơn. Lúc ít người chơi dùng implicit; cả lớp cùng chơi một kịch bản thì bật explicit bằng biến QWEN_CACHE_MODE=explicit. DeepSeek chỉ có kiểu implicit. Nguồn: trang Context cache của Alibaba Model Studio.</aside>
 </section>
 
 <!-- P5 temperature -->
@@ -784,7 +784,7 @@ body.overview .slide.active{outline:10px solid var(--blue)}
     <div><div class="h3">Bọc câu người chơi</div><p>Gõ thẻ đóng để ra lệnh cho AI cũng không có tác dụng</p></div>
     <div><div class="h3">Có phiên bản</div><p>Sửa thì tạo bản mới, không sửa bản cũ</p></div>
   </div>
-  <aside class="notes">Dùng chung cho mọi kịch bản nên nó là phần cố định nhất của mọi lượt gọi, và ví dụ trong prompt chỉ là khung: một câu hỏi mẫu cụ thể sẽ bị model mang sang kịch bản khác. Câu người chơi nằm trong thẻ cau_nguoi_choi; dấu nhỏ hơn, lớn hơn người chơi gõ bị đổi ký tự nên không đóng được thẻ. Có phiên bản (narrator-v1) để lượt chơi đang dở chạy tiếp bằng đúng bản nó bắt đầu.</aside>
+  <aside class="notes">Dùng chung cho mọi kịch bản nên nó là phần cố định nhất của mọi lượt gọi, và ví dụ trong prompt chỉ là khung: một câu hỏi mẫu cụ thể sẽ bị model mang sang kịch bản khác. Câu người chơi nằm trong thẻ cau_nguoi_choi; dấu nhỏ hơn, lớn hơn người chơi gõ bị đổi ký tự nên không đóng được thẻ. Có phiên bản (hiện là narrator-v2) để lượt chơi đang dở chạy tiếp bằng đúng bản nó bắt đầu.</aside>
 </section>
 
 <!-- P5 mot luot -->

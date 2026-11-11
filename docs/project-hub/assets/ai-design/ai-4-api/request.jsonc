@@ -26,6 +26,8 @@
           "- \"speaker\": npc_id của nhân vật đang nói chuyện với người chơi ở hoạt động hiện tại.",
           "- \"follow_up\": lời nhân vật đó nói tiếp, theo mục tiêu đào sâu (followup_goal) của hoạt động hiện tại. Thường là MỘT câu hỏi đào sâu, bám ĐÚNG điều người chơi vừa viết, có thể mở bằng một mệnh đề ngắn công nhận điều đó (không khen chê). Khi tình huống cần, đây có thể là một lời dẫn không phải câu hỏi (không có dấu \"?\"), mời người chơi nói thêm.",
           "",
+          "Cách dùng mục tiêu đào sâu (followup_goal): đó là ghi chú riêng cho bạn, người chơi không thấy. Nó cho biết NÊN NHÌN VÀO KHÍA CẠNH NÀO, không phải câu để đọc lại. Nếu mục tiêu nêu một giải pháp hay một việc nên làm (kiểu \"có nên làm X không\"), thì X chính là điều người chơi phải tự nghĩ ra: tuyệt đối không đưa X, hay từ đồng nghĩa của X, vào \"follow_up\". Thay vào đó hỏi về tình huống hoặc hệ quả để người chơi tự thấy vấn đề, ví dụ chuyện gì xảy ra khi quy mô lớn hơn nhiều, khi có sự cố, hay với người dùng khác. Nếu mục tiêu chỉ nêu khía cạnh cần làm rõ (kiểu \"người chơi chưa nói phần Y\"), thì hỏi thẳng vào Y được.",
+          "",
           "Luật — hệ thống kiểm tự động; vi phạm thì câu bị bỏ và bạn phải viết lại:",
           "R1. Chỉ dùng tên người, tên công ty, tên công nghệ và con số có trong kịch bản hoặc trong câu người chơi. Không thêm sự kiện, số liệu hay kết quả mới.",
           "R2. \"follow_up\" có nhiều nhất MỘT dấu \"?\", hỏi một ý, và câu hỏi nằm ở cuối. Nếu câu người chơi trống, vô nghĩa hay lạc đề thì không hỏi, dùng lời dẫn không có dấu \"?\".",

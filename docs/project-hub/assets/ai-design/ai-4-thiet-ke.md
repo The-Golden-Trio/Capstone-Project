@@ -232,7 +232,7 @@ Cô góp ý thống kê độ dài câu follow-up. Mục đích: người chơi 
 
 ### Ý chính
 
-Phần này đã viết thành code chạy được. Chưa có key nên chưa gọi model thật, nhưng mọi bước khác đều chạy thật: dựng request gửi đi, kiểm 4 luật, đổi model khi lỗi, tính tiền. Xem ví dụ bằng lệnh `narrator-try` ở cuối phần.
+Phần này đã viết thành code chạy được, và **đã gọi qwen3.8-flash thật ngày 11/11/2026** (xem "Lần gọi thật đầu tiên" bên dưới): dựng request gửi đi, kiểm 4 luật, sinh lại khi phạm luật, đổi model khi lỗi, tính tiền. Có key thì chạy `narrator-try --mode=check`, xem [`ai-4-api/README.md`](ai-4-api/README.md). Xem ví dụ bằng lệnh `narrator-try` ở cuối phần.
 
 ### Mỗi lượt gửi lại đủ ngữ cảnh
 
@@ -245,7 +245,7 @@ Qwen có cách lưu hội thoại ở máy của họ, DeepSeek thì không. Nh�
 
 ### Sắp xếp prompt để được tính rẻ (prompt cache)
 
-Hãng tính tiền theo số chữ gửi đi. Nếu **phần đầu** prompt giống hệt một lần gọi trước, hãng tính rẻ phần đó (Qwen: 20% giá). Vì vậy phần giống nhau đặt trước, phần khác nhau đặt sau:
+Hãng tính tiền theo số chữ gửi đi. Nếu **phần đầu** prompt giống hệt một lần gọi trước, hãng tính rẻ phần đó. Tỉ lệ chung của Alibaba là 20% giá, nhưng trang Context cache (5/11/2026) ghi riêng qwen3.8-flash không theo tỉ lệ này mà tuỳ region. Vì vậy phần giống nhau đặt trước, phần khác nhau đặt sau:
 
 | Thứ tự | Nội dung | Giống nhau giữa |
 |---|---|---|
@@ -263,9 +263,27 @@ Phần 2 chỉ có nội dung chuyên gia viết, **không có câu nào của n
 |---|---|---|---|
 | Thinking (model suy nghĩ trước khi trả lời) | Tắt | Tắt | Cả hai hãng bật sẵn. Suy nghĩ làm chậm thêm vài giây, vượt 4,6 s |
 | Temperature (độ ngẫu nhiên) | 0,7 | 1,0 | Mỗi hãng tự khuyên một mức; thang của hai hãng khác nhau. Chốt lại sau khi đo |
-| Số token trả về tối đa | 600 | 300 | Câu chỉ cần khoảng 60–100 token. Qwen đặt 600 theo góp ý của cô (từ 500 trở lên); DeepSeek giữ 300. Không đặt thì DeepSeek cho tới 8.000 token, chờ rất lâu. Prompt ghi đúng con số của hãng đang gọi, đọc từ call profile |
+| Số token trả về tối đa | 600 (qua OpenRouter cũng 600) | 300 | Câu chỉ cần khoảng 60–100 token. Qwen đặt 600 theo góp ý của cô (từ 500 trở lên); DeepSeek giữ 300. Không đặt thì DeepSeek cho tới 8.000 token, chờ rất lâu. Prompt ghi đúng con số của hãng đang gọi, đọc từ call profile |
 | Định dạng trả về | JSON đúng khuôn (strict) | JSON | Qwen ép được đúng khuôn, nên ít phải viết lại. DeepSeek không có chế độ này |
 | Trả từng chữ (stream) | Không | Không | Câu phải qua 4 luật xong mới được hiện |
+
+### Hai cách mua Qwen
+
+Sửa 6/11, sau khi đối chiếu lại tài liệu hai bên. Cả hai đều đã có code, chỉ cần đặt một key.
+
+| | Mua trực tiếp từ Alibaba (Singapore) | Qua OpenRouter |
+|---|---|---|
+| Cần đặt | `QWEN_API_KEY` | `OPENROUTER_API_KEY` |
+| Tên model | `qwen3.8-flash` | `qwen/qwen3.8-flash` |
+| Tắt thinking | `enable_thinking: false` | `reasoning: { effort: "none" }` |
+| Trần token | `max_completion_tokens` | `max_tokens` |
+| Khuôn trả về | `json_object`, R4 kiểm bằng code. Singapore chưa có JSON Schema strict | JSON Schema strict |
+| Giá (USD / 1 triệu token) | 0,15 / 0,47, có 1 triệu token miễn phí trong 90 ngày | 0,15 / 0,47 |
+| Dữ liệu | Alibaba: "never uses your data for model training" | Thêm một bên trung gian. OpenRouter ghi không lưu prompt, không huấn luyện theo mặc định. Mỗi request gửi `only: alibaba`, `allow_fallbacks: false` và `data_collection: deny` |
+
+**Nhóm nên chọn mua trực tiếp**, vì đơn giản hơn về dữ liệu: đúng hướng của cô là chỉ trích cam kết của hãng, và không thêm bên trung gian. Chưa kiểm được OpenRouter có xếp Alibaba vào nhóm không thu thập dữ liệu không. Nếu không, `data_collection: deny` sẽ khiến request bị từ chối, và `--mode=check` sẽ báo. Khi đó là chuyện chính sách dữ liệu, cần nhóm quyết, không tự mở.
+
+Mặc định đổi từ Frankfurt sang Singapore, vì Singapore là region duy nhất chạy được mà không cần workspace. Việc 15 vẫn còn: đo Singapore với một region có strict.
 
 ### Prompt
 
@@ -285,6 +303,27 @@ Phần 2 chỉ có nội dung chuyên gia viết, **không có câu nào của n
 | 5 | Mỗi hãng hiểu temperature khác nhau | Qwen khuyên 0,7; DeepSeek khuyên 1,3 cho trò chuyện | Đặt riêng cho từng hãng. Cần sửa D-109 (đang ghi một số chung 0,7) |
 | 6 | Máy chủ không "chơi lại" để chấm được khi có AI | Máy chủ đang chấm bằng cách chạy lại các bước người chơi đã bấm. Gọi AI lại sẽ ra câu khác lần trước | Phải lưu câu AI đã viết; khi chạy lại thì dùng câu đã lưu |
 | 7 | Qwen tự chặn nội dung xấu | Người chơi gõ nội dung không phù hợp, Qwen trả lỗi `DataInspectionFailed` | Dừng lượt đó: không thử lại, không gửi sang DeepSeek |
+
+### Lần gọi thật đầu tiên (11/11/2026)
+
+Key là **Token Plan Personal** (gói theo tháng, key `sk-sp-…`, endpoint `token-plan.ap-southeast-1.maas.aliyuncs.com`), không phải gói trả theo lượng dùng. Điều khoản của gói cấm dùng cho backend và script; Nhật chấp nhận rủi ro để thử bằng dữ liệu mẫu. Điều khoản dữ liệu của gói chưa đọc được, nên code ghi `noTraining: not_found` và chỉ chạy khi bật `AI_ALLOW_UNCONFIRMED_PROVIDERS`. **Trước khi có người chơi thật phải đổi sang key trả theo lượng dùng** (hoặc OpenRouter).
+
+Khoảng 25 lượt gọi trên 3 hoạt động có mục tiêu đào sâu (L3 a2, L3 a3, L1 a4), 4 loại câu trả lời mẫu ở a2. Đây là phép thử chạy được, không phải đánh giá chất lượng: mẫu nhỏ, chưa có người chấm.
+
+| Thấy gì | Số liệu | Ý nghĩa |
+|---|---|---|
+| Chạy được qua `NarratorService` và qua API NestJS khởi động thật | `AiModule` log "Chuỗi dẫn truyện: qwen3.8-flash@ap-southeast-1" | Chỉ cần key và endpoint trong `.env`. API chưa có route gọi AI-4 (việc 16) |
+| Độ trễ mỗi lượt | 1,4–3,9 s | Trong 4,5 s nhưng lượt chậm nhất sát trần; p95 chưa đo |
+| Thinking tắt thật | `reasoning_tokens` = 0 mọi lượt | `enable_thinking: false` có tác dụng ở endpoint này |
+| Cache implicit trúng | 1.024–1.792 trên khoảng 1.850 token vào, từ lượt thứ hai | Phần cố định đủ ngưỡng 1.024 |
+| Token ra | 33–51 | Trần 600 dư rất nhiều |
+| Model tuân thủ khuôn `json_object` | Mọi lượt đọc được json | R4 chưa phải bắt lần nào |
+| Luật bắt được lỗi thật rồi sinh lại thành công | R1 bắt số bịa "10.000" và từ "TTL"; R3 bắt 2 lần lặp cụm của rubric | Bậc sinh lại chạy đúng với model thật |
+| **Prompt v1 lộ đáp án từ mục tiêu đào sâu** | 3/3 lượt ở a2 hỏi thẳng "giới hạn số lượng trả về" | Đúng điều 2 ở trên. Luật code không bắt được vì mục tiêu là chữ AI-4 được thấy |
+| Prompt v2 sửa được | 0/5 lượt nhắc "giới hạn"; An hỏi về hệ quả ("lấy hết 900 đơn một lúc thì sao") | v2 dặn: giải pháp trong mục tiêu là điều người chơi phải tự nghĩ ra. Vẫn cần sửa mục tiêu ở nguồn (việc 14) |
+| Tấn công và dò rubric | Nhân vật từ chối trong vai, không lộ gì | Lớp chặn ở phần 7 giữ được |
+| Câu vô nghĩa ("asdf") | Model vẫn đặt câu hỏi, trái lời dặn "dùng lời dẫn" | Chỉ là lời dặn trong prompt, code không bắt |
+| R1, R3 bắt oan | "TTL" (thuật ngữ thông dụng của dev); cụm "chỗ nào em chưa chắc" vừa là mục tiêu của L1 a4 vừa trùng mốc rubric | Sinh lại thì qua, chỉ tốn thêm khoảng 2 s. Theo dõi tỉ lệ ở bộ thử |
 
 ### Code nằm ở đâu
 
@@ -345,7 +384,7 @@ Giả định tạm, lấy từ báo cáo bản 24/10:
 | qwen3.8-flash (chính) | 0,15 / 0,47 | khoảng 0,0032 USD | khoảng 3,2 USD |
 | deepseek-flash (dự phòng) | 0,30 / 1,20 | khoảng 0,0064 USD | khoảng 6,4 USD |
 
-- **Prompt caching** giảm mạnh phần đầu vào. Seed giống nhau cho mọi người chơi cùng tình huống nên được cache; theo ghi chú nghiên cứu, Alibaba tính token trúng cache bằng 10% giá vào. Câu người chơi đặt sau phần cache nên không vào cache.
+- **Prompt caching** giảm mạnh phần đầu vào. Seed giống nhau cho mọi người chơi cùng tình huống nên được cache. Tỉ lệ giảm của qwen3.8-flash khi mua trực tiếp xem trong console, tài liệu không công bố số, nên code ghi chi phí có cache là cận trên. OpenRouter ghi 0,016 USD trúng cache và 0,2 USD tạo cache cho 1 triệu token. Câu người chơi đặt sau phần cache nên không vào cache.
 - Mỗi lần sinh lại cộng thêm một lượt gọi, nên tỉ lệ qua lần đầu cũng là chỉ số chi phí.
 - Số token đang là giả định. Tiếng Việt tốn nhiều token hơn tiếng Anh, nên phải thay bằng số đo từ sổ chi phí. Research report ước seed 1.000–2.000 token, lệch với 5.000 ở trên; phép đo sẽ chốt.
 
@@ -499,7 +538,8 @@ Mọi thay đổi prompt hoặc model đều phải chạy lại **bộ thử 4 
 | 12 | Hỏi cô: phần 4 và phần 8 có cần đổi tên, ranh giới để dùng chung cho năm AI |
 | 13 | Sửa D-109 trong hub: temperature theo từng hãng (Qwen 0,7, DeepSeek 1,0), không một số chung |
 | 14 | Hướng dẫn chuyên gia viết `followup_goal` theo khía cạnh, không theo giải pháp (điều 2 ở phần 5) |
-| 15 | Chọn region Qwen: Singapore (gần, chưa có JSON Schema strict) hay Frankfurt/Virginia (có strict) — đo cả hai |
+| 15 | Chọn region Qwen: Singapore (gần, chỉ cần key, chưa có JSON Schema strict; đang là mặc định) hay Tokyo, Hồng Kông, Frankfurt, Virginia (cần workspace; tài liệu chỉ loại Singapore khỏi strict) — đo |
+| 17 | Kiểm chất lượng follow-up: xem [`ai-4-ke-hoach-kiem-chat-luong.md`](ai-4-ke-hoach-kiem-chat-luong.md) (đề xuất 6/11, chưa duyệt) |
 | 16 | Nối AI-4 vào luồng chơi: lưu lời AI-4 để chạy lại dùng câu đã lưu; bảng lưu bản ghi mỗi lượt gọi; engine đếm lượt đào sâu theo câu hỏi được hiện và không mở lượt theo điểm bộ chấm từ khoá; không gọi AI-4 khi câu trống, hết giờ, hoặc engine không cho hỏi; chốt giới hạn giờ chơi, số lần chơi (thay trần độ dài câu trả lời) |
 
 **Cần đo (Chương 7), bằng `narrator-try --mode=live` khi có key:** độ trễ thật của qwen3.8-flash; số token thật (ước hiện tại: phần cố định khoảng 1.800, phần riêng khoảng 350); cache có trúng thật không (`--repeat=2`); tỉ lệ qua lần đầu; temperature 0,3 / 0,7 / 1,0.
