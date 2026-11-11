@@ -254,6 +254,145 @@ export function narratorChain(settings: AiSettings): {
   return { chain, excluded };
 }
 
+/* ── Judge của AI-5, qua OpenRouter ────────────────────────────────── */
+
+/**
+ * Ba họ judge (D-107, §5.2.3): ba họ có điểm tiếng Việt SEA-HELM cao nhất.
+ * Mỗi họ hai bậc: `small` rẻ, `mid` mạnh hơn. Bậc nào làm chính chốt bằng phép
+ * thử §7.3 — giữ bậc rẻ trừ khi nó kém rõ rệt; bậc còn lại làm dự phòng cùng
+ * họ, để panel luôn đủ ba họ (DC-01).
+ *
+ * Gọi qua OpenRouter, không qua API gốc từng hãng: một key cho cả ba họ. Đây
+ * là lệch D-100 (không dùng OpenRouter vì thêm bên trung gian giữ dữ liệu ở
+ * nước ngoài) — nhóm chọn ngày 11/11/2026 để thử, cần ghi thành quyết định.
+ */
+export type JudgeFamily = 'anthropic' | 'openai' | 'google';
+export type JudgeTier = 'small' | 'mid';
+
+export const JUDGE_FAMILIES: readonly JudgeFamily[] = ['anthropic', 'openai', 'google'];
+
+interface JudgeModelRow {
+  model: string;
+  /** Slug nhà cung cấp trên OpenRouter — chỉ cho hãng gốc phục vụ, không để OpenRouter đổi hãng. */
+  host: string;
+  input: number;
+  output: number;
+  cachedRead: number;
+  temperature: boolean;
+}
+
+/**
+ * Giá và tham số đọc từ `GET /api/v1/models/{id}/endpoints` của OpenRouter
+ * ngày 11/11/2026, dòng của hãng gốc (Gemini: Google AI Studio, vì Vertex trên
+ * OpenRouter không nhận `temperature`). Giá ghi cache để `null`: endpoint
+ * không trả con số đó.
+ */
+const JUDGE_MODELS: Record<JudgeFamily, Record<JudgeTier, JudgeModelRow>> = {
+  anthropic: {
+    small: { model: 'anthropic/claude-haiku-5.5', host: 'anthropic', input: 0.1, output: 0.5, cachedRead: 0.01, temperature: false },
+    mid: { model: 'anthropic/claude-sonnet-5.5', host: 'anthropic', input: 2, output: 10, cachedRead: 0.1, temperature: false },
+  },
+  openai: {
+    small: { model: 'openai/gpt-6-luna', host: 'openai', input: 0.1, output: 0.5, cachedRead: 0.01, temperature: false },
+    mid: { model: 'openai/gpt-6.1-sol', host: 'openai', input: 2, output: 10, cachedRead: 0.1, temperature: false },
+  },
+  google: {
+    small: { model: 'google/gemini-3.5-flash-lite', host: 'google-ai-studio', input: 0.3, output: 2.5, cachedRead: 0.03, temperature: true },
+    mid: { model: 'google/gemini-3.8-flash', host: 'google-ai-studio', input: 0.75, output: 3.75, cachedRead: 0.075, temperature: true },
+  },
+};
+
+export function openRouterJudge(
+  settings: OpenRouterSettings,
+  family: JudgeFamily,
+  tier: JudgeTier,
+  options: { allowDataCollection: boolean },
+): ModelSpec {
+  const row = JUDGE_MODELS[family][tier];
+  return {
+    key: `${row.model.split('/')[1]}@openrouter`,
+    provider: 'openrouter',
+    model: row.model,
+    family,
+    region: 'openrouter',
+    baseUrl: (settings.baseUrl ?? 'https://openrouter.ai/api/v1').replace(/\/+$/, ''),
+    supports: { jsonSchema: true, explicitCache: false, temperature: row.temperature },
+    cacheMode: 'implicit',
+    price: {
+      inputPerMTok: row.input,
+      outputPerMTok: row.output,
+      cachedInputRatio: row.cachedRead / row.input,
+      cacheWriteRatio: null,
+      source: `https://openrouter.ai/api/v1/models/${row.model}/endpoints (11/11/2026, dòng ${row.host})`,
+      verified: true,
+    },
+    routing: {
+      only: [row.host],
+      dataCollection: options.allowDataCollection ? 'allow' : 'deny',
+    },
+    dataPolicy: {
+      noTraining: 'confirmed',
+      source: 'https://openrouter.ai/docs/guides/privacy/data-collection',
+      checkedAt: '2026-11-06',
+      note:
+        'Cùng căn cứ với Qwen qua OpenRouter: mỗi request gửi `data_collection: deny`, hãng nào OpenRouter không xếp vào nhóm không thu thập thì request bị từ chối. Cam kết riêng của Anthropic, OpenAI, Google chưa ghi vào §5.3.10',
+    },
+  };
+}
+
+/** Một ghế trong panel: một họ, bậc chính rồi bậc dự phòng cùng họ. */
+export interface JudgeSlot {
+  /** 1, 2, 3 — `judge_slot` ở ERD-06. */
+  slot: number;
+  family: JudgeFamily;
+  chain: ModelSpec[];
+}
+
+/**
+ * DC-01: ba judge và model dẫn truyện thuộc bốn họ khác nhau. Trả về lỗi thay
+ * vì ném, để lúc khởi động in ra và tắt AI-5, không làm sập phần không dùng AI.
+ */
+export function familyConflicts(
+  slots: readonly JudgeSlot[],
+  narratorFamilies: readonly string[],
+): string[] {
+  const problems: string[] = [];
+  const seen = new Set<string>();
+  for (const { slot, family, chain } of slots) {
+    if (seen.has(family)) problems.push(`ghế ${slot}: họ ${family} đã có ở ghế khác`);
+    seen.add(family);
+    if (narratorFamilies.includes(family)) problems.push(`ghế ${slot}: họ ${family} trùng họ model dẫn truyện`);
+    for (const spec of chain)
+      if (spec.family !== family) problems.push(`ghế ${slot}: ${spec.key} thuộc họ ${spec.family}, không phải ${family}`);
+  }
+  return problems;
+}
+
+/**
+ * Panel ba judge. Thiếu key OpenRouter thì không có ghế nào — AI-5 báo "không
+ * có model" thay vì chấm bằng cách khác (D-92).
+ */
+export function judgePanel(
+  settings: AiSettings,
+  options: { primaryTier?: JudgeTier; narratorFamilies?: readonly string[] } = {},
+): { slots: JudgeSlot[]; problems: string[] } {
+  if (!settings.openrouter) return { slots: [], problems: ['chưa có OPENROUTER_API_KEY'] };
+  const primary = options.primaryTier ?? 'small';
+  const fallback: JudgeTier = primary === 'small' ? 'mid' : 'small';
+  const build = (family: JudgeFamily, tier: JudgeTier) =>
+    openRouterJudge(settings.openrouter as OpenRouterSettings, family, tier, {
+      allowDataCollection: settings.allowUnconfirmedProviders,
+    });
+
+  const slots = JUDGE_FAMILIES.map((family, i) => ({
+    slot: i + 1,
+    family,
+    chain: [build(family, primary), build(family, fallback)],
+  }));
+  const problems = familyConflicts(slots, options.narratorFamilies ?? ['qwen', 'deepseek']);
+  return problems.length > 0 ? { slots: [], problems } : { slots, problems };
+}
+
 /** Key cho gateway. Một nơi duy nhất, để module và script chạy thử không lệch nhau. */
 export const gatewayKeys = (settings: AiSettings): Partial<Record<ProviderId, string>> => ({
   qwen: settings.qwen?.apiKey,

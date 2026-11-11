@@ -1,5 +1,6 @@
 /**
- * Phần AI của API: gateway gọi model và người dẫn truyện (AI-4).
+ * Phần AI của API: gateway gọi model, người dẫn truyện (AI-4) và panel ba
+ * judge (AI-5).
  *
  * Chưa có controller nào: AI-4 được gọi từ luồng chơi, mà luồng chơi có AI
  * còn chờ nhóm chốt thời điểm chấm so với lúc hỏi đào sâu. Module xuất
@@ -10,7 +11,8 @@ import { ConfigService } from '@nestjs/config';
 import type { AiEnv, Env } from '../config/env';
 import { CircuitBreaker } from './gateway/circuit-breaker';
 import { ModelGateway } from './gateway/model-gateway';
-import { gatewayKeys, narratorChain, type AiSettings } from './gateway/models';
+import { gatewayKeys, judgePanel, narratorChain, type AiSettings } from './gateway/models';
+import { JUDGE_SLOTS, JudgePanelService } from './judge/judge-panel.service';
 import { NARRATOR_CHAIN, NarratorService } from './narrator/narrator.service';
 
 export const AI_SETTINGS = Symbol('AI_SETTINGS');
@@ -80,7 +82,21 @@ function aiSettingsFromConfig(config: ConfigService<Env, true>): AiSettings {
       },
     },
     NarratorService,
+    {
+      provide: JUDGE_SLOTS,
+      inject: [AI_SETTINGS],
+      useFactory: (settings: AiSettings) => {
+        const narratorFamilies = ['qwen', 'deepseek', ...narratorChain(settings).chain.map((s) => s.family)];
+        const { slots, problems } = judgePanel(settings, { narratorFamilies });
+        const logger = new Logger('AI-5');
+        for (const problem of problems) logger.warn(`Panel judge tắt: ${problem}`);
+        for (const { slot, chain } of slots)
+          logger.log(`Ghế ${slot}: ${chain.map((s) => s.key).join(' → ')}`);
+        return slots;
+      },
+    },
+    JudgePanelService,
   ],
-  exports: [NarratorService],
+  exports: [NarratorService, JudgePanelService],
 })
 export class AiModule {}
