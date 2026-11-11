@@ -67,11 +67,12 @@ Khi làm một tính năng: tìm FR và use case tương ứng → đọc activi
 
 ### Những chỗ prototype đang lệch thiết kế (đừng coi là chuẩn)
 
-- Run gửi một lần khi kết thúc, chấm lại ở server bằng replay; thiết kế là gửi từng lượt.
+- Run gửi một lần khi kết thúc, chấm lại ở server bằng replay; thiết kế là gửi từng lượt. (Luồng `/api/runs` cũ. Luồng ca làm `/api/v1/runs` đã gửi từng lượt, xem dòng ca làm bên dưới.)
 - Câu tự luận chấm bằng so khớp từ khoá (`keywordGrader.ts`, đồng bộ trong reducer); thiết kế là judge panel bất đồng bộ, kết quả vào run dưới dạng sự kiện.
 - Prisma có 19 model, tên và cấu trúc khác ERD đích ở `plantuml/erd/`. Prototype có 3 role, thiết kế có 4 actor (Explorer, Domain expert, Content administrator, System administrator).
 - Module trong `apps/api/src` (`auth`, `content`, `profile`, `runs`…) không khớp module map `CL-00`.
-- Chưa có: worker, queue, SSE, model gateway, staff application, scheduler, importer.
+- Luồng chơi ca làm (Game Design W45, 11/11/2026): engine `packages/game-core/src/shift/`, API `/api/v1/runs` + `/api/v1/stream` (SSE), worker BullMQ (`apps/api/src/worker.ts`), bảng `run_event`/`answer`/`scenario_feedback`. Endpoint là **đề xuất ngoài `openapi.yaml`** (`docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`), chưa chấm điểm; AI-4 bản 2 và bộ phán có/không chạy bằng prompt nháp (D-130 💡); `AI_MODE=fake` chỉ cho dev.
+- Chưa có: staff application, scheduler, importer, AI-5 panel 3 judge. Model gateway đã có (`apps/api/src/ai/gateway`).
 - Code chết không được import trong `AppModule`: `apps/api/src/app/skills/*`, `app/career-graph/*`, `app/persistence/*`. Đừng dựa vào hay mở rộng chúng.
 
 ## 2. Bản đồ repo và lệnh
