@@ -80,6 +80,18 @@
           }
         }
       },
+      "serve-worker": {
+        "continuous": true,
+        "executor": "nx:run-commands",
+        "dependsOn": [
+          "^build",
+          "build"
+        ],
+        "options": {
+          "command": "node --watch-path=apps/api/dist apps/api/dist/main.js --worker",
+          "cwd": "{workspaceRoot}"
+        }
+      },
       "test": {
         "options": {
           "passWithNoTests": true

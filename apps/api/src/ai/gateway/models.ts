@@ -88,7 +88,8 @@ export function qwenFlash(settings: QwenSettings): ModelSpec {
     outputPerMTok: 0.47,
     cachedInputRatio: null,
     cacheWriteRatio: null,
-    source: 'https://www.alibabacloud.com/help/en/model-studio/model-pricing (5/11/2026)',
+    source:
+      'https://www.alibabacloud.com/help/en/model-studio/model-pricing (5/11/2026)',
     verified: true,
   };
 
@@ -110,7 +111,8 @@ export function qwenFlash(settings: QwenSettings): ModelSpec {
     dataPolicy: planKey
       ? {
           noTraining: 'not_found',
-          source: 'https://www.alibabacloud.com/help/en/model-studio/token-plan-personal-overview',
+          source:
+            'https://www.alibabacloud.com/help/en/model-studio/token-plan-personal-overview',
           checkedAt: '2026-11-11',
           note: 'Key gói (sk-sp-…): chưa đọc được điều khoản dữ liệu của gói',
         }
@@ -130,7 +132,10 @@ export function openRouterQwenFlash(
     model: 'qwen/qwen3.8-flash',
     family: 'qwen',
     region: 'openrouter',
-    baseUrl: (settings.baseUrl ?? 'https://openrouter.ai/api/v1').replace(/\/+$/, ''),
+    baseUrl: (settings.baseUrl ?? 'https://openrouter.ai/api/v1').replace(
+      /\/+$/,
+      '',
+    ),
     supports: { jsonSchema: true, explicitCache: false },
     cacheMode: 'implicit',
     price: {
@@ -139,7 +144,8 @@ export function openRouterQwenFlash(
       // 0,016 / 0,15 và 0,2 / 0,15, theo endpoint Alibaba trên OpenRouter.
       cachedInputRatio: 0.016 / 0.15,
       cacheWriteRatio: 0.2 / 0.15,
-      source: 'https://openrouter.ai/api/v1/models/qwen/qwen3.8-flash/endpoints (6/11/2026)',
+      source:
+        'https://openrouter.ai/api/v1/models/qwen/qwen3.8-flash/endpoints (6/11/2026)',
       verified: true,
     },
     routing: {
@@ -150,8 +156,7 @@ export function openRouterQwenFlash(
       noTraining: 'confirmed',
       source: 'https://openrouter.ai/docs/guides/privacy/data-collection',
       checkedAt: '2026-11-06',
-      note:
-        'OpenRouter: "does not store your prompts or responses", huấn luyện tắt mặc định. Mỗi request gửi `data_collection: deny`: nếu OpenRouter không xếp Alibaba vào nhóm không thu thập thì request bị từ chối, không gửi đi. Thêm một bên trung gian so với gọi trực tiếp',
+      note: 'OpenRouter: "does not store your prompts or responses", huấn luyện tắt mặc định. Mỗi request gửi `data_collection: deny`: nếu OpenRouter không xếp Alibaba vào nhóm không thu thập thì request bị từ chối, không gửi đi. Thêm một bên trung gian so với gọi trực tiếp',
     },
   };
 }
@@ -177,15 +182,16 @@ export function deepseekFlash(): ModelSpec {
       // ghi số khác nhau. Để null: chi phí tính theo giá đầy đủ (cận trên).
       cachedInputRatio: null,
       cacheWriteRatio: null,
-      source: 'Báo cáo §5.2.3 bản 24/10; trang thứ ba ghi 0,14 / 0,28 — mâu thuẫn, chưa kiểm',
+      source:
+        'Báo cáo §5.2.3 bản 24/10; trang thứ ba ghi 0,14 / 0,28 — mâu thuẫn, chưa kiểm',
       verified: false,
     },
     dataPolicy: {
       noTraining: 'not_found',
-      source: 'https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html',
+      source:
+        'https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html',
       checkedAt: '2026-10-29',
-      note:
-        'Privacy Policy (10/02/2026) dùng dữ liệu "to train and improve our technology", từ chối qua privacy@deepseek.com; Open Platform Terms không nói về huấn luyện trên dữ liệu API',
+      note: 'Privacy Policy (10/02/2026) dùng dữ liệu "to train and improve our technology", từ chối qua privacy@deepseek.com; Open Platform Terms không nói về huấn luyện trên dữ liệu API',
     },
   };
 }
@@ -232,12 +238,16 @@ export function narratorChain(settings: AiSettings): {
     try {
       spec = build();
     } catch (err) {
-      excluded.push({ provider, reason: err instanceof Error ? err.message : String(err) });
+      excluded.push({
+        provider,
+        reason: err instanceof Error ? err.message : String(err),
+      });
       continue;
     }
     if (!spec) {
       // OpenRouter chỉ là một cách mua khác, không có key không phải điều đáng báo.
-      if (provider !== 'openrouter') excluded.push({ provider, reason: 'chưa có API key' });
+      if (provider !== 'openrouter')
+        excluded.push({ provider, reason: 'chưa có API key' });
     } else if (
       spec.dataPolicy.noTraining !== 'confirmed' &&
       !settings.allowUnconfirmedProviders
@@ -269,7 +279,11 @@ export function narratorChain(settings: AiSettings): {
 export type JudgeFamily = 'anthropic' | 'openai' | 'google';
 export type JudgeTier = 'small' | 'mid';
 
-export const JUDGE_FAMILIES: readonly JudgeFamily[] = ['anthropic', 'openai', 'google'];
+export const JUDGE_FAMILIES: readonly JudgeFamily[] = [
+  'anthropic',
+  'openai',
+  'google',
+];
 
 interface JudgeModelRow {
   model: string;
@@ -289,16 +303,58 @@ interface JudgeModelRow {
  */
 const JUDGE_MODELS: Record<JudgeFamily, Record<JudgeTier, JudgeModelRow>> = {
   anthropic: {
-    small: { model: 'anthropic/claude-haiku-5.5', host: 'anthropic', input: 0.1, output: 0.5, cachedRead: 0.01, temperature: false },
-    mid: { model: 'anthropic/claude-sonnet-5.5', host: 'anthropic', input: 2, output: 10, cachedRead: 0.1, temperature: false },
+    small: {
+      model: 'anthropic/claude-haiku-5.5',
+      host: 'anthropic',
+      input: 0.1,
+      output: 0.5,
+      cachedRead: 0.01,
+      temperature: false,
+    },
+    mid: {
+      model: 'anthropic/claude-sonnet-5.5',
+      host: 'anthropic',
+      input: 2,
+      output: 10,
+      cachedRead: 0.1,
+      temperature: false,
+    },
   },
   openai: {
-    small: { model: 'openai/gpt-6-luna', host: 'openai', input: 0.1, output: 0.5, cachedRead: 0.01, temperature: false },
-    mid: { model: 'openai/gpt-6.1-sol', host: 'openai', input: 2, output: 10, cachedRead: 0.1, temperature: false },
+    small: {
+      model: 'openai/gpt-6-luna',
+      host: 'openai',
+      input: 0.1,
+      output: 0.5,
+      cachedRead: 0.01,
+      temperature: false,
+    },
+    mid: {
+      model: 'openai/gpt-6.1-sol',
+      host: 'openai',
+      input: 2,
+      output: 10,
+      cachedRead: 0.1,
+      temperature: false,
+    },
   },
   google: {
-    small: { model: 'google/gemini-3.5-flash-lite', host: 'google-ai-studio', input: 0.3, output: 2.5, cachedRead: 0.03, temperature: true },
-    mid: { model: 'google/gemini-3.8-flash', host: 'google-ai-studio', input: 0.75, output: 3.75, cachedRead: 0.075, temperature: true },
+    small: {
+      model: 'google/gemini-3.5-flash-lite',
+      host: 'google-ai-studio',
+      input: 0.3,
+      output: 2.5,
+      cachedRead: 0.03,
+      temperature: true,
+    },
+    mid: {
+      model: 'google/gemini-3.8-flash',
+      host: 'google-ai-studio',
+      input: 0.75,
+      output: 3.75,
+      cachedRead: 0.075,
+      temperature: true,
+    },
   },
 };
 
@@ -315,8 +371,17 @@ export function openRouterJudge(
     model: row.model,
     family,
     region: 'openrouter',
-    baseUrl: (settings.baseUrl ?? 'https://openrouter.ai/api/v1').replace(/\/+$/, ''),
-    supports: { jsonSchema: true, explicitCache: false, temperature: row.temperature },
+    baseUrl: (settings.baseUrl ?? 'https://openrouter.ai/api/v1').replace(
+      /\/+$/,
+      '',
+    ),
+    supports: {
+      jsonSchema: true,
+      explicitCache: false,
+      temperature: row.temperature,
+    },
+    // Gemini 3.x từ chối `reasoning.effort: none` (thử 11/11/2026); `minimal` báo 0 token suy nghĩ.
+    ...(family === 'google' ? { minReasoning: 'minimal' as const } : {}),
     cacheMode: 'implicit',
     price: {
       inputPerMTok: row.input,
@@ -334,8 +399,7 @@ export function openRouterJudge(
       noTraining: 'confirmed',
       source: 'https://openrouter.ai/docs/guides/privacy/data-collection',
       checkedAt: '2026-11-06',
-      note:
-        'Cùng căn cứ với Qwen qua OpenRouter: mỗi request gửi `data_collection: deny`, hãng nào OpenRouter không xếp vào nhóm không thu thập thì request bị từ chối. Cam kết riêng của Anthropic, OpenAI, Google chưa ghi vào §5.3.10',
+      note: 'Cùng căn cứ với Qwen qua OpenRouter: mỗi request gửi `data_collection: deny`, hãng nào OpenRouter không xếp vào nhóm không thu thập thì request bị từ chối. Cam kết riêng của Anthropic, OpenAI, Google chưa ghi vào §5.3.10',
     },
   };
 }
@@ -359,11 +423,16 @@ export function familyConflicts(
   const problems: string[] = [];
   const seen = new Set<string>();
   for (const { slot, family, chain } of slots) {
-    if (seen.has(family)) problems.push(`ghế ${slot}: họ ${family} đã có ở ghế khác`);
+    if (seen.has(family))
+      problems.push(`ghế ${slot}: họ ${family} đã có ở ghế khác`);
     seen.add(family);
-    if (narratorFamilies.includes(family)) problems.push(`ghế ${slot}: họ ${family} trùng họ model dẫn truyện`);
+    if (narratorFamilies.includes(family))
+      problems.push(`ghế ${slot}: họ ${family} trùng họ model dẫn truyện`);
     for (const spec of chain)
-      if (spec.family !== family) problems.push(`ghế ${slot}: ${spec.key} thuộc họ ${spec.family}, không phải ${family}`);
+      if (spec.family !== family)
+        problems.push(
+          `ghế ${slot}: ${spec.key} thuộc họ ${spec.family}, không phải ${family}`,
+        );
   }
   return problems;
 }
@@ -374,9 +443,13 @@ export function familyConflicts(
  */
 export function judgePanel(
   settings: AiSettings,
-  options: { primaryTier?: JudgeTier; narratorFamilies?: readonly string[] } = {},
+  options: {
+    primaryTier?: JudgeTier;
+    narratorFamilies?: readonly string[];
+  } = {},
 ): { slots: JudgeSlot[]; problems: string[] } {
-  if (!settings.openrouter) return { slots: [], problems: ['chưa có OPENROUTER_API_KEY'] };
+  if (!settings.openrouter)
+    return { slots: [], problems: ['chưa có OPENROUTER_API_KEY'] };
   const primary = options.primaryTier ?? 'small';
   const fallback: JudgeTier = primary === 'small' ? 'mid' : 'small';
   const build = (family: JudgeFamily, tier: JudgeTier) =>
@@ -389,12 +462,17 @@ export function judgePanel(
     family,
     chain: [build(family, primary), build(family, fallback)],
   }));
-  const problems = familyConflicts(slots, options.narratorFamilies ?? ['qwen', 'deepseek']);
+  const problems = familyConflicts(
+    slots,
+    options.narratorFamilies ?? ['qwen', 'deepseek'],
+  );
   return problems.length > 0 ? { slots: [], problems } : { slots, problems };
 }
 
 /** Key cho gateway. Một nơi duy nhất, để module và script chạy thử không lệch nhau. */
-export const gatewayKeys = (settings: AiSettings): Partial<Record<ProviderId, string>> => ({
+export const gatewayKeys = (
+  settings: AiSettings,
+): Partial<Record<ProviderId, string>> => ({
   qwen: settings.qwen?.apiKey,
   openrouter: settings.openrouter?.apiKey,
   deepseek: settings.deepseek?.apiKey,

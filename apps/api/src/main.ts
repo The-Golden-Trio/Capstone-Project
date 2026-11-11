@@ -3,8 +3,9 @@ import { NestFactory } from '@nestjs/core';
 import cookieParser from 'cookie-parser';
 import { AppModule } from './app/app.module';
 import { loadEnv } from './config/env';
+import { WorkerModule } from './worker.module';
 
-async function bootstrap() {
+async function bootstrapApi() {
   const app = await NestFactory.create(AppModule);
   const env = loadEnv();
 
@@ -21,10 +22,25 @@ async function bootstrap() {
     credentials: true,
   });
 
+  app.enableShutdownHooks();
   await app.listen(env.PORT);
   Logger.log(
     `🚀 API đang chạy tại http://localhost:${env.PORT}/${globalPrefix}`,
   );
 }
 
-bootstrap();
+/** Vai worker (§5.3.1): cùng bản build, chạy với `--worker`. */
+async function bootstrapWorker() {
+  const app = await NestFactory.createApplicationContext(WorkerModule);
+  app.enableShutdownHooks();
+  Logger.log('🛠  Worker đang chạy: chấm (AI-5) và hỏi vặn (AI-4)');
+}
+
+(process.argv.includes('--worker') ? bootstrapWorker() : bootstrapApi()).catch(
+  (err: unknown) => {
+    Logger.error(
+      err instanceof Error ? (err.stack ?? err.message) : String(err),
+    );
+    process.exit(1);
+  },
+);

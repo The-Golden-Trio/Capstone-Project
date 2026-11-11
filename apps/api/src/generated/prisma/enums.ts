@@ -23,3 +23,22 @@ export const ConsentMethod = {
 } as const
 
 export type ConsentMethod = (typeof ConsentMethod)[keyof typeof ConsentMethod]
+
+
+export const RunStatus = {
+  IN_PROGRESS: 'IN_PROGRESS',
+  FINISHED: 'FINISHED',
+  ABANDONED: 'ABANDONED'
+} as const
+
+export type RunStatus = (typeof RunStatus)[keyof typeof RunStatus]
+
+
+export const AssessmentStatus = {
+  QUEUED: 'QUEUED',
+  GRADED: 'GRADED',
+  PENDING: 'PENDING',
+  FAILED: 'FAILED'
+} as const
+
+export type AssessmentStatus = (typeof AssessmentStatus)[keyof typeof AssessmentStatus]
