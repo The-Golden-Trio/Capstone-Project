@@ -54,7 +54,7 @@ import {
   regenerationMessages,
   type TranscriptLine,
 } from './narrator.prompt';
-import { NARRATOR_PROMPT_VERSION } from './prompts/narrator.v1';
+import { NARRATOR_PROMPT_VERSION } from './prompts/narrator.v2';
 
 export const NARRATOR_CHAIN = Symbol('NARRATOR_CHAIN');
 export const AI_CLOCK = Symbol('AI_CLOCK');

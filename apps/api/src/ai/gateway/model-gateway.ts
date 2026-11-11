@@ -27,8 +27,23 @@ export const fetchTransport: Transport = async (url, init) => {
   return { status: response.status, text: () => response.text() };
 };
 
+/**
+ * Lỗi hết giờ của `fetch` là `DOMException`. Xét theo tên, không dùng
+ * `instanceof Error`: kiểu này khác nhau giữa các realm, như trong jest.
+ */
+const errorName = (err: unknown): unknown => (err as { name?: unknown } | null)?.name;
 const isAbort = (err: unknown): boolean =>
-  err instanceof Error && (err.name === 'TimeoutError' || err.name === 'AbortError');
+  errorName(err) === 'TimeoutError' || errorName(err) === 'AbortError';
+
+/**
+ * `fetch` chỉ báo "fetch failed", nguyên nhân thật (sai tên miền, từ chối kết
+ * nối, lỗi TLS) nằm trong `cause`. Không có nó thì không biết phải sửa gì.
+ */
+function networkMessage(err: unknown): string {
+  const { message, cause } = (err ?? {}) as { message?: unknown; cause?: { code?: unknown; message?: unknown } };
+  const reason = cause?.code ?? cause?.message;
+  return [message ?? String(err), reason].filter(Boolean).join(': ');
+}
 
 export class ModelGateway {
   constructor(
@@ -72,11 +87,7 @@ export class ModelGateway {
     } catch (err) {
       if (isAbort(err))
         throw new GatewayError('timeout', `${provider}: quá ${request.timeoutMs} ms`, provider);
-      throw new GatewayError(
-        'network',
-        `${provider}: ${err instanceof Error ? err.message : String(err)}`,
-        provider,
-      );
+      throw new GatewayError('network', `${provider}: ${networkMessage(err)}`, provider);
     }
 
     // JSON.parse bỏ qua khoảng trắng đầu, nên các dòng keep-alive của

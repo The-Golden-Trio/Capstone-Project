@@ -4,8 +4,8 @@
  * (ví dụ `top_p` cùng `temperature`) là đổi hành vi model mà không ai biết.
  */
 import { GatewayError, type ChatRequest } from './gateway.types';
-import { deepseekAdapter, qwenAdapter } from './adapters';
-import { deepseekFlash, qwenFlash } from './models';
+import { deepseekAdapter, openRouterAdapter, qwenAdapter } from './adapters';
+import { deepseekFlash, openRouterQwenFlash, qwenFlash } from './models';
 
 const messages: ChatRequest['messages'] = [
   { role: 'system', parts: [{ text: 'luật json' }] },
@@ -83,6 +83,23 @@ describe('Qwen — đọc kết quả', () => {
       usage: { input: 3000, cachedInput: 2048, cacheWrite: 0, output: 120, reasoning: 0 },
     });
   });
+
+  it.each([
+    ['ngay dưới prompt_tokens_details', { cached_tokens: 0, cache_creation_input_tokens: 1800 }],
+    ['lồng trong cache_creation', { cached_tokens: 0, cache_creation: { cache_creation_input_tokens: 1800 } }],
+  ])('đọc được phí tạo cache %s — hai trang tài liệu ghi khác nhau', (_, details) => {
+    const reply = qwenAdapter.read({
+      choices: [{ message: { content: '{}' }, finish_reason: 'stop' }],
+      usage: { prompt_tokens: 3000, completion_tokens: 10, prompt_tokens_details: details },
+    });
+    expect(reply.usage.cacheWrite).toBe(1800);
+  });
+
+  it('HTTP 200 mà không có choices là lỗi hạ tầng, không phải câu rỗng', () => {
+    expect(() => qwenAdapter.read({ code: 'x', message: 'y' })).toThrow(
+      expect.objectContaining({ kind: 'server' }),
+    );
+  });
 });
 
 describe('Qwen — phân loại lỗi', () => {
@@ -92,9 +109,18 @@ describe('Qwen — phân loại lỗi', () => {
     [400, 'invalid_parameter_error', 'bad_request'],
     [401, 'invalid_api_key', 'auth'],
     [429, 'limit_requests', 'rate_limited'],
-    [429, 'insufficient_quota', 'quota'],
-    [429, 'Throttling.AllocationQuota', 'quota'],
+    [429, 'insufficient_quota', 'rate_limited'],
+    [429, 'Throttling.AllocationQuota', 'rate_limited'],
+    [429, 'Throttling.RateQuota', 'rate_limited'],
+    [429, 'Throttling.Concurrency', 'rate_limited'],
     [429, 'BudgetLimitExceeded', 'quota'],
+    [403, 'Arrearage', 'quota'],
+    [403, 'isv.OUT_OF_SERVICE', 'quota'],
+    [403, 'AllocationQuota.FreeTierOnly', 'quota'],
+    [403, 'AccessDenied.Unpurchased', 'auth'],
+    [403, 'access_denied', 'auth'],
+    [404, 'WorkSpaceNotFound', 'auth'],
+    [404, 'model_not_found', 'auth'],
     [429, 'Throttling.ServiceOverloaded', 'overloaded'],
     [500, 'internal_error', 'server'],
     [503, '', 'overloaded'],
@@ -102,6 +128,110 @@ describe('Qwen — phân loại lỗi', () => {
     const error = qwenAdapter.error(status, { error: { code, message: 'x' } });
     expect(error).toBeInstanceOf(GatewayError);
     expect(error.kind).toBe(kind);
+  });
+});
+
+describe('Qwen — phân loại lỗi theo lời báo', () => {
+  it.each([
+    [429, 'Throttling.AllocationQuota', 'Free allocated quota exceeded.', 'quota'],
+    [400, 'InvalidParameter', 'The product is not activated, please confirm', 'auth'],
+    [400, 'InvalidParameter', 'No backend server available', 'overloaded'],
+    [400, 'InvalidParameter', 'Input or output data may contain inappropriate content.', 'content_filtered'],
+  ] as const)('%i %s "%s" → %s', (status, code, message, kind) => {
+    expect(qwenAdapter.error(status, { error: { code, message } }).kind).toBe(kind);
+  });
+});
+
+describe('OpenRouter — body', () => {
+  const openrouter = () => openRouterQwenFlash({ apiKey: 'o' }, { allowDataCollection: false });
+
+  it('tắt suy nghĩ bằng reasoning.effort, dùng max_tokens, không có tham số riêng của Alibaba', () => {
+    const body = openRouterAdapter.body(request(openrouter()));
+    expect(body).toMatchObject({
+      model: 'qwen/qwen3.8-flash',
+      reasoning: { effort: 'none' },
+      max_tokens: 300,
+      temperature: 0.7,
+      stream: false,
+    });
+    for (const absent of ['enable_thinking', 'max_completion_tokens', 'top_p', 'thinking'])
+      expect(body).not.toHaveProperty(absent);
+  });
+
+  it('chỉ Alibaba, không đổi hãng, không cho hãng bỏ qua tham số, không thu thập dữ liệu', () => {
+    expect(openRouterAdapter.body(request(openrouter()))['provider']).toEqual({
+      only: ['alibaba'],
+      allow_fallbacks: false,
+      require_parameters: true,
+      data_collection: 'deny',
+    });
+  });
+
+  it('JSON Schema strict', () => {
+    expect(openRouterAdapter.body(request(openrouter()))['response_format']).toMatchObject({
+      type: 'json_schema',
+      json_schema: { name: 'narration', strict: true },
+    });
+  });
+
+  it('cùng chữ với gọi trực tiếp, không có cache_control', () => {
+    const body = openRouterAdapter.body(request(openrouter()));
+    expect((body['messages'] as Array<{ content: unknown }>)[1].content).toBe('kịch bản câu người chơi');
+    expect(JSON.stringify(body)).not.toContain('cache_control');
+  });
+});
+
+describe('OpenRouter — đọc kết quả', () => {
+  it('chuẩn hoá số token, kể cả cache_write_tokens', () => {
+    const reply = openRouterAdapter.read({
+      id: 'gen-1',
+      choices: [{ message: { content: '{}' }, finish_reason: 'stop' }],
+      usage: {
+        prompt_tokens: 3000,
+        completion_tokens: 90,
+        cost: 0.0003,
+        prompt_tokens_details: { cached_tokens: 2048, cache_write_tokens: 100 },
+        completion_tokens_details: { reasoning_tokens: 0 },
+      },
+    });
+    expect(reply.usage).toEqual({ input: 3000, cachedInput: 2048, cacheWrite: 100, output: 90, reasoning: 0 });
+  });
+
+  it('HTTP 200 có error trong body: lỗi, không phải câu rỗng', () => {
+    expect(() => openRouterAdapter.read({ error: { code: 502, message: 'Provider returned error' } })).toThrow(
+      expect.objectContaining({ kind: 'server', status: 502 }),
+    );
+  });
+
+  it('HTTP 200 có error trong choice, finish_reason "error"', () => {
+    expect(() =>
+      openRouterAdapter.read({
+        choices: [{ message: { content: 'nửa câu' }, finish_reason: 'error', error: { code: 429, message: 'chậm lại' } }],
+      }),
+    ).toThrow(expect.objectContaining({ kind: 'rate_limited' }));
+  });
+
+  it('content_filter thì dừng, không đẩy nội dung sang chỗ khác', () => {
+    expect(() =>
+      openRouterAdapter.read({ choices: [{ message: { content: '' }, finish_reason: 'content_filter' }] }),
+    ).toThrow(expect.objectContaining({ kind: 'content_filtered' }));
+  });
+});
+
+describe('OpenRouter — phân loại lỗi', () => {
+  it.each([
+    [400, 'Invalid parameter', 'bad_request'],
+    [401, 'User not found.', 'auth'],
+    [402, 'Insufficient credits', 'quota'],
+    [403, 'Your input was flagged by moderation', 'content_filtered'],
+    [403, 'Key not allowed', 'auth'],
+    [404, 'No endpoints found matching your data policy', 'bad_request'],
+    [408, 'Timed out', 'timeout'],
+    [429, 'Rate limited', 'rate_limited'],
+    [502, 'Provider returned error', 'server'],
+    [503, 'No available provider', 'overloaded'],
+  ] as const)('%i %s → %s', (status, message, kind) => {
+    expect(openRouterAdapter.error(status, { error: { code: status, message } }).kind).toBe(kind);
   });
 });
 

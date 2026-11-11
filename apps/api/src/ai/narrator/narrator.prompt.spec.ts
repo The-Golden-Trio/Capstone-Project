@@ -12,7 +12,7 @@ import {
   type PromptTurn,
 } from './narrator.prompt';
 import { NARRATOR_PROFILE } from './narrator.profile';
-import { narratorSystemPrompt } from './prompts/narrator.v1';
+import { narratorSystemPrompt } from './prompts/narrator.v2';
 
 const data = fixtureData();
 const scenario = data.scenarios[SAMPLE_SCENARIO_KEY];
@@ -103,6 +103,11 @@ describe('câu người chơi là dữ liệu', () => {
           `không quá ${NARRATOR_PROFILE.maxOutputTokens[provider]} token`,
         );
       expect(NARRATOR_PROFILE.maxOutputTokens.qwen).toBeGreaterThan(500);
+    });
+
+    it('dặn không đưa giải pháp trong mục tiêu đào sâu vào câu hỏi (bản 2, sau lần gọi thật 11/11)', () => {
+      expect(SYSTEM_PROMPT).toContain('followup_goal');
+      expect(SYSTEM_PROMPT).toMatch(/không đưa X/);
     });
 
     it('chỉ có hai trường speaker và follow_up, không còn narration', () => {

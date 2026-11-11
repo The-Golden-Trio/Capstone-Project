@@ -15,7 +15,7 @@
  */
 import type { NarratorView, RuleViolation } from '@datn/game-core';
 import type { ChatMessage, ProviderId } from '../gateway/gateway.types';
-import { narratorSystemPrompt, PLAYER_TAG } from './prompts/narrator.v1';
+import { narratorSystemPrompt, PLAYER_TAG } from './prompts/narrator.v2';
 
 /** Một dòng đã diễn ra và đã được người chơi thấy. */
 export interface TranscriptLine {

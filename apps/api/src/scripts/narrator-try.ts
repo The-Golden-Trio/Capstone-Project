@@ -3,7 +3,8 @@
  *
  *     pnpm exec nx run @datn/api:narrator-try                     # dry: in request, không gọi gì
  *     pnpm exec nx run @datn/api:narrator-try -- --mode=fake      # model giả, xem bậc dự phòng chạy
- *     pnpm exec nx run @datn/api:narrator-try -- --mode=live      # gọi thật, cần QWEN_API_KEY
+ *     pnpm exec nx run @datn/api:narrator-try -- --mode=check     # vừa gắn key: gọi thử, nói rõ sai ở đâu
+ *     pnpm exec nx run @datn/api:narrator-try -- --mode=live      # gọi thật, cần QWEN_API_KEY hoặc OPENROUTER_API_KEY
  *     pnpm exec nx run @datn/api:narrator-try -- --mode=export    # ghi một lượt gọi ra request.json, response.json
  *
  * Tuỳ chọn:
@@ -12,6 +13,8 @@
  *     --answer=dung_kich_ban|lac_kich_ban|tan_cong|do_rubric|all   (mặc định dung_kich_ban)
  *     --answer="câu tự gõ"
  *     --repeat=2      gọi lại cùng lượt N lần — lần sau phải trúng cache
+ *     --scenario=KEY --activity=a3   chạy hoạt động khác (mặc định SWE_BACKEND_L3_S_INCIDENT, a2);
+ *                     câu trả lời mẫu viết cho a2, nên với hoạt động khác hãy dùng --answer="…"
  *     --no-follow-up  engine không cho hỏi đào sâu ở lượt này
  *
  * Mục đích là biết thiết kế trên giấy có đúng với thực tế không: request gửi
@@ -22,17 +25,20 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   FOLLOW_UP_MAX_CHARS,
+  checkNarration,
   hiddenTexts,
   narrationJsonSchema,
   narratorView,
+  textsOf,
   type Scenario,
 } from '@datn/game-core';
 import { fixtureData } from '@datn/game-core/testing';
 import { aiSettingsFromEnv } from '../ai/ai.module';
 import { CircuitBreaker } from '../ai/gateway/circuit-breaker';
-import type { ModelSpec, Transport } from '../ai/gateway/gateway.types';
+import { explainGatewayError, keyWarnings } from '../ai/gateway/diagnose';
+import { GatewayError, type ModelSpec, type Transport } from '../ai/gateway/gateway.types';
 import { ModelGateway, fetchTransport } from '../ai/gateway/model-gateway';
-import { deepseekFlash, narratorChain, qwenFlash } from '../ai/gateway/models';
+import { deepseekFlash, gatewayKeys, narratorChain, openRouterQwenFlash, qwenFlash } from '../ai/gateway/models';
 import { NARRATOR_PROFILE } from '../ai/narrator/narrator.profile';
 import { buildNarratorMessages } from '../ai/narrator/narrator.prompt';
 import { NarratorService, type NarrateResult } from '../ai/narrator/narrator.service';
@@ -74,11 +80,15 @@ function loadEnvFile(path: string): void {
   }
 }
 
+// Cùng thứ tự với `ConfigModule` trong AppModule: file của API trước, file gốc sau.
 loadEnvFile(join(process.cwd(), 'apps/api/.env'));
+loadEnvFile(join(process.cwd(), '.env'));
 
 const mode = args.get('mode') ?? 'dry';
 const repeat = Math.max(1, Number(args.get('repeat') ?? 1));
 const followUpAllowed = !args.has('no-follow-up');
+const SCENARIO_KEY = args.get('scenario') ?? SAMPLE_SCENARIO_KEY;
+const ACTIVITY_ID = args.get('activity') ?? SAMPLE_ACTIVITY_ID;
 
 function answersToRun(): Array<[string, string]> {
   const chosen = args.get('answer') ?? 'dung_kich_ban';
@@ -232,7 +242,10 @@ function annotate(json: string, header: string[], notes: Array<[string, string[]
   return [...header.map((h) => `// ${h}`), ...lines].join('\n') + '\n';
 }
 
-const keyName = (url: string) => (url.includes('deepseek') ? '{DEEPSEEK_API_KEY}' : '{QWEN_API_KEY}');
+const keyName = (url: string) => {
+  if (url.includes('deepseek')) return '{DEEPSEEK_API_KEY}';
+  return url.includes('openrouter') ? '{OPENROUTER_API_KEY}' : '{QWEN_API_KEY}';
+};
 
 /** Request đúng như gửi đi, key thay bằng tên biến môi trường. */
 const asRequest = (url: string, body: unknown) => ({
@@ -273,11 +286,11 @@ function recording(inner: Transport): Transport & { log: Exchange[] } {
 /* ── Ba chế độ ─────────────────────────────────────────────────────── */
 
 function dry(scenario: Scenario, answer: string): void {
-  const view = narratorView(scenario, SAMPLE_ACTIVITY_ID);
+  const view = narratorView(scenario, ACTIVITY_ID);
   const turn = {
     view,
-    activityId: SAMPLE_ACTIVITY_ID,
-    transcript: transcriptBefore(scenario, SAMPLE_ACTIVITY_ID),
+    activityId: ACTIVITY_ID,
+    transcript: transcriptBefore(scenario, ACTIVITY_ID),
     answer,
   };
   const [system, user] = buildNarratorMessages(turn, 'qwen');
@@ -292,7 +305,7 @@ function dry(scenario: Scenario, answer: string): void {
       ? '→ phần cố định có vẻ đủ 1.024 token để Qwen cache. Xác nhận bằng --mode=live --repeat=2.'
       : '→ phần cố định CÓ THỂ dưới 1.024 token: Qwen sẽ không cache. Xác nhận bằng --mode=live.',
   );
-  console.log(`AI-4 không được thấy ${hiddenTexts(scenario, SAMPLE_ACTIVITY_ID).length} đoạn (rubric, gợi ý, kết cục, hoạt động sau).`);
+  console.log(`AI-4 không được thấy ${hiddenTexts(scenario, ACTIVITY_ID).length} đoạn (rubric, gợi ý, kết cục, hoạt động sau).`);
 
   rule('System prompt');
   console.log(system.parts[0].text);
@@ -307,6 +320,7 @@ function dry(scenario: Scenario, answer: string): void {
     qwenFlash({ apiKey: '-', region: 'eu-central-1', workspaceId: '{WorkspaceId}', cacheMode: 'implicit' }),
     qwenFlash({ apiKey: '-', region: 'eu-central-1', workspaceId: '{WorkspaceId}', cacheMode: 'explicit' }),
     qwenFlash({ apiKey: '-', region: 'ap-southeast-1', cacheMode: 'implicit' }),
+    openRouterQwenFlash({ apiKey: '-' }, { allowDataCollection: false }),
     deepseekFlash(),
   ];
   for (const spec of specs) {
@@ -368,8 +382,8 @@ async function fake(scenario: Scenario, answers: Array<[string, string]>): Promi
   for (const [label, answer] of answers) {
     const result = await service.narrate({
       scenario,
-      activityId: SAMPLE_ACTIVITY_ID,
-      transcript: transcriptBefore(scenario, SAMPLE_ACTIVITY_ID),
+      activityId: ACTIVITY_ID,
+      transcript: transcriptBefore(scenario, ACTIVITY_ID),
       answer,
       followUpAllowed,
     });
@@ -407,8 +421,8 @@ async function exportFiles(scenario: Scenario, answer: string): Promise<void> {
   const service = new NarratorService(new ModelGateway({ qwen: '-' }, recorder, clock), new CircuitBreaker(clock), [qwen], clock);
   await service.narrate({
     scenario,
-    activityId: SAMPLE_ACTIVITY_ID,
-    transcript: transcriptBefore(scenario, SAMPLE_ACTIVITY_ID),
+    activityId: ACTIVITY_ID,
+    transcript: transcriptBefore(scenario, ACTIVITY_ID),
     answer,
     followUpAllowed,
   });
@@ -435,7 +449,7 @@ async function live(scenario: Scenario, answers: Array<[string, string]>): Promi
   const { chain, excluded } = narratorChain(settings);
   for (const { provider, reason } of excluded) console.log(`(không dùng ${provider}: ${reason})`);
   if (chain.length === 0) {
-    console.error('\nKhông có model nào dùng được. Đặt QWEN_API_KEY (và QWEN_WORKSPACE_ID) trong apps/api/.env.');
+    console.error('\nKhông có model nào dùng được. Đặt QWEN_API_KEY hoặc OPENROUTER_API_KEY trong apps/api/.env.');
     process.exitCode = 1;
     return;
   }
@@ -443,7 +457,7 @@ async function live(scenario: Scenario, answers: Array<[string, string]>): Promi
 
   const recorder = recording(fetchTransport);
   const service = new NarratorService(
-    new ModelGateway({ qwen: settings.qwen?.apiKey, deepseek: settings.deepseek?.apiKey }, recorder),
+    new ModelGateway(gatewayKeys(settings), recorder),
     new CircuitBreaker(),
     chain,
   );
@@ -451,8 +465,8 @@ async function live(scenario: Scenario, answers: Array<[string, string]>): Promi
     for (let i = 1; i <= repeat; i++) {
       const result = await service.narrate({
         scenario,
-        activityId: SAMPLE_ACTIVITY_ID,
-        transcript: transcriptBefore(scenario, SAMPLE_ACTIVITY_ID),
+        activityId: ACTIVITY_ID,
+        transcript: transcriptBefore(scenario, ACTIVITY_ID),
         answer,
         followUpAllowed,
       });
@@ -470,16 +484,142 @@ async function live(scenario: Scenario, answers: Array<[string, string]>): Promi
   }
 }
 
+/**
+ * Chờ lâu hơn hẳn 4,5 s của lúc chơi: model chậm thì phải báo là chậm, chứ
+ * không báo là hỏng. Vẫn có trần, để mạng treo không làm lệnh treo theo.
+ */
+const CHECK_TIMEOUT_MS = 30_000;
+
+/**
+ * Lệnh chạy đầu tiên sau khi gắn key. Mỗi model gọi một lượt thật với prompt
+ * thật, rồi chạy cả AI-4 một lượt. Tốn cỡ vài nghìn token.
+ *
+ * Tách hai loại kết quả: FAIL là request không chạy được, phải sửa cấu hình
+ * hay code. Cảnh báo là chạy được nhưng cần xem lại, ví dụ model chậm hay câu
+ * viết chưa qua luật.
+ */
+async function check(scenario: Scenario, answer: string): Promise<void> {
+  let env;
+  try {
+    env = loadAiEnv();
+  } catch (err) {
+    const issues = (err as { issues?: Array<{ path: unknown[]; message: string }> }).issues ?? [];
+    console.error('✘ apps/api/.env có giá trị không hợp lệ:');
+    for (const issue of issues) console.error(`  ${issue.path.join('.')}: ${issue.message}`);
+    process.exitCode = 1;
+    return;
+  }
+  const settings = aiSettingsFromEnv(env);
+  const { chain, excluded } = narratorChain(settings);
+  let failed = false;
+
+  rule('1. Cấu hình');
+  for (const warning of keyWarnings(settings)) console.log(`⚠ ${warning}`);
+  for (const { provider, reason } of excluded) console.log(`– không dùng ${provider}: ${reason}`);
+  if (chain.length === 0) {
+    console.error('✘ Không có model nào dùng được. Đặt QWEN_API_KEY hoặc OPENROUTER_API_KEY trong apps/api/.env.');
+    process.exitCode = 1;
+    return;
+  }
+  console.log(`Chuỗi: ${chain.map((s) => s.key).join(' → ')}`);
+
+  const view = narratorView(scenario, ACTIVITY_ID);
+  const transcript = transcriptBefore(scenario, ACTIVITY_ID);
+  const castIds = view.cast.map((c) => c.npc_id);
+  const turn = { view, activityId: ACTIVITY_ID, transcript, answer };
+  const gateway = new ModelGateway(gatewayKeys(settings));
+
+  for (const spec of chain) {
+    rule(`2. Gọi thử ${spec.key}`);
+    console.log(`POST ${spec.baseUrl}/chat/completions`);
+    console.log(`khuôn trả về: ${spec.supports.jsonSchema ? 'JSON Schema strict' : 'json_object (R4 kiểm khuôn bằng code)'}`);
+
+    try {
+      const result = await gateway.complete({
+        model: spec,
+        messages: buildNarratorMessages(turn, spec.provider),
+        temperature: NARRATOR_PROFILE.temperature[spec.provider],
+        maxOutputTokens: NARRATOR_PROFILE.maxOutputTokens[spec.provider],
+        json: { name: 'narration', schema: narrationJsonSchema(castIds) },
+        timeoutMs: CHECK_TIMEOUT_MS,
+      });
+      console.log(`✔ request được nhận: ${result.latencyMs} ms, finish_reason ${result.finishReason}, id ${result.requestId ?? '(không có)'}`);
+      console.log(`  token: vào ${result.usage.input}, trúng cache ${result.usage.cachedInput}, ra ${result.usage.output}, suy nghĩ ${result.usage.reasoning}`);
+      console.log(`  model trả: ${result.text}`);
+
+      if (result.usage.reasoning > 0) console.log('⚠ Model vẫn sinh token suy nghĩ: tham số tắt thinking không có tác dụng ở đường gọi này.');
+      if (result.latencyMs > NARRATOR_PROFILE.attemptTimeoutMs)
+        console.log(`⚠ Chậm hơn ${NARRATOR_PROFILE.attemptTimeoutMs} ms của lúc chơi: lượt thật sẽ hết giờ. Thử lại vài lần, hoặc đổi region.`);
+
+      const { output, violations } = checkNarration(result.text, {
+        visibleTexts: [...textsOf(view), ...transcript.map((l) => l.text), answer],
+        hiddenTexts: hiddenTexts(scenario, ACTIVITY_ID),
+        castIds,
+        finishReason: result.finishReason,
+      });
+      if (!output) {
+        failed = true;
+        console.log(`✘ Không đọc được kết quả: ${violations.map((v) => v.detail).join('; ')}`);
+      } else if (violations.length > 0) {
+        console.log(`⚠ Đọc được nhưng chưa qua luật, lúc chơi sẽ viết lại: ${violations.map((v) => `${v.rule} ${v.detail}`).join('; ')}`);
+      } else {
+        console.log('✔ qua cả R1–R4');
+      }
+    } catch (err) {
+      failed = true;
+      const error = err instanceof GatewayError ? err : new GatewayError('network', String(err), spec.provider);
+      console.log(`✘ ${error.kind}: ${error.message}`);
+      console.log(`  → ${explainGatewayError(error)}`);
+    }
+  }
+
+  rule('3. Chạy cả AI-4, đúng giới hạn thời gian lúc chơi');
+  const service = new NarratorService(gateway, new CircuitBreaker(), chain);
+  const result = await service.narrate({
+    scenario,
+    activityId: ACTIVITY_ID,
+    transcript,
+    answer,
+    followUpAllowed: true,
+  });
+  printResult('kết quả', result);
+  if (result.status !== 'ok') {
+    failed = true;
+    console.log(
+      result.status === 'blocked'
+        ? '✘ Bộ lọc nội dung của nhà cung cấp chặn câu mẫu, thử --answer=dung_kich_ban.'
+        : `✘ AI-4 chưa ra được câu nào trong ${NARRATOR_PROFILE.attemptTimeoutMs} ms mỗi lần gọi và ${NARRATOR_PROFILE.deadlineMs} ms cả lượt. Xem dòng lỗi và các cảnh báo ở trên.`,
+    );
+  }
+
+  rule(failed ? '✘ CHƯA CHẠY ĐƯỢC: sửa các dòng ✘ ở trên rồi chạy lại' : '✔ AI-4 CHẠY ĐƯỢC');
+  if (failed) process.exitCode = 1;
+}
+
 async function main(): Promise<void> {
-  const scenario = fixtureData().scenarios[SAMPLE_SCENARIO_KEY];
+  const scenarios = fixtureData().scenarios;
+  const scenario = scenarios[SCENARIO_KEY];
+  if (!scenario) {
+    console.error(`Không có kịch bản ${SCENARIO_KEY}. Có: ${Object.keys(scenarios).join(', ')}`);
+    process.exitCode = 1;
+    return;
+  }
+  if (!scenario.activities.some((a) => a.activity_id === ACTIVITY_ID)) {
+    console.error(`Kịch bản ${SCENARIO_KEY} không có hoạt động ${ACTIVITY_ID}.`);
+    process.exitCode = 1;
+    return;
+  }
   const answers = answersToRun();
-  console.log(`Kịch bản ${SAMPLE_SCENARIO_KEY}, hoạt động ${SAMPLE_ACTIVITY_ID}, chế độ ${mode}, được hỏi đào sâu: ${followUpAllowed ? 'có' : 'không'}`);
+  if (ACTIVITY_ID !== SAMPLE_ACTIVITY_ID && !answers.some(([label]) => label === 'tu_go'))
+    console.log(`⚠ Câu trả lời mẫu viết cho ${SAMPLE_ACTIVITY_ID}; với ${ACTIVITY_ID} nên dùng --answer="…".`);
+  console.log(`Kịch bản ${SCENARIO_KEY}, hoạt động ${ACTIVITY_ID}, chế độ ${mode}, được hỏi đào sâu: ${followUpAllowed ? 'có' : 'không'}`);
 
   if (mode === 'dry') return dry(scenario, answers[0][1]);
   if (mode === 'fake') return fake(scenario, answers);
+  if (mode === 'check') return check(scenario, answers[0][1]);
   if (mode === 'live') return live(scenario, answers);
   if (mode === 'export') return exportFiles(scenario, answers[0][1]);
-  console.error(`--mode phải là dry, fake, live hoặc export (đang là "${mode}")`);
+  console.error(`--mode phải là dry, fake, check, live hoặc export (đang là "${mode}")`);
   process.exitCode = 1;
 }
 

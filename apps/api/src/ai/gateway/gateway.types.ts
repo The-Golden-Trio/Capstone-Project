@@ -8,7 +8,7 @@
  * — chỉ tồn tại trong adapter.
  */
 
-export type ProviderId = 'qwen' | 'deepseek';
+export type ProviderId = 'qwen' | 'openrouter' | 'deepseek';
 
 /** Một đoạn chữ trong message. Tách đoạn để đặt được điểm cache ở giữa. */
 export interface ChatPart {
@@ -69,6 +69,8 @@ export interface ModelSpec {
   cacheMode: CacheMode;
   price: Price;
   dataPolicy: DataPolicy;
+  /** Chỉ với OpenRouter: cho hãng nào phục vụ, và có cho hãng lưu dữ liệu không. */
+  routing?: { only: string[]; dataCollection: 'allow' | 'deny' };
 }
 
 export interface ChatRequest {

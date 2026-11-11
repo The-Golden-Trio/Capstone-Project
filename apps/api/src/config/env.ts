@@ -44,20 +44,31 @@ const EnvSchema = z.object({
   /** Key của Alibaba Cloud Model Studio (Qwen). */
   QWEN_API_KEY: optionalText,
   /**
-   * Region của Model Studio. Singapore gần Việt Nam nhất nhưng (29/10/2026)
-   * chưa hỗ trợ JSON Schema strict; Frankfurt và Virginia có.
+   * Region của Model Studio, phải khớp region tạo key. Mặc định Singapore: gần
+   * Việt Nam nhất và là region duy nhất chạy được mà không cần workspace, tức
+   * chỉ cần key. Chưa hỗ trợ JSON Schema strict (5/11/2026), nên dùng
+   * `json_object` và để R4 kiểm khuôn.
    */
   QWEN_REGION: blankAsUnset(
-    z.enum(['ap-southeast-1', 'eu-central-1', 'us-east-1']).default('eu-central-1'),
+    z
+      .enum(['ap-southeast-1', 'ap-northeast-1', 'cn-hongkong', 'eu-central-1', 'us-east-1'])
+      .default('ap-southeast-1'),
   ),
   /** Workspace ID — endpoint của Model Studio có dạng `{WorkspaceId}.{region}.maas.aliyuncs.com`. */
   QWEN_WORKSPACE_ID: optionalText,
   /** Đè hẳn endpoint, khi Alibaba đổi đường dẫn. */
   QWEN_BASE_URL: optionalText,
-  /** `implicit`: tự động, không phí tạo. `explicit`: đánh dấu, rẻ hơn khi ≥ 4 lượt dùng chung trong 5 phút. */
+  /** `implicit`: tự động, không phí tạo. `explicit`: đánh dấu điểm cache; qwen3.8-flash có tỉ lệ riêng theo region, xem giá trong console trước khi bật. */
   QWEN_CACHE_MODE: blankAsUnset(
     z.enum(['implicit', 'explicit']).default('implicit'),
   ),
+  /** Đè cách suy theo region: `schema` (JSON Schema strict) hoặc `object` (`json_object`). */
+  QWEN_JSON_MODE: blankAsUnset(z.enum(['schema', 'object']).optional()),
+
+  /** Key của OpenRouter: gọi cùng model Qwen, không cần region hay workspace. */
+  OPENROUTER_API_KEY: optionalText,
+  /** Đè endpoint của OpenRouter. Dùng khi thử với máy chủ giả. */
+  OPENROUTER_BASE_URL: optionalText,
 
   /** Key của DeepSeek — model dự phòng. */
   DEEPSEEK_API_KEY: optionalText,
@@ -83,6 +94,9 @@ const AiEnvSchema = EnvSchema.pick({
   QWEN_WORKSPACE_ID: true,
   QWEN_BASE_URL: true,
   QWEN_CACHE_MODE: true,
+  QWEN_JSON_MODE: true,
+  OPENROUTER_API_KEY: true,
+  OPENROUTER_BASE_URL: true,
   DEEPSEEK_API_KEY: true,
   AI_ALLOW_UNCONFIRMED_PROVIDERS: true,
 });

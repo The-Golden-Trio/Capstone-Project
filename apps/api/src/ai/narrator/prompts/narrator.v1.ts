@@ -27,7 +27,7 @@ export const NARRATOR_PROMPT_VERSION = 'narrator-v1';
 export const PLAYER_TAG = 'cau_nguoi_choi';
 
 /**
- * Prompt khác nhau đúng một chỗ giữa hai hãng: con số trần token. Cache của
+ * Prompt khác nhau đúng một chỗ giữa các hãng: con số trần token. Cache của
  * mỗi hãng tách riêng nên hai bản không làm hỏng nhau.
  */
 export const narratorSystemPrompt = (provider: ProviderId): string => `Bạn là người dẫn truyện của JobQuest — trò chơi giúp học sinh THPT thử một ngày làm việc thật của một nghề. Bạn nói bằng giọng các nhân vật trong kịch bản do chuyên gia nghề soạn.

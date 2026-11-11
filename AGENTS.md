@@ -92,7 +92,7 @@ pnpm check                         # lint + typecheck + build + test toàn works
 - Để chạy API, tạo `.env` từ `apps/api/.env.example` nếu chưa có; điền biến theo `apps/api/src/config/env.ts`. Web có `apps/web/.env.example`. Không ghi đè `.env` hiện có, đọc/in secret ra output hoặc đưa secret vào docs/request/commit.
 - Prisma runtime dùng `DATABASE_URL`; CLI/migration dùng `DIRECT_URL`. `pnpm db:generate` sinh client. Chỉ chạy `pnpm db:migrate` hoặc seed khi task cần và đã xác định DB đích; không mặc định đó là DB local có thể ghi tuỳ ý.
 - Nội dung: `pnpm data:build` sinh game data; `node docs/data/build-galaxy.mjs` sinh galaxy data; `pnpm exec nx run @datn/api:seed-content` ghi nội dung vào DB.
-- AI-4 thử offline: `pnpm exec nx run @datn/api:narrator-try -- --mode=fake`. Export request mẫu: thay bằng `--mode=export`; chế độ này ghi lại artifact tài liệu. Không gọi `--mode=live` chỉ để kiểm sửa tài liệu.
+- AI-4 thử offline: `pnpm exec nx run @datn/api:narrator-try -- --mode=fake`. Sau khi gắn key: `--mode=check`, xem `docs/project-hub/assets/ai-design/ai-4-api/README.md`. Export request mẫu: thay bằng `--mode=export`; chế độ này ghi lại artifact tài liệu. Không gọi `--mode=live` chỉ để kiểm sửa tài liệu.
 - Chạy kiểm tra phù hợp phạm vi; sửa docs không cần build/test toàn app. Không báo pass cho lệnh chưa chạy; nếu bị chặn, nói rõ lệnh và nguyên nhân.
 
 ## Quy tắc sửa tài liệu và dữ liệu

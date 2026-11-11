@@ -10,12 +10,12 @@
 import type { ProviderId } from '../gateway/gateway.types';
 
 export const NARRATOR_PROFILE = {
-  version: 'narrator-profile-2',
+  version: 'narrator-profile-3',
 
   /**
    * Temperature theo TỪNG hãng — thang của hai hãng không giống nhau.
    *
-   * Qwen 0,7: đội Qwen khuyến nghị cho chế độ không thinking "Temperature=0.7,
+   * Qwen 0,7 (trực tiếp hay qua OpenRouter đều là một model): đội Qwen khuyến nghị cho chế độ không thinking "Temperature=0.7,
    * TopP=0.8, TopK=20"; Alibaba cũng đặt mặc định 0,7 cho Qwen3.8-Omni-Flash
    * khi không thinking. Bài toán cần đa dạng vừa phải: chơi lại không gặp đúng
    * câu cũ, nhưng không được bịa (R1).
@@ -29,7 +29,7 @@ export const NARRATOR_PROFILE = {
    * Đo: chạy bộ thử ở 0,3 / 0,7 / 1,0 (DeepSeek: 0,7 / 1,0 / 1,3), so tỉ lệ
    * R1 hỏng và độ khác nhau giữa các lần sinh; chọn mức thấp nhất vẫn đủ đa dạng.
    */
-  temperature: { qwen: 0.7, deepseek: 1.0 } satisfies Record<ProviderId, number>,
+  temperature: { qwen: 0.7, openrouter: 0.7, deepseek: 1.0 } satisfies Record<ProviderId, number>,
 
   /**
    * Trần token đầu ra, theo từng hãng.
@@ -43,7 +43,7 @@ export const NARRATOR_PROFILE = {
    *
    * Đo: phân bố số token đầu ra thật; hạ xuống khi p99 còn xa trần.
    */
-  maxOutputTokens: { qwen: 600, deepseek: 300 } satisfies Record<ProviderId, number>,
+  maxOutputTokens: { qwen: 600, openrouter: 600, deepseek: 300 } satisfies Record<ProviderId, number>,
 
   /**
    * Chờ tối đa một lượt gọi.
