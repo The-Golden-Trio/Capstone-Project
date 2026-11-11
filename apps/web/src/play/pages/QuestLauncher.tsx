@@ -30,7 +30,9 @@ export function QuestLauncher() {
         setError(
           isPlayApiError(err) && err.code === 'SCENARIO_UNAVAILABLE'
             ? 'Nhiệm vụ này đang tạm đóng. Quay lại bản đồ để chọn nhiệm vụ khác.'
-            : 'Không mở được nhiệm vụ. Thử lại sau nhé.',
+            : isPlayApiError(err) && err.code === 'LEVEL_LOCKED'
+              ? 'Cấp này chưa mở. Hoàn thành nhiệm vụ ở cấp trước để mở khoá.'
+              : 'Không mở được nhiệm vụ. Thử lại sau nhé.',
         ),
       );
   }, [scenarioKey, params, navigate]);

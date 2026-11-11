@@ -4,6 +4,7 @@ import { Button } from '../../components/ui/Button';
 import { Card, CardBody } from '../../components/ui/Card';
 import { Note } from '../../components/ui/Note';
 import { useCountUp } from '../../hooks/useCountUp';
+import { useProgressStore } from '../../store/progressStore';
 import { cx } from '../../lib/cx';
 import { getPlayApi, PLAY_API_MODE, PLAY_HOME } from '../api/playApi';
 import type { ScenarioSummary } from '../api/types';
@@ -60,7 +61,12 @@ export function RunSummaryPage() {
   useEffect(() => {
     getPlayApi()
       .getRunSummary(runId)
-      .then(setSummary)
+      .then((result) => {
+        setSummary(result);
+        // Máy chủ vừa ghi điểm và có thể đã mở cấp mới: nạp lại tiến độ để
+        // thanh điểm và bản đồ thấy ngay, không phải tải lại trang.
+        if (PLAY_API_MODE === 'http') void useProgressStore.getState().load();
+      })
       .catch(() => setError('Chưa có tổng kết cho lượt chơi này.'));
   }, [runId]);
 
