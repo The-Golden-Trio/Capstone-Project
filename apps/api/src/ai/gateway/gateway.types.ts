@@ -86,8 +86,11 @@ export interface ModelSpec {
   cacheMode: CacheMode;
   price: Price;
   dataPolicy: DataPolicy;
-  /** Chỉ với OpenRouter: cho hãng nào phục vụ, và có cho hãng lưu dữ liệu không. */
-  routing?: { only: string[]; dataCollection: 'allow' | 'deny' };
+  /**
+   * Chỉ với OpenRouter: cho hãng nào phục vụ, có cho hãng lưu dữ liệu không,
+   * và có đòi endpoint không lưu dữ liệu (ZDR) không.
+   */
+  routing?: { only: string[]; dataCollection: 'allow' | 'deny'; zdr?: boolean };
 }
 
 export interface ChatRequest {

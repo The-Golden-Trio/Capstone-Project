@@ -11,7 +11,20 @@ import {
   type FakeTurn,
 } from '../testing/fake-model';
 import { JudgePanelService, type GradeInput } from './judge-panel.service';
+import { oneJudgeDownPolicy } from './judge.profile';
 import type { RubricCriterion } from './judge.types';
+
+describe('oneJudgeDownPolicy (D-132)', () => {
+  it('chờ ở hai lượt thử đầu, gộp hai judge từ lượt thứ 3', () => {
+    expect([1, 2, 3, 4, 5].map(oneJudgeDownPolicy)).toEqual([
+      'pending',
+      'pending',
+      'lower_of_2',
+      'lower_of_2',
+      'lower_of_2',
+    ]);
+  });
+});
 
 const SLOTS = judgePanel({
   openrouter: { apiKey: 'or' },
@@ -127,28 +140,46 @@ describe('JudgePanelService', () => {
     expect(r.cost.usd).toBeGreaterThan(0);
   });
 
-  it('gửi đúng tham số cho từng họ: Claude và GPT không có temperature, Gemini có 0', async () => {
+  it('D-131: chỉ endpoint ZDR ghi sẵn, không temperature, mức suy nghĩ theo model', async () => {
     const { transport, service } = setup(() => reply('1'));
     await service.grade(input());
     const body = (model: string) =>
       transport.calls.find((c) => c.body['model'] === model)?.body ?? {};
 
-    expect(body('anthropic/claude-haiku-5.5')).not.toHaveProperty(
-      'temperature',
-    );
-    expect(body('openai/gpt-6-luna')).not.toHaveProperty('temperature');
-    expect(body('google/gemini-3.5-flash-lite')).toMatchObject({
-      temperature: 0,
-    });
+    for (const model of [
+      'anthropic/claude-haiku-5.5',
+      'openai/gpt-6-luna',
+      'google/gemini-3.5-flash-lite',
+    ])
+      expect(body(model)).not.toHaveProperty('temperature');
     expect(body('anthropic/claude-haiku-5.5')).toMatchObject({
       max_tokens: 600,
+      reasoning: { effort: 'none' },
       provider: {
-        only: ['anthropic'],
+        only: ['google-vertex/global'],
         allow_fallbacks: false,
+        require_parameters: true,
         data_collection: 'deny',
+        zdr: true,
       },
       response_format: { type: 'json_schema', json_schema: { strict: true } },
     });
+    expect(body('openai/gpt-6-luna')).toMatchObject({
+      provider: { only: ['azure'], zdr: true },
+    });
+    expect(body('google/gemini-3.5-flash-lite')).toMatchObject({
+      reasoning: { effort: 'minimal' },
+      provider: { only: ['google-vertex/global'], zdr: true },
+    });
+  });
+
+  it('bậc dự phòng Sonnet 5.5, GPT-6.1 Sol không tắt được suy nghĩ: gửi minimal', () => {
+    const fallback = SLOTS.map((s) => s.chain[1]);
+    expect(fallback.map((m) => [m.model, m.minReasoning])).toEqual([
+      ['anthropic/claude-sonnet-5.5', 'minimal'],
+      ['openai/gpt-6.1-sol', 'minimal'],
+      ['google/gemini-3.8-flash', 'minimal'],
+    ]);
   });
 
   it('khử định danh trước khi gửi; câu người chơi nằm trong thẻ không đóng được', async () => {
@@ -248,6 +279,43 @@ describe('JudgePanelService', () => {
       panelSize: 2,
     });
     expect(r.slots[2]).toMatchObject({ status: 'failed', family: 'google' });
+  });
+
+  it('D-132: từ lượt thử thứ 3 của job, một họ hỏng thì gộp hai judge, lấy mức thấp hơn', async () => {
+    const { service } = setup(
+      byModel({
+        'google/gemini-3.5-flash-lite': { status: 500 },
+        'google/gemini-3.8-flash': { status: 500 },
+        'anthropic/claude-haiku-5.5': reply('2'),
+        'openai/gpt-6-luna': reply('1'),
+      }),
+    );
+    const r = await service.grade(
+      input({ whenOneJudgeDown: oneJudgeDownPolicy(3) }),
+    );
+    expect(r).toMatchObject({
+      status: 'graded',
+      method: 'lower_of_2',
+      panelSize: 2,
+    });
+    if (r.status !== 'graded') throw new Error();
+    expect(r.grades[0]).toMatchObject({ score: 1, judgeScores: [2, 1] });
+  });
+
+  it('D-132: hai họ hỏng thì vẫn chờ, kể cả ở lượt thử cuối', async () => {
+    const { service } = setup(
+      byModel({
+        'google/gemini-3.5-flash-lite': { status: 500 },
+        'google/gemini-3.8-flash': { status: 500 },
+        'openai/gpt-6-luna': { status: 500 },
+        'openai/gpt-6.1-sol': { status: 500 },
+        'anthropic/claude-haiku-5.5': reply('2'),
+      }),
+    );
+    const r = await service.grade(
+      input({ whenOneJudgeDown: oneJudgeDownPolicy(5) }),
+    );
+    expect(r).toMatchObject({ status: 'pending', reason: 'too_few_judges' });
   });
 
   it('chia tiêu chí thành lô tối đa 3 mỗi lượt gọi', async () => {

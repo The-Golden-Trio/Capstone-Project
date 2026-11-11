@@ -297,13 +297,16 @@ export const openRouterAdapter: ProviderAdapter = {
         : { type: 'json_object' },
 
       provider: {
-        // Chỉ Alibaba: hãng khác không có cam kết đã kiểm ở `dataPolicy`, và
-        // lén đổi hãng thì bản ghi sai. Không còn Alibaba thì báo lỗi, không đổi.
+        // Chỉ nơi ghi trong `routing.only` (Qwen: Alibaba; judge: endpoint ZDR):
+        // nơi khác không có cam kết đã kiểm ở `dataPolicy`, và lén đổi nơi
+        // phục vụ thì bản ghi sai. Nơi đó hỏng thì báo lỗi, không đổi.
         only: spec.routing?.only ?? [],
         allow_fallbacks: false,
         // Hãng không hiểu một tham số thì loại, thay vì âm thầm bỏ tham số đó.
         require_parameters: true,
         data_collection: spec.routing?.dataCollection ?? 'deny',
+        // Judge (D-131): chỉ endpoint không lưu dữ liệu; không có thì OpenRouter trả 404.
+        ...(spec.routing?.zdr ? { zdr: true } : {}),
       },
 
       stream: false,
