@@ -233,7 +233,9 @@ export const openRouterAdapter: ProviderAdapter = {
       // của OpenRouter chưa liệt kê qwen3.8-flash cho cache explicit.
       messages: request.messages.map((m) => ({ role: m.role, content: joined(m) })),
 
-      temperature: request.temperature,
+      // Model không nhận `temperature` (Claude 5.5, GPT-6) thì không gửi: với
+      // `require_parameters` bên dưới, gửi lên là không hãng nào nhận request.
+      ...(spec.supports.temperature === false ? {} : { temperature: request.temperature }),
 
       // Trang endpoint của model chỉ liệt kê `max_tokens`, không có
       // `max_completion_tokens`, mà bên dưới bật `require_parameters`.

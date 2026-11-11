@@ -118,6 +118,16 @@
           "cwd": "{workspaceRoot}"
         }
       },
+      "judge-try": {
+        "executor": "nx:run-commands",
+        "dependsOn": [
+          "^build"
+        ],
+        "options": {
+          "command": "esbuild apps/api/src/scripts/judge-try.ts --bundle --platform=node --format=esm --packages=external --tsconfig=apps/api/tsconfig.app.json --outfile=apps/api/dist/judge-try.mjs && node apps/api/dist/judge-try.mjs",
+          "cwd": "{workspaceRoot}"
+        }
+      },
       "seed-content": {
         "executor": "nx:run-commands",
         "dependsOn": [
