@@ -14,7 +14,12 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { PrismaPg } from '@prisma/adapter-pg';
-import { FOLLOWUP_LINES, GameDataSchema, shift, type GameData } from '@datn/game-core';
+import {
+  FOLLOWUP_LINES,
+  GameDataSchema,
+  shift,
+  type GameData,
+} from '@datn/game-core';
 import { PrismaClient } from '../generated/prisma/client';
 import type { Prisma } from '../generated/prisma/client';
 
@@ -41,7 +46,10 @@ function loadEnvFile(path: string): void {
     if (at < 0) continue;
     const key = trimmed.slice(0, at).trim();
     if (process.env[key] !== undefined) continue;
-    process.env[key] = trimmed.slice(at + 1).trim().replace(/^["']|["']$/g, '');
+    process.env[key] = trimmed
+      .slice(at + 1)
+      .trim()
+      .replace(/^["']|["']$/g, '');
   }
 }
 
@@ -103,9 +111,15 @@ async function main() {
   const shiftData = shift.ShiftDataSchema.parse(readJson('shift-seeds.json'));
   for (const seed of Object.values(shiftData.seeds)) {
     const pack = shiftData.packs[seed.level_ref];
-    if (!pack) throw new Error(`Seed ${seed.id} trỏ tới gói cấp ${seed.level_ref} không có`);
+    if (!pack)
+      throw new Error(
+        `Seed ${seed.id} trỏ tới gói cấp ${seed.level_ref} không có`,
+      );
     const issues = shift.lintSeed(seed, pack);
-    if (issues.length > 0) throw new Error(`Seed ${seed.id} chưa qua lint:\n  • ${issues.join('\n  • ')}`);
+    if (issues.length > 0)
+      throw new Error(
+        `Seed ${seed.id} chưa qua lint:\n  • ${issues.join('\n  • ')}`,
+      );
   }
   const galaxy = readJson('galaxy-data.json') as GalaxyLike;
 
@@ -183,7 +197,13 @@ async function main() {
       await tx.followupDoc.createMany({
         data: Object.entries(FOLLOWUP_LINES).map(([key, line]) => {
           const [scenarioKey, activityId] = key.split(':');
-          return { version, scenarioKey, activityId, who: line.who, text: line.text };
+          return {
+            version,
+            scenarioKey,
+            activityId,
+            who: line.who,
+            text: line.text,
+          };
         }),
       });
 

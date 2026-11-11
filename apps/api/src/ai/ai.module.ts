@@ -11,7 +11,12 @@ import { ConfigService } from '@nestjs/config';
 import type { AiEnv, Env } from '../config/env';
 import { CircuitBreaker } from './gateway/circuit-breaker';
 import { ModelGateway } from './gateway/model-gateway';
-import { gatewayKeys, judgePanel, narratorChain, type AiSettings } from './gateway/models';
+import {
+  gatewayKeys,
+  judgePanel,
+  narratorChain,
+  type AiSettings,
+} from './gateway/models';
 import { JUDGE_SLOTS, JudgePanelService } from './judge/judge-panel.service';
 import { NARRATOR_CHAIN, NarratorService } from './narrator/narrator.service';
 import { ShiftCheckerService } from './shift/checker.service';
@@ -34,13 +39,16 @@ export function aiSettingsFromEnv(env: AiEnv): AiSettings {
     openrouter: env.OPENROUTER_API_KEY
       ? { apiKey: env.OPENROUTER_API_KEY, baseUrl: env.OPENROUTER_BASE_URL }
       : undefined,
-    deepseek: env.DEEPSEEK_API_KEY ? { apiKey: env.DEEPSEEK_API_KEY } : undefined,
+    deepseek: env.DEEPSEEK_API_KEY
+      ? { apiKey: env.DEEPSEEK_API_KEY }
+      : undefined,
     allowUnconfirmedProviders: env.AI_ALLOW_UNCONFIRMED_PROVIDERS,
   };
 }
 
 function aiSettingsFromConfig(config: ConfigService<Env, true>): AiSettings {
-  const get = <K extends keyof AiEnv>(key: K) => config.get(key, { infer: true });
+  const get = <K extends keyof AiEnv>(key: K) =>
+    config.get(key, { infer: true });
   return aiSettingsFromEnv({
     QWEN_API_KEY: get('QWEN_API_KEY'),
     QWEN_REGION: get('QWEN_REGION'),
@@ -57,11 +65,16 @@ function aiSettingsFromConfig(config: ConfigService<Env, true>): AiSettings {
 
 @Module({
   providers: [
-    { provide: AI_SETTINGS, inject: [ConfigService], useFactory: aiSettingsFromConfig },
+    {
+      provide: AI_SETTINGS,
+      inject: [ConfigService],
+      useFactory: aiSettingsFromConfig,
+    },
     {
       provide: ModelGateway,
       inject: [AI_SETTINGS],
-      useFactory: (settings: AiSettings) => new ModelGateway(gatewayKeys(settings)),
+      useFactory: (settings: AiSettings) =>
+        new ModelGateway(gatewayKeys(settings)),
     },
     { provide: CircuitBreaker, useFactory: () => new CircuitBreaker() },
     {
@@ -87,10 +100,15 @@ function aiSettingsFromConfig(config: ConfigService<Env, true>): AiSettings {
       provide: JUDGE_SLOTS,
       inject: [AI_SETTINGS],
       useFactory: (settings: AiSettings) => {
-        const narratorFamilies = ['qwen', 'deepseek', ...narratorChain(settings).chain.map((s) => s.family)];
+        const narratorFamilies = [
+          'qwen',
+          'deepseek',
+          ...narratorChain(settings).chain.map((s) => s.family),
+        ];
         const { slots, problems } = judgePanel(settings, { narratorFamilies });
         const logger = new Logger('AI-5');
-        for (const problem of problems) logger.warn(`Panel judge tắt: ${problem}`);
+        for (const problem of problems)
+          logger.warn(`Panel judge tắt: ${problem}`);
         for (const { slot, chain } of slots)
           logger.log(`Ghế ${slot}: ${chain.map((s) => s.key).join(' → ')}`);
         return slots;

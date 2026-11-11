@@ -58,7 +58,10 @@ export class ContentService {
 
   /** version -> bảng tra. Không bao giờ phải dọn, vì phiên bản là bất biến. */
   private readonly indexes = new Map<number, Promise<GameIndex>>();
-  private readonly followups = new Map<number, Promise<Map<string, FollowupLine>>>();
+  private readonly followups = new Map<
+    number,
+    Promise<Map<string, FollowupLine>>
+  >();
 
   /** Phiên bản đang phục vụ. Hỏi lại mỗi lần vì seed có thể vừa lật cờ. */
   async activeVersion(): Promise<number> {
@@ -155,13 +158,19 @@ export class ContentService {
 
   /* ── Ca làm (seed v2) ─────────────────────────────────────────────── */
 
-  private readonly shiftContexts = new Map<string, Promise<shift.ShiftContext | null>>();
+  private readonly shiftContexts = new Map<
+    string,
+    Promise<shift.ShiftContext | null>
+  >();
 
   /**
    * Seed ca làm và gói cấp của nó, ở một phiên bản cụ thể. `null` nếu phiên
    * bản đó không có seed này. Kiểm bằng schema của game-core, không tin DB.
    */
-  shiftContextAt(version: number, seedId: string): Promise<shift.ShiftContext | null> {
+  shiftContextAt(
+    version: number,
+    seedId: string,
+  ): Promise<shift.ShiftContext | null> {
     const key = `${version}:${seedId}`;
     const cached = this.shiftContexts.get(key);
     if (cached) return cached;
@@ -174,7 +183,8 @@ export class ContentService {
       const packDoc = await this.prisma.levelPackDoc.findUnique({
         where: { version_packId: { version, packId: seed.level_ref } },
       });
-      if (!packDoc) throw new Error(`Phiên bản ${version} thiếu gói cấp ${seed.level_ref}`);
+      if (!packDoc)
+        throw new Error(`Phiên bản ${version} thiếu gói cấp ${seed.level_ref}`);
       return { seed, pack: shift.LevelPackSchema.parse(packDoc.body) };
     })();
     this.shiftContexts.set(key, building);
