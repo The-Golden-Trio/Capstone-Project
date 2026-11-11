@@ -17,6 +17,11 @@ import { RegisterPage } from './auth/RegisterPage';
 import { CareerMapPage } from './career/CareerMapPage';
 import { EndingPage } from './play/EndingPage';
 import { PlayPage } from './play/PlayPage';
+import { PlayGate } from '../play/PlayGate';
+import { QuestLauncher } from '../play/pages/QuestLauncher';
+import { RunIntroPage } from '../play/pages/RunIntroPage';
+import { RunPlayPage } from '../play/pages/RunPlayPage';
+import { RunSummaryPage } from '../play/pages/RunSummaryPage';
 
 /**
  * Bản đồ ngân hà kéo theo three.js (~1 MB) — tải riêng khi vào `/jobs`, các
@@ -54,6 +59,24 @@ const routes: RouteObject[] = [
   { path: '/', element: <LandingPage />, errorElement: <ErrorPage /> },
   { path: '/login', element: <LoginPage />, errorElement: <ErrorPage /> },
   { path: '/register', element: <RegisterPage />, errorElement: <ErrorPage /> },
+
+  // Luồng chơi theo hợp đồng API (E10–E12). Bản demo (`VITE_PLAY_API=mock`)
+  // chạy không cần đăng nhập; gọi máy chủ thật thì `PlayGate` là `RequireAuth`.
+  {
+    element: <PlayGate />,
+    errorElement: <ErrorPage />,
+    children: [
+      { path: 'quest/:scenarioKey', element: <QuestLauncher /> },
+      {
+        path: 'run/:runId',
+        children: [
+          { index: true, element: <RunIntroPage /> },
+          { path: 'play', element: <RunPlayPage /> },
+          { path: 'summary', element: <RunSummaryPage /> },
+        ],
+      },
+    ],
+  },
 
   {
     element: <RequireAuth />,

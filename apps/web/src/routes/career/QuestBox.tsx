@@ -12,6 +12,8 @@ import { Pill } from '../../components/ui/Pill';
 import { useGameIndex } from '../../store/contentStore';
 import { useProfileStore } from '../../store/profileStore';
 import type { EventAnswerResult } from '../../api/schemas';
+import { PLAY_API_MODE } from '../../play/api/playApi';
+import { isDemoScenario } from '../../play/api/mock/demoScenario';
 import type { Anchor } from './mapGeometry';
 
 /** Khoảng hở giữa ký hiệu và hộp, và lề tối thiểu với mép màn hình. */
@@ -141,7 +143,14 @@ export function QuestBox({
         <Button
           variant="primary"
           className="w-full"
-          onClick={() => navigate(`/play/${value}`)}
+          onClick={() =>
+            // Luồng mới (E10–E12) khi có máy chủ, hoặc khi bản demo có kịch bản này.
+            navigate(
+              PLAY_API_MODE === 'http' || isDemoScenario(value)
+                ? `/quest/${value}`
+                : `/play/${value}`,
+            )
+          }
         >
           Bắt đầu nhiệm vụ
         </Button>

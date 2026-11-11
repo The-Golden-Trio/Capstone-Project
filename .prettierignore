@@ -4,3 +4,5 @@
 /.nx/cache
 /.nx/workspace-data
 .nx/self-healing
+# Sinh từ openapi.yaml bằng openapi-typescript
+apps/web/src/play/api/openapi.d.ts

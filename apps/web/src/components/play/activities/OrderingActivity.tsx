@@ -2,7 +2,7 @@ import type { Activity } from '@datn/game-core';
 import { Button } from '../../ui/Button';
 
 interface OrderingActivityProps {
-  activity: Activity;
+  activity: Pick<Activity, 'items'>;
   order: string[];
   onMove: (index: number, direction: -1 | 1) => void;
   onSubmit: () => void;

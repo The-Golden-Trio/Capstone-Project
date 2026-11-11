@@ -7,6 +7,10 @@ interface FreetextActivityProps {
   isFollowup: boolean;
   hintAvailable: boolean;
   hintUsed: boolean;
+  /** Xem gợi ý không hạ điểm (Q5, FR-13 mới). Màn chơi cũ để `false`. */
+  hintFree?: boolean;
+  /** Đang gửi hoặc đang chờ chấm: khoá ô nhập. */
+  busy?: boolean;
   onHint: () => void;
   onSubmit: (text: string) => void;
   /** Khoá reset ô nhập khi sang câu khác. */
@@ -18,6 +22,8 @@ export function FreetextActivity({
   isFollowup,
   hintAvailable,
   hintUsed,
+  hintFree = false,
+  busy = false,
   onHint,
   onSubmit,
   resetKey,
@@ -45,6 +51,7 @@ export function FreetextActivity({
         ref={ref}
         value={text}
         onChange={(e) => setText(e.target.value)}
+        readOnly={busy}
         placeholder={isFollowup ? 'Trả lời…' : placeholder}
         aria-label={isFollowup ? 'Câu trả lời đào sâu' : placeholder}
         className="min-h-[94px] w-full resize-y rounded-[10px] border-[1.5px] border-line bg-inset px-3.5 py-3 text-[14px] leading-relaxed text-ink transition-colors focus:border-[var(--accent)] focus:outline-none"
@@ -63,19 +70,26 @@ export function FreetextActivity({
         )}
         {hintUsed && !isFollowup && (
           <span className="text-[11.5px] leading-snug text-gold">
-            Đã xem gợi ý — câu này tối đa mức trung bình
+            {hintFree
+              ? 'Đã xem gợi ý'
+              : 'Đã xem gợi ý — câu này tối đa mức trung bình'}
           </span>
         )}
         <span className="flex-1" />
-        <Button variant="primary" onClick={submit} disabled={text.trim().length < 2}>
+        <Button
+          variant="primary"
+          onClick={submit}
+          disabled={busy || text.trim().length < 2}
+        >
           Gửi
         </Button>
       </div>
 
       {canHint && (
         <p className="mt-2.5 text-[11.5px] leading-snug text-gold">
-          Xem gợi ý thì câu này chỉ đạt được mức trung bình, dù bạn trả lời hay
-          tới đâu.
+          {hintFree
+            ? 'Xem gợi ý không trừ điểm.'
+            : 'Xem gợi ý thì câu này chỉ đạt được mức trung bình, dù bạn trả lời hay tới đâu.'}
         </p>
       )}
     </>

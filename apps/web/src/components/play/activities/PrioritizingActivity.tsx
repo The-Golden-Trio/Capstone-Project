@@ -3,9 +3,17 @@ import { cx } from '../../../lib/cx';
 import { Button } from '../../ui/Button';
 
 interface PrioritizingActivityProps {
-  activity: Activity;
+  activity: Pick<Activity, 'items' | 'pick_count'> &
+    Partial<Pick<Activity, 'hints'>>;
   picked: string[];
   hintUsed: boolean;
+  /** Có gợi ý không; mặc định đọc từ `activity.hints`. */
+  hintAvailable?: boolean;
+  /**
+   * Xem gợi ý không hạ điểm (Q5, FR-13 mới). Màn chơi cũ vẫn để `false` vì
+   * engine của nó còn hạ trần điểm khi xem gợi ý.
+   */
+  hintFree?: boolean;
   onToggle: (itemId: string) => void;
   onHint: () => void;
   onSubmit: () => void;
@@ -16,13 +24,16 @@ export function PrioritizingActivity({
   activity,
   picked,
   hintUsed,
+  hintAvailable,
+  hintFree = false,
   onToggle,
   onHint,
   onSubmit,
 }: PrioritizingActivityProps) {
   const limit = activity.pick_count ?? 0;
   const full = picked.length >= limit;
-  const canHint = activity.hints.length > 0 && !hintUsed;
+  const canHint =
+    (hintAvailable ?? (activity.hints?.length ?? 0) > 0) && !hintUsed;
 
   return (
     <>
@@ -86,7 +97,9 @@ export function PrioritizingActivity({
 
       {canHint && (
         <p className="mt-2.5 text-[11.5px] leading-snug text-gold">
-          Xem gợi ý thì câu này chỉ đạt được mức trung bình.
+          {hintFree
+            ? 'Xem gợi ý không trừ điểm.'
+            : 'Xem gợi ý thì câu này chỉ đạt được mức trung bình.'}
         </p>
       )}
     </>

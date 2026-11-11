@@ -13,7 +13,7 @@ export function ChoiceActivity({
   activity,
   onPick,
 }: {
-  activity: Activity;
+  activity: Pick<Activity, 'options'>;
   onPick: (index: number) => void;
 }) {
   return (

@@ -8,6 +8,8 @@ import {
   careerIconUrl,
 } from './content';
 import { prefersReducedMotion } from './useLandingEffects';
+import { PLAY_API_MODE } from '../play/api/playApi';
+import { DEMO_SCENARIO_KEY } from '../play/api/mock/demoScenario';
 
 const TICK_MS = 1800;
 /** Khớp với `transition` 700ms của `.jq-hero-showcase-face` trong CSS. */
@@ -156,6 +158,14 @@ export function Hero() {
             <a className="jq-btn-outline" href="#previewOuter">
               Explore the galaxy
             </a>
+            {PLAY_API_MODE === 'mock' && (
+              <Link
+                className="jq-btn-outline"
+                to={`/quest/${DEMO_SCENARIO_KEY}`}
+              >
+                Play the demo quest
+              </Link>
+            )}
           </div>
           <p className="jq-hero-trust">
             No quiz. No sign-up to start. Just the work itself.
