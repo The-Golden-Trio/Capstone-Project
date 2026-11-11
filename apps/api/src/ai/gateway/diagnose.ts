@@ -16,12 +16,11 @@ export function keyWarnings(settings: AiSettings): string[] {
   const openrouter = settings.openrouter?.apiKey;
 
   // Key gói (Coding Plan, Token Plan) có dạng sk-sp-… và chỉ chạy ở endpoint
-  // riêng của gói. Điều khoản của cả hai gói cấm dùng cho backend và script
-  // (trang overview, 4/11 và 11/11/2026).
+  // riêng của gói.
   for (const [name, key] of [['QWEN_API_KEY', qwen], ['OPENROUTER_API_KEY', openrouter]] as const)
     if (key?.startsWith('sk-sp-'))
       warnings.push(
-        `${name} là key gói của Alibaba (sk-sp-…): điều khoản gói cấm dùng cho backend và script, có thể bị khoá key. Chỉ chạy ở endpoint của gói, ví dụ Token Plan: QWEN_BASE_URL=https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1.`,
+        `${name} là key gói của Alibaba (sk-sp-…): chỉ chạy ở endpoint của gói, ví dụ Token Plan: QWEN_BASE_URL=https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1.`,
       );
   if (qwen?.startsWith('sk-or-'))
     warnings.push('QWEN_API_KEY có dạng key OpenRouter (sk-or-…). Chuyển sang OPENROUTER_API_KEY.');

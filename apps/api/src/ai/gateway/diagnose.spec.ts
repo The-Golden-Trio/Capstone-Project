@@ -22,9 +22,8 @@ describe('key dán nhầm chỗ', () => {
     expect(keyWarnings({ ...base, openrouter: { apiKey: 'sk-abc' } })[0]).toContain('QWEN_API_KEY');
   });
 
-  it('key gói sk-sp-: cảnh báo điều khoản và chỉ endpoint của gói', () => {
+  it('key gói sk-sp-: chỉ đúng endpoint của gói', () => {
     const [warning] = keyWarnings({ ...base, qwen: qwenKey('sk-sp-abc') });
-    expect(warning).toContain('backend');
     expect(warning).toContain('token-plan');
   });
 

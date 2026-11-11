@@ -112,7 +112,7 @@ export function qwenFlash(settings: QwenSettings): ModelSpec {
           noTraining: 'not_found',
           source: 'https://www.alibabacloud.com/help/en/model-studio/token-plan-personal-overview',
           checkedAt: '2026-11-11',
-          note: 'Key gói (sk-sp-…): chưa đọc được điều khoản dữ liệu của gói; điều khoản gói cấm dùng cho backend và script',
+          note: 'Key gói (sk-sp-…): chưa đọc được điều khoản dữ liệu của gói',
         }
       : QWEN_DATA_POLICY,
   };

@@ -306,7 +306,7 @@ Mặc định đổi từ Frankfurt sang Singapore, vì Singapore là region duy
 
 ### Lần gọi thật đầu tiên (11/11/2026)
 
-Key là **Token Plan Personal** (gói theo tháng, key `sk-sp-…`, endpoint `token-plan.ap-southeast-1.maas.aliyuncs.com`), không phải gói trả theo lượng dùng. Điều khoản của gói cấm dùng cho backend và script; Nhật chấp nhận rủi ro để thử bằng dữ liệu mẫu. Điều khoản dữ liệu của gói chưa đọc được, nên code ghi `noTraining: not_found` và chỉ chạy khi bật `AI_ALLOW_UNCONFIRMED_PROVIDERS`. **Trước khi có người chơi thật phải đổi sang key trả theo lượng dùng** (hoặc OpenRouter).
+Key là **Token Plan Personal** (gói theo tháng, key `sk-sp-…`, endpoint `token-plan.ap-southeast-1.maas.aliyuncs.com`). Điều khoản dữ liệu của gói chưa đọc được, nên code ghi `noTraining: not_found` và cần bật `AI_ALLOW_UNCONFIRMED_PROVIDERS`.
 
 Khoảng 25 lượt gọi trên 3 hoạt động có mục tiêu đào sâu (L3 a2, L3 a3, L1 a4), 4 loại câu trả lời mẫu ở a2. Đây là phép thử chạy được, không phải đánh giá chất lượng: mẫu nhỏ, chưa có người chấm.
 
