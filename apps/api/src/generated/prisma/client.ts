@@ -80,6 +80,51 @@ export type GameProfile = Prisma.GameProfileModel
  */
 export type ScenarioRun = Prisma.ScenarioRunModel
 /**
+ * Model RunEvent
+ * ERD-05 `run_event`: lượt chơi là chuỗi sự kiện chỉ ghi thêm; trạng thái =
+ * fold các sự kiện qua `foldPlay` của game-core (§5.3.1). Đầu ra của model
+ * vào đây kèm nguồn gốc (model, prompt, chi phí, độ trễ) và không bao giờ
+ * được tính lại.
+ */
+export type RunEvent = Prisma.RunEventModel
+/**
+ * Model Answer
+ * ERD-06 `answer`. `id` do máy khách tạo, nên gửi lại cùng câu là an toàn (NFR-04).
+ */
+export type Answer = Prisma.AnswerModel
+/**
+ * Model Assessment
+ * ERD-06 `assessment`. Chưa có `model_config` (ERD-07): bộ model ghi ở `judge_result.model_id`.
+ */
+export type Assessment = Prisma.AssessmentModel
+/**
+ * Model JudgeResult
+ * ERD-06 `judge_result`: một ghế của panel cho một câu trả lời.
+ */
+export type JudgeResult = Prisma.JudgeResultModel
+/**
+ * Model JudgeScore
+ * ERD-06 `judge_score`. Khoá tiêu chí là chuỗi (`a2-k1`) vì nội dung prototype
+ * chưa có bảng `rubric_criterion` (ERD-03). Thêm `rationale` ngoài ERD: lý do
+ * của judge là thứ chuyên gia đọc khi duyệt ca bị gắn cờ.
+ */
+export type JudgeScore = Prisma.JudgeScoreModel
+/**
+ * Model CriterionGrade
+ * ERD-06 `criterion_grade`: mức gộp của panel cho một tiêu chí.
+ */
+export type CriterionGrade = Prisma.CriterionGradeModel
+/**
+ * Model AiJob
+ * ERD-07 `ai_job`: một việc AI chạy ở worker.
+ */
+export type AiJob = Prisma.AiJobModel
+/**
+ * Model UsageCost
+ * ERD-07 `usage_cost`: sổ chi phí, một dòng mỗi lần gọi model (NFR-11).
+ */
+export type UsageCost = Prisma.UsageCostModel
+/**
  * Model RunEvidence
  * Bằng chứng do máy chủ chấm lại, không phải điều máy khách khai.
  */

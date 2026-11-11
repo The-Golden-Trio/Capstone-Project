@@ -51,7 +51,13 @@ const EnvSchema = z.object({
    */
   QWEN_REGION: blankAsUnset(
     z
-      .enum(['ap-southeast-1', 'ap-northeast-1', 'cn-hongkong', 'eu-central-1', 'us-east-1'])
+      .enum([
+        'ap-southeast-1',
+        'ap-northeast-1',
+        'cn-hongkong',
+        'eu-central-1',
+        'us-east-1',
+      ])
       .default('ap-southeast-1'),
   ),
   /** Workspace ID — endpoint của Model Studio có dạng `{WorkspaceId}.{region}.maas.aliyuncs.com`. */
@@ -84,7 +90,26 @@ const EnvSchema = z.object({
       .default('false')
       .transform((value) => value === 'true'),
   ),
+
+  /**
+   * Redis cho job queue (BullMQ) và pub/sub của luồng sự kiện (§5.3.1): API
+   * và worker chỉ nói chuyện với nhau qua đây. Mặc định Redis cài local.
+   */
+  REDIS_URL: blankAsUnset(z.string().default('redis://localhost:6379')),
 });
+
+/**
+ * Tên khác của cùng một biến. `OPEN_ROUTER_API_KEY` là cách viết dễ gõ nhầm
+ * (gạch dưới giữa OPEN và ROUTER); nhận luôn thay vì bắt người dùng sửa `.env`.
+ */
+function withAliases(
+  source: NodeJS.ProcessEnv | Record<string, unknown>,
+): Record<string, unknown> {
+  const out: Record<string, unknown> = { ...source };
+  if (!out['OPENROUTER_API_KEY'] && out['OPEN_ROUTER_API_KEY'])
+    out['OPENROUTER_API_KEY'] = out['OPEN_ROUTER_API_KEY'];
+  return out;
+}
 
 export type Env = z.infer<typeof EnvSchema>;
 
@@ -105,10 +130,12 @@ export type AiEnv = z.infer<typeof AiEnvSchema>;
 
 /** Chỉ phần biến của AI — cho script chạy ngoài Nest, không cần database hay secret JWT. */
 export const loadAiEnv = (source: NodeJS.ProcessEnv = process.env): AiEnv =>
-  AiEnvSchema.parse(source);
+  AiEnvSchema.parse(withAliases(source));
 
-export function loadEnv(source: NodeJS.ProcessEnv = process.env): Env {
-  const result = EnvSchema.safeParse(source);
+export function loadEnv(
+  source: NodeJS.ProcessEnv | Record<string, unknown> = process.env,
+): Env {
+  const result = EnvSchema.safeParse(withAliases(source));
   if (!result.success) {
     const issues = result.error.issues
       .map((i) => `  • ${i.path.join('.')}: ${i.message}`)

@@ -58,6 +58,9 @@ export type ScenarioRunMinAggregateOutputType = {
   endingType: string | null
   pointsAwarded: number | null
   rating: number | null
+  flow: string | null
+  status: $Enums.RunStatus | null
+  currentActivityKey: string | null
 }
 
 export type ScenarioRunMaxAggregateOutputType = {
@@ -74,6 +77,9 @@ export type ScenarioRunMaxAggregateOutputType = {
   endingType: string | null
   pointsAwarded: number | null
   rating: number | null
+  flow: string | null
+  status: $Enums.RunStatus | null
+  currentActivityKey: string | null
 }
 
 export type ScenarioRunCountAggregateOutputType = {
@@ -91,6 +97,9 @@ export type ScenarioRunCountAggregateOutputType = {
   endingType: number
   pointsAwarded: number
   rating: number
+  flow: number
+  status: number
+  currentActivityKey: number
   _all: number
 }
 
@@ -123,6 +132,9 @@ export type ScenarioRunMinAggregateInputType = {
   endingType?: true
   pointsAwarded?: true
   rating?: true
+  flow?: true
+  status?: true
+  currentActivityKey?: true
 }
 
 export type ScenarioRunMaxAggregateInputType = {
@@ -139,6 +151,9 @@ export type ScenarioRunMaxAggregateInputType = {
   endingType?: true
   pointsAwarded?: true
   rating?: true
+  flow?: true
+  status?: true
+  currentActivityKey?: true
 }
 
 export type ScenarioRunCountAggregateInputType = {
@@ -156,6 +171,9 @@ export type ScenarioRunCountAggregateInputType = {
   endingType?: true
   pointsAwarded?: true
   rating?: true
+  flow?: true
+  status?: true
+  currentActivityKey?: true
   _all?: true
 }
 
@@ -260,6 +278,9 @@ export type ScenarioRunGroupByOutputType = {
   endingType: string | null
   pointsAwarded: number
   rating: number | null
+  flow: string
+  status: $Enums.RunStatus
+  currentActivityKey: string | null
   _count: ScenarioRunCountAggregateOutputType | null
   _avg: ScenarioRunAvgAggregateOutputType | null
   _sum: ScenarioRunSumAggregateOutputType | null
@@ -300,8 +321,14 @@ export type ScenarioRunWhereInput = {
   endingType?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
   pointsAwarded?: Prisma.IntFilter<"ScenarioRun"> | number
   rating?: Prisma.IntNullableFilter<"ScenarioRun"> | number | null
+  flow?: Prisma.StringFilter<"ScenarioRun"> | string
+  status?: Prisma.EnumRunStatusFilter<"ScenarioRun"> | $Enums.RunStatus
+  currentActivityKey?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   evidence?: Prisma.RunEvidenceListRelationFilter
+  events?: Prisma.RunEventListRelationFilter
+  answers?: Prisma.AnswerListRelationFilter
+  aiJobs?: Prisma.AiJobListRelationFilter
 }
 
 export type ScenarioRunOrderByWithRelationInput = {
@@ -319,8 +346,14 @@ export type ScenarioRunOrderByWithRelationInput = {
   endingType?: Prisma.SortOrderInput | Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrderInput | Prisma.SortOrder
+  flow?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  currentActivityKey?: Prisma.SortOrderInput | Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
   evidence?: Prisma.RunEvidenceOrderByRelationAggregateInput
+  events?: Prisma.RunEventOrderByRelationAggregateInput
+  answers?: Prisma.AnswerOrderByRelationAggregateInput
+  aiJobs?: Prisma.AiJobOrderByRelationAggregateInput
 }
 
 export type ScenarioRunWhereUniqueInput = Prisma.AtLeast<{
@@ -341,8 +374,14 @@ export type ScenarioRunWhereUniqueInput = Prisma.AtLeast<{
   endingType?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
   pointsAwarded?: Prisma.IntFilter<"ScenarioRun"> | number
   rating?: Prisma.IntNullableFilter<"ScenarioRun"> | number | null
+  flow?: Prisma.StringFilter<"ScenarioRun"> | string
+  status?: Prisma.EnumRunStatusFilter<"ScenarioRun"> | $Enums.RunStatus
+  currentActivityKey?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   evidence?: Prisma.RunEvidenceListRelationFilter
+  events?: Prisma.RunEventListRelationFilter
+  answers?: Prisma.AnswerListRelationFilter
+  aiJobs?: Prisma.AiJobListRelationFilter
 }, "id">
 
 export type ScenarioRunOrderByWithAggregationInput = {
@@ -360,6 +399,9 @@ export type ScenarioRunOrderByWithAggregationInput = {
   endingType?: Prisma.SortOrderInput | Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrderInput | Prisma.SortOrder
+  flow?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  currentActivityKey?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ScenarioRunCountOrderByAggregateInput
   _avg?: Prisma.ScenarioRunAvgOrderByAggregateInput
   _max?: Prisma.ScenarioRunMaxOrderByAggregateInput
@@ -385,6 +427,9 @@ export type ScenarioRunScalarWhereWithAggregatesInput = {
   endingType?: Prisma.StringNullableWithAggregatesFilter<"ScenarioRun"> | string | null
   pointsAwarded?: Prisma.IntWithAggregatesFilter<"ScenarioRun"> | number
   rating?: Prisma.IntNullableWithAggregatesFilter<"ScenarioRun"> | number | null
+  flow?: Prisma.StringWithAggregatesFilter<"ScenarioRun"> | string
+  status?: Prisma.EnumRunStatusWithAggregatesFilter<"ScenarioRun"> | $Enums.RunStatus
+  currentActivityKey?: Prisma.StringNullableWithAggregatesFilter<"ScenarioRun"> | string | null
 }
 
 export type ScenarioRunCreateInput = {
@@ -401,8 +446,14 @@ export type ScenarioRunCreateInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
   user: Prisma.UserCreateNestedOneWithoutRunsInput
   evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunUncheckedCreateInput = {
@@ -420,7 +471,13 @@ export type ScenarioRunUncheckedCreateInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
   evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobUncheckedCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunUpdateInput = {
@@ -437,8 +494,14 @@ export type ScenarioRunUpdateInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
   evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunUncheckedUpdateInput = {
@@ -456,7 +519,13 @@ export type ScenarioRunUncheckedUpdateInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUncheckedUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunCreateManyInput = {
@@ -474,6 +543,9 @@ export type ScenarioRunCreateManyInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
 }
 
 export type ScenarioRunUpdateManyMutationInput = {
@@ -490,6 +562,9 @@ export type ScenarioRunUpdateManyMutationInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ScenarioRunUncheckedUpdateManyInput = {
@@ -507,6 +582,9 @@ export type ScenarioRunUncheckedUpdateManyInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ScenarioRunListRelationFilter = {
@@ -534,6 +612,9 @@ export type ScenarioRunCountOrderByAggregateInput = {
   endingType?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
+  flow?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  currentActivityKey?: Prisma.SortOrder
 }
 
 export type ScenarioRunAvgOrderByAggregateInput = {
@@ -557,6 +638,9 @@ export type ScenarioRunMaxOrderByAggregateInput = {
   endingType?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
+  flow?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  currentActivityKey?: Prisma.SortOrder
 }
 
 export type ScenarioRunMinOrderByAggregateInput = {
@@ -573,6 +657,9 @@ export type ScenarioRunMinOrderByAggregateInput = {
   endingType?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
+  flow?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  currentActivityKey?: Prisma.SortOrder
 }
 
 export type ScenarioRunSumOrderByAggregateInput = {
@@ -585,6 +672,11 @@ export type ScenarioRunSumOrderByAggregateInput = {
 export type ScenarioRunScalarRelationFilter = {
   is?: Prisma.ScenarioRunWhereInput
   isNot?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunNullableScalarRelationFilter = {
+  is?: Prisma.ScenarioRunWhereInput | null
+  isNot?: Prisma.ScenarioRunWhereInput | null
 }
 
 export type ScenarioRunCreateNestedManyWithoutUserInput = {
@@ -645,6 +737,54 @@ export type NullableIntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type EnumRunStatusFieldUpdateOperationsInput = {
+  set?: $Enums.RunStatus
+}
+
+export type ScenarioRunCreateNestedOneWithoutEventsInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEventsInput, Prisma.ScenarioRunUncheckedCreateWithoutEventsInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEventsInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+}
+
+export type ScenarioRunUpdateOneRequiredWithoutEventsNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEventsInput, Prisma.ScenarioRunUncheckedCreateWithoutEventsInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEventsInput
+  upsert?: Prisma.ScenarioRunUpsertWithoutEventsInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutEventsInput, Prisma.ScenarioRunUpdateWithoutEventsInput>, Prisma.ScenarioRunUncheckedUpdateWithoutEventsInput>
+}
+
+export type ScenarioRunCreateNestedOneWithoutAnswersInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAnswersInput, Prisma.ScenarioRunUncheckedCreateWithoutAnswersInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutAnswersInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+}
+
+export type ScenarioRunUpdateOneRequiredWithoutAnswersNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAnswersInput, Prisma.ScenarioRunUncheckedCreateWithoutAnswersInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutAnswersInput
+  upsert?: Prisma.ScenarioRunUpsertWithoutAnswersInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutAnswersInput, Prisma.ScenarioRunUpdateWithoutAnswersInput>, Prisma.ScenarioRunUncheckedUpdateWithoutAnswersInput>
+}
+
+export type ScenarioRunCreateNestedOneWithoutAiJobsInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAiJobsInput, Prisma.ScenarioRunUncheckedCreateWithoutAiJobsInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutAiJobsInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+}
+
+export type ScenarioRunUpdateOneWithoutAiJobsNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAiJobsInput, Prisma.ScenarioRunUncheckedCreateWithoutAiJobsInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutAiJobsInput
+  upsert?: Prisma.ScenarioRunUpsertWithoutAiJobsInput
+  disconnect?: Prisma.ScenarioRunWhereInput | boolean
+  delete?: Prisma.ScenarioRunWhereInput | boolean
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutAiJobsInput, Prisma.ScenarioRunUpdateWithoutAiJobsInput>, Prisma.ScenarioRunUncheckedUpdateWithoutAiJobsInput>
+}
+
 export type ScenarioRunCreateNestedOneWithoutEvidenceInput = {
   create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEvidenceInput, Prisma.ScenarioRunUncheckedCreateWithoutEvidenceInput>
   connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEvidenceInput
@@ -673,7 +813,13 @@ export type ScenarioRunCreateWithoutUserInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
   evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunUncheckedCreateWithoutUserInput = {
@@ -690,7 +836,13 @@ export type ScenarioRunUncheckedCreateWithoutUserInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
   evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobUncheckedCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunCreateOrConnectWithoutUserInput = {
@@ -737,6 +889,333 @@ export type ScenarioRunScalarWhereInput = {
   endingType?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
   pointsAwarded?: Prisma.IntFilter<"ScenarioRun"> | number
   rating?: Prisma.IntNullableFilter<"ScenarioRun"> | number | null
+  flow?: Prisma.StringFilter<"ScenarioRun"> | string
+  status?: Prisma.EnumRunStatusFilter<"ScenarioRun"> | $Enums.RunStatus
+  currentActivityKey?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+}
+
+export type ScenarioRunCreateWithoutEventsInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutEventsInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutEventsInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEventsInput, Prisma.ScenarioRunUncheckedCreateWithoutEventsInput>
+}
+
+export type ScenarioRunUpsertWithoutEventsInput = {
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutEventsInput, Prisma.ScenarioRunUncheckedUpdateWithoutEventsInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEventsInput, Prisma.ScenarioRunUncheckedCreateWithoutEventsInput>
+  where?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunUpdateToOneWithWhereWithoutEventsInput = {
+  where?: Prisma.ScenarioRunWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutEventsInput, Prisma.ScenarioRunUncheckedUpdateWithoutEventsInput>
+}
+
+export type ScenarioRunUpdateWithoutEventsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutEventsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUncheckedUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunCreateWithoutAnswersInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutAnswersInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutAnswersInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAnswersInput, Prisma.ScenarioRunUncheckedCreateWithoutAnswersInput>
+}
+
+export type ScenarioRunUpsertWithoutAnswersInput = {
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutAnswersInput, Prisma.ScenarioRunUncheckedUpdateWithoutAnswersInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAnswersInput, Prisma.ScenarioRunUncheckedCreateWithoutAnswersInput>
+  where?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunUpdateToOneWithWhereWithoutAnswersInput = {
+  where?: Prisma.ScenarioRunWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutAnswersInput, Prisma.ScenarioRunUncheckedUpdateWithoutAnswersInput>
+}
+
+export type ScenarioRunUpdateWithoutAnswersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutAnswersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUncheckedUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunCreateWithoutAiJobsInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutAiJobsInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutAiJobsInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAiJobsInput, Prisma.ScenarioRunUncheckedCreateWithoutAiJobsInput>
+}
+
+export type ScenarioRunUpsertWithoutAiJobsInput = {
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutAiJobsInput, Prisma.ScenarioRunUncheckedUpdateWithoutAiJobsInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAiJobsInput, Prisma.ScenarioRunUncheckedCreateWithoutAiJobsInput>
+  where?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunUpdateToOneWithWhereWithoutAiJobsInput = {
+  where?: Prisma.ScenarioRunWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutAiJobsInput, Prisma.ScenarioRunUncheckedUpdateWithoutAiJobsInput>
+}
+
+export type ScenarioRunUpdateWithoutAiJobsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutAiJobsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunCreateWithoutEvidenceInput = {
@@ -753,7 +1232,13 @@ export type ScenarioRunCreateWithoutEvidenceInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
   user: Prisma.UserCreateNestedOneWithoutRunsInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunUncheckedCreateWithoutEvidenceInput = {
@@ -771,6 +1256,12 @@ export type ScenarioRunUncheckedCreateWithoutEvidenceInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  aiJobs?: Prisma.AiJobUncheckedCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunCreateOrConnectWithoutEvidenceInput = {
@@ -803,7 +1294,13 @@ export type ScenarioRunUpdateWithoutEvidenceInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunUncheckedUpdateWithoutEvidenceInput = {
@@ -821,6 +1318,12 @@ export type ScenarioRunUncheckedUpdateWithoutEvidenceInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUncheckedUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunCreateManyUserInput = {
@@ -837,6 +1340,9 @@ export type ScenarioRunCreateManyUserInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  flow?: string
+  status?: $Enums.RunStatus
+  currentActivityKey?: string | null
 }
 
 export type ScenarioRunUpdateWithoutUserInput = {
@@ -853,7 +1359,13 @@ export type ScenarioRunUpdateWithoutUserInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunUncheckedUpdateWithoutUserInput = {
@@ -870,7 +1382,13 @@ export type ScenarioRunUncheckedUpdateWithoutUserInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  aiJobs?: Prisma.AiJobUncheckedUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunUncheckedUpdateManyWithoutUserInput = {
@@ -887,6 +1405,9 @@ export type ScenarioRunUncheckedUpdateManyWithoutUserInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  flow?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -896,10 +1417,16 @@ export type ScenarioRunUncheckedUpdateManyWithoutUserInput = {
 
 export type ScenarioRunCountOutputType = {
   evidence: number
+  events: number
+  answers: number
+  aiJobs: number
 }
 
 export type ScenarioRunCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   evidence?: boolean | ScenarioRunCountOutputTypeCountEvidenceArgs
+  events?: boolean | ScenarioRunCountOutputTypeCountEventsArgs
+  answers?: boolean | ScenarioRunCountOutputTypeCountAnswersArgs
+  aiJobs?: boolean | ScenarioRunCountOutputTypeCountAiJobsArgs
 }
 
 /**
@@ -919,6 +1446,27 @@ export type ScenarioRunCountOutputTypeCountEvidenceArgs<ExtArgs extends runtime.
   where?: Prisma.RunEvidenceWhereInput
 }
 
+/**
+ * ScenarioRunCountOutputType without action
+ */
+export type ScenarioRunCountOutputTypeCountEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RunEventWhereInput
+}
+
+/**
+ * ScenarioRunCountOutputType without action
+ */
+export type ScenarioRunCountOutputTypeCountAnswersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AnswerWhereInput
+}
+
+/**
+ * ScenarioRunCountOutputType without action
+ */
+export type ScenarioRunCountOutputTypeCountAiJobsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AiJobWhereInput
+}
+
 
 export type ScenarioRunSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -935,8 +1483,14 @@ export type ScenarioRunSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   endingType?: boolean
   pointsAwarded?: boolean
   rating?: boolean
+  flow?: boolean
+  status?: boolean
+  currentActivityKey?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   evidence?: boolean | Prisma.ScenarioRun$evidenceArgs<ExtArgs>
+  events?: boolean | Prisma.ScenarioRun$eventsArgs<ExtArgs>
+  answers?: boolean | Prisma.ScenarioRun$answersArgs<ExtArgs>
+  aiJobs?: boolean | Prisma.ScenarioRun$aiJobsArgs<ExtArgs>
   _count?: boolean | Prisma.ScenarioRunCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["scenarioRun"]>
 
@@ -955,6 +1509,9 @@ export type ScenarioRunSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   endingType?: boolean
   pointsAwarded?: boolean
   rating?: boolean
+  flow?: boolean
+  status?: boolean
+  currentActivityKey?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["scenarioRun"]>
 
@@ -973,6 +1530,9 @@ export type ScenarioRunSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   endingType?: boolean
   pointsAwarded?: boolean
   rating?: boolean
+  flow?: boolean
+  status?: boolean
+  currentActivityKey?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["scenarioRun"]>
 
@@ -991,12 +1551,18 @@ export type ScenarioRunSelectScalar = {
   endingType?: boolean
   pointsAwarded?: boolean
   rating?: boolean
+  flow?: boolean
+  status?: boolean
+  currentActivityKey?: boolean
 }
 
-export type ScenarioRunOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "scenarioKey" | "roleCode" | "band" | "seed" | "contentVersion" | "actions" | "startedAt" | "completedAt" | "endingId" | "endingType" | "pointsAwarded" | "rating", ExtArgs["result"]["scenarioRun"]>
+export type ScenarioRunOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "scenarioKey" | "roleCode" | "band" | "seed" | "contentVersion" | "actions" | "startedAt" | "completedAt" | "endingId" | "endingType" | "pointsAwarded" | "rating" | "flow" | "status" | "currentActivityKey", ExtArgs["result"]["scenarioRun"]>
 export type ScenarioRunInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   evidence?: boolean | Prisma.ScenarioRun$evidenceArgs<ExtArgs>
+  events?: boolean | Prisma.ScenarioRun$eventsArgs<ExtArgs>
+  answers?: boolean | Prisma.ScenarioRun$answersArgs<ExtArgs>
+  aiJobs?: boolean | Prisma.ScenarioRun$aiJobsArgs<ExtArgs>
   _count?: boolean | Prisma.ScenarioRunCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ScenarioRunIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1011,6 +1577,9 @@ export type $ScenarioRunPayload<ExtArgs extends runtime.Types.Extensions.Interna
   objects: {
     user: Prisma.$UserPayload<ExtArgs>
     evidence: Prisma.$RunEvidencePayload<ExtArgs>[]
+    events: Prisma.$RunEventPayload<ExtArgs>[]
+    answers: Prisma.$AnswerPayload<ExtArgs>[]
+    aiJobs: Prisma.$AiJobPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1038,6 +1607,20 @@ export type $ScenarioRunPayload<ExtArgs extends runtime.Types.Extensions.Interna
      * Người chơi chấm tình huống có giống thực tế không (1–5 sao).
      */
     rating: number | null
+    /**
+     * `replay`: luồng prototype (gửi cả chuỗi hành động một lần, chấm bằng
+     * chạy lại). `events`: luồng có AI (SD-01) — mỗi câu gửi ngay, lượt chơi
+     * là chuỗi `run_event`.
+     */
+    flow: string
+    /**
+     * ERD-05 `run_status`. Chỉ có nghĩa với `flow = events`.
+     */
+    status: $Enums.RunStatus
+    /**
+     * Bản sao của trạng thái fold từ `run_event`, để tra nhanh; nguồn chân lý là chuỗi sự kiện.
+     */
+    currentActivityKey: string | null
   }, ExtArgs["result"]["scenarioRun"]>
   composites: {}
 }
@@ -1434,6 +2017,9 @@ export interface Prisma__ScenarioRunClient<T, Null = never, ExtArgs extends runt
   readonly [Symbol.toStringTag]: "PrismaPromise"
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   evidence<T extends Prisma.ScenarioRun$evidenceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$evidenceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RunEvidencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  events<T extends Prisma.ScenarioRun$eventsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RunEventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  answers<T extends Prisma.ScenarioRun$answersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$answersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AnswerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  aiJobs<T extends Prisma.ScenarioRun$aiJobsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$aiJobsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AiJobPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1477,6 +2063,9 @@ export interface ScenarioRunFieldRefs {
   readonly endingType: Prisma.FieldRef<"ScenarioRun", 'String'>
   readonly pointsAwarded: Prisma.FieldRef<"ScenarioRun", 'Int'>
   readonly rating: Prisma.FieldRef<"ScenarioRun", 'Int'>
+  readonly flow: Prisma.FieldRef<"ScenarioRun", 'String'>
+  readonly status: Prisma.FieldRef<"ScenarioRun", 'RunStatus'>
+  readonly currentActivityKey: Prisma.FieldRef<"ScenarioRun", 'String'>
 }
     
 
@@ -1899,6 +2488,78 @@ export type ScenarioRun$evidenceArgs<ExtArgs extends runtime.Types.Extensions.In
   take?: number
   skip?: number
   distinct?: Prisma.RunEvidenceScalarFieldEnum | Prisma.RunEvidenceScalarFieldEnum[]
+}
+
+/**
+ * ScenarioRun.events
+ */
+export type ScenarioRun$eventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the RunEvent
+   */
+  select?: Prisma.RunEventSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the RunEvent
+   */
+  omit?: Prisma.RunEventOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.RunEventInclude<ExtArgs> | null
+  where?: Prisma.RunEventWhereInput
+  orderBy?: Prisma.RunEventOrderByWithRelationInput | Prisma.RunEventOrderByWithRelationInput[]
+  cursor?: Prisma.RunEventWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.RunEventScalarFieldEnum | Prisma.RunEventScalarFieldEnum[]
+}
+
+/**
+ * ScenarioRun.answers
+ */
+export type ScenarioRun$answersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Answer
+   */
+  select?: Prisma.AnswerSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Answer
+   */
+  omit?: Prisma.AnswerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AnswerInclude<ExtArgs> | null
+  where?: Prisma.AnswerWhereInput
+  orderBy?: Prisma.AnswerOrderByWithRelationInput | Prisma.AnswerOrderByWithRelationInput[]
+  cursor?: Prisma.AnswerWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AnswerScalarFieldEnum | Prisma.AnswerScalarFieldEnum[]
+}
+
+/**
+ * ScenarioRun.aiJobs
+ */
+export type ScenarioRun$aiJobsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AiJob
+   */
+  select?: Prisma.AiJobSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AiJob
+   */
+  omit?: Prisma.AiJobOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AiJobInclude<ExtArgs> | null
+  where?: Prisma.AiJobWhereInput
+  orderBy?: Prisma.AiJobOrderByWithRelationInput | Prisma.AiJobOrderByWithRelationInput[]
+  cursor?: Prisma.AiJobWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AiJobScalarFieldEnum | Prisma.AiJobScalarFieldEnum[]
 }
 
 /**

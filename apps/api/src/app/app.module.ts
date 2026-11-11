@@ -8,6 +8,8 @@ import { AuthModule } from '../auth/auth.module';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
 import { ContentModule } from '../content/content.module';
+import { CoreModule } from '../core/core.module';
+import { PlayModule } from '../play/play.module';
 import { loadEnv } from '../config/env';
 import { PrismaModule } from '../prisma/prisma.module';
 import { ProfileModule } from '../profile/profile.module';
@@ -27,6 +29,8 @@ import { RunsModule } from '../runs/runs.module';
     RunsModule,
     ProfileModule,
     AiModule,
+    CoreModule,
+    PlayModule,
   ],
   controllers: [AppController],
   providers: [

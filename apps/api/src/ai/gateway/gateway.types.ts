@@ -76,6 +76,13 @@ export interface ModelSpec {
     explicitCache: boolean;
     temperature?: boolean;
   };
+  /**
+   * Mức suy nghĩ thấp nhất model chấp nhận; thiếu nghĩa là tắt hẳn (`none`).
+   * Gemini 3.x trên OpenRouter (11/11/2026) từ chối `none`: "Reasoning is
+   * mandatory for this endpoint and cannot be disabled"; `minimal` thì chạy
+   * và báo 0 token suy nghĩ.
+   */
+  minReasoning?: 'none' | 'minimal';
   cacheMode: CacheMode;
   price: Price;
   dataPolicy: DataPolicy;
