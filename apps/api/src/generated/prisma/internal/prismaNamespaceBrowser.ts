@@ -57,6 +57,11 @@ export const ModelName = {
   ParentalConsent: 'ParentalConsent',
   GameProfile: 'GameProfile',
   ScenarioRun: 'ScenarioRun',
+  RunEvent: 'RunEvent',
+  Answer: 'Answer',
+  ScenarioFeedback: 'ScenarioFeedback',
+  ContentFlag: 'ContentFlag',
+  PlayerNote: 'PlayerNote',
   RunEvidence: 'RunEvidence',
   UserBandSkill: 'UserBandSkill',
   EventAnswer: 'EventAnswer',
@@ -69,7 +74,9 @@ export const ModelName = {
   QuizQuestionDoc: 'QuizQuestionDoc',
   FollowupDoc: 'FollowupDoc',
   GalaxyDoc: 'GalaxyDoc',
-  MetaDoc: 'MetaDoc'
+  MetaDoc: 'MetaDoc',
+  ShiftSeedDoc: 'ShiftSeedDoc',
+  LevelPackDoc: 'LevelPackDoc'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -165,10 +172,78 @@ export const ScenarioRunScalarFieldEnum = {
   endingId: 'endingId',
   endingType: 'endingType',
   pointsAwarded: 'pointsAwarded',
-  rating: 'rating'
+  rating: 'rating',
+  status: 'status',
+  isPlaytest: 'isPlaytest',
+  enrolmentId: 'enrolmentId',
+  schemaVersion: 'schemaVersion',
+  seedId: 'seedId',
+  currentNodeId: 'currentNodeId',
+  pausedAt: 'pausedAt'
 } as const
 
 export type ScenarioRunScalarFieldEnum = (typeof ScenarioRunScalarFieldEnum)[keyof typeof ScenarioRunScalarFieldEnum]
+
+
+export const RunEventScalarFieldEnum = {
+  id: 'id',
+  runId: 'runId',
+  seq: 'seq',
+  type: 'type',
+  turnId: 'turnId',
+  payload: 'payload',
+  createdAt: 'createdAt'
+} as const
+
+export type RunEventScalarFieldEnum = (typeof RunEventScalarFieldEnum)[keyof typeof RunEventScalarFieldEnum]
+
+
+export const AnswerScalarFieldEnum = {
+  id: 'id',
+  runId: 'runId',
+  kind: 'kind',
+  text: 'text',
+  payload: 'payload',
+  status: 'status',
+  jobId: 'jobId',
+  lineFrom: 'lineFrom',
+  lineTo: 'lineTo',
+  submittedAt: 'submittedAt',
+  completedAt: 'completedAt'
+} as const
+
+export type AnswerScalarFieldEnum = (typeof AnswerScalarFieldEnum)[keyof typeof AnswerScalarFieldEnum]
+
+
+export const ScenarioFeedbackScalarFieldEnum = {
+  runId: 'runId',
+  summary: 'summary',
+  createdAt: 'createdAt'
+} as const
+
+export type ScenarioFeedbackScalarFieldEnum = (typeof ScenarioFeedbackScalarFieldEnum)[keyof typeof ScenarioFeedbackScalarFieldEnum]
+
+
+export const ContentFlagScalarFieldEnum = {
+  id: 'id',
+  runId: 'runId',
+  activityKey: 'activityKey',
+  reason: 'reason',
+  status: 'status',
+  createdAt: 'createdAt'
+} as const
+
+export type ContentFlagScalarFieldEnum = (typeof ContentFlagScalarFieldEnum)[keyof typeof ContentFlagScalarFieldEnum]
+
+
+export const PlayerNoteScalarFieldEnum = {
+  id: 'id',
+  runId: 'runId',
+  text: 'text',
+  createdAt: 'createdAt'
+} as const
+
+export type PlayerNoteScalarFieldEnum = (typeof PlayerNoteScalarFieldEnum)[keyof typeof PlayerNoteScalarFieldEnum]
 
 
 export const RunEvidenceScalarFieldEnum = {
@@ -318,6 +393,26 @@ export const MetaDocScalarFieldEnum = {
 } as const
 
 export type MetaDocScalarFieldEnum = (typeof MetaDocScalarFieldEnum)[keyof typeof MetaDocScalarFieldEnum]
+
+
+export const ShiftSeedDocScalarFieldEnum = {
+  version: 'version',
+  seedId: 'seedId',
+  levelRef: 'levelRef',
+  title: 'title',
+  body: 'body'
+} as const
+
+export type ShiftSeedDocScalarFieldEnum = (typeof ShiftSeedDocScalarFieldEnum)[keyof typeof ShiftSeedDocScalarFieldEnum]
+
+
+export const LevelPackDocScalarFieldEnum = {
+  version: 'version',
+  packId: 'packId',
+  body: 'body'
+} as const
+
+export type LevelPackDocScalarFieldEnum = (typeof LevelPackDocScalarFieldEnum)[keyof typeof LevelPackDocScalarFieldEnum]
 
 
 export const SortOrder = {

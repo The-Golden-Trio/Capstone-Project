@@ -23,3 +23,39 @@ export const ConsentMethod = {
 } as const
 
 export type ConsentMethod = (typeof ConsentMethod)[keyof typeof ConsentMethod]
+
+
+export const RunStatus = {
+  IN_PROGRESS: 'IN_PROGRESS',
+  FINISHED: 'FINISHED',
+  ABANDONED: 'ABANDONED'
+} as const
+
+export type RunStatus = (typeof RunStatus)[keyof typeof RunStatus]
+
+
+export const RunEventType = {
+  PLAYER_INPUT: 'PLAYER_INPUT',
+  AI_NARRATION: 'AI_NARRATION',
+  AI_CHECKS: 'AI_CHECKS',
+  RUN_PAUSED: 'RUN_PAUSED'
+} as const
+
+export type RunEventType = (typeof RunEventType)[keyof typeof RunEventType]
+
+
+export const TurnStatus = {
+  PENDING: 'PENDING',
+  DONE: 'DONE',
+  PAUSED: 'PAUSED'
+} as const
+
+export type TurnStatus = (typeof TurnStatus)[keyof typeof TurnStatus]
+
+
+export const FlagStatus = {
+  OPEN: 'OPEN',
+  HANDLED: 'HANDLED'
+} as const
+
+export type FlagStatus = (typeof FlagStatus)[keyof typeof FlagStatus]

@@ -58,6 +58,31 @@ export type GameProfile = Prisma.GameProfileModel
  */
 export type ScenarioRun = Prisma.ScenarioRunModel
 /**
+ * Model RunEvent
+ * Chuỗi sự kiện của một lượt ca làm (ERD-05 `run_event`). Chỉ thêm, không sửa.
+ */
+export type RunEvent = Prisma.RunEventModel
+/**
+ * Model Answer
+ * Một lượt của người chơi (ERD-06 `answer`). `id` do máy khách tạo (NFR-04).
+ */
+export type Answer = Prisma.AnswerModel
+/**
+ * Model ScenarioFeedback
+ * Tổng kết cuối ca (ERD-06 `scenario_feedback`). Chưa chấm điểm.
+ */
+export type ScenarioFeedback = Prisma.ScenarioFeedbackModel
+/**
+ * Model ContentFlag
+ * Người chơi báo nội dung sai (ERD-05 `content_flag`).
+ */
+export type ContentFlag = Prisma.ContentFlagModel
+/**
+ * Model PlayerNote
+ * Ghi chú riêng của người chơi trong sổ tay (khối M). Không gửi AI, không chấm.
+ */
+export type PlayerNote = Prisma.PlayerNoteModel
+/**
  * Model RunEvidence
  * Bằng chứng do máy chủ chấm lại, không phải điều máy khách khai.
  */
@@ -138,3 +163,13 @@ export type GalaxyDoc = Prisma.GalaxyDocModel
  * Hai bảng tra nhỏ không đáng dựng bảng riêng: `all_roles`, `fit_dimensions`.
  */
 export type MetaDoc = Prisma.MetaDocModel
+/**
+ * Model ShiftSeedDoc
+ * Seed ca làm (Game Design W45), theo `shift.ShiftSeedSchema` của game-core.
+ */
+export type ShiftSeedDoc = Prisma.ShiftSeedDocModel
+/**
+ * Model LevelPackDoc
+ * Gói cấp của ca làm: công ty, quy định, nhịp thời gian (khối G).
+ */
+export type LevelPackDoc = Prisma.LevelPackDocModel

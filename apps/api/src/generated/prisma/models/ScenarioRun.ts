@@ -35,6 +35,7 @@ export type ScenarioRunAvgAggregateOutputType = {
   contentVersion: number | null
   pointsAwarded: number | null
   rating: number | null
+  schemaVersion: number | null
 }
 
 export type ScenarioRunSumAggregateOutputType = {
@@ -42,6 +43,7 @@ export type ScenarioRunSumAggregateOutputType = {
   contentVersion: number | null
   pointsAwarded: number | null
   rating: number | null
+  schemaVersion: number | null
 }
 
 export type ScenarioRunMinAggregateOutputType = {
@@ -58,6 +60,13 @@ export type ScenarioRunMinAggregateOutputType = {
   endingType: string | null
   pointsAwarded: number | null
   rating: number | null
+  status: $Enums.RunStatus | null
+  isPlaytest: boolean | null
+  enrolmentId: string | null
+  schemaVersion: number | null
+  seedId: string | null
+  currentNodeId: string | null
+  pausedAt: Date | null
 }
 
 export type ScenarioRunMaxAggregateOutputType = {
@@ -74,6 +83,13 @@ export type ScenarioRunMaxAggregateOutputType = {
   endingType: string | null
   pointsAwarded: number | null
   rating: number | null
+  status: $Enums.RunStatus | null
+  isPlaytest: boolean | null
+  enrolmentId: string | null
+  schemaVersion: number | null
+  seedId: string | null
+  currentNodeId: string | null
+  pausedAt: Date | null
 }
 
 export type ScenarioRunCountAggregateOutputType = {
@@ -91,6 +107,13 @@ export type ScenarioRunCountAggregateOutputType = {
   endingType: number
   pointsAwarded: number
   rating: number
+  status: number
+  isPlaytest: number
+  enrolmentId: number
+  schemaVersion: number
+  seedId: number
+  currentNodeId: number
+  pausedAt: number
   _all: number
 }
 
@@ -100,6 +123,7 @@ export type ScenarioRunAvgAggregateInputType = {
   contentVersion?: true
   pointsAwarded?: true
   rating?: true
+  schemaVersion?: true
 }
 
 export type ScenarioRunSumAggregateInputType = {
@@ -107,6 +131,7 @@ export type ScenarioRunSumAggregateInputType = {
   contentVersion?: true
   pointsAwarded?: true
   rating?: true
+  schemaVersion?: true
 }
 
 export type ScenarioRunMinAggregateInputType = {
@@ -123,6 +148,13 @@ export type ScenarioRunMinAggregateInputType = {
   endingType?: true
   pointsAwarded?: true
   rating?: true
+  status?: true
+  isPlaytest?: true
+  enrolmentId?: true
+  schemaVersion?: true
+  seedId?: true
+  currentNodeId?: true
+  pausedAt?: true
 }
 
 export type ScenarioRunMaxAggregateInputType = {
@@ -139,6 +171,13 @@ export type ScenarioRunMaxAggregateInputType = {
   endingType?: true
   pointsAwarded?: true
   rating?: true
+  status?: true
+  isPlaytest?: true
+  enrolmentId?: true
+  schemaVersion?: true
+  seedId?: true
+  currentNodeId?: true
+  pausedAt?: true
 }
 
 export type ScenarioRunCountAggregateInputType = {
@@ -156,6 +195,13 @@ export type ScenarioRunCountAggregateInputType = {
   endingType?: true
   pointsAwarded?: true
   rating?: true
+  status?: true
+  isPlaytest?: true
+  enrolmentId?: true
+  schemaVersion?: true
+  seedId?: true
+  currentNodeId?: true
+  pausedAt?: true
   _all?: true
 }
 
@@ -260,6 +306,13 @@ export type ScenarioRunGroupByOutputType = {
   endingType: string | null
   pointsAwarded: number
   rating: number | null
+  status: $Enums.RunStatus
+  isPlaytest: boolean
+  enrolmentId: string | null
+  schemaVersion: number
+  seedId: string | null
+  currentNodeId: string | null
+  pausedAt: Date | null
   _count: ScenarioRunCountAggregateOutputType | null
   _avg: ScenarioRunAvgAggregateOutputType | null
   _sum: ScenarioRunSumAggregateOutputType | null
@@ -300,8 +353,21 @@ export type ScenarioRunWhereInput = {
   endingType?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
   pointsAwarded?: Prisma.IntFilter<"ScenarioRun"> | number
   rating?: Prisma.IntNullableFilter<"ScenarioRun"> | number | null
+  status?: Prisma.EnumRunStatusFilter<"ScenarioRun"> | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFilter<"ScenarioRun"> | boolean
+  enrolmentId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  schemaVersion?: Prisma.IntFilter<"ScenarioRun"> | number
+  seedId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  currentNodeId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  pausedAt?: Prisma.DateTimeNullableFilter<"ScenarioRun"> | Date | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  enrolment?: Prisma.XOR<Prisma.EnrollmentNullableScalarRelationFilter, Prisma.EnrollmentWhereInput> | null
   evidence?: Prisma.RunEvidenceListRelationFilter
+  events?: Prisma.RunEventListRelationFilter
+  answers?: Prisma.AnswerListRelationFilter
+  feedback?: Prisma.XOR<Prisma.ScenarioFeedbackNullableScalarRelationFilter, Prisma.ScenarioFeedbackWhereInput> | null
+  flags?: Prisma.ContentFlagListRelationFilter
+  notes?: Prisma.PlayerNoteListRelationFilter
 }
 
 export type ScenarioRunOrderByWithRelationInput = {
@@ -319,8 +385,21 @@ export type ScenarioRunOrderByWithRelationInput = {
   endingType?: Prisma.SortOrderInput | Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrder
+  isPlaytest?: Prisma.SortOrder
+  enrolmentId?: Prisma.SortOrderInput | Prisma.SortOrder
+  schemaVersion?: Prisma.SortOrder
+  seedId?: Prisma.SortOrderInput | Prisma.SortOrder
+  currentNodeId?: Prisma.SortOrderInput | Prisma.SortOrder
+  pausedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
+  enrolment?: Prisma.EnrollmentOrderByWithRelationInput
   evidence?: Prisma.RunEvidenceOrderByRelationAggregateInput
+  events?: Prisma.RunEventOrderByRelationAggregateInput
+  answers?: Prisma.AnswerOrderByRelationAggregateInput
+  feedback?: Prisma.ScenarioFeedbackOrderByWithRelationInput
+  flags?: Prisma.ContentFlagOrderByRelationAggregateInput
+  notes?: Prisma.PlayerNoteOrderByRelationAggregateInput
 }
 
 export type ScenarioRunWhereUniqueInput = Prisma.AtLeast<{
@@ -341,8 +420,21 @@ export type ScenarioRunWhereUniqueInput = Prisma.AtLeast<{
   endingType?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
   pointsAwarded?: Prisma.IntFilter<"ScenarioRun"> | number
   rating?: Prisma.IntNullableFilter<"ScenarioRun"> | number | null
+  status?: Prisma.EnumRunStatusFilter<"ScenarioRun"> | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFilter<"ScenarioRun"> | boolean
+  enrolmentId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  schemaVersion?: Prisma.IntFilter<"ScenarioRun"> | number
+  seedId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  currentNodeId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  pausedAt?: Prisma.DateTimeNullableFilter<"ScenarioRun"> | Date | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  enrolment?: Prisma.XOR<Prisma.EnrollmentNullableScalarRelationFilter, Prisma.EnrollmentWhereInput> | null
   evidence?: Prisma.RunEvidenceListRelationFilter
+  events?: Prisma.RunEventListRelationFilter
+  answers?: Prisma.AnswerListRelationFilter
+  feedback?: Prisma.XOR<Prisma.ScenarioFeedbackNullableScalarRelationFilter, Prisma.ScenarioFeedbackWhereInput> | null
+  flags?: Prisma.ContentFlagListRelationFilter
+  notes?: Prisma.PlayerNoteListRelationFilter
 }, "id">
 
 export type ScenarioRunOrderByWithAggregationInput = {
@@ -360,6 +452,13 @@ export type ScenarioRunOrderByWithAggregationInput = {
   endingType?: Prisma.SortOrderInput | Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrder
+  isPlaytest?: Prisma.SortOrder
+  enrolmentId?: Prisma.SortOrderInput | Prisma.SortOrder
+  schemaVersion?: Prisma.SortOrder
+  seedId?: Prisma.SortOrderInput | Prisma.SortOrder
+  currentNodeId?: Prisma.SortOrderInput | Prisma.SortOrder
+  pausedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ScenarioRunCountOrderByAggregateInput
   _avg?: Prisma.ScenarioRunAvgOrderByAggregateInput
   _max?: Prisma.ScenarioRunMaxOrderByAggregateInput
@@ -385,6 +484,13 @@ export type ScenarioRunScalarWhereWithAggregatesInput = {
   endingType?: Prisma.StringNullableWithAggregatesFilter<"ScenarioRun"> | string | null
   pointsAwarded?: Prisma.IntWithAggregatesFilter<"ScenarioRun"> | number
   rating?: Prisma.IntNullableWithAggregatesFilter<"ScenarioRun"> | number | null
+  status?: Prisma.EnumRunStatusWithAggregatesFilter<"ScenarioRun"> | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolWithAggregatesFilter<"ScenarioRun"> | boolean
+  enrolmentId?: Prisma.StringNullableWithAggregatesFilter<"ScenarioRun"> | string | null
+  schemaVersion?: Prisma.IntWithAggregatesFilter<"ScenarioRun"> | number
+  seedId?: Prisma.StringNullableWithAggregatesFilter<"ScenarioRun"> | string | null
+  currentNodeId?: Prisma.StringNullableWithAggregatesFilter<"ScenarioRun"> | string | null
+  pausedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ScenarioRun"> | Date | string | null
 }
 
 export type ScenarioRunCreateInput = {
@@ -401,8 +507,20 @@ export type ScenarioRunCreateInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
   user: Prisma.UserCreateNestedOneWithoutRunsInput
+  enrolment?: Prisma.EnrollmentCreateNestedOneWithoutRunsInput
   evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunUncheckedCreateInput = {
@@ -420,7 +538,19 @@ export type ScenarioRunUncheckedCreateInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
   evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagUncheckedCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteUncheckedCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunUpdateInput = {
@@ -437,8 +567,20 @@ export type ScenarioRunUpdateInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  enrolment?: Prisma.EnrollmentUpdateOneWithoutRunsNestedInput
   evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunUncheckedUpdateInput = {
@@ -456,7 +598,19 @@ export type ScenarioRunUncheckedUpdateInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUncheckedUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUncheckedUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunCreateManyInput = {
@@ -474,6 +628,13 @@ export type ScenarioRunCreateManyInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
 }
 
 export type ScenarioRunUpdateManyMutationInput = {
@@ -490,6 +651,12 @@ export type ScenarioRunUpdateManyMutationInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type ScenarioRunUncheckedUpdateManyInput = {
@@ -507,6 +674,13 @@ export type ScenarioRunUncheckedUpdateManyInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type ScenarioRunListRelationFilter = {
@@ -534,6 +708,13 @@ export type ScenarioRunCountOrderByAggregateInput = {
   endingType?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  isPlaytest?: Prisma.SortOrder
+  enrolmentId?: Prisma.SortOrder
+  schemaVersion?: Prisma.SortOrder
+  seedId?: Prisma.SortOrder
+  currentNodeId?: Prisma.SortOrder
+  pausedAt?: Prisma.SortOrder
 }
 
 export type ScenarioRunAvgOrderByAggregateInput = {
@@ -541,6 +722,7 @@ export type ScenarioRunAvgOrderByAggregateInput = {
   contentVersion?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
+  schemaVersion?: Prisma.SortOrder
 }
 
 export type ScenarioRunMaxOrderByAggregateInput = {
@@ -557,6 +739,13 @@ export type ScenarioRunMaxOrderByAggregateInput = {
   endingType?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  isPlaytest?: Prisma.SortOrder
+  enrolmentId?: Prisma.SortOrder
+  schemaVersion?: Prisma.SortOrder
+  seedId?: Prisma.SortOrder
+  currentNodeId?: Prisma.SortOrder
+  pausedAt?: Prisma.SortOrder
 }
 
 export type ScenarioRunMinOrderByAggregateInput = {
@@ -573,6 +762,13 @@ export type ScenarioRunMinOrderByAggregateInput = {
   endingType?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  isPlaytest?: Prisma.SortOrder
+  enrolmentId?: Prisma.SortOrder
+  schemaVersion?: Prisma.SortOrder
+  seedId?: Prisma.SortOrder
+  currentNodeId?: Prisma.SortOrder
+  pausedAt?: Prisma.SortOrder
 }
 
 export type ScenarioRunSumOrderByAggregateInput = {
@@ -580,6 +776,7 @@ export type ScenarioRunSumOrderByAggregateInput = {
   contentVersion?: Prisma.SortOrder
   pointsAwarded?: Prisma.SortOrder
   rating?: Prisma.SortOrder
+  schemaVersion?: Prisma.SortOrder
 }
 
 export type ScenarioRunScalarRelationFilter = {
@@ -645,6 +842,80 @@ export type NullableIntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type EnumRunStatusFieldUpdateOperationsInput = {
+  set?: $Enums.RunStatus
+}
+
+export type ScenarioRunCreateNestedOneWithoutEventsInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEventsInput, Prisma.ScenarioRunUncheckedCreateWithoutEventsInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEventsInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+}
+
+export type ScenarioRunUpdateOneRequiredWithoutEventsNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEventsInput, Prisma.ScenarioRunUncheckedCreateWithoutEventsInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEventsInput
+  upsert?: Prisma.ScenarioRunUpsertWithoutEventsInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutEventsInput, Prisma.ScenarioRunUpdateWithoutEventsInput>, Prisma.ScenarioRunUncheckedUpdateWithoutEventsInput>
+}
+
+export type ScenarioRunCreateNestedOneWithoutAnswersInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAnswersInput, Prisma.ScenarioRunUncheckedCreateWithoutAnswersInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutAnswersInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+}
+
+export type ScenarioRunUpdateOneRequiredWithoutAnswersNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAnswersInput, Prisma.ScenarioRunUncheckedCreateWithoutAnswersInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutAnswersInput
+  upsert?: Prisma.ScenarioRunUpsertWithoutAnswersInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutAnswersInput, Prisma.ScenarioRunUpdateWithoutAnswersInput>, Prisma.ScenarioRunUncheckedUpdateWithoutAnswersInput>
+}
+
+export type ScenarioRunCreateNestedOneWithoutFeedbackInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutFeedbackInput, Prisma.ScenarioRunUncheckedCreateWithoutFeedbackInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutFeedbackInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+}
+
+export type ScenarioRunUpdateOneRequiredWithoutFeedbackNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutFeedbackInput, Prisma.ScenarioRunUncheckedCreateWithoutFeedbackInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutFeedbackInput
+  upsert?: Prisma.ScenarioRunUpsertWithoutFeedbackInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutFeedbackInput, Prisma.ScenarioRunUpdateWithoutFeedbackInput>, Prisma.ScenarioRunUncheckedUpdateWithoutFeedbackInput>
+}
+
+export type ScenarioRunCreateNestedOneWithoutFlagsInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutFlagsInput, Prisma.ScenarioRunUncheckedCreateWithoutFlagsInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutFlagsInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+}
+
+export type ScenarioRunUpdateOneRequiredWithoutFlagsNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutFlagsInput, Prisma.ScenarioRunUncheckedCreateWithoutFlagsInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutFlagsInput
+  upsert?: Prisma.ScenarioRunUpsertWithoutFlagsInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutFlagsInput, Prisma.ScenarioRunUpdateWithoutFlagsInput>, Prisma.ScenarioRunUncheckedUpdateWithoutFlagsInput>
+}
+
+export type ScenarioRunCreateNestedOneWithoutNotesInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutNotesInput, Prisma.ScenarioRunUncheckedCreateWithoutNotesInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutNotesInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+}
+
+export type ScenarioRunUpdateOneRequiredWithoutNotesNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutNotesInput, Prisma.ScenarioRunUncheckedCreateWithoutNotesInput>
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutNotesInput
+  upsert?: Prisma.ScenarioRunUpsertWithoutNotesInput
+  connect?: Prisma.ScenarioRunWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutNotesInput, Prisma.ScenarioRunUpdateWithoutNotesInput>, Prisma.ScenarioRunUncheckedUpdateWithoutNotesInput>
+}
+
 export type ScenarioRunCreateNestedOneWithoutEvidenceInput = {
   create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEvidenceInput, Prisma.ScenarioRunUncheckedCreateWithoutEvidenceInput>
   connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEvidenceInput
@@ -657,6 +928,48 @@ export type ScenarioRunUpdateOneRequiredWithoutEvidenceNestedInput = {
   upsert?: Prisma.ScenarioRunUpsertWithoutEvidenceInput
   connect?: Prisma.ScenarioRunWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.ScenarioRunUpdateToOneWithWhereWithoutEvidenceInput, Prisma.ScenarioRunUpdateWithoutEvidenceInput>, Prisma.ScenarioRunUncheckedUpdateWithoutEvidenceInput>
+}
+
+export type ScenarioRunCreateNestedManyWithoutEnrolmentInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEnrolmentInput, Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput> | Prisma.ScenarioRunCreateWithoutEnrolmentInput[] | Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput[]
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEnrolmentInput | Prisma.ScenarioRunCreateOrConnectWithoutEnrolmentInput[]
+  createMany?: Prisma.ScenarioRunCreateManyEnrolmentInputEnvelope
+  connect?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+}
+
+export type ScenarioRunUncheckedCreateNestedManyWithoutEnrolmentInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEnrolmentInput, Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput> | Prisma.ScenarioRunCreateWithoutEnrolmentInput[] | Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput[]
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEnrolmentInput | Prisma.ScenarioRunCreateOrConnectWithoutEnrolmentInput[]
+  createMany?: Prisma.ScenarioRunCreateManyEnrolmentInputEnvelope
+  connect?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+}
+
+export type ScenarioRunUpdateManyWithoutEnrolmentNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEnrolmentInput, Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput> | Prisma.ScenarioRunCreateWithoutEnrolmentInput[] | Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput[]
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEnrolmentInput | Prisma.ScenarioRunCreateOrConnectWithoutEnrolmentInput[]
+  upsert?: Prisma.ScenarioRunUpsertWithWhereUniqueWithoutEnrolmentInput | Prisma.ScenarioRunUpsertWithWhereUniqueWithoutEnrolmentInput[]
+  createMany?: Prisma.ScenarioRunCreateManyEnrolmentInputEnvelope
+  set?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+  disconnect?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+  delete?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+  connect?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+  update?: Prisma.ScenarioRunUpdateWithWhereUniqueWithoutEnrolmentInput | Prisma.ScenarioRunUpdateWithWhereUniqueWithoutEnrolmentInput[]
+  updateMany?: Prisma.ScenarioRunUpdateManyWithWhereWithoutEnrolmentInput | Prisma.ScenarioRunUpdateManyWithWhereWithoutEnrolmentInput[]
+  deleteMany?: Prisma.ScenarioRunScalarWhereInput | Prisma.ScenarioRunScalarWhereInput[]
+}
+
+export type ScenarioRunUncheckedUpdateManyWithoutEnrolmentNestedInput = {
+  create?: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEnrolmentInput, Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput> | Prisma.ScenarioRunCreateWithoutEnrolmentInput[] | Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput[]
+  connectOrCreate?: Prisma.ScenarioRunCreateOrConnectWithoutEnrolmentInput | Prisma.ScenarioRunCreateOrConnectWithoutEnrolmentInput[]
+  upsert?: Prisma.ScenarioRunUpsertWithWhereUniqueWithoutEnrolmentInput | Prisma.ScenarioRunUpsertWithWhereUniqueWithoutEnrolmentInput[]
+  createMany?: Prisma.ScenarioRunCreateManyEnrolmentInputEnvelope
+  set?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+  disconnect?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+  delete?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+  connect?: Prisma.ScenarioRunWhereUniqueInput | Prisma.ScenarioRunWhereUniqueInput[]
+  update?: Prisma.ScenarioRunUpdateWithWhereUniqueWithoutEnrolmentInput | Prisma.ScenarioRunUpdateWithWhereUniqueWithoutEnrolmentInput[]
+  updateMany?: Prisma.ScenarioRunUpdateManyWithWhereWithoutEnrolmentInput | Prisma.ScenarioRunUpdateManyWithWhereWithoutEnrolmentInput[]
+  deleteMany?: Prisma.ScenarioRunScalarWhereInput | Prisma.ScenarioRunScalarWhereInput[]
 }
 
 export type ScenarioRunCreateWithoutUserInput = {
@@ -673,7 +986,19 @@ export type ScenarioRunCreateWithoutUserInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  enrolment?: Prisma.EnrollmentCreateNestedOneWithoutRunsInput
   evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunUncheckedCreateWithoutUserInput = {
@@ -690,7 +1015,19 @@ export type ScenarioRunUncheckedCreateWithoutUserInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
   evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagUncheckedCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteUncheckedCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunCreateOrConnectWithoutUserInput = {
@@ -737,6 +1074,673 @@ export type ScenarioRunScalarWhereInput = {
   endingType?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
   pointsAwarded?: Prisma.IntFilter<"ScenarioRun"> | number
   rating?: Prisma.IntNullableFilter<"ScenarioRun"> | number | null
+  status?: Prisma.EnumRunStatusFilter<"ScenarioRun"> | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFilter<"ScenarioRun"> | boolean
+  enrolmentId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  schemaVersion?: Prisma.IntFilter<"ScenarioRun"> | number
+  seedId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  currentNodeId?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
+  pausedAt?: Prisma.DateTimeNullableFilter<"ScenarioRun"> | Date | string | null
+}
+
+export type ScenarioRunCreateWithoutEventsInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  enrolment?: Prisma.EnrollmentCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutEventsInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagUncheckedCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutEventsInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEventsInput, Prisma.ScenarioRunUncheckedCreateWithoutEventsInput>
+}
+
+export type ScenarioRunUpsertWithoutEventsInput = {
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutEventsInput, Prisma.ScenarioRunUncheckedUpdateWithoutEventsInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEventsInput, Prisma.ScenarioRunUncheckedCreateWithoutEventsInput>
+  where?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunUpdateToOneWithWhereWithoutEventsInput = {
+  where?: Prisma.ScenarioRunWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutEventsInput, Prisma.ScenarioRunUncheckedUpdateWithoutEventsInput>
+}
+
+export type ScenarioRunUpdateWithoutEventsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  enrolment?: Prisma.EnrollmentUpdateOneWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutEventsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUncheckedUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUncheckedUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunCreateWithoutAnswersInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  enrolment?: Prisma.EnrollmentCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutAnswersInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagUncheckedCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutAnswersInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAnswersInput, Prisma.ScenarioRunUncheckedCreateWithoutAnswersInput>
+}
+
+export type ScenarioRunUpsertWithoutAnswersInput = {
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutAnswersInput, Prisma.ScenarioRunUncheckedUpdateWithoutAnswersInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutAnswersInput, Prisma.ScenarioRunUncheckedCreateWithoutAnswersInput>
+  where?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunUpdateToOneWithWhereWithoutAnswersInput = {
+  where?: Prisma.ScenarioRunWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutAnswersInput, Prisma.ScenarioRunUncheckedUpdateWithoutAnswersInput>
+}
+
+export type ScenarioRunUpdateWithoutAnswersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  enrolment?: Prisma.EnrollmentUpdateOneWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutAnswersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUncheckedUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUncheckedUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunCreateWithoutFeedbackInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  enrolment?: Prisma.EnrollmentCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  flags?: Prisma.ContentFlagCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutFeedbackInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  flags?: Prisma.ContentFlagUncheckedCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutFeedbackInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutFeedbackInput, Prisma.ScenarioRunUncheckedCreateWithoutFeedbackInput>
+}
+
+export type ScenarioRunUpsertWithoutFeedbackInput = {
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutFeedbackInput, Prisma.ScenarioRunUncheckedUpdateWithoutFeedbackInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutFeedbackInput, Prisma.ScenarioRunUncheckedCreateWithoutFeedbackInput>
+  where?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunUpdateToOneWithWhereWithoutFeedbackInput = {
+  where?: Prisma.ScenarioRunWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutFeedbackInput, Prisma.ScenarioRunUncheckedUpdateWithoutFeedbackInput>
+}
+
+export type ScenarioRunUpdateWithoutFeedbackInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  enrolment?: Prisma.EnrollmentUpdateOneWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutFeedbackInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUncheckedUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUncheckedUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunCreateWithoutFlagsInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  enrolment?: Prisma.EnrollmentCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackCreateNestedOneWithoutRunInput
+  notes?: Prisma.PlayerNoteCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutFlagsInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedCreateNestedOneWithoutRunInput
+  notes?: Prisma.PlayerNoteUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutFlagsInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutFlagsInput, Prisma.ScenarioRunUncheckedCreateWithoutFlagsInput>
+}
+
+export type ScenarioRunUpsertWithoutFlagsInput = {
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutFlagsInput, Prisma.ScenarioRunUncheckedUpdateWithoutFlagsInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutFlagsInput, Prisma.ScenarioRunUncheckedCreateWithoutFlagsInput>
+  where?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunUpdateToOneWithWhereWithoutFlagsInput = {
+  where?: Prisma.ScenarioRunWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutFlagsInput, Prisma.ScenarioRunUncheckedUpdateWithoutFlagsInput>
+}
+
+export type ScenarioRunUpdateWithoutFlagsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  enrolment?: Prisma.EnrollmentUpdateOneWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUpdateOneWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutFlagsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedUpdateOneWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUncheckedUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunCreateWithoutNotesInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  enrolment?: Prisma.EnrollmentCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutNotesInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutNotesInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutNotesInput, Prisma.ScenarioRunUncheckedCreateWithoutNotesInput>
+}
+
+export type ScenarioRunUpsertWithoutNotesInput = {
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutNotesInput, Prisma.ScenarioRunUncheckedUpdateWithoutNotesInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutNotesInput, Prisma.ScenarioRunUncheckedCreateWithoutNotesInput>
+  where?: Prisma.ScenarioRunWhereInput
+}
+
+export type ScenarioRunUpdateToOneWithWhereWithoutNotesInput = {
+  where?: Prisma.ScenarioRunWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutNotesInput, Prisma.ScenarioRunUncheckedUpdateWithoutNotesInput>
+}
+
+export type ScenarioRunUpdateWithoutNotesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  enrolment?: Prisma.EnrollmentUpdateOneWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutNotesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUncheckedUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunCreateWithoutEvidenceInput = {
@@ -753,7 +1757,19 @@ export type ScenarioRunCreateWithoutEvidenceInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
   user: Prisma.UserCreateNestedOneWithoutRunsInput
+  enrolment?: Prisma.EnrollmentCreateNestedOneWithoutRunsInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunUncheckedCreateWithoutEvidenceInput = {
@@ -771,6 +1787,18 @@ export type ScenarioRunUncheckedCreateWithoutEvidenceInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagUncheckedCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteUncheckedCreateNestedManyWithoutRunInput
 }
 
 export type ScenarioRunCreateOrConnectWithoutEvidenceInput = {
@@ -803,7 +1831,19 @@ export type ScenarioRunUpdateWithoutEvidenceInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  enrolment?: Prisma.EnrollmentUpdateOneWithoutRunsNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunUncheckedUpdateWithoutEvidenceInput = {
@@ -821,6 +1861,102 @@ export type ScenarioRunUncheckedUpdateWithoutEvidenceInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUncheckedUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUncheckedUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunCreateWithoutEnrolmentInput = {
+  id?: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunUncheckedCreateWithoutEnrolmentInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedCreateNestedManyWithoutRunInput
+  events?: Prisma.RunEventUncheckedCreateNestedManyWithoutRunInput
+  answers?: Prisma.AnswerUncheckedCreateNestedManyWithoutRunInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedCreateNestedOneWithoutRunInput
+  flags?: Prisma.ContentFlagUncheckedCreateNestedManyWithoutRunInput
+  notes?: Prisma.PlayerNoteUncheckedCreateNestedManyWithoutRunInput
+}
+
+export type ScenarioRunCreateOrConnectWithoutEnrolmentInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEnrolmentInput, Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput>
+}
+
+export type ScenarioRunCreateManyEnrolmentInputEnvelope = {
+  data: Prisma.ScenarioRunCreateManyEnrolmentInput | Prisma.ScenarioRunCreateManyEnrolmentInput[]
+  skipDuplicates?: boolean
+}
+
+export type ScenarioRunUpsertWithWhereUniqueWithoutEnrolmentInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  update: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutEnrolmentInput, Prisma.ScenarioRunUncheckedUpdateWithoutEnrolmentInput>
+  create: Prisma.XOR<Prisma.ScenarioRunCreateWithoutEnrolmentInput, Prisma.ScenarioRunUncheckedCreateWithoutEnrolmentInput>
+}
+
+export type ScenarioRunUpdateWithWhereUniqueWithoutEnrolmentInput = {
+  where: Prisma.ScenarioRunWhereUniqueInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateWithoutEnrolmentInput, Prisma.ScenarioRunUncheckedUpdateWithoutEnrolmentInput>
+}
+
+export type ScenarioRunUpdateManyWithWhereWithoutEnrolmentInput = {
+  where: Prisma.ScenarioRunScalarWhereInput
+  data: Prisma.XOR<Prisma.ScenarioRunUpdateManyMutationInput, Prisma.ScenarioRunUncheckedUpdateManyWithoutEnrolmentInput>
 }
 
 export type ScenarioRunCreateManyUserInput = {
@@ -837,6 +1973,13 @@ export type ScenarioRunCreateManyUserInput = {
   endingType?: string | null
   pointsAwarded?: number
   rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  enrolmentId?: string | null
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
 }
 
 export type ScenarioRunUpdateWithoutUserInput = {
@@ -853,7 +1996,19 @@ export type ScenarioRunUpdateWithoutUserInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  enrolment?: Prisma.EnrollmentUpdateOneWithoutRunsNestedInput
   evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunUncheckedUpdateWithoutUserInput = {
@@ -870,7 +2025,19 @@ export type ScenarioRunUncheckedUpdateWithoutUserInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUncheckedUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUncheckedUpdateManyWithoutRunNestedInput
 }
 
 export type ScenarioRunUncheckedUpdateManyWithoutUserInput = {
@@ -887,6 +2054,117 @@ export type ScenarioRunUncheckedUpdateManyWithoutUserInput = {
   endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
   rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  enrolmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScenarioRunCreateManyEnrolmentInput = {
+  id?: string
+  userId: string
+  scenarioKey: string
+  roleCode: string
+  band: string
+  seed: bigint | number
+  contentVersion?: number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Date | string
+  completedAt?: Date | string | null
+  endingId?: string | null
+  endingType?: string | null
+  pointsAwarded?: number
+  rating?: number | null
+  status?: $Enums.RunStatus
+  isPlaytest?: boolean
+  schemaVersion?: number
+  seedId?: string | null
+  currentNodeId?: string | null
+  pausedAt?: Date | string | null
+}
+
+export type ScenarioRunUpdateWithoutEnrolmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateWithoutEnrolmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  evidence?: Prisma.RunEvidenceUncheckedUpdateManyWithoutRunNestedInput
+  events?: Prisma.RunEventUncheckedUpdateManyWithoutRunNestedInput
+  answers?: Prisma.AnswerUncheckedUpdateManyWithoutRunNestedInput
+  feedback?: Prisma.ScenarioFeedbackUncheckedUpdateOneWithoutRunNestedInput
+  flags?: Prisma.ContentFlagUncheckedUpdateManyWithoutRunNestedInput
+  notes?: Prisma.PlayerNoteUncheckedUpdateManyWithoutRunNestedInput
+}
+
+export type ScenarioRunUncheckedUpdateManyWithoutEnrolmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  scenarioKey?: Prisma.StringFieldUpdateOperationsInput | string
+  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
+  band?: Prisma.StringFieldUpdateOperationsInput | string
+  seed?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
+  contentVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  actions?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  endingType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pointsAwarded?: Prisma.IntFieldUpdateOperationsInput | number
+  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
+  isPlaytest?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  schemaVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  seedId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentNodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pausedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 
@@ -896,10 +2174,18 @@ export type ScenarioRunUncheckedUpdateManyWithoutUserInput = {
 
 export type ScenarioRunCountOutputType = {
   evidence: number
+  events: number
+  answers: number
+  flags: number
+  notes: number
 }
 
 export type ScenarioRunCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   evidence?: boolean | ScenarioRunCountOutputTypeCountEvidenceArgs
+  events?: boolean | ScenarioRunCountOutputTypeCountEventsArgs
+  answers?: boolean | ScenarioRunCountOutputTypeCountAnswersArgs
+  flags?: boolean | ScenarioRunCountOutputTypeCountFlagsArgs
+  notes?: boolean | ScenarioRunCountOutputTypeCountNotesArgs
 }
 
 /**
@@ -919,6 +2205,34 @@ export type ScenarioRunCountOutputTypeCountEvidenceArgs<ExtArgs extends runtime.
   where?: Prisma.RunEvidenceWhereInput
 }
 
+/**
+ * ScenarioRunCountOutputType without action
+ */
+export type ScenarioRunCountOutputTypeCountEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RunEventWhereInput
+}
+
+/**
+ * ScenarioRunCountOutputType without action
+ */
+export type ScenarioRunCountOutputTypeCountAnswersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AnswerWhereInput
+}
+
+/**
+ * ScenarioRunCountOutputType without action
+ */
+export type ScenarioRunCountOutputTypeCountFlagsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ContentFlagWhereInput
+}
+
+/**
+ * ScenarioRunCountOutputType without action
+ */
+export type ScenarioRunCountOutputTypeCountNotesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PlayerNoteWhereInput
+}
+
 
 export type ScenarioRunSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -935,8 +2249,21 @@ export type ScenarioRunSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   endingType?: boolean
   pointsAwarded?: boolean
   rating?: boolean
+  status?: boolean
+  isPlaytest?: boolean
+  enrolmentId?: boolean
+  schemaVersion?: boolean
+  seedId?: boolean
+  currentNodeId?: boolean
+  pausedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  enrolment?: boolean | Prisma.ScenarioRun$enrolmentArgs<ExtArgs>
   evidence?: boolean | Prisma.ScenarioRun$evidenceArgs<ExtArgs>
+  events?: boolean | Prisma.ScenarioRun$eventsArgs<ExtArgs>
+  answers?: boolean | Prisma.ScenarioRun$answersArgs<ExtArgs>
+  feedback?: boolean | Prisma.ScenarioRun$feedbackArgs<ExtArgs>
+  flags?: boolean | Prisma.ScenarioRun$flagsArgs<ExtArgs>
+  notes?: boolean | Prisma.ScenarioRun$notesArgs<ExtArgs>
   _count?: boolean | Prisma.ScenarioRunCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["scenarioRun"]>
 
@@ -955,7 +2282,15 @@ export type ScenarioRunSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   endingType?: boolean
   pointsAwarded?: boolean
   rating?: boolean
+  status?: boolean
+  isPlaytest?: boolean
+  enrolmentId?: boolean
+  schemaVersion?: boolean
+  seedId?: boolean
+  currentNodeId?: boolean
+  pausedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  enrolment?: boolean | Prisma.ScenarioRun$enrolmentArgs<ExtArgs>
 }, ExtArgs["result"]["scenarioRun"]>
 
 export type ScenarioRunSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -973,7 +2308,15 @@ export type ScenarioRunSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   endingType?: boolean
   pointsAwarded?: boolean
   rating?: boolean
+  status?: boolean
+  isPlaytest?: boolean
+  enrolmentId?: boolean
+  schemaVersion?: boolean
+  seedId?: boolean
+  currentNodeId?: boolean
+  pausedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  enrolment?: boolean | Prisma.ScenarioRun$enrolmentArgs<ExtArgs>
 }, ExtArgs["result"]["scenarioRun"]>
 
 export type ScenarioRunSelectScalar = {
@@ -991,26 +2334,47 @@ export type ScenarioRunSelectScalar = {
   endingType?: boolean
   pointsAwarded?: boolean
   rating?: boolean
+  status?: boolean
+  isPlaytest?: boolean
+  enrolmentId?: boolean
+  schemaVersion?: boolean
+  seedId?: boolean
+  currentNodeId?: boolean
+  pausedAt?: boolean
 }
 
-export type ScenarioRunOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "scenarioKey" | "roleCode" | "band" | "seed" | "contentVersion" | "actions" | "startedAt" | "completedAt" | "endingId" | "endingType" | "pointsAwarded" | "rating", ExtArgs["result"]["scenarioRun"]>
+export type ScenarioRunOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "scenarioKey" | "roleCode" | "band" | "seed" | "contentVersion" | "actions" | "startedAt" | "completedAt" | "endingId" | "endingType" | "pointsAwarded" | "rating" | "status" | "isPlaytest" | "enrolmentId" | "schemaVersion" | "seedId" | "currentNodeId" | "pausedAt", ExtArgs["result"]["scenarioRun"]>
 export type ScenarioRunInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  enrolment?: boolean | Prisma.ScenarioRun$enrolmentArgs<ExtArgs>
   evidence?: boolean | Prisma.ScenarioRun$evidenceArgs<ExtArgs>
+  events?: boolean | Prisma.ScenarioRun$eventsArgs<ExtArgs>
+  answers?: boolean | Prisma.ScenarioRun$answersArgs<ExtArgs>
+  feedback?: boolean | Prisma.ScenarioRun$feedbackArgs<ExtArgs>
+  flags?: boolean | Prisma.ScenarioRun$flagsArgs<ExtArgs>
+  notes?: boolean | Prisma.ScenarioRun$notesArgs<ExtArgs>
   _count?: boolean | Prisma.ScenarioRunCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ScenarioRunIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  enrolment?: boolean | Prisma.ScenarioRun$enrolmentArgs<ExtArgs>
 }
 export type ScenarioRunIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  enrolment?: boolean | Prisma.ScenarioRun$enrolmentArgs<ExtArgs>
 }
 
 export type $ScenarioRunPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ScenarioRun"
   objects: {
     user: Prisma.$UserPayload<ExtArgs>
+    enrolment: Prisma.$EnrollmentPayload<ExtArgs> | null
     evidence: Prisma.$RunEvidencePayload<ExtArgs>[]
+    events: Prisma.$RunEventPayload<ExtArgs>[]
+    answers: Prisma.$AnswerPayload<ExtArgs>[]
+    feedback: Prisma.$ScenarioFeedbackPayload<ExtArgs> | null
+    flags: Prisma.$ContentFlagPayload<ExtArgs>[]
+    notes: Prisma.$PlayerNotePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1038,6 +2402,32 @@ export type $ScenarioRunPayload<ExtArgs extends runtime.Types.Extensions.Interna
      * Người chơi chấm tình huống có giống thực tế không (1–5 sao).
      */
     rating: number | null
+    /**
+     * *
+     *    * ── Ca làm (seed v2, Game Design W45) ───────────────────────────────
+     *    * Lượt chơi theo ca làm là chuỗi sự kiện append-only ở `RunEvent`;
+     *    * trạng thái = fold chuỗi đó qua `game-core`. Lượt prototype cũ (chơi hết
+     *    * rồi gửi một lần) có `schemaVersion = 1` và không có sự kiện nào.
+     */
+    status: $Enums.RunStatus
+    /**
+     * Lượt chơi thử của chuyên gia: không tính vào thống kê (D-46).
+     */
+    isPlaytest: boolean
+    enrolmentId: string | null
+    /**
+     * 1 = prototype (`/api/runs`), 2 = ca làm (`/api/v1/runs`).
+     */
+    schemaVersion: number
+    /**
+     * Mã seed ca làm, ví dụ `SWE_BACKEND.L3.m2`.
+     */
+    seedId: string | null
+    currentNodeId: string | null
+    /**
+     * Hết model AI dùng được: phiên tạm dừng, giữ tiến độ (D-92).
+     */
+    pausedAt: Date | null
   }, ExtArgs["result"]["scenarioRun"]>
   composites: {}
 }
@@ -1433,7 +2823,13 @@ readonly fields: ScenarioRunFieldRefs;
 export interface Prisma__ScenarioRunClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  enrolment<T extends Prisma.ScenarioRun$enrolmentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$enrolmentArgs<ExtArgs>>): Prisma.Prisma__EnrollmentClient<runtime.Types.Result.GetResult<Prisma.$EnrollmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   evidence<T extends Prisma.ScenarioRun$evidenceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$evidenceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RunEvidencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  events<T extends Prisma.ScenarioRun$eventsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RunEventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  answers<T extends Prisma.ScenarioRun$answersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$answersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AnswerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  feedback<T extends Prisma.ScenarioRun$feedbackArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$feedbackArgs<ExtArgs>>): Prisma.Prisma__ScenarioFeedbackClient<runtime.Types.Result.GetResult<Prisma.$ScenarioFeedbackPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  flags<T extends Prisma.ScenarioRun$flagsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$flagsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ContentFlagPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  notes<T extends Prisma.ScenarioRun$notesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$notesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlayerNotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1477,6 +2873,13 @@ export interface ScenarioRunFieldRefs {
   readonly endingType: Prisma.FieldRef<"ScenarioRun", 'String'>
   readonly pointsAwarded: Prisma.FieldRef<"ScenarioRun", 'Int'>
   readonly rating: Prisma.FieldRef<"ScenarioRun", 'Int'>
+  readonly status: Prisma.FieldRef<"ScenarioRun", 'RunStatus'>
+  readonly isPlaytest: Prisma.FieldRef<"ScenarioRun", 'Boolean'>
+  readonly enrolmentId: Prisma.FieldRef<"ScenarioRun", 'String'>
+  readonly schemaVersion: Prisma.FieldRef<"ScenarioRun", 'Int'>
+  readonly seedId: Prisma.FieldRef<"ScenarioRun", 'String'>
+  readonly currentNodeId: Prisma.FieldRef<"ScenarioRun", 'String'>
+  readonly pausedAt: Prisma.FieldRef<"ScenarioRun", 'DateTime'>
 }
     
 
@@ -1878,6 +3281,25 @@ export type ScenarioRunDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.I
 }
 
 /**
+ * ScenarioRun.enrolment
+ */
+export type ScenarioRun$enrolmentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Enrollment
+   */
+  select?: Prisma.EnrollmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Enrollment
+   */
+  omit?: Prisma.EnrollmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.EnrollmentInclude<ExtArgs> | null
+  where?: Prisma.EnrollmentWhereInput
+}
+
+/**
  * ScenarioRun.evidence
  */
 export type ScenarioRun$evidenceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1899,6 +3321,121 @@ export type ScenarioRun$evidenceArgs<ExtArgs extends runtime.Types.Extensions.In
   take?: number
   skip?: number
   distinct?: Prisma.RunEvidenceScalarFieldEnum | Prisma.RunEvidenceScalarFieldEnum[]
+}
+
+/**
+ * ScenarioRun.events
+ */
+export type ScenarioRun$eventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the RunEvent
+   */
+  select?: Prisma.RunEventSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the RunEvent
+   */
+  omit?: Prisma.RunEventOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.RunEventInclude<ExtArgs> | null
+  where?: Prisma.RunEventWhereInput
+  orderBy?: Prisma.RunEventOrderByWithRelationInput | Prisma.RunEventOrderByWithRelationInput[]
+  cursor?: Prisma.RunEventWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.RunEventScalarFieldEnum | Prisma.RunEventScalarFieldEnum[]
+}
+
+/**
+ * ScenarioRun.answers
+ */
+export type ScenarioRun$answersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Answer
+   */
+  select?: Prisma.AnswerSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Answer
+   */
+  omit?: Prisma.AnswerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AnswerInclude<ExtArgs> | null
+  where?: Prisma.AnswerWhereInput
+  orderBy?: Prisma.AnswerOrderByWithRelationInput | Prisma.AnswerOrderByWithRelationInput[]
+  cursor?: Prisma.AnswerWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AnswerScalarFieldEnum | Prisma.AnswerScalarFieldEnum[]
+}
+
+/**
+ * ScenarioRun.feedback
+ */
+export type ScenarioRun$feedbackArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ScenarioFeedback
+   */
+  select?: Prisma.ScenarioFeedbackSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ScenarioFeedback
+   */
+  omit?: Prisma.ScenarioFeedbackOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScenarioFeedbackInclude<ExtArgs> | null
+  where?: Prisma.ScenarioFeedbackWhereInput
+}
+
+/**
+ * ScenarioRun.flags
+ */
+export type ScenarioRun$flagsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ContentFlag
+   */
+  select?: Prisma.ContentFlagSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ContentFlag
+   */
+  omit?: Prisma.ContentFlagOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ContentFlagInclude<ExtArgs> | null
+  where?: Prisma.ContentFlagWhereInput
+  orderBy?: Prisma.ContentFlagOrderByWithRelationInput | Prisma.ContentFlagOrderByWithRelationInput[]
+  cursor?: Prisma.ContentFlagWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ContentFlagScalarFieldEnum | Prisma.ContentFlagScalarFieldEnum[]
+}
+
+/**
+ * ScenarioRun.notes
+ */
+export type ScenarioRun$notesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PlayerNote
+   */
+  select?: Prisma.PlayerNoteSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PlayerNote
+   */
+  omit?: Prisma.PlayerNoteOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PlayerNoteInclude<ExtArgs> | null
+  where?: Prisma.PlayerNoteWhereInput
+  orderBy?: Prisma.PlayerNoteOrderByWithRelationInput | Prisma.PlayerNoteOrderByWithRelationInput[]
+  cursor?: Prisma.PlayerNoteWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PlayerNoteScalarFieldEnum | Prisma.PlayerNoteScalarFieldEnum[]
 }
 
 /**

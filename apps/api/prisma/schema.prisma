@@ -45,15 +45,15 @@ model User {
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 
-  oauthAccounts  OAuthAccount[]
-  refreshTokens  RefreshToken[]
-  consent        ParentalConsent?
-  gameProfile    GameProfile?
-  runs           ScenarioRun[]
-  bandSkills     UserBandSkill[]
-  eventAnswers   EventAnswer[]
-  eventAwards    EventAward[]
-  enrollments    Enrollment[]
+  oauthAccounts OAuthAccount[]
+  refreshTokens RefreshToken[]
+  consent       ParentalConsent?
+  gameProfile   GameProfile?
+  runs          ScenarioRun[]
+  bandSkills    UserBandSkill[]
+  eventAnswers  EventAnswer[]
+  eventAwards   EventAward[]
+  enrollments   Enrollment[]
 }
 
 /// Liên kết nhà cung cấp đăng nhập. Bảng riêng thay vì cột `googleId` để
@@ -128,33 +128,169 @@ model GameProfile {
 /// gửi lên khi kết thúc. Giữ cả hai nghĩa là mọi điểm đã trao đều tái dựng
 /// lại được — không phải tin, mà kiểm được.
 model ScenarioRun {
-  id            String    @id @default(cuid())
-  userId        String
-  scenarioKey   String
-  roleCode      String
-  band          String
-  seed          BigInt
+  id             String    @id @default(cuid())
+  userId         String
+  scenarioKey    String
+  roleCode       String
+  band           String
+  seed           BigInt
   /// Phiên bản nội dung đã ghim cho lượt này.
   ///
   /// Máy chủ chấm điểm bằng cách CHẠY LẠI lượt chơi. Nội dung nay nằm trong
   /// database nên có thể đổi giữa chừng; đổi rồi mà chạy lại bằng bản mới thì
   /// lượt chơi rẽ nhánh khác và điểm ra sai. Ghim số này lúc mở màn khiến một
   /// lượt đang dở trở thành bất biến.
-  contentVersion Int      @default(0)
-  actions       Json?
-  startedAt     DateTime  @default(now())
-  completedAt   DateTime?
-  endingId      String?
-  endingType    String?
-  pointsAwarded Int       @default(0)
+  contentVersion Int       @default(0)
+  actions        Json?
+  startedAt      DateTime  @default(now())
+  completedAt    DateTime?
+  endingId       String?
+  endingType     String?
+  pointsAwarded  Int       @default(0)
   /// Người chơi chấm tình huống có giống thực tế không (1–5 sao).
-  rating        Int?
+  rating         Int?
 
-  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
-  evidence RunEvidence[]
+  /**
+   * ── Ca làm (seed v2, Game Design W45) ───────────────────────────────
+   * Lượt chơi theo ca làm là chuỗi sự kiện append-only ở `RunEvent`;
+   * trạng thái = fold chuỗi đó qua `game-core`. Lượt prototype cũ (chơi hết
+   * rồi gửi một lần) có `schemaVersion = 1` và không có sự kiện nào.
+   */
+
+  status        RunStatus @default(IN_PROGRESS)
+  /// Lượt chơi thử của chuyên gia: không tính vào thống kê (D-46).
+  isPlaytest    Boolean   @default(false)
+  enrolmentId   String?
+  /// 1 = prototype (`/api/runs`), 2 = ca làm (`/api/v1/runs`).
+  schemaVersion Int       @default(1)
+  /// Mã seed ca làm, ví dụ `SWE_BACKEND.L3.m2`.
+  seedId        String?
+  currentNodeId String?
+  /// Hết model AI dùng được: phiên tạm dừng, giữ tiến độ (D-92).
+  pausedAt      DateTime?
+
+  user      User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  enrolment Enrollment?       @relation(fields: [enrolmentId], references: [id], onDelete: SetNull)
+  evidence  RunEvidence[]
+  events    RunEvent[]
+  answers   Answer[]
+  feedback  ScenarioFeedback?
+  flags     ContentFlag[]
+  notes     PlayerNote[]
 
   @@index([userId, completedAt])
   @@index([userId, scenarioKey])
+  @@index([userId, seedId, status])
+}
+
+enum RunStatus {
+  IN_PROGRESS
+  FINISHED
+  ABANDONED
+}
+
+enum RunEventType {
+  /// Một thao tác của người chơi (`PlayerInput` của game-core).
+  PLAYER_INPUT
+  /// Lời AI-4 viết, kèm provenance. Không bao giờ sinh lại.
+  AI_NARRATION
+  /// Trả lời của bộ phán có/không, kèm provenance.
+  AI_CHECKS
+  /// Hết model: phiên tạm dừng. Không phải đầu vào của engine.
+  RUN_PAUSED
+}
+
+/// Chuỗi sự kiện của một lượt ca làm (ERD-05 `run_event`). Chỉ thêm, không sửa.
+model RunEvent {
+  id        BigInt       @id @default(autoincrement())
+  runId     String
+  /// Thứ tự trong lượt. Unique cùng `runId`: hai yêu cầu ghi cùng chỗ thì một bên thua.
+  seq       Int
+  type      RunEventType
+  /// Lượt người chơi sinh ra sự kiện này.
+  turnId    String?
+  payload   Json
+  createdAt DateTime     @default(now())
+
+  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@unique([runId, seq])
+  @@map("run_event")
+}
+
+enum TurnStatus {
+  /// Đã lưu, đang chờ AI (job trong hàng đợi).
+  PENDING
+  DONE
+  /// Hết model: lượt dừng lại, giữ tiến độ.
+  PAUSED
+}
+
+/// Một lượt của người chơi (ERD-06 `answer`). `id` do máy khách tạo (NFR-04).
+model Answer {
+  id          String     @id
+  runId       String
+  kind        String
+  text        String?
+  payload     Json
+  status      TurnStatus @default(PENDING)
+  /// Job xử lý lượt này, khi cần AI.
+  jobId       String?
+  /// Các dòng thoại lượt này sinh ra: `[lineFrom, lineTo)` trong transcript.
+  lineFrom    Int
+  lineTo      Int?
+  submittedAt DateTime   @default(now())
+  completedAt DateTime?
+
+  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([runId, status])
+  @@map("answer")
+}
+
+/// Tổng kết cuối ca (ERD-06 `scenario_feedback`). Chưa chấm điểm.
+model ScenarioFeedback {
+  runId     String   @id
+  summary   Json
+  createdAt DateTime @default(now())
+
+  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@map("scenario_feedback")
+}
+
+enum FlagStatus {
+  OPEN
+  HANDLED
+}
+
+/// Người chơi báo nội dung sai (ERD-05 `content_flag`).
+model ContentFlag {
+  id          String     @id @default(uuid())
+  runId       String
+  /// Nút hay dòng thoại bị báo.
+  activityKey String
+  reason      String
+  status      FlagStatus @default(OPEN)
+  createdAt   DateTime   @default(now())
+
+  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([status])
+  @@map("content_flag")
+}
+
+/// Ghi chú riêng của người chơi trong sổ tay (khối M). Không gửi AI, không chấm.
+model PlayerNote {
+  id        String   @id @default(uuid())
+  runId     String
+  text      String
+  createdAt DateTime @default(now())
+
+  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([runId])
+  @@map("player_note")
 }
 
 /// Bằng chứng do máy chủ chấm lại, không phải điều máy khách khai.
@@ -245,24 +381,25 @@ model Enrollment {
   band       String
   enrolledAt DateTime @default(now())
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  runs ScenarioRun[]
 
   @@unique([userId, roleCode, band])
   @@index([userId])
 }
 
-/* ══ Nội dung game ═══════════════════════════════════════════════════════
-   Trước đây toàn bộ nội dung nằm trong mã (`packages/game-core/src/data`),
-   nên sửa một câu thoại là phải build lại cả hai ứng dụng, và trình duyệt
-   tải về 193 KB dữ liệu ở mỗi lần mở trang.
-
-   Mỗi thực thể một dòng: vài cột để tra cứu, cộng một cột `body` giữ nguyên
-   hình dạng mà Zod schema trong `game-core` đã định nghĩa — hợp đồng dữ liệu
-   không đổi, chỉ đổi chỗ cất.
-
-   Mọi bảng đều có `version`: cùng một `version` là một ảnh chụp nhất quán của
-   cả bộ dữ liệu. Chỉ script seed ghi vào những bảng này; API không có đường
-   ghi nào. */
+/**
+ * ══ Nội dung game ═══════════════════════════════════════════════════════
+ * Trước đây toàn bộ nội dung nằm trong mã (`packages/game-core/src/data`),
+ * nên sửa một câu thoại là phải build lại cả hai ứng dụng, và trình duyệt
+ * tải về 193 KB dữ liệu ở mỗi lần mở trang.
+ * Mỗi thực thể một dòng: vài cột để tra cứu, cộng một cột `body` giữ nguyên
+ * hình dạng mà Zod schema trong `game-core` đã định nghĩa — hợp đồng dữ liệu
+ * không đổi, chỉ đổi chỗ cất.
+ * Mọi bảng đều có `version`: cùng một `version` là một ảnh chụp nhất quán của
+ * cả bộ dữ liệu. Chỉ script seed ghi vào những bảng này; API không có đường
+ * ghi nào.
+ */
 
 /// Phiên bản nội dung đang được phục vụ.
 model ContentRelease {
@@ -325,11 +462,11 @@ model QuizQuestionDoc {
 /// Lời NPC cho lượt đào sâu. Có lời mới được mở lượt đào sâu, nên đây vừa là
 /// nội dung vừa là điều kiện của luật chơi.
 model FollowupDoc {
-  version    Int
+  version     Int
   scenarioKey String
-  activityId String
-  who        String
-  text       String
+  activityId  String
+  who         String
+  text        String
 
   @@id([version, scenarioKey, activityId])
 }
@@ -351,4 +488,24 @@ model MetaDoc {
   body    Json
 
   @@id([version, key])
+}
+
+/// Seed ca làm (Game Design W45), theo `shift.ShiftSeedSchema` của game-core.
+model ShiftSeedDoc {
+  version  Int
+  seedId   String
+  levelRef String
+  title    String
+  body     Json
+
+  @@id([version, seedId])
+}
+
+/// Gói cấp của ca làm: công ty, quy định, nhịp thời gian (khối G).
+model LevelPackDoc {
+  version Int
+  packId  String
+  body    Json
+
+  @@id([version, packId])
 }

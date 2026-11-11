@@ -1,0 +1,10 @@
+# Dịch vụ phụ khi chạy JobQuest ở máy dev (khác compose Overleaf trong cùng thư mục).
+#   docker compose -f infra/local/dev-stack.yml up -d
+# Redis: hàng đợi job (BullMQ) và pub/sub cho luồng sự kiện /api/v1/stream.
+services:
+  redis:
+    image: redis:7.4-alpine
+    container_name: jobquest-redis
+    ports:
+      - '6379:6379'
+    restart: unless-stopped

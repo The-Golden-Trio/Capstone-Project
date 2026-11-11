@@ -14,7 +14,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { PrismaPg } from '@prisma/adapter-pg';
-import { FOLLOWUP_LINES, GameDataSchema, type GameData } from '@datn/game-core';
+import { FOLLOWUP_LINES, GameDataSchema, shift, type GameData } from '@datn/game-core';
 import { PrismaClient } from '../generated/prisma/client';
 import type { Prisma } from '../generated/prisma/client';
 
@@ -99,6 +99,14 @@ interface GalaxyLike {
 
 async function main() {
   const game = parseGameData(readJson('game-data.json'));
+  // Seed ca làm: kiểm schema và lint trước khi ghi (Game Design W45).
+  const shiftData = shift.ShiftDataSchema.parse(readJson('shift-seeds.json'));
+  for (const seed of Object.values(shiftData.seeds)) {
+    const pack = shiftData.packs[seed.level_ref];
+    if (!pack) throw new Error(`Seed ${seed.id} trỏ tới gói cấp ${seed.level_ref} không có`);
+    const issues = shift.lintSeed(seed, pack);
+    if (issues.length > 0) throw new Error(`Seed ${seed.id} chưa qua lint:\n  • ${issues.join('\n  • ')}`);
+  }
   const galaxy = readJson('galaxy-data.json') as GalaxyLike;
 
   if (!Array.isArray(galaxy.groups) || !Array.isArray(galaxy.nodes)) {
@@ -207,6 +215,23 @@ async function main() {
         ],
       });
 
+      await tx.levelPackDoc.createMany({
+        data: Object.values(shiftData.packs).map((pack) => ({
+          version,
+          packId: pack.id,
+          body: asJson(pack),
+        })),
+      });
+      await tx.shiftSeedDoc.createMany({
+        data: Object.values(shiftData.seeds).map((seed) => ({
+          version,
+          seedId: seed.id,
+          levelRef: seed.level_ref,
+          title: seed.title,
+          body: asJson(seed),
+        })),
+      });
+
       // Lật cờ sau cùng: tới lúc này phiên bản mới đã đầy đủ.
       await tx.contentRelease.updateMany({
         where: { active: true },
@@ -227,6 +252,9 @@ async function main() {
     console.log(
       `  ngân hà: ${galaxy.groups.length} nhóm | ${galaxy.nodes.length} hành tinh | ` +
         `${Object.keys(FOLLOWUP_LINES).length} lời đào sâu`,
+    );
+    console.log(
+      `  ca làm: ${Object.keys(shiftData.seeds).length} seed | ${Object.keys(shiftData.packs).length} gói cấp`,
     );
   } finally {
     await prisma.$disconnect();

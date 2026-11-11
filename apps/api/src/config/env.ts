@@ -36,6 +36,17 @@ const EnvSchema = z.object({
   /** Gốc của web app, dùng cho CORS khi chạy thật. Lúc dev có proxy nên không cần. */
   WEB_ORIGIN: z.string().default('http://localhost:4200'),
 
+  /** Redis: hàng đợi job (BullMQ) và pub/sub đẩy sự kiện tới `/stream`. */
+  REDIS_URL: blankAsUnset(z.string().url().default('redis://localhost:6379')),
+
+  /**
+   * AI của luồng chơi ca làm. `live`: gọi model qua gateway. `fake`: narrator
+   * và bộ phán giả của game-core, để dev và demo không cần key. `fake` bị cấm
+   * khi chạy production (D-92: không có đường thay thế không dùng AI).
+   * Để trống: `fake` lúc dev/test, `live` lúc production.
+   */
+  AI_MODE: blankAsUnset(z.enum(['live', 'fake']).optional()),
+
   /*
    * Model AI. Không bắt buộc: thiếu key thì API vẫn chạy, chỉ phần gọi model
    * báo "không có model" — để cả nhóm chạy được backend khi chưa mua token.
@@ -88,6 +99,11 @@ const EnvSchema = z.object({
 
 export type Env = z.infer<typeof EnvSchema>;
 
+/** Chế độ AI thực tế, đã áp mặc định theo NODE_ENV. */
+export function aiModeOf(env: Pick<Env, 'AI_MODE' | 'NODE_ENV'>): 'live' | 'fake' {
+  return env.AI_MODE ?? (env.NODE_ENV === 'production' ? 'live' : 'fake');
+}
+
 const AiEnvSchema = EnvSchema.pick({
   QWEN_API_KEY: true,
   QWEN_REGION: true,
@@ -116,6 +132,11 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): Env {
     throw new Error(
       `Cấu hình môi trường không hợp lệ:\n${issues}\n\n` +
         `Xem apps/api/.env.example để biết cần những biến nào.`,
+    );
+  }
+  if (result.data.NODE_ENV === 'production' && result.data.AI_MODE === 'fake') {
+    throw new Error(
+      'AI_MODE=fake không được dùng khi NODE_ENV=production (D-92: không có đường thay thế không dùng AI).',
     );
   }
   return result.data;
