@@ -166,7 +166,7 @@ Runtime **cấm quan sát kỹ năng nằm ngoài `context.skills_hard` và `con
 ### Bối cảnh sân khấu
 
 - **`company_type`** ∈ `outsourcing` | `product_local` | `enterprise_bank` | `bigtech_fdi`. **Chỉ được chọn nhóm mà `company_type_variance` của role đó KHÔNG phải `CHUA_CO_DU_LIEU`.** Chọn nhóm không có dữ liệu = bịa bối cảnh.
-- **`work_environment_id`** lấy từ `work_environment_ids[]` của role. Trỏ bằng id, **KHÔNG copy mô tả** sang file scenario — quy ước này đã ghi ở `shared/work_environments.json`.
+- **`work_environment_id`** lấy từ cột `environments` của nghề trong `decisions/occupation_work_environments.csv` (mã trong `datasets/work_environments.json`). Trỏ bằng id, **KHÔNG copy mô tả** sang file scenario.
 - **`cast[]`**: 2–4 NPC. Mỗi NPC có `role_in_scene`, một **áp lực** rõ ràng (thứ khiến họ không rảnh rỗi giúp người chơi), và `voice` (cách nói).
 
 Công ty trong scenario là **hư cấu và vô danh**: `"một ngân hàng trong nước"`, `"một công ty product tầm trung"`. Tên công ty thật chỉ tồn tại ở tầng evidence của dataset (`evidence_company`), không bao giờ xuất hiện trong nội dung chơi.

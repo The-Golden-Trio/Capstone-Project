@@ -21,7 +21,8 @@ occupation-data/
 | `datasets/78_roles_unmerged.json` | 78 nghề, task và skill theo từng cấp | `docs/data/build-galaxy.mjs`, `scripts/build_skill_taxonomy.py`, `tools/visualize_dataset.html` |
 | `datasets/DRAFT_fit_quiz.json` | 6 câu Get-to-know-me | `docs/data/build.mjs` |
 | `_archive/occupation-data/roles.csv` | Danh mục 78 `role_code` hợp lệ, đã chuyển vào `_archive/` | Luật trong `specs/` vẫn trỏ `datasets/roles.csv` (xem `JSON_SCHEMA.md` §11) |
-| `datasets/work_environments.json` | 6 môi trường làm việc | Kịch bản trỏ `work_environment_id` vào đây |
+| `datasets/work_environments.json` | 110 loại hình nơi làm theo 22 nhóm ngành (kho random công ty hư cấu), mỗi thuộc tính có mức chứng cứ và nguồn | Kịch bản trỏ `work_environment_id` vào đây; `scripts/build_occupation_profiles.py` |
+| `decisions/occupation_work_environments.csv` | 221 nghề → 1–3 loại hình nơi làm, trọng số random, lý do | `scripts/build_occupation_profiles.py` |
 | `scenarios/SWE_BACKEND/L1_S_EXEC.json` | Kịch bản L1 "Tham gia fix các bug mức độ ưu tiên thấp" | `docs/data/build.mjs`, script taxonomy |
 | `scenarios/SWE_BACKEND/L3_S_INCIDENT.json` | Kịch bản L3 "Tối ưu hóa các API bị chậm" — **golden anchor** của spec | `docs/data/build.mjs`, script taxonomy |
 | `generated/skills_taxonomy.json` | 227 skill chuẩn hoá | `scripts/build_role_graph.py`, webpack API (copy vào `dist`), module API cũ |
@@ -78,9 +79,10 @@ external/esco_1_2_1/*.csv (ESCO v1.2.1, tải tay, xem dưới) + external/onet_
          ▲ đọc research/research_notes/Bản đồ keyword/ (nghe_esco.csv, keyword_chon_tay.csv, ten_keyword_vi.csv, keyword_it*.csv)
 
 external/vietjobs/ (tải bằng --download)
-   └─ python3 occupation-data/scripts/build_vietjobs_stats.py ─► generated/vietjobs_stats.json
+   └─ python3 occupation-data/scripts/build_vietjobs_stats.py ─► generated/vietjobs_stats.json  (lương rao, số tin, lịch làm rao)
 
 Tất cả các file trên + datasets/vn/ + decisions/education_map.json + datasets/work_settings.json
+  + datasets/work_environments.json + decisions/occupation_work_environments.csv
    └─ python3 occupation-data/scripts/build_occupation_profiles.py ─► generated/occupation_profiles.json  (221 nghề, chạy CUỐI)
          ▲ đọc decisions/onet_merge/*.json + datasets/onet_vi/*.json
 ```

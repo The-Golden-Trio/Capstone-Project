@@ -1,0 +1,27 @@
+
+# out_V6.json — 21 bản ghi, 528 kiểm
+PASS R4 số nhịp                21 đạt, 0 trượt 
+PASS R2 câu hỏi                21 đạt, 0 trượt 
+PASS R2 question_by khớp       21 đạt, 0 trượt 
+PASS R4 ≤120 ký tự             75 đạt, 0 trượt 
+PASS không lọt biến {…}        75 đạt, 0 trượt 
+PASS canh không có mặt         17 đạt, 0 trượt 
+PASS speaker hợp lệ            58 đạt, 0 trượt 
+PASS expression hợp lệ         58 đạt, 0 trượt 
+PASS không chữ số lạ           58 đạt, 0 trượt 
+FAIL màn làm việc không chạm đời tư  48 đạt, 1 trượt · W1/5 quan_ly: ['lo người ta']
+FAIL trợ từ ≤25% (làm tròn lên)  29 đạt, 1 trượt · W4 IX_an_si "đấy": 2/4
+PASS không trợ từ cấm          20 đạt, 0 trượt 
+PASS mặt hiếm ≤10%             10 đạt, 0 trượt 
+PASS ≥3 mặt khi ≥6 nhịp         5 đạt, 0 trượt 
+PASS câu của riêng ≤1          10 đạt, 0 trượt 
+S1 IV_hoang_de          nhịp  9  mặt {'binh_thuong': 4, 'kho_chiu': 1, 'suy_nghi': 2, 'vui': 2}
+W1 III_hoang_hau        nhịp  6  mặt {'binh_thuong': 1, 'kho_chiu': 1, 'lo_lang': 3, 'vui': 1}
+W1 XIX_mat_troi         nhịp  6  mặt {'binh_thuong': 1, 'cuoi_lon': 2, 'kho_chiu': 1, 'vui': 2}
+W1 XVI_toa_thap         nhịp  7  mặt {'binh_thuong': 1, 'lo_lang': 3, 'ngac_nhien': 2, 'vui': 1}
+W3 XVIII_mat_trang      nhịp  5  mặt {'binh_thuong': 3, 'suy_nghi': 1, 'vui': 1}
+W3 XV_ac_quy            nhịp  5  mặt {'binh_thuong': 2, 'cuoi_lon': 1, 'kho_chiu': 1, 'vui': 1}
+W3 XXI_the_gioi         nhịp  5  mặt {'binh_thuong': 2, 'kho_chiu': 1, 'suy_nghi': 1, 'vui': 1}
+W4 IX_an_si             nhịp  4  mặt {'binh_thuong': 2, 'suy_nghi': 1, 'vui': 1}
+W4 VIII_suc_manh        nhịp  6  mặt {'binh_thuong': 3, 'lo_lang': 1, 'vui': 2}
+W4 XIII_cai_chet        nhịp  5  mặt {'binh_thuong': 3, 'buon': 1, 'suy_nghi': 1}

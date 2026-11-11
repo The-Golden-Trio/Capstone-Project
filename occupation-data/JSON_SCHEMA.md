@@ -50,7 +50,8 @@ Skeleton viết dạng JSONC (JSON có comment). Quy ước:
 | 3 | `datasets/78_roles_unmerged.json` | **Taxonomy gốc**: 78 nghề IT, mỗi nghề có ladder cấp bậc, task, skill, quan hệ nghề | 725 KB · 78 role · 263 level | ✅ |
 | 4 | `datasets/final_22_roles.json` | **Bản chính của app**: 22 nghề sau khi gộp, có lương, skill ITviec, graph, 97 sự kiện, work-life | 518 KB · 22 role | ✅ |
 | 5 | `decisions/roles_18_playable.json` | Danh sách 18 nghề được chọn để chơi được | 15 KB · 18 role | ✅ |
-| 6 | `datasets/work_environments.json` | 6 kiểu môi trường làm việc (onsite, hybrid, ca kíp…) | 13 KB · 6 mục | ✅ |
+| 6 | `datasets/work_environments.json` | 110 loại hình nơi làm theo 22 nhóm ngành, kho random công ty hư cấu; mỗi thuộc tính có mức chứng cứ và nguồn | 110 mục | ✅ |
+| 6 | `decisions/occupation_work_environments.csv` | 221 nghề → 1–3 loại hình nơi làm, kèm trọng số random và lý do | 221 dòng | ✅ |
 | 7 | `datasets/DRAFT_fit_quiz.json` | 6 câu Get-to-know-me, đo người chơi trên 8 chiều fit | 5 KB · 6 câu | ✅ |
 | 8 | `generated/skills_taxonomy.json` | 227 skill chuẩn hoá, mỗi skill một `skill_id` | 58 KB | ❌ script sinh |
 | 9 | `generated/role_graph.json` | Graph 22 hành tinh + 64 cạnh + 39 alias, dùng cho bản đồ ngân hà | 52 KB | ❌ script sinh |
@@ -166,11 +167,9 @@ Dùng chung cho quiz, sự kiện role-play và FitRadar. Mọi object `signal: 
 | `enterprise_bank` | IT trong ngân hàng, bán lẻ, doanh nghiệp non-IT | 43,0 tr |
 | `bigtech_fdi` | Big tech / FDI / IT Services & Consulting | 48,2 tr |
 
-### `work_environment_id`: môi trường làm việc
+### `work_environment_id`: loại hình nơi làm
 
-Định nghĩa đầy đủ ở [§6](#6-datasetswork_environmentsjson).
-
-`WE_ONSITE_ENTERPRISE` · `WE_HYBRID_PRODUCT` · `WE_PROJECT_OUTSOURCING` · `WE_SHIFT_24_7` · `WE_FIELD_CLIENT` · `WE_REMOTE_GLOBAL`
+Định nghĩa đầy đủ ở [§6](#6-datasetswork_environmentsjson). 110 mã, dạng `WE_<NHÓM>_<LOẠI>` (ví dụ `WE_HEALTH_PUBLIC_HOSPITAL`, `WE_EDU_CENTER`, `WE_TRANS_DELIVERY`). Sáu mã IT giữ tên cũ vì kịch bản đang trỏ vào: `WE_ONSITE_ENTERPRISE` · `WE_HYBRID_PRODUCT` · `WE_PROJECT_OUTSOURCING` · `WE_SHIFT_24_7` · `WE_FIELD_CLIENT` · `WE_REMOTE_GLOBAL`.
 
 ### `education_path_id`: con đường học vấn
 
@@ -406,9 +405,7 @@ Chỉ xuất hiện trong `78_roles_unmerged.json` (11/78 role đã gán). **Kh�
     },
 
     // ─── Môi trường làm việc & học vấn ───────────────────────
-    "work_environment_ids": ["WE_HYBRID_PRODUCT"], // 0–4 môi trường điển hình (xem §6). Rỗng ở 67/78
-    "work_environment_primary": "WE_HYBRID_PRODUCT | null", // Môi trường chính
-    "work_environment_note": "string",             // Căn cứ gán, hoặc "Chưa gán. Thuộc Pass 2…"
+    // work_environment_ids / _primary / _note đã xoá 29/10/2026: loại hình nơi làm nằm ở decisions/occupation_work_environments.csv (§6)
     "education_path_ids": ["EDU_CS_PREFERRED"],    // 0–2 con đường học vấn (xem §2)
     "education_path_primary": "string | null",
     "education_path_note": "string",
@@ -595,8 +592,7 @@ Hai mảng dùng **cùng một cấu trúc**. Mỗi sự kiện là một màn n
   "feeder_roles": [                  // Nghề mà người ta đi từ đó lên nghề này
     { "role_code": "SWE_BACKEND", "role_name": "Backend Developer" }
   ],
-  // ↓ Chép nguyên từ 78_roles_unmerged.json cùng role_code (xem §3). Rỗng ở 14/22
-  "work_environment_ids": ["WE_HYBRID_PRODUCT"], "work_environment_primary": "string | null", "work_environment_note": "string",
+  // ↓ Chép nguyên từ 78_roles_unmerged.json cùng role_code (xem §3). Loại hình nơi làm không còn ở đây (§6)
   "education_path_ids": ["EDU_CS_PREFERRED"], "education_path_primary": "string | null", "education_path_note": "string",
   "job_outlook": { ... },            // Như §3. itviec_open_postings có ở 11/22, đếm ngày 22/08/2026
   "onet": {                          // Mã O*NET dùng cho FR-03. 22/22
@@ -793,54 +789,80 @@ Hai mảng dùng **cùng một cấu trúc**. Mỗi sự kiện là một màn n
 
 ## 6. `datasets/work_environments.json`
 
-**Là gì:** danh mục **6 kiểu môi trường làm việc** ở VN (giờ giấc, onsite/remote, ca kíp, nhịp release…). Nghề và kịch bản **trỏ vào** đây bằng ID, không chép nội dung.
+**Là gì:** danh mục **110 loại hình nơi làm** ở Việt Nam, chia theo **22 nhóm ngành** (`industries`). Đây là kho để random công ty hư cấu cho mỗi cấp nghề: công ty đem tới bối cảnh (giờ làm, ca kíp, nhịp việc, nơi làm) cho lời dẫn, **không** đổi thứ được chấm hay độ khó. Nghề trỏ vào đây qua `decisions/occupation_work_environments.csv`; kịch bản trỏ bằng `context.work_environment_id`. Không chép nội dung sang file nghề.
 
-**Kích thước:** 6 môi trường · trạng thái `CHUA_VERIFY` (bản nháp, suy luận từ hiểu biết thị trường, chưa đối chiếu JD).
+**Trạng thái:** `DA_KIEM_NGUON` (bản 1.0, 29/10/2026). Mỗi thuộc tính có mức chứng cứ riêng; khoảng 79% thuộc tính vẫn là C (suy luận). Ghi chú nguồn ở `research/research_notes/Môi trường làm việc/`.
 
-**Ai dùng:** `78_roles_unmerged.json` (`work_environment_ids`), kịch bản (`context.work_environment_id`).
+**Ai dùng:** `scripts/build_occupation_profiles.py` (kiểm hợp lệ, đưa mã và tên vào hồ sơ), kịch bản (`context.work_environment_id`). Trường `work_environment_ids`, `_primary`, `_note` cũ đã xoá khỏi `78_roles_unmerged.json`, `final_22_roles.json` và `generated/onet_all_roles.json` (29/10/2026); ghi chú gán cũ chép lại ở phụ lục `nguon_it.md`.
+
+**Đổi so với bản 0.1** (6 môi trường IT, `CHUA_VERIFY`): `release_cadence` đổi thành `peak_season` (nhịp cao điểm); `schedule_type` và `flexibility` chuyển sang `levels` (mã cố định); thêm `shifts`, `workweek`, `overtime` (kèm mức `overtime_level`, `overtime_pay`: tăng ca nhiều hay ít và có được trả đúng không, theo loại hình), `customer_contact`, `physical_conditions`; `dress_code` gộp cả đồng phục và bảo hộ, làm đầu vào cho asset trang phục NPC (người dùng chốt 29/10/2026); bỏ `typical_role_codes` (đã có file gán), `confidence`, `verification_needed`, `name_en` (thay bằng `evidence` theo từng thuộc tính).
 
 ### Skeleton
 
 ```jsonc
 {
   "_meta": {
-    "file": "shared/work_environments.json", // Đường dẫn gốc lúc tạo
-    "version": "0.1-draft",
-    "status": "CHUA_VERIFY",         // Chưa được kiểm chứng
-    "note": "string",                // Bản nháp, cần duyệt
-    "usage": "string",               // Cách tham chiếu: role trỏ bằng work_environment_ids[] + work_environment_primary
-    "assignment_rule": "string",     // Luật gán: mỗi role 1–3 ID, căn cứ JD có nhắc ca kíp/on-call/onsite/remote…
-    "company_type_note": "string"    // Phân biệt company_type (loại công ty) với môi trường làm việc
+    "version": "1.0", "status": "DA_KIEM_NGUON", "updated": "2026-10-29",
+    "note": "string", "usage": "string",
+    "random_rule": "string",           // Cách random công ty theo trọng số của nghề rồi theo company_slots
+    "evidence_levels": { "A": "string", "B": "string", "C": "string" },
+    "evidence_format": "string",
+    "attributes": { "hours": { "name_vn": "Giờ làm", "description": "string" } },   // 12 thuộc tính chữ, xem bảng dưới
+    "levels": { "weekend": { "name_vn": "Cuối tuần", "values": { "nghi": "Nghỉ thứ 7, Chủ nhật" } } },  // 5 mức có mã
+    "prevalence": { "pho_bien": "string", "vua": "string", "it": "string" },
+    "sources": { "BLLD2019": { "title": "string", "url": "string",
+                               "checked": "toan_van | tom_tat | doan_trich | du_lieu",  // Đã đọc tới đâu
+                               "note": "research/research_notes/Môi trường làm việc/<file>.md" } }
+  },
+  "industries": {
+    "IND_HEALTH": { "name_vn": "Y tế", "diversity": "string",  // Thực tế thị trường VN: có những loại nơi làm nào, loại nào đông
+                    "sources": ["BV_2025"] }
   },
   "environments": [
     {
-      "id": "WE_ONSITE_ENTERPRISE",  // Mã môi trường (xem §2)
-      "name_vn": "Onsite doanh nghiệp lớn / ngân hàng", // Tên tiếng Việt
-      "name_en": "Onsite Enterprise",                    // Tên tiếng Anh
-      "summary": "string",           // Mô tả ngắn môi trường này
-      "attributes": {                // Thuộc tính mô tả ngày làm việc
-        "location": "onsite",        // Làm ở đâu: onsite / hybrid / remote / tại khách hàng
-        "hours": "giờ hành chính cố định (thường 8:00-17:00)", // Giờ giấc
-        "schedule_type": "regular" | "shift" | "regular_with_windows", // Hành chính / ca kíp / hành chính + khung giờ cắt chuyển ban đêm
-        "flexibility": "thấp",       // Mức linh hoạt: rất thấp → rất cao
-        "dress_code": "string",      // Trang phục
-        "on_call": "string",         // Có phải trực ngoài giờ không
-        "travel": "string",          // Mức đi công tác
-        "pace": "string",            // Nhịp làm việc
-        "release_cadence": "string"  // Tần suất phát hành phần mềm
-      },
-      "typical_company_types": ["Ngân hàng", "Viễn thông"], // Loại công ty điển hình (chữ tự do, không phải mã company_type)
-      "typical_role_codes": ["SWE_BACKEND"], // Nghề thường gặp môi trường này
-      "pros": ["Ổn định, ít rủi ro mất việc"], // 3 điểm cộng
-      "cons": ["Công nghệ thường cũ hơn thị trường vài năm"], // 2–3 điểm trừ
-      "note_for_students": "string", // Lời khuyên cho người đang chọn nghề
-      "confidence": "high" | "medium" | "low", // Độ chắc chắn của mô tả
-      "note_vn": "string",           // (1/6, WE_HYBRID_PRODUCT) Ghi chú phạm vi áp dụng
-      "verification_needed": "string" // (1/6, WE_FIELD_CLIENT) Chỗ cần người kiểm lại
+      "id": "WE_HEALTH_PUBLIC_HOSPITAL", "industry": "IND_HEALTH", "name_vn": "Bệnh viện công", "summary": "string",
+      "prevalence": "pho_bien | vua | it",   // Độ phổ biến ở VN
+      "company_slots": 3,                    // Số công ty hư cấu nên dựng cho loại hình (2 hoặc 3)
+      "levels": { "schedule_type": "truc", "flexibility": "rat_thap", "weekend": "xoay_ca_ca_tuan",
+                  "customer_contact": "cao", "physical_risk": "vua",
+                  "overtime_level": "thuong_xuyen", "overtime_pay": "phu_cap_co_dinh" },
+      "attributes": { "location": "string", "hours": "string", "...": "12 khoá, đủ cả" },
+      "evidence": { "hours": ["B", "BACH_MAI_NGOAI_GIO"], "overtime_pay": ["A", "ND192_2026"], "...": ["C"] },  // [mức, mã nguồn…]; A, B bắt buộc có nguồn; có cả cho overtime_pay
+      "typical_company_types": ["Bệnh viện đa khoa tỉnh"],   // Kiểu đơn vị chung, không phải tên thật
+      "pros": ["string"], "cons": ["string"],
+      "note_for_students": "string"          // (tuỳ chọn)
     }
   ]
 }
 ```
+
+| Thuộc tính (`attributes`) | Nghĩa |
+|---|---|
+| `location` | Nơi làm; onsite, hybrid, từ xa, tại khách hàng |
+| `hours` | Giờ làm điển hình trong ngày, số giờ một tuần |
+| `shifts` | Ca kíp, ca đêm (22h–6h), trực 12/16/24 giờ |
+| `workweek` | Làm thứ 7 (sáng hay cả ngày), Chủ nhật, lễ Tết, nghỉ bù |
+| `overtime` | Tăng ca thường gặp và trần theo luật |
+| `on_call` | Trực ngoài giờ, bị gọi khi sự cố |
+| `travel` | Đi công tác, đi hiện trường |
+| `pace` | Nhịp việc |
+| `peak_season` | Nhịp cao điểm trong năm (thay `release_cadence`) |
+| `customer_contact` | Gặp ai, bao nhiêu |
+| `physical_conditions` | Rủi ro, điều kiện vật lý |
+| `dress_code` | Trang phục, đồng phục, bảo hộ |
+
+| Mức (`levels`) | Giá trị |
+|---|---|
+| `schedule_type` | `hanh_chinh` · `hanh_chinh_khung_dem` · `ca_xoay` · `ca_co_dinh` · `truc` · `theo_chuyen` · `theo_du_an` · `theo_lich` · `tu_chu` |
+| `flexibility` | `rat_thap` · `thap` · `trung_binh` · `cao` · `rat_cao` |
+| `weekend` | `nghi` · `sang_thu_7` · `thu_7` · `xoay_ca_ca_tuan` · `theo_lich` (theo chuyến, show, mùa) · `theo_viec` (làm khi có việc, không cố định ngày) |
+| `overtime_level` | `it` · `theo_dot` (dồn theo đợt, mùa, mốc) · `thuong_xuyen` |
+| `overtime_pay` | `tra_them` (trả theo luật hoặc giờ vượt định mức) · `phu_cap_co_dinh` (phụ cấp trực, bồi dưỡng, công tác phí) · `luong_tron_goi` (giờ dài đã tính trong lương) · `theo_san_pham` (theo đơn, ca, hoa hồng) · `ap_luc_khong_luong` · `nghi_bu` · `khong_ap_dung`. Có chứng cứ riêng trong `evidence.overtime_pay` |
+| `customer_contact`, `physical_risk` | `thap` · `vua` · `cao` |
+
+### `decisions/occupation_work_environments.csv`
+
+Một dòng mỗi nghề (đủ 221). Cột: `role_code`, `role_name_vn`, `environments` (`WE_A:60;WE_B:40`, 1–3 loại hình, trọng số random cộng đúng 100, loại đầu là loại chính), `evidence` (A: nghề chỉ có ở một loại nơi làm theo định nghĩa hoặc văn bản; B: trọng số dựa số liệu như tỉ lệ bệnh viện công, giáo viên công lập, loại công ty IT, số tin VietJobs; C: nhóm suy luận), `weight_status` (`tam_thoi` khi mức C: trọng số tạm thời, người dùng chấp nhận tạm ngày 29/10/2026, sửa khi có số liệu; `co_so_lieu` khi mức A hoặc B), `reason`. Hồ sơ nghề chép `weight_status` vào `sources["work_environment.environments"]`. Script dừng build nếu thiếu nghề, sai mã, trọng số không cộng 100 hoặc thiếu lý do.
 
 ---
 
@@ -1187,7 +1209,7 @@ Hai mảng dùng **cùng một cấu trúc**. Mỗi sự kiện là một màn n
 
 **Là gì:** danh mục nghề ngoài IT để thử module gợi ý nghề theo O\*NET và làm trang hồ sơ nghề. 846 mã O\*NET 31.0 có đủ dữ liệu (trừ nhóm 15-1 máy tính và các mã 22 nghề IT đang dùng) được gộp thành **199 nghề**: 628 mã gộp vào nghề khác, 19 mã loại. Cách gộp theo đúng tiêu chí của `78_to_22_roles.csv`. Chữ tiếng Việt là bản dịch nháp, chưa có người duyệt.
 
-**Không có:** lương Việt Nam, JD, thang cấp L1–L10, sự kiện role-play, mã môi trường làm việc (`work_environment_ids`). Các field này giữ đúng tên như ở `final_22_roles.json` nhưng để rỗng hoặc `null`. Môi trường làm việc, câu "hợp với ai" và lộ trình nghề có bản nháp sinh từ O\*NET (field `work_environment_onet`, `fit_summary`, `career_path`).
+**Không có:** lương Việt Nam, JD, thang cấp L1–L10, sự kiện role-play, mã môi trường làm việc (loại hình nơi làm nằm ở `decisions/occupation_work_environments.csv`, §6). Các field còn lại giữ đúng tên như ở `final_22_roles.json` nhưng để rỗng hoặc `null`. Môi trường làm việc, câu "hợp với ai" và lộ trình nghề có bản nháp sinh từ O\*NET (field `work_environment_onet`, `fit_summary`, `career_path`).
 
 | File | Là gì | Sửa tay? |
 |---|---|---|
@@ -1332,8 +1354,9 @@ Danh mục Việt Nam không trùng ISCO-08 ở mọi chỗ: nhóm 0 (quân đ�
 | `datasets/vn/education_majors.json` | 434 ngành đại học (Thông tư 74/2026/TT-BGDĐT) và 652 ngành nghề cao đẳng, trung cấp (Thông tư 77/2026/TT-BGDĐT) | ✅ gõ lại và tách từ PDF |
 | `decisions/education_map.json` | Nghề → ngành học, giấy phép hành nghề | ✅ |
 | `decisions/vietjobs_title_rules.json` | Luật khớp chức danh tin tuyển dụng với nghề | ✅ |
-| `generated/vietjobs_stats.json`, `.md` | Lương rao và số tin theo nghề từ bộ VietJobs | ❌ `scripts/build_vietjobs_stats.py` |
+| `generated/vietjobs_stats.json`, `.md` | Lương rao, số tin và lịch làm rao (`schedule`: thứ 7, Chủ nhật, làm ca, giờ một tuần) theo nghề từ bộ VietJobs | ❌ `scripts/build_vietjobs_stats.py` |
 | `datasets/work_settings.json` | 9 nơi làm việc (văn phòng, hiện trường, nhà máy…) và luật gán | ✅ |
+| `datasets/work_environments.json`, `decisions/occupation_work_environments.csv` | 110 loại hình nơi làm (§6) và nghề nào thuộc loại hình nào | ✅ |
 | `datasets/onet_vi/it.json` | Bản dịch task O\*NET cho nghề IT chưa có task từ JD | ✅ |
 | `datasets/vn/it_postings.json` | Số tin đang mở trên ITviec của 22 nghề IT, đếm cùng ngày 21/10/2026 | ✅ |
 | `datasets/vn/it_jd_tasks.json` | Task theo cấp tóm từ JD ở Việt Nam cho 6 nghề IT (Game, nhúng, Tech Lead, Cloud, ERP, Network), kèm link JD | ✅ |
@@ -1370,8 +1393,14 @@ Mục không có dữ liệu thì **không có mặt** trong hồ sơ (không đ
     "soft":      { "giao_tiep_hop_tac": 0.04, "...": 0 }                                 // 7 nhóm, điểm z
   },
   "work_environment": {
+    "environments": [ { "id": "WE_HYBRID_PRODUCT", "weight": 45 } ],  // 1–3 loại hình nơi làm (§6), trọng số random cộng 100, mọi nghề
     "settings": ["WS_OFFICE"],               // 1–2 mã trong datasets/work_settings.json
-    "company_types": ["WE_HYBRID_PRODUCT"],  // Chỉ nghề IT, mã trong datasets/work_environments.json
+    "schedule_vn": {                         // (khi nghề có từ 20 tin ghi giờ làm) lịch làm rao trên tin VietJobs
+      "with_hours": 95, "saturday_pct": 58, "saturday_half_pct": 2, "sunday_pct": 24,   // % tin
+      "shift_pct": 16, "night_pct": 8, "uniform_pct": 4,                                // % tin nhắc làm ca, ca đêm, đồng phục
+      "week_hours_median": 51.0, "over_legal_week_pct": 64, "start_median": "08:00",   // trung vị; % tin rao trên 48 giờ/tuần
+      "source": "string", "data_year": "string", "note": "string"
+    },
     "facts": ["string"]                      // Câu từ O*NET Work Context
   },
   "education": {

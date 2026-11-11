@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobQuest Game Design W45</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   CAPSTONE SLIDES — DESIGN SYSTEM v1
+   Source: "Management Consulting Toolkit" template, slides 1–35.
+   Canvas: 960 × 540 px (16:9). 1pt in the PPTX = 1.333px here.
+   DO NOT edit tokens per deck. Only add slide-specific rules at the bottom,
+   inside the marked "DECK-SPECIFIC" block, and only using the tokens.
+   ========================================================================== */
+:root{
+  /* ---- Color (the whole palette — nothing else is allowed) ---- */
+  --navy:  #003BA3;   /* primary: titles, headings, dark blocks, table headers */
+  --blue:  #4A8CFF;   /* accent: big numbers, highlights, icons, bullets, light blocks */
+  --gray:  #EFEFEF;   /* surfaces: cards, cells, tracks, neutral blocks */
+  --ink:   #000000;   /* body text */
+  --white: #FFFFFF;   /* background, text on navy/blue */
+
+  /* ---- Type ---- */
+  --font: 'Montserrat', Arial, Helvetica, sans-serif;
+  --fs-xs:   14.67px;  /* 11pt  credits, chart axis, footnotes */
+  --fs-sm:   16px;     /* 12pt  captions, dense body */
+  --fs-body: 18.67px;  /* 14pt  body text (default) */
+  --fs-lead: 21.33px;  /* 16pt  cover subtitle */
+  --fs-h3:   24px;     /* 18pt  item heading, card header */
+  --fs-stat: 32px;     /* 24pt  inline stat value */
+  --fs-h2:   37.33px;  /* 28pt  slide title */
+  --fs-h2l:  40px;     /* 30pt  percentage, image-slide title */
+  --fs-h1:   50.67px;  /* 38pt  photo-slide headline */
+  --fs-d4:   62.67px;  /* 47pt  section title */
+  --fs-d3:   70.67px;  /* 53pt  cover title */
+  --fs-d2:   93.33px;  /* 70-72pt  TOC numbers, section number, "Thanks" */
+  --fs-d1:   122.67px; /* 92pt  big number */
+  --lh-tight: 1.08;
+  --lh-title: 1.15;
+  --lh-body:  1.3;
+
+  /* ---- Grid ---- */
+  --W: 960px; --H: 540px;
+  --mx: 75px;          /* box edge; text sits 10px further in (PPTX inset) */
+  --inset: 10px;
+  --title-top: 40px;
+  --blk: 128px;        /* decorative block width (always) */
+  --mid: 270px;        /* horizontal midline — blocks meet here */
+  --bar: 32px;         /* footer bar / edge strip thickness */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000}
+body{font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
+
+/* ---------------- Slide canvas ---------------- */
+.deck{position:absolute;left:0;top:0;width:var(--W);height:var(--H);transform-origin:0 0}
+.slide{position:absolute;inset:0;width:var(--W);height:var(--H);overflow:hidden;background:var(--white);
+  color:var(--ink);font-family:var(--font);font-size:var(--fs-body);line-height:var(--lh-body);display:none}
+.slide.active{display:block}
+.slide *{font-family:inherit}
+
+/* ---------------- Text primitives ---------------- */
+.title{position:absolute;left:var(--mx);top:var(--title-top);width:810px;min-height:60px;padding:0 var(--inset);
+  display:flex;align-items:center;font-size:var(--fs-h2);font-weight:700;line-height:var(--lh-title);color:var(--navy)}
+.title.center{justify-content:center;text-align:center}
+.title.right{justify-content:flex-end;text-align:right}
+.h3{font-size:var(--fs-h3);font-weight:700;color:var(--navy);line-height:1.2}
+.p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.sm{font-size:var(--fs-sm)}
+.xs{font-size:var(--fs-xs)}
+.hl{color:var(--blue)}               /* highlight words inside navy text */
+.navy{color:var(--navy)} .blue{color:var(--blue)}
+b,strong{font-weight:700;color:var(--navy)}
+.center{text-align:center}.right{text-align:right}
+.ul{list-style:none}
+.ul li{position:relative;padding-left:1.55em;line-height:var(--lh-body)}
+.ul li::before{content:"";position:absolute;left:.35em;top:.5em;width:.36em;height:.36em;border-radius:50%;background:var(--blue)}
+.ul li li::before{background:transparent;border:1.5px solid var(--blue)}
+.ul li+li{margin-top:.12em}
+.ul ul{list-style:none;margin-top:.12em}
+.ul.gap li+li{margin-top:.5em}
+
+/* ---------------- Decorative system ---------------- */
+.blk{position:absolute;width:var(--blk)}          /* set left/top/height inline */
+.blk.navy{background:var(--navy)} .blk.blue{background:var(--blue)} .blk.gray{background:var(--gray)}
+.footbar{position:absolute;left:0;bottom:0;width:var(--W);height:var(--bar);background:linear-gradient(90deg,var(--navy) 50%,var(--blue) 50%)}
+.footbar.rev{background:linear-gradient(90deg,var(--blue) 50%,var(--navy) 50%)}
+.edge-r{position:absolute;right:0;top:60px;bottom:0;width:var(--bar);background:var(--blue)}
+.edge-l{position:absolute;left:0;top:0;height:470px;width:var(--bar);background:var(--blue)}
+
+/* ---------------- Components ---------------- */
+.photo{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.shot{display:block;max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--gray);background:var(--white)} /* product screenshots stay in color */
+.ph{background:var(--gray);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:var(--fs-sm);font-weight:600;text-align:center;padding:10px}
+.icon{width:44px;height:44px;stroke:var(--blue);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dot{display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--blue);vertical-align:middle}
+.dot.navy{background:var(--navy)} .dot.ink{background:var(--ink)} .dot.gray{background:var(--gray)}
+/* SVG paint helpers — never hard-code hex inside SVG, use these */
+.s-navy{stroke:var(--navy)} .s-blue{stroke:var(--blue)} .s-gray{stroke:var(--gray)} .s-white{stroke:var(--white)} .s-ink{stroke:var(--ink)}
+.f-navy{fill:var(--navy)} .f-blue{fill:var(--blue)} .f-gray{fill:var(--gray)} .f-white{fill:var(--white)} .f-ink{fill:var(--ink)} .f-none{fill:none}
+.node{display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 16px;font-size:var(--fs-body);line-height:1.2;min-height:41px}
+.node.navy{background:var(--navy);color:var(--white);font-weight:700}
+.node.blue{background:var(--blue);color:var(--white);font-weight:700}
+.node.gray{background:var(--gray);color:var(--ink)}
+.node.outline{background:var(--white);border:2px solid var(--blue);color:var(--navy)}
+.kpi{background:var(--navy);color:var(--white);text-align:center;padding:8px 18px;line-height:1.15}
+.kpi .v{font-size:var(--fs-h3);font-weight:700;display:block}
+.kpi .l{font-size:var(--fs-sm);font-weight:700;display:block}
+.tbl{border-collapse:collapse;width:100%}
+.tbl th{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-body);padding:9px 10px;text-align:center;line-height:1.15}
+.tbl td{padding:9px 10px;font-size:var(--fs-body);line-height:1.2;text-align:center;border-bottom:1px solid var(--gray)}
+.tbl td:first-child{text-align:left}
+.tbl th:first-child{background:transparent}
+.tbl.filled th:first-child{background:var(--navy);text-align:left}
+
+/* ===================== LAYOUTS ===================== */
+/* Absolute regions below mirror the PPTX placeholder boxes (px). */
+
+/* 01 cover */
+.l-cover .cv-title{position:absolute;left:172px;top:103px;width:710px;height:235px;padding:0 var(--inset);display:flex;flex-direction:column;justify-content:flex-end;text-align:right;font-size:var(--fs-d3);font-weight:700;line-height:var(--lh-tight);color:var(--navy)}
+.l-cover .cv-sub{position:absolute;left:172px;top:348px;width:710px;padding:0 var(--inset);text-align:right;font-size:var(--fs-lead)}
+.l-cover .cv-meta{position:absolute;right:86px;bottom:44px;text-align:right;font-size:var(--fs-sm);line-height:1.45}
+
+/* 02 toc */
+.l-toc .toc{position:absolute;left:85px;top:148px;width:820px;display:grid;grid-template-columns:417px 1fr;row-gap:28px}
+.l-toc .toc-item{display:grid;grid-template-columns:146px 1fr;column-gap:24px;align-items:start;min-height:122px}
+.l-toc .toc-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:.95;text-align:right}
+.l-toc .toc-item .h3{margin-top:2px;margin-bottom:8px}
+.l-toc .toc.rows-3{top:132px;row-gap:34px}
+.l-toc .toc.rows-3 .toc-item{min-height:0}
+.l-toc .toc.rows-3 .toc-num{font-size:var(--fs-d4)}
+
+/* 03 section (right-aligned) + .alt (left-aligned) */
+.l-section .sec{position:absolute;left:416px;top:120px;width:468px;padding:0 var(--inset);text-align:right}
+.l-section .sec-num{font-size:var(--fs-d2);font-weight:700;color:var(--blue);line-height:1}
+.l-section .sec-title{font-size:var(--fs-d4);font-weight:700;color:var(--navy);line-height:1.05;margin-top:8px}
+.l-section .sec-sub{font-size:var(--fs-body);margin-top:14px}
+.l-section.alt .sec{left:74px;text-align:left}
+
+/* 04 intro (text left, blocks right) + .alt (blocks left, text right) */
+.l-intro .txt{position:absolute;left:121px;top:140px;width:444px;padding:0 var(--inset)}
+.l-intro .txt .t{font-size:var(--fs-h2);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:14px}
+.l-intro.alt .txt{left:418px;top:150px;width:426px;text-align:right}
+
+/* 05 statement (one big line) */
+.l-statement .big{position:absolute;left:74px;top:110px;width:600px;height:320px;padding:0 var(--inset);display:flex;align-items:center;font-size:98.67px;font-weight:700;line-height:1;color:var(--navy)}
+.l-statement .big.m{font-size:var(--fs-d3)}
+
+/* 06 text (+ bullets) */
+.l-text .body{position:absolute;left:var(--mx);top:128px;width:560px;padding:0 var(--inset)}
+.l-text.wide .body{width:810px}
+.l-text .body > * + *{margin-top:14px}
+
+/* 07 two columns */
+.l-2col .cols{position:absolute;left:74px;top:200px;width:560px;display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding:0 var(--inset)}
+.l-2col .cols .h3{margin-bottom:12px}
+
+/* 08 three columns with icons */
+.l-3col .cols{position:absolute;left:82px;top:196px;width:796px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:42px;text-align:center}
+.l-3col .cols .icon{margin:0 auto 4px;display:block}
+.l-3col .cols .h3{margin:6px 0 8px}
+
+/* 09 six-grid (3 × 2) */
+.l-grid6 .grid{position:absolute;left:74px;top:150px;width:720px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:10px;row-gap:30px;padding:0 var(--inset)}
+.l-grid6 .grid .h3{margin-bottom:8px}
+
+/* 10 four items right-aligned (2 × 2) */
+.l-4items .grid{position:absolute;left:331px;top:160px;width:553px;display:grid;grid-template-columns:1fr 1fr;column-gap:34px;row-gap:34px;text-align:right;padding:0 var(--inset)}
+.l-4items .grid .h3{margin-bottom:8px}
+
+/* 11 quadrant / SWOT */
+.l-quad .quad{position:absolute;left:110px;top:130px;display:grid;grid-template-columns:42px 292px 292px;column-gap:20px;row-gap:20px}
+.l-quad .quad > :nth-child(3n){margin-left:50px}
+.l-quad .side{background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;height:153px}
+.l-quad .q-h{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);height:35px;padding:0 20px;display:flex;align-items:center}
+.l-quad .q-b{background:var(--gray);height:118px;padding:14px 20px}
+
+/* 12 rows (label + items) */
+.l-rows .rows{position:absolute;left:75px;top:124px;width:809px;display:flex;flex-direction:column;gap:10px}
+.l-rows .row{display:grid;grid-template-columns:199px 1fr;height:81px}
+.l-rows .row .lab{background:var(--navy);color:var(--white);font-weight:700;font-size:var(--fs-h3);line-height:1.1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px}
+.l-rows .row .its{background:var(--gray);display:flex;align-items:center;justify-content:space-around;gap:20px;padding:0 24px}
+.l-rows .row .its > *{flex:1}
+
+/* 13 table / maturity */
+.l-table .tblwrap{position:absolute;left:85px;top:128px;width:810px}
+
+/* 14 process chevrons */
+.l-process .chev{position:absolute;left:75px;top:146px;width:808px;height:121px;display:flex}
+.l-process .chev > div{flex:1;background:var(--blue);color:var(--white);font-weight:700;font-size:var(--fs-h3);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 44px 0 50px;
+  clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,40px 50%)}
+.l-process .chev > div:first-child{clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%);padding-left:20px}
+.l-process .chev > div + div{margin-left:-36px}
+.l-process .notes{position:absolute;left:75px;top:286px;width:808px;display:grid;column-gap:14px}
+
+/* 15 roadmap stairs */
+.l-roadmap .stairs{position:absolute;left:75px;top:170px;width:809px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);align-items:start}
+.l-roadmap .step{margin-top:calc(var(--rise,33px) * (var(--n,3) - 1 - var(--i,0)))}
+.l-roadmap .step .h3{text-align:center;padding-bottom:10px}
+.l-roadmap .step .line{height:8px;background:var(--blue);position:relative}
+.l-roadmap .step + .step .line::before{content:"";position:absolute;left:0;bottom:0;width:8px;height:calc(var(--rise,33px) + 8px);background:var(--blue)}
+.l-roadmap .step .ul{padding:14px 10px 0 20px}
+
+/* 16 hierarchy tree (top-down) */
+.l-tree .tree{position:absolute;left:75px;top:120px;width:809px;display:flex;justify-content:center}
+.tree ul{display:flex;justify-content:center;padding-top:30px;position:relative;list-style:none}
+.tree > ul{padding-top:0}
+.tree li{position:relative;padding:30px 6px 0;display:flex;flex-direction:column;align-items:center}
+.tree > ul > li{padding-top:0}
+.tree li::before,.tree li::after{content:"";position:absolute;top:0;width:50%;height:30px;border-top:2px solid var(--blue)}
+.tree li::before{right:50%}
+.tree li::after{left:50%;border-left:2px solid var(--blue)}
+.tree li:only-child::before,.tree li:only-child::after{border-top:0}
+.tree li:first-child::before,.tree li:last-child::after{border-top:0}
+.tree li:last-child::before{border-right:2px solid var(--blue);width:calc(50% + 1px)}
+.tree li:last-child::before{right:calc(50% - 1px)}
+.tree li:last-child::after{border-left:0}
+.tree > ul > li::before,.tree > ul > li::after{display:none}
+.tree ul ul::before{content:"";position:absolute;top:0;left:50%;height:30px;border-left:2px solid var(--blue)}
+.tree .node{white-space:nowrap}
+.tree .lv1{min-width:161px;font-size:var(--fs-h3)}
+.tree .lv2{min-width:136px}
+.tree .lv3{min-width:78px;padding:6px 12px}
+
+/* 17 breakdown (left → right) */
+.l-breakdown .bd{position:absolute;left:170px;top:118px;height:380px;display:flex;align-items:center}
+.bd .root{width:128px;min-height:116px;font-size:var(--fs-h3);text-align:left;justify-content:flex-start;padding:10px 12px}
+.bd .groups{display:flex;flex-direction:column;gap:26px;margin-left:30px;position:relative;padding-left:0}
+.bd .groups::before{content:"";position:absolute;left:-16px;top:58px;bottom:58px;border-left:2px solid var(--blue)}
+.bd .grp{display:flex;align-items:center;position:relative}
+.bd .grp::before{content:"";position:absolute;left:-16px;top:50%;width:16px;border-top:2px solid var(--blue)}
+.bd .grp > .node{width:128px;min-height:116px;font-size:var(--fs-h3);font-weight:700;color:var(--navy);justify-content:flex-start;text-align:left}
+.bd .leaves{display:flex;flex-direction:column;justify-content:space-between;gap:10px;margin-left:36px;position:relative;align-self:stretch}
+.bd .leaves::before{content:"";position:absolute;left:-18px;top:20px;bottom:20px;border-left:2px solid var(--blue)}
+.bd .leaves::after{content:"";position:absolute;left:-36px;top:50%;width:18px;border-top:2px solid var(--blue)}
+.bd .leaves .node{position:relative;width:170px;min-height:38px;justify-content:flex-start;font-size:var(--fs-sm);text-align:left}
+.bd .leaves .node::before{content:"";position:absolute;left:-18px;top:50%;width:18px;border-top:2px solid var(--blue)}
+
+/* 18 matrix 2×2 */
+.l-matrix .mx{position:absolute;left:120px;top:118px;display:grid;grid-template-columns:150px 36px 216px 216px;grid-template-rows:42px 111px 111px 36px 40px;column-gap:10px;row-gap:5px;align-items:center}
+.l-matrix .mx .cell{height:111px;background:var(--gray);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 18px;line-height:1.2}
+.l-matrix .mx .cell.on{background:var(--navy);color:var(--white)}
+.l-matrix .mx .tick{color:var(--navy);text-align:center;font-size:var(--fs-body)}
+.l-matrix .mx .tick.y{writing-mode:vertical-rl;transform:rotate(180deg);justify-self:center}
+.l-matrix .mx .axis{font-weight:700;color:var(--navy);font-size:var(--fs-h3);text-align:center}
+
+/* 19 cycle (4-part ring) */
+.l-cycle .ring{position:absolute;left:330px;top:128px;width:300px;height:300px}
+.l-cycle .lbl{position:absolute;display:flex;align-items:center;gap:10px;font-size:var(--fs-body);white-space:nowrap}
+.l-cycle .lbl i{display:block;height:2px;width:36px}
+.l-cycle .lbl i::after{content:"";display:block;width:8px;height:8px;border-radius:50%;margin-top:-3px}
+.l-cycle .lbl.l{right:640px;flex-direction:row}
+.l-cycle .lbl.r{left:640px}
+.l-cycle .lbl.navy i,.l-cycle .lbl.navy i::after{background:var(--navy)}
+.l-cycle .lbl.blue i,.l-cycle .lbl.blue i::after{background:var(--blue)}
+.l-cycle .lbl.l i::after{margin-left:28px}
+.l-cycle .lbl.r i::after{margin-left:0}
+
+/* 20 diagram (free canvas) */
+.l-diagram .stage{position:absolute;left:var(--mx);top:128px;width:810px;height:370px;display:flex;align-items:center;justify-content:center}
+.l-diagram.has-bar .stage{height:340px}
+.l-diagram .title.two{min-height:98px}
+
+/* 21 quote */
+.l-quote .q{position:absolute;left:281px;top:110px;width:604px;height:214px;padding:0 var(--inset);display:flex;align-items:flex-end;justify-content:flex-end;text-align:right;font-size:var(--fs-h2);font-weight:600;line-height:1.2;color:var(--blue)}
+.l-quote .by{position:absolute;left:281px;top:346px;width:604px;padding:0 var(--inset);text-align:right;font-size:var(--fs-h3);font-weight:700;color:var(--navy)}
+
+/* 22 big number */
+.l-bignum .num{position:absolute;left:74px;top:148px;width:810px;height:174px;display:flex;align-items:flex-end;justify-content:center;font-size:var(--fs-d1);font-weight:700;color:var(--blue);line-height:1}
+.l-bignum .cap{position:absolute;left:74px;top:334px;width:810px;text-align:center}
+
+/* 23 photo full-bleed + headline */
+.l-photo .bg{position:absolute;inset:0}
+.l-photo .wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 70%)}
+.l-photo .head{position:absolute;left:74px;top:52px;width:480px;padding:0 var(--inset);font-size:var(--fs-h1);font-weight:700;line-height:1.12;color:var(--navy)}
+
+/* 24 photo left + text right */
+.l-photoleft .pic{position:absolute;left:0;top:112px;width:349px;height:314px}
+.l-photoleft .txt{position:absolute;left:391px;top:150px;width:493px;padding:0 var(--inset);text-align:right}
+.l-photoleft .txt .t{font-size:var(--fs-h2l);font-weight:700;color:var(--navy);line-height:var(--lh-title);margin-bottom:16px}
+
+/* 25 demo / screenshot */
+.l-demo .side{position:absolute;left:var(--mx);top:128px;width:300px;padding:0 var(--inset)}
+.l-demo .side .h3{margin-bottom:10px}
+.l-demo .screen{position:absolute;left:392px;top:120px;width:500px;height:380px;display:flex;align-items:center;justify-content:center}
+
+/* 26 stats bars */
+.l-bars .grp{position:absolute;top:140px;width:330px}
+.l-bars .grp.l{left:75px}
+.l-bars .grp.r{left:555px;text-align:right}
+.l-bars .grp .h3{margin-bottom:10px;padding:0 var(--inset)}
+.l-bars .bar{display:grid;grid-template-columns:90px 1fr;align-items:center;column-gap:8px;height:44px;padding:0 var(--inset)}
+.l-bars .grp.r .bar{grid-template-columns:1fr auto}
+.l-bars .bar .v{white-space:nowrap}
+.l-bars .bar .v{font-size:var(--fs-stat);font-weight:700;color:var(--navy);line-height:1}
+.l-bars .bar .track{height:12px;background:var(--gray);position:relative}
+.l-bars .bar .track span{position:absolute;top:0;bottom:0;left:0;background:var(--blue)}
+.l-bars .grp.r .bar .track span{left:auto;right:0}
+.l-bars .foot{position:absolute;left:75px;top:302px;width:809px;text-align:center}
+.l-bars .foot .icons{display:flex;justify-content:center;gap:22px;margin-top:18px}
+
+/* 27 donut percentages */
+.l-donuts .cols{position:absolute;left:78px;top:160px;width:801px;display:grid;grid-template-columns:repeat(var(--n,3),1fr);column-gap:40px;text-align:center}
+.l-donuts .ring{width:120px;height:120px;margin:0 auto;display:block}
+.l-donuts .pct{font-size:var(--fs-h2l);font-weight:700;color:var(--blue);margin:14px 0 6px;line-height:1}
+
+/* 28 chart + KPI */
+.l-chart .left{position:absolute;left:85px;top:122px;width:390px}
+.l-chart .right{position:absolute;left:500px;top:122px;width:390px}
+.l-chart svg text{font-family:var(--font)}
+
+/* 29 team */
+.l-team .grid{position:absolute;left:75px;top:128px;width:809px;display:flex;justify-content:center;gap:var(--gap,90px)}
+.l-team .m{width:var(--w,237px);text-align:center}
+.l-team .m .face{width:var(--d,192px);height:var(--d,192px);border-radius:50%;overflow:hidden;margin:0 auto 18px;background:var(--gray)}
+.l-team .m .h3{margin-bottom:6px}
+
+/* 30 testimonials */
+.l-testi .list{position:absolute;left:115px;top:160px;width:320px;padding:0 var(--inset)}
+.l-testi .list .by{font-size:var(--fs-h3);font-weight:700;color:var(--navy);margin-top:6px}
+.l-testi .list > div + div{margin-top:34px}
+
+/* 31 thanks / closing */
+.l-thanks .big{position:absolute;left:74px;top:46px;width:560px;height:140px;padding:0 var(--inset);display:flex;align-items:flex-end;font-size:var(--fs-d2);font-weight:700;color:var(--navy);line-height:1}
+.l-thanks .info{position:absolute;left:74px;top:198px;width:480px;padding:0 var(--inset)}
+.l-thanks .info .icons{display:flex;gap:10px;margin-top:22px}
+
+/* ===================== DECK-SPECIFIC (keep tiny, tokens only) ===================== */
+.slide > .src{position:absolute;left:85px;bottom:12px;width:730px;font-size:var(--fs-sm);line-height:1.25;color:var(--ink)}
+.slide:has(> .footbar) > .src{bottom:44px}
+.tbl.dense th,.tbl.dense td{font-size:var(--fs-sm);padding:6px 8px;line-height:1.25}
+.tbl.dense{table-layout:fixed}
+.tbl.dense td{text-align:left;vertical-align:top}
+.l-diagram .stage.top{top:112px;height:414px;align-items:flex-start}
+.sample{width:810px}
+.sample .src{font-size:var(--fs-sm);margin-top:10px;line-height:1.25}
+.sample .p{color:var(--blue);font-weight:400;margin-left:6px}
+.dcols{display:grid;column-gap:26px;align-items:start}
+.fld{margin-bottom:9px;font-size:var(--fs-sm);line-height:1.28}
+.fld .k{font-weight:700;color:var(--navy)}
+.fld ul{margin:2px 0 0;padding-left:18px}
+
+/* ===================== Presentation shell (not part of the look) ===================== */
+.hud{position:fixed;right:14px;bottom:12px;font:600 12px/1 var(--font);color:rgba(255,255,255,.55);letter-spacing:.04em;user-select:none;z-index:9}
+body.overview{overflow:auto;background:#000}
+body.overview .deck{position:static;transform:none!important;width:auto;height:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:18px}
+body.overview .slide{position:relative;display:block;zoom:.32;cursor:pointer;outline:0}
+body.overview .slide.active{outline:10px solid var(--blue)}
+@media print{
+  @page{size:960px 540px;margin:0}
+  html,body{background:#fff;overflow:visible;height:auto}
+  .deck{position:static;transform:none!important;width:auto;height:auto}
+  .slide{position:relative;display:block!important;break-after:page;page-break-after:always}
+  .hud{display:none}
+}
+</style>
+</head>
+<body>
+<main class="deck">
+<!-- ================= SLIDES START ================= -->
+<section class="slide l-cover">
+  <div class="blk blue" style="left:0;top:0;height:270px"></div>
+  <h1 class="cv-title"><span>Game design</span><span>tuần <span class="hl">45</span></span></h1>
+  <p class="cv-sub">Môi trường làm việc, kinh tế và seed màn chơi</p>
+  <p class="cv-meta"><b>JobQuest</b> · Golden Trio · GVHD: Võ Thị Ngọc Châu<br>Khoa KH&amp;KT Máy tính · HCMUT · Tuần 45, 11/2026</p>
+</section>
+
+<section class="slide l-toc">
+  <h2 class="title center">Nội dung</h2>
+  <div class="toc">
+    <div class="toc-item"><div class="toc-num">01</div><div><div class="h3">Môi trường làm việc</div><p>110 loại hình, 221 nghề được gán</p></div></div>
+    <div class="toc-item"><div class="toc-num">02</div><div><div class="h3">Kinh tế và sức khoẻ</div><p>Lương thật, sức có hạn, mô phỏng cân bằng</p></div></div>
+    <div class="toc-item"><div class="toc-num">03</div><div><div class="h3">Seed màn chơi</div><p>Một màn được soạn thế nào</p></div></div>
+    <div class="toc-item"><div class="toc-num">04</div><div><div class="h3">Cần chốt tiếp</div><p>Phần nháp, rủi ro, việc tuần sau</p></div></div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title center">Ba mảnh của tuần, nối vào một màn</h2>
+  <div class="stage">
+    <svg width="810" height="330" viewBox="0 0 810 330">
+      <rect class="f-blue" x="0" y="30" width="220" height="90"/>
+      <rect class="f-navy" x="295" y="30" width="220" height="90"/>
+      <rect class="f-blue" x="590" y="30" width="220" height="90"/>
+      <g class="f-white" font-size="22" font-weight="700" text-anchor="middle">
+        <text x="110" y="68">Môi trường</text><text x="110" y="96">làm việc</text>
+        <text x="405" y="68">Seed</text><text x="405" y="96">màn chơi</text>
+        <text x="700" y="68">Kinh tế và</text><text x="700" y="96">sức khoẻ</text>
+      </g>
+      <g class="s-blue" stroke-width="3"><line x1="224" y1="75" x2="280" y2="75"/><line x1="586" y1="75" x2="530" y2="75"/></g>
+      <g class="f-blue"><path d="M291 75 L279 68 L279 82 Z"/><path d="M519 75 L531 68 L531 82 Z"/></g>
+      <g class="f-ink" font-size="16" text-anchor="middle">
+        <text x="110" y="160">110 loại hình nơi làm</text><text x="110" y="186">Random công ty</text><text x="110" y="212">Giờ làm, ca kíp, tăng ca</text>
+        <text x="405" y="160">Một việc chính, 10–15 phút</text><text x="405" y="186">Fact sheet, NPC, nút canon</text><text x="405" y="212">Chấm 0/1/2 cộng cờ</text>
+        <text x="700" y="160">Xu theo lương thật</text><text x="700" y="186">Sức khoẻ đổi số lượt</text><text x="700" y="212">OT không được chấm</text>
+      </g>
+      <rect class="f-gray" x="0" y="258" width="810" height="52"/>
+      <text class="f-navy" x="405" y="291" font-size="18" font-weight="700" text-anchor="middle">AI-4 dẫn truyện trong giới hạn seed · AI-5 chấm riêng, không đọc lời AI-4</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">01</div>
+    <div class="sec-title">Môi trường làm việc</div>
+    <p class="sec-sub">Khuôn để random công ty cho mỗi cấp</p>
+  </div>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">110 loại hình nơi làm cho mọi ngành</h2>
+  <div class="grid">
+    <div><div class="h3">110 loại hình</div><p>22 nhóm ngành, không chỉ IT như bản cũ</p></div>
+    <div><div class="h3">12 thuộc tính</div><p>Ca kíp, tuần làm, tăng ca, trang phục, tiếp xúc khách</p></div>
+    <div><div class="h3">221 nghề</div><p>Mỗi nghề 1–3 loại hình, kèm trọng số random</p></div>
+    <div><div class="h3">Tăng ca</div><p>Nhiều hay ít; trả thêm hay áp lực không lương</p></div>
+    <div><div class="h3">VietJobs</div><p>30.351 tin: 66% làm thứ 7, trung vị 46,5 giờ/tuần</p></div>
+    <div><div class="h3">Dọn dữ liệu</div><p>Bỏ trường cũ; hồ sơ nghề đọc từ một file CSV</p></div>
+  </div>
+  <p class="src">Nguồn: datasets/work_environments.json; VietJobs (bộ dữ liệu đăng 2/3/2026), 30.351 tin ghi giờ làm: generated/vietjobs_stats.md</p>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Mẫu dữ liệu: một loại hình nơi làm</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Định danh<span class="p">id · industry</span></div><div class="v">WE_HYBRID_PRODUCT · IND_IT</div></div><div class="fld"><div class="k">Tên<span class="p">name_vn</span></div><div class="v">Công ty làm sản phẩm công nghệ (product)</div></div><div class="fld"><div class="k">Mức có mã, để lọc và random<span class="p">levels</span></div><ul><li>Giờ làm: hanh_chinh, linh hoạt cao</li><li>Cuối tuần: nghi</li><li>Tăng ca: theo_dot, ap_luc_khong_luong</li><li>Tiếp xúc khách, rủi ro thể chất: thap</li></ul></div><div class="fld"><div class="k">Số công ty hư cấu<span class="p">company_slots</span></div><div class="v">3</div></div></div><div><div class="fld"><div class="k">Lời mô tả cho AI-4<span class="p">attributes, 12 thuộc tính</span></div><ul><li><b>hours:</b> giờ linh hoạt quanh khung 9:00–18:00</li><li><b>on_call:</b> đội backend, hạ tầng trực xoay vòng theo tuần</li><li><b>peak_season:</b> trước đợt ra mắt lớn, khuyến mãi 11.11, Tết</li></ul></div><div class="fld"><div class="k">Chứng cứ từng thuộc tính<span class="p">evidence</span></div><div class="v">location: ghi A, nguồn báo cáo ITviec 2023–2024 và TopDev 2024–2025. Theo quy ước, báo cáo ngành là B: cần sửa trong dữ liệu. 11 thuộc tính còn lại: C.</div></div><div class="fld"><div class="k">Mặt trái<span class="p">cons</span></div><div class="v">Rủi ro theo tình hình gọi vốn, doanh thu; ranh giới giờ làm dễ mờ</div></div></div></div><p class="src">Nguồn: occupation-data/datasets/work_environments.json, bản 1.0 (29/10/2026), 1 trong 110 loại hình</p></div>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Mẫu dữ liệu: nghề trỏ tới loại hình</h2>
+  <div class="tblwrap">
+    <table class="tbl dense"><colgroup><col style="width:120px"><col style="width:250px"><col style="width:60px"><col style="width:100px"><col></colgroup>
+      <thead><tr><th>Nghề</th><th>environments (trọng số)</th><th>evidence</th><th>weight_status</th><th>reason</th></tr></thead>
+      <tbody>
+        <tr><td>Back-end</td><td>Product 40 · Outsourcing 40 · Khối công nghệ ngân hàng, doanh nghiệp lớn 20</td><td>B</td><td>co_so_lieu</td><td>Tỉ lệ loại công ty của ITviec; ngân hàng tuyển nhiều back-end nội bộ</td></tr>
+        <tr><td>Điều dưỡng</td><td>Bệnh viện công 65 · Bệnh viện tư 25 · Dưỡng lão 10</td><td>B</td><td>co_so_lieu</td><td>Bệnh viện công chiếm 77% số bệnh viện</td></tr>
+        <tr><td>Phục vụ nhà hàng</td><td>Chuỗi F&amp;B 45 · Quán độc lập 35 · Khách sạn 20</td><td>C</td><td>tam_thoi</td><td>Phục vụ ở chuỗi, quán độc lập và nhà hàng khách sạn</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:14px">Mỗi cấp: chọn loại hình theo trọng số, rồi chọn 1 trong company_slots công ty của loại hình đó. 157/221 dòng là tam_thoi.</p>
+  </div>
+  <p class="src">Nguồn: occupation-data/decisions/occupation_work_environments.csv; _meta.random_rule trong work_environments.json</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-donuts">
+  <h2 class="title center">1.320 ô thuộc tính: 79% là suy luận</h2>
+  <div class="cols" style="--n:3">
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="7 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">7%</div><p>mức A: luật, số liệu chính thức Việt Nam</p>
+    </div>
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="15 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">15%</div><p>mức B: tin tuyển dụng, báo cáo ngành</p>
+    </div>
+    <div>
+      <svg class="ring" viewBox="0 0 120 120"><circle class="s-gray" cx="60" cy="60" r="46" fill="none" stroke-width="24"/><circle class="s-navy" cx="60" cy="60" r="46" fill="none" stroke-width="24" pathLength="100" stroke-dasharray="79 100" transform="rotate(-90 60 60)"/></svg>
+      <div class="pct">79%</div><p>mức C: nhóm suy luận, chưa có nguồn</p>
+    </div>
+  </div>
+  <p class="src">Riêng trọng số random: 157/221 nghề còn tạm. Nguồn: research_notes/Môi trường làm việc/ (7 ghi chú nguồn); occupation_work_environments.csv</p>
+  <div class="footbar"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title center">Nghề dịch vụ rao giờ làm dài hơn hẳn</h2>
+  <div class="stage">
+    <svg width="810" height="300" viewBox="0 0 810 300">
+      <g class="f-ink" font-size="18">
+        <text x="20" y="46">Mọi tin có ghi giờ</text>
+        <text x="20" y="106">Thu ngân (116 tin)</text>
+        <text x="20" y="166">Chăm sóc da (70)</text>
+        <text x="20" y="226">Điều dưỡng (95)</text>
+      </g>
+      <g class="f-gray">
+        <rect x="220" y="30" width="480" height="22"/><rect x="220" y="90" width="480" height="22"/>
+        <rect x="220" y="150" width="480" height="22"/><rect x="220" y="210" width="480" height="22"/>
+      </g>
+      <rect class="f-navy" x="220" y="30" width="96" height="22"/>
+      <g class="f-blue">
+        <rect x="220" y="90" width="336" height="22"/><rect x="220" y="150" width="307" height="22"/><rect x="220" y="210" width="307" height="22"/>
+      </g>
+      <g class="f-navy" font-size="22" font-weight="700">
+        <text x="716" y="49">20%</text><text x="716" y="109">70%</text><text x="716" y="169">64%</text><text x="716" y="229">64%</text>
+      </g>
+      <text class="f-ink" x="405" y="285" font-size="16" text-anchor="middle">Tỉ lệ tin rao trên 48 giờ/tuần, mức trần giờ làm bình thường của Điều 105</text>
+    </svg>
+  </div>
+  <p class="src">Nguồn: giờ rao trong tin VietJobs (bộ dữ liệu đăng 2/3/2026); Bộ luật Lao động 2019, Điều 105. Dữ liệu nghiêng việc văn phòng Hà Nội, TP.HCM, không có công chức, công an</p>
+</section>
+
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">02</div>
+    <div class="sec-title">Kinh tế và sức khoẻ</div>
+    <p class="sec-sub">Lương thật, sức có hạn</p>
+  </div>
+</section>
+
+<section class="slide l-quote">
+  <div class="blk blue" style="left:0;top:111px;height:159px"></div>
+  <div class="blk gray" style="left:128px;top:270px;height:270px"></div>
+  <blockquote class="q">“Nghề nào cũng có lương và có giá phải trả. Bạn chọn tiêu sức và tiêu tiền vào đâu.”</blockquote>
+  <p class="by">—Câu chốt của lớp đời sống quanh công việc</p>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Sáu phần của lớp đời sống</h2>
+  <div class="grid">
+    <div><div class="h3">Xu</div><p>100 × √(lương ÷ 13 triệu), sàn 60, trần 250 mỗi màn</p></div>
+    <div><div class="h3">Lịch</div><p>Một màn là một ngày làm; giữa hai màn vài tuần</p></div>
+    <div><div class="h3">Cửa hàng</div><p>6 nhóm món; buff +10/20/30%, trần chung +50%</p></div>
+    <div><div class="h3">Sức khoẻ</div><p>0–100, bốn mức; chỉ đổi số lượt và lời dẫn</p></div>
+    <div><div class="h3">Tăng ca</div><p>Đổi sức khoẻ lấy lượt, tối đa 2 lần, 4 giờ mỗi màn</p></div>
+    <div><div class="h3">NPC, cột mốc</div><p>22 lá tarot kiểu Persona, 6 mở sẵn; 17 cột mốc</p></div>
+  </div>
+  <p class="src">Nguồn: 13 triệu là trung vị lương của 217 nghề (occupation_profiles.json); trần OT 4 giờ/ngày, Điều 107 Bộ luật Lao động 2019; cua_hang_buff_game_that.md</p>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Căn bậc hai: chênh 117 lần còn 4,2 lần</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Cách quy lương ra xu</th><th>Thấp nhất</th><th>Trung vị</th><th>Cao nhất</th><th>Cao ÷ thấp</th></tr></thead>
+      <tbody>
+        <tr><td>Tuyến tính</td><td>31</td><td>105</td><td>3.600</td><td>117</td></tr>
+        <tr><td><b>Căn bậc hai, sàn 60, trần 250</b></td><td><b>60</b></td><td><b>103</b></td><td><b>250</b></td><td><b>4,2</b></td></tr>
+        <tr><td>Sàn 60 + 40 × căn bậc hai</td><td>82</td><td>101</td><td>300</td><td>3,7</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:16px">Xu mỗi màn, tính trên 1.294 cấp có lương. Tuyến tính cho phi công gấp 117 lần nghề thấp nhất dù màn dài như nhau. Căn bậc hai giữ thứ tự: 90% số cấp ở giữa vẫn chênh 2,6 lần.</p>
+  </div>
+  <p class="src">Căn bậc hai là lựa chọn thiết kế: chưa có nguồn nêu luật nén, Cook 2021 (lostgarden.com) chỉ khuyên nén. Nguồn: luong_quy_xu.py, luong_quy_xu.csv</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Hai nguyên tắc công bằng</h2>
+  <div class="cols">
+    <div><div class="h3">Tiền không mua trần</div><p>Xu mua tốc độ và lựa chọn. Mọi buff cộng lại không quá +50%, điểm sau buff không vượt trần của màn.</p></div>
+    <div><div class="h3">Lương hiện ở mức sống</div><p>Món tiến độ tính giá theo <b>u</b>, xu một màn của nghề đang chơi. Món đời sống tính theo <b>X</b>, xu chuẩn của band. Lương cao mua nhà, xe sớm hơn, không qua cấp dễ hơn.</p></div>
+  </div>
+  <p class="src">Căn cứ: D-17. Mô phỏng: tính món tiến độ theo X thì nghề lương thấp nhất kẹt gấp 4 lần (4% so với 1%)</p>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Mẫu dữ liệu: lương quy ra xu</h2>
+  <div class="tblwrap">
+    <table class="tbl dense"><colgroup><col style="width:120px"><col style="width:60px"><col><col style="width:110px"><col style="width:80px"><col style="width:150px"></colgroup>
+      <thead><tr><th>Nghề</th><th>Cấp</th><th>ten_cap</th><th>Lương (triệu)</th><th>Xu/màn</th><th>cach_uoc</th></tr></thead>
+      <tbody>
+        <tr><td>Back-end</td><td>L1</td><td>Backend Engineer Intern</td><td>18,9</td><td>121</td><td>itviec_theo_nam</td></tr>
+        <tr><td>Back-end</td><td>L3</td><td>Junior Backend Engineer</td><td>28,4</td><td>148</td><td>itviec_theo_nam</td></tr>
+        <tr><td>Back-end</td><td>L7</td><td>Principal / Staff Engineer</td><td>54,9</td><td>206</td><td>itviec_theo_nam</td></tr>
+        <tr><td>Điều dưỡng</td><td>L1</td><td>Sinh viên điều dưỡng thực tập</td><td>10,5</td><td>90</td><td>noi_suy_thap_cao</td></tr>
+        <tr><td>Điều dưỡng</td><td>L3</td><td>Điều dưỡng hạng III</td><td>11,9</td><td>96</td><td>noi_suy_thap_cao</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:14px">Ở L3, u của Back-end là 148, của Điều dưỡng là 96; X của band L3 là 98 cho mọi nghề. Buff vừa (0,5 u) giá 74 và 48 xu; phòng riêng (3 X) cùng giá. Lương ước thô, giá còn nháp.</p>
+  </div>
+  <p class="src">Nguồn: research_notes/Kinh tế và sức khoẻ/luong_quy_xu.csv (1.318 cấp); lương từ ITviec và tin tuyển dụng</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Cửa hàng sáu nhóm, có món thật</h2>
+  <div class="grid">
+    <div><div class="h3">Vật phẩm buff</div><p>Ly cà phê đen, bình trà mời cả nhóm; dùng một màn</p></div>
+    <div><div class="h3">Vé nhiệm vụ phụ</div><p>Karaoke cả phòng, chợ hoa Tết; mở cảnh, không chấm</p></div>
+    <div><div class="h3">Thân mật NPC</div><p>Cà phê sữa đá, quà đúng gu, danh thiếp mở lá mới</p></div>
+    <div><div class="h3">Cột mốc</div><p>17 mốc, mỗi mốc một cảnh và một buff nhỏ vĩnh viễn</p></div>
+    <div><div class="h3">Sức khoẻ</div><p>Tô phở sáng, gói gym tháng, nghỉ phép 3 ngày</p></div>
+    <div><div class="h3">Decor bàn</div><p>Sen đá, đèn lồng Trung thu; mang theo khi đổi công ty</p></div>
+  </div>
+  <p class="src">Mượn từ Persona, Stardew Valley, The Sims 4, Animal Crossing (cua_hang_buff_game_that.md). Judge không biết người chơi có món gì</p>
+</section>
+
+<section class="slide l-3col">
+  <h2 class="title center">Cột mốc gần đời sống người Việt</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+      <div class="h3">Về quê ăn Tết</div><p>Cả họ hỏi lương, hỏi người yêu; hồi đầy sức khoẻ</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <div class="h3">Mua căn hộ</div><p>Có lựa chọn bố mẹ góp một nửa giá</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="h3">Nhánh rẻ</div><p>CLB công ty, company trip: buff ngang mốc đắt tiền</p>
+    </div>
+  </div>
+  <p class="src">Giá căn hộ Hà Nội tăng 11,7%/năm, thu nhập tăng 6,4%/năm; tuổi kết hôn lần đầu 27,3 (TCTK, VnExpress; thứ cấp, chưa kèm link)</p>
+  <div class="footbar rev"></div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Mô phỏng: không kiểu chơi nào áp đảo</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Kiểu chơi</th><th>% quỹ, người trung bình</th><th>Kẹt, người yếu</th><th>Buff vĩnh viễn</th></tr></thead>
+      <tbody>
+        <tr><td>Cày OT</td><td>76–77%</td><td>3–33%</td><td>0/7</td></tr>
+        <tr><td><b>Cân bằng</b></td><td>76–77%</td><td><b>1–2%</b></td><td><b>7/7</b></td></tr>
+        <tr><td>Tiết kiệm</td><td>75–76%</td><td>7–10%</td><td>2–7/7</td></tr>
+        <tr><td>Tiêu hết</td><td>76–77%</td><td>1–2%</td><td>0/7</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:16px">4 nghề × 3 mức chơi × 4 kiểu, 300 lượt mỗi tổ hợp. Ngưỡng mở cấp 60% liên tục khắt khe hơn D-114, nên tỉ lệ kẹt là mức trên. Chưa mô phỏng ô tô, cưới, lá bài. Số tạm, chưa qua chơi thử.</p>
+  </div>
+  <p class="src">Nguồn: research_notes/Kinh tế và sức khoẻ/mo_phong_can_bang.py, ket_qua_mo_phong.md</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-bignum">
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+  <div class="num">33%</div>
+  <p class="cap">người chơi yếu cày OT ở nghề điều dưỡng bị kẹt; chơi cân bằng chỉ 1%</p>
+  <p class="src" style="left:150px;width:670px">Cùng chiều với tin tuyển thật: 64% tin điều dưỡng rao trên 48 giờ/tuần (VietJobs). Nguồn: ket_qua_mo_phong.md</p>
+</section>
+
+<section class="slide l-text">
+  <h2 class="title">Mô phỏng đạt năm mục tiêu cân bằng</h2>
+  <div class="body">
+    <p>Đã chốt 4/11, soát lại mỗi lần chỉnh số:</p>
+    <ul class="ul gap">
+      <li>Không kiểu nào áp đảo: chênh ≤ 3 điểm %, đạt <b>≤ 2</b></li>
+      <li>Nghề lương thấp không khó qua cấp hơn: kẹt <b>1–2%</b></li>
+      <li>Cày OT không hơn chơi cân bằng</li>
+      <li>Phòng riêng cấp 2, căn hộ cấp 4–7; Back-end mua xe sớm hơn</li>
+      <li>Cuối nghề dư tối đa khoảng 10 màn lương, sát ngưỡng</li>
+    </ul>
+  </div>
+  <p class="src">Nguồn: Kinh tế và sức khoẻ JobQuest.md khối 6, mục B1</p>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Sửa sáu quyết định cũ</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>ID</th><th>Đề xuất sửa</th></tr></thead>
+      <tbody>
+        <tr><td>D-110</td><td>Thêm sức khoẻ 0–100 và xu mua sáu nhóm món</td></tr>
+        <tr><td>D-114</td><td>Thêm ngoại lệ: vật phẩm buff, buff vĩnh viễn của cột mốc</td></tr>
+        <tr><td>D-111, D-105</td><td>Gợi ý nghề và điểm mạnh dùng điểm gốc, bỏ mọi buff</td></tr>
+        <tr><td>D-113</td><td>Chòm sao vào trần chung +50%, không vượt trần màn</td></tr>
+        <tr><td>D-119</td><td>Nhiệm vụ phụ mở qua NPC, không chấm, thưởng cố định</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:16px">Đã chốt 4/11, chưa ghi vào 02-quyet-dinh.md. Giữ D-17, D-86, D-27. Hub đang có hai dòng D-105 và hai dòng D-110 trùng số, cần đánh lại khi ghi.</p>
+  </div>
+  <p class="src">Nguồn: Kinh tế và sức khoẻ JobQuest.md khối 7; docs/project-hub/02-quyet-dinh.md</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-section">
+  <div class="blk gray" style="left:151px;top:270px;height:167px"></div>
+  <div class="blk blue" style="left:279px;top:0;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">03</div>
+    <div class="sec-title">Seed màn chơi</div>
+    <p class="sec-sub">Chốt qua walkthrough 27/10–4/11</p>
+  </div>
+</section>
+
+<section class="slide l-intro">
+  <div class="blk blue" style="left:706px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:834px;top:270px;height:270px"></div>
+  <div class="txt">
+    <div class="t">Một màn là gì</div>
+    <p>Một tình huống công việc trọn vẹn, dài 10–15 phút, xoay quanh <b>một việc chính</b> của cấp. Màn cho trải nghiệm 1–2 keyword trọng tâm và tự mang theo mọi kiến thức cần để trả lời. Game chấm cách xử lý, không chấm kiến thức có sẵn.</p>
+  </div>
+  <p class="src" style="width:600px">Căn cứ: D-84, D-114. Nguồn: Seed scenario JobQuest.md khối 1</p>
+</section>
+
+<section class="slide l-rows">
+  <h2 class="title center">Các khối của một seed</h2>
+  <div class="rows">
+    <div class="row"><div class="lab">Ai, ở đâu</div><div class="its"><span>A · Định danh, vai, giới hạn</span><span>G · Gói cấp, công ty, onboard</span></div></div>
+    <div class="row"><div class="lab">Chuyện gì</div><div class="its"><span>B · Bối cảnh, fact sheet</span><span>C · Cast và NPC</span></div></div>
+    <div class="row"><div class="lab">Diễn ra sao</div><div class="its"><span>D · Pha xử lý, nút canon</span><span>M · Mini note tự ghi</span></div></div>
+    <div class="row"><div class="lab">Chấm</div><div class="its"><span>E1 · Thang 0/1/2 cộng cờ</span><span>E2 · Câu hỏi có/không, nháp</span></div></div>
+  </div>
+  <p class="src">Nguồn: research/reports/Seed scenario JobQuest.md, khối 1 đến M</p>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Đổi chất, không đổi chấm</h2>
+  <div class="cols">
+    <div><div class="h3">Được đổi</div><p>Lời thoại, nhịp việc, áp lực, giờ làm, văn hoá, thái độ NPC. Công ty random theo trọng số loại hình, phần lớn còn là số tạm.</p></div>
+    <div><div class="h3">Không được đổi</div><p>Khoá chấm, mục con đang quan sát, phạm vi hậu quả theo cấp. Không có thư mời để chọn công ty tốt.</p></div>
+  </div>
+  <p class="src">Trọng số random: decisions/occupation_work_environments.csv. Nguồn: Seed scenario JobQuest.md khối G</p>
+</section>
+
+<section class="slide l-grid6">
+  <div class="blk blue" style="left:832px;top:0;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+  <h2 class="title">Onboard: 6 slide mỗi lần vào cấp</h2>
+  <div class="grid">
+    <div><div class="h3">1 · Chào mừng</div><p>Công ty, sản phẩm, cách làm việc với nhau · Culture</p></div>
+    <div><div class="h3">2 · Một ngày</div><p>Giờ làm, nhịp việc, 3 việc thường ngày · Xem trước</p></div>
+    <div><div class="h3">3 · Người gặp</div><p>NPC thường trực của cấp · Connection</p></div>
+    <div><div class="h3">4 · Vai bạn</div><p>Phạm vi, ai duyệt, thế nào là làm tốt · Clarification</p></div>
+    <div><div class="h3">5 · Quy định</div><p>2–3 quy định thật của nghề, công ty · Compliance</p></div>
+    <div><div class="h3">6 · Nên biết</div><p>Mặt không hay của vị trí (BR-07) · Xem trước</p></div>
+  </div>
+  <p class="src">Khung 4C: Bauer 2010, Onboarding New Employees, SHRM Foundation (thứ cấp); xem trước công việc trung thực (RJP). Không gọi AI, không chấm</p>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Nói trước rồi mới bắt lỗi</h2>
+  <div class="cols">
+    <div><div class="h3">Luật công bằng</div><p>Giới hạn và quy định phải được nói ra trong màn, qua lời dặn hoặc slide onboard. Người chơi không bị chặn hay gắn cờ vì điều chưa từng nghe.</p></div>
+    <div><div class="h3">Dữ liệu cho AI-4</div><p>Tên thay bằng chỗ giữ {ten}, server điền sau. Không gửi ngày sinh, trường, điểm. Hệ thống không có giới tính; NPC không đoán từ tên.</p></div>
+  </div>
+  <p class="src">Căn cứ: D-110 (gọi model ở nước ngoài, §5.3.10). Nguồn: Seed scenario JobQuest.md khối A</p>
+</section>
+
+<section class="slide l-3col">
+  <h2 class="title center">NPC chỉ biết điều trong vai</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      <div class="h3">Lọc ngữ cảnh</div><p>Engine chỉ đưa vào prompt dữ kiện NPC đó biết</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+      <div class="h3">Không biết thì đoán</div><p>Đoán như người thường, theo hiểu biết của vai</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+      <div class="h3">Lộ dần</div><p>Hỏi đúng mới lộ; mỗi hành động mở tối đa một dữ kiện</p>
+    </div>
+  </div>
+  <p class="src">Model nhập vai hay biết nhiều hơn nhân vật: Character-LLM (EMNLP 2023), TimeChara (Findings ACL 2024). Lộ quá sớm: Zhou và cộng sự 2026 (preprint, chưa vào danh mục nguồn)</p>
+  <div class="footbar rev"></div>
+</section>
+
+<section class="slide l-text">
+  <h2 class="title">Khách hàng không tự biết mình cần gì</h2>
+  <div class="body">
+    <p>Dữ kiện của khách chia bốn lớp, lộ dần:</p>
+    <ul class="ul gap">
+      <li><b>L1</b> nói ngay, thường là giải pháp: “làm cho tôi nút X”</li>
+      <li><b>L2</b> lộ khi hỏi đúng chủ đề, hỏi lại vì sao</li>
+      <li><b>L3</b> ngầm: hỏi theo tình huống, xem quy trình thật</li>
+      <li><b>L4</b> chưa ai biết: lộ khi khách thấy phương án</li>
+      <li>Khách được nói mâu thuẫn; nhận ra điều đó là được chấm</li>
+    </ul>
+  </div>
+  <p class="src">Khung đã biết, ngầm, chưa biết: Sutcliffe &amp; Sawyer 2013, RE. Chia bốn lớp là đề xuất của nhóm</p>
+  <div class="blk navy" style="left:832px;top:270px;height:270px"></div>
+</section>
+
+<section class="slide l-process">
+  <h2 class="title">Ví dụ: Sự cố hệ thống giờ cao điểm!</h2>
+  <div class="chev"><div>Nút mở</div><div>Pha xử lý</div><div>Nút giữa</div><div>Nút kết</div></div>
+  <div class="notes" style="grid-template-columns:repeat(4,1fr)">
+    <ul class="ul"><li>9:40 mentor dặn</li><li>Nói rõ giới hạn</li></ul>
+    <ul class="ul"><li>Hỏi NPC</li><li>Mở log, số liệu</li><li>Tốn thời gian</li></ul>
+    <ul class="ul"><li>10:50 đếm giờ</li><li>Chốt nguyên nhân</li></ul>
+    <ul class="ul"><li>Email rút gọn</li><li>Nêu hướng xử lý</li></ul>
+  </div>
+  <p class="src">Nguồn: Seed scenario JobQuest.md, màn mẫu Back-end L3 (API chậm do lỗi N+1)</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Điểm thời gian: nói rẻ, làm đắt</h2>
+  <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Hành động</th><th>Điểm</th></tr></thead>
+      <tbody>
+        <tr><td>Một câu hỏi hay tin nhắn gửi NPC</td><td>1</td></tr>
+        <tr><td>Mở một tài liệu lần đầu</td><td>1</td></tr>
+        <tr><td>Việc nhỏ: chạy thử truy vấn trên staging</td><td>2</td></tr>
+        <tr><td>Việc lớn: viết bản vá, gọi họp</td><td>3</td></tr>
+        <tr><td>Trả lời nút, follow-up, ghi mini note</td><td>0</td></tr>
+      </tbody>
+    </table>
+    <p class="sm" style="margin-top:16px">Hết thời gian thì nút kết bật, người chơi vẫn nộp bài: không có trạng thái thua. Nút chưa tới thì không xét.</p>
+  </div>
+  <p class="src">Nguồn: Seed scenario JobQuest.md khối D2. Sức khoẻ, vật phẩm cộng trừ ngân sách: Kinh tế và sức khoẻ JobQuest.md khối 8</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Seed mẫu 1/4: định danh và bối cảnh</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Định danh, tên màn<span class="p">id · title</span></div><div class="v">SWE_BACKEND.L3.m2 · Sự cố hệ thống giờ cao điểm!</div></div><div class="fld"><div class="k">Việc chính, loại tình huống<span class="p">task_ref · situation_type</span></div><div class="v">L3#3 Tối ưu hoá các API bị chậm · S_INCIDENT</div></div><div class="fld"><div class="k">Vai người chơi<span class="p">player_role</span></div><div class="v">Junior back-end phụ trách API lịch sử đơn, báo cáo cho mentor (minh hoạ)</div></div><div class="fld"><div class="k">Giới hạn, chỉ AI-4 đọc<span class="p">limits</span></div><ul><li><b>decide_alone:</b> xem log, viết và test bản sửa</li><li><b>need_approval:</b> đưa bản sửa lên hệ thống thật → mentor</li><li><b>not_allowed:</b> hứa giờ xong với khách</li></ul></div></div><div><div class="fld"><div class="k">Chuyện gì đang xảy ra<span class="p">situation</span></div><div class="v">API lịch sử đơn chậm từ 8 giờ sáng: thường 0,2 giây, giờ hơn 4 giây. App quay mãi, bộ phận hỗ trợ bắt đầu nhận phàn nàn.</div></div><div class="fld"><div class="k">Việc của bạn<span class="p">goal</span></div><div class="v">Tìm ra vì sao API chậm và báo anh An hướng xử lý.</div></div><div class="fld"><div class="k">Hỏng thì mất gì<span class="p">stakes</span></div><div class="v">Tới trưa còn chậm thì đơn giờ cao điểm sẽ rớt.</div></div><div class="fld"><div class="k">Đồng hồ<span class="p">clock</span></div><div class="v">9:40 → 12:00 · 12 điểm thời gian</div></div><div class="fld"><div class="k">Độ khó, AI-4 không thấy<span class="p">difficulty</span></div><div class="v">Mơ hồ thấp · bên liên quan vừa · thiếu thông tin vừa · áp lực giờ cao</div></div></div></div><p class="src">Nguồn: Seed scenario JobQuest.md khối A, B1. focus_keywords chọn sau khi gỡ hàng chờ H1 (keyword lệch việc của cấp)</p></div>
+  </div>
+</section>
+
+<section class="slide l-table">
+  <h2 class="title">Seed mẫu 2/4: fact sheet</h2>
+  <div class="tblwrap">
+    <table class="tbl dense"><colgroup><col style="width:40px"><col><col style="width:84px"><col style="width:136px"><col style="width:84px"></colgroup>
+      <thead><tr><th>id</th><th>text</th><th>visibility</th><th>unlock · known_by</th><th>required</th></tr></thead>
+      <tbody>
+        <tr><td>f1</td><td>API chậm từ 8:00: thường 0,2 giây, giờ hơn 4 giây</td><td>shown</td><td>—</td><td>✓</td></tr>
+        <tr><td>f2</td><td>3 phàn nàn; sau 6 điểm thời gian là 12 (timeline)</td><td>shown</td><td>support</td><td></td></tr>
+        <tr><td>f3</td><td>API do bạn viết ba tuần trước, mentor review</td><td>shown</td><td>mentor</td><td>✓</td></tr>
+        <tr><td>f4</td><td>Sáng nay có khách sỉ với 900 đơn trong lịch sử</td><td>on_ask</td><td>mở bảng số liệu</td><td>✓</td></tr>
+        <tr><td>f5</td><td>Mỗi lần mở lịch sử đơn, hỏi cơ sở dữ liệu 901 lần</td><td>on_ask</td><td>mở log</td><td>✓</td></tr>
+        <tr><td>f6</td><td>Mentor đang gấp release thanh toán lúc 14:00</td><td>on_ask</td><td>hỏi mentor về lịch</td><td></td></tr>
+        <tr><td>f7</td><td>Nguyên nhân: lấy chi tiết từng đơn trong vòng lặp</td><td>ai_only</td><td>mentor</td><td>✓</td></tr>
+        <tr><td>f8</td><td>API không giới hạn số đơn trả về</td><td>ai_only</td><td>mentor</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Mỗi hành động mở tối đa một dữ kiện; dữ kiện mở thì tự vào mini note. Nguồn: Seed scenario JobQuest.md khối B2</p>
+  <div class="edge-r"></div>
+</section>
+
+<section class="slide l-2col">
+  <div class="blk gray" style="left:661px;top:0;height:215px"></div>
+  <div class="blk blue" style="left:789px;top:215px;height:270px"></div>
+  <h2 class="title">Không làm minigame cho từng nghề</h2>
+  <div class="cols">
+    <div><div class="h3">Vì sao không</div><p>Mô phỏng cần giống ở tác vụ hơn ở bề ngoài. Minigame thêm phương sai không liên quan tới thứ cần đo. 221 nghề thì không làm xuể.</p></div>
+    <div><div class="h3">Thay bằng</div><p>Tài liệu hiện như thật và bấm được, nút hành động có giá thời gian, 9 định dạng câu hỏi. Biết trước các lựa chọn thì dùng câu đóng; cần giải thích, thuyết phục thì viết tự do.</p></div>
+  </div>
+  <p class="src">Hamstra và cộng sự 2014, Academic Medicine 89(3); Messick 1995, American Psychologist 50(9); D-80</p>
+</section>
+
+<section class="slide l-3col">
+  <h2 class="title center">Lời thoại chia nhịp, có biểu cảm</h2>
+  <div class="cols">
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <div class="h3">Nhịp</div><p>Mỗi nhịp một ý, 1–2 câu; câu hỏi luôn là nhịp cuối</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+      <div class="h3">Biểu cảm</div><p>Khoảng 8 biểu cảm theo asset, theo truyện, không theo đúng sai</p>
+    </div>
+    <div>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+      <div class="h3">Văn nói</div><p>Giọng vùng miền của NPC; bản nháp cần người Việt duyệt</p>
+    </div>
+  </div>
+  <p class="src">Nguồn: Seed scenario JobQuest.md khối C3. AI-4 trả nhịp dạng danh sách để app hiện nhịp đầu sớm (NFR-01)</p>
+  <div class="footbar rev"></div>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Seed mẫu 3/4: cast và lời thoại</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Slot mentor<span class="p">relation · source · fill</span></div><div class="v">Cấp trên trực tiếp · resident · cố định</div></div><div class="fld"><div class="k">Muốn gì, bận gì<span class="p">want · pressure</span></div><div class="v">Sửa nhanh nhưng không đụng hệ thống thật khi chưa duyệt · đang gấp release lúc 14:00</div></div><div class="fld"><div class="k">Dữ kiện slot này biết<span class="p">facts[].known_by</span></div><div class="v">f3, f6, f7, f8: biết nguyên nhân thật, chỉ lộ khi được hỏi đúng</div></div><div class="fld"><div class="k">Slot support<span class="p">relation · source · expertise</span></div><div class="v">Phòng ban khác · guest · 0, nói lời đời thường</div></div><div class="fld"><div class="k">Khúc mắc<span class="p">concerns · resolve_when</span></div><div class="v">Khách sỉ doạ huỷ đơn → gỡ khi người chơi đưa mốc cập nhật cụ thể, không hứa giờ xong</div></div></div><div><div class="fld"><div class="k">Một lượt nói<span class="p">speaker: support · channel: call</span></div><ul><li>Alo em ơi, chị Linh nè.<span class="p">lo_lang</span></li><li>Khách sỉ gọi chị nãy giờ á.<span class="p">lo_lang</span></li><li>Họ nói trưa mà còn lag là huỷ đơn luôn.<span class="p">kho_chiu</span></li><li>Chị hứa với họ trưa xong được hông em?<span class="p">lo_lang</span></li></ul></div><div class="fld"><div class="k">Luật<span class="p">beats[] · expression</span></div><ul><li>Mỗi nhịp một ý; câu hỏi là nhịp cuối</li><li>Biểu cảm ép theo JSON schema, sai thì về bình thường</li><li>Lời mẫu cần người Việt duyệt</li></ul></div></div></div><p class="src">Nguồn: Seed scenario JobQuest.md khối C. Giá trị của hai slot là ví dụ minh hoạ; seed thật chưa soạn cast cho màn này</p></div>
+  </div>
+</section>
+
+<section class="slide l-4items">
+  <div class="blk gray" style="left:127px;top:111px;height:159px"></div>
+  <div class="blk blue" style="left:0;top:270px;height:270px"></div>
+  <h2 class="title right">Chấm theo một thang chung</h2>
+  <div class="grid">
+    <div><div class="h3">3–6 mục con</div><p>Chọn trong 42 mục con, ưu tiên 2 nhóm của cấp</p></div>
+    <div><div class="h3">0/1/2 cộng cờ</div><p>Một thang cho cả câu đóng lẫn câu viết</p></div>
+    <div><div class="h3">Trích lời</div><p>Mỗi chữ “có” phải trích câu của người chơi</p></div>
+    <div><div class="h3">Bỏ qua may rủi</div><p>Chấm theo thông tin lúc quyết định, không theo kết quả</p></div>
+  </div>
+  <p class="src" style="left:150px;width:670px">Checklist có/không: CheckEval (EMNLP 2025). Outcome bias: Baron &amp; Hershey 1988, JPSP 54(4). Thang: D-116, D-87</p>
+</section>
+
+<section class="slide l-diagram">
+  <h2 class="title">Seed mẫu 4/4: một nút và cách chấm</h2>
+  <div class="stage top">
+    <div class="sample"><div class="dcols" style="grid-template-columns:repeat(2,1fr)"><div><div class="fld"><div class="k">Nút<span class="p">id · kind · trigger</span></div><div class="v">n2 · mid · theo giờ, 10:50</div></div><div class="fld"><div class="k">Ai nói, qua đâu<span class="p">speaker · channel</span></div><div class="v">support · call</div></div><div class="fld"><div class="k">Câu hỏi<span class="p">canon.prompt</span></div><div class="v">Bạn trả lời chị Linh thế nào?</div></div><div class="fld"><div class="k">Định dạng<span class="p">format · time_limit_seconds</span></div><div class="v">timed_choice · 30; hết giờ là mức 0, không cờ</div></div><div class="fld"><div class="k">Hỏi thêm, chưa tới<span class="p">probe · if_unreached</span></div><div class="v">vì sao · skip (không xét, giữ quỹ để chơi lại)</div></div><div class="fld"><div class="k">Biến thể lời<span class="p">variants</span></div><div class="v">Ở n1 chọn b thì chị Linh nói khác; lõi câu hỏi giữ nguyên</div></div></div><div><div class="fld"><div class="k">Quan sát, AI-4 không thấy<span class="p">observes[0]</span></div><div class="v">sub: DD.trung_thuc · from: n2, n4</div></div><div class="fld"><div class="k">Dấu hiệu trong màn này<span class="p">signs</span></div><ul><li><b>A</b> báo mentor hoặc kênh sự cố trước 12 giờ; không hứa với support khi chưa chắc</li><li><b>B</b> thừa nhận API mình viết gọi cơ sở dữ liệu trong vòng lặp</li><li><b>C</b> đề xuất thêm test tải, hoặc giới hạn số đơn trả về</li><li><b>Không tính:</b> “Chắc DB có vấn đề” không phải là nhận lỗi</li></ul></div><div class="fld"><div class="k">Quy ra mức (nháp)</div><div class="v">A và B → 1 · A, B và C → 2 · còn lại → 0. Mỗi “có” phải trích câu của người chơi.</div></div></div></div><p class="src">Nguồn: Seed scenario JobQuest.md khối D5, E1, E2</p></div>
+  </div>
+</section>
+
+<section class="slide l-section alt">
+  <div class="blk gray" style="left:553px;top:102px;height:168px"></div>
+  <div class="blk blue" style="left:681px;top:270px;height:270px"></div>
+  <div class="sec">
+    <div class="sec-num">04</div>
+    <div class="sec-title">Cần chốt tiếp</div>
+    <p class="sec-sub">Phần nháp, rủi ro và việc tuần sau</p>
+  </div>
+</section>
+
+<section class="slide l-roadmap">
+  <h2 class="title">Đã chốt, đang nháp, làm tiếp</h2>
+  <div class="stairs" style="--n:3">
+    <div class="step" style="--i:0"><div class="h3">Đã chốt</div><div class="line"></div><ul class="ul"><li>Seed: khối 1, A–D, E1, M</li><li>Kinh tế: 10 điểm, 4/11</li><li>Sửa 6 quyết định cũ</li><li>110 loại hình nơi làm</li></ul></div>
+    <div class="step" style="--i:1"><div class="h3">Đang nháp</div><div class="line"></div><ul class="ul"><li>Câu hỏi có/không</li><li>13 cờ chung</li><li>Mẫu nhóm 7</li></ul></div>
+    <div class="step" style="--i:2"><div class="h3">Làm tiếp</div><div class="line"></div><ul class="ul"><li>Ghi vào hub</li><li>Sửa schema code</li><li>Chơi thử bản nhỏ</li></ul></div>
+  </div>
+  <div class="footbar"></div>
+</section>
+
+<section class="slide l-quad">
+  <h2 class="title center">Rủi ro còn mở</h2>
+  <div class="quad">
+    <div class="side">Dữ liệu</div>
+    <div><div class="q-h">Nguồn yếu</div><div class="q-b"><ul class="ul"><li>79% ô thuộc tính mức C</li><li>157 nghề trọng số tạm</li></ul></div></div>
+    <div><div class="q-h">Số tạm</div><div class="q-b"><ul class="ul"><li>Giá, buff chưa thử</li><li>Lời thoại chưa duyệt</li></ul></div></div>
+    <div class="side">Chấm</div>
+    <div><div class="q-h">Judge tiếng Việt</div><div class="q-b"><ul class="ul"><li>Kappa ~0,3, đo đa ngôn ngữ</li><li>Cần bộ nhãn người Việt</li></ul></div></div>
+    <div><div class="q-h">Keyword cấp</div><div class="q-b"><ul class="ul"><li>Lệch việc của cấp</li><li>Nhóm 7 dễ đoán đáp án</li></ul></div></div>
+  </div>
+  <p class="src">Kappa giữa các judge trên nhiều ngôn ngữ: Fu &amp; Liu, Findings EMNLP 2025</p>
+</section>
+
+<section class="slide l-thanks">
+  <div class="big">Cảm ơn!</div>
+  <div class="info">
+    <p>Cần góp ý: bản mẫu nhóm 7 và việc sửa sáu quyết định cũ (D-105 đến D-119).</p>
+    <p style="margin-top:14px">research/reports/Seed scenario JobQuest.md<br>research/reports/Kinh tế và sức khoẻ JobQuest.md<br>occupation-data/decisions/</p>
+    <div class="icons">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.350 0-3.5 0 0-1 0-3 1.5-2.640-.5-5.360-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.650-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+    </div>
+  </div>
+  <div class="blk blue" style="left:704px;top:270px;height:270px"></div>
+  <div class="blk navy" style="left:832px;top:0;height:270px"></div>
+</section>
+
+<!-- ================= SLIDES END ================= -->
+</main>
+<div class="hud" id="hud"></div>
+<script>
+/* Deck runtime: fit-to-window, ← → / Space / PgUp PgDn / Home End, F = fullscreen, O = overview, #n deep link, P = print */
+(function(){
+  const deck=document.querySelector('.deck'), slides=[...deck.querySelectorAll('.slide')], hud=document.getElementById('hud');
+  let i=0; try{i=Math.min(Math.max((parseInt(location.hash.slice(1))||1)-1,0),slides.length-1)}catch(e){}
+  function fit(){ if(document.body.classList.contains('overview'))return;
+    const s=Math.min(innerWidth/960,innerHeight/540); deck.style.transform=`translate(${(innerWidth-960*s)/2}px,${(innerHeight-540*s)/2}px) scale(${s})`; }
+  function show(n){ i=Math.min(Math.max(n,0),slides.length-1); slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    hud.textContent=(i+1)+' / '+slides.length; try{history.replaceState(null,'','#'+(i+1))}catch(e){} }
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1)}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='f'||e.key==='F'){try{const r=document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();r&&r.catch&&r.catch(()=>{})}catch(e){}}
+    else if(e.key==='o'||e.key==='O'){document.body.classList.toggle('overview');fit();slides[i].scrollIntoView({block:'center'})}
+    else if(e.key==='p'||e.key==='P'){print()}
+  });
+  slides.forEach((s,k)=>s.addEventListener('click',()=>{ if(document.body.classList.contains('overview')){document.body.classList.remove('overview');show(k);fit()} }));
+  addEventListener('resize',fit); fit(); show(i);
+})();
+</script>
+</body>
+</html>

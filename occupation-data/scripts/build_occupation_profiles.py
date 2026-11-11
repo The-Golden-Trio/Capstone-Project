@@ -14,6 +14,8 @@
 - research/research_notes/Thang cấp nghề/nghe_di_truoc.csv: lộ trình cấp cao, chuyển ngang của nghề IT (D-121).
 - decisions/education_map.json, datasets/vn/education_majors.json: ngành học và giấy phép hành nghề.
 - datasets/work_settings.json: nơi làm việc có mã, gán theo luật trong file.
+- datasets/work_environments.json, decisions/occupation_work_environments.csv: loại hình nơi làm (kho random công ty)
+  và nghề nào thuộc loại hình nào, kèm trọng số.
 
 Đầu ra: generated/occupation_profiles.json, generated/occupation_profiles.md (bảng độ phủ) và
 generated/occupation_profiles_review.md (lý do của từng quyết định theo từng nghề, để duyệt).
@@ -48,6 +50,7 @@ DROPPED_PATH_STAGES = {"de_vao_hon"}
 IT_PATH_STAGES = (("cap_cao", "Cấp cao"), ("chuyen_ngang", "Chuyển ngang"))
 OUTLOOK_LEVELS = ("thap", "vua", "cao")
 MIN_OUTLOOK_POSTINGS = 5
+MAX_ENVIRONMENTS = 3
 VIETJOBS_DATA_YEAR = "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)"
 ITVIEC_REPORT = "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026"
 
@@ -114,6 +117,8 @@ def load_sources():
         "salary_ref": load_json(DATASETS / "vn" / "salary_reference.json"),
         "edu": load_json(DECISIONS / "education_map.json"),
         "settings": load_json(DATASETS / "work_settings.json"),
+        "environments": load_json(DATASETS / "work_environments.json"),
+        "env_map": {r["role_code"]: r for r in csv.DictReader(open(DECISIONS / "occupation_work_environments.csv", encoding="utf-8-sig"))},
         "prereq": list(csv.DictReader(open(PREREQ_FILE, encoding="utf-8-sig"))),
         "majors": {
             "university": {m["name"]: m for m in majors["university"]},
@@ -301,6 +306,76 @@ def check_education(src, role_codes):
         raise SystemExit("education_map.json chưa hợp lệ:\n" + "\n".join(problems))
 
 
+def parse_environments(cell):
+    """'WE_A:60;WE_B:40' → [{"id": "WE_A", "weight": 60}, …]."""
+    out = []
+    for part in cell.split(";"):
+        env, _, weight = part.strip().partition(":")
+        out.append({"id": env, "weight": int(weight)})
+    return out
+
+
+def check_environments(src, role_codes):
+    """Mọi loại hình đủ thuộc tính, mức và chứng cứ có nguồn; mọi nghề có 1–3 loại hình đã định nghĩa, trọng số cộng 100."""
+    data, problems = src["environments"], []
+    meta = data["_meta"]
+    ids = set()
+    for env in data["environments"]:
+        eid = env["id"]
+        ids.add(eid)
+        if env["industry"] not in data["industries"]:
+            problems.append(f"{eid}: không có nhóm ngành '{env['industry']}'")
+        problems += [f"{eid}: thiếu thuộc tính '{a}'" for a in meta["attributes"] if not env["attributes"].get(a)]
+        cited = list(meta["attributes"]) + [k for k, spec in meta["levels"].items() if spec.get("evidence")]
+        problems += [f"{eid}: thiếu chứng cứ của '{a}'" for a in cited if a not in env["evidence"]]
+        for key, spec in meta["levels"].items():
+            if env["levels"].get(key) not in spec["values"]:
+                problems.append(f"{eid}: mức '{key}' = {env['levels'].get(key)!r} không hợp lệ")
+        for attr, (level, *cited) in env["evidence"].items():
+            if level not in meta["evidence_levels"]:
+                problems.append(f"{eid}.{attr}: mức chứng cứ '{level}' không hợp lệ")
+            if level != "C" and not cited:
+                problems.append(f"{eid}.{attr}: mức {level} nhưng không ghi nguồn")
+            problems += [f"{eid}.{attr}: không có nguồn '{s}'" for s in cited if s not in meta["sources"]]
+    for code in role_codes:
+        row = src["env_map"].get(code)
+        if not row:
+            problems.append(f"{code}: chưa gán loại hình nơi làm")
+            continue
+        envs = parse_environments(row["environments"])
+        if not 1 <= len(envs) <= MAX_ENVIRONMENTS:
+            problems.append(f"{code}: cần 1–{MAX_ENVIRONMENTS} loại hình, có {len(envs)}")
+        problems += [f"{code}: không có loại hình '{e['id']}'" for e in envs if e["id"] not in ids]
+        if sum(e["weight"] for e in envs) != 100:
+            problems.append(f"{code}: trọng số cộng {sum(e['weight'] for e in envs)}, cần 100")
+        if not row["reason"].strip():
+            problems.append(f"{code}: thiếu lý do gán")
+        if row["weight_status"] != ("tam_thoi" if row["evidence"] == "C" else "co_so_lieu"):
+            problems.append(f"{code}: weight_status '{row['weight_status']}' không khớp mức {row['evidence']} (C là tam_thoi, A/B là co_so_lieu)")
+    problems += [f"{c}: không có trong danh mục nghề" for c in src["env_map"] if c not in role_codes]
+    if problems:
+        raise SystemExit("work_environments.json hoặc occupation_work_environments.csv chưa hợp lệ:\n" + "\n".join(problems))
+
+
+def environment_section(src, code, settings, facts):
+    """Mục work_environment chung cho nghề IT và ngoài IT; trả thêm nguồn của loại hình và lịch làm rao."""
+    row = src["env_map"][code]
+    env = {"environments": parse_environments(row["environments"])}
+    if settings:
+        env["settings"] = settings
+    sources = {"work_environment.environments": {"evidence": row["evidence"], "source": "decisions/occupation_work_environments.csv",
+                                                 "reason": row["reason"], "weight_status": row["weight_status"]}}
+    schedule = src["vietjobs"]["roles"].get(code, {}).get("schedule")
+    if schedule:
+        env["schedule_vn"] = {**schedule, "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+                              "data_year": VIETJOBS_DATA_YEAR,
+                              "note": "Lịch làm rao trên tin tuyển dụng: tỉ lệ % tin, giờ một tuần và giờ vào làm là trung vị."}
+        sources["work_environment.schedule_vn"] = {"evidence": "B", "source": src["vietjobs"]["_meta"]["source"]}
+    if facts:
+        env["facts"] = facts
+    return env, sources
+
+
 def it_profile(src, role, onet, it_level_of):
     code = role["role_code"]
     shared = onet["shared_with"]
@@ -341,16 +416,10 @@ def it_profile(src, role, onet, it_level_of):
     if skills:
         profile["skills"] = skills
 
-    env = {}
     settings = settings_of(onet["codes"], *src["context"], src["settings"])
-    if settings:
-        env["settings"] = settings
-    if role.get("work_environment_ids"):
-        env["company_types"] = role["work_environment_ids"]
-    if not shared:
-        env["facts"] = onet["work_environment"]["facts"]
-    if env:
-        profile["work_environment"] = env
+    profile["work_environment"], env_sources = environment_section(
+        src, code, settings, None if shared else onet["work_environment"]["facts"])
+    sources.update(env_sources)
 
     edu = education(src, code, onet["job_zone"])
     if edu:
@@ -418,10 +487,9 @@ def non_it_profile(src, role, level_of):
     profile["skills"] = {"hard": scored(ss["hard_skills_top"]), "knowledge": scored(ss["knowledge_top"]),
                          "soft": role["onet"]["soft"]}
     sources["skills.hard"] = {"evidence": "B", "source": "O*NET 31.0 (Mỹ), thang Importance"}
-    profile["work_environment"] = {"facts": role["work_environment_onet"]["facts"]}
     settings = settings_of(role["onet"]["codes"], *src["context"], src["settings"])
-    if settings:
-        profile["work_environment"]["settings"] = settings
+    profile["work_environment"], env_sources = environment_section(src, code, settings, role["work_environment_onet"]["facts"])
+    sources.update(env_sources)
 
     edu = education(src, code, role.get("job_zone"))
     if edu:
@@ -591,6 +659,15 @@ def review_lines(src, raw, profile, onet_it):
     settings, why = settings_with_reasons(profile["codes"]["onet"], *src["context"], src["settings"])
     names = ", ".join(src["settings"]["settings"][x]["name_vn"] for x in settings)
     out.append(f"- **Nơi làm việc:** {names} — luật khớp: {'; '.join(why)}.")
+    env_names = {e["id"]: e["name_vn"] for e in src["environments"]["environments"]}
+    row = src["env_map"][code]
+    picked = ", ".join(f"{env_names[e['id']]} ({e['weight']}%)" for e in profile["work_environment"]["environments"])
+    status = "trọng số tạm thời, sửa khi có số liệu" if row["weight_status"] == "tam_thoi" else "trọng số có số liệu"
+    out.append(f"- **Loại hình nơi làm (decisions/occupation_work_environments.csv, mức {row['evidence']}, {status}):** {picked} — {clean(row['reason'])}.")
+    sched = profile["work_environment"].get("schedule_vn")
+    if sched:
+        out.append(f"  - Lịch làm rao (VietJobs, {sched['with_hours']} tin có giờ): thứ 7 {sched['saturday_pct']}%, chủ nhật {sched['sunday_pct']}%, "
+                   f"làm ca {sched['shift_pct']}%, trung vị {sched['week_hours_median']} giờ/tuần, vào làm {sched['start_median']}.")
 
     entry = src["edu"]["roles"].get(code, {})
     edu = []
@@ -647,6 +724,10 @@ def review_markdown(src, data, raw_by_code, onet_it):
         "",
         "**Nơi làm việc:** luật trong `datasets/work_settings.json`, theo thứ tự, tối đa hai nơi; luật dự phòng chỉ áp khi chưa khớp luật nào.",
         "",
+        f"**Loại hình nơi làm:** nhóm gán tay 1–{MAX_ENVIRONMENTS} loại hình trong `datasets/work_environments.json` cho từng nghề, kèm trọng số "
+        "random công ty và lý do (`decisions/occupation_work_environments.csv`). Lịch làm rao lấy từ cột giờ làm của tin VietJobs khi nghề "
+        "có đủ tin.",
+        "",
         "**Đã bỏ trên toàn bộ:**",
     ]
     lines += [f"- {x}" for x in meta["dropped"]]
@@ -674,7 +755,8 @@ def coverage(profiles):
         ("Tóm tắt", "overview.summary"), ("Hợp với ai", "overview.fit_summary"), ("Mặt trái", "overview.downsides"),
         ("Mã nghề Việt Nam", "codes.vsco"), ("Việc hằng ngày", "daily_work"), ("Kỹ năng O*NET", "skills.hard"),
         ("Kiến thức", "skills.knowledge"), ("Môi trường: câu mô tả", "work_environment.facts"),
-        ("Nơi làm việc", "work_environment.settings"), ("Kiểu công ty (IT)", "work_environment.company_types"), ("Mức chuẩn bị", "education.preparation"),
+        ("Nơi làm việc", "work_environment.settings"), ("Loại hình nơi làm", "work_environment.environments"),
+        ("Lịch làm rao (VietJobs)", "work_environment.schedule_vn"), ("Mức chuẩn bị", "education.preparation"),
         ("Ngành đại học", "education.majors_university"), ("Ngành cao đẳng, trung cấp", "education.majors_vocational"),
         ("Giấy phép hành nghề", "education.licence"), ("Thang cấp", "career.levels"), ("Lộ trình", "career.path"),
         ("Thăng tiến", "career.progresses_to"), ("Nghề gần", "career.similar"), ("Lương", "pay"),
@@ -713,7 +795,9 @@ def build():
     src = load_sources()
     it_roles = src["it"]["roles"]
     non_it = src["non_it"]["roles"]
-    check_education(src, {r["role_code"] for r in it_roles} | {r["role_code"] for r in non_it})
+    role_codes = {r["role_code"] for r in it_roles} | {r["role_code"] for r in non_it}
+    check_education(src, role_codes)
+    check_environments(src, role_codes)
     _, context, _, _, _, _, _ = load_tables()
     src["context"] = (context, context_stats(context))
     onet = it_onet(src)
@@ -755,7 +839,8 @@ def build():
             "coverage": cov,
             "pay_basis": basis,
             "work_settings": {k: v["name_vn"] for k, v in src["settings"]["settings"].items()},
-            "company_types_ref": "datasets/work_environments.json",
+            "work_environments": {e["id"]: e["name_vn"] for e in src["environments"]["environments"]},
+            "work_environments_ref": "datasets/work_environments.json",
         },
         "profiles": profiles,
     }

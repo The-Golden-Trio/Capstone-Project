@@ -1,0 +1,143 @@
+[
+  {"scene": "W1", "turn": 1, "choice": "chị", "task": "reply", "slot": "quan_ly", "card": "Mai", "player": "Dạ cô, giờ con làm gì trước ạ?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn nghe chảo dầu xèo xèo, cô Mai vừa đảo vừa phẩy tay về phía bàn năm.", "expression": null},
+     {"speaker": "quan_ly", "text": "Bàn năm gọi hai phần cơm sườn, một phần không hành nghen con.", "expression": "vui"},
+     {"speaker": "quan_ly", "text": "Canh chua hết sạch rồi đó.", "expression": "lo_lang"},
+     {"speaker": "quan_ly", "text": "Khách văn phòng ngồi kín, cô sợ người ta chờ lâu rồi bỏ đi.", "expression": "lo_lang"}
+   ], "question_by": null}},
+  {"scene": "W1", "turn": 2, "choice": "chị", "task": "reply", "slot": "dong_nghiep", "card": "Hải", "player": "Ơi, máy tính tiền lại đứng hình rồi kìa.",
+   "output": {"beats": [
+     {"speaker": "dong_nghiep", "text": "Chết rồi chết rồi.", "expression": "ngac_nhien"},
+     {"speaker": "canh", "text": "Bạn thấy Hải gãi gáy, nhìn cái màn hình đứng im.", "expression": null},
+     {"speaker": "dong_nghiep", "text": "Chắc hồi nãy tui bấm mạnh quá… xin lỗi nha.", "expression": "lo_lang"},
+     {"speaker": "dong_nghiep", "text": "Máy này hay treo lắm, rút điện cắm lại là chạy.", "expression": "binh_thuong"}
+   ], "question_by": null}},
+  {"scene": "W1", "turn": 3, "choice": "chị", "task": "reply", "slot": "khach", "card": "Bảo", "player": "Em muốn mua gì nè?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy cậu bé xoay điện thoại trên tay, ngó lên quầy cơm.", "expression": null},
+     {"speaker": "khach", "text": "Em lấy một hộp cơm mang đi.", "expression": "vui"},
+     {"speaker": "khach", "text": "Trong túi em còn đúng ba mươi nghìn, chị đừng chặt em nha.", "expression": "cuoi_lon"},
+     {"speaker": "khach", "text": "Món nào no mà rẻ nhất vậy chị?", "expression": "vui"}
+   ], "question_by": "khach"}},
+  {"scene": "W1", "turn": 4, "choice": "chị", "task": "reply", "slot": "khach", "card": "Bảo", "player": "Cơm gà ba mươi lăm nghìn, cơm trứng hai mươi lăm nghìn đó em.",
+   "output": {"beats": [
+     {"speaker": "khach", "text": "Gà ba mươi lăm thì em thua rồi, túi em có ba mươi à.", "expression": "kho_chiu"},
+     {"speaker": "khach", "text": "Vậy em lấy cơm trứng.", "expression": "binh_thuong"},
+     {"speaker": "khach", "text": "Cho em xin xíu nha, bới nhiều cơm chút được hông chị?", "expression": "cuoi_lon"}
+   ], "question_by": "khach"}},
+  {"scene": "W1", "turn": 5, "choice": "chị", "task": "reply", "slot": "quan_ly", "card": "Mai", "player": "Cô ơi, bàn năm hỏi sao lâu quá.",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy cô Mai múc cơm ra đĩa, tay không ngừng.", "expression": null},
+     {"speaker": "quan_ly", "text": "Trời đất ơi con ơi, sườn bàn năm cô đang làm nè.", "expression": "kho_chiu"},
+     {"speaker": "quan_ly", "text": "Bàn năm là khách quen, chờ thêm chút chắc được.", "expression": "binh_thuong"},
+     {"speaker": "quan_ly", "text": "Mà khách văn phòng còn giờ vô làm, cô lo người ta bỏ đi.", "expression": "lo_lang"}
+   ], "question_by": null}},
+  {"scene": "W1", "turn": 6, "choice": "chị", "task": "reply", "slot": "dong_nghiep", "card": "Hải", "player": "Hồi nãy làm vỡ tô hả? Có đứt tay không?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy Hải gãi gáy, mắt liếc về góc bếp.", "expression": null},
+     {"speaker": "dong_nghiep", "text": "Trời ơi, chuyện đó bay tới tai bạn luôn rồi.", "expression": "ngac_nhien"},
+     {"speaker": "dong_nghiep", "text": "Tay tui không sao, lỗi tui lật đật quá.", "expression": "lo_lang"},
+     {"speaker": "dong_nghiep", "text": "Bữa nay tui tính không làm bể cái gì hết, vậy mà…", "expression": "lo_lang"},
+     {"speaker": "dong_nghiep", "text": "Mà bạn hỏi vậy tui cũng đỡ run.", "expression": "vui"}
+   ], "question_by": null}},
+
+  {"scene": "W3", "turn": 1, "choice": "chị", "task": "reply", "slot": "dieu_phoi", "card": "Sang", "player": "Anh Sang, ca đêm có gì em cần biết không anh?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy anh Sang ngáp, đưa tay che miệng.", "expression": null},
+     {"speaker": "dieu_phoi", "text": "Xe số ba trễ… kẹt cầu.", "expression": "binh_thuong"},
+     {"speaker": "dieu_phoi", "text": "Với hai đơn ghi sai địa chỉ nữa.", "expression": "suy_nghi"},
+     {"speaker": "dieu_phoi", "text": "Nhiêu đó thôi, anh còn về đưa con đi học.", "expression": "binh_thuong"}
+   ], "question_by": null}},
+  {"scene": "W3", "turn": 2, "choice": "chị", "task": "reply", "slot": "kinh_doanh", "card": "Phát", "player": "Anh Phát, đơn khách của anh đang xếp sau xe số ba đó.",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy anh Phát lắc điện thoại trên tay, liếc giờ.", "expression": null},
+     {"speaker": "kinh_doanh", "text": "Sau xe số ba là trễ chắc rồi em ơi.", "expression": "kho_chiu"},
+     {"speaker": "kinh_doanh", "text": "Kèo này thơm lắm, hôm nay giao đúng giờ là khách ký hợp đồng năm liền.", "expression": "cuoi_lon"},
+     {"speaker": "kinh_doanh", "text": "Em cho đơn anh lên trước được không?", "expression": "binh_thuong"}
+   ], "question_by": "kinh_doanh"}},
+  {"scene": "W3", "turn": 3, "choice": "chị", "task": "reply", "slot": "kinh_doanh", "card": "Phát", "player": "Hôm bữa anh kể nhà anh hồi nhỏ phải bán nhà, giờ ổn hơn chưa anh?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy anh Phát cười to, mắt vẫn dán vô màn hình điện thoại.", "expression": null},
+     {"speaker": "kinh_doanh", "text": "Chuyện đó anh không nhớ là có kể với em.", "expression": "binh_thuong"},
+     {"speaker": "kinh_doanh", "text": "Giờ anh chỉ lo đơn khách lớn kịp giờ thôi.", "expression": "vui"}
+   ], "question_by": null}},
+  {"scene": "W3", "turn": 4, "choice": "chị", "task": "reply", "slot": "khach", "card": "Ngọc", "player": "Dạ chú cho con xin mã đơn ạ.",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy chú Ngọc lục túi áo, rút ra một tờ giấy nhỏ gấp tư.", "expression": null},
+     {"speaker": "khach", "text": "Mã đơn chú ghi trong này, chữ nhỏ xíu à.", "expression": "vui"},
+     {"speaker": "khach", "text": "Kiện máy ảnh cũ gửi từ Hà Nội đó con, chú chờ ba ngày rồi.", "expression": "binh_thuong"}
+   ], "question_by": null}},
+  {"scene": "W3", "turn": 5, "choice": "chị", "task": "reply", "slot": "khach", "card": "Ngọc", "player": "Kiện của chú đang ở xe số ba, xe trễ vì kẹt cầu ạ.",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn nghe chú Ngọc cười khà một tiếng, tay xoa cằm.", "expression": null},
+     {"speaker": "khach", "text": "Kẹt cầu thì ai làm gì được, chú hiểu mà.", "expression": "binh_thuong"},
+     {"speaker": "khach", "text": "Có điều chú chờ ba ngày rồi đó con.", "expression": "kho_chiu"},
+     {"speaker": "khach", "text": "Chừng nào xe số ba tới, con nói rõ giùm chú được hông?", "expression": "suy_nghi"}
+   ], "question_by": "khach"}},
+  {"scene": "W3", "turn": 6, "choice": "chị", "task": "reply", "slot": "dieu_phoi", "card": "Sang", "player": "Anh về đi, em lo phần còn lại.",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy anh Sang dụi mắt, cầm chìa khoá xe lên.", "expression": null},
+     {"speaker": "dieu_phoi", "text": "Ừ… vậy anh về, kịp đưa con đi học.", "expression": "vui"},
+     {"speaker": "dieu_phoi", "text": "Em cũng dậy sớm… uống miếng nước đi đã.", "expression": "binh_thuong"}
+   ], "question_by": null}},
+
+  {"scene": "W4", "turn": 1, "choice": "anh", "task": "reply", "slot": "ban_hang", "card": "Thương", "player": "Chị Thương, khách hỏi máy lọc nước còn không chị?",
+   "output": {"beats": [
+     {"speaker": "ban_hang", "text": "Còn hai cái trưng bày thôi em.", "expression": "binh_thuong"},
+     {"speaker": "ban_hang", "text": "Giảm giá cũng hết trong hôm nay luôn đó.", "expression": "vui"},
+     {"speaker": "ban_hang", "text": "Khách cần mấy cái vậy em?", "expression": "binh_thuong"}
+   ], "question_by": "ban_hang"}},
+  {"scene": "W4", "turn": 2, "choice": "anh", "task": "reply", "slot": "ban_hang", "card": "Thương", "player": "Nghe nói chị từng làm y tá hả? Nhìn chị chăm khách kỹ ghê.",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy chị Thương cười nhẹ, tay lau lại mặt kệ trưng bày.", "expression": null},
+     {"speaker": "ban_hang", "text": "Chị quen hỏi han người ta chút thôi.", "expression": "vui"},
+     {"speaker": "ban_hang", "text": "Chuyện chị để bữa khác hen, khách máy lọc nước còn chờ.", "expression": "binh_thuong"},
+     {"speaker": "ban_hang", "text": "Mà em đứng nãy giờ, có uống miếng nước chưa?", "expression": "lo_lang"}
+   ], "question_by": "ban_hang"}},
+  {"scene": "W4", "turn": 3, "choice": "anh", "task": "reply", "slot": "ke_toan", "card": "Hiếu", "player": "Anh Hiếu, khách muốn lấy hoá đơn đỏ, giờ sao anh?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy anh Hiếu nheo mắt nhìn sát cuốn sổ.", "expression": null},
+     {"speaker": "ke_toan", "text": "Xuất trong ngày mua.", "expression": "binh_thuong"},
+     {"speaker": "ke_toan", "text": "Qua ngày là không được đấy.", "expression": "suy_nghi"}
+   ], "question_by": null}},
+  {"scene": "W4", "turn": 4, "choice": "anh", "task": "reply", "slot": "ke_toan", "card": "Hiếu", "player": "Đồng hồ em chạy chậm mấy phút, anh coi giùm được không?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy anh Hiếu ngẩng lên một chút, rồi cúi lại vào sổ.", "expression": null},
+     {"speaker": "ke_toan", "text": "Ừ. Để đấy.", "expression": "binh_thuong"},
+     {"speaker": "ke_toan", "text": "Anh xem sổ, không xem giờ.", "expression": "vui"}
+   ], "question_by": null}},
+  {"scene": "W4", "turn": 5, "choice": "anh", "task": "reply", "slot": "khach", "card": "Tấn", "player": "Dạ chú tìm nồi cơm loại nào ạ?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy chú Tấn xoa hai bàn tay vào nhau, nhìn dãy nồi cơm trên kệ.", "expression": null},
+     {"speaker": "khach", "text": "Chú cần cái nhỏ, nấu vừa cho một người thôi.", "expression": "binh_thuong"},
+     {"speaker": "khach", "text": "Mấy cái nút bấm điện tử chú không rành lắm mà.", "expression": "suy_nghi"}
+   ], "question_by": null}},
+  {"scene": "W4", "turn": 6, "choice": "anh", "task": "reply", "slot": "khach", "card": "Tấn", "player": "Chú mới nghỉ hưu hả chú? Nhìn chú còn khoẻ ghê.",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn thấy chú Tấn cúi xuống, lật một cái nồi nhỏ lên xem đáy.", "expression": null},
+     {"speaker": "khach", "text": "Khoẻ thì cũng thường thôi em.", "expression": "binh_thuong"},
+     {"speaker": "khach", "text": "Hết rồi thì sang cái khác.", "expression": "buon"},
+     {"speaker": "khach", "text": "Cái nồi này nấu cho một người có vừa không em?", "expression": "binh_thuong"}
+   ], "question_by": "khach"}},
+
+  {"scene": "S1", "turn": 1, "choice": "chị", "task": "reply", "slot": "IV_hoang_de", "card": "Hồng", "player": "Chị Hồng, bé nhà mình thích ăn gì để em chuẩn bị?",
+   "output": {"beats": [
+     {"speaker": "canh", "text": "Bạn nghe chị Hồng gõ đầu bút xuống mặt bàn.", "expression": null},
+     {"speaker": "IV_hoang_de", "text": "Cháu nhà chị không kén ăn đâu.", "expression": "binh_thuong"},
+     {"speaker": "IV_hoang_de", "text": "Em nấu gì đơn giản là được.", "expression": "vui"},
+     {"speaker": "IV_hoang_de", "text": "Chị nhờ thế này, phiền em quá.", "expression": "suy_nghi"}
+   ], "question_by": null}},
+  {"scene": "S1", "turn": 2, "choice": "chị", "task": "reply", "slot": "IV_hoang_de", "card": "Hồng", "player": "Chị đi họp tới mấy giờ về vậy chị?",
+   "output": {"beats": [
+     {"speaker": "IV_hoang_de", "text": "Giờ về thì chị chưa nói chắc được.", "expression": "suy_nghi"},
+     {"speaker": "IV_hoang_de", "text": "Họp xong là chị về thẳng, không đi đâu nữa.", "expression": "binh_thuong"},
+     {"speaker": "IV_hoang_de", "text": "Trước khi về chị nhắn em. Thế nhé.", "expression": "vui"}
+   ], "question_by": null}},
+  {"scene": "S1", "turn": 3, "choice": "chị", "task": "reply", "slot": "IV_hoang_de", "card": "Hồng", "player": "Chị hay làm việc tới khuya lắm hả? Nhìn chị mệt quá.",
+   "output": {"beats": [
+     {"speaker": "IV_hoang_de", "text": "Chị quen rồi.", "expression": "binh_thuong"},
+     {"speaker": "IV_hoang_de", "text": "Việc đội, việc nhà, việc họp. Cái nào cũng phải xong.", "expression": "kho_chiu"},
+     {"speaker": "IV_hoang_de", "text": "Không ai làm thì chị làm.", "expression": "binh_thuong"}
+   ], "question_by": null}}
+]

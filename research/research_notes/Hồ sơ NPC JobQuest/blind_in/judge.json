@@ -1,0 +1,38 @@
+{
+  "part1_assign": {"1": "1", "2": "1", "3": "1", "4": "2", "5": "1", "6": "2", "7": "2", "8": "1", "9": "2", "10": "2"},
+  "part1_conf": {"1": "cao", "2": "cao", "3": "vừa", "4": "cao", "5": "cao", "6": "cao", "7": "cao", "8": "cao", "9": "cao", "10": "cao"},
+  "part1_cues": {
+    "1": "Câu 1 là mốc: X xưng 'tui', 'á', 'luôn' (người 1); Y xưng 'chị', giọng điềm.",
+    "2": "X xưng 'tui', 'hông', nhắc Bánh Bao; Y nhắc nhóm chạy buổi sáng, khớp người 2 ở câu 7 và 10.",
+    "3": "X xưng 'tui', 'á', né cãi; Y xưng 'chị', câu ngắn, nói thẳng. Nội dung X hơi hiền so với người 1 nhưng cách xưng hô rõ.",
+    "4": "X xưng 'chị', nhận việc rồi làm tới sáng; Y xưng 'tui', 'gật đầu trước rồi mới nghĩ', 'á'.",
+    "5": "X 'tui', 'tùm lum hết trơn', 'hoài á'; Y 'chị', 'đấy', bàn gọn, lịch ghi từ tối trước.",
+    "6": "X 'chị', 'bao giờ', giữ đúng giờ; Y 'tui', 'hoài luôn á', 'hì'.",
+    "7": "X câu cụt, chạy một vòng buổi sáng (người 2); Y 'tui'-giọng, 'hông hay', Bánh Bao.",
+    "8": "X 'Răng mà' (từ Quảng bật ra khi xấu hổ), 'tui', 'á'; Y 'chị', gặp riêng nói rõ đúng sai.",
+    "9": "X 'chị', thận trọng với cái mới; Y 'tui', 'Thử đi, chết ai đâu!', 'á'.",
+    "10": "X 'chị', 'thằng bé nhà chị', chạy bộ với nhóm, 'Linh ạ'; Y 'tui', Bánh Bao, đi lung tung."
+  },
+  "bigfive": {
+    "1": {"huong_ngoai": "rất cao", "de_chiu": "khá cao", "tan_tam": "khá thấp", "on_dinh_cam_xuc": "hơi thấp", "coi_mo": "rất cao"},
+    "2": {"huong_ngoai": "hơi thấp", "de_chiu": "trung bình", "tan_tam": "rất cao", "on_dinh_cam_xuc": "khá cao", "coi_mo": "khá thấp"}
+  },
+  "bigfive_reason": {
+    "1": {
+      "huong_ngoai": "Đi một vòng quen nửa phòng, chủ động bắt chuyện, một tuần không gặp ai là chịu không nổi.",
+      "de_chiu": "Bị đổ lỗi vẫn nhận phần mình cho êm, hay gật đầu giúp người khác, chủ động bắt chuyện với người đứng một mình.",
+      "tan_tam": "Bàn bừa, quên mở lịch, hứa quá sức rồi trễ hạn, bỏ ngang ngành kế toán; vẫn có thức làm cho xong nên không tới mức rất thấp.",
+      "on_dinh_cam_xuc": "Trằn trọc trước việc lớn, đỏ mặt khi bị quê, cảm xúc lộ ngay; nhưng than một hồi rồi qua nên chỉ hơi thấp.",
+      "coi_mo": "Giơ tay đầu tiên với cái mới, thích mò tới chỗ chưa đi."
+    },
+    "2": {
+      "huong_ngoai": "Ít bắt chuyện trước, thích ngồi với người quen, ở một mình vài hôm thấy dễ chịu; nhưng vẫn nhớ nhóm chạy nên không quá thấp.",
+      "de_chiu": "Hợp tác, gánh việc đội và không đòi ai chịu tội, nhưng nói thẳng ngay hôm đó và đòi rõ đúng sai.",
+      "tan_tam": "Bàn gọn, lịch ghi từ tối trước, báo trước và giữ đúng giờ, coi trễ hẹn là không chấp nhận được.",
+      "on_dinh_cam_xuc": "Ngủ được trước việc lớn vì đã chuẩn bị, bị chê thì kìm lại để nói riêng sau; có khó chịu nhưng kiểm soát tốt.",
+      "coi_mo": "Với cái mới chỉ nếm cho phải phép, chưa thấy cách mới hơn rõ thì không đổi, cuối tuần theo nếp quen."
+    }
+  },
+  "part2_assign": {"1": "B", "2": "B", "3": "B", "4": "A", "5": "B", "6": "A", "7": "A", "8": "B", "9": "A", "10": "A"},
+  "part2_conf": {"1": "cao", "2": "cao", "3": "cao", "4": "cao", "5": "cao", "6": "cao", "7": "cao", "8": "cao", "9": "cao", "10": "cao"}
+}
