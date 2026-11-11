@@ -20,6 +20,8 @@
  * Không dùng CircuitBreaker của AI-4: breaker ngắt theo nhà cung cấp, mà cả ba
  * judge (và Qwen qua OpenRouter) cùng là `openrouter` — một họ hỏng sẽ ngắt cả
  * panel. Chấm chạy nền nên chờ hết lượt thử không làm người chơi đứng chờ.
+ * Một ghế hỏng hẳn thì job chấm thử lại vài lần rồi gộp hai judge (D-132,
+ * `oneJudgeDownPolicy`).
  *
  * Theo CL-04 service này thuộc AssessmentModule (chạy ở worker). Prototype
  * chưa có module đó, nên tạm đặt trong AiModule như NarratorService.
@@ -43,7 +45,7 @@ import { ModelGateway } from '../gateway/model-gateway';
 import type { JudgeSlot } from '../gateway/models';
 import { combineJudgments, type PanelVerdict } from './judge-combine';
 import { checkJudgeOutput, type JudgeProblem } from './judge.output';
-import { JUDGE_PROFILE } from './judge.profile';
+import { JUDGE_PROFILE, type OneJudgeDownPolicy } from './judge.profile';
 import {
   buildJudgeMessages,
   judgeJsonSchema,
@@ -65,6 +67,8 @@ export interface GradeInput {
   contentVersion?: number;
   /** Số tiền còn được tiêu trong phiên (NFR-11). Không truyền thì không chặn. */
   budgetUsd?: number;
+  /** Một ghế hỏng thì chờ hay gộp hai judge (D-132). Mặc định theo `JUDGE_PROFILE`. */
+  whenOneJudgeDown?: OneJudgeDownPolicy;
 }
 
 /** Một lần gọi model — đủ để truy lại điểm nào ra từ đâu, tốn bao nhiêu. */
@@ -201,7 +205,11 @@ export class JudgePanelService {
     const verdict = combineJudgments(
       criterionIds,
       slots.filter((s) => s.status === 'ok').map((s) => s.judgments),
-      JUDGE_PROFILE,
+      {
+        disagreementThreshold: JUDGE_PROFILE.disagreementThreshold,
+        whenOneJudgeDown:
+          input.whenOneJudgeDown ?? JUDGE_PROFILE.whenOneJudgeDown,
+      },
     );
     if (verdict.status !== 'graded')
       this.logger.warn(

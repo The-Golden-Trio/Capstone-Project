@@ -11,3 +11,5 @@ apps/api/src/generated/
 pnpm-lock.yaml
 # Sinh bởi docs/data/build.mjs từ occupation-data/seeds (JSON.stringify)
 packages/game-core/data/shift-seeds.json
+# Nhật ký quyết định: bảng viết tay rất dài, dàn đều cột làm file phình 72 KB → 173 KB
+docs/project-hub/02-quyet-dinh.md

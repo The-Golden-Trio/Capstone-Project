@@ -11,8 +11,10 @@
  * ngay — người chơi không phải chờ điểm để đi tiếp.
  *
  * Panel chưa đủ judge (D-108: điểm chờ) thì ném lỗi để BullMQ thử lại sau;
- * việc hỏi vặn đã ghi thì không làm lại. Hết lượt thử thì đánh dấu FAILED và
- * giữ câu trả lời (NFR-04) — không chấm thay bằng cách khác (D-92).
+ * việc hỏi vặn đã ghi thì không làm lại. Một ghế hỏng hẳn thì từ lượt thử thứ
+ * 3 chấm bằng hai judge còn lại, lấy mức thấp hơn (D-132). Hết lượt thử thì
+ * đánh dấu FAILED và giữ câu trả lời (NFR-04) — không chấm thay bằng cách
+ * khác (D-92).
  */
 import {
   Inject,
@@ -37,6 +39,7 @@ import type {
   SlotOutcome,
 } from '../ai/judge/judge-panel.service';
 import { JudgePanelService } from '../ai/judge/judge-panel.service';
+import { oneJudgeDownPolicy } from '../ai/judge/judge.profile';
 import { criteriaFromActivity } from '../ai/judge/judge.types';
 import {
   GRADING_QUEUE,
@@ -151,6 +154,7 @@ export class GradingProcessor
             identity,
             aiJobId,
             answer.assessment.id,
+            job.attemptsMade + 1,
           ),
     ]);
     if (followUp.status === 'rejected') throw followUp.reason;
@@ -247,10 +251,13 @@ export class GradingProcessor
     identity: KnownIdentity,
     aiJobId: string,
     assessmentId: string,
+    /** Lượt thử thứ mấy của job (từ 1): quyết chờ hay gộp hai judge (D-132). */
+    attempt: number,
   ): Promise<void> {
     const started = Date.now();
     const criteria = criteriaFromActivity(activity);
     const result = await this.panel.grade({
+      whenOneJudgeDown: oneJudgeDownPolicy(attempt),
       answer: answer.text ?? '',
       criteria,
       situation: [activity.setup, activity.npc_line].filter(Boolean).join('\n'),

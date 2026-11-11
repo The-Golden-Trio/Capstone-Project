@@ -272,9 +272,11 @@ export function narratorChain(settings: AiSettings): {
  * thử §7.3 — giữ bậc rẻ trừ khi nó kém rõ rệt; bậc còn lại làm dự phòng cùng
  * họ, để panel luôn đủ ba họ (DC-01).
  *
- * Gọi qua OpenRouter, không qua API gốc từng hãng: một key cho cả ba họ. Đây
- * là lệch D-100 (không dùng OpenRouter vì thêm bên trung gian giữ dữ liệu ở
- * nước ngoài) — nhóm chọn ngày 11/11/2026 để thử, cần ghi thành quyết định.
+ * Gọi qua OpenRouter (D-131): một key cho cả ba họ. Mỗi request đòi endpoint
+ * không lưu dữ liệu (`zdr: true`) và chỉ một endpoint ghi sẵn (`only`), nên
+ * OpenRouter không tự đổi sang nơi khác. Endpoint ZDR của Claude chạy trên
+ * Google Vertex, của GPT trên Azure, của Gemini trên Google Vertex — cùng
+ * model, cùng giá niêm yết với API gốc.
  */
 export type JudgeFamily = 'anthropic' | 'openai' | 'google';
 export type JudgeTier = 'small' | 'mid';
@@ -287,25 +289,28 @@ export const JUDGE_FAMILIES: readonly JudgeFamily[] = [
 
 interface JudgeModelRow {
   model: string;
-  /** Slug nhà cung cấp trên OpenRouter — chỉ cho hãng gốc phục vụ, không để OpenRouter đổi hãng. */
+  /** Tag endpoint ZDR trên OpenRouter (`provider.only`) — một nơi phục vụ, ghi được vào bản ghi. */
   host: string;
   input: number;
   output: number;
   cachedRead: number;
   temperature: boolean;
+  /** Mức suy nghĩ thấp nhất endpoint nhận; thiếu là tắt hẳn (`none`). */
+  minReasoning?: 'minimal';
 }
 
 /**
- * Giá và tham số đọc từ `GET /api/v1/models/{id}/endpoints` của OpenRouter
- * ngày 11/11/2026, dòng của hãng gốc (Gemini: Google AI Studio, vì Vertex trên
- * OpenRouter không nhận `temperature`). Giá ghi cache để `null`: endpoint
- * không trả con số đó.
+ * Giá và tham số đọc từ `GET /api/v1/endpoints/zdr` của OpenRouter ngày
+ * 12/11/2026 (dòng `google-vertex/global` và `azure`: cùng giá niêm yết với
+ * hãng gốc). Không endpoint ZDR nào nhận `temperature`. Thử thật 12/11/2026:
+ * Haiku 5.5, GPT-6 Luna nhận `reasoning.effort: none`; Sonnet 5.5, GPT-6.1 Sol
+ * và Gemini 3.x báo "Reasoning is mandatory", `minimal` thì chạy.
  */
 const JUDGE_MODELS: Record<JudgeFamily, Record<JudgeTier, JudgeModelRow>> = {
   anthropic: {
     small: {
       model: 'anthropic/claude-haiku-5.5',
-      host: 'anthropic',
+      host: 'google-vertex/global',
       input: 0.1,
       output: 0.5,
       cachedRead: 0.01,
@@ -313,17 +318,18 @@ const JUDGE_MODELS: Record<JudgeFamily, Record<JudgeTier, JudgeModelRow>> = {
     },
     mid: {
       model: 'anthropic/claude-sonnet-5.5',
-      host: 'anthropic',
+      host: 'google-vertex/global',
       input: 2,
       output: 10,
       cachedRead: 0.1,
       temperature: false,
+      minReasoning: 'minimal',
     },
   },
   openai: {
     small: {
       model: 'openai/gpt-6-luna',
-      host: 'openai',
+      host: 'azure',
       input: 0.1,
       output: 0.5,
       cachedRead: 0.01,
@@ -331,29 +337,32 @@ const JUDGE_MODELS: Record<JudgeFamily, Record<JudgeTier, JudgeModelRow>> = {
     },
     mid: {
       model: 'openai/gpt-6.1-sol',
-      host: 'openai',
+      host: 'azure',
       input: 2,
       output: 10,
       cachedRead: 0.1,
       temperature: false,
+      minReasoning: 'minimal',
     },
   },
   google: {
     small: {
       model: 'google/gemini-3.5-flash-lite',
-      host: 'google-ai-studio',
+      host: 'google-vertex/global',
       input: 0.3,
       output: 2.5,
       cachedRead: 0.03,
-      temperature: true,
+      temperature: false,
+      minReasoning: 'minimal',
     },
     mid: {
       model: 'google/gemini-3.8-flash',
-      host: 'google-ai-studio',
+      host: 'google-vertex/global',
       input: 0.75,
       output: 3.75,
       cachedRead: 0.075,
-      temperature: true,
+      temperature: false,
+      minReasoning: 'minimal',
     },
   },
 };
@@ -380,26 +389,26 @@ export function openRouterJudge(
       explicitCache: false,
       temperature: row.temperature,
     },
-    // Gemini 3.x từ chối `reasoning.effort: none` (thử 11/11/2026); `minimal` báo 0 token suy nghĩ.
-    ...(family === 'google' ? { minReasoning: 'minimal' as const } : {}),
+    ...(row.minReasoning ? { minReasoning: row.minReasoning } : {}),
     cacheMode: 'implicit',
     price: {
       inputPerMTok: row.input,
       outputPerMTok: row.output,
       cachedInputRatio: row.cachedRead / row.input,
       cacheWriteRatio: null,
-      source: `https://openrouter.ai/api/v1/models/${row.model}/endpoints (11/11/2026, dòng ${row.host})`,
+      source: `https://openrouter.ai/api/v1/endpoints/zdr (12/11/2026, dòng ${row.model} @ ${row.host})`,
       verified: true,
     },
     routing: {
       only: [row.host],
       dataCollection: options.allowDataCollection ? 'allow' : 'deny',
+      zdr: true,
     },
     dataPolicy: {
       noTraining: 'confirmed',
-      source: 'https://openrouter.ai/docs/guides/privacy/data-collection',
-      checkedAt: '2026-11-06',
-      note: 'Cùng căn cứ với Qwen qua OpenRouter: mỗi request gửi `data_collection: deny`, hãng nào OpenRouter không xếp vào nhóm không thu thập thì request bị từ chối. Cam kết riêng của Anthropic, OpenAI, Google chưa ghi vào §5.3.10',
+      source: 'https://openrouter.ai/api/v1/endpoints/zdr',
+      checkedAt: '2026-11-12',
+      note: 'Mỗi request gửi `zdr: true` và `data_collection: deny`: endpoint không thuộc nhóm không lưu dữ liệu thì OpenRouter từ chối (thử 12/11/2026: GPT-6 Luna ở host `openai` bị trả 404 "No endpoints found matching your data policy"). OpenRouter mặc định không lưu prompt. Câu trả lời đã khử định danh trước khi gửi (DC-03)',
     },
   };
 }

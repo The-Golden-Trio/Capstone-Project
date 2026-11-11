@@ -9,9 +9,10 @@ export const JUDGE_PROFILE = {
   version: 'judge-profile-1',
 
   /**
-   * D-109: judge chạy temperature 0 để ổn định. Chỉ gửi được cho Gemini; Claude
-   * 5.5 và GPT-6 không nhận tham số này nên chạy ở mặc định của hãng — độ ổn
-   * định của hai họ đó phải đo (§7.3.2), không giả định.
+   * D-109: judge chạy temperature 0 để ổn định. Từ D-131 không judge nào nhận
+   * tham số này (endpoint ZDR trên OpenRouter, thử 12/11/2026), nên cả ba chạy
+   * ở mặc định của hãng — độ ổn định phải đo (§7.3.2), không giả định. Giữ số
+   * này để model nào nhận được thì vẫn gửi.
    */
   temperature: 0,
 
@@ -31,12 +32,20 @@ export const JUDGE_PROFILE = {
   disagreementThreshold: 1,
 
   /**
-   * Một ghế hỏng cả hai bậc thì làm gì — hai nguồn thiết kế đang mâu thuẫn:
-   *   - `pending`: D-108 mục 3 (✅) và §5.3.6 — điểm chờ, không lấy trung vị
-   *     của hai judge.
-   *   - `lower_of_2`: SD-01 và CL-04 — gộp hai judge còn lại ("agreed or lower
-   *     of 2"), đánh dấu là grade hai judge.
-   * Mặc định theo quyết định (ưu tiên cao hơn sơ đồ) cho tới khi nhóm chốt.
+   * Một ghế hỏng cả hai bậc thì làm gì (D-132, gộp D-108 mục 3 với SD-01):
+   *   - các lượt thử đầu: `pending` — điểm chờ, job thử lại sau, vì phần lớn
+   *     sự cố của một hãng chỉ kéo dài vài chục giây (D-108);
+   *   - từ lượt thử `lowerOf2FromAttempt` của job: `lower_of_2` — gộp hai
+   *     judge còn lại theo SD-01/CL-04, lấy mức THẤP hơn (không lấy trung vị
+   *     hai judge), ghi `method = lower_of_2` để chuyên gia lọc ra xem lại.
+   * Hai judge còn lại vẫn khác họ nhau và khác họ dẫn truyện (DC-01).
    */
   whenOneJudgeDown: 'pending' as OneJudgeDownPolicy,
+  lowerOf2FromAttempt: 3,
 } as const;
+
+/** Chính sách một ghế hỏng cho lượt thử thứ `attempt` (từ 1) của một job chấm. */
+export const oneJudgeDownPolicy = (attempt: number): OneJudgeDownPolicy =>
+  attempt >= JUDGE_PROFILE.lowerOf2FromAttempt
+    ? 'lower_of_2'
+    : JUDGE_PROFILE.whenOneJudgeDown;
