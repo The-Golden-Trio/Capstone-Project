@@ -9,6 +9,7 @@
 | Viết/sửa một phần thiết kế AI-4  | `ai-4-thiet-ke.md`: bảng trạng thái, câu hỏi còn mở, rồi phần được yêu cầu                                                                         |
 | Sửa slide AI-4                   | `../../slides/JobQuest_AI4_Deck.html`, phần tương ứng trong `ai-4-thiet-ke.md`; workflow tại `../../../../.claude/skills/capstone-slides/SKILL.md` |
 | Request, response, ví dụ gọi API | `ai-4-api/README.md`, `ai-4-api/request.jsonc`, rồi code sinh request                                                                              |
+| AI-4 + AI-5 trong luồng chơi     | `tich-hop-ai-4-ai-5.md`: cách chạy, luồng API → queue → worker → SSE, chỗ sửa, lệch thiết kế còn mở                                                |
 | Bức tranh AI chung và mâu thuẫn  | `README.md`, `kiem-ke.md`, các quyết định liên quan ở `../../02-quyet-dinh.md`                                                                     |
 | Đưa nội dung đã chốt vào báo cáo | `../../../../reports/README.md`, `../../../../reports/master/report.md` §5.3.6 và các đoạn bị ảnh hưởng                                            |
 
