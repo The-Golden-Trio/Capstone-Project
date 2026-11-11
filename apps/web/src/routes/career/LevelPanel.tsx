@@ -14,6 +14,7 @@ import { Note, SourceNote } from '../../components/ui/Note';
 import { Pill } from '../../components/ui/Pill';
 import { cx } from '../../lib/cx';
 import { useGameIndex } from '../../store/contentStore';
+import { ShiftTasksBox } from '../../play/shift/ShiftTasksBox';
 
 /**
  * Bảng thông tin một chặng, mở ra khi bấm vào nút trên con đường.
@@ -43,7 +44,8 @@ export function LevelPanel({
   const entry = content.findScenario(role.role_code, band.band);
   const salary = role.salary_by_band.find((s) => s.band === band.band);
   const sideQuests = sideQuestsFor(role, band.band, content).length;
-  const previous = progress.bands[progress.bands.findIndex((b) => b.band === band.band) - 1];
+  const previous =
+    progress.bands[progress.bands.findIndex((b) => b.band === band.band) - 1];
 
   /** Vào chặng này là mở bản đồ địa điểm của nó. */
   const islandPath = `/jobs/${role.role_code}/${band.band}`;
@@ -65,14 +67,20 @@ export function LevelPanel({
   return (
     <aside className="rounded-[12px] border border-line bg-surf p-[18px]">
       <div className="mb-3.5 flex items-start gap-3">
-        <Crest seed={`${role.role_code}:${band.band}`} size={42} active={band.unlocked} />
+        <Crest
+          seed={`${role.role_code}:${band.band}`}
+          size={42}
+          active={band.unlocked}
+        />
         <div className="min-w-0 flex-1">
           <div className="mb-1 flex flex-wrap items-center gap-2">
             <span className="font-mono text-[11px] font-bold text-[var(--accent)]">
               {band.band}
             </span>
             {band.completed && <Pill tone="good">đã xong</Pill>}
-            {!band.completed && band.enrolled && <Pill tone="gold">đang học</Pill>}
+            {!band.completed && band.enrolled && (
+              <Pill tone="gold">đang học</Pill>
+            )}
             {!band.unlocked && <Pill tone="locked">chưa mở</Pill>}
           </div>
           <h2 className="font-display text-[17px] font-semibold leading-snug">
@@ -147,7 +155,9 @@ export function LevelPanel({
       <div className="mb-3.5 flex flex-wrap gap-1.5">
         {entry && <Pill tone="gold">1 nhiệm vụ chính</Pill>}
         <Pill>{sideQuests} nhiệm vụ phụ</Pill>
-        {entry && <Pill>≈ {entry.scenario.context.estimated_minutes} phút</Pill>}
+        {entry && (
+          <Pill>≈ {entry.scenario.context.estimated_minutes} phút</Pill>
+        )}
       </div>
 
       {error && (
@@ -184,6 +194,8 @@ export function LevelPanel({
           </SourceNote>
         </>
       )}
+
+      <ShiftTasksBox roleCode={role.role_code} band={band.band} />
     </aside>
   );
 }

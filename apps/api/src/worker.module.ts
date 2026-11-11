@@ -7,6 +7,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AssessmentModule } from './assessment/assessment.module';
 import { GradingProcessor } from './assessment/grading.processor';
+import { ShiftTurnProcessor } from './assessment/shift-turn.processor';
 import { loadEnv } from './config/env';
 import { ContentModule } from './content/content.module';
 import { CoreModule } from './core/core.module';
@@ -24,6 +25,6 @@ import { PrismaModule } from './prisma/prisma.module';
     CoreModule,
     AssessmentModule,
   ],
-  providers: [GradingProcessor],
+  providers: [GradingProcessor, ShiftTurnProcessor],
 })
 export class WorkerModule {}

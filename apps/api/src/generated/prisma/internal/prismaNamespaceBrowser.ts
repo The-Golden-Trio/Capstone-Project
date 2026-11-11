@@ -77,7 +77,9 @@ export const ModelName = {
   QuizQuestionDoc: 'QuizQuestionDoc',
   FollowupDoc: 'FollowupDoc',
   GalaxyDoc: 'GalaxyDoc',
-  MetaDoc: 'MetaDoc'
+  MetaDoc: 'MetaDoc',
+  ShiftSeedDoc: 'ShiftSeedDoc',
+  LevelPackDoc: 'LevelPackDoc'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -443,6 +445,26 @@ export const MetaDocScalarFieldEnum = {
 } as const
 
 export type MetaDocScalarFieldEnum = (typeof MetaDocScalarFieldEnum)[keyof typeof MetaDocScalarFieldEnum]
+
+
+export const ShiftSeedDocScalarFieldEnum = {
+  version: 'version',
+  seedId: 'seedId',
+  levelRef: 'levelRef',
+  title: 'title',
+  body: 'body'
+} as const
+
+export type ShiftSeedDocScalarFieldEnum = (typeof ShiftSeedDocScalarFieldEnum)[keyof typeof ShiftSeedDocScalarFieldEnum]
+
+
+export const LevelPackDocScalarFieldEnum = {
+  version: 'version',
+  packId: 'packId',
+  body: 'body'
+} as const
+
+export type LevelPackDocScalarFieldEnum = (typeof LevelPackDocScalarFieldEnum)[keyof typeof LevelPackDocScalarFieldEnum]
 
 
 export const SortOrder = {

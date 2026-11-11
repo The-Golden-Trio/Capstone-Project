@@ -71,7 +71,7 @@ Khi làm một tính năng: tìm FR và use case tương ứng → đọc activi
 - Câu tự luận chấm bằng so khớp từ khoá (`keywordGrader.ts`, đồng bộ trong reducer); thiết kế là judge panel bất đồng bộ, kết quả vào run dưới dạng sự kiện.
 - Prisma có 19 model, tên và cấu trúc khác ERD đích ở `plantuml/erd/`. Prototype có 3 role, thiết kế có 4 actor (Explorer, Domain expert, Content administrator, System administrator).
 - Module trong `apps/api/src` (`auth`, `content`, `profile`, `runs`…) không khớp module map `CL-00`.
-- Từ 11/11 đã có worker (`main.js --worker`), queue BullMQ, SSE, model gateway và luồng chơi `/api/v1/runs` nối AI-4 + AI-5 ([handoff](docs/project-hub/assets/ai-design/tich-hop-ai-4-ai-5.md)). Chưa có: staff application, scheduler, importer.
+- Từ 11/11 đã có worker (`main.js --worker`), queue BullMQ, SSE, model gateway và luồng chơi `/api/v1/runs` nối AI-4 + AI-5 ([handoff](docs/project-hub/assets/ai-design/tich-hop-ai-4-ai-5.md)). Luồng ca làm (Game Design W45) chạy song song ở `/api/v1/shift-runs` (đề xuất ngoài `openapi.yaml`: `docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`), engine `packages/game-core/src/shift/`, chưa chấm điểm. Chưa có: staff application, scheduler, importer.
 - Code chết không được import trong `AppModule`: `apps/api/src/app/skills/*`, `app/career-graph/*`, `app/persistence/*`. Đừng dựa vào hay mở rộng chúng.
 
 ## 2. Bản đồ repo và lệnh

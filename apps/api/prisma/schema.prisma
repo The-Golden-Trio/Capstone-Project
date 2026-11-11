@@ -153,8 +153,10 @@ model ScenarioRun {
   /// `replay`: luồng prototype (gửi cả chuỗi hành động một lần, chấm bằng
   /// chạy lại). `events`: luồng có AI (SD-01) — mỗi câu gửi ngay, lượt chơi
   /// là chuỗi `run_event`.
+  /// `shift`: ca làm (Game Design W45) — cũng là chuỗi `run_event`, fold
+  /// bằng engine `shift` của game-core.
   flow               String    @default("replay")
-  /// ERD-05 `run_status`. Chỉ có nghĩa với `flow = events`.
+  /// ERD-05 `run_status`. Có nghĩa với `flow = events` và `flow = shift`.
   status             RunStatus @default(IN_PROGRESS)
   /// Bản sao của trạng thái fold từ `run_event`, để tra nhanh; nguồn chân lý là chuỗi sự kiện.
   currentActivityKey String?
@@ -534,4 +536,26 @@ model MetaDoc {
   body    Json
 
   @@id([version, key])
+}
+
+/// Seed ca làm (Game Design W45), theo `shift.ShiftSeedSchema` của game-core.
+/// Lượt chơi ca làm dùng chung `ScenarioRun` (`flow = 'shift'`), `run_event`
+/// và `ai_job`; chỉ nội dung là cần bảng riêng.
+model ShiftSeedDoc {
+  version  Int
+  seedId   String
+  levelRef String
+  title    String
+  body     Json
+
+  @@id([version, seedId])
+}
+
+/// Gói cấp của ca làm: công ty, quy định, nhịp thời gian (Seed scenario khối G).
+model LevelPackDoc {
+  version Int
+  packId  String
+  body    Json
+
+  @@id([version, packId])
 }

@@ -423,7 +423,9 @@ export const ModelName = {
   QuizQuestionDoc: 'QuizQuestionDoc',
   FollowupDoc: 'FollowupDoc',
   GalaxyDoc: 'GalaxyDoc',
-  MetaDoc: 'MetaDoc'
+  MetaDoc: 'MetaDoc',
+  ShiftSeedDoc: 'ShiftSeedDoc',
+  LevelPackDoc: 'LevelPackDoc'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -439,7 +441,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "oAuthAccount" | "refreshToken" | "parentalConsent" | "gameProfile" | "scenarioRun" | "runEvent" | "answer" | "assessment" | "judgeResult" | "judgeScore" | "criterionGrade" | "aiJob" | "usageCost" | "runEvidence" | "userBandSkill" | "eventAnswer" | "eventAward" | "enrollment" | "contentRelease" | "roleDoc" | "scenarioDoc" | "sharedEventDoc" | "quizQuestionDoc" | "followupDoc" | "galaxyDoc" | "metaDoc"
+    modelProps: "user" | "oAuthAccount" | "refreshToken" | "parentalConsent" | "gameProfile" | "scenarioRun" | "runEvent" | "answer" | "assessment" | "judgeResult" | "judgeScore" | "criterionGrade" | "aiJob" | "usageCost" | "runEvidence" | "userBandSkill" | "eventAnswer" | "eventAward" | "enrollment" | "contentRelease" | "roleDoc" | "scenarioDoc" | "sharedEventDoc" | "quizQuestionDoc" | "followupDoc" | "galaxyDoc" | "metaDoc" | "shiftSeedDoc" | "levelPackDoc"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2441,6 +2443,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ShiftSeedDoc: {
+      payload: Prisma.$ShiftSeedDocPayload<ExtArgs>
+      fields: Prisma.ShiftSeedDocFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ShiftSeedDocFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ShiftSeedDocFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>
+        }
+        findFirst: {
+          args: Prisma.ShiftSeedDocFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ShiftSeedDocFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>
+        }
+        findMany: {
+          args: Prisma.ShiftSeedDocFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>[]
+        }
+        create: {
+          args: Prisma.ShiftSeedDocCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>
+        }
+        createMany: {
+          args: Prisma.ShiftSeedDocCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ShiftSeedDocCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>[]
+        }
+        delete: {
+          args: Prisma.ShiftSeedDocDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>
+        }
+        update: {
+          args: Prisma.ShiftSeedDocUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>
+        }
+        deleteMany: {
+          args: Prisma.ShiftSeedDocDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ShiftSeedDocUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ShiftSeedDocUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>[]
+        }
+        upsert: {
+          args: Prisma.ShiftSeedDocUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShiftSeedDocPayload>
+        }
+        aggregate: {
+          args: Prisma.ShiftSeedDocAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateShiftSeedDoc>
+        }
+        groupBy: {
+          args: Prisma.ShiftSeedDocGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ShiftSeedDocGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ShiftSeedDocCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ShiftSeedDocCountAggregateOutputType> | number
+        }
+      }
+    }
+    LevelPackDoc: {
+      payload: Prisma.$LevelPackDocPayload<ExtArgs>
+      fields: Prisma.LevelPackDocFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LevelPackDocFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LevelPackDocFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>
+        }
+        findFirst: {
+          args: Prisma.LevelPackDocFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LevelPackDocFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>
+        }
+        findMany: {
+          args: Prisma.LevelPackDocFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>[]
+        }
+        create: {
+          args: Prisma.LevelPackDocCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>
+        }
+        createMany: {
+          args: Prisma.LevelPackDocCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LevelPackDocCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>[]
+        }
+        delete: {
+          args: Prisma.LevelPackDocDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>
+        }
+        update: {
+          args: Prisma.LevelPackDocUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>
+        }
+        deleteMany: {
+          args: Prisma.LevelPackDocDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LevelPackDocUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LevelPackDocUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>[]
+        }
+        upsert: {
+          args: Prisma.LevelPackDocUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LevelPackDocPayload>
+        }
+        aggregate: {
+          args: Prisma.LevelPackDocAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLevelPackDoc>
+        }
+        groupBy: {
+          args: Prisma.LevelPackDocGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LevelPackDocGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LevelPackDocCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LevelPackDocCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -2827,6 +2977,26 @@ export const MetaDocScalarFieldEnum = {
 } as const
 
 export type MetaDocScalarFieldEnum = (typeof MetaDocScalarFieldEnum)[keyof typeof MetaDocScalarFieldEnum]
+
+
+export const ShiftSeedDocScalarFieldEnum = {
+  version: 'version',
+  seedId: 'seedId',
+  levelRef: 'levelRef',
+  title: 'title',
+  body: 'body'
+} as const
+
+export type ShiftSeedDocScalarFieldEnum = (typeof ShiftSeedDocScalarFieldEnum)[keyof typeof ShiftSeedDocScalarFieldEnum]
+
+
+export const LevelPackDocScalarFieldEnum = {
+  version: 'version',
+  packId: 'packId',
+  body: 'body'
+} as const
+
+export type LevelPackDocScalarFieldEnum = (typeof LevelPackDocScalarFieldEnum)[keyof typeof LevelPackDocScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -3221,6 +3391,8 @@ export type GlobalOmitConfig = {
   followupDoc?: Prisma.FollowupDocOmit
   galaxyDoc?: Prisma.GalaxyDocOmit
   metaDoc?: Prisma.MetaDocOmit
+  shiftSeedDoc?: Prisma.ShiftSeedDocOmit
+  levelPackDoc?: Prisma.LevelPackDocOmit
 }
 
 /* Types for Logging */

@@ -1611,10 +1611,12 @@ export type $ScenarioRunPayload<ExtArgs extends runtime.Types.Extensions.Interna
      * `replay`: luồng prototype (gửi cả chuỗi hành động một lần, chấm bằng
      * chạy lại). `events`: luồng có AI (SD-01) — mỗi câu gửi ngay, lượt chơi
      * là chuỗi `run_event`.
+     * `shift`: ca làm (Game Design W45) — cũng là chuỗi `run_event`, fold
+     * bằng engine `shift` của game-core.
      */
     flow: string
     /**
-     * ERD-05 `run_status`. Chỉ có nghĩa với `flow = events`.
+     * ERD-05 `run_status`. Có nghĩa với `flow = events` và `flow = shift`.
      */
     status: $Enums.RunStatus
     /**

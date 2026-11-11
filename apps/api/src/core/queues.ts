@@ -34,13 +34,38 @@ export const redisOptions = (url: string) => ({
   maxRetriesPerRequest: null,
 });
 
+/** Ca làm (Game Design W45): một lượt cần AI-4 viết lời hay bộ phán trả lời câu kiểm. */
+export const SHIFT_QUEUE = 'shift-turn';
+
+export interface ShiftTurnJob {
+  /** `ai_job.id`, cũng là `turnId` của lượt (lần thử lại có hậu tố). */
+  aiJobId: string;
+  runId: string;
+  turnId: string;
+}
+
 @Injectable()
 export class QueueService implements OnModuleDestroy {
   readonly grading: Queue<GradeJob>;
+  readonly shift: Queue<ShiftTurnJob>;
 
   constructor(@Inject(REDIS_URL) url: string) {
     this.grading = new Queue<GradeJob>(GRADING_QUEUE, {
       connection: redisOptions(url),
+    });
+    this.shift = new Queue<ShiftTurnJob>(SHIFT_QUEUE, {
+      connection: redisOptions(url),
+    });
+  }
+
+  /** `jobId` = `ai_job.id`: gửi lại cùng việc thì BullMQ bỏ qua bản trùng. */
+  enqueueShiftTurn(job: ShiftTurnJob): Promise<unknown> {
+    return this.shift.add('turn', job, {
+      jobId: job.aiJobId,
+      attempts: 3,
+      backoff: { type: 'exponential', delay: 2_000 },
+      removeOnComplete: 1000,
+      removeOnFail: 1000,
     });
   }
 
@@ -56,6 +81,6 @@ export class QueueService implements OnModuleDestroy {
   }
 
   async onModuleDestroy(): Promise<void> {
-    await this.grading.close();
+    await Promise.all([this.grading.close(), this.shift.close()]);
   }
 }

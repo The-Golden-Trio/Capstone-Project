@@ -205,3 +205,15 @@ export type GalaxyDoc = Prisma.GalaxyDocModel
  * Hai bảng tra nhỏ không đáng dựng bảng riêng: `all_roles`, `fit_dimensions`.
  */
 export type MetaDoc = Prisma.MetaDocModel
+/**
+ * Model ShiftSeedDoc
+ * Seed ca làm (Game Design W45), theo `shift.ShiftSeedSchema` của game-core.
+ * Lượt chơi ca làm dùng chung `ScenarioRun` (`flow = 'shift'`), `run_event`
+ * và `ai_job`; chỉ nội dung là cần bảng riêng.
+ */
+export type ShiftSeedDoc = Prisma.ShiftSeedDocModel
+/**
+ * Model LevelPackDoc
+ * Gói cấp của ca làm: công ty, quy định, nhịp thời gian (Seed scenario khối G).
+ */
+export type LevelPackDoc = Prisma.LevelPackDocModel

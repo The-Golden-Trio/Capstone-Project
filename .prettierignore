@@ -9,3 +9,5 @@ apps/web/src/play/api/openapi.d.ts
 # Sinh tự động: Prisma client (pnpm db:generate) và lockfile của pnpm
 apps/api/src/generated/
 pnpm-lock.yaml
+# Sinh bởi docs/data/build.mjs từ occupation-data/seeds (JSON.stringify)
+packages/game-core/data/shift-seeds.json

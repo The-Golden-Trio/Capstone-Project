@@ -7,6 +7,7 @@ import { ConfigService } from '@nestjs/config';
 import type { Env } from '../config/env';
 import { QueueService, REDIS_URL } from './queues';
 import { RunLogService } from './run-log.service';
+import { ShiftLogService } from './shift-log.service';
 import { StreamService } from './stream.service';
 
 @Global()
@@ -21,7 +22,14 @@ import { StreamService } from './stream.service';
     QueueService,
     StreamService,
     RunLogService,
+    ShiftLogService,
   ],
-  exports: [REDIS_URL, QueueService, StreamService, RunLogService],
+  exports: [
+    REDIS_URL,
+    QueueService,
+    StreamService,
+    RunLogService,
+    ShiftLogService,
+  ],
 })
 export class CoreModule {}

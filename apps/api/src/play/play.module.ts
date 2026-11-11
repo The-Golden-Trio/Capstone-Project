@@ -9,12 +9,14 @@ import { StreamController } from '../core/stream.controller';
 import { ProgressService } from '../progress/progress.service';
 import { RunController } from './run.controller';
 import { RunService } from './run.service';
+import { ShiftRunController } from './shift-run.controller';
+import { ShiftRunService } from './shift-run.service';
 import { SummaryService } from './summary.service';
 
 @Module({
   imports: [AssessmentModule],
-  controllers: [RunController, StreamController],
-  providers: [RunService, SummaryService, ProgressService],
+  controllers: [RunController, ShiftRunController, StreamController],
+  providers: [RunService, SummaryService, ProgressService, ShiftRunService],
   exports: [RunService],
 })
 export class PlayModule {}

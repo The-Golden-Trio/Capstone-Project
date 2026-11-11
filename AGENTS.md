@@ -71,6 +71,12 @@
 - Prototype có auth, nội dung từ DB, bản đồ 3D, màn chơi, profile và lưu lượt chơi. `docs/data/build.mjs` hiện đóng gói **2 scenario Backend L1/L3**; dữ liệu nghề nhiều hơn nội dung chơi.
 - Chấm tự luận của luồng chơi cũ (`/play/...`, gửi cả lượt một lần) còn dùng keyword (`keywordGrader.ts`); luồng mới (`/quest` → `/run`, mặc định từ 11/11) chấm bằng panel ba judge (AI-5) ở worker.
 - **AI-4 đã có code**: `AiModule`, gateway, `NarratorService`, prompt, luật R1–R4, khử định danh và script `narrator-try`. Từ 11/11 theo contract nhịp D-130 (`narrateScene`, prompt `narrator.v3`), đã gọi Qwen thật trên cảnh mẫu của seed Back-end L3 m2. **Từ 11/11 AI-4 và AI-5 đã nối vào màn chơi mới** (`/api/v1/runs…`, worker BullMQ + Redis, SSE `/api/v1/stream`, sổ sự kiện `run_event`); AI-4 trong luồng này dùng contract activity (`narrate`), AI-5 là panel ba judge qua OpenRouter. Cách chạy, luồng, chỗ lệch thiết kế: [`tich-hop-ai-4-ai-5.md`](docs/project-hub/assets/ai-design/tich-hop-ai-4-ai-5.md).
+- **Luồng ca làm (Game Design W45), cập nhật 12/11/2026:** chạy song song luồng activity, dùng chung hạ tầng ở trên.
+  - Engine ở `packages/game-core/src/shift/`; seed mẫu ở `occupation-data/seeds/SWE_BACKEND/` (phần `_draft` chờ DE duyệt).
+  - API `/api/v1/shift-runs` là đề xuất ngoài `openapi.yaml`, xem `docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`.
+  - Lượt chơi là `ScenarioRun.flow = 'shift'` cùng `run_event` và `ai_job`; worker xử lý queue `shift-turn`.
+  - AI: AI-4 dùng `narrateScene`; bộ phán có/không dùng ghế judge của AI-5.
+  - Chưa chấm điểm. `AI_MODE=fake` chỉ dùng khi dev.
 - `ai-4-api/response.json` là **model giả**, không phải kết quả gọi API thật hay benchmark. Request mẫu được sinh từ code.
 - Game design mới gồm RIASEC, 7 nhóm soft skill, keyword ESCO và hồ sơ nghề O*NET; nhiều phần vẫn là thiết kế/dữ liệu chưa nối vào runtime. Tra trạng thái từng phần trước khi triển khai.
 

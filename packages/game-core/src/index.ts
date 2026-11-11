@@ -38,6 +38,9 @@ export * from './domain/narration/npcCard.js';
 export * from './domain/narration/beats.js';
 export * from './domain/narration/sceneTurn.js';
 
+/* ── Ca làm (seed v2, Game Design W45) ── */
+export * as shift from './shift/index.js';
+
 /* ── Chấm điểm ── */
 export * from './domain/grading/types.js';
 export * from './domain/grading/structuredGrading.js';

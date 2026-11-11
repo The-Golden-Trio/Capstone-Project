@@ -117,7 +117,8 @@
       },
       "typecheck": {
         "dependsOn": [
-          "prisma-generate"
+          "prisma-generate",
+          "build"
         ]
       },
       "narrator-try": {

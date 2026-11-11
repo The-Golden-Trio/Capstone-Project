@@ -1,0 +1,29 @@
+{
+  "id": "SWE_BACKEND.L3",
+  "_source": "research/reports/Seed mẫu Back-end L3 m2.md (bản 4), mục Gói cấp",
+  "company": {
+    "name": "Giao Nhanh",
+    "profile": "Công ty hư cấu: startup giao đồ ăn và đi chợ hộ, khoảng 120 nhân viên, văn phòng quận 1 TP.HCM. Team Back-end có 6 người."
+  },
+  "workplace": "Văn phòng, giờ hành chính 8:30–17:30. Có chat nội bộ và kênh #su-co để báo sự cố. Anh An và chị Linh đều có trong kênh.",
+  "team": "Team Back-end 6 người, lo API cho app đặt đơn và app nội bộ.",
+  "level_scope": "Kỹ sư Back-end L3, khoảng 2–3 năm. Tự làm tính năng và sửa lỗi phần mình; lên hệ thống thật cần người duyệt.",
+  "resident_npcs": ["mentor", "support"],
+  "rules": [
+    {
+      "id": "r1",
+      "text": "Đụng tới production thì nhắn #su-co trước, và anh An duyệt rồi mới đưa lên.",
+      "told_at": "n0"
+    },
+    {
+      "id": "r2",
+      "text": "Không hứa giờ xong với khách khi chưa chắc.",
+      "told_at": "n0"
+    }
+  ],
+  "honest_note": "Trực sự cố nghĩa là có lúc phải bỏ dở việc đang làm, và lỗi của mình viết có thể lộ ra trước cả team.",
+  "shared_facts": [],
+  "minutes_per_point": 5,
+  "followup_cap": 1,
+  "_draft": "honest_note và team: soạn nháp, chờ DE duyệt (BR-05)"
+}
