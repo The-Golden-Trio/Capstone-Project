@@ -1,13 +1,13 @@
 # Handoff: AI-4 và AI-5 đã nối vào luồng chơi
 
-> Viết cho AI (và thành viên nhóm) sắp sửa hoặc mở rộng phần này. Mốc: **11/11/2026**. Đọc cùng `AGENTS.md` ở gốc và `AGENTS.md` của thư mục này. Tài liệu này mô tả **code đang chạy**, không phải thiết kế đã chốt: chỗ nào code chọn một cách khi thiết kế còn mở thì ghi ở mục 7.
+> Viết cho AI (và thành viên nhóm) sắp sửa hoặc mở rộng phần này. Mốc: **11/11/2026**, cập nhật **12/11/2026** (D-131, D-132). Đọc cùng `AGENTS.md` ở gốc và `AGENTS.md` của thư mục này. Tài liệu này mô tả **code đang chạy**, không phải thiết kế đã chốt: chỗ nào code chọn một cách khi thiết kế còn mở thì ghi ở mục 7.
 
 ## 1. Tóm tắt trong 30 giây
 
 - Màn chơi mới (E10–E12, `/quest/:key` → `/run/:id`) gọi máy chủ thật theo `reports/master/api/openapi.yaml`. Đây là mặc định từ 11/11 (`VITE_PLAY_API=http`); `mock` vẫn chạy được cho buổi demo không có máy chủ.
 - Câu đóng (CHOICE, ORDERING, PRIORITIZING) được chấm ngay bằng khoá của chuyên gia qua game-core.
 - Câu tự luận: API ghi vào PostgreSQL, đẩy job vào queue BullMQ trên Redis, trả 202. **Worker** làm hai việc song song:
-  - **AI-5**: panel ba judge (Anthropic, OpenAI, Google qua OpenRouter) chấm.
+  - **AI-5**: panel ba judge (Anthropic, OpenAI, Google) chấm. Gọi qua OpenRouter, chỉ tới endpoint không lưu dữ liệu (ZDR, D-131).
   - **AI-4**: nếu engine cho hỏi vặn thì viết câu hỏi vặn.
 - Kết quả về trình duyệt qua SSE `GET /api/v1/stream`, gồm `followup.asked`, `activity.closed`, `answer.graded`, `summary.ready`, `provider.delay`.
 - Lượt chơi lưu dưới dạng chuỗi sự kiện chỉ ghi thêm (`run_event`). Trạng thái được tính bằng `foldPlay` của game-core.
@@ -78,6 +78,7 @@ Worker GradingProcessor.process — hai nhánh Promise.allSettled:
          graded  → criterion_grade, assessment GRADED, ANSWER_GRADED, publish answer.graded;
                    nếu người chơi đã bấm kết thúc và hết câu chờ chấm: publish summary.ready
          pending → assessment PENDING, ném lỗi → BullMQ thử lại (5 lần, lùi 15/30/60/120 s);
+                   một ghế hỏng hẳn: lượt thử 1–2 chờ, từ lượt 3 gộp hai judge, lấy mức thấp hơn (D-132);
                    hết lượt → FAILED (câu trả lời vẫn giữ, không chấm thay bằng cách khác: D-92)
 Trình duyệt nhận sự kiện trên /api/v1/stream → hiện câu hỏi vặn hoặc lời kết
 ```
@@ -126,9 +127,9 @@ Một số điểm cụ thể:
 
 | Muốn                                                       | Sửa                                                                                                                                              |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Đổi model judge, bậc chính, giá                            | `ai/gateway/models.ts` (`JUDGE_MODELS`, `judgePanel({primaryTier})`); kiểm bằng `judge-try --mode=live`                                          |
+| Đổi model judge, bậc chính, giá, endpoint ZDR              | `ai/gateway/models.ts` (`JUDGE_MODELS`, `judgePanel({primaryTier})`); tra `GET /api/v1/endpoints/zdr`; kiểm bằng `judge-try --mode=live`         |
 | Đổi temperature, trần token, timeout, số lần thử của judge | `ai/judge/judge.profile.ts` (tăng `version`)                                                                                                     |
-| Đổi chính sách khi một ghế hỏng (chờ hay gộp 2)            | `JUDGE_PROFILE.whenOneJudgeDown`                                                                                                                 |
+| Đổi chính sách khi một ghế hỏng (chờ hay gộp 2)            | `JUDGE_PROFILE.whenOneJudgeDown`, `lowerOf2FromAttempt` (D-132)                                                                                  |
 | Đổi luật được hỏi vặn                                      | `followUpAllowed` trong `playRun.ts`, kèm test                                                                                                   |
 | Đổi số lần thử lại hoặc độ lùi của job chấm                | `core/queues.ts` (`GRADING_ATTEMPTS`, `GRADING_BACKOFF_MS`)                                                                                      |
 | Chuyển AI-4 sang contract nhịp (D-130, `narrateScene`)     | `assessment/follow-up.service.ts`. Cần runtime dạng cảnh/seed mới, chưa có (xem 7)                                                               |
@@ -137,10 +138,10 @@ Một số điểm cụ thể:
 
 ## 7. Lệch thiết kế và việc còn mở (đọc trước khi "sửa cho đúng")
 
-Các chỗ dưới đây là **lựa chọn của code**, chưa phải quyết định của nhóm. Đừng ghi chúng vào `02-quyet-dinh.md` như đã chốt.
+Mục 1 và 2 đã thành quyết định ngày 12/11 (D-131, D-132). Các mục còn lại là **lựa chọn của code**, chưa phải quyết định của nhóm; đừng ghi chúng vào `02-quyet-dinh.md` như đã chốt. Mục 4–7 là phần game design (Phúc), chờ D-95/D-116.
 
-1. **Gọi judge qua OpenRouter** lệch D-100. Nhật chọn ngày 11/11 vì một key dùng được cho cả ba họ. Cần nhóm ghi thành quyết định.
-2. **Một ghế hỏng cả hai bậc**: code theo D-108, điểm chờ và thử lại. SD-01 và CL-04 ghi gộp 2 judge. Đổi được bằng một dòng (mục 6).
+1. ✅ **Gọi judge qua OpenRouter: D-131** (thay một phần D-100). Mỗi request gửi `zdr: true` và chỉ một endpoint ghi sẵn: Claude trên `google-vertex/global`, GPT trên `azure`, Gemini trên `google-vertex/global`, cùng giá niêm yết với API gốc. Dữ liệu vẫn xử lý ở nước ngoài, nên hồ sơ chuyển dữ liệu ra nước ngoài (07 mục E) vẫn cần. Báo cáo §5.2.3, §5.3.6, §5.3.10 còn ghi theo D-100.
+2. ✅ **Một ghế hỏng cả hai bậc: D-132.** Job chấm thử lượt 1–2 thì chờ (D-108). Từ lượt 3 (sớm nhất khoảng 45 giây sau lần nộp) thì gộp hai judge còn lại theo SD-01, lấy mức thấp hơn, ghi `method = lower_of_2` để chuyên gia lọc ra xem lại. Còn ít hơn hai judge thì vẫn chờ, rồi FAILED.
 3. **Thời điểm chấm và hỏi vặn** theo ① ngày 30/10: song song, AI-4 không chờ điểm. Report và SD-01 còn mô tả chấm trước rồi mới hỏi.
 4. **Mức một hoạt động** = mức thấp nhất trên các tiêu chí có xét. Mỗi tiêu chí lấy mức cao nhất qua câu chính và câu trả lời hỏi vặn. Luật gộp chính thức chờ D-95/D-116.
 5. **"Không xét"** khi ít nhất nửa số judge nói không xét. **Cờ phản tác dụng** theo đa số. Cả hai đều tạm.
@@ -150,12 +151,13 @@ Các chỗ dưới đây là **lựa chọn của code**, chưa phải quyết �
 9. **Nhận xét cuối màn** ghép từ lý do và câu trích của judge cùng mốc rubric, không có ghi chú do model viết riêng (câu ③ còn mở). Lý do của judge đôi khi nhắc "mức 2": đó là chữ của judge, hiện nguyên văn.
 10. **Schema DB** bám ERD-05/06/07 nhưng dùng khoá chuỗi thay cho uuid tới `rubric_criterion`, `task`, `release` (ERD-03/04 chưa có). `judge_score` thêm cột `rationale`. Chưa có `model_config`, `prompt_template`.
 11. **Phiên đăng nhập** đi bằng cookie; hợp đồng ghi Bearer (Bearer vẫn được nhận).
-12. **Không có circuit breaker cho judge**: cả ba judge cùng là provider `openrouter`. Breaker theo provider sẽ ngắt cả panel khi một họ hỏng.
+12. **Không có circuit breaker cho judge**: cả ba judge cùng là provider `openrouter`. Breaker theo provider sẽ ngắt cả panel khi một họ hỏng. Chấm chạy nền và D-132 đã giới hạn thời gian chờ, nên chưa cần breaker theo model.
 
-## 8. Những điều đã đo hoặc kiểm thật (11/11/2026)
+## 8. Những điều đã đo hoặc kiểm thật (11–12/11/2026)
 
-- **Claude 5.5 và GPT-6 trên OpenRouter không nhận `temperature`.** Gửi kèm `require_parameters` thì bị từ chối. Adapter bỏ tham số này theo `ModelSpec.supports.temperature`.
-- **Gemini 3.x từ chối `reasoning.effort: none`** ("Reasoning is mandatory…"). Dùng `minimal` thì chạy, báo 0 token suy nghĩ, mất 1,2–3,4 giây (`ModelSpec.minReasoning`).
+- **Không endpoint judge nào nhận `temperature`** (Claude 5.5, GPT-6 từ 11/11; Gemini trên Vertex từ 12/11). Gửi kèm `require_parameters` thì bị từ chối. Adapter bỏ tham số này theo `ModelSpec.supports.temperature`. Độ ổn định của judge phải đo ở §7.3.2.
+- **Mức suy nghĩ** (`ModelSpec.minReasoning`): Haiku 5.5 và GPT-6 Luna nhận `reasoning.effort: none`. Sonnet 5.5, GPT-6.1 Sol và Gemini 3.x báo "Reasoning is mandatory…", còn `minimal` thì chạy và báo 0 token suy nghĩ. **Trước 12/11, bậc dự phòng của Claude và GPT luôn bị trả 400**, nên chưa bao giờ chấm được. Đã sửa và thử thật với `judge-try --tier=mid`.
+- **ZDR (12/11):** `GET /api/v1/endpoints/zdr` (không cần key) liệt kê endpoint không lưu dữ liệu. Gửi `zdr: true` kèm host không ZDR thì OpenRouter trả 404 "No endpoints found matching your data policy". Thời gian chấm một lô qua endpoint ZDR: Haiku 1,9–4,0 s, Luna 2,4–4,3 s, Flash-Lite 1,5–2,2 s. Ở bậc dự phòng: Sonnet 3,8 s, Sol 6,7 s (sát timeout 7 s của D-109), Gemini 3.8 Flash 5,0 s.
 - **Chi phí một màn L1**: Qwen (AI-4) khoảng 0,0004 USD; ba judge chấm hai câu khoảng 0,0021 USD.
 - **Số token đầu vào khác nhau theo họ** với cùng một prompt: Claude khoảng 2.250, GPT khoảng 1.100, Gemini khoảng 960.
 - **`@nestjs/bullmq` 12 chỉ có bản ESM**, nên code dùng thẳng `bullmq` (bản CommonJS). BullMQ 6 cần cài `ioredis` riêng (đã thêm vào `package.json` gốc).
