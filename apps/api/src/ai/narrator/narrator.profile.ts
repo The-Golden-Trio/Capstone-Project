@@ -10,7 +10,7 @@
 import type { ProviderId } from '../gateway/gateway.types';
 
 export const NARRATOR_PROFILE = {
-  version: 'narrator-profile-3',
+  version: 'narrator-profile-4',
 
   /**
    * Temperature theo TỪNG hãng — thang của hai hãng không giống nhau.
@@ -34,16 +34,16 @@ export const NARRATOR_PROFILE = {
   /**
    * Trần token đầu ra, theo từng hãng.
    *
-   * Câu cần viết chỉ khoảng 60–100 token (follow_up tối đa 200 ký tự + khung
-   * JSON), nên 300 đã gấp ba. Qwen đặt 600 theo góp ý của cô (từ 500 trở lên):
-   * chừa chỗ cho câu dài hơn dự kiến, và chỉ tốn tiền khi model viết thật dài.
-   * DeepSeek giữ 300. Alibaba cảnh báo trần có thể cắt ngang JSON — bị cắt thì
-   * R4 bắt (`finish_reason: length`) và sinh lại. Không đặt trần thì mặc định
-   * của DeepSeek là 8K: một lần model "nói dài" là hàng chục giây chờ.
+   * Contract nhịp (D-130) viết tối đa 5 nhịp × 120 ký tự, cộng khung JSON:
+   * khoảng 300–450 token tiếng Việt ở lượt dài nhất. Lượt thường 2–4 nhịp.
+   * 600 cho mọi hãng (Qwen 600 theo góp ý của cô, từ 500 trở lên); DeepSeek
+   * trước đây 300, đủ cho một câu follow-up nhưng cắt ngang lượt 5 nhịp. Bị cắt
+   * thì R4 bắt (`finish_reason: length`) và sinh lại. Không đặt trần thì mặc
+   * định của DeepSeek là 8K: một lần model "nói dài" là hàng chục giây chờ.
    *
    * Đo: phân bố số token đầu ra thật; hạ xuống khi p99 còn xa trần.
    */
-  maxOutputTokens: { qwen: 600, openrouter: 600, deepseek: 300 } satisfies Record<ProviderId, number>,
+  maxOutputTokens: { qwen: 600, openrouter: 600, deepseek: 600 } satisfies Record<ProviderId, number>,
 
   /**
    * Chờ tối đa một lượt gọi.

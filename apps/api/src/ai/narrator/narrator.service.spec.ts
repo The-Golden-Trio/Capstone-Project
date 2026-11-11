@@ -63,7 +63,7 @@ describe('lượt bình thường', () => {
         modelKey: 'qwen3.8-flash@eu-central-1',
         family: 'qwen',
         promptVersion: 'narrator-v2',
-        profileVersion: 'narrator-profile-3',
+        profileVersion: 'narrator-profile-4',
         contentVersion: 7,
         temperature: 0.7,
         outcome: 'accepted',
@@ -98,10 +98,10 @@ describe('engine không cho hỏi đào sâu', () => {
 });
 
 describe('trần token theo từng hãng', () => {
-  it('DeepSeek giữ 300', async () => {
+  it('DeepSeek cũng 600: đủ cho lượt 5 nhịp', async () => {
     const { service, transport } = setup([{ content: GOOD }], [DEEPSEEK]);
     await service.narrate(input());
-    expect(transport.calls[0].body).toMatchObject({ max_tokens: 300 });
+    expect(transport.calls[0].body).toMatchObject({ max_tokens: 600 });
   });
 });
 

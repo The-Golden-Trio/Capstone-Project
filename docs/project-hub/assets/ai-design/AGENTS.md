@@ -19,7 +19,7 @@ Yêu cầu như “viết phần 2”, “sửa contract”, “đồng bộ dec
 Mốc đối chiếu **31/10/2026**; kiểm lại bảng trạng thái của tài liệu khi làm task:
 
 - `ai-4-thiet-ke.md` là **bản ý tưởng**, chưa phải văn báo cáo. Phần 1 và 4 còn là nháp chờ Nhật duyệt; phần 2 chưa viết. Không tự đánh dấu duyệt sau khi biên tập.
-- **AI-4 dẫn truyện, AI-5 chấm điểm.** Engine giữ thứ tự canon, quyết cờ cho hỏi và trần follow-up. AI-4 chỉ viết một lời follow-up (câu hỏi đào sâu, hoặc lời dẫn không có dấu `?`; từ 4/11 không còn lời nối riêng) và chỉ được gọi khi engine cho hỏi; không chấm điểm, tự thêm sự kiện hay quyết luồng chơi.
+- **AI-4 dẫn truyện, AI-5 chấm điểm.** Từ 11/11 code theo **contract nhịp (D-130)**: engine giao `reply` · `bridge` · `reaction` · `probe`, quyết người nói, cờ được hỏi, số nhịp, hook; AI-4 trả `{beats: [{speaker, text, expression}], question_by}`. AI-4 không chấm điểm, không tự thêm sự kiện hay quyết luồng chơi. Contract một câu follow-up (4/11) chỉ còn cho hai kịch bản prototype dạng activity.
 - **① đã chốt 30/10 trong tài liệu AI-4:** AI-5 chấm khi nộp câu trả lời; AI-4 không chờ điểm; quyền hỏi do engine quyết. Một số đoạn report master còn mô tả chờ chấm rồi mới hỏi: ghi nhận chỗ lệch, không tự đổi ngược quyết định mới khi sửa AI-4.
 - **② còn mở:** cách xử lý phiên khi đầu ra hỏng/hết model. Code đã có sinh lại/đổi model và trả `unavailable`; điều đó chưa có nghĩa nhóm đã chốt mọi hành vi ở engine/UI. Report có chỗ nói dùng follow-up mặc định, có chỗ nói tạm dừng: không âm thầm chọn một phương án.
 - **④ còn mở:** AI nào có được đọc thẻ “Mục tiêu của bạn” hay không. Xem thêm các câu hỏi mới phát sinh trong phần đang sửa, gồm ⑤ ở phần 4.
@@ -29,9 +29,9 @@ Mốc đối chiếu **31/10/2026**; kiểm lại bảng trạng thái của tà
 
 Đường dẫn bên dưới tính từ gốc repo:
 
-- Schema/luật: `packages/game-core/src/domain/narration/rules.ts`; bộ lọc seed: `narratorView.ts`; khử định danh: `deidentify.ts` cùng thư mục.
-- Schema hiện hành (từ 4/11) trả **`speaker`, `follow_up`**; `follow_up` luôn có chữ, tối đa 200 ký tự, nhiều nhất một dấu `?`. Trần token đầu ra theo hãng: Qwen 600 (kể cả qua OpenRouter), DeepSeek 300 (`narrator.profile.ts`). Mua Qwen trực tiếp hay qua OpenRouter đều có adapter riêng; tham số hai đường khác nhau. Khi mô tả payload thực tế, theo schema và request sinh từ code.
-- Prompt: `apps/api/src/ai/narrator/narrator.prompt.ts`, `prompts/narrator.v2.ts` (bản đang dùng từ 11/11; v1 giữ lại để đối chiếu); cấu hình lượt gọi: `narrator.profile.ts`; điều phối: `narrator.service.ts`; model và adapter: `apps/api/src/ai/gateway/`.
+- Contract nhịp: đầu vào `sceneTurn.ts`, khuôn và R1–R4 `beats.ts`, thẻ NPC (Hồ sơ NPC 6.1, khớp từng chữ với `engine.py`) `npcCard.ts`, hàm kiểm chung `textChecks.ts`; tất cả ở `packages/game-core/src/domain/narration/`. Cảnh mẫu từ seed m2: `apps/api/src/ai/testing/sample-scene.ts`.
+- Contract cũ: `rules.ts` (một câu `follow_up`), `narratorView.ts`; khử định danh dùng chung: `deidentify.ts`. Trần token đầu ra theo hãng: Qwen 600 (kể cả qua OpenRouter), DeepSeek 600 từ 11/11 vì lượt nhịp dài hơn (`narrator.profile.ts`). Mua Qwen trực tiếp hay qua OpenRouter đều có adapter riêng; tham số hai đường khác nhau. Khi mô tả payload thực tế, theo schema và request sinh từ code.
+- Prompt: contract nhịp `scene.prompt.ts` + `prompts/narrator.v3.ts`; contract cũ `narrator.prompt.ts` + `prompts/narrator.v2.ts` (v1 giữ để đối chiếu); cấu hình lượt gọi: `narrator.profile.ts`; điều phối: `narrator.service.ts`; model và adapter: `apps/api/src/ai/gateway/`.
 - AI-4 không nhận rubric, khoá chấm, gợi ý chưa hiện, kết cục hay hoạt động tương lai. Không mở rộng prompt bằng cách gửi toàn bộ scenario thô; dùng `narratorView` và kiểm test chống lộ nội dung.
 - Luật R1–R4 chạy bằng code; không mô tả chúng như bảo đảm phát hiện mọi ý bịa hay rubric diễn đạt lại. Nội dung người chơi là dữ liệu không đáng tin, cần được phân định trong prompt và khử định danh trước khi gửi.
 - `apps/api/src/scripts/narrator-try.ts` sinh request mẫu. Theo `ai-4-api/README.md`, response đi kèm là **giả**, token và nội dung không dùng làm bằng chứng chất lượng/chi phí thật.
