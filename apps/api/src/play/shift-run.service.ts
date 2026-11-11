@@ -42,6 +42,15 @@ export interface ShiftRunView {
   pendingTurnId: string | null;
 }
 
+export interface ShiftTask {
+  taskId: string;
+  title: string;
+  situation: string;
+  goal: string;
+  /** Độ dài ca trong truyện (phút), không phải thời gian chơi. */
+  minutes: number;
+}
+
 export type ShiftScene = shift.SceneView & {
   paused: boolean;
   pendingTurnId: string | null;
@@ -187,6 +196,29 @@ export class ShiftRunService {
   }
 
   /* ── Đọc ── */
+
+  /** Các ca làm của một cấp ở phiên bản nội dung đang phục vụ (để bản đồ nghề mở được). */
+  async tasks(roleCode: string, band: string): Promise<ShiftTask[]> {
+    const version = await this.content.activeVersion();
+    const docs = await this.prisma.shiftSeedDoc.findMany({
+      where: { version, levelRef: `${roleCode}.${band}` },
+      orderBy: { seedId: 'asc' },
+      select: { seedId: true },
+    });
+    const out: ShiftTask[] = [];
+    for (const doc of docs) {
+      const ctx = await this.content.shiftContextAt(version, doc.seedId);
+      if (ctx)
+        out.push({
+          taskId: ctx.seed.id,
+          title: ctx.seed.title,
+          situation: ctx.seed.situation,
+          goal: ctx.seed.goal,
+          minutes: ctx.seed.clock.budget * ctx.pack.minutes_per_point,
+        });
+    }
+    return out;
+  }
 
   async get(userId: string, runId: string): Promise<ShiftRunView> {
     const { run, ctx, records, state } = await this.log.load(runId, userId);

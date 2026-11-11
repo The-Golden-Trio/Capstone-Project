@@ -40,7 +40,7 @@ interface RequestOptions {
  */
 let refreshInFlight: Promise<boolean> | null = null;
 
-async function refreshSession(): Promise<boolean> {
+export async function refreshSession(): Promise<boolean> {
   refreshInFlight ??= (async () => {
     try {
       const response = await fetch(`${BASE_URL}/api/auth/refresh`, {
@@ -67,7 +67,8 @@ async function rawRequest(
   return fetch(`${BASE_URL}/api${path}`, {
     method,
     credentials: 'include',
-    headers: body === undefined ? undefined : { 'Content-Type': 'application/json' },
+    headers:
+      body === undefined ? undefined : { 'Content-Type': 'application/json' },
     body: body === undefined ? undefined : JSON.stringify(body),
   });
 }

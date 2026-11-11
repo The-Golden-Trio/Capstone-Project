@@ -35,6 +35,7 @@ Hợp đồng hiện tại không có chỗ cho các phần đó. Luồng ca là
 
 | Method, path                              | Việc                                                                                                     | Trả về                                                                                                                                                      |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `GET /tasks?roleCode=&band=`              | Ca làm của một cấp ở phiên bản nội dung đang phục vụ (bản đồ nghề dùng để hiện nút "Thử ca")             | `[{taskId, title, situation, goal, minutes}]`                                                                                                               |
 | `POST /` `{taskId, enrolmentId?}`         | Mở lượt; có lượt dở của cùng nhiệm vụ thì trả lượt đó                                                    | `201` / `200`; `409 SCENARIO_UNAVAILABLE`                                                                                                                   |
 | `GET /:id`                                | Tên ca, mục tiêu, vai, câu cảnh, cast, glossary, `paused`, `pendingTurnId`                               |                                                                                                                                                             |
 | `GET /:id/scene`                          | Cảnh hiện tại: đồng hồ, chế độ, nút đang mở, hành động (điểm, bật/tắt, lý do), tài liệu, sổ tay, ghi chú |                                                                                                                                                             |
@@ -71,6 +72,16 @@ Tin trên `/stream` có dạng `{type, runId, jobId, payload}`:
 | `turn.done`      | `{turnId, scene, ended}`                                           |
 | `provider.delay` | `{turnId, waitingFor: narration \| checks}`: model chạy quá 4 giây |
 | `run.paused`     | `{turnId, reason}`                                                 |
+
+## Màn chơi (web)
+
+- **Lối vào:** hộp "Ca làm" trong panel cấp của bản đồ nghề, dẫn tới `/shift/:seedId`. Trang này mở lượt (hoặc tiếp lượt đang dở) rồi chuyển sang màn chơi.
+- **Màn chơi `/shift-run/:runId`:**
+  - giữa: đồng hồ điểm thời gian, lời thoại theo nhịp có biểu cảm, khung trả lời đổi theo cảnh (trò chuyện, chọn có đếm giờ đo trên thiết bị, nộp artefact, hộp xác nhận E7, chờ AI, tạm dừng);
+  - trái: hành động kèm số điểm và lý do bị khoá;
+  - phải: sổ tay gồm dữ kiện, lời hứa, ghi chú riêng, thuật ngữ, gợi ý.
+- **Tổng kết `/shift-run/:runId/summary`:** kể lại ca theo truyện, chưa chấm điểm.
+- Code ở `apps/web/src/play/shift/`. Không có bản mock: web lấy nội dung qua API.
 
 ## Cần nhóm quyết
 

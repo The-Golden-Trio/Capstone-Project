@@ -22,6 +22,9 @@ import { QuestLauncher } from '../play/pages/QuestLauncher';
 import { RunIntroPage } from '../play/pages/RunIntroPage';
 import { RunPlayPage } from '../play/pages/RunPlayPage';
 import { RunSummaryPage } from '../play/pages/RunSummaryPage';
+import { ShiftLauncher } from '../play/shift/ShiftLauncher';
+import { ShiftPlayPage } from '../play/shift/ShiftPlayPage';
+import { ShiftSummaryPage } from '../play/shift/ShiftSummaryPage';
 
 /**
  * Bản đồ ngân hà kéo theo three.js (~1 MB) — tải riêng khi vào `/jobs`, các
@@ -161,6 +164,30 @@ const routes: RouteObject[] = [
         children: [
           { index: true, element: <PlayPage /> },
           { path: 'end', element: <EndingPage /> },
+        ],
+      },
+      // Ca làm (Game Design W45): API đề xuất /api/v1/shift-runs, chưa chấm điểm.
+      { path: 'shift/:seedId', element: <ShiftLauncher /> },
+      {
+        path: 'shift-run/:runId',
+        handle: {
+          crumbs: () => [
+            { label: 'Bản đồ nghề', to: '/jobs' },
+            { label: 'Ca làm' },
+          ],
+        } satisfies CrumbHandle,
+        children: [
+          { index: true, element: <ShiftPlayPage /> },
+          {
+            path: 'summary',
+            element: <ShiftSummaryPage />,
+            handle: {
+              crumbs: () => [
+                { label: 'Bản đồ nghề', to: '/jobs' },
+                { label: 'Tổng kết ca' },
+              ],
+            } satisfies CrumbHandle,
+          },
         ],
       },
       {

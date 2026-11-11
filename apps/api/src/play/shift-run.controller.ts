@@ -50,6 +50,12 @@ export class ShiftRunController {
     return run;
   }
 
+  /** Ca làm của một cấp. Khai trước `:runId` để route này không bị nuốt. */
+  @Get('tasks')
+  tasks(@Query('roleCode') roleCode = '', @Query('band') band = '') {
+    return this.runs.tasks(roleCode, band);
+  }
+
   @Get(':runId')
   get(@CurrentUser() user: AuthUser, @Param('runId') runId: string) {
     return this.runs.get(user.id, runId);

@@ -105,6 +105,10 @@ export function memoryPrisma() {
       lastError: null,
     })),
     user: new Table(() => ({})),
+    shiftSeedDoc: new Table(
+      () => ({}),
+      () => false,
+    ),
     async $queryRaw() {
       return [];
     },

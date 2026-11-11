@@ -89,6 +89,36 @@ async function problemOf(promise: Promise<unknown>) {
 }
 
 describe('luồng ca làm (API + worker)', () => {
+  it('liệt kê ca làm của một cấp theo phiên bản nội dung đang phục vụ', async () => {
+    const { service, prisma } = setup();
+    await prisma.shiftSeedDoc.create({
+      data: {
+        version: 7,
+        seedId: SEED,
+        levelRef: 'SWE_BACKEND.L3',
+        title: 'x',
+        body: {},
+      },
+    });
+    await prisma.shiftSeedDoc.create({
+      data: {
+        version: 6,
+        seedId: 'CU.L3.m1',
+        levelRef: 'SWE_BACKEND.L3',
+        title: 'cũ',
+        body: {},
+      },
+    });
+    expect(await service.tasks('SWE_BACKEND', 'L3')).toEqual([
+      expect.objectContaining({
+        taskId: SEED,
+        title: 'Sự cố hệ thống giờ cao điểm!',
+        minutes: 140,
+      }),
+    ]);
+    expect(await service.tasks('SWE_BACKEND', 'L1')).toEqual([]);
+  });
+
   it('mở lượt 201, mở lại trả lượt đang dở (NFR-03); nhiệm vụ lạ thì 409', async () => {
     const { service, prisma } = setup();
     const first = await service.start(USER, { taskId: SEED });
