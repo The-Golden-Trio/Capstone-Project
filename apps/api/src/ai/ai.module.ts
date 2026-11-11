@@ -10,7 +10,7 @@ import { ConfigService } from '@nestjs/config';
 import type { AiEnv, Env } from '../config/env';
 import { CircuitBreaker } from './gateway/circuit-breaker';
 import { ModelGateway } from './gateway/model-gateway';
-import { narratorChain, type AiSettings } from './gateway/models';
+import { gatewayKeys, narratorChain, type AiSettings } from './gateway/models';
 import { NARRATOR_CHAIN, NarratorService } from './narrator/narrator.service';
 
 export const AI_SETTINGS = Symbol('AI_SETTINGS');
@@ -25,7 +25,11 @@ export function aiSettingsFromEnv(env: AiEnv): AiSettings {
           workspaceId: env.QWEN_WORKSPACE_ID,
           baseUrl: env.QWEN_BASE_URL,
           cacheMode: env.QWEN_CACHE_MODE,
+          jsonMode: env.QWEN_JSON_MODE,
         }
+      : undefined,
+    openrouter: env.OPENROUTER_API_KEY
+      ? { apiKey: env.OPENROUTER_API_KEY, baseUrl: env.OPENROUTER_BASE_URL }
       : undefined,
     deepseek: env.DEEPSEEK_API_KEY ? { apiKey: env.DEEPSEEK_API_KEY } : undefined,
     allowUnconfirmedProviders: env.AI_ALLOW_UNCONFIRMED_PROVIDERS,
@@ -40,6 +44,9 @@ function aiSettingsFromConfig(config: ConfigService<Env, true>): AiSettings {
     QWEN_WORKSPACE_ID: get('QWEN_WORKSPACE_ID'),
     QWEN_BASE_URL: get('QWEN_BASE_URL'),
     QWEN_CACHE_MODE: get('QWEN_CACHE_MODE'),
+    QWEN_JSON_MODE: get('QWEN_JSON_MODE'),
+    OPENROUTER_API_KEY: get('OPENROUTER_API_KEY'),
+    OPENROUTER_BASE_URL: get('OPENROUTER_BASE_URL'),
     DEEPSEEK_API_KEY: get('DEEPSEEK_API_KEY'),
     AI_ALLOW_UNCONFIRMED_PROVIDERS: get('AI_ALLOW_UNCONFIRMED_PROVIDERS'),
   });
@@ -51,11 +58,7 @@ function aiSettingsFromConfig(config: ConfigService<Env, true>): AiSettings {
     {
       provide: ModelGateway,
       inject: [AI_SETTINGS],
-      useFactory: (settings: AiSettings) =>
-        new ModelGateway({
-          qwen: settings.qwen?.apiKey,
-          deepseek: settings.deepseek?.apiKey,
-        }),
+      useFactory: (settings: AiSettings) => new ModelGateway(gatewayKeys(settings)),
     },
     { provide: CircuitBreaker, useFactory: () => new CircuitBreaker() },
     {

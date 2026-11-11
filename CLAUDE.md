@@ -1,3 +1,9 @@
+# Context chung của repo
+
+@AGENTS.md
+
+Context sản phẩm, bản đồ code, nguồn tài liệu, lệnh làm việc và trạng thái hiện thực nằm trong `AGENTS.md` ở gốc. Khi làm việc với thiết kế AI/AI-4, đọc thêm `docs/project-hub/assets/ai-design/AGENTS.md`. Cập nhật các file context này khi thông tin thay đổi, tránh duy trì hai bản mô tả dự án lệch nhau.
+
 # Quy tắc cho AI trong repo này
 
 JobQuest: nền tảng web/game cho người dùng **làm thử một nghề** qua các scenario nhập vai, AI dẫn dắt và chấm điểm. Đồ án tốt nghiệp HCMUT của nhóm Golden Trio. ĐATN **hiện thực** những gì ĐACN đã thiết kế (D-103), nên việc code ở đây là **làm đúng thiết kế đã chốt**, không thiết kế lại.

@@ -1,6 +1,9 @@
 /**
- * Người dẫn truyện (AI-4): một lượt = một câu người chơi vừa gõ → lời nhân vật
- * đáp lại, có thể kèm một câu hỏi đào sâu.
+ * Người dẫn truyện (AI-4): một lượt = một câu người chơi vừa gõ → một lời
+ * follow-up của nhân vật (câu hỏi đào sâu, hoặc lời dẫn khi tình huống cần).
+ *
+ * Chỉ gọi model khi engine cho hỏi đào sâu. Không được hỏi thì trả `skipped`
+ * ngay, không tốn một lượt gọi nào; engine hiển thị nội dung của chuyên gia.
  *
  * Bậc dự phòng, tất cả nằm trong hạn chót 9 s:
  *
@@ -51,7 +54,7 @@ import {
   regenerationMessages,
   type TranscriptLine,
 } from './narrator.prompt';
-import { NARRATOR_PROMPT_VERSION } from './prompts/narrator.v1';
+import { NARRATOR_PROMPT_VERSION } from './prompts/narrator.v2';
 
 export const NARRATOR_CHAIN = Symbol('NARRATOR_CHAIN');
 export const AI_CLOCK = Symbol('AI_CLOCK');
@@ -65,7 +68,7 @@ export interface NarrateInput {
   transcript: readonly TranscriptLine[];
   /** Câu người chơi vừa gõ, nguyên văn. */
   answer: string;
-  /** Engine quyết: còn trong trần đào sâu của hoạt động và của màn không. */
+  /** Engine quyết: còn trong trần đào sâu của hoạt động và của màn không. Không thì không gọi model. */
   followUpAllowed: boolean;
   /** Những gì nền tảng biết về người chơi, để xoá trước khi gửi đi. */
   identity?: KnownIdentity;
@@ -105,6 +108,8 @@ interface Outcome {
 
 type Verdict =
   | { status: 'ok'; line: NarrationOutput }
+  /** Engine không cho hỏi đào sâu: không gọi model nào. */
+  | { status: 'skipped' }
   /** Bộ lọc nội dung của nhà cung cấp chặn câu người chơi hoặc câu trả lời. */
   | { status: 'blocked' }
   | {
@@ -131,6 +136,8 @@ export class NarratorService {
   ) {}
 
   async narrate(input: NarrateInput): Promise<NarrateResult> {
+    if (!input.followUpAllowed) return { status: 'skipped', records: [], redactions: {}, cost: { usd: 0, basis: 'list' } };
+
     const startedAt = this.clock.now();
     const deadline = startedAt + NARRATOR_PROFILE.deadlineMs;
 
@@ -151,13 +158,7 @@ export class NarratorService {
 
     const view = narratorView(input.scenario, input.activityId);
     const castIds = view.cast.map((c) => c.npc_id);
-    const base = buildNarratorMessages({
-      view,
-      activityId: input.activityId,
-      transcript,
-      answer,
-      followUpAllowed: input.followUpAllowed,
-    });
+    const turn = { view, activityId: input.activityId, transcript, answer };
 
     // R1 so với mọi chữ AI-4 được thấy; R3 so với mọi chữ nó không được nói.
     const visibleTexts = [...textsOf(view), ...transcript.map((l) => l.text), answer];
@@ -180,7 +181,8 @@ export class NarratorService {
     let ranOutOfTime = false;
 
     for (const spec of available) {
-      let messages: ChatMessage[] = base;
+      let messages: ChatMessage[] = buildNarratorMessages(turn, spec.provider);
+      const maxOutputTokens = NARRATOR_PROFILE.maxOutputTokens[spec.provider];
 
       for (let round = 0; round <= NARRATOR_PROFILE.maxRegenerations; round++) {
         const remaining = deadline - this.clock.now();
@@ -191,7 +193,7 @@ export class NarratorService {
 
         if (input.budgetUsd !== undefined) {
           const chars = messages.flatMap((m) => m.parts).reduce((n, p) => n + p.text.length, 0);
-          const worst = upperBoundUsd(chars, NARRATOR_PROFILE.maxOutputTokens, spec.price);
+          const worst = upperBoundUsd(chars, maxOutputTokens, spec.price);
           if (spent + worst > input.budgetUsd) return done({ status: 'unavailable', reason: 'budget' });
         }
 
@@ -224,7 +226,7 @@ export class NarratorService {
             model: spec,
             messages,
             temperature,
-            maxOutputTokens: NARRATOR_PROFILE.maxOutputTokens,
+            maxOutputTokens,
             json: { name: 'narration', schema: narrationJsonSchema(castIds) },
             timeoutMs: Math.min(NARRATOR_PROFILE.attemptTimeoutMs, remaining),
           });
@@ -259,7 +261,6 @@ export class NarratorService {
           visibleTexts,
           hiddenTexts: hidden,
           castIds,
-          followUpAllowed: input.followUpAllowed,
           finishReason: result.finishReason,
         });
         record.violations = check.violations.map(({ rule, detail }) => ({ rule, detail }));

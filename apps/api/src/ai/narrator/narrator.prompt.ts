@@ -14,8 +14,8 @@
  * "lịch sử" của model, và không có lịch sử chơi nào nằm lại ở nước ngoài.
  */
 import type { NarratorView, RuleViolation } from '@datn/game-core';
-import type { ChatMessage } from '../gateway/gateway.types';
-import { NARRATOR_SYSTEM_PROMPT, PLAYER_TAG } from './prompts/narrator.v1';
+import type { ChatMessage, ProviderId } from '../gateway/gateway.types';
+import { narratorSystemPrompt, PLAYER_TAG } from './prompts/narrator.v2';
 
 /** Một dòng đã diễn ra và đã được người chơi thấy. */
 export interface TranscriptLine {
@@ -33,7 +33,6 @@ export interface PromptTurn {
   transcript: readonly TranscriptLine[];
   /** Đã khử định danh. */
   answer: string;
-  followUpAllowed: boolean;
 }
 
 /**
@@ -84,7 +83,6 @@ export function turnText(turn: PromptTurn): string {
     '',
     '# LƯỢT NÀY',
     `Hoạt động hiện tại: ${turn.activityId}`,
-    `Được hỏi đào sâu: ${turn.followUpAllowed ? 'có' : 'không'}`,
     'Câu người chơi vừa viết:',
     asPlayerData(turn.answer),
     '',
@@ -92,9 +90,9 @@ export function turnText(turn: PromptTurn): string {
   ].join('\n');
 }
 
-export function buildNarratorMessages(turn: PromptTurn): ChatMessage[] {
+export function buildNarratorMessages(turn: PromptTurn, provider: ProviderId): ChatMessage[] {
   return [
-    { role: 'system', parts: [{ text: NARRATOR_SYSTEM_PROMPT }] },
+    { role: 'system', parts: [{ text: narratorSystemPrompt(provider) }] },
     {
       role: 'user',
       parts: [

@@ -14,7 +14,12 @@ import type {
   ProviderId,
 } from './gateway.types';
 
-export type QwenRegion = 'ap-southeast-1' | 'eu-central-1' | 'us-east-1';
+export type QwenRegion =
+  | 'ap-southeast-1'
+  | 'ap-northeast-1'
+  | 'cn-hongkong'
+  | 'eu-central-1'
+  | 'us-east-1';
 
 export interface QwenSettings {
   apiKey: string;
@@ -22,10 +27,18 @@ export interface QwenSettings {
   workspaceId?: string;
   baseUrl?: string;
   cacheMode: CacheMode;
+  /** Đè cách suy theo region, phòng khi Alibaba đổi danh sách region hỗ trợ JSON Schema. */
+  jsonMode?: 'schema' | 'object';
+}
+
+export interface OpenRouterSettings {
+  apiKey: string;
+  baseUrl?: string;
 }
 
 export interface AiSettings {
   qwen?: QwenSettings;
+  openrouter?: OpenRouterSettings;
   deepseek?: { apiKey: string };
   /** Cho gọi nhà cung cấp chưa có cam kết không huấn luyện (chỉ để thử bằng dữ liệu giả). */
   allowUnconfirmedProviders: boolean;
@@ -37,14 +50,15 @@ const QWEN_DATA_POLICY: DataPolicy = {
   noTraining: 'confirmed',
   source:
     'https://www.alibabacloud.com/help/en/model-studio/faq-about-alibaba-cloud-model-studio (mục 6)',
-  checkedAt: '2026-10-29',
+  checkedAt: '2026-11-06',
   note: '"Alibaba Cloud strictly protects data privacy and never uses your data for model training."',
 };
 
 /**
- * Endpoint theo region. Tài liệu (30/10/2026) ghi endpoint dạng
+ * Endpoint theo region. Tài liệu (6/11/2026) ghi endpoint dạng
  * `{WorkspaceId}.{region}.maas.aliyuncs.com`; riêng Singapore còn endpoint
- * quốc tế cũ không cần workspace.
+ * quốc tế cũ không cần workspace, tài liệu ghi vẫn dùng được. Key gắn với
+ * region: key Singapore gọi Frankfurt sẽ bị 401.
  */
 export function qwenBaseUrl(settings: QwenSettings): string {
   if (settings.baseUrl) return settings.baseUrl.replace(/\/+$/, '');
@@ -59,22 +73,29 @@ export function qwenBaseUrl(settings: QwenSettings): string {
 }
 
 export function qwenFlash(settings: QwenSettings): ModelSpec {
-  // Tài liệu Structured output (cập nhật 29/10/2026): "Singapore region
-  // models are not supported yet" cho JSON Schema.
-  const jsonSchema = settings.region !== 'ap-southeast-1';
+  // Tài liệu Structured output (cập nhật 5/11/2026): "Singapore region models
+  // are not supported yet" cho JSON Schema.
+  const jsonSchema = settings.jsonMode
+    ? settings.jsonMode === 'schema'
+    : settings.region !== 'ap-southeast-1';
 
-  // Implicit: trúng cache tính 20% giá vào, không phí tạo. Explicit: tạo
-  // 125%, trúng 10% — nhưng tài liệu ghi riêng qwen3.8-flash "uses different
-  // creation and hit ratios that vary by region", nên chưa coi là đã kiểm.
+  // Trang giá (5/11/2026): Singapore, Frankfurt, Virginia 0,15 / 0,47; Tokyo và
+  // gói Global 0,113 / 0,382 — lấy mức cao hơn. Tỉ lệ cache để null: trang
+  // Context cache ghi riêng qwen3.8-flash không theo tỉ lệ chung (20%, 10%,
+  // 125%) mà tuỳ region, xem trong console. Chi phí có cache vì thế là cận trên.
   const price: Price = {
     inputPerMTok: 0.15,
     outputPerMTok: 0.47,
-    cachedInputRatio: settings.cacheMode === 'explicit' ? 0.1 : 0.2,
-    cacheWriteRatio: settings.cacheMode === 'explicit' ? 1.25 : null,
-    source:
-      'Giá: báo cáo §5.2.3 bản 24/10. Tỉ lệ cache: trang Context cache của Model Studio (30/10/2026), tỉ lệ chung — qwen3.8-flash khác theo region',
-    verified: false,
+    cachedInputRatio: null,
+    cacheWriteRatio: null,
+    source: 'https://www.alibabacloud.com/help/en/model-studio/model-pricing (5/11/2026)',
+    verified: true,
   };
+
+  // Key gói (Coding Plan, Token Plan) có dạng sk-sp-… Cam kết "never uses
+  // your data for model training" là của Model Studio trả theo lượng dùng; điều
+  // khoản dữ liệu của gói chưa đọc được, nên không mượn cam kết đó.
+  const planKey = settings.apiKey.startsWith('sk-sp-');
 
   return {
     key: `qwen3.8-flash@${settings.region}`,
@@ -86,7 +107,52 @@ export function qwenFlash(settings: QwenSettings): ModelSpec {
     supports: { jsonSchema, explicitCache: true },
     cacheMode: settings.cacheMode,
     price,
-    dataPolicy: QWEN_DATA_POLICY,
+    dataPolicy: planKey
+      ? {
+          noTraining: 'not_found',
+          source: 'https://www.alibabacloud.com/help/en/model-studio/token-plan-personal-overview',
+          checkedAt: '2026-11-11',
+          note: 'Key gói (sk-sp-…): chưa đọc được điều khoản dữ liệu của gói',
+        }
+      : QWEN_DATA_POLICY,
+  };
+}
+
+/* ── Qwen qua OpenRouter ───────────────────────────────────────────── */
+
+export function openRouterQwenFlash(
+  settings: OpenRouterSettings,
+  options: { allowDataCollection: boolean },
+): ModelSpec {
+  return {
+    key: 'qwen3.8-flash@openrouter',
+    provider: 'openrouter',
+    model: 'qwen/qwen3.8-flash',
+    family: 'qwen',
+    region: 'openrouter',
+    baseUrl: (settings.baseUrl ?? 'https://openrouter.ai/api/v1').replace(/\/+$/, ''),
+    supports: { jsonSchema: true, explicitCache: false },
+    cacheMode: 'implicit',
+    price: {
+      inputPerMTok: 0.15,
+      outputPerMTok: 0.47,
+      // 0,016 / 0,15 và 0,2 / 0,15, theo endpoint Alibaba trên OpenRouter.
+      cachedInputRatio: 0.016 / 0.15,
+      cacheWriteRatio: 0.2 / 0.15,
+      source: 'https://openrouter.ai/api/v1/models/qwen/qwen3.8-flash/endpoints (6/11/2026)',
+      verified: true,
+    },
+    routing: {
+      only: ['alibaba'],
+      dataCollection: options.allowDataCollection ? 'allow' : 'deny',
+    },
+    dataPolicy: {
+      noTraining: 'confirmed',
+      source: 'https://openrouter.ai/docs/guides/privacy/data-collection',
+      checkedAt: '2026-11-06',
+      note:
+        'OpenRouter: "does not store your prompts or responses", huấn luyện tắt mặc định. Mỗi request gửi `data_collection: deny`: nếu OpenRouter không xếp Alibaba vào nhóm không thu thập thì request bị từ chối, không gửi đi. Thêm một bên trung gian so với gọi trực tiếp',
+    },
   };
 }
 
@@ -132,7 +198,7 @@ export interface ExcludedModel {
 }
 
 /**
- * Thứ tự thử: Qwen trước, DeepSeek dự phòng (D-107).
+ * Thứ tự thử: Qwen trực tiếp, Qwen qua OpenRouter, rồi DeepSeek dự phòng (D-107).
  *
  * Model bị loại khi thiếu key, hoặc khi nhà cung cấp chưa có cam kết không
  * huấn luyện trên dữ liệu — theo hướng của cô: chỉ dùng nhà cung cấp trích
@@ -147,13 +213,31 @@ export function narratorChain(settings: AiSettings): {
 
   const candidates: Array<[ProviderId, () => ModelSpec | null]> = [
     ['qwen', () => (settings.qwen ? qwenFlash(settings.qwen) : null)],
+    [
+      'openrouter',
+      () =>
+        settings.openrouter
+          ? openRouterQwenFlash(settings.openrouter, {
+              allowDataCollection: settings.allowUnconfirmedProviders,
+            })
+          : null,
+    ],
     ['deepseek', () => (settings.deepseek ? deepseekFlash() : null)],
   ];
 
   for (const [provider, build] of candidates) {
-    const spec = build();
+    // Cấu hình sai (thiếu workspace) không được làm sập cả API lúc khởi động:
+    // phần không dùng AI vẫn phải chạy. Loại model đó và nói rõ vì sao.
+    let spec: ModelSpec | null;
+    try {
+      spec = build();
+    } catch (err) {
+      excluded.push({ provider, reason: err instanceof Error ? err.message : String(err) });
+      continue;
+    }
     if (!spec) {
-      excluded.push({ provider, reason: 'chưa có API key' });
+      // OpenRouter chỉ là một cách mua khác, không có key không phải điều đáng báo.
+      if (provider !== 'openrouter') excluded.push({ provider, reason: 'chưa có API key' });
     } else if (
       spec.dataPolicy.noTraining !== 'confirmed' &&
       !settings.allowUnconfirmedProviders
@@ -169,3 +253,10 @@ export function narratorChain(settings: AiSettings): {
 
   return { chain, excluded };
 }
+
+/** Key cho gateway. Một nơi duy nhất, để module và script chạy thử không lệch nhau. */
+export const gatewayKeys = (settings: AiSettings): Partial<Record<ProviderId, string>> => ({
+  qwen: settings.qwen?.apiKey,
+  openrouter: settings.openrouter?.apiKey,
+  deepseek: settings.deepseek?.apiKey,
+});
