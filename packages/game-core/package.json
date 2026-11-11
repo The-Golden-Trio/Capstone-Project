@@ -33,7 +33,8 @@
         ],
         "outputs": [
           "{projectRoot}/src/data/game-data.json",
-          "{workspaceRoot}/docs/data/game-data.js"
+          "{workspaceRoot}/docs/data/game-data.js",
+          "{projectRoot}/data/shift-seeds.json"
         ],
         "options": {
           "command": "node docs/data/build.mjs",

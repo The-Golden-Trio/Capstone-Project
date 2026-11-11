@@ -121,3 +121,21 @@ const outside = new Set();
 for (const r of roles) for (const s of r.similar_ranked) if (!codes.has(s.role_code)) outside.add(s.role_code);
 console.log(`  nghe ben canh tro ra ngoai nhom: ${[...outside].join(', ') || 'khong co'}`);
 console.log(prob.length ? `\n  ⚠ ${prob.length} van de:\n   - ${prob.join('\n   - ')}` : `\n  khong van de nao`);
+
+/* ── ca lam (seed v2, Game Design W45) ──────────────────────────────────
+   occupation-data/seeds/<NGHE>/<CAP>.pack.json  — goi cap
+   occupation-data/seeds/<NGHE>/<CAP>.mN.json    — seed mot man
+   Kiem khuon va lint chay trong test cua game-core (shift/seeds.spec.ts),
+   vi schema viet bang TypeScript.                                         */
+const SEED_DIR = 'occupation-data/seeds';
+const shift = { packs: {}, seeds: {} };
+for (const job of fs.readdirSync(SEED_DIR)) {
+  for (const file of fs.readdirSync(`${SEED_DIR}/${job}`).sort()) {
+    if (!file.endsWith('.json')) continue;
+    const doc = read(`${SEED_DIR}/${job}/${file}`);
+    if (file.endsWith('.pack.json')) shift.packs[doc.id] = doc;
+    else shift.seeds[doc.id] = doc;
+  }
+}
+fs.writeFileSync('packages/game-core/data/shift-seeds.json', `${JSON.stringify(shift, null, 2)}\n`);
+console.log(`\npackages/game-core/data/shift-seeds.json da sinh: ${Object.keys(shift.packs).length} goi cap | ${Object.keys(shift.seeds).length} seed ca lam`);

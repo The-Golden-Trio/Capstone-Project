@@ -16,6 +16,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { createGameIndex, type GameIndex } from '../data/indexes.js';
 import { GameDataSchema, type GameData } from '../data/schema.js';
+import { ShiftDataSchema, type ShiftData } from '../shift/schema.js';
+import type { ShiftContext } from '../shift/context.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -51,4 +53,26 @@ export function fixtureData(): GameData {
     throw new Error(`game-data.json không đúng hình dạng — ${issues}`);
   }
   return result.data;
+}
+
+/* ── Ca làm (seed v2) ── */
+
+let shiftCached: ShiftData | null = null;
+
+/** Seed ca làm và gói cấp, đọc từ `data/shift-seeds.json`, đã qua schema. */
+export function fixtureShiftData(): ShiftData {
+  shiftCached ??= ShiftDataSchema.parse(
+    JSON.parse(readFileSync(join(DATA_DIR, 'shift-seeds.json'), 'utf-8')),
+  );
+  return shiftCached;
+}
+
+/** Ngữ cảnh chạy engine cho một seed. */
+export function fixtureShiftContext(seedId: string): ShiftContext {
+  const data = fixtureShiftData();
+  const seed = data.seeds[seedId];
+  if (!seed) throw new Error(`Không có seed ${seedId} trong shift-seeds.json`);
+  const pack = data.packs[seed.level_ref];
+  if (!pack) throw new Error(`Không có gói cấp ${seed.level_ref}`);
+  return { seed, pack };
 }

@@ -32,6 +32,9 @@ export * from './domain/narration/narratorView.js';
 export * from './domain/narration/rules.js';
 export * from './domain/narration/deidentify.js';
 
+/* ── Ca làm (seed v2, Game Design W45) ── */
+export * as shift from './shift/index.js';
+
 /* ── Chấm điểm ── */
 export * from './domain/grading/types.js';
 export * from './domain/grading/structuredGrading.js';

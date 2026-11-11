@@ -219,23 +219,52 @@ function properNounsIn(text: string): string[] {
   return found;
 }
 
-function checkFacts(
-  output: NarrationOutput,
-  ctx: NarrationCheckContext,
-): RuleViolation[] {
-  const written = output.follow_up;
-  const violations: RuleViolation[] = [];
-
+/**
+ * Số và tên riêng trong `written` mà không có trong các chữ AI được thấy.
+ * Dùng chung cho R1 của AI-4 bản 1 và bản 2 (ca làm).
+ */
+export function inventedFacts(
+  written: string,
+  visibleTexts: readonly string[],
+  castIds: readonly string[],
+): { numbers: string[]; names: string[] } {
   const knownNumbers = new Set(
-    ctx.visibleTexts.flatMap(numbersIn).flatMap(numberForms),
+    visibleTexts.flatMap(numbersIn).flatMap(numberForms),
   );
-  const invented = [
+  const numbers = [
     ...new Set(
       numbersIn(written).filter(
         (n) => !numberForms(n).some((form) => knownNumbers.has(form)),
       ),
     ),
   ];
+
+  // Tên so GIỮ NGUYÊN DẤU, chỉ bỏ hoa thường. Bỏ dấu thì tên bịa "Minh"
+  // trùng với chữ "mình" có ở khắp kịch bản, và R1 cho qua.
+  const nameKey = (word: string) => word.normalize('NFC').toLowerCase();
+  const knownWords = new Set(
+    [...visibleTexts, ...castIds, ...COMMON_TERMS]
+      .flatMap((text) => text.match(WORD) ?? [])
+      .map(nameKey),
+  );
+  const names = [
+    ...new Set(
+      properNounsIn(written).filter((w) => !knownWords.has(nameKey(w))),
+    ),
+  ];
+  return { numbers, names };
+}
+
+function checkFacts(
+  output: NarrationOutput,
+  ctx: NarrationCheckContext,
+): RuleViolation[] {
+  const violations: RuleViolation[] = [];
+  const { numbers: invented, names: unknownNames } = inventedFacts(
+    output.follow_up,
+    ctx.visibleTexts,
+    ctx.castIds,
+  );
   if (invented.length > 0) {
     violations.push({
       rule: 'R1',
@@ -243,20 +272,6 @@ function checkFacts(
       feedback: `Bạn dùng số không có trong kịch bản hay câu người chơi: ${invented.join(', ')}. Chỉ dùng số có sẵn, hoặc bỏ số đi.`,
     });
   }
-
-  // Tên so GIỮ NGUYÊN DẤU, chỉ bỏ hoa thường. Bỏ dấu thì tên bịa "Minh"
-  // trùng với chữ "mình" có ở khắp kịch bản, và R1 cho qua.
-  const nameKey = (word: string) => word.normalize('NFC').toLowerCase();
-  const knownWords = new Set(
-    [...ctx.visibleTexts, ...ctx.castIds, ...COMMON_TERMS]
-      .flatMap((text) => text.match(WORD) ?? [])
-      .map(nameKey),
-  );
-  const unknownNames = [
-    ...new Set(
-      properNounsIn(written).filter((w) => !knownWords.has(nameKey(w))),
-    ),
-  ];
   if (unknownNames.length > 0) {
     violations.push({
       rule: 'R1',
