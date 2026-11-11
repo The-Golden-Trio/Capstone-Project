@@ -1,0 +1,33 @@
+@startuml AD-03d_DomainExpert_ManageOccupationProfile
+title AD-03d · Domain Expert — manage occupation profile
+
+|Domain Expert|
+|System|
+
+|Domain Expert|
+start
+:Open occupation profile;
+|System|
+:Show occupation profile;
+|Domain Expert|
+:View occupation profile;
+:Write levels and salary;
+:Describe levels and roles;
+:List occupation downsides;
+:Set generation rules;
+:Define competencies;
+:Save changes;
+|System|
+:Store occupation profile;
+:Calculate related occupations;
+if () then ([enough shared skills])
+  :Keep occupation link;
+else ([too few shared skills])
+  :Hide occupation link;
+endif
+:Show saved profile;
+|Domain Expert|
+:View saved profile;
+:Check related occupations;
+stop
+@enduml

@@ -1,0 +1,67 @@
+@startuml SD-08_ContentAdmin_PublishScenario
+title SD-08 · Content Admin — publish scenario
+
+actor "Content Admin" as CA
+participant "Staff app" as App
+participant "Content lifecycle" as CL
+database "PostgreSQL" as DB
+database "Object storage" as OS
+participant "Scheduler" as SC
+participant "CDN" as CDN
+participant "Exploration" as Exp
+participant "Explorer app" as EApp
+actor Explorer
+
+== Publish ==
+CA -> App : Set effective date, note
+CA -> App : Publish scenario
+App -> CL : Publish scenario
+CL -> DB : Load status, approved content
+DB --> CL : Status and content
+
+break status not ready
+  CL --> App : Publish refused
+  App --> CA : Show refusal reason
+end
+
+CL -> CL : Compare with approved content
+CL -> OS : Store release by version
+CL -> DB : Store published release, log
+
+alt effective date is today
+  CL -> DB : Set published
+else later effective date
+  CL -> DB : Keep ready, store date
+  SC -> DB : Set published on date
+end
+
+CL --> App : Release saved
+App --> CA : Show published scenario
+
+== Explorer loads the release ==
+Explorer -> EApp : Choose main quest
+EApp -> Exp : Start scenario
+Exp -> DB : Check status, load position
+DB --> Exp : Status and saved position
+
+break scenario unavailable
+  Exp --> EApp : Scenario unavailable
+  EApp --> Explorer : Show unavailable notice
+end
+
+Exp --> EApp : Release version, saved position
+EApp -> CDN : Get release by version
+
+opt not cached
+  CDN -> OS : Fetch release
+  OS --> CDN : Release file
+end
+
+CDN --> EApp : Release file
+EApp --> Explorer : Show scenario intro
+
+opt explorer wants context
+  Explorer -> EApp : Open scenario context
+  EApp --> Explorer : Show role and goal
+end
+@enduml

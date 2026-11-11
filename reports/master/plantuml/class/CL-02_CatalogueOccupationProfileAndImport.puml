@@ -1,0 +1,186 @@
+@startuml CL-02_CatalogueOccupationProfileAndImport
+title CL-02 · NestJS modules — Catalogue, occupation profile and import
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "CatalogueModule" <<Rectangle>> {
+  class CatalogueModule <<module>> {
+    imports: AuthModule, FeedbackModule
+    controllers: CatalogueController, DomainController, OccupationController, ReviewCriteriaController, ProfileController
+    providers: CatalogueService, LevelAccessService, DomainService, OccupationService, ReviewCriteriaService, ProfileService, AdjacencyService
+    exports: LevelAccessService, ReviewCriteriaService
+  }
+  class CatalogueController <<controller>> {
+    -catalogue : CatalogueService
+    --
+    +listOccupations(user: AuthUser) : DomainOnMap[]  «GET /occupations» [EX]
+    +getOccupationProfile(user: AuthUser, occupationId: string) : OccupationProfile  «GET /occupations/{occupationId}» [EX]
+    +getLevel(user: AuthUser, occupationId: string, levelNo: number) : LevelView  «GET /occupations/{occupationId}/levels/{levelNo}» [EX]
+  }
+  class DomainController <<controller>> {
+    -domains : DomainService
+    --
+    +listDomains(user: AuthUser) : Domain[]  «GET /staff/domains» [CA]
+    +createDomain(user: AuthUser, dto: DomainInput) : Domain  «POST /staff/domains» [CA]
+    +updateDomain(user: AuthUser, domainId: string, dto: DomainInput) : Domain  «PATCH /staff/domains/{domainId}» [CA]
+    +deleteDomain(user: AuthUser, domainId: string) : void  «DELETE /staff/domains/{domainId}» [CA]
+  }
+  class OccupationController <<controller>> {
+    -occupations : OccupationService
+    --
+    +listMyOccupations(user: AuthUser) : StaffOccupation[]  «GET /staff/occupations» [CA,DE]
+    +createOccupation(user: AuthUser, dto: OccupationInput) : StaffOccupation  «POST /staff/occupations» [CA]
+    +updateOccupation(user: AuthUser, occupationId: string, dto: OccupationInput) : StaffOccupation  «PATCH /staff/occupations/{occupationId}» [CA]
+    +publishOccupation(user: AuthUser, occupationId: string) : StaffOccupation  «POST /staff/occupations/{occupationId}/publish» [CA]
+    +retireOccupation(user: AuthUser, occupationId: string) : StaffOccupation  «POST /staff/occupations/{occupationId}/retire» [CA]
+  }
+  class ReviewCriteriaController <<controller>> {
+    -criteria : ReviewCriteriaService
+    --
+    +getReviewCriteria(user: AuthUser, occupationId: string) : ReviewCriteria  «GET /staff/occupations/{occupationId}/review-criteria» [CA,DE]
+    +createReviewCriteriaVersion(user: AuthUser, occupationId: string, dto: CreateReviewCriteriaVersionInput) : ReviewCriteria  «POST /staff/occupations/{occupationId}/review-criteria» [CA]
+  }
+  class ProfileController <<controller>> {
+    -profiles : ProfileService
+    --
+    +getOccupationProfileForEdit(user: AuthUser, occupationId: string) : ProfileEdit  «GET /staff/occupations/{occupationId}/profile» [DE,CA]
+    +saveOccupationProfile(user: AuthUser, occupationId: string, dto: ProfileEdit) : ProfileEdit  «PUT /staff/occupations/{occupationId}/profile» [DE]
+  }
+  class CatalogueService {
+    -prisma : PrismaService
+    -access : LevelAccessService
+    -ratings : RatingService
+    --
+    +galaxyMap(user: AuthUser) : DomainOnMap[]
+    +profile(user: AuthUser, occupationId: string) : OccupationProfile
+    +level(user: AuthUser, occupationId: string, levelNo: number) : LevelView
+  }
+  class LevelAccessService {
+    -prisma : PrismaService
+    --
+    +access(userId: string, levelId: string) : LevelAccess
+    -isEntry(level) : boolean
+    -isUnlocked(userId, level) : boolean
+    -adjacentOffer(userId, level) : boolean
+  }
+  class DomainService {
+    -prisma : PrismaService
+    --
+    +list() : Domain[]
+    +create(user: AuthUser, dto: DomainInput) : Domain
+    +update(domainId: string, dto: DomainInput) : Domain
+    +delete(domainId: string) : void
+  }
+  class OccupationService {
+    -prisma : PrismaService
+    --
+    +listAssigned(user: AuthUser) : StaffOccupation[]
+    +create(user: AuthUser, dto: OccupationInput) : StaffOccupation
+    +update(occupationId: string, dto: OccupationInput) : StaffOccupation
+    +publish(occupationId: string) : StaffOccupation
+    +retire(occupationId: string) : StaffOccupation
+  }
+  class ReviewCriteriaService {
+    -prisma : PrismaService
+    --
+    +current(occupationId: string) : ReviewCriteria
+    +createVersion(user: AuthUser, occupationId: string, dto: CreateReviewCriteriaVersionInput) : ReviewCriteria
+  }
+  class ProfileService {
+    -prisma : PrismaService
+    -adjacency : AdjacencyService
+    --
+    +getForEdit(occupationId: string) : ProfileEdit
+    +save(user: AuthUser, occupationId: string, dto: ProfileEdit) : ProfileEdit
+  }
+  class AdjacencyService {
+    -prisma : PrismaService
+    -settings : SettingsService
+    --
+    +recompute(occupationId: string) : OccupationAdjacency[]
+  }
+  class "CatalogueModule DTOs" as CatalogueModule_DTOs <<dto>> {
+    CreateReviewCriteriaVersionInput
+    Domain
+    DomainInput
+    DomainOnMap
+    LevelView
+    OccupationInput
+    OccupationProfile
+    ProfileEdit
+    ReviewCriteria
+    StaffOccupation
+  }
+}
+
+package "ImportModule" <<Rectangle>> {
+  class ImportModule <<module>> {
+    imports: AuthModule
+    controllers: ImportController
+    providers: ImportService, ImportProcessor, ReferenceSourceClient
+    exports: —
+  }
+  class ImportController <<controller>> {
+    -imports : ImportService
+    --
+    +startImport(user: AuthUser, file: Express.Multer.File, dto: StartImportInput) : JobAccepted  «POST /staff/imports» [CA]
+    +getImport(user: AuthUser, importId: string) : ImportJob  «GET /staff/imports/{importId}» [CA]
+    +fixImportRecord(user: AuthUser, importId: string, recordId: string, dto: FixImportRecordInput) : ImportRecord  «PATCH /staff/imports/{importId}/records/{recordId}» [CA]
+    +completeImport(user: AuthUser, importId: string) : ImportSummary  «POST /staff/imports/{importId}/complete» [CA]
+  }
+  class ImportService {
+    -prisma : PrismaService
+    -storage : StorageService
+    -importQueue : Queue «import»
+    -notifications : NotificationService
+    --
+    +start(user: AuthUser, file: Express.Multer.File, dto: StartImportInput) : JobAccepted
+    +get(importId: string) : ImportJob
+    +fixRecord(user: AuthUser, importId: string, recordId: string, dto: FixImportRecordInput) : ImportRecord
+    +complete(user: AuthUser, importId: string) : ImportSummary  «store adapted records, log, notify domain experts»
+  }
+  class ImportProcessor <<processor · import>> {
+    -prisma : PrismaService
+    -storage : StorageService
+    -sources : ReferenceSourceClient
+    -stream : StreamService
+    -notifications : NotificationService
+    --
+    +process(job: Job<ImportJobData>) : Promise<void>
+  }
+  class ReferenceSourceClient {
+    -http : HttpService
+    --
+    +lookupOnet(code: string) : SourceRecord | null
+    +lookupEsco(uri: string) : SourceRecord | null
+  }
+  class "ImportModule DTOs" as ImportModule_DTOs <<dto>> {
+    FixImportRecordInput
+    ImportJob
+    ImportRecord
+    ImportSummary
+    JobAccepted
+    StartImportInput
+  }
+}
+
+class NotificationService <<CL-07 · NotificationModule>>
+class RatingService <<CL-03 · FeedbackModule>>
+class StorageService <<CL-07 · CoreModule>>
+
+CatalogueController --> CatalogueService
+DomainController --> DomainService
+OccupationController --> OccupationService
+ReviewCriteriaController --> ReviewCriteriaService
+ProfileController --> ProfileService
+CatalogueService --> LevelAccessService
+CatalogueService --> RatingService
+ProfileService --> AdjacencyService
+ImportController --> ImportService
+ImportService --> StorageService
+ImportService --> NotificationService
+ImportProcessor --> StorageService
+ImportProcessor --> ReferenceSourceClient
+ImportProcessor --> NotificationService
+@enduml

@@ -1,0 +1,69 @@
+@startuml SD-06_DomainExpert_ReviewScenario
+title SD-06 · Domain Expert — review scenario
+
+actor "Domain Expert\n(reviewer)" as RV
+participant "Staff app\n(reviewer)" as App
+participant "Content lifecycle" as CL
+participant "Identity & access" as IA
+database "PostgreSQL" as DB
+queue "Redis" as R
+participant "Result stream" as RS
+participant "Notification" as N
+participant "Staff app\n(author)" as AApp
+actor "Domain Expert\n(author)" as DE
+
+RV -> App : Open assigned scenario
+App -> CL : Get scenario for review
+CL -> IA : Check reviewer access
+IA --> CL : Access result
+
+break reviewer is author or not assigned
+  CL --> App : Access refused
+  App --> RV : Show refusal
+end
+
+CL -> DB : Load scenario, review criteria
+DB --> CL : Scenario and criteria
+CL -> DB : Set in review, log
+CL --> App : Scenario and criteria
+App --> RV : Show content and criteria
+
+loop criteria left
+  RV -> App : Answer criterion
+  App -> App : Keep answer
+end
+
+alt reject
+  RV -> App : Reject scenario
+else request changes
+  RV -> App : Write review comments
+else approve
+  RV -> App : Approve content
+end
+
+App -> CL : Post review decision
+CL -> CL : Check all criteria answered
+
+break criteria missing
+  CL --> App : Decision refused
+  App --> RV : Show missing criteria
+end
+
+alt reject
+  CL -> DB : Set retired, log
+else request changes
+  CL -> DB : Set draft, store comments
+else approve
+  CL -> DB : Set approved, log
+end
+
+CL --> App : Decision saved
+App --> RV : Show decision saved
+CL -> R : Publish review outcome
+R --> RS : Outcome event
+RS --> AApp : Push review outcome
+AApp --> DE : Show review outcome
+CL -> R : Enqueue notification
+R -> N : Take notification job
+N -> N : Email author, content admin
+@enduml

@@ -1,0 +1,99 @@
+@startuml ERD-07_OperationsAndSettings
+title ERD-07 · Operations and settings
+hide circle
+
+entity "prompt_template" as prompt_template {
+  * id : uuid <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * kind : prompt_kind
+  * version_no : integer
+  * text : text
+  * change_note : varchar(300)
+    restored_from_id : uuid <<FK>>
+  * changed_by : uuid <<FK>>
+  * changed_at : timestamp
+}
+
+entity "model_config" as model_config {
+  * id : uuid <<PK>>
+  --
+  * version_no : integer
+  * config_hash : char(64)
+  * is_active : boolean
+  * loaded_at : timestamp
+}
+
+entity "model_slot" as model_slot {
+  * config_id : uuid <<PK,FK>>
+  * slot : model_slot_kind <<PK>>
+  --
+  * provider : varchar(40)
+  * model_id : varchar(80)
+  * family : varchar(40)
+}
+
+entity "ai_job" as ai_job {
+  * id : uuid <<PK>>
+  --
+  * kind : ai_job_kind
+  * status : job_status
+    run_id : uuid <<FK>>
+  * attempts : smallint
+    last_error : text
+    rerun_of_id : uuid <<FK>>
+    rerun_by : uuid <<FK>>
+    prompt_template_id : uuid <<FK>>
+  * queued_at : timestamp
+    finished_at : timestamp
+}
+
+entity "usage_cost" as usage_cost {
+  * id : bigint <<PK>>
+  --
+  * ai_job_id : uuid <<FK>>
+  * model_id : varchar(80)
+  * tokens_in : integer
+  * tokens_out : integer
+  * cost_usd : numeric(10,5)
+  * latency_ms : integer
+  * succeeded : boolean
+  * created_at : timestamp
+}
+
+entity "notification" as notification {
+  * id : uuid <<PK>>
+  --
+  * recipient_id : uuid <<FK>>
+  * channel : notification_channel
+  * template : varchar(60)
+  * payload : jsonb
+    sent_at : timestamp
+    read_at : timestamp
+}
+
+entity "app_feedback" as app_feedback {
+  * id : uuid <<PK>>
+  --
+    user_id : uuid <<FK>>
+  * text : text
+  * app_version : varchar(20)
+  * status : feedback_status
+    handled_by : uuid <<FK>>
+  * created_at : timestamp
+}
+
+entity "occupation\n(ERD-02)" as occupation
+entity "scenario_run\n(ERD-05)" as scenario_run
+entity "user_account\n(ERD-01)" as user_account
+
+prompt_template }o--|| occupation
+prompt_template }o--o| prompt_template : restored_from_id
+model_slot }o--|| model_config
+ai_job }o--o| scenario_run
+ai_job }o--o| ai_job : rerun_of_id
+ai_job }o--o| prompt_template
+usage_cost }o--|| ai_job
+notification }o--|| user_account
+app_feedback }o--o| user_account : user_id
+@enduml

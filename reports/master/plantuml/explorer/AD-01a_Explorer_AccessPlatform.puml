@@ -1,0 +1,38 @@
+@startuml AD-01a_Explorer_AccessPlatform
+title AD-01a · Explorer — access the platform
+
+|Explorer|
+|System|
+
+|Explorer|
+start
+:Open JobQuest;
+if () then ([has an account])
+  if () then ([uses password])
+    :Sign in with password;
+  else ([uses Google])
+    :Sign in with Google;
+  endif
+else ([no account])
+  :Register;
+endif
+|System|
+:Check account details;
+if () then ([new account])
+  :Create account;
+else ([existing account])
+endif
+:Start session;
+if () then ([quiz not done])
+  :Show Get-to-know-me quiz;
+  |Explorer|
+  :View Get-to-know-me quiz;
+  stop
+else ([quiz done])
+endif
+|System|
+:Show Galaxy Map;
+|Explorer|
+:View Galaxy Map;
+stop
+@enduml

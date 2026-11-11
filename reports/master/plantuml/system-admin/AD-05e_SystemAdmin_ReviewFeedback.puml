@@ -1,0 +1,24 @@
+@startuml AD-05e_SystemAdmin_ReviewFeedback
+title AD-05e · System Admin — review app feedback
+
+|System Admin|
+|System|
+
+|System Admin|
+start
+:Open feedback list;
+|System|
+:Show feedback with version;
+|System Admin|
+:View feedback list;
+repeat
+  :View feedback item;
+  :Set handling status;
+  |System|
+  :Save handling status;
+  :Show updated status;
+  |System Admin|
+  :View updated status;
+repeat while () is ([more feedback]) not ([no more feedback])
+stop
+@enduml

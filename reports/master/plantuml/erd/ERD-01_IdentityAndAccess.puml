@@ -1,0 +1,86 @@
+@startuml ERD-01_IdentityAndAccess
+title ERD-01 · Identity and access
+hide circle
+
+entity "user_account" as user_account {
+  * id : uuid <<PK>>
+  --
+    email : varchar(254) <<UQ>>
+    password_hash : text
+    display_name : varchar(80)
+  * status : account_status
+  * created_at : timestamp
+    last_sign_in_at : timestamp
+    deleted_at : timestamp
+}
+
+entity "google_identity" as google_identity {
+  * id : uuid <<PK>>
+  --
+  * user_id : uuid <<FK,UQ>>
+  * google_sub : varchar(255) <<UQ>>
+  * linked_at : timestamp
+}
+
+entity "user_role" as user_role {
+  * user_id : uuid <<PK,FK>>
+  * role : user_role_kind <<PK>>
+  --
+    granted_by : uuid <<FK>>
+  * granted_at : timestamp
+}
+
+entity "staff_assignment" as staff_assignment {
+  * id : uuid <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * user_id : uuid <<FK>>
+  * role : staff_role_kind
+  * assigned_by : uuid <<FK>>
+  * assigned_at : timestamp
+    ended_at : timestamp
+}
+
+entity "auth_session" as auth_session {
+  * id : uuid <<PK>>
+  --
+  * user_id : uuid <<FK>>
+  * refresh_token_hash : char(64) <<UQ>>
+  * created_at : timestamp
+  * last_seen_at : timestamp
+  * expires_at : timestamp
+    revoked_at : timestamp
+}
+
+entity "password_reset_token" as password_reset_token {
+  * id : uuid <<PK>>
+  --
+  * user_id : uuid <<FK>>
+  * token_hash : char(64) <<UQ>>
+  * expires_at : timestamp
+    used_at : timestamp
+}
+
+entity "activity_log" as activity_log {
+  * id : bigint <<PK>>
+  --
+    actor_id : uuid <<FK>>
+  * action : varchar(64)
+    target_type : varchar(40)
+    target_id : uuid
+    detail : jsonb
+  * created_at : timestamp
+}
+
+entity "occupation\n(ERD-02)" as occupation
+
+google_identity |o--|| user_account
+user_role }o--|| user_account : user_id
+user_role }o--o| user_account : granted_by
+staff_assignment }o--|| occupation
+staff_assignment }o--|| user_account : user_id
+staff_assignment }o--|| user_account : assigned_by
+auth_session }o--|| user_account
+password_reset_token }o--|| user_account
+activity_log }o--o| user_account
+@enduml

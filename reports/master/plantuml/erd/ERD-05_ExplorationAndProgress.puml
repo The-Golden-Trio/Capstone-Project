@@ -1,0 +1,196 @@
+@startuml ERD-05_ExplorationAndProgress
+title ERD-05 · Exploration and progress
+hide circle
+
+entity "enrolment" as enrolment {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+  * level_id : uuid <<FK>>
+  * reason : enrolment_reason
+  * enrolled_at : timestamp
+    completed_at : timestamp
+}
+
+entity "scenario_run" as scenario_run {
+  * id : uuid <<PK>>
+  --
+  * player_id : uuid <<FK>>
+    enrolment_id : uuid <<FK>>
+    release_id : uuid <<FK>>
+  * build_id : uuid <<FK>>
+  * is_playtest : boolean
+  * status : run_status
+    current_activity_key : varchar(20)
+    total_score : smallint
+    ending_id : uuid <<FK>>
+  * started_at : timestamp
+    finished_at : timestamp
+}
+
+entity "run_event" as run_event {
+  * id : bigint <<PK>>
+  --
+  * run_id : uuid <<FK>>
+  * seq : integer
+  * type : run_event_type
+    activity_key : varchar(20)
+    payload : jsonb
+  * created_at : timestamp
+}
+
+entity "activity_result" as activity_result {
+  * run_id : uuid <<PK,FK>>
+  * activity_key : varchar(20) <<PK>>
+  --
+  * score : smallint
+  * hint_used : boolean
+  * closed_at : timestamp
+}
+
+entity "competency_credit" as competency_credit {
+  * explorer_id : uuid <<PK,FK>>
+  * scenario_id : uuid <<PK,FK>>
+  * competency_id : uuid <<PK,FK>>
+  * source : credit_source <<PK>>
+  --
+  * points : smallint
+  * run_id : uuid <<FK>>
+  * updated_at : timestamp
+}
+
+entity "side_quest_attempt" as side_quest_attempt {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+  * side_quest_id : uuid <<FK>>
+  * answer : jsonb
+  * points_awarded : smallint
+  * created_at : timestamp
+}
+
+entity "award" as award {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+  * code : varchar(40)
+    level_id : uuid <<FK>>
+  * awarded_at : timestamp
+}
+
+entity "content_flag" as content_flag {
+  * id : uuid <<PK>>
+  --
+  * run_id : uuid <<FK>>
+  * activity_key : varchar(20)
+  * reason : text
+  * status : flag_status
+    handled_by : uuid <<FK>>
+  * created_at : timestamp
+}
+
+entity "occupation_rating" as occupation_rating {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+  * occupation_id : uuid <<FK>>
+    comment : text
+  * created_at : timestamp
+}
+
+entity "rating_attribute" as rating_attribute {
+  * code : varchar(30) <<PK>>
+  --
+  * sort_order : smallint
+}
+
+entity "rating_score" as rating_score {
+  * rating_id : uuid <<PK,FK>>
+  * attribute_code : varchar(30) <<PK,FK>>
+  --
+  * score : smallint
+}
+
+entity "quiz_question" as quiz_question {
+  * id : uuid <<PK>>
+  --
+  * riasec_type : riasec_type
+  * text : text
+  * sort_order : smallint
+}
+
+entity "quiz_attempt" as quiz_attempt {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+  * is_current : boolean
+  * score_r : smallint
+  * score_i : smallint
+  * score_a : smallint
+  * score_s : smallint
+  * score_e : smallint
+  * score_c : smallint
+  * top_type : riasec_type
+  * completed_at : timestamp
+}
+
+entity "quiz_answer" as quiz_answer {
+  * attempt_id : uuid <<PK,FK>>
+  * question_id : uuid <<PK,FK>>
+  --
+  * value : smallint
+}
+
+entity "quiz_suggestion" as quiz_suggestion {
+  * attempt_id : uuid <<PK,FK>>
+  * rank : smallint <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+}
+
+entity "portrait_text" as portrait_text {
+  * riasec_type : riasec_type <<PK>>
+  --
+  * text : text
+  * updated_by : uuid <<FK>>
+  * updated_at : timestamp
+}
+
+entity "competency\n(ERD-02)" as competency
+entity "ending\n(ERD-03)" as ending
+entity "occupation\n(ERD-02)" as occupation
+entity "occupation_level\n(ERD-02)" as occupation_level
+entity "scenario\n(ERD-03)" as scenario
+entity "scenario_build\n(ERD-04)" as scenario_build
+entity "scenario_release\n(ERD-04)" as scenario_release
+entity "side_quest\n(ERD-03)" as side_quest
+entity "user_account\n(ERD-01)" as user_account
+
+enrolment }o--|| user_account
+enrolment }o--|| occupation_level
+scenario_run }o--|| user_account
+scenario_run }o--o| enrolment
+scenario_run }o--o| scenario_release
+scenario_run }o--|| scenario_build
+scenario_run }o--o| ending
+run_event }o--|| scenario_run
+activity_result }o--|| scenario_run
+competency_credit }o--|| user_account
+competency_credit }o--|| scenario
+competency_credit }o--|| competency
+competency_credit }o--|| scenario_run
+side_quest_attempt }o--|| user_account
+side_quest_attempt }o--|| side_quest
+award }o--|| user_account
+award }o--o| occupation_level
+content_flag }o--|| scenario_run
+occupation_rating }o--|| user_account
+occupation_rating }o--|| occupation
+rating_score }o--|| occupation_rating
+rating_score }o--|| rating_attribute
+quiz_attempt }o--|| user_account
+quiz_answer }o--|| quiz_attempt
+quiz_answer }o--|| quiz_question
+quiz_suggestion }o--|| quiz_attempt
+quiz_suggestion }o--|| occupation
+@enduml

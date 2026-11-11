@@ -1,0 +1,189 @@
+@startuml CL-03_QuizPlayAndFeedback
+title CL-03 · NestJS modules — Quiz, play and feedback
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "QuizModule" <<Rectangle>> {
+  class QuizModule <<module>> {
+    imports: —
+    controllers: QuizController
+    providers: QuizService
+    exports: —
+  }
+  class QuizController <<controller>> {
+    -quiz : QuizService
+    --
+    +getQuizQuestions(user: AuthUser) : QuizQuestion[]  «GET /quiz/questions» [EX]
+    +submitQuiz(user: AuthUser, dto: SubmitQuizInput) : QuizResult  «POST /quiz/attempts» [EX]
+    +getCurrentQuizResult(user: AuthUser) : QuizResult  «GET /quiz/attempts/current» [EX]
+  }
+  class QuizService {
+    -prisma : PrismaService
+    --
+    +questions() : QuizQuestion[]
+    +submit(user: AuthUser, dto: SubmitQuizInput) : QuizResult
+    +current(user: AuthUser) : QuizResult
+    -scoreProfile(answers) : RiasecScores
+    -matchOccupations(scores) : Occupation[5]
+    -pickPortrait(topType) : PortraitText
+  }
+  class "QuizModule DTOs" as QuizModule_DTOs <<dto>> {
+    QuizQuestion
+    QuizResult
+    SubmitQuizInput
+  }
+}
+
+package "PlayModule" <<Rectangle>> {
+  class PlayModule <<module>> {
+    imports: CatalogueModule, AssessmentModule, QualityModule
+    controllers: EnrolmentController, RunController, SideQuestController
+    providers: EnrolmentService, RunService, SummaryService, ProgressService, SideQuestService
+    exports: RunService
+  }
+  class EnrolmentController <<controller>> {
+    -enrolments : EnrolmentService
+    --
+    +enrol(user: AuthUser, dto: EnrolInput) : IslandMap  «POST /enrolments» [EX]
+    +getIslandMap(user: AuthUser, enrolmentId: string) : IslandMap  «GET /enrolments/{enrolmentId}» [EX]
+  }
+  class RunController <<controller>> {
+    -runs : RunService
+    -summaries : SummaryService
+    --
+    +startRun(user: AuthUser, dto: StartRunInput) : Run  «POST /runs» [EX]
+    +getRun(user: AuthUser, runId: string) : Run  «GET /runs/{runId}» [EX,DE]
+    +getCurrentActivity(user: AuthUser, runId: string) : ActivityView  «GET /runs/{runId}/activity» [EX,DE]
+    +submitAnswer(user: AuthUser, runId: string, dto: AnswerInput) : AnswerResult | JobAccepted  «POST /runs/{runId}/answers» [EX,DE]
+    +viewHint(user: AuthUser, runId: string, dto: ViewHintInput) : ViewHintResult  «POST /runs/{runId}/hints» [EX,DE]
+    +flagContent(user: AuthUser, runId: string, dto: FlagContentInput) : void  «POST /runs/{runId}/flags» [EX]
+    +finishRun(user: AuthUser, runId: string) : ScenarioSummary | JobAccepted  «POST /runs/{runId}/finish» [EX,DE]
+    +getRunSummary(user: AuthUser, runId: string) : ScenarioSummary  «GET /runs/{runId}/summary» [EX,DE]
+  }
+  class SideQuestController <<controller>> {
+    -sideQuests : SideQuestService
+    --
+    +answerSideQuest(user: AuthUser, sideQuestId: string, dto: AnswerSideQuestInput) : AnswerSideQuestResult  «POST /side-quests/{sideQuestId}/attempts» [EX]
+  }
+  class EnrolmentService {
+    -prisma : PrismaService
+    -levelAccess : LevelAccessService
+    --
+    +enrol(user: AuthUser, dto: EnrolInput) : IslandMap
+    +islandMap(user: AuthUser, enrolmentId: string) : IslandMap
+  }
+  class RunService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -assessment : AssessmentService
+    -flags : FlagService
+    --
+    +start(user: AuthUser, dto: StartRunInput) : Run
+    +startPlaytest(user: AuthUser, buildId: string) : Run
+    +get(user: AuthUser, runId: string) : Run
+    +currentActivity(user: AuthUser, runId: string) : ActivityView
+    +submitAnswer(user: AuthUser, runId: string, dto: AnswerInput) : AnswerResult | JobAccepted
+    +viewHint(user: AuthUser, runId: string, dto: ViewHintInput) : ViewHintResult
+    +flag(user: AuthUser, runId: string, dto: FlagContentInput) : void
+  }
+  class SummaryService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -progress : ProgressService
+    --
+    +finish(user: AuthUser, runId: string) : ScenarioSummary | JobAccepted
+    +get(user: AuthUser, runId: string) : ScenarioSummary
+  }
+  class ProgressService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +recordCredit(tx, run: ScenarioRun, grades: CriterionGrade[]) : void
+    +checkUnlock(tx, enrolmentId: string) : boolean
+    +practiceTasks(enrolmentId: string) : string[]
+    +awardBadges(tx, run: ScenarioRun) : Award[]
+  }
+  class SideQuestService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +answer(user: AuthUser, sideQuestId: string, dto: AnswerSideQuestInput) : AnswerSideQuestResult
+  }
+  class "PlayModule DTOs" as PlayModule_DTOs <<dto>> {
+    ActivityView
+    AnswerInput
+    AnswerResult
+    AnswerSideQuestInput
+    AnswerSideQuestResult
+    EnrolInput
+    FlagContentInput
+    IslandMap
+    JobAccepted
+    Run
+    ScenarioSummary
+    StartRunInput
+    ViewHintInput
+    ViewHintResult
+  }
+}
+
+package "FeedbackModule" <<Rectangle>> {
+  class FeedbackModule <<module>> {
+    imports: —
+    controllers: RatingController, AppFeedbackController
+    providers: RatingService, AppFeedbackService
+    exports: RatingService, AppFeedbackService
+  }
+  class RatingController <<controller>> {
+    -ratings : RatingService
+    --
+    +getRatingForm(user: AuthUser, occupationId: string) : RatingForm  «GET /occupations/{occupationId}/ratings/form» [EX]
+    +rateOccupation(user: AuthUser, occupationId: string, dto: RatingInput) : RatingSummary  «POST /occupations/{occupationId}/ratings» [EX]
+  }
+  class AppFeedbackController <<controller>> {
+    -feedback : AppFeedbackService
+    --
+    +sendAppFeedback(user: AuthUser, dto: SendAppFeedbackInput) : void  «POST /app-feedback» [EX,DE,CA]
+  }
+  class RatingService {
+    -prisma : PrismaService
+    -settings : SettingsService
+    --
+    +form(user: AuthUser, occupationId: string) : RatingForm  «locked until every level is completed»
+    +rate(user: AuthUser, occupationId: string, dto: RatingInput) : RatingSummary
+    +summary(occupationId: string) : RatingSummary
+  }
+  class AppFeedbackService {
+    -prisma : PrismaService
+    --
+    +send(user: AuthUser, dto: SendAppFeedbackInput) : void
+    +list(status?: FeedbackStatus) : AppFeedback[]
+    +mark(admin: AuthUser, feedbackId: string, dto: MarkAppFeedbackInput) : AppFeedback
+  }
+  class "FeedbackModule DTOs" as FeedbackModule_DTOs <<dto>> {
+    AppFeedback
+    MarkAppFeedbackInput
+    RatingForm
+    RatingInput
+    RatingSummary
+    SendAppFeedbackInput
+  }
+}
+
+class AssessmentService <<CL-04 · AssessmentModule>>
+class FlagService <<CL-04 · QualityModule>>
+class LevelAccessService <<CL-02 · CatalogueModule>>
+
+QuizController --> QuizService
+EnrolmentController --> EnrolmentService
+RunController --> RunService
+RunController --> SummaryService
+SideQuestController --> SideQuestService
+EnrolmentService --> LevelAccessService
+RunService --> AssessmentService
+RunService --> FlagService
+SummaryService --> ProgressService
+RatingController --> RatingService
+AppFeedbackController --> AppFeedbackService
+@enduml

@@ -1,0 +1,41 @@
+@startuml SD-03_Explorer_GetToKnowMeQuiz
+title SD-03 · Explorer — complete Get-to-know-me quiz
+
+actor Explorer
+participant "Explorer app" as App
+participant "Exploration" as Exp
+database "PostgreSQL" as DB
+
+Explorer -> App : Open quiz
+App -> Exp : Get quiz questions
+Exp -> DB : Load questions
+DB --> Exp : Questions
+Exp --> App : Questions
+App --> Explorer : Show quiz questions
+
+loop more questions
+  Explorer -> App : Choose an answer
+  App -> App : Keep answer
+end
+
+Explorer -> App : Submit answers
+App -> Exp : Post answers
+Exp -> Exp : Calculate RIASEC profile
+Exp -> Exp : Set social index
+Exp -> DB : Load interest codes, portrait texts
+DB --> Exp : Interest codes and portrait texts
+Exp -> Exp : Pick 5 closest occupations
+Exp -> Exp : Pick portrait for top type
+Exp -> Exp : Label as self-reported
+Exp -> DB : Store answers, profile, portrait
+Exp --> App : Portrait and suggestions
+App --> Explorer : Show portrait and suggestions
+
+alt pick a suggestion
+  Explorer -> App : Select suggested occupation
+  App --> Explorer : Show occupation profile
+else browse all
+  Explorer -> App : Browse Galaxy Map
+  App --> Explorer : Show Galaxy Map
+end
+@enduml

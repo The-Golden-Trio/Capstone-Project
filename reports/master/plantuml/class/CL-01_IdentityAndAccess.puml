@@ -1,0 +1,219 @@
+@startuml CL-01_IdentityAndAccess
+title CL-01 · NestJS modules — Identity and access
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "AuthModule" <<Rectangle>> {
+  class AuthModule <<module>> {
+    imports: JwtModule
+    controllers: AuthController
+    providers: AuthService, TokenService, PasswordService, GoogleOAuthService, ActivityLogService, AccessPolicyService, JwtAuthGuard, RolesGuard, OccupationAccessGuard
+    exports: TokenService, PasswordService, ActivityLogService, AccessPolicyService, OccupationAccessGuard
+  }
+  class AuthController <<controller>> {
+    -auth : AuthService
+    --
+    +register(dto: RegisterInput) : Session  «POST /auth/register» [Pub]
+    +signIn(dto: SignInInput) : Session  «POST /auth/sign-in» [Pub]
+    +signInWithGoogle(dto: SignInWithGoogleInput) : Session  «POST /auth/google» [Pub]
+    +refreshSession(dto: RefreshSessionInput) : Session  «POST /auth/refresh» [Pub]
+    +signOut(user: AuthUser) : void  «POST /auth/sign-out» [EX,DE,CA,SA]
+    +requestPasswordReset(dto: RequestPasswordResetInput) : void  «POST /auth/password-reset» [Pub]
+    +confirmPasswordReset(dto: ConfirmPasswordResetInput) : void  «POST /auth/password-reset/confirm» [Pub]
+  }
+  class AuthService {
+    -prisma : PrismaService
+    -tokens : TokenService
+    -passwords : PasswordService
+    -google : GoogleOAuthService
+    -notifications : NotificationService
+    -activity : ActivityLogService
+    --
+    +register(dto: RegisterInput) : Session
+    +signIn(dto: SignInInput) : Session
+    +signInWithGoogle(dto: SignInWithGoogleInput) : Session
+    +refresh(dto: RefreshSessionInput) : Session
+    +signOut(user: AuthUser) : void
+    +requestPasswordReset(dto: RequestPasswordResetInput) : void
+    +confirmPasswordReset(dto: ConfirmPasswordResetInput) : void
+  }
+  class TokenService {
+    -jwt : JwtService
+    -prisma : PrismaService
+    -settings : SettingsService
+    --
+    +issue(account: UserAccount) : Session
+    +verifyAccess(token: string) : AuthUser
+    +rotate(refreshToken: string) : Session
+    +revokeAll(userId: string) : Promise<void>
+  }
+  class PasswordService {
+    +hash(plain: string) : Promise<string>
+    +verify(plain: string, hash: string) : Promise<boolean>
+  }
+  class GoogleOAuthService {
+    -oauth : OAuth2Client
+    --
+    +exchangeCode(code: string, redirectUri: string) : GoogleProfile
+  }
+  class ActivityLogService {
+    -prisma : PrismaService
+    --
+    +log(actorId: string, action: string, target?: Target) : Promise<void>
+    +list(userId: string, page: PageQuery) : Page<ActivityLogEntry>
+  }
+  class AccessPolicyService {
+    -prisma : PrismaService
+    --
+    +occupationOf(ref: ResourceRef) : Promise<string>
+    +isAssigned(userId: string, occupationId: string, role?: StaffRole) : Promise<boolean>
+    +isAuthorOf(userId: string, scenarioId: string) : Promise<boolean>
+    +isReviewerOf(userId: string, scenarioId: string) : Promise<boolean>
+  }
+  class JwtAuthGuard <<guard>> {
+    <i>APP_GUARD; skips @Public()</i>
+    -tokens : TokenService
+    -reflector : Reflector
+    --
+    +canActivate(ctx: ExecutionContext) : boolean
+  }
+  class RolesGuard <<guard>> {
+    <i>APP_GUARD; reads @Roles()</i>
+    -reflector : Reflector
+    --
+    +canActivate(ctx: ExecutionContext) : boolean
+  }
+  class OccupationAccessGuard <<guard>> {
+    <i>on every /staff route; resolves occupation from occupationId, scenarioId, buildId …</i>
+    -access : AccessPolicyService
+    --
+    +canActivate(ctx: ExecutionContext) : Promise<boolean>
+  }
+  class Decorators <<decorator>> {
+    @Public()
+    @Roles(...roles: Role[])
+    @CurrentUser() : AuthUser
+  }
+  class "AuthModule DTOs" as AuthModule_DTOs <<dto>> {
+    ActivityLogEntry
+    ConfirmPasswordResetInput
+    Page
+    RefreshSessionInput
+    RegisterInput
+    RequestPasswordResetInput
+    Session
+    SignInInput
+    SignInWithGoogleInput
+  }
+}
+
+package "UserModule" <<Rectangle>> {
+  class UserModule <<module>> {
+    imports: AuthModule
+    controllers: MeController, UserAdminController, StaffingController
+    providers: AccountService, RecordService, UserAdminService, StaffingService
+    exports: —
+    <i>accounts: the explorer's own account and record, and account and staffing management by the System Admin</i>
+  }
+  class MeController <<controller>> {
+    -account : AccountService
+    -record : RecordService
+    --
+    +getMe(user: AuthUser) : Me  «GET /me» [EX,DE,CA,SA]
+    +updateMe(user: AuthUser, dto: UpdateMeInput) : Me  «PATCH /me» [EX,DE,CA,SA]
+    +deleteMe(user: AuthUser) : void  «DELETE /me» [EX]
+    +getMyRecord(user: AuthUser) : PrivateRecord  «GET /me/record» [EX]
+    +listMyPastFeedback(user: AuthUser, query: ListMyPastFeedbackQuery) : Page<ScenarioSummary>  «GET /me/feedback» [EX]
+  }
+  class UserAdminController <<controller>> {
+    -users : UserAdminService
+    -activity : ActivityLogService
+    --
+    +listUsers(user: AuthUser, query: ListUsersQuery) : Page<UserAdminView>  «GET /admin/users» [SA]
+    +createStaffAccount(user: AuthUser, dto: CreateStaffAccountInput) : UserAdminView  «POST /admin/users» [SA]
+    +updateUser(user: AuthUser, userId: string, dto: UpdateUserInput) : UserAdminView  «PATCH /admin/users/{userId}» [SA]
+    +deleteUser(user: AuthUser, userId: string) : void  «DELETE /admin/users/{userId}» [SA]
+    +getUserActivity(user: AuthUser, userId: string, query: GetUserActivityQuery) : Page<ActivityLogEntry>  «GET /admin/users/{userId}/activity» [SA]
+  }
+  class StaffingController <<controller>> {
+    -staffing : StaffingService
+    --
+    +listOccupationsForStaffing(user: AuthUser) : OccupationStaffingRow[]  «GET /admin/occupations» [SA]
+    +getOccupationStaff(user: AuthUser, occupationId: string) : OccupationStaff  «GET /admin/occupations/{occupationId}/staff» [SA]
+    +setOccupationStaff(user: AuthUser, occupationId: string, dto: OccupationStaff) : OccupationStaff  «PUT /admin/occupations/{occupationId}/staff» [SA]
+  }
+  class AccountService {
+    -prisma : PrismaService
+    -passwords : PasswordService
+    -tokens : TokenService
+    --
+    +getMe(user: AuthUser) : Me
+    +update(user: AuthUser, dto: UpdateMeInput) : Me
+    +deleteExplorer(user: AuthUser) : void
+  }
+  class RecordService {
+    -prisma : PrismaService
+    --
+    +getRecord(user: AuthUser) : PrivateRecord
+    +listPastFeedback(user: AuthUser, page: PageQuery) : Page<ScenarioSummary>
+  }
+  class UserAdminService {
+    -prisma : PrismaService
+    -tokens : TokenService
+    -notifications : NotificationService
+    -activity : ActivityLogService
+    --
+    +list(query: ListUsersQuery) : Page<UserAdminView>
+    +createStaff(admin: AuthUser, dto: CreateStaffAccountInput) : UserAdminView
+    +update(admin: AuthUser, userId: string, dto: UpdateUserInput) : UserAdminView
+    +delete(admin: AuthUser, userId: string) : void
+  }
+  class StaffingService {
+    -prisma : PrismaService
+    -notifications : NotificationService
+    --
+    +listOccupations() : OccupationStaffingRow[]
+    +get(occupationId: string) : OccupationStaff
+    +set(admin: AuthUser, occupationId: string, dto: OccupationStaff) : OccupationStaff
+  }
+  class "UserModule DTOs" as UserModule_DTOs <<dto>> {
+    ActivityLogEntry
+    CreateStaffAccountInput
+    Me
+    OccupationStaff
+    OccupationStaffingRow
+    Page
+    PrivateRecord
+    ScenarioSummary
+    UpdateMeInput
+    UpdateUserInput
+    UserAdminView
+    GetUserActivityQuery { cursor?, limit? }
+    ListMyPastFeedbackQuery { cursor?, limit? }
+    ListUsersQuery { role?, status?, q?, cursor?, limit? }
+  }
+}
+
+class NotificationService <<CL-07 · NotificationModule>>
+
+AuthController --> AuthService
+AuthService --> TokenService
+AuthService --> PasswordService
+AuthService --> GoogleOAuthService
+AuthService --> NotificationService
+AuthService --> ActivityLogService
+JwtAuthGuard --> TokenService
+OccupationAccessGuard --> AccessPolicyService
+MeController --> AccountService
+MeController --> RecordService
+UserAdminController --> UserAdminService
+UserAdminController --> ActivityLogService
+StaffingController --> StaffingService
+AccountService --> PasswordService
+AccountService --> TokenService
+UserAdminService --> TokenService
+UserAdminService --> NotificationService
+UserAdminService --> ActivityLogService
+StaffingService --> NotificationService
+@enduml

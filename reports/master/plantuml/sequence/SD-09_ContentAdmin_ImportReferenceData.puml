@@ -1,0 +1,51 @@
+@startuml SD-09_ContentAdmin_ImportReferenceData
+title SD-09 · Content Admin — import reference data
+
+actor "Content Admin" as CA
+participant "Staff app" as App
+participant "Content lifecycle" as CL
+participant "Result stream" as RS
+database "Object storage" as OS
+database "PostgreSQL" as DB
+queue "Redis" as R
+participant "Import" as IM
+participant "Notification" as N
+participant "O*NET, ESCO" as SRC
+
+CA -> App : Upload O*NET, ESCO files
+App -> RS : Open event stream
+RS -> R : Subscribe to staff channel
+App -> CL : Start import
+CL -> OS : Store uploaded files
+CL -> DB : Store import job
+CL --> App : Import started
+App --> CA : Show progress
+CL -> R : Enqueue import job
+R -> IM : Take import job
+IM -> OS : Read uploaded files
+OS --> IM : File contents
+IM -> SRC : Look up source identifiers
+SRC --> IM : Source records
+IM -> IM : Match records to sources
+IM -> DB : Store matched, unmatched records
+IM -> R : Publish import result
+R --> RS : Import event
+RS --> App : Push import result
+
+opt unmatched records
+  App --> CA : Show unmatched records
+  CA -> App : Fix or skip records
+  App -> CL : Save record fixes
+  CL -> DB : Apply record fixes
+end
+
+App --> CA : Show imported data
+CA -> App : Adapt to Vietnamese practice
+App -> CL : Save adapted data
+CL -> DB : Store adapted data, log
+CL -> R : Enqueue notification
+R -> N : Take notification job
+N -> N : Email domain experts
+CL --> App : Import summary
+App --> CA : Show import summary
+@enduml

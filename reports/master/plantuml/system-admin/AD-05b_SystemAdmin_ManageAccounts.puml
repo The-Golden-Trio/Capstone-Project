@@ -1,0 +1,54 @@
+@startuml AD-05b_SystemAdmin_ManageAccounts
+title AD-05b · System Admin — manage user accounts
+
+|System Admin|
+|System|
+
+|System Admin|
+start
+:Open user accounts;
+|System|
+:Show account list;
+|System Admin|
+:View account list;
+:Find an account;
+if () then ([staff or log])
+  if () then ([assign staff])
+    :Assign occupation staff;
+  else ([view log])
+    :Open activity log;
+  endif
+else ([restrict account])
+  if () then ([disable])
+    :Disable account;
+  else ([delete])
+    :Delete account;
+  endif
+endif
+|System|
+if () then ([staff or log])
+  if () then ([assign staff])
+    if () then ([staffing rule met])
+      :Save staff assignment;
+      :Move pending work;
+      :Notify assigned staff; <<sendSignal>>
+    else ([staffing rule broken])
+      :Reject assignment;
+    endif
+  else ([view log])
+    :Load activity log;
+  endif
+else ([restrict account])
+  if () then ([disable])
+    :Block future sign-in;
+    :End active sessions;
+  else ([delete])
+    :Delete personal data;
+    :Keep staff-authored records;
+  endif
+endif
+:Show result screen;
+|System Admin|
+:View result screen;
+stop
+@enduml

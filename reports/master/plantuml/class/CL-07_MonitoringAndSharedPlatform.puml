@@ -1,0 +1,211 @@
+@startuml CL-07_MonitoringAndSharedPlatform
+title CL-07 · NestJS modules — Monitoring and shared platform
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "MonitoringModule" <<Rectangle>> {
+  class MonitoringModule <<module>> {
+    imports: AuthModule, FeedbackModule
+    controllers: StatisticsController, MonitoringController, AppFeedbackAdminController
+    providers: StatisticsService, MonitoringService
+    exports: —
+    <i>read-only monitoring: occupation statistics for Content Admins; usage, cost, failed jobs and app feedback for System Admins</i>
+  }
+  class StatisticsController <<controller>> {
+    -statistics : StatisticsService
+    --
+    +getOccupationStatistics(user: AuthUser, occupationId: string) : OccupationStatistics  «GET /staff/occupations/{occupationId}/statistics» [CA]
+  }
+  class MonitoringController <<controller>> {
+    -monitoring : MonitoringService
+    --
+    +getMetrics(user: AuthUser, query: GetMetricsQuery) : Metrics  «GET /admin/metrics» [SA]
+    +listAiJobs(user: AuthUser, query: ListAiJobsQuery) : Page<AiJob>  «GET /admin/ai-jobs» [SA]
+    +rerunAiJob(user: AuthUser, jobId: string) : JobAccepted  «POST /admin/ai-jobs/{jobId}/rerun» [SA]
+  }
+  class AppFeedbackAdminController <<controller>> {
+    -feedback : AppFeedbackService
+    --
+    +listAppFeedback(user: AuthUser, query: ListAppFeedbackQuery) : AppFeedback[]  «GET /admin/app-feedback» [SA]
+    +markAppFeedback(user: AuthUser, feedbackId: string, dto: MarkAppFeedbackInput) : AppFeedback  «PATCH /admin/app-feedback/{feedbackId}» [SA]
+  }
+  class StatisticsService {
+    -prisma : PrismaService
+    -ratings : RatingService
+    -settings : SettingsService
+    --
+    +forOccupation(occupationId: string) : OccupationStatistics  «excludes play-test runs»
+  }
+  class MonitoringService {
+    -prisma : PrismaService
+    -settings : SettingsService
+    -queues : Queue[]
+    --
+    +metrics(query: GetMetricsQuery) : Metrics
+    +listJobs(query: ListAiJobsQuery) : Page<AiJob>
+    +rerun(admin: AuthUser, jobId: string) : JobAccepted
+  }
+  class "MonitoringModule DTOs" as MonitoringModule_DTOs <<dto>> {
+    AiJob
+    AppFeedback
+    JobAccepted
+    MarkAppFeedbackInput
+    Metrics
+    OccupationStatistics
+    Page
+    GetMetricsQuery { from, to }
+    ListAiJobsQuery { status?, cursor?, limit? }
+    ListAppFeedbackQuery { status? }
+  }
+}
+
+package "CoreModule" <<Rectangle>> {
+  class CoreModule <<module>> {
+    imports: BullModule.forRootAsync(), BullModule.registerQueue(...QUEUES), ConfigModule.forRoot({ validate: validateEnv }), PrometheusModule.register({ path: '/metrics', defaultMetrics: { enabled: true } })
+    controllers: —
+    providers: PrismaService, StorageService, SettingsService, MetricsService, HttpMetricsInterceptor, QueueMetricsCollector
+    exports: PrismaService, BullModule, StorageService, SettingsService, MetricsService
+    <i>@Global()</i>
+    <i>infrastructure only: database, queues, object storage, settings from env, Prometheus metrics</i>
+  }
+  class PrismaService {
+    <i>extends PrismaClient</i>
+    --
+    +onModuleInit() : Promise<void>
+    +$transaction(fn) : Promise<T>
+  }
+  enum QUEUES {
+    grading
+    feedback-note
+    generation
+    presentation
+    asset
+    import
+    regrade
+    email
+  }
+  class StorageService {
+    -s3 : S3Client
+    --
+    +putObject(key: string, body: Buffer, contentType: string) : Promise<string>
+    +getObject(key: string) : Promise<Buffer>
+    +signedUrl(key: string, ttlSeconds: number) : Promise<string>
+  }
+  class SettingsService {
+    -config : ConfigService
+    --
+    +get<K extends SettingKey>(key: K) : AppSettings[K]  «costCeilingUsd, ratingMinResponses, idleTimeoutMinutes, randomEventEnabled»
+  }
+  class MetricsService {
+    -httpDuration : Histogram «http_request_duration_seconds»
+    -aiCallDuration : Histogram «ai_call_duration_seconds»
+    -aiCallFailures : Counter «ai_call_failures_total»
+    -queueDepth : Gauge «queue_jobs»
+    -streamClients : Gauge «sse_clients»
+    --
+    +observeHttp(route: string, method: string, status: number, seconds: number) : void
+    +observeAiCall(slot: ModelSlotKind, provider: string, seconds: number, ok: boolean) : void
+    +setQueueDepth(queue: string, state: string, count: number) : void
+    +setStreamClients(count: number) : void
+  }
+  class HttpMetricsInterceptor <<interceptor>> {
+    <i>registered as APP_INTERCEPTOR</i>
+    -metrics : MetricsService
+    --
+    +intercept(ctx: ExecutionContext, next: CallHandler) : Observable<unknown>
+  }
+  class QueueMetricsCollector <<cron>> {
+    -queues : Queue[]
+    -metrics : MetricsService
+    --
+    +collect() : Promise<void>  «@Cron every 15 s»
+  }
+}
+
+package "NotificationModule" <<Rectangle>> {
+  class NotificationModule <<module>> {
+    imports: —
+    controllers: StreamController, NotificationController
+    providers: StreamService, NotificationService, EmailProcessor, ReminderScheduler
+    exports: StreamService, NotificationService
+    <i>@Global()</i>
+    <i>everything pushed to a user: SSE stream, in-app notifications, e-mail</i>
+  }
+  class StreamController <<controller>> {
+    -stream : StreamService
+    --
+    +openEventStream(user: AuthUser, lastEventId?: string) : Observable<MessageEvent>  «GET /stream» [EX,DE,CA,SA]
+  }
+  class NotificationController <<controller>> {
+    -notifications : NotificationService
+    --
+    +listNotifications(user: AuthUser) : Notification[]  «GET /staff/notifications» [DE,CA,SA]
+  }
+  class StreamService {
+    -pub : Redis
+    -sub : Redis
+    --
+    +publish(userId: string, event: StreamEvent) : Promise<void>
+    +events(userId: string, lastEventId?: string) : Observable<MessageEvent>
+  }
+  class NotificationService {
+    -prisma : PrismaService
+    -emailQueue : Queue «email»
+    --
+    +notify(userId: string, template: string, payload: object, channels: NotificationChannel[]) : Promise<void>
+    +list(user: AuthUser) : Notification[]
+  }
+  class EmailProcessor <<processor · email>> {
+    -smtp : Transporter
+    --
+    +process(job: Job<EmailJob>) : Promise<void>
+  }
+  class ReminderScheduler <<cron>> {
+    -prisma : PrismaService
+    -notifications : NotificationService
+    --
+    +remindBeforeDeadline() : Promise<void>  «@Cron hourly»
+    +notifyOverdueReviews() : Promise<void>  «@Cron hourly»
+  }
+  class "NotificationModule DTOs" as NotificationModule_DTOs <<dto>> {
+    Notification
+    StreamEvent
+  }
+}
+
+package "GameCoreModule" <<Rectangle>> {
+  class GameCoreModule <<module>> {
+    imports: —
+    controllers: —
+    providers: —
+    exports: RuleEngine
+    <i>@Global()</i>
+    <i>wraps the shared package @jobquest/game-core, also bundled in the Explorer and Staff apps</i>
+  }
+  class RuleEngine <<library>> {
+    +validateAnswer(activity: ActivityContent, input: AnswerInput) : ValidationResult
+    +scoreClosed(activity: ActivityContent, selection: Selection) : Score
+    +applyHintCap(score: Score, hintUsed: boolean) : Score
+    +rollRandomEvent(activity: ActivityContent, rng: () => number) : RandomEventContent | null
+    +nextActivity(content: BuildContent, key: string) : string | null
+    +totalScore(results: ActivityResult[]) : number
+    +pickEnding(endings: EndingContent[], total: number) : EndingContent
+    +capCredit(current: number, earned: Score) : number
+  }
+  class "GameCoreModule DTOs" as GameCoreModule_DTOs <<dto>> {
+    AnswerInput
+    Score
+  }
+}
+
+class AppFeedbackService <<CL-03 · FeedbackModule>>
+class RatingService <<CL-03 · FeedbackModule>>
+
+StatisticsController --> StatisticsService
+MonitoringController --> MonitoringService
+AppFeedbackAdminController --> AppFeedbackService
+StatisticsService --> RatingService
+NotificationController --> NotificationService
+ReminderScheduler --> NotificationService
+@enduml

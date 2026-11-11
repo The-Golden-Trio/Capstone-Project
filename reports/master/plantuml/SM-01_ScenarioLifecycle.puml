@@ -1,0 +1,38 @@
+@startuml SM-01_ScenarioLifecycle
+digraph SM01 {
+  label = "SM-01 - Scenario lifecycle";
+  labelloc = t;
+  fontname = "Helvetica";
+  rankdir = LR;
+  nodesep = 0.6;
+  ranksep = 0.9;
+
+  node [shape = circle, fixedsize = true, width = 1.2, fontname = "Helvetica"];
+  edge [fontname = "Helvetica", fontsize = 11];
+
+  start       [label = "start"];
+  draft       [label = "Draft"];
+  submitted   [label = "Submitted"];
+  in_review   [label = "In Review"];
+  approved    [label = "Approved"];
+  in_playtest [label = "In\nPlaytest"];
+  ready       [label = "Ready"];
+  published   [label = "Published"];
+  retired     [label = "Retired",  shape = doublecircle];
+
+  start       -> draft       [label = "open scenario"];
+  draft       -> draft       [label = "generate content\nedit content\nsubmit [checks fail]"];
+  draft       -> submitted   [label = "submit\n[checks pass]"];
+  submitted   -> in_review   [label = "reviewer opens\nscenario"];
+  in_review   -> draft       [label = "request changes"];
+  in_review   -> retired     [label = "reject"];
+  in_review   -> approved    [label = "approve"];
+  approved    -> in_playtest [label = "build draft game"];
+  in_playtest -> approved    [label = "report display issue"];
+  in_playtest -> draft       [label = "report content issue"];
+  in_playtest -> ready       [label = "pass play-test"];
+  ready       -> published   [label = "publish"];
+  published   -> published   [label = "revalidate\n[still accurate]"];
+  published   -> retired     [label = "delete"];
+}
+@enduml

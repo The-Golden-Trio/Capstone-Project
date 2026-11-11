@@ -1,0 +1,35 @@
+@startuml AD-02b_ContentAdmin_ManageCatalogue
+title AD-02b · Content Admin — manage domains and occupations
+
+|Content Admin|
+|System|
+
+|Content Admin|
+start
+:Open catalogue;
+|System|
+:Show domains and occupations;
+|Content Admin|
+:View catalogue;
+if () then ([change a domain])
+  :Edit or delete domain;
+  |System|
+  if () then ([non-empty domain deleted])
+    :Block deletion;
+  else ([valid change])
+    :Save domain;
+  endif
+  :Show domain result;
+  |Content Admin|
+  :View domain result;
+else ([keep domains])
+endif
+:Find occupation;
+:Create or edit occupation;
+|System|
+:Save occupation;
+:Show occupation status;
+|Content Admin|
+:View occupation status;
+stop
+@enduml

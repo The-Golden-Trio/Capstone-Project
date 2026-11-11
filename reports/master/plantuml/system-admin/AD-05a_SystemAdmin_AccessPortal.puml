@@ -1,0 +1,26 @@
+@startuml AD-05a_SystemAdmin_AccessPortal
+title AD-05a · System Admin — access the admin portal
+
+|System Admin|
+|System|
+
+|System Admin|
+start
+:Sign in;
+|System|
+:Check role;
+if () then ([wrong role])
+  :Show access error;
+  |System Admin|
+  :View access error;
+  stop
+else ([system admin])
+endif
+|System|
+:Load admin data;
+:Show dashboard;
+|System Admin|
+:View dashboard;
+:Choose a function;
+stop
+@enduml

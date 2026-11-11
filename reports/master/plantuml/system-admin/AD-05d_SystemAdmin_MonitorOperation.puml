@@ -1,0 +1,36 @@
+@startuml AD-05d_SystemAdmin_MonitorOperation
+title AD-05d · System Admin — monitor usage, cost, and errors
+
+|System Admin|
+|System|
+
+|System Admin|
+start
+:Open monitoring screen;
+|System|
+fork
+  :Summarise usage;
+fork again
+  :Summarise cost per session;
+fork again
+  :List failed AI jobs;
+end fork
+if () then ([cost above threshold])
+  :Raise cost alert;
+else ([cost within threshold])
+endif
+|System|
+:Show metrics;
+|System Admin|
+:Review metrics;
+while () is ([failed job left])
+  :Check failure cause;
+  :Re-run failed job;
+  |System|
+  :Retry AI job;
+  :Show job status;
+  |System Admin|
+  :View job status;
+endwhile ([no failed job left])
+stop
+@enduml

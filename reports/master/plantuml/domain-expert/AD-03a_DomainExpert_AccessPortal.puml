@@ -1,0 +1,26 @@
+@startuml AD-03a_DomainExpert_AccessPortal
+title AD-03a · Domain Expert — access the admin portal
+
+|Domain Expert|
+|System|
+
+|Domain Expert|
+start
+:Sign in;
+|System|
+:Check role;
+if () then ([wrong role])
+  :Show access error;
+  |Domain Expert|
+  :View access error;
+  stop
+else ([domain expert])
+endif
+|System|
+:Load assigned work;
+:Show dashboard;
+|Domain Expert|
+:View dashboard;
+:Choose a function;
+stop
+@enduml

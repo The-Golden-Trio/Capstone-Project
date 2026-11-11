@@ -1,0 +1,54 @@
+@startuml SD-04_Explorer_AccessPlatform
+title SD-04 · Explorer — access the platform
+
+actor Explorer
+participant "Explorer app" as App
+participant "CDN" as CDN
+participant "Identity & access" as IA
+database "PostgreSQL" as DB
+participant "Google" as G
+
+Explorer -> App : Open JobQuest
+App -> CDN : Load app bundle
+CDN --> App : App bundle
+App --> Explorer : Show sign-in screen
+
+alt sign in with password
+  Explorer -> App : Enter email, password
+  App -> IA : Sign in
+  IA -> DB : Load account
+  DB --> IA : Account
+  IA -> IA : Verify password hash
+else sign in with Google
+  Explorer -> App : Choose Google sign-in
+  App -> G : Redirect to Google
+  Explorer -> G : Approve sign-in
+  G --> App : Authorization code
+  App -> IA : Sign in with code
+  IA -> G : Exchange code
+  G --> IA : ID token
+  IA -> IA : Verify ID token
+  IA -> DB : Find or create account
+  DB --> IA : Account
+else register
+  Explorer -> App : Fill in registration
+  App -> IA : Register
+  IA -> IA : Hash password
+  IA -> DB : Create account
+  DB --> IA : Account
+end
+
+break wrong details or account disabled
+  IA --> App : Sign-in refused
+  App --> Explorer : Show error message
+end
+
+IA -> DB : Start session, log sign-in
+IA --> App : Session token, quiz status
+
+alt quiz not done
+  App --> Explorer : Show Get-to-know-me quiz
+else quiz done
+  App --> Explorer : Show Galaxy Map
+end
+@enduml

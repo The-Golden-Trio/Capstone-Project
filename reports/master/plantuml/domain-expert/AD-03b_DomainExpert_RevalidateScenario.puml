@@ -1,0 +1,35 @@
+@startuml AD-03b_DomainExpert_RevalidateScenario
+title AD-03b · Domain Expert — revalidate a published scenario
+
+|Domain Expert|
+|System|
+
+|Domain Expert|
+start
+:Open review queue;
+|System|
+:Show queued scenarios;
+|Domain Expert|
+:View queued scenarios;
+:Select scenario;
+|System|
+:Show scenario content;
+|Domain Expert|
+:View scenario content;
+:Check content accuracy;
+if () then ([still accurate])
+  :Confirm accuracy;
+else ([outdated])
+  :Request replacement;
+endif
+|System|
+:Record revalidation result;
+if () then ([outdated])
+  :Notify content admin; <<sendSignal>>
+else ([still accurate])
+endif
+:Show revalidation result;
+|Domain Expert|
+:View revalidation result;
+stop
+@enduml

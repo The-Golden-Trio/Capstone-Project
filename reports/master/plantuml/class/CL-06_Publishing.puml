@@ -1,0 +1,155 @@
+@startuml CL-06_Publishing
+title CL-06 · NestJS modules — Publishing
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "PublishingModule" <<Rectangle>> {
+  class PublishingModule <<module>> {
+    imports: AuthModule, LifecycleModule, AiModule, PlayModule
+    controllers: PresentationController, AssetController, BuildController, ReleaseController
+    providers: PresentationService, AssetService, BuildService, BuildSnapshotter, SuggestionProcessor, AssetProcessor, ReleaseService, ReleaseScheduler
+    exports: —
+    <i>after approval: gamify, assets, draft build, play-test, publish (SD-07, SD-08)</i>
+  }
+  class PresentationController <<controller>> {
+    -presentations : PresentationService
+    --
+    +requestPresentationSuggestions(user: AuthUser, scenarioId: string) : JobAccepted  «POST /staff/scenarios/{scenarioId}/presentation-suggestions» [CA]
+    +getPresentation(user: AuthUser, scenarioId: string) : Presentation  «GET /staff/scenarios/{scenarioId}/presentation» [CA,DE]
+    +savePresentation(user: AuthUser, scenarioId: string, dto: Presentation) : Presentation  «PUT /staff/scenarios/{scenarioId}/presentation» [CA]
+  }
+  class AssetController <<controller>> {
+    -assets : AssetService
+    --
+    +listAssets(user: AuthUser, query: ListAssetsQuery) : Asset[]  «GET /staff/assets» [CA]
+    +uploadAsset(user: AuthUser, file: Express.Multer.File, dto: UploadAssetInput) : Asset  «POST /staff/assets» [CA]
+    +generateAsset(user: AuthUser, dto: GenerateAssetInput) : JobAccepted  «POST /staff/assets/generations» [CA]
+  }
+  class BuildController <<controller>> {
+    -builds : BuildService
+    --
+    +buildDraftGame(user: AuthUser, scenarioId: string) : Build  «POST /staff/scenarios/{scenarioId}/builds» [CA]
+    +getBuild(user: AuthUser, buildId: string) : Build  «GET /staff/builds/{buildId}» [CA,DE]
+    +startPlaytestRun(user: AuthUser, buildId: string) : Run  «POST /staff/builds/{buildId}/playtest-runs» [DE]
+    +reportPlaytestFindings(user: AuthUser, buildId: string, dto: ReportPlaytestFindingsInput) : ScenarioDetail  «POST /staff/builds/{buildId}/findings» [DE]
+    +passPlaytest(user: AuthUser, buildId: string) : ScenarioDetail  «POST /staff/builds/{buildId}/pass» [DE]
+  }
+  class ReleaseController <<controller>> {
+    -releases : ReleaseService
+    --
+    +publishScenario(user: AuthUser, scenarioId: string, dto: PublishScenarioInput) : Release  «POST /staff/scenarios/{scenarioId}/release» [CA]
+    +deleteScenario(user: AuthUser, scenarioId: string) : ScenarioDetail  «DELETE /staff/scenarios/{scenarioId}» [CA]
+  }
+  class PresentationService {
+    -prisma : PrismaService
+    -presentationQueue : Queue «presentation»
+    --
+    +requestSuggestions(user: AuthUser, scenarioId: string) : JobAccepted
+    +get(scenarioId: string) : Presentation
+    +save(user: AuthUser, scenarioId: string, dto: Presentation) : Presentation  «422 if type not allowed»
+  }
+  class AssetService {
+    -prisma : PrismaService
+    -storage : StorageService
+    -assetQueue : Queue «asset»
+    --
+    +list(query: ListAssetsQuery) : Asset[]
+    +upload(user: AuthUser, file: Express.Multer.File, dto: UploadAssetInput) : Asset
+    +requestGeneration(user: AuthUser, dto: GenerateAssetInput) : JobAccepted
+  }
+  class BuildService {
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -snapshots : BuildSnapshotter
+    -runs : RunService
+    -stream : StreamService
+    -notifications : NotificationService
+    --
+    +build(user: AuthUser, scenarioId: string) : Build  «APPROVED → IN_PLAYTEST»
+    +get(buildId: string) : Build
+    +startPlaytest(user: AuthUser, buildId: string) : Run
+    +reportFindings(user: AuthUser, buildId: string, dto: ReportPlaytestFindingsInput) : ScenarioDetail
+    +pass(user: AuthUser, buildId: string) : ScenarioDetail  «→ READY»
+  }
+  class BuildSnapshotter {
+    -prisma : PrismaService
+    --
+    +snapshot(tx, scenarioId: string) : BuildContent
+    +hash(content: BuildContent) : string
+  }
+  class SuggestionProcessor <<processor · presentation>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -stream : StreamService
+    --
+    +process(job: Job<SuggestionJob>) : Promise<void>
+  }
+  class AssetProcessor <<processor · asset>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -checks : OutputCheckService
+    -storage : StorageService
+    -stream : StreamService
+    --
+    +process(job: Job<AssetJob>) : Promise<void>
+  }
+  class ReleaseService {
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -snapshots : BuildSnapshotter
+    -storage : StorageService
+    --
+    +publish(user: AuthUser, scenarioId: string, dto: PublishScenarioInput) : Release  «READY only; hash = approved content»
+    +delete(user: AuthUser, scenarioId: string) : ScenarioDetail  «retire, keep history, free slot»
+    +publishDue(now: Date) : number
+  }
+  class ReleaseScheduler <<cron>> {
+    -releases : ReleaseService
+    --
+    +publishDueReleases() : Promise<void>  «@Cron every 5 min»
+  }
+  class "PublishingModule DTOs" as PublishingModule_DTOs <<dto>> {
+    Asset
+    Build
+    GenerateAssetInput
+    JobAccepted
+    Presentation
+    PublishScenarioInput
+    Release
+    ReportPlaytestFindingsInput
+    Run
+    ScenarioDetail
+    UploadAssetInput
+    ListAssetsQuery { kind? }
+  }
+}
+
+class ModelGatewayService <<CL-04 · AiModule>>
+class NotificationService <<CL-07 · NotificationModule>>
+class OutputCheckService <<CL-04 · AiModule>>
+class PromptBuilder <<CL-04 · AiModule>>
+class RunService <<CL-03 · PlayModule>>
+class ScenarioStateMachine <<CL-05 · LifecycleModule>>
+class StorageService <<CL-07 · CoreModule>>
+
+PresentationController --> PresentationService
+AssetController --> AssetService
+BuildController --> BuildService
+ReleaseController --> ReleaseService
+AssetService --> StorageService
+BuildService --> ScenarioStateMachine
+BuildService --> BuildSnapshotter
+BuildService --> RunService
+BuildService --> NotificationService
+SuggestionProcessor --> ModelGatewayService
+SuggestionProcessor --> PromptBuilder
+AssetProcessor --> ModelGatewayService
+AssetProcessor --> OutputCheckService
+AssetProcessor --> StorageService
+ReleaseService --> ScenarioStateMachine
+ReleaseService --> BuildSnapshotter
+ReleaseService --> StorageService
+ReleaseScheduler --> ReleaseService
+@enduml

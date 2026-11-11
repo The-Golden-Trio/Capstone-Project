@@ -1,0 +1,13 @@
+@startwbs SITE-03_StaffApp_DomainExpert
+title SITE-03 · Sitemap — Staff app (Domain Expert)
+* Staff app (Domain Expert)
+** Staff sign in
+** Domain Expert portal (Home)
+*** Occupation profile manager
+*** Scenario authoring
+*** Review scenario
+*** Play-test
+*** Revalidation
+*** Grading reliability
+*** System prompts
+@endwbs

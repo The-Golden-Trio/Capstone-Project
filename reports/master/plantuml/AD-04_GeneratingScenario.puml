@@ -1,0 +1,157 @@
+@startuml AD-04_GeneratingScenario
+title AD-04 · Generating scenario
+
+|Content Admin|
+|Domain Expert (author)|
+|Domain Expert (reviewer)|
+|System|
+|AI Model|
+
+|Content Admin|
+start
+:Select level and task;
+|System|
+if () then ([active scenario exists])
+  :Show block reason;
+  |Content Admin|
+  :View block reason;
+  stop
+else ([no active scenario])
+endif
+|System|
+:Create empty scenario;
+:Show domain expert list;
+|Content Admin|
+:View domain expert list;
+:Assign author;
+:Choose reviewer;
+:Set review deadline;
+|System|
+:Notify author; <<sendSignal>>
+:Show situation options;
+|Domain Expert (author)|
+:View situation options;
+:Choose situation options;
+:Write scenario context;
+|System|
+:Send context to AI;
+|AI Model|
+:Generate scenario content;
+|System|
+:Save generation record;
+:Show generated content;
+|Domain Expert (author)|
+repeat
+  (A)
+  :View scenario content;
+  while () is ([needs changes])
+    :Request AI revision;
+    |System|
+    :Send revision request;
+    |AI Model|
+    :Revise requested part;
+    |System|
+    :Show revised part;
+    |Domain Expert (author)|
+    :View revised part;
+  endwhile ([content accepted])
+  :Set allowed task types;
+  :Score each option;
+  :Check rubric anchors;
+  :Add sample answers;
+  :Write hints and events;
+  repeat
+    :Request automatic checks;
+    |System|
+    :Check content rules;
+    :Show check results;
+    |Domain Expert (author)|
+    :View check results;
+  backward:Fix failed part;
+  repeat while () is ([checks failed]) not ([checks passed])
+  :Submit for review;
+  |System|
+  :Notify reviewer; <<sendSignal>>
+  |Domain Expert (reviewer)|
+  :Open assigned scenario;
+  :Review content and scores;
+  if () then ([reject])
+    :Reject scenario;
+  else ([accept or revise])
+    if () then ([request changes])
+      :Write review comments;
+    else ([approve])
+      :Approve content;
+    endif
+  endif
+  |System|
+  if () then ([rejected])
+    :Retire scenario;
+    :Show closure notice;
+    |Domain Expert (author)|
+    :View closure notice;
+    stop
+  else ([not rejected])
+  endif
+  |System|
+  :Show review outcome;
+  |Domain Expert (author)|
+  :View review outcome;
+repeat while () is ([changes requested]) not ([approved])
+|Content Admin|
+repeat
+  :Request presentation ideas;
+  |System|
+  :Send request to AI;
+  |AI Model|
+  :Suggest types, NPCs, backgrounds;
+  |System|
+  :Show suggestions;
+  |Content Admin|
+  :View suggestions;
+repeat while () is ([needs changes]) not ([accepted])
+:Choose allowed task types;
+if () then ([asset missing])
+  :Request missing asset;
+  |System|
+  :Send asset request;
+  |AI Model|
+  :Generate asset;
+  |System|
+  :Check asset for bias;
+  :Show checked asset;
+  |Content Admin|
+  :View checked asset;
+else ([assets complete])
+endif
+repeat
+  :Confirm presentation;
+  |System|
+  :Build draft game;
+  :Notify author; <<sendSignal>>
+  |Domain Expert (author)|
+  :Play draft game;
+  :Report findings;
+  |System|
+  :Show play-test findings;
+  |Content Admin|
+  :View play-test findings;
+backward:Fix display issue;
+repeat while () is ([display issue]) not ([display fine])
+|Domain Expert (author)|
+:Check content in game;
+if () then ([content needs changes])
+  :Return to drafting;
+  (A)
+  detach
+else ([content final])
+endif
+|Content Admin|
+:Set effective date;
+|System|
+:Publish content;
+:Show published scenario;
+|Content Admin|
+:View published scenario;
+stop
+@enduml

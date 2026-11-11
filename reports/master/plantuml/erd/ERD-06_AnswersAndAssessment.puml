@@ -1,0 +1,134 @@
+@startuml ERD-06_AnswersAndAssessment
+title ERD-06 · Answers and assessment
+hide circle
+
+entity "answer" as answer {
+  * id : uuid <<PK>>
+  --
+  * run_id : uuid <<FK>>
+  * activity_key : varchar(20)
+  * followup_no : smallint
+    followup_question : text
+    random_event_id : uuid <<FK>>
+  * task_type : task_type
+    text : text
+    selection : jsonb
+    system_score : smallint
+  * submitted_at : timestamp
+}
+
+entity "assessment" as assessment {
+  * id : uuid <<PK>>
+  --
+  * answer_id : uuid <<FK,UQ>>
+  * ai_job_id : uuid <<FK>>
+  * model_config_id : uuid <<FK>>
+  * status : assessment_status
+    panel_size : smallint
+    graded_at : timestamp
+    latency_ms : integer
+}
+
+entity "judge_result" as judge_result {
+  * id : uuid <<PK>>
+  --
+  * assessment_id : uuid <<FK>>
+  * judge_slot : smallint
+  * model_id : varchar(80)
+  * status : judge_status
+  * attempts : smallint
+    error : text
+}
+
+entity "judge_score" as judge_score {
+  * judge_result_id : uuid <<PK,FK>>
+  * criterion_id : uuid <<PK,FK>>
+  --
+  * score : smallint
+  * quote : text
+  * quote_verified : boolean
+}
+
+entity "criterion_grade" as criterion_grade {
+  * assessment_id : uuid <<PK,FK>>
+  * criterion_id : uuid <<PK,FK>>
+  --
+  * score : smallint
+  * method : combine_method
+  * high_disagreement : boolean
+}
+
+entity "feedback_note" as feedback_note {
+  * id : uuid <<PK>>
+  --
+  * run_id : uuid <<FK>>
+  * activity_key : varchar(20)
+  * draft_no : smallint
+  * text : text
+  * check_passed : boolean
+    check_report : jsonb
+  * ai_job_id : uuid <<FK>>
+  * created_at : timestamp
+}
+
+entity "scenario_feedback" as scenario_feedback {
+  * run_id : uuid <<PK,FK>>
+  --
+  * result_text : text
+  * feedback_text : text
+  * guidance_text : text
+  * created_at : timestamp
+}
+
+entity "blind_rating" as blind_rating {
+  * id : uuid <<PK>>
+  --
+  * rater_id : uuid <<FK>>
+  * target : blind_target
+    reference_answer_id : uuid <<FK>>
+    scenario_id : uuid <<FK>>
+    criterion_id : uuid <<FK>>
+  * score : smallint
+  * created_at : timestamp
+}
+
+entity "reference_regrade" as reference_regrade {
+  * id : uuid <<PK>>
+  --
+  * reference_answer_id : uuid <<FK>>
+  * criterion_id : uuid <<FK>>
+  * model_config_id : uuid <<FK>>
+  * ai_score : smallint
+  * created_at : timestamp
+}
+
+entity "ai_job\n(ERD-07)" as ai_job
+entity "model_config\n(ERD-07)" as model_config
+entity "random_event\n(ERD-03)" as random_event
+entity "reference_answer\n(ERD-03)" as reference_answer
+entity "rubric_criterion\n(ERD-03)" as rubric_criterion
+entity "scenario\n(ERD-03)" as scenario
+entity "scenario_run\n(ERD-05)" as scenario_run
+entity "user_account\n(ERD-01)" as user_account
+
+answer }o--|| scenario_run
+answer }o--o| random_event
+assessment |o--|| answer
+assessment }o--|| ai_job
+assessment }o--|| model_config
+judge_result }o--|| assessment
+judge_score }o--|| judge_result
+judge_score }o--|| rubric_criterion
+criterion_grade }o--|| assessment
+criterion_grade }o--|| rubric_criterion
+feedback_note }o--|| scenario_run
+feedback_note }o--|| ai_job
+scenario_feedback |o--|| scenario_run
+blind_rating }o--|| user_account
+blind_rating }o--o| reference_answer
+blind_rating }o--o| scenario
+blind_rating }o--o| rubric_criterion
+reference_regrade }o--|| reference_answer
+reference_regrade }o--|| rubric_criterion
+reference_regrade }o--|| model_config
+@enduml

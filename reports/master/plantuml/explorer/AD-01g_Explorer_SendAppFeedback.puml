@@ -1,0 +1,21 @@
+@startuml AD-01g_Explorer_SendAppFeedback
+title AD-01g · Explorer — send app feedback
+
+|Explorer|
+|System|
+
+|Explorer|
+start
+:Open feedback form;
+|System|
+:Show feedback form;
+|Explorer|
+:Write feedback;
+:Submit feedback;
+|System|
+:Save time and version;
+:Show thank-you message;
+|Explorer|
+:View thank-you message;
+stop
+@enduml
