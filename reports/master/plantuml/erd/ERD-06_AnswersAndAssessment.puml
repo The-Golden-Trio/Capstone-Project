@@ -44,8 +44,9 @@ entity "judge_score" as judge_score {
   * judge_result_id : uuid <<PK,FK>>
   * criterion_id : uuid <<PK,FK>>
   --
-  * score : smallint
-  * quote : text
+    score : smallint
+  * counterproductive : boolean
+    quote : text
   * quote_verified : boolean
 }
 
@@ -53,7 +54,8 @@ entity "criterion_grade" as criterion_grade {
   * assessment_id : uuid <<PK,FK>>
   * criterion_id : uuid <<PK,FK>>
   --
-  * score : smallint
+    score : smallint
+  * counterproductive : boolean
   * method : combine_method
   * high_disagreement : boolean
 }
@@ -89,6 +91,7 @@ entity "blind_rating" as blind_rating {
     scenario_id : uuid <<FK>>
     criterion_id : uuid <<FK>>
   * score : smallint
+  * counterproductive : boolean
   * created_at : timestamp
 }
 
@@ -98,7 +101,8 @@ entity "reference_regrade" as reference_regrade {
   * reference_answer_id : uuid <<FK>>
   * criterion_id : uuid <<FK>>
   * model_config_id : uuid <<FK>>
-  * ai_score : smallint
+    ai_score : smallint
+  * ai_counterproductive : boolean
   * created_at : timestamp
 }
 

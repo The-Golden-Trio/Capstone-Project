@@ -44,6 +44,7 @@ entity "activity_result" as activity_result {
   * activity_key : varchar(20) <<PK>>
   --
   * score : smallint
+  * counterproductive_count : smallint
   * hint_used : boolean
   * closed_at : timestamp
 }

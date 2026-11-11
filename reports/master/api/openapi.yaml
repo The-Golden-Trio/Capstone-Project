@@ -1,0 +1,5722 @@
+openapi: 3.1.0
+info:
+  title: JobQuest API
+  version: 1.0.0
+  summary: REST API of the JobQuest platform for explorers, domain experts, content administrators and system administrators.
+  description:
+    "JobQuest lets explorers try occupations through scenarios written by domain experts and graded by a panel\
+    \ of three AI judges.\n\n**Conventions**\n- All paths start with `/api/v1`. Bodies are JSON (UTF-8) unless stated otherwise.\n\
+    - Authentication: bearer access token from `/auth/*`. Each operation lists the roles allowed in `x-roles`.\n  Staff routes\
+    \ also check that the caller is assigned to the occupation concerned (FR-41).\n- Errors follow Problem Details (RFC 9457)\
+    \ with a stable `code`, e.g. `SCENARIO_UNAVAILABLE`.\n- Long AI work (grading, follow-ups, generation, suggestions, assets)\
+    \ returns `202 Accepted` with a job id.\n  The result arrives on the event stream `GET /stream` (Server-Sent Events),\
+    \ opened by the screens that wait for it.\n- Scenario state changes are action endpoints that follow SM-01; an action\
+    \ not allowed in the current state returns `409 INVALID_TRANSITION`.\n- All content and messages are in Vietnamese; there\
+    \ is no language selection.\n- Rubric levels are 0 / 1 / 2 (D-116). Only free-text answers graded by the judges can\
+    \ carry a counterproductive flag, which costs a penalty; closed answers are never penalised and a viewed hint never\
+    \ lowers a score.\n- AI models and platform settings (cost ceiling, rating threshold, idle timeout) come from\
+    \ the deployment config, not from the API; the active model set is recorded at start-up (FR-42).\n- Server metrics (CPU,\
+    \ memory, disk, network, uptime) are not part of this API: Prometheus scrapes `GET /metrics` of the API and worker apps\
+    \ on the internal network and Grafana shows them. `/admin/metrics` covers only usage, AI cost and AI errors (FR-43).\n\
+    - `x-fr` and `x-sd` link each operation to the functional requirements and sequence diagrams of the report.\n"
+  contact:
+    name: JobQuest team
+servers:
+  - url: /api/v1
+    description: Same origin as the web apps
+tags:
+  - name: Auth
+    description: Registration, sign-in and password recovery (FR-01, FR-02)
+  - name: Me
+    description: The signed-in explorer's account and private record (FR-02, FR-18)
+  - name: Quiz
+    description: Get-to-know-me quiz (FR-03, FR-04)
+  - name: Catalogue
+    description: Galaxy Map, occupation profiles and levels (FR-05 – FR-08, FR-17, FR-19)
+  - name: Play
+    description: Enrolment, scenario runs, answers, hints and summaries (FR-08 – FR-16)
+  - name: Feedback
+    description: Occupation ratings and app feedback (FR-19, FR-20)
+  - name: Stream
+    description: Server-Sent Events for AI and job results, opened by the screens that wait for them
+  - name: Staff · Catalogue
+    description: Domains, occupations, imports and review criteria — Content Admin (FR-30 – FR-32, FR-39)
+  - name: Staff · Profile
+    description: Occupation profile — Domain Expert (FR-21)
+  - name: Staff · Authoring
+    description: Opening, assigning, generating and submitting scenarios (FR-22 – FR-24, FR-33, FR-34)
+  - name: Staff · Review
+    description: Review, reassignment and revalidation (FR-25, FR-27, FR-34)
+  - name: Staff · Presentation
+    description: Gamify, assets, draft game and play-test (FR-26, FR-35, FR-36)
+  - name: Staff · Release
+    description: Publish and delete scenarios (FR-37, FR-38)
+  - name: Staff · Quality
+    description: Flagged content, blind rating and grading agreement (FR-14, FR-28, FR-29)
+  - name: Staff · AI prompts
+    description: System prompts of an occupation, written together by its Content Admin and Domain Experts (FR-44)
+  - name: Admin
+    description: Accounts, staffing, monitoring and app feedback (FR-20, FR-40, FR-41, FR-43)
+security:
+  - bearerAuth: []
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      operationId: register
+      summary: Register an explorer account
+      security: []
+      x-roles:
+        - PUBLIC
+      x-fr:
+        - FR-01
+      x-sd:
+        - SD-04
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterInput'
+      responses:
+        '201':
+          description: Account created and signed in
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - E02 Sign in / Register
+  /auth/sign-in:
+    post:
+      tags:
+        - Auth
+      operationId: signIn
+      summary: Sign in with e-mail and password
+      description: Shared sign-in screen for explorers and staff. Disabled accounts are refused.
+      security: []
+      x-roles:
+        - PUBLIC
+      x-fr:
+        - FR-01
+        - FR-41
+      x-sd:
+        - SD-04
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignInInput'
+      responses:
+        '200':
+          description: Signed in
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-screens:
+        - E02 Sign in / Register
+        - T01 Staff sign in
+  /auth/google:
+    post:
+      tags:
+        - Auth
+      operationId: signInWithGoogle
+      summary: Sign in with Google
+      description: Exchanges the authorization code, verifies the ID token, then finds or creates the linked account.
+      security: []
+      x-roles:
+        - PUBLIC
+      x-fr:
+        - FR-01
+      x-sd:
+        - SD-04
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignInWithGoogleInput'
+      responses:
+        '200':
+          description: Signed in
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-screens:
+        - E02 Sign in / Register
+  /auth/refresh:
+    post:
+      tags:
+        - Auth
+      operationId: refreshSession
+      summary: Get a new access token
+      security: []
+      x-roles:
+        - PUBLIC
+      x-fr:
+        - FR-01
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshSessionInput'
+      responses:
+        '200':
+          description: New tokens
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+      x-screens:
+        - E00 App shell (every signed-in screen)
+        - T00 Staff app shell (every screen)
+  /auth/sign-out:
+    post:
+      tags:
+        - Auth
+      operationId: signOut
+      summary: Sign out and revoke the session
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-02
+      responses:
+        '204':
+          description: Signed out
+      x-screens:
+        - E15 Account settings
+  /auth/password-reset:
+    post:
+      tags:
+        - Auth
+      operationId: requestPasswordReset
+      summary: Send a single-use password reset link
+      description: Always returns 202 so the response does not reveal whether the e-mail exists.
+      security: []
+      x-roles:
+        - PUBLIC
+      x-fr:
+        - FR-01
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestPasswordResetInput'
+      responses:
+        '202':
+          description: Request accepted
+      x-screens:
+        - E02 Sign in / Register
+        - T01 Staff sign in
+  /auth/password-reset/confirm:
+    post:
+      tags:
+        - Auth
+      operationId: confirmPasswordReset
+      summary: Set a new password with a reset token
+      security: []
+      x-roles:
+        - PUBLIC
+      x-fr:
+        - FR-01
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmPasswordResetInput'
+      responses:
+        '204':
+          description: Password changed
+        '410':
+          $ref: '#/components/responses/Gone'
+      x-screens:
+        - E02 Sign in / Register
+        - T01 Staff sign in
+  /me:
+    get:
+      tags:
+        - Me
+      operationId: getMe
+      summary: Get the signed-in account, top-bar points and quiz status
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-18
+      x-sd:
+        - SD-04
+      responses:
+        '200':
+          description: Account
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Me'
+      x-screens:
+        - E00 App shell (every signed-in screen)
+        - E03 Galaxy Map (Home)
+        - T01 Staff sign in
+    patch:
+      tags:
+        - Me
+      operationId: updateMe
+      summary: Edit account details or password
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-02
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMeInput'
+      responses:
+        '200':
+          description: Updated account
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Me'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - E15 Account settings
+    delete:
+      tags:
+        - Me
+      operationId: deleteMe
+      summary: Delete the explorer account and personal data
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-02
+        - NFR-05
+      responses:
+        '204':
+          description: Account deleted
+      x-screens:
+        - E15 Account settings
+  /me/record:
+    get:
+      tags:
+        - Me
+      operationId: getMyRecord
+      summary: Get the private record of attempts, points and awards
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-18
+      x-sd:
+        - SD-02
+      responses:
+        '200':
+          description: Private record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateRecord'
+      x-screens:
+        - E14 Profile
+  /me/feedback:
+    get:
+      tags:
+        - Me
+      operationId: listMyPastFeedback
+      summary: List end-of-scenario feedback of past attempts
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-18
+      parameters:
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Past feedback, newest first
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/ScenarioSummary'
+      x-screens:
+        - E14 Profile
+  /quiz/questions:
+    get:
+      tags:
+        - Quiz
+      operationId: getQuizQuestions
+      summary: Get the RIASEC questions
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-03
+      x-sd:
+        - SD-03
+      responses:
+        '200':
+          description: Questions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuizQuestion'
+      x-screens:
+        - E04 Get-to-know-me quiz
+  /quiz/attempts:
+    post:
+      tags:
+        - Quiz
+      operationId: submitQuiz
+      summary: Submit quiz answers and get the portrait and five suggestions
+      description:
+        No AI is used. The profile is calculated from the answers, five occupations are matched by O*NET interest
+        code, and the fixed portrait for the highest-scoring type is returned. A retake replaces the current result.
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-03
+        - FR-04
+      x-sd:
+        - SD-03
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitQuizInput'
+      responses:
+        '201':
+          description: Quiz result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuizResult'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - E04 Get-to-know-me quiz
+  /quiz/attempts/current:
+    get:
+      tags:
+        - Quiz
+      operationId: getCurrentQuizResult
+      summary: Get the current quiz result
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-03
+        - FR-04
+      responses:
+        '200':
+          description: Quiz result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuizResult'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - E05 Quiz result
+  /occupations:
+    get:
+      tags:
+        - Catalogue
+      operationId: listOccupations
+      summary: Get the Galaxy Map
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-05
+      responses:
+        '200':
+          description: Published occupations grouped by domain
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DomainOnMap'
+      x-screens:
+        - E03 Galaxy Map (Home)
+  /occupations/{occupationId}:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Catalogue
+      operationId: getOccupationProfile
+      summary: Get an occupation profile with downsides, career path and ratings
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-05
+        - FR-17
+        - FR-19
+        - NFR-06
+      responses:
+        '200':
+          description: Occupation profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OccupationProfile'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - E06 Occupation profile
+  /occupations/{occupationId}/levels/{levelNo}:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+      - $ref: '#/components/parameters/LevelNo'
+    get:
+      tags:
+        - Catalogue
+      operationId: getLevel
+      summary: Get a level description and the caller's access
+      description:
+        The entry level is always open (FR-06). A higher level is open when unlocked or offered through adjacency
+        (FR-07).
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-05
+        - FR-06
+        - FR-07
+        - FR-08
+      responses:
+        '200':
+          description: Level and access
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LevelView'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - E07 Level selection
+  /enrolments:
+    post:
+      tags:
+        - Play
+      operationId: enrol
+      summary: Enrol in a level
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-06
+        - FR-07
+        - FR-08
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnrolInput'
+      responses:
+        '201':
+          description: Enrolled; returns the Island Map
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IslandMap'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - E07 Level selection
+  /enrolments/{enrolmentId}:
+    parameters:
+      - name: enrolmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    get:
+      tags:
+        - Play
+      operationId: getIslandMap
+      summary: Get the Island Map of an enrolment
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-08
+        - FR-16
+      responses:
+        '200':
+          description: Level progress, main quests, side quests and suggested tasks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IslandMap'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - E08 Island Map
+  /runs:
+    post:
+      tags:
+        - Play
+      operationId: startRun
+      summary: Start or resume a main quest
+      description:
+        Resumes the run in progress for the same task if one exists (NFR-03). An unavailable scenario returns 409
+        SCENARIO_UNAVAILABLE and the app returns to the Island Map.
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-08
+        - FR-09
+        - NFR-03
+      x-sd:
+        - SD-08
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartRunInput'
+      responses:
+        '201':
+          description: Run started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Run'
+        '200':
+          description: Existing run resumed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Run'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - E08 Island Map
+  /runs/{runId}:
+    parameters:
+      - $ref: '#/components/parameters/RunId'
+    get:
+      tags:
+        - Play
+      operationId: getRun
+      summary: Get a run with its intro, release version and saved position
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-09
+        - NFR-03
+      x-sd:
+        - SD-08
+      responses:
+        '200':
+          description: Run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Run'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - E10 Scenario intro
+        - D05 Play-test
+  /runs/{runId}/activity:
+    parameters:
+      - $ref: '#/components/parameters/RunId'
+    get:
+      tags:
+        - Play
+      operationId: getCurrentActivity
+      summary: Open the current activity
+      description: Returns the activity, its NPC and, when the system rolls one, a random event shown as the activity opens.
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-10
+        - FR-22
+      x-sd:
+        - SD-01
+      responses:
+        '200':
+          description: Current activity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivityView'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - E11 Scenario play
+        - D05 Play-test
+  /runs/{runId}/answers:
+    parameters:
+      - $ref: '#/components/parameters/RunId'
+    post:
+      tags:
+        - Play
+      operationId: submitAnswer
+      summary: Submit an answer to an activity, follow-up or random event
+      description:
+        'The client creates `answerId`; posting the same id again returns the stored result (NFR-04).
+
+        - Closed answers are scored at once from the expert option scores (0 / 1 / 2, never penalised) → `200`.
+
+        - Free-text answers are stored and queued for the three-judge panel → `202`. The level, any counterproductive flag,
+        any follow-up and the closing line arrive on `/stream`.
+
+        - An answer that breaks the activity rules → `422 ANSWER_INVALID` with reasons.
+
+        '
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-10
+        - FR-11
+        - FR-12
+        - FR-15
+        - NFR-01
+        - NFR-02
+        - NFR-04
+      x-sd:
+        - SD-01
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnswerInput'
+      responses:
+        '200':
+          description: Closed answer scored, or a repeated post of an answer already stored
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnswerResult'
+        '202':
+          description: Free-text answer saved and queued for grading
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - E11 Scenario play
+        - D05 Play-test
+  /runs/{runId}/hints:
+    parameters:
+      - $ref: '#/components/parameters/RunId'
+    post:
+      tags:
+        - Play
+      operationId: viewHint
+      summary: View the hint of the current activity
+      description: Records that the hint was viewed. A viewed hint never lowers the activity score (FR-13).
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-13
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ViewHintInput'
+      responses:
+        '200':
+          description: Hint spoken by the NPC
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ViewHintResult'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - E11 Scenario play
+        - D05 Play-test
+  /runs/{runId}/flags:
+    parameters:
+      - $ref: '#/components/parameters/RunId'
+    post:
+      tags:
+        - Play
+      operationId: flagContent
+      summary: Flag wrong content in an activity
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-14
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlagContentInput'
+      responses:
+        '201':
+          description: Flag received; a domain expert of the occupation is notified
+      x-screens:
+        - E11 Scenario play
+  /runs/{runId}/finish:
+    parameters:
+      - $ref: '#/components/parameters/RunId'
+    post:
+      tags:
+        - Play
+      operationId: finishRun
+      summary: Finish the scenario and get the summary
+      description:
+        Picks the ending from the total activity score, combines the hidden feedback notes, caps competency points
+        and checks the level threshold. If notes are still being drafted, returns 202 and pushes `summary.ready` on the stream.
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-08
+        - FR-14
+        - FR-15
+        - FR-18
+      x-sd:
+        - SD-02
+      responses:
+        '200':
+          description: Scenario summary
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioSummary'
+        '202':
+          description: Summary pending
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - E11 Scenario play
+        - D05 Play-test
+  /runs/{runId}/summary:
+    parameters:
+      - $ref: '#/components/parameters/RunId'
+    get:
+      tags:
+        - Play
+      operationId: getRunSummary
+      summary: Get the result, feedback and guidance of a finished run
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-14
+      x-sd:
+        - SD-02
+      responses:
+        '200':
+          description: Scenario summary
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioSummary'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - E12 Scenario summary
+        - D05 Play-test
+  /side-quests/{sideQuestId}/attempts:
+    parameters:
+      - name: sideQuestId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags:
+        - Play
+      operationId: answerSideQuest
+      summary: Answer a side quest for bonus points
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-16
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnswerSideQuestInput'
+      responses:
+        '201':
+          description: Points awarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnswerSideQuestResult'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - E09 Side quest
+  /occupations/{occupationId}/ratings:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    post:
+      tags:
+        - Feedback
+      operationId: rateOccupation
+      summary: Rate an occupation after completing every level
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-19
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RatingInput'
+      responses:
+        '201':
+          description: Rating stored; returns the aggregate (withheld below the threshold)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RatingSummary'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - E13 Rate occupation
+  /occupations/{occupationId}/ratings/form:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Feedback
+      operationId: getRatingForm
+      summary: Get the rating form, or why it is locked
+      description:
+        'Returns `eligible: false` with a reason while some level is not completed or the explorer has already
+        rated (AD-01e).'
+      x-roles:
+        - EXPLORER
+      x-fr:
+        - FR-19
+      responses:
+        '200':
+          description: Rating form
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RatingForm'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - E13 Rate occupation
+  /app-feedback:
+    post:
+      tags:
+        - Feedback
+      operationId: sendAppFeedback
+      summary: Send feedback about the app
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-20
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendAppFeedbackInput'
+      responses:
+        '201':
+          description: Feedback stored with time and app version
+      x-screens:
+        - E16 App feedback
+  /stream:
+    get:
+      tags:
+        - Stream
+      operationId: openEventStream
+      summary: Open the event stream (Server-Sent Events)
+      description:
+        'One stream per open screen that waits for results. Event types:
+
+        `answer.graded`, `followup.asked`, `activity.closed`, `provider.delay`, `summary.ready` (explorers);
+
+        `generation.ready`, `revision.ready`, `suggestions.ready`, `asset.ready`, `draft.ready`, `review.outcome`, `findings.reported`,
+        `import.finished` (staff); `job.finished` (re-run of a failed job, AI regrade of blind samples).
+
+        The `id` field lets the browser resume with `Last-Event-ID`.
+
+        Because the browser `EventSource` cannot send an `Authorization` header, clients open the stream with `fetch` and
+        read the body as a stream.
+
+
+        Opened only by the screens that wait for AI or job results (E11, E12, C03, C06, C07, D03, D05, D07, A05) and closed
+        when the screen is left; other screens use `GET /staff/notifications`.'
+      x-roles:
+        - EXPLORER
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+        - SYSTEM_ADMIN
+      x-sd:
+        - SD-01
+        - SD-02
+        - SD-05
+        - SD-06
+        - SD-07
+        - SD-09
+      parameters:
+        - name: Last-Event-ID
+          in: header
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Event stream
+          content:
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/StreamEvent'
+      x-screens:
+        - E11 Scenario play
+        - E12 Scenario summary
+        - C03 Reference data import
+        - C06 Gamify workspace
+        - C07 Asset library
+        - D03 Scenario authoring
+        - D05 Play-test
+        - D07 Grading reliability
+        - A05 Operations monitor
+  /staff/domains:
+    get:
+      tags:
+        - Staff · Catalogue
+      operationId: listDomains
+      summary: List domains
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-30
+      responses:
+        '200':
+          description: Domains
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Domain'
+      x-screens:
+        - C02 Occupation catalogue
+    post:
+      tags:
+        - Staff · Catalogue
+      operationId: createDomain
+      summary: Create a domain
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-30
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DomainInput'
+      responses:
+        '201':
+          description: Domain created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Domain'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C02 Occupation catalogue
+  /staff/domains/{domainId}:
+    parameters:
+      - name: domainId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    patch:
+      tags:
+        - Staff · Catalogue
+      operationId: updateDomain
+      summary: Rename a domain
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-30
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DomainInput'
+      responses:
+        '200':
+          description: Domain updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Domain'
+      x-screens:
+        - C02 Occupation catalogue
+    delete:
+      tags:
+        - Staff · Catalogue
+      operationId: deleteDomain
+      summary: Delete an empty domain
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-30
+      responses:
+        '204':
+          description: Domain deleted
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C02 Occupation catalogue
+  /staff/occupations:
+    get:
+      tags:
+        - Staff · Catalogue
+      operationId: listMyOccupations
+      summary: List occupations the caller is assigned to
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-30
+        - FR-41
+      responses:
+        '200':
+          description: Occupations with status and the caller's role
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StaffOccupation'
+      x-screens:
+        - C01 Content Admin portal
+        - D01 Domain Expert portal
+    post:
+      tags:
+        - Staff · Catalogue
+      operationId: createOccupation
+      summary: Create an occupation (draft)
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-30
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OccupationInput'
+      responses:
+        '201':
+          description: Occupation created as DRAFT
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaffOccupation'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C02 Occupation catalogue
+  /staff/occupations/{occupationId}:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    patch:
+      tags:
+        - Staff · Catalogue
+      operationId: updateOccupation
+      summary: Edit occupation name, summary, domain or interest code
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-30
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OccupationInput'
+      responses:
+        '200':
+          description: Occupation updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaffOccupation'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-screens:
+        - C02 Occupation catalogue
+  /staff/occupations/{occupationId}/publish:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    post:
+      tags:
+        - Staff · Catalogue
+      operationId: publishOccupation
+      summary: Publish an occupation on the Galaxy Map
+      description: Refused unless every level has a description and at least one published scenario exists.
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-30
+        - FR-05
+      responses:
+        '200':
+          description: Occupation published
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaffOccupation'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C02 Occupation catalogue
+  /staff/occupations/{occupationId}/retire:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    post:
+      tags:
+        - Staff · Catalogue
+      operationId: retireOccupation
+      summary: Retire an occupation
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-30
+      responses:
+        '200':
+          description: Occupation retired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaffOccupation'
+      x-screens:
+        - C02 Occupation catalogue
+  /staff/imports:
+    post:
+      tags:
+        - Staff · Catalogue
+      operationId: startImport
+      summary: Upload O*NET or ESCO files and start an import
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-31
+      x-sd:
+        - SD-09
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/StartImportInput'
+      responses:
+        '202':
+          description: Import queued; `import.finished` arrives on the stream
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+      x-screens:
+        - C03 Reference data import
+  /staff/imports/{importId}:
+    parameters:
+      - name: importId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    get:
+      tags:
+        - Staff · Catalogue
+      operationId: getImport
+      summary: Get an import with every record, unresolved ones first
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-31
+      x-sd:
+        - SD-09
+      responses:
+        '200':
+          description: Import
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportJob'
+      x-screens:
+        - C03 Reference data import
+  /staff/imports/{importId}/records/{recordId}:
+    parameters:
+      - name: importId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: recordId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    patch:
+      tags:
+        - Staff · Catalogue
+      operationId: fixImportRecord
+      summary: Fix, skip or adapt an imported record
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-31
+      x-sd:
+        - SD-09
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FixImportRecordInput'
+      responses:
+        '200':
+          description: Record updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportRecord'
+      x-screens:
+        - C03 Reference data import
+  /staff/imports/{importId}/complete:
+    parameters:
+      - name: importId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags:
+        - Staff · Catalogue
+      operationId: completeImport
+      summary: Save the adapted data into the catalogue and notify the domain experts
+      description:
+        Allowed once the import job has succeeded and no record is left unresolved and unskipped; returns the import
+        summary (AD-02c, SD-09).
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-31
+      x-sd:
+        - SD-09
+      responses:
+        '200':
+          description: Import summary
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportSummary'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C03 Reference data import
+  /staff/occupations/{occupationId}/review-criteria:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Staff · Catalogue
+      operationId: getReviewCriteria
+      summary: Get the current review criteria
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-32
+      responses:
+        '200':
+          description: Current criteria version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewCriteria'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - C04 Review criteria
+    post:
+      tags:
+        - Staff · Catalogue
+      operationId: createReviewCriteriaVersion
+      summary: Save a new version of the review criteria
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReviewCriteriaVersionInput'
+      responses:
+        '201':
+          description: New criteria version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewCriteria'
+      x-screens:
+        - C04 Review criteria
+  /staff/occupations/{occupationId}/statistics:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Staff · Catalogue
+      operationId: getOccupationStatistics
+      summary: Get play statistics, ratings, coverage and grading agreement
+      description: Play-test runs are excluded (DR-11); ratings below the threshold are withheld (NFR-06).
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-39
+        - NFR-06
+      responses:
+        '200':
+          description: Statistics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OccupationStatistics'
+      x-screens:
+        - C09 Occupation monitor
+  /staff/occupations/{occupationId}/profile:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Staff · Profile
+      operationId: getOccupationProfileForEdit
+      summary: Get the editable occupation profile
+      x-roles:
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-21
+      responses:
+        '200':
+          description: Profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileEdit'
+      x-screens:
+        - C05 Scenario slots
+        - D02 Occupation profile manager
+    put:
+      tags:
+        - Staff · Profile
+      operationId: saveOccupationProfile
+      summary: Save levels, descriptions, downsides, salary, generation rules and competencies
+      description:
+        Only domain experts assigned to the occupation may save. Related occupations are recalculated after saving;
+        links with too few shared skills are hidden.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-21
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfileEdit'
+      responses:
+        '200':
+          description: Saved profile with recalculated adjacency
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileEdit'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - D02 Occupation profile manager
+  /staff/scenarios:
+    get:
+      tags:
+        - Staff · Authoring
+      operationId: listScenarios
+      summary: List scenarios of the caller's occupations
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-30
+        - FR-33
+      parameters:
+        - name: occupationId
+          in: query
+          schema:
+            type: string
+            format: uuid
+        - name: status
+          in: query
+          schema:
+            $ref: '#/components/schemas/ScenarioStatus'
+        - name: mine
+          in: query
+          description: Only scenarios the caller authors or reviews
+          schema:
+            type: boolean
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Scenarios
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/ScenarioListItem'
+      x-screens:
+        - C05 Scenario slots
+        - D01 Domain Expert portal
+    post:
+      tags:
+        - Staff · Authoring
+      operationId: openScenario
+      summary: Open an empty scenario for a task
+      description: Refused with 409 ACTIVE_SCENARIO_EXISTS if the task already has a scenario that is not retired.
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-33
+      x-sd:
+        - SD-05
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenScenarioInput'
+      responses:
+        '201':
+          description: Scenario opened as DRAFT, with the domain expert list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioDetail'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C05 Scenario slots
+  /staff/scenarios/{scenarioId}:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    get:
+      tags:
+        - Staff · Authoring
+      operationId: getScenario
+      summary: Get a scenario with its content, assignment and status
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-22
+      responses:
+        '200':
+          description: Scenario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioDetail'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-screens:
+        - C05 Scenario slots
+        - C06 Gamify workspace
+        - C08 Publish scenario
+        - D03 Scenario authoring
+        - D06 Revalidation
+    delete:
+      tags:
+        - Staff · Release
+      operationId: deleteScenario
+      summary: Delete a scenario by retiring it
+      description: Retires the scenario, keeps its play history and frees the task slot. Published content is never edited.
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-38
+      responses:
+        '200':
+          description: Scenario retired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioDetail'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C05 Scenario slots
+  /staff/scenarios/{scenarioId}/assignment:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    put:
+      tags:
+        - Staff · Authoring
+      operationId: assignScenarioStaff
+      summary: Assign the author, the reviewer and the review deadline
+      description:
+        The reviewer must be a different domain expert of the same occupation (422 REVIEWER_IS_AUTHOR). The author
+        is notified.
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-34
+      x-sd:
+        - SD-05
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssignmentInput'
+      responses:
+        '200':
+          description: Assignment saved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assignment'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - C05 Scenario slots
+  /staff/scenarios/{scenarioId}/situation-options:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    get:
+      tags:
+        - Staff · Authoring
+      operationId: getSituationOptions
+      summary: Get situation options built from the level data
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-22
+      x-sd:
+        - SD-05
+      responses:
+        '200':
+          description: Archetypes, company types and skills available for this level
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SituationOptions'
+      x-screens:
+        - D03 Scenario authoring
+  /staff/scenarios/{scenarioId}/generations:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    get:
+      tags:
+        - Staff · Authoring
+      operationId: listGenerations
+      summary: Get the generation history with context, model, cost and check result
+      x-roles:
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-23
+        - DR-05
+      responses:
+        '200':
+          description: Generation runs, newest first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GenerationRun'
+      x-screens:
+        - D03 Scenario authoring
+    post:
+      tags:
+        - Staff · Authoring
+      operationId: requestGeneration
+      summary: Generate scenario content from the author's context
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-23
+      x-sd:
+        - SD-05
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationInput'
+      responses:
+        '202':
+          description: Generation queued; `generation.ready` arrives on the stream
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - D03 Scenario authoring
+  /staff/scenarios/{scenarioId}/revisions:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    post:
+      tags:
+        - Staff · Authoring
+      operationId: requestRevision
+      summary: Ask the AI to revise one part of the content
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-23
+      x-sd:
+        - SD-05
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestRevisionInput'
+      responses:
+        '202':
+          description: Revision queued; `revision.ready` arrives on the stream
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+      x-screens:
+        - D03 Scenario authoring
+  /staff/scenarios/{scenarioId}/content:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    put:
+      tags:
+        - Staff · Authoring
+      operationId: saveScenarioContent
+      summary: Save allowed task types, option scores, rubric, hints, random events, side quests and endings
+      description:
+        Allowed only in DRAFT and only for the assigned author; scenario content is written by the Domain Expert
+        alone. Uses `If-Match` with the scenario version to prevent lost updates.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-22
+      x-sd:
+        - SD-05
+      parameters:
+        - name: If-Match
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScenarioContent'
+      responses:
+        '200':
+          description: Content saved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioDetail'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
+      x-screens:
+        - D03 Scenario authoring
+  /staff/scenarios/{scenarioId}/reference-answers:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    get:
+      tags:
+        - Staff · Authoring
+      operationId: listReferenceAnswers
+      summary: List the author's sample answers
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-24
+      responses:
+        '200':
+          description: Sample answers with expert scores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReferenceAnswer'
+      x-screens:
+        - D03 Scenario authoring
+    post:
+      tags:
+        - Staff · Authoring
+      operationId: addReferenceAnswer
+      summary: Add a sample answer with expert scores
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-24
+      x-sd:
+        - SD-05
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceAnswer'
+      responses:
+        '201':
+          description: Sample answer stored
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferenceAnswer'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - D03 Scenario authoring
+  /staff/scenarios/{scenarioId}/checks:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    post:
+      tags:
+        - Staff · Authoring
+      operationId: runContentChecks
+      summary: Run the automatic content checks
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-23
+      x-sd:
+        - SD-05
+      responses:
+        '200':
+          description: Check report
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckReport'
+      x-screens:
+        - D03 Scenario authoring
+  /staff/scenarios/{scenarioId}/submit:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    post:
+      tags:
+        - Staff · Authoring
+      operationId: submitScenario
+      summary: Submit the scenario for review
+      description: DRAFT → SUBMITTED when the checks pass; otherwise 422 with the check report. The reviewer is notified.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-23
+        - FR-25
+      x-sd:
+        - SD-05
+      responses:
+        '200':
+          description: Scenario submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioDetail'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - D03 Scenario authoring
+  /staff/scenarios/{scenarioId}/history:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    get:
+      tags:
+        - Staff · Authoring
+      operationId: getScenarioHistory
+      summary: Get the lifecycle log, assignments and review decisions
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - NFR-16
+        - DR-13
+      responses:
+        '200':
+          description: History, oldest first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LifecycleEntry'
+      x-screens:
+        - C05 Scenario slots
+        - D03 Scenario authoring
+  /staff/reviews:
+    get:
+      tags:
+        - Staff · Review
+      operationId: listMyReviewQueue
+      summary: Get the caller's review queue (reviews and revalidations)
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-25
+        - FR-27
+      responses:
+        '200':
+          description: Queue items with deadlines
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReviewQueueItem'
+      x-screens:
+        - D01 Domain Expert portal
+  /staff/scenarios/{scenarioId}/review:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    get:
+      tags:
+        - Staff · Review
+      operationId: openScenarioForReview
+      summary: Open an assigned scenario for review
+      description: SUBMITTED → IN_REVIEW on first open. Refused if the caller is the author or not the assigned reviewer.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-25
+      x-sd:
+        - SD-06
+      responses:
+        '200':
+          description: Content and the review criteria to answer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewView'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-screens:
+        - D04 Review scenario
+    post:
+      tags:
+        - Staff · Review
+      operationId: decideReview
+      summary: Approve, request changes or reject
+      description:
+        Every criterion must be answered (422 CRITERIA_MISSING). Approve → APPROVED; request changes → DRAFT; reject
+        → RETIRED.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-25
+      x-sd:
+        - SD-06
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewDecisionInput'
+      responses:
+        '200':
+          description: Decision saved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioDetail'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - D04 Review scenario
+  /staff/review-assignments:
+    get:
+      tags:
+        - Staff · Review
+      operationId: listReviewAssignments
+      summary: List review assignments, e.g. overdue ones
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-34
+      parameters:
+        - name: overdue
+          in: query
+          schema:
+            type: boolean
+        - name: occupationId
+          in: query
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Assignments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Assignment'
+      x-screens:
+        - C05 Scenario slots
+  /staff/review-assignments/{assignmentId}/reassign:
+    parameters:
+      - name: assignmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags:
+        - Staff · Review
+      operationId: reassignReview
+      summary: Reassign an overdue review with a new deadline
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-34
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReassignReviewInput'
+      responses:
+        '201':
+          description: New assignment; the old one is marked REASSIGNED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assignment'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - C05 Scenario slots
+  /staff/scenarios/{scenarioId}/revalidations:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    post:
+      tags:
+        - Staff · Review
+      operationId: requestRevalidation
+      summary: Send a published scenario back to the review queue
+      description: The scenario stays published and playable meanwhile.
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-27
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestRevalidationInput'
+      responses:
+        '201':
+          description: Revalidation queued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Revalidation'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C09 Occupation monitor
+        - D06 Revalidation
+  /staff/scenarios/{scenarioId}/replacement-requests:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    post:
+      tags:
+        - Staff · Quality
+      operationId: requestReplacement
+      summary: Ask the Content Admin to replace a scenario whose rubric needs changing
+      description:
+        Stored as a revalidation with reason RELIABILITY_CHECK and outcome OUTDATED; the Content Admin is notified.
+        The scenario stays playable (AD-03c).
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-28
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestReplacementInput'
+      responses:
+        '201':
+          description: Request recorded; returns its status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Revalidation'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - D07 Grading reliability
+  /staff/revalidations/{revalidationId}/result:
+    parameters:
+      - name: revalidationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags:
+        - Staff · Review
+      operationId: recordRevalidation
+      summary: Record the revalidation result
+      description: OUTDATED notifies the content admin to replace the scenario.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-27
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecordRevalidationInput'
+      responses:
+        '200':
+          description: Result recorded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Revalidation'
+      x-screens:
+        - D06 Revalidation
+  /staff/scenarios/{scenarioId}/presentation-suggestions:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    post:
+      tags:
+        - Staff · Presentation
+      operationId: requestPresentationSuggestions
+      summary: Ask the AI to suggest task types, NPCs and backgrounds
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-35
+      x-sd:
+        - SD-07
+      responses:
+        '202':
+          description: Suggestions queued; `suggestions.ready` arrives on the stream
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C06 Gamify workspace
+  /staff/scenarios/{scenarioId}/presentation:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    get:
+      tags:
+        - Staff · Presentation
+      operationId: getPresentation
+      summary: Get the current presentation choices
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-35
+      responses:
+        '200':
+          description: Presentation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Presentation'
+      x-screens:
+        - C06 Gamify workspace
+    put:
+      tags:
+        - Staff · Presentation
+      operationId: savePresentation
+      summary: Save task types, NPC images and scenes
+      description:
+        A task type outside the domain expert's allowed set is refused (422 TASK_TYPE_NOT_ALLOWED). Content text
+        is read-only here.
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-35
+      x-sd:
+        - SD-07
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Presentation'
+      responses:
+        '200':
+          description: Presentation saved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Presentation'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - C06 Gamify workspace
+  /staff/assets:
+    get:
+      tags:
+        - Staff · Presentation
+      operationId: listAssets
+      summary: Browse the asset library (bias check passed)
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-36
+      parameters:
+        - name: kind
+          in: query
+          schema:
+            type: string
+            enum:
+              - NPC
+              - BACKGROUND
+              - SCENE
+              - ICON
+      responses:
+        '200':
+          description: Assets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Asset'
+      x-screens:
+        - C07 Asset library
+    post:
+      tags:
+        - Staff · Presentation
+      operationId: uploadAsset
+      summary: Upload a licensed asset for bias check
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-36
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UploadAssetInput'
+      responses:
+        '201':
+          description: Asset stored with bias check PENDING
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asset'
+      x-screens:
+        - C07 Asset library
+  /staff/assets/generations:
+    post:
+      tags:
+        - Staff · Presentation
+      operationId: generateAsset
+      summary: Ask the AI to generate a missing asset
+      description: The image enters the library only after its bias check passes.
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-36
+      x-sd:
+        - SD-07
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateAssetInput'
+      responses:
+        '202':
+          description: Asset job queued; `asset.ready` arrives on the stream
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+      x-screens:
+        - C07 Asset library
+  /staff/scenarios/{scenarioId}/builds:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    post:
+      tags:
+        - Staff · Presentation
+      operationId: buildDraftGame
+      summary: Build the draft game and invite the author to play-test
+      description: APPROVED → IN_PLAYTEST. Freezes the approved content and presentation into a build.
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-26
+        - FR-35
+      x-sd:
+        - SD-07
+      responses:
+        '201':
+          description: Build created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C06 Gamify workspace
+  /staff/builds/{buildId}:
+    parameters:
+      - $ref: '#/components/parameters/BuildId'
+    get:
+      tags:
+        - Staff · Presentation
+      operationId: getBuild
+      summary: Get the frozen game content of a build (run by game-core in the Staff app)
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-26
+      x-sd:
+        - SD-07
+      responses:
+        '200':
+          description: Build
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+      x-screens:
+        - C06 Gamify workspace
+        - D05 Play-test
+  /staff/builds/{buildId}/playtest-runs:
+    parameters:
+      - $ref: '#/components/parameters/BuildId'
+    post:
+      tags:
+        - Staff · Presentation
+      operationId: startPlaytestRun
+      summary: Start a play-test run
+      description:
+        The run is flagged as play-test and excluded from explorer aggregates. It then uses the `/runs/{runId}/*`
+        endpoints.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-26
+        - DR-11
+      x-sd:
+        - SD-07
+      responses:
+        '201':
+          description: Play-test run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Run'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      x-screens:
+        - D05 Play-test
+  /staff/builds/{buildId}/findings:
+    parameters:
+      - $ref: '#/components/parameters/BuildId'
+    post:
+      tags:
+        - Staff · Presentation
+      operationId: reportPlaytestFindings
+      summary: Report play-test findings
+      description:
+        DISPLAY findings return the scenario to APPROVED for the content admin; CONTENT findings return it to DRAFT
+        for the author and a new review.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-26
+      x-sd:
+        - SD-07
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportPlaytestFindingsInput'
+      responses:
+        '200':
+          description: Findings stored; returns the new scenario state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioDetail'
+      x-screens:
+        - D05 Play-test
+  /staff/builds/{buildId}/pass:
+    parameters:
+      - $ref: '#/components/parameters/BuildId'
+    post:
+      tags:
+        - Staff · Presentation
+      operationId: passPlaytest
+      summary: Confirm the content is final after play-test
+      description: IN_PLAYTEST → READY. The content admin is notified.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-26
+        - FR-37
+      x-sd:
+        - SD-07
+      responses:
+        '200':
+          description: Scenario ready to publish
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioDetail'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - D05 Play-test
+  /staff/scenarios/{scenarioId}/release:
+    parameters:
+      - $ref: '#/components/parameters/ScenarioId'
+    post:
+      tags:
+        - Staff · Release
+      operationId: publishScenario
+      summary: Publish the play-tested build
+      description:
+        Allowed only in READY. The build is compared with the approved content (NFR-15), stored by version in object
+        storage and served by the CDN. A later effective date keeps the scenario READY until the scheduler publishes it.
+      x-roles:
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-37
+        - NFR-15
+        - NFR-16
+      x-sd:
+        - SD-08
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublishScenarioInput'
+      responses:
+        '201':
+          description: Release created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Release'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - C08 Publish scenario
+  /staff/flags:
+    get:
+      tags:
+        - Staff · Quality
+      operationId: listContentFlags
+      summary: List content flagged by explorers
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-14
+        - DR-07
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum:
+              - OPEN
+              - IN_REVALIDATION
+              - RESOLVED
+              - DISMISSED
+      responses:
+        '200':
+          description: Flags of the caller's occupations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContentFlag'
+      x-screens:
+        - D06 Revalidation
+  /staff/flags/{flagId}:
+    parameters:
+      - name: flagId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    patch:
+      tags:
+        - Staff · Quality
+      operationId: handleContentFlag
+      summary: Resolve or dismiss a flag
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-14
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HandleContentFlagInput'
+      responses:
+        '200':
+          description: Flag updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContentFlag'
+      x-screens:
+        - D06 Revalidation
+  /staff/occupations/{occupationId}/blind-samples:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Staff · Quality
+      operationId: getBlindSamples
+      summary: Get reference samples to rate blind
+      description: AI scores and other experts' ratings are never included.
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-29
+      responses:
+        '200':
+          description: Samples without scores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BlindSample'
+      x-screens:
+        - D07 Grading reliability
+  /staff/blind-ratings:
+    post:
+      tags:
+        - Staff · Quality
+      operationId: submitBlindRatings
+      summary: Submit blind ratings; the AI then regrades the samples
+      x-roles:
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-28
+        - FR-29
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitBlindRatingsInput'
+      responses:
+        '202':
+          description: Ratings stored; regrading queued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+      x-screens:
+        - D07 Grading reliability
+  /staff/occupations/{occupationId}/agreement-report:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Staff · Quality
+      operationId: getAgreementReport
+      summary: Get AI–expert agreement and the disagreement list
+      x-roles:
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+      x-fr:
+        - FR-28
+        - NFR-14
+      responses:
+        '200':
+          description: Agreement per difficulty stratum and disagreements
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgreementReport'
+      x-screens:
+        - C09 Occupation monitor
+        - D07 Grading reliability
+  /staff/occupations/{occupationId}/system-prompts:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Staff · AI prompts
+      operationId: listSystemPrompts
+      summary: List the system prompts in force for each AI task of the occupation
+      description: 'One entry per kind; `versionNo: 0` means the built-in default is in force.'
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-44
+      responses:
+        '200':
+          description: Prompts in force
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SystemPromptVersion'
+      x-screens:
+        - C10 System prompts
+        - D08 System prompts
+  /staff/occupations/{occupationId}/system-prompts/{kind}/versions:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+      - name: kind
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/PromptKind'
+    get:
+      tags:
+        - Staff · AI prompts
+      operationId: listSystemPromptVersions
+      summary: List every saved version of one system prompt, newest first
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-44
+      responses:
+        '200':
+          description: Versions with author and change note
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SystemPromptVersion'
+      x-screens:
+        - C10 System prompts
+        - D08 System prompts
+    post:
+      tags:
+        - Staff · AI prompts
+      operationId: saveSystemPrompt
+      summary: Save a new version of a system prompt (or restore an older one)
+      description:
+        The new version is in force for AI jobs queued after the save; jobs record the version they used. Returns
+        409 when `baseVersionNo` is not the latest version.
+      x-roles:
+        - CONTENT_ADMIN
+        - DOMAIN_EXPERT
+      x-fr:
+        - FR-44
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveSystemPromptInput'
+      responses:
+        '201':
+          description: Version saved and in force
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemPromptVersion'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - C10 System prompts
+        - D08 System prompts
+  /staff/notifications:
+    get:
+      tags:
+        - Staff · Quality
+      operationId: listNotifications
+      summary: List in-app notifications
+      x-roles:
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-34
+      responses:
+        '200':
+          description: Notifications, newest first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Notification'
+      x-screens:
+        - T00 Staff app shell (every screen)
+  /admin/users:
+    get:
+      tags:
+        - Admin
+      operationId: listUsers
+      summary: List accounts (explorers and staff)
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-41
+      parameters:
+        - name: role
+          in: query
+          schema:
+            $ref: '#/components/schemas/Role'
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum:
+              - ACTIVE
+              - DISABLED
+              - DELETED
+        - name: q
+          in: query
+          description: Search by e-mail or display name
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Accounts
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/UserAdminView'
+      x-screens:
+        - A02 Account management
+        - A03 Occupation staffing
+    post:
+      tags:
+        - Admin
+      operationId: createStaffAccount
+      summary: Create a staff account and send an invitation
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-41
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStaffAccountInput'
+      responses:
+        '201':
+          description: Account created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserAdminView'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - A02 Account management
+  /admin/users/{userId}:
+    parameters:
+      - $ref: '#/components/parameters/UserId'
+    patch:
+      tags:
+        - Admin
+      operationId: updateUser
+      summary: Disable or enable an account, or change its roles
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-41
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserInput'
+      responses:
+        '200':
+          description: Account updated; disabling revokes its sessions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserAdminView'
+      x-screens:
+        - A02 Account management
+    delete:
+      tags:
+        - Admin
+      operationId: deleteUser
+      summary: Delete an account
+      description: Explorer data is removed (NFR-05); staff accounts are anonymised so authored records stay.
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-41
+        - NFR-05
+      responses:
+        '204':
+          description: Account deleted
+      x-screens:
+        - A02 Account management
+  /admin/users/{userId}/activity:
+    parameters:
+      - $ref: '#/components/parameters/UserId'
+    get:
+      tags:
+        - Admin
+      operationId: getUserActivity
+      summary: View an account's activity log
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-41
+        - DR-16
+      parameters:
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Activity log
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/ActivityLogEntry'
+      x-screens:
+        - A02 Account management
+  /admin/occupations:
+    get:
+      tags:
+        - Admin
+      operationId: listOccupationsForStaffing
+      summary: List every occupation with its content admin and domain expert count
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-40
+      responses:
+        '200':
+          description: Occupations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OccupationStaffingRow'
+      x-screens:
+        - A03 Occupation staffing
+  /admin/occupations/{occupationId}/staff:
+    parameters:
+      - $ref: '#/components/parameters/OccupationId'
+    get:
+      tags:
+        - Admin
+      operationId: getOccupationStaff
+      summary: Get the content admin and domain experts of an occupation
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-40
+      responses:
+        '200':
+          description: Staffing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OccupationStaff'
+      x-screens:
+        - A03 Occupation staffing
+    put:
+      tags:
+        - Admin
+      operationId: setOccupationStaff
+      summary: Assign or reassign the content admin and domain experts
+      description:
+        Exactly one content admin and at least one domain expert. Changing the content admin moves its pending
+        work to the new one.
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-40
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OccupationStaff'
+      responses:
+        '200':
+          description: Staffing saved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OccupationStaff'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+      x-screens:
+        - A03 Occupation staffing
+  /admin/metrics:
+    get:
+      tags:
+        - Admin
+      operationId: getMetrics
+      summary: Get usage, cost per session and error metrics
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-43
+        - NFR-11
+      parameters:
+        - name: from
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: to
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Metrics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metrics'
+      x-screens:
+        - A01 System Admin portal
+        - A05 Operations monitor
+  /admin/ai-jobs:
+    get:
+      tags:
+        - Admin
+      operationId: listAiJobs
+      summary: List AI jobs, e.g. failed ones with their cause
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-43
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum:
+              - QUEUED
+              - RUNNING
+              - SUCCEEDED
+              - FAILED
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Jobs
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/AiJob'
+      x-screens:
+        - A05 Operations monitor
+  /admin/ai-jobs/{jobId}/rerun:
+    parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    post:
+      tags:
+        - Admin
+      operationId: rerunAiJob
+      summary: Re-run a failed AI job
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-43
+      responses:
+        '202':
+          description: New job queued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '409':
+          $ref: '#/components/responses/Conflict'
+      x-screens:
+        - A05 Operations monitor
+  /admin/app-feedback:
+    get:
+      tags:
+        - Admin
+      operationId: listAppFeedback
+      summary: List app feedback
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-20
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum:
+              - NEW
+              - HANDLED
+      responses:
+        '200':
+          description: Feedback, newest first
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AppFeedback'
+      x-screens:
+        - A06 App feedback inbox
+  /admin/app-feedback/{feedbackId}:
+    parameters:
+      - name: feedbackId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    patch:
+      tags:
+        - Admin
+      operationId: markAppFeedback
+      summary: Mark feedback as handled
+      x-roles:
+        - SYSTEM_ADMIN
+      x-fr:
+        - FR-20
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarkAppFeedbackInput'
+      responses:
+        '200':
+          description: Feedback updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppFeedback'
+      x-screens:
+        - A06 App feedback inbox
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    OccupationId:
+      name: occupationId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    LevelNo:
+      name: levelNo
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+    RunId:
+      name: runId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    ScenarioId:
+      name: scenarioId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    BuildId:
+      name: buildId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    UserId:
+      name: userId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    Cursor:
+      name: cursor
+      in: query
+      required: false
+      schema:
+        type: string
+    Limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+  responses:
+    Unauthorized:
+      description: Missing, expired or wrong credentials
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Forbidden:
+      description:
+        Role or occupation assignment does not allow this (codes ACCOUNT_DISABLED, NOT_ASSIGNED, LEVEL_LOCKED,
+        REVIEWER_IS_AUTHOR)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    NotFound:
+      description: Resource not found
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Conflict:
+      description:
+        State conflict (codes INVALID_TRANSITION, ACTIVE_SCENARIO_EXISTS, SCENARIO_UNAVAILABLE, DOMAIN_NOT_EMPTY,
+        ALREADY_RATED, EMAIL_TAKEN)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Gone:
+      description: Token expired or already used
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    PreconditionFailed:
+      description: The resource changed since it was read (If-Match mismatch)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    ValidationFailed:
+      description:
+        Request breaks a rule (codes ANSWER_INVALID, CHECKS_FAILED, CRITERIA_MISSING, TASK_TYPE_NOT_ALLOWED, MODEL_FAMILIES_OVERLAP,
+        REVIEWER_IS_AUTHOR)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+  schemas:
+    Problem:
+      type: object
+      description: RFC 9457 Problem Details
+      required:
+        - type
+        - title
+        - status
+        - code
+      properties:
+        type:
+          type: string
+          format: uri-reference
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        code:
+          type: string
+          examples:
+            - SCENARIO_UNAVAILABLE
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+              reason:
+                type: string
+    Page:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items: {}
+        nextCursor:
+          type:
+            - string
+            - 'null'
+    JobAccepted:
+      type: object
+      required:
+        - jobId
+      properties:
+        jobId:
+          type: string
+          format: uuid
+        answerId:
+          type: string
+          format: uuid
+        streamEvent:
+          type: string
+          description: Event type that will carry the result
+    Role:
+      type: string
+      enum:
+        - EXPLORER
+        - DOMAIN_EXPERT
+        - CONTENT_ADMIN
+        - SYSTEM_ADMIN
+    ScenarioStatus:
+      type: string
+      enum:
+        - DRAFT
+        - SUBMITTED
+        - IN_REVIEW
+        - APPROVED
+        - IN_PLAYTEST
+        - READY
+        - PUBLISHED
+        - RETIRED
+    TaskType:
+      type: string
+      enum:
+        - FREE_TEXT
+        - CHOICE
+        - ORDERING
+        - PRIORITIZING
+    RiasecType:
+      type: string
+      enum:
+        - R
+        - I
+        - A
+        - S
+        - E
+        - C
+    ReferenceSource:
+      type: string
+      enum:
+        - ONET
+        - ESCO
+    Score:
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+      description: Rubric level (D-116) — 0 not yet, 1 meets, 2 done well
+    ScoreOrNotApplicable:
+      description: Rubric level, or null when the criterion does not apply; null levels are left out of averages (D-116)
+      anyOf:
+        - $ref: '#/components/schemas/Score'
+        - type: 'null'
+    RegisterInput:
+      type: object
+      required:
+        - email
+        - password
+        - displayName
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+        displayName:
+          type: string
+          maxLength: 80
+    SignInInput:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+    Session:
+      type: object
+      required:
+        - accessToken
+        - refreshToken
+        - expiresIn
+        - user
+      properties:
+        accessToken:
+          type: string
+        refreshToken:
+          type: string
+        expiresIn:
+          type: integer
+          description: Seconds
+        user:
+          $ref: '#/components/schemas/Me'
+    Me:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type: string
+          format: email
+        displayName:
+          type: string
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role'
+        hasGoogle:
+          type: boolean
+        quizDone:
+          type: boolean
+        points:
+          type: object
+          properties:
+            expertise:
+              type: integer
+            softSkill:
+              type: integer
+            sideQuest:
+              type: integer
+    UpdateMeInput:
+      type: object
+      properties:
+        displayName:
+          type: string
+          maxLength: 80
+        currentPassword:
+          type: string
+        newPassword:
+          type: string
+          minLength: 8
+    PrivateRecord:
+      type: object
+      properties:
+        attempts:
+          type: array
+          items:
+            type: object
+            properties:
+              runId:
+                type: string
+                format: uuid
+              occupation:
+                type: string
+              levelNo:
+                type: integer
+              scenarioTitle:
+                type: string
+              finishedAt:
+                type: string
+                format: date-time
+              endingType:
+                type: string
+                enum:
+                  - GOOD
+                  - PARTIAL
+                  - BAD
+                  - SECRET
+        competencies:
+          type: array
+          items:
+            type: object
+            properties:
+              competency:
+                type: string
+              kind:
+                type: string
+                enum:
+                  - EXPERTISE
+                  - SOFT_SKILL
+              points:
+                type: integer
+        awards:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+              awardedAt:
+                type: string
+                format: date-time
+    QuizQuestion:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        text:
+          type: string
+        scale:
+          type: object
+          properties:
+            min:
+              type: integer
+            max:
+              type: integer
+    QuizResult:
+      type: object
+      properties:
+        scores:
+          type: object
+          additionalProperties:
+            type: integer
+          examples:
+            - R: 12
+              I: 18
+              A: 9
+              S: 15
+              E: 11
+              C: 7
+        topType:
+          $ref: '#/components/schemas/RiasecType'
+        socialIndex:
+          type: integer
+        portrait:
+          type: object
+          properties:
+            text:
+              type: string
+            selfReported:
+              type: boolean
+              const: true
+        suggestions:
+          type: array
+          maxItems: 5
+          items:
+            type: object
+            properties:
+              occupationId:
+                type: string
+                format: uuid
+              name:
+                type: string
+              riasecCode:
+                type: string
+    DomainOnMap:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        occupations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: uuid
+              name:
+                type: string
+              summary:
+                type: string
+              myProgress:
+                type: integer
+                description: Highest level completed
+    OccupationProfile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        summary:
+          type: string
+        downsides:
+          type: array
+          items:
+            type: string
+        careerPath:
+          type: array
+          items:
+            type: object
+            properties:
+              levelNo:
+                type: integer
+              title:
+                type: string
+              description:
+                type: string
+              futureRole:
+                type: string
+              salary:
+                type: object
+                properties:
+                  min:
+                    type: number
+                  max:
+                    type: number
+                  currency:
+                    type: string
+              access:
+                type: string
+                enum:
+                  - OPEN
+                  - LOCKED
+                  - ENROLLED
+                  - COMPLETED
+        ratings:
+          $ref: '#/components/schemas/RatingSummary'
+        aiDisclosure:
+          type: string
+          description: Shown where content or grading is AI-produced (NFR-07)
+    LevelView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        levelNo:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        access:
+          type: string
+          enum:
+            - OPEN
+            - LOCKED
+            - ENROLLED
+            - COMPLETED
+        accessReason:
+          type: string
+          enum:
+            - ENTRY
+            - UNLOCKED
+            - ADJACENT
+            - NONE
+        enrolmentId:
+          type:
+            - string
+            - 'null'
+          format: uuid
+    IslandMap:
+      type: object
+      properties:
+        enrolmentId:
+          type: string
+          format: uuid
+        level:
+          $ref: '#/components/schemas/LevelView'
+        credit:
+          type: integer
+        creditThreshold:
+          type: integer
+        mainQuests:
+          type: array
+          items:
+            type: object
+            properties:
+              taskId:
+                type: string
+                format: uuid
+              title:
+                type: string
+              available:
+                type: boolean
+              bestEnding:
+                type:
+                  - string
+                  - 'null'
+              inProgressRunId:
+                type:
+                  - string
+                  - 'null'
+                format: uuid
+        sideQuests:
+          type: array
+          items:
+            type: object
+            properties:
+              sideQuestId:
+                type: string
+                format: uuid
+              prompt:
+                type: string
+              taskType:
+                $ref: '#/components/schemas/TaskType'
+              points:
+                type: integer
+              done:
+                type: boolean
+        suggestedTasks:
+          type: array
+          description: Tasks for missing competencies when below the threshold
+          items:
+            type: string
+            format: uuid
+    Run:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum:
+            - IN_PROGRESS
+            - FINISHED
+            - ABANDONED
+        isPlaytest:
+          type: boolean
+        releaseVersion:
+          type: string
+          description: Version key of the release file on the CDN
+        intro:
+          type: string
+        context:
+          type: object
+          description: Role, team and goal; opened on request (FR-09)
+          properties:
+            role:
+              type: string
+            team:
+              type: string
+            situation:
+              type: string
+            stakes:
+              type: string
+        currentActivityKey:
+          type:
+            - string
+            - 'null'
+        startedAt:
+          type: string
+          format: date-time
+    ActivityView:
+      type: object
+      properties:
+        activityKey:
+          type: string
+        taskType:
+          $ref: '#/components/schemas/TaskType'
+        setup:
+          type: string
+        npc:
+          type: object
+          properties:
+            npcKey:
+              type: string
+            name:
+              type: string
+            avatarUrl:
+              type: string
+              format: uri
+            line:
+              type: string
+        inputPrompt:
+          type: string
+        items:
+          type: array
+          description: Options for CHOICE, steps for ORDERING, items for PRIORITIZING (without scores)
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+              text:
+                type: string
+              note:
+                type: string
+        pickCount:
+          type: integer
+        hintAvailable:
+          type: boolean
+        randomEvent:
+          type:
+            - object
+            - 'null'
+          properties:
+            randomEventId:
+              type: string
+              format: uuid
+            text:
+              type: string
+            prompt:
+              type: string
+    AnswerInput:
+      type: object
+      required:
+        - answerId
+        - activityKey
+      properties:
+        answerId:
+          type: string
+          format: uuid
+          description: Created by the client; makes retries safe
+        activityKey:
+          type: string
+        followupNo:
+          type: integer
+          minimum: 0
+          default: 0
+        randomEventId:
+          type: string
+          format: uuid
+          description: Set when answering a random event
+        text:
+          type: string
+          maxLength: 4000
+          description: FREE_TEXT answer
+        selection:
+          description: CHOICE → one key; ORDERING → keys in order; PRIORITIZING → picked keys
+          oneOf:
+            - type: string
+            - type: array
+              items:
+                type: string
+    AnswerResult:
+      type: object
+      description: Result of a closed answer, scored from the expert option scores; closed answers are never penalised
+      properties:
+        answerId:
+          type: string
+          format: uuid
+        score:
+          $ref: '#/components/schemas/Score'
+        hintUsed:
+          type: boolean
+          description: The hint was viewed; recorded only, it does not lower the score (FR-13)
+        npcResponse:
+          type: string
+        closingLine:
+          type: string
+        nextActivityKey:
+          type:
+            - string
+            - 'null'
+    ScenarioSummary:
+      type: object
+      description: Result, feedback and guidance kept separate (FR-14)
+      properties:
+        runId:
+          type: string
+          format: uuid
+        scenarioTitle:
+          type: string
+        ending:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - GOOD
+                - PARTIAL
+                - BAD
+                - SECRET
+            text:
+              type: string
+            reveals:
+              type:
+                - string
+                - 'null'
+        result:
+          type: string
+        feedback:
+          type: string
+        guidance:
+          type: string
+        pointsEarned:
+          type: object
+          properties:
+            expertise:
+              type: integer
+            softSkill:
+              type: integer
+        hintsUsed:
+          type: integer
+        levelUnlocked:
+          type: boolean
+        suggestedTasks:
+          type: array
+          items:
+            type: string
+            format: uuid
+        finishedAt:
+          type: string
+          format: date-time
+    StreamEvent:
+      type: object
+      description: Data part of one SSE message
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum:
+            - answer.graded
+            - followup.asked
+            - activity.closed
+            - provider.delay
+            - summary.ready
+            - generation.ready
+            - revision.ready
+            - suggestions.ready
+            - asset.ready
+            - draft.ready
+            - review.outcome
+            - findings.reported
+            - import.finished
+            - job.finished
+        jobId:
+          type: string
+          format: uuid
+        runId:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        payload:
+          type: object
+          examples:
+            - followupNo: 1
+              question: Bạn sẽ báo cáo cho ai trước?
+    RatingInput:
+      type: object
+      required:
+        - scores
+      properties:
+        scores:
+          type: object
+          description: Five attributes (project-defined), each 1–5
+          additionalProperties:
+            type: integer
+            minimum: 1
+            maximum: 5
+        comment:
+          type: string
+          maxLength: 2000
+    RatingSummary:
+      type: object
+      properties:
+        responseCount:
+          type: integer
+        withheld:
+          type: boolean
+          description: True below the minimum population (NFR-06)
+        averages:
+          type: object
+          additionalProperties:
+            type: number
+    Domain:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        code:
+          type: string
+        name:
+          type: string
+        occupationCount:
+          type: integer
+    DomainInput:
+      type: object
+      required:
+        - code
+        - name
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+    StaffOccupation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        domainId:
+          type: string
+          format: uuid
+        code:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+          enum:
+            - DRAFT
+            - PUBLISHED
+            - RETIRED
+        myRole:
+          type: string
+          enum:
+            - CONTENT_ADMIN
+            - DOMAIN_EXPERT
+    OccupationInput:
+      type: object
+      required:
+        - domainId
+        - code
+        - name
+      properties:
+        domainId:
+          type: string
+          format: uuid
+        code:
+          type: string
+        riasecCode:
+          type: string
+          pattern: ^[RIASEC]{1,3}$
+        name:
+          type: string
+        summary:
+          type: string
+    ImportJob:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        source:
+          $ref: '#/components/schemas/ReferenceSource'
+        status:
+          type: string
+          enum:
+            - QUEUED
+            - RUNNING
+            - SUCCEEDED
+            - FAILED
+        unresolvedCount:
+          type: integer
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImportRecord'
+          description: Every imported record; unresolved ones first
+        completedAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
+    ReviewCriteria:
+      type: object
+      properties:
+        versionNo:
+          type: integer
+        criteria:
+          type: array
+          items:
+            type: object
+            properties:
+              criterionId:
+                type: string
+                format: uuid
+              text:
+                type: string
+    OccupationStatistics:
+      type: object
+      properties:
+        plays:
+          type: integer
+        completionRate:
+          type: number
+        averageScoreByScenario:
+          type: array
+          items:
+            type: object
+            properties:
+              scenarioId:
+                type: string
+                format: uuid
+              title:
+                type: string
+              average:
+                type: number
+              flags:
+                type: integer
+        ratings:
+          $ref: '#/components/schemas/RatingSummary'
+        coverage:
+          type: object
+          properties:
+            tasksWithPublishedScenario:
+              type: integer
+            tasksTotal:
+              type: integer
+            referenceSamples:
+              type: integer
+        gradingAgreement:
+          type:
+            - number
+            - 'null'
+          description: Latest Cohen's kappa (NFR-14)
+    ProfileEdit:
+      type: object
+      properties:
+        levels:
+          type: array
+          items:
+            type: object
+            required:
+              - levelNo
+              - band
+              - creditThreshold
+              - title
+              - description
+            properties:
+              levelNo:
+                type: integer
+                minimum: 1
+              band:
+                type: string
+                pattern: ^L([1-9]|10)$
+              creditThreshold:
+                type: integer
+                minimum: 0
+              salaryMin:
+                type: number
+              salaryMax:
+                type: number
+              title:
+                type: string
+              description:
+                type: string
+              futureRole:
+                type: string
+              competencies:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    competencyId:
+                      type: string
+                      format: uuid
+                    proficiency:
+                      type: string
+                      enum:
+                        - FAMILIAR
+                        - PROFICIENT
+                        - EXPERT
+              tasks:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    taskId:
+                      type: string
+                      format: uuid
+                    text:
+                      type: string
+        downsides:
+          type: array
+          items:
+            type: string
+        generationRules:
+          type: array
+          items:
+            type: string
+        adjacency:
+          type: array
+          readOnly: true
+          items:
+            type: object
+            properties:
+              occupationId:
+                type: string
+                format: uuid
+              overlap:
+                type: number
+              maxStartLevelNo:
+                type: integer
+              isVisible:
+                type: boolean
+    ScenarioListItem:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        taskTitle:
+          type: string
+        occupationId:
+          type: string
+          format: uuid
+        levelNo:
+          type: integer
+        status:
+          $ref: '#/components/schemas/ScenarioStatus'
+        authorName:
+          type:
+            - string
+            - 'null'
+        reviewerName:
+          type:
+            - string
+            - 'null'
+        reviewDeadline:
+          type:
+            - string
+            - 'null'
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    ScenarioDetail:
+      allOf:
+        - $ref: '#/components/schemas/ScenarioListItem'
+        - type: object
+          properties:
+            version:
+              type: string
+              description: ETag for If-Match
+            allowedActions:
+              type: array
+              description: SM-01 actions the caller may take now
+              items:
+                type: string
+            authorContext:
+              type: string
+            content:
+              $ref: '#/components/schemas/ScenarioContent'
+            assignment:
+              $ref: '#/components/schemas/Assignment'
+            eligibleExperts:
+              type: array
+              items:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                    format: uuid
+                  displayName:
+                    type: string
+    AssignmentInput:
+      type: object
+      required:
+        - authorId
+        - reviewerId
+        - deadlineAt
+      properties:
+        authorId:
+          type: string
+          format: uuid
+        reviewerId:
+          type: string
+          format: uuid
+        deadlineAt:
+          type: string
+          format: date-time
+    Assignment:
+      type: object
+      properties:
+        assignmentId:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        authorId:
+          type: string
+          format: uuid
+        reviewerId:
+          type: string
+          format: uuid
+        deadlineAt:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum:
+            - ACTIVE
+            - COMPLETED
+            - REASSIGNED
+        overdue:
+          type: boolean
+    SituationOptions:
+      type: object
+      properties:
+        band:
+          type: string
+        archetypes:
+          type: array
+          items:
+            type: string
+            enum:
+              - S_EXEC
+              - S_AMBIG
+              - S_INCIDENT
+              - S_CONFLICT
+              - S_REVIEW
+              - S_DECISION
+        companyTypes:
+          type: array
+          items:
+            type: string
+            enum:
+              - OUTSOURCING
+              - PRODUCT_LOCAL
+              - ENTERPRISE_BANK
+              - BIGTECH_FDI
+        skills:
+          type: array
+          items:
+            type: object
+            properties:
+              competencyId:
+                type: string
+                format: uuid
+              name:
+                type: string
+              kind:
+                type: string
+                enum:
+                  - EXPERTISE
+                  - SOFT_SKILL
+    GenerationInput:
+      type: object
+      required:
+        - context
+        - archetype
+        - companyType
+        - competencyIds
+      properties:
+        context:
+          type: string
+          maxLength: 4000
+        archetype:
+          type: string
+        companyType:
+          type: string
+        competencyIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+    GenerationRun:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        kind:
+          type: string
+          enum:
+            - GENERATE
+            - REVISE
+            - SUGGEST_PRESENTATION
+            - GENERATE_ASSET
+        model:
+          type: string
+        costUsd:
+          type: number
+        checkPassed:
+          type:
+            - boolean
+            - 'null'
+        createdAt:
+          type: string
+          format: date-time
+        requestedBy:
+          type: string
+    ScenarioContent:
+      type: object
+      description: Scenario content, written only by the assigned author Domain Expert
+      properties:
+        intro:
+          type: string
+        situation:
+          type: string
+        stakes:
+          type: string
+        estimatedMinutes:
+          type: number
+          minimum: 10
+          maximum: 15
+        cast:
+          type: array
+          items:
+            type: object
+            properties:
+              npcKey:
+                type: string
+              name:
+                type: string
+                maxLength: 80
+                description: Name shown above the NPC line; roleInScene is shown when empty
+              roleInScene:
+                type: string
+              pressure:
+                type: string
+              voice:
+                type: string
+        activities:
+          type: array
+          minItems: 3
+          maxItems: 4
+          items:
+            type: object
+            required:
+              - key
+              - inputPrompt
+              - jobScope
+              - closingLine
+              - allowedTypes
+              - rubric
+            properties:
+              key:
+                type: string
+              isOrigin:
+                type: boolean
+              forwardTo:
+                type:
+                  - string
+                  - 'null'
+              setup:
+                type: string
+              npcLine:
+                type: string
+              inputPrompt:
+                type: string
+              jobScope:
+                type: string
+              closingLine:
+                type: string
+              allowedTypes:
+                type: array
+                minItems: 1
+                items:
+                  $ref: '#/components/schemas/TaskType'
+              items:
+                type: array
+                description: Closed options with expert scores; closed answers are never penalised
+                items:
+                  type: object
+                  properties:
+                    key:
+                      type: string
+                    text:
+                      type: string
+                    score:
+                      $ref: '#/components/schemas/Score'
+                    why:
+                      type: string
+                    correctPosition:
+                      type: integer
+                    pickRule:
+                      type: string
+                      enum:
+                        - MUST
+                        - SHOULD
+                        - MUST_NOT
+                        - NEUTRAL
+                    note:
+                      type: string
+              followupLimit:
+                type: integer
+                minimum: 0
+                maximum: 4
+              followupGoal:
+                type: string
+              defaultFollowup:
+                type: string
+              hints:
+                type: array
+                description: NPC lines; viewing one never lowers the score (FR-13)
+                items:
+                  type: string
+              rubric:
+                type: array
+                minItems: 1
+                description: What the judges observe in free-text answers (D-116)
+                items:
+                  type: object
+                  required:
+                    - competencyId
+                    - anchor2
+                    - anchor1
+                    - anchor0
+                  properties:
+                    competencyId:
+                      type: string
+                      format: uuid
+                    anchor2:
+                      type: string
+                      description: Observable behaviour for level 2 (done well)
+                    anchor1:
+                      type: string
+                      description: Observable behaviour for level 1 (meets)
+                    anchor0:
+                      type: string
+                      description: Observable behaviour for level 0 (not yet)
+                    counterproductiveSigns:
+                      type: string
+                      description:
+                        Behaviour that raises the counterproductive flag, e.g. blaming or insulting; the flag
+                        is kept apart from the level and costs the band penalty
+        randomEvents:
+          type: array
+          maxItems: 2
+          items:
+            type: object
+            properties:
+              activityKey:
+                type: string
+              chance:
+                type: number
+                minimum: 0.1
+                maximum: 0.4
+              text:
+                type: string
+              prompt:
+                type: string
+              targetCompetencyId:
+                type: string
+                format: uuid
+              anchor2:
+                type: string
+                description: Observable behaviour for level 2; the judges grade the event answer against it
+              anchor1:
+                type: string
+              anchor0:
+                type: string
+              counterproductiveSigns:
+                type: string
+            required:
+              - activityKey
+              - chance
+              - text
+              - prompt
+              - targetCompetencyId
+              - anchor2
+              - anchor1
+              - anchor0
+        endings:
+          type: array
+          minItems: 2
+          maxItems: 5
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - GOOD
+                  - PARTIAL
+                  - BAD
+                  - SECRET
+              priority:
+                type: integer
+              minTotalScore:
+                type:
+                  - integer
+                  - 'null'
+              extraBehaviour:
+                type:
+                  - string
+                  - 'null'
+              text:
+                type: string
+              reveals:
+                type:
+                  - string
+                  - 'null'
+        sideQuests:
+          type: array
+          items:
+            type: object
+            properties:
+              prompt:
+                type: string
+              taskType:
+                $ref: '#/components/schemas/TaskType'
+              points:
+                type: integer
+                minimum: 1
+              answerKey: {}
+    ReferenceAnswer:
+      type: object
+      required:
+        - activityKey
+        - answerText
+        - stratum
+        - scores
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityKey:
+          type: string
+        answerText:
+          type: string
+        stratum:
+          type: string
+          enum:
+            - EASY
+            - MEDIUM
+            - HARD
+        scores:
+          type: array
+          items:
+            type: object
+            required:
+              - criterionId
+              - score
+            properties:
+              criterionId:
+                type: string
+                format: uuid
+              score:
+                $ref: '#/components/schemas/ScoreOrNotApplicable'
+              counterproductive:
+                type: boolean
+                default: false
+                description: The expert raises the counterproductive flag on this sample
+    CheckReport:
+      type: object
+      properties:
+        passed:
+          type: boolean
+        failedRules:
+          type: array
+          items:
+            type: object
+            properties:
+              rule:
+                type: string
+                examples:
+                  - ONE_ORIGIN_ACTIVITY
+              path:
+                type: string
+              message:
+                type: string
+    LifecycleEntry:
+      type: object
+      properties:
+        at:
+          type: string
+          format: date-time
+        actor:
+          type: string
+        action:
+          type: string
+        fromStatus:
+          type:
+            - string
+            - 'null'
+        toStatus:
+          $ref: '#/components/schemas/ScenarioStatus'
+        note:
+          type:
+            - string
+            - 'null'
+    ReviewQueueItem:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum:
+            - REVIEW
+            - REVALIDATION
+        scenarioId:
+          type: string
+          format: uuid
+        title:
+          type: string
+        deadlineAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
+        revalidationId:
+          type:
+            - string
+            - 'null'
+          format: uuid
+    ReviewView:
+      type: object
+      properties:
+        scenario:
+          $ref: '#/components/schemas/ScenarioDetail'
+        criteria:
+          $ref: '#/components/schemas/ReviewCriteria'
+        previousReviews:
+          type: array
+          items:
+            type: object
+            properties:
+              decision:
+                type: string
+              comment:
+                type: string
+              decidedAt:
+                type: string
+                format: date-time
+    ReviewDecisionInput:
+      type: object
+      required:
+        - decision
+        - answers
+      properties:
+        decision:
+          type: string
+          enum:
+            - APPROVE
+            - REQUEST_CHANGES
+            - REJECT
+        comment:
+          type: string
+        answers:
+          type: array
+          items:
+            type: object
+            required:
+              - criterionId
+              - verdict
+            properties:
+              criterionId:
+                type: string
+                format: uuid
+              verdict:
+                type: string
+                enum:
+                  - MET
+                  - NOT_MET
+              comment:
+                type: string
+    Revalidation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        reason:
+          type: string
+          enum:
+            - REQUESTED
+            - FLAGGED_CONTENT
+            - RELIABILITY_CHECK
+        outcome:
+          type:
+            - string
+            - 'null'
+          enum:
+            - STILL_ACCURATE
+            - OUTDATED
+            - null
+        comment:
+          type:
+            - string
+            - 'null'
+        createdAt:
+          type: string
+          format: date-time
+    Presentation:
+      type: object
+      properties:
+        backgroundAssetId:
+          type:
+            - string
+            - 'null'
+          format: uuid
+        activities:
+          type: array
+          items:
+            type: object
+            required:
+              - activityKey
+              - taskType
+            properties:
+              activityKey:
+                type: string
+              taskType:
+                $ref: '#/components/schemas/TaskType'
+              sceneAssetId:
+                type:
+                  - string
+                  - 'null'
+                format: uuid
+        npcs:
+          type: array
+          items:
+            type: object
+            required:
+              - npcKey
+              - avatarAssetId
+            properties:
+              npcKey:
+                type: string
+              avatarAssetId:
+                type: string
+                format: uuid
+    Asset:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        kind:
+          type: string
+          enum:
+            - NPC
+            - BACKGROUND
+            - SCENE
+            - ICON
+        url:
+          type: string
+          format: uri
+        source:
+          type: string
+          enum:
+            - LIBRARY
+            - LICENSED
+            - AI_GENERATED
+        sourceNote:
+          type: string
+        biasCheck:
+          type: string
+          enum:
+            - PENDING
+            - PASSED
+            - FAILED
+    Build:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        contentHash:
+          type: string
+        builtAt:
+          type: string
+          format: date-time
+        content:
+          type: object
+          description: Frozen game content read by game-core
+    Release:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        buildId:
+          type: string
+          format: uuid
+        version:
+          type: string
+        effectiveFrom:
+          type: string
+          format: date-time
+        releaseNote:
+          type: string
+        status:
+          type: string
+          enum:
+            - READY
+            - PUBLISHED
+    ContentFlag:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        activityKey:
+          type: string
+        reason:
+          type: string
+        status:
+          type: string
+          enum:
+            - OPEN
+            - IN_REVALIDATION
+            - RESOLVED
+            - DISMISSED
+        createdAt:
+          type: string
+          format: date-time
+    BlindSample:
+      type: object
+      properties:
+        referenceAnswerId:
+          type: string
+          format: uuid
+        activityPrompt:
+          type: string
+        answerText:
+          type: string
+        criteria:
+          type: array
+          items:
+            type: object
+            properties:
+              criterionId:
+                type: string
+                format: uuid
+              anchor2:
+                type: string
+              anchor1:
+                type: string
+              anchor0:
+                type: string
+              counterproductiveSigns:
+                type:
+                  - string
+                  - 'null'
+    BlindRatingInput:
+      type: object
+      required:
+        - referenceAnswerId
+        - criterionId
+        - score
+      properties:
+        referenceAnswerId:
+          type: string
+          format: uuid
+        criterionId:
+          type: string
+          format: uuid
+        score:
+          $ref: '#/components/schemas/Score'
+        counterproductive:
+          type: boolean
+          default: false
+    AgreementReport:
+      type: object
+      properties:
+        modelConfigVersion:
+          type: integer
+        byStratum:
+          type: array
+          items:
+            type: object
+            properties:
+              stratum:
+                type: string
+                enum:
+                  - EASY
+                  - MEDIUM
+                  - HARD
+              samples:
+                type: integer
+              aiExpertKappa:
+                type: number
+              interExpertKappa:
+                type: number
+        disagreements:
+          type: array
+          items:
+            type: object
+            properties:
+              scenarioId:
+                type: string
+                format: uuid
+              activityKey:
+                type: string
+              referenceAnswerId:
+                type: string
+                format: uuid
+              criterionId:
+                type: string
+                format: uuid
+              expertScore:
+                $ref: '#/components/schemas/ScoreOrNotApplicable'
+              aiScore:
+                $ref: '#/components/schemas/ScoreOrNotApplicable'
+              expertCounterproductive:
+                type: boolean
+              aiCounterproductive:
+                type: boolean
+    Notification:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        template:
+          type: string
+          examples:
+            - REVIEW_ASSIGNED
+        payload:
+          type: object
+        createdAt:
+          type: string
+          format: date-time
+        readAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
+    UserAdminView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type:
+            - string
+            - 'null'
+        displayName:
+          type: string
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role'
+        status:
+          type: string
+          enum:
+            - ACTIVE
+            - DISABLED
+            - DELETED
+        createdAt:
+          type: string
+          format: date-time
+        lastSignInAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
+    ActivityLogEntry:
+      type: object
+      properties:
+        at:
+          type: string
+          format: date-time
+        action:
+          type: string
+        targetType:
+          type:
+            - string
+            - 'null'
+        targetId:
+          type:
+            - string
+            - 'null'
+          format: uuid
+    OccupationStaff:
+      type: object
+      required:
+        - contentAdminId
+        - domainExpertIds
+      properties:
+        contentAdminId:
+          type: string
+          format: uuid
+        domainExpertIds:
+          type: array
+          minItems: 1
+          items:
+            type: string
+            format: uuid
+    Metrics:
+      type: object
+      properties:
+        sessions:
+          type: integer
+        answersGraded:
+          type: integer
+        costUsd:
+          type: number
+        costPerSessionP95Usd:
+          type: number
+        costCeilingUsd:
+          type: number
+        costAlert:
+          type: boolean
+        gradingLatencyP95Ms:
+          type: integer
+          description: Compare with NFR-02
+        followupLatencyP95Ms:
+          type: integer
+          description: Compare with NFR-01
+        failedJobs:
+          type: integer
+        twoJudgeGrades:
+          type: integer
+    AiJob:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        kind:
+          type: string
+          enum:
+            - GRADE
+            - FOLLOWUP
+            - FEEDBACK_NOTE
+            - GENERATE
+            - REVISE
+            - SUGGEST_PRESENTATION
+            - GENERATE_ASSET
+            - REGRADE_REFERENCE
+        status:
+          type: string
+          enum:
+            - QUEUED
+            - RUNNING
+            - SUCCEEDED
+            - FAILED
+        attempts:
+          type: integer
+        lastError:
+          type:
+            - string
+            - 'null'
+        queuedAt:
+          type: string
+          format: date-time
+        finishedAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
+        promptVersionNo:
+          type:
+            - integer
+            - 'null'
+          description: System prompt version used; null = built-in default
+    AppFeedback:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        text:
+          type: string
+        appVersion:
+          type: string
+        status:
+          type: string
+          enum:
+            - NEW
+            - HANDLED
+        createdAt:
+          type: string
+          format: date-time
+    SignInWithGoogleInput:
+      type: object
+      required:
+        - code
+        - redirectUri
+      properties:
+        code:
+          type: string
+        redirectUri:
+          type: string
+          format: uri
+    RefreshSessionInput:
+      type: object
+      required:
+        - refreshToken
+      properties:
+        refreshToken:
+          type: string
+    RequestPasswordResetInput:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          format: email
+    ConfirmPasswordResetInput:
+      type: object
+      required:
+        - token
+        - newPassword
+      properties:
+        token:
+          type: string
+        newPassword:
+          type: string
+          minLength: 8
+    SubmitQuizInput:
+      type: object
+      required:
+        - answers
+      properties:
+        answers:
+          type: array
+          items:
+            type: object
+            required:
+              - questionId
+              - value
+            properties:
+              questionId:
+                type: string
+                format: uuid
+              value:
+                type: integer
+    EnrolInput:
+      type: object
+      required:
+        - levelId
+      properties:
+        levelId:
+          type: string
+          format: uuid
+    StartRunInput:
+      type: object
+      required:
+        - enrolmentId
+        - taskId
+      properties:
+        enrolmentId:
+          type: string
+          format: uuid
+        taskId:
+          type: string
+          format: uuid
+    ViewHintInput:
+      type: object
+      required:
+        - activityKey
+      properties:
+        activityKey:
+          type: string
+    ViewHintResult:
+      type: object
+      properties:
+        npcKey:
+          type: string
+        text:
+          type: string
+        hintUsed:
+          type: boolean
+          const: true
+    FlagContentInput:
+      type: object
+      required:
+        - activityKey
+        - reason
+      properties:
+        activityKey:
+          type: string
+        reason:
+          type: string
+          maxLength: 1000
+    AnswerSideQuestInput:
+      type: object
+      required:
+        - answer
+      properties:
+        answer:
+          description: Free text or closed selection, depending on the side quest
+          oneOf:
+            - type: string
+            - type: object
+    AnswerSideQuestResult:
+      type: object
+      properties:
+        pointsAwarded:
+          type: integer
+          minimum: 0
+    SendAppFeedbackInput:
+      type: object
+      required:
+        - text
+        - appVersion
+      properties:
+        text:
+          type: string
+          maxLength: 4000
+        appVersion:
+          type: string
+    StartImportInput:
+      type: object
+      required:
+        - source
+        - file
+      properties:
+        source:
+          $ref: '#/components/schemas/ReferenceSource'
+        occupationId:
+          type: string
+          format: uuid
+        file:
+          type: string
+          contentMediaType: application/octet-stream
+    FixImportRecordInput:
+      type: object
+      properties:
+        action:
+          type: string
+          enum:
+            - FIX
+            - SKIP
+            - ADAPT
+        payload:
+          type: object
+    CreateReviewCriteriaVersionInput:
+      type: object
+      required:
+        - criteria
+      properties:
+        criteria:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required:
+              - text
+            properties:
+              text:
+                type: string
+    OpenScenarioInput:
+      type: object
+      required:
+        - taskId
+      properties:
+        taskId:
+          type: string
+          format: uuid
+    RequestRevisionInput:
+      type: object
+      required:
+        - part
+        - request
+      properties:
+        part:
+          type: string
+          description: Path of the part to revise, e.g. `activities.a2.inputPrompt`
+        request:
+          type: string
+          maxLength: 2000
+    ReassignReviewInput:
+      type: object
+      required:
+        - reviewerId
+        - deadlineAt
+      properties:
+        reviewerId:
+          type: string
+          format: uuid
+        deadlineAt:
+          type: string
+          format: date-time
+    RequestRevalidationInput:
+      type: object
+      required:
+        - reason
+      properties:
+        reason:
+          type: string
+          enum:
+            - REQUESTED
+            - FLAGGED_CONTENT
+        flagId:
+          type: string
+          format: uuid
+    RecordRevalidationInput:
+      type: object
+      required:
+        - outcome
+      properties:
+        outcome:
+          type: string
+          enum:
+            - STILL_ACCURATE
+            - OUTDATED
+        comment:
+          type: string
+    UploadAssetInput:
+      type: object
+      required:
+        - kind
+        - file
+        - sourceNote
+      properties:
+        kind:
+          type: string
+          enum:
+            - NPC
+            - BACKGROUND
+            - SCENE
+            - ICON
+        sourceNote:
+          type: string
+        file:
+          type: string
+          contentMediaType: image/png
+    GenerateAssetInput:
+      type: object
+      required:
+        - scenarioId
+        - kind
+        - prompt
+      properties:
+        scenarioId:
+          type: string
+          format: uuid
+        kind:
+          type: string
+          enum:
+            - NPC
+            - BACKGROUND
+            - SCENE
+            - ICON
+        prompt:
+          type: string
+          maxLength: 1000
+    ReportPlaytestFindingsInput:
+      type: object
+      required:
+        - findings
+      properties:
+        runId:
+          type: string
+          format: uuid
+        findings:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required:
+              - kind
+              - text
+            properties:
+              kind:
+                type: string
+                enum:
+                  - DISPLAY
+                  - CONTENT
+              text:
+                type: string
+    PublishScenarioInput:
+      type: object
+      required:
+        - effectiveFrom
+      properties:
+        effectiveFrom:
+          type: string
+          format: date-time
+        releaseNote:
+          type: string
+          maxLength: 2000
+    HandleContentFlagInput:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum:
+            - RESOLVED
+            - DISMISSED
+    SubmitBlindRatingsInput:
+      type: object
+      required:
+        - ratings
+      properties:
+        ratings:
+          type: array
+          items:
+            $ref: '#/components/schemas/BlindRatingInput'
+    CreateStaffAccountInput:
+      type: object
+      required:
+        - email
+        - displayName
+        - roles
+      properties:
+        email:
+          type: string
+          format: email
+        displayName:
+          type: string
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role'
+    UpdateUserInput:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - ACTIVE
+            - DISABLED
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role'
+    MarkAppFeedbackInput:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum:
+            - NEW
+            - HANDLED
+    OccupationStaffingRow:
+      type: object
+      properties:
+        occupationId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        status:
+          type: string
+          enum:
+            - DRAFT
+            - PUBLISHED
+            - RETIRED
+        contentAdmin:
+          type:
+            - string
+            - 'null'
+        domainExpertCount:
+          type: integer
+    RatingForm:
+      type: object
+      required:
+        - occupationId
+        - eligible
+        - attributes
+      properties:
+        occupationId:
+          type: string
+          format: uuid
+        eligible:
+          type: boolean
+          description: True when every level of the occupation is completed (FR-19)
+        lockedReason:
+          type:
+            - string
+            - 'null'
+          enum:
+            - LEVELS_NOT_COMPLETED
+            - ALREADY_RATED
+            - null
+          description: Why the form is locked; null when eligible
+        attributes:
+          type: array
+          description: The five rating attributes in display order (DR-08)
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+              label:
+                type: string
+              sortOrder:
+                type: integer
+    ImportRecord:
+      type: object
+      properties:
+        recordId:
+          type: string
+          format: uuid
+        kind:
+          type: string
+          enum:
+            - OCCUPATION
+            - TASK
+            - SKILL
+        sourceCode:
+          type: string
+        payload:
+          type: object
+          description: Record as imported, or as adapted by the Content Admin
+        isResolved:
+          type: boolean
+        isSkipped:
+          type: boolean
+        adjustedAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
+    ImportSummary:
+      type: object
+      properties:
+        importId:
+          type: string
+          format: uuid
+        occupationsUpdated:
+          type: integer
+        tasksAdded:
+          type: integer
+        competenciesAdded:
+          type: integer
+        skippedRecords:
+          type: integer
+        expertsNotified:
+          type: integer
+        completedAt:
+          type: string
+          format: date-time
+    RequestReplacementInput:
+      type: object
+      required:
+        - comment
+      properties:
+        comment:
+          type: string
+          maxLength: 2000
+          description: What in the rubric needs changing
+        referenceAnswerIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: Disagreements from the agreement report that show the problem
+    PromptKind:
+      type: string
+      enum:
+        - GRADING
+        - FOLLOW_UP
+        - FEEDBACK_NOTE
+        - GENERATION
+        - REVISION
+        - PRESENTATION_SUGGESTION
+        - IMAGE
+    SystemPromptVersion:
+      type: object
+      properties:
+        kind:
+          $ref: '#/components/schemas/PromptKind'
+        versionNo:
+          type: integer
+          description: 0 = built-in default (no version saved yet)
+        text:
+          type: string
+        changeNote:
+          type:
+            - string
+            - 'null'
+        restoredFromVersionNo:
+          type:
+            - integer
+            - 'null'
+        changedBy:
+          type:
+            - object
+            - 'null'
+          properties:
+            userId:
+              type: string
+              format: uuid
+            displayName:
+              type: string
+            role:
+              type: string
+              enum:
+                - CONTENT_ADMIN
+                - DOMAIN_EXPERT
+        changedAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
+    SaveSystemPromptInput:
+      type: object
+      required:
+        - baseVersionNo
+        - changeNote
+      properties:
+        baseVersionNo:
+          type: integer
+          description: Version the editor started from; 409 if the other role saved a newer one meanwhile
+        text:
+          type: string
+          minLength: 50
+          maxLength: 20000
+          description: New text in Vietnamese; omit when restoring
+        restoreFromVersionNo:
+          type: integer
+          description: Save the text of this older version as the new version
+        changeNote:
+          type: string
+          maxLength: 300

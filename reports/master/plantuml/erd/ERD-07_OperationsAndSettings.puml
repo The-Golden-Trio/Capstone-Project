@@ -68,6 +68,7 @@ entity "notification" as notification {
   * channel : notification_channel
   * template : varchar(60)
   * payload : jsonb
+  * created_at : timestamp
     sent_at : timestamp
     read_at : timestamp
 }

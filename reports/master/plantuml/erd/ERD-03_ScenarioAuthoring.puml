@@ -32,6 +32,7 @@ entity "cast_member" as cast_member {
   --
   * scenario_id : uuid <<FK>>
   * npc_key : varchar(40)
+    name : varchar(80)
   * role_in_scene : varchar(120)
     pressure : text
     voice : text
@@ -81,9 +82,10 @@ entity "rubric_criterion" as rubric_criterion {
   --
   * activity_id : uuid <<FK>>
   * competency_id : uuid <<FK>>
-  * anchor_plus2 : text
-  * anchor_zero : text
-  * anchor_minus1 : text
+  * anchor_2 : text
+  * anchor_1 : text
+  * anchor_0 : text
+    counterproductive_signs : text
 }
 
 entity "hint" as hint {
@@ -103,9 +105,10 @@ entity "random_event" as random_event {
   * text : text
   * prompt : text
   * target_competency_id : uuid <<FK>>
-  * anchor_plus2 : text
-  * anchor_zero : text
-  * anchor_minus1 : text
+  * anchor_2 : text
+  * anchor_1 : text
+  * anchor_0 : text
+    counterproductive_signs : text
 }
 
 entity "ending" as ending {
@@ -160,7 +163,8 @@ entity "reference_answer_score" as reference_answer_score {
   * reference_answer_id : uuid <<PK,FK>>
   * criterion_id : uuid <<PK,FK>>
   --
-  * score : smallint
+    score : smallint
+  * counterproductive : boolean
 }
 
 entity "ai_job\n(ERD-07)" as ai_job
