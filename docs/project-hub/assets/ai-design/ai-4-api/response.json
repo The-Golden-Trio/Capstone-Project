@@ -7,16 +7,16 @@
         "index": 0,
         "message": {
           "role": "assistant",
-          "content": "{\"speaker\":\"an\",\"follow_up\":\"Ừ, anh nghe rồi. 900 đơn mà mỗi đơn một lần chạm DB thì chậm là phải. Thế nếu sau này có khách còn nhiều đơn hơn nữa thì endpoint này sẽ ra sao?\"}"
+          "content": "{\"beats\":[{\"speaker\":\"mentor\",\"text\":\"Ừ, anh đọc tới chỗ 901 lần rồi.\",\"expression\":\"binh_thuong\"},{\"speaker\":\"mentor\",\"text\":\"Anh phải ghi vào báo cáo: em lấy gì để loại khả năng DB quá tải?\",\"expression\":\"suy_nghi\"}],\"question_by\":\"mentor\"}"
         },
         "finish_reason": "stop"
       }
     ],
     "usage": {
-      "prompt_tokens": 2267,
-      "completion_tokens": 76,
+      "prompt_tokens": 3100,
+      "completion_tokens": 70,
       "prompt_tokens_details": {
-        "cached_tokens": 1024
+        "cached_tokens": 2048
       },
       "completion_tokens_details": {
         "reasoning_tokens": 0

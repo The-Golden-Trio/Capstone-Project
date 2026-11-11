@@ -70,7 +70,7 @@
 
 - Prototype có auth, nội dung từ DB, bản đồ 3D, màn chơi, profile và lưu lượt chơi. `docs/data/build.mjs` hiện đóng gói **2 scenario Backend L1/L3**; dữ liệu nghề nhiều hơn nội dung chơi.
 - Chấm tự luận của prototype còn dùng keyword (`packages/game-core/src/domain/grading/keywordGrader.ts`); không mô tả nó như panel LLM đã hoạt động.
-- **AI-4 đã có code**: `AiModule`, gateway, `NarratorService`, prompt, luật R1–R4, khử định danh và script `narrator-try`. Module đã được import, nhưng chưa có controller và chưa nối vào luồng chơi; không kết luận đã tích hợp AI end-to-end.
+- **AI-4 đã có code**: `AiModule`, gateway, `NarratorService`, prompt, luật R1–R4, khử định danh và script `narrator-try`. Từ 11/11 theo contract nhịp D-130 (`narrateScene`, prompt `narrator.v3`), đã gọi Qwen thật trên cảnh mẫu của seed Back-end L3 m2. Module đã được import, nhưng chưa có controller và chưa nối vào luồng chơi; không kết luận đã tích hợp AI end-to-end.
 - `ai-4-api/response.json` là **model giả**, không phải kết quả gọi API thật hay benchmark. Request mẫu được sinh từ code.
 - Game design mới gồm RIASEC, 7 nhóm soft skill, keyword ESCO và hồ sơ nghề O*NET; nhiều phần vẫn là thiết kế/dữ liệu chưa nối vào runtime. Tra trạng thái từng phần trước khi triển khai.
 

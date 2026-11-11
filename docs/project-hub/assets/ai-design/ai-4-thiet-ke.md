@@ -6,7 +6,7 @@ Nhật, bắt đầu 29/10/2026. Tài liệu làm việc, chưa phải văn báo
 |---|---|
 | 1 Nguyên tắc thiết kế | 📝 Bản nháp 31/10, sửa 4/11 theo cô, chờ Nhật duyệt (nguyên tắc 8 còn chờ ②) |
 | 2 Luồng end-to-end | Chưa viết (① đã chốt 30/10, viết được) |
-| 3 Contract | ✅ Nhật duyệt 30/10; sửa 4/11 theo cô (một trường `follow_up`), chờ duyệt lại |
+| 3 Contract | ♻️ Contract một câu follow-up (4/11) đã được D-130 thay. Contract hiện hành: mục "Contract theo nhịp" bên dưới, có code từ 11/11 |
 | 4 Scoring, edge cases | 📝 Bản nháp 31/10, sửa 4/11 theo cô (thêm mục 4.5), chờ Nhật duyệt (có câu hỏi mở ⑤) |
 | 5 Gọi model, prompt | ✅ Có code chạy được (30/10); sửa 4/11: trần token Qwen 600, prompt theo hãng |
 | 6 Lỗi, chi phí, thời gian | ✅ Nhật đã duyệt, có trong deck |
@@ -17,7 +17,43 @@ Nhật, bắt đầu 29/10/2026. Tài liệu làm việc, chưa phải văn báo
 
 Deck: [`slides/JobQuest_AI4_Deck.html`](../../slides/JobQuest_AI4_Deck.html), slide xếp theo số phần.
 
-**AI-4 là gì.** Người dẫn truyện lúc chơi. Engine giữ thứ tự sự kiện canon và hiện chúng nguyên văn từ seed; AI-4 chỉ viết **một lời follow-up** sau câu tự luận của người chơi: thường là câu hỏi đào sâu, hoặc một lời dẫn không phải câu hỏi khi tình huống cần. Không có lời nối riêng. AI-4 không chấm điểm.
+**AI-4 là gì.** Người dẫn truyện lúc chơi. Engine giữ thứ tự sự kiện canon, hiện nguyên văn nội dung chuyên gia soạn, và quyết chuyện gì xảy ra, ai nói, khi nào hỏi. Từ 11/11 AI-4 theo **contract nhịp (D-130)**: engine giao một trong bốn việc (`reply`, `bridge`, `reaction`, `probe`), AI-4 viết các nhịp lời của nhân vật. Xem mục "Contract theo nhịp" ngay dưới. AI-4 không chấm điểm.
+
+## Contract theo nhịp (D-130, có code từ 11/11/2026)
+
+Nguồn thiết kế: [Luật dẫn truyện](../../../../research/reports/Luật%20dẫn%20truyện%20JobQuest.md) (A1–A13, phần B, phần C), [Hồ sơ NPC](../../../../research/reports/Hồ%20sơ%20NPC%20JobQuest.md) mục 3, 4, 6.1, 8, [Seed scenario](../../../../research/reports/Seed%20scenario%20JobQuest.md) khối C, quyết định D-127 đến D-130.
+
+**Engine quyết, AI-4 viết.** Engine (phần B) chọn việc, người nói, có được hỏi không, tối đa mấy nhịp, hook nào, `adapt` nào; lọc thẻ nhân vật theo điều nhân vật biết; giữ cờ truyện, giấu khúc mắc `hold_until`, gọi bộ phán cho câu kiểm có/không. AI-4 chỉ viết chữ cho đúng việc được giao.
+
+| Việc | Khi nào (engine giao) | AI-4 viết |
+|---|---|---|
+| `reply` | NPC đáp trong pha; 1–2 nhịp đáp ở nút mở (A2); 1–2 nhịp đáp sau câu trả lời probe, không đánh giá (E4); tối đa 1 nhịp trước `approval_line` (A13) | Lời nhân vật đáp điều người chơi vừa nói hay làm |
+| `bridge` | Nối sang một nút, ví dụ cuộc gọi chen ngang (A1b) | Lời dẫn tới chuyện sắp diễn ra, không nói trước nội dung |
+| `reaction` | Người chơi vừa chọn phương án hay lưu artefact (A6) | Viết lại lời `reaction` của seed cho khớp lượt chơi |
+| `probe` | Engine đã chọn `by` và `hook` (A7, D-128) | Đúng một câu hỏi của nhân vật, vì lý do trong hook |
+
+**Nhận** (`SceneTurn`, `packages/game-core/src/domain/narration/sceneTurn.ts`): việc, người được giao, màn (tình huống, mục tiêu, hậu quả, giới hạn), hồ sơ công ty, **thẻ các nhân vật có mặt** dựng đúng khuôn Hồ sơ NPC 6.1, cảnh (giờ, nơi, kênh), cờ truyện, 8 lượt gần nhất, ambient được giao, hook, phương án đã chọn, lời soạn sẵn, cờ được hỏi, số nhịp tối đa. **Không nhận:** rubric, `observes`, `signs`, câu kiểm của bộ phán, khúc mắc chưa tới, dữ kiện nhân vật không biết, đời tư của NPC (`doi_tu`).
+
+**Trả:** `{"beats": [{"speaker", "text", "expression"}], "question_by"}`. `speaker` là slot có mặt hoặc `canh` (lời cảnh); `expression` thuộc bộ 8 mã, `null` với lời cảnh; `question_by` là người đang chờ người chơi trả lời.
+
+**R1–R4 bản nhịp** (`beats.ts`), chạy bằng code:
+
+| Luật | Kiểm | Gặp khi gọi thật 11/11 |
+|---|---|---|
+| R1 | Tên và số chỉ lấy từ thứ gửi đi (thẻ đã lọc, công ty, màn, lời người chơi, ambient). Mốc "12:00" cho phép nói "12 giờ" | Bịa "10.000", "30 phút", "CSKH"; mentor nói "900 đơn" trong khi chỉ support biết |
+| R2 | Tối đa một câu hỏi, ở nhịp cuối, do người được giao; probe đúng một câu; lời cảnh không hỏi; engine tắt hỏi thì không hỏi; `question_by` khớp | Model hỏi xã giao ("em nghe máy được không?") dù "Được hỏi: không" |
+| R3 | Không lặp cụm 5 âm tiết của nội dung ẩn; không dùng cụm khen chê người chơi (danh sách hẹp) | "Em làm kỹ lắm", "cách so sánh đó hợp lý", "logic đó đúng" |
+| R4 | JSON đúng khuôn, ≤ 120 ký tự mỗi nhịp, ≤ số nhịp engine giao (tối đa 5), người nói có mặt, không có dấu ngoặc nhọn. Biểu cảm sai thì ép về `binh_thuong`, không bắt viết lại (Seed C3, E8) | Qwen để `expression: null` cho nhịp hỏi |
+
+**Prompt:** `prompts/narrator.v3.ts`, lấy từ `qa_v05/prompt_ai4_v2.txt` (mới hơn phần C3 của Luật dẫn truyện), thêm các mục Hồ sơ NPC mục 8 ghi "chuyển cho luồng prompt" và các bài học gọi thật. Gọi là v3 vì `narrator.v2.ts` đã dùng cho contract cũ. Contract cũ (`narrate`, v1, v2) giữ cho hai kịch bản prototype dạng activity, không phát triển thêm.
+
+**Chạy thử** trên 6 cảnh của seed Back-end L3 m2 (`apps/api/src/ai/testing/sample-scene.ts`), mentor điền lá XVIII Sang, support điền lá VIII Thương: `pnpm exec nx run @datn/api:narrator-try -- --mode=live --scene=all`.
+
+**Kết quả gọi thật (11/11, qwen3.8-flash qua Token Plan, khoảng 60 lượt gọi):** đây là phép thử chạy được, không phải đánh giá chất lượng.
+- Chạy đủ bốn việc; bậc sinh lại sửa được phần lớn lượt phạm luật trong 1 lần viết lại.
+- Độ trễ 1,2–4,3 s. **Lượt 4 nhịp đầu tiên (chưa trúng cache, khoảng 200 token ra) quá 4,5 s ở 2/2 lần chạy**, nên với một model là `unavailable`. Đụng NFR-01; xem việc 18.
+- Sau khi sửa prompt và dữ liệu mẫu: probe hỏi đúng hook, không nêu đáp án; bridge không hỏi; niềm tin sai bỏ khi cờ bật.
+- Còn lọt (không luật nào bắt): khen chê bằng cách nói khác ("bằng chứng rõ", "chặt chẽ"); nhân vật nói câu riêng không hợp giờ (xem việc 20).
 
 **Ba chỗ còn chờ nhóm chốt** (đánh dấu ⏳ bên dưới):
 
@@ -64,6 +100,8 @@ Bảng này trả lời câu hỏi "model hay luật quyết?" cho AI-4. Cột p
 ---
 
 ## Phần 3. Contract
+
+> **♻️ Contract cũ.** Phần này mô tả contract một câu follow-up (4/11). D-130 đã thay bằng contract theo nhịp, xem mục "Contract theo nhịp" ở đầu tài liệu. Giữ lại để đối chiếu lịch sử và cho hai kịch bản prototype dạng activity.
 
 ### Ý chính
 
@@ -539,7 +577,11 @@ Mọi thay đổi prompt hoặc model đều phải chạy lại **bộ thử 4 
 | 13 | Sửa D-109 trong hub: temperature theo từng hãng (Qwen 0,7, DeepSeek 1,0), không một số chung |
 | 14 | Hướng dẫn chuyên gia viết `followup_goal` theo khía cạnh, không theo giải pháp (điều 2 ở phần 5) |
 | 15 | Chọn region Qwen: Singapore (gần, chỉ cần key, chưa có JSON Schema strict; đang là mặc định) hay Tokyo, Hồng Kông, Frankfurt, Virginia (cần workspace; tài liệu chỉ loại Singapore khỏi strict) — đo |
-| 17 | Kiểm chất lượng follow-up: xem [`ai-4-ke-hoach-kiem-chat-luong.md`](ai-4-ke-hoach-kiem-chat-luong.md) (đề xuất 6/11, chưa duyệt) |
 | 16 | Nối AI-4 vào luồng chơi: lưu lời AI-4 để chạy lại dùng câu đã lưu; bảng lưu bản ghi mỗi lượt gọi; engine đếm lượt đào sâu theo câu hỏi được hiện và không mở lượt theo điểm bộ chấm từ khoá; không gọi AI-4 khi câu trống, hết giờ, hoặc engine không cho hỏi; chốt giới hạn giờ chơi, số lần chơi (thay trần độ dài câu trả lời) |
+| 17 | Kiểm chất lượng follow-up: xem [`ai-4-ke-hoach-kiem-chat-luong.md`](ai-4-ke-hoach-kiem-chat-luong.md) (đề xuất 6/11, chưa duyệt) |
+| 18 | Lượt dài vượt 4,5 s khi chưa trúng cache (gọi thật 11/11): engine giao ít nhịp hơn cho lượt cần đáp nhanh, hay stream nhịp đầu như Seed C3 ("app hiện được nhịp đầu trong lúc model còn sinh các nhịp sau"). Stream thì phải kiểm từng nhịp trước khi hiện, khác cách R1–R4 đang kiểm cả lượt; cần nhóm chọn |
+| 19 | Báo cáo master chưa theo D-127 đến D-130: `CL-04` vẫn có `FollowUpService.decide()` trả một câu và chạy sau khi chấm, `SD-01` cùng ý, `openapi.yaml` có sự kiện `followup.asked` một câu hỏi và trường `followupGoal`, `defaultFollowup`. Code AI-4 đã theo D-130; báo cáo và hợp đồng API cần người phụ trách (Nam) sửa |
+| 20 | Hồ sơ NPC: câu riêng và thói quen gắn giờ giấc lọt vào màn khác giờ. Lá XVIII Sang có "Ráng chút nữa trời sáng", ngáp, dụi mắt; điền vào màn 9:40 sáng thì model nói ra và nghe lạc. Cần luật cho `nguoi`: không gắn giờ trong ngày (nhóm hồ sơ NPC) |
+| 21 | Dữ liệu NPC chính thức: 22 lá đang ở research notes; code dùng bản chép ở `packages/game-core/fixtures/` cho test. Nơi đặt chính thức chờ nhóm duyệt (Hồ sơ NPC mục 5.7) |
 
 **Cần đo (Chương 7), bằng `narrator-try --mode=live` khi có key:** độ trễ thật của qwen3.8-flash; số token thật (ước hiện tại: phần cố định khoảng 1.800, phần riêng khoảng 350); cache có trúng thật không (`--repeat=2`); tỉ lệ qua lần đầu; temperature 0,3 / 0,7 / 1,0.
