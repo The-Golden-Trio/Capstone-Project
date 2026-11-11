@@ -1562,7 +1562,8 @@ class Runner {
         expression: beat.expression,
         ...(channel ? { channel } : {}),
       });
-      if (!isScene) {
+      // Hết ca ("Nhìn lại ca") thì không mở thêm dữ kiện: sổ tay chỉ ghi điều biết được trong ca.
+      if (!isScene && !s.shiftOver) {
         const fact = detectReveal(s, ctx, speaker, beat.text);
         if (fact) s.facts.push({ id: fact.id, at: s.points });
       }

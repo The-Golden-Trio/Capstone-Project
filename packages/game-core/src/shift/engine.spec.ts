@@ -402,6 +402,9 @@ describe('engine ca làm', () => {
     d.say('Chị nói khách là đang sửa.');
     expect(d.state.reviewAsked).toEqual(['tre_hen', 'hua_con_treo']);
     expect(d.state.ended).toBe(true);
+    // Sổ tay không ghi thêm dữ kiện sau khi ca đã kết thúc.
+    const endAt = d.state.nodes.n3.doneAt ?? 0;
+    expect(d.state.facts.every((f) => f.at <= endAt)).toBe(true);
   });
 
   it('hết giờ thì nút kết tự bật, nút chưa tới không xét (D2)', () => {

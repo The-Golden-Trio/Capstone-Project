@@ -60,7 +60,8 @@ export function fakeNarration(req: NarrateRequest): Beat[] {
       const said = normalizeVi(req.playerText ?? '');
       const reveal = req.mayReveal[0];
       if (req.guidance) beats = [beat('Để anh coi kỹ đã.', 'suy_nghi')];
-      else if (reveal && said.length > 0) beats = [beat(reveal.text)];
+      // Chỉ lộ dữ kiện khi người chơi hỏi (có dấu "?"), như AI-4 được dặn.
+      else if (reveal && said.includes('?')) beats = [beat(reveal.text)];
       else beats = [beat('Ừ, mình nghe rồi.')];
     }
   }
