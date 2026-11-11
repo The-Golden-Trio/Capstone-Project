@@ -23,14 +23,6 @@ export { fold } from './fold.js';
 export { sceneView, type SceneView, type ArtefactForm } from './view.js';
 export { shiftSummary, type ShiftSummary } from './summary.js';
 export { lintSeed } from './lint.js';
-export {
-  checkShiftNarration,
-  shiftNarrationJsonSchema,
-  visibleTextsOf,
-  BEAT_MAX_CHARS,
-  MAX_BEATS,
-  type ShiftNarrationCheck,
-} from './narrationRules.js';
 export { matches, resolvedFlag } from './flags.js';
 export { clockAt, pointAt, toMinutes, fromMinutes } from './time.js';
 export {

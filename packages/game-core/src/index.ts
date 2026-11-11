@@ -27,10 +27,16 @@ export * from './domain/followups.js';
 export * from './domain/rng.js';
 export * from './domain/scenarioEngine.js';
 
+/* ── Luồng chơi có AI (SD-01): sự kiện chỉ ghi thêm, fold ra trạng thái ── */
+export * from './domain/play/playRun.js';
+
 /* ── Dẫn truyện (AI-4): phần luật, không gọi mạng ── */
 export * from './domain/narration/narratorView.js';
 export * from './domain/narration/rules.js';
 export * from './domain/narration/deidentify.js';
+export * from './domain/narration/npcCard.js';
+export * from './domain/narration/beats.js';
+export * from './domain/narration/sceneTurn.js';
 
 /* ── Ca làm (seed v2, Game Design W45) ── */
 export * as shift from './shift/index.js';
@@ -38,4 +44,7 @@ export * as shift from './shift/index.js';
 /* ── Chấm điểm ── */
 export * from './domain/grading/types.js';
 export * from './domain/grading/structuredGrading.js';
-export { keywordGrader, defaultTextGrader } from './domain/grading/keywordGrader.js';
+export {
+  keywordGrader,
+  defaultTextGrader,
+} from './domain/grading/keywordGrader.js';

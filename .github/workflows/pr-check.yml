@@ -21,6 +21,9 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
+          # v5 tự bật cache theo `packageManager` (pnpm) rồi hỏng vì job này
+          # không cài pnpm. Job chỉ chạy một script Node, không cần cache.
+          package-manager-cache: false
 
       - name: Kiểm tra title, description và commit message
         env:

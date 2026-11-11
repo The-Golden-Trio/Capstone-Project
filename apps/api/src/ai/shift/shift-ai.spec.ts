@@ -1,18 +1,15 @@
-import { shift } from '@datn/game-core';
+import { PLAYER_SPEAKER, shift } from '@datn/game-core';
+import { fixtureShiftContext } from '@datn/game-core/testing';
 import { CircuitBreaker } from '../gateway/circuit-breaker';
-import type { ChatRequest, ChatResult } from '../gateway/gateway.types';
 import type { ModelGateway } from '../gateway/model-gateway';
-import { deepseekFlash } from '../gateway/models';
+import { toSceneTurn } from '../../assessment/shift-scene';
 import {
   buildCheckerMessages,
   ShiftCheckerService,
   verifyAnswers,
 } from './checker.service';
-import {
-  buildShiftNarratorMessages,
-  cleanRequest,
-  ShiftNarratorService,
-} from './shift-narrator.service';
+
+const ctx = fixtureShiftContext('SWE_BACKEND.L3.m2');
 
 const request: shift.NarrateRequest = {
   requestId: 'r1',
@@ -22,7 +19,7 @@ const request: shift.NarrateRequest = {
   channel: 'chat',
   maxBeats: 2,
   scene: { time: '10:00', channel: 'chat' },
-  company: { name: 'Giao Nhanh', profile: 'Startup giao đồ ăn.' },
+  company: ctx.pack.company,
   profile: {
     name: 'anh An',
     relation: 'mentor',
@@ -32,95 +29,47 @@ const request: shift.NarrateRequest = {
     expertise: 3,
     disclosure_style: 'nói thẳng',
     voice: 'giọng Nam',
-    beliefs: [],
-    concerns: [],
+    beliefs: ['Chắc DB quá tải giờ cao điểm.'],
+    concerns: ['Muốn chắc nguyên nhân trước khi cho sửa.'],
   },
   knownFacts: [{ id: 'f1', text: 'API chậm hơn 4 giây.' }],
-  mayReveal: [],
-  confirmOnly: [],
-  limits: { not_allowed: [], need_approval: [] },
-  flags: [],
-  recent: [
-    { speaker: 'player', text: 'Em là Trần Văn Nam, email nam@example.com' },
+  mayReveal: [{ id: 'f10', text: 'App bản cũ không gửi số trang.' }],
+  confirmOnly: [
+    {
+      id: 'f7',
+      text: 'Nguyên nhân: lấy chi tiết từng đơn trong một vòng lặp.',
+    },
   ],
-  playerText: 'Em là Trần Văn Nam, email nam@example.com',
+  limits: { not_allowed: ['Hứa giờ xong với khách'], need_approval: [] },
+  flags: ['da_mo_log'],
+  recent: [{ speaker: 'player', text: 'Anh ơi API chậm quá.' }],
+  playerText: 'Anh ơi API chậm quá.',
+  guidance: 'Anh An chưa duyệt.',
 };
 
-const ok = (text: string): ChatResult => ({
-  text,
-  finishReason: 'stop',
-  usage: {
-    input: 100,
-    cachedInput: 0,
-    cacheWrite: 0,
-    output: 50,
-    reasoning: 0,
-  },
-  requestId: null,
-  latencyMs: 300,
-});
+describe('ca làm → AI-4 theo nhịp (SceneTurn)', () => {
+  const turn = toSceneTurn(request, ctx);
 
-function gatewayOf(...replies: string[]) {
-  const calls: ChatRequest[] = [];
-  const gateway = {
-    complete: async (req: ChatRequest) => {
-      calls.push(req);
-      return ok(replies[Math.min(calls.length - 1, replies.length - 1)]);
-    },
-  } as unknown as ModelGateway;
-  return { gateway, calls };
-}
-
-describe('AI-4 bản 2 cho ca làm', () => {
-  it('khử định danh câu người chơi và bọc thành dữ liệu', () => {
-    const clean = cleanRequest(request, { names: ['Trần Văn Nam'] });
-    const text = JSON.stringify(buildShiftNarratorMessages(clean));
-    expect(text).not.toContain('nam@example.com');
-    expect(text).not.toContain('Trần Văn Nam');
-    expect(text).toContain('<cau_nguoi_choi>');
+  it('thẻ của người được giao mang dữ kiện đã lọc, hướng của lượt và cách lộ dữ kiện', () => {
+    expect(turn.lead).toBe('mentor');
+    expect(turn.cards.map((c) => c.slot)).toEqual(['mentor']);
+    const card = turn.cards[0].text;
+    expect(card).toContain('API chậm hơn 4 giây.');
+    expect(card).toContain('Được nói ra ở lượt này');
+    expect(card).toContain('Chỉ xác nhận khi người chơi tự nói ra');
+    expect(card).toContain('Anh An chưa duyệt.');
   });
 
-  it('vi phạm luật thì bắt viết lại, qua thì trả nhịp kèm provenance (D-108)', async () => {
-    const bad = JSON.stringify({
-      beats: [
-        {
-          speaker: 'mentor',
-          text: 'Có 37 khách phàn nàn.',
-          expression: 'lo_lang',
-        },
-      ],
-      question_by: null,
-    });
-    const good = JSON.stringify({
-      beats: [
-        {
-          speaker: 'mentor',
-          text: 'Ừ, hơn 4 giây là chậm thật.',
-          expression: 'suy_nghi',
-        },
-      ],
-      question_by: null,
-    });
-    const { gateway, calls } = gatewayOf(bad, good);
-    const service = new ShiftNarratorService(gateway, new CircuitBreaker(), [
-      deepseekFlash(),
-    ]);
-    const out = await service.narrate(request);
-    expect(out).toMatchObject({
-      status: 'ok',
-      provenance: { adapter: 'live', model: deepseekFlash().key },
-    });
-    expect(calls).toHaveLength(2);
-    expect(JSON.stringify(calls[1].messages)).toContain('R1');
-  });
-
-  it('không có model nào thì unavailable, không có lời thay thế (D-92)', async () => {
-    const { gateway } = gatewayOf('{}');
-    const service = new ShiftNarratorService(gateway, new CircuitBreaker(), []);
-    expect(await service.narrate(request)).toEqual({
-      status: 'unavailable',
-      reason: 'no_model',
-    });
+  it('người chơi đổi sang người nói của contract nhịp; câu kiểm của seed nằm trong chữ bị cấm (R3)', () => {
+    expect(turn.recent[0].speaker).toBe(PLAYER_SPEAKER);
+    expect(turn.hidden).toContain(ctx.seed.conversation_checks[0].q);
+    // Dữ kiện slot không biết cũng bị cấm, dữ kiện được giao thì không.
+    expect(turn.hidden).toContain(
+      ctx.seed.facts.find((f) => f.id === 'f9')?.text,
+    );
+    expect(turn.hidden).not.toContain(
+      ctx.seed.facts.find((f) => f.id === 'f1')?.text,
+    );
   });
 });
 
@@ -177,19 +126,17 @@ describe('bộ phán có/không', () => {
     ]);
   });
 
-  it('dùng họ model khác AI-4 (DC-01); cùng họ thì không có bộ phán', async () => {
-    const { gateway } = gatewayOf('{}');
-    const only = new ShiftCheckerService(gateway, new CircuitBreaker(), [
-      deepseekFlash(),
-    ]);
-    expect(only.chain()).toEqual([]);
-    expect(await only.check(req)).toEqual({
+  it('dùng ghế judge của AI-5; không có ghế nào thì unavailable, không thay bằng cách khác (D-92)', async () => {
+    const gateway = { complete: async () => ({}) } as unknown as ModelGateway;
+    const none = new ShiftCheckerService(gateway, new CircuitBreaker(), []);
+    expect(none.chain()).toEqual([]);
+    expect(await none.check(req)).toEqual({
       status: 'unavailable',
       reason: 'no_model',
     });
   });
 
-  it('câu hỏi gửi đi không kèm gì ngoài câu hỏi và lời người chơi', () => {
+  it('chỉ gửi câu hỏi và lời người chơi', () => {
     const text = JSON.stringify(buildCheckerMessages(req, req.scope));
     expect(text).toContain('<loi_nguoi_choi>');
     expect(text).toContain('hua_bao_lai');

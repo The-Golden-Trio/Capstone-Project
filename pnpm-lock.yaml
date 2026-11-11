@@ -77,6 +77,9 @@ importers:
       google-auth-library:
         specifier: ^11.1.0
         version: 11.1.0
+      ioredis:
+        specifier: ^6.0.0
+        version: 6.0.0
       passport:
         specifier: ^0.7.0
         version: 0.7.0
@@ -339,9 +342,6 @@ importers:
       argon2:
         specifier: ^0.45.0
         version: 0.45.1
-      bullmq:
-        specifier: ^6.3.6
-        version: 6.3.6(ioredis@6.0.0)(pg@8.23.0)
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -354,9 +354,6 @@ importers:
       google-auth-library:
         specifier: ^11.0.0
         version: 11.1.0
-      ioredis:
-        specifier: ^6.0.0
-        version: 6.0.0
       passport:
         specifier: ^0.7.0
         version: 0.7.0

@@ -10,7 +10,18 @@ type Schemas = components['schemas'];
 
 export type Run = Schemas['Run'];
 export type StartRunInput = Schemas['StartRunInput'];
-export type ActivityView = Schemas['ActivityView'];
+/**
+ * `followup`: ngoài hợp đồng (đề xuất, máy chủ đã trả) — câu hỏi vặn đang chờ
+ * trả lời, để mở lại đúng chỗ khi trình duyệt mất trạng thái của màn.
+ */
+export type ActivityView = Schemas['ActivityView'] & {
+  followup?: {
+    followupNo: number;
+    npcKey: string;
+    name: string;
+    question: string;
+  } | null;
+};
 export type ActivityItem = NonNullable<ActivityView['items']>[number];
 export type TaskType = Schemas['TaskType'];
 export type AnswerInput = Schemas['AnswerInput'];
@@ -36,7 +47,8 @@ export interface StreamPayloads {
     answerId: string;
     activityKey: string;
     followupNo: number;
-    score: Score;
+    /** `null` khi panel xếp mọi tiêu chí là "không xét". */
+    score: Score | null;
     /** Câu tự luận có dấu hiệu phản tác dụng (D-116): bị trừ thêm. */
     counterproductive: boolean;
   };

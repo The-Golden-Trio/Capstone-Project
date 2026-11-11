@@ -2,7 +2,6 @@
 
 # compiled output
 dist
-dist-worker
 tmp
 out-tsc
 

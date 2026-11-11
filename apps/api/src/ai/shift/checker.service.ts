@@ -3,8 +3,10 @@
  * sẵn về lời người chơi. Kết quả thành cờ; engine quyết, bộ phán không phán
  * gì khác.
  *
- * - Họ model phải khác AI-4 (DC-01, D-43): chuỗi bộ phán bỏ mọi model cùng
- *   họ với model dẫn truyện đứng đầu. Không còn model nào thì `unavailable`.
+ * - Dùng ghế judge của AI-5 (D-129: cùng cơ chế với thư viện câu hỏi có/không
+ *   của AI-5). Các ghế này đã được dựng khác họ với AI-4 (DC-01, D-43). Một
+ *   bộ phán là một model: lấy ghế đầu, ghế đầu không có model thì sang ghế
+ *   kế. Không còn ghế nào thì `unavailable`.
  * - "Có" phải kèm câu trích nguyên văn; code kiểm câu trích có thật. Trích
  *   sai thì hạ thành "không rõ" (tính là không, A12).
  * - Sai khuôn thì hỏi lại một lần (D-108), rồi sang model kế.
@@ -22,7 +24,9 @@ import {
   type ModelSpec,
 } from '../gateway/gateway.types';
 import { ModelGateway } from '../gateway/model-gateway';
-import { AI_CLOCK, NARRATOR_CHAIN } from '../narrator/narrator.service';
+import type { JudgeSlot } from '../gateway/models';
+import { JUDGE_SLOTS } from '../judge/judge-panel.service';
+import { AI_CLOCK } from '../narrator/narrator.service';
 import {
   CHECKER_PROMPT_VERSION,
   CHECKER_SYSTEM,
@@ -147,17 +151,13 @@ export class ShiftCheckerService implements ShiftChecker {
   constructor(
     private readonly gateway: ModelGateway,
     private readonly breaker: CircuitBreaker,
-    @Inject(NARRATOR_CHAIN)
-    private readonly narratorChain: readonly ModelSpec[],
+    @Inject(JUDGE_SLOTS) private readonly slots: readonly JudgeSlot[],
     @Optional() @Inject(AI_CLOCK) private readonly clock: Clock = systemClock,
   ) {}
 
-  /** Model khác họ với model dẫn truyện đứng đầu (DC-01). */
+  /** Chuỗi model của bộ phán: các ghế judge nối nhau, ghế đầu trước. */
   chain(): ModelSpec[] {
-    const narratorFamily = this.narratorChain[0]?.family;
-    return [...this.narratorChain]
-      .reverse()
-      .filter((s) => s.family !== narratorFamily);
+    return this.slots.flatMap((s) => s.chain);
   }
 
   async check(

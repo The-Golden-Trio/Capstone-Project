@@ -80,6 +80,18 @@
           }
         }
       },
+      "serve-worker": {
+        "continuous": true,
+        "executor": "nx:run-commands",
+        "dependsOn": [
+          "^build",
+          "build"
+        ],
+        "options": {
+          "command": "node --watch-path=apps/api/dist apps/api/dist/main.js --worker",
+          "cwd": "{workspaceRoot}"
+        }
+      },
       "test": {
         "options": {
           "passWithNoTests": true
@@ -118,6 +130,16 @@
           "cwd": "{workspaceRoot}"
         }
       },
+      "judge-try": {
+        "executor": "nx:run-commands",
+        "dependsOn": [
+          "^build"
+        ],
+        "options": {
+          "command": "esbuild apps/api/src/scripts/judge-try.ts --bundle --platform=node --format=esm --packages=external --tsconfig=apps/api/tsconfig.app.json --outfile=apps/api/dist/judge-try.mjs && node apps/api/dist/judge-try.mjs",
+          "cwd": "{workspaceRoot}"
+        }
+      },
       "seed-content": {
         "executor": "nx:run-commands",
         "dependsOn": [
@@ -127,51 +149,6 @@
         "options": {
           "command": "esbuild apps/api/src/scripts/seed-content.ts --bundle --platform=node --format=esm --packages=external --outfile=apps/api/dist/seed-content.mjs && node apps/api/dist/seed-content.mjs",
           "cwd": "{workspaceRoot}"
-        }
-      },
-      "build-worker": {
-        "executor": "nx:run-commands",
-        "outputs": [
-          "{projectRoot}/dist-worker"
-        ],
-        "options": {
-          "command": "webpack-cli build --config webpack.worker.config.js",
-          "env": {
-            "NODE_ENV": "production"
-          },
-          "cwd": "apps/api"
-        },
-        "configurations": {
-          "development": {
-            "env": {
-              "NODE_ENV": "development"
-            }
-          }
-        },
-        "dependsOn": [
-          "^build",
-          "prisma-generate"
-        ]
-      },
-      "serve-worker": {
-        "continuous": true,
-        "executor": "@nx/js:node",
-        "defaultConfiguration": "development",
-        "dependsOn": [
-          "^build",
-          "build-worker"
-        ],
-        "options": {
-          "buildTarget": "@datn/api:build-worker",
-          "runBuildTargetDependencies": false
-        },
-        "configurations": {
-          "development": {
-            "buildTarget": "@datn/api:build-worker:development"
-          },
-          "production": {
-            "buildTarget": "@datn/api:build-worker:production"
-          }
         }
       }
     }
@@ -187,12 +164,10 @@
     "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "^7.10.0",
     "argon2": "^0.45.0",
-    "bullmq": "^6.3.6",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
     "cookie-parser": "^1.4.7",
     "google-auth-library": "^11.0.0",
-    "ioredis": "^6.0.0",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",

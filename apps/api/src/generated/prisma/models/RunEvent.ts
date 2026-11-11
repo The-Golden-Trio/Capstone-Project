@@ -14,7 +14,10 @@ import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
  * Model RunEvent
- * Chuỗi sự kiện của một lượt ca làm (ERD-05 `run_event`). Chỉ thêm, không sửa.
+ * ERD-05 `run_event`: lượt chơi là chuỗi sự kiện chỉ ghi thêm; trạng thái =
+ * fold các sự kiện qua `foldPlay` của game-core (§5.3.1). Đầu ra của model
+ * vào đây kèm nguồn gốc (model, prompt, chi phí, độ trễ) và không bao giờ
+ * được tính lại.
  */
 export type RunEventModel = runtime.Types.Result.DefaultSelection<Prisma.$RunEventPayload>
 
@@ -40,8 +43,8 @@ export type RunEventMinAggregateOutputType = {
   id: bigint | null
   runId: string | null
   seq: number | null
-  type: $Enums.RunEventType | null
-  turnId: string | null
+  type: string | null
+  activityKey: string | null
   createdAt: Date | null
 }
 
@@ -49,8 +52,8 @@ export type RunEventMaxAggregateOutputType = {
   id: bigint | null
   runId: string | null
   seq: number | null
-  type: $Enums.RunEventType | null
-  turnId: string | null
+  type: string | null
+  activityKey: string | null
   createdAt: Date | null
 }
 
@@ -59,7 +62,7 @@ export type RunEventCountAggregateOutputType = {
   runId: number
   seq: number
   type: number
-  turnId: number
+  activityKey: number
   payload: number
   createdAt: number
   _all: number
@@ -81,7 +84,7 @@ export type RunEventMinAggregateInputType = {
   runId?: true
   seq?: true
   type?: true
-  turnId?: true
+  activityKey?: true
   createdAt?: true
 }
 
@@ -90,7 +93,7 @@ export type RunEventMaxAggregateInputType = {
   runId?: true
   seq?: true
   type?: true
-  turnId?: true
+  activityKey?: true
   createdAt?: true
 }
 
@@ -99,7 +102,7 @@ export type RunEventCountAggregateInputType = {
   runId?: true
   seq?: true
   type?: true
-  turnId?: true
+  activityKey?: true
   payload?: true
   createdAt?: true
   _all?: true
@@ -195,8 +198,8 @@ export type RunEventGroupByOutputType = {
   id: bigint
   runId: string
   seq: number
-  type: $Enums.RunEventType
-  turnId: string | null
+  type: string
+  activityKey: string | null
   payload: runtime.JsonValue
   createdAt: Date
   _count: RunEventCountAggregateOutputType | null
@@ -228,8 +231,8 @@ export type RunEventWhereInput = {
   id?: Prisma.BigIntFilter<"RunEvent"> | bigint | number
   runId?: Prisma.StringFilter<"RunEvent"> | string
   seq?: Prisma.IntFilter<"RunEvent"> | number
-  type?: Prisma.EnumRunEventTypeFilter<"RunEvent"> | $Enums.RunEventType
-  turnId?: Prisma.StringNullableFilter<"RunEvent"> | string | null
+  type?: Prisma.StringFilter<"RunEvent"> | string
+  activityKey?: Prisma.StringNullableFilter<"RunEvent"> | string | null
   payload?: Prisma.JsonFilter<"RunEvent">
   createdAt?: Prisma.DateTimeFilter<"RunEvent"> | Date | string
   run?: Prisma.XOR<Prisma.ScenarioRunScalarRelationFilter, Prisma.ScenarioRunWhereInput>
@@ -240,7 +243,7 @@ export type RunEventOrderByWithRelationInput = {
   runId?: Prisma.SortOrder
   seq?: Prisma.SortOrder
   type?: Prisma.SortOrder
-  turnId?: Prisma.SortOrderInput | Prisma.SortOrder
+  activityKey?: Prisma.SortOrderInput | Prisma.SortOrder
   payload?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   run?: Prisma.ScenarioRunOrderByWithRelationInput
@@ -254,8 +257,8 @@ export type RunEventWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.RunEventWhereInput | Prisma.RunEventWhereInput[]
   runId?: Prisma.StringFilter<"RunEvent"> | string
   seq?: Prisma.IntFilter<"RunEvent"> | number
-  type?: Prisma.EnumRunEventTypeFilter<"RunEvent"> | $Enums.RunEventType
-  turnId?: Prisma.StringNullableFilter<"RunEvent"> | string | null
+  type?: Prisma.StringFilter<"RunEvent"> | string
+  activityKey?: Prisma.StringNullableFilter<"RunEvent"> | string | null
   payload?: Prisma.JsonFilter<"RunEvent">
   createdAt?: Prisma.DateTimeFilter<"RunEvent"> | Date | string
   run?: Prisma.XOR<Prisma.ScenarioRunScalarRelationFilter, Prisma.ScenarioRunWhereInput>
@@ -266,7 +269,7 @@ export type RunEventOrderByWithAggregationInput = {
   runId?: Prisma.SortOrder
   seq?: Prisma.SortOrder
   type?: Prisma.SortOrder
-  turnId?: Prisma.SortOrderInput | Prisma.SortOrder
+  activityKey?: Prisma.SortOrderInput | Prisma.SortOrder
   payload?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.RunEventCountOrderByAggregateInput
@@ -283,8 +286,8 @@ export type RunEventScalarWhereWithAggregatesInput = {
   id?: Prisma.BigIntWithAggregatesFilter<"RunEvent"> | bigint | number
   runId?: Prisma.StringWithAggregatesFilter<"RunEvent"> | string
   seq?: Prisma.IntWithAggregatesFilter<"RunEvent"> | number
-  type?: Prisma.EnumRunEventTypeWithAggregatesFilter<"RunEvent"> | $Enums.RunEventType
-  turnId?: Prisma.StringNullableWithAggregatesFilter<"RunEvent"> | string | null
+  type?: Prisma.StringWithAggregatesFilter<"RunEvent"> | string
+  activityKey?: Prisma.StringNullableWithAggregatesFilter<"RunEvent"> | string | null
   payload?: Prisma.JsonWithAggregatesFilter<"RunEvent">
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"RunEvent"> | Date | string
 }
@@ -292,8 +295,8 @@ export type RunEventScalarWhereWithAggregatesInput = {
 export type RunEventCreateInput = {
   id?: bigint | number
   seq: number
-  type: $Enums.RunEventType
-  turnId?: string | null
+  type: string
+  activityKey?: string | null
   payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
   run: Prisma.ScenarioRunCreateNestedOneWithoutEventsInput
@@ -303,8 +306,8 @@ export type RunEventUncheckedCreateInput = {
   id?: bigint | number
   runId: string
   seq: number
-  type: $Enums.RunEventType
-  turnId?: string | null
+  type: string
+  activityKey?: string | null
   payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
 }
@@ -312,8 +315,8 @@ export type RunEventUncheckedCreateInput = {
 export type RunEventUpdateInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   seq?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumRunEventTypeFieldUpdateOperationsInput | $Enums.RunEventType
-  turnId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   run?: Prisma.ScenarioRunUpdateOneRequiredWithoutEventsNestedInput
@@ -323,8 +326,8 @@ export type RunEventUncheckedUpdateInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   runId?: Prisma.StringFieldUpdateOperationsInput | string
   seq?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumRunEventTypeFieldUpdateOperationsInput | $Enums.RunEventType
-  turnId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -333,8 +336,8 @@ export type RunEventCreateManyInput = {
   id?: bigint | number
   runId: string
   seq: number
-  type: $Enums.RunEventType
-  turnId?: string | null
+  type: string
+  activityKey?: string | null
   payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
 }
@@ -342,8 +345,8 @@ export type RunEventCreateManyInput = {
 export type RunEventUpdateManyMutationInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   seq?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumRunEventTypeFieldUpdateOperationsInput | $Enums.RunEventType
-  turnId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -352,8 +355,8 @@ export type RunEventUncheckedUpdateManyInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   runId?: Prisma.StringFieldUpdateOperationsInput | string
   seq?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumRunEventTypeFieldUpdateOperationsInput | $Enums.RunEventType
-  turnId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -378,7 +381,7 @@ export type RunEventCountOrderByAggregateInput = {
   runId?: Prisma.SortOrder
   seq?: Prisma.SortOrder
   type?: Prisma.SortOrder
-  turnId?: Prisma.SortOrder
+  activityKey?: Prisma.SortOrder
   payload?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -393,7 +396,7 @@ export type RunEventMaxOrderByAggregateInput = {
   runId?: Prisma.SortOrder
   seq?: Prisma.SortOrder
   type?: Prisma.SortOrder
-  turnId?: Prisma.SortOrder
+  activityKey?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -402,7 +405,7 @@ export type RunEventMinOrderByAggregateInput = {
   runId?: Prisma.SortOrder
   seq?: Prisma.SortOrder
   type?: Prisma.SortOrder
-  turnId?: Prisma.SortOrder
+  activityKey?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -453,15 +456,11 @@ export type RunEventUncheckedUpdateManyWithoutRunNestedInput = {
   deleteMany?: Prisma.RunEventScalarWhereInput | Prisma.RunEventScalarWhereInput[]
 }
 
-export type EnumRunEventTypeFieldUpdateOperationsInput = {
-  set?: $Enums.RunEventType
-}
-
 export type RunEventCreateWithoutRunInput = {
   id?: bigint | number
   seq: number
-  type: $Enums.RunEventType
-  turnId?: string | null
+  type: string
+  activityKey?: string | null
   payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
 }
@@ -469,8 +468,8 @@ export type RunEventCreateWithoutRunInput = {
 export type RunEventUncheckedCreateWithoutRunInput = {
   id?: bigint | number
   seq: number
-  type: $Enums.RunEventType
-  turnId?: string | null
+  type: string
+  activityKey?: string | null
   payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
 }
@@ -508,8 +507,8 @@ export type RunEventScalarWhereInput = {
   id?: Prisma.BigIntFilter<"RunEvent"> | bigint | number
   runId?: Prisma.StringFilter<"RunEvent"> | string
   seq?: Prisma.IntFilter<"RunEvent"> | number
-  type?: Prisma.EnumRunEventTypeFilter<"RunEvent"> | $Enums.RunEventType
-  turnId?: Prisma.StringNullableFilter<"RunEvent"> | string | null
+  type?: Prisma.StringFilter<"RunEvent"> | string
+  activityKey?: Prisma.StringNullableFilter<"RunEvent"> | string | null
   payload?: Prisma.JsonFilter<"RunEvent">
   createdAt?: Prisma.DateTimeFilter<"RunEvent"> | Date | string
 }
@@ -517,8 +516,8 @@ export type RunEventScalarWhereInput = {
 export type RunEventCreateManyRunInput = {
   id?: bigint | number
   seq: number
-  type: $Enums.RunEventType
-  turnId?: string | null
+  type: string
+  activityKey?: string | null
   payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
 }
@@ -526,8 +525,8 @@ export type RunEventCreateManyRunInput = {
 export type RunEventUpdateWithoutRunInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   seq?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumRunEventTypeFieldUpdateOperationsInput | $Enums.RunEventType
-  turnId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -535,8 +534,8 @@ export type RunEventUpdateWithoutRunInput = {
 export type RunEventUncheckedUpdateWithoutRunInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   seq?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumRunEventTypeFieldUpdateOperationsInput | $Enums.RunEventType
-  turnId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -544,8 +543,8 @@ export type RunEventUncheckedUpdateWithoutRunInput = {
 export type RunEventUncheckedUpdateManyWithoutRunInput = {
   id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number
   seq?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumRunEventTypeFieldUpdateOperationsInput | $Enums.RunEventType
-  turnId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -557,7 +556,7 @@ export type RunEventSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   runId?: boolean
   seq?: boolean
   type?: boolean
-  turnId?: boolean
+  activityKey?: boolean
   payload?: boolean
   createdAt?: boolean
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
@@ -568,7 +567,7 @@ export type RunEventSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   runId?: boolean
   seq?: boolean
   type?: boolean
-  turnId?: boolean
+  activityKey?: boolean
   payload?: boolean
   createdAt?: boolean
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
@@ -579,7 +578,7 @@ export type RunEventSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   runId?: boolean
   seq?: boolean
   type?: boolean
-  turnId?: boolean
+  activityKey?: boolean
   payload?: boolean
   createdAt?: boolean
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
@@ -590,12 +589,12 @@ export type RunEventSelectScalar = {
   runId?: boolean
   seq?: boolean
   type?: boolean
-  turnId?: boolean
+  activityKey?: boolean
   payload?: boolean
   createdAt?: boolean
 }
 
-export type RunEventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "runId" | "seq" | "type" | "turnId" | "payload" | "createdAt", ExtArgs["result"]["runEvent"]>
+export type RunEventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "runId" | "seq" | "type" | "activityKey" | "payload" | "createdAt", ExtArgs["result"]["runEvent"]>
 export type RunEventInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
 }
@@ -614,15 +613,9 @@ export type $RunEventPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: bigint
     runId: string
-    /**
-     * Thứ tự trong lượt. Unique cùng `runId`: hai yêu cầu ghi cùng chỗ thì một bên thua.
-     */
     seq: number
-    type: $Enums.RunEventType
-    /**
-     * Lượt người chơi sinh ra sự kiện này.
-     */
-    turnId: string | null
+    type: string
+    activityKey: string | null
     payload: runtime.JsonValue
     createdAt: Date
   }, ExtArgs["result"]["runEvent"]>
@@ -1052,8 +1045,8 @@ export interface RunEventFieldRefs {
   readonly id: Prisma.FieldRef<"RunEvent", 'BigInt'>
   readonly runId: Prisma.FieldRef<"RunEvent", 'String'>
   readonly seq: Prisma.FieldRef<"RunEvent", 'Int'>
-  readonly type: Prisma.FieldRef<"RunEvent", 'RunEventType'>
-  readonly turnId: Prisma.FieldRef<"RunEvent", 'String'>
+  readonly type: Prisma.FieldRef<"RunEvent", 'String'>
+  readonly activityKey: Prisma.FieldRef<"RunEvent", 'String'>
   readonly payload: Prisma.FieldRef<"RunEvent", 'Json'>
   readonly createdAt: Prisma.FieldRef<"RunEvent", 'DateTime'>
 }

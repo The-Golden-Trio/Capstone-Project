@@ -1,7 +1,9 @@
 /**
- * CL-03 RunController cho ca làm, dưới `/api/v1/runs`. Lỗi dạng Problem
- * (RFC 9457). Đường dẫn và hình dạng là ĐỀ XUẤT, ngoài `openapi.yaml`:
- * xem `docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`.
+ * Nhóm Play của `reports/master/api/openapi.yaml` (CL-03 `RunController`),
+ * dưới `/api/v1`. Lỗi trả theo RFC 9457 (`Problem`).
+ *
+ * Phiên đăng nhập: cookie httpOnly như phần còn lại của app (Bearer cũng được
+ * nhận). Hợp đồng ghi Bearer; §5.3.1 còn ghi cookie — chỗ lệch đã có ghi chú.
  */
 import {
   Body,
@@ -9,9 +11,7 @@ import {
   Get,
   HttpCode,
   Param,
-  ParseIntPipe,
   Post,
-  Query,
   Res,
   UseFilters,
 } from '@nestjs/common';
@@ -20,108 +20,108 @@ import {
   CurrentUser,
   type AuthUser,
 } from '../auth/decorators/current-user.decorator';
-import { ProblemFilter, ZodProblemPipe } from '../common/problem';
+import { ZodValidationPipe } from '../common/zod-validation.pipe';
+import { ProblemFilter } from '../core/problem';
 import {
+  AnswerSchema,
   FlagSchema,
   HintSchema,
-  NoteSchema,
   StartRunSchema,
-  TurnSchema,
+  type AnswerDto,
+  type FlagDto,
+  type HintDto,
   type StartRunDto,
-  type TurnDto,
-} from './dto/play.dto';
+} from './play.dto';
 import { RunService } from './run.service';
+import { SummaryService } from './summary.service';
 
-@Controller('v1/runs')
+@Controller('v1')
 @UseFilters(ProblemFilter)
 export class RunController {
-  constructor(private readonly runs: RunService) {}
+  constructor(
+    private readonly runs: RunService,
+    private readonly summaries: SummaryService,
+  ) {}
 
-  /** 201 lượt mới, 200 lượt đang dở của cùng nhiệm vụ (NFR-03). */
-  @Post()
-  async start(
+  @Post('runs')
+  async startRun(
     @CurrentUser() user: AuthUser,
-    @Body(new ZodProblemPipe(StartRunSchema)) dto: StartRunDto,
+    @Body(new ZodValidationPipe(StartRunSchema)) dto: StartRunDto,
     @Res({ passthrough: true }) res: Response,
   ) {
-    const { created, run } = await this.runs.start(user.id, dto);
-    res.status(created ? 201 : 200);
-    return run;
+    const { status, body } = await this.runs.start(user, dto);
+    res.status(status);
+    return body;
   }
 
-  @Get(':runId')
-  get(@CurrentUser() user: AuthUser, @Param('runId') runId: string) {
-    return this.runs.get(user.id, runId);
+  @Get('runs/:runId')
+  getRun(@CurrentUser() user: AuthUser, @Param('runId') runId: string) {
+    return this.runs.get(user, runId);
   }
 
-  @Get(':runId/scene')
-  scene(@CurrentUser() user: AuthUser, @Param('runId') runId: string) {
-    return this.runs.scene(user.id, runId);
-  }
-
-  @Get(':runId/transcript')
-  transcript(
+  @Get('runs/:runId/activity')
+  getCurrentActivity(
     @CurrentUser() user: AuthUser,
     @Param('runId') runId: string,
-    @Query('after', new ParseIntPipe({ optional: true })) after?: number,
   ) {
-    return this.runs.transcript(user.id, runId, after);
+    return this.runs.currentActivity(user, runId);
   }
 
-  /** 200 lượt xong ngay; 202 lượt cần AI, kết quả về `/api/v1/stream`. */
-  @Post(':runId/turns')
-  async turn(
+  @Post('runs/:runId/answers')
+  async submitAnswer(
     @CurrentUser() user: AuthUser,
     @Param('runId') runId: string,
-    @Body(new ZodProblemPipe(TurnSchema)) dto: TurnDto,
+    @Body(new ZodValidationPipe(AnswerSchema)) dto: AnswerDto,
     @Res({ passthrough: true }) res: Response,
   ) {
-    const result = await this.runs.submitTurn(user.id, runId, dto);
-    res.status(result.status);
-    return result.body;
+    const { status, body } = await this.runs.submitAnswer(user, runId, dto);
+    res.status(status);
+    return body;
   }
 
-  @Post(':runId/hints')
-  async hint(
+  @Post('runs/:runId/hints')
+  @HttpCode(200)
+  viewHint(
     @CurrentUser() user: AuthUser,
     @Param('runId') runId: string,
-    @Body(new ZodProblemPipe(HintSchema)) dto: { turnId: string },
+    @Body(new ZodValidationPipe(HintSchema)) dto: HintDto,
+  ) {
+    return this.runs.viewHint(user, runId, dto);
+  }
+
+  @Post('runs/:runId/flags')
+  @HttpCode(204)
+  async flagContent(
+    @CurrentUser() user: AuthUser,
+    @Param('runId') runId: string,
+    @Body(new ZodValidationPipe(FlagSchema)) dto: FlagDto,
+  ): Promise<void> {
+    await this.runs.flag(user, runId, dto);
+  }
+
+  @Post('runs/:runId/finish')
+  async finishRun(
+    @CurrentUser() user: AuthUser,
+    @Param('runId') runId: string,
     @Res({ passthrough: true }) res: Response,
   ) {
-    const result = await this.runs.hint(user.id, runId, dto.turnId);
-    res.status(result.status);
-    return result.body;
+    const { status, body } = await this.summaries.finish(user, runId);
+    res.status(status);
+    return body;
   }
 
-  @Post(':runId/resume')
-  @HttpCode(202)
-  resume(@CurrentUser() user: AuthUser, @Param('runId') runId: string) {
-    return this.runs.resume(user.id, runId);
+  @Get('runs/:runId/summary')
+  getRunSummary(@CurrentUser() user: AuthUser, @Param('runId') runId: string) {
+    return this.summaries.get(user, runId);
   }
 
-  @Post(':runId/notes')
-  @HttpCode(201)
-  note(
-    @CurrentUser() user: AuthUser,
-    @Param('runId') runId: string,
-    @Body(new ZodProblemPipe(NoteSchema)) dto: { text: string },
-  ) {
-    return this.runs.addNote(user.id, runId, dto.text);
-  }
-
-  @Post(':runId/flags')
-  @HttpCode(201)
-  async flag(
-    @CurrentUser() user: AuthUser,
-    @Param('runId') runId: string,
-    @Body(new ZodProblemPipe(FlagSchema))
-    dto: { activityKey: string; reason: string },
-  ) {
-    await this.runs.flag(user.id, runId, dto);
-  }
-
-  @Get(':runId/summary')
-  summary(@CurrentUser() user: AuthUser, @Param('runId') runId: string) {
-    return this.runs.summary(user.id, runId);
+  /**
+   * Tệp phát hành của kịch bản theo `Run.releaseVersion`. Ngoài hợp đồng: thiết
+   * kế đặt tệp này trên CDN (§5.3.1, SD-08 chưa làm); khi chạy local thì API
+   * phục vụ thay. Cùng nội dung `/api/content/scenarios/:key` vốn đã mở.
+   */
+  @Get('releases/:version')
+  release(@Param('version') version: string) {
+    return this.runs.release(version);
   }
 }

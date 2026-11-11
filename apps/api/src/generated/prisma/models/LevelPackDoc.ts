@@ -14,7 +14,7 @@ import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
  * Model LevelPackDoc
- * Gói cấp của ca làm: công ty, quy định, nhịp thời gian (khối G).
+ * Gói cấp của ca làm: công ty, quy định, nhịp thời gian (Seed scenario khối G).
  */
 export type LevelPackDocModel = runtime.Types.Result.DefaultSelection<Prisma.$LevelPackDocPayload>
 

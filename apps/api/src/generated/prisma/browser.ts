@@ -59,29 +59,49 @@ export type GameProfile = Prisma.GameProfileModel
 export type ScenarioRun = Prisma.ScenarioRunModel
 /**
  * Model RunEvent
- * Chuỗi sự kiện của một lượt ca làm (ERD-05 `run_event`). Chỉ thêm, không sửa.
+ * ERD-05 `run_event`: lượt chơi là chuỗi sự kiện chỉ ghi thêm; trạng thái =
+ * fold các sự kiện qua `foldPlay` của game-core (§5.3.1). Đầu ra của model
+ * vào đây kèm nguồn gốc (model, prompt, chi phí, độ trễ) và không bao giờ
+ * được tính lại.
  */
 export type RunEvent = Prisma.RunEventModel
 /**
  * Model Answer
- * Một lượt của người chơi (ERD-06 `answer`). `id` do máy khách tạo (NFR-04).
+ * ERD-06 `answer`. `id` do máy khách tạo, nên gửi lại cùng câu là an toàn (NFR-04).
  */
 export type Answer = Prisma.AnswerModel
 /**
- * Model ScenarioFeedback
- * Tổng kết cuối ca (ERD-06 `scenario_feedback`). Chưa chấm điểm.
+ * Model Assessment
+ * ERD-06 `assessment`. Chưa có `model_config` (ERD-07): bộ model ghi ở `judge_result.model_id`.
  */
-export type ScenarioFeedback = Prisma.ScenarioFeedbackModel
+export type Assessment = Prisma.AssessmentModel
 /**
- * Model ContentFlag
- * Người chơi báo nội dung sai (ERD-05 `content_flag`).
+ * Model JudgeResult
+ * ERD-06 `judge_result`: một ghế của panel cho một câu trả lời.
  */
-export type ContentFlag = Prisma.ContentFlagModel
+export type JudgeResult = Prisma.JudgeResultModel
 /**
- * Model PlayerNote
- * Ghi chú riêng của người chơi trong sổ tay (khối M). Không gửi AI, không chấm.
+ * Model JudgeScore
+ * ERD-06 `judge_score`. Khoá tiêu chí là chuỗi (`a2-k1`) vì nội dung prototype
+ * chưa có bảng `rubric_criterion` (ERD-03). Thêm `rationale` ngoài ERD: lý do
+ * của judge là thứ chuyên gia đọc khi duyệt ca bị gắn cờ.
  */
-export type PlayerNote = Prisma.PlayerNoteModel
+export type JudgeScore = Prisma.JudgeScoreModel
+/**
+ * Model CriterionGrade
+ * ERD-06 `criterion_grade`: mức gộp của panel cho một tiêu chí.
+ */
+export type CriterionGrade = Prisma.CriterionGradeModel
+/**
+ * Model AiJob
+ * ERD-07 `ai_job`: một việc AI chạy ở worker.
+ */
+export type AiJob = Prisma.AiJobModel
+/**
+ * Model UsageCost
+ * ERD-07 `usage_cost`: sổ chi phí, một dòng mỗi lần gọi model (NFR-11).
+ */
+export type UsageCost = Prisma.UsageCostModel
 /**
  * Model RunEvidence
  * Bằng chứng do máy chủ chấm lại, không phải điều máy khách khai.
@@ -166,10 +186,12 @@ export type MetaDoc = Prisma.MetaDocModel
 /**
  * Model ShiftSeedDoc
  * Seed ca làm (Game Design W45), theo `shift.ShiftSeedSchema` của game-core.
+ * Lượt chơi ca làm dùng chung `ScenarioRun` (`flow = 'shift'`), `run_event`
+ * và `ai_job`; chỉ nội dung là cần bảng riêng.
  */
 export type ShiftSeedDoc = Prisma.ShiftSeedDocModel
 /**
  * Model LevelPackDoc
- * Gói cấp của ca làm: công ty, quy định, nhịp thời gian (khối G).
+ * Gói cấp của ca làm: công ty, quy định, nhịp thời gian (Seed scenario khối G).
  */
 export type LevelPackDoc = Prisma.LevelPackDocModel

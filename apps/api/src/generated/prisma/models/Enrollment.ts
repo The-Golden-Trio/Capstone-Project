@@ -187,7 +187,6 @@ export type EnrollmentWhereInput = {
   band?: Prisma.StringFilter<"Enrollment"> | string
   enrolledAt?: Prisma.DateTimeFilter<"Enrollment"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  runs?: Prisma.ScenarioRunListRelationFilter
 }
 
 export type EnrollmentOrderByWithRelationInput = {
@@ -197,7 +196,6 @@ export type EnrollmentOrderByWithRelationInput = {
   band?: Prisma.SortOrder
   enrolledAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
-  runs?: Prisma.ScenarioRunOrderByRelationAggregateInput
 }
 
 export type EnrollmentWhereUniqueInput = Prisma.AtLeast<{
@@ -211,7 +209,6 @@ export type EnrollmentWhereUniqueInput = Prisma.AtLeast<{
   band?: Prisma.StringFilter<"Enrollment"> | string
   enrolledAt?: Prisma.DateTimeFilter<"Enrollment"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  runs?: Prisma.ScenarioRunListRelationFilter
 }, "id" | "userId_roleCode_band">
 
 export type EnrollmentOrderByWithAggregationInput = {
@@ -242,7 +239,6 @@ export type EnrollmentCreateInput = {
   band: string
   enrolledAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutEnrollmentsInput
-  runs?: Prisma.ScenarioRunCreateNestedManyWithoutEnrolmentInput
 }
 
 export type EnrollmentUncheckedCreateInput = {
@@ -251,7 +247,6 @@ export type EnrollmentUncheckedCreateInput = {
   roleCode: string
   band: string
   enrolledAt?: Date | string
-  runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutEnrolmentInput
 }
 
 export type EnrollmentUpdateInput = {
@@ -260,7 +255,6 @@ export type EnrollmentUpdateInput = {
   band?: Prisma.StringFieldUpdateOperationsInput | string
   enrolledAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutEnrollmentsNestedInput
-  runs?: Prisma.ScenarioRunUpdateManyWithoutEnrolmentNestedInput
 }
 
 export type EnrollmentUncheckedUpdateInput = {
@@ -269,7 +263,6 @@ export type EnrollmentUncheckedUpdateInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   enrolledAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutEnrolmentNestedInput
 }
 
 export type EnrollmentCreateManyInput = {
@@ -303,11 +296,6 @@ export type EnrollmentListRelationFilter = {
 
 export type EnrollmentOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
-}
-
-export type EnrollmentNullableScalarRelationFilter = {
-  is?: Prisma.EnrollmentWhereInput | null
-  isNot?: Prisma.EnrollmentWhereInput | null
 }
 
 export type EnrollmentUserIdRoleCodeBandCompoundUniqueInput = {
@@ -382,28 +370,11 @@ export type EnrollmentUncheckedUpdateManyWithoutUserNestedInput = {
   deleteMany?: Prisma.EnrollmentScalarWhereInput | Prisma.EnrollmentScalarWhereInput[]
 }
 
-export type EnrollmentCreateNestedOneWithoutRunsInput = {
-  create?: Prisma.XOR<Prisma.EnrollmentCreateWithoutRunsInput, Prisma.EnrollmentUncheckedCreateWithoutRunsInput>
-  connectOrCreate?: Prisma.EnrollmentCreateOrConnectWithoutRunsInput
-  connect?: Prisma.EnrollmentWhereUniqueInput
-}
-
-export type EnrollmentUpdateOneWithoutRunsNestedInput = {
-  create?: Prisma.XOR<Prisma.EnrollmentCreateWithoutRunsInput, Prisma.EnrollmentUncheckedCreateWithoutRunsInput>
-  connectOrCreate?: Prisma.EnrollmentCreateOrConnectWithoutRunsInput
-  upsert?: Prisma.EnrollmentUpsertWithoutRunsInput
-  disconnect?: Prisma.EnrollmentWhereInput | boolean
-  delete?: Prisma.EnrollmentWhereInput | boolean
-  connect?: Prisma.EnrollmentWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EnrollmentUpdateToOneWithWhereWithoutRunsInput, Prisma.EnrollmentUpdateWithoutRunsInput>, Prisma.EnrollmentUncheckedUpdateWithoutRunsInput>
-}
-
 export type EnrollmentCreateWithoutUserInput = {
   id?: string
   roleCode: string
   band: string
   enrolledAt?: Date | string
-  runs?: Prisma.ScenarioRunCreateNestedManyWithoutEnrolmentInput
 }
 
 export type EnrollmentUncheckedCreateWithoutUserInput = {
@@ -411,7 +382,6 @@ export type EnrollmentUncheckedCreateWithoutUserInput = {
   roleCode: string
   band: string
   enrolledAt?: Date | string
-  runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutEnrolmentInput
 }
 
 export type EnrollmentCreateOrConnectWithoutUserInput = {
@@ -451,54 +421,6 @@ export type EnrollmentScalarWhereInput = {
   enrolledAt?: Prisma.DateTimeFilter<"Enrollment"> | Date | string
 }
 
-export type EnrollmentCreateWithoutRunsInput = {
-  id?: string
-  roleCode: string
-  band: string
-  enrolledAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutEnrollmentsInput
-}
-
-export type EnrollmentUncheckedCreateWithoutRunsInput = {
-  id?: string
-  userId: string
-  roleCode: string
-  band: string
-  enrolledAt?: Date | string
-}
-
-export type EnrollmentCreateOrConnectWithoutRunsInput = {
-  where: Prisma.EnrollmentWhereUniqueInput
-  create: Prisma.XOR<Prisma.EnrollmentCreateWithoutRunsInput, Prisma.EnrollmentUncheckedCreateWithoutRunsInput>
-}
-
-export type EnrollmentUpsertWithoutRunsInput = {
-  update: Prisma.XOR<Prisma.EnrollmentUpdateWithoutRunsInput, Prisma.EnrollmentUncheckedUpdateWithoutRunsInput>
-  create: Prisma.XOR<Prisma.EnrollmentCreateWithoutRunsInput, Prisma.EnrollmentUncheckedCreateWithoutRunsInput>
-  where?: Prisma.EnrollmentWhereInput
-}
-
-export type EnrollmentUpdateToOneWithWhereWithoutRunsInput = {
-  where?: Prisma.EnrollmentWhereInput
-  data: Prisma.XOR<Prisma.EnrollmentUpdateWithoutRunsInput, Prisma.EnrollmentUncheckedUpdateWithoutRunsInput>
-}
-
-export type EnrollmentUpdateWithoutRunsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
-  band?: Prisma.StringFieldUpdateOperationsInput | string
-  enrolledAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutEnrollmentsNestedInput
-}
-
-export type EnrollmentUncheckedUpdateWithoutRunsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
-  roleCode?: Prisma.StringFieldUpdateOperationsInput | string
-  band?: Prisma.StringFieldUpdateOperationsInput | string
-  enrolledAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
 export type EnrollmentCreateManyUserInput = {
   id?: string
   roleCode: string
@@ -511,7 +433,6 @@ export type EnrollmentUpdateWithoutUserInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   enrolledAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  runs?: Prisma.ScenarioRunUpdateManyWithoutEnrolmentNestedInput
 }
 
 export type EnrollmentUncheckedUpdateWithoutUserInput = {
@@ -519,7 +440,6 @@ export type EnrollmentUncheckedUpdateWithoutUserInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   enrolledAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutEnrolmentNestedInput
 }
 
 export type EnrollmentUncheckedUpdateManyWithoutUserInput = {
@@ -530,35 +450,6 @@ export type EnrollmentUncheckedUpdateManyWithoutUserInput = {
 }
 
 
-/**
- * Count Type EnrollmentCountOutputType
- */
-
-export type EnrollmentCountOutputType = {
-  runs: number
-}
-
-export type EnrollmentCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  runs?: boolean | EnrollmentCountOutputTypeCountRunsArgs
-}
-
-/**
- * EnrollmentCountOutputType without action
- */
-export type EnrollmentCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the EnrollmentCountOutputType
-   */
-  select?: Prisma.EnrollmentCountOutputTypeSelect<ExtArgs> | null
-}
-
-/**
- * EnrollmentCountOutputType without action
- */
-export type EnrollmentCountOutputTypeCountRunsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ScenarioRunWhereInput
-}
-
 
 export type EnrollmentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -567,8 +458,6 @@ export type EnrollmentSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   band?: boolean
   enrolledAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  runs?: boolean | Prisma.Enrollment$runsArgs<ExtArgs>
-  _count?: boolean | Prisma.EnrollmentCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["enrollment"]>
 
 export type EnrollmentSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -600,8 +489,6 @@ export type EnrollmentSelectScalar = {
 export type EnrollmentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "roleCode" | "band" | "enrolledAt", ExtArgs["result"]["enrollment"]>
 export type EnrollmentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  runs?: boolean | Prisma.Enrollment$runsArgs<ExtArgs>
-  _count?: boolean | Prisma.EnrollmentCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type EnrollmentIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -614,7 +501,6 @@ export type $EnrollmentPayload<ExtArgs extends runtime.Types.Extensions.Internal
   name: "Enrollment"
   objects: {
     user: Prisma.$UserPayload<ExtArgs>
-    runs: Prisma.$ScenarioRunPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1017,7 +903,6 @@ readonly fields: EnrollmentFieldRefs;
 export interface Prisma__EnrollmentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  runs<T extends Prisma.Enrollment$runsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Enrollment$runsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ScenarioRunPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1450,30 +1335,6 @@ export type EnrollmentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.In
    * Limit how many Enrollments to delete.
    */
   limit?: number
-}
-
-/**
- * Enrollment.runs
- */
-export type Enrollment$runsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the ScenarioRun
-   */
-  select?: Prisma.ScenarioRunSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the ScenarioRun
-   */
-  omit?: Prisma.ScenarioRunOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ScenarioRunInclude<ExtArgs> | null
-  where?: Prisma.ScenarioRunWhereInput
-  orderBy?: Prisma.ScenarioRunOrderByWithRelationInput | Prisma.ScenarioRunOrderByWithRelationInput[]
-  cursor?: Prisma.ScenarioRunWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ScenarioRunScalarFieldEnum | Prisma.ScenarioRunScalarFieldEnum[]
 }
 
 /**

@@ -15,6 +15,8 @@ import type * as Prisma from "../internal/prismaNamespace.js"
 /**
  * Model ShiftSeedDoc
  * Seed ca làm (Game Design W45), theo `shift.ShiftSeedSchema` của game-core.
+ * Lượt chơi ca làm dùng chung `ScenarioRun` (`flow = 'shift'`), `run_event`
+ * và `ai_job`; chỉ nội dung là cần bảng riêng.
  */
 export type ShiftSeedDocModel = runtime.Types.Result.DefaultSelection<Prisma.$ShiftSeedDocPayload>
 

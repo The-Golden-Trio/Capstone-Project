@@ -14,7 +14,7 @@ import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
  * Model Answer
- * Một lượt của người chơi (ERD-06 `answer`). `id` do máy khách tạo (NFR-04).
+ * ERD-06 `answer`. `id` do máy khách tạo, nên gửi lại cùng câu là an toàn (NFR-04).
  */
 export type AnswerModel = runtime.Types.Result.DefaultSelection<Prisma.$AnswerPayload>
 
@@ -27,105 +27,99 @@ export type AggregateAnswer = {
 }
 
 export type AnswerAvgAggregateOutputType = {
-  lineFrom: number | null
-  lineTo: number | null
+  followupNo: number | null
+  systemScore: number | null
 }
 
 export type AnswerSumAggregateOutputType = {
-  lineFrom: number | null
-  lineTo: number | null
+  followupNo: number | null
+  systemScore: number | null
 }
 
 export type AnswerMinAggregateOutputType = {
   id: string | null
   runId: string | null
-  kind: string | null
+  activityKey: string | null
+  followupNo: number | null
+  followupQuestion: string | null
+  taskType: string | null
   text: string | null
-  status: $Enums.TurnStatus | null
-  jobId: string | null
-  lineFrom: number | null
-  lineTo: number | null
+  systemScore: number | null
   submittedAt: Date | null
-  completedAt: Date | null
 }
 
 export type AnswerMaxAggregateOutputType = {
   id: string | null
   runId: string | null
-  kind: string | null
+  activityKey: string | null
+  followupNo: number | null
+  followupQuestion: string | null
+  taskType: string | null
   text: string | null
-  status: $Enums.TurnStatus | null
-  jobId: string | null
-  lineFrom: number | null
-  lineTo: number | null
+  systemScore: number | null
   submittedAt: Date | null
-  completedAt: Date | null
 }
 
 export type AnswerCountAggregateOutputType = {
   id: number
   runId: number
-  kind: number
+  activityKey: number
+  followupNo: number
+  followupQuestion: number
+  taskType: number
   text: number
-  payload: number
-  status: number
-  jobId: number
-  lineFrom: number
-  lineTo: number
+  selection: number
+  systemScore: number
   submittedAt: number
-  completedAt: number
   _all: number
 }
 
 
 export type AnswerAvgAggregateInputType = {
-  lineFrom?: true
-  lineTo?: true
+  followupNo?: true
+  systemScore?: true
 }
 
 export type AnswerSumAggregateInputType = {
-  lineFrom?: true
-  lineTo?: true
+  followupNo?: true
+  systemScore?: true
 }
 
 export type AnswerMinAggregateInputType = {
   id?: true
   runId?: true
-  kind?: true
+  activityKey?: true
+  followupNo?: true
+  followupQuestion?: true
+  taskType?: true
   text?: true
-  status?: true
-  jobId?: true
-  lineFrom?: true
-  lineTo?: true
+  systemScore?: true
   submittedAt?: true
-  completedAt?: true
 }
 
 export type AnswerMaxAggregateInputType = {
   id?: true
   runId?: true
-  kind?: true
+  activityKey?: true
+  followupNo?: true
+  followupQuestion?: true
+  taskType?: true
   text?: true
-  status?: true
-  jobId?: true
-  lineFrom?: true
-  lineTo?: true
+  systemScore?: true
   submittedAt?: true
-  completedAt?: true
 }
 
 export type AnswerCountAggregateInputType = {
   id?: true
   runId?: true
-  kind?: true
+  activityKey?: true
+  followupNo?: true
+  followupQuestion?: true
+  taskType?: true
   text?: true
-  payload?: true
-  status?: true
-  jobId?: true
-  lineFrom?: true
-  lineTo?: true
+  selection?: true
+  systemScore?: true
   submittedAt?: true
-  completedAt?: true
   _all?: true
 }
 
@@ -218,15 +212,14 @@ export type AnswerGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 export type AnswerGroupByOutputType = {
   id: string
   runId: string
-  kind: string
+  activityKey: string
+  followupNo: number
+  followupQuestion: string | null
+  taskType: string
   text: string | null
-  payload: runtime.JsonValue
-  status: $Enums.TurnStatus
-  jobId: string | null
-  lineFrom: number
-  lineTo: number | null
+  selection: runtime.JsonValue | null
+  systemScore: number | null
   submittedAt: Date
-  completedAt: Date | null
   _count: AnswerCountAggregateOutputType | null
   _avg: AnswerAvgAggregateOutputType | null
   _sum: AnswerSumAggregateOutputType | null
@@ -255,63 +248,63 @@ export type AnswerWhereInput = {
   NOT?: Prisma.AnswerWhereInput | Prisma.AnswerWhereInput[]
   id?: Prisma.StringFilter<"Answer"> | string
   runId?: Prisma.StringFilter<"Answer"> | string
-  kind?: Prisma.StringFilter<"Answer"> | string
+  activityKey?: Prisma.StringFilter<"Answer"> | string
+  followupNo?: Prisma.IntFilter<"Answer"> | number
+  followupQuestion?: Prisma.StringNullableFilter<"Answer"> | string | null
+  taskType?: Prisma.StringFilter<"Answer"> | string
   text?: Prisma.StringNullableFilter<"Answer"> | string | null
-  payload?: Prisma.JsonFilter<"Answer">
-  status?: Prisma.EnumTurnStatusFilter<"Answer"> | $Enums.TurnStatus
-  jobId?: Prisma.StringNullableFilter<"Answer"> | string | null
-  lineFrom?: Prisma.IntFilter<"Answer"> | number
-  lineTo?: Prisma.IntNullableFilter<"Answer"> | number | null
+  selection?: Prisma.JsonNullableFilter<"Answer">
+  systemScore?: Prisma.IntNullableFilter<"Answer"> | number | null
   submittedAt?: Prisma.DateTimeFilter<"Answer"> | Date | string
-  completedAt?: Prisma.DateTimeNullableFilter<"Answer"> | Date | string | null
   run?: Prisma.XOR<Prisma.ScenarioRunScalarRelationFilter, Prisma.ScenarioRunWhereInput>
+  assessment?: Prisma.XOR<Prisma.AssessmentNullableScalarRelationFilter, Prisma.AssessmentWhereInput> | null
 }
 
 export type AnswerOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   runId?: Prisma.SortOrder
-  kind?: Prisma.SortOrder
+  activityKey?: Prisma.SortOrder
+  followupNo?: Prisma.SortOrder
+  followupQuestion?: Prisma.SortOrderInput | Prisma.SortOrder
+  taskType?: Prisma.SortOrder
   text?: Prisma.SortOrderInput | Prisma.SortOrder
-  payload?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  jobId?: Prisma.SortOrderInput | Prisma.SortOrder
-  lineFrom?: Prisma.SortOrder
-  lineTo?: Prisma.SortOrderInput | Prisma.SortOrder
+  selection?: Prisma.SortOrderInput | Prisma.SortOrder
+  systemScore?: Prisma.SortOrderInput | Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
-  completedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   run?: Prisma.ScenarioRunOrderByWithRelationInput
+  assessment?: Prisma.AssessmentOrderByWithRelationInput
 }
 
 export type AnswerWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  runId_activityKey_followupNo?: Prisma.AnswerRunIdActivityKeyFollowupNoCompoundUniqueInput
   AND?: Prisma.AnswerWhereInput | Prisma.AnswerWhereInput[]
   OR?: Prisma.AnswerWhereInput[]
   NOT?: Prisma.AnswerWhereInput | Prisma.AnswerWhereInput[]
   runId?: Prisma.StringFilter<"Answer"> | string
-  kind?: Prisma.StringFilter<"Answer"> | string
+  activityKey?: Prisma.StringFilter<"Answer"> | string
+  followupNo?: Prisma.IntFilter<"Answer"> | number
+  followupQuestion?: Prisma.StringNullableFilter<"Answer"> | string | null
+  taskType?: Prisma.StringFilter<"Answer"> | string
   text?: Prisma.StringNullableFilter<"Answer"> | string | null
-  payload?: Prisma.JsonFilter<"Answer">
-  status?: Prisma.EnumTurnStatusFilter<"Answer"> | $Enums.TurnStatus
-  jobId?: Prisma.StringNullableFilter<"Answer"> | string | null
-  lineFrom?: Prisma.IntFilter<"Answer"> | number
-  lineTo?: Prisma.IntNullableFilter<"Answer"> | number | null
+  selection?: Prisma.JsonNullableFilter<"Answer">
+  systemScore?: Prisma.IntNullableFilter<"Answer"> | number | null
   submittedAt?: Prisma.DateTimeFilter<"Answer"> | Date | string
-  completedAt?: Prisma.DateTimeNullableFilter<"Answer"> | Date | string | null
   run?: Prisma.XOR<Prisma.ScenarioRunScalarRelationFilter, Prisma.ScenarioRunWhereInput>
-}, "id">
+  assessment?: Prisma.XOR<Prisma.AssessmentNullableScalarRelationFilter, Prisma.AssessmentWhereInput> | null
+}, "id" | "runId_activityKey_followupNo">
 
 export type AnswerOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   runId?: Prisma.SortOrder
-  kind?: Prisma.SortOrder
+  activityKey?: Prisma.SortOrder
+  followupNo?: Prisma.SortOrder
+  followupQuestion?: Prisma.SortOrderInput | Prisma.SortOrder
+  taskType?: Prisma.SortOrder
   text?: Prisma.SortOrderInput | Prisma.SortOrder
-  payload?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  jobId?: Prisma.SortOrderInput | Prisma.SortOrder
-  lineFrom?: Prisma.SortOrder
-  lineTo?: Prisma.SortOrderInput | Prisma.SortOrder
+  selection?: Prisma.SortOrderInput | Prisma.SortOrder
+  systemScore?: Prisma.SortOrderInput | Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
-  completedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.AnswerCountOrderByAggregateInput
   _avg?: Prisma.AnswerAvgOrderByAggregateInput
   _max?: Prisma.AnswerMaxOrderByAggregateInput
@@ -325,112 +318,108 @@ export type AnswerScalarWhereWithAggregatesInput = {
   NOT?: Prisma.AnswerScalarWhereWithAggregatesInput | Prisma.AnswerScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Answer"> | string
   runId?: Prisma.StringWithAggregatesFilter<"Answer"> | string
-  kind?: Prisma.StringWithAggregatesFilter<"Answer"> | string
+  activityKey?: Prisma.StringWithAggregatesFilter<"Answer"> | string
+  followupNo?: Prisma.IntWithAggregatesFilter<"Answer"> | number
+  followupQuestion?: Prisma.StringNullableWithAggregatesFilter<"Answer"> | string | null
+  taskType?: Prisma.StringWithAggregatesFilter<"Answer"> | string
   text?: Prisma.StringNullableWithAggregatesFilter<"Answer"> | string | null
-  payload?: Prisma.JsonWithAggregatesFilter<"Answer">
-  status?: Prisma.EnumTurnStatusWithAggregatesFilter<"Answer"> | $Enums.TurnStatus
-  jobId?: Prisma.StringNullableWithAggregatesFilter<"Answer"> | string | null
-  lineFrom?: Prisma.IntWithAggregatesFilter<"Answer"> | number
-  lineTo?: Prisma.IntNullableWithAggregatesFilter<"Answer"> | number | null
+  selection?: Prisma.JsonNullableWithAggregatesFilter<"Answer">
+  systemScore?: Prisma.IntNullableWithAggregatesFilter<"Answer"> | number | null
   submittedAt?: Prisma.DateTimeWithAggregatesFilter<"Answer"> | Date | string
-  completedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Answer"> | Date | string | null
 }
 
 export type AnswerCreateInput = {
   id: string
-  kind: string
+  activityKey: string
+  followupNo: number
+  followupQuestion?: string | null
+  taskType: string
   text?: string | null
-  payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: $Enums.TurnStatus
-  jobId?: string | null
-  lineFrom: number
-  lineTo?: number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: number | null
   submittedAt?: Date | string
-  completedAt?: Date | string | null
   run: Prisma.ScenarioRunCreateNestedOneWithoutAnswersInput
+  assessment?: Prisma.AssessmentCreateNestedOneWithoutAnswerInput
 }
 
 export type AnswerUncheckedCreateInput = {
   id: string
   runId: string
-  kind: string
+  activityKey: string
+  followupNo: number
+  followupQuestion?: string | null
+  taskType: string
   text?: string | null
-  payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: $Enums.TurnStatus
-  jobId?: string | null
-  lineFrom: number
-  lineTo?: number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: number | null
   submittedAt?: Date | string
-  completedAt?: Date | string | null
+  assessment?: Prisma.AssessmentUncheckedCreateNestedOneWithoutAnswerInput
 }
 
 export type AnswerUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
   text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: Prisma.EnumTurnStatusFieldUpdateOperationsInput | $Enums.TurnStatus
-  jobId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lineFrom?: Prisma.IntFieldUpdateOperationsInput | number
-  lineTo?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   run?: Prisma.ScenarioRunUpdateOneRequiredWithoutAnswersNestedInput
+  assessment?: Prisma.AssessmentUpdateOneWithoutAnswerNestedInput
 }
 
 export type AnswerUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   runId?: Prisma.StringFieldUpdateOperationsInput | string
-  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
   text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: Prisma.EnumTurnStatusFieldUpdateOperationsInput | $Enums.TurnStatus
-  jobId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lineFrom?: Prisma.IntFieldUpdateOperationsInput | number
-  lineTo?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  assessment?: Prisma.AssessmentUncheckedUpdateOneWithoutAnswerNestedInput
 }
 
 export type AnswerCreateManyInput = {
   id: string
   runId: string
-  kind: string
+  activityKey: string
+  followupNo: number
+  followupQuestion?: string | null
+  taskType: string
   text?: string | null
-  payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: $Enums.TurnStatus
-  jobId?: string | null
-  lineFrom: number
-  lineTo?: number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: number | null
   submittedAt?: Date | string
-  completedAt?: Date | string | null
 }
 
 export type AnswerUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
   text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: Prisma.EnumTurnStatusFieldUpdateOperationsInput | $Enums.TurnStatus
-  jobId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lineFrom?: Prisma.IntFieldUpdateOperationsInput | number
-  lineTo?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AnswerUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   runId?: Prisma.StringFieldUpdateOperationsInput | string
-  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
   text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: Prisma.EnumTurnStatusFieldUpdateOperationsInput | $Enums.TurnStatus
-  jobId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lineFrom?: Prisma.IntFieldUpdateOperationsInput | number
-  lineTo?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AnswerListRelationFilter = {
@@ -443,54 +432,62 @@ export type AnswerOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
+export type AnswerRunIdActivityKeyFollowupNoCompoundUniqueInput = {
+  runId: string
+  activityKey: string
+  followupNo: number
+}
+
 export type AnswerCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   runId?: Prisma.SortOrder
-  kind?: Prisma.SortOrder
+  activityKey?: Prisma.SortOrder
+  followupNo?: Prisma.SortOrder
+  followupQuestion?: Prisma.SortOrder
+  taskType?: Prisma.SortOrder
   text?: Prisma.SortOrder
-  payload?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  jobId?: Prisma.SortOrder
-  lineFrom?: Prisma.SortOrder
-  lineTo?: Prisma.SortOrder
+  selection?: Prisma.SortOrder
+  systemScore?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
-  completedAt?: Prisma.SortOrder
 }
 
 export type AnswerAvgOrderByAggregateInput = {
-  lineFrom?: Prisma.SortOrder
-  lineTo?: Prisma.SortOrder
+  followupNo?: Prisma.SortOrder
+  systemScore?: Prisma.SortOrder
 }
 
 export type AnswerMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   runId?: Prisma.SortOrder
-  kind?: Prisma.SortOrder
+  activityKey?: Prisma.SortOrder
+  followupNo?: Prisma.SortOrder
+  followupQuestion?: Prisma.SortOrder
+  taskType?: Prisma.SortOrder
   text?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  jobId?: Prisma.SortOrder
-  lineFrom?: Prisma.SortOrder
-  lineTo?: Prisma.SortOrder
+  systemScore?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
-  completedAt?: Prisma.SortOrder
 }
 
 export type AnswerMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   runId?: Prisma.SortOrder
-  kind?: Prisma.SortOrder
+  activityKey?: Prisma.SortOrder
+  followupNo?: Prisma.SortOrder
+  followupQuestion?: Prisma.SortOrder
+  taskType?: Prisma.SortOrder
   text?: Prisma.SortOrder
-  status?: Prisma.SortOrder
-  jobId?: Prisma.SortOrder
-  lineFrom?: Prisma.SortOrder
-  lineTo?: Prisma.SortOrder
+  systemScore?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
-  completedAt?: Prisma.SortOrder
 }
 
 export type AnswerSumOrderByAggregateInput = {
-  lineFrom?: Prisma.SortOrder
-  lineTo?: Prisma.SortOrder
+  followupNo?: Prisma.SortOrder
+  systemScore?: Prisma.SortOrder
+}
+
+export type AnswerScalarRelationFilter = {
+  is?: Prisma.AnswerWhereInput
+  isNot?: Prisma.AnswerWhereInput
 }
 
 export type AnswerCreateNestedManyWithoutRunInput = {
@@ -535,34 +532,44 @@ export type AnswerUncheckedUpdateManyWithoutRunNestedInput = {
   deleteMany?: Prisma.AnswerScalarWhereInput | Prisma.AnswerScalarWhereInput[]
 }
 
-export type EnumTurnStatusFieldUpdateOperationsInput = {
-  set?: $Enums.TurnStatus
+export type AnswerCreateNestedOneWithoutAssessmentInput = {
+  create?: Prisma.XOR<Prisma.AnswerCreateWithoutAssessmentInput, Prisma.AnswerUncheckedCreateWithoutAssessmentInput>
+  connectOrCreate?: Prisma.AnswerCreateOrConnectWithoutAssessmentInput
+  connect?: Prisma.AnswerWhereUniqueInput
+}
+
+export type AnswerUpdateOneRequiredWithoutAssessmentNestedInput = {
+  create?: Prisma.XOR<Prisma.AnswerCreateWithoutAssessmentInput, Prisma.AnswerUncheckedCreateWithoutAssessmentInput>
+  connectOrCreate?: Prisma.AnswerCreateOrConnectWithoutAssessmentInput
+  upsert?: Prisma.AnswerUpsertWithoutAssessmentInput
+  connect?: Prisma.AnswerWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AnswerUpdateToOneWithWhereWithoutAssessmentInput, Prisma.AnswerUpdateWithoutAssessmentInput>, Prisma.AnswerUncheckedUpdateWithoutAssessmentInput>
 }
 
 export type AnswerCreateWithoutRunInput = {
   id: string
-  kind: string
+  activityKey: string
+  followupNo: number
+  followupQuestion?: string | null
+  taskType: string
   text?: string | null
-  payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: $Enums.TurnStatus
-  jobId?: string | null
-  lineFrom: number
-  lineTo?: number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: number | null
   submittedAt?: Date | string
-  completedAt?: Date | string | null
+  assessment?: Prisma.AssessmentCreateNestedOneWithoutAnswerInput
 }
 
 export type AnswerUncheckedCreateWithoutRunInput = {
   id: string
-  kind: string
+  activityKey: string
+  followupNo: number
+  followupQuestion?: string | null
+  taskType: string
   text?: string | null
-  payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: $Enums.TurnStatus
-  jobId?: string | null
-  lineFrom: number
-  lineTo?: number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: number | null
   submittedAt?: Date | string
-  completedAt?: Date | string | null
+  assessment?: Prisma.AssessmentUncheckedCreateNestedOneWithoutAnswerInput
 }
 
 export type AnswerCreateOrConnectWithoutRunInput = {
@@ -597,67 +604,132 @@ export type AnswerScalarWhereInput = {
   NOT?: Prisma.AnswerScalarWhereInput | Prisma.AnswerScalarWhereInput[]
   id?: Prisma.StringFilter<"Answer"> | string
   runId?: Prisma.StringFilter<"Answer"> | string
-  kind?: Prisma.StringFilter<"Answer"> | string
+  activityKey?: Prisma.StringFilter<"Answer"> | string
+  followupNo?: Prisma.IntFilter<"Answer"> | number
+  followupQuestion?: Prisma.StringNullableFilter<"Answer"> | string | null
+  taskType?: Prisma.StringFilter<"Answer"> | string
   text?: Prisma.StringNullableFilter<"Answer"> | string | null
-  payload?: Prisma.JsonFilter<"Answer">
-  status?: Prisma.EnumTurnStatusFilter<"Answer"> | $Enums.TurnStatus
-  jobId?: Prisma.StringNullableFilter<"Answer"> | string | null
-  lineFrom?: Prisma.IntFilter<"Answer"> | number
-  lineTo?: Prisma.IntNullableFilter<"Answer"> | number | null
+  selection?: Prisma.JsonNullableFilter<"Answer">
+  systemScore?: Prisma.IntNullableFilter<"Answer"> | number | null
   submittedAt?: Prisma.DateTimeFilter<"Answer"> | Date | string
-  completedAt?: Prisma.DateTimeNullableFilter<"Answer"> | Date | string | null
+}
+
+export type AnswerCreateWithoutAssessmentInput = {
+  id: string
+  activityKey: string
+  followupNo: number
+  followupQuestion?: string | null
+  taskType: string
+  text?: string | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: number | null
+  submittedAt?: Date | string
+  run: Prisma.ScenarioRunCreateNestedOneWithoutAnswersInput
+}
+
+export type AnswerUncheckedCreateWithoutAssessmentInput = {
+  id: string
+  runId: string
+  activityKey: string
+  followupNo: number
+  followupQuestion?: string | null
+  taskType: string
+  text?: string | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: number | null
+  submittedAt?: Date | string
+}
+
+export type AnswerCreateOrConnectWithoutAssessmentInput = {
+  where: Prisma.AnswerWhereUniqueInput
+  create: Prisma.XOR<Prisma.AnswerCreateWithoutAssessmentInput, Prisma.AnswerUncheckedCreateWithoutAssessmentInput>
+}
+
+export type AnswerUpsertWithoutAssessmentInput = {
+  update: Prisma.XOR<Prisma.AnswerUpdateWithoutAssessmentInput, Prisma.AnswerUncheckedUpdateWithoutAssessmentInput>
+  create: Prisma.XOR<Prisma.AnswerCreateWithoutAssessmentInput, Prisma.AnswerUncheckedCreateWithoutAssessmentInput>
+  where?: Prisma.AnswerWhereInput
+}
+
+export type AnswerUpdateToOneWithWhereWithoutAssessmentInput = {
+  where?: Prisma.AnswerWhereInput
+  data: Prisma.XOR<Prisma.AnswerUpdateWithoutAssessmentInput, Prisma.AnswerUncheckedUpdateWithoutAssessmentInput>
+}
+
+export type AnswerUpdateWithoutAssessmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
+  text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  run?: Prisma.ScenarioRunUpdateOneRequiredWithoutAnswersNestedInput
+}
+
+export type AnswerUncheckedUpdateWithoutAssessmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  runId?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
+  text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type AnswerCreateManyRunInput = {
   id: string
-  kind: string
+  activityKey: string
+  followupNo: number
+  followupQuestion?: string | null
+  taskType: string
   text?: string | null
-  payload: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: $Enums.TurnStatus
-  jobId?: string | null
-  lineFrom: number
-  lineTo?: number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: number | null
   submittedAt?: Date | string
-  completedAt?: Date | string | null
 }
 
 export type AnswerUpdateWithoutRunInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
   text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: Prisma.EnumTurnStatusFieldUpdateOperationsInput | $Enums.TurnStatus
-  jobId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lineFrom?: Prisma.IntFieldUpdateOperationsInput | number
-  lineTo?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  assessment?: Prisma.AssessmentUpdateOneWithoutAnswerNestedInput
 }
 
 export type AnswerUncheckedUpdateWithoutRunInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
   text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: Prisma.EnumTurnStatusFieldUpdateOperationsInput | $Enums.TurnStatus
-  jobId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lineFrom?: Prisma.IntFieldUpdateOperationsInput | number
-  lineTo?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  assessment?: Prisma.AssessmentUncheckedUpdateOneWithoutAnswerNestedInput
 }
 
 export type AnswerUncheckedUpdateManyWithoutRunInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  activityKey?: Prisma.StringFieldUpdateOperationsInput | string
+  followupNo?: Prisma.IntFieldUpdateOperationsInput | number
+  followupQuestion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  taskType?: Prisma.StringFieldUpdateOperationsInput | string
   text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  payload?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  status?: Prisma.EnumTurnStatusFieldUpdateOperationsInput | $Enums.TurnStatus
-  jobId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lineFrom?: Prisma.IntFieldUpdateOperationsInput | number
-  lineTo?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  selection?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  systemScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 
@@ -665,65 +737,63 @@ export type AnswerUncheckedUpdateManyWithoutRunInput = {
 export type AnswerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   runId?: boolean
-  kind?: boolean
+  activityKey?: boolean
+  followupNo?: boolean
+  followupQuestion?: boolean
+  taskType?: boolean
   text?: boolean
-  payload?: boolean
-  status?: boolean
-  jobId?: boolean
-  lineFrom?: boolean
-  lineTo?: boolean
+  selection?: boolean
+  systemScore?: boolean
   submittedAt?: boolean
-  completedAt?: boolean
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
+  assessment?: boolean | Prisma.Answer$assessmentArgs<ExtArgs>
 }, ExtArgs["result"]["answer"]>
 
 export type AnswerSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   runId?: boolean
-  kind?: boolean
+  activityKey?: boolean
+  followupNo?: boolean
+  followupQuestion?: boolean
+  taskType?: boolean
   text?: boolean
-  payload?: boolean
-  status?: boolean
-  jobId?: boolean
-  lineFrom?: boolean
-  lineTo?: boolean
+  selection?: boolean
+  systemScore?: boolean
   submittedAt?: boolean
-  completedAt?: boolean
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["answer"]>
 
 export type AnswerSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   runId?: boolean
-  kind?: boolean
+  activityKey?: boolean
+  followupNo?: boolean
+  followupQuestion?: boolean
+  taskType?: boolean
   text?: boolean
-  payload?: boolean
-  status?: boolean
-  jobId?: boolean
-  lineFrom?: boolean
-  lineTo?: boolean
+  selection?: boolean
+  systemScore?: boolean
   submittedAt?: boolean
-  completedAt?: boolean
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["answer"]>
 
 export type AnswerSelectScalar = {
   id?: boolean
   runId?: boolean
-  kind?: boolean
+  activityKey?: boolean
+  followupNo?: boolean
+  followupQuestion?: boolean
+  taskType?: boolean
   text?: boolean
-  payload?: boolean
-  status?: boolean
-  jobId?: boolean
-  lineFrom?: boolean
-  lineTo?: boolean
+  selection?: boolean
+  systemScore?: boolean
   submittedAt?: boolean
-  completedAt?: boolean
 }
 
-export type AnswerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "runId" | "kind" | "text" | "payload" | "status" | "jobId" | "lineFrom" | "lineTo" | "submittedAt" | "completedAt", ExtArgs["result"]["answer"]>
+export type AnswerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "runId" | "activityKey" | "followupNo" | "followupQuestion" | "taskType" | "text" | "selection" | "systemScore" | "submittedAt", ExtArgs["result"]["answer"]>
 export type AnswerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
+  assessment?: boolean | Prisma.Answer$assessmentArgs<ExtArgs>
 }
 export type AnswerIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   run?: boolean | Prisma.ScenarioRunDefaultArgs<ExtArgs>
@@ -736,25 +806,22 @@ export type $AnswerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   name: "Answer"
   objects: {
     run: Prisma.$ScenarioRunPayload<ExtArgs>
+    assessment: Prisma.$AssessmentPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     runId: string
-    kind: string
+    activityKey: string
+    followupNo: number
+    followupQuestion: string | null
+    taskType: string
     text: string | null
-    payload: runtime.JsonValue
-    status: $Enums.TurnStatus
+    selection: runtime.JsonValue | null
     /**
-     * Job xử lý lượt này, khi cần AI.
+     * Mức của câu đóng, chấm bằng khoá của chuyên gia.
      */
-    jobId: string | null
-    /**
-     * Các dòng thoại lượt này sinh ra: `[lineFrom, lineTo)` trong transcript.
-     */
-    lineFrom: number
-    lineTo: number | null
+    systemScore: number | null
     submittedAt: Date
-    completedAt: Date | null
   }, ExtArgs["result"]["answer"]>
   composites: {}
 }
@@ -1150,6 +1217,7 @@ readonly fields: AnswerFieldRefs;
 export interface Prisma__AnswerClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   run<T extends Prisma.ScenarioRunDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRunDefaultArgs<ExtArgs>>): Prisma.Prisma__ScenarioRunClient<runtime.Types.Result.GetResult<Prisma.$ScenarioRunPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  assessment<T extends Prisma.Answer$assessmentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Answer$assessmentArgs<ExtArgs>>): Prisma.Prisma__AssessmentClient<runtime.Types.Result.GetResult<Prisma.$AssessmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1181,15 +1249,14 @@ export interface Prisma__AnswerClient<T, Null = never, ExtArgs extends runtime.T
 export interface AnswerFieldRefs {
   readonly id: Prisma.FieldRef<"Answer", 'String'>
   readonly runId: Prisma.FieldRef<"Answer", 'String'>
-  readonly kind: Prisma.FieldRef<"Answer", 'String'>
+  readonly activityKey: Prisma.FieldRef<"Answer", 'String'>
+  readonly followupNo: Prisma.FieldRef<"Answer", 'Int'>
+  readonly followupQuestion: Prisma.FieldRef<"Answer", 'String'>
+  readonly taskType: Prisma.FieldRef<"Answer", 'String'>
   readonly text: Prisma.FieldRef<"Answer", 'String'>
-  readonly payload: Prisma.FieldRef<"Answer", 'Json'>
-  readonly status: Prisma.FieldRef<"Answer", 'TurnStatus'>
-  readonly jobId: Prisma.FieldRef<"Answer", 'String'>
-  readonly lineFrom: Prisma.FieldRef<"Answer", 'Int'>
-  readonly lineTo: Prisma.FieldRef<"Answer", 'Int'>
+  readonly selection: Prisma.FieldRef<"Answer", 'Json'>
+  readonly systemScore: Prisma.FieldRef<"Answer", 'Int'>
   readonly submittedAt: Prisma.FieldRef<"Answer", 'DateTime'>
-  readonly completedAt: Prisma.FieldRef<"Answer", 'DateTime'>
 }
     
 
@@ -1588,6 +1655,25 @@ export type AnswerDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Intern
    * Limit how many Answers to delete.
    */
   limit?: number
+}
+
+/**
+ * Answer.assessment
+ */
+export type Answer$assessmentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Assessment
+   */
+  select?: Prisma.AssessmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Assessment
+   */
+  omit?: Prisma.AssessmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AssessmentInclude<ExtArgs> | null
+  where?: Prisma.AssessmentWhereInput
 }
 
 /**

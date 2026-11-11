@@ -36,9 +36,6 @@ const EnvSchema = z.object({
   /** Gốc của web app, dùng cho CORS khi chạy thật. Lúc dev có proxy nên không cần. */
   WEB_ORIGIN: z.string().default('http://localhost:4200'),
 
-  /** Redis: hàng đợi job (BullMQ) và pub/sub đẩy sự kiện tới `/stream`. */
-  REDIS_URL: blankAsUnset(z.string().url().default('redis://localhost:6379')),
-
   /**
    * AI của luồng chơi ca làm. `live`: gọi model qua gateway. `fake`: narrator
    * và bộ phán giả của game-core, để dev và demo không cần key. `fake` bị cấm
@@ -62,7 +59,13 @@ const EnvSchema = z.object({
    */
   QWEN_REGION: blankAsUnset(
     z
-      .enum(['ap-southeast-1', 'ap-northeast-1', 'cn-hongkong', 'eu-central-1', 'us-east-1'])
+      .enum([
+        'ap-southeast-1',
+        'ap-northeast-1',
+        'cn-hongkong',
+        'eu-central-1',
+        'us-east-1',
+      ])
       .default('ap-southeast-1'),
   ),
   /** Workspace ID — endpoint của Model Studio có dạng `{WorkspaceId}.{region}.maas.aliyuncs.com`. */
@@ -95,12 +98,33 @@ const EnvSchema = z.object({
       .default('false')
       .transform((value) => value === 'true'),
   ),
+
+  /**
+   * Redis cho job queue (BullMQ) và pub/sub của luồng sự kiện (§5.3.1): API
+   * và worker chỉ nói chuyện với nhau qua đây. Mặc định Redis cài local.
+   */
+  REDIS_URL: blankAsUnset(z.string().default('redis://localhost:6379')),
 });
+
+/**
+ * Tên khác của cùng một biến. `OPEN_ROUTER_API_KEY` là cách viết dễ gõ nhầm
+ * (gạch dưới giữa OPEN và ROUTER); nhận luôn thay vì bắt người dùng sửa `.env`.
+ */
+function withAliases(
+  source: NodeJS.ProcessEnv | Record<string, unknown>,
+): Record<string, unknown> {
+  const out: Record<string, unknown> = { ...source };
+  if (!out['OPENROUTER_API_KEY'] && out['OPEN_ROUTER_API_KEY'])
+    out['OPENROUTER_API_KEY'] = out['OPEN_ROUTER_API_KEY'];
+  return out;
+}
 
 export type Env = z.infer<typeof EnvSchema>;
 
 /** Chế độ AI thực tế, đã áp mặc định theo NODE_ENV. */
-export function aiModeOf(env: Pick<Env, 'AI_MODE' | 'NODE_ENV'>): 'live' | 'fake' {
+export function aiModeOf(
+  env: Pick<Env, 'AI_MODE' | 'NODE_ENV'>,
+): 'live' | 'fake' {
   return env.AI_MODE ?? (env.NODE_ENV === 'production' ? 'live' : 'fake');
 }
 
@@ -121,10 +145,12 @@ export type AiEnv = z.infer<typeof AiEnvSchema>;
 
 /** Chỉ phần biến của AI — cho script chạy ngoài Nest, không cần database hay secret JWT. */
 export const loadAiEnv = (source: NodeJS.ProcessEnv = process.env): AiEnv =>
-  AiEnvSchema.parse(source);
+  AiEnvSchema.parse(withAliases(source));
 
-export function loadEnv(source: NodeJS.ProcessEnv = process.env): Env {
-  const result = EnvSchema.safeParse(source);
+export function loadEnv(
+  source: NodeJS.ProcessEnv | Record<string, unknown> = process.env,
+): Env {
+  const result = EnvSchema.safeParse(withAliases(source));
   if (!result.success) {
     const issues = result.error.issues
       .map((i) => `  • ${i.path.join('.')}: ${i.message}`)

@@ -12,6 +12,12 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
+    # `prisma generate` (chạy trước build, test, typecheck của API) đọc
+    # apps/api/prisma.config.ts, mà file đó đòi DIRECT_URL có mặt. Không kết
+    # nối DB nào: giá trị chỉ cần tồn tại.
+    env:
+      DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+      DIRECT_URL: postgresql://ci:ci@localhost:5432/ci
     steps:
       - uses: actions/checkout@v5
         with:

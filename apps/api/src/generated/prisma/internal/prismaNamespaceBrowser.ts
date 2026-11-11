@@ -59,9 +59,12 @@ export const ModelName = {
   ScenarioRun: 'ScenarioRun',
   RunEvent: 'RunEvent',
   Answer: 'Answer',
-  ScenarioFeedback: 'ScenarioFeedback',
-  ContentFlag: 'ContentFlag',
-  PlayerNote: 'PlayerNote',
+  Assessment: 'Assessment',
+  JudgeResult: 'JudgeResult',
+  JudgeScore: 'JudgeScore',
+  CriterionGrade: 'CriterionGrade',
+  AiJob: 'AiJob',
+  UsageCost: 'UsageCost',
   RunEvidence: 'RunEvidence',
   UserBandSkill: 'UserBandSkill',
   EventAnswer: 'EventAnswer',
@@ -173,13 +176,9 @@ export const ScenarioRunScalarFieldEnum = {
   endingType: 'endingType',
   pointsAwarded: 'pointsAwarded',
   rating: 'rating',
+  flow: 'flow',
   status: 'status',
-  isPlaytest: 'isPlaytest',
-  enrolmentId: 'enrolmentId',
-  schemaVersion: 'schemaVersion',
-  seedId: 'seedId',
-  currentNodeId: 'currentNodeId',
-  pausedAt: 'pausedAt'
+  currentActivityKey: 'currentActivityKey'
 } as const
 
 export type ScenarioRunScalarFieldEnum = (typeof ScenarioRunScalarFieldEnum)[keyof typeof ScenarioRunScalarFieldEnum]
@@ -190,7 +189,7 @@ export const RunEventScalarFieldEnum = {
   runId: 'runId',
   seq: 'seq',
   type: 'type',
-  turnId: 'turnId',
+  activityKey: 'activityKey',
   payload: 'payload',
   createdAt: 'createdAt'
 } as const
@@ -201,49 +200,102 @@ export type RunEventScalarFieldEnum = (typeof RunEventScalarFieldEnum)[keyof typ
 export const AnswerScalarFieldEnum = {
   id: 'id',
   runId: 'runId',
-  kind: 'kind',
+  activityKey: 'activityKey',
+  followupNo: 'followupNo',
+  followupQuestion: 'followupQuestion',
+  taskType: 'taskType',
   text: 'text',
-  payload: 'payload',
-  status: 'status',
-  jobId: 'jobId',
-  lineFrom: 'lineFrom',
-  lineTo: 'lineTo',
-  submittedAt: 'submittedAt',
-  completedAt: 'completedAt'
+  selection: 'selection',
+  systemScore: 'systemScore',
+  submittedAt: 'submittedAt'
 } as const
 
 export type AnswerScalarFieldEnum = (typeof AnswerScalarFieldEnum)[keyof typeof AnswerScalarFieldEnum]
 
 
-export const ScenarioFeedbackScalarFieldEnum = {
-  runId: 'runId',
-  summary: 'summary',
-  createdAt: 'createdAt'
-} as const
-
-export type ScenarioFeedbackScalarFieldEnum = (typeof ScenarioFeedbackScalarFieldEnum)[keyof typeof ScenarioFeedbackScalarFieldEnum]
-
-
-export const ContentFlagScalarFieldEnum = {
+export const AssessmentScalarFieldEnum = {
   id: 'id',
-  runId: 'runId',
-  activityKey: 'activityKey',
-  reason: 'reason',
+  answerId: 'answerId',
+  aiJobId: 'aiJobId',
   status: 'status',
-  createdAt: 'createdAt'
+  panelSize: 'panelSize',
+  method: 'method',
+  score: 'score',
+  counterproductive: 'counterproductive',
+  gradedAt: 'gradedAt',
+  latencyMs: 'latencyMs'
 } as const
 
-export type ContentFlagScalarFieldEnum = (typeof ContentFlagScalarFieldEnum)[keyof typeof ContentFlagScalarFieldEnum]
+export type AssessmentScalarFieldEnum = (typeof AssessmentScalarFieldEnum)[keyof typeof AssessmentScalarFieldEnum]
 
 
-export const PlayerNoteScalarFieldEnum = {
+export const JudgeResultScalarFieldEnum = {
   id: 'id',
+  assessmentId: 'assessmentId',
+  judgeSlot: 'judgeSlot',
+  family: 'family',
+  modelId: 'modelId',
+  status: 'status',
+  attempts: 'attempts',
+  error: 'error'
+} as const
+
+export type JudgeResultScalarFieldEnum = (typeof JudgeResultScalarFieldEnum)[keyof typeof JudgeResultScalarFieldEnum]
+
+
+export const JudgeScoreScalarFieldEnum = {
+  judgeResultId: 'judgeResultId',
+  criterionKey: 'criterionKey',
+  score: 'score',
+  counterproductive: 'counterproductive',
+  quote: 'quote',
+  quoteVerified: 'quoteVerified',
+  rationale: 'rationale'
+} as const
+
+export type JudgeScoreScalarFieldEnum = (typeof JudgeScoreScalarFieldEnum)[keyof typeof JudgeScoreScalarFieldEnum]
+
+
+export const CriterionGradeScalarFieldEnum = {
+  assessmentId: 'assessmentId',
+  criterionKey: 'criterionKey',
+  score: 'score',
+  counterproductive: 'counterproductive',
+  method: 'method',
+  highDisagreement: 'highDisagreement'
+} as const
+
+export type CriterionGradeScalarFieldEnum = (typeof CriterionGradeScalarFieldEnum)[keyof typeof CriterionGradeScalarFieldEnum]
+
+
+export const AiJobScalarFieldEnum = {
+  id: 'id',
+  kind: 'kind',
+  status: 'status',
   runId: 'runId',
-  text: 'text',
+  attempts: 'attempts',
+  lastError: 'lastError',
+  queuedAt: 'queuedAt',
+  finishedAt: 'finishedAt'
+} as const
+
+export type AiJobScalarFieldEnum = (typeof AiJobScalarFieldEnum)[keyof typeof AiJobScalarFieldEnum]
+
+
+export const UsageCostScalarFieldEnum = {
+  id: 'id',
+  aiJobId: 'aiJobId',
+  role: 'role',
+  modelId: 'modelId',
+  tokensIn: 'tokensIn',
+  tokensOut: 'tokensOut',
+  costUsd: 'costUsd',
+  latencyMs: 'latencyMs',
+  succeeded: 'succeeded',
   createdAt: 'createdAt'
 } as const
 
-export type PlayerNoteScalarFieldEnum = (typeof PlayerNoteScalarFieldEnum)[keyof typeof PlayerNoteScalarFieldEnum]
+export type UsageCostScalarFieldEnum = (typeof UsageCostScalarFieldEnum)[keyof typeof UsageCostScalarFieldEnum]
 
 
 export const RunEvidenceScalarFieldEnum = {

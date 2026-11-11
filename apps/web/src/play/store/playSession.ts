@@ -121,14 +121,31 @@ export const usePlaySession = create<PlaySession>()(
       async function loadActivity(runId: string) {
         const activity = await getPlayApi().getCurrentActivity(runId);
         const npc = activity.npc;
+        // Máy chủ còn chờ câu trả lời cho một câu hỏi vặn: mở lại đúng lượt đó.
+        const pending = activity.followup ?? null;
         set({
           ...blankActivity,
           activity,
           order: (activity.items ?? []).map((i) => i.key ?? ''),
-          stage: 'answering',
-          ...(npc?.npcKey && npc.name
-            ? { npcNames: { ...get().npcNames, [npc.npcKey]: npc.name } }
+          stage: pending ? 'followup' : 'answering',
+          ...(pending
+            ? {
+                followup: {
+                  no: pending.followupNo,
+                  npcKey: pending.npcKey,
+                  name: pending.name,
+                  question: pending.question,
+                },
+                log: [
+                  { from: 'npc', name: pending.name, text: pending.question },
+                ],
+              }
             : {}),
+          npcNames: {
+            ...get().npcNames,
+            ...(npc?.npcKey && npc.name ? { [npc.npcKey]: npc.name } : {}),
+            ...(pending ? { [pending.npcKey]: pending.name } : {}),
+          },
         });
       }
 
@@ -166,7 +183,9 @@ export const usePlaySession = create<PlaySession>()(
             ...body,
           });
           if (res.status === 202) {
-            set({ stage: 'grading' });
+            // Sự kiện kết quả có thể tới TRƯỚC phản hồi này (máy chủ đóng hoạt
+            // động ngay khi không hỏi vặn): đã sang bước sau thì giữ nguyên.
+            if (get().stage === 'submitting') set({ stage: 'grading' });
             return;
           }
           set({
@@ -323,6 +342,8 @@ export const usePlaySession = create<PlaySession>()(
         handleEvent: (event) => {
           const { runId, activity, stage } = get();
           if (event.runId !== runId) return;
+          // Đang chờ kết quả của câu vừa gửi — kể cả khi phản hồi 202 chưa về.
+          const waiting = stage === 'grading' || stage === 'submitting';
 
           switch (event.type) {
             case 'provider.delay':
@@ -336,11 +357,7 @@ export const usePlaySession = create<PlaySession>()(
 
             case 'followup.asked': {
               const p = event.payload;
-              if (
-                p.activityKey !== activity?.activityKey ||
-                stage !== 'grading'
-              )
-                return;
+              if (p.activityKey !== activity?.activityKey || !waiting) return;
               set({
                 stage: 'followup',
                 delayed: false,
@@ -361,11 +378,7 @@ export const usePlaySession = create<PlaySession>()(
 
             case 'activity.closed': {
               const p = event.payload;
-              if (
-                p.activityKey !== activity?.activityKey ||
-                stage !== 'grading'
-              )
-                return;
+              if (p.activityKey !== activity?.activityKey || !waiting) return;
               set({
                 stage: 'closing',
                 delayed: false,

@@ -1,17 +1,19 @@
 # AI-4: một lượt gọi API
 
-Kịch bản *"Tối ưu hóa các API bị chậm"*, activity a2: người chơi vừa trả lời anh An rằng lỗi là N+1 và sẽ gộp bằng join.
+Contract theo nhịp (D-130). Seed *SWE_BACKEND.L3.m2 "Sự cố hệ thống giờ cao điểm!"*, nút n2, task `probe`: người chơi vừa lưu ghi chú sự cố nêu nguyên nhân; mentor (lá XVIII Sang) hỏi theo hook "lấy gì để loại khả năng DB quá tải".
 
 | File | Là gì |
 |---|---|
-| `request.jsonc` | Máy chủ JobQuest gửi Qwen (Frankfurt): method, URL, headers, body với toàn bộ prompt |
-| `response.json` | Qwen trả về: lời follow-up của An (một trường), số token |
+| `request.jsonc` | Máy chủ JobQuest gửi Qwen (Frankfurt): method, URL, headers, body với toàn bộ prompt (luật, màn, công ty, thẻ nhân vật, cảnh, việc lượt này) |
+| `response.json` | Qwen trả về: các nhịp `{speaker, text, expression}`, `question_by`, số token |
 
 - `request.jsonc` là JSON có chú thích (`//`) cho các trường quan trọng; JSON chuẩn không cho comment nên đuôi là `.jsonc`, VS Code đọc bình thường. Để dễ đọc, `content` của mỗi message được tách thành mảng từng dòng và các dòng JSON được mở ra; gửi thật thì `content` là **một chuỗi**, các dòng nối bằng `\n`. Bản nguyên dạng: chạy chế độ `live --out`.
 - Request **sinh ra từ chính code**, khớp từng ký tự với thứ sẽ gửi đi. Key thay bằng `{QWEN_API_KEY}`.
-- Response là của **model giả**: đúng định dạng tài liệu Qwen, nội dung và số liệu giả, để file ví dụ không đổi mỗi lần sinh lại. Kết quả gọi thật (11/11/2026) ghi ở mục "Lần gọi thật đầu tiên" của `../ai-4-thiet-ke.md`.
+- Response là của **model giả**: đúng định dạng tài liệu Qwen, nội dung và số liệu giả, để file ví dụ không đổi mỗi lần sinh lại. Kết quả gọi thật (11/11/2026) ghi ở mục "Contract theo nhịp" và "Lần gọi thật đầu tiên" của `../ai-4-thiet-ke.md`.
 
 Sinh lại: `pnpm exec nx run @datn/api:narrator-try -- --mode=export`
+
+Chạy cả 6 cảnh mẫu bằng model thật: `pnpm exec nx run @datn/api:narrator-try -- --mode=live --scene=all` (một cảnh: `--scene=n2_probe`; tự gõ câu người chơi: `--player="…"`; xưng hô: `--choice=anh`). Contract một câu follow-up cũ: thêm `--contract=legacy`.
 
 ## Chạy với key thật
 

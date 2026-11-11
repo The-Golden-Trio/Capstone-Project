@@ -48,7 +48,11 @@ const str = (value: unknown): string | null =>
 function requireChoices(json: unknown, provider: ProviderId): void {
   const choices = obj(json)['choices'];
   if (!Array.isArray(choices) || choices.length === 0)
-    throw new GatewayError('server', `${provider}: HTTP 200 nhưng không có choices`, provider);
+    throw new GatewayError(
+      'server',
+      `${provider}: HTTP 200 nhưng không có choices`,
+      provider,
+    );
 }
 
 function firstChoice(json: unknown): { text: string; finishReason: string } {
@@ -70,7 +74,8 @@ function errorFields(json: unknown): { code: string; message: string } {
   const inner = obj(body['error']);
   return {
     code: str(inner['code']) ?? str(body['code']) ?? str(inner['type']) ?? '',
-    message: str(inner['message']) ?? str(body['message']) ?? 'không có thông báo lỗi',
+    message:
+      str(inner['message']) ?? str(body['message']) ?? 'không có thông báo lỗi',
   };
 }
 
@@ -86,7 +91,8 @@ export const qwenAdapter: ProviderAdapter = {
 
   body(request) {
     const { model: spec } = request;
-    const explicit = spec.cacheMode === 'explicit' && spec.supports.explicitCache;
+    const explicit =
+      spec.cacheMode === 'explicit' && spec.supports.explicitCache;
 
     return {
       model: spec.model,
@@ -161,7 +167,9 @@ export const qwenAdapter: ProviderAdapter = {
         // dưới `prompt_tokens_details`. Đọc cả hai để không mất phí tạo cache.
         cacheWrite:
           num(promptDetails['cache_creation_input_tokens']) ||
-          num(obj(promptDetails['cache_creation'])['cache_creation_input_tokens']),
+          num(
+            obj(promptDetails['cache_creation'])['cache_creation_input_tokens'],
+          ),
         output: num(usage['completion_tokens']),
         reasoning: num(completionDetails['reasoning_tokens']),
       },
@@ -173,13 +181,26 @@ export const qwenAdapter: ProviderAdapter = {
   error(status, json) {
     const { code, message } = errorFields(json);
     const fail = (kind: GatewayError['kind']) =>
-      new GatewayError(kind, `Qwen ${status} ${code}: ${message}`, 'qwen', status, code || null);
+      new GatewayError(
+        kind,
+        `Qwen ${status} ${code}: ${message}`,
+        'qwen',
+        status,
+        code || null,
+      );
 
     // "Input or output data may contain inappropriate content."
-    if (/data_inspection_failed|datainspectionfailed/i.test(code) || /inappropriate content/i.test(message))
+    if (
+      /data_inspection_failed|datainspectionfailed/i.test(code) ||
+      /inappropriate content/i.test(message)
+    )
       return fail('content_filtered');
     // Hết tiền, hết phần miễn phí: chờ vài giây cũng không hết lỗi.
-    if (status === 402 || /arrearage|out_of_service|budgetlimit|freetier/i.test(code) || /free allocated quota/i.test(message))
+    if (
+      status === 402 ||
+      /arrearage|out_of_service|budgetlimit|freetier/i.test(code) ||
+      /free allocated quota/i.test(message)
+    )
       return fail('quota');
     // Sai key, sai workspace, chưa kích hoạt dịch vụ hay model: lỗi cấu hình.
     if (
@@ -194,7 +215,8 @@ export const qwenAdapter: ProviderAdapter = {
     // theo phút, không phải hết tiền — nên chỉ ngắt ngắn.
     if (status === 429) return fail('rate_limited');
     if (/no backend server/i.test(message)) return fail('overloaded');
-    if (status === 400 || status === 404 || status === 422) return fail('bad_request');
+    if (status === 400 || status === 404 || status === 422)
+      return fail('bad_request');
     if (status === 503) return fail('overloaded');
     return fail('server');
   },
@@ -204,11 +226,21 @@ export const qwenAdapter: ProviderAdapter = {
 
 function openRouterFail(status: number, message: string): GatewayError {
   const fail = (kind: GatewayError['kind']) =>
-    new GatewayError(kind, `OpenRouter ${status}: ${message}`, 'openrouter', status);
+    new GatewayError(
+      kind,
+      `OpenRouter ${status}: ${message}`,
+      'openrouter',
+      status,
+    );
 
   // 403 gồm cả lọc nội dung lẫn thiếu quyền; chỉ phân biệt được qua lời báo.
-  if (status === 403 && /moderation|flagged|guardrail/i.test(message)) return fail('content_filtered');
-  if (/data_inspection_failed|datainspectionfailed|inappropriate content/i.test(message))
+  if (status === 403 && /moderation|flagged|guardrail/i.test(message))
+    return fail('content_filtered');
+  if (
+    /data_inspection_failed|datainspectionfailed|inappropriate content/i.test(
+      message,
+    )
+  )
     return fail('content_filtered');
   if (status === 401 || status === 403) return fail('auth');
   if (status === 402) return fail('quota');
@@ -216,7 +248,8 @@ function openRouterFail(status: number, message: string): GatewayError {
   if (status === 429) return fail('rate_limited');
   // 503: không còn hãng nào thoả điều kiện định tuyến. 502: model đang hỏng.
   if (status === 503) return fail('overloaded');
-  if (status === 400 || status === 404 || status === 422) return fail('bad_request');
+  if (status === 400 || status === 404 || status === 422)
+    return fail('bad_request');
   return fail('server');
 }
 
@@ -231,9 +264,16 @@ export const openRouterAdapter: ProviderAdapter = {
       model: spec.model,
       // Cùng chữ với gọi trực tiếp. Không gắn `cache_control`: tài liệu cache
       // của OpenRouter chưa liệt kê qwen3.8-flash cho cache explicit.
-      messages: request.messages.map((m) => ({ role: m.role, content: joined(m) })),
+      messages: request.messages.map((m) => ({
+        role: m.role,
+        content: joined(m),
+      })),
 
-      temperature: request.temperature,
+      // Model không nhận `temperature` (Claude 5.5, GPT-6) thì không gửi: với
+      // `require_parameters` bên dưới, gửi lên là không hãng nào nhận request.
+      ...(spec.supports.temperature === false
+        ? {}
+        : { temperature: request.temperature }),
 
       // Trang endpoint của model chỉ liệt kê `max_tokens`, không có
       // `max_completion_tokens`, mà bên dưới bật `require_parameters`.
@@ -242,7 +282,8 @@ export const openRouterAdapter: ProviderAdapter = {
       // Không có `enable_thinking` ở đây. Model này mặc định bật suy nghĩ
       // (`reasoning.default_enabled: true`); `exclude` chỉ giấu mà vẫn tính
       // tiền, muốn tắt thật phải dùng `effort: "none"`.
-      reasoning: { effort: 'none' },
+      // Gemini 3.x không cho tắt hẳn: dùng mức thấp nhất model chấp nhận.
+      reasoning: { effort: spec.minReasoning ?? 'none' },
 
       response_format: spec.supports.jsonSchema
         ? {
@@ -276,12 +317,19 @@ export const openRouterAdapter: ProviderAdapter = {
     const first = obj(Array.isArray(choices) ? choices[0] : undefined);
     const failure = obj(obj(json)['error'] ?? first['error']);
     if (Object.keys(failure).length > 0)
-      throw openRouterFail(num(failure['code']) || 502, str(failure['message']) ?? 'không có thông báo lỗi');
+      throw openRouterFail(
+        num(failure['code']) || 502,
+        str(failure['message']) ?? 'không có thông báo lỗi',
+      );
     requireChoices(json, 'openrouter');
 
     const { text, finishReason } = firstChoice(json);
     if (finishReason === 'content_filter')
-      throw new GatewayError('content_filtered', 'OpenRouter: content_filter', 'openrouter');
+      throw new GatewayError(
+        'content_filtered',
+        'OpenRouter: content_filter',
+        'openrouter',
+      );
 
     const usage = obj(obj(json)['usage']);
     const promptDetails = obj(usage['prompt_tokens_details']);
@@ -318,7 +366,10 @@ export const deepseekAdapter: ProviderAdapter = {
       model: spec.model,
       // DeepSeek không có cache explicit: gửi chuỗi thường. Cache trên ổ đĩa
       // của họ khớp theo prefix, nên thứ tự message là tất cả.
-      messages: request.messages.map((m) => ({ role: m.role, content: joined(m) })),
+      messages: request.messages.map((m) => ({
+        role: m.role,
+        content: joined(m),
+      })),
 
       // deepseek-flash BẬT thinking mặc định; tắt vì cùng lý do như Qwen.
       thinking: { type: 'disabled' },
@@ -346,9 +397,17 @@ export const deepseekAdapter: ProviderAdapter = {
     // Hệ thống của họ hết tài nguyên giữa chừng: là lỗi hạ tầng, không phải
     // câu trả lời tồi — chuyển model, đừng bắt model viết lại.
     if (finishReason === 'insufficient_system_resource')
-      throw new GatewayError('overloaded', 'DeepSeek: insufficient_system_resource', 'deepseek');
+      throw new GatewayError(
+        'overloaded',
+        'DeepSeek: insufficient_system_resource',
+        'deepseek',
+      );
     if (finishReason === 'content_filter')
-      throw new GatewayError('content_filtered', 'DeepSeek: content_filter', 'deepseek');
+      throw new GatewayError(
+        'content_filtered',
+        'DeepSeek: content_filter',
+        'deepseek',
+      );
 
     const usage = obj(obj(json)['usage']);
     const completionDetails = obj(usage['completion_tokens_details']);
@@ -369,7 +428,13 @@ export const deepseekAdapter: ProviderAdapter = {
   error(status, json) {
     const { code, message } = errorFields(json);
     const fail = (kind: GatewayError['kind']) =>
-      new GatewayError(kind, `DeepSeek ${status} ${code}: ${message}`, 'deepseek', status, code || null);
+      new GatewayError(
+        kind,
+        `DeepSeek ${status} ${code}: ${message}`,
+        'deepseek',
+        status,
+        code || null,
+      );
 
     if (status === 401) return fail('auth');
     if (status === 402) return fail('quota');

@@ -18,6 +18,7 @@ import { createGameIndex, type GameIndex } from '../data/indexes.js';
 import { GameDataSchema, type GameData } from '../data/schema.js';
 import { ShiftDataSchema, type ShiftData } from '../shift/schema.js';
 import type { ShiftContext } from '../shift/context.js';
+import type { NpcWorkProfile } from '../domain/narration/npcCard.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -75,4 +76,19 @@ export function fixtureShiftContext(seedId: string): ShiftContext {
   const pack = data.packs[seed.level_ref];
   if (!pack) throw new Error(`Không có gói cấp ${seed.level_ref}`);
   return { seed, pack };
+}
+
+/**
+ * Phần hồ sơ màn làm việc của 22 lá NPC (Hồ sơ NPC bản chốt v1.0), theo mã lá.
+ *
+ * Chép từ research notes, chỉ cho test và chạy thử AI-4: nơi đặt dữ liệu NPC
+ * chính thức còn chờ nhóm duyệt (Hồ sơ NPC mục 5.7).
+ */
+export function npcCast(): Record<string, NpcWorkProfile> {
+  const path = join(HERE, '..', '..', 'fixtures', 'npc-cast.v1.0.json');
+  return (
+    JSON.parse(readFileSync(path, 'utf-8')) as {
+      cast: Record<string, NpcWorkProfile>;
+    }
+  ).cast;
 }

@@ -1,34 +1,35 @@
 /**
- * Hạ tầng dùng chung của API và worker (CL-07 CoreModule): hàng đợi job.
- * Prisma nằm ở `PrismaModule` (đã toàn cục từ trước).
- *
- * Dùng thẳng `bullmq` thay vì lớp bọc `@nestjs/bullmq`: bản 12 của lớp bọc
- * chỉ có ESM, không chạy được trong Jest (CJS) của API.
+ * Hạ tầng dùng chung cho cả API và worker (CL-07 `CoreModule`, rút gọn):
+ * Redis, job queue, luồng sự kiện, sổ sự kiện của lượt chơi.
  */
-import { Global, Inject, Module, type OnModuleDestroy } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Queue } from 'bullmq';
 import type { Env } from '../config/env';
-import { QUEUES, TURN_QUEUE, redisOptions, type TurnJob } from './queues';
+import { QueueService, REDIS_URL } from './queues';
+import { RunLogService } from './run-log.service';
+import { ShiftLogService } from './shift-log.service';
+import { StreamService } from './stream.service';
 
 @Global()
 @Module({
   providers: [
     {
-      provide: TURN_QUEUE,
+      provide: REDIS_URL,
       inject: [ConfigService],
       useFactory: (config: ConfigService<Env, true>) =>
-        new Queue<TurnJob>(QUEUES.turn, {
-          connection: redisOptions(config.get('REDIS_URL', { infer: true })),
-        }),
+        config.get('REDIS_URL', { infer: true }),
     },
+    QueueService,
+    StreamService,
+    RunLogService,
+    ShiftLogService,
   ],
-  exports: [TURN_QUEUE],
+  exports: [
+    REDIS_URL,
+    QueueService,
+    StreamService,
+    RunLogService,
+    ShiftLogService,
+  ],
 })
-export class CoreModule implements OnModuleDestroy {
-  constructor(@Inject(TURN_QUEUE) private readonly queue: Queue<TurnJob>) {}
-
-  async onModuleDestroy(): Promise<void> {
-    await this.queue.close();
-  }
-}
+export class CoreModule {}

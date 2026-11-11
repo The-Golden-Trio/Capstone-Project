@@ -19,7 +19,18 @@
  * log review bằng một model khác họ, sau khi chơi.
  */
 import { z } from 'zod';
-import { normalizeVi } from '../format.js';
+import {
+  COMMON_TERMS,
+  LEAK_NGRAM,
+  WORD,
+  inventedNumbers,
+  leakedNgrams,
+  parseJson,
+  questionMarks,
+  unknownNames,
+} from './textChecks.js';
+
+export { COMMON_TERMS, LEAK_NGRAM };
 
 /**
  * Lời follow-up dài tối đa bao nhiêu ký tự.
@@ -29,15 +40,6 @@ import { normalizeVi } from '../format.js';
  * (xem `followUpLengthStats`), để người chơi đọc thoải mái.
  */
 export const FOLLOW_UP_MAX_CHARS = 200;
-
-/**
- * R3 coi là "lộ" khi trùng một cụm 5 âm tiết liền nhau.
- *
- * 4 âm tiết thì quá ngắn: những cụm như "người chơi có thể" có ở khắp nơi.
- * 6 trở lên thì model chỉ cần đổi một chữ là lọt. Con số này chỉnh sau khi đo
- * trên bộ thử (lớp "dò rubric").
- */
-export const LEAK_NGRAM = 5;
 
 export const NarrationOutputSchema = z
   .object({
@@ -100,17 +102,6 @@ export interface NarrationCheck {
 
 /* ── R4 ────────────────────────────────────────────────────────────── */
 
-/**
- * Bóc JSON khỏi chuỗi trả về.
- *
- * Chấp nhận khối ```json … ``` vì bóc nó không đổi nội dung, còn bắt sinh lại
- * chỉ vì ba dấu backtick thì tốn thêm vài giây của người chơi.
- */
-function parseJson(raw: string): unknown {
-  const fenced = raw.trim().match(/^```(?:json)?\s*([\s\S]*?)\s*```$/i);
-  return JSON.parse(fenced ? fenced[1] : raw.trim());
-}
-
 function checkShape(
   raw: string,
   ctx: NarrationCheckContext,
@@ -161,110 +152,14 @@ function checkShape(
 
 /* ── R1 ────────────────────────────────────────────────────────────── */
 
-const NUMBER = /\d+(?:[.,:/]\d+)*/g;
-
-/**
- * Các dạng của một con số để so khớp: "4.2" và "4,2" là một (dấu thập phân
- * kiểu Việt), "1.000" và "1000" là một (dấu nghìn).
- */
-function numberForms(raw: string): string[] {
-  const canon = raw.replace(/,/g, '.');
-  return [canon, canon.replace(/\./g, '')];
-}
-
-function numbersIn(text: string): string[] {
-  return text.match(NUMBER) ?? [];
-}
-
-const WORD = /\p{L}[\p{L}\p{N}]*/gu;
-
-/**
- * Từ viết tắt chung của nơi làm việc. Là từ vựng, không phải sự thật về kịch
- * bản, nên R1 không coi là tên bịa.
- *
- * Tìm ra khi chạy thử: AI-4 viết "mỗi đơn một lần chạm DB" và bị R1 loại, vì
- * "DB" không có trong kịch bản. Câu đúng mà bị bắt viết lại là mất vài giây
- * của người chơi. Danh sách ngắn có chủ đích: chỉ những từ người ngoài nghề
- * cũng gặp. Tên công nghệ cụ thể ("Kafka", "AWS") vẫn phải có trong kịch bản —
- * bịa ra một công nghệ là bịa ra một sự thật về nơi làm việc.
- */
-export const COMMON_TERMS: readonly string[] = [
-  'AI', 'API', 'APP', 'CPU', 'CV', 'DB', 'HR', 'HTTP', 'ID', 'IT', 'KPI',
-  'OK', 'PC', 'PM', 'QA', 'RAM', 'SQL', 'UI', 'URL', 'UX',
-];
-
-/** Ký tự đứng ngay trước một từ mà sau nó từ đó coi như đầu câu. */
-const SENTENCE_BREAK = /[.!?…:;"'“”‘’«»(\n]$/u;
-
-/**
- * Các từ viết hoa có thể là tên riêng.
- *
- * Từ đầu câu viết hoa là chuyện bình thường ("Bạn", "Ừ"), nên bỏ qua — trừ
- * khi nó còn chữ hoa ở giữa ("PostgreSQL", "API"), dấu hiệu chắc chắn của tên
- * riêng hay từ viết tắt.
- */
-function properNounsIn(text: string): string[] {
-  const found: string[] = [];
-  for (const match of text.matchAll(WORD)) {
-    const word = match[0];
-    if (!/^\p{Lu}/u.test(word)) continue;
-
-    const before = text.slice(0, match.index).trimEnd();
-    const sentenceStart = before === '' || SENTENCE_BREAK.test(before);
-    const innerCapital = /\p{Lu}/u.test(word.slice(1));
-    if (sentenceStart && !innerCapital) continue;
-
-    found.push(word);
-  }
-  return found;
-}
-
-/**
- * Số và tên riêng trong `written` mà không có trong các chữ AI được thấy.
- * Dùng chung cho R1 của AI-4 bản 1 và bản 2 (ca làm).
- */
-export function inventedFacts(
-  written: string,
-  visibleTexts: readonly string[],
-  castIds: readonly string[],
-): { numbers: string[]; names: string[] } {
-  const knownNumbers = new Set(
-    visibleTexts.flatMap(numbersIn).flatMap(numberForms),
-  );
-  const numbers = [
-    ...new Set(
-      numbersIn(written).filter(
-        (n) => !numberForms(n).some((form) => knownNumbers.has(form)),
-      ),
-    ),
-  ];
-
-  // Tên so GIỮ NGUYÊN DẤU, chỉ bỏ hoa thường. Bỏ dấu thì tên bịa "Minh"
-  // trùng với chữ "mình" có ở khắp kịch bản, và R1 cho qua.
-  const nameKey = (word: string) => word.normalize('NFC').toLowerCase();
-  const knownWords = new Set(
-    [...visibleTexts, ...castIds, ...COMMON_TERMS]
-      .flatMap((text) => text.match(WORD) ?? [])
-      .map(nameKey),
-  );
-  const names = [
-    ...new Set(
-      properNounsIn(written).filter((w) => !knownWords.has(nameKey(w))),
-    ),
-  ];
-  return { numbers, names };
-}
-
 function checkFacts(
   output: NarrationOutput,
   ctx: NarrationCheckContext,
 ): RuleViolation[] {
+  const written = output.follow_up;
   const violations: RuleViolation[] = [];
-  const { numbers: invented, names: unknownNames } = inventedFacts(
-    output.follow_up,
-    ctx.visibleTexts,
-    ctx.castIds,
-  );
+
+  const invented = inventedNumbers(written, ctx.visibleTexts);
   if (invented.length > 0) {
     violations.push({
       rule: 'R1',
@@ -272,11 +167,13 @@ function checkFacts(
       feedback: `Bạn dùng số không có trong kịch bản hay câu người chơi: ${invented.join(', ')}. Chỉ dùng số có sẵn, hoặc bỏ số đi.`,
     });
   }
-  if (unknownNames.length > 0) {
+
+  const names = unknownNames(written, [...ctx.visibleTexts, ...ctx.castIds]);
+  if (names.length > 0) {
     violations.push({
       rule: 'R1',
-      detail: `Tên riêng không có trong kịch bản hay câu người chơi: ${unknownNames.join(', ')}`,
-      feedback: `Bạn dùng tên không có trong kịch bản hay câu người chơi: ${unknownNames.join(', ')}. Chỉ dùng tên nhân vật, công ty, công nghệ có sẵn.`,
+      detail: `Tên riêng không có trong kịch bản hay câu người chơi: ${names.join(', ')}`,
+      feedback: `Bạn dùng tên không có trong kịch bản hay câu người chơi: ${names.join(', ')}. Chỉ dùng tên nhân vật, công ty, công nghệ có sẵn.`,
     });
   }
 
@@ -284,8 +181,6 @@ function checkFacts(
 }
 
 /* ── R2 ────────────────────────────────────────────────────────────── */
-
-const questionMarks = (text: string): number => (text.match(/\?/g) ?? []).length;
 
 function checkFollowUp(output: NarrationOutput): RuleViolation[] {
   // Lời follow-up là câu hỏi, hoặc một lời dẫn không có dấu hỏi khi tình huống
@@ -307,36 +202,11 @@ function checkFollowUp(output: NarrationOutput): RuleViolation[] {
 
 /* ── R3 ────────────────────────────────────────────────────────────── */
 
-const syllables = (text: string): string[] =>
-  normalizeVi(text).split(/[^a-z0-9+]+/).filter(Boolean);
-
-function ngrams(text: string, n: number): string[] {
-  const tokens = syllables(text);
-  const grams: string[] = [];
-  for (let i = 0; i + n <= tokens.length; i++)
-    grams.push(tokens.slice(i, i + n).join(' '));
-  return grams;
-}
-
 function checkLeak(
   output: NarrationOutput,
   ctx: NarrationCheckContext,
 ): RuleViolation[] {
-  // Cụm nào có cả ở phần được thấy thì AI-4 có quyền dùng: mục tiêu đào sâu
-  // và mốc rubric hay dùng chung chữ, mà mục tiêu thì AI-4 được thấy.
-  const visible = new Set(
-    ctx.visibleTexts.flatMap((t) => ngrams(t, LEAK_NGRAM)),
-  );
-  const forbidden = new Set(
-    ctx.hiddenTexts
-      .flatMap((t) => ngrams(t, LEAK_NGRAM))
-      .filter((g) => !visible.has(g)),
-  );
-
-  const written = output.follow_up;
-  const leaked = [
-    ...new Set(ngrams(written, LEAK_NGRAM).filter((g) => forbidden.has(g))),
-  ];
+  const leaked = leakedNgrams(output.follow_up, ctx.visibleTexts, ctx.hiddenTexts);
   if (leaked.length === 0) return [];
 
   return [

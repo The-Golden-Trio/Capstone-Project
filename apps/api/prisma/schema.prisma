@@ -45,15 +45,15 @@ model User {
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 
-  oauthAccounts OAuthAccount[]
-  refreshTokens RefreshToken[]
-  consent       ParentalConsent?
-  gameProfile   GameProfile?
-  runs          ScenarioRun[]
-  bandSkills    UserBandSkill[]
-  eventAnswers  EventAnswer[]
-  eventAwards   EventAward[]
-  enrollments   Enrollment[]
+  oauthAccounts  OAuthAccount[]
+  refreshTokens  RefreshToken[]
+  consent        ParentalConsent?
+  gameProfile    GameProfile?
+  runs           ScenarioRun[]
+  bandSkills     UserBandSkill[]
+  eventAnswers   EventAnswer[]
+  eventAwards    EventAward[]
+  enrollments    Enrollment[]
 }
 
 /// Liên kết nhà cung cấp đăng nhập. Bảng riêng thay vì cột `googleId` để
@@ -128,89 +128,69 @@ model GameProfile {
 /// gửi lên khi kết thúc. Giữ cả hai nghĩa là mọi điểm đã trao đều tái dựng
 /// lại được — không phải tin, mà kiểm được.
 model ScenarioRun {
-  id             String    @id @default(cuid())
-  userId         String
-  scenarioKey    String
-  roleCode       String
-  band           String
-  seed           BigInt
+  id            String    @id @default(cuid())
+  userId        String
+  scenarioKey   String
+  roleCode      String
+  band          String
+  seed          BigInt
   /// Phiên bản nội dung đã ghim cho lượt này.
   ///
   /// Máy chủ chấm điểm bằng cách CHẠY LẠI lượt chơi. Nội dung nay nằm trong
   /// database nên có thể đổi giữa chừng; đổi rồi mà chạy lại bằng bản mới thì
   /// lượt chơi rẽ nhánh khác và điểm ra sai. Ghim số này lúc mở màn khiến một
   /// lượt đang dở trở thành bất biến.
-  contentVersion Int       @default(0)
-  actions        Json?
-  startedAt      DateTime  @default(now())
-  completedAt    DateTime?
-  endingId       String?
-  endingType     String?
-  pointsAwarded  Int       @default(0)
+  contentVersion Int      @default(0)
+  actions       Json?
+  startedAt     DateTime  @default(now())
+  completedAt   DateTime?
+  endingId      String?
+  endingType    String?
+  pointsAwarded Int       @default(0)
   /// Người chơi chấm tình huống có giống thực tế không (1–5 sao).
-  rating         Int?
+  rating        Int?
 
-  /**
-   * ── Ca làm (seed v2, Game Design W45) ───────────────────────────────
-   * Lượt chơi theo ca làm là chuỗi sự kiện append-only ở `RunEvent`;
-   * trạng thái = fold chuỗi đó qua `game-core`. Lượt prototype cũ (chơi hết
-   * rồi gửi một lần) có `schemaVersion = 1` và không có sự kiện nào.
-   */
+  /// `replay`: luồng prototype (gửi cả chuỗi hành động một lần, chấm bằng
+  /// chạy lại). `events`: luồng có AI (SD-01) — mỗi câu gửi ngay, lượt chơi
+  /// là chuỗi `run_event`.
+  /// `shift`: ca làm (Game Design W45) — cũng là chuỗi `run_event`, fold
+  /// bằng engine `shift` của game-core.
+  flow               String    @default("replay")
+  /// ERD-05 `run_status`. Có nghĩa với `flow = events` và `flow = shift`.
+  status             RunStatus @default(IN_PROGRESS)
+  /// Bản sao của trạng thái fold từ `run_event`, để tra nhanh; nguồn chân lý là chuỗi sự kiện.
+  currentActivityKey String?
 
-  status        RunStatus @default(IN_PROGRESS)
-  /// Lượt chơi thử của chuyên gia: không tính vào thống kê (D-46).
-  isPlaytest    Boolean   @default(false)
-  enrolmentId   String?
-  /// 1 = prototype (`/api/runs`), 2 = ca làm (`/api/v1/runs`).
-  schemaVersion Int       @default(1)
-  /// Mã seed ca làm, ví dụ `SWE_BACKEND.L3.m2`.
-  seedId        String?
-  currentNodeId String?
-  /// Hết model AI dùng được: phiên tạm dừng, giữ tiến độ (D-92).
-  pausedAt      DateTime?
-
-  user      User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  enrolment Enrollment?       @relation(fields: [enrolmentId], references: [id], onDelete: SetNull)
-  evidence  RunEvidence[]
-  events    RunEvent[]
-  answers   Answer[]
-  feedback  ScenarioFeedback?
-  flags     ContentFlag[]
-  notes     PlayerNote[]
+  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  evidence RunEvidence[]
+  events   RunEvent[]
+  answers  Answer[]
+  aiJobs   AiJob[]
 
   @@index([userId, completedAt])
   @@index([userId, scenarioKey])
-  @@index([userId, seedId, status])
+  @@index([userId, flow, status])
 }
 
+/// ERD-05 `run_status`.
 enum RunStatus {
   IN_PROGRESS
   FINISHED
   ABANDONED
 }
 
-enum RunEventType {
-  /// Một thao tác của người chơi (`PlayerInput` của game-core).
-  PLAYER_INPUT
-  /// Lời AI-4 viết, kèm provenance. Không bao giờ sinh lại.
-  AI_NARRATION
-  /// Trả lời của bộ phán có/không, kèm provenance.
-  AI_CHECKS
-  /// Hết model: phiên tạm dừng. Không phải đầu vào của engine.
-  RUN_PAUSED
-}
-
-/// Chuỗi sự kiện của một lượt ca làm (ERD-05 `run_event`). Chỉ thêm, không sửa.
+/// ERD-05 `run_event`: lượt chơi là chuỗi sự kiện chỉ ghi thêm; trạng thái =
+/// fold các sự kiện qua `foldPlay` của game-core (§5.3.1). Đầu ra của model
+/// vào đây kèm nguồn gốc (model, prompt, chi phí, độ trễ) và không bao giờ
+/// được tính lại.
 model RunEvent {
-  id        BigInt       @id @default(autoincrement())
-  runId     String
-  /// Thứ tự trong lượt. Unique cùng `runId`: hai yêu cầu ghi cùng chỗ thì một bên thua.
-  seq       Int
-  type      RunEventType
-  /// Lượt người chơi sinh ra sự kiện này.
-  turnId    String?
-  payload   Json
-  createdAt DateTime     @default(now())
+  id          BigInt   @id @default(autoincrement())
+  runId       String   @map("run_id")
+  seq         Int
+  type        String
+  activityKey String?  @map("activity_key")
+  payload     Json
+  createdAt   DateTime @default(now()) @map("created_at")
 
   run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
 
@@ -218,79 +198,148 @@ model RunEvent {
   @@map("run_event")
 }
 
-enum TurnStatus {
-  /// Đã lưu, đang chờ AI (job trong hàng đợi).
-  PENDING
-  DONE
-  /// Hết model: lượt dừng lại, giữ tiến độ.
-  PAUSED
-}
-
-/// Một lượt của người chơi (ERD-06 `answer`). `id` do máy khách tạo (NFR-04).
+/// ERD-06 `answer`. `id` do máy khách tạo, nên gửi lại cùng câu là an toàn (NFR-04).
 model Answer {
-  id          String     @id
-  runId       String
-  kind        String
-  text        String?
-  payload     Json
-  status      TurnStatus @default(PENDING)
-  /// Job xử lý lượt này, khi cần AI.
-  jobId       String?
-  /// Các dòng thoại lượt này sinh ra: `[lineFrom, lineTo)` trong transcript.
-  lineFrom    Int
-  lineTo      Int?
-  submittedAt DateTime   @default(now())
-  completedAt DateTime?
+  id               String    @id
+  runId            String    @map("run_id")
+  activityKey      String    @map("activity_key")
+  followupNo       Int       @map("followup_no")
+  followupQuestion String?   @map("followup_question")
+  taskType         String    @map("task_type")
+  text             String?
+  selection        Json?
+  /// Mức của câu đóng, chấm bằng khoá của chuyên gia.
+  systemScore      Int?      @map("system_score")
+  submittedAt      DateTime  @default(now()) @map("submitted_at")
 
-  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+  run        ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+  assessment Assessment?
 
-  @@index([runId, status])
+  @@unique([runId, activityKey, followupNo])
   @@map("answer")
 }
 
-/// Tổng kết cuối ca (ERD-06 `scenario_feedback`). Chưa chấm điểm.
-model ScenarioFeedback {
-  runId     String   @id
-  summary   Json
-  createdAt DateTime @default(now())
-
-  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
-
-  @@map("scenario_feedback")
+/// ERD-06 `assessment_status`.
+enum AssessmentStatus {
+  QUEUED
+  GRADED
+  /// Không đủ judge theo chính sách (D-108): câu trả lời được giữ, chấm lại sau.
+  PENDING
+  FAILED
 }
 
-enum FlagStatus {
-  OPEN
-  HANDLED
+/// ERD-06 `assessment`. Chưa có `model_config` (ERD-07): bộ model ghi ở `judge_result.model_id`.
+model Assessment {
+  id         String           @id @default(cuid())
+  answerId   String           @unique @map("answer_id")
+  aiJobId    String           @map("ai_job_id")
+  status     AssessmentStatus @default(QUEUED)
+  panelSize  Int?             @map("panel_size")
+  method     String?
+  score      Int?
+  counterproductive Boolean   @default(false)
+  gradedAt   DateTime?        @map("graded_at")
+  latencyMs  Int?             @map("latency_ms")
+
+  answer   Answer           @relation(fields: [answerId], references: [id], onDelete: Cascade)
+  aiJob    AiJob            @relation(fields: [aiJobId], references: [id])
+  judges   JudgeResult[]
+  criteria CriterionGrade[]
+
+  @@map("assessment")
 }
 
-/// Người chơi báo nội dung sai (ERD-05 `content_flag`).
-model ContentFlag {
-  id          String     @id @default(uuid())
-  runId       String
-  /// Nút hay dòng thoại bị báo.
-  activityKey String
-  reason      String
-  status      FlagStatus @default(OPEN)
-  createdAt   DateTime   @default(now())
+/// ERD-06 `judge_result`: một ghế của panel cho một câu trả lời.
+model JudgeResult {
+  id           String  @id @default(cuid())
+  assessmentId String  @map("assessment_id")
+  judgeSlot    Int     @map("judge_slot")
+  family       String
+  /// Model đã chấm, hoặc model cuối cùng đã thử.
+  modelId      String? @map("model_id")
+  /// `ok` | `failed` | `blocked`
+  status       String
+  attempts     Int
+  error        String?
 
-  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+  assessment Assessment   @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  scores     JudgeScore[]
 
-  @@index([status])
-  @@map("content_flag")
+  @@unique([assessmentId, judgeSlot])
+  @@map("judge_result")
 }
 
-/// Ghi chú riêng của người chơi trong sổ tay (khối M). Không gửi AI, không chấm.
-model PlayerNote {
-  id        String   @id @default(uuid())
-  runId     String
-  text      String
-  createdAt DateTime @default(now())
+/// ERD-06 `judge_score`. Khoá tiêu chí là chuỗi (`a2-k1`) vì nội dung prototype
+/// chưa có bảng `rubric_criterion` (ERD-03). Thêm `rationale` ngoài ERD: lý do
+/// của judge là thứ chuyên gia đọc khi duyệt ca bị gắn cờ.
+model JudgeScore {
+  judgeResultId     String  @map("judge_result_id")
+  criterionKey      String  @map("criterion_key")
+  score             Int?
+  counterproductive Boolean
+  quote             String?
+  quoteVerified     Boolean @map("quote_verified")
+  rationale         String
 
-  run ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+  judge JudgeResult @relation(fields: [judgeResultId], references: [id], onDelete: Cascade)
 
-  @@index([runId])
-  @@map("player_note")
+  @@id([judgeResultId, criterionKey])
+  @@map("judge_score")
+}
+
+/// ERD-06 `criterion_grade`: mức gộp của panel cho một tiêu chí.
+model CriterionGrade {
+  assessmentId      String  @map("assessment_id")
+  criterionKey      String  @map("criterion_key")
+  score             Int?
+  counterproductive Boolean
+  method            String
+  highDisagreement  Boolean @map("high_disagreement")
+
+  assessment Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+
+  @@id([assessmentId, criterionKey])
+  @@map("criterion_grade")
+}
+
+/// ERD-07 `ai_job`: một việc AI chạy ở worker.
+model AiJob {
+  id         String    @id
+  /// `GRADING` (AI-5 chấm, kèm AI-4 hỏi vặn khi engine cho phép).
+  kind       String
+  /// `QUEUED` | `RUNNING` | `SUCCEEDED` | `FAILED`
+  status     String    @default("QUEUED")
+  runId      String?   @map("run_id")
+  attempts   Int       @default(0)
+  lastError  String?   @map("last_error")
+  queuedAt   DateTime  @default(now()) @map("queued_at")
+  finishedAt DateTime? @map("finished_at")
+
+  run         ScenarioRun? @relation(fields: [runId], references: [id], onDelete: SetNull)
+  assessments Assessment[]
+  costs       UsageCost[]
+
+  @@map("ai_job")
+}
+
+/// ERD-07 `usage_cost`: sổ chi phí, một dòng mỗi lần gọi model (NFR-11).
+model UsageCost {
+  id        BigInt   @id @default(autoincrement())
+  aiJobId   String   @map("ai_job_id")
+  /// Vai của lượt gọi: `judge` (AI-5) hay `narrator` (AI-4).
+  role      String
+  modelId   String   @map("model_id")
+  tokensIn  Int      @map("tokens_in")
+  tokensOut Int      @map("tokens_out")
+  costUsd   Decimal  @map("cost_usd") @db.Decimal(12, 8)
+  latencyMs Int?     @map("latency_ms")
+  succeeded Boolean
+  createdAt DateTime @default(now()) @map("created_at")
+
+  aiJob AiJob @relation(fields: [aiJobId], references: [id], onDelete: Cascade)
+
+  @@index([aiJobId])
+  @@map("usage_cost")
 }
 
 /// Bằng chứng do máy chủ chấm lại, không phải điều máy khách khai.
@@ -381,25 +430,24 @@ model Enrollment {
   band       String
   enrolledAt DateTime @default(now())
 
-  user User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  runs ScenarioRun[]
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, roleCode, band])
   @@index([userId])
 }
 
-/**
- * ══ Nội dung game ═══════════════════════════════════════════════════════
- * Trước đây toàn bộ nội dung nằm trong mã (`packages/game-core/src/data`),
- * nên sửa một câu thoại là phải build lại cả hai ứng dụng, và trình duyệt
- * tải về 193 KB dữ liệu ở mỗi lần mở trang.
- * Mỗi thực thể một dòng: vài cột để tra cứu, cộng một cột `body` giữ nguyên
- * hình dạng mà Zod schema trong `game-core` đã định nghĩa — hợp đồng dữ liệu
- * không đổi, chỉ đổi chỗ cất.
- * Mọi bảng đều có `version`: cùng một `version` là một ảnh chụp nhất quán của
- * cả bộ dữ liệu. Chỉ script seed ghi vào những bảng này; API không có đường
- * ghi nào.
- */
+/* ══ Nội dung game ═══════════════════════════════════════════════════════
+   Trước đây toàn bộ nội dung nằm trong mã (`packages/game-core/src/data`),
+   nên sửa một câu thoại là phải build lại cả hai ứng dụng, và trình duyệt
+   tải về 193 KB dữ liệu ở mỗi lần mở trang.
+
+   Mỗi thực thể một dòng: vài cột để tra cứu, cộng một cột `body` giữ nguyên
+   hình dạng mà Zod schema trong `game-core` đã định nghĩa — hợp đồng dữ liệu
+   không đổi, chỉ đổi chỗ cất.
+
+   Mọi bảng đều có `version`: cùng một `version` là một ảnh chụp nhất quán của
+   cả bộ dữ liệu. Chỉ script seed ghi vào những bảng này; API không có đường
+   ghi nào. */
 
 /// Phiên bản nội dung đang được phục vụ.
 model ContentRelease {
@@ -462,11 +510,11 @@ model QuizQuestionDoc {
 /// Lời NPC cho lượt đào sâu. Có lời mới được mở lượt đào sâu, nên đây vừa là
 /// nội dung vừa là điều kiện của luật chơi.
 model FollowupDoc {
-  version     Int
+  version    Int
   scenarioKey String
-  activityId  String
-  who         String
-  text        String
+  activityId String
+  who        String
+  text       String
 
   @@id([version, scenarioKey, activityId])
 }
@@ -491,6 +539,8 @@ model MetaDoc {
 }
 
 /// Seed ca làm (Game Design W45), theo `shift.ShiftSeedSchema` của game-core.
+/// Lượt chơi ca làm dùng chung `ScenarioRun` (`flow = 'shift'`), `run_event`
+/// và `ai_job`; chỉ nội dung là cần bảng riêng.
 model ShiftSeedDoc {
   version  Int
   seedId   String
@@ -501,7 +551,7 @@ model ShiftSeedDoc {
   @@id([version, seedId])
 }
 
-/// Gói cấp của ca làm: công ty, quy định, nhịp thời gian (khối G).
+/// Gói cấp của ca làm: công ty, quy định, nhịp thời gian (Seed scenario khối G).
 model LevelPackDoc {
   version Int
   packId  String

@@ -14,6 +14,9 @@ export interface AiCallOptions {
   budgetUsd?: number;
   /** Tên hiển thị của các nhân vật trong ca, là nguồn hợp lệ cho R1. */
   castNames?: readonly string[];
+  /** Seed và gói cấp đã ghim của lượt chơi (AI-4 cần để dựng cảnh). */
+  ctx?: shift.ShiftContext;
+  contentVersion?: number;
 }
 
 export type AiOutcome<T> =

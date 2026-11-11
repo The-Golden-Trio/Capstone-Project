@@ -65,7 +65,24 @@ export interface ModelSpec {
   family: string;
   region: string;
   baseUrl: string;
-  supports: { jsonSchema: boolean; explicitCache: boolean };
+  /**
+   * `temperature`: model có nhận tham số này không; thiếu nghĩa là có. Claude
+   * 5.5 và GPT-6 trên OpenRouter (11/11/2026) không liệt kê `temperature`, mà
+   * adapter OpenRouter bật `require_parameters` — gửi lên thì không hãng nào
+   * nhận request. Không nhận thì model chạy ở mặc định của hãng.
+   */
+  supports: {
+    jsonSchema: boolean;
+    explicitCache: boolean;
+    temperature?: boolean;
+  };
+  /**
+   * Mức suy nghĩ thấp nhất model chấp nhận; thiếu nghĩa là tắt hẳn (`none`).
+   * Gemini 3.x trên OpenRouter (11/11/2026) từ chối `none`: "Reasoning is
+   * mandatory for this endpoint and cannot be disabled"; `minimal` thì chạy
+   * và báo 0 token suy nghĩ.
+   */
+  minReasoning?: 'none' | 'minimal';
   cacheMode: CacheMode;
   price: Price;
   dataPolicy: DataPolicy;

@@ -1,14 +1,16 @@
 /**
- * Module của worker process (CL-00: vai `worker`). Không có HTTP; chỉ xử lý
- * job trong hàng đợi và đẩy tin qua Redis pub/sub.
+ * Process worker (§5.3.1: modular monolith, một codebase chạy hai vai). Không
+ * mở cổng HTTP; nhận việc từ queue `grading`, gọi model qua gateway, ghi kết
+ * quả vào PostgreSQL và đẩy sự kiện qua Redis.
  */
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AssessmentModule } from './assessment/assessment.module';
+import { GradingProcessor } from './assessment/grading.processor';
+import { ShiftTurnProcessor } from './assessment/shift-turn.processor';
 import { loadEnv } from './config/env';
 import { ContentModule } from './content/content.module';
 import { CoreModule } from './core/core.module';
-import { NotificationCoreModule } from './notification/notification.module';
 import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
@@ -21,8 +23,8 @@ import { PrismaModule } from './prisma/prisma.module';
     PrismaModule,
     ContentModule,
     CoreModule,
-    NotificationCoreModule,
-    AssessmentModule.forWorker(),
+    AssessmentModule,
   ],
+  providers: [GradingProcessor, ShiftTurnProcessor],
 })
 export class WorkerModule {}

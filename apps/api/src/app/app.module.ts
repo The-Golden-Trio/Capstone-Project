@@ -8,13 +8,12 @@ import { AuthModule } from '../auth/auth.module';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
 import { ContentModule } from '../content/content.module';
+import { CoreModule } from '../core/core.module';
+import { PlayModule } from '../play/play.module';
 import { loadEnv } from '../config/env';
 import { PrismaModule } from '../prisma/prisma.module';
 import { ProfileModule } from '../profile/profile.module';
 import { RunsModule } from '../runs/runs.module';
-import { CoreModule } from '../core/core.module';
-import { NotificationModule } from '../notification/notification.module';
-import { PlayModule } from '../play/play.module';
 
 @Module({
   imports: [
@@ -30,9 +29,7 @@ import { PlayModule } from '../play/play.module';
     RunsModule,
     ProfileModule,
     AiModule,
-    // Luồng chơi ca làm (/api/v1). Route prototype /api/runs giữ tới khi thay (Q8).
     CoreModule,
-    NotificationModule,
     PlayModule,
   ],
   controllers: [AppController],

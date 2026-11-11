@@ -1,0 +1,2334 @@
+{
+  "_note": "Thẻ chuẩn sinh bằng engine.py (research/research_notes/Hồ sơ NPC JobQuest/qa_v05/engine.py, v1.0) cho mọi lá × vai hợp lệ × anh/chị, với hai slot. Bản TypeScript phải khớp từng chữ.",
+  "slots": {
+    "min": {
+      "id": "slot_x",
+      "vai": "vai mẫu trong màn"
+    },
+    "full": {
+      "id": "quan_ly",
+      "vai": "quản lý trực tiếp của người chơi, phụ trách duyệt mọi thay đổi trước khi đưa lên hệ thống thật của cả nhóm",
+      "want": "muốn A",
+      "pressure": "gấp B",
+      "concerns": "sợ C",
+      "beliefs": "nghĩ D",
+      "known": "biết E",
+      "expertise": "nghề 2",
+      "disclosure": "ngại nói",
+      "kenh": "chat",
+      "stance": "Thái độ riêng"
+    }
+  },
+  "cases": [
+    {
+      "card": "0_chang_kho",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "d6f7535d10151ef192741b564a16452fc6545ea4c1a1bfbf882b37e356d549a1",
+      "personWords": 204
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "8a00060172d3579ca08fd31c28c6ade56d29404e7371c6c90a1219bf7083ae86",
+      "personWords": 221
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "d6f7535d10151ef192741b564a16452fc6545ea4c1a1bfbf882b37e356d549a1",
+      "personWords": 204
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "8a00060172d3579ca08fd31c28c6ade56d29404e7371c6c90a1219bf7083ae86",
+      "personWords": 221
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "041437cab5b06a838c4e0afb3208f7e01c9198b61a6ddf82c08454e3e4f11dcd",
+      "personWords": 211
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "1fae2d7290ebe2a6773ea2c10db0015faf52bae8971f315ac6d5f19c5835155f",
+      "personWords": 228
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "041437cab5b06a838c4e0afb3208f7e01c9198b61a6ddf82c08454e3e4f11dcd",
+      "personWords": 211
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "1fae2d7290ebe2a6773ea2c10db0015faf52bae8971f315ac6d5f19c5835155f",
+      "personWords": 228
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "b194183b13854ce5de2f57a44d3cc06a59b72f13b2b231c8b880b3df3355a827",
+      "personWords": 209
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "aac7a76d8cfe5e3cac9e917b9b027d19e9ebe30797754346866ce954a10b1ae6",
+      "personWords": 226
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "b194183b13854ce5de2f57a44d3cc06a59b72f13b2b231c8b880b3df3355a827",
+      "personWords": 209
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "aac7a76d8cfe5e3cac9e917b9b027d19e9ebe30797754346866ce954a10b1ae6",
+      "personWords": 226
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "fa77fd21fdeec71f5adbdac4ba8c51984689cbc654e66151ce64cdcbd5ceac70",
+      "personWords": 207
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "adfeb0805241c663d0805a904031fcfecfb75e94e1ca383d667dc0018d8657dc",
+      "personWords": 224
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "38000fd534fe2e679c8a9053e5f2c01dc927ba9a60619c46ee84a9d61f727810",
+      "personWords": 207
+    },
+    {
+      "card": "0_chang_kho",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "79170dd1047594ad51d01b7a94655c273b3f2c8396d0188ede7fe587cba5b2c8",
+      "personWords": 224
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "cad9f8f0569bab29cbbefd4beb7b6db2af0cad99d3a117ca8bc3f3edb1644d3e",
+      "personWords": 210
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "8fc0459848d7ecd98a42c1798d9b2633867446dc683cb3f8a7ce64ac094002aa",
+      "personWords": 227
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "cad9f8f0569bab29cbbefd4beb7b6db2af0cad99d3a117ca8bc3f3edb1644d3e",
+      "personWords": 210
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "8fc0459848d7ecd98a42c1798d9b2633867446dc683cb3f8a7ce64ac094002aa",
+      "personWords": 227
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "d93e0fe8fff54e50a22a48e19201ff3bcaf3e13c3075c691bdb2da53c3e98bc3",
+      "personWords": 210
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "6c4da41340cc1d1caa8ddfeba55b63eebb9644fce57cda2ba04a58eb09007582",
+      "personWords": 227
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "d93e0fe8fff54e50a22a48e19201ff3bcaf3e13c3075c691bdb2da53c3e98bc3",
+      "personWords": 210
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "6c4da41340cc1d1caa8ddfeba55b63eebb9644fce57cda2ba04a58eb09007582",
+      "personWords": 227
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "58cc7bfe74f66d7cf14cb2db219c169dcb26f1daa858113f25b4bda5e98e4fc2",
+      "personWords": 210
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "9c8400d1f45e189d66df2afab7789e2e26356f4ef3afca6cf4d4f237774b43d5",
+      "personWords": 227
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "58cc7bfe74f66d7cf14cb2db219c169dcb26f1daa858113f25b4bda5e98e4fc2",
+      "personWords": 210
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "9c8400d1f45e189d66df2afab7789e2e26356f4ef3afca6cf4d4f237774b43d5",
+      "personWords": 227
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "486e682c1b8206aaa6c9767a896e322b99722ba5e0ea11362e40e331e3fbd3ab",
+      "personWords": 206
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "292ee11063df787a120b80244ceb45365fa25f4d917d696c769a39ff62ab25c8",
+      "personWords": 223
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "77a64d57dbd83068c420d1e81a23102d215f8dafc20b077a57896097b3366f74",
+      "personWords": 206
+    },
+    {
+      "card": "I_nha_ao_thuat",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "20e43b9ec8d393f2b329d7f798179fda9c00cce12aa2dcb6ccd9d5eca30b68b6",
+      "personWords": 223
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "4698112220cc7f4c0b12b3671291c6540fffd446ddbd1dccd35b1866866cacf6",
+      "personWords": 203
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "d562a550228dcca8e4a8ab063750921c322e51109ff5427f07c79acc6d753ce9",
+      "personWords": 220
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "4698112220cc7f4c0b12b3671291c6540fffd446ddbd1dccd35b1866866cacf6",
+      "personWords": 203
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "d562a550228dcca8e4a8ab063750921c322e51109ff5427f07c79acc6d753ce9",
+      "personWords": 220
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "ad2a0345930b5ea4fd5e27329b248863fb030ad425af26afa57d675edc9cf3cf",
+      "personWords": 209
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "26ad5eb8f180fba81176d61cb150dc636ef6793aa38b6e9c649008849a76c05e",
+      "personWords": 226
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "ad2a0345930b5ea4fd5e27329b248863fb030ad425af26afa57d675edc9cf3cf",
+      "personWords": 209
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "26ad5eb8f180fba81176d61cb150dc636ef6793aa38b6e9c649008849a76c05e",
+      "personWords": 226
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "fb252821666da36da883b4108b39bcf98b638e45a4646b376df420a09999573d",
+      "personWords": 205
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "512668db899f6e465b79809c3d36ae5d4601fed405102515cec4aac43c39eb34",
+      "personWords": 222
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "fb252821666da36da883b4108b39bcf98b638e45a4646b376df420a09999573d",
+      "personWords": 205
+    },
+    {
+      "card": "II_nu_tu_te",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "512668db899f6e465b79809c3d36ae5d4601fed405102515cec4aac43c39eb34",
+      "personWords": 222
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "e81f6b8a8e1882a881571e96e2d35eccbaa2cbabfeae395aa5ff92061daa2e33",
+      "personWords": 220
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "b96182b5af097dc6e9c2a781ec7e1cbe059ff1f039cf6a34ada4733829ee2a86",
+      "personWords": 237
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "e81f6b8a8e1882a881571e96e2d35eccbaa2cbabfeae395aa5ff92061daa2e33",
+      "personWords": 220
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "b96182b5af097dc6e9c2a781ec7e1cbe059ff1f039cf6a34ada4733829ee2a86",
+      "personWords": 237
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "2ba16bcdb003753f3b817e0813262ad657cbe9856957413581492472e08c2cff",
+      "personWords": 223
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "1e1eb5fb514491f2c113d8bc9b15f5588c750c7377b7755ce3b6a28430d174c3",
+      "personWords": 240
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "2ba16bcdb003753f3b817e0813262ad657cbe9856957413581492472e08c2cff",
+      "personWords": 223
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "1e1eb5fb514491f2c113d8bc9b15f5588c750c7377b7755ce3b6a28430d174c3",
+      "personWords": 240
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "74921d968caf1155f20015e029af5b3ad37a7405d1e58509585b256d3db7dfb4",
+      "personWords": 221
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "233202effcc2dbc6caa9a43e0762d13265389e63ae66b2b81f256f01b579690c",
+      "personWords": 238
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "74921d968caf1155f20015e029af5b3ad37a7405d1e58509585b256d3db7dfb4",
+      "personWords": 221
+    },
+    {
+      "card": "III_hoang_hau",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "233202effcc2dbc6caa9a43e0762d13265389e63ae66b2b81f256f01b579690c",
+      "personWords": 238
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "83405a2b4d915425e67ecddbca68e5f295305897115264bcb73dc3ee3aa9afed",
+      "personWords": 195
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "899f4dfdb06da40a5af9128f9cfab8fec0037399e1e77256c3e721b163e30ba3",
+      "personWords": 212
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "83405a2b4d915425e67ecddbca68e5f295305897115264bcb73dc3ee3aa9afed",
+      "personWords": 195
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "899f4dfdb06da40a5af9128f9cfab8fec0037399e1e77256c3e721b163e30ba3",
+      "personWords": 212
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "f7acedec2536760b5b58005cacf20777f08448dc190ff49495e9801ce7227cf4",
+      "personWords": 201
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "609378b4a6777a3c02bc282880e45baeb4395c5efef5c2015b8552c42ebda7c9",
+      "personWords": 218
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "f7acedec2536760b5b58005cacf20777f08448dc190ff49495e9801ce7227cf4",
+      "personWords": 201
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "609378b4a6777a3c02bc282880e45baeb4395c5efef5c2015b8552c42ebda7c9",
+      "personWords": 218
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "c565d818f63390328f0e73ae9b23f30af37f8c13dbb6bd9bb699a6b03cbbd684",
+      "personWords": 200
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "858ed3a68dd8e749d387e059d6ff63f88e938435342039b0d4a5196a810f0cad",
+      "personWords": 217
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "c565d818f63390328f0e73ae9b23f30af37f8c13dbb6bd9bb699a6b03cbbd684",
+      "personWords": 200
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "858ed3a68dd8e749d387e059d6ff63f88e938435342039b0d4a5196a810f0cad",
+      "personWords": 217
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "5edb5c3a11bd1d659862b315ec02ac887595f59d0a1318b319dd9555febc32a9",
+      "personWords": 224
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "951f8d4deeb925a7d394d9a2885582caeb1a032e0a07581847aeff8a3a3cae54",
+      "personWords": 241
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "5edb5c3a11bd1d659862b315ec02ac887595f59d0a1318b319dd9555febc32a9",
+      "personWords": 224
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "951f8d4deeb925a7d394d9a2885582caeb1a032e0a07581847aeff8a3a3cae54",
+      "personWords": 241
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "5d16f433bbcb96ded9a39f1b6fc4a62de8ca54a85c9f59b1130695fd9c6647e9",
+      "personWords": 223
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "7b025bfb1df2ed73d73c058c6b56ff1bf55f8ff3c19e14a22b0185b29105de99",
+      "personWords": 240
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "5d16f433bbcb96ded9a39f1b6fc4a62de8ca54a85c9f59b1130695fd9c6647e9",
+      "personWords": 223
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "7b025bfb1df2ed73d73c058c6b56ff1bf55f8ff3c19e14a22b0185b29105de99",
+      "personWords": 240
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "584e8a4cb05711f709042e0bcedb2dc33286c82e0b9442926518158b13038321",
+      "personWords": 219
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "587ab3ff76440d83a05a1147737b82c4a2b7db9f4d0aaf79caa746e17ab1d8de",
+      "personWords": 236
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "584e8a4cb05711f709042e0bcedb2dc33286c82e0b9442926518158b13038321",
+      "personWords": 219
+    },
+    {
+      "card": "V_giao_hoang",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "587ab3ff76440d83a05a1147737b82c4a2b7db9f4d0aaf79caa746e17ab1d8de",
+      "personWords": 236
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "66ffc8d60d6d8baa577cf03b65810c2c1084dc2cd1a2974e309cfa94ffbf390e",
+      "personWords": 203
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "3ba345af5c8a110c3001ed6ae73aecceaec654020b314098eb2686a2a4a878d2",
+      "personWords": 220
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "66ffc8d60d6d8baa577cf03b65810c2c1084dc2cd1a2974e309cfa94ffbf390e",
+      "personWords": 203
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "3ba345af5c8a110c3001ed6ae73aecceaec654020b314098eb2686a2a4a878d2",
+      "personWords": 220
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "fbeea7ea32daa854de9e7e553f5fad9b42265a6da6b1558068779509a086474a",
+      "personWords": 205
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "2a5a61cb3ed6769f2a6b263b9b3dbf2978410b205da47264162160093375fb97",
+      "personWords": 222
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "fbeea7ea32daa854de9e7e553f5fad9b42265a6da6b1558068779509a086474a",
+      "personWords": 205
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "2a5a61cb3ed6769f2a6b263b9b3dbf2978410b205da47264162160093375fb97",
+      "personWords": 222
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "1cc113122b84afc24517124cbaff2dd7ec1dc94e3b44d0abc9be6b3864bbec0e",
+      "personWords": 204
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "1a1fe4805ee825839905dd7fb75b86a68a85f8f3df529e7badd8775eee3d6390",
+      "personWords": 221
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "1cc113122b84afc24517124cbaff2dd7ec1dc94e3b44d0abc9be6b3864bbec0e",
+      "personWords": 204
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "1a1fe4805ee825839905dd7fb75b86a68a85f8f3df529e7badd8775eee3d6390",
+      "personWords": 221
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "6ed5507387202c2cbb485e1935f143267b4d203f798311bc0addf3bcac2a648a",
+      "personWords": 201
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "bd8aa0b7e6999411f02a08bb91c7d756743e4dccb0b210ae7129e4fbb1b82034",
+      "personWords": 218
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "0cf36b195fc51558b57de6318ede4e1976971dc844c938c44d6c314b51cb7126",
+      "personWords": 201
+    },
+    {
+      "card": "VI_tinh_nhan",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "7688f84155551557e8a43beca358f3e6dafe9c9fff3c307d0ba519db965ff05d",
+      "personWords": 218
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "a11dd2569762181e7cfed11445e9fa588ecddde1f8454a4fdd315681d7bc18e2",
+      "personWords": 214
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "c12fe4e8052629e42f6dc1bd5b1e1b424b38a1c7d9eecad19124b3d463b172a9",
+      "personWords": 231
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "a11dd2569762181e7cfed11445e9fa588ecddde1f8454a4fdd315681d7bc18e2",
+      "personWords": 214
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "c12fe4e8052629e42f6dc1bd5b1e1b424b38a1c7d9eecad19124b3d463b172a9",
+      "personWords": 231
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "b1bb6d3e514cb138bdcac83a25b6040d911b55adbf6e9c246ccf4584a4941eb6",
+      "personWords": 216
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "8af8fcf1b5672d64962434a94951cb0bae31332acea57d589ee85be97e30a903",
+      "personWords": 233
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "b1bb6d3e514cb138bdcac83a25b6040d911b55adbf6e9c246ccf4584a4941eb6",
+      "personWords": 216
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "8af8fcf1b5672d64962434a94951cb0bae31332acea57d589ee85be97e30a903",
+      "personWords": 233
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "96bebaddefb25e87f16fae8acb4459c047501be11872206d11b0da14cdaf1ee8",
+      "personWords": 216
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "971b85cf54a7f9ddd7e988c9c2365d39dc1831add5f17addf4fcd6fd614ac712",
+      "personWords": 233
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "96bebaddefb25e87f16fae8acb4459c047501be11872206d11b0da14cdaf1ee8",
+      "personWords": 216
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "971b85cf54a7f9ddd7e988c9c2365d39dc1831add5f17addf4fcd6fd614ac712",
+      "personWords": 233
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "40a93ad22cb239541732210e43e908d68c2cb54b15a1b8eec83f30efc5c41b06",
+      "personWords": 214
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "8ee5a90446c078c6dd9725c680853395105d618858af7e5cbdf916c4d68b2fbd",
+      "personWords": 231
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "40a93ad22cb239541732210e43e908d68c2cb54b15a1b8eec83f30efc5c41b06",
+      "personWords": 214
+    },
+    {
+      "card": "VII_co_xe",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "8ee5a90446c078c6dd9725c680853395105d618858af7e5cbdf916c4d68b2fbd",
+      "personWords": 231
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "3f818429682647f894bf5959fbe0647d19b2ca6677e1143787e7371a59ac6af4",
+      "personWords": 211
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "814d9d3e85ac6c02138af1dd0ac974878cddd2fc6e49c826d0648eaba8a7c9fa",
+      "personWords": 228
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "3f818429682647f894bf5959fbe0647d19b2ca6677e1143787e7371a59ac6af4",
+      "personWords": 211
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "814d9d3e85ac6c02138af1dd0ac974878cddd2fc6e49c826d0648eaba8a7c9fa",
+      "personWords": 228
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "670dab76e59fd04aa450b4059c92f8318627b377c44c2518a1b1993453af5100",
+      "personWords": 209
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "b96e6a23de8ae0e2d1df622cd644b10a03d964a8858bd0ecf744aeef632614a0",
+      "personWords": 226
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "670dab76e59fd04aa450b4059c92f8318627b377c44c2518a1b1993453af5100",
+      "personWords": 209
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "b96e6a23de8ae0e2d1df622cd644b10a03d964a8858bd0ecf744aeef632614a0",
+      "personWords": 226
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "2efd4b6d7f9af82d42c2d8ef777470995bd7e5c50214c86b06a03d3099c284fa",
+      "personWords": 210
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "508ba55e228e057e76a82abc146eb037b9bf4d7fc46add83881cdaeefc2f2601",
+      "personWords": 227
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "2efd4b6d7f9af82d42c2d8ef777470995bd7e5c50214c86b06a03d3099c284fa",
+      "personWords": 210
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "508ba55e228e057e76a82abc146eb037b9bf4d7fc46add83881cdaeefc2f2601",
+      "personWords": 227
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "1491996a27b43da96f1ca6ea3d315ca65fb11bbe65411f84afd43e4862844b26",
+      "personWords": 208
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "4d8d2b247f6636b196c9f4e6d80886a12af52d8be01870d6e7ade91e6196e069",
+      "personWords": 225
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "1491996a27b43da96f1ca6ea3d315ca65fb11bbe65411f84afd43e4862844b26",
+      "personWords": 208
+    },
+    {
+      "card": "VIII_suc_manh",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "4d8d2b247f6636b196c9f4e6d80886a12af52d8be01870d6e7ade91e6196e069",
+      "personWords": 225
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "2d0c825ac91a6a2d65bafd3bdfbf2ade64742d4e0b35d2331f75ea28d0ce6cbe",
+      "personWords": 197
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "993a9f62b299bf1cfb5d9868ebc6e8078c1b5c4d026f6334d0a92c218c4ed22f",
+      "personWords": 214
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "2d0c825ac91a6a2d65bafd3bdfbf2ade64742d4e0b35d2331f75ea28d0ce6cbe",
+      "personWords": 197
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "993a9f62b299bf1cfb5d9868ebc6e8078c1b5c4d026f6334d0a92c218c4ed22f",
+      "personWords": 214
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "b00ded7f9ecc1bbbfecd316bad653542b49735f1c1c5d47cea6e37c2978c5305",
+      "personWords": 195
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "86fc86310b63bd59db97aaa857e4243d5c52a413f1f1af656ee37a28ffe4b323",
+      "personWords": 212
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "b00ded7f9ecc1bbbfecd316bad653542b49735f1c1c5d47cea6e37c2978c5305",
+      "personWords": 195
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "86fc86310b63bd59db97aaa857e4243d5c52a413f1f1af656ee37a28ffe4b323",
+      "personWords": 212
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "e1a323bd65a92376e950b55a4cbd714ba177c32acdbb0d19e2c4496848e4d962",
+      "personWords": 199
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "c89eab93d5fbc1ae202de38635442cc07a6834fcc70ae55715e407673c1fcaa5",
+      "personWords": 216
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "e1a323bd65a92376e950b55a4cbd714ba177c32acdbb0d19e2c4496848e4d962",
+      "personWords": 199
+    },
+    {
+      "card": "IX_an_si",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "c89eab93d5fbc1ae202de38635442cc07a6834fcc70ae55715e407673c1fcaa5",
+      "personWords": 216
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "7ad6d5935215116816f5fcc1e72d0d58f0b09e2606bffd588feadabf4dc9c322",
+      "personWords": 242
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "4499849cf0533c403f0f5744e7b057ad5a074d479f7e0a466f4031132083c541",
+      "personWords": 241
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "7ad6d5935215116816f5fcc1e72d0d58f0b09e2606bffd588feadabf4dc9c322",
+      "personWords": 242
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "4499849cf0533c403f0f5744e7b057ad5a074d479f7e0a466f4031132083c541",
+      "personWords": 241
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "26298aca039003cd89c5ade98b380c5b012dd9e6ffc5de1a4db2d1bee9938804",
+      "personWords": 243
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "e1950f46b61b4dcaac451cb4956f8f13753f87246ec522a5f829c80373f98204",
+      "personWords": 242
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "26298aca039003cd89c5ade98b380c5b012dd9e6ffc5de1a4db2d1bee9938804",
+      "personWords": 243
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "e1950f46b61b4dcaac451cb4956f8f13753f87246ec522a5f829c80373f98204",
+      "personWords": 242
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "e7f0b2dde22e993683c466b5851d9a12a62bd6855e3c8f1411dd877621b8cf5b",
+      "personWords": 240
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "270e6a822e75f4f23dc3d3b4eee6e7b891fadbcc3e71502c4af3e9912a5592aa",
+      "personWords": 250
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "e7f0b2dde22e993683c466b5851d9a12a62bd6855e3c8f1411dd877621b8cf5b",
+      "personWords": 240
+    },
+    {
+      "card": "X_banh_xe_so_phan",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "270e6a822e75f4f23dc3d3b4eee6e7b891fadbcc3e71502c4af3e9912a5592aa",
+      "personWords": 250
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "8f394e47e779341d6abf4c400a0a13962e2f94e3fbca873e17c64c9c031ef402",
+      "personWords": 236
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "f1a634e9316104867bc8dcea521529e93f37b59a02ea06a8a7b13049239ecf64",
+      "personWords": 245
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "8f394e47e779341d6abf4c400a0a13962e2f94e3fbca873e17c64c9c031ef402",
+      "personWords": 236
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "f1a634e9316104867bc8dcea521529e93f37b59a02ea06a8a7b13049239ecf64",
+      "personWords": 245
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "475683ec42ca2dda89ba758343c03e8d4ec746e8e8ba16817e5e2b2d822578c8",
+      "personWords": 235
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "c68013b2b96408d6a800582bcfdeb2fc4215d49d85d612dd236c8c7b63706653",
+      "personWords": 244
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "475683ec42ca2dda89ba758343c03e8d4ec746e8e8ba16817e5e2b2d822578c8",
+      "personWords": 235
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "c68013b2b96408d6a800582bcfdeb2fc4215d49d85d612dd236c8c7b63706653",
+      "personWords": 244
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "6eec5f06eb1ff50fccd0d5d8757a0b22011d9e976d97a80d5ddf071543602fb5",
+      "personWords": 241
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "4f8e70810c769de8a73a137f520676d76e013a2cd6bbb57896c3a300e9f0ea80",
+      "personWords": 250
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "6eec5f06eb1ff50fccd0d5d8757a0b22011d9e976d97a80d5ddf071543602fb5",
+      "personWords": 241
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "4f8e70810c769de8a73a137f520676d76e013a2cd6bbb57896c3a300e9f0ea80",
+      "personWords": 250
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "ad67c2a3a5ad8e2e24a36d6bbad457faf856a9de66ab8faa4334a46dc9e24f67",
+      "personWords": 236
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "fcc395a532bc114a12c866e7429420626c102204bcee1b5dc677e030c589ab6a",
+      "personWords": 245
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "ad67c2a3a5ad8e2e24a36d6bbad457faf856a9de66ab8faa4334a46dc9e24f67",
+      "personWords": 236
+    },
+    {
+      "card": "XI_cong_ly",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "fcc395a532bc114a12c866e7429420626c102204bcee1b5dc677e030c589ab6a",
+      "personWords": 245
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "8b78bc6c56d8623c7e4e46107d96328c7a734a79bbc70f23283d68c04428ed3e",
+      "personWords": 213
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "debb3fb2771d15d6a96cb0a4a9aa3f066fbca22bf158ddf11d5bde12b60ce2b9",
+      "personWords": 230
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "8b78bc6c56d8623c7e4e46107d96328c7a734a79bbc70f23283d68c04428ed3e",
+      "personWords": 213
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "debb3fb2771d15d6a96cb0a4a9aa3f066fbca22bf158ddf11d5bde12b60ce2b9",
+      "personWords": 230
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "41648e5154e5316e6819824d716684769d5969ba8d83c53a11594847f2fec510",
+      "personWords": 216
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "f3da80f757e73986a32fd2e25d8ff43b1f73efeb0220e30e3db75b616a258e5d",
+      "personWords": 233
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "2100646d4ef826e2936f873d58041e9fbf68f82b5240dfb10a64937efe3194f7",
+      "personWords": 216
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "506efef5d8cd8bd7483e875818d4d50933fb01ebac3882802cf77488cd0c2f2a",
+      "personWords": 233
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "c6b58a8b0bd73223a46d08b69c90219c4b48f19b98f8d4f59be03fae846ad0e6",
+      "personWords": 216
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "8d2ab5ee6408877029e653ae8a812904906e9ed34600c581aefd57cabfe95d56",
+      "personWords": 233
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "c6b58a8b0bd73223a46d08b69c90219c4b48f19b98f8d4f59be03fae846ad0e6",
+      "personWords": 216
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "8d2ab5ee6408877029e653ae8a812904906e9ed34600c581aefd57cabfe95d56",
+      "personWords": 233
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "c0d6aa04bff750cc88de6328fc34f12908f051c4a50e8d8a7233c31081a4135d",
+      "personWords": 215
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "a6a6651c336c6cdcc2c27e3c94f3288dc18cf7d8aeab1aee17adad451cad21e2",
+      "personWords": 232
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "c0d6aa04bff750cc88de6328fc34f12908f051c4a50e8d8a7233c31081a4135d",
+      "personWords": 215
+    },
+    {
+      "card": "XII_nguoi_treo_nguoc",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "a6a6651c336c6cdcc2c27e3c94f3288dc18cf7d8aeab1aee17adad451cad21e2",
+      "personWords": 232
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "bde21f6105f0b0b7de37aafe22aec0e247e79a66820571fcb63e7ee2ea90cd77",
+      "personWords": 224
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "147a12a0f00e7161d7a33eb6df38ec50932a1e44f84e31aa450735e3e6cc0836",
+      "personWords": 241
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "bde21f6105f0b0b7de37aafe22aec0e247e79a66820571fcb63e7ee2ea90cd77",
+      "personWords": 224
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "147a12a0f00e7161d7a33eb6df38ec50932a1e44f84e31aa450735e3e6cc0836",
+      "personWords": 241
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "a0d1b4c5e34b92e80bd5d3a60d5328aa45aecf20ba9774301cc404c3b7d0f94c",
+      "personWords": 224
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "c298db447ca4380a1d334f69d2746d9a3fb882c10f4969d7fb80748950b13c52",
+      "personWords": 241
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "a0d1b4c5e34b92e80bd5d3a60d5328aa45aecf20ba9774301cc404c3b7d0f94c",
+      "personWords": 224
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "c298db447ca4380a1d334f69d2746d9a3fb882c10f4969d7fb80748950b13c52",
+      "personWords": 241
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "e0aba54078e34e3f44d495257ba31e4e683ab7c1a8cf3559bdfc18ada97c785a",
+      "personWords": 223
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "e80e07616fcbb7a3abfad1795f9e79b3670adafe6a01984ff493353bfb0ba237",
+      "personWords": 240
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "e0aba54078e34e3f44d495257ba31e4e683ab7c1a8cf3559bdfc18ada97c785a",
+      "personWords": 223
+    },
+    {
+      "card": "XIII_cai_chet",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "e80e07616fcbb7a3abfad1795f9e79b3670adafe6a01984ff493353bfb0ba237",
+      "personWords": 240
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "18ee007866ad9bd638a1779391f99300a363646ce79551428f683555acd6d321",
+      "personWords": 238
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "0b1121fd76d8e71b590ff331183d0fb4132d3478bfa3797e11b5c50ba5236dd1",
+      "personWords": 247
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "18ee007866ad9bd638a1779391f99300a363646ce79551428f683555acd6d321",
+      "personWords": 238
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "0b1121fd76d8e71b590ff331183d0fb4132d3478bfa3797e11b5c50ba5236dd1",
+      "personWords": 247
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "097703a407d167c220d823a63fa00117c281746b6c011d272b0eb563843898d3",
+      "personWords": 240
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "154bd3256ae84f6913a3acb49c27dc85b7e7330b8e10ef47185ec41263010b22",
+      "personWords": 249
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "097703a407d167c220d823a63fa00117c281746b6c011d272b0eb563843898d3",
+      "personWords": 240
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "154bd3256ae84f6913a3acb49c27dc85b7e7330b8e10ef47185ec41263010b22",
+      "personWords": 249
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "54833c213f21e3d7cc026e58b3c09073eea5d2423c1943cd910672902cf1d7b1",
+      "personWords": 242
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "b358f68fc0f0f911583c05693049ff7d9f0994246df7d841366bbf379b976e28",
+      "personWords": 242
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "54833c213f21e3d7cc026e58b3c09073eea5d2423c1943cd910672902cf1d7b1",
+      "personWords": 242
+    },
+    {
+      "card": "XIV_tiet_do",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "b358f68fc0f0f911583c05693049ff7d9f0994246df7d841366bbf379b976e28",
+      "personWords": 242
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "018a876dc4c29502be102117e669aa5e48f802d18a2628a1ce557f69eca4be9c",
+      "personWords": 240
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "85071f28bd7caa661eaff44f52d9dcc1e68fd0430f918666b7a188c3dce9a6bf",
+      "personWords": 250
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "018a876dc4c29502be102117e669aa5e48f802d18a2628a1ce557f69eca4be9c",
+      "personWords": 240
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "85071f28bd7caa661eaff44f52d9dcc1e68fd0430f918666b7a188c3dce9a6bf",
+      "personWords": 250
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "0977e6d639a058594ad76d774e6461a7bafd02a4cc5d187429196298f2a26c71",
+      "personWords": 243
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "73273ded41ed7427a82eccb71f1386aaa9fc32b6317e804d0cc4caad9248442a",
+      "personWords": 243
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "0977e6d639a058594ad76d774e6461a7bafd02a4cc5d187429196298f2a26c71",
+      "personWords": 243
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "73273ded41ed7427a82eccb71f1386aaa9fc32b6317e804d0cc4caad9248442a",
+      "personWords": 243
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "22bc9553880fde080514b55504d6b861bb5f318b04477e773ec6538058eb8297",
+      "personWords": 242
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "411d5a58539755ef6701d0f7476c81e9cbf6479e9a0b2a17f9be232dc0d58a95",
+      "personWords": 242
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "22bc9553880fde080514b55504d6b861bb5f318b04477e773ec6538058eb8297",
+      "personWords": 242
+    },
+    {
+      "card": "XV_ac_quy",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "411d5a58539755ef6701d0f7476c81e9cbf6479e9a0b2a17f9be232dc0d58a95",
+      "personWords": 242
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "1f41210beaf1db37615b843e8203fc627522d233bc8207811119b13ef322c6f3",
+      "personWords": 231
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "395874e9b00dd2ae4944686860c7aab08db9df8302347baab643c28b44010b57",
+      "personWords": 248
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "1f41210beaf1db37615b843e8203fc627522d233bc8207811119b13ef322c6f3",
+      "personWords": 231
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "395874e9b00dd2ae4944686860c7aab08db9df8302347baab643c28b44010b57",
+      "personWords": 248
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "568ea1aa0091f2059a24650912dd190d0a3081961f4ce52e11c0a011532ebc18",
+      "personWords": 228
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "98ed00e5df366059f8ca8e2bc850af6bc28074376fd08cf8dfa224616c77268c",
+      "personWords": 245
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "b1b9ddcdba87007c5dfd851582fbe89d91f7dca22e2a55c06d20ac959a9bcfb4",
+      "personWords": 228
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "7dd28a9763874736d2322079e962f35691ef8ec7b6efc274253ecafe1898ef61",
+      "personWords": 245
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "ffabd2ec76812e066c88cb34ee0d7e6b6d5fa14f5dcb7f67f73918e0a848a14e",
+      "personWords": 230
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "af9584d568311d379117d0e8c31468bdc212efe725176eb705e3563485c39b10",
+      "personWords": 247
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "ffabd2ec76812e066c88cb34ee0d7e6b6d5fa14f5dcb7f67f73918e0a848a14e",
+      "personWords": 230
+    },
+    {
+      "card": "XVI_toa_thap",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "af9584d568311d379117d0e8c31468bdc212efe725176eb705e3563485c39b10",
+      "personWords": 247
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "27d832d338b0c008962835f471fd5b0c40181b7c0472d596793c3c840b6228e0",
+      "personWords": 201
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "c782054324f7901b694a22a6b479cd22931494de45bcd6829016b44f21ba7958",
+      "personWords": 218
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "27d832d338b0c008962835f471fd5b0c40181b7c0472d596793c3c840b6228e0",
+      "personWords": 201
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "c782054324f7901b694a22a6b479cd22931494de45bcd6829016b44f21ba7958",
+      "personWords": 218
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "3b29898a39b12a791f4075bd58fedf3685120d6b6d401dd8003b7ae9cbf166a4",
+      "personWords": 204
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "cap_duoi",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "2351c90b42d848f19d9980fc3496f32658e906743daa8fe20962dd38e540b327",
+      "personWords": 221
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "17bdb4e85b734c71238ad8dcc3de454e32841f0e96c33562b494bed6ef27ff10",
+      "personWords": 204
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "cap_duoi",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "e9424767a397ccdf6a094f6de732faf1b6c15c8f6bb3af5c23fd0b050135586a",
+      "personWords": 221
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "3bf4afd2a0f17dab762d356a5dcb5882d532f19610894a73bc4ec1e912b26601",
+      "personWords": 205
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "027bdfec28e1313ae71710d036e282ac73599a73d38cd34a0acc8ae900dcce81",
+      "personWords": 222
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "3bf4afd2a0f17dab762d356a5dcb5882d532f19610894a73bc4ec1e912b26601",
+      "personWords": 205
+    },
+    {
+      "card": "XVII_ngoi_sao",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "027bdfec28e1313ae71710d036e282ac73599a73d38cd34a0acc8ae900dcce81",
+      "personWords": 222
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "0c871c67be65e7b614d95e74e1fa994e33e08a7e0e713eea538d9b5751f964df",
+      "personWords": 215
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "ngang_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "fd48d17bd6cac9677756be67ebfd901503e548c1665663f2889979fd74f89b53",
+      "personWords": 232
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "0c871c67be65e7b614d95e74e1fa994e33e08a7e0e713eea538d9b5751f964df",
+      "personWords": 215
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "ngang_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "fd48d17bd6cac9677756be67ebfd901503e548c1665663f2889979fd74f89b53",
+      "personWords": 232
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "b640c1bf370722ea275cb41ac407f01a9eb8f619f4203056ff844428328b6c37",
+      "personWords": 207
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "fcbc303a4b0ef9f156ed18135bcb9fa156edb83e265cff96a3c223820e06578a",
+      "personWords": 224
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "b640c1bf370722ea275cb41ac407f01a9eb8f619f4203056ff844428328b6c37",
+      "personWords": 207
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "fcbc303a4b0ef9f156ed18135bcb9fa156edb83e265cff96a3c223820e06578a",
+      "personWords": 224
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "f40b9ae4a23f078a9fe7f162b56345d2be27494a821c39b8509b6eefe725396e",
+      "personWords": 217
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "ad8e9821dcf2f1082773e951bc207d23b4c7723efdede3b66578265eeb7cd937",
+      "personWords": 234
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "f40b9ae4a23f078a9fe7f162b56345d2be27494a821c39b8509b6eefe725396e",
+      "personWords": 217
+    },
+    {
+      "card": "XVIII_mat_trang",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "ad8e9821dcf2f1082773e951bc207d23b4c7723efdede3b66578265eeb7cd937",
+      "personWords": 234
+    },
+    {
+      "card": "XIX_mat_troi",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "d72d46a8e5503b70d173ce69ef5788b249f5f54faefde9d0b07005fa336f682b",
+      "personWords": 217
+    },
+    {
+      "card": "XIX_mat_troi",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "0b7cceef25ac88ba275bca1b261a2804c18efe0635327fe37b8560265f6d4080",
+      "personWords": 234
+    },
+    {
+      "card": "XIX_mat_troi",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "3bfd9cf87b4b3643bc29e8599dc98e12f8c9eef63ea9b7d1d873c7d1f7d10f41",
+      "personWords": 217
+    },
+    {
+      "card": "XIX_mat_troi",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "f54acee4bb51a6750d34317b9d21b0097f8b016fabf2efb77972fd8f00595de3",
+      "personWords": 234
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "7e91bfd2c022ab510c901ac3d714735bd8cd7535a354833816d920b680aaa8ba",
+      "personWords": 239
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "394b07f654115b9642561a36bc9f03128d5c0d5871cac22e8ed1cb58c3b947ea",
+      "personWords": 248
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "7e91bfd2c022ab510c901ac3d714735bd8cd7535a354833816d920b680aaa8ba",
+      "personWords": 239
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "394b07f654115b9642561a36bc9f03128d5c0d5871cac22e8ed1cb58c3b947ea",
+      "personWords": 248
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "db313e8f4b4d0edce41915aa3035d3da10c325b7c5861036bcab7b5c90ba3a0b",
+      "personWords": 242
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "353eb65854490e340a5ce42e14b96d157aaf91c97537fe9c5c6cd7c11af533c3",
+      "personWords": 238
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "db313e8f4b4d0edce41915aa3035d3da10c325b7c5861036bcab7b5c90ba3a0b",
+      "personWords": 242
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "353eb65854490e340a5ce42e14b96d157aaf91c97537fe9c5c6cd7c11af533c3",
+      "personWords": 238
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "39f1b17e859e0d294573e07c6765f3cd16e339d78185a398212aac581f880c4e",
+      "personWords": 241
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "ea4885b3a93a8778f52fb902daca1994185af6b81cc298c9e33a541c99b419d8",
+      "personWords": 250
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "39f1b17e859e0d294573e07c6765f3cd16e339d78185a398212aac581f880c4e",
+      "personWords": 241
+    },
+    {
+      "card": "XX_phan_xet",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "ea4885b3a93a8778f52fb902daca1994185af6b81cc298c9e33a541c99b419d8",
+      "personWords": 250
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "37aa078a0241c876afb8e917ed1ce4953423f6e09fa9a7eaf019f2de92f334b3",
+      "personWords": 234
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "af54605e9f0e0017d90e363aa093164d5e67ef185410922a86765a6809f16eff",
+      "personWords": 243
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "37aa078a0241c876afb8e917ed1ce4953423f6e09fa9a7eaf019f2de92f334b3",
+      "personWords": 234
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "af54605e9f0e0017d90e363aa093164d5e67ef185410922a86765a6809f16eff",
+      "personWords": 243
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "deb1fe97d2112e466c1ab8d95db74c724ef64d04ca65159c18c3c010628c1568",
+      "personWords": 238
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "3f6bd6d66b45815c75f408dada1ca52e29aa5819149d763839026aa3724bfa20",
+      "personWords": 247
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "deb1fe97d2112e466c1ab8d95db74c724ef64d04ca65159c18c3c010628c1568",
+      "personWords": 238
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "3f6bd6d66b45815c75f408dada1ca52e29aa5819149d763839026aa3724bfa20",
+      "personWords": 247
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "min",
+      "sha256": "c7a61a25e16fcda3ae22d777ebd41f339f0a435a0197980f6f2660835216e49d",
+      "personWords": 236
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "slot": "full",
+      "sha256": "c20467fcd8b6d9a52dab767500a8e7549cac17a2fc337c35dd3bbd70613fe8ed",
+      "personWords": 245
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "min",
+      "sha256": "c7a61a25e16fcda3ae22d777ebd41f339f0a435a0197980f6f2660835216e49d",
+      "personWords": 236
+    },
+    {
+      "card": "XXI_the_gioi",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "slot": "full",
+      "sha256": "c20467fcd8b6d9a52dab767500a8e7549cac17a2fc337c35dd3bbd70613fe8ed",
+      "personWords": 245
+    }
+  ],
+  "samples": [
+    {
+      "card": "IV_hoang_de",
+      "relation": "cap_tren",
+      "choice": "anh",
+      "text": "[quan_ly] Hồng, 39 tuổi. Vai trong màn: quản lý trực tiếp của người chơi, phụ trách duyệt mọi thay đổi trước khi đưa lên hệ thống thật của cả nhóm.\nXưng \"chị\", gọi người chơi \"em\". Kênh: chat.\nTính cách: hướng ngoại hơi thấp, tận tâm rất cao, ổn định cảm xúc khá cao, cởi mở hơi thấp.\nBa nét: giữ lời tới cùng; nói ít mà chắc; khó chịu khi bị qua mặt.\nĐiểm yếu: Ôm hết việc về mình, mệt mà không nói.\nKhi áp lực: Nói chậm lại, câu cụt hơn, liệt kê từng việc.\nBất đồng: cạnh tranh; trong vai này nghiêng về hợp tác.\nGiá trị: đúng hẹn, công bằng, nói thật. Tin rằng: Làm đúng quy trình trước, rồi mới tính làm khác.\nGiọng: Giọng Bắc, câu ngắn, ít từ đệm. Trợ từ (≤1/4 số câu): nhé, đấy, thế. Không bao giờ: mỉa mai; trợ từ nha, hen; từ lóng mạng.\nCâu của riêng (cả cuộc trò chuyện tối đa 1 lần): \"Thế nhé.\" \"Rõ chưa em?\"\nCâu mẫu: \"Việc dồn thế này mà còn thiếu người.\" · \"Ừ, chị nghe đây. Nói gọn thôi em.\"\nMặt hay dùng: binh_thuong, suy_nghi, kho_chiu, vui. Hiếm: cuoi_lon, ngac_nhien.\nThói quen: Gõ đầu bút xuống mặt bàn khi nghĩ.\n── Trong màn này (từ seed) ──\nTrong màn muốn: muốn A. Vướng: gấp B. Thái độ: Thái độ riêng. Khúc mắc: sợ C.\nNghĩ là: nghĩ D.   Biết: biết E.\nHiểu biết nghề: nghề 2. Kỹ năng chung: công nghệ 1.\nCách nói ra điều mình biết: ngại nói."
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "cap_tren",
+      "choice": "chi",
+      "text": "[quan_ly] Hồng, 39 tuổi. Vai trong màn: quản lý trực tiếp của người chơi, phụ trách duyệt mọi thay đổi trước khi đưa lên hệ thống thật của cả nhóm.\nXưng \"chị\", gọi người chơi \"em\". Kênh: chat.\nTính cách: hướng ngoại hơi thấp, tận tâm rất cao, ổn định cảm xúc khá cao, cởi mở hơi thấp.\nBa nét: giữ lời tới cùng; nói ít mà chắc; khó chịu khi bị qua mặt.\nĐiểm yếu: Ôm hết việc về mình, mệt mà không nói.\nKhi áp lực: Nói chậm lại, câu cụt hơn, liệt kê từng việc.\nBất đồng: cạnh tranh; trong vai này nghiêng về hợp tác.\nGiá trị: đúng hẹn, công bằng, nói thật. Tin rằng: Làm đúng quy trình trước, rồi mới tính làm khác.\nGiọng: Giọng Bắc, câu ngắn, ít từ đệm. Trợ từ (≤1/4 số câu): nhé, đấy, thế. Không bao giờ: mỉa mai; trợ từ nha, hen; từ lóng mạng.\nCâu của riêng (cả cuộc trò chuyện tối đa 1 lần): \"Thế nhé.\" \"Rõ chưa em?\"\nCâu mẫu: \"Việc dồn thế này mà còn thiếu người.\" · \"Ừ, chị nghe đây. Nói gọn thôi em.\"\nMặt hay dùng: binh_thuong, suy_nghi, kho_chiu, vui. Hiếm: cuoi_lon, ngac_nhien.\nThói quen: Gõ đầu bút xuống mặt bàn khi nghĩ.\n── Trong màn này (từ seed) ──\nTrong màn muốn: muốn A. Vướng: gấp B. Thái độ: Thái độ riêng. Khúc mắc: sợ C.\nNghĩ là: nghĩ D.   Biết: biết E.\nHiểu biết nghề: nghề 2. Kỹ năng chung: công nghệ 1.\nCách nói ra điều mình biết: ngại nói."
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "phong_ban_khac",
+      "choice": "anh",
+      "text": "[quan_ly] Hồng, 39 tuổi. Vai trong màn: quản lý trực tiếp của người chơi, phụ trách duyệt mọi thay đổi trước khi đưa lên hệ thống thật của cả nhóm.\nXưng \"chị\", gọi người chơi \"em\". Kênh: chat.\nTính cách: hướng ngoại hơi thấp, tận tâm rất cao, ổn định cảm xúc khá cao, cởi mở hơi thấp.\nBa nét: giữ lời tới cùng; nói ít mà chắc; khó chịu khi bị qua mặt.\nĐiểm yếu: Ôm hết việc về mình, mệt mà không nói.\nKhi áp lực: Nói chậm lại, câu cụt hơn, liệt kê từng việc.\nBất đồng: cạnh tranh; trong vai này nghiêng về hợp tác.\nGiá trị: đúng hẹn, công bằng, nói thật. Tin rằng: Làm đúng quy trình trước, rồi mới tính làm khác.\nGiọng: Giọng Bắc, câu ngắn, ít từ đệm. Trợ từ (≤1/4 số câu): nhé, đấy, thế. Không bao giờ: mỉa mai; trợ từ nha, hen; từ lóng mạng.\nCâu của riêng (cả cuộc trò chuyện tối đa 1 lần): \"Thế nhé.\" \"Rõ chưa em?\"\nCâu mẫu: \"Việc đó bên chị không quyết được, em hỏi đúng người nhé.\" · \"Để chị xem lại đã, chưa trả lời ngay được.\"\nMặt hay dùng: binh_thuong, suy_nghi, kho_chiu, vui. Hiếm: cuoi_lon, ngac_nhien.\nThói quen: Gõ đầu bút xuống mặt bàn khi nghĩ.\n── Trong màn này (từ seed) ──\nTrong màn muốn: muốn A. Vướng: gấp B. Thái độ: Thái độ riêng. Khúc mắc: sợ C.\nNghĩ là: nghĩ D.   Biết: biết E.\nHiểu biết nghề: nghề 2. Kỹ năng chung: công nghệ 1.\nCách nói ra điều mình biết: ngại nói."
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "phong_ban_khac",
+      "choice": "chi",
+      "text": "[quan_ly] Hồng, 39 tuổi. Vai trong màn: quản lý trực tiếp của người chơi, phụ trách duyệt mọi thay đổi trước khi đưa lên hệ thống thật của cả nhóm.\nXưng \"chị\", gọi người chơi \"em\". Kênh: chat.\nTính cách: hướng ngoại hơi thấp, tận tâm rất cao, ổn định cảm xúc khá cao, cởi mở hơi thấp.\nBa nét: giữ lời tới cùng; nói ít mà chắc; khó chịu khi bị qua mặt.\nĐiểm yếu: Ôm hết việc về mình, mệt mà không nói.\nKhi áp lực: Nói chậm lại, câu cụt hơn, liệt kê từng việc.\nBất đồng: cạnh tranh; trong vai này nghiêng về hợp tác.\nGiá trị: đúng hẹn, công bằng, nói thật. Tin rằng: Làm đúng quy trình trước, rồi mới tính làm khác.\nGiọng: Giọng Bắc, câu ngắn, ít từ đệm. Trợ từ (≤1/4 số câu): nhé, đấy, thế. Không bao giờ: mỉa mai; trợ từ nha, hen; từ lóng mạng.\nCâu của riêng (cả cuộc trò chuyện tối đa 1 lần): \"Thế nhé.\" \"Rõ chưa em?\"\nCâu mẫu: \"Việc đó bên chị không quyết được, em hỏi đúng người nhé.\" · \"Để chị xem lại đã, chưa trả lời ngay được.\"\nMặt hay dùng: binh_thuong, suy_nghi, kho_chiu, vui. Hiếm: cuoi_lon, ngac_nhien.\nThói quen: Gõ đầu bút xuống mặt bàn khi nghĩ.\n── Trong màn này (từ seed) ──\nTrong màn muốn: muốn A. Vướng: gấp B. Thái độ: Thái độ riêng. Khúc mắc: sợ C.\nNghĩ là: nghĩ D.   Biết: biết E.\nHiểu biết nghề: nghề 2. Kỹ năng chung: công nghệ 1.\nCách nói ra điều mình biết: ngại nói."
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "khach_hang",
+      "choice": "anh",
+      "text": "[quan_ly] Hồng, 39 tuổi. Vai trong màn: quản lý trực tiếp của người chơi, phụ trách duyệt mọi thay đổi trước khi đưa lên hệ thống thật của cả nhóm.\nXưng \"chị\", gọi người chơi \"em\". Kênh: chat.\nTính cách: hướng ngoại hơi thấp, tận tâm rất cao, ổn định cảm xúc khá cao, cởi mở hơi thấp.\nBa nét: giữ lời tới cùng; nói ít mà chắc; khó chịu khi bị qua mặt.\nĐiểm yếu: Ôm hết việc về mình, mệt mà không nói.\nKhi áp lực: Nói chậm lại, câu cụt hơn, liệt kê từng việc.\nBất đồng: cạnh tranh; trong vai này nghiêng về thoả hiệp.\nGiá trị: đúng hẹn, công bằng, nói thật. Tin rằng: Làm đúng quy trình trước, rồi mới tính làm khác.\nGiọng: Giọng Bắc, câu ngắn, ít từ đệm. Trợ từ (≤1/4 số câu): nhé, đấy, thế. Không bao giờ: mỉa mai; trợ từ nha, hen; từ lóng mạng.\nCâu của riêng (cả cuộc trò chuyện tối đa 1 lần): \"Thế nhé.\" \"Rõ chưa em?\"\nCâu mẫu: \"Chị cần một cái giờ chắc chắn, không cần xin lỗi.\" · \"Để chị xem lại đã, chưa trả lời ngay được.\"\nMặt hay dùng: binh_thuong, suy_nghi, kho_chiu, vui. Hiếm: cuoi_lon, ngac_nhien.\nThói quen: Gõ đầu bút xuống mặt bàn khi nghĩ.\n── Trong màn này (từ seed) ──\nTrong màn muốn: muốn A. Vướng: gấp B. Thái độ: Thái độ riêng. Khúc mắc: sợ C.\nNghĩ là: nghĩ D.   Biết: biết E.\nHiểu biết nghề: nghề 2. Kỹ năng chung: công nghệ 1.\nCách nói ra điều mình biết: ngại nói."
+    },
+    {
+      "card": "IV_hoang_de",
+      "relation": "khach_hang",
+      "choice": "chi",
+      "text": "[quan_ly] Hồng, 39 tuổi. Vai trong màn: quản lý trực tiếp của người chơi, phụ trách duyệt mọi thay đổi trước khi đưa lên hệ thống thật của cả nhóm.\nXưng \"chị\", gọi người chơi \"em\". Kênh: chat.\nTính cách: hướng ngoại hơi thấp, tận tâm rất cao, ổn định cảm xúc khá cao, cởi mở hơi thấp.\nBa nét: giữ lời tới cùng; nói ít mà chắc; khó chịu khi bị qua mặt.\nĐiểm yếu: Ôm hết việc về mình, mệt mà không nói.\nKhi áp lực: Nói chậm lại, câu cụt hơn, liệt kê từng việc.\nBất đồng: cạnh tranh; trong vai này nghiêng về thoả hiệp.\nGiá trị: đúng hẹn, công bằng, nói thật. Tin rằng: Làm đúng quy trình trước, rồi mới tính làm khác.\nGiọng: Giọng Bắc, câu ngắn, ít từ đệm. Trợ từ (≤1/4 số câu): nhé, đấy, thế. Không bao giờ: mỉa mai; trợ từ nha, hen; từ lóng mạng.\nCâu của riêng (cả cuộc trò chuyện tối đa 1 lần): \"Thế nhé.\" \"Rõ chưa em?\"\nCâu mẫu: \"Chị cần một cái giờ chắc chắn, không cần xin lỗi.\" · \"Để chị xem lại đã, chưa trả lời ngay được.\"\nMặt hay dùng: binh_thuong, suy_nghi, kho_chiu, vui. Hiếm: cuoi_lon, ngac_nhien.\nThói quen: Gõ đầu bút xuống mặt bàn khi nghĩ.\n── Trong màn này (từ seed) ──\nTrong màn muốn: muốn A. Vướng: gấp B. Thái độ: Thái độ riêng. Khúc mắc: sợ C.\nNghĩ là: nghĩ D.   Biết: biết E.\nHiểu biết nghề: nghề 2. Kỹ năng chung: công nghệ 1.\nCách nói ra điều mình biết: ngại nói."
+    }
+  ]
+}

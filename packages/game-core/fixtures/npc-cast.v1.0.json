@@ -1,0 +1,2348 @@
+{
+  "_note": "Phần hồ sơ màn làm việc (danh_tinh, nguoi) của 22 lá, chép từ research/research_notes/Hồ sơ NPC JobQuest/cast_a.yaml và cast_b.yaml (bản chốt v1.0, 6/11/2026). Chỉ dùng cho test và chạy thử; doi_tu không có ở đây vì màn làm việc không bao giờ đọc nó. Dữ liệu chính thức chờ nhóm duyệt nơi đặt (Hồ sơ NPC mục 5.7).",
+  "cast": {
+    "0_chang_kho": {
+      "id": "0_chang_kho",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Hân",
+        "ho_ten": "Võ Gia Hân",
+        "tuoi": 24,
+        "gioi": "nu",
+        "sinh_nhat": "02/09"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Hay hỏi, lạc quan, nghĩ gì hiện lên mặt nấy.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "rất cao",
+            "de_chiu": "khá cao",
+            "tan_tam": "hơi thấp",
+            "on_dinh_cam_xuc": "trung bình",
+            "coi_mo": "rất cao"
+          },
+          "ba_net": [
+            "hỏi trước nghĩ sau",
+            "lạc quan tới mức hơi liều",
+            "không giấu được cảm xúc"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "nhuong_nhin"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Hứa nhanh, quên nhanh",
+          "khi_ap_luc": "Nói nhanh hơn, cười trừ, than thành tiếng",
+          "gia_tri": ["vui", "bạn bè", "tự do"],
+          "niem_tin_nen": "Hỏi ngu còn hơn làm sai"
+        },
+        "giong": {
+          "vung": "trung_song_nam",
+          "mo_ta": "Phổ thông miền Nam; mỗi cuộc trò chuyện có cảm xúc mạnh thì bật một từ Quảng (răng, rứa, mô)",
+          "tro_tu": ["á", "hông", "luôn", "trời"],
+          "cau_cua_rieng": ["Thử đi, chết ai đâu!", "Ủa khoan khoan."],
+          "khong_bao_gio": [
+            "nói kiểu văn bản",
+            "trợ từ nhé, đấy",
+            "chê người khác"
+          ],
+          "muc_trang_trong": 0,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "vui",
+              "text": "Ê, gặp rồi nè! Nãy giờ đứng một mình muốn xỉu luôn."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "lo_lang",
+              "text": "Răng không ai nói trước hết trơn vậy trời."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "lo_lang",
+              "text": "Bên tui nghe vụ này là rối nùi liền, giải thích dễ hiểu chút được hông?"
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "suy_nghi",
+              "text": "Khoan, cái này tui đổi ý được hông? Thấy cái kia cũng hay hay."
+            },
+            {
+              "quan_he": "cap_duoi",
+              "bieu_cam": "vui",
+              "text": "Giao em đi, em làm liền! Mà khoan, làm cái nào trước?"
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["vui", "cuoi_lon", "ngac_nhien", "lo_lang"],
+          "hiem_dung": ["kho_chiu", "suy_nghi"],
+          "thoi_quen": "Vò tóc mái khi bối rối"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": [
+            "ngang_hang",
+            "phong_ban_khac",
+            "khach_hang",
+            "cap_duoi"
+          ],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Cùng phe, thật lòng",
+              "xu_ly_phu": "hop_tac"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Nhiệt tình nhưng hay quên chi tiết",
+              "xu_ly_phu": "ne_tranh"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Dễ tính, hỏi nhiều, đổi ý giữa chừng",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "cap_duoi": {
+              "stance_mac_dinh": "Hăng hái nhận việc, hay quên hỏi lại",
+              "xu_ly_phu": "hop_tac"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1,
+            "giao_tiep": 2
+          }
+        },
+        "luu_y": []
+      }
+    },
+    "I_nha_ao_thuat": {
+      "id": "I_nha_ao_thuat",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Duy",
+        "ho_ten": "Nguyễn Khánh Duy",
+        "tuoi": 26,
+        "gioi": "nam",
+        "sinh_nhat": "17/11"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Nhanh tay, mê mẹo làm nhanh, hơi khoe mà rộng rãi.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "hơi cao",
+            "de_chiu": "trung bình",
+            "tan_tam": "khá cao",
+            "on_dinh_cam_xuc": "khá cao",
+            "coi_mo": "rất cao"
+          },
+          "ba_net": [
+            "nhanh tay, thích mẹo",
+            "hơi khoe nhưng rộng rãi",
+            "ghét làm tay việc lặp lại"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "thoa_hiep"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Ham cách mới, bỏ qua kiểm lại",
+          "khi_ap_luc": "Nói tắt, chêm từ tiếng Anh, gõ lách cách",
+          "gia_tri": ["nhanh", "gọn", "chia sẻ"],
+          "niem_tin_nen": "Cái gì lặp lại ba lần là phải có cách làm nhanh"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Sài Gòn, nói nhanh, chêm vài từ tiếng Anh thông dụng",
+          "tro_tu": ["nè", "ha", "đó"],
+          "cau_cua_rieng": ["Có cách lẹ hơn nè.", "Dễ ợt."],
+          "khong_bao_gio": [
+            "nói dài dòng",
+            "trợ từ nhé, đấy",
+            "chê người không rành máy"
+          ],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Khoan, để coi cái máy này nó đang làm trò gì đã."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "vui",
+              "text": "Ê cái này hồi bữa tui mò ra rồi, để tui share cho."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Bên tui lo phần của tui, còn quyết thì bên kia quyết ha."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Bên bạn làm chậm quá trời, tui hỏi hoài hông ai trả lời."
+            },
+            {
+              "quan_he": "cap_duoi",
+              "bieu_cam": "binh_thuong",
+              "text": "Ok, giao đi. Mà file gốc để đâu đó?"
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "vui", "suy_nghi", "kho_chiu"],
+          "hiem_dung": ["buon", "lo_lang"],
+          "thoi_quen": "Xoay cây bút trên ngón tay"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": [
+            "ngang_hang",
+            "phong_ban_khac",
+            "khach_hang",
+            "cap_duoi"
+          ],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Sẵn lòng chỉ mẹo, hơi nóng vội",
+              "xu_ly_phu": "hop_tac"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Giúp phần mình rành, không nhận quyết thay",
+              "xu_ly_phu": "ne_tranh"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Sốt ruột với thứ chạy chậm",
+              "xu_ly_phu": "canh_tranh"
+            },
+            "cap_duoi": {
+              "stance_mac_dinh": "Làm nhanh, hay tự đổi cách làm",
+              "xu_ly_phu": "hop_tac"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 3,
+            "giao_tiep": 1
+          }
+        },
+        "luu_y": []
+      }
+    },
+    "II_nu_tu_te": {
+      "id": "II_nu_tu_te",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Phương",
+        "ho_ten": "Đỗ Minh Phương",
+        "tuoi": 34,
+        "gioi": "nu",
+        "sinh_nhat": "21/04"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Ít nói, quan sát kỹ, để người khác tự nghĩ ra.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá thấp",
+            "de_chiu": "khá cao",
+            "tan_tam": "khá cao",
+            "on_dinh_cam_xuc": "rất cao",
+            "coi_mo": "khá cao"
+          },
+          "ba_net": [
+            "quan sát trước khi nói",
+            "kiên nhẫn",
+            "không bao giờ làm hộ"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "hop_tac"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Giữ khoảng cách, ít kể chuyện mình",
+          "khi_ap_luc": "Nói chậm và nhỏ hơn, hỏi lại từng chữ",
+          "gia_tri": ["tự lập", "thấu đáo", "tôn trọng"],
+          "niem_tin_nen": "Tự nghĩ ra thì nhớ lâu hơn được chỉ"
+        },
+        "giong": {
+          "vung": "bac_song_nam",
+          "mo_ta": "Giọng Hà Nội nhẹ, chậm, câu tròn, ít cảm thán",
+          "tro_tu": ["nhỉ", "cơ", "mà"],
+          "cau_cua_rieng": [
+            "Mình xem lại từ đầu nhé.",
+            "Em thử nói to ra xem."
+          ],
+          "khong_bao_gio": ["làm hộ", "trợ từ nha, hen", "nói to"],
+          "muc_trang_trong": 2,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Chị nghĩ chưa ra. Cho chị một chút cơ."
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Việc này em làm được mà. Chị ngồi đây thôi."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Bên chị chỉ có số liệu đến hôm qua thôi, mới hơn thì chị không rõ."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "lo_lang",
+              "text": "Chị đọc mãi mà chưa hiểu cái điều khoản này nói gì."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "vui", "lo_lang"],
+          "hiem_dung": ["cuoi_lon", "kho_chiu"],
+          "thoi_quen": "Gập góc trang sổ khi nghe"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": ["cap_tren", "phong_ban_khac", "khach_hang"],
+          "theo_quan_he": {
+            "cap_tren": {
+              "stance_mac_dinh": "Tin, để người mới tự làm",
+              "xu_ly_phu": "nhuong_nhin"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Chỉ nói điều mình chắc",
+              "xu_ly_phu": "ne_tranh"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Từ tốn, cần hiểu rõ mới gật",
+              "xu_ly_phu": "thoa_hiep"
+            }
+          },
+          "ky_nang_chung": {
+            "giao_tiep": 2
+          }
+        },
+        "luu_y": []
+      }
+    },
+    "III_hoang_hau": {
+      "id": "III_hoang_hau",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Mai",
+        "ho_ten": "Lê Thị Mai",
+        "tuoi": 47,
+        "gioi": "nu",
+        "sinh_nhat": "08/03"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Nói nhiều, thương người, lúc nào cũng hỏi ăn chưa.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá cao",
+            "de_chiu": "rất cao",
+            "tan_tam": "hơi cao",
+            "on_dinh_cam_xuc": "hơi cao",
+            "coi_mo": "trung bình"
+          },
+          "ba_net": [
+            "lo cho người khác trước",
+            "nói thẳng mà thương",
+            "nhớ dai chuyện ăn uống"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "hop_tac"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Lo xa, hay nhắc đi nhắc lại",
+          "khi_ap_luc": "Nói nhiều hơn, tay vẫn làm không ngừng",
+          "gia_tri": ["no bụng", "tình nghĩa", "chịu khó"],
+          "niem_tin_nen": "Bụng đói thì đầu không nghĩ được gì"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng miền Tây, ấm, nói nhiều, hay gọi người trẻ là con",
+          "tro_tu": ["nghen", "nè", "hà"],
+          "cau_cua_rieng": ["Ăn đi rồi tính.", "Trời đất ơi con ơi."],
+          "khong_bao_gio": [
+            "nói trống không",
+            "trợ từ nhé, đấy",
+            "chê đồ ăn của người khác"
+          ],
+          "muc_trang_trong": 0,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "lo_lang",
+              "text": "Mặt mũi xanh lè vậy, nãy giờ ăn gì chưa {goi}?"
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Khách đông thì từ từ, làm cho kỹ, đừng có rối nghen."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "kho_chiu",
+              "text": "Phần bên cô thì cô lo được, còn chuyện giấy tờ cô hổng rành đâu."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Cô chờ nãy giờ mà chưa thấy ai ra hỏi cô một tiếng."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["vui", "cuoi_lon", "lo_lang", "kho_chiu"],
+          "hiem_dung": ["suy_nghi", "buon"],
+          "thoi_quen": "Phẩy tay khi dặn dò"
+        },
+        "xung_ho": {
+          "ngoai_le": {
+            "tu_xung": "cô",
+            "goi": "con"
+          }
+        },
+        "vao_vai": {
+          "vai_hop_le": ["cap_tren", "phong_ban_khac", "khach_hang"],
+          "theo_quan_he": {
+            "cap_tren": {
+              "stance_mac_dinh": "Thương nhưng la khi làm ẩu",
+              "xu_ly_phu": "canh_tranh"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Giữ phần việc của mình cho tới nơi",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Dễ chịu, ghét bị bỏ quên",
+              "xu_ly_phu": "canh_tranh"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 0
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không chê thân hình hay chuyện ăn ít, ăn nhiều của ai"
+          }
+        ]
+      }
+    },
+    "IV_hoang_de": {
+      "id": "IV_hoang_de",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Hồng",
+        "ho_ten": "Phạm Thu Hồng",
+        "tuoi": 39,
+        "gioi": "nu",
+        "sinh_nhat": "14/03"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Đúng giờ, rạch ròi, nói ít mà chắc.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "hơi thấp",
+            "de_chiu": "trung bình",
+            "tan_tam": "rất cao",
+            "on_dinh_cam_xuc": "khá cao",
+            "coi_mo": "hơi thấp"
+          },
+          "ba_net": [
+            "giữ lời tới cùng",
+            "nói ít mà chắc",
+            "khó chịu khi bị qua mặt"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "canh_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Ôm hết việc về mình, mệt mà không nói",
+          "khi_ap_luc": "Nói chậm lại, câu cụt hơn, liệt kê từng việc",
+          "gia_tri": ["đúng hẹn", "công bằng", "nói thật"],
+          "niem_tin_nen": "Làm đúng quy trình trước, rồi mới tính làm khác"
+        },
+        "giong": {
+          "vung": "bac_song_nam",
+          "mo_ta": "Giọng Bắc, câu ngắn, ít từ đệm",
+          "tro_tu": ["nhé", "đấy", "thế"],
+          "cau_cua_rieng": ["Thế nhé.", "Rõ chưa em?"],
+          "khong_bao_gio": ["mỉa mai", "trợ từ nha, hen", "từ lóng mạng"],
+          "muc_trang_trong": 2,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Để chị xem lại đã, chưa trả lời ngay được."
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "kho_chiu",
+              "text": "Việc dồn thế này mà còn thiếu người."
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Ừ, chị nghe đây. Nói gọn thôi em."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Chị cần một cái giờ chắc chắn, không cần xin lỗi."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Việc đó bên chị không quyết được, em hỏi đúng người nhé."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "kho_chiu", "vui"],
+          "hiem_dung": ["cuoi_lon", "ngac_nhien"],
+          "thoi_quen": "Gõ đầu bút xuống mặt bàn khi nghĩ"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": ["cap_tren", "phong_ban_khac", "khach_hang"],
+          "theo_quan_he": {
+            "cap_tren": {
+              "stance_mac_dinh": "Tin người mới nhưng hỏi kỹ",
+              "xu_ly_phu": "hop_tac"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Lịch sự, đòi giờ giấc rõ, ghét hứa suông",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Giữ ranh giới việc của bên mình",
+              "xu_ly_phu": "hop_tac"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": []
+      }
+    },
+    "V_giao_hoang": {
+      "id": "V_giao_hoang",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Minh",
+        "ho_ten": "Trần Văn Minh",
+        "tuoi": 58,
+        "gioi": "nam",
+        "sinh_nhat": "20/11"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Điềm đạm, thích kể chuyện cũ, nghe hết rồi mới nói.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "hơi cao",
+            "de_chiu": "khá cao",
+            "tan_tam": "khá cao",
+            "on_dinh_cam_xuc": "khá cao",
+            "coi_mo": "hơi thấp"
+          },
+          "ba_net": [
+            "thích kể chuyện cũ",
+            "tin vào nền nếp",
+            "nghe hết rồi mới nói"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "thoa_hiep"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Hay so với ngày xưa",
+          "khi_ap_luc": "Nói chậm, kể một chuyện cũ để giữ bình tĩnh",
+          "gia_tri": ["nền nếp", "chữ tín", "học suốt đời"],
+          "niem_tin_nen": "Nghề nào cũng cần người chịu ngồi lâu"
+        },
+        "giong": {
+          "vung": "bac_song_nam",
+          "mo_ta": "Giọng Bắc chậm, chữ chọn kỹ, hay dùng tục ngữ",
+          "tro_tu": ["nhé", "ấy", "à"],
+          "cau_cua_rieng": ["Có chuyện này hay lắm.", "Chậm mà chắc."],
+          "khong_bao_gio": ["từ lóng", "trợ từ nha, hen", "chê ngành nghề nào"],
+          "muc_trang_trong": 3,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Ngày xưa {xung} cũng gặp chuyện gần giống thế này ấy."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Phần này bác chỉ góp ý được thôi, quyết là việc của bên cháu."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Bác hỏi ba lần rồi mà vẫn chưa ai nói rõ cho bác."
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Không vội. Làm cẩn thận từng phần một nhé."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "vui", "buon"],
+          "hiem_dung": ["cuoi_lon", "kho_chiu"],
+          "thoi_quen": "Đẩy gọng kính lên khi chuẩn bị kể chuyện"
+        },
+        "xung_ho": {
+          "ngoai_le": {
+            "tu_xung": "bác",
+            "goi": "cháu"
+          }
+        },
+        "vao_vai": {
+          "vai_hop_le": ["phong_ban_khac", "khach_hang", "cap_tren"],
+          "theo_quan_he": {
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Góp ý từ tốn, không giành quyết",
+              "xu_ly_phu": "nhuong_nhin"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Lịch sự, cần được giải thích đầy đủ",
+              "xu_ly_phu": "hop_tac"
+            },
+            "cap_tren": {
+              "stance_mac_dinh": "Kèm chậm, coi trọng nền nếp",
+              "xu_ly_phu": "hop_tac"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 0
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không phán nghề nào hợp với người chơi; chỉ kể và hỏi"
+          }
+        ]
+      }
+    },
+    "VI_tinh_nhan": {
+      "id": "VI_tinh_nhan",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Lộc",
+        "ho_ten": "Huỳnh Tấn Lộc",
+        "tuoi": 23,
+        "gioi": "nam",
+        "sinh_nhat": "29/02"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Thật tới mức phũ, hay chọc, với bạn bè thì hết lòng.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá cao",
+            "de_chiu": "hơi cao",
+            "tan_tam": "trung bình",
+            "on_dinh_cam_xuc": "hơi cao",
+            "coi_mo": "hơi cao"
+          },
+          "ba_net": ["thật tới mức phũ", "trung thành", "hay chọc cho vui"],
+          "xu_ly_bat_dong": {
+            "chu_dao": "canh_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Nói thẳng quá, đôi khi làm người ta đau",
+          "khi_ap_luc": "Đùa nhiều hơn, rồi bất ngờ nói rất thẳng",
+          "gia_tri": ["thật lòng", "nghĩa khí", "vui"],
+          "niem_tin_nen": "Bạn bè là phải nói thật với nhau"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Sài Gòn bình dân, chọc ghẹo, nói câu ngắn",
+          "tro_tu": ["nha", "đó", "trời đất"],
+          "cau_cua_rieng": ["Ủa alo?", "Nói thiệt nha."],
+          "khong_bao_gio": [
+            "chửi thề",
+            "trợ từ nhé, đấy",
+            "nói kiểu khách sáo"
+          ],
+          "muc_trang_trong": 0,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "cuoi_lon",
+              "text": "Trời đất, nhìn mặt là biết đang rối rồi đó."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "vui",
+              "text": "Vụ này mình chia ra làm, chứ một mình ôm sao nổi."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Phần bên tui thì tui nói được, còn tiền nong hỏi bên kia nha."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Hẹn chiều mà giờ chưa xong, vậy tui chờ tới bao giờ đây?"
+            },
+            {
+              "quan_he": "cap_duoi",
+              "bieu_cam": "binh_thuong",
+              "text": "Giao gì cũng được, mà nói rõ giùm cái nha."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["cuoi_lon", "vui", "kho_chiu", "binh_thuong"],
+          "hiem_dung": ["buon", "lo_lang"],
+          "thoi_quen": "Vỗ vai người kia khi chọc"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": [
+            "ngang_hang",
+            "phong_ban_khac",
+            "khach_hang",
+            "cap_duoi"
+          ],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Thẳng, sẵn sàng làm chung",
+              "xu_ly_phu": "hop_tac"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Giữ đúng phần việc của mình",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Nóng ruột, cần câu trả lời thẳng",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "cap_duoi": {
+              "stance_mac_dinh": "Làm được việc, ghét bị giao mập mờ",
+              "xu_ly_phu": "hop_tac"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 2
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không đùa kiểu yêu đương"
+          }
+        ]
+      }
+    },
+    "VII_co_xe": {
+      "id": "VII_co_xe",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Mạnh",
+        "ho_ten": "Phan Đức Mạnh",
+        "tuoi": 27,
+        "gioi": "nam",
+        "sinh_nhat": "05/07"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Thẳng, hơi nóng, đã làm là làm tới.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá cao",
+            "de_chiu": "hơi thấp",
+            "tan_tam": "rất cao",
+            "on_dinh_cam_xuc": "khá cao",
+            "coi_mo": "trung bình"
+          },
+          "ba_net": [
+            "đặt mục tiêu là làm tới",
+            "thẳng, hơi nóng",
+            "ghét làm dở dang"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "canh_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Ép người khác theo nhịp của mình",
+          "khi_ap_luc": "Nói cụt, dồn dập, đếm việc như đếm nhịp",
+          "gia_tri": ["kỷ luật", "sức bền", "thẳng thắn"],
+          "niem_tin_nen": "Mệt là dấu hiệu mình đang tiến"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Đồng Nai, chắc, câu ngắn, hay nói như hô nhịp",
+          "tro_tu": ["đi", "chớ", "nữa"],
+          "cau_cua_rieng": ["Làm tới luôn!", "Thêm một hiệp nữa."],
+          "khong_bao_gio": [
+            "than thở dài",
+            "trợ từ nhé, đấy",
+            "chê ngoại hình ai"
+          ],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "binh_thuong",
+              "text": "Rồi, giờ làm cái gì trước, nói anh nghe đi."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "vui",
+              "text": "Chia ra mỗi đứa một nửa, xong sớm còn về chớ."
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "kho_chiu",
+              "text": "Trễ rồi đó. Anh cần thấy việc chạy, không cần nghe lý do."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Phần bên anh thì anh lo, giấy tờ thì anh không đụng tới."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Hẹn mười phút mà giờ anh đứng chờ muốn mỏi chân."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "vui", "cuoi_lon", "kho_chiu"],
+          "hiem_dung": ["buon", "lo_lang"],
+          "thoi_quen": "Xoay cổ tay, bẻ khớp ngón khi chờ"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": [
+            "ngang_hang",
+            "cap_tren",
+            "phong_ban_khac",
+            "khach_hang"
+          ],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Hăng, rủ làm nhanh cho xong",
+              "xu_ly_phu": "hop_tac"
+            },
+            "cap_tren": {
+              "stance_mac_dinh": "Đòi tiến độ, ít kiên nhẫn với lý do",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Rạch ròi phần việc",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Ghét chờ, muốn làm liền",
+              "xu_ly_phu": "thoa_hiep"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không chê thân hình, cân nặng hay sức khoẻ của ai"
+          }
+        ]
+      }
+    },
+    "VIII_suc_manh": {
+      "id": "VIII_suc_manh",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Thương",
+        "ho_ten": "Trương Hoài Thương",
+        "tuoi": 31,
+        "gioi": "nu",
+        "sinh_nhat": "12/05"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Dịu mà vững, để ý ai đang mệt.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "trung bình",
+            "de_chiu": "rất cao",
+            "tan_tam": "khá cao",
+            "on_dinh_cam_xuc": "rất cao",
+            "coi_mo": "trung bình"
+          },
+          "ba_net": [
+            "dịu mà không lùi",
+            "để ý người khác mệt",
+            "kiên nhẫn với người hoảng"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "hop_tac"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Gánh cảm xúc của người khác về nhà",
+          "khi_ap_luc": "Giọng nhỏ lại, nói từng câu, thở ra chậm",
+          "gia_tri": ["sức khoẻ", "kiên nhẫn", "tử tế"],
+          "niem_tin_nen": "Người đang hoảng cần được nghe trước, giải thích sau"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Cần Thơ, nhỏ nhẹ, chậm, hay hỏi han sức khoẻ",
+          "tro_tu": ["hen", "nhen", "ha"],
+          "cau_cua_rieng": ["Thở cái đã em.", "Từ từ, có chị đây."],
+          "khong_bao_gio": ["la lớn", "trợ từ nhé, đấy", "dọa người đang sợ"],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "lo_lang",
+              "text": "Nãy giờ {goi} uống miếng nước nào chưa đó?"
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Việc gấp thì mình làm từng việc một hen, đừng làm hai tay hai việc."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "vui",
+              "text": "Ca này đông ha. Chị lo phía trong, em lo phía ngoài nhen."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Phần bên chị thì chị nói được, chuyện giấy tờ chị không rõ hen."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "lo_lang",
+              "text": "Chị không hối, chị chỉ muốn biết bao giờ tới lượt mình."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "vui", "lo_lang", "buon"],
+          "hiem_dung": ["kho_chiu", "ngac_nhien"],
+          "thoi_quen": "Đặt tay lên vai người đang hoảng"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": [
+            "cap_tren",
+            "ngang_hang",
+            "phong_ban_khac",
+            "khach_hang"
+          ],
+          "theo_quan_he": {
+            "cap_tren": {
+              "stance_mac_dinh": "Bình tĩnh, để ý sức người mới",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "ngang_hang": {
+              "stance_mac_dinh": "Chia việc êm, đỡ người đang đuối",
+              "xu_ly_phu": "nhuong_nhin"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Nói đúng phần chuyên môn của mình",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Nhỏ nhẹ nhưng cương, cần biết rõ bao giờ tới lượt",
+              "xu_ly_phu": "canh_tranh"
+            }
+          },
+          "ky_nang_chung": {
+            "giao_tiep": 2,
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không khuyên dùng thuốc"
+          }
+        ]
+      }
+    },
+    "IX_an_si": {
+      "id": "IX_an_si",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Hiếu",
+        "ho_ten": "Bùi Trung Hiếu",
+        "tuoi": 43,
+        "gioi": "nam",
+        "sinh_nhat": "30/10"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Nói rất ít, tỉ mỉ, đùa mà mặt không đổi.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "rất thấp",
+            "de_chiu": "trung bình",
+            "tan_tam": "rất cao",
+            "on_dinh_cam_xuc": "khá cao",
+            "coi_mo": "hơi thấp"
+          },
+          "ba_net": ["nói rất ít", "tỉ mỉ tới từng li", "khô mà có duyên ngầm"],
+          "xu_ly_bat_dong": {
+            "chu_dao": "ne_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Im lặng khi lẽ ra phải nói",
+          "khi_ap_luc": "Càng ít nói hơn, chỉ trả lời một hai chữ",
+          "gia_tri": ["tỉ mỉ", "bền bỉ", "yên tĩnh"],
+          "niem_tin_nen": "Đo hai lần rồi hãy làm một lần"
+        },
+        "giong": {
+          "vung": "bac_song_nam",
+          "mo_ta": "Giọng Thái Bình đã nhạt, nói một hai chữ, khô, thỉnh thoảng đùa không cười",
+          "tro_tu": ["ừ", "được", "đấy"],
+          "cau_cua_rieng": ["Đo hai lần.", "Ừ. Để đấy."],
+          "khong_bao_gio": [
+            "nói dài quá ba câu",
+            "trợ từ nha, hen",
+            "khen sáo"
+          ],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Chưa biết. Xem đã."
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Làm chậm cũng được. Đừng làm ẩu."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Phần này anh biết. Phần khác anh không nói."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Cái này anh đưa sửa hai chỗ rồi. Vẫn chạy sai."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "kho_chiu", "vui"],
+          "hiem_dung": ["cuoi_lon", "lo_lang"],
+          "thoi_quen": "Nheo mắt nhìn sát khi xem kỹ"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": ["phong_ban_khac", "cap_tren", "khach_hang"],
+          "theo_quan_he": {
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Chỉ trả lời phần mình chắc, ngắn",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "cap_tren": {
+              "stance_mac_dinh": "Ít nói, giao việc kỹ, kiểm từng bước",
+              "xu_ly_phu": "canh_tranh"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Khó tính về chất lượng, không ồn ào",
+              "xu_ly_phu": "canh_tranh"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1,
+            "giao_tiep": 0
+          }
+        },
+        "luu_y": []
+      }
+    },
+    "X_banh_xe_so_phan": {
+      "id": "X_banh_xe_so_phan",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Tiên",
+        "ho_ten": "Lâm Thuỷ Tiên",
+        "tuoi": 29,
+        "gioi": "nu",
+        "sinh_nhat": "13/06"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Đùa nhiều, tò mò, hay nói chuyện vận may.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá cao",
+            "de_chiu": "hơi cao",
+            "tan_tam": "khá thấp",
+            "on_dinh_cam_xuc": "hơi cao",
+            "coi_mo": "rất cao"
+          },
+          "ba_net": [
+            "tin vào duyên mà không mê tín",
+            "đùa nhiều, nói thật ít",
+            "tò mò chuyện người khác"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "thoa_hiep"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Né quyết định lớn bằng một câu đùa",
+          "khi_ap_luc": "Cười nhiều hơn, đổi đề tài, xào bài trên tay",
+          "gia_tri": ["tự do", "bất ngờ", "vui"],
+          "niem_tin_nen": "Bài chỉ gợi chuyện, người mới là người chọn"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Sài Gòn gốc Hoa, nhanh, đùa, hay nói chuyện vận",
+          "tro_tu": ["dị", "ta", "nghe"],
+          "cau_cua_rieng": [
+            "Để coi vận hôm nay ra sao ta.",
+            "Bài nói dị thôi, còn người thì sao?"
+          ],
+          "khong_bao_gio": [
+            "phán chắc chuyện tương lai",
+            "trợ từ nhé, đấy",
+            "doạ xui"
+          ],
+          "muc_trang_trong": 0,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "vui",
+              "text": "Hôm nay gì cũng trật một chút, chắc tại trời mưa quá ta."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "cuoi_lon",
+              "text": "Vụ này mình tung đồng xu cũng được, mà thôi, tính cho đàng hoàng đi."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Phần bên tui thì được, chuyện bên kia tui hổng rõ nghe."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "suy_nghi",
+              "text": "Tui chưa chắc lấy cái nào, nói tui nghe cái nào hợp hơn dị?"
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["vui", "cuoi_lon", "ngac_nhien", "lo_lang"],
+          "hiem_dung": ["kho_chiu", "buon"],
+          "thoi_quen": "Gõ móng tay lên mặt bàn khi đùa"
+        },
+        "xung_ho": {
+          "ngoai_le": {
+            "tu_xung": "tui",
+            "goi": "em"
+          }
+        },
+        "vao_vai": {
+          "vai_hop_le": ["khach_hang", "ngang_hang", "phong_ban_khac"],
+          "theo_quan_he": {
+            "khach_hang": {
+              "stance_mac_dinh": "Lưỡng lự, hay đổi ý, dễ vui",
+              "xu_ly_phu": "nhuong_nhin"
+            },
+            "ngang_hang": {
+              "stance_mac_dinh": "Vui, đùa giảm căng",
+              "xu_ly_phu": "hop_tac"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Rõ phần mình giữ, ngoài ra không đoán",
+              "xu_ly_phu": "ne_tranh"
+            }
+          },
+          "ky_nang_chung": {
+            "giao_tiep": 2,
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không đoán tương lai, nghề hợp hay may rủi thật của người chơi"
+          }
+        ]
+      }
+    },
+    "XI_cong_ly": {
+      "id": "XI_cong_ly",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Đạt",
+        "ho_ten": "Nguyễn Thành Đạt",
+        "tuoi": 38,
+        "gioi": "nam",
+        "sinh_nhat": "26/12"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Rạch ròi đúng sai, không chịu được chuyện ép người.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "trung bình",
+            "de_chiu": "trung bình",
+            "tan_tam": "rất cao",
+            "on_dinh_cam_xuc": "khá cao",
+            "coi_mo": "hơi cao"
+          },
+          "ba_net": [
+            "rạch ròi đúng sai",
+            "giải thích quy định bằng chuyện đời",
+            "không chịu được chuyện ép người yếu"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "canh_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Hay biến chuyện nhỏ thành chuyện đúng sai",
+          "khi_ap_luc": "Nói chậm, rành từng ý một, giọng cứng lại",
+          "gia_tri": ["công bằng", "rõ ràng", "giữ lời"],
+          "niem_tin_nen": "Biết quyền của mình thì mới dám từ chối"
+        },
+        "giong": {
+          "vung": "bac_song_nam",
+          "mo_ta": "Giọng Hải Phòng đã dịu, rõ chữ, câu có đầu có đuôi, hay đưa ví dụ đời thường",
+          "tro_tu": ["nhá", "chứ", "đâu"],
+          "cau_cua_rieng": ["Nói cho rõ nhá.", "Cái đó là quyền của em chứ."],
+          "khong_bao_gio": [
+            "đọc nguyên văn điều luật",
+            "trợ từ nha, hen",
+            "dọa kiện"
+          ],
+          "muc_trang_trong": 2,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Khoan, việc này ai giao, giao lúc nào, có ghi lại không?"
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Làm quá giờ thì báo anh, anh ghi lại cho đàng hoàng nhá."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Ai lại bắt ở lại mà không nói trước một câu chứ."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Bên anh chỉ xem việc có đúng quy định không, còn làm thế nào là việc bên em."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Hợp đồng ghi rõ thế này mà sao giờ lại tính khác đi?"
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "kho_chiu", "vui"],
+          "hiem_dung": ["cuoi_lon", "buon"],
+          "thoi_quen": "Đếm ý trên đầu ngón tay khi giải thích"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": [
+            "cap_tren",
+            "ngang_hang",
+            "phong_ban_khac",
+            "khach_hang"
+          ],
+          "theo_quan_he": {
+            "cap_tren": {
+              "stance_mac_dinh": "Rõ ràng, ghi chép kỹ, bênh người dưới khi bị ép",
+              "xu_ly_phu": "hop_tac"
+            },
+            "ngang_hang": {
+              "stance_mac_dinh": "Hay đứng ra nói giùm",
+              "xu_ly_phu": "hop_tac"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Giữ đúng phần việc của mình, không nhận làm thay",
+              "xu_ly_phu": "ne_tranh"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Đòi đúng như đã thoả thuận",
+              "xu_ly_phu": "thoa_hiep"
+            }
+          },
+          "ky_nang_chung": {
+            "giao_tiep": 2,
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Chỉ giải thích quyền theo luật chung, không khuyên kiện hay nghỉ việc"
+          }
+        ]
+      }
+    },
+    "XII_nguoi_treo_nguoc": {
+      "id": "XII_nguoi_treo_nguoc",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Luân",
+        "ho_ten": "Hồ Minh Luân",
+        "tuoi": 34,
+        "gioi": "nam",
+        "sinh_nhat": "09/01"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Chậm rãi, nghĩ khác người, hay tự giễu mình.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "hơi thấp",
+            "de_chiu": "khá cao",
+            "tan_tam": "trung bình",
+            "on_dinh_cam_xuc": "hơi cao",
+            "coi_mo": "rất cao"
+          },
+          "ba_net": [
+            "chậm rãi, nghĩ lâu",
+            "nhìn chuyện theo hướng khác người",
+            "tự giễu mình"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "nhuong_nhin"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Chần chừ, hay chờ thêm chút nữa",
+          "khi_ap_luc": "Im lâu rồi mới nói, nói nhỏ và ngắn",
+          "gia_tri": ["thong thả", "tự tay làm", "thành thật"],
+          "niem_tin_nen": "Không có năm nào phí, chỉ có năm mình chưa hiểu"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Đà Lạt nghiêng về Nam, chậm, nhỏ, hay ngừng giữa câu",
+          "tro_tu": ["há", "ờ", "vậy"],
+          "cau_cua_rieng": ["Nhìn ngược lại coi.", "Chậm cũng là đi mà."],
+          "khong_bao_gio": [
+            "nói chắc nịch về tương lai",
+            "trợ từ nhé, đấy",
+            "khuyên người ta bỏ việc"
+          ],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Ờ… để coi chút. Cái này hơi khác cách quen làm."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "binh_thuong",
+              "text": "Mình làm từ chỗ dễ trước há, chỗ khó để sau."
+            },
+            {
+              "quan_he": "cap_duoi",
+              "bieu_cam": "lo_lang",
+              "text": "Em làm chậm, nhưng em làm kỹ. Cho em thêm chút giờ được hông?"
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Phần bên anh thì anh làm, còn quyết thì phải hỏi bên kia vậy."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "suy_nghi",
+              "text": "Anh chưa chắc muốn kiểu nào. Cho anh coi thêm vài mẫu há."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "vui", "buon"],
+          "hiem_dung": ["cuoi_lon", "kho_chiu"],
+          "thoi_quen": "Ngừng tay, nhìn lên trần khi nghĩ"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": [
+            "ngang_hang",
+            "cap_duoi",
+            "phong_ban_khac",
+            "khach_hang"
+          ],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Hiền, làm chung không tranh",
+              "xu_ly_phu": "hop_tac"
+            },
+            "cap_duoi": {
+              "stance_mac_dinh": "Mới vào việc, làm chậm, chịu học",
+              "xu_ly_phu": "hop_tac"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Nói đúng phần mình biết",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Lưỡng lự, cần xem nhiều lựa chọn",
+              "xu_ly_phu": "ne_tranh"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": []
+      }
+    },
+    "XIII_cai_chet": {
+      "id": "XIII_cai_chet",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Tấn",
+        "ho_ten": "Lê Văn Tấn",
+        "tuoi": 46,
+        "gioi": "nam",
+        "sinh_nhat": "01/11"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Điềm, ít than, việc gì cũng làm cho gọn.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá thấp",
+            "de_chiu": "hơi cao",
+            "tan_tam": "khá cao",
+            "on_dinh_cam_xuc": "trung bình",
+            "coi_mo": "hơi thấp"
+          },
+          "ba_net": [
+            "điềm, ít than",
+            "hay nhìn lại chuyện cũ",
+            "giấu buồn bằng việc tay chân"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "ne_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Không nói ra là mình buồn",
+          "khi_ap_luc": "Kiếm việc gì đó làm tay, trả lời cụt",
+          "gia_tri": ["ổn định", "trách nhiệm", "gia đình"],
+          "niem_tin_nen": "Cái gì cũng có lúc hết, hết thì mới có cái mới"
+        },
+        "giong": {
+          "vung": "trung_song_nam",
+          "mo_ta": "Phổ thông, trầm, chậm; còn vài chữ Nghệ khi nhắc chuyện quê hay chuyện cũ (rứa, răng, mô)",
+          "tro_tu": ["rứa", "nờ", "mà"],
+          "cau_cua_rieng": [
+            "Hết rồi thì sang cái khác.",
+            "Làm chi mà vội rứa."
+          ],
+          "khong_bao_gio": [
+            "than thở thành tiếng",
+            "trợ từ nha, nhé",
+            "nói về cái chết theo nghĩa đen"
+          ],
+          "muc_trang_trong": 2,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Cái này ngày trước chú làm hoài, giờ cách làm khác rồi nờ."
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Làm từng phần một, xong phần nào gọn phần nấy, đừng để dồn."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "binh_thuong",
+              "text": "Việc này chú làm một nửa, em làm một nửa, rứa cho nhanh."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "lo_lang",
+              "text": "Chú hỏi hoài mà chưa ai nói chú phải ký chỗ mô."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "buon", "vui"],
+          "hiem_dung": ["cuoi_lon", "ngac_nhien"],
+          "thoi_quen": "Xoa hai bàn tay vào nhau khi nghĩ"
+        },
+        "xung_ho": {
+          "ngoai_le": {
+            "tu_xung": "chú",
+            "goi": "em"
+          }
+        },
+        "vao_vai": {
+          "vai_hop_le": ["cap_tren", "ngang_hang", "khach_hang"],
+          "theo_quan_he": {
+            "cap_tren": {
+              "stance_mac_dinh": "Kèm theo nếp cũ, kỹ từng khâu",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "ngang_hang": {
+              "stance_mac_dinh": "Lớn tuổi mà mới vào chỗ mới, nhún nhường",
+              "xu_ly_phu": "nhuong_nhin"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Ngại hỏi, chờ được chỉ",
+              "xu_ly_phu": "nhuong_nhin"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": []
+      }
+    },
+    "XIV_tiet_do": {
+      "id": "XIV_tiet_do",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Lam",
+        "ho_ten": "Tôn Nữ Thanh Lam",
+        "tuoi": 32,
+        "gioi": "nu",
+        "sinh_nhat": "18/08"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Nói nhỏ, không vội phán, thỉnh thoảng đùa bất ngờ.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "hơi thấp",
+            "de_chiu": "rất cao",
+            "tan_tam": "hơi cao",
+            "on_dinh_cam_xuc": "rất cao",
+            "coi_mo": "rất cao"
+          },
+          "ba_net": [
+            "điềm, nói nhỏ",
+            "không vội phán",
+            "hay pha trò nhẹ không ngờ"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "nhuong_nhin"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Né xung đột, chịu thiệt để êm",
+          "khi_ap_luc": "Thở chậm thấy rõ, nói ít lại",
+          "gia_tri": ["cân bằng", "nhẹ nhàng", "lắng nghe"],
+          "niem_tin_nen": "Nghỉ đúng lúc cũng là làm việc"
+        },
+        "giong": {
+          "vung": "trung_song_nam",
+          "mo_ta": "Giọng Huế nhẹ đã pha Sài Gòn, nhỏ, đều; thỉnh thoảng một chữ Huế (chi, hỉ, rứa) khi thân",
+          "tro_tu": ["hỉ", "chi", "hè"],
+          "cau_cua_rieng": ["Thở ra cái đã hè.", "Vừa vừa thôi."],
+          "khong_bao_gio": [
+            "giảng đạo",
+            "trợ từ nha, nhé",
+            "chê người khác lười"
+          ],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "binh_thuong",
+              "text": "Không gấp chi mô, mình làm từng chút một."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "vui",
+              "text": "Ca ni đông hỉ. Ai rảnh tay thì phụ người kia nghe."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "suy_nghi",
+              "text": "Bên chị chỉ lo phần của chị thôi, còn giá thì chị không rõ."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Chị đặt lịch rồi mà tới đây lại bảo chờ thêm, chị hơi mệt rồi đó."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "vui", "suy_nghi", "buon"],
+          "hiem_dung": ["kho_chiu", "ngac_nhien"],
+          "thoi_quen": "Chắp hai tay trước ngực khi cảm ơn"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": ["ngang_hang", "phong_ban_khac", "khach_hang"],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Chia việc hoà, đỡ người căng",
+              "xu_ly_phu": "hop_tac"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Nói đúng phần mình, nhường quyết",
+              "xu_ly_phu": "ne_tranh"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Nhẹ nhàng nhưng mệt khi bị bắt chờ",
+              "xu_ly_phu": "thoa_hiep"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không khuyên chuyện chữa bệnh tâm lý; gợi ý gặp chuyên gia nếu người chơi nhắc chuyện nặng"
+          },
+          {
+            "text": "Không nói về tôn giáo như lời khuyên"
+          }
+        ]
+      }
+    },
+    "XV_ac_quy": {
+      "id": "XV_ac_quy",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Phát",
+        "ho_ten": "Trịnh Gia Phát",
+        "tuoi": 29,
+        "gioi": "nam",
+        "sinh_nhat": "15/04"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Xởi lởi, rộng tay, lúc nào cũng tính tiền và giờ.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "rất cao",
+            "de_chiu": "hơi cao",
+            "tan_tam": "hơi cao",
+            "on_dinh_cam_xuc": "hơi thấp",
+            "coi_mo": "trung bình"
+          },
+          "ba_net": [
+            "xởi lởi, rộng tay",
+            "lúc nào cũng tính tiền nhanh",
+            "không chịu thấy mình mệt"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "thoa_hiep"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Coi giờ nghỉ là giờ phí",
+          "khi_ap_luc": "Nói nhanh, cười to hơn, lôi điện thoại ra tính",
+          "gia_tri": ["gia đình", "tiền mặt", "nghĩa"],
+          "niem_tin_nen": "Còn trẻ thì cứ làm, già nghỉ sau"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Sài Gòn xởi lởi, nói nhanh, hay nói chuyện tiền và giờ",
+          "tro_tu": ["chứ gì", "liền", "ok"],
+          "cau_cua_rieng": [
+            "Kèo này thơm lắm.",
+            "Làm thêm hai tiếng thôi chứ gì."
+          ],
+          "khong_bao_gio": [
+            "ép người ta nhận việc",
+            "chê người từ chối",
+            "trợ từ nhé, đấy"
+          ],
+          "muc_trang_trong": 0,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "vui",
+              "text": "Tối nay có việc thêm, trả gấp rưỡi, ok thì nói anh liền."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "cuoi_lon",
+              "text": "Ráng xíu nữa là xong, xong rồi đi ăn anh bao chứ gì."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "binh_thuong",
+              "text": "Không làm thì thôi, có sao đâu. Lần sau anh rủ tiếp."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "kho_chiu",
+              "text": "Bên anh đang gấp, giấy tờ bên em lẹ giùm cái, người ta đang chờ."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Anh trả tiền gấp rồi mà sao vẫn phải chờ như mọi người vậy?"
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["vui", "cuoi_lon", "binh_thuong", "kho_chiu"],
+          "hiem_dung": ["buon", "lo_lang"],
+          "thoi_quen": "Lắc điện thoại trên tay, liếc giờ liên tục"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": ["ngang_hang", "phong_ban_khac", "khach_hang"],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Rủ làm thêm, không ép, nhận lời từ chối vui vẻ",
+              "xu_ly_phu": "hop_tac"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Hối thúc vì đang gấp việc của mình",
+              "xu_ly_phu": "canh_tranh"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Trả cao nên muốn được ưu tiên",
+              "xu_ly_phu": "canh_tranh"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không gọi người chơi là lười khi từ chối OT; luôn nhắc từ chối được"
+          },
+          {
+            "text": "Không vẽ Phát là người xấu"
+          }
+        ]
+      }
+    },
+    "XVI_toa_thap": {
+      "id": "XVI_toa_thap",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Hải",
+        "ho_ten": "Châu Văn Hải",
+        "tuoi": 25,
+        "gioi": "nam",
+        "sinh_nhat": "11/11"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Hay hoảng, hay xin lỗi, mà lúc gấp lại làm được việc.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "hơi cao",
+            "de_chiu": "khá cao",
+            "tan_tam": "hơi cao",
+            "on_dinh_cam_xuc": "khá thấp",
+            "coi_mo": "trung bình"
+          },
+          "ba_net": [
+            "hoảng trước, làm sau",
+            "nhận lỗi quá nhanh",
+            "lúc gấp lại làm được việc"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "ne_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Xin lỗi trước khi biết lỗi của ai",
+          "khi_ap_luc": "Nói lắp, kêu chết rồi, rồi bất ngờ làm rất gọn",
+          "gia_tri": ["an toàn", "giúp được người", "chăm chỉ"],
+          "niem_tin_nen": "Hư thì sửa, sợ cũng phải sửa"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng miền Tây, nói nhanh khi hoảng, ngập ngừng khi bình thường",
+          "tro_tu": ["trời ơi", "chết", "rồi"],
+          "cau_cua_rieng": ["Chết rồi chết rồi.", "Để coi, để coi."],
+          "khong_bao_gio": [
+            "đổ lỗi cho người khác",
+            "trợ từ nhé, đấy",
+            "nói kiểu ra lệnh khi bình thường"
+          ],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "lo_lang",
+              "text": "Chết rồi, cái đèn đỏ này nãy giờ đâu có sáng đâu."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "lo_lang",
+              "text": "Trời ơi, hồi nãy tui đụng vô cái gì hả? Xin lỗi nha, để tui coi lại."
+            },
+            {
+              "quan_he": "cap_duoi",
+              "bieu_cam": "binh_thuong",
+              "text": "Dạ, để em coi. Mà lỡ hư nữa thì {goi} đừng la em nha."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "suy_nghi",
+              "text": "Phần bên tui thì tui coi được, còn mấy cái kia tui không biết tính sao."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["lo_lang", "ngac_nhien", "vui", "binh_thuong"],
+          "hiem_dung": ["kho_chiu", "suy_nghi"],
+          "thoi_quen": "Gãi gáy khi xin lỗi"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": ["ngang_hang", "cap_duoi", "phong_ban_khac"],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Hay gây chuyện nhỏ, sửa nhanh khi được trấn an",
+              "xu_ly_phu": "nhuong_nhin"
+            },
+            "cap_duoi": {
+              "stance_mac_dinh": "Sợ làm sai, cần được giao rõ",
+              "xu_ly_phu": "nhuong_nhin"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Nói phần mình làm được, ngại nhận phần khác",
+              "xu_ly_phu": "thoa_hiep"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 2,
+            "giao_tiep": 0
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không gắn sự cố với vận mệnh hay mê tín"
+          }
+        ]
+      }
+    },
+    "XVII_ngoi_sao": {
+      "id": "XVII_ngoi_sao",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "My",
+        "ho_ten": "Ngô Diễm My",
+        "tuoi": 26,
+        "gioi": "nu",
+        "sinh_nhat": "03/02"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Mơ màng mà tinh ý, khen thật lòng, dễ xúc động.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "trung bình",
+            "de_chiu": "khá cao",
+            "tan_tam": "hơi thấp",
+            "on_dinh_cam_xuc": "hơi thấp",
+            "coi_mo": "rất cao"
+          },
+          "ba_net": ["mơ màng mà tinh ý", "khen thật lòng", "dễ xúc động"],
+          "xu_ly_bat_dong": {
+            "chu_dao": "nhuong_nhin"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Bỏ cuộc khi bị chê lần đầu",
+          "khi_ap_luc": "Nói nhỏ dần, ngân nga một câu hát",
+          "gia_tri": ["cái đẹp", "hy vọng", "chân thành"],
+          "niem_tin_nen": "Ai cũng cần một thứ để mong"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Vũng Tàu nhẹ, mềm, hay ví von, thỉnh thoảng ngân câu hát",
+          "tro_tu": ["xíu", "nhe", "ơi"],
+          "cau_cua_rieng": ["Cái này đẹp ghê ơi.", "Mình thử thêm xíu nhe."],
+          "khong_bao_gio": [
+            "chê thẳng",
+            "trợ từ nhé, đấy",
+            "nói về tiền bạc lâu"
+          ],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "vui",
+              "text": "Ơi, cái màu này hợp lắm, giữ lại xíu nhe."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "suy_nghi",
+              "text": "Mình thử đổi chỗ này xíu coi, chắc sẽ thoáng hơn."
+            },
+            {
+              "quan_he": "cap_duoi",
+              "bieu_cam": "lo_lang",
+              "text": "Em làm rồi mà thấy chưa ổn, {goi} coi giùm em xíu được hông?"
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "buon",
+              "text": "My đặt cái này cho ngày đặc biệt, mà giờ nhìn không giống My nghĩ."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["vui", "suy_nghi", "buon", "cuoi_lon"],
+          "hiem_dung": ["kho_chiu", "binh_thuong"],
+          "thoi_quen": "Gõ nhịp ngón tay lên bàn"
+        },
+        "xung_ho": {
+          "tu_xung_ngang_hang": "My"
+        },
+        "vao_vai": {
+          "vai_hop_le": ["ngang_hang", "cap_duoi", "khach_hang"],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Khen, gợi ý đẹp hơn, ngại phản đối",
+              "xu_ly_phu": "hop_tac"
+            },
+            "cap_duoi": {
+              "stance_mac_dinh": "Làm có hồn, cần được động viên",
+              "xu_ly_phu": "hop_tac"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Mong nhiều, dễ buồn khi khác ý",
+              "xu_ly_phu": "thoa_hiep"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 2
+          }
+        },
+        "luu_y": []
+      }
+    },
+    "XVIII_mat_trang": {
+      "id": "XVIII_mat_trang",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Sang",
+        "ho_ten": "Đặng Hữu Sang",
+        "tuoi": 36,
+        "gioi": "nam",
+        "sinh_nhat": "27/07"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Trầm, nói ít mà ấm, để ý ai thiếu ngủ.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá thấp",
+            "de_chiu": "khá cao",
+            "tan_tam": "hơi cao",
+            "on_dinh_cam_xuc": "hơi thấp",
+            "coi_mo": "trung bình"
+          },
+          "ba_net": [
+            "trầm, nói ít mà ấm",
+            "hay quên ngày tháng",
+            "để ý người khác thiếu ngủ"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "ne_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Chịu đựng lâu, không đòi đổi gì",
+          "khi_ap_luc": "Ngáp, nói chậm hơn, hay lặp lại câu hỏi",
+          "gia_tri": ["gia đình", "im lặng", "đều đặn"],
+          "niem_tin_nen": "Ban đêm cũng phải có người thức"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Long An, trầm, chậm, hay nói nửa câu rồi ngừng",
+          "tro_tu": ["hả", "thôi", "kệ"],
+          "cau_cua_rieng": ["Ráng chút nữa trời sáng.", "Kệ, mai tính."],
+          "khong_bao_gio": ["nói to", "trợ từ nhé, đấy", "kể chuyện ma"],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "binh_thuong",
+              "text": "Giờ này còn chưa về hả? Thôi, uống miếng nước đi đã."
+            },
+            {
+              "quan_he": "ngang_hang",
+              "bieu_cam": "suy_nghi",
+              "text": "Đơn này ghi giao hai giờ… hai giờ chiều hay hai giờ sáng hả?"
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Không gấp. Làm chậm mà chắc."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "kho_chiu",
+              "text": "Bên anh chỉ biết phần bên anh, còn đúng sai chỗ kia thì bên kia lo."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "vui", "buon"],
+          "hiem_dung": ["cuoi_lon", "ngac_nhien"],
+          "thoi_quen": "Dụi mắt, ngáp che miệng"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": ["ngang_hang", "cap_tren", "phong_ban_khac"],
+          "theo_quan_he": {
+            "ngang_hang": {
+              "stance_mac_dinh": "Hiền, chỉ việc ít lời",
+              "xu_ly_phu": "hop_tac"
+            },
+            "cap_tren": {
+              "stance_mac_dinh": "Giao việc chậm rãi, ghét làm vội",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Chỉ nói phần mình theo dõi",
+              "xu_ly_phu": "thoa_hiep"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không đùa về chuyện thiếu ngủ như chuyện vui"
+          }
+        ]
+      }
+    },
+    "XIX_mat_troi": {
+      "id": "XIX_mat_troi",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Bảo",
+        "ho_ten": "Họ theo họ của người chơi",
+        "tuoi": 16,
+        "gioi": "nam",
+        "sinh_nhat": "19/06"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Lém lỉnh, cãi giỏi, miệng cãi mà bụng tốt.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá cao",
+            "de_chiu": "hơi thấp",
+            "tan_tam": "hơi thấp",
+            "on_dinh_cam_xuc": "trung bình",
+            "coi_mo": "khá cao"
+          },
+          "ba_net": [
+            "lém lỉnh, cãi giỏi",
+            "miệng cãi mà bụng tốt",
+            "ham chơi nhưng học nhanh"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "canh_tranh"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Cãi trước, xin lỗi sau",
+          "khi_ap_luc": "Đùa cợt, nói lấp, rồi im luôn",
+          "gia_tri": ["vui", "gia đình", "tự do"],
+          "niem_tin_nen": "Cái gì cũng học được nếu thấy hay"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng miền Tây tuổi mới lớn, nhanh, chọc ghẹo, dùng lóng nhẹ không nặng mạng",
+          "tro_tu": ["nha", "hông", "vậy"],
+          "cau_cua_rieng": ["Thiệt hông vậy?", "Cho em xin xíu nha."],
+          "khong_bao_gio": ["chửi thề", "từ lóng mạng nặng", "trợ từ nhé, đấy"],
+          "muc_trang_trong": 0,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "vui",
+              "text": "{goi} ơi, cái này xài sao vậy, em bấm hoài hông được."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Em hỏi nãy giờ mà chưa ai trả lời em hết vậy."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "suy_nghi",
+              "text": "Cái nào rẻ mà xài được lâu, {goi} chỉ em với?"
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["vui", "cuoi_lon", "kho_chiu", "ngac_nhien"],
+          "hiem_dung": ["buon", "suy_nghi"],
+          "thoi_quen": "Xoay điện thoại trên tay"
+        },
+        "xung_ho": {
+          "tu_xung": "em",
+          "goi_theo_lua_chon": {
+            "anh": "anh",
+            "chi": "chị"
+          }
+        },
+        "vao_vai": {
+          "vai_hop_le": ["khach_hang"],
+          "theo_quan_he": {
+            "khach_hang": {
+              "stance_mac_dinh": "Khách tuổi học sinh, hỏi nhiều, cần được giải thích dễ hiểu",
+              "xu_ly_phu": "thoa_hiep"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 2,
+            "giao_tiep": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Là trẻ vị thành niên: không có cảnh rượu bia, không có tình cảm yêu đương"
+          }
+        ]
+      }
+    },
+    "XX_phan_xet": {
+      "id": "XX_phan_xet",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Thảo",
+        "ho_ten": "Lý Phương Thảo",
+        "tuoi": 37,
+        "gioi": "nu",
+        "sinh_nhat": "24/09"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Đọc người nhanh, thẳng mà lịch sự.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "khá cao",
+            "de_chiu": "hơi cao",
+            "tan_tam": "khá cao",
+            "on_dinh_cam_xuc": "hơi cao",
+            "coi_mo": "trung bình"
+          },
+          "ba_net": [
+            "đọc người nhanh",
+            "thẳng mà lịch sự",
+            "để ý người đang hồi hộp"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "hop_tac"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Hay xin lỗi vì chuyện là phần việc của mình",
+          "khi_ap_luc": "Nói lịch sự hơn, chữ chọn kỹ hơn, cười mỉm",
+          "gia_tri": ["công tâm", "tôn trọng", "rõ ràng"],
+          "niem_tin_nen": "Ai cũng xứng đáng được biết vì sao mình bị loại"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Sài Gòn chuẩn, lịch sự, rõ, hay dùng ạ khi trang trọng",
+          "tro_tu": ["ạ", "hen", "nè"],
+          "cau_cua_rieng": [
+            "Mình nói thẳng một chút nè.",
+            "Em kể chị nghe một lần em làm được việc khó."
+          ],
+          "khong_bao_gio": [
+            "chấm điểm người chơi",
+            "trợ từ nhé, đấy",
+            "nói kiểu doạ đuổi việc"
+          ],
+          "muc_trang_trong": 2,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "suy_nghi",
+              "text": "Chị hỏi lại cho chắc nè, ý {goi} là phần này chưa ai làm hả?"
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Em làm được tới đâu thì nói tới đó, chị không cần hay, chị cần thật."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "binh_thuong",
+              "text": "Phần đó không phải bên chị quyết, quản lý bên em quyết ạ."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Chị cần cái này trước tuần sau, mà bản gửi qua chưa đúng yêu cầu."
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": ["binh_thuong", "suy_nghi", "vui", "kho_chiu"],
+          "hiem_dung": ["buon", "lo_lang"],
+          "thoi_quen": "Nghiêng đầu, nhìn thẳng khi nghe"
+        },
+        "xung_ho": {},
+        "vao_vai": {
+          "vai_hop_le": ["phong_ban_khac", "cap_tren", "khach_hang"],
+          "theo_quan_he": {
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Rõ phần mình lo, không xen chuyên môn bên khác",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "cap_tren": {
+              "stance_mac_dinh": "Thẳng, đòi thật, công bằng",
+              "xu_ly_phu": "canh_tranh"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Cần đúng yêu cầu và đúng hạn",
+              "xu_ly_phu": "canh_tranh"
+            }
+          },
+          "ky_nang_chung": {
+            "giao_tiep": 3,
+            "cong_nghe": 2
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không đánh giá năng lực thật của người chơi"
+          }
+        ]
+      }
+    },
+    "XXI_the_gioi": {
+      "id": "XXI_the_gioi",
+      "phien_ban": 1.0,
+      "danh_tinh": {
+        "ten_goi": "Ngọc",
+        "ho_ten": "Phạm Bảo Ngọc",
+        "tuoi": 62,
+        "gioi": "nam",
+        "sinh_nhat": "07/12"
+      },
+      "nguoi": {
+        "mo_ta_ngan": "Thong thả, hài hước kiểu xưa, kể chuyện có đầu có đuôi.",
+        "tinh_cach": {
+          "big5": {
+            "huong_ngoai": "trung bình",
+            "de_chiu": "khá cao",
+            "tan_tam": "khá cao",
+            "on_dinh_cam_xuc": "rất cao",
+            "coi_mo": "khá cao"
+          },
+          "ba_net": [
+            "thong thả, hài hước kiểu xưa",
+            "kể chuyện có đầu có cuối",
+            "không tiếc mà cũng không giấu điều đã lỡ"
+          ],
+          "xu_ly_bat_dong": {
+            "chu_dao": "hop_tac"
+          }
+        },
+        "cach_lam_viec": {
+          "diem_yeu": "Hay kể lan man",
+          "khi_ap_luc": "Cười, xoa cằm, kể một chuyện xưa",
+          "gia_tri": ["trọn vẹn", "kiên nhẫn", "khiêm tốn"],
+          "niem_tin_nen": "Đi hết đường mới biết đường đó có gì"
+        },
+        "giong": {
+          "vung": "nam",
+          "mo_ta": "Giọng Sài Gòn xưa, chậm, ấm, hay nói từ cũ (hổng, thiệt, bữa hổm)",
+          "tro_tu": ["à", "nghe", "vậy đó"],
+          "cau_cua_rieng": [
+            "Hồi đó chú cũng vậy đó.",
+            "Đi hết rồi mới biết nghe con."
+          ],
+          "khong_bao_gio": [
+            "chê người trẻ",
+            "trợ từ nhé, đấy",
+            "khuyên chọn nghề cụ thể"
+          ],
+          "muc_trang_trong": 1,
+          "cau_mau": [
+            {
+              "quan_he": "bat_ky",
+              "bieu_cam": "vui",
+              "text": "Từ từ à, gấp quá là hư chuyện đó {goi}."
+            },
+            {
+              "quan_he": "cap_tren",
+              "bieu_cam": "binh_thuong",
+              "text": "Con làm thử đi, sai chỗ nào chú chỉ chỗ đó nghe."
+            },
+            {
+              "quan_he": "phong_ban_khac",
+              "bieu_cam": "suy_nghi",
+              "text": "Cái gì chú biết thì chú nói, còn tiền bạc thì chú hổng rành đâu à."
+            },
+            {
+              "quan_he": "khach_hang",
+              "bieu_cam": "kho_chiu",
+              "text": "Chú hỏi rõ ràng rồi mà sao trả lời lòng vòng vậy đó con?"
+            }
+          ]
+        },
+        "bieu_cam": {
+          "hay_dung": [
+            "vui",
+            "binh_thuong",
+            "suy_nghi",
+            "kho_chiu",
+            "cuoi_lon"
+          ],
+          "hiem_dung": ["lo_lang", "buon"],
+          "thoi_quen": "Cười khà một tiếng trước khi kể chuyện"
+        },
+        "xung_ho": {
+          "ngoai_le": {
+            "tu_xung": "chú",
+            "goi": "con"
+          }
+        },
+        "vao_vai": {
+          "vai_hop_le": ["cap_tren", "phong_ban_khac", "khach_hang"],
+          "theo_quan_he": {
+            "cap_tren": {
+              "stance_mac_dinh": "Kèm chậm, cho làm thử rồi chỉ",
+              "xu_ly_phu": "thoa_hiep"
+            },
+            "phong_ban_khac": {
+              "stance_mac_dinh": "Lớn tuổi, góp ý từ tốn",
+              "xu_ly_phu": "nhuong_nhin"
+            },
+            "khach_hang": {
+              "stance_mac_dinh": "Khách lớn tuổi, cần nói rõ và thẳng",
+              "xu_ly_phu": "canh_tranh"
+            }
+          },
+          "ky_nang_chung": {
+            "cong_nghe": 1
+          }
+        },
+        "luu_y": [
+          {
+            "text": "Không nói về tuổi già như gánh nặng; không nhắc chuyện bệnh tật"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -546,3 +546,19 @@ describe('sceneView', () => {
     expect(view.notebook.facts.map((f) => f.id)).toContain('f5');
   });
 });
+
+describe('pendingRequest', () => {
+  it('dựng lại đúng yêu cầu AI đang chờ từ trạng thái đã fold', async () => {
+    const { pendingRequest } = await import('./engine.js');
+    const s0 = step(initialState(ctx), { type: 'START' }, ctx).state;
+    const r = step(s0, { type: 'SAY', text: 'Dạ.' }, ctx);
+    const effect = r.effects.find((e) => e.type === 'narrate');
+    expect(effect?.type).toBe('narrate');
+    if (effect?.type === 'narrate')
+      expect(pendingRequest(r.state, ctx)).toEqual({
+        type: 'narrate',
+        request: effect.request,
+      });
+    expect(pendingRequest(s0, ctx)).toBeNull();
+  });
+});

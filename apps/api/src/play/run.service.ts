@@ -1,476 +1,553 @@
 /**
- * CL-03 RunService cho ca làm: mở lượt, nhận từng lượt của người chơi, trả
- * cảnh và lời thoại. Máy chủ là nguồn chân lý: mọi lượt chạy qua engine của
- * game-core ở đây, máy khách chỉ hiển thị.
+ * Màn chơi phía máy chủ (CL-03 `RunService`, SD-01): mỗi câu trả lời gửi lên
+ * ngay, máy chủ là nguồn chân lý của điểm (§5.3.1).
  *
- * Lượt không cần AI xong ngay trong request (200). Lượt cần AI được lưu, đẩy
- * job rồi trả 202; phần còn lại về qua `/api/v1/stream` (SD-01).
+ * - Câu đóng (CHOICE, ORDERING, PRIORITIZING): kiểm rồi chấm ngay bằng khoá
+ *   của chuyên gia qua game-core → 200.
+ * - Câu tự luận: ghi câu trả lời và việc chấm vào PostgreSQL, đẩy job vào
+ *   queue, trả 202. Panel ba judge (AI-5) chấm ở worker; nếu engine cho hỏi
+ *   vặn thì AI-4 cũng chạy ở worker. Kết quả về qua `/v1/stream`.
+ *   Không gọi model trong request này.
  */
-import { randomUUID } from 'node:crypto';
 import { Injectable } from '@nestjs/common';
-import { shift } from '@datn/game-core';
-import { AssessmentService } from '../assessment/assessment.service';
 import {
-  RunStore,
-  inputEvent,
-  isUniqueViolation,
-  presentLines,
-  type LoadedRun,
-} from '../assessment/run-store.service';
-import { ProblemException } from '../common/problem';
+  findActivity,
+  followUpAllowed,
+  nextActivityKey,
+  orderingShuffle,
+  scoreClosed,
+  speakerOf,
+  stripNpcPrefix,
+  type Activity,
+  type PlayEvent,
+  type PlayState,
+  type Scenario,
+} from '@datn/game-core';
+import type { AuthUser } from '../auth/decorators/current-user.decorator';
+import {
+  AssessmentService,
+  type GradingRequest,
+} from '../assessment/assessment.service';
 import { ContentService } from '../content/content.service';
-import type { Answer } from '../generated/prisma/client';
-import { TurnStatus } from '../generated/prisma/enums';
+import { Problem } from '../core/problem';
+import { RunLogService, type LoadedRun } from '../core/run-log.service';
+import { StreamService } from '../core/stream.service';
+import type { ScenarioRun } from '../generated/prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
-import { FlagService } from '../quality/flag.service';
-import type { StartRunDto, TurnDto } from './dto/play.dto';
+import { ProgressService } from '../progress/progress.service';
+import type { AnswerDto, FlagDto, HintDto, StartRunDto } from './play.dto';
+
+/* ── Hình dạng trả về theo openapi.yaml ────────────────────────────── */
 
 export interface RunView {
   id: string;
   status: 'IN_PROGRESS' | 'FINISHED' | 'ABANDONED';
   isPlaytest: boolean;
-  seedId: string;
   releaseVersion: string;
-  title: string;
-  goal: string;
-  playerRole: string;
-  situation: string;
-  cast: Array<{ slot: string; name: string; relation: string }>;
-  glossary: Array<{ term: string; plain: string }>;
+  intro: string;
+  context: { role: string; team: string; situation: string; stakes: string };
+  currentActivityKey: string | null;
   startedAt: string;
-  paused: boolean;
-  pendingTurnId: string | null;
 }
 
-export type SceneResponse = shift.SceneView & {
-  paused: boolean;
-  pendingTurnId: string | null;
-  notes: Array<{ id: string; text: string; createdAt: string }>;
+export interface ActivityView {
+  activityKey: string;
+  taskType: 'CHOICE' | 'ORDERING' | 'PRIORITIZING' | 'FREE_TEXT';
+  setup: string;
+  npc?: { npcKey: string; name: string; line: string };
+  inputPrompt?: string;
+  items?: Array<{ key: string; text: string; note?: string }>;
+  pickCount?: number;
+  hintAvailable: boolean;
+  randomEvent: null;
+  /**
+   * Ngoài hợp đồng (đề xuất): câu hỏi vặn đang chờ trả lời, để màn chơi mở lại
+   * đúng chỗ khi trình duyệt mất trạng thái (tab mới, xoá sessionStorage).
+   */
+  followup: {
+    followupNo: number;
+    npcKey: string;
+    name: string;
+    question: string;
+  } | null;
+}
+
+export interface AnswerResult {
+  answerId: string;
+  score: 0 | 1 | 2;
+  hintUsed: boolean;
+  closingLine?: string;
+  nextActivityKey?: string | null;
+}
+
+export interface JobAccepted {
+  jobId: string;
+  answerId: string;
+  streamEvent: string;
+}
+
+export type Accepted<T> =
+  { status: 200 | 201; body: T } | { status: 202; body: JobAccepted };
+
+const TASK_TYPE: Record<Activity['type'], ActivityView['taskType']> = {
+  CHOICE: 'CHOICE',
+  ORDERING: 'ORDERING',
+  PRIORITIZING: 'PRIORITIZING',
+  FREETEXT: 'FREE_TEXT',
 };
 
-export type TurnResponse =
-  | {
-      status: 200;
-      body: {
-        turnId: string;
-        lines: shift.TranscriptLine[];
-        scene: SceneResponse;
-      };
-    }
-  | {
-      status: 202;
-      body: {
-        jobId: string;
-        turnId: string;
-        streamEvent: 'turn.done';
-        lines: shift.TranscriptLine[];
-      };
-    };
+const TEXT_MIN = 2;
+const TEXT_MAX = 4000;
 
-/** Đổi lượt gửi lên thành đầu vào của engine. */
-export function toPlayerInput(dto: TurnDto): shift.PlayerInput {
-  switch (dto.kind) {
-    case 'action':
-      return {
-        type: 'ACTION',
-        key: dto.key,
-        fields: dto.fields,
-        ticks: dto.ticks,
-      };
-    case 'say':
-      return { type: 'SAY', text: dto.text };
-    case 'end_conversation':
-      return { type: 'END_CONVERSATION' };
-    case 'choose':
-      return { type: 'CHOOSE', option: dto.option, elapsedMs: dto.elapsedMs };
-    case 'timeout':
-      return { type: 'TIMEOUT' };
-    case 'save_artefact':
-      return {
-        type: 'SAVE_ARTEFACT',
-        artefact: dto.artefact,
-        fields: dto.fields,
-        ticks: dto.ticks,
-      };
-    case 'confirm_end':
-      return { type: 'CONFIRM_END' };
-    case 'cancel_end':
-      return { type: 'CANCEL_END' };
-  }
+const releaseVersionOf = (
+  run: Pick<ScenarioRun, 'scenarioKey' | 'contentVersion'>,
+) => `${run.scenarioKey}@${run.contentVersion}`;
+
+export function parseReleaseVersion(
+  version: string,
+): { scenarioKey: string; contentVersion: number } | null {
+  const match = /^([A-Za-z0-9_]+)@(\d+)$/.exec(version);
+  return match
+    ? { scenarioKey: match[1], contentVersion: Number(match[2]) }
+    : null;
 }
 
-function ruleProblem(err: unknown): never {
-  if (err instanceof shift.ShiftRuleError) {
-    if (err.code === 'TURN_IN_PROGRESS')
-      throw new ProblemException(
-        409,
-        'TURN_IN_PROGRESS',
-        'Lượt trước còn đang xử lý',
-      );
-    if (err.code === 'RUN_ENDED')
-      throw new ProblemException(409, 'RUN_ENDED', 'Ca đã kết thúc');
-    throw new ProblemException(
-      422,
-      'TURN_INVALID',
-      'Thao tác không hợp luật lúc này',
-      [{ reason: err.message }],
-    );
-  }
-  throw err;
-}
+const conflict = (title: string) =>
+  new Problem(409, 'INVALID_TRANSITION', title);
+const invalid = (field: string, reason: string) =>
+  new Problem(422, 'ANSWER_INVALID', 'Answer breaks the activity rules', [
+    { field, reason },
+  ]);
 
 @Injectable()
 export class RunService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly content: ContentService,
-    private readonly store: RunStore,
+    private readonly progress: ProgressService,
+    private readonly runLog: RunLogService,
     private readonly assessment: AssessmentService,
-    private readonly flags: FlagService,
+    private readonly stream: StreamService,
   ) {}
 
-  /* ── Mở lượt ── */
+  /* ── Mở / lấy lại lượt chơi ──────────────────────────────────────── */
 
-  /**
-   * Mở lượt mới, hoặc trả lại lượt đang dở của cùng nhiệm vụ (NFR-03).
-   *
-   * Chưa xét mở khoá cấp: luật mở khoá mới (D-114, bậc soft skill) chưa có,
-   * và ca làm chưa chấm nên không cộng điểm cấp kiểu prototype.
-   */
   async start(
-    userId: string,
+    user: AuthUser,
     dto: StartRunDto,
-  ): Promise<{ created: boolean; run: RunView }> {
-    const version = await this.content.activeVersion();
-    const ctx = await this.content.shiftContextAt(version, dto.taskId);
-    if (!ctx)
-      throw new ProblemException(
+  ): Promise<{ status: 200 | 201; body: RunView }> {
+    const contentVersion = await this.content.activeVersion();
+    const index = await this.content.indexAt(contentVersion);
+    const entry = index.findScenarioByKey(dto.taskId);
+    if (!entry)
+      throw new Problem(
         409,
         'SCENARIO_UNAVAILABLE',
-        'Nhiệm vụ này đang tạm đóng',
+        'Scenario is not available',
+      );
+    const { scenario } = entry;
+    const role = index.findRole(scenario.job.role_code);
+    if (!role)
+      throw new Problem(
+        409,
+        'SCENARIO_UNAVAILABLE',
+        'Occupation is not available',
       );
 
+    // NFR-03: còn lượt dở của cùng nhiệm vụ thì trả lại lượt đó.
     const existing = await this.prisma.scenarioRun.findFirst({
       where: {
-        userId,
-        seedId: dto.taskId,
-        schemaVersion: 2,
+        userId: user.id,
+        scenarioKey: dto.taskId,
+        flow: 'events',
         status: 'IN_PROGRESS',
       },
       orderBy: { startedAt: 'desc' },
     });
-    if (existing)
-      return { created: false, run: await this.get(userId, existing.id) };
+    if (existing) return { status: 200, body: await this.view(existing) };
 
-    const enrolment = dto.enrolmentId
-      ? await this.prisma.enrollment.findFirst({
-          where: { id: dto.enrolmentId, userId },
-          select: { id: true },
-        })
-      : null;
-    const [roleCode, band] = ctx.seed.id.split('.');
-    const runId = randomUUID();
-    const started = shift.step(
-      shift.initialState(ctx),
-      { type: 'START' },
-      ctx,
-    ).state;
+    if (!(await this.progress.isUnlocked(user.id, role, scenario.job.band)))
+      throw new Problem(
+        403,
+        'LEVEL_LOCKED',
+        `Level ${scenario.job.band} is locked`,
+      );
 
-    await this.prisma.$transaction(async (tx) => {
-      await tx.scenarioRun.create({
+    const run = await this.prisma.$transaction(async (tx) => {
+      const created = await tx.scenarioRun.create({
         data: {
-          id: runId,
-          userId,
-          scenarioKey: ctx.seed.id,
-          roleCode,
-          band,
-          seed: 0n,
-          contentVersion: version,
-          schemaVersion: 2,
-          seedId: ctx.seed.id,
-          enrolmentId: enrolment?.id ?? null,
-          currentNodeId: started.activeNode,
+          userId: user.id,
+          scenarioKey: dto.taskId,
+          roleCode: scenario.job.role_code,
+          band: scenario.job.band,
+          // Luồng này không chạy lại bằng hạt giống: mọi quyết định đã nằm trong sự kiện.
+          seed: BigInt(0),
+          contentVersion,
+          flow: 'events',
         },
       });
-      await this.store.append(tx, runId, 0, [
-        inputEvent({ type: 'START' }, null),
-      ]);
+      await this.runLog.begin(tx, created, scenario, {
+        type: 'RUN_STARTED',
+        scenarioKey: dto.taskId,
+        contentVersion,
+        band: scenario.job.band,
+      });
+      return tx.scenarioRun.findUniqueOrThrow({ where: { id: created.id } });
     });
-    return { created: true, run: await this.get(userId, runId) };
+    return { status: 201, body: this.toRunView(run, scenario) };
   }
 
-  /* ── Đọc ── */
-
-  private async pendingTurn(runId: string): Promise<Answer | null> {
-    return this.prisma.answer.findFirst({
-      where: { runId, status: { in: [TurnStatus.PENDING, TurnStatus.PAUSED] } },
-      orderBy: { submittedAt: 'desc' },
-    });
+  async get(user: AuthUser, runId: string): Promise<RunView> {
+    return this.view(await this.owned(user, runId));
   }
 
-  async get(userId: string, runId: string): Promise<RunView> {
-    const { run, ctx } = await this.store.load(runId, userId);
-    const pending = await this.pendingTurn(runId);
-    return {
-      id: run.id,
-      status: run.status,
-      isPlaytest: run.isPlaytest,
-      seedId: ctx.seed.id,
-      releaseVersion: `${ctx.seed.id}@${run.contentVersion}`,
-      title: ctx.seed.title,
-      goal: ctx.seed.goal,
-      playerRole: ctx.seed.player_role,
-      situation: ctx.seed.situation,
-      cast: ctx.seed.cast.map((c) => ({
-        slot: c.slot,
-        name: c.name,
-        relation: c.relation,
-      })),
-      glossary: ctx.seed.glossary,
-      startedAt: run.startedAt.toISOString(),
-      paused: run.pausedAt !== null,
-      pendingTurnId: pending?.id ?? null,
-    };
-  }
-
-  private async sceneOf(
-    loaded: LoadedRun,
-    state = loaded.state,
-  ): Promise<SceneResponse> {
-    const [pending, notes] = await Promise.all([
-      this.pendingTurn(loaded.run.id),
-      this.prisma.playerNote.findMany({
-        where: { runId: loaded.run.id },
-        orderBy: { createdAt: 'asc' },
-        select: { id: true, text: true, createdAt: true },
-      }),
-    ]);
-    return {
-      ...shift.sceneView(state, loaded.ctx),
-      paused: loaded.run.pausedAt !== null,
-      pendingTurnId: pending?.id ?? null,
-      notes: notes.map((n) => ({
-        id: n.id,
-        text: n.text,
-        createdAt: n.createdAt.toISOString(),
-      })),
-    };
-  }
-
-  async scene(userId: string, runId: string): Promise<SceneResponse> {
-    return this.sceneOf(await this.store.load(runId, userId));
-  }
-
-  async transcript(
-    userId: string,
-    runId: string,
-    after = -1,
-  ): Promise<shift.TranscriptLine[]> {
-    const loaded = await this.store.load(runId, userId);
-    const { displayName } = await this.store.identity(userId);
-    return presentLines(
-      loaded.state.transcript.filter((l) => l.seq > after),
-      displayName,
+  async currentActivity(user: AuthUser, runId: string): Promise<ActivityView> {
+    await this.owned(user, runId);
+    const { state, scenario } = await this.runLog.load(runId);
+    if (!state.activityKey) throw conflict('Run has no activity left');
+    return this.toActivityView(
+      findActivity(scenario, state.activityKey),
+      state,
+      scenario,
     );
   }
 
-  async summary(userId: string, runId: string): Promise<shift.ShiftSummary> {
-    await this.store.load(runId, userId);
-    const feedback = await this.prisma.scenarioFeedback.findUnique({
-      where: { runId },
-    });
-    if (!feedback)
-      throw new ProblemException(404, 'SUMMARY_NOT_READY', 'Ca chưa kết thúc');
-    return feedback.summary as unknown as shift.ShiftSummary;
-  }
+  /* ── Nộp câu trả lời ─────────────────────────────────────────────── */
 
-  /* ── Lượt ── */
-
-  async submitTurn(
-    userId: string,
+  async submitAnswer(
+    user: AuthUser,
     runId: string,
-    dto: TurnDto,
-  ): Promise<TurnResponse> {
-    return this.submit(
-      userId,
+    dto: AnswerDto,
+  ): Promise<Accepted<AnswerResult>> {
+    await this.owned(user, runId);
+
+    // NFR-04: gửi lại cùng `answerId` thì nhận lại đúng kết quả cũ.
+    const replay = await this.replay(runId, dto.answerId);
+    if (replay) return replay;
+
+    let grading: GradingRequest | null = null;
+    let closedNow: { activity: Activity; next: string | null } | null = null;
+
+    const outcome = await this.runLog.update<Accepted<AnswerResult>>(
       runId,
-      dto.turnId,
-      dto.kind,
-      toPlayerInput(dto),
-      dto.kind === 'say' ? dto.text : null,
-    );
-  }
+      async (loaded, tx) => {
+        const { state, scenario, run } = loaded;
+        if (run.status !== 'IN_PROGRESS' || !state.activityKey)
+          throw conflict('Run is not open');
+        if (dto.activityKey !== state.activityKey)
+          throw conflict('Not the current activity');
+        if (state.stage === 'awaiting')
+          throw conflict('Previous answer is still being processed');
+        const expectedNo = state.stage === 'followup' ? state.followupNo : 0;
+        if (dto.followupNo !== expectedNo)
+          throw conflict('Not the current follow-up');
 
-  /** Gợi ý (D4): một đầu vào của engine như mọi lượt khác, không tốn điểm. */
-  async hint(
-    userId: string,
-    runId: string,
-    turnId: string,
-  ): Promise<TurnResponse> {
-    return this.submit(userId, runId, turnId, 'hint', { type: 'HINT' }, null);
-  }
+        const activity = findActivity(scenario, state.activityKey);
+        const hintUsed = state.hints.includes(activity.activity_id);
+        const next = nextActivityKey(activity);
 
-  private async submit(
-    userId: string,
-    runId: string,
-    turnId: string,
-    kind: string,
-    input: shift.PlayerInput,
-    text: string | null,
-  ): Promise<TurnResponse> {
-    const repeated = await this.prisma.answer.findUnique({
-      where: { id: turnId },
-    });
-    if (repeated) {
-      if (repeated.runId !== runId)
-        throw new ProblemException(
-          409,
-          'CONFLICT',
-          'turnId đã dùng cho lượt chơi khác',
-        );
-      return this.replay(userId, runId, repeated);
-    }
+        if (activity.type !== 'FREETEXT' && state.stage === 'answering') {
+          const check = scoreClosed(activity, dto.selection);
+          if (!check.ok) throw invalid('selection', check.reason);
+          await tx.answer.create({
+            data: {
+              id: dto.answerId,
+              runId,
+              activityKey: activity.activity_id,
+              followupNo: 0,
+              taskType: TASK_TYPE[activity.type],
+              selection: dto.selection ?? undefined,
+              systemScore: check.score,
+            },
+          });
+          const result: Accepted<AnswerResult> = {
+            status: 200,
+            body: {
+              answerId: dto.answerId,
+              score: check.score,
+              hintUsed,
+              closingLine: activity.closing_prompt,
+              nextActivityKey: next,
+            },
+          };
+          return {
+            append: [
+              {
+                type: 'CLOSED_ANSWERED',
+                activityKey: activity.activity_id,
+                answerId: dto.answerId,
+                score: check.score,
+                why: check.why,
+                quote: check.quote,
+              },
+              {
+                type: 'ACTIVITY_CLOSED',
+                activityKey: activity.activity_id,
+                nextActivityKey: next,
+              },
+            ],
+            result,
+          };
+        }
 
-    const loaded = await this.store.load(runId, userId);
-    if (loaded.run.pausedAt)
-      throw new ProblemException(
-        409,
-        'RUN_PAUSED',
-        'Phiên đang tạm dừng, hãy tiếp tục trước',
-      );
-    let next: shift.ShiftState;
-    try {
-      next = shift.step(loaded.state, input, loaded.ctx).state;
-    } catch (err) {
-      ruleProblem(err);
-    }
+        const text = (dto.text ?? '').trim();
+        if (text.length < TEXT_MIN || text.length > TEXT_MAX)
+          throw invalid(
+            'text',
+            `Câu trả lời phải dài từ ${TEXT_MIN} tới ${TEXT_MAX} ký tự.`,
+          );
 
-    const needsAi = next.pending !== null;
-    const lineFrom = loaded.state.transcript.length;
-    try {
-      await this.prisma.$transaction(async (tx) => {
-        await this.store.append(tx, runId, loaded.lastSeq, [
-          inputEvent(input, turnId),
-        ]);
         await tx.answer.create({
           data: {
-            id: turnId,
+            id: dto.answerId,
             runId,
-            kind,
+            activityKey: activity.activity_id,
+            followupNo: dto.followupNo,
+            followupQuestion:
+              state.stage === 'followup'
+                ? (state.pendingFollowup?.question ?? null)
+                : null,
+            taskType: 'FREE_TEXT',
             text,
-            payload: JSON.parse(JSON.stringify(input)),
-            status: needsAi ? TurnStatus.PENDING : TurnStatus.DONE,
-            jobId: needsAi ? turnId : null,
-            lineFrom,
-            lineTo: needsAi ? null : next.transcript.length,
-            completedAt: needsAi ? null : new Date(),
           },
         });
-        if (!needsAi) await this.store.sync(tx, loaded, next);
-      });
-    } catch (err) {
-      if (isUniqueViolation(err))
-        throw new ProblemException(
-          409,
-          'TURN_IN_PROGRESS',
-          'Có lượt khác vừa được ghi, hãy tải lại',
-        );
-      throw err;
-    }
+        grading = await this.assessment.requestGrading(tx, runId, dto.answerId);
 
-    const { displayName } = await this.store.identity(userId);
-    const lines = presentLines(next.transcript.slice(lineFrom), displayName);
-    if (needsAi) {
-      const jobId = await this.assessment.requestTurn(runId, turnId);
-      return {
-        status: 202,
-        body: { jobId, turnId, streamEvent: 'turn.done', lines },
-      };
-    }
-    return {
-      status: 200,
-      body: { turnId, lines, scene: await this.sceneOf(loaded, next) },
-    };
+        // Engine quyết hỏi vặn ngay bây giờ, không chờ điểm (① 30/10).
+        const allowed = followUpAllowed(activity, state, dto.followupNo);
+        const append: PlayEvent[] = [
+          {
+            type: 'TEXT_SUBMITTED',
+            activityKey: activity.activity_id,
+            answerId: dto.answerId,
+            followupNo: dto.followupNo,
+            followUpAllowed: allowed,
+          },
+        ];
+        if (!allowed) {
+          append.push({
+            type: 'ACTIVITY_CLOSED',
+            activityKey: activity.activity_id,
+            nextActivityKey: next,
+          });
+          closedNow = { activity, next };
+        }
+        const result: Accepted<AnswerResult> = {
+          status: 202,
+          body: {
+            jobId: grading.aiJobId,
+            answerId: dto.answerId,
+            streamEvent: 'answer.graded',
+          },
+        };
+        return { append, result };
+      },
+    );
+
+    // Sau khi transaction đã ghi: worker đọc được, màn hình nhận được.
+    const job = grading as GradingRequest | null;
+    if (job) await this.assessment.enqueue(job);
+    const closed = closedNow as {
+      activity: Activity;
+      next: string | null;
+    } | null;
+    if (closed)
+      await this.stream.publish(user.id, {
+        type: 'activity.closed',
+        runId,
+        payload: {
+          activityKey: closed.activity.activity_id,
+          closingLine: closed.activity.closing_prompt,
+          nextActivityKey: closed.next,
+        },
+      });
+    return outcome;
   }
 
-  /** Gửi lại cùng `turnId`: trả đúng kết quả cũ (NFR-04). */
   private async replay(
-    userId: string,
     runId: string,
-    answer: Answer,
-  ): Promise<TurnResponse> {
-    const loaded = await this.store.load(runId, userId);
-    const { displayName } = await this.store.identity(userId);
-    const lines = presentLines(
-      loaded.state.transcript.slice(
-        answer.lineFrom,
-        answer.lineTo ?? undefined,
-      ),
-      displayName,
-    );
-    if (answer.status !== TurnStatus.DONE)
+    answerId: string,
+  ): Promise<Accepted<AnswerResult> | null> {
+    const stored = await this.prisma.answer.findUnique({
+      where: { id: answerId },
+      include: { assessment: true },
+    });
+    if (!stored) return null;
+    if (stored.runId !== runId)
+      throw conflict('Answer id belongs to another run');
+    if (stored.assessment)
       return {
         status: 202,
         body: {
-          jobId: answer.jobId ?? answer.id,
-          turnId: answer.id,
-          streamEvent: 'turn.done',
-          lines,
+          jobId: stored.assessment.aiJobId,
+          answerId,
+          streamEvent: 'answer.graded',
         },
       };
+    const { scenario, state } = await this.runLog.load(runId);
+    const activity = findActivity(scenario, stored.activityKey);
     return {
       status: 200,
-      body: { turnId: answer.id, lines, scene: await this.sceneOf(loaded) },
+      body: {
+        answerId,
+        score: (stored.systemScore ?? 0) as 0 | 1 | 2,
+        hintUsed: state.hints.includes(stored.activityKey),
+        closingLine: activity.closing_prompt,
+        nextActivityKey: nextActivityKey(activity),
+      },
     };
   }
 
-  /** Tiếp tục phiên đã tạm dừng vì hết model (D-92): đẩy lại job của lượt đang dừng. */
-  async resume(
-    userId: string,
-    runId: string,
-  ): Promise<{ jobId: string; turnId: string }> {
-    const loaded = await this.store.load(runId, userId);
-    const paused = await this.prisma.answer.findFirst({
-      where: { runId, status: TurnStatus.PAUSED },
+  /* ── Gợi ý, báo nội dung sai ─────────────────────────────────────── */
+
+  /** Gợi ý chỉ được ghi nhận, không bao giờ hạ điểm (FR-13, quyết định Q5 11/11). */
+  async viewHint(user: AuthUser, runId: string, dto: HintDto) {
+    await this.owned(user, runId);
+    return this.runLog.update(runId, ({ state, scenario }) => {
+      if (dto.activityKey !== state.activityKey)
+        throw conflict('Not the current activity');
+      const hint = findActivity(scenario, dto.activityKey).hints[0];
+      if (!hint)
+        throw new Problem(404, 'NOT_FOUND', 'This activity has no hint');
+      const speaker = speakerOf(scenario, hint.text);
+      return {
+        append: state.hints.includes(dto.activityKey)
+          ? []
+          : [
+              {
+                type: 'HINT_VIEWED',
+                activityKey: dto.activityKey,
+              } as PlayEvent,
+            ],
+        result: {
+          npcKey: speaker?.npcKey ?? '',
+          text: stripNpcPrefix(hint.text),
+          hintUsed: true as const,
+        },
+      };
     });
-    if (!loaded.run.pausedAt || !paused)
-      throw new ProblemException(409, 'NOT_PAUSED', 'Phiên không tạm dừng');
-    await this.prisma.$transaction([
-      this.prisma.answer.update({
-        where: { id: paused.id },
-        data: { status: TurnStatus.PENDING },
-      }),
-      this.prisma.scenarioRun.update({
-        where: { id: runId },
-        data: { pausedAt: null },
-      }),
-    ]);
-    const jobId = await this.assessment.requestTurn(
-      runId,
-      paused.id,
-      Date.now(),
-    );
-    return { jobId, turnId: paused.id };
   }
 
-  /* ── Sổ tay, báo lỗi ── */
+  async flag(user: AuthUser, runId: string, dto: FlagDto): Promise<void> {
+    await this.owned(user, runId);
+    await this.runLog.update(runId, () => ({
+      append: [
+        {
+          type: 'CONTENT_FLAGGED',
+          activityKey: dto.activityKey,
+          reason: dto.reason,
+        },
+      ],
+      result: undefined,
+    }));
+  }
 
-  async addNote(userId: string, runId: string, text: string) {
-    await this.store.load(runId, userId);
-    const note = await this.prisma.playerNote.create({ data: { runId, text } });
+  /* ── Bản phát hành (thay cho CDN khi chạy local) ─────────────────── */
+
+  async release(version: string): Promise<Scenario> {
+    const parsed = parseReleaseVersion(version);
+    if (!parsed) throw new Problem(404, 'NOT_FOUND', 'Unknown release version');
+    const index = await this.content
+      .indexAt(parsed.contentVersion)
+      .catch(() => null);
+    const entry = index?.findScenarioByKey(parsed.scenarioKey);
+    if (!entry) throw new Problem(404, 'NOT_FOUND', 'Unknown release version');
+    return entry.scenario;
+  }
+
+  /* ── Phụ trợ ─────────────────────────────────────────────────────── */
+
+  async owned(user: AuthUser, runId: string): Promise<ScenarioRun> {
+    const run = await this.prisma.scenarioRun.findUnique({
+      where: { id: runId },
+    });
+    if (!run || run.userId !== user.id || run.flow !== 'events')
+      throw new Problem(404, 'NOT_FOUND', 'Run not found');
+    return run;
+  }
+
+  private async view(run: ScenarioRun): Promise<RunView> {
+    return this.toRunView(run, await this.runLog.scenarioOf(run));
+  }
+
+  private toRunView(run: ScenarioRun, scenario: Scenario): RunView {
+    const { job, context, cast } = scenario;
     return {
-      id: note.id,
-      text: note.text,
-      createdAt: note.createdAt.toISOString(),
+      id: run.id,
+      status: run.status,
+      isPlaytest: false,
+      releaseVersion: releaseVersionOf(run),
+      intro: job.user_context ?? '',
+      context: {
+        role: [job.title_vn, job.role_name_vn].filter(Boolean).join(' · '),
+        team: cast.map((c) => c.role_in_scene).join('\n'),
+        situation: context.situation ?? '',
+        stakes: context.stakes ?? '',
+      },
+      currentActivityKey:
+        run.status === 'FINISHED' ? null : run.currentActivityKey,
+      startedAt: run.startedAt.toISOString(),
     };
   }
 
-  async flag(
-    userId: string,
-    runId: string,
-    dto: { activityKey: string; reason: string },
-  ) {
-    await this.store.load(runId, userId);
-    await this.flags.create(runId, dto);
+  private toActivityView(
+    activity: Activity,
+    state: PlayState,
+    scenario: Scenario,
+  ): ActivityView {
+    const npc = activity.npc_line
+      ? speakerOf(scenario, activity.npc_line)
+      : null;
+
+    let items: ActivityView['items'];
+    if (activity.type === 'CHOICE')
+      items = (activity.options ?? []).map((text, i) => ({
+        key: String(i),
+        text,
+      }));
+    else if (activity.type === 'ORDERING')
+      items = orderingShuffle(activity).map((id) => ({
+        key: id,
+        text: activity.items?.find((x) => x.item_id === id)?.text ?? id,
+      }));
+    else if (activity.type === 'PRIORITIZING')
+      items = (activity.items ?? []).map((item) => ({
+        key: item.item_id,
+        text: item.text,
+        ...(item.note ? { note: item.note } : {}),
+      }));
+
+    const pending = state.stage === 'followup' ? state.pendingFollowup : null;
+    return {
+      activityKey: activity.activity_id,
+      taskType: TASK_TYPE[activity.type],
+      setup: activity.setup,
+      ...(npc && activity.npc_line
+        ? {
+            npc: {
+              npcKey: npc.npcKey,
+              name: npc.name,
+              line: stripNpcPrefix(activity.npc_line),
+            },
+          }
+        : {}),
+      ...(activity.input_prompt ? { inputPrompt: activity.input_prompt } : {}),
+      ...(items ? { items } : {}),
+      ...(activity.type === 'PRIORITIZING'
+        ? { pickCount: activity.pick_count ?? 0 }
+        : {}),
+      hintAvailable: activity.hints.length > 0,
+      randomEvent: null,
+      followup: pending
+        ? {
+            followupNo: pending.followupNo,
+            npcKey: pending.npcKey,
+            name: pending.name,
+            question: pending.question,
+          }
+        : null,
+    };
   }
 }
+
+export type { LoadedRun };

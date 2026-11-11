@@ -1,9 +1,9 @@
 /**
- * `PlayApi` gọi máy chủ thật theo `reports/master/api/openapi.yaml`.
+ * `PlayApi` gọi máy chủ thật theo `reports/master/api/openapi.yaml`
+ * (`apps/api/src/play`, SD-01, SD-02).
  *
- * Chưa chạy được: máy chủ chưa có các endpoint `/api/v1/runs…` (đang làm theo
- * SD-01, SD-02, SD-08). Viết sẵn để khi máy chủ xong chỉ cần đổi
- * `VITE_PLAY_API=http`, không phải sửa màn hình.
+ * Phiên đăng nhập đi bằng cookie httpOnly (`credentials: 'include'`), như
+ * phần còn lại của app; Bearer token chỉ gửi khi có `getToken`.
  */
 import { ScenarioSchema } from '@datn/game-core';
 import { PlayApiError, type Accepted, type PlayApi } from './contract';
@@ -24,13 +24,19 @@ const BASE_URL = `${import.meta.env.VITE_API_URL ?? ''}/api/v1`;
 export interface HttpPlayApiOptions {
   /** Bearer token của phiên (Q2). `null` thì không gửi header. */
   getToken?: () => string | null;
-  /** Nơi đặt tệp phát hành; mặc định cùng origin. */
+  /**
+   * Nơi đặt tệp phát hành. Thiết kế đặt trên CDN (§5.3.1); khi chưa có CDN,
+   * API phục vụ thay ở `/api/v1/releases/<releaseVersion>`.
+   */
   releaseBaseUrl?: string;
+  /** Chờ bao lâu rồi nối lại luồng sự kiện khi bị rớt. */
+  reconnectMs?: number;
 }
 
 export function createHttpPlayApi(options: HttpPlayApiOptions = {}): PlayApi {
   const getToken = options.getToken ?? (() => null);
-  const releaseBaseUrl = options.releaseBaseUrl ?? '/releases';
+  const releaseBaseUrl = options.releaseBaseUrl ?? `${BASE_URL}/releases`;
+  const reconnectMs = options.reconnectMs ?? 2000;
 
   const headers = (json: boolean): HeadersInit => {
     const out: Record<string, string> = {};
@@ -104,21 +110,45 @@ export function createHttpPlayApi(options: HttpPlayApiOptions = {}): PlayApi {
 
     openEventStream: (onEvent) => {
       const controller = new AbortController();
-      void (async () => {
+      // Nối lại với `Last-Event-ID` thì máy chủ gửi bù những gì đã lỡ (hợp
+      // đồng `/stream`), nên rớt mạng giữa lúc chờ chấm không làm kẹt màn.
+      let lastEventId: string | null = null;
+
+      const connect = async (): Promise<void> => {
         const response = await fetch(`${BASE_URL}/stream`, {
-          headers: { ...headers(false), Accept: 'text/event-stream' },
+          headers: {
+            ...headers(false),
+            Accept: 'text/event-stream',
+            ...(lastEventId ? { 'Last-Event-ID': lastEventId } : {}),
+          },
           credentials: 'include',
           signal: controller.signal,
         });
-        if (!response.ok || !response.body) return;
+        if (!response.ok || !response.body) {
+          // 401: phiên hết hạn — nối lại cũng vô ích, để màn hình xử lý.
+          if (response.status === 401) {
+            controller.abort();
+            return;
+          }
+          throw new Error(`stream HTTP ${response.status}`);
+        }
         await readSse(response.body, (message) => {
+          if (message.id) lastEventId = message.id;
           try {
             onEvent(JSON.parse(message.data) as PlayStreamEvent);
           } catch {
-            // Tin không đọc được thì bỏ qua; màn hình còn polling dự phòng.
+            // Tin không đọc được thì bỏ qua.
           }
         });
-      })().catch(() => undefined);
+      };
+
+      void (async () => {
+        while (!controller.signal.aborted) {
+          await connect().catch(() => undefined);
+          if (controller.signal.aborted) return;
+          await new Promise((r) => setTimeout(r, reconnectMs));
+        }
+      })();
       return () => controller.abort();
     },
 
