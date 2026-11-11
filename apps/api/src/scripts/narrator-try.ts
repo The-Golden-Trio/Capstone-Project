@@ -1,5 +1,9 @@
 /**
- * Chạy thử người dẫn truyện (AI-4) trên một lượt chơi mẫu của kịch bản thật.
+ * Chạy thử người dẫn truyện (AI-4) trên một lượt chơi mẫu.
+ *
+ * Mặc định là contract theo nhịp (D-130) trên các cảnh của seed Back-end L3 m2
+ * (`ai/testing/sample-scene.ts`). Contract cũ, một câu follow-up trên kịch bản
+ * dạng activity: thêm `--contract=legacy`.
  *
  *     pnpm exec nx run @datn/api:narrator-try                     # dry: in request, không gọi gì
  *     pnpm exec nx run @datn/api:narrator-try -- --mode=fake      # model giả, xem bậc dự phòng chạy
@@ -7,7 +11,13 @@
  *     pnpm exec nx run @datn/api:narrator-try -- --mode=live      # gọi thật, cần QWEN_API_KEY hoặc OPENROUTER_API_KEY
  *     pnpm exec nx run @datn/api:narrator-try -- --mode=export    # ghi một lượt gọi ra request.json, response.json
  *
- * Tuỳ chọn:
+ * Tuỳ chọn của contract theo nhịp:
+ *     --scene=n0|pha_support|bridge_n1|n2_reaction|n2_probe|n2_after|all   (mặc định: check và export
+ *                     dùng n2_probe, các chế độ khác chạy all)
+ *     --player="câu tự gõ"   thay câu người chơi của cảnh
+ *     --choice=anh|chi       người chơi chọn xưng hô (mặc định chi)
+ *
+ * Tuỳ chọn của contract cũ (--contract=legacy):
  *     --out=thư/mục   nơi ghi file JSON (export: mặc định docs/project-hub/assets/ai-design/ai-4-api;
  *                     live: ghi nguyên văn từng request và response thật)
  *     --answer=dung_kich_ban|lac_kich_ban|tan_cong|do_rubric|all   (mặc định dung_kich_ban)
@@ -25,7 +35,11 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   FOLLOW_UP_MAX_CHARS,
+  beatsJsonSchema,
+  checkBeats,
   checkNarration,
+  sceneTurnTexts,
+  type SceneTurn,
   hiddenTexts,
   narrationJsonSchema,
   narratorView,
@@ -41,8 +55,10 @@ import { ModelGateway, fetchTransport } from '../ai/gateway/model-gateway';
 import { deepseekFlash, gatewayKeys, narratorChain, openRouterQwenFlash, qwenFlash } from '../ai/gateway/models';
 import { NARRATOR_PROFILE } from '../ai/narrator/narrator.profile';
 import { buildNarratorMessages } from '../ai/narrator/narrator.prompt';
-import { NarratorService, type NarrateResult } from '../ai/narrator/narrator.service';
+import { NarratorService, type NarrateResult, type NarrateSceneResult } from '../ai/narrator/narrator.service';
+import { buildSceneMessages } from '../ai/narrator/scene.prompt';
 import { FakeClock, fakeTransport } from '../ai/testing/fake-model';
+import { SAMPLE_SCENE_IDS, SAMPLE_SEED, sampleScene, type SampleSceneId } from '../ai/testing/sample-scene';
 import {
   SAMPLE_ACTIVITY_ID,
   SAMPLE_ANSWERS,
@@ -87,6 +103,7 @@ loadEnvFile(join(process.cwd(), '.env'));
 const mode = args.get('mode') ?? 'dry';
 const repeat = Math.max(1, Number(args.get('repeat') ?? 1));
 const followUpAllowed = !args.has('no-follow-up');
+const contract = args.get('contract') ?? 'scene';
 const SCENARIO_KEY = args.get('scenario') ?? SAMPLE_SCENARIO_KEY;
 const ACTIVITY_ID = args.get('activity') ?? SAMPLE_ACTIVITY_ID;
 
@@ -115,6 +132,10 @@ function printResult(label: string, result: NarrateResult): void {
   } else {
     console.log(`■ unavailable — ${result.reason}`);
   }
+  printRecords(result);
+}
+
+function printRecords(result: NarrateResult | NarrateSceneResult): void {
   if (Object.keys(result.redactions).length > 0)
     console.log(`  đã khử định danh: ${JSON.stringify(result.redactions)}`);
 
@@ -490,6 +511,19 @@ async function live(scenario: Scenario, answers: Array<[string, string]>): Promi
  */
 const CHECK_TIMEOUT_MS = 30_000;
 
+/** Đọc cấu hình AI; giá trị sai thì in tên biến và trả null thay vì ném lỗi Zod thô. */
+function loadSettingsForCheck(): ReturnType<typeof aiSettingsFromEnv> | null {
+  try {
+    return aiSettingsFromEnv(loadAiEnv());
+  } catch (err) {
+    const issues = (err as { issues?: Array<{ path: unknown[]; message: string }> }).issues ?? [];
+    console.error('✘ .env có giá trị không hợp lệ:');
+    for (const issue of issues) console.error(`  ${issue.path.join('.')}: ${issue.message}`);
+    process.exitCode = 1;
+    return null;
+  }
+}
+
 /**
  * Lệnh chạy đầu tiên sau khi gắn key. Mỗi model gọi một lượt thật với prompt
  * thật, rồi chạy cả AI-4 một lượt. Tốn cỡ vài nghìn token.
@@ -499,17 +533,8 @@ const CHECK_TIMEOUT_MS = 30_000;
  * viết chưa qua luật.
  */
 async function check(scenario: Scenario, answer: string): Promise<void> {
-  let env;
-  try {
-    env = loadAiEnv();
-  } catch (err) {
-    const issues = (err as { issues?: Array<{ path: unknown[]; message: string }> }).issues ?? [];
-    console.error('✘ apps/api/.env có giá trị không hợp lệ:');
-    for (const issue of issues) console.error(`  ${issue.path.join('.')}: ${issue.message}`);
-    process.exitCode = 1;
-    return;
-  }
-  const settings = aiSettingsFromEnv(env);
+  const settings = loadSettingsForCheck();
+  if (!settings) return;
   const { chain, excluded } = narratorChain(settings);
   let failed = false;
 
@@ -596,7 +621,289 @@ async function check(scenario: Scenario, answer: string): Promise<void> {
   if (failed) process.exitCode = 1;
 }
 
+
+/* ── Contract theo nhịp (D-130) ────────────────────────────────────── */
+
+function scenesToRun(fallback: 'all' | SampleSceneId): Array<[SampleSceneId, SceneTurn]> {
+  const chosen = args.get('scene') ?? fallback;
+  const ids = chosen === 'all' ? SAMPLE_SCENE_IDS : [chosen as SampleSceneId];
+  for (const id of ids)
+    if (!SAMPLE_SCENE_IDS.includes(id)) throw new Error(`--scene phải là ${SAMPLE_SCENE_IDS.join(', ')} hoặc all (đang là "${id}")`);
+  const choice = args.get('choice') === 'anh' ? 'anh' : 'chi';
+  const player = args.get('player');
+  return ids.map((id) => {
+    const turn = sampleScene(id, { choice });
+    return [id, player === undefined ? turn : { ...turn, playerLine: player }];
+  });
+}
+
+function describeTurn(id: string, turn: SceneTurn): string {
+  return `${id} · task ${turn.task} · ${turn.lead} · tối đa ${turn.maxBeats ?? 5} nhịp · hỏi: ${turn.task === 'probe' || turn.questionAllowed !== false ? 'có' : 'không'}`;
+}
+
+function printScene(label: string, result: NarrateSceneResult): void {
+  rule(label);
+  if (result.status === 'ok') {
+    for (const b of result.beats) console.log(`✔ [${b.speaker}${b.expression ? ` · ${b.expression}` : ''}] ${b.text}`);
+    console.log(`  question_by: ${result.questionBy ?? 'null'}`);
+  } else if (result.status === 'blocked') {
+    console.log('■ blocked — bộ lọc nội dung của nhà cung cấp chặn');
+  } else {
+    console.log(`■ unavailable — ${result.reason}`);
+  }
+  printRecords(result);
+}
+
+function sceneService(transport: Transport, keys: Parameters<typeof gatewayKeys>[0] | null, chain: ModelSpec[], clock?: FakeClock) {
+  return new NarratorService(
+    new ModelGateway(keys ? gatewayKeys(keys) : { qwen: '-' }, transport, clock),
+    new CircuitBreaker(clock),
+    chain,
+    clock,
+  );
+}
+
+function drySceneAll(): void {
+  for (const [id, turn] of scenesToRun('all')) {
+    const [system, user] = buildSceneMessages(turn);
+    rule(describeTurn(id, turn));
+    const fixed = system.parts[0].text.length + user.parts[0].text.length;
+    console.log(`phần cố định (system + màn + công ty + thẻ): ${fixed} ký tự ≈ ${roughTokens(fixed)} token`);
+    console.log(`phần riêng lượt này: ${user.parts[1].text.length} ký tự ≈ ${roughTokens(user.parts[1].text.length)} token`);
+    if (args.has('full')) {
+      rule('System prompt');
+      console.log(system.parts[0].text);
+      rule('Phần cố định của cảnh');
+      console.log(user.parts[0].text);
+    }
+    rule('Phần riêng lượt này');
+    console.log(user.parts[1].text);
+  }
+}
+
+/** Câu trả lời mẫu hợp luật cho từng cảnh: model giả trả câu này. */
+const FAKE_SCENE_REPLY: Record<SampleSceneId, object> = {
+  n0: { beats: [{ speaker: 'mentor', text: 'Ừ, em coi log trước đi, có gì nhắn anh.', expression: 'binh_thuong' }], question_by: null },
+  pha_support: {
+    beats: [
+      { speaker: 'support', text: 'Khách sỉ Minh Phát đó em, gọi chị nãy giờ.', expression: 'lo_lang' },
+      { speaker: 'support', text: 'Họ có tới 900 đơn trong lịch sử luôn.', expression: 'lo_lang' },
+      { speaker: 'support', text: 'Bên em có coi được chưa?', expression: 'lo_lang' },
+    ],
+    question_by: 'support',
+  },
+  bridge_n1: { beats: [{ speaker: 'canh', text: 'Điện thoại bàn reo, màn hình hiện số của bộ phận hỗ trợ.', expression: null }], question_by: null },
+  n2_reaction: {
+    beats: [
+      { speaker: 'mentor', text: 'Anh coi ghi chú rồi nè.', expression: 'suy_nghi' },
+      { speaker: 'mentor', text: 'Ừ, 901 lần hỏi cơ sở dữ liệu thì đúng là vòng lặp lấy từng đơn rồi.', expression: 'binh_thuong' },
+    ],
+    question_by: null,
+  },
+  n2_probe: {
+    beats: [
+      { speaker: 'mentor', text: 'Ừ, anh đọc tới chỗ 901 lần rồi.', expression: 'binh_thuong' },
+      { speaker: 'mentor', text: 'Anh phải ghi vào báo cáo: em lấy gì để loại khả năng DB quá tải?', expression: 'suy_nghi' },
+    ],
+    question_by: 'mentor',
+  },
+  n2_after: { beats: [{ speaker: 'mentor', text: 'Ừ, anh hiểu rồi. Em làm tiếp đi.', expression: 'binh_thuong' }], question_by: null },
+};
+
+async function fakeSceneAll(): Promise<void> {
+  // Lượt 1 bịa số → R1 loại; lượt 2 là câu mẫu hợp luật của cảnh đó.
+  for (const [id, turn] of scenesToRun('all')) {
+    const clock = new FakeClock();
+    const transport = fakeTransport(
+      (_, i) =>
+        i === 0
+          ? { content: JSON.stringify({ beats: [{ speaker: turn.lead, text: 'Cho anh 30 phút nha.', expression: 'binh_thuong' }], question_by: null }), latencyMs: 1700 }
+          : { content: JSON.stringify(FAKE_SCENE_REPLY[id]), latencyMs: 1300, cachedTokens: 1024 },
+      clock,
+    );
+    const qwen = qwenFlash({ apiKey: '-', region: 'eu-central-1', workspaceId: 'fake', cacheMode: 'implicit' });
+    printScene(`[model giả] ${describeTurn(id, turn)}`, await sceneService(transport, null, [qwen], clock).narrateScene({ turn }));
+  }
+}
+
+const SCENE_NOTES: Array<[string, string[]]> = [
+  ['"url":', ['Qwen ở Frankfurt (eu-central-1): có JSON Schema strict. Singapore và Token Plan dùng json_object, R4 kiểm khuôn bằng code.']],
+  ['"Authorization":', ['Key nằm ở máy chủ JobQuest, không bao giờ xuống trình duyệt.']],
+  ['"model":', ['Model dẫn truyện (D-107).']],
+  ['"messages":', ['Prompt. Không dùng phiên lưu bên Qwen: mỗi lượt gửi lại đủ ngữ cảnh (cảnh, thẻ, 8 lượt gần nhất).']],
+  ['"role": "system"', [
+    'PHẦN 1. Luật cho AI-4 (narrator.v3, D-130): bốn việc, khuôn nhịp, R1–R4, 13 luật cách viết. Giống nhau mọi màn.',
+    'Gửi thật là MỘT chuỗi, các dòng nối bằng \\n; ở đây tách mỗi dòng một phần tử cho dễ đọc.',
+  ]],
+  ['"role": "user"', ['Người "nói" ở role user là engine. Gồm phần 2 (cố định trong cảnh, được cache) và phần 3 (riêng lượt này).']],
+  ['"# MÀN"', ['PHẦN 2. Màn, hồ sơ công ty và thẻ nhân vật có mặt. Giống nhau suốt cảnh → Qwen cache được.']],
+  ['"# THẺ NHÂN VẬT', [
+    'Thẻ dựng theo Hồ sơ NPC mục 6.1: phần người (từ lá tarot, ở đây XVIII Sang) + phần slot (từ seed).',
+    'Chỉ có dữ kiện slot biết (Seed C2). Khúc mắc giấu tới nút kết và câu kiểm của bộ phán không có ở đây.',
+  ]],
+  ['"# CẢNH HIỆN TẠI"', ['PHẦN 3. Riêng lượt này: cảnh, cờ truyện, 8 lượt gần nhất, việc engine giao. Câu người chơi bọc trong <cau_nguoi_choi>.']],
+  ['"# LƯỢT NÀY"', ['Việc engine giao (D-128): task, ai nói, có được hỏi không, tối đa mấy nhịp, hook. AI-4 không tự quyết những điều này.']],
+  ['"temperature":', ['Độ ngẫu nhiên. 0,7 là mức đội Qwen khuyên khi tắt suy nghĩ.']],
+  ['"max_completion_tokens":', [`Trả về tối đa ${NARRATOR_PROFILE.maxOutputTokens.qwen} token: lượt dài nhất 5 nhịp × 120 ký tự khoảng 300–450 token. Bị cắt thì R4 loại.`]],
+  ['"enable_thinking":', ['Tắt suy nghĩ: Qwen bật sẵn, làm chậm vài giây; bắt buộc tắt khi không stream.']],
+  ['"response_format":', ['Khuôn trả về. Code vẫn kiểm lại bằng cùng khuôn (R4).']],
+  ['"name":', ['Tên đặt cho khuôn (Alibaba bắt buộc có).']],
+  ['"beats":', ['Các nhịp, tối đa số engine giao. Mỗi nhịp một ý, ≤ 120 ký tự; app hiện từng nhịp.']],
+  ['"speaker":', ['Người nói: chỉ slot có mặt, hoặc "canh" (lời cảnh, ngôi thứ hai, không hỏi).']],
+  ['"expression":', ['Biểu cảm theo bộ 8 mã có asset; null với lời cảnh.']],
+  ['"question_by":', ['Ai đang chờ người chơi trả lời: slot của người hỏi ở nhịp cuối, hoặc null. Engine đọc trường này.']],
+  ['"additionalProperties":', ['Không được thêm trường nào: AI-4 không chấm điểm, không gợi ý.']],
+  ['"stream":', ['Nhận cả lượt một lần: phải kiểm 4 luật xong mới hiện.']],
+];
+
+async function exportScene(): Promise<void> {
+  const dir = outDir ?? join(process.cwd(), 'docs/project-hub/assets/ai-design/ai-4-api');
+  const [[id, turn]] = scenesToRun('n2_probe');
+  const clock = new FakeClock();
+  const recorder = recording(
+    fakeTransport([{ content: JSON.stringify(FAKE_SCENE_REPLY[id]), latencyMs: 1300, promptTokens: 3100, cachedTokens: 2048, completionTokens: 70 }], clock),
+  );
+  const qwen = qwenFlash({ apiKey: '-', region: 'eu-central-1', workspaceId: '{WorkspaceId}', cacheMode: 'implicit' });
+  await sceneService(recorder, null, [qwen], clock).narrateScene({ turn });
+
+  const [call] = recorder.log;
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, 'request.jsonc'),
+    annotate(
+      JSON.stringify(asRequest(call.url, readableBody(call.body as Record<string, unknown>)), null, 2),
+      [
+        `Một lượt gọi AI-4 theo nhịp (D-130): seed ${SAMPLE_SEED}, nút n2, task probe. Người chơi vừa lưu ghi chú sự cố; mentor hỏi theo hook.`,
+        'Sinh từ code bằng: pnpm exec nx run @datn/api:narrator-try -- --mode=export',
+      ],
+      SCENE_NOTES,
+    ),
+  );
+  console.log(`  đã ghi ${join(dir, 'request.jsonc')}`);
+  save(dir, 'response.json', { status: call.status, body: call.response });
+}
+
+async function liveSceneAll(): Promise<void> {
+  const settings = aiSettingsFromEnv(loadAiEnv());
+  const { chain, excluded } = narratorChain(settings);
+  for (const { provider, reason } of excluded) console.log(`(không dùng ${provider}: ${reason})`);
+  if (chain.length === 0) {
+    console.error('\nKhông có model nào dùng được. Đặt QWEN_API_KEY hoặc OPENROUTER_API_KEY trong apps/api/.env hoặc .env.');
+    process.exitCode = 1;
+    return;
+  }
+  console.log(`Chuỗi: ${chain.map((s) => s.key).join(' → ')}`);
+  const recorder = recording(fetchTransport);
+  const service = sceneService(recorder, settings, chain);
+  for (const [id, turn] of scenesToRun('all'))
+    for (let i = 1; i <= repeat; i++)
+      printScene(`${describeTurn(id, turn)} — lần ${i}/${repeat}`, await service.narrateScene({ turn, contentVersion: 4 }));
+  if (outDir)
+    recorder.log.forEach((exchange, i) => {
+      const n = String(i + 1).padStart(2, '0');
+      save(outDir, `live-${n}-request.json`, asRequest(exchange.url, exchange.body));
+      save(outDir, `live-${n}-response.json`, { status: exchange.status, body: exchange.response });
+    });
+}
+
+/** Như `check` của contract cũ: gọi thô một lượt với thời gian rộng, rồi chạy cả AI-4 đúng giới hạn lúc chơi. */
+async function checkScene(): Promise<void> {
+  const settings = loadSettingsForCheck();
+  if (!settings) return;
+  const { chain, excluded } = narratorChain(settings);
+  let failed = false;
+
+  rule('1. Cấu hình');
+  for (const warning of keyWarnings(settings)) console.log(`⚠ ${warning}`);
+  for (const { provider, reason } of excluded) console.log(`– không dùng ${provider}: ${reason}`);
+  if (chain.length === 0) {
+    console.error('✘ Không có model nào dùng được. Đặt QWEN_API_KEY hoặc OPENROUTER_API_KEY trong apps/api/.env hoặc .env.');
+    process.exitCode = 1;
+    return;
+  }
+  console.log(`Chuỗi: ${chain.map((s) => s.key).join(' → ')}`);
+
+  const [[id, turn]] = scenesToRun('n2_probe');
+  const speakers = turn.cards.map((c) => c.slot);
+  const maxBeats = turn.maxBeats ?? 5;
+  const gateway = new ModelGateway(gatewayKeys(settings));
+  console.log(`Cảnh: ${describeTurn(id, turn)}`);
+
+  for (const spec of chain) {
+    rule(`2. Gọi thử ${spec.key}`);
+    console.log(`POST ${spec.baseUrl}/chat/completions`);
+    console.log(`khuôn trả về: ${spec.supports.jsonSchema ? 'JSON Schema strict' : 'json_object (R4 kiểm khuôn bằng code)'}`);
+    try {
+      const result = await gateway.complete({
+        model: spec,
+        messages: buildSceneMessages(turn),
+        temperature: NARRATOR_PROFILE.temperature[spec.provider],
+        maxOutputTokens: NARRATOR_PROFILE.maxOutputTokens[spec.provider],
+        json: { name: 'narration_beats', schema: beatsJsonSchema(speakers, maxBeats) },
+        timeoutMs: CHECK_TIMEOUT_MS,
+      });
+      console.log(`✔ request được nhận: ${result.latencyMs} ms, finish_reason ${result.finishReason}, id ${result.requestId ?? '(không có)'}`);
+      console.log(`  token: vào ${result.usage.input}, trúng cache ${result.usage.cachedInput}, ra ${result.usage.output}, suy nghĩ ${result.usage.reasoning}`);
+      console.log(`  model trả: ${result.text}`);
+      if (result.usage.reasoning > 0) console.log('⚠ Model vẫn sinh token suy nghĩ: tham số tắt thinking không có tác dụng ở đường gọi này.');
+      if (result.latencyMs > NARRATOR_PROFILE.attemptTimeoutMs)
+        console.log(`⚠ Chậm hơn ${NARRATOR_PROFILE.attemptTimeoutMs} ms của lúc chơi: lượt thật sẽ hết giờ.`);
+      const { output, violations } = checkBeats(result.text, {
+        task: turn.task,
+        lead: turn.lead,
+        speakers,
+        questionAllowed: turn.questionAllowed !== false,
+        maxBeats,
+        visibleTexts: sceneTurnTexts(turn),
+        hiddenTexts: turn.hidden,
+        finishReason: result.finishReason,
+      });
+      if (!output) {
+        failed = true;
+        console.log(`✘ Không đọc được kết quả: ${violations.map((v) => v.detail).join('; ')}`);
+      } else if (violations.length > 0) {
+        console.log(`⚠ Đọc được nhưng chưa qua luật, lúc chơi sẽ viết lại: ${violations.map((v) => `${v.rule} ${v.detail}`).join('; ')}`);
+      } else console.log('✔ qua cả R1–R4');
+    } catch (err) {
+      failed = true;
+      const error = err instanceof GatewayError ? err : new GatewayError('network', String(err), spec.provider);
+      console.log(`✘ ${error.kind}: ${error.message}`);
+      console.log(`  → ${explainGatewayError(error)}`);
+    }
+  }
+
+  rule('3. Chạy cả AI-4, đúng giới hạn thời gian lúc chơi');
+  const result = await sceneService(fetchTransport, settings, chain).narrateScene({ turn });
+  printScene('kết quả', result);
+  if (result.status !== 'ok') {
+    failed = true;
+    console.log(
+      result.status === 'blocked'
+        ? '✘ Bộ lọc nội dung của nhà cung cấp chặn câu mẫu.'
+        : `✘ AI-4 chưa ra được lượt nào trong ${NARRATOR_PROFILE.attemptTimeoutMs} ms mỗi lần gọi và ${NARRATOR_PROFILE.deadlineMs} ms cả lượt. Xem dòng lỗi và các cảnh báo ở trên.`,
+    );
+  }
+  rule(failed ? '✘ CHƯA CHẠY ĐƯỢC: sửa các dòng ✘ ở trên rồi chạy lại' : '✔ AI-4 CHẠY ĐƯỢC');
+  if (failed) process.exitCode = 1;
+}
+
 async function main(): Promise<void> {
+  if (contract === 'scene') {
+    console.log(`Contract theo nhịp (D-130), seed ${SAMPLE_SEED}, chế độ ${mode}`);
+    if (mode === 'dry') return drySceneAll();
+    if (mode === 'fake') return fakeSceneAll();
+    if (mode === 'check') return checkScene();
+    if (mode === 'live') return liveSceneAll();
+    if (mode === 'export') return exportScene();
+    console.error(`--mode phải là dry, fake, check, live hoặc export (đang là "${mode}")`);
+    process.exitCode = 1;
+    return;
+  }
+  if (contract !== 'legacy') {
+    console.error(`--contract phải là scene hoặc legacy (đang là "${contract}")`);
+    process.exitCode = 1;
+    return;
+  }
   const scenarios = fixtureData().scenarios;
   const scenario = scenarios[SCENARIO_KEY];
   if (!scenario) {

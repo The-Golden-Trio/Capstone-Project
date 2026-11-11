@@ -1,9 +1,12 @@
 /**
- * Người dẫn truyện (AI-4): một lượt = một câu người chơi vừa gõ → một lời
- * follow-up của nhân vật (câu hỏi đào sâu, hoặc lời dẫn khi tình huống cần).
+ * Người dẫn truyện (AI-4). Hai contract, chung một bậc dự phòng:
  *
- * Chỉ gọi model khi engine cho hỏi đào sâu. Không được hỏi thì trả `skipped`
- * ngay, không tốn một lượt gọi nào; engine hiển thị nội dung của chuyên gia.
+ * - `narrateScene` (D-130, contract hiện hành): engine giao một việc
+ *   (reply, bridge, reaction, probe) kèm cảnh, thẻ nhân vật, cờ truyện, 8 lượt
+ *   gần nhất; AI-4 trả các nhịp `{speaker, text, expression}` và `question_by`.
+ * - `narrate` (contract cũ, 4/11): một câu follow-up cho kịch bản dạng
+ *   activity cũ. Giữ cho hai kịch bản prototype tới khi engine chuyển sang seed
+ *   mới; không phát triển thêm.
  *
  * Bậc dự phòng, tất cả nằm trong hạn chót 9 s:
  *
@@ -19,13 +22,21 @@
  * Nội dung bị bộ lọc của nhà cung cấp chặn → dừng ngay, trả `blocked`. Không
  * thử lại, không đẩy nội dung bị chặn sang hãng khác.
  *
- * Module này độc lập với cách nhóm chốt thời điểm chấm (①): engine chỉ cần
- * cho biết lượt này có được hỏi đào sâu hay không.
+ * Engine quyết mọi thứ (Luật dẫn truyện phần B); service này chỉ gọi model,
+ * kiểm bằng luật và ghi bản ghi.
  */
 import { Inject, Injectable, Logger, Optional } from '@nestjs/common';
 import {
+  BEATS_MAX,
+  PLAYER_SPEAKER,
+  beatsJsonSchema,
+  checkBeats,
   checkNarration,
   deidentify,
+  sceneTurnTexts,
+  type Beat,
+  type RuleViolation,
+  type SceneTurn,
   hiddenTexts,
   narrationJsonSchema,
   narratorView,
@@ -55,6 +66,8 @@ import {
   type TranscriptLine,
 } from './narrator.prompt';
 import { NARRATOR_PROMPT_VERSION } from './prompts/narrator.v2';
+import { SCENE_PROMPT_VERSION } from './prompts/narrator.v3';
+import { buildSceneMessages } from './scene.prompt';
 
 export const NARRATOR_CHAIN = Symbol('NARRATOR_CHAIN');
 export const AI_CLOCK = Symbol('AI_CLOCK');
@@ -71,6 +84,17 @@ export interface NarrateInput {
   /** Engine quyết: còn trong trần đào sâu của hoạt động và của màn không. Không thì không gọi model. */
   followUpAllowed: boolean;
   /** Những gì nền tảng biết về người chơi, để xoá trước khi gửi đi. */
+  identity?: KnownIdentity;
+  /** Số tiền còn được tiêu trong phiên (NFR-11). Không truyền thì không chặn. */
+  budgetUsd?: number;
+}
+
+/** Một lượt theo nhịp: việc engine giao, đã lọc xong (`SceneTurn`). */
+export interface NarrateSceneInput {
+  /** Câu người chơi (`playerLine`, các dòng `nguoi_choi`) chưa khử định danh cũng được: service tự khử. */
+  turn: SceneTurn;
+  /** Phiên bản nội dung đã ghim cho lượt chơi — ghi vào bản ghi. */
+  contentVersion?: number;
   identity?: KnownIdentity;
   /** Số tiền còn được tiêu trong phiên (NFR-11). Không truyền thì không chặn. */
   budgetUsd?: number;
@@ -124,6 +148,40 @@ type Verdict =
 
 export type NarrateResult = Outcome & Verdict;
 
+type SceneVerdict =
+  | { status: 'ok'; beats: Beat[]; questionBy: string | null }
+  | { status: 'blocked' }
+  | Extract<Verdict, { status: 'unavailable' }>;
+
+export type NarrateSceneResult = Outcome & SceneVerdict;
+
+/** Một contract cụ thể: dựng prompt, khuôn JSON và luật kiểm. Bậc dự phòng dùng chung. */
+interface LadderJob<T> {
+  promptVersion: string;
+  contentVersion?: number;
+  budgetUsd?: number;
+  messages(spec: ModelSpec): ChatMessage[];
+  json: { name: string; schema: Record<string, unknown> };
+  check(text: string, finishReason: string): { output: T | null; violations: RuleViolation[] };
+}
+
+type LadderVerdict<T> =
+  | { status: 'ok'; value: T }
+  | { status: 'blocked' }
+  | Extract<Verdict, { status: 'unavailable' }>;
+
+/** Khử định danh và đếm số chỗ đã xoá, dùng chung cho hai contract. */
+function cleaner(identity: KnownIdentity | undefined) {
+  const redactions: Deidentified['redactions'] = {};
+  const clean = (text: string) => {
+    const out = deidentify(text, identity);
+    for (const [kind, n] of Object.entries(out.redactions))
+      redactions[kind as keyof typeof redactions] = (redactions[kind as keyof typeof redactions] ?? 0) + (n ?? 0);
+    return out.text;
+  };
+  return { clean, redactions };
+}
+
 @Injectable()
 export class NarratorService {
   private readonly logger = new Logger(NarratorService.name);
@@ -138,19 +196,7 @@ export class NarratorService {
   async narrate(input: NarrateInput): Promise<NarrateResult> {
     if (!input.followUpAllowed) return { status: 'skipped', records: [], redactions: {}, cost: { usd: 0, basis: 'list' } };
 
-    const startedAt = this.clock.now();
-    const deadline = startedAt + NARRATOR_PROFILE.deadlineMs;
-
-    /* ── Chuẩn bị: khử định danh, lọc kịch bản, ghép prompt ── */
-
-    const redactions: Deidentified['redactions'] = {};
-    const clean = (text: string) => {
-      const out = deidentify(text, input.identity);
-      for (const [kind, n] of Object.entries(out.redactions))
-        redactions[kind as keyof typeof redactions] =
-          (redactions[kind as keyof typeof redactions] ?? 0) + (n ?? 0);
-      return out.text;
-    };
+    const { clean, redactions } = cleaner(input.identity);
     const answer = clean(input.answer);
     const transcript = input.transcript.map((line) =>
       line.kind === 'player' ? { ...line, text: clean(line.text) } : line,
@@ -164,15 +210,70 @@ export class NarratorService {
     const visibleTexts = [...textsOf(view), ...transcript.map((l) => l.text), answer];
     const hidden = hiddenTexts(input.scenario, input.activityId);
 
-    const records: NarratorCallRecord[] = [];
-    const done = (verdict: Verdict): NarrateResult => ({
-      ...verdict,
-      records,
-      redactions,
-      cost: totalCost(records),
+    const { verdict, records } = await this.runLadder({
+      promptVersion: NARRATOR_PROMPT_VERSION,
+      contentVersion: input.contentVersion,
+      budgetUsd: input.budgetUsd,
+      messages: (spec) => buildNarratorMessages(turn, spec.provider),
+      json: { name: 'narration', schema: narrationJsonSchema(castIds) },
+      check: (text, finishReason) =>
+        checkNarration(text, { visibleTexts, hiddenTexts: hidden, castIds, finishReason }),
     });
+    const outcome = { records, redactions, cost: totalCost(records) };
+    return verdict.status === 'ok' ? { ...outcome, status: 'ok', line: verdict.value } : { ...outcome, ...verdict };
+  }
 
-    /* ── Bậc dự phòng ── */
+  /**
+   * Một lượt theo nhịp (D-130). Không có trạng thái `skipped`: engine chỉ gọi
+   * khi đã quyết có lời của nhân vật ở lượt này.
+   */
+  async narrateScene(input: NarrateSceneInput): Promise<NarrateSceneResult> {
+    const { clean, redactions } = cleaner(input.identity);
+    const turn: SceneTurn = {
+      ...input.turn,
+      playerLine: input.turn.playerLine === undefined ? undefined : clean(input.turn.playerLine),
+      recent: input.turn.recent.map((line) =>
+        line.speaker === PLAYER_SPEAKER ? { ...line, text: clean(line.text) } : line,
+      ),
+    };
+    const speakers = turn.cards.map((c) => c.slot);
+    if (!speakers.includes(turn.lead))
+      throw new Error(`AI-4: nhân vật được giao "${turn.lead}" không có thẻ trong cảnh`);
+    if (turn.task === 'probe' && !turn.hook) throw new Error('AI-4: task probe cần hook (A7)');
+
+    const maxBeats = Math.min(turn.maxBeats ?? BEATS_MAX, BEATS_MAX);
+    const visibleTexts = sceneTurnTexts(turn);
+
+    const { verdict, records } = await this.runLadder({
+      promptVersion: SCENE_PROMPT_VERSION,
+      contentVersion: input.contentVersion,
+      budgetUsd: input.budgetUsd,
+      messages: () => buildSceneMessages(turn),
+      json: { name: 'narration_beats', schema: beatsJsonSchema(speakers, maxBeats) },
+      check: (text, finishReason) =>
+        checkBeats(text, {
+          task: turn.task,
+          lead: turn.lead,
+          speakers,
+          questionAllowed: turn.questionAllowed !== false,
+          maxBeats,
+          visibleTexts,
+          hiddenTexts: turn.hidden,
+          finishReason,
+        }),
+    });
+    const outcome = { records, redactions, cost: totalCost(records) };
+    return verdict.status === 'ok'
+      ? { ...outcome, status: 'ok', beats: verdict.value.beats, questionBy: verdict.value.question_by }
+      : { ...outcome, ...verdict };
+  }
+
+  /* ── Bậc dự phòng dùng chung ── */
+
+  private async runLadder<T>(job: LadderJob<T>): Promise<{ verdict: LadderVerdict<T>; records: NarratorCallRecord[] }> {
+    const deadline = this.clock.now() + NARRATOR_PROFILE.deadlineMs;
+    const records: NarratorCallRecord[] = [];
+    const done = (verdict: LadderVerdict<T>) => ({ verdict, records });
 
     const available = this.chain.filter((spec) => !this.breaker.isOpen(spec.provider));
     if (available.length === 0) return done({ status: 'unavailable', reason: 'no_model' });
@@ -181,7 +282,7 @@ export class NarratorService {
     let ranOutOfTime = false;
 
     for (const spec of available) {
-      let messages: ChatMessage[] = buildNarratorMessages(turn, spec.provider);
+      let messages: ChatMessage[] = job.messages(spec);
       const maxOutputTokens = NARRATOR_PROFILE.maxOutputTokens[spec.provider];
 
       for (let round = 0; round <= NARRATOR_PROFILE.maxRegenerations; round++) {
@@ -191,10 +292,10 @@ export class NarratorService {
           break;
         }
 
-        if (input.budgetUsd !== undefined) {
+        if (job.budgetUsd !== undefined) {
           const chars = messages.flatMap((m) => m.parts).reduce((n, p) => n + p.text.length, 0);
           const worst = upperBoundUsd(chars, maxOutputTokens, spec.price);
-          if (spent + worst > input.budgetUsd) return done({ status: 'unavailable', reason: 'budget' });
+          if (spent + worst > job.budgetUsd) return done({ status: 'unavailable', reason: 'budget' });
         }
 
         const temperature = NARRATOR_PROFILE.temperature[spec.provider];
@@ -203,9 +304,9 @@ export class NarratorService {
           modelKey: spec.key,
           provider: spec.provider,
           family: spec.family,
-          promptVersion: NARRATOR_PROMPT_VERSION,
+          promptVersion: job.promptVersion,
           profileVersion: NARRATOR_PROFILE.version,
-          contentVersion: input.contentVersion ?? null,
+          contentVersion: job.contentVersion ?? null,
           temperature,
           startedAt: this.clock.now(),
           latencyMs: null,
@@ -227,7 +328,7 @@ export class NarratorService {
             messages,
             temperature,
             maxOutputTokens,
-            json: { name: 'narration', schema: narrationJsonSchema(castIds) },
+            json: job.json,
             timeoutMs: Math.min(NARRATOR_PROFILE.attemptTimeoutMs, remaining),
           });
         } catch (err) {
@@ -257,17 +358,12 @@ export class NarratorService {
         if (result.usage.reasoning > 0)
           this.logger.warn(`AI-4: ${spec.key} vẫn sinh ${result.usage.reasoning} token suy nghĩ — thinking chưa tắt?`);
 
-        const check = checkNarration(result.text, {
-          visibleTexts,
-          hiddenTexts: hidden,
-          castIds,
-          finishReason: result.finishReason,
-        });
+        const check = job.check(result.text, result.finishReason);
         record.violations = check.violations.map(({ rule, detail }) => ({ rule, detail }));
 
-        if (check.output && check.violations.length === 0) {
+        if (check.output !== null && check.violations.length === 0) {
           record.outcome = 'accepted';
-          return done({ status: 'ok', line: check.output });
+          return done({ status: 'ok', value: check.output });
         }
 
         record.outcome = 'rejected';
