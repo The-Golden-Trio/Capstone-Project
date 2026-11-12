@@ -69,9 +69,9 @@ Khi làm một tính năng: tìm FR và use case tương ứng → đọc activi
 
 - Run gửi một lần khi kết thúc, chấm lại ở server bằng replay; thiết kế là gửi từng lượt.
 - Câu tự luận chấm bằng so khớp từ khoá (`keywordGrader.ts`, đồng bộ trong reducer); thiết kế là judge panel bất đồng bộ, kết quả vào run dưới dạng sự kiện.
-- Prisma có 19 model, tên và cấu trúc khác ERD đích ở `plantuml/erd/`. Prototype có 3 role, thiết kế có 4 actor (Explorer, Domain expert, Content administrator, System administrator).
-- Module trong `apps/api/src` (`auth`, `content`, `profile`, `runs`…) không khớp module map `CL-00`.
-- Từ 11/11 đã có worker (`main.js --worker`), queue BullMQ, SSE, model gateway và luồng chơi `/api/v1/runs` nối AI-4 + AI-5 ([handoff](docs/project-hub/assets/ai-design/tich-hop-ai-4-ai-5.md)). Luồng ca làm (Game Design W45) chạy song song ở `/api/v1/shift-runs` (đề xuất ngoài `openapi.yaml`: `docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`), engine `packages/game-core/src/shift/`, chưa chấm điểm. Chưa có: staff application, scheduler, importer.
+- Từ 12/11 (nhánh `feat/staff-app-ca-de`): danh tính theo ERD-01 (`user_account`, `user_role` 4 vai, `staff_assignment`, `auth_session`), auth là **Bearer** (Q2), bảng ERD-02 (phần cần), ERD-03, ERD-04 đã có. Các bảng explorer (`GameProfile`, `ScenarioRun`, nội dung `*Doc`…) vẫn là bảng prototype, khác ERD-05/06.
+- Module prototype (`content`, `profile`, `runs`, `play`, `assessment`) không khớp `CL-00`. Module theo CL-00 đã có: `AuthModule`, `UserModule` (chỉ `getMe`), `CatalogueModule` (rút gọn), `LifecycleModule`, `ScenarioModule`, `ReviewModule`, `PublishingModule` (asset, trình bày, bản nháp), `NotificationModule`. Chỗ lệch thiết kế khi làm staff app ghi ở [07 A22, A23](docs/project-hub/07-van-de-mo.md).
+- Từ 11/11 đã có worker (`main.js --worker`), queue BullMQ, SSE, model gateway và luồng chơi `/api/v1/runs` nối AI-4 + AI-5 ([handoff](docs/project-hub/assets/ai-design/tich-hop-ai-4-ai-5.md)). Luồng ca làm (Game Design W45) chạy song song ở `/api/v1/shift-runs` (đề xuất ngoài `openapi.yaml`: `docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`), engine `packages/game-core/src/shift/`, chưa chấm điểm. Staff app `apps/staff` (CA, DE) làm tới dựng bản nháp (P0, P2, P3, P4); chưa có play-test, xuất bản (P5), import (P1b), giám sát (P6).
 - Code chết không được import trong `AppModule`: `apps/api/src/app/skills/*`, `app/career-graph/*`, `app/persistence/*`. Đừng dựa vào hay mở rộng chúng.
 
 ## 2. Bản đồ repo và lệnh
@@ -79,6 +79,7 @@ Khi làm một tính năng: tìm FR và use case tương ứng → đọc activi
 | Thư mục                                  | Là gì                                                                          |
 | ---------------------------------------- | ------------------------------------------------------------------------------ |
 | `apps/web` (`@datn/web`)                 | React 19 + Vite + Tailwind 4 + react-three-fiber, zustand, i18n VI/EN          |
+| `apps/staff` (`@datn/staff`)             | Staff app cho CA, DE: React 19 + Vite + Tailwind 4, base `/staff/`, cổng 4300  |
 | `apps/api` (`@datn/api`)                 | NestJS 11 + Prisma 7 + PostgreSQL, BullMQ, zod                                 |
 | `packages/game-core` (`@datn/game-core`) | Logic game dùng chung: engine, chấm, band, fit, side quest                     |
 | `occupation-data/`                       | Dữ liệu nghề, kịch bản, spec (xem `occupation-data/README.md`)                 |
@@ -94,6 +95,8 @@ pnpm nx run @datn/api:test      # test một project
 pnpm db:migrate                 # Prisma migrate (config: apps/api/prisma.config.ts)
 pnpm data:build                 # occupation-data → packages/game-core/data/*.json
 pnpm exec nx run @datn/api:seed-content
+pnpm exec nx run @datn/staff:serve    # staff app :4300/staff
+SEED_STAFF_PASSWORD=... pnpm exec nx run @datn/api:seed-staff   # tài khoản CA/DE, nghề SWE_BACKEND [dev]
 ```
 
 CI chạy `nx format:check` và `nx run-many -t lint test build typecheck`. Chạy các bước tương ứng trước khi báo xong.

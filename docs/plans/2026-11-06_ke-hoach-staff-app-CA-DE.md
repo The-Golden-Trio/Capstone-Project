@@ -8,6 +8,8 @@
 
 ## 1. Hiện trạng repo
 
+> **Cập nhật 12/11/2026** (nhánh `feat/staff-app-ca-de`): đã làm **P0, P2, P3, P4** (trừ phần AI của P4 theo D-104), kiểm đầu cuối trên Postgres local với `AI_MODE=fake`. Chưa làm: P1 (C02, D02), P1b, P5, P6, C10/D08. Bảng dưới là ảnh chụp 6/11, giữ để đối chiếu. Chỗ lệch thiết kế khi code: [07 A22, A23](../project-hub/07-van-de-mo.md). Q6 (app riêng `apps/staff`, base `/staff/`, cổng 4300) đã chốt 12/11; Q7 làm khác đề xuất: worker vẫn là `main.js --worker`, processor mới đăng ký ở `WorkerModule`.
+
 | Phần                 | Có gì                                                                                                             | Thiếu so với thiết kế                                                  |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `apps/web`           | Explorer app prototype (React 19, Vite, Tailwind 4)                                                               | Không liên quan trực tiếp; chỉ tái dùng mẫu `api/client.ts`            |

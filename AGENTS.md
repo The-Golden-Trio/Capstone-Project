@@ -49,6 +49,7 @@
 | Đường dẫn                        | Vai trò                                                                                       |
 | -------------------------------- | --------------------------------------------------------------------------------------------- |
 | `apps/web/`                      | React 19, Vite, Tailwind CSS, React Three Fiber/Three.js, Zustand; giao diện VI/EN            |
+| `apps/staff/`                    | Staff app cho Content Admin, Domain Expert (SITE-02, SITE-03), chỉ tiếng Việt                 |
 | `apps/web/src/api/`              | Client API và schema phía web; `src/i18n/` chứa nội dung dịch                                 |
 | `apps/api/`                      | NestJS, Prisma 7, PostgreSQL; auth, content, profile, runs và module AI                       |
 | `apps/api/src/app/app.module.ts` | Điểm kiểm tra các module thực sự được đăng ký                                                 |
@@ -77,16 +78,23 @@
   - Lượt chơi là `ScenarioRun.flow = 'shift'` cùng `run_event` và `ai_job`; worker xử lý queue `shift-turn`.
   - AI: AI-4 dùng `narrateScene`; bộ phán có/không dùng ghế judge của AI-5.
   - Chưa chấm điểm. `AI_MODE=fake` chỉ dùng khi dev.
+- **Staff app CA/DE, cập nhật 12/11/2026** (nhánh `feat/staff-app-ca-de`, theo `docs/plans/2026-11-06_ke-hoach-staff-app-CA-DE.md`):
+  - Auth là Bearer (access token trong bộ nhớ, refresh ở localStorage); danh tính theo ERD-01, `apps/web` đã đổi theo.
+  - `apps/staff` có T01, T00, C01, C04, C05, C06, C07, D01, D03, D04. Luồng: CA mở scenario và giao tác giả, người duyệt → DE viết ngữ cảnh, AI sinh bản nháp (queue `generation` ở worker, SSE) → sửa, câu mẫu, kiểm (`ContentValidator`) → nộp → DE khác duyệt → CA chọn dạng task, asset → dựng bản nháp (`scenario_build`).
+  - Chưa có: play-test (D05), xuất bản (C08), import, giám sát, prompt hệ thống (C10/D08), gợi ý trình bày và sinh ảnh bằng AI (D-104).
+  - Chỗ lệch openapi/ERD và luật đang theo đề xuất: [07 A22, A23](docs/project-hub/07-van-de-mo.md).
 - `ai-4-api/response.json` là **model giả**, không phải kết quả gọi API thật hay benchmark. Request mẫu được sinh từ code.
 - Game design mới gồm RIASEC, 7 nhóm soft skill, keyword ESCO và hồ sơ nghề O*NET; nhiều phần vẫn là thiết kế/dữ liệu chưa nối vào runtime. Tra trạng thái từng phần trước khi triển khai.
 
 ## Lệnh làm việc
 
-Chạy từ gốc repo. Workspace dùng **pnpm** (`packageManager` trong `package.json`) và **Nx**; CI dùng Node.js 22. Project Nx: `@datn/web`, `@datn/api`, **`game-core`** (tên package là `@datn/game-core`). Ưu tiên script có sẵn hoặc `pnpm exec nx`; kiểm cấu hình/`--help` khi chưa rõ target hay flag.
+Chạy từ gốc repo. Workspace dùng **pnpm** (`packageManager` trong `package.json`) và **Nx**; CI dùng Node.js 22. Project Nx: `@datn/web`, `@datn/staff`, `@datn/api`, **`game-core`** (tên package là `@datn/game-core`). Ưu tiên script có sẵn hoặc `pnpm exec nx`; kiểm cấu hình/`--help` khi chưa rõ target hay flag.
 
 ```sh
 pnpm install --frozen-lockfile
 pnpm start                         # web :4200; API :3000/api theo cấu hình dev
+pnpm exec nx run @datn/staff:serve # staff app :4300/staff
+docker compose -f infra/local/dev-stack.yml up -d   # redis, postgres :5433, mailpit, minio
 pnpm start:web
 pnpm start:api
 pnpm exec nx run game-core:test

@@ -13,3 +13,5 @@ pnpm-lock.yaml
 packages/game-core/data/shift-seeds.json
 # Nhật ký quyết định: bảng viết tay rất dài, dàn đều cột làm file phình 72 KB → 173 KB
 docs/project-hub/02-quyet-dinh.md
+# Vấn đề mở: cùng lý do, bảng viết tay dài, dàn cột làm file phình 43 KB → 130 KB
+docs/project-hub/07-van-de-mo.md
