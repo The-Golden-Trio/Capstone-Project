@@ -38,6 +38,9 @@ export * from './domain/narration/npcCard.js';
 export * from './domain/narration/beats.js';
 export * from './domain/narration/sceneTurn.js';
 
+/* ── Soạn nội dung phía staff (ERD-03, openapi ScenarioContent) ── */
+export * as authoring from './authoring/index.js';
+
 /* ── Ca làm (seed v2, Game Design W45) ── */
 export * as shift from './shift/index.js';
 
