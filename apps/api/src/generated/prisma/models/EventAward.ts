@@ -232,13 +232,13 @@ export type EventAwardWhereInput = {
   OR?: Prisma.EventAwardWhereInput[]
   NOT?: Prisma.EventAwardWhereInput | Prisma.EventAwardWhereInput[]
   id?: Prisma.StringFilter<"EventAward"> | string
-  userId?: Prisma.StringFilter<"EventAward"> | string
+  userId?: Prisma.UuidFilter<"EventAward"> | string
   roleCode?: Prisma.StringFilter<"EventAward"> | string
   band?: Prisma.StringFilter<"EventAward"> | string
   eventId?: Prisma.StringFilter<"EventAward"> | string
   points?: Prisma.IntFilter<"EventAward"> | number
   awardedAt?: Prisma.DateTimeFilter<"EventAward"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }
 
 export type EventAwardOrderByWithRelationInput = {
@@ -249,7 +249,7 @@ export type EventAwardOrderByWithRelationInput = {
   eventId?: Prisma.SortOrder
   points?: Prisma.SortOrder
   awardedAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
+  user?: Prisma.UserAccountOrderByWithRelationInput
 }
 
 export type EventAwardWhereUniqueInput = Prisma.AtLeast<{
@@ -258,13 +258,13 @@ export type EventAwardWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.EventAwardWhereInput | Prisma.EventAwardWhereInput[]
   OR?: Prisma.EventAwardWhereInput[]
   NOT?: Prisma.EventAwardWhereInput | Prisma.EventAwardWhereInput[]
-  userId?: Prisma.StringFilter<"EventAward"> | string
+  userId?: Prisma.UuidFilter<"EventAward"> | string
   roleCode?: Prisma.StringFilter<"EventAward"> | string
   band?: Prisma.StringFilter<"EventAward"> | string
   eventId?: Prisma.StringFilter<"EventAward"> | string
   points?: Prisma.IntFilter<"EventAward"> | number
   awardedAt?: Prisma.DateTimeFilter<"EventAward"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }, "id" | "userId_eventId_band">
 
 export type EventAwardOrderByWithAggregationInput = {
@@ -287,7 +287,7 @@ export type EventAwardScalarWhereWithAggregatesInput = {
   OR?: Prisma.EventAwardScalarWhereWithAggregatesInput[]
   NOT?: Prisma.EventAwardScalarWhereWithAggregatesInput | Prisma.EventAwardScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"EventAward"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"EventAward"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"EventAward"> | string
   roleCode?: Prisma.StringWithAggregatesFilter<"EventAward"> | string
   band?: Prisma.StringWithAggregatesFilter<"EventAward"> | string
   eventId?: Prisma.StringWithAggregatesFilter<"EventAward"> | string
@@ -302,7 +302,7 @@ export type EventAwardCreateInput = {
   eventId: string
   points: number
   awardedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutEventAwardsInput
+  user: Prisma.UserAccountCreateNestedOneWithoutEventAwardsInput
 }
 
 export type EventAwardUncheckedCreateInput = {
@@ -322,7 +322,7 @@ export type EventAwardUpdateInput = {
   eventId?: Prisma.StringFieldUpdateOperationsInput | string
   points?: Prisma.IntFieldUpdateOperationsInput | number
   awardedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutEventAwardsNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutEventAwardsNestedInput
 }
 
 export type EventAwardUncheckedUpdateInput = {
@@ -509,7 +509,7 @@ export type EventAwardScalarWhereInput = {
   OR?: Prisma.EventAwardScalarWhereInput[]
   NOT?: Prisma.EventAwardScalarWhereInput | Prisma.EventAwardScalarWhereInput[]
   id?: Prisma.StringFilter<"EventAward"> | string
-  userId?: Prisma.StringFilter<"EventAward"> | string
+  userId?: Prisma.UuidFilter<"EventAward"> | string
   roleCode?: Prisma.StringFilter<"EventAward"> | string
   band?: Prisma.StringFilter<"EventAward"> | string
   eventId?: Prisma.StringFilter<"EventAward"> | string
@@ -563,7 +563,7 @@ export type EventAwardSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   eventId?: boolean
   points?: boolean
   awardedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["eventAward"]>
 
 export type EventAwardSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -574,7 +574,7 @@ export type EventAwardSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   eventId?: boolean
   points?: boolean
   awardedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["eventAward"]>
 
 export type EventAwardSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -585,7 +585,7 @@ export type EventAwardSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   eventId?: boolean
   points?: boolean
   awardedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["eventAward"]>
 
 export type EventAwardSelectScalar = {
@@ -600,19 +600,19 @@ export type EventAwardSelectScalar = {
 
 export type EventAwardOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "roleCode" | "band" | "eventId" | "points" | "awardedAt", ExtArgs["result"]["eventAward"]>
 export type EventAwardInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type EventAwardIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type EventAwardIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 
 export type $EventAwardPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "EventAward"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
+    user: Prisma.$UserAccountPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1016,7 +1016,7 @@ readonly fields: EventAwardFieldRefs;
  */
 export interface Prisma__EventAwardClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserAccountDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccountDefaultArgs<ExtArgs>>): Prisma.Prisma__UserAccountClient<runtime.Types.Result.GetResult<Prisma.$UserAccountPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

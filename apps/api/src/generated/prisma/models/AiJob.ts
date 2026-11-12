@@ -39,6 +39,7 @@ export type AiJobMinAggregateOutputType = {
   kind: string | null
   status: string | null
   runId: string | null
+  promptTemplateId: string | null
   attempts: number | null
   lastError: string | null
   queuedAt: Date | null
@@ -50,6 +51,7 @@ export type AiJobMaxAggregateOutputType = {
   kind: string | null
   status: string | null
   runId: string | null
+  promptTemplateId: string | null
   attempts: number | null
   lastError: string | null
   queuedAt: Date | null
@@ -61,6 +63,7 @@ export type AiJobCountAggregateOutputType = {
   kind: number
   status: number
   runId: number
+  promptTemplateId: number
   attempts: number
   lastError: number
   queuedAt: number
@@ -82,6 +85,7 @@ export type AiJobMinAggregateInputType = {
   kind?: true
   status?: true
   runId?: true
+  promptTemplateId?: true
   attempts?: true
   lastError?: true
   queuedAt?: true
@@ -93,6 +97,7 @@ export type AiJobMaxAggregateInputType = {
   kind?: true
   status?: true
   runId?: true
+  promptTemplateId?: true
   attempts?: true
   lastError?: true
   queuedAt?: true
@@ -104,6 +109,7 @@ export type AiJobCountAggregateInputType = {
   kind?: true
   status?: true
   runId?: true
+  promptTemplateId?: true
   attempts?: true
   lastError?: true
   queuedAt?: true
@@ -202,6 +208,7 @@ export type AiJobGroupByOutputType = {
   kind: string
   status: string
   runId: string | null
+  promptTemplateId: string | null
   attempts: number
   lastError: string | null
   queuedAt: Date
@@ -236,13 +243,16 @@ export type AiJobWhereInput = {
   kind?: Prisma.StringFilter<"AiJob"> | string
   status?: Prisma.StringFilter<"AiJob"> | string
   runId?: Prisma.StringNullableFilter<"AiJob"> | string | null
+  promptTemplateId?: Prisma.UuidNullableFilter<"AiJob"> | string | null
   attempts?: Prisma.IntFilter<"AiJob"> | number
   lastError?: Prisma.StringNullableFilter<"AiJob"> | string | null
   queuedAt?: Prisma.DateTimeFilter<"AiJob"> | Date | string
   finishedAt?: Prisma.DateTimeNullableFilter<"AiJob"> | Date | string | null
   run?: Prisma.XOR<Prisma.ScenarioRunNullableScalarRelationFilter, Prisma.ScenarioRunWhereInput> | null
+  promptTemplate?: Prisma.XOR<Prisma.PromptTemplateNullableScalarRelationFilter, Prisma.PromptTemplateWhereInput> | null
   assessments?: Prisma.AssessmentListRelationFilter
   costs?: Prisma.UsageCostListRelationFilter
+  generationRun?: Prisma.XOR<Prisma.GenerationRunNullableScalarRelationFilter, Prisma.GenerationRunWhereInput> | null
 }
 
 export type AiJobOrderByWithRelationInput = {
@@ -250,13 +260,16 @@ export type AiJobOrderByWithRelationInput = {
   kind?: Prisma.SortOrder
   status?: Prisma.SortOrder
   runId?: Prisma.SortOrderInput | Prisma.SortOrder
+  promptTemplateId?: Prisma.SortOrderInput | Prisma.SortOrder
   attempts?: Prisma.SortOrder
   lastError?: Prisma.SortOrderInput | Prisma.SortOrder
   queuedAt?: Prisma.SortOrder
   finishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   run?: Prisma.ScenarioRunOrderByWithRelationInput
+  promptTemplate?: Prisma.PromptTemplateOrderByWithRelationInput
   assessments?: Prisma.AssessmentOrderByRelationAggregateInput
   costs?: Prisma.UsageCostOrderByRelationAggregateInput
+  generationRun?: Prisma.GenerationRunOrderByWithRelationInput
 }
 
 export type AiJobWhereUniqueInput = Prisma.AtLeast<{
@@ -267,13 +280,16 @@ export type AiJobWhereUniqueInput = Prisma.AtLeast<{
   kind?: Prisma.StringFilter<"AiJob"> | string
   status?: Prisma.StringFilter<"AiJob"> | string
   runId?: Prisma.StringNullableFilter<"AiJob"> | string | null
+  promptTemplateId?: Prisma.UuidNullableFilter<"AiJob"> | string | null
   attempts?: Prisma.IntFilter<"AiJob"> | number
   lastError?: Prisma.StringNullableFilter<"AiJob"> | string | null
   queuedAt?: Prisma.DateTimeFilter<"AiJob"> | Date | string
   finishedAt?: Prisma.DateTimeNullableFilter<"AiJob"> | Date | string | null
   run?: Prisma.XOR<Prisma.ScenarioRunNullableScalarRelationFilter, Prisma.ScenarioRunWhereInput> | null
+  promptTemplate?: Prisma.XOR<Prisma.PromptTemplateNullableScalarRelationFilter, Prisma.PromptTemplateWhereInput> | null
   assessments?: Prisma.AssessmentListRelationFilter
   costs?: Prisma.UsageCostListRelationFilter
+  generationRun?: Prisma.XOR<Prisma.GenerationRunNullableScalarRelationFilter, Prisma.GenerationRunWhereInput> | null
 }, "id">
 
 export type AiJobOrderByWithAggregationInput = {
@@ -281,6 +297,7 @@ export type AiJobOrderByWithAggregationInput = {
   kind?: Prisma.SortOrder
   status?: Prisma.SortOrder
   runId?: Prisma.SortOrderInput | Prisma.SortOrder
+  promptTemplateId?: Prisma.SortOrderInput | Prisma.SortOrder
   attempts?: Prisma.SortOrder
   lastError?: Prisma.SortOrderInput | Prisma.SortOrder
   queuedAt?: Prisma.SortOrder
@@ -300,6 +317,7 @@ export type AiJobScalarWhereWithAggregatesInput = {
   kind?: Prisma.StringWithAggregatesFilter<"AiJob"> | string
   status?: Prisma.StringWithAggregatesFilter<"AiJob"> | string
   runId?: Prisma.StringNullableWithAggregatesFilter<"AiJob"> | string | null
+  promptTemplateId?: Prisma.UuidNullableWithAggregatesFilter<"AiJob"> | string | null
   attempts?: Prisma.IntWithAggregatesFilter<"AiJob"> | number
   lastError?: Prisma.StringNullableWithAggregatesFilter<"AiJob"> | string | null
   queuedAt?: Prisma.DateTimeWithAggregatesFilter<"AiJob"> | Date | string
@@ -315,8 +333,10 @@ export type AiJobCreateInput = {
   queuedAt?: Date | string
   finishedAt?: Date | string | null
   run?: Prisma.ScenarioRunCreateNestedOneWithoutAiJobsInput
+  promptTemplate?: Prisma.PromptTemplateCreateNestedOneWithoutAiJobsInput
   assessments?: Prisma.AssessmentCreateNestedManyWithoutAiJobInput
   costs?: Prisma.UsageCostCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunCreateNestedOneWithoutAiJobInput
 }
 
 export type AiJobUncheckedCreateInput = {
@@ -324,12 +344,14 @@ export type AiJobUncheckedCreateInput = {
   kind: string
   status?: string
   runId?: string | null
+  promptTemplateId?: string | null
   attempts?: number
   lastError?: string | null
   queuedAt?: Date | string
   finishedAt?: Date | string | null
   assessments?: Prisma.AssessmentUncheckedCreateNestedManyWithoutAiJobInput
   costs?: Prisma.UsageCostUncheckedCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunUncheckedCreateNestedOneWithoutAiJobInput
 }
 
 export type AiJobUpdateInput = {
@@ -341,8 +363,10 @@ export type AiJobUpdateInput = {
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   run?: Prisma.ScenarioRunUpdateOneWithoutAiJobsNestedInput
+  promptTemplate?: Prisma.PromptTemplateUpdateOneWithoutAiJobsNestedInput
   assessments?: Prisma.AssessmentUpdateManyWithoutAiJobNestedInput
   costs?: Prisma.UsageCostUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUpdateOneWithoutAiJobNestedInput
 }
 
 export type AiJobUncheckedUpdateInput = {
@@ -350,12 +374,14 @@ export type AiJobUncheckedUpdateInput = {
   kind?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   runId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promptTemplateId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attempts?: Prisma.IntFieldUpdateOperationsInput | number
   lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   assessments?: Prisma.AssessmentUncheckedUpdateManyWithoutAiJobNestedInput
   costs?: Prisma.UsageCostUncheckedUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUncheckedUpdateOneWithoutAiJobNestedInput
 }
 
 export type AiJobCreateManyInput = {
@@ -363,6 +389,7 @@ export type AiJobCreateManyInput = {
   kind: string
   status?: string
   runId?: string | null
+  promptTemplateId?: string | null
   attempts?: number
   lastError?: string | null
   queuedAt?: Date | string
@@ -384,10 +411,16 @@ export type AiJobUncheckedUpdateManyInput = {
   kind?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   runId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promptTemplateId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attempts?: Prisma.IntFieldUpdateOperationsInput | number
   lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type AiJobScalarRelationFilter = {
+  is?: Prisma.AiJobWhereInput
+  isNot?: Prisma.AiJobWhereInput
 }
 
 export type AiJobListRelationFilter = {
@@ -400,16 +433,12 @@ export type AiJobOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type AiJobScalarRelationFilter = {
-  is?: Prisma.AiJobWhereInput
-  isNot?: Prisma.AiJobWhereInput
-}
-
 export type AiJobCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   kind?: Prisma.SortOrder
   status?: Prisma.SortOrder
   runId?: Prisma.SortOrder
+  promptTemplateId?: Prisma.SortOrder
   attempts?: Prisma.SortOrder
   lastError?: Prisma.SortOrder
   queuedAt?: Prisma.SortOrder
@@ -425,6 +454,7 @@ export type AiJobMaxOrderByAggregateInput = {
   kind?: Prisma.SortOrder
   status?: Prisma.SortOrder
   runId?: Prisma.SortOrder
+  promptTemplateId?: Prisma.SortOrder
   attempts?: Prisma.SortOrder
   lastError?: Prisma.SortOrder
   queuedAt?: Prisma.SortOrder
@@ -436,6 +466,7 @@ export type AiJobMinOrderByAggregateInput = {
   kind?: Prisma.SortOrder
   status?: Prisma.SortOrder
   runId?: Prisma.SortOrder
+  promptTemplateId?: Prisma.SortOrder
   attempts?: Prisma.SortOrder
   lastError?: Prisma.SortOrder
   queuedAt?: Prisma.SortOrder
@@ -444,6 +475,62 @@ export type AiJobMinOrderByAggregateInput = {
 
 export type AiJobSumOrderByAggregateInput = {
   attempts?: Prisma.SortOrder
+}
+
+export type AiJobCreateNestedOneWithoutGenerationRunInput = {
+  create?: Prisma.XOR<Prisma.AiJobCreateWithoutGenerationRunInput, Prisma.AiJobUncheckedCreateWithoutGenerationRunInput>
+  connectOrCreate?: Prisma.AiJobCreateOrConnectWithoutGenerationRunInput
+  connect?: Prisma.AiJobWhereUniqueInput
+}
+
+export type AiJobUpdateOneRequiredWithoutGenerationRunNestedInput = {
+  create?: Prisma.XOR<Prisma.AiJobCreateWithoutGenerationRunInput, Prisma.AiJobUncheckedCreateWithoutGenerationRunInput>
+  connectOrCreate?: Prisma.AiJobCreateOrConnectWithoutGenerationRunInput
+  upsert?: Prisma.AiJobUpsertWithoutGenerationRunInput
+  connect?: Prisma.AiJobWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AiJobUpdateToOneWithWhereWithoutGenerationRunInput, Prisma.AiJobUpdateWithoutGenerationRunInput>, Prisma.AiJobUncheckedUpdateWithoutGenerationRunInput>
+}
+
+export type AiJobCreateNestedManyWithoutPromptTemplateInput = {
+  create?: Prisma.XOR<Prisma.AiJobCreateWithoutPromptTemplateInput, Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput> | Prisma.AiJobCreateWithoutPromptTemplateInput[] | Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput[]
+  connectOrCreate?: Prisma.AiJobCreateOrConnectWithoutPromptTemplateInput | Prisma.AiJobCreateOrConnectWithoutPromptTemplateInput[]
+  createMany?: Prisma.AiJobCreateManyPromptTemplateInputEnvelope
+  connect?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+}
+
+export type AiJobUncheckedCreateNestedManyWithoutPromptTemplateInput = {
+  create?: Prisma.XOR<Prisma.AiJobCreateWithoutPromptTemplateInput, Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput> | Prisma.AiJobCreateWithoutPromptTemplateInput[] | Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput[]
+  connectOrCreate?: Prisma.AiJobCreateOrConnectWithoutPromptTemplateInput | Prisma.AiJobCreateOrConnectWithoutPromptTemplateInput[]
+  createMany?: Prisma.AiJobCreateManyPromptTemplateInputEnvelope
+  connect?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+}
+
+export type AiJobUpdateManyWithoutPromptTemplateNestedInput = {
+  create?: Prisma.XOR<Prisma.AiJobCreateWithoutPromptTemplateInput, Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput> | Prisma.AiJobCreateWithoutPromptTemplateInput[] | Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput[]
+  connectOrCreate?: Prisma.AiJobCreateOrConnectWithoutPromptTemplateInput | Prisma.AiJobCreateOrConnectWithoutPromptTemplateInput[]
+  upsert?: Prisma.AiJobUpsertWithWhereUniqueWithoutPromptTemplateInput | Prisma.AiJobUpsertWithWhereUniqueWithoutPromptTemplateInput[]
+  createMany?: Prisma.AiJobCreateManyPromptTemplateInputEnvelope
+  set?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+  disconnect?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+  delete?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+  connect?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+  update?: Prisma.AiJobUpdateWithWhereUniqueWithoutPromptTemplateInput | Prisma.AiJobUpdateWithWhereUniqueWithoutPromptTemplateInput[]
+  updateMany?: Prisma.AiJobUpdateManyWithWhereWithoutPromptTemplateInput | Prisma.AiJobUpdateManyWithWhereWithoutPromptTemplateInput[]
+  deleteMany?: Prisma.AiJobScalarWhereInput | Prisma.AiJobScalarWhereInput[]
+}
+
+export type AiJobUncheckedUpdateManyWithoutPromptTemplateNestedInput = {
+  create?: Prisma.XOR<Prisma.AiJobCreateWithoutPromptTemplateInput, Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput> | Prisma.AiJobCreateWithoutPromptTemplateInput[] | Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput[]
+  connectOrCreate?: Prisma.AiJobCreateOrConnectWithoutPromptTemplateInput | Prisma.AiJobCreateOrConnectWithoutPromptTemplateInput[]
+  upsert?: Prisma.AiJobUpsertWithWhereUniqueWithoutPromptTemplateInput | Prisma.AiJobUpsertWithWhereUniqueWithoutPromptTemplateInput[]
+  createMany?: Prisma.AiJobCreateManyPromptTemplateInputEnvelope
+  set?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+  disconnect?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+  delete?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+  connect?: Prisma.AiJobWhereUniqueInput | Prisma.AiJobWhereUniqueInput[]
+  update?: Prisma.AiJobUpdateWithWhereUniqueWithoutPromptTemplateInput | Prisma.AiJobUpdateWithWhereUniqueWithoutPromptTemplateInput[]
+  updateMany?: Prisma.AiJobUpdateManyWithWhereWithoutPromptTemplateInput | Prisma.AiJobUpdateManyWithWhereWithoutPromptTemplateInput[]
+  deleteMany?: Prisma.AiJobScalarWhereInput | Prisma.AiJobScalarWhereInput[]
 }
 
 export type AiJobCreateNestedManyWithoutRunInput = {
@@ -516,6 +603,147 @@ export type AiJobUpdateOneRequiredWithoutCostsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.AiJobUpdateToOneWithWhereWithoutCostsInput, Prisma.AiJobUpdateWithoutCostsInput>, Prisma.AiJobUncheckedUpdateWithoutCostsInput>
 }
 
+export type AiJobCreateWithoutGenerationRunInput = {
+  id: string
+  kind: string
+  status?: string
+  attempts?: number
+  lastError?: string | null
+  queuedAt?: Date | string
+  finishedAt?: Date | string | null
+  run?: Prisma.ScenarioRunCreateNestedOneWithoutAiJobsInput
+  promptTemplate?: Prisma.PromptTemplateCreateNestedOneWithoutAiJobsInput
+  assessments?: Prisma.AssessmentCreateNestedManyWithoutAiJobInput
+  costs?: Prisma.UsageCostCreateNestedManyWithoutAiJobInput
+}
+
+export type AiJobUncheckedCreateWithoutGenerationRunInput = {
+  id: string
+  kind: string
+  status?: string
+  runId?: string | null
+  promptTemplateId?: string | null
+  attempts?: number
+  lastError?: string | null
+  queuedAt?: Date | string
+  finishedAt?: Date | string | null
+  assessments?: Prisma.AssessmentUncheckedCreateNestedManyWithoutAiJobInput
+  costs?: Prisma.UsageCostUncheckedCreateNestedManyWithoutAiJobInput
+}
+
+export type AiJobCreateOrConnectWithoutGenerationRunInput = {
+  where: Prisma.AiJobWhereUniqueInput
+  create: Prisma.XOR<Prisma.AiJobCreateWithoutGenerationRunInput, Prisma.AiJobUncheckedCreateWithoutGenerationRunInput>
+}
+
+export type AiJobUpsertWithoutGenerationRunInput = {
+  update: Prisma.XOR<Prisma.AiJobUpdateWithoutGenerationRunInput, Prisma.AiJobUncheckedUpdateWithoutGenerationRunInput>
+  create: Prisma.XOR<Prisma.AiJobCreateWithoutGenerationRunInput, Prisma.AiJobUncheckedCreateWithoutGenerationRunInput>
+  where?: Prisma.AiJobWhereInput
+}
+
+export type AiJobUpdateToOneWithWhereWithoutGenerationRunInput = {
+  where?: Prisma.AiJobWhereInput
+  data: Prisma.XOR<Prisma.AiJobUpdateWithoutGenerationRunInput, Prisma.AiJobUncheckedUpdateWithoutGenerationRunInput>
+}
+
+export type AiJobUpdateWithoutGenerationRunInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  attempts?: Prisma.IntFieldUpdateOperationsInput | number
+  lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  run?: Prisma.ScenarioRunUpdateOneWithoutAiJobsNestedInput
+  promptTemplate?: Prisma.PromptTemplateUpdateOneWithoutAiJobsNestedInput
+  assessments?: Prisma.AssessmentUpdateManyWithoutAiJobNestedInput
+  costs?: Prisma.UsageCostUpdateManyWithoutAiJobNestedInput
+}
+
+export type AiJobUncheckedUpdateWithoutGenerationRunInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  runId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promptTemplateId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  attempts?: Prisma.IntFieldUpdateOperationsInput | number
+  lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  assessments?: Prisma.AssessmentUncheckedUpdateManyWithoutAiJobNestedInput
+  costs?: Prisma.UsageCostUncheckedUpdateManyWithoutAiJobNestedInput
+}
+
+export type AiJobCreateWithoutPromptTemplateInput = {
+  id: string
+  kind: string
+  status?: string
+  attempts?: number
+  lastError?: string | null
+  queuedAt?: Date | string
+  finishedAt?: Date | string | null
+  run?: Prisma.ScenarioRunCreateNestedOneWithoutAiJobsInput
+  assessments?: Prisma.AssessmentCreateNestedManyWithoutAiJobInput
+  costs?: Prisma.UsageCostCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunCreateNestedOneWithoutAiJobInput
+}
+
+export type AiJobUncheckedCreateWithoutPromptTemplateInput = {
+  id: string
+  kind: string
+  status?: string
+  runId?: string | null
+  attempts?: number
+  lastError?: string | null
+  queuedAt?: Date | string
+  finishedAt?: Date | string | null
+  assessments?: Prisma.AssessmentUncheckedCreateNestedManyWithoutAiJobInput
+  costs?: Prisma.UsageCostUncheckedCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunUncheckedCreateNestedOneWithoutAiJobInput
+}
+
+export type AiJobCreateOrConnectWithoutPromptTemplateInput = {
+  where: Prisma.AiJobWhereUniqueInput
+  create: Prisma.XOR<Prisma.AiJobCreateWithoutPromptTemplateInput, Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput>
+}
+
+export type AiJobCreateManyPromptTemplateInputEnvelope = {
+  data: Prisma.AiJobCreateManyPromptTemplateInput | Prisma.AiJobCreateManyPromptTemplateInput[]
+  skipDuplicates?: boolean
+}
+
+export type AiJobUpsertWithWhereUniqueWithoutPromptTemplateInput = {
+  where: Prisma.AiJobWhereUniqueInput
+  update: Prisma.XOR<Prisma.AiJobUpdateWithoutPromptTemplateInput, Prisma.AiJobUncheckedUpdateWithoutPromptTemplateInput>
+  create: Prisma.XOR<Prisma.AiJobCreateWithoutPromptTemplateInput, Prisma.AiJobUncheckedCreateWithoutPromptTemplateInput>
+}
+
+export type AiJobUpdateWithWhereUniqueWithoutPromptTemplateInput = {
+  where: Prisma.AiJobWhereUniqueInput
+  data: Prisma.XOR<Prisma.AiJobUpdateWithoutPromptTemplateInput, Prisma.AiJobUncheckedUpdateWithoutPromptTemplateInput>
+}
+
+export type AiJobUpdateManyWithWhereWithoutPromptTemplateInput = {
+  where: Prisma.AiJobScalarWhereInput
+  data: Prisma.XOR<Prisma.AiJobUpdateManyMutationInput, Prisma.AiJobUncheckedUpdateManyWithoutPromptTemplateInput>
+}
+
+export type AiJobScalarWhereInput = {
+  AND?: Prisma.AiJobScalarWhereInput | Prisma.AiJobScalarWhereInput[]
+  OR?: Prisma.AiJobScalarWhereInput[]
+  NOT?: Prisma.AiJobScalarWhereInput | Prisma.AiJobScalarWhereInput[]
+  id?: Prisma.StringFilter<"AiJob"> | string
+  kind?: Prisma.StringFilter<"AiJob"> | string
+  status?: Prisma.StringFilter<"AiJob"> | string
+  runId?: Prisma.StringNullableFilter<"AiJob"> | string | null
+  promptTemplateId?: Prisma.UuidNullableFilter<"AiJob"> | string | null
+  attempts?: Prisma.IntFilter<"AiJob"> | number
+  lastError?: Prisma.StringNullableFilter<"AiJob"> | string | null
+  queuedAt?: Prisma.DateTimeFilter<"AiJob"> | Date | string
+  finishedAt?: Prisma.DateTimeNullableFilter<"AiJob"> | Date | string | null
+}
+
 export type AiJobCreateWithoutRunInput = {
   id: string
   kind: string
@@ -524,20 +752,24 @@ export type AiJobCreateWithoutRunInput = {
   lastError?: string | null
   queuedAt?: Date | string
   finishedAt?: Date | string | null
+  promptTemplate?: Prisma.PromptTemplateCreateNestedOneWithoutAiJobsInput
   assessments?: Prisma.AssessmentCreateNestedManyWithoutAiJobInput
   costs?: Prisma.UsageCostCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunCreateNestedOneWithoutAiJobInput
 }
 
 export type AiJobUncheckedCreateWithoutRunInput = {
   id: string
   kind: string
   status?: string
+  promptTemplateId?: string | null
   attempts?: number
   lastError?: string | null
   queuedAt?: Date | string
   finishedAt?: Date | string | null
   assessments?: Prisma.AssessmentUncheckedCreateNestedManyWithoutAiJobInput
   costs?: Prisma.UsageCostUncheckedCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunUncheckedCreateNestedOneWithoutAiJobInput
 }
 
 export type AiJobCreateOrConnectWithoutRunInput = {
@@ -566,20 +798,6 @@ export type AiJobUpdateManyWithWhereWithoutRunInput = {
   data: Prisma.XOR<Prisma.AiJobUpdateManyMutationInput, Prisma.AiJobUncheckedUpdateManyWithoutRunInput>
 }
 
-export type AiJobScalarWhereInput = {
-  AND?: Prisma.AiJobScalarWhereInput | Prisma.AiJobScalarWhereInput[]
-  OR?: Prisma.AiJobScalarWhereInput[]
-  NOT?: Prisma.AiJobScalarWhereInput | Prisma.AiJobScalarWhereInput[]
-  id?: Prisma.StringFilter<"AiJob"> | string
-  kind?: Prisma.StringFilter<"AiJob"> | string
-  status?: Prisma.StringFilter<"AiJob"> | string
-  runId?: Prisma.StringNullableFilter<"AiJob"> | string | null
-  attempts?: Prisma.IntFilter<"AiJob"> | number
-  lastError?: Prisma.StringNullableFilter<"AiJob"> | string | null
-  queuedAt?: Prisma.DateTimeFilter<"AiJob"> | Date | string
-  finishedAt?: Prisma.DateTimeNullableFilter<"AiJob"> | Date | string | null
-}
-
 export type AiJobCreateWithoutAssessmentsInput = {
   id: string
   kind: string
@@ -589,7 +807,9 @@ export type AiJobCreateWithoutAssessmentsInput = {
   queuedAt?: Date | string
   finishedAt?: Date | string | null
   run?: Prisma.ScenarioRunCreateNestedOneWithoutAiJobsInput
+  promptTemplate?: Prisma.PromptTemplateCreateNestedOneWithoutAiJobsInput
   costs?: Prisma.UsageCostCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunCreateNestedOneWithoutAiJobInput
 }
 
 export type AiJobUncheckedCreateWithoutAssessmentsInput = {
@@ -597,11 +817,13 @@ export type AiJobUncheckedCreateWithoutAssessmentsInput = {
   kind: string
   status?: string
   runId?: string | null
+  promptTemplateId?: string | null
   attempts?: number
   lastError?: string | null
   queuedAt?: Date | string
   finishedAt?: Date | string | null
   costs?: Prisma.UsageCostUncheckedCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunUncheckedCreateNestedOneWithoutAiJobInput
 }
 
 export type AiJobCreateOrConnectWithoutAssessmentsInput = {
@@ -629,7 +851,9 @@ export type AiJobUpdateWithoutAssessmentsInput = {
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   run?: Prisma.ScenarioRunUpdateOneWithoutAiJobsNestedInput
+  promptTemplate?: Prisma.PromptTemplateUpdateOneWithoutAiJobsNestedInput
   costs?: Prisma.UsageCostUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUpdateOneWithoutAiJobNestedInput
 }
 
 export type AiJobUncheckedUpdateWithoutAssessmentsInput = {
@@ -637,11 +861,13 @@ export type AiJobUncheckedUpdateWithoutAssessmentsInput = {
   kind?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
   runId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promptTemplateId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attempts?: Prisma.IntFieldUpdateOperationsInput | number
   lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   costs?: Prisma.UsageCostUncheckedUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUncheckedUpdateOneWithoutAiJobNestedInput
 }
 
 export type AiJobCreateWithoutCostsInput = {
@@ -653,7 +879,9 @@ export type AiJobCreateWithoutCostsInput = {
   queuedAt?: Date | string
   finishedAt?: Date | string | null
   run?: Prisma.ScenarioRunCreateNestedOneWithoutAiJobsInput
+  promptTemplate?: Prisma.PromptTemplateCreateNestedOneWithoutAiJobsInput
   assessments?: Prisma.AssessmentCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunCreateNestedOneWithoutAiJobInput
 }
 
 export type AiJobUncheckedCreateWithoutCostsInput = {
@@ -661,11 +889,13 @@ export type AiJobUncheckedCreateWithoutCostsInput = {
   kind: string
   status?: string
   runId?: string | null
+  promptTemplateId?: string | null
   attempts?: number
   lastError?: string | null
   queuedAt?: Date | string
   finishedAt?: Date | string | null
   assessments?: Prisma.AssessmentUncheckedCreateNestedManyWithoutAiJobInput
+  generationRun?: Prisma.GenerationRunUncheckedCreateNestedOneWithoutAiJobInput
 }
 
 export type AiJobCreateOrConnectWithoutCostsInput = {
@@ -693,10 +923,51 @@ export type AiJobUpdateWithoutCostsInput = {
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   run?: Prisma.ScenarioRunUpdateOneWithoutAiJobsNestedInput
+  promptTemplate?: Prisma.PromptTemplateUpdateOneWithoutAiJobsNestedInput
   assessments?: Prisma.AssessmentUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUpdateOneWithoutAiJobNestedInput
 }
 
 export type AiJobUncheckedUpdateWithoutCostsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  runId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promptTemplateId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  attempts?: Prisma.IntFieldUpdateOperationsInput | number
+  lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  assessments?: Prisma.AssessmentUncheckedUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUncheckedUpdateOneWithoutAiJobNestedInput
+}
+
+export type AiJobCreateManyPromptTemplateInput = {
+  id: string
+  kind: string
+  status?: string
+  runId?: string | null
+  attempts?: number
+  lastError?: string | null
+  queuedAt?: Date | string
+  finishedAt?: Date | string | null
+}
+
+export type AiJobUpdateWithoutPromptTemplateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  attempts?: Prisma.IntFieldUpdateOperationsInput | number
+  lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  run?: Prisma.ScenarioRunUpdateOneWithoutAiJobsNestedInput
+  assessments?: Prisma.AssessmentUpdateManyWithoutAiJobNestedInput
+  costs?: Prisma.UsageCostUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUpdateOneWithoutAiJobNestedInput
+}
+
+export type AiJobUncheckedUpdateWithoutPromptTemplateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   kind?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
@@ -706,12 +977,26 @@ export type AiJobUncheckedUpdateWithoutCostsInput = {
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   assessments?: Prisma.AssessmentUncheckedUpdateManyWithoutAiJobNestedInput
+  costs?: Prisma.UsageCostUncheckedUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUncheckedUpdateOneWithoutAiJobNestedInput
+}
+
+export type AiJobUncheckedUpdateManyWithoutPromptTemplateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  kind?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  runId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  attempts?: Prisma.IntFieldUpdateOperationsInput | number
+  lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AiJobCreateManyRunInput = {
   id: string
   kind: string
   status?: string
+  promptTemplateId?: string | null
   attempts?: number
   lastError?: string | null
   queuedAt?: Date | string
@@ -726,26 +1011,31 @@ export type AiJobUpdateWithoutRunInput = {
   lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  promptTemplate?: Prisma.PromptTemplateUpdateOneWithoutAiJobsNestedInput
   assessments?: Prisma.AssessmentUpdateManyWithoutAiJobNestedInput
   costs?: Prisma.UsageCostUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUpdateOneWithoutAiJobNestedInput
 }
 
 export type AiJobUncheckedUpdateWithoutRunInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   kind?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promptTemplateId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attempts?: Prisma.IntFieldUpdateOperationsInput | number
   lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   finishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   assessments?: Prisma.AssessmentUncheckedUpdateManyWithoutAiJobNestedInput
   costs?: Prisma.UsageCostUncheckedUpdateManyWithoutAiJobNestedInput
+  generationRun?: Prisma.GenerationRunUncheckedUpdateOneWithoutAiJobNestedInput
 }
 
 export type AiJobUncheckedUpdateManyWithoutRunInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   kind?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promptTemplateId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   attempts?: Prisma.IntFieldUpdateOperationsInput | number
   lastError?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   queuedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -797,13 +1087,16 @@ export type AiJobSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   kind?: boolean
   status?: boolean
   runId?: boolean
+  promptTemplateId?: boolean
   attempts?: boolean
   lastError?: boolean
   queuedAt?: boolean
   finishedAt?: boolean
   run?: boolean | Prisma.AiJob$runArgs<ExtArgs>
+  promptTemplate?: boolean | Prisma.AiJob$promptTemplateArgs<ExtArgs>
   assessments?: boolean | Prisma.AiJob$assessmentsArgs<ExtArgs>
   costs?: boolean | Prisma.AiJob$costsArgs<ExtArgs>
+  generationRun?: boolean | Prisma.AiJob$generationRunArgs<ExtArgs>
   _count?: boolean | Prisma.AiJobCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["aiJob"]>
 
@@ -812,11 +1105,13 @@ export type AiJobSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   kind?: boolean
   status?: boolean
   runId?: boolean
+  promptTemplateId?: boolean
   attempts?: boolean
   lastError?: boolean
   queuedAt?: boolean
   finishedAt?: boolean
   run?: boolean | Prisma.AiJob$runArgs<ExtArgs>
+  promptTemplate?: boolean | Prisma.AiJob$promptTemplateArgs<ExtArgs>
 }, ExtArgs["result"]["aiJob"]>
 
 export type AiJobSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -824,11 +1119,13 @@ export type AiJobSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   kind?: boolean
   status?: boolean
   runId?: boolean
+  promptTemplateId?: boolean
   attempts?: boolean
   lastError?: boolean
   queuedAt?: boolean
   finishedAt?: boolean
   run?: boolean | Prisma.AiJob$runArgs<ExtArgs>
+  promptTemplate?: boolean | Prisma.AiJob$promptTemplateArgs<ExtArgs>
 }, ExtArgs["result"]["aiJob"]>
 
 export type AiJobSelectScalar = {
@@ -836,32 +1133,39 @@ export type AiJobSelectScalar = {
   kind?: boolean
   status?: boolean
   runId?: boolean
+  promptTemplateId?: boolean
   attempts?: boolean
   lastError?: boolean
   queuedAt?: boolean
   finishedAt?: boolean
 }
 
-export type AiJobOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "kind" | "status" | "runId" | "attempts" | "lastError" | "queuedAt" | "finishedAt", ExtArgs["result"]["aiJob"]>
+export type AiJobOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "kind" | "status" | "runId" | "promptTemplateId" | "attempts" | "lastError" | "queuedAt" | "finishedAt", ExtArgs["result"]["aiJob"]>
 export type AiJobInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   run?: boolean | Prisma.AiJob$runArgs<ExtArgs>
+  promptTemplate?: boolean | Prisma.AiJob$promptTemplateArgs<ExtArgs>
   assessments?: boolean | Prisma.AiJob$assessmentsArgs<ExtArgs>
   costs?: boolean | Prisma.AiJob$costsArgs<ExtArgs>
+  generationRun?: boolean | Prisma.AiJob$generationRunArgs<ExtArgs>
   _count?: boolean | Prisma.AiJobCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AiJobIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   run?: boolean | Prisma.AiJob$runArgs<ExtArgs>
+  promptTemplate?: boolean | Prisma.AiJob$promptTemplateArgs<ExtArgs>
 }
 export type AiJobIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   run?: boolean | Prisma.AiJob$runArgs<ExtArgs>
+  promptTemplate?: boolean | Prisma.AiJob$promptTemplateArgs<ExtArgs>
 }
 
 export type $AiJobPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "AiJob"
   objects: {
     run: Prisma.$ScenarioRunPayload<ExtArgs> | null
+    promptTemplate: Prisma.$PromptTemplatePayload<ExtArgs> | null
     assessments: Prisma.$AssessmentPayload<ExtArgs>[]
     costs: Prisma.$UsageCostPayload<ExtArgs>[]
+    generationRun: Prisma.$GenerationRunPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -874,6 +1178,10 @@ export type $AiJobPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
      */
     status: string
     runId: string | null
+    /**
+     * ERD-07: bản prompt hệ thống đã dùng (FR-44). Rỗng khi dùng prompt mặc định.
+     */
+    promptTemplateId: string | null
     attempts: number
     lastError: string | null
     queuedAt: Date
@@ -1273,8 +1581,10 @@ readonly fields: AiJobFieldRefs;
 export interface Prisma__AiJobClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   run<T extends Prisma.AiJob$runArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AiJob$runArgs<ExtArgs>>): Prisma.Prisma__ScenarioRunClient<runtime.Types.Result.GetResult<Prisma.$ScenarioRunPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  promptTemplate<T extends Prisma.AiJob$promptTemplateArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AiJob$promptTemplateArgs<ExtArgs>>): Prisma.Prisma__PromptTemplateClient<runtime.Types.Result.GetResult<Prisma.$PromptTemplatePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   assessments<T extends Prisma.AiJob$assessmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AiJob$assessmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AssessmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   costs<T extends Prisma.AiJob$costsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AiJob$costsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsageCostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  generationRun<T extends Prisma.AiJob$generationRunArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AiJob$generationRunArgs<ExtArgs>>): Prisma.Prisma__GenerationRunClient<runtime.Types.Result.GetResult<Prisma.$GenerationRunPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1308,6 +1618,7 @@ export interface AiJobFieldRefs {
   readonly kind: Prisma.FieldRef<"AiJob", 'String'>
   readonly status: Prisma.FieldRef<"AiJob", 'String'>
   readonly runId: Prisma.FieldRef<"AiJob", 'String'>
+  readonly promptTemplateId: Prisma.FieldRef<"AiJob", 'String'>
   readonly attempts: Prisma.FieldRef<"AiJob", 'Int'>
   readonly lastError: Prisma.FieldRef<"AiJob", 'String'>
   readonly queuedAt: Prisma.FieldRef<"AiJob", 'DateTime'>
@@ -1732,6 +2043,25 @@ export type AiJob$runArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
 }
 
 /**
+ * AiJob.promptTemplate
+ */
+export type AiJob$promptTemplateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PromptTemplate
+   */
+  select?: Prisma.PromptTemplateSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PromptTemplate
+   */
+  omit?: Prisma.PromptTemplateOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PromptTemplateInclude<ExtArgs> | null
+  where?: Prisma.PromptTemplateWhereInput
+}
+
+/**
  * AiJob.assessments
  */
 export type AiJob$assessmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1777,6 +2107,25 @@ export type AiJob$costsArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
   take?: number
   skip?: number
   distinct?: Prisma.UsageCostScalarFieldEnum | Prisma.UsageCostScalarFieldEnum[]
+}
+
+/**
+ * AiJob.generationRun
+ */
+export type AiJob$generationRunArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the GenerationRun
+   */
+  select?: Prisma.GenerationRunSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the GenerationRun
+   */
+  omit?: Prisma.GenerationRunOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.GenerationRunInclude<ExtArgs> | null
+  where?: Prisma.GenerationRunWhereInput
 }
 
 /**

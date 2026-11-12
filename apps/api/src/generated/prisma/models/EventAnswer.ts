@@ -227,13 +227,13 @@ export type EventAnswerWhereInput = {
   OR?: Prisma.EventAnswerWhereInput[]
   NOT?: Prisma.EventAnswerWhereInput | Prisma.EventAnswerWhereInput[]
   id?: Prisma.StringFilter<"EventAnswer"> | string
-  userId?: Prisma.StringFilter<"EventAnswer"> | string
+  userId?: Prisma.UuidFilter<"EventAnswer"> | string
   eventId?: Prisma.StringFilter<"EventAnswer"> | string
   roleCode?: Prisma.StringFilter<"EventAnswer"> | string
   band?: Prisma.StringFilter<"EventAnswer"> | string
   choiceIndex?: Prisma.IntFilter<"EventAnswer"> | number
   answeredAt?: Prisma.DateTimeFilter<"EventAnswer"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }
 
 export type EventAnswerOrderByWithRelationInput = {
@@ -244,7 +244,7 @@ export type EventAnswerOrderByWithRelationInput = {
   band?: Prisma.SortOrder
   choiceIndex?: Prisma.SortOrder
   answeredAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
+  user?: Prisma.UserAccountOrderByWithRelationInput
 }
 
 export type EventAnswerWhereUniqueInput = Prisma.AtLeast<{
@@ -253,13 +253,13 @@ export type EventAnswerWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.EventAnswerWhereInput | Prisma.EventAnswerWhereInput[]
   OR?: Prisma.EventAnswerWhereInput[]
   NOT?: Prisma.EventAnswerWhereInput | Prisma.EventAnswerWhereInput[]
-  userId?: Prisma.StringFilter<"EventAnswer"> | string
+  userId?: Prisma.UuidFilter<"EventAnswer"> | string
   eventId?: Prisma.StringFilter<"EventAnswer"> | string
   roleCode?: Prisma.StringFilter<"EventAnswer"> | string
   band?: Prisma.StringFilter<"EventAnswer"> | string
   choiceIndex?: Prisma.IntFilter<"EventAnswer"> | number
   answeredAt?: Prisma.DateTimeFilter<"EventAnswer"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }, "id" | "userId_eventId">
 
 export type EventAnswerOrderByWithAggregationInput = {
@@ -282,7 +282,7 @@ export type EventAnswerScalarWhereWithAggregatesInput = {
   OR?: Prisma.EventAnswerScalarWhereWithAggregatesInput[]
   NOT?: Prisma.EventAnswerScalarWhereWithAggregatesInput | Prisma.EventAnswerScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"EventAnswer"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"EventAnswer"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"EventAnswer"> | string
   eventId?: Prisma.StringWithAggregatesFilter<"EventAnswer"> | string
   roleCode?: Prisma.StringWithAggregatesFilter<"EventAnswer"> | string
   band?: Prisma.StringWithAggregatesFilter<"EventAnswer"> | string
@@ -297,7 +297,7 @@ export type EventAnswerCreateInput = {
   band: string
   choiceIndex: number
   answeredAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutEventAnswersInput
+  user: Prisma.UserAccountCreateNestedOneWithoutEventAnswersInput
 }
 
 export type EventAnswerUncheckedCreateInput = {
@@ -317,7 +317,7 @@ export type EventAnswerUpdateInput = {
   band?: Prisma.StringFieldUpdateOperationsInput | string
   choiceIndex?: Prisma.IntFieldUpdateOperationsInput | number
   answeredAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutEventAnswersNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutEventAnswersNestedInput
 }
 
 export type EventAnswerUncheckedUpdateInput = {
@@ -503,7 +503,7 @@ export type EventAnswerScalarWhereInput = {
   OR?: Prisma.EventAnswerScalarWhereInput[]
   NOT?: Prisma.EventAnswerScalarWhereInput | Prisma.EventAnswerScalarWhereInput[]
   id?: Prisma.StringFilter<"EventAnswer"> | string
-  userId?: Prisma.StringFilter<"EventAnswer"> | string
+  userId?: Prisma.UuidFilter<"EventAnswer"> | string
   eventId?: Prisma.StringFilter<"EventAnswer"> | string
   roleCode?: Prisma.StringFilter<"EventAnswer"> | string
   band?: Prisma.StringFilter<"EventAnswer"> | string
@@ -557,7 +557,7 @@ export type EventAnswerSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   band?: boolean
   choiceIndex?: boolean
   answeredAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["eventAnswer"]>
 
 export type EventAnswerSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -568,7 +568,7 @@ export type EventAnswerSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   band?: boolean
   choiceIndex?: boolean
   answeredAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["eventAnswer"]>
 
 export type EventAnswerSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -579,7 +579,7 @@ export type EventAnswerSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   band?: boolean
   choiceIndex?: boolean
   answeredAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["eventAnswer"]>
 
 export type EventAnswerSelectScalar = {
@@ -594,19 +594,19 @@ export type EventAnswerSelectScalar = {
 
 export type EventAnswerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "eventId" | "roleCode" | "band" | "choiceIndex" | "answeredAt", ExtArgs["result"]["eventAnswer"]>
 export type EventAnswerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type EventAnswerIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type EventAnswerIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 
 export type $EventAnswerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "EventAnswer"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
+    user: Prisma.$UserAccountPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1010,7 +1010,7 @@ readonly fields: EventAnswerFieldRefs;
  */
 export interface Prisma__EventAnswerClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserAccountDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccountDefaultArgs<ExtArgs>>): Prisma.Prisma__UserAccountClient<runtime.Types.Result.GetResult<Prisma.$UserAccountPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

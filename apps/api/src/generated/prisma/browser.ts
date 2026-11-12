@@ -18,31 +18,234 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
- * Model User
- * 
+ * Model UserAccount
+ * ERD-01 `user_account`. Thêm hai cột ngoài ERD đã được duyệt (12/11, xem
+ * 07-van-de-mo A22): `username` để explorer cũ vẫn đăng nhập bằng tên, và
+ * `date_of_birth` để tính có cần người giám hộ đồng ý không.
  */
-export type User = Prisma.UserModel
+export type UserAccount = Prisma.UserAccountModel
 /**
- * Model OAuthAccount
- * Liên kết nhà cung cấp đăng nhập. Bảng riêng thay vì cột `googleId` để
- * thêm nhà cung cấp thứ hai chỉ là thêm dòng, và một người có thể vừa có
- * mật khẩu vừa có liên kết Google.
+ * Model UserRole
+ * ERD-01 `user_role`: một người có thể giữ nhiều vai.
  */
-export type OAuthAccount = Prisma.OAuthAccountModel
+export type UserRole = Prisma.UserRoleModel
 /**
- * Model RefreshToken
- * Token làm mới, lưu dạng băm và xoay vòng mỗi lần dùng.
- * 
- * `replacedById` nối các token thành một chuỗi. Nếu một token đã thu hồi
- * lại được đem ra dùng, nghĩa là nó đã bị lộ — thu hồi cả chuỗi.
+ * Model GoogleIdentity
+ * ERD-01 `google_identity`.
  */
-export type RefreshToken = Prisma.RefreshTokenModel
+export type GoogleIdentity = Prisma.GoogleIdentityModel
+/**
+ * Model StaffAssignment
+ * ERD-01 `staff_assignment`: ai làm gì ở nghề nào (FR-40, FR-41).
+ * Migration thêm hai partial unique index: một CA còn hiệu lực mỗi nghề, và
+ * một người không giữ cùng vai hai lần ở cùng nghề.
+ */
+export type StaffAssignment = Prisma.StaffAssignmentModel
+/**
+ * Model AuthSession
+ * ERD-01 `auth_session`: một phiên đăng nhập, giữ băm của refresh token hiện
+ * hành. Mỗi lần refresh thay băm tại chỗ (xoay vòng).
+ */
+export type AuthSession = Prisma.AuthSessionModel
+/**
+ * Model PasswordResetToken
+ * ERD-01 `password_reset_token`.
+ */
+export type PasswordResetToken = Prisma.PasswordResetTokenModel
+/**
+ * Model ActivityLog
+ * ERD-01 `activity_log`: dấu vết thao tác của người dùng (đăng nhập, thao tác staff).
+ */
+export type ActivityLog = Prisma.ActivityLogModel
 /**
  * Model ParentalConsent
  * Đồng ý của người giám hộ cho tài khoản dưới 16 tuổi (Nghị định 13/2023/NĐ-CP).
  * Bản đồ án ghi nhận chứ chưa xác minh — giao diện nói rõ điều đó.
+ * Bảng prototype, ngoài ERD (07-van-de-mo A22).
  */
 export type ParentalConsent = Prisma.ParentalConsentModel
+/**
+ * Model Domain
+ * ERD-02 `domain`.
+ */
+export type Domain = Prisma.DomainModel
+/**
+ * Model Occupation
+ * ERD-02 `occupation`. `code` trùng mã nghề của dữ liệu (SWE_BACKEND…).
+ */
+export type Occupation = Prisma.OccupationModel
+/**
+ * Model Notification
+ * ERD-07 `notification`: mỗi kênh một dòng.
+ */
+export type Notification = Prisma.NotificationModel
+/**
+ * Model OccupationLevel
+ * ERD-02 `occupation_level`.
+ */
+export type OccupationLevel = Prisma.OccupationLevelModel
+/**
+ * Model Downside
+ * ERD-02 `downside`.
+ */
+export type Downside = Prisma.DownsideModel
+/**
+ * Model GenerationRule
+ * ERD-02 `generation_rule`: luật DE viết cho việc sinh scenario của nghề.
+ */
+export type GenerationRule = Prisma.GenerationRuleModel
+/**
+ * Model Competency
+ * ERD-02 `competency`. `source_record_id` chưa có FK: bảng `reference_record` thuộc P1b.
+ */
+export type Competency = Prisma.CompetencyModel
+/**
+ * Model LevelCompetency
+ * ERD-02 `level_competency`.
+ */
+export type LevelCompetency = Prisma.LevelCompetencyModel
+/**
+ * Model Task
+ * ERD-02 `task`: một việc của một cấp; mỗi task có tối đa một scenario còn hiệu lực (FR-33).
+ */
+export type Task = Prisma.TaskModel
+/**
+ * Model Scenario
+ * ERD-03 `scenario`. `row_version` là ETag của `saveScenarioContent` (412 khi lệch).
+ * Migration thêm partial unique: mỗi task một scenario chưa RETIRED (FR-33).
+ */
+export type Scenario = Prisma.ScenarioModel
+/**
+ * Model ScenarioSkill
+ * ERD-03 `scenario_skill`: năng lực scenario nhắm tới (tác giả chọn khi sinh).
+ */
+export type ScenarioSkill = Prisma.ScenarioSkillModel
+/**
+ * Model CastMember
+ * ERD-03 `cast_member`.
+ */
+export type CastMember = Prisma.CastMemberModel
+/**
+ * Model Activity
+ * ERD-03 `activity`.
+ */
+export type Activity = Prisma.ActivityModel
+/**
+ * Model ActivityAllowedType
+ * ERD-03 `activity_allowed_type`: các dạng task DE cho phép; CA chọn một trong tập này (FR-35).
+ */
+export type ActivityAllowedType = Prisma.ActivityAllowedTypeModel
+/**
+ * Model ActivityItem
+ * ERD-03 `activity_item`: lựa chọn / mục của câu đóng, điểm theo thang 0/1/2 (D-116).
+ */
+export type ActivityItem = Prisma.ActivityItemModel
+/**
+ * Model RubricCriterion
+ * ERD-03 `rubric_criterion`: mốc 2/1/0 + dấu hiệu phản tác dụng (D-116).
+ */
+export type RubricCriterion = Prisma.RubricCriterionModel
+/**
+ * Model Hint
+ * ERD-03 `hint`.
+ */
+export type Hint = Prisma.HintModel
+/**
+ * Model RandomEvent
+ * ERD-03 `random_event`.
+ */
+export type RandomEvent = Prisma.RandomEventModel
+/**
+ * Model Ending
+ * ERD-03 `ending`.
+ */
+export type Ending = Prisma.EndingModel
+/**
+ * Model SideQuest
+ * ERD-03 `side_quest`.
+ */
+export type SideQuest = Prisma.SideQuestModel
+/**
+ * Model GenerationRun
+ * ERD-03 `generation_run`: một lần sinh / sửa bằng AI (FR-23).
+ * Lệch ERD (07 A22+): chưa có `model_config_id` vì `model_config` chưa
+ * dựng; model đã dùng tra ở `usage_cost` của `ai_job`. `ai_job_id` là text
+ * như `ai_job.id` của prototype.
+ */
+export type GenerationRun = Prisma.GenerationRunModel
+/**
+ * Model ReferenceAnswer
+ * ERD-03 `reference_answer`: câu mẫu của DE, chỉ lưu khi qua kiểm (FR-24).
+ */
+export type ReferenceAnswer = Prisma.ReferenceAnswerModel
+/**
+ * Model ReferenceAnswerScore
+ * ERD-03 `reference_answer_score`. `score` NULL = "không xét" (D-116).
+ */
+export type ReferenceAnswerScore = Prisma.ReferenceAnswerScoreModel
+/**
+ * Model ReviewCriteriaVersion
+ * ERD-04 `review_criteria_version`: tiêu chí duyệt của nghề, có version (FR-32).
+ */
+export type ReviewCriteriaVersion = Prisma.ReviewCriteriaVersionModel
+/**
+ * Model ReviewCriterion
+ * ERD-04 `review_criterion`.
+ */
+export type ReviewCriterion = Prisma.ReviewCriterionModel
+/**
+ * Model ReviewAssignment
+ * ERD-04 `review_assignment`: người duyệt được giao một scenario (FR-34).
+ * Migration thêm partial unique: một assignment ACTIVE mỗi scenario.
+ */
+export type ReviewAssignment = Prisma.ReviewAssignmentModel
+/**
+ * Model Review
+ * ERD-04 `review`: một quyết định duyệt.
+ */
+export type Review = Prisma.ReviewModel
+/**
+ * Model ReviewAnswer
+ * ERD-04 `review_answer`: đánh giá từng tiêu chí.
+ */
+export type ReviewAnswer = Prisma.ReviewAnswerModel
+/**
+ * Model LifecycleLog
+ * ERD-04 `lifecycle_log`: mỗi lần chuyển trạng thái SM-01 một dòng, ghi
+ * trong cùng transaction với việc đổi trạng thái (NFR-16).
+ */
+export type LifecycleLog = Prisma.LifecycleLogModel
+/**
+ * Model Asset
+ * ERD-04 `asset`: ảnh trong thư viện (C07). File nằm ở kho object (`storage_key`).
+ */
+export type Asset = Prisma.AssetModel
+/**
+ * Model Presentation
+ * ERD-04 `presentation`: lựa chọn trình bày của CA cho một scenario (C06).
+ */
+export type Presentation = Prisma.PresentationModel
+/**
+ * Model PresentationActivity
+ * ERD-04 `presentation_activity`. Khoá ghép tới `activity_allowed_type`: CA
+ * chỉ chọn được dạng task DE cho phép (FR-35).
+ */
+export type PresentationActivity = Prisma.PresentationActivityModel
+/**
+ * Model PresentationNpc
+ * ERD-04 `presentation_npc`.
+ */
+export type PresentationNpc = Prisma.PresentationNpcModel
+/**
+ * Model ScenarioBuild
+ * ERD-04 `scenario_build`: ảnh chụp bất biến của nội dung + trình bày để chơi thử.
+ */
+export type ScenarioBuild = Prisma.ScenarioBuildModel
+/**
+ * Model PromptTemplate
+ * ERD-07 `prompt_template`: prompt hệ thống theo nghề, bản cao nhất có hiệu lực (FR-44).
+ */
+export type PromptTemplate = Prisma.PromptTemplateModel
 /**
  * Model GameProfile
  * Phần hồ sơ không mở khoá gì cả: chân dung tính cách và các mốc đã qua.

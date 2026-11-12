@@ -207,12 +207,12 @@ export type GameProfileWhereInput = {
   AND?: Prisma.GameProfileWhereInput | Prisma.GameProfileWhereInput[]
   OR?: Prisma.GameProfileWhereInput[]
   NOT?: Prisma.GameProfileWhereInput | Prisma.GameProfileWhereInput[]
-  userId?: Prisma.StringFilter<"GameProfile"> | string
+  userId?: Prisma.UuidFilter<"GameProfile"> | string
   quizFit?: Prisma.JsonFilter<"GameProfile">
   quizDone?: Prisma.BoolFilter<"GameProfile"> | boolean
   eventsPlayed?: Prisma.IntFilter<"GameProfile"> | number
   updatedAt?: Prisma.DateTimeFilter<"GameProfile"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }
 
 export type GameProfileOrderByWithRelationInput = {
@@ -221,7 +221,7 @@ export type GameProfileOrderByWithRelationInput = {
   quizDone?: Prisma.SortOrder
   eventsPlayed?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
+  user?: Prisma.UserAccountOrderByWithRelationInput
 }
 
 export type GameProfileWhereUniqueInput = Prisma.AtLeast<{
@@ -233,7 +233,7 @@ export type GameProfileWhereUniqueInput = Prisma.AtLeast<{
   quizDone?: Prisma.BoolFilter<"GameProfile"> | boolean
   eventsPlayed?: Prisma.IntFilter<"GameProfile"> | number
   updatedAt?: Prisma.DateTimeFilter<"GameProfile"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }, "userId">
 
 export type GameProfileOrderByWithAggregationInput = {
@@ -253,7 +253,7 @@ export type GameProfileScalarWhereWithAggregatesInput = {
   AND?: Prisma.GameProfileScalarWhereWithAggregatesInput | Prisma.GameProfileScalarWhereWithAggregatesInput[]
   OR?: Prisma.GameProfileScalarWhereWithAggregatesInput[]
   NOT?: Prisma.GameProfileScalarWhereWithAggregatesInput | Prisma.GameProfileScalarWhereWithAggregatesInput[]
-  userId?: Prisma.StringWithAggregatesFilter<"GameProfile"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"GameProfile"> | string
   quizFit?: Prisma.JsonWithAggregatesFilter<"GameProfile">
   quizDone?: Prisma.BoolWithAggregatesFilter<"GameProfile"> | boolean
   eventsPlayed?: Prisma.IntWithAggregatesFilter<"GameProfile"> | number
@@ -265,7 +265,7 @@ export type GameProfileCreateInput = {
   quizDone?: boolean
   eventsPlayed?: number
   updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutGameProfileInput
+  user: Prisma.UserAccountCreateNestedOneWithoutGameProfileInput
 }
 
 export type GameProfileUncheckedCreateInput = {
@@ -281,7 +281,7 @@ export type GameProfileUpdateInput = {
   quizDone?: Prisma.BoolFieldUpdateOperationsInput | boolean
   eventsPlayed?: Prisma.IntFieldUpdateOperationsInput | number
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutGameProfileNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutGameProfileNestedInput
 }
 
 export type GameProfileUncheckedUpdateInput = {
@@ -382,18 +382,6 @@ export type GameProfileUncheckedUpdateOneWithoutUserNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.GameProfileUpdateToOneWithWhereWithoutUserInput, Prisma.GameProfileUpdateWithoutUserInput>, Prisma.GameProfileUncheckedUpdateWithoutUserInput>
 }
 
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
-}
-
-export type IntFieldUpdateOperationsInput = {
-  set?: number
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
-}
-
 export type GameProfileCreateWithoutUserInput = {
   quizFit?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   quizDone?: boolean
@@ -446,7 +434,7 @@ export type GameProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   quizDone?: boolean
   eventsPlayed?: boolean
   updatedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["gameProfile"]>
 
 export type GameProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -455,7 +443,7 @@ export type GameProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   quizDone?: boolean
   eventsPlayed?: boolean
   updatedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["gameProfile"]>
 
 export type GameProfileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -464,7 +452,7 @@ export type GameProfileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   quizDone?: boolean
   eventsPlayed?: boolean
   updatedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["gameProfile"]>
 
 export type GameProfileSelectScalar = {
@@ -477,19 +465,19 @@ export type GameProfileSelectScalar = {
 
 export type GameProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"userId" | "quizFit" | "quizDone" | "eventsPlayed" | "updatedAt", ExtArgs["result"]["gameProfile"]>
 export type GameProfileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type GameProfileIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type GameProfileIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 
 export type $GameProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "GameProfile"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
+    user: Prisma.$UserAccountPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     userId: string
@@ -898,7 +886,7 @@ readonly fields: GameProfileFieldRefs;
  */
 export interface Prisma__GameProfileClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserAccountDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccountDefaultArgs<ExtArgs>>): Prisma.Prisma__UserAccountClient<runtime.Types.Result.GetResult<Prisma.$UserAccountPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

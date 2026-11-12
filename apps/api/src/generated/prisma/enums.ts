@@ -9,13 +9,48 @@
 * 🟢 You can import this file directly.
 */
 
-export const Role = {
-  USER: 'USER',
-  CONTRIBUTOR: 'CONTRIBUTOR',
-  ADMIN: 'ADMIN'
+export const UserRoleKind = {
+  EXPLORER: 'EXPLORER',
+  DOMAIN_EXPERT: 'DOMAIN_EXPERT',
+  CONTENT_ADMIN: 'CONTENT_ADMIN',
+  SYSTEM_ADMIN: 'SYSTEM_ADMIN'
 } as const
 
-export type Role = (typeof Role)[keyof typeof Role]
+export type UserRoleKind = (typeof UserRoleKind)[keyof typeof UserRoleKind]
+
+
+export const AccountStatus = {
+  ACTIVE: 'ACTIVE',
+  DISABLED: 'DISABLED',
+  DELETED: 'DELETED'
+} as const
+
+export type AccountStatus = (typeof AccountStatus)[keyof typeof AccountStatus]
+
+
+export const StaffRoleKind = {
+  CONTENT_ADMIN: 'CONTENT_ADMIN',
+  DOMAIN_EXPERT: 'DOMAIN_EXPERT'
+} as const
+
+export type StaffRoleKind = (typeof StaffRoleKind)[keyof typeof StaffRoleKind]
+
+
+export const OccupationStatus = {
+  DRAFT: 'DRAFT',
+  PUBLISHED: 'PUBLISHED',
+  RETIRED: 'RETIRED'
+} as const
+
+export type OccupationStatus = (typeof OccupationStatus)[keyof typeof OccupationStatus]
+
+
+export const NotificationChannel = {
+  IN_APP: 'IN_APP',
+  EMAIL: 'EMAIL'
+} as const
+
+export type NotificationChannel = (typeof NotificationChannel)[keyof typeof NotificationChannel]
 
 
 export const ConsentMethod = {
@@ -23,6 +58,175 @@ export const ConsentMethod = {
 } as const
 
 export type ConsentMethod = (typeof ConsentMethod)[keyof typeof ConsentMethod]
+
+
+export const CompetencyKind = {
+  EXPERTISE: 'EXPERTISE',
+  SOFT_SKILL: 'SOFT_SKILL'
+} as const
+
+export type CompetencyKind = (typeof CompetencyKind)[keyof typeof CompetencyKind]
+
+
+export const Proficiency = {
+  FAMILIAR: 'FAMILIAR',
+  PROFICIENT: 'PROFICIENT',
+  EXPERT: 'EXPERT'
+} as const
+
+export type Proficiency = (typeof Proficiency)[keyof typeof Proficiency]
+
+
+export const ScenarioStatus = {
+  DRAFT: 'DRAFT',
+  SUBMITTED: 'SUBMITTED',
+  IN_REVIEW: 'IN_REVIEW',
+  APPROVED: 'APPROVED',
+  IN_PLAYTEST: 'IN_PLAYTEST',
+  READY: 'READY',
+  PUBLISHED: 'PUBLISHED',
+  RETIRED: 'RETIRED'
+} as const
+
+export type ScenarioStatus = (typeof ScenarioStatus)[keyof typeof ScenarioStatus]
+
+
+export const ScenarioArchetype = {
+  S_EXEC: 'S_EXEC',
+  S_AMBIG: 'S_AMBIG',
+  S_INCIDENT: 'S_INCIDENT',
+  S_CONFLICT: 'S_CONFLICT',
+  S_REVIEW: 'S_REVIEW',
+  S_DECISION: 'S_DECISION'
+} as const
+
+export type ScenarioArchetype = (typeof ScenarioArchetype)[keyof typeof ScenarioArchetype]
+
+
+export const CompanyType = {
+  OUTSOURCING: 'OUTSOURCING',
+  PRODUCT_LOCAL: 'PRODUCT_LOCAL',
+  ENTERPRISE_BANK: 'ENTERPRISE_BANK',
+  BIGTECH_FDI: 'BIGTECH_FDI'
+} as const
+
+export type CompanyType = (typeof CompanyType)[keyof typeof CompanyType]
+
+
+export const TaskType = {
+  FREE_TEXT: 'FREE_TEXT',
+  CHOICE: 'CHOICE',
+  ORDERING: 'ORDERING',
+  PRIORITIZING: 'PRIORITIZING'
+} as const
+
+export type TaskType = (typeof TaskType)[keyof typeof TaskType]
+
+
+export const PickRule = {
+  MUST: 'MUST',
+  SHOULD: 'SHOULD',
+  MUST_NOT: 'MUST_NOT',
+  NEUTRAL: 'NEUTRAL'
+} as const
+
+export type PickRule = (typeof PickRule)[keyof typeof PickRule]
+
+
+export const EndingType = {
+  GOOD: 'GOOD',
+  PARTIAL: 'PARTIAL',
+  BAD: 'BAD',
+  SECRET: 'SECRET'
+} as const
+
+export type EndingType = (typeof EndingType)[keyof typeof EndingType]
+
+
+export const GenerationKind = {
+  GENERATE: 'GENERATE',
+  REVISE: 'REVISE',
+  SUGGEST_PRESENTATION: 'SUGGEST_PRESENTATION',
+  GENERATE_ASSET: 'GENERATE_ASSET'
+} as const
+
+export type GenerationKind = (typeof GenerationKind)[keyof typeof GenerationKind]
+
+
+export const DifficultyStratum = {
+  EASY: 'EASY',
+  MEDIUM: 'MEDIUM',
+  HARD: 'HARD'
+} as const
+
+export type DifficultyStratum = (typeof DifficultyStratum)[keyof typeof DifficultyStratum]
+
+
+export const AssignmentStatus = {
+  ACTIVE: 'ACTIVE',
+  COMPLETED: 'COMPLETED',
+  REASSIGNED: 'REASSIGNED'
+} as const
+
+export type AssignmentStatus = (typeof AssignmentStatus)[keyof typeof AssignmentStatus]
+
+
+export const ReviewDecision = {
+  APPROVE: 'APPROVE',
+  REQUEST_CHANGES: 'REQUEST_CHANGES',
+  REJECT: 'REJECT'
+} as const
+
+export type ReviewDecision = (typeof ReviewDecision)[keyof typeof ReviewDecision]
+
+
+export const CriterionVerdict = {
+  MET: 'MET',
+  NOT_MET: 'NOT_MET'
+} as const
+
+export type CriterionVerdict = (typeof CriterionVerdict)[keyof typeof CriterionVerdict]
+
+
+export const AssetKind = {
+  NPC: 'NPC',
+  BACKGROUND: 'BACKGROUND',
+  SCENE: 'SCENE',
+  ICON: 'ICON'
+} as const
+
+export type AssetKind = (typeof AssetKind)[keyof typeof AssetKind]
+
+
+export const AssetSource = {
+  LIBRARY: 'LIBRARY',
+  LICENSED: 'LICENSED',
+  AI_GENERATED: 'AI_GENERATED'
+} as const
+
+export type AssetSource = (typeof AssetSource)[keyof typeof AssetSource]
+
+
+export const BiasCheckStatus = {
+  PENDING: 'PENDING',
+  PASSED: 'PASSED',
+  FAILED: 'FAILED'
+} as const
+
+export type BiasCheckStatus = (typeof BiasCheckStatus)[keyof typeof BiasCheckStatus]
+
+
+export const PromptKind = {
+  GRADING: 'GRADING',
+  FOLLOW_UP: 'FOLLOW_UP',
+  FEEDBACK_NOTE: 'FEEDBACK_NOTE',
+  GENERATION: 'GENERATION',
+  REVISION: 'REVISION',
+  PRESENTATION_SUGGESTION: 'PRESENTATION_SUGGESTION',
+  IMAGE: 'IMAGE'
+} as const
+
+export type PromptKind = (typeof PromptKind)[keyof typeof PromptKind]
 
 
 export const RunStatus = {

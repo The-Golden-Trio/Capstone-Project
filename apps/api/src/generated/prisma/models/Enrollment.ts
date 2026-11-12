@@ -182,11 +182,11 @@ export type EnrollmentWhereInput = {
   OR?: Prisma.EnrollmentWhereInput[]
   NOT?: Prisma.EnrollmentWhereInput | Prisma.EnrollmentWhereInput[]
   id?: Prisma.StringFilter<"Enrollment"> | string
-  userId?: Prisma.StringFilter<"Enrollment"> | string
+  userId?: Prisma.UuidFilter<"Enrollment"> | string
   roleCode?: Prisma.StringFilter<"Enrollment"> | string
   band?: Prisma.StringFilter<"Enrollment"> | string
   enrolledAt?: Prisma.DateTimeFilter<"Enrollment"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }
 
 export type EnrollmentOrderByWithRelationInput = {
@@ -195,7 +195,7 @@ export type EnrollmentOrderByWithRelationInput = {
   roleCode?: Prisma.SortOrder
   band?: Prisma.SortOrder
   enrolledAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
+  user?: Prisma.UserAccountOrderByWithRelationInput
 }
 
 export type EnrollmentWhereUniqueInput = Prisma.AtLeast<{
@@ -204,11 +204,11 @@ export type EnrollmentWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.EnrollmentWhereInput | Prisma.EnrollmentWhereInput[]
   OR?: Prisma.EnrollmentWhereInput[]
   NOT?: Prisma.EnrollmentWhereInput | Prisma.EnrollmentWhereInput[]
-  userId?: Prisma.StringFilter<"Enrollment"> | string
+  userId?: Prisma.UuidFilter<"Enrollment"> | string
   roleCode?: Prisma.StringFilter<"Enrollment"> | string
   band?: Prisma.StringFilter<"Enrollment"> | string
   enrolledAt?: Prisma.DateTimeFilter<"Enrollment"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }, "id" | "userId_roleCode_band">
 
 export type EnrollmentOrderByWithAggregationInput = {
@@ -227,7 +227,7 @@ export type EnrollmentScalarWhereWithAggregatesInput = {
   OR?: Prisma.EnrollmentScalarWhereWithAggregatesInput[]
   NOT?: Prisma.EnrollmentScalarWhereWithAggregatesInput | Prisma.EnrollmentScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Enrollment"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"Enrollment"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"Enrollment"> | string
   roleCode?: Prisma.StringWithAggregatesFilter<"Enrollment"> | string
   band?: Prisma.StringWithAggregatesFilter<"Enrollment"> | string
   enrolledAt?: Prisma.DateTimeWithAggregatesFilter<"Enrollment"> | Date | string
@@ -238,7 +238,7 @@ export type EnrollmentCreateInput = {
   roleCode: string
   band: string
   enrolledAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutEnrollmentsInput
+  user: Prisma.UserAccountCreateNestedOneWithoutEnrollmentsInput
 }
 
 export type EnrollmentUncheckedCreateInput = {
@@ -254,7 +254,7 @@ export type EnrollmentUpdateInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   enrolledAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutEnrollmentsNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutEnrollmentsNestedInput
 }
 
 export type EnrollmentUncheckedUpdateInput = {
@@ -415,7 +415,7 @@ export type EnrollmentScalarWhereInput = {
   OR?: Prisma.EnrollmentScalarWhereInput[]
   NOT?: Prisma.EnrollmentScalarWhereInput | Prisma.EnrollmentScalarWhereInput[]
   id?: Prisma.StringFilter<"Enrollment"> | string
-  userId?: Prisma.StringFilter<"Enrollment"> | string
+  userId?: Prisma.UuidFilter<"Enrollment"> | string
   roleCode?: Prisma.StringFilter<"Enrollment"> | string
   band?: Prisma.StringFilter<"Enrollment"> | string
   enrolledAt?: Prisma.DateTimeFilter<"Enrollment"> | Date | string
@@ -457,7 +457,7 @@ export type EnrollmentSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   roleCode?: boolean
   band?: boolean
   enrolledAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["enrollment"]>
 
 export type EnrollmentSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -466,7 +466,7 @@ export type EnrollmentSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   roleCode?: boolean
   band?: boolean
   enrolledAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["enrollment"]>
 
 export type EnrollmentSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -475,7 +475,7 @@ export type EnrollmentSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   roleCode?: boolean
   band?: boolean
   enrolledAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["enrollment"]>
 
 export type EnrollmentSelectScalar = {
@@ -488,19 +488,19 @@ export type EnrollmentSelectScalar = {
 
 export type EnrollmentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "roleCode" | "band" | "enrolledAt", ExtArgs["result"]["enrollment"]>
 export type EnrollmentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type EnrollmentIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type EnrollmentIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 
 export type $EnrollmentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Enrollment"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
+    user: Prisma.$UserAccountPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -902,7 +902,7 @@ readonly fields: EnrollmentFieldRefs;
  */
 export interface Prisma__EnrollmentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserAccountDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccountDefaultArgs<ExtArgs>>): Prisma.Prisma__UserAccountClient<runtime.Types.Result.GetResult<Prisma.$UserAccountPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

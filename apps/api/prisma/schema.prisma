@@ -18,97 +18,1044 @@ datasource db {
   provider = "postgresql"
 }
 
-/// Ba vai trò theo docs/report.md §5.5.
-enum Role {
-  USER // học sinh hoặc phụ huynh
-  CONTRIBUTOR // cựu sinh viên hoặc cố vấn
-  ADMIN
+/// ERD-01 `user_role_kind`: bốn actor của UC-00 (openapi `Role`).
+enum UserRoleKind {
+  EXPLORER
+  DOMAIN_EXPERT
+  CONTENT_ADMIN
+  SYSTEM_ADMIN
+
+  @@map("user_role_kind")
+}
+
+/// ERD-01 `account_status`.
+enum AccountStatus {
+  ACTIVE
+  DISABLED
+  DELETED
+
+  @@map("account_status")
+}
+
+/// ERD-01 `staff_role_kind`: vai của một người trong một nghề (FR-40).
+enum StaffRoleKind {
+  CONTENT_ADMIN
+  DOMAIN_EXPERT
+
+  @@map("staff_role_kind")
+}
+
+/// ERD-02 `occupation_status`.
+enum OccupationStatus {
+  DRAFT
+  PUBLISHED
+  RETIRED
+
+  @@map("occupation_status")
+}
+
+/// ERD-07 `notification_channel`. Giá trị chưa có trong openapi: đề xuất (07, A22+).
+enum NotificationChannel {
+  IN_APP
+  EMAIL
+
+  @@map("notification_channel")
 }
 
 enum ConsentMethod {
   GUARDIAN_EMAIL
 }
 
-// ══ Danh tính ══════════════════════════════════════════════════════════
+// ══ Danh tính (ERD-01) ═════════════════════════════════════════════════
 
-model User {
-  id           String    @id @default(cuid())
-  username     String    @unique
-  /// Có thể rỗng: tài khoản chỉ dùng tên đăng nhập thì chưa cần email.
-  email        String?   @unique
-  displayName  String
+/// ERD-01 `user_account`. Thêm hai cột ngoài ERD đã được duyệt (12/11, xem
+/// 07-van-de-mo A22): `username` để explorer cũ vẫn đăng nhập bằng tên, và
+/// `date_of_birth` để tính có cần người giám hộ đồng ý không.
+model UserAccount {
+  id           String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email        String?       @unique @db.VarChar(254)
+  username     String?       @unique @db.VarChar(32)
   /// Rỗng với tài khoản chỉ đăng nhập bằng Google.
-  passwordHash String?
-  role         Role      @default(USER)
-  /// Dùng để tính xem có cần người giám hộ đồng ý không.
-  dateOfBirth  DateTime? @db.Date
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  passwordHash String?       @map("password_hash")
+  displayName  String?       @map("display_name") @db.VarChar(80)
+  dateOfBirth  DateTime?     @map("date_of_birth") @db.Date
+  status       AccountStatus @default(ACTIVE)
+  createdAt    DateTime      @default(now()) @map("created_at")
+  lastSignInAt DateTime?     @map("last_sign_in_at")
+  deletedAt    DateTime?     @map("deleted_at")
 
-  oauthAccounts  OAuthAccount[]
-  refreshTokens  RefreshToken[]
-  consent        ParentalConsent?
-  gameProfile    GameProfile?
-  runs           ScenarioRun[]
-  bandSkills     UserBandSkill[]
-  eventAnswers   EventAnswer[]
-  eventAwards    EventAward[]
-  enrollments    Enrollment[]
+  roles               UserRole[]           @relation("roleOf")
+  grantedRoles        UserRole[]           @relation("roleGrantedBy")
+  googleIdentity      GoogleIdentity?
+  staffAssignments    StaffAssignment[]    @relation("assignmentOf")
+  assignmentsMade     StaffAssignment[]    @relation("assignmentBy")
+  sessions            AuthSession[]
+  passwordResetTokens PasswordResetToken[]
+  activityLogs        ActivityLog[]
+  notifications       Notification[]
+  domainsCreated      Domain[]
+  occupationsCreated  Occupation[]
+
+  levelsWritten          OccupationLevel[]       @relation("levelWrittenBy")
+  downsidesWritten       Downside[]              @relation("downsideWrittenBy")
+  rulesWritten           GenerationRule[]        @relation("ruleWrittenBy")
+  competenciesCreated    Competency[]            @relation("competencyCreatedBy")
+  scenariosAuthored      Scenario[]              @relation("scenarioAuthor")
+  scenariosOpened        Scenario[]              @relation("scenarioOpenedBy")
+  generationRequests     GenerationRun[]         @relation("generationRequestedBy")
+  referenceAnswers       ReferenceAnswer[]       @relation("referenceAnswerAuthor")
+  criteriaVersions       ReviewCriteriaVersion[] @relation("criteriaCreatedBy")
+  reviewsAssigned        ReviewAssignment[]      @relation("reviewAssignedTo")
+  reviewAssignmentsMade  ReviewAssignment[]      @relation("reviewAssignedBy")
+  lifecycleLogs          LifecycleLog[]          @relation("lifecycleActor")
+  assetsChecked          Asset[]                 @relation("assetCheckedBy")
+  presentationsDesigned  Presentation[]          @relation("presentationDesignedBy")
+  buildsBuilt            ScenarioBuild[]         @relation("buildBuiltBy")
+  promptTemplatesChanged PromptTemplate[]        @relation("promptChangedBy")
+
+  consent      ParentalConsent?
+  gameProfile  GameProfile?
+  runs         ScenarioRun[]
+  bandSkills   UserBandSkill[]
+  eventAnswers EventAnswer[]
+  eventAwards  EventAward[]
+  enrollments  Enrollment[]
+
+  @@map("user_account")
 }
 
-/// Liên kết nhà cung cấp đăng nhập. Bảng riêng thay vì cột `googleId` để
-/// thêm nhà cung cấp thứ hai chỉ là thêm dòng, và một người có thể vừa có
-/// mật khẩu vừa có liên kết Google.
-model OAuthAccount {
-  id                String   @id @default(cuid())
-  userId            String
-  provider          String
-  providerAccountId String
-  createdAt         DateTime @default(now())
+/// ERD-01 `user_role`: một người có thể giữ nhiều vai.
+model UserRole {
+  userId    String       @map("user_id") @db.Uuid
+  role      UserRoleKind
+  grantedBy String?      @map("granted_by") @db.Uuid
+  grantedAt DateTime     @default(now()) @map("granted_at")
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user    UserAccount  @relation("roleOf", fields: [userId], references: [id], onDelete: Cascade)
+  granter UserAccount? @relation("roleGrantedBy", fields: [grantedBy], references: [id], onDelete: SetNull)
 
-  @@unique([provider, providerAccountId])
-  @@index([userId])
+  @@id([userId, role])
+  @@map("user_role")
 }
 
-/// Token làm mới, lưu dạng băm và xoay vòng mỗi lần dùng.
-///
-/// `replacedById` nối các token thành một chuỗi. Nếu một token đã thu hồi
-/// lại được đem ra dùng, nghĩa là nó đã bị lộ — thu hồi cả chuỗi.
-model RefreshToken {
-  id           String    @id @default(cuid())
-  userId       String
-  tokenHash    String    @unique
-  expiresAt    DateTime
-  revokedAt    DateTime?
-  replacedById String?
-  userAgent    String?
-  createdAt    DateTime  @default(now())
+/// ERD-01 `google_identity`.
+model GoogleIdentity {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @unique @map("user_id") @db.Uuid
+  googleSub String   @unique @map("google_sub") @db.VarChar(255)
+  linkedAt  DateTime @default(now()) @map("linked_at")
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("google_identity")
+}
+
+/// ERD-01 `staff_assignment`: ai làm gì ở nghề nào (FR-40, FR-41).
+/// Migration thêm hai partial unique index: một CA còn hiệu lực mỗi nghề, và
+/// một người không giữ cùng vai hai lần ở cùng nghề.
+model StaffAssignment {
+  id           String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  occupationId String        @map("occupation_id") @db.Uuid
+  userId       String        @map("user_id") @db.Uuid
+  role         StaffRoleKind
+  assignedBy   String        @map("assigned_by") @db.Uuid
+  assignedAt   DateTime      @default(now()) @map("assigned_at")
+  endedAt      DateTime?     @map("ended_at")
+
+  occupation Occupation  @relation(fields: [occupationId], references: [id], onDelete: Restrict)
+  user       UserAccount @relation("assignmentOf", fields: [userId], references: [id], onDelete: Restrict)
+  assigner   UserAccount @relation("assignmentBy", fields: [assignedBy], references: [id], onDelete: Restrict)
 
   @@index([userId])
+  @@index([occupationId])
+  @@map("staff_assignment")
+}
+
+/// ERD-01 `auth_session`: một phiên đăng nhập, giữ băm của refresh token hiện
+/// hành. Mỗi lần refresh thay băm tại chỗ (xoay vòng).
+model AuthSession {
+  id               String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId           String    @map("user_id") @db.Uuid
+  refreshTokenHash String    @unique @map("refresh_token_hash") @db.Char(64)
+  createdAt        DateTime  @default(now()) @map("created_at")
+  lastSeenAt       DateTime  @default(now()) @map("last_seen_at")
+  expiresAt        DateTime  @map("expires_at")
+  revokedAt        DateTime? @map("revoked_at")
+
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("auth_session")
+}
+
+/// ERD-01 `password_reset_token`.
+model PasswordResetToken {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  tokenHash String    @unique @map("token_hash") @db.Char(64)
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("password_reset_token")
+}
+
+/// ERD-01 `activity_log`: dấu vết thao tác của người dùng (đăng nhập, thao tác staff).
+model ActivityLog {
+  id         BigInt   @id @default(autoincrement())
+  actorId    String?  @map("actor_id") @db.Uuid
+  action     String   @db.VarChar(64)
+  targetType String?  @map("target_type") @db.VarChar(40)
+  targetId   String?  @map("target_id") @db.Uuid
+  detail     Json?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  actor UserAccount? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([actorId, createdAt])
+  @@map("activity_log")
 }
 
 /// Đồng ý của người giám hộ cho tài khoản dưới 16 tuổi (Nghị định 13/2023/NĐ-CP).
 /// Bản đồ án ghi nhận chứ chưa xác minh — giao diện nói rõ điều đó.
+/// Bảng prototype, ngoài ERD (07-van-de-mo A22).
 model ParentalConsent {
   id            String        @id @default(cuid())
-  userId        String        @unique
+  userId        String        @unique @db.Uuid
   guardianName  String
   guardianEmail String
   method        ConsentMethod @default(GUARDIAN_EMAIL)
   consentedAt   DateTime      @default(now())
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ══ Danh mục nghề (ERD-02) ═════════════════════════════════════════════
+
+/// ERD-02 `domain`.
+model Domain {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  code      String   @unique @db.VarChar(40)
+  name      String   @db.VarChar(120)
+  createdBy String   @map("created_by") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at")
+
+  creator     UserAccount  @relation(fields: [createdBy], references: [id], onDelete: Restrict)
+  occupations Occupation[]
+
+  @@map("domain")
+}
+
+/// ERD-02 `occupation`. `code` trùng mã nghề của dữ liệu (SWE_BACKEND…).
+model Occupation {
+  id          String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  domainId    String           @map("domain_id") @db.Uuid
+  code        String           @unique @db.VarChar(40)
+  name        String           @db.VarChar(120)
+  summary     String?
+  riasecCode  String?          @map("riasec_code") @db.VarChar(3)
+  status      OccupationStatus @default(DRAFT)
+  createdBy   String           @map("created_by") @db.Uuid
+  createdAt   DateTime         @default(now()) @map("created_at")
+  publishedAt DateTime?        @map("published_at")
+  retiredAt   DateTime?        @map("retired_at")
+
+  domain           Domain                  @relation(fields: [domainId], references: [id], onDelete: Restrict)
+  creator          UserAccount             @relation(fields: [createdBy], references: [id], onDelete: Restrict)
+  staffAssignments StaffAssignment[]
+  levels           OccupationLevel[]
+  downsides        Downside[]
+  generationRules  GenerationRule[]
+  criteriaVersions ReviewCriteriaVersion[]
+  promptTemplates  PromptTemplate[]
+
+  @@index([domainId])
+  @@map("occupation")
+}
+
+// ══ Thông báo (ERD-07) ═════════════════════════════════════════════════
+
+/// ERD-07 `notification`: mỗi kênh một dòng.
+model Notification {
+  id          String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  recipientId String              @map("recipient_id") @db.Uuid
+  channel     NotificationChannel
+  template    String              @db.VarChar(60)
+  payload     Json
+  createdAt   DateTime            @default(now()) @map("created_at")
+  sentAt      DateTime?           @map("sent_at")
+  readAt      DateTime?           @map("read_at")
+
+  recipient UserAccount @relation(fields: [recipientId], references: [id], onDelete: Cascade)
+
+  @@index([recipientId, channel, createdAt])
+  @@map("notification")
+}
+
+// ══ Hồ sơ nghề (ERD-02, phần cần cho soạn scenario) ═══════════════════
+
+/// ERD-02 `competency_kind`.
+enum CompetencyKind {
+  EXPERTISE
+  SOFT_SKILL
+
+  @@map("competency_kind")
+}
+
+/// ERD-02 `proficiency`.
+enum Proficiency {
+  FAMILIAR
+  PROFICIENT
+  EXPERT
+
+  @@map("proficiency")
+}
+
+/// ERD-02 `occupation_level`.
+model OccupationLevel {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  occupationId    String   @map("occupation_id") @db.Uuid
+  levelNo         Int      @map("level_no") @db.SmallInt
+  band            String   @db.VarChar(3)
+  title           String   @db.VarChar(120)
+  description     String
+  futureRole      String?  @map("future_role")
+  creditThreshold Int      @map("credit_threshold")
+  salaryMin       Decimal? @map("salary_min") @db.Decimal(12, 0)
+  salaryMax       Decimal? @map("salary_max") @db.Decimal(12, 0)
+  salaryCurrency  String?  @map("salary_currency") @db.Char(3)
+  writtenBy       String?  @map("written_by") @db.Uuid
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  occupation   Occupation        @relation(fields: [occupationId], references: [id], onDelete: Restrict)
+  writer       UserAccount?      @relation("levelWrittenBy", fields: [writtenBy], references: [id], onDelete: SetNull)
+  tasks        Task[]
+  competencies LevelCompetency[]
+
+  @@unique([occupationId, levelNo])
+  @@map("occupation_level")
+}
+
+/// ERD-02 `downside`.
+model Downside {
+  id           String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  occupationId String @map("occupation_id") @db.Uuid
+  text         String
+  sortOrder    Int    @map("sort_order") @db.SmallInt
+  writtenBy    String @map("written_by") @db.Uuid
+
+  occupation Occupation  @relation(fields: [occupationId], references: [id], onDelete: Restrict)
+  writer     UserAccount @relation("downsideWrittenBy", fields: [writtenBy], references: [id], onDelete: Restrict)
+
+  @@index([occupationId])
+  @@map("downside")
+}
+
+/// ERD-02 `generation_rule`: luật DE viết cho việc sinh scenario của nghề.
+model GenerationRule {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  occupationId String   @map("occupation_id") @db.Uuid
+  ruleText     String   @map("rule_text")
+  writtenBy    String   @map("written_by") @db.Uuid
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  occupation Occupation  @relation(fields: [occupationId], references: [id], onDelete: Restrict)
+  writer     UserAccount @relation("ruleWrittenBy", fields: [writtenBy], references: [id], onDelete: Restrict)
+
+  @@index([occupationId])
+  @@map("generation_rule")
+}
+
+/// ERD-02 `competency`. `source_record_id` chưa có FK: bảng `reference_record` thuộc P1b.
+model Competency {
+  id             String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  code           String         @unique @db.VarChar(60)
+  kind           CompetencyKind
+  name           String         @db.VarChar(160)
+  indicator      String
+  sourceRecordId String?        @map("source_record_id") @db.Uuid
+  createdBy      String         @map("created_by") @db.Uuid
+
+  creator        UserAccount       @relation("competencyCreatedBy", fields: [createdBy], references: [id], onDelete: Restrict)
+  levels         LevelCompetency[]
+  scenarioSkills ScenarioSkill[]
+  rubricCriteria RubricCriterion[]
+  randomEvents   RandomEvent[]
+
+  @@map("competency")
+}
+
+/// ERD-02 `level_competency`.
+model LevelCompetency {
+  levelId      String      @map("level_id") @db.Uuid
+  competencyId String      @map("competency_id") @db.Uuid
+  proficiency  Proficiency
+
+  level      OccupationLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  competency Competency      @relation(fields: [competencyId], references: [id], onDelete: Restrict)
+
+  @@id([levelId, competencyId])
+  @@map("level_competency")
+}
+
+/// ERD-02 `task`: một việc của một cấp; mỗi task có tối đa một scenario còn hiệu lực (FR-33).
+model Task {
+  id             String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  levelId        String  @map("level_id") @db.Uuid
+  sourceRecordId String? @map("source_record_id") @db.Uuid
+  text           String
+  sortOrder      Int     @map("sort_order") @db.SmallInt
+
+  level     OccupationLevel @relation(fields: [levelId], references: [id], onDelete: Restrict)
+  scenarios Scenario[]
+
+  @@index([levelId])
+  @@map("task")
+}
+
+// ══ Soạn scenario (ERD-03) ══════════════════════════════════════════════
+
+/// ERD-03 `scenario_status` (SM-01).
+enum ScenarioStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  IN_PLAYTEST
+  READY
+  PUBLISHED
+  RETIRED
+
+  @@map("scenario_status")
+}
+
+/// ERD-03 `scenario_archetype` (D-22).
+enum ScenarioArchetype {
+  S_EXEC
+  S_AMBIG
+  S_INCIDENT
+  S_CONFLICT
+  S_REVIEW
+  S_DECISION
+
+  @@map("scenario_archetype")
+}
+
+/// ERD-03 `company_type`.
+enum CompanyType {
+  OUTSOURCING
+  PRODUCT_LOCAL
+  ENTERPRISE_BANK
+  BIGTECH_FDI
+
+  @@map("company_type")
+}
+
+/// openapi `TaskType`.
+enum TaskType {
+  FREE_TEXT
+  CHOICE
+  ORDERING
+  PRIORITIZING
+
+  @@map("task_type")
+}
+
+/// ERD-03 `pick_rule`.
+enum PickRule {
+  MUST
+  SHOULD
+  MUST_NOT
+  NEUTRAL
+
+  @@map("pick_rule")
+}
+
+/// ERD-03 `ending_type`.
+enum EndingType {
+  GOOD
+  PARTIAL
+  BAD
+  SECRET
+
+  @@map("ending_type")
+}
+
+/// ERD-03 `generation_kind`.
+enum GenerationKind {
+  GENERATE
+  REVISE
+  SUGGEST_PRESENTATION
+  GENERATE_ASSET
+
+  @@map("generation_kind")
+}
+
+/// ERD-03 `difficulty_stratum`.
+enum DifficultyStratum {
+  EASY
+  MEDIUM
+  HARD
+
+  @@map("difficulty_stratum")
+}
+
+/// ERD-03 `scenario`. `row_version` là ETag của `saveScenarioContent` (412 khi lệch).
+/// Migration thêm partial unique: mỗi task một scenario chưa RETIRED (FR-33).
+model Scenario {
+  id               String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  taskId           String             @map("task_id") @db.Uuid
+  status           ScenarioStatus     @default(DRAFT)
+  authorId         String?            @map("author_id") @db.Uuid
+  openedBy         String             @map("opened_by") @db.Uuid
+  authorContext    String?            @map("author_context")
+  archetype        ScenarioArchetype?
+  companyType      CompanyType?       @map("company_type")
+  intro            String?
+  situation        String?
+  stakes           String?
+  estimatedMinutes Decimal?           @map("estimated_minutes") @db.Decimal(3, 1)
+  rowVersion       Int                @default(1) @map("row_version")
+  createdAt        DateTime           @default(now()) @map("created_at")
+  updatedAt        DateTime           @updatedAt @map("updated_at")
+
+  task              Task               @relation(fields: [taskId], references: [id], onDelete: Restrict)
+  author            UserAccount?       @relation("scenarioAuthor", fields: [authorId], references: [id], onDelete: Restrict)
+  opener            UserAccount        @relation("scenarioOpenedBy", fields: [openedBy], references: [id], onDelete: Restrict)
+  skills            ScenarioSkill[]
+  cast              CastMember[]
+  activities        Activity[]
+  randomEvents      RandomEvent[]
+  endings           Ending[]
+  sideQuests        SideQuest[]
+  generationRuns    GenerationRun[]
+  reviewAssignments ReviewAssignment[]
+  lifecycleLogs     LifecycleLog[]
+  presentation      Presentation?
+  builds            ScenarioBuild[]
+
+  @@index([taskId])
+  @@index([authorId])
+  @@map("scenario")
+}
+
+/// ERD-03 `scenario_skill`: năng lực scenario nhắm tới (tác giả chọn khi sinh).
+model ScenarioSkill {
+  scenarioId   String @map("scenario_id") @db.Uuid
+  competencyId String @map("competency_id") @db.Uuid
+
+  scenario   Scenario   @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  competency Competency @relation(fields: [competencyId], references: [id], onDelete: Restrict)
+
+  @@id([scenarioId, competencyId])
+  @@map("scenario_skill")
+}
+
+/// ERD-03 `cast_member`.
+model CastMember {
+  id          String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId  String  @map("scenario_id") @db.Uuid
+  npcKey      String  @map("npc_key") @db.VarChar(40)
+  name        String? @db.VarChar(80)
+  roleInScene String  @map("role_in_scene") @db.VarChar(120)
+  pressure    String?
+  voice       String?
+
+  scenario     Scenario         @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  presentation PresentationNpc?
+
+  @@unique([scenarioId, npcKey])
+  @@map("cast_member")
+}
+
+/// ERD-03 `activity`.
+model Activity {
+  id              String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId      String  @map("scenario_id") @db.Uuid
+  activityKey     String  @map("activity_key") @db.VarChar(20)
+  summary         String  @db.VarChar(160)
+  setup           String
+  npcLine         String? @map("npc_line")
+  inputPrompt     String  @map("input_prompt")
+  jobScope        String  @map("job_scope")
+  closingLine     String  @map("closing_line")
+  isOrigin        Boolean @map("is_origin")
+  forwardToId     String? @map("forward_to_id") @db.Uuid
+  pickCount       Int?    @map("pick_count") @db.SmallInt
+  followupLimit   Int     @map("followup_limit") @db.SmallInt
+  followupGoal    String? @map("followup_goal")
+  defaultFollowup String? @map("default_followup")
+
+  scenario         Scenario              @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  forwardTo        Activity?             @relation("activityForward", fields: [forwardToId], references: [id], onDelete: SetNull)
+  forwardedFrom    Activity[]            @relation("activityForward")
+  allowedTypes     ActivityAllowedType[]
+  items            ActivityItem[]
+  rubric           RubricCriterion[]
+  hints            Hint[]
+  randomEvents     RandomEvent[]
+  referenceAnswers ReferenceAnswer[]
+  presentation     PresentationActivity?
+
+  @@unique([scenarioId, activityKey])
+  @@map("activity")
+}
+
+/// ERD-03 `activity_allowed_type`: các dạng task DE cho phép; CA chọn một trong tập này (FR-35).
+model ActivityAllowedType {
+  activityId String   @map("activity_id") @db.Uuid
+  taskType   TaskType @map("task_type")
+
+  activity     Activity               @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  presentation PresentationActivity[]
+
+  @@id([activityId, taskType])
+  @@map("activity_allowed_type")
+}
+
+/// ERD-03 `activity_item`: lựa chọn / mục của câu đóng, điểm theo thang 0/1/2 (D-116).
+model ActivityItem {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  activityId      String    @map("activity_id") @db.Uuid
+  itemKey         String    @map("item_key") @db.VarChar(20)
+  text            String
+  score           Int?      @db.SmallInt
+  why             String?
+  correctPosition Int?      @map("correct_position") @db.SmallInt
+  pickRule        PickRule? @map("pick_rule")
+  note            String?
+  sortOrder       Int       @map("sort_order") @db.SmallInt
+
+  activity Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+
+  @@unique([activityId, itemKey])
+  @@map("activity_item")
+}
+
+/// ERD-03 `rubric_criterion`: mốc 2/1/0 + dấu hiệu phản tác dụng (D-116).
+model RubricCriterion {
+  id                     String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  activityId             String  @map("activity_id") @db.Uuid
+  competencyId           String  @map("competency_id") @db.Uuid
+  anchor2                String  @map("anchor_2")
+  anchor1                String  @map("anchor_1")
+  anchor0                String  @map("anchor_0")
+  counterproductiveSigns String? @map("counterproductive_signs")
+
+  activity   Activity               @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  competency Competency             @relation(fields: [competencyId], references: [id], onDelete: Restrict)
+  scores     ReferenceAnswerScore[]
+
+  @@unique([activityId, competencyId])
+  @@map("rubric_criterion")
+}
+
+/// ERD-03 `hint`.
+model Hint {
+  id         String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  activityId String @map("activity_id") @db.Uuid
+  text       String
+  sortOrder  Int    @map("sort_order") @db.SmallInt
+
+  activity Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+
+  @@map("hint")
+}
+
+/// ERD-03 `random_event`.
+model RandomEvent {
+  id                     String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId             String  @map("scenario_id") @db.Uuid
+  activityId             String  @map("activity_id") @db.Uuid
+  chance                 Decimal @db.Decimal(3, 2)
+  text                   String
+  prompt                 String
+  targetCompetencyId     String  @map("target_competency_id") @db.Uuid
+  anchor2                String  @map("anchor_2")
+  anchor1                String  @map("anchor_1")
+  anchor0                String  @map("anchor_0")
+  counterproductiveSigns String? @map("counterproductive_signs")
+
+  scenario         Scenario   @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  activity         Activity   @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  targetCompetency Competency @relation(fields: [targetCompetencyId], references: [id], onDelete: Restrict)
+
+  @@map("random_event")
+}
+
+/// ERD-03 `ending`.
+model Ending {
+  id             String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId     String     @map("scenario_id") @db.Uuid
+  type           EndingType
+  priority       Int        @db.SmallInt
+  minTotalScore  Int?       @map("min_total_score") @db.SmallInt
+  extraBehaviour String?    @map("extra_behaviour")
+  text           String
+  reveals        String?
+
+  scenario Scenario @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+
+  @@map("ending")
+}
+
+/// ERD-03 `side_quest`.
+model SideQuest {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId String   @map("scenario_id") @db.Uuid
+  prompt     String
+  taskType   TaskType @map("task_type")
+  points     Int      @db.SmallInt
+  answerKey  Json?    @map("answer_key")
+
+  scenario Scenario @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+
+  @@map("side_quest")
+}
+
+/// ERD-03 `generation_run`: một lần sinh / sửa bằng AI (FR-23).
+/// Lệch ERD (07 A22+): chưa có `model_config_id` vì `model_config` chưa
+/// dựng; model đã dùng tra ở `usage_cost` của `ai_job`. `ai_job_id` là text
+/// như `ai_job.id` của prototype.
+model GenerationRun {
+  id          String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId  String         @map("scenario_id") @db.Uuid
+  kind        GenerationKind
+  requestedBy String         @map("requested_by") @db.Uuid
+  aiJobId     String         @unique @map("ai_job_id")
+  input       Json
+  output      Json?
+  checkPassed Boolean?       @map("check_passed")
+  checkReport Json?          @map("check_report")
+  createdAt   DateTime       @default(now()) @map("created_at")
+
+  scenario  Scenario    @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  requester UserAccount @relation("generationRequestedBy", fields: [requestedBy], references: [id], onDelete: Restrict)
+  aiJob     AiJob       @relation(fields: [aiJobId], references: [id], onDelete: Restrict)
+
+  @@index([scenarioId, createdAt])
+  @@map("generation_run")
+}
+
+/// ERD-03 `reference_answer`: câu mẫu của DE, chỉ lưu khi qua kiểm (FR-24).
+model ReferenceAnswer {
+  id               String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  activityId       String            @map("activity_id") @db.Uuid
+  authorId         String            @map("author_id") @db.Uuid
+  answerText       String            @map("answer_text")
+  stratum          DifficultyStratum
+  validationPassed Boolean           @map("validation_passed")
+  createdAt        DateTime          @default(now()) @map("created_at")
+
+  activity Activity               @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  author   UserAccount            @relation("referenceAnswerAuthor", fields: [authorId], references: [id], onDelete: Restrict)
+  scores   ReferenceAnswerScore[]
+
+  @@index([activityId])
+  @@map("reference_answer")
+}
+
+/// ERD-03 `reference_answer_score`. `score` NULL = "không xét" (D-116).
+model ReferenceAnswerScore {
+  referenceAnswerId String  @map("reference_answer_id") @db.Uuid
+  criterionId       String  @map("criterion_id") @db.Uuid
+  score             Int?    @db.SmallInt
+  counterproductive Boolean @default(false)
+
+  referenceAnswer ReferenceAnswer @relation(fields: [referenceAnswerId], references: [id], onDelete: Cascade)
+  criterion       RubricCriterion @relation(fields: [criterionId], references: [id], onDelete: Cascade)
+
+  @@id([referenceAnswerId, criterionId])
+  @@map("reference_answer_score")
+}
+
+// ══ Duyệt, trình bày, bản nháp (ERD-04) ═════════════════════════════════
+
+/// ERD-04 `assignment_status`.
+enum AssignmentStatus {
+  ACTIVE
+  COMPLETED
+  REASSIGNED
+
+  @@map("assignment_status")
+}
+
+/// ERD-04 `review_decision`.
+enum ReviewDecision {
+  APPROVE
+  REQUEST_CHANGES
+  REJECT
+
+  @@map("review_decision")
+}
+
+/// ERD-04 `criterion_verdict`.
+enum CriterionVerdict {
+  MET
+  NOT_MET
+
+  @@map("criterion_verdict")
+}
+
+/// ERD-04 `asset_kind`.
+enum AssetKind {
+  NPC
+  BACKGROUND
+  SCENE
+  ICON
+
+  @@map("asset_kind")
+}
+
+/// ERD-04 `asset_source`.
+enum AssetSource {
+  LIBRARY
+  LICENSED
+  AI_GENERATED
+
+  @@map("asset_source")
+}
+
+/// ERD-04 `bias_check_status`.
+enum BiasCheckStatus {
+  PENDING
+  PASSED
+  FAILED
+
+  @@map("bias_check_status")
+}
+
+/// ERD-04 `review_criteria_version`: tiêu chí duyệt của nghề, có version (FR-32).
+model ReviewCriteriaVersion {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  occupationId String   @map("occupation_id") @db.Uuid
+  versionNo    Int      @map("version_no")
+  createdBy    String   @map("created_by") @db.Uuid
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  occupation Occupation        @relation(fields: [occupationId], references: [id], onDelete: Restrict)
+  creator    UserAccount       @relation("criteriaCreatedBy", fields: [createdBy], references: [id], onDelete: Restrict)
+  criteria   ReviewCriterion[]
+  reviews    Review[]
+
+  @@unique([occupationId, versionNo])
+  @@map("review_criteria_version")
+}
+
+/// ERD-04 `review_criterion`.
+model ReviewCriterion {
+  id                String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  criteriaVersionId String @map("criteria_version_id") @db.Uuid
+  text              String
+  sortOrder         Int    @map("sort_order") @db.SmallInt
+
+  version ReviewCriteriaVersion @relation(fields: [criteriaVersionId], references: [id], onDelete: Cascade)
+  answers ReviewAnswer[]
+
+  @@map("review_criterion")
+}
+
+/// ERD-04 `review_assignment`: người duyệt được giao một scenario (FR-34).
+/// Migration thêm partial unique: một assignment ACTIVE mỗi scenario.
+model ReviewAssignment {
+  id         String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId String           @map("scenario_id") @db.Uuid
+  reviewerId String           @map("reviewer_id") @db.Uuid
+  assignedBy String           @map("assigned_by") @db.Uuid
+  deadlineAt DateTime         @map("deadline_at")
+  status     AssignmentStatus @default(ACTIVE)
+  replacesId String?          @unique @map("replaces_id") @db.Uuid
+  remindedAt DateTime?        @map("reminded_at")
+  assignedAt DateTime         @default(now()) @map("assigned_at")
+
+  scenario   Scenario          @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  reviewer   UserAccount       @relation("reviewAssignedTo", fields: [reviewerId], references: [id], onDelete: Restrict)
+  assigner   UserAccount       @relation("reviewAssignedBy", fields: [assignedBy], references: [id], onDelete: Restrict)
+  replaces   ReviewAssignment? @relation("reviewReplaces", fields: [replacesId], references: [id], onDelete: SetNull)
+  replacedBy ReviewAssignment? @relation("reviewReplaces")
+  reviews    Review[]
+
+  @@index([reviewerId, status])
+  @@index([scenarioId])
+  @@map("review_assignment")
+}
+
+/// ERD-04 `review`: một quyết định duyệt.
+model Review {
+  id                String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  assignmentId      String         @map("assignment_id") @db.Uuid
+  criteriaVersionId String         @map("criteria_version_id") @db.Uuid
+  decision          ReviewDecision
+  comment           String?
+  decidedAt         DateTime       @default(now()) @map("decided_at")
+
+  assignment      ReviewAssignment      @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  criteriaVersion ReviewCriteriaVersion @relation(fields: [criteriaVersionId], references: [id], onDelete: Restrict)
+  answers         ReviewAnswer[]
+
+  @@map("review")
+}
+
+/// ERD-04 `review_answer`: đánh giá từng tiêu chí.
+model ReviewAnswer {
+  reviewId    String           @map("review_id") @db.Uuid
+  criterionId String           @map("criterion_id") @db.Uuid
+  verdict     CriterionVerdict
+  comment     String?
+
+  review    Review          @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  criterion ReviewCriterion @relation(fields: [criterionId], references: [id], onDelete: Restrict)
+
+  @@id([reviewId, criterionId])
+  @@map("review_answer")
+}
+
+/// ERD-04 `lifecycle_log`: mỗi lần chuyển trạng thái SM-01 một dòng, ghi
+/// trong cùng transaction với việc đổi trạng thái (NFR-16).
+model LifecycleLog {
+  id         BigInt          @id @default(autoincrement())
+  scenarioId String          @map("scenario_id") @db.Uuid
+  fromStatus ScenarioStatus? @map("from_status")
+  toStatus   ScenarioStatus  @map("to_status")
+  action     String          @db.VarChar(40)
+  actorId    String          @map("actor_id") @db.Uuid
+  note       String?
+  createdAt  DateTime        @default(now()) @map("created_at")
+
+  scenario Scenario    @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  actor    UserAccount @relation("lifecycleActor", fields: [actorId], references: [id], onDelete: Restrict)
+
+  @@index([scenarioId, createdAt])
+  @@map("lifecycle_log")
+}
+
+/// ERD-04 `asset`: ảnh trong thư viện (C07). File nằm ở kho object (`storage_key`).
+model Asset {
+  id              String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  kind            AssetKind
+  storageKey      String          @unique @map("storage_key") @db.VarChar(255)
+  source          AssetSource
+  sourceNote      String?         @map("source_note")
+  generationRunId String?         @map("generation_run_id") @db.Uuid
+  biasCheck       BiasCheckStatus @default(PENDING) @map("bias_check")
+  checkedBy       String?         @map("checked_by") @db.Uuid
+  createdAt       DateTime        @default(now()) @map("created_at")
+
+  checker                 UserAccount?           @relation("assetCheckedBy", fields: [checkedBy], references: [id], onDelete: SetNull)
+  presentationBackgrounds Presentation[]
+  presentationScenes      PresentationActivity[]
+  presentationAvatars     PresentationNpc[]
+
+  @@index([kind, biasCheck])
+  @@map("asset")
+}
+
+/// ERD-04 `presentation`: lựa chọn trình bày của CA cho một scenario (C06).
+model Presentation {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId        String   @unique @map("scenario_id") @db.Uuid
+  designedBy        String   @map("designed_by") @db.Uuid
+  backgroundAssetId String?  @map("background_asset_id") @db.Uuid
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  scenario   Scenario               @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  designer   UserAccount            @relation("presentationDesignedBy", fields: [designedBy], references: [id], onDelete: Restrict)
+  background Asset?                 @relation(fields: [backgroundAssetId], references: [id], onDelete: SetNull)
+  activities PresentationActivity[]
+  npcs       PresentationNpc[]
+
+  @@map("presentation")
+}
+
+/// ERD-04 `presentation_activity`. Khoá ghép tới `activity_allowed_type`: CA
+/// chỉ chọn được dạng task DE cho phép (FR-35).
+model PresentationActivity {
+  activityId     String   @id @map("activity_id") @db.Uuid
+  presentationId String   @map("presentation_id") @db.Uuid
+  taskType       TaskType @map("task_type")
+  sceneAssetId   String?  @map("scene_asset_id") @db.Uuid
+
+  activity     Activity            @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  allowedType  ActivityAllowedType @relation(fields: [activityId, taskType], references: [activityId, taskType], onDelete: Cascade)
+  presentation Presentation        @relation(fields: [presentationId], references: [id], onDelete: Cascade)
+  scene        Asset?              @relation(fields: [sceneAssetId], references: [id], onDelete: SetNull)
+
+  @@map("presentation_activity")
+}
+
+/// ERD-04 `presentation_npc`.
+model PresentationNpc {
+  castMemberId   String @id @map("cast_member_id") @db.Uuid
+  presentationId String @map("presentation_id") @db.Uuid
+  avatarAssetId  String @map("avatar_asset_id") @db.Uuid
+
+  castMember   CastMember   @relation(fields: [castMemberId], references: [id], onDelete: Cascade)
+  presentation Presentation @relation(fields: [presentationId], references: [id], onDelete: Cascade)
+  avatar       Asset        @relation(fields: [avatarAssetId], references: [id], onDelete: Restrict)
+
+  @@map("presentation_npc")
+}
+
+/// ERD-04 `scenario_build`: ảnh chụp bất biến của nội dung + trình bày để chơi thử.
+model ScenarioBuild {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  scenarioId  String   @map("scenario_id") @db.Uuid
+  content     Json
+  contentHash String   @map("content_hash") @db.Char(64)
+  builtBy     String   @map("built_by") @db.Uuid
+  builtAt     DateTime @default(now()) @map("built_at")
+
+  scenario Scenario    @relation(fields: [scenarioId], references: [id], onDelete: Restrict)
+  builder  UserAccount @relation("buildBuiltBy", fields: [builtBy], references: [id], onDelete: Restrict)
+
+  @@index([scenarioId, builtAt])
+  @@map("scenario_build")
+}
+
+// ══ Prompt hệ thống (ERD-07) ═════════════════════════════════════════════
+
+/// openapi `PromptKind`.
+enum PromptKind {
+  GRADING
+  FOLLOW_UP
+  FEEDBACK_NOTE
+  GENERATION
+  REVISION
+  PRESENTATION_SUGGESTION
+  IMAGE
+
+  @@map("prompt_kind")
+}
+
+/// ERD-07 `prompt_template`: prompt hệ thống theo nghề, bản cao nhất có hiệu lực (FR-44).
+model PromptTemplate {
+  id             String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  occupationId   String     @map("occupation_id") @db.Uuid
+  kind           PromptKind
+  versionNo      Int        @map("version_no")
+  text           String
+  changeNote     String     @map("change_note") @db.VarChar(300)
+  restoredFromId String?    @map("restored_from_id") @db.Uuid
+  changedBy      String     @map("changed_by") @db.Uuid
+  changedAt      DateTime   @default(now()) @map("changed_at")
+
+  occupation   Occupation       @relation(fields: [occupationId], references: [id], onDelete: Restrict)
+  restoredFrom PromptTemplate?  @relation("promptRestoredFrom", fields: [restoredFromId], references: [id], onDelete: SetNull)
+  restores     PromptTemplate[] @relation("promptRestoredFrom")
+  changer      UserAccount      @relation("promptChangedBy", fields: [changedBy], references: [id], onDelete: Restrict)
+  aiJobs       AiJob[]
+
+  @@unique([occupationId, kind, versionNo])
+  @@map("prompt_template")
 }
 
 // ══ Tiến trình chơi ════════════════════════════════════════════════════
 
 /// Phần hồ sơ không mở khoá gì cả: chân dung tính cách và các mốc đã qua.
 model GameProfile {
-  userId       String   @id
+  userId       String   @id @db.Uuid
   /// CHỈ phần chân dung đến từ bài tự vấn.
   ///
   /// Phần đến từ nhiệm vụ phụ không lưu ở đây mà cộng lại từ bảng EventAnswer
@@ -119,7 +1066,7 @@ model GameProfile {
   eventsPlayed Int      @default(0)
   updatedAt    DateTime @updatedAt
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 /// Một lượt chơi kịch bản sâu.
@@ -128,27 +1075,27 @@ model GameProfile {
 /// gửi lên khi kết thúc. Giữ cả hai nghĩa là mọi điểm đã trao đều tái dựng
 /// lại được — không phải tin, mà kiểm được.
 model ScenarioRun {
-  id            String    @id @default(cuid())
-  userId        String
-  scenarioKey   String
-  roleCode      String
-  band          String
-  seed          BigInt
+  id             String    @id @default(cuid())
+  userId         String    @db.Uuid
+  scenarioKey    String
+  roleCode       String
+  band           String
+  seed           BigInt
   /// Phiên bản nội dung đã ghim cho lượt này.
   ///
   /// Máy chủ chấm điểm bằng cách CHẠY LẠI lượt chơi. Nội dung nay nằm trong
   /// database nên có thể đổi giữa chừng; đổi rồi mà chạy lại bằng bản mới thì
   /// lượt chơi rẽ nhánh khác và điểm ra sai. Ghim số này lúc mở màn khiến một
   /// lượt đang dở trở thành bất biến.
-  contentVersion Int      @default(0)
-  actions       Json?
-  startedAt     DateTime  @default(now())
-  completedAt   DateTime?
-  endingId      String?
-  endingType    String?
-  pointsAwarded Int       @default(0)
+  contentVersion Int       @default(0)
+  actions        Json?
+  startedAt      DateTime  @default(now())
+  completedAt    DateTime?
+  endingId       String?
+  endingType     String?
+  pointsAwarded  Int       @default(0)
   /// Người chơi chấm tình huống có giống thực tế không (1–5 sao).
-  rating        Int?
+  rating         Int?
 
   /// `replay`: luồng prototype (gửi cả chuỗi hành động một lần, chấm bằng
   /// chạy lại). `events`: luồng có AI (SD-01) — mỗi câu gửi ngay, lượt chơi
@@ -161,7 +1108,7 @@ model ScenarioRun {
   /// Bản sao của trạng thái fold từ `run_event`, để tra nhanh; nguồn chân lý là chuỗi sự kiện.
   currentActivityKey String?
 
-  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user     UserAccount   @relation(fields: [userId], references: [id], onDelete: Cascade)
   evidence RunEvidence[]
   events   RunEvent[]
   answers  Answer[]
@@ -200,17 +1147,17 @@ model RunEvent {
 
 /// ERD-06 `answer`. `id` do máy khách tạo, nên gửi lại cùng câu là an toàn (NFR-04).
 model Answer {
-  id               String    @id
-  runId            String    @map("run_id")
-  activityKey      String    @map("activity_key")
-  followupNo       Int       @map("followup_no")
-  followupQuestion String?   @map("followup_question")
-  taskType         String    @map("task_type")
+  id               String   @id
+  runId            String   @map("run_id")
+  activityKey      String   @map("activity_key")
+  followupNo       Int      @map("followup_no")
+  followupQuestion String?  @map("followup_question")
+  taskType         String   @map("task_type")
   text             String?
   selection        Json?
   /// Mức của câu đóng, chấm bằng khoá của chuyên gia.
-  systemScore      Int?      @map("system_score")
-  submittedAt      DateTime  @default(now()) @map("submitted_at")
+  systemScore      Int?     @map("system_score")
+  submittedAt      DateTime @default(now()) @map("submitted_at")
 
   run        ScenarioRun @relation(fields: [runId], references: [id], onDelete: Cascade)
   assessment Assessment?
@@ -230,16 +1177,16 @@ enum AssessmentStatus {
 
 /// ERD-06 `assessment`. Chưa có `model_config` (ERD-07): bộ model ghi ở `judge_result.model_id`.
 model Assessment {
-  id         String           @id @default(cuid())
-  answerId   String           @unique @map("answer_id")
-  aiJobId    String           @map("ai_job_id")
-  status     AssessmentStatus @default(QUEUED)
-  panelSize  Int?             @map("panel_size")
-  method     String?
-  score      Int?
-  counterproductive Boolean   @default(false)
-  gradedAt   DateTime?        @map("graded_at")
-  latencyMs  Int?             @map("latency_ms")
+  id                String           @id @default(cuid())
+  answerId          String           @unique @map("answer_id")
+  aiJobId           String           @map("ai_job_id")
+  status            AssessmentStatus @default(QUEUED)
+  panelSize         Int?             @map("panel_size")
+  method            String?
+  score             Int?
+  counterproductive Boolean          @default(false)
+  gradedAt          DateTime?        @map("graded_at")
+  latencyMs         Int?             @map("latency_ms")
 
   answer   Answer           @relation(fields: [answerId], references: [id], onDelete: Cascade)
   aiJob    AiJob            @relation(fields: [aiJobId], references: [id])
@@ -304,20 +1251,24 @@ model CriterionGrade {
 
 /// ERD-07 `ai_job`: một việc AI chạy ở worker.
 model AiJob {
-  id         String    @id
+  id               String    @id
   /// `GRADING` (AI-5 chấm, kèm AI-4 hỏi vặn khi engine cho phép).
-  kind       String
+  kind             String
   /// `QUEUED` | `RUNNING` | `SUCCEEDED` | `FAILED`
-  status     String    @default("QUEUED")
-  runId      String?   @map("run_id")
-  attempts   Int       @default(0)
-  lastError  String?   @map("last_error")
-  queuedAt   DateTime  @default(now()) @map("queued_at")
-  finishedAt DateTime? @map("finished_at")
+  status           String    @default("QUEUED")
+  runId            String?   @map("run_id")
+  /// ERD-07: bản prompt hệ thống đã dùng (FR-44). Rỗng khi dùng prompt mặc định.
+  promptTemplateId String?   @map("prompt_template_id") @db.Uuid
+  attempts         Int       @default(0)
+  lastError        String?   @map("last_error")
+  queuedAt         DateTime  @default(now()) @map("queued_at")
+  finishedAt       DateTime? @map("finished_at")
 
-  run         ScenarioRun? @relation(fields: [runId], references: [id], onDelete: SetNull)
-  assessments Assessment[]
-  costs       UsageCost[]
+  run            ScenarioRun?    @relation(fields: [runId], references: [id], onDelete: SetNull)
+  promptTemplate PromptTemplate? @relation(fields: [promptTemplateId], references: [id], onDelete: SetNull)
+  assessments    Assessment[]
+  costs          UsageCost[]
+  generationRun  GenerationRun?
 
   @@map("ai_job")
 }
@@ -368,12 +1319,12 @@ model RunEvidence {
 /// toàn bộ bằng chứng.
 model UserBandSkill {
   id       String @id @default(cuid())
-  userId   String
+  userId   String @db.Uuid
   roleCode String
   band     String
   points   Int    @default(0)
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, roleCode, band])
   @@index([userId])
@@ -383,14 +1334,14 @@ model UserBandSkill {
 /// vào chân dung, nên vector tính cách cũng là suy ra chứ không phải gửi lên.
 model EventAnswer {
   id          String   @id @default(cuid())
-  userId      String
+  userId      String   @db.Uuid
   eventId     String
   roleCode    String
   band        String
   choiceIndex Int
   answeredAt  DateTime @default(now())
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, eventId])
   @@index([userId])
@@ -405,14 +1356,14 @@ model EventAnswer {
 /// khác, nhưng làm lại ở đúng cấp bậc cũ thì không được tính nữa.
 model EventAward {
   id        String   @id @default(cuid())
-  userId    String
+  userId    String   @db.Uuid
   roleCode  String
   band      String
   eventId   String
   points    Int
   awardedAt DateTime @default(now())
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, eventId, band])
   @@index([userId])
@@ -425,29 +1376,29 @@ model EventAward {
 /// ở đâu" — câu đó phải đúng cả khi mở máy khác.
 model Enrollment {
   id         String   @id @default(cuid())
-  userId     String
+  userId     String   @db.Uuid
   roleCode   String
   band       String
   enrolledAt DateTime @default(now())
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user UserAccount @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, roleCode, band])
   @@index([userId])
 }
 
-/* ══ Nội dung game ═══════════════════════════════════════════════════════
-   Trước đây toàn bộ nội dung nằm trong mã (`packages/game-core/src/data`),
-   nên sửa một câu thoại là phải build lại cả hai ứng dụng, và trình duyệt
-   tải về 193 KB dữ liệu ở mỗi lần mở trang.
-
-   Mỗi thực thể một dòng: vài cột để tra cứu, cộng một cột `body` giữ nguyên
-   hình dạng mà Zod schema trong `game-core` đã định nghĩa — hợp đồng dữ liệu
-   không đổi, chỉ đổi chỗ cất.
-
-   Mọi bảng đều có `version`: cùng một `version` là một ảnh chụp nhất quán của
-   cả bộ dữ liệu. Chỉ script seed ghi vào những bảng này; API không có đường
-   ghi nào. */
+/**
+ * ══ Nội dung game ═══════════════════════════════════════════════════════
+ * Trước đây toàn bộ nội dung nằm trong mã (`packages/game-core/src/data`),
+ * nên sửa một câu thoại là phải build lại cả hai ứng dụng, và trình duyệt
+ * tải về 193 KB dữ liệu ở mỗi lần mở trang.
+ * Mỗi thực thể một dòng: vài cột để tra cứu, cộng một cột `body` giữ nguyên
+ * hình dạng mà Zod schema trong `game-core` đã định nghĩa — hợp đồng dữ liệu
+ * không đổi, chỉ đổi chỗ cất.
+ * Mọi bảng đều có `version`: cùng một `version` là một ảnh chụp nhất quán của
+ * cả bộ dữ liệu. Chỉ script seed ghi vào những bảng này; API không có đường
+ * ghi nào.
+ */
 
 /// Phiên bản nội dung đang được phục vụ.
 model ContentRelease {
@@ -510,11 +1461,11 @@ model QuizQuestionDoc {
 /// Lời NPC cho lượt đào sâu. Có lời mới được mở lượt đào sâu, nên đây vừa là
 /// nội dung vừa là điều kiện của luật chơi.
 model FollowupDoc {
-  version    Int
+  version     Int
   scenarioKey String
-  activityId String
-  who        String
-  text       String
+  activityId  String
+  who         String
+  text        String
 
   @@id([version, scenarioKey, activityId])
 }

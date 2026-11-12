@@ -51,10 +51,49 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User',
-  OAuthAccount: 'OAuthAccount',
-  RefreshToken: 'RefreshToken',
+  UserAccount: 'UserAccount',
+  UserRole: 'UserRole',
+  GoogleIdentity: 'GoogleIdentity',
+  StaffAssignment: 'StaffAssignment',
+  AuthSession: 'AuthSession',
+  PasswordResetToken: 'PasswordResetToken',
+  ActivityLog: 'ActivityLog',
   ParentalConsent: 'ParentalConsent',
+  Domain: 'Domain',
+  Occupation: 'Occupation',
+  Notification: 'Notification',
+  OccupationLevel: 'OccupationLevel',
+  Downside: 'Downside',
+  GenerationRule: 'GenerationRule',
+  Competency: 'Competency',
+  LevelCompetency: 'LevelCompetency',
+  Task: 'Task',
+  Scenario: 'Scenario',
+  ScenarioSkill: 'ScenarioSkill',
+  CastMember: 'CastMember',
+  Activity: 'Activity',
+  ActivityAllowedType: 'ActivityAllowedType',
+  ActivityItem: 'ActivityItem',
+  RubricCriterion: 'RubricCriterion',
+  Hint: 'Hint',
+  RandomEvent: 'RandomEvent',
+  Ending: 'Ending',
+  SideQuest: 'SideQuest',
+  GenerationRun: 'GenerationRun',
+  ReferenceAnswer: 'ReferenceAnswer',
+  ReferenceAnswerScore: 'ReferenceAnswerScore',
+  ReviewCriteriaVersion: 'ReviewCriteriaVersion',
+  ReviewCriterion: 'ReviewCriterion',
+  ReviewAssignment: 'ReviewAssignment',
+  Review: 'Review',
+  ReviewAnswer: 'ReviewAnswer',
+  LifecycleLog: 'LifecycleLog',
+  Asset: 'Asset',
+  Presentation: 'Presentation',
+  PresentationActivity: 'PresentationActivity',
+  PresentationNpc: 'PresentationNpc',
+  ScenarioBuild: 'ScenarioBuild',
+  PromptTemplate: 'PromptTemplate',
   GameProfile: 'GameProfile',
   ScenarioRun: 'ScenarioRun',
   RunEvent: 'RunEvent',
@@ -98,44 +137,90 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const UserScalarFieldEnum = {
+export const UserAccountScalarFieldEnum = {
   id: 'id',
-  username: 'username',
   email: 'email',
-  displayName: 'displayName',
+  username: 'username',
   passwordHash: 'passwordHash',
-  role: 'role',
+  displayName: 'displayName',
   dateOfBirth: 'dateOfBirth',
+  status: 'status',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  lastSignInAt: 'lastSignInAt',
+  deletedAt: 'deletedAt'
 } as const
 
-export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+export type UserAccountScalarFieldEnum = (typeof UserAccountScalarFieldEnum)[keyof typeof UserAccountScalarFieldEnum]
 
 
-export const OAuthAccountScalarFieldEnum = {
+export const UserRoleScalarFieldEnum = {
+  userId: 'userId',
+  role: 'role',
+  grantedBy: 'grantedBy',
+  grantedAt: 'grantedAt'
+} as const
+
+export type UserRoleScalarFieldEnum = (typeof UserRoleScalarFieldEnum)[keyof typeof UserRoleScalarFieldEnum]
+
+
+export const GoogleIdentityScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
-  provider: 'provider',
-  providerAccountId: 'providerAccountId',
-  createdAt: 'createdAt'
+  googleSub: 'googleSub',
+  linkedAt: 'linkedAt'
 } as const
 
-export type OAuthAccountScalarFieldEnum = (typeof OAuthAccountScalarFieldEnum)[keyof typeof OAuthAccountScalarFieldEnum]
+export type GoogleIdentityScalarFieldEnum = (typeof GoogleIdentityScalarFieldEnum)[keyof typeof GoogleIdentityScalarFieldEnum]
 
 
-export const RefreshTokenScalarFieldEnum = {
+export const StaffAssignmentScalarFieldEnum = {
+  id: 'id',
+  occupationId: 'occupationId',
+  userId: 'userId',
+  role: 'role',
+  assignedBy: 'assignedBy',
+  assignedAt: 'assignedAt',
+  endedAt: 'endedAt'
+} as const
+
+export type StaffAssignmentScalarFieldEnum = (typeof StaffAssignmentScalarFieldEnum)[keyof typeof StaffAssignmentScalarFieldEnum]
+
+
+export const AuthSessionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  refreshTokenHash: 'refreshTokenHash',
+  createdAt: 'createdAt',
+  lastSeenAt: 'lastSeenAt',
+  expiresAt: 'expiresAt',
+  revokedAt: 'revokedAt'
+} as const
+
+export type AuthSessionScalarFieldEnum = (typeof AuthSessionScalarFieldEnum)[keyof typeof AuthSessionScalarFieldEnum]
+
+
+export const PasswordResetTokenScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
   tokenHash: 'tokenHash',
   expiresAt: 'expiresAt',
-  revokedAt: 'revokedAt',
-  replacedById: 'replacedById',
-  userAgent: 'userAgent',
+  usedAt: 'usedAt'
+} as const
+
+export type PasswordResetTokenScalarFieldEnum = (typeof PasswordResetTokenScalarFieldEnum)[keyof typeof PasswordResetTokenScalarFieldEnum]
+
+
+export const ActivityLogScalarFieldEnum = {
+  id: 'id',
+  actorId: 'actorId',
+  action: 'action',
+  targetType: 'targetType',
+  targetId: 'targetId',
+  detail: 'detail',
   createdAt: 'createdAt'
 } as const
 
-export type RefreshTokenScalarFieldEnum = (typeof RefreshTokenScalarFieldEnum)[keyof typeof RefreshTokenScalarFieldEnum]
+export type ActivityLogScalarFieldEnum = (typeof ActivityLogScalarFieldEnum)[keyof typeof ActivityLogScalarFieldEnum]
 
 
 export const ParentalConsentScalarFieldEnum = {
@@ -148,6 +233,458 @@ export const ParentalConsentScalarFieldEnum = {
 } as const
 
 export type ParentalConsentScalarFieldEnum = (typeof ParentalConsentScalarFieldEnum)[keyof typeof ParentalConsentScalarFieldEnum]
+
+
+export const DomainScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  name: 'name',
+  createdBy: 'createdBy',
+  createdAt: 'createdAt'
+} as const
+
+export type DomainScalarFieldEnum = (typeof DomainScalarFieldEnum)[keyof typeof DomainScalarFieldEnum]
+
+
+export const OccupationScalarFieldEnum = {
+  id: 'id',
+  domainId: 'domainId',
+  code: 'code',
+  name: 'name',
+  summary: 'summary',
+  riasecCode: 'riasecCode',
+  status: 'status',
+  createdBy: 'createdBy',
+  createdAt: 'createdAt',
+  publishedAt: 'publishedAt',
+  retiredAt: 'retiredAt'
+} as const
+
+export type OccupationScalarFieldEnum = (typeof OccupationScalarFieldEnum)[keyof typeof OccupationScalarFieldEnum]
+
+
+export const NotificationScalarFieldEnum = {
+  id: 'id',
+  recipientId: 'recipientId',
+  channel: 'channel',
+  template: 'template',
+  payload: 'payload',
+  createdAt: 'createdAt',
+  sentAt: 'sentAt',
+  readAt: 'readAt'
+} as const
+
+export type NotificationScalarFieldEnum = (typeof NotificationScalarFieldEnum)[keyof typeof NotificationScalarFieldEnum]
+
+
+export const OccupationLevelScalarFieldEnum = {
+  id: 'id',
+  occupationId: 'occupationId',
+  levelNo: 'levelNo',
+  band: 'band',
+  title: 'title',
+  description: 'description',
+  futureRole: 'futureRole',
+  creditThreshold: 'creditThreshold',
+  salaryMin: 'salaryMin',
+  salaryMax: 'salaryMax',
+  salaryCurrency: 'salaryCurrency',
+  writtenBy: 'writtenBy',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OccupationLevelScalarFieldEnum = (typeof OccupationLevelScalarFieldEnum)[keyof typeof OccupationLevelScalarFieldEnum]
+
+
+export const DownsideScalarFieldEnum = {
+  id: 'id',
+  occupationId: 'occupationId',
+  text: 'text',
+  sortOrder: 'sortOrder',
+  writtenBy: 'writtenBy'
+} as const
+
+export type DownsideScalarFieldEnum = (typeof DownsideScalarFieldEnum)[keyof typeof DownsideScalarFieldEnum]
+
+
+export const GenerationRuleScalarFieldEnum = {
+  id: 'id',
+  occupationId: 'occupationId',
+  ruleText: 'ruleText',
+  writtenBy: 'writtenBy',
+  createdAt: 'createdAt'
+} as const
+
+export type GenerationRuleScalarFieldEnum = (typeof GenerationRuleScalarFieldEnum)[keyof typeof GenerationRuleScalarFieldEnum]
+
+
+export const CompetencyScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  kind: 'kind',
+  name: 'name',
+  indicator: 'indicator',
+  sourceRecordId: 'sourceRecordId',
+  createdBy: 'createdBy'
+} as const
+
+export type CompetencyScalarFieldEnum = (typeof CompetencyScalarFieldEnum)[keyof typeof CompetencyScalarFieldEnum]
+
+
+export const LevelCompetencyScalarFieldEnum = {
+  levelId: 'levelId',
+  competencyId: 'competencyId',
+  proficiency: 'proficiency'
+} as const
+
+export type LevelCompetencyScalarFieldEnum = (typeof LevelCompetencyScalarFieldEnum)[keyof typeof LevelCompetencyScalarFieldEnum]
+
+
+export const TaskScalarFieldEnum = {
+  id: 'id',
+  levelId: 'levelId',
+  sourceRecordId: 'sourceRecordId',
+  text: 'text',
+  sortOrder: 'sortOrder'
+} as const
+
+export type TaskScalarFieldEnum = (typeof TaskScalarFieldEnum)[keyof typeof TaskScalarFieldEnum]
+
+
+export const ScenarioScalarFieldEnum = {
+  id: 'id',
+  taskId: 'taskId',
+  status: 'status',
+  authorId: 'authorId',
+  openedBy: 'openedBy',
+  authorContext: 'authorContext',
+  archetype: 'archetype',
+  companyType: 'companyType',
+  intro: 'intro',
+  situation: 'situation',
+  stakes: 'stakes',
+  estimatedMinutes: 'estimatedMinutes',
+  rowVersion: 'rowVersion',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ScenarioScalarFieldEnum = (typeof ScenarioScalarFieldEnum)[keyof typeof ScenarioScalarFieldEnum]
+
+
+export const ScenarioSkillScalarFieldEnum = {
+  scenarioId: 'scenarioId',
+  competencyId: 'competencyId'
+} as const
+
+export type ScenarioSkillScalarFieldEnum = (typeof ScenarioSkillScalarFieldEnum)[keyof typeof ScenarioSkillScalarFieldEnum]
+
+
+export const CastMemberScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  npcKey: 'npcKey',
+  name: 'name',
+  roleInScene: 'roleInScene',
+  pressure: 'pressure',
+  voice: 'voice'
+} as const
+
+export type CastMemberScalarFieldEnum = (typeof CastMemberScalarFieldEnum)[keyof typeof CastMemberScalarFieldEnum]
+
+
+export const ActivityScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  activityKey: 'activityKey',
+  summary: 'summary',
+  setup: 'setup',
+  npcLine: 'npcLine',
+  inputPrompt: 'inputPrompt',
+  jobScope: 'jobScope',
+  closingLine: 'closingLine',
+  isOrigin: 'isOrigin',
+  forwardToId: 'forwardToId',
+  pickCount: 'pickCount',
+  followupLimit: 'followupLimit',
+  followupGoal: 'followupGoal',
+  defaultFollowup: 'defaultFollowup'
+} as const
+
+export type ActivityScalarFieldEnum = (typeof ActivityScalarFieldEnum)[keyof typeof ActivityScalarFieldEnum]
+
+
+export const ActivityAllowedTypeScalarFieldEnum = {
+  activityId: 'activityId',
+  taskType: 'taskType'
+} as const
+
+export type ActivityAllowedTypeScalarFieldEnum = (typeof ActivityAllowedTypeScalarFieldEnum)[keyof typeof ActivityAllowedTypeScalarFieldEnum]
+
+
+export const ActivityItemScalarFieldEnum = {
+  id: 'id',
+  activityId: 'activityId',
+  itemKey: 'itemKey',
+  text: 'text',
+  score: 'score',
+  why: 'why',
+  correctPosition: 'correctPosition',
+  pickRule: 'pickRule',
+  note: 'note',
+  sortOrder: 'sortOrder'
+} as const
+
+export type ActivityItemScalarFieldEnum = (typeof ActivityItemScalarFieldEnum)[keyof typeof ActivityItemScalarFieldEnum]
+
+
+export const RubricCriterionScalarFieldEnum = {
+  id: 'id',
+  activityId: 'activityId',
+  competencyId: 'competencyId',
+  anchor2: 'anchor2',
+  anchor1: 'anchor1',
+  anchor0: 'anchor0',
+  counterproductiveSigns: 'counterproductiveSigns'
+} as const
+
+export type RubricCriterionScalarFieldEnum = (typeof RubricCriterionScalarFieldEnum)[keyof typeof RubricCriterionScalarFieldEnum]
+
+
+export const HintScalarFieldEnum = {
+  id: 'id',
+  activityId: 'activityId',
+  text: 'text',
+  sortOrder: 'sortOrder'
+} as const
+
+export type HintScalarFieldEnum = (typeof HintScalarFieldEnum)[keyof typeof HintScalarFieldEnum]
+
+
+export const RandomEventScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  activityId: 'activityId',
+  chance: 'chance',
+  text: 'text',
+  prompt: 'prompt',
+  targetCompetencyId: 'targetCompetencyId',
+  anchor2: 'anchor2',
+  anchor1: 'anchor1',
+  anchor0: 'anchor0',
+  counterproductiveSigns: 'counterproductiveSigns'
+} as const
+
+export type RandomEventScalarFieldEnum = (typeof RandomEventScalarFieldEnum)[keyof typeof RandomEventScalarFieldEnum]
+
+
+export const EndingScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  type: 'type',
+  priority: 'priority',
+  minTotalScore: 'minTotalScore',
+  extraBehaviour: 'extraBehaviour',
+  text: 'text',
+  reveals: 'reveals'
+} as const
+
+export type EndingScalarFieldEnum = (typeof EndingScalarFieldEnum)[keyof typeof EndingScalarFieldEnum]
+
+
+export const SideQuestScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  prompt: 'prompt',
+  taskType: 'taskType',
+  points: 'points',
+  answerKey: 'answerKey'
+} as const
+
+export type SideQuestScalarFieldEnum = (typeof SideQuestScalarFieldEnum)[keyof typeof SideQuestScalarFieldEnum]
+
+
+export const GenerationRunScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  kind: 'kind',
+  requestedBy: 'requestedBy',
+  aiJobId: 'aiJobId',
+  input: 'input',
+  output: 'output',
+  checkPassed: 'checkPassed',
+  checkReport: 'checkReport',
+  createdAt: 'createdAt'
+} as const
+
+export type GenerationRunScalarFieldEnum = (typeof GenerationRunScalarFieldEnum)[keyof typeof GenerationRunScalarFieldEnum]
+
+
+export const ReferenceAnswerScalarFieldEnum = {
+  id: 'id',
+  activityId: 'activityId',
+  authorId: 'authorId',
+  answerText: 'answerText',
+  stratum: 'stratum',
+  validationPassed: 'validationPassed',
+  createdAt: 'createdAt'
+} as const
+
+export type ReferenceAnswerScalarFieldEnum = (typeof ReferenceAnswerScalarFieldEnum)[keyof typeof ReferenceAnswerScalarFieldEnum]
+
+
+export const ReferenceAnswerScoreScalarFieldEnum = {
+  referenceAnswerId: 'referenceAnswerId',
+  criterionId: 'criterionId',
+  score: 'score',
+  counterproductive: 'counterproductive'
+} as const
+
+export type ReferenceAnswerScoreScalarFieldEnum = (typeof ReferenceAnswerScoreScalarFieldEnum)[keyof typeof ReferenceAnswerScoreScalarFieldEnum]
+
+
+export const ReviewCriteriaVersionScalarFieldEnum = {
+  id: 'id',
+  occupationId: 'occupationId',
+  versionNo: 'versionNo',
+  createdBy: 'createdBy',
+  createdAt: 'createdAt'
+} as const
+
+export type ReviewCriteriaVersionScalarFieldEnum = (typeof ReviewCriteriaVersionScalarFieldEnum)[keyof typeof ReviewCriteriaVersionScalarFieldEnum]
+
+
+export const ReviewCriterionScalarFieldEnum = {
+  id: 'id',
+  criteriaVersionId: 'criteriaVersionId',
+  text: 'text',
+  sortOrder: 'sortOrder'
+} as const
+
+export type ReviewCriterionScalarFieldEnum = (typeof ReviewCriterionScalarFieldEnum)[keyof typeof ReviewCriterionScalarFieldEnum]
+
+
+export const ReviewAssignmentScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  reviewerId: 'reviewerId',
+  assignedBy: 'assignedBy',
+  deadlineAt: 'deadlineAt',
+  status: 'status',
+  replacesId: 'replacesId',
+  remindedAt: 'remindedAt',
+  assignedAt: 'assignedAt'
+} as const
+
+export type ReviewAssignmentScalarFieldEnum = (typeof ReviewAssignmentScalarFieldEnum)[keyof typeof ReviewAssignmentScalarFieldEnum]
+
+
+export const ReviewScalarFieldEnum = {
+  id: 'id',
+  assignmentId: 'assignmentId',
+  criteriaVersionId: 'criteriaVersionId',
+  decision: 'decision',
+  comment: 'comment',
+  decidedAt: 'decidedAt'
+} as const
+
+export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum]
+
+
+export const ReviewAnswerScalarFieldEnum = {
+  reviewId: 'reviewId',
+  criterionId: 'criterionId',
+  verdict: 'verdict',
+  comment: 'comment'
+} as const
+
+export type ReviewAnswerScalarFieldEnum = (typeof ReviewAnswerScalarFieldEnum)[keyof typeof ReviewAnswerScalarFieldEnum]
+
+
+export const LifecycleLogScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  fromStatus: 'fromStatus',
+  toStatus: 'toStatus',
+  action: 'action',
+  actorId: 'actorId',
+  note: 'note',
+  createdAt: 'createdAt'
+} as const
+
+export type LifecycleLogScalarFieldEnum = (typeof LifecycleLogScalarFieldEnum)[keyof typeof LifecycleLogScalarFieldEnum]
+
+
+export const AssetScalarFieldEnum = {
+  id: 'id',
+  kind: 'kind',
+  storageKey: 'storageKey',
+  source: 'source',
+  sourceNote: 'sourceNote',
+  generationRunId: 'generationRunId',
+  biasCheck: 'biasCheck',
+  checkedBy: 'checkedBy',
+  createdAt: 'createdAt'
+} as const
+
+export type AssetScalarFieldEnum = (typeof AssetScalarFieldEnum)[keyof typeof AssetScalarFieldEnum]
+
+
+export const PresentationScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  designedBy: 'designedBy',
+  backgroundAssetId: 'backgroundAssetId',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PresentationScalarFieldEnum = (typeof PresentationScalarFieldEnum)[keyof typeof PresentationScalarFieldEnum]
+
+
+export const PresentationActivityScalarFieldEnum = {
+  activityId: 'activityId',
+  presentationId: 'presentationId',
+  taskType: 'taskType',
+  sceneAssetId: 'sceneAssetId'
+} as const
+
+export type PresentationActivityScalarFieldEnum = (typeof PresentationActivityScalarFieldEnum)[keyof typeof PresentationActivityScalarFieldEnum]
+
+
+export const PresentationNpcScalarFieldEnum = {
+  castMemberId: 'castMemberId',
+  presentationId: 'presentationId',
+  avatarAssetId: 'avatarAssetId'
+} as const
+
+export type PresentationNpcScalarFieldEnum = (typeof PresentationNpcScalarFieldEnum)[keyof typeof PresentationNpcScalarFieldEnum]
+
+
+export const ScenarioBuildScalarFieldEnum = {
+  id: 'id',
+  scenarioId: 'scenarioId',
+  content: 'content',
+  contentHash: 'contentHash',
+  builtBy: 'builtBy',
+  builtAt: 'builtAt'
+} as const
+
+export type ScenarioBuildScalarFieldEnum = (typeof ScenarioBuildScalarFieldEnum)[keyof typeof ScenarioBuildScalarFieldEnum]
+
+
+export const PromptTemplateScalarFieldEnum = {
+  id: 'id',
+  occupationId: 'occupationId',
+  kind: 'kind',
+  versionNo: 'versionNo',
+  text: 'text',
+  changeNote: 'changeNote',
+  restoredFromId: 'restoredFromId',
+  changedBy: 'changedBy',
+  changedAt: 'changedAt'
+} as const
+
+export type PromptTemplateScalarFieldEnum = (typeof PromptTemplateScalarFieldEnum)[keyof typeof PromptTemplateScalarFieldEnum]
 
 
 export const GameProfileScalarFieldEnum = {
@@ -273,6 +810,7 @@ export const AiJobScalarFieldEnum = {
   kind: 'kind',
   status: 'status',
   runId: 'runId',
+  promptTemplateId: 'promptTemplateId',
   attempts: 'attempts',
   lastError: 'lastError',
   queuedAt: 'queuedAt',
@@ -475,19 +1013,19 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-export const JsonNullValueInput = {
-  JsonNull: JsonNull
-} as const
-
-export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
-
-
 export const NullableJsonNullValueInput = {
   DbNull: DbNull,
   JsonNull: JsonNull
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {

@@ -216,11 +216,11 @@ export type UserBandSkillWhereInput = {
   OR?: Prisma.UserBandSkillWhereInput[]
   NOT?: Prisma.UserBandSkillWhereInput | Prisma.UserBandSkillWhereInput[]
   id?: Prisma.StringFilter<"UserBandSkill"> | string
-  userId?: Prisma.StringFilter<"UserBandSkill"> | string
+  userId?: Prisma.UuidFilter<"UserBandSkill"> | string
   roleCode?: Prisma.StringFilter<"UserBandSkill"> | string
   band?: Prisma.StringFilter<"UserBandSkill"> | string
   points?: Prisma.IntFilter<"UserBandSkill"> | number
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }
 
 export type UserBandSkillOrderByWithRelationInput = {
@@ -229,7 +229,7 @@ export type UserBandSkillOrderByWithRelationInput = {
   roleCode?: Prisma.SortOrder
   band?: Prisma.SortOrder
   points?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
+  user?: Prisma.UserAccountOrderByWithRelationInput
 }
 
 export type UserBandSkillWhereUniqueInput = Prisma.AtLeast<{
@@ -238,11 +238,11 @@ export type UserBandSkillWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.UserBandSkillWhereInput | Prisma.UserBandSkillWhereInput[]
   OR?: Prisma.UserBandSkillWhereInput[]
   NOT?: Prisma.UserBandSkillWhereInput | Prisma.UserBandSkillWhereInput[]
-  userId?: Prisma.StringFilter<"UserBandSkill"> | string
+  userId?: Prisma.UuidFilter<"UserBandSkill"> | string
   roleCode?: Prisma.StringFilter<"UserBandSkill"> | string
   band?: Prisma.StringFilter<"UserBandSkill"> | string
   points?: Prisma.IntFilter<"UserBandSkill"> | number
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }, "id" | "userId_roleCode_band">
 
 export type UserBandSkillOrderByWithAggregationInput = {
@@ -263,7 +263,7 @@ export type UserBandSkillScalarWhereWithAggregatesInput = {
   OR?: Prisma.UserBandSkillScalarWhereWithAggregatesInput[]
   NOT?: Prisma.UserBandSkillScalarWhereWithAggregatesInput | Prisma.UserBandSkillScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"UserBandSkill"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"UserBandSkill"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"UserBandSkill"> | string
   roleCode?: Prisma.StringWithAggregatesFilter<"UserBandSkill"> | string
   band?: Prisma.StringWithAggregatesFilter<"UserBandSkill"> | string
   points?: Prisma.IntWithAggregatesFilter<"UserBandSkill"> | number
@@ -274,7 +274,7 @@ export type UserBandSkillCreateInput = {
   roleCode: string
   band: string
   points?: number
-  user: Prisma.UserCreateNestedOneWithoutBandSkillsInput
+  user: Prisma.UserAccountCreateNestedOneWithoutBandSkillsInput
 }
 
 export type UserBandSkillUncheckedCreateInput = {
@@ -290,7 +290,7 @@ export type UserBandSkillUpdateInput = {
   roleCode?: Prisma.StringFieldUpdateOperationsInput | string
   band?: Prisma.StringFieldUpdateOperationsInput | string
   points?: Prisma.IntFieldUpdateOperationsInput | number
-  user?: Prisma.UserUpdateOneRequiredWithoutBandSkillsNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutBandSkillsNestedInput
 }
 
 export type UserBandSkillUncheckedUpdateInput = {
@@ -459,7 +459,7 @@ export type UserBandSkillScalarWhereInput = {
   OR?: Prisma.UserBandSkillScalarWhereInput[]
   NOT?: Prisma.UserBandSkillScalarWhereInput | Prisma.UserBandSkillScalarWhereInput[]
   id?: Prisma.StringFilter<"UserBandSkill"> | string
-  userId?: Prisma.StringFilter<"UserBandSkill"> | string
+  userId?: Prisma.UuidFilter<"UserBandSkill"> | string
   roleCode?: Prisma.StringFilter<"UserBandSkill"> | string
   band?: Prisma.StringFilter<"UserBandSkill"> | string
   points?: Prisma.IntFilter<"UserBandSkill"> | number
@@ -501,7 +501,7 @@ export type UserBandSkillSelect<ExtArgs extends runtime.Types.Extensions.Interna
   roleCode?: boolean
   band?: boolean
   points?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userBandSkill"]>
 
 export type UserBandSkillSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -510,7 +510,7 @@ export type UserBandSkillSelectCreateManyAndReturn<ExtArgs extends runtime.Types
   roleCode?: boolean
   band?: boolean
   points?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userBandSkill"]>
 
 export type UserBandSkillSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -519,7 +519,7 @@ export type UserBandSkillSelectUpdateManyAndReturn<ExtArgs extends runtime.Types
   roleCode?: boolean
   band?: boolean
   points?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userBandSkill"]>
 
 export type UserBandSkillSelectScalar = {
@@ -532,19 +532,19 @@ export type UserBandSkillSelectScalar = {
 
 export type UserBandSkillOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "roleCode" | "band" | "points", ExtArgs["result"]["userBandSkill"]>
 export type UserBandSkillInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type UserBandSkillIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type UserBandSkillIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 
 export type $UserBandSkillPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "UserBandSkill"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
+    user: Prisma.$UserAccountPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -946,7 +946,7 @@ readonly fields: UserBandSkillFieldRefs;
  */
 export interface Prisma__UserBandSkillClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserAccountDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccountDefaultArgs<ExtArgs>>): Prisma.Prisma__UserAccountClient<runtime.Types.Result.GetResult<Prisma.$UserAccountPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

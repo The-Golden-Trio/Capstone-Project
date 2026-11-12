@@ -16,6 +16,7 @@ import type * as Prisma from "../internal/prismaNamespace.js"
  * Model ParentalConsent
  * Đồng ý của người giám hộ cho tài khoản dưới 16 tuổi (Nghị định 13/2023/NĐ-CP).
  * Bản đồ án ghi nhận chứ chưa xác minh — giao diện nói rõ điều đó.
+ * Bảng prototype, ngoài ERD (07-van-de-mo A22).
  */
 export type ParentalConsentModel = runtime.Types.Result.DefaultSelection<Prisma.$ParentalConsentPayload>
 
@@ -186,12 +187,12 @@ export type ParentalConsentWhereInput = {
   OR?: Prisma.ParentalConsentWhereInput[]
   NOT?: Prisma.ParentalConsentWhereInput | Prisma.ParentalConsentWhereInput[]
   id?: Prisma.StringFilter<"ParentalConsent"> | string
-  userId?: Prisma.StringFilter<"ParentalConsent"> | string
+  userId?: Prisma.UuidFilter<"ParentalConsent"> | string
   guardianName?: Prisma.StringFilter<"ParentalConsent"> | string
   guardianEmail?: Prisma.StringFilter<"ParentalConsent"> | string
   method?: Prisma.EnumConsentMethodFilter<"ParentalConsent"> | $Enums.ConsentMethod
   consentedAt?: Prisma.DateTimeFilter<"ParentalConsent"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }
 
 export type ParentalConsentOrderByWithRelationInput = {
@@ -201,7 +202,7 @@ export type ParentalConsentOrderByWithRelationInput = {
   guardianEmail?: Prisma.SortOrder
   method?: Prisma.SortOrder
   consentedAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
+  user?: Prisma.UserAccountOrderByWithRelationInput
 }
 
 export type ParentalConsentWhereUniqueInput = Prisma.AtLeast<{
@@ -214,7 +215,7 @@ export type ParentalConsentWhereUniqueInput = Prisma.AtLeast<{
   guardianEmail?: Prisma.StringFilter<"ParentalConsent"> | string
   method?: Prisma.EnumConsentMethodFilter<"ParentalConsent"> | $Enums.ConsentMethod
   consentedAt?: Prisma.DateTimeFilter<"ParentalConsent"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
 }, "id" | "userId">
 
 export type ParentalConsentOrderByWithAggregationInput = {
@@ -234,7 +235,7 @@ export type ParentalConsentScalarWhereWithAggregatesInput = {
   OR?: Prisma.ParentalConsentScalarWhereWithAggregatesInput[]
   NOT?: Prisma.ParentalConsentScalarWhereWithAggregatesInput | Prisma.ParentalConsentScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"ParentalConsent"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"ParentalConsent"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"ParentalConsent"> | string
   guardianName?: Prisma.StringWithAggregatesFilter<"ParentalConsent"> | string
   guardianEmail?: Prisma.StringWithAggregatesFilter<"ParentalConsent"> | string
   method?: Prisma.EnumConsentMethodWithAggregatesFilter<"ParentalConsent"> | $Enums.ConsentMethod
@@ -247,7 +248,7 @@ export type ParentalConsentCreateInput = {
   guardianEmail: string
   method?: $Enums.ConsentMethod
   consentedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutConsentInput
+  user: Prisma.UserAccountCreateNestedOneWithoutConsentInput
 }
 
 export type ParentalConsentUncheckedCreateInput = {
@@ -265,7 +266,7 @@ export type ParentalConsentUpdateInput = {
   guardianEmail?: Prisma.StringFieldUpdateOperationsInput | string
   method?: Prisma.EnumConsentMethodFieldUpdateOperationsInput | $Enums.ConsentMethod
   consentedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutConsentNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutConsentNestedInput
 }
 
 export type ParentalConsentUncheckedUpdateInput = {
@@ -428,7 +429,7 @@ export type ParentalConsentSelect<ExtArgs extends runtime.Types.Extensions.Inter
   guardianEmail?: boolean
   method?: boolean
   consentedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["parentalConsent"]>
 
 export type ParentalConsentSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -438,7 +439,7 @@ export type ParentalConsentSelectCreateManyAndReturn<ExtArgs extends runtime.Typ
   guardianEmail?: boolean
   method?: boolean
   consentedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["parentalConsent"]>
 
 export type ParentalConsentSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -448,7 +449,7 @@ export type ParentalConsentSelectUpdateManyAndReturn<ExtArgs extends runtime.Typ
   guardianEmail?: boolean
   method?: boolean
   consentedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["parentalConsent"]>
 
 export type ParentalConsentSelectScalar = {
@@ -462,19 +463,19 @@ export type ParentalConsentSelectScalar = {
 
 export type ParentalConsentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "guardianName" | "guardianEmail" | "method" | "consentedAt", ExtArgs["result"]["parentalConsent"]>
 export type ParentalConsentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type ParentalConsentIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type ParentalConsentIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 
 export type $ParentalConsentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ParentalConsent"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
+    user: Prisma.$UserAccountPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -877,7 +878,7 @@ readonly fields: ParentalConsentFieldRefs;
  */
 export interface Prisma__ParentalConsentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserAccountDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccountDefaultArgs<ExtArgs>>): Prisma.Prisma__UserAccountClient<runtime.Types.Result.GetResult<Prisma.$UserAccountPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

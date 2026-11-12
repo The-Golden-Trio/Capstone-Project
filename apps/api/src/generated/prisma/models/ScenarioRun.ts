@@ -308,7 +308,7 @@ export type ScenarioRunWhereInput = {
   OR?: Prisma.ScenarioRunWhereInput[]
   NOT?: Prisma.ScenarioRunWhereInput | Prisma.ScenarioRunWhereInput[]
   id?: Prisma.StringFilter<"ScenarioRun"> | string
-  userId?: Prisma.StringFilter<"ScenarioRun"> | string
+  userId?: Prisma.UuidFilter<"ScenarioRun"> | string
   scenarioKey?: Prisma.StringFilter<"ScenarioRun"> | string
   roleCode?: Prisma.StringFilter<"ScenarioRun"> | string
   band?: Prisma.StringFilter<"ScenarioRun"> | string
@@ -324,7 +324,7 @@ export type ScenarioRunWhereInput = {
   flow?: Prisma.StringFilter<"ScenarioRun"> | string
   status?: Prisma.EnumRunStatusFilter<"ScenarioRun"> | $Enums.RunStatus
   currentActivityKey?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
   evidence?: Prisma.RunEvidenceListRelationFilter
   events?: Prisma.RunEventListRelationFilter
   answers?: Prisma.AnswerListRelationFilter
@@ -349,7 +349,7 @@ export type ScenarioRunOrderByWithRelationInput = {
   flow?: Prisma.SortOrder
   status?: Prisma.SortOrder
   currentActivityKey?: Prisma.SortOrderInput | Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
+  user?: Prisma.UserAccountOrderByWithRelationInput
   evidence?: Prisma.RunEvidenceOrderByRelationAggregateInput
   events?: Prisma.RunEventOrderByRelationAggregateInput
   answers?: Prisma.AnswerOrderByRelationAggregateInput
@@ -361,7 +361,7 @@ export type ScenarioRunWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ScenarioRunWhereInput | Prisma.ScenarioRunWhereInput[]
   OR?: Prisma.ScenarioRunWhereInput[]
   NOT?: Prisma.ScenarioRunWhereInput | Prisma.ScenarioRunWhereInput[]
-  userId?: Prisma.StringFilter<"ScenarioRun"> | string
+  userId?: Prisma.UuidFilter<"ScenarioRun"> | string
   scenarioKey?: Prisma.StringFilter<"ScenarioRun"> | string
   roleCode?: Prisma.StringFilter<"ScenarioRun"> | string
   band?: Prisma.StringFilter<"ScenarioRun"> | string
@@ -377,7 +377,7 @@ export type ScenarioRunWhereUniqueInput = Prisma.AtLeast<{
   flow?: Prisma.StringFilter<"ScenarioRun"> | string
   status?: Prisma.EnumRunStatusFilter<"ScenarioRun"> | $Enums.RunStatus
   currentActivityKey?: Prisma.StringNullableFilter<"ScenarioRun"> | string | null
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  user?: Prisma.XOR<Prisma.UserAccountScalarRelationFilter, Prisma.UserAccountWhereInput>
   evidence?: Prisma.RunEvidenceListRelationFilter
   events?: Prisma.RunEventListRelationFilter
   answers?: Prisma.AnswerListRelationFilter
@@ -414,7 +414,7 @@ export type ScenarioRunScalarWhereWithAggregatesInput = {
   OR?: Prisma.ScenarioRunScalarWhereWithAggregatesInput[]
   NOT?: Prisma.ScenarioRunScalarWhereWithAggregatesInput | Prisma.ScenarioRunScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"ScenarioRun"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"ScenarioRun"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"ScenarioRun"> | string
   scenarioKey?: Prisma.StringWithAggregatesFilter<"ScenarioRun"> | string
   roleCode?: Prisma.StringWithAggregatesFilter<"ScenarioRun"> | string
   band?: Prisma.StringWithAggregatesFilter<"ScenarioRun"> | string
@@ -449,7 +449,7 @@ export type ScenarioRunCreateInput = {
   flow?: string
   status?: $Enums.RunStatus
   currentActivityKey?: string | null
-  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  user: Prisma.UserAccountCreateNestedOneWithoutRunsInput
   evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
   events?: Prisma.RunEventCreateNestedManyWithoutRunInput
   answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
@@ -497,7 +497,7 @@ export type ScenarioRunUpdateInput = {
   flow?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
   currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutRunsNestedInput
   evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
   events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
   answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
@@ -721,22 +721,6 @@ export type ScenarioRunUncheckedUpdateManyWithoutUserNestedInput = {
   deleteMany?: Prisma.ScenarioRunScalarWhereInput | Prisma.ScenarioRunScalarWhereInput[]
 }
 
-export type BigIntFieldUpdateOperationsInput = {
-  set?: bigint | number
-  increment?: bigint | number
-  decrement?: bigint | number
-  multiply?: bigint | number
-  divide?: bigint | number
-}
-
-export type NullableIntFieldUpdateOperationsInput = {
-  set?: number | null
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
-}
-
 export type EnumRunStatusFieldUpdateOperationsInput = {
   set?: $Enums.RunStatus
 }
@@ -876,7 +860,7 @@ export type ScenarioRunScalarWhereInput = {
   OR?: Prisma.ScenarioRunScalarWhereInput[]
   NOT?: Prisma.ScenarioRunScalarWhereInput | Prisma.ScenarioRunScalarWhereInput[]
   id?: Prisma.StringFilter<"ScenarioRun"> | string
-  userId?: Prisma.StringFilter<"ScenarioRun"> | string
+  userId?: Prisma.UuidFilter<"ScenarioRun"> | string
   scenarioKey?: Prisma.StringFilter<"ScenarioRun"> | string
   roleCode?: Prisma.StringFilter<"ScenarioRun"> | string
   band?: Prisma.StringFilter<"ScenarioRun"> | string
@@ -911,7 +895,7 @@ export type ScenarioRunCreateWithoutEventsInput = {
   flow?: string
   status?: $Enums.RunStatus
   currentActivityKey?: string | null
-  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  user: Prisma.UserAccountCreateNestedOneWithoutRunsInput
   evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
   answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
   aiJobs?: Prisma.AiJobCreateNestedManyWithoutRunInput
@@ -973,7 +957,7 @@ export type ScenarioRunUpdateWithoutEventsInput = {
   flow?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
   currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutRunsNestedInput
   evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
   answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
   aiJobs?: Prisma.AiJobUpdateManyWithoutRunNestedInput
@@ -1019,7 +1003,7 @@ export type ScenarioRunCreateWithoutAnswersInput = {
   flow?: string
   status?: $Enums.RunStatus
   currentActivityKey?: string | null
-  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  user: Prisma.UserAccountCreateNestedOneWithoutRunsInput
   evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
   events?: Prisma.RunEventCreateNestedManyWithoutRunInput
   aiJobs?: Prisma.AiJobCreateNestedManyWithoutRunInput
@@ -1081,7 +1065,7 @@ export type ScenarioRunUpdateWithoutAnswersInput = {
   flow?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
   currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutRunsNestedInput
   evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
   events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
   aiJobs?: Prisma.AiJobUpdateManyWithoutRunNestedInput
@@ -1127,7 +1111,7 @@ export type ScenarioRunCreateWithoutAiJobsInput = {
   flow?: string
   status?: $Enums.RunStatus
   currentActivityKey?: string | null
-  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  user: Prisma.UserAccountCreateNestedOneWithoutRunsInput
   evidence?: Prisma.RunEvidenceCreateNestedManyWithoutRunInput
   events?: Prisma.RunEventCreateNestedManyWithoutRunInput
   answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
@@ -1189,7 +1173,7 @@ export type ScenarioRunUpdateWithoutAiJobsInput = {
   flow?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
   currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutRunsNestedInput
   evidence?: Prisma.RunEvidenceUpdateManyWithoutRunNestedInput
   events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
   answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
@@ -1235,7 +1219,7 @@ export type ScenarioRunCreateWithoutEvidenceInput = {
   flow?: string
   status?: $Enums.RunStatus
   currentActivityKey?: string | null
-  user: Prisma.UserCreateNestedOneWithoutRunsInput
+  user: Prisma.UserAccountCreateNestedOneWithoutRunsInput
   events?: Prisma.RunEventCreateNestedManyWithoutRunInput
   answers?: Prisma.AnswerCreateNestedManyWithoutRunInput
   aiJobs?: Prisma.AiJobCreateNestedManyWithoutRunInput
@@ -1297,7 +1281,7 @@ export type ScenarioRunUpdateWithoutEvidenceInput = {
   flow?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumRunStatusFieldUpdateOperationsInput | $Enums.RunStatus
   currentActivityKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user?: Prisma.UserUpdateOneRequiredWithoutRunsNestedInput
+  user?: Prisma.UserAccountUpdateOneRequiredWithoutRunsNestedInput
   events?: Prisma.RunEventUpdateManyWithoutRunNestedInput
   answers?: Prisma.AnswerUpdateManyWithoutRunNestedInput
   aiJobs?: Prisma.AiJobUpdateManyWithoutRunNestedInput
@@ -1486,7 +1470,7 @@ export type ScenarioRunSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   flow?: boolean
   status?: boolean
   currentActivityKey?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
   evidence?: boolean | Prisma.ScenarioRun$evidenceArgs<ExtArgs>
   events?: boolean | Prisma.ScenarioRun$eventsArgs<ExtArgs>
   answers?: boolean | Prisma.ScenarioRun$answersArgs<ExtArgs>
@@ -1512,7 +1496,7 @@ export type ScenarioRunSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   flow?: boolean
   status?: boolean
   currentActivityKey?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["scenarioRun"]>
 
 export type ScenarioRunSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1533,7 +1517,7 @@ export type ScenarioRunSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   flow?: boolean
   status?: boolean
   currentActivityKey?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["scenarioRun"]>
 
 export type ScenarioRunSelectScalar = {
@@ -1558,7 +1542,7 @@ export type ScenarioRunSelectScalar = {
 
 export type ScenarioRunOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "scenarioKey" | "roleCode" | "band" | "seed" | "contentVersion" | "actions" | "startedAt" | "completedAt" | "endingId" | "endingType" | "pointsAwarded" | "rating" | "flow" | "status" | "currentActivityKey", ExtArgs["result"]["scenarioRun"]>
 export type ScenarioRunInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
   evidence?: boolean | Prisma.ScenarioRun$evidenceArgs<ExtArgs>
   events?: boolean | Prisma.ScenarioRun$eventsArgs<ExtArgs>
   answers?: boolean | Prisma.ScenarioRun$answersArgs<ExtArgs>
@@ -1566,16 +1550,16 @@ export type ScenarioRunInclude<ExtArgs extends runtime.Types.Extensions.Internal
   _count?: boolean | Prisma.ScenarioRunCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ScenarioRunIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 export type ScenarioRunIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserAccountDefaultArgs<ExtArgs>
 }
 
 export type $ScenarioRunPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ScenarioRun"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
+    user: Prisma.$UserAccountPayload<ExtArgs>
     evidence: Prisma.$RunEvidencePayload<ExtArgs>[]
     events: Prisma.$RunEventPayload<ExtArgs>[]
     answers: Prisma.$AnswerPayload<ExtArgs>[]
@@ -2017,7 +2001,7 @@ readonly fields: ScenarioRunFieldRefs;
  */
 export interface Prisma__ScenarioRunClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserAccountDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccountDefaultArgs<ExtArgs>>): Prisma.Prisma__UserAccountClient<runtime.Types.Result.GetResult<Prisma.$UserAccountPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   evidence<T extends Prisma.ScenarioRun$evidenceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$evidenceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RunEvidencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   events<T extends Prisma.ScenarioRun$eventsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RunEventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   answers<T extends Prisma.ScenarioRun$answersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScenarioRun$answersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AnswerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
