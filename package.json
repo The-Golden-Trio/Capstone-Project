@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx run-many -t serve serve-worker --projects=@datn/web,@datn/api",
+    "start": "nx run-many -t serve serve-worker --projects=@datn/web,@datn/api,@datn/staff",
+    "start:staff": "nx run @datn/staff:serve",
     "start:web": "nx run @datn/web:serve",
     "start:api": "nx run @datn/api:serve",
     "start:worker": "nx run @datn/api:serve-worker",

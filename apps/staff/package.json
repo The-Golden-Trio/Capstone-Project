@@ -1,0 +1,8 @@
+{
+  "name": "@datn/staff",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@datn/game-core": "workspace:*"
+  }
+}
