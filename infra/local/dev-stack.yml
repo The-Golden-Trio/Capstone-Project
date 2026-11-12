@@ -8,3 +8,57 @@ services:
     ports:
       - '6379:6379'
     restart: unless-stopped
+
+  # Postgres dev riêng cho máy này: thử migration và seed staff mà không đụng
+  # DB dùng chung của nhóm. Trỏ DIRECT_URL và DATABASE_URL vào đây khi cần:
+  #   postgresql://jobquest:jobquest@localhost:5433/jobquest
+  postgres:
+    image: postgres:16-alpine
+    container_name: jobquest-postgres
+    environment:
+      POSTGRES_USER: jobquest
+      POSTGRES_PASSWORD: jobquest
+      POSTGRES_DB: jobquest
+    ports:
+      - '5433:5432'
+    volumes:
+      - jobquest-pg:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # Hộp thư giả: API gửi mail qua SMTP_URL=smtp://localhost:1025, xem ở http://localhost:8025
+  mailpit:
+    image: axllent/mailpit:v1.21
+    container_name: jobquest-mailpit
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+    restart: unless-stopped
+
+  # Kho object cho asset (StorageService). Console: http://localhost:9001
+  minio:
+    image: minio/minio:RELEASE.2025-04-22T22-12-26Z
+    container_name: jobquest-minio
+    command: server /data --console-address ':9001'
+    environment:
+      MINIO_ROOT_USER: jobquest
+      MINIO_ROOT_PASSWORD: jobquest-dev
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - jobquest-minio:/data
+    restart: unless-stopped
+
+  # Tạo bucket một lần rồi thoát.
+  minio-init:
+    image: minio/mc:RELEASE.2025-04-16T18-13-26Z
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "until mc alias set local http://minio:9000 jobquest jobquest-dev; do sleep 1; done;
+      mc mb --ignore-existing local/jobquest"
+    restart: 'no'
+
+volumes:
+  jobquest-pg:
+  jobquest-minio:
