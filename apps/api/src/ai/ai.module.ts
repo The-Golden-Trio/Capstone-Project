@@ -20,6 +20,7 @@ import {
 import { JUDGE_SLOTS, JudgePanelService } from './judge/judge-panel.service';
 import { NARRATOR_CHAIN, NarratorService } from './narrator/narrator.service';
 import { ShiftCheckerService } from './shift/checker.service';
+import { ScenarioGeneratorService } from './generation/scenario-generator.service';
 
 export const AI_SETTINGS = Symbol('AI_SETTINGS');
 
@@ -117,7 +118,14 @@ function aiSettingsFromConfig(config: ConfigService<Env, true>): AiSettings {
     JudgePanelService,
     // Bộ phán có/không của ca làm (A12, D-129): dùng ghế judge của AI-5, khác họ AI-4 (DC-01).
     ShiftCheckerService,
+    // Sinh nội dung scenario cho DE (SD-05): cùng chuỗi họ Qwen với AI-4.
+    ScenarioGeneratorService,
   ],
-  exports: [NarratorService, JudgePanelService, ShiftCheckerService],
+  exports: [
+    NarratorService,
+    JudgePanelService,
+    ShiftCheckerService,
+    ScenarioGeneratorService,
+  ],
 })
 export class AiModule {}

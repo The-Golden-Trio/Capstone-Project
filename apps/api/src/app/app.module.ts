@@ -11,6 +11,13 @@ import { ContentModule } from '../content/content.module';
 import { CoreModule } from '../core/core.module';
 import { PlayModule } from '../play/play.module';
 import { loadEnv } from '../config/env';
+import { NotificationModule } from '../notification/notification.module';
+import { UserModule } from '../user/user.module';
+import { CatalogueModule } from '../catalogue/catalogue.module';
+import { LifecycleModule } from '../lifecycle/lifecycle.module';
+import { ReviewModule } from '../review/review.module';
+import { ScenarioModule } from '../scenario/scenario.module';
+import { PublishingModule } from '../publishing/publishing.module';
 import { PrismaModule } from '../prisma/prisma.module';
 import { ProfileModule } from '../profile/profile.module';
 import { RunsModule } from '../runs/runs.module';
@@ -30,7 +37,15 @@ import { RunsModule } from '../runs/runs.module';
     ProfileModule,
     AiModule,
     CoreModule,
+    NotificationModule,
+    UserModule,
     PlayModule,
+    // Content lifecycle (CL-00): staff app của CA và DE.
+    CatalogueModule,
+    LifecycleModule,
+    ReviewModule,
+    ScenarioModule,
+    PublishingModule,
   ],
   controllers: [AppController],
   providers: [
