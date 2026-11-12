@@ -8,10 +8,8 @@ import { useAuthStore } from './store/authStore';
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID ?? '';
 
 /**
- * Hỏi máy chủ một lần xem còn phiên đăng nhập không.
- *
- * Phải hỏi vì cookie là httpOnly — JavaScript không đọc được, nên không có
- * cách nào biết trước ngoài việc gọi `/auth/me`.
+ * Hỏi máy chủ một lần xem còn phiên đăng nhập không: có refresh token thì
+ * làm mới phiên rồi đọc `/auth/me` (Bearer, xem `api/session.ts`).
  */
 function AuthBoundary() {
   const hydrate = useAuthStore((s) => s.hydrate);

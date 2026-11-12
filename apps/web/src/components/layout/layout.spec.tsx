@@ -34,7 +34,7 @@ function seed({ doneEventIds = [] as string[], playedScenario = false } = {}) {
       username: 'nam',
       email: null,
       displayName: 'Nam',
-      role: 'USER',
+      roles: ['EXPLORER'],
       dateOfBirth: null,
       consentStatus: 'not_required',
       hasPassword: true,
@@ -58,8 +58,26 @@ function seed({ doneEventIds = [] as string[], playedScenario = false } = {}) {
           roleName: 'Lập trình viên Back-end',
           totalPoints: 4,
           bands: [
-            { band: 'L1', label: 'Thực tập sinh', points: 4, unlocked: true, hasScenario: true, pointsToUnlock: 0, enrolled: true, completed: false },
-            { band: 'L2', label: 'Mới ra trường', points: 0, unlocked: false, hasScenario: false, pointsToUnlock: 2, enrolled: false, completed: false },
+            {
+              band: 'L1',
+              label: 'Thực tập sinh',
+              points: 4,
+              unlocked: true,
+              hasScenario: true,
+              pointsToUnlock: 0,
+              enrolled: true,
+              completed: false,
+            },
+            {
+              band: 'L2',
+              label: 'Mới ra trường',
+              points: 0,
+              unlocked: false,
+              hasScenario: false,
+              pointsToUnlock: 2,
+              enrolled: false,
+              completed: false,
+            },
           ],
         },
       ],
@@ -173,14 +191,22 @@ describe('thanh kinh nghiệm', () => {
 
   it('dùng màu của nghề đang chơi', () => {
     seed();
-    const { container } = renderIn(<CharacterPanel onNavigate={() => undefined} />);
-    const themed = container.querySelector('[style*="--accent"]') as HTMLElement;
-    expect(themed.style.getPropertyValue('--accent')).toBe(roleTheme(ROLE).accent);
+    const { container } = renderIn(
+      <CharacterPanel onNavigate={() => undefined} />,
+    );
+    const themed = container.querySelector(
+      '[style*="--accent"]',
+    ) as HTMLElement;
+    expect(themed.style.getPropertyValue('--accent')).toBe(
+      roleTheme(ROLE).accent,
+    );
   });
 
   it('vẽ rãnh và phần đã đầy theo đúng tỉ lệ', () => {
     seed();
-    const { container } = renderIn(<CharacterPanel onNavigate={() => undefined} />);
+    const { container } = renderIn(
+      <CharacterPanel onNavigate={() => undefined} />,
+    );
     expect(container.querySelector('.xp-track')).toBeTruthy();
     const fill = container.querySelector('.xp-fill') as HTMLElement;
     // 4 điểm trên ngưỡng 6

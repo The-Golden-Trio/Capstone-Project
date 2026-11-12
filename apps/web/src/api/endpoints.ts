@@ -1,6 +1,13 @@
 /** Mọi lời gọi API của app, gom một chỗ để dễ tra. */
 import type { RunAction } from '@datn/game-core';
+import { z } from 'zod';
 import { api } from './client';
+import {
+  clearSession,
+  getRefreshToken,
+  hasSession,
+  setSession,
+} from './session';
 import {
   CompletedRunSchema,
   ContentBootstrapSchema,
@@ -45,9 +52,20 @@ export const contentApi = {
 
 /* ── Xác thực ──────────────────────────────────────────────────────── */
 
+/** openapi `Session`: token + `Me`. Web lưu token rồi đọc `SessionUser` đầy đủ. */
+const SessionSchema = z.object({
+  accessToken: z.string(),
+  refreshToken: z.string(),
+  expiresIn: z.number(),
+});
+
+async function startSession(path: string, body: unknown): Promise<SessionUser> {
+  setSession(await api(path, SessionSchema, { method: 'POST', body }));
+  return api('/auth/me', SessionUserSchema);
+}
+
 export const authApi = {
-  me: (): Promise<SessionUser> =>
-    api('/auth/me', SessionUserSchema, { skipRefresh: false }),
+  me: (): Promise<SessionUser> => api('/auth/me', SessionUserSchema),
 
   register: (body: {
     username: string;
@@ -55,20 +73,35 @@ export const authApi = {
     password: string;
     displayName: string;
     dateOfBirth: string;
-  }): Promise<SessionUser> =>
-    api('/auth/register', SessionUserSchema, { method: 'POST', body }),
+  }): Promise<SessionUser> => startSession('/v1/auth/register', body),
 
-  login: (body: { identifier: string; password: string }): Promise<SessionUser> =>
-    api('/auth/login', SessionUserSchema, { method: 'POST', body }),
+  /** `email` của `SignInInput` nhận cả tên đăng nhập (07 A22). */
+  login: (body: {
+    identifier: string;
+    password: string;
+  }): Promise<SessionUser> =>
+    startSession('/v1/auth/sign-in', {
+      email: body.identifier,
+      password: body.password,
+    }),
 
   google: (body: {
     credential: string;
     dateOfBirth?: string;
-  }): Promise<SessionUser> =>
-    api('/auth/google', SessionUserSchema, { method: 'POST', body }),
+  }): Promise<SessionUser> => startSession('/v1/auth/google', body),
 
-  logout: (): Promise<{ ok: true }> =>
-    api('/auth/logout', OkSchema, { method: 'POST', skipRefresh: true }),
+  logout: async (): Promise<void> => {
+    const refreshToken = getRefreshToken();
+    try {
+      if (hasSession())
+        await api('/v1/auth/sign-out', z.null(), {
+          method: 'POST',
+          body: refreshToken ? { refreshToken } : {},
+        });
+    } finally {
+      clearSession();
+    }
+  },
 
   consent: (body: {
     guardianName: string;
@@ -94,7 +127,7 @@ export const authApi = {
     }),
 
   deleteAccount: (): Promise<{ ok: true }> =>
-    api('/auth/account', OkSchema, { method: 'DELETE' }),
+    api('/auth/account', OkSchema, { method: 'DELETE' }).finally(clearSession),
 };
 
 /* ── Hồ sơ và tiến trình ───────────────────────────────────────────── */

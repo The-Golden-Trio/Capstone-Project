@@ -12,9 +12,10 @@ import { useProfileStore } from '../store/profileStore';
 import { useProgressStore } from '../store/progressStore';
 
 const ROLE_LABEL: Record<string, string> = {
-  USER: 'Học sinh / Phụ huynh',
-  CONTRIBUTOR: 'Cố vấn / Cựu sinh viên',
-  ADMIN: 'Quản trị viên',
+  EXPLORER: 'Người chơi',
+  DOMAIN_EXPERT: 'Chuyên gia nghề',
+  CONTENT_ADMIN: 'Quản trị nội dung',
+  SYSTEM_ADMIN: 'Quản trị hệ thống',
 };
 
 const CONSENT_LABEL: Record<string, string> = {
@@ -123,7 +124,9 @@ export function AccountPage() {
 
       <Card className="mb-4">
         <CardHeader title="Hồ sơ">
-          <Pill tone="gold">{ROLE_LABEL[user.role] ?? user.role}</Pill>
+          <Pill tone="gold">
+            {user.roles.map((r) => ROLE_LABEL[r] ?? r).join(' · ')}
+          </Pill>
         </CardHeader>
         <CardBody>
           <form onSubmit={saveDetails}>
@@ -142,8 +145,9 @@ export function AccountPage() {
               onChange={(e) => setEmail(e.target.value)}
             />
             <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.11em] text-muted">
-              Tên đăng nhập: <span className="text-ink-2">{user.username}</span>{' '}
-              · không đổi được
+              Tên đăng nhập:{' '}
+              <span className="text-ink-2">{user.username ?? '—'}</span> · không
+              đổi được
             </div>
             <Button type="submit" variant="primary" disabled={busy}>
               Lưu thay đổi
@@ -235,9 +239,7 @@ export function AccountPage() {
 
       <Card className="mb-4">
         <CardHeader title="Quyền riêng tư">
-          <Pill
-            tone={user.consentStatus === 'pending' ? 'signal' : 'neutral'}
-          >
+          <Pill tone={user.consentStatus === 'pending' ? 'signal' : 'neutral'}>
             {CONSENT_LABEL[user.consentStatus]}
           </Pill>
         </CardHeader>

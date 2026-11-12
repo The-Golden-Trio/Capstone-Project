@@ -10,15 +10,22 @@ export const ConsentStatusSchema = z.enum([
 ]);
 export type ConsentStatus = z.infer<typeof ConsentStatusSchema>;
 
-export const RoleSchema = z.enum(['USER', 'CONTRIBUTOR', 'ADMIN']);
+/** openapi `Role`: bốn actor; một người có thể giữ nhiều vai (ERD-01 `user_role`). */
+export const RoleSchema = z.enum([
+  'EXPLORER',
+  'DOMAIN_EXPERT',
+  'CONTENT_ADMIN',
+  'SYSTEM_ADMIN',
+]);
 export type UserRole = z.infer<typeof RoleSchema>;
 
 export const SessionUserSchema = z.object({
   id: z.string(),
-  username: z.string(),
+  /** Rỗng với tài khoản tạo bằng email mà không đặt tên đăng nhập. */
+  username: z.string().nullable(),
   email: z.string().nullable(),
   displayName: z.string(),
-  role: RoleSchema,
+  roles: z.array(RoleSchema),
   dateOfBirth: z.string().nullable(),
   consentStatus: ConsentStatusSchema,
   hasPassword: z.boolean(),

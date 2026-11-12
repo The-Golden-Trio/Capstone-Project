@@ -3,12 +3,12 @@
  * và hình dạng là ĐỀ XUẤT ngoài `openapi.yaml`:
  * `docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`.
  *
- * Phiên đi bằng cookie httpOnly; gặp 401 thì làm mới phiên một lần rồi gọi
+ * Phiên là Bearer (`api/session`); gặp 401 thì làm mới phiên một lần rồi gọi
  * lại. Tin trên `/api/v1/stream` đọc bằng `fetch` (không dùng EventSource),
  * nối lại với `Last-Event-ID` để nhận bù tin đã lỡ.
  */
 import type { shift } from '@datn/game-core';
-import { refreshSession } from '../../api/client';
+import { authFetch } from '../../api/session';
 import { PlayApiError } from '../api/contract';
 import { readSse } from '../api/sse';
 import type { Problem } from '../api/types';
@@ -141,18 +141,15 @@ async function call(
   init: { method?: 'GET' | 'POST'; body?: unknown } = {},
 ): Promise<Response> {
   const send = () =>
-    fetch(url, {
+    authFetch(url, {
       method: init.method ?? 'GET',
-      credentials: 'include',
       headers:
         init.body === undefined
           ? undefined
           : { 'Content-Type': 'application/json' },
       body: init.body === undefined ? undefined : JSON.stringify(init.body),
     });
-  let response = await send();
-  if (response.status === 401 && (await refreshSession()))
-    response = await send();
+  const response = await send();
   if (!response.ok) throw await toError(response);
   return response;
 }
@@ -208,23 +205,13 @@ export function createShiftApi(reconnectMs = 2000): ShiftApi {
       const controller = new AbortController();
       let lastEventId: string | null = null;
       const connect = async (): Promise<void> => {
-        let response = await fetch(`${ROOT}/stream`, {
+        const response = await authFetch(`${ROOT}/stream`, {
           headers: {
             Accept: 'text/event-stream',
             ...(lastEventId ? { 'Last-Event-ID': lastEventId } : {}),
           },
-          credentials: 'include',
           signal: controller.signal,
         });
-        if (response.status === 401 && (await refreshSession()))
-          response = await fetch(`${ROOT}/stream`, {
-            headers: {
-              Accept: 'text/event-stream',
-              ...(lastEventId ? { 'Last-Event-ID': lastEventId } : {}),
-            },
-            credentials: 'include',
-            signal: controller.signal,
-          });
         if (!response.ok || !response.body) {
           if (response.status === 401) controller.abort();
           return;

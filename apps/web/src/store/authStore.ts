@@ -1,12 +1,13 @@
 /**
  * Phiên đăng nhập.
  *
- * KHÔNG lưu xuống localStorage: cookie httpOnly mới là nguồn sự thật, và một
- * bản sao trong localStorage chỉ tạo ra cảnh "giao diện tưởng còn đăng nhập
- * trong khi phiên đã hết". Mỗi lần mở app thì hỏi lại `/auth/me` một lần.
+ * Token nằm ở `api/session` (access trong bộ nhớ, refresh ở localStorage).
+ * Thông tin người dùng KHÔNG lưu xuống: mỗi lần mở app hỏi lại `/auth/me`,
+ * để giao diện không tưởng còn đăng nhập trong khi phiên đã hết.
  */
 import { create } from 'zustand';
 import { authApi } from '../api/endpoints';
+import { hasSession } from '../api/session';
 import type { SessionUser } from '../api/schemas';
 
 export type AuthStatus = 'loading' | 'authed' | 'anon';
@@ -25,6 +26,10 @@ export const useAuthStore = create<AuthStore>()((set) => ({
   user: null,
 
   hydrate: async () => {
+    if (!hasSession()) {
+      set({ user: null, status: 'anon' });
+      return;
+    }
     try {
       const user = await authApi.me();
       set({ user, status: 'authed' });

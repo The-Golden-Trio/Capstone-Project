@@ -2,10 +2,11 @@
  * `PlayApi` gọi máy chủ thật theo `reports/master/api/openapi.yaml`
  * (`apps/api/src/play`, SD-01, SD-02).
  *
- * Phiên đăng nhập đi bằng cookie httpOnly (`credentials: 'include'`), như
- * phần còn lại của app; Bearer token chỉ gửi khi có `getToken`.
+ * Phiên là Bearer token: mọi lời gọi đi qua `authFetch` (`api/session`), tự
+ * gắn header và làm mới phiên. `getToken` chỉ để test đè token.
  */
 import { ScenarioSchema } from '@datn/game-core';
+import { authFetch } from '../../api/session';
 import { PlayApiError, type Accepted, type PlayApi } from './contract';
 import { readSse } from './sse';
 import type {
@@ -50,9 +51,8 @@ export function createHttpPlayApi(options: HttpPlayApiOptions = {}): PlayApi {
     path: string,
     init: { method?: 'GET' | 'POST'; body?: unknown } = {},
   ): Promise<Response> {
-    const response = await fetch(`${BASE_URL}${path}`, {
+    const response = await authFetch(`${BASE_URL}${path}`, {
       method: init.method ?? 'GET',
-      credentials: 'include',
       headers: headers(init.body !== undefined),
       body: init.body === undefined ? undefined : JSON.stringify(init.body),
     });
@@ -115,13 +115,12 @@ export function createHttpPlayApi(options: HttpPlayApiOptions = {}): PlayApi {
       let lastEventId: string | null = null;
 
       const connect = async (): Promise<void> => {
-        const response = await fetch(`${BASE_URL}/stream`, {
+        const response = await authFetch(`${BASE_URL}/stream`, {
           headers: {
             ...headers(false),
             Accept: 'text/event-stream',
             ...(lastEventId ? { 'Last-Event-ID': lastEventId } : {}),
           },
-          credentials: 'include',
           signal: controller.signal,
         });
         if (!response.ok || !response.body) {
@@ -157,7 +156,7 @@ export function createHttpPlayApi(options: HttpPlayApiOptions = {}): PlayApi {
       // dẫn và hình dạng tệp chưa được chốt; tạm coi tệp là một `Scenario` của
       // game-core đặt ở `<releaseBaseUrl>/<releaseVersion>`. Cần chốt cùng
       // phía Content lifecycle khi làm SD-08.
-      const response = await fetch(
+      const response = await authFetch(
         `${releaseBaseUrl}/${encodeURIComponent(run.releaseVersion ?? '')}`,
       );
       if (!response.ok) throw await toError(response);
