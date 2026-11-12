@@ -35,6 +35,33 @@ const EnvSchema = z.object({
 
   /** Gốc của web app, dùng cho CORS khi chạy thật. Lúc dev có proxy nên không cần. */
   WEB_ORIGIN: z.string().default('http://localhost:4200'),
+  /** Gốc của staff app (CORS, link trong email gửi staff). */
+  STAFF_ORIGIN: z.string().default('http://localhost:4300'),
+
+  /** Phiên rảnh quá số phút này thì refresh bị từ chối (NFR-17). */
+  IDLE_TIMEOUT_MINUTES: z.coerce.number().int().positive().default(120),
+
+  /**
+   * SMTP gửi email thông báo (CL-07 `EmailProcessor`). Dev: mailpit trong
+   * infra/local/dev-stack.yml, `smtp://localhost:1025`. Để trống thì chỉ ghi log.
+   */
+  SMTP_URL: optionalText,
+  /** Địa chỉ gửi đi của email hệ thống. */
+  MAIL_FROM: blankAsUnset(
+    z.string().default('JobQuest <no-reply@jobquest.local>'),
+  ),
+
+  /**
+   * Kho object cho asset (CL-07 `StorageService`, S3/MinIO). Dev: MinIO trong
+   * infra/local/dev-stack.yml. Thiếu S3_ENDPOINT thì route asset trả 503.
+   */
+  S3_ENDPOINT: optionalText,
+  /** Endpoint trình duyệt dùng để tải ảnh (signed URL); mặc định = S3_ENDPOINT. */
+  S3_PUBLIC_ENDPOINT: optionalText,
+  S3_REGION: blankAsUnset(z.string().default('us-east-1')),
+  S3_BUCKET: blankAsUnset(z.string().default('jobquest')),
+  S3_ACCESS_KEY: optionalText,
+  S3_SECRET_KEY: optionalText,
 
   /**
    * AI của luồng chơi ca làm. `live`: gọi model qua gateway. `fake`: narrator
@@ -169,7 +196,7 @@ export function loadEnv(
 }
 
 /** Thời hạn token. Access ngắn vì làm mới rẻ; refresh dài nhưng xoay vòng mỗi lần dùng. */
-export const ACCESS_TOKEN_TTL = '15m';
+export const ACCESS_TOKEN_TTL_SECONDS = 15 * 60;
 export const REFRESH_TOKEN_TTL_DAYS = 7;
 
 /** Dưới tuổi này thì cần người giám hộ đồng ý (Nghị định 13/2023/NĐ-CP). */

@@ -11,7 +11,7 @@ import { ShiftTurnProcessor } from '../assessment/shift-turn.processor';
 import { Problem } from '../core/problem';
 import type { ShiftTurnJob } from '../core/queues';
 import { ShiftLogService } from '../core/shift-log.service';
-import type { StreamEvent } from '../core/stream.service';
+import type { StreamEvent } from '../notification/stream.service';
 import type { TurnDto } from './shift.dto';
 import { ShiftRunService } from './shift-run.service';
 import { memoryPrisma } from './testing/memory-prisma';
@@ -28,7 +28,7 @@ type TurnInput = TurnDto extends infer T
 
 function setup(narrator: ShiftNarrator = new FakeShiftNarrator()) {
   const prisma = memoryPrisma();
-  void prisma.user.create({
+  void prisma.userAccount.create({
     data: { id: USER, displayName: 'Nam', username: 'nam', email: null },
   });
   const content = {

@@ -2,6 +2,8 @@ const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join } = require('path');
 
 module.exports = {
+  // Gói `cron` (qua @nestjs/schedule) trỏ tới file .map không phát hành kèm.
+  ignoreWarnings: [/Failed to parse source map/],
   output: {
     path: join(__dirname, 'dist'),
     clean: true,

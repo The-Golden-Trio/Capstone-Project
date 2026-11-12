@@ -6,7 +6,7 @@ import {
 } from '@datn/game-core';
 import { fixtureData } from '@datn/game-core/testing';
 import { toProblem, Problem } from '../core/problem';
-import { compareIds } from '../core/stream.service';
+import { compareIds } from '../notification/stream.service';
 import { parseReleaseVersion } from './run.service';
 import { summaryOf } from './summary.service';
 

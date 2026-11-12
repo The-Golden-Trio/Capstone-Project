@@ -13,7 +13,9 @@ import {
   Logger,
   type ExceptionFilter,
 } from '@nestjs/common';
+import type { PipeTransform } from '@nestjs/common';
 import type { Response } from 'express';
+import type { ZodType } from 'zod';
 
 export interface ProblemBody {
   type: string;
@@ -41,8 +43,34 @@ const CODE_BY_STATUS: Record<number, string> = {
   403: 'FORBIDDEN',
   404: 'NOT_FOUND',
   409: 'CONFLICT',
+  410: 'GONE',
+  412: 'PRECONDITION_FAILED',
   422: 'ANSWER_INVALID',
+  503: 'UNAVAILABLE',
 };
+
+/**
+ * Kiểm dữ liệu vào bằng Zod và trả lỗi dạng Problem 422 `VALIDATION_FAILED`
+ * kèm `errors[{field, reason}]` (openapi `ValidationFailed`). Dùng cho route v1.
+ */
+export class ZodProblemPipe<T> implements PipeTransform<unknown, T> {
+  constructor(private readonly schema: ZodType<T>) {}
+
+  transform(value: unknown): T {
+    const result = this.schema.safeParse(value);
+    if (!result.success)
+      throw new Problem(
+        422,
+        'VALIDATION_FAILED',
+        'Dữ liệu gửi lên không hợp lệ',
+        result.error.issues.map((i) => ({
+          field: i.path.join('.') || undefined,
+          reason: i.message,
+        })),
+      );
+    return result.data;
+  }
+}
 
 @Catch()
 export class ProblemFilter implements ExceptionFilter {

@@ -31,7 +31,7 @@ import {
 import { ContentService } from '../content/content.service';
 import { Problem } from '../core/problem';
 import { RunLogService, type LoadedRun } from '../core/run-log.service';
-import { StreamService } from '../core/stream.service';
+import { StreamService } from '../notification/stream.service';
 import type { ScenarioRun } from '../generated/prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 import { ProgressService } from '../progress/progress.service';

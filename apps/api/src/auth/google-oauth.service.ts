@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { OAuth2Client } from 'google-auth-library';
 import type { Env } from '../config/env';
 
-export interface GoogleIdentity {
+export interface GoogleProfile {
   /** `sub` của Google — định danh ổn định, không đổi kể cả khi người dùng đổi email. */
   providerAccountId: string;
   email: string;
@@ -18,7 +18,7 @@ export interface GoogleIdentity {
  * `aud` (đúng client ID của mình) và `iss`. `google-auth-library` làm cả ba.
  */
 @Injectable()
-export class GoogleService {
+export class GoogleOAuthService {
   private readonly client: OAuth2Client;
   private readonly clientId: string;
 
@@ -27,7 +27,7 @@ export class GoogleService {
     this.client = new OAuth2Client(this.clientId);
   }
 
-  async verify(credential: string): Promise<GoogleIdentity> {
+  async verify(credential: string): Promise<GoogleProfile> {
     let payload;
     try {
       const ticket = await this.client.verifyIdToken({

@@ -3,115 +3,126 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import * as argon2 from 'argon2';
+import { ConfigService } from '@nestjs/config';
+import { randomBytes } from 'node:crypto';
 import { blankFit } from '@datn/game-core';
 import { PrismaService } from '../prisma/prisma.service';
-import { consentStatus, type ConsentStatus } from '../consent/consent';
+import type { Env } from '../config/env';
+import { Problem } from '../core/problem';
+import { NotificationService } from '../notification/notification.service';
+import { ActivityLogService } from './activity-log.service';
 import type { AuthUser } from './decorators/current-user.decorator';
-import type { GoogleSignInDto, RegisterDto } from './dto/auth.dto';
-import { GoogleService } from './google.service';
+import type {
+  ConfirmPasswordResetInput,
+  GoogleSignInInput,
+  RegisterInput,
+  RequestPasswordResetInput,
+  SignInInput,
+  SignOutInput,
+} from './dto/auth.dto';
+import { GoogleOAuthService } from './google-oauth.service';
+import { loadSessionUser, toMe, type Me } from './me';
+import { PasswordService } from './password.service';
+import { sha256, TokenService, type TokenSet } from './token.service';
 
-const GOOGLE_PROVIDER = 'google';
-
-/** Người dùng như web app nhìn thấy: không có băm mật khẩu, có trạng thái đồng ý. */
-export interface SessionUser {
-  id: string;
-  username: string;
-  email: string | null;
-  displayName: string;
-  role: string;
-  dateOfBirth: string | null;
-  consentStatus: ConsentStatus;
-  /** Đã đặt mật khẩu chưa — quyết định màn Tài khoản hiện gì. */
-  hasPassword: boolean;
-  linkedProviders: string[];
+/** openapi `Session`. */
+export interface Session extends TokenSet {
+  user: Me;
 }
 
+const RESET_TOKEN_TTL_MS = 60 * 60 * 1000;
+
+/** CL-01 `AuthService`: các lối vào phiên đăng nhập (SD-04). */
 @Injectable()
 export class AuthService {
   constructor(
     private readonly prisma: PrismaService,
-    private readonly google: GoogleService,
+    private readonly tokens: TokenService,
+    private readonly passwords: PasswordService,
+    private readonly google: GoogleOAuthService,
+    private readonly notifications: NotificationService,
+    private readonly activity: ActivityLogService,
+    private readonly config: ConfigService<Env, true>,
   ) {}
 
-  /* ── Đọc ─────────────────────────────────────────────────────────── */
-
-  async getSessionUser(userId: string): Promise<SessionUser | null> {
-    const user = await this.prisma.user.findUnique({
-      where: { id: userId },
-      include: { consent: true, oauthAccounts: true },
-    });
-    if (!user) return null;
-
-    return {
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      displayName: user.displayName,
-      role: user.role,
-      dateOfBirth: user.dateOfBirth
-        ? user.dateOfBirth.toISOString().slice(0, 10)
-        : null,
-      consentStatus: consentStatus(user.dateOfBirth, Boolean(user.consent)),
-      hasPassword: Boolean(user.passwordHash),
-      linkedProviders: user.oauthAccounts.map((a) => a.provider),
-    };
+  private async session(userId: string, tokens?: TokenSet): Promise<Session> {
+    const set = tokens ?? (await this.tokens.issue(userId));
+    const user = await loadSessionUser(this.prisma, userId);
+    if (!user) throw new UnauthorizedException('Không tìm thấy tài khoản');
+    return { ...set, user: toMe(user) };
   }
 
-  /* ── Đăng ký bằng mật khẩu ───────────────────────────────────────── */
+  /* ── Đăng ký ─────────────────────────────────────────────────────── */
 
-  async register(dto: RegisterDto): Promise<AuthUser> {
-    const clash = await this.prisma.user.findFirst({
+  async register(dto: RegisterInput): Promise<Session> {
+    const clash = await this.prisma.userAccount.findFirst({
       where: {
-        OR: [{ username: dto.username }, { email: dto.email }],
+        OR: [
+          { email: dto.email },
+          ...(dto.username ? [{ username: dto.username }] : []),
+        ],
       },
       select: { username: true, email: true },
     });
     if (clash) {
       throw new ConflictException(
-        clash.username === dto.username
-          ? 'Tên đăng nhập này đã có người dùng'
-          : 'Email này đã được đăng ký',
+        clash.email === dto.email
+          ? 'Email này đã được đăng ký'
+          : 'Tên đăng nhập này đã có người dùng',
       );
     }
 
-    const user = await this.prisma.user.create({
+    const user = await this.prisma.userAccount.create({
       data: {
-        username: dto.username,
         email: dto.email,
+        username: dto.username ?? null,
         displayName: dto.displayName,
-        passwordHash: await argon2.hash(dto.password),
-        dateOfBirth: new Date(dto.dateOfBirth),
+        passwordHash: await this.passwords.hash(dto.password),
+        dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
+        roles: { create: { role: 'EXPLORER' } },
         // Hồ sơ chơi tạo cùng lúc, nên không bao giờ có tài khoản không hồ sơ.
         gameProfile: { create: { quizFit: blankFit() } },
       },
     });
-
-    return { id: user.id, username: user.username, role: user.role };
+    await this.activity.log(user.id, 'REGISTER', {
+      type: 'user_account',
+      id: user.id,
+    });
+    return this.session(user.id);
   }
 
   /* ── Đăng nhập bằng mật khẩu ─────────────────────────────────────── */
 
-  async validateCredentials(
-    identifier: string,
-    password: string,
-  ): Promise<AuthUser | null> {
-    const user = await this.prisma.user.findFirst({
+  async signIn(dto: SignInInput): Promise<Session> {
+    const identifier = dto.email.trim();
+    const user = await this.prisma.userAccount.findFirst({
       where: {
-        OR: [
-          { username: identifier },
-          { email: identifier.toLowerCase() },
-        ],
+        status: { not: 'DELETED' },
+        OR: [{ email: identifier.toLowerCase() }, { username: identifier }],
       },
     });
-
     // Tài khoản chỉ đăng nhập bằng Google thì không có băm để so.
-    if (!user?.passwordHash) return null;
+    const ok =
+      user?.passwordHash &&
+      (await this.passwords.verify(dto.password, user.passwordHash));
+    if (!user || !ok)
+      throw new Problem(
+        401,
+        'INVALID_CREDENTIALS',
+        'Sai email, tên đăng nhập hoặc mật khẩu',
+      );
+    if (user.status === 'DISABLED')
+      throw new Problem(403, 'ACCOUNT_DISABLED', 'Tài khoản đã bị khoá');
 
-    const ok = await argon2.verify(user.passwordHash, password);
-    if (!ok) return null;
-
-    return { id: user.id, username: user.username, role: user.role };
+    await this.prisma.userAccount.update({
+      where: { id: user.id },
+      data: { lastSignInAt: new Date() },
+    });
+    await this.activity.log(user.id, 'SIGN_IN', {
+      type: 'user_account',
+      id: user.id,
+    });
+    return this.session(user.id);
   }
 
   /* ── Đăng nhập bằng Google ───────────────────────────────────────── */
@@ -120,73 +131,62 @@ export class AuthService {
    * Ba đường, theo đúng thứ tự này:
    *   1. Đã có liên kết Google → chính là người đó.
    *   2. Email đã xác minh trùng một tài khoản sẵn có → nối thêm liên kết.
-   *   3. Còn lại → tạo tài khoản mới.
+   *   3. Còn lại → tạo tài khoản explorer mới.
    *
    * Bước 2 bắt buộc `email_verified`: thiếu điều kiện đó thì bất kỳ ai tạo
    * được một tài khoản Google mang email của người khác cũng chiếm được
    * tài khoản của họ.
    */
-  async signInWithGoogle(dto: GoogleSignInDto): Promise<AuthUser> {
-    const identity = await this.google.verify(dto.credential);
+  async signInWithGoogle(dto: GoogleSignInInput): Promise<Session> {
+    const profile = await this.google.verify(dto.credential);
 
-    const linked = await this.prisma.oAuthAccount.findUnique({
-      where: {
-        provider_providerAccountId: {
-          provider: GOOGLE_PROVIDER,
-          providerAccountId: identity.providerAccountId,
-        },
-      },
-      include: { user: true },
+    const linked = await this.prisma.googleIdentity.findUnique({
+      where: { googleSub: profile.providerAccountId },
     });
-    if (linked) {
-      return {
-        id: linked.user.id,
-        username: linked.user.username,
-        role: linked.user.role,
-      };
-    }
+    let userId = linked?.userId;
 
-    if (identity.emailVerified) {
-      const byEmail = await this.prisma.user.findUnique({
-        where: { email: identity.email },
+    if (!userId && profile.emailVerified) {
+      const byEmail = await this.prisma.userAccount.findUnique({
+        where: { email: profile.email },
+        include: { googleIdentity: true },
       });
-      if (byEmail) {
-        await this.prisma.oAuthAccount.create({
-          data: {
-            userId: byEmail.id,
-            provider: GOOGLE_PROVIDER,
-            providerAccountId: identity.providerAccountId,
-          },
+      if (byEmail && !byEmail.googleIdentity) {
+        await this.prisma.googleIdentity.create({
+          data: { userId: byEmail.id, googleSub: profile.providerAccountId },
         });
-        return {
-          id: byEmail.id,
-          username: byEmail.username,
-          role: byEmail.role,
-        };
+        userId = byEmail.id;
       }
     }
 
-    const created = await this.prisma.user.create({
-      data: {
-        username: await this.uniqueUsernameFrom(identity.email),
-        email: identity.email,
-        displayName: identity.name ?? identity.email.split('@')[0],
-        dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
-        gameProfile: { create: { quizFit: blankFit() } },
-        oauthAccounts: {
-          create: {
-            provider: GOOGLE_PROVIDER,
-            providerAccountId: identity.providerAccountId,
+    if (!userId) {
+      const created = await this.prisma.userAccount.create({
+        data: {
+          username: await this.uniqueUsernameFrom(profile.email),
+          email: profile.email,
+          displayName: (profile.name ?? profile.email.split('@')[0]).slice(
+            0,
+            80,
+          ),
+          dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
+          roles: { create: { role: 'EXPLORER' } },
+          gameProfile: { create: { quizFit: blankFit() } },
+          googleIdentity: {
+            create: { googleSub: profile.providerAccountId },
           },
         },
-      },
-    });
+      });
+      userId = created.id;
+    }
 
-    return {
-      id: created.id,
-      username: created.username,
-      role: created.role,
-    };
+    await this.prisma.userAccount.update({
+      where: { id: userId },
+      data: { lastSignInAt: new Date() },
+    });
+    await this.activity.log(userId, 'SIGN_IN_GOOGLE', {
+      type: 'user_account',
+      id: userId,
+    });
+    return this.session(userId);
   }
 
   /** Lấy phần trước @ làm tên đăng nhập, thêm hậu tố nếu đã có người dùng. */
@@ -199,88 +199,80 @@ export class AuthService {
 
     for (let attempt = 0; attempt < 50; attempt++) {
       const candidate = attempt === 0 ? base : `${base}${attempt}`;
-      const taken = await this.prisma.user.findUnique({
+      const taken = await this.prisma.userAccount.findUnique({
         where: { username: candidate },
         select: { id: true },
       });
       if (!taken) return candidate;
     }
-    return `${base}${Date.now().toString(36)}`;
+    return `${base}${Date.now().toString(36)}`.slice(0, 32);
   }
 
-  /* ── Đồng ý của người giám hộ ────────────────────────────────────── */
+  /* ── Phiên ───────────────────────────────────────────────────────── */
 
-  async recordConsent(
-    userId: string,
-    guardianName: string,
-    guardianEmail: string,
-  ): Promise<void> {
-    await this.prisma.parentalConsent.upsert({
-      where: { userId },
-      create: { userId, guardianName, guardianEmail },
-      update: { guardianName, guardianEmail, consentedAt: new Date() },
+  async refresh(refreshToken: string): Promise<Session> {
+    const { userId, ...set } = await this.tokens.rotate(refreshToken);
+    return this.session(userId, set);
+  }
+
+  async signOut(user: AuthUser, dto: SignOutInput): Promise<void> {
+    if (dto.refreshToken) await this.tokens.revoke(dto.refreshToken, user.id);
+    else await this.tokens.revokeAll(user.id);
+    await this.activity.log(user.id, 'SIGN_OUT');
+  }
+
+  /* ── Đặt lại mật khẩu ────────────────────────────────────────────── */
+
+  /** Luôn trả như nhau dù email có tồn tại hay không (openapi: luôn 202). */
+  async requestPasswordReset(dto: RequestPasswordResetInput): Promise<void> {
+    const user = await this.prisma.userAccount.findUnique({
+      where: { email: dto.email },
+      include: { roles: true },
     });
-  }
+    if (!user || user.status !== 'ACTIVE') return;
 
-  /* ── Quản lý tài khoản ───────────────────────────────────────────── */
-
-  async updateAccount(
-    userId: string,
-    data: { displayName?: string; email?: string },
-  ): Promise<void> {
-    if (data.email) {
-      const taken = await this.prisma.user.findFirst({
-        where: { email: data.email, NOT: { id: userId } },
-        select: { id: true },
-      });
-      if (taken) throw new ConflictException('Email này đã được đăng ký');
-    }
-    await this.prisma.user.update({ where: { id: userId }, data });
-  }
-
-  async changePassword(
-    userId: string,
-    currentPassword: string | undefined,
-    newPassword: string,
-  ): Promise<void> {
-    const user = await this.prisma.user.findUnique({ where: { id: userId } });
-    if (!user) throw new UnauthorizedException();
-
-    // Đã có mật khẩu thì phải chứng minh biết mật khẩu cũ. Chưa có (tài khoản
-    // Google) thì đây là lần đặt đầu tiên, phiên đăng nhập là đủ.
-    if (user.passwordHash) {
-      const ok =
-        currentPassword !== undefined &&
-        (await argon2.verify(user.passwordHash, currentPassword));
-      if (!ok) throw new UnauthorizedException('Mật khẩu hiện tại không đúng');
-    }
-
-    await this.prisma.user.update({
-      where: { id: userId },
-      data: { passwordHash: await argon2.hash(newPassword) },
+    const token = randomBytes(32).toString('base64url');
+    await this.prisma.passwordResetToken.create({
+      data: {
+        userId: user.id,
+        tokenHash: sha256(token),
+        expiresAt: new Date(Date.now() + RESET_TOKEN_TTL_MS),
+      },
     });
+    // Màn đặt lại mật khẩu hiện chỉ có ở staff app (T01). Explorer chưa có
+    // màn tương ứng ở web; link vẫn mở được trang của staff app.
+    const origin = this.config.get('STAFF_ORIGIN', { infer: true });
+    const link = `${origin}/staff/reset-password?token=${encodeURIComponent(token)}`;
+    await this.notifications.notify(
+      user.id,
+      'PASSWORD_RESET',
+      {},
+      { channels: ['EMAIL'], secret: { link } },
+    );
+    await this.activity.log(user.id, 'PASSWORD_RESET_REQUESTED');
   }
 
-  /** Gỡ liên kết Google, nhưng không để ai tự khoá mình ra ngoài. */
-  async unlinkProvider(userId: string, provider: string): Promise<void> {
-    const user = await this.prisma.user.findUnique({
-      where: { id: userId },
-      include: { oauthAccounts: true },
+  async confirmPasswordReset(dto: ConfirmPasswordResetInput): Promise<void> {
+    const row = await this.prisma.passwordResetToken.findUnique({
+      where: { tokenHash: sha256(dto.token) },
     });
-    if (!user) throw new UnauthorizedException();
-
-    const remaining = user.oauthAccounts.filter((a) => a.provider !== provider);
-    if (!user.passwordHash && remaining.length === 0) {
-      throw new ConflictException(
-        'Đây là cách đăng nhập duy nhất của bạn. Hãy đặt mật khẩu trước khi gỡ.',
+    if (!row || row.usedAt || row.expiresAt.getTime() < Date.now())
+      throw new Problem(
+        410,
+        'RESET_TOKEN_EXPIRED',
+        'Link đặt lại mật khẩu đã hết hạn hoặc đã dùng',
       );
-    }
-
-    await this.prisma.oAuthAccount.deleteMany({ where: { userId, provider } });
-  }
-
-  async deleteAccount(userId: string): Promise<void> {
-    // Mọi bảng liên quan đều onDelete: Cascade, nên một lệnh là sạch.
-    await this.prisma.user.delete({ where: { id: userId } });
+    await this.prisma.$transaction([
+      this.prisma.passwordResetToken.update({
+        where: { id: row.id },
+        data: { usedAt: new Date() },
+      }),
+      this.prisma.userAccount.update({
+        where: { id: row.userId },
+        data: { passwordHash: await this.passwords.hash(dto.newPassword) },
+      }),
+    ]);
+    await this.tokens.revokeAll(row.userId);
+    await this.activity.log(row.userId, 'PASSWORD_RESET');
   }
 }

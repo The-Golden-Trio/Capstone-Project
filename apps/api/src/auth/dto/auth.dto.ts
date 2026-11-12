@@ -28,29 +28,68 @@ const dateOfBirth = z
     return year >= 1900 && date.getTime() <= Date.now();
   }, 'ngày sinh không hợp lệ');
 
+/**
+ * openapi `RegisterInput` + hai trường ngoài hợp đồng đã duyệt (07 A22):
+ * `username` và `dateOfBirth` (tính có cần người giám hộ đồng ý không).
+ */
 export const RegisterSchema = z.object({
-  username,
   email: z.email('email không hợp lệ').toLowerCase(),
   password,
-  displayName: z.string().trim().min(1, 'chưa có tên hiển thị').max(48),
-  dateOfBirth,
+  displayName: z.string().trim().min(1, 'chưa có tên hiển thị').max(80),
+  username: username.optional(),
+  dateOfBirth: dateOfBirth.optional(),
 });
-export type RegisterDto = z.infer<typeof RegisterSchema>;
+export type RegisterInput = z.infer<typeof RegisterSchema>;
 
-export const LoginSchema = z.object({
-  /** Tên đăng nhập hoặc email. */
-  identifier: z.string().trim().min(1, 'chưa nhập tên đăng nhập'),
+/**
+ * openapi `SignInInput`. Trường `email` nhận cả tên đăng nhập (07 A22): explorer
+ * cũ có tài khoản chỉ có tên đăng nhập, không có email.
+ */
+export const SignInSchema = z.object({
+  email: z.string().trim().min(1, 'chưa nhập email hoặc tên đăng nhập'),
   password: z.string().min(1, 'chưa nhập mật khẩu'),
 });
-export type LoginDto = z.infer<typeof LoginSchema>;
+export type SignInInput = z.infer<typeof SignInSchema>;
 
+/**
+ * Lệch openapi (07 A24): web dùng Google Identity Services trả ID token
+ * (`credential`) chứ không dùng code flow `{code, redirectUri}`.
+ */
 export const GoogleSignInSchema = z.object({
-  /** ID token do Google Identity Services trả về trên trình duyệt. */
   credential: z.string().min(1),
   /** Chỉ dùng khi tạo tài khoản mới từ Google. */
   dateOfBirth: dateOfBirth.optional(),
 });
-export type GoogleSignInDto = z.infer<typeof GoogleSignInSchema>;
+export type GoogleSignInInput = z.infer<typeof GoogleSignInSchema>;
+
+export const RefreshSessionSchema = z.object({
+  refreshToken: z.string().min(1),
+});
+export type RefreshSessionInput = z.infer<typeof RefreshSessionSchema>;
+
+/** Body tuỳ chọn của sign-out: có token thì chỉ đóng phiên đó, không thì đóng mọi phiên. */
+export const SignOutSchema = z
+  .object({ refreshToken: z.string().min(1).optional() })
+  .optional()
+  .default({});
+export type SignOutInput = z.infer<typeof SignOutSchema>;
+
+export const RequestPasswordResetSchema = z.object({
+  email: z.email('email không hợp lệ').toLowerCase(),
+});
+export type RequestPasswordResetInput = z.infer<
+  typeof RequestPasswordResetSchema
+>;
+
+export const ConfirmPasswordResetSchema = z.object({
+  token: z.string().min(1),
+  newPassword: password,
+});
+export type ConfirmPasswordResetInput = z.infer<
+  typeof ConfirmPasswordResetSchema
+>;
+
+/* ── Route tài khoản prototype (`/api/auth/*`, màn Tài khoản của explorer) ── */
 
 export const ConsentSchema = z.object({
   guardianName: z.string().trim().min(1, 'chưa có tên người giám hộ').max(64),
@@ -59,7 +98,7 @@ export const ConsentSchema = z.object({
 export type ConsentDto = z.infer<typeof ConsentSchema>;
 
 export const UpdateAccountSchema = z.object({
-  displayName: z.string().trim().min(1).max(48).optional(),
+  displayName: z.string().trim().min(1).max(80).optional(),
   email: z.email('email không hợp lệ').toLowerCase().optional(),
 });
 export type UpdateAccountDto = z.infer<typeof UpdateAccountSchema>;

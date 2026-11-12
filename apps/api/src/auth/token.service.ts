@@ -4,35 +4,37 @@ import { JwtService } from '@nestjs/jwt';
 import { createHash, randomBytes } from 'node:crypto';
 import { PrismaService } from '../prisma/prisma.service';
 import {
-  ACCESS_TOKEN_TTL,
+  ACCESS_TOKEN_TTL_SECONDS,
   REFRESH_TOKEN_TTL_DAYS,
   type Env,
 } from '../config/env';
-import type { Role } from '../generated/prisma/enums';
+import type { UserRoleKind } from '../generated/prisma/enums';
+import { Problem } from '../core/problem';
+import type { AuthUser } from './decorators/current-user.decorator';
 
 export interface AccessTokenPayload {
   sub: string;
-  username: string;
-  role: Role;
+  roles: UserRoleKind[];
 }
 
-export interface TokenPair {
+/** Phần token của openapi `Session`; `user` do `AuthService` ghép vào. */
+export interface TokenSet {
   accessToken: string;
   refreshToken: string;
-  refreshExpiresAt: Date;
+  /** Giây. */
+  expiresIn: number;
 }
 
+export const sha256 = (value: string): string =>
+  createHash('sha256').update(value).digest('hex');
+
 /**
- * Cấp và xoay vòng token.
+ * Cấp và xoay vòng token (CL-01 `TokenService`, ERD-01 `auth_session`).
  *
- * Refresh token được lưu dạng băm SHA-256, không bao giờ lưu nguyên văn: đọc
- * được cả bảng cũng không mạo danh được ai. Mỗi lần dùng là sinh token mới và
- * thu hồi token cũ.
- *
- * Phát hiện dùng lại: nếu một token đã thu hồi lại được đem ra dùng, chỉ có
- * hai khả năng — token bị đánh cắp, hoặc máy khách chạy đua với chính nó.
- * Cả hai đều xử lý giống nhau: thu hồi toàn bộ token của người đó, buộc đăng
- * nhập lại. Thà phiền một lần còn hơn để phiên bị chiếm.
+ * Mỗi phiên đăng nhập là một dòng `auth_session` giữ băm SHA-256 của refresh
+ * token hiện hành, không bao giờ giữ nguyên văn. Mỗi lần refresh sinh token
+ * mới và thay băm tại chỗ, nên token cũ chết ngay. Phiên hết hạn khi quá
+ * `expires_at` hoặc rảnh quá `IDLE_TIMEOUT_MINUTES` (NFR-17).
  */
 @Injectable()
 export class TokenService {
@@ -42,102 +44,120 @@ export class TokenService {
     private readonly prisma: PrismaService,
   ) {}
 
-  private hash(token: string): string {
-    return createHash('sha256').update(token).digest('hex');
-  }
-
-  private signAccessToken(payload: AccessTokenPayload): Promise<string> {
+  private signAccess(payload: AccessTokenPayload): Promise<string> {
     return this.jwt.signAsync(payload, {
       secret: this.config.get('JWT_ACCESS_SECRET', { infer: true }),
-      expiresIn: ACCESS_TOKEN_TTL,
+      expiresIn: ACCESS_TOKEN_TTL_SECONDS,
     });
   }
 
-  async verifyAccessToken(token: string): Promise<AccessTokenPayload> {
-    return this.jwt.verifyAsync<AccessTokenPayload>(token, {
+  async verifyAccess(token: string): Promise<AuthUser> {
+    const payload = await this.jwt.verifyAsync<AccessTokenPayload>(token, {
       secret: this.config.get('JWT_ACCESS_SECRET', { infer: true }),
     });
+    return { id: payload.sub, roles: payload.roles };
   }
 
-  /** Cấp cặp token mới cho một phiên mới (đăng ký, đăng nhập). */
-  async issuePair(
-    user: { id: string; username: string; role: Role },
-    userAgent?: string,
-  ): Promise<TokenPair> {
-    const accessToken = await this.signAccessToken({
-      sub: user.id,
-      username: user.username,
-      role: user.role,
+  private async rolesOf(userId: string): Promise<UserRoleKind[]> {
+    const rows = await this.prisma.userRole.findMany({
+      where: { userId },
+      select: { role: true },
     });
+    return rows.map((r) => r.role);
+  }
 
+  private async accountOrFail(userId: string): Promise<void> {
+    const account = await this.prisma.userAccount.findUnique({
+      where: { id: userId },
+      select: { status: true },
+    });
+    if (!account || account.status === 'DELETED')
+      throw new UnauthorizedException('Phiên không hợp lệ');
+    if (account.status === 'DISABLED')
+      throw new Problem(403, 'ACCOUNT_DISABLED', 'Tài khoản đã bị khoá');
+  }
+
+  /** Mở phiên mới (đăng ký, đăng nhập). */
+  async issue(userId: string): Promise<TokenSet> {
+    await this.accountOrFail(userId);
     const refreshToken = randomBytes(48).toString('base64url');
-    const refreshExpiresAt = new Date(
-      Date.now() + REFRESH_TOKEN_TTL_DAYS * 24 * 60 * 60 * 1000,
-    );
-
-    await this.prisma.refreshToken.create({
+    await this.prisma.authSession.create({
       data: {
-        userId: user.id,
-        tokenHash: this.hash(refreshToken),
-        expiresAt: refreshExpiresAt,
-        userAgent: userAgent?.slice(0, 255),
+        userId,
+        refreshTokenHash: sha256(refreshToken),
+        expiresAt: new Date(
+          Date.now() + REFRESH_TOKEN_TTL_DAYS * 24 * 60 * 60 * 1000,
+        ),
       },
     });
-
-    return { accessToken, refreshToken, refreshExpiresAt };
+    return {
+      accessToken: await this.signAccess({
+        sub: userId,
+        roles: await this.rolesOf(userId),
+      }),
+      refreshToken,
+      expiresIn: ACCESS_TOKEN_TTL_SECONDS,
+    };
   }
 
-  /**
-   * Đổi một refresh token lấy cặp mới, thu hồi token vừa dùng.
-   *
-   * Ném `UnauthorizedException` nếu token không tồn tại, đã hết hạn, hoặc đã
-   * bị thu hồi — trường hợp cuối kéo theo thu hồi cả chuỗi.
-   */
-  async rotate(presented: string, userAgent?: string): Promise<TokenPair> {
-    const tokenHash = this.hash(presented);
-    const existing = await this.prisma.refreshToken.findUnique({
-      where: { tokenHash },
-      include: { user: true },
+  /** Đổi refresh token lấy bộ mới; token vừa dùng hết hiệu lực ngay. */
+  async rotate(presented: string): Promise<TokenSet & { userId: string }> {
+    const session = await this.prisma.authSession.findUnique({
+      where: { refreshTokenHash: sha256(presented) },
     });
+    if (!session || session.revokedAt)
+      throw new UnauthorizedException('Phiên không hợp lệ');
 
-    if (!existing) throw new UnauthorizedException('Phiên không hợp lệ');
-
-    if (existing.revokedAt) {
-      // Token đã thu hồi mà vẫn được dùng: coi như đã lộ.
-      await this.revokeAllForUser(existing.userId);
-      throw new UnauthorizedException(
-        'Phiên đã bị thu hồi. Vui lòng đăng nhập lại.',
-      );
-    }
-
-    if (existing.expiresAt.getTime() < Date.now()) {
+    const now = Date.now();
+    const idleMs =
+      this.config.get('IDLE_TIMEOUT_MINUTES', { infer: true }) * 60 * 1000;
+    if (
+      session.expiresAt.getTime() < now ||
+      now - session.lastSeenAt.getTime() > idleMs
+    ) {
+      await this.prisma.authSession.update({
+        where: { id: session.id },
+        data: { revokedAt: new Date() },
+      });
       throw new UnauthorizedException('Phiên đã hết hạn');
     }
+    await this.accountOrFail(session.userId);
 
-    const next = await this.issuePair(existing.user, userAgent);
-
-    await this.prisma.refreshToken.update({
-      where: { id: existing.id },
-      data: {
-        revokedAt: new Date(),
-        replacedById: this.hash(next.refreshToken),
-      },
+    const refreshToken = randomBytes(48).toString('base64url');
+    // Điều kiện trên băm cũ: hai yêu cầu refresh chạy đua thì chỉ một thắng.
+    const updated = await this.prisma.authSession.updateMany({
+      where: { id: session.id, refreshTokenHash: session.refreshTokenHash },
+      data: { refreshTokenHash: sha256(refreshToken), lastSeenAt: new Date() },
     });
+    if (updated.count !== 1)
+      throw new UnauthorizedException('Phiên không hợp lệ');
 
-    return next;
+    return {
+      userId: session.userId,
+      accessToken: await this.signAccess({
+        sub: session.userId,
+        roles: await this.rolesOf(session.userId),
+      }),
+      refreshToken,
+      expiresIn: ACCESS_TOKEN_TTL_SECONDS,
+    };
   }
 
-  /** Đăng xuất: thu hồi đúng token đang dùng. Token hỏng thì im lặng bỏ qua. */
-  async revoke(presented: string): Promise<void> {
-    await this.prisma.refreshToken.updateMany({
-      where: { tokenHash: this.hash(presented), revokedAt: null },
+  /** Đăng xuất một phiên. Token lạ thì im lặng bỏ qua. */
+  async revoke(presented: string, userId?: string): Promise<void> {
+    await this.prisma.authSession.updateMany({
+      where: {
+        refreshTokenHash: sha256(presented),
+        revokedAt: null,
+        ...(userId ? { userId } : {}),
+      },
       data: { revokedAt: new Date() },
     });
   }
 
-  /** Thu hồi mọi phiên của một người — dùng khi nghi token bị lộ. */
-  async revokeAllForUser(userId: string): Promise<void> {
-    await this.prisma.refreshToken.updateMany({
+  /** Thu hồi mọi phiên của một người (đổi mật khẩu, đặt lại mật khẩu). */
+  async revokeAll(userId: string): Promise<void> {
+    await this.prisma.authSession.updateMany({
       where: { userId, revokedAt: null },
       data: { revokedAt: new Date() },
     });

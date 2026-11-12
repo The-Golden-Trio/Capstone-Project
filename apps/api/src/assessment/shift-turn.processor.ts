@@ -33,7 +33,7 @@ import {
   type ShiftTurnJob,
 } from '../core/queues';
 import { ShiftLogService, presentLines } from '../core/shift-log.service';
-import { StreamService } from '../core/stream.service';
+import { StreamService } from '../notification/stream.service';
 import { PrismaService } from '../prisma/prisma.service';
 
 /** Trần chi phí AI của một lượt ca làm (NFR-11). Giá trị khởi đầu, chưa chốt. */

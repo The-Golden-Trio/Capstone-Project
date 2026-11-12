@@ -11,7 +11,7 @@ import {
   CurrentUser,
   type AuthUser,
 } from '../auth/decorators/current-user.decorator';
-import { ProblemFilter } from './problem';
+import { ProblemFilter } from '../core/problem';
 import { StreamService } from './stream.service';
 
 /** Proxy và trình duyệt cắt kết nối im lặng lâu; 20 s một dòng chú thích là đủ. */

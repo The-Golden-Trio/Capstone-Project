@@ -1,6 +1,5 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import cookieParser from 'cookie-parser';
 import { AppModule } from './app/app.module';
 import { loadEnv } from './config/env';
 import { WorkerModule } from './worker.module';
@@ -12,15 +11,28 @@ async function bootstrapApi() {
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
 
-  // Phiên đăng nhập nằm trong cookie httpOnly, nên cần đọc được cookie.
-  app.use(cookieParser());
+  // Phiên là Bearer token (Q2), không dùng cookie. Lúc dev, Vite proxy /api
+  // nên trình duyệt thấy cùng origin; CORS chỉ dùng khi web, staff app và api
+  // ở các origin khác nhau.
+  app.enableCors({ origin: [env.WEB_ORIGIN, env.STAFF_ORIGIN] });
 
-  // Lúc dev, Vite proxy /api sang đây nên trình duyệt thấy cùng một origin và
-  // CORS không tham gia. Cấu hình này dành cho lúc web và api ở hai origin.
-  app.enableCors({
-    origin: env.WEB_ORIGIN,
-    credentials: true,
-  });
+  // Dữ liệu staff đổi theo người xem và theo thao tác của người khác. `ETag`
+  // của scenario chỉ là `row_version` của NỘI DUNG (để khoá lạc quan,
+  // `If-Match`), không đại diện cả bản trả về — nên bỏ GET có điều kiện để
+  // Express không trả 304 cho một bản đã cũ.
+  app.use(
+    ['/api/v1/staff', '/api/v1/me'],
+    (
+      req: { headers: Record<string, unknown> },
+      res: { setHeader: (k: string, v: string) => void },
+      next: () => void,
+    ) => {
+      delete req.headers['if-none-match'];
+      delete req.headers['if-modified-since'];
+      res.setHeader('Cache-Control', 'no-store');
+      next();
+    },
+  );
 
   app.enableShutdownHooks();
   await app.listen(env.PORT);
@@ -33,7 +45,9 @@ async function bootstrapApi() {
 async function bootstrapWorker() {
   const app = await NestFactory.createApplicationContext(WorkerModule);
   app.enableShutdownHooks();
-  Logger.log('🛠  Worker đang chạy: chấm (AI-5) và hỏi vặn (AI-4)');
+  Logger.log(
+    '🛠  Worker đang chạy: chấm (AI-5), hỏi vặn (AI-4), email, sinh scenario',
+  );
 }
 
 (process.argv.includes('--worker') ? bootstrapWorker() : bootstrapApi()).catch(

@@ -1,11 +1,11 @@
 import { createParamDecorator, type ExecutionContext } from '@nestjs/common';
-import type { Role } from '../../generated/prisma/enums';
+import type { UserRoleKind } from '../../generated/prisma/enums';
 
 /** Người dùng đã xác thực, do `JwtStrategy.validate` gắn vào request. */
 export interface AuthUser {
   id: string;
-  username: string;
-  role: Role;
+  /** ERD-01 `user_role`: một người có thể giữ nhiều vai. */
+  roles: UserRoleKind[];
 }
 
 export const CurrentUser = createParamDecorator(

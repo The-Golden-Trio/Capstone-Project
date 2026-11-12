@@ -1,25 +1,42 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
+import { AccessPolicyService } from './access-policy.service';
+import { ActivityLogService } from './activity-log.service';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { GoogleService } from './google.service';
+import { GoogleOAuthService } from './google-oauth.service';
+import { OccupationAccessGuard } from './guards/occupation-access.guard';
+import { LegacyAccountController } from './legacy/account.controller';
+import { LegacyAccountService } from './legacy/account.service';
+import { PasswordService } from './password.service';
 import { TokenService } from './token.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { LocalStrategy } from './strategies/local.strategy';
 
+/** CL-01 `AuthModule`. Phiên là Bearer + refresh xoay vòng trong `auth_session` (Q2). */
 @Module({
-  // Không dùng session của Passport: phiên nằm ở cookie JWT, máy chủ không
-  // giữ trạng thái nào ngoài bảng refresh token.
-  imports: [PassportModule.register({ session: false }), JwtModule.register({})],
-  controllers: [AuthController],
+  imports: [
+    PassportModule.register({ session: false }),
+    JwtModule.register({}),
+  ],
+  controllers: [AuthController, LegacyAccountController],
   providers: [
     AuthService,
     TokenService,
-    GoogleService,
+    PasswordService,
+    GoogleOAuthService,
+    ActivityLogService,
+    AccessPolicyService,
+    OccupationAccessGuard,
     JwtStrategy,
-    LocalStrategy,
+    LegacyAccountService,
   ],
-  exports: [AuthService, TokenService],
+  exports: [
+    TokenService,
+    PasswordService,
+    ActivityLogService,
+    AccessPolicyService,
+    OccupationAccessGuard,
+  ],
 })
 export class AuthModule {}

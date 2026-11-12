@@ -5,7 +5,7 @@
  */
 import { Module } from '@nestjs/common';
 import { AssessmentModule } from '../assessment/assessment.module';
-import { StreamController } from '../core/stream.controller';
+
 import { ProgressService } from '../progress/progress.service';
 import { RunController } from './run.controller';
 import { RunService } from './run.service';
@@ -15,7 +15,7 @@ import { SummaryService } from './summary.service';
 
 @Module({
   imports: [AssessmentModule],
-  controllers: [RunController, ShiftRunController, StreamController],
+  controllers: [RunController, ShiftRunController],
   providers: [RunService, SummaryService, ProgressService, ShiftRunService],
   exports: [RunService],
 })

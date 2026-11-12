@@ -48,7 +48,7 @@ import {
   type GradeJob,
 } from '../core/queues';
 import { RunLogService, type LoadedRun } from '../core/run-log.service';
-import { StreamService } from '../core/stream.service';
+import { StreamService } from '../notification/stream.service';
 import { PrismaService } from '../prisma/prisma.service';
 import { FollowUpService } from './follow-up.service';
 import { transcriptBefore } from './transcript';
@@ -393,14 +393,14 @@ export class GradingProcessor
   }
 
   private async identityOf(userId: string): Promise<KnownIdentity> {
-    const user = await this.prisma.user.findUnique({
+    const user = await this.prisma.userAccount.findUnique({
       where: { id: userId },
       select: { displayName: true, username: true, email: true },
     });
     if (!user) return {};
     return {
-      names: [user.displayName],
-      usernames: [user.username],
+      names: user.displayName ? [user.displayName] : [],
+      usernames: user.username ? [user.username] : [],
       emails: user.email ? [user.email] : [],
     };
   }

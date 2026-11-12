@@ -16,13 +16,15 @@ import {
   type OnModuleDestroy,
 } from '@nestjs/common';
 import { Redis } from 'ioredis';
-import { REDIS_URL } from './queues';
+import { REDIS_URL } from '../core/queues';
 
 /** Phần `data` của một tin SSE (openapi `StreamEvent`). */
 export interface StreamEvent {
   type: string;
   runId?: string;
   jobId?: string;
+  /** Sự kiện của staff app gắn với một scenario (generation.ready, review.outcome…). */
+  scenarioId?: string;
   payload: Record<string, unknown>;
 }
 

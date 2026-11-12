@@ -44,12 +44,41 @@ export interface ShiftTurnJob {
   turnId: string;
 }
 
+/** CL-07 `QUEUES.email`: gửi một thông báo kênh EMAIL. */
+export const EMAIL_QUEUE = 'email';
+
+export interface EmailJob {
+  notificationId: string;
+  /**
+   * Phần chỉ đi trong email, không lưu vào `notification.payload` — ví dụ
+   * link đặt lại mật khẩu: DB chỉ giữ băm của token.
+   */
+  secret?: Record<string, string>;
+}
+
+/** CL-07 `QUEUES.generation`: sinh hoặc sửa nội dung scenario (SD-05). */
+export const GENERATION_QUEUE = 'generation';
+
+export interface GenerationJob {
+  /** `ai_job.id`. */
+  aiJobId: string;
+  generationRunId: string;
+}
+
 @Injectable()
 export class QueueService implements OnModuleDestroy {
   readonly grading: Queue<GradeJob>;
   readonly shift: Queue<ShiftTurnJob>;
+  readonly email: Queue<EmailJob>;
+  readonly generation: Queue<GenerationJob>;
 
   constructor(@Inject(REDIS_URL) url: string) {
+    this.email = new Queue<EmailJob>(EMAIL_QUEUE, {
+      connection: redisOptions(url),
+    });
+    this.generation = new Queue<GenerationJob>(GENERATION_QUEUE, {
+      connection: redisOptions(url),
+    });
     this.grading = new Queue<GradeJob>(GRADING_QUEUE, {
       connection: redisOptions(url),
     });
@@ -80,7 +109,32 @@ export class QueueService implements OnModuleDestroy {
     });
   }
 
+  enqueueEmail(job: EmailJob): Promise<unknown> {
+    return this.email.add('send', job, {
+      jobId: job.notificationId,
+      attempts: 5,
+      backoff: { type: 'exponential', delay: 5_000 },
+      removeOnComplete: 1000,
+      removeOnFail: 1000,
+    });
+  }
+
+  /** `jobId` = `ai_job.id`: gửi lại cùng việc thì BullMQ bỏ qua bản trùng. */
+  enqueueGeneration(job: GenerationJob): Promise<unknown> {
+    return this.generation.add('generate', job, {
+      jobId: job.aiJobId,
+      attempts: 1,
+      removeOnComplete: 1000,
+      removeOnFail: 1000,
+    });
+  }
+
   async onModuleDestroy(): Promise<void> {
-    await Promise.all([this.grading.close(), this.shift.close()]);
+    await Promise.all([
+      this.grading.close(),
+      this.shift.close(),
+      this.email.close(),
+      this.generation.close(),
+    ]);
   }
 }

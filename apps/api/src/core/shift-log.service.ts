@@ -200,15 +200,15 @@ export class ShiftLogService {
   async identity(
     userId: string,
   ): Promise<{ identity: KnownIdentity; displayName: string }> {
-    const user = await this.prisma.user.findUnique({
+    const user = await this.prisma.userAccount.findUnique({
       where: { id: userId },
       select: { displayName: true, username: true, email: true },
     });
     return {
       displayName: user?.displayName ?? 'bạn',
       identity: {
-        names: user ? [user.displayName] : [],
-        usernames: user ? [user.username] : [],
+        names: user?.displayName ? [user.displayName] : [],
+        usernames: user?.username ? [user.username] : [],
         emails: user?.email ? [user.email] : [],
       },
     };
