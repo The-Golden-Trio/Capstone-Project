@@ -14,7 +14,7 @@ Context dự án, bản đồ code và trạng thái hiện thực: [`AGENTS.md`
 ## Cần cài
 
 - Node.js 22, pnpm 10 (`corepack enable` là có đúng bản trong `packageManager`).
-- Docker (Docker Desktop hoặc OrbStack) cho Postgres, Redis, Mailpit, MinIO.
+- Docker (Docker Desktop hoặc OrbStack) cho Postgres, Redis, Mailpit, RustFS.
 
 ## Chạy lần đầu
 
@@ -30,12 +30,12 @@ pnpm install --frozen-lockfile
 docker compose -f infra/local/dev-stack.yml up -d
 ```
 
-| Dịch vụ  | Địa chỉ                                                            | Dùng cho                         |
-| -------- | ------------------------------------------------------------------ | -------------------------------- |
-| Postgres | `postgresql://jobquest:jobquest@localhost:5433/jobquest`           | DB dev riêng của máy bạn         |
-| Redis    | `redis://localhost:6379`                                           | Job queue và luồng sự kiện (SSE) |
-| Mailpit  | SMTP `localhost:1025`, hộp thư `http://localhost:8025`             | Xem email thông báo              |
-| MinIO    | `http://localhost:9000` (user `jobquest`, mật khẩu `jobquest-dev`) | Ảnh asset của staff app          |
+| Dịch vụ  | Địa chỉ                                                                                                   | Dùng cho                         |
+| -------- | --------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| Postgres | `postgresql://jobquest:jobquest@localhost:5433/jobquest`                                                  | DB dev riêng của máy bạn         |
+| Redis    | `redis://localhost:6379`                                                                                  | Job queue và luồng sự kiện (SSE) |
+| Mailpit  | SMTP `localhost:1025`, hộp thư `http://localhost:8025`                                                    | Xem email thông báo              |
+| RustFS   | S3 `http://localhost:9000`, console `http://localhost:9001/rustfs/console/` (`jobquest` / `jobquest-dev`) | Ảnh asset của staff app (S3)     |
 
 ### 3. Tạo file môi trường
 

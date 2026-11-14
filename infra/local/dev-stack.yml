@@ -34,31 +34,39 @@ services:
       - '8025:8025'
     restart: unless-stopped
 
-  # Kho object cho asset (StorageService). Console: http://localhost:9001
-  minio:
-    image: minio/minio:RELEASE.2025-04-22T22-12-26Z
-    container_name: jobquest-minio
-    command: server /data --console-address ':9001'
+  # Kho object tương thích S3 cho asset (StorageService).
+  # Console: http://localhost:9001/rustfs/console/ (jobquest / jobquest-dev).
+  # Dùng RustFS vì image minio/minio và minio/mc đã bị gỡ khỏi Docker Hub.
+  rustfs:
+    image: rustfs/rustfs:1.0.5
+    container_name: jobquest-rustfs
     environment:
-      MINIO_ROOT_USER: jobquest
-      MINIO_ROOT_PASSWORD: jobquest-dev
+      RUSTFS_ACCESS_KEY: jobquest
+      RUSTFS_SECRET_KEY: jobquest-dev
+      RUSTFS_ADDRESS: ':9000'
+      RUSTFS_CONSOLE_ENABLE: 'true'
+      RUSTFS_CONSOLE_ADDRESS: ':9001'
     ports:
       - '9000:9000'
       - '9001:9001'
     volumes:
-      - jobquest-minio:/data
+      - jobquest-rustfs:/data
     restart: unless-stopped
 
   # Tạo bucket một lần rồi thoát.
-  minio-init:
-    image: minio/mc:RELEASE.2025-04-16T18-13-26Z
+  rustfs-init:
+    image: amazon/aws-cli:2.40.2
     depends_on:
-      - minio
+      - rustfs
+    environment:
+      AWS_ACCESS_KEY_ID: jobquest
+      AWS_SECRET_ACCESS_KEY: jobquest-dev
+      AWS_DEFAULT_REGION: us-east-1
     entrypoint: >
-      /bin/sh -c "until mc alias set local http://minio:9000 jobquest jobquest-dev; do sleep 1; done;
-      mc mb --ignore-existing local/jobquest"
+      /bin/sh -c "until aws --endpoint-url http://rustfs:9000 s3api head-bucket --bucket jobquest 2>/dev/null
+      || aws --endpoint-url http://rustfs:9000 s3 mb s3://jobquest; do sleep 1; done"
     restart: 'no'
 
 volumes:
   jobquest-pg:
-  jobquest-minio:
+  jobquest-rustfs:

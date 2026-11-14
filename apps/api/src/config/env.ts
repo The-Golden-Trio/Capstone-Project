@@ -52,7 +52,7 @@ const EnvSchema = z.object({
   ),
 
   /**
-   * Kho object cho asset (CL-07 `StorageService`, S3/MinIO). Dev: MinIO trong
+   * Kho object cho asset (CL-07 `StorageService`, S3). Dev: RustFS trong
    * infra/local/dev-stack.yml. Thiếu S3_ENDPOINT thì route asset trả 503.
    */
   S3_ENDPOINT: optionalText,

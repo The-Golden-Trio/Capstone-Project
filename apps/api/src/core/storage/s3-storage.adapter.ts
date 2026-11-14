@@ -7,11 +7,11 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import type { Env } from '../../config/env';
 import type { StorageService } from './storage.port';
 
-/** S3 hoặc MinIO (dev: infra/local/dev-stack.yml). */
+/** S3 hoặc kho tương thích S3 (dev: RustFS trong infra/local/dev-stack.yml). */
 export class S3StorageAdapter implements StorageService {
   readonly available: boolean;
   private readonly client: S3Client | null;
-  /** Ký URL bằng endpoint trình duyệt thấy được (MinIO trong docker vs localhost). */
+  /** Ký URL bằng endpoint trình duyệt thấy được (tên host trong docker vs localhost). */
   private readonly publicClient: S3Client | null;
   private readonly bucket: string;
 

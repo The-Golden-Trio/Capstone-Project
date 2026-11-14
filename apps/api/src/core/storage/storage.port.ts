@@ -1,6 +1,6 @@
 /**
  * CL-07 `StorageService`: kho object cho asset (và sau này release, file
- * import). Bản chạy thật là S3/MinIO (`S3StorageAdapter`); test dùng bộ nhớ.
+ * import). Bản chạy thật là kho tương thích S3 (`S3StorageAdapter`); test dùng bộ nhớ.
  */
 export const STORAGE = Symbol('STORAGE');
 

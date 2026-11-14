@@ -94,7 +94,7 @@ Chạy từ gốc repo. Workspace dùng **pnpm** (`packageManager` trong `packag
 pnpm install --frozen-lockfile
 pnpm start                         # web :4200; API :3000/api theo cấu hình dev
 pnpm exec nx run @datn/staff:serve # staff app :4300/staff
-docker compose -f infra/local/dev-stack.yml up -d   # redis, postgres :5433, mailpit, minio
+docker compose -f infra/local/dev-stack.yml up -d   # redis, postgres :5433, mailpit, rustfs (S3)
 pnpm start:web
 pnpm start:api
 pnpm exec nx run game-core:test
