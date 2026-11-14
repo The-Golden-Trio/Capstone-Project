@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { UNLOCK_AT, bandLabel, shortName } from '@datn/game-core';
 import type { ProgressSummary } from '../../api/schemas';
 import { DEFAULT_THEME, roleTheme, themeVars } from '../../domain/roleTheme';
-import { useT } from '../../i18n/useT';
 import { cx } from '../../lib/cx';
 import { useAuthStore } from '../../store/authStore';
 import { useGameIndex } from '../../store/contentStore';
@@ -19,8 +18,13 @@ interface Segment {
   dot: string;
 }
 
-function Composition({ segments, total }: { segments: Segment[]; total: number }) {
-  const t = useT();
+function Composition({
+  segments,
+  total,
+}: {
+  segments: Segment[];
+  total: number;
+}) {
   return (
     <div>
       <div
@@ -52,7 +56,8 @@ function Composition({ segments, total }: { segments: Segment[]; total: number }
         </ul>
       ) : (
         <p className="m-0 mt-2.5 text-[12px] leading-snug text-muted">
-          {t('profile.noPointsYet')}
+          Chưa có điểm. Nhiệm vụ chính cho điểm theo kỹ năng, nhiệm vụ phụ cho
+          điểm đều.
         </p>
       )}
     </div>
@@ -76,7 +81,6 @@ export function CharacterCard({
   quizDone: boolean;
   eventsPlayed: number;
 }) {
-  const t = useT();
   const navigate = useNavigate();
   const user = useAuthStore((s) => s.user);
   const content = useGameIndex();
@@ -87,7 +91,8 @@ export function CharacterCard({
   // hồ sơ không nên nói "chưa đặt chân" với người vừa chơi xong một màn.
   const fallbackRole = summary?.roles[0];
   const fallbackBand =
-    [...(fallbackRole?.bands ?? [])].reverse().find((b) => b.points > 0)?.band ??
+    [...(fallbackRole?.bands ?? [])].reverse().find((b) => b.points > 0)
+      ?.band ??
     fallbackRole?.bands.find((b) => b.unlocked)?.band ??
     null;
   const roleCode = journey.roleCode ?? fallbackRole?.roleCode ?? null;
@@ -107,21 +112,21 @@ export function CharacterCard({
   const segments: Segment[] = [
     {
       key: 'hard',
-      label: t('profile.hardSkills'),
+      label: 'Kỹ năng cứng',
       value: summary?.hardPoints ?? 0,
       bar: 'bg-skill-hard',
       dot: 'bg-skill-hard',
     },
     {
       key: 'soft',
-      label: t('profile.softSkills'),
+      label: 'Kỹ năng mềm',
       value: summary?.softPoints ?? 0,
       bar: 'bg-skill-soft',
       dot: 'bg-skill-soft',
     },
     {
       key: 'side',
-      label: t('dash.sideQuests'),
+      label: 'Nhiệm vụ phụ',
       value: summary?.sideQuestPoints ?? 0,
       bar: 'bg-gold',
       dot: 'bg-gold',
@@ -129,9 +134,9 @@ export function CharacterCard({
   ];
 
   const facts = [
-    { value: summary?.runsCompleted ?? 0, label: t('profile.mainQuests') },
-    { value: eventsPlayed, label: t('dash.sideQuests') },
-    { value: quizDone ? '✓' : '—', label: t('profile.quizDone') },
+    { value: summary?.runsCompleted ?? 0, label: 'Nhiệm vụ chính' },
+    { value: eventsPlayed, label: 'Nhiệm vụ phụ' },
+    { value: quizDone ? '✓' : '—', label: 'Đã tự vấn' },
   ];
 
   return (
@@ -152,7 +157,8 @@ export function CharacterCard({
           <div
             className="inline-grid h-fit shrink-0 self-start rounded-full p-[3px]"
             style={{
-              boxShadow: '0 0 0 2px var(--accent-soft), 0 0 28px -6px var(--accent-glow)',
+              boxShadow:
+                '0 0 0 2px var(--accent-soft), 0 0 28px -6px var(--accent-glow)',
             }}
           >
             <Crest seed={user?.id ?? 'khach'} size={64} active />
@@ -160,12 +166,12 @@ export function CharacterCard({
 
           <div className="min-w-0 flex-1">
             <h2 className="m-0 truncate font-display text-[22px] font-semibold leading-tight text-ink">
-              {user?.displayName ?? t('hud.guest')}
+              {user?.displayName ?? 'Khách'}
             </h2>
 
             <p className="m-0 mt-1 flex flex-wrap items-baseline gap-x-1.5 text-[12.5px] leading-snug">
               <span className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
-                {t('profile.position')}
+                Đang ở
               </span>
               {roleCode && band ? (
                 <span className="text-ink-2">
@@ -176,7 +182,9 @@ export function CharacterCard({
                   <span className="">{band}</span> {bandLabel(band)}
                 </span>
               ) : (
-                <span className="text-muted">{t('profile.noPosition')}</span>
+                <span className="text-muted">
+                  Chưa đặt chân lên hành tinh nào
+                </span>
               )}
             </p>
 
@@ -203,7 +211,7 @@ export function CharacterCard({
                 className="action-card inline-flex items-center gap-1.5 rounded-full border border-blue/40 bg-line/30 px-3 py-1.5 text-[12px] text-ink-2"
               >
                 <span aria-hidden="true">◑</span>
-                {quizDone ? t('profile.retakeQuiz') : t('nav.quiz')}
+                {quizDone ? 'Làm lại tự vấn' : 'Get to Know Me'}
               </button>
               <button
                 type="button"
@@ -211,7 +219,7 @@ export function CharacterCard({
                 className="action-card inline-flex items-center gap-1.5 rounded-full border border-blue/40 bg-line/30 px-3 py-1.5 text-[12px] text-ink-2"
               >
                 <span aria-hidden="true">⚙</span>
-                {t('nav.account')}
+                Tài khoản
               </button>
             </div>
           </div>
@@ -222,20 +230,20 @@ export function CharacterCard({
           <div className="flex items-end justify-between gap-3">
             <div>
               <span className="block font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
-                {t('dash.skillPoints')}
+                Điểm kỹ năng
               </span>
               <span className="block font-display text-[44px] font-bold leading-none tabular-nums text-gold-2">
                 {total}
               </span>
             </div>
             <span className="pb-1 text-right text-[10px] leading-snug text-muted">
-              {t('profile.serverScored')}
+              do máy chủ chấm
             </span>
           </div>
 
           <div className="mt-4">
             <span className="mb-2 block font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
-              {t('profile.breakdown')}
+              Điểm đến từ đâu
             </span>
             <Composition segments={segments} total={total} />
           </div>
@@ -246,12 +254,14 @@ export function CharacterCard({
                 <span className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
                   {next.unlocked ? (
                     <b className="font-semibold text-good">
-                      {t('profile.nextUnlocked', { band: next.band })}
+                      {`${next.band} đã mở`}
                     </b>
                   ) : (
                     <>
-                      {t('hud.toward')}{' '}
-                      <b className="font-semibold text-[var(--accent)]">{next.band}</b>{' '}
+                      Tới{' '}
+                      <b className="font-semibold text-[var(--accent)]">
+                        {next.band}
+                      </b>{' '}
                       {bandLabel(next.band)}
                     </>
                   )}

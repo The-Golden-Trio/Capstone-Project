@@ -76,15 +76,15 @@ Khi làm một tính năng: tìm FR và use case tương ứng → đọc activi
 
 ## 2. Bản đồ repo và lệnh
 
-| Thư mục                                  | Là gì                                                                          |
-| ---------------------------------------- | ------------------------------------------------------------------------------ |
-| `apps/web` (`@datn/web`)                 | React 19 + Vite + Tailwind 4 + react-three-fiber, zustand, i18n VI/EN          |
-| `apps/staff` (`@datn/staff`)             | Staff app cho CA, DE: React 19 + Vite + Tailwind 4, base `/staff/`, cổng 4300  |
-| `apps/api` (`@datn/api`)                 | NestJS 11 + Prisma 7 + PostgreSQL, BullMQ, zod                                 |
-| `packages/game-core` (`@datn/game-core`) | Logic game dùng chung: engine, chấm, band, fit, side quest                     |
-| `occupation-data/`                       | Dữ liệu nghề, kịch bản, spec (xem `occupation-data/README.md`)                 |
-| `docs/project-hub/`                      | **Single source of truth** của đề tài; đọc `00-tong-quan.md` trước             |
-| `reports/master/`                        | Báo cáo tổng; sửa ở `report.md`, LaTeX sinh ra từ đó (xem `reports/README.md`) |
+| Thư mục                                  | Là gì                                                                            |
+| ---------------------------------------- | -------------------------------------------------------------------------------- |
+| `apps/web` (`@datn/web`)                 | React 19 + Vite + Tailwind 4 + react-three-fiber, zustand, chỉ tiếng Việt (D-96) |
+| `apps/staff` (`@datn/staff`)             | Staff app cho CA, DE: React 19 + Vite + Tailwind 4, base `/staff/`, cổng 4300    |
+| `apps/api` (`@datn/api`)                 | NestJS 11 + Prisma 7 + PostgreSQL, BullMQ, zod                                   |
+| `packages/game-core` (`@datn/game-core`) | Logic game dùng chung: engine, chấm, band, fit, side quest                       |
+| `occupation-data/`                       | Dữ liệu nghề, kịch bản, spec (xem `occupation-data/README.md`)                   |
+| `docs/project-hub/`                      | **Single source of truth** của đề tài; đọc `00-tong-quan.md` trước               |
+| `reports/master/`                        | Báo cáo tổng; sửa ở `report.md`, LaTeX sinh ra từ đó (xem `reports/README.md`)   |
 
 Lệnh hay dùng (chạy qua Nx, tiền tố `pnpm`):
 

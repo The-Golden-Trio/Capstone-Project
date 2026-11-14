@@ -48,9 +48,9 @@
 
 | Đường dẫn                        | Vai trò                                                                                       |
 | -------------------------------- | --------------------------------------------------------------------------------------------- |
-| `apps/web/`                      | React 19, Vite, Tailwind CSS, React Three Fiber/Three.js, Zustand; giao diện VI/EN            |
+| `apps/web/`                      | React 19, Vite, Tailwind CSS, React Three Fiber/Three.js, Zustand; giao diện chỉ tiếng Việt (D-96) |
 | `apps/staff/`                    | Staff app cho Content Admin, Domain Expert (SITE-02, SITE-03), chỉ tiếng Việt                 |
-| `apps/web/src/api/`              | Client API và schema phía web; `src/i18n/` chứa nội dung dịch                                 |
+| `apps/web/src/api/`              | Client API và schema phía web; chuỗi giao diện viết thẳng tiếng Việt, không i18n |
 | `apps/api/`                      | NestJS, Prisma 7, PostgreSQL; auth, content, profile, runs và module AI                       |
 | `apps/api/src/app/app.module.ts` | Điểm kiểm tra các module thực sự được đăng ký                                                 |
 | `apps/api/src/ai/`               | Gateway, adapter nhà cung cấp, chi phí, circuit breaker, narrator AI-4 và prompt              |
@@ -62,7 +62,7 @@
 | `tools/`                         | `git/` kiểm commit/PR, `hub/` quản lý tuần/task, `report/` sinh LaTeX                         |
 
 - Logic game và luật kiểm dùng chung đặt ở `game-core`; gọi model, key và truy cập DB ở API. Web lấy nội dung qua API, không tự đọc dataset nghề hoặc chứa key nhà cung cấp.
-- Dùng các pattern có sẵn: schema Zod, module/DI của NestJS, API client và i18n hiện hành; kiểm export của `game-core` khi thêm API dùng chung.
+- Dùng các pattern có sẵn: schema Zod, module/DI của NestJS, API client hiện hành; kiểm export của `game-core` khi thêm API dùng chung.
 - Các module cũ `apps/api/src/app/{skills,career-graph,persistence}/` còn tồn tại nhưng không được đăng ký trong `AppModule` tại lần rà 31/10/2026. Kiểm đường gọi trước khi sửa, tránh sửa nhầm code không chạy.
 
 ## Hiện trạng đã đối chiếu ngày 31/10/2026

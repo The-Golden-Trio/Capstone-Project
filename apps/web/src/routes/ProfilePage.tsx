@@ -13,7 +13,6 @@ import { Button } from '../components/ui/Button';
 import { Card, CardBody, CardHeader } from '../components/ui/Card';
 import { EmptyState } from '../components/ui/EmptyState';
 import { Pill } from '../components/ui/Pill';
-import { useT } from '../i18n/useT';
 import { useJourneyStore } from '../store/journeyStore';
 import { useProfileStore } from '../store/profileStore';
 import { useProgressStore } from '../store/progressStore';
@@ -30,7 +29,6 @@ import { useProgressStore } from '../store/progressStore';
  */
 export function ProfilePage() {
   const navigate = useNavigate();
-  const t = useT();
   const profile = useProfileStore();
   const { summary, runs, load } = useProgressStore();
   const currentBand = useJourneyStore((s) => s.band);
@@ -41,7 +39,10 @@ export function ProfilePage() {
 
   return (
     <div className="mx-auto max-w-[1180px]">
-      <PageHeader title={t('profile.title')}>{t('profile.lead')}</PageHeader>
+      <PageHeader title="Hành trang">
+        Hai loại điểm, đo hai chuyện khác nhau: kỹ năng mở cấp bậc kế, tính cách
+        chỉ hướng hành tinh nên ghé.
+      </PageHeader>
 
       <LegacyImportBanner />
 
@@ -55,8 +56,8 @@ export function ProfilePage() {
 
       <div className="mb-4 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
         <Card>
-          <CardHeader title={t('profile.strengths')}>
-            <Pill tone="gold">{t('profile.bySkill')}</Pill>
+          <CardHeader title="Mạnh ở đâu">
+            <Pill tone="gold">theo kỹ năng</Pill>
           </CardHeader>
           <CardBody>
             <SkillBreakdown skills={summary?.skills ?? []} />
@@ -64,8 +65,8 @@ export function ProfilePage() {
         </Card>
 
         <Card>
-          <CardHeader title={t('profile.overTime')}>
-            <Pill>{t('profile.cumulative')}</Pill>
+          <CardHeader title="Tiến bộ theo thời gian">
+            <Pill>cộng dồn</Pill>
           </CardHeader>
           <CardBody>
             <ProgressChart timeline={summary?.timeline ?? []} />
@@ -74,12 +75,10 @@ export function ProfilePage() {
       </div>
 
       <Card className="mb-4">
-        <CardHeader title={t('profile.bandPath')}>
+        <CardHeader title="Lộ trình cấp bậc">
           {summary && summary.roles.length > 0 && (
             <Pill tone="gold">
-              {t('profile.points', {
-                count: summary.roles.reduce((sum, r) => sum + r.totalPoints, 0),
-              })}
+              {`${summary.roles.reduce((sum, r) => sum + r.totalPoints, 0)} điểm`}
             </Pill>
           )}
         </CardHeader>
@@ -88,9 +87,11 @@ export function ProfilePage() {
             summary.roles.map((role) => (
               <section key={role.roleCode}>
                 <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="m-0 text-[14px] font-semibold text-ink">{role.roleName}</h3>
+                  <h3 className="m-0 text-[14px] font-semibold text-ink">
+                    {role.roleName}
+                  </h3>
                   <span className="text-[10.5px] text-muted">
-                    {t('profile.points', { count: role.totalPoints })}
+                    {`${role.totalPoints} điểm`}
                   </span>
                 </div>
                 <BandRoadmap role={role} currentBand={currentBand} />
@@ -100,7 +101,7 @@ export function ProfilePage() {
             <EmptyState
               action={
                 <Button variant="primary" onClick={() => navigate('/jobs')}>
-                  {t('dash.openMap')}
+                  Mở bản đồ
                 </Button>
               }
             >
@@ -113,7 +114,7 @@ export function ProfilePage() {
 
       <div className="grid gap-4 lg:[grid-template-columns:minmax(0,3fr)_minmax(300px,2fr)]">
         <Card>
-          <CardHeader title={t('profile.playedRuns')}>
+          <CardHeader title="Những lượt đã chơi">
             <Pill>{runs.length}</Pill>
           </CardHeader>
           <CardBody>
@@ -122,7 +123,7 @@ export function ProfilePage() {
         </Card>
 
         <Card>
-          <CardHeader title={t('quiz.portrait')}>
+          <CardHeader title="Chân dung của bạn">
             <Pill>cộng dồn từ mọi lựa chọn</Pill>
           </CardHeader>
           <CardBody>
@@ -132,7 +133,9 @@ export function ProfilePage() {
               <EmptyState
                 icon="?"
                 action={
-                  <Button onClick={() => navigate('/quiz')}>{t('dash.answerSix')}</Button>
+                  <Button onClick={() => navigate('/quiz')}>
+                    Trả lời 6 câu
+                  </Button>
                 }
               >
                 Chưa có nét nào. Làm vài nhiệm vụ phụ hoặc trả lời 6 câu tự vấn.

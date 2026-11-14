@@ -6,8 +6,6 @@ import { useAuthStore } from '../store/authStore';
 import { useProfileStore } from '../store/profileStore';
 import { useContentStore } from '../store/contentStore';
 import { useProgressStore } from '../store/progressStore';
-import { translate } from '../i18n/messages';
-import { useLanguage } from '../i18n/useT';
 import { decideGate } from './gate';
 
 /**
@@ -20,7 +18,6 @@ import { decideGate } from './gate';
 export function RequireAuth() {
   const { status, user } = useAuthStore();
   const location = useLocation();
-  const language = useLanguage();
 
   const loadProfile = useProfileStore((s) => s.load);
   const quizDone = useProfileStore((s) => s.quizDone);
@@ -80,7 +77,7 @@ export function RequireAuth() {
         <StarField />
         <div className="relative z-1 grid min-h-screen place-items-center">
           <p className="font-label text-[11px] uppercase tracking-[0.16em] text-muted">
-            {translate('auth.opening', language)}
+            Đang mở cổng…
           </p>
         </div>
       </>

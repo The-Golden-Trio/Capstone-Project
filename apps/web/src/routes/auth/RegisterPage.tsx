@@ -7,10 +7,8 @@ import { GoogleButton, OrDivider } from '../../components/auth/GoogleButton';
 import { Button } from '../../components/ui/Button';
 import { Note, SourceNote } from '../../components/ui/Note';
 import { useAuthStore } from '../../store/authStore';
-import { useT } from '../../i18n/useT';
 
 export function RegisterPage() {
-  const t = useT();
   const status = useAuthStore((s) => s.status);
   const setUser = useAuthStore((s) => s.setUser);
 
@@ -44,7 +42,9 @@ export function RegisterPage() {
         );
         setError(err.message);
       } else {
-        setError(err instanceof Error ? err.message : t('auth.registerFailed'));
+        setError(
+          err instanceof Error ? err.message : 'Đăng ký không thành công',
+        );
       }
     } finally {
       setBusy(false);
@@ -52,7 +52,7 @@ export function RegisterPage() {
   };
 
   return (
-    <AuthShell title={t('auth.register')} subtitle="JobQuest">
+    <AuthShell title="Tạo tài khoản" subtitle="JobQuest">
       {error && (
         <Note tone="warn" className="mb-4">
           {error}
@@ -61,7 +61,7 @@ export function RegisterPage() {
 
       <form onSubmit={submit}>
         <Field
-          label={t('auth.displayName')}
+          label="Tên hiển thị"
           name="displayName"
           value={form.displayName}
           onChange={(e) => update('displayName')(e.target.value)}
@@ -70,7 +70,7 @@ export function RegisterPage() {
           autoFocus
         />
         <Field
-          label={t('auth.username')}
+          label="Tên đăng nhập"
           name="username"
           value={form.username}
           onChange={(e) => update('username')(e.target.value)}
@@ -79,7 +79,7 @@ export function RegisterPage() {
           maxLength={24}
         />
         <Field
-          label={t('auth.email')}
+          label="Email"
           name="email"
           type="email"
           value={form.email}
@@ -88,7 +88,7 @@ export function RegisterPage() {
           autoComplete="email"
         />
         <Field
-          label={t('auth.password')}
+          label="Mật khẩu"
           name="password"
           type="password"
           value={form.password}
@@ -97,7 +97,7 @@ export function RegisterPage() {
           autoComplete="new-password"
         />
         <Field
-          label={t('auth.dateOfBirth')}
+          label="Ngày sinh"
           name="dateOfBirth"
           type="date"
           value={form.dateOfBirth}
@@ -107,7 +107,8 @@ export function RegisterPage() {
         />
 
         <SourceNote className="mb-4">
-          {t('auth.dobWhy')}
+          Ngày sinh dùng để biết có cần người giám hộ đồng ý hay không, theo
+          Nghị định 13/2023/NĐ-CP về dữ liệu cá nhân của trẻ vị thành niên.
         </SourceNote>
 
         <Button
@@ -116,7 +117,7 @@ export function RegisterPage() {
           className="w-full"
           disabled={busy || Object.values(form).some((v) => !v)}
         >
-          {busy ? t('auth.registering') : t('auth.registerCta')}
+          {busy ? 'Đang tạo…' : 'Khởi hành'}
         </Button>
       </form>
 
@@ -124,9 +125,9 @@ export function RegisterPage() {
       <GoogleButton onError={setError} />
 
       <p className="mt-5 text-center text-[13px] text-muted">
-        {t('auth.hasAccount')}{' '}
+        Đã có tài khoản?{' '}
         <Link to="/login" className="text-gold-2 hover:underline">
-          {t('auth.login')}
+          Đăng nhập
         </Link>
       </p>
     </AuthShell>

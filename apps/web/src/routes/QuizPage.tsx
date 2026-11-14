@@ -5,7 +5,6 @@ import { Button } from '../components/ui/Button';
 import { Card, CardBody } from '../components/ui/Card';
 import { Note } from '../components/ui/Note';
 import { ProgressDots } from '../components/ui/Progress';
-import { useGameText, useT } from '../i18n/useT';
 import { useGameIndex } from '../store/contentStore';
 import { useProfileStore } from '../store/profileStore';
 
@@ -22,8 +21,6 @@ import { useProfileStore } from '../store/profileStore';
  */
 export function QuizPage() {
   const navigate = useNavigate();
-  const t = useT();
-  const game = useGameText();
   const content = useGameIndex();
   const submitQuiz = useProfileStore((s) => s.submitQuiz);
   const quizDone = useProfileStore((s) => s.quizDone);
@@ -48,7 +45,7 @@ export function QuizPage() {
       await submitQuiz(all);
       navigate(next);
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('quiz.saveFailed'));
+      setError(err instanceof Error ? err.message : 'Không lưu được kết quả');
     } finally {
       setBusy(false);
     }
@@ -63,11 +60,16 @@ export function QuizPage() {
 
   return (
     <>
-      <PageHeader title={t('quiz.title')}>{t('quiz.lead')}</PageHeader>
+      <PageHeader title="Get to Know Me">
+        Sáu câu, không có đáp án đúng. Kết quả dùng để chỉ hướng trên bản đồ,
+        không phải để chấm bạn.
+      </PageHeader>
 
       {/* Lần đầu thì chào một câu; lần sau thì không cần nhắc lại. */}
       {!quizDone && (
-        <Note className="mb-4 max-w-[640px]">{t('quiz.welcome')}</Note>
+        <Note className="mb-4 max-w-[640px]">
+          Trước khi lên đường, kể cho chúng tôi nghe một chút về bạn.
+        </Note>
       )}
 
       {error && (
@@ -81,10 +83,10 @@ export function QuizPage() {
           <ProgressDots total={questions.length} current={index} />
 
           <p className="m-0 mb-2.5 text-[10px] tracking-[0.11em] text-gold">
-            {t('quiz.question', { current: index + 1, total: questions.length })}
+            {`CÂU ${index + 1}/${questions.length}`}
           </p>
           <p className="m-0 mb-[18px] font-display text-[21px] font-semibold leading-snug">
-            {game.quizPrompt(question.question_id, question.prompt)}
+            {question.prompt}
           </p>
 
           <div className="flex flex-col gap-2.5">
@@ -96,14 +98,14 @@ export function QuizPage() {
                 onClick={() => answer(option.option_id)}
                 className="action-card w-full rounded-xl border border-blue/40 bg-line/30 px-4 py-3.5 text-left text-[14px] leading-normal text-ink disabled:opacity-50"
               >
-                {game.quizOption(option.option_id, option.text)}
+                {option.text}
               </button>
             ))}
           </div>
 
           <div className="mt-[18px] flex flex-wrap items-center gap-2.5">
             <Button onClick={() => void send(answers, '/jobs')} disabled={busy}>
-              {t('quiz.skip')}
+              Bỏ qua phần này
             </Button>
           </div>
         </CardBody>

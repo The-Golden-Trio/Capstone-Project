@@ -2,18 +2,13 @@ import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useLocation } from 'react-router-dom';
 import { authApi } from '../../api/endpoints';
 import { AuthShell, Field } from '../../components/auth/AuthShell';
-import {
-  GoogleButton,
-  OrDivider,
-} from '../../components/auth/GoogleButton';
+import { GoogleButton, OrDivider } from '../../components/auth/GoogleButton';
 import { Button } from '../../components/ui/Button';
 import { Note } from '../../components/ui/Note';
 import { useAuthStore } from '../../store/authStore';
-import { useT } from '../../i18n/useT';
 
 export function LoginPage() {
   const location = useLocation();
-  const t = useT();
   const status = useAuthStore((s) => s.status);
   const setUser = useAuthStore((s) => s.setUser);
 
@@ -24,8 +19,8 @@ export function LoginPage() {
 
   // Nơi người dùng định tới trước khi bị chặn lại — RequireAuth đã gài sẵn.
   const from =
-    (location.state as { from?: { pathname: string } } | null)?.from?.pathname ??
-    '/jobs';
+    (location.state as { from?: { pathname: string } } | null)?.from
+      ?.pathname ?? '/jobs';
 
   if (status === 'authed') return <Navigate to={from} replace />;
 
@@ -36,14 +31,16 @@ export function LoginPage() {
     try {
       setUser(await authApi.login({ identifier, password }));
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('auth.loginFailed'));
+      setError(
+        err instanceof Error ? err.message : 'Đăng nhập không thành công',
+      );
     } finally {
       setBusy(false);
     }
   };
 
   return (
-    <AuthShell title={t('auth.login')} subtitle="JobQuest">
+    <AuthShell title="Đăng nhập" subtitle="JobQuest">
       {error && (
         <Note tone="warn" className="mb-4">
           {error}
@@ -52,7 +49,7 @@ export function LoginPage() {
 
       <form onSubmit={submit}>
         <Field
-          label={t('auth.identifier')}
+          label="Tên đăng nhập hoặc email"
           name="identifier"
           value={identifier}
           onChange={(e) => setIdentifier(e.target.value)}
@@ -60,7 +57,7 @@ export function LoginPage() {
           autoFocus
         />
         <Field
-          label={t('auth.password')}
+          label="Mật khẩu"
           name="password"
           type="password"
           value={password}
@@ -73,7 +70,7 @@ export function LoginPage() {
           className="w-full"
           disabled={busy || !identifier || !password}
         >
-          {busy ? t('auth.loggingIn') : t('auth.loginCta')}
+          {busy ? 'Đang vào…' : 'Đăng nhập'}
         </Button>
       </form>
 
@@ -81,9 +78,9 @@ export function LoginPage() {
       <GoogleButton onError={setError} />
 
       <p className="mt-5 text-center text-[13px] text-muted">
-        {t('auth.noAccount')}{' '}
+        Chưa có tài khoản?{' '}
         <Link to="/register" className="text-gold-2 hover:underline">
-          {t('auth.register')}
+          Tạo tài khoản
         </Link>
       </p>
     </AuthShell>

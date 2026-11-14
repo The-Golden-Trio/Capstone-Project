@@ -1,6 +1,5 @@
 import { UNLOCK_AT } from '@datn/game-core';
 import type { BandProgress, RoleProgress } from '../../api/schemas';
-import { useT } from '../../i18n/useT';
 import { cx } from '../../lib/cx';
 import { SourceNote } from '../ui/Note';
 
@@ -27,14 +26,13 @@ function Stop({
   isLast: boolean;
   prevUnlocked: boolean;
 }) {
-  const t = useT();
   const tone = stopTone(band, isCurrent);
 
   const status = band.unlocked
     ? band.points > 0
-      ? t('profile.points', { count: band.points })
-      : t('profile.unlocked')
-    : t('profile.missing', { count: band.pointsToUnlock });
+      ? `${band.points} điểm`
+      : 'đã mở'
+    : `thiếu ${band.pointsToUnlock} điểm`;
 
   return (
     <li className="relative flex w-[104px] shrink-0 flex-col items-center pt-1 text-center">
@@ -70,7 +68,7 @@ function Stop({
         {band.band}
         {band.completed && (
           <i
-            aria-label={t('profile.mainDone')}
+            aria-label="xong nhiệm vụ chính"
             className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-good text-[9px] not-italic text-bg"
           >
             ✓
@@ -98,11 +96,11 @@ function Stop({
 
       {band.enrolled && !band.completed ? (
         <span className="mt-1 block rounded-full bg-good-soft px-1.5 text-[9px] text-good">
-          {t('profile.inProgress')}
+          đang làm
         </span>
       ) : !band.hasScenario ? (
         <span className="mt-1 block text-[9px] text-muted/70">
-          {t('profile.noScenario')}
+          chưa có nhiệm vụ
         </span>
       ) : null}
     </li>

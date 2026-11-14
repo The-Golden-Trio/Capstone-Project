@@ -8,7 +8,6 @@ import { useGameIndex } from '../../store/contentStore';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProfileStore } from '../../store/profileStore';
 import { useProgressStore } from '../../store/progressStore';
-import { useT } from '../../i18n/useT';
 
 /**
  * "Đang ở" — nơi người chơi đang đứng, nay nằm trên thanh đầu trang.
@@ -20,7 +19,6 @@ import { useT } from '../../i18n/useT';
  */
 export function CurrentPlaceToggle() {
   const navigate = useNavigate();
-  const t = useT();
   const { roleCode, band } = useJourneyStore();
   const doneEventIds = useProfileStore((s) => s.doneEventIds);
   const runs = useProgressStore((s) => s.runs);
@@ -54,9 +52,9 @@ export function CurrentPlaceToggle() {
   const played = new Set(runs.map((r) => r.scenarioKey));
 
   const mainLeft = scenario && !played.has(scenario.key) ? 1 : 0;
-  const sideLeft = content.eventsForRole(role).filter(
-    (event) => !doneEventIds.includes(event.event_id),
-  ).length;
+  const sideLeft = content
+    .eventsForRole(role)
+    .filter((event) => !doneEventIds.includes(event.event_id)).length;
   const left = mainLeft + sideLeft;
 
   const go = (to: string) => {
@@ -74,7 +72,7 @@ export function CurrentPlaceToggle() {
         type="button"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        aria-label={t('here.at', { role: shortRoleName(role), band })}
+        aria-label={`Đang ở ${shortRoleName(role)}, cấp bậc ${band}`}
         className={cx(
           'here-chip flex items-center gap-2 rounded-full border px-2.5 py-[5px] text-left transition-colors',
           open
@@ -101,7 +99,7 @@ export function CurrentPlaceToggle() {
       {open && (
         <div className="toast-pop absolute right-0 top-[calc(100%+8px)] z-40 w-[264px] rounded-xl border border-line bg-surf p-3.5 shadow-lift">
           <p className="m-0 mb-2 font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
-            {t('here.label')}
+            Đang ở
           </p>
 
           <div className="mb-3 flex items-center gap-2.5">
@@ -118,8 +116,10 @@ export function CurrentPlaceToggle() {
 
           <div className="mb-3 rounded-xl border border-line-2 bg-panel px-3 py-2 text-[10.5px] text-muted">
             {left > 0
-              ? t(mainLeft > 0 ? 'here.leftWithMain' : 'here.left', { count: left })
-              : t('here.allDone')}
+              ? mainLeft > 0
+                ? `Còn ${left} việc, gồm cả nhiệm vụ chính`
+                : `Còn ${left} việc`
+              : 'Đã làm hết việc ở đây'}
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -128,14 +128,14 @@ export function CurrentPlaceToggle() {
               onClick={() => go(`/jobs/${role.role_code}/${band}`)}
               className="flex-1 rounded-full border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-[12.5px] font-semibold text-[var(--accent)] transition-colors hover:brightness-110"
             >
-              {t('here.continue')}
+              Tiếp tục
             </button>
             <button
               type="button"
               onClick={() => go('/jobs')}
               className="rounded-full border border-ink/35 bg-transparent px-4 py-2 text-[12.5px] font-semibold text-ink-2 transition-colors hover:border-[var(--accent)]"
             >
-              {t('here.change')}
+              Đổi nơi
             </button>
           </div>
         </div>

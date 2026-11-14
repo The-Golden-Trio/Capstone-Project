@@ -1,14 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import {
-  shortRoleName,
-  sideQuestsFor,
-} from '@datn/game-core';
+import { shortRoleName, sideQuestsFor } from '@datn/game-core';
 import { profileApi } from '../../api/endpoints';
 import type { RoleProgress } from '../../api/schemas';
 import { RoleTheme } from '../../components/game/RoleTheme';
 import { Note } from '../../components/ui/Note';
-import { useT } from '../../i18n/useT';
 import { useJourneyStore } from '../../store/journeyStore';
 import { useProfileStore } from '../../store/profileStore';
 import { useProgressStore } from '../../store/progressStore';
@@ -40,7 +36,6 @@ export function CareerMapPage() {
   const game = useGameIndex();
   const { roleCode = '', band: openBand = null } = useParams();
   const navigate = useNavigate();
-  const t = useT();
   const setLocation = useJourneyStore((s) => s.setLocation);
   const loadProgress = useProgressStore((s) => s.load);
   const doneEventIds = useProfileStore((s) => s.doneEventIds);
@@ -50,9 +45,10 @@ export function CareerMapPage() {
   const [selectedBand, setSelectedBand] = useState<string | null>(openBand);
   const [stage, setStage] = useState<Stage>('sea');
   /** Ký hiệu đang mở, kèm chỗ đứng của nó để neo hộp câu hỏi bên cạnh. */
-  const [openMark, setOpenMark] = useState<{ id: string; anchor: Anchor } | null>(
-    null,
-  );
+  const [openMark, setOpenMark] = useState<{
+    id: string;
+    anchor: Anchor;
+  } | null>(null);
   const [panelOpen, setPanelOpen] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -121,7 +117,8 @@ export function CareerMapPage() {
 
   const bands = useMemo(() => progress?.bands ?? [], [progress]);
   const islandPath = (band: string) => `/jobs/${roleCode}/${band}`;
-  const currentBand = bands.find((b) => b.unlocked && !b.completed)?.band ?? null;
+  const currentBand =
+    bands.find((b) => b.unlocked && !b.completed)?.band ?? null;
   const selected = bands.find((b) => b.band === selectedBand) ?? null;
   const opened = bands.find((b) => b.band === openBand) ?? null;
 
@@ -172,7 +169,10 @@ export function CareerMapPage() {
   const backToSea = () => navigate(`/jobs/${roleCode}`);
 
   return (
-    <RoleTheme roleCode={role.role_code} className="absolute inset-0 overflow-hidden">
+    <RoleTheme
+      roleCode={role.role_code}
+      className="absolute inset-0 overflow-hidden"
+    >
       {/* ── Mặt biển ── */}
       <div className={stage === 'paper' ? 'stage-dimmed' : 'stage-shown'}>
         <IslandsView
@@ -228,7 +228,7 @@ export function CareerMapPage() {
           onClick={() => navigate('/jobs')}
           className="map-chip"
         >
-          <span aria-hidden="true">←</span> {t('nav.backToMap')}
+          <span aria-hidden="true">←</span> Về bản đồ nghề
         </button>
 
         <span className="map-chip is-plain font-display font-semibold">
@@ -245,7 +245,11 @@ export function CareerMapPage() {
         </button>
 
         {stage !== 'sea' && (
-          <button type="button" onClick={backToSea} className="map-chip is-accent">
+          <button
+            type="button"
+            onClick={backToSea}
+            className="map-chip is-accent"
+          >
             <span role="img" aria-label="Mỏ neo">
               ⚓
             </span>{' '}

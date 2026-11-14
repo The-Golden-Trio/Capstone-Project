@@ -1,9 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { Crest } from '../game/Crest';
-import { LanguageToggle } from './LanguageToggle';
 import { Logo } from './Logo';
 import { cx } from '../../lib/cx';
-import { useT } from '../../i18n/useT';
 import { useAuthStore } from '../../store/authStore';
 
 /**
@@ -18,7 +16,6 @@ import { useAuthStore } from '../../store/authStore';
  * chiếm chỗ và có ngày lệch nhau.
  */
 export function Topbar() {
-  const t = useT();
   const user = useAuthStore((s) => s.user);
 
   const link = ({ isActive }: { isActive: boolean }) =>
@@ -39,27 +36,30 @@ export function Topbar() {
         </span>
       </NavLink>
 
-      <nav className="ml-3 flex items-center gap-2" aria-label={t('nav.mainNav')}>
+      <nav
+        className="ml-3 flex items-center gap-2"
+        aria-label="Điều hướng chính"
+      >
         <NavLink to="/jobs" className={link}>
-          {t('nav.jobs')}
+          Bản đồ nghề
         </NavLink>
         <NavLink to="/feedback" className={link}>
-          {t('nav.feedback')}
+          Góp ý
         </NavLink>
       </nav>
 
       <span className="flex-1" />
 
-      <LanguageToggle />
-
       {/* Huy hiệu là cửa vào Hành trang — nơi chứa tự vấn, tiến trình, tài khoản. */}
       <NavLink
         to="/profile"
-        title={user?.displayName ?? t('hud.guest')}
+        title={user?.displayName ?? 'Khách'}
         className={({ isActive }) =>
           cx(
             'rounded-full transition-[outline-color] outline-2 outline-offset-2',
-            isActive ? 'outline-gold' : 'outline-transparent hover:outline-line',
+            isActive
+              ? 'outline-gold'
+              : 'outline-transparent hover:outline-line',
           )
         }
       >
