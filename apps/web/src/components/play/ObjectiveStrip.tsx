@@ -48,14 +48,14 @@ export function ObjectiveStrip({
       </div>
 
       <div className="flex flex-wrap items-baseline gap-2">
-        <span className="font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
+        <span className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
           Cảnh {current + 1}/{total}
         </span>
         <span className="text-[13px] font-semibold text-[var(--accent)]">
           {followup ? 'Họ hỏi thêm một câu' : OBJECTIVE[type]}
         </span>
         {followup && (
-          <span className="font-mono text-[10px] text-muted">
+          <span className="text-[10px] text-muted">
             đào sâu {followup.used}/{followup.limit}
           </span>
         )}

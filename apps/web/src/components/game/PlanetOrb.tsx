@@ -38,7 +38,7 @@ export function PlanetOrb({
       <span className="text-balance text-center font-display text-[14.5px] font-semibold leading-snug">
         {shortRoleName(role)}
       </span>
-      <span className="flex flex-wrap justify-center gap-[7px] font-mono text-[10px] text-muted">
+      <span className="flex flex-wrap justify-center gap-[7px] text-[10px] text-muted">
         {score != null && (
           <b className="font-medium text-gold-2">{Math.round(score * 100)}% hợp</b>
         )}

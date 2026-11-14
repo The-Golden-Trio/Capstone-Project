@@ -24,9 +24,9 @@ export function OrderingActivity({
         {order.map((itemId, index) => (
           <div
             key={itemId}
-            className="action-card flex items-stretch gap-[9px] overflow-hidden rounded-[10px] border border-line bg-surf"
+            className="action-card flex items-stretch gap-[9px] overflow-hidden rounded-xl border border-blue/40 bg-line/30"
           >
-            <span className="flex w-9 shrink-0 items-center justify-center bg-[var(--accent-soft)] font-mono text-[13px] font-bold text-[var(--accent)]">
+            <span className="flex w-9 shrink-0 items-center justify-center bg-[var(--accent-soft)] text-[13px] font-bold text-[var(--accent)]">
               {index + 1}
             </span>
             <span className="flex-1 self-center py-3 pl-0.5 pr-1 text-[13.5px] leading-snug">

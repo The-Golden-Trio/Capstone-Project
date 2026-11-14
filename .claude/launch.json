@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "staff",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["exec", "nx", "run", "@datn/staff:serve"],
+      "port": 4300
+    },
+    {
+      "name": "web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["exec", "nx", "run", "@datn/web:serve"],
+      "port": 4200
+    }
+  ]
+}

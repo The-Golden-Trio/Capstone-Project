@@ -238,6 +238,7 @@ export type OccupationWhereInput = {
   generationRules?: Prisma.GenerationRuleListRelationFilter
   criteriaVersions?: Prisma.ReviewCriteriaVersionListRelationFilter
   promptTemplates?: Prisma.PromptTemplateListRelationFilter
+  ratings?: Prisma.OccupationRatingListRelationFilter
 }
 
 export type OccupationOrderByWithRelationInput = {
@@ -260,6 +261,7 @@ export type OccupationOrderByWithRelationInput = {
   generationRules?: Prisma.GenerationRuleOrderByRelationAggregateInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionOrderByRelationAggregateInput
   promptTemplates?: Prisma.PromptTemplateOrderByRelationAggregateInput
+  ratings?: Prisma.OccupationRatingOrderByRelationAggregateInput
 }
 
 export type OccupationWhereUniqueInput = Prisma.AtLeast<{
@@ -285,6 +287,7 @@ export type OccupationWhereUniqueInput = Prisma.AtLeast<{
   generationRules?: Prisma.GenerationRuleListRelationFilter
   criteriaVersions?: Prisma.ReviewCriteriaVersionListRelationFilter
   promptTemplates?: Prisma.PromptTemplateListRelationFilter
+  ratings?: Prisma.OccupationRatingListRelationFilter
 }, "id" | "code">
 
 export type OccupationOrderByWithAggregationInput = {
@@ -339,6 +342,7 @@ export type OccupationCreateInput = {
   generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateInput = {
@@ -359,6 +363,7 @@ export type OccupationUncheckedCreateInput = {
   generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUpdateInput = {
@@ -379,6 +384,7 @@ export type OccupationUpdateInput = {
   generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateInput = {
@@ -399,6 +405,7 @@ export type OccupationUncheckedUpdateInput = {
   generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationCreateManyInput = {
@@ -670,6 +677,20 @@ export type OccupationUpdateOneRequiredWithoutPromptTemplatesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.OccupationUpdateToOneWithWhereWithoutPromptTemplatesInput, Prisma.OccupationUpdateWithoutPromptTemplatesInput>, Prisma.OccupationUncheckedUpdateWithoutPromptTemplatesInput>
 }
 
+export type OccupationCreateNestedOneWithoutRatingsInput = {
+  create?: Prisma.XOR<Prisma.OccupationCreateWithoutRatingsInput, Prisma.OccupationUncheckedCreateWithoutRatingsInput>
+  connectOrCreate?: Prisma.OccupationCreateOrConnectWithoutRatingsInput
+  connect?: Prisma.OccupationWhereUniqueInput
+}
+
+export type OccupationUpdateOneRequiredWithoutRatingsNestedInput = {
+  create?: Prisma.XOR<Prisma.OccupationCreateWithoutRatingsInput, Prisma.OccupationUncheckedCreateWithoutRatingsInput>
+  connectOrCreate?: Prisma.OccupationCreateOrConnectWithoutRatingsInput
+  upsert?: Prisma.OccupationUpsertWithoutRatingsInput
+  connect?: Prisma.OccupationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.OccupationUpdateToOneWithWhereWithoutRatingsInput, Prisma.OccupationUpdateWithoutRatingsInput>, Prisma.OccupationUncheckedUpdateWithoutRatingsInput>
+}
+
 export type OccupationCreateWithoutCreatorInput = {
   id?: string
   code: string
@@ -687,6 +708,7 @@ export type OccupationCreateWithoutCreatorInput = {
   generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateWithoutCreatorInput = {
@@ -706,6 +728,7 @@ export type OccupationUncheckedCreateWithoutCreatorInput = {
   generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationCreateOrConnectWithoutCreatorInput = {
@@ -768,6 +791,7 @@ export type OccupationCreateWithoutStaffAssignmentsInput = {
   generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateWithoutStaffAssignmentsInput = {
@@ -787,6 +811,7 @@ export type OccupationUncheckedCreateWithoutStaffAssignmentsInput = {
   generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationCreateOrConnectWithoutStaffAssignmentsInput = {
@@ -822,6 +847,7 @@ export type OccupationUpdateWithoutStaffAssignmentsInput = {
   generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateWithoutStaffAssignmentsInput = {
@@ -841,6 +867,7 @@ export type OccupationUncheckedUpdateWithoutStaffAssignmentsInput = {
   generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationCreateWithoutDomainInput = {
@@ -860,6 +887,7 @@ export type OccupationCreateWithoutDomainInput = {
   generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateWithoutDomainInput = {
@@ -879,6 +907,7 @@ export type OccupationUncheckedCreateWithoutDomainInput = {
   generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationCreateOrConnectWithoutDomainInput = {
@@ -924,6 +953,7 @@ export type OccupationCreateWithoutLevelsInput = {
   generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateWithoutLevelsInput = {
@@ -943,6 +973,7 @@ export type OccupationUncheckedCreateWithoutLevelsInput = {
   generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationCreateOrConnectWithoutLevelsInput = {
@@ -978,6 +1009,7 @@ export type OccupationUpdateWithoutLevelsInput = {
   generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateWithoutLevelsInput = {
@@ -997,6 +1029,7 @@ export type OccupationUncheckedUpdateWithoutLevelsInput = {
   generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationCreateWithoutDownsidesInput = {
@@ -1016,6 +1049,7 @@ export type OccupationCreateWithoutDownsidesInput = {
   generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateWithoutDownsidesInput = {
@@ -1035,6 +1069,7 @@ export type OccupationUncheckedCreateWithoutDownsidesInput = {
   generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationCreateOrConnectWithoutDownsidesInput = {
@@ -1070,6 +1105,7 @@ export type OccupationUpdateWithoutDownsidesInput = {
   generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateWithoutDownsidesInput = {
@@ -1089,6 +1125,7 @@ export type OccupationUncheckedUpdateWithoutDownsidesInput = {
   generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationCreateWithoutGenerationRulesInput = {
@@ -1108,6 +1145,7 @@ export type OccupationCreateWithoutGenerationRulesInput = {
   downsides?: Prisma.DownsideCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateWithoutGenerationRulesInput = {
@@ -1127,6 +1165,7 @@ export type OccupationUncheckedCreateWithoutGenerationRulesInput = {
   downsides?: Prisma.DownsideUncheckedCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationCreateOrConnectWithoutGenerationRulesInput = {
@@ -1162,6 +1201,7 @@ export type OccupationUpdateWithoutGenerationRulesInput = {
   downsides?: Prisma.DownsideUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateWithoutGenerationRulesInput = {
@@ -1181,6 +1221,7 @@ export type OccupationUncheckedUpdateWithoutGenerationRulesInput = {
   downsides?: Prisma.DownsideUncheckedUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationCreateWithoutCriteriaVersionsInput = {
@@ -1200,6 +1241,7 @@ export type OccupationCreateWithoutCriteriaVersionsInput = {
   downsides?: Prisma.DownsideCreateNestedManyWithoutOccupationInput
   generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateWithoutCriteriaVersionsInput = {
@@ -1219,6 +1261,7 @@ export type OccupationUncheckedCreateWithoutCriteriaVersionsInput = {
   downsides?: Prisma.DownsideUncheckedCreateNestedManyWithoutOccupationInput
   generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
   promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationCreateOrConnectWithoutCriteriaVersionsInput = {
@@ -1254,6 +1297,7 @@ export type OccupationUpdateWithoutCriteriaVersionsInput = {
   downsides?: Prisma.DownsideUpdateManyWithoutOccupationNestedInput
   generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateWithoutCriteriaVersionsInput = {
@@ -1273,6 +1317,7 @@ export type OccupationUncheckedUpdateWithoutCriteriaVersionsInput = {
   downsides?: Prisma.DownsideUncheckedUpdateManyWithoutOccupationNestedInput
   generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationCreateWithoutPromptTemplatesInput = {
@@ -1292,6 +1337,7 @@ export type OccupationCreateWithoutPromptTemplatesInput = {
   downsides?: Prisma.DownsideCreateNestedManyWithoutOccupationInput
   generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationUncheckedCreateWithoutPromptTemplatesInput = {
@@ -1311,6 +1357,7 @@ export type OccupationUncheckedCreateWithoutPromptTemplatesInput = {
   downsides?: Prisma.DownsideUncheckedCreateNestedManyWithoutOccupationInput
   generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
+  ratings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutOccupationInput
 }
 
 export type OccupationCreateOrConnectWithoutPromptTemplatesInput = {
@@ -1346,6 +1393,7 @@ export type OccupationUpdateWithoutPromptTemplatesInput = {
   downsides?: Prisma.DownsideUpdateManyWithoutOccupationNestedInput
   generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateWithoutPromptTemplatesInput = {
@@ -1365,6 +1413,103 @@ export type OccupationUncheckedUpdateWithoutPromptTemplatesInput = {
   downsides?: Prisma.DownsideUncheckedUpdateManyWithoutOccupationNestedInput
   generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
+}
+
+export type OccupationCreateWithoutRatingsInput = {
+  id?: string
+  code: string
+  name: string
+  summary?: string | null
+  riasecCode?: string | null
+  status?: $Enums.OccupationStatus
+  createdAt?: Date | string
+  publishedAt?: Date | string | null
+  retiredAt?: Date | string | null
+  domain: Prisma.DomainCreateNestedOneWithoutOccupationsInput
+  creator: Prisma.UserAccountCreateNestedOneWithoutOccupationsCreatedInput
+  staffAssignments?: Prisma.StaffAssignmentCreateNestedManyWithoutOccupationInput
+  levels?: Prisma.OccupationLevelCreateNestedManyWithoutOccupationInput
+  downsides?: Prisma.DownsideCreateNestedManyWithoutOccupationInput
+  generationRules?: Prisma.GenerationRuleCreateNestedManyWithoutOccupationInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutOccupationInput
+  promptTemplates?: Prisma.PromptTemplateCreateNestedManyWithoutOccupationInput
+}
+
+export type OccupationUncheckedCreateWithoutRatingsInput = {
+  id?: string
+  domainId: string
+  code: string
+  name: string
+  summary?: string | null
+  riasecCode?: string | null
+  status?: $Enums.OccupationStatus
+  createdBy: string
+  createdAt?: Date | string
+  publishedAt?: Date | string | null
+  retiredAt?: Date | string | null
+  staffAssignments?: Prisma.StaffAssignmentUncheckedCreateNestedManyWithoutOccupationInput
+  levels?: Prisma.OccupationLevelUncheckedCreateNestedManyWithoutOccupationInput
+  downsides?: Prisma.DownsideUncheckedCreateNestedManyWithoutOccupationInput
+  generationRules?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutOccupationInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutOccupationInput
+  promptTemplates?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutOccupationInput
+}
+
+export type OccupationCreateOrConnectWithoutRatingsInput = {
+  where: Prisma.OccupationWhereUniqueInput
+  create: Prisma.XOR<Prisma.OccupationCreateWithoutRatingsInput, Prisma.OccupationUncheckedCreateWithoutRatingsInput>
+}
+
+export type OccupationUpsertWithoutRatingsInput = {
+  update: Prisma.XOR<Prisma.OccupationUpdateWithoutRatingsInput, Prisma.OccupationUncheckedUpdateWithoutRatingsInput>
+  create: Prisma.XOR<Prisma.OccupationCreateWithoutRatingsInput, Prisma.OccupationUncheckedCreateWithoutRatingsInput>
+  where?: Prisma.OccupationWhereInput
+}
+
+export type OccupationUpdateToOneWithWhereWithoutRatingsInput = {
+  where?: Prisma.OccupationWhereInput
+  data: Prisma.XOR<Prisma.OccupationUpdateWithoutRatingsInput, Prisma.OccupationUncheckedUpdateWithoutRatingsInput>
+}
+
+export type OccupationUpdateWithoutRatingsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  summary?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  riasecCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumOccupationStatusFieldUpdateOperationsInput | $Enums.OccupationStatus
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  retiredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  domain?: Prisma.DomainUpdateOneRequiredWithoutOccupationsNestedInput
+  creator?: Prisma.UserAccountUpdateOneRequiredWithoutOccupationsCreatedNestedInput
+  staffAssignments?: Prisma.StaffAssignmentUpdateManyWithoutOccupationNestedInput
+  levels?: Prisma.OccupationLevelUpdateManyWithoutOccupationNestedInput
+  downsides?: Prisma.DownsideUpdateManyWithoutOccupationNestedInput
+  generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
+  promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+}
+
+export type OccupationUncheckedUpdateWithoutRatingsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  domainId?: Prisma.StringFieldUpdateOperationsInput | string
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  summary?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  riasecCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumOccupationStatusFieldUpdateOperationsInput | $Enums.OccupationStatus
+  createdBy?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  retiredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  staffAssignments?: Prisma.StaffAssignmentUncheckedUpdateManyWithoutOccupationNestedInput
+  levels?: Prisma.OccupationLevelUncheckedUpdateManyWithoutOccupationNestedInput
+  downsides?: Prisma.DownsideUncheckedUpdateManyWithoutOccupationNestedInput
+  generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
+  promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationCreateManyCreatorInput = {
@@ -1397,6 +1542,7 @@ export type OccupationUpdateWithoutCreatorInput = {
   generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateWithoutCreatorInput = {
@@ -1416,6 +1562,7 @@ export type OccupationUncheckedUpdateWithoutCreatorInput = {
   generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateManyWithoutCreatorInput = {
@@ -1461,6 +1608,7 @@ export type OccupationUpdateWithoutDomainInput = {
   generationRules?: Prisma.GenerationRuleUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateWithoutDomainInput = {
@@ -1480,6 +1628,7 @@ export type OccupationUncheckedUpdateWithoutDomainInput = {
   generationRules?: Prisma.GenerationRuleUncheckedUpdateManyWithoutOccupationNestedInput
   criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutOccupationNestedInput
   promptTemplates?: Prisma.PromptTemplateUncheckedUpdateManyWithoutOccupationNestedInput
+  ratings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutOccupationNestedInput
 }
 
 export type OccupationUncheckedUpdateManyWithoutDomainInput = {
@@ -1507,6 +1656,7 @@ export type OccupationCountOutputType = {
   generationRules: number
   criteriaVersions: number
   promptTemplates: number
+  ratings: number
 }
 
 export type OccupationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1516,6 +1666,7 @@ export type OccupationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extens
   generationRules?: boolean | OccupationCountOutputTypeCountGenerationRulesArgs
   criteriaVersions?: boolean | OccupationCountOutputTypeCountCriteriaVersionsArgs
   promptTemplates?: boolean | OccupationCountOutputTypeCountPromptTemplatesArgs
+  ratings?: boolean | OccupationCountOutputTypeCountRatingsArgs
 }
 
 /**
@@ -1570,6 +1721,13 @@ export type OccupationCountOutputTypeCountPromptTemplatesArgs<ExtArgs extends ru
   where?: Prisma.PromptTemplateWhereInput
 }
 
+/**
+ * OccupationCountOutputType without action
+ */
+export type OccupationCountOutputTypeCountRatingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OccupationRatingWhereInput
+}
+
 
 export type OccupationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1591,6 +1749,7 @@ export type OccupationSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   generationRules?: boolean | Prisma.Occupation$generationRulesArgs<ExtArgs>
   criteriaVersions?: boolean | Prisma.Occupation$criteriaVersionsArgs<ExtArgs>
   promptTemplates?: boolean | Prisma.Occupation$promptTemplatesArgs<ExtArgs>
+  ratings?: boolean | Prisma.Occupation$ratingsArgs<ExtArgs>
   _count?: boolean | Prisma.OccupationCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["occupation"]>
 
@@ -1650,6 +1809,7 @@ export type OccupationInclude<ExtArgs extends runtime.Types.Extensions.InternalA
   generationRules?: boolean | Prisma.Occupation$generationRulesArgs<ExtArgs>
   criteriaVersions?: boolean | Prisma.Occupation$criteriaVersionsArgs<ExtArgs>
   promptTemplates?: boolean | Prisma.Occupation$promptTemplatesArgs<ExtArgs>
+  ratings?: boolean | Prisma.Occupation$ratingsArgs<ExtArgs>
   _count?: boolean | Prisma.OccupationCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type OccupationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1672,6 +1832,7 @@ export type $OccupationPayload<ExtArgs extends runtime.Types.Extensions.Internal
     generationRules: Prisma.$GenerationRulePayload<ExtArgs>[]
     criteriaVersions: Prisma.$ReviewCriteriaVersionPayload<ExtArgs>[]
     promptTemplates: Prisma.$PromptTemplatePayload<ExtArgs>[]
+    ratings: Prisma.$OccupationRatingPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2087,6 +2248,7 @@ export interface Prisma__OccupationClient<T, Null = never, ExtArgs extends runti
   generationRules<T extends Prisma.Occupation$generationRulesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Occupation$generationRulesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GenerationRulePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   criteriaVersions<T extends Prisma.Occupation$criteriaVersionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Occupation$criteriaVersionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewCriteriaVersionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   promptTemplates<T extends Prisma.Occupation$promptTemplatesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Occupation$promptTemplatesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PromptTemplatePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ratings<T extends Prisma.Occupation$ratingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Occupation$ratingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OccupationRatingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2669,6 +2831,30 @@ export type Occupation$promptTemplatesArgs<ExtArgs extends runtime.Types.Extensi
   take?: number
   skip?: number
   distinct?: Prisma.PromptTemplateScalarFieldEnum | Prisma.PromptTemplateScalarFieldEnum[]
+}
+
+/**
+ * Occupation.ratings
+ */
+export type Occupation$ratingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the OccupationRating
+   */
+  select?: Prisma.OccupationRatingSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the OccupationRating
+   */
+  omit?: Prisma.OccupationRatingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OccupationRatingInclude<ExtArgs> | null
+  where?: Prisma.OccupationRatingWhereInput
+  orderBy?: Prisma.OccupationRatingOrderByWithRelationInput | Prisma.OccupationRatingOrderByWithRelationInput[]
+  cursor?: Prisma.OccupationRatingWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OccupationRatingScalarFieldEnum | Prisma.OccupationRatingScalarFieldEnum[]
 }
 
 /**

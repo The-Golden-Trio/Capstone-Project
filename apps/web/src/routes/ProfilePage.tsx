@@ -89,7 +89,7 @@ export function ProfilePage() {
               <section key={role.roleCode}>
                 <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="m-0 text-[14px] font-semibold text-ink">{role.roleName}</h3>
-                  <span className="font-mono text-[10.5px] text-muted">
+                  <span className="text-[10.5px] text-muted">
                     {t('profile.points', { count: role.totalPoints })}
                   </span>
                 </div>

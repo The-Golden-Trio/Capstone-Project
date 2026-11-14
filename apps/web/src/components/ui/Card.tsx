@@ -9,7 +9,10 @@ interface CardProps {
 export function Card({ children, className }: CardProps) {
   return (
     <div
-      className={cx('rounded-[11px] border border-line bg-surf', className)}
+      className={cx(
+        'rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 shadow-lift',
+        className,
+      )}
     >
       {children}
     </div>
@@ -26,12 +29,12 @@ export function CardHeader({ title, children, className }: CardHeaderProps) {
   return (
     <div
       className={cx(
-        'flex flex-wrap items-center gap-2.5 border-b border-line-2 px-[18px] py-3.5',
+        'flex flex-wrap items-center gap-2.5 border-b border-line-gold px-5 py-3.5',
         className,
       )}
     >
       {title != null && (
-        <h2 className="min-w-0 flex-1 font-display text-[15px] font-semibold">
+        <h2 className="min-w-0 flex-1 font-display text-[16px] font-semibold tracking-[0.01em]">
           {title}
         </h2>
       )}
@@ -41,5 +44,5 @@ export function CardHeader({ title, children, className }: CardHeaderProps) {
 }
 
 export function CardBody({ children, className }: CardProps) {
-  return <div className={cx('p-[18px]', className)}>{children}</div>;
+  return <div className={cx('p-5', className)}>{children}</div>;
 }

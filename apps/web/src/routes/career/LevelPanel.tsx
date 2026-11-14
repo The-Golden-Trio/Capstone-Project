@@ -74,7 +74,7 @@ export function LevelPanel({
         />
         <div className="min-w-0 flex-1">
           <div className="mb-1 flex flex-wrap items-center gap-2">
-            <span className="font-mono text-[11px] font-bold text-[var(--accent)]">
+            <span className="text-[11px] font-bold text-[var(--accent)]">
               {band.band}
             </span>
             {band.completed && <Pill tone="good">đã xong</Pill>}
@@ -91,7 +91,7 @@ export function LevelPanel({
           type="button"
           onClick={onClose}
           aria-label="Đóng"
-          className="shrink-0 rounded-[6px] border border-line-2 bg-inset px-2 py-1 font-mono text-[11px] text-muted transition-colors hover:border-line hover:text-ink-2"
+          className="shrink-0 rounded-[6px] border border-line-2 bg-inset px-2 py-1 text-[11px] text-muted transition-colors hover:border-line hover:text-ink-2"
         >
           ✕
         </button>
@@ -107,16 +107,16 @@ export function LevelPanel({
 
       {/* ── Có gì ở đây ── */}
       <dl className="mb-3.5 grid grid-cols-2 gap-2.5">
-        <div className="rounded-[9px] border border-line-2 bg-panel px-3 py-2.5">
-          <dt className="font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
+        <div className="rounded-xl border border-line-2 bg-panel px-3 py-2.5">
+          <dt className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
             Lương trung bình
           </dt>
           <dd className="m-0 mt-1 font-display text-[16px] font-bold text-ink">
             {formatVnd(salary?.salary_avg)}
           </dd>
         </div>
-        <div className="rounded-[9px] border border-line-2 bg-panel px-3 py-2.5">
-          <dt className="font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
+        <div className="rounded-xl border border-line-2 bg-panel px-3 py-2.5">
+          <dt className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
             Điểm ở đảo này
           </dt>
           <dd className="m-0 mt-1 font-display text-[16px] font-bold text-[var(--accent)]">
@@ -128,7 +128,7 @@ export function LevelPanel({
       {/* ── Đồng nghiệp: chất liệu của cảnh, lấy từ cast của kịch bản ── */}
       {entry ? (
         <div className="mb-3.5">
-          <p className="mb-2 font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
+          <p className="mb-2 font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
             Bạn sẽ làm việc với
           </p>
           <div className="flex flex-col gap-2">

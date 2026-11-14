@@ -13,7 +13,9 @@ import {
   Tabs,
   TextArea,
   TextField,
+  inputClass,
 } from '../../components/ui';
+import { cx } from '../../lib/cx';
 import { ENDING_LABEL, TASK_TYPE_LABEL } from '../../lib/labels';
 import { emptyActivity, nextKey, produce } from './draft';
 
@@ -330,7 +332,7 @@ function ActivitiesTab({
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <fieldset className="mt-4 rounded-md border border-line-2 p-3">
+    <fieldset className="mt-4 rounded-xl border border-line bg-bg/25 p-4">
       <legend className="px-1 text-[13px] font-semibold">{title}</legend>
       {children}
     </fieldset>
@@ -387,7 +389,7 @@ export function ActivityEditor({
         <label className="flex items-center gap-2 text-[13px]">
           Tiếp theo
           <select
-            className="rounded-md border border-line px-2 py-1"
+            className={cx(inputClass, 'w-auto py-1')}
             value={a.forwardTo ?? ''}
             disabled={readOnly}
             onChange={(e) => set('forwardTo', e.target.value || null)}

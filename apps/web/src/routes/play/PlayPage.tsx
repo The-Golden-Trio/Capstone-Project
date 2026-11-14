@@ -86,7 +86,7 @@ export function PlayPage() {
     return (
       <Card className="mx-auto max-w-[720px]">
         <CardBody>
-          <p className="m-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+          <p className="m-0 font-label text-[11px] uppercase tracking-[0.16em] text-muted">
             Đang mở màn chơi…
           </p>
         </CardBody>
@@ -131,8 +131,8 @@ export function PlayPage() {
       <RoleTheme roleCode={scenario.job.role_code}>
         <Card className="mx-auto max-w-[720px]">
           <CardBody>
-            <div className="reveal mb-4 rounded-[10px] border-[1.5px] border-signal bg-signal-soft p-4">
-              <p className="m-0 mb-2 font-mono text-[10px] uppercase tracking-[0.11em] text-signal">
+            <div className="reveal mb-4 rounded-xl border-[1.5px] border-signal bg-signal-soft p-4">
+              <p className="m-0 mb-2 font-label text-[10px] uppercase tracking-[0.16em] text-signal">
                 Có chuyện xen vào
               </p>
               <p className="m-0 text-[14px] leading-relaxed text-ink-2">

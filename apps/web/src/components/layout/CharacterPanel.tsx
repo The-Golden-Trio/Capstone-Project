@@ -41,8 +41,8 @@ export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
         title={collapsed ? (user?.displayName ?? t('hud.guest')) : undefined}
         className={
           collapsed
-            ? 'flex justify-center rounded-[9px] border border-line-2 bg-panel p-2 transition-colors hover:border-line'
-            : 'flex items-center gap-2.5 rounded-[9px] border border-line-2 bg-panel p-2.5 transition-colors hover:border-line'
+            ? 'flex justify-center rounded-xl border border-line-2 bg-panel p-2 transition-colors hover:border-line'
+            : 'flex items-center gap-2.5 rounded-xl border border-line-2 bg-panel p-2.5 transition-colors hover:border-line'
         }
       >
         <Crest seed={user?.id ?? 'khach'} size={collapsed ? 30 : 38} />
@@ -51,7 +51,7 @@ export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
           <div className="truncate text-[13px] font-semibold leading-tight text-ink">
             {user?.displayName ?? t('hud.guest')}
           </div>
-          <div className="truncate font-mono text-[10px] text-muted">
+          <div className="truncate text-[10px] text-muted">
             {current
               ? `${current.band} · ${bandLabel(current.band)}`
               : t('hud.skillPoints', { count: summary?.totalPoints ?? 0 })}
@@ -64,7 +64,7 @@ export function CharacterPanel({ onNavigate }: { onNavigate: () => void }) {
       {!collapsed && current && next && (
         <div className="mt-2.5 px-0.5" style={themeVars(theme) as CSSProperties}>
           <div className="mb-1.5 flex items-baseline justify-between gap-2">
-            <span className="font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+            <span className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
               {t('hud.toward')}{' '}
               <b className="font-semibold text-[var(--accent)]">{next.band}</b>
             </span>

@@ -2,7 +2,7 @@
 
 window.GAME = {
   "_meta": {
-    "generated_at": "2026-09-25",
+    "generated_at": "2026-11-12",
     "source_dataset": "occupation-data/datasets/final_22_roles.json",
     "group": "Software Engineering & Architecture",
     "note": "SINH TU DONG. Sinh lai: node docs/data/build.mjs"
@@ -347,19 +347,23 @@ window.GAME = {
       "reasons_to_leave": [
         {
           "label": "Career transition to a startup, freelancing, or a new job direction",
-          "pct": 31.5
+          "pct": 31.5,
+          "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
         },
         {
           "label": "Few or no opportunities for promotion",
-          "pct": 20.7
+          "pct": 20.7,
+          "label_vi": "Ít hoặc không có cơ hội thăng chức"
         },
         {
           "label": "Few or no opportunities for salary increases",
-          "pct": 20.7
+          "pct": 20.7,
+          "label_vi": "Ít hoặc không có cơ hội tăng lương"
         },
         {
           "label": "Company ran out of financial resources",
-          "pct": 17.4
+          "pct": 17.4,
+          "label_vi": "Công ty cạn nguồn tài chính"
         }
       ],
       "work_life_evidence": "A_VERIFIED",
@@ -641,19 +645,23 @@ window.GAME = {
       "reasons_to_leave": [
         {
           "label": "The salary is less than expected",
-          "pct": 25.4
+          "pct": 25.4,
+          "label_vi": "Lương thấp hơn kỳ vọng"
         },
         {
           "label": "Few or no opportunities for salary increases",
-          "pct": 18.5
+          "pct": 18.5,
+          "label_vi": "Ít hoặc không có cơ hội tăng lương"
         },
         {
           "label": "The company and its product have no potential for growth",
-          "pct": 16.8
+          "pct": 16.8,
+          "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
         },
         {
           "label": "Limited career development opportunities",
-          "pct": 15.9
+          "pct": 15.9,
+          "label_vi": "Ít cơ hội phát triển nghề nghiệp"
         }
       ],
       "work_life_evidence": "A_VERIFIED",
@@ -945,19 +953,23 @@ window.GAME = {
       "reasons_to_leave": [
         {
           "label": "Salary is lower than expected",
-          "pct": 23.1
+          "pct": 23.1,
+          "label_vi": "Lương thấp hơn kỳ vọng"
         },
         {
           "label": "Career transition to a startup, freelancing, or a new job direction",
-          "pct": 15.4
+          "pct": 15.4,
+          "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
         },
         {
           "label": "Limited career development opportunities",
-          "pct": 15.4
+          "pct": 15.4,
+          "label_vi": "Ít cơ hội phát triển nghề nghiệp"
         },
         {
           "label": "Toxic or overly political work environment",
-          "pct": 15.4
+          "pct": 15.4,
+          "label_vi": "Môi trường độc hại hoặc nhiều chính trị nội bộ"
         }
       ],
       "work_life_evidence": "A_VERIFIED",
@@ -1230,19 +1242,24 @@ window.GAME = {
       "reasons_to_leave": [
         {
           "label": "Have better job opportunities",
-          "pct": 36.4
+          "pct": 36.4,
+          "label_vi": "Có cơ hội việc làm tốt hơn"
         },
         {
           "label": "organizational structure",
-          "pct": 27.3
+          "pct": 27.3,
+          "label_vi": "Thay đổi cơ cấu tổ chức",
+          "label_note": "Nhãn gốc bị cắt khi trích từ báo cáo ITviec; bản dịch là suy đoán, cần đối chiếu báo cáo gốc."
         },
         {
           "label": "Family commitments and inability to balance work and personal life",
-          "pct": 18.2
+          "pct": 18.2,
+          "label_vi": "Việc gia đình, khó cân bằng công việc và cuộc sống"
         },
         {
           "label": "Career transition to a startup, freelancing, or a new job direction",
-          "pct": 18.2
+          "pct": 18.2,
+          "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
         }
       ],
       "work_life_evidence": "A_VERIFIED",
@@ -2022,19 +2039,23 @@ window.GAME = {
       "reasons_to_leave": [
         {
           "label": "Career transition to a startup, freelancing, or a new job direction",
-          "pct": 24.5
+          "pct": 24.5,
+          "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
         },
         {
           "label": "Limited career development opportunities",
-          "pct": 19.4
+          "pct": 19.4,
+          "label_vi": "Ít cơ hội phát triển nghề nghiệp"
         },
         {
           "label": "The company and its product have no potential for growth",
-          "pct": 17.3
+          "pct": 17.3,
+          "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
         },
         {
           "label": "Uncaring or uninspiring leadership",
-          "pct": 15.3
+          "pct": 15.3,
+          "label_vi": "Lãnh đạo thiếu quan tâm hoặc không truyền cảm hứng"
         }
       ],
       "work_life_evidence": "A_VERIFIED",
@@ -2286,19 +2307,23 @@ window.GAME = {
       "reasons_to_leave": [
         {
           "label": "Career transition to a startup, freelancing, or a new job direction",
-          "pct": 25.3
+          "pct": 25.3,
+          "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
         },
         {
           "label": "The company and its product have no potential for growth",
-          "pct": 20
+          "pct": 20,
+          "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
         },
         {
           "label": "The work is no longer challenging",
-          "pct": 17.3
+          "pct": 17.3,
+          "label_vi": "Công việc không còn thử thách"
         },
         {
           "label": "Toxic or overly political work environment",
-          "pct": 17.3
+          "pct": 17.3,
+          "label_vi": "Môi trường độc hại hoặc nhiều chính trị nội bộ"
         }
       ],
       "work_life_evidence": "A_VERIFIED",
@@ -2543,19 +2568,23 @@ window.GAME = {
       "reasons_to_leave": [
         {
           "label": "Career transition to a startup, freelancing, or a new job direction",
-          "pct": 34.4
+          "pct": 34.4,
+          "label_vi": "Chuyển sang startup, làm tự do hoặc hướng nghề mới"
         },
         {
           "label": "Few or no opportunities for promotion",
-          "pct": 21.9
+          "pct": 21.9,
+          "label_vi": "Ít hoặc không có cơ hội thăng chức"
         },
         {
           "label": "Limited career development opportunities",
-          "pct": 21.9
+          "pct": 21.9,
+          "label_vi": "Ít cơ hội phát triển nghề nghiệp"
         },
         {
           "label": "The company and its product have no potential for growth",
-          "pct": 21.9
+          "pct": 21.9,
+          "label_vi": "Công ty và sản phẩm không có triển vọng phát triển"
         }
       ],
       "work_life_evidence": "A_VERIFIED",

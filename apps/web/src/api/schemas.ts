@@ -201,3 +201,24 @@ export const ScenarioContentSchema = z.object({
   ),
 });
 export type ScenarioContent = z.infer<typeof ScenarioContentSchema>;
+
+/* ── Đánh giá nghề, góp ý app (FR-19, FR-20) ────────────────────────── */
+
+/** openapi `RatingSummary`: dưới ngưỡng (NFR-06) thì `withheld`, không có điểm. */
+export const RatingSummarySchema = z.object({
+  responseCount: z.number().int(),
+  withheld: z.boolean(),
+  averages: z.record(z.string(), z.number()),
+});
+export type RatingSummary = z.infer<typeof RatingSummarySchema>;
+
+/** openapi `RatingForm`. */
+export const RatingFormSchema = z.object({
+  occupationId: z.string(),
+  eligible: z.boolean(),
+  lockedReason: z.enum(['LEVELS_NOT_COMPLETED', 'ALREADY_RATED']).nullable(),
+  attributes: z.array(
+    z.object({ code: z.string(), label: z.string(), sortOrder: z.number() }),
+  ),
+});
+export type RatingForm = z.infer<typeof RatingFormSchema>;

@@ -77,7 +77,7 @@ export function RunPlayPage() {
 
   if (!run || !scenario || !s.activity || s.stage === 'loading') {
     return (
-      <p className="text-center font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+      <p className="text-center font-label text-[11px] uppercase tracking-[0.16em] text-muted">
         {s.stage === 'finishing' ? 'Đang soạn nhận xét…' : 'Đang mở màn chơi…'}
       </p>
     );
@@ -103,8 +103,8 @@ export function RunPlayPage() {
           onClick={() => setView(v)}
           className={
             view === v
-              ? 'rounded-[7px] bg-gold-soft px-2.5 py-1 text-[12px] font-semibold text-gold-2'
-              : 'rounded-[7px] px-2.5 py-1 text-[12px] text-muted hover:text-ink-2'
+              ? 'rounded-xl bg-gold-soft px-2.5 py-1 text-[12px] font-semibold text-gold-2'
+              : 'rounded-xl px-2.5 py-1 text-[12px] text-muted hover:text-ink-2'
           }
         >
           {v === 'scene' ? 'Cảnh truyện' : 'Khung chat'}
@@ -181,7 +181,7 @@ export function RunPlayPage() {
           )}
           <div className="mt-4 flex flex-wrap items-center gap-3">
             {leave}
-            <span className="font-mono text-[10px] text-muted">
+            <span className="text-[10px] text-muted">
               Bấm vào khung thoại hoặc Enter để đọc tiếp
             </span>
           </div>

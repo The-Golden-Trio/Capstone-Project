@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
 import { staffApi } from '../../api/endpoints';
 import {
   Badge,
   Card,
   EmptyState,
+  LinkButton,
   Loading,
   PageHeader,
   ProblemAlert,
@@ -55,18 +55,20 @@ export function CaPortalPage() {
                   )}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Link
+                  <LinkButton
                     to={`/ca/occupations/${o.id}/scenarios`}
-                    className="rounded-md bg-brand px-3 py-1.5 text-white hover:bg-brand-2"
+                    variant="primary"
+                    size="sm"
                   >
                     Ô scenario
-                  </Link>
-                  <Link
+                  </LinkButton>
+                  <LinkButton
                     to={`/ca/occupations/${o.id}/review-criteria`}
-                    className="rounded-md border border-line px-3 py-1.5 hover:bg-inset"
+                    variant="secondary"
+                    size="sm"
                   >
                     Tiêu chí duyệt
-                  </Link>
+                  </LinkButton>
                 </div>
               </Card>
             );

@@ -1,7 +1,13 @@
 import { useState, type FormEvent } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { authApi } from '../../api/endpoints';
-import { Button, Notice, ProblemAlert, TextField } from '../../components/ui';
+import {
+  AuthFrame,
+  Button,
+  Notice,
+  ProblemAlert,
+  TextField,
+} from '../../components/ui';
 
 /** T01: `requestPasswordReset` và `confirmPasswordReset`. */
 export function ResetPasswordPage() {
@@ -29,14 +35,8 @@ export function ResetPasswordPage() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center p-4">
-      <form
-        onSubmit={submit}
-        className="w-full max-w-sm rounded-lg border border-line bg-surf p-6 shadow-sm"
-      >
-        <h1 className="mb-4 text-lg font-semibold">
-          {token ? 'Đặt mật khẩu mới' : 'Quên mật khẩu'}
-        </h1>
+    <AuthFrame title={token ? 'Đặt mật khẩu mới' : 'Quên mật khẩu'}>
+      <form onSubmit={submit}>
         <ProblemAlert error={error} />
         {done ? (
           <Notice tone="good">
@@ -69,7 +69,7 @@ export function ResetPasswordPage() {
             type="submit"
             variant="primary"
             busy={busy}
-            className="w-full"
+            className="mt-2 w-full"
           >
             {token ? 'Đổi mật khẩu' : 'Gửi link đặt lại'}
           </Button>
@@ -80,6 +80,6 @@ export function ResetPasswordPage() {
           </Link>
         </p>
       </form>
-    </main>
+    </AuthFrame>
   );
 }

@@ -21,15 +21,15 @@ export function CockpitHud({ current, fuel, ownedCount }: CockpitHudProps) {
   const color = colorOf(current);
 
   return (
-    <div className="galaxy-glass pointer-events-auto w-[300px] rounded-[11px] p-3.5 max-[900px]:w-auto">
-      <p className="m-0 mb-2 font-mono text-[9.5px] uppercase tracking-[0.14em] text-muted">
+    <div className="galaxy-glass pointer-events-auto w-[300px] rounded-xl p-3.5 max-[900px]:w-auto">
+      <p className="m-0 mb-2 font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
         Buồng lái
       </p>
 
       <button
         type="button"
         onClick={() => select(current.roleCode)}
-        className="flex w-full items-center gap-2.5 rounded-[7px] border border-transparent bg-transparent p-1 text-left text-ink hover:border-line"
+        className="flex w-full items-center gap-2.5 rounded-xl border border-transparent bg-transparent p-1 text-left text-ink hover:border-line"
         title="Xem hành tinh đang đứng"
       >
         <span
@@ -38,7 +38,7 @@ export function CockpitHud({ current, fuel, ownedCount }: CockpitHudProps) {
           aria-hidden="true"
         />
         <span className="min-w-0">
-          <span className="block font-mono text-[9.5px] uppercase tracking-[0.1em] text-muted">
+          <span className="block font-label text-[9.5px] uppercase tracking-[0.1em] text-muted">
             Đang ở
           </span>
           <span className="block truncate font-display text-[15px] font-semibold leading-tight">
@@ -47,7 +47,7 @@ export function CockpitHud({ current, fuel, ownedCount }: CockpitHudProps) {
         </span>
       </button>
 
-      <dl className="m-0 mt-2.5 grid grid-cols-3 gap-1.5 border-t border-line-2 pt-2.5 font-mono text-[10px] text-muted">
+      <dl className="m-0 mt-2.5 grid grid-cols-3 gap-1.5 border-t border-line-2 pt-2.5 text-[10px] text-muted">
         <div>
           <dt className="uppercase tracking-[0.08em]">Nhiên liệu</dt>
           <dd className="m-0 text-[15px] font-semibold tabular-nums text-gold-2">
@@ -78,7 +78,7 @@ export function CockpitHud({ current, fuel, ownedCount }: CockpitHudProps) {
         {play && (
           <Link
             to={play}
-            className="flex-1 whitespace-nowrap rounded-[7px] border border-gold bg-gold px-2 py-[6px] text-center text-[11.5px] font-semibold text-bg transition-[filter] hover:brightness-110"
+            className="flex-1 whitespace-nowrap rounded-xl border border-gold bg-gold px-2 py-[6px] text-center text-[11.5px] font-semibold text-bg transition-[filter] hover:brightness-110"
           >
             Trải nghiệm →
           </Link>

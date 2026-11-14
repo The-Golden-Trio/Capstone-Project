@@ -154,7 +154,7 @@ export function ActivityPanel({
             onHint={() => void s.viewHint()}
             onSubmit={(text) => void s.submitText(text)}
           />
-          <p className="mt-2 font-mono text-[10px] leading-snug text-muted">
+          <p className="mt-2 text-[10px] leading-snug text-muted">
             {AI_DISCLOSURE}
           </p>
         </>
@@ -283,7 +283,7 @@ function FlagContent() {
   };
 
   return (
-    <div className="mt-5 rounded-[10px] border border-line bg-inset p-3">
+    <div className="mt-5 rounded-xl border border-line bg-inset p-3">
       <label
         className="mb-2 block text-[12px] text-ink-2"
         htmlFor="flag-reason"
@@ -295,7 +295,7 @@ function FlagContent() {
         value={reason}
         maxLength={1000}
         onChange={(e) => setReason(e.target.value)}
-        className="min-h-[64px] w-full resize-y rounded-[8px] border border-line bg-bg px-3 py-2 text-[13px] text-ink focus:border-[var(--accent)] focus:outline-none"
+        className="min-h-[64px] w-full resize-y rounded-xl border border-blue/45 bg-inset/85 px-3 py-2 text-[13px] text-ink focus:border-[var(--accent)] focus:outline-none"
       />
       {sent === 'error' && (
         <p className="m-0 mt-2 text-[11.5px] text-signal">

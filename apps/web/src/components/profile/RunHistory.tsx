@@ -23,13 +23,13 @@ function EvidenceRow({ evidence }: { evidence: EvidenceView }) {
       <div className="mb-0.5 flex flex-wrap items-baseline gap-2">
         <span
           className={cx(
-            'font-mono text-[11px] font-bold',
+            'text-[11px] font-bold',
             ANCHOR_STYLE[evidence.anchor],
           )}
         >
           {evidence.anchor}
         </span>
-        <span className="font-mono text-[10.5px] text-muted">
+        <span className="text-[10.5px] text-muted">
           {evidence.skill}
         </span>
         {evidence.capped && <Pill tone="gold">đã xem gợi ý</Pill>}
@@ -74,7 +74,7 @@ export function RunHistory({ runs }: { runs: RunHistoryItem[] }) {
         return (
           <div
             key={run.id}
-            className="overflow-hidden rounded-[10px] border border-line-2 bg-panel"
+            className="overflow-hidden rounded-xl border border-line-2 bg-panel"
           >
             <button
               type="button"
@@ -87,14 +87,14 @@ export function RunHistory({ runs }: { runs: RunHistoryItem[] }) {
                   <Pill tone={ENDING_TONE[run.endingType ?? ''] ?? 'neutral'}>
                     {run.endingType ?? '—'}
                   </Pill>
-                  <span className="font-mono text-[10.5px] text-muted">
+                  <span className="text-[10.5px] text-muted">
                     {run.roleCode} · {run.band}
                   </span>
                 </div>
                 <div className="truncate text-[13.5px] font-semibold text-ink">
                   {run.scenarioTitle}
                 </div>
-                <div className="mt-0.5 font-mono text-[10.5px] text-muted">
+                <div className="mt-0.5 text-[10.5px] text-muted">
                   {run.completedAt?.slice(0, 10) ?? '—'} ·{' '}
                   {run.evidence.length} mốc hành vi
                 </div>
@@ -104,13 +104,13 @@ export function RunHistory({ runs }: { runs: RunHistoryItem[] }) {
                 <span className="block font-mono text-[13px] font-bold tabular-nums text-gold-2">
                   {run.pointsAwarded > 0 ? `+${run.pointsAwarded}` : '0'}
                 </span>
-                <span className="block font-mono text-[9.5px] text-muted">
+                <span className="block text-[9.5px] text-muted">
                   {run.pointsAwarded > 0 ? 'điểm' : 'chơi lại'}
                 </span>
               </span>
 
               <span
-                className="shrink-0 font-mono text-[11px] text-muted"
+                className="shrink-0 text-[11px] text-muted"
                 aria-hidden="true"
               >
                 {open ? '▲' : '▼'}

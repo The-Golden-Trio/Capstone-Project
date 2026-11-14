@@ -60,7 +60,7 @@ function Stop({
 
       <span
         className={cx(
-          'relative z-1 grid h-[38px] w-[38px] place-items-center rounded-full border-2 font-mono text-[12px] font-bold transition-shadow',
+          'relative z-1 grid h-[38px] w-[38px] place-items-center rounded-full border-2 text-[12px] font-bold transition-shadow',
           tone === 'current' &&
             'border-gold bg-gold text-bg shadow-[0_0_0_4px_var(--color-gold-soft),0_0_22px_-4px_var(--color-gold)]',
           tone === 'open' && 'border-gold bg-gold-soft text-gold-2',
@@ -71,7 +71,7 @@ function Stop({
         {band.completed && (
           <i
             aria-label={t('profile.mainDone')}
-            className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-good font-mono text-[9px] not-italic text-bg"
+            className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-good text-[9px] not-italic text-bg"
           >
             ✓
           </i>
@@ -97,11 +97,11 @@ function Stop({
       </span>
 
       {band.enrolled && !band.completed ? (
-        <span className="mt-1 block rounded-full bg-good-soft px-1.5 font-mono text-[9px] text-good">
+        <span className="mt-1 block rounded-full bg-good-soft px-1.5 text-[9px] text-good">
           {t('profile.inProgress')}
         </span>
       ) : !band.hasScenario ? (
-        <span className="mt-1 block font-mono text-[9px] text-muted/70">
+        <span className="mt-1 block text-[9px] text-muted/70">
           {t('profile.noScenario')}
         </span>
       ) : null}

@@ -7,11 +7,11 @@ export function GalaxyLegend() {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="galaxy-glass pointer-events-auto w-[218px] rounded-[11px] p-3.5 text-[12px] max-[900px]:w-auto">
+    <div className="galaxy-glass pointer-events-auto w-[218px] rounded-xl p-3.5 text-[12px] max-[900px]:w-auto">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between font-mono text-[9.5px] uppercase tracking-[0.14em] text-muted"
+        className="flex w-full items-center justify-between font-label text-[9.5px] uppercase tracking-[0.16em] text-muted"
         aria-expanded={open}
       >
         Chú giải
@@ -33,7 +33,7 @@ export function GalaxyLegend() {
             ))}
           </ul>
 
-          <div className="mt-3 border-t border-line-2 pt-2.5 font-mono text-[10.5px] leading-[1.9] text-muted">
+          <div className="mt-3 border-t border-line-2 pt-2.5 text-[10.5px] leading-[1.9] text-muted">
             <p className="m-0">
               <span className="text-gold">── ▶</span> thăng tiến lên
             </p>

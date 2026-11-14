@@ -44,13 +44,13 @@ function EvidenceRow({
       <div className="mb-0.5 flex flex-wrap items-baseline gap-2">
         <span
           className={cx(
-            'font-mono text-[11px] font-bold',
+            'text-[11px] font-bold',
             ANCHOR_TONE[evidence.anchor],
           )}
         >
           {evidence.anchor}
         </span>
-        <span className={cx('font-mono text-[10.5px]', SKILL_TONE[evidence.skillType])}>
+        <span className={cx('text-[10.5px]', SKILL_TONE[evidence.skillType])}>
           {evidence.skill}
         </span>
       </div>
@@ -96,7 +96,7 @@ export function EndingPage() {
     return (
       <Card className="mx-auto max-w-[720px]">
         <CardBody>
-          <p className="m-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+          <p className="m-0 font-label text-[11px] uppercase tracking-[0.16em] text-muted">
             Đang chấm ở máy chủ…
           </p>
         </CardBody>
@@ -135,7 +135,7 @@ export function EndingPage() {
         <div className={cx('reveal mb-4 rounded-[12px] border-[1.5px] p-5', style.frame)}>
           <p
             className={cx(
-              'm-0 mb-2 font-mono text-[10px] uppercase tracking-[0.11em]',
+              'm-0 mb-2 font-label text-[10px] uppercase tracking-[0.16em]',
               style.tone,
             )}
           >
@@ -161,7 +161,7 @@ export function EndingPage() {
           )}
         >
           <div>
-            <span className="block font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
+            <span className="block font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
               Điểm kỹ năng
             </span>
             <span className="block font-display text-[34px] font-bold leading-none tabular-nums text-[var(--accent)]">
@@ -200,7 +200,7 @@ export function EndingPage() {
           <CardBody>
             {good.length > 0 && (
               <div className="mb-5">
-                <p className="m-0 mb-2.5 font-mono text-[10px] uppercase tracking-[0.09em] text-good">
+                <p className="m-0 mb-2.5 font-label text-[10px] uppercase tracking-[0.16em] text-good">
                   Bạn đã làm tốt
                 </p>
                 {good.map((e, i) => (
@@ -215,7 +215,7 @@ export function EndingPage() {
 
             {bad.length > 0 && (
               <div>
-                <p className="m-0 mb-2.5 font-mono text-[10px] uppercase tracking-[0.09em] text-signal">
+                <p className="m-0 mb-2.5 font-label text-[10px] uppercase tracking-[0.16em] text-signal">
                   Lần sau chú ý
                 </p>
                 {bad.map((e, i) => (

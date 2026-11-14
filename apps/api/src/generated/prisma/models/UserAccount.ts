@@ -258,6 +258,9 @@ export type UserAccountWhereInput = {
   eventAnswers?: Prisma.EventAnswerListRelationFilter
   eventAwards?: Prisma.EventAwardListRelationFilter
   enrollments?: Prisma.EnrollmentListRelationFilter
+  occupationRatings?: Prisma.OccupationRatingListRelationFilter
+  appFeedback?: Prisma.AppFeedbackListRelationFilter
+  appFeedbackHandled?: Prisma.AppFeedbackListRelationFilter
 }
 
 export type UserAccountOrderByWithRelationInput = {
@@ -305,6 +308,9 @@ export type UserAccountOrderByWithRelationInput = {
   eventAnswers?: Prisma.EventAnswerOrderByRelationAggregateInput
   eventAwards?: Prisma.EventAwardOrderByRelationAggregateInput
   enrollments?: Prisma.EnrollmentOrderByRelationAggregateInput
+  occupationRatings?: Prisma.OccupationRatingOrderByRelationAggregateInput
+  appFeedback?: Prisma.AppFeedbackOrderByRelationAggregateInput
+  appFeedbackHandled?: Prisma.AppFeedbackOrderByRelationAggregateInput
 }
 
 export type UserAccountWhereUniqueInput = Prisma.AtLeast<{
@@ -355,6 +361,9 @@ export type UserAccountWhereUniqueInput = Prisma.AtLeast<{
   eventAnswers?: Prisma.EventAnswerListRelationFilter
   eventAwards?: Prisma.EventAwardListRelationFilter
   enrollments?: Prisma.EnrollmentListRelationFilter
+  occupationRatings?: Prisma.OccupationRatingListRelationFilter
+  appFeedback?: Prisma.AppFeedbackListRelationFilter
+  appFeedbackHandled?: Prisma.AppFeedbackListRelationFilter
 }, "id" | "email" | "username">
 
 export type UserAccountOrderByWithAggregationInput = {
@@ -434,6 +443,9 @@ export type UserAccountCreateInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateInput = {
@@ -481,6 +493,9 @@ export type UserAccountUncheckedCreateInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUpdateInput = {
@@ -528,6 +543,9 @@ export type UserAccountUpdateInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateInput = {
@@ -575,6 +593,9 @@ export type UserAccountUncheckedUpdateInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateManyInput = {
@@ -855,6 +876,38 @@ export type UserAccountUpdateOneRequiredWithoutNotificationsNestedInput = {
   upsert?: Prisma.UserAccountUpsertWithoutNotificationsInput
   connect?: Prisma.UserAccountWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserAccountUpdateToOneWithWhereWithoutNotificationsInput, Prisma.UserAccountUpdateWithoutNotificationsInput>, Prisma.UserAccountUncheckedUpdateWithoutNotificationsInput>
+}
+
+export type UserAccountCreateNestedOneWithoutAppFeedbackInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutAppFeedbackInput, Prisma.UserAccountUncheckedCreateWithoutAppFeedbackInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutAppFeedbackInput
+  connect?: Prisma.UserAccountWhereUniqueInput
+}
+
+export type UserAccountCreateNestedOneWithoutAppFeedbackHandledInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutAppFeedbackHandledInput, Prisma.UserAccountUncheckedCreateWithoutAppFeedbackHandledInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutAppFeedbackHandledInput
+  connect?: Prisma.UserAccountWhereUniqueInput
+}
+
+export type UserAccountUpdateOneWithoutAppFeedbackNestedInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutAppFeedbackInput, Prisma.UserAccountUncheckedCreateWithoutAppFeedbackInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutAppFeedbackInput
+  upsert?: Prisma.UserAccountUpsertWithoutAppFeedbackInput
+  disconnect?: Prisma.UserAccountWhereInput | boolean
+  delete?: Prisma.UserAccountWhereInput | boolean
+  connect?: Prisma.UserAccountWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserAccountUpdateToOneWithWhereWithoutAppFeedbackInput, Prisma.UserAccountUpdateWithoutAppFeedbackInput>, Prisma.UserAccountUncheckedUpdateWithoutAppFeedbackInput>
+}
+
+export type UserAccountUpdateOneWithoutAppFeedbackHandledNestedInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutAppFeedbackHandledInput, Prisma.UserAccountUncheckedCreateWithoutAppFeedbackHandledInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutAppFeedbackHandledInput
+  upsert?: Prisma.UserAccountUpsertWithoutAppFeedbackHandledInput
+  disconnect?: Prisma.UserAccountWhereInput | boolean
+  delete?: Prisma.UserAccountWhereInput | boolean
+  connect?: Prisma.UserAccountWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserAccountUpdateToOneWithWhereWithoutAppFeedbackHandledInput, Prisma.UserAccountUpdateWithoutAppFeedbackHandledInput>, Prisma.UserAccountUncheckedUpdateWithoutAppFeedbackHandledInput>
 }
 
 export type UserAccountCreateNestedOneWithoutLevelsWrittenInput = {
@@ -1171,6 +1224,20 @@ export type UserAccountUpdateOneRequiredWithoutEnrollmentsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserAccountUpdateToOneWithWhereWithoutEnrollmentsInput, Prisma.UserAccountUpdateWithoutEnrollmentsInput>, Prisma.UserAccountUncheckedUpdateWithoutEnrollmentsInput>
 }
 
+export type UserAccountCreateNestedOneWithoutOccupationRatingsInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutOccupationRatingsInput, Prisma.UserAccountUncheckedCreateWithoutOccupationRatingsInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutOccupationRatingsInput
+  connect?: Prisma.UserAccountWhereUniqueInput
+}
+
+export type UserAccountUpdateOneRequiredWithoutOccupationRatingsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutOccupationRatingsInput, Prisma.UserAccountUncheckedCreateWithoutOccupationRatingsInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutOccupationRatingsInput
+  upsert?: Prisma.UserAccountUpsertWithoutOccupationRatingsInput
+  connect?: Prisma.UserAccountWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserAccountUpdateToOneWithWhereWithoutOccupationRatingsInput, Prisma.UserAccountUpdateWithoutOccupationRatingsInput>, Prisma.UserAccountUncheckedUpdateWithoutOccupationRatingsInput>
+}
+
 export type UserAccountCreateWithoutRolesInput = {
   id?: string
   email?: string | null
@@ -1215,6 +1282,9 @@ export type UserAccountCreateWithoutRolesInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutRolesInput = {
@@ -1261,6 +1331,9 @@ export type UserAccountUncheckedCreateWithoutRolesInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutRolesInput = {
@@ -1312,6 +1385,9 @@ export type UserAccountCreateWithoutGrantedRolesInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutGrantedRolesInput = {
@@ -1358,6 +1434,9 @@ export type UserAccountUncheckedCreateWithoutGrantedRolesInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutGrantedRolesInput = {
@@ -1420,6 +1499,9 @@ export type UserAccountUpdateWithoutRolesInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutRolesInput = {
@@ -1466,6 +1548,9 @@ export type UserAccountUncheckedUpdateWithoutRolesInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUpsertWithoutGrantedRolesInput = {
@@ -1523,6 +1608,9 @@ export type UserAccountUpdateWithoutGrantedRolesInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutGrantedRolesInput = {
@@ -1569,6 +1657,9 @@ export type UserAccountUncheckedUpdateWithoutGrantedRolesInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutGoogleIdentityInput = {
@@ -1615,6 +1706,9 @@ export type UserAccountCreateWithoutGoogleIdentityInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutGoogleIdentityInput = {
@@ -1661,6 +1755,9 @@ export type UserAccountUncheckedCreateWithoutGoogleIdentityInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutGoogleIdentityInput = {
@@ -1723,6 +1820,9 @@ export type UserAccountUpdateWithoutGoogleIdentityInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutGoogleIdentityInput = {
@@ -1769,6 +1869,9 @@ export type UserAccountUncheckedUpdateWithoutGoogleIdentityInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutStaffAssignmentsInput = {
@@ -1815,6 +1918,9 @@ export type UserAccountCreateWithoutStaffAssignmentsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutStaffAssignmentsInput = {
@@ -1861,6 +1967,9 @@ export type UserAccountUncheckedCreateWithoutStaffAssignmentsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutStaffAssignmentsInput = {
@@ -1912,6 +2021,9 @@ export type UserAccountCreateWithoutAssignmentsMadeInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutAssignmentsMadeInput = {
@@ -1958,6 +2070,9 @@ export type UserAccountUncheckedCreateWithoutAssignmentsMadeInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutAssignmentsMadeInput = {
@@ -2020,6 +2135,9 @@ export type UserAccountUpdateWithoutStaffAssignmentsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutStaffAssignmentsInput = {
@@ -2066,6 +2184,9 @@ export type UserAccountUncheckedUpdateWithoutStaffAssignmentsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUpsertWithoutAssignmentsMadeInput = {
@@ -2123,6 +2244,9 @@ export type UserAccountUpdateWithoutAssignmentsMadeInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutAssignmentsMadeInput = {
@@ -2169,6 +2293,9 @@ export type UserAccountUncheckedUpdateWithoutAssignmentsMadeInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutSessionsInput = {
@@ -2215,6 +2342,9 @@ export type UserAccountCreateWithoutSessionsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutSessionsInput = {
@@ -2261,6 +2391,9 @@ export type UserAccountUncheckedCreateWithoutSessionsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutSessionsInput = {
@@ -2323,6 +2456,9 @@ export type UserAccountUpdateWithoutSessionsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutSessionsInput = {
@@ -2369,6 +2505,9 @@ export type UserAccountUncheckedUpdateWithoutSessionsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutPasswordResetTokensInput = {
@@ -2415,6 +2554,9 @@ export type UserAccountCreateWithoutPasswordResetTokensInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutPasswordResetTokensInput = {
@@ -2461,6 +2603,9 @@ export type UserAccountUncheckedCreateWithoutPasswordResetTokensInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutPasswordResetTokensInput = {
@@ -2523,6 +2668,9 @@ export type UserAccountUpdateWithoutPasswordResetTokensInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutPasswordResetTokensInput = {
@@ -2569,6 +2717,9 @@ export type UserAccountUncheckedUpdateWithoutPasswordResetTokensInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutActivityLogsInput = {
@@ -2615,6 +2766,9 @@ export type UserAccountCreateWithoutActivityLogsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutActivityLogsInput = {
@@ -2661,6 +2815,9 @@ export type UserAccountUncheckedCreateWithoutActivityLogsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutActivityLogsInput = {
@@ -2723,6 +2880,9 @@ export type UserAccountUpdateWithoutActivityLogsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutActivityLogsInput = {
@@ -2769,6 +2929,9 @@ export type UserAccountUncheckedUpdateWithoutActivityLogsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutConsentInput = {
@@ -2815,6 +2978,9 @@ export type UserAccountCreateWithoutConsentInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutConsentInput = {
@@ -2861,6 +3027,9 @@ export type UserAccountUncheckedCreateWithoutConsentInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutConsentInput = {
@@ -2923,6 +3092,9 @@ export type UserAccountUpdateWithoutConsentInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutConsentInput = {
@@ -2969,6 +3141,9 @@ export type UserAccountUncheckedUpdateWithoutConsentInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutDomainsCreatedInput = {
@@ -3015,6 +3190,9 @@ export type UserAccountCreateWithoutDomainsCreatedInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutDomainsCreatedInput = {
@@ -3061,6 +3239,9 @@ export type UserAccountUncheckedCreateWithoutDomainsCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutDomainsCreatedInput = {
@@ -3123,6 +3304,9 @@ export type UserAccountUpdateWithoutDomainsCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutDomainsCreatedInput = {
@@ -3169,6 +3353,9 @@ export type UserAccountUncheckedUpdateWithoutDomainsCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutOccupationsCreatedInput = {
@@ -3215,6 +3402,9 @@ export type UserAccountCreateWithoutOccupationsCreatedInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutOccupationsCreatedInput = {
@@ -3261,6 +3451,9 @@ export type UserAccountUncheckedCreateWithoutOccupationsCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutOccupationsCreatedInput = {
@@ -3323,6 +3516,9 @@ export type UserAccountUpdateWithoutOccupationsCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutOccupationsCreatedInput = {
@@ -3369,6 +3565,9 @@ export type UserAccountUncheckedUpdateWithoutOccupationsCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutNotificationsInput = {
@@ -3415,6 +3614,9 @@ export type UserAccountCreateWithoutNotificationsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutNotificationsInput = {
@@ -3461,6 +3663,9 @@ export type UserAccountUncheckedCreateWithoutNotificationsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutNotificationsInput = {
@@ -3523,6 +3728,9 @@ export type UserAccountUpdateWithoutNotificationsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutNotificationsInput = {
@@ -3569,6 +3777,433 @@ export type UserAccountUncheckedUpdateWithoutNotificationsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
+}
+
+export type UserAccountCreateWithoutAppFeedbackInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash?: string | null
+  displayName?: string | null
+  dateOfBirth?: Date | string | null
+  status?: $Enums.AccountStatus
+  createdAt?: Date | string
+  lastSignInAt?: Date | string | null
+  deletedAt?: Date | string | null
+  roles?: Prisma.UserRoleCreateNestedManyWithoutUserInput
+  grantedRoles?: Prisma.UserRoleCreateNestedManyWithoutGranterInput
+  googleIdentity?: Prisma.GoogleIdentityCreateNestedOneWithoutUserInput
+  staffAssignments?: Prisma.StaffAssignmentCreateNestedManyWithoutUserInput
+  assignmentsMade?: Prisma.StaffAssignmentCreateNestedManyWithoutAssignerInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutActorInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutRecipientInput
+  domainsCreated?: Prisma.DomainCreateNestedManyWithoutCreatorInput
+  occupationsCreated?: Prisma.OccupationCreateNestedManyWithoutCreatorInput
+  levelsWritten?: Prisma.OccupationLevelCreateNestedManyWithoutWriterInput
+  downsidesWritten?: Prisma.DownsideCreateNestedManyWithoutWriterInput
+  rulesWritten?: Prisma.GenerationRuleCreateNestedManyWithoutWriterInput
+  competenciesCreated?: Prisma.CompetencyCreateNestedManyWithoutCreatorInput
+  scenariosAuthored?: Prisma.ScenarioCreateNestedManyWithoutAuthorInput
+  scenariosOpened?: Prisma.ScenarioCreateNestedManyWithoutOpenerInput
+  generationRequests?: Prisma.GenerationRunCreateNestedManyWithoutRequesterInput
+  referenceAnswers?: Prisma.ReferenceAnswerCreateNestedManyWithoutAuthorInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutCreatorInput
+  reviewsAssigned?: Prisma.ReviewAssignmentCreateNestedManyWithoutReviewerInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentCreateNestedManyWithoutAssignerInput
+  lifecycleLogs?: Prisma.LifecycleLogCreateNestedManyWithoutActorInput
+  assetsChecked?: Prisma.AssetCreateNestedManyWithoutCheckerInput
+  presentationsDesigned?: Prisma.PresentationCreateNestedManyWithoutDesignerInput
+  buildsBuilt?: Prisma.ScenarioBuildCreateNestedManyWithoutBuilderInput
+  promptTemplatesChanged?: Prisma.PromptTemplateCreateNestedManyWithoutChangerInput
+  consent?: Prisma.ParentalConsentCreateNestedOneWithoutUserInput
+  gameProfile?: Prisma.GameProfileCreateNestedOneWithoutUserInput
+  runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
+  bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
+  eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
+}
+
+export type UserAccountUncheckedCreateWithoutAppFeedbackInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash?: string | null
+  displayName?: string | null
+  dateOfBirth?: Date | string | null
+  status?: $Enums.AccountStatus
+  createdAt?: Date | string
+  lastSignInAt?: Date | string | null
+  deletedAt?: Date | string | null
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
+  grantedRoles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutGranterInput
+  googleIdentity?: Prisma.GoogleIdentityUncheckedCreateNestedOneWithoutUserInput
+  staffAssignments?: Prisma.StaffAssignmentUncheckedCreateNestedManyWithoutUserInput
+  assignmentsMade?: Prisma.StaffAssignmentUncheckedCreateNestedManyWithoutAssignerInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutActorInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutRecipientInput
+  domainsCreated?: Prisma.DomainUncheckedCreateNestedManyWithoutCreatorInput
+  occupationsCreated?: Prisma.OccupationUncheckedCreateNestedManyWithoutCreatorInput
+  levelsWritten?: Prisma.OccupationLevelUncheckedCreateNestedManyWithoutWriterInput
+  downsidesWritten?: Prisma.DownsideUncheckedCreateNestedManyWithoutWriterInput
+  rulesWritten?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutWriterInput
+  competenciesCreated?: Prisma.CompetencyUncheckedCreateNestedManyWithoutCreatorInput
+  scenariosAuthored?: Prisma.ScenarioUncheckedCreateNestedManyWithoutAuthorInput
+  scenariosOpened?: Prisma.ScenarioUncheckedCreateNestedManyWithoutOpenerInput
+  generationRequests?: Prisma.GenerationRunUncheckedCreateNestedManyWithoutRequesterInput
+  referenceAnswers?: Prisma.ReferenceAnswerUncheckedCreateNestedManyWithoutAuthorInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutCreatorInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUncheckedCreateNestedManyWithoutReviewerInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUncheckedCreateNestedManyWithoutAssignerInput
+  lifecycleLogs?: Prisma.LifecycleLogUncheckedCreateNestedManyWithoutActorInput
+  assetsChecked?: Prisma.AssetUncheckedCreateNestedManyWithoutCheckerInput
+  presentationsDesigned?: Prisma.PresentationUncheckedCreateNestedManyWithoutDesignerInput
+  buildsBuilt?: Prisma.ScenarioBuildUncheckedCreateNestedManyWithoutBuilderInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutChangerInput
+  consent?: Prisma.ParentalConsentUncheckedCreateNestedOneWithoutUserInput
+  gameProfile?: Prisma.GameProfileUncheckedCreateNestedOneWithoutUserInput
+  runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
+  bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
+  eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
+}
+
+export type UserAccountCreateOrConnectWithoutAppFeedbackInput = {
+  where: Prisma.UserAccountWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutAppFeedbackInput, Prisma.UserAccountUncheckedCreateWithoutAppFeedbackInput>
+}
+
+export type UserAccountCreateWithoutAppFeedbackHandledInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash?: string | null
+  displayName?: string | null
+  dateOfBirth?: Date | string | null
+  status?: $Enums.AccountStatus
+  createdAt?: Date | string
+  lastSignInAt?: Date | string | null
+  deletedAt?: Date | string | null
+  roles?: Prisma.UserRoleCreateNestedManyWithoutUserInput
+  grantedRoles?: Prisma.UserRoleCreateNestedManyWithoutGranterInput
+  googleIdentity?: Prisma.GoogleIdentityCreateNestedOneWithoutUserInput
+  staffAssignments?: Prisma.StaffAssignmentCreateNestedManyWithoutUserInput
+  assignmentsMade?: Prisma.StaffAssignmentCreateNestedManyWithoutAssignerInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutActorInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutRecipientInput
+  domainsCreated?: Prisma.DomainCreateNestedManyWithoutCreatorInput
+  occupationsCreated?: Prisma.OccupationCreateNestedManyWithoutCreatorInput
+  levelsWritten?: Prisma.OccupationLevelCreateNestedManyWithoutWriterInput
+  downsidesWritten?: Prisma.DownsideCreateNestedManyWithoutWriterInput
+  rulesWritten?: Prisma.GenerationRuleCreateNestedManyWithoutWriterInput
+  competenciesCreated?: Prisma.CompetencyCreateNestedManyWithoutCreatorInput
+  scenariosAuthored?: Prisma.ScenarioCreateNestedManyWithoutAuthorInput
+  scenariosOpened?: Prisma.ScenarioCreateNestedManyWithoutOpenerInput
+  generationRequests?: Prisma.GenerationRunCreateNestedManyWithoutRequesterInput
+  referenceAnswers?: Prisma.ReferenceAnswerCreateNestedManyWithoutAuthorInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutCreatorInput
+  reviewsAssigned?: Prisma.ReviewAssignmentCreateNestedManyWithoutReviewerInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentCreateNestedManyWithoutAssignerInput
+  lifecycleLogs?: Prisma.LifecycleLogCreateNestedManyWithoutActorInput
+  assetsChecked?: Prisma.AssetCreateNestedManyWithoutCheckerInput
+  presentationsDesigned?: Prisma.PresentationCreateNestedManyWithoutDesignerInput
+  buildsBuilt?: Prisma.ScenarioBuildCreateNestedManyWithoutBuilderInput
+  promptTemplatesChanged?: Prisma.PromptTemplateCreateNestedManyWithoutChangerInput
+  consent?: Prisma.ParentalConsentCreateNestedOneWithoutUserInput
+  gameProfile?: Prisma.GameProfileCreateNestedOneWithoutUserInput
+  runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
+  bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
+  eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+}
+
+export type UserAccountUncheckedCreateWithoutAppFeedbackHandledInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash?: string | null
+  displayName?: string | null
+  dateOfBirth?: Date | string | null
+  status?: $Enums.AccountStatus
+  createdAt?: Date | string
+  lastSignInAt?: Date | string | null
+  deletedAt?: Date | string | null
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
+  grantedRoles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutGranterInput
+  googleIdentity?: Prisma.GoogleIdentityUncheckedCreateNestedOneWithoutUserInput
+  staffAssignments?: Prisma.StaffAssignmentUncheckedCreateNestedManyWithoutUserInput
+  assignmentsMade?: Prisma.StaffAssignmentUncheckedCreateNestedManyWithoutAssignerInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutActorInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutRecipientInput
+  domainsCreated?: Prisma.DomainUncheckedCreateNestedManyWithoutCreatorInput
+  occupationsCreated?: Prisma.OccupationUncheckedCreateNestedManyWithoutCreatorInput
+  levelsWritten?: Prisma.OccupationLevelUncheckedCreateNestedManyWithoutWriterInput
+  downsidesWritten?: Prisma.DownsideUncheckedCreateNestedManyWithoutWriterInput
+  rulesWritten?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutWriterInput
+  competenciesCreated?: Prisma.CompetencyUncheckedCreateNestedManyWithoutCreatorInput
+  scenariosAuthored?: Prisma.ScenarioUncheckedCreateNestedManyWithoutAuthorInput
+  scenariosOpened?: Prisma.ScenarioUncheckedCreateNestedManyWithoutOpenerInput
+  generationRequests?: Prisma.GenerationRunUncheckedCreateNestedManyWithoutRequesterInput
+  referenceAnswers?: Prisma.ReferenceAnswerUncheckedCreateNestedManyWithoutAuthorInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutCreatorInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUncheckedCreateNestedManyWithoutReviewerInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUncheckedCreateNestedManyWithoutAssignerInput
+  lifecycleLogs?: Prisma.LifecycleLogUncheckedCreateNestedManyWithoutActorInput
+  assetsChecked?: Prisma.AssetUncheckedCreateNestedManyWithoutCheckerInput
+  presentationsDesigned?: Prisma.PresentationUncheckedCreateNestedManyWithoutDesignerInput
+  buildsBuilt?: Prisma.ScenarioBuildUncheckedCreateNestedManyWithoutBuilderInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutChangerInput
+  consent?: Prisma.ParentalConsentUncheckedCreateNestedOneWithoutUserInput
+  gameProfile?: Prisma.GameProfileUncheckedCreateNestedOneWithoutUserInput
+  runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
+  bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
+  eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserAccountCreateOrConnectWithoutAppFeedbackHandledInput = {
+  where: Prisma.UserAccountWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutAppFeedbackHandledInput, Prisma.UserAccountUncheckedCreateWithoutAppFeedbackHandledInput>
+}
+
+export type UserAccountUpsertWithoutAppFeedbackInput = {
+  update: Prisma.XOR<Prisma.UserAccountUpdateWithoutAppFeedbackInput, Prisma.UserAccountUncheckedUpdateWithoutAppFeedbackInput>
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutAppFeedbackInput, Prisma.UserAccountUncheckedCreateWithoutAppFeedbackInput>
+  where?: Prisma.UserAccountWhereInput
+}
+
+export type UserAccountUpdateToOneWithWhereWithoutAppFeedbackInput = {
+  where?: Prisma.UserAccountWhereInput
+  data: Prisma.XOR<Prisma.UserAccountUpdateWithoutAppFeedbackInput, Prisma.UserAccountUncheckedUpdateWithoutAppFeedbackInput>
+}
+
+export type UserAccountUpdateWithoutAppFeedbackInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  displayName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lastSignInAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  roles?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
+  grantedRoles?: Prisma.UserRoleUpdateManyWithoutGranterNestedInput
+  googleIdentity?: Prisma.GoogleIdentityUpdateOneWithoutUserNestedInput
+  staffAssignments?: Prisma.StaffAssignmentUpdateManyWithoutUserNestedInput
+  assignmentsMade?: Prisma.StaffAssignmentUpdateManyWithoutAssignerNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  activityLogs?: Prisma.ActivityLogUpdateManyWithoutActorNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutRecipientNestedInput
+  domainsCreated?: Prisma.DomainUpdateManyWithoutCreatorNestedInput
+  occupationsCreated?: Prisma.OccupationUpdateManyWithoutCreatorNestedInput
+  levelsWritten?: Prisma.OccupationLevelUpdateManyWithoutWriterNestedInput
+  downsidesWritten?: Prisma.DownsideUpdateManyWithoutWriterNestedInput
+  rulesWritten?: Prisma.GenerationRuleUpdateManyWithoutWriterNestedInput
+  competenciesCreated?: Prisma.CompetencyUpdateManyWithoutCreatorNestedInput
+  scenariosAuthored?: Prisma.ScenarioUpdateManyWithoutAuthorNestedInput
+  scenariosOpened?: Prisma.ScenarioUpdateManyWithoutOpenerNestedInput
+  generationRequests?: Prisma.GenerationRunUpdateManyWithoutRequesterNestedInput
+  referenceAnswers?: Prisma.ReferenceAnswerUpdateManyWithoutAuthorNestedInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutCreatorNestedInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUpdateManyWithoutReviewerNestedInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUpdateManyWithoutAssignerNestedInput
+  lifecycleLogs?: Prisma.LifecycleLogUpdateManyWithoutActorNestedInput
+  assetsChecked?: Prisma.AssetUpdateManyWithoutCheckerNestedInput
+  presentationsDesigned?: Prisma.PresentationUpdateManyWithoutDesignerNestedInput
+  buildsBuilt?: Prisma.ScenarioBuildUpdateManyWithoutBuilderNestedInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUpdateManyWithoutChangerNestedInput
+  consent?: Prisma.ParentalConsentUpdateOneWithoutUserNestedInput
+  gameProfile?: Prisma.GameProfileUpdateOneWithoutUserNestedInput
+  runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
+  bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
+  eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
+}
+
+export type UserAccountUncheckedUpdateWithoutAppFeedbackInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  displayName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lastSignInAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
+  grantedRoles?: Prisma.UserRoleUncheckedUpdateManyWithoutGranterNestedInput
+  googleIdentity?: Prisma.GoogleIdentityUncheckedUpdateOneWithoutUserNestedInput
+  staffAssignments?: Prisma.StaffAssignmentUncheckedUpdateManyWithoutUserNestedInput
+  assignmentsMade?: Prisma.StaffAssignmentUncheckedUpdateManyWithoutAssignerNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutRecipientNestedInput
+  domainsCreated?: Prisma.DomainUncheckedUpdateManyWithoutCreatorNestedInput
+  occupationsCreated?: Prisma.OccupationUncheckedUpdateManyWithoutCreatorNestedInput
+  levelsWritten?: Prisma.OccupationLevelUncheckedUpdateManyWithoutWriterNestedInput
+  downsidesWritten?: Prisma.DownsideUncheckedUpdateManyWithoutWriterNestedInput
+  rulesWritten?: Prisma.GenerationRuleUncheckedUpdateManyWithoutWriterNestedInput
+  competenciesCreated?: Prisma.CompetencyUncheckedUpdateManyWithoutCreatorNestedInput
+  scenariosAuthored?: Prisma.ScenarioUncheckedUpdateManyWithoutAuthorNestedInput
+  scenariosOpened?: Prisma.ScenarioUncheckedUpdateManyWithoutOpenerNestedInput
+  generationRequests?: Prisma.GenerationRunUncheckedUpdateManyWithoutRequesterNestedInput
+  referenceAnswers?: Prisma.ReferenceAnswerUncheckedUpdateManyWithoutAuthorNestedInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutCreatorNestedInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUncheckedUpdateManyWithoutReviewerNestedInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUncheckedUpdateManyWithoutAssignerNestedInput
+  lifecycleLogs?: Prisma.LifecycleLogUncheckedUpdateManyWithoutActorNestedInput
+  assetsChecked?: Prisma.AssetUncheckedUpdateManyWithoutCheckerNestedInput
+  presentationsDesigned?: Prisma.PresentationUncheckedUpdateManyWithoutDesignerNestedInput
+  buildsBuilt?: Prisma.ScenarioBuildUncheckedUpdateManyWithoutBuilderNestedInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUncheckedUpdateManyWithoutChangerNestedInput
+  consent?: Prisma.ParentalConsentUncheckedUpdateOneWithoutUserNestedInput
+  gameProfile?: Prisma.GameProfileUncheckedUpdateOneWithoutUserNestedInput
+  runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
+  bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
+  eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
+}
+
+export type UserAccountUpsertWithoutAppFeedbackHandledInput = {
+  update: Prisma.XOR<Prisma.UserAccountUpdateWithoutAppFeedbackHandledInput, Prisma.UserAccountUncheckedUpdateWithoutAppFeedbackHandledInput>
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutAppFeedbackHandledInput, Prisma.UserAccountUncheckedCreateWithoutAppFeedbackHandledInput>
+  where?: Prisma.UserAccountWhereInput
+}
+
+export type UserAccountUpdateToOneWithWhereWithoutAppFeedbackHandledInput = {
+  where?: Prisma.UserAccountWhereInput
+  data: Prisma.XOR<Prisma.UserAccountUpdateWithoutAppFeedbackHandledInput, Prisma.UserAccountUncheckedUpdateWithoutAppFeedbackHandledInput>
+}
+
+export type UserAccountUpdateWithoutAppFeedbackHandledInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  displayName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lastSignInAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  roles?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
+  grantedRoles?: Prisma.UserRoleUpdateManyWithoutGranterNestedInput
+  googleIdentity?: Prisma.GoogleIdentityUpdateOneWithoutUserNestedInput
+  staffAssignments?: Prisma.StaffAssignmentUpdateManyWithoutUserNestedInput
+  assignmentsMade?: Prisma.StaffAssignmentUpdateManyWithoutAssignerNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  activityLogs?: Prisma.ActivityLogUpdateManyWithoutActorNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutRecipientNestedInput
+  domainsCreated?: Prisma.DomainUpdateManyWithoutCreatorNestedInput
+  occupationsCreated?: Prisma.OccupationUpdateManyWithoutCreatorNestedInput
+  levelsWritten?: Prisma.OccupationLevelUpdateManyWithoutWriterNestedInput
+  downsidesWritten?: Prisma.DownsideUpdateManyWithoutWriterNestedInput
+  rulesWritten?: Prisma.GenerationRuleUpdateManyWithoutWriterNestedInput
+  competenciesCreated?: Prisma.CompetencyUpdateManyWithoutCreatorNestedInput
+  scenariosAuthored?: Prisma.ScenarioUpdateManyWithoutAuthorNestedInput
+  scenariosOpened?: Prisma.ScenarioUpdateManyWithoutOpenerNestedInput
+  generationRequests?: Prisma.GenerationRunUpdateManyWithoutRequesterNestedInput
+  referenceAnswers?: Prisma.ReferenceAnswerUpdateManyWithoutAuthorNestedInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutCreatorNestedInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUpdateManyWithoutReviewerNestedInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUpdateManyWithoutAssignerNestedInput
+  lifecycleLogs?: Prisma.LifecycleLogUpdateManyWithoutActorNestedInput
+  assetsChecked?: Prisma.AssetUpdateManyWithoutCheckerNestedInput
+  presentationsDesigned?: Prisma.PresentationUpdateManyWithoutDesignerNestedInput
+  buildsBuilt?: Prisma.ScenarioBuildUpdateManyWithoutBuilderNestedInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUpdateManyWithoutChangerNestedInput
+  consent?: Prisma.ParentalConsentUpdateOneWithoutUserNestedInput
+  gameProfile?: Prisma.GameProfileUpdateOneWithoutUserNestedInput
+  runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
+  bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
+  eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+}
+
+export type UserAccountUncheckedUpdateWithoutAppFeedbackHandledInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  displayName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lastSignInAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
+  grantedRoles?: Prisma.UserRoleUncheckedUpdateManyWithoutGranterNestedInput
+  googleIdentity?: Prisma.GoogleIdentityUncheckedUpdateOneWithoutUserNestedInput
+  staffAssignments?: Prisma.StaffAssignmentUncheckedUpdateManyWithoutUserNestedInput
+  assignmentsMade?: Prisma.StaffAssignmentUncheckedUpdateManyWithoutAssignerNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutRecipientNestedInput
+  domainsCreated?: Prisma.DomainUncheckedUpdateManyWithoutCreatorNestedInput
+  occupationsCreated?: Prisma.OccupationUncheckedUpdateManyWithoutCreatorNestedInput
+  levelsWritten?: Prisma.OccupationLevelUncheckedUpdateManyWithoutWriterNestedInput
+  downsidesWritten?: Prisma.DownsideUncheckedUpdateManyWithoutWriterNestedInput
+  rulesWritten?: Prisma.GenerationRuleUncheckedUpdateManyWithoutWriterNestedInput
+  competenciesCreated?: Prisma.CompetencyUncheckedUpdateManyWithoutCreatorNestedInput
+  scenariosAuthored?: Prisma.ScenarioUncheckedUpdateManyWithoutAuthorNestedInput
+  scenariosOpened?: Prisma.ScenarioUncheckedUpdateManyWithoutOpenerNestedInput
+  generationRequests?: Prisma.GenerationRunUncheckedUpdateManyWithoutRequesterNestedInput
+  referenceAnswers?: Prisma.ReferenceAnswerUncheckedUpdateManyWithoutAuthorNestedInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutCreatorNestedInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUncheckedUpdateManyWithoutReviewerNestedInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUncheckedUpdateManyWithoutAssignerNestedInput
+  lifecycleLogs?: Prisma.LifecycleLogUncheckedUpdateManyWithoutActorNestedInput
+  assetsChecked?: Prisma.AssetUncheckedUpdateManyWithoutCheckerNestedInput
+  presentationsDesigned?: Prisma.PresentationUncheckedUpdateManyWithoutDesignerNestedInput
+  buildsBuilt?: Prisma.ScenarioBuildUncheckedUpdateManyWithoutBuilderNestedInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUncheckedUpdateManyWithoutChangerNestedInput
+  consent?: Prisma.ParentalConsentUncheckedUpdateOneWithoutUserNestedInput
+  gameProfile?: Prisma.GameProfileUncheckedUpdateOneWithoutUserNestedInput
+  runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
+  bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
+  eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserAccountCreateWithoutLevelsWrittenInput = {
@@ -3615,6 +4250,9 @@ export type UserAccountCreateWithoutLevelsWrittenInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutLevelsWrittenInput = {
@@ -3661,6 +4299,9 @@ export type UserAccountUncheckedCreateWithoutLevelsWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutLevelsWrittenInput = {
@@ -3723,6 +4364,9 @@ export type UserAccountUpdateWithoutLevelsWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutLevelsWrittenInput = {
@@ -3769,6 +4413,9 @@ export type UserAccountUncheckedUpdateWithoutLevelsWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutDownsidesWrittenInput = {
@@ -3815,6 +4462,9 @@ export type UserAccountCreateWithoutDownsidesWrittenInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutDownsidesWrittenInput = {
@@ -3861,6 +4511,9 @@ export type UserAccountUncheckedCreateWithoutDownsidesWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutDownsidesWrittenInput = {
@@ -3923,6 +4576,9 @@ export type UserAccountUpdateWithoutDownsidesWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutDownsidesWrittenInput = {
@@ -3969,6 +4625,9 @@ export type UserAccountUncheckedUpdateWithoutDownsidesWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutRulesWrittenInput = {
@@ -4015,6 +4674,9 @@ export type UserAccountCreateWithoutRulesWrittenInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutRulesWrittenInput = {
@@ -4061,6 +4723,9 @@ export type UserAccountUncheckedCreateWithoutRulesWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutRulesWrittenInput = {
@@ -4123,6 +4788,9 @@ export type UserAccountUpdateWithoutRulesWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutRulesWrittenInput = {
@@ -4169,6 +4837,9 @@ export type UserAccountUncheckedUpdateWithoutRulesWrittenInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutCompetenciesCreatedInput = {
@@ -4215,6 +4886,9 @@ export type UserAccountCreateWithoutCompetenciesCreatedInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutCompetenciesCreatedInput = {
@@ -4261,6 +4935,9 @@ export type UserAccountUncheckedCreateWithoutCompetenciesCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutCompetenciesCreatedInput = {
@@ -4323,6 +5000,9 @@ export type UserAccountUpdateWithoutCompetenciesCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutCompetenciesCreatedInput = {
@@ -4369,6 +5049,9 @@ export type UserAccountUncheckedUpdateWithoutCompetenciesCreatedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutScenariosAuthoredInput = {
@@ -4415,6 +5098,9 @@ export type UserAccountCreateWithoutScenariosAuthoredInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutScenariosAuthoredInput = {
@@ -4461,6 +5147,9 @@ export type UserAccountUncheckedCreateWithoutScenariosAuthoredInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutScenariosAuthoredInput = {
@@ -4512,6 +5201,9 @@ export type UserAccountCreateWithoutScenariosOpenedInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutScenariosOpenedInput = {
@@ -4558,6 +5250,9 @@ export type UserAccountUncheckedCreateWithoutScenariosOpenedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutScenariosOpenedInput = {
@@ -4620,6 +5315,9 @@ export type UserAccountUpdateWithoutScenariosAuthoredInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutScenariosAuthoredInput = {
@@ -4666,6 +5364,9 @@ export type UserAccountUncheckedUpdateWithoutScenariosAuthoredInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUpsertWithoutScenariosOpenedInput = {
@@ -4723,6 +5424,9 @@ export type UserAccountUpdateWithoutScenariosOpenedInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutScenariosOpenedInput = {
@@ -4769,6 +5473,9 @@ export type UserAccountUncheckedUpdateWithoutScenariosOpenedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutGenerationRequestsInput = {
@@ -4815,6 +5522,9 @@ export type UserAccountCreateWithoutGenerationRequestsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutGenerationRequestsInput = {
@@ -4861,6 +5571,9 @@ export type UserAccountUncheckedCreateWithoutGenerationRequestsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutGenerationRequestsInput = {
@@ -4923,6 +5636,9 @@ export type UserAccountUpdateWithoutGenerationRequestsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutGenerationRequestsInput = {
@@ -4969,6 +5685,9 @@ export type UserAccountUncheckedUpdateWithoutGenerationRequestsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutReferenceAnswersInput = {
@@ -5015,6 +5734,9 @@ export type UserAccountCreateWithoutReferenceAnswersInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutReferenceAnswersInput = {
@@ -5061,6 +5783,9 @@ export type UserAccountUncheckedCreateWithoutReferenceAnswersInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutReferenceAnswersInput = {
@@ -5123,6 +5848,9 @@ export type UserAccountUpdateWithoutReferenceAnswersInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutReferenceAnswersInput = {
@@ -5169,6 +5897,9 @@ export type UserAccountUncheckedUpdateWithoutReferenceAnswersInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutCriteriaVersionsInput = {
@@ -5215,6 +5946,9 @@ export type UserAccountCreateWithoutCriteriaVersionsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutCriteriaVersionsInput = {
@@ -5261,6 +5995,9 @@ export type UserAccountUncheckedCreateWithoutCriteriaVersionsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutCriteriaVersionsInput = {
@@ -5323,6 +6060,9 @@ export type UserAccountUpdateWithoutCriteriaVersionsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutCriteriaVersionsInput = {
@@ -5369,6 +6109,9 @@ export type UserAccountUncheckedUpdateWithoutCriteriaVersionsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutReviewsAssignedInput = {
@@ -5415,6 +6158,9 @@ export type UserAccountCreateWithoutReviewsAssignedInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutReviewsAssignedInput = {
@@ -5461,6 +6207,9 @@ export type UserAccountUncheckedCreateWithoutReviewsAssignedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutReviewsAssignedInput = {
@@ -5512,6 +6261,9 @@ export type UserAccountCreateWithoutReviewAssignmentsMadeInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutReviewAssignmentsMadeInput = {
@@ -5558,6 +6310,9 @@ export type UserAccountUncheckedCreateWithoutReviewAssignmentsMadeInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutReviewAssignmentsMadeInput = {
@@ -5620,6 +6375,9 @@ export type UserAccountUpdateWithoutReviewsAssignedInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutReviewsAssignedInput = {
@@ -5666,6 +6424,9 @@ export type UserAccountUncheckedUpdateWithoutReviewsAssignedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUpsertWithoutReviewAssignmentsMadeInput = {
@@ -5723,6 +6484,9 @@ export type UserAccountUpdateWithoutReviewAssignmentsMadeInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutReviewAssignmentsMadeInput = {
@@ -5769,6 +6533,9 @@ export type UserAccountUncheckedUpdateWithoutReviewAssignmentsMadeInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutLifecycleLogsInput = {
@@ -5815,6 +6582,9 @@ export type UserAccountCreateWithoutLifecycleLogsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutLifecycleLogsInput = {
@@ -5861,6 +6631,9 @@ export type UserAccountUncheckedCreateWithoutLifecycleLogsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutLifecycleLogsInput = {
@@ -5923,6 +6696,9 @@ export type UserAccountUpdateWithoutLifecycleLogsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutLifecycleLogsInput = {
@@ -5969,6 +6745,9 @@ export type UserAccountUncheckedUpdateWithoutLifecycleLogsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutAssetsCheckedInput = {
@@ -6015,6 +6794,9 @@ export type UserAccountCreateWithoutAssetsCheckedInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutAssetsCheckedInput = {
@@ -6061,6 +6843,9 @@ export type UserAccountUncheckedCreateWithoutAssetsCheckedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutAssetsCheckedInput = {
@@ -6123,6 +6908,9 @@ export type UserAccountUpdateWithoutAssetsCheckedInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutAssetsCheckedInput = {
@@ -6169,6 +6957,9 @@ export type UserAccountUncheckedUpdateWithoutAssetsCheckedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutPresentationsDesignedInput = {
@@ -6215,6 +7006,9 @@ export type UserAccountCreateWithoutPresentationsDesignedInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutPresentationsDesignedInput = {
@@ -6261,6 +7055,9 @@ export type UserAccountUncheckedCreateWithoutPresentationsDesignedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutPresentationsDesignedInput = {
@@ -6323,6 +7120,9 @@ export type UserAccountUpdateWithoutPresentationsDesignedInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutPresentationsDesignedInput = {
@@ -6369,6 +7169,9 @@ export type UserAccountUncheckedUpdateWithoutPresentationsDesignedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutBuildsBuiltInput = {
@@ -6415,6 +7218,9 @@ export type UserAccountCreateWithoutBuildsBuiltInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutBuildsBuiltInput = {
@@ -6461,6 +7267,9 @@ export type UserAccountUncheckedCreateWithoutBuildsBuiltInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutBuildsBuiltInput = {
@@ -6523,6 +7332,9 @@ export type UserAccountUpdateWithoutBuildsBuiltInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutBuildsBuiltInput = {
@@ -6569,6 +7381,9 @@ export type UserAccountUncheckedUpdateWithoutBuildsBuiltInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutPromptTemplatesChangedInput = {
@@ -6615,6 +7430,9 @@ export type UserAccountCreateWithoutPromptTemplatesChangedInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutPromptTemplatesChangedInput = {
@@ -6661,6 +7479,9 @@ export type UserAccountUncheckedCreateWithoutPromptTemplatesChangedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutPromptTemplatesChangedInput = {
@@ -6723,6 +7544,9 @@ export type UserAccountUpdateWithoutPromptTemplatesChangedInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutPromptTemplatesChangedInput = {
@@ -6769,6 +7593,9 @@ export type UserAccountUncheckedUpdateWithoutPromptTemplatesChangedInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutGameProfileInput = {
@@ -6815,6 +7642,9 @@ export type UserAccountCreateWithoutGameProfileInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutGameProfileInput = {
@@ -6861,6 +7691,9 @@ export type UserAccountUncheckedCreateWithoutGameProfileInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutGameProfileInput = {
@@ -6923,6 +7756,9 @@ export type UserAccountUpdateWithoutGameProfileInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutGameProfileInput = {
@@ -6969,6 +7805,9 @@ export type UserAccountUncheckedUpdateWithoutGameProfileInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutRunsInput = {
@@ -7015,6 +7854,9 @@ export type UserAccountCreateWithoutRunsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutRunsInput = {
@@ -7061,6 +7903,9 @@ export type UserAccountUncheckedCreateWithoutRunsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutRunsInput = {
@@ -7123,6 +7968,9 @@ export type UserAccountUpdateWithoutRunsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutRunsInput = {
@@ -7169,6 +8017,9 @@ export type UserAccountUncheckedUpdateWithoutRunsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutBandSkillsInput = {
@@ -7215,6 +8066,9 @@ export type UserAccountCreateWithoutBandSkillsInput = {
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutBandSkillsInput = {
@@ -7261,6 +8115,9 @@ export type UserAccountUncheckedCreateWithoutBandSkillsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutBandSkillsInput = {
@@ -7323,6 +8180,9 @@ export type UserAccountUpdateWithoutBandSkillsInput = {
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutBandSkillsInput = {
@@ -7369,6 +8229,9 @@ export type UserAccountUncheckedUpdateWithoutBandSkillsInput = {
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutEventAnswersInput = {
@@ -7415,6 +8278,9 @@ export type UserAccountCreateWithoutEventAnswersInput = {
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutEventAnswersInput = {
@@ -7461,6 +8327,9 @@ export type UserAccountUncheckedCreateWithoutEventAnswersInput = {
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutEventAnswersInput = {
@@ -7523,6 +8392,9 @@ export type UserAccountUpdateWithoutEventAnswersInput = {
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutEventAnswersInput = {
@@ -7569,6 +8441,9 @@ export type UserAccountUncheckedUpdateWithoutEventAnswersInput = {
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutEventAwardsInput = {
@@ -7615,6 +8490,9 @@ export type UserAccountCreateWithoutEventAwardsInput = {
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutEventAwardsInput = {
@@ -7661,6 +8539,9 @@ export type UserAccountUncheckedCreateWithoutEventAwardsInput = {
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutEventAwardsInput = {
@@ -7723,6 +8604,9 @@ export type UserAccountUpdateWithoutEventAwardsInput = {
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutEventAwardsInput = {
@@ -7769,6 +8653,9 @@ export type UserAccountUncheckedUpdateWithoutEventAwardsInput = {
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountCreateWithoutEnrollmentsInput = {
@@ -7815,6 +8702,9 @@ export type UserAccountCreateWithoutEnrollmentsInput = {
   bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountUncheckedCreateWithoutEnrollmentsInput = {
@@ -7861,6 +8751,9 @@ export type UserAccountUncheckedCreateWithoutEnrollmentsInput = {
   bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
   eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
   eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedCreateNestedManyWithoutExplorerInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
 }
 
 export type UserAccountCreateOrConnectWithoutEnrollmentsInput = {
@@ -7923,6 +8816,9 @@ export type UserAccountUpdateWithoutEnrollmentsInput = {
   bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
 }
 
 export type UserAccountUncheckedUpdateWithoutEnrollmentsInput = {
@@ -7969,6 +8865,221 @@ export type UserAccountUncheckedUpdateWithoutEnrollmentsInput = {
   bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
   eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
   eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
+  occupationRatings?: Prisma.OccupationRatingUncheckedUpdateManyWithoutExplorerNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
+}
+
+export type UserAccountCreateWithoutOccupationRatingsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash?: string | null
+  displayName?: string | null
+  dateOfBirth?: Date | string | null
+  status?: $Enums.AccountStatus
+  createdAt?: Date | string
+  lastSignInAt?: Date | string | null
+  deletedAt?: Date | string | null
+  roles?: Prisma.UserRoleCreateNestedManyWithoutUserInput
+  grantedRoles?: Prisma.UserRoleCreateNestedManyWithoutGranterInput
+  googleIdentity?: Prisma.GoogleIdentityCreateNestedOneWithoutUserInput
+  staffAssignments?: Prisma.StaffAssignmentCreateNestedManyWithoutUserInput
+  assignmentsMade?: Prisma.StaffAssignmentCreateNestedManyWithoutAssignerInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutActorInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutRecipientInput
+  domainsCreated?: Prisma.DomainCreateNestedManyWithoutCreatorInput
+  occupationsCreated?: Prisma.OccupationCreateNestedManyWithoutCreatorInput
+  levelsWritten?: Prisma.OccupationLevelCreateNestedManyWithoutWriterInput
+  downsidesWritten?: Prisma.DownsideCreateNestedManyWithoutWriterInput
+  rulesWritten?: Prisma.GenerationRuleCreateNestedManyWithoutWriterInput
+  competenciesCreated?: Prisma.CompetencyCreateNestedManyWithoutCreatorInput
+  scenariosAuthored?: Prisma.ScenarioCreateNestedManyWithoutAuthorInput
+  scenariosOpened?: Prisma.ScenarioCreateNestedManyWithoutOpenerInput
+  generationRequests?: Prisma.GenerationRunCreateNestedManyWithoutRequesterInput
+  referenceAnswers?: Prisma.ReferenceAnswerCreateNestedManyWithoutAuthorInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionCreateNestedManyWithoutCreatorInput
+  reviewsAssigned?: Prisma.ReviewAssignmentCreateNestedManyWithoutReviewerInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentCreateNestedManyWithoutAssignerInput
+  lifecycleLogs?: Prisma.LifecycleLogCreateNestedManyWithoutActorInput
+  assetsChecked?: Prisma.AssetCreateNestedManyWithoutCheckerInput
+  presentationsDesigned?: Prisma.PresentationCreateNestedManyWithoutDesignerInput
+  buildsBuilt?: Prisma.ScenarioBuildCreateNestedManyWithoutBuilderInput
+  promptTemplatesChanged?: Prisma.PromptTemplateCreateNestedManyWithoutChangerInput
+  consent?: Prisma.ParentalConsentCreateNestedOneWithoutUserInput
+  gameProfile?: Prisma.GameProfileCreateNestedOneWithoutUserInput
+  runs?: Prisma.ScenarioRunCreateNestedManyWithoutUserInput
+  bandSkills?: Prisma.UserBandSkillCreateNestedManyWithoutUserInput
+  eventAnswers?: Prisma.EventAnswerCreateNestedManyWithoutUserInput
+  eventAwards?: Prisma.EventAwardCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentCreateNestedManyWithoutUserInput
+  appFeedback?: Prisma.AppFeedbackCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackCreateNestedManyWithoutHandlerInput
+}
+
+export type UserAccountUncheckedCreateWithoutOccupationRatingsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash?: string | null
+  displayName?: string | null
+  dateOfBirth?: Date | string | null
+  status?: $Enums.AccountStatus
+  createdAt?: Date | string
+  lastSignInAt?: Date | string | null
+  deletedAt?: Date | string | null
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
+  grantedRoles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutGranterInput
+  googleIdentity?: Prisma.GoogleIdentityUncheckedCreateNestedOneWithoutUserInput
+  staffAssignments?: Prisma.StaffAssignmentUncheckedCreateNestedManyWithoutUserInput
+  assignmentsMade?: Prisma.StaffAssignmentUncheckedCreateNestedManyWithoutAssignerInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutActorInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutRecipientInput
+  domainsCreated?: Prisma.DomainUncheckedCreateNestedManyWithoutCreatorInput
+  occupationsCreated?: Prisma.OccupationUncheckedCreateNestedManyWithoutCreatorInput
+  levelsWritten?: Prisma.OccupationLevelUncheckedCreateNestedManyWithoutWriterInput
+  downsidesWritten?: Prisma.DownsideUncheckedCreateNestedManyWithoutWriterInput
+  rulesWritten?: Prisma.GenerationRuleUncheckedCreateNestedManyWithoutWriterInput
+  competenciesCreated?: Prisma.CompetencyUncheckedCreateNestedManyWithoutCreatorInput
+  scenariosAuthored?: Prisma.ScenarioUncheckedCreateNestedManyWithoutAuthorInput
+  scenariosOpened?: Prisma.ScenarioUncheckedCreateNestedManyWithoutOpenerInput
+  generationRequests?: Prisma.GenerationRunUncheckedCreateNestedManyWithoutRequesterInput
+  referenceAnswers?: Prisma.ReferenceAnswerUncheckedCreateNestedManyWithoutAuthorInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedCreateNestedManyWithoutCreatorInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUncheckedCreateNestedManyWithoutReviewerInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUncheckedCreateNestedManyWithoutAssignerInput
+  lifecycleLogs?: Prisma.LifecycleLogUncheckedCreateNestedManyWithoutActorInput
+  assetsChecked?: Prisma.AssetUncheckedCreateNestedManyWithoutCheckerInput
+  presentationsDesigned?: Prisma.PresentationUncheckedCreateNestedManyWithoutDesignerInput
+  buildsBuilt?: Prisma.ScenarioBuildUncheckedCreateNestedManyWithoutBuilderInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUncheckedCreateNestedManyWithoutChangerInput
+  consent?: Prisma.ParentalConsentUncheckedCreateNestedOneWithoutUserInput
+  gameProfile?: Prisma.GameProfileUncheckedCreateNestedOneWithoutUserInput
+  runs?: Prisma.ScenarioRunUncheckedCreateNestedManyWithoutUserInput
+  bandSkills?: Prisma.UserBandSkillUncheckedCreateNestedManyWithoutUserInput
+  eventAnswers?: Prisma.EventAnswerUncheckedCreateNestedManyWithoutUserInput
+  eventAwards?: Prisma.EventAwardUncheckedCreateNestedManyWithoutUserInput
+  enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutUserInput
+  appFeedback?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutUserInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedCreateNestedManyWithoutHandlerInput
+}
+
+export type UserAccountCreateOrConnectWithoutOccupationRatingsInput = {
+  where: Prisma.UserAccountWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutOccupationRatingsInput, Prisma.UserAccountUncheckedCreateWithoutOccupationRatingsInput>
+}
+
+export type UserAccountUpsertWithoutOccupationRatingsInput = {
+  update: Prisma.XOR<Prisma.UserAccountUpdateWithoutOccupationRatingsInput, Prisma.UserAccountUncheckedUpdateWithoutOccupationRatingsInput>
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutOccupationRatingsInput, Prisma.UserAccountUncheckedCreateWithoutOccupationRatingsInput>
+  where?: Prisma.UserAccountWhereInput
+}
+
+export type UserAccountUpdateToOneWithWhereWithoutOccupationRatingsInput = {
+  where?: Prisma.UserAccountWhereInput
+  data: Prisma.XOR<Prisma.UserAccountUpdateWithoutOccupationRatingsInput, Prisma.UserAccountUncheckedUpdateWithoutOccupationRatingsInput>
+}
+
+export type UserAccountUpdateWithoutOccupationRatingsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  displayName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lastSignInAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  roles?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
+  grantedRoles?: Prisma.UserRoleUpdateManyWithoutGranterNestedInput
+  googleIdentity?: Prisma.GoogleIdentityUpdateOneWithoutUserNestedInput
+  staffAssignments?: Prisma.StaffAssignmentUpdateManyWithoutUserNestedInput
+  assignmentsMade?: Prisma.StaffAssignmentUpdateManyWithoutAssignerNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  activityLogs?: Prisma.ActivityLogUpdateManyWithoutActorNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutRecipientNestedInput
+  domainsCreated?: Prisma.DomainUpdateManyWithoutCreatorNestedInput
+  occupationsCreated?: Prisma.OccupationUpdateManyWithoutCreatorNestedInput
+  levelsWritten?: Prisma.OccupationLevelUpdateManyWithoutWriterNestedInput
+  downsidesWritten?: Prisma.DownsideUpdateManyWithoutWriterNestedInput
+  rulesWritten?: Prisma.GenerationRuleUpdateManyWithoutWriterNestedInput
+  competenciesCreated?: Prisma.CompetencyUpdateManyWithoutCreatorNestedInput
+  scenariosAuthored?: Prisma.ScenarioUpdateManyWithoutAuthorNestedInput
+  scenariosOpened?: Prisma.ScenarioUpdateManyWithoutOpenerNestedInput
+  generationRequests?: Prisma.GenerationRunUpdateManyWithoutRequesterNestedInput
+  referenceAnswers?: Prisma.ReferenceAnswerUpdateManyWithoutAuthorNestedInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUpdateManyWithoutCreatorNestedInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUpdateManyWithoutReviewerNestedInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUpdateManyWithoutAssignerNestedInput
+  lifecycleLogs?: Prisma.LifecycleLogUpdateManyWithoutActorNestedInput
+  assetsChecked?: Prisma.AssetUpdateManyWithoutCheckerNestedInput
+  presentationsDesigned?: Prisma.PresentationUpdateManyWithoutDesignerNestedInput
+  buildsBuilt?: Prisma.ScenarioBuildUpdateManyWithoutBuilderNestedInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUpdateManyWithoutChangerNestedInput
+  consent?: Prisma.ParentalConsentUpdateOneWithoutUserNestedInput
+  gameProfile?: Prisma.GameProfileUpdateOneWithoutUserNestedInput
+  runs?: Prisma.ScenarioRunUpdateManyWithoutUserNestedInput
+  bandSkills?: Prisma.UserBandSkillUpdateManyWithoutUserNestedInput
+  eventAnswers?: Prisma.EventAnswerUpdateManyWithoutUserNestedInput
+  eventAwards?: Prisma.EventAwardUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUpdateManyWithoutUserNestedInput
+  appFeedback?: Prisma.AppFeedbackUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUpdateManyWithoutHandlerNestedInput
+}
+
+export type UserAccountUncheckedUpdateWithoutOccupationRatingsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  displayName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lastSignInAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
+  grantedRoles?: Prisma.UserRoleUncheckedUpdateManyWithoutGranterNestedInput
+  googleIdentity?: Prisma.GoogleIdentityUncheckedUpdateOneWithoutUserNestedInput
+  staffAssignments?: Prisma.StaffAssignmentUncheckedUpdateManyWithoutUserNestedInput
+  assignmentsMade?: Prisma.StaffAssignmentUncheckedUpdateManyWithoutAssignerNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutRecipientNestedInput
+  domainsCreated?: Prisma.DomainUncheckedUpdateManyWithoutCreatorNestedInput
+  occupationsCreated?: Prisma.OccupationUncheckedUpdateManyWithoutCreatorNestedInput
+  levelsWritten?: Prisma.OccupationLevelUncheckedUpdateManyWithoutWriterNestedInput
+  downsidesWritten?: Prisma.DownsideUncheckedUpdateManyWithoutWriterNestedInput
+  rulesWritten?: Prisma.GenerationRuleUncheckedUpdateManyWithoutWriterNestedInput
+  competenciesCreated?: Prisma.CompetencyUncheckedUpdateManyWithoutCreatorNestedInput
+  scenariosAuthored?: Prisma.ScenarioUncheckedUpdateManyWithoutAuthorNestedInput
+  scenariosOpened?: Prisma.ScenarioUncheckedUpdateManyWithoutOpenerNestedInput
+  generationRequests?: Prisma.GenerationRunUncheckedUpdateManyWithoutRequesterNestedInput
+  referenceAnswers?: Prisma.ReferenceAnswerUncheckedUpdateManyWithoutAuthorNestedInput
+  criteriaVersions?: Prisma.ReviewCriteriaVersionUncheckedUpdateManyWithoutCreatorNestedInput
+  reviewsAssigned?: Prisma.ReviewAssignmentUncheckedUpdateManyWithoutReviewerNestedInput
+  reviewAssignmentsMade?: Prisma.ReviewAssignmentUncheckedUpdateManyWithoutAssignerNestedInput
+  lifecycleLogs?: Prisma.LifecycleLogUncheckedUpdateManyWithoutActorNestedInput
+  assetsChecked?: Prisma.AssetUncheckedUpdateManyWithoutCheckerNestedInput
+  presentationsDesigned?: Prisma.PresentationUncheckedUpdateManyWithoutDesignerNestedInput
+  buildsBuilt?: Prisma.ScenarioBuildUncheckedUpdateManyWithoutBuilderNestedInput
+  promptTemplatesChanged?: Prisma.PromptTemplateUncheckedUpdateManyWithoutChangerNestedInput
+  consent?: Prisma.ParentalConsentUncheckedUpdateOneWithoutUserNestedInput
+  gameProfile?: Prisma.GameProfileUncheckedUpdateOneWithoutUserNestedInput
+  runs?: Prisma.ScenarioRunUncheckedUpdateManyWithoutUserNestedInput
+  bandSkills?: Prisma.UserBandSkillUncheckedUpdateManyWithoutUserNestedInput
+  eventAnswers?: Prisma.EventAnswerUncheckedUpdateManyWithoutUserNestedInput
+  eventAwards?: Prisma.EventAwardUncheckedUpdateManyWithoutUserNestedInput
+  enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutUserNestedInput
+  appFeedback?: Prisma.AppFeedbackUncheckedUpdateManyWithoutUserNestedInput
+  appFeedbackHandled?: Prisma.AppFeedbackUncheckedUpdateManyWithoutHandlerNestedInput
 }
 
 
@@ -8008,6 +9119,9 @@ export type UserAccountCountOutputType = {
   eventAnswers: number
   eventAwards: number
   enrollments: number
+  occupationRatings: number
+  appFeedback: number
+  appFeedbackHandled: number
 }
 
 export type UserAccountCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -8042,6 +9156,9 @@ export type UserAccountCountOutputTypeSelect<ExtArgs extends runtime.Types.Exten
   eventAnswers?: boolean | UserAccountCountOutputTypeCountEventAnswersArgs
   eventAwards?: boolean | UserAccountCountOutputTypeCountEventAwardsArgs
   enrollments?: boolean | UserAccountCountOutputTypeCountEnrollmentsArgs
+  occupationRatings?: boolean | UserAccountCountOutputTypeCountOccupationRatingsArgs
+  appFeedback?: boolean | UserAccountCountOutputTypeCountAppFeedbackArgs
+  appFeedbackHandled?: boolean | UserAccountCountOutputTypeCountAppFeedbackHandledArgs
 }
 
 /**
@@ -8271,6 +9388,27 @@ export type UserAccountCountOutputTypeCountEnrollmentsArgs<ExtArgs extends runti
   where?: Prisma.EnrollmentWhereInput
 }
 
+/**
+ * UserAccountCountOutputType without action
+ */
+export type UserAccountCountOutputTypeCountOccupationRatingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OccupationRatingWhereInput
+}
+
+/**
+ * UserAccountCountOutputType without action
+ */
+export type UserAccountCountOutputTypeCountAppFeedbackArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AppFeedbackWhereInput
+}
+
+/**
+ * UserAccountCountOutputType without action
+ */
+export type UserAccountCountOutputTypeCountAppFeedbackHandledArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AppFeedbackWhereInput
+}
+
 
 export type UserAccountSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -8317,6 +9455,9 @@ export type UserAccountSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   eventAnswers?: boolean | Prisma.UserAccount$eventAnswersArgs<ExtArgs>
   eventAwards?: boolean | Prisma.UserAccount$eventAwardsArgs<ExtArgs>
   enrollments?: boolean | Prisma.UserAccount$enrollmentsArgs<ExtArgs>
+  occupationRatings?: boolean | Prisma.UserAccount$occupationRatingsArgs<ExtArgs>
+  appFeedback?: boolean | Prisma.UserAccount$appFeedbackArgs<ExtArgs>
+  appFeedbackHandled?: boolean | Prisma.UserAccount$appFeedbackHandledArgs<ExtArgs>
   _count?: boolean | Prisma.UserAccountCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userAccount"]>
 
@@ -8395,6 +9536,9 @@ export type UserAccountInclude<ExtArgs extends runtime.Types.Extensions.Internal
   eventAnswers?: boolean | Prisma.UserAccount$eventAnswersArgs<ExtArgs>
   eventAwards?: boolean | Prisma.UserAccount$eventAwardsArgs<ExtArgs>
   enrollments?: boolean | Prisma.UserAccount$enrollmentsArgs<ExtArgs>
+  occupationRatings?: boolean | Prisma.UserAccount$occupationRatingsArgs<ExtArgs>
+  appFeedback?: boolean | Prisma.UserAccount$appFeedbackArgs<ExtArgs>
+  appFeedbackHandled?: boolean | Prisma.UserAccount$appFeedbackHandledArgs<ExtArgs>
   _count?: boolean | Prisma.UserAccountCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserAccountIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -8437,6 +9581,9 @@ export type $UserAccountPayload<ExtArgs extends runtime.Types.Extensions.Interna
     eventAnswers: Prisma.$EventAnswerPayload<ExtArgs>[]
     eventAwards: Prisma.$EventAwardPayload<ExtArgs>[]
     enrollments: Prisma.$EnrollmentPayload<ExtArgs>[]
+    occupationRatings: Prisma.$OccupationRatingPayload<ExtArgs>[]
+    appFeedback: Prisma.$AppFeedbackPayload<ExtArgs>[]
+    appFeedbackHandled: Prisma.$AppFeedbackPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -8880,6 +10027,9 @@ export interface Prisma__UserAccountClient<T, Null = never, ExtArgs extends runt
   eventAnswers<T extends Prisma.UserAccount$eventAnswersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccount$eventAnswersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EventAnswerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   eventAwards<T extends Prisma.UserAccount$eventAwardsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccount$eventAwardsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EventAwardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   enrollments<T extends Prisma.UserAccount$enrollmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccount$enrollmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EnrollmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  occupationRatings<T extends Prisma.UserAccount$occupationRatingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccount$occupationRatingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OccupationRatingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  appFeedback<T extends Prisma.UserAccount$appFeedbackArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccount$appFeedbackArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AppFeedbackPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  appFeedbackHandled<T extends Prisma.UserAccount$appFeedbackHandledArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccount$appFeedbackHandledArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AppFeedbackPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -10110,6 +11260,78 @@ export type UserAccount$enrollmentsArgs<ExtArgs extends runtime.Types.Extensions
   take?: number
   skip?: number
   distinct?: Prisma.EnrollmentScalarFieldEnum | Prisma.EnrollmentScalarFieldEnum[]
+}
+
+/**
+ * UserAccount.occupationRatings
+ */
+export type UserAccount$occupationRatingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the OccupationRating
+   */
+  select?: Prisma.OccupationRatingSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the OccupationRating
+   */
+  omit?: Prisma.OccupationRatingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OccupationRatingInclude<ExtArgs> | null
+  where?: Prisma.OccupationRatingWhereInput
+  orderBy?: Prisma.OccupationRatingOrderByWithRelationInput | Prisma.OccupationRatingOrderByWithRelationInput[]
+  cursor?: Prisma.OccupationRatingWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OccupationRatingScalarFieldEnum | Prisma.OccupationRatingScalarFieldEnum[]
+}
+
+/**
+ * UserAccount.appFeedback
+ */
+export type UserAccount$appFeedbackArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AppFeedback
+   */
+  select?: Prisma.AppFeedbackSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AppFeedback
+   */
+  omit?: Prisma.AppFeedbackOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AppFeedbackInclude<ExtArgs> | null
+  where?: Prisma.AppFeedbackWhereInput
+  orderBy?: Prisma.AppFeedbackOrderByWithRelationInput | Prisma.AppFeedbackOrderByWithRelationInput[]
+  cursor?: Prisma.AppFeedbackWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AppFeedbackScalarFieldEnum | Prisma.AppFeedbackScalarFieldEnum[]
+}
+
+/**
+ * UserAccount.appFeedbackHandled
+ */
+export type UserAccount$appFeedbackHandledArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AppFeedback
+   */
+  select?: Prisma.AppFeedbackSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AppFeedback
+   */
+  omit?: Prisma.AppFeedbackOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AppFeedbackInclude<ExtArgs> | null
+  where?: Prisma.AppFeedbackWhereInput
+  orderBy?: Prisma.AppFeedbackOrderByWithRelationInput | Prisma.AppFeedbackOrderByWithRelationInput[]
+  cursor?: Prisma.AppFeedbackWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AppFeedbackScalarFieldEnum | Prisma.AppFeedbackScalarFieldEnum[]
 }
 
 /**

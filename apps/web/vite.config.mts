@@ -2,6 +2,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
+import { readFileSync } from 'node:fs';
+
+/** Phiên bản app gửi kèm góp ý (FR-20, ERD-07 `app_feedback.app_version`). */
+const { version } = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url), 'utf-8'),
+) as { version: string };
 
 export default defineConfig(() => ({
   root: import.meta.dirname,
@@ -23,6 +29,9 @@ export default defineConfig(() => ({
     host: 'localhost',
   },
   plugins: [react(), tailwindcss()],
+  define: {
+    'import.meta.env.VITE_APP_VERSION': JSON.stringify(version),
+  },
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [],

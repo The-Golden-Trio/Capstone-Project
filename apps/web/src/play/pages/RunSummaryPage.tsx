@@ -90,7 +90,7 @@ export function RunSummaryPage() {
 
   if (!summary) {
     return (
-      <p className="text-center font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+      <p className="text-center font-label text-[11px] uppercase tracking-[0.16em] text-muted">
         Đang mở tổng kết…
       </p>
     );
@@ -117,7 +117,7 @@ export function RunSummaryPage() {
       >
         <p
           className={cx(
-            'm-0 mb-2 font-mono text-[10px] uppercase tracking-[0.11em]',
+            'm-0 mb-2 font-label text-[10px] uppercase tracking-[0.16em]',
             style.tone,
           )}
         >
@@ -189,9 +189,7 @@ export function RunSummaryPage() {
         </ul>
       </Section>
 
-      <p className="mb-4 font-mono text-[10px] leading-snug text-muted">
-        {DISCLOSURE}
-      </p>
+      <p className="mb-4 text-[10px] leading-snug text-muted">{DISCLOSURE}</p>
 
       <div className="flex flex-wrap items-center gap-2.5">
         <Button variant="primary" onClick={replay}>
@@ -219,7 +217,7 @@ function Section({
       <CardBody>
         <h2
           className={cx(
-            'm-0 mb-3 font-mono text-[10.5px] uppercase tracking-[0.1em]',
+            'm-0 mb-3 font-label text-[10.5px] uppercase tracking-[0.1em]',
             tone,
           )}
         >
@@ -242,7 +240,7 @@ function Stat({
 }) {
   return (
     <div>
-      <span className="block font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
+      <span className="block font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
         {label}
       </span>
       <span

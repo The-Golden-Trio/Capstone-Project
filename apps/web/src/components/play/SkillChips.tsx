@@ -16,14 +16,14 @@ export function SkillChips({ scenario }: { scenario: Scenario }) {
 
   return (
     <div className="mb-4">
-      <p className="mb-2 font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
+      <p className="mb-2 font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
         Cảnh này nhìn vào
       </p>
       <div className="flex flex-wrap gap-1.5">
         {skills_hard.map((skill) => (
           <span
             key={skill}
-            className="rounded-full bg-skill-hard-soft px-2.5 py-1 font-mono text-[10px] text-skill-hard"
+            className="rounded-full bg-skill-hard-soft px-2.5 py-1 text-[10px] text-skill-hard"
           >
             {skill}
           </span>
@@ -31,7 +31,7 @@ export function SkillChips({ scenario }: { scenario: Scenario }) {
         {skills_soft.map((skill) => (
           <span
             key={skill}
-            className="rounded-full bg-skill-soft-soft px-2.5 py-1 font-mono text-[10px] text-skill-soft"
+            className="rounded-full bg-skill-soft-soft px-2.5 py-1 text-[10px] text-skill-soft"
           >
             {skill}
           </span>

@@ -64,7 +64,7 @@ export function RequireAuth() {
                 useContentStore.getState().reset();
                 void useContentStore.getState().load();
               }}
-              className="rounded-[9px] border border-line bg-surf px-4 py-2 text-[13px] text-ink transition-colors hover:border-[var(--color-gold)]"
+              className="rounded-full border-[1.5px] border-ink/35 bg-bg/30 px-5 py-2 text-[13px] font-semibold text-ink transition-colors hover:border-gold hover:text-gold-2"
             >
               Thử lại
             </button>
@@ -79,7 +79,7 @@ export function RequireAuth() {
       <>
         <StarField />
         <div className="relative z-1 grid min-h-screen place-items-center">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+          <p className="font-label text-[11px] uppercase tracking-[0.16em] text-muted">
             {translate('auth.opening', language)}
           </p>
         </div>

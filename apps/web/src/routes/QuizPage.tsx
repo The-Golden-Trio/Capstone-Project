@@ -80,7 +80,7 @@ export function QuizPage() {
         <CardBody>
           <ProgressDots total={questions.length} current={index} />
 
-          <p className="m-0 mb-2.5 font-mono text-[10px] tracking-[0.11em] text-gold">
+          <p className="m-0 mb-2.5 text-[10px] tracking-[0.11em] text-gold">
             {t('quiz.question', { current: index + 1, total: questions.length })}
           </p>
           <p className="m-0 mb-[18px] font-display text-[21px] font-semibold leading-snug">
@@ -94,7 +94,7 @@ export function QuizPage() {
                 type="button"
                 disabled={busy}
                 onClick={() => answer(option.option_id)}
-                className="action-card w-full rounded-[10px] border border-line bg-surf px-4 py-3.5 text-left text-[14px] leading-normal text-ink disabled:opacity-50"
+                className="action-card w-full rounded-xl border border-blue/40 bg-line/30 px-4 py-3.5 text-left text-[14px] leading-normal text-ink disabled:opacity-50"
               >
                 {game.quizOption(option.option_id, option.text)}
               </button>

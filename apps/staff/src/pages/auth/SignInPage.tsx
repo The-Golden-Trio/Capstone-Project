@@ -1,6 +1,11 @@
 import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { Button, ProblemAlert, TextField } from '../../components/ui';
+import {
+  AuthFrame,
+  Button,
+  ProblemAlert,
+  TextField,
+} from '../../components/ui';
 import { portalsOf, useAuth } from '../../store/auth';
 
 /** T01 Staff sign in (`signIn`, `getMe`). */
@@ -31,15 +36,11 @@ export function SignInPage() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center p-4">
-      <form
-        onSubmit={submit}
-        className="w-full max-w-sm rounded-lg border border-line bg-surf p-6 shadow-sm"
-      >
-        <h1 className="mb-1 text-lg font-semibold">JobQuest · Staff</h1>
-        <p className="mb-5 text-muted">
-          Dành cho Content Admin và Domain Expert.
-        </p>
+    <AuthFrame
+      title="Đăng nhập"
+      subtitle="Dành cho Content Admin và Domain Expert."
+    >
+      <form onSubmit={submit}>
         <ProblemAlert error={error} />
         <TextField
           label="Email"
@@ -61,7 +62,7 @@ export function SignInPage() {
           type="submit"
           variant="primary"
           busy={busy}
-          className="mt-1 w-full"
+          className="mt-2 w-full"
         >
           Đăng nhập
         </Button>
@@ -71,6 +72,6 @@ export function SignInPage() {
           </Link>
         </p>
       </form>
-    </main>
+    </AuthFrame>
   );
 }

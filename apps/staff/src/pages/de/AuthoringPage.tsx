@@ -346,7 +346,7 @@ export function AuthoringPage() {
               {report.failedRules.map((f, i) => (
                 <li
                   key={i}
-                  className="rounded-md bg-bad-soft px-2 py-1 text-[13px] text-bad"
+                  className="rounded-lg bg-bad-soft px-3 py-1.5 text-[13px] text-bad"
                 >
                   <code className="font-mono text-[12px]">{f.rule}</code> ·{' '}
                   {f.path}: {f.message}

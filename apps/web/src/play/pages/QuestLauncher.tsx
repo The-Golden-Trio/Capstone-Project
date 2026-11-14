@@ -50,7 +50,7 @@ export function QuestLauncher() {
             </Button>
           </>
         ) : (
-          <p className="m-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+          <p className="m-0 font-label text-[11px] uppercase tracking-[0.16em] text-muted">
             Đang mở nhiệm vụ…
           </p>
         )}

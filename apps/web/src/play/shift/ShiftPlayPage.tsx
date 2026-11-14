@@ -45,7 +45,7 @@ export function ShiftPlayPage() {
         {s.error ? (
           <Note tone="warn">{s.error}</Note>
         ) : (
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+          <p className="font-label text-[11px] uppercase tracking-[0.16em] text-muted">
             Đang mở ca làm…
           </p>
         )}

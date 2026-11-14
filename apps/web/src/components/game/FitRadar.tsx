@@ -31,7 +31,7 @@ export function FitRadar({ fit, describe = false }: FitRadarProps) {
             key={dimension}
             className="grid items-center gap-[11px] [grid-template-columns:104px_1fr_40px]"
           >
-            <span className="font-mono text-[10px] tracking-[0.04em] text-muted">
+            <span className="text-[10px] tracking-[0.04em] text-muted">
               {dimension}
             </span>
             {describe ? (
@@ -80,7 +80,7 @@ export function SignalList({ signal }: { signal: Record<string, number> }) {
           key={dimension}
           className="grid items-center gap-[11px] [grid-template-columns:104px_1fr_40px]"
         >
-          <span className="font-mono text-[10px] tracking-[0.04em] text-muted">
+          <span className="text-[10px] tracking-[0.04em] text-muted">
             {dimension}
           </span>
           <span className="text-[12.5px] text-ink-2">

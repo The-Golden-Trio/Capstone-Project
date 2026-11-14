@@ -49,13 +49,13 @@ export function PlanetPanel({ node, current, edge, unlock, path, onFly, onTest, 
       <div className="border-b border-line-2 px-[18px] pb-3.5 pt-4" style={{ borderTop: `3px solid ${color}` }}>
         <div className="flex items-start gap-2.5">
           <div className="min-w-0 flex-1">
-            <p className="m-0 mb-1 font-mono text-[9.5px] uppercase tracking-[0.14em]" style={{ color }}>
+            <p className="m-0 mb-1 font-label text-[9.5px] uppercase tracking-[0.16em]" style={{ color }}>
               Hệ {group.label}
             </p>
             <h2 className="m-0 text-balance font-display text-[21px] font-semibold leading-tight">
               {shortPlanetName(node)}
             </h2>
-            <p className="m-0 mt-1 font-mono text-[10.5px] text-muted">
+            <p className="m-0 mt-1 text-[10.5px] text-muted">
               {node.nameEn ?? node.roleCode} · {node.bandStart}–{node.bandEnd}
               {!play && ' · chưa mở nhiệm vụ'}
             </p>
@@ -64,7 +64,7 @@ export function PlanetPanel({ node, current, edge, unlock, path, onFly, onTest, 
             type="button"
             onClick={onClose}
             aria-label="Đóng"
-            className="h-[30px] w-[30px] shrink-0 rounded-[7px] border border-line bg-inset text-[14px] text-muted hover:text-ink"
+            className="h-[30px] w-[30px] shrink-0 rounded-full border border-line bg-inset text-[14px] text-muted hover:text-ink"
           >
             ✕
           </button>
@@ -134,7 +134,7 @@ export function PlanetPanel({ node, current, edge, unlock, path, onFly, onTest, 
           <Link
             to={play}
             className={cx(
-              'rounded-[7px] border px-[15px] py-[9px] text-center text-[13px] font-medium transition-colors',
+              'rounded-xl border px-[15px] py-[9px] text-center text-[13px] font-medium transition-colors',
               isHere || !edge
                 ? 'border-gold bg-gold font-semibold text-bg hover:brightness-110'
                 : 'border-line bg-inset text-ink-2 hover:border-gold hover:text-ink',
@@ -160,14 +160,14 @@ function Relation({ edge, current, target }: { edge: GalaxyEdge; current: string
     <div className="rounded-lg border border-line-2 bg-inset px-3 py-2.5">
       <div className="flex flex-wrap items-center gap-2">
         <Pill tone={promotion ? 'gold' : 'neutral'}>{promotion ? '▲ ' : '↔ '}{label}</Pill>
-        <span className="font-mono text-[10.5px] text-muted">
+        <span className="text-[10.5px] text-muted">
           {lightYears(edge.distance)} năm ánh sáng
           {!promotion && ` · giống ${similarity}%`}
         </span>
       </div>
       {edge.why && <p className="m-0 mt-2 text-[12.5px] leading-relaxed text-ink-2">{edge.why}</p>}
       {edge.sharedSkills.length > 0 && (
-        <p className="m-0 mt-1.5 font-mono text-[10.5px] text-muted">
+        <p className="m-0 mt-1.5 text-[10.5px] text-muted">
           Kỹ năng chung: <span className="text-skill-hard">{edge.sharedSkills.join(', ')}</span>
         </p>
       )}
@@ -185,7 +185,7 @@ function FarNote({ path, onPick }: { path: string[]; onPick: (roleCode: string) 
       </p>
       {hops.length > 0 ? (
         <>
-          <p className="m-0 mt-2 font-mono text-[10.5px] uppercase tracking-[0.08em] text-muted">
+          <p className="m-0 mt-2 font-label text-[10.5px] uppercase tracking-[0.16em] text-muted">
             Lộ trình ngắn nhất · {hops.length} chặng
           </p>
           <ol className="m-0 mt-1 flex list-none flex-wrap items-center gap-1 p-0 text-[12px]">
@@ -233,7 +233,7 @@ function SkillGroup({
     <div className="mt-3">
       <p
         className={cx(
-          'm-0 mb-1.5 font-mono text-[10px] uppercase tracking-[0.1em]',
+          'm-0 mb-1.5 font-label text-[10px] uppercase tracking-[0.1em]',
           tone === 'hard' ? 'text-skill-hard' : 'text-skill-soft',
         )}
       >

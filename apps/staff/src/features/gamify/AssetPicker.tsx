@@ -33,7 +33,7 @@ export function AssetPicker({
   const current = pool.find((a) => a.id === value);
   return (
     <div className="flex items-center gap-3">
-      <div className="size-14 shrink-0 overflow-hidden rounded-md border border-line bg-inset">
+      <div className="size-14 shrink-0 overflow-hidden rounded-lg border border-line bg-inset">
         {current && (
           <img
             src={current.url}
@@ -85,10 +85,10 @@ export function AssetPicker({
                     setOpen(false);
                   }}
                   className={cx(
-                    'block w-full overflow-hidden rounded-md border-2',
+                    'block w-full overflow-hidden rounded-lg border-2 transition-colors',
                     a.id === value
                       ? 'border-brand'
-                      : 'border-transparent hover:border-line',
+                      : 'border-transparent hover:border-blue',
                   )}
                 >
                   <img

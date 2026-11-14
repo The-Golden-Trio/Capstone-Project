@@ -43,8 +43,8 @@ export function XpBar({
 }) {
   const pct = Math.min(100, (points / goal) * 100);
   return (
-    <div className="flex items-center gap-3 rounded-[11px] border border-line-2 bg-panel px-4 py-[13px]">
-      <span className="whitespace-nowrap font-mono text-[11px] tracking-[0.09em] text-gold-2">
+    <div className="flex items-center gap-3 rounded-full border border-line-2 bg-line/30 px-5 py-[11px]">
+      <span className="whitespace-nowrap text-[11px] font-semibold tracking-[0.12em] text-gold-2">
         {from} → {to}
       </span>
       <span className="h-[9px] flex-1 overflow-hidden rounded-[5px] border border-line-2 bg-inset">

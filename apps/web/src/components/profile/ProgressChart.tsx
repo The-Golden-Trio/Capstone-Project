@@ -172,7 +172,7 @@ export function ProgressChart({ timeline }: { timeline: TimelinePoint[] }) {
         )}
       </svg>
 
-      <figcaption className="mt-2 min-h-[20px] text-center font-mono text-[11px] text-muted">
+      <figcaption className="mt-2 min-h-[20px] text-center text-[11px] text-muted">
         {active ? (
           <>
             <b className="text-gold-2">{active.cumulative} điểm</b> tính tới{' '}

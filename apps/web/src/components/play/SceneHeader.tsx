@@ -29,10 +29,10 @@ export function SceneHeader({ scenario }: { scenario: Scenario }) {
 
         <div className="min-w-0 flex-1">
           <div className="mb-1 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-[var(--accent)]/15 px-2 py-[3px] font-mono text-[9.5px] uppercase tracking-[0.11em] text-[var(--accent)]">
+            <span className="rounded-full bg-[var(--accent)]/15 px-2 py-[3px] font-label text-[9.5px] uppercase tracking-[0.16em] text-[var(--accent)]">
               {archetype}
             </span>
-            <span className="font-mono text-[10px] text-muted">
+            <span className="text-[10px] text-muted">
               {context.estimated_minutes} phút
             </span>
           </div>

@@ -26,6 +26,7 @@ export const MESSAGES = {
   'nav.quiz': { vi: 'Get to Know Me', en: 'Get to Know Me' },
   'nav.profile': { vi: 'Hành trang', en: 'My journey' },
   'nav.account': { vi: 'Tài khoản', en: 'Account' },
+  'nav.feedback': { vi: 'Góp ý', en: 'Feedback' },
   'nav.mainNav': { vi: 'Điều hướng chính', en: 'Main navigation' },
   'nav.openMenu': { vi: 'Mở menu', en: 'Open menu' },
   'nav.collapse': { vi: 'Thu gọn thanh bên', en: 'Collapse sidebar' },
@@ -60,7 +61,7 @@ export const MESSAGES = {
   /* ── Xác thực ── */
   'auth.login': { vi: 'Đăng nhập', en: 'Sign in' },
   'auth.loggingIn': { vi: 'Đang vào…', en: 'Signing in…' },
-  'auth.loginCta': { vi: 'Vào Nghề', en: 'Enter' },
+  'auth.loginCta': { vi: 'Đăng nhập', en: 'Enter' },
   'auth.register': { vi: 'Tạo tài khoản', en: 'Create account' },
   'auth.registering': { vi: 'Đang tạo…', en: 'Creating…' },
   'auth.registerCta': { vi: 'Khởi hành', en: 'Begin' },

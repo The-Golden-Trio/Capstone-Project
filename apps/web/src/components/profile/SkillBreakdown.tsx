@@ -89,7 +89,7 @@ export function SkillBreakdown({ skills }: { skills: SkillRow[] }) {
               <header className="mb-2 flex items-baseline justify-between gap-3">
                 <span
                   className={cx(
-                    'font-mono text-[9.5px] uppercase tracking-[0.11em]',
+                    'font-label text-[9.5px] uppercase tracking-[0.16em]',
                     tone.text,
                   )}
                 >

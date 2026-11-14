@@ -48,10 +48,10 @@ export function LanguageToggle() {
         aria-expanded={open}
         aria-label={t('top.language')}
         className={cx(
-          'flex items-center gap-1.5 rounded-full border px-2.5 py-[5px] font-mono text-[11px] transition-colors',
+          'flex items-center gap-1.5 rounded-full border px-3 py-[5px] text-[11px] font-semibold tracking-[0.1em] transition-colors',
           open
             ? 'border-gold bg-gold-soft text-gold-2'
-            : 'border-line-2 bg-inset text-ink-2 hover:border-gold',
+            : 'border-blue/40 bg-bg/40 text-ink-2 hover:border-gold',
         )}
       >
         <svg
@@ -72,7 +72,7 @@ export function LanguageToggle() {
         <div
           role="listbox"
           aria-label={t('top.language')}
-          className="toast-pop absolute right-0 top-[calc(100%+8px)] z-40 w-[150px] overflow-hidden rounded-[10px] border border-line bg-surf shadow-lift"
+          className="toast-pop absolute right-0 top-[calc(100%+8px)] z-40 w-[150px] overflow-hidden rounded-xl border border-line-gold bg-surf shadow-lift"
         >
           {OPTIONS.map((option) => (
             <button

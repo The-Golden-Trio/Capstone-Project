@@ -6,15 +6,16 @@ export type ButtonSize = 'md' | 'sm';
 
 const VARIANT: Record<ButtonVariant, string> = {
   default:
-    'border-line bg-inset text-ink-2 hover:not-disabled:border-gold hover:not-disabled:text-ink',
+    'border-ink/35 bg-bg/30 text-ink hover:not-disabled:border-gold hover:not-disabled:text-gold-2 disabled:opacity-45',
   primary:
-    'border-gold bg-gold text-bg font-semibold hover:not-disabled:brightness-110',
-  highlight: 'border-gold bg-gold-soft text-gold-2',
+    'border-gold bg-gold font-bold text-bg hover:not-disabled:border-gold-2 hover:not-disabled:bg-gold-2 disabled:border-gold/35 disabled:bg-gold/20 disabled:text-gold-2/60',
+  highlight:
+    'border-transparent bg-gold/15 text-gold-2 hover:not-disabled:bg-gold/25 disabled:opacity-45',
 };
 
 const SIZE: Record<ButtonSize, string> = {
-  md: 'px-[15px] py-[9px] text-[13px]',
-  sm: 'px-[11px] py-[6px] text-[11.5px]',
+  md: 'px-5 py-[9px] text-[13px]',
+  sm: 'px-3.5 py-[6px] text-[11.5px]',
 };
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -34,7 +35,8 @@ export function Button({
     <button
       type="button"
       className={cx(
-        'rounded-[7px] border font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40',
+        // Nút viên thuốc như landing page: vàng đặc cho việc chính, viền cho việc phụ.
+        'rounded-full border-[1.5px] font-semibold tracking-[0.02em] transition-[color,background-color,border-color,transform] hover:not-disabled:-translate-y-px active:not-disabled:translate-y-0 disabled:cursor-not-allowed',
         VARIANT[variant],
         SIZE[size],
         className,

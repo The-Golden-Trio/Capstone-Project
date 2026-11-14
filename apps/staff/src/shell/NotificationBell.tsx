@@ -61,11 +61,11 @@ export function NotificationBell() {
         onClick={toggle}
         aria-expanded={open}
         aria-label={`Thông báo${unread ? `, ${unread} mới` : ''}`}
-        className="relative rounded-md px-2 py-1 text-ink-2 hover:bg-inset"
+        className="relative rounded-full px-2 py-1 text-ink-2 transition-colors hover:bg-brand-soft"
       >
         <span aria-hidden="true">🔔</span>
         {unread > 0 && (
-          <span className="absolute -top-0.5 -right-0.5 rounded-full bg-bad px-1.5 text-[11px] font-semibold text-white">
+          <span className="absolute -top-0.5 -right-0.5 rounded-full bg-bad px-1.5 text-[11px] font-bold text-bg">
             {unread}
           </span>
         )}
@@ -74,7 +74,7 @@ export function NotificationBell() {
         <div
           role="region"
           aria-label="Thông báo"
-          className="absolute right-0 z-20 mt-1 max-h-96 w-80 overflow-auto rounded-lg border border-line bg-surf shadow-lg"
+          className="absolute right-0 z-20 mt-1 max-h-96 w-80 overflow-auto rounded-xl border border-line-gold bg-surf shadow-lift"
         >
           {items.length === 0 ? (
             <p className="p-4 text-muted">Chưa có thông báo.</p>
@@ -112,7 +112,7 @@ export function NotificationBell() {
                       <Link
                         to={link}
                         onClick={() => setOpen(false)}
-                        className="block px-3 py-2 hover:bg-inset"
+                        className="block px-3 py-2 transition-colors hover:bg-line/50"
                       >
                         {text}
                       </Link>

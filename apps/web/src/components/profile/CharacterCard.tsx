@@ -43,7 +43,7 @@ function Composition({ segments, total }: { segments: Segment[]; total: number }
       {total > 0 ? (
         <ul className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1">
           {segments.map((s) => (
-            <li key={s.key} className="flex items-center gap-1.5 font-mono text-[10.5px]">
+            <li key={s.key} className="flex items-center gap-1.5 text-[10.5px]">
               <i className={cx('block h-2 w-2 rounded-full', s.dot)} />
               <span className="tabular-nums font-bold text-ink">{s.value}</span>
               <span className="text-muted">{s.label}</span>
@@ -164,7 +164,7 @@ export function CharacterCard({
             </h2>
 
             <p className="m-0 mt-1 flex flex-wrap items-baseline gap-x-1.5 text-[12.5px] leading-snug">
-              <span className="font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+              <span className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
                 {t('profile.position')}
               </span>
               {roleCode && band ? (
@@ -173,7 +173,7 @@ export function CharacterCard({
                     {shortName(content.roleName(roleCode))}
                   </b>
                   <span className="text-muted"> · </span>
-                  <span className="font-mono">{band}</span> {bandLabel(band)}
+                  <span className="">{band}</span> {bandLabel(band)}
                 </span>
               ) : (
                 <span className="text-muted">{t('profile.noPosition')}</span>
@@ -184,12 +184,12 @@ export function CharacterCard({
               {facts.map((f) => (
                 <li
                   key={f.label}
-                  className="flex items-baseline gap-1.5 rounded-[8px] border border-line-2 bg-panel px-2.5 py-1.5"
+                  className="flex items-baseline gap-1.5 rounded-xl border border-line-2 bg-panel px-2.5 py-1.5"
                 >
                   <span className="font-display text-[15px] font-bold leading-none tabular-nums text-ink">
                     {f.value}
                   </span>
-                  <span className="font-mono text-[9.5px] uppercase tracking-[0.08em] text-muted">
+                  <span className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
                     {f.label}
                   </span>
                 </li>
@@ -200,7 +200,7 @@ export function CharacterCard({
               <button
                 type="button"
                 onClick={() => navigate('/quiz')}
-                className="action-card inline-flex items-center gap-1.5 rounded-[8px] border border-line bg-panel px-3 py-1.5 text-[12px] text-ink-2"
+                className="action-card inline-flex items-center gap-1.5 rounded-full border border-blue/40 bg-line/30 px-3 py-1.5 text-[12px] text-ink-2"
               >
                 <span aria-hidden="true">◑</span>
                 {quizDone ? t('profile.retakeQuiz') : t('nav.quiz')}
@@ -208,7 +208,7 @@ export function CharacterCard({
               <button
                 type="button"
                 onClick={() => navigate('/account')}
-                className="action-card inline-flex items-center gap-1.5 rounded-[8px] border border-line bg-panel px-3 py-1.5 text-[12px] text-ink-2"
+                className="action-card inline-flex items-center gap-1.5 rounded-full border border-blue/40 bg-line/30 px-3 py-1.5 text-[12px] text-ink-2"
               >
                 <span aria-hidden="true">⚙</span>
                 {t('nav.account')}
@@ -221,20 +221,20 @@ export function CharacterCard({
         <div className="rounded-[12px] border border-line-2 bg-panel/80 p-4 sm:p-5">
           <div className="flex items-end justify-between gap-3">
             <div>
-              <span className="block font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+              <span className="block font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
                 {t('dash.skillPoints')}
               </span>
               <span className="block font-display text-[44px] font-bold leading-none tabular-nums text-gold-2">
                 {total}
               </span>
             </div>
-            <span className="pb-1 text-right font-mono text-[10px] leading-snug text-muted">
+            <span className="pb-1 text-right text-[10px] leading-snug text-muted">
               {t('profile.serverScored')}
             </span>
           </div>
 
           <div className="mt-4">
-            <span className="mb-2 block font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+            <span className="mb-2 block font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
               {t('profile.breakdown')}
             </span>
             <Composition segments={segments} total={total} />
@@ -243,7 +243,7 @@ export function CharacterCard({
           {current && next && (
             <div className="mt-5 border-t border-line-2 pt-4">
               <div className="mb-1.5 flex items-baseline justify-between gap-2">
-                <span className="font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+                <span className="font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
                   {next.unlocked ? (
                     <b className="font-semibold text-good">
                       {t('profile.nextUnlocked', { band: next.band })}

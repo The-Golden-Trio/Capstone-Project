@@ -18,6 +18,7 @@ import { LifecycleModule } from '../lifecycle/lifecycle.module';
 import { ReviewModule } from '../review/review.module';
 import { ScenarioModule } from '../scenario/scenario.module';
 import { PublishingModule } from '../publishing/publishing.module';
+import { FeedbackModule } from '../feedback/feedback.module';
 import { PrismaModule } from '../prisma/prisma.module';
 import { ProfileModule } from '../profile/profile.module';
 import { RunsModule } from '../runs/runs.module';
@@ -46,6 +47,7 @@ import { RunsModule } from '../runs/runs.module';
     ReviewModule,
     ScenarioModule,
     PublishingModule,
+    FeedbackModule,
   ],
   controllers: [AppController],
   providers: [

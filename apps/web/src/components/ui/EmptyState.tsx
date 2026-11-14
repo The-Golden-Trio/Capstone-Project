@@ -17,11 +17,14 @@ export function EmptyState({
   return (
     <div
       className={cx(
-        'rounded-[10px] border border-dashed border-line bg-panel px-5 py-[34px] text-center',
+        'rounded-[14px] border border-dashed border-blue/45 bg-bg/35 px-5 py-[34px] text-center',
         className,
       )}
     >
-      <div className="mb-2.5 text-[26px] opacity-50" aria-hidden="true">
+      <div
+        className="mb-2.5 text-[22px] text-gold opacity-70"
+        aria-hidden="true"
+      >
         {icon}
       </div>
       <p className="mx-auto mb-3.5 max-w-[44ch] text-[13.5px] leading-relaxed text-muted">

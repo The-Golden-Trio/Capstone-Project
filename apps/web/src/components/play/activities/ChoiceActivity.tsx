@@ -23,7 +23,7 @@ export function ChoiceActivity({
           key={option}
           type="button"
           onClick={() => onPick(index)}
-          className="action-card flex w-full items-start gap-3 rounded-[10px] border border-line bg-surf py-3.5 pl-4 pr-4 text-left text-[13.5px] leading-normal text-ink"
+          className="action-card flex w-full items-start gap-3 rounded-xl border border-blue/40 bg-line/30 py-3.5 pl-4 pr-4 text-left text-[13.5px] leading-normal text-ink"
         >
           <span className="keycap mt-px font-mono text-[10px] text-muted">
             {KEYCAPS[index]}

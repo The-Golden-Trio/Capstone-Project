@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
 import { staffApi } from '../../api/endpoints';
 import type { ScenarioDetail, ScenarioListItem } from '../../api/types';
@@ -9,6 +9,7 @@ import {
   Card,
   Dialog,
   EmptyState,
+  LinkButton,
   Loading,
   PageHeader,
   ProblemAlert,
@@ -89,12 +90,13 @@ export function ScenarioSlotsPage() {
         title="Ô scenario"
         subtitle="Mỗi task của một cấp có tối đa một scenario đang hoạt động."
         actions={
-          <Link
+          <LinkButton
             to={`/ca/occupations/${occupationId}/review-criteria`}
-            className="rounded-md border border-line px-3 py-1.5 hover:bg-inset"
+            variant="secondary"
+            size="sm"
           >
             Tiêu chí duyệt
-          </Link>
+          </LinkButton>
         }
       />
       <Tabs
@@ -261,12 +263,13 @@ function ScenarioDrawer({
             </span>
           </div>
           {(d.status === 'APPROVED' || d.status === 'IN_PLAYTEST') && (
-            <Link
+            <LinkButton
               to={`/ca/scenarios/${d.id}/gamify`}
-              className="inline-block rounded-md bg-brand px-3 py-1.5 text-white hover:bg-brand-2"
+              variant="primary"
+              size="sm"
             >
               Thiết kế trình bày
-            </Link>
+            </LinkButton>
           )}
           {d.status === 'DRAFT' ? (
             <AssignmentForm detail={d} onSaved={refresh} />

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
 import { staffApi } from '../../api/endpoints';
 import type { Build, Presentation, TaskType } from '../../api/types';
 import {
   Button,
   Card,
+  LinkButton,
   Loading,
   Notice,
   PageHeader,
@@ -121,12 +122,13 @@ export function GamifyPage() {
           </span>
         }
         actions={
-          <Link
+          <LinkButton
             to={`/ca/occupations/${d.occupationId}/scenarios`}
-            className="rounded-md border border-line px-3 py-1.5 hover:bg-inset"
+            variant="secondary"
+            size="sm"
           >
             ← Ô scenario
-          </Link>
+          </LinkButton>
         }
       />
       {!editable && (
@@ -156,7 +158,7 @@ export function GamifyPage() {
                 if (i < 0 || !a) return null;
                 const chosen = p.activities[i];
                 return (
-                  <div className="mt-3 grid gap-3 rounded-md bg-brand-soft p-3 md:grid-cols-2">
+                  <div className="mt-3 grid gap-3 rounded-xl border border-brand/25 bg-brand-soft p-4 md:grid-cols-2">
                     <SelectField
                       label="Dạng task (trong tập DE cho phép)"
                       value={chosen.taskType}

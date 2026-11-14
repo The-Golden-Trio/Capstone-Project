@@ -34,7 +34,7 @@ export function RequireStaff() {
   if (portalsOf(me).length === 0)
     return (
       <main className="mx-auto max-w-lg p-8">
-        <h1 className="mb-2 text-lg font-semibold">
+        <h1 className="mb-2 text-xl font-semibold">
           Không có quyền vào staff app
         </h1>
         <p className="text-muted">
@@ -56,23 +56,34 @@ export function StaffShell() {
   const portal = portals.includes(current) ? current : portals[0];
 
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <div className="starfield" aria-hidden="true" />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:rounded focus:bg-surf focus:p-2"
       >
         Bỏ qua tới nội dung
       </a>
-      <header className="sticky top-0 z-10 border-b border-line bg-surf">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-2.5">
-          <Link to="/" className="font-semibold text-brand">
-            JobQuest Staff
+      <header className="sticky top-0 z-10 border-b border-line-gold bg-linear-to-b from-bg to-bg/80 backdrop-blur-[8px]">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-2.5">
+          <Link to="/" className="flex shrink-0 items-center gap-2.5">
+            <img
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt=""
+              width={30}
+              height={30}
+              className="size-[30px] drop-shadow-[0_2px_8px_rgba(212,176,106,.3)]"
+            />
+            <span className="font-display text-[19px] leading-none font-semibold tracking-[0.01em]">
+              Job<span className="text-brand">Quest</span>
+            </span>
+            <span className="kicker text-[9px]">Staff</span>
           </Link>
           {portals.length > 1 ? (
             <div
               role="group"
               aria-label="Cổng"
-              className="flex rounded-md border border-line p-0.5"
+              className="flex rounded-full border border-blue/45 bg-bg/40 p-0.5"
             >
               {portals.map((p) => (
                 <button
@@ -81,10 +92,10 @@ export function StaffShell() {
                   aria-pressed={p === portal}
                   onClick={() => navigate(`/${p}`)}
                   className={cx(
-                    'rounded px-2.5 py-1 text-[13px]',
+                    'rounded-full px-3 py-1 text-[12px] font-semibold transition-colors',
                     p === portal
-                      ? 'bg-brand text-white'
-                      : 'text-ink-2 hover:bg-inset',
+                      ? 'bg-brand text-bg'
+                      : 'text-ink-2 hover:text-brand-2',
                   )}
                 >
                   {PORTAL_LABEL[p]}
@@ -92,11 +103,11 @@ export function StaffShell() {
               ))}
             </div>
           ) : (
-            <span className="text-[13px] text-muted">
+            <span className="rounded-full border border-blue/45 px-3 py-1 text-[12px] font-semibold text-ink-2">
               {PORTAL_LABEL[portal]}
             </span>
           )}
-          <nav aria-label="Điều hướng" className="flex gap-1">
+          <nav aria-label="Điều hướng" className="flex gap-2">
             {NAV[portal].map((n) => (
               <NavLink
                 key={n.to}
@@ -104,10 +115,10 @@ export function StaffShell() {
                 end
                 className={({ isActive }) =>
                   cx(
-                    'rounded px-2.5 py-1 text-[13px]',
+                    'border-b px-2 py-1.5 text-[11.5px] font-semibold tracking-[0.12em] uppercase transition-colors',
                     isActive
-                      ? 'bg-brand-soft text-brand-2'
-                      : 'text-ink-2 hover:bg-inset',
+                      ? 'border-brand/70 text-brand'
+                      : 'border-transparent text-muted hover:text-ink',
                   )
                 }
               >
@@ -120,7 +131,7 @@ export function StaffShell() {
             <span className="text-[13px] text-ink-2">{me?.displayName}</span>
             <button
               type="button"
-              className="rounded px-2 py-1 text-[13px] text-muted hover:bg-inset"
+              className="rounded-full border border-transparent px-3 py-1 text-[12.5px] font-semibold text-muted transition-colors hover:border-blue/45 hover:text-ink"
               onClick={async () => {
                 await signOut();
                 navigate('/login');
@@ -131,7 +142,7 @@ export function StaffShell() {
           </div>
         </div>
       </header>
-      <main id="main" className="mx-auto max-w-6xl px-4 py-6">
+      <main id="main" className="relative z-1 mx-auto max-w-6xl px-4 py-7">
         <Outlet />
       </main>
     </div>

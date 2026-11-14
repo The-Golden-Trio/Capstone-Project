@@ -291,7 +291,7 @@ function QuestPrompt({
           onChange={(e) => onDraft(e.target.value)}
           rows={5}
           placeholder="Bạn sẽ làm gì trước, và vì sao?"
-          className="mb-2 w-full resize-y rounded-[9px] border border-line bg-inset px-3 py-2.5 text-[12.5px] leading-relaxed text-ink outline-none focus:border-[var(--accent)]"
+          className="mb-2 w-full resize-y rounded-xl border border-blue/45 bg-inset/85 px-3 py-2.5 text-[12.5px] leading-relaxed text-ink outline-none focus:border-[var(--accent)]"
         />
         <Button
           variant="primary"
@@ -325,7 +325,7 @@ function QuestPrompt({
           {order.map((choiceIndex, position) => (
             <div
               key={event.choices[choiceIndex].text}
-              className="flex items-start gap-2 rounded-[9px] border border-line bg-surf px-3 py-2.5 text-[12.5px] leading-normal text-ink"
+              className="flex items-start gap-2 rounded-xl border border-line bg-surf px-3 py-2.5 text-[12.5px] leading-normal text-ink"
             >
               <span className="keycap mt-px font-mono text-[10px] text-muted">
                 {position + 1}
@@ -339,7 +339,7 @@ function QuestPrompt({
                   aria-label="Lên trên"
                   disabled={position === 0}
                   onClick={() => move(position, -1)}
-                  className="rounded-[5px] border border-line-2 px-1.5 font-mono text-[10px] text-muted disabled:opacity-30"
+                  className="rounded-[5px] border border-line-2 px-1.5 text-[10px] text-muted disabled:opacity-30"
                 >
                   ▲
                 </button>
@@ -348,7 +348,7 @@ function QuestPrompt({
                   aria-label="Xuống dưới"
                   disabled={position === order.length - 1}
                   onClick={() => move(position, 1)}
-                  className="rounded-[5px] border border-line-2 px-1.5 font-mono text-[10px] text-muted disabled:opacity-30"
+                  className="rounded-[5px] border border-line-2 px-1.5 text-[10px] text-muted disabled:opacity-30"
                 >
                   ▼
                 </button>
@@ -382,7 +382,7 @@ function QuestPrompt({
             type="button"
             disabled={busy}
             onClick={() => onSend({ choiceIndex: index })}
-            className="action-card flex w-full items-start gap-2.5 rounded-[9px] border border-line bg-surf px-3 py-2.5 text-left text-[12.5px] leading-normal text-ink disabled:opacity-50"
+            className="action-card flex w-full items-start gap-2.5 rounded-xl border border-blue/40 bg-line/30 px-3 py-2.5 text-left text-[12.5px] leading-normal text-ink disabled:opacity-50"
           >
             <span className="keycap mt-px font-mono text-[10px] text-muted">
               {KEYCAPS[index]}
@@ -419,7 +419,7 @@ function Shell({
           type="button"
           onClick={onClose}
           aria-label="Đóng"
-          className="shrink-0 rounded-[6px] border border-line-2 bg-inset px-2 py-1 font-mono text-[11px] text-muted transition-colors hover:border-line hover:text-ink-2"
+          className="shrink-0 rounded-[6px] border border-line-2 bg-inset px-2 py-1 text-[11px] text-muted transition-colors hover:border-line hover:text-ink-2"
         >
           ✕
         </button>

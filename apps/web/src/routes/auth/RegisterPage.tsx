@@ -52,7 +52,7 @@ export function RegisterPage() {
   };
 
   return (
-    <AuthShell title={t('auth.register')} subtitle="Vào Nghề">
+    <AuthShell title={t('auth.register')} subtitle="JobQuest">
       {error && (
         <Note tone="warn" className="mb-4">
           {error}

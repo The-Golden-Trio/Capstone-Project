@@ -22,7 +22,7 @@ export function Note({
   return (
     <div
       className={cx(
-        'rounded-r-lg border-l-[3px] bg-panel px-[15px] py-[13px] text-[13px] leading-relaxed text-ink-2',
+        'rounded-r-xl border-l-2 bg-line/35 px-4 py-[13px] text-[13px] leading-relaxed text-ink-2',
         BORDER[tone],
         className,
       )}
@@ -41,7 +41,7 @@ export function SourceNote({
   className?: string;
 }) {
   return (
-    <p className={cx('font-mono text-[10px] leading-relaxed text-muted', className)}>
+    <p className={cx('text-[11px] leading-relaxed text-muted', className)}>
       {children}
     </p>
   );
@@ -58,7 +58,7 @@ export function SectionLabel({
   return (
     <p
       className={cx(
-        'mb-2.5 font-mono text-[10px] uppercase tracking-[0.11em] text-muted',
+        'kicker mb-2.5',
         className,
       )}
     >

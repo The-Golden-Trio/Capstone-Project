@@ -26,7 +26,7 @@ export function ContentReadOnly({
 }) {
   return (
     <div className="space-y-4">
-      <section className="rounded-lg border border-line bg-surf p-4">
+      <section className="rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 p-5">
         <dl>
           <Row label="Mở đầu">{content.intro}</Row>
           <Row label="Tình huống">{content.situation}</Row>
@@ -57,7 +57,7 @@ export function ContentReadOnly({
       {content.activities.map((a) => (
         <section
           key={a.key}
-          className="rounded-lg border border-line bg-surf p-4"
+          className="rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 p-5"
         >
           <header className="mb-2 flex flex-wrap items-center gap-2">
             <h3 className="font-semibold">
@@ -145,7 +145,7 @@ export function ContentReadOnly({
         </section>
       ))}
       {(content.randomEvents ?? []).length > 0 && (
-        <section className="rounded-lg border border-line bg-surf p-4">
+        <section className="rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 p-5">
           <h3 className="mb-2 font-semibold">Sự kiện ngẫu nhiên</h3>
           <ul className="list-disc pl-5">
             {(content.randomEvents ?? []).map((e, i) => (
@@ -157,7 +157,7 @@ export function ContentReadOnly({
           </ul>
         </section>
       )}
-      <section className="rounded-lg border border-line bg-surf p-4">
+      <section className="rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 p-5">
         <h3 className="mb-2 font-semibold">Kết cục</h3>
         <ul className="space-y-1">
           {[...content.endings]

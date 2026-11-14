@@ -6,6 +6,7 @@ import type { FullBleedHandle } from '../components/layout/AppShell';
 import { LandingPage } from '../landing/LandingPage';
 import { getContentIndex } from '../store/contentStore';
 import { AccountPage } from './AccountPage';
+import { AppFeedbackPage } from './AppFeedbackPage';
 import { ErrorPage } from './ErrorPage';
 import { ProfilePage } from './ProfilePage';
 import { QuizPage } from './QuizPage';
@@ -15,6 +16,7 @@ import { ConsentPage } from './auth/ConsentPage';
 import { LoginPage } from './auth/LoginPage';
 import { RegisterPage } from './auth/RegisterPage';
 import { CareerMapPage } from './career/CareerMapPage';
+import { RateOccupationPage } from './career/RateOccupationPage';
 import { EndingPage } from './play/EndingPage';
 import { PlayPage } from './play/PlayPage';
 import { PlayGate } from '../play/PlayGate';
@@ -36,7 +38,7 @@ const GalaxyPage = lazy(() =>
 
 const GalaxyFallback = () => (
   <div className="grid h-full place-items-center">
-    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+    <p className="font-label text-[11px] uppercase tracking-[0.16em] text-muted">
       Đang mở bản đồ ngân hà…
     </p>
   </div>
@@ -130,6 +132,30 @@ const routes: RouteObject[] = [
             // Bản đồ nghề cũng chiếm cả khung hình như bản đồ ngân hà.
             handle: { fullBleed: true } satisfies FullBleedHandle,
           },
+          // E13: đoạn tĩnh `rate` được ưu tiên hơn `:band` khi khớp đường dẫn.
+          {
+            path: ':roleCode/rate',
+            element: <RateOccupationPage />,
+            handle: {
+              crumbs: ({ roleCode }) => {
+                const role = roleCode
+                  ? getContentIndex()?.findRole(roleCode)
+                  : undefined;
+                return [
+                  { label: 'Bản đồ nghề', to: '/jobs' },
+                  ...(role
+                    ? [
+                        {
+                          label: shortName(role.role_name_vn),
+                          to: `/jobs/${role.role_code}`,
+                        },
+                      ]
+                    : []),
+                  { label: 'Đánh giá nghề' },
+                ];
+              },
+            } satisfies CrumbHandle,
+          },
           {
             path: ':roleCode/:band',
             element: <CareerMapPage />,
@@ -195,6 +221,13 @@ const routes: RouteObject[] = [
         element: <ProfilePage />,
         handle: {
           crumbs: () => [{ label: 'Hành trang' }],
+        } satisfies CrumbHandle,
+      },
+      {
+        path: 'feedback',
+        element: <AppFeedbackPage />,
+        handle: {
+          crumbs: () => [{ label: 'Góp ý' }],
         } satisfies CrumbHandle,
       },
       {

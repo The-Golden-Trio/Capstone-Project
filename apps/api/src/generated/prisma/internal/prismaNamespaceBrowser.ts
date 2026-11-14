@@ -62,6 +62,7 @@ export const ModelName = {
   Domain: 'Domain',
   Occupation: 'Occupation',
   Notification: 'Notification',
+  AppFeedback: 'AppFeedback',
   OccupationLevel: 'OccupationLevel',
   Downside: 'Downside',
   GenerationRule: 'GenerationRule',
@@ -109,6 +110,9 @@ export const ModelName = {
   EventAnswer: 'EventAnswer',
   EventAward: 'EventAward',
   Enrollment: 'Enrollment',
+  OccupationRating: 'OccupationRating',
+  RatingAttribute: 'RatingAttribute',
+  RatingScore: 'RatingScore',
   ContentRelease: 'ContentRelease',
   RoleDoc: 'RoleDoc',
   ScenarioDoc: 'ScenarioDoc',
@@ -275,6 +279,19 @@ export const NotificationScalarFieldEnum = {
 } as const
 
 export type NotificationScalarFieldEnum = (typeof NotificationScalarFieldEnum)[keyof typeof NotificationScalarFieldEnum]
+
+
+export const AppFeedbackScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  text: 'text',
+  appVersion: 'appVersion',
+  status: 'status',
+  handledBy: 'handledBy',
+  createdAt: 'createdAt'
+} as const
+
+export type AppFeedbackScalarFieldEnum = (typeof AppFeedbackScalarFieldEnum)[keyof typeof AppFeedbackScalarFieldEnum]
 
 
 export const OccupationLevelScalarFieldEnum = {
@@ -897,6 +914,34 @@ export const EnrollmentScalarFieldEnum = {
 } as const
 
 export type EnrollmentScalarFieldEnum = (typeof EnrollmentScalarFieldEnum)[keyof typeof EnrollmentScalarFieldEnum]
+
+
+export const OccupationRatingScalarFieldEnum = {
+  id: 'id',
+  explorerId: 'explorerId',
+  occupationId: 'occupationId',
+  comment: 'comment',
+  createdAt: 'createdAt'
+} as const
+
+export type OccupationRatingScalarFieldEnum = (typeof OccupationRatingScalarFieldEnum)[keyof typeof OccupationRatingScalarFieldEnum]
+
+
+export const RatingAttributeScalarFieldEnum = {
+  code: 'code',
+  sortOrder: 'sortOrder'
+} as const
+
+export type RatingAttributeScalarFieldEnum = (typeof RatingAttributeScalarFieldEnum)[keyof typeof RatingAttributeScalarFieldEnum]
+
+
+export const RatingScoreScalarFieldEnum = {
+  ratingId: 'ratingId',
+  attributeCode: 'attributeCode',
+  score: 'score'
+} as const
+
+export type RatingScoreScalarFieldEnum = (typeof RatingScoreScalarFieldEnum)[keyof typeof RatingScoreScalarFieldEnum]
 
 
 export const ContentReleaseScalarFieldEnum = {

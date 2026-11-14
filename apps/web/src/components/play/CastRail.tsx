@@ -23,7 +23,7 @@ export function CastRail({
 
   return (
     <div className="mb-4">
-      <p className="mb-2 font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
+      <p className="mb-2 font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
         Có mặt trong cảnh
       </p>
 
@@ -39,7 +39,7 @@ export function CastRail({
                 onClick={() => setOpenId(open ? null : member.npc_id)}
                 aria-expanded={open}
                 className={cx(
-                  'action-card flex w-full items-center gap-2.5 rounded-[10px] border bg-surf px-3 py-2.5 text-left',
+                  'action-card flex w-full items-center gap-2.5 rounded-xl border bg-surf px-3 py-2.5 text-left',
                   speakingNpcId === member.npc_id
                     ? 'border-[var(--accent)]'
                     : 'border-line-2',
@@ -54,19 +54,19 @@ export function CastRail({
                   <span className="block truncate text-[13px] font-semibold text-ink">
                     {name}
                   </span>
-                  <span className="block truncate font-mono text-[10px] text-muted">
+                  <span className="block truncate text-[10px] text-muted">
                     {open ? 'đang cần gì ở bạn ↓' : 'xem họ cần gì'}
                   </span>
                 </span>
               </button>
 
               {open && (
-                <div className="reveal mt-1.5 rounded-[9px] border border-line-2 bg-panel px-3 py-2.5">
+                <div className="reveal mt-1.5 rounded-xl border border-line-2 bg-panel px-3 py-2.5">
                   <p className="m-0 mb-1.5 text-[12.5px] leading-relaxed text-ink-2">
                     {member.pressure}
                   </p>
                   {member.voice && (
-                    <p className="m-0 font-mono text-[10.5px] leading-relaxed text-muted">
+                    <p className="m-0 text-[10.5px] leading-relaxed text-muted">
                       Cách nói: {member.voice}
                     </p>
                   )}

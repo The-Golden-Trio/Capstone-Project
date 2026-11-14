@@ -76,7 +76,9 @@ export async function api<T>(
   const response = await rawRequest(path, options);
   if (!response.ok) throw await toError(response);
 
-  const data = response.status === 204 ? null : await response.json();
+  // 204, hay 201 không thân (vd. `POST /v1/app-feedback`), đều là `null`.
+  const text = response.status === 204 ? '' : await response.text();
+  const data = text ? JSON.parse(text) : null;
   const parsed = schema.safeParse(data);
   if (!parsed.success) {
     throw new ApiError(

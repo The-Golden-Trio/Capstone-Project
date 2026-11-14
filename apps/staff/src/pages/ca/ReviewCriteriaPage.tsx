@@ -9,7 +9,9 @@ import {
   Notice,
   PageHeader,
   ProblemAlert,
+  inputClass,
 } from '../../components/ui';
+import { cx } from '../../lib/cx';
 import { useLoad } from '../../hooks/useLoad';
 
 /**
@@ -78,7 +80,7 @@ export function ReviewCriteriaPage() {
                 <textarea
                   aria-label={`Tiêu chí ${i + 1}`}
                   rows={2}
-                  className="flex-1 rounded-md border border-line px-2.5 py-1.5"
+                  className={cx(inputClass, 'flex-1 resize-y')}
                   value={t}
                   onChange={(e) =>
                     setTexts(

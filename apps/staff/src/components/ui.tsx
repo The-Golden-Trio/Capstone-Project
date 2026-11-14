@@ -14,10 +14,40 @@ import {
   type SelectHTMLAttributes,
   type TextareaHTMLAttributes,
 } from 'react';
+import { Link, type LinkProps } from 'react-router-dom';
 import { ApiProblem, messageOf } from '../api/client';
 import { cx } from '../lib/cx';
 
 type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'ghost';
+
+/** Lớp của nút, dùng chung cho `Button` và `LinkButton`. */
+function buttonClass(variant: ButtonVariant, size: 'sm' | 'md') {
+  return cx(
+    // Nút viên thuốc như landing page: vàng đặc cho việc chính, viền cho việc phụ.
+    'inline-flex items-center justify-center gap-1.5 rounded-full border-[1.5px] font-semibold whitespace-nowrap transition-colors disabled:cursor-not-allowed',
+    size === 'sm' ? 'h-8 px-3.5 text-[12.5px]' : 'h-9 px-5 text-[13px]',
+    variant === 'primary' &&
+      'border-brand bg-brand font-bold text-bg hover:border-brand-2 hover:bg-brand-2 disabled:border-brand/35 disabled:bg-brand/20 disabled:text-brand-2/60',
+    variant === 'secondary' &&
+      'border-ink/35 bg-bg/30 text-ink hover:border-brand hover:text-brand-2 disabled:opacity-45',
+    variant === 'danger' &&
+      'border-bad/70 bg-transparent text-bad hover:bg-bad-soft disabled:opacity-45',
+    variant === 'ghost' &&
+      'border-transparent bg-transparent text-ink-2 hover:bg-brand-soft hover:text-brand-2 disabled:opacity-45',
+  );
+}
+
+/** Đường dẫn trông như nút (dẫn sang trang khác, không phải hành động tại chỗ). */
+export function LinkButton({
+  variant = 'secondary',
+  size = 'md',
+  className,
+  ...rest
+}: LinkProps & { variant?: ButtonVariant; size?: 'sm' | 'md' }) {
+  return (
+    <Link className={cx(buttonClass(variant, size), className)} {...rest} />
+  );
+}
 
 export const Button = forwardRef<
   HTMLButtonElement,
@@ -44,18 +74,7 @@ export const Button = forwardRef<
       type="button"
       disabled={disabled || busy}
       aria-busy={busy || undefined}
-      className={cx(
-        'inline-flex items-center justify-center gap-1.5 rounded-md border font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50',
-        size === 'sm' ? 'h-8 px-2.5 text-[13px]' : 'h-9 px-3.5',
-        variant === 'primary' &&
-          'border-brand bg-brand text-white hover:bg-brand-2',
-        variant === 'secondary' &&
-          'border-line bg-surf text-ink hover:bg-inset',
-        variant === 'danger' && 'border-bad bg-surf text-bad hover:bg-bad-soft',
-        variant === 'ghost' &&
-          'border-transparent bg-transparent text-ink-2 hover:bg-inset',
-        className,
-      )}
+      className={cx(buttonClass(variant, size), className)}
       {...rest}
     >
       {busy && <Spinner />}
@@ -88,27 +107,31 @@ export function Card({
   return (
     <section
       className={cx(
-        'rounded-lg border border-line bg-surf shadow-sm',
+        'rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 shadow-lift',
         className,
       )}
     >
       {(title || actions) && (
-        <header className="flex items-center justify-between gap-3 border-b border-line-2 px-4 py-3">
-          {title && <h2 className="text-[15px] font-semibold">{title}</h2>}
+        <header className="flex items-center justify-between gap-3 border-b border-line-gold px-5 py-3">
+          {title && (
+            <h2 className="text-[16px] font-semibold tracking-[0.01em]">
+              {title}
+            </h2>
+          )}
           {actions && <div className="flex gap-2">{actions}</div>}
         </header>
       )}
-      <div className="p-4">{children}</div>
+      <div className="p-5">{children}</div>
     </section>
   );
 }
 
 const TONES = {
-  neutral: 'bg-inset text-ink-2 border-line',
-  brand: 'bg-brand-soft text-brand-2 border-brand-soft',
-  warn: 'bg-warn-soft text-warn border-warn-soft',
-  good: 'bg-good-soft text-good border-good-soft',
-  bad: 'bg-bad-soft text-bad border-bad-soft',
+  neutral: 'bg-line/45 text-ink-2 border-blue/40',
+  brand: 'bg-brand-soft text-brand-2 border-brand/35',
+  warn: 'bg-warn-soft text-warn border-warn/35',
+  good: 'bg-good-soft text-good border-good/35',
+  bad: 'bg-bad-soft text-bad border-bad/35',
 } as const;
 
 export function Badge({
@@ -121,7 +144,7 @@ export function Badge({
   return (
     <span
       className={cx(
-        'inline-flex items-center rounded-full border px-2 py-0.5 text-[12px] font-medium whitespace-nowrap',
+        'inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11.5px] font-semibold tracking-[0.02em] whitespace-nowrap',
         TONES[tone],
       )}
     >
@@ -147,7 +170,7 @@ function FieldFrame({
     <div className="mb-3">
       <label
         htmlFor={id}
-        className="mb-1 block text-[13px] font-medium text-ink-2"
+        className="mb-1.5 block text-[12.5px] font-semibold tracking-[0.02em] text-ink-2"
       >
         {label}
       </label>
@@ -166,8 +189,8 @@ function FieldFrame({
   );
 }
 
-const inputClass =
-  'w-full rounded-md border border-line bg-surf px-2.5 py-1.5 text-ink placeholder:text-muted focus:border-brand aria-[invalid=true]:border-bad';
+export const inputClass =
+  'w-full rounded-[10px] border border-blue/45 bg-inset/85 px-3 py-2 text-ink transition-colors placeholder:text-blue hover:border-blue focus:border-brand focus:outline-none focus:ring-[3px] focus:ring-brand/15 aria-[invalid=true]:border-bad';
 
 export function TextField({
   label,
@@ -266,7 +289,7 @@ export function ProblemAlert({ error }: { error: unknown }) {
   return (
     <div
       role="alert"
-      className="mb-3 rounded-md border border-bad-soft bg-bad-soft px-3 py-2 text-[13px] text-bad"
+      className="mb-3 rounded-xl border border-bad/35 bg-bad-soft px-4 py-2.5 text-[13px] text-bad"
     >
       <p className="font-medium">{messageOf(error)}</p>
       {errors.length > 0 && (
@@ -296,7 +319,7 @@ export function Notice({
     <div
       role="status"
       className={cx(
-        'mb-3 rounded-md border px-3 py-2 text-[13px]',
+        'mb-3 rounded-xl border px-4 py-2.5 text-[13px]',
         TONES[tone],
       )}
     >
@@ -307,7 +330,7 @@ export function Notice({
 
 export function EmptyState({ children }: { children: ReactNode }) {
   return (
-    <p className="rounded-md border border-dashed border-line px-4 py-6 text-center text-muted">
+    <p className="rounded-[14px] border border-dashed border-blue/45 bg-bg/35 px-4 py-7 text-center text-muted">
       {children}
     </p>
   );
@@ -349,18 +372,18 @@ export function Dialog({
       aria-labelledby={titleId}
       onClose={onClose}
       onCancel={onClose}
-      className="m-auto w-[min(560px,92vw)] rounded-lg border border-line bg-surf p-0 text-ink shadow-xl backdrop:bg-black/30"
+      className="m-auto w-[min(560px,92vw)] rounded-2xl border border-line-gold bg-surf p-0 text-ink shadow-lift backdrop:bg-bg/75 backdrop:backdrop-blur-[3px]"
     >
       {open && (
         <>
-          <header className="border-b border-line-2 px-4 py-3">
-            <h2 id={titleId} className="text-[15px] font-semibold">
+          <header className="border-b border-line-gold px-5 py-3.5">
+            <h2 id={titleId} className="text-[17px] font-semibold">
               {title}
             </h2>
           </header>
-          <div className="max-h-[70vh] overflow-auto p-4">{children}</div>
+          <div className="max-h-[70vh] overflow-auto p-5">{children}</div>
           {footer && (
-            <footer className="flex justify-end gap-2 border-t border-line-2 px-4 py-3">
+            <footer className="flex justify-end gap-2 border-t border-line-gold px-5 py-3">
               {footer}
             </footer>
           )}
@@ -370,20 +393,69 @@ export function Dialog({
   );
 }
 
+/** Khung màn đăng nhập, quên mật khẩu: cùng bầu trời sao với app người chơi. */
+export function AuthFrame({
+  title,
+  subtitle,
+  children,
+}: {
+  title: ReactNode;
+  subtitle?: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <main className="relative flex min-h-screen items-center justify-center p-4">
+      <div className="starfield" aria-hidden="true" />
+      <div className="relative z-1 w-full max-w-[420px] rounded-[14px] border border-line-gold bg-bg/60 px-8 py-9 shadow-lift backdrop-blur-[6px] max-[480px]:px-5">
+        <div className="mb-6 text-center">
+          <img
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt=""
+            width={72}
+            height={72}
+            className="mx-auto mb-4 size-[72px] drop-shadow-[0_6px_22px_rgba(212,176,106,.3)]"
+          />
+          <p className="kicker mb-2">JobQuest · Staff</p>
+          <h1 className="text-[28px] leading-tight font-medium tracking-[-0.01em]">
+            {title}
+          </h1>
+          {subtitle && <p className="mt-2 text-muted">{subtitle}</p>}
+        </div>
+        {children}
+      </div>
+    </main>
+  );
+}
+
 export function PageHeader({
   title,
+  kicker,
   subtitle,
   actions,
 }: {
   title: ReactNode;
+  /** Dòng nhãn nhỏ in hoa đứng trên tiêu đề. */
+  kicker?: ReactNode;
   subtitle?: ReactNode;
   actions?: ReactNode;
 }) {
   return (
-    <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
-      <div>
-        <h1 className="text-xl font-semibold">{title}</h1>
-        {subtitle && <p className="mt-0.5 text-muted">{subtitle}</p>}
+    <div className="mb-6 flex flex-wrap items-start justify-between gap-3">
+      <div className="min-w-0">
+        {kicker && <p className="kicker mb-1.5">{kicker}</p>}
+        <h1 className="text-[clamp(22px,2.6vw,28px)] leading-tight font-medium tracking-[-0.01em] text-balance">
+          {title}
+        </h1>
+        {/* Đường kẻ có ngôi sao: dấu ngắt của bảng Celestial Night. */}
+        <div
+          className="my-2.5 flex items-center gap-2 text-brand"
+          aria-hidden="true"
+        >
+          <span className="h-px w-9 bg-brand/60" />
+          <span className="text-[9px] leading-none">✦</span>
+          <span className="h-px w-28 bg-linear-to-r from-brand/60 to-transparent" />
+        </div>
+        {subtitle && <p className="max-w-[70ch] text-muted">{subtitle}</p>}
       </div>
       {actions && <div className="flex flex-wrap gap-2">{actions}</div>}
     </div>
@@ -406,7 +478,7 @@ export function Tabs<T extends string>({
     <div
       role="tablist"
       aria-label={label}
-      className="mb-4 flex flex-wrap gap-1 border-b border-line"
+      className="mb-5 flex flex-wrap gap-2 border-b border-line-gold"
       onKeyDown={(e) => {
         const i = tabs.findIndex((t) => t.id === value);
         if (e.key === 'ArrowRight') onChange(tabs[(i + 1) % tabs.length].id);
@@ -423,7 +495,7 @@ export function Tabs<T extends string>({
           tabIndex={t.id === value ? 0 : -1}
           onClick={() => onChange(t.id)}
           className={cx(
-            '-mb-px border-b-2 px-3 py-2 text-[13px] font-medium',
+            '-mb-px border-b-2 px-2.5 py-2.5 text-[11.5px] font-semibold tracking-[0.1em] uppercase transition-colors',
             t.id === value
               ? 'border-brand text-brand'
               : 'border-transparent text-muted hover:text-ink',

@@ -85,22 +85,22 @@ export function CurrentPlaceToggle() {
         )}
       >
         <Crest seed={role.role_code} size={20} />
-        <span className="hidden min-w-0 max-w-[150px] truncate font-mono text-[11px] text-ink-2 min-[700px]:block">
+        <span className="hidden min-w-0 max-w-[150px] truncate text-[11px] text-ink-2 min-[700px]:block">
           {shortRoleName(role)}
         </span>
-        <span className="font-mono text-[10px] font-semibold text-[var(--accent)]">
+        <span className="text-[10px] font-semibold text-[var(--accent)]">
           {band}
         </span>
         {left > 0 && (
-          <span className="grid h-[17px] min-w-[17px] place-items-center rounded-full bg-[var(--accent)] px-1 font-mono text-[9.5px] font-bold text-bg">
+          <span className="grid h-[17px] min-w-[17px] place-items-center rounded-full bg-[var(--accent)] px-1 text-[9.5px] font-bold text-bg">
             {left}
           </span>
         )}
       </button>
 
       {open && (
-        <div className="toast-pop absolute right-0 top-[calc(100%+8px)] z-40 w-[264px] rounded-[11px] border border-line bg-surf p-3.5 shadow-lift">
-          <p className="m-0 mb-2 font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+        <div className="toast-pop absolute right-0 top-[calc(100%+8px)] z-40 w-[264px] rounded-xl border border-line bg-surf p-3.5 shadow-lift">
+          <p className="m-0 mb-2 font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
             {t('here.label')}
           </p>
 
@@ -110,13 +110,13 @@ export function CurrentPlaceToggle() {
               <div className="truncate font-display text-[14px] font-semibold">
                 {shortRoleName(role)}
               </div>
-              <div className="font-mono text-[10px] text-muted">
+              <div className="text-[10px] text-muted">
                 {band} · {bandLabel(band)}
               </div>
             </div>
           </div>
 
-          <div className="mb-3 rounded-[8px] border border-line-2 bg-panel px-3 py-2 font-mono text-[10.5px] text-muted">
+          <div className="mb-3 rounded-xl border border-line-2 bg-panel px-3 py-2 text-[10.5px] text-muted">
             {left > 0
               ? t(mainLeft > 0 ? 'here.leftWithMain' : 'here.left', { count: left })
               : t('here.allDone')}
@@ -126,14 +126,14 @@ export function CurrentPlaceToggle() {
             <button
               type="button"
               onClick={() => go(`/jobs/${role.role_code}/${band}`)}
-              className="flex-1 rounded-[7px] border border-[var(--accent)] bg-[var(--accent-soft)] px-3 py-2 text-[12.5px] font-medium text-[var(--accent)] transition-colors hover:brightness-110"
+              className="flex-1 rounded-full border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-[12.5px] font-semibold text-[var(--accent)] transition-colors hover:brightness-110"
             >
               {t('here.continue')}
             </button>
             <button
               type="button"
               onClick={() => go('/jobs')}
-              className="rounded-[7px] border border-line bg-inset px-3 py-2 text-[12.5px] text-ink-2 transition-colors hover:border-[var(--accent)]"
+              className="rounded-full border border-ink/35 bg-transparent px-4 py-2 text-[12.5px] font-semibold text-ink-2 transition-colors hover:border-[var(--accent)]"
             >
               {t('here.change')}
             </button>

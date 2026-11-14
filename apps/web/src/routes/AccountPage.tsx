@@ -144,7 +144,7 @@ export function AccountPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.11em] text-muted">
+            <div className="mb-3 font-label text-[10px] uppercase tracking-[0.16em] text-muted">
               Tên đăng nhập:{' '}
               <span className="text-ink-2">{user.username ?? '—'}</span> · không
               đổi được

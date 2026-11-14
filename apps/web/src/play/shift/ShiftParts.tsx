@@ -183,7 +183,7 @@ export function ArtefactFormView({
           {f.label}
           <textarea
             rows={3}
-            className="rounded border border-line bg-inset px-2 py-1.5 text-[14px] text-ink"
+            className="rounded-lg border border-blue/45 bg-inset/85 px-3 py-2 text-[14px] text-ink focus:border-gold focus:outline-none"
             value={fields[f.id] ?? ''}
             onChange={(e) => setFields({ ...fields, [f.id]: e.target.value })}
           />
@@ -275,9 +275,7 @@ export function ActionsPanel({
                 >
                   <span>{a.label}</span>
                   {a.points > 0 && (
-                    <span className="font-mono text-[11px] text-muted">
-                      {a.points} đ
-                    </span>
+                    <span className="text-[11px] text-muted">{a.points} đ</span>
                   )}
                 </button>
               ))}
@@ -377,9 +375,7 @@ export function NotebookPanel({
         <ul className="m-0 mt-1.5 flex list-none flex-col gap-1.5 p-0 text-[13px] text-ink-2">
           {scene.notebook.facts.map((f) => (
             <li key={f.id}>
-              <span className="mr-1.5 font-mono text-[11px] text-muted">
-                {f.time}
-              </span>
+              <span className="mr-1.5 text-[11px] text-muted">{f.time}</span>
               {f.text}
             </li>
           ))}
@@ -420,7 +416,7 @@ export function NotebookPanel({
           }}
         >
           <input
-            className="min-w-0 flex-1 rounded border border-line bg-inset px-2 py-1 text-[13px] text-ink"
+            className="min-w-0 flex-1 rounded-lg border border-blue/45 bg-inset/85 px-3 py-1.5 text-[13px] text-ink focus:border-gold focus:outline-none"
             placeholder="Ghi riêng, không ai chấm"
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
@@ -475,7 +471,7 @@ function SayBox({
     >
       <textarea
         rows={3}
-        className="rounded border border-line bg-inset px-2 py-1.5 text-[14px] text-ink"
+        className="rounded-lg border border-blue/45 bg-inset/85 px-3 py-2 text-[14px] text-ink focus:border-gold focus:outline-none"
         placeholder={placeholder}
         value={text}
         disabled={disabled}

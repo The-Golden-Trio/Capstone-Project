@@ -18,7 +18,7 @@ export function NearbyDock({ neighbors, unlockByCode }: NearbyDockProps) {
 
   return (
     <div className="pointer-events-auto max-w-full">
-      <p className="m-0 mb-1.5 pl-1 font-mono text-[9.5px] uppercase tracking-[0.14em] text-muted">
+      <p className="m-0 mb-1.5 pl-1 font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">
         Hành tinh lân cận · {neighbors.length}
       </p>
       <ul className="galaxy-dock m-0 flex list-none gap-2 overflow-x-auto p-0 pb-1">
@@ -35,7 +35,7 @@ export function NearbyDock({ neighbors, unlockByCode }: NearbyDockProps) {
                 onMouseEnter={() => hover(node.roleCode)}
                 onMouseLeave={() => hover(null)}
                 className={cx(
-                  'galaxy-glass flex w-[172px] flex-col gap-1 rounded-[10px] px-3 py-2.5 text-left transition-colors',
+                  'galaxy-glass flex w-[172px] flex-col gap-1 rounded-xl px-3 py-2.5 text-left transition-colors',
                   active ? 'border-gold!' : 'hover:border-line',
                 )}
               >
@@ -49,14 +49,14 @@ export function NearbyDock({ neighbors, unlockByCode }: NearbyDockProps) {
                     {shortPlanetName(node)}
                   </span>
                 </span>
-                <span className="font-mono text-[10px] text-muted">
+                <span className="text-[10px] text-muted">
                   {isPromotion ? '▲ thăng tiến' : edge.type === 'PROGRESSES_TO' ? '▼ bậc trước' : '↔ tương tự'}
                   {' · '}
                   {lightYears(edge.distance)} ly
                 </span>
                 <span
                   className={cx(
-                    'font-mono text-[10px] font-medium',
+                    'text-[10px] font-medium',
                     ok ? 'text-good' : 'text-signal',
                   )}
                 >

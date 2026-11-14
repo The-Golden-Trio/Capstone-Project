@@ -222,7 +222,7 @@ export function VisualNovelRun({
           )}
 
           {/* Tiến độ */}
-          <div className="absolute left-3 top-3 rounded-full bg-[#142B52]/80 px-3 py-1 font-mono text-[10px] tracking-[0.08em] text-[#F8F6EE] backdrop-blur-sm">
+          <div className="absolute left-3 top-3 rounded-full bg-[#142B52]/80 px-3 py-1 text-[10px] tracking-[0.08em] text-[#F8F6EE] backdrop-blur-sm">
             Bước {step.current}/{step.total}
           </div>
         </div>
@@ -346,7 +346,7 @@ function DialogueBox({
         <img
           src={portrait}
           alt=""
-          className="hidden aspect-square h-auto w-[15%] shrink-0 self-center rounded-[10px] border-2 border-[#D4B06A] bg-[#efe9dc] object-cover object-top sm:block"
+          className="hidden aspect-square h-auto w-[15%] shrink-0 self-center rounded-xl border-2 border-[#D4B06A] bg-[#efe9dc] object-cover object-top sm:block"
         />
       )}
       <span className="relative flex min-w-0 flex-1 flex-col">
@@ -363,7 +363,7 @@ function DialogueBox({
         >
           {text}
         </span>
-        <span className="mt-auto self-end pt-1 font-mono text-[10px] uppercase tracking-[0.1em] text-[#5D7EA8]">
+        <span className="mt-auto self-end pt-1 font-label text-[10px] uppercase tracking-[0.1em] text-[#5D7EA8]">
           {active && done ? (isLast ? `${continueLabel} ▸` : '▸') : ' '}
         </span>
       </span>

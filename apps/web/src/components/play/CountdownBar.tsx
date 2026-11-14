@@ -8,7 +8,7 @@ export function CountdownBar({ secondsLeft, totalSeconds }: CountdownBarProps) {
   const pct = totalSeconds > 0 ? (secondsLeft / totalSeconds) * 100 : 0;
 
   return (
-    <div className="mb-[18px] flex items-center gap-[13px] rounded-[9px] bg-signal-soft px-3.5 py-[11px]">
+    <div className="mb-[18px] flex items-center gap-[13px] rounded-xl bg-signal-soft px-3.5 py-[11px]">
       <span
         className="font-mono text-[22px] font-bold leading-none tabular-nums text-signal"
         role="timer"

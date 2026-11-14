@@ -15,11 +15,11 @@ export function StakesBar({ scenario }: { scenario: Scenario }) {
   return (
     <div className="pulse-stakes mb-4 rounded-r-[10px] border border-l-[3px] border-line-2 border-l-stakes bg-stakes-soft px-4 py-3">
       <div className="mb-1 flex flex-wrap items-center gap-2">
-        <span className="font-mono text-[9.5px] uppercase tracking-[0.11em] text-stakes">
+        <span className="font-label text-[9.5px] uppercase tracking-[0.16em] text-stakes">
           Nếu không xong
         </span>
         {time_pressure && (
-          <span className="rounded-full bg-stakes/15 px-2 py-[2px] font-mono text-[9.5px] text-stakes">
+          <span className="rounded-full bg-stakes/15 px-2 py-[2px] text-[9.5px] text-stakes">
             {time_pressure}
           </span>
         )}

@@ -42,6 +42,12 @@ const EnvSchema = z.object({
   IDLE_TIMEOUT_MINUTES: z.coerce.number().int().positive().default(120),
 
   /**
+   * Số lượt đánh giá tối thiểu của một nghề trước khi công bố điểm trung bình
+   * (NFR-06, FR-19). Dưới ngưỡng thì chỉ báo số lượt, giấu điểm.
+   */
+  RATING_MIN_RESPONSES: z.coerce.number().int().positive().default(5),
+
+  /**
    * SMTP gửi email thông báo (CL-07 `EmailProcessor`). Dev: mailpit trong
    * infra/local/dev-stack.yml, `smtp://localhost:1025`. Để trống thì chỉ ghi log.
    */

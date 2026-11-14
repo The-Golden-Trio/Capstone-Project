@@ -67,7 +67,7 @@ export function ShiftSummaryPage() {
         <ul className="m-0 mb-4 mt-1.5 flex list-none flex-col gap-1.5 p-0 text-[14px] text-ink-2">
           {summary.nodes.map((n) => (
             <li key={n.id}>
-              <span className="mr-2 font-mono text-[12px] text-muted">
+              <span className="mr-2 text-[12px] text-muted">
                 {n.time ?? '—'}
               </span>
               {NODE_LABEL[n.kind] ?? n.kind}
@@ -100,9 +100,7 @@ export function ShiftSummaryPage() {
         <ul className="m-0 mb-4 mt-1.5 flex list-none flex-col gap-1 p-0 text-[13px] text-ink-2">
           {summary.actions.map((a, i) => (
             <li key={`${a.time}-${i}`}>
-              <span className="mr-2 font-mono text-[12px] text-muted">
-                {a.time}
-              </span>
+              <span className="mr-2 text-[12px] text-muted">{a.time}</span>
               {a.label}
               {a.cut && <span className="text-muted"> (bị chen ngang)</span>}
             </li>
@@ -113,9 +111,7 @@ export function ShiftSummaryPage() {
         <ul className="m-0 mb-1 mt-1.5 flex list-none flex-col gap-1 p-0 text-[13px] text-ink-2">
           {summary.facts.found.map((f, i) => (
             <li key={i}>
-              <span className="mr-2 font-mono text-[12px] text-muted">
-                {f.time}
-              </span>
+              <span className="mr-2 text-[12px] text-muted">{f.time}</span>
               {f.text}
             </li>
           ))}

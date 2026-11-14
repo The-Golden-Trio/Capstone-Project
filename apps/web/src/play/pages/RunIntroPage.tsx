@@ -35,7 +35,7 @@ export function RunIntroPage() {
 
   if (!run || !scenario) {
     return (
-      <p className="text-center font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+      <p className="text-center font-label text-[11px] uppercase tracking-[0.16em] text-muted">
         Đang mở kịch bản…
       </p>
     );
@@ -52,7 +52,7 @@ export function RunIntroPage() {
 
         <Card className="mb-4">
           <CardBody>
-            <p className="m-0 mb-2 font-mono text-[10px] uppercase tracking-[0.11em] text-gold-2">
+            <p className="m-0 mb-2 font-label text-[10px] uppercase tracking-[0.16em] text-gold-2">
               Bạn là ai
             </p>
             <p className="m-0 mb-4 text-[14.5px] leading-relaxed text-ink-2">
@@ -72,7 +72,7 @@ export function RunIntroPage() {
                   ([label, value]) =>
                     value && (
                       <div key={label}>
-                        <dt className="mb-0.5 font-mono text-[10px] uppercase tracking-[0.1em] text-muted">
+                        <dt className="mb-0.5 font-label text-[10px] uppercase tracking-[0.1em] text-muted">
                           {label}
                         </dt>
                         <dd className="m-0 whitespace-pre-line text-ink-2">

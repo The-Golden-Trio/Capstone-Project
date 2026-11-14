@@ -6,7 +6,7 @@
  * đi vẽ lại đường path.
  *
  * Mặc định là hình trang trí (`alt=""`): ở thanh đầu trang và màn đăng nhập,
- * ngay cạnh nó đã có chữ "Vào Nghề". Chỗ nào logo đứng một mình mà không có
+ * ngay cạnh nó đã có chữ "JobQuest". Chỗ nào logo đứng một mình mà không có
  * chữ thì truyền `alt` vào.
  */
 

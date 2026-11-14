@@ -80,6 +80,12 @@ export type Occupation = Prisma.OccupationModel
  */
 export type Notification = Prisma.NotificationModel
 /**
+ * Model AppFeedback
+ * ERD-07 `app_feedback` (FR-20): góp ý về app, lưu kèm thời điểm và phiên bản.
+ * Người gửi xoá tài khoản thì góp ý vẫn giữ, chỉ bỏ liên kết (NFR-05).
+ */
+export type AppFeedback = Prisma.AppFeedbackModel
+/**
  * Model OccupationLevel
  * ERD-02 `occupation_level`.
  */
@@ -345,6 +351,22 @@ export type EventAward = Prisma.EventAwardModel
  * ở đâu" — câu đó phải đúng cả khi mở máy khác.
  */
 export type Enrollment = Prisma.EnrollmentModel
+/**
+ * Model OccupationRating
+ * ERD-05 `occupation_rating`: một explorer đánh giá một nghề một lần, sau
+ * khi xong mọi cấp (DR-08). Chỉ công bố số tổng hợp (D-27, NFR-06).
+ */
+export type OccupationRating = Prisma.OccupationRatingModel
+/**
+ * Model RatingAttribute
+ * ERD-05 `rating_attribute`: năm tiêu chí của D-27, nạp sẵn trong migration.
+ */
+export type RatingAttribute = Prisma.RatingAttributeModel
+/**
+ * Model RatingScore
+ * ERD-05 `rating_score`: điểm 1–5 của một tiêu chí trong một lượt đánh giá.
+ */
+export type RatingScore = Prisma.RatingScoreModel
 /**
  * Model ContentRelease
  * Phiên bản nội dung đang được phục vụ.

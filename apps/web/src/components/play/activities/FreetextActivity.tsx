@@ -54,7 +54,7 @@ export function FreetextActivity({
         readOnly={busy}
         placeholder={isFollowup ? 'Trả lời…' : placeholder}
         aria-label={isFollowup ? 'Câu trả lời đào sâu' : placeholder}
-        className="min-h-[94px] w-full resize-y rounded-[10px] border-[1.5px] border-line bg-inset px-3.5 py-3 text-[14px] leading-relaxed text-ink transition-colors focus:border-[var(--accent)] focus:outline-none"
+        className="min-h-[94px] w-full resize-y rounded-xl border border-blue/45 bg-inset/85 px-3.5 py-3 text-[14px] leading-relaxed text-ink transition-colors focus:border-[var(--accent)] focus:outline-none"
       />
 
       <div className="mt-3 flex flex-wrap items-center gap-2.5">

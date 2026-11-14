@@ -12,7 +12,9 @@ import {
   PageHeader,
   ProblemAlert,
   TextArea,
+  inputClass,
 } from '../../components/ui';
+import { cx } from '../../lib/cx';
 import { ContentReadOnly } from '../../features/shared/ContentReadOnly';
 import { StatusBadge } from '../../features/shared/StatusBadge';
 import { useSkillNames } from '../../features/shared/useSkillNames';
@@ -197,7 +199,7 @@ export function ReviewPage() {
                       <input
                         aria-label={`Nhận xét tiêu chí ${i + 1}`}
                         placeholder="Nhận xét (tuỳ chọn)"
-                        className="w-full rounded-md border border-line px-2 py-1 text-[13px]"
+                        className={cx(inputClass, 'text-[13px]')}
                         value={a.comment}
                         onChange={(e) => set({ comment: e.target.value })}
                       />

@@ -52,7 +52,7 @@ export function OrDivider() {
   return (
     <div className="my-4 flex items-center gap-3">
       <span className="h-px flex-1 bg-line-2" />
-      <span className="font-mono text-[10px] uppercase tracking-[0.11em] text-muted">
+      <span className="font-label text-[10px] uppercase tracking-[0.16em] text-muted">
         {t('auth.or')}
       </span>
       <span className="h-px flex-1 bg-line-2" />

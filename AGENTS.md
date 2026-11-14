@@ -83,6 +83,7 @@
   - `apps/staff` có T01, T00, C01, C04, C05, C06, C07, D01, D03, D04. Luồng: CA mở scenario và giao tác giả, người duyệt → DE viết ngữ cảnh, AI sinh bản nháp (queue `generation` ở worker, SSE) → sửa, câu mẫu, kiểm (`ContentValidator`) → nộp → DE khác duyệt → CA chọn dạng task, asset → dựng bản nháp (`scenario_build`).
   - Chưa có: play-test (D05), xuất bản (C08), import, giám sát, prompt hệ thống (C10/D08), gợi ý trình bày và sinh ảnh bằng AI (D-104).
   - Chỗ lệch openapi/ERD và luật đang theo đề xuất: [07 A22, A23](docs/project-hub/07-van-de-mo.md).
+- **Explorer, cập nhật 14/11/2026:** có đánh giá nghề năm tiêu chí (FR-19, `/api/v1/occupations/{mã nghề hoặc uuid}/ratings`, màn `/jobs/:roleCode/rate`) và góp ý app (FR-20, `/api/v1/app-feedback`, màn `/feedback`), bảng `occupation_rating`, `rating_score`, `rating_attribute`, `app_feedback`. FR-07 (vào nghề kề ở cấp cao hơn) **hoãn**, chờ nhóm chốt [07 A27](docs/project-hub/07-van-de-mo.md); chỗ lệch thiết kế của FR-19/20 ở A26.
 - `ai-4-api/response.json` là **model giả**, không phải kết quả gọi API thật hay benchmark. Request mẫu được sinh từ code.
 - Game design mới gồm RIASEC, 7 nhóm soft skill, keyword ESCO và hồ sơ nghề O*NET; nhiều phần vẫn là thiết kế/dữ liệu chưa nối vào runtime. Tra trạng thái từng phần trước khi triển khai.
 

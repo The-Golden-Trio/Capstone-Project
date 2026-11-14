@@ -408,6 +408,7 @@ export const ModelName = {
   Domain: 'Domain',
   Occupation: 'Occupation',
   Notification: 'Notification',
+  AppFeedback: 'AppFeedback',
   OccupationLevel: 'OccupationLevel',
   Downside: 'Downside',
   GenerationRule: 'GenerationRule',
@@ -455,6 +456,9 @@ export const ModelName = {
   EventAnswer: 'EventAnswer',
   EventAward: 'EventAward',
   Enrollment: 'Enrollment',
+  OccupationRating: 'OccupationRating',
+  RatingAttribute: 'RatingAttribute',
+  RatingScore: 'RatingScore',
   ContentRelease: 'ContentRelease',
   RoleDoc: 'RoleDoc',
   ScenarioDoc: 'ScenarioDoc',
@@ -480,7 +484,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "userAccount" | "userRole" | "googleIdentity" | "staffAssignment" | "authSession" | "passwordResetToken" | "activityLog" | "parentalConsent" | "domain" | "occupation" | "notification" | "occupationLevel" | "downside" | "generationRule" | "competency" | "levelCompetency" | "task" | "scenario" | "scenarioSkill" | "castMember" | "activity" | "activityAllowedType" | "activityItem" | "rubricCriterion" | "hint" | "randomEvent" | "ending" | "sideQuest" | "generationRun" | "referenceAnswer" | "referenceAnswerScore" | "reviewCriteriaVersion" | "reviewCriterion" | "reviewAssignment" | "review" | "reviewAnswer" | "lifecycleLog" | "asset" | "presentation" | "presentationActivity" | "presentationNpc" | "scenarioBuild" | "promptTemplate" | "gameProfile" | "scenarioRun" | "runEvent" | "answer" | "assessment" | "judgeResult" | "judgeScore" | "criterionGrade" | "aiJob" | "usageCost" | "runEvidence" | "userBandSkill" | "eventAnswer" | "eventAward" | "enrollment" | "contentRelease" | "roleDoc" | "scenarioDoc" | "sharedEventDoc" | "quizQuestionDoc" | "followupDoc" | "galaxyDoc" | "metaDoc" | "shiftSeedDoc" | "levelPackDoc"
+    modelProps: "userAccount" | "userRole" | "googleIdentity" | "staffAssignment" | "authSession" | "passwordResetToken" | "activityLog" | "parentalConsent" | "domain" | "occupation" | "notification" | "appFeedback" | "occupationLevel" | "downside" | "generationRule" | "competency" | "levelCompetency" | "task" | "scenario" | "scenarioSkill" | "castMember" | "activity" | "activityAllowedType" | "activityItem" | "rubricCriterion" | "hint" | "randomEvent" | "ending" | "sideQuest" | "generationRun" | "referenceAnswer" | "referenceAnswerScore" | "reviewCriteriaVersion" | "reviewCriterion" | "reviewAssignment" | "review" | "reviewAnswer" | "lifecycleLog" | "asset" | "presentation" | "presentationActivity" | "presentationNpc" | "scenarioBuild" | "promptTemplate" | "gameProfile" | "scenarioRun" | "runEvent" | "answer" | "assessment" | "judgeResult" | "judgeScore" | "criterionGrade" | "aiJob" | "usageCost" | "runEvidence" | "userBandSkill" | "eventAnswer" | "eventAward" | "enrollment" | "occupationRating" | "ratingAttribute" | "ratingScore" | "contentRelease" | "roleDoc" | "scenarioDoc" | "sharedEventDoc" | "quizQuestionDoc" | "followupDoc" | "galaxyDoc" | "metaDoc" | "shiftSeedDoc" | "levelPackDoc"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1295,6 +1299,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.NotificationCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.NotificationCountAggregateOutputType> | number
+        }
+      }
+    }
+    AppFeedback: {
+      payload: Prisma.$AppFeedbackPayload<ExtArgs>
+      fields: Prisma.AppFeedbackFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AppFeedbackFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AppFeedbackFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>
+        }
+        findFirst: {
+          args: Prisma.AppFeedbackFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AppFeedbackFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>
+        }
+        findMany: {
+          args: Prisma.AppFeedbackFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>[]
+        }
+        create: {
+          args: Prisma.AppFeedbackCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>
+        }
+        createMany: {
+          args: Prisma.AppFeedbackCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AppFeedbackCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>[]
+        }
+        delete: {
+          args: Prisma.AppFeedbackDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>
+        }
+        update: {
+          args: Prisma.AppFeedbackUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>
+        }
+        deleteMany: {
+          args: Prisma.AppFeedbackDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AppFeedbackUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AppFeedbackUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>[]
+        }
+        upsert: {
+          args: Prisma.AppFeedbackUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AppFeedbackPayload>
+        }
+        aggregate: {
+          args: Prisma.AppFeedbackAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAppFeedback>
+        }
+        groupBy: {
+          args: Prisma.AppFeedbackGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AppFeedbackGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AppFeedbackCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AppFeedbackCountAggregateOutputType> | number
         }
       }
     }
@@ -4776,6 +4854,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    OccupationRating: {
+      payload: Prisma.$OccupationRatingPayload<ExtArgs>
+      fields: Prisma.OccupationRatingFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OccupationRatingFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OccupationRatingFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>
+        }
+        findFirst: {
+          args: Prisma.OccupationRatingFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OccupationRatingFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>
+        }
+        findMany: {
+          args: Prisma.OccupationRatingFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>[]
+        }
+        create: {
+          args: Prisma.OccupationRatingCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>
+        }
+        createMany: {
+          args: Prisma.OccupationRatingCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OccupationRatingCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>[]
+        }
+        delete: {
+          args: Prisma.OccupationRatingDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>
+        }
+        update: {
+          args: Prisma.OccupationRatingUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>
+        }
+        deleteMany: {
+          args: Prisma.OccupationRatingDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OccupationRatingUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OccupationRatingUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>[]
+        }
+        upsert: {
+          args: Prisma.OccupationRatingUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OccupationRatingPayload>
+        }
+        aggregate: {
+          args: Prisma.OccupationRatingAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOccupationRating>
+        }
+        groupBy: {
+          args: Prisma.OccupationRatingGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OccupationRatingGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OccupationRatingCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OccupationRatingCountAggregateOutputType> | number
+        }
+      }
+    }
+    RatingAttribute: {
+      payload: Prisma.$RatingAttributePayload<ExtArgs>
+      fields: Prisma.RatingAttributeFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.RatingAttributeFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.RatingAttributeFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>
+        }
+        findFirst: {
+          args: Prisma.RatingAttributeFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.RatingAttributeFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>
+        }
+        findMany: {
+          args: Prisma.RatingAttributeFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>[]
+        }
+        create: {
+          args: Prisma.RatingAttributeCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>
+        }
+        createMany: {
+          args: Prisma.RatingAttributeCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.RatingAttributeCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>[]
+        }
+        delete: {
+          args: Prisma.RatingAttributeDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>
+        }
+        update: {
+          args: Prisma.RatingAttributeUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>
+        }
+        deleteMany: {
+          args: Prisma.RatingAttributeDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.RatingAttributeUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.RatingAttributeUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>[]
+        }
+        upsert: {
+          args: Prisma.RatingAttributeUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingAttributePayload>
+        }
+        aggregate: {
+          args: Prisma.RatingAttributeAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateRatingAttribute>
+        }
+        groupBy: {
+          args: Prisma.RatingAttributeGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.RatingAttributeGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.RatingAttributeCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.RatingAttributeCountAggregateOutputType> | number
+        }
+      }
+    }
+    RatingScore: {
+      payload: Prisma.$RatingScorePayload<ExtArgs>
+      fields: Prisma.RatingScoreFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.RatingScoreFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.RatingScoreFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>
+        }
+        findFirst: {
+          args: Prisma.RatingScoreFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.RatingScoreFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>
+        }
+        findMany: {
+          args: Prisma.RatingScoreFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>[]
+        }
+        create: {
+          args: Prisma.RatingScoreCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>
+        }
+        createMany: {
+          args: Prisma.RatingScoreCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.RatingScoreCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>[]
+        }
+        delete: {
+          args: Prisma.RatingScoreDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>
+        }
+        update: {
+          args: Prisma.RatingScoreUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>
+        }
+        deleteMany: {
+          args: Prisma.RatingScoreDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.RatingScoreUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.RatingScoreUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>[]
+        }
+        upsert: {
+          args: Prisma.RatingScoreUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RatingScorePayload>
+        }
+        aggregate: {
+          args: Prisma.RatingScoreAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateRatingScore>
+        }
+        groupBy: {
+          args: Prisma.RatingScoreGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.RatingScoreGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.RatingScoreCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.RatingScoreCountAggregateOutputType> | number
+        }
+      }
+    }
     ContentRelease: {
       payload: Prisma.$ContentReleasePayload<ExtArgs>
       fields: Prisma.ContentReleaseFieldRefs
@@ -5695,6 +5995,19 @@ export const NotificationScalarFieldEnum = {
 export type NotificationScalarFieldEnum = (typeof NotificationScalarFieldEnum)[keyof typeof NotificationScalarFieldEnum]
 
 
+export const AppFeedbackScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  text: 'text',
+  appVersion: 'appVersion',
+  status: 'status',
+  handledBy: 'handledBy',
+  createdAt: 'createdAt'
+} as const
+
+export type AppFeedbackScalarFieldEnum = (typeof AppFeedbackScalarFieldEnum)[keyof typeof AppFeedbackScalarFieldEnum]
+
+
 export const OccupationLevelScalarFieldEnum = {
   id: 'id',
   occupationId: 'occupationId',
@@ -6317,6 +6630,34 @@ export const EnrollmentScalarFieldEnum = {
 export type EnrollmentScalarFieldEnum = (typeof EnrollmentScalarFieldEnum)[keyof typeof EnrollmentScalarFieldEnum]
 
 
+export const OccupationRatingScalarFieldEnum = {
+  id: 'id',
+  explorerId: 'explorerId',
+  occupationId: 'occupationId',
+  comment: 'comment',
+  createdAt: 'createdAt'
+} as const
+
+export type OccupationRatingScalarFieldEnum = (typeof OccupationRatingScalarFieldEnum)[keyof typeof OccupationRatingScalarFieldEnum]
+
+
+export const RatingAttributeScalarFieldEnum = {
+  code: 'code',
+  sortOrder: 'sortOrder'
+} as const
+
+export type RatingAttributeScalarFieldEnum = (typeof RatingAttributeScalarFieldEnum)[keyof typeof RatingAttributeScalarFieldEnum]
+
+
+export const RatingScoreScalarFieldEnum = {
+  ratingId: 'ratingId',
+  attributeCode: 'attributeCode',
+  score: 'score'
+} as const
+
+export type RatingScoreScalarFieldEnum = (typeof RatingScoreScalarFieldEnum)[keyof typeof RatingScoreScalarFieldEnum]
+
+
 export const ContentReleaseScalarFieldEnum = {
   version: 'version',
   seededAt: 'seededAt',
@@ -6614,6 +6955,20 @@ export type EnumNotificationChannelFieldRefInput<$PrismaModel> = FieldRefInputTy
  * Reference to a field of type 'NotificationChannel[]'
  */
 export type ListEnumNotificationChannelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'NotificationChannel[]'>
+    
+
+
+/**
+ * Reference to a field of type 'FeedbackStatus'
+ */
+export type EnumFeedbackStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'FeedbackStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'FeedbackStatus[]'
+ */
+export type ListEnumFeedbackStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'FeedbackStatus[]'>
     
 
 
@@ -7093,6 +7448,7 @@ export type GlobalOmitConfig = {
   domain?: Prisma.DomainOmit
   occupation?: Prisma.OccupationOmit
   notification?: Prisma.NotificationOmit
+  appFeedback?: Prisma.AppFeedbackOmit
   occupationLevel?: Prisma.OccupationLevelOmit
   downside?: Prisma.DownsideOmit
   generationRule?: Prisma.GenerationRuleOmit
@@ -7140,6 +7496,9 @@ export type GlobalOmitConfig = {
   eventAnswer?: Prisma.EventAnswerOmit
   eventAward?: Prisma.EventAwardOmit
   enrollment?: Prisma.EnrollmentOmit
+  occupationRating?: Prisma.OccupationRatingOmit
+  ratingAttribute?: Prisma.RatingAttributeOmit
+  ratingScore?: Prisma.RatingScoreOmit
   contentRelease?: Prisma.ContentReleaseOmit
   roleDoc?: Prisma.RoleDocOmit
   scenarioDoc?: Prisma.ScenarioDocOmit

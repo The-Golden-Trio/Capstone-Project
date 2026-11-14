@@ -23,24 +23,28 @@ export function Topbar() {
 
   const link = ({ isActive }: { isActive: boolean }) =>
     cx(
-      'rounded-[7px] px-3 py-1.5 text-[13px] transition-colors',
+      // Cùng kiểu với thanh điều hướng của landing page: in hoa, giãn chữ.
+      'border-b px-2.5 py-1.5 text-[11.5px] font-semibold uppercase tracking-[0.12em] transition-colors',
       isActive
-        ? 'bg-gold-soft font-semibold text-gold-2'
-        : 'text-ink-2 hover:bg-panel hover:text-ink',
+        ? 'border-gold/70 text-gold'
+        : 'border-transparent text-muted hover:text-ink',
     );
 
   return (
-    <header className="sticky top-0 z-30 flex min-h-[57px] flex-wrap items-center gap-3 border-b border-line-2 bg-bg/90 px-5 py-2.5 backdrop-blur-[8px]">
+    <header className="sticky top-0 z-30 flex min-h-[57px] flex-wrap items-center gap-3 border-b border-line-gold bg-linear-to-b from-bg to-bg/75 px-6 py-2.5 backdrop-blur-[8px] max-[900px]:px-4">
       <NavLink to="/jobs" className="flex shrink-0 items-center gap-2.5">
         <Logo className="h-[30px] w-[30px] drop-shadow-[0_2px_8px_rgba(212,176,106,.3)]" />
-        <span className="font-display text-[17px] font-bold leading-none max-[520px]:hidden">
-          Vào <span className="text-gold">Nghề</span>
+        <span className="font-display text-[19px] font-semibold leading-none tracking-[0.01em] max-[520px]:hidden">
+          Job<span className="text-gold">Quest</span>
         </span>
       </NavLink>
 
-      <nav className="flex items-center gap-1" aria-label={t('nav.mainNav')}>
+      <nav className="ml-3 flex items-center gap-2" aria-label={t('nav.mainNav')}>
         <NavLink to="/jobs" className={link}>
           {t('nav.jobs')}
+        </NavLink>
+        <NavLink to="/feedback" className={link}>
+          {t('nav.feedback')}
         </NavLink>
       </nav>
 

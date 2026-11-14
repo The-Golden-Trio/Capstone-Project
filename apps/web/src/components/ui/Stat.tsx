@@ -11,13 +11,11 @@ interface StatProps {
 
 export function Stat({ label, value, hint, gold }: StatProps) {
   return (
-    <div className="rounded-[10px] border border-line-2 bg-panel px-4 py-[15px]">
-      <span className="mb-2 block font-mono text-[9.5px] uppercase tracking-[0.11em] text-muted">
-        {label}
-      </span>
+    <div className="rounded-xl border border-line-2 border-t-2 border-t-gold/55 bg-line/30 px-4 py-[15px]">
+      <span className="kicker mb-2 block text-[9.5px] text-muted">{label}</span>
       <span
         className={cx(
-          'block font-display text-[27px] leading-none font-bold tabular-nums',
+          'block font-display text-[27px] leading-none font-semibold tabular-nums',
           gold && 'text-gold-2',
         )}
       >

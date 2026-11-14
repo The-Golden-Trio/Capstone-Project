@@ -87,7 +87,7 @@ export function AssetLibraryPage() {
               {(assets.data ?? []).map((a) => (
                 <li
                   key={a.id}
-                  className="overflow-hidden rounded-md border border-line bg-surf"
+                  className="overflow-hidden rounded-xl border border-line-gold bg-panel"
                 >
                   <img
                     src={a.url}
@@ -118,7 +118,7 @@ export function AssetLibraryPage() {
             <div className="mb-3">
               <label
                 htmlFor="asset-file"
-                className="mb-1 block text-[13px] font-medium text-ink-2"
+                className="mb-1.5 block text-[12.5px] font-semibold tracking-[0.02em] text-ink-2"
               >
                 File PNG (tối đa 5 MB)
               </label>
@@ -128,7 +128,7 @@ export function AssetLibraryPage() {
                 accept="image/png"
                 required
                 onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-                className="block w-full text-[13px]"
+                className="block w-full text-[13px] text-ink-2 file:mr-3 file:cursor-pointer file:rounded-full file:border file:border-solid file:border-ink/35 file:bg-transparent file:px-3.5 file:py-1.5 file:text-[12.5px] file:font-semibold file:text-ink hover:file:border-brand hover:file:text-brand-2"
               />
             </div>
             <TextField

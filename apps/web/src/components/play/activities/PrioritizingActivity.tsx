@@ -48,7 +48,7 @@ export function PrioritizingActivity({
               disabled={!on && full}
               onClick={() => onToggle(item.item_id)}
               className={cx(
-                'action-card flex w-full items-start gap-3 rounded-[10px] border bg-surf px-4 py-3.5 text-left text-ink disabled:cursor-not-allowed disabled:opacity-40',
+                'action-card flex w-full items-start gap-3 rounded-xl border bg-surf px-4 py-3.5 text-left text-ink disabled:cursor-not-allowed disabled:opacity-40',
                 on
                   ? 'border-[var(--accent)] bg-[var(--accent-soft)]'
                   : 'border-line',
@@ -81,7 +81,7 @@ export function PrioritizingActivity({
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2.5">
-        <span className="font-mono text-[11.5px] text-muted">
+        <span className="text-[11.5px] text-muted">
           đã chọn {picked.length}/{limit}
         </span>
         {canHint && (

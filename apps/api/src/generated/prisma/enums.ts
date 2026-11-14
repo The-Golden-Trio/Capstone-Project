@@ -60,6 +60,14 @@ export const ConsentMethod = {
 export type ConsentMethod = (typeof ConsentMethod)[keyof typeof ConsentMethod]
 
 
+export const FeedbackStatus = {
+  NEW: 'NEW',
+  HANDLED: 'HANDLED'
+} as const
+
+export type FeedbackStatus = (typeof FeedbackStatus)[keyof typeof FeedbackStatus]
+
+
 export const CompetencyKind = {
   EXPERTISE: 'EXPERTISE',
   SOFT_SKILL: 'SOFT_SKILL'

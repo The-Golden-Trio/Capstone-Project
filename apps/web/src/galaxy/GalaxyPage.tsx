@@ -53,7 +53,7 @@ export function GalaxyPage() {
           <button
             type="button"
             onClick={() => void loadGalaxy()}
-            className="rounded-[9px] border border-line bg-surf px-4 py-2 text-[13px] text-ink"
+            className="rounded-full border-[1.5px] border-ink/35 bg-bg/30 px-5 py-2 text-[13px] font-semibold text-ink transition-colors hover:border-gold hover:text-gold-2"
           >
             Thử lại
           </button>
@@ -65,7 +65,7 @@ export function GalaxyPage() {
   if (!ready) {
     return (
       <div className="grid h-full place-items-center">
-        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+        <p className="font-label text-[11px] uppercase tracking-[0.16em] text-muted">
           Đang mở bản đồ ngân hà…
         </p>
       </div>
@@ -218,7 +218,7 @@ function GalaxyScene() {
 
         <div className="mt-3 flex items-end justify-between gap-3">
           <NearbyDock neighbors={neighbors} unlockByCode={unlockByCode} />
-          <p className="m-0 hidden shrink-0 font-mono text-[10px] text-muted min-[900px]:block">
+          <p className="m-0 hidden shrink-0 text-[10px] text-muted min-[900px]:block">
             Kéo để xoay · Cuộn để zoom · Bấm hành tinh · Esc đóng
           </p>
         </div>
@@ -226,8 +226,8 @@ function GalaxyScene() {
 
       {/* đang bay */}
       {flight && flightTarget && (
-        <div className="galaxy-glass galaxy-rise pointer-events-none absolute left-1/2 top-5 z-20 w-[320px] -translate-x-1/2 rounded-[11px] px-4 py-3 text-center">
-          <p className="m-0 font-mono text-[9.5px] uppercase tracking-[0.14em] text-muted">Đang bay tới</p>
+        <div className="galaxy-glass galaxy-rise pointer-events-none absolute left-1/2 top-5 z-20 w-[320px] -translate-x-1/2 rounded-xl px-4 py-3 text-center">
+          <p className="m-0 font-label text-[9.5px] uppercase tracking-[0.16em] text-muted">Đang bay tới</p>
           <p className="m-0 mt-0.5 font-display text-[16px] font-semibold">{shortPlanetName(flightTarget)}</p>
           <div className="mt-2.5 h-[3px] w-full overflow-hidden rounded-[2px] bg-line-2">
             <div className="galaxy-flight-bar" style={{ '--flight-ms': `${FLIGHT_MS}ms` } as CSSProperties} />

@@ -80,7 +80,10 @@ export function ReferenceAnswers({
         ) : (
           <ul className="space-y-3">
             {(list.data ?? []).map((r) => (
-              <li key={r.id} className="rounded-md border border-line-2 p-2">
+              <li
+                key={r.id}
+                className="rounded-xl border border-line bg-bg/25 p-3"
+              >
                 <p className="text-[12px] text-muted">
                   {r.activityKey} ·{' '}
                   {r.stratum === 'EASY'

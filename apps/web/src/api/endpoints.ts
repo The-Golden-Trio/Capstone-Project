@@ -17,6 +17,8 @@ import {
   GameProfileSchema,
   OkSchema,
   ProgressSummarySchema,
+  RatingFormSchema,
+  RatingSummarySchema,
   RoleProgressSchema,
   RunHistorySchema,
   SessionUserSchema,
@@ -28,6 +30,8 @@ import {
   type EventAnswerResult,
   type GameProfileView,
   type ProgressSummary,
+  type RatingForm,
+  type RatingSummary,
   type RoleProgress,
   type RunHistoryItem,
   type SessionUser,
@@ -198,5 +202,34 @@ export const runsApi = {
     api(`/runs/${runId}/complete`, CompletedRunSchema, {
       method: 'POST',
       body: { actions, rating },
+    }),
+};
+
+/* ── Đánh giá nghề, góp ý app (CL-03 FeedbackModule) ────────────────── */
+
+export const feedbackApi = {
+  /**
+   * Form đánh giá, hoặc lý do còn khoá (AD-01e). Explorer chưa có uuid nghề
+   * nên gửi mã nghề; API tạm nhận cả hai (07 A26).
+   */
+  ratingForm: (roleCode: string): Promise<RatingForm> =>
+    api(`/v1/occupations/${roleCode}/ratings/form`, RatingFormSchema),
+
+  rate: (
+    roleCode: string,
+    body: { scores: Record<string, number>; comment?: string },
+  ): Promise<RatingSummary> =>
+    api(`/v1/occupations/${roleCode}/ratings`, RatingSummarySchema, {
+      method: 'POST',
+      body,
+    }),
+
+  sendAppFeedback: (text: string): Promise<null> =>
+    api('/v1/app-feedback', z.null(), {
+      method: 'POST',
+      body: {
+        text,
+        appVersion: String(import.meta.env.VITE_APP_VERSION ?? 'dev'),
+      },
     }),
 };

@@ -63,7 +63,7 @@ export function EntryTest({ node, missing, onPass, onClose }: EntryTestProps) {
       >
         <div className="flex items-start gap-3 border-b border-line-2 px-5 pb-3.5 pt-4">
           <div className="min-w-0 flex-1">
-            <p className="m-0 mb-1 font-mono text-[9.5px] uppercase tracking-[0.14em]" style={{ color }}>
+            <p className="m-0 mb-1 font-label text-[9.5px] uppercase tracking-[0.16em]" style={{ color }}>
               Kiểm tra nhập cảnh · Hệ {groupOf(node).label}
             </p>
             <h2 id="entry-test-title" className="m-0 font-display text-[20px] font-semibold leading-tight">
@@ -74,7 +74,7 @@ export function EntryTest({ node, missing, onPass, onClose }: EntryTestProps) {
             type="button"
             onClick={onClose}
             aria-label="Đóng"
-            className="h-[30px] w-[30px] shrink-0 rounded-[7px] border border-line bg-inset text-[14px] text-muted hover:text-ink"
+            className="h-[30px] w-[30px] shrink-0 rounded-full border border-line bg-inset text-[14px] text-muted hover:text-ink"
           >
             ✕
           </button>
@@ -111,7 +111,7 @@ export function EntryTest({ node, missing, onPass, onClose }: EntryTestProps) {
 
           {step === 'quiz' && questions[index] && (
             <div key={questions[index].id} className="galaxy-rise">
-              <p className="m-0 mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+              <p className="m-0 mb-2 font-label text-[10px] uppercase tracking-[0.16em] text-muted">
                 Tình huống {index + 1}/{questions.length}
               </p>
               <h3 className="m-0 font-display text-[17px] font-semibold leading-snug">
@@ -124,7 +124,7 @@ export function EntryTest({ node, missing, onPass, onClose }: EntryTestProps) {
                     key={i}
                     type="button"
                     onClick={() => answer(i)}
-                    className="action-card flex items-start gap-3 rounded-[9px] border border-line bg-inset px-3.5 py-3 text-left text-[13px] leading-relaxed text-ink"
+                    className="action-card flex items-start gap-3 rounded-xl border border-blue/40 bg-line/30 px-3.5 py-3 text-left text-[13px] leading-relaxed text-ink"
                   >
                     <span className="keycap shrink-0 font-mono text-[10.5px] text-muted">{i + 1}</span>
                     <span>{c.text}</span>
@@ -142,7 +142,7 @@ export function EntryTest({ node, missing, onPass, onClose }: EntryTestProps) {
               <ol className="m-0 mt-3 grid list-none gap-2 p-0">
                 {questions.map((q, i) => (
                   <li key={q.id} className="rounded-lg border border-line-2 bg-inset px-3 py-2.5">
-                    <p className="m-0 font-mono text-[10px] uppercase tracking-[0.1em] text-muted">{q.title}</p>
+                    <p className="m-0 font-label text-[10px] uppercase tracking-[0.1em] text-muted">{q.title}</p>
                     <p className="m-0 mt-1 text-[12.5px] leading-relaxed text-ink">
                       {q.choices[answers[i] ?? 0]?.outcome}
                     </p>

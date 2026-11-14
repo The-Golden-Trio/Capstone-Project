@@ -235,6 +235,15 @@ export function CareerMapPage() {
           {shortRoleName(role)}
         </span>
 
+        {/* E13: form tự báo khoá khi còn cấp chưa xong (AD-01e). */}
+        <button
+          type="button"
+          onClick={() => navigate(`/jobs/${roleCode}/rate`)}
+          className="map-chip"
+        >
+          <span aria-hidden="true">★</span> Đánh giá nghề
+        </button>
+
         {stage !== 'sea' && (
           <button type="button" onClick={backToSea} className="map-chip is-accent">
             <span role="img" aria-label="Mỏ neo">

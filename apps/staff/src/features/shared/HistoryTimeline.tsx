@@ -21,7 +21,7 @@ export function HistoryTimeline({
   return (
     <ol className="space-y-2">
       {(history.data ?? []).map((h, i) => (
-        <li key={i} className="border-l-2 border-line pl-3">
+        <li key={i} className="border-l-2 border-brand/50 pl-3">
           <p className="font-medium">
             {ACTION_LABEL[h.action as LifecycleAction] ?? h.action}
             <span className="font-normal text-muted">
