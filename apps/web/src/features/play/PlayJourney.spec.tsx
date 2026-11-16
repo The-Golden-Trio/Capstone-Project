@@ -229,4 +229,5 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
       `${delta.delta >= 0 ? '+' : '−'}${Math.abs(delta.delta).toLocaleString('vi-VN')}`,
     );
   }
-}, 30_000);
+  // Chạy trọn engine ca làm qua giao diện; runner CI chậm hơn máy dev nhiều lần.
+}, 120_000);
