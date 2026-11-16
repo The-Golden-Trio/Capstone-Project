@@ -1,0 +1,932 @@
+{
+  "code": "SEC_ENG",
+  "name": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
+  "nameEn": "Cybersecurity Engineer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Kỹ sư an ninh mạng bảo vệ hệ thống của tổ chức trước tấn công: giám sát cảnh báo, điều tra dấu hiệu xâm nhập, viết luật phát hiện trên SIEM, triển khai tường lửa, IDS và phần mềm bảo vệ máy trạm. Cửa vào phổ biến là vị trí phân tích viên SOC trực theo ca; lên cao hơn thì thiết kế kiến trúc và chính sách bảo mật cho cả tổ chức.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Giai đoạn đầu thường trực ca, kể cả ca đêm, và phần lớn cảnh báo là báo động giả.",
+    "Sự cố có thể xảy ra bất kỳ lúc nào, kể cả cuối tuần.",
+    "Quy định bảo mật hay bị các đội khác xem là làm chậm việc.",
+    "Cấp trên thường muốn một câu trả lời “an toàn hay không”, trong khi thực tế chỉ có mức độ rủi ro."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "53% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "16% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 50
+    },
+    {
+      "name": "Trung tâm giám sát vận hành 24/7 (SOC, NOC)",
+      "weight": 30
+    },
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "An ninh mạng",
+      "Công nghệ thông tin",
+      "Mạng máy tính và truyền thông dữ liệu"
+    ],
+    "vocational": ["An ninh mạng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "SOC Analyst Intern",
+      "years": "0",
+      "coreOutput": "Theo dõi dashboard giám sát và học cách phân loại alert dưới sự kèm cặp trực tiếp, chưa tự xử lý sự cố nào.",
+      "tasks": [
+        "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+        "Điều phối việc giám sát mạng và hệ thống để phát hiện xâm nhập.",
+        "Đánh giá chất lượng các biện pháp kiểm soát bảo mật bằng chỉ số đo.",
+        "Đào tạo nhân viên và giám sát việc tuân thủ chuẩn, chính sách bảo mật thông tin.",
+        "Quét mạng bằng công cụ đánh giá lỗ hổng để tìm điểm yếu."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "SOC Analyst (Tier 1)",
+      "years": "0-1",
+      "coreOutput": "Tự phân loại và lọc cảnh báo bảo mật theo quy trình (playbook) có sẵn, escalate lên Tier 2 khi vượt phạm vi, thường làm việc theo ca.",
+      "tasks": [
+        "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+        "Điều phối việc giám sát mạng và hệ thống để phát hiện xâm nhập.",
+        "Đánh giá chất lượng các biện pháp kiểm soát bảo mật bằng chỉ số đo.",
+        "Đào tạo nhân viên và giám sát việc tuân thủ chuẩn, chính sách bảo mật thông tin.",
+        "Quét mạng bằng công cụ đánh giá lỗ hổng để tìm điểm yếu."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Security Engineer (mới chuyển ngang)",
+      "years": "1-3",
+      "coreOutput": "Triển khai và duy trì các công cụ bảo mật có sẵn (firewall, IDS/IPS, endpoint protection) theo hướng dẫn, xử lý alert cơ bản, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [
+        "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+        "Điều phối việc giám sát mạng và hệ thống để phát hiện xâm nhập.",
+        "Đánh giá chất lượng các biện pháp kiểm soát bảo mật bằng chỉ số đo.",
+        "Đào tạo nhân viên và giám sát việc tuân thủ chuẩn, chính sách bảo mật thông tin.",
+        "Quét mạng bằng công cụ đánh giá lỗ hổng để tìm điểm yếu."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle Security Engineer",
+      "years": "2-4",
+      "coreOutput": "Tự cấu hình và điều chỉnh chính sách bảo mật cho một hệ thống/mảng hạ tầng, tham gia điều tra sự cố ở mức trung bình, tương ứng vai trò tự chủ trong phạm vi một module.",
+      "tasks": [
+        "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+        "Điều phối việc giám sát mạng và hệ thống để phát hiện xâm nhập.",
+        "Đánh giá chất lượng các biện pháp kiểm soát bảo mật bằng chỉ số đo.",
+        "Đào tạo nhân viên và giám sát việc tuân thủ chuẩn, chính sách bảo mật thông tin.",
+        "Quét mạng bằng công cụ đánh giá lỗ hổng để tìm điểm yếu."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2",
+          "name": "An toàn CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Security Engineer",
+      "years": "4-7",
+      "coreOutput": "Tự chủ thiết kế kiến trúc bảo mật cho một hệ thống hoặc một domain hạ tầng, chịu trách nhiệm khi có sự cố bảo mật nghiêm trọng, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [
+        "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+        "Điều phối việc giám sát mạng và hệ thống để phát hiện xâm nhập.",
+        "Đánh giá chất lượng các biện pháp kiểm soát bảo mật bằng chỉ số đo.",
+        "Đào tạo nhân viên và giám sát việc tuân thủ chuẩn, chính sách bảo mật thông tin.",
+        "Quét mạng bằng công cụ đánh giá lỗ hổng để tìm điểm yếu."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2",
+          "name": "An toàn CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2",
+          "name": "An toàn CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Security Engineering Lead",
+      "years": "6-9",
+      "coreOutput": "Dẫn dắt kỹ thuật đội bảo mật, đặt chuẩn chính sách và công cụ bảo mật cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [
+        "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+        "Điều phối việc giám sát mạng và hệ thống để phát hiện xâm nhập.",
+        "Đánh giá chất lượng các biện pháp kiểm soát bảo mật bằng chỉ số đo.",
+        "Đào tạo nhân viên và giám sát việc tuân thủ chuẩn, chính sách bảo mật thông tin.",
+        "Quét mạng bằng công cụ đánh giá lỗ hổng để tìm điểm yếu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2",
+          "name": "An toàn CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2",
+          "name": "An toàn CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Principal Security Engineer",
+      "years": "8-12",
+      "coreOutput": "Đặt chiến lược an ninh mạng xuyên toàn bộ hạ tầng/tổ chức, tương ứng vai trò chịu trách nhiệm cross-team.",
+      "tasks": [
+        "Tìm điểm yếu của hệ thống bảo mật bằng kiểm thử xâm nhập.",
+        "Điều phối việc giám sát mạng và hệ thống để phát hiện xâm nhập.",
+        "Đánh giá chất lượng các biện pháp kiểm soát bảo mật bằng chỉ số đo.",
+        "Đào tạo nhân viên và giám sát việc tuân thủ chuẩn, chính sách bảo mật thông tin.",
+        "Quét mạng bằng công cụ đánh giá lỗ hổng để tìm điểm yếu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2",
+          "name": "An toàn CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+          "name": "Rủi ro an ninh mạng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+          "name": "Kỹ thuật bảo mật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+          "name": "Quản lý thiết bị di động",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+          "name": "Quản trị Internet",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+          "name": "Bảo đảm chất lượng hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+          "name": "Biện pháp chống tấn công mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+          "name": "Quản lý kiến trúc dữ liệu CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+          "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2",
+          "name": "An toàn CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "SEC_PENTEST",
+      "name": "Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng",
+      "why": "Hai mặt của bảo mật: phòng thủ và tấn công"
+    },
+    {
+      "code": "INFRA_NETWORK",
+      "name": "Kỹ sư hệ thống mạng",
+      "why": "Bảo mật mạng là giao điểm hai nghề"
+    },
+    {
+      "code": "CLOUD_DEVOPS",
+      "name": "Kỹ sư DevOps",
+      "why": "DevSecOps là vùng giao nhau"
+    },
+    {
+      "code": "INFRA_HELPDESK",
+      "name": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+      "why": "Helpdesk là cửa vào phổ biến của nghề bảo mật"
+    },
+    {
+      "code": "SWE_BACKEND",
+      "name": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "why": "Application Security cần đọc hiểu code để tìm lỗ hổng"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung bình tại công ty ngành An ninh mạng. Security Engineer trong Top 15 vị trí nhu cầu lớn 2026 Số bình quân tham khảo: 44.100.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 45,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/2ddb1226-1117-4eb4-ae65-3a2f5a5a3c80",
+      "name": "Rủi ro an ninh mạng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6f1edc19-191f-4ba5-a048-ee69aff05bab",
+      "name": "Kỹ thuật bảo mật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cf532795-a1fd-43bd-8407-6e43f877e6e3",
+      "name": "Quản lý thiết bị di động",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5063a99f-975b-4a7c-85e3-69ecb375b4d3",
+      "name": "Quản trị Internet",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7f0b1a66-ebaf-4c8a-b606-4c1844eb692e",
+      "name": "Bảo đảm chất lượng hệ thống CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5898d99a-62a4-4e10-a2e3-0d815ce44248",
+      "name": "Biện pháp chống tấn công mạng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4d85b881-e490-4b4c-897a-2faa4ef53956",
+      "name": "Quản lý kiến trúc dữ liệu CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0ffdb6ac-03b5-4f1c-bfcc-3d9cb874fdf9",
+      "name": "Nguyên tắc tấn công có đạo đức (ethical hacking)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+      "name": "Sao lưu hệ thống",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/426ceaba-6867-481c-bb6b-aee3933da7d2",
+      "name": "An toàn CNTT",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.956
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.874
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.839
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.629
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.48
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.475
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.632
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

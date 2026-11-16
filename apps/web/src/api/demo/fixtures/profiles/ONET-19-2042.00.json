@@ -1,0 +1,937 @@
+{
+  "code": "ONET-19-2042.00",
+  "name": "Nhà khoa học địa chất, khí tượng thuỷ văn",
+  "nameEn": "Geoscientists, Except Hydrologists and Geographers",
+  "group": "Khoa học tự nhiên và xã hội",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Nghiên cứu thành phần, cấu trúc và các đặc điểm vật lý của trái đất. Có thể dùng kiến thức địa chất, vật lý, toán để thăm dò dầu khí, khoáng sản, nước ngầm, hoặc xử lý chất thải, cải tạo đất và các vấn đề môi trường. Có thể nghiên cứu cấu tạo bên trong, khí quyển, đại dương và các trường từ, điện, trọng lực của trái đất. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Kết quả nghiên cứu đến chậm, nhiều thí nghiệm thất bại.",
+    "Phụ thuộc vào tài trợ và ngân sách nghiên cứu."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "41% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "45% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Phòng thí nghiệm", "Văn phòng"],
+  "environments": [
+    {
+      "name": "Đài, trạm khí tượng thuỷ văn, đoàn địa chất",
+      "weight": 70
+    },
+    {
+      "name": "Viện nghiên cứu, trung tâm khoa học nhà nước",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Địa chất học", "Khí tượng và khí hậu học", "Thủy văn học"],
+    "vocational": ["Khí tượng học", "Thủy văn học"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên nghiên cứu / thực tập địa chất, khí tượng thuỷ văn",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Tìm và đọc bài báo nghiên cứu, báo cáo môi trường, lịch sử hoặc kỹ thuật.",
+        "Truyền đạt kết quả địa chất qua bài báo, hội nghị hoặc giảng dạy ở đại học.",
+        "Lập kế hoạch hoặc thực hiện khảo sát địa chất, địa hoá, địa vật lý ngoài thực địa, lấy mẫu, khoan thăm dò và thử nghiệm để thu thập dữ liệu.",
+        "Lập bản đồ địa chất, mặt cắt, biểu đồ hoặc báo cáo về khai thác khoáng sản, sử dụng đất hay quản lý tài nguyên từ kết quả thực địa và phòng thí nghiệm.",
+        "Phân tích và diễn giải dữ liệu địa chất bằng phần mềm."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ lý nghiên cứu địa chất, khí tượng thuỷ văn (hạng IV)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Tìm và đọc bài báo nghiên cứu, báo cáo môi trường, lịch sử hoặc kỹ thuật.",
+        "Truyền đạt kết quả địa chất qua bài báo, hội nghị hoặc giảng dạy ở đại học.",
+        "Lập kế hoạch hoặc thực hiện khảo sát địa chất, địa hoá, địa vật lý ngoài thực địa, lấy mẫu, khoan thăm dò và thử nghiệm để thu thập dữ liệu.",
+        "Lập bản đồ địa chất, mặt cắt, biểu đồ hoặc báo cáo về khai thác khoáng sản, sử dụng đất hay quản lý tài nguyên từ kết quả thực địa và phòng thí nghiệm.",
+        "Phân tích và diễn giải dữ liệu địa chất bằng phần mềm."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Nghiên cứu viên địa chất, khí tượng thuỷ văn (hạng III)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Tìm và đọc bài báo nghiên cứu, báo cáo môi trường, lịch sử hoặc kỹ thuật.",
+        "Truyền đạt kết quả địa chất qua bài báo, hội nghị hoặc giảng dạy ở đại học.",
+        "Lập kế hoạch hoặc thực hiện khảo sát địa chất, địa hoá, địa vật lý ngoài thực địa, lấy mẫu, khoan thăm dò và thử nghiệm để thu thập dữ liệu.",
+        "Lập bản đồ địa chất, mặt cắt, biểu đồ hoặc báo cáo về khai thác khoáng sản, sử dụng đất hay quản lý tài nguyên từ kết quả thực địa và phòng thí nghiệm.",
+        "Phân tích và diễn giải dữ liệu địa chất bằng phần mềm."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Dự báo viên chính / chủ trì khảo sát địa chất",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Tìm và đọc bài báo nghiên cứu, báo cáo môi trường, lịch sử hoặc kỹ thuật.",
+        "Truyền đạt kết quả địa chất qua bài báo, hội nghị hoặc giảng dạy ở đại học.",
+        "Lập kế hoạch hoặc thực hiện khảo sát địa chất, địa hoá, địa vật lý ngoài thực địa, lấy mẫu, khoan thăm dò và thử nghiệm để thu thập dữ liệu.",
+        "Lập bản đồ địa chất, mặt cắt, biểu đồ hoặc báo cáo về khai thác khoáng sản, sử dụng đất hay quản lý tài nguyên từ kết quả thực địa và phòng thí nghiệm.",
+        "Phân tích và diễn giải dữ liệu địa chất bằng phần mềm."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f",
+          "name": "Hiệu chuẩn thiết bị phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chủ nhiệm dự án điều tra địa chất, khí tượng thuỷ văn",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Tìm và đọc bài báo nghiên cứu, báo cáo môi trường, lịch sử hoặc kỹ thuật.",
+        "Truyền đạt kết quả địa chất qua bài báo, hội nghị hoặc giảng dạy ở đại học.",
+        "Lập kế hoạch hoặc thực hiện khảo sát địa chất, địa hoá, địa vật lý ngoài thực địa, lấy mẫu, khoan thăm dò và thử nghiệm để thu thập dữ liệu.",
+        "Lập bản đồ địa chất, mặt cắt, biểu đồ hoặc báo cáo về khai thác khoáng sản, sử dụng đất hay quản lý tài nguyên từ kết quả thực địa và phòng thí nghiệm.",
+        "Phân tích và diễn giải dữ liệu địa chất bằng phần mềm."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f",
+          "name": "Hiệu chuẩn thiết bị phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f",
+          "name": "Hiệu chuẩn thiết bị phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Nghiên cứu viên chính địa chất, khí tượng thuỷ văn (hạng II)",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Tìm và đọc bài báo nghiên cứu, báo cáo môi trường, lịch sử hoặc kỹ thuật.",
+        "Truyền đạt kết quả địa chất qua bài báo, hội nghị hoặc giảng dạy ở đại học.",
+        "Lập kế hoạch hoặc thực hiện khảo sát địa chất, địa hoá, địa vật lý ngoài thực địa, lấy mẫu, khoan thăm dò và thử nghiệm để thu thập dữ liệu.",
+        "Lập bản đồ địa chất, mặt cắt, biểu đồ hoặc báo cáo về khai thác khoáng sản, sử dụng đất hay quản lý tài nguyên từ kết quả thực địa và phòng thí nghiệm.",
+        "Phân tích và diễn giải dữ liệu địa chất bằng phần mềm."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f",
+          "name": "Hiệu chuẩn thiết bị phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f",
+          "name": "Hiệu chuẩn thiết bị phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Nghiên cứu viên cao cấp địa chất, khí tượng thuỷ văn (hạng I)",
+      "years": "16+",
+      "coreOutput": null,
+      "tasks": [
+        "Tìm và đọc bài báo nghiên cứu, báo cáo môi trường, lịch sử hoặc kỹ thuật.",
+        "Truyền đạt kết quả địa chất qua bài báo, hội nghị hoặc giảng dạy ở đại học.",
+        "Lập kế hoạch hoặc thực hiện khảo sát địa chất, địa hoá, địa vật lý ngoài thực địa, lấy mẫu, khoan thăm dò và thử nghiệm để thu thập dữ liệu.",
+        "Lập bản đồ địa chất, mặt cắt, biểu đồ hoặc báo cáo về khai thác khoáng sản, sử dụng đất hay quản lý tài nguyên từ kết quả thực địa và phòng thí nghiệm.",
+        "Phân tích và diễn giải dữ liệu địa chất bằng phần mềm."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f",
+          "name": "Hiệu chuẩn thiết bị phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+          "name": "Địa chất học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+          "name": "Thang thời gian địa chất",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+          "name": "Kiểm tra mẫu đất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+          "name": "Ghi dữ liệu thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f",
+          "name": "Hiệu chuẩn thiết bị phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-19-2042.00",
+          "name": "Nhà khoa học địa chất, khí tượng thuỷ văn"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-17-1022.00",
+      "name": "Kỹ sư trắc địa, bản đồ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-1031.00",
+      "name": "Chuyên viên lâm nghiệp và bảo tồn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-1013.00",
+      "name": "Kỹ sư nông nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-3041.00",
+      "name": "Nhà nghiên cứu khoa học xã hội",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2081.00",
+      "name": "Kỹ sư, chuyên viên môi trường",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 20000000,
+    "byYears": [],
+    "source": "Tin tuyển kỹ sư địa chất, Joboko",
+    "dataYear": "2026",
+    "note": "1 tin.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/8bdd25f8-4b6e-40fe-a2cf-c1badc594114",
+      "name": "Địa chất học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+      "name": "Áp dụng phương pháp khoa học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75ffb6d4-0b48-4471-b3c9-731b01ee1b47",
+      "name": "Thang thời gian địa chất",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+      "name": "Phân tích thống kê",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a11c4c9c-ed68-4dcd-b7ef-841e7e347d70",
+      "name": "Kiểm tra mẫu đất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+      "name": "Vận hành thiết bị đo khoa học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+      "name": "Bản đồ học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+      "name": "Tính toán toán học phân tích",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/328733a7-6d84-420d-a65c-2a8014fadc60",
+      "name": "Ghi dữ liệu thử nghiệm",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/82fadde2-45cc-4734-bace-dadafdeaa41f",
+      "name": "Hiệu chuẩn thiết bị phòng thí nghiệm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.79
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.334
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.297
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.187
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.036
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.258
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.618
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

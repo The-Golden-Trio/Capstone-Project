@@ -1,0 +1,705 @@
+{
+  "code": "ONET-39-5012.00",
+  "name": "Thợ làm tóc",
+  "nameEn": "Hairdressers, Hairstylists, and Cosmetologists",
+  "group": "Chăm sóc và dịch vụ cá nhân",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Làm dịch vụ làm đẹp như cắt, nhuộm, tạo kiểu tóc, xoa bóp và chăm sóc da đầu. Có thể gội đầu, trang điểm, làm tóc giả, tẩy lông và chăm sóc móng, da. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Lặp đi lặp lại cùng một động tác.",
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Hay phải cúi hoặc vặn người."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Được tự quyết nhiều trong công việc.",
+    "Ít làm việc qua email.",
+    "40% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "7% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Tiệm tóc, nail, spa nhỏ",
+      "weight": 70
+    },
+    {
+      "name": "Chuỗi spa, salon, thẩm mỹ viện",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Kỹ thuật chăm sóc tóc"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên/thợ phụ gội",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ chỗ làm sạch sẽ và khử trùng dụng cụ như kéo, lược.",
+        "Đặt lịch hẹn cho khách.",
+        "Tẩy, nhuộm hoặc phủ màu tóc bằng dụng cụ bôi hoặc cọ.",
+        "Cắt, tỉa và tạo dáng tóc hoặc tóc giả theo yêu cầu, chất tóc và khuôn mặt của khách, bằng tông đơ, kéo, máy tỉa và dao cạo.",
+        "Gội, xả, dưỡng và sấy tóc, da đầu hoặc tóc giả bằng nước, dầu gội và dung dịch khác."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ phụ (assistant stylist)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ chỗ làm sạch sẽ và khử trùng dụng cụ như kéo, lược.",
+        "Đặt lịch hẹn cho khách.",
+        "Tẩy, nhuộm hoặc phủ màu tóc bằng dụng cụ bôi hoặc cọ.",
+        "Cắt, tỉa và tạo dáng tóc hoặc tóc giả theo yêu cầu, chất tóc và khuôn mặt của khách, bằng tông đơ, kéo, máy tỉa và dao cạo.",
+        "Gội, xả, dưỡng và sấy tóc, da đầu hoặc tóc giả bằng nước, dầu gội và dung dịch khác."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f27371a-1cf3-4a81-9faf-12fab80cb3e1",
+          "name": "Dùng thiết bị chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365",
+          "name": "Tạo kiểu tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fce4ae7-bbd6-4d91-9fd9-d7d6b0e6c3da",
+          "name": "Gội đầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf",
+          "name": "Tóc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ chính (stylist)",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ chỗ làm sạch sẽ và khử trùng dụng cụ như kéo, lược.",
+        "Đặt lịch hẹn cho khách.",
+        "Tẩy, nhuộm hoặc phủ màu tóc bằng dụng cụ bôi hoặc cọ.",
+        "Cắt, tỉa và tạo dáng tóc hoặc tóc giả theo yêu cầu, chất tóc và khuôn mặt của khách, bằng tông đơ, kéo, máy tỉa và dao cạo.",
+        "Gội, xả, dưỡng và sấy tóc, da đầu hoặc tóc giả bằng nước, dầu gội và dung dịch khác."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f27371a-1cf3-4a81-9faf-12fab80cb3e1",
+          "name": "Dùng thiết bị chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365",
+          "name": "Tạo kiểu tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fce4ae7-bbd6-4d91-9fd9-d7d6b0e6c3da",
+          "name": "Gội đầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf",
+          "name": "Tóc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f27371a-1cf3-4a81-9faf-12fab80cb3e1",
+          "name": "Dùng thiết bị chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365",
+          "name": "Tạo kiểu tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fce4ae7-bbd6-4d91-9fd9-d7d6b0e6c3da",
+          "name": "Gội đầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf",
+          "name": "Tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb0eff5-ca8d-4638-b119-0c14a953f77c",
+          "name": "Sản phẩm chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d715a3d-ddb1-4906-a599-e9737f4ca491",
+          "name": "Tư vấn kiểu tóc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Stylist cao cấp (top stylist)",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ chỗ làm sạch sẽ và khử trùng dụng cụ như kéo, lược.",
+        "Đặt lịch hẹn cho khách.",
+        "Tẩy, nhuộm hoặc phủ màu tóc bằng dụng cụ bôi hoặc cọ.",
+        "Cắt, tỉa và tạo dáng tóc hoặc tóc giả theo yêu cầu, chất tóc và khuôn mặt của khách, bằng tông đơ, kéo, máy tỉa và dao cạo.",
+        "Gội, xả, dưỡng và sấy tóc, da đầu hoặc tóc giả bằng nước, dầu gội và dung dịch khác."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f27371a-1cf3-4a81-9faf-12fab80cb3e1",
+          "name": "Dùng thiết bị chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365",
+          "name": "Tạo kiểu tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fce4ae7-bbd6-4d91-9fd9-d7d6b0e6c3da",
+          "name": "Gội đầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf",
+          "name": "Tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb0eff5-ca8d-4638-b119-0c14a953f77c",
+          "name": "Sản phẩm chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d715a3d-ddb1-4906-a599-e9737f4ca491",
+          "name": "Tư vấn kiểu tóc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f27371a-1cf3-4a81-9faf-12fab80cb3e1",
+          "name": "Dùng thiết bị chăm sóc tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365",
+          "name": "Tạo kiểu tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fce4ae7-bbd6-4d91-9fd9-d7d6b0e6c3da",
+          "name": "Gội đầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf",
+          "name": "Tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb0eff5-ca8d-4638-b119-0c14a953f77c",
+          "name": "Sản phẩm chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d715a3d-ddb1-4906-a599-e9737f4ca491",
+          "name": "Tư vấn kiểu tóc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Quản lý salon/giám đốc sáng tạo",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ chỗ làm sạch sẽ và khử trùng dụng cụ như kéo, lược.",
+        "Đặt lịch hẹn cho khách.",
+        "Tẩy, nhuộm hoặc phủ màu tóc bằng dụng cụ bôi hoặc cọ.",
+        "Cắt, tỉa và tạo dáng tóc hoặc tóc giả theo yêu cầu, chất tóc và khuôn mặt của khách, bằng tông đơ, kéo, máy tỉa và dao cạo.",
+        "Gội, xả, dưỡng và sấy tóc, da đầu hoặc tóc giả bằng nước, dầu gội và dung dịch khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f27371a-1cf3-4a81-9faf-12fab80cb3e1",
+          "name": "Dùng thiết bị chăm sóc tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365",
+          "name": "Tạo kiểu tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fce4ae7-bbd6-4d91-9fd9-d7d6b0e6c3da",
+          "name": "Gội đầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf",
+          "name": "Tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb0eff5-ca8d-4638-b119-0c14a953f77c",
+          "name": "Sản phẩm chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d715a3d-ddb1-4906-a599-e9737f4ca491",
+          "name": "Tư vấn kiểu tóc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+          "name": "Nhuộm tóc",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f27371a-1cf3-4a81-9faf-12fab80cb3e1",
+          "name": "Dùng thiết bị chăm sóc tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365",
+          "name": "Tạo kiểu tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fce4ae7-bbd6-4d91-9fd9-d7d6b0e6c3da",
+          "name": "Gội đầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf",
+          "name": "Tóc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb0eff5-ca8d-4638-b119-0c14a953f77c",
+          "name": "Sản phẩm chăm sóc tóc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d715a3d-ddb1-4906-a599-e9737f4ca491",
+          "name": "Tư vấn kiểu tóc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-39-5012.00",
+          "name": "Thợ làm tóc"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-39-1022.00",
+          "name": "Giám sát nhân viên dịch vụ cá nhân"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-39-5094.00",
+      "name": "Chuyên viên chăm sóc da (spa)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-5092.00",
+      "name": "Thợ làm móng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-5091.00",
+      "name": "Chuyên viên trang điểm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-9011.00",
+      "name": "Chuyên viên xoa bóp trị liệu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-9032.00",
+      "name": "Nhân viên tổ chức hoạt động vui chơi giải trí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Thu nhập bình quân nhóm nghề",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "Báo cáo điều tra lao động việc làm năm 2024, Cục Thống kê (Bộ Tài chính), đăng 16/5/2026, biểu 3.5",
+    "dataYear": "2024",
+    "note": "Thu nhập bình quân của nhóm nghề \"Dịch vụ cá nhân, bảo vệ và bán hàng\", không riêng nghề này. Số bình quân tham khảo: 7.307.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+      "name": "Xử lý thanh toán",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/26db1e50-aa8f-407c-87b9-87a48dd4d29a",
+      "name": "Nhuộm tóc",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+      "name": "Bảo dưỡng thiết bị",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5f27371a-1cf3-4a81-9faf-12fab80cb3e1",
+      "name": "Dùng thiết bị chăm sóc tóc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0b6c4174-a862-480d-8d55-44f7cf7ac365",
+      "name": "Tạo kiểu tóc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5fce4ae7-bbd6-4d91-9fd9-d7d6b0e6c3da",
+      "name": "Gội đầu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c76d86b3-9860-4bc0-996d-cc724c669bcf",
+      "name": "Tóc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/efb0eff5-ca8d-4638-b119-0c14a953f77c",
+      "name": "Sản phẩm chăm sóc tóc",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5d715a3d-ddb1-4906-a599-e9737f4ca491",
+      "name": "Tư vấn kiểu tóc",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.734
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.122
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.04
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.228
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.613
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.65
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.785
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

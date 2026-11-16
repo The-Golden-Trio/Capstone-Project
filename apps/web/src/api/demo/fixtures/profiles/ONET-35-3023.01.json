@@ -1,0 +1,692 @@
+{
+  "code": "ONET-35-3023.01",
+  "name": "Nhân viên pha chế (barista, bartender)",
+  "nameEn": "Baristas",
+  "group": "Chế biến và phục vụ ăn uống",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Pha chế hoặc phục vụ cà phê đặc biệt và các loại đồ uống khác. Phục vụ đồ ăn như bánh nướng hoặc bánh mì kẹp. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Phải đi lại hoặc chạy nhiều.",
+    "Lặp đi lặp lại cùng một động tác."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Ít làm việc qua email.",
+    "1% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "25% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Chuỗi nhà hàng, cà phê, đồ ăn nhanh",
+      "weight": 55
+    },
+    {
+      "name": "Nhà hàng, quán cà phê, bar độc lập",
+      "weight": 45
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Kỹ thuật pha chế đồ uống"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Nhân viên pha chế thử việc/part-time",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Làm sạch hoặc khử trùng khu làm việc, dụng cụ và thiết bị.",
+        "Nhận và xử lý thanh toán của khách.",
+        "Pha chế hoặc phục vụ đồ uống nóng, lạnh như cà phê, espresso, cà phê xay đá hoặc trà.",
+        "Nhận đơn của khách và chuyển cho đồng nghiệp chuẩn bị.",
+        "Dọn dẹp khu phục vụ và chỗ ngồi."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Barista/bartender",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Làm sạch hoặc khử trùng khu làm việc, dụng cụ và thiết bị.",
+        "Nhận và xử lý thanh toán của khách.",
+        "Pha chế hoặc phục vụ đồ uống nóng, lạnh như cà phê, espresso, cà phê xay đá hoặc trà.",
+        "Nhận đơn của khách và chuyển cho đồng nghiệp chuẩn bị.",
+        "Dọn dẹp khu phục vụ và chỗ ngồi."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/131d6a9e-6dd8-4c7d-bb19-a222a9ad16f1",
+          "name": "Giới thiệu các loại trà cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d",
+          "name": "Giới thiệu các loại cà phê cho khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Barista chính/head bartender",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Làm sạch hoặc khử trùng khu làm việc, dụng cụ và thiết bị.",
+        "Nhận và xử lý thanh toán của khách.",
+        "Pha chế hoặc phục vụ đồ uống nóng, lạnh như cà phê, espresso, cà phê xay đá hoặc trà.",
+        "Nhận đơn của khách và chuyển cho đồng nghiệp chuẩn bị.",
+        "Dọn dẹp khu phục vụ và chỗ ngồi."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/131d6a9e-6dd8-4c7d-bb19-a222a9ad16f1",
+          "name": "Giới thiệu các loại trà cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d",
+          "name": "Giới thiệu các loại cà phê cho khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/131d6a9e-6dd8-4c7d-bb19-a222a9ad16f1",
+          "name": "Giới thiệu các loại trà cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d",
+          "name": "Giới thiệu các loại cà phê cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f10e94b-a43d-4772-9f60-24e9bbbdedb7",
+          "name": "Tối đa doanh thu bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Trưởng ca/giám sát quầy bar",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Làm sạch hoặc khử trùng khu làm việc, dụng cụ và thiết bị.",
+        "Nhận và xử lý thanh toán của khách.",
+        "Pha chế hoặc phục vụ đồ uống nóng, lạnh như cà phê, espresso, cà phê xay đá hoặc trà.",
+        "Nhận đơn của khách và chuyển cho đồng nghiệp chuẩn bị.",
+        "Dọn dẹp khu phục vụ và chỗ ngồi."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/131d6a9e-6dd8-4c7d-bb19-a222a9ad16f1",
+          "name": "Giới thiệu các loại trà cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d",
+          "name": "Giới thiệu các loại cà phê cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f10e94b-a43d-4772-9f60-24e9bbbdedb7",
+          "name": "Tối đa doanh thu bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/131d6a9e-6dd8-4c7d-bb19-a222a9ad16f1",
+          "name": "Giới thiệu các loại trà cho khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d",
+          "name": "Giới thiệu các loại cà phê cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f10e94b-a43d-4772-9f60-24e9bbbdedb7",
+          "name": "Tối đa doanh thu bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Quản lý quán/bar manager",
+      "years": "3+",
+      "coreOutput": null,
+      "tasks": [
+        "Làm sạch hoặc khử trùng khu làm việc, dụng cụ và thiết bị.",
+        "Nhận và xử lý thanh toán của khách.",
+        "Pha chế hoặc phục vụ đồ uống nóng, lạnh như cà phê, espresso, cà phê xay đá hoặc trà.",
+        "Nhận đơn của khách và chuyển cho đồng nghiệp chuẩn bị.",
+        "Dọn dẹp khu phục vụ và chỗ ngồi."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/131d6a9e-6dd8-4c7d-bb19-a222a9ad16f1",
+          "name": "Giới thiệu các loại trà cho khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d",
+          "name": "Giới thiệu các loại cà phê cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f10e94b-a43d-4772-9f60-24e9bbbdedb7",
+          "name": "Tối đa doanh thu bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+          "name": "Kiểm tra hàng khi nhận",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/131d6a9e-6dd8-4c7d-bb19-a222a9ad16f1",
+          "name": "Giới thiệu các loại trà cho khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d",
+          "name": "Giới thiệu các loại cà phê cho khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f10e94b-a43d-4772-9f60-24e9bbbdedb7",
+          "name": "Tối đa doanh thu bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-35-3023.01",
+          "name": "Nhân viên pha chế (barista, bartender)"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9051.00",
+          "name": "Quản lý nhà hàng"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-35-3031.00",
+      "name": "Nhân viên phục vụ nhà hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-35-2014.00",
+      "name": "Đầu bếp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 7000000,
+    "median": 8500000,
+    "high": 11500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 44,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+      "name": "Nhận gọi món",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f7f56b20-8f05-4731-a1bf-79fdcffc72ce",
+      "name": "Kiểm tra hàng khi nhận",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+      "name": "Bán thêm sản phẩm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+      "name": "Bàn giao khu vực phục vụ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/131d6a9e-6dd8-4c7d-bb19-a222a9ad16f1",
+      "name": "Giới thiệu các loại trà cho khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+      "name": "Chào đón khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a8562251-8f76-4217-b738-c348048c0f5d",
+      "name": "Giới thiệu các loại cà phê cho khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9f10e94b-a43d-4772-9f60-24e9bbbdedb7",
+      "name": "Tối đa doanh thu bán hàng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+      "name": "Pha đồ uống nóng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.517
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.014
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.056
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.725
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.971
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -1.035
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -1.33
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

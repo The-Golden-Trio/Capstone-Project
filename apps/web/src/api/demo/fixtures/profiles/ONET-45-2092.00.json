@@ -1,0 +1,723 @@
+{
+  "code": "ONET-45-2092.00",
+  "name": "Lao động trồng trọt",
+  "nameEn": "Farmworkers and Laborers, Crop, Nursery, and Greenhouse",
+  "group": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Trồng, chăm sóc và thu hoạch rau, quả, hạt, cây cảnh và cây trồng ngoài đồng bằng tay. Dùng dụng cụ như xẻng, bay, cuốc, đầm, liềm, kéo và dao. Có thể làm đất, bón phân, cấy, làm cỏ, tỉa thưa, cắt tỉa, phun thuốc, hoặc làm sạch, phân loại, đóng gói và bốc xếp nông sản. Có thể làm giàn, sửa hàng rào và chuồng trại, hoặc tham gia tưới tiêu. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Nhịp làm việc do tốc độ máy móc quyết định.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Tiếp xúc với nhiệt độ rất nóng hoặc rất lạnh."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "63% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "45% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Nông hộ, gia trại",
+      "weight": 75
+    },
+    {
+      "name": "Trang trại, doanh nghiệp nông nghiệp công nghệ cao",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Trồng trọt"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Lao động trồng trọt thời vụ",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi chép thông tin về cây trồng như lượng thuốc đã dùng, năng suất hoặc chi phí.",
+        "Chỉ đạo và giám sát lao động thời vụ trong mùa trồng và thu hoạch.",
+        "Tham gia kiểm tra, phân hạng, phân loại, bảo quản và xử lý sau thu hoạch.",
+        "Thu hoạch cây, sang chậu hoặc trồng lại và dán nhãn.",
+        "Sửa chữa và bảo dưỡng xe, nông cụ và máy móc trong trang trại."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công nhân trồng trọt",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi chép thông tin về cây trồng như lượng thuốc đã dùng, năng suất hoặc chi phí.",
+        "Chỉ đạo và giám sát lao động thời vụ trong mùa trồng và thu hoạch.",
+        "Tham gia kiểm tra, phân hạng, phân loại, bảo quản và xử lý sau thu hoạch.",
+        "Thu hoạch cây, sang chậu hoặc trồng lại và dán nhãn.",
+        "Sửa chữa và bảo dưỡng xe, nông cụ và máy móc trong trang trại."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64c626b1-0078-4958-bbde-86b5cf2b18fa",
+          "name": "Chuẩn bị thiết bị thu hoạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ecf9829d-e532-45cf-aaff-1dd1fb1c812b",
+          "name": "Luân canh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76",
+          "name": "Thu hoạch mùa màng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Công nhân kỹ thuật trồng trọt bậc 2–3",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi chép thông tin về cây trồng như lượng thuốc đã dùng, năng suất hoặc chi phí.",
+        "Chỉ đạo và giám sát lao động thời vụ trong mùa trồng và thu hoạch.",
+        "Tham gia kiểm tra, phân hạng, phân loại, bảo quản và xử lý sau thu hoạch.",
+        "Thu hoạch cây, sang chậu hoặc trồng lại và dán nhãn.",
+        "Sửa chữa và bảo dưỡng xe, nông cụ và máy móc trong trang trại."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64c626b1-0078-4958-bbde-86b5cf2b18fa",
+          "name": "Chuẩn bị thiết bị thu hoạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ecf9829d-e532-45cf-aaff-1dd1fb1c812b",
+          "name": "Luân canh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76",
+          "name": "Thu hoạch mùa màng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64c626b1-0078-4958-bbde-86b5cf2b18fa",
+          "name": "Chuẩn bị thiết bị thu hoạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ecf9829d-e532-45cf-aaff-1dd1fb1c812b",
+          "name": "Luân canh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76",
+          "name": "Thu hoạch mùa màng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70f89c90-0290-4fbb-a91a-d433a5f28b15",
+          "name": "Theo dõi đồng ruộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6bbc19a-381c-4c60-a79a-41dea2d1a422",
+          "name": "Lái máy nông nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Tổ trưởng sản xuất/đội trưởng nông trường",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi chép thông tin về cây trồng như lượng thuốc đã dùng, năng suất hoặc chi phí.",
+        "Chỉ đạo và giám sát lao động thời vụ trong mùa trồng và thu hoạch.",
+        "Tham gia kiểm tra, phân hạng, phân loại, bảo quản và xử lý sau thu hoạch.",
+        "Thu hoạch cây, sang chậu hoặc trồng lại và dán nhãn.",
+        "Sửa chữa và bảo dưỡng xe, nông cụ và máy móc trong trang trại."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64c626b1-0078-4958-bbde-86b5cf2b18fa",
+          "name": "Chuẩn bị thiết bị thu hoạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ecf9829d-e532-45cf-aaff-1dd1fb1c812b",
+          "name": "Luân canh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76",
+          "name": "Thu hoạch mùa màng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70f89c90-0290-4fbb-a91a-d433a5f28b15",
+          "name": "Theo dõi đồng ruộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6bbc19a-381c-4c60-a79a-41dea2d1a422",
+          "name": "Lái máy nông nghiệp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64c626b1-0078-4958-bbde-86b5cf2b18fa",
+          "name": "Chuẩn bị thiết bị thu hoạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ecf9829d-e532-45cf-aaff-1dd1fb1c812b",
+          "name": "Luân canh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76",
+          "name": "Thu hoạch mùa màng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70f89c90-0290-4fbb-a91a-d433a5f28b15",
+          "name": "Theo dõi đồng ruộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6bbc19a-381c-4c60-a79a-41dea2d1a422",
+          "name": "Lái máy nông nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Quản lý trang trại/chủ trang trại",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi chép thông tin về cây trồng như lượng thuốc đã dùng, năng suất hoặc chi phí.",
+        "Chỉ đạo và giám sát lao động thời vụ trong mùa trồng và thu hoạch.",
+        "Tham gia kiểm tra, phân hạng, phân loại, bảo quản và xử lý sau thu hoạch.",
+        "Thu hoạch cây, sang chậu hoặc trồng lại và dán nhãn.",
+        "Sửa chữa và bảo dưỡng xe, nông cụ và máy móc trong trang trại."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64c626b1-0078-4958-bbde-86b5cf2b18fa",
+          "name": "Chuẩn bị thiết bị thu hoạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ecf9829d-e532-45cf-aaff-1dd1fb1c812b",
+          "name": "Luân canh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76",
+          "name": "Thu hoạch mùa màng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70f89c90-0290-4fbb-a91a-d433a5f28b15",
+          "name": "Theo dõi đồng ruộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6bbc19a-381c-4c60-a79a-41dea2d1a422",
+          "name": "Lái máy nông nghiệp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+          "name": "Phòng trừ dịch bệnh và sâu hại",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+          "name": "Nhân giống cây",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+          "name": "Trồng cây làm sinh khối",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+          "name": "Trồng cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64c626b1-0078-4958-bbde-86b5cf2b18fa",
+          "name": "Chuẩn bị thiết bị thu hoạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ecf9829d-e532-45cf-aaff-1dd1fb1c812b",
+          "name": "Luân canh cây trồng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76",
+          "name": "Thu hoạch mùa màng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70f89c90-0290-4fbb-a91a-d433a5f28b15",
+          "name": "Theo dõi đồng ruộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6bbc19a-381c-4c60-a79a-41dea2d1a422",
+          "name": "Lái máy nông nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-45-2092.00",
+          "name": "Lao động trồng trọt"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-45-1011.00",
+          "name": "Tổ trưởng lao động nông, lâm, ngư nghiệp"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9013.00",
+          "name": "Chủ trang trại, quản lý nông nghiệp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-37-3011.00",
+      "name": "Công nhân cảnh quan và cây xanh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-3092.00",
+      "name": "Công nhân chế biến thực phẩm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-45-2093.00",
+      "name": "Lao động chăn nuôi và nuôi trồng thuỷ sản",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "Cục Thống kê, quý III/2026, qua VnBusiness",
+    "dataYear": "2026",
+    "note": "Thu nhập bình quân ngành nông, lâm, thủy sản, gồm cả người tự làm. Số bình quân tham khảo: 5.400.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e85cff6b-ee0e-4106-98f0-b57b39a2ea3f",
+      "name": "Phòng trừ dịch bệnh và sâu hại",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/844e9480-7aef-49f6-9260-d88c27249241",
+      "name": "Nhân giống cây",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/072f35a1-98e7-4a6c-9a19-474ace5644da",
+      "name": "Trồng cây làm sinh khối",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c5f255ef-02d3-4ab0-a652-2bf055d1d493",
+      "name": "Trồng cây",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/64c626b1-0078-4958-bbde-86b5cf2b18fa",
+      "name": "Chuẩn bị thiết bị thu hoạch",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+      "name": "Vận hành máy nông nghiệp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ecf9829d-e532-45cf-aaff-1dd1fb1c812b",
+      "name": "Luân canh cây trồng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2e4e8114-e579-453d-918e-b0262818ab76",
+      "name": "Thu hoạch mùa màng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/70f89c90-0290-4fbb-a91a-d433a5f28b15",
+      "name": "Theo dõi đồng ruộng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a6bbc19a-381c-4c60-a79a-41dea2d1a422",
+      "name": "Lái máy nông nghiệp",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.141
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.511
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.668
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.678
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.695
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.841
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.974
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,688 @@
+{
+  "code": "ONET-27-1013.00",
+  "name": "Hoạ sĩ, nghệ nhân",
+  "nameEn": "Fine Artists, Including Painters, Sculptors, and Illustrators",
+  "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+  "regionId": "sang_tao",
+  "isIt": false,
+  "summary": "Sáng tác tác phẩm nghệ thuật gốc bằng nhiều chất liệu và kỹ thuật khác nhau. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần sáng tạo và tự do thể hiện ý tưởng, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Lặp đi lặp lại cùng một động tác.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt.",
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu."
+  ],
+  "workFacts": [
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "26% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "48% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Phòng thu, sân khấu, trường quay"],
+  "environments": [
+    {
+      "name": "Freelance sáng tạo theo show, dự án",
+      "weight": 60
+    },
+    {
+      "name": "Xưởng nhỏ, cơ sở gia đình, làng nghề",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Hội họa", "Mỹ thuật tạo hình", "Thủ công mỹ nghệ"],
+    "vocational": ["Hội họa", "Thủ công mỹ nghệ"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ lý xưởng vẽ / hoạ sĩ tập sự",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng chất liệu như bút mực, màu nước, than, sơn dầu hoặc phần mềm máy tính để sáng tác.",
+        "Kết hợp và phát triển các yếu tố thị giác như đường nét, không gian, khối, màu sắc và phối cảnh để thể hiện ý tưởng, cảm xúc hoặc không khí mong muốn.",
+        "Trao đổi với khách hàng, biên tập viên, tác giả, giám đốc nghệ thuật và các bên liên quan về tính chất và nội dung tác phẩm.",
+        "Giữ hồ sơ tác phẩm để thể hiện phong cách, mối quan tâm và năng lực.",
+        "Quảng bá tác phẩm qua tờ giới thiệu, thư gửi hoặc trang web."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Hoạ sĩ hạng III",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng chất liệu như bút mực, màu nước, than, sơn dầu hoặc phần mềm máy tính để sáng tác.",
+        "Kết hợp và phát triển các yếu tố thị giác như đường nét, không gian, khối, màu sắc và phối cảnh để thể hiện ý tưởng, cảm xúc hoặc không khí mong muốn.",
+        "Trao đổi với khách hàng, biên tập viên, tác giả, giám đốc nghệ thuật và các bên liên quan về tính chất và nội dung tác phẩm.",
+        "Giữ hồ sơ tác phẩm để thể hiện phong cách, mối quan tâm và năng lực.",
+        "Quảng bá tác phẩm qua tờ giới thiệu, thư gửi hoặc trang web."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+          "name": "Phát triển yếu tố hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bbf9c69-ba9d-4e6d-a50a-ba4f666e0d25",
+          "name": "Đặt tác phẩm nghệ thuật vào bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e525ee2b-3c85-4b94-b07e-c79dda267b7b",
+          "name": "Kỹ thuật vẽ tranh sinh hoạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4",
+          "name": "Mô tả trải nghiệm nghệ thuật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Hoạ sĩ có triển lãm cá nhân",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng chất liệu như bút mực, màu nước, than, sơn dầu hoặc phần mềm máy tính để sáng tác.",
+        "Kết hợp và phát triển các yếu tố thị giác như đường nét, không gian, khối, màu sắc và phối cảnh để thể hiện ý tưởng, cảm xúc hoặc không khí mong muốn.",
+        "Trao đổi với khách hàng, biên tập viên, tác giả, giám đốc nghệ thuật và các bên liên quan về tính chất và nội dung tác phẩm.",
+        "Giữ hồ sơ tác phẩm để thể hiện phong cách, mối quan tâm và năng lực.",
+        "Quảng bá tác phẩm qua tờ giới thiệu, thư gửi hoặc trang web."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+          "name": "Phát triển yếu tố hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bbf9c69-ba9d-4e6d-a50a-ba4f666e0d25",
+          "name": "Đặt tác phẩm nghệ thuật vào bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e525ee2b-3c85-4b94-b07e-c79dda267b7b",
+          "name": "Kỹ thuật vẽ tranh sinh hoạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4",
+          "name": "Mô tả trải nghiệm nghệ thuật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+          "name": "Phát triển yếu tố hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bbf9c69-ba9d-4e6d-a50a-ba4f666e0d25",
+          "name": "Đặt tác phẩm nghệ thuật vào bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e525ee2b-3c85-4b94-b07e-c79dda267b7b",
+          "name": "Kỹ thuật vẽ tranh sinh hoạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4",
+          "name": "Mô tả trải nghiệm nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6624cfc-a134-4d47-b425-b40f4747016a",
+          "name": "Kỹ thuật sơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9c7afc0-2c34-4757-b9f1-cc9137f11a29",
+          "name": "Thu thập tư liệu cho tác phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Hoạ sĩ hạng II",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng chất liệu như bút mực, màu nước, than, sơn dầu hoặc phần mềm máy tính để sáng tác.",
+        "Kết hợp và phát triển các yếu tố thị giác như đường nét, không gian, khối, màu sắc và phối cảnh để thể hiện ý tưởng, cảm xúc hoặc không khí mong muốn.",
+        "Trao đổi với khách hàng, biên tập viên, tác giả, giám đốc nghệ thuật và các bên liên quan về tính chất và nội dung tác phẩm.",
+        "Giữ hồ sơ tác phẩm để thể hiện phong cách, mối quan tâm và năng lực.",
+        "Quảng bá tác phẩm qua tờ giới thiệu, thư gửi hoặc trang web."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+          "name": "Phát triển yếu tố hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bbf9c69-ba9d-4e6d-a50a-ba4f666e0d25",
+          "name": "Đặt tác phẩm nghệ thuật vào bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e525ee2b-3c85-4b94-b07e-c79dda267b7b",
+          "name": "Kỹ thuật vẽ tranh sinh hoạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4",
+          "name": "Mô tả trải nghiệm nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6624cfc-a134-4d47-b425-b40f4747016a",
+          "name": "Kỹ thuật sơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9c7afc0-2c34-4757-b9f1-cc9137f11a29",
+          "name": "Thu thập tư liệu cho tác phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+          "name": "Phát triển yếu tố hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bbf9c69-ba9d-4e6d-a50a-ba4f666e0d25",
+          "name": "Đặt tác phẩm nghệ thuật vào bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e525ee2b-3c85-4b94-b07e-c79dda267b7b",
+          "name": "Kỹ thuật vẽ tranh sinh hoạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4",
+          "name": "Mô tả trải nghiệm nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6624cfc-a134-4d47-b425-b40f4747016a",
+          "name": "Kỹ thuật sơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9c7afc0-2c34-4757-b9f1-cc9137f11a29",
+          "name": "Thu thập tư liệu cho tác phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Hoạ sĩ hạng I",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng chất liệu như bút mực, màu nước, than, sơn dầu hoặc phần mềm máy tính để sáng tác.",
+        "Kết hợp và phát triển các yếu tố thị giác như đường nét, không gian, khối, màu sắc và phối cảnh để thể hiện ý tưởng, cảm xúc hoặc không khí mong muốn.",
+        "Trao đổi với khách hàng, biên tập viên, tác giả, giám đốc nghệ thuật và các bên liên quan về tính chất và nội dung tác phẩm.",
+        "Giữ hồ sơ tác phẩm để thể hiện phong cách, mối quan tâm và năng lực.",
+        "Quảng bá tác phẩm qua tờ giới thiệu, thư gửi hoặc trang web."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+          "name": "Phát triển yếu tố hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bbf9c69-ba9d-4e6d-a50a-ba4f666e0d25",
+          "name": "Đặt tác phẩm nghệ thuật vào bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e525ee2b-3c85-4b94-b07e-c79dda267b7b",
+          "name": "Kỹ thuật vẽ tranh sinh hoạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4",
+          "name": "Mô tả trải nghiệm nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6624cfc-a134-4d47-b425-b40f4747016a",
+          "name": "Kỹ thuật sơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9c7afc0-2c34-4757-b9f1-cc9137f11a29",
+          "name": "Thu thập tư liệu cho tác phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+          "name": "Luật lao động",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+          "name": "Vẽ tranh sáng tác",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+          "name": "Phát triển yếu tố hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bbf9c69-ba9d-4e6d-a50a-ba4f666e0d25",
+          "name": "Đặt tác phẩm nghệ thuật vào bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e525ee2b-3c85-4b94-b07e-c79dda267b7b",
+          "name": "Kỹ thuật vẽ tranh sinh hoạt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4",
+          "name": "Mô tả trải nghiệm nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6624cfc-a134-4d47-b425-b40f4747016a",
+          "name": "Kỹ thuật sơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9c7afc0-2c34-4757-b9f1-cc9137f11a29",
+          "name": "Thu thập tư liệu cho tác phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2021.00",
+      "name": "Thợ xây, ốp lát",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1024.00",
+      "name": "Nhà thiết kế đồ hoạ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9071.00",
+      "name": "Thợ kim hoàn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1014.00",
+      "name": "Hoạ sĩ hoạt hình, kỹ xảo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 11600000,
+    "median": 14000000,
+    "high": 17500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 52,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+      "name": "Luật sở hữu trí tuệ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/08fe5910-8c4c-4679-a988-eb2ded3c4909",
+      "name": "Luật lao động",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d7be0e5d-157f-410f-91f0-4c790f2fe458",
+      "name": "Vẽ tranh sáng tác",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+      "name": "Xây dựng khung ý tưởng nghệ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+      "name": "Phát triển yếu tố hình ảnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8bbf9c69-ba9d-4e6d-a50a-ba4f666e0d25",
+      "name": "Đặt tác phẩm nghệ thuật vào bối cảnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e525ee2b-3c85-4b94-b07e-c79dda267b7b",
+      "name": "Kỹ thuật vẽ tranh sinh hoạt",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4",
+      "name": "Mô tả trải nghiệm nghệ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a6624cfc-a134-4d47-b425-b40f4747016a",
+      "name": "Kỹ thuật sơn",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d9c7afc0-2c34-4757-b9f1-cc9137f11a29",
+      "name": "Thu thập tư liệu cho tác phẩm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.391
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.501
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.665
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.761
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.853
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -1.463
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -1.701
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

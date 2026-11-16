@@ -1,0 +1,822 @@
+{
+  "code": "ONET-43-4081.00",
+  "name": "Lễ tân khách sạn",
+  "nameEn": "Hotel, Motel, and Resort Desk Clerks",
+  "group": "Văn phòng và hỗ trợ hành chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Phục vụ khách của khách sạn, nhà nghỉ, khu nghỉ dưỡng: làm thủ tục nhận phòng, xếp phòng, giao chìa khoá hoặc thẻ, chuyển và nhận lời nhắn, ghi chép phòng đang có khách và tài khoản của khách, đặt và xác nhận phòng, đưa hoá đơn và thu tiền khi khách trả phòng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần giúp đỡ, dạy bảo và chăm sóc người khác, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Thường xuyên gặp tình huống xung đột với người khác.",
+    "Nhiều việc lặp lại và theo quy trình cố định."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "5% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "25% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Khách sạn, resort 4–5 sao",
+      "weight": 65
+    },
+    {
+      "name": "Khách sạn nhỏ, nhà nghỉ, homestay",
+      "weight": 35
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Quản trị khách sạn"],
+    "vocational": ["Nghiệp vụ lễ tân", "Tiếng Anh lễ tân nhà hàng, khách sạn"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh lễ tân",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Đặt và xác nhận phòng.",
+        "Đón khách, làm thủ tục nhận phòng và xếp phòng.",
+        "Kiểm tra khả năng thanh toán của khách và xác định cách khách sẽ trả tiền phòng.",
+        "Ghi các khoản phí như tiền phòng, đồ ăn, đồ uống hoặc điện thoại vào sổ bằng tay hoặc trên máy tính.",
+        "Giao chìa khoá phòng và hướng dẫn nhân viên hành lý đưa khách lên phòng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên lễ tân",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Đặt và xác nhận phòng.",
+        "Đón khách, làm thủ tục nhận phòng và xếp phòng.",
+        "Kiểm tra khả năng thanh toán của khách và xác định cách khách sẽ trả tiền phòng.",
+        "Ghi các khoản phí như tiền phòng, đồ ăn, đồ uống hoặc điện thoại vào sổ bằng tay hoặc trên máy tính.",
+        "Giao chìa khoá phòng và hướng dẫn nhân viên hành lý đưa khách lên phòng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Trưởng ca lễ tân",
+      "years": "2–3",
+      "coreOutput": null,
+      "tasks": [
+        "Đặt và xác nhận phòng.",
+        "Đón khách, làm thủ tục nhận phòng và xếp phòng.",
+        "Kiểm tra khả năng thanh toán của khách và xác định cách khách sẽ trả tiền phòng.",
+        "Ghi các khoản phí như tiền phòng, đồ ăn, đồ uống hoặc điện thoại vào sổ bằng tay hoặc trên máy tính.",
+        "Giao chìa khoá phòng và hướng dẫn nhân viên hành lý đưa khách lên phòng."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/25c0b413-f474-42fa-be01-20289d2634c4",
+          "name": "Đón khách nhận phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Giám sát lễ tân (front office supervisor)",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Đặt và xác nhận phòng.",
+        "Đón khách, làm thủ tục nhận phòng và xếp phòng.",
+        "Kiểm tra khả năng thanh toán của khách và xác định cách khách sẽ trả tiền phòng.",
+        "Ghi các khoản phí như tiền phòng, đồ ăn, đồ uống hoặc điện thoại vào sổ bằng tay hoặc trên máy tính.",
+        "Giao chìa khoá phòng và hướng dẫn nhân viên hành lý đưa khách lên phòng."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/25c0b413-f474-42fa-be01-20289d2634c4",
+          "name": "Đón khách nhận phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/25c0b413-f474-42fa-be01-20289d2634c4",
+          "name": "Đón khách nhận phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trợ lý trưởng bộ phận tiền sảnh",
+      "years": "4–6",
+      "coreOutput": null,
+      "tasks": [
+        "Đặt và xác nhận phòng.",
+        "Đón khách, làm thủ tục nhận phòng và xếp phòng.",
+        "Kiểm tra khả năng thanh toán của khách và xác định cách khách sẽ trả tiền phòng.",
+        "Ghi các khoản phí như tiền phòng, đồ ăn, đồ uống hoặc điện thoại vào sổ bằng tay hoặc trên máy tính.",
+        "Giao chìa khoá phòng và hướng dẫn nhân viên hành lý đưa khách lên phòng."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/25c0b413-f474-42fa-be01-20289d2634c4",
+          "name": "Đón khách nhận phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/25c0b413-f474-42fa-be01-20289d2634c4",
+          "name": "Đón khách nhận phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng bộ phận tiền sảnh (front office manager)",
+      "years": "6+",
+      "coreOutput": null,
+      "tasks": [
+        "Đặt và xác nhận phòng.",
+        "Đón khách, làm thủ tục nhận phòng và xếp phòng.",
+        "Kiểm tra khả năng thanh toán của khách và xác định cách khách sẽ trả tiền phòng.",
+        "Ghi các khoản phí như tiền phòng, đồ ăn, đồ uống hoặc điện thoại vào sổ bằng tay hoặc trên máy tính.",
+        "Giao chìa khoá phòng và hướng dẫn nhân viên hành lý đưa khách lên phòng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/25c0b413-f474-42fa-be01-20289d2634c4",
+          "name": "Đón khách nhận phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+          "name": "Giới thiệu tiện ích nơi lưu trú",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+          "name": "Bàn giao khu vực phục vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+          "name": "Làm thủ tục trả phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/25c0b413-f474-42fa-be01-20289d2634c4",
+          "name": "Đón khách nhận phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-43-4081.00",
+          "name": "Lễ tân khách sạn"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3012.00",
+          "name": "Quản lý hành chính"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-41-2031.00",
+      "name": "Nhân viên bán hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-2031.00",
+      "name": "Tiếp viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-9032.00",
+      "name": "Nhân viên tổ chức hoạt động vui chơi giải trí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9081.00",
+      "name": "Quản lý khách sạn, khu nghỉ dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 7500000,
+    "median": 8500000,
+    "high": 10500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 104,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+      "name": "Xử lý đặt chỗ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+      "name": "Cung cấp thông tin du lịch",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/012f9ad1-b95b-42f1-b2c7-3793cdbce443",
+      "name": "Giới thiệu tiện ích nơi lưu trú",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/46e8d7a2-5d09-4020-84a8-993778db3bc3",
+      "name": "Bàn giao khu vực phục vụ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+      "name": "Lưu hồ sơ khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b83669f2-bf53-47ed-af9f-397c5f2dfd4d",
+      "name": "Làm thủ tục trả phòng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+      "name": "Xử lý thanh toán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/25c0b413-f474-42fa-be01-20289d2634c4",
+      "name": "Đón khách nhận phòng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+      "name": "Chào đón khách",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.92
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.443
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.158
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.071
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.187
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.379
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.419
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

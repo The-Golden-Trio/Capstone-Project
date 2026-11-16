@@ -1,0 +1,826 @@
+{
+  "code": "DATA_DA",
+  "name": "Chuyên viên phân tích dữ liệu",
+  "nameEn": "Data Analyst",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Chuyên viên phân tích dữ liệu trả lời câu hỏi kinh doanh bằng số liệu: lấy dữ liệu bằng SQL, làm sạch, phân tích, dựng dashboard trên công cụ như Power BI hay Tableau, và trình bày kết luận cho các phòng ban. Nghề dùng ít mã hơn các nghề kỹ thuật khác nhưng cần giao tiếp và hiểu nghiệp vụ. Ngân hàng và công ty sản phẩm tuyển nhiều.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Có lúc bị kỳ vọng dùng số liệu để chứng minh điều cấp trên đã tin sẵn.",
+    "Nhiều thời gian dành cho dữ liệu bẩn, thiếu, hoặc mỗi phòng ban đưa một con số khác nhau.",
+    "Dashboard làm công phu vẫn có thể không ai dùng.",
+    "Trong khảo sát của ITviec, môi trường nhiều chính trị nội bộ là lý do nghỉ việc hay gặp nhất."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "33% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "9% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 45
+    },
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 40
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Khoa học dữ liệu",
+      "Hệ thống thông tin quản lý",
+      "Thống kê"
+    ],
+    "vocational": ["Xử lý dữ liệu", "Hệ thống thông tin kinh tế"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Data Analyst Intern",
+      "years": "0",
+      "coreOutput": "Làm sạch dữ liệu và tạo báo cáo/dashboard đơn giản theo template có sẵn dưới sự hướng dẫn trực tiếp, chưa tự đề xuất chỉ số hay cách phân tích.",
+      "tasks": [],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher Data Analyst",
+      "years": "0-1",
+      "coreOutput": "Tự viết được truy vấn SQL cho yêu cầu báo cáo rõ ràng, tạo dashboard cơ bản trên công cụ BI (Power BI/Tableau/Looker), mọi kết luận phân tích đều cần review.",
+      "tasks": [
+        "Trích xuất dữ liệu bằng SQL cơ bản",
+        "Hỗ trợ chuẩn bị báo cáo định kỳ trên Excel/Power BI",
+        "Làm sạch dữ liệu lỗi"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior Data Analyst",
+      "years": "1-2",
+      "coreOutput": "Tự thực hiện một phân tích trọn vẹn từ truy vấn dữ liệu tới trình bày kết luận cho một câu hỏi nghiệp vụ cụ thể đã được xác định sẵn.",
+      "tasks": [
+        "Xây dựng các dashboard tự động hóa",
+        "Phân tích nguyên nhân biến động các chỉ số kinh doanh",
+        "Trình bày insight cho stakeholders"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc",
+          "name": "Tích hợp dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec",
+          "name": "Thiết lập quy trình dữ liệu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle Data Analyst",
+      "years": "2-4",
+      "coreOutput": "Tự đề xuất chỉ số và cách đo lường cho một mảng nghiệp vụ, xây dashboard tự phục vụ (self-service) cho stakeholder, làm việc trực tiếp với phòng ban nghiệp vụ.",
+      "tasks": [
+        "Thiết kế mô hình dữ liệu cho phòng ban",
+        "Đề xuất chiến lược kinh doanh/sản phẩm dựa trên dữ liệu",
+        "Định hướng và chuẩn hóa metric toàn công ty"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc",
+          "name": "Tích hợp dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec",
+          "name": "Thiết lập quy trình dữ liệu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc",
+          "name": "Tích hợp dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec",
+          "name": "Thiết lập quy trình dữ liệu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Data Analyst",
+      "years": "4-7",
+      "coreOutput": "Tự chủ toàn bộ khung phân tích cho một domain nghiệp vụ lớn, tư vấn quyết định kinh doanh dựa trên dữ liệu, mentor DA cấp dưới, làm việc trực tiếp với lãnh đạo phòng ban.",
+      "tasks": [
+        "Dẫn dắt dự án phân tích dữ liệu rủi ro thẻ",
+        "Xây dựng mô hình dữ liệu quy mô lớn",
+        "Mentorship các bạn DA Junior"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc",
+          "name": "Tích hợp dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec",
+          "name": "Thiết lập quy trình dữ liệu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc",
+          "name": "Tích hợp dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec",
+          "name": "Thiết lập quy trình dữ liệu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Lead / Principal Data Analyst",
+      "years": "6-10",
+      "coreOutput": "Đặt chuẩn phân tích và công cụ BI cho toàn tổ chức, dẫn dắt đội DA — đây gần như là trần của title DA thuần tại VN; band cao hơn thường đổi sang DATA_PM hoặc DATA_GOV.",
+      "tasks": [],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc",
+          "name": "Tích hợp dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec",
+          "name": "Thiết lập quy trình dữ liệu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+          "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "name": "Ngôn ngữ truy vấn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+          "name": "Lấy mẫu dữ liệu thống kê",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+          "name": "Kỹ thuật trình bày trực quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+          "name": "Các loại tài liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+          "name": "Dữ liệu phi cấu trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+          "name": "Chuẩn hoá dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc",
+          "name": "Tích hợp dữ liệu CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec",
+          "name": "Thiết lập quy trình dữ liệu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "DATA_DA",
+          "name": "Chuyên viên phân tích dữ liệu"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_ngang",
+      "label": "Chuyển ngang",
+      "roles": [
+        {
+          "code": "DATA_AI",
+          "name": "Kỹ sư trí tuệ nhân tạo"
+        },
+        {
+          "code": "DATA_DE",
+          "name": "Kỹ sư dữ liệu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "DATA_DE",
+      "name": "Kỹ sư dữ liệu",
+      "why": "Cùng chuỗi dữ liệu: DA phân tích, DE xây đường ống"
+    },
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "why": "Cùng nền thống kê; AI đi sâu vào mô hình hoá"
+    },
+    {
+      "code": "PROD_BA",
+      "name": "Chuyên viên phân tích nghiệp vụ / BA",
+      "why": "Cùng là cầu nối nghiệp vụ: DA làm với số liệu, BA làm với quy trình"
+    },
+    {
+      "code": "INFRA_ERP",
+      "name": "Chuyên viên tư vấn giải pháp ERP",
+      "why": "Cùng làm việc với dữ liệu nghiệp vụ doanh nghiệp"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 40650000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "1-2 năm",
+        "median": 23800000
+      },
+      {
+        "years": "5-8 năm",
+        "median": 42500000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 11,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/99207709-d076-4cce-ba38-e90d3bb28806",
+      "name": "Ngôn ngữ truy vấn RDF (SPARQL)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+      "name": "Ngôn ngữ truy vấn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4a193795-fa63-414e-9f2e-bfdb3924571e",
+      "name": "Lấy mẫu dữ liệu thống kê",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213",
+      "name": "Kỹ thuật trình bày trực quan",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/327d15c8-29ff-4ad4-a4fe-6536d777a45f",
+      "name": "Các loại tài liệu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c5e8abde-d2ba-4e8e-a65e-720b71180666",
+      "name": "Dữ liệu phi cấu trúc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/07889c08-7220-47c8-96f7-6068fbea00dc",
+      "name": "Chuẩn hoá dữ liệu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+      "name": "Tính toán toán học phân tích",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/46ec0033-3c71-415e-bcff-b065675ba2dc",
+      "name": "Tích hợp dữ liệu CNTT",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2daec0e6-f0c1-43e8-8178-aedba99130ec",
+      "name": "Thiết lập quy trình dữ liệu",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.831
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.26
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.234
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.151
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.259
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.387
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.604
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

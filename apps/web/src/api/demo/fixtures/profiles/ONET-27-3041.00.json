@@ -1,0 +1,857 @@
+{
+  "code": "ONET-27-3041.00",
+  "name": "Biên tập viên",
+  "nameEn": "Editors",
+  "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+  "regionId": "sang_tao",
+  "isIt": false,
+  "summary": "Lên kế hoạch, điều phối, sửa hoặc biên tập văn bản. Có thể xem xét đề xuất và bản thảo để cân nhắc xuất bản. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần sáng tạo và tự do thể hiện ý tưởng, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Công việc lặp lại nhiều.",
+    "Ngồi gần như cả ngày.",
+    "Thường xuyên phải làm gấp cho kịp hạn.",
+    "Lặp đi lặp lại cùng một động tác."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "31% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "31% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Toà soạn báo, đài phát thanh truyền hình",
+      "weight": 65
+    },
+    {
+      "name": "Agency marketing, quảng cáo, sự kiện",
+      "weight": 35
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Báo chí học", "Xuất bản", "Văn học"],
+    "vocational": ["Xuất bản"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh biên tập",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra sự kiện, ngày tháng và số liệu bằng nguồn tham khảo chuẩn.",
+        "Viết nội dung như tít, tin, bài, xã luận hoặc bản tin.",
+        "Đọc bản thảo hoặc bản in thử để phát hiện và sửa lỗi chính tả, dấu câu và cú pháp.",
+        "Chuẩn bị, viết lại và biên tập bản thảo cho dễ đọc, hoặc giám sát người làm việc này.",
+        "Phát triển ý tưởng bài viết, nội dung có tính tới sức hút với người đọc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Biên tập viên tập sự",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra sự kiện, ngày tháng và số liệu bằng nguồn tham khảo chuẩn.",
+        "Viết nội dung như tít, tin, bài, xã luận hoặc bản tin.",
+        "Đọc bản thảo hoặc bản in thử để phát hiện và sửa lỗi chính tả, dấu câu và cú pháp.",
+        "Chuẩn bị, viết lại và biên tập bản thảo cho dễ đọc, hoặc giám sát người làm việc này.",
+        "Phát triển ý tưởng bài viết, nội dung có tính tới sức hút với người đọc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Biên tập viên hạng III",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra sự kiện, ngày tháng và số liệu bằng nguồn tham khảo chuẩn.",
+        "Viết nội dung như tít, tin, bài, xã luận hoặc bản tin.",
+        "Đọc bản thảo hoặc bản in thử để phát hiện và sửa lỗi chính tả, dấu câu và cú pháp.",
+        "Chuẩn bị, viết lại và biên tập bản thảo cho dễ đọc, hoặc giám sát người làm việc này.",
+        "Phát triển ý tưởng bài viết, nội dung có tính tới sức hút với người đọc."
+      ],
+      "focus": ["giao_tiep_hop_tac", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Biên tập viên chính chuyên mục",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra sự kiện, ngày tháng và số liệu bằng nguồn tham khảo chuẩn.",
+        "Viết nội dung như tít, tin, bài, xã luận hoặc bản tin.",
+        "Đọc bản thảo hoặc bản in thử để phát hiện và sửa lỗi chính tả, dấu câu và cú pháp.",
+        "Chuẩn bị, viết lại và biên tập bản thảo cho dễ đọc, hoặc giám sát người làm việc này.",
+        "Phát triển ý tưởng bài viết, nội dung có tính tới sức hút với người đọc."
+      ],
+      "focus": ["giao_tiep_hop_tac", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e70e248e-9fed-4e22-8fb1-87567441ce0c",
+          "name": "Dùng từ điển",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Biên tập viên hạng II",
+      "years": "7–12",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra sự kiện, ngày tháng và số liệu bằng nguồn tham khảo chuẩn.",
+        "Viết nội dung như tít, tin, bài, xã luận hoặc bản tin.",
+        "Đọc bản thảo hoặc bản in thử để phát hiện và sửa lỗi chính tả, dấu câu và cú pháp.",
+        "Chuẩn bị, viết lại và biên tập bản thảo cho dễ đọc, hoặc giám sát người làm việc này.",
+        "Phát triển ý tưởng bài viết, nội dung có tính tới sức hút với người đọc."
+      ],
+      "focus": ["giao_tiep_hop_tac", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e70e248e-9fed-4e22-8fb1-87567441ce0c",
+          "name": "Dùng từ điển",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e70e248e-9fed-4e22-8fb1-87567441ce0c",
+          "name": "Dùng từ điển",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Biên tập viên hạng I / Thư ký toà soạn",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra sự kiện, ngày tháng và số liệu bằng nguồn tham khảo chuẩn.",
+        "Viết nội dung như tít, tin, bài, xã luận hoặc bản tin.",
+        "Đọc bản thảo hoặc bản in thử để phát hiện và sửa lỗi chính tả, dấu câu và cú pháp.",
+        "Chuẩn bị, viết lại và biên tập bản thảo cho dễ đọc, hoặc giám sát người làm việc này.",
+        "Phát triển ý tưởng bài viết, nội dung có tính tới sức hút với người đọc."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e70e248e-9fed-4e22-8fb1-87567441ce0c",
+          "name": "Dùng từ điển",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e70e248e-9fed-4e22-8fb1-87567441ce0c",
+          "name": "Dùng từ điển",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Phó Tổng biên tập",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra sự kiện, ngày tháng và số liệu bằng nguồn tham khảo chuẩn.",
+        "Viết nội dung như tít, tin, bài, xã luận hoặc bản tin.",
+        "Đọc bản thảo hoặc bản in thử để phát hiện và sửa lỗi chính tả, dấu câu và cú pháp.",
+        "Chuẩn bị, viết lại và biên tập bản thảo cho dễ đọc, hoặc giám sát người làm việc này.",
+        "Phát triển ý tưởng bài viết, nội dung có tính tới sức hút với người đọc."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e70e248e-9fed-4e22-8fb1-87567441ce0c",
+          "name": "Dùng từ điển",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+          "name": "Ngữ pháp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+          "name": "Chính tả",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+          "name": "Góp ý sửa bản thảo",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+          "name": "Kỹ thuật viết",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+          "name": "Theo dõi sửa đổi khi biên tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+          "name": "Sắp chữ và dàn trang in (typography)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+          "name": "Báo chí số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e70e248e-9fed-4e22-8fb1-87567441ce0c",
+          "name": "Dùng từ điển",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-27-3043.00",
+      "name": "Nhà văn, người viết nội dung",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-4031.00",
+      "name": "Nhiếp ảnh, quay phim và dựng phim",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-3023.00",
+      "name": "Phóng viên, nhà báo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1024.00",
+      "name": "Nhà thiết kế đồ hoạ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10000000,
+    "median": 11500000,
+    "high": 13500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 149,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/d4ae9564-0b61-4aa0-9df0-d4fdc969fd6f",
+      "name": "Ngữ pháp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/be3f635b-b400-4eb3-b4cc-c44a34f26eae",
+      "name": "Chính tả",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2be39143-3cf8-4b02-af8f-99e3dfb2fc24",
+      "name": "Góp ý sửa bản thảo",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/91dd8397-063d-499c-83b9-0603a10d94ac",
+      "name": "Kỹ thuật viết",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e3eb64db-bc0b-4cc0-bd31-5feb94b2ef50",
+      "name": "Theo dõi sửa đổi khi biên tập",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+      "name": "Luật bản quyền",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/080a3bf6-c8e8-481e-b97e-8fbc964ebab7",
+      "name": "Sắp chữ và dàn trang in (typography)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/16e462b2-b8dd-4842-8c31-71d0fb4be474",
+      "name": "Báo chí số",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e70e248e-9fed-4e22-8fb1-87567441ce0c",
+      "name": "Dùng từ điển",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.283
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.15
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.031
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.201
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.254
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.385
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.733
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,942 @@
+{
+  "code": "ONET-13-1041.00",
+  "name": "Chuyên viên tuân thủ và quản lý rủi ro",
+  "nameEn": "Compliance Officers",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Kiểm tra, đánh giá và điều tra việc đáp ứng điều kiện hoặc tuân thủ luật và quy định về giấy phép, hợp đồng, và các hoạt động thanh tra, phân tích tuân thủ khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Nhiều việc phải chính xác tuyệt đối; một sai sót nhỏ về số liệu hay quy định có thể gây hậu quả lớn.",
+    "Áp lực cao vào các kỳ chốt sổ, quyết toán hoặc hạn nộp báo cáo."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "43% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "24% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Hội sở ngân hàng",
+      "weight": 55
+    },
+    {
+      "name": "Văn phòng công ty nước ngoài, đa quốc gia",
+      "weight": 25
+    },
+    {
+      "name": "Công ty bảo hiểm",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Luật kinh tế", "Tài chính - Ngân hàng", "Kiểm toán"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh tuân thủ và quản lý rủi ro",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Cảnh báo người vi phạm về lỗi hoặc mức phạt.",
+        "Xem xét hồ sơ, giấy tờ để thu thập thông tin về điều kiện hoặc trách nhiệm pháp lý.",
+        "Tư vấn cho người được cấp phép và các cá nhân, tổ chức về quy định cấp phép, giấy phép.",
+        "Lập báo cáo về hoạt động, đánh giá, kiến nghị hoặc quyết định.",
+        "Báo cáo vi phạm luật hoặc quy định cho cơ quan có thẩm quyền."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên tuân thủ và quản lý rủi ro",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Cảnh báo người vi phạm về lỗi hoặc mức phạt.",
+        "Xem xét hồ sơ, giấy tờ để thu thập thông tin về điều kiện hoặc trách nhiệm pháp lý.",
+        "Tư vấn cho người được cấp phép và các cá nhân, tổ chức về quy định cấp phép, giấy phép.",
+        "Lập báo cáo về hoạt động, đánh giá, kiến nghị hoặc quyết định.",
+        "Báo cáo vi phạm luật hoặc quy định cho cơ quan có thẩm quyền."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên tuân thủ và quản lý rủi ro",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Cảnh báo người vi phạm về lỗi hoặc mức phạt.",
+        "Xem xét hồ sơ, giấy tờ để thu thập thông tin về điều kiện hoặc trách nhiệm pháp lý.",
+        "Tư vấn cho người được cấp phép và các cá nhân, tổ chức về quy định cấp phép, giấy phép.",
+        "Lập báo cáo về hoạt động, đánh giá, kiến nghị hoặc quyết định.",
+        "Báo cáo vi phạm luật hoặc quy định cho cơ quan có thẩm quyền."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chuyên viên chính tuân thủ và quản lý rủi ro",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Cảnh báo người vi phạm về lỗi hoặc mức phạt.",
+        "Xem xét hồ sơ, giấy tờ để thu thập thông tin về điều kiện hoặc trách nhiệm pháp lý.",
+        "Tư vấn cho người được cấp phép và các cá nhân, tổ chức về quy định cấp phép, giấy phép.",
+        "Lập báo cáo về hoạt động, đánh giá, kiến nghị hoặc quyết định.",
+        "Báo cáo vi phạm luật hoặc quy định cho cơ quan có thẩm quyền."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chuyên viên cao cấp tuân thủ và quản lý rủi ro (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Cảnh báo người vi phạm về lỗi hoặc mức phạt.",
+        "Xem xét hồ sơ, giấy tờ để thu thập thông tin về điều kiện hoặc trách nhiệm pháp lý.",
+        "Tư vấn cho người được cấp phép và các cá nhân, tổ chức về quy định cấp phép, giấy phép.",
+        "Lập báo cáo về hoạt động, đánh giá, kiến nghị hoặc quyết định.",
+        "Báo cáo vi phạm luật hoặc quy định cho cơ quan có thẩm quyền."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm / Giám sát tuân thủ và quản lý rủi ro",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Cảnh báo người vi phạm về lỗi hoặc mức phạt.",
+        "Xem xét hồ sơ, giấy tờ để thu thập thông tin về điều kiện hoặc trách nhiệm pháp lý.",
+        "Tư vấn cho người được cấp phép và các cá nhân, tổ chức về quy định cấp phép, giấy phép.",
+        "Lập báo cáo về hoạt động, đánh giá, kiến nghị hoặc quyết định.",
+        "Báo cáo vi phạm luật hoặc quy định cho cơ quan có thẩm quyền."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng tuân thủ và quản lý rủi ro",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Cảnh báo người vi phạm về lỗi hoặc mức phạt.",
+        "Xem xét hồ sơ, giấy tờ để thu thập thông tin về điều kiện hoặc trách nhiệm pháp lý.",
+        "Tư vấn cho người được cấp phép và các cá nhân, tổ chức về quy định cấp phép, giấy phép.",
+        "Lập báo cáo về hoạt động, đánh giá, kiến nghị hoặc quyết định.",
+        "Báo cáo vi phạm luật hoặc quy định cho cơ quan có thẩm quyền."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+          "name": "Chuyển giao rủi ro",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "name": "Nhận diện rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "name": "Kiểm toán nội bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+          "name": "Phát triển bền vững doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-13-1041.00",
+          "name": "Chuyên viên tuân thủ và quản lý rủi ro"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-11-9199.01",
+          "name": "Trưởng phòng pháp chế, tuân thủ"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-33-3021.00",
+      "name": "Điều tra viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2011.00",
+      "name": "Kế toán, kiểm toán viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "INFRA_ERP",
+      "name": "Chuyên viên tư vấn giải pháp ERP",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4031.00",
+      "name": "Cán bộ tiếp nhận hồ sơ hành chính công",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 12500000,
+    "median": 14000000,
+    "high": 16500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 69,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+      "name": "Các loại bảo hiểm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+      "name": "Trách nhiệm xã hội doanh nghiệp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0d564cb6-98ef-4c18-9392-dd69e6724cbf",
+      "name": "Chuyển giao rủi ro",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+      "name": "Tuân thủ tiêu chuẩn công ty",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+      "name": "Nhận diện rủi ro",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+      "name": "Tư vấn quản lý rủi ro",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+      "name": "Dự báo rủi ro tổ chức",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+      "name": "Kiểm toán nội bộ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f5bf985b-ac78-4d23-881a-18a359234528",
+      "name": "Phát triển bền vững doanh nghiệp",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+      "name": "Tuân thủ quy định pháp luật",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 1.065
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.754
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.685
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.524
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.373
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.084
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.04
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

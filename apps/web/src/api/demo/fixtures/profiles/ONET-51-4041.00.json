@@ -1,0 +1,835 @@
+{
+  "code": "ONET-51-4041.00",
+  "name": "Thợ cơ khí, tiện phay CNC",
+  "nameEn": "Machinists",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Cài đặt và vận hành nhiều loại máy công cụ để làm chi tiết và dụng cụ chính xác bằng kim loại. Gồm cả thợ làm dụng cụ đo chính xác. Có thể chế tạo, sửa chi tiết để làm hoặc sửa máy công cụ, bảo trì máy công nghiệp, vận dụng kiến thức cơ học, toán, tính chất kim loại, lấy dấu và gia công. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Nhịp làm việc do tốc độ máy móc quyết định.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt.",
+    "Làm cạnh máy móc hoặc dụng cụ nguy hiểm, có nguy cơ tai nạn."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "53% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "13% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 45
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 40
+    },
+    {
+      "name": "Xưởng nhỏ, cơ sở gia đình, làng nghề",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Cắt gọt kim loại", "Công nghệ CNC nâng cao"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học việc cơ khí CNC",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Tính kích thước và dung sai bằng dụng cụ đo như panme, thước cặp.",
+        "Gia công chi tiết theo bản vẽ bằng máy công cụ như máy tiện, phay, bào hoặc mài.",
+        "Đo, kiểm tra hoặc thử sản phẩm hoàn thiện để phát hiện lỗi và bảo đảm đúng yêu cầu, bằng dụng cụ đo chính xác.",
+        "Cài đặt, chỉnh hoặc vận hành máy công cụ cơ bản hoặc chuyên dụng để gia công chính xác.",
+        "Lập trình máy tính hoặc thiết bị điện tử như máy công cụ điều khiển số (CNC)."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ cơ khí CNC bậc 1",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Tính kích thước và dung sai bằng dụng cụ đo như panme, thước cặp.",
+        "Gia công chi tiết theo bản vẽ bằng máy công cụ như máy tiện, phay, bào hoặc mài.",
+        "Đo, kiểm tra hoặc thử sản phẩm hoàn thiện để phát hiện lỗi và bảo đảm đúng yêu cầu, bằng dụng cụ đo chính xác.",
+        "Cài đặt, chỉnh hoặc vận hành máy công cụ cơ bản hoặc chuyên dụng để gia công chính xác.",
+        "Lập trình máy tính hoặc thiết bị điện tử như máy công cụ điều khiển số (CNC)."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ cơ khí CNC bậc 2",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Tính kích thước và dung sai bằng dụng cụ đo như panme, thước cặp.",
+        "Gia công chi tiết theo bản vẽ bằng máy công cụ như máy tiện, phay, bào hoặc mài.",
+        "Đo, kiểm tra hoặc thử sản phẩm hoàn thiện để phát hiện lỗi và bảo đảm đúng yêu cầu, bằng dụng cụ đo chính xác.",
+        "Cài đặt, chỉnh hoặc vận hành máy công cụ cơ bản hoặc chuyên dụng để gia công chính xác.",
+        "Lập trình máy tính hoặc thiết bị điện tử như máy công cụ điều khiển số (CNC)."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f34107c-8db0-4b00-84d8-3f64e400c80c",
+          "name": "Tra cứu tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "name": "Dùng phần mềm CAM",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7aa52bdc-9c56-4341-be65-e8e30f64403f",
+          "name": "Giám sát máy tự động",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ cơ khí CNC bậc 3",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Tính kích thước và dung sai bằng dụng cụ đo như panme, thước cặp.",
+        "Gia công chi tiết theo bản vẽ bằng máy công cụ như máy tiện, phay, bào hoặc mài.",
+        "Đo, kiểm tra hoặc thử sản phẩm hoàn thiện để phát hiện lỗi và bảo đảm đúng yêu cầu, bằng dụng cụ đo chính xác.",
+        "Cài đặt, chỉnh hoặc vận hành máy công cụ cơ bản hoặc chuyên dụng để gia công chính xác.",
+        "Lập trình máy tính hoặc thiết bị điện tử như máy công cụ điều khiển số (CNC)."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f34107c-8db0-4b00-84d8-3f64e400c80c",
+          "name": "Tra cứu tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "name": "Dùng phần mềm CAM",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7aa52bdc-9c56-4341-be65-e8e30f64403f",
+          "name": "Giám sát máy tự động",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f34107c-8db0-4b00-84d8-3f64e400c80c",
+          "name": "Tra cứu tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "name": "Dùng phần mềm CAM",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7aa52bdc-9c56-4341-be65-e8e30f64403f",
+          "name": "Giám sát máy tự động",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Thợ cơ khí CNC bậc 4",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Tính kích thước và dung sai bằng dụng cụ đo như panme, thước cặp.",
+        "Gia công chi tiết theo bản vẽ bằng máy công cụ như máy tiện, phay, bào hoặc mài.",
+        "Đo, kiểm tra hoặc thử sản phẩm hoàn thiện để phát hiện lỗi và bảo đảm đúng yêu cầu, bằng dụng cụ đo chính xác.",
+        "Cài đặt, chỉnh hoặc vận hành máy công cụ cơ bản hoặc chuyên dụng để gia công chính xác.",
+        "Lập trình máy tính hoặc thiết bị điện tử như máy công cụ điều khiển số (CNC)."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f34107c-8db0-4b00-84d8-3f64e400c80c",
+          "name": "Tra cứu tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "name": "Dùng phần mềm CAM",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7aa52bdc-9c56-4341-be65-e8e30f64403f",
+          "name": "Giám sát máy tự động",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f34107c-8db0-4b00-84d8-3f64e400c80c",
+          "name": "Tra cứu tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "name": "Dùng phần mềm CAM",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7aa52bdc-9c56-4341-be65-e8e30f64403f",
+          "name": "Giám sát máy tự động",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Thợ cơ khí CNC bậc 5 / tổ trưởng",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Tính kích thước và dung sai bằng dụng cụ đo như panme, thước cặp.",
+        "Gia công chi tiết theo bản vẽ bằng máy công cụ như máy tiện, phay, bào hoặc mài.",
+        "Đo, kiểm tra hoặc thử sản phẩm hoàn thiện để phát hiện lỗi và bảo đảm đúng yêu cầu, bằng dụng cụ đo chính xác.",
+        "Cài đặt, chỉnh hoặc vận hành máy công cụ cơ bản hoặc chuyên dụng để gia công chính xác.",
+        "Lập trình máy tính hoặc thiết bị điện tử như máy công cụ điều khiển số (CNC)."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f34107c-8db0-4b00-84d8-3f64e400c80c",
+          "name": "Tra cứu tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "name": "Dùng phần mềm CAM",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7aa52bdc-9c56-4341-be65-e8e30f64403f",
+          "name": "Giám sát máy tự động",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+          "name": "Loại bỏ phôi không đạt",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+          "name": "Lấy phôi đã gia công ra",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+          "name": "Dùng công cụ tự sinh mã từ đặc tả",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+          "name": "Cấp phôi cho máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+          "name": "Kiểm soát quá trình bằng thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f34107c-8db0-4b00-84d8-3f64e400c80c",
+          "name": "Tra cứu tài liệu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "name": "Dùng phần mềm CAM",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7aa52bdc-9c56-4341-be65-e8e30f64403f",
+          "name": "Giám sát máy tự động",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-4041.00",
+          "name": "Thợ cơ khí, tiện phay CNC"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-7011.00",
+      "name": "Thợ mộc đồ gỗ nội thất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4121.00",
+      "name": "Thợ hàn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-6031.00",
+      "name": "Công nhân may mặc, da giày",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10500000,
+    "median": 12500000,
+    "high": 15600000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 128,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b",
+      "name": "Loại bỏ phôi không đạt",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/357e1729-e2a8-49f4-8b42-dc8b278320fa",
+      "name": "Lấy phôi đã gia công ra",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7d10fcb2-b368-48ab-996b-7c9fafcf68ed",
+      "name": "Dùng công cụ tự sinh mã từ đặc tả",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9ea652f6-accf-45bb-b9a8-590f06f7bd51",
+      "name": "Cấp phôi cho máy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0c77bcd5-b94a-475d-98e9-5a4327e4d726",
+      "name": "Kiểm soát quá trình bằng thống kê",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+      "name": "Bảo dưỡng máy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+      "name": "Quy trình chế tạo",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9f34107c-8db0-4b00-84d8-3f64e400c80c",
+      "name": "Tra cứu tài liệu kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+      "name": "Dùng phần mềm CAM",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7aa52bdc-9c56-4341-be65-e8e30f64403f",
+      "name": "Giám sát máy tự động",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.576
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.589
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.71
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.75
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.992
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -1.093
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.117
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

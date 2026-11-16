@@ -1,0 +1,626 @@
+{
+  "code": "ONET-43-5021.00",
+  "name": "Nhân viên giao hàng (shipper)",
+  "nameEn": "Couriers and Messengers",
+  "group": "Văn phòng và hỗ trợ hành chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Nhận và giao thư từ, tài liệu, bưu kiện và các món khác giữa các phòng ban hoặc trực tiếp tới doanh nghiệp khác, đi bộ, xe đạp, xe máy, ô tô hoặc phương tiện công cộng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Lặp đi lặp lại cùng một động tác.",
+    "Thường xuyên phải làm gấp cho kịp hạn.",
+    "Tiếp xúc với nhiệt độ rất nóng hoặc rất lạnh."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít làm việc qua email.",
+    "22% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "14% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Giao hàng, xe công nghệ",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Shipper part-time/thời vụ",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Giao và nhận hồ sơ bệnh án, mẫu xét nghiệm và thuốc giữa bệnh viện và các cơ sở y tế.",
+        "Đi bộ, đi xe đạp, lái xe hoặc đi phương tiện công cộng tới nơi giao.",
+        "Xếp hàng lên xe theo danh sách, bảo đảm xếp đúng và cẩn thận với hàng nguy hiểm.",
+        "Nhận hàng cần giao và thông tin người nhận như tên, địa chỉ, số điện thoại và yêu cầu giao, qua điện thoại, bộ đàm hoặc trực tiếp.",
+        "Giao thư từ và hàng như báo, tài liệu, bưu kiện giữa các phòng ban, tới doanh nghiệp khác và nhà riêng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên giao hàng",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Giao và nhận hồ sơ bệnh án, mẫu xét nghiệm và thuốc giữa bệnh viện và các cơ sở y tế.",
+        "Đi bộ, đi xe đạp, lái xe hoặc đi phương tiện công cộng tới nơi giao.",
+        "Xếp hàng lên xe theo danh sách, bảo đảm xếp đúng và cẩn thận với hàng nguy hiểm.",
+        "Nhận hàng cần giao và thông tin người nhận như tên, địa chỉ, số điện thoại và yêu cầu giao, qua điện thoại, bộ đàm hoặc trực tiếp.",
+        "Giao thư từ và hàng như báo, tài liệu, bưu kiện giữa các phòng ban, tới doanh nghiệp khác và nhà riêng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a420a3ed-32a1-4ab8-b590-cba5a89bc8f8",
+          "name": "Phân tích phương án đi lại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04",
+          "name": "Giữ thư và bưu kiện nguyên vẹn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb1bae44-1ca4-4937-84e1-4abef47bf584",
+          "name": "Tổ chức phát thư",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Nhân viên giao hàng tuyến cố định/xe tải nhẹ",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Giao và nhận hồ sơ bệnh án, mẫu xét nghiệm và thuốc giữa bệnh viện và các cơ sở y tế.",
+        "Đi bộ, đi xe đạp, lái xe hoặc đi phương tiện công cộng tới nơi giao.",
+        "Xếp hàng lên xe theo danh sách, bảo đảm xếp đúng và cẩn thận với hàng nguy hiểm.",
+        "Nhận hàng cần giao và thông tin người nhận như tên, địa chỉ, số điện thoại và yêu cầu giao, qua điện thoại, bộ đàm hoặc trực tiếp.",
+        "Giao thư từ và hàng như báo, tài liệu, bưu kiện giữa các phòng ban, tới doanh nghiệp khác và nhà riêng."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a420a3ed-32a1-4ab8-b590-cba5a89bc8f8",
+          "name": "Phân tích phương án đi lại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04",
+          "name": "Giữ thư và bưu kiện nguyên vẹn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb1bae44-1ca4-4937-84e1-4abef47bf584",
+          "name": "Tổ chức phát thư",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a420a3ed-32a1-4ab8-b590-cba5a89bc8f8",
+          "name": "Phân tích phương án đi lại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04",
+          "name": "Giữ thư và bưu kiện nguyên vẹn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb1bae44-1ca4-4937-84e1-4abef47bf584",
+          "name": "Tổ chức phát thư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd6ab598-d7b1-4cef-9e54-e8f1a725881c",
+          "name": "Phân biệt loại bưu kiện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Trưởng bưu cục/trưởng điểm giao nhận",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Giao và nhận hồ sơ bệnh án, mẫu xét nghiệm và thuốc giữa bệnh viện và các cơ sở y tế.",
+        "Đi bộ, đi xe đạp, lái xe hoặc đi phương tiện công cộng tới nơi giao.",
+        "Xếp hàng lên xe theo danh sách, bảo đảm xếp đúng và cẩn thận với hàng nguy hiểm.",
+        "Nhận hàng cần giao và thông tin người nhận như tên, địa chỉ, số điện thoại và yêu cầu giao, qua điện thoại, bộ đàm hoặc trực tiếp.",
+        "Giao thư từ và hàng như báo, tài liệu, bưu kiện giữa các phòng ban, tới doanh nghiệp khác và nhà riêng."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a420a3ed-32a1-4ab8-b590-cba5a89bc8f8",
+          "name": "Phân tích phương án đi lại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04",
+          "name": "Giữ thư và bưu kiện nguyên vẹn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb1bae44-1ca4-4937-84e1-4abef47bf584",
+          "name": "Tổ chức phát thư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd6ab598-d7b1-4cef-9e54-e8f1a725881c",
+          "name": "Phân biệt loại bưu kiện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a420a3ed-32a1-4ab8-b590-cba5a89bc8f8",
+          "name": "Phân tích phương án đi lại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04",
+          "name": "Giữ thư và bưu kiện nguyên vẹn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb1bae44-1ca4-4937-84e1-4abef47bf584",
+          "name": "Tổ chức phát thư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd6ab598-d7b1-4cef-9e54-e8f1a725881c",
+          "name": "Phân biệt loại bưu kiện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Quản lý vùng giao nhận",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Giao và nhận hồ sơ bệnh án, mẫu xét nghiệm và thuốc giữa bệnh viện và các cơ sở y tế.",
+        "Đi bộ, đi xe đạp, lái xe hoặc đi phương tiện công cộng tới nơi giao.",
+        "Xếp hàng lên xe theo danh sách, bảo đảm xếp đúng và cẩn thận với hàng nguy hiểm.",
+        "Nhận hàng cần giao và thông tin người nhận như tên, địa chỉ, số điện thoại và yêu cầu giao, qua điện thoại, bộ đàm hoặc trực tiếp.",
+        "Giao thư từ và hàng như báo, tài liệu, bưu kiện giữa các phòng ban, tới doanh nghiệp khác và nhà riêng."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a420a3ed-32a1-4ab8-b590-cba5a89bc8f8",
+          "name": "Phân tích phương án đi lại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04",
+          "name": "Giữ thư và bưu kiện nguyên vẹn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb1bae44-1ca4-4937-84e1-4abef47bf584",
+          "name": "Tổ chức phát thư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd6ab598-d7b1-4cef-9e54-e8f1a725881c",
+          "name": "Phân biệt loại bưu kiện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+          "name": "Lái xe trong đô thị",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+          "name": "Lái xe hai bánh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a420a3ed-32a1-4ab8-b590-cba5a89bc8f8",
+          "name": "Phân tích phương án đi lại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04",
+          "name": "Giữ thư và bưu kiện nguyên vẹn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb1bae44-1ca4-4937-84e1-4abef47bf584",
+          "name": "Tổ chức phát thư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd6ab598-d7b1-4cef-9e54-e8f1a725881c",
+          "name": "Phân biệt loại bưu kiện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-43-5021.00",
+          "name": "Nhân viên giao hàng (shipper)"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3012.00",
+          "name": "Quản lý hành chính"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-5051.00",
+      "name": "Nhân viên bưu chính",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-5071.00",
+      "name": "Nhân viên kho và kế hoạch vật tư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-3032.00",
+      "name": "Tài xế xe tải",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1081.00",
+      "name": "Chuyên viên logistics và xuất nhập khẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 9000000,
+    "median": 10000000,
+    "high": 11500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 98,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+      "name": "Đọc tín hiệu giao thông",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2815f65d-6adb-46a6-8041-5768febf5580",
+      "name": "Lái xe trong đô thị",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e7f63440-6007-486b-948f-ea124839c418",
+      "name": "Lái xe hai bánh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a420a3ed-32a1-4ab8-b590-cba5a89bc8f8",
+      "name": "Phân tích phương án đi lại",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+      "name": "Dùng hệ thống thông tin địa lý (GIS)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2e2bde69-09df-45f7-88f4-a938717bee04",
+      "name": "Giữ thư và bưu kiện nguyên vẹn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fb1bae44-1ca4-4937-84e1-4abef47bf584",
+      "name": "Tổ chức phát thư",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fd6ab598-d7b1-4cef-9e54-e8f1a725881c",
+      "name": "Phân biệt loại bưu kiện",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.247
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.348
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.946
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -1.09
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -1.158
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -1.507
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -1.789
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,825 @@
+{
+  "code": "ONET-39-9031.00",
+  "name": "Huấn luyện viên thể hình",
+  "nameEn": "Exercise Trainers and Group Fitness Instructors",
+  "group": "Chăm sóc và dịch vụ cá nhân",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Hướng dẫn hoặc huấn luyện nhóm, cá nhân tập luyện để nâng cao thể lực. Làm mẫu kỹ thuật và tư thế, quan sát người tập và giải thích cách sửa để cải thiện kỹ năng. Xây dựng và áp dụng chương trình tập riêng cho từng người. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Hay phải cúi hoặc vặn người.",
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Phải đi lại hoặc chạy nhiều."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Được tự quyết nhiều trong công việc.",
+    "35% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "45% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Phòng gym, trung tâm thể hình",
+      "weight": 80
+    },
+    {
+      "name": "Khách sạn, resort 4–5 sao",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Giáo dục Thể chất", "Huấn luyện thể thao"],
+    "vocational": ["Quản lý, huấn luyện sức khỏe", "Huấn luyện thể thao"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh/huấn luyện viên sàn tập",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Quan sát người tập và chỉ ra cách sửa để cải thiện kỹ năng.",
+        "Đưa ra phương án thay thế trong buổi tập để phù hợp các mức thể lực khác nhau.",
+        "Theo dõi tiến bộ của người tập và điều chỉnh chương trình khi cần.",
+        "Lên bài tập, chọn nhạc và chọn động tác cho từng nhóm cơ theo khả năng và giới hạn của người tập.",
+        "Đánh giá khả năng, nhu cầu và thể trạng từng người, xây dựng chương trình tập đáp ứng yêu cầu riêng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Huấn luyện viên cá nhân (PT) mới",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Quan sát người tập và chỉ ra cách sửa để cải thiện kỹ năng.",
+        "Đưa ra phương án thay thế trong buổi tập để phù hợp các mức thể lực khác nhau.",
+        "Theo dõi tiến bộ của người tập và điều chỉnh chương trình khi cần.",
+        "Lên bài tập, chọn nhạc và chọn động tác cho từng nhóm cơ theo khả năng và giới hạn của người tập.",
+        "Đánh giá khả năng, nhu cầu và thể trạng từng người, xây dựng chương trình tập đáp ứng yêu cầu riêng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Huấn luyện viên cá nhân (PT)",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Quan sát người tập và chỉ ra cách sửa để cải thiện kỹ năng.",
+        "Đưa ra phương án thay thế trong buổi tập để phù hợp các mức thể lực khác nhau.",
+        "Theo dõi tiến bộ của người tập và điều chỉnh chương trình khi cần.",
+        "Lên bài tập, chọn nhạc và chọn động tác cho từng nhóm cơ theo khả năng và giới hạn của người tập.",
+        "Đánh giá khả năng, nhu cầu và thể trạng từng người, xây dựng chương trình tập đáp ứng yêu cầu riêng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586",
+          "name": "Áp dụng khoa học vận động vào giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/988c06ea-7ab9-4ee4-a64b-9e93f2527c6d",
+          "name": "Khuyến khích lối sống lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef07f206-1ea8-4dc6-a4b0-1b312a9db47c",
+          "name": "Thu thập thông tin thể lực của khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "PT cao cấp/master trainer",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Quan sát người tập và chỉ ra cách sửa để cải thiện kỹ năng.",
+        "Đưa ra phương án thay thế trong buổi tập để phù hợp các mức thể lực khác nhau.",
+        "Theo dõi tiến bộ của người tập và điều chỉnh chương trình khi cần.",
+        "Lên bài tập, chọn nhạc và chọn động tác cho từng nhóm cơ theo khả năng và giới hạn của người tập.",
+        "Đánh giá khả năng, nhu cầu và thể trạng từng người, xây dựng chương trình tập đáp ứng yêu cầu riêng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586",
+          "name": "Áp dụng khoa học vận động vào giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/988c06ea-7ab9-4ee4-a64b-9e93f2527c6d",
+          "name": "Khuyến khích lối sống lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef07f206-1ea8-4dc6-a4b0-1b312a9db47c",
+          "name": "Thu thập thông tin thể lực của khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586",
+          "name": "Áp dụng khoa học vận động vào giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/988c06ea-7ab9-4ee4-a64b-9e93f2527c6d",
+          "name": "Khuyến khích lối sống lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef07f206-1ea8-4dc6-a4b0-1b312a9db47c",
+          "name": "Thu thập thông tin thể lực của khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng bộ phận PT (fitness manager)",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Quan sát người tập và chỉ ra cách sửa để cải thiện kỹ năng.",
+        "Đưa ra phương án thay thế trong buổi tập để phù hợp các mức thể lực khác nhau.",
+        "Theo dõi tiến bộ của người tập và điều chỉnh chương trình khi cần.",
+        "Lên bài tập, chọn nhạc và chọn động tác cho từng nhóm cơ theo khả năng và giới hạn của người tập.",
+        "Đánh giá khả năng, nhu cầu và thể trạng từng người, xây dựng chương trình tập đáp ứng yêu cầu riêng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586",
+          "name": "Áp dụng khoa học vận động vào giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/988c06ea-7ab9-4ee4-a64b-9e93f2527c6d",
+          "name": "Khuyến khích lối sống lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef07f206-1ea8-4dc6-a4b0-1b312a9db47c",
+          "name": "Thu thập thông tin thể lực của khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586",
+          "name": "Áp dụng khoa học vận động vào giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/988c06ea-7ab9-4ee4-a64b-9e93f2527c6d",
+          "name": "Khuyến khích lối sống lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef07f206-1ea8-4dc6-a4b0-1b312a9db47c",
+          "name": "Thu thập thông tin thể lực của khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc câu lạc bộ/chuỗi phòng tập",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Quan sát người tập và chỉ ra cách sửa để cải thiện kỹ năng.",
+        "Đưa ra phương án thay thế trong buổi tập để phù hợp các mức thể lực khác nhau.",
+        "Theo dõi tiến bộ của người tập và điều chỉnh chương trình khi cần.",
+        "Lên bài tập, chọn nhạc và chọn động tác cho từng nhóm cơ theo khả năng và giới hạn của người tập.",
+        "Đánh giá khả năng, nhu cầu và thể trạng từng người, xây dựng chương trình tập đáp ứng yêu cầu riêng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586",
+          "name": "Áp dụng khoa học vận động vào giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/988c06ea-7ab9-4ee4-a64b-9e93f2527c6d",
+          "name": "Khuyến khích lối sống lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef07f206-1ea8-4dc6-a4b0-1b312a9db47c",
+          "name": "Thu thập thông tin thể lực của khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+          "name": "Chỉnh động tác dễ gây chấn thương",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+          "name": "Xây dựng môi trường tập luyện lành mạnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+          "name": "Hướng dẫn tập luyện an toàn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+          "name": "Đánh giá thể trạng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+          "name": "Điều chỉnh bài tập thể lực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+          "name": "Cung cấp thông tin tập luyện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586",
+          "name": "Áp dụng khoa học vận động vào giáo án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/988c06ea-7ab9-4ee4-a64b-9e93f2527c6d",
+          "name": "Khuyến khích lối sống lành mạnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef07f206-1ea8-4dc6-a4b0-1b312a9db47c",
+          "name": "Thu thập thông tin thể lực của khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-39-9031.00",
+          "name": "Huấn luyện viên thể hình"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-11-9179.01",
+          "name": "Điều phối viên chương trình sức khoẻ, thể hình"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1123.00",
+      "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-21-1094.00",
+      "name": "Nhân viên y tế cộng đồng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-2021.00",
+      "name": "Vận động viên, huấn luyện viên thể thao",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-3041.00",
+      "name": "Gia sư, giáo viên trung tâm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1071.00",
+      "name": "Chuyên viên nhân sự",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 25000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Huấn Luyện Viên\"",
+    "dataYear": "2026",
+    "note": "JobsGO xếp tin personal trainer vào chức danh này. 60 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–25tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 17.400.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 9,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/ac846964-c171-4d43-8834-cc83ff96f582",
+      "name": "Chỉnh động tác dễ gây chấn thương",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3aa11722-1277-43a6-b9a8-8264032b578f",
+      "name": "Xây dựng môi trường tập luyện lành mạnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3f1a52c4-7df0-4f88-a50b-c345714a917e",
+      "name": "Hướng dẫn tập luyện an toàn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1b9899a4-5b50-44b0-a21a-e2f86c51ac5a",
+      "name": "Đánh giá thể trạng khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5d589320-2a07-4994-837d-334b57f283d5",
+      "name": "Điều chỉnh bài tập thể lực",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/70da7d81-87f5-4724-b72d-c0d79c1d5281",
+      "name": "Cung cấp thông tin tập luyện",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+      "name": "Xác định mục tiêu của khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/957598c7-0f63-4fba-9d5a-4babb39fd586",
+      "name": "Áp dụng khoa học vận động vào giáo án",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/988c06ea-7ab9-4ee4-a64b-9e93f2527c6d",
+      "name": "Khuyến khích lối sống lành mạnh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ef07f206-1ea8-4dc6-a4b0-1b312a9db47c",
+      "name": "Thu thập thông tin thể lực của khách",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.913
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.912
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.862
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.262
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.149
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.297
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.385
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

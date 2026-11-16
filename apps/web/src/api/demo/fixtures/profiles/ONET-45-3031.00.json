@@ -1,0 +1,801 @@
+{
+  "code": "ONET-45-3031.00",
+  "name": "Ngư dân, người đánh bắt thuỷ sản",
+  "nameEn": "Fishing and Hunting Workers",
+  "group": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Săn, đặt bẫy, đánh bắt hoặc thu lượm động vật hoang dã, động vật và thực vật thuỷ sinh. Có thể dùng lưới, bẫy hoặc thiết bị khác. Có thể kéo mẻ lưới lên tàu. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "80% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "90% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Tàu cá đánh bắt xa bờ",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Khai thác thủy sản"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thuyền viên học việc trên tàu cá",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Lái tàu và vận hành thiết bị hàng hải.",
+        "Gỡ sản phẩm khỏi ngư cụ và đo để bảo đảm đúng kích cỡ cho phép.",
+        "Chỉ đạo hoạt động đánh bắt hoặc săn bắt và giám sát thuyền viên.",
+        "Đánh giá thời tiết và tình trạng tàu để quyết định cách xử lý phù hợp.",
+        "Di chuyển bằng đi bộ, xe, thuyền hoặc phương tiện khác tới khu vực săn bắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thuyền viên tàu cá",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Lái tàu và vận hành thiết bị hàng hải.",
+        "Gỡ sản phẩm khỏi ngư cụ và đo để bảo đảm đúng kích cỡ cho phép.",
+        "Chỉ đạo hoạt động đánh bắt hoặc săn bắt và giám sát thuyền viên.",
+        "Đánh giá thời tiết và tình trạng tàu để quyết định cách xử lý phù hợp.",
+        "Di chuyển bằng đi bộ, xe, thuyền hoặc phương tiện khác tới khu vực săn bắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Máy trưởng tàu cá (có chứng chỉ)",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Lái tàu và vận hành thiết bị hàng hải.",
+        "Gỡ sản phẩm khỏi ngư cụ và đo để bảo đảm đúng kích cỡ cho phép.",
+        "Chỉ đạo hoạt động đánh bắt hoặc săn bắt và giám sát thuyền viên.",
+        "Đánh giá thời tiết và tình trạng tàu để quyết định cách xử lý phù hợp.",
+        "Di chuyển bằng đi bộ, xe, thuyền hoặc phương tiện khác tới khu vực săn bắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "lanh_dao_kinh_doanh"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4b9a090-de87-4569-a927-d907b753750a",
+          "name": "Hỗ trợ điều động tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a31c8047-8715-4484-aa32-c974127bcc69",
+          "name": "Hỗ trợ bảo dưỡng tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d461d450-14bb-495a-abf6-eb8c662f5e68",
+          "name": "Trực ca hàng hải an toàn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thuyền trưởng tàu cá hạng III",
+      "years": "4+",
+      "coreOutput": null,
+      "tasks": [
+        "Lái tàu và vận hành thiết bị hàng hải.",
+        "Gỡ sản phẩm khỏi ngư cụ và đo để bảo đảm đúng kích cỡ cho phép.",
+        "Chỉ đạo hoạt động đánh bắt hoặc săn bắt và giám sát thuyền viên.",
+        "Đánh giá thời tiết và tình trạng tàu để quyết định cách xử lý phù hợp.",
+        "Di chuyển bằng đi bộ, xe, thuyền hoặc phương tiện khác tới khu vực săn bắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4b9a090-de87-4569-a927-d907b753750a",
+          "name": "Hỗ trợ điều động tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a31c8047-8715-4484-aa32-c974127bcc69",
+          "name": "Hỗ trợ bảo dưỡng tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d461d450-14bb-495a-abf6-eb8c662f5e68",
+          "name": "Trực ca hàng hải an toàn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4b9a090-de87-4569-a927-d907b753750a",
+          "name": "Hỗ trợ điều động tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a31c8047-8715-4484-aa32-c974127bcc69",
+          "name": "Hỗ trợ bảo dưỡng tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d461d450-14bb-495a-abf6-eb8c662f5e68",
+          "name": "Trực ca hàng hải an toàn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Thuyền trưởng tàu cá hạng I–II",
+      "years": "6+",
+      "coreOutput": null,
+      "tasks": [
+        "Lái tàu và vận hành thiết bị hàng hải.",
+        "Gỡ sản phẩm khỏi ngư cụ và đo để bảo đảm đúng kích cỡ cho phép.",
+        "Chỉ đạo hoạt động đánh bắt hoặc săn bắt và giám sát thuyền viên.",
+        "Đánh giá thời tiết và tình trạng tàu để quyết định cách xử lý phù hợp.",
+        "Di chuyển bằng đi bộ, xe, thuyền hoặc phương tiện khác tới khu vực săn bắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4b9a090-de87-4569-a927-d907b753750a",
+          "name": "Hỗ trợ điều động tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a31c8047-8715-4484-aa32-c974127bcc69",
+          "name": "Hỗ trợ bảo dưỡng tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d461d450-14bb-495a-abf6-eb8c662f5e68",
+          "name": "Trực ca hàng hải an toàn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4b9a090-de87-4569-a927-d907b753750a",
+          "name": "Hỗ trợ điều động tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a31c8047-8715-4484-aa32-c974127bcc69",
+          "name": "Hỗ trợ bảo dưỡng tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d461d450-14bb-495a-abf6-eb8c662f5e68",
+          "name": "Trực ca hàng hải an toàn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Chủ tàu/tổ trưởng tổ đội khai thác hải sản",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Lái tàu và vận hành thiết bị hàng hải.",
+        "Gỡ sản phẩm khỏi ngư cụ và đo để bảo đảm đúng kích cỡ cho phép.",
+        "Chỉ đạo hoạt động đánh bắt hoặc săn bắt và giám sát thuyền viên.",
+        "Đánh giá thời tiết và tình trạng tàu để quyết định cách xử lý phù hợp.",
+        "Di chuyển bằng đi bộ, xe, thuyền hoặc phương tiện khác tới khu vực săn bắt."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4b9a090-de87-4569-a927-d907b753750a",
+          "name": "Hỗ trợ điều động tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a31c8047-8715-4484-aa32-c974127bcc69",
+          "name": "Hỗ trợ bảo dưỡng tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d461d450-14bb-495a-abf6-eb8c662f5e68",
+          "name": "Trực ca hàng hải an toàn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+          "name": "Làm việc ngoài trời",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+          "name": "Vận hành thiết bị tàu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+          "name": "Vận hành ngư cụ đánh bắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+          "name": "Dùng thiết bị tàu cá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+          "name": "Sự hư hỏng của sản phẩm cá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+          "name": "Hỗ trợ thả neo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4b9a090-de87-4569-a927-d907b753750a",
+          "name": "Hỗ trợ điều động tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a31c8047-8715-4484-aa32-c974127bcc69",
+          "name": "Hỗ trợ bảo dưỡng tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d461d450-14bb-495a-abf6-eb8c662f5e68",
+          "name": "Trực ca hàng hải an toàn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-45-3031.00",
+          "name": "Ngư dân, người đánh bắt thuỷ sản"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9013.00",
+          "name": "Chủ trang trại, quản lý nông nghiệp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-53-5021.00",
+      "name": "Thuyền viên, sĩ quan hàng hải",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-45-2093.00",
+      "name": "Lao động chăn nuôi và nuôi trồng thuỷ sản",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-45-2092.00",
+      "name": "Lao động trồng trọt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "Cục Thống kê, quý III/2026, qua VnBusiness",
+    "dataYear": "2026",
+    "note": "Ngư dân nhận tiền theo chuyến, không theo tháng. Số bình quân tham khảo: 5.400.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/0e355580-bd4a-465a-8058-92984623070e",
+      "name": "Làm việc ngoài trời",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+      "name": "Bơi",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/79234b29-5ed0-45f4-8aae-78e4013b3920",
+      "name": "Vận hành thiết bị tàu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6e9cd962-77c4-4a43-9386-39c35271fcea",
+      "name": "Vận hành ngư cụ đánh bắt",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6b801335-15e6-47d4-8863-9a5844949106",
+      "name": "Dùng thiết bị tàu cá",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/aae3614a-8f37-4148-96d1-de6ee8a21e8f",
+      "name": "Sự hư hỏng của sản phẩm cá",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/74e0053d-7fb0-43da-99dc-6bae87143ff7",
+      "name": "Hỗ trợ thả neo",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e4b9a090-de87-4569-a927-d907b753750a",
+      "name": "Hỗ trợ điều động tàu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a31c8047-8715-4484-aa32-c974127bcc69",
+      "name": "Hỗ trợ bảo dưỡng tàu",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d461d450-14bb-495a-abf6-eb8c662f5e68",
+      "name": "Trực ca hàng hải an toàn",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.187
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.439
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.775
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.924
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.925
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.991
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -1.405
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

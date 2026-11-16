@@ -1,0 +1,625 @@
+{
+  "code": "SWE_ARCH_SOL",
+  "name": "Kiến trúc sư giải pháp",
+  "nameEn": "Solution Architect",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Kiến trúc sư giải pháp vẽ bức tranh tổng thể của một hệ thống trước khi các đội bắt tay xây: chia hệ thống thành những phần nào, dùng công nghệ và dịch vụ cloud nào, mua sẵn hay tự làm. Họ cân giữa tốc độ, chi phí, bảo mật và khả năng mở rộng, rồi thuyết phục cả đội kỹ thuật lẫn ban lãnh đạo. Phần lớn người làm nghề đi lên sau nhiều năm làm kỹ sư.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Thường phải ra quyết định lớn khi chưa đủ thông tin, và hậu quả kéo dài nhiều năm.",
+    "Kiến trúc dễ bị đội phát triển chê là quá phức tạp so với nhu cầu hiện tại.",
+    "Phải giải thích chuyện kỹ thuật cho người không có nền kỹ thuật trong thời gian ngắn.",
+    "Ở ngân hàng và doanh nghiệp lớn gần như không có cửa vào cho người ít kinh nghiệm; mốc thường gặp là 8–10 năm trở lên."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "41% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "18% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 40
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 40
+    },
+    {
+      "name": "Đối tác triển khai hệ thống tại khách hàng",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật phần mềm",
+      "Khoa học máy tính",
+      "Hệ thống thông tin"
+    ],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Solution Architect",
+      "years": "8-10",
+      "coreOutput": "Thiết kế kiến trúc giải pháp đầu-cuối cho một dự án: chọn cách chia hệ thống, công nghệ và dịch vụ cloud, so sánh mua sẵn với tự làm, trong khung kiến trúc mục tiêu do cấp Enterprise Architect đặt ra.",
+      "tasks": [
+        "Trao đổi với nhân viên hoặc khách hàng để hiểu yêu cầu cụ thể của hệ thống.",
+        "Đánh giá từng thành phần của hệ thống có hợp với mục đích không và đề xuất nên dùng gì.",
+        "Hướng dẫn khách hàng hoặc đội triển khai cách dựng hệ thống an toàn.",
+        "Chỉ đạo việc phân tích, phát triển và vận hành toàn bộ hệ thống máy tính.",
+        "Chỉ đạo việc cài đặt hệ điều hành, phần mềm mạng, phần mềm ứng dụng hoặc phần cứng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025",
+          "name": "Mua linh kiện hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72",
+          "name": "Tích hợp thành phần hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81",
+          "name": "Nền tảng phần cứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49",
+          "name": "Lý thuyết hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+          "name": "Lập trình web",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025",
+          "name": "Mua linh kiện hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72",
+          "name": "Tích hợp thành phần hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81",
+          "name": "Nền tảng phần cứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49",
+          "name": "Lý thuyết hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+          "name": "Lập trình web",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L5 ở một nghề đi trước: Lập trình viên Back-end / Kỹ sư Back-end, Lập trình viên Front-end, Trưởng nhóm kỹ thuật, Kỹ sư DevOps, Kỹ sư điện toán đám mây",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Senior Solution Architect",
+      "years": "10-13",
+      "coreOutput": "Chịu trách nhiệm kiến trúc cho một phân vùng nghiệp vụ gồm nhiều dự án, chủ trì thẩm định phương án của các đội, cân đối chi phí, bảo mật và tốc độ ra giá trị ở cấp chương trình.",
+      "tasks": [
+        "Trao đổi với nhân viên hoặc khách hàng để hiểu yêu cầu cụ thể của hệ thống.",
+        "Đánh giá từng thành phần của hệ thống có hợp với mục đích không và đề xuất nên dùng gì.",
+        "Hướng dẫn khách hàng hoặc đội triển khai cách dựng hệ thống an toàn.",
+        "Chỉ đạo việc phân tích, phát triển và vận hành toàn bộ hệ thống máy tính.",
+        "Chỉ đạo việc cài đặt hệ điều hành, phần mềm mạng, phần mềm ứng dụng hoặc phần cứng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025",
+          "name": "Mua linh kiện hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72",
+          "name": "Tích hợp thành phần hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81",
+          "name": "Nền tảng phần cứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49",
+          "name": "Lý thuyết hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+          "name": "Lập trình web",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025",
+          "name": "Mua linh kiện hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72",
+          "name": "Tích hợp thành phần hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81",
+          "name": "Nền tảng phần cứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49",
+          "name": "Lý thuyết hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+          "name": "Lập trình web",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Principal / Lead Solution Architect",
+      "years": "13-15",
+      "coreOutput": "Đặt chuẩn kiến trúc giải pháp cho nhiều phân vùng nghiệp vụ, ngồi hội đồng thẩm định kiến trúc cùng Enterprise Architect, và là đầu mối kỹ thuật cao nhất khi làm việc với lãnh đạo hoặc khách hàng lớn.",
+      "tasks": [
+        "Trao đổi với nhân viên hoặc khách hàng để hiểu yêu cầu cụ thể của hệ thống.",
+        "Đánh giá từng thành phần của hệ thống có hợp với mục đích không và đề xuất nên dùng gì.",
+        "Hướng dẫn khách hàng hoặc đội triển khai cách dựng hệ thống an toàn.",
+        "Chỉ đạo việc phân tích, phát triển và vận hành toàn bộ hệ thống máy tính.",
+        "Chỉ đạo việc cài đặt hệ điều hành, phần mềm mạng, phần mềm ứng dụng hoặc phần cứng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025",
+          "name": "Mua linh kiện hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72",
+          "name": "Tích hợp thành phần hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81",
+          "name": "Nền tảng phần cứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49",
+          "name": "Lý thuyết hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+          "name": "Lập trình web",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025",
+          "name": "Mua linh kiện hệ thống",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72",
+          "name": "Tích hợp thành phần hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81",
+          "name": "Nền tảng phần cứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49",
+          "name": "Lý thuyết hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+          "name": "Lập trình web",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "SWE_ARCH_SOL",
+          "name": "Kiến trúc sư giải pháp"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "SWE_EM",
+          "name": "Trưởng phòng Kỹ thuật"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "SWE_TECHLEAD",
+      "name": "Trưởng nhóm kỹ thuật",
+      "why": "Cùng nhánh IC cấp cao, khác phạm vi: một đội và một hệ thống"
+    },
+    {
+      "code": "CLOUD_ENG",
+      "name": "Kỹ sư điện toán đám mây",
+      "why": "Kiến trúc hệ thống hiện đại gắn chặt với hạ tầng đám mây"
+    },
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "why": "Đưa AI vào production đòi hỏi tư duy kiến trúc"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trên 5 năm kinh nghiệm. Top 5 vị trí khó tuyển dụng Số bình quân tham khảo: 56.300.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 15,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+      "name": "Dùng giao diện riêng của ứng dụng (như API)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+      "name": "Vòng đời phát triển hệ thống",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/90be83d9-56f1-46a4-a6bc-96c51f6c9025",
+      "name": "Mua linh kiện hệ thống",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ed8de897-adbe-4f0e-b4d2-534953e64c72",
+      "name": "Tích hợp thành phần hệ thống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/117373c8-f04b-4fff-8683-aebe36edac81",
+      "name": "Nền tảng phần cứng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+      "name": "Hệ thống số",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+      "name": "Khớp phần mềm với kiến trúc hệ thống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+      "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cdd8b6b2-2fd9-453c-8d62-8a1dc6efcd49",
+      "name": "Lý thuyết hệ thống",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+      "name": "Lập trình web",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.817
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.744
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.586
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.417
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.26
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.257
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.409
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L5",
+    "roles": [
+      {
+        "code": "SWE_BACKEND",
+        "name": "Lập trình viên Back-end / Kỹ sư Back-end"
+      },
+      {
+        "code": "SWE_FRONTEND",
+        "name": "Lập trình viên Front-end"
+      },
+      {
+        "code": "SWE_TECHLEAD",
+        "name": "Trưởng nhóm kỹ thuật"
+      },
+      {
+        "code": "CLOUD_DEVOPS",
+        "name": "Kỹ sư DevOps"
+      },
+      {
+        "code": "CLOUD_ENG",
+        "name": "Kỹ sư điện toán đám mây"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

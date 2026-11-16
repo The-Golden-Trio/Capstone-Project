@@ -1,0 +1,922 @@
+{
+  "code": "ONET-11-9041.00",
+  "name": "Quản lý kỹ thuật và nghiên cứu",
+  "nameEn": "Architectural and Engineering Managers",
+  "group": "Quản lý",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Lập kế hoạch, chỉ đạo và điều phối hoạt động trong các lĩnh vực như kiến trúc, kỹ thuật hoặc nghiên cứu và phát triển trong các lĩnh vực đó. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Môi trường cạnh tranh cao.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "70% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "8% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Văn phòng thiết kế, R&D kỹ thuật",
+      "weight": 45
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 30
+    },
+    {
+      "name": "Viện nghiên cứu, trung tâm khoa học nhà nước",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật cơ khí",
+      "Kỹ thuật điện",
+      "Quản lý khoa học và công nghệ"
+    ],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng nhóm kỹ thuật (Lead Engineer)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý việc phối hợp và tích hợp tổng thể các hoạt động kỹ thuật trong dự án kiến trúc hoặc kỹ thuật.",
+        "Chỉ đạo, xem xét hoặc duyệt thay đổi thiết kế của dự án.",
+        "Tư vấn hoặc đàm phán với khách hàng để lập yêu cầu kỹ thuật của dự án.",
+        "Lập ngân sách, hồ sơ dự thầu hoặc hợp đồng.",
+        "Trình bày và giải thích đề xuất, báo cáo hoặc kết quả cho khách hàng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L4 ở một nghề đi trước: Kiến trúc sư, Kỹ sư trắc địa, bản đồ, Kỹ sư y sinh, Kỹ sư hoá học, vật liệu, Kỹ sư xây dựng, Kỹ sư điện, Kỹ sư điện tử, viễn thông, Kỹ sư, chuyên viên môi trường, Kỹ sư công nghiệp, quản lý sản xuất, Kỹ sư cơ khí, Kỹ sư ô tô, Kỹ sư mỏ, dầu khí, Kỹ sư cơ điện tử, robot, Kỹ sư công nghệ thực phẩm, Kỹ sư nông nghiệp",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Kỹ sư trưởng / trưởng nhóm R&D",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý việc phối hợp và tích hợp tổng thể các hoạt động kỹ thuật trong dự án kiến trúc hoặc kỹ thuật.",
+        "Chỉ đạo, xem xét hoặc duyệt thay đổi thiết kế của dự án.",
+        "Tư vấn hoặc đàm phán với khách hàng để lập yêu cầu kỹ thuật của dự án.",
+        "Lập ngân sách, hồ sơ dự thầu hoặc hợp đồng.",
+        "Trình bày và giải thích đề xuất, báo cáo hoặc kết quả cho khách hàng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng kỹ thuật / R&D",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý việc phối hợp và tích hợp tổng thể các hoạt động kỹ thuật trong dự án kiến trúc hoặc kỹ thuật.",
+        "Chỉ đạo, xem xét hoặc duyệt thay đổi thiết kế của dự án.",
+        "Tư vấn hoặc đàm phán với khách hàng để lập yêu cầu kỹ thuật của dự án.",
+        "Lập ngân sách, hồ sơ dự thầu hoặc hợp đồng.",
+        "Trình bày và giải thích đề xuất, báo cáo hoặc kết quả cho khách hàng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc kỹ thuật (Technical Director)",
+      "years": "12–18",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý việc phối hợp và tích hợp tổng thể các hoạt động kỹ thuật trong dự án kiến trúc hoặc kỹ thuật.",
+        "Chỉ đạo, xem xét hoặc duyệt thay đổi thiết kế của dự án.",
+        "Tư vấn hoặc đàm phán với khách hàng để lập yêu cầu kỹ thuật của dự án.",
+        "Lập ngân sách, hồ sơ dự thầu hoặc hợp đồng.",
+        "Trình bày và giải thích đề xuất, báo cáo hoặc kết quả cho khách hàng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L9",
+      "bandEquivalent": "L9",
+      "title": "Giám đốc công nghệ (CTO) / viện trưởng",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý việc phối hợp và tích hợp tổng thể các hoạt động kỹ thuật trong dự án kiến trúc hoặc kỹ thuật.",
+        "Chỉ đạo, xem xét hoặc duyệt thay đổi thiết kế của dự án.",
+        "Tư vấn hoặc đàm phán với khách hàng để lập yêu cầu kỹ thuật của dự án.",
+        "Lập ngân sách, hồ sơ dự thầu hoặc hợp đồng.",
+        "Trình bày và giải thích đề xuất, báo cáo hoặc kết quả cho khách hàng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 5,
+        "giao_tiep_hop_tac": 4,
+        "tu_duy_giai_quyet_van_de": 4,
+        "tri_tue_cam_xuc": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+          "name": "Nghiên cứu thị trường",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+          "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "name": "Tìm cách đổi mới cách làm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+          "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+          "name": "Luật sở hữu trí tuệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+          "name": "Phân tích kế hoạch kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-13-1082.00",
+      "name": "Chuyên viên quản lý dự án",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-1029.04",
+      "name": "Nhà sinh học, chuyên viên công nghệ sinh học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2112.00",
+      "name": "Kỹ sư công nghiệp, quản lý sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1081.00",
+      "name": "Chuyên viên logistics và xuất nhập khẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2071.00",
+      "name": "Kỹ sư điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 22500000,
+    "median": 27500000,
+    "high": 30000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 53,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/8770350e-746f-4adb-9556-18ca68104be6",
+      "name": "Nghiên cứu thị trường",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ce5b1446-b5e3-4f05-a5ac-83f2ee142a44",
+      "name": "Phân tích yếu tố bên ngoài doanh nghiệp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+      "name": "Đánh giá tính khả thi của dự án phát triển",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+      "name": "Trách nhiệm xã hội doanh nghiệp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+      "name": "Tìm cách đổi mới cách làm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/91816e1a-d026-4d21-9b1c-59ca5cf488de",
+      "name": "Phân tích yếu tố nội bộ doanh nghiệp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2ad081e6-0a3f-4612-ac15-7ace75d39e26",
+      "name": "Luật sở hữu trí tuệ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+      "name": "Quản lý ngân sách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5da3c765-10a3-49eb-934c-ec401ceb1a34",
+      "name": "Phân tích kế hoạch kinh doanh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+      "name": "Nguyên lý marketing",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 1.408
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.077
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.966
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.871
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.857
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.534
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.127
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L4",
+    "roles": [
+      {
+        "code": "ONET-17-1011.00",
+        "name": "Kiến trúc sư"
+      },
+      {
+        "code": "ONET-17-1022.00",
+        "name": "Kỹ sư trắc địa, bản đồ"
+      },
+      {
+        "code": "ONET-17-2031.00",
+        "name": "Kỹ sư y sinh"
+      },
+      {
+        "code": "ONET-17-2041.00",
+        "name": "Kỹ sư hoá học, vật liệu"
+      },
+      {
+        "code": "ONET-17-2051.00",
+        "name": "Kỹ sư xây dựng"
+      },
+      {
+        "code": "ONET-17-2071.00",
+        "name": "Kỹ sư điện"
+      },
+      {
+        "code": "ONET-17-2072.00",
+        "name": "Kỹ sư điện tử, viễn thông"
+      },
+      {
+        "code": "ONET-17-2081.00",
+        "name": "Kỹ sư, chuyên viên môi trường"
+      },
+      {
+        "code": "ONET-17-2112.00",
+        "name": "Kỹ sư công nghiệp, quản lý sản xuất"
+      },
+      {
+        "code": "ONET-17-2141.00",
+        "name": "Kỹ sư cơ khí"
+      },
+      {
+        "code": "ONET-17-2141.02",
+        "name": "Kỹ sư ô tô"
+      },
+      {
+        "code": "ONET-17-2151.00",
+        "name": "Kỹ sư mỏ, dầu khí"
+      },
+      {
+        "code": "ONET-17-2199.05",
+        "name": "Kỹ sư cơ điện tử, robot"
+      },
+      {
+        "code": "ONET-19-1012.00",
+        "name": "Kỹ sư công nghệ thực phẩm"
+      },
+      {
+        "code": "ONET-19-1013.00",
+        "name": "Kỹ sư nông nghiệp"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

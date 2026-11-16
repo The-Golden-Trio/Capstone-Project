@@ -1,0 +1,700 @@
+{
+  "code": "ONET-51-8031.00",
+  "name": "Vận hành nhà máy nước, xử lý nước thải",
+  "nameEn": "Water and Wastewater Treatment Plant and System Operators",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Vận hành hoặc điều khiển toàn bộ quy trình hay hệ thống máy, thường qua bảng điều khiển, để chuyển hoặc xử lý nước và nước thải. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Làm trong không gian chật hoặc tư thế khó."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "33% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "43% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công ty cấp nước, xử lý nước thải",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [
+      "Kỹ thuật thoát nước và xử lý nước thải",
+      "Xử lý nước thải công nghiệp"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học việc vận hành trạm xử lý",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Lấy và thử mẫu nước, nước thải bằng thiết bị thử và thang so màu chuẩn.",
+        "Vận hành và chỉnh thiết bị để lọc, làm trong nước, xử lý nước thải và phát điện.",
+        "Ghi dữ liệu vận hành, chấm công hoặc số đọc đồng hồ vào biểu mẫu.",
+        "Cho hoá chất như amoniac, clo hoặc vôi để khử trùng và khử mùi nước.",
+        "Kiểm tra thiết bị hoặc theo dõi điều kiện vận hành, đồng hồ đo để xác định tải và phát hiện sự cố."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công nhân vận hành bậc 1",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Lấy và thử mẫu nước, nước thải bằng thiết bị thử và thang so màu chuẩn.",
+        "Vận hành và chỉnh thiết bị để lọc, làm trong nước, xử lý nước thải và phát điện.",
+        "Ghi dữ liệu vận hành, chấm công hoặc số đọc đồng hồ vào biểu mẫu.",
+        "Cho hoá chất như amoniac, clo hoặc vôi để khử trùng và khử mùi nước.",
+        "Kiểm tra thiết bị hoặc theo dõi điều kiện vận hành, đồng hồ đo để xác định tải và phát hiện sự cố."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e08d5950-f694-450e-90ae-088001dad5e9",
+          "name": "Phân tích hoá học nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314",
+          "name": "Nước thấm qua vật liệu xốp (percolation)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bcf4ef0-edda-4f6a-a1ce-7defb1d324d6",
+          "name": "Quy trình xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f4cc60e-820e-439d-8810-31a2cc27ada6",
+          "name": "Dùng thiết bị khử trùng nước",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Công nhân vận hành bậc 2",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Lấy và thử mẫu nước, nước thải bằng thiết bị thử và thang so màu chuẩn.",
+        "Vận hành và chỉnh thiết bị để lọc, làm trong nước, xử lý nước thải và phát điện.",
+        "Ghi dữ liệu vận hành, chấm công hoặc số đọc đồng hồ vào biểu mẫu.",
+        "Cho hoá chất như amoniac, clo hoặc vôi để khử trùng và khử mùi nước.",
+        "Kiểm tra thiết bị hoặc theo dõi điều kiện vận hành, đồng hồ đo để xác định tải và phát hiện sự cố."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e08d5950-f694-450e-90ae-088001dad5e9",
+          "name": "Phân tích hoá học nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314",
+          "name": "Nước thấm qua vật liệu xốp (percolation)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bcf4ef0-edda-4f6a-a1ce-7defb1d324d6",
+          "name": "Quy trình xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f4cc60e-820e-439d-8810-31a2cc27ada6",
+          "name": "Dùng thiết bị khử trùng nước",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e08d5950-f694-450e-90ae-088001dad5e9",
+          "name": "Phân tích hoá học nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314",
+          "name": "Nước thấm qua vật liệu xốp (percolation)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bcf4ef0-edda-4f6a-a1ce-7defb1d324d6",
+          "name": "Quy trình xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f4cc60e-820e-439d-8810-31a2cc27ada6",
+          "name": "Dùng thiết bị khử trùng nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5206a9b8-8337-4f0b-ae00-163a2f55d8cf",
+          "name": "Xử lý nước thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75f650d0-9096-4b8f-bbd6-ad05ee3f6121",
+          "name": "Ghi chép kết quả phân tích",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Công nhân vận hành bậc 3 / trực ca chính",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Lấy và thử mẫu nước, nước thải bằng thiết bị thử và thang so màu chuẩn.",
+        "Vận hành và chỉnh thiết bị để lọc, làm trong nước, xử lý nước thải và phát điện.",
+        "Ghi dữ liệu vận hành, chấm công hoặc số đọc đồng hồ vào biểu mẫu.",
+        "Cho hoá chất như amoniac, clo hoặc vôi để khử trùng và khử mùi nước.",
+        "Kiểm tra thiết bị hoặc theo dõi điều kiện vận hành, đồng hồ đo để xác định tải và phát hiện sự cố."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e08d5950-f694-450e-90ae-088001dad5e9",
+          "name": "Phân tích hoá học nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314",
+          "name": "Nước thấm qua vật liệu xốp (percolation)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bcf4ef0-edda-4f6a-a1ce-7defb1d324d6",
+          "name": "Quy trình xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f4cc60e-820e-439d-8810-31a2cc27ada6",
+          "name": "Dùng thiết bị khử trùng nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5206a9b8-8337-4f0b-ae00-163a2f55d8cf",
+          "name": "Xử lý nước thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75f650d0-9096-4b8f-bbd6-ad05ee3f6121",
+          "name": "Ghi chép kết quả phân tích",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e08d5950-f694-450e-90ae-088001dad5e9",
+          "name": "Phân tích hoá học nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314",
+          "name": "Nước thấm qua vật liệu xốp (percolation)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bcf4ef0-edda-4f6a-a1ce-7defb1d324d6",
+          "name": "Quy trình xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f4cc60e-820e-439d-8810-31a2cc27ada6",
+          "name": "Dùng thiết bị khử trùng nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5206a9b8-8337-4f0b-ae00-163a2f55d8cf",
+          "name": "Xử lý nước thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75f650d0-9096-4b8f-bbd6-ad05ee3f6121",
+          "name": "Ghi chép kết quả phân tích",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng ca vận hành",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Lấy và thử mẫu nước, nước thải bằng thiết bị thử và thang so màu chuẩn.",
+        "Vận hành và chỉnh thiết bị để lọc, làm trong nước, xử lý nước thải và phát điện.",
+        "Ghi dữ liệu vận hành, chấm công hoặc số đọc đồng hồ vào biểu mẫu.",
+        "Cho hoá chất như amoniac, clo hoặc vôi để khử trùng và khử mùi nước.",
+        "Kiểm tra thiết bị hoặc theo dõi điều kiện vận hành, đồng hồ đo để xác định tải và phát hiện sự cố."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e08d5950-f694-450e-90ae-088001dad5e9",
+          "name": "Phân tích hoá học nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314",
+          "name": "Nước thấm qua vật liệu xốp (percolation)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bcf4ef0-edda-4f6a-a1ce-7defb1d324d6",
+          "name": "Quy trình xử lý nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f4cc60e-820e-439d-8810-31a2cc27ada6",
+          "name": "Dùng thiết bị khử trùng nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5206a9b8-8337-4f0b-ae00-163a2f55d8cf",
+          "name": "Xử lý nước thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75f650d0-9096-4b8f-bbd6-ad05ee3f6121",
+          "name": "Ghi chép kết quả phân tích",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+          "name": "Bảo dưỡng thiết bị xử lý nước",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+          "name": "Xử lý nước",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+          "name": "Xử lý bùn thải",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+          "name": "Vận hành thiết bị lọc nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e08d5950-f694-450e-90ae-088001dad5e9",
+          "name": "Phân tích hoá học nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314",
+          "name": "Nước thấm qua vật liệu xốp (percolation)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bcf4ef0-edda-4f6a-a1ce-7defb1d324d6",
+          "name": "Quy trình xử lý nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f4cc60e-820e-439d-8810-31a2cc27ada6",
+          "name": "Dùng thiết bị khử trùng nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5206a9b8-8337-4f0b-ae00-163a2f55d8cf",
+          "name": "Xử lý nước thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75f650d0-9096-4b8f-bbd6-ad05ee3f6121",
+          "name": "Ghi chép kết quả phân tích",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-8031.00",
+          "name": "Vận hành nhà máy nước, xử lý nước thải"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-8091.00",
+      "name": "Vận hành nhà máy hoá chất, lọc dầu, khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-8013.00",
+      "name": "Vận hành nhà máy điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10100000,
+    "median": 13000000,
+    "high": 17500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 25,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/2a45f2d1-8f1a-4c62-9332-cfd3535d9d35",
+      "name": "Bảo dưỡng thiết bị xử lý nước",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2afefe51-4dcf-4314-a014-7c0477ee7372",
+      "name": "Xử lý nước",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5cddc62d-3958-4390-b17e-0aecb5848c40",
+      "name": "Xử lý bùn thải",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3de6d427-546b-450b-97ba-d3d50eb274da",
+      "name": "Vận hành thiết bị lọc nước",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e08d5950-f694-450e-90ae-088001dad5e9",
+      "name": "Phân tích hoá học nước",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4c72749b-c2c8-47b6-8330-5ebb22862314",
+      "name": "Nước thấm qua vật liệu xốp (percolation)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8bcf4ef0-edda-4f6a-a1ce-7defb1d324d6",
+      "name": "Quy trình xử lý nước",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0f4cc60e-820e-439d-8810-31a2cc27ada6",
+      "name": "Dùng thiết bị khử trùng nước",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5206a9b8-8337-4f0b-ae00-163a2f55d8cf",
+      "name": "Xử lý nước thải",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75f650d0-9096-4b8f-bbd6-ad05ee3f6121",
+      "name": "Ghi chép kết quả phân tích",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.611
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.4
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.196
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.003
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.067
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.408
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.45
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

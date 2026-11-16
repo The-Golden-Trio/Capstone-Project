@@ -1,0 +1,889 @@
+{
+  "code": "ONET-17-2041.00",
+  "name": "Kỹ sư hoá học, vật liệu",
+  "nameEn": "Chemical Engineers",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Thiết kế thiết bị nhà máy hoá chất và xây dựng quy trình sản xuất hoá chất và sản phẩm như xăng, cao su tổng hợp, nhựa, chất tẩy rửa, xi măng, giấy và bột giấy, dựa trên nguyên lý và công nghệ hoá học, vật lý và kỹ thuật. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc.",
+    "Chịu trách nhiệm trực tiếp về sức khoẻ và an toàn của người khác.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "44% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "16% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 40
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 30
+    },
+    {
+      "name": "Lọc hoá dầu, dầu khí ngoài khơi",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật hóa học", "Kỹ thuật vật liệu"],
+    "vocational": ["Công nghệ kỹ thuật hóa học"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh kỹ thuật hoá, vật liệu",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Xây dựng quy trình an toàn cho công nhân vận hành thiết bị hoặc làm việc gần phản ứng hoá học đang diễn ra.",
+        "Xử lý sự cố trong quy trình sản xuất hoá chất.",
+        "Theo dõi và phân tích dữ liệu từ quy trình và thí nghiệm.",
+        "Đánh giá thiết bị và quy trình hoá chất để tối ưu hiệu suất hoặc bảo đảm tuân thủ quy định an toàn, môi trường.",
+        "Thiết kế và bố trí mặt bằng thiết bị."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư hoá, vật liệu mới ra trường",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Xây dựng quy trình an toàn cho công nhân vận hành thiết bị hoặc làm việc gần phản ứng hoá học đang diễn ra.",
+        "Xử lý sự cố trong quy trình sản xuất hoá chất.",
+        "Theo dõi và phân tích dữ liệu từ quy trình và thí nghiệm.",
+        "Đánh giá thiết bị và quy trình hoá chất để tối ưu hiệu suất hoặc bảo đảm tuân thủ quy định an toàn, môi trường.",
+        "Thiết kế và bố trí mặt bằng thiết bị."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư hoá, vật liệu (Junior)",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Xây dựng quy trình an toàn cho công nhân vận hành thiết bị hoặc làm việc gần phản ứng hoá học đang diễn ra.",
+        "Xử lý sự cố trong quy trình sản xuất hoá chất.",
+        "Theo dõi và phân tích dữ liệu từ quy trình và thí nghiệm.",
+        "Đánh giá thiết bị và quy trình hoá chất để tối ưu hiệu suất hoặc bảo đảm tuân thủ quy định an toàn, môi trường.",
+        "Thiết kế và bố trí mặt bằng thiết bị."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư hoá, vật liệu (Middle)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Xây dựng quy trình an toàn cho công nhân vận hành thiết bị hoặc làm việc gần phản ứng hoá học đang diễn ra.",
+        "Xử lý sự cố trong quy trình sản xuất hoá chất.",
+        "Theo dõi và phân tích dữ liệu từ quy trình và thí nghiệm.",
+        "Đánh giá thiết bị và quy trình hoá chất để tối ưu hiệu suất hoặc bảo đảm tuân thủ quy định an toàn, môi trường.",
+        "Thiết kế và bố trí mặt bằng thiết bị."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư hoá, vật liệu cao cấp (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Xây dựng quy trình an toàn cho công nhân vận hành thiết bị hoặc làm việc gần phản ứng hoá học đang diễn ra.",
+        "Xử lý sự cố trong quy trình sản xuất hoá chất.",
+        "Theo dõi và phân tích dữ liệu từ quy trình và thí nghiệm.",
+        "Đánh giá thiết bị và quy trình hoá chất để tối ưu hiệu suất hoặc bảo đảm tuân thủ quy định an toàn, môi trường.",
+        "Thiết kế và bố trí mặt bằng thiết bị."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm kỹ thuật hoá, vật liệu (Lead)",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Xây dựng quy trình an toàn cho công nhân vận hành thiết bị hoặc làm việc gần phản ứng hoá học đang diễn ra.",
+        "Xử lý sự cố trong quy trình sản xuất hoá chất.",
+        "Theo dõi và phân tích dữ liệu từ quy trình và thí nghiệm.",
+        "Đánh giá thiết bị và quy trình hoá chất để tối ưu hiệu suất hoặc bảo đảm tuân thủ quy định an toàn, môi trường.",
+        "Thiết kế và bố trí mặt bằng thiết bị."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng công nghệ",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Xây dựng quy trình an toàn cho công nhân vận hành thiết bị hoặc làm việc gần phản ứng hoá học đang diễn ra.",
+        "Xử lý sự cố trong quy trình sản xuất hoá chất.",
+        "Theo dõi và phân tích dữ liệu từ quy trình và thí nghiệm.",
+        "Đánh giá thiết bị và quy trình hoá chất để tối ưu hiệu suất hoặc bảo đảm tuân thủ quy định an toàn, môi trường.",
+        "Thiết kế và bố trí mặt bằng thiết bị."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+          "name": "Hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+          "name": "Oxy hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+          "name": "Đánh giá tác động môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+          "name": "Hoá học xanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+          "name": "Hoá phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+          "name": "Dự báo rủi ro tổ chức",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-2041.00",
+          "name": "Kỹ sư hoá học, vật liệu"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-17-2199.09",
+          "name": "Kỹ sư hệ thống nano"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-19-2031.00",
+      "name": "Nhà hoá học, chuyên viên kiểm nghiệm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2112.00",
+      "name": "Kỹ sư công nghiệp, quản lý sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2141.00",
+      "name": "Kỹ sư cơ khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2072.00",
+      "name": "Kỹ sư điện tử, viễn thông",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2031.00",
+      "name": "Kỹ sư y sinh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 40000000,
+    "byYears": [],
+    "source": "CareerLink, \"Kỹ sư hóa học là gì\"",
+    "dataYear": "2025",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 11,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+      "name": "Phê duyệt thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+      "name": "Điều chỉnh thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+      "name": "Quang phổ học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cde9911c-f92e-4de1-811f-336e177ac4ce",
+      "name": "Hoá học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7b663720-0834-4291-bad3-96b4e48f80a1",
+      "name": "Oxy hoá",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e541c69c-ea80-4b17-87cb-4001d0b9d303",
+      "name": "Đánh giá tác động môi trường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b589fa82-f177-4cce-9fb4-31bbbebf792b",
+      "name": "Hoá học xanh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1b61166d-0495-4f16-aff0-f564d3a8afb3",
+      "name": "Hoá phân tích",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1c08d63d-1c5e-4b9b-ad3e-f7ba7debb2d1",
+      "name": "Dự báo rủi ro tổ chức",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.987
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.439
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.423
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.347
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.287
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.236
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.58
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

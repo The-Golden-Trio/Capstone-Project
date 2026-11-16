@@ -1,0 +1,719 @@
+{
+  "code": "ONET-51-8091.00",
+  "name": "Vận hành nhà máy hoá chất, lọc dầu, khí",
+  "nameEn": "Chemical Plant and System Operators",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Điều khiển hoặc vận hành toàn bộ quy trình hoá chất hoặc hệ thống máy. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc.",
+    "Phải làm việc trên cao.",
+    "Tiếp xúc với nhiệt độ rất nóng hoặc rất lạnh."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "67% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "25% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Lọc hoá dầu, dầu khí ngoài khơi",
+      "weight": 70
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [
+      "Vận hành thiết bị chế biến dầu khí",
+      "Công nghệ kỹ thuật hóa học"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên vận hành",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi thiết bị ghi, lưu lượng kế, đèn báo trên tủ và nghe tín hiệu cảnh báo để bảo đảm điều kiện quy trình đúng.",
+        "Chỉnh thông số điều khiển của thiết bị ảnh hưởng tới tốc độ phản ứng, chất lượng hoặc hiệu suất.",
+        "Lấy mẫu sản phẩm và kiểm tra chất lượng để giám sát quy trình và bảo đảm đạt chuẩn.",
+        "Ghi dữ liệu vận hành như điều kiện quy trình, kết quả kiểm tra hoặc số đọc thiết bị.",
+        "Điều khiển quy trình hoặc hệ thống máy hoá chất bằng tủ điều khiển, bảng điều khiển hoặc thiết bị bán tự động."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Vận hành viên hiện trường",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi thiết bị ghi, lưu lượng kế, đèn báo trên tủ và nghe tín hiệu cảnh báo để bảo đảm điều kiện quy trình đúng.",
+        "Chỉnh thông số điều khiển của thiết bị ảnh hưởng tới tốc độ phản ứng, chất lượng hoặc hiệu suất.",
+        "Lấy mẫu sản phẩm và kiểm tra chất lượng để giám sát quy trình và bảo đảm đạt chuẩn.",
+        "Ghi dữ liệu vận hành như điều kiện quy trình, kết quả kiểm tra hoặc số đọc thiết bị.",
+        "Điều khiển quy trình hoặc hệ thống máy hoá chất bằng tủ điều khiển, bảng điều khiển hoặc thiết bị bán tự động."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "name": "Dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46",
+          "name": "Quản lý quy trình thử nghiệm hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83e61e0-cb73-4a6a-b266-c4be03fb30eb",
+          "name": "Giám sát điều kiện quá trình hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983",
+          "name": "Chịu áp lực hạn sản xuất",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Vận hành viên hiện trường chính",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi thiết bị ghi, lưu lượng kế, đèn báo trên tủ và nghe tín hiệu cảnh báo để bảo đảm điều kiện quy trình đúng.",
+        "Chỉnh thông số điều khiển của thiết bị ảnh hưởng tới tốc độ phản ứng, chất lượng hoặc hiệu suất.",
+        "Lấy mẫu sản phẩm và kiểm tra chất lượng để giám sát quy trình và bảo đảm đạt chuẩn.",
+        "Ghi dữ liệu vận hành như điều kiện quy trình, kết quả kiểm tra hoặc số đọc thiết bị.",
+        "Điều khiển quy trình hoặc hệ thống máy hoá chất bằng tủ điều khiển, bảng điều khiển hoặc thiết bị bán tự động."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "name": "Dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46",
+          "name": "Quản lý quy trình thử nghiệm hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83e61e0-cb73-4a6a-b266-c4be03fb30eb",
+          "name": "Giám sát điều kiện quá trình hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983",
+          "name": "Chịu áp lực hạn sản xuất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "name": "Dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46",
+          "name": "Quản lý quy trình thử nghiệm hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83e61e0-cb73-4a6a-b266-c4be03fb30eb",
+          "name": "Giám sát điều kiện quá trình hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983",
+          "name": "Chịu áp lực hạn sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+          "name": "Giám sát tiêu chuẩn chất lượng sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d7e3b0c-3995-4953-816d-cf3c5e9ffe34",
+          "name": "Tuân thủ quy trình chuẩn (SOP)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Vận hành viên phòng điều khiển",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi thiết bị ghi, lưu lượng kế, đèn báo trên tủ và nghe tín hiệu cảnh báo để bảo đảm điều kiện quy trình đúng.",
+        "Chỉnh thông số điều khiển của thiết bị ảnh hưởng tới tốc độ phản ứng, chất lượng hoặc hiệu suất.",
+        "Lấy mẫu sản phẩm và kiểm tra chất lượng để giám sát quy trình và bảo đảm đạt chuẩn.",
+        "Ghi dữ liệu vận hành như điều kiện quy trình, kết quả kiểm tra hoặc số đọc thiết bị.",
+        "Điều khiển quy trình hoặc hệ thống máy hoá chất bằng tủ điều khiển, bảng điều khiển hoặc thiết bị bán tự động."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "name": "Dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46",
+          "name": "Quản lý quy trình thử nghiệm hoá chất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83e61e0-cb73-4a6a-b266-c4be03fb30eb",
+          "name": "Giám sát điều kiện quá trình hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983",
+          "name": "Chịu áp lực hạn sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+          "name": "Giám sát tiêu chuẩn chất lượng sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d7e3b0c-3995-4953-816d-cf3c5e9ffe34",
+          "name": "Tuân thủ quy trình chuẩn (SOP)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "name": "Dùng hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46",
+          "name": "Quản lý quy trình thử nghiệm hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83e61e0-cb73-4a6a-b266-c4be03fb30eb",
+          "name": "Giám sát điều kiện quá trình hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983",
+          "name": "Chịu áp lực hạn sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+          "name": "Giám sát tiêu chuẩn chất lượng sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d7e3b0c-3995-4953-816d-cf3c5e9ffe34",
+          "name": "Tuân thủ quy trình chuẩn (SOP)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng ca vận hành",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi thiết bị ghi, lưu lượng kế, đèn báo trên tủ và nghe tín hiệu cảnh báo để bảo đảm điều kiện quy trình đúng.",
+        "Chỉnh thông số điều khiển của thiết bị ảnh hưởng tới tốc độ phản ứng, chất lượng hoặc hiệu suất.",
+        "Lấy mẫu sản phẩm và kiểm tra chất lượng để giám sát quy trình và bảo đảm đạt chuẩn.",
+        "Ghi dữ liệu vận hành như điều kiện quy trình, kết quả kiểm tra hoặc số đọc thiết bị.",
+        "Điều khiển quy trình hoặc hệ thống máy hoá chất bằng tủ điều khiển, bảng điều khiển hoặc thiết bị bán tự động."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "name": "Dùng hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46",
+          "name": "Quản lý quy trình thử nghiệm hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83e61e0-cb73-4a6a-b266-c4be03fb30eb",
+          "name": "Giám sát điều kiện quá trình hoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983",
+          "name": "Chịu áp lực hạn sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+          "name": "Giám sát tiêu chuẩn chất lượng sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d7e3b0c-3995-4953-816d-cf3c5e9ffe34",
+          "name": "Tuân thủ quy trình chuẩn (SOP)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+          "name": "Chuẩn bị mẫu hoá chất",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+          "name": "Thử nghiệm mẫu hoá chất",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+          "name": "Kiểm tra nguyên liệu đầu vào",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+          "name": "Dùng thiết bị phân tích hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "name": "Dùng hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46",
+          "name": "Quản lý quy trình thử nghiệm hoá chất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83e61e0-cb73-4a6a-b266-c4be03fb30eb",
+          "name": "Giám sát điều kiện quá trình hoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983",
+          "name": "Chịu áp lực hạn sản xuất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+          "name": "Giám sát tiêu chuẩn chất lượng sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d7e3b0c-3995-4953-816d-cf3c5e9ffe34",
+          "name": "Tuân thủ quy trình chuẩn (SOP)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-8091.00",
+          "name": "Vận hành nhà máy hoá chất, lọc dầu, khí"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-8013.00",
+      "name": "Vận hành nhà máy điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-8031.00",
+      "name": "Vận hành nhà máy nước, xử lý nước thải",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-5041.00",
+      "name": "Công nhân khai thác mỏ, dầu khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Thu nhập bình quân nhóm nghề",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "Báo cáo điều tra lao động việc làm năm 2024, Cục Thống kê (Bộ Tài chính), đăng 16/5/2026, biểu 3.5",
+    "dataYear": "2024",
+    "note": "Thu nhập bình quân của nhóm nghề \"Thợ lắp ráp và vận hành máy móc thiết bị\", không riêng nghề này. Số bình quân tham khảo: 8.716.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e2e9bf69-80b3-4237-afd9-40960dc3c67e",
+      "name": "Chuẩn bị mẫu hoá chất",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ab2e56f3-24f0-413b-a67b-291a67fc2d1f",
+      "name": "Thử nghiệm mẫu hoá chất",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f0c3839a-e295-42b5-b986-b3960c90c79f",
+      "name": "Kiểm tra nguyên liệu đầu vào",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c3fb1757-a529-4336-8898-4e96cd99f95f",
+      "name": "Dùng thiết bị phân tích hoá học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+      "name": "Dùng hệ thống CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46",
+      "name": "Quản lý quy trình thử nghiệm hoá chất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f83e61e0-cb73-4a6a-b266-c4be03fb30eb",
+      "name": "Giám sát điều kiện quá trình hoá học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983",
+      "name": "Chịu áp lực hạn sản xuất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+      "name": "Giám sát tiêu chuẩn chất lượng sản xuất",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6d7e3b0c-3995-4953-816d-cf3c5e9ffe34",
+      "name": "Tuân thủ quy trình chuẩn (SOP)",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.189
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.324
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.333
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.369
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.432
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.597
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.775
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

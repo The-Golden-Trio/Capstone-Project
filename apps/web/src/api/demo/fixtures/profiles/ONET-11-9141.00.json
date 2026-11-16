@@ -1,0 +1,701 @@
+{
+  "code": "ONET-11-9141.00",
+  "name": "Quản lý bất động sản, toà nhà",
+  "nameEn": "Property, Real Estate, and Community Association Managers",
+  "group": "Quản lý",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Lập kế hoạch, chỉ đạo và điều phối việc mua bán, cho thuê hoặc quản trị bất động sản thương mại, công nghiệp và nhà ở. Gồm cả ban quản lý chung cư, khu nhà cho thuê, toà nhà hoặc đất. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Chịu trách nhiệm trực tiếp về sức khoẻ và an toàn của người khác.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Làm cả trong văn phòng lẫn ngoài hiện trường.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Được tự quyết nhiều trong công việc.",
+    "59% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "30% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Ban quản lý toà nhà, chung cư, khu đô thị",
+      "weight": 70
+    },
+    {
+      "name": "Sàn giao dịch, môi giới bất động sản",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Bất động sản", "Quản lý đô thị và công trình"],
+    "vocational": ["Quản lý tòa nhà", "Quản trị kinh doanh bất động sản"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Nhân viên quản lý toà nhà",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý và giám sát vận hành, bảo trì, hành chính và cải tạo bất động sản thương mại, công nghiệp hoặc nhà ở.",
+        "Chỉ đạo thu phí dịch vụ, tiền thuê, tiền cọc và chi trả bảo hiểm, khoản vay, thuế và chi phí vận hành.",
+        "Lên kế hoạch, tiến độ và điều phối bảo trì chung, sửa chữa lớn và cải tạo hoặc xây dựng cho toà nhà.",
+        "Lập ngân sách chi tiết và báo cáo tài chính cho bất động sản.",
+        "Làm cầu nối giữa ban quản lý tại chỗ hoặc người thuê với chủ sở hữu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Giám sát toà nhà",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý và giám sát vận hành, bảo trì, hành chính và cải tạo bất động sản thương mại, công nghiệp hoặc nhà ở.",
+        "Chỉ đạo thu phí dịch vụ, tiền thuê, tiền cọc và chi trả bảo hiểm, khoản vay, thuế và chi phí vận hành.",
+        "Lên kế hoạch, tiến độ và điều phối bảo trì chung, sửa chữa lớn và cải tạo hoặc xây dựng cho toà nhà.",
+        "Lập ngân sách chi tiết và báo cáo tài chính cho bất động sản.",
+        "Làm cầu nối giữa ban quản lý tại chỗ hoặc người thuê với chủ sở hữu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+          "name": "Giám sát hiệu quả nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4a57b51-16d7-4dfc-bb47-6aa401e39b2e",
+          "name": "Phân tích rủi ro bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2313b15d-a9a7-4830-9bcc-fd7df79d842b",
+          "name": "Thực thi chính sách tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng ban quản lý toà nhà",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý và giám sát vận hành, bảo trì, hành chính và cải tạo bất động sản thương mại, công nghiệp hoặc nhà ở.",
+        "Chỉ đạo thu phí dịch vụ, tiền thuê, tiền cọc và chi trả bảo hiểm, khoản vay, thuế và chi phí vận hành.",
+        "Lên kế hoạch, tiến độ và điều phối bảo trì chung, sửa chữa lớn và cải tạo hoặc xây dựng cho toà nhà.",
+        "Lập ngân sách chi tiết và báo cáo tài chính cho bất động sản.",
+        "Làm cầu nối giữa ban quản lý tại chỗ hoặc người thuê với chủ sở hữu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+          "name": "Giám sát hiệu quả nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4a57b51-16d7-4dfc-bb47-6aa401e39b2e",
+          "name": "Phân tích rủi ro bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2313b15d-a9a7-4830-9bcc-fd7df79d842b",
+          "name": "Thực thi chính sách tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+          "name": "Giám sát hiệu quả nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4a57b51-16d7-4dfc-bb47-6aa401e39b2e",
+          "name": "Phân tích rủi ro bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2313b15d-a9a7-4830-9bcc-fd7df79d842b",
+          "name": "Thực thi chính sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84",
+          "name": "Kiểm soát nguồn lực tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/758e968d-1a75-4205-9cd7-c3ffac2f19b8",
+          "name": "Thu tiền thuê",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Quản lý cụm toà nhà / quản lý tài sản",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý và giám sát vận hành, bảo trì, hành chính và cải tạo bất động sản thương mại, công nghiệp hoặc nhà ở.",
+        "Chỉ đạo thu phí dịch vụ, tiền thuê, tiền cọc và chi trả bảo hiểm, khoản vay, thuế và chi phí vận hành.",
+        "Lên kế hoạch, tiến độ và điều phối bảo trì chung, sửa chữa lớn và cải tạo hoặc xây dựng cho toà nhà.",
+        "Lập ngân sách chi tiết và báo cáo tài chính cho bất động sản.",
+        "Làm cầu nối giữa ban quản lý tại chỗ hoặc người thuê với chủ sở hữu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+          "name": "Giám sát hiệu quả nhà thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4a57b51-16d7-4dfc-bb47-6aa401e39b2e",
+          "name": "Phân tích rủi ro bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2313b15d-a9a7-4830-9bcc-fd7df79d842b",
+          "name": "Thực thi chính sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84",
+          "name": "Kiểm soát nguồn lực tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/758e968d-1a75-4205-9cd7-c3ffac2f19b8",
+          "name": "Thu tiền thuê",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+          "name": "Giám sát hiệu quả nhà thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4a57b51-16d7-4dfc-bb47-6aa401e39b2e",
+          "name": "Phân tích rủi ro bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2313b15d-a9a7-4830-9bcc-fd7df79d842b",
+          "name": "Thực thi chính sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84",
+          "name": "Kiểm soát nguồn lực tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/758e968d-1a75-4205-9cd7-c3ffac2f19b8",
+          "name": "Thu tiền thuê",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc quản lý bất động sản",
+      "years": "9+",
+      "coreOutput": null,
+      "tasks": [
+        "Quản lý và giám sát vận hành, bảo trì, hành chính và cải tạo bất động sản thương mại, công nghiệp hoặc nhà ở.",
+        "Chỉ đạo thu phí dịch vụ, tiền thuê, tiền cọc và chi trả bảo hiểm, khoản vay, thuế và chi phí vận hành.",
+        "Lên kế hoạch, tiến độ và điều phối bảo trì chung, sửa chữa lớn và cải tạo hoặc xây dựng cho toà nhà.",
+        "Lập ngân sách chi tiết và báo cáo tài chính cho bất động sản.",
+        "Làm cầu nối giữa ban quản lý tại chỗ hoặc người thuê với chủ sở hữu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+          "name": "Giám sát hiệu quả nhà thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4a57b51-16d7-4dfc-bb47-6aa401e39b2e",
+          "name": "Phân tích rủi ro bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2313b15d-a9a7-4830-9bcc-fd7df79d842b",
+          "name": "Thực thi chính sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84",
+          "name": "Kiểm soát nguồn lực tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/758e968d-1a75-4205-9cd7-c3ffac2f19b8",
+          "name": "Thu tiền thuê",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+          "name": "Thị trường bất động sản",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+          "name": "Luật tài sản",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+          "name": "Kiểm tra nhà thầu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+          "name": "Giám sát hiệu quả nhà thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4a57b51-16d7-4dfc-bb47-6aa401e39b2e",
+          "name": "Phân tích rủi ro bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2313b15d-a9a7-4830-9bcc-fd7df79d842b",
+          "name": "Thực thi chính sách tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84",
+          "name": "Kiểm soát nguồn lực tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/758e968d-1a75-4205-9cd7-c3ffac2f19b8",
+          "name": "Thu tiền thuê",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-41-9022.00",
+      "name": "Nhân viên môi giới bất động sản",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-3012.00",
+      "name": "Quản lý hành chính",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2023.00",
+      "name": "Thẩm định viên về giá",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1023.00",
+      "name": "Chuyên viên mua hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 12000000,
+    "byYears": [],
+    "source": "TopCV, tra cứu mức lương \"Quản lý tòa nhà\"",
+    "dataYear": "2026",
+    "note": "Khoảng phổ biến 10–12tr; dải 5,5–40tr. TopCV tổng hợp từ tin tuyển dụng. Đọc trên trình duyệt ngày 21/10/2026. Số bình quân tham khảo: 11.000.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 19,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/6f6163dc-a801-416c-86e9-ce857d71c24d",
+      "name": "Thị trường bất động sản",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b3a4924a-f793-485c-8dc1-54e12198d95d",
+      "name": "Luật tài sản",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d",
+      "name": "Kiểm tra nhà thầu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+      "name": "Thu thập thông tin tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+      "name": "Giám sát hiệu quả nhà thầu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e4a57b51-16d7-4dfc-bb47-6aa401e39b2e",
+      "name": "Phân tích rủi ro bảo hiểm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+      "name": "Soạn hợp đồng bảo hiểm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2313b15d-a9a7-4830-9bcc-fd7df79d842b",
+      "name": "Thực thi chính sách tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2d008d5a-b7bd-46f7-bbb1-5d70a0af9c84",
+      "name": "Kiểm soát nguồn lực tài chính",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/758e968d-1a75-4205-9cd7-c3ffac2f19b8",
+      "name": "Thu tiền thuê",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 1.323
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.736
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.526
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.503
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.248
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.228
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.15
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

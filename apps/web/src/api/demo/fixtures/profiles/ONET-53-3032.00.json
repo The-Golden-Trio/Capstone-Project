@@ -1,0 +1,712 @@
+{
+  "code": "ONET-53-3032.00",
+  "name": "Tài xế xe tải",
+  "nameEn": "Heavy and Tractor-Trailer Truck Drivers",
+  "group": "Vận tải và bốc dỡ hàng hoá",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Lái xe đầu kéo hoặc xe tải có tổng trọng tải lớn. Có thể phải dỡ hàng. Cần giấy phép lái xe hạng phù hợp. Gồm cả tài xế xe cứu hộ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Tiếp xúc với nhiệt độ rất nóng hoặc rất lạnh."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "76% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "36% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trên xe, tàu, máy bay", "Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Doanh nghiệp vận tải hàng hoá đường bộ",
+      "weight": 80
+    },
+    {
+      "name": "Giao hàng, xe công nghệ",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": "Giấy phép lái xe hạng C1, C hoặc CE — Luật Trật tự, an toàn giao thông đường bộ số 36/2024/QH15"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Phụ xe tải",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra giấy tờ của lô hàng về độ đầy đủ và chính xác.",
+        "Kiểm tra hàng để bảo đảm được chằng buộc chắc chắn.",
+        "Kiểm tra xe để bảo đảm hệ thống cơ khí, an toàn và thiết bị khẩn cấp hoạt động tốt.",
+        "Quay chân chống rơ-moóc lên xuống để cố định xe an toàn.",
+        "Lấy biên nhận hoặc chữ ký khi giao hàng và thu tiền dịch vụ khi cần."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Tài xế xe tải hạng C1",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra giấy tờ của lô hàng về độ đầy đủ và chính xác.",
+        "Kiểm tra hàng để bảo đảm được chằng buộc chắc chắn.",
+        "Kiểm tra xe để bảo đảm hệ thống cơ khí, an toàn và thiết bị khẩn cấp hoạt động tốt.",
+        "Quay chân chống rơ-moóc lên xuống để cố định xe an toàn.",
+        "Lấy biên nhận hoặc chữ ký khi giao hàng và thu tiền dịch vụ khi cần."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d9edaad-7404-413e-856e-dacde984052a",
+          "name": "Tập dừng khẩn cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/059b2748-e1df-43d2-8a08-0331fb8d0ddf",
+          "name": "Các loại hàng hoá vận chuyển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3",
+          "name": "Bộ phận cơ khí của xe",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Tài xế xe tải hạng C",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra giấy tờ của lô hàng về độ đầy đủ và chính xác.",
+        "Kiểm tra hàng để bảo đảm được chằng buộc chắc chắn.",
+        "Kiểm tra xe để bảo đảm hệ thống cơ khí, an toàn và thiết bị khẩn cấp hoạt động tốt.",
+        "Quay chân chống rơ-moóc lên xuống để cố định xe an toàn.",
+        "Lấy biên nhận hoặc chữ ký khi giao hàng và thu tiền dịch vụ khi cần."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d9edaad-7404-413e-856e-dacde984052a",
+          "name": "Tập dừng khẩn cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/059b2748-e1df-43d2-8a08-0331fb8d0ddf",
+          "name": "Các loại hàng hoá vận chuyển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3",
+          "name": "Bộ phận cơ khí của xe",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d9edaad-7404-413e-856e-dacde984052a",
+          "name": "Tập dừng khẩn cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/059b2748-e1df-43d2-8a08-0331fb8d0ddf",
+          "name": "Các loại hàng hoá vận chuyển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3",
+          "name": "Bộ phận cơ khí của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c366d4-0316-4838-b72e-c3be4f90fbd3",
+          "name": "Dùng thiết bị liên lạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60493b7f-8613-431e-91ea-6a2c0410c6d4",
+          "name": "Sức chở của xe",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Tài xế đầu kéo container hạng CE",
+      "years": "4–8",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra giấy tờ của lô hàng về độ đầy đủ và chính xác.",
+        "Kiểm tra hàng để bảo đảm được chằng buộc chắc chắn.",
+        "Kiểm tra xe để bảo đảm hệ thống cơ khí, an toàn và thiết bị khẩn cấp hoạt động tốt.",
+        "Quay chân chống rơ-moóc lên xuống để cố định xe an toàn.",
+        "Lấy biên nhận hoặc chữ ký khi giao hàng và thu tiền dịch vụ khi cần."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d9edaad-7404-413e-856e-dacde984052a",
+          "name": "Tập dừng khẩn cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/059b2748-e1df-43d2-8a08-0331fb8d0ddf",
+          "name": "Các loại hàng hoá vận chuyển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3",
+          "name": "Bộ phận cơ khí của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c366d4-0316-4838-b72e-c3be4f90fbd3",
+          "name": "Dùng thiết bị liên lạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60493b7f-8613-431e-91ea-6a2c0410c6d4",
+          "name": "Sức chở của xe",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d9edaad-7404-413e-856e-dacde984052a",
+          "name": "Tập dừng khẩn cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/059b2748-e1df-43d2-8a08-0331fb8d0ddf",
+          "name": "Các loại hàng hoá vận chuyển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3",
+          "name": "Bộ phận cơ khí của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c366d4-0316-4838-b72e-c3be4f90fbd3",
+          "name": "Dùng thiết bị liên lạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60493b7f-8613-431e-91ea-6a2c0410c6d4",
+          "name": "Sức chở của xe",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Đội trưởng đội xe/điều hành vận tải",
+      "years": "6+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra giấy tờ của lô hàng về độ đầy đủ và chính xác.",
+        "Kiểm tra hàng để bảo đảm được chằng buộc chắc chắn.",
+        "Kiểm tra xe để bảo đảm hệ thống cơ khí, an toàn và thiết bị khẩn cấp hoạt động tốt.",
+        "Quay chân chống rơ-moóc lên xuống để cố định xe an toàn.",
+        "Lấy biên nhận hoặc chữ ký khi giao hàng và thu tiền dịch vụ khi cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d9edaad-7404-413e-856e-dacde984052a",
+          "name": "Tập dừng khẩn cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/059b2748-e1df-43d2-8a08-0331fb8d0ddf",
+          "name": "Các loại hàng hoá vận chuyển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3",
+          "name": "Bộ phận cơ khí của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c366d4-0316-4838-b72e-c3be4f90fbd3",
+          "name": "Dùng thiết bị liên lạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60493b7f-8613-431e-91ea-6a2c0410c6d4",
+          "name": "Sức chở của xe",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+          "name": "Lường trước nguy cơ trên đường",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6d9edaad-7404-413e-856e-dacde984052a",
+          "name": "Tập dừng khẩn cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+          "name": "Đọc tín hiệu giao thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/059b2748-e1df-43d2-8a08-0331fb8d0ddf",
+          "name": "Các loại hàng hoá vận chuyển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3",
+          "name": "Bộ phận cơ khí của xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c366d4-0316-4838-b72e-c3be4f90fbd3",
+          "name": "Dùng thiết bị liên lạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60493b7f-8613-431e-91ea-6a2c0410c6d4",
+          "name": "Sức chở của xe",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-53-3032.00",
+          "name": "Tài xế xe tải"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-53-1043.00",
+          "name": "Đội trưởng lái xe và vận hành máy bốc xếp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-53-7051.00",
+      "name": "Người vận hành xe nâng, cần cẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-3023.00",
+      "name": "Thợ sửa chữa ô tô",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-5021.00",
+      "name": "Nhân viên giao hàng (shipper)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-2031.00",
+      "name": "Nhân viên bán hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-5041.00",
+      "name": "Công nhân khai thác mỏ, dầu khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 25000000,
+    "byYears": [],
+    "source": "CareerViet, \"Tài xế\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 18,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+      "name": "Vận hành hệ thống GPS",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+      "name": "Địa hình tuyến vận tải",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/36404bb8-ecce-4afc-88bc-78ebd45c4b90",
+      "name": "Lường trước nguy cơ trên đường",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+      "name": "Đọc bản đồ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6d9edaad-7404-413e-856e-dacde984052a",
+      "name": "Tập dừng khẩn cấp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/be0afbfa-2d39-47d0-8d5c-81df2a27d250",
+      "name": "Đọc tín hiệu giao thông",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/059b2748-e1df-43d2-8a08-0331fb8d0ddf",
+      "name": "Các loại hàng hoá vận chuyển",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3",
+      "name": "Bộ phận cơ khí của xe",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/79c366d4-0316-4838-b72e-c3be4f90fbd3",
+      "name": "Dùng thiết bị liên lạc",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/60493b7f-8613-431e-91ea-6a2c0410c6d4",
+      "name": "Sức chở của xe",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.092
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.177
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.304
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.342
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.372
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.422
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.787
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,719 @@
+{
+  "code": "ONET-45-2093.00",
+  "name": "Lao động chăn nuôi và nuôi trồng thuỷ sản",
+  "nameEn": "Farmworkers, Farm, Ranch, and Aquacultural Animals",
+  "group": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Chăm sóc vật nuôi ở trang trại, đồng cỏ hoặc trại thuỷ sản, như bò, cừu, lợn, dê, ngựa, gia cầm, thỏ, cá, động vật có vỏ và ong, để lấy thịt, lông, da, trứng, sữa và mật. Công việc có thể gồm cho ăn uống, chăn dắt, vắt sữa, thiến, đánh dấu, cắt mỏ, cân, bắt và đưa vật nuôi lên xe. Có thể ghi chép về vật nuôi, khám phát hiện bệnh và chấn thương, hỗ trợ đỡ đẻ, tiêm thuốc và vắc-xin, dọn dẹp chuồng trại. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt.",
+    "Phải đi lại hoặc chạy nhiều."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "Ít làm việc qua email.",
+    "44% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "37% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Nông hộ, gia trại",
+      "weight": 60
+    },
+    {
+      "name": "Trang trại, doanh nghiệp nông nghiệp công nghệ cao",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Chăn nuôi gia súc, gia cầm", "Nuôi trồng thủy sản"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Lao động phổ thông trang trại",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Cho vật nuôi ăn uống và theo dõi lượng thức ăn, nước.",
+        "Lùa vật nuôi ra đồng cỏ hoặc tới bàn cân, xe tải và chuồng.",
+        "Khám vật nuôi để phát hiện bệnh, chấn thương và kiểm tra các chỉ số như tốc độ tăng cân.",
+        "Chữa bệnh như cho uống thuốc, tiêm vắc-xin, hoặc mời bác sĩ thú y khi cần điều trị sâu hơn.",
+        "Đánh dấu vật nuôi để xác định chủ sở hữu và phân hạng bằng dấu nung, thẻ, sơn hoặc xăm."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công nhân chăn nuôi/nuôi trồng thủy sản",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Cho vật nuôi ăn uống và theo dõi lượng thức ăn, nước.",
+        "Lùa vật nuôi ra đồng cỏ hoặc tới bàn cân, xe tải và chuồng.",
+        "Khám vật nuôi để phát hiện bệnh, chấn thương và kiểm tra các chỉ số như tốc độ tăng cân.",
+        "Chữa bệnh như cho uống thuốc, tiêm vắc-xin, hoặc mời bác sĩ thú y khi cần điều trị sâu hơn.",
+        "Đánh dấu vật nuôi để xác định chủ sở hữu và phân hạng bằng dấu nung, thẻ, sơn hoặc xăm."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16234c53-0b20-4594-a5f5-c31a2ad98c8c",
+          "name": "Kiểm soát dịch bệnh vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b",
+          "name": "Chăm sóc đồng cỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/241f559e-d255-4e93-b448-19ae20406dea",
+          "name": "Bảo dưỡng thiết bị nông trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d69f2971-5de6-4493-9000-5323115c5c06",
+          "name": "Đỡ đẻ cho động vật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Công nhân kỹ thuật chăn nuôi, thủy sản bậc 2–3",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Cho vật nuôi ăn uống và theo dõi lượng thức ăn, nước.",
+        "Lùa vật nuôi ra đồng cỏ hoặc tới bàn cân, xe tải và chuồng.",
+        "Khám vật nuôi để phát hiện bệnh, chấn thương và kiểm tra các chỉ số như tốc độ tăng cân.",
+        "Chữa bệnh như cho uống thuốc, tiêm vắc-xin, hoặc mời bác sĩ thú y khi cần điều trị sâu hơn.",
+        "Đánh dấu vật nuôi để xác định chủ sở hữu và phân hạng bằng dấu nung, thẻ, sơn hoặc xăm."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16234c53-0b20-4594-a5f5-c31a2ad98c8c",
+          "name": "Kiểm soát dịch bệnh vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b",
+          "name": "Chăm sóc đồng cỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/241f559e-d255-4e93-b448-19ae20406dea",
+          "name": "Bảo dưỡng thiết bị nông trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d69f2971-5de6-4493-9000-5323115c5c06",
+          "name": "Đỡ đẻ cho động vật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16234c53-0b20-4594-a5f5-c31a2ad98c8c",
+          "name": "Kiểm soát dịch bệnh vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b",
+          "name": "Chăm sóc đồng cỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/241f559e-d255-4e93-b448-19ae20406dea",
+          "name": "Bảo dưỡng thiết bị nông trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d69f2971-5de6-4493-9000-5323115c5c06",
+          "name": "Đỡ đẻ cho động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c6ab71d-c8d4-4a85-9f33-7ab3c2e23157",
+          "name": "Quản lý sức khoẻ và phúc lợi vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Tổ trưởng/trưởng trại",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Cho vật nuôi ăn uống và theo dõi lượng thức ăn, nước.",
+        "Lùa vật nuôi ra đồng cỏ hoặc tới bàn cân, xe tải và chuồng.",
+        "Khám vật nuôi để phát hiện bệnh, chấn thương và kiểm tra các chỉ số như tốc độ tăng cân.",
+        "Chữa bệnh như cho uống thuốc, tiêm vắc-xin, hoặc mời bác sĩ thú y khi cần điều trị sâu hơn.",
+        "Đánh dấu vật nuôi để xác định chủ sở hữu và phân hạng bằng dấu nung, thẻ, sơn hoặc xăm."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16234c53-0b20-4594-a5f5-c31a2ad98c8c",
+          "name": "Kiểm soát dịch bệnh vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b",
+          "name": "Chăm sóc đồng cỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/241f559e-d255-4e93-b448-19ae20406dea",
+          "name": "Bảo dưỡng thiết bị nông trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d69f2971-5de6-4493-9000-5323115c5c06",
+          "name": "Đỡ đẻ cho động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c6ab71d-c8d4-4a85-9f33-7ab3c2e23157",
+          "name": "Quản lý sức khoẻ và phúc lợi vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16234c53-0b20-4594-a5f5-c31a2ad98c8c",
+          "name": "Kiểm soát dịch bệnh vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b",
+          "name": "Chăm sóc đồng cỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/241f559e-d255-4e93-b448-19ae20406dea",
+          "name": "Bảo dưỡng thiết bị nông trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d69f2971-5de6-4493-9000-5323115c5c06",
+          "name": "Đỡ đẻ cho động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c6ab71d-c8d4-4a85-9f33-7ab3c2e23157",
+          "name": "Quản lý sức khoẻ và phúc lợi vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Quản lý trại/chủ trang trại",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Cho vật nuôi ăn uống và theo dõi lượng thức ăn, nước.",
+        "Lùa vật nuôi ra đồng cỏ hoặc tới bàn cân, xe tải và chuồng.",
+        "Khám vật nuôi để phát hiện bệnh, chấn thương và kiểm tra các chỉ số như tốc độ tăng cân.",
+        "Chữa bệnh như cho uống thuốc, tiêm vắc-xin, hoặc mời bác sĩ thú y khi cần điều trị sâu hơn.",
+        "Đánh dấu vật nuôi để xác định chủ sở hữu và phân hạng bằng dấu nung, thẻ, sơn hoặc xăm."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16234c53-0b20-4594-a5f5-c31a2ad98c8c",
+          "name": "Kiểm soát dịch bệnh vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b",
+          "name": "Chăm sóc đồng cỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/241f559e-d255-4e93-b448-19ae20406dea",
+          "name": "Bảo dưỡng thiết bị nông trại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d69f2971-5de6-4493-9000-5323115c5c06",
+          "name": "Đỡ đẻ cho động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c6ab71d-c8d4-4a85-9f33-7ab3c2e23157",
+          "name": "Quản lý sức khoẻ và phúc lợi vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+          "name": "Vận hành máy nông nghiệp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+          "name": "Bảo trì trang trại",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+          "name": "Tái chế phân chuồng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+          "name": "Nhân giống vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16234c53-0b20-4594-a5f5-c31a2ad98c8c",
+          "name": "Kiểm soát dịch bệnh vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b",
+          "name": "Chăm sóc đồng cỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/241f559e-d255-4e93-b448-19ae20406dea",
+          "name": "Bảo dưỡng thiết bị nông trại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d69f2971-5de6-4493-9000-5323115c5c06",
+          "name": "Đỡ đẻ cho động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c6ab71d-c8d4-4a85-9f33-7ab3c2e23157",
+          "name": "Quản lý sức khoẻ và phúc lợi vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-45-2093.00",
+          "name": "Lao động chăn nuôi và nuôi trồng thuỷ sản"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9013.00",
+          "name": "Chủ trang trại, quản lý nông nghiệp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-45-2092.00",
+      "name": "Lao động trồng trọt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-3092.00",
+      "name": "Công nhân chế biến thực phẩm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-2021.00",
+      "name": "Nhân viên chăm sóc thú cưng và động vật",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1131.00",
+      "name": "Bác sĩ thú y",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9013.00",
+      "name": "Chủ trang trại, quản lý nông nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "Cục Thống kê, quý III/2026, qua VnBusiness",
+    "dataYear": "2026",
+    "note": "Số của cả ngành nông, lâm, thủy sản. Số bình quân tham khảo: 5.400.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 22,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/00dd3271-077f-4a12-a958-e297fdd724ce",
+      "name": "Vận hành máy nông nghiệp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/29d1a8b4-608b-4152-987a-232605e3fb49",
+      "name": "Bảo trì trang trại",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4c4235a9-a1fb-403f-a173-37d9297c218c",
+      "name": "Tái chế phân chuồng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/60ac9cee-9ece-4c2c-ad16-d94a51127976",
+      "name": "Nhân giống vật nuôi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/16234c53-0b20-4594-a5f5-c31a2ad98c8c",
+      "name": "Kiểm soát dịch bệnh vật nuôi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d52d47d6-8ee1-4c59-9375-ab741f42d48b",
+      "name": "Chăm sóc đồng cỏ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/241f559e-d255-4e93-b448-19ae20406dea",
+      "name": "Bảo dưỡng thiết bị nông trại",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d69f2971-5de6-4493-9000-5323115c5c06",
+      "name": "Đỡ đẻ cho động vật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7c6ab71d-c8d4-4a85-9f33-7ab3c2e23157",
+      "name": "Quản lý sức khoẻ và phúc lợi vật nuôi",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+      "name": "Sinh học",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.422
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.448
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.455
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.459
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.561
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.954
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -1.008
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

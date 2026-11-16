@@ -1,5 +1,5 @@
 /// <reference types='vitest' />
-import { defineConfig } from 'vite';
+import { defineConfig, defaultClientConditions } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { readFileSync } from 'node:fs';
@@ -12,14 +12,17 @@ const { version } = JSON.parse(
 export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/apps/web',
+  resolve: {
+    // Đọc thẳng mã nguồn của package trong workspace (@datn/ui, @datn/game-core)
+    // thay vì bản build, để sửa design system thấy ngay.
+    conditions: ['@datn/source', ...defaultClientConditions],
+  },
   server: {
     port: 4200,
     host: 'localhost',
-    // Cùng origin khi dev: trình duyệt thấy /api trên cổng 4200 nên cookie
-    // phiên đi thẳng, không CORS, không preflight.
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: process.env['WEB_API_PROXY'] ?? 'http://localhost:3000',
         changeOrigin: false,
       },
     },
@@ -32,23 +35,15 @@ export default defineConfig(() => ({
   define: {
     'import.meta.env.VITE_APP_VERSION': JSON.stringify(version),
   },
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [],
-  // },
   build: {
     outDir: './dist',
     emptyOutDir: true,
     reportCompressedSize: true,
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
+    chunkSizeWarningLimit: 900,
   },
   test: {
     name: '@datn/web',
     watch: false,
-    // Phần logic chơi đã chuyển sang packages/game-core và được kiểm ở đó;
-    // app này hiện chỉ còn giao diện, chưa có test riêng.
     passWithNoTests: true,
     globals: true,
     environment: 'jsdom',

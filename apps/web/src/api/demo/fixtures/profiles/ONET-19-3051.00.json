@@ -1,0 +1,941 @@
+{
+  "code": "ONET-19-3051.00",
+  "name": "Chuyên viên quy hoạch đô thị",
+  "nameEn": "Urban and Regional Planners",
+  "group": "Khoa học tự nhiên và xã hội",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Xây dựng quy hoạch và chương trình tổng thể về sử dụng đất và cơ sở vật chất của các địa phương như thị trấn, thành phố, tỉnh và vùng đô thị. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Kết quả nghiên cứu đến chậm, nhiều thí nghiệm thất bại.",
+    "Phụ thuộc vào tài trợ và ngân sách nghiên cứu."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "40% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "20% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty tư vấn thiết kế, giám sát",
+      "weight": 60
+    },
+    {
+      "name": "Cơ quan hành chính nhà nước",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Quy hoạch vùng và đô thị", "Đô thị học"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh quy hoạch",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, thúc đẩy hoặc quản lý quy hoạch, chính sách của nhà nước về sử dụng đất, phân vùng, hạ tầng, công trình công cộng, nhà ở hoặc giao thông.",
+        "Tư vấn cho cán bộ quy hoạch về tính khả thi, hiệu quả chi phí, sự tuân thủ quy định và phương án thay thế của dự án.",
+        "Lập báo cáo bằng hình và lời về dữ liệu sử dụng đất, gồm bản đồ khu vực chồng các biến địa lý như mật độ dân số.",
+        "Tổ chức họp với cán bộ nhà nước, nhà khoa học xã hội, luật sư, chủ đầu tư, người dân và các nhóm lợi ích để xây dựng và giải quyết vấn đề sử dụng đất, quy hoạch cộng đồng.",
+        "Hoà giải tranh chấp cộng đồng hoặc góp ý xây dựng phương án, kiến nghị cho chương trình, dự án."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Chuyên viên quy hoạch mới",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, thúc đẩy hoặc quản lý quy hoạch, chính sách của nhà nước về sử dụng đất, phân vùng, hạ tầng, công trình công cộng, nhà ở hoặc giao thông.",
+        "Tư vấn cho cán bộ quy hoạch về tính khả thi, hiệu quả chi phí, sự tuân thủ quy định và phương án thay thế của dự án.",
+        "Lập báo cáo bằng hình và lời về dữ liệu sử dụng đất, gồm bản đồ khu vực chồng các biến địa lý như mật độ dân số.",
+        "Tổ chức họp với cán bộ nhà nước, nhà khoa học xã hội, luật sư, chủ đầu tư, người dân và các nhóm lợi ích để xây dựng và giải quyết vấn đề sử dụng đất, quy hoạch cộng đồng.",
+        "Hoà giải tranh chấp cộng đồng hoặc góp ý xây dựng phương án, kiến nghị cho chương trình, dự án."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên quy hoạch",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, thúc đẩy hoặc quản lý quy hoạch, chính sách của nhà nước về sử dụng đất, phân vùng, hạ tầng, công trình công cộng, nhà ở hoặc giao thông.",
+        "Tư vấn cho cán bộ quy hoạch về tính khả thi, hiệu quả chi phí, sự tuân thủ quy định và phương án thay thế của dự án.",
+        "Lập báo cáo bằng hình và lời về dữ liệu sử dụng đất, gồm bản đồ khu vực chồng các biến địa lý như mật độ dân số.",
+        "Tổ chức họp với cán bộ nhà nước, nhà khoa học xã hội, luật sư, chủ đầu tư, người dân và các nhóm lợi ích để xây dựng và giải quyết vấn đề sử dụng đất, quy hoạch cộng đồng.",
+        "Hoà giải tranh chấp cộng đồng hoặc góp ý xây dựng phương án, kiến nghị cho chương trình, dự án."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chủ trì lĩnh vực quy hoạch hạng III (có chứng chỉ hành nghề)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, thúc đẩy hoặc quản lý quy hoạch, chính sách của nhà nước về sử dụng đất, phân vùng, hạ tầng, công trình công cộng, nhà ở hoặc giao thông.",
+        "Tư vấn cho cán bộ quy hoạch về tính khả thi, hiệu quả chi phí, sự tuân thủ quy định và phương án thay thế của dự án.",
+        "Lập báo cáo bằng hình và lời về dữ liệu sử dụng đất, gồm bản đồ khu vực chồng các biến địa lý như mật độ dân số.",
+        "Tổ chức họp với cán bộ nhà nước, nhà khoa học xã hội, luật sư, chủ đầu tư, người dân và các nhóm lợi ích để xây dựng và giải quyết vấn đề sử dụng đất, quy hoạch cộng đồng.",
+        "Hoà giải tranh chấp cộng đồng hoặc góp ý xây dựng phương án, kiến nghị cho chương trình, dự án."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chủ nhiệm lập quy hoạch hạng II",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, thúc đẩy hoặc quản lý quy hoạch, chính sách của nhà nước về sử dụng đất, phân vùng, hạ tầng, công trình công cộng, nhà ở hoặc giao thông.",
+        "Tư vấn cho cán bộ quy hoạch về tính khả thi, hiệu quả chi phí, sự tuân thủ quy định và phương án thay thế của dự án.",
+        "Lập báo cáo bằng hình và lời về dữ liệu sử dụng đất, gồm bản đồ khu vực chồng các biến địa lý như mật độ dân số.",
+        "Tổ chức họp với cán bộ nhà nước, nhà khoa học xã hội, luật sư, chủ đầu tư, người dân và các nhóm lợi ích để xây dựng và giải quyết vấn đề sử dụng đất, quy hoạch cộng đồng.",
+        "Hoà giải tranh chấp cộng đồng hoặc góp ý xây dựng phương án, kiến nghị cho chương trình, dự án."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Chủ nhiệm lập quy hoạch hạng I",
+      "years": "7–10",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, thúc đẩy hoặc quản lý quy hoạch, chính sách của nhà nước về sử dụng đất, phân vùng, hạ tầng, công trình công cộng, nhà ở hoặc giao thông.",
+        "Tư vấn cho cán bộ quy hoạch về tính khả thi, hiệu quả chi phí, sự tuân thủ quy định và phương án thay thế của dự án.",
+        "Lập báo cáo bằng hình và lời về dữ liệu sử dụng đất, gồm bản đồ khu vực chồng các biến địa lý như mật độ dân số.",
+        "Tổ chức họp với cán bộ nhà nước, nhà khoa học xã hội, luật sư, chủ đầu tư, người dân và các nhóm lợi ích để xây dựng và giải quyết vấn đề sử dụng đất, quy hoạch cộng đồng.",
+        "Hoà giải tranh chấp cộng đồng hoặc góp ý xây dựng phương án, kiến nghị cho chương trình, dự án."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tri_tue_cam_xuc": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc trung tâm / viện quy hoạch",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, thúc đẩy hoặc quản lý quy hoạch, chính sách của nhà nước về sử dụng đất, phân vùng, hạ tầng, công trình công cộng, nhà ở hoặc giao thông.",
+        "Tư vấn cho cán bộ quy hoạch về tính khả thi, hiệu quả chi phí, sự tuân thủ quy định và phương án thay thế của dự án.",
+        "Lập báo cáo bằng hình và lời về dữ liệu sử dụng đất, gồm bản đồ khu vực chồng các biến địa lý như mật độ dân số.",
+        "Tổ chức họp với cán bộ nhà nước, nhà khoa học xã hội, luật sư, chủ đầu tư, người dân và các nhóm lợi ích để xây dựng và giải quyết vấn đề sử dụng đất, quy hoạch cộng đồng.",
+        "Hoà giải tranh chấp cộng đồng hoặc góp ý xây dựng phương án, kiến nghị cho chương trình, dự án."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+          "name": "Dùng hệ thống thông tin địa lý (GIS)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+          "name": "Nghiên cứu dân số",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+          "name": "Đô thị bền vững",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+          "name": "Quy hoạch không gian",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+          "name": "Chiến lược không gian xanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-19-3051.00",
+          "name": "Chuyên viên quy hoạch đô thị"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-13-1081.00",
+      "name": "Chuyên viên logistics và xuất nhập khẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1082.00",
+      "name": "Chuyên viên quản lý dự án",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": 25400000,
+    "high": 40000000,
+    "byYears": [],
+    "source": "Joboko, tin tuyển \"kiến trúc sư quy hoạch\"",
+    "dataYear": "2026",
+    "note": "7 tin có ghi lương.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 23,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+      "name": "Quy hoạch đô thị",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/440f64e5-e66c-45ee-bc29-53c14a2ad720",
+      "name": "Dùng hệ thống thông tin địa lý (GIS)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a06907da-7037-45ef-846c-4b684c9b6f91",
+      "name": "Nghiên cứu dân số",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+      "name": "Quy định kiến trúc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/538f8bc6-a5bf-422b-8112-5ad3fe9de9a0",
+      "name": "Đô thị bền vững",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+      "name": "Quy định phân vùng đất đai",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/27c7910a-c3b5-4d8d-a713-a6c334929a42",
+      "name": "Quy hoạch không gian",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+      "name": "Quy chuẩn xây dựng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5368a46a-54b5-4874-a06f-964d557c1cfb",
+      "name": "Chiến lược không gian xanh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+      "name": "Thực hành công trình xanh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.062
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.945
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.934
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.763
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.539
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.427
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.272
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

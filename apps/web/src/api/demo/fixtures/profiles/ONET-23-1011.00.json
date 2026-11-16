@@ -1,0 +1,733 @@
+{
+  "code": "ONET-23-1011.00",
+  "name": "Luật sư",
+  "nameEn": "Lawyers",
+  "group": "Pháp lý",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Đại diện thân chủ trong các vụ án hình sự, dân sự và các thủ tục pháp lý khác, soạn thảo văn bản pháp lý, hoặc quản lý và tư vấn cho thân chủ về các giao dịch pháp lý. Có thể chuyên một lĩnh vực hoặc hành nghề rộng trong nhiều lĩnh vực luật. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Ngồi gần như cả ngày.",
+    "Thường xuyên gặp tình huống xung đột với người khác."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "57% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "32% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty luật, văn phòng luật sư",
+      "weight": 75
+    },
+    {
+      "name": "Văn phòng công ty nước ngoài, đa quốc gia",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Luật", "Luật kinh tế"],
+    "vocational": [],
+    "licence": "Chứng chỉ hành nghề luật sư (sau đào tạo nghề luật sư và tập sự) — Luật Luật sư 2006, sửa đổi 2012"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh pháp lý (sinh viên luật)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích luật, phán quyết và quy định cho cá nhân và doanh nghiệp.",
+        "Phân tích khả năng kết quả của vụ việc dựa trên hiểu biết về án lệ.",
+        "Thu thập chứng cứ để xây dựng hướng bào chữa hoặc khởi kiện, chẳng hạn phỏng vấn thân chủ và nhân chứng để làm rõ tình tiết.",
+        "Đại diện thân chủ trước toà án hoặc cơ quan nhà nước.",
+        "Đánh giá các phát hiện, xây dựng chiến lược và lập luận để chuẩn bị trình bày vụ việc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ lý luật sư/học viên đào tạo nghề luật sư",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích luật, phán quyết và quy định cho cá nhân và doanh nghiệp.",
+        "Phân tích khả năng kết quả của vụ việc dựa trên hiểu biết về án lệ.",
+        "Thu thập chứng cứ để xây dựng hướng bào chữa hoặc khởi kiện, chẳng hạn phỏng vấn thân chủ và nhân chứng để làm rõ tình tiết.",
+        "Đại diện thân chủ trước toà án hoặc cơ quan nhà nước.",
+        "Đánh giá các phát hiện, xây dựng chiến lược và lập luận để chuẩn bị trình bày vụ việc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Luật sư tập sự",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích luật, phán quyết và quy định cho cá nhân và doanh nghiệp.",
+        "Phân tích khả năng kết quả của vụ việc dựa trên hiểu biết về án lệ.",
+        "Thu thập chứng cứ để xây dựng hướng bào chữa hoặc khởi kiện, chẳng hạn phỏng vấn thân chủ và nhân chứng để làm rõ tình tiết.",
+        "Đại diện thân chủ trước toà án hoặc cơ quan nhà nước.",
+        "Đánh giá các phát hiện, xây dựng chiến lược và lập luận để chuẩn bị trình bày vụ việc."
+      ],
+      "focus": ["giao_tiep_hop_tac", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Luật sư (có chứng chỉ hành nghề), luật sư cộng sự",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích luật, phán quyết và quy định cho cá nhân và doanh nghiệp.",
+        "Phân tích khả năng kết quả của vụ việc dựa trên hiểu biết về án lệ.",
+        "Thu thập chứng cứ để xây dựng hướng bào chữa hoặc khởi kiện, chẳng hạn phỏng vấn thân chủ và nhân chứng để làm rõ tình tiết.",
+        "Đại diện thân chủ trước toà án hoặc cơ quan nhà nước.",
+        "Đánh giá các phát hiện, xây dựng chiến lược và lập luận để chuẩn bị trình bày vụ việc."
+      ],
+      "focus": ["giao_tiep_hop_tac", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87cadd76-4e3a-47e5-b66d-559fbc1e8993",
+          "name": "Trả lời yêu cầu thông tin",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Luật sư cộng sự cao cấp (senior associate)",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích luật, phán quyết và quy định cho cá nhân và doanh nghiệp.",
+        "Phân tích khả năng kết quả của vụ việc dựa trên hiểu biết về án lệ.",
+        "Thu thập chứng cứ để xây dựng hướng bào chữa hoặc khởi kiện, chẳng hạn phỏng vấn thân chủ và nhân chứng để làm rõ tình tiết.",
+        "Đại diện thân chủ trước toà án hoặc cơ quan nhà nước.",
+        "Đánh giá các phát hiện, xây dựng chiến lược và lập luận để chuẩn bị trình bày vụ việc."
+      ],
+      "focus": ["giao_tiep_hop_tac", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87cadd76-4e3a-47e5-b66d-559fbc1e8993",
+          "name": "Trả lời yêu cầu thông tin",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87cadd76-4e3a-47e5-b66d-559fbc1e8993",
+          "name": "Trả lời yêu cầu thông tin",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Luật sư thành viên (partner)",
+      "years": "8–15",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích luật, phán quyết và quy định cho cá nhân và doanh nghiệp.",
+        "Phân tích khả năng kết quả của vụ việc dựa trên hiểu biết về án lệ.",
+        "Thu thập chứng cứ để xây dựng hướng bào chữa hoặc khởi kiện, chẳng hạn phỏng vấn thân chủ và nhân chứng để làm rõ tình tiết.",
+        "Đại diện thân chủ trước toà án hoặc cơ quan nhà nước.",
+        "Đánh giá các phát hiện, xây dựng chiến lược và lập luận để chuẩn bị trình bày vụ việc."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87cadd76-4e3a-47e5-b66d-559fbc1e8993",
+          "name": "Trả lời yêu cầu thông tin",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87cadd76-4e3a-47e5-b66d-559fbc1e8993",
+          "name": "Trả lời yêu cầu thông tin",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Luật sư điều hành (managing partner)/trưởng văn phòng luật sư",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích luật, phán quyết và quy định cho cá nhân và doanh nghiệp.",
+        "Phân tích khả năng kết quả của vụ việc dựa trên hiểu biết về án lệ.",
+        "Thu thập chứng cứ để xây dựng hướng bào chữa hoặc khởi kiện, chẳng hạn phỏng vấn thân chủ và nhân chứng để làm rõ tình tiết.",
+        "Đại diện thân chủ trước toà án hoặc cơ quan nhà nước.",
+        "Đánh giá các phát hiện, xây dựng chiến lược và lập luận để chuẩn bị trình bày vụ việc."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 4,
+        "tu_quan_ly_ap_luc": 4,
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87cadd76-4e3a-47e5-b66d-559fbc1e8993",
+          "name": "Trả lời yêu cầu thông tin",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "name": "Soạn văn bản pháp lý",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+          "name": "Phân tích chứng cứ pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87cadd76-4e3a-47e5-b66d-559fbc1e8993",
+          "name": "Trả lời yêu cầu thông tin",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-23-1023.00",
+      "name": "Thẩm phán",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1071.00",
+      "name": "Chuyên viên nhân sự",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8000000,
+    "median": null,
+    "high": 200000000,
+    "byYears": [],
+    "source": "CareerLink, \"Mức lương ngành Luật\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 28,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+      "name": "Thủ tục toà án",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+      "name": "Soạn văn bản pháp lý",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+      "name": "Luật tư",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+      "name": "Diễn giải pháp luật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+      "name": "Giữ bí mật thông tin",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/303a54a3-ff8a-4f29-b598-e54ce54c2b48",
+      "name": "Phân tích chứng cứ pháp lý",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/87cadd76-4e3a-47e5-b66d-559fbc1e8993",
+      "name": "Trả lời yêu cầu thông tin",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 1.04
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.771
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.72
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.671
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.561
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.339
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.088
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

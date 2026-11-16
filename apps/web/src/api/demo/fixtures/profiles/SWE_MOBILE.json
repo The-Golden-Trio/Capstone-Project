@@ -1,0 +1,889 @@
+{
+  "code": "SWE_MOBILE",
+  "name": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
+  "nameEn": "Mobile Developer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Lập trình viên Mobile làm ứng dụng chạy trên điện thoại, thường chuyên một nền tảng (iOS hoặc Android) hoặc dùng công cụ đa nền tảng như Flutter, React Native. Việc gồm dựng màn hình, nối với API, xử lý những đặc thù của điện thoại như pin, bộ nhớ, mất mạng, rồi đưa ứng dụng lên App Store và Google Play.",
+  "fitSummary": null,
+  "downsides": [
+    "Việc phát hành phụ thuộc kho ứng dụng: bản cập nhật có thể bị từ chối duyệt với lý do mơ hồ và trễ hàng tuần.",
+    "Phải kiểm trên rất nhiều đời máy; ứng dụng mượt trên máy mới vẫn có thể giật trên máy tầm trung.",
+    "Ở đội nhỏ, một người có thể phải lo cả iOS lẫn Android.",
+    "Lỗi đã sửa vẫn bị đánh giá xấu khi nhiều người dùng chưa cập nhật bản mới."
+  ],
+  "workFacts": [],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 50
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 50
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật phần mềm",
+      "Công nghệ thông tin",
+      "Khoa học máy tính"
+    ],
+    "vocational": ["Lập trình máy tính"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Mobile Developer Intern (iOS/Android/Flutter)",
+      "years": "0",
+      "coreOutput": "Hiện thực màn hình và tính năng nhỏ trên MỘT nền tảng cụ thể (đã chọn ngay từ đầu, không phải đa nền tảng) dưới sự giám sát trực tiếp.",
+      "tasks": [],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher Mobile Developer",
+      "years": "0-1",
+      "coreOutput": "Tự hoàn thành một màn hình hoặc tính năng nhỏ trên một nền tảng, theo component/pattern đã có sẵn.",
+      "tasks": [
+        "Sửa các UI bug đơn giản",
+        "Tạo các view tĩnh dựa trên thiết kế",
+        "Viết unit test cho các hàm tiện ích"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior Mobile Developer (iOS hoặc Android hoặc Flutter)",
+      "years": "1-2",
+      "coreOutput": "Tự triển khai trọn vẹn một tính năng trên một nền tảng, tích hợp API, xử lý state cục bộ, vẫn cần review.",
+      "tasks": [
+        "Tích hợp API và quản lý state",
+        "Xử lý bộ nhớ đệm (caching) cục bộ",
+        "Tối ưu hóa hiệu năng render danh sách"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle Mobile Developer",
+      "years": "2-4",
+      "coreOutput": "Chịu trách nhiệm một module trên nền tảng mình phụ trách, tối ưu hiệu năng và trải nghiệm đặc thù nền tảng (lifecycle, memory, offline), review code.",
+      "tasks": [
+        "Xây dựng các custom view và animation phức tạp",
+        "Đảm bảo tính bảo mật của ứng dụng (mã hóa, obfuscation)",
+        "Tối ưu hóa kích thước app và tốc độ khởi động"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Mobile Developer",
+      "years": "4-7",
+      "coreOutput": "Tự chủ kiến trúc app trên nền tảng mình phụ trách; ở band này bắt đầu xuất hiện kỹ sư làm được CẢ iOS và Android hoặc chuyển hẳn sang cross-platform (React Native/Flutter) — điểm gộp nhánh mà roles.csv Pass 0 ghi nhận, chưa có JD xác nhận mốc chính xác.",
+      "tasks": [],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Lead Mobile Engineer",
+      "years": "6-9",
+      "coreOutput": "Dẫn dắt kỹ thuật cho toàn bộ ứng dụng mobile của sản phẩm, tự quyết kiến trúc cross-platform hay native, coaching đội.",
+      "tasks": [],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Principal Mobile Engineer",
+      "years": "8-12",
+      "coreOutput": "Đặt chuẩn kỹ thuật mobile xuyên nhiều đội và nhiều sản phẩm, review thiết kế kiến trúc app của kỹ sư khác — thuần IC, không có direct report.",
+      "tasks": [],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+          "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "SWE_MOBILE",
+          "name": "Lập trình viên Mobile / Kỹ sư ứng dụng di động"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "SWE_TECHLEAD",
+          "name": "Trưởng nhóm kỹ thuật"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "SWE_FRONTEND",
+      "name": "Lập trình viên Front-end",
+      "why": "Cùng làm giao diện; React Native khiến hai nghề chồng lấn mạnh"
+    },
+    {
+      "code": "SWE_BACKEND",
+      "name": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "why": "Mobile cần backend; chia sẻ tư duy API và dữ liệu"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 36850000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "<1 năm",
+        "median": 14150000
+      },
+      {
+        "years": "1-2 năm",
+        "median": 28800000
+      },
+      {
+        "years": "3-4 năm",
+        "median": 29050000
+      },
+      {
+        "years": "5-8 năm",
+        "median": 37350000
+      },
+      {
+        "years": ">8 năm",
+        "median": 45700000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 13,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+      "name": "Lập trình máy tính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+      "name": "Gỡ lỗi phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+      "name": "Hệ điều hành di động",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+      "name": "Dùng giao diện riêng của ứng dụng (như API)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+      "name": "Chuyển dữ liệu sang hệ thống mới",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+      "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2b7a79e5-84d8-4880-be66-3d9bb05bea17",
+      "name": "Dùng mẫu thiết kế phần mềm (design pattern)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+      "name": "Làm bản mẫu phần mềm (prototype)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+      "name": "Vẽ lưu đồ",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+      "name": "Phân tích đặc tả phần mềm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,803 @@
+{
+  "code": "ONET-49-3011.00",
+  "name": "Kỹ thuật viên bảo dưỡng máy bay",
+  "nameEn": "Aircraft Mechanics and Service Technicians",
+  "group": "Lắp đặt, bảo trì và sửa chữa",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu động cơ và các cụm của máy bay như hệ thống thuỷ lực và khí nén. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Làm trong không gian chật hoặc tư thế khó.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió.",
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc.",
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "22% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "10% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Trung tâm bảo dưỡng máy bay",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật hàng không"],
+    "vocational": ["Bảo trì và sửa chữa máy bay", "Kỹ thuật hàng không"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên kỹ thuật bảo dưỡng tàu bay",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra công việc đã làm để xác nhận bảo dưỡng đạt tiêu chuẩn và máy bay sẵn sàng hoạt động.",
+        "Đọc và hiểu tài liệu bảo dưỡng, thông báo kỹ thuật và yêu cầu khác để quyết định cách sửa hoặc thay bộ phận hỏng.",
+        "Ghi nhật ký sửa chữa, ghi lại mọi việc bảo dưỡng phòng ngừa và khắc phục.",
+        "Kiểm tra các bộ phận như càng đáp, hệ thống thuỷ lực, hệ thống chống đóng băng để tìm vết nứt, gãy, rò rỉ hoặc lỗi khác.",
+        "Kiểm tra định kỳ và đột xuất theo quy định."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ máy bảo dưỡng tàu bay",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra công việc đã làm để xác nhận bảo dưỡng đạt tiêu chuẩn và máy bay sẵn sàng hoạt động.",
+        "Đọc và hiểu tài liệu bảo dưỡng, thông báo kỹ thuật và yêu cầu khác để quyết định cách sửa hoặc thay bộ phận hỏng.",
+        "Ghi nhật ký sửa chữa, ghi lại mọi việc bảo dưỡng phòng ngừa và khắc phục.",
+        "Kiểm tra các bộ phận như càng đáp, hệ thống thuỷ lực, hệ thống chống đóng băng để tìm vết nứt, gãy, rò rỉ hoặc lỗi khác.",
+        "Kiểm tra định kỳ và đột xuất theo quy định."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ thuật viên bảo dưỡng có năng định loại tàu bay",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra công việc đã làm để xác nhận bảo dưỡng đạt tiêu chuẩn và máy bay sẵn sàng hoạt động.",
+        "Đọc và hiểu tài liệu bảo dưỡng, thông báo kỹ thuật và yêu cầu khác để quyết định cách sửa hoặc thay bộ phận hỏng.",
+        "Ghi nhật ký sửa chữa, ghi lại mọi việc bảo dưỡng phòng ngừa và khắc phục.",
+        "Kiểm tra các bộ phận như càng đáp, hệ thống thuỷ lực, hệ thống chống đóng băng để tìm vết nứt, gãy, rò rỉ hoặc lỗi khác.",
+        "Kiểm tra định kỳ và đột xuất theo quy định."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12",
+          "name": "Bộ phận động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+          "name": "Dùng dụng cụ điện cầm tay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Nhân viên xác nhận bảo dưỡng (giấy phép B1/B2)",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra công việc đã làm để xác nhận bảo dưỡng đạt tiêu chuẩn và máy bay sẵn sàng hoạt động.",
+        "Đọc và hiểu tài liệu bảo dưỡng, thông báo kỹ thuật và yêu cầu khác để quyết định cách sửa hoặc thay bộ phận hỏng.",
+        "Ghi nhật ký sửa chữa, ghi lại mọi việc bảo dưỡng phòng ngừa và khắc phục.",
+        "Kiểm tra các bộ phận như càng đáp, hệ thống thuỷ lực, hệ thống chống đóng băng để tìm vết nứt, gãy, rò rỉ hoặc lỗi khác.",
+        "Kiểm tra định kỳ và đột xuất theo quy định."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12",
+          "name": "Bộ phận động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+          "name": "Dùng dụng cụ điện cầm tay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12",
+          "name": "Bộ phận động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+          "name": "Dùng dụng cụ điện cầm tay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng kíp/trưởng ca bảo dưỡng",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra công việc đã làm để xác nhận bảo dưỡng đạt tiêu chuẩn và máy bay sẵn sàng hoạt động.",
+        "Đọc và hiểu tài liệu bảo dưỡng, thông báo kỹ thuật và yêu cầu khác để quyết định cách sửa hoặc thay bộ phận hỏng.",
+        "Ghi nhật ký sửa chữa, ghi lại mọi việc bảo dưỡng phòng ngừa và khắc phục.",
+        "Kiểm tra các bộ phận như càng đáp, hệ thống thuỷ lực, hệ thống chống đóng băng để tìm vết nứt, gãy, rò rỉ hoặc lỗi khác.",
+        "Kiểm tra định kỳ và đột xuất theo quy định."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12",
+          "name": "Bộ phận động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+          "name": "Dùng dụng cụ điện cầm tay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12",
+          "name": "Bộ phận động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+          "name": "Dùng dụng cụ điện cầm tay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc trung tâm/xưởng bảo dưỡng tàu bay",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra công việc đã làm để xác nhận bảo dưỡng đạt tiêu chuẩn và máy bay sẵn sàng hoạt động.",
+        "Đọc và hiểu tài liệu bảo dưỡng, thông báo kỹ thuật và yêu cầu khác để quyết định cách sửa hoặc thay bộ phận hỏng.",
+        "Ghi nhật ký sửa chữa, ghi lại mọi việc bảo dưỡng phòng ngừa và khắc phục.",
+        "Kiểm tra các bộ phận như càng đáp, hệ thống thuỷ lực, hệ thống chống đóng băng để tìm vết nứt, gãy, rò rỉ hoặc lỗi khác.",
+        "Kiểm tra định kỳ và đột xuất theo quy định."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12",
+          "name": "Bộ phận động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+          "name": "Dùng dụng cụ điện cầm tay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+          "name": "Lắp đặt thiết bị điện, điện tử",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+          "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+          "name": "Vận hành thiết bị hàn thiếc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+          "name": "Cơ khí máy bay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+          "name": "Quy định an toàn hàng không chung",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12",
+          "name": "Bộ phận động cơ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+          "name": "Dùng dụng cụ điện cầm tay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2141.00",
+      "name": "Kỹ sư cơ khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 15000000,
+    "median": null,
+    "high": 50000000,
+    "byYears": [],
+    "source": "CafeF, dẫn lời ông Tạ Minh Trọng (Cục Hàng không Việt Nam)",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+      "name": "Cơ học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f",
+      "name": "Lắp đặt thiết bị điện, điện tử",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/faf1930e-1818-4710-a85e-c690a153eeca",
+      "name": "Dùng thiết bị sân bay theo hướng dẫn nhà sản xuất",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f30a7ea4-77dd-452c-8a2d-b06c12606a7f",
+      "name": "Vận hành thiết bị hàn thiếc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/532bcdca-a889-4dea-8f7f-4e03d8cfd0d2",
+      "name": "Cơ khí máy bay",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+      "name": "Dùng tài liệu kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d5b63f98-28ce-4cbb-b075-6ac539a685b0",
+      "name": "Quy định an toàn hàng không chung",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12",
+      "name": "Bộ phận động cơ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+      "name": "Dùng dụng cụ điện cầm tay",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+      "name": "Đọc bản vẽ tiêu chuẩn",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.677
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.342
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.279
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.127
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.008
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.077
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.496
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "code": "QA_MANUAL",
+  "name": "Kỹ sư kiểm thử thủ công / Tester",
+  "nameEn": "Quality Engineer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Kỹ sư kiểm thử tìm lỗi trong phần mềm trước khi người dùng gặp: đọc yêu cầu, viết kịch bản kiểm thử, chạy thử theo nhiều tình huống, và báo lỗi đủ rõ để lập trình viên sửa được. Đây là cửa vào ngành phổ biến cho người chưa có nền lập trình vững; theo thời gian, nhiều người chuyển sang viết kiểm thử tự động.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Nhiều việc lặp lại, như chạy lại cả bộ kiểm thử sau mỗi lần sửa lỗi.",
+    "Hay phải tranh luận với lập trình viên khi lỗi không tái hiện được trên máy họ.",
+    "Trần của kiểm thử thủ công thấp: lên cao thường phải chuyển sang tự động hoá hoặc quản lý, và nhu cầu kiểm thử thủ công đang giảm ở công ty lớn.",
+    "Trong khảo sát của ITviec, lương thấp hơn kỳ vọng là lý do nghỉ việc hay gặp nhất."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "41% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "9% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 55
+    },
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 30
+    },
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật phần mềm",
+      "Công nghệ thông tin",
+      "Hệ thống thông tin"
+    ],
+    "vocational": ["Lập trình máy tính", "Tin học ứng dụng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "QA/Tester Intern",
+      "years": "0",
+      "coreOutput": "Thực thi test case có sẵn dưới sự hướng dẫn, học cách viết bug report.",
+      "tasks": [],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher Tester",
+      "years": "0-1",
+      "coreOutput": "Tự thực thi bộ test case cho một tính năng, viết bug report đạt chuẩn, chưa tự thiết kế test case.",
+      "tasks": [
+        "Thực thi test case có sẵn",
+        "Log bug lên hệ thống quản lý lỗi",
+        "Verify các bug đã được fix"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480",
+          "name": "Tái hiện lỗi phần mềm của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+          "name": "Chạy kiểm thử phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93",
+          "name": "Báo cáo kết quả kiểm thử",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior QC/Tester",
+      "years": "1-2",
+      "coreOutput": "Tự thiết kế test case cho một tính năng từ yêu cầu có sẵn, thực hiện test theo nhiều kỹ thuật cơ bản (boundary, equivalence).",
+      "tasks": [
+        "Viết test case và test plan cho module",
+        "Phối hợp với BA để làm rõ yêu cầu chưa đầy đủ",
+        "Thực hiện API testing cơ bản"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480",
+          "name": "Tái hiện lỗi phần mềm của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+          "name": "Chạy kiểm thử phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93",
+          "name": "Báo cáo kết quả kiểm thử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480",
+          "name": "Tái hiện lỗi phần mềm của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+          "name": "Chạy kiểm thử phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93",
+          "name": "Báo cáo kết quả kiểm thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2450c3b3-e78e-435b-b84d-e05d984e71dc",
+          "name": "Mô hình kiến trúc phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle QC/Tester",
+      "years": "2-4",
+      "coreOutput": "Chịu trách nhiệm test plan cho cả một module, tự xác định phạm vi và độ ưu tiên test, review test case của junior.",
+      "tasks": [
+        "Lên chiến lược test tổng thể",
+        "Review test case của team",
+        "Đánh giá rủi ro release"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480",
+          "name": "Tái hiện lỗi phần mềm của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+          "name": "Chạy kiểm thử phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93",
+          "name": "Báo cáo kết quả kiểm thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2450c3b3-e78e-435b-b84d-e05d984e71dc",
+          "name": "Mô hình kiến trúc phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480",
+          "name": "Tái hiện lỗi phần mềm của khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+          "name": "Chạy kiểm thử phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93",
+          "name": "Báo cáo kết quả kiểm thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2450c3b3-e78e-435b-b84d-e05d984e71dc",
+          "name": "Mô hình kiến trúc phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior QC/Tester",
+      "years": "4-7",
+      "coreOutput": "Tự chủ chiến lược test cho cả một sản phẩm, mentor đội test — đây gần như là TRẦN của title Manual Tester thuần tại VN; band cao hơn hầu như luôn đi kèm chuyển sang QA_AUTO hoặc QA_LEAD.",
+      "tasks": [
+        "Xây dựng Test Strategy cho các dự án lớn",
+        "Quản lý và điều phối nguồn lực QA Manual",
+        "Audit quy trình QC"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480",
+          "name": "Tái hiện lỗi phần mềm của khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+          "name": "Chạy kiểm thử phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93",
+          "name": "Báo cáo kết quả kiểm thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2450c3b3-e78e-435b-b84d-e05d984e71dc",
+          "name": "Mô hình kiến trúc phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+          "name": "Lỗi bất thường của phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+          "name": "Các cấp độ kiểm thử phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480",
+          "name": "Tái hiện lỗi phần mềm của khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+          "name": "Chạy kiểm thử phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93",
+          "name": "Báo cáo kết quả kiểm thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2450c3b3-e78e-435b-b84d-e05d984e71dc",
+          "name": "Mô hình kiến trúc phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "SEC_PENTEST",
+      "name": "Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng",
+      "why": "Cùng bản chất tìm lỗi có hệ thống, khác mục tiêu"
+    },
+    {
+      "code": "PROD_BA",
+      "name": "Chuyên viên phân tích nghiệp vụ / BA",
+      "why": "Cùng phải hiểu sâu yêu cầu nghiệp vụ"
+    },
+    {
+      "code": "SWE_BACKEND",
+      "name": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "why": "Automation QA cần kỹ năng lập trình thật"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 31200000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "1-2 năm",
+        "median": 18000000
+      },
+      {
+        "years": "3-4 năm",
+        "median": 24400000
+      },
+      {
+        "years": "5-8 năm",
+        "median": 29750000
+      },
+      {
+        "years": ">8 năm",
+        "median": 38500000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 45,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/438ff259-d086-4004-acda-1ec3e1631bc6",
+      "name": "Lỗi bất thường của phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/85f46538-ae70-498a-bfbc-b8ddafe96c7d",
+      "name": "Các cấp độ kiểm thử phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+      "name": "Chỉ số đo phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/eb3aa8c1-fb14-47b4-a352-b7975abd2480",
+      "name": "Tái hiện lỗi phần mềm của khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+      "name": "Chạy kiểm thử phần mềm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/561c2525-5bd8-4d86-8f45-820f4be7db93",
+      "name": "Báo cáo kết quả kiểm thử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2450c3b3-e78e-435b-b84d-e05d984e71dc",
+      "name": "Mô hình kiến trúc phần mềm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.83
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.4
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.328
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.278
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.069
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.176
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.456
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

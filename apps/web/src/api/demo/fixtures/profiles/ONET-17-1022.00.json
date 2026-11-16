@@ -1,0 +1,831 @@
+{
+  "code": "ONET-17-1022.00",
+  "name": "Kỹ sư trắc địa, bản đồ",
+  "nameEn": "Surveyors",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Đo đạc chính xác và xác định ranh giới thửa đất. Cung cấp dữ liệu về hình dạng, địa hình, trọng lực, vị trí, độ cao và kích thước của đất và các đối tượng trên bề mặt trái đất cho kỹ thuật, làm bản đồ, khai mỏ, định giá đất, xây dựng và các mục đích khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Sai sót trong thiết kế có thể gây nguy hiểm cho người dùng và tốn kém rất lớn."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "41% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "36% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 50
+    },
+    {
+      "name": "Công ty tư vấn thiết kế, giám sát",
+      "weight": 50
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật trắc địa - bản đồ",
+      "Bản đồ, viễn thám và hệ thông tin địa lý"
+    ],
+    "vocational": ["Công nghệ kỹ thuật trắc địa", "Trắc địa công trình"],
+    "licence": "Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát) — Luật Xây dựng số 135/2025/QH15, Điều 88"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh trắc địa",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hoặc thực hiện đo đạc để xác lập ranh giới pháp lý của thửa đất dựa trên giấy tờ quyền sử dụng.",
+        "Lập và lưu bản vẽ phác, bản đồ, báo cáo và mô tả pháp lý của kết quả đo để xác nhận và chịu trách nhiệm về công việc.",
+        "Viết mô tả kết quả đo ranh giới để dùng trong giấy chứng nhận, hợp đồng thuê và văn bản pháp lý khác.",
+        "Kiểm tra độ chính xác của số liệu đo, gồm phép đo và tính toán tại hiện trường.",
+        "Tra cứu hồ sơ pháp lý, hồ sơ đo đạc và giấy tờ đất để lấy thông tin về ranh giới khu vực cần đo."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư trắc địa mới / kỹ thuật viên đo đạc",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hoặc thực hiện đo đạc để xác lập ranh giới pháp lý của thửa đất dựa trên giấy tờ quyền sử dụng.",
+        "Lập và lưu bản vẽ phác, bản đồ, báo cáo và mô tả pháp lý của kết quả đo để xác nhận và chịu trách nhiệm về công việc.",
+        "Viết mô tả kết quả đo ranh giới để dùng trong giấy chứng nhận, hợp đồng thuê và văn bản pháp lý khác.",
+        "Kiểm tra độ chính xác của số liệu đo, gồm phép đo và tính toán tại hiện trường.",
+        "Tra cứu hồ sơ pháp lý, hồ sơ đo đạc và giấy tờ đất để lấy thông tin về ranh giới khu vực cần đo."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư trắc địa hạng II (có chứng chỉ hành nghề đo đạc)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hoặc thực hiện đo đạc để xác lập ranh giới pháp lý của thửa đất dựa trên giấy tờ quyền sử dụng.",
+        "Lập và lưu bản vẽ phác, bản đồ, báo cáo và mô tả pháp lý của kết quả đo để xác nhận và chịu trách nhiệm về công việc.",
+        "Viết mô tả kết quả đo ranh giới để dùng trong giấy chứng nhận, hợp đồng thuê và văn bản pháp lý khác.",
+        "Kiểm tra độ chính xác của số liệu đo, gồm phép đo và tính toán tại hiện trường.",
+        "Tra cứu hồ sơ pháp lý, hồ sơ đo đạc và giấy tờ đất để lấy thông tin về ranh giới khu vực cần đo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f",
+          "name": "Khảo sát đo đạc đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/222137dc-9021-4be8-bb7a-29833e02616a",
+          "name": "Lập báo cáo trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861",
+          "name": "Trắc địa học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư trắc địa chính / tổ trưởng đo",
+      "years": "4–6",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hoặc thực hiện đo đạc để xác lập ranh giới pháp lý của thửa đất dựa trên giấy tờ quyền sử dụng.",
+        "Lập và lưu bản vẽ phác, bản đồ, báo cáo và mô tả pháp lý của kết quả đo để xác nhận và chịu trách nhiệm về công việc.",
+        "Viết mô tả kết quả đo ranh giới để dùng trong giấy chứng nhận, hợp đồng thuê và văn bản pháp lý khác.",
+        "Kiểm tra độ chính xác của số liệu đo, gồm phép đo và tính toán tại hiện trường.",
+        "Tra cứu hồ sơ pháp lý, hồ sơ đo đạc và giấy tờ đất để lấy thông tin về ranh giới khu vực cần đo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f",
+          "name": "Khảo sát đo đạc đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/222137dc-9021-4be8-bb7a-29833e02616a",
+          "name": "Lập báo cáo trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861",
+          "name": "Trắc địa học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f",
+          "name": "Khảo sát đo đạc đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/222137dc-9021-4be8-bb7a-29833e02616a",
+          "name": "Lập báo cáo trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861",
+          "name": "Trắc địa học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư trắc địa hạng I",
+      "years": "5–9",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hoặc thực hiện đo đạc để xác lập ranh giới pháp lý của thửa đất dựa trên giấy tờ quyền sử dụng.",
+        "Lập và lưu bản vẽ phác, bản đồ, báo cáo và mô tả pháp lý của kết quả đo để xác nhận và chịu trách nhiệm về công việc.",
+        "Viết mô tả kết quả đo ranh giới để dùng trong giấy chứng nhận, hợp đồng thuê và văn bản pháp lý khác.",
+        "Kiểm tra độ chính xác của số liệu đo, gồm phép đo và tính toán tại hiện trường.",
+        "Tra cứu hồ sơ pháp lý, hồ sơ đo đạc và giấy tờ đất để lấy thông tin về ranh giới khu vực cần đo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f",
+          "name": "Khảo sát đo đạc đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/222137dc-9021-4be8-bb7a-29833e02616a",
+          "name": "Lập báo cáo trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861",
+          "name": "Trắc địa học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f",
+          "name": "Khảo sát đo đạc đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/222137dc-9021-4be8-bb7a-29833e02616a",
+          "name": "Lập báo cáo trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861",
+          "name": "Trắc địa học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng đo đạc bản đồ",
+      "years": "9+",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hoặc thực hiện đo đạc để xác lập ranh giới pháp lý của thửa đất dựa trên giấy tờ quyền sử dụng.",
+        "Lập và lưu bản vẽ phác, bản đồ, báo cáo và mô tả pháp lý của kết quả đo để xác nhận và chịu trách nhiệm về công việc.",
+        "Viết mô tả kết quả đo ranh giới để dùng trong giấy chứng nhận, hợp đồng thuê và văn bản pháp lý khác.",
+        "Kiểm tra độ chính xác của số liệu đo, gồm phép đo và tính toán tại hiện trường.",
+        "Tra cứu hồ sơ pháp lý, hồ sơ đo đạc và giấy tờ đất để lấy thông tin về ranh giới khu vực cần đo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f",
+          "name": "Khảo sát đo đạc đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/222137dc-9021-4be8-bb7a-29833e02616a",
+          "name": "Lập báo cáo trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861",
+          "name": "Trắc địa học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+          "name": "Địa hình học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+          "name": "Tính toán trắc địa",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+          "name": "Xác định ranh giới bất động sản",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+          "name": "Bản đồ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+          "name": "Chỉnh thiết bị đo đạc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+          "name": "Vận hành máy đo đạc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+          "name": "Đối chiếu kết quả tính toán khảo sát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f",
+          "name": "Khảo sát đo đạc đất đai",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/222137dc-9021-4be8-bb7a-29833e02616a",
+          "name": "Lập báo cáo trắc địa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861",
+          "name": "Trắc địa học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-1022.00",
+          "name": "Kỹ sư trắc địa, bản đồ"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-19-2042.00",
+      "name": "Nhà khoa học địa chất, khí tượng thuỷ văn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-4031.00",
+      "name": "Nhiếp ảnh, quay phim và dựng phim",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 15000000,
+    "median": null,
+    "high": 23000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Kỹ Sư Trắc Địa\"",
+    "dataYear": "2026",
+    "note": "194 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 15–23tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 18.600.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 10,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/790a335b-2005-4b8a-b6fe-47ff7701ebb7",
+      "name": "Địa hình học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/86945516-619a-456e-b0d0-2fb31d927992",
+      "name": "Tính toán trắc địa",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a550c4e9-5773-47a2-861d-e57ceb076eb6",
+      "name": "Xác định ranh giới bất động sản",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2dfa5bd5-c87c-461c-bce9-69b2c58732bd",
+      "name": "Bản đồ học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bb0069d2-0953-43d4-923b-18ad370bc2f3",
+      "name": "Chỉnh thiết bị đo đạc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/af1df253-5103-46d7-a757-b17bf5a4e581",
+      "name": "Vận hành máy đo đạc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e2b82b00-f07f-4fc8-a7bb-c8febf65efe5",
+      "name": "Đối chiếu kết quả tính toán khảo sát",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/39e71107-3aa9-41a0-809c-edea477c968f",
+      "name": "Khảo sát đo đạc đất đai",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/222137dc-9021-4be8-bb7a-29833e02616a",
+      "name": "Lập báo cáo trắc địa",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7d4e4636-f136-46f6-ae23-2a7639d6b861",
+      "name": "Trắc địa học",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.692
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.17
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.092
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.02
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.074
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.157
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.681
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

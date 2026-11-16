@@ -1,32 +1,10 @@
-import { StrictMode, useEffect } from 'react';
-import * as ReactDOM from 'react-dom/client';
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import { RouterProvider } from 'react-router-dom';
-import { router } from './routes/router';
-import { useAuthStore } from './store/authStore';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { App } from './app/App';
+import './styles.css';
 
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID ?? '';
-
-/**
- * Hỏi máy chủ một lần xem còn phiên đăng nhập không: có refresh token thì
- * làm mới phiên rồi đọc `/auth/me` (Bearer, xem `api/session.ts`).
- */
-function AuthBoundary() {
-  const hydrate = useAuthStore((s) => s.hydrate);
-  useEffect(() => {
-    void hydrate();
-  }, [hydrate]);
-  return <RouterProvider router={router} />;
-}
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
-
-root.render(
+createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-      <AuthBoundary />
-    </GoogleOAuthProvider>
+    <App />
   </StrictMode>,
 );

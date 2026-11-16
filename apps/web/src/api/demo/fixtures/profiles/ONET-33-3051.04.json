@@ -1,0 +1,605 @@
+{
+  "code": "ONET-33-3051.04",
+  "name": "Cán bộ hải quan và biên phòng cửa khẩu",
+  "nameEn": "Customs and Border Protection Officers",
+  "group": "Dịch vụ bảo vệ an ninh và an toàn",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Điều tra, kiểm tra người, phương tiện vận chuyển và hàng hoá xuất nhập cảnh để phát hiện vi phạm luật xuất nhập cảnh và hải quan. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có tiếp xúc với bức xạ.",
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Thường xuyên gặp tình huống xung đột với người khác."
+  ],
+  "workFacts": [
+    "Làm cả trong văn phòng lẫn ngoài hiện trường.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "63% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "25% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Cửa khẩu, hải quan, biên phòng",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Quản lý biên giới và cửa khẩu", "Biên phòng"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công chức hải quan mới (kiểm tra viên hải quan, tương đương chuyên viên)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hồ sơ nhập cảnh, thị thực, hộ chiếu và phỏng vấn để xác định điều kiện nhập cảnh, cư trú và đi lại.",
+        "Tạm giữ người vi phạm luật hải quan hoặc xuất nhập cảnh và làm thủ tục xử lý pháp lý như trục xuất.",
+        "Kiểm tra hàng hoá, hành lý và đồ dùng cá nhân xuất nhập cảnh về việc tuân thủ luật thuế và quy định hải quan.",
+        "Phát hiện và thu giữ hàng cấm, hàng không khai báo và phương tiện chở hàng đó.",
+        "Giải thích luật và quy định cho hành khách, người nhập cư, chủ hàng và nhà sản xuất."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kiểm tra viên hải quan tại cửa khẩu",
+      "years": "2–6",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hồ sơ nhập cảnh, thị thực, hộ chiếu và phỏng vấn để xác định điều kiện nhập cảnh, cư trú và đi lại.",
+        "Tạm giữ người vi phạm luật hải quan hoặc xuất nhập cảnh và làm thủ tục xử lý pháp lý như trục xuất.",
+        "Kiểm tra hàng hoá, hành lý và đồ dùng cá nhân xuất nhập cảnh về việc tuân thủ luật thuế và quy định hải quan.",
+        "Phát hiện và thu giữ hàng cấm, hàng không khai báo và phương tiện chở hàng đó.",
+        "Giải thích luật và quy định cho hành khách, người nhập cư, chủ hàng và nhà sản xuất."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Kiểm tra viên chính hải quan",
+      "years": "7–12",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hồ sơ nhập cảnh, thị thực, hộ chiếu và phỏng vấn để xác định điều kiện nhập cảnh, cư trú và đi lại.",
+        "Tạm giữ người vi phạm luật hải quan hoặc xuất nhập cảnh và làm thủ tục xử lý pháp lý như trục xuất.",
+        "Kiểm tra hàng hoá, hành lý và đồ dùng cá nhân xuất nhập cảnh về việc tuân thủ luật thuế và quy định hải quan.",
+        "Phát hiện và thu giữ hàng cấm, hàng không khai báo và phương tiện chở hàng đó.",
+        "Giải thích luật và quy định cho hành khách, người nhập cư, chủ hàng và nhà sản xuất."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff8bd17c-77e9-4d4e-929a-a0cf86f3ed34",
+          "name": "Phương pháp giám sát",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Đội trưởng/trưởng hải quan cửa khẩu",
+      "years": "8–15",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hồ sơ nhập cảnh, thị thực, hộ chiếu và phỏng vấn để xác định điều kiện nhập cảnh, cư trú và đi lại.",
+        "Tạm giữ người vi phạm luật hải quan hoặc xuất nhập cảnh và làm thủ tục xử lý pháp lý như trục xuất.",
+        "Kiểm tra hàng hoá, hành lý và đồ dùng cá nhân xuất nhập cảnh về việc tuân thủ luật thuế và quy định hải quan.",
+        "Phát hiện và thu giữ hàng cấm, hàng không khai báo và phương tiện chở hàng đó.",
+        "Giải thích luật và quy định cho hành khách, người nhập cư, chủ hàng và nhà sản xuất."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff8bd17c-77e9-4d4e-929a-a0cf86f3ed34",
+          "name": "Phương pháp giám sát",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff8bd17c-77e9-4d4e-929a-a0cf86f3ed34",
+          "name": "Phương pháp giám sát",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Lãnh đạo chi cục hải quan khu vực",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hồ sơ nhập cảnh, thị thực, hộ chiếu và phỏng vấn để xác định điều kiện nhập cảnh, cư trú và đi lại.",
+        "Tạm giữ người vi phạm luật hải quan hoặc xuất nhập cảnh và làm thủ tục xử lý pháp lý như trục xuất.",
+        "Kiểm tra hàng hoá, hành lý và đồ dùng cá nhân xuất nhập cảnh về việc tuân thủ luật thuế và quy định hải quan.",
+        "Phát hiện và thu giữ hàng cấm, hàng không khai báo và phương tiện chở hàng đó.",
+        "Giải thích luật và quy định cho hành khách, người nhập cư, chủ hàng và nhà sản xuất."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff8bd17c-77e9-4d4e-929a-a0cf86f3ed34",
+          "name": "Phương pháp giám sát",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff8bd17c-77e9-4d4e-929a-a0cf86f3ed34",
+          "name": "Phương pháp giám sát",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Kiểm tra viên cao cấp hải quan, lãnh đạo cấp cục",
+      "years": "18+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hồ sơ nhập cảnh, thị thực, hộ chiếu và phỏng vấn để xác định điều kiện nhập cảnh, cư trú và đi lại.",
+        "Tạm giữ người vi phạm luật hải quan hoặc xuất nhập cảnh và làm thủ tục xử lý pháp lý như trục xuất.",
+        "Kiểm tra hàng hoá, hành lý và đồ dùng cá nhân xuất nhập cảnh về việc tuân thủ luật thuế và quy định hải quan.",
+        "Phát hiện và thu giữ hàng cấm, hàng không khai báo và phương tiện chở hàng đó.",
+        "Giải thích luật và quy định cho hành khách, người nhập cư, chủ hàng và nhà sản xuất."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff8bd17c-77e9-4d4e-929a-a0cf86f3ed34",
+          "name": "Phương pháp giám sát",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+          "name": "Quy định giấy phép",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+          "name": "Luật hải quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff8bd17c-77e9-4d4e-929a-a0cf86f3ed34",
+          "name": "Phương pháp giám sát",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-33-3051.00",
+      "name": "Cảnh sát (công an)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1081.00",
+      "name": "Chuyên viên logistics và xuất nhập khẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-3021.00",
+      "name": "Điều tra viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1041.00",
+      "name": "Chuyên viên tuân thủ và quản lý rủi ro",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 5920000,
+    "median": null,
+    "high": 17153000,
+    "byYears": [],
+    "source": "Thời báo Tài chính Việt Nam (hệ số công chức hải quan) × lương cơ sở 2,53tr",
+    "dataYear": "2024",
+    "note": "Chỉ hải quan, chưa có số cho bộ đội biên phòng.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+      "name": "Kiểm tra giấy tờ chính thức",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ab944aef-09dc-4047-a4ac-0048d8405fb3",
+      "name": "Quy định giấy phép",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/666e7d29-247b-4032-a3ce-8ee27554a044",
+      "name": "Luật hải quan",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+      "name": "Kiểm tra an toàn, an ninh tại chỗ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+      "name": "Viết báo cáo công việc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ff8bd17c-77e9-4d4e-929a-a0cf86f3ed34",
+      "name": "Phương pháp giám sát",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.921
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.442
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.419
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.417
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.396
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.361
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.155
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,863 @@
+{
+  "code": "ONET-17-2031.00",
+  "name": "Kỹ sư y sinh",
+  "nameEn": "Bioengineers and Biomedical Engineers",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Vận dụng kiến thức kỹ thuật, sinh học, hoá học, tin học và cơ sinh học để thiết kế, phát triển và đánh giá các hệ thống và sản phẩm sinh học, nông nghiệp, y tế như cơ quan nhân tạo, bộ phận giả, thiết bị đo, hệ thống thông tin y tế và hệ thống quản lý chăm sóc sức khoẻ. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Môi trường cạnh tranh cao.",
+    "Ngồi gần như cả ngày.",
+    "Sai sót trong thiết kế có thể gây nguy hiểm cho người dùng và tốn kém rất lớn."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "43% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "23% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Nhà cung cấp, bảo trì thiết bị",
+      "weight": 60
+    },
+    {
+      "name": "Bệnh viện công",
+      "weight": 25
+    },
+    {
+      "name": "Bệnh viện tư, quốc tế",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật y sinh"],
+    "vocational": ["Bảo trì và sửa chữa thiết bị y tế"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh kỹ thuật y sinh",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Đánh giá độ an toàn, hiệu suất và hiệu quả của thiết bị y sinh.",
+        "Soạn báo cáo kỹ thuật, tài liệu tổng hợp dữ liệu hoặc bài báo khoa học để công bố, nộp hồ sơ đăng ký hoặc xin bằng sáng chế.",
+        "Thiết kế hoặc phát triển thiết bị, dụng cụ, quy trình chẩn đoán y khoa và lâm sàng dựa trên nguyên lý kỹ thuật và khoa học hành vi sinh học.",
+        "Cùng nhà khoa học sự sống, nhà hoá học và nhà khoa học y học nghiên cứu khía cạnh kỹ thuật của hệ sinh học ở người và động vật.",
+        "Điều chỉnh hoặc thiết kế phần cứng, phần mềm máy tính cho ứng dụng y học."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư y sinh mới ra trường",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Đánh giá độ an toàn, hiệu suất và hiệu quả của thiết bị y sinh.",
+        "Soạn báo cáo kỹ thuật, tài liệu tổng hợp dữ liệu hoặc bài báo khoa học để công bố, nộp hồ sơ đăng ký hoặc xin bằng sáng chế.",
+        "Thiết kế hoặc phát triển thiết bị, dụng cụ, quy trình chẩn đoán y khoa và lâm sàng dựa trên nguyên lý kỹ thuật và khoa học hành vi sinh học.",
+        "Cùng nhà khoa học sự sống, nhà hoá học và nhà khoa học y học nghiên cứu khía cạnh kỹ thuật của hệ sinh học ở người và động vật.",
+        "Điều chỉnh hoặc thiết kế phần cứng, phần mềm máy tính cho ứng dụng y học."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư y sinh (Junior)",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Đánh giá độ an toàn, hiệu suất và hiệu quả của thiết bị y sinh.",
+        "Soạn báo cáo kỹ thuật, tài liệu tổng hợp dữ liệu hoặc bài báo khoa học để công bố, nộp hồ sơ đăng ký hoặc xin bằng sáng chế.",
+        "Thiết kế hoặc phát triển thiết bị, dụng cụ, quy trình chẩn đoán y khoa và lâm sàng dựa trên nguyên lý kỹ thuật và khoa học hành vi sinh học.",
+        "Cùng nhà khoa học sự sống, nhà hoá học và nhà khoa học y học nghiên cứu khía cạnh kỹ thuật của hệ sinh học ở người và động vật.",
+        "Điều chỉnh hoặc thiết kế phần cứng, phần mềm máy tính cho ứng dụng y học."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư y sinh (Middle)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Đánh giá độ an toàn, hiệu suất và hiệu quả của thiết bị y sinh.",
+        "Soạn báo cáo kỹ thuật, tài liệu tổng hợp dữ liệu hoặc bài báo khoa học để công bố, nộp hồ sơ đăng ký hoặc xin bằng sáng chế.",
+        "Thiết kế hoặc phát triển thiết bị, dụng cụ, quy trình chẩn đoán y khoa và lâm sàng dựa trên nguyên lý kỹ thuật và khoa học hành vi sinh học.",
+        "Cùng nhà khoa học sự sống, nhà hoá học và nhà khoa học y học nghiên cứu khía cạnh kỹ thuật của hệ sinh học ở người và động vật.",
+        "Điều chỉnh hoặc thiết kế phần cứng, phần mềm máy tính cho ứng dụng y học."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư y sinh cao cấp (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Đánh giá độ an toàn, hiệu suất và hiệu quả của thiết bị y sinh.",
+        "Soạn báo cáo kỹ thuật, tài liệu tổng hợp dữ liệu hoặc bài báo khoa học để công bố, nộp hồ sơ đăng ký hoặc xin bằng sáng chế.",
+        "Thiết kế hoặc phát triển thiết bị, dụng cụ, quy trình chẩn đoán y khoa và lâm sàng dựa trên nguyên lý kỹ thuật và khoa học hành vi sinh học.",
+        "Cùng nhà khoa học sự sống, nhà hoá học và nhà khoa học y học nghiên cứu khía cạnh kỹ thuật của hệ sinh học ở người và động vật.",
+        "Điều chỉnh hoặc thiết kế phần cứng, phần mềm máy tính cho ứng dụng y học."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm kỹ thuật y sinh (Lead)",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Đánh giá độ an toàn, hiệu suất và hiệu quả của thiết bị y sinh.",
+        "Soạn báo cáo kỹ thuật, tài liệu tổng hợp dữ liệu hoặc bài báo khoa học để công bố, nộp hồ sơ đăng ký hoặc xin bằng sáng chế.",
+        "Thiết kế hoặc phát triển thiết bị, dụng cụ, quy trình chẩn đoán y khoa và lâm sàng dựa trên nguyên lý kỹ thuật và khoa học hành vi sinh học.",
+        "Cùng nhà khoa học sự sống, nhà hoá học và nhà khoa học y học nghiên cứu khía cạnh kỹ thuật của hệ sinh học ở người và động vật.",
+        "Điều chỉnh hoặc thiết kế phần cứng, phần mềm máy tính cho ứng dụng y học."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng vật tư – thiết bị y tế",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Đánh giá độ an toàn, hiệu suất và hiệu quả của thiết bị y sinh.",
+        "Soạn báo cáo kỹ thuật, tài liệu tổng hợp dữ liệu hoặc bài báo khoa học để công bố, nộp hồ sơ đăng ký hoặc xin bằng sáng chế.",
+        "Thiết kế hoặc phát triển thiết bị, dụng cụ, quy trình chẩn đoán y khoa và lâm sàng dựa trên nguyên lý kỹ thuật và khoa học hành vi sinh học.",
+        "Cùng nhà khoa học sự sống, nhà hoá học và nhà khoa học y học nghiên cứu khía cạnh kỹ thuật của hệ sinh học ở người và động vật.",
+        "Điều chỉnh hoặc thiết kế phần cứng, phần mềm máy tính cho ứng dụng y học."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_quan_ly_ap_luc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+          "name": "Vật liệu thiết bị y tế",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+          "name": "Di truyền học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+          "name": "Quy trình thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+          "name": "Đánh giá tính khả thi của dự án phát triển",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-2031.00",
+          "name": "Kỹ sư y sinh"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-19-1029.04",
+      "name": "Nhà sinh học, chuyên viên công nghệ sinh học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2041.00",
+      "name": "Kỹ sư hoá học, vật liệu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "CareerLink, \"Nhu cầu tuyển dụng kỹ sư hiện nay\"",
+    "dataYear": "2026",
+    "note": "Số trung bình của mọi kỹ sư, không riêng y sinh. Số bình quân tham khảo: 14.000.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 19,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+      "name": "Phê duyệt thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+      "name": "Điều chỉnh thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4ddd2c3e-db95-4299-bbc6-f206820ef4c2",
+      "name": "Vật liệu thiết bị y tế",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+      "name": "Tính toán toán học phân tích",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/54b2c5ea-4475-4bf5-a433-b0dc5442e691",
+      "name": "Di truyền học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d512d178-37a6-4eab-a660-412d2bb0824a",
+      "name": "Quy trình thử nghiệm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+      "name": "Áp dụng phương pháp khoa học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+      "name": "Sinh học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/21056f6a-8a85-4eb0-b709-468578b809e0",
+      "name": "Đánh giá tính khả thi của dự án phát triển",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.273
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.778
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.519
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.516
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.483
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.414
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.361
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,944 @@
+{
+  "code": "ONET-17-2151.00",
+  "name": "Kỹ sư mỏ, dầu khí",
+  "nameEn": "Mining and Geological Engineers, Including Mining Safety Engineers",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Khảo sát dưới mặt đất để xác định đặc điểm của khu vực có thể khai thác hoặc xây dựng. Có thể chọn hệ thống chống đỡ, quy trình và thiết bị để khai thác hoặc thi công ngầm an toàn, tiết kiệm và thân thiện môi trường. Có thể kiểm tra điều kiện địa chất, thiết bị và môi trường làm việc không an toàn; thiết kế và điều phối chương trình an toàn mỏ. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Ngồi gần như cả ngày.",
+    "Sai sót trong thiết kế có thể gây nguy hiểm cho người dùng và tốn kém rất lớn."
+  ],
+  "workFacts": [
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc theo nhóm là chính.",
+    "75% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "13% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Lọc hoá dầu, dầu khí ngoài khơi",
+      "weight": 60
+    },
+    {
+      "name": "Mỏ than, mỏ khoáng sản",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật dầu khí", "Kỹ thuật mỏ"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh kỹ thuật mỏ, dầu khí",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn báo cáo kỹ thuật cho nhân viên khai mỏ, kỹ thuật và quản lý.",
+        "Kiểm tra khu vực khai thác để phát hiện kết cấu, thiết bị và điều kiện làm việc không an toàn.",
+        "Chọn hoặc xây dựng phương pháp tìm, khai thác và sản xuất khoáng sản dựa trên an toàn, chi phí và đặc điểm mỏ.",
+        "Chọn vị trí và lên kế hoạch khai thác hầm lò hoặc lộ thiên, xác định quy trình, nhân lực và thiết bị để khai thác an toàn, tiết kiệm và thân thiện môi trường.",
+        "Lập tiến độ, báo cáo và dự toán chi phí phát triển và vận hành mỏ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư mỏ, dầu khí mới ra trường",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn báo cáo kỹ thuật cho nhân viên khai mỏ, kỹ thuật và quản lý.",
+        "Kiểm tra khu vực khai thác để phát hiện kết cấu, thiết bị và điều kiện làm việc không an toàn.",
+        "Chọn hoặc xây dựng phương pháp tìm, khai thác và sản xuất khoáng sản dựa trên an toàn, chi phí và đặc điểm mỏ.",
+        "Chọn vị trí và lên kế hoạch khai thác hầm lò hoặc lộ thiên, xác định quy trình, nhân lực và thiết bị để khai thác an toàn, tiết kiệm và thân thiện môi trường.",
+        "Lập tiến độ, báo cáo và dự toán chi phí phát triển và vận hành mỏ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư mỏ, dầu khí (Junior)",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn báo cáo kỹ thuật cho nhân viên khai mỏ, kỹ thuật và quản lý.",
+        "Kiểm tra khu vực khai thác để phát hiện kết cấu, thiết bị và điều kiện làm việc không an toàn.",
+        "Chọn hoặc xây dựng phương pháp tìm, khai thác và sản xuất khoáng sản dựa trên an toàn, chi phí và đặc điểm mỏ.",
+        "Chọn vị trí và lên kế hoạch khai thác hầm lò hoặc lộ thiên, xác định quy trình, nhân lực và thiết bị để khai thác an toàn, tiết kiệm và thân thiện môi trường.",
+        "Lập tiến độ, báo cáo và dự toán chi phí phát triển và vận hành mỏ."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư mỏ, dầu khí (Middle)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn báo cáo kỹ thuật cho nhân viên khai mỏ, kỹ thuật và quản lý.",
+        "Kiểm tra khu vực khai thác để phát hiện kết cấu, thiết bị và điều kiện làm việc không an toàn.",
+        "Chọn hoặc xây dựng phương pháp tìm, khai thác và sản xuất khoáng sản dựa trên an toàn, chi phí và đặc điểm mỏ.",
+        "Chọn vị trí và lên kế hoạch khai thác hầm lò hoặc lộ thiên, xác định quy trình, nhân lực và thiết bị để khai thác an toàn, tiết kiệm và thân thiện môi trường.",
+        "Lập tiến độ, báo cáo và dự toán chi phí phát triển và vận hành mỏ."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư mỏ, dầu khí cao cấp (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn báo cáo kỹ thuật cho nhân viên khai mỏ, kỹ thuật và quản lý.",
+        "Kiểm tra khu vực khai thác để phát hiện kết cấu, thiết bị và điều kiện làm việc không an toàn.",
+        "Chọn hoặc xây dựng phương pháp tìm, khai thác và sản xuất khoáng sản dựa trên an toàn, chi phí và đặc điểm mỏ.",
+        "Chọn vị trí và lên kế hoạch khai thác hầm lò hoặc lộ thiên, xác định quy trình, nhân lực và thiết bị để khai thác an toàn, tiết kiệm và thân thiện môi trường.",
+        "Lập tiến độ, báo cáo và dự toán chi phí phát triển và vận hành mỏ."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Quản đốc mỏ / kỹ sư trưởng giàn",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn báo cáo kỹ thuật cho nhân viên khai mỏ, kỹ thuật và quản lý.",
+        "Kiểm tra khu vực khai thác để phát hiện kết cấu, thiết bị và điều kiện làm việc không an toàn.",
+        "Chọn hoặc xây dựng phương pháp tìm, khai thác và sản xuất khoáng sản dựa trên an toàn, chi phí và đặc điểm mỏ.",
+        "Chọn vị trí và lên kế hoạch khai thác hầm lò hoặc lộ thiên, xác định quy trình, nhân lực và thiết bị để khai thác an toàn, tiết kiệm và thân thiện môi trường.",
+        "Lập tiến độ, báo cáo và dự toán chi phí phát triển và vận hành mỏ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc điều hành mỏ",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn báo cáo kỹ thuật cho nhân viên khai mỏ, kỹ thuật và quản lý.",
+        "Kiểm tra khu vực khai thác để phát hiện kết cấu, thiết bị và điều kiện làm việc không an toàn.",
+        "Chọn hoặc xây dựng phương pháp tìm, khai thác và sản xuất khoáng sản dựa trên an toàn, chi phí và đặc điểm mỏ.",
+        "Chọn vị trí và lên kế hoạch khai thác hầm lò hoặc lộ thiên, xác định quy trình, nhân lực và thiết bị để khai thác an toàn, tiết kiệm và thân thiện môi trường.",
+        "Lập tiến độ, báo cáo và dự toán chi phí phát triển và vận hành mỏ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+          "name": "Viết báo cáo khoa học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+          "name": "Đánh giá dự án phát triển mỏ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+          "name": "Bản vẽ thiết kế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+          "name": "Tư vấn thiết bị mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+          "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+          "name": "Dùng phần mềm lập kế hoạch mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+          "name": "Kỹ thuật mỏ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-2151.00",
+          "name": "Kỹ sư mỏ, dầu khí"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-17-2112.00",
+      "name": "Kỹ sư công nghiệp, quản lý sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-2042.00",
+      "name": "Nhà khoa học địa chất, khí tượng thuỷ văn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2041.00",
+      "name": "Kỹ sư hoá học, vật liệu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 40000000,
+    "byYears": [],
+    "source": "CareerLink, \"Kỹ sư dầu khí là gì\"",
+    "dataYear": "2025",
+    "note": "Chỉ dầu khí, chưa có số cho kỹ sư mỏ.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 6,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+      "name": "Tuân thủ luật an toàn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/99fc129e-360c-4174-9553-5c666a64a395",
+      "name": "Viết báo cáo khoa học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a1d24f87-230e-4b4c-8107-dccf81316364",
+      "name": "Đánh giá dự án phát triển mỏ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3c333552-8d89-43f5-90bd-856e15bec433",
+      "name": "Bản vẽ thiết kế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f4482d36-86d0-422d-aeb2-59d1bbebb6ff",
+      "name": "Tư vấn thiết bị mỏ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/35bca3d6-c1ae-48ff-9ae3-a11cea578c2c",
+      "name": "Ảnh hưởng của địa chất đến khai thác mỏ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a4ec696c-ac73-4bd5-8a3c-09a783cf3944",
+      "name": "Dùng phần mềm lập kế hoạch mỏ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5eeac647-dc4b-496d-b109-c90b58006021",
+      "name": "Kỹ thuật mỏ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+      "name": "Viết báo cáo công việc",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+      "name": "Điện",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.989
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.862
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.621
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.583
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.426
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.402
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.223
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

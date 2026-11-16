@@ -1,0 +1,817 @@
+{
+  "code": "ONET-11-9032.00",
+  "name": "Quản lý giáo dục (hiệu trưởng, trưởng khoa)",
+  "nameEn": "Education Administrators, Kindergarten through Secondary",
+  "group": "Quản lý",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Lập kế hoạch, chỉ đạo và điều phối hoạt động học thuật, hành chính và hỗ trợ của trường mầm non, tiểu học hoặc trung học. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Thường xuyên gặp tình huống xung đột với người khác.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "69% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "9% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Trường công lập (mầm non đến THPT)",
+      "weight": 60
+    },
+    {
+      "name": "Trường tư thục, quốc tế, song ngữ",
+      "weight": 25
+    },
+    {
+      "name": "Trường đại học, cao đẳng công lập",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Quản lý giáo dục", "Giáo dục học"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Tổ trưởng chuyên môn",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Tư vấn và định hướng cho học sinh về vấn đề cá nhân, học tập, nghề nghiệp hoặc hành vi.",
+        "Trao đổi với phụ huynh và giáo viên về hoạt động giáo dục, chính sách, hành vi hoặc khó khăn học tập của học sinh.",
+        "Dự giờ và xem tài liệu học tập để đánh giá, chuẩn hoá chương trình, phương pháp dạy và tìm chỗ cần cải thiện.",
+        "Xác định phạm vi chương trình đào tạo, soạn dự thảo thời khoá biểu và mô tả môn học để ước tính nhu cầu giáo viên, cơ sở vật chất.",
+        "Thực thi nội quy về kỷ luật và chuyên cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L3 ở một nghề đi trước: Giáo viên mầm non, Giáo viên tiểu học, Giáo viên trung học (THCS, THPT), Giáo viên giáo dục đặc biệt, Giảng viên đại học, cao đẳng",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Phó hiệu trưởng",
+      "years": "5–10",
+      "coreOutput": null,
+      "tasks": [
+        "Tư vấn và định hướng cho học sinh về vấn đề cá nhân, học tập, nghề nghiệp hoặc hành vi.",
+        "Trao đổi với phụ huynh và giáo viên về hoạt động giáo dục, chính sách, hành vi hoặc khó khăn học tập của học sinh.",
+        "Dự giờ và xem tài liệu học tập để đánh giá, chuẩn hoá chương trình, phương pháp dạy và tìm chỗ cần cải thiện.",
+        "Xác định phạm vi chương trình đào tạo, soạn dự thảo thời khoá biểu và mô tả môn học để ước tính nhu cầu giáo viên, cơ sở vật chất.",
+        "Thực thi nội quy về kỷ luật và chuyên cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Hiệu trưởng",
+      "years": "8–15",
+      "coreOutput": null,
+      "tasks": [
+        "Tư vấn và định hướng cho học sinh về vấn đề cá nhân, học tập, nghề nghiệp hoặc hành vi.",
+        "Trao đổi với phụ huynh và giáo viên về hoạt động giáo dục, chính sách, hành vi hoặc khó khăn học tập của học sinh.",
+        "Dự giờ và xem tài liệu học tập để đánh giá, chuẩn hoá chương trình, phương pháp dạy và tìm chỗ cần cải thiện.",
+        "Xác định phạm vi chương trình đào tạo, soạn dự thảo thời khoá biểu và mô tả môn học để ước tính nhu cầu giáo viên, cơ sở vật chất.",
+        "Thực thi nội quy về kỷ luật và chuyên cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng chuyên môn Sở Giáo dục và Đào tạo",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Tư vấn và định hướng cho học sinh về vấn đề cá nhân, học tập, nghề nghiệp hoặc hành vi.",
+        "Trao đổi với phụ huynh và giáo viên về hoạt động giáo dục, chính sách, hành vi hoặc khó khăn học tập của học sinh.",
+        "Dự giờ và xem tài liệu học tập để đánh giá, chuẩn hoá chương trình, phương pháp dạy và tìm chỗ cần cải thiện.",
+        "Xác định phạm vi chương trình đào tạo, soạn dự thảo thời khoá biểu và mô tả môn học để ước tính nhu cầu giáo viên, cơ sở vật chất.",
+        "Thực thi nội quy về kỷ luật và chuyên cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc Sở Giáo dục và Đào tạo",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Tư vấn và định hướng cho học sinh về vấn đề cá nhân, học tập, nghề nghiệp hoặc hành vi.",
+        "Trao đổi với phụ huynh và giáo viên về hoạt động giáo dục, chính sách, hành vi hoặc khó khăn học tập của học sinh.",
+        "Dự giờ và xem tài liệu học tập để đánh giá, chuẩn hoá chương trình, phương pháp dạy và tìm chỗ cần cải thiện.",
+        "Xác định phạm vi chương trình đào tạo, soạn dự thảo thời khoá biểu và mô tả môn học để ước tính nhu cầu giáo viên, cơ sở vật chất.",
+        "Thực thi nội quy về kỷ luật và chuyên cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "name": "Phần mềm văn phòng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+          "name": "Quản lý ngân sách trường học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "name": "Dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+          "name": "Quản lý hành chính trường học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+          "name": "Liên lạc điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-25-2051.00",
+      "name": "Giáo viên giáo dục đặc biệt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-9031.00",
+      "name": "Chuyên viên phát triển chương trình đào tạo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2021.00",
+      "name": "Giáo viên tiểu học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2011.00",
+      "name": "Giáo viên mầm non",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 15000000,
+    "median": null,
+    "high": 25000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Hiệu Trưởng\"",
+    "dataYear": "2026",
+    "note": "Chủ yếu trường tư; hiệu trưởng trường công theo thang lương nhà nước. 11 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 15–25tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 19.300.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 29,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+      "name": "Phần mềm văn phòng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+      "name": "Quản lý ngân sách",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/36b04285-6b9d-47e6-bcf9-e6a9ac2612aa",
+      "name": "Quản lý ngân sách trường học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+      "name": "Dịch vụ khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+      "name": "Lưu hồ sơ giao dịch tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76161ecd-084a-4caa-9116-3ee05658d8a8",
+      "name": "Quản lý hành chính trường học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+      "name": "Xử lý giao dịch tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/debef2fc-7af4-4bff-ac92-4d0317915a84",
+      "name": "Liên lạc điện tử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+      "name": "Truy vết giao dịch tài chính",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 1.778
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.186
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.909
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.874
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.85
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.827
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.576
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L3",
+    "roles": [
+      {
+        "code": "ONET-25-2011.00",
+        "name": "Giáo viên mầm non"
+      },
+      {
+        "code": "ONET-25-2021.00",
+        "name": "Giáo viên tiểu học"
+      },
+      {
+        "code": "ONET-25-2031.00",
+        "name": "Giáo viên trung học (THCS, THPT)"
+      },
+      {
+        "code": "ONET-25-2051.00",
+        "name": "Giáo viên giáo dục đặc biệt"
+      },
+      {
+        "code": "ONET-25-1081.00",
+        "name": "Giảng viên đại học, cao đẳng"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

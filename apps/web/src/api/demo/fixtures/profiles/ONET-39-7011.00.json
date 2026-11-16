@@ -1,0 +1,791 @@
+{
+  "code": "ONET-39-7011.00",
+  "name": "Hướng dẫn viên du lịch",
+  "nameEn": "Tour Guides and Escorts",
+  "group": "Chăm sóc và dịch vụ cá nhân",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Dẫn cá nhân hoặc đoàn đi tham quan hoặc qua các điểm đáng chú ý như cơ sở công nghiệp, công trình công cộng và phòng trưng bày nghệ thuật. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Phải đi lại hoặc chạy nhiều.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Thu nhập phụ thuộc vào lượng khách và có thể thất thường."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Được tự quyết nhiều trong công việc.",
+    "11% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "45% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công ty lữ hành",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Du lịch"],
+    "vocational": ["Hướng dẫn du lịch"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Cộng tác viên/hướng dẫn viên tập sự",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Giới thiệu các điểm tham quan cho đoàn và trả lời câu hỏi.",
+        "Dẫn cá nhân hoặc đoàn trên du thuyền, tour tham quan hoặc qua các điểm đáng chú ý như nhà máy, công trình công cộng, phòng tranh.",
+        "Theo dõi hoạt động của khách để bảo đảm tuân thủ nội quy và quy tắc an toàn.",
+        "Tổ chức hoạt động giáo dục cho học sinh.",
+        "Tìm hiểu nhiều chủ đề như lịch sử địa điểm, điều kiện môi trường, kỹ năng và khả năng của khách để lên kế hoạch chuyến đi, hướng dẫn và thuyết minh phù hợp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Hướng dẫn viên du lịch tại điểm (thẻ tại điểm)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Giới thiệu các điểm tham quan cho đoàn và trả lời câu hỏi.",
+        "Dẫn cá nhân hoặc đoàn trên du thuyền, tour tham quan hoặc qua các điểm đáng chú ý như nhà máy, công trình công cộng, phòng tranh.",
+        "Theo dõi hoạt động của khách để bảo đảm tuân thủ nội quy và quy tắc an toàn.",
+        "Tổ chức hoạt động giáo dục cho học sinh.",
+        "Tìm hiểu nhiều chủ đề như lịch sử địa điểm, điều kiện môi trường, kỹ năng và khả năng của khách để lên kế hoạch chuyến đi, hướng dẫn và thuyết minh phù hợp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Hướng dẫn viên du lịch nội địa (thẻ nội địa)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Giới thiệu các điểm tham quan cho đoàn và trả lời câu hỏi.",
+        "Dẫn cá nhân hoặc đoàn trên du thuyền, tour tham quan hoặc qua các điểm đáng chú ý như nhà máy, công trình công cộng, phòng tranh.",
+        "Theo dõi hoạt động của khách để bảo đảm tuân thủ nội quy và quy tắc an toàn.",
+        "Tổ chức hoạt động giáo dục cho học sinh.",
+        "Tìm hiểu nhiều chủ đề như lịch sử địa điểm, điều kiện môi trường, kỹ năng và khả năng của khách để lên kế hoạch chuyến đi, hướng dẫn và thuyết minh phù hợp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b",
+          "name": "Đào tạo hướng dẫn viên",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a0c277a6-1ca6-4798-a5c9-cd199dbdff45",
+          "name": "Dẫn khách tới điểm tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef49078c-256b-452e-8729-54c0541442c4",
+          "name": "Thuyết minh tại điểm tham quan",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Hướng dẫn viên du lịch quốc tế (thẻ quốc tế)",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Giới thiệu các điểm tham quan cho đoàn và trả lời câu hỏi.",
+        "Dẫn cá nhân hoặc đoàn trên du thuyền, tour tham quan hoặc qua các điểm đáng chú ý như nhà máy, công trình công cộng, phòng tranh.",
+        "Theo dõi hoạt động của khách để bảo đảm tuân thủ nội quy và quy tắc an toàn.",
+        "Tổ chức hoạt động giáo dục cho học sinh.",
+        "Tìm hiểu nhiều chủ đề như lịch sử địa điểm, điều kiện môi trường, kỹ năng và khả năng của khách để lên kế hoạch chuyến đi, hướng dẫn và thuyết minh phù hợp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b",
+          "name": "Đào tạo hướng dẫn viên",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a0c277a6-1ca6-4798-a5c9-cd199dbdff45",
+          "name": "Dẫn khách tới điểm tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef49078c-256b-452e-8729-54c0541442c4",
+          "name": "Thuyết minh tại điểm tham quan",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b",
+          "name": "Đào tạo hướng dẫn viên",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a0c277a6-1ca6-4798-a5c9-cd199dbdff45",
+          "name": "Dẫn khách tới điểm tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef49078c-256b-452e-8729-54c0541442c4",
+          "name": "Thuyết minh tại điểm tham quan",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Hướng dẫn viên chính/trưởng đoàn tour dài ngày",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Giới thiệu các điểm tham quan cho đoàn và trả lời câu hỏi.",
+        "Dẫn cá nhân hoặc đoàn trên du thuyền, tour tham quan hoặc qua các điểm đáng chú ý như nhà máy, công trình công cộng, phòng tranh.",
+        "Theo dõi hoạt động của khách để bảo đảm tuân thủ nội quy và quy tắc an toàn.",
+        "Tổ chức hoạt động giáo dục cho học sinh.",
+        "Tìm hiểu nhiều chủ đề như lịch sử địa điểm, điều kiện môi trường, kỹ năng và khả năng của khách để lên kế hoạch chuyến đi, hướng dẫn và thuyết minh phù hợp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b",
+          "name": "Đào tạo hướng dẫn viên",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a0c277a6-1ca6-4798-a5c9-cd199dbdff45",
+          "name": "Dẫn khách tới điểm tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef49078c-256b-452e-8729-54c0541442c4",
+          "name": "Thuyết minh tại điểm tham quan",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b",
+          "name": "Đào tạo hướng dẫn viên",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a0c277a6-1ca6-4798-a5c9-cd199dbdff45",
+          "name": "Dẫn khách tới điểm tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef49078c-256b-452e-8729-54c0541442c4",
+          "name": "Thuyết minh tại điểm tham quan",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Điều hành/trưởng nhóm hướng dẫn viên",
+      "years": "6+",
+      "coreOutput": null,
+      "tasks": [
+        "Giới thiệu các điểm tham quan cho đoàn và trả lời câu hỏi.",
+        "Dẫn cá nhân hoặc đoàn trên du thuyền, tour tham quan hoặc qua các điểm đáng chú ý như nhà máy, công trình công cộng, phòng tranh.",
+        "Theo dõi hoạt động của khách để bảo đảm tuân thủ nội quy và quy tắc an toàn.",
+        "Tổ chức hoạt động giáo dục cho học sinh.",
+        "Tìm hiểu nhiều chủ đề như lịch sử địa điểm, điều kiện môi trường, kỹ năng và khả năng của khách để lên kế hoạch chuyến đi, hướng dẫn và thuyết minh phù hợp."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b",
+          "name": "Đào tạo hướng dẫn viên",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a0c277a6-1ca6-4798-a5c9-cd199dbdff45",
+          "name": "Dẫn khách tới điểm tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef49078c-256b-452e-8729-54c0541442c4",
+          "name": "Thuyết minh tại điểm tham quan",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "name": "Tổ chức hoạt động giáo dục",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+          "name": "Chuẩn bị đồ dùng cho khách tham quan",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+          "name": "Thông tin tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+          "name": "Đăng ký khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+          "name": "Thu phí tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+          "name": "Cung cấp thông tin cho khách tham quan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b",
+          "name": "Đào tạo hướng dẫn viên",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a0c277a6-1ca6-4798-a5c9-cd199dbdff45",
+          "name": "Dẫn khách tới điểm tham quan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef49078c-256b-452e-8729-54c0541442c4",
+          "name": "Thuyết minh tại điểm tham quan",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-43-4081.00",
+      "name": "Lễ tân khách sạn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-9032.00",
+      "name": "Nhân viên tổ chức hoạt động vui chơi giải trí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-3041.00",
+      "name": "Nhân viên kinh doanh tour du lịch",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-1031.00",
+      "name": "Chuyên viên lâm nghiệp và bảo tồn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8500000,
+    "median": null,
+    "high": 14000000,
+    "byYears": [],
+    "source": "TopCV, tra cứu mức lương \"Hướng dẫn viên du lịch\"",
+    "dataYear": "2026",
+    "note": "Khoảng phổ biến 8,5–14tr; dải 7,5–30tr. TopCV tổng hợp từ tin tuyển dụng. Đọc trên trình duyệt ngày 21/10/2026. Số bình quân tham khảo: 11.300.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 9,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+      "name": "Tổ chức hoạt động giáo dục",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f26093e2-494b-45f3-b7d8-38065ab237a7",
+      "name": "Chuẩn bị đồ dùng cho khách tham quan",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/177983da-20a1-451c-98e6-21e6b4ed97ae",
+      "name": "Thông tin tham quan",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cccf3cf0-8971-4034-b2eb-35c819c3bdb2",
+      "name": "Đăng ký khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/28e2ad4e-3b4e-4a76-aaa2-f33d02a4797c",
+      "name": "Thu phí tham quan",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1c388c1a-2a84-4377-a99a-860323eeff1d",
+      "name": "Cung cấp thông tin cho khách tham quan",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ea7386d0-6437-46d6-a85f-30b35da14f6b",
+      "name": "Đào tạo hướng dẫn viên",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a0c277a6-1ca6-4798-a5c9-cd199dbdff45",
+      "name": "Dẫn khách tới điểm tham quan",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ef49078c-256b-452e-8729-54c0541442c4",
+      "name": "Thuyết minh tại điểm tham quan",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.792
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.768
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.269
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.344
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.419
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.421
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.466
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,953 @@
+{
+  "code": "ONET-13-1023.00",
+  "name": "Chuyên viên mua hàng",
+  "nameEn": "Purchasing Agents, Except Wholesale, Retail, and Farm Products",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Mua máy móc, thiết bị, dụng cụ, phụ tùng, vật tư hoặc dịch vụ cần cho hoạt động của cơ sở. Mua nguyên liệu thô hoặc bán thành phẩm cho sản xuất. Có thể đàm phán hợp đồng. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Công việc lặp lại nhiều.",
+    "Ngồi gần như cả ngày.",
+    "Nhiều việc phải chính xác tuyệt đối; một sai sót nhỏ về số liệu hay quy định có thể gây hậu quả lớn."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "47% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "7% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 40
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 30
+    },
+    {
+      "name": "Văn phòng doanh nghiệp vừa và nhỏ trong nước",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Logistics và Quản lý chuỗi cung ứng",
+      "Kinh doanh thương mại"
+    ],
+    "vocational": ["Thu mua"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh mua hàng",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi và tuân thủ luật, quy định liên quan.",
+        "Mua hàng chất lượng cao nhất với giá thấp nhất và đúng số lượng.",
+        "Xây dựng chính sách, quy trình chào thầu và mua sắm hàng hoá, dịch vụ.",
+        "Lập đơn đặt hàng, mời chào giá và xem xét đề nghị mua hàng hoá, dịch vụ.",
+        "Viết và rà soát yêu cầu kỹ thuật của sản phẩm, nắm kiến thức kỹ thuật về hàng hoá, dịch vụ cần mua."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên mua hàng",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi và tuân thủ luật, quy định liên quan.",
+        "Mua hàng chất lượng cao nhất với giá thấp nhất và đúng số lượng.",
+        "Xây dựng chính sách, quy trình chào thầu và mua sắm hàng hoá, dịch vụ.",
+        "Lập đơn đặt hàng, mời chào giá và xem xét đề nghị mua hàng hoá, dịch vụ.",
+        "Viết và rà soát yêu cầu kỹ thuật của sản phẩm, nắm kiến thức kỹ thuật về hàng hoá, dịch vụ cần mua."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên mua hàng",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi và tuân thủ luật, quy định liên quan.",
+        "Mua hàng chất lượng cao nhất với giá thấp nhất và đúng số lượng.",
+        "Xây dựng chính sách, quy trình chào thầu và mua sắm hàng hoá, dịch vụ.",
+        "Lập đơn đặt hàng, mời chào giá và xem xét đề nghị mua hàng hoá, dịch vụ.",
+        "Viết và rà soát yêu cầu kỹ thuật của sản phẩm, nắm kiến thức kỹ thuật về hàng hoá, dịch vụ cần mua."
+      ],
+      "focus": ["giao_tiep_hop_tac", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chuyên viên chính mua hàng",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi và tuân thủ luật, quy định liên quan.",
+        "Mua hàng chất lượng cao nhất với giá thấp nhất và đúng số lượng.",
+        "Xây dựng chính sách, quy trình chào thầu và mua sắm hàng hoá, dịch vụ.",
+        "Lập đơn đặt hàng, mời chào giá và xem xét đề nghị mua hàng hoá, dịch vụ.",
+        "Viết và rà soát yêu cầu kỹ thuật của sản phẩm, nắm kiến thức kỹ thuật về hàng hoá, dịch vụ cần mua."
+      ],
+      "focus": ["giao_tiep_hop_tac", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dd1398-6be6-4a0d-a0d0-4a8b3941963a",
+          "name": "Nguyên tắc kiểm soát xuất khẩu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chuyên viên cao cấp mua hàng (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi và tuân thủ luật, quy định liên quan.",
+        "Mua hàng chất lượng cao nhất với giá thấp nhất và đúng số lượng.",
+        "Xây dựng chính sách, quy trình chào thầu và mua sắm hàng hoá, dịch vụ.",
+        "Lập đơn đặt hàng, mời chào giá và xem xét đề nghị mua hàng hoá, dịch vụ.",
+        "Viết và rà soát yêu cầu kỹ thuật của sản phẩm, nắm kiến thức kỹ thuật về hàng hoá, dịch vụ cần mua."
+      ],
+      "focus": ["giao_tiep_hop_tac", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dd1398-6be6-4a0d-a0d0-4a8b3941963a",
+          "name": "Nguyên tắc kiểm soát xuất khẩu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dd1398-6be6-4a0d-a0d0-4a8b3941963a",
+          "name": "Nguyên tắc kiểm soát xuất khẩu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm / Giám sát mua hàng",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi và tuân thủ luật, quy định liên quan.",
+        "Mua hàng chất lượng cao nhất với giá thấp nhất và đúng số lượng.",
+        "Xây dựng chính sách, quy trình chào thầu và mua sắm hàng hoá, dịch vụ.",
+        "Lập đơn đặt hàng, mời chào giá và xem xét đề nghị mua hàng hoá, dịch vụ.",
+        "Viết và rà soát yêu cầu kỹ thuật của sản phẩm, nắm kiến thức kỹ thuật về hàng hoá, dịch vụ cần mua."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dd1398-6be6-4a0d-a0d0-4a8b3941963a",
+          "name": "Nguyên tắc kiểm soát xuất khẩu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dd1398-6be6-4a0d-a0d0-4a8b3941963a",
+          "name": "Nguyên tắc kiểm soát xuất khẩu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng mua hàng",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Theo dõi và tuân thủ luật, quy định liên quan.",
+        "Mua hàng chất lượng cao nhất với giá thấp nhất và đúng số lượng.",
+        "Xây dựng chính sách, quy trình chào thầu và mua sắm hàng hoá, dịch vụ.",
+        "Lập đơn đặt hàng, mời chào giá và xem xét đề nghị mua hàng hoá, dịch vụ.",
+        "Viết và rà soát yêu cầu kỹ thuật của sản phẩm, nắm kiến thức kỹ thuật về hàng hoá, dịch vụ cần mua."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 4,
+        "lanh_dao_kinh_doanh": 4,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dd1398-6be6-4a0d-a0d0-4a8b3941963a",
+          "name": "Nguyên tắc kiểm soát xuất khẩu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "name": "Đánh giá rủi ro nhà cung cấp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+          "name": "Phát hành đơn mua hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+          "name": "Theo dõi xu hướng giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+          "name": "Quản lý quy trình đấu thầu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+          "name": "Điều phối hoạt động mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+          "name": "Thực hiện quy trình mua sắm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+          "name": "Quản lý chu trình mua hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+          "name": "Quy định cấm vận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dd1398-6be6-4a0d-a0d0-4a8b3941963a",
+          "name": "Nguyên tắc kiểm soát xuất khẩu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-13-1023.00",
+          "name": "Chuyên viên mua hàng"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-11-3061.00",
+          "name": "Trưởng phòng mua hàng"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-13-1081.00",
+      "name": "Chuyên viên logistics và xuất nhập khẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-5071.00",
+      "name": "Nhân viên kho và kế hoạch vật tư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9013.00",
+      "name": "Chủ trang trại, quản lý nông nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-4012.00",
+      "name": "Nhân viên kinh doanh (sales B2B)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-3031.00",
+      "name": "Nhân viên môi giới chứng khoán",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 11200000,
+    "median": 12500000,
+    "high": 15500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 438,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+      "name": "Đánh giá rủi ro nhà cung cấp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+      "name": "Tin học cơ bản",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/73225018-7139-433b-bdba-2b90774761d9",
+      "name": "Phát hành đơn mua hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/31eecea5-c1ef-4e5c-96a9-808ff4e43813",
+      "name": "Theo dõi xu hướng giá",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4b2c4de9-43d7-4905-9d58-bc2e7d84b2e1",
+      "name": "Quản lý quy trình đấu thầu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/650f44e2-cb4c-41ba-9095-581fe6bea4b1",
+      "name": "Điều phối hoạt động mua hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9e9a4209-c7cf-4f6e-973e-dc2ffadccc74",
+      "name": "Thực hiện quy trình mua sắm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c7d64df4-7af3-4269-add6-97833bd5448e",
+      "name": "Quản lý chu trình mua hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/04cda8e8-e06b-4c91-bbb5-27414dc1cf14",
+      "name": "Quy định cấm vận",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/66dd1398-6be6-4a0d-a0d0-4a8b3941963a",
+      "name": "Nguyên tắc kiểm soát xuất khẩu",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.513
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.391
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.366
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.242
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.179
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.114
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.103
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

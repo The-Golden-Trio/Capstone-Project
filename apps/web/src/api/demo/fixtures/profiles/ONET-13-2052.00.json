@@ -1,0 +1,942 @@
+{
+  "code": "ONET-13-2052.00",
+  "name": "Chuyên viên tư vấn tài chính và đầu tư",
+  "nameEn": "Personal Financial Advisors",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Tư vấn kế hoạch tài chính cho khách hàng dựa trên hiểu biết về thuế, chiến lược đầu tư, chứng khoán, bảo hiểm, hưu trí và bất động sản. Đánh giá tài sản, nợ, dòng tiền, bảo hiểm, tình trạng thuế và mục tiêu tài chính của khách. Có thể mua bán tài sản tài chính cho khách. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Môi trường cạnh tranh cao.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "70% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty chứng khoán, quản lý quỹ",
+      "weight": 50
+    },
+    {
+      "name": "Chi nhánh, phòng giao dịch ngân hàng",
+      "weight": 30
+    },
+    {
+      "name": "Công ty bảo hiểm",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Tài chính - Ngân hàng", "Kinh tế đầu tư"],
+    "vocational": ["Tư vấn tài chính"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh tư vấn đầu tư",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Phỏng vấn khách để biết thu nhập, chi tiêu, bảo hiểm, tình trạng thuế, mục tiêu tài chính, khẩu vị rủi ro và thông tin khác cần cho kế hoạch tài chính.",
+        "Phân tích thông tin tài chính của khách để tìm chiến lược đạt mục tiêu.",
+        "Trả lời câu hỏi của khách về mục đích và chi tiết của kế hoạch, chiến lược tài chính.",
+        "Định kỳ xem lại tài khoản và kế hoạch của khách để quyết định có cần điều chỉnh khi đời sống, kinh tế hoặc kết quả đầu tư thay đổi.",
+        "Quản lý danh mục đầu tư của khách và cập nhật kế hoạch."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Chuyên viên môi giới (có chứng chỉ hành nghề môi giới)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Phỏng vấn khách để biết thu nhập, chi tiêu, bảo hiểm, tình trạng thuế, mục tiêu tài chính, khẩu vị rủi ro và thông tin khác cần cho kế hoạch tài chính.",
+        "Phân tích thông tin tài chính của khách để tìm chiến lược đạt mục tiêu.",
+        "Trả lời câu hỏi của khách về mục đích và chi tiết của kế hoạch, chiến lược tài chính.",
+        "Định kỳ xem lại tài khoản và kế hoạch của khách để quyết định có cần điều chỉnh khi đời sống, kinh tế hoặc kết quả đầu tư thay đổi.",
+        "Quản lý danh mục đầu tư của khách và cập nhật kế hoạch."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên tư vấn đầu tư",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Phỏng vấn khách để biết thu nhập, chi tiêu, bảo hiểm, tình trạng thuế, mục tiêu tài chính, khẩu vị rủi ro và thông tin khác cần cho kế hoạch tài chính.",
+        "Phân tích thông tin tài chính của khách để tìm chiến lược đạt mục tiêu.",
+        "Trả lời câu hỏi của khách về mục đích và chi tiết của kế hoạch, chiến lược tài chính.",
+        "Định kỳ xem lại tài khoản và kế hoạch của khách để quyết định có cần điều chỉnh khi đời sống, kinh tế hoặc kết quả đầu tư thay đổi.",
+        "Quản lý danh mục đầu tư của khách và cập nhật kế hoạch."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chuyên viên tư vấn đầu tư cao cấp",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Phỏng vấn khách để biết thu nhập, chi tiêu, bảo hiểm, tình trạng thuế, mục tiêu tài chính, khẩu vị rủi ro và thông tin khác cần cho kế hoạch tài chính.",
+        "Phân tích thông tin tài chính của khách để tìm chiến lược đạt mục tiêu.",
+        "Trả lời câu hỏi của khách về mục đích và chi tiết của kế hoạch, chiến lược tài chính.",
+        "Định kỳ xem lại tài khoản và kế hoạch của khách để quyết định có cần điều chỉnh khi đời sống, kinh tế hoặc kết quả đầu tư thay đổi.",
+        "Quản lý danh mục đầu tư của khách và cập nhật kế hoạch."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chuyên gia quản lý tài sản (có chứng chỉ phân tích tài chính)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Phỏng vấn khách để biết thu nhập, chi tiêu, bảo hiểm, tình trạng thuế, mục tiêu tài chính, khẩu vị rủi ro và thông tin khác cần cho kế hoạch tài chính.",
+        "Phân tích thông tin tài chính của khách để tìm chiến lược đạt mục tiêu.",
+        "Trả lời câu hỏi của khách về mục đích và chi tiết của kế hoạch, chiến lược tài chính.",
+        "Định kỳ xem lại tài khoản và kế hoạch của khách để quyết định có cần điều chỉnh khi đời sống, kinh tế hoặc kết quả đầu tư thay đổi.",
+        "Quản lý danh mục đầu tư của khách và cập nhật kế hoạch."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm tư vấn đầu tư",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Phỏng vấn khách để biết thu nhập, chi tiêu, bảo hiểm, tình trạng thuế, mục tiêu tài chính, khẩu vị rủi ro và thông tin khác cần cho kế hoạch tài chính.",
+        "Phân tích thông tin tài chính của khách để tìm chiến lược đạt mục tiêu.",
+        "Trả lời câu hỏi của khách về mục đích và chi tiết của kế hoạch, chiến lược tài chính.",
+        "Định kỳ xem lại tài khoản và kế hoạch của khách để quyết định có cần điều chỉnh khi đời sống, kinh tế hoặc kết quả đầu tư thay đổi.",
+        "Quản lý danh mục đầu tư của khách và cập nhật kế hoạch."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc quản lý tài sản / khách hàng cá nhân",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Phỏng vấn khách để biết thu nhập, chi tiêu, bảo hiểm, tình trạng thuế, mục tiêu tài chính, khẩu vị rủi ro và thông tin khác cần cho kế hoạch tài chính.",
+        "Phân tích thông tin tài chính của khách để tìm chiến lược đạt mục tiêu.",
+        "Trả lời câu hỏi của khách về mục đích và chi tiết của kế hoạch, chiến lược tài chính.",
+        "Định kỳ xem lại tài khoản và kế hoạch của khách để quyết định có cần điều chỉnh khi đời sống, kinh tế hoặc kết quả đầu tư thay đổi.",
+        "Quản lý danh mục đầu tư của khách và cập nhật kế hoạch."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "lanh_dao_kinh_doanh": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+          "name": "Rà soát danh mục đầu tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+          "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+          "name": "Đánh giá rủi ro tài sản khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+          "name": "Lập ngân sách cho nhu cầu tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-13-2052.00",
+          "name": "Chuyên viên tư vấn tài chính và đầu tư"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-11-3031.03",
+          "name": "Nhà quản lý quỹ đầu tư"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-41-3031.00",
+      "name": "Nhân viên môi giới chứng khoán",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2072.00",
+      "name": "Chuyên viên tín dụng ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2099.01",
+      "name": "Chuyên viên phân tích tài chính định lượng (quant)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 14500000,
+    "median": 20000000,
+    "high": 25100000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 51,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+      "name": "Đọc báo cáo tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+      "name": "Tư vấn tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+      "name": "Duy trì lịch sử tín dụng khách hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/56426cfa-6e92-4ed9-a632-f08849864588",
+      "name": "Rà soát danh mục đầu tư",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/afe9c5d2-e8bd-4377-9d2d-49b9589f05f9",
+      "name": "Phân tích lịch sử tín dụng khách hàng tiềm năng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+      "name": "Thu thập thông tin tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3eefeaa0-54c0-4199-83a3-0a71078ba1c5",
+      "name": "Đánh giá rủi ro tài sản khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+      "name": "Nghiệp vụ ngân hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12",
+      "name": "Lập ngân sách cho nhu cầu tài chính",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+      "name": "Hỗ trợ tính toán tài chính",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.091
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 1.046
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.751
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.708
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.444
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.3
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.105
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

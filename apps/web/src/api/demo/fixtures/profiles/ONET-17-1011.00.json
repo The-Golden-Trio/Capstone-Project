@@ -1,0 +1,939 @@
+{
+  "code": "ONET-17-1011.00",
+  "name": "Kiến trúc sư",
+  "nameEn": "Architects, Except Landscape and Naval",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Lập phương án và thiết kế công trình như nhà ở, toà văn phòng, nhà hát, nhà xưởng và các công trình khác. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần sáng tạo và tự do thể hiện ý tưởng, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Ngồi gần như cả ngày.",
+    "Môi trường cạnh tranh cao."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "61% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "16% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty tư vấn thiết kế, giám sát",
+      "weight": 80
+    },
+    {
+      "name": "Chủ đầu tư, ban quản lý dự án",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Kiến trúc"],
+    "vocational": ["Thiết kế kiến trúc"],
+    "licence": "Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát) — Luật Xây dựng số 135/2025/QH15, Điều 88"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên kiến trúc thực tập",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Vẽ bản vẽ tỉ lệ hoặc thiết kế kiến trúc bằng phần mềm CAD hoặc công cụ khác.",
+        "Lập phương án hoặc thiết kế công trình như nhà ở, văn phòng, nhà hát, nhà xưởng theo quy định về môi trường, an toàn và các quy định khác.",
+        "Gặp khách hàng để xem và trao đổi về bản vẽ kiến trúc.",
+        "Lập hồ sơ hợp đồng cho nhà thầu xây dựng.",
+        "Hoàn thiện hồ sơ thi công gồm phần thể hiện thẩm mỹ của công trình và chi tiết cấu tạo."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kiến trúc sư mới / hoạ viên kiến trúc",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Vẽ bản vẽ tỉ lệ hoặc thiết kế kiến trúc bằng phần mềm CAD hoặc công cụ khác.",
+        "Lập phương án hoặc thiết kế công trình như nhà ở, văn phòng, nhà hát, nhà xưởng theo quy định về môi trường, an toàn và các quy định khác.",
+        "Gặp khách hàng để xem và trao đổi về bản vẽ kiến trúc.",
+        "Lập hồ sơ hợp đồng cho nhà thầu xây dựng.",
+        "Hoàn thiện hồ sơ thi công gồm phần thể hiện thẩm mỹ của công trình và chi tiết cấu tạo."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kiến trúc sư thiết kế",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Vẽ bản vẽ tỉ lệ hoặc thiết kế kiến trúc bằng phần mềm CAD hoặc công cụ khác.",
+        "Lập phương án hoặc thiết kế công trình như nhà ở, văn phòng, nhà hát, nhà xưởng theo quy định về môi trường, an toàn và các quy định khác.",
+        "Gặp khách hàng để xem và trao đổi về bản vẽ kiến trúc.",
+        "Lập hồ sơ hợp đồng cho nhà thầu xây dựng.",
+        "Hoàn thiện hồ sơ thi công gồm phần thể hiện thẩm mỹ của công trình và chi tiết cấu tạo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kiến trúc sư hành nghề (có chứng chỉ hành nghề kiến trúc)",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Vẽ bản vẽ tỉ lệ hoặc thiết kế kiến trúc bằng phần mềm CAD hoặc công cụ khác.",
+        "Lập phương án hoặc thiết kế công trình như nhà ở, văn phòng, nhà hát, nhà xưởng theo quy định về môi trường, an toàn và các quy định khác.",
+        "Gặp khách hàng để xem và trao đổi về bản vẽ kiến trúc.",
+        "Lập hồ sơ hợp đồng cho nhà thầu xây dựng.",
+        "Hoàn thiện hồ sơ thi công gồm phần thể hiện thẩm mỹ của công trình và chi tiết cấu tạo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chủ trì thiết kế kiến trúc",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Vẽ bản vẽ tỉ lệ hoặc thiết kế kiến trúc bằng phần mềm CAD hoặc công cụ khác.",
+        "Lập phương án hoặc thiết kế công trình như nhà ở, văn phòng, nhà hát, nhà xưởng theo quy định về môi trường, an toàn và các quy định khác.",
+        "Gặp khách hàng để xem và trao đổi về bản vẽ kiến trúc.",
+        "Lập hồ sơ hợp đồng cho nhà thầu xây dựng.",
+        "Hoàn thiện hồ sơ thi công gồm phần thể hiện thẩm mỹ của công trình và chi tiết cấu tạo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Chủ nhiệm đồ án",
+      "years": "7–10",
+      "coreOutput": null,
+      "tasks": [
+        "Vẽ bản vẽ tỉ lệ hoặc thiết kế kiến trúc bằng phần mềm CAD hoặc công cụ khác.",
+        "Lập phương án hoặc thiết kế công trình như nhà ở, văn phòng, nhà hát, nhà xưởng theo quy định về môi trường, an toàn và các quy định khác.",
+        "Gặp khách hàng để xem và trao đổi về bản vẽ kiến trúc.",
+        "Lập hồ sơ hợp đồng cho nhà thầu xây dựng.",
+        "Hoàn thiện hồ sơ thi công gồm phần thể hiện thẩm mỹ của công trình và chi tiết cấu tạo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Kiến trúc sư trưởng / Giám đốc thiết kế",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Vẽ bản vẽ tỉ lệ hoặc thiết kế kiến trúc bằng phần mềm CAD hoặc công cụ khác.",
+        "Lập phương án hoặc thiết kế công trình như nhà ở, văn phòng, nhà hát, nhà xưởng theo quy định về môi trường, an toàn và các quy định khác.",
+        "Gặp khách hàng để xem và trao đổi về bản vẽ kiến trúc.",
+        "Lập hồ sơ hợp đồng cho nhà thầu xây dựng.",
+        "Hoàn thiện hồ sơ thi công gồm phần thể hiện thẩm mỹ của công trình và chi tiết cấu tạo."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "name": "Dùng phần mềm CAD",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+          "name": "Quy hoạch đô thị",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+          "name": "Đáp ứng yêu cầu thẩm mỹ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+          "name": "Quy định kiến trúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+          "name": "Xây dựng kín khí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+          "name": "Quy định phân vùng đất đai",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+          "name": "Vật liệu xây dựng bền vững",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+          "name": "Lý thuyết kiến trúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-1011.00",
+          "name": "Kiến trúc sư"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9021.00",
+      "name": "Quản lý xây dựng (chỉ huy trưởng công trình)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1025.00",
+      "name": "Nhà thiết kế nội thất và trang trí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 15000000,
+    "median": 17500000,
+    "high": 20000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 262,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+      "name": "Dùng phần mềm CAD",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7f18039d-dfae-471b-9daa-507f6b2d2842",
+      "name": "Quy hoạch đô thị",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3a0d4d83-6392-4a81-87f1-5b57b08110b5",
+      "name": "Đáp ứng yêu cầu thẩm mỹ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/88680a21-57f9-46b6-8268-7d8e42aef849",
+      "name": "Quy định kiến trúc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/589f0d24-0846-4971-bc6c-a42bb274f69a",
+      "name": "Xây dựng kín khí",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76654176-5cc8-4cb3-b307-4ef1b6c2543c",
+      "name": "Quy định phân vùng đất đai",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/dada8e80-2a53-41bf-9eac-f8c1f9971bed",
+      "name": "Vật liệu xây dựng bền vững",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+      "name": "Quy chuẩn xây dựng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9f5e899e-a53f-4b7a-a137-aade7fb18b86",
+      "name": "Lý thuyết kiến trúc",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+      "name": "Thực hành công trình xanh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.825
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.781
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.532
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.447
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.374
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.119
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.091
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

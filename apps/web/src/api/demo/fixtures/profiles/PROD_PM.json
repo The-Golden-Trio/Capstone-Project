@@ -1,0 +1,942 @@
+{
+  "code": "PROD_PM",
+  "name": "Quản lý sản phẩm / Product Manager",
+  "nameEn": "Product Manager",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Quản lý sản phẩm (Product Manager) quyết định sản phẩm nên làm gì trước, làm gì sau và vì sao: tìm hiểu người dùng, đặt mục tiêu, sắp xếp lộ trình, viết yêu cầu, rồi đo xem tính năng ra mắt có hiệu quả không. Họ phải thuyết phục kỹ thuật, kinh doanh và lãnh đạo đi cùng một hướng. Vài công ty sản phẩm lớn có vị trí Associate PM cho người mới; phần lớn PM chuyển sang từ BA hoặc lập trình viên.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Nhiều bên cùng đòi việc của mình được ưu tiên cao nhất, và PM phải nói “chưa” với nhiều người.",
+    "Thường phải chốt hướng khi chưa đủ dữ liệu.",
+    "Tính năng mình đã đấu tranh để làm có thể ra mắt mà rất ít người dùng.",
+    "Bộ phận kinh doanh có thể đã hứa với khách hàng trước khi hỏi ý kiến PM."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "60% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "19% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 80
+    },
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Quản trị kinh doanh",
+      "Hệ thống thông tin quản lý",
+      "Công nghệ thông tin"
+    ],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Associate Product Manager",
+      "years": "1-2 (hiếm, chủ yếu công ty product lớn)",
+      "coreOutput": "Hỗ trợ quản lý một phần backlog/tính năng dưới sự hướng dẫn sát của PM senior, viết user story và thu thập phản hồi người dùng theo khuôn mẫu, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [
+        "Quản lý việc thực hiện dự án cho đúng ngân sách, tiến độ và phạm vi.",
+        "Trao đổi với thành viên dự án để tìm và gỡ vướng mắc.",
+        "Theo dõi các mốc và sản phẩm bàn giao của dự án.",
+        "Bàn giao sản phẩm của dự án, bảo đảm đạt chuẩn chất lượng.",
+        "Tìm hiểu nhu cầu hiện tại và sắp tới của khách hàng bằng cách hỏi trực tiếp, khảo sát hoặc cách khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Product Manager (Middle)",
+      "years": "2-4 (hoặc chuyển ngang từ BA/Dev)",
+      "coreOutput": "Chịu trách nhiệm một tính năng/mảng sản phẩm nhỏ: viết PRD, làm việc với đội kỹ thuật và thiết kế, đo lường kết quả sau khi ra mắt, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [
+        "Quản lý việc thực hiện dự án cho đúng ngân sách, tiến độ và phạm vi.",
+        "Trao đổi với thành viên dự án để tìm và gỡ vướng mắc.",
+        "Theo dõi các mốc và sản phẩm bàn giao của dự án.",
+        "Bàn giao sản phẩm của dự án, bảo đảm đạt chuẩn chất lượng.",
+        "Tìm hiểu nhu cầu hiện tại và sắp tới của khách hàng bằng cách hỏi trực tiếp, khảo sát hoặc cách khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Product Manager",
+      "years": "4-7",
+      "coreOutput": "Tự chủ định nghĩa chiến lược cho một sản phẩm/dòng sản phẩm, ưu tiên hoá roadmap dựa trên dữ liệu và mục tiêu kinh doanh, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [
+        "Quản lý việc thực hiện dự án cho đúng ngân sách, tiến độ và phạm vi.",
+        "Trao đổi với thành viên dự án để tìm và gỡ vướng mắc.",
+        "Theo dõi các mốc và sản phẩm bàn giao của dự án.",
+        "Bàn giao sản phẩm của dự án, bảo đảm đạt chuẩn chất lượng.",
+        "Tìm hiểu nhu cầu hiện tại và sắp tới của khách hàng bằng cách hỏi trực tiếp, khảo sát hoặc cách khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Lead / Group Product Manager",
+      "years": "6-9",
+      "coreOutput": "Dẫn dắt nhiều PM cho một nhóm sản phẩm liên quan, định chuẩn quy trình phát triển sản phẩm cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật/chuyên môn cho một team hoặc hệ thống.",
+      "tasks": [
+        "Quản lý việc thực hiện dự án cho đúng ngân sách, tiến độ và phạm vi.",
+        "Trao đổi với thành viên dự án để tìm và gỡ vướng mắc.",
+        "Theo dõi các mốc và sản phẩm bàn giao của dự án.",
+        "Bàn giao sản phẩm của dự án, bảo đảm đạt chuẩn chất lượng.",
+        "Tìm hiểu nhu cầu hiện tại và sắp tới của khách hàng bằng cách hỏi trực tiếp, khảo sát hoặc cách khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "name": "Hạ tầng CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Head of Product / Director of Product",
+      "years": "8-12",
+      "coreOutput": "Chịu trách nhiệm chiến lược cho một danh mục nhiều sản phẩm, quản lý trực tiếp nhiều PM và Group PM, làm việc chặt với lãnh đạo kỹ thuật và kinh doanh.",
+      "tasks": [
+        "Quản lý việc thực hiện dự án cho đúng ngân sách, tiến độ và phạm vi.",
+        "Trao đổi với thành viên dự án để tìm và gỡ vướng mắc.",
+        "Theo dõi các mốc và sản phẩm bàn giao của dự án.",
+        "Bàn giao sản phẩm của dự án, bảo đảm đạt chuẩn chất lượng.",
+        "Tìm hiểu nhu cầu hiện tại và sắp tới của khách hàng bằng cách hỏi trực tiếp, khảo sát hoặc cách khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "name": "Hạ tầng CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "name": "Hạ tầng CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Senior Director of Product",
+      "years": "10-15",
+      "coreOutput": "Định hướng sản phẩm cho cả một khối kinh doanh, phân bổ nguồn lực giữa các dòng sản phẩm và chịu trách nhiệm kết quả kinh doanh của chúng.",
+      "tasks": [
+        "Quản lý việc thực hiện dự án cho đúng ngân sách, tiến độ và phạm vi.",
+        "Trao đổi với thành viên dự án để tìm và gỡ vướng mắc.",
+        "Theo dõi các mốc và sản phẩm bàn giao của dự án.",
+        "Bàn giao sản phẩm của dự án, bảo đảm đạt chuẩn chất lượng.",
+        "Tìm hiểu nhu cầu hiện tại và sắp tới của khách hàng bằng cách hỏi trực tiếp, khảo sát hoặc cách khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "giao_tiep_hop_tac": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "name": "Hạ tầng CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "name": "Hạ tầng CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L9",
+      "bandEquivalent": "L9",
+      "title": "VP of Product",
+      "years": "12-15+",
+      "coreOutput": "Lãnh đạo toàn bộ chức năng sản phẩm của công ty và cùng ban điều hành đặt tầm nhìn sản phẩm; là bước ngay trước CPO.",
+      "tasks": [
+        "Quản lý việc thực hiện dự án cho đúng ngân sách, tiến độ và phạm vi.",
+        "Trao đổi với thành viên dự án để tìm và gỡ vướng mắc.",
+        "Theo dõi các mốc và sản phẩm bàn giao của dự án.",
+        "Bàn giao sản phẩm của dự án, bảo đảm đạt chuẩn chất lượng.",
+        "Tìm hiểu nhu cầu hiện tại và sắp tới của khách hàng bằng cách hỏi trực tiếp, khảo sát hoặc cách khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 5,
+        "tu_quan_ly_ap_luc": 4,
+        "giao_tiep_hop_tac": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "name": "Hạ tầng CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+          "name": "Thông số phần cứng CNTT",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+          "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+          "name": "Lập báo cáo phân tích chi phí – lợi ích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+          "name": "Kỹ thuật quảng cáo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+          "name": "Thị trường CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+          "name": "Yêu cầu người dùng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "name": "Hạ tầng CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "PROD_BA",
+      "name": "Chuyên viên phân tích nghiệp vụ / BA",
+      "why": "BA là đường vào phổ biến nhất của Product Manager"
+    },
+    {
+      "code": "SWE_UIUX",
+      "name": "Chuyên viên thiết kế UI/UX",
+      "why": "Cùng tập trung vào trải nghiệm và nhu cầu người dùng"
+    },
+    {
+      "code": "SWE_EM",
+      "name": "Trưởng phòng Kỹ thuật",
+      "why": "Cùng cấp quản lý: PM quản sản phẩm, EM quản con người"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 50100000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "1-2 năm",
+        "median": 25300000
+      },
+      {
+        "years": "3-4 năm",
+        "median": 42700000
+      },
+      {
+        "years": "5-8 năm",
+        "median": 60400000
+      },
+      {
+        "years": ">8 năm",
+        "median": 75000000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 8,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+      "name": "Vòng đời phát triển hệ thống",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+      "name": "Theo dõi xu hướng công nghệ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3497ebe1-d417-4105-a68f-f7bbcac7ee5f",
+      "name": "Thông số phần cứng CNTT",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+      "name": "Quản lý ngân sách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/17c9a790-5664-4673-8237-c4cf3c5a8da5",
+      "name": "Đánh giá tác động của quy trình CNTT lên kinh doanh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/48b68726-0fd6-4e03-a5eb-82236516ee7a",
+      "name": "Lập báo cáo phân tích chi phí – lợi ích",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/aba1f05b-f312-47d8-be71-7c574134de8f",
+      "name": "Kỹ thuật quảng cáo",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e5609f89-0daf-40bb-bd6b-94f5d7498131",
+      "name": "Thị trường CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ca73ac82-867a-4afa-9732-834aebe896ff",
+      "name": "Yêu cầu người dùng hệ thống CNTT",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+      "name": "Hạ tầng CNTT",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 1.967
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 1.372
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 1.301
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 1.096
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.864
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.732
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.644
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

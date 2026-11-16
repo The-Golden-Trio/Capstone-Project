@@ -1,0 +1,847 @@
+{
+  "code": "ONET-51-7011.00",
+  "name": "Thợ mộc đồ gỗ nội thất",
+  "nameEn": "Cabinetmakers and Bench Carpenters",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Cắt, tạo hình và lắp ráp đồ gỗ hoặc cài đặt và vận hành nhiều loại máy chế biến gỗ như cưa máy, máy bào cuốn, máy đục mộng để bào, cắt, tạo hình gỗ hoặc làm chi tiết cho sản phẩm gỗ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Làm cạnh máy móc hoặc dụng cụ nguy hiểm, có nguy cơ tai nạn.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió.",
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "34% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "18% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Xưởng nhỏ, cơ sở gia đình, làng nghề",
+      "weight": 60
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Mộc dân dụng", "Gia công và thiết kế sản phẩm mộc"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học việc mộc",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra kích thước, chất lượng hoặc độ khít của chi tiết để bảo đảm đúng yêu cầu.",
+        "Làm hoặc lắp ráp chi tiết của sản phẩm như kệ trưng bày, đồ văn phòng, tủ hoặc đồ nội thất cao cấp.",
+        "Tỉa, chà nhám hoặc cạo bề mặt, mối ghép để chuẩn bị hoàn thiện.",
+        "Đo và vạch kích thước chi tiết lên giấy hoặc phôi gỗ trước khi cắt theo bản vẽ để lắp khít và đạt chất lượng.",
+        "Cắt gỗ đúng kích thước, tạo hình và tỉa mộng cho khít bằng dụng cụ cầm tay như bào, đục, giũa gỗ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ mộc bậc 1",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra kích thước, chất lượng hoặc độ khít của chi tiết để bảo đảm đúng yêu cầu.",
+        "Làm hoặc lắp ráp chi tiết của sản phẩm như kệ trưng bày, đồ văn phòng, tủ hoặc đồ nội thất cao cấp.",
+        "Tỉa, chà nhám hoặc cạo bề mặt, mối ghép để chuẩn bị hoàn thiện.",
+        "Đo và vạch kích thước chi tiết lên giấy hoặc phôi gỗ trước khi cắt theo bản vẽ để lắp khít và đạt chất lượng.",
+        "Cắt gỗ đúng kích thước, tạo hình và tỉa mộng cho khít bằng dụng cụ cầm tay như bào, đục, giũa gỗ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ mộc bậc 2",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra kích thước, chất lượng hoặc độ khít của chi tiết để bảo đảm đúng yêu cầu.",
+        "Làm hoặc lắp ráp chi tiết của sản phẩm như kệ trưng bày, đồ văn phòng, tủ hoặc đồ nội thất cao cấp.",
+        "Tỉa, chà nhám hoặc cạo bề mặt, mối ghép để chuẩn bị hoàn thiện.",
+        "Đo và vạch kích thước chi tiết lên giấy hoặc phôi gỗ trước khi cắt theo bản vẽ để lắp khít và đạt chất lượng.",
+        "Cắt gỗ đúng kích thước, tạo hình và tỉa mộng cho khít bằng dụng cụ cầm tay như bào, đục, giũa gỗ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5df6be8c-c4ff-4bef-b744-3d502e5e5330",
+          "name": "Làm phẳng bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3",
+          "name": "Đứng máy doa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02",
+          "name": "Làm sạch bề mặt gỗ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ mộc bậc 3",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra kích thước, chất lượng hoặc độ khít của chi tiết để bảo đảm đúng yêu cầu.",
+        "Làm hoặc lắp ráp chi tiết của sản phẩm như kệ trưng bày, đồ văn phòng, tủ hoặc đồ nội thất cao cấp.",
+        "Tỉa, chà nhám hoặc cạo bề mặt, mối ghép để chuẩn bị hoàn thiện.",
+        "Đo và vạch kích thước chi tiết lên giấy hoặc phôi gỗ trước khi cắt theo bản vẽ để lắp khít và đạt chất lượng.",
+        "Cắt gỗ đúng kích thước, tạo hình và tỉa mộng cho khít bằng dụng cụ cầm tay như bào, đục, giũa gỗ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5df6be8c-c4ff-4bef-b744-3d502e5e5330",
+          "name": "Làm phẳng bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3",
+          "name": "Đứng máy doa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02",
+          "name": "Làm sạch bề mặt gỗ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5df6be8c-c4ff-4bef-b744-3d502e5e5330",
+          "name": "Làm phẳng bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3",
+          "name": "Đứng máy doa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02",
+          "name": "Làm sạch bề mặt gỗ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Thợ mộc bậc 4",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra kích thước, chất lượng hoặc độ khít của chi tiết để bảo đảm đúng yêu cầu.",
+        "Làm hoặc lắp ráp chi tiết của sản phẩm như kệ trưng bày, đồ văn phòng, tủ hoặc đồ nội thất cao cấp.",
+        "Tỉa, chà nhám hoặc cạo bề mặt, mối ghép để chuẩn bị hoàn thiện.",
+        "Đo và vạch kích thước chi tiết lên giấy hoặc phôi gỗ trước khi cắt theo bản vẽ để lắp khít và đạt chất lượng.",
+        "Cắt gỗ đúng kích thước, tạo hình và tỉa mộng cho khít bằng dụng cụ cầm tay như bào, đục, giũa gỗ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5df6be8c-c4ff-4bef-b744-3d502e5e5330",
+          "name": "Làm phẳng bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3",
+          "name": "Đứng máy doa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02",
+          "name": "Làm sạch bề mặt gỗ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5df6be8c-c4ff-4bef-b744-3d502e5e5330",
+          "name": "Làm phẳng bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3",
+          "name": "Đứng máy doa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02",
+          "name": "Làm sạch bề mặt gỗ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Thợ mộc bậc 5 / tổ trưởng",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra kích thước, chất lượng hoặc độ khít của chi tiết để bảo đảm đúng yêu cầu.",
+        "Làm hoặc lắp ráp chi tiết của sản phẩm như kệ trưng bày, đồ văn phòng, tủ hoặc đồ nội thất cao cấp.",
+        "Tỉa, chà nhám hoặc cạo bề mặt, mối ghép để chuẩn bị hoàn thiện.",
+        "Đo và vạch kích thước chi tiết lên giấy hoặc phôi gỗ trước khi cắt theo bản vẽ để lắp khít và đạt chất lượng.",
+        "Cắt gỗ đúng kích thước, tạo hình và tỉa mộng cho khít bằng dụng cụ cầm tay như bào, đục, giũa gỗ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5df6be8c-c4ff-4bef-b744-3d502e5e5330",
+          "name": "Làm phẳng bề mặt gỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3",
+          "name": "Đứng máy doa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02",
+          "name": "Làm sạch bề mặt gỗ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+          "name": "Các loại gỗ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+          "name": "Chà nhám gỗ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+          "name": "Sửa khung đồ gỗ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+          "name": "Vận hành máy cưa gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+          "name": "Làm khung đồ gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+          "name": "Hoàn thiện bề mặt gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+          "name": "Thiết kế đồ nội thất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5df6be8c-c4ff-4bef-b744-3d502e5e5330",
+          "name": "Làm phẳng bề mặt gỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3",
+          "name": "Đứng máy doa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02",
+          "name": "Làm sạch bề mặt gỗ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-7011.00",
+          "name": "Thợ mộc đồ gỗ nội thất"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-51-7031.00",
+          "name": "Thợ làm mẫu gỗ"
+        },
+        {
+          "code": "ONET-51-7032.00",
+          "name": "Thợ làm mẫu đúc bằng gỗ"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-6031.00",
+      "name": "Công nhân may mặc, da giày",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4121.00",
+      "name": "Thợ hàn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2031.00",
+      "name": "Thợ mộc",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 15000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Thợ Mộc\"",
+    "dataYear": "2026",
+    "note": "JobsGO không tách thợ mộc xây dựng và thợ mộc đồ gỗ. 35 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–15tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 12.900.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 8,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/cf2005ee-c788-4283-81d9-b443dfdf2c2e",
+      "name": "Các loại gỗ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/88ea614f-7e96-48fd-bf0b-96bf00bdb098",
+      "name": "Chà nhám gỗ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/64f0b3c5-92ff-4fd7-9e34-cfe5eeb11c98",
+      "name": "Sửa khung đồ gỗ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f2f9934c-b462-43e1-9172-432cf1904c8c",
+      "name": "Vận hành máy cưa gỗ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/aedae903-74b5-4209-8765-7f6619f52545",
+      "name": "Làm khung đồ gỗ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e040fb97-ac17-4cd0-bf74-7e96c83811b6",
+      "name": "Hoàn thiện bề mặt gỗ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a4c40f64-e8d4-4677-a741-ec04e63fa284",
+      "name": "Thiết kế đồ nội thất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5df6be8c-c4ff-4bef-b744-3d502e5e5330",
+      "name": "Làm phẳng bề mặt gỗ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a8c14569-704d-4615-bfb3-b1ecfd721bb3",
+      "name": "Đứng máy doa",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/adf661fe-9429-4094-8671-ca69fb72ad02",
+      "name": "Làm sạch bề mặt gỗ",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.812
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.849
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.853
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.938
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -1.132
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.219
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -1.294
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

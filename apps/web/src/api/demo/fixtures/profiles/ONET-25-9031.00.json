@@ -1,0 +1,767 @@
+{
+  "code": "ONET-25-9031.00",
+  "name": "Chuyên viên phát triển chương trình đào tạo",
+  "nameEn": "Instructional Coordinators",
+  "group": "Giáo dục và thư viện",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Xây dựng học liệu, điều phối nội dung giáo dục và đưa công nghệ vào giảng dạy để hướng dẫn giáo viên xây dựng chương trình và tổ chức khoá học. Có thể đào tạo và huấn luyện giáo viên. Gồm cả chuyên viên tư vấn giáo dục và phụ trách học liệu. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Khối lượng việc ngoài giờ dạy lớn: soạn bài, chấm bài, họp.",
+    "Phải xử lý hành vi khó của người học và kỳ vọng của phụ huynh."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Làm việc theo nhóm là chính.",
+    "94% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Dạy trực tuyến, công ty edtech",
+      "weight": 40
+    },
+    {
+      "name": "Trung tâm ngoại ngữ, luyện thi, kỹ năng",
+      "weight": 30
+    },
+    {
+      "name": "Văn phòng công ty nước ngoài, đa quốc gia",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Lý luận và phương pháp dạy học", "Công nghệ giáo dục"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh thiết kế chương trình/học liệu",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Dự giờ giáo viên để đánh giá và đề xuất cách nâng kỹ năng giảng dạy.",
+        "Lên kế hoạch và tổ chức chương trình tập huấn, hội thảo cho giáo viên về quy trình lớp học, học liệu, thiết bị và đồ dùng dạy học mới.",
+        "Giải thích và thực thi quy định của ngành giáo dục.",
+        "Tổ chức hoặc tham gia hội thảo, hội đồng và hội nghị nhằm nâng cao sự phát triển trí tuệ, xã hội và thể chất của học sinh.",
+        "Tư vấn cho giáo viên và cán bộ quản lý về xây dựng chương trình, sử dụng học liệu, thiết bị và triển khai chương trình, quy trình của nhà nước."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Chuyên viên thiết kế chương trình đào tạo (instructional designer)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Dự giờ giáo viên để đánh giá và đề xuất cách nâng kỹ năng giảng dạy.",
+        "Lên kế hoạch và tổ chức chương trình tập huấn, hội thảo cho giáo viên về quy trình lớp học, học liệu, thiết bị và đồ dùng dạy học mới.",
+        "Giải thích và thực thi quy định của ngành giáo dục.",
+        "Tổ chức hoặc tham gia hội thảo, hội đồng và hội nghị nhằm nâng cao sự phát triển trí tuệ, xã hội và thể chất của học sinh.",
+        "Tư vấn cho giáo viên và cán bộ quản lý về xây dựng chương trình, sử dụng học liệu, thiết bị và triển khai chương trình, quy trình của nhà nước."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên phát triển chương trình",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Dự giờ giáo viên để đánh giá và đề xuất cách nâng kỹ năng giảng dạy.",
+        "Lên kế hoạch và tổ chức chương trình tập huấn, hội thảo cho giáo viên về quy trình lớp học, học liệu, thiết bị và đồ dùng dạy học mới.",
+        "Giải thích và thực thi quy định của ngành giáo dục.",
+        "Tổ chức hoặc tham gia hội thảo, hội đồng và hội nghị nhằm nâng cao sự phát triển trí tuệ, xã hội và thể chất của học sinh.",
+        "Tư vấn cho giáo viên và cán bộ quản lý về xây dựng chương trình, sử dụng học liệu, thiết bị và triển khai chương trình, quy trình của nhà nước."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Chuyên viên phát triển chương trình cao cấp",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Dự giờ giáo viên để đánh giá và đề xuất cách nâng kỹ năng giảng dạy.",
+        "Lên kế hoạch và tổ chức chương trình tập huấn, hội thảo cho giáo viên về quy trình lớp học, học liệu, thiết bị và đồ dùng dạy học mới.",
+        "Giải thích và thực thi quy định của ngành giáo dục.",
+        "Tổ chức hoặc tham gia hội thảo, hội đồng và hội nghị nhằm nâng cao sự phát triển trí tuệ, xã hội và thể chất của học sinh.",
+        "Tư vấn cho giáo viên và cán bộ quản lý về xây dựng chương trình, sử dụng học liệu, thiết bị và triển khai chương trình, quy trình của nhà nước."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b660a83-91c3-4c9d-8f82-2d306777a42f",
+          "name": "Đánh giá chương trình giáo dục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm phát triển chương trình/đảm bảo chất lượng",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Dự giờ giáo viên để đánh giá và đề xuất cách nâng kỹ năng giảng dạy.",
+        "Lên kế hoạch và tổ chức chương trình tập huấn, hội thảo cho giáo viên về quy trình lớp học, học liệu, thiết bị và đồ dùng dạy học mới.",
+        "Giải thích và thực thi quy định của ngành giáo dục.",
+        "Tổ chức hoặc tham gia hội thảo, hội đồng và hội nghị nhằm nâng cao sự phát triển trí tuệ, xã hội và thể chất của học sinh.",
+        "Tư vấn cho giáo viên và cán bộ quản lý về xây dựng chương trình, sử dụng học liệu, thiết bị và triển khai chương trình, quy trình của nhà nước."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b660a83-91c3-4c9d-8f82-2d306777a42f",
+          "name": "Đánh giá chương trình giáo dục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b660a83-91c3-4c9d-8f82-2d306777a42f",
+          "name": "Đánh giá chương trình giáo dục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng đào tạo/đảm bảo chất lượng",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Dự giờ giáo viên để đánh giá và đề xuất cách nâng kỹ năng giảng dạy.",
+        "Lên kế hoạch và tổ chức chương trình tập huấn, hội thảo cho giáo viên về quy trình lớp học, học liệu, thiết bị và đồ dùng dạy học mới.",
+        "Giải thích và thực thi quy định của ngành giáo dục.",
+        "Tổ chức hoặc tham gia hội thảo, hội đồng và hội nghị nhằm nâng cao sự phát triển trí tuệ, xã hội và thể chất của học sinh.",
+        "Tư vấn cho giáo viên và cán bộ quản lý về xây dựng chương trình, sử dụng học liệu, thiết bị và triển khai chương trình, quy trình của nhà nước."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b660a83-91c3-4c9d-8f82-2d306777a42f",
+          "name": "Đánh giá chương trình giáo dục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b660a83-91c3-4c9d-8f82-2d306777a42f",
+          "name": "Đánh giá chương trình giáo dục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc học thuật/giám đốc đào tạo (L&D)",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Dự giờ giáo viên để đánh giá và đề xuất cách nâng kỹ năng giảng dạy.",
+        "Lên kế hoạch và tổ chức chương trình tập huấn, hội thảo cho giáo viên về quy trình lớp học, học liệu, thiết bị và đồ dùng dạy học mới.",
+        "Giải thích và thực thi quy định của ngành giáo dục.",
+        "Tổ chức hoặc tham gia hội thảo, hội đồng và hội nghị nhằm nâng cao sự phát triển trí tuệ, xã hội và thể chất của học sinh.",
+        "Tư vấn cho giáo viên và cán bộ quản lý về xây dựng chương trình, sử dụng học liệu, thiết bị và triển khai chương trình, quy trình của nhà nước."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tri_tue_cam_xuc": 4,
+        "lanh_dao_kinh_doanh": 4,
+        "giao_tiep_hop_tac": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b660a83-91c3-4c9d-8f82-2d306777a42f",
+          "name": "Đánh giá chương trình giáo dục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+          "name": "Góp ý giáo án",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+          "name": "Phân tích thị trường đào tạo",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+          "name": "Tư vấn phương pháp giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+          "name": "Chuẩn chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b660a83-91c3-4c9d-8f82-2d306777a42f",
+          "name": "Đánh giá chương trình giáo dục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-25-9031.00",
+          "name": "Chuyên viên phát triển chương trình đào tạo"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9032.00",
+          "name": "Quản lý giáo dục (hiệu trưởng, trưởng khoa)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-13-1071.00",
+      "name": "Chuyên viên nhân sự",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2031.00",
+      "name": "Giáo viên trung học (THCS, THPT)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2021.00",
+      "name": "Giáo viên tiểu học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 18000000,
+    "byYears": [],
+    "source": "Tin tuyển \"Curriculum Developer\" (IIG Việt Nam)",
+    "dataYear": "2024",
+    "note": "Chỉ 1–2 tin.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 9,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/bd420d08-880b-43bc-a808-d46ad3115168",
+      "name": "Góp ý giáo án",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+      "name": "Theo dõi tiến bộ giáo dục",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f4801e7a-c448-4fe8-b9d7-2d30666e04ce",
+      "name": "Phân tích thị trường đào tạo",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e2ab113a-3eae-4ef7-8d67-b989666a92b3",
+      "name": "Tư vấn phương pháp giảng dạy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/264c14a5-d025-4916-a378-0a85f16adb3f",
+      "name": "Chuẩn chương trình học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+      "name": "Sư phạm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3b660a83-91c3-4c9d-8f82-2d306777a42f",
+      "name": "Đánh giá chương trình giáo dục",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 1.1
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.891
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.799
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.735
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.508
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.478
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.056
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

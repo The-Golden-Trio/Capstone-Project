@@ -1,0 +1,930 @@
+{
+  "code": "INFRA_NETWORK",
+  "name": "Kỹ sư hệ thống mạng",
+  "nameEn": "Network Engineer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Kỹ sư hệ thống mạng thiết kế, lắp đặt và vận hành mạng máy tính của tổ chức: switch, router, Wi-Fi, kết nối giữa các chi nhánh và các lớp bảo vệ mạng. Việc gồm cấu hình thiết bị, giám sát, xử lý sự cố và nâng cấp. Lộ trình nghề gắn chặt với các chứng chỉ như CCNA, CCNP, CCIE.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Khi mạng sập, cả tổ chức ngừng làm việc và áp lực dồn lên người trực.",
+    "Nâng cấp thường chỉ được làm ngoài giờ, ví dụ đêm thứ Bảy.",
+    "Phải tự học chứng chỉ ngoài giờ trong nhiều tháng để thăng tiến.",
+    "Có lúc phải vận hành thiết bị giá rẻ vì quyết định tiết kiệm của cấp trên."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "50% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "17% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 40
+    },
+    {
+      "name": "Đối tác triển khai hệ thống tại khách hàng",
+      "weight": 35
+    },
+    {
+      "name": "Nhà mạng viễn thông",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [
+      "Mạng máy tính và truyền thông dữ liệu",
+      "Công nghệ thông tin",
+      "Kỹ thuật điện tử - viễn thông"
+    ],
+    "vocational": ["Quản trị mạng máy tính", "Quản trị hệ thống"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Network Engineer Intern",
+      "years": "0",
+      "coreOutput": "Hỗ trợ cấu hình thiết bị mạng cơ bản (switch/router) theo hướng dẫn sát, đang học chứng chỉ CCNA, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+      "tasks": [],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher Network Engineer",
+      "years": "0-1 (thường có CCNA)",
+      "coreOutput": "Tự cấu hình một thiết bị mạng đơn lẻ theo runbook có sẵn, giám sát mạng cơ bản, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [
+        "Hỗ trợ tại chỗ, đi cáp, thay switch, router, tường lửa, điểm phát Wi-Fi",
+        "Kiểm tra định kỳ và chẩn đoán lỗi cơ bản theo hướng dẫn",
+        "Hỗ trợ người dùng khi máy tính và mạng gặp sự cố",
+        "Quản trị máy chủ Windows, Linux và sao lưu cơ bản"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior Network Engineer",
+      "years": "1-2",
+      "coreOutput": "Tự triển khai và cấu hình một mảng mạng nhỏ (VLAN, routing cơ bản) đã xác định rõ, xử lý sự cố mạng đơn giản, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [
+        "Vận hành, giám sát, xử lý sự cố mạng LAN, WAN, tường lửa, VPN",
+        "Cấu hình và bảo trì router, switch, tường lửa, Wi-Fi",
+        "Quản trị máy ảo, máy chủ vật lý và thiết bị lưu trữ",
+        "Sao lưu cấu hình thiết bị, vá lỗi",
+        "Vẽ sơ đồ mạng và viết quy trình"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle Network Engineer",
+      "years": "2-4 (thường có CCNP)",
+      "coreOutput": "Chịu trách nhiệm vận hành một hệ thống mạng hoàn chỉnh (LAN/WAN của một chi nhánh/tổ chức vừa), thiết kế mở rộng mạng theo yêu cầu, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Network Engineer",
+      "years": "4-7",
+      "coreOutput": "Tự chủ thiết kế kiến trúc mạng cho cả một tổ chức (routing/switching phức tạp, redundancy, bảo mật mạng), xử lý sự cố mạng nghiêm trọng, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [
+        "Thiết kế, dựng và vận hành mạng trung tâm dữ liệu",
+        "Cấu hình định tuyến, chuyển mạch, chính sách tường lửa, VPN",
+        "Làm tuyến xử lý cuối cho sự cố khó, trực sự cố",
+        "Nâng firmware và quản lý vòng đời thiết bị",
+        "Tham gia dự án nâng cấp mạng, trung tâm dữ liệu, đám mây"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Network Engineering Lead",
+      "years": "6-9 (thường có hoặc đang theo CCIE)",
+      "coreOutput": "Dẫn dắt kỹ thuật đội Network, đặt chuẩn kiến trúc và chính sách mạng cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [
+        "Thiết kế kiến trúc mạng cho trung tâm dữ liệu, doanh nghiệp, đám mây kết hợp",
+        "Lên phương án dự phòng, chuyển đổi khi lỗi, khôi phục thảm hoạ",
+        "Xử lý và phân tích nguyên nhân sự cố nghiêm trọng",
+        "Tự động hoá cấu hình mạng, review thiết kế, kèm kỹ sư"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Principal Network Engineer",
+      "years": "8-12 (thường có CCIE)",
+      "coreOutput": "Đặt chiến lược hạ tầng mạng xuyên toàn tổ chức/nhiều chi nhánh, là chuyên gia kỹ thuật mạng cấp cao nhất, thường tư vấn cho các dự án lớn, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+      "tasks": [
+        "Vận hành và tối ưu toàn bộ mạng, máy chủ, lưu trữ, đám mây",
+        "Đặt chính sách bảo mật, quản lý tường lửa, sao lưu, phân quyền",
+        "Theo dõi cam kết dịch vụ, sự cố, tài sản, bản quyền phần mềm",
+        "Phân công, đào tạo, đặt chỉ tiêu cho nhóm; lập kế hoạch và ngân sách hạ tầng"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+          "name": "Triển khai mạng riêng ảo (VPN)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+          "name": "Chiến lược an ninh thông tin",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+          "name": "Phân tích cấu hình và hiệu năng mạng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+          "name": "Công nghệ đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+          "name": "Hệ điều hành di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+          "name": "Dự báo nhu cầu mạng CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+          "name": "Dùng công cụ chẩn đoán mạng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+          "name": "Chuyển dữ liệu sang hệ thống mới",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "INFRA_NETWORK",
+          "name": "Kỹ sư hệ thống mạng"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_ngang",
+      "label": "Chuyển ngang",
+      "roles": [
+        {
+          "code": "CLOUD_DEVOPS",
+          "name": "Kỹ sư DevOps"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "INFRA_HELPDESK",
+      "name": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+      "why": "Cùng nhánh hạ tầng nội bộ; Helpdesk là cửa vào của Network"
+    },
+    {
+      "code": "CLOUD_ENG",
+      "name": "Kỹ sư điện toán đám mây",
+      "why": "Cùng hạ tầng: một trên mây, một dưới đất"
+    },
+    {
+      "code": "SEC_ENG",
+      "name": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
+      "why": "Bảo mật mạng là giao điểm hai nghề"
+    },
+    {
+      "code": "CLOUD_DEVOPS",
+      "name": "Kỹ sư DevOps",
+      "why": "Cùng vận hành hạ tầng, khác tầng mạng và tầng ứng dụng"
+    },
+    {
+      "code": "SWE_EMBEDDED",
+      "name": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+      "why": "Cùng làm việc với thiết bị phần cứng thật"
+    }
+  ],
+  "pay": null,
+  "outlook": {
+    "level": "thap",
+    "openPostings": 14,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/acf0a78c-f4e3-4bd9-a5cc-9cf4791b3b95",
+      "name": "Triển khai mạng riêng ảo (VPN)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/11eebd42-44ab-401d-8a2c-bdb9fc9beb50",
+      "name": "Chiến lược an ninh thông tin",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/545c80e8-7ab2-42fe-af64-242211e94709",
+      "name": "Phân tích cấu hình và hiệu năng mạng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bd14968e-e409-45af-b362-3495ed7b10e0",
+      "name": "Công nghệ đám mây",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/976455eb-5bbe-4493-ae64-ed16c3b009ea",
+      "name": "Hệ điều hành di động",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+      "name": "Lập trình máy tính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8fa840f7-e66a-4370-8e6d-7d554260c31c",
+      "name": "Dự báo nhu cầu mạng CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+      "name": "Dùng giao diện riêng của ứng dụng (như API)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bf7ea00f-db77-4a95-9b9f-2d12b6d9fcb4",
+      "name": "Dùng công cụ chẩn đoán mạng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/020918ef-4b55-47c1-8430-ab7b8f6a7377",
+      "name": "Chuyển dữ liệu sang hệ thống mới",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.664
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.537
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.522
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.378
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.004
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.206
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.715
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,924 @@
+{
+  "code": "ONET-27-1024.00",
+  "name": "Nhà thiết kế đồ hoạ",
+  "nameEn": "Graphic Designers",
+  "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+  "regionId": "sang_tao",
+  "isIt": false,
+  "summary": "Thiết kế đồ hoạ cho nhu cầu thương mại hoặc quảng bá cụ thể như bao bì, trưng bày hay logo. Có thể dùng nhiều chất liệu để tạo hiệu quả nghệ thuật hoặc trang trí. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích sáng tạo và tự do thể hiện ý tưởng. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Thường xuyên phải làm gấp cho kịp hạn.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "51% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "13% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Agency marketing, quảng cáo, sự kiện",
+      "weight": 45
+    },
+    {
+      "name": "Studio thiết kế, hoạt hình, thời trang",
+      "weight": 30
+    },
+    {
+      "name": "Freelance sáng tạo theo show, dự án",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Thiết kế đồ họa"],
+    "vocational": ["Thiết kế đồ họa"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh thiết kế đồ hoạ",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Nhập thông tin vào máy tính để dàn trang cho khách hoặc cấp trên.",
+        "Xem lại bản dàn trang cuối và đề xuất chỗ cần cải thiện.",
+        "Xác định kích thước, bố cục hình minh hoạ và chữ, chọn kiểu và cỡ chữ.",
+        "Thiết kế đồ hoạ và bố cục cho hình minh hoạ sản phẩm, logo công ty và trang web.",
+        "Tạo thiết kế, ý tưởng và bản dàn trang mẫu dựa trên nguyên tắc bố cục và thẩm mỹ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên thiết kế đồ hoạ",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Nhập thông tin vào máy tính để dàn trang cho khách hoặc cấp trên.",
+        "Xem lại bản dàn trang cuối và đề xuất chỗ cần cải thiện.",
+        "Xác định kích thước, bố cục hình minh hoạ và chữ, chọn kiểu và cỡ chữ.",
+        "Thiết kế đồ hoạ và bố cục cho hình minh hoạ sản phẩm, logo công ty và trang web.",
+        "Tạo thiết kế, ý tưởng và bản dàn trang mẫu dựa trên nguyên tắc bố cục và thẩm mỹ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên thiết kế đồ hoạ (Junior)",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Nhập thông tin vào máy tính để dàn trang cho khách hoặc cấp trên.",
+        "Xem lại bản dàn trang cuối và đề xuất chỗ cần cải thiện.",
+        "Xác định kích thước, bố cục hình minh hoạ và chữ, chọn kiểu và cỡ chữ.",
+        "Thiết kế đồ hoạ và bố cục cho hình minh hoạ sản phẩm, logo công ty và trang web.",
+        "Tạo thiết kế, ý tưởng và bản dàn trang mẫu dựa trên nguyên tắc bố cục và thẩm mỹ."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chuyên viên thiết kế đồ hoạ",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Nhập thông tin vào máy tính để dàn trang cho khách hoặc cấp trên.",
+        "Xem lại bản dàn trang cuối và đề xuất chỗ cần cải thiện.",
+        "Xác định kích thước, bố cục hình minh hoạ và chữ, chọn kiểu và cỡ chữ.",
+        "Thiết kế đồ hoạ và bố cục cho hình minh hoạ sản phẩm, logo công ty và trang web.",
+        "Tạo thiết kế, ý tưởng và bản dàn trang mẫu dựa trên nguyên tắc bố cục và thẩm mỹ."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+          "name": "Phát triển nội dung số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chuyên viên thiết kế cao cấp (Senior Designer)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Nhập thông tin vào máy tính để dàn trang cho khách hoặc cấp trên.",
+        "Xem lại bản dàn trang cuối và đề xuất chỗ cần cải thiện.",
+        "Xác định kích thước, bố cục hình minh hoạ và chữ, chọn kiểu và cỡ chữ.",
+        "Thiết kế đồ hoạ và bố cục cho hình minh hoạ sản phẩm, logo công ty và trang web.",
+        "Tạo thiết kế, ý tưởng và bản dàn trang mẫu dựa trên nguyên tắc bố cục và thẩm mỹ."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+          "name": "Phát triển nội dung số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+          "name": "Phát triển nội dung số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm thiết kế (Lead Designer)",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Nhập thông tin vào máy tính để dàn trang cho khách hoặc cấp trên.",
+        "Xem lại bản dàn trang cuối và đề xuất chỗ cần cải thiện.",
+        "Xác định kích thước, bố cục hình minh hoạ và chữ, chọn kiểu và cỡ chữ.",
+        "Thiết kế đồ hoạ và bố cục cho hình minh hoạ sản phẩm, logo công ty và trang web.",
+        "Tạo thiết kế, ý tưởng và bản dàn trang mẫu dựa trên nguyên tắc bố cục và thẩm mỹ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+          "name": "Phát triển nội dung số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+          "name": "Phát triển nội dung số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc nghệ thuật (Art Director)",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Nhập thông tin vào máy tính để dàn trang cho khách hoặc cấp trên.",
+        "Xem lại bản dàn trang cuối và đề xuất chỗ cần cải thiện.",
+        "Xác định kích thước, bố cục hình minh hoạ và chữ, chọn kiểu và cỡ chữ.",
+        "Thiết kế đồ hoạ và bố cục cho hình minh hoạ sản phẩm, logo công ty và trang web.",
+        "Tạo thiết kế, ý tưởng và bản dàn trang mẫu dựa trên nguyên tắc bố cục và thẩm mỹ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+          "name": "Phát triển nội dung số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+          "name": "Làm sản phẩm đồ hoạ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+          "name": "Bộ phần mềm Adobe Creative",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+          "name": "Xây dựng khung ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+          "name": "Truyền thông số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+          "name": "Dàn trang chế bản điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+          "name": "Phát triển nội dung số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-27-1014.00",
+      "name": "Hoạ sĩ hoạt hình, kỹ xảo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "SWE_UIUX",
+      "name": "Chuyên viên thiết kế UI/UX",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1013.00",
+      "name": "Hoạ sĩ, nghệ nhân",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-2012.00",
+      "name": "Đạo diễn, nhà sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1082.00",
+      "name": "Chuyên viên quản lý dự án",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 11000000,
+    "median": 12500000,
+    "high": 15000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 657,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f058bf62-70d1-4f5e-be2a-8b26fac24a96",
+      "name": "Làm sản phẩm đồ hoạ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+      "name": "Luật bản quyền",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+      "name": "Chuyển yêu cầu thành thiết kế hình ảnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/719d8699-a221-4b5a-8fc3-68a8645cbe03",
+      "name": "Bộ phần mềm Adobe Creative",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/273eb12c-7c34-41d2-afd2-c0222bf853bc",
+      "name": "Xây dựng khung ý tưởng nghệ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a88da605-095f-4a4f-be1c-d1444df8228a",
+      "name": "Truyền thông số",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+      "name": "Thiết kế mẫu thử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c46cf6f9-8b1e-44b9-a529-f5774c9167dd",
+      "name": "Dàn trang chế bản điện tử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+      "name": "Khảo sát thị trường",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+      "name": "Phát triển nội dung số",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.467
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.305
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.112
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.007
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.025
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.4
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -1.303
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

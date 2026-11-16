@@ -1,0 +1,516 @@
+{
+  "code": "ONET-13-1199.06",
+  "name": "Người kinh doanh online",
+  "nameEn": "Online Merchants",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Kinh doanh bán lẻ hoàn toàn trên mạng. Có thể lập chiến lược kinh doanh, nhập hàng, quản lý tồn kho, làm marketing, xử lý và giao đơn hàng, cân đối sổ sách tài chính. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Môi trường cạnh tranh cao."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Được tự quyết nhiều trong công việc.",
+    "44% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "14% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Tự kinh doanh online, livestream bán hàng",
+      "weight": 75
+    },
+    {
+      "name": "Văn phòng doanh nghiệp vừa và nhỏ trong nước",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Thương mại điện tử", "Marketing"],
+    "vocational": ["Thương mại điện tử"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Cộng tác viên bán hàng online",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Xử lý đơn hàng: đóng gói hàng và giấy tờ để gửi trực tiếp, hoặc chuyển đơn cho nhà sản xuất, đơn vị phân phối.",
+        "Nhận và xử lý thanh toán của khách qua dịch vụ giao dịch điện tử.",
+        "Tạo, quản lý hoặc tự động hoá đơn hàng, hoá đơn bằng phần mềm quản lý đơn hàng.",
+        "Gửi email xác nhận giao dịch và giao hàng.",
+        "Trả lời khách qua email, điện thoại hoặc tin nhắn về thắc mắc, khiếu nại liên quan đến sản phẩm, chính sách hoặc giao hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Chủ shop online mới",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Xử lý đơn hàng: đóng gói hàng và giấy tờ để gửi trực tiếp, hoặc chuyển đơn cho nhà sản xuất, đơn vị phân phối.",
+        "Nhận và xử lý thanh toán của khách qua dịch vụ giao dịch điện tử.",
+        "Tạo, quản lý hoặc tự động hoá đơn hàng, hoá đơn bằng phần mềm quản lý đơn hàng.",
+        "Gửi email xác nhận giao dịch và giao hàng.",
+        "Trả lời khách qua email, điện thoại hoặc tin nhắn về thắc mắc, khiếu nại liên quan đến sản phẩm, chính sách hoặc giao hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97",
+          "name": "Marketing mạng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898",
+          "name": "Lập kế hoạch marketing số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6532ae5-efc4-4ca4-b172-c11471940d09",
+          "name": "Kinh doanh điện tử",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chủ shop có doanh thu ổn định",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Xử lý đơn hàng: đóng gói hàng và giấy tờ để gửi trực tiếp, hoặc chuyển đơn cho nhà sản xuất, đơn vị phân phối.",
+        "Nhận và xử lý thanh toán của khách qua dịch vụ giao dịch điện tử.",
+        "Tạo, quản lý hoặc tự động hoá đơn hàng, hoá đơn bằng phần mềm quản lý đơn hàng.",
+        "Gửi email xác nhận giao dịch và giao hàng.",
+        "Trả lời khách qua email, điện thoại hoặc tin nhắn về thắc mắc, khiếu nại liên quan đến sản phẩm, chính sách hoặc giao hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97",
+          "name": "Marketing mạng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898",
+          "name": "Lập kế hoạch marketing số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6532ae5-efc4-4ca4-b172-c11471940d09",
+          "name": "Kinh doanh điện tử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97",
+          "name": "Marketing mạng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898",
+          "name": "Lập kế hoạch marketing số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6532ae5-efc4-4ca4-b172-c11471940d09",
+          "name": "Kinh doanh điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bac4bcc-1846-4688-ba02-ad2b51544282",
+          "name": "Soạn tài liệu truyền thông hoà nhập",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chủ shop đa kênh có nhân viên",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Xử lý đơn hàng: đóng gói hàng và giấy tờ để gửi trực tiếp, hoặc chuyển đơn cho nhà sản xuất, đơn vị phân phối.",
+        "Nhận và xử lý thanh toán của khách qua dịch vụ giao dịch điện tử.",
+        "Tạo, quản lý hoặc tự động hoá đơn hàng, hoá đơn bằng phần mềm quản lý đơn hàng.",
+        "Gửi email xác nhận giao dịch và giao hàng.",
+        "Trả lời khách qua email, điện thoại hoặc tin nhắn về thắc mắc, khiếu nại liên quan đến sản phẩm, chính sách hoặc giao hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97",
+          "name": "Marketing mạng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898",
+          "name": "Lập kế hoạch marketing số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6532ae5-efc4-4ca4-b172-c11471940d09",
+          "name": "Kinh doanh điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bac4bcc-1846-4688-ba02-ad2b51544282",
+          "name": "Soạn tài liệu truyền thông hoà nhập",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97",
+          "name": "Marketing mạng xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898",
+          "name": "Lập kế hoạch marketing số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6532ae5-efc4-4ca4-b172-c11471940d09",
+          "name": "Kinh doanh điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bac4bcc-1846-4688-ba02-ad2b51544282",
+          "name": "Soạn tài liệu truyền thông hoà nhập",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chủ thương hiệu bán lẻ online",
+      "years": "4+",
+      "coreOutput": null,
+      "tasks": [
+        "Xử lý đơn hàng: đóng gói hàng và giấy tờ để gửi trực tiếp, hoặc chuyển đơn cho nhà sản xuất, đơn vị phân phối.",
+        "Nhận và xử lý thanh toán của khách qua dịch vụ giao dịch điện tử.",
+        "Tạo, quản lý hoặc tự động hoá đơn hàng, hoá đơn bằng phần mềm quản lý đơn hàng.",
+        "Gửi email xác nhận giao dịch và giao hàng.",
+        "Trả lời khách qua email, điện thoại hoặc tin nhắn về thắc mắc, khiếu nại liên quan đến sản phẩm, chính sách hoặc giao hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97",
+          "name": "Marketing mạng xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898",
+          "name": "Lập kế hoạch marketing số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6532ae5-efc4-4ca4-b172-c11471940d09",
+          "name": "Kinh doanh điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bac4bcc-1846-4688-ba02-ad2b51544282",
+          "name": "Soạn tài liệu truyền thông hoà nhập",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+          "name": "Khảo sát thị trường",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+          "name": "Đánh giá chiến lược web",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97",
+          "name": "Marketing mạng xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898",
+          "name": "Lập kế hoạch marketing số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6532ae5-efc4-4ca4-b172-c11471940d09",
+          "name": "Kinh doanh điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bac4bcc-1846-4688-ba02-ad2b51544282",
+          "name": "Soạn tài liệu truyền thông hoà nhập",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-13-1161.00",
+      "name": "Chuyên viên marketing và nghiên cứu thị trường",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-4012.00",
+      "name": "Nhân viên kinh doanh (sales B2B)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1023.00",
+      "name": "Chuyên viên mua hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10000000,
+    "median": 12000000,
+    "high": 15000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 224,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/fe39d4db-4cb5-4299-bb9f-896c8fd6ab13",
+      "name": "Khảo sát thị trường",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a4881e54-6055-4e61-855a-0a56ced7cfa3",
+      "name": "Đánh giá chiến lược web",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97",
+      "name": "Marketing mạng xã hội",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/736ef286-fbd3-4e5c-a4b4-d1e2008c9898",
+      "name": "Lập kế hoạch marketing số",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a6532ae5-efc4-4ca4-b172-c11471940d09",
+      "name": "Kinh doanh điện tử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5bac4bcc-1846-4688-ba02-ad2b51544282",
+      "name": "Soạn tài liệu truyền thông hoà nhập",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.426
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.182
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.039
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.137
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.206
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.519
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.548
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

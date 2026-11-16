@@ -1,0 +1,784 @@
+{
+  "code": "ONET-15-2011.00",
+  "name": "Chuyên viên định phí bảo hiểm (actuary)",
+  "nameEn": "Actuaries",
+  "group": "Toán học và thống kê",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Phân tích số liệu thống kê như tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu, rồi lập bảng xác suất để dự báo rủi ro và nghĩa vụ chi trả quyền lợi trong tương lai. Có thể xác định mức phí bảo hiểm và quỹ dự phòng cần có để bảo đảm chi trả. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Môi trường cạnh tranh cao.",
+    "Công việc trừu tượng, kết quả khó giải thích cho người không có nền toán."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "44% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty bảo hiểm",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Toán ứng dụng", "Bảo hiểm", "Toán kinh tế"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh định phí bảo hiểm",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu để xác định mức phí bảo hiểm, quỹ dự phòng và nghĩa vụ cần có để bảo đảm chi trả quyền lợi trong tương lai.",
+        "Phân tích thông tin thống kê để ước tính tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu.",
+        "Thiết kế, rà soát và hỗ trợ vận hành các sản phẩm bảo hiểm, niên kim và hưu trí, đánh giá khả năng tài chính và tính phí.",
+        "Phối hợp với lập trình viên, chuyên viên thẩm định, kế toán, chuyên viên bồi thường và lãnh đạo để xây dựng dòng sản phẩm mới hoặc cải tiến sản phẩm hiện có.",
+        "Tư vấn cho khách hàng theo hợp đồng, với vai trò chuyên gia tư vấn."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Chuyên viên định phí (actuarial analyst)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu để xác định mức phí bảo hiểm, quỹ dự phòng và nghĩa vụ cần có để bảo đảm chi trả quyền lợi trong tương lai.",
+        "Phân tích thông tin thống kê để ước tính tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu.",
+        "Thiết kế, rà soát và hỗ trợ vận hành các sản phẩm bảo hiểm, niên kim và hưu trí, đánh giá khả năng tài chính và tính phí.",
+        "Phối hợp với lập trình viên, chuyên viên thẩm định, kế toán, chuyên viên bồi thường và lãnh đạo để xây dựng dòng sản phẩm mới hoặc cải tiến sản phẩm hiện có.",
+        "Tư vấn cho khách hàng theo hợp đồng, với vai trò chuyên gia tư vấn."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên định phí (đang thi chứng chỉ actuary quốc tế)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu để xác định mức phí bảo hiểm, quỹ dự phòng và nghĩa vụ cần có để bảo đảm chi trả quyền lợi trong tương lai.",
+        "Phân tích thông tin thống kê để ước tính tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu.",
+        "Thiết kế, rà soát và hỗ trợ vận hành các sản phẩm bảo hiểm, niên kim và hưu trí, đánh giá khả năng tài chính và tính phí.",
+        "Phối hợp với lập trình viên, chuyên viên thẩm định, kế toán, chuyên viên bồi thường và lãnh đạo để xây dựng dòng sản phẩm mới hoặc cải tiến sản phẩm hiện có.",
+        "Tư vấn cho khách hàng theo hợp đồng, với vai trò chuyên gia tư vấn."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Chuyên viên định phí cao cấp (hội viên liên kết ASA/AIA)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu để xác định mức phí bảo hiểm, quỹ dự phòng và nghĩa vụ cần có để bảo đảm chi trả quyền lợi trong tương lai.",
+        "Phân tích thông tin thống kê để ước tính tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu.",
+        "Thiết kế, rà soát và hỗ trợ vận hành các sản phẩm bảo hiểm, niên kim và hưu trí, đánh giá khả năng tài chính và tính phí.",
+        "Phối hợp với lập trình viên, chuyên viên thẩm định, kế toán, chuyên viên bồi thường và lãnh đạo để xây dựng dòng sản phẩm mới hoặc cải tiến sản phẩm hiện có.",
+        "Tư vấn cho khách hàng theo hợp đồng, với vai trò chuyên gia tư vấn."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm định phí (hội viên chính thức FSA/FIA)",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu để xác định mức phí bảo hiểm, quỹ dự phòng và nghĩa vụ cần có để bảo đảm chi trả quyền lợi trong tương lai.",
+        "Phân tích thông tin thống kê để ước tính tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu.",
+        "Thiết kế, rà soát và hỗ trợ vận hành các sản phẩm bảo hiểm, niên kim và hưu trí, đánh giá khả năng tài chính và tính phí.",
+        "Phối hợp với lập trình viên, chuyên viên thẩm định, kế toán, chuyên viên bồi thường và lãnh đạo để xây dựng dòng sản phẩm mới hoặc cải tiến sản phẩm hiện có.",
+        "Tư vấn cho khách hàng theo hợp đồng, với vai trò chuyên gia tư vấn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Chuyên gia tính toán được bổ nhiệm của doanh nghiệp bảo hiểm",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu để xác định mức phí bảo hiểm, quỹ dự phòng và nghĩa vụ cần có để bảo đảm chi trả quyền lợi trong tương lai.",
+        "Phân tích thông tin thống kê để ước tính tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu.",
+        "Thiết kế, rà soát và hỗ trợ vận hành các sản phẩm bảo hiểm, niên kim và hưu trí, đánh giá khả năng tài chính và tính phí.",
+        "Phối hợp với lập trình viên, chuyên viên thẩm định, kế toán, chuyên viên bồi thường và lãnh đạo để xây dựng dòng sản phẩm mới hoặc cải tiến sản phẩm hiện có.",
+        "Tư vấn cho khách hàng theo hợp đồng, với vai trò chuyên gia tư vấn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc định phí (chief actuary)",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu để xác định mức phí bảo hiểm, quỹ dự phòng và nghĩa vụ cần có để bảo đảm chi trả quyền lợi trong tương lai.",
+        "Phân tích thông tin thống kê để ước tính tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu.",
+        "Thiết kế, rà soát và hỗ trợ vận hành các sản phẩm bảo hiểm, niên kim và hưu trí, đánh giá khả năng tài chính và tính phí.",
+        "Phối hợp với lập trình viên, chuyên viên thẩm định, kế toán, chuyên viên bồi thường và lãnh đạo để xây dựng dòng sản phẩm mới hoặc cải tiến sản phẩm hiện có.",
+        "Tư vấn cho khách hàng theo hợp đồng, với vai trò chuyên gia tư vấn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+          "name": "Phân tích thực nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+          "name": "Hỗ trợ tính toán tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-13-2052.00",
+      "name": "Chuyên viên tư vấn tài chính và đầu tư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1071.00",
+      "name": "Chuyên viên nhân sự",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2011.00",
+      "name": "Kế toán, kiểm toán viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 15000000,
+    "median": null,
+    "high": 20000000,
+    "byYears": [],
+    "source": "VietnamWorks HR Insider, \"Ngành bảo hiểm\"",
+    "dataYear": "2025",
+    "note": "Actuary cấp cao ở TP.HCM có thể trên 70tr theo một công ty săn đầu người.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+      "name": "Phân tích định lượng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+      "name": "Thống kê",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+      "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f6ac6241-adb2-4ce2-b35f-09832cbb11ea",
+      "name": "Phân tích thực nghiệm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+      "name": "Thu thập thông tin tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+      "name": "Tư vấn tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+      "name": "Tổng hợp thông tin tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6bf6b5bd-6658-4338-b0ee-dc143e68e6d3",
+      "name": "Hỗ trợ tính toán tài chính",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.147
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.722
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.202
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.149
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.068
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.196
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.906
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

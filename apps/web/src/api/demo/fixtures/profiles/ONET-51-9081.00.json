@@ -1,0 +1,547 @@
+{
+  "code": "ONET-51-9081.00",
+  "name": "Kỹ thuật viên phục hình, chỉnh hình",
+  "nameEn": "Dental Laboratory Technicians",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Làm và sửa hàm giả toàn phần, bán phần hoặc khí cụ nha khoa. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu.",
+    "Thường xuyên phải làm gấp cho kịp hạn.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt.",
+    "Lặp đi lặp lại cùng một động tác."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Ít làm việc qua email.",
+    "19% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "14% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Xưởng nhỏ, cơ sở gia đình, làng nghề",
+      "weight": 70
+    },
+    {
+      "name": "Bệnh viện công",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật phục hình răng"],
+    "vocational": ["Kỹ thuật phục hình răng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học việc labo nha khoa",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc chỉ định hoặc yêu cầu và xem mẫu hàm, dấu răng để xác định thiết kế sản phẩm cần làm.",
+        "Thử khí cụ về độ đúng yêu cầu và độ chính xác của khớp cắn bằng càng nhai và panme.",
+        "Làm, chỉnh hoặc sửa khí cụ nha khoa như hàm giả, mão răng, cầu răng, inlay hoặc khí cụ chỉnh nha.",
+        "Đặt mẫu răng lên càng nhai mô phỏng khớp cắn và chuyển động hàm của người bệnh để đánh giá chức năng.",
+        "Mài bỏ kim loại hoặc sứ thừa và đánh bóng bề mặt răng giả, khung bằng máy đánh bóng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ thuật viên labo",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc chỉ định hoặc yêu cầu và xem mẫu hàm, dấu răng để xác định thiết kế sản phẩm cần làm.",
+        "Thử khí cụ về độ đúng yêu cầu và độ chính xác của khớp cắn bằng càng nhai và panme.",
+        "Làm, chỉnh hoặc sửa khí cụ nha khoa như hàm giả, mão răng, cầu răng, inlay hoặc khí cụ chỉnh nha.",
+        "Đặt mẫu răng lên càng nhai mô phỏng khớp cắn và chuyển động hàm của người bệnh để đánh giá chức năng.",
+        "Mài bỏ kim loại hoặc sứ thừa và đánh bóng bề mặt răng giả, khung bằng máy đánh bóng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+          "name": "Thúc đẩy hoà nhập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b5aaee4-c948-4853-bf8d-b9cd6c4917ee",
+          "name": "Báo cáo thách thức y tế cho nhà hoạch định chính sách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ thuật viên đắp sứ / CAD-CAM",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc chỉ định hoặc yêu cầu và xem mẫu hàm, dấu răng để xác định thiết kế sản phẩm cần làm.",
+        "Thử khí cụ về độ đúng yêu cầu và độ chính xác của khớp cắn bằng càng nhai và panme.",
+        "Làm, chỉnh hoặc sửa khí cụ nha khoa như hàm giả, mão răng, cầu răng, inlay hoặc khí cụ chỉnh nha.",
+        "Đặt mẫu răng lên càng nhai mô phỏng khớp cắn và chuyển động hàm của người bệnh để đánh giá chức năng.",
+        "Mài bỏ kim loại hoặc sứ thừa và đánh bóng bề mặt răng giả, khung bằng máy đánh bóng."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+          "name": "Thúc đẩy hoà nhập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b5aaee4-c948-4853-bf8d-b9cd6c4917ee",
+          "name": "Báo cáo thách thức y tế cho nhà hoạch định chính sách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+          "name": "Thúc đẩy hoà nhập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b5aaee4-c948-4853-bf8d-b9cd6c4917ee",
+          "name": "Báo cáo thách thức y tế cho nhà hoạch định chính sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a72fe645-0a41-4459-879e-fcc485800c17",
+          "name": "Thu tiền tại phòng khám nha",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ thuật viên phục hình chính",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc chỉ định hoặc yêu cầu và xem mẫu hàm, dấu răng để xác định thiết kế sản phẩm cần làm.",
+        "Thử khí cụ về độ đúng yêu cầu và độ chính xác của khớp cắn bằng càng nhai và panme.",
+        "Làm, chỉnh hoặc sửa khí cụ nha khoa như hàm giả, mão răng, cầu răng, inlay hoặc khí cụ chỉnh nha.",
+        "Đặt mẫu răng lên càng nhai mô phỏng khớp cắn và chuyển động hàm của người bệnh để đánh giá chức năng.",
+        "Mài bỏ kim loại hoặc sứ thừa và đánh bóng bề mặt răng giả, khung bằng máy đánh bóng."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+          "name": "Thúc đẩy hoà nhập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b5aaee4-c948-4853-bf8d-b9cd6c4917ee",
+          "name": "Báo cáo thách thức y tế cho nhà hoạch định chính sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a72fe645-0a41-4459-879e-fcc485800c17",
+          "name": "Thu tiền tại phòng khám nha",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+          "name": "Thúc đẩy hoà nhập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b5aaee4-c948-4853-bf8d-b9cd6c4917ee",
+          "name": "Báo cáo thách thức y tế cho nhà hoạch định chính sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a72fe645-0a41-4459-879e-fcc485800c17",
+          "name": "Thu tiền tại phòng khám nha",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng labo",
+      "years": "7+",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc chỉ định hoặc yêu cầu và xem mẫu hàm, dấu răng để xác định thiết kế sản phẩm cần làm.",
+        "Thử khí cụ về độ đúng yêu cầu và độ chính xác của khớp cắn bằng càng nhai và panme.",
+        "Làm, chỉnh hoặc sửa khí cụ nha khoa như hàm giả, mão răng, cầu răng, inlay hoặc khí cụ chỉnh nha.",
+        "Đặt mẫu răng lên càng nhai mô phỏng khớp cắn và chuyển động hàm của người bệnh để đánh giá chức năng.",
+        "Mài bỏ kim loại hoặc sứ thừa và đánh bóng bề mặt răng giả, khung bằng máy đánh bóng."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+          "name": "Thúc đẩy hoà nhập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b5aaee4-c948-4853-bf8d-b9cd6c4917ee",
+          "name": "Báo cáo thách thức y tế cho nhà hoạch định chính sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a72fe645-0a41-4459-879e-fcc485800c17",
+          "name": "Thu tiền tại phòng khám nha",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+          "name": "Thúc đẩy hoà nhập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b5aaee4-c948-4853-bf8d-b9cd6c4917ee",
+          "name": "Báo cáo thách thức y tế cho nhà hoạch định chính sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a72fe645-0a41-4459-879e-fcc485800c17",
+          "name": "Thu tiền tại phòng khám nha",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-9081.00",
+          "name": "Kỹ thuật viên phục hình, chỉnh hình"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-9091.00",
+      "name": "Trợ thủ nha khoa",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4121.00",
+      "name": "Thợ hàn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 12000000,
+    "median": null,
+    "high": 20000000,
+    "byYears": [],
+    "source": "CareerViet, \"Nha khoa\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 6,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+      "name": "Tuân thủ hướng dẫn lâm sàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+      "name": "Góp phần chăm sóc y tế liên tục",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+      "name": "Dùng công nghệ y tế số và di động",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+      "name": "Thúc đẩy hoà nhập",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0b5aaee4-c948-4853-bf8d-b9cd6c4917ee",
+      "name": "Báo cáo thách thức y tế cho nhà hoạch định chính sách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a72fe645-0a41-4459-879e-fcc485800c17",
+      "name": "Thu tiền tại phòng khám nha",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.109
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.179
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.185
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.187
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.417
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.635
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.66
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

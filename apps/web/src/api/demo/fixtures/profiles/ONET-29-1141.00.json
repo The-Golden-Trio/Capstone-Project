@@ -1,0 +1,974 @@
+{
+  "code": "ONET-29-1141.00",
+  "name": "Điều dưỡng",
+  "nameEn": "Registered Nurses",
+  "group": "Y tế chuyên môn và kỹ thuật y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Đánh giá vấn đề và nhu cầu sức khoẻ của người bệnh, lập và thực hiện kế hoạch chăm sóc điều dưỡng, lưu hồ sơ y tế. Chăm sóc người bệnh, người bị thương, đang hồi phục hoặc khuyết tật. Có thể tư vấn giữ gìn sức khoẻ, phòng bệnh hoặc quản lý ca. Cần chứng chỉ hành nghề. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Sai sót có thể gây hậu quả nghiêm trọng.",
+    "Thường xuyên gặp tình huống xung đột với người khác."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "34% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "11% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Bệnh viện công",
+      "weight": 65
+    },
+    {
+      "name": "Bệnh viện tư, quốc tế",
+      "weight": 25
+    },
+    {
+      "name": "Viện dưỡng lão, chăm sóc tại nhà",
+      "weight": 10
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Điều dưỡng"],
+    "vocational": ["Điều dưỡng"],
+    "licence": "Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực) — Luật Khám bệnh, chữa bệnh số 15/2023/QH15, hiệu lực 01/01/2024"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên điều dưỡng thực tập",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.",
+        "Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.",
+        "Lưu báo cáo và hồ sơ chính xác, chi tiết.",
+        "Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.",
+        "Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Điều dưỡng thực hành",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.",
+        "Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.",
+        "Lưu báo cáo và hồ sơ chính xác, chi tiết.",
+        "Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.",
+        "Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Điều dưỡng hạng III (có giấy phép hành nghề)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.",
+        "Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.",
+        "Lưu báo cáo và hồ sơ chính xác, chi tiết.",
+        "Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.",
+        "Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Điều dưỡng chuyên khoa (hồi sức, phòng mổ, chạy thận)",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.",
+        "Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.",
+        "Lưu báo cáo và hồ sơ chính xác, chi tiết.",
+        "Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.",
+        "Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Điều dưỡng hạng II",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.",
+        "Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.",
+        "Lưu báo cáo và hồ sơ chính xác, chi tiết.",
+        "Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.",
+        "Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Điều dưỡng trưởng khoa",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.",
+        "Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.",
+        "Lưu báo cáo và hồ sơ chính xác, chi tiết.",
+        "Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.",
+        "Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Điều dưỡng hạng I / trưởng phòng điều dưỡng",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Ghi thông tin y tế và dấu hiệu sinh tồn của người bệnh.",
+        "Cho người bệnh dùng thuốc và theo dõi phản ứng, tác dụng phụ.",
+        "Lưu báo cáo và hồ sơ chính xác, chi tiết.",
+        "Theo dõi, ghi và báo cáo triệu chứng hoặc thay đổi trong tình trạng người bệnh.",
+        "Chăm sóc sức khoẻ, sơ cứu, tiêm chủng hoặc hỗ trợ hồi phục, phục hồi chức năng ở trường học, bệnh viện hoặc nhà máy."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+          "name": "Chẩn đoán điều dưỡng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+          "name": "Tham gia đào tạo nhân viên y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+          "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-29-1141.00",
+          "name": "Điều dưỡng"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-29-1141.02",
+          "name": "Điều dưỡng tâm thần chuyên sâu"
+        },
+        {
+          "code": "ONET-29-1141.04",
+          "name": "Điều dưỡng chuyên khoa lâm sàng"
+        },
+        {
+          "code": "ONET-29-1171.00",
+          "name": "Điều dưỡng thực hành nâng cao"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-2034.00",
+      "name": "Kỹ thuật viên chẩn đoán hình ảnh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2043.00",
+      "name": "Nhân viên cấp cứu ngoại viện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1123.00",
+      "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1215.00",
+      "name": "Bác sĩ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-1131.00",
+      "name": "Hộ lý, trợ lý điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10500000,
+    "median": 12000000,
+    "high": 14800000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": {
+      "label": "Điều dưỡng, hộ sinh, kỹ thuật y hạng IV đến hạng II",
+      "low": 5313000,
+      "high": 17153000,
+      "source": "Thông tư 02/2025/TT-BYT; xếp lương theo hướng dẫn của Bộ Y tế ngày 05/6/2025; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)"
+    }
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 111,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+      "name": "Năng lực lâm sàng theo bối cảnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+      "name": "Giáo dục sức khoẻ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+      "name": "Phát triển bền vững trong y tế",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+      "name": "Tuân thủ hướng dẫn lâm sàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/46003629-a579-4d0a-b3ea-80ef890699d6",
+      "name": "Chẩn đoán điều dưỡng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+      "name": "Tương tác với người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4be3c34e-47ba-4881-ac74-8bd244e0b04c",
+      "name": "Tham gia đào tạo nhân viên y tế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+      "name": "Xử lý tình huống cấp cứu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ae965e49-06f1-442f-87bf-e48fc1e1d8b6",
+      "name": "Phân tích chất lượng chăm sóc điều dưỡng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+      "name": "Góp phần chăm sóc y tế liên tục",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.221
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 1.13
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.87
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.804
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.797
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.501
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.351
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

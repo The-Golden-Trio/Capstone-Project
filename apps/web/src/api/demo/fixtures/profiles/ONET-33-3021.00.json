@@ -1,0 +1,629 @@
+{
+  "code": "ONET-33-3021.00",
+  "name": "Điều tra viên",
+  "nameEn": "Detectives and Criminal Investigators",
+  "group": "Dịch vụ bảo vệ an ninh và an toàn",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Điều tra các hành vi nghi vi phạm pháp luật để phòng ngừa hoặc phá án. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Ngồi gần như cả ngày.",
+    "Công việc lặp lại nhiều."
+  ],
+  "workFacts": [
+    "Làm cả trong văn phòng lẫn ngoài hiện trường.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "47% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "36% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công an (đồn, phòng nghiệp vụ)",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Điều tra hình sự", "Trinh sát cảnh sát"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Cán bộ điều tra",
+      "years": "0–4",
+      "coreOutput": null,
+      "tasks": [
+        "Lập báo cáo chi tiết kết quả điều tra.",
+        "Thu thập và xác minh chứng cứ bằng cách thẩm vấn, quan sát nghi phạm và nhân chứng hoặc phân tích hồ sơ.",
+        "Bảo quản, xử lý và phân tích vật chứng thu từ hiện trường và nghi phạm, đựng đúng cách và tiêu huỷ vật chứng không còn cần.",
+        "Lấy lời khai của người tố giác, nhân chứng và bị can, ghi âm các buổi lấy lời khai.",
+        "Ghi tiến độ điều tra, lưu hồ sơ nghi phạm và trình báo cáo lên chỉ huy hoặc thẩm phán để xin lệnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Điều tra viên sơ cấp",
+      "years": "4–9",
+      "coreOutput": null,
+      "tasks": [
+        "Lập báo cáo chi tiết kết quả điều tra.",
+        "Thu thập và xác minh chứng cứ bằng cách thẩm vấn, quan sát nghi phạm và nhân chứng hoặc phân tích hồ sơ.",
+        "Bảo quản, xử lý và phân tích vật chứng thu từ hiện trường và nghi phạm, đựng đúng cách và tiêu huỷ vật chứng không còn cần.",
+        "Lấy lời khai của người tố giác, nhân chứng và bị can, ghi âm các buổi lấy lời khai.",
+        "Ghi tiến độ điều tra, lưu hồ sơ nghi phạm và trình báo cáo lên chỉ huy hoặc thẩm phán để xin lệnh."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "tu_duy_giai_quyet_van_de"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Điều tra viên trung cấp",
+      "years": "9–14",
+      "coreOutput": null,
+      "tasks": [
+        "Lập báo cáo chi tiết kết quả điều tra.",
+        "Thu thập và xác minh chứng cứ bằng cách thẩm vấn, quan sát nghi phạm và nhân chứng hoặc phân tích hồ sơ.",
+        "Bảo quản, xử lý và phân tích vật chứng thu từ hiện trường và nghi phạm, đựng đúng cách và tiêu huỷ vật chứng không còn cần.",
+        "Lấy lời khai của người tố giác, nhân chứng và bị can, ghi âm các buổi lấy lời khai.",
+        "Ghi tiến độ điều tra, lưu hồ sơ nghi phạm và trình báo cáo lên chỉ huy hoặc thẩm phán để xin lệnh."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Đội trưởng/phó trưởng phòng cảnh sát hình sự hoặc kinh tế",
+      "years": "10–16",
+      "coreOutput": null,
+      "tasks": [
+        "Lập báo cáo chi tiết kết quả điều tra.",
+        "Thu thập và xác minh chứng cứ bằng cách thẩm vấn, quan sát nghi phạm và nhân chứng hoặc phân tích hồ sơ.",
+        "Bảo quản, xử lý và phân tích vật chứng thu từ hiện trường và nghi phạm, đựng đúng cách và tiêu huỷ vật chứng không còn cần.",
+        "Lấy lời khai của người tố giác, nhân chứng và bị can, ghi âm các buổi lấy lời khai.",
+        "Ghi tiến độ điều tra, lưu hồ sơ nghi phạm và trình báo cáo lên chỉ huy hoặc thẩm phán để xin lệnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Điều tra viên cao cấp",
+      "years": "14+",
+      "coreOutput": null,
+      "tasks": [
+        "Lập báo cáo chi tiết kết quả điều tra.",
+        "Thu thập và xác minh chứng cứ bằng cách thẩm vấn, quan sát nghi phạm và nhân chứng hoặc phân tích hồ sơ.",
+        "Bảo quản, xử lý và phân tích vật chứng thu từ hiện trường và nghi phạm, đựng đúng cách và tiêu huỷ vật chứng không còn cần.",
+        "Lấy lời khai của người tố giác, nhân chứng và bị can, ghi âm các buổi lấy lời khai.",
+        "Ghi tiến độ điều tra, lưu hồ sơ nghi phạm và trình báo cáo lên chỉ huy hoặc thẩm phán để xin lệnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Thủ trưởng/phó thủ trưởng cơ quan cảnh sát điều tra công an tỉnh",
+      "years": "18+",
+      "coreOutput": null,
+      "tasks": [
+        "Lập báo cáo chi tiết kết quả điều tra.",
+        "Thu thập và xác minh chứng cứ bằng cách thẩm vấn, quan sát nghi phạm và nhân chứng hoặc phân tích hồ sơ.",
+        "Bảo quản, xử lý và phân tích vật chứng thu từ hiện trường và nghi phạm, đựng đúng cách và tiêu huỷ vật chứng không còn cần.",
+        "Lấy lời khai của người tố giác, nhân chứng và bị can, ghi âm các buổi lấy lời khai.",
+        "Ghi tiến độ điều tra, lưu hồ sơ nghi phạm và trình báo cáo lên chỉ huy hoặc thẩm phán để xin lệnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+          "name": "Khám nghiệm hiện trường",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+          "name": "Ghi nhận chứng cứ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+          "name": "Phân tích thông tin pháp y phục vụ điều tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "name": "Kiểm tra an toàn, an ninh tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+          "name": "Tuân thủ quy định pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-33-3021.00",
+          "name": "Điều tra viên"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-33-3021.06",
+          "name": "Chuyên viên phân tích tình báo"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-33-3051.00",
+      "name": "Cảnh sát (công an)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1041.00",
+      "name": "Chuyên viên tuân thủ và quản lý rủi ro",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-9032.00",
+      "name": "Nhân viên bảo vệ, an ninh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2011.00",
+      "name": "Kỹ thuật viên xét nghiệm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 10626000,
+    "median": null,
+    "high": 18469000,
+    "byYears": [],
+    "source": "Nghị định 204/2004/NĐ-CP, Bảng 6; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Sĩ quan công an từ Thiếu úy đến Thượng tá",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/68defa68-cb54-4d99-89ac-af6bfd71946b",
+      "name": "Khám nghiệm hiện trường",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+      "name": "Viết báo cáo công việc",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7ddbfce9-902d-4d1c-b751-30274f4b49ce",
+      "name": "Ghi nhận chứng cứ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/93f1caa3-df33-4de7-98da-40f5fc30fd52",
+      "name": "Phân tích thông tin pháp y phục vụ điều tra",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+      "name": "Kiểm tra an toàn, an ninh tại chỗ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11",
+      "name": "Tuân thủ quy định pháp luật",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.78
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.768
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.696
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.597
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.538
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.23
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.059
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

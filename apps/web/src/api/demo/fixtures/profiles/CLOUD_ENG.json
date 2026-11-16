@@ -1,0 +1,711 @@
+{
+  "code": "CLOUD_ENG",
+  "name": "Kỹ sư điện toán đám mây",
+  "nameEn": "Cloud Engineer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Kỹ sư điện toán đám mây dựng và vận hành hạ tầng trên AWS, Azure hoặc Google Cloud: máy chủ ảo, lưu trữ, mạng, phân quyền, sao lưu. Nhiều người làm ở công ty đối tác cloud, triển khai hệ thống cho nhiều khách hàng, kể cả chuyển hệ thống cũ từ máy chủ vật lý lên cloud. Chứng chỉ của nhà cung cấp cloud thường được coi trọng.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Sai sót bảo mật, như lộ khoá truy cập, có thể gây thiệt hại bằng tiền thật trong vài phút.",
+    "Dự án chuyển hệ thống cũ lên cloud thường bị ép tiến độ trong khi hệ thống không có tài liệu.",
+    "Chứng chỉ cloud hết hạn sau vài năm, phải tự học lại và có thể tự trả phí thi.",
+    "Có cửa vào cho người mới nhưng hẹp, chủ yếu ở công ty đối tác cloud."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "40% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "16% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 35
+    },
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 35
+    },
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [
+      "Mạng máy tính và truyền thông dữ liệu",
+      "Công nghệ thông tin",
+      "Kỹ thuật máy tính"
+    ],
+    "vocational": ["Quản trị hệ thống", "Quản trị mạng máy tính"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher Cloud Engineer",
+      "years": "0-1 (hiếm, chủ yếu AWS/Azure partner)",
+      "coreOutput": "Triển khai tài nguyên cloud theo hướng dẫn/template có sẵn (VM, storage, network cơ bản) dưới giám sát trực tiếp, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [
+        "Theo dõi hệ thống đám mây, trực đường dây hỗ trợ theo ca",
+        "Tiếp nhận, phân loại, xử lý yêu cầu hỗ trợ của khách hàng",
+        "Xử lý bước đầu sự cố lưu trữ, sao lưu, mạng, Kubernetes",
+        "Thu thập log, phân tích sơ bộ rồi chuyển lên tuyến trên"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior Cloud Engineer",
+      "years": "1-2",
+      "coreOutput": "Tự cấu hình một dịch vụ cloud cụ thể theo yêu cầu rõ ràng (compute, storage, networking cơ bản), tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [
+        "Dựng và vận hành hạ tầng AWS cho hệ thống đang chạy thật",
+        "Viết hạ tầng dưới dạng code bằng Terraform để tự động dựng mạng, lưu trữ",
+        "Dựng giám sát, ghi log, cảnh báo và CI/CD",
+        "Đọc log để tìm nguyên nhân gốc của sự cố",
+        "Vẽ sơ đồ kiến trúc và viết tài liệu vận hành"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305",
+          "name": "Quản lý khoá mã hoá bảo vệ dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+          "name": "Hệ điều hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle Cloud Engineer",
+      "years": "2-4",
+      "coreOutput": "Chịu trách nhiệm triển khai một hệ thống trên cloud cho một dự án/khách hàng, viết Infrastructure as Code cơ bản, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305",
+          "name": "Quản lý khoá mã hoá bảo vệ dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+          "name": "Hệ điều hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305",
+          "name": "Quản lý khoá mã hoá bảo vệ dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+          "name": "Hệ điều hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Cloud Engineer",
+      "years": "4-7",
+      "coreOutput": "Tự chủ thiết kế hạ tầng cloud cho nhiều dự án hoặc khách hàng cùng lúc, viết chuẩn Infrastructure as Code cho đội và kèm cặp kỹ sư cloud cấp dưới.",
+      "tasks": [
+        "Thiết kế, dựng, quản lý hạ tầng AWS: máy chủ, lưu trữ, mạng, cơ sở dữ liệu",
+        "Tự động hoá hạ tầng bằng Terraform, Ansible; dựng CI/CD",
+        "Quản lý phân quyền, mã hoá, kiểm soát mạng",
+        "Vận hành Kubernetes trên môi trường thật, trực sự cố",
+        "Đánh giá công nghệ mới, đề xuất giảm chi phí"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305",
+          "name": "Quản lý khoá mã hoá bảo vệ dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+          "name": "Hệ điều hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305",
+          "name": "Quản lý khoá mã hoá bảo vệ dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+          "name": "Hệ điều hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Lead Cloud Engineer",
+      "years": "6-9",
+      "coreOutput": "Dẫn dắt kỹ thuật đội cloud và chịu trách nhiệm thiết kế giải pháp cho khách hàng lớn; ở cấp này ranh giới với Cloud Architect bắt đầu mờ.",
+      "tasks": [
+        "Dẫn đội vận hành đám mây 24/7, giữ cam kết xử lý sự cố",
+        "Phân tích nguyên nhân gốc, phối hợp các nhóm nội bộ",
+        "Viết và review script tự động hoá, dựng bảng theo dõi",
+        "Lên lịch vá lỗi, nâng cấp, bảo trì định kỳ"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305",
+          "name": "Quản lý khoá mã hoá bảo vệ dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+          "name": "Hệ điều hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305",
+          "name": "Quản lý khoá mã hoá bảo vệ dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+          "name": "Hệ điều hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "CLOUD_ENG",
+          "name": "Kỹ sư điện toán đám mây"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "SWE_ARCH_SOL",
+          "name": "Kiến trúc sư giải pháp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "CLOUD_DEVOPS",
+      "name": "Kỹ sư DevOps",
+      "why": "Cùng làm hạ tầng: DevOps thiên tự động hoá, Cloud Engineer thiên nền tảng"
+    },
+    {
+      "code": "INFRA_NETWORK",
+      "name": "Kỹ sư hệ thống mạng",
+      "why": "Cùng hạ tầng: một trên mây, một dưới đất"
+    },
+    {
+      "code": "SWE_ARCH_SOL",
+      "name": "Kiến trúc sư giải pháp",
+      "why": "Kiến trúc hệ thống hiện đại gắn chặt với hạ tầng đám mây"
+    },
+    {
+      "code": "INFRA_HELPDESK",
+      "name": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+      "why": "Helpdesk là một đường vào hạ tầng đám mây"
+    }
+  ],
+  "pay": null,
+  "outlook": {
+    "level": "cao",
+    "openPostings": 82,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+      "name": "Lập trình máy tính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+      "name": "Gỡ lỗi phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+      "name": "Dịch vụ web",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+      "name": "Làm bản mẫu phần mềm (prototype)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e5beeff8-7c98-490a-ae2c-16fbb6a87305",
+      "name": "Quản lý khoá mã hoá bảo vệ dữ liệu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+      "name": "Phân tích đặc tả phần mềm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+      "name": "Hệ điều hành",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+      "name": "Vòng đời phát triển hệ thống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+      "name": "Triển khai tài nguyên đám mây",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+      "name": "Thiết kế kiến trúc đám mây",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.726
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.591
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.452
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.401
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.008
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.131
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.662
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

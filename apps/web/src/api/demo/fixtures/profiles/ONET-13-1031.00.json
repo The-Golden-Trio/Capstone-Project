@@ -1,0 +1,924 @@
+{
+  "code": "ONET-13-1031.00",
+  "name": "Chuyên viên thẩm định và bồi thường bảo hiểm",
+  "nameEn": "Claims Adjusters, Examiners, and Investigators",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Xem xét các hồ sơ bồi thường đã giải quyết để bảo đảm chi trả đúng quy trình của công ty. Trao đổi với luật sư về hồ sơ cần khởi kiện. Có thể trực tiếp giải quyết bồi thường bảo hiểm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Công việc lặp lại nhiều.",
+    "Thường xuyên gặp tình huống xung đột với người khác.",
+    "Thường xuyên phải làm gấp cho kịp hạn."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "35% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "15% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty bảo hiểm",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Bảo hiểm", "Tài chính - Ngân hàng"],
+    "vocational": ["Bảo hiểm"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh thẩm định bồi thường bảo hiểm",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn yêu cầu bồi thường và hồ sơ để xác định phạm vi bảo hiểm.",
+        "Phân tích thông tin thu được khi điều tra và báo cáo kết quả, kiến nghị.",
+        "Chi trả và xử lý hồ sơ bồi thường trong hạn mức được giao.",
+        "Điều tra, đánh giá và giải quyết bồi thường, vận dụng kiến thức chuyên môn và kỹ năng giao tiếp để xử lý công bằng, nhanh và giảm tỉ lệ tổn thất.",
+        "Xác minh và phân tích dữ liệu dùng để giải quyết bồi thường, bảo đảm yêu cầu hợp lệ và chi trả đúng quy trình."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên thẩm định bồi thường bảo hiểm",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn yêu cầu bồi thường và hồ sơ để xác định phạm vi bảo hiểm.",
+        "Phân tích thông tin thu được khi điều tra và báo cáo kết quả, kiến nghị.",
+        "Chi trả và xử lý hồ sơ bồi thường trong hạn mức được giao.",
+        "Điều tra, đánh giá và giải quyết bồi thường, vận dụng kiến thức chuyên môn và kỹ năng giao tiếp để xử lý công bằng, nhanh và giảm tỉ lệ tổn thất.",
+        "Xác minh và phân tích dữ liệu dùng để giải quyết bồi thường, bảo đảm yêu cầu hợp lệ và chi trả đúng quy trình."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên thẩm định bồi thường bảo hiểm",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn yêu cầu bồi thường và hồ sơ để xác định phạm vi bảo hiểm.",
+        "Phân tích thông tin thu được khi điều tra và báo cáo kết quả, kiến nghị.",
+        "Chi trả và xử lý hồ sơ bồi thường trong hạn mức được giao.",
+        "Điều tra, đánh giá và giải quyết bồi thường, vận dụng kiến thức chuyên môn và kỹ năng giao tiếp để xử lý công bằng, nhanh và giảm tỉ lệ tổn thất.",
+        "Xác minh và phân tích dữ liệu dùng để giải quyết bồi thường, bảo đảm yêu cầu hợp lệ và chi trả đúng quy trình."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chuyên viên chính thẩm định bồi thường bảo hiểm",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn yêu cầu bồi thường và hồ sơ để xác định phạm vi bảo hiểm.",
+        "Phân tích thông tin thu được khi điều tra và báo cáo kết quả, kiến nghị.",
+        "Chi trả và xử lý hồ sơ bồi thường trong hạn mức được giao.",
+        "Điều tra, đánh giá và giải quyết bồi thường, vận dụng kiến thức chuyên môn và kỹ năng giao tiếp để xử lý công bằng, nhanh và giảm tỉ lệ tổn thất.",
+        "Xác minh và phân tích dữ liệu dùng để giải quyết bồi thường, bảo đảm yêu cầu hợp lệ và chi trả đúng quy trình."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab927ee8-acd9-41c2-aef0-2020364a1003",
+          "name": "Nguyên lý bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chuyên viên cao cấp thẩm định bồi thường bảo hiểm (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn yêu cầu bồi thường và hồ sơ để xác định phạm vi bảo hiểm.",
+        "Phân tích thông tin thu được khi điều tra và báo cáo kết quả, kiến nghị.",
+        "Chi trả và xử lý hồ sơ bồi thường trong hạn mức được giao.",
+        "Điều tra, đánh giá và giải quyết bồi thường, vận dụng kiến thức chuyên môn và kỹ năng giao tiếp để xử lý công bằng, nhanh và giảm tỉ lệ tổn thất.",
+        "Xác minh và phân tích dữ liệu dùng để giải quyết bồi thường, bảo đảm yêu cầu hợp lệ và chi trả đúng quy trình."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab927ee8-acd9-41c2-aef0-2020364a1003",
+          "name": "Nguyên lý bảo hiểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab927ee8-acd9-41c2-aef0-2020364a1003",
+          "name": "Nguyên lý bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm / Giám sát thẩm định bồi thường bảo hiểm",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn yêu cầu bồi thường và hồ sơ để xác định phạm vi bảo hiểm.",
+        "Phân tích thông tin thu được khi điều tra và báo cáo kết quả, kiến nghị.",
+        "Chi trả và xử lý hồ sơ bồi thường trong hạn mức được giao.",
+        "Điều tra, đánh giá và giải quyết bồi thường, vận dụng kiến thức chuyên môn và kỹ năng giao tiếp để xử lý công bằng, nhanh và giảm tỉ lệ tổn thất.",
+        "Xác minh và phân tích dữ liệu dùng để giải quyết bồi thường, bảo đảm yêu cầu hợp lệ và chi trả đúng quy trình."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab927ee8-acd9-41c2-aef0-2020364a1003",
+          "name": "Nguyên lý bảo hiểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab927ee8-acd9-41c2-aef0-2020364a1003",
+          "name": "Nguyên lý bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng thẩm định bồi thường bảo hiểm",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn yêu cầu bồi thường và hồ sơ để xác định phạm vi bảo hiểm.",
+        "Phân tích thông tin thu được khi điều tra và báo cáo kết quả, kiến nghị.",
+        "Chi trả và xử lý hồ sơ bồi thường trong hạn mức được giao.",
+        "Điều tra, đánh giá và giải quyết bồi thường, vận dụng kiến thức chuyên môn và kỹ năng giao tiếp để xử lý công bằng, nhanh và giảm tỉ lệ tổn thất.",
+        "Xác minh và phân tích dữ liệu dùng để giải quyết bồi thường, bảo đảm yêu cầu hợp lệ và chi trả đúng quy trình."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "lanh_dao_kinh_doanh": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab927ee8-acd9-41c2-aef0-2020364a1003",
+          "name": "Nguyên lý bảo hiểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+          "name": "Quản lý hồ sơ bồi thường",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+          "name": "Phân tích hồ sơ bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+          "name": "Tổng hợp thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+          "name": "Luật bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+          "name": "Các loại bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab927ee8-acd9-41c2-aef0-2020364a1003",
+          "name": "Nguyên lý bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-43-4031.00",
+      "name": "Cán bộ tiếp nhận hồ sơ hành chính công",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-3023.00",
+      "name": "Thợ sửa chữa ô tô",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2072.00",
+      "name": "Chuyên viên tín dụng ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-3071.00",
+      "name": "Giao dịch viên ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7000000,
+    "median": null,
+    "high": 15000000,
+    "byYears": [],
+    "source": "VietnamWorks HR Insider, \"Ngành bảo hiểm\"",
+    "dataYear": "2025",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 8,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+      "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+      "name": "Giới thiệu sản phẩm tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/03d93b02-a461-4815-a4c0-b46451afc1c2",
+      "name": "Quản lý hồ sơ bồi thường",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+      "name": "Lưu hồ sơ giao dịch tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1b8194a4-952a-48e6-8087-237a29039f50",
+      "name": "Phân tích hồ sơ bồi thường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5c99d21a-9d02-4638-9b52-a6ba840dcb0a",
+      "name": "Tổng hợp thông tin tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+      "name": "Phát hiện gian lận",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/15d6d4e9-9b4b-4a93-aea5-a29a67b6d9e7",
+      "name": "Luật bảo hiểm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fce3268c-c944-4a5f-8b9c-034a72d5df13",
+      "name": "Các loại bảo hiểm",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ab927ee8-acd9-41c2-aef0-2020364a1003",
+      "name": "Nguyên lý bảo hiểm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.314
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.269
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.19
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.145
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.111
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.341
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.663
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

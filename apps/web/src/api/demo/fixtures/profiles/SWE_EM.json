@@ -1,0 +1,597 @@
+{
+  "code": "SWE_EM",
+  "name": "Trưởng phòng Kỹ thuật",
+  "nameEn": "Engineering Manager",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Trưởng phòng kỹ thuật (Engineering Manager) chịu trách nhiệm về con người và kết quả bàn giao của một hoặc nhiều đội kỹ sư: tuyển người, họp 1:1, đánh giá hiệu suất, xây lộ trình phát triển, quản lý tiến độ và rủi ro. Công việc chuyển từ tự làm sang giúp người khác làm tốt. Thường đến được vị trí này sau khoảng tám năm trở lên, qua vai trò trưởng nhóm.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Phải ra quyết định khó về con người: đánh giá thấp một người mình quý, chọn ai nghỉ khi cắt giảm.",
+    "Xa dần chi tiết kỹ thuật, có lúc không theo kịp các buổi họp kỹ thuật của chính đội mình.",
+    "Một sự cố dễ được nhắc tới hơn nhiều tính năng giao đúng hạn.",
+    "Ở một số công ty, quản lý vẫn phải trực xử lý sự cố production."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "65% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "23% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 45
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 40
+    },
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật phần mềm",
+      "Công nghệ thông tin",
+      "Hệ thống thông tin quản lý"
+    ],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Engineering Manager",
+      "years": "8-12",
+      "coreOutput": "Quản lý trực tiếp một đội kỹ sư: họp 1:1, kế hoạch phát triển cá nhân, đánh giá hiệu suất, quản lý cột mốc và rủi ro của đội; vẫn giữ nền kỹ thuật đủ để tham gia xử lý sự cố production.",
+      "tasks": [
+        "Điều hành công việc hằng ngày của phòng: phân tích luồng việc, đặt thứ tự ưu tiên, chuẩn và hạn chót.",
+        "Gặp trưởng các phòng ban, quản lý, nhà cung cấp để xin phối hợp và giải quyết vướng mắc.",
+        "Xem kế hoạch dự án để lên lịch và điều phối công việc.",
+        "Giao việc và duyệt kết quả của người phân tích hệ thống, lập trình viên và nhân viên kỹ thuật.",
+        "Hỗ trợ người dùng khi máy tính gặp sự cố."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+          "name": "Quản lý dự án CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065",
+          "name": "Áp dụng chính sách tổ chức hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "name": "Dùng hệ thống phiếu hỗ trợ CNTT (ticketing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0",
+          "name": "Áp dụng chính sách sử dụng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9",
+          "name": "Phương pháp quản lý dự án CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+          "name": "Quản lý dự án CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065",
+          "name": "Áp dụng chính sách tổ chức hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "name": "Dùng hệ thống phiếu hỗ trợ CNTT (ticketing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0",
+          "name": "Áp dụng chính sách sử dụng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9",
+          "name": "Phương pháp quản lý dự án CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L6 ở một nghề đi trước: Trưởng nhóm kỹ thuật, Kiến trúc sư giải pháp",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Senior Engineering Manager",
+      "years": "10-15",
+      "coreOutput": "Quản lý nhiều đội thông qua các trưởng nhóm, đặt chuẩn kỹ thuật và kỷ luật bảo mật, kiểm toán cho cả khối, tham gia tuyển dụng và phân bổ nguồn lực giữa các đội.",
+      "tasks": [
+        "Điều hành công việc hằng ngày của phòng: phân tích luồng việc, đặt thứ tự ưu tiên, chuẩn và hạn chót.",
+        "Gặp trưởng các phòng ban, quản lý, nhà cung cấp để xin phối hợp và giải quyết vướng mắc.",
+        "Xem kế hoạch dự án để lên lịch và điều phối công việc.",
+        "Giao việc và duyệt kết quả của người phân tích hệ thống, lập trình viên và nhân viên kỹ thuật.",
+        "Hỗ trợ người dùng khi máy tính gặp sự cố."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+          "name": "Quản lý dự án CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065",
+          "name": "Áp dụng chính sách tổ chức hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "name": "Dùng hệ thống phiếu hỗ trợ CNTT (ticketing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0",
+          "name": "Áp dụng chính sách sử dụng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9",
+          "name": "Phương pháp quản lý dự án CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+          "name": "Quản lý dự án CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065",
+          "name": "Áp dụng chính sách tổ chức hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "name": "Dùng hệ thống phiếu hỗ trợ CNTT (ticketing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0",
+          "name": "Áp dụng chính sách sử dụng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9",
+          "name": "Phương pháp quản lý dự án CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L9",
+      "bandEquivalent": "L9",
+      "title": "Head of Engineering / Director of Engineering",
+      "years": "12-15+ (kèm 5+ năm dẫn dắt)",
+      "coreOutput": "Chịu trách nhiệm cả bộ phận kỹ thuật: chiến lược đội ngũ, cơ cấu tổ chức, ngân sách và báo cáo trực tiếp cho lãnh đạo công ty.",
+      "tasks": [
+        "Điều hành công việc hằng ngày của phòng: phân tích luồng việc, đặt thứ tự ưu tiên, chuẩn và hạn chót.",
+        "Gặp trưởng các phòng ban, quản lý, nhà cung cấp để xin phối hợp và giải quyết vướng mắc.",
+        "Xem kế hoạch dự án để lên lịch và điều phối công việc.",
+        "Giao việc và duyệt kết quả của người phân tích hệ thống, lập trình viên và nhân viên kỹ thuật.",
+        "Hỗ trợ người dùng khi máy tính gặp sự cố."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "tu_duy_giai_quyet_van_de": 4,
+        "thich_ung_hoc_hoi": 4,
+        "giao_tiep_hop_tac": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+          "name": "Quản lý dự án CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065",
+          "name": "Áp dụng chính sách tổ chức hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "name": "Dùng hệ thống phiếu hỗ trợ CNTT (ticketing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0",
+          "name": "Áp dụng chính sách sử dụng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9",
+          "name": "Phương pháp quản lý dự án CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+          "name": "Hệ thống số",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+          "name": "Chỉ số đo phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+          "name": "Quản lý dự án CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+          "name": "Theo dõi xu hướng công nghệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065",
+          "name": "Áp dụng chính sách tổ chức hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "name": "Dùng hệ thống phiếu hỗ trợ CNTT (ticketing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0",
+          "name": "Áp dụng chính sách sử dụng hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9",
+          "name": "Phương pháp quản lý dự án CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "SWE_TECHLEAD",
+      "name": "Trưởng nhóm kỹ thuật",
+      "why": "Điểm rẽ nhánh IC/Management — cùng xuất phát, khác hướng"
+    },
+    {
+      "code": "PROD_PM",
+      "name": "Quản lý sản phẩm / Product Manager",
+      "why": "Cùng cấp quản lý: PM quản sản phẩm, EM quản con người"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 50250000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "1-2 năm",
+        "median": 46400000
+      },
+      {
+        "years": ">8 năm",
+        "median": 50300000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 56,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+      "name": "Vòng đời phát triển hệ thống",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/397da142-ab35-48fe-b154-7c38f447adfb",
+      "name": "Hệ thống số",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fb7aee4d-f6c6-4a87-8e9d-8e542b3771f8",
+      "name": "Chỉ số đo phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+      "name": "Quản lý dự án CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+      "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7a17d7ce-01a2-4746-bbcc-22ffe22fa16e",
+      "name": "Theo dõi xu hướng công nghệ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/07e47d58-dd0e-4302-9e68-70a188e89065",
+      "name": "Áp dụng chính sách tổ chức hệ thống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+      "name": "Dùng hệ thống phiếu hỗ trợ CNTT (ticketing)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9707091a-323b-4240-877a-5999a19286f0",
+      "name": "Áp dụng chính sách sử dụng hệ thống CNTT",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bec4359e-cb92-468f-a997-8fb28e32fba9",
+      "name": "Phương pháp quản lý dự án CNTT",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 1.348
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.932
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.887
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.673
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.402
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.316
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.082
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L6",
+    "roles": [
+      {
+        "code": "SWE_TECHLEAD",
+        "name": "Trưởng nhóm kỹ thuật"
+      },
+      {
+        "code": "SWE_ARCH_SOL",
+        "name": "Kiến trúc sư giải pháp"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

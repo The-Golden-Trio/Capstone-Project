@@ -1,0 +1,954 @@
+{
+  "code": "ONET-29-1215.00",
+  "name": "Bác sĩ",
+  "nameEn": "Family Medicine Physicians",
+  "group": "Y tế chuyên môn và kỹ thuật y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Khám, chẩn đoán và điều trị bệnh: hỏi bệnh, khám lâm sàng, chỉ định xét nghiệm và chẩn đoán hình ảnh, kê đơn, làm thủ thuật, theo dõi người bệnh và tư vấn phòng bệnh. Sau khi học y khoa và thực hành, bác sĩ chọn một chuyên khoa như nội, nhi, sản, tâm thần, gây mê, chẩn đoán hình ảnh hay y học gia đình; chuyên khoa là biến thể của nghề. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần giúp đỡ, dạy bảo và chăm sóc người khác, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Sai sót có thể gây hậu quả nghiêm trọng."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "65% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "12% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Bệnh viện công",
+      "weight": 60
+    },
+    {
+      "name": "Bệnh viện tư, quốc tế",
+      "weight": 25
+    },
+    {
+      "name": "Phòng khám tư, chuyên khoa",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Y khoa", "Y học gia đình"],
+    "vocational": ["Y sỹ đa khoa"],
+    "licence": "Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực) — Luật Khám bệnh, chữa bệnh số 15/2023/QH15, hiệu lực 01/01/2024"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên y khoa thực tập lâm sàng",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Kê đơn hoặc thực hiện điều trị, trị liệu, cho thuốc, tiêm chủng và chăm sóc y tế chuyên sâu để chữa hoặc phòng bệnh, chấn thương.",
+        "Chỉ định, thực hiện và đọc kết quả xét nghiệm, phân tích hồ sơ, báo cáo và kết quả khám để chẩn đoán.",
+        "Thu thập, ghi và lưu thông tin người bệnh như tiền sử, báo cáo và kết quả khám.",
+        "Theo dõi tình trạng, diễn tiến của người bệnh và đánh giá lại phác đồ khi cần.",
+        "Giải thích thủ thuật, trao đổi kết quả xét nghiệm hoặc phác đồ điều trị với người bệnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Bác sĩ thực hành",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Kê đơn hoặc thực hiện điều trị, trị liệu, cho thuốc, tiêm chủng và chăm sóc y tế chuyên sâu để chữa hoặc phòng bệnh, chấn thương.",
+        "Chỉ định, thực hiện và đọc kết quả xét nghiệm, phân tích hồ sơ, báo cáo và kết quả khám để chẩn đoán.",
+        "Thu thập, ghi và lưu thông tin người bệnh như tiền sử, báo cáo và kết quả khám.",
+        "Theo dõi tình trạng, diễn tiến của người bệnh và đánh giá lại phác đồ khi cần.",
+        "Giải thích thủ thuật, trao đổi kết quả xét nghiệm hoặc phác đồ điều trị với người bệnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Bác sĩ hạng III (có giấy phép hành nghề)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Kê đơn hoặc thực hiện điều trị, trị liệu, cho thuốc, tiêm chủng và chăm sóc y tế chuyên sâu để chữa hoặc phòng bệnh, chấn thương.",
+        "Chỉ định, thực hiện và đọc kết quả xét nghiệm, phân tích hồ sơ, báo cáo và kết quả khám để chẩn đoán.",
+        "Thu thập, ghi và lưu thông tin người bệnh như tiền sử, báo cáo và kết quả khám.",
+        "Theo dõi tình trạng, diễn tiến của người bệnh và đánh giá lại phác đồ khi cần.",
+        "Giải thích thủ thuật, trao đổi kết quả xét nghiệm hoặc phác đồ điều trị với người bệnh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Bác sĩ chuyên khoa cấp I / thạc sĩ",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Kê đơn hoặc thực hiện điều trị, trị liệu, cho thuốc, tiêm chủng và chăm sóc y tế chuyên sâu để chữa hoặc phòng bệnh, chấn thương.",
+        "Chỉ định, thực hiện và đọc kết quả xét nghiệm, phân tích hồ sơ, báo cáo và kết quả khám để chẩn đoán.",
+        "Thu thập, ghi và lưu thông tin người bệnh như tiền sử, báo cáo và kết quả khám.",
+        "Theo dõi tình trạng, diễn tiến của người bệnh và đánh giá lại phác đồ khi cần.",
+        "Giải thích thủ thuật, trao đổi kết quả xét nghiệm hoặc phác đồ điều trị với người bệnh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa",
+          "name": "Bệnh truyền nhiễm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Bác sĩ chính (hạng II)",
+      "years": "10–14",
+      "coreOutput": null,
+      "tasks": [
+        "Kê đơn hoặc thực hiện điều trị, trị liệu, cho thuốc, tiêm chủng và chăm sóc y tế chuyên sâu để chữa hoặc phòng bệnh, chấn thương.",
+        "Chỉ định, thực hiện và đọc kết quả xét nghiệm, phân tích hồ sơ, báo cáo và kết quả khám để chẩn đoán.",
+        "Thu thập, ghi và lưu thông tin người bệnh như tiền sử, báo cáo và kết quả khám.",
+        "Theo dõi tình trạng, diễn tiến của người bệnh và đánh giá lại phác đồ khi cần.",
+        "Giải thích thủ thuật, trao đổi kết quả xét nghiệm hoặc phác đồ điều trị với người bệnh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa",
+          "name": "Bệnh truyền nhiễm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa",
+          "name": "Bệnh truyền nhiễm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Bác sĩ chuyên khoa cấp II / phó trưởng khoa",
+      "years": "12–16",
+      "coreOutput": null,
+      "tasks": [
+        "Kê đơn hoặc thực hiện điều trị, trị liệu, cho thuốc, tiêm chủng và chăm sóc y tế chuyên sâu để chữa hoặc phòng bệnh, chấn thương.",
+        "Chỉ định, thực hiện và đọc kết quả xét nghiệm, phân tích hồ sơ, báo cáo và kết quả khám để chẩn đoán.",
+        "Thu thập, ghi và lưu thông tin người bệnh như tiền sử, báo cáo và kết quả khám.",
+        "Theo dõi tình trạng, diễn tiến của người bệnh và đánh giá lại phác đồ khi cần.",
+        "Giải thích thủ thuật, trao đổi kết quả xét nghiệm hoặc phác đồ điều trị với người bệnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa",
+          "name": "Bệnh truyền nhiễm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa",
+          "name": "Bệnh truyền nhiễm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Bác sĩ cao cấp (hạng I) / trưởng khoa",
+      "years": "16+",
+      "coreOutput": null,
+      "tasks": [
+        "Kê đơn hoặc thực hiện điều trị, trị liệu, cho thuốc, tiêm chủng và chăm sóc y tế chuyên sâu để chữa hoặc phòng bệnh, chấn thương.",
+        "Chỉ định, thực hiện và đọc kết quả xét nghiệm, phân tích hồ sơ, báo cáo và kết quả khám để chẩn đoán.",
+        "Thu thập, ghi và lưu thông tin người bệnh như tiền sử, báo cáo và kết quả khám.",
+        "Theo dõi tình trạng, diễn tiến của người bệnh và đánh giá lại phác đồ khi cần.",
+        "Giải thích thủ thuật, trao đổi kết quả xét nghiệm hoặc phác đồ điều trị với người bệnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa",
+          "name": "Bệnh truyền nhiễm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+          "name": "Đọc kết quả y khoa",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+          "name": "Kê đơn thuốc",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+          "name": "Y học tổng quát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+          "name": "Dược lý học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+          "name": "Theo dõi tiến triển điều trị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+          "name": "Đọc phim X-quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa",
+          "name": "Bệnh truyền nhiễm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-29-1215.00",
+          "name": "Bác sĩ"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1151.00",
+      "name": "Kỹ thuật viên gây mê hồi sức",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2043.00",
+      "name": "Nhân viên cấp cứu ngoại viện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2011.00",
+      "name": "Kỹ thuật viên xét nghiệm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2034.00",
+      "name": "Kỹ thuật viên chẩn đoán hình ảnh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 17000000,
+    "median": 22000000,
+    "high": 38800000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": {
+      "label": "Bác sĩ hạng III đến hạng I",
+      "low": 5920000,
+      "high": 20240000,
+      "source": "Thông tư 41/2025/TT-BYT; hệ số theo Thông tư liên tịch 10/2015 đã hết hiệu lực, dự thảo giữ nguyên; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)"
+    }
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 65,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+      "name": "Khám sức khoẻ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d59d023b-8f28-4e67-9a41-aa36320e6c69",
+      "name": "Đọc kết quả y khoa",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8eab4e4f-03f8-4a66-a830-ec4e5db43253",
+      "name": "Kê đơn thuốc",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4f7b14d8-f09c-49f7-abae-231e8c210e07",
+      "name": "Y học tổng quát",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+      "name": "Xử lý tình huống cấp cứu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea",
+      "name": "Dược lý học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/46a8c70b-3894-4ce5-887b-7df4f7456b36",
+      "name": "Theo dõi tiến triển điều trị",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2ebcd941-fdb5-410d-8346-a5b85833331d",
+      "name": "Đọc phim X-quang",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+      "name": "Giáo dục phòng bệnh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7032c696-4cd3-41f7-84ae-1d9c5c18baaa",
+      "name": "Bệnh truyền nhiễm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.124
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 1.102
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.996
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.889
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.822
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.806
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.513
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

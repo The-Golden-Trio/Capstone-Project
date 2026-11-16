@@ -1,0 +1,854 @@
+{
+  "code": "ONET-43-6014.00",
+  "name": "Nhân viên hành chính, thư ký",
+  "nameEn": "Secretaries and Administrative Assistants, Except Legal, Medical, and Executive",
+  "group": "Văn phòng và hỗ trợ hành chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Làm các việc hành chính thường ngày như soạn thư từ, đặt lịch hẹn, sắp xếp và lưu giữ hồ sơ giấy, điện tử, hoặc cung cấp thông tin cho người gọi điện. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Công việc lặp lại nhiều.",
+    "Ngồi gần như cả ngày.",
+    "Nhiều việc lặp lại và theo quy trình cố định."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "21% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "6% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Văn phòng doanh nghiệp vừa và nhỏ trong nước",
+      "weight": 50
+    },
+    {
+      "name": "Văn phòng tập đoàn lớn trong nước",
+      "weight": 25
+    },
+    {
+      "name": "Cơ quan hành chính nhà nước",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Quản trị văn phòng"],
+    "vocational": ["Hành chính văn phòng", "Thư ký", "Văn thư hành chính"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh hành chính",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Nghe điện thoại, cung cấp thông tin, ghi lời nhắn hoặc chuyển máy cho đúng người.",
+        "Đón khách hoặc người gọi, xử lý yêu cầu hoặc hướng dẫn họ tới đúng người.",
+        "Tạo, duy trì và nhập thông tin vào cơ sở dữ liệu.",
+        "Dùng máy tính cho nhiều việc như quản lý dữ liệu hoặc soạn thảo văn bản.",
+        "Vận hành thiết bị văn phòng như máy fax, máy photo, tổng đài điện thoại và gọi sửa khi hỏng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên hành chính/văn thư",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Nghe điện thoại, cung cấp thông tin, ghi lời nhắn hoặc chuyển máy cho đúng người.",
+        "Đón khách hoặc người gọi, xử lý yêu cầu hoặc hướng dẫn họ tới đúng người.",
+        "Tạo, duy trì và nhập thông tin vào cơ sở dữ liệu.",
+        "Dùng máy tính cho nhiều việc như quản lý dữ liệu hoặc soạn thảo văn bản.",
+        "Vận hành thiết bị văn phòng như máy fax, máy photo, tổng đài điện thoại và gọi sửa khi hỏng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên hành chính/thư ký bộ phận",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Nghe điện thoại, cung cấp thông tin, ghi lời nhắn hoặc chuyển máy cho đúng người.",
+        "Đón khách hoặc người gọi, xử lý yêu cầu hoặc hướng dẫn họ tới đúng người.",
+        "Tạo, duy trì và nhập thông tin vào cơ sở dữ liệu.",
+        "Dùng máy tính cho nhiều việc như quản lý dữ liệu hoặc soạn thảo văn bản.",
+        "Vận hành thiết bị văn phòng như máy fax, máy photo, tổng đài điện thoại và gọi sửa khi hỏng."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ec0bbf39-0edd-4015-a2c3-82ad563ce3a8",
+          "name": "Soạn email công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+          "name": "Điền biểu mẫu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81dc035c-921b-4fea-a453-94538e86097c",
+          "name": "Truyền đạt thông điệp đến mọi người",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thư ký/trợ lý giám đốc",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Nghe điện thoại, cung cấp thông tin, ghi lời nhắn hoặc chuyển máy cho đúng người.",
+        "Đón khách hoặc người gọi, xử lý yêu cầu hoặc hướng dẫn họ tới đúng người.",
+        "Tạo, duy trì và nhập thông tin vào cơ sở dữ liệu.",
+        "Dùng máy tính cho nhiều việc như quản lý dữ liệu hoặc soạn thảo văn bản.",
+        "Vận hành thiết bị văn phòng như máy fax, máy photo, tổng đài điện thoại và gọi sửa khi hỏng."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ec0bbf39-0edd-4015-a2c3-82ad563ce3a8",
+          "name": "Soạn email công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+          "name": "Điền biểu mẫu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81dc035c-921b-4fea-a453-94538e86097c",
+          "name": "Truyền đạt thông điệp đến mọi người",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ec0bbf39-0edd-4015-a2c3-82ad563ce3a8",
+          "name": "Soạn email công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+          "name": "Điền biểu mẫu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81dc035c-921b-4fea-a453-94538e86097c",
+          "name": "Truyền đạt thông điệp đến mọi người",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng bộ phận hành chính",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Nghe điện thoại, cung cấp thông tin, ghi lời nhắn hoặc chuyển máy cho đúng người.",
+        "Đón khách hoặc người gọi, xử lý yêu cầu hoặc hướng dẫn họ tới đúng người.",
+        "Tạo, duy trì và nhập thông tin vào cơ sở dữ liệu.",
+        "Dùng máy tính cho nhiều việc như quản lý dữ liệu hoặc soạn thảo văn bản.",
+        "Vận hành thiết bị văn phòng như máy fax, máy photo, tổng đài điện thoại và gọi sửa khi hỏng."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ec0bbf39-0edd-4015-a2c3-82ad563ce3a8",
+          "name": "Soạn email công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+          "name": "Điền biểu mẫu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81dc035c-921b-4fea-a453-94538e86097c",
+          "name": "Truyền đạt thông điệp đến mọi người",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ec0bbf39-0edd-4015-a2c3-82ad563ce3a8",
+          "name": "Soạn email công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+          "name": "Điền biểu mẫu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81dc035c-921b-4fea-a453-94538e86097c",
+          "name": "Truyền đạt thông điệp đến mọi người",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng hành chính",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Nghe điện thoại, cung cấp thông tin, ghi lời nhắn hoặc chuyển máy cho đúng người.",
+        "Đón khách hoặc người gọi, xử lý yêu cầu hoặc hướng dẫn họ tới đúng người.",
+        "Tạo, duy trì và nhập thông tin vào cơ sở dữ liệu.",
+        "Dùng máy tính cho nhiều việc như quản lý dữ liệu hoặc soạn thảo văn bản.",
+        "Vận hành thiết bị văn phòng như máy fax, máy photo, tổng đài điện thoại và gọi sửa khi hỏng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ec0bbf39-0edd-4015-a2c3-82ad563ce3a8",
+          "name": "Soạn email công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+          "name": "Điền biểu mẫu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81dc035c-921b-4fea-a453-94538e86097c",
+          "name": "Truyền đạt thông điệp đến mọi người",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "name": "Dùng hệ thống văn phòng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "name": "Việc văn phòng thường ngày",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+          "name": "Lưu sổ sách theo luật định",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+          "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+          "name": "Nghiên cứu kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+          "name": "Lưu trữ văn bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ec0bbf39-0edd-4015-a2c3-82ad563ce3a8",
+          "name": "Soạn email công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+          "name": "Điền biểu mẫu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81dc035c-921b-4fea-a453-94538e86097c",
+          "name": "Truyền đạt thông điệp đến mọi người",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-43-6014.00",
+          "name": "Nhân viên hành chính, thư ký"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-43-6011.00",
+          "name": "Thư ký giám đốc, trợ lý điều hành"
+        },
+        {
+          "code": "ONET-43-6012.00",
+          "name": "Thư ký pháp lý"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-43-1011.00",
+          "name": "Tổ trưởng hành chính văn phòng"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3012.00",
+          "name": "Quản lý hành chính"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-5112.00",
+      "name": "Công nhân in ấn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-3012.00",
+      "name": "Quản lý hành chính",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-3091.00",
+      "name": "Phiên dịch, biên dịch viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2072.00",
+      "name": "Chuyên viên hồ sơ bệnh án",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-9092.00",
+      "name": "Trợ lý y khoa",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 9500000,
+    "median": 11500000,
+    "high": 14000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 848,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+      "name": "Dùng hệ thống văn phòng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+      "name": "Việc văn phòng thường ngày",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/047fcf0a-2936-49fb-b4eb-97cdd8d09d0b",
+      "name": "Lưu sổ sách theo luật định",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+      "name": "Dùng bảng tính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c58050e1-0774-4097-93d2-07dd7ba6a27a",
+      "name": "Bố trí cơ sở vật chất cho nhân viên văn phòng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0839eea4-c57b-4c14-b19b-923fbedb5d88",
+      "name": "Nghiên cứu kinh doanh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3d427a49-4f85-42cd-8a92-62d4a34f41a1",
+      "name": "Lưu trữ văn bản",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ec0bbf39-0edd-4015-a2c3-82ad563ce3a8",
+      "name": "Soạn email công việc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+      "name": "Điền biểu mẫu",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/81dc035c-921b-4fea-a453-94538e86097c",
+      "name": "Truyền đạt thông điệp đến mọi người",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.027
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.102
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.309
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.356
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.519
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.55
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.668
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

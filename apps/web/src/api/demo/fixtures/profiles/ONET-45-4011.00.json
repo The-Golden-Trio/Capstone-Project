@@ -1,0 +1,712 @@
+{
+  "code": "ONET-45-4011.00",
+  "name": "Công nhân lâm nghiệp",
+  "nameEn": "Forest and Conservation Workers",
+  "group": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Làm việc chân tay dưới sự giám sát để phát triển, duy trì và bảo vệ rừng, đất rừng, vùng đất ngập nước và đồng cỏ, như ươm và vận chuyển cây giống, phòng trừ sâu bệnh hại cây, làm công trình chống xói mòn và giữ nước. Gồm cả người phụ việc kiểm lâm, người nhổ và trồng cây giống, người thu hái lâm sản ngoài gỗ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Chịu rung lắc toàn thân khi vận hành máy hoặc xe.",
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Làm cạnh máy móc hoặc dụng cụ nguy hiểm, có nguy cơ tai nạn."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "Ít làm việc qua email.",
+    "46% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "61% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công ty lâm nghiệp, lâm trường",
+      "weight": 70
+    },
+    {
+      "name": "Nông hộ, gia trại",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Lâm sinh", "Lâm nghiệp"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Lao động trồng rừng thời vụ",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra thiết bị để bảo đảm chạy tốt.",
+        "Chữa cháy rừng hoặc đốt có kiểm soát theo chỉ đạo của cán bộ phòng cháy hoặc kỹ thuật viên lâm nghiệp.",
+        "Làm nhiệm vụ phòng và chữa cháy, như làm đường băng cản lửa hoặc dọn cành khô.",
+        "Trao đổi với đồng nghiệp về an toàn, độ cao cắt hoặc nhu cầu công việc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công nhân lâm nghiệp",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra thiết bị để bảo đảm chạy tốt.",
+        "Chữa cháy rừng hoặc đốt có kiểm soát theo chỉ đạo của cán bộ phòng cháy hoặc kỹ thuật viên lâm nghiệp.",
+        "Làm nhiệm vụ phòng và chữa cháy, như làm đường băng cản lửa hoặc dọn cành khô.",
+        "Trao đổi với đồng nghiệp về an toàn, độ cao cắt hoặc nhu cầu công việc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8",
+          "name": "Trồng lại rừng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f463e5-2382-49cb-8199-e7e043d868df",
+          "name": "Quy định an toàn và sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec",
+          "name": "Cắt cành cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b281511-176e-4f7c-a581-0875d3c4cb51",
+          "name": "Quy định lâm nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Công nhân lâm nghiệp bậc 2–3",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra thiết bị để bảo đảm chạy tốt.",
+        "Chữa cháy rừng hoặc đốt có kiểm soát theo chỉ đạo của cán bộ phòng cháy hoặc kỹ thuật viên lâm nghiệp.",
+        "Làm nhiệm vụ phòng và chữa cháy, như làm đường băng cản lửa hoặc dọn cành khô.",
+        "Trao đổi với đồng nghiệp về an toàn, độ cao cắt hoặc nhu cầu công việc."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8",
+          "name": "Trồng lại rừng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f463e5-2382-49cb-8199-e7e043d868df",
+          "name": "Quy định an toàn và sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec",
+          "name": "Cắt cành cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b281511-176e-4f7c-a581-0875d3c4cb51",
+          "name": "Quy định lâm nghiệp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8",
+          "name": "Trồng lại rừng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f463e5-2382-49cb-8199-e7e043d868df",
+          "name": "Quy định an toàn và sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec",
+          "name": "Cắt cành cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b281511-176e-4f7c-a581-0875d3c4cb51",
+          "name": "Quy định lâm nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8460277-3c9a-4be4-b203-600a2a295f47",
+          "name": "Phòng bệnh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/41de7eb8-be07-4822-ba85-b76e9b8d6e4e",
+          "name": "Quản lý rừng bền vững",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Tổ trưởng/đội trưởng đội sản xuất lâm nghiệp",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra thiết bị để bảo đảm chạy tốt.",
+        "Chữa cháy rừng hoặc đốt có kiểm soát theo chỉ đạo của cán bộ phòng cháy hoặc kỹ thuật viên lâm nghiệp.",
+        "Làm nhiệm vụ phòng và chữa cháy, như làm đường băng cản lửa hoặc dọn cành khô.",
+        "Trao đổi với đồng nghiệp về an toàn, độ cao cắt hoặc nhu cầu công việc."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8",
+          "name": "Trồng lại rừng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f463e5-2382-49cb-8199-e7e043d868df",
+          "name": "Quy định an toàn và sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec",
+          "name": "Cắt cành cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b281511-176e-4f7c-a581-0875d3c4cb51",
+          "name": "Quy định lâm nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8460277-3c9a-4be4-b203-600a2a295f47",
+          "name": "Phòng bệnh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/41de7eb8-be07-4822-ba85-b76e9b8d6e4e",
+          "name": "Quản lý rừng bền vững",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8",
+          "name": "Trồng lại rừng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f463e5-2382-49cb-8199-e7e043d868df",
+          "name": "Quy định an toàn và sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec",
+          "name": "Cắt cành cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b281511-176e-4f7c-a581-0875d3c4cb51",
+          "name": "Quy định lâm nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8460277-3c9a-4be4-b203-600a2a295f47",
+          "name": "Phòng bệnh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/41de7eb8-be07-4822-ba85-b76e9b8d6e4e",
+          "name": "Quản lý rừng bền vững",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng trạm/quản đốc lâm trường",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra thiết bị để bảo đảm chạy tốt.",
+        "Chữa cháy rừng hoặc đốt có kiểm soát theo chỉ đạo của cán bộ phòng cháy hoặc kỹ thuật viên lâm nghiệp.",
+        "Làm nhiệm vụ phòng và chữa cháy, như làm đường băng cản lửa hoặc dọn cành khô.",
+        "Trao đổi với đồng nghiệp về an toàn, độ cao cắt hoặc nhu cầu công việc."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8",
+          "name": "Trồng lại rừng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f463e5-2382-49cb-8199-e7e043d868df",
+          "name": "Quy định an toàn và sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec",
+          "name": "Cắt cành cây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b281511-176e-4f7c-a581-0875d3c4cb51",
+          "name": "Quy định lâm nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8460277-3c9a-4be4-b203-600a2a295f47",
+          "name": "Phòng bệnh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/41de7eb8-be07-4822-ba85-b76e9b8d6e4e",
+          "name": "Quản lý rừng bền vững",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+          "name": "Luật phúc lợi động vật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+          "name": "Viết báo cáo kỹ thuật về cây",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+          "name": "Chính sách môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8",
+          "name": "Trồng lại rừng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2f463e5-2382-49cb-8199-e7e043d868df",
+          "name": "Quy định an toàn và sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec",
+          "name": "Cắt cành cây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b281511-176e-4f7c-a581-0875d3c4cb51",
+          "name": "Quy định lâm nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8460277-3c9a-4be4-b203-600a2a295f47",
+          "name": "Phòng bệnh cây trồng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/41de7eb8-be07-4822-ba85-b76e9b8d6e4e",
+          "name": "Quản lý rừng bền vững",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-45-4011.00",
+          "name": "Công nhân lâm nghiệp"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9013.00",
+          "name": "Chủ trang trại, quản lý nông nghiệp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-19-1031.00",
+      "name": "Chuyên viên lâm nghiệp và bảo tồn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-5041.00",
+      "name": "Công nhân khai thác mỏ, dầu khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-45-2092.00",
+      "name": "Lao động trồng trọt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-2022.00",
+      "name": "Kiểm lâm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-37-3011.00",
+      "name": "Công nhân cảnh quan và cây xanh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": null,
+    "median": null,
+    "high": null,
+    "byYears": [],
+    "source": "Cục Thống kê, quý III/2026, qua VnBusiness",
+    "dataYear": "2026",
+    "note": "Số của cả ngành nông, lâm, thủy sản. Số bình quân tham khảo: 5.400.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+      "name": "Luật môi trường",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/49212efd-acf0-4257-a011-e07c9e369ecf",
+      "name": "Luật phúc lợi động vật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/68949f17-32a2-469e-b874-2fe7ac1cef34",
+      "name": "Viết báo cáo kỹ thuật về cây",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/081d7679-5070-4777-bece-a28c49f15636",
+      "name": "Chính sách môi trường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8",
+      "name": "Trồng lại rừng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f2f463e5-2382-49cb-8199-e7e043d868df",
+      "name": "Quy định an toàn và sức khoẻ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51b4a8c4-6af7-41b7-a68d-f3c2fd63c9ec",
+      "name": "Cắt cành cây",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2b281511-176e-4f7c-a581-0875d3c4cb51",
+      "name": "Quy định lâm nghiệp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f8460277-3c9a-4be4-b203-600a2a295f47",
+      "name": "Phòng bệnh cây trồng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/41de7eb8-be07-4822-ba85-b76e9b8d6e4e",
+      "name": "Quản lý rừng bền vững",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.382
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.535
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.716
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.73
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.824
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.912
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.972
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

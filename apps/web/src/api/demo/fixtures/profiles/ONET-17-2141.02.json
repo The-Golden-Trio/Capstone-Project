@@ -1,0 +1,946 @@
+{
+  "code": "ONET-17-2141.02",
+  "name": "Kỹ sư ô tô",
+  "nameEn": "Automotive Engineers",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Phát triển thiết kế mới hoặc cải tiến cho khung, động cơ, hộp số và các hệ thống khác của xe bằng phần mềm thiết kế. Chỉ đạo việc chế tạo, sửa đổi hoặc thử nghiệm xe và linh kiện. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Làm cạnh máy móc hoặc dụng cụ nguy hiểm, có nguy cơ tai nạn.",
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "67% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "20% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Văn phòng thiết kế, R&D kỹ thuật",
+      "weight": 45
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 35
+    },
+    {
+      "name": "Xưởng dịch vụ đại lý ô tô, xe máy chính hãng",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật ô tô", "Công nghệ kỹ thuật ô tô"],
+    "vocational": ["Công nghệ kỹ thuật ô tô"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh kỹ thuật ô tô",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Thực hiện hoặc chỉ đạo thử nghiệm ô tô ở cấp hệ thống.",
+        "Hướng dẫn kỹ thuật cho kỹ sư và nhân viên hỗ trợ khác.",
+        "Phân tích hỏng hóc, sai lệch hoặc nguyên nhân gốc.",
+        "Hiệu chỉnh các hệ thống trên xe, gồm thuật toán điều khiển và phần mềm.",
+        "Thiết kế hoặc phân tích hệ thống ô tô ở các mảng như khí động học, nhiên liệu thay thế, công thái học, động cơ lai, phanh, hộp số, lái, hiệu chỉnh, an toàn hoặc chẩn đoán."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư ô tô mới ra trường",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Thực hiện hoặc chỉ đạo thử nghiệm ô tô ở cấp hệ thống.",
+        "Hướng dẫn kỹ thuật cho kỹ sư và nhân viên hỗ trợ khác.",
+        "Phân tích hỏng hóc, sai lệch hoặc nguyên nhân gốc.",
+        "Hiệu chỉnh các hệ thống trên xe, gồm thuật toán điều khiển và phần mềm.",
+        "Thiết kế hoặc phân tích hệ thống ô tô ở các mảng như khí động học, nhiên liệu thay thế, công thái học, động cơ lai, phanh, hộp số, lái, hiệu chỉnh, an toàn hoặc chẩn đoán."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư ô tô (Junior)",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Thực hiện hoặc chỉ đạo thử nghiệm ô tô ở cấp hệ thống.",
+        "Hướng dẫn kỹ thuật cho kỹ sư và nhân viên hỗ trợ khác.",
+        "Phân tích hỏng hóc, sai lệch hoặc nguyên nhân gốc.",
+        "Hiệu chỉnh các hệ thống trên xe, gồm thuật toán điều khiển và phần mềm.",
+        "Thiết kế hoặc phân tích hệ thống ô tô ở các mảng như khí động học, nhiên liệu thay thế, công thái học, động cơ lai, phanh, hộp số, lái, hiệu chỉnh, an toàn hoặc chẩn đoán."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư ô tô (Middle)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Thực hiện hoặc chỉ đạo thử nghiệm ô tô ở cấp hệ thống.",
+        "Hướng dẫn kỹ thuật cho kỹ sư và nhân viên hỗ trợ khác.",
+        "Phân tích hỏng hóc, sai lệch hoặc nguyên nhân gốc.",
+        "Hiệu chỉnh các hệ thống trên xe, gồm thuật toán điều khiển và phần mềm.",
+        "Thiết kế hoặc phân tích hệ thống ô tô ở các mảng như khí động học, nhiên liệu thay thế, công thái học, động cơ lai, phanh, hộp số, lái, hiệu chỉnh, an toàn hoặc chẩn đoán."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12c7b323-d870-4f5b-9d7d-d9f525206d77",
+          "name": "Quy trình sản xuất",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư ô tô cao cấp (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Thực hiện hoặc chỉ đạo thử nghiệm ô tô ở cấp hệ thống.",
+        "Hướng dẫn kỹ thuật cho kỹ sư và nhân viên hỗ trợ khác.",
+        "Phân tích hỏng hóc, sai lệch hoặc nguyên nhân gốc.",
+        "Hiệu chỉnh các hệ thống trên xe, gồm thuật toán điều khiển và phần mềm.",
+        "Thiết kế hoặc phân tích hệ thống ô tô ở các mảng như khí động học, nhiên liệu thay thế, công thái học, động cơ lai, phanh, hộp số, lái, hiệu chỉnh, an toàn hoặc chẩn đoán."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12c7b323-d870-4f5b-9d7d-d9f525206d77",
+          "name": "Quy trình sản xuất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12c7b323-d870-4f5b-9d7d-d9f525206d77",
+          "name": "Quy trình sản xuất",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm kỹ thuật ô tô (Lead)",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Thực hiện hoặc chỉ đạo thử nghiệm ô tô ở cấp hệ thống.",
+        "Hướng dẫn kỹ thuật cho kỹ sư và nhân viên hỗ trợ khác.",
+        "Phân tích hỏng hóc, sai lệch hoặc nguyên nhân gốc.",
+        "Hiệu chỉnh các hệ thống trên xe, gồm thuật toán điều khiển và phần mềm.",
+        "Thiết kế hoặc phân tích hệ thống ô tô ở các mảng như khí động học, nhiên liệu thay thế, công thái học, động cơ lai, phanh, hộp số, lái, hiệu chỉnh, an toàn hoặc chẩn đoán."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12c7b323-d870-4f5b-9d7d-d9f525206d77",
+          "name": "Quy trình sản xuất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12c7b323-d870-4f5b-9d7d-d9f525206d77",
+          "name": "Quy trình sản xuất",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng kỹ thuật ô tô",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Thực hiện hoặc chỉ đạo thử nghiệm ô tô ở cấp hệ thống.",
+        "Hướng dẫn kỹ thuật cho kỹ sư và nhân viên hỗ trợ khác.",
+        "Phân tích hỏng hóc, sai lệch hoặc nguyên nhân gốc.",
+        "Hiệu chỉnh các hệ thống trên xe, gồm thuật toán điều khiển và phần mềm.",
+        "Thiết kế hoặc phân tích hệ thống ô tô ở các mảng như khí động học, nhiên liệu thay thế, công thái học, động cơ lai, phanh, hộp số, lái, hiệu chỉnh, an toàn hoặc chẩn đoán."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12c7b323-d870-4f5b-9d7d-d9f525206d77",
+          "name": "Quy trình sản xuất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+          "name": "Đón đầu thay đổi công nghệ ô tô",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+          "name": "Kiến trúc xe hybrid",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+          "name": "Quy trình chế tạo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+          "name": "Kỹ thuật ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+          "name": "Dạng cấu trúc của dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12c7b323-d870-4f5b-9d7d-d9f525206d77",
+          "name": "Quy trình sản xuất",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-2141.02",
+          "name": "Kỹ sư ô tô"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-17-2141.00",
+      "name": "Kỹ sư cơ khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2112.00",
+      "name": "Kỹ sư công nghiệp, quản lý sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2072.00",
+      "name": "Kỹ sư điện tử, viễn thông",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2071.00",
+      "name": "Kỹ sư điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 12000000,
+    "median": null,
+    "high": 35000000,
+    "byYears": [],
+    "source": "CareerLink, \"Kỹ sư ô tô là gì\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+      "name": "Phê duyệt thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+      "name": "Điều chỉnh thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c0789fc0-e4b3-483f-a033-212d65413d0d",
+      "name": "Đón đầu thay đổi công nghệ ô tô",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+      "name": "Dùng phần mềm vẽ kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f",
+      "name": "Kiến trúc xe hybrid",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3786b61f-f22e-48d1-af8d-ad4c354534db",
+      "name": "Quy trình chế tạo",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0e44ceb3-9dd4-4ec4-b1d7-a0e83ddba7d4",
+      "name": "Kỹ thuật ô tô",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+      "name": "Nghiên cứu khả thi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/03ff0d53-573a-47a0-a0ad-1995815a4339",
+      "name": "Dạng cấu trúc của dữ liệu",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/12c7b323-d870-4f5b-9d7d-d9f525206d77",
+      "name": "Quy trình sản xuất",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.736
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.286
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.254
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.126
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.063
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.012
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.677
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

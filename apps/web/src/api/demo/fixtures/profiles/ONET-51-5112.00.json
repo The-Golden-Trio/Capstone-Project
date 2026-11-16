@@ -1,0 +1,692 @@
+{
+  "code": "ONET-51-5112.00",
+  "name": "Công nhân in ấn",
+  "nameEn": "Printing Press Operators",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Cài đặt và vận hành máy in kỹ thuật số, in typo, in offset, in flexo, in ống đồng hoặc máy in khác. Gồm cả máy in offset số lượng nhỏ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Thường xuyên phải làm gấp cho kịp hạn.",
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu.",
+    "Nhịp làm việc do tốc độ máy móc quyết định."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "19% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "27% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 50
+    },
+    {
+      "name": "Xưởng nhỏ, cơ sở gia đình, làng nghề",
+      "weight": 50
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Công nghệ kỹ thuật in", "Công nghệ chế bản điện tử"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Phụ máy in",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Chạy máy và in thử để kiểm tra độ phủ mực, mật độ, căn chỉnh và chồng màu.",
+        "Xem lệnh in để biết số lượng, loại giấy, màu hoặc yêu cầu in đặc biệt.",
+        "Chỉnh lưu lượng mực từ máng mực.",
+        "Kiểm tra giấy và mực đúng yêu cầu của đơn hàng.",
+        "Lấy và kiểm tra mẫu ngẫu nhiên trong khi in để biết cần chỉnh gì."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công nhân đứng máy in",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Chạy máy và in thử để kiểm tra độ phủ mực, mật độ, căn chỉnh và chồng màu.",
+        "Xem lệnh in để biết số lượng, loại giấy, màu hoặc yêu cầu in đặc biệt.",
+        "Chỉnh lưu lượng mực từ máng mực.",
+        "Kiểm tra giấy và mực đúng yêu cầu của đơn hàng.",
+        "Lấy và kiểm tra mẫu ngẫu nhiên trong khi in để biết cần chỉnh gì."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4",
+          "name": "Lau trục mực in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/359b5031-74da-418f-bd97-6f4e66eb9851",
+          "name": "In trên máy khổ lớn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6",
+          "name": "In offset",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ in chính",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Chạy máy và in thử để kiểm tra độ phủ mực, mật độ, căn chỉnh và chồng màu.",
+        "Xem lệnh in để biết số lượng, loại giấy, màu hoặc yêu cầu in đặc biệt.",
+        "Chỉnh lưu lượng mực từ máng mực.",
+        "Kiểm tra giấy và mực đúng yêu cầu của đơn hàng.",
+        "Lấy và kiểm tra mẫu ngẫu nhiên trong khi in để biết cần chỉnh gì."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4",
+          "name": "Lau trục mực in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/359b5031-74da-418f-bd97-6f4e66eb9851",
+          "name": "In trên máy khổ lớn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6",
+          "name": "In offset",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4",
+          "name": "Lau trục mực in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/359b5031-74da-418f-bd97-6f4e66eb9851",
+          "name": "In trên máy khổ lớn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6",
+          "name": "In offset",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ in bậc cao (máy in nhiều màu)",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Chạy máy và in thử để kiểm tra độ phủ mực, mật độ, căn chỉnh và chồng màu.",
+        "Xem lệnh in để biết số lượng, loại giấy, màu hoặc yêu cầu in đặc biệt.",
+        "Chỉnh lưu lượng mực từ máng mực.",
+        "Kiểm tra giấy và mực đúng yêu cầu của đơn hàng.",
+        "Lấy và kiểm tra mẫu ngẫu nhiên trong khi in để biết cần chỉnh gì."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4",
+          "name": "Lau trục mực in",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/359b5031-74da-418f-bd97-6f4e66eb9851",
+          "name": "In trên máy khổ lớn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6",
+          "name": "In offset",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4",
+          "name": "Lau trục mực in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/359b5031-74da-418f-bd97-6f4e66eb9851",
+          "name": "In trên máy khổ lớn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6",
+          "name": "In offset",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng máy / tổ trưởng in",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Chạy máy và in thử để kiểm tra độ phủ mực, mật độ, căn chỉnh và chồng màu.",
+        "Xem lệnh in để biết số lượng, loại giấy, màu hoặc yêu cầu in đặc biệt.",
+        "Chỉnh lưu lượng mực từ máng mực.",
+        "Kiểm tra giấy và mực đúng yêu cầu của đơn hàng.",
+        "Lấy và kiểm tra mẫu ngẫu nhiên trong khi in để biết cần chỉnh gì."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4",
+          "name": "Lau trục mực in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/359b5031-74da-418f-bd97-6f4e66eb9851",
+          "name": "In trên máy khổ lớn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6",
+          "name": "In offset",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+          "name": "Kỹ thuật in",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+          "name": "Các loại giấy",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+          "name": "Công nghệ in",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+          "name": "Làm bản in thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4",
+          "name": "Lau trục mực in",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/359b5031-74da-418f-bd97-6f4e66eb9851",
+          "name": "In trên máy khổ lớn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6",
+          "name": "In offset",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-5112.00",
+          "name": "Công nhân in ấn"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-51-5111.00",
+          "name": "Kỹ thuật viên chế bản in"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-6031.00",
+      "name": "Công nhân may mặc, da giày",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 9000000,
+    "median": 11500000,
+    "high": 11900000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 32,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/41c13016-6e94-45bb-81b7-3ff25ac2aa25",
+      "name": "Kỹ thuật in",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7dcda7b8-afa9-4504-b7d9-95a51e8ee96d",
+      "name": "Các loại giấy",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2ec3298f-a1c0-4381-9114-b62ba6772d75",
+      "name": "Công nghệ in",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2176826a-0329-4a46-8b6d-d4f73bdee4db",
+      "name": "Làm bản in thử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/925a3afb-e11e-4992-996b-6f55bf820ea4",
+      "name": "Lau trục mực in",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/359b5031-74da-418f-bd97-6f4e66eb9851",
+      "name": "In trên máy khổ lớn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ea3f280c-ec1c-41dd-910a-1ae3c3d0eeb6",
+      "name": "In offset",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+      "name": "Tiêu chuẩn chất lượng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+      "name": "Chạy thử",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.329
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.424
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.581
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.77
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.796
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.917
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -1.014
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,939 @@
+{
+  "code": "ONET-25-2011.00",
+  "name": "Giáo viên mầm non",
+  "nameEn": "Preschool Teachers, Except Special Education",
+  "group": "Giáo dục và thư viện",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Dạy trẻ ở tuổi mầm non theo chương trình hoặc giáo án, qua các hoạt động giúp trẻ phát triển về xã hội, thể chất và trí tuệ. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần sáng tạo và tự do thể hiện ý tưởng, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Hay phải quỳ, cúi, khom hoặc bò.",
+    "Phải đi lại hoặc chạy nhiều."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "42% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Trường học, trung tâm"],
+  "environments": [
+    {
+      "name": "Trường công lập (mầm non đến THPT)",
+      "weight": 60
+    },
+    {
+      "name": "Trường tư thục, quốc tế, song ngữ",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Giáo dục Mầm non"],
+    "vocational": ["Giáo dục mầm non"],
+    "licence": "Đạt chuẩn trình độ đào tạo theo cấp học; người không học sư phạm cần chứng chỉ nghiệp vụ sư phạm — Luật Nhà giáo số 73/2025/QH15, hiệu lực 01/01/2026"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên thực tập sư phạm mầm non",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Dạy kỹ năng cơ bản như nhận biết màu, hình, số, chữ, vệ sinh cá nhân và kỹ năng xã hội.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của trẻ.",
+        "Chuẩn bị nhiều đồ dùng, học liệu để trẻ khám phá, thao tác và sử dụng trong học tập và chơi tưởng tượng.",
+        "Cho trẻ ăn bữa chính và bữa phụ theo hướng dẫn dinh dưỡng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Giáo viên mầm non mới (bậc nghề nghiệp 2, tương đương hạng III cũ)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Dạy kỹ năng cơ bản như nhận biết màu, hình, số, chữ, vệ sinh cá nhân và kỹ năng xã hội.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của trẻ.",
+        "Chuẩn bị nhiều đồ dùng, học liệu để trẻ khám phá, thao tác và sử dụng trong học tập và chơi tưởng tượng.",
+        "Cho trẻ ăn bữa chính và bữa phụ theo hướng dẫn dinh dưỡng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Giáo viên mầm non (bậc 3, tương đương hạng II cũ)",
+      "years": "3–9",
+      "coreOutput": null,
+      "tasks": [
+        "Dạy kỹ năng cơ bản như nhận biết màu, hình, số, chữ, vệ sinh cá nhân và kỹ năng xã hội.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của trẻ.",
+        "Chuẩn bị nhiều đồ dùng, học liệu để trẻ khám phá, thao tác và sử dụng trong học tập và chơi tưởng tượng.",
+        "Cho trẻ ăn bữa chính và bữa phụ theo hướng dẫn dinh dưỡng."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Giáo viên mầm non bậc 4 (tương đương hạng I cũ), giáo viên cốt cán",
+      "years": "9+",
+      "coreOutput": null,
+      "tasks": [
+        "Dạy kỹ năng cơ bản như nhận biết màu, hình, số, chữ, vệ sinh cá nhân và kỹ năng xã hội.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của trẻ.",
+        "Chuẩn bị nhiều đồ dùng, học liệu để trẻ khám phá, thao tác và sử dụng trong học tập và chơi tưởng tượng.",
+        "Cho trẻ ăn bữa chính và bữa phụ theo hướng dẫn dinh dưỡng."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7530bc44-f09d-4dd2-8911-92b98333e442",
+          "name": "Hỗ trợ học sinh dùng thiết bị",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Tổ trưởng chuyên môn (khối lớp)",
+      "years": "5–10",
+      "coreOutput": null,
+      "tasks": [
+        "Dạy kỹ năng cơ bản như nhận biết màu, hình, số, chữ, vệ sinh cá nhân và kỹ năng xã hội.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của trẻ.",
+        "Chuẩn bị nhiều đồ dùng, học liệu để trẻ khám phá, thao tác và sử dụng trong học tập và chơi tưởng tượng.",
+        "Cho trẻ ăn bữa chính và bữa phụ theo hướng dẫn dinh dưỡng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7530bc44-f09d-4dd2-8911-92b98333e442",
+          "name": "Hỗ trợ học sinh dùng thiết bị",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7530bc44-f09d-4dd2-8911-92b98333e442",
+          "name": "Hỗ trợ học sinh dùng thiết bị",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Phó hiệu trưởng trường mầm non",
+      "years": "8–15",
+      "coreOutput": null,
+      "tasks": [
+        "Dạy kỹ năng cơ bản như nhận biết màu, hình, số, chữ, vệ sinh cá nhân và kỹ năng xã hội.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của trẻ.",
+        "Chuẩn bị nhiều đồ dùng, học liệu để trẻ khám phá, thao tác và sử dụng trong học tập và chơi tưởng tượng.",
+        "Cho trẻ ăn bữa chính và bữa phụ theo hướng dẫn dinh dưỡng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7530bc44-f09d-4dd2-8911-92b98333e442",
+          "name": "Hỗ trợ học sinh dùng thiết bị",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7530bc44-f09d-4dd2-8911-92b98333e442",
+          "name": "Hỗ trợ học sinh dùng thiết bị",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Hiệu trưởng trường mầm non",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Dạy kỹ năng cơ bản như nhận biết màu, hình, số, chữ, vệ sinh cá nhân và kỹ năng xã hội.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của trẻ.",
+        "Chuẩn bị nhiều đồ dùng, học liệu để trẻ khám phá, thao tác và sử dụng trong học tập và chơi tưởng tượng.",
+        "Cho trẻ ăn bữa chính và bữa phụ theo hướng dẫn dinh dưỡng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7530bc44-f09d-4dd2-8911-92b98333e442",
+          "name": "Hỗ trợ học sinh dùng thiết bị",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+          "name": "Dạy nội dung mầm non",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+          "name": "Phát triển xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "name": "Triển khai chương trình chăm sóc trẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+          "name": "Xử lý vấn đề của trẻ em",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7530bc44-f09d-4dd2-8911-92b98333e442",
+          "name": "Hỗ trợ học sinh dùng thiết bị",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-25-2011.00",
+          "name": "Giáo viên mầm non"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-25-2012.00",
+          "name": "Giáo viên mẫu giáo"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9032.00",
+          "name": "Quản lý giáo dục (hiệu trưởng, trưởng khoa)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-25-2051.00",
+      "name": "Giáo viên giáo dục đặc biệt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2021.00",
+      "name": "Giáo viên tiểu học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2031.00",
+      "name": "Giáo viên trung học (THCS, THPT)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 5313000,
+    "median": null,
+    "high": 16141000,
+    "byYears": [],
+    "source": "Thông tư 31/2026/TT-BGDĐT ngày 14/4/2026; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Giáo viên mầm non hạng III đến hạng I",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 12,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+      "name": "Hỗ trợ học sinh học tập",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+      "name": "Soạn bài giảng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a8c5e58f-1f0f-40bc-8860-aaab0f64f105",
+      "name": "Dạy nội dung mầm non",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+      "name": "Mục tiêu chương trình học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4e3db6d7-88b8-492d-89e5-a93d01c3e369",
+      "name": "Phát triển xã hội",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+      "name": "Dạy học liên văn hoá",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+      "name": "Triển khai chương trình chăm sóc trẻ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+      "name": "Áp dụng chiến lược giảng dạy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/07090471-265a-48ec-b744-72b357e801ed",
+      "name": "Xử lý vấn đề của trẻ em",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7530bc44-f09d-4dd2-8911-92b98333e442",
+      "name": "Hỗ trợ học sinh dùng thiết bị",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.151
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.857
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.48
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.216
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.058
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.23
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.432
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

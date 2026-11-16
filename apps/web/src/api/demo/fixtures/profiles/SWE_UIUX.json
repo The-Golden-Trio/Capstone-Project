@@ -1,0 +1,898 @@
+{
+  "code": "SWE_UIUX",
+  "name": "Chuyên viên thiết kế UI/UX",
+  "nameEn": "UI/UX Designer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Chuyên viên thiết kế UI/UX quyết định sản phẩm số trông thế nào và dùng ra sao: nghiên cứu người dùng, vẽ luồng thao tác, làm wireframe và bản thiết kế chi tiết (thường trên Figma), rồi kiểm thử với người dùng thật. Nghề không đòi viết mã, nhưng phải làm việc sát với lập trình viên và quản lý sản phẩm.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần sáng tạo và tự do thể hiện ý tưởng, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Góp ý thường mơ hồ, kiểu “làm cho đẹp hơn”, nên phải sửa nhiều vòng mà không rõ đích.",
+    "Kết quả nghiên cứu người dùng có thể trái ý cấp trên và không phải lúc nào cũng được nghe.",
+    "Thiết kế có thể bị cắt bớt vì tốn quá nhiều công để lập trình.",
+    "Nhiều công ty chưa có công cụ đo hiệu quả thiết kế, nên khó chứng minh đóng góp."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "9% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 50
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 30
+    },
+    {
+      "name": "Agency marketing, quảng cáo, sự kiện",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Thiết kế đồ họa", "Nghệ thuật số", "Công nghệ thông tin"],
+    "vocational": ["Thiết kế tương tác", "Thiết kế đồ họa"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "UI/UX Design Intern",
+      "years": "0",
+      "coreOutput": "Vẽ lại (redesign) màn hình đơn giản theo design system có sẵn dưới hướng dẫn sát, chưa tự quyết định luồng UX, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+      "tasks": [
+        "Tìm lỗi lộ ra từ kiểm thử hoặc phản hồi của khách hàng, rồi tự sửa hoặc chuyển cho người phụ trách.",
+        "Thiết kế, dựng và duy trì trang web bằng ngôn ngữ kịch bản, công cụ tạo nội dung và công cụ quản lý.",
+        "Viết mã hỗ trợ cho ứng dụng web hoặc trang web.",
+        "Kiểm thử trang web theo lịch, hoặc sau mỗi lần sửa trang hay sản phẩm.",
+        "Phối hợp với lập trình viên front-end, back-end để hoàn thành trọn dự án web."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher UI/UX Designer",
+      "years": "0-1",
+      "coreOutput": "Tự thiết kế một màn hình/component UI nhỏ trong phạm vi được giao theo design system có sẵn, mọi thay đổi qua review, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [
+        "Tìm lỗi lộ ra từ kiểm thử hoặc phản hồi của khách hàng, rồi tự sửa hoặc chuyển cho người phụ trách.",
+        "Thiết kế, dựng và duy trì trang web bằng ngôn ngữ kịch bản, công cụ tạo nội dung và công cụ quản lý.",
+        "Viết mã hỗ trợ cho ứng dụng web hoặc trang web.",
+        "Kiểm thử trang web theo lịch, hoặc sau mỗi lần sửa trang hay sản phẩm.",
+        "Phối hợp với lập trình viên front-end, back-end để hoàn thành trọn dự án web."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior UI/UX Designer",
+      "years": "1-2",
+      "coreOutput": "Tự thiết kế trọn vẹn một luồng UI cho một tính năng đã xác định rõ (wireframe, high-fidelity mockup), thực hiện usability test cơ bản dưới hướng dẫn, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [
+        "Tìm lỗi lộ ra từ kiểm thử hoặc phản hồi của khách hàng, rồi tự sửa hoặc chuyển cho người phụ trách.",
+        "Thiết kế, dựng và duy trì trang web bằng ngôn ngữ kịch bản, công cụ tạo nội dung và công cụ quản lý.",
+        "Viết mã hỗ trợ cho ứng dụng web hoặc trang web.",
+        "Kiểm thử trang web theo lịch, hoặc sau mỗi lần sửa trang hay sản phẩm.",
+        "Phối hợp với lập trình viên front-end, back-end để hoàn thành trọn dự án web."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle UI/UX Designer",
+      "years": "2-4",
+      "coreOutput": "Chịu trách nhiệm thiết kế UX cho một mảng sản phẩm: nghiên cứu người dùng cơ bản, thiết kế luồng tương tác, duy trì design system cho phần mình phụ trách, tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [
+        "Tìm lỗi lộ ra từ kiểm thử hoặc phản hồi của khách hàng, rồi tự sửa hoặc chuyển cho người phụ trách.",
+        "Thiết kế, dựng và duy trì trang web bằng ngôn ngữ kịch bản, công cụ tạo nội dung và công cụ quản lý.",
+        "Viết mã hỗ trợ cho ứng dụng web hoặc trang web.",
+        "Kiểm thử trang web theo lịch, hoặc sau mỗi lần sửa trang hay sản phẩm.",
+        "Phối hợp với lập trình viên front-end, back-end để hoàn thành trọn dự án web."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+          "name": "Phát triển ý tưởng sáng tạo",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior UI/UX Designer",
+      "years": "4-7",
+      "coreOutput": "Tự chủ dẫn dắt thiết kế UX cho cả một sản phẩm, chủ trì nghiên cứu người dùng sâu, chịu trách nhiệm về trải nghiệm tổng thể, mentor designer cấp dưới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [
+        "Tìm lỗi lộ ra từ kiểm thử hoặc phản hồi của khách hàng, rồi tự sửa hoặc chuyển cho người phụ trách.",
+        "Thiết kế, dựng và duy trì trang web bằng ngôn ngữ kịch bản, công cụ tạo nội dung và công cụ quản lý.",
+        "Viết mã hỗ trợ cho ứng dụng web hoặc trang web.",
+        "Kiểm thử trang web theo lịch, hoặc sau mỗi lần sửa trang hay sản phẩm.",
+        "Phối hợp với lập trình viên front-end, back-end để hoàn thành trọn dự án web."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+          "name": "Phát triển ý tưởng sáng tạo",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+          "name": "Phát triển ý tưởng sáng tạo",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Lead UI/UX Designer",
+      "years": "6-9",
+      "coreOutput": "Dẫn dắt kỹ thuật/chuyên môn cho một đội design, đặt chuẩn design system và quy trình UX research cho tổ chức, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [
+        "Tìm lỗi lộ ra từ kiểm thử hoặc phản hồi của khách hàng, rồi tự sửa hoặc chuyển cho người phụ trách.",
+        "Thiết kế, dựng và duy trì trang web bằng ngôn ngữ kịch bản, công cụ tạo nội dung và công cụ quản lý.",
+        "Viết mã hỗ trợ cho ứng dụng web hoặc trang web.",
+        "Kiểm thử trang web theo lịch, hoặc sau mỗi lần sửa trang hay sản phẩm.",
+        "Phối hợp với lập trình viên front-end, back-end để hoàn thành trọn dự án web."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+          "name": "Phát triển ý tưởng sáng tạo",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+          "name": "Phát triển ý tưởng sáng tạo",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Principal UI/UX Designer / Head of Design",
+      "years": "8-12",
+      "coreOutput": "Đặt định hướng trải nghiệm người dùng xuyên nhiều sản phẩm, đại diện thiết kế cấp cao nhất khi làm việc với lãnh đạo sản phẩm/công nghệ, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+      "tasks": [
+        "Tìm lỗi lộ ra từ kiểm thử hoặc phản hồi của khách hàng, rồi tự sửa hoặc chuyển cho người phụ trách.",
+        "Thiết kế, dựng và duy trì trang web bằng ngôn ngữ kịch bản, công cụ tạo nội dung và công cụ quản lý.",
+        "Viết mã hỗ trợ cho ứng dụng web hoặc trang web.",
+        "Kiểm thử trang web theo lịch, hoặc sau mỗi lần sửa trang hay sản phẩm.",
+        "Phối hợp với lập trình viên front-end, back-end để hoàn thành trọn dự án web."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+          "name": "Phát triển ý tưởng sáng tạo",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+          "name": "Tiêu chuẩn web W3C",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+          "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+          "name": "Thiết kế giao diện người dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+          "name": "Thiết kế lấy người dùng làm trung tâm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+          "name": "Luật an ninh CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+          "name": "Vẽ khung giao diện website (wireframe)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+          "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+          "name": "Quản lý nội dung trực tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+          "name": "Phát triển ý tưởng sáng tạo",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "SWE_FRONTEND",
+      "name": "Lập trình viên Front-end",
+      "why": "Cùng làm phần người dùng nhìn thấy: UI/UX thiết kế, Frontend hiện thực"
+    },
+    {
+      "code": "PROD_PM",
+      "name": "Quản lý sản phẩm / Product Manager",
+      "why": "Cùng tập trung vào trải nghiệm và nhu cầu người dùng"
+    },
+    {
+      "code": "SWE_GAME",
+      "name": "Lập trình viên Game",
+      "why": "Cùng quan tâm trải nghiệm và cảm giác người dùng"
+    }
+  ],
+  "pay": null,
+  "outlook": {
+    "level": "thap",
+    "openPostings": 12,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+      "name": "Dùng giao diện riêng của ứng dụng (như API)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8696aff0-18c0-4ba6-a4d0-9a21861b3e5e",
+      "name": "Tiêu chuẩn web W3C",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+      "name": "Kiểm thử khả năng truy cập cho người khuyết tật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+      "name": "Thiết kế giao diện người dùng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+      "name": "Thiết kế lấy người dùng làm trung tâm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7814e88f-c133-4c3b-b27f-857afa145d42",
+      "name": "Luật an ninh CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+      "name": "Vẽ khung giao diện website (wireframe)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0af062de-eb43-41e9-9b96-249e2cd22d26",
+      "name": "Dùng ngôn ngữ đánh dấu (HTML, XML)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b",
+      "name": "Quản lý nội dung trực tuyến",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+      "name": "Phát triển ý tưởng sáng tạo",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.25
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.55
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.182
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.108
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.811
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.909
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.966
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,835 @@
+{
+  "code": "ONET-47-2152.00",
+  "name": "Thợ ống nước, đường ống",
+  "nameEn": "Plumbers, Pipefitters, and Steamfitters",
+  "group": "Xây dựng và khai khoáng",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Lắp ráp, lắp đặt, sửa đổi và sửa chữa đường ống, hệ thống ống dẫn nước, hơi, khí nén hoặc chất lỏng, khí khác. Có thể lắp thiết bị sưởi, làm mát và hệ thống điều khiển cơ khí. Gồm cả thợ lắp hệ thống phun nước chữa cháy. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Phải leo thang, giàn giáo hoặc cột.",
+    "Làm trong không gian chật hoặc tư thế khó.",
+    "Hay phải quỳ, cúi, khom hoặc bò.",
+    "Phải mặc đồ bảo hộ chuyên dụng như mặt nạ thở, đai an toàn hoặc đồ chống bức xạ."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít làm việc qua email.",
+    "39% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "36% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Tổ đội thợ, nhà thầu phụ, thợ tự do",
+      "weight": 40
+    },
+    {
+      "name": "Dịch vụ kỹ thuật tận nhà",
+      "weight": 40
+    },
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [
+      "Điện - Nước",
+      "Cấp, thoát nước",
+      "Kỹ thuật lắp đặt ống công nghệ"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thợ phụ/học việc cấp thoát nước, đường ống",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá hơi, nước hoặc chất khác trong đoạn ống bằng chìa khoá van hoặc cờ lê.",
+        "Lắp đặt hệ thống ống thoát nước mưa, nước thải hoặc cấp nước ngầm, kéo dài đường ống để nối thiết bị.",
+        "Nối các đoạn ống, ống mềm hoặc phụ kiện bằng khớp nối, kẹp, vít, bu lông, keo, dung môi, trám, hàn thiếc hoặc hàn.",
+        "Xác định và đánh dấu vị trí lắp ống, mối nối, lỗ xuyên hoặc thiết bị bằng thước và thước thuỷ.",
+        "Cắt, tiện ren hoặc uốn ống theo yêu cầu bằng cưa, mỏ cắt, máy ren hoặc máy uốn ống."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ cấp thoát nước, đường ống bậc 1",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá hơi, nước hoặc chất khác trong đoạn ống bằng chìa khoá van hoặc cờ lê.",
+        "Lắp đặt hệ thống ống thoát nước mưa, nước thải hoặc cấp nước ngầm, kéo dài đường ống để nối thiết bị.",
+        "Nối các đoạn ống, ống mềm hoặc phụ kiện bằng khớp nối, kẹp, vít, bu lông, keo, dung môi, trám, hàn thiếc hoặc hàn.",
+        "Xác định và đánh dấu vị trí lắp ống, mối nối, lỗ xuyên hoặc thiết bị bằng thước và thước thuỷ.",
+        "Cắt, tiện ren hoặc uốn ống theo yêu cầu bằng cưa, mỏ cắt, máy ren hoặc máy uốn ống."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ cấp thoát nước, đường ống bậc 2",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá hơi, nước hoặc chất khác trong đoạn ống bằng chìa khoá van hoặc cờ lê.",
+        "Lắp đặt hệ thống ống thoát nước mưa, nước thải hoặc cấp nước ngầm, kéo dài đường ống để nối thiết bị.",
+        "Nối các đoạn ống, ống mềm hoặc phụ kiện bằng khớp nối, kẹp, vít, bu lông, keo, dung môi, trám, hàn thiếc hoặc hàn.",
+        "Xác định và đánh dấu vị trí lắp ống, mối nối, lỗ xuyên hoặc thiết bị bằng thước và thước thuỷ.",
+        "Cắt, tiện ren hoặc uốn ống theo yêu cầu bằng cưa, mỏ cắt, máy ren hoặc máy uốn ống."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab3d3d36-0242-41b0-bf5e-d8301171b14a",
+          "name": "Lắp ống PEX",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/55f52ccc-fca9-434b-afab-497387e75359",
+          "name": "Kiểm tra áp lực nước",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ cấp thoát nước, đường ống bậc 3",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá hơi, nước hoặc chất khác trong đoạn ống bằng chìa khoá van hoặc cờ lê.",
+        "Lắp đặt hệ thống ống thoát nước mưa, nước thải hoặc cấp nước ngầm, kéo dài đường ống để nối thiết bị.",
+        "Nối các đoạn ống, ống mềm hoặc phụ kiện bằng khớp nối, kẹp, vít, bu lông, keo, dung môi, trám, hàn thiếc hoặc hàn.",
+        "Xác định và đánh dấu vị trí lắp ống, mối nối, lỗ xuyên hoặc thiết bị bằng thước và thước thuỷ.",
+        "Cắt, tiện ren hoặc uốn ống theo yêu cầu bằng cưa, mỏ cắt, máy ren hoặc máy uốn ống."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab3d3d36-0242-41b0-bf5e-d8301171b14a",
+          "name": "Lắp ống PEX",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/55f52ccc-fca9-434b-afab-497387e75359",
+          "name": "Kiểm tra áp lực nước",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab3d3d36-0242-41b0-bf5e-d8301171b14a",
+          "name": "Lắp ống PEX",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/55f52ccc-fca9-434b-afab-497387e75359",
+          "name": "Kiểm tra áp lực nước",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Thợ cả cấp thoát nước, đường ống bậc 4",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá hơi, nước hoặc chất khác trong đoạn ống bằng chìa khoá van hoặc cờ lê.",
+        "Lắp đặt hệ thống ống thoát nước mưa, nước thải hoặc cấp nước ngầm, kéo dài đường ống để nối thiết bị.",
+        "Nối các đoạn ống, ống mềm hoặc phụ kiện bằng khớp nối, kẹp, vít, bu lông, keo, dung môi, trám, hàn thiếc hoặc hàn.",
+        "Xác định và đánh dấu vị trí lắp ống, mối nối, lỗ xuyên hoặc thiết bị bằng thước và thước thuỷ.",
+        "Cắt, tiện ren hoặc uốn ống theo yêu cầu bằng cưa, mỏ cắt, máy ren hoặc máy uốn ống."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab3d3d36-0242-41b0-bf5e-d8301171b14a",
+          "name": "Lắp ống PEX",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/55f52ccc-fca9-434b-afab-497387e75359",
+          "name": "Kiểm tra áp lực nước",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab3d3d36-0242-41b0-bf5e-d8301171b14a",
+          "name": "Lắp ống PEX",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/55f52ccc-fca9-434b-afab-497387e75359",
+          "name": "Kiểm tra áp lực nước",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Tổ trưởng/giám sát cấp thoát nước",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá hơi, nước hoặc chất khác trong đoạn ống bằng chìa khoá van hoặc cờ lê.",
+        "Lắp đặt hệ thống ống thoát nước mưa, nước thải hoặc cấp nước ngầm, kéo dài đường ống để nối thiết bị.",
+        "Nối các đoạn ống, ống mềm hoặc phụ kiện bằng khớp nối, kẹp, vít, bu lông, keo, dung môi, trám, hàn thiếc hoặc hàn.",
+        "Xác định và đánh dấu vị trí lắp ống, mối nối, lỗ xuyên hoặc thiết bị bằng thước và thước thuỷ.",
+        "Cắt, tiện ren hoặc uốn ống theo yêu cầu bằng cưa, mỏ cắt, máy ren hoặc máy uốn ống."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab3d3d36-0242-41b0-bf5e-d8301171b14a",
+          "name": "Lắp ống PEX",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/55f52ccc-fca9-434b-afab-497387e75359",
+          "name": "Kiểm tra áp lực nước",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+          "name": "Lắp thiết bị vệ sinh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+          "name": "Thay vòi nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+          "name": "Thông tắc cống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab3d3d36-0242-41b0-bf5e-d8301171b14a",
+          "name": "Lắp ống PEX",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/55f52ccc-fca9-434b-afab-497387e75359",
+          "name": "Kiểm tra áp lực nước",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-47-2152.00",
+          "name": "Thợ ống nước, đường ống"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9021.00",
+          "name": "Quản lý xây dựng (chỉ huy trưởng công trình)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2141.00",
+      "name": "Thợ sơn, thạch cao và hoàn thiện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2021.00",
+      "name": "Thợ xây, ốp lát",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2111.00",
+      "name": "Thợ điện công trình",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2031.00",
+      "name": "Thợ mộc",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 16000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Thợ Điện Nước\"",
+    "dataYear": "2026",
+    "note": "Chức danh gộp cả thợ điện và thợ nước. 128 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–16tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 13.100.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+      "name": "Dùng dụng cụ đo",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+      "name": "Kiểm tra vật tư xây dựng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ef6cb992-07d1-435b-a150-45d92228db1e",
+      "name": "Lắp thiết bị vệ sinh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+      "name": "Vận chuyển vật tư xây dựng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0a85e1c5-393b-4348-97c4-7b5bef419e7d",
+      "name": "Thay vòi nước",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+      "name": "Đọc bản vẽ 2D",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8e946faa-b350-4cbe-9eeb-6fee739e6d98",
+      "name": "Thông tắc cống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+      "name": "Đọc bản vẽ 3D",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ab3d3d36-0242-41b0-bf5e-d8301171b14a",
+      "name": "Lắp ống PEX",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/55f52ccc-fca9-434b-afab-497387e75359",
+      "name": "Kiểm tra áp lực nước",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.541
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.568
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.591
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.703
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.868
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.908
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.916
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,729 @@
+{
+  "code": "ONET-29-2034.00",
+  "name": "Kỹ thuật viên chẩn đoán hình ảnh",
+  "nameEn": "Radiologic Technologists and Technicians",
+  "group": "Y tế chuyên môn và kỹ thuật y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Chụp X-quang, chụp CT hoặc đưa chất không phóng xạ vào máu người bệnh để chẩn đoán hoặc nghiên cứu. Gồm cả kỹ thuật viên chuyên các phương pháp chụp quét khác. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có tiếp xúc với bức xạ.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Sai sót có thể gây hậu quả nghiêm trọng.",
+    "Công việc lặp lại nhiều."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "21% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "11% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Bệnh viện công",
+      "weight": 65
+    },
+    {
+      "name": "Bệnh viện tư, quốc tế",
+      "weight": 35
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật hình ảnh y học"],
+    "vocational": ["Kỹ thuật hình ảnh y học"],
+    "licence": "Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực) — Luật Khám bệnh, chữa bệnh số 15/2023/QH15, hiệu lực 01/01/2024"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ thuật y chẩn đoán hình ảnh thực hành (chưa có giấy phép)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích quy trình và quan sát người bệnh để bảo đảm an toàn, thoải mái khi chụp.",
+        "Xử lý phim X-quang bằng máy rửa phim hoặc trên máy tính.",
+        "Thực hiện các kỹ thuật như chụp cắt lớp, chụp nhũ ảnh, siêu âm, chọc hút khớp và nang, chụp cản quang, soi chiếu, chụp đầu, thân, chi dưới sự giám sát của bác sĩ.",
+        "Ghi, xử lý và lưu dữ liệu người bệnh, hồ sơ chụp và lập báo cáo.",
+        "Chuẩn bị thuốc cản quang, dược chất phóng xạ hoặc thuốc gây tê, chống co thắt theo chỉ định của bác sĩ chẩn đoán hình ảnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ thuật y chẩn đoán hình ảnh hạng III (có giấy phép hành nghề)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích quy trình và quan sát người bệnh để bảo đảm an toàn, thoải mái khi chụp.",
+        "Xử lý phim X-quang bằng máy rửa phim hoặc trên máy tính.",
+        "Thực hiện các kỹ thuật như chụp cắt lớp, chụp nhũ ảnh, siêu âm, chọc hút khớp và nang, chụp cản quang, soi chiếu, chụp đầu, thân, chi dưới sự giám sát của bác sĩ.",
+        "Ghi, xử lý và lưu dữ liệu người bệnh, hồ sơ chụp và lập báo cáo.",
+        "Chuẩn bị thuốc cản quang, dược chất phóng xạ hoặc thuốc gây tê, chống co thắt theo chỉ định của bác sĩ chẩn đoán hình ảnh."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2",
+          "name": "Bảo dưỡng thiết bị chẩn đoán hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64d1250f-1c2b-4bea-929e-626ba927ea35",
+          "name": "Chụp X-quang dựa trên bằng chứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ thuật y chẩn đoán hình ảnh chính",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích quy trình và quan sát người bệnh để bảo đảm an toàn, thoải mái khi chụp.",
+        "Xử lý phim X-quang bằng máy rửa phim hoặc trên máy tính.",
+        "Thực hiện các kỹ thuật như chụp cắt lớp, chụp nhũ ảnh, siêu âm, chọc hút khớp và nang, chụp cản quang, soi chiếu, chụp đầu, thân, chi dưới sự giám sát của bác sĩ.",
+        "Ghi, xử lý và lưu dữ liệu người bệnh, hồ sơ chụp và lập báo cáo.",
+        "Chuẩn bị thuốc cản quang, dược chất phóng xạ hoặc thuốc gây tê, chống co thắt theo chỉ định của bác sĩ chẩn đoán hình ảnh."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2",
+          "name": "Bảo dưỡng thiết bị chẩn đoán hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64d1250f-1c2b-4bea-929e-626ba927ea35",
+          "name": "Chụp X-quang dựa trên bằng chứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2",
+          "name": "Bảo dưỡng thiết bị chẩn đoán hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64d1250f-1c2b-4bea-929e-626ba927ea35",
+          "name": "Chụp X-quang dựa trên bằng chứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d1bffe87-5020-4199-bcea-50108b040809",
+          "name": "Chọn kỹ thuật chụp ảnh y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ thuật y chẩn đoán hình ảnh hạng II",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích quy trình và quan sát người bệnh để bảo đảm an toàn, thoải mái khi chụp.",
+        "Xử lý phim X-quang bằng máy rửa phim hoặc trên máy tính.",
+        "Thực hiện các kỹ thuật như chụp cắt lớp, chụp nhũ ảnh, siêu âm, chọc hút khớp và nang, chụp cản quang, soi chiếu, chụp đầu, thân, chi dưới sự giám sát của bác sĩ.",
+        "Ghi, xử lý và lưu dữ liệu người bệnh, hồ sơ chụp và lập báo cáo.",
+        "Chuẩn bị thuốc cản quang, dược chất phóng xạ hoặc thuốc gây tê, chống co thắt theo chỉ định của bác sĩ chẩn đoán hình ảnh."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2",
+          "name": "Bảo dưỡng thiết bị chẩn đoán hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64d1250f-1c2b-4bea-929e-626ba927ea35",
+          "name": "Chụp X-quang dựa trên bằng chứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d1bffe87-5020-4199-bcea-50108b040809",
+          "name": "Chọn kỹ thuật chụp ảnh y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2",
+          "name": "Bảo dưỡng thiết bị chẩn đoán hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64d1250f-1c2b-4bea-929e-626ba927ea35",
+          "name": "Chụp X-quang dựa trên bằng chứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d1bffe87-5020-4199-bcea-50108b040809",
+          "name": "Chọn kỹ thuật chụp ảnh y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Kỹ thuật y chẩn đoán hình ảnh hạng I / kỹ thuật viên trưởng khoa",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Giải thích quy trình và quan sát người bệnh để bảo đảm an toàn, thoải mái khi chụp.",
+        "Xử lý phim X-quang bằng máy rửa phim hoặc trên máy tính.",
+        "Thực hiện các kỹ thuật như chụp cắt lớp, chụp nhũ ảnh, siêu âm, chọc hút khớp và nang, chụp cản quang, soi chiếu, chụp đầu, thân, chi dưới sự giám sát của bác sĩ.",
+        "Ghi, xử lý và lưu dữ liệu người bệnh, hồ sơ chụp và lập báo cáo.",
+        "Chuẩn bị thuốc cản quang, dược chất phóng xạ hoặc thuốc gây tê, chống co thắt theo chỉ định của bác sĩ chẩn đoán hình ảnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2",
+          "name": "Bảo dưỡng thiết bị chẩn đoán hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64d1250f-1c2b-4bea-929e-626ba927ea35",
+          "name": "Chụp X-quang dựa trên bằng chứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d1bffe87-5020-4199-bcea-50108b040809",
+          "name": "Chọn kỹ thuật chụp ảnh y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+          "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2",
+          "name": "Bảo dưỡng thiết bị chẩn đoán hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64d1250f-1c2b-4bea-929e-626ba927ea35",
+          "name": "Chụp X-quang dựa trên bằng chứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d1bffe87-5020-4199-bcea-50108b040809",
+          "name": "Chọn kỹ thuật chụp ảnh y khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-29-2034.00",
+          "name": "Kỹ thuật viên chẩn đoán hình ảnh"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-29-2036.00",
+          "name": "Kỹ thuật viên tính liều xạ trị"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1151.00",
+      "name": "Kỹ thuật viên gây mê hồi sức",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2011.00",
+      "name": "Kỹ thuật viên xét nghiệm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1215.00",
+      "name": "Bác sĩ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-2012.00",
+      "name": "Nhà vật lý",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1041.00",
+      "name": "Kỹ thuật viên khúc xạ, nhãn khoa",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 5313000,
+    "median": null,
+    "high": 17153000,
+    "byYears": [],
+    "source": "Thông tư 02/2025/TT-BYT; xếp lương theo hướng dẫn của Bộ Y tế ngày 05/6/2025; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Điều dưỡng, hộ sinh, kỹ thuật y hạng IV đến hạng II",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 15,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+      "name": "Năng lực lâm sàng theo bối cảnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+      "name": "Tuân thủ hướng dẫn lâm sàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a5443429-dac6-4849-9dc9-3b740a42f424",
+      "name": "Đánh giá ảnh y khoa đủ để chẩn đoán",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+      "name": "Tương tác với người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2f20ffb0-f701-4189-b4f4-620e9745e8a2",
+      "name": "Bảo dưỡng thiết bị chẩn đoán hình ảnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+      "name": "Xử lý tình huống cấp cứu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/64d1250f-1c2b-4bea-929e-626ba927ea35",
+      "name": "Chụp X-quang dựa trên bằng chứng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+      "name": "Góp phần chăm sóc y tế liên tục",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d1bffe87-5020-4199-bcea-50108b040809",
+      "name": "Chọn kỹ thuật chụp ảnh y khoa",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+      "name": "Đồng cảm với người bệnh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.847
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.712
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.376
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.287
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.257
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.177
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.093
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

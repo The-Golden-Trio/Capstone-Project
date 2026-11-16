@@ -1,0 +1,546 @@
+{
+  "code": "ONET-37-2011.00",
+  "name": "Nhân viên vệ sinh và buồng phòng",
+  "nameEn": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
+  "group": "Vệ sinh và bảo dưỡng toà nhà, cảnh quan",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Giữ cho toà nhà sạch sẽ, gọn gàng. Làm các việc vệ sinh nặng như lau sàn, giặt thảm, lau tường và kính, dọn rác. Có thể trông lò sưởi và nồi hơi, bảo trì thường xuyên, báo quản lý khi cần sửa chữa, và dọn tuyết hoặc rác trên vỉa hè. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Phải đi lại hoặc chạy nhiều.",
+    "Hay phải cúi hoặc vặn người.",
+    "Phải đứng trong phần lớn thời gian làm việc."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "15% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "14% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Khách sạn, resort 4–5 sao",
+      "weight": 45
+    },
+    {
+      "name": "Công ty dịch vụ vệ sinh, bảo vệ",
+      "weight": 40
+    },
+    {
+      "name": "Khách sạn nhỏ, nhà nghỉ, homestay",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Nghiệp vụ lưu trú"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Nhân viên vệ sinh thời vụ",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Vệ sinh và bổ sung đồ dùng cho nhà vệ sinh.",
+        "Thu gom và đổ rác.",
+        "Làm sạch sàn bằng cách quét, lau, chà hoặc hút bụi.",
+        "Giữ an ninh và an toàn cho toà nhà, như khoá cửa sau giờ làm hoặc kiểm tra thiết bị điện để tránh nguy hiểm.",
+        "Báo quản lý khi hệ thống của toà nhà cần sửa chữa lớn hoặc bổ sung."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên vệ sinh/buồng phòng",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Vệ sinh và bổ sung đồ dùng cho nhà vệ sinh.",
+        "Thu gom và đổ rác.",
+        "Làm sạch sàn bằng cách quét, lau, chà hoặc hút bụi.",
+        "Giữ an ninh và an toàn cho toà nhà, như khoá cửa sau giờ làm hoặc kiểm tra thiết bị điện để tránh nguy hiểm.",
+        "Báo quản lý khi hệ thống của toà nhà cần sửa chữa lớn hoặc bổ sung."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8",
+          "name": "Dọn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d",
+          "name": "Tuân thủ quy định công ty",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Giám sát vệ sinh/giám sát tầng",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Vệ sinh và bổ sung đồ dùng cho nhà vệ sinh.",
+        "Thu gom và đổ rác.",
+        "Làm sạch sàn bằng cách quét, lau, chà hoặc hút bụi.",
+        "Giữ an ninh và an toàn cho toà nhà, như khoá cửa sau giờ làm hoặc kiểm tra thiết bị điện để tránh nguy hiểm.",
+        "Báo quản lý khi hệ thống của toà nhà cần sửa chữa lớn hoặc bổ sung."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8",
+          "name": "Dọn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d",
+          "name": "Tuân thủ quy định công ty",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8",
+          "name": "Dọn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d",
+          "name": "Tuân thủ quy định công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58a15a33-2b41-4a7e-bb8a-777328b5d82a",
+          "name": "Vệ sinh nhà vệ sinh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Trợ lý trưởng bộ phận buồng phòng",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Vệ sinh và bổ sung đồ dùng cho nhà vệ sinh.",
+        "Thu gom và đổ rác.",
+        "Làm sạch sàn bằng cách quét, lau, chà hoặc hút bụi.",
+        "Giữ an ninh và an toàn cho toà nhà, như khoá cửa sau giờ làm hoặc kiểm tra thiết bị điện để tránh nguy hiểm.",
+        "Báo quản lý khi hệ thống của toà nhà cần sửa chữa lớn hoặc bổ sung."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8",
+          "name": "Dọn phòng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d",
+          "name": "Tuân thủ quy định công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58a15a33-2b41-4a7e-bb8a-777328b5d82a",
+          "name": "Vệ sinh nhà vệ sinh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8",
+          "name": "Dọn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d",
+          "name": "Tuân thủ quy định công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58a15a33-2b41-4a7e-bb8a-777328b5d82a",
+          "name": "Vệ sinh nhà vệ sinh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng bộ phận buồng phòng (executive housekeeper)",
+      "years": "6+",
+      "coreOutput": null,
+      "tasks": [
+        "Vệ sinh và bổ sung đồ dùng cho nhà vệ sinh.",
+        "Thu gom và đổ rác.",
+        "Làm sạch sàn bằng cách quét, lau, chà hoặc hút bụi.",
+        "Giữ an ninh và an toàn cho toà nhà, như khoá cửa sau giờ làm hoặc kiểm tra thiết bị điện để tránh nguy hiểm.",
+        "Báo quản lý khi hệ thống của toà nhà cần sửa chữa lớn hoặc bổ sung."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8",
+          "name": "Dọn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d",
+          "name": "Tuân thủ quy định công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58a15a33-2b41-4a7e-bb8a-777328b5d82a",
+          "name": "Vệ sinh nhà vệ sinh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+          "name": "Làm vệ sinh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+          "name": "Dùng hoá chất tẩy rửa",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8",
+          "name": "Dọn phòng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d",
+          "name": "Tuân thủ quy định công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58a15a33-2b41-4a7e-bb8a-777328b5d82a",
+          "name": "Vệ sinh nhà vệ sinh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-37-2011.00",
+          "name": "Nhân viên vệ sinh và buồng phòng"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-37-1011.00",
+          "name": "Tổ trưởng buồng phòng và vệ sinh"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-35-2014.00",
+      "name": "Đầu bếp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-9032.00",
+      "name": "Nhân viên tổ chức hoạt động vui chơi giải trí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-6031.00",
+      "name": "Công nhân may mặc, da giày",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 7200000,
+    "median": 8500000,
+    "high": 10200000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 36,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/4f1b6304-f54a-42f0-9604-5427a28d240f",
+      "name": "Làm vệ sinh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35",
+      "name": "Dùng hoá chất tẩy rửa",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8",
+      "name": "Dọn phòng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4cb51222-3e2e-417c-9a5c-e9ccf262721d",
+      "name": "Tuân thủ quy định công ty",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/58a15a33-2b41-4a7e-bb8a-777328b5d82a",
+      "name": "Vệ sinh nhà vệ sinh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.043
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.322
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.653
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.823
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.961
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.012
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -1.152
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}
