@@ -199,17 +199,26 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
 
   // Kéo và chụm hai ngón.
   const pointers = useRef(new Map<number, { x: number; y: number }>());
-  const gesture = useRef<{ moved: number; pinch: number | null }>({
+  const gesture = useRef<{
+    moved: number;
+    pinch: number | null;
+    /** Nghề dưới ngón tay lúc bắt đầu chạm: sau `setPointerCapture`, `pointerup` luôn trỏ về svg. */
+    code: string | null;
+  }>({
     moved: 0,
     pinch: null,
+    code: null,
   });
 
   const onPointerDown = (e: React.PointerEvent<SVGSVGElement>) => {
     if (anim.current) cancelAnimationFrame(anim.current);
+    const code =
+      (e.target as Element).closest('[data-code]')?.getAttribute('data-code') ??
+      null;
     svgRef.current?.setPointerCapture(e.pointerId);
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (pointers.current.size === 1)
-      gesture.current = { moved: 0, pinch: null };
+      gesture.current = { moved: 0, pinch: null, code };
   };
 
   const onPointerMove = (e: React.PointerEvent<SVGSVGElement>) => {
@@ -244,8 +253,7 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
     pointers.current.delete(e.pointerId);
     if (pointers.current.size < 2) gesture.current.pinch = null;
     if (pointers.current.size === 0 && gesture.current.moved < 6) {
-      const target = (e.target as Element).closest('[data-code]');
-      onSelect(target?.getAttribute('data-code') ?? null);
+      onSelect(gesture.current.code);
     }
   };
 
@@ -347,9 +355,22 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
             selected={selected === p.occupation.code}
             dim={highlight !== null && !highlight.has(p.occupation.code)}
             suggested={suggested.has(p.occupation.code)}
-            labelled={labelled.has(p.occupation.code)}
           />
         ))}
+
+        {/* Nhãn vẽ thành lớp riêng sau mọi hành tinh để không bị hành tinh khác che. */}
+        <g style={{ pointerEvents: 'none' }}>
+          {ordered
+            .filter((p) => labelled.has(p.occupation.code))
+            .map((p) => (
+              <PlanetLabel
+                key={p.occupation.code}
+                p={p}
+                detail={detail}
+                selected={selected === p.occupation.code}
+              />
+            ))}
+        </g>
 
         {detail === 'mid' &&
           layout.groups.map((g) => (
@@ -450,28 +471,68 @@ export function pickLabels(
       );
     })
     .sort((a, b) => rank(a) - rank(b));
-  const boxes: Array<[number, number, number, number]> = [];
+  type Box = [number, number, number, number];
+  const overlaps = (a: Box, b: Box) =>
+    a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
+  // Hành tinh cũng là vật cản: nhãn không được nằm đè lên hành tinh khác.
+  const planets = occupations.map((p) => ({
+    code: p.occupation.code,
+    box: [p.x - p.r, p.y - p.r, p.x + p.r, p.y + p.r] as Box,
+  }));
+  const boxes: Box[] = [];
   const out = new Set<string>();
   for (const p of candidates) {
     const sel = p.occupation.code === selected;
     const fs = labelFont(detail, sel);
-    const w = p.occupation.shortName.length * fs * 0.56 + 4;
-    const h = fs * 1.25;
-    const cy = p.y + p.r + (sel && detail === 'far' ? 34 : 15) - fs * 0.35;
-    const box: [number, number, number, number] = [
-      p.x - w / 2,
-      cy - h / 2,
-      p.x + w / 2,
-      cy + h / 2,
-    ];
-    const hit = boxes.some(
-      (b) => box[0] < b[2] && box[2] > b[0] && box[1] < b[3] && box[3] > b[1],
-    );
-    if (hit && !sel) continue;
+    // Chừa khoảng đệm để hai nhãn không dính sát nhau.
+    const pad = fs * 0.3;
+    const w = p.occupation.shortName.length * fs * 0.56 + 2 * pad;
+    const h = fs * 1.2 + 2 * pad;
+    const cy = p.y + p.r + labelOffset(detail, sel) - fs * 0.35;
+    const box: Box = [p.x - w / 2, cy - h / 2, p.x + w / 2, cy + h / 2];
+    const blocked =
+      boxes.some((b) => overlaps(box, b)) ||
+      planets.some((o) => o.code !== p.occupation.code && overlaps(box, o.box));
+    if (blocked && !sel) continue;
     boxes.push(box);
     out.add(p.occupation.code);
   }
   return out;
+}
+
+function labelOffset(detail: Detail, selected: boolean) {
+  return selected && detail === 'far' ? 34 : 15;
+}
+
+function PlanetLabel({
+  p,
+  detail,
+  selected,
+}: {
+  p: PlacedOccupation;
+  detail: Detail;
+  selected: boolean;
+}) {
+  const locked =
+    p.occupation.gate.kind === 'PREREQUISITE' &&
+    p.occupation.my.status === 'NEW';
+  return (
+    <text
+      x={p.x}
+      y={p.y + p.r + labelOffset(detail, selected)}
+      textAnchor="middle"
+      fill={selected ? '#f6e6bf' : '#e3e9f1'}
+      fillOpacity={locked && !selected ? 0.7 : 1}
+      fontSize={labelFont(detail, selected)}
+      fontWeight={selected ? 700 : 500}
+      stroke="#0a1026"
+      strokeWidth={selected && detail === 'far' ? 8 : 3.5}
+      strokeOpacity={0.85}
+      style={{ paintOrder: 'stroke' }}
+    >
+      {p.occupation.shortName}
+    </text>
+  );
 }
 
 function PlanetNode({
@@ -480,19 +541,16 @@ function PlanetNode({
   selected,
   dim,
   suggested,
-  labelled,
 }: {
   p: PlacedOccupation;
   detail: Detail;
   selected: boolean;
   dim: boolean;
   suggested: boolean;
-  labelled: boolean;
 }) {
   const o = p.occupation;
   const locked = o.gate.kind === 'PREREQUISITE' && o.my.status === 'NEW';
   const status = o.my.status;
-  const showLabel = labelled;
   return (
     <g
       data-code={o.code}
@@ -548,21 +606,6 @@ function PlanetNode({
             strokeWidth={1.1}
           />
         </g>
-      )}
-      {showLabel && (
-        <text
-          y={p.r + (selected && detail === 'far' ? 34 : 15)}
-          textAnchor="middle"
-          fill={selected ? '#f6e6bf' : '#e3e9f1'}
-          fontSize={labelFont(detail, selected)}
-          fontWeight={selected ? 700 : 500}
-          stroke="#0a1026"
-          strokeWidth={selected && detail === 'far' ? 8 : 3.5}
-          strokeOpacity={0.85}
-          style={{ paintOrder: 'stroke', pointerEvents: 'none' }}
-        >
-          {o.shortName}
-        </text>
       )}
     </g>
   );

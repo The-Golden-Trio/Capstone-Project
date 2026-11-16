@@ -94,6 +94,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               trigger={(props) => (
                 <button
                   type="button"
+                  aria-label={`Tài khoản ${name}`}
                   {...props}
                   className="flex items-center gap-2 rounded-full py-1 pl-1 pr-3 hover:bg-night-800/70 focus-visible:outline-none focus-visible:shadow-focus"
                 >

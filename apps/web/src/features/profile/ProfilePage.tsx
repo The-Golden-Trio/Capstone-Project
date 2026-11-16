@@ -75,7 +75,8 @@ export default function ProfilePage() {
             return current;
           })
         }
-        className="overflow-x-auto"
+        // Bốn tab vừa một hàng ở 360 px: thu đệm ngang trên điện thoại thay vì cuộn.
+        className="overflow-x-auto max-sm:[&>button]:px-2.5"
       />
       <TabPanel
         idBase="profile"

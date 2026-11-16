@@ -290,8 +290,9 @@ export default function GalaxyPage() {
                     </p>
                     <p className="mt-1 text-xs text-ink-muted">
                       Dữ liệu hiện có đúng một ca đã soạn: Back-end cấp L3, sự
-                      cố API chậm. Ở bản xem thử, bạn vào thẳng ca này, không
-                      tính vào tiến độ. Lời nhân vật là AI giả.
+                      cố API chậm. Ở bản xem thử, bạn vào thẳng ca này: điểm kỹ
+                      năng không cộng vào hồ sơ và không mở cấp, nhưng thời gian
+                      chơi vẫn vào thống kê. Lời nhân vật là AI giả.
                     </p>
                     <Button
                       size="sm"
