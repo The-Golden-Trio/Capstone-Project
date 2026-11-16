@@ -1,9 +1,9 @@
+import { Button } from '@datn/ui';
 import { useState, type FormEvent } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { authApi } from '../../api/endpoints';
 import {
   AuthFrame,
-  Button,
   Notice,
   ProblemAlert,
   TextField,
@@ -39,7 +39,7 @@ export function ResetPasswordPage() {
       <form onSubmit={submit}>
         <ProblemAlert error={error} />
         {done ? (
-          <Notice tone="good">
+          <Notice tone="success">
             {token
               ? 'Đã đổi mật khẩu. Đăng nhập lại bằng mật khẩu mới.'
               : 'Nếu email có trong hệ thống, bạn sẽ nhận được link đặt lại mật khẩu trong vài phút.'}
@@ -68,14 +68,14 @@ export function ResetPasswordPage() {
           <Button
             type="submit"
             variant="primary"
-            busy={busy}
+            loading={busy}
             className="mt-2 w-full"
           >
             {token ? 'Đổi mật khẩu' : 'Gửi link đặt lại'}
           </Button>
         )}
         <p className="mt-4 text-center text-[13px]">
-          <Link to="/login" className="text-brand hover:underline">
+          <Link to="/login" className="text-info hover:underline">
             Về trang đăng nhập
           </Link>
         </p>

@@ -1,14 +1,8 @@
+import { Button, EmptyState, LoadingBlock } from '@datn/ui';
 import { useState } from 'react';
 import { staffApi } from '../../api/endpoints';
 import type { ReferenceAnswer, ScenarioContent } from '../../api/types';
-import {
-  Button,
-  Card,
-  EmptyState,
-  ProblemAlert,
-  SelectField,
-  TextArea,
-} from '../../components/ui';
+import { Card, ProblemAlert, SelectField, TextArea } from '../../components/ui';
 import { useLoad } from '../../hooks/useLoad';
 import type { SkillName } from './ScenarioEditor';
 
@@ -74,17 +68,20 @@ export function ReferenceAnswers({
 
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <Card title="Câu mẫu đã lưu">
-        {(list.data ?? []).length === 0 ? (
-          <EmptyState>Chưa có câu mẫu.</EmptyState>
+      <Card title="Câu mẫu đã lưu" className="staff-paper paper">
+        <ProblemAlert error={list.error} />
+        {list.loading ? (
+          <LoadingBlock />
+        ) : list.error ? null : (list.data ?? []).length === 0 ? (
+          <EmptyState title={<>Chưa có câu mẫu.</>} />
         ) : (
           <ul className="space-y-3">
             {(list.data ?? []).map((r) => (
               <li
                 key={r.id}
-                className="rounded-xl border border-line bg-bg/25 p-3"
+                className="rounded-xl border border-line bg-night-900/25 p-3"
               >
-                <p className="text-[12px] text-muted">
+                <p className="text-[12px] text-ink-faint">
                   {r.activityKey} ·{' '}
                   {r.stratum === 'EASY'
                     ? 'dễ'
@@ -93,7 +90,7 @@ export function ReferenceAnswers({
                       : 'vừa'}
                 </p>
                 <p>{r.answerText}</p>
-                <p className="mt-1 text-[12px] text-ink-2">
+                <p className="mt-1 text-[12px] text-ink-muted">
                   {r.scores
                     .map((s) => (s.score === null ? 'không xét' : s.score))
                     .join(' · ')}
@@ -104,9 +101,9 @@ export function ReferenceAnswers({
         )}
       </Card>
       {!readOnly && (
-        <Card title="Thêm câu mẫu">
+        <Card title="Thêm câu mẫu" className="staff-paper paper">
           {dirty && (
-            <p className="mb-2 text-[13px] text-warn">
+            <p className="mb-2 text-[13px] text-warning">
               Lưu nội dung trước để tiêu chí có mã, rồi mới chấm câu mẫu.
             </p>
           )}
@@ -167,7 +164,7 @@ export function ReferenceAnswers({
           ))}
           <Button
             variant="primary"
-            busy={busy}
+            loading={busy}
             disabled={
               dirty ||
               !text.trim() ||

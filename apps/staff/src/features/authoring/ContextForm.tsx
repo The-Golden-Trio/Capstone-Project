@@ -1,6 +1,7 @@
+import { Button, Checkbox } from '@datn/ui';
 import { useState } from 'react';
 import type { GenerationInput, SituationOptions } from '../../api/types';
-import { Button, Checkbox, SelectField, TextArea } from '../../components/ui';
+import { SelectField, TextArea } from '../../components/ui';
 import { ARCHETYPE_LABEL, COMPANY_LABEL } from '../../lib/labels';
 
 /**
@@ -35,7 +36,7 @@ export function ContextForm({
   const soft = options.skills.filter((s) => s.kind === 'SOFT_SKILL');
 
   return (
-    <div>
+    <div className="staff-paper paper rounded-lg p-4">
       <div className="grid gap-3 md:grid-cols-2">
         <SelectField
           label={`Loại tình huống (mở ở cấp ${options.band})`}
@@ -68,12 +69,12 @@ export function ContextForm({
         onChange={(e) => setContext(e.target.value)}
       />
       <fieldset className="mb-3" disabled={disabled}>
-        <legend className="mb-1 text-[13px] font-medium text-ink-2">
+        <legend className="mb-1 text-[13px] font-medium text-ink-muted">
           Năng lực scenario nhắm tới (chọn 3–5)
         </legend>
         <div className="grid gap-x-6 gap-y-1 md:grid-cols-2">
           <div>
-            <p className="mb-1 text-[12px] text-muted">Chuyên môn</p>
+            <p className="mb-1 text-[12px] text-ink-faint">Chuyên môn</p>
             {expertise.map((s) => (
               <div key={s.competencyId}>
                 <Checkbox
@@ -85,7 +86,7 @@ export function ContextForm({
             ))}
           </div>
           <div>
-            <p className="mb-1 text-[12px] text-muted">Kỹ năng mềm</p>
+            <p className="mb-1 text-[12px] text-ink-faint">Kỹ năng mềm</p>
             {soft.map((s) => (
               <div key={s.competencyId}>
                 <Checkbox
@@ -100,7 +101,7 @@ export function ContextForm({
       </fieldset>
       <Button
         variant="primary"
-        busy={busy}
+        loading={busy}
         disabled={disabled || !context.trim() || skills.length === 0}
         onClick={() =>
           onGenerate({ archetype, companyType, context, competencyIds: skills })

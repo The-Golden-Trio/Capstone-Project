@@ -1,3 +1,5 @@
+import { EmptyState, IconButton, LoadingBlock } from '@datn/ui';
+import { ProblemAlert } from '../components/ui';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { staffApi } from '../api/endpoints';
@@ -23,6 +25,9 @@ export function NotificationBell() {
   const [items, setItems] = useState<Notification[]>([]);
   const [open, setOpen] = useState(false);
   const [seen, setSeen] = useState(readSeen);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<unknown>();
+  const trigger = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,8 +35,18 @@ export function NotificationBell() {
     const load = () =>
       staffApi
         .listNotifications()
-        .then((page) => alive && setItems(page.items))
-        .catch(() => undefined);
+        .then((page) => {
+          if (alive) {
+            setItems(page.items);
+            setError(undefined);
+          }
+        })
+        .catch((reason: unknown) => {
+          if (alive) setError(reason);
+        })
+        .finally(() => {
+          if (alive) setLoading(false);
+        });
     void load();
     const timer = setInterval(load, POLL_MS);
     return () => {
@@ -39,6 +54,25 @@ export function NotificationBell() {
       clearInterval(timer);
     };
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const outside = (event: PointerEvent) => {
+      if (!panel.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        trigger.current?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', outside);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', outside);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [open]);
 
   const unread = items.filter((n) => n.createdAt > seen).length;
 
@@ -56,28 +90,50 @@ export function NotificationBell() {
 
   return (
     <div className="relative" ref={panel}>
-      <button
-        type="button"
-        onClick={toggle}
-        aria-expanded={open}
-        aria-label={`Thông báo${unread ? `, ${unread} mới` : ''}`}
-        className="relative rounded-full px-2 py-1 text-ink-2 transition-colors hover:bg-brand-soft"
-      >
-        <span aria-hidden="true">🔔</span>
+      <div className="relative">
+        <IconButton
+          ref={trigger}
+          onClick={toggle}
+          aria-expanded={open}
+          aria-controls={open ? 'staff-notifications' : undefined}
+          label={`Thông báo${unread ? `, ${unread} mới` : ''}`}
+          icon={
+            <svg
+              aria-hidden
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+            >
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+            </svg>
+          }
+        />
         {unread > 0 && (
-          <span className="absolute -top-0.5 -right-0.5 rounded-full bg-bad px-1.5 text-[11px] font-bold text-bg">
+          <span className="pointer-events-none absolute -top-1 -right-1 rounded-full bg-danger px-1.5 text-[10px] font-bold text-night-900">
             {unread}
           </span>
         )}
-      </button>
+      </div>
       {open && (
         <div
+          id="staff-notifications"
           role="region"
           aria-label="Thông báo"
-          className="absolute right-0 z-20 mt-1 max-h-96 w-80 overflow-auto rounded-xl border border-line-gold bg-surf shadow-lift"
+          className="fixed inset-x-4 top-16 z-20 mt-1 max-h-[70dvh] overflow-auto sm:absolute sm:inset-x-auto sm:top-auto sm:right-0 sm:max-h-96 sm:w-80 rounded-xl border border-line-gold bg-night-850 shadow-lift"
         >
-          {items.length === 0 ? (
-            <p className="p-4 text-muted">Chưa có thông báo.</p>
+          <h2 className="border-b border-line px-4 py-3 font-sans text-sm font-semibold">
+            Thông báo
+          </h2>
+          <div className="px-3 pt-2">
+            <ProblemAlert error={error} />
+          </div>
+          {loading ? (
+            <LoadingBlock />
+          ) : !items.length ? (
+            !error && <EmptyState title="Chưa có thông báo" />
           ) : (
             <ul>
               {items.map((n) => {
@@ -94,20 +150,17 @@ export function NotificationBell() {
                       {NOTIFICATION_LABEL[n.template] ?? n.template}
                     </p>
                     {typeof n.payload['taskText'] === 'string' && (
-                      <p className="text-[13px] text-ink-2">
+                      <p className="text-[13px] text-ink-muted">
                         {n.payload['taskText']}
                       </p>
                     )}
-                    <p className="text-[12px] text-muted">
+                    <p className="text-[12px] text-ink-faint">
                       {formatDateTime(n.createdAt)}
                     </p>
                   </>
                 );
                 return (
-                  <li
-                    key={n.id}
-                    className="border-b border-line-2 last:border-0"
-                  >
+                  <li key={n.id} className="border-b border-line last:border-0">
                     {link ? (
                       <Link
                         to={link}

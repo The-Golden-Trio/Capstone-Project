@@ -1,11 +1,7 @@
+import { Button } from '@datn/ui';
 import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import {
-  AuthFrame,
-  Button,
-  ProblemAlert,
-  TextField,
-} from '../../components/ui';
+import { AuthFrame, ProblemAlert, TextField } from '../../components/ui';
 import { portalsOf, useAuth } from '../../store/auth';
 
 /** T01 Staff sign in (`signIn`, `getMe`). */
@@ -38,7 +34,7 @@ export function SignInPage() {
   return (
     <AuthFrame
       title="Đăng nhập"
-      subtitle="Dành cho Content Admin và Domain Expert."
+      description="Dành cho Content Admin và Domain Expert."
     >
       <form onSubmit={submit}>
         <ProblemAlert error={error} />
@@ -61,13 +57,13 @@ export function SignInPage() {
         <Button
           type="submit"
           variant="primary"
-          busy={busy}
+          loading={busy}
           className="mt-2 w-full"
         >
           Đăng nhập
         </Button>
         <p className="mt-4 text-center text-[13px]">
-          <Link to="/reset-password" className="text-brand hover:underline">
+          <Link to="/reset-password" className="text-info hover:underline">
             Quên mật khẩu?
           </Link>
         </p>

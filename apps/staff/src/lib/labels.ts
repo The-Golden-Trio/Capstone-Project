@@ -14,16 +14,16 @@ export const STATUS_LABEL: Record<ScenarioStatus, string> = {
 
 export const STATUS_TONE: Record<
   ScenarioStatus,
-  'neutral' | 'brand' | 'warn' | 'good' | 'bad'
+  'neutral' | 'info' | 'warning' | 'success' | 'danger'
 > = {
   DRAFT: 'neutral',
-  SUBMITTED: 'warn',
-  IN_REVIEW: 'warn',
-  APPROVED: 'good',
-  IN_PLAYTEST: 'brand',
-  READY: 'good',
-  PUBLISHED: 'good',
-  RETIRED: 'bad',
+  SUBMITTED: 'warning',
+  IN_REVIEW: 'warning',
+  APPROVED: 'success',
+  IN_PLAYTEST: 'info',
+  READY: 'success',
+  PUBLISHED: 'success',
+  RETIRED: 'danger',
 };
 
 export const ACTION_LABEL: Record<LifecycleAction, string> = {

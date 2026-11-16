@@ -1,15 +1,18 @@
+import {
+  EmptyState,
+  Button,
+  LoadingBlock as Loading,
+  PageHeader,
+} from '@datn/ui';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
 import { staffApi } from '../../api/endpoints';
 import type { Build, Presentation, TaskType } from '../../api/types';
 import {
-  Button,
   Card,
   LinkButton,
-  Loading,
   Notice,
-  PageHeader,
   ProblemAlert,
   SelectField,
 } from '../../components/ui';
@@ -115,7 +118,7 @@ export function GamifyPage() {
     <>
       <PageHeader
         title={`Trình bày: ${d.taskTitle}`}
-        subtitle={
+        description={
           <span className="flex items-center gap-2">
             <StatusBadge status={d.status} /> L{d.levelNo} · tác giả{' '}
             {d.authorName ?? '—'}
@@ -124,7 +127,7 @@ export function GamifyPage() {
         actions={
           <LinkButton
             to={`/ca/occupations/${d.occupationId}/scenarios`}
-            variant="secondary"
+            variant="subtle"
             size="sm"
           >
             ← Ô scenario
@@ -140,7 +143,7 @@ export function GamifyPage() {
       )}
       <ProblemAlert error={error ?? assets.error ?? saved.error} />
       {build && (
-        <Notice tone="good">
+        <Notice tone="success">
           Đã dựng bản nháp lúc {formatDateTime(build.builtAt)} · hash{' '}
           <code className="font-mono">{build.contentHash.slice(0, 12)}</code>.
           Tác giả đã được báo để chơi thử.
@@ -158,7 +161,7 @@ export function GamifyPage() {
                 if (i < 0 || !a) return null;
                 const chosen = p.activities[i];
                 return (
-                  <div className="mt-3 grid gap-3 rounded-xl border border-brand/25 bg-brand-soft p-4 md:grid-cols-2">
+                  <div className="mt-3 grid gap-3 rounded-xl border border-line-strong bg-surface p-4 md:grid-cols-2">
                     <SelectField
                       label="Dạng task (trong tập DE cho phép)"
                       value={chosen.taskType}
@@ -197,11 +200,49 @@ export function GamifyPage() {
                 );
               }}
             />
-          ) : (
+          ) : !content ? (
+            <EmptyState title="Scenario chưa có nội dung để trình bày." />
+          ) : saved.error ? null : (
             <Loading />
           )}
         </div>
         <aside className="space-y-4 lg:sticky lg:top-16 lg:max-h-[calc(100vh-5rem)] lg:self-start lg:overflow-y-auto">
+          {editable && (
+            <Card title="Lưu và dựng bản nháp">
+              <div className="flex flex-col gap-2">
+                <Button
+                  variant="subtle"
+                  loading={busy === 'save'}
+                  disabled={!dirty}
+                  onClick={save}
+                >
+                  Lưu trình bày
+                </Button>
+                <Button
+                  variant="primary"
+                  loading={busy === 'build'}
+                  disabled={
+                    dirty ||
+                    missingNpc ||
+                    !d.allowedActions.includes('BUILD_DRAFT')
+                  }
+                  onClick={buildDraft}
+                >
+                  Dựng bản game nháp
+                </Button>
+                {missingNpc && (
+                  <p className="text-[12px] text-warning">
+                    Mỗi NPC cần một avatar.
+                  </p>
+                )}
+                {dirty && (
+                  <p className="text-[12px] text-ink-faint">
+                    Lưu trình bày trước khi dựng.
+                  </p>
+                )}
+              </div>
+            </Card>
+          )}
           {p && (
             <Card title="Nền và nhân vật">
               <div className="space-y-3">
@@ -232,37 +273,6 @@ export function GamifyPage() {
                     }
                   />
                 ))}
-              </div>
-            </Card>
-          )}
-          {editable && (
-            <Card title="Lưu và dựng bản nháp">
-              <div className="flex flex-col gap-2">
-                <Button busy={busy === 'save'} disabled={!dirty} onClick={save}>
-                  Lưu trình bày
-                </Button>
-                <Button
-                  variant="primary"
-                  busy={busy === 'build'}
-                  disabled={
-                    dirty ||
-                    missingNpc ||
-                    !d.allowedActions.includes('BUILD_DRAFT')
-                  }
-                  onClick={buildDraft}
-                >
-                  Dựng bản game nháp
-                </Button>
-                {missingNpc && (
-                  <p className="text-[12px] text-warn">
-                    Mỗi NPC cần một avatar.
-                  </p>
-                )}
-                {dirty && (
-                  <p className="text-[12px] text-muted">
-                    Lưu trình bày trước khi dựng.
-                  </p>
-                )}
               </div>
             </Card>
           )}

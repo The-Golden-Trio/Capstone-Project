@@ -1,6 +1,7 @@
+import { Badge } from '@datn/ui';
 import type { ReactNode } from 'react';
 import type { ScenarioContent } from '../../api/types';
-import { Badge } from '../../components/ui';
+
 import { ENDING_LABEL, TASK_TYPE_LABEL } from '../../lib/labels';
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
@@ -8,7 +9,7 @@ function Row({ label, children }: { label: string; children: ReactNode }) {
     return null;
   return (
     <div className="mb-2">
-      <dt className="text-[12px] font-medium text-muted">{label}</dt>
+      <dt className="text-[12px] font-medium text-ink-faint">{label}</dt>
       <dd className="whitespace-pre-wrap">{children}</dd>
     </div>
   );
@@ -25,8 +26,8 @@ export function ContentReadOnly({
   renderActivityExtra?: (activityKey: string) => ReactNode;
 }) {
   return (
-    <div className="space-y-4">
-      <section className="rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 p-5">
+    <div className="staff-paper space-y-4 rounded-lg">
+      <section className="paper rounded-lg p-5">
         <dl>
           <Row label="Mở đầu">{content.intro}</Row>
           <Row label="Tình huống">{content.situation}</Row>
@@ -46,7 +47,7 @@ export function ContentReadOnly({
                   <span className="font-medium">{m.name || m.npcKey}</span> —{' '}
                   {m.roleInScene}
                   {m.pressure && (
-                    <span className="text-muted"> · {m.pressure}</span>
+                    <span className="text-ink-faint"> · {m.pressure}</span>
                   )}
                 </li>
               ))}
@@ -55,20 +56,17 @@ export function ContentReadOnly({
         )}
       </section>
       {content.activities.map((a) => (
-        <section
-          key={a.key}
-          className="rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 p-5"
-        >
+        <section key={a.key} className="paper rounded-lg p-5">
           <header className="mb-2 flex flex-wrap items-center gap-2">
             <h3 className="font-semibold">
               {a.isOrigin ? '▶ ' : ''}Activity {a.key}
             </h3>
             {a.allowedTypes.map((t) => (
-              <Badge key={t} tone="brand">
+              <Badge key={t} tone="info">
                 {TASK_TYPE_LABEL[t]}
               </Badge>
             ))}
-            <span className="text-[12px] text-muted">
+            <span className="text-[12px] text-ink-faint">
               → {a.forwardTo ?? 'kết thúc'}
             </span>
           </header>
@@ -85,19 +83,22 @@ export function ContentReadOnly({
                     <li key={it.key}>
                       {it.text}
                       {it.score !== undefined && (
-                        <span className="text-muted"> · điểm {it.score}</span>
+                        <span className="text-ink-faint">
+                          {' '}
+                          · điểm {it.score}
+                        </span>
                       )}
                       {it.correctPosition !== undefined && (
-                        <span className="text-muted">
+                        <span className="text-ink-faint">
                           {' '}
                           · vị trí {it.correctPosition}
                         </span>
                       )}
                       {it.pickRule && (
-                        <span className="text-muted"> · {it.pickRule}</span>
+                        <span className="text-ink-faint"> · {it.pickRule}</span>
                       )}
                       {(it.why || it.note) && (
-                        <span className="text-muted">
+                        <span className="text-ink-faint">
                           {' '}
                           — {it.why ?? it.note}
                         </span>
@@ -116,36 +117,38 @@ export function ContentReadOnly({
           </dl>
           <h4 className="mt-2 mb-1 text-[13px] font-semibold">Tiêu chí chấm</h4>
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-[13px]">
-              <thead className="text-muted">
-                <tr>
-                  <th className="py-1 pr-2 font-medium">Năng lực</th>
-                  <th className="py-1 pr-2 font-medium">Mốc 2</th>
-                  <th className="py-1 pr-2 font-medium">Mốc 1</th>
-                  <th className="py-1 pr-2 font-medium">Mốc 0</th>
-                  <th className="py-1 font-medium">Phản tác dụng</th>
-                </tr>
-              </thead>
-              <tbody className="align-top">
-                {a.rubric.map((r, i) => (
-                  <tr key={i} className="border-t border-line-2">
-                    <td className="py-1 pr-2 font-medium">
-                      {skillName(r.competencyId)}
-                    </td>
-                    <td className="py-1 pr-2">{r.anchor2}</td>
-                    <td className="py-1 pr-2">{r.anchor1}</td>
-                    <td className="py-1 pr-2">{r.anchor0}</td>
-                    <td className="py-1">{r.counterproductiveSigns}</td>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[480px] text-left text-[13px]">
+                <thead className="text-ink-faint">
+                  <tr>
+                    <th className="py-1 pr-2 font-medium">Năng lực</th>
+                    <th className="py-1 pr-2 font-medium">Mốc 2</th>
+                    <th className="py-1 pr-2 font-medium">Mốc 1</th>
+                    <th className="py-1 pr-2 font-medium">Mốc 0</th>
+                    <th className="py-1 font-medium">Phản tác dụng</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="align-top">
+                  {a.rubric.map((r, i) => (
+                    <tr key={i} className="border-t border-line">
+                      <td className="py-1 pr-2 font-medium">
+                        {skillName(r.competencyId)}
+                      </td>
+                      <td className="py-1 pr-2">{r.anchor2}</td>
+                      <td className="py-1 pr-2">{r.anchor1}</td>
+                      <td className="py-1 pr-2">{r.anchor0}</td>
+                      <td className="py-1">{r.counterproductiveSigns}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           {renderActivityExtra?.(a.key)}
         </section>
       ))}
       {(content.randomEvents ?? []).length > 0 && (
-        <section className="rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 p-5">
+        <section className="paper rounded-lg p-5">
           <h3 className="mb-2 font-semibold">Sự kiện ngẫu nhiên</h3>
           <ul className="list-disc pl-5">
             {(content.randomEvents ?? []).map((e, i) => (
@@ -157,7 +160,7 @@ export function ContentReadOnly({
           </ul>
         </section>
       )}
-      <section className="rounded-[14px] border border-line-gold bg-linear-to-b from-glass to-panel/70 p-5">
+      <section className="paper rounded-lg p-5">
         <h3 className="mb-2 font-semibold">Kết cục</h3>
         <ul className="space-y-1">
           {[...content.endings]
@@ -165,13 +168,13 @@ export function ContentReadOnly({
             .map((en, i) => (
               <li key={i}>
                 <Badge>{ENDING_LABEL[en.type]}</Badge>{' '}
-                <span className="text-muted">
+                <span className="text-ink-faint">
                   #{en.priority}
                   {en.minTotalScore != null && ` · ≥ ${en.minTotalScore} điểm`}
                 </span>{' '}
                 {en.text}
                 {en.extraBehaviour && (
-                  <span className="text-muted">
+                  <span className="text-ink-faint">
                     {' '}
                     · khi: {en.extraBehaviour}
                   </span>

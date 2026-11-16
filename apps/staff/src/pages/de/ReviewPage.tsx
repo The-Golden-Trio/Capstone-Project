@@ -1,19 +1,17 @@
+import {
+  Input,
+  RadioCards,
+  Button,
+  Dialog,
+  LoadingBlock as Loading,
+  PageHeader,
+} from '@datn/ui';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
 import { staffApi } from '../../api/endpoints';
 import type { ReviewDecisionInput } from '../../api/types';
-import {
-  Button,
-  Card,
-  Dialog,
-  Loading,
-  Notice,
-  PageHeader,
-  ProblemAlert,
-  TextArea,
-  inputClass,
-} from '../../components/ui';
+import { Card, Notice, ProblemAlert, TextArea } from '../../components/ui';
 import { cx } from '../../lib/cx';
 import { ContentReadOnly } from '../../features/shared/ContentReadOnly';
 import { StatusBadge } from '../../features/shared/StatusBadge';
@@ -27,7 +25,7 @@ const DECISIONS: Record<
   {
     label: string;
     confirm: string;
-    variant: 'primary' | 'secondary' | 'danger';
+    variant: 'primary' | 'subtle' | 'danger';
   }
 > = {
   APPROVE: {
@@ -38,7 +36,7 @@ const DECISIONS: Record<
   REQUEST_CHANGES: {
     label: 'Yêu cầu sửa',
     confirm: 'Gửi scenario về cho tác giả sửa?',
-    variant: 'secondary',
+    variant: 'subtle',
   },
   REJECT: {
     label: 'Từ chối',
@@ -89,7 +87,7 @@ export function ReviewPage() {
                 : e
           }
         />
-        <Link to="/de" className="text-brand hover:underline">
+        <Link to="/de" className="text-info hover:underline">
           ← Về việc của tôi
         </Link>
       </>
@@ -130,7 +128,7 @@ export function ReviewPage() {
     <>
       <PageHeader
         title={`Duyệt: ${s.taskTitle}`}
-        subtitle={
+        description={
           <span className="flex items-center gap-2">
             <StatusBadge status={s.status} /> L{s.levelNo} · tác giả{' '}
             {s.authorName ?? '—'}
@@ -140,7 +138,7 @@ export function ReviewPage() {
           </span>
         }
       />
-      {done && <Notice tone="good">{done}</Notice>}
+      {done && <Notice tone="success">{done}</Notice>}
       <ProblemAlert error={error} />
       <div className="grid gap-4 lg:grid-cols-[1fr_380px]">
         <div>
@@ -158,7 +156,9 @@ export function ReviewPage() {
                   <li key={i}>
                     <span className="font-medium">{r.decision}</span> ·{' '}
                     {formatDateTime(r.decidedAt)}
-                    {r.comment && <p className="text-ink-2">“{r.comment}”</p>}
+                    {r.comment && (
+                      <p className="text-ink-muted">“{r.comment}”</p>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -179,27 +179,22 @@ export function ReviewPage() {
                       <legend className="mb-1 font-medium">
                         {i + 1}. {c.text}
                       </legend>
-                      <div className="mb-1 flex gap-4">
-                        {(['MET', 'NOT_MET'] as const).map((v) => (
-                          <label
-                            key={v}
-                            className="flex items-center gap-1.5 text-[13px]"
-                          >
-                            <input
-                              type="radio"
-                              name={c.criterionId}
-                              checked={a.verdict === v}
-                              onChange={() => set({ verdict: v })}
-                              className="accent-brand"
-                            />
-                            {v === 'MET' ? 'Đạt' : 'Chưa đạt'}
-                          </label>
-                        ))}
-                      </div>
-                      <input
+                      <RadioCards
+                        name={c.criterionId}
+                        label={`Đánh giá tiêu chí ${i + 1}`}
+                        options={[
+                          { key: 'MET', label: 'Đạt' },
+                          { key: 'NOT_MET', label: 'Chưa đạt' },
+                        ]}
+                        value={a.verdict ?? null}
+                        onChange={(verdict: Verdict) => set({ verdict })}
+                        columns={2}
+                        className="mb-2"
+                      />
+                      <Input
                         aria-label={`Nhận xét tiêu chí ${i + 1}`}
                         placeholder="Nhận xét (tuỳ chọn)"
-                        className={cx(inputClass, 'text-[13px]')}
+                        className={cx('text-[13px]')}
                         value={a.comment}
                         onChange={(e) => set({ comment: e.target.value })}
                       />
@@ -218,13 +213,13 @@ export function ReviewPage() {
               />
             </div>
             {canDecide && missing.length > 0 && (
-              <p className="mb-2 text-[13px] text-warn">
+              <p className="mb-2 text-[13px] text-warning">
                 Còn {missing.length} tiêu chí chưa trả lời — chưa ra quyết định
                 được.
               </p>
             )}
             {canDecide && (
-              <div className="flex flex-wrap gap-2">
+              <div className="staff-action-bar">
                 {(
                   Object.keys(DECISIONS) as Array<
                     ReviewDecisionInput['decision']
@@ -251,10 +246,12 @@ export function ReviewPage() {
         footer={
           confirming && (
             <>
-              <Button onClick={() => setConfirming(null)}>Huỷ</Button>
+              <Button variant="subtle" onClick={() => setConfirming(null)}>
+                Huỷ
+              </Button>
               <Button
                 variant={DECISIONS[confirming].variant}
-                busy={busy}
+                loading={busy}
                 onClick={() => decide(confirming)}
               >
                 {DECISIONS[confirming].label}

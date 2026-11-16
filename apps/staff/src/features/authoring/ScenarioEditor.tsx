@@ -1,20 +1,11 @@
+import { TabPanel, Select, Button, Checkbox, EmptyState, Tabs } from '@datn/ui';
 import { useState, type ReactNode } from 'react';
 import type {
   ActivityContent,
   ScenarioContent,
   TaskType,
 } from '../../api/types';
-import {
-  Button,
-  Card,
-  Checkbox,
-  EmptyState,
-  SelectField,
-  Tabs,
-  TextArea,
-  TextField,
-  inputClass,
-} from '../../components/ui';
+import { Card, SelectField, TextArea, TextField } from '../../components/ui';
 import { cx } from '../../lib/cx';
 import { ENDING_LABEL, TASK_TYPE_LABEL } from '../../lib/labels';
 import { emptyActivity, nextKey, produce } from './draft';
@@ -45,30 +36,33 @@ export function ScenarioEditor(props: EditorProps) {
   const [tab, setTab] = useState<Tab>('activities');
   const { content } = props;
   return (
-    <div>
+    <div className="staff-paper paper rounded-lg p-4 sm:p-6">
       <Tabs
+        idBase="editor"
         label="Phần nội dung"
         value={tab}
         onChange={setTab}
-        tabs={[
-          { id: 'intro', label: 'Mở đầu' },
-          { id: 'cast', label: `Nhân vật (${content.cast?.length ?? 0})` },
+        items={[
+          { key: 'intro', label: 'Mở đầu' },
+          { key: 'cast', label: `Nhân vật (${content.cast?.length ?? 0})` },
           {
-            id: 'activities',
+            key: 'activities',
             label: `Activity (${content.activities.length})`,
           },
           {
-            id: 'events',
+            key: 'events',
             label: `Sự kiện (${content.randomEvents?.length ?? 0})`,
           },
-          { id: 'endings', label: `Kết cục (${content.endings.length})` },
+          { key: 'endings', label: `Kết cục (${content.endings.length})` },
         ]}
       />
-      {tab === 'intro' && <IntroTab {...props} />}
-      {tab === 'cast' && <CastTab {...props} />}
-      {tab === 'activities' && <ActivitiesTab {...props} />}
-      {tab === 'events' && <EventsTab {...props} />}
-      {tab === 'endings' && <EndingsTab {...props} />}
+      <TabPanel active idBase="editor" tabKey={tab}>
+        {tab === 'intro' && <IntroTab {...props} />}
+        {tab === 'cast' && <CastTab {...props} />}
+        {tab === 'activities' && <ActivitiesTab {...props} />}
+        {tab === 'events' && <EventsTab {...props} />}
+        {tab === 'endings' && <EndingsTab {...props} />}
+      </TabPanel>
     </div>
   );
 }
@@ -152,7 +146,7 @@ function CastTab({ content, onChange, readOnly }: EditorProps) {
     );
   return (
     <div className="space-y-3">
-      {cast.length === 0 && <EmptyState>Chưa có NPC.</EmptyState>}
+      {cast.length === 0 && <EmptyState title={<>Chưa có NPC.</>} />}
       {cast.map((m, i) => (
         <Card
           key={i}
@@ -207,6 +201,7 @@ function CastTab({ content, onChange, readOnly }: EditorProps) {
       ))}
       {!readOnly && (
         <Button
+          variant="subtle"
           onClick={() =>
             onChange(
               produce(content, (d) => {
@@ -300,7 +295,7 @@ function ActivitiesTab({
               }
             />
           ) : (
-            <p className="text-[13px] text-muted">
+            <p className="text-[13px] text-ink-faint">
               {a.allowedTypes.map((t) => TASK_TYPE_LABEL[t]).join(', ')} · tiếp
               theo: {a.forwardTo ?? 'kết thúc'} · {a.rubric.length} tiêu chí ·
               hỏi thêm tối đa {a.followupLimit ?? 0}
@@ -310,6 +305,7 @@ function ActivitiesTab({
       ))}
       {!readOnly && content.activities.length < 4 && (
         <Button
+          variant="subtle"
           onClick={() =>
             onChange(
               produce(content, (d) => {
@@ -332,7 +328,7 @@ function ActivitiesTab({
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <fieldset className="mt-4 rounded-xl border border-line bg-bg/25 p-4">
+    <fieldset className="mt-4 rounded-xl border border-line bg-night-900/25 p-4">
       <legend className="px-1 text-[13px] font-semibold">{title}</legend>
       {children}
     </fieldset>
@@ -388,8 +384,8 @@ export function ActivityEditor({
         />
         <label className="flex items-center gap-2 text-[13px]">
           Tiếp theo
-          <select
-            className={cx(inputClass, 'w-auto py-1')}
+          <Select
+            className={cx('w-auto py-1')}
             value={a.forwardTo ?? ''}
             disabled={readOnly}
             onChange={(e) => set('forwardTo', e.target.value || null)}
@@ -402,7 +398,7 @@ export function ActivityEditor({
                   {k}
                 </option>
               ))}
-          </select>
+          </Select>
         </label>
       </div>
       <TextArea
@@ -463,7 +459,7 @@ export function ActivityEditor({
           {items.map((it, j) => (
             <div
               key={j}
-              className="mb-2 grid gap-2 border-b border-line-2 pb-2 md:grid-cols-[1fr_auto_auto]"
+              className="mb-2 grid gap-2 border-b border-line pb-2 md:grid-cols-[1fr_auto_auto]"
             >
               <TextField
                 label={`Mục ${it.key}`}
@@ -544,6 +540,7 @@ export function ActivityEditor({
           ))}
           {!readOnly && (
             <Button
+              variant="subtle"
               size="sm"
               onClick={() =>
                 set('items', [
@@ -601,7 +598,7 @@ export function ActivityEditor({
 
       <Section title="Tiêu chí chấm (mốc 2 / 1 / 0, viết bằng hành vi quan sát được)">
         {a.rubric.map((r, j) => (
-          <div key={j} className="mb-3 border-b border-line-2 pb-3">
+          <div key={j} className="mb-3 border-b border-line pb-3">
             <div className="flex items-end gap-2">
               <div className="flex-1">
                 <SelectField
@@ -673,6 +670,7 @@ export function ActivityEditor({
         ))}
         {!readOnly && (
           <Button
+            variant="subtle"
             size="sm"
             onClick={() =>
               set('rubric', [
@@ -717,7 +715,7 @@ function EventsTab({ content, onChange, readOnly, skills }: EditorProps) {
   return (
     <div className="space-y-3">
       {events.length === 0 && (
-        <EmptyState>Không có sự kiện ngẫu nhiên (tối đa 2).</EmptyState>
+        <EmptyState title={<>Không có sự kiện ngẫu nhiên (tối đa 2).</>} />
       )}
       {events.map((ev, i) => (
         <Card
@@ -796,6 +794,7 @@ function EventsTab({ content, onChange, readOnly, skills }: EditorProps) {
       ))}
       {!readOnly && events.length < 2 && (
         <Button
+          variant="subtle"
           onClick={() =>
             onChange(
               produce(content, (d) => {
@@ -830,7 +829,7 @@ function EndingsTab({ content, onChange, readOnly, onRevise }: EditorProps) {
     );
   return (
     <div className="space-y-3">
-      <p className="text-[13px] text-muted">
+      <p className="text-[13px] text-ink-faint">
         Máy xét kết cục theo priority tăng dần; kết cục priority lớn nhất không
         có điều kiện. SECRET luôn priority 1.
       </p>
@@ -922,6 +921,7 @@ function EndingsTab({ content, onChange, readOnly, onRevise }: EditorProps) {
       ))}
       {!readOnly && content.endings.length < 5 && (
         <Button
+          variant="subtle"
           onClick={() =>
             onChange(
               produce(content, (d) => {

@@ -1,73 +1,12 @@
 @import 'tailwindcss';
+@import '../../../packages/ui/src/styles/index.css';
+@source '../../../packages/ui/src';
 
-/* Staff app dùng chung bảng màu Celestial Night với app người chơi và landing
-   page (cùng giá trị với apps/web/src/styles.css). Tên token giữ như cũ.
-   Tương phản chữ/nền vẫn đạt WCAG AA (NFR-19): ink trên bg khoảng 17:1,
-   muted trên surf khoảng 5.6:1, chữ bg trên brand khoảng 9:1. */
-@theme {
-  --color-bg: #0a1026; /* Deep Space */
-  --color-surf: #142b52; /* Midnight Blue */
-  --color-panel: #101f3d;
-  --color-inset: #0d1f3f;
-  --color-line: #254a7a; /* Constellation */
-  --color-line-2: #1c3862;
-  --color-blue: #5d7ea8; /* Moonlight */
-  --color-ink: #f8f6ee; /* Ivory White */
-  --color-ink-2: #c7d2e0;
-  --color-muted: #8fa6c4;
-  --color-brand: #d4b06a; /* Starlight Gold */
-  --color-brand-2: #f0d79a; /* Soft Gold */
-  --color-brand-soft: rgba(212, 176, 106, 0.14);
-  --color-good: #74c69d;
-  --color-good-soft: rgba(116, 198, 157, 0.14);
-  --color-warn: #e8b266;
-  --color-warn-soft: rgba(232, 178, 102, 0.14);
-  --color-bad: #ec8f82;
-  --color-bad-soft: rgba(224, 122, 107, 0.16);
-  --color-glass: rgba(20, 43, 82, 0.6);
-  --color-line-gold: rgba(240, 215, 154, 0.2);
-
-  --font-display: 'Cormorant SC', Georgia, serif;
-  --font-sans: 'Montserrat', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-
-  --shadow-lift:
-    0 1px 2px rgba(0, 0, 0, 0.5), 0 18px 44px -24px rgba(0, 0, 0, 0.95);
-}
-
-/* Nhãn nhỏ in hoa giãn chữ, như kicker của landing page. */
-@utility kicker {
-  font-family: var(--font-sans);
-  font-size: 10.5px;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-brand);
-}
-
+/* Staff là công cụ làm việc: nền tĩnh, chữ gọn và bảng có đường kẻ mảnh. */
 @layer base {
-  :root {
-    color-scheme: dark;
-  }
-  html,
-  body,
-  #root {
-    min-height: 100%;
-  }
   body {
-    margin: 0;
-    background: var(--color-bg);
-    color: var(--color-ink);
-    font-family: var(--font-sans);
+    background-image: none;
     font-size: 14px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  h1,
-  h2,
-  h3 {
-    font-family: var(--font-display);
   }
   button {
     cursor: pointer;
@@ -76,67 +15,136 @@
     cursor: not-allowed;
   }
   ::placeholder {
-    color: var(--color-blue);
+    color: var(--color-ink-faint);
   }
-  :focus-visible {
-    outline: 2px solid var(--color-brand);
-    outline-offset: 2px;
+  table {
+    border-collapse: collapse;
   }
-  ::selection {
-    background: rgba(212, 176, 106, 0.35);
+  th {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-ink-muted);
+  }
+  th,
+  td {
+    padding: 12px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  tbody tr:hover {
+    background: var(--color-surface);
+  }
+  td {
+    vertical-align: top;
   }
 }
 
-/* Nền sao và tinh vân, bản tĩnh: đây là công cụ làm việc nên không nhấp nháy. */
-.starfield {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(
-      60% 46% at 82% -6%,
-      rgba(37, 74, 122, 0.5),
-      transparent 70%
-    ),
-    radial-gradient(
-      52% 44% at 4% 104%,
-      rgba(20, 43, 82, 0.75),
-      transparent 72%
-    ),
-    radial-gradient(
-      1.4px 1.4px at 23% 17%,
-      rgba(200, 215, 235, 0.5),
-      transparent 62%
-    ),
-    radial-gradient(
-      1.1px 1.1px at 71% 44%,
-      rgba(240, 215, 154, 0.5),
-      transparent 62%
-    ),
-    radial-gradient(
-      1px 1px at 46% 78%,
-      rgba(200, 215, 235, 0.36),
-      transparent 62%
-    ),
-    radial-gradient(
-      1.6px 1.6px at 88% 12%,
-      rgba(240, 215, 154, 0.4),
-      transparent 62%
-    ),
-    radial-gradient(
-      1px 1px at 12% 61%,
-      rgba(200, 215, 235, 0.3),
-      transparent 62%
-    );
-  background-size:
-    100% 100%,
-    100% 100%,
-    347px 311px,
-    269px 241px,
-    419px 383px,
-    233px 287px,
-    311px 199px;
-  background-repeat:
-    no-repeat, no-repeat, repeat, repeat, repeat, repeat, repeat;
+.staff-workspace > header {
+  margin-bottom: 24px;
+}
+.staff-workspace > header h1 {
+  font-size: clamp(24px, 2.5vw, 32px);
+}
+.staff-workspace > header .hairline-gold {
+  background: var(--color-line);
+  margin-top: 20px;
+}
+.staff-action-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 15;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid var(--color-line);
+  background: var(--color-night-850);
+  padding: 12px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+/* Chỉ đổi token trong vùng đọc/soạn dài để mọi lớp con có tương phản trên giấy. */
+.staff-paper {
+  --color-ink: var(--color-paper-ink);
+  --color-ink-muted: #36445a;
+  --color-ink-faint: #4f5d71;
+  --color-night-300: #52647b;
+  --color-night-400: #5b6e87;
+  --color-night-700: #ded5c1;
+  --color-night-800: #e4ddcc;
+  --color-night-850: #f4f0e5;
+  --color-night-900: #ece6d4;
+  --color-night-950: #e7e0cf;
+  --color-surface-sunken: #fffdf7;
+  --color-line: rgb(26 34 56 / 0.18);
+  --color-line-strong: rgb(26 34 56 / 0.36);
+  --color-info: #284f7c;
+  --color-success: #24644f;
+  --color-warning: #854d14;
+  --color-danger: #a03845;
+  --color-gold-200: #6e5626;
+  --color-gold-300: #6e5626;
+  --color-gold-500: #80632b;
+  color-scheme: light;
+  color: var(--color-paper-ink);
+  line-height: 1.8;
+}
+.staff-paper input,
+.staff-paper textarea,
+.staff-paper select {
+  background-color: var(--color-surface-sunken);
+  color: var(--color-paper-ink);
+}
+.staff-paper table th {
+  color: var(--color-ink-muted);
+}
+.staff-paper tbody tr:hover {
+  background: rgb(26 34 56 / 0.04);
+}
+.staff-paper section {
+  box-shadow: none;
+}
+.staff-workspace > .staff-sticky-header {
+  position: sticky;
+  top: 4rem;
+  z-index: 20;
+  background: var(--color-night-900);
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+.staff-workspace > .staff-sticky-header h1 {
+  font-size: 24px;
+}
+.staff-workspace [role='tablist'] {
+  margin-bottom: 20px;
+}
+
+#catalogue,
+#review-queue,
+#authored {
+  scroll-margin-top: 5rem;
+}
+
+.staff-paper :is(button, a).text-night-900 {
+  color: var(--color-paper-ink);
+}
+
+/* Số liệu vận hành dùng chữ sáng; vàng dành cho hành động chính. */
+.staff-workspace .tabular {
+  color: var(--color-ink);
+}
+
+@keyframes staff-drawer-in {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.staff-navigation-drawer[open] {
+  animation: staff-drawer-in 0.2s ease-out both;
 }

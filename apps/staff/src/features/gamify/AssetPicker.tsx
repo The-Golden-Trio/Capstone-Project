@@ -1,6 +1,7 @@
+import { Button, Dialog, EmptyState } from '@datn/ui';
 import { useState } from 'react';
 import type { Asset, AssetKind } from '../../api/types';
-import { Button, Dialog, EmptyState } from '../../components/ui';
+
 import { cx } from '../../lib/cx';
 
 const KIND_LABEL: Record<AssetKind, string> = {
@@ -33,7 +34,7 @@ export function AssetPicker({
   const current = pool.find((a) => a.id === value);
   return (
     <div className="flex items-center gap-3">
-      <div className="size-14 shrink-0 overflow-hidden rounded-lg border border-line bg-inset">
+      <div className="size-14 shrink-0 overflow-hidden rounded-lg border border-line bg-surface-sunken">
         {current && (
           <img
             src={current.url}
@@ -44,7 +45,12 @@ export function AssetPicker({
       </div>
       <div>
         <p className="text-[13px] font-medium">{label}</p>
-        <Button size="sm" disabled={disabled} onClick={() => setOpen(true)}>
+        <Button
+          variant="subtle"
+          size="sm"
+          disabled={disabled}
+          onClick={() => setOpen(true)}
+        >
           {current ? 'Đổi' : 'Chọn'} {KIND_LABEL[kind].toLowerCase()}
         </Button>
       </div>
@@ -56,6 +62,7 @@ export function AssetPicker({
           <>
             {allowNone && (
               <Button
+                variant="subtle"
                 onClick={() => {
                   onChange(null);
                   setOpen(false);
@@ -64,15 +71,21 @@ export function AssetPicker({
                 Không dùng
               </Button>
             )}
-            <Button onClick={() => setOpen(false)}>Đóng</Button>
+            <Button variant="subtle" onClick={() => setOpen(false)}>
+              Đóng
+            </Button>
           </>
         }
       >
         {pool.length === 0 ? (
-          <EmptyState>
-            Thư viện chưa có {KIND_LABEL[kind].toLowerCase()} nào. Tải lên ở mục
-            Thư viện asset.
-          </EmptyState>
+          <EmptyState
+            title={
+              <>
+                Thư viện chưa có {KIND_LABEL[kind].toLowerCase()} nào. Tải lên ở
+                mục Thư viện asset.
+              </>
+            }
+          />
         ) : (
           <ul className="grid grid-cols-3 gap-3">
             {pool.map((a) => (
@@ -87,16 +100,16 @@ export function AssetPicker({
                   className={cx(
                     'block w-full overflow-hidden rounded-lg border-2 transition-colors',
                     a.id === value
-                      ? 'border-brand'
-                      : 'border-transparent hover:border-blue',
+                      ? 'border-info'
+                      : 'border-transparent hover:border-night-400',
                   )}
                 >
                   <img
                     src={a.url}
                     alt={a.sourceNote}
-                    className="aspect-square w-full bg-inset object-cover"
+                    className="aspect-square w-full bg-surface-sunken object-cover"
                   />
-                  <span className="block truncate px-1 py-0.5 text-left text-[12px] text-muted">
+                  <span className="block truncate px-1 py-0.5 text-left text-[12px] text-ink-faint">
                     {a.sourceNote}
                   </span>
                 </button>
