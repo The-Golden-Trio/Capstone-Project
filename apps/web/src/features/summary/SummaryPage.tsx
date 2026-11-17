@@ -54,7 +54,10 @@ export default function SummaryPage() {
   const hostLook = host
     ? castCharacters(run.data?.cast ?? []).get(host.slot)
     : undefined;
-  const tierUps = s.grade.softSkills.filter((d) => d.tierAfter > d.tierBefore);
+  // Ca xem thử không cộng vào hồ sơ nên không báo "lên bậc".
+  const tierUps = s.enrolmentId
+    ? s.grade.softSkills.filter((d) => d.tierAfter > d.tierBefore)
+    : [];
 
   return (
     <div className="theme-toon relative isolate min-h-dvh">

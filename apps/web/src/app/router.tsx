@@ -3,7 +3,12 @@
  * nhẹ trên mạng yếu (NFR-13).
  */
 import { lazy, Suspense, type ComponentType } from 'react';
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Navigate,
+  Outlet,
+  ScrollRestoration,
+} from 'react-router-dom';
 import { LoadingBlock } from '@datn/ui';
 import { AppShell } from './AppShell';
 import { RequireAuth, RedirectIfSignedIn } from './RequireAuth';
@@ -22,6 +27,13 @@ function page(load: () => Promise<{ default: ComponentType }>) {
 
 export const router = createBrowserRouter([
   {
+    // Trang mới mở từ đầu trang, quay lại thì về đúng chỗ cũ (cả màn ngoài AppShell).
+    element: (
+      <>
+        <ScrollRestoration />
+        <Outlet />
+      </>
+    ),
     errorElement: <RouteError />,
     children: [
       {
