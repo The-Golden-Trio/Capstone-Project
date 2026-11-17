@@ -72,7 +72,6 @@ export function Stage({
   waitingLabel,
   conversationChannel,
   onAdvance,
-  onRevealAll,
 }: {
   run: ShiftRun;
   lines: TranscriptLine[];
@@ -82,7 +81,6 @@ export function Stage({
   /** Kênh của cuộc trò chuyện đang mở (đổi bối cảnh khi gặp, họp). */
   conversationChannel?: TranscriptLine['channel'] | null;
   onAdvance: () => void;
-  onRevealAll: () => void;
 }) {
   const cast = useMemo(() => castCharacters(run.cast), [run.cast]);
   const nameOf = useMemo(() => {
@@ -169,15 +167,6 @@ export function Stage({
 
         {/* Hộp thoại */}
         <div className="relative z-20 px-3 pb-3 pt-5 sm:px-5 sm:pb-4">
-          {queued > 1 && (
-            <button
-              type="button"
-              onClick={onRevealAll}
-              className="absolute -top-3 right-6 z-10 rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-0.5 font-toon text-sm font-bold text-toon-ink shadow-toon-sm hover:-translate-y-px"
-            >
-              Hiện hết ({queued})
-            </button>
-          )}
           <button
             type="button"
             onClick={tap}
@@ -192,11 +181,41 @@ export function Stage({
                   current.kind === 'scene' ? (
                     <NameTag name="Cảnh" color="#fff1c9" />
                   ) : (
-                    <NameTag
-                      name={nameOf(current.speaker)}
-                      role={relationOf(current.speaker)}
-                      color={cast.get(current.speaker)?.color}
-                    />
+                    <span className="flex items-end gap-2">
+                      {/* Điện thoại không có nhân vật đứng: mặt và emote đi cùng bảng tên. */}
+                      {cast.get(current.speaker) && (
+                        <span className="relative -translate-y-3 md:hidden">
+                          <Avatar
+                            src={cast.get(current.speaker)?.src ?? ''}
+                            color={
+                              cast.get(current.speaker)?.color ?? '#fffaf0'
+                            }
+                            size={48}
+                            className={cn(
+                              speaking &&
+                                EXPRESSION_MOTION[expression] === 'hop' &&
+                                'animate-toon-hop',
+                              speaking &&
+                                EXPRESSION_MOTION[expression] === 'shake' &&
+                                'animate-toon-shake',
+                            )}
+                          />
+                          {speaking && expression !== 'binh_thuong' && (
+                            <span
+                              key={speaking.seq}
+                              className="absolute -left-4 -top-10"
+                            >
+                              <Emote expression={expression} size={40} />
+                            </span>
+                          )}
+                        </span>
+                      )}
+                      <NameTag
+                        name={nameOf(current.speaker)}
+                        role={relationOf(current.speaker)}
+                        color={cast.get(current.speaker)?.color}
+                      />
+                    </span>
                   )
                 }
                 meta={
@@ -283,7 +302,7 @@ function Backlog({
   const past = lines.filter((l) => l !== current);
   return (
     <div
-      className="relative z-0 ml-auto flex min-h-0 w-full flex-col overflow-y-auto px-3 pb-8 pt-14 [mask-image:linear-gradient(to_bottom,transparent_8px,black_64px)] sm:px-5 md:w-[min(60%,640px)] md:pr-6"
+      className="relative z-0 ml-auto flex min-h-0 w-full flex-col overflow-y-auto px-3 pb-16 pt-14 md:pb-8 [mask-image:linear-gradient(to_bottom,transparent_8px,black_64px)] sm:px-5 md:w-[min(60%,640px)] md:pr-6"
       aria-label="Lịch sử hội thoại"
     >
       <ol className="mt-auto flex flex-col gap-4">

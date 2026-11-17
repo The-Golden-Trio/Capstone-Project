@@ -46,21 +46,21 @@
 
 ## Bản đồ code và ranh giới trách nhiệm
 
-| Đường dẫn                        | Vai trò                                                                                                                                |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `apps/web/`                      | Explorer app (viết lại 16/11): React 19, Vite, Tailwind CSS, React Query, Zustand; giao diện chỉ tiếng Việt (D-96)                     |
-| `packages/ui/`                   | Design system dùng chung (`@datn/ui`): token Celestial Night, component, biểu đồ, tranh SVG (hành tinh, đảo, chân dung NPC 8 biểu cảm) |
-| `apps/staff/`                    | Staff app cho Content Admin, Domain Expert (SITE-02, SITE-03), chỉ tiếng Việt                                                          |
-| `apps/web/src/api/`              | Client API và schema phía web; chuỗi giao diện viết thẳng tiếng Việt, không i18n                                                       |
-| `apps/api/`                      | NestJS, Prisma 7, PostgreSQL; auth, content, profile, runs và module AI                                                                |
-| `apps/api/src/app/app.module.ts` | Điểm kiểm tra các module thực sự được đăng ký                                                                                          |
-| `apps/api/src/ai/`               | Gateway, adapter nhà cung cấp, chi phí, circuit breaker, narrator AI-4 và prompt                                                       |
-| `apps/api/prisma/`               | Schema và migrations; cấu hình CLI ở `apps/api/prisma.config.ts`                                                                       |
-| `packages/game-core/src/`        | Logic dùng chung: engine, grading, band, fit, narration, schema; import qua `@datn/game-core`                                          |
-| `occupation-data/`               | Nguồn dữ liệu nghề, scenario, quyết định ánh xạ và script sinh dữ liệu                                                                 |
-| `docs/data/`                     | Build dữ liệu game/galaxy phục vụ seed vào DB                                                                                          |
-| `docs/project-hub/slides/`       | Deck HTML; tài nguyên thiết kế AI ở `assets/ai-design/`                                                                                |
-| `tools/`                         | `git/` kiểm commit/PR, `hub/` quản lý tuần/task, `report/` sinh LaTeX                                                                  |
+| Đường dẫn                        | Vai trò                                                                                                                                                                       |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apps/web/`                      | Explorer app (viết lại 16/11): React 19, Vite, Tailwind CSS, React Query, Zustand; giao diện chỉ tiếng Việt (D-96)                                                            |
+| `packages/ui/`                   | Design system dùng chung (`@datn/ui`): token Celestial Night, component, biểu đồ, tranh SVG; game kit "Cartoon viền đen" ở `src/game/` (sân khấu, emote, đồng hồ, điều khiển) |
+| `apps/staff/`                    | Staff app cho Content Admin, Domain Expert (SITE-02, SITE-03), chỉ tiếng Việt                                                                                                 |
+| `apps/web/src/api/`              | Client API và schema phía web; chuỗi giao diện viết thẳng tiếng Việt, không i18n                                                                                              |
+| `apps/api/`                      | NestJS, Prisma 7, PostgreSQL; auth, content, profile, runs và module AI                                                                                                       |
+| `apps/api/src/app/app.module.ts` | Điểm kiểm tra các module thực sự được đăng ký                                                                                                                                 |
+| `apps/api/src/ai/`               | Gateway, adapter nhà cung cấp, chi phí, circuit breaker, narrator AI-4 và prompt                                                                                              |
+| `apps/api/prisma/`               | Schema và migrations; cấu hình CLI ở `apps/api/prisma.config.ts`                                                                                                              |
+| `packages/game-core/src/`        | Logic dùng chung: engine, grading, band, fit, narration, schema; import qua `@datn/game-core`                                                                                 |
+| `occupation-data/`               | Nguồn dữ liệu nghề, scenario, quyết định ánh xạ và script sinh dữ liệu                                                                                                        |
+| `docs/data/`                     | Build dữ liệu game/galaxy phục vụ seed vào DB                                                                                                                                 |
+| `docs/project-hub/slides/`       | Deck HTML; tài nguyên thiết kế AI ở `assets/ai-design/`                                                                                                                       |
+| `tools/`                         | `git/` kiểm commit/PR, `hub/` quản lý tuần/task, `report/` sinh LaTeX                                                                                                         |
 
 - Logic game và luật kiểm dùng chung đặt ở `game-core`; gọi model, key và truy cập DB ở API. Web lấy nội dung qua API, không tự đọc dataset nghề hoặc chứa key nhà cung cấp.
 - Dùng các pattern có sẵn: schema Zod, module/DI của NestJS, API client hiện hành; kiểm export của `game-core` khi thêm API dùng chung.
@@ -84,7 +84,7 @@
   - `apps/staff` có T01, T00, C01, C04, C05, C06, C07, D01, D03, D04. Luồng: CA mở scenario và giao tác giả, người duyệt → DE viết ngữ cảnh, AI sinh bản nháp (queue `generation` ở worker, SSE) → sửa, câu mẫu, kiểm (`ContentValidator`) → nộp → DE khác duyệt → CA chọn dạng task, asset → dựng bản nháp (`scenario_build`).
   - Chưa có: play-test (D05), xuất bản (C08), import, giám sát, prompt hệ thống (C10/D08), gợi ý trình bày và sinh ảnh bằng AI (D-104).
   - Chỗ lệch openapi/ERD và luật đang theo đề xuất: [07 A22, A23](docs/project-hub/07-van-de-mo.md).
-- **Explorer viết lại, 16/11/2026** (nhánh `feat/explorer-ui-v0`): bỏ toàn bộ giao diện prototype, dựng lại theo game design với design system `packages/ui`. Màn hình chỉ đọc dữ liệu qua `apps/web/src/api/port.ts`; `VITE_API_MODE` = `hybrid` (mặc định: phần backend đã có gọi thật, phần chưa có dùng dữ liệu mẫu, có nhãn "Dữ liệu mẫu"), `live` hoặc `demo` (chạy trọn trong trình duyệt, engine ca làm của game-core + AI giả). Dữ liệu UI cần từ API: `docs/plans/2026-11-16_explorer-ui-data-contract.md` (đề xuất). Dữ liệu mẫu sinh bằng `node apps/web/scripts/build-demo-fixtures.mjs`. Hiện chỉ có một seed ca làm (Back-end L3 m2).
+- **Explorer viết lại, 16/11/2026** (nhánh `feat/explorer-ui-v0`): bỏ toàn bộ giao diện prototype, dựng lại theo game design với design system `packages/ui`. Màn hình chỉ đọc dữ liệu qua `apps/web/src/api/port.ts`; `VITE_API_MODE` = `hybrid` (mặc định: phần backend đã có gọi thật, phần chưa có dùng dữ liệu mẫu, có nhãn "Dữ liệu mẫu"), `live` hoặc `demo` (chạy trọn trong trình duyệt, engine ca làm của game-core + AI giả). Dữ liệu UI cần từ API: `docs/plans/2026-11-16_explorer-ui-data-contract.md` (đề xuất). Dữ liệu mẫu sinh bằng `node apps/web/scripts/build-demo-fixtures.mjs`. Hiện chỉ có một seed ca làm (Back-end L3 m2). Từ 17/11, các màn trong ca làm (đảo, onboard, chơi, nhìn lại, tổng kết) dùng theme "Cartoon viền đen" theo concept art số 5 của nhóm; tranh nhân vật và bối cảnh ở `apps/web/src/assets/toon/`, gán vai trong `apps/web/src/lib/toon.ts` (tạm theo xưng hô, chờ CA chọn ở bước dựng bản nháp).
 - **Explorer, cập nhật 14/11/2026:** có đánh giá nghề năm tiêu chí (FR-19, `/api/v1/occupations/{mã nghề hoặc uuid}/ratings`, màn `/jobs/:roleCode/rate`) và góp ý app (FR-20, `/api/v1/app-feedback`, màn `/feedback`), bảng `occupation_rating`, `rating_score`, `rating_attribute`, `app_feedback`. FR-07 (vào nghề kề ở cấp cao hơn) **hoãn**, chờ nhóm chốt [07 A27](docs/project-hub/07-van-de-mo.md); chỗ lệch thiết kế của FR-19/20 ở A26.
 - `ai-4-api/response.json` là **model giả**, không phải kết quả gọi API thật hay benchmark. Request mẫu được sinh từ code.
 - Game design mới gồm RIASEC, 7 nhóm soft skill, keyword ESCO và hồ sơ nghề O*NET; nhiều phần vẫn là thiết kế/dữ liệu chưa nối vào runtime. Tra trạng thái từng phần trước khi triển khai.

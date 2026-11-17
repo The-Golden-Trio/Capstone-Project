@@ -28,7 +28,6 @@ it('Space qua nhịp, nhưng Space trong ô nhập không làm mất lượt đa
         queued={2}
         waitingLabel={null}
         onAdvance={advance}
-        onRevealAll={vi.fn()}
       />
       <input aria-label="Câu đang soạn" />
     </>,

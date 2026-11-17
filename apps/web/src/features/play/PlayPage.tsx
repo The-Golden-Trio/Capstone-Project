@@ -209,7 +209,6 @@ export default function PlayPage() {
             waitingLabel={waitingLabel}
             conversationChannel={scene.conversation?.channel ?? null}
             onAdvance={s.advance}
-            onRevealAll={s.revealAll}
           />
           <div className="relative z-20 border-t-[3px] border-toon-ink bg-[#f1dcb6] px-3 py-3 sm:px-5 sm:py-4">
             <div className="mx-auto max-w-3xl">
@@ -251,8 +250,17 @@ export default function PlayPage() {
                 />
               )}
               {s.queued > 0 && !s.paused && (
-                <p className="mt-1 text-center text-sm font-bold text-toon-ink-soft">
+                <p className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm font-bold text-toon-ink-soft">
                   Bấm vào hộp thoại hoặc nhấn Space để nghe tiếp.
+                  {s.queued > 1 && (
+                    <button
+                      type="button"
+                      onClick={s.revealAll}
+                      className="rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-0.5 font-toon text-sm font-bold text-toon-ink shadow-toon-sm hover:-translate-y-px focus-visible:outline-none focus-visible:shadow-toon-focus"
+                    >
+                      Hiện hết ({s.queued})
+                    </button>
+                  )}
                 </p>
               )}
             </div>
